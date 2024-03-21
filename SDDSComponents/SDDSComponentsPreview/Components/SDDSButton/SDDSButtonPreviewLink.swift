@@ -1,4 +1,5 @@
 import Foundation
+import SDDSComponents
 import SwiftUI
 
 // MARK: - Preview: Link Buttons
@@ -15,13 +16,12 @@ struct SDDSButtonPreviewLink: PreviewProvider {
 // MARK: - Extension to Generate Circle Buttons
 extension SDDSButton {
     static func linkButton(size: ButtonSize, isLoading: Bool = false, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButton {
-        SDDSButton(
+        SDDSButton.linkButton(
             title: "Label",
-            subtitle: "",
-            size: size,
-            isDisabled: true,
-            appearance: .transparent,
-            layoutMode: layoutMode,
+            size: .medium,
+            style: .accent,
+            isDisabled: false,
+            isLoading: false,
             action: {}
         )
     }

@@ -46,6 +46,17 @@ public extension TypographyToken {
             kerning: 0
         )
     }
+    
+    static var undefined: TypographyToken {
+        .init(
+            fontName: "SF Pro",
+            weight: .semibold,
+            style: .normal,
+            size: 18,
+            lineHeight: 22,
+            kerning: 0
+        )
+    }
 }
 
 public extension ColorToken {
