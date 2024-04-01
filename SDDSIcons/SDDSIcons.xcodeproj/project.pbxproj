@@ -207,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/../lint.sh\"\n";
+			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n/bin/sh \"${SRCROOT}/../lint.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

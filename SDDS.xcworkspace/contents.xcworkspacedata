@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SDDSCore/SDDSCore.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SDDSUIKit/SDDSUIKit.xcodeproj">
    </FileRef>
    <FileRef
@@ -11,10 +14,10 @@
       location = "group:SDDSSwiftUI/SDDSSwiftUI.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SDDSCore/SDDSCore.xcodeproj">
+      location = "group:SDDSDemoApp/SDDSDemoApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SDDSDemoApp/SDDSDemoApp.xcodeproj">
+      location = "group:.github/workflows">
    </FileRef>
    <FileRef
       location = "group:scripts">
