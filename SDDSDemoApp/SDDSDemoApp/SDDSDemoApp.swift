@@ -1,5 +1,5 @@
 import SwiftUI
-//import SDDSCore
+import SDDSCore
 import SDDSUIKit
 import SDDSSwiftUI
 import SDDSIcons
