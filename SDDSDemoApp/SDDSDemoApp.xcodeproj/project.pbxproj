@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2430DEDE2BB5CE5100277123 /* SDDSCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */; };
-		2430DEDF2BB5CE5100277123 /* SDDSCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; };
 		2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2430DEE22BB5CE5100277123 /* SDDSSwiftUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */; };
@@ -50,7 +48,6 @@
 			files = (
 				2430DEE52BB5CE5100277123 /* SDDSUIKit.xcframework in Embed Frameworks */,
 				2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */,
-				2430DEDF2BB5CE5100277123 /* SDDSCore.xcframework in Embed Frameworks */,
 				2430DEE32BB5CE5100277123 /* SDDSSwiftUI.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -82,7 +79,6 @@
 			files = (
 				2430DEE42BB5CE5100277123 /* SDDSUIKit.xcframework in Frameworks */,
 				2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */,
-				2430DEDE2BB5CE5100277123 /* SDDSCore.xcframework in Frameworks */,
 				2430DEE22BB5CE5100277123 /* SDDSSwiftUI.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/../lint.sh\"\n";
+			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n/bin/sh \"${SRCROOT}/../lint.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

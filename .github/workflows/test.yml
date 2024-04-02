@@ -1,0 +1,29 @@
+name: Code Quality Check / Perform Unit Testing
+
+on:
+  pull_request:
+  
+concurrency:
+  # New commit on branch cancels running workflows of the same branch
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    environment: sdds
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 'latest'
+          
+      - name: Run tests
+        run: |
+          chmod +x ./scripts/test.sh
+          ./scripts/test.sh
+

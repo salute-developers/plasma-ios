@@ -7,80 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2430DE582BB5B50500277123 /* SDDSCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE572BB5B50500277123 /* SDDSCore.docc */; };
-		2430DE5E2BB5B50500277123 /* SDDSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DE532BB5B50500277123 /* SDDSCore.framework */; };
-		2430DE632BB5B50500277123 /* SDDSCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE622BB5B50500277123 /* SDDSCoreTests.swift */; };
-		2430DE642BB5B50500277123 /* SDDSCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2430DE562BB5B50500277123 /* SDDSCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		242BF22C2BBB37B100E4D112 /* SDDSCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 242BF22B2BBB37B100E4D112 /* SDDSCore.docc */; };
+		242BF2322BBB37B100E4D112 /* SDDSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242BF2272BBB37B100E4D112 /* SDDSCore.framework */; };
+		242BF2372BBB37B100E4D112 /* SDDSCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF2362BBB37B100E4D112 /* SDDSCoreTests.swift */; };
+		242BF2382BBB37B100E4D112 /* SDDSCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 242BF22A2BBB37B100E4D112 /* SDDSCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2430DE5F2BB5B50500277123 /* PBXContainerItemProxy */ = {
+		242BF2332BBB37B100E4D112 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2430DE4A2BB5B50500277123 /* Project object */;
+			containerPortal = 242BF21E2BBB37B100E4D112 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2430DE522BB5B50500277123;
+			remoteGlobalIDString = 242BF2262BBB37B100E4D112;
 			remoteInfo = SDDSCore;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2430DE532BB5B50500277123 /* SDDSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DE562BB5B50500277123 /* SDDSCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSCore.h; sourceTree = "<group>"; };
-		2430DE572BB5B50500277123 /* SDDSCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSCore.docc; sourceTree = "<group>"; };
-		2430DE5D2BB5B50500277123 /* SDDSCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DE622BB5B50500277123 /* SDDSCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCoreTests.swift; sourceTree = "<group>"; };
+		242BF2272BBB37B100E4D112 /* SDDSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		242BF22A2BBB37B100E4D112 /* SDDSCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSCore.h; sourceTree = "<group>"; };
+		242BF22B2BBB37B100E4D112 /* SDDSCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSCore.docc; sourceTree = "<group>"; };
+		242BF2312BBB37B100E4D112 /* SDDSCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		242BF2362BBB37B100E4D112 /* SDDSCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2430DE502BB5B50500277123 /* Frameworks */ = {
+		242BF2242BBB37B100E4D112 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2430DE5A2BB5B50500277123 /* Frameworks */ = {
+		242BF22E2BBB37B100E4D112 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DE5E2BB5B50500277123 /* SDDSCore.framework in Frameworks */,
+				242BF2322BBB37B100E4D112 /* SDDSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2430DE492BB5B50500277123 = {
+		242BF21D2BBB37B100E4D112 = {
 			isa = PBXGroup;
 			children = (
-				2430DE552BB5B50500277123 /* SDDSCore */,
-				2430DE612BB5B50500277123 /* SDDSCoreTests */,
-				2430DE542BB5B50500277123 /* Products */,
+				242BF2292BBB37B100E4D112 /* SDDSCore */,
+				242BF2352BBB37B100E4D112 /* SDDSCoreTests */,
+				242BF2282BBB37B100E4D112 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2430DE542BB5B50500277123 /* Products */ = {
+		242BF2282BBB37B100E4D112 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2430DE532BB5B50500277123 /* SDDSCore.framework */,
-				2430DE5D2BB5B50500277123 /* SDDSCoreTests.xctest */,
+				242BF2272BBB37B100E4D112 /* SDDSCore.framework */,
+				242BF2312BBB37B100E4D112 /* SDDSCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2430DE552BB5B50500277123 /* SDDSCore */ = {
+		242BF2292BBB37B100E4D112 /* SDDSCore */ = {
 			isa = PBXGroup;
 			children = (
-				2430DE562BB5B50500277123 /* SDDSCore.h */,
-				2430DE572BB5B50500277123 /* SDDSCore.docc */,
+				242BF22A2BBB37B100E4D112 /* SDDSCore.h */,
+				242BF22B2BBB37B100E4D112 /* SDDSCore.docc */,
 			);
 			path = SDDSCore;
 			sourceTree = "<group>";
 		};
-		2430DE612BB5B50500277123 /* SDDSCoreTests */ = {
+		242BF2352BBB37B100E4D112 /* SDDSCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				2430DE622BB5B50500277123 /* SDDSCoreTests.swift */,
+				242BF2362BBB37B100E4D112 /* SDDSCoreTests.swift */,
 			);
 			path = SDDSCoreTests;
 			sourceTree = "<group>";
@@ -88,26 +88,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2430DE4E2BB5B50500277123 /* Headers */ = {
+		242BF2222BBB37B100E4D112 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DE642BB5B50500277123 /* SDDSCore.h in Headers */,
+				242BF2382BBB37B100E4D112 /* SDDSCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2430DE522BB5B50500277123 /* SDDSCore */ = {
+		242BF2262BBB37B100E4D112 /* SDDSCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2430DE672BB5B50500277123 /* Build configuration list for PBXNativeTarget "SDDSCore" */;
+			buildConfigurationList = 242BF23B2BBB37B100E4D112 /* Build configuration list for PBXNativeTarget "SDDSCore" */;
 			buildPhases = (
-				2430DE4E2BB5B50500277123 /* Headers */,
-				2430DE4F2BB5B50500277123 /* Sources */,
-				2430DE502BB5B50500277123 /* Frameworks */,
-				2430DE512BB5B50500277123 /* Resources */,
-				2430DEE92BB6B32700277123 /* Lint */,
+				242BF2222BBB37B100E4D112 /* Headers */,
+				242BF2232BBB37B100E4D112 /* Sources */,
+				242BF2242BBB37B100E4D112 /* Frameworks */,
+				242BF2252BBB37B100E4D112 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -115,46 +114,46 @@
 			);
 			name = SDDSCore;
 			productName = SDDSCore;
-			productReference = 2430DE532BB5B50500277123 /* SDDSCore.framework */;
+			productReference = 242BF2272BBB37B100E4D112 /* SDDSCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2430DE5C2BB5B50500277123 /* SDDSCoreTests */ = {
+		242BF2302BBB37B100E4D112 /* SDDSCoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2430DE6A2BB5B50500277123 /* Build configuration list for PBXNativeTarget "SDDSCoreTests" */;
+			buildConfigurationList = 242BF23E2BBB37B100E4D112 /* Build configuration list for PBXNativeTarget "SDDSCoreTests" */;
 			buildPhases = (
-				2430DE592BB5B50500277123 /* Sources */,
-				2430DE5A2BB5B50500277123 /* Frameworks */,
-				2430DE5B2BB5B50500277123 /* Resources */,
+				242BF22D2BBB37B100E4D112 /* Sources */,
+				242BF22E2BBB37B100E4D112 /* Frameworks */,
+				242BF22F2BBB37B100E4D112 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2430DE602BB5B50500277123 /* PBXTargetDependency */,
+				242BF2342BBB37B100E4D112 /* PBXTargetDependency */,
 			);
 			name = SDDSCoreTests;
 			productName = SDDSCoreTests;
-			productReference = 2430DE5D2BB5B50500277123 /* SDDSCoreTests.xctest */;
+			productReference = 242BF2312BBB37B100E4D112 /* SDDSCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2430DE4A2BB5B50500277123 /* Project object */ = {
+		242BF21E2BBB37B100E4D112 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					2430DE522BB5B50500277123 = {
+					242BF2262BBB37B100E4D112 = {
 						CreatedOnToolsVersion = 15.2;
 					};
-					2430DE5C2BB5B50500277123 = {
+					242BF2302BBB37B100E4D112 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 2430DE4D2BB5B50500277123 /* Build configuration list for PBXProject "SDDSCore" */;
+			buildConfigurationList = 242BF2212BBB37B100E4D112 /* Build configuration list for PBXProject "SDDSCore" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,26 +161,26 @@
 				en,
 				Base,
 			);
-			mainGroup = 2430DE492BB5B50500277123;
-			productRefGroup = 2430DE542BB5B50500277123 /* Products */;
+			mainGroup = 242BF21D2BBB37B100E4D112;
+			productRefGroup = 242BF2282BBB37B100E4D112 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2430DE522BB5B50500277123 /* SDDSCore */,
-				2430DE5C2BB5B50500277123 /* SDDSCoreTests */,
+				242BF2262BBB37B100E4D112 /* SDDSCore */,
+				242BF2302BBB37B100E4D112 /* SDDSCoreTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2430DE512BB5B50500277123 /* Resources */ = {
+		242BF2252BBB37B100E4D112 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2430DE5B2BB5B50500277123 /* Resources */ = {
+		242BF22F2BBB37B100E4D112 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,56 +189,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2430DEE92BB6B32700277123 /* Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Lint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/../lint.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2430DE4F2BB5B50500277123 /* Sources */ = {
+		242BF2232BBB37B100E4D112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DE582BB5B50500277123 /* SDDSCore.docc in Sources */,
+				242BF22C2BBB37B100E4D112 /* SDDSCore.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2430DE592BB5B50500277123 /* Sources */ = {
+		242BF22D2BBB37B100E4D112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DE632BB5B50500277123 /* SDDSCoreTests.swift in Sources */,
+				242BF2372BBB37B100E4D112 /* SDDSCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2430DE602BB5B50500277123 /* PBXTargetDependency */ = {
+		242BF2342BBB37B100E4D112 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2430DE522BB5B50500277123 /* SDDSCore */;
-			targetProxy = 2430DE5F2BB5B50500277123 /* PBXContainerItemProxy */;
+			target = 242BF2262BBB37B100E4D112 /* SDDSCore */;
+			targetProxy = 242BF2332BBB37B100E4D112 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2430DE652BB5B50500277123 /* Debug */ = {
+		242BF2392BBB37B100E4D112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,7 +256,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -306,7 +284,7 @@
 			};
 			name = Debug;
 		};
-		2430DE662BB5B50500277123 /* Release */ = {
+		242BF23A2BBB37B100E4D112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -345,7 +323,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -366,7 +344,7 @@
 			};
 			name = Release;
 		};
-		2430DE682BB5B50500277123 /* Debug */ = {
+		242BF23C2BBB37B100E4D112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -401,7 +379,7 @@
 			};
 			name = Debug;
 		};
-		2430DE692BB5B50500277123 /* Release */ = {
+		242BF23D2BBB37B100E4D112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -436,7 +414,7 @@
 			};
 			name = Release;
 		};
-		2430DE6B2BB5B50500277123 /* Debug */ = {
+		242BF23F2BBB37B100E4D112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -456,7 +434,7 @@
 			};
 			name = Debug;
 		};
-		2430DE6C2BB5B50500277123 /* Release */ = {
+		242BF2402BBB37B100E4D112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -479,34 +457,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2430DE4D2BB5B50500277123 /* Build configuration list for PBXProject "SDDSCore" */ = {
+		242BF2212BBB37B100E4D112 /* Build configuration list for PBXProject "SDDSCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2430DE652BB5B50500277123 /* Debug */,
-				2430DE662BB5B50500277123 /* Release */,
+				242BF2392BBB37B100E4D112 /* Debug */,
+				242BF23A2BBB37B100E4D112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2430DE672BB5B50500277123 /* Build configuration list for PBXNativeTarget "SDDSCore" */ = {
+		242BF23B2BBB37B100E4D112 /* Build configuration list for PBXNativeTarget "SDDSCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2430DE682BB5B50500277123 /* Debug */,
-				2430DE692BB5B50500277123 /* Release */,
+				242BF23C2BBB37B100E4D112 /* Debug */,
+				242BF23D2BBB37B100E4D112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2430DE6A2BB5B50500277123 /* Build configuration list for PBXNativeTarget "SDDSCoreTests" */ = {
+		242BF23E2BBB37B100E4D112 /* Build configuration list for PBXNativeTarget "SDDSCoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2430DE6B2BB5B50500277123 /* Debug */,
-				2430DE6C2BB5B50500277123 /* Release */,
+				242BF23F2BBB37B100E4D112 /* Debug */,
+				242BF2402BBB37B100E4D112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2430DE4A2BB5B50500277123 /* Project object */;
+	rootObject = 242BF21E2BBB37B100E4D112 /* Project object */;
 }

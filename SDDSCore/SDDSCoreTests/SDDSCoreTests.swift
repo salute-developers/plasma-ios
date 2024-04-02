@@ -1,3 +1,8 @@
+//
+//  Created by Калтырин Владимир Александрович on 01.04.2024.
+//  Copyright © 2024 Sberbank. All rights reserved.
+//
+
 import XCTest
 @testable import SDDSCore
 
