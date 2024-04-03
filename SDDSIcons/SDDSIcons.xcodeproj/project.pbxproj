@@ -46,7 +46,7 @@
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		242BF24E2BBC687700E4D112 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
-		242BF2582BBD941D00E4D112 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		242BF2582BBD941D00E4D112 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
 		242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDDSIcons.podspec; sourceTree = "<group>"; };
 		242BF26E2BBDAE4A00E4D112 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		242BF2572BBD940700E4D112 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				242BF2582BBD941D00E4D112 /* build.sh */,
+				242BF2582BBD941D00E4D112 /* build_xcframework.sh */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		242BF2622BBDA0CC00E4D112 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -279,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/Scripts/build.sh\"\n";
+			shellScript = "/bin/sh \"${SRCROOT}/Scripts/build_xcframework.sh\"\n";
 		};
 		2430DEE72BB6B30700277123 /* Lint */ = {
 			isa = PBXShellScriptBuildPhase;
