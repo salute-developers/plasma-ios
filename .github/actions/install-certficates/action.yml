@@ -3,7 +3,7 @@ name: 'Install iOS Certificates'
 description: 'Install the Apple certificate and provisioning profile'
 
 runs:
-  environment: sdds
+  using: 'composite'
   steps:
     - name: Install the Apple certificate and provisioning profile
         env:
