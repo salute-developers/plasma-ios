@@ -26,7 +26,7 @@
    inputs:
      - SDDSIcons/Assets.xcassets
    outputs:
-     - templateName: swift5
+     - templatePath: Templates/assets.stencil
        params:
          forceProvidesNamespaces: true
          publicAccess: true

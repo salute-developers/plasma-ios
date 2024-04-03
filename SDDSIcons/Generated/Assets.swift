@@ -1,9 +1,8 @@
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
-#if os(macOS)
-  import AppKit
-#elseif os(iOS)
+
+#if os(iOS)
   import UIKit
 #elseif os(tvOS) || os(watchOS)
   import UIKit
@@ -22,7 +21,10 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
-  public static let testIcon = ImageAsset(name: "testIcon")
+  public static let apple = ImageAsset(name: "Apple")
+  public static let google = ImageAsset(name: "Google")
+  public static let meta = ImageAsset(name: "Meta")
+  public static let microsoft = ImageAsset(name: "Microsoft")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
@@ -31,20 +33,15 @@ public enum Asset {
 public struct ImageAsset {
   public fileprivate(set) var name: String
 
-  #if os(macOS)
-  public typealias Image = NSImage
-  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  #if os(iOS) || os(tvOS) || os(watchOS)
   public typealias Image = UIImage
   #endif
 
   @available(iOS 8.0, tvOS 9.0, watchOS 2.0, macOS 10.7, *)
-  public var image: Image {
+  public var uiImage: Image {
     let bundle = BundleToken.bundle
     #if os(iOS) || os(tvOS)
     let image = Image(named: name, in: bundle, compatibleWith: nil)
-    #elseif os(macOS)
-    let name = NSImage.Name(self.name)
-    let image = (bundle == .main) ? NSImage(named: name) : bundle.image(forResource: name)
     #elseif os(watchOS)
     let image = Image(named: name)
     #endif
@@ -66,8 +63,8 @@ public struct ImageAsset {
   #endif
 
   #if canImport(SwiftUI)
-  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-  public var swiftUIImage: SwiftUI.Image {
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var image: SwiftUI.Image {
     SwiftUI.Image(asset: self)
   }
   #endif
@@ -81,8 +78,6 @@ public extension ImageAsset.Image {
     #if os(iOS) || os(tvOS)
     let bundle = BundleToken.bundle
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
-    #elseif os(macOS)
-    self.init(named: NSImage.Name(asset.name))
     #elseif os(watchOS)
     self.init(named: asset.name)
     #endif
@@ -90,7 +85,7 @@ public extension ImageAsset.Image {
 }
 
 #if canImport(SwiftUI)
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 public extension SwiftUI.Image {
   init(asset: ImageAsset) {
     let bundle = BundleToken.bundle
@@ -120,3 +115,4 @@ private final class BundleToken {
   }()
 }
 // swiftlint:enable convenience_type
+
