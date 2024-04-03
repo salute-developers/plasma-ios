@@ -3,7 +3,7 @@ name: 'Install iOS Certificates'
 description: 'Install the Apple certificate and provisioning profile'
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     run: |
       # create variables
