@@ -49,6 +49,7 @@
 		242BF2582BBD941D00E4D112 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
 		242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDDSIcons.podspec; sourceTree = "<group>"; };
+		242BF26E2BBDAE4A00E4D112 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DE9E2BB5B53B00277123 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
 		2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
+				242BF26E2BBDAE4A00E4D112 /* Package.swift */,
 				242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */,
 				242BF2472BBC673300E4D112 /* swiftgen.yml */,
 				242BF26A2BBDA47A00E4D112 /* build */,
