@@ -1,4 +1,4 @@
-name: 'Prepare Android environment'
+name: 'Install iOS Certificates'
 
 description: 'Install the Apple certificate and provisioning profile'
 
