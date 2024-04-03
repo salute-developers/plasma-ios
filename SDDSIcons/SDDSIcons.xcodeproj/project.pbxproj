@@ -6,12 +6,24 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		242BF25E2BBDA0C300E4D112 /* Build XCFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 242BF2612BBDA0C400E4D112 /* Build configuration list for PBXAggregateTarget "Build XCFramework" */;
+			buildPhases = (
+				242BF2622BBDA0CC00E4D112 /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = "Build XCFramework";
+			productName = "Build XCFramework";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		242BF2422BBC600D00E4D112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242BF2412BBC600D00E4D112 /* Assets.xcassets */; };
 		242BF2442BBC610200E4D112 /* SDDSIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF2432BBC610200E4D112 /* SDDSIcons.swift */; };
-		242BF2482BBC673300E4D112 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 242BF2472BBC673300E4D112 /* swiftgen.yml */; };
 		242BF24F2BBC687700E4D112 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF24E2BBC687700E4D112 /* Assets.swift */; };
-		242BF2562BBD8AB000E4D112 /* assets.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 242BF2552BBD8AB000E4D112 /* assets.stencil */; };
 		2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */; };
 		2430DEA62BB5B53B00277123 /* SDDSIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */; };
 		2430DEAB2BB5B53B00277123 /* SDDSIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */; };
@@ -34,6 +46,9 @@
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		242BF24E2BBC687700E4D112 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
+		242BF2582BBD941D00E4D112 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
+		242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDDSIcons.podspec; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DE9E2BB5B53B00277123 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
 		2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
@@ -76,11 +91,30 @@
 			path = Templates;
 			sourceTree = "<group>";
 		};
+		242BF2572BBD940700E4D112 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				242BF2582BBD941D00E4D112 /* build.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		242BF26A2BBDA47A00E4D112 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
+				242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */,
 				242BF2472BBC673300E4D112 /* swiftgen.yml */,
+				242BF26A2BBDA47A00E4D112 /* build */,
 				242BF24D2BBC687700E4D112 /* Generated */,
+				242BF2572BBD940700E4D112 /* Scripts */,
 				242BF2542BBD8AB000E4D112 /* Templates */,
 				2430DE9D2BB5B53B00277123 /* SDDSIcons */,
 				2430DEA92BB5B53B00277123 /* SDDSIconsTests */,
@@ -177,6 +211,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					242BF25E2BBDA0C300E4D112 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					2430DE9A2BB5B53B00277123 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -200,6 +237,7 @@
 			targets = (
 				2430DE9A2BB5B53B00277123 /* SDDSIcons */,
 				2430DEA42BB5B53B00277123 /* SDDSIconsTests */,
+				242BF25E2BBDA0C300E4D112 /* Build XCFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -210,8 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				242BF2422BBC600D00E4D112 /* Assets.xcassets in Resources */,
-				242BF2562BBD8AB000E4D112 /* assets.stencil in Resources */,
-				242BF2482BBC673300E4D112 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +261,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		242BF2622BBDA0CC00E4D112 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/Scripts/build.sh\"\n";
+		};
 		2430DEE72BB6B30700277123 /* Lint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -275,6 +330,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		242BF25F2BBDA0C400E4D112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDMYYG676V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		242BF2602BBDA0C400E4D112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDMYYG676V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2430DEAD2BB5B53B00277123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -314,7 +387,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -381,7 +454,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -519,6 +592,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		242BF2612BBDA0C400E4D112 /* Build configuration list for PBXAggregateTarget "Build XCFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				242BF25F2BBDA0C400E4D112 /* Debug */,
+				242BF2602BBDA0C400E4D112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2430DE952BB5B53B00277123 /* Build configuration list for PBXProject "SDDSIcons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
