@@ -1,0 +1,98 @@
+name: Update Icons Pack
+
+on:
+  workflow_dispatch:
+    inputs:
+      plasma-ref:
+        required: true
+        default: master
+      plasma-version:
+        required: true
+  repository_dispatch:
+    types: [ build-icons ]
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      # делаем сheckout в текущем репозитория
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+          fetch-depth: 0
+          path: current
+
+      # делаем сheckout репозитория plasma
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          repository: salute-developers/plasma
+          ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
+          show-progress: false
+          path: plasma
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'plasma/.nvmrc'
+
+      - name: Install plasma web project deps
+        working-directory: ./plasma
+        run: npm ci
+
+      - name: Generate iOS icons
+        working-directory: ./plasma
+        run: |
+          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
+          npm run generate:ios --prefix="packages/plasma-icons"
+          
+      - name: Extract current version
+        id: extract_version
+        working-directory: ./current
+        shell: bash
+        run: |
+          PLIST_PATH=${{ github.workspace}}/SDDSIcons/info.plist
+          echo PLIST_PATH
+          VER=$(grep -A1 'CGBundleVersion' $PLIST_PATH | grep '<string>' | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
+          echo "CFBundleVersion is $VER"
+          echo "tag=SDDSIcons-v$VER" >> $GITHUB_OUTPUT
+          
+      - name: Verify release branch not exists
+        working-directory: ./current
+        shell: bash
+        run: |
+          git fetch --all
+          if git branch -a | grep -q release/${{ steps.extract_version.outputs.tag }}; then exit 1; else exit 0; fi
+          
+      - name: Create release branch
+        working-directory: ./current
+        shell: bash
+        run: |
+          git fetch --all
+          git checkout -b release/${{steps.extract_version.outputs.tag}} develop
+          
+      #- name: Create drawables folder
+      #  working-directory: ./current
+      #  continue-on-error: true
+      #  run: mkdir -p ./sdds-core/icons/src/main/res/drawable
+
+      - name: Move generated icons to XCAssets
+        run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
+
+      - name: Create tag and release pull request
+        working-directory: ./current
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          TAG=${{steps.extract_version.outputs.tag}}
+          PLASMA_VER=${{ github.event.client_payload.version || github.event.inputs.plasma-version }}
+          git config --local user.email "salutedevs@gmail.com"
+          git config --local user.name "Salute iOS Team"
+          git add ./SDDSIcons/SDDSIcons/Assets.xcassets/
+          git commit -m "feat(sdds-acore/icons): New icons were added from plasma v$PLASMA_VER"
+          git push --set-upstream origin release/$TAG
+          gh pr create --base main --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
+
