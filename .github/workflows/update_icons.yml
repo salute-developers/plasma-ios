@@ -15,6 +15,7 @@ on:
 jobs:
   icons:
     runs-on: macos-latest
+    environment: sdds
 
     steps:
       # делаем сheckout в текущем репозитория
