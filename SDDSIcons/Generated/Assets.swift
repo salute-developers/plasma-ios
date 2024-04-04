@@ -22,8 +22,11 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
   public static let apple = ImageAsset(name: "Apple")
+  public static let google1 = ImageAsset(name: "Google 1")
   public static let google = ImageAsset(name: "Google")
+  public static let meta1 = ImageAsset(name: "Meta 1")
   public static let meta = ImageAsset(name: "Meta")
+  public static let microsoft1 = ImageAsset(name: "Microsoft 1")
   public static let microsoft = ImageAsset(name: "Microsoft")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
