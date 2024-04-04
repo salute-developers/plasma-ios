@@ -4,20 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "SddsIcons",
+    name: "SDDSIcons",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "SddsIcons",
+            name: "SDDSIcons",
             targets: ["SddsIcons"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "SddsIcons"),
-        .testTarget(
-            name: "SddsIconsTests",
-            dependencies: ["SddsIcons"]),
+        .binaryTarget(
+            name: "SDDSIcons",
+            url: "https://github.com/salute-developers/plasma-ios/releases/download/sdds-icons-v0.1.0/sdds-icons-0.1.0.zip",
+            checksum: "25e90c3c17c44a4a4404c66a9d3f81599a30dce59db863e414cd04fa00655297"
+        )
     ]
 )
