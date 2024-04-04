@@ -27,29 +27,29 @@ jobs:
           path: current
 
       # делаем сheckout репозитория plasma
-      #- name: Checkout to Plasma Web
-      #  uses: actions/checkout@v4
-      #  with:
-      #    repository: salute-developers/plasma
-      #    #ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
-      #    ref: feat-icons-png-generator
-      #    show-progress: false
-      #    path: plasma
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          repository: salute-developers/plasma
+          #ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
+          ref: feat-icons-png-generator
+          show-progress: false
+          path: plasma
 
-      #- name: Setup Node.js
-      #  uses: actions/setup-node@v3
-      #  with:
-      #    node-version-file: 'plasma/.nvmrc'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'plasma/.nvmrc'
 
-      #- name: Install plasma web project deps
-      #  working-directory: ./plasma
-      #  run: npm ci
+      - name: Install plasma web project deps
+        working-directory: ./plasma
+        run: npm ci
 
-      #- name: Generate iOS icons
-      #  working-directory: ./plasma
-      #  run: |
-      #    npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
-      #    npm run generate:ios --prefix="packages/plasma-icons"
+      - name: Generate iOS icons
+        working-directory: ./plasma
+        run: |
+          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
+          npm run generate:ios --prefix="packages/plasma-icons"
           
       - name: Extract current version
         id: extract_version
@@ -74,8 +74,8 @@ jobs:
           git fetch --all
           git checkout -b release/${{steps.extract_version.outputs.tag}}
           
-      #- name: Move generated icons to XCAssets
-      #  run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
+      - name: Move generated icons to XCAssets
+        run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
         
       - name: Install SwiftGen
         run: |
