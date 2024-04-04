@@ -73,8 +73,8 @@ jobs:
           git fetch --all
           git checkout -b release/${{steps.extract_version.outputs.tag}}
           
-      - name: Move generated icons to XCAssets
-        run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
+      #- name: Move generated icons to XCAssets
+      #  run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
         
       - name: Install SwiftGen
         run: |
