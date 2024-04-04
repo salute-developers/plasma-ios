@@ -24,6 +24,7 @@ jobs:
           show-progress: false
           fetch-depth: 0
           path: current
+          ref: ${{ github.event.pull_request.head.ref }}
 
       # делаем сheckout репозитория plasma
       #- name: Checkout to Plasma Web
