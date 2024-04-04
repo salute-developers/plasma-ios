@@ -81,6 +81,7 @@ jobs:
            brew install swiftgen
            
       - name: Run SwiftGen
+        working-directory: ./current
         run: |
            cd SDDSIcons
            swiftgen
