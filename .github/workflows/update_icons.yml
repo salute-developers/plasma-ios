@@ -55,9 +55,7 @@ jobs:
         working-directory: ./current
         shell: bash
         run: |
-          PLIST_PATH=./SDDSIcons/info.plist
-          echo PLIST_PATH
-          VER=$(grep -A1 'CGBundleVersion' $PLIST_PATH | grep '<string>' | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
+          VER=$(grep -A1 'CGBundleVersion' ./SDDSIcons/info.plist | grep '<string>' | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
           echo "CFBundleVersion is $VER"
           echo "tag=SDDSIcons-v$VER" >> $GITHUB_OUTPUT
           
