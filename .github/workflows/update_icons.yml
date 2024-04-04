@@ -1,12 +1,11 @@
 name: Update Icons Pack
 
 on:
-  pull_request:
   workflow_dispatch:
     inputs:
       plasma-ref:
         required: true
-        default: master
+        default: feat-icons-png-generator
       plasma-version:
         required: true
   repository_dispatch:
