@@ -19,6 +19,7 @@ jobs:
     steps:
       # делаем сheckout в текущем репозитория
       - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           show-progress: false
@@ -44,11 +45,11 @@ jobs:
         working-directory: ./plasma
         run: npm ci
 
-      - name: Generate iOS icons
-        working-directory: ./plasma
-        run: |
-          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
-          npm run generate:ios --prefix="packages/plasma-icons"
+      #- name: Generate iOS icons
+      #  working-directory: ./plasma
+      #  run: |
+      #    npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
+      #    npm run generate:ios --prefix="packages/plasma-icons"
           
       - name: Extract current version
         id: extract_version
@@ -75,13 +76,17 @@ jobs:
           git fetch --all
           git checkout -b release/${{steps.extract_version.outputs.tag}} develop
           
-      #- name: Create drawables folder
-      #  working-directory: ./current
-      #  continue-on-error: true
-      #  run: mkdir -p ./sdds-core/icons/src/main/res/drawable
-
       - name: Move generated icons to XCAssets
         run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
+        
+      - name: Install SwiftGen
+        run: |
+           brew install swiftgen
+           
+      - name: Run SwiftGen
+        run: |
+           cd SDDSIcons
+           swiftgen
 
       - name: Create tag and release pull request
         working-directory: ./current
