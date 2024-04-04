@@ -19,7 +19,6 @@ jobs:
     steps:
       # делаем сheckout в текущем репозитория
       - name: Checkout
-      - name: Checkout
         uses: actions/checkout@v4
         with:
           show-progress: false
