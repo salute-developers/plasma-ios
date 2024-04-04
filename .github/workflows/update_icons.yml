@@ -24,7 +24,6 @@ jobs:
           show-progress: false
           fetch-depth: 0
           path: current
-          ref: ${{ github.event.pull_request.head.ref }}
 
       # делаем сheckout репозитория plasma
       #- name: Checkout to Plasma Web
@@ -72,7 +71,7 @@ jobs:
         shell: bash
         run: |
           git fetch --all
-          git checkout -b release/${{steps.extract_version.outputs.tag}} develop
+          git checkout -b release/0.0.1 develop
           
       - name: Move generated icons to XCAssets
         run: cp -rf plasma/packages/plasma-icons/ios-icons/. current/SDDSIcons/SDDSIcons/Assets.xcassets
