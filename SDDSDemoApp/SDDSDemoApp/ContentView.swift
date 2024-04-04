@@ -8,7 +8,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 if let bundle = bundle {
-                    Asset.testIcon.image
+                    Image("testIcon2")
                         .fixedSize()
                         .frame(width: 100, height: 100)
                         .foregroundColor(.red)
