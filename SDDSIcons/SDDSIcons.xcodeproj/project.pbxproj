@@ -50,12 +50,12 @@
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
 		242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDDSIcons.podspec; sourceTree = "<group>"; };
 		242BF26E2BBDAE4A00E4D112 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		242BF2712BBF014300E4D112 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DE9E2BB5B53B00277123 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
 		2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
 		2430DEA52BB5B53B00277123 /* SDDSIconsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSIconsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIconsTests.swift; sourceTree = "<group>"; };
+		243C6C462BBF14E900525EAD /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
-				242BF2712BBF014300E4D112 /* info.plist */,
+				243C6C462BBF14E900525EAD /* info.plist */,
 				242BF26E2BBDAE4A00E4D112 /* Package.swift */,
 				242BF26D2BBDA91E00E4D112 /* SDDSIcons.podspec */,
 				242BF2472BBC673300E4D112 /* swiftgen.yml */,
@@ -495,6 +495,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "${SRCROOT}/info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,6 +533,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "${SRCROOT}/info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
