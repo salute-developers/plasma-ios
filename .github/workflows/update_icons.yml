@@ -14,14 +14,13 @@ on:
 
 jobs:
   icons:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       # делаем сheckout в текущем репозитория
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: develop
           show-progress: false
           fetch-depth: 0
           path: current
