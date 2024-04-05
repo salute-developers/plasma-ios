@@ -16,6 +16,7 @@ jobs:
   icons:
     runs-on: macos-latest
     environment: sdds
+    env:
         lerna-scope: '--scope="@salutejs/plasma-icons"'
 
     steps:
