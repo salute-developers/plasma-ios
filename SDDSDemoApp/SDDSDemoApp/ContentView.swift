@@ -1,13 +1,27 @@
 import SwiftUI
+import SDDSIcons
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-            Text("Hello, world!")
+        ZStack {
+            Color.red.opacity(0.3)
+                .ignoresSafeArea()
+            VStack {
+                if let bundle = bundle {
+                    Image("testIcon2")
+                        .fixedSize()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.red)
+                } else {
+                    Text("no bundle")
+                }
+            }
+            .padding()
         }
-        .padding()
+    }
+    
+    private var bundle: Bundle? {
+        Bundle(for: Icons.self)
     }
 }
 

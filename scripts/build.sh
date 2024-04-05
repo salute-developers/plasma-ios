@@ -28,14 +28,14 @@ for MODULE in "${!modules[@]}"; do
     
     print_info "Making an archive for iOS device..."
     iOS_ARCHIVE_PATH="${BUILD_PATH}/${SCHEME}-iphoneos.xcarchive"
-    SKIP_LINT=YES xcodebuild archive -project ${XCODE_PROJECT_PATH} -scheme ${SCHEME} -archivePath "${iOS_ARCHIVE_PATH}" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+    SKIP_LINT=YES BUILD_ALL=YES xcodebuild archive -project ${XCODE_PROJECT_PATH} -scheme ${SCHEME} -archivePath "${iOS_ARCHIVE_PATH}" -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
     
     print_info "Making an archive for iOS simulator..."
     iOS_SIMULATOR_ARCHIVE_PATH="${BUILD_PATH}/${SCHEME}-iossimulator.xcarchive"
-    SKIP_LINT=YES xcodebuild archive -project ${XCODE_PROJECT_PATH} -scheme ${SCHEME} -archivePath "${iOS_SIMULATOR_ARCHIVE_PATH}" -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+    SKIP_LINT=YES BUILD_ALL=YES xcodebuild archive -project ${XCODE_PROJECT_PATH} -scheme ${SCHEME} -archivePath "${iOS_SIMULATOR_ARCHIVE_PATH}" -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
     
     print_info "Making XCFramework..."
-    SKIP_LINT=YES xcodebuild -create-xcframework -framework "${BUILD_PATH}/${SCHEME}-iphoneos.xcarchive/Products/Library/Frameworks/${SCHEME}.framework" -framework "${BUILD_PATH}/${SCHEME}-iossimulator.xcarchive/Products/Library/Frameworks/${SCHEME}.framework" -output "${BUILD_PATH}/${SCHEME}.xcframework"
+    SKIP_LINT=YES BUILD_ALL=YES xcodebuild -create-xcframework -framework "${BUILD_PATH}/${SCHEME}-iphoneos.xcarchive/Products/Library/Frameworks/${SCHEME}.framework" -framework "${BUILD_PATH}/${SCHEME}-iossimulator.xcarchive/Products/Library/Frameworks/${SCHEME}.framework" -output "${BUILD_PATH}/${SCHEME}.xcframework"
 
     if [ $? -ne 0 ]; then
         print_error "Build failed for the scheme $SCHEME."
