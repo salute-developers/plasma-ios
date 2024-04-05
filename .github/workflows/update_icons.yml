@@ -16,6 +16,7 @@ jobs:
   icons:
     runs-on: macos-latest
     environment: sdds
+        lerna-scope: '--scope="@salutejs/plasma-icons"'
 
     steps:
       # делаем сheckout в текущем репозитория
@@ -44,12 +45,16 @@ jobs:
       - name: Install plasma web project deps
         working-directory: ./plasma
         run: npm ci
+          
+      - name: Install plasma-icons
+        working-directory: ./plasma
+        run: |
+          npx lerna bootstrap ${{ env.lerna-scope }}
 
       - name: Generate iOS icons
         working-directory: ./plasma
         run: |
-          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
-          npm run generate:ios --prefix="packages/plasma-icons"
+          npx lerna ${{ env.lerna-scope }} run generate:ios
           
       - name: Extract current version
         id: extract_version
