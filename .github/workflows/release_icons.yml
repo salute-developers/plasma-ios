@@ -57,7 +57,8 @@ jobs:
       - name: Generate distribution zip
         id: zip_artifact
         run: |
-           TAG_NAME=${GITHUB_REF#refs/tags/}
+           #TAG_NAME=${GITHUB_REF#refs/tags/}
+           TAG_NAME="SDDSIcons-v1.0.0"
            echo "Tag name: $TAG_NAME"
            zip -r "${TAG_NAME}.zip" ./SDDSIcons/build/SDDSIcons.xcframework
            echo "::set-output name=zip_path::${TAG_NAME}.zip"
