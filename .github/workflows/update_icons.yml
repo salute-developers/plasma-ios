@@ -1,7 +1,6 @@
 name: Update Icons Pack
 
 on:
-  pull_request:
   workflow_dispatch:
     inputs:
       plasma-ref:
