@@ -305,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242BF2442BBC610200E4D112 /* SDDSIcons.swift in Sources */,
 				2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */,
 				242BF24F2BBC687700E4D112 /* Assets.swift in Sources */,
 			);
