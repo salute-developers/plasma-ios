@@ -54,7 +54,7 @@ jobs:
         run: |
           #TAG_NAME=${GITHUB_REF#refs/tags/}
           TAG_NAME="SDDSIcons-v1.0.0"
-          xcodebuild -project SDDSIcons/SDDSIcons.xcodeproj -scheme "Build XCFramework" BUILD_DIR=./$TAG_NAME
+          xcodebuild -project SDDSIcons/SDDSIcons.xcodeproj -scheme "Build XCFramework"
           
       - name: Generate distribution zip
         id: zip_artifact
@@ -63,7 +63,7 @@ jobs:
            TAG_NAME="SDDSIcons-v1.0.0"
            echo "Tag name: $TAG_NAME"
            cd SDDSIcons
-           #mv build $TAG_NAME
+           mv build $TAG_NAME
            zip -r ./../$TAG_NAME.zip $TAG_NAME/SDDSIcons.xcframework
            echo "::set-output name=zip_path::${TAG_NAME}.zip"
 
