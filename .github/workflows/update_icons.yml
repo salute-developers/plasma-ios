@@ -33,7 +33,7 @@ jobs:
         with:
           repository: salute-developers/plasma
           #ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
-          ref: feat-icons-png-generator
+          ref: dev
           show-progress: false
           path: plasma
 
@@ -106,4 +106,6 @@ jobs:
           git add ./SDDSIcons/Generated/Assets.swift
           git commit -m "feat(sdds-acore/icons): New icons were added from plasma v$PLASMA_VER"
           git push --set-upstream origin release/$TAG
-          gh pr create --base main --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
+          git tag $TAG
+          git push origin $TAG
+          gh pr create --base develop --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"

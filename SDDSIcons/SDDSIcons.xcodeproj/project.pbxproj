@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		242BF2422BBC600D00E4D112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242BF2412BBC600D00E4D112 /* Assets.xcassets */; };
-		242BF2442BBC610200E4D112 /* SDDSIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF2432BBC610200E4D112 /* SDDSIcons.swift */; };
 		242BF24F2BBC687700E4D112 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF24E2BBC687700E4D112 /* Assets.swift */; };
 		2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */; };
 		2430DEA62BB5B53B00277123 /* SDDSIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		242BF2412BBC600D00E4D112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		242BF2432BBC610200E4D112 /* SDDSIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIcons.swift; sourceTree = "<group>"; };
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		242BF24E2BBC687700E4D112 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				2430DE9E2BB5B53B00277123 /* SDDSIcons.h */,
 				2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */,
 				242BF2412BBC600D00E4D112 /* Assets.xcassets */,
-				242BF2432BBC610200E4D112 /* SDDSIcons.swift */,
 			);
 			path = SDDSIcons;
 			sourceTree = "<group>";
