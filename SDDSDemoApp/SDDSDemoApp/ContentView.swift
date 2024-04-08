@@ -7,14 +7,7 @@ struct ContentView: View {
             Color.red.opacity(0.3)
                 .ignoresSafeArea()
             VStack {
-                if let bundle = bundle {
-                    Image("testIcon2")
-                        .fixedSize()
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(.red)
-                } else {
-                    Text("no bundle")
-                }
+                Text("no bundle")
             }
             .padding()
         }
