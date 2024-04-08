@@ -106,6 +106,7 @@ jobs:
           git add ./SDDSIcons/SDDSIcons/Assets.xcassets/
           git add ./SDDSIcons/Generated/Assets.swift
           git commit -m "feat(sdds-acore/icons): New icons were added from plasma v$PLASMA_VER"
-          git tag $TAG
           git push --set-upstream origin release/$TAG
+          git tag $TAG
+          git push origin $TAG
           gh pr create --base main --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
