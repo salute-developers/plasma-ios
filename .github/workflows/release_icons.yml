@@ -1,7 +1,6 @@
 name: 'Publish icons Release'
 
 on:
-  pull_request:
   push:
     tags:
       - "SDDSIcons-v[0-9]+.[0-9]+.[0-9]+"
@@ -57,8 +56,7 @@ jobs:
       - name: Generate distribution zip
         id: zip_artifact
         run: |
-           #TAG_NAME=${GITHUB_REF#refs/tags/}
-           TAG_NAME="SDDSIcons-v0.0.1"
+           TAG_NAME=${GITHUB_REF#refs/tags/}
            echo "Tag name: $TAG_NAME"
            zip -r "${TAG_NAME}.zip" ./SDDSIcons/build/SDDSIcons.xcframework
            echo "::set-output name=zip_path::${TAG_NAME}.zip"
@@ -67,5 +65,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.zip_artifact.outputs.zip_path }}
-          tag_name: "0.0.1" #github.ref
+          tag_name: github.ref
           token: ${{ secrets.GH_TOKEN }}
