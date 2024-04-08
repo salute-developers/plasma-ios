@@ -67,5 +67,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.zip_artifact.outputs.zip_path }}
-          tag_name: ${{ github.ref }}
+          tag_name: "SDDSIcons-v1.0.0"
           token: ${{ secrets.GH_TOKEN }}
