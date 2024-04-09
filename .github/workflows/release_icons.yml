@@ -51,15 +51,13 @@ jobs:
 
       - name: Build SDDSIcons
         run: |
-          #TAG_NAME=${GITHUB_REF#refs/tags/}
-          TAG_NAME="SDDSIcons-v1.0.0"
+          TAG_NAME=${GITHUB_REF#refs/tags/}
           xcodebuild -project SDDSIcons/SDDSIcons.xcodeproj -scheme "Build XCFramework"
           
       - name: Generate distribution zip
         id: zip_artifact
         run: |
-           #TAG_NAME=${GITHUB_REF#refs/tags/}
-           TAG_NAME="SDDSIcons-v1.0.0"
+           TAG_NAME=${GITHUB_REF#refs/tags/}
            echo "Tag name: $TAG_NAME"
            cd SDDSIcons
            mv build $TAG_NAME
@@ -70,5 +68,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.zip_artifact.outputs.zip_path }}
-          tag_name: "SDDSIcons-v1.0.0"
+          tag_name: ${{ github.ref }}
           token: ${{ secrets.GH_TOKEN }}

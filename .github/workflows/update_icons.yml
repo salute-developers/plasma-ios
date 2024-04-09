@@ -1,6 +1,7 @@
 name: Update Icons Pack
 
 on:
+  pull_request:
   workflow_dispatch:
     inputs:
       plasma-ref:
@@ -108,4 +109,4 @@ jobs:
           git push --set-upstream origin release/$TAG
           git tag $TAG
           git push origin $TAG
-          gh pr create --base main --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
+          gh pr create --base develop --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
