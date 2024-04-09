@@ -34,7 +34,7 @@ jobs:
         with:
           repository: salute-developers/plasma
           #ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
-          ref: feat-icons-png-generator
+          ref: dev
           show-progress: false
           path: plasma
 
