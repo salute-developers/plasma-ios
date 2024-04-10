@@ -63,10 +63,11 @@ jobs:
            mv build $TAG_NAME
            zip -r ./../$TAG_NAME.zip $TAG_NAME/SDDSIcons.xcframework
            echo "::set-output name=zip_path::${TAG_NAME}.zip"
+           echo "::set-output name=release_title::${TAG_NAME}"
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.zip_artifact.outputs.zip_path }}
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ steps.zip_artifact.outputs.release_title }}
           token: ${{ secrets.GH_TOKEN }}
