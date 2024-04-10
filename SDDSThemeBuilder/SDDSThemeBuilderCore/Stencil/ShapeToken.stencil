@@ -1,0 +1,10 @@
+import SwiftUI
+import UIKit
+
+public extension ShapeToken {
+    {% for key, value in json %}
+    static var {{ key }}: Self {
+        Self(cornerRadius: {{ value.cornerRadius }})
+    }
+    {% endfor %}
+}

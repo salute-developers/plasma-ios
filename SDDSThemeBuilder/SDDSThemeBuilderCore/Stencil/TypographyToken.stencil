@@ -1,0 +1,40 @@
+import Foundation
+
+public extension AdaptiveTypographyToken {
+    {% for key, value in json %}
+    static var {{ key }}: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "{{ value.small.fontName }}",
+                weight: .{{ value.small.weight }},
+                style: .{{ value.small.style }},
+                size: {{ value.small.size }},
+                lineHeight: {{ value.small.lineHeight }},
+                kerning: {{ value.small.kerning }}
+            ),
+            medium: TypographyToken(
+                fontName: "{{ value.medium.fontName }}",
+                weight: .{{ value.medium.weight }},
+                style: .{{ value.medium.style }},
+                size: {{ value.medium.size }},
+                lineHeight: {{ value.medium.lineHeight }},
+                kerning: {{ value.medium.kerning }}
+            ),
+            large: TypographyToken(
+                fontName: "{{ value.large.fontName }}",
+                weight: .{{ value.large.weight }},
+                style: .{{ value.large.style }},
+                size: {{ value.large.size }},
+                lineHeight: {{ value.large.lineHeight }},
+                kerning: {{ value.large.kerning }}
+            )
+        )
+    }
+    {% endfor %}
+    
+    static var tokens: [Self] = [
+        {% for key in json %}
+        {{ key }},
+        {% endfor %}
+    ]
+}

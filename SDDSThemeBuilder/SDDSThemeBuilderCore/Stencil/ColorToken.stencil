@@ -1,0 +1,13 @@
+import SwiftUI
+import UIKit
+
+public extension ColorToken {
+    {% for key, value in json %}
+    static var {{ key }}: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "{{ value.dark }}")),
+            lightColor: Color(UIColor(hex: "{{ value.light }}"))
+        )
+    }
+    {% endfor %}
+}

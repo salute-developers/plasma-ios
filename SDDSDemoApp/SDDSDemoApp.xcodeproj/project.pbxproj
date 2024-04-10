@@ -20,6 +20,8 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
+		819B2A9D2BF27F0B00688624 /* SDDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */; };
+		819B2A9E2BF27F0B00688624 /* SDDSTheme.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2430DEE52BB5CE5100277123 /* SDDSUIKit.xcframework in Embed Frameworks */,
+				819B2A9E2BF27F0B00688624 /* SDDSTheme.xcframework in Embed Frameworks */,
 				2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */,
 				2430DEE32BB5CE5100277123 /* SDDSSwiftUI.xcframework in Embed Frameworks */,
 			);
@@ -70,6 +73,7 @@
 		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSTheme.xcframework; path = ../SDDSThemeBuilder/build/SDDSTheme.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2430DEE42BB5CE5100277123 /* SDDSUIKit.xcframework in Frameworks */,
+				819B2A9D2BF27F0B00688624 /* SDDSTheme.xcframework in Frameworks */,
 				2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */,
 				2430DEE22BB5CE5100277123 /* SDDSSwiftUI.xcframework in Frameworks */,
 			);
@@ -160,6 +165,7 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */,
 				2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */,
 				2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */,
 				2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */,
@@ -483,10 +489,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -503,6 +510,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -518,10 +526,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -538,6 +547,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
