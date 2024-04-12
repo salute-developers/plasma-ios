@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SDDSCore/SDDSCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SDDSUIKit/SDDSUIKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SDDSIcons/SDDSIcons.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SDDSSwiftUI/SDDSSwiftUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SDDSDemoApp/SDDSDemoApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:.github/workflows">
+   </FileRef>
+   <FileRef
+      location = "group:scripts">
+   </FileRef>
+   <FileRef
+      location = "group:README.MD">
+   </FileRef>
+   <FileRef
+      location = "group:CODEOWNERS">
+   </FileRef>
+   <FileRef
+      location = "group:CONTRIBUTING.md">
+   </FileRef>
+</Workspace>
