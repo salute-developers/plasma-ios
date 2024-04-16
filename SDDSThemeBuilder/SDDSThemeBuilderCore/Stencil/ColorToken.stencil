@@ -1,0 +1,10 @@
+import SwiftUI
+import UIKit
+
+public enum ColorToken {
+{% for colorName, colorHex in colors %}
+    public static var {{ colorName }}: Color {
+        Color(UIColor(hex: "{{ colorHex }}"))
+    }
+{% endfor %}
+}

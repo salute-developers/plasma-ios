@@ -15,11 +15,9 @@ final class DecodeSchemeCommand: Command {
         do {
             let data = try Data(contentsOf: schemeURL)
             let decoder = JSONDecoder()
-            let plasmaScheme = try decoder.decode(PlasmaScheme.self, from: data)
+            let scheme = try decoder.decode(Scheme.self, from: data)
             
-            print(plasmaScheme)
-            
-            return .scheme(plasmaScheme)
+            return .scheme(scheme)
         } catch {
             return .error(error)
         }
