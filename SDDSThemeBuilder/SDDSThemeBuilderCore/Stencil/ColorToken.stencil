@@ -1,0 +1,21 @@
+import SwiftUI
+import UIKit
+
+public enum ColorToken {
+    public struct Description {
+        /// Цвет для тёмной темы
+        public let darkColor: Color
+        
+        /// Цвет для светлой темы
+        public let lightColor: Color
+    }
+
+    {% for key, value in json %}
+    public static var {{ key }}: Description {
+        ColorToken.Description(
+            darkColor: Color(UIColor(hex: "{{ value.dark }}")),
+            lightColor: Color(UIColor(hex: "{{ value.light }}"))
+        )
+    }
+    {% endfor %}
+}
