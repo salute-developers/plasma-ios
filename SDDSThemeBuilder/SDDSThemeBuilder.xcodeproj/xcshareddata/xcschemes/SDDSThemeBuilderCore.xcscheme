@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "1500"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2489D0A02BC7F3790053AAB1"
-               BuildableName = "SDDSThemeBuilder"
-               BlueprintName = "SDDSThemeBuilder"
+               BlueprintIdentifier = "817539572BD0077200138866"
+               BuildableName = "SDDSThemeBuilderCore.framework"
+               BlueprintName = "SDDSThemeBuilderCore"
                ReferencedContainer = "container:SDDSThemeBuilder.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +28,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "817539602BD0077300138866"
+               BuildableName = "SDDSThemeBuilderCoreTests.xctest"
+               BlueprintName = "SDDSThemeBuilderCoreTests"
+               ReferencedContainer = "container:SDDSThemeBuilder.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "DownloadSchemeCommandTests">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -38,18 +56,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2489D0A02BC7F3790053AAB1"
-            BuildableName = "SDDSThemeBuilder"
-            BlueprintName = "SDDSThemeBuilder"
-            ReferencedContainer = "container:SDDSThemeBuilder.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
+      allowLocationSimulation = "YES">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +64,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2489D0A02BC7F3790053AAB1"
-            BuildableName = "SDDSThemeBuilder"
-            BlueprintName = "SDDSThemeBuilder"
+            BlueprintIdentifier = "817539572BD0077200138866"
+            BuildableName = "SDDSThemeBuilderCore.framework"
+            BlueprintName = "SDDSThemeBuilderCore"
             ReferencedContainer = "container:SDDSThemeBuilder.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

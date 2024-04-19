@@ -81,7 +81,7 @@ enum TokenKind: String, Codable {
     case fontFamily = "font-family"
 }
 
-struct Scheme: Codable {
+public struct Scheme: Codable {
     let name: String
     let version: String
     let color: Style
