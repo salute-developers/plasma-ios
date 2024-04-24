@@ -2,6 +2,7 @@ import SwiftUI
 import UIKit
 
 public enum ColorToken {
+<<<<<<< HEAD
     public struct Description {
         /// Цвет для тёмной темы
         public let darkColor: Color
@@ -18,4 +19,11 @@ public enum ColorToken {
         )
     }
     {% endfor %}
+=======
+{% for colorName, colorHex in colors %}
+    public static var {{ colorName }}: Color {
+        Color(UIColor(hex: "{{ colorHex }}"))
+    }
+{% endfor %}
+>>>>>>> develop
 }
