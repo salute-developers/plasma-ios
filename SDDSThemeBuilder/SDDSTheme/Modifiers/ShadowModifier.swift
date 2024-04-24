@@ -1,9 +1,10 @@
 import SwiftUI
 
-struct ShadowModifier: ViewModifier {
+/// Модификатор для применения токена теней
+public struct ShadowModifier: ViewModifier {
     let token: ShadowToken.Description
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .shadow(
                 color: token.color,
