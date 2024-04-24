@@ -9,7 +9,7 @@ final class DecodeSchemeCommand: Command {
         super.init(name: "Decode JSON Scheme")
     }
     
-    override func run() -> CommandResult {
+    @discardableResult override func run() -> CommandResult {
         super.run()
         
         do {

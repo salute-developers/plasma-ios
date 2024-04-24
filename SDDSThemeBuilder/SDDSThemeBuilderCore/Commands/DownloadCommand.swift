@@ -1,20 +1,20 @@
 import Foundation
 
-final class DownloadSchemeCommand: Command {
-    let schemeURL: URL
+final class DownloadCommand: Command {
+    let fileURL: URL
     let outputURL: URL?
     
     private let dispatchQueue = DispatchQueue(label: "ru.sdds.downloadSchemeCommand")
     private let urlSession: URLSession
     private let fileManager: FileManager
     
-    init(schemeURL: URL,
+    init(fileURL: URL,
          outputURL: URL? = nil,
          urlSession: URLSession = URLSession.shared,
          fileManager: FileManager = FileManager.default
     ) {
         
-        self.schemeURL = schemeURL
+        self.fileURL = fileURL
         self.outputURL = outputURL
         self.urlSession = urlSession
         self.fileManager = fileManager
@@ -22,14 +22,18 @@ final class DownloadSchemeCommand: Command {
         super.init(name: "Download JSON Scheme")
     }
     
-    override func run() -> CommandResult {
+    @discardableResult override func run() -> CommandResult {
         super.run()
+        
+        if let outputURL = outputURL, fileManager.fileExists(atPath: outputURL.path()) {
+            return .success
+        }
         
         return download()
     }
     
     private func download() -> CommandResult {
-        switch schemeURL.scheme {
+        switch fileURL.scheme {
         case "file":
             downloadFromLocalSource()
         case "http", "https":
@@ -46,10 +50,10 @@ final class DownloadSchemeCommand: Command {
                     try fileManager.removeItem(at: outputURL)
                 }
 
-                try fileManager.copyItem(at: schemeURL, to: outputURL)
+                try fileManager.copyItem(at: fileURL, to: outputURL)
             }
 
-            guard let data = try? Data(contentsOf: schemeURL) else {
+            guard let data = try? Data(contentsOf: fileURL) else {
                 return .error(URLError(.badURL))
             }
             return .data(data)
@@ -59,12 +63,12 @@ final class DownloadSchemeCommand: Command {
     }
     
     private func downloadFromRemoteSource() -> CommandResult {
-        let urlRequest = URLRequest(url: schemeURL)
+        let urlRequest = URLRequest(url: fileURL)
         
         var result: Result<CommandResult, Error> = .failure(URLError(.unknown))
         let group = DispatchGroup()
         group.enter()
-        urlSession.dataTask(with: urlRequest) { data, response, error in
+        let task = urlSession.downloadTask(with: urlRequest) { url, response, error in
             defer {
                 group.leave()
             }
@@ -74,21 +78,25 @@ final class DownloadSchemeCommand: Command {
                 return
             }
             
-            guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            guard let url = url, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 result = .failure(URLError(.badServerResponse))
                 return
             }
             
             do {
                 if let outputURL = self.outputURL {
-                    try data.write(to: outputURL)
+                    let data = try Data(contentsOf: url)
+                    if self.fileManager.fileExists(atPath: outputURL.path()) {
+                        try self.fileManager.removeItem(at: outputURL)
+                    }
+                    self.fileManager.createFile(atPath: outputURL.path(), contents: data)
                 }
-                result = .success(.data(data))
+                result = .success(.success)
             } catch {
                 result = .failure(error)
             }
-            
         }
+        task.resume()
         group.wait()
         
         switch result {

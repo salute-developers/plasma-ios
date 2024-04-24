@@ -9,9 +9,19 @@ extension Sequence where Element: Equatable {
 extension String {
     ///  Перевод строка вида "dark.text.primary" в camelCase "darkTextPrimary"
     var camelCase: String {
-        let components = self.split(separator: ".")
+        return tokenComponents.camelCase
+    }
+    
+    var tokenComponents: [String] {
+        let result = self.replacingOccurrences(of: "-", with: ".")
+        let components = result.components(separatedBy: ".")
+        return components
+    }
+}
 
-        let camelCaseString = components.enumerated().map { index, component -> String in
+extension Array where Element == String {
+    var camelCase: String {
+        let camelCaseString = self.enumerated().map { index, component -> String in
             if index == 0 {
                 return String(component)
             } else {

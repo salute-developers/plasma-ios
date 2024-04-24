@@ -1,0 +1,14 @@
+import SwiftUI
+import UIKit
+
+public enum ShapeToken {
+    public struct Description {
+        public let cornerRadius: CGFloat
+    }
+
+    {% for key, value in json %}
+    public static var {{ key }}: Description {
+        Description(cornerRadius: {{ value.cornerRadius }})
+    }
+    {% endfor %}
+}

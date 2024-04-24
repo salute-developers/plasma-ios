@@ -50,6 +50,28 @@
             ReferencedContainer = "container:SDDSThemeBuilder.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "https://github.com/salute-developers/theme-converter/raw/main/themes/stylesSalute/0.1.0.zip"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilderCore/Stencil"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilder"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSTheme/Generated"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -3,27 +3,27 @@ import ArgumentParser
 import SDDSThemeBuilderCore
 
 struct ThemeBuilder: ParsableCommand {
-    @Argument var scheme: String
-    @Argument var colorsScheme: String
+    @Argument var schemeZip: String
+    @Argument var palette: String
     @Argument var templates: String
-    @Argument var output: String
+    @Argument var outputDirectory: String
     @Argument var generatedOutput: String
     
     func run() throws {
-        guard let schemeURL = URL(string: scheme),
-              let colorsSchemeURL = URL(string: colorsScheme),
+        guard let schemeURL = URL(string: schemeZip),
+              let paletteURL = URL(string: palette),
               let templatesURL = URL(string: templates),
-              let outputURL = URL(string: output),
+              let outputDirectoryURL = URL(string: outputDirectory),
               let generatedOutputURL = URL(string: generatedOutput)
         else {
             return
         }
         
         let app = App(
-            schemeURL: schemeURL,
-            colorsSchemeURL: colorsSchemeURL,
+            schemeZipURL: schemeURL,
+            paletteURL: paletteURL,
             templatesURL: templatesURL,
-            localSchemeURL: outputURL,
+            outputDirectoryURL: outputDirectoryURL,
             generatedOutput: generatedOutputURL
         )
         app.run()

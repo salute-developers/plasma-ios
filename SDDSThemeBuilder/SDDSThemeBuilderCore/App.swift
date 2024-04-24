@@ -2,35 +2,64 @@ import Foundation
 import Stencil
 
 public final class App {
-    let schemeURL: URL
-    let colorsSchemeURL: URL
+    let schemeZipURL: URL
+    let paletteURL: URL
     let templatesURL: URL
-    let localSchemeURL: URL
+    let outputDirectoryURL: URL
     let generatedOutputURL: URL
     
-    lazy var commands: [Runnable] = {
-        [
-            DownloadSchemeCommand(schemeURL: schemeURL, outputURL: localSchemeURL),
-            DecodeSchemeCommand(schemeURL: localSchemeURL),
-            GenerateColorTokensCommand(
-                templatesURL: templatesURL,
-                generatedOutputURL: generatedOutputURL,
-                downloadSchemeCommand: DownloadSchemeCommand(schemeURL: colorsSchemeURL),
-                templateRender: TemplateRenderer()
-            )
-        ]
-    }()
+    private func executeCommands() {
+        DownloadCommand(fileURL: schemeZipURL, outputURL: schemeZipLocalURL).run()
+        DownloadCommand(fileURL: paletteURL, outputURL: paletteLocalURL).run()
+        
+        let result = UnpackThemeCommand(schemeURL: schemeZipLocalURL, outputDirectoryURL: outputDirectoryURL).run()
+        guard let schemeDirectory = result.asSchemeDirectory else {
+            return
+        }
+        
+        DecodeSchemeCommand(schemeURL: schemeDirectory.url(for: .main)).run()
+        GenerateTokensCommand(
+            name: "Generate Color Tokens",
+            schemeURL: schemeDirectory.url(for: .colors),
+            templatesURL: templatesURL,
+            template: .color,
+            generatedOutputURL: generatedOutputURL,
+            contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
+        ).run()
+        GenerateTokensCommand(
+            name: "Generate Shadow Tokens",
+            schemeURL: schemeDirectory.url(for: .shadows),
+            templatesURL: templatesURL,
+            template: .shadow,
+            generatedOutputURL: generatedOutputURL
+        ).run()
+        GenerateTokensCommand(
+            name: "Generate Shape Tokens",
+            schemeURL: schemeDirectory.url(for: .shapes),
+            templatesURL: templatesURL,
+            template: .shape,
+            generatedOutputURL: generatedOutputURL
+        ).run()
+    }
     
-    public init(schemeURL: URL,
-         colorsSchemeURL: URL,
-         templatesURL: URL,
-         localSchemeURL: URL,
-         generatedOutput: URL) {
-        self.schemeURL = schemeURL
-        self.colorsSchemeURL = colorsSchemeURL
+    public init(schemeZipURL: URL,
+                paletteURL: URL,
+                templatesURL: URL,
+                outputDirectoryURL: URL,
+                generatedOutput: URL) {
+        self.schemeZipURL = schemeZipURL
+        self.paletteURL = paletteURL
         self.templatesURL = templatesURL
-        self.localSchemeURL = localSchemeURL
+        self.outputDirectoryURL = outputDirectoryURL
         self.generatedOutputURL = generatedOutput
+    }
+    
+    private var schemeZipLocalURL: URL {
+        outputDirectoryURL.appending(component: schemeZipURL.lastPathComponent)
+    }
+    
+    private var paletteLocalURL: URL {
+        outputDirectoryURL.appending(component: paletteURL.lastPathComponent)
     }
 }
 
@@ -40,7 +69,7 @@ extension App: Runnable {
         Logger.printText("Running SDDSThemeBuilder...")
         Logger.printLine()
         
-        commands.forEach { $0.run() }
+        executeCommands()
 
         Logger.printLine()
         return .empty

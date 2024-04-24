@@ -27,6 +27,8 @@ public enum CommandResult {
     case scheme(Scheme)
     case generated(String)
     case error(Error)
+    case url(URL)
+    case schemeDirectory(SchemeDirectory)
 }
 
 extension CommandResult {
@@ -63,6 +65,24 @@ extension CommandResult {
             value
         default:
             nil
+        }
+    }
+    
+    var asURL: URL? {
+        switch self {
+        case .url(let value):
+            value
+        default:
+            nil
+        }
+    }
+    
+    var asSchemeDirectory: SchemeDirectory? {
+        switch self {
+        case .schemeDirectory(let value):
+            return value
+        default:
+            return nil
         }
     }
 }
