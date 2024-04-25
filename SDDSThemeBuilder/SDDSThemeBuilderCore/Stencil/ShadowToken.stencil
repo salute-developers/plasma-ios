@@ -1,24 +1,24 @@
 import SwiftUI
 import UIKit
 
-public enum ShadowToken {
-    public struct Description {
-        public struct Offset {
-            public let width: CGFloat
-            public let height: CGFloat
-        }
-        
-        public let color: Color
-        public let offset: Offset
-        public let opacity: CGFloat
-        public let radius: CGFloat
+public struct ShadowToken {
+    public struct Offset {
+        public let width: CGFloat
+        public let height: CGFloat
     }
+        
+    public let color: Color
+    public let offset: Offset
+    public let opacity: CGFloat
+    public let radius: CGFloat
+}
 
+public extension ShadowToken {
     {% for key, value in json %}
-    public static var {{ key }}: Description {
-        Description(
+    static var {{ key }}: Self {
+        Self(
             color: Color(UIColor(hex: "{{ value.color }}")),
-            offset: Description.Offset(
+            offset: Offset(
                 width: {{ value.offset.width }},
                 height: {{ value.offset.height }}
             ),
