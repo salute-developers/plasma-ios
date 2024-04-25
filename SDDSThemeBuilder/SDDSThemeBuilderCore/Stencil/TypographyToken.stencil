@@ -1,0 +1,16 @@
+import Foundation
+
+public extension TypographyToken {
+    {% for key, value in json %}
+    static var {{ key }}: Self {
+        Self(
+            fontFamily: .{{ value.fontFamilyRef }},
+            weight: .{{ value.weight }},
+            style: .{{ value.style }},
+            size: {{ value.size }},
+            lineHeight: {{ value.lineHeight }},
+            kerning: {{ value.kerning }}
+        )
+    }
+    {% endfor %}
+}

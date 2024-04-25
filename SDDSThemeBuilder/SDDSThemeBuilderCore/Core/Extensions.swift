@@ -14,8 +14,12 @@ extension String {
     
     var tokenComponents: [String] {
         let result = self.replacingOccurrences(of: "-", with: ".")
-        let components = result.components(separatedBy: ".")
+        let components = result.keyComponents
         return components
+    }
+    
+    var keyComponents: [String] {
+        self.components(separatedBy: ".")
     }
 }
 

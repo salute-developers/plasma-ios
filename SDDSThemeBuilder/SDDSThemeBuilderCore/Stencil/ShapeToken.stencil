@@ -1,10 +1,6 @@
 import SwiftUI
 import UIKit
 
-public struct ShapeToken {
-    public let cornerRadius: CGFloat
-}
-
 public extension ShapeToken {
     {% for key, value in json %}
     static var {{ key }}: Self {

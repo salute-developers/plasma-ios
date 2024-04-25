@@ -6,12 +6,7 @@ public enum ColorTheme {
     case dark
 }
 
-public extension ColorToken.Description {
-    /// По умолчанию возвращает цвет для светлой темы
-    var color: Color {
-        lightColor
-    }
-    
+public extension ColorToken {
     /// Возвращает цвет для светлой или тёмной темы в зависимости от параметра `theme`
     func color(for theme: ColorTheme) -> Color {
         switch theme {
