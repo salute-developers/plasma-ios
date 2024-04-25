@@ -40,6 +40,14 @@ public final class App {
             template: .shape,
             generatedOutputURL: generatedOutputURL
         ).run()
+        GenerateTokensCommand(
+            name: "Generate Typography Tokens",
+            schemeURL: schemeDirectory.url(for: .typogprahy),
+            templatesURL: templatesURL,
+            template: .typography,
+            generatedOutputURL: generatedOutputURL,
+            contextBuilder: TypographyContextBuilder()
+        ).run()
     }
     
     public init(schemeZipURL: URL,

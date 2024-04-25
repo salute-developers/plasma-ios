@@ -50,6 +50,15 @@ extension CommandResult {
         }
     }
     
+    var isSuccess: Bool {
+        switch self {
+        case .success:
+            true
+        default:
+            false
+        }
+    }
+    
     var asDictionary: [String: Any]? {
         switch self {
         case .dictionary(let value):

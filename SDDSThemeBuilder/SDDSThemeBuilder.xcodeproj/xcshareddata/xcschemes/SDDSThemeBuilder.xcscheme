@@ -60,15 +60,15 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilderCore/Stencil"
+            argument = "file:///Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilderCore/Stencil"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilder"
+            argument = "file:///Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder/SDDSThemeBuilder"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "file:///Users/21967740/plasma-ios/SDDSThemeBuilder/SDDSTheme/Generated"
+            argument = "file:///Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder/SDDSTheme/Generated"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
