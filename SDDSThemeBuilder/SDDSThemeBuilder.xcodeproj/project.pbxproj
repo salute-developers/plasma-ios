@@ -70,6 +70,11 @@
 		81E1EE292BDA868F00F86AE1 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */; };
 		81E1EE2A2BDA868F00F86AE1 /* ColorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE252BDA868F00F86AE1 /* ColorToken.swift */; };
 		81E1EE2B2BDA868F00F86AE1 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */; };
+		81E1EE2C2BDA88A600F86AE1 /* TypographyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE222BDA868F00F86AE1 /* TypographyToken.swift */; };
+		81E1EE2D2BDA88A600F86AE1 /* ColorToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE252BDA868F00F86AE1 /* ColorToken.swift */; };
+		81E1EE2E2BDA88A600F86AE1 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */; };
+		81E1EE2F2BDA88A600F86AE1 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */; };
+		81E1EE302BDA88A600F86AE1 /* ShadowToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE232BDA868F00F86AE1 /* ShadowToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -712,7 +717,9 @@
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
 				81E1EDC52BD6BBD200F86AE1 /* SchemeDirectory.swift in Sources */,
+				81E1EE2D2BDA88A600F86AE1 /* ColorToken.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
+				81E1EE2F2BDA88A600F86AE1 /* ShapeToken.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
 				24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
@@ -721,6 +728,9 @@
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
 				8175397C2BD0088000138866 /* DecodeSchemeCommand.swift in Sources */,
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,
+				81E1EE2E2BDA88A600F86AE1 /* FontFamilyToken.swift in Sources */,
+				81E1EE302BDA88A600F86AE1 /* ShadowToken.swift in Sources */,
+				81E1EE2C2BDA88A600F86AE1 /* TypographyToken.swift in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
 				817539882BD008A500138866 /* Constants.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
