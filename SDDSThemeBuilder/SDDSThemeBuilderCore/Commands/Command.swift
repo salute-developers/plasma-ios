@@ -31,6 +31,27 @@ public enum CommandResult {
     case schemeDirectory(SchemeDirectory)
 }
 
+extension CommandResult: Equatable {
+    public static func == (lhs: CommandResult, rhs: CommandResult) -> Bool {
+        switch (lhs, rhs) {
+        case (.empty, .empty), (.success, .success):
+            return true
+        case (.data(let lhsData), .data(let rhsData)):
+            return lhsData == rhsData
+        case (.scheme(let lhsScheme), .scheme(let rhsScheme)):
+            return lhsScheme.name == rhsScheme.name
+        case (.generated(let lhsGenerated), .generated(let rhsGenerated)):
+            return lhsGenerated == rhsGenerated
+        case (.error(let lhsError), .error(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.url(let lhsURL), .url(let rhsURL)):
+            return lhsURL == rhsURL
+        default:
+            return false
+        }
+    }
+}
+
 extension CommandResult {
     var asData: Data? {
         switch self {
@@ -44,15 +65,6 @@ extension CommandResult {
     var isError: Bool {
         switch self {
         case .error:
-            true
-        default:
-            false
-        }
-    }
-    
-    var isSuccess: Bool {
-        switch self {
-        case .success:
             true
         default:
             false

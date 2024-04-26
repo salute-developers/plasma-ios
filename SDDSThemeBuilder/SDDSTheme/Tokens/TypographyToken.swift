@@ -2,9 +2,21 @@ import Foundation
 
 public struct TypographyToken {
     public enum Weight: String {
-        case semibold
+        case ultraLight
+        case thin
         case light
         case regular
+        case medium
+        case semibold
+        case bold
+        case heavy
+        case black
+    }
+    
+    public enum ScreenSize: String {
+        case small
+        case medium
+        case large
     }
     
     public enum Style: String {
@@ -17,4 +29,10 @@ public struct TypographyToken {
     public let size: CGFloat
     public let lineHeight: CGFloat
     public let kerning: CGFloat
+}
+
+public struct AdaptiveTypographyToken {
+    public let small: TypographyToken
+    public let medium: TypographyToken
+    public let large: TypographyToken
 }

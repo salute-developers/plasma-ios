@@ -75,6 +75,7 @@
 		81E1EE2E2BDA88A600F86AE1 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */; };
 		81E1EE2F2BDA88A600F86AE1 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */; };
 		81E1EE302BDA88A600F86AE1 /* ShadowToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE232BDA868F00F86AE1 /* ShadowToken.swift */; };
+		81E1EE342BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontFamilyToken.swift; sourceTree = "<group>"; };
 		81E1EE252BDA868F00F86AE1 /* ColorToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToken.swift; sourceTree = "<group>"; };
 		81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeToken.swift; sourceTree = "<group>"; };
+		81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TypographyToken+AdaptiveStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				81E1EDEE2BDA5C9800F86AE1 /* ColorToken+Theme.swift */,
+				81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */,
 				8175394F2BCE9FDA00138866 /* UIColor+Extensions.swift */,
 				81E1EDCE2BD6CA5D00F86AE1 /* View+Tokens.swift */,
 			);
@@ -684,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E1EE342BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift in Sources */,
 				2489D0B42BC7F3850053AAB1 /* SDDSTheme.docc in Sources */,
 				81E1EE202BDA85D700F86AE1 /* ShapeToken+Generated.swift in Sources */,
 				81E1EDEF2BDA5C9800F86AE1 /* ColorToken+Theme.swift in Sources */,
