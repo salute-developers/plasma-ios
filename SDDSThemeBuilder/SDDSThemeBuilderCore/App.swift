@@ -17,7 +17,7 @@ public final class App {
             return
         }
         
-        DecodeSchemeCommand(schemeURL: schemeDirectory.url(for: .main)).run()
+        DecodeSchemeCommand(schemeURL: schemeDirectory.url(for: .meta)).run()
         GenerateTokensCommand(
             name: "Generate Color Tokens",
             schemeURL: schemeDirectory.url(for: .colors),
