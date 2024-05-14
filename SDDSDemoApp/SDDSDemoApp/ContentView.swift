@@ -1,20 +1,13 @@
 import SwiftUI
 import SDDSIcons
+import SDDSTheme
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Color.red.opacity(0.3)
-                .ignoresSafeArea()
-            VStack {
-                Text("no bundle")
-            }
-            .padding()
+        VStack {
+            Text("Test text")
+                .applyTypography(AdaptiveTypographyToken.bodyLBold.medium)
         }
-    }
-    
-    private var bundle: Bundle? {
-        Bundle(for: Icons.self)
     }
 }
 

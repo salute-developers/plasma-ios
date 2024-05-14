@@ -5,4 +5,5 @@ enum GeneralError: Error {
     case invalidFilename
     case invalidSchemeDirectory
     case unableToCopyTokenSource
+    case unableToDownloadFonts
 }

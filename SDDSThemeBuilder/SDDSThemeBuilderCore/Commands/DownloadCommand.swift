@@ -4,7 +4,7 @@ final class DownloadCommand: Command {
     let fileURL: URL
     let outputURL: URL?
     
-    private let dispatchQueue = DispatchQueue(label: "ru.sdds.downloadSchemeCommand")
+    private let dispatchQueue = DispatchQueue(label: "ru.sdds.DownloadCommand")
     private let urlSession: URLSession
     private let fileManager: FileManager
     
@@ -19,7 +19,7 @@ final class DownloadCommand: Command {
         self.urlSession = urlSession
         self.fileManager = fileManager
         
-        super.init(name: "Download JSON Scheme")
+        super.init(name: "Download \(fileURL)")
     }
     
     @discardableResult override func run() -> CommandResult {

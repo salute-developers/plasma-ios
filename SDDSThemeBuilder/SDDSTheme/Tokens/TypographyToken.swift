@@ -21,9 +21,10 @@ public struct TypographyToken {
     
     public enum Style: String {
         case normal
+        case italic
     }
     
-    public let fontFamily: FontFamilyToken.Heading
+    public let fontName: String
     public let weight: Weight
     public let style: Style
     public let size: CGFloat
@@ -35,4 +36,23 @@ public struct AdaptiveTypographyToken {
     public let small: TypographyToken
     public let medium: TypographyToken
     public let large: TypographyToken
+}
+
+extension TypographyToken: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(fontName)
+        hasher.combine(weight)
+        hasher.combine(style)
+        hasher.combine(size)
+        hasher.combine(lineHeight)
+        hasher.combine(kerning)
+    }
+}
+
+extension AdaptiveTypographyToken: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(small)
+        hasher.combine(medium)
+        hasher.combine(large)
+    }
 }

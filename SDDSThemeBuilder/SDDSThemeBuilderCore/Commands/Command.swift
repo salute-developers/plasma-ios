@@ -24,11 +24,11 @@ public enum CommandResult {
     case success
     case data(Data)
     case dictionary([String: Any])
-    case scheme(Scheme)
     case generated(String)
     case error(Error)
     case url(URL)
     case schemeDirectory(SchemeDirectory)
+    case value(Any)
 }
 
 extension CommandResult: Equatable {
@@ -38,8 +38,6 @@ extension CommandResult: Equatable {
             return true
         case (.data(let lhsData), .data(let rhsData)):
             return lhsData == rhsData
-        case (.scheme(let lhsScheme), .scheme(let rhsScheme)):
-            return lhsScheme.name == rhsScheme.name
         case (.generated(let lhsGenerated), .generated(let rhsGenerated)):
             return lhsGenerated == rhsGenerated
         case (.error(let lhsError), .error(let rhsError)):
@@ -102,6 +100,15 @@ extension CommandResult {
         switch self {
         case .schemeDirectory(let value):
             return value
+        default:
+            return nil
+        }
+    }
+    
+    var asFontFamiliesContainer: FontFamiliesContainer? {
+        switch self {
+        case .value(let fontFamily):
+            return fontFamily as? FontFamiliesContainer
         default:
             return nil
         }

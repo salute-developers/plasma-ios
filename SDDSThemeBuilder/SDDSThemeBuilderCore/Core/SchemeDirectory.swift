@@ -8,7 +8,7 @@ public struct SchemeDirectory {
         case gradients = "ios/ios_gradient"
         case shadows = "ios/ios_shadow"
         case shapes = "ios/ios_shape"
-        case typogprahy = "ios/ios_typography"
+        case typography = "ios/ios_typography"
     }
     
     var urls: [Path: URL] = [:]

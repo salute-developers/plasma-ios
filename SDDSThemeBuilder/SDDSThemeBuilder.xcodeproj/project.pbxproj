@@ -6,6 +6,20 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		819B2A942BF2456800688624 /* Build XCFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 819B2A952BF2456800688624 /* Build configuration list for PBXAggregateTarget "Build XCFramework" */;
+			buildPhases = (
+				819B2A982BF2457000688624 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build XCFramework";
+			productName = "Build XCFramework";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		2489D0A52BC7F3790053AAB1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0A42BC7F3790053AAB1 /* main.swift */; };
 		2489D0B42BC7F3850053AAB1 /* SDDSTheme.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0B32BC7F3850053AAB1 /* SDDSTheme.docc */; };
@@ -13,6 +27,7 @@
 		2489D0BF2BC7F3850053AAB1 /* SDDSThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0BE2BC7F3850053AAB1 /* SDDSThemeTests.swift */; };
 		2489D0C02BC7F3850053AAB1 /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 2489D0B22BC7F3850053AAB1 /* SDDSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249C3D4D2BD92595007533DE /* GenerateTokensCommand.swift */; };
+		24AFA1222BF36AC3001ECF3E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA1212BF36AC3001ECF3E /* Device.swift */; };
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
@@ -24,7 +39,7 @@
 		817539712BD0078700138866 /* SDDSThemeBuilderCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		817539752BD007D300138866 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB39082BC939E000B32463 /* App.swift */; };
 		817539762BD0087500138866 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0C72BC7F3EC0053AAB1 /* Command.swift */; };
-		8175397C2BD0088000138866 /* DecodeSchemeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB39172BC96CDE00B32463 /* DecodeSchemeCommand.swift */; };
+		8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB39172BC96CDE00B32463 /* DecodeCommand.swift */; };
 		8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0CD2BC7F5AD0053AAB1 /* DownloadCommand.swift */; };
 		817539802BD0088400138866 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0D52BC7F7E60053AAB1 /* Logger.swift */; };
 		817539812BD0088900138866 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CB39152BC96C4200B32463 /* Scheme.swift */; };
@@ -48,6 +63,21 @@
 		817539A62BD1699B00138866 /* RenderableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817539A52BD1699B00138866 /* RenderableMock.swift */; };
 		817539AC2BD16D7E00138866 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 817539AB2BD16D7E00138866 /* OHHTTPStubs */; };
 		817539AE2BD16D7E00138866 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 817539AD2BD16D7E00138866 /* OHHTTPStubsSwift */; };
+		819B2A862BF2377B00688624 /* TypographyToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A852BF2377B00688624 /* TypographyToken+Extensions.swift */; };
+		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
+		819B2A8B2BF23EB600688624 /* TypographyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8A2BF23EB600688624 /* TypographyModifier.swift */; };
+		819B2A8D2BF2403700688624 /* View+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8C2BF2403700688624 /* View+Conditional.swift */; };
+		819B2A8F2BF241A200688624 /* LineHeightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8E2BF241A200688624 /* LineHeightModifier.swift */; };
+		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
+		819B2ACC2BF280F900688624 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ACB2BF280F900688624 /* ContentView.swift */; };
+		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
+		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
+		819B2AD52BF2810500688624 /* SDDSTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */; };
+		819B2AD62BF2810500688624 /* SDDSTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		819B2ADA2BF2836300688624 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817539422BCE8DD700138866 /* Extensions.swift */; };
+		819B2ADC2BF283A600688624 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADB2BF283A600688624 /* FileExtension.swift */; };
+		819B2ADD2BF283A600688624 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADB2BF283A600688624 /* FileExtension.swift */; };
+		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
 		81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDBA2BD2B9F400F86AE1 /* ContexBuilder.swift */; };
 		81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDC22BD6ADC100F86AE1 /* UnpackThemeCommand.swift */; };
 		81E1EDC52BD6BBD200F86AE1 /* SchemeDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDC42BD6BBD200F86AE1 /* SchemeDirectory.swift */; };
@@ -75,7 +105,32 @@
 		81E1EE2E2BDA88A600F86AE1 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */; };
 		81E1EE2F2BDA88A600F86AE1 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */; };
 		81E1EE302BDA88A600F86AE1 /* ShadowToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE232BDA868F00F86AE1 /* ShadowToken.swift */; };
-		81E1EE342BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */; };
+		81E1EE342BDBBE0C00F86AE1 /* AdaptiveTypographyToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE332BDBBE0C00F86AE1 /* AdaptiveTypographyToken+Extensions.swift */; };
+		81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE352BE3A57300F86AE1 /* Mode.swift */; };
+		81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE372BE3A58600F86AE1 /* Category.swift */; };
+		81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE392BE3A59500F86AE1 /* Subcategory.swift */; };
+		81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE3B2BE3A5A300F86AE1 /* Direction.swift */; };
+		81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE3D2BE3A5B300F86AE1 /* ShadowKind.swift */; };
+		81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE3F2BE3A5BF00F86AE1 /* ShapeKind.swift */; };
+		81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE412BE3A5D700F86AE1 /* TypographyKind.swift */; };
+		81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE432BE3A5E700F86AE1 /* FontFamilyKind.swift */; };
+		81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE452BE3A5F800F86AE1 /* Size.swift */; };
+		81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE472BE3A60B00F86AE1 /* Weight.swift */; };
+		81E1EE4A2BE3A61B00F86AE1 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE492BE3A61B00F86AE1 /* Screen.swift */; };
+		81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE4B2BE3A62C00F86AE1 /* TokenKind.swift */; };
+		81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE4E2BE3A64D00F86AE1 /* Style.swift */; };
+		81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE502BE3A65D00F86AE1 /* ShadowStyle.swift */; };
+		81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE522BE3A67200F86AE1 /* ShapeStyle.swift */; };
+		81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE542BE3A68000F86AE1 /* TypographyStyle.swift */; };
+		81E1EE572BE3A69200F86AE1 /* FontFamilyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE562BE3A69200F86AE1 /* FontFamilyStyle.swift */; };
+		81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE582BE3A6A100F86AE1 /* Token.swift */; };
+		81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE5A2BE3A6D600F86AE1 /* FontFamilyContainer.swift */; };
+		81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */; };
+		81E1EE622BE3B9CA00F86AE1 /* copyFonts.rb in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EE612BE3B9CA00F86AE1 /* copyFonts.rb */; };
+		81E1EE6A2BE3C5CC00F86AE1 /* registerFonts.rb in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EE692BE3C5CC00F86AE1 /* registerFonts.rb */; };
+		81E1EE712BE4DD5200F86AE1 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE702BE4DD5200F86AE1 /* ThemeService.swift */; };
+		81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE732BE4E17800F86AE1 /* FontFamily.swift */; };
+		81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE752BE4E18800F86AE1 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +155,13 @@
 			remoteGlobalIDString = 817539572BD0077200138866;
 			remoteInfo = SDDSThemeBuilderCore;
 		};
+		819B2AD72BF2810500688624 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2489D0992BC7F3790053AAB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2489D0AF2BC7F3850053AAB1;
+			remoteInfo = SDDSTheme;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -123,9 +185,22 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		819B2AD92BF2810500688624 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				819B2AD62BF2810500688624 /* SDDSTheme.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A8F0B7398A56F5236E2E78D /* SBSansText-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Semibold.otf"; path = "Fonts/SBSansText-Semibold.otf"; sourceTree = "<group>"; };
+		1EB8FB066E02655400B349B3 /* SBSansText-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Medium.otf"; path = "Fonts/SBSansText-Medium.otf"; sourceTree = "<group>"; };
 		2489D0A12BC7F3790053AAB1 /* SDDSThemeBuilder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDDSThemeBuilder; sourceTree = BUILT_PRODUCTS_DIR; };
 		2489D0A42BC7F3790053AAB1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,11 +213,17 @@
 		2489D0D02BC7F5EA0053AAB1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2489D0D52BC7F7E60053AAB1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		249C3D4D2BD92595007533DE /* GenerateTokensCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateTokensCommand.swift; sourceTree = "<group>"; };
+		24AFA1212BF36AC3001ECF3E /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		24CB39082BC939E000B32463 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		24CB39152BC96C4200B32463 /* Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
-		24CB39172BC96CDE00B32463 /* DecodeSchemeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeSchemeCommand.swift; sourceTree = "<group>"; };
+		24CB39172BC96CDE00B32463 /* DecodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeCommand.swift; sourceTree = "<group>"; };
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
+		2EEBAE8966F39EBF33318745 /* SBSansText-Italic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Italic.otf"; path = "Fonts/SBSansText-Italic.otf"; sourceTree = "<group>"; };
+		38B2A877A6D0A37F86F20AC0 /* SBSansDisplay-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansDisplay-Thin.otf"; path = "Fonts/SBSansDisplay-Thin.otf"; sourceTree = "<group>"; };
+		4945581762B845F320E0A7F2 /* SBSansText-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Regular.otf"; path = "Fonts/SBSansText-Regular.otf"; sourceTree = "<group>"; };
+		6025BC85736A5F339E706E74 /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Thin.otf"; path = "Fonts/SBSansText-Thin.otf"; sourceTree = "<group>"; };
+		6DFC4B88C12210C549863113 /* SBSansText-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Light.otf"; path = "Fonts/SBSansText-Light.otf"; sourceTree = "<group>"; };
 		817539362BCE745600138866 /* ColorToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorToken.stencil; sourceTree = "<group>"; };
 		8175393C2BCE83EF00138866 /* CodeGenerationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationError.swift; sourceTree = "<group>"; };
 		8175393E2BCE869C00138866 /* StencilTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StencilTemplate.swift; sourceTree = "<group>"; };
@@ -164,6 +245,20 @@
 		817539A12BD1681100138866 /* ios_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ios_colors.json; sourceTree = "<group>"; };
 		817539A32BD1690D00138866 /* TemplateRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateRenderer.swift; sourceTree = "<group>"; };
 		817539A52BD1699B00138866 /* RenderableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableMock.swift; sourceTree = "<group>"; };
+		819B2A852BF2377B00688624 /* TypographyToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Extensions.swift"; sourceTree = "<group>"; };
+		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
+		819B2A8A2BF23EB600688624 /* TypographyModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyModifier.swift; sourceTree = "<group>"; };
+		819B2A8C2BF2403700688624 /* View+Conditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Conditional.swift"; sourceTree = "<group>"; };
+		819B2A8E2BF241A200688624 /* LineHeightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineHeightModifier.swift; sourceTree = "<group>"; };
+		819B2A932BF244D800688624 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
+		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
+		819B2ACB2BF280F900688624 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		819B2ADB2BF283A600688624 /* FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
+		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
+		81B9340A5F66CF9D1A512C9F /* SBSansDisplay-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansDisplay-Semibold.otf"; path = "Fonts/SBSansDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShapeToken.stencil; sourceTree = "<group>"; };
 		81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShadowToken.stencil; sourceTree = "<group>"; };
 		81E1EDBA2BD2B9F400F86AE1 /* ContexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContexBuilder.swift; sourceTree = "<group>"; };
@@ -190,7 +285,40 @@
 		81E1EE242BDA868F00F86AE1 /* FontFamilyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontFamilyToken.swift; sourceTree = "<group>"; };
 		81E1EE252BDA868F00F86AE1 /* ColorToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToken.swift; sourceTree = "<group>"; };
 		81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeToken.swift; sourceTree = "<group>"; };
-		81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TypographyToken+AdaptiveStyle.swift"; sourceTree = "<group>"; };
+		81E1EE332BDBBE0C00F86AE1 /* AdaptiveTypographyToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdaptiveTypographyToken+Extensions.swift"; sourceTree = "<group>"; };
+		81E1EE352BE3A57300F86AE1 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		81E1EE372BE3A58600F86AE1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		81E1EE392BE3A59500F86AE1 /* Subcategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subcategory.swift; sourceTree = "<group>"; };
+		81E1EE3B2BE3A5A300F86AE1 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		81E1EE3D2BE3A5B300F86AE1 /* ShadowKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowKind.swift; sourceTree = "<group>"; };
+		81E1EE3F2BE3A5BF00F86AE1 /* ShapeKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeKind.swift; sourceTree = "<group>"; };
+		81E1EE412BE3A5D700F86AE1 /* TypographyKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyKind.swift; sourceTree = "<group>"; };
+		81E1EE432BE3A5E700F86AE1 /* FontFamilyKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamilyKind.swift; sourceTree = "<group>"; };
+		81E1EE452BE3A5F800F86AE1 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		81E1EE472BE3A60B00F86AE1 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		81E1EE492BE3A61B00F86AE1 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		81E1EE4B2BE3A62C00F86AE1 /* TokenKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenKind.swift; sourceTree = "<group>"; };
+		81E1EE4E2BE3A64D00F86AE1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		81E1EE502BE3A65D00F86AE1 /* ShadowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyle.swift; sourceTree = "<group>"; };
+		81E1EE522BE3A67200F86AE1 /* ShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyle.swift; sourceTree = "<group>"; };
+		81E1EE542BE3A68000F86AE1 /* TypographyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyStyle.swift; sourceTree = "<group>"; };
+		81E1EE562BE3A69200F86AE1 /* FontFamilyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamilyStyle.swift; sourceTree = "<group>"; };
+		81E1EE582BE3A6A100F86AE1 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		81E1EE5A2BE3A6D600F86AE1 /* FontFamilyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamilyContainer.swift; sourceTree = "<group>"; };
+		81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallFontsCommand.swift; sourceTree = "<group>"; };
+		81E1EE612BE3B9CA00F86AE1 /* copyFonts.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = copyFonts.rb; sourceTree = "<group>"; };
+		81E1EE692BE3C5CC00F86AE1 /* registerFonts.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = registerFonts.rb; sourceTree = "<group>"; };
+		81E1EE6B2BE3CAF200F86AE1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		81E1EE702BE4DD5200F86AE1 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		81E1EE732BE4E17800F86AE1 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
+		81E1EE752BE4E18800F86AE1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		A3B9849EDE50737E5A79B2A2 /* SBSansText-BoldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-BoldItalic.otf"; path = "Fonts/SBSansText-BoldItalic.otf"; sourceTree = "<group>"; };
+		A58A9D0EDBE7C799F1B78CCA /* SBSansText-SemiboldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-SemiboldItalic.otf"; path = "Fonts/SBSansText-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		A98C221758F1B85F721E1A4A /* SBSansDisplay-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansDisplay-Regular.otf"; path = "Fonts/SBSansDisplay-Regular.otf"; sourceTree = "<group>"; };
+		B33D373E4EB72168F61FC098 /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-LightItalic.otf"; path = "Fonts/SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
+		C2A2096E2B86E0394FEF330E /* SBSansText-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansText-Bold.otf"; path = "Fonts/SBSansText-Bold.otf"; sourceTree = "<group>"; };
+		C45F6060EBAE6D5E52157F0E /* SBSansDisplay-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansDisplay-Medium.otf"; path = "Fonts/SBSansDisplay-Medium.otf"; sourceTree = "<group>"; };
+		EF5B463BA898242DF8E0D008 /* SBSansDisplay-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "SBSansDisplay-Bold.otf"; path = "Fonts/SBSansDisplay-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,17 +364,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		819B2AC42BF280F900688624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819B2AD52BF2810500688624 /* SDDSTheme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
+				819B2A922BF244BB00688624 /* Scripts */,
 				2489D0A32BC7F3790053AAB1 /* SDDSThemeBuilder */,
 				2489D0B12BC7F3850053AAB1 /* SDDSTheme */,
 				2489D0BD2BC7F3850053AAB1 /* SDDSThemeTests */,
 				817539592BD0077200138866 /* SDDSThemeBuilderCore */,
 				817539652BD0077300138866 /* SDDSThemeBuilderCoreTests */,
+				819B2AC82BF280F900688624 /* SDDSDemo */,
 				2489D0A22BC7F3790053AAB1 /* Products */,
 				8175396F2BD0078700138866 /* Frameworks */,
 			);
@@ -260,6 +398,7 @@
 				2489D0B92BC7F3850053AAB1 /* SDDSThemeTests.xctest */,
 				817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */,
 				817539612BD0077300138866 /* SDDSThemeBuilderCoreTests.xctest */,
+				819B2AC72BF280F900688624 /* SDDSDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,12 +414,15 @@
 		2489D0B12BC7F3850053AAB1 /* SDDSTheme */ = {
 			isa = PBXGroup;
 			children = (
+				24AFA1202BF36AB0001ECF3E /* Utilities */,
 				81E1EE212BDA868F00F86AE1 /* Tokens */,
 				249C3D512BD926FC007533DE /* Generated */,
 				81E1EDD22BD6CDE600F86AE1 /* Modifiers */,
 				8175394B2BCE9FA600138866 /* Extensions */,
 				2489D0B22BC7F3850053AAB1 /* SDDSTheme.h */,
 				2489D0B32BC7F3850053AAB1 /* SDDSTheme.docc */,
+				81E1EE6B2BE3CAF200F86AE1 /* info.plist */,
+				81E1EE702BE4DD5200F86AE1 /* ThemeService.swift */,
 			);
 			path = SDDSTheme;
 			sourceTree = "<group>";
@@ -293,12 +435,13 @@
 			path = SDDSThemeTests;
 			sourceTree = "<group>";
 		};
-		2489D0C92BC7F44F0053AAB1 /* Scheme */ = {
+		2489D0C92BC7F44F0053AAB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				24CB39152BC96C4200B32463 /* Scheme.swift */,
+				81E1EE722BE4E16200F86AE1 /* FontFamily */,
+				81E1EE4D2BE3A63A00F86AE1 /* Scheme */,
 			);
-			path = Scheme;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2489D0CA2BC7F45E0053AAB1 /* Commands */ = {
@@ -308,7 +451,8 @@
 				2489D0C72BC7F3EC0053AAB1 /* Command.swift */,
 				2489D0CD2BC7F5AD0053AAB1 /* DownloadCommand.swift */,
 				81E1EDC22BD6ADC100F86AE1 /* UnpackThemeCommand.swift */,
-				24CB39172BC96CDE00B32463 /* DecodeSchemeCommand.swift */,
+				24CB39172BC96CDE00B32463 /* DecodeCommand.swift */,
+				81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -326,6 +470,8 @@
 				81E1EDC42BD6BBD200F86AE1 /* SchemeDirectory.swift */,
 				24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */,
 				81E1EDF52BDA7B9900F86AE1 /* ScreenSize.swift */,
+				819B2ADB2BF283A600688624 /* FileExtension.swift */,
+				819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -350,6 +496,14 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		24AFA1202BF36AB0001ECF3E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA1212BF36AC3001ECF3E /* Device.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		817539352BCE744300138866 /* Stencil */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,9 +519,11 @@
 			isa = PBXGroup;
 			children = (
 				81E1EDEE2BDA5C9800F86AE1 /* ColorToken+Theme.swift */,
-				81E1EE332BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift */,
+				81E1EE332BDBBE0C00F86AE1 /* AdaptiveTypographyToken+Extensions.swift */,
 				8175394F2BCE9FDA00138866 /* UIColor+Extensions.swift */,
 				81E1EDCE2BD6CA5D00F86AE1 /* View+Tokens.swift */,
+				819B2A852BF2377B00688624 /* TypographyToken+Extensions.swift */,
+				819B2A8C2BF2403700688624 /* View+Conditional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -375,9 +531,11 @@
 		817539592BD0077200138866 /* SDDSThemeBuilderCore */ = {
 			isa = PBXGroup;
 			children = (
+				819B2A872BF23B0100688624 /* Extensions */,
+				81E1EE602BE3B99B00F86AE1 /* Fonts */,
 				81E1EDB92BD2B9E300F86AE1 /* ContextBuilders */,
 				817539352BCE744300138866 /* Stencil */,
-				2489D0C92BC7F44F0053AAB1 /* Scheme */,
+				2489D0C92BC7F44F0053AAB1 /* Model */,
 				2489D0D22BC7F7C10053AAB1 /* Utilities */,
 				2489D0CA2BC7F45E0053AAB1 /* Commands */,
 				2489D0CF2BC7F5E10053AAB1 /* Core */,
@@ -430,6 +588,41 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		819B2A872BF23B0100688624 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				819B2A882BF23B1600688624 /* Font+FontName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		819B2A922BF244BB00688624 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				819B2A932BF244D800688624 /* build_xcframework.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		819B2AC82BF280F900688624 /* SDDSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				819B2AC92BF280F900688624 /* SDDSDemoApp.swift */,
+				819B2ACB2BF280F900688624 /* ContentView.swift */,
+				819B2ACD2BF280FB00688624 /* Assets.xcassets */,
+				819B2ACF2BF280FB00688624 /* Preview Content */,
+			);
+			path = SDDSDemo;
+			sourceTree = "<group>";
+		};
+		819B2ACF2BF280FB00688624 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				819B2AD02BF280FB00688624 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		81E1EDB92BD2B9E300F86AE1 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +639,8 @@
 			children = (
 				81E1EDD32BD6CDF300F86AE1 /* ShadowModifier.swift */,
 				81E1EDD52BD6CE3900F86AE1 /* ShapeModifier.swift */,
+				819B2A8A2BF23EB600688624 /* TypographyModifier.swift */,
+				819B2A8E2BF241A200688624 /* LineHeightModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -460,6 +655,51 @@
 				81E1EE262BDA868F00F86AE1 /* ShapeToken.swift */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		81E1EE4D2BE3A63A00F86AE1 /* Scheme */ = {
+			isa = PBXGroup;
+			children = (
+				24CB39152BC96C4200B32463 /* Scheme.swift */,
+				81E1EE352BE3A57300F86AE1 /* Mode.swift */,
+				81E1EE372BE3A58600F86AE1 /* Category.swift */,
+				81E1EE392BE3A59500F86AE1 /* Subcategory.swift */,
+				81E1EE3B2BE3A5A300F86AE1 /* Direction.swift */,
+				81E1EE3D2BE3A5B300F86AE1 /* ShadowKind.swift */,
+				81E1EE3F2BE3A5BF00F86AE1 /* ShapeKind.swift */,
+				81E1EE412BE3A5D700F86AE1 /* TypographyKind.swift */,
+				81E1EE432BE3A5E700F86AE1 /* FontFamilyKind.swift */,
+				81E1EE452BE3A5F800F86AE1 /* Size.swift */,
+				81E1EE472BE3A60B00F86AE1 /* Weight.swift */,
+				81E1EE492BE3A61B00F86AE1 /* Screen.swift */,
+				81E1EE4B2BE3A62C00F86AE1 /* TokenKind.swift */,
+				81E1EE4E2BE3A64D00F86AE1 /* Style.swift */,
+				81E1EE502BE3A65D00F86AE1 /* ShadowStyle.swift */,
+				81E1EE522BE3A67200F86AE1 /* ShapeStyle.swift */,
+				81E1EE542BE3A68000F86AE1 /* TypographyStyle.swift */,
+				81E1EE562BE3A69200F86AE1 /* FontFamilyStyle.swift */,
+				81E1EE582BE3A6A100F86AE1 /* Token.swift */,
+			);
+			path = Scheme;
+			sourceTree = "<group>";
+		};
+		81E1EE602BE3B99B00F86AE1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81E1EE612BE3B9CA00F86AE1 /* copyFonts.rb */,
+				81E1EE692BE3C5CC00F86AE1 /* registerFonts.rb */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		81E1EE722BE4E16200F86AE1 /* FontFamily */ = {
+			isa = PBXGroup;
+			children = (
+				81E1EE5A2BE3A6D600F86AE1 /* FontFamilyContainer.swift */,
+				81E1EE732BE4E17800F86AE1 /* FontFamily.swift */,
+				81E1EE752BE4E18800F86AE1 /* Font.swift */,
+			);
+			path = FontFamily;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,6 +825,25 @@
 			productReference = 817539612BD0077300138866 /* SDDSThemeBuilderCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		819B2AC62BF280F900688624 /* SDDSDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 819B2AD22BF280FB00688624 /* Build configuration list for PBXNativeTarget "SDDSDemo" */;
+			buildPhases = (
+				819B2AC32BF280F900688624 /* Sources */,
+				819B2AC42BF280F900688624 /* Frameworks */,
+				819B2AC52BF280F900688624 /* Resources */,
+				819B2AD92BF2810500688624 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				819B2AD82BF2810500688624 /* PBXTargetDependency */,
+			);
+			name = SDDSDemo;
+			productName = SDDSDemo;
+			productReference = 819B2AC72BF280F900688624 /* SDDSDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -608,6 +867,12 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					817539602BD0077300138866 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					819B2A942BF2456800688624 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					819B2AC62BF280F900688624 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -635,6 +900,8 @@
 				2489D0B82BC7F3850053AAB1 /* SDDSThemeTests */,
 				817539572BD0077200138866 /* SDDSThemeBuilderCore */,
 				817539602BD0077300138866 /* SDDSThemeBuilderCoreTests */,
+				819B2A942BF2456800688624 /* Build XCFramework */,
+				819B2AC62BF280F900688624 /* SDDSDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -658,6 +925,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E1EE622BE3B9CA00F86AE1 /* copyFonts.rb in Resources */,
+				81E1EE6A2BE3C5CC00F86AE1 /* registerFonts.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +941,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		819B2AC52BF280F900688624 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */,
+				819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		819B2A982BF2457000688624 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/Scripts/build_xcframework.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2489D09D2BC7F3790053AAB1 /* Sources */ = {
@@ -687,22 +986,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E1EE342BDBBE0C00F86AE1 /* TypographyToken+AdaptiveStyle.swift in Sources */,
+				24AFA1222BF36AC3001ECF3E /* Device.swift in Sources */,
+				81E1EE342BDBBE0C00F86AE1 /* AdaptiveTypographyToken+Extensions.swift in Sources */,
 				2489D0B42BC7F3850053AAB1 /* SDDSTheme.docc in Sources */,
 				81E1EE202BDA85D700F86AE1 /* ShapeToken+Generated.swift in Sources */,
 				81E1EDEF2BDA5C9800F86AE1 /* ColorToken+Theme.swift in Sources */,
 				81E1EE2A2BDA868F00F86AE1 /* ColorToken.swift in Sources */,
 				81E1EE2B2BDA868F00F86AE1 /* ShapeToken.swift in Sources */,
+				819B2ADC2BF283A600688624 /* FileExtension.swift in Sources */,
 				817539502BCE9FDA00138866 /* UIColor+Extensions.swift in Sources */,
+				819B2A8D2BF2403700688624 /* View+Conditional.swift in Sources */,
 				81E1EE1F2BDA85D700F86AE1 /* ShadowToken+Generated.swift in Sources */,
+				819B2ADA2BF2836300688624 /* Extensions.swift in Sources */,
 				81E1EDCF2BD6CA5D00F86AE1 /* View+Tokens.swift in Sources */,
 				81E1EE1D2BDA85D700F86AE1 /* ColorToken+Generated.swift in Sources */,
 				81E1EDD62BD6CE3900F86AE1 /* ShapeModifier.swift in Sources */,
 				81E1EE292BDA868F00F86AE1 /* FontFamilyToken.swift in Sources */,
 				81E1EE1E2BDA85D700F86AE1 /* TypographyToken+Generated.swift in Sources */,
 				81E1EDD42BD6CDF300F86AE1 /* ShadowModifier.swift in Sources */,
+				819B2A862BF2377B00688624 /* TypographyToken+Extensions.swift in Sources */,
 				81E1EE272BDA868F00F86AE1 /* TypographyToken.swift in Sources */,
 				81E1EE282BDA868F00F86AE1 /* ShadowToken.swift in Sources */,
+				81E1EE712BE4DD5200F86AE1 /* ThemeService.swift in Sources */,
+				819B2A8B2BF23EB600688624 /* TypographyModifier.swift in Sources */,
+				819B2A8F2BF241A200688624 /* LineHeightModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,32 +1025,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E1EE572BE3A69200F86AE1 /* FontFamilyStyle.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
+				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
 				81E1EDC52BD6BBD200F86AE1 /* SchemeDirectory.swift in Sources */,
+				81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */,
 				81E1EE2D2BDA88A600F86AE1 /* ColorToken.swift in Sources */,
+				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
 				81E1EE2F2BDA88A600F86AE1 /* ShapeToken.swift in Sources */,
+				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
+				81E1EDFF2BDA7F1800F86AE1 /* ShapeToken.swift in Sources */,
 				24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */,
+				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				817539A42BD1690D00138866 /* TemplateRenderer.swift in Sources */,
+				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
+				81E1EE4A2BE3A61B00F86AE1 /* Screen.swift in Sources */,
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
-				8175397C2BD0088000138866 /* DecodeSchemeCommand.swift in Sources */,
+				8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */,
+				81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */,
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,
+				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
+				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
 				81E1EE2E2BDA88A600F86AE1 /* FontFamilyToken.swift in Sources */,
+				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
+				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				81E1EE302BDA88A600F86AE1 /* ShadowToken.swift in Sources */,
+				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
 				81E1EE2C2BDA88A600F86AE1 /* TypographyToken.swift in Sources */,
+				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
+				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
 				817539882BD008A500138866 /* Constants.swift in Sources */,
+				81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */,
+				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
+				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
+				81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */,
+				819B2ADD2BF283A600688624 /* FileExtension.swift in Sources */,
 				81E1EDDC2BD6D6BD00F86AE1 /* GeneralContextBuilder.swift in Sources */,
 				817539752BD007D300138866 /* App.swift in Sources */,
+				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
 				817539762BD0087500138866 /* Command.swift in Sources */,
+				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
+				81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */,
+				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
 				817539862BD008A500138866 /* Extensions.swift in Sources */,
@@ -765,6 +1098,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		819B2AC32BF280F900688624 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819B2ACC2BF280F900688624 /* ContentView.swift in Sources */,
+				819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -782,6 +1124,11 @@
 			isa = PBXTargetDependency;
 			target = 817539572BD0077200138866 /* SDDSThemeBuilderCore */;
 			targetProxy = 817539722BD0078800138866 /* PBXContainerItemProxy */;
+		};
+		819B2AD82BF2810500688624 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2489D0AF2BC7F3850053AAB1 /* SDDSTheme */;
+			targetProxy = 819B2AD72BF2810500688624 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -823,7 +1170,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -838,6 +1185,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -886,7 +1234,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -895,6 +1243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -945,10 +1294,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = $SOURCE_ROOT/SDDSTheme/info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,10 +1339,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = $SOURCE_ROOT/SDDSTheme/info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1025,7 +1378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSThemeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1044,7 +1397,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSThemeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1162,6 +1515,89 @@
 			};
 			name = Release;
 		};
+		819B2A962BF2456800688624 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		819B2A972BF2456800688624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		819B2AD32BF280FB00688624 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		819B2AD42BF280FB00688624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1172,7 +1608,7 @@
 				2489D0A72BC7F3790053AAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2489D0A82BC7F3790053AAB1 /* Build configuration list for PBXNativeTarget "SDDSThemeBuilder" */ = {
 			isa = XCConfigurationList;
@@ -1181,7 +1617,7 @@
 				2489D0AA2BC7F3790053AAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2489D0C12BC7F3850053AAB1 /* Build configuration list for PBXNativeTarget "SDDSTheme" */ = {
 			isa = XCConfigurationList;
@@ -1190,7 +1626,7 @@
 				2489D0C32BC7F3850053AAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2489D0C42BC7F3850053AAB1 /* Build configuration list for PBXNativeTarget "SDDSThemeTests" */ = {
 			isa = XCConfigurationList;
@@ -1199,7 +1635,7 @@
 				2489D0C62BC7F3850053AAB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		817539692BD0077300138866 /* Build configuration list for PBXNativeTarget "SDDSThemeBuilderCore" */ = {
 			isa = XCConfigurationList;
@@ -1208,7 +1644,7 @@
 				8175396B2BD0077300138866 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		8175396C2BD0077300138866 /* Build configuration list for PBXNativeTarget "SDDSThemeBuilderCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -1217,7 +1653,25 @@
 				8175396E2BD0077300138866 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		819B2A952BF2456800688624 /* Build configuration list for PBXAggregateTarget "Build XCFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819B2A962BF2456800688624 /* Debug */,
+				819B2A972BF2456800688624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		819B2AD22BF280FB00688624 /* Build configuration list for PBXNativeTarget "SDDSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				819B2AD32BF280FB00688624 /* Debug */,
+				819B2AD42BF280FB00688624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

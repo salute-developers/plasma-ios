@@ -21,6 +21,10 @@ extension String {
     var keyComponents: [String] {
         self.components(separatedBy: ".")
     }
+    
+    var fileExtension: FileExtension? {
+        FileExtension(rawValue: keyComponents.last ?? "")
+    }
 }
 
 extension Array where Element == String {
@@ -43,19 +47,6 @@ extension Dictionary {
             let value = self[key]
             self.removeValue(forKey: key)
             self[transform(key)] = value
-        }
-    }
-}
-
-extension ScreenSize {
-    var tokenValue: TypographyToken.ScreenSize {
-        switch self {
-        case .small:
-            .small
-        case .medium:
-            .medium
-        case .large:
-            .large
         }
     }
 }
