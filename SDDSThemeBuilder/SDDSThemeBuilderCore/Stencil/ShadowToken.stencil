@@ -16,3 +16,9 @@ public extension ShadowToken {
     }
     {% endfor %}
 }
+
+public struct Shadows {
+    {% for key, value in json %}
+    let {{ key }} = ShadowToken.{{ key }}
+    {% endfor %}
+}

@@ -2,7 +2,7 @@ import Foundation
 
 public struct SchemeDirectory {
     enum Path: String, CaseIterable {
-        case meta = "meta"
+        case meta = "stylesSalute"
         case colors = "ios/ios_color"
         case fontFamilies = "ios/ios_fontFamily"
         case gradients = "ios/ios_gradient"
