@@ -8,3 +8,9 @@ public extension ShapeToken {
     }
     {% endfor %}
 }
+
+public struct Shapes {
+    {% for key, value in json %}
+    let {{ key }} = ShapeToken.{{ key }}
+    {% endfor %}
+}

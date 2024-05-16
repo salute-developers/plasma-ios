@@ -38,3 +38,9 @@ public extension AdaptiveTypographyToken {
         {% endfor %}
     ]
 }
+
+public struct Typographies {
+    {% for key, value in json %}
+    let {{ key }} = AdaptiveTypographyToken.{{ key }}
+    {% endfor %}
+}
