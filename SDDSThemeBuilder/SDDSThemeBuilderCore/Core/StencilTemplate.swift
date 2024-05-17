@@ -5,6 +5,7 @@ enum StencilTemplate: String {
     case shape = "ShapeToken"
     case shadow = "ShadowToken"
     case typography = "TypographyToken"
+    case gradient = "GradientToken"
     
     var withStencilExt: String {
         rawValue + ".stencil"
