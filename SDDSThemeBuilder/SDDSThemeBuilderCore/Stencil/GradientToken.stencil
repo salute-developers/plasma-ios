@@ -1,0 +1,146 @@
+import Foundation
+
+public extension GradientToken {
+    {% for key, values in json %}
+    static var {{ key }}: Self {
+        GradientToken(
+            darkGradients: [
+                {% for gradient in values.dark %}
+                .{{ gradient.kind }}(
+                    {% if gradient.kind == "linear" %}
+                    LinearGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        angle: {{ gradient.angle }}
+                    )
+                    {% elif gradient.kind == "radial" %}
+                    RadialGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        startPoint: CGPoint(
+                            x: {{ gradient.startPointX }},
+                            y: {{ gradient.startPointY }}
+                        ),
+                        endPoint: CGPoint(
+                            x: {{ gradient.endPointX }},
+                            y: {{ gradient.endPointY }}
+                        )
+                    )
+                    {% elif gradient.kind == "angular" %}
+                    AngularGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        startAngle: {{ gradient.startAngle }},
+                        endAngle: CGPoint(
+                            x: {{ gradient.endAngleX }},
+                            y: {{ gradient.endAngleY }}
+                        ),
+                        center: CGPoint(
+                            x: {{ gradient.centerX }},
+                            y: {{ gradient.centerY }}
+                        )
+                    )
+                    {% elif gradient.kind == "color" %}
+                    PlainColor(
+                        background: Color(UIColor(hex: "{{ gradient.background }}"))
+                    )
+                    {% endif %}
+                ){% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            ],
+            lightGradients: [
+                {% for gradient in values.light %}
+                .{{ gradient.kind }}(
+                    {% if gradient.kind == "linear" %}
+                    LinearGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        angle: {{ gradient.angle }}
+                    )
+                    {% elif gradient.kind == "radial" %}
+                    RadialGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        startPoint: CGPoint(
+                            x: {{ gradient.startPointX }},
+                            y: {{ gradient.startPointY }}
+                        ),
+                        endPoint: CGPoint(
+                            x: {{ gradient.endPointX }},
+                            y: {{ gradient.endPointY }}
+                        )
+                    )
+                    {% elif gradient.kind == "angular" %}
+                    AngularGradient(
+                        locations: [
+                            {% for location in gradient.locations %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        colors: [
+                            {% for color in gradient.colors %}
+                            Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        ],
+                        startAngle: {{ gradient.startAngle }},
+                        endAngle: CGPoint(
+                            x: {{ gradient.endAngleX }},
+                            y: {{ gradient.endAngleY }}
+                        ),
+                        center: CGPoint(
+                            x: {{ gradient.centerX }},
+                            y: {{ gradient.centerY }}
+                        )
+                    )
+                    {% elif gradient.kind == "color" %}
+                    PlainColor(
+                        background: Color(UIColor(hex: "{{ gradient.background }}"))
+                    )
+                    {% endif %}
+                ){% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            ]
+        )
+    }
+    {% endfor %}
+}
