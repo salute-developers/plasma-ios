@@ -12,4 +12,8 @@ public extension View {
     func applyTypography(_ token: TypographyToken) -> some View {
         modifier(TypographyModifier(token: token))
     }
+    
+    func applyGradient(_ token: GradientToken, theme: ThemeStyle = UIScreen.themeStyle) -> some View {
+        modifier(GradientModifier(token: token, theme: theme))
+    }
 }

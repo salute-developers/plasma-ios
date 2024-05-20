@@ -3,50 +3,40 @@ import SwiftUI
 
 public extension LinearGradient {
     var gradient: SwiftUI.LinearGradient {
-        let colors = colors
-        let locations = locations.map { NSNumber(value: $0) }
-        
-        let gradient = Gradient(stops: zip(colors, locations).map { Gradient.Stop(color: $0.0, location: CGFloat(truncating: $0.1)) })
-        
-        let angle = angle
-        let angleInRadians = angle * .pi / 180.0
-        let x = cos(angleInRadians)
-        let y = sin(angleInRadians)
+        let angleInRadians = angle * .pi / 180
+        let startX = cos(angleInRadians + .pi) * 0.5 + 0.5
+        let startY = sin(angleInRadians + .pi) * 0.5 + 0.5
+        let endX = cos(angleInRadians) * 0.5 + 0.5
+        let endY = sin(angleInRadians) * 0.5 + 0.5
         
         return SwiftUI.LinearGradient(
-            gradient: gradient,
-            startPoint: UnitPoint(x: (x + 1.0) / 2.0, y: (y + 1.0) / 2.0),
-            endPoint: UnitPoint(x: (1.0 - x) / 2.0, y: (1.0 - y) / 2.0)
+            colors: colors,
+            startPoint: UnitPoint(x: startX, y: startY),
+            endPoint: UnitPoint(x: endX, y: endY)
         )
     }
 }
 
 public extension RadialGradient {
     var gradient: SwiftUI.RadialGradient {
-        let colors = colors
-        let locations = locations.map { NSNumber(value: $0) }
-        
-        let gradient = Gradient(stops: zip(colors, locations).map { Gradient.Stop(color: $0.0, location: CGFloat(truncating: $0.1)) })
-        
-        let startUnitPoint = UnitPoint(x: startPoint.x, y: startPoint.y)
-        let endUnitPoint = UnitPoint(x: endPoint.x, y: endPoint.y)
+        let center = UnitPoint(x: startPoint.x, y: startPoint.y)
+        let endPoint = UnitPoint(x: endPoint.x, y: endPoint.y)
+        let startRadius: CGFloat = 0
+        let endRadius: CGFloat = hypot(endPoint.x - center.x, endPoint.y - center.y) * 2
         
         return SwiftUI.RadialGradient(
-            gradient: gradient,
-            center: startUnitPoint,
-            startRadius: 0,
-            endRadius: hypot(endUnitPoint.x - startUnitPoint.x, endUnitPoint.y - startUnitPoint.y) * sqrt(2)
+            colors: colors,
+            center: center,
+            startRadius: startRadius,
+            endRadius: endRadius
         )
     }
 }
 
 public extension AngularGradient {
     var gradient: SwiftUI.AngularGradient {
-        let colors = colors
-        let stops = zip(colors, locations).map { Gradient.Stop(color: $0.0, location: $0.1) }
-        
         return SwiftUI.AngularGradient(
-            gradient: Gradient(stops: stops),
+            colors: colors,
             center: UnitPoint(x: center.x, y: center.y),
             startAngle: Angle(degrees: Double(startAngle)),
             endAngle: Angle(degrees: Double(endAngle))

@@ -17,19 +17,19 @@ extension UIColor {
         var red, green, blue, alpha: UInt64
         switch hexString.count {
         case 6:
-            red = (rgbValue >> 16)
-            green = (rgbValue >> 8 & 0xFF)
-            blue = (rgbValue & 0xFF)
+            red = (rgbValue >> 16) & 0xFF
+            green = (rgbValue >> 8) & 0xFF
+            blue = rgbValue & 0xFF
             alpha = 255
         case 8:
-            red = (rgbValue >> 16)
-            green = (rgbValue >> 8 & 0xFF)
-            blue = (rgbValue & 0xFF)
-            alpha = rgbValue >> 24
+            red = (rgbValue >> 24) & 0xFF
+            green = (rgbValue >> 16) & 0xFF
+            blue = (rgbValue >> 8) & 0xFF
+            alpha = rgbValue & 0xFF
         default:
             fatalError("Incorrect hex color format")
         }
         
-        self.init(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha) / 255)
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
     }
 }

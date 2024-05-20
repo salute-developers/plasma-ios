@@ -15,6 +15,6 @@ public extension ColorToken {
 
 public struct Colors {
     {%- for key, value in json %}
-    let {{ key }} = ColorToken.{{ key }}
+    public static let {{ key }} = ColorToken.{{ key }}
     {%- endfor %}
 }

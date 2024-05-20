@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		246D68B92BFC938700AB0020 /* TypographyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246D68B62BFC938700AB0020 /* TypographyView.swift */; };
+		246D68BA2BFC938700AB0020 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246D68B72BFC938700AB0020 /* MainView.swift */; };
+		246D68BB2BFC938700AB0020 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246D68B82BFC938700AB0020 /* GradientView.swift */; };
 		2489D0A52BC7F3790053AAB1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0A42BC7F3790053AAB1 /* main.swift */; };
 		2489D0B42BC7F3850053AAB1 /* SDDSTheme.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2489D0B32BC7F3850053AAB1 /* SDDSTheme.docc */; };
 		2489D0BA2BC7F3850053AAB1 /* SDDSTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */; };
@@ -73,13 +76,13 @@
 		8181E3B52BFB7AC800D4012C /* ThemeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3B42BFB7AC800D4012C /* ThemeStyle.swift */; };
 		8181E3B72BFB7BAE00D4012C /* GradientKind+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3B62BFB7BAE00D4012C /* GradientKind+Extensions.swift */; };
 		8181E3BA2BFB7F8500D4012C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3B92BFB7F8500D4012C /* GradientView.swift */; };
+		8181E3BC2BFB9DFF00D4012C /* GradientContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */; };
 		819B2A862BF2377B00688624 /* TypographyToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A852BF2377B00688624 /* TypographyToken+Extensions.swift */; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2A8B2BF23EB600688624 /* TypographyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8A2BF23EB600688624 /* TypographyModifier.swift */; };
 		819B2A8D2BF2403700688624 /* View+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8C2BF2403700688624 /* View+Conditional.swift */; };
 		819B2A8F2BF241A200688624 /* LineHeightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A8E2BF241A200688624 /* LineHeightModifier.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
-		819B2ACC2BF280F900688624 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ACB2BF280F900688624 /* ContentView.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AD52BF2810500688624 /* SDDSTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */; };
@@ -211,6 +214,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		246D68B62BFC938700AB0020 /* TypographyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyView.swift; sourceTree = "<group>"; };
+		246D68B72BFC938700AB0020 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		246D68B82BFC938700AB0020 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2489D0A12BC7F3790053AAB1 /* SDDSThemeBuilder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDDSThemeBuilder; sourceTree = BUILT_PRODUCTS_DIR; };
 		2489D0A42BC7F3790053AAB1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2489D0B02BC7F3850053AAB1 /* SDDSTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +266,7 @@
 		8181E3B42BFB7AC800D4012C /* ThemeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStyle.swift; sourceTree = "<group>"; };
 		8181E3B62BFB7BAE00D4012C /* GradientKind+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GradientKind+Extensions.swift"; sourceTree = "<group>"; };
 		8181E3B92BFB7F8500D4012C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilderTests.swift; sourceTree = "<group>"; };
 		819B2A852BF2377B00688624 /* TypographyToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Extensions.swift"; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2A8A2BF23EB600688624 /* TypographyModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyModifier.swift; sourceTree = "<group>"; };
@@ -268,7 +275,6 @@
 		819B2A932BF244D800688624 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
-		819B2ACB2BF280F900688624 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819B2ADB2BF283A600688624 /* FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
@@ -384,6 +390,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		246D68B52BFC938700AB0020 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				246D68B62BFC938700AB0020 /* TypographyView.swift */,
+				246D68B72BFC938700AB0020 /* MainView.swift */,
+				246D68B82BFC938700AB0020 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +590,7 @@
 				817539992BD12FB900138866 /* GenerateTokensCommandTestsTests.swift */,
 				81E1EDDD2BD6D6E400F86AE1 /* GeneralContextBuilderTests.swift */,
 				81E1EDE12BD6F2B700F86AE1 /* TemplateRendererTests.swift */,
+				8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */,
 			);
 			path = SDDSThemeBuilderCoreTests;
 			sourceTree = "<group>";
@@ -641,8 +658,8 @@
 		819B2AC82BF280F900688624 /* SDDSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				246D68B52BFC938700AB0020 /* Views */,
 				819B2AC92BF280F900688624 /* SDDSDemoApp.swift */,
-				819B2ACB2BF280F900688624 /* ContentView.swift */,
 				819B2ACD2BF280FB00688624 /* Assets.xcassets */,
 				819B2ACF2BF280FB00688624 /* Preview Content */,
 			);
@@ -1135,6 +1152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8181E3BC2BFB9DFF00D4012C /* GradientContextBuilderTests.swift in Sources */,
 				8175399D2BD1303400138866 /* RunnableMock.swift in Sources */,
 				81E1EDDA2BD6D58D00F86AE1 /* ContextBuilderMock.swift in Sources */,
 				817539952BD12ED400138866 /* DownloadCommandTests.swift in Sources */,
@@ -1150,8 +1168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819B2ACC2BF280F900688624 /* ContentView.swift in Sources */,
 				819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */,
+				246D68BA2BFC938700AB0020 /* MainView.swift in Sources */,
+				246D68BB2BFC938700AB0020 /* GradientView.swift in Sources */,
+				246D68B92BFC938700AB0020 /* TypographyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

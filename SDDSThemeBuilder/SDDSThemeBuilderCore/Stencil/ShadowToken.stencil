@@ -19,6 +19,6 @@ public extension ShadowToken {
 
 public struct Shadows {
     {%- for key, value in json %}
-    let {{ key }} = ShadowToken.{{ key }}
+    public static let {{ key }} = ShadowToken.{{ key }}
     {%- endfor %}
 }
