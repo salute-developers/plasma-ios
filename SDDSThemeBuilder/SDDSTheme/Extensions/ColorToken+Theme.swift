@@ -1,11 +1,6 @@
 import Foundation
 import SwiftUI
 
-public enum ThemeStyle {
-    case light
-    case dark
-}
-
 public extension ColorToken {
     /// Возвращает цвет для светлой или тёмной темы в зависимости от параметра `theme`
     func color(for theme: ThemeStyle) -> Color {

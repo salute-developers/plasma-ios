@@ -21,22 +21,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string/>
 	<key>UIAppFonts</key>
-	<array>
-		<string>SBSansText-Regular.otf</string>
-		<string>SBSansText-LightItalic.otf</string>
-		<string>SBSansText-Italic.otf</string>
-		<string>SBSansDisplay-Regular.otf</string>
-		<string>SBSansDisplay-Medium.otf</string>
-		<string>SBSansText-Medium.otf</string>
-		<string>SBSansDisplay-Bold.otf</string>
-		<string>SBSansText-BoldItalic.otf</string>
-		<string>SBSansDisplay-Thin.otf</string>
-		<string>SBSansText-Semibold.otf</string>
-		<string>SBSansText-Light.otf</string>
-		<string>SBSansText-SemiboldItalic.otf</string>
-		<string>SBSansDisplay-Semibold.otf</string>
-		<string>SBSansText-Bold.otf</string>
-		<string>SBSansText-Thin.otf</string>
-	</array>
+	<array/>
 </dict>
 </plist>
