@@ -1,11 +1,7 @@
 import SwiftUI
 import SDDSTheme
 
-struct ContentView: View {
-    init() {
-        ThemeService.shared.initialize()
-    }
-    
+struct TypographyView: View {    
     private let tokens = AdaptiveTypographyToken.tokens
     
     var body: some View {
@@ -34,8 +30,4 @@ struct ContentView: View {
     private var placeholder: String {
         "Salut, world!"
     }
-}
-
-#Preview {
-    ContentView()
 }

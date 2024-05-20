@@ -6,6 +6,7 @@ public extension GradientToken {
     
     static var {{ key }}: Self {
         GradientToken(
+            description: "{{ key }}",
             darkGradients: [
                 {%- for gradient in values.dark %}
                 .{{ gradient.kind }}(
@@ -145,10 +146,16 @@ public extension GradientToken {
         )
     }
     {%- endfor %}
+    
+    static var tokens: [Self] = [
+        {%- for key in json %}
+        {{ key }},
+        {%- endfor %}
+    ]
 }
 
 public struct Gradients {
     {%- for key, value in json %}
-    let {{ key }} = GradientToken.{{ key }}
+    public static let {{ key }} = GradientToken.{{ key }}
     {%- endfor %}
 }

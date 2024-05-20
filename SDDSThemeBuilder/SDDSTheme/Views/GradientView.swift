@@ -10,7 +10,7 @@ public struct GradientView: View {
     public var body: some View {
         ZStack {
             ForEach(0..<kinds.count, id: \.self) { index in
-                view(with: kinds[index])
+                view(with: kinds[kinds.count - 1 - index])
             }
         }
     }

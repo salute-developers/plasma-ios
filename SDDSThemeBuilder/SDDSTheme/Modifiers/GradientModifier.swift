@@ -11,15 +11,9 @@ public struct GradientModifier: ViewModifier {
     }
     
     public func body(content: Content) -> some View {
-        if #available(iOS 15.0, *) {
-            content.background {
-                GradientView(theme: theme, token: token)
-            }
-        } else {
-            ZStack {
-                GradientView(theme: theme, token: token)
-                content
-            }
+        ZStack {
+            content
+            GradientView(theme: theme, token: token)
         }
     }
 }
