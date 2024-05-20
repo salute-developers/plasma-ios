@@ -33,14 +33,14 @@ public extension AdaptiveTypographyToken {
     {% endfor %}
     
     static var tokens: [Self] = [
-        {% for key in json %}
+        {%- for key in json %}
         {{ key }},
-        {% endfor %}
+        {%- endfor %}
     ]
 }
 
 public struct Typographies {
-    {% for key, value in json %}
-    let {{ key }} = AdaptiveTypographyToken.{{ key }}
-    {% endfor %}
+    {%- for key, value in json %}
+    public static let {{ key }} = AdaptiveTypographyToken.{{ key }}
+    {%- endfor %}
 }

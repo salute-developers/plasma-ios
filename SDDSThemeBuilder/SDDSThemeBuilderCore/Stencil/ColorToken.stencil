@@ -2,18 +2,19 @@ import SwiftUI
 import UIKit
 
 public extension ColorToken {
-    {% for key, value in json %}
+    {%- for key, value in json %}
+    
     static var {{ key }}: Self {
         Self(
             darkColor: Color(UIColor(hex: "{{ value.dark }}")),
             lightColor: Color(UIColor(hex: "{{ value.light }}"))
         )
     }
-    {% endfor %}
+    {%- endfor %}
 }
 
 public struct Colors {
-    {% for key, value in json %}
-    let {{ key }} = ColorToken.{{ key }}
-    {% endfor %}
+    {%- for key, value in json %}
+    public static let {{ key }} = ColorToken.{{ key }}
+    {%- endfor %}
 }

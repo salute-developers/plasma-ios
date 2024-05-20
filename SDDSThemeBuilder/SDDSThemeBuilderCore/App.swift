@@ -64,6 +64,14 @@ public final class App {
                 fontFamiliesContainer: fontFamiliesContainer
             )
         ).run()
+        GenerateTokensCommand(
+            name: "Generate Gradient Tokens",
+            schemeURL: schemeDirectory.url(for: .gradients),
+            templatesURL: templatesURL,
+            template: .gradient,
+            generatedOutputURL: generatedTokensURL,
+            contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
+        ).run()
     }
     
     public init(schemeZipURL: URL,
