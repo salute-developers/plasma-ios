@@ -10,7 +10,7 @@ public extension ShapeToken {
 }
 
 public struct Shapes {
-    {% for key, value in json %}
+    {%- for key, value in json %}
     let {{ key }} = ShapeToken.{{ key }}
-    {% endfor %}
+    {%- endfor %}
 }

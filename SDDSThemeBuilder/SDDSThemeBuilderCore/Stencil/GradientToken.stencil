@@ -1,37 +1,39 @@
-import Foundation
+import SwiftUI
+import UIKit
 
 public extension GradientToken {
-    {% for key, values in json %}
+    {%- for key, values in json %}
+    
     static var {{ key }}: Self {
         GradientToken(
             darkGradients: [
-                {% for gradient in values.dark %}
+                {%- for gradient in values.dark %}
                 .{{ gradient.kind }}(
-                    {% if gradient.kind == "linear" %}
+                    {%- if gradient.kind == "linear" %}
                     LinearGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         angle: {{ gradient.angle }}
                     )
-                    {% elif gradient.kind == "radial" %}
+                    {%- elif gradient.kind == "radial" %}
                     RadialGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         startPoint: CGPoint(
                             x: {{ gradient.startPointX }},
@@ -42,17 +44,17 @@ public extension GradientToken {
                             y: {{ gradient.endPointY }}
                         )
                     )
-                    {% elif gradient.kind == "angular" %}
+                    {%- elif gradient.kind == "angular" %}
                     AngularGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle }},
                         endAngle: CGPoint(
@@ -64,42 +66,42 @@ public extension GradientToken {
                             y: {{ gradient.centerY }}
                         )
                     )
-                    {% elif gradient.kind == "color" %}
+                    {%- elif gradient.kind == "color" %}
                     PlainColor(
                         background: Color(UIColor(hex: "{{ gradient.background }}"))
                     )
-                    {% endif %}
+                    {%- endif %}
                 ){% if not forloop.last %}, {% endif %}
-                {% endfor %}
+                {%- endfor %}
             ],
             lightGradients: [
-                {% for gradient in values.light %}
+                {%- for gradient in values.light %}
                 .{{ gradient.kind }}(
-                    {% if gradient.kind == "linear" %}
+                    {%- if gradient.kind == "linear" %}
                     LinearGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         angle: {{ gradient.angle }}
                     )
-                    {% elif gradient.kind == "radial" %}
+                    {%- elif gradient.kind == "radial" %}
                     RadialGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         startPoint: CGPoint(
                             x: {{ gradient.startPointX }},
@@ -110,17 +112,17 @@ public extension GradientToken {
                             y: {{ gradient.endPointY }}
                         )
                     )
-                    {% elif gradient.kind == "angular" %}
+                    {%- elif gradient.kind == "angular" %}
                     AngularGradient(
                         locations: [
-                            {% for location in gradient.locations %}
+                            {%- for location in gradient.locations %}
                             {{ location }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         colors: [
-                            {% for color in gradient.colors %}
+                            {%- for color in gradient.colors %}
                             Color(UIColor(hex: "{{ color }}")){% if not forloop.last %}, {% endif %}
-                            {% endfor %}
+                            {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle }},
                         endAngle: CGPoint(
@@ -132,15 +134,21 @@ public extension GradientToken {
                             y: {{ gradient.centerY }}
                         )
                     )
-                    {% elif gradient.kind == "color" %}
+                    {%- elif gradient.kind == "color" %}
                     PlainColor(
                         background: Color(UIColor(hex: "{{ gradient.background }}"))
                     )
-                    {% endif %}
+                    {%- endif %}
                 ){% if not forloop.last %}, {% endif %}
-                {% endfor %}
+                {%- endfor %}
             ]
         )
     }
-    {% endfor %}
+    {%- endfor %}
+}
+
+public struct Gradients {
+    {%- for key, value in json %}
+    let {{ key }} = GradientToken.{{ key }}
+    {%- endfor %}
 }

@@ -18,7 +18,7 @@ public struct AngularGradient {
     public let locations: [CGFloat]
     public let colors: [Color]
     public let startAngle: CGFloat
-    public let endAngle: CGPoint
+    public let endAngle: CGFloat
     public let center: CGPoint
 }
 
