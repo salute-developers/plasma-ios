@@ -272,7 +272,6 @@
 		819B2A8A2BF23EB600688624 /* TypographyModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyModifier.swift; sourceTree = "<group>"; };
 		819B2A8C2BF2403700688624 /* View+Conditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Conditional.swift"; sourceTree = "<group>"; };
 		819B2A8E2BF241A200688624 /* LineHeightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineHeightModifier.swift; sourceTree = "<group>"; };
-		819B2A932BF244D800688624 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -403,7 +402,6 @@
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
-				819B2A922BF244BB00688624 /* Scripts */,
 				2489D0A32BC7F3790053AAB1 /* SDDSThemeBuilder */,
 				2489D0B12BC7F3850053AAB1 /* SDDSTheme */,
 				2489D0BD2BC7F3850053AAB1 /* SDDSThemeTests */,
@@ -645,14 +643,6 @@
 				819B2A882BF23B1600688624 /* Font+FontName.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		819B2A922BF244BB00688624 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				819B2A932BF244D800688624 /* build_xcframework.sh */,
-			);
-			path = Scripts;
 			sourceTree = "<group>";
 		};
 		819B2AC82BF280F900688624 /* SDDSDemo */ = {
@@ -1023,7 +1013,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"${SRCROOT}/Scripts/build_xcframework.sh\"\n";
+			shellScript = "ruby ../scripts/build_xcframeworks.rb -d . -p SDDSThemeBuilder.xcodeproj -m SDDSTheme\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
