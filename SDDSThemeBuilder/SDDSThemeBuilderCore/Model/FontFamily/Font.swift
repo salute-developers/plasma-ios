@@ -1,13 +1,16 @@
 import Foundation
 
 struct Font: Codable {
-    public enum Weight: Int, Codable {
-        case thin = 100
-        case light = 300
-        case regular = 400
-        case medium = 500
-        case semibold = 600
-        case bold = 700
+    public enum Weight: String, Codable {
+        case black
+        case bold
+        case heavy
+        case light
+        case medium
+        case regular
+        case semibold
+        case thin
+        case ultraLight
     }
     
     public enum Style: String, Codable {
@@ -16,6 +19,6 @@ struct Font: Codable {
     }
     
     let link: URL
-    let fontWeight: Weight
-    let fontStyle: Style
+    let weight: Weight
+    let style: Style
 }

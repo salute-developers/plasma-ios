@@ -6,5 +6,5 @@ enum TokenKind: String, Codable {
     case shadow
     case shape
     case typography
-    case fontFamily = "font-family"
+    case fontFamily
 }

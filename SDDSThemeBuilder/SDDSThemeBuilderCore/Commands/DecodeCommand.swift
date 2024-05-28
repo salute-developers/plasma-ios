@@ -6,7 +6,7 @@ final class DecodeCommand<T: Codable>: Command {
     init(url: URL) {
         self.url = url
         
-        super.init(name: "Decode JSON Scheme")
+        super.init(name: "Decode JSON \(url)")
     }
     
     @discardableResult override func run() -> CommandResult {

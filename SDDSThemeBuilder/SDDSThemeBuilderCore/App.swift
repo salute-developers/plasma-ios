@@ -36,7 +36,7 @@ public final class App {
             name: "Generate Color Tokens",
             schemeURL: schemeDirectory.url(for: .colors),
             templatesURL: templatesURL,
-            template: .color,
+            templates: [.colorToken, .colors],
             generatedOutputURL: generatedTokensURL,
             contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
         ).run()
@@ -44,21 +44,21 @@ public final class App {
             name: "Generate Shadow Tokens",
             schemeURL: schemeDirectory.url(for: .shadows),
             templatesURL: templatesURL,
-            template: .shadow,
+            templates: [.shadowToken, .shadows],
             generatedOutputURL: generatedTokensURL
         ).run()
         GenerateTokensCommand(
             name: "Generate Shape Tokens",
             schemeURL: schemeDirectory.url(for: .shapes),
             templatesURL: templatesURL,
-            template: .shape,
+            templates: [.shapeToken, .shapes],
             generatedOutputURL: generatedTokensURL
         ).run()
         GenerateTokensCommand(
             name: "Generate Typography Tokens",
             schemeURL: schemeDirectory.url(for: .typography),
             templatesURL: templatesURL,
-            template: .typography,
+            templates: [.typographyToken, .typographies],
             generatedOutputURL: generatedTokensURL,
             contextBuilder: TypographyContextBuilder(
                 fontFamiliesContainer: fontFamiliesContainer
@@ -68,7 +68,7 @@ public final class App {
             name: "Generate Gradient Tokens",
             schemeURL: schemeDirectory.url(for: .gradients),
             templatesURL: templatesURL,
-            template: .gradient,
+            templates: [.gradientToken, .gradients],
             generatedOutputURL: generatedTokensURL,
             contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
         ).run()

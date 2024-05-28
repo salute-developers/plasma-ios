@@ -1,53 +1,58 @@
 import XCTest
 @testable import SDDSThemeBuilderCore
 
-final class DecodeSchemeCommandTests: XCTestCase {
+final class DecodeCommandTests: XCTestCase {
     /// SUT
-    var decodeSchemeCommand: DecodeSchemeCommand!
+    var decodeCommand: DecodeCommand<Scheme>!
     
-    func testDecodeSchemeCommand_Success() {
+    func testDecodeCommand_Success() {
         // given
-        decodeSchemeCommand = DecodeSchemeCommand(schemeURL: DecodeSchemeCommandTests.schemeURL)
+        decodeCommand = DecodeCommand(url: DecodeCommandTests.schemeURL)
         
         // when
-        let result = decodeSchemeCommand.run()
+        let result = decodeCommand.run()
         
         // then
         switch result {
-        case .scheme:
-            break
+        case .value(let scheme as Scheme):
+            XCTAssertEqual(scheme.name, "stylesSalute")
+            XCTAssertEqual(scheme.version, "0.1.0")
         default:
-            XCTFail("Incorrect result")
+            XCTFail("Expected a successful decoding result with a Scheme value")
         }
     }
     
-    func testDecodeSchemeCommand_Failure() {
+    func testDecodeCommand_Failure() {
         // given
-        decodeSchemeCommand = DecodeSchemeCommand(schemeURL: DecodeSchemeCommandTests.emptyURL)
+        decodeCommand = DecodeCommand(url: DecodeCommandTests.invalidURL)
         
         // when
-        let result = decodeSchemeCommand.run()
+        let result = decodeCommand.run()
         
         // then
         switch result {
         case .error:
             break
         default:
-            XCTFail("Incorrect result")
+            XCTFail("Expected an error result")
         }
     }
 }
 
-private extension DecodeSchemeCommandTests {
+private extension DecodeCommandTests {
     static var schemeURL: URL {
-        let bundle = Bundle(for: DecodeSchemeCommandTests.self)
-        let jsonSchema = bundle.url(forResource: "scheme", withExtension: "json")!
-        return jsonSchema
+        let bundle = Bundle(for: DecodeCommandTests.self)
+        guard let url = bundle.url(forResource: "scheme", withExtension: "json") else {
+            fatalError("scheme.json not found")
+        }
+        return url
     }
     
-    static var emptyURL: URL {
-        let bundle = Bundle(for: DecodeSchemeCommandTests.self)
-        let jsonSchema = bundle.url(forResource: "empty", withExtension: "json")!
-        return jsonSchema
+    static var invalidURL: URL {
+        let bundle = Bundle(for: DecodeCommandTests.self)
+        guard let url = bundle.url(forResource: "empty", withExtension: "json") else {
+            fatalError("invalid.json not found")
+        }
+        return url
     }
 }

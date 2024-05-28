@@ -1,0 +1,30 @@
+{
+    "light.text.default.primary": [
+        {
+            "kind": "linear",
+            "locations": [
+                0,
+                1
+            ],
+            "colors": [
+                "[palette.red.1000]",
+                "#000000"
+            ],
+            "angle": 90
+        }
+    ],
+    "dark.text.default.primary": [
+        {
+            "kind": "linear",
+            "locations": [
+                0,
+                1
+            ],
+            "colors": [
+                "[palette.red.950]",
+                "#000000"
+            ],
+            "angle": 90
+        }
+    ]
+}

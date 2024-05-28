@@ -1,0 +1,8 @@
+import SwiftUI
+import UIKit
+
+public struct Shapes {
+    {%- for key, value in json %}
+    public static let {{ key }} = ShapeToken.{{ key }}
+    {%- endfor %}
+}

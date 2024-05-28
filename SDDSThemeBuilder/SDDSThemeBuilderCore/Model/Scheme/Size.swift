@@ -8,4 +8,9 @@ enum Size: String, Codable {
     case xxs
     case xxl
     case xl
+    case h1
+    case h2
+    case h3
+    case h4
+    case h5
 }

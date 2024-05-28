@@ -11,11 +11,12 @@ final class TypographyContextBuilder: ContexBuilder {
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                return prepareContext(fromDictionary: dictionary) { json in
+                let result = prepareContext(fromDictionary: dictionary) { json in
                     var context = [String: Any]()
                     context["json"] = json
                     return context
                 }
+                return result
             } else {
                 return .error(GeneralError.decoding)
             }
@@ -34,22 +35,22 @@ extension TypographyContextBuilder {
             var tokenDictionary = dictionary[key] as? [String: Any]
             
             let fontFamilyRefKey = "fontFamilyRef"
-            let fontFamilyRef = tokenDictionary?[fontFamilyRefKey] as? String ?? ""
-            guard let weight = TypographyToken.Weight(rawValue: tokenDictionary?["weight"] as? String ?? ""), 
-                    let style = TypographyToken.Style(rawValue: tokenDictionary?["style"] as? String ?? "") else {
-                fatalError("Invalid token format")
+            guard let weight = TypographyToken.Weight(rawValue: tokenDictionary?["weight"] as? String ?? ""),
+                  let style = TypographyToken.Style(rawValue: tokenDictionary?["style"] as? String ?? "") else {
+                return .error(GeneralError.invalidTokenFormat)
             }
             
+            let fontFamilyRef = tokenDictionary?[fontFamilyRefKey] as? String ?? ""
             guard let fontName = findFont(with: fontFamilyRef, weight: weight, style: style) else {
-                continue
+                return .error(GeneralError.fontNotFound)
             }
             
             tokenDictionary?["fontName"] = fontName
             
-            // Приведение словарей к формату кодогенерации
+            // Transform the dictionary keys for code generation format
             var components = key.keyComponents
             guard let screenSize = ScreenSize(rawValue: components.first ?? "") else {
-                fatalError("Invalid screen size")
+                return .error(GeneralError.invalidScreenSize)
             }
             
             components.removeFirst()
@@ -66,7 +67,7 @@ extension TypographyContextBuilder {
     private func findFont(with fontFamilyRef: String, weight: TypographyToken.Weight, style: TypographyToken.Style) -> String? {
         guard let heading = FontFamily.Key(rawValue: fontFamilyRef.keyComponents.last ?? ""),
               let fontFamily = fontFamiliesContainer.items[heading],
-              let font = fontFamily.fonts.first(where: { $0.fontWeight == weight.fontWeight && $0.fontStyle == style.fontStyle }) else {
+              let font = fontFamily.fonts.first(where: { $0.weight == weight.fontWeight && $0.style == style.fontStyle }) else {
             print("Font with family ref: \(fontFamilyRef), weight: \(weight.rawValue), style: \(style.rawValue) is not found")
             return nil
         }
@@ -79,11 +80,11 @@ private extension TypographyToken.Weight {
     var fontWeight: Font.Weight {
         switch self {
         case .black:
-            fatalError() // Не определено
+            return .black
         case .bold:
             return .bold
         case .heavy:
-            fatalError() // Не определено
+            return .heavy
         case .light:
             return .light
         case .medium:
@@ -95,7 +96,7 @@ private extension TypographyToken.Weight {
         case .thin:
             return .thin
         case .ultraLight:
-            fatalError() // Не определено
+            return .ultraLight
         }
     }
 }
