@@ -10,7 +10,7 @@ struct GradientView: View {
                 ForEach(ThemeStyle.allCases, id: \.self) { theme in
                     Section(header: header(theme: theme, token: token)) {
                         exampleView
-                            .applyGradient(token, theme: theme)
+                            .gradient(token, theme: theme)
                             .cornerRadius(16)
                     }
                 }

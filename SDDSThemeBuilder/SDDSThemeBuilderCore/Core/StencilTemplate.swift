@@ -1,11 +1,16 @@
 import Foundation
 
 enum StencilTemplate: String {
-    case color = "ColorToken"
-    case shape = "ShapeToken"
-    case shadow = "ShadowToken"
-    case typography = "TypographyToken"
-    case gradient = "GradientToken"
+    case colorToken = "ColorToken"
+    case shapeToken = "ShapeToken"
+    case shadowToken = "ShadowToken"
+    case typographyToken = "TypographyToken"
+    case gradientToken = "GradientToken"
+    case colors = "Colors"
+    case shapes = "Shapes"
+    case shadows = "Shadows"
+    case typographies = "Typographies"
+    case gradients = "Gradients"
     
     var withStencilExt: String {
         rawValue + ".stencil"
