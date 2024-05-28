@@ -18,15 +18,16 @@ final class ColorContextBuilder: ContexBuilder {
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let context = buildColorThemeContext(from: dictionary, transform: hex)
-                return prepareContext(fromDictionary: context) { [weak self] json in
-                    guard let self = self else {
-                        return [:]
+                let result = buildColorThemeContext(from: dictionary, transform: hex)
+                switch result {
+                case .success(let context):
+                    return prepareContext(fromDictionary: context) { json in
+                        var context = [String: Any]()
+                        context["json"] = json
+                        return context
                     }
-                    
-                    var context = [String: Any]()
-                    context["json"] = json
-                    return context
+                case .failure(let error):
+                    return .error(error)
                 }
             } else {
                 return .error(GeneralError.decoding)
@@ -35,16 +36,15 @@ final class ColorContextBuilder: ContexBuilder {
             return .error(error)
         }
     }
-    
 }
 
 // MARK: - Aliases
 extension ColorContextBuilder {
     private func hex(_ value: String) -> String {
         if let alias = PaletteAlias(alias: value) {
-            hex(by: alias) ?? ""
+            return hex(by: alias) ?? ""
         } else {
-            value
+            return value
         }
     }
     
@@ -56,30 +56,33 @@ extension ColorContextBuilder {
 
 // MARK: - Dark & Light Theme
 extension ColorContextBuilder {
-    func buildColorThemeContext(from dictionary: [String: Any], transform: (_ hex: String) -> (String) = { $0 }) -> [String: Any] {
+    func buildColorThemeContext(from dictionary: [String: Any], transform: (_ hex: String) -> (String) = { $0 }) -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
             let components = key.tokenComponents
             guard components.count > 1 else {
-                fatalError("Color token `\(key)` has invalid format.")
+                return .failure(GeneralError.invalidColorTokenFormat)
             }
             let theme = components.first ?? ""
             let colorName = Array(components[1..<components.count]).camelCase
             switch theme {
             case "light", "dark":
                 var value = result[colorName] as? [String: Any] ?? [:]
-                
                 guard let hex = dictionary[key] as? String else {
-                    fatalError("Invalid color hex format")
+                    return .failure(GeneralError.invalidHex)
                 }
                 let colorHex = transform(hex)
+                guard !colorHex.isEmpty else {
+                    return .failure(GeneralError.invalidHex)
+                }
+                
                 value[theme] = colorHex
                 result[colorName] = value
             default:
-                fatalError("Color token should start with `light` or `dark` prefix")
+                return .failure(GeneralError.invalidColorTokenFormat)
             }
         }
         
-        return result
+        return .success(result)
     }
 }

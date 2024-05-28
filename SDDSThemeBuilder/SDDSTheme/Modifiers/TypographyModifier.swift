@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 /// Модификатор для применения токена типографики
-/// Применяет параметры font, fontWeight, fontStyle для View.
+/// Применяет параметры font, weight, style для View.
 /// Параметр kerning применяется только на iOS 16 и выше.
 public struct TypographyModifier: ViewModifier {
     let token: TypographyToken

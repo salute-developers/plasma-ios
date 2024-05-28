@@ -4,7 +4,7 @@ import PathKit
 
 final class TemplateRenderer: Renderable {
     func render(context: [String: Any], template: StencilTemplate, templatesURL: URL) -> CommandResult {
-        let templatesPath = templatesURL.path()
+        let templatesPath = templatesURL.absolutePath
         let stencilEnvironment = Environment(loader: FileSystemLoader(paths: [Path(templatesPath)]))
         guard let template = try? stencilEnvironment.loadTemplate(name: template.withStencilExt) else {
             return .error(CodeGenerationError.templateLoadingFailed)

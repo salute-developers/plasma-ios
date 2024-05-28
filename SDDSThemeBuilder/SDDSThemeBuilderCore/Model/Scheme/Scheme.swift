@@ -19,7 +19,7 @@ public struct Scheme: Codable {
         case shadow
         case shape
         case typography
-        case fontFamily = "font-family"
+        case fontFamily
         case tokens
     }
 }

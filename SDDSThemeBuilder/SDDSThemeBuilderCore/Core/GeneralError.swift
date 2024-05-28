@@ -6,4 +6,10 @@ enum GeneralError: Error {
     case invalidSchemeDirectory
     case unableToCopyTokenSource
     case unableToDownloadFonts
+    case invalidHex
+    case invalidColorTokenFormat
+    case invalidGradientFormat
+    case invalidScreenSize
+    case invalidTokenFormat
+    case fontNotFound
 }
