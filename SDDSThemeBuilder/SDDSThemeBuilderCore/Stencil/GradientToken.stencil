@@ -153,9 +153,3 @@ public extension GradientToken {
         {%- endfor %}
     ]
 }
-
-public struct Gradients {
-    {%- for key, value in json %}
-    public static let {{ key }} = GradientToken.{{ key }}
-    {%- endfor %}
-}
