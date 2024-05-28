@@ -9,19 +9,19 @@ struct TypographyView: View {
             Section(header: Text("Small")) {
                 ForEach(tokens.map { $0.small }, id: \.self) { token in
                     Text(placeholder)
-                        .applyTypography(token)
+                        .typography(token)
                 }
             }
             Section(header: Text("Medium")) {
                 ForEach(tokens.map { $0.medium }, id: \.self) { token in
                     Text(placeholder)
-                        .applyTypography(token)
+                        .typography(token)
                 }
             }
             Section(header: Text("Large")) {
                 ForEach(tokens.map { $0.large }, id: \.self) { token in
                     Text(placeholder)
-                        .applyTypography(token)
+                        .typography(token)
                 }
             }
         }

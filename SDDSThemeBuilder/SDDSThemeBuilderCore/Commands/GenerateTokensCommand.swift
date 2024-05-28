@@ -5,7 +5,7 @@ import PathKit
 final class GenerateTokensCommand: Command, FileWriter {
     private let schemeURL: URL
     private let templatesURL: URL
-    private let template: StencilTemplate
+    private let templates: [StencilTemplate]
     private let generatedOutputURL: URL
     private let templateRender: Renderable
     private let contextBuilder: ContexBuilder
@@ -13,14 +13,14 @@ final class GenerateTokensCommand: Command, FileWriter {
     init(name: String,
          schemeURL: URL,
          templatesURL: URL,
-         template: StencilTemplate,
+         templates: [StencilTemplate],
          generatedOutputURL: URL,
          templateRender: Renderable = TemplateRenderer(),
          contextBuilder: ContexBuilder = GeneralContextBuilder()
     ) {
         self.schemeURL = schemeURL
         self.templatesURL = templatesURL
-        self.template = template
+        self.templates = templates
         self.generatedOutputURL = generatedOutputURL
         self.templateRender = templateRender
         self.contextBuilder = contextBuilder
@@ -40,15 +40,19 @@ final class GenerateTokensCommand: Command, FileWriter {
             return result
         }
         
-        result = templateRender.render(context: context, template: template, templatesURL: templatesURL)
-        guard let generatedContent = result.asGenerated else {
-            return result
+        for template in templates {
+            result = templateRender.render(context: context, template: template, templatesURL: templatesURL)
+            guard let generatedContent = result.asGenerated else {
+                return result
+            }
+            
+            result = saveFile(
+                content: generatedContent,
+                outputURL: generatedOutputURL,
+                filename: template.filename
+            )
         }
         
-        return saveFile(
-            content: generatedContent,
-            outputURL: generatedOutputURL,
-            filename: template.filename
-        )
+        return result
     }
 }
