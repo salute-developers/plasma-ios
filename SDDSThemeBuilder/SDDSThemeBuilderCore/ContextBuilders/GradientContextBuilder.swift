@@ -19,11 +19,16 @@ final class GradientContextBuilder: ContexBuilder {
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let context = buildGradientThemeContext(from: dictionary, transform: hex)
-                return prepareContext(fromDictionary: context) { json in
-                    var context = [String: Any]()
-                    context["json"] = json
-                    return context
+                let result = buildGradientThemeContext(from: dictionary, transform: hex)
+                switch result {
+                case .success(let context):
+                    return prepareContext(fromDictionary: context) { json in
+                        var context = [String: Any]()
+                        context["json"] = json
+                        return context
+                    }
+                case .failure(let error):
+                    return .error(error)
                 }
             } else {
                 return .error(GeneralError.decoding)
@@ -38,9 +43,9 @@ final class GradientContextBuilder: ContexBuilder {
 extension GradientContextBuilder {
     private func hex(_ value: String) -> String {
         if let alias = PaletteAlias(alias: value) {
-            hex(by: alias) ?? ""
+            return hex(by: alias) ?? ""
         } else {
-            value
+            return value
         }
     }
     
@@ -52,13 +57,12 @@ extension GradientContextBuilder {
 
 // MARK: - Dark & Light Theme
 extension GradientContextBuilder {
-    func buildGradientThemeContext(from dictionary: [String: Any], transform: (_ hex: String) -> (String) = { $0 }) -> [String: Any] {
+    func buildGradientThemeContext(from dictionary: [String: Any], transform: (_ hex: String) -> (String) = { $0 }) -> Result<[String: Any], Error> {
         var result = [String: Any]()
-        var dictionary = dictionary
         for key in dictionary.keys {
             let components = key.tokenComponents
             guard components.count > 1 else {
-                fatalError("Color token `\(key)` has invalid format.")
+                return .failure(GeneralError.invalidColorTokenFormat)
             }
             let theme = components.first ?? ""
             let colorName = Array(components[1..<components.count]).camelCase
@@ -83,11 +87,11 @@ extension GradientContextBuilder {
                 value[theme] = gradients
                 result[colorName] = value
             default:
-                fatalError("Color token should start with `light` or `dark` prefix")
+                return .failure(GeneralError.invalidColorTokenFormat)
             }
         }
         
-        return result
+        return .success(result)
     }
 }
 
