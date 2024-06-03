@@ -35,6 +35,7 @@ public final class App {
         GenerateTokensCommand(
             name: "Generate Color Tokens",
             schemeURL: schemeDirectory.url(for: .colors),
+            themeURL: themeURL,
             templatesURL: templatesURL,
             templates: [.colorToken, .colors],
             generatedOutputURL: generatedTokensURL,
@@ -43,6 +44,7 @@ public final class App {
         GenerateTokensCommand(
             name: "Generate Shadow Tokens",
             schemeURL: schemeDirectory.url(for: .shadows),
+            themeURL: themeURL,
             templatesURL: templatesURL,
             templates: [.shadowToken, .shadows],
             generatedOutputURL: generatedTokensURL
@@ -50,6 +52,7 @@ public final class App {
         GenerateTokensCommand(
             name: "Generate Shape Tokens",
             schemeURL: schemeDirectory.url(for: .shapes),
+            themeURL: themeURL,
             templatesURL: templatesURL,
             templates: [.shapeToken, .shapes],
             generatedOutputURL: generatedTokensURL
@@ -57,6 +60,7 @@ public final class App {
         GenerateTokensCommand(
             name: "Generate Typography Tokens",
             schemeURL: schemeDirectory.url(for: .typography),
+            themeURL: themeURL,
             templatesURL: templatesURL,
             templates: [.typographyToken, .typographies],
             generatedOutputURL: generatedTokensURL,
@@ -67,13 +71,14 @@ public final class App {
         GenerateTokensCommand(
             name: "Generate Gradient Tokens",
             schemeURL: schemeDirectory.url(for: .gradients),
+            themeURL: themeURL,
             templatesURL: templatesURL,
             templates: [.gradientToken, .gradients],
             generatedOutputURL: generatedTokensURL,
             contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
         ).run()
     }
-    
+        
     public init(schemeZipURL: URL,
                 paletteURL: URL,
                 themeBuilderURL: URL) {
@@ -86,7 +91,7 @@ public final class App {
 // MARK: - Directories
 extension App {
     private var outputDirectoryURL: URL {
-        themeBuilderURL.appending(component: "SDDSThemeBuilder")
+        themeBuilderURL.appending(component: "Output")
     }
     
     private var xcodeProjectURL: URL {

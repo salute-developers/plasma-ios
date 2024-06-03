@@ -4,6 +4,7 @@ import PathKit
 
 final class GenerateTokensCommand: Command, FileWriter {
     private let schemeURL: URL
+    private let themeURL: URL
     private let templatesURL: URL
     private let templates: [StencilTemplate]
     private let generatedOutputURL: URL
@@ -12,6 +13,7 @@ final class GenerateTokensCommand: Command, FileWriter {
     
     init(name: String,
          schemeURL: URL,
+         themeURL: URL,
          templatesURL: URL,
          templates: [StencilTemplate],
          generatedOutputURL: URL,
@@ -19,6 +21,7 @@ final class GenerateTokensCommand: Command, FileWriter {
          contextBuilder: ContexBuilder = GeneralContextBuilder()
     ) {
         self.schemeURL = schemeURL
+        self.themeURL = themeURL
         self.templatesURL = templatesURL
         self.templates = templates
         self.generatedOutputURL = generatedOutputURL
@@ -28,14 +31,32 @@ final class GenerateTokensCommand: Command, FileWriter {
         super.init(name: name)
     }
     
+    private func createThemeDirectory() -> CommandResult {
+        let fileManager = FileManager.default
+        
+        do {
+            if !fileManager.fileExists(atPath: themeURL.path()) {
+                try fileManager.createDirectory(at: themeURL, withIntermediateDirectories: false)
+            }
+            return .success
+        } catch {
+            return .error(GeneralError.invalidThemeDirectory)
+        }
+    }
+    
     @discardableResult override func run() -> CommandResult {
         super.run()
+        
+        var result = createThemeDirectory()
+        guard !result.isError else {
+            return result
+        }
         
         guard let jsonData = try? Data(contentsOf: schemeURL) else {
             return .error(GeneralError.invalidFilename)
         }
         
-        var result = contextBuilder.buildContext(from: jsonData)
+        result = contextBuilder.buildContext(from: jsonData)
         guard let context = result.asDictionary else {
             return result
         }

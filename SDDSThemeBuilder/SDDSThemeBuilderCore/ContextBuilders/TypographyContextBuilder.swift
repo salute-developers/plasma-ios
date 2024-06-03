@@ -42,7 +42,7 @@ extension TypographyContextBuilder {
             
             let fontFamilyRef = tokenDictionary?[fontFamilyRefKey] as? String ?? ""
             guard let fontName = findFont(with: fontFamilyRef, weight: weight, style: style) else {
-                return .error(GeneralError.fontNotFound)
+                continue
             }
             
             tokenDictionary?["fontName"] = fontName
@@ -89,7 +89,7 @@ private extension TypographyToken.Weight {
             return .light
         case .medium:
             return .medium
-        case .regular:
+        case .regular, .normal:
             return .regular
         case .semibold:
             return .semibold
