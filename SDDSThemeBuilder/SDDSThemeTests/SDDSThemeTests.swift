@@ -4,7 +4,7 @@
 //
 
 import XCTest
-@testable import SDDSTheme
+@testable import SDDSThemeCore
 
 final class SDDSThemeTests: XCTestCase {
 

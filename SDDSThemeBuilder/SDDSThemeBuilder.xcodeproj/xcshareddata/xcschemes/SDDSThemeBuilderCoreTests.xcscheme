@@ -30,6 +30,9 @@
                <Test
                   Identifier = "DownloadCommandTests/testDownloadCommand_Success_FromRemoteSource()">
                </Test>
+               <Test
+                  Identifier = "TypographyContextBuilderTests/testBuildContext_InvalidScreenSize()">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>

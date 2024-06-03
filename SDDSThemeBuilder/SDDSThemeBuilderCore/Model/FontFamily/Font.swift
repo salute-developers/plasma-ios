@@ -11,6 +11,7 @@ struct Font: Codable {
         case semibold
         case thin
         case ultraLight
+        case normal
     }
     
     public enum Style: String, Codable {

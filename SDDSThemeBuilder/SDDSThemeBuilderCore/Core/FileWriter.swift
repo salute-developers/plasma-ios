@@ -10,7 +10,7 @@ extension FileWriter {
 
         do {
             if !fileManager.fileExists(atPath: outputURL.path()) {
-                try fileManager.createDirectory(atPath: outputURL.path(), withIntermediateDirectories: false)
+                try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: false)
             }
             
             var outputURL = outputURL

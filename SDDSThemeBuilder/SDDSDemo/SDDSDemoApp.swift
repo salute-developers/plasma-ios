@@ -4,7 +4,7 @@ import SDDSTheme
 @main
 struct SDDSDemoApp: App {
     init() {
-        ThemeService.shared.initialize()
+        Theme.initialize()
     }
     
     var body: some Scene {

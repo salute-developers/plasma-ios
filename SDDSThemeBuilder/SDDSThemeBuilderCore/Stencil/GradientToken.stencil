@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+@_exported import SDDSThemeCore
 
 public extension GradientToken {
     {%- for key, values in json %}
@@ -58,10 +59,7 @@ public extension GradientToken {
                             {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle }},
-                        endAngle: CGPoint(
-                            x: {{ gradient.endAngleX }},
-                            y: {{ gradient.endAngleY }}
-                        ),
+                        endAngle: {{ gradient.endAngle }},
                         center: CGPoint(
                             x: {{ gradient.centerX }},
                             y: {{ gradient.centerY }}
@@ -126,10 +124,7 @@ public extension GradientToken {
                             {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle }},
-                        endAngle: CGPoint(
-                            x: {{ gradient.endAngleX }},
-                            y: {{ gradient.endAngleY }}
-                        ),
+                        endAngle: {{ gradient.endAngle }},
                         center: CGPoint(
                             x: {{ gradient.centerX }},
                             y: {{ gradient.centerY }}

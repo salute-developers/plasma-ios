@@ -1,4 +1,5 @@
 import Foundation
+@_exported import SDDSThemeCore
 
 public extension AdaptiveTypographyToken {
     {% for key, value in json %}

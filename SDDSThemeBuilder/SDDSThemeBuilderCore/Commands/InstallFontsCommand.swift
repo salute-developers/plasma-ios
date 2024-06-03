@@ -23,13 +23,10 @@ final class InstallFontsCommand: Command {
     @discardableResult override func run() -> CommandResult {
         super.run()
         
-        var result = download()
+        let result = download()
         guard !result.isError else {
             return result
         }
-        
-        result = copyBundleResources()
-        result = registerFonts()
         
         return result
     }
@@ -67,37 +64,6 @@ final class InstallFontsCommand: Command {
     
     private func outputURL(for font: Font) -> URL {
         return fontsURL.appending(component: font.link.lastPathComponent)
-    }
-    
-    // MARK: - Copy Bundle Resources
-    private func copyBundleResources() -> CommandResult {
-        runRubyScript(arguments: [copyFontsScriptURL.path(), sddsThemeBuilderXcodeProjectURL.path(), fontsURL.path()])
-    }
-    
-    // MARK: - Register Fonts
-    private func registerFonts() -> CommandResult {
-        runRubyScript(arguments: [registerFontsScriptURL.path(), sddsThemeBuilderXcodeProjectURL.path(), fontsURL.path(), themePlistURL.path()])
-    }
-    
-    // MARK: - Run Ruby Script
-    private func runRubyScript(arguments: [String]) -> CommandResult {
-        let task = Process()
-        task.launchPath = "/usr/bin/ruby"
-        task.arguments = arguments
-            
-        let pipe = Pipe()
-        task.standardOutput = pipe
-        task.standardError = pipe
-        task.launch()
-            
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        if let output = String(data: data, encoding: .utf8) {
-            print(output)
-        }
-            
-        task.waitUntilExit()
-        
-        return .success
     }
     
 }

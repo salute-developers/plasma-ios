@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+@_exported import SDDSThemeCore
 
 public struct Colors {
     {%- for key, value in json %}

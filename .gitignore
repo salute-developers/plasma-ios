@@ -4,6 +4,8 @@
 
 ## Generated
 ./SDDSThemeBuilder/SDDSTheme/Generated/
+./SDDSThemeBuilder/SDDSTheme/Fonts/
+./SDDSThemeBuilder/Output/
 
 ## User settings
 xcuserdata/

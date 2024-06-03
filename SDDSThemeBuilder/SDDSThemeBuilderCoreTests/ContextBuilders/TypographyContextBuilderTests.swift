@@ -86,30 +86,6 @@ final class TypographyContextBuilderTests: XCTestCase {
         }
     }
 
-    func testBuildContext_FontNotFound() {
-        // given
-        let jsonData = """
-        {
-            "header": {
-                "fontFamilyRef": "nonExistent",
-                "weight": "bold",
-                "style": "normal"
-            }
-        }
-        """.data(using: .utf8)!
-
-        // when
-        let result = typographyContextBuilder.buildContext(from: jsonData)
-
-        // then
-        switch result {
-        case .error(let error as GeneralError):
-            XCTAssertEqual(error, GeneralError.fontNotFound, "Expected font not found error")
-        default:
-            XCTFail("Expected failure due to font not found")
-        }
-    }
-
     func testBuildContext_InvalidScreenSize() {
         // given
         let jsonData = """

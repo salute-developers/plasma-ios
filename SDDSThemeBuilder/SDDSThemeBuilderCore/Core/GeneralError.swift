@@ -4,6 +4,7 @@ enum GeneralError: Error {
     case decoding
     case invalidFilename
     case invalidSchemeDirectory
+    case invalidThemeDirectory
     case unableToCopyTokenSource
     case unableToDownloadFonts
     case invalidHex
