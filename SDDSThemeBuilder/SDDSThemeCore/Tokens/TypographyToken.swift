@@ -14,7 +14,7 @@ public struct TypographyToken {
         case normal
     }
     
-    public enum ScreenSize: String {
+    public enum ScreenSize: String, CaseIterable {
         case small
         case medium
         case large
@@ -70,5 +70,14 @@ extension AdaptiveTypographyToken: Hashable {
         hasher.combine(small)
         hasher.combine(medium)
         hasher.combine(large)
+    }
+}
+
+func <(lhs: TypographyToken.ScreenSize, rhs: TypographyToken.ScreenSize) -> Bool {
+    switch (lhs, rhs) {
+    case (.small, .medium), (.small, .large), (.medium, .large):
+        return true
+    default:
+        return false
     }
 }
