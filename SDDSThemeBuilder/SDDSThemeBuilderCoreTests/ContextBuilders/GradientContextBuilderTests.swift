@@ -82,6 +82,79 @@ final class GradientContextBuilderTests: XCTestCase {
             XCTFail("Expected successful context build")
         }
     }
+    
+    func testBuildContext_PopulateMissingColors() {
+        // given
+        let jsonData = """
+        {
+            "light.primary": [
+                {
+                    "kind": "linear",
+                    "angle": 45,
+                    "colors": ["[palette.red.1000]", "[palette.red.950]"],
+                    "locations": [0.0, 1.0]
+                }
+            ],
+            "dark.secondary": [
+                {
+                    "kind": "linear",
+                    "angle": 45,
+                    "colors": ["[palette.blue.1000]", "[palette.blue.950]"],
+                    "locations": [0.0, 1.0]
+                }
+            ]
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = gradientContextBuilder.buildContext(from: jsonData)
+
+        // then
+        switch result {
+        case .dictionary(let context):
+            guard let json = context["json"] as? [String: Any] else {
+                XCTAssertNotNil(context["json"], "Context should contain 'json' key")
+                return
+            }
+
+            if let primary = json["primary"] as? [String: Any],
+               let lightPrimary = primary["light"] as? [[String: Any]],
+               let darkPrimary = primary["dark"] as? [[String: Any]] {
+                XCTAssertEqual(lightPrimary.first?["colors"] as? [String], ["#120809", "#2E090D"], "Primary light colors should match palette red.1000 and red.950")
+                XCTAssertEqual(darkPrimary.first?["colors"] as? [String], ["#120809", "#2E090D"], "Primary dark colors should fallback to light colors")
+            } else {
+                XCTFail("Primary gradient structure is not as expected")
+            }
+
+            if let secondary = json["secondary"] as? [String: Any],
+               let lightSecondary = secondary["light"] as? [[String: Any]],
+               let darkSecondary = secondary["dark"] as? [[String: Any]] {
+                XCTAssertEqual(darkSecondary.first?["colors"] as? [String], ["#0D1F2E", "#091D2E"], "Secondary dark colors should match palette blue.1000 and blue.950")
+                XCTAssertEqual(lightSecondary.first?["colors"] as? [String], ["#0D1F2E", "#091D2E"], "Secondary light colors should fallback to dark colors")
+            } else {
+                XCTFail("Secondary gradient structure is not as expected")
+            }
+        default:
+            XCTFail("Expected successful context build")
+        }
+    }
+
+    func testBuildContext_NoDarkOrLight() {
+        // given
+        let jsonData = """
+        {
+            "primary": {
+                "someMode": "#FFFFFF"
+            }
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = gradientContextBuilder.buildContext(from: jsonData)
+
+        // then
+        XCTAssertTrue(result.isError, "Should fail due to missing dark and light modes")
+    }
 
 }
 
