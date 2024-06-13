@@ -1,6 +1,6 @@
 import Foundation
 
-final class ColorContextBuilder: ContexBuilder {
+final class ColorContextBuilder: ContexBuilder, ThemeContext {
     let paletteURL: URL
     
     private lazy var paletteJson: [String: Any]? = {
@@ -63,10 +63,12 @@ extension ColorContextBuilder {
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)
             }
-            let theme = components.first ?? ""
+            guard let mode = Mode(rawValue: components.first ?? "") else {
+                return .failure(GeneralError.invalidColorTokenFormat)
+            }
             let colorName = Array(components[1..<components.count]).camelCase
-            switch theme {
-            case "light", "dark":
+            switch mode {
+            case .light, .dark:
                 var value = result[colorName] as? [String: Any] ?? [:]
                 guard let hex = dictionary[key] as? String else {
                     return .failure(GeneralError.invalidHex)
@@ -76,12 +78,11 @@ extension ColorContextBuilder {
                     return .failure(GeneralError.invalidHex)
                 }
                 
-                value[theme] = colorHex
+                value[mode.rawValue] = colorHex
                 result[colorName] = value
-            default:
-                return .failure(GeneralError.invalidColorTokenFormat)
             }
         }
+        populateMissingColors(&result)
         
         return .success(result)
     }

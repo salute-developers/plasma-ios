@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-final class GradientContextBuilder: ContexBuilder {
+final class GradientContextBuilder: ContexBuilder, ThemeContext {
     let paletteURL: URL
     
     private lazy var paletteJson: [String: Any]? = {
@@ -64,10 +64,12 @@ extension GradientContextBuilder {
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)
             }
-            let theme = components.first ?? ""
+            guard let mode = Mode(rawValue: components.first ?? "") else {
+                return .failure(GeneralError.invalidColorTokenFormat)
+            }
             let colorName = Array(components[1..<components.count]).camelCase
-            switch theme {
-            case "light", "dark":
+            switch mode {
+            case .light, .dark:
                 var value = result[colorName] as? [String: Any] ?? [:]
                 let colorsKey = GradientDictionaryKey.colors.rawValue
                 let backgroundKey = GradientDictionaryKey.background.rawValue
@@ -84,12 +86,11 @@ extension GradientContextBuilder {
                     return gradientDictionary
                 }
 
-                value[theme] = gradients
+                value[mode.rawValue] = gradients
                 result[colorName] = value
-            default:
-                return .failure(GeneralError.invalidColorTokenFormat)
             }
         }
+        populateMissingColors(&result)
         
         return .success(result)
     }

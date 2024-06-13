@@ -83,4 +83,62 @@ final class ColorContextBuilderTests: XCTestCase {
         // then
         XCTAssertTrue(result.isError, "Should fail due to missing palette data")
     }
+    
+    func testPopulateMissingColors() {
+        // given
+        var colors: [String: Any] = [
+            "primary": [
+                "light": "#FFFFFF"
+            ],
+            "secondary": [
+                "dark": "#000000"
+            ],
+            "tertiary": [
+                "light": "#CCCCCC",
+                "dark": "#333333"
+            ]
+        ]
+        
+        // when
+        colorContextBuilder.populateMissingColors(&colors)
+        
+        // then
+        if let primary = colors["primary"] as? [String: Any] {
+            XCTAssertEqual(primary["light"] as? String, "#FFFFFF", "Primary light color should be #FFFFFF")
+            XCTAssertEqual(primary["dark"] as? String, "#FFFFFF", "Primary dark color should fallback to #FFFFFF")
+        } else {
+            XCTFail("Primary color dictionary is missing")
+        }
+        
+        if let secondary = colors["secondary"] as? [String: Any] {
+            XCTAssertEqual(secondary["dark"] as? String, "#000000", "Secondary dark color should be #000000")
+            XCTAssertEqual(secondary["light"] as? String, "#000000", "Secondary light color should fallback to #000000")
+        } else {
+            XCTFail("Secondary color dictionary is missing")
+        }
+        
+        if let tertiary = colors["tertiary"] as? [String: Any] {
+            XCTAssertEqual(tertiary["light"] as? String, "#CCCCCC", "Tertiary light color should be #CCCCCC")
+            XCTAssertEqual(tertiary["dark"] as? String, "#333333", "Tertiary dark color should be #333333")
+        } else {
+            XCTFail("Tertiary color dictionary is missing")
+        }
+    }
+
+    func testBuildContext_NoDarkOrLight() {
+        // given
+        let jsonData = """
+        {
+            "primary": {
+                "someMode": "#FFFFFF"
+            }
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = colorContextBuilder.buildContext(from: jsonData)
+
+        // then
+        XCTAssertTrue(result.isError, "Should fail due to missing dark and light modes")
+    }
 }
