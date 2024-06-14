@@ -91,7 +91,7 @@ final class GradientContextBuilderTests: XCTestCase {
                 {
                     "kind": "linear",
                     "angle": 45,
-                    "colors": ["[palette.red.1000]", "[palette.red.950]"],
+                    "colors": ["#120809", "#2E090D"],
                     "locations": [0.0, 1.0]
                 }
             ],
@@ -99,7 +99,7 @@ final class GradientContextBuilderTests: XCTestCase {
                 {
                     "kind": "linear",
                     "angle": 45,
-                    "colors": ["[palette.blue.1000]", "[palette.blue.950]"],
+                    "colors": ["#0D1F2E", "#091D2E"],
                     "locations": [0.0, 1.0]
                 }
             ]
