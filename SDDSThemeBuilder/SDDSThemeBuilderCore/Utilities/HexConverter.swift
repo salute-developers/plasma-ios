@@ -1,7 +1,15 @@
-import UIKit
+import Foundation
 
-public extension UIColor {
-    convenience init(hex: String) {
+final class HexConverter {
+    
+    struct Result {
+        let red: CGFloat
+        let green: CGFloat
+        let blue: CGFloat
+        let alpha: CGFloat
+    }
+    
+    func from(hex: String) -> HexConverter.Result {
         var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if hexString.hasPrefix("#") {
             hexString.removeFirst()
@@ -29,7 +37,11 @@ public extension UIColor {
         default:
             fatalError("Incorrect hex color format")
         }
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
+        return Result(
+            red: CGFloat(red),
+            green: CGFloat(green),
+            blue: CGFloat(blue),
+            alpha: CGFloat(alpha)
+        )
     }
 }

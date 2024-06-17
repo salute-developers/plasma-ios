@@ -1,6 +1,26 @@
 import Foundation
 
-final class ColorContextBuilder: ContexBuilder, ThemeContext {
+struct ColorMap {
+    let hex: String?
+    let alpha: CGFloat?
+    
+    init(hex: String?, alpha: CGFloat? = nil) {
+        self.hex = hex
+        self.alpha = alpha
+    }
+}
+
+extension ColorMap {
+    var hexWithAlpha: String? {
+        if let alpha = alpha {
+            return hex?.applyAlpha(alpha: alpha)
+        } else {
+            return hex
+        }
+    }
+}
+
+final class ColorContextBuilder: ContexBuilder, ThemeContext, ColorContext {
     let paletteURL: URL
     
     private lazy var paletteJson: [String: Any]? = {
@@ -18,7 +38,7 @@ final class ColorContextBuilder: ContexBuilder, ThemeContext {
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let result = buildColorThemeContext(from: dictionary, transform: hex)
+                let result = try buildColorThemeContext(from: dictionary, transform: getColorMap)
                 switch result {
                 case .success(let context):
                     return prepareContext(fromDictionary: context) { json in
@@ -38,25 +58,9 @@ final class ColorContextBuilder: ContexBuilder, ThemeContext {
     }
 }
 
-// MARK: - Aliases
-extension ColorContextBuilder {
-    private func hex(_ value: String) -> String {
-        if let alias = PaletteAlias(alias: value) {
-            return hex(by: alias) ?? ""
-        } else {
-            return value
-        }
-    }
-    
-    private func hex(by alias: PaletteAlias) -> String? {
-        let color = paletteJson?[alias.color] as? [String: Any]
-        return color?[alias.tone] as? String
-    }
-}
-
 // MARK: - Dark & Light Theme
 extension ColorContextBuilder {
-    func buildColorThemeContext(from dictionary: [String: Any], transform: (_ hex: String) -> (String) = { $0 }) -> Result<[String: Any], Error> {
+    func buildColorThemeContext(from dictionary: [String: Any], transform: (_ colorMap: String, _ paletteJson: [String: Any]?) throws -> (ColorMap)) throws -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
             let components = key.tokenComponents
@@ -73,12 +77,11 @@ extension ColorContextBuilder {
                 guard let hex = dictionary[key] as? String else {
                     return .failure(GeneralError.invalidHex)
                 }
-                let colorHex = transform(hex)
-                guard !colorHex.isEmpty else {
+                let colorMap = try transform(hex, paletteJson)
+                guard var hexValue = colorMap.hex, !hexValue.isEmpty else {
                     return .failure(GeneralError.invalidHex)
                 }
-                
-                value[mode.rawValue] = colorHex
+                value[mode.rawValue] = colorMap.hexWithAlpha
                 result[colorName] = value
             }
         }
