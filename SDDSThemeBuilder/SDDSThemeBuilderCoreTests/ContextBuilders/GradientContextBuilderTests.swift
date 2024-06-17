@@ -73,8 +73,10 @@ final class GradientContextBuilderTests: XCTestCase {
                 let jsonData = try JSONSerialization.data(withJSONObject: json)
                 let decoder = JSONDecoder()
                 let theme = try decoder.decode(PrimaryTheme.self, from: jsonData)
-                XCTAssertTrue(theme.textDefaultPrimary.dark.first?.colors.first?.isEmpty ?? false)
-                XCTAssertTrue(theme.textDefaultPrimary.light.first?.colors.first?.isEmpty ?? false)
+                let darkColors = theme.textDefaultPrimary.dark.first?.colors ?? []
+                let lightColors = theme.textDefaultPrimary.light.first?.colors ?? []
+                XCTAssertTrue(darkColors.count == 1 && darkColors[0] == "#000000")
+                XCTAssertTrue(lightColors.count == 1 && lightColors[0] == "#000000")
             } catch {
                 print("Error decoding JSON: \(error)")
             }

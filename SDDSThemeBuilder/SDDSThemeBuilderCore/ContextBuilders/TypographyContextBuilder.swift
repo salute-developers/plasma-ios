@@ -61,18 +61,77 @@ extension TypographyContextBuilder {
             result[newKey] = screenSizeDictionary
         }
         
+        let fallbackScreenResult = populateMissingScreenSizes(&result)
+        if fallbackScreenResult.isError {
+            return fallbackScreenResult
+        }
+        
         return .dictionary(transform(result))
+    }
+    
+    private func populateMissingScreenSizes(_ dictionary: inout [String: [String: Any]]) -> CommandResult {
+        guard !dictionary.isEmpty else {
+            Logger.printText("Missing screen sizes")
+            return .error(GeneralError.invalidScreenSize)
+        }
+        for (key, value) in dictionary {
+            var value = value
+            var availableSizes = Set<TypographyToken.ScreenSize>()
+            for screenSize in TypographyToken.ScreenSize.allCases {
+                if value[screenSize.rawValue] != nil {
+                    availableSizes.insert(screenSize)
+                }
+            }
+            
+            for screenSize in TypographyToken.ScreenSize.allCases {
+                if value[screenSize.rawValue] == nil {
+                    Logger.printText("Finding fallback screen size for \(key)...")
+                    if let fallbackScreenSize = getFallbackScreenSize(for: screenSize, in: availableSizes) {
+                        value[screenSize.rawValue] = value[fallbackScreenSize.rawValue]
+                    } else {
+                        Logger.printText("Sizes for \(key) are not defined")
+                        return .error(GeneralError.invalidScreenSize)
+                    }
+                }
+            }
+            dictionary[key] = value
+        }
+        return .success
     }
     
     private func findFont(with fontFamilyRef: String, weight: TypographyToken.Weight, style: TypographyToken.Style) -> String? {
         guard let heading = FontFamily.Key(rawValue: fontFamilyRef.keyComponents.last ?? ""),
               let fontFamily = fontFamiliesContainer.items[heading],
               let font = fontFamily.fonts.first(where: { $0.weight == weight.fontWeight && $0.style == style.fontStyle }) else {
-            print("Font with family ref: \(fontFamilyRef), weight: \(weight.rawValue), style: \(style.rawValue) is not found")
+            Logger.printText("Font with family ref: \(fontFamilyRef), weight: \(weight.rawValue), style: \(style.rawValue) is not found")
             return nil
         }
         
         return font.fontName
+    }
+    
+    private func getFallbackScreenSize(for missingSize: TypographyToken.ScreenSize, in availableSizes: Set<TypographyToken.ScreenSize>) -> TypographyToken.ScreenSize? {
+        let screenSizesOrder: [TypographyToken.ScreenSize] = [.small, .medium, .large]
+        
+        guard let missingIndex = screenSizesOrder.firstIndex(of: missingSize) else {
+            return nil
+        }
+        
+        // Check for the previous sizes
+        for index in stride(from: missingIndex - 1, through: 0, by: -1) {
+            if availableSizes.contains(screenSizesOrder[index]) {
+                return screenSizesOrder[index]
+            }
+        }
+        
+        // Check for the next sizes
+        for index in missingIndex + 1..<screenSizesOrder.count {
+            if availableSizes.contains(screenSizesOrder[index]) {
+                return screenSizesOrder[index]
+            }
+        }
+        
+        return nil
     }
 }
 
