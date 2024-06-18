@@ -9,8 +9,12 @@ final class Logger {
         print(String(Array(repeating: " ", count: Constants.outputLinesCount / 4 )) + text)
     }
     
-    class func fatalError(_ text: String) {
+    class func terminate(_ text: String) {
         printText(text)
         fatalError(text)
+    }
+    
+    class func terminate(with error: Error) {
+        terminate(error.localizedDescription)
     }
 }

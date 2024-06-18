@@ -13,6 +13,7 @@ public final class App {
         guard let schemeDirectory = UnpackThemeCommand(schemeURL: schemeZipLocalURL, outputDirectoryURL: outputDirectoryURL)
             .run()
             .asSchemeDirectory else {
+            Logger.terminate("No scheme directory")
             return
         }
         
@@ -21,62 +22,92 @@ public final class App {
         guard let fontFamiliesContainer = DecodeCommand<FontFamiliesContainer>(url: schemeDirectory.url(for: .fontFamilies))
             .run()
             .asFontFamiliesContainer else {
+            Logger.terminate("No font family container")
             return
         }
         
-        InstallFontsCommand(
-            fontFamiliesContainer: fontFamiliesContainer,
-            fontsURL: fontsURL,
-            copyFontsScriptURL: copyFontsScriptURL, 
-            registerFontsScriptURL: registerFontsScriptURL,
-            sddsThemeBuilderXcodeProjectURL: xcodeProjectURL, 
-            themePlistURL: themePlistURL
-        ).run()
-        GenerateTokensCommand(
-            name: "Generate Color Tokens",
-            schemeURL: schemeDirectory.url(for: .colors),
-            themeURL: themeURL,
-            templatesURL: templatesURL,
-            templates: [.colorToken, .colors],
-            generatedOutputURL: generatedTokensURL,
-            contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
-        ).run()
-        GenerateTokensCommand(
-            name: "Generate Shadow Tokens",
-            schemeURL: schemeDirectory.url(for: .shadows),
-            themeURL: themeURL,
-            templatesURL: templatesURL,
-            templates: [.shadowToken, .shadows],
-            generatedOutputURL: generatedTokensURL
-        ).run()
-        GenerateTokensCommand(
-            name: "Generate Shape Tokens",
-            schemeURL: schemeDirectory.url(for: .shapes),
-            themeURL: themeURL,
-            templatesURL: templatesURL,
-            templates: [.shapeToken, .shapes],
-            generatedOutputURL: generatedTokensURL
-        ).run()
-        GenerateTokensCommand(
-            name: "Generate Typography Tokens",
-            schemeURL: schemeDirectory.url(for: .typography),
-            themeURL: themeURL,
-            templatesURL: templatesURL,
-            templates: [.typographyToken, .typographies],
-            generatedOutputURL: generatedTokensURL,
-            contextBuilder: TypographyContextBuilder(
-                fontFamiliesContainer: fontFamiliesContainer
+        let commands = [
+            InstallFontsCommand(
+                fontFamiliesContainer: fontFamiliesContainer,
+                fontsURL: fontsURL,
+                copyFontsScriptURL: copyFontsScriptURL,
+                registerFontsScriptURL: registerFontsScriptURL,
+                sddsThemeBuilderXcodeProjectURL: xcodeProjectURL,
+                themePlistURL: themePlistURL
+            ),
+            GenerateTokensCommand(
+                name: "Generate Color Tokens",
+                schemeURL: schemeDirectory.url(for: .colors),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.colorToken, .colors],
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
+            ),
+            InstallFontsCommand(
+                fontFamiliesContainer: fontFamiliesContainer,
+                fontsURL: fontsURL,
+                copyFontsScriptURL: copyFontsScriptURL,
+                registerFontsScriptURL: registerFontsScriptURL,
+                sddsThemeBuilderXcodeProjectURL: xcodeProjectURL,
+                themePlistURL: themePlistURL
+            ),
+            GenerateTokensCommand(
+                name: "Generate Color Tokens",
+                schemeURL: schemeDirectory.url(for: .colors),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.colorToken, .colors],
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
+            ),
+            GenerateTokensCommand(
+                name: "Generate Shadow Tokens",
+                schemeURL: schemeDirectory.url(for: .shadows),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.shadowToken, .shadows],
+                generatedOutputURL: generatedTokensURL
+            ),
+            GenerateTokensCommand(
+                name: "Generate Shape Tokens",
+                schemeURL: schemeDirectory.url(for: .shapes),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.shapeToken, .shapes],
+                generatedOutputURL: generatedTokensURL
+            ),
+            GenerateTokensCommand(
+                name: "Generate Typography Tokens",
+                schemeURL: schemeDirectory.url(for: .typography),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.typographyToken, .typographies],
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: TypographyContextBuilder(
+                    fontFamiliesContainer: fontFamiliesContainer
+                )
+            ),
+            GenerateTokensCommand(
+                name: "Generate Gradient Tokens",
+                schemeURL: schemeDirectory.url(for: .gradients),
+                themeURL: themeURL,
+                templatesURL: templatesURL,
+                templates: [.gradientToken, .gradients],
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
             )
-        ).run()
-        GenerateTokensCommand(
-            name: "Generate Gradient Tokens",
-            schemeURL: schemeDirectory.url(for: .gradients),
-            themeURL: themeURL,
-            templatesURL: templatesURL,
-            templates: [.gradientToken, .gradients],
-            generatedOutputURL: generatedTokensURL,
-            contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
-        ).run()
+        ]
+        
+        for command in commands {
+            let result = command.run()
+            switch result {
+            case .error(let error):
+                Logger.terminate(with: error)
+            default:
+                break
+            }
+        }
     }
         
     public init(schemeZipURL: URL,

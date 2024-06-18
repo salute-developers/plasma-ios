@@ -12,5 +12,7 @@ enum GeneralError: Error {
     case invalidGradientFormat
     case invalidScreenSize
     case invalidTokenFormat
+    case invalidPalette
     case fontNotFound
 }
+

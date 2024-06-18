@@ -62,27 +62,7 @@ final class GradientContextBuilderTests: XCTestCase {
         let result = gradientContextBuilder.buildContext(from: jsonData)
 
         // then
-        switch result {
-        case .dictionary(let context):
-            guard let json = context["json"] as? [String: Any] else {
-                XCTAssertNotNil(context["json"], "Context should contain 'json' key")
-                return
-            }
-            
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: json)
-                let decoder = JSONDecoder()
-                let theme = try decoder.decode(PrimaryTheme.self, from: jsonData)
-                let darkColors = theme.textDefaultPrimary.dark.first?.colors ?? []
-                let lightColors = theme.textDefaultPrimary.light.first?.colors ?? []
-                XCTAssertTrue(darkColors.count == 1 && darkColors[0] == "#000000")
-                XCTAssertTrue(lightColors.count == 1 && lightColors[0] == "#000000")
-            } catch {
-                print("Error decoding JSON: \(error)")
-            }
-        default:
-            XCTFail("Expected successful context build")
-        }
+        XCTAssertTrue(result.isError)
     }
     
     func testBuildContext_PopulateMissingColors() {
