@@ -59,19 +59,27 @@ extension GradientContextBuilder {
                 let backgroundKey = GradientDictionaryKey.background.rawValue
                 
                 var gradients = dictionary[key] as? [[String: Any]] ?? []
-                gradients = gradients.map { gradientDictionary in
+                gradients = try gradients.map { gradientDictionary in
                     var gradientDictionary = gradientDictionary
                     if let colorsArray = gradientDictionary[colorsKey] as? [String] {
-                        let colorMapArray = colorsArray.map { color in
-                            try? transform(color, paletteJson)
+                        let colorMapArray: [ColorMap] = try colorsArray.map { color in
+                            guard let result = try? transform(color, paletteJson) else {
+                                throw GeneralError.invalidPalette
+                            }
+                            return result
                         }
-                        let hexArray = colorMapArray.compactMap { colorMap in
-                            colorMap?.hexWithAlpha
+                        let hexArray = try colorMapArray.map { colorMap in
+                            guard let hex = colorMap.hexWithAlpha else {
+                                throw GeneralError.invalidPalette
+                            }
+                            return hex
                         }
                         gradientDictionary[colorsKey] = hexArray
                     } else if let background = gradientDictionary[backgroundKey] as? String {
-                        let colorMap = try? transform(background, paletteJson)
-                        gradientDictionary[backgroundKey] = colorMap?.hexWithAlpha
+                        guard let colorMap = try? transform(background, paletteJson) else {
+                            throw GeneralError.invalidPalette
+                        }
+                        gradientDictionary[backgroundKey] = colorMap.hexWithAlpha
                     }
                     return gradientDictionary
                 }
