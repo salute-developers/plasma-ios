@@ -5,73 +5,71 @@ import UIKit
 public extension GradientToken {
     {%- for key, values in json %}
     
-    {% ensure_any_value_exists "values.dark" "values.light" %}
-    
     {% for gradient in values.dark %}
-    {% ensure_value_exists "gradient.kind" %}
+    {% ensure_value_exists gradient.kind %}
     {% if gradient.kind == "linear" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.angle" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.angle %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "radial" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.centerX" %}
-    {% ensure_value_exists "gradient.centerY" %}
-    {% ensure_value_exists "gradient.startRadius" %}
-    {% ensure_value_exists "gradient.endRadius" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.centerX %}
+    {% ensure_value_exists gradient.centerY %}
+    {% ensure_value_exists gradient.startRadius %}
+    {% ensure_value_exists gradient.endRadius %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "angular" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.startAngle" %}
-    {% ensure_value_exists "gradient.endAngle" %}
-    {% ensure_value_exists "gradient.centerX" %}
-    {% ensure_value_exists "gradient.centerY" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.startAngle %}
+    {% ensure_value_exists gradient.endAngle %}
+    {% ensure_value_exists gradient.centerX %}
+    {% ensure_value_exists gradient.centerY %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "color" %}
-    {% ensure_value_exists "gradient.background" %}
+    {% ensure_value_exists gradient.background %}
     {% endif %}
     {% endfor %}
     
     {% for gradient in values.light %}
-    {% ensure_value_exists "gradient.kind" %}
+    {% ensure_value_exists gradient.kind %}
     {% if gradient.kind == "linear" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.angle" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.angle %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "radial" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.centerX" %}
-    {% ensure_value_exists "gradient.centerY" %}
-    {% ensure_value_exists "gradient.startRadius" %}
-    {% ensure_value_exists "gradient.endRadius" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.centerX %}
+    {% ensure_value_exists gradient.centerY %}
+    {% ensure_value_exists gradient.startRadius %}
+    {% ensure_value_exists gradient.endRadius %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "angular" %}
-    {% ensure_value_exists "gradient.locations" %}
-    {% ensure_value_exists "gradient.colors" %}
-    {% ensure_value_exists "gradient.startAngle" %}
-    {% ensure_value_exists "gradient.endAngle" %}
-    {% ensure_value_exists "gradient.centerX" %}
-    {% ensure_value_exists "gradient.centerY" %}
+    {% ensure_value_exists gradient.locations %}
+    {% ensure_value_exists gradient.colors %}
+    {% ensure_value_exists gradient.startAngle %}
+    {% ensure_value_exists gradient.endAngle %}
+    {% ensure_value_exists gradient.centerX %}
+    {% ensure_value_exists gradient.centerY %}
     {% for location in gradient.locations %}
-    {% ensure_double_in_range location [0, 1] %}
+    {% ensure_double_in_range location 0 1 %}
     {% endfor %}
     {% elif gradient.kind == "color" %}
-    {% ensure_value_exists "gradient.background" %}
+    {% ensure_value_exists gradient.background %}
     {% endif %}
     {% endfor %}
     
@@ -85,7 +83,7 @@ public extension GradientToken {
                     LinearGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
@@ -99,7 +97,7 @@ public extension GradientToken {
                     RadialGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
@@ -118,7 +116,7 @@ public extension GradientToken {
                     AngularGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
@@ -148,7 +146,7 @@ public extension GradientToken {
                     LinearGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
@@ -162,7 +160,7 @@ public extension GradientToken {
                     RadialGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
@@ -181,7 +179,7 @@ public extension GradientToken {
                     AngularGradient(
                         locations: [
                             {%- for location in gradient.locations %}
-                            {{ location|ensure_double_in_range:0,1 }}{% if not forloop.last %}, {% endif %}
+                            {{ location }}{% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         colors: [
