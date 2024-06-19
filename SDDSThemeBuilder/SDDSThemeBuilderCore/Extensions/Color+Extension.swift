@@ -14,25 +14,27 @@ extension Color {
     }
     
     var hex: String? {
-        let components = self.cgColor?.components
-        let colorSpaceModel = self.cgColor?.colorSpace?.model
-
-        guard let colorComponents = components, colorComponents.count >= 3, colorSpaceModel == .rgb else {
+        guard let components = self.cgColor?.components,
+              let colorSpaceModel = self.cgColor?.colorSpace?.model,
+              components.count >= 4,
+              colorSpaceModel == .rgb else {
             return nil
         }
 
-        let red = colorComponents[0]
-        let green = colorComponents[1]
-        let blue = colorComponents[2]
+        let red = components[0]
+        let green = components[1]
+        let blue = components[2]
+        let alpha = components[3]
 
-        guard red >= 0 && red <= 1, green >= 0 && green <= 1, blue >= 0 && blue <= 1 else {
+        guard red >= 0 && red <= 1, green >= 0 && green <= 1, blue >= 0 && blue <= 1, alpha >= 0 && alpha <= 1 else {
             return nil
         }
 
         let redInt = Int(red * 255)
         let greenInt = Int(green * 255)
         let blueInt = Int(blue * 255)
-        let hexString = String(format: "#%02X%02X%02X", redInt, greenInt, blueInt)
+        let alphaInt = Int(alpha * 255)
+        let hexString = String(format: "#%02X%02X%02X%02X", redInt, greenInt, blueInt, alphaInt)
 
         return hexString
     }
