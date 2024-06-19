@@ -70,8 +70,8 @@ final class ColorContextBuilderTests: XCTestCase {
                let primary = json["primary"] as? [String: Any],
                let lightPrimary = primary["light"] as? String,
                let darkPrimary = primary["dark"] as? String {
-                XCTAssertEqual(lightPrimary, "#110809", "Should match the hex color for red.1000")
-                XCTAssertEqual(darkPrimary, "#2D090C", "Should match the hex color for red.950")
+                XCTAssertEqual(lightPrimary, "#1108097F", "Should match the hex color for red.1000")
+                XCTAssertEqual(darkPrimary, "#2D090C66", "Should match the hex color for red.950")
             } else {
                 XCTFail("JSON structure is not as expected")
             }
