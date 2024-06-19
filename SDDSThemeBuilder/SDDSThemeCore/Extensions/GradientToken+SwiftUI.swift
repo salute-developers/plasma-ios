@@ -23,11 +23,7 @@ public extension LinearGradient {
 
 public extension RadialGradient {
     var gradient: SwiftUI.RadialGradient {
-        let center = UnitPoint(x: startPoint.x, y: startPoint.y)
-        let endPoint = UnitPoint(x: endPoint.x, y: endPoint.y)
-        let startRadius: CGFloat = 0
-        let endRadius: CGFloat = hypot(endPoint.x - center.x, endPoint.y - center.y) * 2
-
+        let center = UnitPoint(x: center.x, y: center.y)
         let stops = zip(colors, locations).map { color, location in
             Gradient.Stop(color: color, location: location)
         }

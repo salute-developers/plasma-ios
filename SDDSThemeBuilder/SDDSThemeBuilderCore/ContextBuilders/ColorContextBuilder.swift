@@ -81,7 +81,11 @@ extension ColorContextBuilder {
                 guard var hexValue = colorMap.hex, !hexValue.isEmpty else {
                     return .failure(GeneralError.invalidHex)
                 }
-                value[mode.rawValue] = colorMap.hexWithAlpha
+                let hexWithAlpha = colorMap.hexWithAlpha
+                guard hexWithAlpha?.isEmpty == false else {
+                    return .failure(GeneralError.invalidHex)
+                }
+                value[mode.rawValue] = hexWithAlpha
                 result[colorName] = value
             }
         }
