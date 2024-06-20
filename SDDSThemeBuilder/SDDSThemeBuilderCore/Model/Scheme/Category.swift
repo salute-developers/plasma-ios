@@ -5,4 +5,5 @@ enum Category: String, Codable {
     case surface
     case background
     case outline
+    case overlay
 }

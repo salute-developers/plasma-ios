@@ -20,8 +20,9 @@ extension ColorMap {
     }
 }
 
-final class ColorContextBuilder: ContexBuilder, ThemeContext, ColorContext {
+final class ColorContextBuilder: ContexBuilder, ThemeContext, ColorContext, SchemeTokenNameValidator {
     let paletteURL: URL
+    let metaScheme: Scheme
     
     private lazy var paletteJson: [String: Any]? = {
         guard let data = try? Data(contentsOf: paletteURL) else {
@@ -31,8 +32,9 @@ final class ColorContextBuilder: ContexBuilder, ThemeContext, ColorContext {
         return try? JSONSerialization.jsonObject(with: data) as? [String: Any]
     }()
     
-    init(paletteURL: URL) {
+    init(paletteURL: URL, metaScheme: Scheme) {
         self.paletteURL = paletteURL
+        self.metaScheme = metaScheme
     }
     
     func buildContext(from data: Data) -> CommandResult {
@@ -63,6 +65,8 @@ extension ColorContextBuilder {
     func buildColorThemeContext(from dictionary: [String: Any], transform: (_ colorMap: String, _ paletteJson: [String: Any]?) throws -> (ColorMap)) throws -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
+            validateTokenName(key, .color, scheme: metaScheme)
+            
             let components = key.tokenComponents
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)

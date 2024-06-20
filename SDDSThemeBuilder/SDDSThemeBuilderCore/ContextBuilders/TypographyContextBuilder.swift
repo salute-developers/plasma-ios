@@ -1,11 +1,13 @@
 import Foundation
 import SwiftUI
 
-final class TypographyContextBuilder: ContexBuilder {
+final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
     private let fontFamiliesContainer: FontFamiliesContainer
+    private let metaScheme: Scheme
     
-    init(fontFamiliesContainer: FontFamiliesContainer) {
+    init(fontFamiliesContainer: FontFamiliesContainer, metaScheme: Scheme) {
         self.fontFamiliesContainer = fontFamiliesContainer
+        self.metaScheme = metaScheme
     }
     
     func buildContext(from data: Data) -> CommandResult {
@@ -32,6 +34,7 @@ extension TypographyContextBuilder {
         
         var result = [String: [String: Any]]()
         for key in dictionary.keys {
+            validateTokenName(key, .typography, scheme: metaScheme)
             var tokenDictionary = dictionary[key] as? [String: Any]
             
             let fontFamilyRefKey = "fontFamilyRef"
