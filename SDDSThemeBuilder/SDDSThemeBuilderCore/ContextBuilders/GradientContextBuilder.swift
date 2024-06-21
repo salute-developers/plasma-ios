@@ -46,7 +46,7 @@ extension GradientContextBuilder {
     func buildGradientThemeContext(from dictionary: [String: Any], transform: (_ colorMap: String, _ paletteJson: [String: Any]?) throws -> (ColorMap)) throws -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
-            validateTokenName(key, .gradient, scheme: metaScheme)
+            try validateTokenName(key, .gradient, scheme: metaScheme)
             let components = key.tokenComponents
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)

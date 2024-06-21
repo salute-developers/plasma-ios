@@ -65,7 +65,7 @@ extension ColorContextBuilder {
     func buildColorThemeContext(from dictionary: [String: Any], transform: (_ colorMap: String, _ paletteJson: [String: Any]?) throws -> (ColorMap)) throws -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
-            validateTokenName(key, .color, scheme: metaScheme)
+            try validateTokenName(key, .color, scheme: metaScheme)
             
             let components = key.tokenComponents
             guard components.count > 1 else {

@@ -6,6 +6,7 @@ final class GradientContextBuilderTests: XCTestCase {
     var mockPaletteURL: URL!
     var gradientJsonURL: URL!
     var invalidGradinentJsonURL: URL!
+    var scheme: Scheme!
 
     override func setUp() {
         super.setUp()
@@ -13,8 +14,11 @@ final class GradientContextBuilderTests: XCTestCase {
         mockPaletteURL = GradientContextBuilderTests.fileURL(forResource: "palette", withExtension: "json")
         gradientJsonURL = GradientContextBuilderTests.fileURL(forResource: "ios_gradient", withExtension: "json")
         invalidGradinentJsonURL = GradientContextBuilderTests.fileURL(forResource: "ios_gradient_invalid", withExtension: "json")
+        
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
 
-        gradientContextBuilder = GradientContextBuilder(paletteURL: mockPaletteURL)
+        gradientContextBuilder = GradientContextBuilder(paletteURL: mockPaletteURL, metaScheme: scheme)
     }
 
     static func fileURL(forResource resource: String, withExtension ext: String) -> URL {
@@ -69,7 +73,7 @@ final class GradientContextBuilderTests: XCTestCase {
         // given
         let jsonData = """
         {
-            "light.primary": [
+            "light.text.default.accent-gradient-hover": [
                 {
                     "kind": "linear",
                     "angle": 45,
@@ -77,7 +81,7 @@ final class GradientContextBuilderTests: XCTestCase {
                     "locations": [0.0, 1.0]
                 }
             ],
-            "dark.secondary": [
+            "dark.text.default.accent-gradient": [
                 {
                     "kind": "linear",
                     "angle": 45,
@@ -99,7 +103,7 @@ final class GradientContextBuilderTests: XCTestCase {
                 return
             }
 
-            if let primary = json["primary"] as? [String: Any],
+            if let primary = json["textDefaultAccentGradientHover"] as? [String: Any],
                let lightPrimary = primary["light"] as? [[String: Any]],
                let darkPrimary = primary["dark"] as? [[String: Any]] {
                 XCTAssertEqual(lightPrimary.first?["colors"] as? [String], ["#120809", "#2E090D"], "Primary light colors should match palette red.1000 and red.950")
@@ -108,7 +112,7 @@ final class GradientContextBuilderTests: XCTestCase {
                 XCTFail("Primary gradient structure is not as expected")
             }
 
-            if let secondary = json["secondary"] as? [String: Any],
+            if let secondary = json["textDefaultAccentGradient"] as? [String: Any],
                let lightSecondary = secondary["light"] as? [[String: Any]],
                let darkSecondary = secondary["dark"] as? [[String: Any]] {
                 XCTAssertEqual(darkSecondary.first?["colors"] as? [String], ["#0D1F2E", "#091D2E"], "Secondary dark colors should match palette blue.1000 and blue.950")

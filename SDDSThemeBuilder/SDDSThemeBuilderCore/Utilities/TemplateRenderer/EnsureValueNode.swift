@@ -11,7 +11,7 @@ class EnsureValueNode: NodeType {
     }
 
     func render(_ context: Context) throws -> String {
-        fatalError("Subclasses need to implement the `render` method.")
+        throw TemplateRendererError("Subclasses need to implement the `render` method.")
     }
 
     func getValue(forKeyPath keyPath: String, from dictionary: [String: Any]) -> Any? {

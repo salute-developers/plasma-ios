@@ -28,14 +28,22 @@ final class TemplateRenderer: Renderable {
             return .error(CodeGenerationError.templateLoadingFailed)
         }
         
-        // Генерация Swift файла
+        // Swift file generation
         do {
             let rendered = try template.render(context)
-            return .generated(rendered)
+            let content = removeExtraNewlines(from: rendered)
+            return .generated(content)
         } catch {
             print(error)
             return .error(CodeGenerationError.renderingFailed)
         }
+    }
+    
+    func removeExtraNewlines(from content: String) -> String {
+        var lines = content.components(separatedBy: .newlines)
+        lines = lines.filter { $0 != "    " }
+
+        return lines.joined(separator: "\n")
     }
     
     private func registerTags(ext: Extension) {

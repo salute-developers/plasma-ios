@@ -4,12 +4,16 @@ import XCTest
 final class ColorContextBuilderTests: XCTestCase {
     var colorContextBuilder: ColorContextBuilder!
     var mockPaletteURL: URL!
+    var scheme: Scheme!
 
     override func setUp() {
         super.setUp()
 
         mockPaletteURL = GradientContextBuilderTests.fileURL(forResource: "palette", withExtension: "json")
-        colorContextBuilder = ColorContextBuilder(paletteURL: mockPaletteURL)
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
+        
+        colorContextBuilder = ColorContextBuilder(paletteURL: mockPaletteURL, metaScheme: scheme)
     }
     
     static func fileURL(forResource resource: String, withExtension ext: String) -> URL {
@@ -24,8 +28,8 @@ final class ColorContextBuilderTests: XCTestCase {
         // given
         let jsonData = """
         {
-            "light.primary": "[palette.red.1000]",
-            "dark.primary": "[palette.red.950]"
+            "light.text.default.primary-hover": "[palette.red.1000]",
+            "dark.text.default.primary-hover": "[palette.red.950]"
         }
         """.data(using: .utf8)!
 
@@ -37,7 +41,7 @@ final class ColorContextBuilderTests: XCTestCase {
         case .dictionary(let context):
             XCTAssertNotNil(context["json"], "Context should contain 'json' key")
             if let json = context["json"] as? [String: Any],
-               let primary = json["primary"] as? [String: Any],
+               let primary = json["textDefaultPrimaryHover"] as? [String: Any],
                let lightPrimary = primary["light"] as? String,
                let darkPrimary = primary["dark"] as? String {
                 XCTAssertEqual(lightPrimary, "#120809", "Should match the hex color for red.1000")
@@ -54,8 +58,8 @@ final class ColorContextBuilderTests: XCTestCase {
         // given
         let jsonData = """
         {
-            "light.primary": "[palette.red.1000][0.5]",
-            "dark.primary": "[palette.red.950][0.4]"
+            "light.text.default.primary-hover": "[palette.red.1000][0.5]",
+            "dark.text.default.primary-hover": "[palette.red.950][0.4]"
         }
         """.data(using: .utf8)!
 
@@ -67,7 +71,7 @@ final class ColorContextBuilderTests: XCTestCase {
         case .dictionary(let context):
             XCTAssertNotNil(context["json"], "Context should contain 'json' key")
             if let json = context["json"] as? [String: Any],
-               let primary = json["primary"] as? [String: Any],
+               let primary = json["textDefaultPrimaryHover"] as? [String: Any],
                let lightPrimary = primary["light"] as? String,
                let darkPrimary = primary["dark"] as? String {
                 XCTAssertEqual(lightPrimary, "#1108097F", "Should match the hex color for red.1000")
@@ -115,11 +119,11 @@ final class ColorContextBuilderTests: XCTestCase {
     func testBuildContext_MissingPaletteData() {
         // given
         let missingPaletteURL = FileManager.default.temporaryDirectory.appendingPathComponent("missing_palette.json")
-        colorContextBuilder = ColorContextBuilder(paletteURL: missingPaletteURL)
+        colorContextBuilder = ColorContextBuilder(paletteURL: missingPaletteURL, metaScheme: scheme)
         let jsonData = """
         {
-            "light.primary": "[palette.red.1000]",
-            "dark.primary": "[palette.red.950]"
+            "light.text.default.primary-hover": "[palette.red.1000]",
+            "dark.text.default.primary-hover": "[palette.red.950]"
         }
         """.data(using: .utf8)!
 

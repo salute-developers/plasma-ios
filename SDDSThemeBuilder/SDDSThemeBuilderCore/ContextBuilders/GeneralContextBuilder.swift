@@ -9,9 +9,9 @@ final class GeneralContextBuilder: ContexBuilder, SchemeTokenNameValidator {
         self.metaScheme = metaScheme
     }
     
-    func didReceiveContext(dictionary: [String : Any]) {
+    func didReceiveContext(dictionary: [String : Any]) throws {
         for key in dictionary.keys {
-            validateTokenName(key, kind, scheme: metaScheme)
+            try validateTokenName(key, kind, scheme: metaScheme)
         }
     }
 }

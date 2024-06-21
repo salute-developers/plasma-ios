@@ -13,7 +13,7 @@ final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let result = prepareContext(fromDictionary: dictionary) { json in
+                let result = try prepareContext(fromDictionary: dictionary) { json in
                     var context = [String: Any]()
                     context["json"] = json
                     return context
@@ -30,11 +30,11 @@ final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
 
 // MARK: - Transform keys
 extension TypographyContextBuilder {
-    func prepareContext(fromDictionary dictionary: [String: Any], transform: (_ json: [String: Any]) -> ([String: Any])) -> CommandResult {
+    func prepareContext(fromDictionary dictionary: [String: Any], transform: (_ json: [String: Any]) -> ([String: Any])) throws -> CommandResult {
         
         var result = [String: [String: Any]]()
         for key in dictionary.keys {
-            validateTokenName(key, .typography, scheme: metaScheme)
+            try validateTokenName(key, .typography, scheme: metaScheme)
             var tokenDictionary = dictionary[key] as? [String: Any]
             
             let fontFamilyRefKey = "fontFamilyRef"

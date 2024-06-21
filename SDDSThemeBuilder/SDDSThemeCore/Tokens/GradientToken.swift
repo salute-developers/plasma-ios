@@ -20,7 +20,7 @@ public struct RadialGradient {
     public let startRadius: CGFloat
     public let endRadius: CGFloat
     
-    init(locations: [CGFloat], colors: [Color], center: CGPoint, startRadius: CGFloat, endRadius: CGFloat) {
+    public init(locations: [CGFloat], colors: [Color], center: CGPoint, startRadius: CGFloat, endRadius: CGFloat) {
         self.locations = locations
         self.colors = colors
         self.center = center
