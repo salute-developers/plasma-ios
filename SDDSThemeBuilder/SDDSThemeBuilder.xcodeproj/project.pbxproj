@@ -151,6 +151,7 @@
 		819B2ADD2BF283A600688624 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADB2BF283A600688624 /* FileExtension.swift */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
 		81C10A1D2C2929850055BB04 /* meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 81C10A1C2C2929850055BB04 /* meta.json */; };
+		81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C10A212C292E4D0055BB04 /* Double+Stencil.swift */; };
 		81CB0FBD2C2193DC003B1064 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FBC2C2193DC003B1064 /* HexConverter.swift */; };
 		81CB0FBE2C2193EB003B1064 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FBC2C2193DC003B1064 /* HexConverter.swift */; };
 		81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */; };
@@ -411,6 +412,7 @@
 		819B2ADB2BF283A600688624 /* FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
 		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
 		81C10A1C2C2929850055BB04 /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
+		81C10A212C292E4D0055BB04 /* Double+Stencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Stencil.swift"; sourceTree = "<group>"; };
 		81CB0FBC2C2193DC003B1064 /* HexConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConverter.swift; sourceTree = "<group>"; };
 		81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		81CB0FDD2C245046003B1064 /* SchemeTokenNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemeTokenNameValidator.swift; sourceTree = "<group>"; };
@@ -924,6 +926,7 @@
 				81CB0FE42C245052003B1064 /* EnsureValueNode.swift */,
 				81CB0FE52C245052003B1064 /* EnsureDoubleInRangeNode.swift */,
 				81CB10012C258823003B1064 /* TemplateRendererError.swift */,
+				81C10A212C292E4D0055BB04 /* Double+Stencil.swift */,
 			);
 			path = TemplateRenderer;
 			sourceTree = "<group>";
@@ -1354,6 +1357,7 @@
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
 				81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */,
+				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
 				81E1EE4A2BE3A61B00F86AE1 /* Screen.swift in Sources */,
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
