@@ -13,6 +13,7 @@ private enum Filter: String {
     case ensure = "ensure"
     case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
+    case twoDecimalsFormat = "two_decimals_format"
 }
 
 final class TemplateRenderer: Renderable {
@@ -95,6 +96,13 @@ final class TemplateRenderer: Renderable {
                  throw TemplateSyntaxError("Value \(value) is not a non-negative double")
              }
              return doubleValue
+        }
+        ext.registerFilter(Filter.twoDecimalsFormat.rawValue) { (value: Any?) in
+            guard let doubleValue = value as? Double else {
+                return value
+            }
+    
+            return doubleValue.twoDecimalsFormatted
         }
     }
 }
