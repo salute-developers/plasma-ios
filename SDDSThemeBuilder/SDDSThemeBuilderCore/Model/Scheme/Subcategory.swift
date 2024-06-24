@@ -5,4 +5,6 @@ enum Subcategory: String, Codable {
     case onLight = "on-light"
     case `default`
     case inverse
+    case dark
+    case light
 }

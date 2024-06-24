@@ -17,7 +17,12 @@ public final class App {
             return
         }
         
-        DecodeCommand<Scheme>(url: schemeDirectory.url(for: .meta)).run()
+        guard let metaScheme = DecodeCommand<Scheme>(url: schemeDirectory.url(for: .meta))
+            .run()
+            .asScheme else {
+            Logger.terminate("No schema")
+            return
+        }
         
         guard let fontFamiliesContainer = DecodeCommand<FontFamiliesContainer>(url: schemeDirectory.url(for: .fontFamilies))
             .run()
@@ -42,24 +47,10 @@ public final class App {
                 templatesURL: templatesURL,
                 templates: [.colorToken, .colors],
                 generatedOutputURL: generatedTokensURL,
-                contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
-            ),
-            InstallFontsCommand(
-                fontFamiliesContainer: fontFamiliesContainer,
-                fontsURL: fontsURL,
-                copyFontsScriptURL: copyFontsScriptURL,
-                registerFontsScriptURL: registerFontsScriptURL,
-                sddsThemeBuilderXcodeProjectURL: xcodeProjectURL,
-                themePlistURL: themePlistURL
-            ),
-            GenerateTokensCommand(
-                name: "Generate Color Tokens",
-                schemeURL: schemeDirectory.url(for: .colors),
-                themeURL: themeURL,
-                templatesURL: templatesURL,
-                templates: [.colorToken, .colors],
-                generatedOutputURL: generatedTokensURL,
-                contextBuilder: ColorContextBuilder(paletteURL: paletteLocalURL)
+                contextBuilder: ColorContextBuilder(
+                    paletteURL: paletteLocalURL,
+                    metaScheme: metaScheme
+                )
             ),
             GenerateTokensCommand(
                 name: "Generate Shadow Tokens",
@@ -67,7 +58,11 @@ public final class App {
                 themeURL: themeURL,
                 templatesURL: templatesURL,
                 templates: [.shadowToken, .shadows],
-                generatedOutputURL: generatedTokensURL
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: GeneralContextBuilder(
+                    kind: .shadow,
+                    metaScheme: metaScheme
+                )
             ),
             GenerateTokensCommand(
                 name: "Generate Shape Tokens",
@@ -75,7 +70,11 @@ public final class App {
                 themeURL: themeURL,
                 templatesURL: templatesURL,
                 templates: [.shapeToken, .shapes],
-                generatedOutputURL: generatedTokensURL
+                generatedOutputURL: generatedTokensURL,
+                contextBuilder: GeneralContextBuilder(
+                    kind: .shape,
+                    metaScheme: metaScheme
+                )
             ),
             GenerateTokensCommand(
                 name: "Generate Typography Tokens",
@@ -85,7 +84,8 @@ public final class App {
                 templates: [.typographyToken, .typographies],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: TypographyContextBuilder(
-                    fontFamiliesContainer: fontFamiliesContainer
+                    fontFamiliesContainer: fontFamiliesContainer, 
+                    metaScheme: metaScheme
                 )
             ),
             GenerateTokensCommand(
@@ -95,7 +95,10 @@ public final class App {
                 templatesURL: templatesURL,
                 templates: [.gradientToken, .gradients],
                 generatedOutputURL: generatedTokensURL,
-                contextBuilder: GradientContextBuilder(paletteURL: paletteLocalURL)
+                contextBuilder: GradientContextBuilder(
+                    paletteURL: paletteLocalURL,
+                    metaScheme: metaScheme
+                )
             )
         ]
         

@@ -6,14 +6,17 @@ final class GeneralContextBuilderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        contextBuilder = GeneralContextBuilder()
+        
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
+        contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
     }
 
     func testBuildContext_Success() {
         // given
         let json = """
         {
-            "key": "value"
+            "round.xxs": "value"
         }
         """
         guard let data = json.data(using: .utf8) else {
@@ -27,9 +30,9 @@ final class GeneralContextBuilderTests: XCTestCase {
         // then
         switch result {
         case .dictionary(let context):
-            XCTAssertNotNil(context["json"], "Context should contain 'json' key")
+            XCTAssertNotNil(context["json"], "Context should contain 'round.xxs' key")
             if let jsonContext = context["json"] as? [String: Any] {
-                XCTAssertEqual(jsonContext["key"] as? String, "value", "JSON should contain key 'key' with value 'value'")
+                XCTAssertEqual(jsonContext["roundXxs"] as? String, "value", "JSON should contain key 'key' with value 'value'")
             } else {
                 XCTFail("JSON should be a dictionary containing the data")
             }

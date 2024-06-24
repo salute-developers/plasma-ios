@@ -11,7 +11,11 @@ final class TemplateRendererTests: XCTestCase {
         templateRenderer = TemplateRenderer()
         let bundle = Bundle(for: type(of: self))
         templatesURL = bundle.resourceURL
-        contextBuilder = GeneralContextBuilder()
+        
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
+        
+        contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
     }
 
     static var shapesURL: URL {
@@ -34,8 +38,8 @@ final class TemplateRendererTests: XCTestCase {
         // then
         switch result {
         case .generated(let renderedContent):
-            XCTAssertTrue(renderedContent.contains("Self(cornerRadius: 12)"), "Should correctly render the smallest corner radius")
-            XCTAssertTrue(renderedContent.contains("Self(cornerRadius: 32)"), "Should correctly render the largest corner radius")
+            XCTAssertTrue(renderedContent.contains(cornerRadius12), "Should correctly render the smallest corner radius")
+            XCTAssertTrue(renderedContent.contains(cornerRadius32), "Should correctly render the largest corner radius")
         default:
             XCTFail("Expected successful rendering of shapes based on JSON")
         }
@@ -57,5 +61,25 @@ final class TemplateRendererTests: XCTestCase {
         if !result.isError {
             XCTFail("Expected failure in rendering due to manipulated JSON")
         }
+    }
+}
+
+private extension TemplateRendererTests {
+    var cornerRadius12: String {
+        """
+                Self(
+                    cornerRadius: 16,
+                    kind: .round
+                )
+        """
+    }
+    
+    var cornerRadius32: String {
+        """
+                Self(
+                    cornerRadius: 32,
+                    kind: .round
+                )
+        """
     }
 }

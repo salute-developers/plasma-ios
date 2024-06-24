@@ -16,14 +16,16 @@ public struct LinearGradient {
 public struct RadialGradient {
     public let locations: [CGFloat]
     public let colors: [Color]
-    public let startPoint: CGPoint
-    public let endPoint: CGPoint
+    public let center: CGPoint
+    public let startRadius: CGFloat
+    public let endRadius: CGFloat
     
-    public init(locations: [CGFloat], colors: [Color], startPoint: CGPoint, endPoint: CGPoint) {
+    public init(locations: [CGFloat], colors: [Color], center: CGPoint, startRadius: CGFloat, endRadius: CGFloat) {
         self.locations = locations
         self.colors = colors
-        self.startPoint = startPoint
-        self.endPoint = endPoint
+        self.center = center
+        self.startRadius = startRadius
+        self.endRadius = endRadius
     }
 }
 
@@ -110,10 +112,10 @@ extension RadialGradient: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(locations)
         hasher.combine(colors)
-        hasher.combine(startPoint.x)
-        hasher.combine(startPoint.y)
-        hasher.combine(endPoint.x)
-        hasher.combine(endPoint.y)
+        hasher.combine(center.x)
+        hasher.combine(center.y)
+        hasher.combine(startRadius)
+        hasher.combine(endRadius)
     }
 }
 

@@ -9,4 +9,5 @@ enum TypographyKind: String, Codable {
     case h3
     case h4
     case h5
+    case header
 }

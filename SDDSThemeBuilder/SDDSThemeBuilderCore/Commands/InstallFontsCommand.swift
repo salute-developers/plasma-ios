@@ -23,12 +23,34 @@ final class InstallFontsCommand: Command {
     @discardableResult override func run() -> CommandResult {
         super.run()
         
-        let result = download()
-        guard !result.isError else {
-            return result
+        var result: CommandResult = .empty
+        for command in [{self.validatateFonts()}, {self.download()}] {
+            result = command()
+            guard !result.isError else {
+                return result
+            }
+        }
+
+        return result
+    }
+    
+    // MARK: - Validation
+    private func validatateFonts() -> CommandResult {
+        for key in FontFamily.Key.allCases {
+            guard let fontFamily = fontFamiliesContainer.items[key] else {
+                continue
+            }
+            let fonts = fontFamily.fonts
+            for font in fonts {
+                let ext = font.link.lastPathComponent.components(separatedBy: ".").last
+                guard ext == "otf" || ext == "ttf" else {
+                    Logger.printText("Font file should be `otf` or `ttf`")
+                    return .error(GeneralError.fontExtensionError)
+                }
+            }
         }
         
-        return result
+        return .success
     }
     
     // MARK: - Download

@@ -113,4 +113,13 @@ extension CommandResult {
             return nil
         }
     }
+    
+    var asScheme: Scheme? {
+        switch self {
+        case .value(let scheme):
+            return scheme as? Scheme
+        default:
+            return nil
+        }
+    }
 }

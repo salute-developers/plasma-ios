@@ -14,5 +14,6 @@ enum GeneralError: Error {
     case invalidTokenFormat
     case invalidPalette
     case fontNotFound
+    case fontExtensionError
 }
 

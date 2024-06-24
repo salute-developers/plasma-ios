@@ -1,8 +1,9 @@
 import Foundation
 import SwiftUI
 
-final class GradientContextBuilder: ContexBuilder, ThemeContext, ColorContext {
-    let paletteURL: URL
+final class GradientContextBuilder: ContexBuilder, ThemeContext, ColorContext, SchemeTokenNameValidator {
+    private let paletteURL: URL
+    private let metaScheme: Scheme
     
     private lazy var paletteJson: [String: Any]? = {
         guard let data = try? Data(contentsOf: paletteURL) else {
@@ -12,8 +13,9 @@ final class GradientContextBuilder: ContexBuilder, ThemeContext, ColorContext {
         return try? JSONSerialization.jsonObject(with: data) as? [String: Any]
     }()
     
-    init(paletteURL: URL) {
+    init(paletteURL: URL, metaScheme: Scheme) {
         self.paletteURL = paletteURL
+        self.metaScheme = metaScheme
     }
     
     func buildContext(from data: Data) -> CommandResult {
@@ -44,6 +46,7 @@ extension GradientContextBuilder {
     func buildGradientThemeContext(from dictionary: [String: Any], transform: (_ colorMap: String, _ paletteJson: [String: Any]?) throws -> (ColorMap)) throws -> Result<[String: Any], Error> {
         var result = [String: Any]()
         for key in dictionary.keys {
+            try validateTokenName(key, .gradient, scheme: metaScheme)
             let components = key.tokenComponents
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)

@@ -1,17 +1,19 @@
 import Foundation
 import SwiftUI
 
-final class TypographyContextBuilder: ContexBuilder {
+final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
     private let fontFamiliesContainer: FontFamiliesContainer
+    private let metaScheme: Scheme
     
-    init(fontFamiliesContainer: FontFamiliesContainer) {
+    init(fontFamiliesContainer: FontFamiliesContainer, metaScheme: Scheme) {
         self.fontFamiliesContainer = fontFamiliesContainer
+        self.metaScheme = metaScheme
     }
     
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                let result = prepareContext(fromDictionary: dictionary) { json in
+                let result = try prepareContext(fromDictionary: dictionary) { json in
                     var context = [String: Any]()
                     context["json"] = json
                     return context
@@ -28,10 +30,11 @@ final class TypographyContextBuilder: ContexBuilder {
 
 // MARK: - Transform keys
 extension TypographyContextBuilder {
-    func prepareContext(fromDictionary dictionary: [String: Any], transform: (_ json: [String: Any]) -> ([String: Any])) -> CommandResult {
+    func prepareContext(fromDictionary dictionary: [String: Any], transform: (_ json: [String: Any]) -> ([String: Any])) throws -> CommandResult {
         
         var result = [String: [String: Any]]()
         for key in dictionary.keys {
+            try validateTokenName(key, .typography, scheme: metaScheme)
             var tokenDictionary = dictionary[key] as? [String: Any]
             
             let fontFamilyRefKey = "fontFamilyRef"

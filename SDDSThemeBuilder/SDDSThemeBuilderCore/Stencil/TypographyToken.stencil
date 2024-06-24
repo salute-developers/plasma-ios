@@ -2,40 +2,74 @@ import Foundation
 @_exported import SDDSThemeCore
 
 public extension AdaptiveTypographyToken {
-    {% for key, value in json %}
+    {%- for key, value in json %}
+    
+    {% if value.small %}
+    {% ensure_value_exists value.small.fontName %}
+    {% ensure_value_exists value.small.weight %}
+    {% ensure_value_exists value.small.style %}
+    {% ensure_value_exists value.small.size %}
+    {% ensure_value_exists value.small.lineHeight %}
+    {% ensure_value_exists value.small.kerning %}
+    {% ensure_float_non_negative value.small.size %}
+    {% ensure_float_non_negative value.small.lineHeight %}
+    {% endif %}
+    
+    {% if value.medium %}
+    {% ensure_value_exists value.medium.fontName %}
+    {% ensure_value_exists value.medium.weight %}
+    {% ensure_value_exists value.medium.style %}
+    {% ensure_value_exists value.medium.size %}
+    {% ensure_value_exists value.medium.lineHeight %}
+    {% ensure_value_exists value.medium.kerning %}
+    {% ensure_float_non_negative value.medium.size %}
+    {% ensure_float_non_negative value.medium.lineHeight %}
+    {% endif %}
+    
+    {% if value.large %}
+    {% ensure_value_exists value.large.fontName %}
+    {% ensure_value_exists value.large.weight %}
+    {% ensure_value_exists value.large.style %}
+    {% ensure_value_exists value.large.size %}
+    {% ensure_value_exists value.large.lineHeight %}
+    {% ensure_value_exists value.large.kerning %}
+    {% ensure_float_non_negative value.large.size %}
+    {% ensure_float_non_negative value.large.lineHeight %}
+    {% endif %}
+    
     static var {{ key }}: Self {
         Self(
-            small: TypographyToken(
-                fontName: "{{ value.small.fontName }}",
-                weight: .{{ value.small.weight }},
-                style: .{{ value.small.style }},
-                size: {{ value.small.size }},
-                lineHeight: {{ value.small.lineHeight }},
-                kerning: {{ value.small.kerning }}
-            ),
-            medium: TypographyToken(
-                fontName: "{{ value.medium.fontName }}",
-                weight: .{{ value.medium.weight }},
-                style: .{{ value.medium.style }},
-                size: {{ value.medium.size }},
-                lineHeight: {{ value.medium.lineHeight }},
-                kerning: {{ value.medium.kerning }}
-            ),
-            large: TypographyToken(
-                fontName: "{{ value.large.fontName }}",
-                weight: .{{ value.large.weight }},
-                style: .{{ value.large.style }},
-                size: {{ value.large.size }},
-                lineHeight: {{ value.large.lineHeight }},
-                kerning: {{ value.large.kerning }}
-            )
+            small: {%- if value.small %} TypographyToken(
+                fontName: "{{ value.small.fontName|ensure }}",
+                weight: .{{ value.small.weight|ensure }},
+                style: .{{ value.small.style|ensure }},
+                size: {{ value.small.size|ensure_float_non_negative }},
+                lineHeight: {{ value.small.lineHeight|ensure_float_non_negative }},
+                kerning: {{ value.small.kerning|ensure }}
+            ){% else %} nil {% endif %},
+            medium: {%- if value.medium %} TypographyToken(
+                fontName: "{{ value.medium.fontName|ensure }}",
+                weight: .{{ value.medium.weight|ensure }},
+                style: .{{ value.medium.style|ensure }},
+                size: {{ value.medium.size|ensure_float_non_negative }},
+                lineHeight: {{ value.medium.lineHeight|ensure_float_non_negative }},
+                kerning: {{ value.medium.kerning|ensure }}
+            ){% else %} nil {% endif %},
+            large: {%- if value.large %} TypographyToken(
+                fontName: "{{ value.large.fontName|ensure }}",
+                weight: .{{ value.large.weight|ensure }},
+                style: .{{ value.large.style|ensure }},
+                size: {{ value.large.size|ensure_float_non_negative }},
+                lineHeight: {{ value.large.lineHeight|ensure_float_non_negative }},
+                kerning: {{ value.large.kerning|ensure }}
+            ){% else %} nil {% endif %}
         )
     }
-    {% endfor %}
+    {%- endfor %}
     
     static var tokens: [Self] = [
         {%- for key in json %}
-        {{ key }},
+        {{ key }}{% if not forloop.last %}, {% endif %}
         {%- endfor %}
     ]
 }
