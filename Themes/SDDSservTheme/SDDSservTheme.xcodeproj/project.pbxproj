@@ -7,210 +7,214 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0278D0C923B2C56555ED40BB /* SBSansText-LightItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = 72944CB037749FE1D4574BF9 /* SBSansText-LightItalic.otf */; };
-		085171BBC09ECD35E0CD699F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF40EE98ECBAAE3824962A2 /* Theme.swift */; };
-		0AC95C5BDE1CA4730C7E6743 /* SBSansDisplay-Thin.otf in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5C348E9447130162015B9 /* SBSansDisplay-Thin.otf */; };
-		0D023D5DC0936A6C71B12491 /* SBSansText-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B439AF15369AFFDD5F07C245 /* SBSansText-BoldItalic.otf */; };
-		1657A2237B073EBF59764158 /* SBSansText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B49E80B5FAA70B6DCCCFC9BC /* SBSansText-Medium.otf */; };
-		16F9A16B6E9963C58EF4EA21 /* SBSansDisplay-Bold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 4551B479BC9934AB2E138DD7 /* SBSansDisplay-Bold.otf */; };
-		218EFC307E3D1B21A62717E1 /* Shapes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A546E03F72348B465AF1DD1 /* Shapes+Generated.swift */; };
-		28B9EF7B3E5353942A730610 /* ColorToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29410A17CF1731EE2B28BF /* ColorToken+Generated.swift */; };
-		35250F76811C14EFF26FA19A /* ShapeToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF940A1B4B33167C2198DF /* ShapeToken+Generated.swift */; };
-		35D0FA8BBB200AE76D518226 /* SBSansDisplay-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 9314773DD8AC6B28D00ECCC0 /* SBSansDisplay-Regular.otf */; };
-		3B11F793ACB9BEE1FD5A73D1 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832992550A857FCBBBB3B8B0 /* Shadows+Generated.swift */; };
-		428B3051996BD60B6D494D23 /* SBSansDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA5C348E9447130162015B9 /* SBSansDisplay-Thin.otf */; };
-		436E7B72C4246D4E305E0E58 /* SBSansDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4551B479BC9934AB2E138DD7 /* SBSansDisplay-Bold.otf */; };
-		47E743179CB49767B48D7BC4 /* SBSansDisplay-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 23E407FC8388B5B8AC66BDD9 /* SBSansDisplay-Semibold.otf */; };
-		51C49A0FA2B10A4556534A6D /* SBSansDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A34AD5B630056E63CD3E0D9C /* SBSansDisplay-Medium.otf */; };
-		5594189F3B383D63AC214438 /* SBSansText-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 73891141EA40A003B62B76F4 /* SBSansText-Regular.otf */; };
-		5FBB165E897DF82BA150A7E8 /* SBSansDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9314773DD8AC6B28D00ECCC0 /* SBSansDisplay-Regular.otf */; };
-		606754CA44F81BCB256172B4 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 01E7EE5CDE5006F4A78D6B0F /* SBSansText-Bold.otf */; };
-		62A632498551BDB1E65B9ADA /* SBSansText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 282215649299979BD8B86331 /* SBSansText-SemiboldItalic.otf */; };
-		62D00D0E8B88835EDBD1461E /* SBSansText-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F65CBD0812259F47FF437509 /* SBSansText-Italic.otf */; };
-		63DA16F66DB08608D87BCB2A /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = B179A69AD3A46E2B711A7694 /* SBSansText-Light.otf */; };
-		6E656B197E413BD9A71BFB57 /* Gradients+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486613B940CDB7F2430E04F /* Gradients+Generated.swift */; };
-		75D49277A4BDB3363F1C8E51 /* SBSansText-Thin.otf in Sources */ = {isa = PBXBuildFile; fileRef = 24FDAD185B0147C3E98EB5AD /* SBSansText-Thin.otf */; };
-		8271FF86B9D3B89035511CC8 /* SBSansText-SemiboldItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = 282215649299979BD8B86331 /* SBSansText-SemiboldItalic.otf */; };
-		8447457CD4C639F568C34CD2 /* SBSansText-Italic.otf in Sources */ = {isa = PBXBuildFile; fileRef = F65CBD0812259F47FF437509 /* SBSansText-Italic.otf */; };
-		9F9EF78C8856F4217AC49E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE5F0B02BCD3C0E43F66D0D /* Foundation.framework */; };
-		A246215DE088C8A42AD04873 /* SBSansText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73891141EA40A003B62B76F4 /* SBSansText-Regular.otf */; };
-		A3EA91F46DD2D80D04F7C574 /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 24FDAD185B0147C3E98EB5AD /* SBSansText-Thin.otf */; };
-		AE68991179843F081DA973A0 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C6E15979199B1460350CE /* Colors+Generated.swift */; };
-		BCF1D1164C28E8AB39D2143A /* ShadowToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317E052335A7495062A4FAF1 /* ShadowToken+Generated.swift */; };
-		BF982F438C1F06D12FD582A0 /* TypographyToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F08A29A7D2F904FD215598 /* TypographyToken+Generated.swift */; };
-		C1BBD4EF1A79E62BE9A8934B /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAC18D9B341B4E6A749595E /* SDDSThemeCore.xcframework */; };
-		C46A0A5FDADC10E9D217F4B1 /* project.pbxproj in Sources */ = {isa = PBXBuildFile; fileRef = EDF7B59776E36982B8CB7F7F /* project.pbxproj */; };
-		C6D50166B13118D717B3FAB4 /* Typographies+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5BD16CDBB5329742CB545C /* Typographies+Generated.swift */; };
-		D0D82EAE6B44E0B9AECF7316 /* SBSansDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 23E407FC8388B5B8AC66BDD9 /* SBSansDisplay-Semibold.otf */; };
-		D154382DAD162BA276AC44FB /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = D671E029792E46BA1F01698A /* SDDSTheme.h */; };
-		DD16FB1880AD21C8CDA7250F /* GradientToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50852DCFF16478A8C40E2AEA /* GradientToken+Generated.swift */; };
-		E83FEFDD04D729011BB5101B /* SBSansText-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 72944CB037749FE1D4574BF9 /* SBSansText-LightItalic.otf */; };
-		EC1F3DD51B97B032AD937E76 /* SBSansText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B179A69AD3A46E2B711A7694 /* SBSansText-Light.otf */; };
-		F1F195701CAADBFEB8AB492D /* SBSansText-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = EB6EE9244E2ADD614B5A464B /* SBSansText-Semibold.otf */; };
-		F40D0AF01FC49F15DF89E686 /* SBSansText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB6EE9244E2ADD614B5A464B /* SBSansText-Semibold.otf */; };
-		F45230137AFDD2C5C08A3688 /* SBSansText-Bold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 01E7EE5CDE5006F4A78D6B0F /* SBSansText-Bold.otf */; };
-		F9188D693E6D09B8262EEAB6 /* SBSansText-BoldItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = B439AF15369AFFDD5F07C245 /* SBSansText-BoldItalic.otf */; };
-		FEBEFB22953E4E4B776FC5A7 /* SBSansText-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = B49E80B5FAA70B6DCCCFC9BC /* SBSansText-Medium.otf */; };
-		FFAB2E1205DCC6682964CC56 /* SBSansDisplay-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = A34AD5B630056E63CD3E0D9C /* SBSansDisplay-Medium.otf */; };
+		001163501401B5C8F426E1AF /* SBSansText-BoldItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = F7FDDE46FE053811DACEDC98 /* SBSansText-BoldItalic.otf */; };
+		04105FBAE5C90EF80846DE03 /* SBSansText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0728278978145C6472888FD0 /* SBSansText-Light.otf */; };
+		12E4ECE5C314A909BB1A4188 /* SBSansText-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF37E8F197B588640F2B40 /* SBSansText-Semibold.otf */; };
+		177DF830B17B397B902B17ED /* SBSansDisplay-Thin.otf in Sources */ = {isa = PBXBuildFile; fileRef = 62FB770EED25A40FA3144CBE /* SBSansDisplay-Thin.otf */; };
+		17E80FA737BCB94420C8E684 /* ShadowToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE631E7E9EADEDE6DA0AEC0A /* ShadowToken+Generated.swift */; };
+		17F6F4FF73EA03172A8E0DD3 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 684EB0394C84051F7998BAE7 /* SBSansText-Bold.otf */; };
+		20E63783BF0B4004A51AE7A6 /* SBSansDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C24A9FE15F7B6E87396D6EBC /* SBSansDisplay-Semibold.otf */; };
+		20FA341528D519231694B7F8 /* SBSansText-Italic.otf in Sources */ = {isa = PBXBuildFile; fileRef = DE9C4DA634F5A330D3753C73 /* SBSansText-Italic.otf */; };
+		21BFBE87CD7E3B01072BBC43 /* ColorToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE385EC61A1ABA5A4FD5209 /* ColorToken+Generated.swift */; };
+		2DBFE61627DA72C5A6C65BDE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71199390CAED614AAA55E03 /* Theme.swift */; };
+		33A8632680C2AB36CAC7C6AA /* SBSansText-Thin.otf in Sources */ = {isa = PBXBuildFile; fileRef = 46A3499CC195AF2245AAFC68 /* SBSansText-Thin.otf */; };
+		3692874F8605A649AC0715BB /* SBSansText-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D2E64FA6BD8F29DDA2475D5 /* SBSansText-LightItalic.otf */; };
+		39EA051982CB7B9859A9F592 /* Typographies+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E6DD72E52AD36DE380C50 /* Typographies+Generated.swift */; };
+		3FB484D5E8B2F08DC516F636 /* SBSansDisplay-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */; };
+		44CA09B208FDEBD1ECA54333 /* SBSansText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43234480CC15087F2587E5AE /* SBSansText-Medium.otf */; };
+		4C39AE3C14160C1AE907AD5F /* Gradients+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B0AB7E735B862856C95F2 /* Gradients+Generated.swift */; };
+		50F6440882E4EAEA8E579906 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DA1771203127292D345C10 /* Foundation.framework */; };
+		56EB2BC221F3A140D7C4675F /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB1B6635A40B998B788977 /* Colors+Generated.swift */; };
+		591699B1942A44B559FD706A /* SBSansDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 17C7616A1B806C4186E696F4 /* SBSansDisplay-Bold.otf */; };
+		60839CC2D5F29CEAB68E5DA0 /* SBSansDisplay-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = ADCA8DEA7A9F7CA47E7A910D /* SBSansDisplay-Light.otf */; };
+		6BDAD914791DC3A3FD0D4F06 /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = 0728278978145C6472888FD0 /* SBSansText-Light.otf */; };
+		6EEDCC7BCFD9126D2266E375 /* SBSansText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 19188BDF45581E780A189E9D /* SBSansText-Regular.otf */; };
+		7129879F8EE2142C7ACD89D3 /* SBSansText-Bold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 684EB0394C84051F7998BAE7 /* SBSansText-Bold.otf */; };
+		7C921F9937B56D423680BE3D /* SBSansText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AFF37E8F197B588640F2B40 /* SBSansText-Semibold.otf */; };
+		7CC9AD16F990387C0E8316F9 /* SBSansDisplay-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = 11136B25B2CB4FFA8B642C19 /* SBSansDisplay-Medium.otf */; };
+		8ECEBDF0B77610192BA89968 /* SBSansText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */; };
+		9B88E9F86DE5AD9E28D0511B /* SBSansDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */; };
+		A059B00A8A90DFA2B44A01F5 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B23BD6BB8A0CE36B12D28 /* Shadows+Generated.swift */; };
+		A6338AFC0A8EEF96FA5E825E /* SBSansText-LightItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E64FA6BD8F29DDA2475D5 /* SBSansText-LightItalic.otf */; };
+		A6A279D3A8F6C6418C78AA3C /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46A3499CC195AF2245AAFC68 /* SBSansText-Thin.otf */; };
+		A6E9073EC0514AF9A317FB09 /* project.pbxproj in Sources */ = {isa = PBXBuildFile; fileRef = 8E63361D6FA1A21DB3E6F39B /* project.pbxproj */; };
+		A8DD91F1BF92D0FADCD08D5F /* SBSansDisplay-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = C24A9FE15F7B6E87396D6EBC /* SBSansDisplay-Semibold.otf */; };
+		AC18E58030625CA4ED44A423 /* GradientToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCA04A4FFE2D3F3C01BFD2 /* GradientToken+Generated.swift */; };
+		B7C8202335A7B70228EEAFEE /* SBSansDisplay-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11136B25B2CB4FFA8B642C19 /* SBSansDisplay-Medium.otf */; };
+		C4A3561B2AC1A35B57C4318C /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */; };
+		CC49187B78BF874CF67DD50C /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC2132AB612D3F4010CEC1C /* SDDSTheme.h */; };
+		CED519CF269A26E85AD93DB7 /* TypographyToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF1A909162720DFE13C64F /* TypographyToken+Generated.swift */; };
+		D124D5A76A94D03CBCDC23C5 /* SBSansText-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE9C4DA634F5A330D3753C73 /* SBSansText-Italic.otf */; };
+		D21A435CBA67514E7B87E668 /* ShapeToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD13DF1E1FABF0B17064531 /* ShapeToken+Generated.swift */; };
+		D97D7008DBC7758CC23EE009 /* Shapes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF16CF4F70645572F41424 /* Shapes+Generated.swift */; };
+		DBAA5A4A4C886E4EE8F0BA20 /* SBSansText-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = 43234480CC15087F2587E5AE /* SBSansText-Medium.otf */; };
+		DFC6A0CA2E61CC79B26C62B3 /* SBSansDisplay-Bold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 17C7616A1B806C4186E696F4 /* SBSansDisplay-Bold.otf */; };
+		E5A2B4EC83C7EA406E8ECD18 /* SBSansText-SemiboldItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = 278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */; };
+		E6BDCEC1F775BF9B281F66C3 /* SBSansDisplay-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = ADCA8DEA7A9F7CA47E7A910D /* SBSansDisplay-Light.otf */; };
+		EA23F48652BBFCCC31A2DED7 /* SBSansDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62FB770EED25A40FA3144CBE /* SBSansDisplay-Thin.otf */; };
+		EAB76217C251883AD02527AD /* SBSansText-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 19188BDF45581E780A189E9D /* SBSansText-Regular.otf */; };
+		EBDE829F3377BCF3EFF634CC /* SBSansText-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7FDDE46FE053811DACEDC98 /* SBSansText-BoldItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01E7EE5CDE5006F4A78D6B0F /* SBSansText-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Bold.otf"; sourceTree = "<group>"; };
-		0ECF940A1B4B33167C2198DF /* ShapeToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ShapeToken+Generated.swift"; sourceTree = "<group>"; };
-		156F4115D746CD896331A64E /* SDDSservTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSservTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A4C6E15979199B1460350CE /* Colors+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
-		23E407FC8388B5B8AC66BDD9 /* SBSansDisplay-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Semibold.otf"; sourceTree = "<group>"; };
-		24FDAD185B0147C3E98EB5AD /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
-		282215649299979BD8B86331 /* SBSansText-SemiboldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-SemiboldItalic.otf"; sourceTree = "<group>"; };
-		317E052335A7495062A4FAF1 /* ShadowToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ShadowToken+Generated.swift"; sourceTree = "<group>"; };
-		4551B479BC9934AB2E138DD7 /* SBSansDisplay-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Bold.otf"; sourceTree = "<group>"; };
-		50852DCFF16478A8C40E2AEA /* GradientToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "GradientToken+Generated.swift"; sourceTree = "<group>"; };
-		5A546E03F72348B465AF1DD1 /* Shapes+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Shapes+Generated.swift"; sourceTree = "<group>"; };
-		5EF40EE98ECBAAE3824962A2 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		72944CB037749FE1D4574BF9 /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
-		73891141EA40A003B62B76F4 /* SBSansText-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Regular.otf"; sourceTree = "<group>"; };
-		77F08A29A7D2F904FD215598 /* TypographyToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Generated.swift"; sourceTree = "<group>"; };
-		832992550A857FCBBBB3B8B0 /* Shadows+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Shadows+Generated.swift"; sourceTree = "<group>"; };
-		8AA5C348E9447130162015B9 /* SBSansDisplay-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Thin.otf"; sourceTree = "<group>"; };
-		8DE5F0B02BCD3C0E43F66D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9314773DD8AC6B28D00ECCC0 /* SBSansDisplay-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Regular.otf"; sourceTree = "<group>"; };
-		9FAC18D9B341B4E6A749595E /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
-		A34AD5B630056E63CD3E0D9C /* SBSansDisplay-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Medium.otf"; sourceTree = "<group>"; };
-		B179A69AD3A46E2B711A7694 /* SBSansText-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Light.otf"; sourceTree = "<group>"; };
-		B439AF15369AFFDD5F07C245 /* SBSansText-BoldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-BoldItalic.otf"; sourceTree = "<group>"; };
-		B49E80B5FAA70B6DCCCFC9BC /* SBSansText-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Medium.otf"; sourceTree = "<group>"; };
-		D671E029792E46BA1F01698A /* SDDSTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SDDSTheme.h; sourceTree = "<group>"; };
-		EA5BD16CDBB5329742CB545C /* Typographies+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Typographies+Generated.swift"; sourceTree = "<group>"; };
-		EB6EE9244E2ADD614B5A464B /* SBSansText-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Semibold.otf"; sourceTree = "<group>"; };
-		EDF7B59776E36982B8CB7F7F /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; path = project.pbxproj; sourceTree = "<group>"; };
-		EE29410A17CF1731EE2B28BF /* ColorToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ColorToken+Generated.swift"; sourceTree = "<group>"; };
-		F486613B940CDB7F2430E04F /* Gradients+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Gradients+Generated.swift"; sourceTree = "<group>"; };
-		F65CBD0812259F47FF437509 /* SBSansText-Italic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Italic.otf"; sourceTree = "<group>"; };
+		0728278978145C6472888FD0 /* SBSansText-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Light.otf"; sourceTree = "<group>"; };
+		0DC2132AB612D3F4010CEC1C /* SDDSTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SDDSTheme.h; sourceTree = "<group>"; };
+		11136B25B2CB4FFA8B642C19 /* SBSansDisplay-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Medium.otf"; sourceTree = "<group>"; };
+		17C7616A1B806C4186E696F4 /* SBSansDisplay-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Bold.otf"; sourceTree = "<group>"; };
+		19188BDF45581E780A189E9D /* SBSansText-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Regular.otf"; sourceTree = "<group>"; };
+		1AFF37E8F197B588640F2B40 /* SBSansText-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Semibold.otf"; sourceTree = "<group>"; };
+		1DD13DF1E1FABF0B17064531 /* ShapeToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ShapeToken+Generated.swift"; sourceTree = "<group>"; };
+		25DA1771203127292D345C10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		3A4E6DD72E52AD36DE380C50 /* Typographies+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Typographies+Generated.swift"; sourceTree = "<group>"; };
+		415B23BD6BB8A0CE36B12D28 /* Shadows+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Shadows+Generated.swift"; sourceTree = "<group>"; };
+		43234480CC15087F2587E5AE /* SBSansText-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Medium.otf"; sourceTree = "<group>"; };
+		44086615942D02F7443042C3 /* SDDSservTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSservTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A3499CC195AF2245AAFC68 /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
+		4ABF16CF4F70645572F41424 /* Shapes+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Shapes+Generated.swift"; sourceTree = "<group>"; };
+		52FF1A909162720DFE13C64F /* TypographyToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Generated.swift"; sourceTree = "<group>"; };
+		62FB770EED25A40FA3144CBE /* SBSansDisplay-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Thin.otf"; sourceTree = "<group>"; };
+		684EB0394C84051F7998BAE7 /* SBSansText-Bold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Bold.otf"; sourceTree = "<group>"; };
+		69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Regular.otf"; sourceTree = "<group>"; };
+		7AEB1B6635A40B998B788977 /* Colors+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
+		7EBCA04A4FFE2D3F3C01BFD2 /* GradientToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "GradientToken+Generated.swift"; sourceTree = "<group>"; };
+		8E63361D6FA1A21DB3E6F39B /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; path = project.pbxproj; sourceTree = "<group>"; };
+		9D2E64FA6BD8F29DDA2475D5 /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
+		ADCA8DEA7A9F7CA47E7A910D /* SBSansDisplay-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Light.otf"; sourceTree = "<group>"; };
+		AE631E7E9EADEDE6DA0AEC0A /* ShadowToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ShadowToken+Generated.swift"; sourceTree = "<group>"; };
+		AF3B0AB7E735B862856C95F2 /* Gradients+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Gradients+Generated.swift"; sourceTree = "<group>"; };
+		B71199390CAED614AAA55E03 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C24A9FE15F7B6E87396D6EBC /* SBSansDisplay-Semibold.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		DE9C4DA634F5A330D3753C73 /* SBSansText-Italic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-Italic.otf"; sourceTree = "<group>"; };
+		EDE385EC61A1ABA5A4FD5209 /* ColorToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ColorToken+Generated.swift"; sourceTree = "<group>"; };
+		F7FDDE46FE053811DACEDC98 /* SBSansText-BoldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; path = "SBSansText-BoldItalic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		07C61D196F96E3714D10D320 /* Frameworks */ = {
+		5DDD47397723796B51C1F782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9EF78C8856F4217AC49E96 /* Foundation.framework in Frameworks */,
-				C1BBD4EF1A79E62BE9A8934B /* SDDSThemeCore.xcframework in Frameworks */,
+				50F6440882E4EAEA8E579906 /* Foundation.framework in Frameworks */,
+				C4A3561B2AC1A35B57C4318C /* SDDSThemeCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0301E9D383567BF9D1154F31 /* SDDSservTheme.xcodeproj */ = {
+		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
-				EDF7B59776E36982B8CB7F7F /* project.pbxproj */,
-			);
-			name = SDDSservTheme.xcodeproj;
-			path = SDDSservTheme.xcodeproj;
-			sourceTree = "<group>";
-		};
-		224AE2D26A21A800420237CB = {
-			isa = PBXGroup;
-			children = (
-				877D435734636BF6A22F36AF /* Products */,
-				3B74ED379952B5369B634A56 /* Frameworks */,
-				D671E029792E46BA1F01698A /* SDDSTheme.h */,
-				5EF40EE98ECBAAE3824962A2 /* Theme.swift */,
-				D23F4A43E0331C0EB86A89C8 /* Generated */,
-				CE8D4F20B5E0EB55616B1AF9 /* Fonts */,
-				0301E9D383567BF9D1154F31 /* SDDSservTheme.xcodeproj */,
-				9FAC18D9B341B4E6A749595E /* SDDSThemeCore.xcframework */,
+				722DEDCBB53B194922CBA198 /* Products */,
+				162A3C52391589A140A5FEB3 /* Frameworks */,
+				0DC2132AB612D3F4010CEC1C /* SDDSTheme.h */,
+				B71199390CAED614AAA55E03 /* Theme.swift */,
+				21D1453D884C580D7D7B62C9 /* Generated */,
+				527E8391CA252F1E5739E4ED /* Fonts */,
+				8AB33B11FD105BE03DEEFF79 /* SDDSservTheme.xcodeproj */,
+				C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
-		3B74ED379952B5369B634A56 /* Frameworks */ = {
+		070383931FADEEF4A8128687 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B93F56D514C7602B2F93A20C /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		877D435734636BF6A22F36AF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				156F4115D746CD896331A64E /* SDDSservTheme.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B93F56D514C7602B2F93A20C /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8DE5F0B02BCD3C0E43F66D0D /* Foundation.framework */,
+				25DA1771203127292D345C10 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CE8D4F20B5E0EB55616B1AF9 /* Fonts */ = {
+		162A3C52391589A140A5FEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73891141EA40A003B62B76F4 /* SBSansText-Regular.otf */,
-				72944CB037749FE1D4574BF9 /* SBSansText-LightItalic.otf */,
-				F65CBD0812259F47FF437509 /* SBSansText-Italic.otf */,
-				9314773DD8AC6B28D00ECCC0 /* SBSansDisplay-Regular.otf */,
-				A34AD5B630056E63CD3E0D9C /* SBSansDisplay-Medium.otf */,
-				B49E80B5FAA70B6DCCCFC9BC /* SBSansText-Medium.otf */,
-				4551B479BC9934AB2E138DD7 /* SBSansDisplay-Bold.otf */,
-				B439AF15369AFFDD5F07C245 /* SBSansText-BoldItalic.otf */,
-				8AA5C348E9447130162015B9 /* SBSansDisplay-Thin.otf */,
-				EB6EE9244E2ADD614B5A464B /* SBSansText-Semibold.otf */,
-				B179A69AD3A46E2B711A7694 /* SBSansText-Light.otf */,
-				282215649299979BD8B86331 /* SBSansText-SemiboldItalic.otf */,
-				23E407FC8388B5B8AC66BDD9 /* SBSansDisplay-Semibold.otf */,
-				01E7EE5CDE5006F4A78D6B0F /* SBSansText-Bold.otf */,
-				24FDAD185B0147C3E98EB5AD /* SBSansText-Thin.otf */,
+				070383931FADEEF4A8128687 /* iOS */,
 			);
-			name = Fonts;
-			path = Fonts;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D23F4A43E0331C0EB86A89C8 /* Generated */ = {
+		21D1453D884C580D7D7B62C9 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				0ECF940A1B4B33167C2198DF /* ShapeToken+Generated.swift */,
-				77F08A29A7D2F904FD215598 /* TypographyToken+Generated.swift */,
-				5A546E03F72348B465AF1DD1 /* Shapes+Generated.swift */,
-				F486613B940CDB7F2430E04F /* Gradients+Generated.swift */,
-				317E052335A7495062A4FAF1 /* ShadowToken+Generated.swift */,
-				1A4C6E15979199B1460350CE /* Colors+Generated.swift */,
-				EE29410A17CF1731EE2B28BF /* ColorToken+Generated.swift */,
-				50852DCFF16478A8C40E2AEA /* GradientToken+Generated.swift */,
-				832992550A857FCBBBB3B8B0 /* Shadows+Generated.swift */,
-				EA5BD16CDBB5329742CB545C /* Typographies+Generated.swift */,
+				1DD13DF1E1FABF0B17064531 /* ShapeToken+Generated.swift */,
+				52FF1A909162720DFE13C64F /* TypographyToken+Generated.swift */,
+				4ABF16CF4F70645572F41424 /* Shapes+Generated.swift */,
+				AF3B0AB7E735B862856C95F2 /* Gradients+Generated.swift */,
+				AE631E7E9EADEDE6DA0AEC0A /* ShadowToken+Generated.swift */,
+				7AEB1B6635A40B998B788977 /* Colors+Generated.swift */,
+				EDE385EC61A1ABA5A4FD5209 /* ColorToken+Generated.swift */,
+				7EBCA04A4FFE2D3F3C01BFD2 /* GradientToken+Generated.swift */,
+				415B23BD6BB8A0CE36B12D28 /* Shadows+Generated.swift */,
+				3A4E6DD72E52AD36DE380C50 /* Typographies+Generated.swift */,
 			);
 			name = Generated;
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		527E8391CA252F1E5739E4ED /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				19188BDF45581E780A189E9D /* SBSansText-Regular.otf */,
+				9D2E64FA6BD8F29DDA2475D5 /* SBSansText-LightItalic.otf */,
+				DE9C4DA634F5A330D3753C73 /* SBSansText-Italic.otf */,
+				ADCA8DEA7A9F7CA47E7A910D /* SBSansDisplay-Light.otf */,
+				69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */,
+				11136B25B2CB4FFA8B642C19 /* SBSansDisplay-Medium.otf */,
+				43234480CC15087F2587E5AE /* SBSansText-Medium.otf */,
+				17C7616A1B806C4186E696F4 /* SBSansDisplay-Bold.otf */,
+				F7FDDE46FE053811DACEDC98 /* SBSansText-BoldItalic.otf */,
+				62FB770EED25A40FA3144CBE /* SBSansDisplay-Thin.otf */,
+				1AFF37E8F197B588640F2B40 /* SBSansText-Semibold.otf */,
+				0728278978145C6472888FD0 /* SBSansText-Light.otf */,
+				278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */,
+				C24A9FE15F7B6E87396D6EBC /* SBSansDisplay-Semibold.otf */,
+				684EB0394C84051F7998BAE7 /* SBSansText-Bold.otf */,
+				46A3499CC195AF2245AAFC68 /* SBSansText-Thin.otf */,
+			);
+			name = Fonts;
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		722DEDCBB53B194922CBA198 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44086615942D02F7443042C3 /* SDDSservTheme.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AB33B11FD105BE03DEEFF79 /* SDDSservTheme.xcodeproj */ = {
+			isa = PBXGroup;
+			children = (
+				8E63361D6FA1A21DB3E6F39B /* project.pbxproj */,
+			);
+			name = SDDSservTheme.xcodeproj;
+			path = SDDSservTheme.xcodeproj;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D83869A04FE4B72CF626D6D /* Headers */ = {
+		32EAF735583CAD4485EC5DA0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D154382DAD162BA276AC44FB /* SDDSTheme.h in Headers */,
+				CC49187B78BF874CF67DD50C /* SDDSTheme.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D334CCC4E441DC8E35023A69 /* SDDSservTheme */ = {
+		B8CBA04F22FCBEB007350F03 /* SDDSservTheme */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E86F1647BDDC9DF9EB8B43BA /* Build configuration list for PBXNativeTarget "SDDSservTheme" */;
+			buildConfigurationList = 6102C742D78321AB2017FB25 /* Build configuration list for PBXNativeTarget "SDDSservTheme" */;
 			buildPhases = (
-				1D83869A04FE4B72CF626D6D /* Headers */,
-				260CC4CFEE04E1310D7007AB /* Sources */,
-				07C61D196F96E3714D10D320 /* Frameworks */,
-				5EE55E9BF6844903130578BA /* Resources */,
+				32EAF735583CAD4485EC5DA0 /* Headers */,
+				178ED5D775B1703E10009641 /* Sources */,
+				5DDD47397723796B51C1F782 /* Frameworks */,
+				C8ADDE6BD472D9EEC794F10E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -218,19 +222,19 @@
 			);
 			name = SDDSservTheme;
 			productName = SDDSservTheme;
-			productReference = 156F4115D746CD896331A64E /* SDDSservTheme.framework */;
+			productReference = 44086615942D02F7443042C3 /* SDDSservTheme.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		406FE44BA15DD56FACFAE28D /* Project object */ = {
+		5E815BAED581E4973D54E034 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 			};
-			buildConfigurationList = 83B6FE8234081196E6CE715C /* Build configuration list for PBXProject "SDDSservTheme" */;
+			buildConfigurationList = 929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSservTheme" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -238,80 +242,82 @@
 				en,
 				Base,
 			);
-			mainGroup = 224AE2D26A21A800420237CB;
-			productRefGroup = 877D435734636BF6A22F36AF /* Products */;
+			mainGroup = 0432B629B756AFEDB48A7E3A;
+			productRefGroup = 722DEDCBB53B194922CBA198 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D334CCC4E441DC8E35023A69 /* SDDSservTheme */,
+				B8CBA04F22FCBEB007350F03 /* SDDSservTheme */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5EE55E9BF6844903130578BA /* Resources */ = {
+		C8ADDE6BD472D9EEC794F10E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A246215DE088C8A42AD04873 /* SBSansText-Regular.otf in Resources */,
-				E83FEFDD04D729011BB5101B /* SBSansText-LightItalic.otf in Resources */,
-				62D00D0E8B88835EDBD1461E /* SBSansText-Italic.otf in Resources */,
-				5FBB165E897DF82BA150A7E8 /* SBSansDisplay-Regular.otf in Resources */,
-				51C49A0FA2B10A4556534A6D /* SBSansDisplay-Medium.otf in Resources */,
-				1657A2237B073EBF59764158 /* SBSansText-Medium.otf in Resources */,
-				436E7B72C4246D4E305E0E58 /* SBSansDisplay-Bold.otf in Resources */,
-				0D023D5DC0936A6C71B12491 /* SBSansText-BoldItalic.otf in Resources */,
-				428B3051996BD60B6D494D23 /* SBSansDisplay-Thin.otf in Resources */,
-				F40D0AF01FC49F15DF89E686 /* SBSansText-Semibold.otf in Resources */,
-				EC1F3DD51B97B032AD937E76 /* SBSansText-Light.otf in Resources */,
-				62A632498551BDB1E65B9ADA /* SBSansText-SemiboldItalic.otf in Resources */,
-				D0D82EAE6B44E0B9AECF7316 /* SBSansDisplay-Semibold.otf in Resources */,
-				606754CA44F81BCB256172B4 /* SBSansText-Bold.otf in Resources */,
-				A3EA91F46DD2D80D04F7C574 /* SBSansText-Thin.otf in Resources */,
+				6EEDCC7BCFD9126D2266E375 /* SBSansText-Regular.otf in Resources */,
+				3692874F8605A649AC0715BB /* SBSansText-LightItalic.otf in Resources */,
+				D124D5A76A94D03CBCDC23C5 /* SBSansText-Italic.otf in Resources */,
+				E6BDCEC1F775BF9B281F66C3 /* SBSansDisplay-Light.otf in Resources */,
+				9B88E9F86DE5AD9E28D0511B /* SBSansDisplay-Regular.otf in Resources */,
+				B7C8202335A7B70228EEAFEE /* SBSansDisplay-Medium.otf in Resources */,
+				44CA09B208FDEBD1ECA54333 /* SBSansText-Medium.otf in Resources */,
+				591699B1942A44B559FD706A /* SBSansDisplay-Bold.otf in Resources */,
+				EBDE829F3377BCF3EFF634CC /* SBSansText-BoldItalic.otf in Resources */,
+				EA23F48652BBFCCC31A2DED7 /* SBSansDisplay-Thin.otf in Resources */,
+				7C921F9937B56D423680BE3D /* SBSansText-Semibold.otf in Resources */,
+				04105FBAE5C90EF80846DE03 /* SBSansText-Light.otf in Resources */,
+				8ECEBDF0B77610192BA89968 /* SBSansText-SemiboldItalic.otf in Resources */,
+				20E63783BF0B4004A51AE7A6 /* SBSansDisplay-Semibold.otf in Resources */,
+				17F6F4FF73EA03172A8E0DD3 /* SBSansText-Bold.otf in Resources */,
+				A6A279D3A8F6C6418C78AA3C /* SBSansText-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		260CC4CFEE04E1310D7007AB /* Sources */ = {
+		178ED5D775B1703E10009641 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				085171BBC09ECD35E0CD699F /* Theme.swift in Sources */,
-				35250F76811C14EFF26FA19A /* ShapeToken+Generated.swift in Sources */,
-				BF982F438C1F06D12FD582A0 /* TypographyToken+Generated.swift in Sources */,
-				218EFC307E3D1B21A62717E1 /* Shapes+Generated.swift in Sources */,
-				6E656B197E413BD9A71BFB57 /* Gradients+Generated.swift in Sources */,
-				BCF1D1164C28E8AB39D2143A /* ShadowToken+Generated.swift in Sources */,
-				AE68991179843F081DA973A0 /* Colors+Generated.swift in Sources */,
-				28B9EF7B3E5353942A730610 /* ColorToken+Generated.swift in Sources */,
-				DD16FB1880AD21C8CDA7250F /* GradientToken+Generated.swift in Sources */,
-				3B11F793ACB9BEE1FD5A73D1 /* Shadows+Generated.swift in Sources */,
-				C6D50166B13118D717B3FAB4 /* Typographies+Generated.swift in Sources */,
-				5594189F3B383D63AC214438 /* SBSansText-Regular.otf in Sources */,
-				0278D0C923B2C56555ED40BB /* SBSansText-LightItalic.otf in Sources */,
-				8447457CD4C639F568C34CD2 /* SBSansText-Italic.otf in Sources */,
-				35D0FA8BBB200AE76D518226 /* SBSansDisplay-Regular.otf in Sources */,
-				FFAB2E1205DCC6682964CC56 /* SBSansDisplay-Medium.otf in Sources */,
-				FEBEFB22953E4E4B776FC5A7 /* SBSansText-Medium.otf in Sources */,
-				16F9A16B6E9963C58EF4EA21 /* SBSansDisplay-Bold.otf in Sources */,
-				F9188D693E6D09B8262EEAB6 /* SBSansText-BoldItalic.otf in Sources */,
-				0AC95C5BDE1CA4730C7E6743 /* SBSansDisplay-Thin.otf in Sources */,
-				F1F195701CAADBFEB8AB492D /* SBSansText-Semibold.otf in Sources */,
-				63DA16F66DB08608D87BCB2A /* SBSansText-Light.otf in Sources */,
-				8271FF86B9D3B89035511CC8 /* SBSansText-SemiboldItalic.otf in Sources */,
-				47E743179CB49767B48D7BC4 /* SBSansDisplay-Semibold.otf in Sources */,
-				F45230137AFDD2C5C08A3688 /* SBSansText-Bold.otf in Sources */,
-				75D49277A4BDB3363F1C8E51 /* SBSansText-Thin.otf in Sources */,
-				C46A0A5FDADC10E9D217F4B1 /* project.pbxproj in Sources */,
+				2DBFE61627DA72C5A6C65BDE /* Theme.swift in Sources */,
+				D21A435CBA67514E7B87E668 /* ShapeToken+Generated.swift in Sources */,
+				CED519CF269A26E85AD93DB7 /* TypographyToken+Generated.swift in Sources */,
+				D97D7008DBC7758CC23EE009 /* Shapes+Generated.swift in Sources */,
+				4C39AE3C14160C1AE907AD5F /* Gradients+Generated.swift in Sources */,
+				17E80FA737BCB94420C8E684 /* ShadowToken+Generated.swift in Sources */,
+				56EB2BC221F3A140D7C4675F /* Colors+Generated.swift in Sources */,
+				21BFBE87CD7E3B01072BBC43 /* ColorToken+Generated.swift in Sources */,
+				AC18E58030625CA4ED44A423 /* GradientToken+Generated.swift in Sources */,
+				A059B00A8A90DFA2B44A01F5 /* Shadows+Generated.swift in Sources */,
+				39EA051982CB7B9859A9F592 /* Typographies+Generated.swift in Sources */,
+				EAB76217C251883AD02527AD /* SBSansText-Regular.otf in Sources */,
+				A6338AFC0A8EEF96FA5E825E /* SBSansText-LightItalic.otf in Sources */,
+				20FA341528D519231694B7F8 /* SBSansText-Italic.otf in Sources */,
+				60839CC2D5F29CEAB68E5DA0 /* SBSansDisplay-Light.otf in Sources */,
+				3FB484D5E8B2F08DC516F636 /* SBSansDisplay-Regular.otf in Sources */,
+				7CC9AD16F990387C0E8316F9 /* SBSansDisplay-Medium.otf in Sources */,
+				DBAA5A4A4C886E4EE8F0BA20 /* SBSansText-Medium.otf in Sources */,
+				DFC6A0CA2E61CC79B26C62B3 /* SBSansDisplay-Bold.otf in Sources */,
+				001163501401B5C8F426E1AF /* SBSansText-BoldItalic.otf in Sources */,
+				177DF830B17B397B902B17ED /* SBSansDisplay-Thin.otf in Sources */,
+				12E4ECE5C314A909BB1A4188 /* SBSansText-Semibold.otf in Sources */,
+				6BDAD914791DC3A3FD0D4F06 /* SBSansText-Light.otf in Sources */,
+				E5A2B4EC83C7EA406E8ECD18 /* SBSansText-SemiboldItalic.otf in Sources */,
+				A8DD91F1BF92D0FADCD08D5F /* SBSansDisplay-Semibold.otf in Sources */,
+				7129879F8EE2142C7ACD89D3 /* SBSansText-Bold.otf in Sources */,
+				33A8632680C2AB36CAC7C6AA /* SBSansText-Thin.otf in Sources */,
+				A6E9073EC0514AF9A317FB09 /* project.pbxproj in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		18B509712A3687C290C13B82 /* Release */ = {
+		2D39CF37583641BCA855A989 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,81 +377,7 @@
 			};
 			name = Release;
 		};
-		72500869A4982D46CE904A9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		96779E6571E18941ED933CBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FDE2B1651FDBEE90A45B18D4 /* Debug */ = {
+		36BF51FE6BDAC77D856604F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -512,28 +444,102 @@
 			};
 			name = Debug;
 		};
+		3A70A11EE03DDA6D9743A74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE35C9295214CC761ABC78CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83B6FE8234081196E6CE715C /* Build configuration list for PBXProject "SDDSservTheme" */ = {
+		6102C742D78321AB2017FB25 /* Build configuration list for PBXNativeTarget "SDDSservTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FDE2B1651FDBEE90A45B18D4 /* Debug */,
-				18B509712A3687C290C13B82 /* Release */,
+				3A70A11EE03DDA6D9743A74A /* Release */,
+				FE35C9295214CC761ABC78CC /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E86F1647BDDC9DF9EB8B43BA /* Build configuration list for PBXNativeTarget "SDDSservTheme" */ = {
+		929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSservTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				96779E6571E18941ED933CBB /* Release */,
-				72500869A4982D46CE904A9F /* Debug */,
+				36BF51FE6BDAC77D856604F6 /* Debug */,
+				2D39CF37583641BCA855A989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 406FE44BA15DD56FACFAE28D /* Project object */;
+	rootObject = 5E815BAED581E4973D54E034 /* Project object */;
 }

@@ -158,7 +158,7 @@ private extension TypographyToken.Weight {
         case .thin:
             return .thin
         case .ultraLight:
-            return .ultraLight
+            return .ultralight
         }
     }
 }

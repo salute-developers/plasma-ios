@@ -20,7 +20,7 @@ public final class App {
         guard let metaScheme = DecodeCommand<Scheme>(url: schemeDirectory.url(for: .meta))
             .run()
             .asScheme else {
-            Logger.terminate("No schema")
+            Logger.terminate("No scheme")
             return
         }
         

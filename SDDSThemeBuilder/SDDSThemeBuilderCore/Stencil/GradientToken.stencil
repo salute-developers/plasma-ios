@@ -106,11 +106,11 @@ public extension GradientToken {
                             {%- endfor %}
                         ],
                         center: CGPoint(
-                            x: {{ gradient.centerX|ensure_float_non_negative }},
-                            y: {{ gradient.centerY|ensure_float_non_negative }}
+                            x: {{ gradient.centerX|ensure_double_non_negative }},
+                            y: {{ gradient.centerY|ensure_double_non_negative }}
                         ),
-                        startRadius: {{ gradient.startRadius|ensure_float_non_negative }},
-                        endRadius: {{ gradient.endRadius|ensure_float_non_negative }}
+                        startRadius: {{ gradient.startRadius|ensure_double_non_negative }},
+                        endRadius: {{ gradient.endRadius|ensure_double_non_negative }}
                     )
                     {%- elif gradient.kind == "angular" %}
                     AngularGradient(
@@ -169,11 +169,11 @@ public extension GradientToken {
                             {%- endfor %}
                         ],
                         center: CGPoint(
-                            x: {{ gradient.centerX|ensure_float_non_negative }},
-                            y: {{ gradient.centerY|ensure_float_non_negative }}
+                            x: {{ gradient.centerX|ensure_double_non_negative }},
+                            y: {{ gradient.centerY|ensure_double_non_negative }}
                         ),
-                        startRadius: {{ gradient.startRadius|ensure_float_non_negative }},
-                        endRadius: {{ gradient.endRadius|ensure_float_non_negative }}
+                        startRadius: {{ gradient.startRadius|ensure_double_non_negative }},
+                        endRadius: {{ gradient.endRadius|ensure_double_non_negative }}
                     )
                     {%- elif gradient.kind == "angular" %}
                     AngularGradient(

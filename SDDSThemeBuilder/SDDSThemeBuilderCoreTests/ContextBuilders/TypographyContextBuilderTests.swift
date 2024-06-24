@@ -71,7 +71,7 @@ final class TypographyContextBuilderTests: XCTestCase {
         {
             "subHeader": {
                 "fontFamilyRef": "display",
-                "weight": "ultraLight",
+                "weight": "ultralight",
                 "style": "invalidStyle"
             }
         }

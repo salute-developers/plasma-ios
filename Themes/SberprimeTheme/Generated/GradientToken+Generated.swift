@@ -3,7 +3,6 @@ import UIKit
 @_exported import SDDSThemeCore
 
 public extension GradientToken {
-    
     static var outlineDefaultAccentGradient: Self {
         GradientToken(
             description: "outlineDefaultAccentGradient",
@@ -18,7 +17,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -33,13 +32,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultAccentGradientActive: Self {
         GradientToken(
             description: "outlineDefaultAccentGradientActive",
@@ -54,7 +52,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -69,13 +67,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultAccentGradientHover: Self {
         GradientToken(
             description: "outlineDefaultAccentGradientHover",
@@ -90,7 +87,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -105,13 +102,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultAccentMinorGradient: Self {
         GradientToken(
             description: "outlineDefaultAccentMinorGradient",
@@ -126,7 +122,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -141,13 +137,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultAccentMinorGradientActive: Self {
         GradientToken(
             description: "outlineDefaultAccentMinorGradientActive",
@@ -162,7 +157,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -177,13 +172,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultAccentMinorGradientHover: Self {
         GradientToken(
             description: "outlineDefaultAccentMinorGradientHover",
@@ -198,7 +192,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -213,13 +207,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoGradient: Self {
         GradientToken(
             description: "outlineDefaultPromoGradient",
@@ -234,7 +227,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -249,13 +242,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoGradientActive: Self {
         GradientToken(
             description: "outlineDefaultPromoGradientActive",
@@ -270,7 +262,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -285,13 +277,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoGradientHover: Self {
         GradientToken(
             description: "outlineDefaultPromoGradientHover",
@@ -306,7 +297,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -321,13 +312,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoMinorGradient: Self {
         GradientToken(
             description: "outlineDefaultPromoMinorGradient",
@@ -342,7 +332,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -357,13 +347,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoMinorGradientActive: Self {
         GradientToken(
             description: "outlineDefaultPromoMinorGradientActive",
@@ -378,7 +367,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -393,13 +382,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultPromoMinorGradientHover: Self {
         GradientToken(
             description: "outlineDefaultPromoMinorGradientHover",
@@ -414,7 +402,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -429,13 +417,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultTransparentAccentGradient: Self {
         GradientToken(
             description: "outlineDefaultTransparentAccentGradient",
@@ -450,7 +437,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -465,13 +452,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultTransparentAccentGradientActive: Self {
         GradientToken(
             description: "outlineDefaultTransparentAccentGradientActive",
@@ -486,7 +472,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -501,13 +487,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineDefaultTransparentAccentGradientHover: Self {
         GradientToken(
             description: "outlineDefaultTransparentAccentGradientHover",
@@ -522,7 +507,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -537,13 +522,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentGradient: Self {
         GradientToken(
             description: "outlineInverseAccentGradient",
@@ -558,7 +542,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -573,13 +557,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentGradientActive: Self {
         GradientToken(
             description: "outlineInverseAccentGradientActive",
@@ -594,7 +577,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -609,13 +592,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentGradientHover: Self {
         GradientToken(
             description: "outlineInverseAccentGradientHover",
@@ -630,7 +612,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -645,13 +627,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentMinorGradient: Self {
         GradientToken(
             description: "outlineInverseAccentMinorGradient",
@@ -666,7 +647,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -681,13 +662,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentMinorGradientActive: Self {
         GradientToken(
             description: "outlineInverseAccentMinorGradientActive",
@@ -702,7 +682,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -717,13 +697,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseAccentMinorGradientHover: Self {
         GradientToken(
             description: "outlineInverseAccentMinorGradientHover",
@@ -738,7 +717,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -753,13 +732,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoGradient: Self {
         GradientToken(
             description: "outlineInversePromoGradient",
@@ -774,7 +752,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -789,13 +767,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoGradientActive: Self {
         GradientToken(
             description: "outlineInversePromoGradientActive",
@@ -810,7 +787,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -825,13 +802,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoGradientHover: Self {
         GradientToken(
             description: "outlineInversePromoGradientHover",
@@ -846,7 +822,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -861,13 +837,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoMinorGradient: Self {
         GradientToken(
             description: "outlineInversePromoMinorGradient",
@@ -882,7 +857,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -897,13 +872,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoMinorGradientActive: Self {
         GradientToken(
             description: "outlineInversePromoMinorGradientActive",
@@ -918,7 +892,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -933,13 +907,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInversePromoMinorGradientHover: Self {
         GradientToken(
             description: "outlineInversePromoMinorGradientHover",
@@ -954,7 +927,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -969,13 +942,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseTransparentAccentGradient: Self {
         GradientToken(
             description: "outlineInverseTransparentAccentGradient",
@@ -990,7 +962,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1005,13 +977,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseTransparentAccentGradientActive: Self {
         GradientToken(
             description: "outlineInverseTransparentAccentGradientActive",
@@ -1026,7 +997,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1041,13 +1012,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineInverseTransparentAccentGradientHover: Self {
         GradientToken(
             description: "outlineInverseTransparentAccentGradientHover",
@@ -1062,7 +1032,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1077,13 +1047,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentGradient: Self {
         GradientToken(
             description: "outlineOnDarkAccentGradient",
@@ -1098,7 +1067,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1113,13 +1082,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentGradientActive: Self {
         GradientToken(
             description: "outlineOnDarkAccentGradientActive",
@@ -1134,7 +1102,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1149,13 +1117,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentGradientHover: Self {
         GradientToken(
             description: "outlineOnDarkAccentGradientHover",
@@ -1170,7 +1137,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1185,13 +1152,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentMinorGradient: Self {
         GradientToken(
             description: "outlineOnDarkAccentMinorGradient",
@@ -1206,7 +1172,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1221,13 +1187,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentMinorGradientActive: Self {
         GradientToken(
             description: "outlineOnDarkAccentMinorGradientActive",
@@ -1242,7 +1207,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1257,13 +1222,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkAccentMinorGradientHover: Self {
         GradientToken(
             description: "outlineOnDarkAccentMinorGradientHover",
@@ -1278,7 +1242,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1293,13 +1257,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoGradient: Self {
         GradientToken(
             description: "outlineOnDarkPromoGradient",
@@ -1314,7 +1277,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1329,13 +1292,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoGradientActive: Self {
         GradientToken(
             description: "outlineOnDarkPromoGradientActive",
@@ -1350,7 +1312,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1365,13 +1327,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoGradientHover: Self {
         GradientToken(
             description: "outlineOnDarkPromoGradientHover",
@@ -1386,7 +1347,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1401,13 +1362,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoMinorGradient: Self {
         GradientToken(
             description: "outlineOnDarkPromoMinorGradient",
@@ -1422,7 +1382,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1437,13 +1397,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoMinorGradientActive: Self {
         GradientToken(
             description: "outlineOnDarkPromoMinorGradientActive",
@@ -1458,7 +1417,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1473,13 +1432,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkPromoMinorGradientHover: Self {
         GradientToken(
             description: "outlineOnDarkPromoMinorGradientHover",
@@ -1494,7 +1452,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1509,13 +1467,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkTransparentAccentGradient: Self {
         GradientToken(
             description: "outlineOnDarkTransparentAccentGradient",
@@ -1530,7 +1487,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1545,13 +1502,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkTransparentAccentGradientActive: Self {
         GradientToken(
             description: "outlineOnDarkTransparentAccentGradientActive",
@@ -1566,7 +1522,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1581,13 +1537,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnDarkTransparentAccentGradientHover: Self {
         GradientToken(
             description: "outlineOnDarkTransparentAccentGradientHover",
@@ -1602,7 +1557,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1617,13 +1572,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentGradient: Self {
         GradientToken(
             description: "outlineOnLightAccentGradient",
@@ -1638,7 +1592,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1653,13 +1607,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentGradientActive: Self {
         GradientToken(
             description: "outlineOnLightAccentGradientActive",
@@ -1674,7 +1627,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1689,13 +1642,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentGradientHover: Self {
         GradientToken(
             description: "outlineOnLightAccentGradientHover",
@@ -1710,7 +1662,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1725,13 +1677,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentMinorGradient: Self {
         GradientToken(
             description: "outlineOnLightAccentMinorGradient",
@@ -1746,7 +1697,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1761,13 +1712,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentMinorGradientActive: Self {
         GradientToken(
             description: "outlineOnLightAccentMinorGradientActive",
@@ -1782,7 +1732,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1797,13 +1747,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightAccentMinorGradientHover: Self {
         GradientToken(
             description: "outlineOnLightAccentMinorGradientHover",
@@ -1818,7 +1767,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1833,13 +1782,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoGradient: Self {
         GradientToken(
             description: "outlineOnLightPromoGradient",
@@ -1854,7 +1802,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1869,13 +1817,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoGradientActive: Self {
         GradientToken(
             description: "outlineOnLightPromoGradientActive",
@@ -1890,7 +1837,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1905,13 +1852,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoGradientHover: Self {
         GradientToken(
             description: "outlineOnLightPromoGradientHover",
@@ -1926,7 +1872,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1941,13 +1887,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoMinorGradient: Self {
         GradientToken(
             description: "outlineOnLightPromoMinorGradient",
@@ -1962,7 +1907,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -1977,13 +1922,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoMinorGradientActive: Self {
         GradientToken(
             description: "outlineOnLightPromoMinorGradientActive",
@@ -1998,7 +1942,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2013,13 +1957,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightPromoMinorGradientHover: Self {
         GradientToken(
             description: "outlineOnLightPromoMinorGradientHover",
@@ -2034,7 +1977,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2049,13 +1992,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightTransparentAccentGradient: Self {
         GradientToken(
             description: "outlineOnLightTransparentAccentGradient",
@@ -2070,7 +2012,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2085,13 +2027,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightTransparentAccentGradientActive: Self {
         GradientToken(
             description: "outlineOnLightTransparentAccentGradientActive",
@@ -2106,7 +2047,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2121,13 +2062,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var outlineOnLightTransparentAccentGradientHover: Self {
         GradientToken(
             description: "outlineOnLightTransparentAccentGradientHover",
@@ -2142,7 +2082,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2157,13 +2097,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentGradient: Self {
         GradientToken(
             description: "surfaceDefaultAccentGradient",
@@ -2178,14 +2117,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -2200,20 +2137,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultAccentGradientActive",
@@ -2228,7 +2162,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2243,13 +2177,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultAccentGradientHover",
@@ -2264,7 +2197,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2279,13 +2212,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentMinorGradient: Self {
         GradientToken(
             description: "surfaceDefaultAccentMinorGradient",
@@ -2300,7 +2232,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2315,13 +2247,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentMinorGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultAccentMinorGradientActive",
@@ -2336,7 +2267,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2351,13 +2282,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultAccentMinorGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultAccentMinorGradientHover",
@@ -2372,7 +2302,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2387,13 +2317,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoGradient: Self {
         GradientToken(
             description: "surfaceDefaultPromoGradient",
@@ -2408,7 +2337,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2423,13 +2352,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultPromoGradientActive",
@@ -2444,7 +2372,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2459,13 +2387,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultPromoGradientHover",
@@ -2480,7 +2407,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2495,13 +2422,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoMinorGradient: Self {
         GradientToken(
             description: "surfaceDefaultPromoMinorGradient",
@@ -2516,7 +2442,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2531,13 +2457,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoMinorGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultPromoMinorGradientActive",
@@ -2552,7 +2477,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2567,13 +2492,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultPromoMinorGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultPromoMinorGradientHover",
@@ -2588,7 +2512,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2603,13 +2527,310 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
+    static var surfaceDefaultSkeletonDeepGradient: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonDeepGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceDefaultSkeletonDeepGradientActive: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonDeepGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceDefaultSkeletonDeepGradientHover: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonDeepGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceDefaultSkeletonGradient: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceDefaultSkeletonGradientActive: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceDefaultSkeletonGradientHover: Self {
+        GradientToken(
+            description: "surfaceDefaultSkeletonGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceDefaultTransparentAccentGradient: Self {
         GradientToken(
             description: "surfaceDefaultTransparentAccentGradient",
@@ -2624,7 +2845,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2639,13 +2860,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultTransparentAccentGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultTransparentAccentGradientActive",
@@ -2660,7 +2880,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2675,13 +2895,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultTransparentAccentGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultTransparentAccentGradientHover",
@@ -2696,7 +2915,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2711,13 +2930,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultTransparentPromoGradient: Self {
         GradientToken(
             description: "surfaceDefaultTransparentPromoGradient",
@@ -2732,7 +2950,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2747,13 +2965,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultTransparentPromoGradientActive: Self {
         GradientToken(
             description: "surfaceDefaultTransparentPromoGradientActive",
@@ -2768,7 +2985,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2783,13 +3000,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceDefaultTransparentPromoGradientHover: Self {
         GradientToken(
             description: "surfaceDefaultTransparentPromoGradientHover",
@@ -2804,7 +3020,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2819,13 +3035,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentGradient: Self {
         GradientToken(
             description: "surfaceInverseAccentGradient",
@@ -2840,7 +3055,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2855,13 +3070,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentGradientActive: Self {
         GradientToken(
             description: "surfaceInverseAccentGradientActive",
@@ -2876,7 +3090,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2891,13 +3105,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentGradientHover: Self {
         GradientToken(
             description: "surfaceInverseAccentGradientHover",
@@ -2912,7 +3125,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2927,13 +3140,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentMinorGradient: Self {
         GradientToken(
             description: "surfaceInverseAccentMinorGradient",
@@ -2948,7 +3160,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2963,13 +3175,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentMinorGradientActive: Self {
         GradientToken(
             description: "surfaceInverseAccentMinorGradientActive",
@@ -2984,7 +3195,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -2999,13 +3210,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseAccentMinorGradientHover: Self {
         GradientToken(
             description: "surfaceInverseAccentMinorGradientHover",
@@ -3020,7 +3230,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3035,13 +3245,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoGradient: Self {
         GradientToken(
             description: "surfaceInversePromoGradient",
@@ -3056,7 +3265,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3071,13 +3280,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoGradientActive: Self {
         GradientToken(
             description: "surfaceInversePromoGradientActive",
@@ -3092,7 +3300,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3107,13 +3315,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoGradientHover: Self {
         GradientToken(
             description: "surfaceInversePromoGradientHover",
@@ -3128,7 +3335,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3143,13 +3350,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoMinorGradient: Self {
         GradientToken(
             description: "surfaceInversePromoMinorGradient",
@@ -3164,7 +3370,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3179,13 +3385,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoMinorGradientActive: Self {
         GradientToken(
             description: "surfaceInversePromoMinorGradientActive",
@@ -3200,7 +3405,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3215,13 +3420,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInversePromoMinorGradientHover: Self {
         GradientToken(
             description: "surfaceInversePromoMinorGradientHover",
@@ -3236,7 +3440,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3251,13 +3455,310 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
+    static var surfaceInverseSkeletonDeepGradient: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonDeepGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseSkeletonDeepGradientActive: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonDeepGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseSkeletonDeepGradientHover: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonDeepGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseSkeletonGradient: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseSkeletonGradientActive: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseSkeletonGradientHover: Self {
+        GradientToken(
+            description: "surfaceInverseSkeletonGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceInverseTransparentAccentGradient: Self {
         GradientToken(
             description: "surfaceInverseTransparentAccentGradient",
@@ -3272,7 +3773,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3287,13 +3788,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseTransparentAccentGradientActive: Self {
         GradientToken(
             description: "surfaceInverseTransparentAccentGradientActive",
@@ -3308,7 +3808,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3323,13 +3823,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseTransparentAccentGradientHover: Self {
         GradientToken(
             description: "surfaceInverseTransparentAccentGradientHover",
@@ -3344,7 +3843,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3359,13 +3858,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseTransparentPromoGradient: Self {
         GradientToken(
             description: "surfaceInverseTransparentPromoGradient",
@@ -3380,7 +3878,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3395,13 +3893,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseTransparentPromoGradientActive: Self {
         GradientToken(
             description: "surfaceInverseTransparentPromoGradientActive",
@@ -3416,7 +3913,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3431,13 +3928,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceInverseTransparentPromoGradientHover: Self {
         GradientToken(
             description: "surfaceInverseTransparentPromoGradientHover",
@@ -3452,7 +3948,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3467,13 +3963,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentGradient: Self {
         GradientToken(
             description: "surfaceOnDarkAccentGradient",
@@ -3488,14 +3983,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -3510,20 +4003,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkAccentGradientActive",
@@ -3538,7 +4028,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3553,13 +4043,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkAccentGradientHover",
@@ -3574,7 +4063,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3589,13 +4078,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentMinorGradient: Self {
         GradientToken(
             description: "surfaceOnDarkAccentMinorGradient",
@@ -3610,7 +4098,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3625,13 +4113,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentMinorGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkAccentMinorGradientActive",
@@ -3646,7 +4133,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3661,13 +4148,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkAccentMinorGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkAccentMinorGradientHover",
@@ -3682,7 +4168,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3697,13 +4183,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoGradient: Self {
         GradientToken(
             description: "surfaceOnDarkPromoGradient",
@@ -3718,7 +4203,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3733,13 +4218,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkPromoGradientActive",
@@ -3754,7 +4238,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3769,13 +4253,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkPromoGradientHover",
@@ -3790,7 +4273,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3805,13 +4288,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoMinorGradient: Self {
         GradientToken(
             description: "surfaceOnDarkPromoMinorGradient",
@@ -3826,7 +4308,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3841,13 +4323,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoMinorGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkPromoMinorGradientActive",
@@ -3862,7 +4343,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3877,13 +4358,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkPromoMinorGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkPromoMinorGradientHover",
@@ -3898,7 +4378,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3913,13 +4393,310 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
+    static var surfaceOnDarkSkeletonDeepGradient: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonDeepGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF33")), 
+                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnDarkSkeletonDeepGradientActive: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonDeepGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnDarkSkeletonDeepGradientHover: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonDeepGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnDarkSkeletonGradient: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0D")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnDarkSkeletonGradientActive: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnDarkSkeletonGradientHover: Self {
+        GradientToken(
+            description: "surfaceOnDarkSkeletonGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceOnDarkTransparentAccentGradient: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentAccentGradient",
@@ -3934,7 +4711,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3949,13 +4726,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkTransparentAccentGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentAccentGradientActive",
@@ -3970,7 +4746,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -3985,13 +4761,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkTransparentAccentGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentAccentGradientHover",
@@ -4006,7 +4781,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4021,13 +4796,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkTransparentPromoGradient: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentPromoGradient",
@@ -4042,7 +4816,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4057,13 +4831,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkTransparentPromoGradientActive: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentPromoGradientActive",
@@ -4078,7 +4851,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4093,13 +4866,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnDarkTransparentPromoGradientHover: Self {
         GradientToken(
             description: "surfaceOnDarkTransparentPromoGradientHover",
@@ -4114,7 +4886,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4129,13 +4901,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentGradient: Self {
         GradientToken(
             description: "surfaceOnLightAccentGradient",
@@ -4150,14 +4921,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -4172,20 +4941,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightAccentGradientActive",
@@ -4200,7 +4966,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4215,13 +4981,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightAccentGradientHover",
@@ -4236,7 +5001,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4251,13 +5016,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentMinorGradient: Self {
         GradientToken(
             description: "surfaceOnLightAccentMinorGradient",
@@ -4272,7 +5036,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4287,13 +5051,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentMinorGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightAccentMinorGradientActive",
@@ -4308,7 +5071,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4323,13 +5086,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightAccentMinorGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightAccentMinorGradientHover",
@@ -4344,7 +5106,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4359,13 +5121,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoGradient: Self {
         GradientToken(
             description: "surfaceOnLightPromoGradient",
@@ -4380,7 +5141,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4395,13 +5156,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightPromoGradientActive",
@@ -4416,7 +5176,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4431,13 +5191,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightPromoGradientHover",
@@ -4452,7 +5211,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4467,13 +5226,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoMinorGradient: Self {
         GradientToken(
             description: "surfaceOnLightPromoMinorGradient",
@@ -4488,7 +5246,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4503,13 +5261,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoMinorGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightPromoMinorGradientActive",
@@ -4524,7 +5281,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4539,13 +5296,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightPromoMinorGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightPromoMinorGradientHover",
@@ -4560,7 +5316,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4575,13 +5331,310 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
+    static var surfaceOnLightSkeletonDeepGradient: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonDeepGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#0808080A")), 
+                            Color(UIColor(hex: "#08080833")), 
+                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnLightSkeletonDeepGradientActive: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonDeepGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnLightSkeletonDeepGradientHover: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonDeepGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnLightSkeletonGradient: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonGradient",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.0625, 
+                            0.125, 
+                            0.25, 
+                            0.375, 
+                            0.4375, 
+                            0.5, 
+                            0.5625, 
+                            0.625, 
+                            0.75, 
+                            0.875, 
+                            0.9375, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080803")), 
+                            Color(UIColor(hex: "#0808080D")), 
+                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnLightSkeletonGradientActive: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonGradientActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceOnLightSkeletonGradientHover: Self {
+        GradientToken(
+            description: "surfaceOnLightSkeletonGradientHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceOnLightTransparentAccentGradient: Self {
         GradientToken(
             description: "surfaceOnLightTransparentAccentGradient",
@@ -4596,7 +5649,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4611,13 +5664,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightTransparentAccentGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightTransparentAccentGradientActive",
@@ -4632,7 +5684,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4647,13 +5699,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightTransparentAccentGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightTransparentAccentGradientHover",
@@ -4668,7 +5719,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4683,13 +5734,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightTransparentPromoGradient: Self {
         GradientToken(
             description: "surfaceOnLightTransparentPromoGradient",
@@ -4704,7 +5754,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4719,13 +5769,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightTransparentPromoGradientActive: Self {
         GradientToken(
             description: "surfaceOnLightTransparentPromoGradientActive",
@@ -4740,7 +5789,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4755,13 +5804,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var surfaceOnLightTransparentPromoGradientHover: Self {
         GradientToken(
             description: "surfaceOnLightTransparentPromoGradientHover",
@@ -4776,7 +5824,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4791,13 +5839,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentGradient: Self {
         GradientToken(
             description: "textDefaultAccentGradient",
@@ -4812,14 +5859,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -4834,20 +5879,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentGradientActive: Self {
         GradientToken(
             description: "textDefaultAccentGradientActive",
@@ -4862,7 +5904,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4877,13 +5919,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentGradientHover: Self {
         GradientToken(
             description: "textDefaultAccentGradientHover",
@@ -4898,7 +5939,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4913,13 +5954,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentMinorGradient: Self {
         GradientToken(
             description: "textDefaultAccentMinorGradient",
@@ -4934,7 +5974,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4949,13 +5989,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentMinorGradientActive: Self {
         GradientToken(
             description: "textDefaultAccentMinorGradientActive",
@@ -4970,7 +6009,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -4985,13 +6024,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultAccentMinorGradientHover: Self {
         GradientToken(
             description: "textDefaultAccentMinorGradientHover",
@@ -5006,7 +6044,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5021,13 +6059,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoGradient: Self {
         GradientToken(
             description: "textDefaultPromoGradient",
@@ -5042,7 +6079,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5057,13 +6094,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoGradientActive: Self {
         GradientToken(
             description: "textDefaultPromoGradientActive",
@@ -5078,7 +6114,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5093,13 +6129,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoGradientHover: Self {
         GradientToken(
             description: "textDefaultPromoGradientHover",
@@ -5114,7 +6149,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5129,13 +6164,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoMinorGradient: Self {
         GradientToken(
             description: "textDefaultPromoMinorGradient",
@@ -5150,7 +6184,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5165,13 +6199,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoMinorGradientActive: Self {
         GradientToken(
             description: "textDefaultPromoMinorGradientActive",
@@ -5186,7 +6219,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5201,13 +6234,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textDefaultPromoMinorGradientHover: Self {
         GradientToken(
             description: "textDefaultPromoMinorGradientHover",
@@ -5222,7 +6254,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5237,13 +6269,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentGradient: Self {
         GradientToken(
             description: "textInverseAccentGradient",
@@ -5258,7 +6289,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5273,13 +6304,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentGradientActive: Self {
         GradientToken(
             description: "textInverseAccentGradientActive",
@@ -5294,7 +6324,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5309,13 +6339,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentGradientHover: Self {
         GradientToken(
             description: "textInverseAccentGradientHover",
@@ -5330,7 +6359,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5345,13 +6374,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentMinorGradient: Self {
         GradientToken(
             description: "textInverseAccentMinorGradient",
@@ -5366,7 +6394,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5381,13 +6409,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentMinorGradientActive: Self {
         GradientToken(
             description: "textInverseAccentMinorGradientActive",
@@ -5402,7 +6429,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5417,13 +6444,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInverseAccentMinorGradientHover: Self {
         GradientToken(
             description: "textInverseAccentMinorGradientHover",
@@ -5438,7 +6464,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5453,13 +6479,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoGradient: Self {
         GradientToken(
             description: "textInversePromoGradient",
@@ -5474,7 +6499,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5489,13 +6514,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoGradientActive: Self {
         GradientToken(
             description: "textInversePromoGradientActive",
@@ -5510,7 +6534,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5525,13 +6549,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoGradientHover: Self {
         GradientToken(
             description: "textInversePromoGradientHover",
@@ -5546,7 +6569,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5561,13 +6584,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoMinorGradient: Self {
         GradientToken(
             description: "textInversePromoMinorGradient",
@@ -5582,7 +6604,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5597,13 +6619,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoMinorGradientActive: Self {
         GradientToken(
             description: "textInversePromoMinorGradientActive",
@@ -5618,7 +6639,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5633,13 +6654,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textInversePromoMinorGradientHover: Self {
         GradientToken(
             description: "textInversePromoMinorGradientHover",
@@ -5654,7 +6674,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5669,13 +6689,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentGradient: Self {
         GradientToken(
             description: "textOnDarkAccentGradient",
@@ -5690,14 +6709,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -5712,20 +6729,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentGradientActive: Self {
         GradientToken(
             description: "textOnDarkAccentGradientActive",
@@ -5740,7 +6754,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5755,13 +6769,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentGradientHover: Self {
         GradientToken(
             description: "textOnDarkAccentGradientHover",
@@ -5776,7 +6789,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5791,13 +6804,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentMinorGradient: Self {
         GradientToken(
             description: "textOnDarkAccentMinorGradient",
@@ -5812,7 +6824,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5827,13 +6839,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentMinorGradientActive: Self {
         GradientToken(
             description: "textOnDarkAccentMinorGradientActive",
@@ -5848,7 +6859,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5863,13 +6874,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkAccentMinorGradientHover: Self {
         GradientToken(
             description: "textOnDarkAccentMinorGradientHover",
@@ -5884,7 +6894,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5899,13 +6909,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoGradient: Self {
         GradientToken(
             description: "textOnDarkPromoGradient",
@@ -5920,7 +6929,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5935,13 +6944,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoGradientActive: Self {
         GradientToken(
             description: "textOnDarkPromoGradientActive",
@@ -5956,7 +6964,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -5971,13 +6979,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoGradientHover: Self {
         GradientToken(
             description: "textOnDarkPromoGradientHover",
@@ -5992,7 +6999,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6007,13 +7014,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoMinorGradient: Self {
         GradientToken(
             description: "textOnDarkPromoMinorGradient",
@@ -6028,7 +7034,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6043,13 +7049,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoMinorGradientActive: Self {
         GradientToken(
             description: "textOnDarkPromoMinorGradientActive",
@@ -6064,7 +7069,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6079,13 +7084,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnDarkPromoMinorGradientHover: Self {
         GradientToken(
             description: "textOnDarkPromoMinorGradientHover",
@@ -6100,7 +7104,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6115,13 +7119,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentGradient: Self {
         GradientToken(
             description: "textOnLightAccentGradient",
@@ -6136,14 +7139,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ],
@@ -6158,20 +7159,17 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        startPoint: CGPoint(
-                            x: 0,
-                            y: 0
+                        center: CGPoint(
+                            x: 0.0,
+                            y: 0.0
                         ),
-                        endPoint: CGPoint(
-                            x: 1,
-                            y: 1
-                        )
+                        startRadius: 0.0,
+                        endRadius: 1.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentGradientActive: Self {
         GradientToken(
             description: "textOnLightAccentGradientActive",
@@ -6186,7 +7184,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6201,13 +7199,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentGradientHover: Self {
         GradientToken(
             description: "textOnLightAccentGradientHover",
@@ -6222,7 +7219,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6237,13 +7234,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentMinorGradient: Self {
         GradientToken(
             description: "textOnLightAccentMinorGradient",
@@ -6258,7 +7254,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6273,13 +7269,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentMinorGradientActive: Self {
         GradientToken(
             description: "textOnLightAccentMinorGradientActive",
@@ -6294,7 +7289,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6309,13 +7304,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightAccentMinorGradientHover: Self {
         GradientToken(
             description: "textOnLightAccentMinorGradientHover",
@@ -6330,7 +7324,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6345,13 +7339,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoGradient: Self {
         GradientToken(
             description: "textOnLightPromoGradient",
@@ -6366,7 +7359,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6381,13 +7374,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoGradientActive: Self {
         GradientToken(
             description: "textOnLightPromoGradientActive",
@@ -6402,7 +7394,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6417,13 +7409,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoGradientHover: Self {
         GradientToken(
             description: "textOnLightPromoGradientHover",
@@ -6438,7 +7429,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6453,13 +7444,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoMinorGradient: Self {
         GradientToken(
             description: "textOnLightPromoMinorGradient",
@@ -6474,7 +7464,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6489,13 +7479,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoMinorGradientActive: Self {
         GradientToken(
             description: "textOnLightPromoMinorGradientActive",
@@ -6510,7 +7499,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6525,13 +7514,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var textOnLightPromoMinorGradientHover: Self {
         GradientToken(
             description: "textOnLightPromoMinorGradientHover",
@@ -6546,7 +7534,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ],
@@ -6561,13 +7549,12 @@ public extension GradientToken {
                             Color(UIColor(hex: "#FFFFFF")), 
                             Color(UIColor(hex: "#000000"))
                         ],
-                        angle: 90
+                        angle: 90.0
                     )
                 )
             ]
         )
     }
-    
     static var tokens: [Self] = [
         outlineDefaultAccentGradient,
         outlineDefaultAccentGradientActive,
@@ -6641,6 +7628,12 @@ public extension GradientToken {
         surfaceDefaultPromoMinorGradient,
         surfaceDefaultPromoMinorGradientActive,
         surfaceDefaultPromoMinorGradientHover,
+        surfaceDefaultSkeletonDeepGradient,
+        surfaceDefaultSkeletonDeepGradientActive,
+        surfaceDefaultSkeletonDeepGradientHover,
+        surfaceDefaultSkeletonGradient,
+        surfaceDefaultSkeletonGradientActive,
+        surfaceDefaultSkeletonGradientHover,
         surfaceDefaultTransparentAccentGradient,
         surfaceDefaultTransparentAccentGradientActive,
         surfaceDefaultTransparentAccentGradientHover,
@@ -6659,6 +7652,12 @@ public extension GradientToken {
         surfaceInversePromoMinorGradient,
         surfaceInversePromoMinorGradientActive,
         surfaceInversePromoMinorGradientHover,
+        surfaceInverseSkeletonDeepGradient,
+        surfaceInverseSkeletonDeepGradientActive,
+        surfaceInverseSkeletonDeepGradientHover,
+        surfaceInverseSkeletonGradient,
+        surfaceInverseSkeletonGradientActive,
+        surfaceInverseSkeletonGradientHover,
         surfaceInverseTransparentAccentGradient,
         surfaceInverseTransparentAccentGradientActive,
         surfaceInverseTransparentAccentGradientHover,
@@ -6677,6 +7676,12 @@ public extension GradientToken {
         surfaceOnDarkPromoMinorGradient,
         surfaceOnDarkPromoMinorGradientActive,
         surfaceOnDarkPromoMinorGradientHover,
+        surfaceOnDarkSkeletonDeepGradient,
+        surfaceOnDarkSkeletonDeepGradientActive,
+        surfaceOnDarkSkeletonDeepGradientHover,
+        surfaceOnDarkSkeletonGradient,
+        surfaceOnDarkSkeletonGradientActive,
+        surfaceOnDarkSkeletonGradientHover,
         surfaceOnDarkTransparentAccentGradient,
         surfaceOnDarkTransparentAccentGradientActive,
         surfaceOnDarkTransparentAccentGradientHover,
@@ -6695,6 +7700,12 @@ public extension GradientToken {
         surfaceOnLightPromoMinorGradient,
         surfaceOnLightPromoMinorGradientActive,
         surfaceOnLightPromoMinorGradientHover,
+        surfaceOnLightSkeletonDeepGradient,
+        surfaceOnLightSkeletonDeepGradientActive,
+        surfaceOnLightSkeletonDeepGradientHover,
+        surfaceOnLightSkeletonGradient,
+        surfaceOnLightSkeletonGradientActive,
+        surfaceOnLightSkeletonGradientHover,
         surfaceOnLightTransparentAccentGradient,
         surfaceOnLightTransparentAccentGradientActive,
         surfaceOnLightTransparentAccentGradientHover,

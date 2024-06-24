@@ -6,4 +6,6 @@ enum Category: String, Codable {
     case background
     case outline
     case overlay
+    case banner
+    case banners
 }

@@ -5,13 +5,13 @@ import PathKit
 private enum Tag: String {
     case ensureValueExists = "ensure_value_exists"
     case ensureAnyValueExists = "ensure_any_value_exists"
-    case ensureFloatNonNegative = "ensure_float_non_negative"
+    case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
 }
 
 private enum Filter: String {
     case ensure = "ensure"
-    case ensureFloatNonNegative = "ensure_float_non_negative"
+    case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
 }
 
@@ -55,7 +55,7 @@ final class TemplateRenderer: Renderable {
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureAnyValueExistsNode(arguments: arguments, token: token)
         }
-        ext.registerTag(Tag.ensureFloatNonNegative.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureDoubleNonNegative.rawValue) { parser, token in
              let arguments = token.components.dropFirst().map { $0 }
              return EnsureFloatNonNegativeNode(arguments: arguments, token: token)
         }
@@ -90,11 +90,11 @@ final class TemplateRenderer: Renderable {
             }
             return doubleValue
         }
-        ext.registerFilter(Filter.ensureFloatNonNegative.rawValue) { (value: Any?) in
-             guard let floatValue = value as? Float, floatValue >= 0 else {
-                 throw TemplateSyntaxError("Value is not a non-negative float")
+        ext.registerFilter(Filter.ensureDoubleNonNegative.rawValue) { (value: Any?) in
+             guard let doubleValue = value as? Double, doubleValue >= 0 else {
+                 throw TemplateSyntaxError("Value \(value) is not a non-negative double")
              }
-             return floatValue
+             return doubleValue
         }
     }
 }
