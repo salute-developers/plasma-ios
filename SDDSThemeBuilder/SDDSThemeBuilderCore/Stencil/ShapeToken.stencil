@@ -10,7 +10,7 @@ public extension ShapeToken {
     
     static var {{ key }}: Self {
         Self(
-            cornerRadius: {{ value.cornerRadius|ensure|two_decimals_format }},
+            cornerRadius: {{ value.cornerRadius|ensure }},
             kind: .{{ value.kind|ensure }}
         )
     }
