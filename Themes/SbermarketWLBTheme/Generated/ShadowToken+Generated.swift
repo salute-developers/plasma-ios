@@ -3,7 +3,6 @@ import UIKit
 @_exported import SDDSThemeCore
 
 public extension ShadowToken {
-    
     static var downHardL: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -15,7 +14,6 @@ public extension ShadowToken {
             radius: 7
         )
     }
-    
     static var downHardM: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -27,7 +25,6 @@ public extension ShadowToken {
             radius: 3
         )
     }
-    
     static var downHardS: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -39,7 +36,6 @@ public extension ShadowToken {
             radius: 1.5
         )
     }
-    
     static var downSoftL: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -51,7 +47,6 @@ public extension ShadowToken {
             radius: 7
         )
     }
-    
     static var downSoftM: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -63,7 +58,6 @@ public extension ShadowToken {
             radius: 3
         )
     }
-    
     static var downSoftS: Self {
         Self(
             color: Color(UIColor(hex: "#000")),
@@ -75,5 +69,4 @@ public extension ShadowToken {
             radius: 1.5
         )
     }
-    
 }

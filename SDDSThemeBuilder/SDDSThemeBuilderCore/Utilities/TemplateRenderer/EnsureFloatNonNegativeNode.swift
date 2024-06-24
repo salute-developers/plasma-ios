@@ -4,7 +4,7 @@ import Stencil
 class EnsureFloatNonNegativeNode: EnsureValueNode {
     override func render(_ context: Context) throws -> String {
         guard arguments.count == 1 else {
-            throw TemplateSyntaxError("ensure_float_non_negative tag requires exactly one argument")
+            throw TemplateSyntaxError("ensure_double_non_negative tag requires exactly one argument")
         }
         let variableName = arguments[0]
         

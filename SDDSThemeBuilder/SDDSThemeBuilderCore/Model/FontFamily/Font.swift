@@ -10,7 +10,7 @@ struct Font: Codable {
         case regular
         case semibold
         case thin
-        case ultraLight
+        case ultralight
         case normal
     }
     
