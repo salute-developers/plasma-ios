@@ -6,11 +6,6 @@
         "name": "CaldernaOnlineTheme"
       },
       {
-        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/default/0.1.0.zip",
-        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
-        "name": "DefaultTheme"
-      },
-      {
         "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/flamingo/0.1.0.zip",
         "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
         "name": "FlamingoTheme"
