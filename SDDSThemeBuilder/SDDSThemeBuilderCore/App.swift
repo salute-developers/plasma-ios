@@ -11,7 +11,7 @@ public final class App {
             themeBuilderURL: themeBuilderURL,
             outputDirectoryURL: outputDirectoryURL,
             themeURL: themeURL
-        )
+        ).run()
         DownloadCommand(fileURL: schemeZipURL, outputURL: schemeZipLocalURL).run()
         DownloadCommand(fileURL: paletteURL, outputURL: paletteLocalURL).run()
         
