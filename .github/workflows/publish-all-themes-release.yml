@@ -22,8 +22,7 @@ jobs:
         run: |
            TAG_NAME=${GITHUB_REF#refs/tags/}
            echo "Tag name: $TAG_NAME"
-           cd Themes
-           zip -r ../SDDSTheme-${TAG_NAME}.zip .
+           zip -r SDDSTheme-${TAG_NAME}.zip Themes
            echo "::set-output name=zip_path::SDDSTheme-${TAG_NAME}.zip"
            echo "::set-output name=release_title::${TAG_NAME}"
 
