@@ -33,7 +33,7 @@ final class TemplateRendererTests: XCTestCase {
         let context = contextBuilder.buildContext(from: jsonData).asDictionary ?? [:]
 
         // when
-        let result = templateRenderer.render(context: context, template: template, templatesURL: templatesURL)
+        let result = templateRenderer.render(context: context, template: template)
 
         // then
         switch result {
@@ -47,15 +47,15 @@ final class TemplateRendererTests: XCTestCase {
 
     func testRenderShapesFromJSON_Failure() {
         // given
-        let template = StencilTemplate.shapes
+        let template = StencilTemplate.shapeToken
         let jsonData = try! Data(contentsOf: TemplateRendererTests.shapesURL)
         var json = try! JSONSerialization.jsonObject(with: jsonData) as? [String: Any] ?? [:]
-        json["round.xxl"] = nil
+        json["round.m"] = [:]
         let modifiedJsonData = try! JSONSerialization.data(withJSONObject: json)
         let context = contextBuilder.buildContext(from: modifiedJsonData).asDictionary ?? [:]
 
         // when
-        let result = templateRenderer.render(context: context, template: template, templatesURL: templatesURL)
+        let result = templateRenderer.render(context: context, template: template)
 
         // then
         if !result.isError {
