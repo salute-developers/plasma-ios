@@ -1,0 +1,35 @@
+name: 'Publish All Themes Release'
+
+on:
+  push:
+    tags:
+      - "SDDSTheme-all-v[0-9]+.[0-9]+.[0-9]+"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-distribution:
+    name: Generate themes distribution zip
+    runs-on: macos-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Generate distribution zip
+        id: zip_artifact
+        run: |
+           TAG_NAME=${GITHUB_REF#refs/tags/}
+           echo "Tag name: $TAG_NAME"
+           cd Themes
+           zip -r ../SDDSTheme-${TAG_NAME}.zip .
+           echo "::set-output name=zip_path::SDDSTheme-${TAG_NAME}.zip"
+           echo "::set-output name=release_title::${TAG_NAME}"
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.zip_artifact.outputs.zip_path }}
+          tag_name: ${{ steps.zip_artifact.outputs.release_title }}
+          token: ${{ secrets.GH_TOKEN }}
