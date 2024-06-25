@@ -16,12 +16,15 @@ private enum Filter: String {
 }
 
 final class TemplateRenderer: Renderable {
-    func render(context: [String: Any], template: StencilTemplate, templatesURL: URL) -> CommandResult {
+    func render(context: [String: Any], template: StencilTemplate) -> CommandResult {
         let ext = Extension()
         registerFilters(ext: ext)
         registerTags(ext: ext)
 
-        let templatesPath = templatesURL.absolutePath
+        guard let templatesURL = Bundle(for: TemplateRenderer.self).url(forResource: template.rawValue, withExtension: "stencil")?.deletingLastPathComponent() else {
+            return .error(CodeGenerationError.templateLoadingFailed)
+        }
+        let templatesPath = templatesURL.path()
         let stencilEnvironment = Environment(loader: FileSystemLoader(paths: [Path(templatesPath)]), extensions: [ext])
         
         guard let template = try? stencilEnvironment.loadTemplate(name: template.withStencilExt) else {

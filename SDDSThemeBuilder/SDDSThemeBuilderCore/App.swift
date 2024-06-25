@@ -7,6 +7,11 @@ public final class App {
     let themeBuilderURL: URL
     
     private func executeCommands() {
+        PrepareDirectoriesCommand(
+            themeBuilderURL: themeBuilderURL,
+            outputDirectoryURL: outputDirectoryURL,
+            themeURL: themeURL
+        )
         DownloadCommand(fileURL: schemeZipURL, outputURL: schemeZipLocalURL).run()
         DownloadCommand(fileURL: paletteURL, outputURL: paletteLocalURL).run()
         
@@ -44,7 +49,6 @@ public final class App {
                 name: "Generate Color Tokens",
                 schemeURL: schemeDirectory.url(for: .colors),
                 themeURL: themeURL,
-                templatesURL: templatesURL,
                 templates: [.colorToken, .colors],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: ColorContextBuilder(
@@ -56,7 +60,6 @@ public final class App {
                 name: "Generate Shadow Tokens",
                 schemeURL: schemeDirectory.url(for: .shadows),
                 themeURL: themeURL,
-                templatesURL: templatesURL,
                 templates: [.shadowToken, .shadows],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: GeneralContextBuilder(
@@ -68,7 +71,6 @@ public final class App {
                 name: "Generate Shape Tokens",
                 schemeURL: schemeDirectory.url(for: .shapes),
                 themeURL: themeURL,
-                templatesURL: templatesURL,
                 templates: [.shapeToken, .shapes],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: GeneralContextBuilder(
@@ -80,7 +82,6 @@ public final class App {
                 name: "Generate Typography Tokens",
                 schemeURL: schemeDirectory.url(for: .typography),
                 themeURL: themeURL,
-                templatesURL: templatesURL,
                 templates: [.typographyToken, .typographies],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: TypographyContextBuilder(
@@ -92,7 +93,6 @@ public final class App {
                 name: "Generate Gradient Tokens",
                 schemeURL: schemeDirectory.url(for: .gradients),
                 themeURL: themeURL,
-                templatesURL: templatesURL,
                 templates: [.gradientToken, .gradients],
                 generatedOutputURL: generatedTokensURL,
                 contextBuilder: GradientContextBuilder(

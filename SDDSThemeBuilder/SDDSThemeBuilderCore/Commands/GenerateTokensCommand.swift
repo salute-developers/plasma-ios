@@ -5,7 +5,6 @@ import PathKit
 final class GenerateTokensCommand: Command, FileWriter {
     private let schemeURL: URL
     private let themeURL: URL
-    private let templatesURL: URL
     private let templates: [StencilTemplate]
     private let generatedOutputURL: URL
     private let templateRender: Renderable
@@ -14,7 +13,6 @@ final class GenerateTokensCommand: Command, FileWriter {
     init(name: String,
          schemeURL: URL,
          themeURL: URL,
-         templatesURL: URL,
          templates: [StencilTemplate],
          generatedOutputURL: URL,
          templateRender: Renderable = TemplateRenderer(),
@@ -22,7 +20,6 @@ final class GenerateTokensCommand: Command, FileWriter {
     ) {
         self.schemeURL = schemeURL
         self.themeURL = themeURL
-        self.templatesURL = templatesURL
         self.templates = templates
         self.generatedOutputURL = generatedOutputURL
         self.templateRender = templateRender
@@ -62,7 +59,7 @@ final class GenerateTokensCommand: Command, FileWriter {
         }
         
         for template in templates {
-            result = templateRender.render(context: context, template: template, templatesURL: templatesURL)
+            result = templateRender.render(context: context, template: template)
             guard let generatedContent = result.asGenerated else {
                 return result
             }

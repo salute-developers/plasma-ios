@@ -35,7 +35,20 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
-		810CB4882BF786C0002E718E /* GradientToken.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
+		810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */; };
+		810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
+		810DE53F2C2AC77700F1C96F /* ColorToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 817539362BCE745600138866 /* ColorToken.stencil */; };
+		810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
+		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
+		810DE5422C2AC77800F1C96F /* Shapes.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D142C05D38600C17C0F /* Shapes.stencil */; };
+		810DE5432C2AC77800F1C96F /* Colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D122C05D1D300C17C0F /* Colors.stencil */; };
+		810DE5442C2AC77800F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
+		810DE5452C2AC77800F1C96F /* Shadows.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D162C05D39E00C17C0F /* Shadows.stencil */; };
+		810DE5462C2AC77800F1C96F /* Gradients.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D1A2C05D3C800C17C0F /* Gradients.stencil */; };
+		810DE5472C2AC77800F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
+		810DE5482C2AC77800F1C96F /* Typographies.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D182C05D3B200C17C0F /* Typographies.stencil */; };
+		810DE5492C2AC77800F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
+		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
 		813340122C063151005AD84F /* TypographyContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340112C063151005AD84F /* TypographyContextBuilderTests.swift */; };
 		813340142C0631D0005AD84F /* ColorContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */; };
 		813340162C0632EA005AD84F /* palette.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340152C0632EA005AD84F /* palette.json */; };
@@ -314,6 +327,7 @@
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
+		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
 		813340112C063151005AD84F /* TypographyContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340152C0632EA005AD84F /* palette.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = palette.json; sourceTree = "<group>"; };
@@ -599,6 +613,7 @@
 				81E1EDC22BD6ADC100F86AE1 /* UnpackThemeCommand.swift */,
 				24CB39172BC96CDE00B32463 /* DecodeCommand.swift */,
 				81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */,
+				810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -1231,10 +1246,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */,
 				243C1D192C05D3B200C17C0F /* Typographies.stencil in Resources */,
+				810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */,
 				243C1D132C05D1D300C17C0F /* Colors.stencil in Resources */,
 				243C1D172C05D39E00C17C0F /* Shadows.stencil in Resources */,
 				243C1D152C05D38600C17C0F /* Shapes.stencil in Resources */,
+				810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */,
+				810DE53F2C2AC77700F1C96F /* ColorToken.stencil in Resources */,
+				810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */,
 				243C1D1B2C05D3C800C17C0F /* Gradients.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1244,16 +1264,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C10A1D2C2929850055BB04 /* meta.json in Resources */,
+				810DE5442C2AC77800F1C96F /* GradientToken.stencil in Resources */,
 				8133401A2C0635AA005AD84F /* SBSansDisplay-Medium.otf in Resources */,
 				8133401C2C0636F0005AD84F /* ios_gradient.json in Resources */,
 				813340162C0632EA005AD84F /* palette.json in Resources */,
 				817539912BD11E5500138866 /* scheme.json in Resources */,
+				810DE5462C2AC77800F1C96F /* Gradients.stencil in Resources */,
+				810DE5492C2AC77800F1C96F /* TypographyToken.stencil in Resources */,
 				8133402C2C072F78005AD84F /* ShapeToken.stencil in Resources */,
 				817539A02BD1676200138866 /* ColorToken.stencil in Resources */,
+				810DE5452C2AC77800F1C96F /* Shadows.stencil in Resources */,
+				810DE5482C2AC77800F1C96F /* Typographies.stencil in Resources */,
 				817539932BD12E7500138866 /* empty.json in Resources */,
 				817539A22BD1681100138866 /* ios_colors.json in Resources */,
 				813340192C0635AA005AD84F /* SBSansDisplay-Bold.otf in Resources */,
+				810DE5432C2AC77800F1C96F /* Colors.stencil in Resources */,
+				810DE5472C2AC77800F1C96F /* ShadowToken.stencil in Resources */,
 				813340242C063A71005AD84F /* ios_shape.json in Resources */,
+				810DE5422C2AC77800F1C96F /* Shapes.stencil in Resources */,
 				8133402E2C073924005AD84F /* ios_gradient_invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1399,12 +1427,12 @@
 				817539762BD0087500138866 /* Command.swift in Sources */,
 				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
-				810CB4882BF786C0002E718E /* GradientToken.stencil in Sources */,
 				81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */,
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
 				817539862BD008A500138866 /* Extensions.swift in Sources */,
+				810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */,
 				81CB0FBD2C2193DC003B1064 /* HexConverter.swift in Sources */,
 				8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */,
 			);
