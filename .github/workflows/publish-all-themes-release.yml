@@ -12,7 +12,8 @@ concurrency:
 jobs:
   generate-distribution:
     name: Generate themes distribution zip
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    environment: sdds
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
