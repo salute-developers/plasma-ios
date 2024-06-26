@@ -48,13 +48,22 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
+      - name: Install dependencies
+        run: |
+          gem install xcodeproj
+
+      - name: Run build script
+        run: |
+          chmod +x ./scripts/build_themes.rb
+          ./scripts/build_themes.rb
+
       - name: Generate distribution zip
         id: zip_artifact
         run: |
            TAG_NAME=${GITHUB_REF#refs/tags/}
-           cd Themes
-           zip -r ../${TAG_NAME}.zip .
-           cd ..
+           cd Themes/build
+           zip -r ../../${TAG_NAME}.zip .
+           cd ../..
            echo "::set-output name=zip_path::${TAG_NAME}.zip"
            echo "::set-output name=release_title::${TAG_NAME}"
 
