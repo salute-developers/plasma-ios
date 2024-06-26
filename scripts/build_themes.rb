@@ -49,7 +49,7 @@ def build_xcframeworks
     execute_command("xcodebuild archive -project #{project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES")
 
     print_info "Создание XCFramework..."
-    xcframework_path = File.join(build_path, "#{scheme}-#{version}.xcframework")
+    xcframework_path = File.join(build_path, "#{scheme}.xcframework")
     execute_command("xcodebuild -create-xcframework -framework #{ios_archive_path}/Products/Library/Frameworks/#{scheme}.framework -framework #{ios_simulator_archive_path}/Products/Library/Frameworks/#{scheme}.framework -output #{xcframework_path}")
 
     print_success "Сборка успешно завершена для схемы #{scheme}"
@@ -59,7 +59,7 @@ def build_xcframeworks
 
     print_info "Создание ZIP архива для XCFramework..."
     Dir.chdir(build_path) do
-      execute_command("zip -r #{scheme}-#{version}.xcframework.zip #{scheme}-#{version}.xcframework")
+      execute_command("zip -r #{scheme}.xcframework.zip #{scheme}.xcframework")
     end
 
     print_success "ZIP архив успешно создан для #{scheme}.xcframework"
