@@ -5,6 +5,10 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - control_statement
   - trailing_comma
   - comment_spacing
+  - trailing_whitespace
+  - file_length
+  - empty_count
+  - type_body_length
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # find all the available rules by running: `swiftlint rules`
 
@@ -49,7 +53,7 @@ type_name:
   allowed_symbols: ["_"] # these are allowed in type names
 identifier_name:
   min_length: # only min_length
-    error: 3 # only error
+    error: 2 # only error
   excluded: # excluded via string array
     - id
     - URL

@@ -1,0 +1,18 @@
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public extension ShapeToken {
+    {%- for key, value in json %}
+    
+    {% ensure_value_exists value.cornerRadius %}
+    {% ensure_value_exists value.kind %}
+    
+    static var {{ key }}: Self {
+        Self(
+            cornerRadius: {{ value.cornerRadius|ensure }},
+            kind: .{{ value.kind|ensure }}
+        )
+    }
+    {%- endfor %}
+}

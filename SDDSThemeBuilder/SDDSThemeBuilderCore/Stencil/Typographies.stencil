@@ -1,0 +1,8 @@
+import Foundation
+@_exported import SDDSThemeCore
+
+public struct Typographies {
+    {%- for key, value in json %}
+    public static let {{ key }} = AdaptiveTypographyToken.{{ key }}
+    {%- endfor %}
+}

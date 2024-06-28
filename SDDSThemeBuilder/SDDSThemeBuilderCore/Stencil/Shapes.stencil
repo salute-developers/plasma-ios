@@ -1,0 +1,9 @@
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public struct Shapes {
+    {%- for key, value in json %}
+    public static let {{ key }} = ShapeToken.{{ key }}
+    {%- endfor %}
+}

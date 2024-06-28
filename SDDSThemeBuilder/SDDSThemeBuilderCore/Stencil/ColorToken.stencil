@@ -1,0 +1,17 @@
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public extension ColorToken {
+    {%- for key, value in json %}
+    
+    {% ensure_any_value_exists value.dark value.light %}
+    
+    static var {{ key }}: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "{{ value.dark|default:'' }}")),
+            lightColor: Color(UIColor(hex: "{{ value.light|default:'' }}"))
+        )
+    }
+    {%- endfor %}
+}

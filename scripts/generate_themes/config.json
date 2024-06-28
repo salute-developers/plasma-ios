@@ -1,0 +1,84 @@
+{
+  "themes": [
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/caldera_online/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "CaldernaOnlineTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/flamingo/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "FlamingoTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/plasma_b2c/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "PlasmaB2CTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/plasma_web/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "PlasmaWebTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sberHealth/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SberHealthTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sbermarket/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SbermarketTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sbermarket_business/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SbermarketBusinessTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sbermarket_metro/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SbermarketMetroTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sbermarket_selgros/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SbermarketSelgrosTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sbermarket_wlbusiness/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SbermarketWLBTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sberonline/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SberOnlineTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sberprime/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SberprimeTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/sdds_serv/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "SDDSservTheme"
+      },
+      {
+        "scheme": "https://github.com/salute-developers/theme-converter/raw/main/themes/stylesSalute/0.1.0.zip",
+        "palette": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+        "name": "StylesSaluteTheme"
+      }
+    ],
+  "output_dir": "file:///Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder",
+  "source_project_path": "/Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder",
+  "create_project_script_path": "/Users/vladimirkaltyrin/plasma-ios/scripts/create_project/create_project.rb",
+  "xcframeworks": [
+    {
+      "xcframework_path": "/Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder/build/SDDSThemeCore.xcframework"
+    }
+  ],
+  "themes_output_dir": "/Users/vladimirkaltyrin/plasma-ios/Themes",
+  "executable_path": "/Users/vladimirkaltyrin/Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug/SDDSThemeBuilder"
+}
