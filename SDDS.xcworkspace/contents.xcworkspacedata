@@ -2,19 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SDDSThemeBuilder/SDDSThemeBuilder.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:SDDSCore/SDDSCore.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SDDSUIKit/SDDSUIKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:SDDSIcons/SDDSIcons.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SDDSSwiftUI/SDDSSwiftUI.xcodeproj">
+      location = "group:SDDSComponents/SDDSComponents.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:SDDSDemoApp/SDDSDemoApp.xcodeproj">

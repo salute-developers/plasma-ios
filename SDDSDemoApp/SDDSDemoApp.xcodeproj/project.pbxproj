@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; };
 		2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2430DEE22BB5CE5100277123 /* SDDSSwiftUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */; };
-		2430DEE32BB5CE5100277123 /* SDDSSwiftUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2430DEE42BB5CE5100277123 /* SDDSUIKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */; };
-		2430DEE52BB5CE5100277123 /* SDDSUIKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154052BB3020A00963FAA /* SDDSDemoApp.swift */; };
 		24C154082BB3020A00963FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154072BB3020A00963FAA /* ContentView.swift */; };
 		24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
@@ -20,8 +16,9 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
-		819B2A9D2BF27F0B00688624 /* SDDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */; };
-		819B2A9E2BF27F0B00688624 /* SDDSTheme.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81D2B19E2C32B59900CAA7FD /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; };
+		81D2B19F2C32B59900CAA7FD /* SDDSComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81D2B1A02C32B7B200CAA7FD /* SDDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +45,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2430DEE52BB5CE5100277123 /* SDDSUIKit.xcframework in Embed Frameworks */,
-				819B2A9E2BF27F0B00688624 /* SDDSTheme.xcframework in Embed Frameworks */,
 				2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */,
-				2430DEE32BB5CE5100277123 /* SDDSSwiftUI.xcframework in Embed Frameworks */,
+				81D2B19F2C32B59900CAA7FD /* SDDSComponents.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +69,8 @@
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSTheme.xcframework; path = ../SDDSThemeBuilder/build/SDDSTheme.xcframework; sourceTree = "<group>"; };
+		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DEE42BB5CE5100277123 /* SDDSUIKit.xcframework in Frameworks */,
-				819B2A9D2BF27F0B00688624 /* SDDSTheme.xcframework in Frameworks */,
 				2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */,
-				2430DEE22BB5CE5100277123 /* SDDSSwiftUI.xcframework in Frameworks */,
+				81D2B19E2C32B59900CAA7FD /* SDDSComponents.xcframework in Frameworks */,
+				81D2B1A02C32B7B200CAA7FD /* SDDSTheme.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +161,8 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
+				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
 				819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */,
 				2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */,
 				2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */,
@@ -502,7 +500,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +537,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

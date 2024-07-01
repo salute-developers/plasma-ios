@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "1500"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2430DE762BB5B52100277123"
-               BuildableName = "SDDSSwiftUI.framework"
-               BlueprintName = "SDDSSwiftUI"
-               ReferencedContainer = "container:SDDSSwiftUI.xcodeproj">
+               BlueprintIdentifier = "24C154012BB3020A00963FAA"
+               BuildableName = "SDDSDemoApp.app"
+               BlueprintName = "SDDSDemoApp"
+               ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,10 +34,21 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2430DE802BB5B52100277123"
-               BuildableName = "SDDSSwiftUITests.xctest"
-               BlueprintName = "SDDSSwiftUITests"
-               ReferencedContainer = "container:SDDSSwiftUI.xcodeproj">
+               BlueprintIdentifier = "24C154112BB3020B00963FAA"
+               BuildableName = "SDDSDemoAppTests.xctest"
+               BlueprintName = "SDDSDemoAppTests"
+               ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24C1541B2BB3020B00963FAA"
+               BuildableName = "SDDSDemoAppUITests.xctest"
+               BlueprintName = "SDDSDemoAppUITests"
+               ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -52,6 +63,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "24C154012BB3020A00963FAA"
+            BuildableName = "SDDSDemoApp.app"
+            BlueprintName = "SDDSDemoApp"
+            ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2430DE762BB5B52100277123"
-            BuildableName = "SDDSSwiftUI.framework"
-            BlueprintName = "SDDSSwiftUI"
-            ReferencedContainer = "container:SDDSSwiftUI.xcodeproj">
+            BlueprintIdentifier = "24C154012BB3020A00963FAA"
+            BuildableName = "SDDSDemoApp.app"
+            BlueprintName = "SDDSDemoApp"
+            ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

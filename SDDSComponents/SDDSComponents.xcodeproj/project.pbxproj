@@ -7,154 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2430DEC42BB5B55500277123 /* SDDSUIKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DEC32BB5B55500277123 /* SDDSUIKit.docc */; };
-		2430DECA2BB5B55600277123 /* SDDSUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEBF2BB5B55500277123 /* SDDSUIKit.framework */; };
-		2430DECF2BB5B55600277123 /* SDDSUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430DECE2BB5B55600277123 /* SDDSUIKitTests.swift */; };
-		2430DED02BB5B55600277123 /* SDDSUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2430DEC22BB5B55500277123 /* SDDSUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81D2B1992C32B3E400CAA7FD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* Button.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2430DECB2BB5B55600277123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2430DEB62BB5B55500277123 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2430DEBE2BB5B55500277123;
-			remoteInfo = SDDSUIKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		2430DEBF2BB5B55500277123 /* SDDSUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DEC22BB5B55500277123 /* SDDSUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSUIKit.h; sourceTree = "<group>"; };
-		2430DEC32BB5B55500277123 /* SDDSUIKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSUIKit.docc; sourceTree = "<group>"; };
-		2430DEC92BB5B55600277123 /* SDDSUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DECE2BB5B55600277123 /* SDDSUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSUIKitTests.swift; sourceTree = "<group>"; };
+		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
+		81D2B1982C32B3E400CAA7FD /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2430DEBC2BB5B55500277123 /* Frameworks */ = {
+		81D2B18A2C32B39B00CAA7FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEC62BB5B55600277123 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2430DECA2BB5B55600277123 /* SDDSUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2430DEB52BB5B55500277123 = {
+		81D2B1832C32B39B00CAA7FD = {
 			isa = PBXGroup;
 			children = (
-				2430DEC12BB5B55500277123 /* SDDSUIKit */,
-				2430DECD2BB5B55600277123 /* SDDSUIKitTests */,
-				2430DEC02BB5B55500277123 /* Products */,
+				81D2B1982C32B3E400CAA7FD /* Button.swift */,
+				81D2B18F2C32B39B00CAA7FD /* SDDSComponents */,
+				81D2B18E2C32B39B00CAA7FD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2430DEC02BB5B55500277123 /* Products */ = {
+		81D2B18E2C32B39B00CAA7FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2430DEBF2BB5B55500277123 /* SDDSUIKit.framework */,
-				2430DEC92BB5B55600277123 /* SDDSUIKitTests.xctest */,
+				81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2430DEC12BB5B55500277123 /* SDDSUIKit */ = {
+		81D2B18F2C32B39B00CAA7FD /* SDDSComponents */ = {
 			isa = PBXGroup;
 			children = (
-				2430DEC22BB5B55500277123 /* SDDSUIKit.h */,
-				2430DEC32BB5B55500277123 /* SDDSUIKit.docc */,
+				81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */,
 			);
-			path = SDDSUIKit;
-			sourceTree = "<group>";
-		};
-		2430DECD2BB5B55600277123 /* SDDSUIKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				2430DECE2BB5B55600277123 /* SDDSUIKitTests.swift */,
-			);
-			path = SDDSUIKitTests;
+			path = SDDSComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2430DEBA2BB5B55500277123 /* Headers */ = {
+		81D2B1882C32B39B00CAA7FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DED02BB5B55600277123 /* SDDSUIKit.h in Headers */,
+				81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2430DEBE2BB5B55500277123 /* SDDSUIKit */ = {
+		81D2B18C2C32B39B00CAA7FD /* SDDSComponents */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2430DED32BB5B55600277123 /* Build configuration list for PBXNativeTarget "SDDSUIKit" */;
+			buildConfigurationList = 81D2B1942C32B39B00CAA7FD /* Build configuration list for PBXNativeTarget "SDDSComponents" */;
 			buildPhases = (
-				2430DEBA2BB5B55500277123 /* Headers */,
-				2430DEBB2BB5B55500277123 /* Sources */,
-				2430DEBC2BB5B55500277123 /* Frameworks */,
-				2430DEBD2BB5B55500277123 /* Resources */,
-				2430DED92BB5BC3900277123 /* Lint */,
+				81D2B1882C32B39B00CAA7FD /* Headers */,
+				81D2B1892C32B39B00CAA7FD /* Sources */,
+				81D2B18A2C32B39B00CAA7FD /* Frameworks */,
+				81D2B18B2C32B39B00CAA7FD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SDDSUIKit;
-			productName = SDDSUIKit;
-			productReference = 2430DEBF2BB5B55500277123 /* SDDSUIKit.framework */;
+			name = SDDSComponents;
+			productName = SDDSComponents;
+			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		2430DEC82BB5B55600277123 /* SDDSUIKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2430DED62BB5B55600277123 /* Build configuration list for PBXNativeTarget "SDDSUIKitTests" */;
-			buildPhases = (
-				2430DEC52BB5B55600277123 /* Sources */,
-				2430DEC62BB5B55600277123 /* Frameworks */,
-				2430DEC72BB5B55600277123 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2430DECC2BB5B55600277123 /* PBXTargetDependency */,
-			);
-			name = SDDSUIKitTests;
-			productName = SDDSUIKitTests;
-			productReference = 2430DEC92BB5B55600277123 /* SDDSUIKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2430DEB62BB5B55500277123 /* Project object */ = {
+		81D2B1842C32B39B00CAA7FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					2430DEBE2BB5B55500277123 = {
-						CreatedOnToolsVersion = 15.2;
-					};
-					2430DEC82BB5B55600277123 = {
-						CreatedOnToolsVersion = 15.2;
+					81D2B18C2C32B39B00CAA7FD = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = 2430DEB92BB5B55500277123 /* Build configuration list for PBXProject "SDDSUIKit" */;
+			buildConfigurationList = 81D2B1872C32B39B00CAA7FD /* Build configuration list for PBXProject "SDDSComponents" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,26 +108,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 2430DEB52BB5B55500277123;
-			productRefGroup = 2430DEC02BB5B55500277123 /* Products */;
+			mainGroup = 81D2B1832C32B39B00CAA7FD;
+			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2430DEBE2BB5B55500277123 /* SDDSUIKit */,
-				2430DEC82BB5B55600277123 /* SDDSUIKitTests */,
+				81D2B18C2C32B39B00CAA7FD /* SDDSComponents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2430DEBD2BB5B55500277123 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEC72BB5B55600277123 /* Resources */ = {
+		81D2B18B2C32B39B00CAA7FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,61 +128,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2430DED92BB5BC3900277123 /* Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Lint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n/bin/sh \"${SRCROOT}/../lint.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2430DEBB2BB5B55500277123 /* Sources */ = {
+		81D2B1892C32B39B00CAA7FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DEC42BB5B55500277123 /* SDDSUIKit.docc in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEC52BB5B55600277123 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2430DECF2BB5B55600277123 /* SDDSUIKitTests.swift in Sources */,
+				81D2B1992C32B3E400CAA7FD /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		2430DECC2BB5B55600277123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2430DEBE2BB5B55500277123 /* SDDSUIKit */;
-			targetProxy = 2430DECB2BB5B55600277123 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		2430DED12BB5B55600277123 /* Debug */ = {
+		81D2B1922C32B39B00CAA7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -306,12 +206,11 @@
 			};
 			name = Debug;
 		};
-		2430DED22BB5B55600277123 /* Release */ = {
+		81D2B1932C32B39B00CAA7FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -366,21 +265,23 @@
 			};
 			name = Release;
 		};
-		2430DED42BB5B55600277123 /* Debug */ = {
+		81D2B1952C32B39B00CAA7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,34 +290,36 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2430DED52BB5B55600277123 /* Release */ = {
+		81D2B1962C32B39B00CAA7FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,54 +328,13 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSUIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2430DED72BB5B55600277123 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSUIKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2430DED82BB5B55600277123 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSUIKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,34 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2430DEB92BB5B55500277123 /* Build configuration list for PBXProject "SDDSUIKit" */ = {
+		81D2B1872C32B39B00CAA7FD /* Build configuration list for PBXProject "SDDSComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2430DED12BB5B55600277123 /* Debug */,
-				2430DED22BB5B55600277123 /* Release */,
+				81D2B1922C32B39B00CAA7FD /* Debug */,
+				81D2B1932C32B39B00CAA7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2430DED32BB5B55600277123 /* Build configuration list for PBXNativeTarget "SDDSUIKit" */ = {
+		81D2B1942C32B39B00CAA7FD /* Build configuration list for PBXNativeTarget "SDDSComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2430DED42BB5B55600277123 /* Debug */,
-				2430DED52BB5B55600277123 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2430DED62BB5B55600277123 /* Build configuration list for PBXNativeTarget "SDDSUIKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2430DED72BB5B55600277123 /* Debug */,
-				2430DED82BB5B55600277123 /* Release */,
+				81D2B1952C32B39B00CAA7FD /* Debug */,
+				81D2B1962C32B39B00CAA7FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2430DEB62BB5B55500277123 /* Project object */;
+	rootObject = 81D2B1842C32B39B00CAA7FD /* Project object */;
 }
