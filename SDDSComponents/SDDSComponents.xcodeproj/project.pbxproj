@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
+		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81D2B1992C32B3E400CAA7FD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* Button.swift */; };
+		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
-		81D2B1982C32B3E400CAA7FD /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,11 +32,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814185C82C3424EA00D8E524 /* SDDSButton */ = {
+			isa = PBXGroup;
+			children = (
+				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
+				814185C92C34260300D8E524 /* ButtonSize.swift */,
+			);
+			path = SDDSButton;
+			sourceTree = "<group>";
+		};
 		81D2B1832C32B39B00CAA7FD = {
 			isa = PBXGroup;
 			children = (
+				814185C82C3424EA00D8E524 /* SDDSButton */,
 				814185C62C33080400D8E524 /* Spacing.swift */,
-				81D2B1982C32B3E400CAA7FD /* Button.swift */,
 				81D2B18F2C32B39B00CAA7FD /* SDDSComponents */,
 				81D2B18E2C32B39B00CAA7FD /* Products */,
 			);
@@ -136,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81D2B1992C32B3E400CAA7FD /* Button.swift in Sources */,
+				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
+				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				814185C72C33080400D8E524 /* Spacing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
