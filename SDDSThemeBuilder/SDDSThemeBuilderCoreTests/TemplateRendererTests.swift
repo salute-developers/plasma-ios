@@ -58,11 +58,7 @@ final class TemplateRendererTests: XCTestCase {
         let result = templateRenderer.render(context: context, template: template)
 
         // then
-        if !result.isError {
             XCTFail("Expected failure in rendering due to manipulated JSON")
-        }
-    }
-}
 
 private extension TemplateRendererTests {
     var cornerRadius12: String {
