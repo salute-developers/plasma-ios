@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 enum Spacing {
+    static let four: CGFloat = 4
     static let ten: CGFloat = 10
     static let eleven: CGFloat = 11
     static let twelve: CGFloat = 12
@@ -34,6 +35,14 @@ enum Spacing {
             static let small = EdgeInsets(top: Spacing.eleven, leading: Spacing.sixteen, bottom: Spacing.eleven, trailing: Spacing.sixteen)
             static let xs = EdgeInsets(top: Spacing.eleven, leading: Spacing.twelve, bottom: Spacing.eleven, trailing: Spacing.twelve)
             static let xxs = EdgeInsets(top: Spacing.five, leading: Spacing.ten, bottom: Spacing.five, trailing: Spacing.ten)
+        }
+        
+        enum IconSize {
+            static let large = CGSize(width: 24, height: 24)
+            static let medium = CGSize(width: 24, height: 24)
+            static let small = CGSize(width: 24, height: 24)
+            static let xs = CGSize(width: 16, height: 16)
+            static let xxs = CGSize(width: 16, height: 16)
         }
     }
 }

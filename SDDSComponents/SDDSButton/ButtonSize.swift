@@ -54,4 +54,19 @@ extension ButtonSize {
             return Spacing.Button.Padding.xxs
         }
     }
+    
+    var iconSize: CGSize {
+        switch self {
+        case .large:
+            return Spacing.Button.IconSize.large
+        case .medium:
+            return Spacing.Button.IconSize.medium
+        case .small:
+            return Spacing.Button.IconSize.small
+        case .xs:
+            return Spacing.Button.IconSize.xs
+        case .xxs:
+            return Spacing.Button.IconSize.xxs
+        }
+    }
 }

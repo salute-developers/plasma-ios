@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import SDDSIcons
 
 public enum Alignment {
     case left
@@ -13,24 +14,24 @@ public struct IconAttributes {
 }
 
 public final class SDDSButtonViewModel: ObservableObject {
-    @Published public var text: String
+    @Published public var title: String?
     @Published public var subtitle: String?
-    @Published public var icon: IconAttributes?
+    @Published public var iconAttributes: IconAttributes?
     @Published public var size: ButtonSize
     @Published public var disabled: Bool
     @Published public var loading: Bool
     public var action: () -> Void
     
-    public init(text: String,
+    public init(title: String?,
                 subtitle: String? = nil,
-                icon: IconAttributes? = nil,
+                iconAttributes: IconAttributes? = nil,
                 size: ButtonSize = .medium,
                 disabled: Bool = false,
                 loading: Bool = false,
                 action: @escaping () -> Void = {}) {
-        self.text = text
+        self.title = title
         self.subtitle = subtitle
-        self.icon = icon
+        self.iconAttributes = iconAttributes
         self.size = size
         self.disabled = disabled
         self.loading = loading
@@ -49,45 +50,70 @@ public struct SDDSButton: View {
         Button {
             viewModel.action()
         } label: {
-            HStack {
-                Text(viewModel.text)
-                    .foregroundColor(.white)
-                    .padding(viewModel.size.paddings)
+            HStack(spacing: 0) {
+                if viewModel.iconAttributes?.alignment == .left {
+                    icon
+                    Spacer().frame(width: Spacing.four)
+                }
+                if let title = viewModel.title {
+                    Text(title)
+                        .fontWeight(.semibold) // использовать тему
+                        .font(.system(size: 18))
+                        .foregroundColor(.white)
+                }
+                if let subtitle = viewModel.subtitle {
+                    Spacer().frame(width: Spacing.four)
+                    Text(subtitle)
+                        .fontWeight(.semibold) // использовать тему
+                        .font(.system(size: 18))
+                        .foregroundColor(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, opacity: 0.56))
+                }
+                if viewModel.iconAttributes?.alignment == .right {
+                    Spacer().frame(width: Spacing.four)
+                    icon
+                }
             }
+            .padding(viewModel.size.paddings)
             .background(Color.black)
             .cornerRadius(viewModel.size.cornerRadius)
             .frame(height: viewModel.size.height)
         }
         .disabled(viewModel.disabled)
     }
-}
-
-extension SDDSButtonViewModel {
-    static func textOnly(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(text: "Label", size: size)
+    
+    @ViewBuilder
+    private var icon: some View {
+        if let iconAttributes = viewModel.iconAttributes {
+            iconAttributes.image
+                .resizable()
+                .frame(
+                    width: viewModel.size.iconSize.width,
+                    height: viewModel.size.iconSize.height
+                )
+        } else {
+            EmptyView()
+        }
     }
 }
 
 struct SDDSButton_Previews: PreviewProvider {
     static var previews: some View {
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .large))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Large button with text")
+        // Button with title
+        SDDSButtonPreviewTextOnly.previews
         
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .medium))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Medium button with text")
+        // Button with title and left icon
+        SDDSButtonPreviewTextWithLeftIcon.previews
         
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .small))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Small button with text")
+        // Button with title and right icon
+        SDDSButtonPreviewTextWithRightIcon.previews
         
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .xs))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("XS button with text")
+        // Button with title and subtitle
+        SDDSButtonPreviewTextWithSubtitle.previews
         
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .xxs))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("XXS button with text")
+        // Button with title, subtitle, and left icon
+        SDDSButtonPreviewTextWithLeftIconAndSubtitle.previews
+        
+        // Button with title, subtitle, and right icon
+        SDDSButtonPreviewTextWithRightIconAndSubtitle.previews
     }
 }
