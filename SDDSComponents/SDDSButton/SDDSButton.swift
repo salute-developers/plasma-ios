@@ -3,44 +3,9 @@ import SwiftUI
 import Combine
 import SDDSIcons
 
-public enum Alignment {
-    case left
-    case right
-}
-
-public struct IconAttributes {
-    public let image: Image
-    public let alignment: Alignment
-}
-
-public final class SDDSButtonViewModel: ObservableObject {
-    @Published public var title: String?
-    @Published public var subtitle: String?
-    @Published public var iconAttributes: IconAttributes?
-    @Published public var size: ButtonSize
-    @Published public var disabled: Bool
-    @Published public var loading: Bool
-    public var action: () -> Void
-    
-    public init(title: String?,
-                subtitle: String? = nil,
-                iconAttributes: IconAttributes? = nil,
-                size: ButtonSize = .medium,
-                disabled: Bool = false,
-                loading: Bool = false,
-                action: @escaping () -> Void = {}) {
-        self.title = title
-        self.subtitle = subtitle
-        self.iconAttributes = iconAttributes
-        self.size = size
-        self.disabled = disabled
-        self.loading = loading
-        self.action = action
-    }
-}
-
 public struct SDDSButton: View {
     @ObservedObject private var viewModel: SDDSButtonViewModel
+    @Environment(\.colorScheme) var colorScheme
     
     init(viewModel: SDDSButtonViewModel) {
         self.viewModel = viewModel
@@ -50,42 +15,61 @@ public struct SDDSButton: View {
         Button {
             viewModel.action()
         } label: {
-            HStack(spacing: 0) {
-                if viewModel.iconAttributes?.alignment == .left {
-                    icon
-                    Spacer().frame(width: Spacing.four)
+            ZStack {
+                HStack(spacing: 0) {
+                    if viewModel.isCentered {
+                        Spacer()
+                    }
+                    if viewModel.iconAttributes?.alignment == .left {
+                        icon
+                        Spacer().frame(width: Spacing.eight)
+                    }
+                    if let title = viewModel.title {
+                        Text(title)
+                            .font(viewModel.style.titleTypography.font)
+                            .fontWeight(viewModel.style.titleTypography.weight.sui)
+                            .foregroundColor(viewModel.style.titleColor.color(for: colorScheme))
+                    }
+                    if viewModel.isSideBySide {
+                        Spacer()
+                    }
+                    if let subtitle = viewModel.subtitle {
+                        Spacer().frame(width: Spacing.four)
+                        Text(subtitle)
+                            .font(viewModel.style.subtitleTypography.font)
+                            .fontWeight(viewModel.style.subtitleTypography.weight.sui)
+                            .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
+                    }
+                    if viewModel.iconAttributes?.alignment == .right {
+                        Spacer().frame(width: Spacing.four)
+                        icon
+                    }
+                    if viewModel.isCentered {
+                        Spacer()
+                    }
                 }
-                if let title = viewModel.title {
-                    Text(title)
-                        .fontWeight(.semibold) // использовать тему
-                        .font(.system(size: 18))
-                        .foregroundColor(.white)
-                }
-                if let subtitle = viewModel.subtitle {
-                    Spacer().frame(width: Spacing.four)
-                    Text(subtitle)
-                        .fontWeight(.semibold) // использовать тему
-                        .font(.system(size: 18))
-                        .foregroundColor(Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, opacity: 0.56))
-                }
-                if viewModel.iconAttributes?.alignment == .right {
-                    Spacer().frame(width: Spacing.four)
-                    icon
+                .opacity(viewModel.contentOpacity)
+                if viewModel.isLoading {
+                    spinner
                 }
             }
             .padding(viewModel.size.paddings)
-            .background(Color.black)
+            .background(viewModel.style.backgroundColor.color(for: colorScheme).opacity(viewModel.backgroundOpacity))
             .cornerRadius(viewModel.size.cornerRadius)
             .frame(height: viewModel.size.height)
         }
-        .disabled(viewModel.disabled)
+        .disabled(viewModel.isDisabled)
+        .frame(width: 160)
     }
     
     @ViewBuilder
     private var icon: some View {
         if let iconAttributes = viewModel.iconAttributes {
             iconAttributes.image
+                .renderingMode(.template)
                 .resizable()
+                .scaledToFit()
+                .foregroundColor(viewModel.style.iconColor.color(for: colorScheme))
                 .frame(
                     width: viewModel.size.iconSize.width,
                     height: viewModel.size.iconSize.height
@@ -93,6 +77,19 @@ public struct SDDSButton: View {
         } else {
             EmptyView()
         }
+    }
+    
+    @ViewBuilder
+    private var spinner: some View {
+        viewModel.spinnerImage
+            .foregroundColor(viewModel.style.spinnerColor.color(for: colorScheme))
+            .rotationEffect(Angle(degrees: viewModel.isLoading ? 360 : 0))
+            .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: viewModel.isLoading)
+            .onAppear {
+                viewModel.isLoading = true
+            }
+            .frame(width: viewModel.size.spinnerSize.width, height: viewModel.size.spinnerSize.height)
+            .fixedSize()
     }
 }
 

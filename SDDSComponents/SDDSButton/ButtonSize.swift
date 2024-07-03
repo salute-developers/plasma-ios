@@ -69,4 +69,19 @@ extension ButtonSize {
             return Spacing.Button.IconSize.xxs
         }
     }
+    
+    var spinnerSize: CGSize {
+        switch self {
+        case .large:
+            return Spacing.Button.SpinnerSize.large
+        case .medium:
+            return Spacing.Button.SpinnerSize.medium
+        case .small:
+            return Spacing.Button.SpinnerSize.small
+        case .xs:
+            return Spacing.Button.SpinnerSize.xs
+        case .xxs:
+            return Spacing.Button.SpinnerSize.xxs
+        }
+    }
 }
