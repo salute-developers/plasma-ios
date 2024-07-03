@@ -15,6 +15,8 @@ enum Spacing {
     static let fourty: CGFloat = 40
 
     enum Button {
+        static let previewWidth: CGFloat = 200
+        
         enum Height {
             static let large: CGFloat = 56
             static let medium: CGFloat = 48

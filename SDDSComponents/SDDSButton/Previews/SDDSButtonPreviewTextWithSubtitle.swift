@@ -8,6 +8,14 @@ struct SDDSButtonPreviewTextWithSubtitle: PreviewProvider {
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("Large button with text and subtitle")
             
+            SDDSButton(viewModel: SDDSButtonViewModel.textWithSubtitle(size: .large, layoutMode: .fixedWidth(.centered)))
+                .previewLayout(PreviewLayout.fixed(width: Spacing.Button.previewWidth, height: ButtonSize.large.height))
+                .previewDisplayName("Large button with text and subtitle and fixed centered layout")
+            
+            SDDSButton(viewModel: SDDSButtonViewModel.textWithSubtitle(size: .large, layoutMode: .fixedWidth(.sideBySide)))
+                .previewLayout(PreviewLayout.fixed(width: Spacing.Button.previewWidth, height: ButtonSize.large.height))
+                .previewDisplayName("Large button with text and subtitle and fixed side by side layout")
+            
             SDDSButton(viewModel: SDDSButtonViewModel.textWithSubtitle(size: .medium))
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("Medium button with text and subtitle")

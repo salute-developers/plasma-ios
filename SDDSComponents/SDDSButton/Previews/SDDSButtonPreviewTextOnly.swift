@@ -7,6 +7,14 @@ struct SDDSButtonPreviewTextOnly: PreviewProvider {
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Large button with text")
         
+        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .large, layoutMode: .fixedWidth(.centered)))
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Large button with text and fixed centered layout")
+        
+        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .large, layoutMode: .fixedWidth(.sideBySide)))
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Large button with text and fixed side by side layout")
+        
         SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .medium))
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Medium button with text")

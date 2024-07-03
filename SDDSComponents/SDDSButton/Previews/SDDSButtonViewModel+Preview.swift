@@ -4,32 +4,36 @@ import SwiftUI
 import SDDSThemeCore
 
 extension SDDSButtonViewModel {
-    static func textOnly(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, style: .black)
+    static func textOnly(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", size: size, style: .black, layoutMode: layoutMode)
     }
     
-    static func textWithImage(size: ButtonSize, alignment: Alignment = .left) -> SDDSButtonViewModel {
-        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black)
+    static func textWithImage(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
     }
     
-    static func textWithSubtitle(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(title: "Label", subtitle: "Val", size: size, style: .black)
+    static func textWithSubtitle(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", subtitle: "Value", size: size, style: .black, layoutMode: layoutMode)
     }
     
-    static func textWithImageAndSubtitle(size: ButtonSize, alignment: Alignment = .left) -> SDDSButtonViewModel {
-        .init(title: "Label", subtitle: "Val", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black)
+    static func textWithImageAndSubtitle(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
     }
     
-    static func textOnlyLoading(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isLoading: true, style: .black)
+    static func textOnlyLoading(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", size: size, isLoading: true, style: .black, layoutMode: layoutMode)
     }
     
-    static func textOnlyLoadingTransparent(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isLoading: true, spinnerStyle: .transparent, style: .transparent)
+    static func textOnlyLoadingTransparent(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", size: size, isLoading: true, spinnerStyle: .transparent, style: .transparent, layoutMode: layoutMode)
     }
     
-    static func textOnlyDisabled(size: ButtonSize) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isDisabled: true, style: .black)
+    static func textOnlyDisabled(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+        .init(title: "Label", size: size, isDisabled: true, style: .black, layoutMode: layoutMode)
+    }
+    
+    static func equilateral(size: ButtonSize, layoutMode: ButtonLayoutMode, isLoading: Bool = false) -> SDDSButtonViewModel {
+        .init(title: nil, iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: .left), size: size, isLoading: isLoading, style: .black, layoutMode: layoutMode)
     }
 }
 

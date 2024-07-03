@@ -16,10 +16,12 @@ public enum SpinnerStyle {
 public enum ButtonLayoutMode {
     case wrapContent
     case fixedWidth(ButtonContentAlignment)
+    case square
+    case circle
     
     var isCentered: Bool {
         switch self {
-        case .wrapContent:
+        case .wrapContent, .square, .circle:
             return false
         case .fixedWidth(let alignment):
             return alignment == .centered
@@ -28,7 +30,7 @@ public enum ButtonLayoutMode {
     
     var isSideBySide: Bool {
         switch self {
-        case .wrapContent:
+        case .wrapContent, .square, .circle:
             return false
         case .fixedWidth(let alignment):
             return alignment == .sideBySide
@@ -67,7 +69,7 @@ public final class SDDSButtonViewModel: ObservableObject {
     @Published public var spinnerStyle: SpinnerStyle
     @Published public var style: ButtonStyle
     @Published public var layoutMode: ButtonLayoutMode
-    
+     
     public var action: () -> Void
     
     public init(title: String?,
@@ -112,7 +114,33 @@ public final class SDDSButtonViewModel: ObservableObject {
         layoutMode.isCentered
     }
     
+    var isOnlyTitleAndImage: Bool {
+        layoutMode.isSideBySide && title != nil && subtitle == nil && iconAttributes != nil
+    }
+    
     var isSideBySide: Bool {
         layoutMode.isSideBySide && (subtitle != nil || iconAttributes != nil)
+    }
+    
+    var isIconRightAligned: Bool {
+        iconAttributes?.alignment == .right || (iconAttributes?.alignment == .left && isOnlyTitleAndImage)
+    }
+    
+    var isEquilateral: Bool {
+        switch layoutMode {
+        case .wrapContent, .fixedWidth:
+            false
+        case .square, .circle:
+            true
+        }
+    }
+    
+    var isCircle: Bool {
+        switch layoutMode {
+        case .circle:
+            true
+        case .fixedWidth, .wrapContent, .square:
+            false
+        }
     }
 }

@@ -8,6 +8,14 @@ struct SDDSButtonPreviewTextWithLeftIcon: PreviewProvider {
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("Large button with text and left icon")
             
+            SDDSButton(viewModel: SDDSButtonViewModel.textWithImage(size: .large, layoutMode: .fixedWidth(.centered)))
+                .previewLayout(PreviewLayout.fixed(width: Spacing.Button.previewWidth, height: ButtonSize.large.height))
+                .previewDisplayName("Large button with text and left icon and fixed centered layout")
+            
+            SDDSButton(viewModel: SDDSButtonViewModel.textWithImage(size: .large, layoutMode: .fixedWidth(.sideBySide)))
+                .previewLayout(PreviewLayout.fixed(width: Spacing.Button.previewWidth, height: ButtonSize.large.height))
+                .previewDisplayName("Large button with text and left icon and fixed side by side layout")
+            
             SDDSButton(viewModel: SDDSButtonViewModel.textWithImage(size: .medium))
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("Medium button with text and left icon")

@@ -16,13 +16,15 @@ public struct SDDSButton: View {
             viewModel.action()
         } label: {
             ZStack {
-                HStack(spacing: 0) {
+                HStack {
                     if viewModel.isCentered {
                         Spacer()
                     }
-                    if viewModel.iconAttributes?.alignment == .left {
+                    if !viewModel.isIconRightAligned {
                         icon
-                        Spacer().frame(width: Spacing.eight)
+                        if !viewModel.isEquilateral {
+                            Spacer().frame(width: Spacing.eight)
+                        }
                     }
                     if let title = viewModel.title {
                         Text(title)
@@ -40,7 +42,7 @@ public struct SDDSButton: View {
                             .fontWeight(viewModel.style.subtitleTypography.weight.sui)
                             .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
                     }
-                    if viewModel.iconAttributes?.alignment == .right {
+                    if viewModel.isIconRightAligned {
                         Spacer().frame(width: Spacing.four)
                         icon
                     }
@@ -57,9 +59,10 @@ public struct SDDSButton: View {
             .background(viewModel.style.backgroundColor.color(for: colorScheme).opacity(viewModel.backgroundOpacity))
             .cornerRadius(viewModel.size.cornerRadius)
             .frame(height: viewModel.size.height)
+            .applyIf(viewModel.isEquilateral, transform: { $0.frame(width: viewModel.size.height) })
+            .applyIf(viewModel.isCircle, transform: { $0.clipShape(Circle()) })
         }
         .disabled(viewModel.isDisabled)
-        .frame(width: 160)
     }
     
     @ViewBuilder
@@ -95,6 +98,10 @@ public struct SDDSButton: View {
 
 struct SDDSButton_Previews: PreviewProvider {
     static var previews: some View {
+        SDDSButton(viewModel: SDDSButtonViewModel.equilateral(size: .large, layoutMode: .circle))
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Large square button")
+        
         // Button with title
         SDDSButtonPreviewTextOnly.previews
         

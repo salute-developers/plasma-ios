@@ -26,6 +26,7 @@
 		81998FFB2C355217009074B7 /* SDDSButtonPreviewDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFA2C355217009074B7 /* SDDSButtonPreviewDisabled.swift */; };
 		81998FFD2C3554F7009074B7 /* SDDSButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFC2C3554F7009074B7 /* SDDSButtonViewModel.swift */; };
 		819990002C3555D4009074B7 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
+		819990022C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819990012C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift */; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		81998FFA2C355217009074B7 /* SDDSButtonPreviewDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewDisabled.swift; sourceTree = "<group>"; };
 		81998FFC2C3554F7009074B7 /* SDDSButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonViewModel.swift; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
+		819990012C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewEquilateral.swift; sourceTree = "<group>"; };
 		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
 		81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButton.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				81998FE82C344B8A009074B7 /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */,
 				81998FF52C354FDC009074B7 /* SDDSButtonPreviewLoading.swift */,
 				81998FFA2C355217009074B7 /* SDDSButtonPreviewDisabled.swift */,
+				819990012C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				81998FE72C344B75009074B7 /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift in Sources */,
 				81998FFB2C355217009074B7 /* SDDSButtonPreviewDisabled.swift in Sources */,
 				81998FFD2C3554F7009074B7 /* SDDSButtonViewModel.swift in Sources */,
+				819990022C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift in Sources */,
 				81998FDD2C34460F009074B7 /* SDDSButtonViewModel+Preview.swift in Sources */,
 				81998FE52C344B54009074B7 /* SDDSButtonPreviewTextWithSubtitle.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
