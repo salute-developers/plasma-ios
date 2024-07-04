@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; };
-		2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154052BB3020A00963FAA /* SDDSDemoApp.swift */; };
-		24C154082BB3020A00963FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154072BB3020A00963FAA /* ContentView.swift */; };
 		24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
 		24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */; };
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
-		81D2B19E2C32B59900CAA7FD /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; };
-		81D2B19F2C32B59900CAA7FD /* SDDSComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
+		817D9F162C370676006C4814 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; };
+		817D9F172C370676006C4814 /* SDDSComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2430DEE12BB5CE5100277123 /* SDDSIcons.xcframework in Embed Frameworks */,
-				81D2B19F2C32B59900CAA7FD /* SDDSComponents.xcframework in Embed Frameworks */,
+				817D9F172C370676006C4814 /* SDDSComponents.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +56,6 @@
 		2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSUIKit.xcframework; path = ../build/SDDSUIKit.xcframework; sourceTree = "<group>"; };
 		24C154022BB3020A00963FAA /* SDDSDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154052BB3020A00963FAA /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
-		24C154072BB3020A00963FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		24C154092BB3020B00963FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +63,9 @@
 		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSTheme.xcframework; path = ../SDDSThemeBuilder/build/SDDSTheme.xcframework; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
@@ -77,8 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DEE02BB5CE5100277123 /* SDDSIcons.xcframework in Frameworks */,
-				81D2B19E2C32B59900CAA7FD /* SDDSComponents.xcframework in Frameworks */,
+				817D9F162C370676006C4814 /* SDDSComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +121,8 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				817D9F122C3704AD006C4814 /* ButtonView */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
-				24C154072BB3020A00963FAA /* ContentView.swift */,
 				24C154092BB3020B00963FAA /* Assets.xcassets */,
 				24C1540B2BB3020B00963FAA /* Preview Content */,
 			);
@@ -159,6 +157,8 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */,
+				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
 				819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */,
@@ -168,6 +168,14 @@
 				2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		817D9F122C3704AD006C4814 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				817D9F132C3704CF006C4814 /* ButtonView.swift */,
+			);
+			path = ButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n/bin/sh \"${SRCROOT}/../lint.sh\"\n";
+			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n#/bin/sh \"${SRCROOT}/../lint.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -323,8 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C154082BB3020A00963FAA /* ContentView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
+				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

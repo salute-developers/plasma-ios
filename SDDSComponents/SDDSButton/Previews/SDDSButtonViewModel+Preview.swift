@@ -9,7 +9,7 @@ extension SDDSButtonViewModel {
     }
     
     static func textWithImage(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
     }
     
     static func textWithSubtitle(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
@@ -17,7 +17,7 @@ extension SDDSButtonViewModel {
     }
     
     static func textWithImageAndSubtitle(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
     }
     
     static func textOnlyLoading(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
@@ -33,11 +33,11 @@ extension SDDSButtonViewModel {
     }
     
     static func equilateral(size: ButtonSize, layoutMode: ButtonLayoutMode, isLoading: Bool = false) -> SDDSButtonViewModel {
-        .init(title: nil, iconAttributes: ButtonIconAttributes(image: Asset.accessibility.image, alignment: .left), size: size, isLoading: isLoading, style: .black, layoutMode: layoutMode)
+        .init(title: "", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: .left), size: size, isLoading: isLoading, style: .black, layoutMode: layoutMode)
     }
 }
 
-extension ButtonStyle {
+public extension ButtonStyle {
     static var black: ButtonStyle {
         ButtonStyle(
             titleTypography: TypographyToken.semibold18,

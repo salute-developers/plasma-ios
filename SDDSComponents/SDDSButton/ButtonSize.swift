@@ -1,12 +1,12 @@
 import Foundation
 import SwiftUI
 
-public enum ButtonSize {
-    case xxs
-    case xs
-    case small
-    case medium
+public enum ButtonSize: String, CaseIterable {
     case large
+    case medium
+    case small
+    case xs
+    case xxs
 }
 
 extension ButtonSize {

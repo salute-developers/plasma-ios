@@ -7,7 +7,7 @@ public struct SDDSButton: View {
     @ObservedObject private var viewModel: SDDSButtonViewModel
     @Environment(\.colorScheme) var colorScheme
     
-    init(viewModel: SDDSButtonViewModel) {
+    public init(viewModel: SDDSButtonViewModel) {
         self.viewModel = viewModel
     }
     
@@ -26,8 +26,8 @@ public struct SDDSButton: View {
                             Spacer().frame(width: Spacing.eight)
                         }
                     }
-                    if let title = viewModel.title {
-                        Text(title)
+                    if !viewModel.title.isEmpty {
+                        Text(viewModel.title)
                             .font(viewModel.style.titleTypography.font)
                             .fontWeight(viewModel.style.titleTypography.weight.sui)
                             .foregroundColor(viewModel.style.titleColor.color(for: colorScheme))
@@ -35,9 +35,9 @@ public struct SDDSButton: View {
                     if viewModel.isSideBySide {
                         Spacer()
                     }
-                    if let subtitle = viewModel.subtitle {
+                    if !viewModel.subtitle.isEmpty {
                         Spacer().frame(width: Spacing.four)
-                        Text(subtitle)
+                        Text(viewModel.subtitle)
                             .font(viewModel.style.subtitleTypography.font)
                             .fontWeight(viewModel.style.subtitleTypography.weight.sui)
                             .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))

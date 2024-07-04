@@ -1,24 +1,87 @@
 import Foundation
 import SwiftUI
 import Combine
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
+/**
+ `Alignment` определяет выравнивание иконки внутри кнопки.
+
+ - Cases:
+    - left: Иконка выравнивается по левому краю.
+    - right: Иконка выравнивается по правому краю.
+ */
 public enum Alignment {
+    /**
+     Иконка выравнивается по левому краю.
+     */
     case left
+    
+    /**
+     Иконка выравнивается по правому краю.
+     */
     case right
 }
 
+/**
+ `SpinnerStyle` определяет стиль спиннера загрузки внутри кнопки.
+
+ - Cases:
+    - solid: Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
+    - transparent: Спиннер прозрачный, оставляет содержимое кнопки полупрозрачным во время загрузки.
+ */
 public enum SpinnerStyle {
+    /**
+     Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
+     */
     case solid
+    
+    /**
+     Спиннер прозрачный, оставляет содержимое кнопки полупрозрачным во время загрузки.
+     */
     case transparent
 }
 
-public enum ButtonLayoutMode {
+/**
+ `ButtonLayoutMode` определяет различные режимы макета для кнопки.
+
+ - Cases:
+    - wrapContent: Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
+    - fixedWidth: Кнопка имеет фиксированную ширину с выравниванием содержимого (центрированное или бок о бок).
+    - square: Кнопка имеет квадратную форму, где высота равна ширине.
+    - circle: Кнопка имеет круглую форму, где высота равна ширине.
+
+ - Properties:
+    - isCentered: Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
+    - isSideBySide: Возвращает true, если содержимое кнопки должно быть расположено бок о бок (для режима fixedWidth с выравниванием бок о бок).
+    - title: Возвращает строку, представляющую название режима макета.
+ */
+public enum ButtonLayoutMode: CaseIterable, Hashable {
+    /**
+     Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
+     */
     case wrapContent
+    
+    /**
+     Кнопка имеет фиксированную ширину с выравниванием содержимого (центрированное или бок о бок).
+     
+     - Parameters:
+        - alignment: Выравнивание содержимого внутри фиксированной ширины (центрированное или бок о бок).
+     */
     case fixedWidth(ButtonContentAlignment)
+    
+    /**
+     Кнопка имеет квадратную форму, где высота равна ширине.
+     */
     case square
+    
+    /**
+     Кнопка имеет круглую форму, где высота равна ширине.
+     */
     case circle
     
+    /**
+     Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
+     */
     var isCentered: Bool {
         switch self {
         case .wrapContent, .square, .circle:
@@ -28,6 +91,9 @@ public enum ButtonLayoutMode {
         }
     }
     
+    /**
+     Возвращает true, если содержимое кнопки должно быть расположено бок о бок (для режима fixedWidth с выравниванием бок о бок).
+     */
     var isSideBySide: Bool {
         switch self {
         case .wrapContent, .square, .circle:
@@ -36,31 +102,183 @@ public enum ButtonLayoutMode {
             return alignment == .sideBySide
         }
     }
+    
+    /**
+     Возвращает строку, представляющую название режима макета.
+     */
+    public var title: String {
+        switch self {
+        case .wrapContent:
+            return "Wrap Content"
+        case .fixedWidth(let alignment):
+            switch alignment {
+            case .centered:
+                return "Centered"
+            case .sideBySide:
+                return "Side by side"
+            }
+        case .square:
+            return "Square"
+        case .circle:
+            return "Circle"
+        }
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+    }
+    
+    /**
+     Все возможные случаи `ButtonLayoutMode`.
+     */
+    public static var allCases: [ButtonLayoutMode] {
+        return [.wrapContent, .fixedWidth(.centered), .fixedWidth(.sideBySide), .square, .circle]
+    }
 }
 
+/**
+ `ButtonContentAlignment` определяет выравнивание содержимого внутри кнопки с фиксированной шириной.
+
+ - Cases:
+    - centered: Содержимое кнопки выравнивается по центру.
+    - sideBySide: Содержимое кнопки выравнивается бок о бок.
+ */
 public enum ButtonContentAlignment {
+    /**
+     Содержимое кнопки выравнивается по центру.
+     */
     case centered
+    
+    /**
+     Содержимое кнопки выравнивается по бокам (по левому и правому краю) .
+     */
     case sideBySide
 }
 
+
+/**
+ `ButtonIconAttributes` содержит атрибуты иконки для кнопки.
+
+ - Properties:
+    - image: Изображение иконки, которое будет отображаться на кнопке.
+    - alignment: Выравнивание иконки (левое или правое), определяемое `Alignment`.
+ */
 public struct ButtonIconAttributes {
+    /**
+     Изображение иконки, которое будет отображаться на кнопке.
+     */
     public let image: Image
+    
+    /**
+     Выравнивание иконки (левое или правое), определяемое `Alignment`.
+     */
     public let alignment: Alignment
+    
+    /**
+     Инициализатор для создания атрибутов иконки кнопки.
+     
+     - Parameters:
+        - image: Изображение иконки.
+        - alignment: Выравнивание иконки.
+     */
+    public init(image: Image, alignment: Alignment) {
+        self.image = image
+        self.alignment = alignment
+    }
 }
 
+/**
+ `ButtonStyle` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
+
+ - Properties:
+    - titleTypography: Типографика для заголовка кнопки, определяемая `TypographyToken`.
+    - titleColor: Цвет заголовка кнопки, определяемый `ColorToken`.
+    - subtitleTypography: Типографика для подзаголовка кнопки, определяемая `TypographyToken`.
+    - subtitleColor: Цвет подзаголовка кнопки, определяемый `ColorToken`.
+    - iconColor: Цвет иконки кнопки, определяемый `ColorToken`.
+    - spinnerColor: Цвет спиннера загрузки, определяемый `ColorToken`.
+    - backgroundColor: Цвет фона кнопки, определяемый `ColorToken`.
+
+ - Methods:
+    - init(titleTypography: TypographyToken, titleColor: ColorToken, subtitleTypography: TypographyToken, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
+ */
 public struct ButtonStyle {
+    /**
+     Типографика для заголовка кнопки, определяемая `TypographyToken`.
+     */
     public let titleTypography: TypographyToken
+    
+    /**
+     Цвет заголовка кнопки, определяемый `ColorToken`.
+     */
     public let titleColor: ColorToken
+    
+    /**
+     Типографика для подзаголовка кнопки, определяемая `TypographyToken`.
+     */
     public let subtitleTypography: TypographyToken
+    
+    /**
+     Цвет подзаголовка кнопки, определяемый `ColorToken`.
+     */
     public let subtitleColor: ColorToken
+    
+    /**
+     Цвет иконки кнопки, определяемый `ColorToken`.
+     */
     public let iconColor: ColorToken
+    
+    /**
+     Цвет спиннера загрузки, определяемый `ColorToken`.
+     */
     public let spinnerColor: ColorToken
+    
+    /**
+     Цвет фона кнопки, определяемый `ColorToken`.
+     */
     public let backgroundColor: ColorToken
+    
+    /**
+     Инициализатор для создания стиля кнопки с указанными параметрами.
+     
+     - Parameters:
+        - titleTypography: Типографика для заголовка кнопки.
+        - titleColor: Цвет заголовка кнопки.
+        - subtitleTypography: Типографика для подзаголовка кнопки.
+        - subtitleColor: Цвет подзаголовка кнопки.
+        - iconColor: Цвет иконки кнопки.
+        - spinnerColor: Цвет спиннера загрузки.
+        - backgroundColor: Цвет фона кнопки.
+     */
+    public init(titleTypography: TypographyToken, titleColor: ColorToken, subtitleTypography: TypographyToken, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken) {
+        self.titleTypography = titleTypography
+        self.titleColor = titleColor
+        self.subtitleTypography = subtitleTypography
+        self.subtitleColor = subtitleColor
+        self.iconColor = iconColor
+        self.spinnerColor = spinnerColor
+        self.backgroundColor = backgroundColor
+    }
 }
 
+/**
+ `SDDSButtonViewModel` содержит параметры и логику для управления кнопкой SDDSButton.
+
+ - Parameters:
+    - title: Текст, который будет отображаться на кнопке. По умолчанию пустая строка.
+    - subtitle: Дополнительный текст, который будет отображаться на кнопке под заголовком. По умолчанию пустая строка.
+    - iconAttributes: Атрибуты иконки для кнопки, включая изображение и выравнивание. Может быть nil, если иконка не используется.
+    - size: Размер кнопки, использующий `ButtonSize` для определения высоты, радиуса скругления и отступов.
+    - isDisabled: Флаг, указывающий, отключена ли кнопка. Если true, кнопка становится неактивной. По умолчанию false.
+    - isLoading: Флаг, указывающий, находится ли кнопка в состоянии загрузки. Если true, отображается спиннер. По умолчанию false.
+    - spinnerImage: Изображение, используемое для спиннера загрузки. По умолчанию системная иконка "arrow.triangle.2.circlepath".
+    - spinnerStyle: Стиль спиннера, определяемый `SpinnerStyle` (solid или transparent). По умолчанию solid.
+    - style: Стиль кнопки, включающий типографику, цвета текста, иконок и фона, определяемый `ButtonStyle`.
+    - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (wrapContent, fixedWidth, square, circle). По умолчанию wrapContent.
+ */
 public final class SDDSButtonViewModel: ObservableObject {
-    @Published public var title: String?
-    @Published public var subtitle: String?
+    @Published public var title: String
+    @Published public var subtitle: String
     @Published public var iconAttributes: ButtonIconAttributes?
     @Published public var size: ButtonSize
     @Published public var isDisabled: Bool
@@ -71,9 +289,9 @@ public final class SDDSButtonViewModel: ObservableObject {
     @Published public var layoutMode: ButtonLayoutMode
      
     public var action: () -> Void
-    
-    public init(title: String?,
-                subtitle: String? = nil,
+
+    public init(title: String = "",
+                subtitle: String = "",
                 iconAttributes: ButtonIconAttributes? = nil,
                 size: ButtonSize = .medium,
                 isDisabled: Bool = false,
@@ -115,11 +333,11 @@ public final class SDDSButtonViewModel: ObservableObject {
     }
     
     var isOnlyTitleAndImage: Bool {
-        layoutMode.isSideBySide && title != nil && subtitle == nil && iconAttributes != nil
+        layoutMode.isSideBySide && !title.isEmpty && subtitle.isEmpty && iconAttributes != nil
     }
     
     var isSideBySide: Bool {
-        layoutMode.isSideBySide && (subtitle != nil || iconAttributes != nil)
+        layoutMode.isSideBySide && (!subtitle.isEmpty || iconAttributes != nil)
     }
     
     var isIconRightAligned: Bool {
