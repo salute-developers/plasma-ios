@@ -5,41 +5,41 @@ import SDDSThemeCore
 
 extension SDDSButtonViewModel {
     static func textOnly(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", size: size, appearance: .black, layoutMode: layoutMode)
     }
     
     static func textWithImage(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, appearance: .black, layoutMode: layoutMode)
     }
     
     static func textWithSubtitle(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", subtitle: "Value", size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", subtitle: "Value", size: size, appearance: .black, layoutMode: layoutMode)
     }
     
     static func textWithImageAndSubtitle(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, appearance: .black, layoutMode: layoutMode)
     }
     
     static func textOnlyLoading(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isLoading: true, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", size: size, isLoading: true, appearance: .black, layoutMode: layoutMode)
     }
     
     static func textOnlyLoadingTransparent(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isLoading: true, spinnerStyle: .transparent, style: .transparent, layoutMode: layoutMode)
+        .init(title: "Label", size: size, isLoading: true, spinnerStyle: .transparent, appearance: .transparent, layoutMode: layoutMode)
     }
     
     static func textOnlyDisabled(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
-        .init(title: "Label", size: size, isDisabled: true, style: .black, layoutMode: layoutMode)
+        .init(title: "Label", size: size, isDisabled: true, appearance: .black, layoutMode: layoutMode)
     }
     
-    static func equilateral(size: ButtonSize, layoutMode: ButtonLayoutMode, isLoading: Bool = false) -> SDDSButtonViewModel {
-        .init(title: "", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: .left), size: size, isLoading: isLoading, style: .black, layoutMode: layoutMode)
+    static func equilateral(size: ButtonSize, buttonStyle: ButtonStyle, isLoading: Bool = false) -> SDDSButtonViewModel {
+        .init(title: "", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: .left), size: size, isLoading: isLoading, buttonStyle: buttonStyle, appearance: .black)
     }
 }
 
-public extension ButtonStyle {
-    static var black: ButtonStyle {
-        ButtonStyle(
+public extension ButtonAppearance {
+    static var black: ButtonAppearance {
+        .init(
             titleTypography: ButtonTypography.default,
             titleColor: ColorToken.titleColor,
             subtitleTypography: ButtonTypography.default,
@@ -50,8 +50,8 @@ public extension ButtonStyle {
         )
     }
     
-    static var transparent: ButtonStyle {
-        ButtonStyle(
+    static var transparent: ButtonAppearance {
+        .init(
             titleTypography: ButtonTypography.default,
             titleColor: ColorToken.blackTitleColor,
             subtitleTypography: ButtonTypography.default,

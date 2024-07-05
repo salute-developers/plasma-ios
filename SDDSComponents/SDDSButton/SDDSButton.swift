@@ -17,14 +17,15 @@ public struct SDDSButton: View {
             Button {
                 viewModel.action()
             } label: {
-                if viewModel.isEquilateral {
-                    equilateralButton
-                } else {
+                switch viewModel.buttonStyle {
+                case .basic:
                     basicButton
+                case .square, .circle:
+                    equilateralButton
                 }
             }
             .opacity(viewModel.contentOpacity)
-            .background(viewModel.style.backgroundColor.color(for: colorScheme).opacity(viewModel.backgroundOpacity))
+            .background(viewModel.backgroundColor(for: colorScheme))
             .applyIf(!viewModel.isCircle, transform: { $0.cornerRadius(viewModel.size.cornerRadius) })
             .frame(height: viewModel.size.height)
             .disabled(viewModel.isDisabled)
@@ -36,22 +37,16 @@ public struct SDDSButton: View {
         }
         .applyIf(viewModel.isCircle, transform: { $0.clipShape(Circle()) })
     }
-    
-    @ViewBuilder
-    private var equilateralButton: some View {
-        icon
-            .frame(width: viewModel.size.height, height: viewModel.size.height)
-    }
-    
+        
     @ViewBuilder
     private var basicButton: some View {
         HStack {
             if viewModel.isCentered {
                 Spacer()
             }
-            if !viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
+            if viewModel.shouldShowLeftAlignedIcon() {
                 icon
-                if !viewModel.isEquilateral && !viewModel.title.isEmpty {
+                if !viewModel.title.isEmpty {
                     Spacer().frame(width: Spacing.eight)
                 }
             }
@@ -59,7 +54,7 @@ public struct SDDSButton: View {
                 Text(viewModel.title)
                     .font(viewModel.titleTypography.font)
                     .fontWeight(viewModel.titleTypography.weight.sui)
-                    .foregroundColor(viewModel.style.titleColor.color(for: colorScheme))
+                    .foregroundColor(viewModel.appearance.titleColor.color(for: colorScheme))
             }
             if viewModel.isSideBySide {
                 Spacer()
@@ -71,10 +66,10 @@ public struct SDDSButton: View {
                 Text(viewModel.subtitle)
                     .font(viewModel.subtitleTypography.font)
                     .fontWeight(viewModel.subtitleTypography.weight.sui)
-                    .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
+                    .foregroundColor(viewModel.appearance.subtitleColor.color(for: colorScheme))
             }
-            if viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
-                if !viewModel.title.isEmpty || !viewModel.subtitle.isEmpty {
+            if viewModel.shouldShowRightAlignedIcon() {
+                if viewModel.hasTitleOrSubtitle() {
                     Spacer().frame(width: Spacing.four)
                 }
                 icon
@@ -93,22 +88,31 @@ public struct SDDSButton: View {
     }
     
     @ViewBuilder
+    private var equilateralButton: some View {
+        Group {
+            if viewModel.hasIconAttributes() {
+                icon
+            } else {
+                Spacer()
+            }
+        }
+        .frame(width: viewModel.size.height, height: viewModel.size.height)
+    }
+    
+    @ViewBuilder
     private var icon: some View {
         if let iconAttributes = viewModel.iconAttributes {
             iconAttributes.image
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(viewModel.style.iconColor.color(for: colorScheme))
+                .foregroundColor(viewModel.appearance.iconColor.color(for: colorScheme))
                 .frame(
                     width: viewModel.size.iconSize.width,
                     height: viewModel.size.iconSize.height
                 )
         } else {
-            VStack {
-                Spacer()
-            }
-                .foregroundColor(.red)
+            EmptyView()
         }
     }
     
@@ -117,7 +121,7 @@ public struct SDDSButton: View {
         if viewModel.isLoading {
             SpinnerView(
                 image: viewModel.spinnerImage,
-                foregroundColor: viewModel.style.spinnerColor.color(for: colorScheme)
+                foregroundColor: viewModel.appearance.spinnerColor.color(for: colorScheme)
             )
         } else {
             EmptyView()
@@ -126,11 +130,7 @@ public struct SDDSButton: View {
 }
 
 struct SDDSButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SDDSButton(viewModel: SDDSButtonViewModel.equilateral(size: .large, layoutMode: .circle))
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Large square button")
-        
+    static var previews: some View {        
         // Button with title
         SDDSButtonPreviewTextOnly.previews
         

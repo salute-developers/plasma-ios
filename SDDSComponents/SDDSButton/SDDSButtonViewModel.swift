@@ -4,6 +4,26 @@ import Combine
 @_exported import SDDSThemeCore
 
 /**
+ `ButtonStyle` определяет стили кнопки, такие как базовая, квадратная или круглая.
+
+ - Cases:
+    - basic: Базовый стиль кнопки.
+    - square: Кнопка квадратной формы.
+    - circle: Кнопка круглой формы.
+ */
+public enum ButtonStyle: String, CaseIterable {
+    /// Базовый стиль кнопки.
+    case basic
+    
+    /// Кнопка квадратной формы.
+    case square
+    
+    /// Кнопка круглой формы.
+    case circle
+}
+
+
+/**
  `Alignment` определяет выравнивание иконки внутри кнопки.
 
  - Cases:
@@ -70,21 +90,11 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
     case fixedWidth(ButtonContentAlignment)
     
     /**
-     Кнопка имеет квадратную форму, где высота равна ширине.
-     */
-    case square
-    
-    /**
-     Кнопка имеет круглую форму, где высота равна ширине.
-     */
-    case circle
-    
-    /**
      Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
      */
     var isCentered: Bool {
         switch self {
-        case .wrapContent, .square, .circle:
+        case .wrapContent:
             return false
         case .fixedWidth(let alignment):
             return alignment == .centered
@@ -96,7 +106,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
      */
     var isSideBySide: Bool {
         switch self {
-        case .wrapContent, .square, .circle:
+        case .wrapContent:
             return false
         case .fixedWidth(let alignment):
             return alignment == .sideBySide
@@ -117,10 +127,6 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             case .sideBySide:
                 return "Side by side"
             }
-        case .square:
-            return "Square"
-        case .circle:
-            return "Circle"
         }
     }
     
@@ -132,7 +138,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
      Все возможные случаи `ButtonLayoutMode`.
      */
     public static var allCases: [ButtonLayoutMode] {
-        return [.wrapContent, .fixedWidth(.centered), .fixedWidth(.sideBySide), .square, .circle]
+        return [.wrapContent, .fixedWidth(.centered), .fixedWidth(.sideBySide)]
     }
 }
 
@@ -187,12 +193,25 @@ public struct ButtonIconAttributes {
     }
 }
 
+/**
+ `ButtonTypography` содержит типографику для заголовков кнопки для каждого размера кнопки.
+
+ - Properties:
+    - large: Типографика для больших кнопок.
+    - medium: Типографика для средних кнопок.
+    - small: Типографика для маленьких кнопок.
+    - xs: Типографика для очень маленьких кнопок.
+    - xxs: Типографика для самых маленьких кнопок.
+
+ - Methods:
+    - typography(with size: ButtonSize): Возвращает типографику для заданного размера кнопки.
+ */
 public struct ButtonTypography {
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
-    let xs: TypographyToken?
-    let xxs: TypographyToken?
+    public let large: TypographyToken?
+    public let medium: TypographyToken?
+    public let small: TypographyToken?
+    public let xs: TypographyToken?
+    public let xxs: TypographyToken?
     
     public init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?, xs: TypographyToken?, xxs: TypographyToken?) {
         self.large = large
@@ -202,38 +221,44 @@ public struct ButtonTypography {
         self.xxs = xxs
     }
     
+    /**
+     Возвращает типографику для заданного размера кнопки.
+     
+     - Parameter size: Размер кнопки.
+     - Returns: Типографика для заданного размера кнопки или nil, если не задана.
+     */
     public func typography(with size: ButtonSize) -> TypographyToken? {
         switch size {
         case .large:
-            large
+            return large
         case .medium:
-            medium
+            return medium
         case .small:
-            small
+            return small
         case .xs:
-            xs
+            return xs
         case .xxs:
-            xxs
+            return xxs
         }
     }
 }
 
 /**
- `ButtonStyle` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
+ `ButtonAppearance` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
 
  - Properties:
-    - titleTypographyAttributes: Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
+    - titleTypography: Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
     - titleColor: Цвет заголовка кнопки, определяемый `ColorToken`.
-    - subtitleTypographyAttributes: Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
+    - subtitleTypography: Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
     - subtitleColor: Цвет подзаголовка кнопки, определяемый `ColorToken`.
     - iconColor: Цвет иконки кнопки, определяемый `ColorToken`.
     - spinnerColor: Цвет спиннера загрузки, определяемый `ColorToken`.
     - backgroundColor: Цвет фона кнопки, определяемый `ColorToken`.
 
  - Methods:
-    - init(titleTypographyAttributes: [ButtonSize: TypographyToken], titleColor: ColorToken, subtitleTypographyAttributes: [ButtonSize: TypographyToken], subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
+    - init(titleTypography: ButtonTypography, titleColor: ColorToken, subtitleTypography: ButtonTypography, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
  */
-public struct ButtonStyle {
+public struct ButtonAppearance {
     /**
      Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
@@ -273,9 +298,9 @@ public struct ButtonStyle {
      Инициализатор для создания стиля кнопки с указанными параметрами.
      
      - Parameters:
-        - titleTypographyAttributes: Типографика для заголовка кнопки.
+        - titleTypography: Типографика для заголовка кнопки.
         - titleColor: Цвет заголовка кнопки.
-        - subtitleTypographyAttributes: Типографика для подзаголовка кнопки.
+        - subtitleTypography: Типографика для подзаголовка кнопки.
         - subtitleColor: Цвет подзаголовка кнопки.
         - iconColor: Цвет иконки кнопки.
         - spinnerColor: Цвет спиннера загрузки.
@@ -299,7 +324,6 @@ public struct ButtonStyle {
     }
 }
 
-
 /**
  `SDDSButtonViewModel` содержит параметры и логику для управления кнопкой SDDSButton.
 
@@ -310,10 +334,11 @@ public struct ButtonStyle {
     - size: Размер кнопки, использующий `ButtonSize` для определения высоты, радиуса скругления и отступов.
     - isDisabled: Флаг, указывающий, отключена ли кнопка. Если true, кнопка становится неактивной. По умолчанию false.
     - isLoading: Флаг, указывающий, находится ли кнопка в состоянии загрузки. Если true, отображается спиннер. По умолчанию false.
-    - spinnerImage: Изображение, используемое для спиннера загрузки. Есть иконка по умолчанию..
+    - spinnerImage: Изображение, используемое для спиннера загрузки. Есть иконка по умолчанию.
     - spinnerStyle: Стиль спиннера, определяемый `SpinnerStyle` (solid или transparent). По умолчанию solid.
-    - style: Стиль кнопки, включающий типографику, цвета текста, иконок и фона, определяемый `ButtonStyle`.
-    - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (wrapContent, fixedWidth, square, circle). По умолчанию wrapContent.
+    - buttonStyle: Стиль кнопки, определяемый `ButtonStyle` (basic, circle, square). По умолчанию basic.
+    - appearance: Внешний вид кнопки, включающий типографику, цвета текста, иконок и фона, определяемый `ButtonAppearance`.
+    - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (wrapContent, fixedWidth). По умолчанию wrapContent.
  */
 public final class SDDSButtonViewModel: ObservableObject {
     @Published public var title: String
@@ -324,11 +349,29 @@ public final class SDDSButtonViewModel: ObservableObject {
     @Published public var isLoading: Bool
     @Published public var spinnerImage: Image
     @Published public var spinnerStyle: SpinnerStyle
-    @Published public var style: ButtonStyle
+    @Published public var buttonStyle: SDDSComponents.ButtonStyle
+    @Published public var appearance: ButtonAppearance
     @Published public var layoutMode: ButtonLayoutMode
      
     public var action: () -> Void
 
+    /**
+     Инициализатор для создания ViewModel кнопки с указанными параметрами.
+     
+     - Parameters:
+        - title: Текст, который будет отображаться на кнопке. По умолчанию пустая строка.
+        - subtitle: Дополнительный текст, который будет отображаться на кнопке под заголовком. По умолчанию пустая строка.
+        - iconAttributes: Атрибуты иконки для кнопки, включая изображение и выравнивание. Может быть nil, если иконка не используется.
+        - size: Размер кнопки, использующий `ButtonSize` для определения высоты, радиуса скругления и отступов.
+        - isDisabled: Флаг, указывающий, отключена ли кнопка. Если true, кнопка становится неактивной. По умолчанию false.
+        - isLoading: Флаг, указывающий, находится ли кнопка в состоянии загрузки. Если true, отображается спиннер. По умолчанию false.
+        - spinnerImage: Изображение, используемое для спиннера загрузки. Есть иконка по умолчанию.
+        - spinnerStyle: Стиль спиннера, определяемый `SpinnerStyle` (solid или transparent). По умолчанию solid.
+        - buttonStyle: Стиль кнопки, определяемый `ButtonStyle` (basic, circle, square). По умолчанию basic.
+        - appearance: Внешний вид кнопки, включающий типографику, цвета текста, иконок и фона, определяемый `ButtonAppearance`.
+        - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (wrapContent, fixedWidth). По умолчанию wrapContent.
+        - action: Действие, выполняемое при нажатии на кнопку. По умолчанию пустое действие.
+     */
     public init(title: String = "",
                 subtitle: String = "",
                 iconAttributes: ButtonIconAttributes? = nil,
@@ -337,7 +380,8 @@ public final class SDDSButtonViewModel: ObservableObject {
                 isLoading: Bool = false,
                 spinnerImage: Image = Image("spinner", bundle: Bundle(for: SDDSButtonViewModel.self)),
                 spinnerStyle: SpinnerStyle = .solid,
-                style: ButtonStyle,
+                buttonStyle: SDDSComponents.ButtonStyle = .basic,
+                appearance: ButtonAppearance,
                 layoutMode: ButtonLayoutMode = .wrapContent,
                 action: @escaping () -> Void = {}) {
         self.title = title
@@ -348,20 +392,39 @@ public final class SDDSButtonViewModel: ObservableObject {
         self.isLoading = isLoading
         self.spinnerImage = spinnerImage
         self.spinnerStyle = spinnerStyle
-        self.style = style
+        self.buttonStyle = buttonStyle
+        self.appearance = appearance
         self.layoutMode = layoutMode
         self.action = action
+    }
+    
+    private var isOnlyTitleAndImage: Bool {
+        layoutMode.isSideBySide && !title.isEmpty && subtitle.isEmpty && iconAttributes != nil
+    }
+    
+    private var isIconRightAligned: Bool {
+        iconAttributes?.alignment == .right || (iconAttributes?.alignment == .left && isOnlyTitleAndImage)
+    }
+}
+
+extension SDDSButtonViewModel {
+    func hasIconAttributes() -> Bool {
+        return iconAttributes != nil
     }
     
     var backgroundOpacity: Double {
         isDisabled ? Opacity.fourty : 1.0
     }
     
+    func backgroundColor(for colorScheme: ColorScheme) -> Color {
+        appearance.backgroundColor.color(for: colorScheme).opacity(backgroundOpacity)
+    }
+    
     var contentOpacity: Double {
         if isLoading && spinnerStyle == .solid {
             0.0
         } else if spinnerStyle == .transparent {
-            Opacity.twenty
+            0.24
         } else {
             1.0
         }
@@ -371,52 +434,42 @@ public final class SDDSButtonViewModel: ObservableObject {
         layoutMode.isCentered
     }
     
-    var isOnlyTitleAndImage: Bool {
-        layoutMode.isSideBySide && !title.isEmpty && subtitle.isEmpty && iconAttributes != nil
-    }
-    
     var isSideBySide: Bool {
         layoutMode.isSideBySide && (!subtitle.isEmpty || iconAttributes != nil)
     }
     
-    var isIconRightAligned: Bool {
-        iconAttributes?.alignment == .right || (iconAttributes?.alignment == .left && isOnlyTitleAndImage)
-    }
-    
     var isEquilateral: Bool {
-        switch layoutMode {
-        case .wrapContent, .fixedWidth:
-            false
-        case .square, .circle:
-            true
+        switch buttonStyle {
+        case .circle, .square:
+            return true
+        case .basic:
+            return false
         }
     }
     
     var isCircle: Bool {
-        switch layoutMode {
+        switch buttonStyle {
         case .circle:
-            true
-        case .fixedWidth, .wrapContent, .square:
-            false
+            return true
+        case .basic, .square:
+            return false
         }
     }
     
     func shouldShowRightAlignedIcon() -> Bool {
-        return isIconRightAligned && iconAttributes != nil
-    }
-    
-    func shouldCenterContent() -> Bool {
-        return layoutMode.isCentered
-    }
-    
-    func hasIconAttributes() -> Bool {
-        return iconAttributes != nil
+        return isIconRightAligned && hasIconAttributes()
     }
 
+    func shouldShowLeftAlignedIcon() -> Bool {
+        return !shouldShowRightAlignedIcon() && hasIconAttributes()
+    }
+        
+    func hasTitleOrSubtitle() -> Bool {
+        return !title.isEmpty || !subtitle.isEmpty
+    }
 
-    
-    var titleTypography: TypographyToken {
-        if let typography = style.titleTypography.typography(with: size) {
+    public var titleTypography: TypographyToken {
+        if let typography = appearance.titleTypography.typography(with: size) {
             return typography
         } else {
             print("Button Typography for size \(size.rawValue). Using a default value.")
@@ -424,8 +477,8 @@ public final class SDDSButtonViewModel: ObservableObject {
         }
     }
     
-    var subtitleTypography: TypographyToken {
-        if let typography = style.subtitleTypography.typography(with: size) {
+    public var subtitleTypography: TypographyToken {
+        if let typography = appearance.subtitleTypography.typography(with: size) {
             return typography
         } else {
             print("Button Typography for size \(size.rawValue). Using a default value.")
