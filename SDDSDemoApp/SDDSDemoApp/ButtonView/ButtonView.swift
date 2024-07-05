@@ -17,7 +17,7 @@ final class ButtonViewModel: ObservableObject {
     private func observeValues() {
         buttonViewModel.$size
             .combineLatest(buttonViewModel.$layoutMode)
-            .sink { [weak self] size in
+            .sink { [weak self] arguments in
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)

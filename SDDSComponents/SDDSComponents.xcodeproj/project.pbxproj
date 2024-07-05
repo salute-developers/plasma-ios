@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
+		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
 		81998FDD2C34460F009074B7 /* SDDSButtonViewModel+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FDC2C34460F009074B7 /* SDDSButtonViewModel+Preview.swift */; };
 		81998FDF2C344640009074B7 /* SDDSButtonPreviewTextOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FDE2C344640009074B7 /* SDDSButtonPreviewTextOnly.swift */; };
 		81998FE12C3446A7009074B7 /* SDDSButtonPreviewTextWithLeftIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FE02C3446A7009074B7 /* SDDSButtonPreviewTextWithLeftIcon.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		817D9F182C37078F006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = "/Users/vladimirkaltyrin/plasma-ios/SDDSDemoApp/../build/SDDSIcons.xcframework"; sourceTree = "<absolute>"; };
 		81998FD82C343F4A009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../SDDSIcons/build/SDDSIcons.xcframework; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				814185C92C34260300D8E524 /* ButtonSize.swift */,
 			);
 			path = SDDSButton;
+			sourceTree = "<group>";
+		};
+		817580E72C37E02800E45207 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				817580E82C37E04000E45207 /* SpinnerView.swift */,
+			);
+			path = Spinner;
 			sourceTree = "<group>";
 		};
 		81998FD32C3436E1009074B7 /* Frameworks */ = {
@@ -155,6 +165,7 @@
 				81998FF72C355033009074B7 /* Extensions */,
 				81998FF32C354C7F009074B7 /* Assets.xcassets */,
 				81998FEE2C353E04009074B7 /* Fonts */,
+				817580E72C37E02800E45207 /* Spinner */,
 				814185C82C3424EA00D8E524 /* SDDSButton */,
 				81D2B18F2C32B39B00CAA7FD /* SDDSComponents */,
 				81D2B18E2C32B39B00CAA7FD /* Products */,
@@ -276,6 +287,7 @@
 				81998FE92C344B8A009074B7 /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift in Sources */,
 				81998FE32C344716009074B7 /* SDDSButtonPreviewTextWithRightIcon.swift in Sources */,
 				81998FDF2C344640009074B7 /* SDDSButtonPreviewTextOnly.swift in Sources */,
+				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,10 +40,10 @@ extension SDDSButtonViewModel {
 public extension ButtonStyle {
     static var black: ButtonStyle {
         ButtonStyle(
-            titleTypography: TypographyToken.semibold18,
+            titleTypography: ButtonTypography.default,
             titleColor: ColorToken.titleColor,
-            subtitleTypography: TypographyToken.semibold18,
-            subtitleColor: ColorToken.subtitleColor, 
+            subtitleTypography: ButtonTypography.default,
+            subtitleColor: ColorToken.subtitleColor,
             iconColor: ColorToken.titleColor, 
             spinnerColor: ColorToken.titleColor,
             backgroundColor: ColorToken.backgroundColor
@@ -52,13 +52,25 @@ public extension ButtonStyle {
     
     static var transparent: ButtonStyle {
         ButtonStyle(
-            titleTypography: TypographyToken.semibold18,
+            titleTypography: ButtonTypography.default,
             titleColor: ColorToken.blackTitleColor,
-            subtitleTypography: TypographyToken.semibold18,
+            subtitleTypography: ButtonTypography.default,
             subtitleColor: ColorToken.blackTitleColor,
             iconColor: ColorToken.blackTitleColor,
             spinnerColor: ColorToken.blackTitleColor,
             backgroundColor: ColorToken.clearColor
+        )
+    }
+}
+
+extension ButtonTypography {
+    static var `default`: ButtonTypography {
+        ButtonTypography(
+            large: TypographyToken.semibold18,
+            medium: TypographyToken.semibold16,
+            small: TypographyToken.semibold14,
+            xs: TypographyToken.semibold12,
+            xxs: TypographyToken.semibold12
         )
     }
 }
@@ -70,6 +82,39 @@ extension TypographyToken {
             weight: .semibold,
             style: .normal,
             size: 18,
+            lineHeight: 22,
+            kerning: 0
+        )
+    }
+    
+    static var semibold16: TypographyToken {
+        .init(
+            fontName: "SF Pro",
+            weight: .semibold,
+            style: .normal,
+            size: 16,
+            lineHeight: 22,
+            kerning: 0
+        )
+    }
+    
+    static var semibold14: TypographyToken {
+        .init(
+            fontName: "SF Pro",
+            weight: .semibold,
+            style: .normal,
+            size: 14,
+            lineHeight: 22,
+            kerning: 0
+        )
+    }
+    
+    static var semibold12: TypographyToken {
+        .init(
+            fontName: "SF Pro",
+            weight: .semibold,
+            style: .normal,
+            size: 12,
             lineHeight: 22,
             kerning: 0
         )

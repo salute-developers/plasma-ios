@@ -3,7 +3,7 @@ import SwiftUI
 
 struct SDDSButtonPreviewTextOnly: PreviewProvider {
     static var previews: some View {
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .large))
+        SDDSButton(viewModel: SDDSButtonViewModel.textOnly(size: .large, layoutMode: .wrapContent))
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Large button with text")
         

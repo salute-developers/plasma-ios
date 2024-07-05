@@ -6,63 +6,88 @@ import SDDSIcons
 public struct SDDSButton: View {
     @ObservedObject private var viewModel: SDDSButtonViewModel
     @Environment(\.colorScheme) var colorScheme
+    @State var isAnimating = false
     
     public init(viewModel: SDDSButtonViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
-        Button {
-            viewModel.action()
-        } label: {
-            ZStack {
-                HStack {
-                    if viewModel.isCentered {
-                        Spacer()
-                    }
-                    if !viewModel.isIconRightAligned {
-                        icon
-                        if !viewModel.isEquilateral {
-                            Spacer().frame(width: Spacing.eight)
-                        }
-                    }
-                    if !viewModel.title.isEmpty {
-                        Text(viewModel.title)
-                            .font(viewModel.style.titleTypography.font)
-                            .fontWeight(viewModel.style.titleTypography.weight.sui)
-                            .foregroundColor(viewModel.style.titleColor.color(for: colorScheme))
-                    }
-                    if viewModel.isSideBySide {
-                        Spacer()
-                    }
-                    if !viewModel.subtitle.isEmpty {
-                        Spacer().frame(width: Spacing.four)
-                        Text(viewModel.subtitle)
-                            .font(viewModel.style.subtitleTypography.font)
-                            .fontWeight(viewModel.style.subtitleTypography.weight.sui)
-                            .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
-                    }
-                    if viewModel.isIconRightAligned {
-                        Spacer().frame(width: Spacing.four)
-                        icon
-                    }
-                    if viewModel.isCentered {
-                        Spacer()
-                    }
-                }
-                .opacity(viewModel.contentOpacity)
-                if viewModel.isLoading {
-                    spinner
+        ZStack {
+            Button {
+                viewModel.action()
+            } label: {
+                if viewModel.isEquilateral {
+                    equilateralButton
+                } else {
+                    basicButton
                 }
             }
-            .padding(viewModel.size.paddings)
+            .opacity(viewModel.contentOpacity)
             .background(viewModel.style.backgroundColor.color(for: colorScheme).opacity(viewModel.backgroundOpacity))
-            .cornerRadius(viewModel.size.cornerRadius)
+            .applyIf(!viewModel.isCircle, transform: { $0.cornerRadius(viewModel.size.cornerRadius) })
             .frame(height: viewModel.size.height)
-            .applyIf(viewModel.isEquilateral, transform: { $0.frame(width: viewModel.size.height) })
-            .applyIf(viewModel.isCircle, transform: { $0.clipShape(Circle()) })
+            .disabled(viewModel.isDisabled)
+            
+            if viewModel.isLoading {
+                spinner
+                    .frame(width: viewModel.size.spinnerSize.width, height: viewModel.size.spinnerSize.height)
+            }
         }
-        .disabled(viewModel.isDisabled)
+        .applyIf(viewModel.isCircle, transform: { $0.clipShape(Circle()) })
+    }
+    
+    @ViewBuilder
+    private var equilateralButton: some View {
+        icon
+            .frame(width: viewModel.size.height, height: viewModel.size.height)
+    }
+    
+    @ViewBuilder
+    private var basicButton: some View {
+        HStack {
+            if viewModel.isCentered {
+                Spacer()
+            }
+            if !viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
+                icon
+                if !viewModel.isEquilateral {
+                    Spacer().frame(width: Spacing.eight)
+                }
+            }
+            if !viewModel.title.isEmpty {
+                Text(viewModel.title)
+                    .font(viewModel.titleTypography.font)
+                    .fontWeight(viewModel.titleTypography.weight.sui)
+                    .foregroundColor(viewModel.style.titleColor.color(for: colorScheme))
+            }
+            if viewModel.isSideBySide {
+                Spacer()
+            }
+            if !viewModel.subtitle.isEmpty {
+                if !viewModel.title.isEmpty {
+                    Spacer().frame(width: Spacing.four)
+                }
+                Text(viewModel.subtitle)
+                    .font(viewModel.subtitleTypography.font)
+                    .fontWeight(viewModel.subtitleTypography.weight.sui)
+                    .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
+            }
+            if viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
+                Spacer().frame(width: Spacing.four)
+                icon
+            }
+            if viewModel.isCentered {
+                Spacer()
+            }
+        }
+        .frame(
+            minHeight: max(
+                viewModel.subtitleTypography.lineHeight,
+                viewModel.titleTypography.lineHeight
+            )
+        )
+        .padding(viewModel.size.paddings)
     }
     
     @ViewBuilder
@@ -78,21 +103,23 @@ public struct SDDSButton: View {
                     height: viewModel.size.iconSize.height
                 )
         } else {
-            EmptyView()
+            VStack {
+                Spacer()
+            }
+                .foregroundColor(.red)
         }
     }
     
     @ViewBuilder
     private var spinner: some View {
-        viewModel.spinnerImage
-            .foregroundColor(viewModel.style.spinnerColor.color(for: colorScheme))
-            .rotationEffect(Angle(degrees: viewModel.isLoading ? 360 : 0))
-            .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: viewModel.isLoading)
-            .onAppear {
-                viewModel.isLoading = true
-            }
-            .frame(width: viewModel.size.spinnerSize.width, height: viewModel.size.spinnerSize.height)
-            .fixedSize()
+        if viewModel.isLoading {
+            SpinnerView(
+                image: viewModel.spinnerImage,
+                foregroundColor: viewModel.style.spinnerColor.color(for: colorScheme)
+            )
+        } else {
+            EmptyView()
+        }
     }
 }
 

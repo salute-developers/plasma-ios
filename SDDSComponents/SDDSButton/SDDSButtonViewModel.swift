@@ -187,26 +187,57 @@ public struct ButtonIconAttributes {
     }
 }
 
+public struct ButtonTypography {
+    let large: TypographyToken?
+    let medium: TypographyToken?
+    let small: TypographyToken?
+    let xs: TypographyToken?
+    let xxs: TypographyToken?
+    
+    public init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?, xs: TypographyToken?, xxs: TypographyToken?) {
+        self.large = large
+        self.medium = medium
+        self.small = small
+        self.xs = xs
+        self.xxs = xxs
+    }
+    
+    public func typography(with size: ButtonSize) -> TypographyToken? {
+        switch size {
+        case .large:
+            large
+        case .medium:
+            medium
+        case .small:
+            small
+        case .xs:
+            xs
+        case .xxs:
+            xxs
+        }
+    }
+}
+
 /**
  `ButtonStyle` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
 
  - Properties:
-    - titleTypography: Типографика для заголовка кнопки, определяемая `TypographyToken`.
+    - titleTypographyAttributes: Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
     - titleColor: Цвет заголовка кнопки, определяемый `ColorToken`.
-    - subtitleTypography: Типографика для подзаголовка кнопки, определяемая `TypographyToken`.
+    - subtitleTypographyAttributes: Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
     - subtitleColor: Цвет подзаголовка кнопки, определяемый `ColorToken`.
     - iconColor: Цвет иконки кнопки, определяемый `ColorToken`.
     - spinnerColor: Цвет спиннера загрузки, определяемый `ColorToken`.
     - backgroundColor: Цвет фона кнопки, определяемый `ColorToken`.
 
  - Methods:
-    - init(titleTypography: TypographyToken, titleColor: ColorToken, subtitleTypography: TypographyToken, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
+    - init(titleTypographyAttributes: [ButtonSize: TypographyToken], titleColor: ColorToken, subtitleTypographyAttributes: [ButtonSize: TypographyToken], subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
  */
 public struct ButtonStyle {
     /**
-     Типографика для заголовка кнопки, определяемая `TypographyToken`.
+     Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let titleTypography: TypographyToken
+    public let titleTypography: ButtonTypography
     
     /**
      Цвет заголовка кнопки, определяемый `ColorToken`.
@@ -214,9 +245,9 @@ public struct ButtonStyle {
     public let titleColor: ColorToken
     
     /**
-     Типографика для подзаголовка кнопки, определяемая `TypographyToken`.
+     Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let subtitleTypography: TypographyToken
+    public let subtitleTypography: ButtonTypography
     
     /**
      Цвет подзаголовка кнопки, определяемый `ColorToken`.
@@ -242,15 +273,22 @@ public struct ButtonStyle {
      Инициализатор для создания стиля кнопки с указанными параметрами.
      
      - Parameters:
-        - titleTypography: Типографика для заголовка кнопки.
+        - titleTypographyAttributes: Типографика для заголовка кнопки.
         - titleColor: Цвет заголовка кнопки.
-        - subtitleTypography: Типографика для подзаголовка кнопки.
+        - subtitleTypographyAttributes: Типографика для подзаголовка кнопки.
         - subtitleColor: Цвет подзаголовка кнопки.
         - iconColor: Цвет иконки кнопки.
         - spinnerColor: Цвет спиннера загрузки.
         - backgroundColor: Цвет фона кнопки.
      */
-    public init(titleTypography: TypographyToken, titleColor: ColorToken, subtitleTypography: TypographyToken, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken) {
+    public init(
+        titleTypography: ButtonTypography,
+        titleColor: ColorToken,
+        subtitleTypography: ButtonTypography,
+        subtitleColor: ColorToken,
+        iconColor: ColorToken,
+        spinnerColor: ColorToken,
+        backgroundColor: ColorToken) {
         self.titleTypography = titleTypography
         self.titleColor = titleColor
         self.subtitleTypography = subtitleTypography
@@ -260,6 +298,7 @@ public struct ButtonStyle {
         self.backgroundColor = backgroundColor
     }
 }
+
 
 /**
  `SDDSButtonViewModel` содержит параметры и логику для управления кнопкой SDDSButton.
@@ -271,7 +310,7 @@ public struct ButtonStyle {
     - size: Размер кнопки, использующий `ButtonSize` для определения высоты, радиуса скругления и отступов.
     - isDisabled: Флаг, указывающий, отключена ли кнопка. Если true, кнопка становится неактивной. По умолчанию false.
     - isLoading: Флаг, указывающий, находится ли кнопка в состоянии загрузки. Если true, отображается спиннер. По умолчанию false.
-    - spinnerImage: Изображение, используемое для спиннера загрузки. По умолчанию системная иконка "arrow.triangle.2.circlepath".
+    - spinnerImage: Изображение, используемое для спиннера загрузки. Есть иконка по умолчанию..
     - spinnerStyle: Стиль спиннера, определяемый `SpinnerStyle` (solid или transparent). По умолчанию solid.
     - style: Стиль кнопки, включающий типографику, цвета текста, иконок и фона, определяемый `ButtonStyle`.
     - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (wrapContent, fixedWidth, square, circle). По умолчанию wrapContent.
@@ -296,7 +335,7 @@ public final class SDDSButtonViewModel: ObservableObject {
                 size: ButtonSize = .medium,
                 isDisabled: Bool = false,
                 isLoading: Bool = false,
-                spinnerImage: Image = Image(systemName: "arrow.triangle.2.circlepath"),
+                spinnerImage: Image = Image("spinner", bundle: Bundle(for: SDDSButtonViewModel.self)),
                 spinnerStyle: SpinnerStyle = .solid,
                 style: ButtonStyle,
                 layoutMode: ButtonLayoutMode = .wrapContent,
@@ -359,6 +398,24 @@ public final class SDDSButtonViewModel: ObservableObject {
             true
         case .fixedWidth, .wrapContent, .square:
             false
+        }
+    }
+    
+    public var titleTypography: TypographyToken {
+        if let typography = style.titleTypography.typography(with: size) {
+            return typography
+        } else {
+            print("Button Typography for size \(size.rawValue). Using a default value.")
+            return .semibold16
+        }
+    }
+    
+    public var subtitleTypography: TypographyToken {
+        if let typography = style.subtitleTypography.typography(with: size) {
+            return typography
+        } else {
+            print("Button Typography for size \(size.rawValue). Using a default value.")
+            return .semibold16
         }
     }
 }
