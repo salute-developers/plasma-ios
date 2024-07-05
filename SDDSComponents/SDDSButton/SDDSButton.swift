@@ -51,7 +51,7 @@ public struct SDDSButton: View {
             }
             if !viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
                 icon
-                if !viewModel.isEquilateral {
+                if !viewModel.isEquilateral && !viewModel.title.isEmpty {
                     Spacer().frame(width: Spacing.eight)
                 }
             }
@@ -74,7 +74,9 @@ public struct SDDSButton: View {
                     .foregroundColor(viewModel.style.subtitleColor.color(for: colorScheme))
             }
             if viewModel.isIconRightAligned && viewModel.iconAttributes != nil {
-                Spacer().frame(width: Spacing.four)
+                if !viewModel.title.isEmpty || !viewModel.subtitle.isEmpty {
+                    Spacer().frame(width: Spacing.four)
+                }
                 icon
             }
             if viewModel.isCentered {

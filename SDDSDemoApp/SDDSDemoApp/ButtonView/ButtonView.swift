@@ -5,22 +5,58 @@ import SDDSComponents
 
 final class ButtonViewModel: ObservableObject {
     @Published var buttonViewModel: SDDSButtonViewModel
+    @Published var isIconVisible: Bool = false
+    @Published var alignment: SDDSComponents.Alignment = .left
     
     private var cancellables: Set<AnyCancellable> = []
     
     init(buttonViewModel: SDDSButtonViewModel = SDDSButtonViewModel(style: .black)) {
         self.buttonViewModel = buttonViewModel
             
-        observeValues()
+        observeButtonViewModelValues()
+        observeIcon()
     }
     
-    private func observeValues() {
+    private func observeButtonViewModelValues() {
         buttonViewModel.$size
             .combineLatest(buttonViewModel.$layoutMode)
-            .sink { [weak self] arguments in
+            .combineLatest(buttonViewModel.$iconAttributes)
+            .sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)
+    }
+    
+    private func observeIcon() {
+        $isIconVisible
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                if value {
+                    self.setIconAttributes(alignment: self.alignment)
+                } else {
+                    self.buttonViewModel.iconAttributes = nil
+                }
+            }
+            .store(in: &cancellables)
+        
+        $alignment
+            .sink { [weak self] value in
+                guard let self = self, isIconVisible else {
+                    return
+                }
+                self.setIconAttributes(alignment: value)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func setIconAttributes(alignment: SDDSComponents.Alignment) {
+        buttonViewModel.iconAttributes = iconAttributes(with: alignment)
+    }
+    
+    private func iconAttributes(with alignment: SDDSComponents.Alignment) -> ButtonIconAttributes {
+        .init(image: Image("buttonIcon"), alignment: alignment)
     }
 }
 
@@ -63,9 +99,21 @@ struct ButtonView: View {
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
-                    Text("Icon")
+                    Toggle("Icon", isOn: $viewModel.isIconVisible)
+                }
+                HStack {
+                    Text("Icon Alignment")
                     Spacer()
                         .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(SDDSComponents.Alignment.allCases, id: \.self) { alignment in
+                            Button(alignment.rawValue.capitalized) {
+                                viewModel.alignment = alignment
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.alignment.rawValue)
+                    }
                 }
                 HStack {
                     Text("Size")

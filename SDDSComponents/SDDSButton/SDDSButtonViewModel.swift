@@ -10,7 +10,7 @@ import Combine
     - left: Иконка выравнивается по левому краю.
     - right: Иконка выравнивается по правому краю.
  */
-public enum Alignment {
+public enum Alignment: String, CaseIterable {
     /**
      Иконка выравнивается по левому краю.
      */
@@ -29,7 +29,7 @@ public enum Alignment {
     - solid: Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
     - transparent: Спиннер прозрачный, оставляет содержимое кнопки полупрозрачным во время загрузки.
  */
-public enum SpinnerStyle {
+public enum SpinnerStyle: String, CaseIterable {
     /**
      Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
      */
@@ -401,7 +401,21 @@ public final class SDDSButtonViewModel: ObservableObject {
         }
     }
     
-    public var titleTypography: TypographyToken {
+    func shouldShowRightAlignedIcon() -> Bool {
+        return isIconRightAligned && iconAttributes != nil
+    }
+    
+    func shouldCenterContent() -> Bool {
+        return layoutMode.isCentered
+    }
+    
+    func hasIconAttributes() -> Bool {
+        return iconAttributes != nil
+    }
+
+
+    
+    var titleTypography: TypographyToken {
         if let typography = style.titleTypography.typography(with: size) {
             return typography
         } else {
@@ -410,7 +424,7 @@ public final class SDDSButtonViewModel: ObservableObject {
         }
     }
     
-    public var subtitleTypography: TypographyToken {
+    var subtitleTypography: TypographyToken {
         if let typography = style.subtitleTypography.typography(with: size) {
             return typography
         } else {
