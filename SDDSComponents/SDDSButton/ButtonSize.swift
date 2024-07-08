@@ -7,4 +7,6 @@ public protocol ButtonSizeConfiguration: CustomDebugStringConvertible {
     var paddings: EdgeInsets { get }
     var iconSize: CGSize { get }
     var spinnerSize: CGSize { get }
+    var iconHorizontalGap: CGFloat { get }
+    var titleHorizontalGap: CGFloat { get }
 }

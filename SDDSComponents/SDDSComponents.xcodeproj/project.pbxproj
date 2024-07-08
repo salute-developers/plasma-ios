@@ -10,9 +10,12 @@
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
+		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
+		818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */; };
+		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
+		818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */; platformFilter = ios; };
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
-		81998FFD2C3554F7009074B7 /* SDDSButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFC2C3554F7009074B7 /* SDDSButtonViewModel.swift */; };
 		819990002C3555D4009074B7 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
 		8199A16D2C3BF7B100AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */; };
 		81D1303B2C370B470085BB2B /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; };
@@ -22,6 +25,16 @@
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		818FE9412C3C403F00F64958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81D2B1842C32B39B00CAA7FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81D2B18C2C32B39B00CAA7FD;
+			remoteInfo = SDDSComponents;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		81D1303A2C370B3F0085BB2B /* Embed Frameworks */ = {
@@ -43,23 +56,16 @@
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		817D9F182C37078F006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButton+Extensions.swift"; sourceTree = "<group>"; };
+		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSComponentsTests.swift; sourceTree = "<group>"; };
 		81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = "/Users/vladimirkaltyrin/plasma-ios/SDDSDemoApp/../build/SDDSIcons.xcframework"; sourceTree = "<absolute>"; };
 		81998FD82C343F4A009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../SDDSIcons/build/SDDSIcons.xcframework; sourceTree = "<group>"; };
-		81998FDC2C34460F009074B7 /* SDDSButtonViewModel+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButtonViewModel+Preview.swift"; sourceTree = "<group>"; };
-		81998FDE2C344640009074B7 /* SDDSButtonPreviewTextOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextOnly.swift; sourceTree = "<group>"; };
-		81998FE02C3446A7009074B7 /* SDDSButtonPreviewTextWithLeftIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithLeftIcon.swift; sourceTree = "<group>"; };
-		81998FE22C344716009074B7 /* SDDSButtonPreviewTextWithRightIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithRightIcon.swift; sourceTree = "<group>"; };
-		81998FE42C344B54009074B7 /* SDDSButtonPreviewTextWithSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithSubtitle.swift; sourceTree = "<group>"; };
-		81998FE62C344B75009074B7 /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift; sourceTree = "<group>"; };
-		81998FE82C344B8A009074B7 /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithRightIconAndSubtitle.swift; sourceTree = "<group>"; };
 		81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		81998FF52C354FDC009074B7 /* SDDSButtonPreviewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewLoading.swift; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
-		81998FFA2C355217009074B7 /* SDDSButtonPreviewDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewDisabled.swift; sourceTree = "<group>"; };
-		81998FFC2C3554F7009074B7 /* SDDSButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonViewModel.swift; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
-		819990012C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewEquilateral.swift; sourceTree = "<group>"; };
 		8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
 		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		818FE9392C3C403F00F64958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81D2B18A2C32B39B00CAA7FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,9 +96,8 @@
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
-				81998FEA2C344B9A009074B7 /* Previews */,
 				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
-				81998FFC2C3554F7009074B7 /* SDDSButtonViewModel.swift */,
+				818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */,
 				814185C92C34260300D8E524 /* ButtonSize.swift */,
 				8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */,
 			);
@@ -99,6 +112,14 @@
 			path = Spinner;
 			sourceTree = "<group>";
 		};
+		818FE93D2C3C403F00F64958 /* SDDSComponentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */,
+			);
+			path = SDDSComponentsTests;
+			sourceTree = "<group>";
+		};
 		81998FD32C3436E1009074B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,24 +129,6 @@
 				81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		81998FEA2C344B9A009074B7 /* Previews */ = {
-			isa = PBXGroup;
-			children = (
-				81998FDC2C34460F009074B7 /* SDDSButtonViewModel+Preview.swift */,
-				81998FDE2C344640009074B7 /* SDDSButtonPreviewTextOnly.swift */,
-				81998FE02C3446A7009074B7 /* SDDSButtonPreviewTextWithLeftIcon.swift */,
-				81998FE22C344716009074B7 /* SDDSButtonPreviewTextWithRightIcon.swift */,
-				81998FE42C344B54009074B7 /* SDDSButtonPreviewTextWithSubtitle.swift */,
-				81998FE62C344B75009074B7 /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */,
-				81998FE82C344B8A009074B7 /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */,
-				81998FF52C354FDC009074B7 /* SDDSButtonPreviewLoading.swift */,
-				81998FFA2C355217009074B7 /* SDDSButtonPreviewDisabled.swift */,
-				819990012C357A9C009074B7 /* SDDSButtonPreviewEquilateral.swift */,
-			);
-			name = Previews;
-			path = ../../SDDSDemoApp/SDDSDemoApp/ButtonView/Previews;
 			sourceTree = "<group>";
 		};
 		81998FEE2C353E04009074B7 /* Fonts */ = {
@@ -155,6 +158,7 @@
 		81D2B1832C32B39B00CAA7FD = {
 			isa = PBXGroup;
 			children = (
+				818FE9302C3C1CDC00F64958 /* Components.swift */,
 				81998FFE2C3555C9009074B7 /* Constants */,
 				81998FF72C355033009074B7 /* Extensions */,
 				81998FF32C354C7F009074B7 /* Assets.xcassets */,
@@ -162,6 +166,7 @@
 				817580E72C37E02800E45207 /* Spinner */,
 				814185C82C3424EA00D8E524 /* SDDSButton */,
 				81D2B18F2C32B39B00CAA7FD /* SDDSComponents */,
+				818FE93D2C3C403F00F64958 /* SDDSComponentsTests */,
 				81D2B18E2C32B39B00CAA7FD /* Products */,
 				81998FD32C3436E1009074B7 /* Frameworks */,
 			);
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */,
+				818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +203,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		818FE93B2C3C403F00F64958 /* SDDSComponentsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 818FE9432C3C403F00F64958 /* Build configuration list for PBXNativeTarget "SDDSComponentsTests" */;
+			buildPhases = (
+				818FE9382C3C403F00F64958 /* Sources */,
+				818FE9392C3C403F00F64958 /* Frameworks */,
+				818FE93A2C3C403F00F64958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				818FE9422C3C403F00F64958 /* PBXTargetDependency */,
+			);
+			name = SDDSComponentsTests;
+			productName = SDDSComponentsTests;
+			productReference = 818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		81D2B18C2C32B39B00CAA7FD /* SDDSComponents */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81D2B1942C32B39B00CAA7FD /* Build configuration list for PBXNativeTarget "SDDSComponents" */;
@@ -223,8 +247,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					818FE93B2C3C403F00F64958 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					81D2B18C2C32B39B00CAA7FD = {
 						CreatedOnToolsVersion = 15.0;
 						LastSwiftMigration = 1500;
@@ -245,11 +273,19 @@
 			projectRoot = "";
 			targets = (
 				81D2B18C2C32B39B00CAA7FD /* SDDSComponents */,
+				818FE93B2C3C403F00F64958 /* SDDSComponentsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		818FE93A2C3C403F00F64958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81D2B18B2C32B39B00CAA7FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,14 +297,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		818FE9382C3C403F00F64958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81D2B1892C32B39B00CAA7FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
-				81998FFD2C3554F7009074B7 /* SDDSButtonViewModel.swift in Sources */,
 				8199A16D2C3BF7B100AD650A /* ButtonTypography.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
+				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
 				819990002C3555D4009074B7 /* Opacity.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				814185C72C33080400D8E524 /* Spacing.swift in Sources */,
@@ -278,7 +323,50 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		818FE9422C3C403F00F64958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 81D2B18C2C32B39B00CAA7FD /* SDDSComponents */;
+			targetProxy = 818FE9412C3C403F00F64958 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		818FE9442C3C403F00F64958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		818FE9452C3C403F00F64958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponentsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		81D2B1922C32B39B00CAA7FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -482,6 +570,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		818FE9432C3C403F00F64958 /* Build configuration list for PBXNativeTarget "SDDSComponentsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				818FE9442C3C403F00F64958 /* Debug */,
+				818FE9452C3C403F00F64958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		81D2B1872C32B39B00CAA7FD /* Build configuration list for PBXProject "SDDSComponents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

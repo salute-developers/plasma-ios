@@ -4,34 +4,31 @@ import SwiftUI
 import SDDSComponents
 
 final class ButtonViewModel: ObservableObject {
-    @Published var buttonViewModel: SDDSButtonViewModel
+    // MARK: - Button Properties
+    @Published var title: String = ""
+    @Published var subtitle: String = ""
+    @Published var iconAttributes: ButtonIconAttributes? = nil
+    @Published var size: ButtonSizeConfiguration = ButtonSize.medium
+    @Published var isDisabled: Bool = false
+    @Published var isLoading: Bool = false
+    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self))
+    @Published var spinnerStyle: SpinnerStyle = .solid
+    @Published var buttonStyle: SDDSComponents.ButtonStyle = .basic
+    @Published var appearance: ButtonAppearance = .black
+    @Published var layoutMode: ButtonLayoutMode = .wrapContent
+    
+    // MARK: - Screen properties
     @Published var isIconVisible: Bool = false
     @Published var alignment: SDDSComponents.Alignment = .left
     @Published var colorStyle: SolidColorStyle = .black
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(buttonViewModel: SDDSButtonViewModel = SDDSButtonViewModel(appearance: .black)) {
-        self.buttonViewModel = buttonViewModel
-            
-        observeButtonViewModelValues()
+    init() {
         observeIcon()
         observeColorStyle()
     }
-    
-    private func observeButtonViewModelValues() {
-        buttonViewModel.$size
-            .combineLatest(buttonViewModel.$layoutMode)
-            .combineLatest(buttonViewModel.$iconAttributes)
-            .combineLatest(buttonViewModel.$buttonStyle)
-            .combineLatest(buttonViewModel.$appearance)
-            .combineLatest(buttonViewModel.$spinnerStyle)
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellables)
-    }
-    
+
     private func observeIcon() {
         $isIconVisible
             .sink { [weak self] value in
@@ -41,7 +38,7 @@ final class ButtonViewModel: ObservableObject {
                 if value {
                     self.setIconAttributes(alignment: self.alignment)
                 } else {
-                    self.buttonViewModel.iconAttributes = nil
+                    self.iconAttributes = nil
                 }
             }
             .store(in: &cancellables)
@@ -65,7 +62,7 @@ final class ButtonViewModel: ObservableObject {
     }
     
     private func setIconAttributes(alignment: SDDSComponents.Alignment) {
-        buttonViewModel.iconAttributes = iconAttributes(with: alignment)
+        iconAttributes = iconAttributes(with: alignment)
     }
     
     private func iconAttributes(with alignment: SDDSComponents.Alignment) -> ButtonIconAttributes {
@@ -75,11 +72,11 @@ final class ButtonViewModel: ObservableObject {
     private func applyColorStyle(_ colorStyle: SolidColorStyle) {
         let black = ButtonAppearance.black
         
-        buttonViewModel.appearance = .init(
+        appearance = .init(
             titleTypography: black.titleTypography,
             titleColor: colorStyle.primaryTextColor.equalToken,
             subtitleTypography: black.subtitleTypography,
-            subtitleColor: black.subtitleColor,
+            subtitleColor: colorStyle.secondaryTextColor.equalToken,
             iconColor: colorStyle.primaryTextColor.equalToken,
             spinnerColor: colorStyle.spinnerColor.equalToken,
             backgroundColor: colorStyle.suiColor.equalToken
@@ -89,11 +86,13 @@ final class ButtonViewModel: ObservableObject {
 
 extension ButtonViewModel {
     var isNotEquilateral: Bool {
-        switch buttonViewModel.buttonStyle {
+        switch buttonStyle {
         case .basic:
             true
         case .square, .circle:
             false
+        @unknown default:
+            fatalError()
         }
     }
 }

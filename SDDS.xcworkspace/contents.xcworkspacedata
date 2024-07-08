@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SDDSComponents/SDDSComponentsTests">
+   </FileRef>
+   <FileRef
       location = "group:SDDSCore/SDDSCore.xcodeproj">
    </FileRef>
    <FileRef

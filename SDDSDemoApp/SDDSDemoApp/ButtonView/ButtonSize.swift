@@ -86,7 +86,30 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
+    public var titleHorizontalGap: CGFloat {
+        switch self {
+        case .xs, .xxs:
+            return Spacing.Button.Gap.small
+        default:
+            return Spacing.Button.Gap.medium
+        }
+    }
+        
+    public var iconHorizontalGap: CGFloat {
+        switch self {
+        case .large:
+            return Spacing.Button.Gap.large
+        case .medium:
+            return Spacing.Button.Gap.medium
+        case .small:
+            return Spacing.Button.Gap.small
+        case .xs, .xxs:
+            return Spacing.Button.Gap.extraSmall
+        }
+    }
+    
     public var debugDescription: String {
         return rawValue
     }
+    
 }

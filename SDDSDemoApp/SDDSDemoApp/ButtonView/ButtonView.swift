@@ -15,7 +15,20 @@ struct ButtonView: View {
             Section {
                 HStack {
                     Spacer()
-                    SDDSButton(viewModel: viewModel.buttonViewModel)
+                    SDDSButton(
+                        title: $viewModel.title,
+                        subtitle: $viewModel.subtitle,
+                        iconAttributes: $viewModel.iconAttributes,
+                        size: $viewModel.size,
+                        isDisabled: $viewModel.isDisabled,
+                        isLoading: $viewModel.isLoading,
+                        spinnerImage: $viewModel.spinnerImage,
+                        spinnerStyle: $viewModel.spinnerStyle,
+                        buttonStyle: $viewModel.buttonStyle,
+                        appearance: $viewModel.appearance,
+                        layoutMode: $viewModel.layoutMode, 
+                        action: {}
+                    )
                     Spacer()
                 }
                 .frame(height: 150)
@@ -29,11 +42,11 @@ struct ButtonView: View {
                     Menu {
                         ForEach(SDDSComponents.ButtonStyle.allCases, id: \.self) { style in
                             Button(style.rawValue.capitalized) {
-                                viewModel.buttonViewModel.buttonStyle = style
+                                viewModel.buttonStyle = style
                             }
                         }
                     } label: {
-                        Text(viewModel.buttonViewModel.buttonStyle.rawValue.capitalized)
+                        Text(viewModel.buttonStyle.rawValue.capitalized)
                     }
                 }
                 HStack {
@@ -61,14 +74,14 @@ struct ButtonView: View {
                         Text("Title")
                         Spacer()
                             .frame(maxWidth: .infinity)
-                        TextField("Button Title", text: $viewModel.buttonViewModel.title)
+                        TextField("Button Title", text: $viewModel.title)
                             .multilineTextAlignment(.trailing)
                     }
                     HStack {
                         Text("Value")
                         Spacer()
                             .frame(maxWidth: .infinity)
-                        TextField("Button Value", text: $viewModel.buttonViewModel.subtitle)
+                        TextField("Button Value", text: $viewModel.subtitle)
                             .multilineTextAlignment(.trailing)
                     }
                 }
@@ -98,11 +111,13 @@ struct ButtonView: View {
                     Menu {
                         ForEach(ButtonSize.allCases, id: \.self) { size in
                             Button(size.rawValue) {
-                                viewModel.buttonViewModel.size = size
+                                viewModel.size = size
                             }
                         }
                     } label: {
-                        Text(viewModel.buttonViewModel.size.rawValue)
+                        if let size = viewModel.size as? ButtonSize {
+                            Text(size.rawValue)
+                        }
                     }
                 }
                 if viewModel.isNotEquilateral {
@@ -113,19 +128,19 @@ struct ButtonView: View {
                         Menu {
                             ForEach(ButtonLayoutMode.allCases, id: \.self) { layoutMode in
                                 Button(layoutMode.title) {
-                                    viewModel.buttonViewModel.layoutMode = layoutMode
+                                    viewModel.layoutMode = layoutMode
                                 }
                             }
                         } label: {
-                            Text(viewModel.buttonViewModel.layoutMode.title)
+                            Text(viewModel.layoutMode.title)
                         }
                     }
                 }
                 HStack {
-                    Toggle("Disabled", isOn: $viewModel.buttonViewModel.isDisabled)
+                    Toggle("Disabled", isOn: $viewModel.isDisabled)
                 }
                 HStack {
-                    Toggle("Loading", isOn: $viewModel.buttonViewModel.isLoading)
+                    Toggle("Loading", isOn: $viewModel.isLoading)
                 }
                 HStack {
                     Text("Spinner Style")
@@ -134,11 +149,11 @@ struct ButtonView: View {
                     Menu {
                         ForEach(SpinnerStyle.allCases, id: \.self) { spinnerStyle in
                             Button(spinnerStyle.rawValue.capitalized) {
-                                viewModel.buttonViewModel.spinnerStyle = spinnerStyle
+                                viewModel.spinnerStyle = spinnerStyle
                             }
                         }
                     } label: {
-                        Text(viewModel.buttonViewModel.spinnerStyle.rawValue.capitalized)
+                        Text(viewModel.spinnerStyle.rawValue.capitalized)
                     }
                 }
             }

@@ -18,19 +18,11 @@
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		817D9F162C370676006C4814 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; };
 		817D9F172C370676006C4814 /* SDDSComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */; };
+		818FE9372C3C394500F64958 /* SDDSButtonViewModel+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9362C3C394500F64958 /* SDDSButtonViewModel+Preview.swift */; };
 		8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16E2C3BF90E00AD650A /* ButtonSize.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1732C3BF99F00AD650A /* ButtonTypography.swift */; };
-		8199A18A2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithLeftIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1772C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIcon.swift */; };
-		8199A18B2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithRightIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1782C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIcon.swift */; };
-		8199A18C2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1792C3BF9FD00AD650A /* SDDSButtonPreviewTextWithSubtitle.swift */; };
-		8199A18D2C3BFA0B00AD650A /* SDDSButtonPreviewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A17C2C3BF9FD00AD650A /* SDDSButtonPreviewLoading.swift */; };
-		8199A18E2C3BFA0B00AD650A /* SDDSButtonPreviewDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A17D2C3BF9FD00AD650A /* SDDSButtonPreviewDisabled.swift */; };
-		8199A18F2C3BFA0B00AD650A /* SDDSButtonPreviewEquilateral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A17E2C3BF9FD00AD650A /* SDDSButtonPreviewEquilateral.swift */; };
-		8199A1902C3BFA0B00AD650A /* SDDSButtonViewModel+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1752C3BF9FD00AD650A /* SDDSButtonViewModel+Preview.swift */; };
-		8199A1912C3BFA0B00AD650A /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A17A2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */; };
-		8199A1922C3BFA0B00AD650A /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A17B2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */; };
-		8199A1932C3BFA0B00AD650A /* SDDSButtonPreviewTextOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1762C3BF9FD00AD650A /* SDDSButtonPreviewTextOnly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,19 +75,12 @@
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonViewData.swift; sourceTree = "<group>"; };
+		818FE9362C3C394500F64958 /* SDDSButtonViewModel+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SDDSButtonViewModel+Preview.swift"; path = "ButtonView/Previews/SDDSButtonViewModel+Preview.swift"; sourceTree = "<group>"; };
+		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
 		8199A16E2C3BF90E00AD650A /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199A1732C3BF99F00AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
-		8199A1752C3BF9FD00AD650A /* SDDSButtonViewModel+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButtonViewModel+Preview.swift"; sourceTree = "<group>"; };
-		8199A1762C3BF9FD00AD650A /* SDDSButtonPreviewTextOnly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextOnly.swift; sourceTree = "<group>"; };
-		8199A1772C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithLeftIcon.swift; sourceTree = "<group>"; };
-		8199A1782C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithRightIcon.swift; sourceTree = "<group>"; };
-		8199A1792C3BF9FD00AD650A /* SDDSButtonPreviewTextWithSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithSubtitle.swift; sourceTree = "<group>"; };
-		8199A17A2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift; sourceTree = "<group>"; };
-		8199A17B2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewTextWithRightIconAndSubtitle.swift; sourceTree = "<group>"; };
-		8199A17C2C3BF9FD00AD650A /* SDDSButtonPreviewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewLoading.swift; sourceTree = "<group>"; };
-		8199A17D2C3BF9FD00AD650A /* SDDSButtonPreviewDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewDisabled.swift; sourceTree = "<group>"; };
-		8199A17E2C3BF9FD00AD650A /* SDDSButtonPreviewEquilateral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewEquilateral.swift; sourceTree = "<group>"; };
 		819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSTheme.xcframework; path = ../SDDSThemeBuilder/build/SDDSTheme.xcframework; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
@@ -151,10 +136,12 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				818FE9362C3C394500F64958 /* SDDSButtonViewModel+Preview.swift */,
 				8199A1702C3BF94500AD650A /* Constants */,
 				817D9F122C3704AD006C4814 /* ButtonView */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
 				24C154092BB3020B00963FAA /* Assets.xcassets */,
+				818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */,
 				24C1540B2BB3020B00963FAA /* Preview Content */,
 			);
 			path = SDDSDemoApp;
@@ -204,12 +191,12 @@
 		817D9F122C3704AD006C4814 /* ButtonView */ = {
 			isa = PBXGroup;
 			children = (
-				8199A17F2C3BF9FD00AD650A /* Previews */,
 				817D9F132C3704CF006C4814 /* ButtonView.swift */,
 				817580EB2C383BA500E45207 /* ButtonViewModel.swift */,
 				817580EE2C383FF200E45207 /* Colors.swift */,
 				8199A16E2C3BF90E00AD650A /* ButtonSize.swift */,
 				8199A1732C3BF99F00AD650A /* ButtonTypography.swift */,
+				818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
@@ -220,23 +207,6 @@
 				8199A1712C3BF94E00AD650A /* Spacing.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		8199A17F2C3BF9FD00AD650A /* Previews */ = {
-			isa = PBXGroup;
-			children = (
-				8199A1752C3BF9FD00AD650A /* SDDSButtonViewModel+Preview.swift */,
-				8199A1762C3BF9FD00AD650A /* SDDSButtonPreviewTextOnly.swift */,
-				8199A1772C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIcon.swift */,
-				8199A1782C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIcon.swift */,
-				8199A1792C3BF9FD00AD650A /* SDDSButtonPreviewTextWithSubtitle.swift */,
-				8199A17A2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */,
-				8199A17B2C3BF9FD00AD650A /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift */,
-				8199A17C2C3BF9FD00AD650A /* SDDSButtonPreviewLoading.swift */,
-				8199A17D2C3BF9FD00AD650A /* SDDSButtonPreviewDisabled.swift */,
-				8199A17E2C3BF9FD00AD650A /* SDDSButtonPreviewEquilateral.swift */,
-			);
-			path = Previews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,20 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */,
-				8199A1922C3BFA0B00AD650A /* SDDSButtonPreviewTextWithRightIconAndSubtitle.swift in Sources */,
-				8199A18C2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithSubtitle.swift in Sources */,
-				8199A1912C3BFA0B00AD650A /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
-				8199A18F2C3BFA0B00AD650A /* SDDSButtonPreviewEquilateral.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
-				8199A18A2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithLeftIcon.swift in Sources */,
-				8199A18B2C3BFA0B00AD650A /* SDDSButtonPreviewTextWithRightIcon.swift in Sources */,
-				8199A18E2C3BFA0B00AD650A /* SDDSButtonPreviewDisabled.swift in Sources */,
-				8199A18D2C3BFA0B00AD650A /* SDDSButtonPreviewLoading.swift in Sources */,
-				8199A1902C3BFA0B00AD650A /* SDDSButtonViewModel+Preview.swift in Sources */,
+				818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				817580EF2C383FF200E45207 /* Colors.swift in Sources */,
-				8199A1932C3BFA0B00AD650A /* SDDSButtonPreviewTextOnly.swift in Sources */,
+				818FE9372C3C394500F64958 /* SDDSButtonViewModel+Preview.swift in Sources */,
 				8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
 			);
