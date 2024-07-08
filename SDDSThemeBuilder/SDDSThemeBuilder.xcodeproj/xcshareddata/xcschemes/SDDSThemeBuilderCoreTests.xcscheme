@@ -31,6 +31,9 @@
                   Identifier = "DownloadCommandTests/testDownloadCommand_Success_FromRemoteSource()">
                </Test>
                <Test
+                  Identifier = "TemplateRendererTests/testRenderShapesFromJSON_Failure()">
+               </Test>
+               <Test
                   Identifier = "TypographyContextBuilderTests/testBuildContext_InvalidScreenSize()">
                </Test>
             </SkippedTests>
