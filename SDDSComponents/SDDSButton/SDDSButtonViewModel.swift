@@ -194,56 +194,6 @@ public struct ButtonIconAttributes {
 }
 
 /**
- `ButtonTypography` содержит типографику для заголовков кнопки для каждого размера кнопки.
-
- - Properties:
-    - large: Типографика для больших кнопок.
-    - medium: Типографика для средних кнопок.
-    - small: Типографика для маленьких кнопок.
-    - xs: Типографика для очень маленьких кнопок.
-    - xxs: Типографика для самых маленьких кнопок.
-
- - Methods:
-    - typography(with size: ButtonSize): Возвращает типографику для заданного размера кнопки.
- */
-public struct ButtonTypography {
-    public let large: TypographyToken?
-    public let medium: TypographyToken?
-    public let small: TypographyToken?
-    public let xs: TypographyToken?
-    public let xxs: TypographyToken?
-    
-    public init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?, xs: TypographyToken?, xxs: TypographyToken?) {
-        self.large = large
-        self.medium = medium
-        self.small = small
-        self.xs = xs
-        self.xxs = xxs
-    }
-    
-    /**
-     Возвращает типографику для заданного размера кнопки.
-     
-     - Parameter size: Размер кнопки.
-     - Returns: Типографика для заданного размера кнопки или nil, если не задана.
-     */
-    public func typography(with size: ButtonSize) -> TypographyToken? {
-        switch size {
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small:
-            return small
-        case .xs:
-            return xs
-        case .xxs:
-            return xxs
-        }
-    }
-}
-
-/**
  `ButtonAppearance` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
 
  - Properties:
@@ -262,7 +212,7 @@ public struct ButtonAppearance {
     /**
      Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let titleTypography: ButtonTypography
+    public let titleTypography: ButtonTypographyConfiguration
     
     /**
      Цвет заголовка кнопки, определяемый `ColorToken`.
@@ -272,7 +222,7 @@ public struct ButtonAppearance {
     /**
      Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let subtitleTypography: ButtonTypography
+    public let subtitleTypography: ButtonTypographyConfiguration
     
     /**
      Цвет подзаголовка кнопки, определяемый `ColorToken`.
@@ -307,9 +257,9 @@ public struct ButtonAppearance {
         - backgroundColor: Цвет фона кнопки.
      */
     public init(
-        titleTypography: ButtonTypography,
+        titleTypography: ButtonTypographyConfiguration,
         titleColor: ColorToken,
-        subtitleTypography: ButtonTypography,
+        subtitleTypography: ButtonTypographyConfiguration,
         subtitleColor: ColorToken,
         iconColor: ColorToken,
         spinnerColor: ColorToken,
@@ -344,7 +294,7 @@ public final class SDDSButtonViewModel: ObservableObject {
     @Published public var title: String
     @Published public var subtitle: String
     @Published public var iconAttributes: ButtonIconAttributes?
-    @Published public var size: ButtonSize
+    @Published public var size: ButtonSizeConfiguration
     @Published public var isDisabled: Bool
     @Published public var isLoading: Bool
     @Published public var spinnerImage: Image
@@ -375,7 +325,7 @@ public final class SDDSButtonViewModel: ObservableObject {
     public init(title: String = "",
                 subtitle: String = "",
                 iconAttributes: ButtonIconAttributes? = nil,
-                size: ButtonSize = .medium,
+                size: ButtonSizeConfiguration,
                 isDisabled: Bool = false,
                 isLoading: Bool = false,
                 spinnerImage: Image = Image("spinner", bundle: Bundle(for: SDDSButtonViewModel.self)),
@@ -472,8 +422,7 @@ extension SDDSButtonViewModel {
         if let typography = appearance.titleTypography.typography(with: size) {
             return typography
         } else {
-            print("Button Typography for size \(size.rawValue). Using a default value.")
-            return .semibold16
+            fatalError("Undefined Button Typography for size \(size.debugDescription).")
         }
     }
     
@@ -481,8 +430,7 @@ extension SDDSButtonViewModel {
         if let typography = appearance.subtitleTypography.typography(with: size) {
             return typography
         } else {
-            print("Button Typography for size \(size.rawValue). Using a default value.")
-            return .semibold16
+            fatalError("Undefined Button Typography for size \(size.debugDescription). Using a default value.")
         }
     }
 }

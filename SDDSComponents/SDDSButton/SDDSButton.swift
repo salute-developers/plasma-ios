@@ -128,25 +128,3 @@ public struct SDDSButton: View {
         }
     }
 }
-
-struct SDDSButton_Previews: PreviewProvider {
-    static var previews: some View {        
-        // Button with title
-        SDDSButtonPreviewTextOnly.previews
-        
-        // Button with title and left icon
-        SDDSButtonPreviewTextWithLeftIcon.previews
-        
-        // Button with title and right icon
-        SDDSButtonPreviewTextWithRightIcon.previews
-        
-        // Button with title and subtitle
-        SDDSButtonPreviewTextWithSubtitle.previews
-        
-        // Button with title, subtitle, and left icon
-        SDDSButtonPreviewTextWithLeftIconAndSubtitle.previews
-        
-        // Button with title, subtitle, and right icon
-        SDDSButtonPreviewTextWithRightIconAndSubtitle.previews
-    }
-}

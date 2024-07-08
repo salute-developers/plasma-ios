@@ -1,14 +1,15 @@
 import Foundation
-import SDDSIcons
 import SwiftUI
 import SDDSThemeCore
+import SDDSComponents
+import SDDSIcons
 
 extension SDDSButtonViewModel {
     static func textOnly(size: ButtonSize, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
         .init(title: "Label", size: size, appearance: .black, layoutMode: layoutMode)
     }
     
-    static func textWithImage(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+    static func textWithImage(size: ButtonSize, alignment: SDDSComponents.Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
         .init(title: "Label", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, appearance: .black, layoutMode: layoutMode)
     }
     
@@ -16,7 +17,7 @@ extension SDDSButtonViewModel {
         .init(title: "Label", subtitle: "Value", size: size, appearance: .black, layoutMode: layoutMode)
     }
     
-    static func textWithImageAndSubtitle(size: ButtonSize, alignment: Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
+    static func textWithImageAndSubtitle(size: ButtonSize, alignment: SDDSComponents.Alignment = .left, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButtonViewModel {
         .init(title: "Label", subtitle: "Value", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: alignment), size: size, appearance: .black, layoutMode: layoutMode)
     }
     
@@ -32,7 +33,7 @@ extension SDDSButtonViewModel {
         .init(title: "Label", size: size, isDisabled: true, appearance: .black, layoutMode: layoutMode)
     }
     
-    static func equilateral(size: ButtonSize, buttonStyle: ButtonStyle, isLoading: Bool = false) -> SDDSButtonViewModel {
+    static func equilateral(size: ButtonSize, buttonStyle: SDDSComponents.ButtonStyle, isLoading: Bool = false) -> SDDSButtonViewModel {
         .init(title: "", iconAttributes: ButtonIconAttributes(image: Asset.accessibility24.image, alignment: .left), size: size, isLoading: isLoading, buttonStyle: buttonStyle, appearance: .black)
     }
 }
