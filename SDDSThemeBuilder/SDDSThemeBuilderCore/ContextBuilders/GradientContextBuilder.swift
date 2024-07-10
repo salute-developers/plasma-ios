@@ -87,8 +87,8 @@ extension GradientContextBuilder {
                     return gradientDictionary
                 }
                 let gradient = gradients.first
-                guard let locations = gradient?["locations"] as? [Double],
-                      let colors = gradient?["colors"] as? [String], locations.count == colors.count else {
+                guard let locations = gradient?[GradientDictionaryKey.locations.rawValue] as? [Double],
+                      let colors = gradient?[GradientDictionaryKey.colors.rawValue] as? [String], locations.count == colors.count else {
                     return .failure(GeneralError.invalidColorTokenFormat)
                 }
 
@@ -106,4 +106,5 @@ extension GradientContextBuilder {
 private enum GradientDictionaryKey: String {
     case colors
     case background
+    case locations
 }
