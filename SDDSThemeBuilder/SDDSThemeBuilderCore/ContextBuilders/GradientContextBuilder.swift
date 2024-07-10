@@ -86,6 +86,11 @@ extension GradientContextBuilder {
                     }
                     return gradientDictionary
                 }
+                let gradient = gradients.first
+                guard let locations = gradient?["locations"] as? [Double],
+                      let colors = gradient?["colors"] as? [String], locations.count == colors.count else {
+                    return .failure(GeneralError.invalidColorTokenFormat)
+                }
 
                 value[mode.rawValue] = gradients
                 result[colorName] = value
