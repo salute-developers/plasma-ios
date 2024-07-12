@@ -10,6 +10,13 @@
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
+		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
+		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
+		818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */; };
+		818C03BA2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; };
+		818C03BB2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03BE2C43C371002C6D0A /* DebugModifier.swift */; };
+		818C03C12C43CD4D002C6D0A /* SDDSSwitch.md in Resources */ = {isa = PBXBuildFile; fileRef = 818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */; };
 		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
 		818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */; };
 		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
@@ -17,9 +24,6 @@
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
 		819990002C3555D4009074B7 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
-		8199A16D2C3BF7B100AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */; };
-		81D1303B2C370B470085BB2B /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; };
-		81D1303C2C370B470085BB2B /* SDDSThemeCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81D1303D2C370FFE0085BB2B /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */; };
 		81D1303E2C370FFE0085BB2B /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,8 +47,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				818C03BB2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Embed Frameworks */,
 				81D1303E2C370FFE0085BB2B /* SDDSIcons.xcframework in Embed Frameworks */,
-				81D1303C2C370B470085BB2B /* SDDSThemeCore.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +60,11 @@
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		817D9F182C37078F006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		818C03B12C418A90002C6D0A /* SDDSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitch.swift; sourceTree = "<group>"; };
+		818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyConfiguration.swift; sourceTree = "<group>"; };
+		818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Extensions.swift"; sourceTree = "<group>"; };
+		818C03BE2C43C371002C6D0A /* DebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModifier.swift; sourceTree = "<group>"; };
+		818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSwitch.md; sourceTree = "<group>"; };
 		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButton+Extensions.swift"; sourceTree = "<group>"; };
 		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +75,6 @@
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
-		8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
 		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
 		81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButton.swift; sourceTree = "<group>"; };
@@ -85,8 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818C03BA2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Frameworks */,
 				81D1303D2C370FFE0085BB2B /* SDDSIcons.xcframework in Frameworks */,
-				81D1303B2C370B470085BB2B /* SDDSThemeCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +107,6 @@
 				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
 				818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */,
 				814185C92C34260300D8E524 /* ButtonSize.swift */,
-				8199A16C2C3BF7B100AD650A /* ButtonTypography.swift */,
 			);
 			path = SDDSButton;
 			sourceTree = "<group>";
@@ -110,6 +117,34 @@
 				817580E82C37E04000E45207 /* SpinnerView.swift */,
 			);
 			path = Spinner;
+			sourceTree = "<group>";
+		};
+		818C03AF2C418705002C6D0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				818C03B02C418725002C6D0A /* SDDSSwitch */,
+				814185C82C3424EA00D8E524 /* SDDSButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		818C03B02C418725002C6D0A /* SDDSSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				818C03B12C418A90002C6D0A /* SDDSSwitch.swift */,
+				818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */,
+			);
+			path = SDDSSwitch;
+			sourceTree = "<group>";
+		};
+		818C03B32C418C3E002C6D0A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */,
+				818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */,
+				818C03BE2C43C371002C6D0A /* DebugModifier.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		818FE93D2C3C403F00F64958 /* SDDSComponentsTests */ = {
@@ -158,13 +193,14 @@
 		81D2B1832C32B39B00CAA7FD = {
 			isa = PBXGroup;
 			children = (
+				818C03B32C418C3E002C6D0A /* Common */,
+				818C03AF2C418705002C6D0A /* Components */,
 				818FE9302C3C1CDC00F64958 /* Components.swift */,
 				81998FFE2C3555C9009074B7 /* Constants */,
 				81998FF72C355033009074B7 /* Extensions */,
 				81998FF32C354C7F009074B7 /* Assets.xcassets */,
 				81998FEE2C353E04009074B7 /* Fonts */,
 				817580E72C37E02800E45207 /* Spinner */,
-				814185C82C3424EA00D8E524 /* SDDSButton */,
 				81D2B18F2C32B39B00CAA7FD /* SDDSComponents */,
 				818FE93D2C3C403F00F64958 /* SDDSComponentsTests */,
 				81D2B18E2C32B39B00CAA7FD /* Products */,
@@ -290,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818C03C12C43CD4D002C6D0A /* SDDSSwitch.md in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,15 +346,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
+				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
-				8199A16D2C3BF7B100AD650A /* ButtonTypography.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
 				819990002C3555D4009074B7 /* Opacity.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
+				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
 				814185C72C33080400D8E524 /* Spacing.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
+				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

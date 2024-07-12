@@ -4,14 +4,24 @@ import UIKit
 
 public extension TypographyToken {
     var font: SwiftUI.Font {
-        .custom(fontName, size: size)
+        if isSystemFont {
+            return .system(size: size)
+        }
+        return .custom(fontName, size: size)
     }
     
     var uiFont: UIFont {
+        if isSystemFont {
+            return .systemFont(ofSize: size)
+        }
         guard let font = UIFont(name: fontName, size: size) else {
             fatalError("Font is not accessible")
         }
         return font
+    }
+    
+    private var isSystemFont: Bool {
+        fontName == "SF Pro"
     }
 }
 
