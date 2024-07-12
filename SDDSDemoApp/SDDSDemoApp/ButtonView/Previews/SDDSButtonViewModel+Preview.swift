@@ -65,7 +65,7 @@ public extension ButtonAppearance {
 }
 
 extension ButtonTypography {
-    static var `default`: ButtonTypography {
+    static var `default`: TypographyConfiguration {
         ButtonTypography(
             large: TypographyToken.semibold18,
             medium: TypographyToken.semibold16,
@@ -73,88 +73,6 @@ extension ButtonTypography {
             xs: TypographyToken.semibold12,
             xxs: TypographyToken.semibold12
         )
-    }
-}
-
-extension TypographyToken {
-    static var semibold18: TypographyToken {
-        .init(
-            fontName: "SF Pro",
-            weight: .semibold,
-            style: .normal,
-            size: 18,
-            lineHeight: 22,
-            kerning: 0
-        )
-    }
-    
-    static var semibold16: TypographyToken {
-        .init(
-            fontName: "SF Pro",
-            weight: .semibold,
-            style: .normal,
-            size: 16,
-            lineHeight: 22,
-            kerning: 0
-        )
-    }
-    
-    static var semibold14: TypographyToken {
-        .init(
-            fontName: "SF Pro",
-            weight: .semibold,
-            style: .normal,
-            size: 14,
-            lineHeight: 22,
-            kerning: 0
-        )
-    }
-    
-    static var semibold12: TypographyToken {
-        .init(
-            fontName: "SF Pro",
-            weight: .semibold,
-            style: .normal,
-            size: 12,
-            lineHeight: 22,
-            kerning: 0
-        )
-    }
-}
-
-extension ColorToken {
-    static var blackTitleColor: ColorToken {
-        .init(
-            darkColor: .white,
-            lightColor: .black
-        )
-    }
-    
-    static var clearColor: ColorToken {
-        .init(
-            darkColor: .clear,
-            lightColor: .clear
-        )
-    }
-    
-    static var titleColor: ColorToken {
-        .init(
-            darkColor: .black,
-            lightColor: .white
-        )
-    }
-    
-    static var subtitleColor: ColorToken {
-        .init(
-            darkColor: Color(red: 23.0/255.0, green: 23.0/255.0, blue: 23.0/255.0, opacity: 0.26),
-            lightColor: Color(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, opacity: 0.56)
-        )
-    }
-    
-    static var backgroundColor: ColorToken {
-        .init(
-            darkColor: Color(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, opacity: 1.0),
-            lightColor: Color(red: 8.0/255.0, green: 8.0/255.0, blue: 8.0/255.0, opacity: 1.0)
-        )
+        .asContainer
     }
 }

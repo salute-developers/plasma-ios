@@ -213,7 +213,7 @@ public struct ButtonAppearance {
     /**
      Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let titleTypography: ButtonTypographyConfiguration
+    public let titleTypography: TypographyConfiguration
     
     /**
      Цвет заголовка кнопки, определяемый `ColorToken`.
@@ -223,7 +223,7 @@ public struct ButtonAppearance {
     /**
      Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
-    public let subtitleTypography: ButtonTypographyConfiguration
+    public let subtitleTypography: TypographyConfiguration
     
     /**
      Цвет подзаголовка кнопки, определяемый `ColorToken`.
@@ -258,9 +258,9 @@ public struct ButtonAppearance {
         - backgroundColor: Цвет фона кнопки.
      */
     public init(
-        titleTypography: ButtonTypographyConfiguration,
+        titleTypography: TypographyConfiguration,
         titleColor: ColorToken,
-        subtitleTypography: ButtonTypographyConfiguration,
+        subtitleTypography: TypographyConfiguration,
         subtitleColor: ColorToken,
         iconColor: ColorToken,
         spinnerColor: ColorToken,
@@ -378,8 +378,7 @@ public struct SDDSButton: View {
             }
             if !title.isEmpty {
                 Text(title)
-                    .font(titleTypography.font)
-                    .fontWeight(titleTypography.weight.sui)
+                    .typography(titleTypography)
                     .foregroundColor(appearance.titleColor.color(for: colorScheme))
             }
             if isSideBySide {
@@ -390,8 +389,7 @@ public struct SDDSButton: View {
                     Spacer().frame(width: size.titleHorizontalGap)
                 }
                 Text(subtitle)
-                    .font(subtitleTypography.font)
-                    .fontWeight(subtitleTypography.weight.sui)
+                    .typography(subtitleTypography)
                     .foregroundColor(appearance.subtitleColor.color(for: colorScheme))
             }
             if shouldShowRightAlignedIcon() {

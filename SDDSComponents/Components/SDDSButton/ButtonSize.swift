@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public protocol ButtonSizeConfiguration: CustomDebugStringConvertible {
+public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var height: CGFloat { get }
     var cornerRadius: CGFloat { get }
     var paddings: EdgeInsets { get }

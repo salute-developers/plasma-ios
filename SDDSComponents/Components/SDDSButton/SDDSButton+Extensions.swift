@@ -70,7 +70,7 @@ extension SDDSButton {
         iconAttributes?.alignment == .right || (iconAttributes?.alignment == .left && isOnlyTitleAndImage)
     }
 
-    public var titleTypography: TypographyToken {
+    var titleTypography: TypographyToken {
         if let typography = appearance.titleTypography.typography(with: size) {
             return typography
         } else {
@@ -78,7 +78,7 @@ extension SDDSButton {
         }
     }
     
-    public var subtitleTypography: TypographyToken {
+    var subtitleTypography: TypographyToken {
         if let typography = appearance.subtitleTypography.typography(with: size) {
             return typography
         } else {

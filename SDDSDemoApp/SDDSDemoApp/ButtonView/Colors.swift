@@ -65,9 +65,3 @@ extension SolidColorStyle {
         }
     }
 }
-
-extension Color {
-    var equalToken: ColorToken {
-        ColorToken(darkColor: self, lightColor: self)
-    }
-}

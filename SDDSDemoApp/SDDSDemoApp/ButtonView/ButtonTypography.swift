@@ -15,7 +15,9 @@ import SDDSThemeCore
  - Methods:
     - typography(with size: ButtonSize): Возвращает типографику для заданного размера кнопки.
  */
-public struct ButtonTypography: ButtonTypographyConfiguration {
+public struct ButtonTypography: GeneralTypographyConfiguration {
+    public typealias S = ButtonSizeConfiguration
+    
     public let large: TypographyToken?
     public let medium: TypographyToken?
     public let small: TypographyToken?
