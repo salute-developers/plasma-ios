@@ -13,6 +13,7 @@ private enum Filter: String {
     case ensure = "ensure"
     case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
+    case ensureShapeKindInRange = "ensure_shape_kind_in_range"
 }
 
 final class TemplateRenderer: Renderable {
@@ -80,13 +81,7 @@ final class TemplateRenderer: Renderable {
         }
         ext.registerFilter(Filter.ensureDoubleInRange.rawValue) { (value: Any?, arguments: [Any?]) in
             let range = arguments.compactMap { value in
-                if let intValue = value as? Int {
-                    return Double(intValue)
-                } else if let doubleValue = value as? Double {
-                    return doubleValue
-                } else {
-                    return nil
-                }
+                return Double.convert(value)
             }
             guard range.count == 2 else {
                 throw TemplateSyntaxError("Invalid range for ensure_double_in_range")
@@ -97,10 +92,30 @@ final class TemplateRenderer: Renderable {
             return doubleValue
         }
         ext.registerFilter(Filter.ensureDoubleNonNegative.rawValue) { (value: Any?) in
-             guard let doubleValue = value as? Double, doubleValue >= 0 else {
+             guard let doubleValue = Double.convert(value), doubleValue >= 0 else {
                  throw TemplateSyntaxError("Value \(value) is not a non-negative double")
              }
              return doubleValue
+        }
+        ext.registerFilter(Filter.ensureShapeKindInRange.rawValue) { (value: Any?) in
+             guard let stringValue = value as? String, stringValue == "round" else {
+                 throw TemplateSyntaxError("Value \(value) can only be equal to `round`")
+             }
+             return stringValue
+        }
+    }
+}
+
+fileprivate extension Double {
+    static func convert(_ value: Any?) -> Double? {
+        if let intValue = value as? Int {
+            return Double(intValue)
+        } else if let doubleValue = value as? Double {
+            return doubleValue
+        } else if let stringValue = value as? String {
+            return Double(stringValue)
+        } else {
+            return nil
         }
     }
 }
