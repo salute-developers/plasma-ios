@@ -16,6 +16,13 @@
 		818C03BA2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; };
 		818C03BB2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03BE2C43C371002C6D0A /* DebugModifier.swift */; };
+		818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C42C4512A6002C6D0A /* SelectionControl.swift */; };
+		818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */; };
+		818C03C92C451424002C6D0A /* RadioboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C82C451424002C6D0A /* RadioboxAppearance.swift */; };
+		818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CA2C45158A002C6D0A /* SDDSCheckbox.swift */; };
+		818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */; };
+		818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */; };
+		818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03E22C479003002C6D0A /* Image+Extensions.swift */; };
 		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
 		818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */; };
 		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
@@ -64,6 +71,15 @@
 		818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Extensions.swift"; sourceTree = "<group>"; };
 		818C03BE2C43C371002C6D0A /* DebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModifier.swift; sourceTree = "<group>"; };
 		818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSwitch.md; sourceTree = "<group>"; };
+		818C03C42C4512A6002C6D0A /* SelectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControl.swift; sourceTree = "<group>"; };
+		818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
+		818C03C82C451424002C6D0A /* RadioboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxAppearance.swift; sourceTree = "<group>"; };
+		818C03CA2C45158A002C6D0A /* SDDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckbox.swift; sourceTree = "<group>"; };
+		818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRadiobox.swift; sourceTree = "<group>"; };
+		818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlAppearance.swift; sourceTree = "<group>"; };
+		818C03D32C455763002C6D0A /* SDDSCheckbox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckbox.md; sourceTree = "<group>"; };
+		818C03D42C4557BF002C6D0A /* SDDSRadiobox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRadiobox.md; sourceTree = "<group>"; };
+		818C03E22C479003002C6D0A /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButton+Extensions.swift"; sourceTree = "<group>"; };
 		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +137,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				818C03CC2C4515D6002C6D0A /* SDDSRadiobox */,
+				818C03C22C45126B002C6D0A /* SDDSCheckbox */,
 				818C03B02C418725002C6D0A /* SDDSSwitch */,
 				814185C82C3424EA00D8E524 /* SDDSButton */,
 			);
@@ -142,8 +160,38 @@
 				818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */,
 				818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */,
 				818C03BE2C43C371002C6D0A /* DebugModifier.swift */,
+				818C03E22C479003002C6D0A /* Image+Extensions.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		818C03C22C45126B002C6D0A /* SDDSCheckbox */ = {
+			isa = PBXGroup;
+			children = (
+				818C03CA2C45158A002C6D0A /* SDDSCheckbox.swift */,
+				818C03D32C455763002C6D0A /* SDDSCheckbox.md */,
+				818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */,
+			);
+			path = SDDSCheckbox;
+			sourceTree = "<group>";
+		};
+		818C03C32C45128E002C6D0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				818C03C42C4512A6002C6D0A /* SelectionControl.swift */,
+				818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		818C03CC2C4515D6002C6D0A /* SDDSRadiobox */ = {
+			isa = PBXGroup;
+			children = (
+				818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */,
+				818C03D42C4557BF002C6D0A /* SDDSRadiobox.md */,
+				818C03C82C451424002C6D0A /* RadioboxAppearance.swift */,
+			);
+			path = SDDSRadiobox;
 			sourceTree = "<group>";
 		};
 		818FE93D2C3C403F00F64958 /* SDDSComponentsTests */ = {
@@ -192,6 +240,7 @@
 		81D2B1832C32B39B00CAA7FD = {
 			isa = PBXGroup;
 			children = (
+				818C03C32C45128E002C6D0A /* Views */,
 				818C03B32C418C3E002C6D0A /* Common */,
 				818C03AF2C418705002C6D0A /* Components */,
 				818FE9302C3C1CDC00F64958 /* Components.swift */,
@@ -346,13 +395,20 @@
 			files = (
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
+				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
+				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
+				818C03C92C451424002C6D0A /* RadioboxAppearance.swift in Sources */,
+				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
 				819990002C3555D4009074B7 /* Opacity.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
+				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
+				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
+				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814185C72C33080400D8E524 /* Spacing.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
