@@ -2,11 +2,31 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SwitchSizeConfiguration` определяет конфигурацию размеров для переключателя.
+ 
+ - Properties:
+    - width: Ширина переключателя.
+    - verticalGap: Вертикальный зазор между элементами.
+ */
 public protocol SwitchSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var width: CGFloat? { get }
     var verticalGap: CGFloat { get }
 }
 
+/**
+ `SwitchAppearance` определяет внешний вид переключателя, включая типографику и цвета для различных состояний.
+ 
+ - Properties:
+    - titleTypography: Типографика для заголовка переключателя.
+    - subtitleTypography: Типографика для подзаголовка переключателя.
+    - enabledTitleColor: Цвет заголовка, когда переключатель включен.
+    - enabledSubtitleColor: Цвет подзаголовка, когда переключатель включен.
+    - enabledTintColor: Цвет переключателя, когда он включен.
+    - disabledTitleColor: Цвет заголовка, когда переключатель выключен.
+    - disabledSubtitleColor: Цвет подзаголовка, когда переключатель выключен.
+    - disabledTintColor: Цвет переключателя, когда он выключен.
+ */
 public struct SwitchAppearance {
     public let titleTypography: TypographyConfiguration
     public let subtitleTypography: TypographyConfiguration
@@ -19,19 +39,49 @@ public struct SwitchAppearance {
 }
 
 public extension SwitchAppearance {
+    /**
+     Возвращает цвет переключателя в зависимости от его состояния (включен/выключен).
+     
+     - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
+     - Returns: Цвет переключателя.
+     */
     func tintColor(for isEnabled: Bool) -> ColorToken {
         return isEnabled ? enabledTintColor : disabledTintColor
     }
 
+    /**
+     Возвращает цвет заголовка в зависимости от состояния переключателя (включен/выключен).
+     
+     - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
+     - Returns: Цвет заголовка.
+     */
     func titleColor(for isEnabled: Bool) -> ColorToken {
         return isEnabled ? enabledTitleColor : disabledTitleColor
     }
 
+    /**
+     Возвращает цвет подзаголовка в зависимости от состояния переключателя (включен/выключен).
+     
+     - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
+     - Returns: Цвет подзаголовка.
+     */
     func subtitleColor(for isEnabled: Bool) -> ColorToken {
         return isEnabled ? enabledSubtitleColor : disabledSubtitleColor
     }
 }
 
+/**
+ `SwitchAccessibility` определяет параметры доступности для переключателя.
+ 
+ - Properties:
+    - titleLabel: Метка доступности для заголовка.
+    - subtitleLabel: Метка доступности для подзаголовка.
+    - toggleLabel: Метка доступности для переключателя.
+    - toggleHint: Подсказка для переключателя.
+    - switchLabel: Метка доступности для всего переключателя.
+    - switchEnabledValue: Значение доступности, когда переключатель включен.
+    - switchDisabledValue: Значение доступности, когда переключатель выключен.
+ */
 public struct SwitchAccessibility {
     public var titleLabel: String
     public var subtitleLabel: String
@@ -41,6 +91,18 @@ public struct SwitchAccessibility {
     public var switchEnabledValue: String
     public var switchDisabledValue: String
     
+    /**
+     Инициализатор для создания параметров доступности переключателя.
+     
+     - Parameters:
+        - titleLabel: Метка доступности для заголовка.
+        - subtitleLabel: Метка доступности для подзаголовка.
+        - toggleLabel: Метка доступности для переключателя.
+        - toggleHint: Подсказка для переключателя.
+        - switchLabel: Метка доступности для всего переключателя.
+        - switchEnabledValue: Значение доступности, когда переключатель включен.
+        - switchDisabledValue: Значение доступности, когда переключатель выключен.
+     */
     public init(
         titleLabel: String = "Title",
         subtitleLabel: String = "Subtitle",
@@ -60,6 +122,18 @@ public struct SwitchAccessibility {
     }
 }
 
+/**
+ `SDDSSwitch` представляет собой настраиваемый переключатель, который может быть настроен с помощью различных параметров.
+ 
+ - Parameters:
+    - title: Текст заголовка для переключателя.
+    - subtitle: Текст подзаголовка для переключателя.
+    - isOn: Связка состояния включения/выключения переключателя.
+    - isEnabled: Флаг, указывающий, включен ли переключатель.
+    - size: Конфигурация размеров для переключателя.
+    - appearance: Параметры внешнего вида переключателя.
+    - switchAccessibility: Параметры доступности для переключателя.
+ */
 public struct SDDSSwitch: View {
     public let title: String
     public let subtitle: String
@@ -71,6 +145,18 @@ public struct SDDSSwitch: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    /**
+     Инициализатор для создания переключателя с заданными параметрами.
+     
+     - Parameters:
+        - title: Текст заголовка для переключателя.
+        - subtitle: Текст подзаголовка для переключателя.
+        - isOn: Связка состояния включения/выключения переключателя.
+        - isEnabled: Флаг, указывающий, включен ли переключатель.
+        - size: Конфигурация размеров для переключателя.
+        - appearance: Параметры внешнего вида переключателя.
+        - switchAccessibility: Параметры доступности для переключателя.
+     */
     public init(
         title: String = "",
         subtitle: String = "",
@@ -129,11 +215,11 @@ public struct SDDSSwitch: View {
         }
         .disabled(!isEnabled)
         .padding([.leading, .trailing], 1.0)
-        .accessibilityElement(children: .combine) // Ensures that the entire switch view is treated as a single element
+        .accessibilityElement(children: .combine) // Объединяет элементы переключателя в один элемент доступности
         .accessibilityLabel(Text(switchAccessibility.switchLabel))
         .accessibilityValue(Text(isEnabled ? switchAccessibility.switchEnabledValue : switchAccessibility.switchDisabledValue))
     }
-    
+
     var titleTypography: TypographyToken {
         if let typography = appearance.titleTypography.typography(with: size) {
             return typography
@@ -141,7 +227,7 @@ public struct SDDSSwitch: View {
             fatalError("Undefined Switch Typography for size \(size.debugDescription).")
         }
     }
-    
+
     var subtitleTypography: TypographyToken {
         if let typography = appearance.subtitleTypography.typography(with: size) {
             return typography
