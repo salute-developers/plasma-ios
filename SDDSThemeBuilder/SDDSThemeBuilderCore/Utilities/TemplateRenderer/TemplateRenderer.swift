@@ -1,6 +1,7 @@
 import Foundation
 import Stencil
 import PathKit
+import SwiftUI
 
 private enum Tag: String {
     case ensureValueExists = "ensure_value_exists"
@@ -14,6 +15,7 @@ private enum Filter: String {
     case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
     case ensureShapeKindInRange = "ensure_shape_kind_in_range"
+    case ensureValidHex = "ensure_valid_hex"
 }
 
 final class TemplateRenderer: Renderable {
@@ -21,7 +23,7 @@ final class TemplateRenderer: Renderable {
         let ext = Extension()
         registerFilters(ext: ext)
         registerTags(ext: ext)
-
+        
         guard let templatesURL = Bundle(for: TemplateRenderer.self).url(forResource: template.rawValue, withExtension: "stencil")?.deletingLastPathComponent() else {
             return .error(CodeGenerationError.templateLoadingFailed)
         }
@@ -46,7 +48,7 @@ final class TemplateRenderer: Renderable {
     func removeExtraNewlines(from content: String) -> String {
         var lines = content.components(separatedBy: .newlines)
         lines = lines.filter { $0 != "    " }
-
+        
         return lines.joined(separator: "\n")
     }
     
@@ -60,8 +62,8 @@ final class TemplateRenderer: Renderable {
             return EnsureAnyValueExistsNode(arguments: arguments, token: token)
         }
         ext.registerTag(Tag.ensureDoubleNonNegative.rawValue) { parser, token in
-             let arguments = token.components.dropFirst().map { $0 }
-             return EnsureFloatNonNegativeNode(arguments: arguments, token: token)
+            let arguments = token.components.dropFirst().map { $0 }
+            return EnsureFloatNonNegativeNode(arguments: arguments, token: token)
         }
         ext.registerTag(Tag.ensureDoubleInRange.rawValue) { parser, token in
             let arguments = token.components.dropFirst().map { $0 }
@@ -92,16 +94,24 @@ final class TemplateRenderer: Renderable {
             return doubleValue
         }
         ext.registerFilter(Filter.ensureDoubleNonNegative.rawValue) { (value: Any?) in
-             guard let doubleValue = Double.convert(value), doubleValue >= 0 else {
-                 throw TemplateSyntaxError("Value \(value) is not a non-negative double")
-             }
-             return doubleValue
+            guard let doubleValue = Double.convert(value), doubleValue >= 0 else {
+                throw TemplateSyntaxError("Value \(String(describing: value)) is not a non-negative double")
+            }
+            return doubleValue
         }
         ext.registerFilter(Filter.ensureShapeKindInRange.rawValue) { (value: Any?) in
-             guard let stringValue = value as? String, stringValue == "round" else {
-                 throw TemplateSyntaxError("Value \(value) can only be equal to `round`")
-             }
-             return stringValue
+            guard let stringValue = value as? String, stringValue == "round" else {
+                throw TemplateSyntaxError("Value \(String(describing: value)) can only be equal to `round`")
+            }
+            return stringValue
+        }
+        ext.registerFilter(Filter.ensureValidHex.rawValue) { (value: Any?) in
+            guard let stringValue = value as? String else {
+                throw TemplateSyntaxError("Value \(String(describing: value)) for hex should be string")
+            }
+            _ = Color(hex: stringValue)
+            
+            return stringValue
         }
     }
 }
