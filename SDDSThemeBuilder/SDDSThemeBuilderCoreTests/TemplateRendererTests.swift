@@ -50,7 +50,10 @@ final class TemplateRendererTests: XCTestCase {
         let template = StencilTemplate.shapeToken
         let jsonData = try! Data(contentsOf: TemplateRendererTests.shapesURL)
         var json = try! JSONSerialization.jsonObject(with: jsonData) as? [String: Any] ?? [:]
-        json["round.m"] = [:]
+        json["round.m"] = [
+            "kind": "circle",
+            "cornerRadius": 16
+        ]
         let modifiedJsonData = try! JSONSerialization.data(withJSONObject: json)
         let context = contextBuilder.buildContext(from: modifiedJsonData).asDictionary ?? [:]
         
@@ -58,7 +61,13 @@ final class TemplateRendererTests: XCTestCase {
         let result = templateRenderer.render(context: context, template: template)
         
         // then
-        XCTFail("Expected failure in rendering due to manipulated JSON")
+        switch result {
+        case .error:
+            break
+        default:
+            XCTFail("Expected failure in rendering due to manipulated JSON")
+        }
+        
     }
 }
 
@@ -66,7 +75,7 @@ private extension TemplateRendererTests {
     var cornerRadius12: String {
         """
                 Self(
-                    cornerRadius: 16,
+                    cornerRadius: 16.0,
                     kind: .round
                 )
         """
@@ -75,7 +84,7 @@ private extension TemplateRendererTests {
     var cornerRadius32: String {
         """
                 Self(
-                    cornerRadius: 32,
+                    cornerRadius: 32.0,
                     kind: .round
                 )
         """
