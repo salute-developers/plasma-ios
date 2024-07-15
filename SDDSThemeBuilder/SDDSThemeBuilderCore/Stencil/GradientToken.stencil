@@ -88,7 +88,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         angle: {{ gradient.angle|ensure_double_in_range:-360,360 }}
@@ -102,7 +102,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         center: CGPoint(
@@ -121,7 +121,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle|ensure_double_in_range:-360,360 }},
@@ -133,7 +133,7 @@ public extension GradientToken {
                     )
                     {%- elif gradient.kind == "color" %}
                     PlainColor(
-                        background: Color(UIColor(hex: "{{ gradient.background|ensure }}"))
+                        background: Color(UIColor(hex: "{{ gradient.background|ensure|ensure_valid_hex }}"))
                     )
                     {%- endif %}
                 ){% if not forloop.last %}, {% endif %}
@@ -151,7 +151,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         angle: {{ gradient.angle|ensure_double_in_range:-360,360 }}
@@ -165,7 +165,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         center: CGPoint(
@@ -184,7 +184,7 @@ public extension GradientToken {
                         ],
                         colors: [
                             {%- for color in gradient.colors %}
-                            Color(UIColor(hex: "{{ color|ensure }}")){% if not forloop.last %}, {% endif %}
+                            Color(UIColor(hex: "{{ color|ensure|ensure_valid_hex }}")){% if not forloop.last %}, {% endif %}
                             {%- endfor %}
                         ],
                         startAngle: {{ gradient.startAngle|ensure_double_in_range:-360,360 }},
@@ -196,7 +196,7 @@ public extension GradientToken {
                     )
                     {%- elif gradient.kind == "color" %}
                     PlainColor(
-                        background: Color(UIColor(hex: "{{ gradient.background|ensure }}"))
+                        background: Color(UIColor(hex: "{{ gradient.background|ensure|ensure_valid_hex }}"))
                     )
                     {%- endif %}
                 ){% if not forloop.last %}, {% endif %}

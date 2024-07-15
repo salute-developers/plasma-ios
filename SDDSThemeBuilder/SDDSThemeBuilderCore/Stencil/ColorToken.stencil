@@ -9,8 +9,8 @@ public extension ColorToken {
     
     static var {{ key }}: Self {
         Self(
-            darkColor: Color(UIColor(hex: "{{ value.dark|default:'' }}")),
-            lightColor: Color(UIColor(hex: "{{ value.light|default:'' }}"))
+            darkColor: Color(UIColor(hex: "{{ value.dark|ensure_valid_hex|default:'' }}")),
+            lightColor: Color(UIColor(hex: "{{ value.light|ensure_valid_hex|default:'' }}"))
         )
     }
     {%- endfor %}
