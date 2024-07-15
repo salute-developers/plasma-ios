@@ -61,32 +61,32 @@ public struct SwitchAccessibility {
 }
 
 public struct SDDSSwitch: View {
-    @Binding public var title: String
-    @Binding public var subtitle: String
+    public let title: String
+    public let subtitle: String
     @Binding public var isOn: Bool
-    @Binding public var isEnabled: Bool
-    @Binding public var size: SwitchSizeConfiguration
-    @Binding public var appearance: SwitchAppearance
-    @Binding public var switchAccessibility: SwitchAccessibility
+    public let isEnabled: Bool
+    public let size: SwitchSizeConfiguration
+    public let appearance: SwitchAppearance
+    public let switchAccessibility: SwitchAccessibility
     
     @Environment(\.colorScheme) var colorScheme
     
     public init(
-        title: Binding<String> = .constant(""),
-        subtitle: Binding<String> = .constant(""),
+        title: String = "",
+        subtitle: String = "",
         isOn: Binding<Bool> = .constant(true),
-        isEnabled: Binding<Bool> = .constant(true),
-        size: Binding<SwitchSizeConfiguration>,
-        appearance: Binding<SwitchAppearance>,
-        switchAccessibility: Binding<SwitchAccessibility>
+        isEnabled: Bool = true,
+        size: SwitchSizeConfiguration,
+        appearance: SwitchAppearance,
+        switchAccessibility: SwitchAccessibility
     ) {
-        self._title = title
-        self._subtitle = subtitle
+        self.title = title
+        self.subtitle = subtitle
         self._isOn = isOn
-        self._isEnabled = isEnabled
-        self._size = size
-        self._appearance = appearance
-        self._switchAccessibility = switchAccessibility
+        self.isEnabled = isEnabled
+        self.size = size
+        self.appearance = appearance
+        self.switchAccessibility = switchAccessibility
     }
     
     public var body: some View {
@@ -188,37 +188,37 @@ struct SwitchSize: SwitchSizeConfiguration {
 extension SDDSSwitch {
     static var defaultExample: SDDSSwitch {
         SDDSSwitch(
-            title: .constant("Title"),
-            subtitle: .constant("Description"),
+            title: "Title",
+            subtitle: "Description",
             isOn: .constant(true),
-            isEnabled: .constant(true),
-            size: .constant(SwitchSize()),
-            appearance: .constant(SwitchAppearance.defaultAppearance), 
-            switchAccessibility: .constant(SwitchAccessibility())
+            isEnabled: true,
+            size: SwitchSize(),
+            appearance: SwitchAppearance.defaultAppearance,
+            switchAccessibility: SwitchAccessibility()
         )
     }
     
     static var emptyDescription: SDDSSwitch {
         SDDSSwitch(
-            title: .constant("Title"),
-            subtitle: .constant(""),
+            title: "Title",
+            subtitle: "",
             isOn: .constant(true),
-            isEnabled: .constant(true),
-            size: .constant(SwitchSize()),
-            appearance: .constant(SwitchAppearance.defaultAppearance),
-            switchAccessibility: .constant(SwitchAccessibility())
+            isEnabled: true,
+            size: SwitchSize(),
+            appearance: SwitchAppearance.defaultAppearance,
+            switchAccessibility: SwitchAccessibility()
         )
     }
     
     static var onlyToggle: SDDSSwitch {
         SDDSSwitch(
-            title: .constant(""),
-            subtitle: .constant(""),
+            title: "",
+            subtitle: "",
             isOn: .constant(true),
-            isEnabled: .constant(true),
-            size: .constant(SwitchSize(width: nil)),
-            appearance: .constant(SwitchAppearance.defaultAppearance),
-            switchAccessibility: .constant(SwitchAccessibility())
+            isEnabled: true,
+            size: SwitchSize(width: nil),
+            appearance: SwitchAppearance.defaultAppearance,
+            switchAccessibility: SwitchAccessibility()
         )
     }
 }
