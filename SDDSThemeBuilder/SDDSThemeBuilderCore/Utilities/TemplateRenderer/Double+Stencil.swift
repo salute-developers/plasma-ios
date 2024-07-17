@@ -3,6 +3,7 @@ import Foundation
 extension Formatter {
     static let twoDecimals: NumberFormatter = {
         let formatter = NumberFormatter()
+        formatter.decimalSeparator = "."
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 2
         return formatter
