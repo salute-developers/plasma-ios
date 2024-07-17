@@ -23,6 +23,8 @@
 		818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */; };
 		818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */; };
 		818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03E22C479003002C6D0A /* Image+Extensions.swift */; };
+		818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */; };
+		818C03E82C47C3C4002C6D0A /* SDDSProgressBar.md in Resources */ = {isa = PBXBuildFile; fileRef = 818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */; };
 		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
 		818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */; };
 		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
@@ -80,6 +82,8 @@
 		818C03D32C455763002C6D0A /* SDDSCheckbox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckbox.md; sourceTree = "<group>"; };
 		818C03D42C4557BF002C6D0A /* SDDSRadiobox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRadiobox.md; sourceTree = "<group>"; };
 		818C03E22C479003002C6D0A /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSProgressBar.swift; sourceTree = "<group>"; };
+		818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSProgressBar.md; sourceTree = "<group>"; };
 		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		818FE9342C3C32F100F64958 /* SDDSButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSButton+Extensions.swift"; sourceTree = "<group>"; };
 		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				818C03E42C47BCCC002C6D0A /* SDDSProgressBar */,
 				818C03CC2C4515D6002C6D0A /* SDDSRadiobox */,
 				818C03C22C45126B002C6D0A /* SDDSCheckbox */,
 				818C03B02C418725002C6D0A /* SDDSSwitch */,
@@ -192,6 +197,15 @@
 				818C03C82C451424002C6D0A /* RadioboxAppearance.swift */,
 			);
 			path = SDDSRadiobox;
+			sourceTree = "<group>";
+		};
+		818C03E42C47BCCC002C6D0A /* SDDSProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */,
+				818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */,
+			);
+			path = SDDSProgressBar;
 			sourceTree = "<group>";
 		};
 		818FE93D2C3C403F00F64958 /* SDDSComponentsTests */ = {
@@ -375,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
+				818C03E82C47C3C4002C6D0A /* SDDSProgressBar.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
