@@ -24,6 +24,11 @@ final class HexConverter {
         
         var red, green, blue, alpha: UInt64
         switch hexString.count {
+        case 3:
+            red = ((rgbValue >> 8) & 0xF) * 17
+            green = ((rgbValue >> 4) & 0xF) * 17
+            blue = (rgbValue & 0xF) * 17
+            alpha = 255
         case 6:
             red = (rgbValue >> 16) & 0xFF
             green = (rgbValue >> 8) & 0xFF
