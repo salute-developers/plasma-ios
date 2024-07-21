@@ -4,7 +4,7 @@ import SwiftUI
 struct SDDSDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ButtonView(viewModel: ButtonViewModel())
+            ComponentsView()
         }
     }
 }

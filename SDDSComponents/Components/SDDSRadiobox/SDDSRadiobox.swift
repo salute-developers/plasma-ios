@@ -14,12 +14,33 @@ public struct RadioboxImages {
 
 public struct SDDSRadiobox: View {
     @Binding var isSelected: Bool
-    var title: String
-    var subtitle: String?
-    var isEnabled: Bool
-    var images: RadioboxImages
-    var appearance: RadioboxAppearance
-    var accessibility: SelectionControlAccessibility
+    let title: String
+    let subtitle: String?
+    let isEnabled: Bool
+    let images: RadioboxImages
+    let size: SelectionControlSizeConfiguration
+    let appearance: RadioboxAppearance
+    let accessibility: SelectionControlAccessibility
+    
+    public init(
+        isSelected: Binding<Bool>,
+        title: String,
+        subtitle: String? = nil,
+        isEnabled: Bool,
+        images: RadioboxImages,
+        size: SelectionControlSizeConfiguration = SDDSRadioboxSize(),
+        appearance: RadioboxAppearance,
+        accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
+    ) {
+        self._isSelected = isSelected
+        self.title = title
+        self.subtitle = subtitle
+        self.isEnabled = isEnabled
+        self.images = images
+        self.size = size
+        self.appearance = appearance
+        self.accessibility = accessibility
+    }
 
     public var body: some View {
         SelectionControl(
@@ -35,7 +56,7 @@ public struct SDDSRadiobox: View {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            size: SDDSRadioboxSize(),
+            size: size,
             appearance: appearance,
             images: .init(
                 selectedImage: images.selectedImage,
@@ -74,22 +95,24 @@ struct SDDSRadioboxPreview: PreviewProvider {
     }
 }
 
-struct SDDSRadioboxSize: SelectionControlSizeConfiguration {
-    var debugDescription: String {
+public struct SDDSRadioboxSize: SelectionControlSizeConfiguration {
+    public var debugDescription: String {
         String(reflecting: self)
     }
     
-    var imageSize: CGSize {
+    public var imageSize: CGSize {
         .init(width: 20, height: 20)
     }
     
-    var verticalGap: CGFloat {
+    public var verticalGap: CGFloat {
         0.0
     }
     
-    var horizontalGap: CGFloat {
+    public var horizontalGap: CGFloat {
         8.0
     }
+    
+    public init() {}
 }
 
 public extension SDDSRadiobox {
@@ -157,7 +180,7 @@ extension RadioboxAppearance {
     }
 }
 
-extension RadioboxImages {
+public extension RadioboxImages {
     static var defaultImages: RadioboxImages {
         .init(
             selectedImage: Image.image("radioboxOn"),

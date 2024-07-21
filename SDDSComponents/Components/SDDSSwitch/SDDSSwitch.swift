@@ -36,6 +36,17 @@ public struct SwitchAppearance {
     public let disabledTitleColor: ColorToken
     public let disabledSubtitleColor: ColorToken
     public let disabledTintColor: ColorToken
+    
+    public init(titleTypography: TypographyConfiguration, subtitleTypography: TypographyConfiguration, enabledTitleColor: ColorToken, enabledSubtitleColor: ColorToken, enabledTintColor: ColorToken, disabledTitleColor: ColorToken, disabledSubtitleColor: ColorToken, disabledTintColor: ColorToken) {
+        self.titleTypography = titleTypography
+        self.subtitleTypography = subtitleTypography
+        self.enabledTitleColor = enabledTitleColor
+        self.enabledSubtitleColor = enabledSubtitleColor
+        self.enabledTintColor = enabledTintColor
+        self.disabledTitleColor = disabledTitleColor
+        self.disabledSubtitleColor = disabledSubtitleColor
+        self.disabledTintColor = disabledTintColor
+    }
 }
 
 public extension SwitchAppearance {
@@ -194,6 +205,8 @@ public struct SDDSSwitch: View {
                         .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
                         .accessibilityLabel(Text(switchAccessibility.titleLabel))
                         .accessibilityValue(Text(title))
+                } else if !subtitle.isEmpty {
+                    subtitleText
                 }
                 if title.isEmpty && subtitle.isEmpty {
                     Spacer(minLength: 0)
@@ -205,12 +218,8 @@ public struct SDDSSwitch: View {
                     .accessibilityValue(Text(isOn ? "On" : "Off"))
                     .accessibilityHint(Text(switchAccessibility.toggleHint))
             }
-            if !subtitle.isEmpty {
-                Text(subtitle)
-                    .typography(subtitleTypography)
-                    .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
-                    .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
-                    .accessibilityValue(Text(subtitle))
+            if !subtitle.isEmpty && !title.isEmpty {
+                subtitleText
             }
         }
         .disabled(!isEnabled)
@@ -235,6 +244,15 @@ public struct SDDSSwitch: View {
             fatalError("Undefined Switch Typography for size \(size.debugDescription). Using a default value.")
         }
     }
+    
+    @ViewBuilder
+    private var subtitleText: some View {
+        Text(subtitle)
+            .typography(subtitleTypography)
+            .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
+            .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
+            .accessibilityValue(Text(subtitle))
+    }
 }
 
 // MARK: - Preview
@@ -248,6 +266,11 @@ struct SDDSSwitchPreview: PreviewProvider {
         SDDSSwitch.emptyDescription
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Empty Description")
+            .debug()
+        
+        SDDSSwitch.emptyTitle
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Empty Title")
             .debug()
         
         SDDSSwitch.onlyToggle
@@ -296,6 +319,18 @@ extension SDDSSwitch {
         )
     }
     
+    static var emptyTitle: SDDSSwitch {
+        SDDSSwitch(
+            title: "",
+            subtitle: "Description",
+            isOn: .constant(true),
+            isEnabled: true,
+            size: SwitchSize(),
+            appearance: SwitchAppearance.defaultAppearance,
+            switchAccessibility: SwitchAccessibility()
+        )
+    }
+    
     static var onlyToggle: SDDSSwitch {
         SDDSSwitch(
             title: "",
@@ -323,7 +358,7 @@ extension SwitchTypography {
     }
 }
 
-extension SwitchAppearance {
+public extension SwitchAppearance {
     static var defaultAppearance: SwitchAppearance {
         .init(
             titleTypography: SwitchTypography.typography(.semibold14),

@@ -25,8 +25,13 @@ public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStri
     - trackColor: Цвет фона прогресс-бара.
  */
 public struct ProgressBarAppearance {
-    var tintColor: ColorToken
-    var trackColor: ColorToken
+    public var tintColor: ColorToken
+    public var trackColor: ColorToken
+    
+    public init(tintColor: ColorToken, trackColor: ColorToken) {
+        self.tintColor = tintColor
+        self.trackColor = trackColor
+    }
 }
 
 /**
@@ -90,7 +95,7 @@ public struct SDDSProgressView: View {
         isEnabled: Bool = true,
         appearance: ProgressBarAppearance,
         size: ProgressBarSizeConfiguration,
-        accessibility: ProgressBarAccessibility
+        accessibility: ProgressBarAccessibility = ProgressBarAccessibility()
     ) {
         self._progress = progress
         self.isEnabled = isEnabled
@@ -164,26 +169,28 @@ struct SDDSProgressViewPreview: PreviewProvider {
 }
 
 // Size configuration
-struct DefaultProgressBarSize: ProgressBarSizeConfiguration {
-    var debugDescription: String {
+public struct DefaultProgressBarSize: ProgressBarSizeConfiguration {
+    public var debugDescription: String {
         String(reflecting: self)
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         4.0
     }
     
-    var indicatorHeight: CGFloat {
+    public var indicatorHeight: CGFloat {
         6.0
     }
     
-    var cornerRadius: CGFloat {
+    public var cornerRadius: CGFloat {
         2.0
     }
     
-    var indicatorCornerRadius: CGFloat {
+    public var indicatorCornerRadius: CGFloat {
         6.0
     }
+    
+    public init() {}
 }
 
 extension SDDSProgressView {
@@ -198,7 +205,7 @@ extension SDDSProgressView {
     }
 }
 
-extension ProgressBarAppearance {
+public extension ProgressBarAppearance {
     static var defaultExample: ProgressBarAppearance {
         .init(
             tintColor: .greenColor,
