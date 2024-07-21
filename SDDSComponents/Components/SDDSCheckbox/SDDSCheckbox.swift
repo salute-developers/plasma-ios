@@ -7,6 +7,7 @@ public struct SDDSCheckbox: View {
     let subtitle: String?
     let isEnabled: Bool
     let images: SelectionControlStateImages
+    let size: SelectionControlSizeConfiguration
     let appearance: CheckboxAppearance
     let accessibility: SelectionControlAccessibility
     
@@ -16,6 +17,7 @@ public struct SDDSCheckbox: View {
         subtitle: String? = nil,
         isEnabled: Bool,
         images: SelectionControlStateImages,
+        size: SelectionControlSizeConfiguration = SDDSCheckboxSize(),
         appearance: CheckboxAppearance,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -24,6 +26,7 @@ public struct SDDSCheckbox: View {
         self.subtitle = subtitle
         self.isEnabled = isEnabled
         self.images = images
+        self.size = size
         self.appearance = appearance
         self.accessibility = accessibility
     }
@@ -35,7 +38,7 @@ public struct SDDSCheckbox: View {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            size: SDDSCheckboxSize(),
+            size: size,
             appearance: appearance,
             images: images,
             accessibility: accessibility
@@ -70,22 +73,24 @@ struct SDDSCheckboxPreview: PreviewProvider {
     }
 }
 
-struct SDDSCheckboxSize: SelectionControlSizeConfiguration {
-    var debugDescription: String {
+public struct SDDSCheckboxSize: SelectionControlSizeConfiguration {
+    public var debugDescription: String {
         String(reflecting: self)
     }
     
-    var imageSize: CGSize {
+    public var imageSize: CGSize {
         .init(width: 20, height: 20)
     }
     
-    var verticalGap: CGFloat {
+    public var verticalGap: CGFloat {
         0.0
     }
     
-    var horizontalGap: CGFloat {
+    public var horizontalGap: CGFloat {
         8.0
     }
+    
+    public init() {}
 }
 
 extension SDDSCheckbox {
@@ -153,7 +158,7 @@ extension CheckboxAppearance {
     }
 }
 
-extension SelectionControlStateImages {
+public extension SelectionControlStateImages {
     static var checkbox: SelectionControlStateImages {
         .init(
             selectedImage: Image.image("checkboxOn"),

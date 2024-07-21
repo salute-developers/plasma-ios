@@ -7,7 +7,7 @@ enum SelectionControlType {
     case radiobox
 }
 
-public enum SelectionControlState {
+public enum SelectionControlState: String, CaseIterable {
     case selected
     case deselected
     case indeterminate
@@ -151,7 +151,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @ViewBuilder
     private var controlView: some View {
         if let image = image {
-            image
+            tintImage(image: image)
                 .frame(width: size.imageSize.width, height: size.imageSize.height)
                 .applyIf(!isEnabled) { $0.opacity(appearance.disabledImageAlpha) }
         } else {

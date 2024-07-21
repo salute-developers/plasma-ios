@@ -6,7 +6,7 @@ import SDDSComponents
 struct ButtonView: View {
     @ObservedObject private var viewModel: ButtonViewModel
     
-    init(viewModel: ButtonViewModel) {
+    init(viewModel: ButtonViewModel = ButtonViewModel()) {
         self.viewModel = viewModel
     }
     
@@ -31,7 +31,6 @@ struct ButtonView: View {
                     )
                     Spacer()
                 }
-                .frame(height: 150)
             }
             
             Section {
@@ -158,6 +157,7 @@ struct ButtonView: View {
                 }
             }
         }
+        .navigationTitle("SDDSButton")
     }
 }
 
