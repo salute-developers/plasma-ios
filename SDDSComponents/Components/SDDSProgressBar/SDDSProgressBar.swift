@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+@_exported import SDDSThemeCore
 
 /**
  `ProgressBarSizeConfiguration` определяет конфигурацию размеров для прогресс-бара.
@@ -18,23 +19,6 @@ public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStri
 }
 
 /**
- `ProgressBarAppearance` определяет внешний вид прогресс-бара, включая цвет индикатора и фона.
- 
- - Properties:
-    - tintColor: Цвет индикатора прогресса.
-    - trackColor: Цвет фона прогресс-бара.
- */
-public struct ProgressBarAppearance {
-    public var tintColor: ColorToken
-    public var trackColor: ColorToken
-    
-    public init(tintColor: ColorToken, trackColor: ColorToken) {
-        self.tintColor = tintColor
-        self.trackColor = trackColor
-    }
-}
-
-/**
  `ProgressBarAccessibility` определяет параметры доступности для прогресс-бара.
  
  - Properties:
@@ -42,8 +26,8 @@ public struct ProgressBarAppearance {
     - progressHint: Подсказка для прогресс-бара.
  */
 public struct ProgressBarAccessibility {
-    public var progressLabel: String
-    public var progressHint: String
+    public let progressLabel: String
+    public let progressHint: String
     
     /**
      Инициализатор для создания параметров доступности прогресс-бара.
@@ -73,10 +57,10 @@ public struct ProgressBarAccessibility {
  */
 public struct SDDSProgressView: View {
     @Binding var progress: Double
-    var isEnabled: Bool
-    var appearance: ProgressBarAppearance
-    var size: ProgressBarSizeConfiguration
-    var accessibility: ProgressBarAccessibility
+    let isEnabled: Bool
+    let appearance: ProgressBarAppearance
+    let size: ProgressBarSizeConfiguration
+    let accessibility: ProgressBarAccessibility
     
     @Environment(\.colorScheme) var colorScheme
     
