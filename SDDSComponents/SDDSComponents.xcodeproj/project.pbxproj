@@ -13,6 +13,8 @@
 		811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */; };
 		811DE15D2C51167A000DD354 /* SDDSChip.md in Resources */ = {isa = PBXBuildFile; fileRef = 811DE15C2C51167A000DD354 /* SDDSChip.md */; };
 		811DE15F2C511701000DD354 /* SDDSChipGroup.md in Resources */ = {isa = PBXBuildFile; fileRef = 811DE15E2C511701000DD354 /* SDDSChipGroup.md */; };
+		811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1702C5783B6000DD354 /* HierarchicalList.swift */; };
+		811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */; };
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
@@ -76,6 +78,9 @@
 		811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroup.swift; sourceTree = "<group>"; };
 		811DE15C2C51167A000DD354 /* SDDSChip.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSChip.md; sourceTree = "<group>"; };
 		811DE15E2C511701000DD354 /* SDDSChipGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSChipGroup.md; sourceTree = "<group>"; };
+		811DE1702C5783B6000DD354 /* HierarchicalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalList.swift; sourceTree = "<group>"; };
+		811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckboxGroup.swift; sourceTree = "<group>"; };
+		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
@@ -137,11 +142,44 @@
 			children = (
 				811DE1532C50098D000DD354 /* SDDSChip.swift */,
 				811DE1552C50179F000DD354 /* ChipAppearance.swift */,
-				811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */,
 				811DE15C2C51167A000DD354 /* SDDSChip.md */,
-				811DE15E2C511701000DD354 /* SDDSChipGroup.md */,
 			);
 			path = SDDSChip;
+			sourceTree = "<group>";
+		};
+		811DE16C2C5782F9000DD354 /* SDDSCheckboxGroup */ = {
+			isa = PBXGroup;
+			children = (
+				811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */,
+				811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */,
+			);
+			path = SDDSCheckboxGroup;
+			sourceTree = "<group>";
+		};
+		811DE16D2C578305000DD354 /* SDDSChipGroup */ = {
+			isa = PBXGroup;
+			children = (
+				811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */,
+				811DE15E2C511701000DD354 /* SDDSChipGroup.md */,
+			);
+			path = SDDSChipGroup;
+			sourceTree = "<group>";
+		};
+		811DE16E2C578325000DD354 /* SelectionControl */ = {
+			isa = PBXGroup;
+			children = (
+				818C03C42C4512A6002C6D0A /* SelectionControl.swift */,
+				818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */,
+			);
+			path = SelectionControl;
+			sourceTree = "<group>";
+		};
+		811DE16F2C578331000DD354 /* HierarchicalList */ = {
+			isa = PBXGroup;
+			children = (
+				811DE1702C5783B6000DD354 /* HierarchicalList.swift */,
+			);
+			path = HierarchicalList;
 			sourceTree = "<group>";
 		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
@@ -165,6 +203,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				811DE16D2C578305000DD354 /* SDDSChipGroup */,
+				811DE16C2C5782F9000DD354 /* SDDSCheckboxGroup */,
 				811DE1522C500980000DD354 /* SDDSChip */,
 				818C03E42C47BCCC002C6D0A /* SDDSProgressBar */,
 				818C03CC2C4515D6002C6D0A /* SDDSRadiobox */,
@@ -208,8 +248,8 @@
 		818C03C32C45128E002C6D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				818C03C42C4512A6002C6D0A /* SelectionControl.swift */,
-				818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */,
+				811DE16F2C578331000DD354 /* HierarchicalList */,
+				811DE16E2C578325000DD354 /* SelectionControl */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,6 +480,7 @@
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
+				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
@@ -453,6 +494,7 @@
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
+				811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */,
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
 				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
