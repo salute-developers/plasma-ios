@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		811DE15F2C511701000DD354 /* SDDSChipGroup.md in Resources */ = {isa = PBXBuildFile; fileRef = 811DE15E2C511701000DD354 /* SDDSChipGroup.md */; };
 		814185C72C33080400D8E524 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
+		814F71972C58CC59006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71962C58CC59006385E4 /* SDDSIcons */; };
+		814F719A2C58CE07006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71992C58CE07006385E4 /* SDDSIcons */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
 		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
@@ -38,8 +40,6 @@
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
 		819990002C3555D4009074B7 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
-		81D1303D2C370FFE0085BB2B /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */; };
-		81D1303E2C370FFE0085BB2B /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				818C03BB2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Embed Frameworks */,
-				81D1303E2C370FFE0085BB2B /* SDDSIcons.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,8 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814F719A2C58CE07006385E4 /* SDDSIcons in Frameworks */,
 				818C03BA2C43BFD1002C6D0A /* SDDSThemeCore.xcframework in Frameworks */,
-				81D1303D2C370FFE0085BB2B /* SDDSIcons.xcframework in Frameworks */,
+				814F71972C58CC59006385E4 /* SDDSIcons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +360,10 @@
 			dependencies = (
 			);
 			name = SDDSComponents;
+			packageProductDependencies = (
+				814F71962C58CC59006385E4 /* SDDSIcons */,
+				814F71992C58CE07006385E4 /* SDDSIcons */,
+			);
 			productName = SDDSComponents;
 			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
 			productType = "com.apple.product-type.framework";
@@ -392,6 +396,9 @@
 				Base,
 			);
 			mainGroup = 81D2B1832C32B39B00CAA7FD;
+			packageReferences = (
+				814F71982C58CE07006385E4 /* XCLocalSwiftPackageReference "../SDDSIcons" */,
+			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -514,6 +521,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -580,6 +588,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -740,6 +749,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		814F71982C58CE07006385E4 /* XCLocalSwiftPackageReference "../SDDSIcons" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SDDSIcons;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		814F71962C58CC59006385E4 /* SDDSIcons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSIcons;
+		};
+		814F71992C58CE07006385E4 /* SDDSIcons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSIcons;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 81D2B1842C32B39B00CAA7FD /* Project object */;
 }

@@ -21,12 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		242BF2422BBC600D00E4D112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 242BF2412BBC600D00E4D112 /* Assets.xcassets */; };
 		242BF24F2BBC687700E4D112 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF24E2BBC687700E4D112 /* Assets.swift */; };
 		2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */; };
 		2430DEA62BB5B53B00277123 /* SDDSIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */; };
 		2430DEAB2BB5B53B00277123 /* SDDSIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */; };
 		2430DEAC2BB5B53B00277123 /* SDDSIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = 2430DE9E2BB5B53B00277123 /* SDDSIcons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		814F719C2C58CEBB006385E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814F719B2C58CEBB006385E4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,19 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		242BF2412BBC600D00E4D112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		242BF24E2BBC687700E4D112 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
 		242BF2582BBD941D00E4D112 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
-		242BF26E2BBDAE4A00E4D112 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DE9E2BB5B53B00277123 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
 		2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
 		2430DEA52BB5B53B00277123 /* SDDSIconsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSIconsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIconsTests.swift; sourceTree = "<group>"; };
 		243C6C462BBF14E900525EAD /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		814F718F2C58CA7E006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		814F719B2C58CEBB006385E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,14 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		242BF24D2BBC687700E4D112 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				242BF24E2BBC687700E4D112 /* Assets.swift */,
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
 		242BF2542BBD8AB000E4D112 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +101,14 @@
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
+				2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */,
+				814F71912C58CB4F006385E4 /* Sources */,
+				814F718F2C58CA7E006385E4 /* Package.swift */,
 				243C6C462BBF14E900525EAD /* info.plist */,
-				242BF26E2BBDAE4A00E4D112 /* Package.swift */,
 				242BF2472BBC673300E4D112 /* swiftgen.yml */,
 				242BF26A2BBDA47A00E4D112 /* build */,
-				242BF24D2BBC687700E4D112 /* Generated */,
 				242BF2572BBD940700E4D112 /* Scripts */,
 				242BF2542BBD8AB000E4D112 /* Templates */,
-				2430DE9D2BB5B53B00277123 /* SDDSIcons */,
 				2430DEA92BB5B53B00277123 /* SDDSIconsTests */,
 				2430DE9C2BB5B53B00277123 /* Products */,
 			);
@@ -131,22 +123,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2430DE9D2BB5B53B00277123 /* SDDSIcons */ = {
-			isa = PBXGroup;
-			children = (
-				2430DE9E2BB5B53B00277123 /* SDDSIcons.h */,
-				2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */,
-				242BF2412BBC600D00E4D112 /* Assets.xcassets */,
-			);
-			path = SDDSIcons;
-			sourceTree = "<group>";
-		};
 		2430DEA92BB5B53B00277123 /* SDDSIconsTests */ = {
 			isa = PBXGroup;
 			children = (
 				2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */,
 			);
 			path = SDDSIconsTests;
+			sourceTree = "<group>";
+		};
+		814F71912C58CB4F006385E4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				814F71922C58CB4F006385E4 /* SDDSIcons */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		814F71922C58CB4F006385E4 /* SDDSIcons */ = {
+			isa = PBXGroup;
+			children = (
+				814F719B2C58CEBB006385E4 /* Assets.xcassets */,
+				242BF24E2BBC687700E4D112 /* Assets.swift */,
+				2430DE9E2BB5B53B00277123 /* SDDSIcons.h */,
+			);
+			path = SDDSIcons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242BF2422BBC600D00E4D112 /* Assets.xcassets in Resources */,
+				814F719C2C58CEBB006385E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242BF2442BBC610200E4D112 /* SDDSIcons.swift in Sources */,
 				2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */,
 				242BF24F2BBC687700E4D112 /* Assets.swift in Sources */,
 			);
