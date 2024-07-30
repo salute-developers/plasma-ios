@@ -133,7 +133,7 @@ extension App {
     }
     
     private var themeURL: URL {
-        themeBuilderURL.appending(component: "SDDSTheme")
+        themeBuilderURL.appending(component: "SDDSTheme/Sources/SDDSTheme")
     }
     
     private var templatesURL: URL {
