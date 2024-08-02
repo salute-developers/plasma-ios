@@ -101,8 +101,6 @@ public struct SDDSProgressView: View {
                 rectangle
                     .frame(width: CGFloat(normalizedProgress) * geometry.size.width, height: size.indicatorHeight)
                     .position(x: CGFloat(normalizedProgress) * geometry.size.width / 2, y: geometry.size.height / 2)
-                
-                
             }
         }
         .frame(height: size.indicatorHeight)
