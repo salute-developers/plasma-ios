@@ -127,15 +127,7 @@ public struct SDDSProgressView: View {
     private var normalizedProgress: Double {
         max(min(progress, 1.0), 0.0)
     }
-    
-    private func progressFill() -> AnyView {
-        switch appearance.tintFillStyle {
-        case .color(let colorToken):
-            return AnyView(colorToken.color(for: colorScheme))
-        case .gradient(let gradientToken):
-            return AnyView(GradientView(theme: colorScheme == .dark ? .dark : .light, token: gradientToken))
-        }
-    }
+
 }
 
 // MARK: - Preview
