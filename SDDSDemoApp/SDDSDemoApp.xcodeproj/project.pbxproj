@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,12 +23,11 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
-		816E049A2C58D82700EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E04992C58D82700EE7A7F /* SDDSThemeCore */; };
+		8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F7252C5CFD9200622836 /* SDDSComponents */; };
+		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EB2C383BA500E45207 /* ButtonViewModel.swift */; };
 		817580EF2C383FF200E45207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EE2C383FF200E45207 /* Colors.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
-		817D9F162C370676006C4814 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; };
-		817D9F172C370676006C4814 /* SDDSComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817D9F152C370676006C4814 /* SDDSComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */; };
 		8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16E2C3BF90E00AD650A /* ButtonSize.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
@@ -51,20 +50,6 @@
 			remoteInfo = PlasmaDemoApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2430DEE62BB5CE5100277123 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				817D9F172C370676006C4814 /* SDDSComponents.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSCore.xcframework; path = ../build/SDDSCore.xcframework; sourceTree = "<group>"; };
@@ -110,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817D9F162C370676006C4814 /* SDDSComponents.framework in Frameworks */,
-				816E049A2C58D82700EE7A7F /* SDDSThemeCore in Frameworks */,
+				8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */,
+				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +281,6 @@
 				24C153FE2BB3020A00963FAA /* Sources */,
 				24C153FF2BB3020A00963FAA /* Frameworks */,
 				24C154002BB3020A00963FAA /* Resources */,
-				2430DEE62BB5CE5100277123 /* Embed Frameworks */,
 				2430DEEA2BB6B33700277123 /* Lint */,
 			);
 			buildRules = (
@@ -305,7 +289,8 @@
 			);
 			name = SDDSDemoApp;
 			packageProductDependencies = (
-				816E04992C58D82700EE7A7F /* SDDSThemeCore */,
+				8159F7252C5CFD9200622836 /* SDDSComponents */,
+				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -380,6 +365,8 @@
 			);
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
+				8159F7242C5CFD9200622836 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
+				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -808,8 +795,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		8159F7242C5CFD9200622836 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SDDSComponents;
+		};
+		8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		816E04992C58D82700EE7A7F /* SDDSThemeCore */ = {
+		8159F7252C5CFD9200622836 /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
 		};
