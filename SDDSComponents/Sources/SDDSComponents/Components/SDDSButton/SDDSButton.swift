@@ -98,7 +98,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
         case .wrapContent:
             return false
         case .fixedWidth(let alignment):
-            return alignment == .centered
+            return alignment == .packed
         }
     }
     
@@ -110,7 +110,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
         case .wrapContent:
             return false
         case .fixedWidth(let alignment):
-            return alignment == .sideBySide
+            return alignment == .spaceBetween
         }
     }
     
@@ -123,10 +123,10 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             return "Wrap Content"
         case .fixedWidth(let alignment):
             switch alignment {
-            case .centered:
-                return "Centered"
-            case .sideBySide:
-                return "Side by side"
+            case .packed:
+                return "Packed"
+            case .spaceBetween:
+                return "Space Between"
             }
         }
     }
@@ -139,7 +139,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
      Все возможные случаи `ButtonLayoutMode`.
      */
     public static var allCases: [ButtonLayoutMode] {
-        return [.wrapContent, .fixedWidth(.centered), .fixedWidth(.sideBySide)]
+        return [.wrapContent, .fixedWidth(.packed), .fixedWidth(.spaceBetween)]
     }
 }
 
@@ -154,12 +154,12 @@ public enum ButtonContentAlignment {
     /**
      Содержимое кнопки выравнивается по центру.
      */
-    case centered
+    case packed
     
     /**
      Содержимое кнопки выравнивается по бокам (по левому и правому краю) .
      */
-    case sideBySide
+    case spaceBetween
 }
 
 
