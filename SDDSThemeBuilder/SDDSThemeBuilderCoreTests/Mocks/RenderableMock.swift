@@ -4,7 +4,7 @@ import Foundation
 final class RenderableMock: Renderable {
     var stubbedResult: CommandResult = .empty
     
-    func render(context: [String : Any], template: StencilTemplate, templatesURL: URL) -> CommandResult {
+    func render(context: [String : Any], template: StencilTemplate) -> CommandResult {
         return stubbedResult
     }
 }

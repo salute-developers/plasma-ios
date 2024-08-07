@@ -5,7 +5,6 @@ final class TemplateRendererTests: XCTestCase {
     var templateRenderer: TemplateRenderer!
     var templatesURL: URL!
     var contextBuilder: GeneralContextBuilder!
-
     override func setUp() {
         super.setUp()
         templateRenderer = TemplateRenderer()
@@ -17,7 +16,6 @@ final class TemplateRendererTests: XCTestCase {
         
         contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
     }
-
     static var shapesURL: URL {
         let bundle = Bundle(for: TemplateRendererTests.self)
         guard let url = bundle.url(forResource: "ios_shape", withExtension: "json") else {
@@ -25,16 +23,15 @@ final class TemplateRendererTests: XCTestCase {
         }
         return url
     }
-
     func testRenderShapesFromJSON_Success() {
         // given
         let template = StencilTemplate.shapeToken
         let jsonData = try! Data(contentsOf: TemplateRendererTests.shapesURL)
         let context = contextBuilder.buildContext(from: jsonData).asDictionary ?? [:]
-
+        
         // when
-        let result = templateRenderer.render(context: context, template: template, templatesURL: templatesURL)
-
+        let result = templateRenderer.render(context: context, template: template)
+        
         // then
         switch result {
         case .generated(let renderedContent):
@@ -44,23 +41,30 @@ final class TemplateRendererTests: XCTestCase {
             XCTFail("Expected successful rendering of shapes based on JSON")
         }
     }
-
+    
     func testRenderShapesFromJSON_Failure() {
         // given
-        let template = StencilTemplate.shapes
+        let template = StencilTemplate.shapeToken
         let jsonData = try! Data(contentsOf: TemplateRendererTests.shapesURL)
         var json = try! JSONSerialization.jsonObject(with: jsonData) as? [String: Any] ?? [:]
-        json["round.xxl"] = nil
+        json["round.m"] = [
+            "kind": "circle",
+            "cornerRadius": 16
+        ]
         let modifiedJsonData = try! JSONSerialization.data(withJSONObject: json)
         let context = contextBuilder.buildContext(from: modifiedJsonData).asDictionary ?? [:]
-
+        
         // when
-        let result = templateRenderer.render(context: context, template: template, templatesURL: templatesURL)
-
+        let result = templateRenderer.render(context: context, template: template)
+        
         // then
-        if !result.isError {
+        switch result {
+        case .error:
+            break
+        default:
             XCTFail("Expected failure in rendering due to manipulated JSON")
         }
+        
     }
 }
 
@@ -68,7 +72,7 @@ private extension TemplateRendererTests {
     var cornerRadius12: String {
         """
                 Self(
-                    cornerRadius: 16,
+                    cornerRadius: 16.0,
                     kind: .round
                 )
         """
@@ -77,7 +81,7 @@ private extension TemplateRendererTests {
     var cornerRadius32: String {
         """
                 Self(
-                    cornerRadius: 32,
+                    cornerRadius: 32.0,
                     kind: .round
                 )
         """

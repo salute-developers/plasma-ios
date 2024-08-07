@@ -47,8 +47,6 @@ end
 project_root_dir = File.expand_path('..', __dir__)
 workspace_name = "SDDS.xcworkspace"
 modules = [
-  {scheme: "SDDSSwiftUI", platform: "iOS", use_workspace: true},
-  {scheme: "SDDSUIKit", platform: "iOS", use_workspace: true},
   {scheme: "SDDSIcons", platform: "iOS", use_workspace: true},
   {scheme: "SDDSCore", platform: "iOS", use_workspace: true},
   {scheme: "SDDSThemeBuilderCoreTests", platform: "macOS", project_name: "SDDSThemeBuilder", project_dir: "#{project_root_dir}/SDDSThemeBuilder", use_workspace: false}
