@@ -52,10 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSCore.xcframework; path = ../build/SDDSCore.xcframework; sourceTree = "<group>"; };
-		2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
-		2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSSwiftUI.xcframework; path = ../build/SDDSSwiftUI.xcframework; sourceTree = "<group>"; };
-		2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSUIKit.xcframework; path = ../build/SDDSUIKit.xcframework; sourceTree = "<group>"; };
 		24C154022BB3020A00963FAA /* SDDSDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154052BB3020A00963FAA /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
 		24C154092BB3020B00963FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +81,6 @@
 		8199A16E2C3BF90E00AD650A /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199A1732C3BF99F00AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
-		819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSTheme.xcframework; path = ../SDDSThemeBuilder/build/SDDSTheme.xcframework; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -608,7 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -645,7 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
