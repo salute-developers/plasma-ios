@@ -183,11 +183,6 @@
 				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
-				819B2A9C2BF27F0B00688624 /* SDDSTheme.xcframework */,
-				2430DEDA2BB5CE5100277123 /* SDDSCore.xcframework */,
-				2430DEDB2BB5CE5100277123 /* SDDSIcons.xcframework */,
-				2430DEDC2BB5CE5100277123 /* SDDSSwiftUI.xcframework */,
-				2430DEDD2BB5CE5100277123 /* SDDSUIKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

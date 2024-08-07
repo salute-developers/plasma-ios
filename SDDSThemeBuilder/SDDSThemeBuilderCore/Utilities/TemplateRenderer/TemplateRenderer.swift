@@ -48,7 +48,6 @@ final class TemplateRenderer: Renderable {
     func removeExtraNewlines(from content: String) -> String {
         var lines = content.components(separatedBy: .newlines)
         lines = lines.filter { $0 != "    " }
-        
         return lines.joined(separator: "\n")
     }
     

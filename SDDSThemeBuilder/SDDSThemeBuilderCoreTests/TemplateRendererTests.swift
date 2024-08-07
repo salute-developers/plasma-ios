@@ -5,7 +5,6 @@ final class TemplateRendererTests: XCTestCase {
     var templateRenderer: TemplateRenderer!
     var templatesURL: URL!
     var contextBuilder: GeneralContextBuilder!
-    
     override func setUp() {
         super.setUp()
         templateRenderer = TemplateRenderer()
@@ -17,7 +16,6 @@ final class TemplateRendererTests: XCTestCase {
         
         contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
     }
-    
     static var shapesURL: URL {
         let bundle = Bundle(for: TemplateRendererTests.self)
         guard let url = bundle.url(forResource: "ios_shape", withExtension: "json") else {
@@ -25,7 +23,6 @@ final class TemplateRendererTests: XCTestCase {
         }
         return url
     }
-    
     func testRenderShapesFromJSON_Success() {
         // given
         let template = StencilTemplate.shapeToken
