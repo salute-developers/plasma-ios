@@ -19,6 +19,7 @@
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		814F71972C58CC59006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71962C58CC59006385E4 /* SDDSIcons */; };
 		814F719A2C58CE07006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71992C58CE07006385E4 /* SDDSIcons */; };
+		8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F72F2C5D1CFE00622836 /* FillStyle.swift */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
 		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
@@ -67,6 +68,7 @@
 		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		8159F72F2C5D1CFE00622836 /* FillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyle.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		817D9F182C37078F006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818C03B12C418A90002C6D0A /* SDDSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitch.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */,
 				818C03BE2C43C371002C6D0A /* DebugModifier.swift */,
 				818C03E22C479003002C6D0A /* Image+Extensions.swift */,
+				8159F72F2C5D1CFE00622836 /* FillStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				818C03C92C451424002C6D0A /* RadioboxAppearance.swift in Sources */,
+				8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */,
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
 				819990002C3555D4009074B7 /* Opacity.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,

@@ -8,11 +8,11 @@ import Foundation
     - trackColor: Цвет фона прогресс-бара.
  */
 public struct ProgressBarAppearance {
-    public let tintColor: ColorToken
+    public let tintFillStyle: FillStyle
     public let trackColor: ColorToken
     
-    public init(tintColor: ColorToken, trackColor: ColorToken) {
-        self.tintColor = tintColor
+    public init(tintFillStyle: FillStyle, trackColor: ColorToken) {
+        self.tintFillStyle = tintFillStyle
         self.trackColor = trackColor
     }
 }
