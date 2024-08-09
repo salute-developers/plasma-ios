@@ -24,11 +24,11 @@ struct SDDSButtonPreviewTextWithRightIcon: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Small button with text and right icon")
         
-        SDDSButton.textWithRightIcon(size: .xs)
+        SDDSButton.textWithRightIcon(size: .extraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XS button with text and right icon")
         
-        SDDSButton.textWithRightIcon(size: .xxs)
+        SDDSButton.textWithRightIcon(size: .extraExtraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XXS button with text and right icon")
     }

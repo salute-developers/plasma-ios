@@ -73,7 +73,9 @@ extension ButtonAppearance {
             subtitleColor: ColorToken.subtitleColor,
             iconColor: ColorToken.titleColor,
             spinnerColor: ColorToken.titleColor,
-            backgroundColor: ColorToken.backgroundColor
+            backgroundColor: ColorToken.backgroundColor,
+            disabledAlpha: 0.4,
+            loadingAlpha: 0.0
         )
     }
     
@@ -85,7 +87,9 @@ extension ButtonAppearance {
             subtitleColor: ColorToken.blackTitleColor,
             iconColor: ColorToken.blackTitleColor,
             spinnerColor: ColorToken.blackTitleColor,
-            backgroundColor: ColorToken.clearColor
+            backgroundColor: ColorToken.clearColor,
+            disabledAlpha: 0.4,
+            loadingAlpha: 0.06
         )
     }
 }
@@ -96,8 +100,8 @@ extension ButtonTypography {
             large: TypographyToken.semibold18,
             medium: TypographyToken.semibold16,
             small: TypographyToken.semibold14,
-            xs: TypographyToken.semibold12,
-            xxs: TypographyToken.semibold12
+            extraSmall: TypographyToken.semibold12,
+            extraExtraSmall: TypographyToken.semibold12
         )
         .asContainer
     }
@@ -107,8 +111,16 @@ enum ButtonSize: String, CaseIterable {
     case large
     case medium
     case small
-    case xs
-    case xxs
+    case extraSmall
+    case extraExtraSmall
+}
+
+enum LinkSize: String, CaseIterable {
+    case large
+    case medium
+    case small
+    case extraSmall
+    case extraExtraSmall
 }
 
 struct ButtonTypography: GeneralTypographyConfiguration {
@@ -117,15 +129,15 @@ struct ButtonTypography: GeneralTypographyConfiguration {
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
-    let xs: TypographyToken?
-    let xxs: TypographyToken?
+    let extraSmall: TypographyToken?
+    let extraExtraSmall: TypographyToken?
     
-    init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?, xs: TypographyToken?, xxs: TypographyToken?) {
+    init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?, extraSmall: TypographyToken?, extraExtraSmall: TypographyToken?) {
         self.large = large
         self.medium = medium
         self.small = small
-        self.xs = xs
-        self.xxs = xxs
+        self.extraSmall = extraSmall
+        self.extraExtraSmall = extraExtraSmall
     }
     
     /**
@@ -142,10 +154,10 @@ struct ButtonTypography: GeneralTypographyConfiguration {
             return medium
         case .small:
             return small
-        case .xs:
-            return xs
-        case .xxs:
-            return xxs
+        case .extraSmall:
+            return extraSmall
+        case .extraExtraSmall:
+            return extraExtraSmall
         case .none:
             return medium
         }
@@ -161,10 +173,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Height.medium
         case .small:
             return Spacing.Button.Height.small
-        case .xs:
-            return Spacing.Button.Height.xs
-        case .xxs:
-            return Spacing.Button.Height.xxs
+        case .extraSmall:
+            return Spacing.Button.Height.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.Height.extraExtraSmall
         }
     }
     
@@ -176,10 +188,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.CornerRadius.medium
         case .small:
             return Spacing.Button.CornerRadius.small
-        case .xs:
-            return Spacing.Button.CornerRadius.xs
-        case .xxs:
-            return Spacing.Button.CornerRadius.xxs
+        case .extraSmall:
+            return Spacing.Button.CornerRadius.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.CornerRadius.extraExtraSmall
         }
     }
     
@@ -191,10 +203,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Padding.medium
         case .small:
             return Spacing.Button.Padding.small
-        case .xs:
-            return Spacing.Button.Padding.xs
-        case .xxs:
-            return Spacing.Button.Padding.xxs
+        case .extraSmall:
+            return Spacing.Button.Padding.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.Padding.extraExtraSmall
         }
     }
     
@@ -206,10 +218,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.IconSize.medium
         case .small:
             return Spacing.Button.IconSize.small
-        case .xs:
-            return Spacing.Button.IconSize.xs
-        case .xxs:
-            return Spacing.Button.IconSize.xxs
+        case .extraSmall:
+            return Spacing.Button.IconSize.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.IconSize.extraExtraSmall
         }
     }
     
@@ -221,16 +233,16 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.SpinnerSize.medium
         case .small:
             return Spacing.Button.SpinnerSize.small
-        case .xs:
-            return Spacing.Button.SpinnerSize.xs
-        case .xxs:
-            return Spacing.Button.SpinnerSize.xxs
+        case .extraSmall:
+            return Spacing.Button.SpinnerSize.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.SpinnerSize.extraExtraSmall
         }
     }
     
     var titleHorizontalGap: CGFloat {
         switch self {
-        case .xs, .xxs:
+        case .extraSmall, .extraExtraSmall:
             return Spacing.Button.Gap.small
         default:
             return Spacing.Button.Gap.medium
@@ -245,13 +257,52 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Gap.medium
         case .small:
             return Spacing.Button.Gap.small
-        case .xs, .xxs:
+        case .extraSmall, .extraExtraSmall:
             return Spacing.Button.Gap.extraSmall
         }
     }
     
     var debugDescription: String {
-        return rawValue
+        return "ButtonSize"
+    }
+}
+
+extension LinkSize {
+    var buttonSize: ButtonSize {
+        return ButtonSize(rawValue: self.rawValue) ?? .medium
+    }
+}
+
+extension LinkSize: ButtonSizeConfiguration {
+    var height: CGFloat {
+        buttonSize.height
     }
     
+    var cornerRadius: CGFloat {
+        0
+    }
+    
+    var paddings: EdgeInsets {
+        buttonSize.paddings.zeroLateral
+    }
+    
+    var iconSize: CGSize {
+        buttonSize.iconSize
+    }
+    
+    var spinnerSize: CGSize {
+        buttonSize.spinnerSize
+    }
+    
+    var iconHorizontalGap: CGFloat {
+        buttonSize.iconHorizontalGap
+    }
+    
+    var titleHorizontalGap: CGFloat {
+        buttonSize.titleHorizontalGap
+    }
+    
+    var debugDescription: String {
+        "LinkSize"
+    }
 }

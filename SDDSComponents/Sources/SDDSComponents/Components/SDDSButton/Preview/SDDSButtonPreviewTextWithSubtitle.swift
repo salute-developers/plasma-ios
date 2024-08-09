@@ -24,11 +24,11 @@ struct SDDSButtonPreviewTextWithSubtitle: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Small button with text and subtitle")
         
-        SDDSButton.defaultTextWithSubtitle(size: .xs)
+        SDDSButton.defaultTextWithSubtitle(size: .extraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XS button with text and subtitle")
         
-        SDDSButton.defaultTextWithSubtitle(size: .xxs)
+        SDDSButton.defaultTextWithSubtitle(size: .extraExtraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XXS button with text and subtitle")
     }

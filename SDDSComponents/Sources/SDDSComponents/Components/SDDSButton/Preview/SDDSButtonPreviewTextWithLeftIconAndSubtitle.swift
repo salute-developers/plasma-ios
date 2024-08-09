@@ -24,11 +24,11 @@ struct SDDSButtonPreviewTextWithLeftIconAndSubtitle: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Small button with text, subtitle, and left icon")
         
-        SDDSButton.textWithLeftIconAndSubtitle(size: .xs)
+        SDDSButton.textWithLeftIconAndSubtitle(size: .extraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XS button with text, subtitle, and left icon")
         
-        SDDSButton.textWithLeftIconAndSubtitle(size: .xxs)
+        SDDSButton.textWithLeftIconAndSubtitle(size: .extraExtraSmall)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("XXS button with text, subtitle, and left icon")
     }

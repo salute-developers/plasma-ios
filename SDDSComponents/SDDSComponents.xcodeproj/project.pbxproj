@@ -19,6 +19,7 @@
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		814F71972C58CC59006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71962C58CC59006385E4 /* SDDSIcons */; };
 		814F719A2C58CE07006385E4 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 814F71992C58CE07006385E4 /* SDDSIcons */; };
+		816846D12C6656260089E02D /* SDDSButtonPreviewLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816846D02C6656260089E02D /* SDDSButtonPreviewLink.swift */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
 		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
@@ -73,6 +74,7 @@
 		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		816846D02C6656260089E02D /* SDDSButtonPreviewLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreviewLink.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		817D9F182C37078F006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818C03B12C418A90002C6D0A /* SDDSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitch.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				819769442C66510000A4BAA1 /* SDDSButtonPreviewTextWithLeftIconAndSubtitle.swift */,
 				819769462C66511100A4BAA1 /* SDDSButtonPreviewTextWithRightIcon.swift */,
 				819769482C66513700A4BAA1 /* SDDSButtonPreviewCircle.swift */,
+				816846D02C6656260089E02D /* SDDSButtonPreviewLink.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
+				816846D12C6656260089E02D /* SDDSButtonPreviewLink.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,

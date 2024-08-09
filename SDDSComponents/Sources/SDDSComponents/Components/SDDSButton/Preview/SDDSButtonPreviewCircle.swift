@@ -21,11 +21,11 @@ struct SDDSButtonPreviewCircle: PreviewProvider {
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Small circle button with icon")
             
-            SDDSButton.circleButton(size: .xs)
+            SDDSButton.circleButton(size: .extraSmall)
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("XS circle button with icon")
             
-            SDDSButton.circleButton(size: .xxs)
+            SDDSButton.circleButton(size: .extraExtraSmall)
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("XXS circle button with icon")
         }
