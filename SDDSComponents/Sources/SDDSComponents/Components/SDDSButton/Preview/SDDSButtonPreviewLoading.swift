@@ -1,14 +1,15 @@
 import Foundation
 import SwiftUI
 
+//// MARK: - Preview: Loading Buttons
 struct SDDSButtonPreviewLoading: PreviewProvider {
     static var previews: some View {
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnlyLoading(size: .large))
-            .previewLayout(PreviewLayout.sizeThatFits)
+        SDDSButton.loadingButton(size: .large)
+            .previewLayout(.sizeThatFits)
             .previewDisplayName("Loading large button with text")
         
-        SDDSButton(viewModel: SDDSButtonViewModel.textOnlyLoadingTransparent(size: .large))
-            .previewLayout(PreviewLayout.sizeThatFits)
+        SDDSButton.transparentLoadingButton(size: .large)
+            .previewLayout(.sizeThatFits)
             .previewDisplayName("Transparent loading large button with text")
     }
 }
