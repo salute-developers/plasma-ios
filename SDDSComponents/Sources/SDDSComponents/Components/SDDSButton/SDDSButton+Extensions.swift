@@ -15,12 +15,15 @@ extension SDDSButton {
     }
     
     var contentOpacity: Double {
+        if isDisabled {
+            return appearance.disabledAlpha
+        }
         if isLoading && spinnerStyle == .solid {
-            0.0
+            return 0.0
         } else if spinnerStyle == .transparent {
-            0.24
+            return appearance.loadingAlpha
         } else {
-            1.0
+            return 1.0
         }
     }
         
