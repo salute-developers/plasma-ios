@@ -139,18 +139,19 @@ public struct SDDSChip: View {
             }
             
             Text(title)
+                .lineLimit(1)
                 .typography(appearance.titleTypography)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
             if let buttonImageSize = size.buttonImageSize, let buttonImage = buttonImage {
-                Button(action: removeAction) {
+                Button(action: handleRemove) {
                     buttonImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: buttonImageSize.width, height: buttonImageSize.height)
-                        .foregroundColor(appearance.buttonTintColor.color(for: colorScheme))
+                        .foregroundColor(.clear)
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -159,16 +160,13 @@ public struct SDDSChip: View {
             Spacer()
                 .frame(width: size.trailingInset)
         }
-        .onTapGesture {
-            removeAction()
-        }
+        .onTapGesture(perform: handleRemove)
         .frame(height: size.height)
         .background(
             RoundedRectangle(cornerRadius: borderRadius)
-                .fill(Color.black)
+                .fill(appearance.buttonTintColor.color(for: colorScheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
-        .disabled(!isEnabled)
         .accessibilityElement(children: .combine)
     }
     
@@ -180,152 +178,11 @@ public struct SDDSChip: View {
             return size.height / 2
         }
     }
-}
-
-
-// MARK: - Preview
-struct SDDSChipPreview: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SDDSChip.defaultExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Default")
-                .padding()
-                .debug()
-            
-            SDDSChip.defaultBorderExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Default Border")
-                .padding()
-                .debug()
-            
-            SDDSChip.noButtonImageExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("No Button Image")
-                .padding()
-                .debug()
-            
-            SDDSChip.noIconImageExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("No Icon Image")
-                .padding()
-                .debug()
-            
-            SDDSChip.onlyTitleExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Only Title")
-                .padding()
-                .debug()
+    
+    private func handleRemove() {
+        guard isEnabled else {
+            return
         }
-    }
-}
-
-public struct DefaultChipSize: ChipSizeConfiguration {
-    public var debugDescription: String {
-        String(reflecting: self)
-    }
-    
-    public var iconImageSize: CGSize? {
-        CGSize(width: 24, height: 24)
-    }
-    
-    public var buttonImageSize: CGSize? {
-        CGSize(width: 24, height: 24)
-    }
-    
-    public var leadingInset: CGFloat {
-        12
-    }
-    
-    public var trailingInset: CGFloat {
-        12
-    }
-    
-    public var spacing: CGFloat {
-        8
-    }
-    
-    public var height: CGFloat {
-        48
-    }
-    
-    public var borderStyle: ChipBorderStyle
-    
-    public init(borderStyle: ChipBorderStyle = .rounded) {
-        self.borderStyle = borderStyle
-    }
-}
-
-extension SDDSChip {
-    static var defaultExample: SDDSChip {
-        SDDSChip(
-            title: "Label",
-            isEnabled: true,
-            iconImage: Image.image("chipIcon"),
-            buttonImage: Image.image("chipClose"),
-            appearance: .defaultAppearance,
-            size: DefaultChipSize(),
-            removeAction: {}
-        )
-    }
-    
-    static var defaultBorderExample: SDDSChip {
-        SDDSChip(
-            title: "Label",
-            isEnabled: true,
-            iconImage: Image.image("chipIcon"),
-            buttonImage: Image.image("chipClose"),
-            appearance: .defaultAppearance,
-            size: DefaultChipSize(borderStyle: .default(12)),
-            removeAction: {}
-        )
-    }
-    
-    static var noButtonImageExample: SDDSChip {
-        SDDSChip(
-            title: "Label",
-            isEnabled: true,
-            iconImage: Image.image("chipIcon"),
-            buttonImage: nil,
-            appearance: .defaultAppearance,
-            size: DefaultChipSize(),
-            removeAction: {}
-        )
-    }
-    
-    static var noIconImageExample: SDDSChip {
-        SDDSChip(
-            title: "Label",
-            isEnabled: true,
-            iconImage: nil,
-            buttonImage: Image.image("chipClose"),
-            appearance: .defaultAppearance,
-            size: DefaultChipSize(),
-            removeAction: {}
-        )
-    }
-    
-    static var onlyTitleExample: SDDSChip {
-        SDDSChip(
-            title: "Label",
-            isEnabled: true,
-            iconImage: nil,
-            buttonImage: nil,
-            appearance: .defaultAppearance,
-            size: DefaultChipSize(),
-            removeAction: {}
-        )
-    }
-}
-
-extension ChipAppearance {
-    static var defaultAppearance: ChipAppearance {
-        .init(
-            titleColor: Color.white.equalToken,
-            titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
-            disabledAlpha: 0.5
-        )
+        removeAction()
     }
 }
