@@ -15,7 +15,8 @@ public extension TypographyToken {
             return .systemFont(ofSize: size)
         }
         guard let font = UIFont(name: fontName, size: size) else {
-            fatalError("Font is not accessible")
+            print("Font is not accessible")
+            return .systemFont(ofSize: size)
         }
         return font
     }
