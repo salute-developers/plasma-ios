@@ -24,6 +24,7 @@ public class Theme {
         guard let fontsDirectoryURL = Bundle(for: self).resourceURL else {
             fatalError("Fonts directory not found in bundle")
         }
+        
         FontsService.shared.initialize(fontsDirectoryURL: fontsDirectoryURL)
     }
 }

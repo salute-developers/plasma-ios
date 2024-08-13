@@ -210,6 +210,7 @@ public struct ButtonIconAttributes {
     - init(titleTypography: ButtonTypography, titleColor: ColorToken, subtitleTypography: ButtonTypography, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
  */
 public struct ButtonAppearance {
+    public let name: String
     /**
      Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
      */
@@ -268,6 +269,7 @@ public struct ButtonAppearance {
         - backgroundColor: Цвет фона кнопки.
      */
     public init(
+        name: String,
         titleTypography: TypographyConfiguration,
         titleColor: ColorToken,
         subtitleTypography: TypographyConfiguration,
@@ -278,6 +280,7 @@ public struct ButtonAppearance {
         disabledAlpha: CGFloat,
         loadingAlpha: CGFloat
     ) {
+        self.name = name
         self.titleTypography = titleTypography
         self.titleColor = titleColor
         self.subtitleTypography = subtitleTypography
@@ -288,6 +291,8 @@ public struct ButtonAppearance {
         self.disabledAlpha = disabledAlpha
         self.loadingAlpha = loadingAlpha
     }
+    
+
 }
 
 /**

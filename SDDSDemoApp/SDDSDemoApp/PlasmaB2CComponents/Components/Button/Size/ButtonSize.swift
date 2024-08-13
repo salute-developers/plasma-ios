@@ -1,13 +1,14 @@
 import Foundation
-import SDDSComponents
 import SwiftUI
+import SDDSComponents
+import PlasmaB2CTheme
 
 public enum ButtonSize: String, CaseIterable {
     case large
     case medium
     case small
-    case xs
-    case xxs
+    case extraSmall
+    case extraExtraSmall
 }
 
 extension ButtonSize: ButtonSizeConfiguration {
@@ -19,10 +20,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Height.medium
         case .small:
             return Spacing.Button.Height.small
-        case .xs:
-            return Spacing.Button.Height.xs
-        case .xxs:
-            return Spacing.Button.Height.xxs
+        case .extraSmall:
+            return Spacing.Button.Height.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.Height.extraExtraSmall
         }
     }
     
@@ -34,10 +35,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.CornerRadius.medium
         case .small:
             return Spacing.Button.CornerRadius.small
-        case .xs:
-            return Spacing.Button.CornerRadius.xs
-        case .xxs:
-            return Spacing.Button.CornerRadius.xxs
+        case .extraSmall:
+            return Spacing.Button.CornerRadius.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.CornerRadius.extraExtraSmall
         }
     }
     
@@ -49,10 +50,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Padding.medium
         case .small:
             return Spacing.Button.Padding.small
-        case .xs:
-            return Spacing.Button.Padding.xs
-        case .xxs:
-            return Spacing.Button.Padding.xxs
+        case .extraSmall:
+            return Spacing.Button.Padding.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.Padding.extraExtraSmall
         }
     }
     
@@ -64,10 +65,10 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.IconSize.medium
         case .small:
             return Spacing.Button.IconSize.small
-        case .xs:
-            return Spacing.Button.IconSize.xs
-        case .xxs:
-            return Spacing.Button.IconSize.xxs
+        case .extraSmall:
+            return Spacing.Button.IconSize.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.IconSize.extraExtraSmall
         }
     }
     
@@ -79,16 +80,16 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.SpinnerSize.medium
         case .small:
             return Spacing.Button.SpinnerSize.small
-        case .xs:
-            return Spacing.Button.SpinnerSize.xs
-        case .xxs:
-            return Spacing.Button.SpinnerSize.xxs
+        case .extraSmall:
+            return Spacing.Button.SpinnerSize.extraSmall
+        case .extraExtraSmall:
+            return Spacing.Button.SpinnerSize.extraExtraSmall
         }
     }
     
     public var titleHorizontalGap: CGFloat {
         switch self {
-        case .xs, .xxs:
+        case .extraSmall, .extraExtraSmall:
             return Spacing.Button.Gap.small
         default:
             return Spacing.Button.Gap.medium
@@ -103,13 +104,12 @@ extension ButtonSize: ButtonSizeConfiguration {
             return Spacing.Button.Gap.medium
         case .small:
             return Spacing.Button.Gap.small
-        case .xs, .xxs:
+        case .extraSmall, .extraExtraSmall:
             return Spacing.Button.Gap.extraSmall
         }
     }
     
     public var debugDescription: String {
-        return rawValue
+        return "ButtonSize"
     }
-    
 }

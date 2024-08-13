@@ -29,9 +29,19 @@
 		817580EF2C383FF200E45207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EE2C383FF200E45207 /* Colors.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */; };
-		8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16E2C3BF90E00AD650A /* ButtonSize.swift */; };
-		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
-		8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1732C3BF99F00AD650A /* ButtonTypography.swift */; };
+		81CF11FC2C6B8CC60074174F /* LinkSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11EF2C6B8CC60074174F /* LinkSize+Extensions.swift */; };
+		81CF11FD2C6B8CC60074174F /* SDDSButton+PlasmaB2C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11F22C6B8CC60074174F /* SDDSButton+PlasmaB2C.swift */; };
+		81CF11FE2C6B8CC60074174F /* ButtonAppearance+PlasmaB2C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11F42C6B8CC60074174F /* ButtonAppearance+PlasmaB2C.swift */; };
+		81CF11FF2C6B8CC60074174F /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11F62C6B8CC60074174F /* ButtonTypography.swift */; };
+		81CF12002C6B8CC60074174F /* PlasmaB2CStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11F72C6B8CC60074174F /* PlasmaB2CStyle.swift */; };
+		81CF12012C6B8CC60074174F /* LinkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11F92C6B8CC60074174F /* LinkSize.swift */; };
+		81CF12022C6B8CC60074174F /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11FA2C6B8CC60074174F /* Spacing.swift */; };
+		81CF12032C6B8CC60074174F /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF11FB2C6B8CC60074174F /* ButtonSize.swift */; };
+		81CF12092C6B90710074174F /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81CF12082C6B90710074174F /* PlasmaB2CTheme */; };
+		81CF120C2C6B96020074174F /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81CF120B2C6B96020074174F /* PlasmaB2CTheme */; };
+		81CF120F2C6B96410074174F /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81CF120E2C6B96410074174F /* PlasmaB2CTheme */; };
+		81CF12122C6B9EC50074174F /* View+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF12112C6B9EC50074174F /* View+Conditional.swift */; };
+		81CF12162C6CAF160074174F /* Typography+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF12152C6CAF160074174F /* Typography+Description.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +88,16 @@
 		817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonViewData.swift; sourceTree = "<group>"; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
-		8199A16E2C3BF90E00AD650A /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
-		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
-		8199A1732C3BF99F00AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
+		81CF11EF2C6B8CC60074174F /* LinkSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LinkSize+Extensions.swift"; sourceTree = "<group>"; };
+		81CF11F22C6B8CC60074174F /* SDDSButton+PlasmaB2C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSButton+PlasmaB2C.swift"; sourceTree = "<group>"; };
+		81CF11F42C6B8CC60074174F /* ButtonAppearance+PlasmaB2C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ButtonAppearance+PlasmaB2C.swift"; sourceTree = "<group>"; };
+		81CF11F62C6B8CC60074174F /* ButtonTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
+		81CF11F72C6B8CC60074174F /* PlasmaB2CStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlasmaB2CStyle.swift; sourceTree = "<group>"; };
+		81CF11F92C6B8CC60074174F /* LinkSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkSize.swift; sourceTree = "<group>"; };
+		81CF11FA2C6B8CC60074174F /* Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		81CF11FB2C6B8CC60074174F /* ButtonSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		81CF12112C6B9EC50074174F /* View+Conditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Conditional.swift"; sourceTree = "<group>"; };
+		81CF12152C6CAF160074174F /* Typography+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+Description.swift"; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +108,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */,
+				81CF12092C6B90710074174F /* PlasmaB2CTheme in Frameworks */,
+				81CF120F2C6B96410074174F /* PlasmaB2CTheme in Frameworks */,
+				81CF120C2C6B96020074174F /* PlasmaB2CTheme in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +156,9 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				81CF12102C6B9EBC0074174F /* Common */,
+				81CF11ED2C6B8CC60074174F /* PlasmaB2CComponents */,
 				811DE1362C4D0EB2000DD354 /* Views */,
-				8199A1702C3BF94500AD650A /* Constants */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
 				24C154092BB3020B00963FAA /* Assets.xcassets */,
 				818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */,
@@ -246,19 +267,81 @@
 				817580EB2C383BA500E45207 /* ButtonViewModel.swift */,
 				811DE13D2C4D1145000DD354 /* SDDSButtonViewModel+Preview.swift */,
 				817580EE2C383FF200E45207 /* Colors.swift */,
-				8199A16E2C3BF90E00AD650A /* ButtonSize.swift */,
-				8199A1732C3BF99F00AD650A /* ButtonTypography.swift */,
 				818FE9322C3C223200F64958 /* SDDSButtonViewData.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
 		};
-		8199A1702C3BF94500AD650A /* Constants */ = {
+		81CF11ED2C6B8CC60074174F /* PlasmaB2CComponents */ = {
 			isa = PBXGroup;
 			children = (
-				8199A1712C3BF94E00AD650A /* Spacing.swift */,
+				81CF11EE2C6B8CC60074174F /* Extensions */,
+				81CF11F02C6B8CC60074174F /* Components */,
 			);
-			path = Constants;
+			path = PlasmaB2CComponents;
+			sourceTree = "<group>";
+		};
+		81CF11EE2C6B8CC60074174F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11EF2C6B8CC60074174F /* LinkSize+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		81CF11F02C6B8CC60074174F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11F12C6B8CC60074174F /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		81CF11F12C6B8CC60074174F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11F22C6B8CC60074174F /* SDDSButton+PlasmaB2C.swift */,
+				81CF11F32C6B8CC60074174F /* Appearance */,
+				81CF11F52C6B8CC60074174F /* Typography */,
+				81CF11F72C6B8CC60074174F /* PlasmaB2CStyle.swift */,
+				81CF11F82C6B8CC60074174F /* Size */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		81CF11F32C6B8CC60074174F /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11F42C6B8CC60074174F /* ButtonAppearance+PlasmaB2C.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		81CF11F52C6B8CC60074174F /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11F62C6B8CC60074174F /* ButtonTypography.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		81CF11F82C6B8CC60074174F /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				81CF11F92C6B8CC60074174F /* LinkSize.swift */,
+				81CF11FA2C6B8CC60074174F /* Spacing.swift */,
+				81CF11FB2C6B8CC60074174F /* ButtonSize.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		81CF12102C6B9EBC0074174F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				81CF12112C6B9EC50074174F /* View+Conditional.swift */,
+				81CF12152C6CAF160074174F /* Typography+Description.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +364,9 @@
 			packageProductDependencies = (
 				8159F7252C5CFD9200622836 /* SDDSComponents */,
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
+				81CF12082C6B90710074174F /* PlasmaB2CTheme */,
+				81CF120B2C6B96020074174F /* PlasmaB2CTheme */,
+				81CF120E2C6B96410074174F /* PlasmaB2CTheme */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -357,6 +443,7 @@
 			packageReferences = (
 				8159F7242C5CFD9200622836 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
+				81CF120D2C6B96410074174F /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -422,23 +509,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
-				8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */,
+				81CF12162C6CAF160074174F /* Typography+Description.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
+				81CF11FC2C6B8CC60074174F /* LinkSize+Extensions.swift in Sources */,
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
+				81CF11FF2C6B8CC60074174F /* ButtonTypography.swift in Sources */,
 				811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */,
+				81CF12122C6B9EC50074174F /* View+Conditional.swift in Sources */,
+				81CF11FD2C6B8CC60074174F /* SDDSButton+PlasmaB2C.swift in Sources */,
 				818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */,
+				81CF12032C6B8CC60074174F /* ButtonSize.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				817580EF2C383FF200E45207 /* Colors.swift in Sources */,
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
+				81CF12012C6B8CC60074174F /* LinkSize.swift in Sources */,
+				81CF11FE2C6B8CC60074174F /* ButtonAppearance+PlasmaB2C.swift in Sources */,
+				81CF12002C6B8CC60074174F /* PlasmaB2CStyle.swift in Sources */,
 				811DE13E2C4D1145000DD354 /* SDDSButtonViewModel+Preview.swift in Sources */,
-				8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */,
-				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
+				81CF12022C6B8CC60074174F /* Spacing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -584,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -612,7 +706,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,7 +743,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,6 +888,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
+		81CF120D2C6B96410074174F /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Themes/PlasmaB2CTheme;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -804,6 +902,18 @@
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
+		};
+		81CF12082C6B90710074174F /* PlasmaB2CTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlasmaB2CTheme;
+		};
+		81CF120B2C6B96020074174F /* PlasmaB2CTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlasmaB2CTheme;
+		};
+		81CF120E2C6B96410074174F /* PlasmaB2CTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlasmaB2CTheme;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

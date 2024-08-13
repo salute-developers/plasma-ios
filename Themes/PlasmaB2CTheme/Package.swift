@@ -21,7 +21,7 @@ let package = Package(
             path: ".",
             exclude: ["PlasmaB2CTheme.xcodeproj", "SDDSTheme.h"],
             resources: [
-                .process("Fonts")
+                .copy("Fonts")
             ]
         )
     ]

@@ -1,10 +1,10 @@
 import Foundation
 import SwiftUI
 
-struct DebugModifier: ViewModifier {
+public struct DebugModifier: ViewModifier {
     let borderWidth = 2.0
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .overlay(
                 Rectangle()
@@ -14,7 +14,7 @@ struct DebugModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func debug() -> some View {
         self.modifier(DebugModifier())
     }

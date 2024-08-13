@@ -67,6 +67,7 @@ extension SDDSButton {
 extension ButtonAppearance {
     static var black: ButtonAppearance {
         .init(
+            name: "black",
             titleTypography: ButtonTypography.default,
             titleColor: ColorToken.titleColor,
             subtitleTypography: ButtonTypography.default,
@@ -81,6 +82,7 @@ extension ButtonAppearance {
     
     static var transparent: ButtonAppearance {
         .init(
+            name: "transparent",
             titleTypography: ButtonTypography.default,
             titleColor: ColorToken.blackTitleColor,
             subtitleTypography: ButtonTypography.default,

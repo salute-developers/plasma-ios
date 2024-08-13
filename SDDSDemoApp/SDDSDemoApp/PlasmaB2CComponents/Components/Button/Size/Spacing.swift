@@ -27,40 +27,40 @@ enum Spacing {
             static let large: CGFloat = Spacing.fiftySix
             static let medium: CGFloat = Spacing.fourtyEight
             static let small: CGFloat = Spacing.fourty
-            static let xs: CGFloat = Spacing.thirtyTwo
-            static let xxs: CGFloat = Spacing.twentyFour
+            static let extraSmall: CGFloat = Spacing.thirtyTwo
+            static let extraExtraSmall: CGFloat = Spacing.twentyFour
         }
 
         enum CornerRadius {
             static let large: CGFloat = Spacing.fourteen
             static let medium: CGFloat = Spacing.twelve
             static let small: CGFloat = Spacing.ten
-            static let xs: CGFloat = Spacing.eight
-            static let xxs: CGFloat = Spacing.six
+            static let extraSmall: CGFloat = Spacing.eight
+            static let extraExtraSmall: CGFloat = Spacing.six
         }
         
         enum Padding {
             static let large = EdgeInsets(top: Spacing.eleven, leading: Spacing.twentyTwo, bottom: Spacing.eleven, trailing: Spacing.twentyFour)
             static let medium = EdgeInsets(top: Spacing.eleven, leading: Spacing.twenty, bottom: Spacing.eleven, trailing: Spacing.twenty)
             static let small = EdgeInsets(top: Spacing.eleven, leading: Spacing.sixteen, bottom: Spacing.eleven, trailing: Spacing.sixteen)
-            static let xs = EdgeInsets(top: Spacing.eleven, leading: Spacing.twelve, bottom: Spacing.eleven, trailing: Spacing.twelve)
-            static let xxs = EdgeInsets(top: Spacing.five, leading: Spacing.ten, bottom: Spacing.five, trailing: Spacing.ten)
+            static let extraSmall = EdgeInsets(top: Spacing.eleven, leading: Spacing.twelve, bottom: Spacing.eleven, trailing: Spacing.twelve)
+            static let extraExtraSmall = EdgeInsets(top: Spacing.five, leading: Spacing.ten, bottom: Spacing.five, trailing: Spacing.ten)
         }
         
         enum IconSize {
             static let large = CGSize(width: Spacing.twentyFour, height: Spacing.twentyFour)
             static let medium = CGSize(width: Spacing.twentyFour, height: Spacing.twentyFour)
             static let small = CGSize(width: Spacing.twentyFour, height: Spacing.twentyFour)
-            static let xs = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
-            static let xxs = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
+            static let extraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
+            static let extraExtraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
         }
         
         enum SpinnerSize {
             static let large = CGSize(width: Spacing.twentyTwo, height: Spacing.twentyTwo)
             static let medium = CGSize(width: Spacing.twentyTwo, height: Spacing.twentyTwo)
             static let small = CGSize(width: Spacing.twentyTwo, height: Spacing.twentyTwo)
-            static let xs = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
-            static let xxs = CGSize(width: Spacing.twelve, height: Spacing.twelve)
+            static let extraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
+            static let extraExtraSmall = CGSize(width: Spacing.twelve, height: Spacing.twelve)
         }
         
         enum Gap {
@@ -69,5 +69,11 @@ enum Spacing {
             static let small: CGFloat = Spacing.four
             static let extraSmall: CGFloat = Spacing.two
         }
+    }
+}
+
+extension EdgeInsets {
+    var zeroLateral: EdgeInsets {
+        .init(top: top, leading: 0, bottom: bottom, trailing: 0)
     }
 }

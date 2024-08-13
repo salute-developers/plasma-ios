@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct ButtonView: View {
     @ObservedObject private var viewModel: ButtonViewModel
@@ -12,7 +13,7 @@ struct ButtonView: View {
     
     var body: some View {
         List {
-            Section {
+            Section("View") {
                 HStack {
                     Spacer()
                     SDDSButton(
@@ -26,14 +27,48 @@ struct ButtonView: View {
                         spinnerStyle: viewModel.spinnerStyle,
                         buttonStyle: viewModel.buttonStyle,
                         appearance: viewModel.appearance,
-                        layoutMode: viewModel.layoutMode, 
+                        layoutMode: viewModel.layoutMode,
                         action: {}
                     )
+                    .applyIf(viewModel.isDebug, transform: { $0.debug() })
                     Spacer()
                 }
             }
             
-            Section {
+            Section("Tokens") {
+                HStack {
+                    Text("Title")
+                    Spacer()
+                    Text(viewModel.appearance.titleColor.id)
+                }
+                HStack {
+                    Text("Title Font")
+                    Spacer()
+                    Text(viewModel.appearance.titleTypography.typography(with: viewModel.size)?.description ?? "")
+                }
+                HStack {
+                    Text("Subtitle")
+                    Spacer()
+                    Text(viewModel.appearance.subtitleColor.id)
+                }
+                HStack {
+                    Text("Subtitle Font")
+                    Spacer()
+                    Text(viewModel.appearance.subtitleTypography.typography(with: viewModel.size)?.description ?? "")
+                }
+                HStack {
+                    Text("Spinner")
+                    Spacer()
+                    Text(viewModel.appearance.spinnerColor.id)
+                }
+                HStack {
+                    Text("Background")
+                    Spacer()
+                    Text(viewModel.appearance.backgroundColor.id)
+                }
+            }
+            
+            Section("Settings") {
                 HStack {
                     Text("Style")
                     Spacer()
@@ -49,22 +84,22 @@ struct ButtonView: View {
                     }
                 }
                 HStack {
-                    Text("Color Style")
+                    Text("Appearance")
                     Spacer()
                         .frame(maxWidth: .infinity)
                     Menu {
-                        ForEach(SolidColorStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue) {
-                                viewModel.colorStyle = style
+                        ForEach(ButtonAppearance.all, id: \.name) { appearance in
+                            Button(appearance.name) {
+                                viewModel.appearance = appearance
                             }
                         }
                     } label: {
                         HStack {
                             Rectangle()
                                 .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.colorStyle.suiColor)
+                                .foregroundColor(viewModel.appearance.backgroundColor.color())
                             
-                            Text(viewModel.colorStyle.rawValue)
+                            Text(viewModel.appearance.name)
                         }
                     }
                 }
@@ -140,6 +175,9 @@ struct ButtonView: View {
                 }
                 HStack {
                     Toggle("Loading", isOn: $viewModel.isLoading)
+                }
+                HStack {
+                    Toggle("Debug", isOn: $viewModel.isDebug)
                 }
                 HStack {
                     Text("Spinner Style")
