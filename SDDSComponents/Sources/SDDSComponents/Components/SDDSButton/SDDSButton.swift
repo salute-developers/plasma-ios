@@ -98,7 +98,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
         case .wrapContent:
             return false
         case .fixedWidth(let alignment):
-            return alignment == .centered
+            return alignment == .packed
         }
     }
     
@@ -110,7 +110,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
         case .wrapContent:
             return false
         case .fixedWidth(let alignment):
-            return alignment == .sideBySide
+            return alignment == .spaceBetween
         }
     }
     
@@ -123,10 +123,10 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             return "Wrap Content"
         case .fixedWidth(let alignment):
             switch alignment {
-            case .centered:
-                return "Centered"
-            case .sideBySide:
-                return "Side by side"
+            case .packed:
+                return "Packed"
+            case .spaceBetween:
+                return "Space Between"
             }
         }
     }
@@ -139,7 +139,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
      Все возможные случаи `ButtonLayoutMode`.
      */
     public static var allCases: [ButtonLayoutMode] {
-        return [.wrapContent, .fixedWidth(.centered), .fixedWidth(.sideBySide)]
+        return [.wrapContent, .fixedWidth(.packed), .fixedWidth(.spaceBetween)]
     }
 }
 
@@ -154,12 +154,12 @@ public enum ButtonContentAlignment {
     /**
      Содержимое кнопки выравнивается по центру.
      */
-    case centered
+    case packed
     
     /**
      Содержимое кнопки выравнивается по бокам (по левому и правому краю) .
      */
-    case sideBySide
+    case spaceBetween
 }
 
 
@@ -246,6 +246,16 @@ public struct ButtonAppearance {
     public let backgroundColor: ColorToken
     
     /**
+     Прозрачность кнопки в выключенном состоянии.
+     */
+    public let disabledAlpha: CGFloat
+    
+    /**
+     Прозрачность кнопки в состоянии загрузки.
+     */
+    public let loadingAlpha: CGFloat
+    
+    /**
      Инициализатор для создания стиля кнопки с указанными параметрами.
      
      - Parameters:
@@ -264,7 +274,10 @@ public struct ButtonAppearance {
         subtitleColor: ColorToken,
         iconColor: ColorToken,
         spinnerColor: ColorToken,
-        backgroundColor: ColorToken) {
+        backgroundColor: ColorToken,
+        disabledAlpha: CGFloat,
+        loadingAlpha: CGFloat
+    ) {
         self.titleTypography = titleTypography
         self.titleColor = titleColor
         self.subtitleTypography = subtitleTypography
@@ -272,21 +285,61 @@ public struct ButtonAppearance {
         self.iconColor = iconColor
         self.spinnerColor = spinnerColor
         self.backgroundColor = backgroundColor
+        self.disabledAlpha = disabledAlpha
+        self.loadingAlpha = loadingAlpha
+    }
+}
+
+/**
+ `ButtonAccessibility` содержит параметры доступности для кнопки.
+
+ - Properties:
+    - label: Метка доступности для кнопки.
+    - hint: Подсказка доступности для кнопки.
+    - value: Значение доступности для кнопки.
+ */
+public struct ButtonAccessibility {
+    public var label: String
+    public var hint: String
+    public var value: String
+    
+    /**
+     Инициализатор для создания параметров доступности кнопки.
+     
+     - Parameters:
+        - label: Метка доступности для кнопки.
+        - hint: Подсказка доступности для кнопки.
+        - value: Значение доступности для кнопки.
+     */
+    public init(label: String, hint: String, value: String) {
+        self.label = label
+        self.hint = hint
+        self.value = value
+    }
+    
+    /**
+     Инициализатор для создания параметров доступности кнопки с пустыми значениями.
+     */
+    public init() {
+        self.label = ""
+        self.hint = ""
+        self.value = ""
     }
 }
 
 public struct SDDSButton: View {
-    @Binding public var title: String
-    @Binding public var subtitle: String
-    @Binding public var iconAttributes: ButtonIconAttributes?
-    @Binding public var size: ButtonSizeConfiguration
-    @Binding public var isDisabled: Bool
-    @Binding public var isLoading: Bool
-    @Binding public var spinnerImage: Image
-    @Binding public var spinnerStyle: SpinnerStyle
-    @Binding public var buttonStyle: SDDSComponents.ButtonStyle
-    @Binding public var appearance: ButtonAppearance
-    @Binding public var layoutMode: ButtonLayoutMode
+    public let title: String
+    public let subtitle: String
+    public let iconAttributes: ButtonIconAttributes?
+    public let size: ButtonSizeConfiguration
+    public let isDisabled: Bool
+    public let isLoading: Bool
+    public let spinnerImage: Image
+    public let spinnerStyle: SpinnerStyle
+    public let buttonStyle: SDDSComponents.ButtonStyle
+    public let appearance: ButtonAppearance
+    public let layoutMode: ButtonLayoutMode
+    public let accessibility: ButtonAccessibility
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
@@ -308,33 +361,36 @@ public struct SDDSButton: View {
             - buttonStyle: Стиль кнопки, определяемый `SDDSComponents.ButtonStyle` (по умолчанию .basic).
             - appearance: Стилистические атрибуты кнопки, включающие типографику и цвета, определяемые `ButtonAppearance`.
             - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (по умолчанию .wrapContent).
+            - accessibility: Параметры доступности для кнопки, определяемые `ButtonAccessibility`.
             - action: Действие, выполняемое при нажатии на кнопку.
     */
     public init(
-        title: Binding<String> = .constant(""),
-        subtitle: Binding<String> = .constant(""),
-        iconAttributes: Binding<ButtonIconAttributes?> = .constant(nil),
-        size: Binding<ButtonSizeConfiguration>,
-        isDisabled: Binding<Bool> = .constant(false),
-        isLoading: Binding<Bool> = .constant(false),
-        spinnerImage: Binding<Image> = .constant(Image("spinner", bundle: Bundle(for: Components.self))),
-        spinnerStyle: Binding<SpinnerStyle> = .constant(.solid),
-        buttonStyle: Binding<SDDSComponents.ButtonStyle> = .constant(.basic),
-        appearance: Binding<ButtonAppearance>,
-        layoutMode: Binding<ButtonLayoutMode> = .constant(.wrapContent),
+        title: String,
+        subtitle: String,
+        iconAttributes: ButtonIconAttributes? = nil,
+        size: ButtonSizeConfiguration,
+        isDisabled: Bool = false,
+        isLoading: Bool = false,
+        spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
+        spinnerStyle: SpinnerStyle = .solid,
+        buttonStyle: SDDSComponents.ButtonStyle = .basic,
+        appearance: ButtonAppearance,
+        layoutMode: ButtonLayoutMode = .wrapContent,
+        accessibility: ButtonAccessibility = ButtonAccessibility(),
         action: @escaping () -> Void
     ) {
-        self._title = title
-        self._subtitle = subtitle
-        self._iconAttributes = iconAttributes
-        self._size = size
-        self._isDisabled = isDisabled
-        self._isLoading = isLoading
-        self._spinnerImage = spinnerImage
-        self._spinnerStyle = spinnerStyle
-        self._buttonStyle = buttonStyle
-        self._appearance = appearance
-        self._layoutMode = layoutMode
+        self.title = title
+        self.subtitle = subtitle
+        self.iconAttributes = iconAttributes
+        self.size = size
+        self.isDisabled = isDisabled
+        self.isLoading = isLoading
+        self.spinnerImage = spinnerImage
+        self.spinnerStyle = spinnerStyle
+        self.buttonStyle = buttonStyle
+        self.appearance = appearance
+        self.layoutMode = layoutMode
+        self.accessibility = accessibility
         self.action = action
     }
     
@@ -355,6 +411,9 @@ public struct SDDSButton: View {
             .applyIf(!isCircle, transform: { $0.cornerRadius(size.cornerRadius) })
             .frame(height: size.height)
             .disabled(isDisabled)
+            .accessibility(label: Text(accessibility.label))
+            .accessibility(hint: Text(accessibility.hint))
+            .accessibility(value: Text(accessibility.value))
             
             if isLoading {
                 spinner

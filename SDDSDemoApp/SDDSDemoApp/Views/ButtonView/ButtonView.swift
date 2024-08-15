@@ -16,17 +16,17 @@ struct ButtonView: View {
                 HStack {
                     Spacer()
                     SDDSButton(
-                        title: $viewModel.title,
-                        subtitle: $viewModel.subtitle,
-                        iconAttributes: $viewModel.iconAttributes,
-                        size: $viewModel.size,
-                        isDisabled: $viewModel.isDisabled,
-                        isLoading: $viewModel.isLoading,
-                        spinnerImage: $viewModel.spinnerImage,
-                        spinnerStyle: $viewModel.spinnerStyle,
-                        buttonStyle: $viewModel.buttonStyle,
-                        appearance: $viewModel.appearance,
-                        layoutMode: $viewModel.layoutMode, 
+                        title: viewModel.title,
+                        subtitle: viewModel.subtitle,
+                        iconAttributes: viewModel.iconAttributes,
+                        size: viewModel.size,
+                        isDisabled: viewModel.isDisabled,
+                        isLoading: viewModel.isLoading,
+                        spinnerImage: viewModel.spinnerImage,
+                        spinnerStyle: viewModel.spinnerStyle,
+                        buttonStyle: viewModel.buttonStyle,
+                        appearance: viewModel.appearance,
+                        layoutMode: viewModel.layoutMode, 
                         action: {}
                     )
                     Spacer()

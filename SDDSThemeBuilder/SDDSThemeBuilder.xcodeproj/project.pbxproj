@@ -363,7 +363,6 @@
 		8180A5CE2C131CCA00009AF5 /* SBSansDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansDisplay-Bold.otf"; sourceTree = "<group>"; };
 		8181E3A92BFB6A5F00D4012C /* GradientContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilder.swift; sourceTree = "<group>"; };
 		8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilderTests.swift; sourceTree = "<group>"; };
-		818C03BC2C43C0FD002C6D0A /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
@@ -1198,7 +1197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C10A1D2C2929850055BB04 /* meta.json in Resources */,
-				810DE5442C2AC77800F1C96F /* GradientToken.stencil in Resources */,
 				8133401A2C0635AA005AD84F /* SBSansDisplay-Medium.otf in Resources */,
 				8133401C2C0636F0005AD84F /* ios_gradient.json in Resources */,
 				813340162C0632EA005AD84F /* palette.json in Resources */,

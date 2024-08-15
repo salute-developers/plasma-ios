@@ -46,17 +46,17 @@ struct SDDSButtonViewData {
 extension SDDSButton {
     static func button(with viewData: SDDSButtonViewData) -> SDDSButton {
         return SDDSButton(
-            title: .constant(viewData.title),
-            subtitle: .constant(viewData.subtitle),
-            iconAttributes: .constant(viewData.iconAttributes),
-            size: .constant(viewData.size),
-            isDisabled: .constant(viewData.isDisabled),
-            isLoading: .constant(viewData.isLoading),
-            spinnerImage: .constant(viewData.spinnerImage),
-            spinnerStyle: .constant(viewData.spinnerStyle),
-            buttonStyle: .constant(viewData.buttonStyle),
-            appearance: .constant(viewData.appearance),
-            layoutMode: .constant(viewData.layoutMode), 
+            title: viewData.title,
+            subtitle: viewData.subtitle,
+            iconAttributes: viewData.iconAttributes,
+            size: viewData.size,
+            isDisabled: viewData.isDisabled,
+            isLoading: viewData.isLoading,
+            spinnerImage: viewData.spinnerImage,
+            spinnerStyle: viewData.spinnerStyle,
+            buttonStyle: viewData.buttonStyle,
+            appearance: viewData.appearance,
+            layoutMode: viewData.layoutMode,
             action: {}
         )
     }
