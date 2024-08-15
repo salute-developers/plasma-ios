@@ -117,8 +117,10 @@ public struct SDDSProgressView: View {
             RoundedRectangle(cornerRadius: size.indicatorCornerRadius)
                 .fill(colorToken.color(for: colorScheme))
         case .gradient(let gradientToken):
-            RoundedRectangle(cornerRadius: size.indicatorCornerRadius)
-                .gradient(gradientToken)
+            RoundedCornersMask(
+                cornerRadius: size.indicatorCornerRadius,
+                content: Rectangle().gradient(gradientToken)
+            )
         }
     }
     
@@ -205,7 +207,7 @@ extension SDDSProgressView {
 public extension ProgressBarAppearance {
     static var defaultExample: ProgressBarAppearance {
         .init(
-            tintFillStyle: .color(.blackTitleColor),
+            tintFillStyle: .color(.greenColor),
             trackColor: Color.gray.opacity(0.3).equalToken
         )
     }
