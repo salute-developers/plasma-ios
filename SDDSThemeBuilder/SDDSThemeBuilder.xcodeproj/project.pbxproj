@@ -41,7 +41,6 @@
 		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE5422C2AC77800F1C96F /* Shapes.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D142C05D38600C17C0F /* Shapes.stencil */; };
 		810DE5432C2AC77800F1C96F /* Colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D122C05D1D300C17C0F /* Colors.stencil */; };
-		810DE5442C2AC77800F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
 		810DE5452C2AC77800F1C96F /* Shadows.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D162C05D39E00C17C0F /* Shadows.stencil */; };
 		810DE5462C2AC77800F1C96F /* Gradients.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D1A2C05D3C800C17C0F /* Gradients.stencil */; };
 		810DE5472C2AC77800F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
@@ -118,7 +117,6 @@
 		8180A5A72C11C35500009AF5 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A49E2C0F71A500009AF5 /* FontFamilyToken.swift */; };
 		8180A5A82C11C35500009AF5 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4A02C0F71A500009AF5 /* ShapeToken.swift */; };
 		8180A5A92C11C35700009AF5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4B62C0F71A500009AF5 /* GradientView.swift */; };
-		8180A5AA2C11C36C00009AF5 /* ThemeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4CA2C0F71A600009AF5 /* ThemeStyle.swift */; };
 		8180A5AB2C11C37F00009AF5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4B42C0F71A500009AF5 /* Device.swift */; };
 		8180A5B62C131CC100009AF5 /* Gradients+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A5AC2C131CC000009AF5 /* Gradients+Generated.swift */; };
 		8180A5B72C131CC100009AF5 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A5AD2C131CC000009AF5 /* Shadows+Generated.swift */; };
@@ -147,7 +145,7 @@
 		8180A5DD2C131CCA00009AF5 /* SBSansDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8180A5CE2C131CCA00009AF5 /* SBSansDisplay-Bold.otf */; };
 		8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3A92BFB6A5F00D4012C /* GradientContextBuilder.swift */; };
 		8181E3BC2BFB9DFF00D4012C /* GradientContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */; };
-		818C03BD2C43C0FE002C6D0A /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03BC2C43C0FD002C6D0A /* UIScreen+Extensions.swift */; };
+		818C03BD2C43C0FE002C6D0A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
@@ -330,7 +328,6 @@
 		8180A4B22C0F71A500009AF5 /* TypographyToken+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Extensions.swift"; sourceTree = "<group>"; };
 		8180A4B42C0F71A500009AF5 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		8180A4B62C0F71A500009AF5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		8180A4CA2C0F71A600009AF5 /* ThemeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStyle.swift; sourceTree = "<group>"; };
 		8180A53C2C11067100009AF5 /* SDDSTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8180A53E2C11067100009AF5 /* SDDSTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSTheme.h; sourceTree = "<group>"; };
 		8180A54E2C1106A700009AF5 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -750,7 +747,6 @@
 		8180A4A72C0F71A500009AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				818C03BC2C43C0FD002C6D0A /* UIScreen+Extensions.swift */,
 				8180A4A82C0F71A500009AF5 /* GradientToken+SwiftUI.swift */,
 				8180A4A92C0F71A500009AF5 /* UIColor+Hex.swift */,
 				8180A4AA2C0F71A500009AF5 /* View+Conditional.swift */,
@@ -784,7 +780,6 @@
 		8180A4C92C0F71A600009AF5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8180A4CA2C0F71A600009AF5 /* ThemeStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1407,7 +1402,7 @@
 				8180A5932C11C2A100009AF5 /* TypographyToken.swift in Sources */,
 				8180A5962C11C34000009AF5 /* ShadowModifier.swift in Sources */,
 				8180A59F2C11C34400009AF5 /* AdaptiveTypographyToken+Extensions.swift in Sources */,
-				818C03BD2C43C0FE002C6D0A /* UIScreen+Extensions.swift in Sources */,
+				818C03BD2C43C0FE002C6D0A /* (null) in Sources */,
 				8180A59A2C11C34400009AF5 /* GradientToken+Theme.swift in Sources */,
 				8180A59B2C11C34400009AF5 /* TypographyToken+AdaptiveStyle.swift in Sources */,
 				8180A5972C11C34000009AF5 /* LineHeightModifier.swift in Sources */,
@@ -1423,7 +1418,6 @@
 				8180A5AB2C11C37F00009AF5 /* Device.swift in Sources */,
 				8180A5A22C11C34400009AF5 /* GradientToken+SwiftUI.swift in Sources */,
 				8180A5A12C11C34400009AF5 /* TypographyToken+Extensions.swift in Sources */,
-				8180A5AA2C11C36C00009AF5 /* ThemeStyle.swift in Sources */,
 				8180A59D2C11C34400009AF5 /* GradientKind+Extensions.swift in Sources */,
 				8180A58C2C11C05E00009AF5 /* FontsService.swift in Sources */,
 				8180A5A82C11C35500009AF5 /* ShapeToken.swift in Sources */,

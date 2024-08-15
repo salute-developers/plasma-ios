@@ -13,7 +13,7 @@ public extension View {
         modifier(TypographyModifier(token: token))
     }
     
-    func gradient(_ token: GradientToken, theme: ThemeStyle = UIScreen.themeStyle) -> some View {
-        modifier(GradientModifier(token: token, theme: theme))
+    func gradient(_ token: GradientToken, colorScheme: ColorScheme = .light) -> some View {
+        modifier(GradientModifier(token: token, colorScheme: colorScheme))
     }
 }

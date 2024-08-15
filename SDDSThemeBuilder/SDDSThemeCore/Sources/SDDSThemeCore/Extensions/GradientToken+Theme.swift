@@ -3,52 +3,34 @@ import SwiftUI
 
 public extension GradientToken {
     /// Возвращает линейный градиент для светлой или тёмной темы в зависимости от параметра `theme`
-    func linearGradients(for theme: ThemeStyle) -> [SwiftUI.LinearGradient] {
-        kind(for: theme).compactMap { $0.linearGradient?.gradient }
-    }
-    
-    /// Возвращает линейный градиент для текущей темы (светлой или тёмной). Тема определяется автоматически.
-    var linearGradients: [SwiftUI.LinearGradient] {
-        linearGradients(for: UIScreen.themeStyle)
+    func linearGradients(for colorScheme: ColorScheme) -> [SwiftUI.LinearGradient] {
+        kind(for: colorScheme).compactMap { $0.linearGradient?.gradient }
     }
     
     /// Возвращает радиальный градиент для светлой или тёмной темы в зависимости от параметра `theme`
-    func radialGradients(for theme: ThemeStyle) -> [SwiftUI.RadialGradient] {
-        kind(for: theme).compactMap { $0.radialGradient?.gradient }
-    }
-    
-    /// Возвращает радиальный градиент для текущей темы (светлой или тёмной). Тема определяется автоматически.
-    var radialGradients: [SwiftUI.RadialGradient] {
-        radialGradients(for: UIScreen.themeStyle)
+    func radialGradients(for colorScheme: ColorScheme) -> [SwiftUI.RadialGradient] {
+        kind(for: colorScheme).compactMap { $0.radialGradient?.gradient }
     }
     
     /// Возвращает ангулярнй градиент для светлой или тёмной темы в зависимости от параметра `theme`
-    func angularGradients(for theme: ThemeStyle) -> [SwiftUI.AngularGradient] {
-        kind(for: theme).compactMap { $0.angularGradient?.gradient }
-    }
-    
-    /// Возвращает ангулярнй градиент для текущей темы (светлой или тёмной). Тема определяется автоматически.
-    var angularGradients: [SwiftUI.AngularGradient] {
-        angularGradients(for: UIScreen.themeStyle)
+    func angularGradients(for colorScheme: ColorScheme) -> [SwiftUI.AngularGradient] {
+        kind(for: colorScheme).compactMap { $0.angularGradient?.gradient }
     }
     
     /// Возвращает фон для светлой или тёмной темы в зависимости от параметра `theme`
-    func backgrounds(for theme: ThemeStyle) -> [Color] {
-        kind(for: theme).compactMap { $0.plainColor?.background }
-    }
-    
-    /// Возвращает фон для текущей темы (светлой или тёмной). Тема определяется автоматически.
-    var backgrounds: [SwiftUI.Color] {
-        backgrounds(for: UIScreen.themeStyle)
+    func backgrounds(for colorScheme: ColorScheme) -> [Color] {
+        kind(for: colorScheme).compactMap { $0.plainColor?.background }
     }
     
     /// Возвращает список `[GradientKind]` для светлой или тёмной темы в зависимости от параметра `theme`
-    func kind(for theme: ThemeStyle) -> [GradientKind] {
-        switch theme {
+    func kind(for colorScheme: ColorScheme) -> [GradientKind] {
+        switch colorScheme {
         case .light:
             lightGradients
         case .dark:
             darkGradients
+        @unknown default:
+            lightGradients
         }
     }
 }

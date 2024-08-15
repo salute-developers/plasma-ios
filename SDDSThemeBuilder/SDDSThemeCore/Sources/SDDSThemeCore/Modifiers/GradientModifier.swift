@@ -3,17 +3,17 @@ import SwiftUI
 /// Модификатор для применения токена градиента.
 public struct GradientModifier: ViewModifier {
     let token: GradientToken
-    let theme: ThemeStyle
+    let colorScheme: ColorScheme
     
-    public init(token: GradientToken, theme: ThemeStyle) {
+    public init(token: GradientToken, colorScheme: ColorScheme) {
         self.token = token
-        self.theme = theme
+        self.colorScheme = colorScheme
     }
     
     public func body(content: Content) -> some View {
         ZStack {
             content
-            GradientView(theme: theme, token: token)
+            GradientView(colorScheme: colorScheme, token: token)
         }
     }
 }
