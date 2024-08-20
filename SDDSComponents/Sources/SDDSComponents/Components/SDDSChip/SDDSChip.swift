@@ -139,18 +139,19 @@ public struct SDDSChip: View {
             }
             
             Text(title)
+                .lineLimit(1)
                 .typography(appearance.titleTypography)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
             if let buttonImageSize = size.buttonImageSize, let buttonImage = buttonImage {
-                Button(action: removeAction) {
+                Button(action: handleRemove) {
                     buttonImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: buttonImageSize.width, height: buttonImageSize.height)
-                        .foregroundColor(appearance.buttonTintColor.color(for: colorScheme))
+                        .foregroundColor(.clear)
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -159,16 +160,13 @@ public struct SDDSChip: View {
             Spacer()
                 .frame(width: size.trailingInset)
         }
-        .onTapGesture {
-            removeAction()
-        }
+        .onTapGesture(perform: handleRemove)
         .frame(height: size.height)
         .background(
             RoundedRectangle(cornerRadius: borderRadius)
-                .fill(Color.black)
+                .fill(appearance.buttonTintColor.color(for: colorScheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
-        .disabled(!isEnabled)
         .accessibilityElement(children: .combine)
     }
     
@@ -179,6 +177,13 @@ public struct SDDSChip: View {
         case .rounded:
             return size.height / 2
         }
+    }
+    
+    private func handleRemove() {
+        guard isEnabled else {
+            return
+        }
+        removeAction()
     }
 }
 
