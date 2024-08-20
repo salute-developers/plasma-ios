@@ -72,7 +72,7 @@ public extension ColorToken {
     }
     
     static var subtitleColor: ColorToken {
-        Color.white.opacity(0.3).equalToken
+        Color.black.opacity(0.3).equalToken
     }
     
     static var backgroundColor: ColorToken {

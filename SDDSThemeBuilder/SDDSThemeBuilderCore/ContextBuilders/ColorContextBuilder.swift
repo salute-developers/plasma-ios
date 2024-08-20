@@ -1,4 +1,5 @@
 import Foundation
+import SDDSThemeUtilities
 
 struct ColorMap {
     let hex: String?

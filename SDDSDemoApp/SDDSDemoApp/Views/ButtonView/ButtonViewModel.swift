@@ -79,7 +79,9 @@ final class ButtonViewModel: ObservableObject {
             subtitleColor: colorStyle.secondaryTextColor.equalToken,
             iconColor: colorStyle.primaryTextColor.equalToken,
             spinnerColor: colorStyle.spinnerColor.equalToken,
-            backgroundColor: colorStyle.suiColor.equalToken
+            backgroundColor: colorStyle.suiColor.equalToken,
+            disabledAlpha: 0.5,
+            loadingAlpha: 0.5
         )
     }
 }
