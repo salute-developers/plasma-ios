@@ -47,7 +47,9 @@ public extension ButtonAppearance {
             subtitleColor: ColorToken.subtitleColor,
             iconColor: ColorToken.titleColor, 
             spinnerColor: ColorToken.titleColor,
-            backgroundColor: ColorToken.backgroundColor
+            backgroundColor: ColorToken.backgroundColor,
+            disabledAlpha: 0.5,
+            loadingAlpha: 0.5
         )
     }
     
@@ -59,7 +61,9 @@ public extension ButtonAppearance {
             subtitleColor: ColorToken.blackTitleColor,
             iconColor: ColorToken.blackTitleColor,
             spinnerColor: ColorToken.blackTitleColor,
-            backgroundColor: ColorToken.clearColor
+            backgroundColor: ColorToken.clearColor,
+            disabledAlpha: 0.5,
+            loadingAlpha: 0.5
         )
     }
 }

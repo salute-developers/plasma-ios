@@ -14,18 +14,13 @@ public final class FontsService {
 
 extension FontsService {
     private func registerFonts(fontsDirectoryURL: URL) {
-        do {
-            let fontFiles = try FileManager.default.contentsOfDirectory(atPath: fontsDirectoryURL.path)
-            
-            for fontFile in fontFiles {
-                guard fontFile.fileExtension == .otf || fontFile.fileExtension == .ttf else {
-                    continue
-                }
-                let fontURL = fontsDirectoryURL.appendingPathComponent(fontFile)
-                registerFont(with: fontURL)
+        let directoryEnumerator = FileManager.default.enumerator(at: fontsDirectoryURL, includingPropertiesForKeys: nil)
+        
+        while let fileURL = directoryEnumerator?.nextObject() as? URL {
+            guard fileURL.pathExtension == "otf" || fileURL.pathExtension == "ttf" else {
+                continue
             }
-        } catch {
-            fatalError("Error while loading font files: \(error)")
+            registerFont(with: fileURL)
         }
     }
     
