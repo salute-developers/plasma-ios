@@ -95,10 +95,7 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
                 title: "Option \(index + 1)",
                 subtitle: "Description \(index + 1)",
                 isSelected: .constant(index == 0),
-                images: RadioboxImages(
-                    selectedImage: Image(systemName: "largecircle.fill.circle"),
-                    deselectedImage: Image(systemName: "circle")
-                ),
+                images: RadioboxImages.defaultImages,
                 size: SDDSRadioboxSize(),
                 appearance: RadioboxAppearance.defaultExample,
                 accessibility: SelectionControlAccessibility()
