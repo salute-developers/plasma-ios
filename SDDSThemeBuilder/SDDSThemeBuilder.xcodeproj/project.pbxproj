@@ -392,6 +392,7 @@
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
+		81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81C10A1C2C2929850055BB04 /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		81C10A212C292E4D0055BB04 /* Double+Stencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Stencil.swift"; sourceTree = "<group>"; };
 		81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -489,6 +490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BC36882C591D8200A363D0 /* SDDSThemeUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +527,7 @@
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
+				81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */,
 				2489D0A32BC7F3790053AAB1 /* SDDSThemeBuilder */,
 				817539592BD0077200138866 /* SDDSThemeBuilderCore */,
 				817539652BD0077300138866 /* SDDSThemeBuilderCoreTests */,
@@ -784,6 +787,7 @@
 		8180A4A72C0F71A500009AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				818C03BC2C43C0FD002C6D0A /* UIScreen+Extensions.swift */,
 				8180A4A82C0F71A500009AF5 /* GradientToken+SwiftUI.swift */,
 				8180A4A92C0F71A500009AF5 /* UIColor+Hex.swift */,
 				8180A4AA2C0F71A500009AF5 /* View+Conditional.swift */,
@@ -2012,7 +2016,6 @@
 		819B2AD32BF280FB00688624 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -2045,7 +2048,6 @@
 		819B2AD42BF280FB00688624 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
