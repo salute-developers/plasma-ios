@@ -139,30 +139,19 @@ public struct SDDSChip: View {
             }
             
             Text(title)
-<<<<<<< HEAD
                 .lineLimit(1)
-=======
->>>>>>> main
                 .typography(appearance.titleTypography)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
             if let buttonImageSize = size.buttonImageSize, let buttonImage = buttonImage {
-<<<<<<< HEAD
                 Button(action: handleRemove) {
-=======
-                Button(action: removeAction) {
->>>>>>> main
                     buttonImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: buttonImageSize.width, height: buttonImageSize.height)
-<<<<<<< HEAD
                         .foregroundColor(.clear)
-=======
-                        .foregroundColor(appearance.buttonTintColor.color(for: colorScheme))
->>>>>>> main
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -171,7 +160,6 @@ public struct SDDSChip: View {
             Spacer()
                 .frame(width: size.trailingInset)
         }
-<<<<<<< HEAD
         .onTapGesture(perform: handleRemove)
         .frame(height: size.height)
         .background(
@@ -179,18 +167,6 @@ public struct SDDSChip: View {
                 .fill(appearance.buttonTintColor.color(for: colorScheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
-=======
-        .onTapGesture {
-            removeAction()
-        }
-        .frame(height: size.height)
-        .background(
-            RoundedRectangle(cornerRadius: borderRadius)
-                .fill(Color.black)
-                .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
-        )
-        .disabled(!isEnabled)
->>>>>>> main
         .accessibilityElement(children: .combine)
     }
     
@@ -202,7 +178,6 @@ public struct SDDSChip: View {
             return size.height / 2
         }
     }
-<<<<<<< HEAD
     
     private func handleRemove() {
         guard isEnabled else {
@@ -210,8 +185,6 @@ public struct SDDSChip: View {
         }
         removeAction()
     }
-=======
->>>>>>> main
 }
 
 
