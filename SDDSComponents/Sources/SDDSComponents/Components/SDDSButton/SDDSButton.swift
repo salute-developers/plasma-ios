@@ -246,6 +246,16 @@ public struct ButtonAppearance {
     public let backgroundColor: ColorToken
     
     /**
+     Прозрачность кнопки в выключенном состоянии.
+     */
+    public let disabledAlpha: CGFloat
+    
+    /**
+     Прозрачность кнопки в состоянии загрузки.
+     */
+    public let loadingAlpha: CGFloat
+    
+    /**
      Инициализатор для создания стиля кнопки с указанными параметрами.
      
      - Parameters:
@@ -264,7 +274,10 @@ public struct ButtonAppearance {
         subtitleColor: ColorToken,
         iconColor: ColorToken,
         spinnerColor: ColorToken,
-        backgroundColor: ColorToken) {
+        backgroundColor: ColorToken,
+        disabledAlpha: CGFloat,
+        loadingAlpha: CGFloat
+    ) {
         self.titleTypography = titleTypography
         self.titleColor = titleColor
         self.subtitleTypography = subtitleTypography
@@ -272,6 +285,8 @@ public struct ButtonAppearance {
         self.iconColor = iconColor
         self.spinnerColor = spinnerColor
         self.backgroundColor = backgroundColor
+        self.disabledAlpha = disabledAlpha
+        self.loadingAlpha = loadingAlpha
     }
 }
 

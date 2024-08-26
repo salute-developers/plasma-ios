@@ -3,8 +3,8 @@ import SwiftUI
 public struct GradientView: View {
     private let kinds: [GradientKind]
     
-    public init(theme: ThemeStyle = UIScreen.themeStyle, token: GradientToken) {
-        self.kinds = token.kind(for: theme)
+    public init(colorScheme: ColorScheme, token: GradientToken) {
+        self.kinds = token.kind(for: colorScheme)
     }
     
     public var body: some View {

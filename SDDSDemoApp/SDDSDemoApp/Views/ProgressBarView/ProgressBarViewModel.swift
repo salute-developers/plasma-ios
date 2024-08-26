@@ -90,14 +90,14 @@ struct CustomProgressBarSize: ProgressBarSizeConfiguration {
 extension ProgressBarAppearance {
     func withTintColor(_ color: ColorToken) -> ProgressBarAppearance {
         .init(
-            tintColor: color,
+            tintFillStyle: .color(color),
             trackColor: trackColor
         )
     }
     
     func withTrackColor(_ color: ColorToken) -> ProgressBarAppearance {
         .init(
-            tintColor: tintColor,
+            tintFillStyle: .color(color),
             trackColor: color
         )
     }
