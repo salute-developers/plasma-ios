@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import Combine
-import SDDSIcons
 @_exported import SDDSThemeCore
 
 /**
