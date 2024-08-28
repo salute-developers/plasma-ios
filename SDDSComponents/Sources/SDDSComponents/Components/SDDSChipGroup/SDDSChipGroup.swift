@@ -79,35 +79,6 @@ public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugString
 }
 
 /**
- Стандартная конфигурация размеров группы чипов.
-
- - Properties:
-    - debugDescription: Описание для отладки.
-    - insets: Внутренние отступы.
-    - maxColumns: Максимальное количество столбцов в ряду.
-    - alignment: Выравнивание группы чипов.
- */
-public struct DefaultChipGroupSize: ChipGroupSizeConfiguration {
-    public var debugDescription: String {
-        String(reflecting: self)
-    }
-    
-    public var insets: EdgeInsets {
-        EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-    }
-    
-    public var maxColumns: Int {
-        8
-    }
-    
-    public var alignment: ChipGroupAlignment
-    
-    public init(alignment: ChipGroupAlignment = .center) {
-        self.alignment = alignment
-    }
-}
-
-/**
  Вью для отображения группы чипов.
 
  - Properties:
@@ -118,24 +89,32 @@ public struct SDDSChipGroup: View {
     let data: [ChipData]
     let size: ChipGroupSizeConfiguration
     
+    public init(data: [ChipData], size: ChipGroupSizeConfiguration) {
+        self.data = data
+        self.size = size
+    }
+    
     public var body: some View {
-        VStack(spacing: size.insets.top) {
-            ForEach(layoutRows(), id: \.self) { row in
-                HStack(spacing: size.insets.leading) {
-                    if size.alignment == .right || size.alignment == .decreasingRight {
-                        Spacer()
+        GeometryReader { geometry in
+            let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
+            VStack(spacing: size.insets.top) {
+                ForEach(layoutRows(maxWidth: maxWidth), id: \.self) { row in
+                    HStack(spacing: size.insets.leading) {
+                        if size.alignment == .right || size.alignment == .decreasingRight {
+                            Spacer()
+                        }
+                        ForEach(row, id: \.self) { chipData in
+                            SDDSChip(data: chipData)
+                        }
+                        if size.alignment == .left || size.alignment == .decreasingLeft {
+                            Spacer()
+                        }
                     }
-                    ForEach(row, id: \.self) { chipData in
-                        SDDSChip(data: chipData)
-                    }
-                    if size.alignment == .left || size.alignment == .decreasingLeft {
-                        Spacer()
-                    }
+                    .frame(maxWidth: .infinity, alignment: alignment)
                 }
-                .frame(maxWidth: .infinity, alignment: alignment)
             }
+            .padding(size.insets)
         }
-        .padding(size.insets)
     }
     
     private var alignment: SwiftUI.Alignment {
@@ -149,88 +128,42 @@ public struct SDDSChipGroup: View {
         }
     }
     
-    private func layoutRows() -> [[ChipData]] {
+    private func layoutRows(maxWidth: CGFloat) -> [[ChipData]] {
         var rows: [[ChipData]] = []
-        var startIndex = 0
-        var currentMaxColumns = size.maxColumns
-        
-        while startIndex < data.count {
-            let endIndex = min(startIndex + currentMaxColumns, data.count)
-            var row = Array(data[startIndex..<endIndex])
-            if size.alignment == .decreasingRight {
-                row.reverse()
-            }
-            rows.append(row)
-            startIndex = endIndex
-            if size.alignment == .decreasingLeft || size.alignment == .decreasingRight {
-                currentMaxColumns -= 1
-                if currentMaxColumns <= 0 {
-                    break
-                }
+        var currentRow: [ChipData] = []
+        var currentRowWidth: CGFloat = 0
+
+        for chipData in data {
+            let chipWidth = calculateChipWidth(for: chipData)
+
+            if currentRowWidth + chipWidth > maxWidth {
+                rows.append(currentRow)
+                currentRow = [chipData]
+                currentRowWidth = chipWidth
+            } else {
+                currentRow.append(chipData)
+                currentRowWidth += chipWidth
             }
         }
-        
+
+        if !currentRow.isEmpty {
+            rows.append(currentRow)
+        }
+
         return rows
     }
-}
 
-// Пример данных и конфигурации для предварительного просмотра
-struct SDDSChipGroupPreview: PreviewProvider {
-    static var previews: some View {
-        let chipAppearance = ChipAppearance(
-            titleColor: Color.white.equalToken,
-            titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
-            disabledAlpha: 0.5
-        )
-        
-        let chipSize = DefaultChipSize()
-        let chipAccessibility = ChipAccessibility()
-        
-        let chipData = (1...36).map { index in
-            ChipData(
-                title: "Label",
-                isEnabled: true,
-                iconImage: nil,
-                buttonImage: nil,
-                appearance: chipAppearance,
-                size: chipSize,
-                accessibility: chipAccessibility,
-                removeAction: {}
-            )
+    private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
+        let textWidth = chipData.title.size(withAttributes: [.font: chipData.appearance.titleTypography.uiFont]).width
+        let iconWidth: CGFloat = chipData.size.iconImageSize?.width ?? 0
+        let buttonWidth: CGFloat = chipData.size.buttonImageSize?.width ?? 0
+        var totalWidth = textWidth + iconWidth + buttonWidth + chipData.size.leadingInset + chipData.size.trailingInset + 2 * chipData.size.spacing
+        if iconWidth > 0 {
+            totalWidth += chipData.size.spacing
         }
-        
-        return Group {
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .center))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Center")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .left))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .right))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Right")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingLeft))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingRight))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Right")
-                .padding()
-                .debug()
+        if buttonWidth > 0 {
+            totalWidth += chipData.size.spacing
         }
+        return totalWidth
     }
 }

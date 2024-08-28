@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -148,19 +148,19 @@
 		8180A5DD2C131CCA00009AF5 /* SBSansDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8180A5CE2C131CCA00009AF5 /* SBSansDisplay-Bold.otf */; };
 		8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3A92BFB6A5F00D4012C /* GradientContextBuilder.swift */; };
 		8181E3BC2BFB9DFF00D4012C /* GradientContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */; };
-		818C03BD2C43C0FE002C6D0A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
+		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
+		819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81BC36762C58E46000A363D0 /* SDDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36752C58E46000A363D0 /* SDDSTheme */; };
 		81BC36782C58E4B300A363D0 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36772C58E4B300A363D0 /* SDDSThemeCore */; };
 		81BC36862C591D6F00A363D0 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36852C591D6F00A363D0 /* SDDSThemeUtilities */; };
 		81C10A1D2C2929850055BB04 /* meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 81C10A1C2C2929850055BB04 /* meta.json */; };
 		81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C10A212C292E4D0055BB04 /* Double+Stencil.swift */; };
 		81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */; };
-		81CB0FC12C2194DF003B1064 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */; };
 		81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FDD2C245046003B1064 /* SchemeTokenNameValidator.swift */; };
 		81CB0FE72C245052003B1064 /* TemplateRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FE02C245052003B1064 /* TemplateRenderer.swift */; };
 		81CB0FE82C245052003B1064 /* EnsureFloatNonNegativeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB0FE12C245052003B1064 /* EnsureFloatNonNegativeNode.swift */; };
@@ -231,6 +231,13 @@
 			remoteGlobalIDString = 8180A5802C11C01C00009AF5;
 			remoteInfo = SDDSThemeCore;
 		};
+		819CB8042C7CCC4D00B4FBF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2489D0992BC7F3790053AAB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81CF63462C6E8E82008F3BB2;
+			remoteInfo = SDDSThemeUtilities;
+		};
 		81CF634B2C6E8E82008F3BB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2489D0992BC7F3790053AAB1 /* Project object */;
@@ -257,6 +264,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				817539712BD0078700138866 /* SDDSThemeBuilderCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		819CB8062C7CCC4D00B4FBF4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +410,7 @@
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
+		81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81C10A1C2C2929850055BB04 /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		81C10A212C292E4D0055BB04 /* Double+Stencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Stencil.swift"; sourceTree = "<group>"; };
 		81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -489,6 +508,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +545,7 @@
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
+				81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */,
 				2489D0A32BC7F3790053AAB1 /* SDDSThemeBuilder */,
 				817539592BD0077200138866 /* SDDSThemeBuilderCore */,
 				817539652BD0077300138866 /* SDDSThemeBuilderCoreTests */,
@@ -1134,10 +1155,12 @@
 				8180A57D2C11C01C00009AF5 /* Sources */,
 				8180A57E2C11C01C00009AF5 /* Frameworks */,
 				8180A57F2C11C01C00009AF5 /* Resources */,
+				819CB8062C7CCC4D00B4FBF4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				819CB8052C7CCC4D00B4FBF4 /* PBXTargetDependency */,
 			);
 			name = SDDSThemeCore;
 			packageProductDependencies = (
@@ -1238,8 +1261,6 @@
 				24CB390A2BC95BDF00B32463 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				817539892BD0091700138866 /* XCRemoteSwiftPackageReference "Stencil" */,
 				817539AA2BD16D7E00138866 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
-				816E049B2C58DCDB00EE7A7F /* XCLocalSwiftPackageReference "SDDSThemeCore" */,
-				81BC36742C58E46000A363D0 /* XCLocalSwiftPackageReference "SDDSTheme" */,
 			);
 			productRefGroup = 2489D0A22BC7F3790053AAB1 /* Products */;
 			projectDirPath = "";
@@ -1492,13 +1513,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8180A5A62C11C35500009AF5 /* ColorToken.swift in Sources */,
-				81CB0FC12C2194DF003B1064 /* Color+Extension.swift in Sources */,
 				8180A59E2C11C34400009AF5 /* View+Tokens.swift in Sources */,
 				8180A5952C11C34000009AF5 /* GradientModifier.swift in Sources */,
 				8180A5932C11C2A100009AF5 /* TypographyToken.swift in Sources */,
 				8180A5962C11C34000009AF5 /* ShadowModifier.swift in Sources */,
 				8180A59F2C11C34400009AF5 /* AdaptiveTypographyToken+Extensions.swift in Sources */,
-				818C03BD2C43C0FE002C6D0A /* (null) in Sources */,
 				8180A59A2C11C34400009AF5 /* GradientToken+Theme.swift in Sources */,
 				8180A59B2C11C34400009AF5 /* TypographyToken+AdaptiveStyle.swift in Sources */,
 				8180A5972C11C34000009AF5 /* LineHeightModifier.swift in Sources */,
@@ -1559,6 +1578,11 @@
 			isa = PBXTargetDependency;
 			target = 8180A5802C11C01C00009AF5 /* SDDSThemeCore */;
 			targetProxy = 8180A5852C11C01D00009AF5 /* PBXContainerItemProxy */;
+		};
+		819CB8052C7CCC4D00B4FBF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81CF63462C6E8E82008F3BB2 /* SDDSThemeUtilities */;
+			targetProxy = 819CB8042C7CCC4D00B4FBF4 /* PBXContainerItemProxy */;
 		};
 		81CF634C2C6E8E82008F3BB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2012,7 +2036,6 @@
 		819B2AD32BF280FB00688624 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -2045,7 +2068,6 @@
 		819B2AD42BF280FB00688624 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -2236,17 +2258,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		816E049B2C58DCDB00EE7A7F /* XCLocalSwiftPackageReference "SDDSThemeCore" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = SDDSThemeCore;
-		};
-		81BC36742C58E46000A363D0 /* XCLocalSwiftPackageReference "SDDSTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = SDDSTheme;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		24CB390A2BC95BDF00B32463 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
