@@ -3,16 +3,16 @@ import UIKit
 @_exported import SDDSThemeCore
 
 public struct Shadows {
-    public static let downHardL = ShadowToken.downHardL
-    public static let downHardM = ShadowToken.downHardM
-    public static let downHardS = ShadowToken.downHardS
-    public static let downSoftL = ShadowToken.downSoftL
-    public static let downSoftM = ShadowToken.downSoftM
-    public static let downSoftS = ShadowToken.downSoftS
-    public static let upHardL = ShadowToken.upHardL
-    public static let upHardM = ShadowToken.upHardM
-    public static let upHardS = ShadowToken.upHardS
-    public static let upSoftL = ShadowToken.upSoftL
-    public static let upSoftM = ShadowToken.upSoftM
-    public static let upSoftS = ShadowToken.upSoftS
+    public let downHardL = ShadowToken.downHardL
+    public let downHardM = ShadowToken.downHardM
+    public let downHardS = ShadowToken.downHardS
+    public let downSoftL = ShadowToken.downSoftL
+    public let downSoftM = ShadowToken.downSoftM
+    public let downSoftS = ShadowToken.downSoftS
+    public let upHardL = ShadowToken.upHardL
+    public let upHardM = ShadowToken.upHardM
+    public let upHardS = ShadowToken.upHardS
+    public let upSoftL = ShadowToken.upSoftL
+    public let upSoftM = ShadowToken.upSoftM
+    public let upSoftS = ShadowToken.upSoftS
 }

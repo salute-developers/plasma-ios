@@ -4,6 +4,6 @@ import UIKit
 
 public struct Gradients {
     {%- for key, value in json %}
-    public static let {{ key }} = GradientToken.{{ key }}
+    public let {{ key }} = GradientToken.{{ key }}
     {%- endfor %}
 }
