@@ -119,23 +119,26 @@ public struct SDDSChipGroup: View {
     let size: ChipGroupSizeConfiguration
     
     public var body: some View {
-        VStack(spacing: size.insets.top) {
-            ForEach(layoutRows(), id: \.self) { row in
-                HStack(spacing: size.insets.leading) {
-                    if size.alignment == .right || size.alignment == .decreasingRight {
-                        Spacer()
+        GeometryReader { geometry in
+            let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
+            VStack(spacing: size.insets.top) {
+                ForEach(layoutRows(maxWidth: maxWidth), id: \.self) { row in
+                    HStack(spacing: size.insets.leading) {
+                        if size.alignment == .right || size.alignment == .decreasingRight {
+                            Spacer()
+                        }
+                        ForEach(row, id: \.self) { chipData in
+                            SDDSChip(data: chipData)
+                        }
+                        if size.alignment == .left || size.alignment == .decreasingLeft {
+                            Spacer()
+                        }
                     }
-                    ForEach(row, id: \.self) { chipData in
-                        SDDSChip(data: chipData)
-                    }
-                    if size.alignment == .left || size.alignment == .decreasingLeft {
-                        Spacer()
-                    }
+                    .frame(maxWidth: .infinity, alignment: alignment)
                 }
-                .frame(maxWidth: .infinity, alignment: alignment)
             }
+            .padding(size.insets)
         }
-        .padding(size.insets)
     }
     
     private var alignment: SwiftUI.Alignment {
@@ -149,28 +152,43 @@ public struct SDDSChipGroup: View {
         }
     }
     
-    private func layoutRows() -> [[ChipData]] {
+    private func layoutRows(maxWidth: CGFloat) -> [[ChipData]] {
         var rows: [[ChipData]] = []
-        var startIndex = 0
-        var currentMaxColumns = size.maxColumns
-        
-        while startIndex < data.count {
-            let endIndex = min(startIndex + currentMaxColumns, data.count)
-            var row = Array(data[startIndex..<endIndex])
-            if size.alignment == .decreasingRight {
-                row.reverse()
-            }
-            rows.append(row)
-            startIndex = endIndex
-            if size.alignment == .decreasingLeft || size.alignment == .decreasingRight {
-                currentMaxColumns -= 1
-                if currentMaxColumns <= 0 {
-                    break
-                }
+        var currentRow: [ChipData] = []
+        var currentRowWidth: CGFloat = 0
+
+        for chipData in data {
+            let chipWidth = calculateChipWidth(for: chipData)
+
+            if currentRowWidth + chipWidth > maxWidth {
+                rows.append(currentRow)
+                currentRow = [chipData]
+                currentRowWidth = chipWidth
+            } else {
+                currentRow.append(chipData)
+                currentRowWidth += chipWidth
             }
         }
-        
+
+        if !currentRow.isEmpty {
+            rows.append(currentRow)
+        }
+
         return rows
+    }
+
+    private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
+        let textWidth = chipData.title.size(withAttributes: [.font: chipData.appearance.titleTypography.uiFont]).width
+        let iconWidth: CGFloat = chipData.size.iconImageSize?.width ?? 0
+        let buttonWidth: CGFloat = chipData.size.buttonImageSize?.width ?? 0
+        var totalWidth = textWidth + iconWidth + buttonWidth + chipData.size.leadingInset + chipData.size.trailingInset + 2 * chipData.size.spacing
+        if iconWidth > 0 {
+            totalWidth += chipData.size.spacing
+        }
+        if buttonWidth > 0 {
+            totalWidth += chipData.size.spacing
+        }
+        return totalWidth
     }
 }
 
@@ -188,12 +206,12 @@ struct SDDSChipGroupPreview: PreviewProvider {
         let chipSize = DefaultChipSize()
         let chipAccessibility = ChipAccessibility()
         
-        let chipData = (1...36).map { index in
+        let chipData = (1...12).map { index in
             ChipData(
                 title: "Label",
                 isEnabled: true,
-                iconImage: nil,
-                buttonImage: nil,
+                iconImage: Image.image("chipIcon"),
+                buttonImage: Image.image("chipClose"),
                 appearance: chipAppearance,
                 size: chipSize,
                 accessibility: chipAccessibility,
