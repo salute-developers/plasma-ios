@@ -104,7 +104,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @ViewBuilder
     private var titleText: some View {
         Text(title)
-            .typography(appearance.titleTypography)
+            .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
             .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
@@ -114,7 +114,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     private var subtitleText: some View {
         if let subtitle = subtitle {
             Text(subtitle)
-                .typography(appearance.subtitleTypography)
+                .typography(appearance.subtitleTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.subtitleLabel))
                 .accessibilityValue(Text(subtitle))
@@ -153,7 +153,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         if let image = image {
             tintImage(image: image)
                 .frame(width: size.imageSize.width, height: size.imageSize.height)
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledImageAlpha) }
+                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         } else {
             EmptyView()
         }

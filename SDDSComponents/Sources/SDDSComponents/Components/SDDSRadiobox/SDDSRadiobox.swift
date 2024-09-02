@@ -28,7 +28,7 @@ public struct SDDSRadiobox: View {
         subtitle: String? = nil,
         isEnabled: Bool,
         images: RadioboxImages,
-        size: SelectionControlSizeConfiguration = SDDSRadioboxSize(),
+        size: SelectionControlSizeConfiguration,
         appearance: RadioboxAppearance,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -64,118 +64,6 @@ public struct SDDSRadiobox: View {
                 indeterminateImage: nil
             ),
             accessibility: accessibility
-        )
-    }
-}
-
-// MARK: - Preview
-struct SDDSRadioboxPreview: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SDDSRadiobox.defaultExample
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Default")
-                .debug()
-            
-            SDDSRadiobox.withoutDescription
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Without Description")
-                .debug()
-            
-            SDDSRadiobox.withoutLabel
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Without Label")
-                .debug()
-            
-            SDDSRadiobox.withoutLabelAndDescription
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Without Label and Description")
-                .debug()
-        }
-    }
-}
-
-public struct SDDSRadioboxSize: SelectionControlSizeConfiguration {
-    public var debugDescription: String {
-        String(reflecting: self)
-    }
-    
-    public var imageSize: CGSize {
-        .init(width: 20, height: 20)
-    }
-    
-    public var verticalGap: CGFloat {
-        0.0
-    }
-    
-    public var horizontalGap: CGFloat {
-        8.0
-    }
-    
-    public init() {}
-}
-
-public extension SDDSRadiobox {
-    static var defaultExample: SDDSRadiobox {
-        .init(
-            isSelected: .constant(true),
-            title: "Label",
-            subtitle: "Description",
-            isEnabled: true,
-            images: .defaultImages,
-            appearance: .defaultExample,
-            accessibility: SelectionControlAccessibility()
-        )
-    }
-    
-    static var withoutDescription: SDDSRadiobox {
-        .init(
-            isSelected: .constant(true),
-            title: "Label",
-            subtitle: nil,
-            isEnabled: true,
-            images: .defaultImages,
-            appearance: .defaultExample,
-            accessibility: SelectionControlAccessibility()
-        )
-    }
-    
-    static var withoutLabel: SDDSRadiobox {
-        .init(
-            isSelected: .constant(true),
-            title: "",
-            subtitle: "Description",
-            isEnabled: true,
-            images: .defaultImages,
-            appearance: .defaultExample,
-            accessibility: SelectionControlAccessibility()
-        )
-    }
-    
-    static var withoutLabelAndDescription: SDDSRadiobox {
-        .init(
-            isSelected: .constant(true),
-            title: "",
-            subtitle: nil,
-            isEnabled: true,
-            images: .defaultImages,
-            appearance: .defaultExample,
-            accessibility: SelectionControlAccessibility()
-        )
-    }
-}
-
-extension RadioboxAppearance {
-    static var defaultExample: RadioboxAppearance {
-        .init(
-            titleTypography: .semibold16,
-            subtitleTypography: .semibold14,
-            enabledTitleColor: .blackTitleColor,
-            enabledSubtitleColor: .subtitleColor,
-            disabledTitleColor: .blackTitleColor.withOpacity(0.3),
-            disabledSubtitleColor: .subtitleColor.withOpacity(0.3),
-            disabledImageAlpha: 0.3,
-            imageTintColor: .greenColor
         )
     }
 }

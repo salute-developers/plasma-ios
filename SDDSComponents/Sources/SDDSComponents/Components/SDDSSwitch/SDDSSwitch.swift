@@ -20,33 +20,27 @@ public protocol SwitchSizeConfiguration: SizeConfiguration, CustomDebugStringCon
  - Properties:
     - titleTypography: Типографика для заголовка переключателя.
     - subtitleTypography: Типографика для подзаголовка переключателя.
-    - enabledTitleColor: Цвет заголовка, когда переключатель включен.
-    - enabledSubtitleColor: Цвет подзаголовка, когда переключатель включен.
-    - enabledTintColor: Цвет переключателя, когда он включен.
-    - disabledTitleColor: Цвет заголовка, когда переключатель выключен.
-    - disabledSubtitleColor: Цвет подзаголовка, когда переключатель выключен.
-    - disabledTintColor: Цвет переключателя, когда он выключен.
+    - titleColor: Цвет заголовка, когда переключатель включен.
+    - subtitleColor: Цвет подзаголовка, когда переключатель включен.
+    - tintColor: Цвет переключателя, когда он включен.
  */
 public struct SwitchAppearance {
     public let titleTypography: TypographyConfiguration
     public let subtitleTypography: TypographyConfiguration
-    public let enabledTitleColor: ColorToken
-    public let enabledSubtitleColor: ColorToken
-    public let enabledTintColor: ColorToken
-    public let disabledTitleColor: ColorToken
-    public let disabledSubtitleColor: ColorToken
-    public let disabledTintColor: ColorToken
+    public let titleColor: ColorToken
+    public let subtitleColor: ColorToken
+    public let tintColor: ColorToken
+    public let disabledAlpha: CGFloat
     
-    public init(titleTypography: TypographyConfiguration, subtitleTypography: TypographyConfiguration, enabledTitleColor: ColorToken, enabledSubtitleColor: ColorToken, enabledTintColor: ColorToken, disabledTitleColor: ColorToken, disabledSubtitleColor: ColorToken, disabledTintColor: ColorToken) {
+    public init(titleTypography: TypographyConfiguration, subtitleTypography: TypographyConfiguration, titleColor: ColorToken, subtitleColor: ColorToken, tintColor: ColorToken, disabledAlpha: CGFloat) {
         self.titleTypography = titleTypography
         self.subtitleTypography = subtitleTypography
-        self.enabledTitleColor = enabledTitleColor
-        self.enabledSubtitleColor = enabledSubtitleColor
-        self.enabledTintColor = enabledTintColor
-        self.disabledTitleColor = disabledTitleColor
-        self.disabledSubtitleColor = disabledSubtitleColor
-        self.disabledTintColor = disabledTintColor
+        self.titleColor = titleColor
+        self.subtitleColor = subtitleColor
+        self.tintColor = tintColor
+        self.disabledAlpha = disabledAlpha
     }
+
 }
 
 public extension SwitchAppearance {
@@ -57,7 +51,7 @@ public extension SwitchAppearance {
      - Returns: Цвет переключателя.
      */
     func tintColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? enabledTintColor : disabledTintColor
+        return isEnabled ? tintColor : tintColor.withOpacity(disabledAlpha)
     }
 
     /**
@@ -67,7 +61,7 @@ public extension SwitchAppearance {
      - Returns: Цвет заголовка.
      */
     func titleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? enabledTitleColor : disabledTitleColor
+        return isEnabled ? titleColor : titleColor.withOpacity(disabledAlpha)
     }
 
     /**
@@ -77,7 +71,7 @@ public extension SwitchAppearance {
      - Returns: Цвет подзаголовка.
      */
     func subtitleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? enabledSubtitleColor : disabledSubtitleColor
+        return isEnabled ? subtitleColor : subtitleColor.withOpacity(disabledAlpha)
     }
 }
 
@@ -252,123 +246,5 @@ public struct SDDSSwitch: View {
             .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
             .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
             .accessibilityValue(Text(subtitle))
-    }
-}
-
-// MARK: - Preview
-struct SDDSSwitchPreview: PreviewProvider {
-    static var previews: some View {
-        SDDSSwitch.defaultExample
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Default")
-            .debug()
-        
-        SDDSSwitch.emptyDescription
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Empty Description")
-            .debug()
-        
-        SDDSSwitch.emptyTitle
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Empty Title")
-            .debug()
-        
-        SDDSSwitch.onlyToggle
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Only Toggle")
-            .debug()
-    }
-}
-
-struct SwitchSize: SwitchSizeConfiguration {
-    var debugDescription: String {
-        String(reflecting: self)
-    }
-
-    var width: CGFloat?
-    var verticalGap: CGFloat
-    
-    init(width: CGFloat? = 170, verticalGap: CGFloat = 0) {
-        self.width = width
-        self.verticalGap = verticalGap
-    }
-}
-
-extension SDDSSwitch {
-    static var defaultExample: SDDSSwitch {
-        SDDSSwitch(
-            title: "Title",
-            subtitle: "Description",
-            isOn: .constant(true),
-            isEnabled: true,
-            size: SwitchSize(),
-            appearance: SwitchAppearance.defaultAppearance,
-            switchAccessibility: SwitchAccessibility()
-        )
-    }
-    
-    static var emptyDescription: SDDSSwitch {
-        SDDSSwitch(
-            title: "Title",
-            subtitle: "",
-            isOn: .constant(true),
-            isEnabled: true,
-            size: SwitchSize(),
-            appearance: SwitchAppearance.defaultAppearance,
-            switchAccessibility: SwitchAccessibility()
-        )
-    }
-    
-    static var emptyTitle: SDDSSwitch {
-        SDDSSwitch(
-            title: "",
-            subtitle: "Description",
-            isOn: .constant(true),
-            isEnabled: true,
-            size: SwitchSize(),
-            appearance: SwitchAppearance.defaultAppearance,
-            switchAccessibility: SwitchAccessibility()
-        )
-    }
-    
-    static var onlyToggle: SDDSSwitch {
-        SDDSSwitch(
-            title: "",
-            subtitle: "",
-            isOn: .constant(true),
-            isEnabled: true,
-            size: SwitchSize(width: nil),
-            appearance: SwitchAppearance.defaultAppearance,
-            switchAccessibility: SwitchAccessibility()
-        )
-    }
-}
-
-struct SwitchTypography: GeneralTypographyConfiguration {
-    let token: TypographyToken
-    
-    func typography(with size: SizeConfiguration) -> TypographyToken? {
-        return token
-    }
-}
-
-extension SwitchTypography {
-    static func typography(_ token: TypographyToken) -> TypographyConfiguration {
-        SwitchTypography(token: token).asContainer
-    }
-}
-
-public extension SwitchAppearance {
-    static var defaultAppearance: SwitchAppearance {
-        .init(
-            titleTypography: SwitchTypography.typography(.semibold14),
-            subtitleTypography: SwitchTypography.typography(.semibold12),
-            enabledTitleColor: .blackTitleColor,
-            enabledSubtitleColor: .subtitleColor,
-            enabledTintColor: .greenColor,
-            disabledTitleColor: .blackTitleColor.withOpacity(0.3),
-            disabledSubtitleColor: .subtitleColor.withOpacity(0.3),
-            disabledTintColor: .greenColor.withOpacity(0.3)
-        )
     }
 }

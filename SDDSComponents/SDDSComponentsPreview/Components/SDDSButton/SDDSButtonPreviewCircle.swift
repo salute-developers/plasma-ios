@@ -1,4 +1,5 @@
 import Foundation
+import SDDSComponents
 import SwiftUI
 
 // MARK: - Preview: Circle Buttons
@@ -35,14 +36,13 @@ struct SDDSButtonPreviewCircle: PreviewProvider {
 // MARK: - Extension to Generate Circle Buttons
 extension SDDSButton {
     static func circleButton(size: ButtonSize, isLoading: Bool = false, layoutMode: ButtonLayoutMode = .wrapContent) -> SDDSButton {
-        SDDSButton(
-            title: "",
-            subtitle: "",
-            iconAttributes: ButtonIconAttributes(image: Image(systemName: "pencil.circle.fill"), alignment: .left),
+        SDDSButton.iconButtonCircle(
+            iconImage: Image(systemName: "pencil.circle.fill"),
             size: size,
+            style: .default,
+            isDisabled: false,
             isLoading: isLoading,
-            buttonStyle: .circle,
-            appearance: .black,
+            spinnerStyle: .solid,
             layoutMode: layoutMode,
             action: {}
         )
