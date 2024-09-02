@@ -79,35 +79,6 @@ public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugString
 }
 
 /**
- Стандартная конфигурация размеров группы чипов.
-
- - Properties:
-    - debugDescription: Описание для отладки.
-    - insets: Внутренние отступы.
-    - maxColumns: Максимальное количество столбцов в ряду.
-    - alignment: Выравнивание группы чипов.
- */
-public struct DefaultChipGroupSize: ChipGroupSizeConfiguration {
-    public var debugDescription: String {
-        String(reflecting: self)
-    }
-    
-    public var insets: EdgeInsets {
-        EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-    }
-    
-    public var maxColumns: Int {
-        8
-    }
-    
-    public var alignment: ChipGroupAlignment
-    
-    public init(alignment: ChipGroupAlignment = .center) {
-        self.alignment = alignment
-    }
-}
-
-/**
  Вью для отображения группы чипов.
 
  - Properties:
@@ -117,6 +88,11 @@ public struct DefaultChipGroupSize: ChipGroupSizeConfiguration {
 public struct SDDSChipGroup: View {
     let data: [ChipData]
     let size: ChipGroupSizeConfiguration
+    
+    public init(data: [ChipData], size: ChipGroupSizeConfiguration) {
+        self.data = data
+        self.size = size
+    }
     
     public var body: some View {
         GeometryReader { geometry in
@@ -189,66 +165,5 @@ public struct SDDSChipGroup: View {
             totalWidth += chipData.size.spacing
         }
         return totalWidth
-    }
-}
-
-// Пример данных и конфигурации для предварительного просмотра
-struct SDDSChipGroupPreview: PreviewProvider {
-    static var previews: some View {
-        let chipAppearance = ChipAppearance(
-            titleColor: Color.white.equalToken,
-            titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
-            disabledAlpha: 0.5
-        )
-        
-        let chipSize = DefaultChipSize()
-        let chipAccessibility = ChipAccessibility()
-        
-        let chipData = (1...12).map { index in
-            ChipData(
-                title: "Label",
-                isEnabled: true,
-                iconImage: Image.image("chipIcon"),
-                buttonImage: Image.image("chipClose"),
-                appearance: chipAppearance,
-                size: chipSize,
-                accessibility: chipAccessibility,
-                removeAction: {}
-            )
-        }
-        
-        return Group {
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .center))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Center")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .left))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .right))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Right")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingLeft))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingRight))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Right")
-                .padding()
-                .debug()
-        }
     }
 }
