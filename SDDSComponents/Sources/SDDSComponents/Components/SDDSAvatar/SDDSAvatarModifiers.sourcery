@@ -1,0 +1,15 @@
+{% for type in types.structs where type.name == "SDDSAvatar" %}
+public extension {{ type.name }} {
+
+    {% for variable in type.variables %}
+    func {{ variable.name }}(_ new{{ variable.name|capitalize }}: {{ variable.typeName }}) -> {{ type.name }} {
+        {{ type.name }}(
+            {% for var in type.variables %}
+            {{ var.name }}: {% if var.name == variable.name %}new{{ variable.name|capitalize }}{% else %}self.{{ var.name }}{% endif %}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        )
+    }
+
+    {% endfor %}
+}
+{% endfor %}
