@@ -1,0 +1,11 @@
+{
+  "variations": {
+    "size": {
+      "default": {
+        "maxDisplayingAvatarCount": 3,
+        "borderWidth": 4,
+        "spacing": 15
+      }
+    }
+  }
+}

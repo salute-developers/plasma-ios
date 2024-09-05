@@ -1,0 +1,92 @@
+{
+    "variations": {
+        "style": {
+            "default": {
+                "contentColor": "textInversePrimary",
+                "backgroundColor": "surfaceDefaultSolidDefault"
+            },
+            "secondary": {
+                "contentColor": "textDefaultPrimary",
+                "backgroundColor": "surfaceDefaultTransparentSecondary"
+            },
+            "accent": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceDefaultAccent"
+            },
+            "positive": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceDefaultPositive"
+            },
+            "negative": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceDefaultNegative"
+            },
+            "warning": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceDefaultWarning"
+            },
+            "clear": {
+                "contentColor": "textDefaultPrimary",
+                "backgroundColor": "surfaceDefaultClear"
+            },
+            "dark": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceOnLightTransparentDeep"
+            },
+            "black": {
+                "contentColor": "textOnDarkPrimary",
+                "backgroundColor": "surfaceOnLightSolidDefault"
+            },
+            "white": {
+                "contentColor": "textOnLightPrimary",
+                "backgroundColor": "surfaceOnDarkSolidDefault"
+            }
+        },
+        "size": {
+            "l": {
+                "shape": "round.l",
+                "textStyle": "body.l.bold",
+                "height": 56,
+                "horizontalPaddings": 24,
+                "minWidth": 98,
+                "iconSize": 24,
+                "spinnerSize": 22,
+                "iconMargin": 8,
+                "valueMargin": 4
+            },
+            "m": {
+                "shape": "round.m",
+                "textStyle": "body.m.bold",
+                "height": 48,
+                "horizontalPaddings": 20,
+                "minWidth": 84,
+                "iconSize": 24,
+                "spinnerSize": 22,
+                "iconMargin": 6,
+                "valueMargin": 4
+            },
+            "s": {
+                "shape": "round.s",
+                "textStyle": "body.s.bold",
+                "height": 40,
+                "horizontalPaddings": 16,
+                "minWidth": 71,
+                "iconSize": 24,
+                "spinnerSize": 22,
+                "iconMargin": 4,
+                "valueMargin": 4
+            },
+            "xs": {
+                "shape": "round.xs",
+                "textStyle": "body.xs.bold",
+                "height": 32,
+                "horizontalPaddings": 12,
+                "minWidth": 57,
+                "iconSize": 24,
+                "spinnerSize": 16,
+                "iconMargin": 4,
+                "valueMargin": 2
+            }
+        }
+    }
+}

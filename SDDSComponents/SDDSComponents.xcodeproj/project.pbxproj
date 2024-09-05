@@ -449,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				81BBC5812C86251F009616CE /* SDDSRadioboxGroup+Preview.swift */,
+				8183508F2C898FAC00B0267F /* radioboxgroup.json */,
 			);
 			path = SDDSRadioboxGroup;
 			sourceTree = "<group>";
@@ -469,6 +470,7 @@
 				81BBC5DC2C872C83009616CE /* SDDSButton+SDDSServe.swift */,
 				81BBC59D2C8628D4009616CE /* ButtonSize+ButtonSizeConfiguration.swift */,
 				81BBC59F2C8628F1009616CE /* LinkSize+ButtonSizeConfiguration.swift */,
+				818350912C898FD300B0267F /* button.json */,
 			);
 			path = SDDSButton;
 			sourceTree = "<group>";
@@ -480,6 +482,7 @@
 				81BBC5A12C86293D009616CE /* RadioboxAppearance.swift */,
 				81BBC5A92C862CBB009616CE /* RadioboxTypography.swift */,
 				81BBC5BC2C863625009616CE /* SDDSRadioboxSize.swift */,
+				818350792C8987CE00B0267F /* radiobox.json */,
 			);
 			path = SDDSRadiobox;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				81BBC5AF2C8632C5009616CE /* CheckboxAppearance.swift */,
 				81BBC5B12C863307009616CE /* CheckboxTypography.swift */,
 				81BBC5BE2C863644009616CE /* SDDSCheckboxSize.swift */,
+				818350812C898CBA00B0267F /* checkbox.json */,
 			);
 			path = SDDSCheckbox;
 			sourceTree = "<group>";
@@ -499,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				81BBC5B42C863433009616CE /* SDDSCheckboxGroup+Preview.swift */,
+				8183507D2C8989A300B0267F /* checkboxgroup.json */,
 			);
 			path = SDDSCheckboxGroup;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 			children = (
 				81BBC5C32C8638DC009616CE /* SDDSChipGroup+Preview.swift */,
 				81BBC5C52C863976009616CE /* DefaultChipGroupSize.swift */,
+				818350852C898D4500B0267F /* chipgroup.json */,
 			);
 			path = SDDSChipGroup;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 				81BBC5D12C86F6BD009616CE /* SwitchAppearance.swift */,
 				81BBC5D32C86F71B009616CE /* SwitchTypography.swift */,
 				81BBC5CF2C863A2D009616CE /* SDDSSwitchSize.swift */,
+				818350872C898D7B00B0267F /* switch.json */,
 			);
 			path = SDDSSwitch;
 			sourceTree = "<group>";
@@ -547,6 +554,7 @@
 				81BBC5D62C86FBDF009616CE /* SDDSProgress+Preview.swift */,
 				81BBC5D82C86FC2F009616CE /* DefaultProgressBarSize.swift */,
 				81BBC5DA2C86FC54009616CE /* ProgressBarAppearance.swift */,
+				818350892C898DF100B0267F /* progressbar.json */,
 			);
 			path = SDDSProgressBar;
 			sourceTree = "<group>";
