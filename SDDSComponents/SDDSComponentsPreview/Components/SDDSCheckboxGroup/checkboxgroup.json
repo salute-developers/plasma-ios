@@ -1,0 +1,10 @@
+{
+  "variations": {
+    "size": {
+      "default": {
+        "horizontalIndent": 24,
+        "verticalSpacing": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "variations": {
+    "style": {
+      "default": {
+        "trackColor": "surfaceDefaultTransparentSecondary",
+        "thumbColor": "textInversePrimary",
+        "disabledTrackColor": "surfaceInverseSolidPrimary",
+        "disabledThumbColor": "surfaceOnLightSolidTertiary"
+      }
+    },
+    "size": {
+      "large": {
+        "width": 170,
+        "verticalGap": 0,
+        "labelTypography": "body.l.normal",
+        "descriptionTypography": "body.m.normal"
+      },
+      "medium": {
+        "width": 170,
+        "verticalGap": 0,
+        "labelTypography": "body.m.normal",
+        "descriptionTypography": "body.s.normal"
+      },
+      "small": {
+        "width": 170,
+        "verticalGap": 0,
+        "labelTypography": "body.s.normal",
+        "descriptionTypography": "body.xs.normal"
+      }
+    }
+  }
+}

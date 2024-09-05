@@ -1,0 +1,99 @@
+{
+  "variations": {
+    "style": {
+      "default": {
+        "textFillStyle": "surfaceDefaultAccentGradient",
+        "backgroundFillStyle": "exampleBackgroundGradient",
+        "onlineStatusColor": "surfaceDefaultPositive",
+        "offlineStatusColor": "surfaceOnLightSolidTertiary",
+        "textTypography": "label"
+      }
+    },
+    "size": {
+      "extraLarge": {
+        "avatarSize": {
+          "width": 88,
+          "height": 88
+        },
+        "statusSize": {
+          "width": 12,
+          "height": 12
+        },
+        "statusInsets": {
+          "top": 69,
+          "leading": 69,
+          "bottom": 0,
+          "trailing": 0
+        },
+        "textTypography": "header.h2.bold"
+      },
+      "large": {
+        "avatarSize": {
+          "width": 48,
+          "height": 48
+        },
+        "statusSize": {
+          "width": 8,
+          "height": 8
+        },
+        "statusInsets": {
+          "top": 37,
+          "leading": 37,
+          "bottom": 0,
+          "trailing": 0
+        },
+        "textTypography": "text.l.bold"
+      },
+      "medium": {
+        "avatarSize": {
+          "width": 36,
+          "height": 36
+        },
+        "statusSize": {
+          "width": 8,
+          "height": 8
+        },
+        "statusInsets": {
+          "top": 26,
+          "leading": 26,
+          "bottom": 0,
+          "trailing": 0
+        },
+        "textTypography": "text.s.bold"
+      },
+      "small": {
+        "avatarSize": {
+          "width": 24,
+          "height": 24
+        },
+        "statusSize": {
+          "width": 6,
+          "height": 6
+        },
+        "statusInsets": {
+          "top": 18,
+          "leading": 18,
+          "bottom": 0,
+          "trailing": 0
+        },
+        "textTypography": "text.xs.bold"
+      },
+      "scallable": {
+        "avatarSize": {
+          "width": "dynamic",
+          "height": "dynamic"
+        },
+        "statusSize": {
+          "width": 0,
+          "height": 0
+        },
+        "statusInsets": {
+          "top": 0,
+          "leading": 0,
+          "bottom": 0,
+          "trailing": 0
+        }
+      }
+    }
+  }
+}

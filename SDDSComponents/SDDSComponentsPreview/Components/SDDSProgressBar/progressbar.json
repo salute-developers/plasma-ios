@@ -1,0 +1,22 @@
+{
+  "variations": {
+    "style": {
+      "accent": {
+        "tintFillStyle": "surfaceDefaultAccent",
+        "trackColor": "surfaceDefaultTransparentSecondary"
+      },
+      "gradientAccent": {
+        "tintFillStyle": "surfaceDefaultAccentGradient",
+        "trackColor": "surfaceDefaultTransparentSecondary"
+      }
+    },
+    "size": {
+      "default": {
+        "height": 4.0,
+        "indicatorHeight": 6.0,
+        "cornerRadius": 2.0,
+        "indicatorCornerRadius": 6.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "variations": {
+    "style": {
+      "default": {
+        "titleColor": "textDefaultPrimary",
+        "imageTintColor": "textDefaultPrimary",
+        "buttonTintColor": "textInverseSecondary",
+        "disabledAlpha": 0.4
+      }
+    },
+    "size": {
+      "l": {
+        "titleTypography": "body.l.normal",
+        "iconImageSize": 24,
+        "buttonImageSize": 24,
+        "height": 48,
+        "leadingInset": 16,
+        "trailingInset": 16,
+        "spacing": 10,
+        "borderStyle": "round"
+      },
+      "m": {
+        "titleTypography": "body.m.normal",
+        "iconImageSize": 20,
+        "buttonImageSize": 20,
+        "height": 40,
+        "leadingInset": 14,
+        "trailingInset": 14,
+        "spacing": 8,
+        "borderStyle": "round"
+      },
+      "s": {
+        "titleTypography": "body.s.normal",
+        "iconImageSize": 16,
+        "buttonImageSize": 16,
+        "height": 32,
+        "leadingInset": 12,
+        "trailingInset": 12,
+        "spacing": 6,
+        "borderStyle": "round"
+      },
+      "xs": {
+        "titleTypography": "body.xs.normal",
+        "iconImageSize": 12,
+        "buttonImageSize": 12,
+        "height": 24,
+        "leadingInset": 10,
+        "trailingInset": 10,
+        "spacing": 4,
+        "borderStyle": "round"
+      }
+    }
+  }
+}
