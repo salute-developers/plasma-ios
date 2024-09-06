@@ -3,6 +3,16 @@
     {
       "filename" : "RadioBoxOn-2.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "🌚 RadioBox M.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
