@@ -3,23 +3,19 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public struct CheckboxAppearance: SelectionControlAppearance {
-    public let titleTypography: TypographyToken
-    public let subtitleTypography: TypographyToken
-    public let enabledTitleColor: ColorToken
-    public let enabledSubtitleColor: ColorToken
-    public let disabledTitleColor: ColorToken
-    public let disabledSubtitleColor: ColorToken
-    public var disabledImageAlpha: CGFloat
-    public var imageTintColor: ColorToken?
+    public let titleTypography: TypographyConfiguration
+    public let subtitleTypography: TypographyConfiguration
+    public let titleColor: ColorToken
+    public let subtitleColor: ColorToken
+    public let disabledAlpha: CGFloat
+    public let imageTintColor: ColorToken?
     
-    public init(titleTypography: TypographyToken, subtitleTypography: TypographyToken, enabledTitleColor: ColorToken, enabledSubtitleColor: ColorToken, disabledTitleColor: ColorToken, disabledSubtitleColor: ColorToken, disabledImageAlpha: CGFloat, imageTintColor: ColorToken? = nil) {
+    public init(titleTypography: TypographyConfiguration, subtitleTypography: TypographyConfiguration, titleColor: ColorToken, subtitleColor: ColorToken, disabledAlpha: CGFloat, imageTintColor: ColorToken? = nil) {
         self.titleTypography = titleTypography
         self.subtitleTypography = subtitleTypography
-        self.enabledTitleColor = enabledTitleColor
-        self.enabledSubtitleColor = enabledSubtitleColor
-        self.disabledTitleColor = disabledTitleColor
-        self.disabledSubtitleColor = disabledSubtitleColor
-        self.disabledImageAlpha = disabledImageAlpha
+        self.titleColor = titleColor
+        self.subtitleColor = subtitleColor
+        self.disabledAlpha = disabledAlpha
         self.imageTintColor = imageTintColor
     }
 }
