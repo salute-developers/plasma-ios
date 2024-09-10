@@ -4,6 +4,16 @@ require 'fileutils'
 require 'optparse'
 require_relative 'common' # Подключаем общий файл
 
+def execute_command(command)
+  print_info "Выполнение команды: #{command}"
+  # Используем system вместо обратных кавычек, чтобы выводить результат команды в реальном времени
+  success = system(command)
+  unless success
+    print_error "Команда завершилась с ошибкой: #{command}"
+    exit 1
+  end
+end
+
 def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
   print_info "Корневая директория проекта: #{project_root_dir}"
   
@@ -34,23 +44,34 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
     
     print_info "Создание архива для устройства iOS..."
     ios_archive_path = File.join(build_path, "#{scheme}-iphoneos.xcarchive")
-    if workspace_name
-      execute_command("xcodebuild archive -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES")
+    ios_archive_command = if workspace_name
+      "xcodebuild archive -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES"
     else
-      execute_command("xcodebuild archive -project #{project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES")
+      "xcodebuild archive -project #{project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES"
     end
+    execute_command(ios_archive_command)
+    execute_command("ls -R #{ios_archive_path}") # Логирование содержимого архива устройства iOS
 
     print_info "Создание архива для симулятора iOS..."
     ios_simulator_archive_path = File.join(build_path, "#{scheme}-iossimulator.xcarchive")
-    if workspace_name
-      execute_command("xcodebuild archive -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES")
+    ios_simulator_archive_command = if workspace_name
+      "xcodebuild archive -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES"
     else
-      execute_command("xcodebuild archive -project #{project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES")
+      "xcodebuild archive -project #{project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES"
     end
+    execute_command(ios_simulator_archive_command)
+    execute_command("ls -R #{ios_simulator_archive_path}") # Логирование содержимого архива симулятора iOS
 
-    print_info "Создание XCFramework..."
-    xcframework_path = File.join(build_path, "#{scheme}.xcframework")
-    execute_command("xcodebuild -create-xcframework -framework #{ios_archive_path}/Products/Library/Frameworks/#{scheme}.framework -framework #{ios_simulator_archive_path}/Products/Library/Frameworks/#{scheme}.framework -output #{xcframework_path}")
+    # Проверка существования фреймворков после архивирования
+    if File.exist?("#{ios_archive_path}/Products/Library/Frameworks/#{scheme}.framework") &&
+       File.exist?("#{ios_simulator_archive_path}/Products/Library/Frameworks/#{scheme}.framework")
+      print_info "Создание XCFramework..."
+      xcframework_path = File.join(build_path, "#{scheme}.xcframework")
+      execute_command("xcodebuild -create-xcframework -framework #{ios_archive_path}/Products/Library/Frameworks/#{scheme}.framework -framework #{ios_simulator_archive_path}/Products/Library/Frameworks/#{scheme}.framework -output #{xcframework_path}")
+    else
+      print_error "Не удалось найти фреймворки для схемы #{scheme}. Проверьте логирование предыдущих шагов."
+      next
+    end
 
     print_success "Сборка успешно завершена для схемы #{scheme}"
 

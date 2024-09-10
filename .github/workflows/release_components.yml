@@ -55,6 +55,13 @@ jobs:
       - name: Install dependencies
         run: gem install xcodeproj
 
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          VERSION=${TAG_NAME#SDDS-}
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - name: Run build script for ${{ matrix.module.name }}
         run: |
           chmod +x ./scripts/build_xcframeworks.rb
@@ -63,11 +70,9 @@ jobs:
       - name: Generate ${{ matrix.module.name }} zip
         id: zip_artifact
         run: |
-           TAG_NAME=${GITHUB_REF#refs/tags/}
-           cd ${{ matrix.module.name }}/build
-           zip -r ../../${{ matrix.module.name }}-${TAG_NAME}.zip .
-           cd ../..
-           echo "::set-output name=zip_path::${{ matrix.module.name }}-${TAG_NAME}.zip"
+          cd build/${{ matrix.module.name }}
+          zip -r ../../${{ matrix.module.name }}-v${{ env.VERSION }}.zip .
+          echo "::set-output name=zip_path::${{ matrix.module.name }}-v${{ env.VERSION }}.zip"
 
       - name: Release ${{ matrix.module.name }}
         uses: softprops/action-gh-release@v2
