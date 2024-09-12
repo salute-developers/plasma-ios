@@ -140,7 +140,7 @@ public struct SDDSChip: View {
             
             Text(title)
                 .lineLimit(1)
-                .typography(appearance.titleTypography)
+                .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))

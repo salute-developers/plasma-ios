@@ -47,6 +47,17 @@ public extension TypographyToken {
         )
     }
     
+    static var semibold8: TypographyToken {
+        .init(
+            fontName: "SF Pro",
+            weight: .semibold,
+            style: .normal,
+            size: 8,
+            lineHeight: 8,
+            kerning: 0
+        )
+    }
+    
     static var undefined: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -106,5 +117,11 @@ public extension ColorToken {
 public extension Color {
     var token: ColorToken {
         ColorToken(darkColor: self, lightColor: self)
+    }
+}
+
+public extension ColorToken {
+    var inverted: ColorToken {
+        ColorToken(darkColor: lightColor, lightColor: darkColor)
     }
 }

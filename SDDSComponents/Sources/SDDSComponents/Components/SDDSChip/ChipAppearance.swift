@@ -13,12 +13,12 @@ import Foundation
  */
 public struct ChipAppearance {
     public let titleColor: ColorToken
-    public let titleTypography: TypographyToken
+    public let titleTypography: TypographyConfiguration
     public let imageTintColor: ColorToken
     public let buttonTintColor: ColorToken
     public let disabledAlpha: CGFloat
 
-    public init(titleColor: ColorToken, titleTypography: TypographyToken, imageTintColor: ColorToken, buttonTintColor: ColorToken, disabledAlpha: CGFloat) {
+    public init(titleColor: ColorToken, titleTypography: TypographyConfiguration, imageTintColor: ColorToken, buttonTintColor: ColorToken, disabledAlpha: CGFloat) {
         self.titleColor = titleColor
         self.titleTypography = titleTypography
         self.imageTintColor = imageTintColor

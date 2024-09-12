@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSServTheme
 import SDDSComponents
 
-extension CheckboxAppearance {
+public extension CheckboxAppearance {
     static var `default`: Self {
         .init(
             titleTypography: RadioboxTypography.label,

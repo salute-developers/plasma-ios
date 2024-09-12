@@ -5,14 +5,6 @@ import SwiftUI
 // Пример данных и конфигурации для предварительного просмотра
 struct SDDSChipGroupPreview: PreviewProvider {
     static var previews: some View {
-        let chipAppearance = ChipAppearance(
-            titleColor: Color.white.equalToken,
-            titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
-            disabledAlpha: 0.5
-        )
-        
         let chipSize = SDDSChipSize.medium(.rounded)
         let chipAccessibility = ChipAccessibility()
         
@@ -22,7 +14,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: Image.image("chipIcon"),
                 buttonImage: Image.image("chipClose"),
-                appearance: chipAppearance,
+                appearance: .default,
                 size: chipSize,
                 accessibility: chipAccessibility,
                 removeAction: {}
