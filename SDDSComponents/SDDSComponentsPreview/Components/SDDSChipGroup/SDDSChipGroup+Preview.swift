@@ -8,7 +8,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
         let chipSize = SDDSChipSize.medium(.pilled)
         let chipAccessibility = ChipAccessibility()
         
-        let chipData = (1...12).map { index in
+        let chipData = (1...32).map { index in
             ChipData(
                 title: "Label",
                 isEnabled: true,

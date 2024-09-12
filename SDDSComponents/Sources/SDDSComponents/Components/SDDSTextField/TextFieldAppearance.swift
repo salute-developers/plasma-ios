@@ -35,6 +35,7 @@ public struct TextFieldAppearance {
     public let borderColorWarning: ColorToken
     public let borderColorSuccess: ColorToken
     public let backgroundColorDefault: ColorToken
+    public let backgroundColorReadOnly: ColorToken
     public let backgroundColorError: ColorToken
     public let backgroundColorWarning: ColorToken
     public let backgroundColorSuccess: ColorToken
@@ -81,6 +82,7 @@ public struct TextFieldAppearance {
         borderColorWarning: ColorToken,
         borderColorSuccess: ColorToken,
         backgroundColorDefault: ColorToken,
+        backgroundColorReadOnly: ColorToken,
         backgroundColorError: ColorToken,
         backgroundColorWarning: ColorToken,
         backgroundColorSuccess: ColorToken,
@@ -126,6 +128,7 @@ public struct TextFieldAppearance {
         self.borderColorWarning = borderColorWarning
         self.borderColorSuccess = borderColorSuccess
         self.backgroundColorDefault = backgroundColorDefault
+        self.backgroundColorReadOnly = backgroundColorReadOnly
         self.backgroundColorError = backgroundColorError
         self.backgroundColorWarning = backgroundColorWarning
         self.backgroundColorSuccess = backgroundColorSuccess
@@ -154,7 +157,10 @@ public struct TextFieldAppearance {
         }
     }
     
-    public func backgroundColor(for style: TextFieldStyle, isFocused: Bool) -> ColorToken {
+    public func backgroundColor(for style: TextFieldStyle, isFocused: Bool, readOnly: Bool) -> ColorToken {
+        if readOnly {
+            return backgroundColorReadOnly
+        }
         if isFocused {
             return focusedBackgroundColor
         }

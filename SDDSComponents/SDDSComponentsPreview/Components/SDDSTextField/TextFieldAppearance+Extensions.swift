@@ -34,6 +34,7 @@ public extension TextFieldAppearance {
             borderColorWarning: Color.clear.token,
             borderColorSuccess: Color.clear.token,
             backgroundColorDefault: .surfaceDefaultTransparentPrimary,
+            backgroundColorReadOnly: .surfaceDefaultTransparentPrimary,
             backgroundColorError: ColorToken(
                 darkColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.2)),
                 lightColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.12))

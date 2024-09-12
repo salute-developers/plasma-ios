@@ -14,19 +14,18 @@ struct ChipView: View {
     var body: some View {
         List {
             Section {
-                HStack {
-                    Spacer()
+                ScrollView(.horizontal) {
                     SDDSChip(
                         title: viewModel.title,
                         isEnabled: viewModel.isEnabled,
-                        iconImage: nil,
-                        buttonImage: nil,
+                        iconImage: viewModel.iconImage,
+                        buttonImage: viewModel.buttonImage,
                         appearance: viewModel.appearance,
                         size: viewModel.size,
                         removeAction: viewModel.removeAction
                     )
-                    Spacer()
                 }
+                .scrollIndicators(.hidden)
             }
 
             Section(header: Text("Configuration")) {
@@ -38,6 +37,8 @@ struct ChipView: View {
                 }
 
                 Toggle("Enabled", isOn: $viewModel.isEnabled)
+                Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
+                Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
 
                 Picker("Size", selection: $viewModel.size) {
                     ForEach(SDDSChipSize.allCases, id: \.self) { size in
@@ -47,7 +48,7 @@ struct ChipView: View {
 
                 Picker("Border Style", selection: $viewModel.borderStyle) {
                     Text("Default").tag(ChipBorderStyle.default(viewModel.size.shapeToken.cornerRadius))
-                    Text("Rounded").tag(ChipBorderStyle.pilled)
+                    Text("Pilled").tag(ChipBorderStyle.pilled)
                 }
 
                 Picker("Appearance", selection: $viewModel.appearance) {
@@ -58,6 +59,23 @@ struct ChipView: View {
             }
         }
         .navigationTitle("SDDSChip")
+        .onChange(of: viewModel.iconImageEnabled) { iconImageEnabled in
+            if iconImageEnabled {
+                viewModel.setIconImage()
+            } else {
+                viewModel.iconImage = nil
+            }
+        }
+        .onChange(of: viewModel.buttomImageEnabled) { buttomImageEnabled in
+            if buttomImageEnabled {
+                viewModel.setButtonImage()
+            } else {
+                viewModel.buttonImage = nil
+            }
+        }
+        .onChange(of: viewModel.borderStyle) { borderStyle in
+            viewModel.updateBorderStyle(borderStyle: borderStyle)
+        }
     }
 }
 

@@ -63,7 +63,7 @@ public extension TypographyToken {
             fontName: "SF Pro",
             weight: .semibold,
             style: .normal,
-            size: 18,
+            size: 15,
             lineHeight: 22,
             kerning: 0
         )

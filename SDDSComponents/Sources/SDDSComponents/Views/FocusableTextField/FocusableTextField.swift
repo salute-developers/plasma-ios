@@ -1,14 +1,15 @@
 import SwiftUI
+import SDDSThemeCore
 
 struct FocusableTextField: UIViewRepresentable {
     @Binding var text: String
     @Binding var isFocused: Bool
+    let textColor: Color
+    let textAlignment: TextAlignment
+    let cursorColor: Color
+    let typography: TypographyToken
+    let readOnly: Bool
     var onEditingChanged: ((Bool) -> Void)? = nil
-
-    var textColor: UIColor = .black
-    var textAlignment: NSTextAlignment = .left
-    var cursorColor: UIColor = .blue
-    var font: UIFont = UIFont.systemFont(ofSize: 17)
 
     class Coordinator: NSObject, UITextFieldDelegate {
         var parent: FocusableTextField
@@ -19,6 +20,10 @@ struct FocusableTextField: UIViewRepresentable {
 
         func textFieldDidChangeSelection(_ textField: UITextField) {
             parent.text = textField.text ?? ""
+        }
+        
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            return !parent.readOnly
         }
 
         func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -36,63 +41,59 @@ struct FocusableTextField: UIViewRepresentable {
         Coordinator(self)
     }
 
-    func makeUIView(context: Context) -> UITextField {
+    func makeUIView(context: Context) -> UIView {
+        let containerView = UIView()
+        containerView.backgroundColor = .clear
+        
         let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = context.coordinator
         configure(textField)
-        return textField
+        
+        containerView.addSubview(textField)
+        
+        NSLayoutConstraint.activate([
+            textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            textField.topAnchor.constraint(equalTo: containerView.topAnchor),
+            textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        
+        return containerView
     }
 
-    func updateUIView(_ uiView: UITextField, context: Context) {
-        uiView.text = text
-        configure(uiView)
+    func updateUIView(_ view: UIView, context: Context) {
+        guard let textField = view.subviews.first as? UITextField else {
+            return
+        }
+        
+        textField.text = text
+        configure(textField)
 
         DispatchQueue.main.async {
             if isFocused {
-                uiView.becomeFirstResponder()
+                textField.becomeFirstResponder()
             } else {
-                uiView.resignFirstResponder()
+                textField.resignFirstResponder()
             }
         }
     }
 
     private func configure(_ textField: UITextField) {
-        textField.textColor = textColor
-        textField.textAlignment = textAlignment
-        textField.tintColor = cursorColor
-        textField.font = font
-    }
-}
-
-extension FocusableTextField {
-    func foregroundColor(_ color: Color) -> FocusableTextField {
-        var copy = self
-        copy.textColor = UIColor(color)
-        return copy
-    }
-
-    func multilineTextAlignment(_ alignment: TextAlignment) -> FocusableTextField {
-        var copy = self
-        switch alignment {
-        case .leading:
-            copy.textAlignment = .left
+        textField.textColor = UIColor(textColor)
+        
+        let nsTextAlignment: NSTextAlignment
+        switch textAlignment {
         case .center:
-            copy.textAlignment = .center
+            nsTextAlignment = .center
+        case .leading:
+            nsTextAlignment = .left
         case .trailing:
-            copy.textAlignment = .right
+            nsTextAlignment = .right
         }
-        return copy
-    }
-
-    func accentColor(_ color: Color) -> FocusableTextField {
-        var copy = self
-        copy.cursorColor = UIColor(color)
-        return copy
-    }
-
-    func typography(_ token: TypographyToken) -> FocusableTextField {
-        var copy = self
-        copy.font = token.uiFont
-        return copy
+        
+        textField.textAlignment = nsTextAlignment
+        textField.tintColor = UIColor(cursorColor)
+        textField.font = typography.uiFont
     }
 }

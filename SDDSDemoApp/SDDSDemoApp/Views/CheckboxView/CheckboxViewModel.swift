@@ -14,7 +14,7 @@ final class CheckboxViewModel: ObservableObject {
     @Published var appearance: CheckboxAppearance = CheckboxAppearance.default
     
     // MARK: - Screen properties
-    @Published var tintColor: ColorStyle = .green
+    @Published var tintColor: ColorStyle = .none
     @Published var imageWidth: CGFloat = 20
     @Published var imageHeight: CGFloat = 20
     @Published var horizontalGap: CGFloat = 8
@@ -30,7 +30,7 @@ final class CheckboxViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .default
+                self?.appearance = self?.appearance.withTintColor(style == .none ? nil : style.color.token) ?? .default
             }
             .store(in: &cancellables)
     }
@@ -63,7 +63,7 @@ struct CustomCheckboxSize: SelectionControlSizeConfiguration {
 
 // Extension for Appearance to update colors
 extension CheckboxAppearance {
-    func withTintColor(_ color: ColorToken) -> CheckboxAppearance {
+    func withTintColor(_ color: ColorToken?) -> CheckboxAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
@@ -76,10 +76,12 @@ extension CheckboxAppearance {
 }
 
 enum ColorStyle: String, CaseIterable {
-    case blue, green, red, gray, black
+    case none, blue, green, red, gray, black
     
     var color: Color {
         switch self {
+        case .none:
+            return .clear
         case .blue:
             return .blue
         case .green:
