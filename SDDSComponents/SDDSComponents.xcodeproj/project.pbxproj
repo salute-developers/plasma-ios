@@ -1015,6 +1015,7 @@
 				814E304E2C99B20A004601F7 /* TextFieldAppearance+Extensions.swift in Sources */,
 				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
+				814E30452C99B155004601F7 /* CheckboxAppearance+Extensions.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				814E30512C99B210004601F7 /* TextFieldChipSize.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
