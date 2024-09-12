@@ -2,20 +2,23 @@ import Foundation
 import SwiftUI
 
 struct DebugModifier: ViewModifier {
-    let borderWidth = 2.0
+    let borderWidth = 0.5
+    let color: Color
+    let condition: Bool
     
     func body(content: Content) -> some View {
         content
-            .overlay(
-                Rectangle()
-                    .stroke(Color.purple, lineWidth: borderWidth)
-                    .padding(-borderWidth)
-            )
+            .applyIf(condition) {
+                $0.overlay(
+                    Rectangle()
+                        .stroke(color, lineWidth: borderWidth)
+                )
+            }
     }
 }
 
-extension View {
-    func debug() -> some View {
-        self.modifier(DebugModifier())
+public extension View {
+    func debug(color: Color = .purple, condition: Bool = false) -> some View {
+        self.modifier(DebugModifier(color: color, condition: condition))
     }
 }

@@ -154,7 +154,8 @@ public struct SDDSChipGroup: View {
     }
 
     private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
-        let textWidth = chipData.title.size(withAttributes: [.font: chipData.appearance.titleTypography.uiFont]).width
+        let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.size) ?? .undefined
+        let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         let iconWidth: CGFloat = chipData.size.iconImageSize?.width ?? 0
         let buttonWidth: CGFloat = chipData.size.buttonImageSize?.width ?? 0
         var totalWidth = textWidth + iconWidth + buttonWidth + chipData.size.leadingInset + chipData.size.trailingInset + 2 * chipData.size.spacing

@@ -132,6 +132,7 @@ public struct SDDSChip: View {
             if let iconImage = iconImage, let iconImageSize = size.iconImageSize {
                 iconImage
                     .resizable()
+                    .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: iconImageSize.width, height: iconImageSize.height)
                     .foregroundColor(appearance.imageTintColor.color(for: colorScheme))
@@ -140,7 +141,7 @@ public struct SDDSChip: View {
             
             Text(title)
                 .lineLimit(1)
-                .typography(appearance.titleTypography)
+                .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
@@ -149,9 +150,10 @@ public struct SDDSChip: View {
                 Button(action: handleRemove) {
                     buttonImage
                         .resizable()
+                        .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: buttonImageSize.width, height: buttonImageSize.height)
-                        .foregroundColor(.clear)
+                        .foregroundColor(appearance.buttonTintColor.color(for: colorScheme))
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -164,7 +166,7 @@ public struct SDDSChip: View {
         .frame(height: size.height)
         .background(
             RoundedRectangle(cornerRadius: borderRadius)
-                .fill(appearance.buttonTintColor.color(for: colorScheme))
+                .fill(appearance.backgroundColor.color(for: colorScheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
         .accessibilityElement(children: .combine)

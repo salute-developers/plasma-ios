@@ -9,20 +9,30 @@ import Foundation
     - titleTypography: Типографика заголовка.
     - imageTintColor: Цвет иконки.
     - buttonTintColor: Цвет кнопки.
+    - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
 public struct ChipAppearance {
     public let titleColor: ColorToken
-    public let titleTypography: TypographyToken
+    public let titleTypography: TypographyConfiguration
     public let imageTintColor: ColorToken
     public let buttonTintColor: ColorToken
+    public let backgroundColor: ColorToken
     public let disabledAlpha: CGFloat
 
-    public init(titleColor: ColorToken, titleTypography: TypographyToken, imageTintColor: ColorToken, buttonTintColor: ColorToken, disabledAlpha: CGFloat) {
+    public init(
+        titleColor: ColorToken,
+        titleTypography: TypographyConfiguration, 
+        imageTintColor: ColorToken,
+        buttonTintColor: ColorToken,
+        backgroundColor: ColorToken,
+        disabledAlpha: CGFloat
+    ) {
         self.titleColor = titleColor
         self.titleTypography = titleTypography
         self.imageTintColor = imageTintColor
         self.buttonTintColor = buttonTintColor
+        self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
     }
 }
