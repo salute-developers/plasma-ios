@@ -92,9 +92,11 @@ public struct SDDSAvatar: View {
         case .color(let colorToken):
             Circle()
                 .fill(colorToken.color(for: colorScheme))
+                .clipShape(Circle())
         case .gradient(let gradientToken):
             Circle()
                 .gradient(gradientToken, colorScheme: colorScheme)
+                .clipShape(Circle())
         }
     }
     
@@ -126,9 +128,9 @@ public struct SDDSAvatar: View {
     private var statusColor: Color {
         switch status {
         case .online:
-            return appearance.onlineStatusColor
+            return appearance.onlineStatusColor.color(for: colorScheme)
         case .offline:
-            return appearance.offlineStatusColor
+            return appearance.offlineStatusColor.color(for: colorScheme)
         default:
             return .clear
         }
@@ -182,15 +184,15 @@ public protocol AvatarSizeConfiguration {
 public struct AvatarAppearance {
     public let textFillStyle: FillStyle
     public let backgroundFillStyle: FillStyle
-    public let onlineStatusColor: Color
-    public let offlineStatusColor: Color
+    public let onlineStatusColor: ColorToken
+    public let offlineStatusColor: ColorToken
     public let textTypography: TypographyConfiguration
     
     public init(
         textFillStyle: FillStyle,
         backgroundFillStyle: FillStyle,
-        onlineStatusColor: Color,
-        offlineStatusColor: Color,
+        onlineStatusColor: ColorToken,
+        offlineStatusColor: ColorToken,
         textTypography: TypographyConfiguration
     ) {
         self.textFillStyle = textFillStyle
@@ -231,149 +233,5 @@ public struct AvatarAccessibility {
     public init(label: String = "", hint: String = "") {
         self.label = label
         self.hint = hint
-    }
-}
-
-// MARK: - Preview
-
-struct SDDSAvatarPreview: PreviewProvider {
-    static var previews: some View {
-        Group {
-            // Online Status Previews
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: nil,
-                status: .online,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Online - Text Only")
-            
-            SDDSAvatar(
-                text: "",
-                image: .image(Image(systemName: "person.fill")),
-                placeholderImage: nil,
-                status: .online,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Online - Image")
-            
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: .image(Image(systemName: "person")),
-                status: .online,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Online - Placeholder with Text")
-
-            // Offline Status Previews
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: nil,
-                status: .offline,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Offline - Text Only")
-            
-            SDDSAvatar(
-                text: "",
-                image: .image(Image(systemName: "person.fill")),
-                placeholderImage: nil,
-                status: .offline,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Offline - Image")
-            
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: .image(Image(systemName: "person")),
-                status: .offline,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Offline - Placeholder with Text")
-            
-            // Hidden Status Previews
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: nil,
-                status: .hidden,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Hidden - Text Only")
-            
-            SDDSAvatar(
-                text: "",
-                image: .image(Image(systemName: "person.fill")),
-                placeholderImage: nil,
-                status: .hidden,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Hidden - Image")
-            
-            SDDSAvatar(
-                text: "JD",
-                image: nil,
-                placeholderImage: .image(Image(systemName: "person")),
-                status: .hidden,
-                appearance: defaultAppearance,
-                size: defaultSize,
-                accessibility: defaultAccessibility
-            )
-            .previewDisplayName("Hidden - Placeholder with Text")
-        }
-        .previewLayout(.sizeThatFits)
-        .padding()
-    }
-    
-    static var defaultAppearance: AvatarAppearance {
-        AvatarAppearance(
-            textFillStyle: .color(Color.green.token),
-            backgroundFillStyle: .color(Color.blue.token),
-            onlineStatusColor: .green,
-            offlineStatusColor: .red,
-            textTypography: AvatarTypography(token: .semibold(32)).asContainer
-        )
-    }
-    
-    static var defaultSize: AvatarSizeConfiguration {
-        return DefaultAvatarSize()
-    }
-    
-    static var defaultAccessibility: AvatarAccessibility {
-        AvatarAccessibility(label: "User Avatar", hint: "Displays user status and initials or image")
-    }
-}
-
-struct DefaultAvatarSize: AvatarSizeConfiguration {
-    var avatarSize: CGSize { CGSize(width: 88, height: 88) }
-    var statusSize: CGSize { CGSize(width: 12, height: 12) }
-    var statusInsets: EdgeInsets { EdgeInsets(top: 69, leading: 69, bottom: 0, trailing: 0) }
-}
-
-struct AvatarTypography: GeneralTypographyConfiguration {
-    let token: TypographyToken
-    
-    func typography(with size: AvatarSizeConfiguration) -> TypographyToken? {
-        return token
     }
 }

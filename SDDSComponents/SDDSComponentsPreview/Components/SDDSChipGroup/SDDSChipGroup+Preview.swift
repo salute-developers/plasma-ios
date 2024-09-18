@@ -6,10 +6,10 @@ import SwiftUI
 struct SDDSChipGroupPreview: PreviewProvider {
     static var previews: some View {
         let chipAppearance = ChipAppearance(
-            titleColor: Color.white.equalToken,
+            titleColor: Color.white.token,
             titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
+            imageTintColor: Color.white.token,
+            buttonTintColor: Color.gray.token,
             disabledAlpha: 0.5
         )
         
