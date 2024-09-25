@@ -16,7 +16,7 @@ public enum SDDSChipSize: ChipSizeConfiguration {
         case .large:
             return CGSize(width: 24, height: 24)
         case .medium:
-            return CGSize(width: 20, height: 20)
+            return CGSize(width: 24, height: 24)
         case .small:
             return CGSize(width: 16, height: 16)
         case .extraSmall:

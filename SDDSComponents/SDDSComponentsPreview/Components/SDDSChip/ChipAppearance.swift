@@ -6,10 +6,10 @@ import SDDSComponents
 extension ChipAppearance {
     static var `default`: ChipAppearance {
         .init(
-            titleColor: Color.white.equalToken,
-            titleTypography: .semibold14,
-            imageTintColor: Color.white.equalToken,
-            buttonTintColor: Color.gray.equalToken,
+            titleColor: ColorToken.textInversePrimary,
+            titleTypography: Typographies.bodyLNormal.typography,
+            imageTintColor: ColorToken.textInversePrimary,
+            buttonTintColor: ColorToken.backgroundDarkPrimary,
             disabledAlpha: 0.5
         )
     }

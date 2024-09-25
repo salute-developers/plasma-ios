@@ -68,7 +68,7 @@ public extension ColorToken {
     }
     
     static var clearColor: ColorToken {
-        Color.clear.equalToken
+        Color.clear.token
     }
     
     static var titleColor: ColorToken {
@@ -79,11 +79,11 @@ public extension ColorToken {
     }
     
     static var greenColor: ColorToken {
-        Color.green.equalToken
+        Color.green.token
     }
     
     static var subtitleColor: ColorToken {
-        Color.white.opacity(0.3).equalToken
+        Color.white.opacity(0.3).token
     }
     
     static var backgroundColor: ColorToken {
@@ -104,7 +104,7 @@ public extension ColorToken {
 }
 
 public extension Color {
-    var equalToken: ColorToken {
+    var token: ColorToken {
         ColorToken(darkColor: self, lightColor: self)
     }
 }
