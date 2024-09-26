@@ -12,6 +12,8 @@ public extension TextFieldAppearance {
             titleTypography: TextFieldTypography.title,
             innerTitleTypography: TextFieldTypography.innerTitle,
             captionTypography: TextFieldTypography.caption,
+            textBeforeTypography: TextFieldTypography.text,
+            textAfterTypography: TextFieldTypography.text,
             titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
             optionalTitleColor: .surfaceInverseSolidPrimary.withOpacity(0.28),
             textColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
@@ -48,7 +50,9 @@ public extension TextFieldAppearance {
             placeholderColorDefault: .textDefaultSecondary,
             placeholderColorError: .textDefaultNegative,
             placeholderColorWarning: .textDefaultWarning,
-            placeholderColorSuccess: .textDefaultAccent
+            placeholderColorSuccess: .textDefaultAccent,
+            textBeforeColor: .textDefaultTertiary,
+            textAfterColor: .textDefaultTertiary
         )
     }
 }

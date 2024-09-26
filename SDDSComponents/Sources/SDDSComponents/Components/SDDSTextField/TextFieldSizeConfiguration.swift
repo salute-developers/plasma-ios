@@ -19,6 +19,11 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var multipleValueHorizontalPadding: CGFloat { get }
     var chipContainerHorizontalPadding: CGFloat { get }
     var lineWidth: CGFloat { get }
+    var textBeforeLeadingPadding: CGFloat { get }
+    var textBeforeTrailingPadding: CGFloat { get }
+    var textAfterLeadingPadding: CGFloat { get }
+    var textAfterTrailingPadding: CGFloat { get }
+    var textHorizontalPadding: CGFloat { get }
     
     func indicatorPadding(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
     func indicatorYOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
