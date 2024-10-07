@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-extension RadioboxAppearance {
+public extension RadioboxAppearance {
     static var `default`: Self {
         .init(
             titleTypography: RadioboxTypography.label,
@@ -16,7 +16,7 @@ extension RadioboxAppearance {
     }
 }
 
-extension RadioboxTypography {
+public extension RadioboxTypography {
     static var label: TypographyConfiguration {
         RadioboxTypography(
             medium: Typographies.bodyMNormal.typography,

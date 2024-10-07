@@ -21,7 +21,7 @@ extension SDDSChip {
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
-            appearance: .default,
+            appearance: ChipAppearance.default,
             size: SDDSChipSize.medium(.rounded),
             removeAction: {}
         )
@@ -33,7 +33,7 @@ extension SDDSChip {
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: nil,
-            appearance: .default,
+            appearance: ChipAppearance.default,
             size: SDDSChipSize.medium(.rounded),
             removeAction: {}
         )
