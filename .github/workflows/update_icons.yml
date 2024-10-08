@@ -8,6 +8,9 @@ on:
         default: master
       plasma-version:
         required: true
+      checkout-branch:
+        required: false
+        default: main
   repository_dispatch:
     types: [ build-icons ]
 
@@ -19,15 +22,16 @@ jobs:
         lerna-scope: '--scope="@salutejs/plasma-icons"'
 
     steps:
-      # делаем сheckout в текущем репозитория
+      # Checkout в текущем репозитории
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.inputs.checkout-branch || 'main' }}
           show-progress: false
           fetch-depth: 0
           path: current
 
-      # делаем сheckout репозитория plasma
+      # Checkout репозитория plasma
       - name: Checkout to Plasma Web
         uses: actions/checkout@v4
         with:
@@ -54,8 +58,13 @@ jobs:
         working-directory: ./plasma
         run: |
           npx lerna ${{ env.lerna-scope }} run generate:ios
-          
-      - name: Extract current version
+
+      - name: Bump version
+        working-directory: ./current
+        run: |
+          ruby ./scripts/bump_version.rb ./SDDSIcons/info.plist
+
+      - name: Extract new version
         id: extract_version
         working-directory: ./current
         shell: bash
@@ -103,6 +112,7 @@ jobs:
           git config --local user.name "Salute iOS Team"
           git add ./SDDSIcons/SDDSIcons/Assets.xcassets/
           git add ./SDDSIcons/Generated/Assets.swift
+          git add ./SDDSIcons/info.plist
           git commit -m "feat(sdds-acore/icons): New icons were added from plasma v$PLASMA_VER"
           git push --set-upstream origin release/$TAG
           gh pr create --base main --head release/$TAG --title "Release $TAG" --body "Icons were updated to v$PLASMA_VER"
