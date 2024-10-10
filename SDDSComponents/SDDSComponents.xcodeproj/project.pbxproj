@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
+		8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */; };
+		8102BA312CBE9B3300C589D3 /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */; };
+		8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */; };
+		8102BA382CBEAC1600C589D3 /* TextAreaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA372CBEAC1600C589D3 /* TextAreaPreview.swift */; };
+		8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */; };
+		8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */; };
 		811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1532C50098D000DD354 /* SDDSChip.swift */; };
 		811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1552C50179F000DD354 /* ChipAppearance.swift */; };
 		811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1572C5017C3000DD354 /* ProgressBarAppearance.swift */; };
@@ -147,6 +154,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
+		8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAccessibility.swift; sourceTree = "<group>"; };
+		8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
+		8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaSizeConfiguration.swift; sourceTree = "<group>"; };
+		8102BA372CBEAC1600C589D3 /* TextAreaPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaPreview.swift; sourceTree = "<group>"; };
+		8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextEditor.swift; sourceTree = "<group>"; };
+		8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextEditor.swift; sourceTree = "<group>"; };
 		811DE1532C50098D000DD354 /* SDDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChip.swift; sourceTree = "<group>"; };
 		811DE1552C50179F000DD354 /* ChipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipAppearance.swift; sourceTree = "<group>"; };
 		811DE1572C5017C3000DD354 /* ProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAppearance.swift; sourceTree = "<group>"; };
@@ -301,6 +315,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8102BA282CBE9B3300C589D3 /* SDDSTextArea */ = {
+			isa = PBXGroup;
+			children = (
+				8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */,
+				8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */,
+				8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */,
+				8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */,
+				8102BA372CBEAC1600C589D3 /* TextAreaPreview.swift */,
+			);
+			path = SDDSTextArea;
+			sourceTree = "<group>";
+		};
 		811DE1522C500980000DD354 /* SDDSChip */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +551,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8102BA282CBE9B3300C589D3 /* SDDSTextArea */,
 				81E9FA8D2C92B12C0041B5FF /* SDDSTextField */,
 				81CBC09B2C82326600FBDAC8 /* SDDSAvatarGroup */,
 				81CBC08D2C821A4400FBDAC8 /* SDDSAvatar */,
@@ -562,7 +589,9 @@
 				81CBC0972C82273100FBDAC8 /* Text+FillModifier.swift */,
 				8154644A2C96FDE600DAD8EA /* ViewProvider.swift */,
 				816AA9A62C97280400C3347C /* PlaceholderTextField.swift */,
+				8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */,
 				814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */,
+				8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1010,6 +1039,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
@@ -1032,6 +1062,7 @@
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				814E30442C99B10A004601F7 /* SwitchTypography.swift in Sources */,
 				814E30462C99B15B004601F7 /* CheckboxTypography.swift in Sources */,
+				8102BA382CBEAC1600C589D3 /* TextAreaPreview.swift in Sources */,
 				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				814E304E2C99B20A004601F7 /* TextFieldAppearance+Extensions.swift in Sources */,
@@ -1040,7 +1071,9 @@
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				814E30512C99B210004601F7 /* TextFieldChipSize.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
+				8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */,
 				818C03C92C451424002C6D0A /* RadioboxAppearance.swift in Sources */,
+				8102BA312CBE9B3300C589D3 /* TextAreaAppearance.swift in Sources */,
 				8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */,
 				816AA9B02C97424000C3347C /* TextFieldSizeConfiguration.swift in Sources */,
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
@@ -1049,6 +1082,7 @@
 				814E30472C99B1AE004601F7 /* RadioboxTypography.swift in Sources */,
 				811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */,
 				814E304F2C99B20C004601F7 /* TextFieldTypography.swift in Sources */,
+				8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */,
 				814E30352C99AF75004601F7 /* SDDSCheckboxSize.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
 				814E30522C99B212004601F7 /* ChipAppearance+SDDSTextField.swift in Sources */,
@@ -1060,9 +1094,11 @@
 				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
+				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814E30552C99B3D0004601F7 /* SDDSChipSize.swift in Sources */,
 				814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */,
+				8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */,
 				814E30482C99B1B5004601F7 /* SDDSRadioboxSize.swift in Sources */,
 				814E30502C99B20E004601F7 /* TextFieldDefaultSize.swift in Sources */,
 				814E304A2C99B1F0004601F7 /* DefaultProgressBarSize.swift in Sources */,
