@@ -21,7 +21,7 @@ final class ButtonViewModel: ObservableObject {
     // MARK: - Screen properties
     @Published var isIconVisible: Bool = false
     @Published var alignment: SDDSComponents.Alignment = .left
-    @Published var colorStyle: SolidColorStyle = .black
+    @Published var colorStyle: SDDSServeB2CStyle = .accent
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -70,20 +70,8 @@ final class ButtonViewModel: ObservableObject {
         .init(image: Image("buttonIcon"), alignment: alignment)
     }
         
-    private func applyColorStyle(_ colorStyle: SolidColorStyle) {
-        let black = ButtonAppearance.black
-        
-        appearance = .init(
-            titleTypography: black.titleTypography,
-            titleColor: colorStyle.primaryTextColor.token,
-            subtitleTypography: black.subtitleTypography,
-            subtitleColor: colorStyle.secondaryTextColor.token,
-            iconColor: colorStyle.primaryTextColor.token,
-            spinnerColor: colorStyle.spinnerColor.token,
-            backgroundColor: colorStyle.suiColor.token,
-            disabledAlpha: 0.5,
-            loadingAlpha: 0.5
-        )
+    private func applyColorStyle(_ colorStyle: SDDSServeB2CStyle) {
+        appearance = colorStyle.defaultButtonAppearance
     }
 }
 
