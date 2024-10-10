@@ -12,7 +12,8 @@ import Foundation
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
-public struct ChipAppearance {
+public struct ChipAppearance: Hashable {
+    let id = UUID()
     public let titleColor: ColorToken
     public let titleTypography: TypographyConfiguration
     public let imageTintColor: ColorToken
@@ -34,5 +35,13 @@ public struct ChipAppearance {
         self.buttonTintColor = buttonTintColor
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
+    }
+    
+    public static func == (lhs: ChipAppearance, rhs: ChipAppearance) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

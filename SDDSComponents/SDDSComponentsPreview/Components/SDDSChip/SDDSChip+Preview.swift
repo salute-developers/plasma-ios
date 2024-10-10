@@ -10,7 +10,7 @@ extension SDDSChip {
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
             appearance: .default,
-            size: SDDSChipSize.medium(.rounded),
+            size: SDDSChipSize.medium(.pilled),
             removeAction: {}
         )
     }
@@ -22,7 +22,7 @@ extension SDDSChip {
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
             appearance: ChipAppearance.default,
-            size: SDDSChipSize.medium(.rounded),
+            size: SDDSChipSize.medium(.pilled),
             removeAction: {}
         )
     }
@@ -34,7 +34,7 @@ extension SDDSChip {
             iconImage: Image.image("chipIcon"),
             buttonImage: nil,
             appearance: ChipAppearance.default,
-            size: SDDSChipSize.medium(.rounded),
+            size: SDDSChipSize.medium(.pilled),
             removeAction: {}
         )
     }
@@ -46,7 +46,7 @@ extension SDDSChip {
             iconImage: nil,
             buttonImage: Image.image("chipClose"),
             appearance: .default,
-            size: SDDSChipSize.medium(.rounded),
+            size: SDDSChipSize.medium(.pilled),
             removeAction: {}
         )
     }
@@ -58,7 +58,7 @@ extension SDDSChip {
             iconImage: nil,
             buttonImage: nil,
             appearance: .default,
-            size: SDDSChipSize.medium(.rounded),
+            size: SDDSChipSize.medium(.pilled),
             removeAction: {}
         )
     }

@@ -25,6 +25,22 @@
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
 		8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F7252C5CFD9200622836 /* SDDSComponents */; };
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
+		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
+		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
+		816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243482CB90FA800506E1C /* GradientPickerView.swift */; };
+		8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162434C2CB93E2000506E1C /* PhotoPicker.swift */; };
+		8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162434E2CB93E6F00506E1C /* AvatarGroupView.swift */; };
+		816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243502CB93EC800506E1C /* AvatarGroupViewModel.swift */; };
+		816243542CB93EEB00506E1C /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243532CB93EEB00506E1C /* ChipView.swift */; };
+		816243572CB940F400506E1C /* ChipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243562CB940F400506E1C /* ChipViewModel.swift */; };
+		8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435A2CB9418B00506E1C /* RadioboxGroupView.swift */; };
+		8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */; };
+		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
+		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
+		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
+		816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629A2CB80E0C00352891 /* SDDSComponentsPreview */; };
+		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
+		816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629F2CB80E2E00352891 /* SDDSComponentsPreview */; };
 		817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EB2C383BA500E45207 /* ButtonViewModel.swift */; };
 		817580EF2C383FF200E45207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EE2C383FF200E45207 /* Colors.swift */; };
 		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
@@ -33,6 +49,8 @@
 		8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A16E2C3BF90E00AD650A /* ButtonSize.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1732C3BF99F00AD650A /* ButtonTypography.swift */; };
+		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
+		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +90,18 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		816243432CB9057E00506E1C /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		816243452CB907E900506E1C /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
+		816243482CB90FA800506E1C /* GradientPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPickerView.swift; sourceTree = "<group>"; };
+		8162434C2CB93E2000506E1C /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		8162434E2CB93E6F00506E1C /* AvatarGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupView.swift; sourceTree = "<group>"; };
+		816243502CB93EC800506E1C /* AvatarGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupViewModel.swift; sourceTree = "<group>"; };
+		816243532CB93EEB00506E1C /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
+		816243562CB940F400506E1C /* ChipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipViewModel.swift; sourceTree = "<group>"; };
+		8162435A2CB9418B00506E1C /* RadioboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupView.swift; sourceTree = "<group>"; };
+		8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupViewModel.swift; sourceTree = "<group>"; };
+		816243602CB9430200506E1C /* CheckboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupView.swift; sourceTree = "<group>"; };
+		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
 		817580EB2C383BA500E45207 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		817580EE2C383FF200E45207 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -82,8 +112,10 @@
 		8199A16E2C3BF90E00AD650A /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199A1732C3BF99F00AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
+		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +124,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */,
+				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
 				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
+				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
+				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
+				816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +231,14 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8199E5A12CBD088000AF3D22 /* TextFieldView */,
+				816243592CB9414000506E1C /* CheckboxGroupView */,
+				816243582CB9413800506E1C /* RadioboxGroupView */,
+				816243522CB93EDE00506E1C /* ChipView */,
+				8162434B2CB93E1100506E1C /* PhotoPicker */,
+				8162434A2CB93DC200506E1C /* AvatarGroupView */,
+				816243472CB90F9800506E1C /* GradientPickerView */,
+				816243422CB9056A00506E1C /* AvatarView */,
 				811DE14A2C4D1D9C000DD354 /* SwitchView */,
 				811DE1452C4D19C3000DD354 /* ProgressBarView */,
 				811DE1402C4D15EF000DD354 /* RadioboxView */,
@@ -241,6 +285,67 @@
 			path = SwitchView;
 			sourceTree = "<group>";
 		};
+		816243422CB9056A00506E1C /* AvatarView */ = {
+			isa = PBXGroup;
+			children = (
+				816243432CB9057E00506E1C /* AvatarView.swift */,
+				816243452CB907E900506E1C /* AvatarViewModel.swift */,
+			);
+			path = AvatarView;
+			sourceTree = "<group>";
+		};
+		816243472CB90F9800506E1C /* GradientPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				816243482CB90FA800506E1C /* GradientPickerView.swift */,
+			);
+			path = GradientPickerView;
+			sourceTree = "<group>";
+		};
+		8162434A2CB93DC200506E1C /* AvatarGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				8162434E2CB93E6F00506E1C /* AvatarGroupView.swift */,
+				816243502CB93EC800506E1C /* AvatarGroupViewModel.swift */,
+			);
+			path = AvatarGroupView;
+			sourceTree = "<group>";
+		};
+		8162434B2CB93E1100506E1C /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8162434C2CB93E2000506E1C /* PhotoPicker.swift */,
+			);
+			path = PhotoPicker;
+			sourceTree = "<group>";
+		};
+		816243522CB93EDE00506E1C /* ChipView */ = {
+			isa = PBXGroup;
+			children = (
+				816243532CB93EEB00506E1C /* ChipView.swift */,
+				816243562CB940F400506E1C /* ChipViewModel.swift */,
+			);
+			path = ChipView;
+			sourceTree = "<group>";
+		};
+		816243582CB9413800506E1C /* RadioboxGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				8162435A2CB9418B00506E1C /* RadioboxGroupView.swift */,
+				8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */,
+			);
+			path = RadioboxGroupView;
+			sourceTree = "<group>";
+		};
+		816243592CB9414000506E1C /* CheckboxGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				816243602CB9430200506E1C /* CheckboxGroupView.swift */,
+				816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */,
+			);
+			path = CheckboxGroupView;
+			sourceTree = "<group>";
+		};
 		817D9F122C3704AD006C4814 /* ButtonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +366,15 @@
 				8199A1712C3BF94E00AD650A /* Spacing.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		8199E5A12CBD088000AF3D22 /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */,
+				81E968152CBD20C300256968 /* TextFieldViewModel.swift */,
+			);
+			path = TextFieldView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +398,10 @@
 				8159F7252C5CFD9200622836 /* SDDSComponents */,
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
+				816C62982CB80E0C00352891 /* SDDSComponents */,
+				816C629A2CB80E0C00352891 /* SDDSComponentsPreview */,
+				816C629D2CB80E2E00352891 /* SDDSComponents */,
+				816C629F2CB80E2E00352891 /* SDDSComponentsPreview */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -359,7 +477,7 @@
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
-				8178A7752C74ABDA00DFDA61 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
+				816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -424,24 +542,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
 				8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */,
+				816243572CB940F400506E1C /* ChipViewModel.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
+				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
+				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
+				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
+				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
+				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
+				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
+				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
+				816243542CB93EEB00506E1C /* ChipView.swift in Sources */,
 				811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */,
+				8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */,
+				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
 				818FE9332C3C223200F64958 /* SDDSButtonViewData.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				817580EF2C383FF200E45207 /* Colors.swift in Sources */,
+				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				811DE13E2C4D1145000DD354 /* SDDSButtonViewModel+Preview.swift in Sources */,
 				8199A16F2C3BF90E00AD650A /* ButtonSize.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
+				816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,7 +925,7 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
-		8178A7752C74ABDA00DFDA61 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
+		816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
 		};
@@ -807,6 +939,22 @@
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
+		};
+		816C62982CB80E0C00352891 /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		816C629A2CB80E0C00352891 /* SDDSComponentsPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponentsPreview;
+		};
+		816C629D2CB80E2E00352891 /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		816C629F2CB80E2E00352891 /* SDDSComponentsPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponentsPreview;
 		};
 		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -4,6 +4,7 @@ import SDDSThemeCore
 
 struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: View, PlaceholderBeforeContent: View>: View {
     @Binding var text: String
+    @Binding var isFocused: Bool
     let placeholder: String
     let placeholderColor: Color
     let placeholderTypography: TypographyToken
@@ -11,7 +12,7 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
     @ViewBuilder var placeholderAfterContent: () -> PlaceholderAfterContent
     
     let onEditingChanged: ((Bool) -> Void)
-    var textFieldConfiguration: (TextField<Text>) -> TextFieldContent
+    var textFieldConfiguration: (FocusableTextField) -> TextFieldContent
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -25,7 +26,7 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
                 }
             }
             textFieldConfiguration(
-                TextField("", text: $text, onEditingChanged: onEditingChanged)
+                FocusableTextField(text: $text, isFocused: $isFocused, onEditingChanged: onEditingChanged)
             )
         }
     }

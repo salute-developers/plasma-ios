@@ -3,6 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 
 public struct TextFieldAppearance {
+    let id = UUID()
     public let textTypography: TypographyConfiguration
     public let titleTypography: TypographyConfiguration
     public let innerTitleTypography: TypographyConfiguration
@@ -230,5 +231,15 @@ public struct TextFieldAppearance {
         } else {
             return placeholderColorDefault
         }
+    }
+}
+
+extension TextFieldAppearance: Hashable {
+    public static func == (lhs: TextFieldAppearance, rhs: TextFieldAppearance) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

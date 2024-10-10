@@ -6,7 +6,7 @@ import SDDSComponents
 import SwiftUI
 import SDDSServTheme
 
-public enum SDDSTextFieldSize: TextFieldSizeConfiguration {
+public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     case large
     case medium
     case small
