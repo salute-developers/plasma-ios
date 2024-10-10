@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSServTheme
 import SDDSComponents
 
-extension ChipAppearance {
+public extension ChipAppearance {
     static var textField: ChipAppearance {
         ChipAppearance(
             titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),

@@ -31,17 +31,44 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
         }
         
         return Group {
-            SDDSCheckboxGroup(behaviour: .hierarchical(parent: parentData, child: childData), horizontalIndent: 24, verticalSpacing: 8)
+            SDDSCheckboxGroup(behaviour: .hierarchical(parent: parentData, child: childData), size: SDDSCheckboxGroupSize.medium)
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("SDDSCheckboxGroup with Parent")
                 .padding()
                 .debug()
             
-            SDDSCheckboxGroup(behaviour: .default(data: childData), horizontalIndent: 24, verticalSpacing: 8)
+            SDDSCheckboxGroup(behaviour: .default(data: childData), size: SDDSCheckboxGroupSize.medium)
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("SDDSCheckboxGroup without Parent")
                 .padding()
                 .debug()
         }
+    }
+}
+
+public enum SDDSCheckboxGroupSize: String, CheckboxGroupSizeConfiguration, CaseIterable {
+    case medium
+    case small
+    
+    public var horizontalIndent: CGFloat {
+        switch self {
+        case .medium:
+            24
+        case .small:
+            12
+        }
+    }
+    
+    public var verticalSpacing: CGFloat {
+        switch self {
+        case .medium:
+            8
+        case .small:
+            4
+        }
+    }
+    
+    public var debugDescription: String {
+        return rawValue
     }
 }

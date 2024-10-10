@@ -19,8 +19,26 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
             )
         }
         
-        return SDDSRadioboxGroup(radioboxData: radioboxData, verticalSpacing: 8)
+        return SDDSRadioboxGroup(radioboxData: radioboxData, size: SDDSRadioboxGroupSize.medium)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("SDDSRadioboxGroup Preview")
+    }
+}
+
+public enum SDDSRadioboxGroupSize: String, RadioboxGroupSizeConfiguration, CaseIterable {
+    case medium
+    case small
+    
+    public var verticalSpacing: CGFloat {
+        switch self {
+        case .medium:
+            8
+        case .small:
+            4
+        }
+    }
+    
+    public var debugDescription: String {
+        return rawValue
     }
 }

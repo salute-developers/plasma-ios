@@ -5,7 +5,7 @@ import SDDSComponents
 // MARK: - Enums and Configurations
 
 /// Определяет возможные стили для текстового поля.
-public enum TextFieldStyle: String {
+public enum TextFieldStyle: String, CaseIterable {
     case `default`
     case error
     case warning
@@ -13,30 +13,59 @@ public enum TextFieldStyle: String {
 }
 
 /// Определяет возможные макеты для текстового поля.
-public enum TextFieldLayout: String {
+public enum TextFieldLayout: String, CaseIterable {
     case `default`
     case clear
 }
 
 /// Определяет размещение метки текстового поля.
-public enum TextFieldLabelPlacement: String {
+public enum TextFieldLabelPlacement: String, CaseIterable {
     case outer
     case inner
     case none
 }
 
 /// Определяет размещение обязательного индикатора.
-public enum TextFieldRequiredPlacement: String {
+public enum TextFieldRequiredPlacement: String, CaseIterable {
     case left
     case right
 }
 
 /// Определяет возможные значения текстового поля.
-public enum TextFieldValue {
+public enum TextFieldValue: Equatable {
     /// Одиночное текстовое значение.
     case single(String)
     /// Множественное значение с чипсами.
     case multiple(String, [ChipData])
+    
+    public static func == (lhs: TextFieldValue, rhs: TextFieldValue) -> Bool {
+        switch (lhs, rhs) {
+        case (.single(let lhs), .single(let rhs)):
+            return lhs == rhs
+        case (.multiple(let lhsText, let lhsChips), .multiple(let rhsText, let rhsChips)):
+            return lhsText == rhsText && lhsChips == rhsChips
+        default:
+            return false
+        }
+    }
+    
+    public var text: String {
+        switch self {
+        case .single(let text):
+            return text
+        case .multiple(let text, _):
+            return text
+        }
+    }
+    
+    public func updated(with text: String) -> TextFieldValue {
+        switch self {
+        case .single:
+            return .single(text)
+        case .multiple(_, let chips):
+            return .multiple(text, chips)
+        }
+    }
 }
 
 // MARK: - SDDSTextField
@@ -67,7 +96,7 @@ public enum TextFieldValue {
  */
 public struct SDDSTextField: View {
     @State var text: String
-    public let value: TextFieldValue
+    @Binding public var value: TextFieldValue
     public let title: String
     public let optionalTitle: String
     public let placeholder: String
@@ -93,7 +122,7 @@ public struct SDDSTextField: View {
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
-        value: TextFieldValue,
+        value: Binding<TextFieldValue>,
         title: String = "",
         optionalTitle: String = "",
         placeholder: String = "",
@@ -113,7 +142,7 @@ public struct SDDSTextField: View {
         iconViewProvider: ViewProvider? = nil,
         iconActionViewProvider: ViewProvider? = nil
     ) {
-        switch value {
+        switch value.wrappedValue {
         case .single(let text):
             _text = State(wrappedValue: text)
         case .multiple(let text, _):
@@ -121,7 +150,7 @@ public struct SDDSTextField: View {
         }
         _oldText = _text
         
-        self.value = value
+        _value = value
         self.caption = caption
         self.textBefore = textBefore
         self.textAfter = textAfter
@@ -161,6 +190,12 @@ public struct SDDSTextField: View {
                         indicatorWithTrailingPadding
                     }
                     fieldView
+                        .onTapGesture {
+                            guard !displayChips else {
+                                return
+                            }
+                            isFocused = true
+                        }
                         .debug(condition: debugConfiguration.fieldView)
                 }
                 HStack(spacing: 0) {
@@ -267,6 +302,9 @@ public struct SDDSTextField: View {
                 textField
                     .id(textFieldIdentifier)
                     .padding(.leading, size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
+                    .onTapGesture {
+                        isFocused = true
+                    }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: chipCornerRadius, style: .continuous))
@@ -293,7 +331,8 @@ public struct SDDSTextField: View {
                                 .padding(.trailing, size.textBeforeTrailingPadding)
                         }
                         PlaceholderTextField(
-                            text: $text,
+                            text: $text, 
+                            isFocused: $isFocused,
                             placeholder: placeholder,
                             placeholderColor: placeholderColor,
                             placeholderTypography: textTypography,
@@ -336,6 +375,7 @@ public struct SDDSTextField: View {
         case .multiple:
             PlaceholderTextField(
                 text: $text,
+                isFocused: $isFocused,
                 placeholder: placeholder,
                 placeholderColor: placeholderColor,
                 placeholderTypography: textTypography, 
@@ -353,20 +393,29 @@ public struct SDDSTextField: View {
     }
     
     @ViewBuilder
-    private func textFieldConfiguration(textField: TextField<Text>) -> some View {
+    private func textFieldConfiguration(textField: FocusableTextField) -> some View {
         textField
-            .onChange(of: text) { newValue in
-                if readOnly  {
-                    self.text = oldText
-                } else {
-                    self.oldText = newValue
-                }
-            }
             .accentColor(appearance.cursorColor.color(for: colorScheme))
             .typography(textTypography)
             .foregroundColor(textColor)
             .multilineTextAlignment(appearance.inputTextAlignment)
             .padding(size.textInputPaddings, debug: debugConfiguration.textField)
+            .onChange(of: text) { newText in
+                if readOnly  {
+                    self.text = oldText
+                } else {
+                    self.oldText = newText
+                }
+                if newText != self.value.text {
+                    self.value = self.value.updated(with: newText)
+                }
+            }
+            .onChange(of: value) { newValue in
+                guard !readOnly else {
+                    return
+                }
+                self.text = newValue.text
+            }
     }
         
     @ViewBuilder
@@ -682,12 +731,12 @@ public struct SDDSTextField: View {
             switch chipSize.borderStyle {
             case .default(let radius):
                 return radius
-            case .rounded:
+            case .pilled:
                 return chipSize.height / 2
             }
         }
     }
-
+    
     private let textFieldIdentifier = "TextField"
 
     private var titleTypography: TypographyToken {

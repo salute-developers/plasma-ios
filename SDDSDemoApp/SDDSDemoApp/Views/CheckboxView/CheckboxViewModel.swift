@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class CheckboxViewModel: ObservableObject {
     // MARK: - Checkbox Properties
@@ -9,8 +10,8 @@ final class CheckboxViewModel: ObservableObject {
     @Published var subtitle: String = ""
     @Published var state: SelectionControlState = .deselected
     @Published var isEnabled: Bool = true
-    @Published var size: SelectionControlSizeConfiguration = SDDSCheckboxSize()
-    @Published var appearance: CheckboxAppearance = .defaultExample
+    @Published var size: SelectionControlSizeConfiguration = SDDSCheckboxSize.medium
+    @Published var appearance: CheckboxAppearance = CheckboxAppearance.default
     
     // MARK: - Screen properties
     @Published var tintColor: ColorStyle = .green
@@ -29,7 +30,7 @@ final class CheckboxViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.equalToken) ?? .defaultExample
+                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .default
             }
             .store(in: &cancellables)
     }
@@ -62,28 +63,13 @@ struct CustomCheckboxSize: SelectionControlSizeConfiguration {
 
 // Extension for Appearance to update colors
 extension CheckboxAppearance {
-    static var defaultExample: CheckboxAppearance {
-        .init(
-            titleTypography: .semibold16,
-            subtitleTypography: .semibold14,
-            enabledTitleColor: .blackTitleColor,
-            enabledSubtitleColor: .subtitleColor,
-            disabledTitleColor: .blackTitleColor.withOpacity(0.3),
-            disabledSubtitleColor: .subtitleColor.withOpacity(0.3),
-            disabledImageAlpha: 0.3,
-            imageTintColor: .greenColor
-        )
-    }
-    
     func withTintColor(_ color: ColorToken) -> CheckboxAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
-            enabledTitleColor: enabledTitleColor,
-            enabledSubtitleColor: enabledSubtitleColor,
-            disabledTitleColor: disabledTitleColor,
-            disabledSubtitleColor: disabledSubtitleColor,
-            disabledImageAlpha: disabledImageAlpha,
+            titleColor: titleColor,
+            subtitleColor: subtitleColor,
+            disabledAlpha: disabledAlpha,
             imageTintColor: color
         )
     }

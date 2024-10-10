@@ -17,13 +17,13 @@ public extension ChipAppearance {
     }
 }
 
-struct ChipTypography: GeneralTypographyConfiguration {
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
-    let extraSmall: TypographyToken?
+public struct ChipTypography: GeneralTypographyConfiguration {
+    public let large: TypographyToken?
+    public let medium: TypographyToken?
+    public let small: TypographyToken?
+    public let extraSmall: TypographyToken?
     
-    func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
         switch size as? SDDSChipSize {
         case .large:
             return large
@@ -37,7 +37,7 @@ struct ChipTypography: GeneralTypographyConfiguration {
     }
 }
 
-extension ChipTypography {
+public extension ChipTypography {
     static var title: TypographyConfiguration {
         ChipTypography(
             large: Typographies.bodyLNormal.typography,
