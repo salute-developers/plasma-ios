@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class ButtonViewModel: ObservableObject {
     // MARK: - Button Properties
@@ -11,7 +12,7 @@ final class ButtonViewModel: ObservableObject {
     @Published var size: ButtonSizeConfiguration = ButtonSize.medium
     @Published var isDisabled: Bool = false
     @Published var isLoading: Bool = false
-    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self))
+    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: ButtonViewModel.self))
     @Published var spinnerStyle: SpinnerStyle = .solid
     @Published var buttonStyle: SDDSComponents.ButtonStyle = .basic
     @Published var appearance: ButtonAppearance = .black
@@ -74,12 +75,12 @@ final class ButtonViewModel: ObservableObject {
         
         appearance = .init(
             titleTypography: black.titleTypography,
-            titleColor: colorStyle.primaryTextColor.equalToken,
+            titleColor: colorStyle.primaryTextColor.token,
             subtitleTypography: black.subtitleTypography,
-            subtitleColor: colorStyle.secondaryTextColor.equalToken,
-            iconColor: colorStyle.primaryTextColor.equalToken,
-            spinnerColor: colorStyle.spinnerColor.equalToken,
-            backgroundColor: colorStyle.suiColor.equalToken,
+            subtitleColor: colorStyle.secondaryTextColor.token,
+            iconColor: colorStyle.primaryTextColor.token,
+            spinnerColor: colorStyle.spinnerColor.token,
+            backgroundColor: colorStyle.suiColor.token,
             disabledAlpha: 0.5,
             loadingAlpha: 0.5
         )

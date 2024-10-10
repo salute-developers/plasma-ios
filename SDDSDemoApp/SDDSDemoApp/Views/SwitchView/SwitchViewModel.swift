@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class SwitchViewModel: ObservableObject {
     // MARK: - Switch Properties
@@ -29,19 +30,19 @@ final class SwitchViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.equalToken) ?? .defaultAppearance
+                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .defaultAppearance
             }
             .store(in: &cancellables)
         
         $titleColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTitleColor(style.color.equalToken) ?? .defaultAppearance
+                self?.appearance = self?.appearance.withTitleColor(style.color.token) ?? .defaultAppearance
             }
             .store(in: &cancellables)
         
         $subtitleColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withSubtitleColor(style.color.equalToken) ?? .defaultAppearance
+                self?.appearance = self?.appearance.withSubtitleColor(style.color.token) ?? .defaultAppearance
             }
             .store(in: &cancellables)
     }
@@ -76,12 +77,10 @@ extension SwitchAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
-            enabledTitleColor: enabledTitleColor,
-            enabledSubtitleColor: enabledSubtitleColor,
-            enabledTintColor: color,
-            disabledTitleColor: disabledTitleColor,
-            disabledSubtitleColor: disabledSubtitleColor,
-            disabledTintColor: color
+            titleColor: titleColor,
+            subtitleColor: subtitleColor,
+            tintColor: color,
+            disabledAlpha: disabledAlpha
         )
     }
     
@@ -89,12 +88,10 @@ extension SwitchAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
-            enabledTitleColor: color,
-            enabledSubtitleColor: enabledSubtitleColor,
-            enabledTintColor: enabledTintColor,
-            disabledTitleColor: color.withOpacity(0.3),
-            disabledSubtitleColor: disabledSubtitleColor,
-            disabledTintColor: disabledTintColor
+            titleColor: color,
+            subtitleColor: subtitleColor,
+            tintColor: tintColor,
+            disabledAlpha: disabledAlpha
         )
     }
     
@@ -102,12 +99,10 @@ extension SwitchAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
-            enabledTitleColor: enabledTitleColor,
-            enabledSubtitleColor: color,
-            enabledTintColor: enabledTintColor,
-            disabledTitleColor: disabledTitleColor,
-            disabledSubtitleColor: color.withOpacity(0.3),
-            disabledTintColor: disabledTintColor
+            titleColor: titleColor,
+            subtitleColor: color,
+            tintColor: tintColor,
+            disabledAlpha:  disabledAlpha
         )
     }
 }

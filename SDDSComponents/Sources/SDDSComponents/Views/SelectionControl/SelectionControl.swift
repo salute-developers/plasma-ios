@@ -24,7 +24,7 @@ public struct SelectionControlStateImages {
     public let deselectedImage: Image
     public let indeterminateImage: Image?
     
-    init(selectedImage: Image, deselectedImage: Image, indeterminateImage: Image?) {
+    public init(selectedImage: Image, deselectedImage: Image, indeterminateImage: Image?) {
         self.selectedImage = selectedImage
         self.deselectedImage = deselectedImage
         self.indeterminateImage = indeterminateImage

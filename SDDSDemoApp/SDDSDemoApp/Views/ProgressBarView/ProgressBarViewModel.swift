@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class ProgressBarViewModel: ObservableObject {
     // MARK: - Progress Bar Properties
@@ -27,7 +28,7 @@ final class ProgressBarViewModel: ObservableObject {
         }
     }
     @Published var isEnabled: Bool = true
-    @Published var appearance: ProgressBarAppearance = .defaultExample
+    @Published var appearance: ProgressBarAppearance = .accent
     @Published var size: ProgressBarSizeConfiguration = DefaultProgressBarSize()
     
     // MARK: - Screen properties
@@ -50,13 +51,13 @@ final class ProgressBarViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.equalToken) ?? .defaultExample
+                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .accent
             }
             .store(in: &cancellables)
         
         $trackColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTrackColor(style.color.equalToken) ?? .defaultExample
+                self?.appearance = self?.appearance.withTrackColor(style.color.token) ?? .accent
             }
             .store(in: &cancellables)
     }
