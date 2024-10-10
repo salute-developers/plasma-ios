@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 enum SolidColorStyle: String, CaseIterable {
-    case black = "Black"
+    case black = "Accent"
     case green = "Green"
     case lightGray = "LightGray"
     case orange = "Orange"

@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class ButtonViewModel: ObservableObject {
     // MARK: - Button Properties
@@ -11,7 +12,7 @@ final class ButtonViewModel: ObservableObject {
     @Published var size: ButtonSizeConfiguration = ButtonSize.medium
     @Published var isDisabled: Bool = false
     @Published var isLoading: Bool = false
-    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self))
+    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: ButtonViewModel.self))
     @Published var spinnerStyle: SpinnerStyle = .solid
     @Published var buttonStyle: SDDSComponents.ButtonStyle = .basic
     @Published var appearance: ButtonAppearance = .black
@@ -20,7 +21,7 @@ final class ButtonViewModel: ObservableObject {
     // MARK: - Screen properties
     @Published var isIconVisible: Bool = false
     @Published var alignment: SDDSComponents.Alignment = .left
-    @Published var colorStyle: SolidColorStyle = .black
+    @Published var colorStyle: SDDSServeB2CStyle = .accent
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -69,20 +70,8 @@ final class ButtonViewModel: ObservableObject {
         .init(image: Image("buttonIcon"), alignment: alignment)
     }
         
-    private func applyColorStyle(_ colorStyle: SolidColorStyle) {
-        let black = ButtonAppearance.black
-        
-        appearance = .init(
-            titleTypography: black.titleTypography,
-            titleColor: colorStyle.primaryTextColor.equalToken,
-            subtitleTypography: black.subtitleTypography,
-            subtitleColor: colorStyle.secondaryTextColor.equalToken,
-            iconColor: colorStyle.primaryTextColor.equalToken,
-            spinnerColor: colorStyle.spinnerColor.equalToken,
-            backgroundColor: colorStyle.suiColor.equalToken,
-            disabledAlpha: 0.5,
-            loadingAlpha: 0.5
-        )
+    private func applyColorStyle(_ colorStyle: SDDSServeB2CStyle) {
+        appearance = colorStyle.defaultButtonAppearance
     }
 }
 

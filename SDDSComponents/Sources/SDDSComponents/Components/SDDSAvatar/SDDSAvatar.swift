@@ -56,12 +56,14 @@ public struct SDDSAvatar: View {
         ZStack {
             if let placeholderImage = placeholderImage {
                 avatarImage(for: placeholderImage)
+                    .frame(width: size.avatarSize.width, height: size.avatarSize.height)
             } else {
                 backgroundView
             }
 
             if let image = image {
                 avatarImage(for: image)
+                    .frame(width: size.avatarSize.width, height: size.avatarSize.height)
             } else {
                 Text(text)
                     .typography(textTypography)
@@ -94,9 +96,16 @@ public struct SDDSAvatar: View {
                 .fill(colorToken.color(for: colorScheme))
                 .clipShape(Circle())
         case .gradient(let gradientToken):
-            Circle()
-                .gradient(gradientToken, colorScheme: colorScheme)
-                .clipShape(Circle())
+            ZStack {
+                Circle()
+                    .fill(.white)
+                    .clipShape(Circle())
+                Circle()
+                    .fill(.white)
+                    .gradient(gradientToken, colorScheme: colorScheme)
+                    .opacity(appearance.backgroundOpacity)
+                    .clipShape(Circle())
+            }
         }
     }
     
@@ -147,7 +156,7 @@ public struct SDDSAvatar: View {
 
 // MARK: - AvatarStatus
 
-public enum AvatarStatus {
+public enum AvatarStatus: String {
     case hidden
     case online
     case offline
@@ -181,9 +190,11 @@ public protocol AvatarSizeConfiguration {
     - offlineStatusColor: Цвет индикатора статуса "оффлайн".
     - textTypography: Типографика текста.
  */
-public struct AvatarAppearance {
+public struct AvatarAppearance: Hashable {
+    let id = UUID()
     public let textFillStyle: FillStyle
     public let backgroundFillStyle: FillStyle
+    public let backgroundOpacity: CGFloat
     public let onlineStatusColor: ColorToken
     public let offlineStatusColor: ColorToken
     public let textTypography: TypographyConfiguration
@@ -191,15 +202,25 @@ public struct AvatarAppearance {
     public init(
         textFillStyle: FillStyle,
         backgroundFillStyle: FillStyle,
+        backgroundOpacity: CGFloat,
         onlineStatusColor: ColorToken,
         offlineStatusColor: ColorToken,
         textTypography: TypographyConfiguration
     ) {
         self.textFillStyle = textFillStyle
         self.backgroundFillStyle = backgroundFillStyle
+        self.backgroundOpacity = backgroundOpacity
         self.onlineStatusColor = onlineStatusColor
         self.offlineStatusColor = offlineStatusColor
         self.textTypography = textTypography
+    }
+    
+    public static func == (lhs: AvatarAppearance, rhs: AvatarAppearance) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 

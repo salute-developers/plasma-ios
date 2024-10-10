@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 import SwiftUI
 
-enum ButtonSize: String, CaseIterable {
+public enum ButtonSize: String, CaseIterable {
     case large
     case medium
     case small
@@ -11,7 +11,7 @@ enum ButtonSize: String, CaseIterable {
 }
 
 extension ButtonSize: ButtonSizeConfiguration {
-    var height: CGFloat {
+    public var height: CGFloat {
         switch self {
         case .large:
             return Spacing.Button.Height.large
@@ -26,7 +26,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var cornerRadius: CGFloat {
+    public var cornerRadius: CGFloat {
         switch self {
         case .large:
             return Spacing.Button.CornerRadius.large
@@ -41,7 +41,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var paddings: EdgeInsets {
+    public var paddings: EdgeInsets {
         switch self {
         case .large:
             return Spacing.Button.Padding.large
@@ -56,7 +56,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var iconSize: CGSize {
+    public var iconSize: CGSize {
         switch self {
         case .large:
             return Spacing.Button.IconSize.large
@@ -71,7 +71,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var spinnerSize: CGSize {
+    public var spinnerSize: CGSize {
         switch self {
         case .large:
             return Spacing.Button.SpinnerSize.large
@@ -86,7 +86,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var titleHorizontalGap: CGFloat {
+    public var titleHorizontalGap: CGFloat {
         switch self {
         case .extraSmall, .extraExtraSmall:
             return Spacing.Button.Gap.small
@@ -95,7 +95,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
         
-    var iconHorizontalGap: CGFloat {
+    public var iconHorizontalGap: CGFloat {
         switch self {
         case .large:
             return Spacing.Button.Gap.large
@@ -108,7 +108,7 @@ extension ButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    var debugDescription: String {
+    public var debugDescription: String {
         return "ButtonSize"
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum SDDSCheckboxSize: SelectionControlSizeConfiguration {
+public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
     case medium
     case small
     

@@ -1,0 +1,15 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_631_293" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.200195H0V24.2002H24V14.2002H21V12.2002H24V0.200195Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_631_293)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.2002C0 18.8276 5.37258 24.2002 12 24.2002C18.6274 24.2002 24 18.8276 24 12.2002C24 5.57278 18.6274 0.200195 12 0.200195C5.37258 0.200195 0 5.57278 0 12.2002ZM21.5 12.2002C21.5 17.4469 17.2467 21.7002 12 21.7002C6.75329 21.7002 2.5 17.4469 2.5 12.2002C2.5 6.95349 6.75329 2.7002 12 2.7002C17.2467 2.7002 21.5 6.95349 21.5 12.2002Z" fill="url(#paint0_angular_631_293)"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.75 13.2002C23.4404 13.2002 24 12.6406 24 11.9502C24 11.2598 23.4404 10.7002 22.75 10.7002C22.0596 10.7002 21.5 11.2598 21.5 11.9502C21.5 12.6406 22.0596 13.2002 22.75 13.2002Z" fill="white"/>
+<defs>
+<radialGradient id="paint0_angular_631_293" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 12.2002) scale(12)">
+<stop stop-color="white" stop-opacity="0.01"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+</defs>
+</svg>

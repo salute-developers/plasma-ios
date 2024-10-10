@@ -8,7 +8,16 @@ public enum SDDSChipSize: ChipSizeConfiguration {
     case extraSmall(ChipBorderStyle)
     
     public var debugDescription: String {
-        String(reflecting: self)
+        switch self {
+        case .large(let style):
+            return "large\(style)"
+        case .medium(let style):
+            return "medium\(style)"
+        case .small(let style):
+            return "small\(style)"
+        case .extraSmall(let style):
+            return "extraSmall\(style)"
+        }
     }
     
     public var iconImageSize: CGSize? {
@@ -102,4 +111,14 @@ public enum SDDSChipSize: ChipSizeConfiguration {
         }
     }
 
+}
+
+extension SDDSChipSize: Hashable {
+    public static func == (lhs: SDDSChipSize, rhs: SDDSChipSize) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(debugDescription)
+    }
 }
