@@ -1,3 +1,3 @@
 import Foundation
 
-final class SDDSComponentsPreview {}
+public final class SDDSComponentsPreview {}

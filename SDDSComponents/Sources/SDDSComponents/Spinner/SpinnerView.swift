@@ -8,6 +8,7 @@ struct SpinnerView: View {
     
     public var body: some View {
         image
+            .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .foregroundColor(foregroundColor)

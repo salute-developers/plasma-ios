@@ -1,8 +1,8 @@
 import Foundation
 import SwiftUI
 
-extension Image {
-    static func image(_ name: String) -> Image {
-        Image(name, bundle: Bundle(for: Components.self))
+public extension Image {
+    static func image(_ name: String, bundle: Bundle = Bundle(for: Components.self)) -> Image {
+        Image(name, bundle: bundle)
     }
 }

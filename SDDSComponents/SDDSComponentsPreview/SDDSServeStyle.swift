@@ -3,7 +3,7 @@ import Foundation
 /**
 * Стиль отображения кнопки
 */
-public enum SDDSServeB2CStyle: String {
+public enum SDDSServeB2CStyle: String, CaseIterable {
     case `default`
     case secondary
     case accent

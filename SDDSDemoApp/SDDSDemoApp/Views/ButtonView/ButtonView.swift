@@ -2,9 +2,11 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSComponentsPreview
 
 struct ButtonView: View {
     @ObservedObject private var viewModel: ButtonViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init(viewModel: ButtonViewModel = ButtonViewModel()) {
         self.viewModel = viewModel
@@ -53,7 +55,7 @@ struct ButtonView: View {
                     Spacer()
                         .frame(maxWidth: .infinity)
                     Menu {
-                        ForEach(SolidColorStyle.allCases, id: \.self) { style in
+                        ForEach(SDDSServeB2CStyle.allCases, id: \.self) { style in
                             Button(style.rawValue) {
                                 viewModel.colorStyle = style
                             }
@@ -62,7 +64,7 @@ struct ButtonView: View {
                         HStack {
                             Rectangle()
                                 .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.colorStyle.suiColor)
+                                .foregroundColor(viewModel.colorStyle.defaultButtonAppearance.backgroundColor.color(for: colorScheme))
                             
                             Text(viewModel.colorStyle.rawValue)
                         }

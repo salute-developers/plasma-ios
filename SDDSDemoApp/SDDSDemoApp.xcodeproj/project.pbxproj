@@ -25,6 +25,10 @@
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
 		8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F7252C5CFD9200622836 /* SDDSComponents */; };
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
+		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
+		816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629A2CB80E0C00352891 /* SDDSComponentsPreview */; };
+		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
+		816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629F2CB80E2E00352891 /* SDDSComponentsPreview */; };
 		817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EB2C383BA500E45207 /* ButtonViewModel.swift */; };
 		817580EF2C383FF200E45207 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EE2C383FF200E45207 /* Colors.swift */; };
 		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
@@ -92,8 +96,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */,
+				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
 				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
+				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
+				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
+				816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +292,10 @@
 				8159F7252C5CFD9200622836 /* SDDSComponents */,
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
+				816C62982CB80E0C00352891 /* SDDSComponents */,
+				816C629A2CB80E0C00352891 /* SDDSComponentsPreview */,
+				816C629D2CB80E2E00352891 /* SDDSComponents */,
+				816C629F2CB80E2E00352891 /* SDDSComponentsPreview */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -359,7 +371,7 @@
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
-				8178A7752C74ABDA00DFDA61 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
+				816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -793,7 +805,7 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
-		8178A7752C74ABDA00DFDA61 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
+		816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
 		};
@@ -807,6 +819,22 @@
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
+		};
+		816C62982CB80E0C00352891 /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		816C629A2CB80E0C00352891 /* SDDSComponentsPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponentsPreview;
+		};
+		816C629D2CB80E2E00352891 /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		816C629F2CB80E2E00352891 /* SDDSComponentsPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponentsPreview;
 		};
 		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
