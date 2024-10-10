@@ -1,12 +1,8 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import Foundation
-import SDDSComponents
-import SwiftUI
-import SDDSServTheme
 
-public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
+public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     case large
     case medium
     case small
@@ -28,9 +24,9 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     public var titleInnerPadding: CGFloat {
         switch self {
         case .large:
-            2
+            4
         case .medium:
-            2
+            4
         case .small:
             2
         case .extraSmall:
@@ -72,7 +68,16 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     }
 
     public var textInputPaddings: EdgeInsets {
-        .init(top: 2, leading: 0, bottom: 0, trailing: 0)
+        switch self {
+        case .large:
+            .init(top: 16, leading: 0, bottom: 8, trailing: 0)
+        case .medium:
+            .init(top: 14, leading: 0, bottom: 6, trailing: 0)
+        case .small:
+            .init(top: 12, leading: 0, bottom: 4, trailing: 0)
+        case .extraSmall:
+            .init(top: 8, leading: 0, bottom: 4, trailing: 0)
+        }
     }
     
     public var textHorizontalPadding: CGFloat {
@@ -94,19 +99,6 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
 
     public var borderWidth: CGFloat {
         0
-    }
-
-    public var iconPadding: CGFloat {
-        switch self {
-        case .large:
-            6
-        case .medium:
-            4
-        case .small:
-            2
-        case .extraSmall:
-            2
-        }
     }
 
     public var iconActionPadding: CGFloat {
@@ -135,23 +127,23 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
         }
     }
     
-    public func indicatorYOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat {
+    public func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
         switch (self, labelPlacement, requiredPlacement, layout) {
         case (.large, .outer, .left, _):
-            return 8
-        case (.medium, .outer, .left, _):
             return 7
-        case (.small, .outer, .left, _):
+        case (.medium, .outer, .left, _):
             return 6
+        case (.small, .outer, .left, _):
+            return 5
         case (.extraSmall, .outer, .left, _):
             return 4
-        case (.large, .inner, .right, .clear):
+        case (.large, .inner, .right, .clear), (.large, .inner, .left, .clear):
             return 24
-        case (.medium, .inner, .right, .clear):
+        case (.medium, .inner, .right, .clear), (.medium, .inner, .left, .clear):
             return 23
-        case (.small, .inner, .right, .clear):
+        case (.small, .inner, .right, .clear), (.small, .inner, .left, .clear):
             return 22
-        case (.extraSmall, .inner, .right, .clear):
+        case (.extraSmall, .inner, .right, .clear), (.extraSmall, .inner, .left, .clear):
             return 21
         case (.large, .none, .left, .clear):
             return 24
@@ -176,7 +168,7 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
         return 0
     }
 
-    public func indicatorPadding(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat {
+    public func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
         switch (self, labelPlacement, requiredPlacement, layout) {
         case (.large, .outer, .left, _), (.medium, .outer, .left, _):
             return 6
@@ -198,7 +190,6 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
             return 6
         }
     }
-
     public var fieldHeight: CGFloat {
         switch self {
         case .large:
@@ -209,19 +200,6 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
             40
         case .extraSmall:
             32
-        }
-    }
-
-    public var iconSize: CGSize {
-        switch self {
-        case .large:
-            CGSize(width: 24, height: 24)
-        case .medium:
-            CGSize(width: 24, height: 24)
-        case .small:
-            CGSize(width: 24, height: 24)
-        case .extraSmall:
-            CGSize(width: 16, height: 16)
         }
     }
 
@@ -249,8 +227,49 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     public var chipContainerHorizontalPadding: CGFloat {
         4
     }
+    
+    public var chipGroupHeight: CGFloat {
+        return 82
+    }
+    
+    public var chipGroupVerticalBottomPadding: CGFloat {
+        return 8
+    }
+    
+    public var chipGroupVerticalTopPadding: CGFloat {
+        return 8
+    }
+    
+    public var textInputBottomPadding: CGFloat {
+        return 0
+    }
 
     public var debugDescription: String {
-        String(reflecting: self)
+        rawValue
     }
+}
+
+extension SDDSTextAreaSize {
+    public var chipGroupSize: SDDSTextAreaChipGroupSize {
+        switch self {
+        case .large:
+            return .large(.left)
+        case .medium:
+            return .medium(.left)
+        case .small:
+            return .small(.left)
+        case .extraSmall:
+            return .extraSmall(.left)
+        }
+    }
+}
+
+extension SDDSTextAreaSize: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.rawValue)
+    }
+}
+
+#Preview {
+    SDDSTextAreaPreview.previews
 }

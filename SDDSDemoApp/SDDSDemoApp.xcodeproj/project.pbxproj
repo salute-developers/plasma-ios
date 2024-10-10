@@ -13,6 +13,9 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
+		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
+		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
+		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
 		811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1342C4D0C7E000DD354 /* ComponentsView.swift */; };
 		811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1382C4D0EC9000DD354 /* CheckboxView.swift */; };
 		811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE13B2C4D0ED5000DD354 /* CheckboxViewModel.swift */; };
@@ -23,7 +26,6 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
-		8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F7252C5CFD9200622836 /* SDDSComponents */; };
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
 		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
@@ -50,6 +52,11 @@
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1732C3BF99F00AD650A /* ButtonTypography.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
+		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
+		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
+		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
+		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
+		81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +87,9 @@
 		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
+		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
+		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
 		811DE1342C4D0C7E000DD354 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		811DE1382C4D0EC9000DD354 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		811DE13B2C4D0ED5000DD354 /* CheckboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199A1732C3BF99F00AD650A /* ButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTypography.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		819A382E2CC6928700A1377F /* ChipGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupView.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -123,13 +134,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8159F7262C5CFD9200622836 /* SDDSComponents in Frameworks */,
+				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
 				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
+				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
+				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
 				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
 				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
 				816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */,
+				81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +234,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		811C684B2CC8023600480F89 /* TextAreaView */ = {
+			isa = PBXGroup;
+			children = (
+				811C684C2CC8024A00480F89 /* TextAreaView.swift */,
+				811C684E2CC8027600480F89 /* TextAreaViewModel.swift */,
+			);
+			path = TextAreaView;
+			sourceTree = "<group>";
+		};
 		811DE1332C4D0C58000DD354 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +254,8 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				811C684B2CC8023600480F89 /* TextAreaView */,
+				819A382D2CC6927700A1377F /* ChipGroupView */,
 				8199E5A12CBD088000AF3D22 /* TextFieldView */,
 				816243592CB9414000506E1C /* CheckboxGroupView */,
 				816243582CB9413800506E1C /* RadioboxGroupView */,
@@ -377,6 +402,15 @@
 			path = TextFieldView;
 			sourceTree = "<group>";
 		};
+		819A382D2CC6927700A1377F /* ChipGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				819A382E2CC6928700A1377F /* ChipGroupView.swift */,
+				811C68502CC8059800480F89 /* ChipGroupViewModel.swift */,
+			);
+			path = ChipGroupView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,13 +429,16 @@
 			);
 			name = SDDSDemoApp;
 			packageProductDependencies = (
-				8159F7252C5CFD9200622836 /* SDDSComponents */,
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
 				816C62982CB80E0C00352891 /* SDDSComponents */,
 				816C629A2CB80E0C00352891 /* SDDSComponentsPreview */,
 				816C629D2CB80E2E00352891 /* SDDSComponents */,
 				816C629F2CB80E2E00352891 /* SDDSComponentsPreview */,
+				819A382B2CC6926300A1377F /* SDDSComponents */,
+				819A38302CC692BD00A1377F /* SDDSComponents */,
+				81CA2C532CC69549002AF2DF /* SDDSComponents */,
+				81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -477,7 +514,7 @@
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
-				816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
+				81CA2C522CC69549002AF2DF /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -543,11 +580,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
+				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
 				8199A1742C3BF99F00AD650A /* ButtonTypography.swift in Sources */,
+				811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */,
 				816243572CB940F400506E1C /* ChipViewModel.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
+				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
@@ -557,6 +597,7 @@
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
+				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
@@ -741,6 +782,7 @@
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -753,7 +795,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -778,6 +820,7 @@
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -790,7 +833,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -798,6 +841,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -925,17 +969,13 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
-		816C629C2CB80E2E00352891 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
+		81CA2C522CC69549002AF2DF /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8159F7252C5CFD9200622836 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
@@ -959,6 +999,22 @@
 		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
+		};
+		819A382B2CC6926300A1377F /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		819A38302CC692BD00A1377F /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		81CA2C532CC69549002AF2DF /* SDDSComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponents;
+		};
+		81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSComponentsPreview;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,12 +6,14 @@ struct ComponentsView: View {
         ("SDDSAvatarGroup", AnyView(AvatarGroupView())),
         ("SDDSButton", AnyView(ButtonView())),
         ("SDDSChip", AnyView(ChipView())),
+        ("SDDSChipGroup", AnyView(ChipGroupView())),
         ("SDDSCheckbox", AnyView(CheckboxView())),
         ("SDDSCheckboxGroup", AnyView(CheckboxGroupView())),
         ("SDDSProgressBar", AnyView(ProgressBarView())),
         ("SDDSRadiobox", AnyView(RadioboxView())),
         ("SDDSRadioboxGroup", AnyView(RadioboxGroupView())),
         ("SDDSSwitch", AnyView(SwitchView())),
+        ("SDDSTextArea", AnyView(TextAreaView())),
         ("SDDSTextField", AnyView(TextFieldView()))
     ]
 
