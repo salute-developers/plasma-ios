@@ -20,7 +20,7 @@ struct RadioboxView: View {
                         title: viewModel.title,
                         subtitle: viewModel.subtitle,
                         isEnabled: viewModel.isEnabled,
-                        images: .defaultImages,
+                        images: RadioboxView.radiobox,
                         size: viewModel.size,
                         appearance: viewModel.appearance
                     )
@@ -104,6 +104,15 @@ struct RadioboxView: View {
             }
         }
         .navigationTitle("SDDSRadiobox")
+    }
+}
+
+extension RadioboxView {
+    static var radiobox: RadioboxImages {
+        .init(
+            selectedImage: Image.image("radioboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
+            deselectedImage: Image.image("radioboxIconOff", bundle: Bundle(for: CheckboxViewModel.self))
+        )
     }
 }
 

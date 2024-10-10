@@ -30,7 +30,9 @@ struct TextFieldView: View {
                     requiredPlacement: viewModel.requiredPlacement,
                     appearance: viewModel.appearance,
                     size: viewModel.size,
-                    layout: viewModel.layout
+                    layout: viewModel.layout,
+                    iconViewProvider: iconView,
+                    iconActionViewProvider: iconActionView
                 )
             }
 
@@ -55,6 +57,8 @@ struct TextFieldView: View {
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read Only", isOn: $viewModel.readOnly)
                 Toggle("Required", isOn: $viewModel.required)
+                Toggle("Icon", isOn: $viewModel.iconViewEnabled)
+                Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
 
                 Picker("Style", selection: $viewModel.style) {
                     ForEach(SDDSComponents.TextFieldStyle.allCases, id: \.self) { style in
@@ -122,6 +126,32 @@ struct TextFieldView: View {
             }
         }
         .navigationTitle("SDDSTextField")
+    }
+    
+    private var iconActionView: ViewProvider? {
+        if viewModel.iconActionViewEnabled {
+            ViewProvider(
+                Image.image("textFieldIconAction")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            )
+        } else {
+            nil
+        }
+    }
+    
+    private var iconView: ViewProvider? {
+        if viewModel.iconViewEnabled {
+            ViewProvider(
+                Image.image("textFieldIcon")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            )
+        } else {
+            nil
+        }
     }
 }
 

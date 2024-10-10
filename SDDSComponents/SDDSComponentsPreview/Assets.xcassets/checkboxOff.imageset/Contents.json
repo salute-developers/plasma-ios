@@ -3,6 +3,26 @@
     {
       "filename" : "CheckBoxOff.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "CheckBoxOff 1.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "CheckBoxDark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

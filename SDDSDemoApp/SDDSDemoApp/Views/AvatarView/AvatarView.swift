@@ -7,7 +7,6 @@ import PhotosUI
 struct AvatarView: View {
     @ObservedObject private var viewModel: AvatarViewModel
     @State private var showImagePicker = false
-    @State private var isSelectingPlaceholder = false
     @State private var showGradientPicker = false
 
     init(viewModel: AvatarViewModel = AvatarViewModel()) {
@@ -55,7 +54,7 @@ struct AvatarView: View {
                     Text("Image")
                     Spacer()
                     Button("Select") {
-                        isSelectingPlaceholder = false
+                        viewModel.isPlaceholder = false
                         showImagePicker.toggle()
                     }
                     .buttonStyle(.borderless)
@@ -70,7 +69,7 @@ struct AvatarView: View {
                     Text("Placeholder Image")
                     Spacer()
                     Button("Select") {
-                        isSelectingPlaceholder = true
+                        viewModel.isPlaceholder = true
                         showImagePicker.toggle()
                     }
                     .buttonStyle(.borderless)
@@ -103,7 +102,7 @@ struct AvatarView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            PhotoPicker(isPlaceholder: isSelectingPlaceholder, viewModel: viewModel)
+            PhotoPicker(viewModel: viewModel)
         }
         .navigationTitle("SDDSAvatar")
     }

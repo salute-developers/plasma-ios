@@ -4,44 +4,65 @@ import SDDSComponents
 import SDDSComponentsPreview
 
 final class CheckboxGroupViewModel: ObservableObject {
-    @Published var checkboxViewModels: [CheckboxItemViewModel]
+    @Published var checkboxViewModels: [CheckboxItemViewModel] = []
     @Published var size: SDDSCheckboxGroupSize = .medium
-
-    var groupBehaviour: CheckboxGroupBehaviour {
-        .default(data: checkboxData)
-    }
+    @Published var groupBehaviour: CheckboxGroupBehaviour?
+    
+    @Published var states: [Int: SelectionControlState] = [:]
 
     var checkboxData: [CheckboxData] {
-        checkboxViewModels.map { $0.toCheckboxData(with: size.checkboxSize) }
+        return checkboxViewModels.enumerated().map { index, value in
+            return value.toCheckboxData(with: size.checkboxSize, state: Binding(get: { [weak self] in
+                self?.states[index] ?? .deselected
+            }, set: { [weak self] newState in
+                self?.states[index] = newState
+            }))
+        }
     }
-
+    
     init() {
-        self.checkboxViewModels = (0..<3).map { index in
-            CheckboxItemViewModel(
+        self.update()
+    }
+    
+    func update() {
+        checkboxViewModels = (0..<3).map { [weak self] index in
+            self?.states[Int(index)] = .deselected
+            return CheckboxItemViewModel(
+                id: index,
                 title: "Label \(index + 1)",
                 subtitle: "Description \(index + 1)",
-                isSelected: false,
                 isEnabled: true
             )
         }
+        updateGroupBehaviour()
+    }
+    
+    func update(at index: Int, to newState: SelectionControlState) {
+        states[index] = newState
+        updateGroupBehaviour()
+    }
+    
+    func updateGroupBehaviour() {
+        self.groupBehaviour = .default(data: checkboxData, onChange: { [weak self] index, state in
+            self?.states[index] = state
+            self?.updateGroupBehaviour()
+        })
     }
 }
 
-// MARK: - CheckboxItemViewModel
-
-struct CheckboxItemViewModel {
+struct CheckboxItemViewModel: Identifiable {
+    var id: Int
     var title: String
     var subtitle: String
-    var isSelected: Bool
     var isEnabled: Bool
 
-    func toCheckboxData(with size: SDDSCheckboxSize) -> CheckboxData {
+    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
         CheckboxData(
-            state: .constant(isSelected ? .selected : .deselected),
+            state: state,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            images: .checkbox,
+            images: CheckboxView.checkbox,
             size: size,
             appearance: .default,
             accessibility: .init()

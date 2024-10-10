@@ -8,8 +8,8 @@ public extension ChipAppearance {
         ChipAppearance(
             titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
             titleTypography: ChipTextFieldTypography.text,
-            imageTintColor: Color.clear.token,
-            buttonTintColor: Color.clear.token,
+            imageTintColor: ColorToken.textDefaultPrimary,
+            buttonTintColor: ColorToken.textDefaultPrimary,
             backgroundColor: .surfaceDefaultTransparentSecondary,
             disabledAlpha: 0.5
         )
@@ -45,8 +45,4 @@ extension ChipTextFieldTypography {
             extraSmall: Typographies.bodyXsNormal.typography
         ).asContainer
     }
-}
-
-#Preview {
-    SDDSTextFieldPreview.previews
 }

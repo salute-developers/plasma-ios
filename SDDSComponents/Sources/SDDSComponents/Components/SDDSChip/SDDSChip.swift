@@ -136,7 +136,7 @@ public struct SDDSChip: View {
     }
     
     public var body: some View {
-        HStack(spacing: size.spacing) {
+        HStack(spacing: 0) {
             Spacer()
                 .frame(width: size.leadingInset)
             if let iconImage = iconImage, let iconImageSize = size.iconImageSize {
@@ -147,16 +147,21 @@ public struct SDDSChip: View {
                     .frame(width: iconImageSize.width, height: iconImageSize.height)
                     .foregroundColor(appearance.imageTintColor.color(for: colorScheme))
                     .accessibilityHidden(true)
+                Spacer()
+                    .frame(width: size.spacing)
             }
             
             Text(title)
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
+                .frame(width: textWidth)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
             if let buttonImageSize = size.buttonImageSize, let buttonImage = buttonImage {
+                Spacer()
+                    .frame(width: size.spacing)
                 Button(action: handleRemove) {
                     buttonImage
                         .resizable()
@@ -180,6 +185,13 @@ public struct SDDSChip: View {
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
         .accessibilityElement(children: .combine)
+    }
+    
+    private var textWidth: CGFloat {
+        let titleTypography = appearance.titleTypography.typography(with: size) ?? .undefined
+        let textWidth = title.size(withAttributes: [.font: titleTypography.uiFont]).width
+        
+        return textWidth
     }
     
     private var borderRadius: CGFloat {

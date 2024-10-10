@@ -7,12 +7,42 @@ import SDDSServTheme
 final class ChipViewModel: ObservableObject {
     @Published var title: String = "Chip Title"
     @Published var isEnabled: Bool = true
+    @Published var iconImageEnabled: Bool = true
+    @Published var buttomImageEnabled: Bool = true
     @Published var size: SDDSChipSize = .medium(.default(8))
     @Published var borderStyle: ChipBorderStyle = .default(8)
     @Published var appearance: ChipAppearance = .default
+    @Published var iconImage: Image? = nil
+    @Published var buttonImage: Image? = nil
+    
+    init() {
+        setIconImage()
+        setButtonImage()
+    }
 
     var removeAction: () -> Void {
         { print("Chip removed") }
+    }
+    
+    func setIconImage() {
+        iconImage = Image.image("chipIcon")
+    }
+    
+    func setButtonImage() {
+        buttonImage = Image.image("chipClose")
+    }
+    
+    func updateBorderStyle(borderStyle: ChipBorderStyle) {
+        switch size {
+        case .small:
+            size = .small(borderStyle)
+        case .medium:
+            size = .medium(borderStyle)
+        case .large:
+            size = .large(borderStyle)
+        case .extraSmall:
+            size = .extraSmall(borderStyle)
+        }
     }
 }
 

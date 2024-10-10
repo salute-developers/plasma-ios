@@ -35,7 +35,7 @@ struct RadioboxItemViewModel {
             subtitle: subtitle,
             isSelected: .constant(isSelected),
             isEnabled: isEnabled,
-            images: .defaultImages,
+            images: RadioboxView.radiobox,
             size: size,
             appearance: .default,
             accessibility: .init()

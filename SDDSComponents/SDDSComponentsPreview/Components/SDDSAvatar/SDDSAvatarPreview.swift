@@ -114,7 +114,7 @@ struct SDDSAvatarPreview: PreviewProvider {
         .padding()
     }
     
-    static var defaultAccessibility: AvatarAccessibility {
+    private static var defaultAccessibility: AvatarAccessibility {
         AvatarAccessibility(label: "User Avatar", hint: "Displays user status and initials or image")
     }
 }

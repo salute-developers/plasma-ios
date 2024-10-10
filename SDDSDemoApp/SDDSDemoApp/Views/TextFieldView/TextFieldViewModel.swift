@@ -16,6 +16,8 @@ final class TextFieldViewModel: ObservableObject {
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
     @Published var required: Bool = false
+    @Published var iconViewEnabled: Bool = true
+    @Published var iconActionViewEnabled: Bool = true
 
     @Published var style: SDDSComponents.TextFieldStyle = .default
     @Published var labelPlacement: TextFieldLabelPlacement = .outer

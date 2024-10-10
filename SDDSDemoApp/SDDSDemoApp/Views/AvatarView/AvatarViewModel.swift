@@ -11,6 +11,7 @@ final class AvatarViewModel: ObservableObject {
     @Published var appearance: AvatarAppearance = .default
     @Published var size: DefaultAvatarSize = .large
     @Published var accessibility: AvatarAccessibility = AvatarAccessibility()
+    @Published var isPlaceholder = false
 
     init() {}
 }
