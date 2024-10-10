@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 struct CheckboxGroupView: View {
     @ObservedObject private var viewModel: CheckboxGroupViewModel
@@ -13,10 +14,13 @@ struct CheckboxGroupView: View {
     var body: some View {
         List {
             Section {
-                SDDSCheckboxGroup(
-                    behaviour: viewModel.groupBehaviour,
-                    size: viewModel.size
-                )
+                if let groupBehaviour = viewModel.groupBehaviour {
+                    SDDSCheckboxGroup(
+                        behaviour: groupBehaviour,
+                        size: viewModel.size
+                    )
+                    .id(UUID())
+                }
             }
 
             Section(header: Text("Configuration")) {
@@ -30,10 +34,18 @@ struct CheckboxGroupView: View {
                     VStack(alignment: .leading) {
                         Text("Checkbox \(index + 1) Configuration")
                             .font(.headline)
-
-                        Toggle("Is Selected", isOn: $viewModel.checkboxViewModels[index].isSelected)
-
+                        
                         Toggle("Is Enabled", isOn: $viewModel.checkboxViewModels[index].isEnabled)
+                        
+                        Picker("State", selection: Binding(get: {
+                            viewModel.states[index] ?? .deselected
+                        }, set: { value in
+                            viewModel.update(at: index, to: value)
+                        })) {
+                            ForEach(SelectionControlState.allCases, id: \.self) { state in
+                                Text(state.rawValue).tag(state.rawValue)
+                            }
+                        }
 
                         HStack {
                             Text("Title")

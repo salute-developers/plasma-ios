@@ -1,8 +1,8 @@
 import Foundation
 import SDDSComponents
 
-public extension SDDSServeB2CStyle {
-    var defaultButtonAppearance: ButtonAppearance {
+extension SDDSServeB2CStyle {
+    public var defaultButtonAppearance: ButtonAppearance {
         switch self {
         case .default:
             return .default
@@ -25,7 +25,7 @@ public extension SDDSServeB2CStyle {
         }
     }
     
-    var defaultLinkButtonAppearance: ButtonAppearance {
+    public var defaultLinkButtonAppearance: ButtonAppearance {
         switch self {
         case .default:
             return .linkDefault

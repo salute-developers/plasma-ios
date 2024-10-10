@@ -139,11 +139,13 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         if let tintColor = appearance.imageTintColor {
             image
                 .resizable()
+                .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(tintColor.color(for: colorScheme))
         } else {
             image
                 .resizable()
+                .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
         }
     }

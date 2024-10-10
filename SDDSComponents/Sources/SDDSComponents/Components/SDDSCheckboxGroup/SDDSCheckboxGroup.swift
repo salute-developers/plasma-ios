@@ -1,6 +1,9 @@
 import Foundation
 import SwiftUI
 
+public typealias CheckboxGroupOnChange = ((_ index: Int, _ state: SelectionControlState) -> ())
+public typealias CheckboxGroupOnParentChange = ((_ state: SelectionControlState) -> ())
+
 /**
  `CheckboxGroupBehaviour` определяет поведение группы чекбоксов.
 
@@ -14,8 +17,8 @@ import SwiftUI
             - data: Массив данных для инициализации группы чекбоксов.
  */
 public enum CheckboxGroupBehaviour {
-    case hierarchical(parent: CheckboxData, child: [CheckboxData])
-    case `default`(data: [CheckboxData])
+    case hierarchical(parent: CheckboxData, child: [CheckboxData], onChildChange: CheckboxGroupOnChange? = nil, onParentChange: CheckboxGroupOnParentChange? = nil)
+    case `default`(data: [CheckboxData], onChange: CheckboxGroupOnChange? = nil)
 }
 
 /**
@@ -47,10 +50,10 @@ public struct SDDSCheckboxGroup: View {
         self.behaviour = behaviour
         
         switch behaviour {
-        case .hierarchical(let parent, let children):
+        case .hierarchical(let parent, let children, _, _):
             self._parentState = State(initialValue: parent.state.wrappedValue)
             self._childStates = State(initialValue: children.map { $0.state.wrappedValue })
-        case .default(let data):
+        case .default(let data, _):
             self._parentState = State(initialValue: nil)
             self._childStates = State(initialValue: data.map { $0.state.wrappedValue })
         }
@@ -61,9 +64,15 @@ public struct SDDSCheckboxGroup: View {
     public var body: some View {
         VStack(spacing: size.verticalSpacing) {
             switch behaviour {
-            case .hierarchical(let parent, let children):
+            case .hierarchical(let parent, let children, let onChildChange, let onParentChange):
                 SDDSCheckbox(
-                    state: Binding(get: { self.parentState ?? .deselected }, set: { self.updateParentState($0) }),
+                    state: Binding(
+                        get: { self.parentState ?? .deselected },
+                        set: { 
+                            self.updateParentState($0)
+                            onParentChange?($0)
+                        }
+                    ),
                     title: parent.title,
                     subtitle: parent.subtitle,
                     isEnabled: parent.isEnabled,
@@ -74,7 +83,13 @@ public struct SDDSCheckboxGroup: View {
                 )
                 ForEach(Array(children.enumerated()), id: \.offset) { index, child in
                     SDDSCheckbox(
-                        state: Binding(get: { self.childStates[index] }, set: { self.updateChildState($0, at: index) }),
+                        state: Binding(
+                            get: { self.childStates[index] },
+                            set: { 
+                                self.updateChildState($0, at: index)
+                                onChildChange?(index, $0)
+                            }
+                        ),
                         title: child.title,
                         subtitle: child.subtitle,
                         isEnabled: child.isEnabled,
@@ -85,10 +100,16 @@ public struct SDDSCheckboxGroup: View {
                     )
                     .padding(.leading, size.horizontalIndent)
                 }
-            case .default(let data):
+            case .default(let data, let onChange):
                 ForEach(Array(data.enumerated()), id: \.offset) { index, item in
                     SDDSCheckbox(
-                        state: Binding(get: { self.childStates[index] }, set: { self.childStates[index] = $0 }),
+                        state: Binding(
+                            get: { self.childStates[index] },
+                            set: { 
+                                self.childStates[index] = $0
+                                onChange?(index, $0)
+                            }
+                        ),
                         title: item.title,
                         subtitle: item.subtitle,
                         isEnabled: item.isEnabled,
@@ -106,7 +127,7 @@ public struct SDDSCheckboxGroup: View {
     private func updateParentState(_ newState: SelectionControlState) {
         parentState = newState
         childStates = Array(repeating: newState, count: childStates.count)
-        if case .hierarchical(_, let children) = behaviour {
+        if case .hierarchical(_, let children, _, _) = behaviour {
             for (index, _) in children.enumerated() {
                 children[index].state.wrappedValue = newState
             }
@@ -115,7 +136,7 @@ public struct SDDSCheckboxGroup: View {
     
     private func updateChildState(_ newState: SelectionControlState, at index: Int) {
         childStates[index] = newState
-        if case .hierarchical(let parent, let children) = behaviour {
+        if case .hierarchical(let parent, let children, _, _) = behaviour {
             children[index].state.wrappedValue = newState
             if childStates.allSatisfy({ $0 == .selected }) {
                 parentState = .selected

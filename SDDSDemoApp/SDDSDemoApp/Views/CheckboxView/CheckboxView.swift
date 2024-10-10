@@ -20,7 +20,7 @@ struct CheckboxView: View {
                         title: viewModel.title,
                         subtitle: viewModel.subtitle,
                         isEnabled: viewModel.isEnabled,
-                        images: .checkbox,
+                        images: CheckboxView.checkbox,
                         size: viewModel.size,
                         appearance: viewModel.appearance
                     )
@@ -119,7 +119,7 @@ extension CheckboxView {
     static var checkbox: SelectionControlStateImages {
         .init(
             selectedImage: Image.image("checkboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
-            deselectedImage: Image.image("checkboxOff", bundle: Bundle(for: CheckboxViewModel.self)),
+            deselectedImage: Image.image("checkboxIconOff", bundle: Bundle(for: CheckboxViewModel.self)),
             indeterminateImage: Image.image("checkboxMulti", bundle: Bundle(for: CheckboxViewModel.self))
         )
     }

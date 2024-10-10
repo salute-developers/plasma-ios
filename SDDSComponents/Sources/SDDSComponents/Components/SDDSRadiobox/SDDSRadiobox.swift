@@ -6,7 +6,7 @@ public struct RadioboxImages {
     public let selectedImage: Image
     public let deselectedImage: Image
     
-    init(selectedImage: Image, deselectedImage: Image) {
+    public init(selectedImage: Image, deselectedImage: Image) {
         self.selectedImage = selectedImage
         self.deselectedImage = deselectedImage
     }
