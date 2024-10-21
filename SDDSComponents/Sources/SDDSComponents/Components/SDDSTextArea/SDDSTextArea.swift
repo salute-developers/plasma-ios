@@ -145,7 +145,7 @@ public struct SDDSTextArea: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            if showOuterTitleIndicatorForDefaultLayout {
+            if showOuterTitleIndicatorForDefaultLayout || showNoneTitleLeftIndicatorForClearLayout {
                 indicatorWithTrailingPadding
             }
             
@@ -157,14 +157,26 @@ public struct SDDSTextArea: View {
                 }
 
                 HStack(spacing: 0) {
+                    if showInnerTitleIndicatorForClearLayout {
+                        indicatorWithTrailingPadding
+                    }
                     fieldView
                         .debug(condition: debugConfiguration.fieldView)
                 }
                 HStack(spacing: 0) {
+                    if showInnerTitleIndicatorForClearLayout {
+                        Spacer()
+                            .frame(width: size.indicatorSize.width)
+                            .padding(.trailing, indicatorPadding, debug: debugConfiguration.indicatorPadding)
+                    }
                     captionLabel
                     Spacer()
                     counterLabel
                 }
+            }
+            
+            if showInnerTitleRightIndicatorForClearLayout {
+                indicator
             }
         }
         .opacity(disabled ? appearance.disabledAlpha : 1)
@@ -383,20 +395,33 @@ public struct SDDSTextArea: View {
         .padding([.top, .bottom], size.titleInnerPadding, debug: debugConfiguration.innerTitle)
     }
     
-    private var captionColor: Color {
-        return appearance.captionColor(for: isFocused ? .default : style).color(for: colorScheme)
-    }
-    
     private var counterColor: Color {
         return appearance.counterColorDefault.color(for: colorScheme)
     }
     
+    private var captionColor: Color {
+        return appearance.captionColor(for: isFocused ? .default : style).color(for: colorScheme)
+    }
+    
     private var placeholderColor: Color {
-        return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
+        return appearance.placeholderColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
     }
     
     private var textColor: Color {
-        return appearance.textColor.color(for: colorScheme)
+        return appearance.textColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
+    }
+    
+    private var bottomLineColor: Color {
+        if isFocused {
+            return appearance.focusedLineColor(for: style).color(for: colorScheme)
+        }
+        
+        switch style {
+        case .error, .success, .warning:
+            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
+        case .default:
+            return appearance.lineColor.color(for: colorScheme)
+        }
     }
 
     @ViewBuilder
@@ -554,17 +579,25 @@ public struct SDDSTextArea: View {
         !isFocused
     }
     
-    private var bottomLineColor: Color {
-        if isFocused {
-            return appearance.focusedLineColor(for: style).color(for: colorScheme)
-        }
-        
-        switch style {
-        case .error, .success, .warning:
-            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
-        case .default:
-            return appearance.lineColor.color(for: colorScheme)
-        }
+    private var showInnerTitleIndicatorForClearLayout: Bool {
+        labelPlacement == .inner &&
+        required &&
+        requiredPlacement == .left &&
+        layout == .clear
+    }
+    
+    private var showInnerTitleRightIndicatorForClearLayout: Bool {
+        labelPlacement == .inner &&
+        required &&
+        requiredPlacement == .right &&
+        layout == .clear
+    }
+    
+    private var showNoneTitleLeftIndicatorForClearLayout: Bool {
+        labelPlacement == .none &&
+        required &&
+        requiredPlacement == .left &&
+        !isFocused
     }
     
     private var shouldCenterText: Bool {
@@ -647,7 +680,7 @@ public struct SDDSTextArea: View {
     }
 
     private var fieldHorizontalPadding: CGFloat {
-        size.fieldHorizontalPadding
+        layout == .clear ? 0 : size.fieldHorizontalPadding
     }
 }
 
