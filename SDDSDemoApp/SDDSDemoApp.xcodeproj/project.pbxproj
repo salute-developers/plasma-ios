@@ -13,6 +13,8 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
+		811C68372CC6B3BF00480F89 /* GoogleService.plist in Resources */ = {isa = PBXBuildFile; fileRef = 811C68362CC6B3BF00480F89 /* GoogleService.plist */; };
+		811C683A2CC6B40F00480F89 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 811C68392CC6B40F00480F89 /* FirebaseAnalytics */; };
 		811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1342C4D0C7E000DD354 /* ComponentsView.swift */; };
 		811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1382C4D0EC9000DD354 /* CheckboxView.swift */; };
 		811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE13B2C4D0ED5000DD354 /* CheckboxViewModel.swift */; };
@@ -86,6 +88,7 @@
 		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		811C68362CC6B3BF00480F89 /* GoogleService.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = GoogleService.plist; sourceTree = SOURCE_ROOT; };
 		811DE1342C4D0C7E000DD354 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		811DE1382C4D0EC9000DD354 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		811DE13B2C4D0ED5000DD354 /* CheckboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 				819A38332CC692BD00A1377F /* SDDSComponentsPreview in Frameworks */,
 				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
 				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
+				811C683A2CC6B40F00480F89 /* FirebaseAnalytics in Frameworks */,
 				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
 				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
@@ -186,6 +190,7 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				811C68362CC6B3BF00480F89 /* GoogleService.plist */,
 				811DE1362C4D0EB2000DD354 /* Views */,
 				8199A1702C3BF94500AD650A /* Constants */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
@@ -428,6 +433,7 @@
 				819A38322CC692BD00A1377F /* SDDSComponentsPreview */,
 				81CA2C532CC69549002AF2DF /* SDDSComponents */,
 				81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */,
+				811C68392CC6B40F00480F89 /* FirebaseAnalytics */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -504,6 +510,7 @@
 			packageReferences = (
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				81CA2C522CC69549002AF2DF /* XCLocalSwiftPackageReference "../SDDSComponents" */,
+				811C68382CC6B40F00480F89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -523,6 +530,7 @@
 			files = (
 				24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */,
 				24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */,
+				811C68372CC6B3BF00480F89 /* GoogleService.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,7 +788,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -817,7 +825,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -958,7 +966,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		811C68382CC6B40F00480F89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		811C68392CC6B40F00480F89 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 811C68382CC6B40F00480F89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		8159F7252C5CFD9200622836 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
