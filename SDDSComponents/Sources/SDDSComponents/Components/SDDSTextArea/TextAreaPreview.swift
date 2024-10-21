@@ -7,14 +7,14 @@ import SDDSServTheme
 
 struct SDDSTextAreaPreview: PreviewProvider {
     static var previews: some View {
-        let chips = (1...3).map { index in
+        let chips = (1...7).map { index in
             ChipData(
                 title: "Label",
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
-                appearance: .textField,
-                size: TextAreaChipSize.large,
+                appearance: .textArea,
+                size: TextAreaChipSize.medium,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -23,27 +23,28 @@ struct SDDSTextAreaPreview: PreviewProvider {
         Theme.initialize()
         
         return Group {
-//            SDDSTextArea(
-//                value: .single(""),
-//                title: "Title",
-//                optionalTitle: "optional",
-//                placeholder: "Placeholder",
-//                caption: "caption",
-//                counter: "counter",
-//                disabled: false,
-//                readOnly: false,
-//                style: .default,
-//                labelPlacement: .inner,
-//                required: false,
-//                requiredPlacement: .right,
-//                appearance: .defaultAppearance,
-//                size: SDDSTextAreaSize.large,
-//                iconViewProvider: ViewProvider(iconView),
-//                iconActionViewProvider: ViewProvider(iconActionView)
-//            )
-//            .previewDisplayName("Outer Label")
-//            .previewLayout(.sizeThatFits)
-//            .padding()
+            SDDSTextArea(
+                value: .single(""),
+                title: "Title",
+                optionalTitle: "optional",
+                placeholder: "Placeholder",
+                caption: "caption",
+                counter: "counter",
+                disabled: false,
+                readOnly: false,
+                style: .default,
+                labelPlacement: .inner,
+                required: false,
+                requiredPlacement: .right,
+                appearance: .defaultAppearance,
+                size: SDDSTextAreaSize.large, 
+                layout: .clear,
+                iconViewProvider: ViewProvider(iconView),
+                iconActionViewProvider: ViewProvider(iconActionView)
+            )
+            .previewDisplayName("Outer Label")
+            .previewLayout(.sizeThatFits)
+            .padding()
             
             SDDSTextArea(
                 value: .multiple("", chips),
@@ -59,6 +60,7 @@ struct SDDSTextAreaPreview: PreviewProvider {
                 requiredPlacement: .left,
                 appearance: .defaultAppearance,
                 size: SDDSTextAreaSize.large,
+                layout: .default,
                 iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
             )

@@ -4,6 +4,7 @@ import SDDSThemeCore
 import SDDSServTheme
 
 public struct TextAreaAppearance {
+    let id = UUID()
     public let textTypography: TypographyConfiguration
     public let titleTypography: TypographyConfiguration
     public let innerTitleTypography: TypographyConfiguration
@@ -12,17 +13,23 @@ public struct TextAreaAppearance {
     public let titleColor: ColorToken
     public let optionalTitleColor: ColorToken
     public let textColor: ColorToken
+    public let textColorError: ColorToken
+    public let textColorWarning: ColorToken
+    public let textColorSuccess: ColorToken
     public let disabledAlpha: CGFloat
     public let requiredIndicatorColor: ColorToken
     public let cursorColor: ColorToken
     public let focusedBackgroundColor: ColorToken
     public let titleTextAlignment: TextAlignment
     public let captionTextAlignment: TextAlignment
-    public let counterTextAlignment: TextAlignment
     public let inputTextAlignment: TextAlignment
     public let innerTitleTextAlignment: TextAlignment
     public let lineColor: ColorToken
-    public let placeholderColor: ColorToken
+    public let focusedLineColor: ColorToken
+    public let focusedLineColorError: ColorToken
+    public let focusedLineColorWarning: ColorToken
+    public let focusedLineColorSuccess: ColorToken
+    public let placeholderColor: ColorToken?
     public let borderColorDefault: ColorToken
     public let borderColorError: ColorToken
     public let borderColorWarning: ColorToken
@@ -36,9 +43,10 @@ public struct TextAreaAppearance {
     public let captionColorWarning: ColorToken
     public let captionColorSuccess: ColorToken
     public let counterColorDefault: ColorToken
-    public let counterColorError: ColorToken
-    public let counterColorWarning: ColorToken
-    public let counterColorSuccess: ColorToken
+    public let placeholderColorDefault: ColorToken
+    public let placeholderColorError: ColorToken
+    public let placeholderColorWarning: ColorToken
+    public let placeholderColorSuccess: ColorToken
     
     public init(
         textTypography: TypographyConfiguration,
@@ -49,17 +57,23 @@ public struct TextAreaAppearance {
         titleColor: ColorToken,
         optionalTitleColor: ColorToken,
         textColor: ColorToken,
+        textColorError: ColorToken,
+        textColorWarning: ColorToken,
+        textColorSuccess: ColorToken,
         disabledAlpha: CGFloat,
         requiredIndicatorColor: ColorToken,
         cursorColor: ColorToken,
         focusedBackgroundColor: ColorToken,
         titleTextAlignment: TextAlignment = .leading,
         captionTextAlignment: TextAlignment = .leading,
-        counterTextAlignment: TextAlignment = .trailing,
         inputTextAlignment: TextAlignment = .leading,
         innerTitleTextAlignment: TextAlignment = .leading,
         lineColor: ColorToken,
-        placeholderColor: ColorToken,
+        focusedLineColor: ColorToken,
+        focusedLineColorError: ColorToken,
+        focusedLineColorWarning: ColorToken,
+        focusedLineColorSuccess: ColorToken,
+        placeholderColor: ColorToken? = nil,
         borderColorDefault: ColorToken,
         borderColorError: ColorToken,
         borderColorWarning: ColorToken,
@@ -73,9 +87,10 @@ public struct TextAreaAppearance {
         captionColorWarning: ColorToken,
         captionColorSuccess: ColorToken,
         counterColorDefault: ColorToken,
-        counterColorError: ColorToken,
-        counterColorWarning: ColorToken,
-        counterColorSuccess: ColorToken
+        placeholderColorDefault: ColorToken,
+        placeholderColorError: ColorToken,
+        placeholderColorWarning: ColorToken,
+        placeholderColorSuccess: ColorToken
     ) {
         self.textTypography = textTypography
         self.titleTypography = titleTypography
@@ -85,16 +100,22 @@ public struct TextAreaAppearance {
         self.titleColor = titleColor
         self.optionalTitleColor = optionalTitleColor
         self.textColor = textColor
+        self.textColorError = textColorError
+        self.textColorWarning = textColorWarning
+        self.textColorSuccess = textColorSuccess
         self.disabledAlpha = disabledAlpha
         self.requiredIndicatorColor = requiredIndicatorColor
         self.cursorColor = cursorColor
         self.focusedBackgroundColor = focusedBackgroundColor
         self.titleTextAlignment = titleTextAlignment
         self.captionTextAlignment = captionTextAlignment
-        self.counterTextAlignment = counterTextAlignment
         self.inputTextAlignment = inputTextAlignment
         self.innerTitleTextAlignment = innerTitleTextAlignment
         self.lineColor = lineColor
+        self.focusedLineColor = focusedLineColor
+        self.focusedLineColorError = focusedLineColorError
+        self.focusedLineColorWarning = focusedLineColorWarning
+        self.focusedLineColorSuccess = focusedLineColorSuccess
         self.placeholderColor = placeholderColor
         self.borderColorDefault = borderColorDefault
         self.borderColorError = borderColorError
@@ -108,10 +129,11 @@ public struct TextAreaAppearance {
         self.captionColorError = captionColorError
         self.captionColorWarning = captionColorWarning
         self.captionColorSuccess = captionColorSuccess
-        self.counterColorDefault = captionColorDefault
-        self.counterColorError = captionColorError
-        self.counterColorWarning = captionColorWarning
-        self.counterColorSuccess = captionColorSuccess
+        self.counterColorDefault = counterColorDefault
+        self.placeholderColorDefault = placeholderColorDefault
+        self.placeholderColorError = placeholderColorError
+        self.placeholderColorWarning = placeholderColorWarning
+        self.placeholderColorSuccess = placeholderColorSuccess
     }
     
     public func borderColor(for style: TextAreaStyle) -> ColorToken {
@@ -156,19 +178,65 @@ public struct TextAreaAppearance {
         }
     }
     
-    public func counterColor(for style: TextAreaStyle) -> ColorToken {
+    public func focusedLineColor(for style: TextAreaStyle) -> ColorToken {
         switch style {
         case .default:
-            return counterColorDefault
+            return focusedLineColor
         case .error:
-            return counterColorError
+            return focusedLineColorError
         case .warning:
-            return counterColorWarning
+            return focusedLineColorWarning
         case .success:
-            return counterColorSuccess
+            return focusedLineColorSuccess
         }
     }
+    
+    public func textColor(for style: TextAreaStyle, layout: TextAreaLayout) -> ColorToken {
+        if layout == .clear {
+            switch style {
+            case .default:
+                return textColor
+            case .error:
+                return textColorError
+            case .warning:
+                return textColorWarning
+            case .success:
+                return textColorSuccess
+            }
+        } else {
+            return textColor
+        }
+    }
+    
+    public func placeholderColor(for style: TextAreaStyle, layout: TextAreaLayout) -> ColorToken {
+        if let customColor = placeholderColor {
+            return customColor
+        }
+        if layout == .clear {
+            switch style {
+            case .default:
+                return placeholderColorDefault
+            case .error:
+                return placeholderColorError
+            case .warning:
+                return placeholderColorWarning
+            case .success:
+                return placeholderColorSuccess
+            }
+        } else {
+            return placeholderColorDefault
+        }
+    }
+}
 
+extension TextAreaAppearance: Hashable {
+    public static func == (lhs: TextAreaAppearance, rhs: TextAreaAppearance) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 public extension TextAreaAppearance {
@@ -182,17 +250,18 @@ public extension TextAreaAppearance {
             titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
             optionalTitleColor: .surfaceInverseSolidPrimary.withOpacity(0.28),
             textColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            textColorError: .textDefaultNegative,
+            textColorWarning: .textDefaultWarning,
+            textColorSuccess: .textDefaultAccent,
             disabledAlpha: 0.4,
             requiredIndicatorColor: .surfaceOnDarkNegative,
             cursorColor: .textDefaultAccent,
             focusedBackgroundColor: .surfaceDefaultTransparentSecondary,
-            titleTextAlignment: .leading,
-            captionTextAlignment: .leading,
-            counterTextAlignment: .trailing,
-            inputTextAlignment: .leading,
-            innerTitleTextAlignment: .leading,
             lineColor: .surfaceDefaultTransparentTertiary,
-            placeholderColor: .textDefaultSecondary,
+            focusedLineColor: .textDefaultAccent,
+            focusedLineColorError: .textDefaultAccent,
+            focusedLineColorWarning: .textDefaultAccent,
+            focusedLineColorSuccess: .textDefaultAccent,
             borderColorDefault: Color.clear.token,
             borderColorError: Color.clear.token,
             borderColorWarning: Color.clear.token,
@@ -211,55 +280,12 @@ public extension TextAreaAppearance {
             captionColorError: .textDefaultNegative,
             captionColorWarning: .textDefaultWarning,
             captionColorSuccess: .textDefaultAccent,
-            counterColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.56),
-            counterColorError: .textDefaultNegative,
-            counterColorWarning: .textDefaultWarning,
-            counterColorSuccess: .textDefaultAccent
+            counterColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            placeholderColorDefault: .textDefaultSecondary,
+            placeholderColorError: .textDefaultNegative,
+            placeholderColorWarning: .textDefaultWarning,
+            placeholderColorSuccess: .textDefaultAccent
         )
-    }
-}
-
-extension ChipAppearance {
-    static var textArea: ChipAppearance {
-        ChipAppearance(
-            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
-            titleTypography: ChipAreaFieldTypography.text,
-            imageTintColor: Color.clear.token,
-            buttonTintColor: Color.clear.token,
-            backgroundColor: .surfaceDefaultTransparentSecondary,
-            disabledAlpha: 0.5
-        )
-    }
-}
-
-struct ChipAreaFieldTypography: GeneralTypographyConfiguration {
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
-    let extraSmall: TypographyToken?
-    
-    func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSChipSize {
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small, .none:
-            return small
-        case .extraSmall:
-            return extraSmall
-        }
-    }
-}
-
-extension ChipAreaFieldTypography {
-    static var text: TypographyConfiguration {
-        ChipAreaFieldTypography(
-            large: Typographies.bodyLNormal.typography,
-            medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography,
-            extraSmall: Typographies.bodyXsNormal.typography
-        ).asContainer
     }
 }
 
@@ -325,6 +351,51 @@ extension TextAreaTypography {
             large: Typographies.bodyXsNormal.typography,
             medium: Typographies.bodyXsNormal.typography,
             small: Typographies.bodyXsNormal.typography,
+            extraSmall: Typographies.bodyXsNormal.typography
+        ).asContainer
+    }
+}
+
+public extension ChipAppearance {
+    static var textArea: ChipAppearance {
+        ChipAppearance(
+            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            titleTypography: ChipTextAreaTypography.text,
+            imageTintColor: Color.clear.token,
+            buttonTintColor: Color.clear.token,
+            backgroundColor: .surfaceDefaultTransparentSecondary,
+            disabledAlpha: 0.5
+        )
+    }
+}
+
+struct ChipTextAreaTypography: GeneralTypographyConfiguration {
+    let large: TypographyToken?
+    let medium: TypographyToken?
+    let small: TypographyToken?
+    let extraSmall: TypographyToken?
+    
+    func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
+//        switch size as? SDDSChipSize {
+//        case .large:
+//            return large
+//        case .medium:
+//            return medium
+//        case .small, .none:
+//            return small
+//        case .extraSmall:
+//            return extraSmall
+//        }
+        return medium
+    }
+}
+
+extension ChipTextAreaTypography {
+    static var text: TypographyConfiguration {
+        ChipTextAreaTypography(
+            large: Typographies.bodyLNormal.typography,
+            medium: Typographies.bodyMNormal.typography,
+            small: Typographies.bodySNormal.typography,
             extraSmall: Typographies.bodyXsNormal.typography
         ).asContainer
     }

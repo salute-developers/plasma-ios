@@ -46,7 +46,3 @@ extension ChipTextFieldTypography {
         ).asContainer
     }
 }
-
-#Preview {
-    SDDSTextFieldPreview.previews
-}

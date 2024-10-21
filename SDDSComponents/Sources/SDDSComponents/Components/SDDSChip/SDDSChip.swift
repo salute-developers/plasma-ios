@@ -152,6 +152,7 @@ public struct SDDSChip: View {
             Text(title)
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
+                .frame(width: textWidth)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
@@ -182,6 +183,13 @@ public struct SDDSChip: View {
         .accessibilityElement(children: .combine)
     }
     
+    private var textWidth: CGFloat {
+        let titleTypography = appearance.titleTypography.typography(with: size) ?? .undefined
+        let textWidth = title.size(withAttributes: [.font: titleTypography.uiFont]).width
+        
+        return textWidth
+    }
+    
     private var borderRadius: CGFloat {
         switch size.borderStyle {
         case .default(let cornerRadius):
@@ -197,4 +205,8 @@ public struct SDDSChip: View {
         }
         removeAction()
     }
+}
+
+#Preview {
+    SDDSTextAreaPreview.previews
 }

@@ -15,6 +15,3 @@ public extension AvatarAppearance {
         )
     }
 }
-
-
-

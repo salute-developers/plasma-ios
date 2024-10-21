@@ -19,6 +19,12 @@ public enum TextAreaLabelPlacement: String {
     case none
 }
 
+/// Определяет возможные макеты для текстового поля.
+public enum TextAreaLayout: String, CaseIterable {
+    case `default`
+    case clear
+}
+
 /// Определяет размещение обязательного индикатора.
 public enum TextAreaRequiredPlacement: String {
     case left
@@ -75,6 +81,7 @@ public struct SDDSTextArea: View {
     public let requiredPlacement: TextAreaRequiredPlacement
     public let appearance: TextAreaAppearance
     public let size: TextAreaSizeConfiguration
+    public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
     public let iconViewProvider: ViewProvider?
     public let iconActionViewProvider: ViewProvider?
@@ -101,6 +108,7 @@ public struct SDDSTextArea: View {
         requiredPlacement: TextAreaRequiredPlacement = .left,
         appearance: TextAreaAppearance,
         size: TextAreaSizeConfiguration,
+        layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconViewProvider: ViewProvider? = nil,
         iconActionViewProvider: ViewProvider? = nil
@@ -128,6 +136,7 @@ public struct SDDSTextArea: View {
         self.placeholder = placeholder
         self.appearance = appearance
         self.size = size
+        self.layout = layout
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
         self.iconActionViewProvider = iconActionViewProvider
@@ -231,17 +240,15 @@ public struct SDDSTextArea: View {
             textEditor
         case .multiple(_, let chips):
             GeometryReader { proxy in
-                VStack(alignment: .leading) {
-                    ScrollViewWrapper {
+                VStack(alignment: .leading, spacing: 0) {
+                    ScrollView {
                         SDDSChipGroup(data: chips, size: TextAreaChipGroupSize(), height: $chipGroupContentHeight)
                     }
                     .frame(height: size.chipGroupHeight)
-                    .frame(width: proxy.size.width + iconActionViewWidth + size.iconActionPadding + fieldHorizontalPadding)
                     .padding(.bottom, size.chipGroupVerticalBottomPadding)
-                    .debug(color: .red, condition: true)
                     
                     textEditor
-                        .debug(color: .red, condition: true)
+                        .padding(.bottom, size.textInputMultipleBottomPadding)
                 }
             }
         }
@@ -273,7 +280,9 @@ public struct SDDSTextArea: View {
     @ViewBuilder
     private var fieldView: some View {
         ZStack(alignment: .leading) {
-            backgroundView
+            if layout == .default {
+                backgroundView
+            }
 
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
@@ -312,6 +321,10 @@ public struct SDDSTextArea: View {
                     }
                     
                     contentView
+                    
+                    if layout == .clear {
+                        bottomLineView
+                    }
                 }
                 
                 if let _ = iconActionViewProvider?.view {
@@ -321,7 +334,6 @@ public struct SDDSTextArea: View {
             }
             .padding(.leading, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
             .padding(.trailing, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
-            .frame(height: calculatedTextHeight, debug: debugConfiguration.fieldHeight)
             
             if shouldShowIndicatorForInnerLabelDefaultLayout {
                 indicatorOverlayView
@@ -346,6 +358,7 @@ public struct SDDSTextArea: View {
         result += (size.textInputPaddings.top + size.textInputPaddings.bottom)
         if displayChips {
             result += size.chipGroupVerticalBottomPadding
+            result += size.textInputMultipleBottomPadding
         }
         if shouldShowInnerTitle {
             result += 2 * size.titleInnerPadding
@@ -375,11 +388,11 @@ public struct SDDSTextArea: View {
     }
     
     private var counterColor: Color {
-        return appearance.counterColor(for: isFocused ? .default : style).color(for: colorScheme)
+        return appearance.counterColorDefault.color(for: colorScheme)
     }
     
     private var placeholderColor: Color {
-        return appearance.placeholderColor.color(for: colorScheme)
+        return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
     }
     
     private var textColor: Color {
@@ -421,9 +434,9 @@ public struct SDDSTextArea: View {
     
     @ViewBuilder
     private var counterLabel: some View {
-        Text(caption)
+        Text(counter)
             .typography(counterTypography)
-            .multilineTextAlignment(appearance.counterTextAlignment)
+            .multilineTextAlignment(.trailing)
             .foregroundColor(counterColor)
             .padding(.top, size.captionTopPadding, debug: debugConfiguration.captionTopPadding)
     }
@@ -456,7 +469,14 @@ public struct SDDSTextArea: View {
             }
             Spacer()
         }
-        .frame(height: size.fieldHeight, debug: debugConfiguration.fieldHeight)
+        .frame(height: totalHeight, debug: debugConfiguration.fieldHeight)
+    }
+    
+    @ViewBuilder
+    private var bottomLineView: some View {
+        Rectangle()
+            .fill(bottomLineColor)
+            .frame(height: size.lineWidth, debug: debugConfiguration.fieldView)
     }
 
     // MARK: - Computed Properties for Conditions
@@ -534,6 +554,19 @@ public struct SDDSTextArea: View {
         !isFocused
     }
     
+    private var bottomLineColor: Color {
+        if isFocused {
+            return appearance.focusedLineColor(for: style).color(for: colorScheme)
+        }
+        
+        switch style {
+        case .error, .success, .warning:
+            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
+        case .default:
+            return appearance.lineColor.color(for: colorScheme)
+        }
+    }
+    
     private var shouldCenterText: Bool {
         return labelPlacement == .outer || labelPlacement == .none || !shouldShowInnerTitle
     }
@@ -570,7 +603,7 @@ public struct SDDSTextArea: View {
             switch chipSize.borderStyle {
             case .default(let radius):
                 return radius
-            case .rounded:
+            case .pilled:
                 return chipSize.height / 2
             }
         }

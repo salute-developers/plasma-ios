@@ -25,18 +25,16 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
         let view = UIScrollView()
         view.delegate = context.coordinator
         
-        // Instantiate the UIHostingController with the SwiftUI view
         let controller = UIHostingController(rootView: content())
-        controller.view.translatesAutoresizingMaskIntoConstraints = false  // Disable autoresizing
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controller.view)
         
-        // Set constraints for the controller's view
         NSLayoutConstraint.activate([
             controller.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             controller.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             controller.view.topAnchor.constraint(equalTo: view.topAnchor),
             controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            controller.view.widthAnchor.constraint(equalTo: view.widthAnchor)  // Ensures the width matches the scroll view
+            controller.view.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         return view
@@ -49,7 +47,6 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
             self.scrollViewHeight = uiView.contentSize.height
             self.visibleHeight = uiView.frame.size.height
             
-            // Update the frame of the hosted view if necessary
             if let hostedView = uiView.subviews.first {
                 hostedView.frame = CGRect(origin: .zero, size: uiView.contentSize)
             }
@@ -57,16 +54,16 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
     }
     
     public func makeCoordinator() -> Coordinator {
-        Coordinator(contentOffset: self._contentOffset, scrollViewHeight: self._scrollViewHeight) // Modify this line
+        Coordinator(contentOffset: self._contentOffset, scrollViewHeight: self._scrollViewHeight)
     }
     
     public class Coordinator: NSObject, UIScrollViewDelegate {
         let contentOffset: Binding<CGPoint>
-        let scrollViewHeight: Binding<CGFloat>  // Add this line
+        let scrollViewHeight: Binding<CGFloat>
         
-        init(contentOffset: Binding<CGPoint>, scrollViewHeight: Binding<CGFloat>) { // Modify this line
+        init(contentOffset: Binding<CGPoint>, scrollViewHeight: Binding<CGFloat>) {
             self.contentOffset = contentOffset
-            self.scrollViewHeight = scrollViewHeight  // Add this line
+            self.scrollViewHeight = scrollViewHeight
         }
         
         public func scrollViewDidScroll(_ scrollView: UIScrollView) {

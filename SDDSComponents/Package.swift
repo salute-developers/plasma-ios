@@ -31,7 +31,7 @@ let package = Package(
         ),
         .target(
             name: "SDDSComponentsPreview",
-            dependencies: ["SDDSServTheme", "SDDSThemeCore"],
+            dependencies: ["SDDSServTheme", "SDDSThemeCore", "SDDSComponents"],
             path: "SDDSComponentsPreview",
             exclude: ["SDDSComponentsPreview.h"],
             resources: [

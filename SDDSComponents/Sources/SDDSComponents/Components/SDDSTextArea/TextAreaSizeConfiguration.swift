@@ -26,6 +26,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var textHorizontalPadding: CGFloat { get }
     var chipGroupHeight: CGFloat { get }
     var chipGroupVerticalBottomPadding: CGFloat { get }
+    var textInputMultipleBottomPadding: CGFloat { get }
     
     func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
     func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
@@ -280,6 +281,10 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     }
     
     public var chipGroupVerticalBottomPadding: CGFloat {
+        return 4
+    }
+    
+    public var textInputMultipleBottomPadding: CGFloat {
         return 4
     }
 

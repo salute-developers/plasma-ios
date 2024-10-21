@@ -103,21 +103,21 @@ public struct SDDSChipGroup: View {
             let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
             VStack(spacing: size.insets.top) {
                 ForEach(layoutRows(maxWidth: maxWidth), id: \.self) { row in
-                    HStack(spacing: size.insets.leading) {
-                        if size.alignment == .right || size.alignment == .decreasingRight {
+                    HStack(spacing: 0) {
+                        if size.alignment == .decreasingRight {
                             Spacer()
                         }
                         ForEach(row, id: \.self) { chipData in
                             SDDSChip(data: chipData)
+                                .padding(.trailing, size.insets.trailing)
                         }
-                        if size.alignment == .left || size.alignment == .decreasingLeft {
+                        if size.alignment == .decreasingLeft {
                             Spacer()
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: alignment)
                 }
             }
-            .padding(size.insets)
             .onAppear {
                 DispatchQueue.main.async {
                     self.height = calculateTotalHeight(maxWidth: maxWidth)
@@ -129,6 +129,10 @@ public struct SDDSChipGroup: View {
                 }
             }
         }
+        .padding(.leading, size.insets.leading)
+        .padding(.top, size.insets.top)
+        .padding(.bottom, size.insets.bottom)
+        .frame(height: height)
     }
 
     private var alignment: SwiftUI.Alignment {
@@ -185,7 +189,11 @@ public struct SDDSChipGroup: View {
     private func calculateTotalHeight(maxWidth: CGFloat) -> CGFloat {
         let rows = layoutRows(maxWidth: maxWidth)
         let rowHeight = chipRowHeight()
-        return CGFloat(rows.count) * rowHeight + CGFloat(rows.count - 1) * size.insets.top
+        var result = CGFloat(rows.count) * rowHeight
+        result += CGFloat(rows.count - 1) * size.insets.top
+        result += (size.insets.bottom + size.insets.top)
+        
+        return result
     }
 
     private func chipRowHeight() -> CGFloat {

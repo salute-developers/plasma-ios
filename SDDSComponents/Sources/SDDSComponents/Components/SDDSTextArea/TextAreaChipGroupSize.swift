@@ -17,7 +17,7 @@ struct TextAreaChipGroupSize: ChipGroupSizeConfiguration {
     
     var alignment: ChipGroupAlignment
     
-    init(alignment: ChipGroupAlignment = .decreasingLeft) {
+    init(alignment: ChipGroupAlignment = .left) {
         self.alignment = alignment
     }
 }
