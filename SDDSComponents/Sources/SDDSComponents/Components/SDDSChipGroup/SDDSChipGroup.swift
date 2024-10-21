@@ -85,15 +85,19 @@ public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugString
     - data: Массив данных для чипов.
     - size: Конфигурация размеров для группы чипов.
  */
+import SwiftUI
+
 public struct SDDSChipGroup: View {
     let data: [ChipData]
     let size: ChipGroupSizeConfiguration
-    
-    public init(data: [ChipData], size: ChipGroupSizeConfiguration) {
+    @Binding var height: CGFloat
+
+    public init(data: [ChipData], size: ChipGroupSizeConfiguration, height: Binding<CGFloat> = .constant(0)) {
         self.data = data
         self.size = size
+        _height = height
     }
-    
+
     public var body: some View {
         GeometryReader { geometry in
             let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
@@ -114,9 +118,19 @@ public struct SDDSChipGroup: View {
                 }
             }
             .padding(size.insets)
+            .onAppear {
+                DispatchQueue.main.async {
+                    self.height = calculateTotalHeight(maxWidth: maxWidth)
+                }
+            }
+            .onChange(of: data) { _ in
+                DispatchQueue.main.async {
+                    self.height = calculateTotalHeight(maxWidth: maxWidth)
+                }
+            }
         }
     }
-    
+
     private var alignment: SwiftUI.Alignment {
         switch size.alignment {
         case .left, .decreasingLeft:
@@ -127,7 +141,7 @@ public struct SDDSChipGroup: View {
             return .center
         }
     }
-    
+
     private func layoutRows(maxWidth: CGFloat) -> [[ChipData]] {
         var rows: [[ChipData]] = []
         var currentRow: [ChipData] = []
@@ -166,5 +180,18 @@ public struct SDDSChipGroup: View {
             totalWidth += chipData.size.spacing
         }
         return totalWidth
+    }
+
+    private func calculateTotalHeight(maxWidth: CGFloat) -> CGFloat {
+        let rows = layoutRows(maxWidth: maxWidth)
+        let rowHeight = chipRowHeight()
+        return CGFloat(rows.count) * rowHeight + CGFloat(rows.count - 1) * size.insets.top
+    }
+
+    private func chipRowHeight() -> CGFloat {
+        guard let chipData = data.first else {
+            return 0
+        }
+        return chipData.size.height
     }
 }

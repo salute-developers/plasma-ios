@@ -5,34 +5,72 @@ struct ExpandingTextEditor: UIViewRepresentable {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     let typographyToken: TypographyToken
+    let accentColor: Color
+    let textColor: Color
+    let textAlignment: TextAlignment
+    let paddingInsets: EdgeInsets
 
-    init(text: Binding<String>, textHeight: Binding<CGFloat>, typographyToken: TypographyToken) {
+    init(text: Binding<String>,
+         textHeight: Binding<CGFloat>,
+         typographyToken: TypographyToken,
+         accentColor: Color = .blue,
+         textColor: Color = .black,
+         textAlignment: TextAlignment = .leading,
+         paddingInsets: EdgeInsets = .init()) {
         _text = text
         _textHeight = textHeight
         self.typographyToken = typographyToken
+        self.accentColor = accentColor
+        self.textColor = textColor
+        self.textAlignment = textAlignment
+        self.paddingInsets = paddingInsets
     }
 
-    func makeUIView(context: Context) -> UITextView {
+    func makeUIView(context: Context) -> UIView {
+        let containerView = UIView()
+        containerView.backgroundColor = .clear
+        
         let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = context.coordinator
         textView.isScrollEnabled = false
         textView.backgroundColor = .clear
-        textView.textContainerInset = .zero
+        textView.textContainerInset = UIEdgeInsets(top: paddingInsets.top, left: paddingInsets.leading, bottom: paddingInsets.bottom, right: paddingInsets.trailing)
+        textView.textAlignment = textAlignment.nsTextAlignment
+        textView.textContainer.lineBreakMode = .byCharWrapping
         textView.textContainer.lineFragmentPadding = 0
+        textView.textContainer.maximumNumberOfLines = 0
         textView.font = typographyToken.uiFont
-        return textView
+        textView.textColor = UIColor(textColor)
+        textView.tintColor = UIColor(accentColor)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(textView)
+        
+        NSLayoutConstraint.activate([
+            textView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            textView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            textView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        ])
+        
+        return containerView
     }
 
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.text = text
-        updateHeight(uiView)
+    func updateUIView(_ uiView: UIView, context: Context) {
+        if let textView = uiView.subviews.first as? UITextView {
+            textView.text = text
+            DispatchQueue.main.async {
+                self.updateHeight(textView)
+            }
+        }
     }
 
     private func updateHeight(_ textView: UITextView) {
-        let size = CGSize(width: textView.bounds.width, height: .greatestFiniteMagnitude)
+        let fixedWidth = textView.bounds.size.width
+        let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
         let estimatedSize = textView.sizeThatFits(size)
-        textHeight = max(40, estimatedSize.height)
+
+        textHeight = max(typographyToken.lineHeight, estimatedSize.height)
     }
 
     func makeCoordinator() -> Coordinator {
@@ -49,6 +87,19 @@ struct ExpandingTextEditor: UIViewRepresentable {
         func textViewDidChange(_ textView: UITextView) {
             parent.text = textView.text
             parent.updateHeight(textView)
+        }
+    }
+}
+
+private extension TextAlignment {
+    var nsTextAlignment: NSTextAlignment {
+        switch self {
+        case .center:
+            return .center
+        case .leading:
+            return .left
+        case .trailing:
+            return .right
         }
     }
 }

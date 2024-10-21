@@ -83,6 +83,7 @@ public struct SDDSTextArea: View {
     @State private var isFocused: Bool = false
     @State private var oldText: String
     @State private var textHeight: CGFloat = 40.0
+    @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
@@ -225,101 +226,48 @@ public struct SDDSTextArea: View {
 
     @ViewBuilder
     private var contentView: some View {
-        ScrollViewReader { proxy in
-            switch value {
-            case .single:
-                textEditor
-            case .multiple(_, let chips):
-                chipsScrollView(chips: chips, proxy: proxy)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private func chipsScrollView(chips: [ChipData], proxy: ScrollViewProxy) -> some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: size.multipleValueHorizontalPadding) {
-                ForEach(chips, id: \.self) { chipData in
-                    SDDSChip(data: chipData)
-                        .debug(condition: debugConfiguration.fieldView)
+        switch value {
+        case .single:
+            textEditor
+        case .multiple(_, let chips):
+            GeometryReader { proxy in
+                VStack(alignment: .leading) {
+                    ScrollViewWrapper {
+                        SDDSChipGroup(data: chips, size: TextAreaChipGroupSize(), height: $chipGroupContentHeight)
+                    }
+                    .frame(height: size.chipGroupHeight)
+                    .frame(width: proxy.size.width + iconActionViewWidth + size.iconActionPadding + fieldHorizontalPadding)
+                    .padding(.bottom, size.chipGroupVerticalBottomPadding)
+                    .debug(color: .red, condition: true)
+                    
+                    textEditor
+                        .debug(color: .red, condition: true)
                 }
-                
-                textEditor
-                    .id(textFieldIdentifier)
-                    .padding(.leading, size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
             }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: chipCornerRadius, style: .continuous))
-        .onChange(of: text) { _ in
-            proxy.scrollTo(textFieldIdentifier, anchor: .trailing)
         }
     }
 
     @ViewBuilder
     private var textEditor: some View {
-        switch value {
-        case .single:
-            GeometryReader { proxy in
-                VStack(spacing: 0) {
-//                    if shouldCenterText {
-//                        Spacer()
-//                    }
-                    PlaceholderTextEditor(
-                        text: $text,
-                        textHeight: $textHeight,
-                        placeholder: placeholder,
-                        placeholderColor: placeholderColor,
-                        placeholderTypography: textTypography,
-                        textTypography: textTypography,
-                        textEditorConfiguration: { textEditor in
-                            textEditorConfiguration(textEditor: textEditor)
-                                .frame(
-//                                    width: calculateTextWidth(text: text, placeholder: placeholder, proxy: proxy),
-                                    debug: debugConfiguration.textField
-                                )
-                        }
-                    )
-                    
-//                    if shouldCenterText {
-//                        Spacer()
-//                    }
-                }
-            }
-        case .multiple:
-//            PlaceholderTextField(
-//                text: $text,
-//                placeholder: placeholder,
-//                placeholderColor: placeholderColor,
-//                placeholderTypography: textTypography,
-//                placeholderBeforeContent: {},
-//                placeholderAfterContent: { placeholderIndicator },
-//                onEditingChanged: { focused in
-//                    isFocused = focused
-//                },
-//                textFieldConfiguration: { textField in
-//                    textFieldConfiguration(textField: textField)
-//                        .frame(height: textTypography.lineHeight, debug: debugConfiguration.textField)
-//                }
-//            )
-            EmptyView()
-        }
-    }
-    
-    @ViewBuilder
-    private func textEditorConfiguration(textEditor: ExpandingTextEditor) -> some View {
-        textEditor
-            .onChange(of: text) { newValue in
+        PlaceholderTextEditor(
+            text: $text,
+            textHeight: $textHeight,
+            placeholder: placeholder,
+            placeholderColor: placeholderColor,
+            placeholderTypography: textTypography,
+            textTypography: textTypography,
+            appearance: appearance,
+            colorScheme: colorScheme,
+            size: size,
+            onChange: { newValue in
                 if readOnly  {
                     self.text = oldText
                 } else {
                     self.oldText = newValue
                 }
             }
-//            .accentColor(appearance.cursorColor.color(for: colorScheme))
-//            .typography(textTypography)
-//            .foregroundColor(textColor)
-//            .multilineTextAlignment(appearance.inputTextAlignment)
-//            .padding(size.textInputPaddings, debug: debugConfiguration.textField)
+        )
+        .padding(size.textInputPaddings)
     }
     
     @ViewBuilder
@@ -334,7 +282,9 @@ public struct SDDSTextArea: View {
                     VStack(alignment: .leading, spacing: 0) {
                         if shouldShowInnerTitle {
                             innerTitleView
+                                .frame(maxHeight: .infinity)
                         }
+                        
                         Spacer()
                             .frame(maxWidth: .infinity)
                     }
@@ -349,18 +299,29 @@ public struct SDDSTextArea: View {
             }
             
             HStack(spacing: 0) {
-                iconView.opacity(0)
-
-                VStack {
-                    Spacer().frame(height: innerTitleTypography.lineHeight)
-                    contentView
+                if let _ = iconViewProvider?.view {
+                    Spacer().frame(width: iconViewWidth, height: iconViewHeight)
+                        .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
                 }
 
-                iconActionView.opacity(0)
+                VStack(alignment: .leading, spacing: 0) {
+                    if shouldShowInnerTitle {
+                        Spacer()
+                            .frame(height: innerTitleTypography.lineHeight)
+                            .padding([.top, .bottom], size.titleInnerPadding, debug: debugConfiguration.innerTitle)
+                    }
+                    
+                    contentView
+                }
+                
+                if let _ = iconActionViewProvider?.view {
+                    Spacer().frame(width: iconActionViewWidth, height: iconActionViewHeight)
+                        .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
+                }
             }
             .padding(.leading, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
             .padding(.trailing, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
-            .frame(height: textHeight, debug: debugConfiguration.fieldHeight)
+            .frame(height: calculatedTextHeight, debug: debugConfiguration.fieldHeight)
             
             if shouldShowIndicatorForInnerLabelDefaultLayout {
                 indicatorOverlayView
@@ -381,8 +342,11 @@ public struct SDDSTextArea: View {
     }
     
     private var totalHeight: CGFloat {
-        var result = textHeight
+        var result = calculatedTextHeight
         result += (size.textInputPaddings.top + size.textInputPaddings.bottom)
+        if displayChips {
+            result += size.chipGroupVerticalBottomPadding
+        }
         if shouldShowInnerTitle {
             result += 2 * size.titleInnerPadding
             result += innerTitleTypography.lineHeight
@@ -427,7 +391,7 @@ public struct SDDSTextArea: View {
         if let leftView = iconViewProvider?.view {
             leftView
                 .foregroundColor(textColor)
-                .frame(width: iconViewWidth, height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
+                .frame(width: iconViewWidth, height: iconViewHeight, debug: debugConfiguration.icon)
                 .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
         } else {
             EmptyView()
@@ -438,7 +402,7 @@ public struct SDDSTextArea: View {
     private var iconActionView: some View {
         if let rightView = iconActionViewProvider?.view {
             rightView
-                .frame(width: iconActionViewWidth, height: min(size.iconActionSize.height, size.fieldHeight), debug: debugConfiguration.iconAction)
+                .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
                 .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {
             EmptyView()
@@ -517,8 +481,16 @@ public struct SDDSTextArea: View {
         )
     }
     
+    private var iconViewHeight: CGFloat {
+        min(size.iconSize.height, size.fieldHeight)
+    }
+    
     private var iconActionViewWidth: CGFloat {
         min(size.iconActionSize.width, size.fieldHeight)
+    }
+    
+    private var iconActionViewHeight: CGFloat {
+        min(size.iconActionSize.height, size.fieldHeight)
     }
     
     private var iconViewWidth: CGFloat {
@@ -573,6 +545,14 @@ public struct SDDSTextArea: View {
         case .multiple:
             return true
         }
+    }
+    
+    private var calculatedTextHeight: CGFloat {
+        var result = textHeight
+        if displayChips {
+            result += size.chipGroupHeight
+        }
+        return result
     }
 
     private var formattedOptionalTitle: String {

@@ -23,48 +23,48 @@ struct SDDSTextAreaPreview: PreviewProvider {
         Theme.initialize()
         
         return Group {
-            SDDSTextArea(
-                value: .single("sdfsdf sdf sdf sdf sdf sdfsdfj sdf jsdfioj sdiof jsodifj sdoifj sdiofj sdfo sdf sdf sdf sdf sdf "),
-                title: "Title",
-                optionalTitle: "optional",
-                placeholder: "Placeholder",
-                caption: "caption",
-                counter: "counter",
-                disabled: false,
-                readOnly: false,
-                style: .default,
-                labelPlacement: .inner,
-                required: false,
-                requiredPlacement: .right,
-                appearance: .defaultAppearance,
-                size: SDDSTextAreaSize.large,
-                iconViewProvider: ViewProvider(iconView),
-                iconActionViewProvider: ViewProvider(iconActionView)
-            )
-            .previewDisplayName("Outer Label")
-            .previewLayout(.sizeThatFits)
-            .padding()
-            
 //            SDDSTextArea(
-//                value: .multiple("", chips),
+//                value: .single(""),
 //                title: "Title",
 //                optionalTitle: "optional",
 //                placeholder: "Placeholder",
 //                caption: "caption",
 //                counter: "counter",
 //                disabled: false,
+//                readOnly: false,
 //                style: .default,
-//                labelPlacement: .outer,
-//                required: true,
-//                requiredPlacement: .left,
+//                labelPlacement: .inner,
+//                required: false,
+//                requiredPlacement: .right,
 //                appearance: .defaultAppearance,
 //                size: SDDSTextAreaSize.large,
 //                iconViewProvider: ViewProvider(iconView),
 //                iconActionViewProvider: ViewProvider(iconActionView)
 //            )
-//            .previewDisplayName("Multiple – Default Label")
+//            .previewDisplayName("Outer Label")
 //            .previewLayout(.sizeThatFits)
 //            .padding()
+            
+            SDDSTextArea(
+                value: .multiple("", chips),
+                title: "Title",
+                optionalTitle: "optional",
+                placeholder: "Placeholder",
+                caption: "caption",
+                counter: "counter",
+                disabled: false,
+                style: .default,
+                labelPlacement: .inner,
+                required: true,
+                requiredPlacement: .left,
+                appearance: .defaultAppearance,
+                size: SDDSTextAreaSize.large,
+                iconViewProvider: ViewProvider(iconView),
+                iconActionViewProvider: ViewProvider(iconActionView)
+            )
+            .previewDisplayName("Multiple – Default Label")
+            .previewLayout(.sizeThatFits)
+            .padding()
         }
     }
     

@@ -54,7 +54,12 @@
 		8151428B2C99944200E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8151428A2C99944200E6A00D /* SDDSThemeCore */; };
 		8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154644A2C96FDE600DAD8EA /* ViewProvider.swift */; };
 		8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F72F2C5D1CFE00622836 /* FillStyle.swift */; };
+<<<<<<< HEAD
 		816243412CB81A4300506E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816243402CB81A4300506E1C /* Assets.xcassets */; };
+=======
+		815EF7962CC67D73008142F9 /* TextAreaChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815EF7952CC67D73008142F9 /* TextAreaChipGroupSize.swift */; };
+		815EF7982CC68909008142F9 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815EF7972CC68909008142F9 /* ScrollViewWrapper.swift */; };
+>>>>>>> ac54f662 (chore: added textarea changes)
 		816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9A62C97280400C3347C /* PlaceholderTextField.swift */; };
 		816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */; };
 		816AA9AE2C97421F00C3347C /* TextFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9AD2C97421F00C3347C /* TextFieldAppearance.swift */; };
@@ -179,7 +184,12 @@
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
 		8159F72F2C5D1CFE00622836 /* FillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyle.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		816243402CB81A4300506E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+=======
+		815EF7952CC67D73008142F9 /* TextAreaChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaChipGroupSize.swift; sourceTree = "<group>"; };
+		815EF7972CC68909008142F9 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
+>>>>>>> ac54f662 (chore: added textarea changes)
 		816AA9A62C97280400C3347C /* PlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextField.swift; sourceTree = "<group>"; };
 		816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDebugConfiguration.swift; sourceTree = "<group>"; };
 		816AA9AD2C97421F00C3347C /* TextFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearance.swift; sourceTree = "<group>"; };
@@ -323,6 +333,7 @@
 				8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */,
 				8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */,
 				8102BA372CBEAC1600C589D3 /* TextAreaPreview.swift */,
+				815EF7952CC67D73008142F9 /* TextAreaChipGroupSize.swift */,
 			);
 			path = SDDSTextArea;
 			sourceTree = "<group>";
@@ -592,6 +603,7 @@
 				8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */,
 				814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */,
 				8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */,
+				815EF7972CC68909008142F9 /* ScrollViewWrapper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1065,6 +1077,7 @@
 				8102BA382CBEAC1600C589D3 /* TextAreaPreview.swift in Sources */,
 				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
+				815EF7962CC67D73008142F9 /* TextAreaChipGroupSize.swift in Sources */,
 				814E304E2C99B20A004601F7 /* TextFieldAppearance+Extensions.swift in Sources */,
 				818FE9352C3C32F100F64958 /* SDDSButton+Extensions.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
@@ -1084,6 +1097,7 @@
 				814E304F2C99B20C004601F7 /* TextFieldTypography.swift in Sources */,
 				8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */,
 				814E30352C99AF75004601F7 /* SDDSCheckboxSize.swift in Sources */,
+				815EF7982CC68909008142F9 /* ScrollViewWrapper.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
 				814E30522C99B212004601F7 /* ChipAppearance+SDDSTextField.swift in Sources */,
 				811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */,
