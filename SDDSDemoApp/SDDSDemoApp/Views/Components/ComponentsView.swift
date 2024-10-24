@@ -1,33 +1,29 @@
 import SwiftUI
 
 struct ComponentsView: View {
+    private let components: [(name: String, view: AnyView)] = [
+        ("SDDSAvatar", AnyView(AvatarView())),
+        ("SDDSAvatarGroup", AnyView(AvatarGroupView())),
+        ("SDDSButton", AnyView(ButtonView())),
+        ("SDDSChip", AnyView(ChipView())),
+        ("SDDSCheckbox", AnyView(CheckboxView())),
+        ("SDDSCheckboxGroup", AnyView(CheckboxGroupView())),
+        ("SDDSProgressBar", AnyView(ProgressBarView())),
+        ("SDDSRadiobox", AnyView(RadioboxView())),
+        ("SDDSRadioboxGroup", AnyView(RadioboxGroupView())),
+        ("SDDSSwitch", AnyView(SwitchView())),
+        ("SDDSTextField", AnyView(TextFieldView()))
+    ]
+
     var body: some View {
         NavigationView {
             List {
-                NavigationLink {
-                    ButtonView()
-                } label: {
-                    Text("SDDSButton")
-                }
-                NavigationLink {
-                    CheckboxView()
-                } label: {
-                    Text("SDDSCheckbox")
-                }
-                NavigationLink {
-                    RadioboxView()
-                } label: {
-                    Text("SDDSRadiobox")
-                }
-                NavigationLink {
-                    ProgressBarView()
-                } label: {
-                    Text("SDDSProgressBar")
-                }
-                NavigationLink {
-                    SwitchView()
-                } label: {
-                    Text("SDDSSwitch")
+                ForEach(components, id: \.name) { component in
+                    NavigationLink {
+                        component.view
+                    } label: {
+                        Text(component.name)
+                    }
                 }
             }
             .navigationTitle("Components")

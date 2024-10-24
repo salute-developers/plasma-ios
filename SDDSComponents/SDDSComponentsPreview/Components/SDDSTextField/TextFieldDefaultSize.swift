@@ -6,7 +6,7 @@ import SDDSComponents
 import SwiftUI
 import SDDSServTheme
 
-public enum SDDSTextFieldSize: TextFieldSizeConfiguration {
+public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     case large
     case medium
     case small
@@ -37,6 +37,22 @@ public enum SDDSTextFieldSize: TextFieldSizeConfiguration {
             2
         }
     }
+    
+    public var textBeforeLeadingPadding: CGFloat {
+        return 0
+    }
+    
+    public var textBeforeTrailingPadding: CGFloat {
+        return 2
+    }
+    
+    public var textAfterLeadingPadding: CGFloat {
+        return 0
+    }
+    
+    public var textAfterTrailingPadding: CGFloat {
+        return 2
+    }
 
     public var fieldHorizontalPadding: CGFloat {
         switch self {
@@ -56,7 +72,11 @@ public enum SDDSTextFieldSize: TextFieldSizeConfiguration {
     }
 
     public var textInputPaddings: EdgeInsets {
-        .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        .init(top: 2, leading: 0, bottom: 0, trailing: 0)
+    }
+    
+    public var textHorizontalPadding: CGFloat {
+        return 1.0
     }
 
     public var cornerRadius: CGFloat {

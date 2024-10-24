@@ -2,14 +2,15 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSComponentsPreview
 
 final class RadioboxViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var subtitle: String = ""
     @Published var isSelected: Bool = false
     @Published var isEnabled: Bool = true
-    @Published var size: SelectionControlSizeConfiguration = SDDSRadioboxSize()
-    @Published var appearance: RadioboxAppearance = .defaultExample
+    @Published var size: SelectionControlSizeConfiguration = SDDSRadioboxSize.medium
+    @Published var appearance: RadioboxAppearance = .default
     
     @Published var tintColor: ColorStyle = .green
     @Published var imageWidth: CGFloat = 20
@@ -27,7 +28,7 @@ final class RadioboxViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.equalToken) ?? .defaultExample
+                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .default
             }
             .store(in: &cancellables)
     }
@@ -60,28 +61,13 @@ struct CustomRadioboxSize: SelectionControlSizeConfiguration {
 
 // Extension for Appearance to update colors
 extension RadioboxAppearance {
-    static var defaultExample: RadioboxAppearance {
-        .init(
-            titleTypography: .semibold16,
-            subtitleTypography: .semibold14,
-            enabledTitleColor: .blackTitleColor,
-            enabledSubtitleColor: .subtitleColor,
-            disabledTitleColor: .blackTitleColor.withOpacity(0.3),
-            disabledSubtitleColor: .subtitleColor.withOpacity(0.3),
-            disabledImageAlpha: 0.3,
-            imageTintColor: .greenColor
-        )
-    }
-    
     func withTintColor(_ color: ColorToken) -> RadioboxAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
-            enabledTitleColor: enabledTitleColor,
-            enabledSubtitleColor: enabledSubtitleColor,
-            disabledTitleColor: disabledTitleColor,
-            disabledSubtitleColor: disabledSubtitleColor,
-            disabledImageAlpha: disabledImageAlpha,
+            titleColor: titleColor,
+            subtitleColor: subtitleColor,
+            disabledAlpha: disabledAlpha,
             imageTintColor: color
         )
     }

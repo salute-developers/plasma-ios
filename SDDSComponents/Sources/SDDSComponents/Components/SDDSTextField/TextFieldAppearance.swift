@@ -3,10 +3,13 @@ import SwiftUI
 import SDDSThemeCore
 
 public struct TextFieldAppearance {
+    let id = UUID()
     public let textTypography: TypographyConfiguration
     public let titleTypography: TypographyConfiguration
     public let innerTitleTypography: TypographyConfiguration
     public let captionTypography: TypographyConfiguration
+    public let textBeforeTypography: TypographyConfiguration
+    public let textAfterTypography: TypographyConfiguration
     public let titleColor: ColorToken
     public let optionalTitleColor: ColorToken
     public let textColor: ColorToken
@@ -43,12 +46,16 @@ public struct TextFieldAppearance {
     public let placeholderColorError: ColorToken
     public let placeholderColorWarning: ColorToken
     public let placeholderColorSuccess: ColorToken
+    public let textBeforeColor: ColorToken
+    public let textAfterColor: ColorToken
     
     public init(
         textTypography: TypographyConfiguration,
         titleTypography: TypographyConfiguration,
         innerTitleTypography: TypographyConfiguration,
         captionTypography: TypographyConfiguration,
+        textBeforeTypography: TypographyConfiguration,
+        textAfterTypography: TypographyConfiguration,
         titleColor: ColorToken,
         optionalTitleColor: ColorToken,
         textColor: ColorToken,
@@ -84,12 +91,16 @@ public struct TextFieldAppearance {
         placeholderColorDefault: ColorToken,
         placeholderColorError: ColorToken,
         placeholderColorWarning: ColorToken,
-        placeholderColorSuccess: ColorToken
+        placeholderColorSuccess: ColorToken,
+        textBeforeColor: ColorToken,
+        textAfterColor: ColorToken
     ) {
         self.textTypography = textTypography
         self.titleTypography = titleTypography
         self.innerTitleTypography = innerTitleTypography
         self.captionTypography = captionTypography
+        self.textBeforeTypography = textBeforeTypography
+        self.textAfterTypography = textAfterTypography
         self.titleColor = titleColor
         self.optionalTitleColor = optionalTitleColor
         self.textColor = textColor
@@ -126,6 +137,8 @@ public struct TextFieldAppearance {
         self.placeholderColorError = placeholderColorError
         self.placeholderColorWarning = placeholderColorWarning
         self.placeholderColorSuccess = placeholderColorSuccess
+        self.textBeforeColor =  textBeforeColor
+        self.textAfterColor = textAfterColor
     }
     
     public func borderColor(for style: TextFieldStyle) -> ColorToken {
@@ -218,5 +231,15 @@ public struct TextFieldAppearance {
         } else {
             return placeholderColorDefault
         }
+    }
+}
+
+extension TextFieldAppearance: Hashable {
+    public static func == (lhs: TextFieldAppearance, rhs: TextFieldAppearance) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

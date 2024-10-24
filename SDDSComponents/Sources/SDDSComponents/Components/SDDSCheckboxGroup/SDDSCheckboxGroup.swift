@@ -19,21 +19,31 @@ public enum CheckboxGroupBehaviour {
 }
 
 /**
+ `CheckboxGroupSizeConfiguration` задает конфигурацию размеров`.
+ 
+ - Parameters:
+    - horizontalIndent: Горизонтальный отступ для всех элементов, начиная со второго.
+    - verticalSpacing: Вертикальный отступ между элементами.
+ */
+public protocol CheckboxGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    var horizontalIndent: CGFloat { get }
+    var verticalSpacing: CGFloat { get }
+}
+
+/**
  `SDDSCheckboxGroup` представляет собой группу чекбоксов, настроенных с помощью `CheckboxData`.
  
  - Parameters:
     - behaviour: Поведение группы чекбоксов, определенное перечислением `CheckboxGroupBehaviour`.
-    - horizontalIndent: Горизонтальный отступ для всех элементов, начиная со второго.
-    - verticalSpacing: Вертикальный отступ между элементами.
+    - size: Конфигурация размеров.
  */
 public struct SDDSCheckboxGroup: View {
     @State private var parentState: SelectionControlState?
     @State private var childStates: [SelectionControlState]
     let behaviour: CheckboxGroupBehaviour
-    let horizontalIndent: CGFloat
-    let verticalSpacing: CGFloat
+    let size: CheckboxGroupSizeConfiguration
     
-    public init(behaviour: CheckboxGroupBehaviour, horizontalIndent: CGFloat, verticalSpacing: CGFloat) {
+    public init(behaviour: CheckboxGroupBehaviour, size: CheckboxGroupSizeConfiguration) {
         self.behaviour = behaviour
         
         switch behaviour {
@@ -45,12 +55,11 @@ public struct SDDSCheckboxGroup: View {
             self._childStates = State(initialValue: data.map { $0.state.wrappedValue })
         }
         
-        self.horizontalIndent = horizontalIndent
-        self.verticalSpacing = verticalSpacing
+        self.size = size
     }
     
     public var body: some View {
-        VStack(spacing: verticalSpacing) {
+        VStack(spacing: size.verticalSpacing) {
             switch behaviour {
             case .hierarchical(let parent, let children):
                 SDDSCheckbox(
@@ -74,7 +83,7 @@ public struct SDDSCheckboxGroup: View {
                         appearance: child.appearance,
                         accessibility: child.accessibility
                     )
-                    .padding(.leading, horizontalIndent)
+                    .padding(.leading, size.horizontalIndent)
                 }
             case .default(let data):
                 ForEach(Array(data.enumerated()), id: \.offset) { index, item in
@@ -88,7 +97,7 @@ public struct SDDSCheckboxGroup: View {
                         appearance: item.appearance,
                         accessibility: item.accessibility
                     )
-                    .padding(.leading, index > 0 ? horizontalIndent : 0)
+                    .padding(.leading, index > 0 ? size.horizontalIndent : 0)
                 }
             }
         }

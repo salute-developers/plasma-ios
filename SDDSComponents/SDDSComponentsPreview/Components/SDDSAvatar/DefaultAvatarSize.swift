@@ -3,14 +3,14 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-enum DefaultAvatarSize: AvatarSizeConfiguration {
+public enum DefaultAvatarSize: AvatarSizeConfiguration {
     case extraExtraLarge
     case large
     case medium
     case small
     case scalable(height: CGFloat)
     
-    var avatarSize: CGSize {
+    public var avatarSize: CGSize {
         switch self {
         case .extraExtraLarge:
             return .init(width: 88, height: 88)
@@ -25,7 +25,8 @@ enum DefaultAvatarSize: AvatarSizeConfiguration {
         }
         
     }
-    var statusSize: CGSize {
+    
+    public var statusSize: CGSize {
         switch self {
         case .extraExtraLarge:
             return .init(width: 12, height: 12)
@@ -40,7 +41,7 @@ enum DefaultAvatarSize: AvatarSizeConfiguration {
         }
     }
     
-    var statusInsets: EdgeInsets {
+    public var statusInsets: EdgeInsets {
         switch self {
         case .extraExtraLarge:
             return EdgeInsets(top: 69, leading: 69, bottom: 0, trailing: 0)

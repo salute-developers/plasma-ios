@@ -3,11 +3,12 @@ import SDDSComponents
 import SDDSServTheme
 import SwiftUI
 
-extension AvatarAppearance {
+public extension AvatarAppearance {
     static var `default`: AvatarAppearance {
         AvatarAppearance(
-            textFillStyle: .color(Colors.textDefaultAccent),
-            backgroundFillStyle: .gradient(Gradients.outlineDefaultAccentGradient),
+            textFillStyle: .gradient(Gradients.textDefaultAccentGradient),
+            backgroundFillStyle: .gradient(Gradients.surfaceDefaultAccentGradient),
+            backgroundOpacity: 0.2,
             onlineStatusColor: Colors.textDefaultAccent,
             offlineStatusColor: Colors.surfaceOnLightSolidTertiary,
             textTypography: AvatarTypography.title

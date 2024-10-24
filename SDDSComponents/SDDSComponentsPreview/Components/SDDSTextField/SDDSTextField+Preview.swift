@@ -24,13 +24,15 @@ struct SDDSTextFieldPreview: PreviewProvider {
         
         return Group {
             SDDSTextField(
-                value: .single(""),
+                value: .constant(.single("")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
                 caption: "caption",
+                textBefore: "TB",
+                textAfter: "TA",
                 disabled: false,
-                readOnly: true,
+                readOnly: false,
                 style: .default,
                 labelPlacement: .inner,
                 required: false,
@@ -46,7 +48,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
             .padding()
             
             SDDSTextField(
-                value: .single("Sample Text"),
+                value: .constant(.single("Sample Text")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -67,7 +69,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
             .padding()
             
             SDDSTextField(
-                value: .single("Sample Text"),
+                value: .constant(.single("Sample Text")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -88,7 +90,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
             .padding()
             
             SDDSTextField(
-                value: .single("Sample Text"),
+                value: .constant(.single("Sample Text")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -109,7 +111,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
             .padding()
             
             SDDSTextField(
-                value: .single(""),
+                value: .constant(.single("")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -130,7 +132,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
             .padding()
             
             SDDSTextField(
-                value: .multiple("", chips),
+                value: .constant(.multiple("", chips)),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",

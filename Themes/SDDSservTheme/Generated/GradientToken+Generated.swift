@@ -14,10 +14,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -29,10 +29,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -539,10 +539,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -554,10 +554,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -1064,10 +1064,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -1079,10 +1079,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -1589,10 +1589,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -1604,10 +1604,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -2114,10 +2114,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -2129,10 +2129,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -3042,10 +3042,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -3057,10 +3057,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -3970,10 +3970,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -3985,10 +3985,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -4898,10 +4898,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -4913,10 +4913,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -5826,10 +5826,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -5841,10 +5841,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -6246,10 +6246,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -6261,10 +6261,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -6666,10 +6666,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -6681,10 +6681,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]
@@ -7086,10 +7086,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ],
@@ -7101,10 +7101,10 @@ public extension GradientToken {
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
-                            Color(UIColor(hex: "#000000"))
+                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0DA8ABFF"))
                         ],
-                        angle: 90.0
+                        angle: 315.0
                     )
                 )
             ]

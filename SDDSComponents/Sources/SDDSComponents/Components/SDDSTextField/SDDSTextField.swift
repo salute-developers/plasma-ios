@@ -5,7 +5,7 @@ import SDDSComponents
 // MARK: - Enums and Configurations
 
 /// Определяет возможные стили для текстового поля.
-public enum TextFieldStyle: String {
+public enum TextFieldStyle: String, CaseIterable {
     case `default`
     case error
     case warning
@@ -13,30 +13,59 @@ public enum TextFieldStyle: String {
 }
 
 /// Определяет возможные макеты для текстового поля.
-public enum TextFieldLayout: String {
+public enum TextFieldLayout: String, CaseIterable {
     case `default`
     case clear
 }
 
 /// Определяет размещение метки текстового поля.
-public enum TextFieldLabelPlacement: String {
+public enum TextFieldLabelPlacement: String, CaseIterable {
     case outer
     case inner
     case none
 }
 
 /// Определяет размещение обязательного индикатора.
-public enum TextFieldRequiredPlacement: String {
+public enum TextFieldRequiredPlacement: String, CaseIterable {
     case left
     case right
 }
 
 /// Определяет возможные значения текстового поля.
-public enum TextFieldValue {
+public enum TextFieldValue: Equatable {
     /// Одиночное текстовое значение.
     case single(String)
     /// Множественное значение с чипсами.
     case multiple(String, [ChipData])
+    
+    public static func == (lhs: TextFieldValue, rhs: TextFieldValue) -> Bool {
+        switch (lhs, rhs) {
+        case (.single(let lhs), .single(let rhs)):
+            return lhs == rhs
+        case (.multiple(let lhsText, let lhsChips), .multiple(let rhsText, let rhsChips)):
+            return lhsText == rhsText && lhsChips == rhsChips
+        default:
+            return false
+        }
+    }
+    
+    public var text: String {
+        switch self {
+        case .single(let text):
+            return text
+        case .multiple(let text, _):
+            return text
+        }
+    }
+    
+    public func updated(with text: String) -> TextFieldValue {
+        switch self {
+        case .single:
+            return .single(text)
+        case .multiple(_, let chips):
+            return .multiple(text, chips)
+        }
+    }
 }
 
 // MARK: - SDDSTextField
@@ -50,6 +79,8 @@ public enum TextFieldValue {
     - optionalTitle: Дополнительный заголовок (например, для опциональных полей).
     - placeholder: Текст placeholder, отображаемый при пустом поле.
     - caption: Подпись под текстовым полем.
+    - textBefore: Префикс перед текстом или плейсхолдером.
+    - textAfter: Суффикс после текста или плейсхолдера.
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
     - style: Стиль текстового поля (`default`, `error`, `warning`, `success`).
@@ -65,11 +96,13 @@ public enum TextFieldValue {
  */
 public struct SDDSTextField: View {
     @State var text: String
-    public let value: TextFieldValue
+    @Binding public var value: TextFieldValue
     public let title: String
     public let optionalTitle: String
     public let placeholder: String
     public let caption: String
+    public let textBefore: String
+    public let textAfter: String
     public let disabled: Bool
     public let readOnly: Bool
     public let style: TextFieldStyle
@@ -89,11 +122,13 @@ public struct SDDSTextField: View {
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
-        value: TextFieldValue,
+        value: Binding<TextFieldValue>,
         title: String = "",
         optionalTitle: String = "",
         placeholder: String = "",
         caption: String = "",
+        textBefore: String = "",
+        textAfter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
         style: TextFieldStyle = .default,
@@ -107,7 +142,7 @@ public struct SDDSTextField: View {
         iconViewProvider: ViewProvider? = nil,
         iconActionViewProvider: ViewProvider? = nil
     ) {
-        switch value {
+        switch value.wrappedValue {
         case .single(let text):
             _text = State(wrappedValue: text)
         case .multiple(let text, _):
@@ -115,8 +150,10 @@ public struct SDDSTextField: View {
         }
         _oldText = _text
         
-        self.value = value
+        _value = value
         self.caption = caption
+        self.textBefore = textBefore
+        self.textAfter = textAfter
         self.disabled = disabled
         self.readOnly = readOnly
         self.style = style
@@ -153,6 +190,12 @@ public struct SDDSTextField: View {
                         indicatorWithTrailingPadding
                     }
                     fieldView
+                        .onTapGesture {
+                            guard !displayChips else {
+                                return
+                            }
+                            isFocused = true
+                        }
                         .debug(condition: debugConfiguration.fieldView)
                 }
                 HStack(spacing: 0) {
@@ -210,11 +253,15 @@ public struct SDDSTextField: View {
     
     @ViewBuilder
     private var innerOptionalTitleView: some View {
-        Text(formattedOptionalTitle)
-            .typography(innerTitleTypography)
-            .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
-            .multilineTextAlignment(appearance.titleTextAlignment)
-            .debug(condition: debugConfiguration.title)
+        if required {
+            EmptyView()
+        } else {
+            Text(formattedOptionalTitle)
+                .typography(innerTitleTypography)
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .multilineTextAlignment(appearance.titleTextAlignment)
+                .debug(condition: debugConfiguration.title)
+        }
     }
 
     @ViewBuilder
@@ -255,6 +302,9 @@ public struct SDDSTextField: View {
                 textField
                     .id(textFieldIdentifier)
                     .padding(.leading, size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
+                    .onTapGesture {
+                        isFocused = true
+                    }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: chipCornerRadius, style: .continuous))
@@ -265,34 +315,133 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var textField: some View {
-        PlaceholderTextField(
-            text: $text,
-            placeholder: placeholder,
-            placeholderColor: placeholderColor,
-            placeholderTypography: textTypography,
-            placeholderContent: { placeholderContent },
-            onEditingChanged: { focused in
-                isFocused = focused
-            },
-            textFieldConfiguration: { textField in
-                textField
-                    .onChange(of: text) { newValue in
-                        if readOnly  {
-                            self.text = oldText
-                        } else {
-                            self.oldText = newValue
+        switch value {
+        case .single:
+            GeometryReader { proxy in
+                VStack(spacing: 0) {
+                    if shouldCenterText {
+                        Spacer()
+                    }
+                    HStack(spacing: 0) {
+                        if showSuffixOrPrefix {
+                            textBeforeView
+                                .padding(.top, size.textInputPaddings.top)
+                                .padding(.bottom, size.textInputPaddings.bottom)
+                                .padding(.leading, size.textBeforeLeadingPadding)
+                                .padding(.trailing, size.textBeforeTrailingPadding)
+                        }
+                        PlaceholderTextField(
+                            text: $text, 
+                            isFocused: $isFocused,
+                            placeholder: placeholder,
+                            placeholderColor: placeholderColor,
+                            placeholderTypography: textTypography,
+                            placeholderBeforeContent: {
+                                textBeforeView
+                            },
+                            placeholderAfterContent: {
+                                HStack(spacing: 0) {
+                                    textAfterView
+                                    placeholderIndicator
+                                }
+                            },
+                            onEditingChanged: { focused in
+                                isFocused = focused
+                            },
+                            textFieldConfiguration: { textField in
+                                textFieldConfiguration(textField: textField)
+                                    .frame(
+                                        width: calculateTextWidth(text: text, placeholder: placeholder, proxy: proxy),
+                                        height: textTypography.lineHeight,
+                                        debug: debugConfiguration.textField
+                                    )
+                            }
+                        )
+
+                        if showSuffixOrPrefix {
+                            textAfterView
+                                .padding(.top, size.textInputPaddings.top)
+                                .padding(.bottom, size.textInputPaddings.bottom)
+                                .padding(.leading, size.textAfterLeadingPadding)
+                                .padding(.trailing, size.textAfterTrailingPadding)
                         }
                     }
-                    .accentColor(appearance.cursorColor.color(for: colorScheme))
-                    .typography(textTypography)
-                    .frame(height: textTypography.lineHeight, debug: debugConfiguration.textField)
-                    .foregroundColor(textColor)
-                    .multilineTextAlignment(appearance.inputTextAlignment)
-                    .padding(size.textInputPaddings, debug: debugConfiguration.textField)
+                    
+                    if shouldCenterText {
+                        Spacer()
+                    }
+                }
             }
-        )
+        case .multiple:
+            PlaceholderTextField(
+                text: $text,
+                isFocused: $isFocused,
+                placeholder: placeholder,
+                placeholderColor: placeholderColor,
+                placeholderTypography: textTypography, 
+                placeholderBeforeContent: {},
+                placeholderAfterContent: { placeholderIndicator },
+                onEditingChanged: { focused in
+                    isFocused = focused
+                },
+                textFieldConfiguration: { textField in
+                    textFieldConfiguration(textField: textField)
+                        .frame(height: textTypography.lineHeight, debug: debugConfiguration.textField)
+                }
+            )
+        }
     }
-
+    
+    @ViewBuilder
+    private func textFieldConfiguration(textField: FocusableTextField) -> some View {
+        textField
+            .accentColor(appearance.cursorColor.color(for: colorScheme))
+            .typography(textTypography)
+            .foregroundColor(textColor)
+            .multilineTextAlignment(appearance.inputTextAlignment)
+            .padding(size.textInputPaddings, debug: debugConfiguration.textField)
+            .onChange(of: text) { newText in
+                if readOnly  {
+                    self.text = oldText
+                } else {
+                    self.oldText = newText
+                }
+                if newText != self.value.text {
+                    self.value = self.value.updated(with: newText)
+                }
+            }
+            .onChange(of: value) { newValue in
+                guard !readOnly else {
+                    return
+                }
+                self.text = newValue.text
+            }
+    }
+        
+    @ViewBuilder
+    private var textBeforeView: some View {
+        if textBefore.isEmpty || displayChips {
+            EmptyView()
+        } else {
+            Text(textBefore)
+                .typography(textBeforeTypography)
+                .frame(height: textTypography.lineHeight)
+                .foregroundColor(appearance.textBeforeColor.color(for: colorScheme))
+        }
+    }
+    
+    @ViewBuilder
+    private var textAfterView: some View {
+        if textAfter.isEmpty || displayChips {
+            EmptyView()
+        } else {
+            Text(textAfter)
+                .typography(textAfterTypography)
+                .frame(height: textTypography.lineHeight)
+                .foregroundColor(appearance.textAfterColor.color(for: colorScheme))
+        }
+    }
+    
     @ViewBuilder
     private var fieldView: some View {
         ZStack(alignment: .leading) {
@@ -352,7 +501,7 @@ public struct SDDSTextField: View {
                 innerOptionalTitleView
             }
         }
-        .padding(.bottom, size.titleInnerPadding, debug: debugConfiguration.innerTitle)
+        .padding([.top, .bottom], size.titleInnerPadding, debug: debugConfiguration.innerTitle)
     }
 
     @ViewBuilder
@@ -392,7 +541,7 @@ public struct SDDSTextField: View {
         if let leftView = iconViewProvider?.view {
             leftView
                 .foregroundColor(textColor)
-                .frame(width: min(size.iconSize.width, size.fieldHeight), height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
+                .frame(width: iconViewWidth, height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
                 .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
         } else {
             EmptyView()
@@ -403,7 +552,7 @@ public struct SDDSTextField: View {
     private var iconActionView: some View {
         if let rightView = iconActionViewProvider?.view {
             rightView
-                .frame(width: min(size.iconActionSize.width, size.fieldHeight), height: min(size.iconActionSize.height, size.fieldHeight), debug: debugConfiguration.iconAction)
+                .frame(width: iconActionViewWidth, height: min(size.iconActionSize.height, size.fieldHeight), debug: debugConfiguration.iconAction)
                 .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {
             EmptyView()
@@ -428,7 +577,7 @@ public struct SDDSTextField: View {
     }
 
     @ViewBuilder
-    private var placeholderContent: some View {
+    private var placeholderIndicator: some View {
         if showNoneTitleIndicatorForClearLayout {
             indicator
         } else {
@@ -452,6 +601,44 @@ public struct SDDSTextField: View {
     }
 
     // MARK: - Computed Properties for Conditions
+    
+    private func calculateTextWidth(text: String, placeholder: String, proxy: GeometryProxy) -> CGFloat {
+        let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
+        if displayChips {
+            if !text.isEmpty {
+                return textSize.width + size.textHorizontalPadding
+            } else {
+                let placeholderSize = (placeholder as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
+                return placeholderSize.width
+            }
+        }
+        
+        var maxWidth = proxy.size.width
+        maxWidth -= size.textInputPaddings.leading + size.textInputPaddings.trailing
+        if !textBefore.isEmpty && !displayChips {
+            let textBeforeSize = (textBefore as NSString).size(withAttributes: [NSAttributedString.Key.font: textBeforeTypography.uiFont])
+            maxWidth -= (textBeforeSize.width + size.textHorizontalPadding)
+            maxWidth -= (size.textBeforeLeadingPadding + size.textBeforeTrailingPadding)
+        }
+        if !textAfter.isEmpty && !displayChips {
+            let textBeforeSize = (textAfter as NSString).size(withAttributes: [NSAttributedString.Key.font: textAfterTypography.uiFont])
+            maxWidth -= (textBeforeSize.width + size.textHorizontalPadding)
+            maxWidth -= (size.textAfterLeadingPadding + size.textAfterTrailingPadding)
+        }
+        
+        return min(
+            textSize.width + size.textHorizontalPadding,
+            maxWidth
+        )
+    }
+    
+    private var iconActionViewWidth: CGFloat {
+        min(size.iconActionSize.width, size.fieldHeight)
+    }
+    
+    private var iconViewWidth: CGFloat {
+        min(size.iconSize.width, size.fieldHeight)
+    }
 
     private var indicatorYOffset: CGFloat {
         size.indicatorYOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout)
@@ -511,6 +698,14 @@ public struct SDDSTextField: View {
         requiredPlacement == .right &&
         !isFocused
     }
+    
+    private var shouldCenterText: Bool {
+        return labelPlacement == .outer || labelPlacement == .none || !shouldShowInnerTitle
+    }
+    
+    private var showSuffixOrPrefix: Bool {
+        !text.isEmpty && !displayChips
+    }
 
     private var displayChips: Bool {
         switch value {
@@ -536,12 +731,12 @@ public struct SDDSTextField: View {
             switch chipSize.borderStyle {
             case .default(let radius):
                 return radius
-            case .rounded:
+            case .pilled:
                 return chipSize.height / 2
             }
         }
     }
-
+    
     private let textFieldIdentifier = "TextField"
 
     private var titleTypography: TypographyToken {
@@ -567,6 +762,20 @@ public struct SDDSTextField: View {
 
     private var textTypography: TypographyToken {
         guard let typography = appearance.textTypography.typography(with: size) else {
+            fatalError("Undefined Text Typography for size \(size).")
+        }
+        return typography
+    }
+    
+    private var textBeforeTypography: TypographyToken {
+        guard let typography = appearance.textBeforeTypography.typography(with: size) else {
+            fatalError("Undefined Text Typography for size \(size).")
+        }
+        return typography
+    }
+    
+    private var textAfterTypography: TypographyToken {
+        guard let typography = appearance.textAfterTypography.typography(with: size) else {
             fatalError("Undefined Text Typography for size \(size).")
         }
         return typography

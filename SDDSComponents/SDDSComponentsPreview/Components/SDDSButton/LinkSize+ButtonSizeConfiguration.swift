@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 import SwiftUI
 
-enum LinkSize: String, CaseIterable {
+public enum LinkSize: String, CaseIterable {
     case large
     case medium
     case small
@@ -10,42 +10,42 @@ enum LinkSize: String, CaseIterable {
     case extraExtraSmall
 }
 
-extension LinkSize {
+public extension LinkSize {
     var buttonSize: ButtonSize {
         return ButtonSize(rawValue: self.rawValue) ?? .medium
     }
 }
 
 extension LinkSize: ButtonSizeConfiguration {
-    var height: CGFloat {
+    public var height: CGFloat {
         buttonSize.height
     }
     
-    var cornerRadius: CGFloat {
+    public var cornerRadius: CGFloat {
         0
     }
     
-    var paddings: EdgeInsets {
+    public var paddings: EdgeInsets {
         buttonSize.paddings.zeroLateral
     }
     
-    var iconSize: CGSize {
+    public var iconSize: CGSize {
         buttonSize.iconSize
     }
     
-    var spinnerSize: CGSize {
+    public var spinnerSize: CGSize {
         buttonSize.spinnerSize
     }
     
-    var iconHorizontalGap: CGFloat {
+    public var iconHorizontalGap: CGFloat {
         buttonSize.iconHorizontalGap
     }
     
-    var titleHorizontalGap: CGFloat {
+    public var titleHorizontalGap: CGFloat {
         buttonSize.titleHorizontalGap
     }
     
-    var debugDescription: String {
+    public var debugDescription: String {
         "LinkSize"
     }
 }

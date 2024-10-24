@@ -13,4 +13,8 @@ public extension View {
     @ViewBuilder func hiddenIf(_ condition: @autoclosure () -> Bool) -> some View {
         applyIf(condition(), transform: { $0.hidden() })
     }
+    
+    @ViewBuilder func apply<Content: View>(transform: (Self) -> Content) -> some View {
+        transform(self)
+    }
 }

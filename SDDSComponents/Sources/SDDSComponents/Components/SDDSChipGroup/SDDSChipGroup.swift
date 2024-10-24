@@ -17,14 +17,14 @@ import SwiftUI
  */
 public struct ChipData: Hashable {
     let id = UUID()
-    let title: String
-    let isEnabled: Bool
-    let iconImage: Image?
-    let buttonImage: Image?
-    let appearance: ChipAppearance
-    let size: ChipSizeConfiguration
-    let accessibility: ChipAccessibility
-    let removeAction: () -> Void
+    public let title: String
+    public let isEnabled: Bool
+    public let iconImage: Image?
+    public let buttonImage: Image?
+    public let appearance: ChipAppearance
+    public let size: ChipSizeConfiguration
+    public let accessibility: ChipAccessibility
+    public let removeAction: () -> Void
     
     public init(title: String, isEnabled: Bool, iconImage: Image?, buttonImage: Image?, appearance: ChipAppearance, size: ChipSizeConfiguration, accessibility: ChipAccessibility, removeAction: @escaping () -> Void) {
         self.title = title
