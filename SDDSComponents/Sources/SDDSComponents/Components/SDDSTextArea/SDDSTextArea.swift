@@ -214,7 +214,7 @@ public struct SDDSTextArea: View {
         HStack(alignment: .center, spacing: 0) {
             mainTitleView
 
-            if !optionalTitle.isEmpty {
+            if !optionalTitle.isEmpty && !required {
                 optionalTitleView
             }
             if shouldShowRequiredIndicatorAfterTitle {

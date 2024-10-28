@@ -223,7 +223,7 @@ public struct SDDSTextField: View {
         HStack(alignment: .center, spacing: 0) {
             mainTitleView
 
-            if !optionalTitle.isEmpty {
+            if !optionalTitle.isEmpty && !required {
                 optionalTitleView
             }
             if shouldShowRequiredIndicatorAfterTitle {
