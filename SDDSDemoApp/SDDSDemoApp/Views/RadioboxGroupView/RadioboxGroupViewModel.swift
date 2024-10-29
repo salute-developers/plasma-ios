@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 final class RadioboxGroupViewModel: ObservableObject {
     @Published var radioboxViewModels: [RadioboxItemViewModel]

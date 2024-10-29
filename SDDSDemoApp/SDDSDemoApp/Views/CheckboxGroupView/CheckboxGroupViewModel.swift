@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 final class CheckboxGroupViewModel: ObservableObject {
     @Published var checkboxViewModels: [CheckboxItemViewModel]

@@ -13,7 +13,7 @@ import Foundation
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
 public struct ChipAppearance: Hashable {
-    let id = UUID()
+    public let id = UUID()
     public let titleColor: ColorToken
     public let titleTypography: TypographyConfiguration
     public let imageTintColor: ColorToken

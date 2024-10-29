@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSComponentsPreview
+import SDDSComponents
 import Combine
 import SDDSComponents
 import PhotosUI
@@ -96,7 +96,7 @@ struct AvatarView: View {
                     Spacer()
                     Picker("Appearance", selection: $viewModel.appearance) {
                         ForEach(AvatarAppearance.allCases, id: \.self) { appearance in
-                            Text(appearance.name).tag(appearance)
+                            Text(appearance.name).tag(appearance.id)
                         }
                     }
                 }

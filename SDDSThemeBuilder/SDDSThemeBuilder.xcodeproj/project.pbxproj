@@ -155,7 +155,6 @@
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
 		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
-		819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81BC36762C58E46000A363D0 /* SDDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36752C58E46000A363D0 /* SDDSTheme */; };
 		81BC36782C58E4B300A363D0 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36772C58E4B300A363D0 /* SDDSThemeCore */; };
 		81BC36862C591D6F00A363D0 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36852C591D6F00A363D0 /* SDDSThemeUtilities */; };
@@ -265,17 +264,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				817539712BD0078700138866 /* SDDSThemeBuilderCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		819CB8062C7CCC4D00B4FBF4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1156,7 +1144,6 @@
 				8180A57D2C11C01C00009AF5 /* Sources */,
 				8180A57E2C11C01C00009AF5 /* Frameworks */,
 				8180A57F2C11C01C00009AF5 /* Resources */,
-				819CB8062C7CCC4D00B4FBF4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1389,7 +1376,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ../scripts/build_xcframeworks.rb -d . -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore\n";
+			shellScript = "ruby ../scripts/build_xcframeworks.rb -d . -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore,SDDSThemeUtilities\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

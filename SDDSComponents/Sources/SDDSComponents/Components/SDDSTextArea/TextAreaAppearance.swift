@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
-import SDDSThemeCore
-import SDDSServTheme
+@_exported import SDDSThemeCore
+@_exported import SDDSservTheme
 
 public struct TextAreaAppearance {
     public let id = UUID()

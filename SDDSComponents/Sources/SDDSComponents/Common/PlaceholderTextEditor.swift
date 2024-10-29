@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
-import SDDSThemeCore
-import SDDSComponents
+@_exported import SDDSThemeCore
+
 
 struct PlaceholderTextEditor: View {
     @Binding var text: String

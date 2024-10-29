@@ -1,8 +1,8 @@
 import SwiftUI
-import SDDSComponentsPreview
+import SDDSComponents
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class ChipViewModel: ObservableObject {
     @Published var title: String = "Chip Title"
@@ -35,7 +35,7 @@ extension SDDSChipSize: CaseIterable {
         [.large(.default(8)), .medium(.default(8)), .small(.default(8)), .extraSmall(.default(8))]
     }
 
-    public var debugDescription: String {
+    public var id: String {
         switch self {
         case .large:
             return "Large"

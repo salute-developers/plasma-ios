@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSComponentsPreview
+import SDDSComponents
 import Combine
 import SDDSComponents
 

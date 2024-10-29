@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: View, PlaceholderBeforeContent: View>: View {
     @Binding var text: String

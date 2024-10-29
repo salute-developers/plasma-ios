@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 final class ProgressBarViewModel: ObservableObject {
     // MARK: - Progress Bar Properties

@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 struct ExpandingTextEditor: UIViewRepresentable {
     @Binding var text: String

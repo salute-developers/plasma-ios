@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 struct ButtonView: View {
     @ObservedObject private var viewModel: ButtonViewModel

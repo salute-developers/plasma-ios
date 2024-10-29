@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 public struct TextFieldAppearance {
     let id = UUID()

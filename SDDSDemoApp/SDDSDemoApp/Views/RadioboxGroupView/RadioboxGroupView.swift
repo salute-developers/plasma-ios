@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 struct RadioboxGroupView: View {
     @ObservedObject private var viewModel: RadioboxGroupViewModel

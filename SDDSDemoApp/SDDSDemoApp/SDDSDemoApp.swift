@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSServTheme
+import SDDSservTheme
 
 @main
 struct SDDSDemoApp: App {

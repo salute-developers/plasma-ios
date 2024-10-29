@@ -6,9 +6,10 @@ require_relative 'common' # Подключаем общий файл
 
 def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
   print_info "Корневая директория проекта: #{project_root_dir}"
-  
+
+  # Добавляем SDDSComponentsPreview в список модулей, если он не указан пользователем
   if modules.empty?
-      modules = ['SDDSComponents', 'SDDSIcons', 'SDDSCore']
+    modules = ['SDDSComponents', 'SDDSIcons']
   end
 
   if workspace_name
@@ -31,7 +32,7 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
   print_info "Сборка XCFramework для всех модулей..."
   modules.each do |scheme|
     print_info "Сборка XCFramework для схемы #{scheme}"
-    
+
     print_info "Создание архива для устройства iOS..."
     ios_archive_path = File.join(build_path, "#{scheme}-iphoneos.xcarchive")
     if workspace_name
@@ -61,6 +62,7 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
 
   print_success "Все сборки успешно завершены"
 end
+
 
 # Парсинг аргументов командной строки для корневой директории проекта, workspace, проекта и модулей
 options = {}

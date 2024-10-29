@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
-import SDDSComponentsPreview
+import SDDSComponents
 
 final class CheckboxViewModel: ObservableObject {
     // MARK: - Checkbox Properties

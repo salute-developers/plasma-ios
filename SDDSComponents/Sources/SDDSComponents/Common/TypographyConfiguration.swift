@@ -13,7 +13,12 @@ public struct TypographyConfiguration {
 
     public init<T: GeneralTypographyConfiguration>(_ configuration: T) {
         applyTypography = { size in
-            guard let size = size as? T.Size else { return nil }
+            guard let size = size as? T.Size 
+            else { 
+                print("Can't cast size \(size)")
+                return nil
+            }
+            
             return configuration.typography(with: size)
         }
     }

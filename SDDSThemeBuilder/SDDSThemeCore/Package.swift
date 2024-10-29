@@ -9,6 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "SDDSThemeCore",
+            type: .dynamic,
             targets: ["SDDSThemeCore"]),
     ],
     dependencies: [

@@ -1,5 +1,5 @@
 import Foundation
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 public enum FillStyle {
     case color(ColorToken)

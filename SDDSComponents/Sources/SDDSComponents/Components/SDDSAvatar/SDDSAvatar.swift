@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 // MARK: - SDDSAvatar
 
@@ -191,7 +191,7 @@ public protocol AvatarSizeConfiguration {
     - textTypography: Типографика текста.
  */
 public struct AvatarAppearance: Hashable {
-    let id = UUID()
+    public let id = UUID()
     public let textFillStyle: FillStyle
     public let backgroundFillStyle: FillStyle
     public let backgroundOpacity: CGFloat

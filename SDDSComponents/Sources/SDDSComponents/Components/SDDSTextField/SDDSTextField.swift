@@ -1,6 +1,5 @@
 import SwiftUI
-import SDDSThemeCore
-import SDDSComponents
+@_exported import SDDSThemeCore
 
 // MARK: - Enums and Configurations
 

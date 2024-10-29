@@ -1,8 +1,8 @@
 import SwiftUI
-import SDDSComponentsPreview
+import SDDSComponents
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 struct ChipView: View {
     @ObservedObject private var viewModel: ChipViewModel
@@ -41,7 +41,7 @@ struct ChipView: View {
 
                 Picker("Size", selection: $viewModel.size) {
                     ForEach(SDDSChipSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size)
+                        Text(size.id).tag(size.id)
                     }
                 }
 
@@ -52,7 +52,7 @@ struct ChipView: View {
 
                 Picker("Appearance", selection: $viewModel.appearance) {
                     ForEach(ChipAppearance.allCases, id: \.self) { appearance in
-                        Text(appearance.name).tag(appearance)
+                        Text(appearance.name).tag(appearance.id)
                     }
                 }
             }
