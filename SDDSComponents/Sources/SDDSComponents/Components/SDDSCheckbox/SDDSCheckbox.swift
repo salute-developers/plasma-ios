@@ -47,10 +47,11 @@ public struct CheckboxData: Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id.uuidString)
+        hasher.combine(state.wrappedValue.rawValue)
     }
     
     public static func == (lhs: CheckboxData, rhs: CheckboxData) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id && lhs.state.wrappedValue == rhs.state.wrappedValue
     }
 }
 

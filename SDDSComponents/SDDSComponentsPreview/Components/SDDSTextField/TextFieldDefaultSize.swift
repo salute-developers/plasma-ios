@@ -254,7 +254,3 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
         String(reflecting: self)
     }
 }
-
-#Preview {
-    SDDSTextFieldPreview.previews
-}

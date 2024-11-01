@@ -2,13 +2,16 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
-struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: View, PlaceholderBeforeContent: View>: View {
+struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: View, PlaceholderContent: View, PlaceholderBeforeContent: View>: View {
     @Binding var text: String
     @Binding var isFocused: Bool
-    let placeholder: String
-    let placeholderColor: Color
-    let placeholderTypography: TypographyToken
+    let textColor: Color
+    let textAlignment: TextAlignment
+    let cursorColor: Color
+    let textTypography: TypographyToken
+    let readOnly: Bool
     @ViewBuilder var placeholderBeforeContent: () -> PlaceholderBeforeContent
+    @ViewBuilder var placeholderContent: () -> PlaceholderContent
     @ViewBuilder var placeholderAfterContent: () -> PlaceholderAfterContent
     
     let onEditingChanged: ((Bool) -> Void)
@@ -19,15 +22,23 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
             if text.isEmpty {
                 HStack(spacing: 0) {
                     placeholderBeforeContent()
-                    Text(placeholder)
-                        .typography(placeholderTypography)
-                        .foregroundColor(placeholderColor)
+                    placeholderContent()
                     placeholderAfterContent()
                 }
             }
             textFieldConfiguration(
-                FocusableTextField(text: $text, isFocused: $isFocused, onEditingChanged: onEditingChanged)
+                FocusableTextField(
+                    text: $text,
+                    isFocused: $isFocused,
+                    textColor: textColor,
+                    textAlignment: textAlignment,
+                    cursorColor: cursorColor,
+                    typography: textTypography,
+                    readOnly: readOnly,
+                    onEditingChanged: onEditingChanged
+                )
             )
+            .id(readOnly)
         }
     }
 }

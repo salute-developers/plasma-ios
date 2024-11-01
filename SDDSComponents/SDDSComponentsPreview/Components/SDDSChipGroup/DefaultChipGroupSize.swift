@@ -11,9 +11,9 @@ import SDDSComponents
     - maxColumns: Максимальное количество столбцов в ряду.
     - alignment: Выравнивание группы чипов.
  */
-public struct DefaultChipGroupSize: ChipGroupSizeConfiguration {
+public struct DefaultChipGroupSize: ChipGroupSizeConfiguration, Hashable {
     public var debugDescription: String {
-        String(reflecting: self)
+        alignment.rawValue
     }
     
     public var insets: EdgeInsets {
@@ -28,5 +28,13 @@ public struct DefaultChipGroupSize: ChipGroupSizeConfiguration {
     
     public init(alignment: ChipGroupAlignment = .center) {
         self.alignment = alignment
+    }
+    
+    public static var allCases: [DefaultChipGroupSize] {
+        [.init(alignment: .center), .init(alignment: .left), .init(alignment: .right), .init(alignment: .decreasingLeft), .init(alignment: .decreasingRight)]
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(alignment)
     }
 }

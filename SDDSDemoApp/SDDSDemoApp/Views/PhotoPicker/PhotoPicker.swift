@@ -3,7 +3,6 @@ import PhotosUI
 import UIKit
 
 struct PhotoPicker: UIViewControllerRepresentable {
-    var isPlaceholder: Bool
     @ObservedObject var viewModel: AvatarViewModel
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
@@ -41,9 +40,11 @@ struct PhotoPicker: UIViewControllerRepresentable {
                     return
                 }
                 DispatchQueue.main.async {
-                    if self.parent.isPlaceholder {
+                    if self.parent.viewModel.isPlaceholder {
+                        self.parent.viewModel.image = nil
                         self.parent.viewModel.placeholderImage = .image(Image(uiImage: uiImage))
                     } else {
+                        self.parent.viewModel.placeholderImage = nil
                         self.parent.viewModel.image = .image(Image(uiImage: uiImage))
                     }
                 }

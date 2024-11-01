@@ -118,7 +118,6 @@ public struct SDDSTextField: View {
 
     @Environment(\.colorScheme) private var colorScheme
     @State private var isFocused: Bool = false
-    @State private var oldText: String
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
@@ -148,8 +147,7 @@ public struct SDDSTextField: View {
         case .multiple(let text, _):
             _text = State(wrappedValue: text)
         }
-        _oldText = _text
-        
+    
         _value = value
         self.caption = caption
         self.textBefore = textBefore
@@ -223,7 +221,7 @@ public struct SDDSTextField: View {
         HStack(alignment: .center, spacing: 0) {
             mainTitleView
 
-            if !optionalTitle.isEmpty {
+            if !optionalTitle.isEmpty && !required {
                 optionalTitleView
             }
             if shouldShowRequiredIndicatorAfterTitle {
@@ -333,11 +331,16 @@ public struct SDDSTextField: View {
                         PlaceholderTextField(
                             text: $text, 
                             isFocused: $isFocused,
-                            placeholder: placeholder,
-                            placeholderColor: placeholderColor,
-                            placeholderTypography: textTypography,
+                            textColor: textColor,
+                            textAlignment: appearance.inputTextAlignment,
+                            cursorColor: appearance.cursorColor.color(for: colorScheme),
+                            textTypography: textTypography,
+                            readOnly: readOnly,
                             placeholderBeforeContent: {
                                 textBeforeView
+                            },
+                            placeholderContent: {
+                                placeholderView
                             },
                             placeholderAfterContent: {
                                 HStack(spacing: 0) {
@@ -376,10 +379,13 @@ public struct SDDSTextField: View {
             PlaceholderTextField(
                 text: $text,
                 isFocused: $isFocused,
-                placeholder: placeholder,
-                placeholderColor: placeholderColor,
-                placeholderTypography: textTypography, 
+                textColor: textColor,
+                textAlignment: appearance.inputTextAlignment,
+                cursorColor: appearance.cursorColor.color(for: colorScheme),
+                textTypography: textTypography,
+                readOnly: readOnly,
                 placeholderBeforeContent: {},
+                placeholderContent: { placeholderView },
                 placeholderAfterContent: { placeholderIndicator },
                 onEditingChanged: { focused in
                     isFocused = focused
@@ -395,16 +401,10 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private func textFieldConfiguration(textField: FocusableTextField) -> some View {
         textField
-            .accentColor(appearance.cursorColor.color(for: colorScheme))
-            .typography(textTypography)
-            .foregroundColor(textColor)
-            .multilineTextAlignment(appearance.inputTextAlignment)
             .padding(size.textInputPaddings, debug: debugConfiguration.textField)
             .onChange(of: text) { newText in
-                if readOnly  {
-                    self.text = oldText
-                } else {
-                    self.oldText = newText
+                guard !readOnly else {
+                    return
                 }
                 if newText != self.value.text {
                     self.value = self.value.updated(with: newText)
@@ -416,6 +416,38 @@ public struct SDDSTextField: View {
                 }
                 self.text = newValue.text
             }
+    }
+    
+    @ViewBuilder
+    private var placeholderView: some View {
+        if placeholder.isEmpty && labelPlacement == .inner && !displayChips {
+            HStack(spacing: 0) {
+                if !title.isEmpty {
+                    Text(title)
+                        .typography(textTypography)
+                        .foregroundColor(placeholderColor)
+                }
+                if !optionalTitle.isEmpty {
+                    innerOrNonePlacementOptionalTitleView
+                }
+            }
+        } else {
+            HStack(spacing: 0) {
+                Text(placeholder)
+                    .typography(textTypography)
+                    .foregroundColor(placeholderColor)
+                if !optionalTitle.isEmpty && labelPlacement == .none {
+                    innerOrNonePlacementOptionalTitleView
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var innerOrNonePlacementOptionalTitleView: some View {
+        Text(" \(optionalTitle)")
+            .typography(textTypography)
+            .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
     }
         
     @ViewBuilder
@@ -483,7 +515,7 @@ public struct SDDSTextField: View {
             .strokeBorder(appearance.borderColor(for: style).color(for: colorScheme), lineWidth: size.borderWidth)
             .background(
                 RoundedRectangle(cornerRadius: size.cornerRadius)
-                    .fill(appearance.backgroundColor(for: style, isFocused: isFocused).color(for: colorScheme))
+                    .fill(backgroundColor)
             )
             .frame(height: size.fieldHeight, debug: debugConfiguration.fieldView)
     }
@@ -511,7 +543,17 @@ public struct SDDSTextField: View {
             .frame(height: size.lineWidth, debug: debugConfiguration.fieldView)
     }
     
+    private var backgroundColor: Color {
+        if readOnly {
+            appearance.backgroundColorDefault.color(for: colorScheme)
+        }
+        return appearance.backgroundColor(for: style, isFocused: isFocused, readOnly: readOnly).color(for: colorScheme)
+    }
+    
     private var captionColor: Color {
+        if readOnly {
+            return appearance.captionColorDefault.color(for: colorScheme)
+        }
         return appearance.captionColor(for: isFocused ? .default : style).color(for: colorScheme)
     }
     
@@ -651,7 +693,8 @@ public struct SDDSTextField: View {
     private var shouldShowInnerTitle: Bool {
         labelPlacement == .inner &&
         !displayChips &&
-        appearance.innerTitleTypography.typography(with: size) != nil
+        appearance.innerTitleTypography.typography(with: size) != nil &&
+        !placeholder.isEmpty
     }
 
     private var shouldShowIndicatorForInnerLabelDefaultLayout: Bool {

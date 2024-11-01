@@ -31,7 +31,7 @@ extension AvatarTypography {
             extraExtraLarge: Typographies.headerH2Bold.typography,
             large: Typographies.headerH4Bold.typography,
             medium: Typographies.headerH5Bold.typography,
-            small: Typographies.headerH5Bold.typography
+            small: Typographies.textXsBold.typography
         ).asContainer
     }
 }

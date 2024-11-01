@@ -12,7 +12,7 @@ final class RadioboxViewModel: ObservableObject {
     @Published var size: SelectionControlSizeConfiguration = SDDSRadioboxSize.medium
     @Published var appearance: RadioboxAppearance = .default
     
-    @Published var tintColor: ColorStyle = .green
+    @Published var tintColor: ColorStyle = .none
     @Published var imageWidth: CGFloat = 20
     @Published var imageHeight: CGFloat = 20
     @Published var horizontalGap: CGFloat = 8
@@ -28,7 +28,7 @@ final class RadioboxViewModel: ObservableObject {
     private func observeColors() {
         $tintColor
             .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .default
+                self?.appearance = self?.appearance.withTintColor(style == .none ? nil : style.color.token) ?? .default
             }
             .store(in: &cancellables)
     }
@@ -61,7 +61,7 @@ struct CustomRadioboxSize: SelectionControlSizeConfiguration {
 
 // Extension for Appearance to update colors
 extension RadioboxAppearance {
-    func withTintColor(_ color: ColorToken) -> RadioboxAppearance {
+    func withTintColor(_ color: ColorToken?) -> RadioboxAppearance {
         .init(
             titleTypography: titleTypography,
             subtitleTypography: subtitleTypography,
