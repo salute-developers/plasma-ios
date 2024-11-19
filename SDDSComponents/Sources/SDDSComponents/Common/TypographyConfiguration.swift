@@ -28,3 +28,15 @@ public extension GeneralTypographyConfiguration {
         TypographyConfiguration(self)
     }
 }
+
+public extension TypographyConfiguration {
+    static var `default`: TypographyConfiguration {
+        return DefaultTypography().asContainer
+    }
+}
+
+public struct DefaultTypography: GeneralTypographyConfiguration {
+    public func typography(with size: SizeConfiguration) -> TypographyToken? {
+        return .undefined
+    }
+}

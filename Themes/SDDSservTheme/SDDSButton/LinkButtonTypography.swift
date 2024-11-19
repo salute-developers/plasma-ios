@@ -2,7 +2,7 @@ import Foundation
 import SDDSServTheme
 import SDDSComponents
 
-struct ButtonTypography: GeneralTypographyConfiguration {
+public struct LinkButtonTypography: GeneralTypographyConfiguration {
     typealias S = ButtonSizeConfiguration
     
     let large: TypographyToken?
@@ -25,8 +25,8 @@ struct ButtonTypography: GeneralTypographyConfiguration {
      - Parameter size: Размер кнопки.
      - Returns: Типографика для заданного размера кнопки или nil, если не задана.
      */
-    func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
-        switch size as? ButtonSize {
+    public func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
+        switch size as? LinkButtonSize {
         case .large:
             return large
         case .medium:

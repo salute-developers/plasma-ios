@@ -3,338 +3,13 @@ import SwiftUI
 import Combine
 @_exported import SDDSThemeCore
 
-/**
- `ButtonStyle` определяет стили кнопки, такие как базовая, квадратная или круглая.
-
- - Cases:
-    - basic: Базовый стиль кнопки.
-    - square: Кнопка квадратной формы.
-    - circle: Кнопка круглой формы.
- */
-public enum ButtonStyle: String, CaseIterable {
-    /// Базовый стиль кнопки.
-    case basic
-    
-    /// Кнопка квадратной формы.
-    case square
-    
-    /// Кнопка круглой формы.
-    case circle
-}
-
-
-/**
- `Alignment` определяет выравнивание иконки внутри кнопки.
-
- - Cases:
-    - left: Иконка выравнивается по левому краю.
-    - right: Иконка выравнивается по правому краю.
- */
-public enum Alignment: String, CaseIterable {
-    /**
-     Иконка выравнивается по левому краю.
-     */
-    case left
-    
-    /**
-     Иконка выравнивается по правому краю.
-     */
-    case right
-}
-
-/**
- `SpinnerStyle` определяет стиль спиннера загрузки внутри кнопки.
-
- - Cases:
-    - solid: Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
-    - transparent: Спиннер прозрачный, оставляет содержимое кнопки полупрозрачным во время загрузки.
- */
-public enum SpinnerStyle: String, CaseIterable {
-    /**
-     Спиннер сплошной, скрывает содержимое кнопки во время загрузки.
-     */
-    case solid
-    
-    /**
-     Спиннер прозрачный, оставляет содержимое кнопки полупрозрачным во время загрузки.
-     */
-    case transparent
-}
-
-/**
- `ButtonLayoutMode` определяет различные режимы макета для кнопки.
-
- - Cases:
-    - wrapContent: Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
-    - fixedWidth: Кнопка имеет фиксированную ширину с выравниванием содержимого (центрированное или бок о бок).
-    - square: Кнопка имеет квадратную форму, где высота равна ширине.
-    - circle: Кнопка имеет круглую форму, где высота равна ширине.
-
- - Properties:
-    - isCentered: Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
-    - isSideBySide: Возвращает true, если содержимое кнопки должно быть расположено бок о бок (для режима fixedWidth с выравниванием бок о бок).
-    - title: Возвращает строку, представляющую название режима макета.
- */
-public enum ButtonLayoutMode: CaseIterable, Hashable {
-    /**
-     Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
-     */
-    case wrapContent
-    
-    /**
-     Кнопка имеет фиксированную ширину с выравниванием содержимого (центрированное или бок о бок).
-     
-     - Parameters:
-        - alignment: Выравнивание содержимого внутри фиксированной ширины (центрированное или бок о бок).
-     */
-    case fixedWidth(ButtonContentAlignment)
-    
-    /**
-     Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
-     */
-    var isCentered: Bool {
-        switch self {
-        case .wrapContent:
-            return false
-        case .fixedWidth(let alignment):
-            return alignment == .packed
-        }
-    }
-    
-    /**
-     Возвращает true, если содержимое кнопки должно быть расположено бок о бок (для режима fixedWidth с выравниванием бок о бок).
-     */
-    var isSideBySide: Bool {
-        switch self {
-        case .wrapContent:
-            return false
-        case .fixedWidth(let alignment):
-            return alignment == .spaceBetween
-        }
-    }
-    
-    /**
-     Возвращает строку, представляющую название режима макета.
-     */
-    public var title: String {
-        switch self {
-        case .wrapContent:
-            return "Wrap Content"
-        case .fixedWidth(let alignment):
-            switch alignment {
-            case .packed:
-                return "Packed"
-            case .spaceBetween:
-                return "Space Between"
-            }
-        }
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(title)
-    }
-    
-    /**
-     Все возможные случаи `ButtonLayoutMode`.
-     */
-    public static var allCases: [ButtonLayoutMode] {
-        return [.wrapContent, .fixedWidth(.packed), .fixedWidth(.spaceBetween)]
-    }
-}
-
-/**
- `ButtonContentAlignment` определяет выравнивание содержимого внутри кнопки с фиксированной шириной.
-
- - Cases:
-    - centered: Содержимое кнопки выравнивается по центру.
-    - sideBySide: Содержимое кнопки выравнивается бок о бок.
- */
-public enum ButtonContentAlignment {
-    /**
-     Содержимое кнопки выравнивается по центру.
-     */
-    case packed
-    
-    /**
-     Содержимое кнопки выравнивается по бокам (по левому и правому краю) .
-     */
-    case spaceBetween
-}
-
-
-/**
- `ButtonIconAttributes` содержит атрибуты иконки для кнопки.
-
- - Properties:
-    - image: Изображение иконки, которое будет отображаться на кнопке.
-    - alignment: Выравнивание иконки (левое или правое), определяемое `Alignment`.
- */
-public struct ButtonIconAttributes {
-    /**
-     Изображение иконки, которое будет отображаться на кнопке.
-     */
-    public let image: Image
-    
-    /**
-     Выравнивание иконки (левое или правое), определяемое `Alignment`.
-     */
-    public let alignment: Alignment
-    
-    /**
-     Инициализатор для создания атрибутов иконки кнопки.
-     
-     - Parameters:
-        - image: Изображение иконки.
-        - alignment: Выравнивание иконки.
-     */
-    public init(image: Image, alignment: Alignment) {
-        self.image = image
-        self.alignment = alignment
-    }
-}
-
-/**
- `ButtonAppearance` содержит стилистические атрибуты для кнопки, включая типографику и цвета.
-
- - Properties:
-    - titleTypography: Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
-    - titleColor: Цвет заголовка кнопки, определяемый `ColorToken`.
-    - subtitleTypography: Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
-    - subtitleColor: Цвет подзаголовка кнопки, определяемый `ColorToken`.
-    - iconColor: Цвет иконки кнопки, определяемый `ColorToken`.
-    - spinnerColor: Цвет спиннера загрузки, определяемый `ColorToken`.
-    - backgroundColor: Цвет фона кнопки, определяемый `ColorToken`.
-
- - Methods:
-    - init(titleTypography: ButtonTypography, titleColor: ColorToken, subtitleTypography: ButtonTypography, subtitleColor: ColorToken, iconColor: ColorToken, spinnerColor: ColorToken, backgroundColor: ColorToken): Инициализирует стили кнопки с указанными параметрами.
- */
-public struct ButtonAppearance {
-    /**
-     Типографика для заголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
-     */
-    public let titleTypography: TypographyConfiguration
-    
-    /**
-     Цвет заголовка кнопки, определяемый `ColorToken`.
-     */
-    public let titleColor: ColorToken
-    
-    /**
-     Типографика для подзаголовка кнопки, определяемая `TypographyToken` для каждого размера кнопки.
-     */
-    public let subtitleTypography: TypographyConfiguration
-    
-    /**
-     Цвет подзаголовка кнопки, определяемый `ColorToken`.
-     */
-    public let subtitleColor: ColorToken
-    
-    /**
-     Цвет иконки кнопки, определяемый `ColorToken`.
-     */
-    public let iconColor: ColorToken
-    
-    /**
-     Цвет спиннера загрузки, определяемый `ColorToken`.
-     */
-    public let spinnerColor: ColorToken
-    
-    /**
-     Цвет фона кнопки, определяемый `ColorToken`.
-     */
-    public let backgroundColor: ColorToken
-    
-    /**
-     Прозрачность кнопки в выключенном состоянии.
-     */
-    public let disabledAlpha: CGFloat
-    
-    /**
-     Прозрачность кнопки в состоянии загрузки.
-     */
-    public let loadingAlpha: CGFloat
-    
-    /**
-     Инициализатор для создания стиля кнопки с указанными параметрами.
-     
-     - Parameters:
-        - titleTypography: Типографика для заголовка кнопки.
-        - titleColor: Цвет заголовка кнопки.
-        - subtitleTypography: Типографика для подзаголовка кнопки.
-        - subtitleColor: Цвет подзаголовка кнопки.
-        - iconColor: Цвет иконки кнопки.
-        - spinnerColor: Цвет спиннера загрузки.
-        - backgroundColor: Цвет фона кнопки.
-     */
-    public init(
-        titleTypography: TypographyConfiguration,
-        titleColor: ColorToken,
-        subtitleTypography: TypographyConfiguration,
-        subtitleColor: ColorToken,
-        iconColor: ColorToken,
-        spinnerColor: ColorToken,
-        backgroundColor: ColorToken,
-        disabledAlpha: CGFloat,
-        loadingAlpha: CGFloat
-    ) {
-        self.titleTypography = titleTypography
-        self.titleColor = titleColor
-        self.subtitleTypography = subtitleTypography
-        self.subtitleColor = subtitleColor
-        self.iconColor = iconColor
-        self.spinnerColor = spinnerColor
-        self.backgroundColor = backgroundColor
-        self.disabledAlpha = disabledAlpha
-        self.loadingAlpha = loadingAlpha
-    }
-}
-
-/**
- `ButtonAccessibility` содержит параметры доступности для кнопки.
-
- - Properties:
-    - label: Метка доступности для кнопки.
-    - hint: Подсказка доступности для кнопки.
-    - value: Значение доступности для кнопки.
- */
-public struct ButtonAccessibility {
-    public var label: String
-    public var hint: String
-    public var value: String
-    
-    /**
-     Инициализатор для создания параметров доступности кнопки.
-     
-     - Parameters:
-        - label: Метка доступности для кнопки.
-        - hint: Подсказка доступности для кнопки.
-        - value: Значение доступности для кнопки.
-     */
-    public init(label: String, hint: String, value: String) {
-        self.label = label
-        self.hint = hint
-        self.value = value
-    }
-    
-    /**
-     Инициализатор для создания параметров доступности кнопки с пустыми значениями.
-     */
-    public init() {
-        self.label = ""
-        self.hint = ""
-        self.value = ""
-    }
-}
-
 public struct SDDSButton: View {
     public let title: String
     public let subtitle: String
     public let iconAttributes: ButtonIconAttributes?
-    public let size: ButtonSizeConfiguration
     public let isDisabled: Bool
     public let isLoading: Bool
     public let spinnerImage: Image
-    public let spinnerStyle: SpinnerStyle
     public let buttonStyle: SDDSComponents.ButtonStyle
     public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
@@ -342,36 +17,18 @@ public struct SDDSButton: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
-     
+    @State private var isHighlighted: Bool = false
+    @State private var isHovered: Bool = false
+    
     public var action: () -> Void
     
-    /**
-         Инициализатор для создания кнопки `SDDSButton`.
-         
-         - Parameters:
-            - title: Название кнопки, отображаемое на кнопке.
-            - subtitle: Подзаголовок кнопки, отображаемый под названием.
-            - iconAttributes: Атрибуты иконки, включающие изображение и выравнивание иконки (по умолчанию nil).
-            - size: Конфигурация размера кнопки, определяемая `ButtonSizeConfiguration`.
-            - isDisabled: Булево значение, определяющее, отключена ли кнопка (по умолчанию false).
-            - isLoading: Булево значение, определяющее, находится ли кнопка в состоянии загрузки (по умолчанию false).
-            - spinnerImage: Изображение спиннера загрузки (по умолчанию Image("spinner")).
-            - spinnerStyle: Стиль спиннера загрузки, определяемый `SpinnerStyle` (по умолчанию .solid).
-            - buttonStyle: Стиль кнопки, определяемый `SDDSComponents.ButtonStyle` (по умолчанию .basic).
-            - appearance: Стилистические атрибуты кнопки, включающие типографику и цвета, определяемые `ButtonAppearance`.
-            - layoutMode: Режим макета кнопки, определяемый `ButtonLayoutMode` (по умолчанию .wrapContent).
-            - accessibility: Параметры доступности для кнопки, определяемые `ButtonAccessibility`.
-            - action: Действие, выполняемое при нажатии на кнопку.
-    */
     public init(
         title: String,
         subtitle: String,
         iconAttributes: ButtonIconAttributes? = nil,
-        size: ButtonSizeConfiguration,
         isDisabled: Bool = false,
         isLoading: Bool = false,
         spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
-        spinnerStyle: SpinnerStyle = .solid,
         buttonStyle: SDDSComponents.ButtonStyle = .basic,
         appearance: ButtonAppearance,
         layoutMode: ButtonLayoutMode = .wrapContent,
@@ -381,11 +38,9 @@ public struct SDDSButton: View {
         self.title = title
         self.subtitle = subtitle
         self.iconAttributes = iconAttributes
-        self.size = size
         self.isDisabled = isDisabled
         self.isLoading = isLoading
         self.spinnerImage = spinnerImage
-        self.spinnerStyle = spinnerStyle
         self.buttonStyle = buttonStyle
         self.appearance = appearance
         self.layoutMode = layoutMode
@@ -401,27 +56,35 @@ public struct SDDSButton: View {
                 switch buttonStyle {
                 case .basic:
                     basicButton
-                case .square, .circle:
+                case .icon:
                     equilateralButton
                 }
             }
+            .buttonStyle(NoHighlightButtonStyle())
             .opacity(contentOpacity)
-            .background(backgroundColor(for: colorScheme))
-            .applyIf(!isCircle, transform: { $0.cornerRadius(size.cornerRadius) })
-            .frame(height: size.height)
+            .background(currentColor(for: appearance.backgroundColor))
+            .cornerRadius(cornerRadius)
+            .frame(height: appearance.size.height)
             .disabled(isDisabled)
             .accessibility(label: Text(accessibility.label))
             .accessibility(hint: Text(accessibility.hint))
             .accessibility(value: Text(accessibility.value))
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in isHighlighted = true }
+                    .onEnded { _ in isHighlighted = false }
+            )
+            .onHover { hovering in
+                isHovered = hovering
+            }
             
             if isLoading {
                 spinner
-                    .frame(width: size.spinnerSize.width, height: size.spinnerSize.height)
+                    .frame(width: appearance.size.spinnerSize.width, height: appearance.size.spinnerSize.height)
             }
         }
-        .applyIf(isCircle, transform: { $0.clipShape(Circle()) })
     }
-        
+    
     @ViewBuilder
     private var basicButton: some View {
         HStack {
@@ -431,28 +94,28 @@ public struct SDDSButton: View {
             if shouldShowLeftAlignedIcon() {
                 icon
                 if !title.isEmpty {
-                    Spacer().frame(width: size.iconHorizontalGap)
+                    Spacer().frame(width: appearance.size.iconHorizontalGap)
                 }
             }
             if !title.isEmpty {
                 Text(title)
                     .typography(titleTypography)
-                    .foregroundColor(appearance.titleColor.color(for: colorScheme))
+                    .foregroundColor(currentColor(for: appearance.titleColor))
             }
             if isSideBySide {
                 Spacer()
             }
             if !subtitle.isEmpty {
                 if !title.isEmpty {
-                    Spacer().frame(width: size.titleHorizontalGap)
+                    Spacer().frame(width: appearance.size.titleHorizontalGap)
                 }
                 Text(subtitle)
                     .typography(subtitleTypography)
-                    .foregroundColor(appearance.subtitleColor.color(for: colorScheme))
+                    .foregroundColor(currentColor(for: appearance.subtitleColor))
             }
             if shouldShowRightAlignedIcon() {
                 if hasTitleOrSubtitle() {
-                    Spacer().frame(width: size.titleHorizontalGap)
+                    Spacer().frame(width: appearance.size.titleHorizontalGap)
                 }
                 icon
             }
@@ -465,9 +128,9 @@ public struct SDDSButton: View {
                 subtitleTypography.lineHeight,
                 titleTypography.lineHeight
             ),
-            maxHeight: size.iconSize.height
+            maxHeight: appearance.size.iconSize.height
         )
-        .padding(size.paddings)
+        .padding(appearance.size.paddings)
     }
     
     @ViewBuilder
@@ -479,21 +142,21 @@ public struct SDDSButton: View {
                 Spacer()
             }
         }
-        .frame(width: size.height, height: size.height)
+        .frame(width: appearance.size.height, height: appearance.size.height)
     }
     
     @ViewBuilder
     private var icon: some View {
         if let iconAttributes = iconAttributes {
             iconAttributes.image
-                .renderingMode(.template)
                 .resizable()
-                .scaledToFit()
-                .foregroundColor(appearance.iconColor.color(for: colorScheme))
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
                 .frame(
-                    width: size.iconSize.width,
-                    height: size.iconSize.height
+                    width: appearance.size.iconSize.width,
+                    height: appearance.size.iconSize.height
                 )
+                .foregroundColor(currentColor(for: appearance.iconColor))
         } else {
             EmptyView()
         }
@@ -504,10 +167,124 @@ public struct SDDSButton: View {
         if isLoading {
             SpinnerView(
                 image: spinnerImage,
-                foregroundColor: appearance.spinnerColor.color(for: colorScheme)
+                foregroundColor: currentColor(for: appearance.spinnerColor)
             )
         } else {
             EmptyView()
         }
+    }
+}
+
+private extension SDDSButton {
+    var cornerRadius: CGFloat {
+        switch appearance.shapeStyle {
+        case .default:
+            return appearance.size.cornerRadius
+        case .pilled:
+            return appearance.size.height / 2
+        }
+    }
+    
+    func currentColor(for buttonColor: ButtonColor) -> Color {
+        if isHighlighted {
+            return buttonColor.highlightedColor.color(for: colorScheme)
+        } else if isHovered {
+            return buttonColor.hoveredColor.color(for: colorScheme)
+        } else {
+            return buttonColor.defaultColor.color(for: colorScheme)
+        }
+    }
+    
+    func hasIconAttributes() -> Bool {
+        return iconAttributes != nil
+    }
+    
+    var backgroundOpacity: Double {
+        isDisabled ? Opacity.fourty : 1.0
+    }
+    
+    func backgroundColor(for colorScheme: ColorScheme) -> Color {
+        currentColor(for: appearance.backgroundColor).opacity(backgroundOpacity)
+    }
+    
+    var contentOpacity: Double {
+        if isDisabled {
+            return appearance.disabledAlpha
+        }
+        if isLoading {
+            return appearance.loadingAlpha
+        } else {
+            return 1.0
+        }
+    }
+        
+    var isCentered: Bool {
+        layoutMode.isCentered
+    }
+    
+    var isSideBySide: Bool {
+        layoutMode.isSideBySide && (!subtitle.isEmpty || iconAttributes != nil)
+    }
+    
+    var isEquilateral: Bool {
+        switch buttonStyle {
+        case .icon:
+            return true
+        case .basic:
+            return false
+        }
+    }
+    
+    var isCircle: Bool {
+        switch buttonStyle {
+        case .icon:
+            return appearance.shapeStyle == .pilled
+        default:
+            return false
+        }
+    }
+    
+    func shouldShowRightAlignedIcon() -> Bool {
+        return isIconRightAligned && hasIconAttributes()
+    }
+
+    func shouldShowLeftAlignedIcon() -> Bool {
+        return !shouldShowRightAlignedIcon() && hasIconAttributes()
+    }
+        
+    func hasTitleOrSubtitle() -> Bool {
+        return !title.isEmpty || !subtitle.isEmpty
+    }
+    
+    var isOnlyTitleAndImage: Bool {
+        layoutMode.isSideBySide && !title.isEmpty && subtitle.isEmpty && iconAttributes != nil
+    }
+    
+    var isIconRightAligned: Bool {
+        iconAttributes?.alignment == .trailing || (iconAttributes?.alignment == .leading && isOnlyTitleAndImage)
+    }
+
+    var titleTypography: TypographyToken {
+        if let typography = appearance.titleTypography.typography(with: appearance.size) {
+            return typography
+        } else {
+            fatalError("Undefined Button Typography for size \(appearance.size.debugDescription).")
+        }
+    }
+    
+    var subtitleTypography: TypographyToken {
+        if let typography = appearance.subtitleTypography.typography(with: appearance.size) {
+            return typography
+        } else {
+            fatalError("Undefined Button Typography for size \(appearance.size.debugDescription). Using a default value.")
+        }
+    }
+}
+
+private struct NoHighlightButtonStyle: SwiftUI.ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 1.0 : 1.0)
+            .animation(.none, value: configuration.isPressed)
     }
 }
