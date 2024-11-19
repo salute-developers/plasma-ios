@@ -147,8 +147,16 @@ public struct SDDSTextArea: View {
         switch value.wrappedValue {
         case .single(let text):
             _text = State(wrappedValue: text)
+            
+            self.labelPlacement = labelPlacement
         case .multiple(let text, _):
             _text = State(wrappedValue: text)
+            
+            if labelPlacement == .inner {
+                self.labelPlacement = .none
+            } else {
+                self.labelPlacement = labelPlacement
+            }
         }
         _value = value
     
@@ -157,7 +165,6 @@ public struct SDDSTextArea: View {
         self.disabled = disabled
         self.readOnly = readOnly
         self.style = style
-        self.labelPlacement = labelPlacement
         self.required = required
         self.requiredPlacement = requiredPlacement
         self.title = title
@@ -175,7 +182,7 @@ public struct SDDSTextArea: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            if showOuterTitleIndicatorForDefaultLayout || showInnerTitleIndicatorForClearLayout || showNoneTitleLeftIndicatorForClearLayout {
+            if showOuterTitleIndicatorForDefaultLayout || showInnerTitleIndicatorForClearLayout || showNoneTitleLeftIndicatorForClearLayout || showOuterTitleIndicatorForClearLayout {
                 indicatorWithTrailingPadding
             }
             
@@ -190,11 +197,6 @@ public struct SDDSTextArea: View {
                     fieldView
                 }
                 HStack(spacing: 0) {
-                    if showInnerTitleIndicatorForClearLayout {
-                        Spacer()
-                            .frame(width: size.indicatorSize.width)
-                            .padding(.trailing, indicatorPadding, debug: debugConfiguration.indicatorPadding)
-                    }
                     if layout == .clear {
                         captionLabel
                         Spacer()
@@ -308,7 +310,7 @@ public struct SDDSTextArea: View {
                     
                     iconActionView
                         .padding(.top, size.textInputPaddings.top)
-                        .padding(.trailing, fieldHorizontalPadding)
+                        .padding(.trailing, layout == .clear ? size.iconActionClearTrailingPadding : fieldHorizontalPadding)
                 }
                 
                 textEditor(id: textAreaMultipleId)
@@ -370,7 +372,7 @@ public struct SDDSTextArea: View {
     
     @ViewBuilder
     private var placeholderView: some View {
-        if placeholder.isEmpty && labelPlacement == .inner && !displayChips {
+        if placeholder.isEmpty && labelPlacement == .inner && !displayChips && !isFocused {
             HStack(spacing: 0) {
                 if !title.isEmpty {
                     Text(title)
@@ -389,7 +391,7 @@ public struct SDDSTextArea: View {
                     Text(placeholder)
                         .typography(textTypography)
                         .foregroundColor(placeholderColor)
-                    if !optionalTitle.isEmpty && labelPlacement == .none {
+                    if !optionalTitle.isEmpty && (labelPlacement == .none || labelPlacement == .inner) {
                         innerOrNonePlacementOptionalTitleView
                     }
                 }
@@ -399,9 +401,13 @@ public struct SDDSTextArea: View {
     
     @ViewBuilder
     private var innerOrNonePlacementOptionalTitleView: some View {
-        Text(" \(optionalTitle)")
-            .typography(textTypography)
-            .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+        if required {
+            EmptyView()
+        } else {
+            Text(" \(optionalTitle)")
+                .typography(textTypography)
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+        }
     }
     
     @ViewBuilder
@@ -675,7 +681,8 @@ public struct SDDSTextArea: View {
     private var shouldShowInnerTitle: Bool {
         labelPlacement == .inner &&
         !displayChips &&
-        appearance.innerTitleTypography.typography(with: size) != nil
+        appearance.innerTitleTypography.typography(with: size) != nil &&
+        (!text.isEmpty || isFocused)
     }
 
     private var shouldShowIndicatorForInnerLabelDefaultLayout: Bool {
@@ -711,6 +718,13 @@ public struct SDDSTextArea: View {
     
     private var showInnerTitleIndicatorForClearLayout: Bool {
         labelPlacement == .inner &&
+        required &&
+        requiredPlacement == .left &&
+        layout == .clear
+    }
+    
+    private var showOuterTitleIndicatorForClearLayout: Bool {
+        labelPlacement == .outer &&
         required &&
         requiredPlacement == .left &&
         layout == .clear
@@ -814,4 +828,5 @@ public struct SDDSTextArea: View {
     private var fieldHorizontalPadding: CGFloat {
         layout == .clear ? 0 : size.fieldHorizontalPadding
     }
+
 }

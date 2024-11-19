@@ -22,7 +22,7 @@ struct SDDSTextAreaPreview: PreviewProvider {
         
         return Group {
             SDDSTextArea(
-                value: .constant(.single("")),
+                value: .constant(.single("hi")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -31,13 +31,14 @@ struct SDDSTextAreaPreview: PreviewProvider {
                 disabled: false,
                 readOnly: false,
                 style: .default,
-                labelPlacement: .none,
+                labelPlacement: .inner,
                 required: true,
                 requiredPlacement: .left,
+                dynamicHeight: true,
                 appearance: .defaultAppearance,
-                size: SDDSTextAreaSize.medium,
+                size: SDDSTextAreaSize.large,
                 chipGroupSize: SDDSTextAreaSize.large.chipGroupSize,
-                layout: .default,
+                layout: .clear,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Outer Label")
@@ -47,19 +48,20 @@ struct SDDSTextAreaPreview: PreviewProvider {
             SDDSTextArea(
                 value: .constant(.multiple("", chips)),
                 title: "Title",
-                optionalTitle: "optional",
+                optionalTitle: "",
                 placeholder: "Placeholder",
                 caption: "caption",
                 counter: "counter",
                 disabled: false,
                 style: .default,
-                labelPlacement: .none,
+                labelPlacement: .inner,
                 required: true,
-                requiredPlacement: .left,
+                requiredPlacement: .right,
+                dynamicHeight: true,
                 appearance: .defaultAppearance,
                 size: SDDSTextAreaSize.large,
                 chipGroupSize: SDDSTextAreaSize.large.chipGroupSize,
-                layout: .default,
+                layout: .clear,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")

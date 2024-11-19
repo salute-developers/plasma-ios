@@ -1,0 +1,14 @@
+// MARK: - ButtonAppearance Extension
+import Foundation
+
+public extension ButtonAppearance {
+    {% for property in properties %}
+    func {{ property.name }}(_ {{ property.name }}: {{ property.type }}) -> ButtonAppearance {
+        return ButtonAppearance(
+            {% for field in properties %}
+            {{ field.name }}: {% if field.name == property.name %}{{ property.name }}{% else %}self.{{ field.name }}{% endif %}{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        )
+    }
+    {% endfor %}
+}

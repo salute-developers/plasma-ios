@@ -45,7 +45,7 @@ public extension TextAreaAppearance {
             captionColorError: .textDefaultNegative,
             captionColorWarning: .textDefaultWarning,
             captionColorSuccess: .textDefaultAccent,
-            counterColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            counterColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.56),
             placeholderColorDefault: .textDefaultSecondary,
             placeholderColorError: .textDefaultNegative,
             placeholderColorWarning: .textDefaultWarning,

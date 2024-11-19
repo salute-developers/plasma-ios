@@ -1,0 +1,26 @@
+// MARK: - Sourcery Template
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+// MARK: - Size
+public extension ButtonAppearanceVariation<LinkButton> {
+    {% for variation, config in variations.size %}
+    var {{ variation.sizeKey }}: Self {
+        .init(
+            appearance: appearance
+                .size(LinkButtonSize.{{ variation.sizeKey }})
+                .titleTypography(LinkButton.titleTypography)
+                .subtitleTypography(LinkButton.subtitleTypography)
+        )
+    }
+    {% endfor %}
+}
+
+public extension LinkButton {
+    {% for variation, config in variations.size %}
+    static var {{ variation.sizeKey }}: ButtonAppearanceVariation<LinkButton> {
+        return ButtonAppearanceVariation().{{ variation.sizeKey }}
+    }
+    {% endfor %}
+}

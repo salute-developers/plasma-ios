@@ -1,0 +1,7 @@
+{% macro findState(states, targetState) %}
+{% for state in states %}
+    {% if targetState in state.state %}
+        {{ state.value.camelCase }}
+    {% endif %}
+{% endfor %}
+{% endmacro %}
