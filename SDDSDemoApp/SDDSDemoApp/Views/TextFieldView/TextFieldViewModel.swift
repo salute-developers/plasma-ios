@@ -54,8 +54,7 @@ final class TextFieldViewModel: ObservableObject {
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("textFieldChipIcon"),
-            appearance: .textField,
-            size: chipSize,
+            appearance: .textField.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: {}
         )
@@ -70,8 +69,7 @@ final class TextFieldViewModel: ObservableObject {
             isEnabled: updatedChip.isEnabled,
             iconImage: updatedChip.iconImage,
             buttonImage: updatedChip.buttonImage,
-            appearance: updatedChip.appearance,
-            size: updatedChip.size,
+            appearance: updatedChip.appearance.size(updatedChip.appearance.size),
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )

@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class CheckboxGroupViewModel: ObservableObject {
     @Published var checkboxViewModels: [CheckboxItemViewModel] = []
@@ -63,8 +64,7 @@ struct CheckboxItemViewModel: Identifiable {
             subtitle: subtitle,
             isEnabled: isEnabled,
             images: CheckboxView.checkbox,
-            size: size,
-            appearance: .default,
+            appearance: SDDSCheckbox.default.appearance.size(size),
             accessibility: .init()
         )
     }

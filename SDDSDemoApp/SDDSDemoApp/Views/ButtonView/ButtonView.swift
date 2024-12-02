@@ -58,6 +58,7 @@ struct ButtonView: View {
                             layoutMode: viewModel.layoutMode,
                             action: {}
                         )
+                        
                     }
                     Spacer()
                 }

@@ -1,0 +1,41 @@
+/* This file is code generated. */
+
+import Foundation
+import SDDSComponents
+
+public struct LinkButtonTypography: GeneralTypographyConfiguration {
+    typealias S = ButtonSizeConfiguration
+    
+    
+    {%- for variation, config in variations.size %}
+    let {{ variation | sizeKey }}: TypographyToken?
+    {%- endfor %}
+    
+    
+    init(
+        {%- for variation, config in variations.size %}
+        {{ variation | sizeKey }}: TypographyToken?{% if not forloop.last %},{% endif %}
+        {%- endfor %}
+    ) {
+        {%- for variation, config in variations.size %}
+        self.{{ variation | sizeKey }} = {{ variation | sizeKey }}
+        {%- endfor %}
+    }
+    
+    /**
+     Возвращает типографику для заданного размера кнопки.
+     
+     - Parameter size: Размер кнопки.
+     - Returns: Типографика для заданного размера кнопки или nil, если не задана.
+     */
+    public func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
+        switch size as? LinkButtonSize {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return {{ variation | sizeKey }}
+        {%- endfor %}
+        case .none:
+            return nil
+        }
+    }
+}
+

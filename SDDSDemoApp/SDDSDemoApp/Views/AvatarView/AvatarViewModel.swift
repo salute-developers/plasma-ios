@@ -2,27 +2,34 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class AvatarViewModel: ObservableObject {
     @Published var text: String = "AB"
     @Published var image: AvatarImageSource? = nil
     @Published var placeholderImage: AvatarImageSource? = nil
     @Published var status: AvatarStatus = .online
-    @Published var appearance: AvatarAppearance = .default
-    @Published var size: DefaultAvatarSize = .large
+    @Published var appearance: AvatarAppearance = SDDSAvatar.default.appearance
+    @Published var variationName: String = SDDSAvatar.default.name
+    @Published var size: SDDSAvatarSize = .medium
     @Published var accessibility: AvatarAccessibility = AvatarAccessibility()
     @Published var isPlaceholder = false
+    
+    private var cancellables: Set<AnyCancellable> = []
 
-    init() {}
-}
-
-extension AvatarAppearance: CaseIterable {
-    public static var allCases: [AvatarAppearance] {
-        [.default]
+    init() {
+        observeSizeChange()
     }
-
-    public var name: String {
-        return "Default"
+    
+    private func observeSizeChange() {
+        $size
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                self.appearance = self.appearance.size(value)
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -34,12 +41,12 @@ extension AvatarStatus: CaseIterable, Identifiable {
     }
 }
 
-extension DefaultAvatarSize: CaseIterable, Hashable {
-    public static func == (lhs: DefaultAvatarSize, rhs: DefaultAvatarSize) -> Bool {
+extension SDDSAvatarSize: CaseIterable, Hashable {
+    public static func == (lhs: SDDSAvatarSize, rhs: SDDSAvatarSize) -> Bool {
         lhs.hashValue == rhs.hashValue
     }
 
-    public static var allCases: [DefaultAvatarSize] {
+    public static var allCases: [SDDSAvatarSize] {
         [.extraExtraLarge, .large, .medium, .small]
     }
 

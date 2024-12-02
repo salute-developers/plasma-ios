@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSServTheme
 
 struct RadioboxView: View {
     @ObservedObject private var viewModel: RadioboxViewModel
@@ -21,7 +22,6 @@ struct RadioboxView: View {
                         subtitle: viewModel.subtitle,
                         isEnabled: viewModel.isEnabled,
                         images: RadioboxView.radiobox,
-                        size: viewModel.size,
                         appearance: viewModel.appearance
                     )
                     Spacer()
@@ -53,54 +53,23 @@ struct RadioboxView: View {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
                 
-                HStack {
-                    Text("Tint Color")
-                    Spacer()
-                    Menu {
-                        ForEach(ColorStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue) {
-                                viewModel.tintColor = style
-                            }
-                        }
-                    } label: {
-                        HStack {
-                            Rectangle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.tintColor.color)
-                            
-                            Text(viewModel.tintColor.rawValue)
+                Picker("Size", selection: $viewModel.size) {
+                    ForEach(SDDSRadioboxSize.allCases, id: \.self) { size in
+                        Button(size.description) {
+                            viewModel.size = size
                         }
                     }
                 }
                 
-                HStack {
-                    Text("Image Size")
-                    Spacer()
-                    VStack {
-                        TextField("Width", value: $viewModel.imageWidth, formatter: NumberFormatter())
-                            .keyboardType(.decimalPad)
-                            .frame(maxWidth: 100)
-                        TextField("Height", value: $viewModel.imageHeight, formatter: NumberFormatter())
-                            .keyboardType(.decimalPad)
-                            .frame(maxWidth: 100)
+                Picker("Appearance", selection: $viewModel.appearance) {
+                    ForEach(SDDSRadiobox.all, id: \.self) { variation in
+                        Button(variation.name) {
+                            viewModel.appearance = variation.appearance.size(viewModel.size)
+                            viewModel.variationName = variation.name
+                        }
                     }
                 }
                 
-                HStack {
-                    Text("Horizontal Gap")
-                    Spacer()
-                    TextField("Gap", value: $viewModel.horizontalGap, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
-                }
-                
-                HStack {
-                    Text("Vertical Gap")
-                    Spacer()
-                    TextField("Gap", value: $viewModel.verticalGap, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
-                }
             }
         }
         .navigationTitle("SDDSRadiobox")

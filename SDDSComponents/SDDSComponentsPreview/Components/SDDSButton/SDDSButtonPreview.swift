@@ -57,6 +57,17 @@ struct SDDSButtonPreview: PreviewProvider {
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Icon Button – Pilled")
+        
+        SegmentElement(
+            title: "Title",
+            contentType: SegmentElementContent.none,
+            isDisabled: false,
+            isLoading: false,
+            appearance: SegmentElement.large.black.pilled.appearance,
+            layoutMode: .wrapContent,
+            action: {})
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("SegmentElement Pilled Large")
     }
     
 }

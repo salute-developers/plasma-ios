@@ -13,6 +13,8 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
+		699877282D1A85DF00AF514D /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699877272D1A85D900AF514D /* CounterView.swift */; };
+		699877312D1BE90200AF514D /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699877302D1BE8F700AF514D /* CounterViewModel.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */; };
@@ -87,6 +89,8 @@
 		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		699877272D1A85D900AF514D /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		699877302D1BE8F700AF514D /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +238,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		699877262D1A85B700AF514D /* CounterView */ = {
+			isa = PBXGroup;
+			children = (
+				699877302D1BE8F700AF514D /* CounterViewModel.swift */,
+				699877272D1A85D900AF514D /* CounterView.swift */,
+			);
+			path = CounterView;
+			sourceTree = "<group>";
+		};
 		811C684B2CC8023600480F89 /* TextAreaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +267,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				699877262D1A85B700AF514D /* CounterView */,
 				811C684B2CC8023600480F89 /* TextAreaView */,
 				819A382D2CC6927700A1377F /* ChipGroupView */,
 				8199E5A12CBD088000AF3D22 /* TextFieldView */,
@@ -583,11 +597,13 @@
 			files = (
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
+				699877312D1BE90200AF514D /* CounterViewModel.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
 				811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */,
 				816243572CB940F400506E1C /* ChipViewModel.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
+				699877282D1A85DF00AF514D /* CounterView.swift in Sources */,
 				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
@@ -774,7 +790,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
@@ -812,10 +828,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -835,6 +853,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "SDDS Demo Distribution";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -9,11 +9,12 @@ public struct SDDSButton: View {
     public let iconAttributes: ButtonIconAttributes?
     public let isDisabled: Bool
     public let isLoading: Bool
-    public let spinnerImage: Image
+    public let spinnerImage: Image?
     public let buttonStyle: SDDSComponents.ButtonStyle
     public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
+    public let counter: ViewProvider?
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
@@ -28,11 +29,12 @@ public struct SDDSButton: View {
         iconAttributes: ButtonIconAttributes? = nil,
         isDisabled: Bool = false,
         isLoading: Bool = false,
-        spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
+        spinnerImage: Image? = Image("spinner", bundle: Bundle(for: Components.self)),
         buttonStyle: SDDSComponents.ButtonStyle = .basic,
         appearance: ButtonAppearance,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
+        counter: ViewProvider?,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -45,6 +47,7 @@ public struct SDDSButton: View {
         self.appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
+        self.counter = counter
         self.action = action
     }
     
@@ -123,14 +126,9 @@ public struct SDDSButton: View {
                 Spacer()
             }
         }
-        .frame(
-            minHeight: max(
-                subtitleTypography.lineHeight,
-                titleTypography.lineHeight
-            ),
-            maxHeight: appearance.size.iconSize.height
-        )
-        .padding(appearance.size.paddings)
+        .frame(height: appearance.size.height)
+        .padding(.leading, appearance.size.paddings.leading)
+        .padding(.trailing, appearance.size.paddings.trailing)
     }
     
     @ViewBuilder
@@ -164,7 +162,7 @@ public struct SDDSButton: View {
     
     @ViewBuilder
     private var spinner: some View {
-        if isLoading {
+        if let spinnerImage = spinnerImage, isLoading {
             SpinnerView(
                 image: spinnerImage,
                 foregroundColor: currentColor(for: appearance.spinnerColor)
