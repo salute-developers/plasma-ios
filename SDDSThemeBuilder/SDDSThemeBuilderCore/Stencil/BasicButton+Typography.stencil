@@ -1,0 +1,27 @@
+/* This file is code generated. */
+
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+public extension BasicButton {
+    static var titleTypography: TypographyConfiguration {
+        BasicButtonTypography(
+            large: AdaptiveTypographyToken.{{ variations.size.l.labelStyle | camelCase }}.typography,
+            medium: AdaptiveTypographyToken.{{ variations.size.m.labelStyle | camelCase }}.typography,
+            small: AdaptiveTypographyToken.{{ variations.size.s.labelStyle | camelCase }}.typography,
+            extraSmall: AdaptiveTypographyToken.{{ variations.size.xs.labelStyle | camelCase }}.typography
+        )
+        .asContainer
+    }
+    
+    static var subtitleTypography: TypographyConfiguration {
+        BasicButtonTypography(
+            large: AdaptiveTypographyToken.{{ variations.size.l.valueStyle | camelCase }}.typography,
+            medium: AdaptiveTypographyToken.{{ variations.size.m.valueStyle | camelCase }}.typography,
+            small: AdaptiveTypographyToken.{{ variations.size.s.valueStyle | camelCase }}.typography,
+            extraSmall: AdaptiveTypographyToken.{{ variations.size.xs.valueStyle | camelCase }}.typography
+        )
+        .asContainer
+    }
+}

@@ -1,0 +1,74 @@
+/* This file is code generated. */
+
+import Foundation
+import SDDSComponents
+import SwiftUI
+
+public enum IconButtonSize: String, CaseIterable {
+    {%- for variation, config in variations.size %}
+    case {{ variation | sizeKey }}
+    {%- endfor %}
+}
+
+extension IconButtonSize: ButtonSizeConfiguration {
+
+    public var height: CGFloat {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return {{ config.height }}
+        {%- endfor %}
+        }
+    }
+
+    public var cornerRadius: CGFloat {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return {{ config.shape.name | adjustedCornerRadius:config.shape.adjustment }}
+        {%- endfor %}
+        }
+    }
+
+    public var paddings: EdgeInsets {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return EdgeInsets(top: 0, leading: {{ config.paddingStart }}, bottom: 0, trailing: {{ config.paddingEnd }})
+        {%- endfor %}
+        }
+    }
+
+    public var iconSize: CGSize {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return CGSize(width: {{ config.iconSize }}, height: {{ config.iconSize }})
+        {%- endfor %}
+        }
+    }
+
+    public var spinnerSize: CGSize {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return CGSize(width: {{ config.spinnerSize }}, height: {{ config.spinnerSize }})
+        {%- endfor %}
+        }
+    }
+
+    public var titleHorizontalGap: CGFloat {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return 0
+        {%- endfor %}
+        }
+    }
+        
+    public var iconHorizontalGap: CGFloat {
+        switch self {
+        {%- for variation, config in variations.size %}
+        case .{{ variation | sizeKey }}: return 0
+        {%- endfor %}
+        }
+    }
+
+    public var debugDescription: String {
+        return "IconButtonSize"
+    }
+}

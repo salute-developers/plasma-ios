@@ -16,6 +16,19 @@ private enum Filter: String {
     case ensureDoubleInRange = "ensure_double_in_range"
     case ensureShapeKindInRange = "ensure_shape_kind_in_range"
     case ensureValidHex = "ensure_valid_hex"
+    case findState = "findState"
+    case escapeSwiftKeyword = "escapeSwiftKeyword"
+    case camelCase = "camelCase"
+    case sizeKey = "sizeKey"
+    case adjustedCornerRadius = "adjustedCornerRadius"
+}
+
+private enum SwiftKeyword: String, CaseIterable {
+    case `default`, `class`, `struct`, `enum`, `protocol`, `extension`, `func`, `var`, `let`, `import`
+
+    static var allKeywords: Set<String> {
+        return Set(SwiftKeyword.allCases.map { $0.rawValue })
+    }
 }
 
 final class TemplateRenderer: Renderable {
@@ -112,6 +125,45 @@ final class TemplateRenderer: Renderable {
             
             return stringValue
         }
+        ext.registerFilter(Filter.findState.rawValue) { (value: Any?, arguments: [Any?]) in
+            guard let states = value as? [[String: Any]],
+                  let targetState = arguments.first as? String else {
+                throw TemplateSyntaxError("Invalid input for findState filter")
+            }
+
+            for state in states {
+                if let stateArray = state["state"] as? [String],
+                   stateArray.contains(targetState),
+                   let value = state["value"] as? String {
+                    return value.camelCase
+                }
+            }
+
+            throw TemplateSyntaxError("State '\(targetState)' not found in states array")
+        }
+        ext.registerFilter(Filter.escapeSwiftKeyword.rawValue) { (value: Any?) in
+            guard let keyword = value as? String else { return value }
+            return SwiftKeyword.allKeywords.contains(keyword) ? "`\(keyword)`" : keyword
+        }
+        ext.registerFilter(Filter.camelCase.rawValue) { (value: Any?) in
+            guard let stringValue = value as? String else { return value }
+            return stringValue.camelCase
+        }
+        ext.registerFilter(Filter.sizeKey.rawValue) { (value: Any?) in
+            guard let stringValue = value as? String else { return value }
+            return stringValue.sizeKey
+        }
+        ext.registerFilter(Filter.adjustedCornerRadius.rawValue) { (value: Any?, arguments: [Any?]) in
+            guard let baseCornerRadiusKey = value as? String else {
+                throw TemplateSyntaxError("Invalid value for adjustedCornerRadius filter")
+            }
+            
+            let adjustmentValue = arguments.first.flatMap(Double.convert) ?? 0
+            let adjustment = adjustmentValue > 0 ? "+ \(adjustmentValue)" : adjustmentValue < 0 ? "- \(-adjustmentValue)" : ""
+            
+            return "ShapeToken.\(baseCornerRadiusKey.camelCase).cornerRadius \(adjustment)".trimmingCharacters(in: .whitespaces)
+        }
+
     }
 }
 

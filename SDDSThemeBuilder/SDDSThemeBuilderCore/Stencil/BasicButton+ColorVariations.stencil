@@ -1,0 +1,64 @@
+/* This file is code generated. */
+
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+public extension ButtonAppearanceVariation<BasicButton> {
+    {% for variation, config in variations.color %}
+    var {{ variation | escapeSwiftKeyword }}: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: BasicButton.{{ variation }}.appearance)
+        )
+    }
+    {% endfor %}
+}
+
+public extension BasicButton {
+    {% for variation, config in variations.color %}
+    static var {{ variation | escapeSwiftKeyword }}: ButtonAppearanceVariation<BasicButton> {
+        .init(
+            name: "{{ variation }}",
+            appearance: ButtonAppearance(
+                titleTypography: BasicButton.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default | camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState:"pressed" | default:"clearColor" | camelCase }},
+                    hoveredColor: .{{ config.contentColor.states | findState:"hovered" | default:"clearColor" | camelCase }}
+                ),
+                subtitleTypography: BasicButton.subtitleTypography,
+                subtitleColor: ButtonColor(
+                    defaultColor: .{{ config.valueColor.default | camelCase }},
+                    highlightedColor: .{{ config.valueColor.states | findState:"pressed" | default:"clearColor" | camelCase }},
+                    hoveredColor: .{{ config.valueColor.states | findState:"hovered" | default:"clearColor" | camelCase }}
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default | camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState:"pressed" | default:"clearColor" | camelCase }},
+                    hoveredColor: .{{ config.contentColor.states | findState:"hovered" | default:"clearColor" | camelCase }}
+                ),
+                spinnerColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default | camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState:"pressed" | default:"clearColor" | camelCase }},
+                    hoveredColor: .{{ config.contentColor.states | findState:"hovered" | default:"clearColor" | camelCase }}
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .{{ config.backgroundColor.default | camelCase }},
+                    highlightedColor: .{{ config.backgroundColor.states | findState:"pressed" | default:"clearColor" | camelCase }},
+                    hoveredColor: .{{ config.backgroundColor.states | findState:"hovered" | default:"clearColor" | camelCase }}
+                ),
+                disabledAlpha: 0.4,
+                loadingAlpha: {{ config.loadingAlpha | default:0 }}
+            )
+        )
+    }
+    {% endfor %}
+
+    static var all: [ButtonAppearanceVariation<BasicButton>] {
+        [
+            {% for variation, config in variations.color %}
+            BasicButton.{{ variation | escapeSwiftKeyword }}{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+}

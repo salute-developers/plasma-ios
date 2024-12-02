@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
@@ -10,8 +12,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var downHardM: Self {
@@ -21,8 +23,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var downHardS: Self {
@@ -32,8 +34,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var downSoftL: Self {
@@ -43,8 +45,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var downSoftM: Self {
@@ -54,8 +56,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var downSoftS: Self {
@@ -65,8 +67,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upHardL: Self {
@@ -76,8 +78,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upHardM: Self {
@@ -87,8 +89,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upHardS: Self {
@@ -98,8 +100,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upSoftL: Self {
@@ -109,8 +111,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upSoftM: Self {
@@ -120,8 +122,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
     static var upSoftS: Self {
@@ -131,8 +133,8 @@ public extension ShadowToken {
                 width: 0,
                 height: 5
             ),
-            opacity: 0,5,
-            radius: 1,5
+            opacity: 0.5,
+            radius: 1.5
         )
     }
 }
