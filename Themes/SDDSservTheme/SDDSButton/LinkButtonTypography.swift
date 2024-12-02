@@ -34,8 +34,6 @@ public struct LinkButtonTypography: GeneralTypographyConfiguration {
             return small
         case .extraSmall:
             return extraSmall
-        case .extraExtraSmall:
-            return extraExtraSmall
         case .none:
             return medium
         }

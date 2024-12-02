@@ -2,38 +2,32 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-// MARK: - Color
 public extension ButtonAppearanceVariation<LinkButton> {
-    var `default`: Self {
-        .init(
-            appearance: appearance.applyColorVariation(variation: LinkButton.default.appearance)
-        )
-    }
-
-    var secondary: Self {
-        .init(
-            appearance: appearance.applyColorVariation(variation: LinkButton.secondary.appearance)
-        )
-    }
-
     var accent: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: LinkButton.accent.appearance)
         )
     }
-
-    var positive: Self {
+    var `default`: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: LinkButton.positive.appearance)
+            appearance: appearance.applyColorVariation(variation: LinkButton.`default`.appearance)
         )
     }
-
     var negative: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: LinkButton.negative.appearance)
         )
     }
-
+    var positive: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: LinkButton.positive.appearance)
+        )
+    }
+    var secondary: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: LinkButton.secondary.appearance)
+        )
+    }
     var warning: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: LinkButton.warning.appearance)
@@ -42,80 +36,6 @@ public extension ButtonAppearanceVariation<LinkButton> {
 }
 
 public extension LinkButton {
-    static var `default`: ButtonAppearanceVariation<LinkButton> {
-        .init(
-            name: "default",
-            appearance: ButtonAppearance(
-                titleTypography: LinkButton.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
-                ),
-                subtitleTypography: LinkButton.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .clearColor,
-                    highlightedColor: .clearColor,
-                    hoveredColor: .clearColor
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
-                ),
-                spinnerColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultClear,
-                    highlightedColor: .clearColor,
-                    hoveredColor: .clearColor
-                ),
-                disabledAlpha: 0.4,
-                loadingAlpha: 0.06
-            )
-        )
-    }
-
-    static var secondary: ButtonAppearanceVariation<LinkButton> {
-        .init(
-            name: "secondary",
-            appearance: ButtonAppearance(
-                titleTypography: LinkButton.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
-                ),
-                subtitleTypography: LinkButton.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .clearColor,
-                    highlightedColor: .clearColor,
-                    hoveredColor: .clearColor
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
-                ),
-                spinnerColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultClear,
-                    highlightedColor: .clearColor,
-                    hoveredColor: .clearColor
-                ),
-                disabledAlpha: 0.4,
-                loadingAlpha: 0.06
-            )
-        )
-    }
-
     static var accent: ButtonAppearanceVariation<LinkButton> {
         .init(
             name: "accent",
@@ -126,7 +46,7 @@ public extension LinkButton {
                     highlightedColor: .textDefaultAccentActive,
                     hoveredColor: .textDefaultAccentHover
                 ),
-                subtitleTypography: LinkButton.subtitleTypography,
+                subtitleTypography: .default,
                 subtitleColor: ButtonColor(
                     defaultColor: .clearColor,
                     highlightedColor: .clearColor,
@@ -152,32 +72,31 @@ public extension LinkButton {
             )
         )
     }
-
-    static var positive: ButtonAppearanceVariation<LinkButton> {
+    static var `default`: ButtonAppearanceVariation<LinkButton> {
         .init(
-            name: "positive",
+            name: "default",
             appearance: ButtonAppearance(
                 titleTypography: LinkButton.titleTypography,
                 titleColor: ButtonColor(
-                    defaultColor: .textDefaultPositive,
-                    highlightedColor: .textDefaultPositiveActive,
-                    hoveredColor: .textDefaultPositiveHover
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textDefaultPrimaryActive,
+                    hoveredColor: .textDefaultPrimaryHover
                 ),
-                subtitleTypography: LinkButton.subtitleTypography,
+                subtitleTypography: .default,
                 subtitleColor: ButtonColor(
                     defaultColor: .clearColor,
                     highlightedColor: .clearColor,
                     hoveredColor: .clearColor
                 ),
                 iconColor: ButtonColor(
-                    defaultColor: .textDefaultPositive,
-                    highlightedColor: .textDefaultPositiveActive,
-                    hoveredColor: .textDefaultPositiveHover
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textDefaultPrimaryActive,
+                    hoveredColor: .textDefaultPrimaryHover
                 ),
                 spinnerColor: ButtonColor(
-                    defaultColor: .textDefaultPositive,
-                    highlightedColor: .textDefaultPositiveActive,
-                    hoveredColor: .textDefaultPositiveHover
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textDefaultPrimaryActive,
+                    hoveredColor: .textDefaultPrimaryHover
                 ),
                 backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultClear,
@@ -189,7 +108,6 @@ public extension LinkButton {
             )
         )
     }
-
     static var negative: ButtonAppearanceVariation<LinkButton> {
         .init(
             name: "negative",
@@ -200,7 +118,7 @@ public extension LinkButton {
                     highlightedColor: .textDefaultNegativeActive,
                     hoveredColor: .textDefaultNegativeHover
                 ),
-                subtitleTypography: LinkButton.subtitleTypography,
+                subtitleTypography: .default,
                 subtitleColor: ButtonColor(
                     defaultColor: .clearColor,
                     highlightedColor: .clearColor,
@@ -226,7 +144,78 @@ public extension LinkButton {
             )
         )
     }
-
+    static var positive: ButtonAppearanceVariation<LinkButton> {
+        .init(
+            name: "positive",
+            appearance: ButtonAppearance(
+                titleTypography: LinkButton.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .textDefaultPositive,
+                    highlightedColor: .textDefaultPositiveActive,
+                    hoveredColor: .textDefaultPositiveHover
+                ),
+                subtitleTypography: .default,
+                subtitleColor: ButtonColor(
+                    defaultColor: .clearColor,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .textDefaultPositive,
+                    highlightedColor: .textDefaultPositiveActive,
+                    hoveredColor: .textDefaultPositiveHover
+                ),
+                spinnerColor: ButtonColor(
+                    defaultColor: .textDefaultPositive,
+                    highlightedColor: .textDefaultPositiveActive,
+                    hoveredColor: .textDefaultPositiveHover
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .surfaceDefaultClear,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                disabledAlpha: 0.4,
+                loadingAlpha: 0.06
+            )
+        )
+    }
+    static var secondary: ButtonAppearanceVariation<LinkButton> {
+        .init(
+            name: "secondary",
+            appearance: ButtonAppearance(
+                titleTypography: LinkButton.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .textDefaultSecondary,
+                    highlightedColor: .textDefaultSecondaryActive,
+                    hoveredColor: .textDefaultSecondaryHover
+                ),
+                subtitleTypography: .default,
+                subtitleColor: ButtonColor(
+                    defaultColor: .clearColor,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .textDefaultSecondary,
+                    highlightedColor: .textDefaultSecondaryActive,
+                    hoveredColor: .textDefaultSecondaryHover
+                ),
+                spinnerColor: ButtonColor(
+                    defaultColor: .textDefaultSecondary,
+                    highlightedColor: .textDefaultSecondaryActive,
+                    hoveredColor: .textDefaultSecondaryHover
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .surfaceDefaultClear,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                disabledAlpha: 0.4,
+                loadingAlpha: 0.06
+            )
+        )
+    }
     static var warning: ButtonAppearanceVariation<LinkButton> {
         .init(
             name: "warning",
@@ -237,7 +226,7 @@ public extension LinkButton {
                     highlightedColor: .textDefaultWarningActive,
                     hoveredColor: .textDefaultWarningHover
                 ),
-                subtitleTypography: LinkButton.subtitleTypography,
+                subtitleTypography: .default,
                 subtitleColor: ButtonColor(
                     defaultColor: .clearColor,
                     highlightedColor: .clearColor,
@@ -263,15 +252,21 @@ public extension LinkButton {
             )
         )
     }
-    
     static var all: [ButtonAppearanceVariation<LinkButton>] {
         [
-            LinkButton.default,
-            LinkButton.secondary,
+            
             LinkButton.accent,
-            LinkButton.positive,
+            
+            LinkButton.`default`,
+            
             LinkButton.negative,
+            
+            LinkButton.positive,
+            
+            LinkButton.secondary,
+            
             LinkButton.warning
+            
         ]
     }
 }

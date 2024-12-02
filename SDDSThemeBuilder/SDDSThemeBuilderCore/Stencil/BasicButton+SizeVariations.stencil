@@ -1,4 +1,5 @@
-// MARK: - Sourcery Template
+/* This file is code generated. */
+
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
@@ -6,10 +7,10 @@ import SDDSThemeCore
 // MARK: - Size
 public extension ButtonAppearanceVariation<BasicButton> {
     {% for variation, config in variations.size %}
-    var {{ variation.sizeKey }}: Self {
+    var {{ variation | sizeKey }}: Self {
         .init(
             appearance: appearance
-                .size(BasicButtonSize.{{ variation.sizeKey }})
+                .size(BasicButtonSize.{{ variation | sizeKey }})
                 .titleTypography(BasicButton.titleTypography)
                 .subtitleTypography(BasicButton.subtitleTypography)
         )
@@ -19,8 +20,8 @@ public extension ButtonAppearanceVariation<BasicButton> {
 
 public extension BasicButton {
     {% for variation, config in variations.size %}
-    static var {{ variation.sizeKey }}: ButtonAppearanceVariation<BasicButton> {
-        return ButtonAppearanceVariation().{{ variation.sizeKey }}
+    static var {{ variation | sizeKey }}: ButtonAppearanceVariation<BasicButton> {
+        return ButtonAppearanceVariation().{{ variation | sizeKey }}
     }
     {% endfor %}
 }

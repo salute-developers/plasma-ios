@@ -1,4 +1,3 @@
-// MARK: - Size
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
@@ -13,7 +12,6 @@ public extension ButtonAppearanceVariation<BasicButton> {
                 .subtitleTypography(BasicButton.subtitleTypography)
         )
     }
-    
     var medium: Self {
         .init(
             appearance: appearance
@@ -22,7 +20,6 @@ public extension ButtonAppearanceVariation<BasicButton> {
                 .subtitleTypography(BasicButton.subtitleTypography)
         )
     }
-    
     var small: Self {
         .init(
             appearance: appearance
@@ -31,7 +28,6 @@ public extension ButtonAppearanceVariation<BasicButton> {
                 .subtitleTypography(BasicButton.subtitleTypography)
         )
     }
-    
     var extraSmall: Self {
         .init(
             appearance: appearance
@@ -46,15 +42,12 @@ public extension BasicButton {
     static var large: ButtonAppearanceVariation<BasicButton> {
         return ButtonAppearanceVariation().large
     }
-    
     static var medium: ButtonAppearanceVariation<BasicButton> {
         return ButtonAppearanceVariation().medium
     }
-    
     static var small: ButtonAppearanceVariation<BasicButton> {
         return ButtonAppearanceVariation().small
     }
-    
     static var extraSmall: ButtonAppearanceVariation<BasicButton> {
         return ButtonAppearanceVariation().extraSmall
     }

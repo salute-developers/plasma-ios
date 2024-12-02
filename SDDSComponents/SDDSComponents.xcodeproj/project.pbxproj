@@ -90,7 +90,6 @@
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
 		819CB7FD2C7CC34A00B4FBF4 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
-		81A901432CF6E4F200992B04 /* findState.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81A901422CF6E4F200992B04 /* findState.stencil */; };
 		81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9014D2CF6E8D600992B04 /* ButtonAppearance+Extensions.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
 		81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */; };
@@ -227,7 +226,6 @@
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
-		81A901422CF6E4F200992B04 /* findState.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = findState.stencil; sourceTree = "<group>"; };
 		81A9014D2CF6E8D600992B04 /* ButtonAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		81A901522CF6EAA800992B04 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreview.swift; sourceTree = "<group>"; };
@@ -267,14 +265,6 @@
 		81F752F12CEE2B40000156D9 /* IconButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButton+Extensions.swift"; sourceTree = "<group>"; };
 		81F752F32CEE2C35000156D9 /* ButtonAppearance+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonAppearance+Variations.swift"; sourceTree = "<group>"; };
 		81F752FE2CEFA3AF000156D9 /* String+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Variations.swift"; sourceTree = "<group>"; };
-		81F753012CEFA58D000156D9 /* BasicButton+Typography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BasicButton+Typography.stencil"; sourceTree = "<group>"; };
-		81F753032CEFA694000156D9 /* BasicButton+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BasicButton+SizeVariations.stencil"; sourceTree = "<group>"; };
-		81F753052CEFA818000156D9 /* BasicButton+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BasicButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		81F753092CEFA8A9000156D9 /* IconButton+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "IconButton+SizeVariations.stencil"; sourceTree = "<group>"; };
-		81F7530B2CEFA8C6000156D9 /* IconButton+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "IconButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		81F753122CEFAB4A000156D9 /* LinkButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		81F753132CEFAB4A000156D9 /* LinkButton+Typography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+Typography.stencil"; sourceTree = "<group>"; };
-		81F753142CEFAB4A000156D9 /* LinkButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+SizeVariations.stencil"; sourceTree = "<group>"; };
 		81F7531B2CF46755000156D9 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		81F7531D2CF46793000156D9 /* ButtonAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAlignment.swift; sourceTree = "<group>"; };
 		81F753212CF467CC000156D9 /* ButtonLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLayoutMode.swift; sourceTree = "<group>"; };
@@ -576,7 +566,6 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				81A901412CF6E4E100992B04 /* Templates */,
 				81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */,
 				81CBC0922C82241100FBDAC8 /* BackportAsyncImage */,
 				818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */,
@@ -672,14 +661,6 @@
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		81A901412CF6E4E100992B04 /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				81A901422CF6E4F200992B04 /* findState.stencil */,
-			);
-			path = Templates;
 			sourceTree = "<group>";
 		};
 		81BBC5732C862492009616CE /* SDDSComponentsPreview */ = {
@@ -827,35 +808,6 @@
 			path = SDDSTextField;
 			sourceTree = "<group>";
 		};
-		81F753002CEFA54B000156D9 /* BasicButton */ = {
-			isa = PBXGroup;
-			children = (
-				81F753012CEFA58D000156D9 /* BasicButton+Typography.stencil */,
-				81F753032CEFA694000156D9 /* BasicButton+SizeVariations.stencil */,
-				81F753052CEFA818000156D9 /* BasicButton+ColorVariations.stencil */,
-			);
-			path = BasicButton;
-			sourceTree = "<group>";
-		};
-		81F753082CEFA896000156D9 /* IconButton */ = {
-			isa = PBXGroup;
-			children = (
-				81F753092CEFA8A9000156D9 /* IconButton+SizeVariations.stencil */,
-				81F7530B2CEFA8C6000156D9 /* IconButton+ColorVariations.stencil */,
-			);
-			path = IconButton;
-			sourceTree = "<group>";
-		};
-		81F753112CEFAB4A000156D9 /* LinkButton */ = {
-			isa = PBXGroup;
-			children = (
-				81F753122CEFAB4A000156D9 /* LinkButton+ColorVariations.stencil */,
-				81F753132CEFAB4A000156D9 /* LinkButton+Typography.stencil */,
-				81F753142CEFAB4A000156D9 /* LinkButton+SizeVariations.stencil */,
-			);
-			path = LinkButton;
-			sourceTree = "<group>";
-		};
 		81F7532F2CF469AC000156D9 /* ButtonAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,9 +832,6 @@
 			isa = PBXGroup;
 			children = (
 				81F7533E2CF50294000156D9 /* ButtonAppearance+Extensions */,
-				81F753082CEFA896000156D9 /* IconButton */,
-				81F753112CEFAB4A000156D9 /* LinkButton */,
-				81F753002CEFA54B000156D9 /* BasicButton */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -1057,7 +1006,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
-				81A901432CF6E4F200992B04 /* findState.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

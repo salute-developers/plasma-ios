@@ -1,4 +1,5 @@
 import Foundation
+import SDDSServTheme
 import SDDSComponents
 import SDDSThemeCore
 
@@ -9,18 +10,7 @@ public extension LinkButton {
             medium: AdaptiveTypographyToken.bodyMBold.typography,
             small: AdaptiveTypographyToken.bodySBold.typography,
             extraSmall: AdaptiveTypographyToken.bodyXsBold.typography,
-            extraExtraSmall: AdaptiveTypographyToken.bodyXsNormal.typography
-        )
-        .asContainer
-    }
-    
-    static var subtitleTypography: TypographyConfiguration {
-        LinkButtonTypography(
-            large: AdaptiveTypographyToken.bodyLBold.typography,
-            medium: AdaptiveTypographyToken.bodyMBold.typography,
-            small: AdaptiveTypographyToken.bodySBold.typography,
-            extraSmall: AdaptiveTypographyToken.bodyXsBold.typography,
-            extraExtraSmall: AdaptiveTypographyToken.bodyXsNormal.typography
+            extraExtraSmall: AdaptiveTypographyToken.bodyXsBold.typography
         )
         .asContainer
     }
