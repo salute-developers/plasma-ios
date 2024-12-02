@@ -36,7 +36,7 @@ public final class App {
             return
         }
         
-        let commands = [
+        var commands = [
             InstallFontsCommand(
                 fontFamiliesContainer: fontFamiliesContainer,
                 fontsURL: fontsURL,
@@ -102,6 +102,8 @@ public final class App {
             )
         ]
         
+        commands.append(contentsOf: generateVariations)
+        
         for command in commands {
             let result = command.run()
             switch result {
@@ -119,6 +121,63 @@ public final class App {
         self.schemeZipURL = schemeZipURL
         self.paletteURL = paletteURL
         self.themeBuilderURL = themeBuilderURL
+    }
+}
+
+// MARK: - Variations
+extension App {
+    private var generateVariations: [GenerateSwiftCodeCommand] {
+        var result = [GenerateSwiftCodeCommand]()
+        result.append(contentsOf: generateBasicButtonVariations)
+        result.append(contentsOf: generateLinkButtonVariations)
+        result.append(contentsOf: generateIconButtonVariations)
+        return result
+    }
+    
+    private var generateBasicButtonVariations: [GenerateSwiftCodeCommand] {
+        [
+            GenerateSwiftCodeCommand(
+                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/basic_button_config.json")!,
+                templates: [
+                    .basicButtonColorVariations,
+                    .basicButtonSizeVariations,
+                    .basicButtonTypographyVariations,
+                    .basicButtonTypography,
+                    .basicButtonSizeConfiguration
+                ],
+                outputDirectoryURL: generatedComponentsURL(component: .button)
+            )
+        ]
+    }
+    
+    private var generateLinkButtonVariations: [GenerateSwiftCodeCommand] {
+        [
+            GenerateSwiftCodeCommand(
+                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/link_button_config.json")!,
+                templates: [
+                    .linkButtonColorVariations,
+                    .linkButtonSizeVariations,
+                    .linkButtonTypographyVariations,
+                    .linkButtonTypography,
+                    .linkButtonSizeConfiguration
+                ],
+                outputDirectoryURL: generatedComponentsURL(component: .button)
+            )
+        ]
+    }
+    
+    private var generateIconButtonVariations: [GenerateSwiftCodeCommand] {
+        [
+            GenerateSwiftCodeCommand(
+                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/icon_button_config.json")!,
+                templates: [
+                    .iconButtonColorVariations,
+                    .iconButtonSizeVariations,
+                    .iconButtonSizeConfiguration
+                ],
+                outputDirectoryURL: generatedComponentsURL(component: .button)
+            )
+        ]
     }
 }
 
@@ -150,6 +209,10 @@ extension App {
     
     private var generatedTokensURL: URL {
         themeURL.appending(component: "Generated")
+    }
+    
+    private func generatedComponentsURL(component: GeneratedComponent) -> URL {
+        themeURL.appending(component: component.rawValue)
     }
     
     private var fontsURL: URL {

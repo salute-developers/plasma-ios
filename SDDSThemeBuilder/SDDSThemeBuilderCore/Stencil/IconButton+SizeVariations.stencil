@@ -1,4 +1,5 @@
-// MARK: - Sourcery Template
+/* This file is code generated. */
+
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
@@ -6,10 +7,10 @@ import SDDSThemeCore
 // MARK: - Size
 public extension ButtonAppearanceVariation<IconButton> {
     {% for variation, config in variations.size %}
-    var {{ variation.sizeKey }}: Self {
+    var {{ variation | sizeKey | escapeSwiftKeyword }}: Self {
         .init(
             appearance: appearance
-                .size(IconButtonSize.{{ variation.sizeKey }})
+                .size(IconButtonSize.{{ variation | sizeKey | escapeSwiftKeyword }})
         )
     }
     {% endfor %}
@@ -17,8 +18,8 @@ public extension ButtonAppearanceVariation<IconButton> {
 
 public extension IconButton {
     {% for variation, config in variations.size %}
-    static var {{ variation.sizeKey }}: ButtonAppearanceVariation<IconButton> {
-        return ButtonAppearanceVariation().{{ variation.sizeKey }}
+    static var {{ variation | sizeKey | escapeSwiftKeyword }}: ButtonAppearanceVariation<IconButton> {
+        return ButtonAppearanceVariation().{{ variation | sizeKey | escapeSwiftKeyword }}
     }
     {% endfor %}
 }

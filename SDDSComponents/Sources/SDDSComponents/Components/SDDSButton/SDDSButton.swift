@@ -123,14 +123,9 @@ public struct SDDSButton: View {
                 Spacer()
             }
         }
-        .frame(
-            minHeight: max(
-                subtitleTypography.lineHeight,
-                titleTypography.lineHeight
-            ),
-            maxHeight: appearance.size.iconSize.height
-        )
-        .padding(appearance.size.paddings)
+        .frame(height: appearance.size.height)
+        .padding(.leading, appearance.size.paddings.leading)
+        .padding(.trailing, appearance.size.paddings.trailing)
     }
     
     @ViewBuilder
