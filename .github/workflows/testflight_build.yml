@@ -1,24 +1,21 @@
-name: Build Debug / Build debug artifacts
+name: Build and Deploy to TestFlight
 
 on:
-  pull_request:
-  
-concurrency:
-  # New commit on branch cancels running workflows of the same branch
-  group: ${{ github.workflow }}-${{ github.head_ref }}
-  cancel-in-progress: true
+  push:
+    branches:
+      - feature/vsdimitraki/auto-publish-sandbox-testflight
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: macos-latest
-    environment: sdds
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
       - name: Set up Xcode
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: actions/setup-xcode@v2
         with:
           xcode-version: 'latest'
           
@@ -30,8 +27,8 @@ jobs:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
           ./scripts/install_certificate_and_profile.sh
-
-      - name: Run build script
+    
+      - name: Run and build script
         run: |
           ./scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
 
@@ -40,3 +37,9 @@ jobs:
         with:
           name: xcframeworks
           path: build/**
+          
+      - name: Install Fastlane and initialize
+        run: |
+         gem install fastlane -NV
+         fastlane init
+
