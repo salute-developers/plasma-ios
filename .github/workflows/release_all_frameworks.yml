@@ -3,7 +3,7 @@ name: 'Build and Publish SDDS Components'
 on:
   push:
     tags:
-      - "SDDSComponents-v[0-9]+.[0-9]+.[0-9]+"  # Теги только для SDDSComponents
+      - "SDDS-v[0-9]+.[0-9]+.[0-9]+"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
@@ -14,6 +14,13 @@ jobs:
     name: Build and Publish
     runs-on: macos-latest
     environment: sdds
+    strategy:
+      matrix:
+        module: 
+          - name: SDDSComponents
+            project_path: SDDSComponents/SDDSComponents.xcodeproj
+          - name: SDDSThemeCore
+            project_path: SDDSThemeBuilder/SDDSThemeBuilder.xcodeproj
 
     steps:
       - name: Checkout the code
@@ -48,28 +55,21 @@ jobs:
       - name: Install dependencies
         run: gem install xcodeproj
 
-      - name: Run build script for SDDSComponents
+      - name: Run build script for ${{ matrix.module.name }}
         run: |
           chmod +x ./scripts/build_xcframeworks.rb
-          ruby ./scripts/build_xcframeworks.rb -d . -p SDDSComponents/SDDSComponents.xcodeproj -m SDDSComponents
+          ruby ./scripts/build_xcframeworks.rb -d . -p ${{ matrix.module.project_path }} -m ${{ matrix.module.name }}
 
-      - name: Generate SDDSComponents zip
+      - name: Generate ${{ matrix.module.name }} zip
         id: zip_artifact
         run: |
-          TAG_NAME=${GITHUB_REF#refs/tags/}
-          # Указываем правильный путь к директории с xcframework
-          XCFRAMEWORK_PATH="./build/SDDSComponents.xcframework"
-          
-          if [ -d "$XCFRAMEWORK_PATH" ]; then
-            # Если директория существует, создаем архив
-            zip -r "../../SDDSComponents-${TAG_NAME}.zip" "$XCFRAMEWORK_PATH"
-          else
-            echo "Error: $XCFRAMEWORK_PATH does not exist."
-            exit 1
-          fi
-          echo "::set-output name=zip_path::SDDSComponents-${TAG_NAME}.zip"
+           TAG_NAME=${GITHUB_REF#refs/tags/}
+           cd ${{ matrix.module.name }}/build
+           zip -r ../../${{ matrix.module.name }}-${TAG_NAME}.zip .
+           cd ../..
+           echo "::set-output name=zip_path::${{ matrix.module.name }}-${TAG_NAME}.zip"
 
-      - name: Release SDDSComponents
+      - name: Release ${{ matrix.module.name }}
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.zip_artifact.outputs.zip_path }}
