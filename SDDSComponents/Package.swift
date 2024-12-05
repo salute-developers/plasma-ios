@@ -9,15 +9,11 @@ let package = Package(
     products: [
         .library(
             name: "SDDSComponents",
-            targets: ["SDDSComponents"]),
-        .library(
-            name: "SDDSComponentsPreview",
-            targets: ["SDDSComponentsPreview"]),
+            targets: ["SDDSComponents"])
     ],
     dependencies: [
         .package(name: "SDDSIcons", path: "../SDDSIcons"),
-        .package(name: "SDDSThemeCore", path: "../SDDSThemeBuilder/SDDSThemeCore"),
-        .package(name: "SDDSServTheme", path: "../Themes/SDDSservTheme")
+        .package(name: "SDDSThemeCore", path: "../SDDSThemeBuilder/SDDSThemeCore")
     ],
     targets: [
         .target(
@@ -28,20 +24,6 @@ let package = Package(
             resources: [
                 .process("../../Assets.xcassets")
             ]
-        ),
-        .target(
-            name: "SDDSComponentsPreview",
-            dependencies: ["SDDSServTheme", "SDDSThemeCore", "SDDSComponents"],
-            path: "SDDSComponentsPreview",
-            exclude: ["SDDSComponentsPreview.h"],
-            resources: [
-                .process("Assets.xcassets")
-            ]
-        ),
-        .testTarget(
-            name: "SDDSComponentsTests",
-            dependencies: ["SDDSComponents"],
-            path: "SDDSComponentsTests"
         )
     ]
 )

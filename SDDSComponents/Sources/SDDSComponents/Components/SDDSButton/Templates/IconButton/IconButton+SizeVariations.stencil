@@ -1,0 +1,24 @@
+// MARK: - Sourcery Template
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+// MARK: - Size
+public extension ButtonAppearanceVariation<IconButton> {
+    {% for variation, config in variations.size %}
+    var {{ variation.sizeKey }}: Self {
+        .init(
+            appearance: appearance
+                .size(IconButtonSize.{{ variation.sizeKey }})
+        )
+    }
+    {% endfor %}
+}
+
+public extension IconButton {
+    {% for variation, config in variations.size %}
+    static var {{ variation.sizeKey }}: ButtonAppearanceVariation<IconButton> {
+        return ButtonAppearanceVariation().{{ variation.sizeKey }}
+    }
+    {% endfor %}
+}

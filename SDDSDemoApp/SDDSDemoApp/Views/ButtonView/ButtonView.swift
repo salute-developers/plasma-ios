@@ -3,6 +3,13 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
+
+enum SDDSButtonType: String, CaseIterable {
+    case basic = "Basic Button"
+    case link = "Link Button"
+    case icon = "Icon Button"
+}
 
 struct ButtonView: View {
     @ObservedObject private var viewModel: ButtonViewModel
@@ -17,124 +24,164 @@ struct ButtonView: View {
             Section {
                 HStack {
                     Spacer()
-                    SDDSButton(
-                        title: viewModel.title,
-                        subtitle: viewModel.subtitle,
-                        iconAttributes: viewModel.iconAttributes,
-                        size: viewModel.size,
-                        isDisabled: viewModel.isDisabled,
-                        isLoading: viewModel.isLoading,
-                        spinnerImage: viewModel.spinnerImage,
-                        spinnerStyle: viewModel.spinnerStyle,
-                        buttonStyle: viewModel.buttonStyle,
-                        appearance: viewModel.appearance,
-                        layoutMode: viewModel.layoutMode, 
-                        action: {}
-                    )
+                    switch viewModel.buttonType {
+                    case .basic:
+                        BasicButton(
+                            title: viewModel.title,
+                            subtitle: viewModel.subtitle,
+                            iconAttributes: viewModel.iconAttributes,
+                            isDisabled: viewModel.isDisabled,
+                            isLoading: viewModel.isLoading,
+                            spinnerImage: viewModel.spinnerImage,
+                            appearance: viewModel.appearance,
+                            layoutMode: viewModel.layoutMode,
+                            action: {}
+                        )
+                    case .link:
+                        LinkButton(
+                            title: viewModel.title,
+                            iconAttributes: viewModel.iconAttributes,
+                            isDisabled: viewModel.isDisabled,
+                            isLoading: viewModel.isLoading,
+                            spinnerImage: viewModel.spinnerImage,
+                            appearance: viewModel.appearance,
+                            layoutMode: viewModel.layoutMode,
+                            action: {}
+                        )
+                    case .icon:
+                        IconButton(
+                            iconAttributes: viewModel.iconAttributes,
+                            isDisabled: viewModel.isDisabled,
+                            isLoading: viewModel.isLoading,
+                            spinnerImage: viewModel.spinnerImage,
+                            appearance: viewModel.appearance,
+                            layoutMode: viewModel.layoutMode,
+                            action: {}
+                        )
+                    }
                     Spacer()
                 }
             }
             
             Section {
                 HStack {
-                    Text("Style")
+                    Text("Button Type")
                     Spacer()
                         .frame(maxWidth: .infinity)
                     Menu {
-                        ForEach(SDDSComponents.ButtonStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue.capitalized) {
-                                viewModel.buttonStyle = style
+                        ForEach(SDDSButtonType.allCases, id: \.self) { buttonType in
+                            Button(buttonType.rawValue.capitalized) {
+                                viewModel.buttonType = buttonType
                             }
                         }
                     } label: {
-                        Text(viewModel.buttonStyle.rawValue.capitalized)
+                        Text(viewModel.buttonType.rawValue.capitalized)
                     }
                 }
                 HStack {
-                    Text("Color Style")
+                    Text("Appearance")
                     Spacer()
                         .frame(maxWidth: .infinity)
                     Menu {
-                        ForEach(SDDSServeB2CStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue) {
-                                viewModel.colorStyle = style
+                        switch viewModel.buttonType {
+                        case .basic:
+                            ForEach(BasicButton.all, id: \.self) { variation in
+                                Button(variation.name) {
+                                    viewModel.appearance = variation.appearance.size(viewModel.size)
+                                    viewModel.variationName = variation.name
+                                }
+                            }
+                        case .link:
+                            ForEach(LinkButton.all, id: \.self) { variation in
+                                Button(variation.name) {
+                                    viewModel.appearance = variation.appearance.size(viewModel.size)
+                                    viewModel.variationName = variation.name
+                                }
+                            }
+                        case .icon:
+                            ForEach(IconButton.all, id: \.self) { variation in
+                                Button(variation.name) {
+                                    viewModel.appearance = variation.appearance.size(viewModel.size)
+                                    viewModel.variationName = variation.name
+                                }
                             }
                         }
                     } label: {
-                        HStack {
-                            Rectangle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.colorStyle.defaultButtonAppearance.backgroundColor.color(for: colorScheme))
-                            
-                            Text(viewModel.colorStyle.rawValue)
-                        }
+                        Text(viewModel.variationName.capitalized)
                     }
                 }
-                if viewModel.isNotEquilateral {
-                    HStack {
-                        Text("Title")
-                        Spacer()
-                            .frame(maxWidth: .infinity)
-                        TextField("Button Title", text: $viewModel.title)
-                            .multilineTextAlignment(.trailing)
-                    }
-                    HStack {
-                        Text("Value")
-                        Spacer()
-                            .frame(maxWidth: .infinity)
-                        TextField("Button Value", text: $viewModel.subtitle)
-                            .multilineTextAlignment(.trailing)
-                    }
+                HStack {
+                    Text("Title")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    TextField("Button Title", text: $viewModel.title)
+                        .multilineTextAlignment(.trailing)
+                }
+                HStack {
+                    Text("Value")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    TextField("Button Value", text: $viewModel.subtitle)
+                        .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Toggle("Icon", isOn: $viewModel.isIconVisible)
-                }
-                if viewModel.isNotEquilateral {
-                    HStack {
-                        Text("Icon Alignment")
-                        Spacer()
-                            .frame(maxWidth: .infinity)
-                        Menu {
-                            ForEach(SDDSComponents.Alignment.allCases, id: \.self) { alignment in
-                                Button(alignment.rawValue.capitalized) {
-                                    viewModel.alignment = alignment
-                                }
-                            }
-                        } label: {
-                            Text(viewModel.alignment.rawValue)
-                        }
-                    }
                 }
                 HStack {
                     Text("Size")
                     Spacer()
                         .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(ButtonSize.allCases, id: \.self) { size in
-                            Button(size.rawValue) {
-                                viewModel.size = size
-                            }
-                        }
-                    } label: {
-                        if let size = viewModel.size as? ButtonSize {
-                            Text(size.rawValue)
-                        }
-                    }
-                }
-                if viewModel.isNotEquilateral {
-                    HStack {
-                        Text("Layout")
-                        Spacer()
-                            .frame(maxWidth: .infinity)
+                    switch viewModel.buttonType {
+                    case .basic:
                         Menu {
-                            ForEach(ButtonLayoutMode.allCases, id: \.self) { layoutMode in
-                                Button(layoutMode.title) {
-                                    viewModel.layoutMode = layoutMode
+                            ForEach(BasicButtonSize.allCases, id: \.self) { size in
+                                Button(size.rawValue) {
+                                    viewModel.size = size
                                 }
                             }
                         } label: {
-                            Text(viewModel.layoutMode.title)
+                            if let size = viewModel.size as? BasicButtonSize {
+                                Text(size.rawValue)
+                            }
                         }
+                    case .link:
+                        Menu {
+                            ForEach(LinkButtonSize.allCases, id: \.self) { size in
+                                Button(size.rawValue) {
+                                    viewModel.size = size
+                                }
+                            }
+                        } label: {
+                            if let size = viewModel.size as? LinkButtonSize {
+                                Text(size.rawValue)
+                            }
+                        }
+                    case .icon:
+                        Menu {
+                            ForEach(IconButtonSize.allCases, id: \.self) { size in
+                                Button(size.rawValue) {
+                                    viewModel.size = size
+                                }
+                            }
+                        } label: {
+                            if let size = viewModel.size as? IconButtonSize {
+                                Text(size.rawValue)
+                            }
+                        }
+                    }
+                }
+                HStack {
+                    Text("Layout")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(ButtonLayoutMode.allCases, id: \.self) { layoutMode in
+                            Button(layoutMode.title) {
+                                viewModel.layoutMode = layoutMode
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.layoutMode.title)
                     }
                 }
                 HStack {
@@ -142,20 +189,6 @@ struct ButtonView: View {
                 }
                 HStack {
                     Toggle("Loading", isOn: $viewModel.isLoading)
-                }
-                HStack {
-                    Text("Spinner Style")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(SpinnerStyle.allCases, id: \.self) { spinnerStyle in
-                            Button(spinnerStyle.rawValue.capitalized) {
-                                viewModel.spinnerStyle = spinnerStyle
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.spinnerStyle.rawValue.capitalized)
-                    }
                 }
             }
         }

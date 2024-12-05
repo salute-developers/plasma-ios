@@ -27,7 +27,7 @@ def run_tests(project_root_dir, workspace_name, modules)
 
     destination = case platform
                   when 'iOS'
-                    "platform=iOS Simulator,name=iPhone 14 Pro Max"
+                    "platform=iOS Simulator,name=iPhone 16 Pro Max"
                   when 'macOS'
                     "platform=macOS,arch=arm64"
                   else

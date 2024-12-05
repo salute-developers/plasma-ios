@@ -26,6 +26,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipGroupVerticalTopPadding: CGFloat { get }
     var chipGroupVerticalBottomPadding: CGFloat { get }
     var textInputBottomPadding: CGFloat { get }
+    var iconActionClearTrailingPadding: CGFloat { get }
     
     func fieldHeight(layout: TextAreaLayout) -> CGFloat
     func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat

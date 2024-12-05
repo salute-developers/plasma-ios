@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
+import SDDSServTheme
 
 extension SDDSChip {
     static var defaultExample: SDDSChip {
@@ -10,7 +11,7 @@ extension SDDSChip {
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
             appearance: .default,
-            size: SDDSChipSize.medium(.pilled),
+            size: SDDSChipSize.large(.pilled),
             removeAction: {}
         )
     }

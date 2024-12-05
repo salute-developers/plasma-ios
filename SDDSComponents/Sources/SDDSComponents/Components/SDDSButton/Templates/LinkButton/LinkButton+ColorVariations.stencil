@@ -1,0 +1,54 @@
+// MARK: - Sourcery Template
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+epublic xtension ButtonAppearanceVariation<LinkButton> {
+    {% for variation, config in variations.color %}
+    var {{ variation.camelCase }}: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: LinkButton.{{ variation.camelCase }}).appearance
+        )
+    }
+    {% endfor %}
+}
+
+public extension LinkButton {
+    {% for variation, config in variations.color %}
+    static var {{ variation.camelCase }}: ButtonAppearanceVariation<LinkButton> {
+        .init(
+            appearance: ButtonAppearance(
+                titleTypography: LinkButton.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                subtitleTypography: LinkButton.subtitleTypography,
+                subtitleColor: ButtonColor(
+                    defaultColor: .clearColor,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                spinnerColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .{{ invariant.backgroundColor.default.camelCase }},
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                disabledAlpha: 0.4,
+                loadingAlpha: {{ invariant.loadingAlpha }}
+            )
+        )
+    }
+    {% endfor %}
+}

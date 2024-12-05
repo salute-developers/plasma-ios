@@ -1,0 +1,52 @@
+// MARK: - Colors
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+public extension ButtonAppearanceVariation<IconButton> {
+    {% for variation, config in variations.color %}
+    var {{ variation.camelCase }}: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: .{{ variation.camelCase }})
+        )
+    }
+    {% endfor %}
+}
+
+public extension IconButton {
+    {% for variation, config in variations.color %}
+    static var {{ variation.camelCase }}: ButtonAppearanceVariation<IconButton> {
+        .init(
+            appearance: ButtonAppearance(
+                titleColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                subtitleColor: ButtonColor(
+                    defaultColor: .clearColor,
+                    highlightedColor: .clearColor,
+                    hoveredColor: .clearColor
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                spinnerColor: ButtonColor(
+                    defaultColor: .{{ config.contentColor.default.camelCase }},
+                    highlightedColor: .{{ config.contentColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.contentColor.states | findState("hovered") }}
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .{{ config.backgroundColor.default.camelCase }},
+                    highlightedColor: .{{ config.backgroundColor.states | findState("pressed") }},
+                    hoveredColor: .{{ config.backgroundColor.states | findState("hovered") }}
+                ),
+                disabledAlpha: 0.4,
+                loadingAlpha: 0.06
+            )
+        )
+    }
+    {% endfor %}
+}

@@ -62,6 +62,19 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
             8
         }
     }
+    
+    public var iconActionClearTrailingPadding: CGFloat {
+        switch self {
+        case .large:
+            6
+        case .medium:
+            5
+        case .small:
+            4
+        case .extraSmall:
+            3
+        }
+    }
 
     public var captionTopPadding: CGFloat {
         4
@@ -142,21 +155,21 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
         case (.extraSmall, .outer, .left, _):
             return 4
         case (.large, .inner, .right, .clear), (.large, .inner, .left, .clear):
-            return 24
+            return 25
         case (.medium, .inner, .right, .clear), (.medium, .inner, .left, .clear):
-            return 23
+            return 22
         case (.small, .inner, .right, .clear), (.small, .inner, .left, .clear):
-            return 22
+            return 19
         case (.extraSmall, .inner, .right, .clear), (.extraSmall, .inner, .left, .clear):
-            return 21
+            return 12
         case (.large, .none, .left, .clear), (.large, .none, .right, .clear):
-            return 24
+            return 20
         case (.medium, .none, .left, .clear), (.medium, .none, .right, .clear):
-            return 23
+            return 19
         case (.small, .none, .left, .clear), (.small, .none, .right, .clear):
-            return 22
+            return 18
         case (.extraSmall, .none, .left, .clear), (.extraSmall, .none, .right, .clear):
-            return 21
+            return 17
         case (.large, .outer, .right, _), (.medium, .outer, .right, _), (.small, .outer, .right, _):
             return -2
         case (.extraSmall, .outer, .right, _):

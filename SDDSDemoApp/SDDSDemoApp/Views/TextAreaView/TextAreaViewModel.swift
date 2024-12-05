@@ -16,7 +16,7 @@ final class TextAreaViewModel: ObservableObject {
     @Published var readOnly: Bool = false
     @Published var required: Bool = false
     @Published var iconActionViewEnabled: Bool = true
-    @Published var dynamicHeight: Bool = false
+    @Published var dynamicHeight: Bool = true
 
     @Published var style: SDDSComponents.TextAreaStyle = .default
     @Published var labelPlacement: TextAreaLabelPlacement = .outer
