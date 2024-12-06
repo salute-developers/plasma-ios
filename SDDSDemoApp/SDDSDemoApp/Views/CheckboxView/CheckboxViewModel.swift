@@ -3,6 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class CheckboxViewModel: ObservableObject {
     // MARK: - Checkbox Properties
@@ -10,88 +11,48 @@ final class CheckboxViewModel: ObservableObject {
     @Published var subtitle: String = ""
     @Published var state: SelectionControlState = .deselected
     @Published var isEnabled: Bool = true
-    @Published var size: SelectionControlSizeConfiguration = SDDSCheckboxSize.medium
-    @Published var appearance: CheckboxAppearance = CheckboxAppearance.default
+    @Published var size: SDDSCheckboxSize = SDDSCheckboxSize.medium
+    @Published var appearance: CheckboxAppearance = SDDSCheckbox.default.appearance
+    @Published var variationName: String = SDDSCheckbox.default.name
     
     // MARK: - Screen properties
-    @Published var tintColor: ColorStyle = .none
-    @Published var imageWidth: CGFloat = 20
-    @Published var imageHeight: CGFloat = 20
-    @Published var horizontalGap: CGFloat = 8
-    @Published var verticalGap: CGFloat = 0
-    
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
-        observeColors()
-        observeSize()
+        observeSizeChange()
     }
     
-    private func observeColors() {
-        $tintColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style == .none ? nil : style.color.token) ?? .default
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func observeSize() {
-        Publishers.CombineLatest3($imageWidth, $imageHeight, $horizontalGap)
-            .combineLatest($verticalGap)
-            .sink { [weak self] (sizeValues, verticalGap) in
-                let (width, height, horizontalGap) = sizeValues
-                self?.size = CustomCheckboxSize(
-                    imageSize: CGSize(width: width, height: height),
-                    horizontalGap: horizontalGap,
-                    verticalGap: verticalGap
-                )
+    private func observeSizeChange() {
+        $size
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                self.appearance = self.appearance.size(value)
             }
             .store(in: &cancellables)
     }
 }
 
-// Custom Size Configuration
-struct CustomCheckboxSize: SelectionControlSizeConfiguration {
-    var imageSize: CGSize
-    var horizontalGap: CGFloat
-    var verticalGap: CGFloat
-    
-    var debugDescription: String {
-        String(reflecting: self)
+extension SDDSCheckboxSize: Hashable {
+    public static func == (lhs: SDDSCheckboxSize, rhs: SDDSCheckboxSize) -> Bool {
+        lhs.rawValue == rhs.rawValue
     }
-}
 
-// Extension for Appearance to update colors
-extension CheckboxAppearance {
-    func withTintColor(_ color: ColorToken?) -> CheckboxAppearance {
-        .init(
-            titleTypography: titleTypography,
-            subtitleTypography: subtitleTypography,
-            titleColor: titleColor,
-            subtitleColor: subtitleColor,
-            disabledAlpha: disabledAlpha,
-            imageTintColor: color
-        )
+    public static var allCases: [SDDSCheckboxSize] {
+        [.medium, .small]
     }
-}
 
-enum ColorStyle: String, CaseIterable {
-    case none, blue, green, red, gray, black
-    
-    var color: Color {
+    var description: String {
         switch self {
-        case .none:
-            return .clear
-        case .blue:
-            return .blue
-        case .green:
-            return .green
-        case .red:
-            return .red
-        case .gray:
-            return .gray
-        case .black:
-            return .black
+        case .medium:
+            return "Medium"
+        case .small:
+            return "Small"
         }
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
 }

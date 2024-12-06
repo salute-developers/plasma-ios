@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class RadioboxGroupViewModel: ObservableObject {
     @Published var radioboxViewModels: [RadioboxItemViewModel]
@@ -36,8 +37,7 @@ struct RadioboxItemViewModel {
             isSelected: .constant(isSelected),
             isEnabled: isEnabled,
             images: RadioboxView.radiobox,
-            size: size,
-            appearance: .default,
+            appearance: SDDSRadiobox.default.appearance.size(size),
             accessibility: .init()
         )
     }

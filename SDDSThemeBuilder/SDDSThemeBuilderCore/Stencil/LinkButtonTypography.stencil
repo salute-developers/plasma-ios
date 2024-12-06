@@ -29,7 +29,7 @@ public struct LinkButtonTypography: GeneralTypographyConfiguration {
      - Returns: Типографика для заданного размера кнопки или nil, если не задана.
      */
     public func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
-        switch size as? BasicButtonSize {
+        switch size as? LinkButtonSize {
         {%- for variation, config in variations.size %}
         case .{{ variation | sizeKey }}: return {{ variation | sizeKey }}
         {%- endfor %}

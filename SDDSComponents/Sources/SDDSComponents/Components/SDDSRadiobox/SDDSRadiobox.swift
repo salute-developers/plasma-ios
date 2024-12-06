@@ -18,7 +18,6 @@ public struct SDDSRadiobox: View {
     let subtitle: String?
     let isEnabled: Bool
     let images: RadioboxImages
-    let size: SelectionControlSizeConfiguration
     let appearance: RadioboxAppearance
     let accessibility: SelectionControlAccessibility
     
@@ -28,7 +27,6 @@ public struct SDDSRadiobox: View {
         subtitle: String? = nil,
         isEnabled: Bool,
         images: RadioboxImages,
-        size: SelectionControlSizeConfiguration,
         appearance: RadioboxAppearance,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -37,7 +35,6 @@ public struct SDDSRadiobox: View {
         self.subtitle = subtitle
         self.isEnabled = isEnabled
         self.images = images
-        self.size = size
         self.appearance = appearance
         self.accessibility = accessibility
     }
@@ -56,7 +53,6 @@ public struct SDDSRadiobox: View {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            size: size,
             appearance: appearance,
             images: .init(
                 selectedImage: images.selectedImage,

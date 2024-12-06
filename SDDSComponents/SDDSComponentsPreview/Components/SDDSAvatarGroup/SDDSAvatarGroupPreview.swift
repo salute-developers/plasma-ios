@@ -22,8 +22,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -31,8 +30,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -40,8 +38,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             )
         ]
@@ -53,8 +50,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: .default,
-            size: DefaultAvatarSize.extraExtraLarge,
+            appearance: SDDSAvatar.large.default.appearance,
             accessibility: defaultAccessibility
         )
     }

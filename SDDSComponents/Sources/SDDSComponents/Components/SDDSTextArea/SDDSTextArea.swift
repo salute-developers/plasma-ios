@@ -774,7 +774,7 @@ public struct SDDSTextArea: View {
         case .single:
             return 0
         case .multiple(_, let chips):
-            guard let chipSize = chips.first?.size else {
+            guard let chipSize = chips.first?.appearance.size else {
                 return 0
             }
             switch chipSize.borderStyle {
