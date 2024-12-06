@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 // MARK: - Colors
 import Foundation
 import SDDSComponents
