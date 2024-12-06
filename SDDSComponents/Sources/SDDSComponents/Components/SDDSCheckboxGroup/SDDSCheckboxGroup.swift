@@ -77,7 +77,6 @@ public struct SDDSCheckboxGroup: View {
                     subtitle: parent.subtitle,
                     isEnabled: parent.isEnabled,
                     images: parent.images,
-                    size: parent.size,
                     appearance: parent.appearance,
                     accessibility: parent.accessibility
                 )
@@ -94,7 +93,6 @@ public struct SDDSCheckboxGroup: View {
                         subtitle: child.subtitle,
                         isEnabled: child.isEnabled,
                         images: child.images,
-                        size: child.size,
                         appearance: child.appearance,
                         accessibility: child.accessibility
                     )
@@ -114,7 +112,6 @@ public struct SDDSCheckboxGroup: View {
                         subtitle: item.subtitle,
                         isEnabled: item.isEnabled,
                         images: item.images,
-                        size: item.size,
                         appearance: item.appearance,
                         accessibility: item.accessibility
                     )

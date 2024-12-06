@@ -11,13 +11,29 @@ final class ChipViewModel: ObservableObject {
     @Published var buttomImageEnabled: Bool = true
     @Published var size: SDDSChipSize = .medium(.default(8))
     @Published var borderStyle: ChipBorderStyle = .default(8)
-    @Published var appearance: ChipAppearance = .default
+    @Published var appearance: ChipAppearance = SDDSChip.accent.appearance
+    @Published var variationName: String = SDDSChip.accent.name
     @Published var iconImage: Image? = nil
     @Published var buttonImage: Image? = nil
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     init() {
         setIconImage()
         setButtonImage()
+        
+        observeSizeChange()
+    }
+    
+    private func observeSizeChange() {
+        $size
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                self.appearance = self.appearance.size(value)
+            }
+            .store(in: &cancellables)
     }
 
     var removeAction: () -> Void {
@@ -46,21 +62,9 @@ final class ChipViewModel: ObservableObject {
     }
 }
 
-// MARK: - ChipAppearance Extensions
-
-extension ChipAppearance: CaseIterable {
-    public static var allCases: [ChipAppearance] {
-        [.default]
-    }
-
-    public var name: String {
-        return "Default"
-    }
-}
-
 // MARK: - SDDSChipSize Extensions
 
-extension SDDSChipSize: CaseIterable {
+extension SDDSChipSize: Hashable, CaseIterable {
     public static var allCases: [SDDSChipSize] {
         [.large(.default(8)), .medium(.default(8)), .small(.default(8)), .extraSmall(.default(8))]
     }

@@ -3,6 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class ProgressBarViewModel: ObservableObject {
     // MARK: - Progress Bar Properties
@@ -28,78 +29,10 @@ final class ProgressBarViewModel: ObservableObject {
         }
     }
     @Published var isEnabled: Bool = true
-    @Published var appearance: ProgressBarAppearance = .accent
-    @Published var size: ProgressBarSizeConfiguration = DefaultProgressBarSize()
+    @Published var variation: AppearanceVariation<ProgressBarAppearance> = SDDSProgressView.accent
     
     // MARK: - Screen properties
-    @Published var tintColor: ColorStyle = .green
-    @Published var trackColor: ColorStyle = .gray
-    @Published var height: CGFloat = 4.0
-    @Published var indicatorHeight: CGFloat = 6.0
-    @Published var cornerRadius: CGFloat = 2.0
-    @Published var indicatorCornerRadius: CGFloat = 6.0
     
-    private var cancellables: Set<AnyCancellable> = []
     private var isUpdatingProgress = false
     private var isUpdatingProgressString = false
-
-    init() {
-        observeColors()
-        observeSize()
-    }
-    
-    private func observeColors() {
-        $tintColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .accent
-            }
-            .store(in: &cancellables)
-        
-        $trackColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTrackColor(style.color.token) ?? .accent
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func observeSize() {
-        Publishers.CombineLatest4($height, $indicatorHeight, $cornerRadius, $indicatorCornerRadius)
-            .sink { [weak self] (height, indicatorHeight, cornerRadius, indicatorCornerRadius) in
-                self?.size = CustomProgressBarSize(
-                    height: height,
-                    indicatorHeight: indicatorHeight,
-                    cornerRadius: cornerRadius,
-                    indicatorCornerRadius: indicatorCornerRadius
-                )
-            }
-            .store(in: &cancellables)
-    }
-}
-
-// Custom Size Configuration
-struct CustomProgressBarSize: ProgressBarSizeConfiguration {
-    var height: CGFloat
-    var indicatorHeight: CGFloat
-    var cornerRadius: CGFloat
-    var indicatorCornerRadius: CGFloat
-    
-    var debugDescription: String {
-        String(reflecting: self)
-    }
-}
-
-extension ProgressBarAppearance {
-    func withTintColor(_ color: ColorToken) -> ProgressBarAppearance {
-        .init(
-            tintFillStyle: .color(color),
-            trackColor: trackColor
-        )
-    }
-    
-    func withTrackColor(_ color: ColorToken) -> ProgressBarAppearance {
-        .init(
-            tintFillStyle: .color(color),
-            trackColor: color
-        )
-    }
 }

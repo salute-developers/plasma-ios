@@ -55,8 +55,7 @@ final class TextAreaViewModel: ObservableObject {
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("textFieldChipIcon"),
-            appearance: .textField,
-            size: chipSize,
+            appearance: .textField.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: { [weak self] in
                 self?.removeChip(with: id)
@@ -73,8 +72,7 @@ final class TextAreaViewModel: ObservableObject {
             isEnabled: updatedChip.isEnabled,
             iconImage: updatedChip.iconImage,
             buttonImage: updatedChip.buttonImage,
-            appearance: updatedChip.appearance,
-            size: updatedChip.size,
+            appearance: updatedChip.appearance.size(updatedChip.appearance.size),
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )
@@ -93,8 +91,7 @@ final class TextAreaViewModel: ObservableObject {
                 isEnabled: chip.isEnabled,
                 iconImage: chip.iconImage,
                 buttonImage: chip.buttonImage,
-                appearance: chip.appearance,
-                size: chipSize,
+                appearance: chip.appearance.size(chipSize),
                 accessibility: chip.accessibility,
                 removeAction: chip.removeAction
             )
