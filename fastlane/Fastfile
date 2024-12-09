@@ -2,6 +2,7 @@ default_platform(:ios)
 
 platform :ios do
   lane :build_and_upload do
+    xcode_select("/Applications/Xcode_16.1.app")
   
     # Increment build number
   desc "Increment build number"
