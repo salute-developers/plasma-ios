@@ -1,60 +1,47 @@
 default_platform(:ios)
 
 platform :ios do
+  lane :build_and_upload do
+  
     # Increment build number
   desc "Increment build number"
-  lane :increment_build_number do
-     increment_build_number(
-      xcodeproj: "SDDSDemoApp.xcodeproj"
-    )
-  end
+    build_number = increment_build_number(
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
     
     # Update Info.plist
   desc "Update Info.plist"
-  lane :update_info_plist do
-    version = get_version_number(xcodeproj: "SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
+    version = get_version_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
     
     ENV["VERSION"] = version
     
-    update_info_plist(
-      plist_path: "build/Info.plist",
-      plist_key: "CFBundleDisplayName",
-      plist_value: new_app_name
-    )
-  end
+    #update_info_plist(
+     #plist_path: "build/Info.plist",
+      #plist_key: "CFBundleDisplayName",
+      #plist_value: new_app_name)
 
     # Build app
   desc "Build app"
-  lane :build_app do
     branch_name = git_branch
     version = ENV["VERSION"]
-    build_name = "SDDSDemo #{version} #{build_number} #{brunch_name}"
+    build_name = "SDDSDemo #{version} #{build_number} #{branch_name}"
     
-    build_app(
-      scheme: "SDDSDemo",
-      workspace: "SDDS.xcworkspace"
+    gym(
+      scheme: "SDDSDemoApp",
       export_method: "app-store",
-      include_bitcode: true,
-      include_symbols: true
-    )
-  end
+      export_options: {
+        uploadBitcode: true,
+        compileBitcode: true,
+        uploadSymbols: true,
+        productName: build_name
+      })
     
     # Upload to TestFlight
   desc "Upload to TestFlight"
-  lane :upload_to_testflight
     upload_to_testflight(
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
         issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
         key_filepath: ENV["APP_STORE_CONNECT_API_KEY"]
-      }
-  end
-    # Main lane
-  desc "Build and upload to TestFlight"
-  lane :build_and_upload do
-    increment_build_number
-    build_app
-    update_info_plist
-    upload_to_testflight
+      })
   end
 end
