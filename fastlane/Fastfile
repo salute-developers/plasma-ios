@@ -2,7 +2,7 @@ default_platform(:ios)
 
 platform :ios do
     # Increment build number
-  desc: "Increment build number"
+  desc "Increment build number"
   lane :increment_build_number do
      increment_build_number(
       xcodeproj: "SDDSDemoApp.xcodeproj"
@@ -10,7 +10,7 @@ platform :ios do
   end
     
     # Update Info.plist
-  desc: "Update Info.plist"
+  desc "Update Info.plist"
   lane :update_info_plist do
     version = get_version_number(xcodeproj: "SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
     
@@ -24,7 +24,7 @@ platform :ios do
   end
 
     # Build app
-  desc: "Build app"
+  desc "Build app"
   lane :build_app do
     branch_name = git_branch
     version = ENV["VERSION"]
@@ -40,7 +40,7 @@ platform :ios do
   end
     
     # Upload to TestFlight
-  desc: "Upload to TestFlight"
+  desc "Upload to TestFlight"
   lane :upload_to_testflight
     upload_to_testflight(
       api_key: {
@@ -49,8 +49,8 @@ platform :ios do
         key_filepath: ENV["APP_STORE_CONNECT_API_KEY"]
       }
   end
-  
-  desc: "Build and upload to TestFlight"
+    # Main lane
+  desc "Build and upload to TestFlight"
   lane :build_and_upload do
     increment_build_number
     build_app
