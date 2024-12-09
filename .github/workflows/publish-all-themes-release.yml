@@ -30,11 +30,7 @@ jobs:
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
-<<<<<<< HEAD
           chmod +x ./scripts/install_certificate_and_profile.sh
-=======
-          ./scripts/install_certificate_and_profile.sh
->>>>>>> 9993ae45 (feat: added build automation)
          
       - name: Install dependencies
         run: |

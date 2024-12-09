@@ -49,8 +49,3 @@ jobs:
       - name: Build and Upload
         run: |
           fastlane build_and_upload
-
-      - name: Install Fastlane and initialize
-        run: |
-         gem install fastlane -NV
-         fastlane init
