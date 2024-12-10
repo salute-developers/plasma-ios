@@ -2,8 +2,6 @@ default_platform(:ios)
 
 platform :ios do
   lane :build_and_upload do
-    xcode_select("/Applications/Xcode_16.1.app")
-  
     # Increment build number
   desc "Increment build number"
     build_number = increment_build_number(
@@ -14,11 +12,6 @@ platform :ios do
     version = get_version_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
     
     ENV["VERSION"] = version
-    
-    #update_info_plist(
-     #plist_path: "build/Info.plist",
-      #plist_key: "CFBundleDisplayName",
-      #plist_value: new_app_name)
 
     # Build app
   desc "Build app"
@@ -26,15 +19,9 @@ platform :ios do
     version = ENV["VERSION"]
     build_name = "SDDSDemo #{version} #{build_number} #{branch_name}"
     
-    gym(
+    build_app(
       scheme: "SDDSDemoApp",
-      export_method: "app-store",
-      export_options: {
-        uploadBitcode: true,
-        compileBitcode: true,
-        uploadSymbols: true,
-        productName: build_name
-      })
+      xcargs: "-allowProvisioningUpdates")
     
     # Upload to TestFlight
   desc "Upload to TestFlight"
