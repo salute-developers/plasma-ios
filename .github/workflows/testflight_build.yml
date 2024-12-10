@@ -43,6 +43,17 @@ jobs:
           echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
           echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode -o $PP_PATH
 
+          # check if files are decoded correctly
+          if [ ! -f "$CERTIFICATE_PATH" ]; then
+            echo "Certificate file not found at $CERTIFICATE_PATH"
+            exit 1
+          fi
+
+          if [ ! -f "$PP_PATH" ]; then
+            echo "Provisioning profile file not found at $PP_PATH"
+            exit 1
+          fi
+
           # create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
@@ -50,12 +61,13 @@ jobs:
 
           # import certificate to keychain
           security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          if [ $? -ne 0 ]; then
+            echo "Failed to import certificate"
+            exit 1
+          fi
+
           security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
           
       - name: Install Fastlane
         run: gem install fastlane
