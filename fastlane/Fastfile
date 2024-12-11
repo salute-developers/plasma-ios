@@ -19,8 +19,7 @@ platform :ios do
     version = ENV["VERSION"]
     build_name = "SDDSDemo #{version} #{build_number} #{branch_name}"
     
-    get_certificates
-    get_provisioning_profile
+    match(type: "appstore")
     
     build_app(
       scheme: "SDDSDemoApp",
