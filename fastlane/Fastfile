@@ -26,9 +26,13 @@ platform :ios do
       scheme: "SDDSDemoApp",
       export_method: "app-store",
       export_options: {
+        signingStyle: "manual",
+        teamID: "KDMYYG676V",
         provisioningProfiles: {
-          "com.sd.SDDSDemo" => "SDDS Demo Distribution",
-        }
+          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+        },
+        certificate: "iPhone Distribution: SALUTEDEV, MChJ (KDMYYG676V)",
+        profile: "SDDS Demo Distribution"
       },
       output_name: build_name
     )
