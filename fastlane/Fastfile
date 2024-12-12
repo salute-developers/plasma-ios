@@ -34,7 +34,6 @@ platform :ios do
     )
     
     # Upload to TestFlight
-  desc "Upload to TestFlight"
     upload_to_testflight(
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
