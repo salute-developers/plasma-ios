@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: macos-latest
     
+    environment: sdds
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -38,6 +39,9 @@ jobs:
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          
+          echo "Certificate Base64 Length: ${#BUILD_CERTIFICATE_BASE64}"
+          echo "Provision Profile Base64 Length: ${#BUILD_PROVISION_PROFILE_BASE64}"
 
           # import certificate and provisioning profile from secrets
           echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
@@ -65,5 +69,9 @@ jobs:
           echo "FASTLANE_PASSWORD=${{ secrets.FASTLANE_PASSWORD }}" >> $GITHUB_ENV
       
       - name: Build and Upload
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
         run: fastlane build_and_upload
         
