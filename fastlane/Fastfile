@@ -3,27 +3,35 @@ default_platform(:ios)
 platform :ios do
   lane :build_and_upload do
     # Increment build number
-  desc "Increment build number"
     build_number = increment_build_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
     
     # Update Info.plist
-  desc "Update Info.plist"
     version = get_version_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
     
     ENV["VERSION"] = version
+    version = ENV["VERSION"]
+        
+    # Check current branch
+    branch_name = git_branch
+
+    if branch_name == "develop"
+      build_name = "SDDSDemo #{version} #{build_number} (dev)"
+    else
+      build_name = "SDDSDemo"
+    end
 
     # Build app
-  desc "Build app"
-    branch_name = git_branch
-    version = ENV["VERSION"]
-    build_name = "SDDSDemo #{version} #{build_number} #{branch_name}"
-    
-    match(type: "appstore")
-    
     build_app(
       scheme: "SDDSDemoApp",
-      xcargs: "-allowProvisioningUpdates")
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+          "com.sd.SDDSDemo" => "SDDS Demo Distribution",
+        }
+      },
+      output_name: build_name
+    )
     
     # Upload to TestFlight
   desc "Upload to TestFlight"
