@@ -13,30 +13,43 @@ platform :ios do
     check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
 
     UI.message("All required environment variables are set!")
-
-    # Получение текущего номера сборки из Xcode проекта
-    current_build_number = get_build_number(
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    )
-    next_build_number = (current_build_number.to_i + 1).to_s
-
-    # Увеличиваем номер сборки в Xcode проекте
-    increment_build_number(
-      build_number: next_build_number,
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    )
-
+    
     # Получаем текущую версию из Info.plist
     version = get_version_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
       target: "SDDSDemoApp"
     )
+
     if version.nil?
       UI.user_error!("Version number is missing.")
     end
 
     ENV["VERSION"] = version
     version = ENV["VERSION"]
+    
+    # Получение последнего номера сборки из TestFlight
+    begin
+      latest_build_number = app_store_build_number(
+        app_identifier: "com.sd.SDDSDemo",
+        api_key: {
+          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+          key: ENV["APP_STORE_CONNECT_API_KEY"]
+        }
+      )
+      next_build_number = (latest_build_number.to_i + 1).to_s
+    rescue => e
+      UI.message("Could not fetch the latest build number from TestFlight: #{e.message}")
+      # Получение текущего номера сборки из Xcode проекта
+      current_build_number = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
+      next_build_number = (current_build_number.to_i + 1).to_s
+    end
+
+    # Увеличиваем номер сборки в Xcode проекте
+    increment_build_number(
+      build_number: next_build_number,
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    )
 
     # Определяем имя сборки в зависимости от ветки
     branch_name = git_branch
