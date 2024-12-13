@@ -38,11 +38,9 @@ platform :ios do
         }
       )
       next_build_number = (latest_build_number.to_i + 1).to_s
+      UI.message("Latest build number from TestFlight: #{next_build_number}")
     rescue => e
       UI.message("Could not fetch the latest build number from TestFlight: #{e.message}")
-      # Получение текущего номера сборки из Xcode проекта
-      current_build_number = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
-      next_build_number = (current_build_number.to_i + 1).to_s
     end
 
     # Увеличиваем номер сборки в Xcode проекте
