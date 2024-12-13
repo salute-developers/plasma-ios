@@ -19,6 +19,9 @@ platform :ios do
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
       target: "SDDSDemoApp"
     )
+    
+    # Получаем ткущую версию сборки
+    current_build_number_version = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
 
     if version.nil?
       UI.user_error!("Version number is missing.")
@@ -37,7 +40,16 @@ platform :ios do
           key: ENV["APP_STORE_CONNECT_API_KEY"]
         }
       )
-      next_build_number = (latest_build_number.to_i + 1).to_s
+      
+      latset_build_number_testflight = latest_testflight_build_number(
+        api_key: {
+          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+          key: ENV["APP_STORE_CONNECT_API_KEY"]
+        }
+      )
+      
+      next_build_number = (latset_build_number_testflight.to_i + 1).to_s
       UI.message("Latest build number from TestFlight: #{next_build_number}")
     rescue => e
       UI.message("Could not fetch the latest build number from TestFlight: #{e.message}")
