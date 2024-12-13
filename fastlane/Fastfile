@@ -2,6 +2,7 @@ default_platform(:ios)
 
 platform :ios do
   lane :build_and_upload do
+    # Проверка переменных окружения
     def check_env_variable(key)
       if ENV[key].nil? || ENV[key].empty?
         UI.user_error!("Missing environment variable: #{key}")
@@ -15,12 +16,19 @@ platform :ios do
     UI.message("All required environment variables are set!")
 
     app_identifier = "com.sd.SDDSDemo"
-    latest_build_number = get_build_number(
+
+    # Получение последнего номера сборки из App Store Connect
+    latest_build_number = app_store_build_number(
       app_identifier: app_identifier,
       version: get_version_number(
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
         target: "SDDSDemoApp"
-      )
+      ),
+      api_key: {
+        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
     )
 
     next_build_number = (latest_build_number.to_i + 1).to_s
