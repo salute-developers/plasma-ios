@@ -2,26 +2,46 @@ default_platform(:ios)
 
 platform :ios do
   lane :build_and_upload do
+    def check_env_variable(key)
+      if ENV[key].nil? || ENV[key].empty?
+        UI.user_error!("Missing environment variable: #{key}")
+      end
+    end
+
+    check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
+    check_env_variable("APP_STORE_CONNECT_API_KEY")
+    check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
+
+    UI.message("All required environment variables are set!")
+
     # Increment build number
     build_number = increment_build_number(
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
-    
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    )
+
     # Update Info.plist
-    version = get_version_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj", target: "SDDSDemoApp")
-    
+    version = get_version_number(
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+      target: "SDDSDemoApp"
+    )
+    if version.nil?
+      UI.user_error!("Version number is missing.")
+    end
+
     ENV["VERSION"] = version
     version = ENV["VERSION"]
-        
+
     # Check current branch
     branch_name = git_branch
 
-    if branch_name == "develop"
-      build_name = "SDDSDemo #{version} #{build_number} (dev)"
-    else
-      build_name = "SDDSDemo"
-    end
-    
+    build_name = if branch_name == "develop"
+                   "SDDSDemo #{version} #{build_number} (dev)"
+                 else
+                   "SDDSDemo"
+                 end
+
     # Build app
+    UI.message("Building app...")
     build_app(
       scheme: "SDDSDemoApp",
       export_method: "app-store",
@@ -36,13 +56,15 @@ platform :ios do
       },
       output_name: build_name
     )
-    
+
     # Upload to TestFlight
+    UI.message("Uploading to TestFlight...")
     upload_to_testflight(
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
         issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-        key_filepath: ENV["APP_STORE_CONNECT_API_KEY"]
-      })
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
+    )
   end
 end
