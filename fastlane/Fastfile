@@ -37,6 +37,10 @@ platform :ios do
       output_name: build_name
     )
     
+    puts "APP_STORE_CONNECT_API_KEY_ID: #{ENV['APP_STORE_CONNECT_API_KEY_ID']}"
+    puts "APP_STORE_CONNECT_API_KEY: #{ENV['APP_STORE_CONNECT_API_KEY']}"
+    puts "APP_STORE_CONNECT_ISSUER_ID: #{ENV['APP_STORE_CONNECT_ISSUER_ID']}"
+    
     # Upload to TestFlight
     upload_to_testflight(
       api_key: {
