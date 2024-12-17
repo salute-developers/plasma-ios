@@ -19,9 +19,6 @@ platform :ios do
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
       target: "SDDSDemoApp"
     )
-    
-    # Получаем ткущую версию сборки
-    current_build_number_version = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
 
     if version.nil?
       UI.user_error!("Version number is missing.")
@@ -44,6 +41,8 @@ platform :ios do
       build_number: latset_build_number_testflight,
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
     )
+    
+    next_build_number = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
 
     # Определяем имя сборки в зависимости от ветки
     branch_name = git_branch
