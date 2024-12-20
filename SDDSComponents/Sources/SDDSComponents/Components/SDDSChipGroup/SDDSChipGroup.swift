@@ -2,52 +2,6 @@ import Foundation
 import SwiftUI
 
 /**
- Структура, представляющая данные для чипа.
-
- - Properties:
-    - id: Уникальный идентификатор чипа.
-    - title: Текст заголовка чипа.
-    - isEnabled: Флаг, указывающий, включен ли чип.
-    - iconImage: Изображение иконки для чипа.
-    - buttonImage: Изображение кнопки для чипа.
-    - appearance: Параметры внешнего вида чипа.
-    - size: Конфигурация размеров для чипа.
-    - accessibility: Параметры доступности для чипа.
-    - removeAction: Действие при нажатии на кнопку удаления.
- */
-public struct ChipData: Hashable {
-    public let id: UUID
-    public let title: String
-    public let isEnabled: Bool
-    public let iconImage: Image?
-    public let buttonImage: Image?
-    public let appearance: ChipAppearance
-    public let size: ChipSizeConfiguration
-    public let accessibility: ChipAccessibility
-    public let removeAction: () -> Void
-    
-    public init(id: UUID = UUID(), title: String, isEnabled: Bool, iconImage: Image?, buttonImage: Image?, appearance: ChipAppearance, size: ChipSizeConfiguration, accessibility: ChipAccessibility, removeAction: @escaping () -> Void) {
-        self.id = id
-        self.title = title
-        self.isEnabled = isEnabled
-        self.iconImage = iconImage
-        self.buttonImage = buttonImage
-        self.appearance = appearance
-        self.size = size
-        self.accessibility = accessibility
-        self.removeAction = removeAction 
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id.uuidString)
-    }
-    
-    public static func == (lhs: ChipData, rhs: ChipData) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-/**
  Перечисление, определяющее варианты выравнивания группы чипов.
 
  - Cases:
@@ -169,21 +123,21 @@ public struct SDDSChipGroup: View {
 
     private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
         var totalWidth = CGFloat(0)
-        totalWidth += chipData.size.leadingInset
-        if let _ = chipData.iconImage, let iconImageSize = chipData.size.iconImageSize {
+        totalWidth += chipData.appearance.size.leadingInset
+        if let _ = chipData.iconImage, let iconImageSize = chipData.appearance.size.iconImageSize {
             totalWidth += iconImageSize.width
-            totalWidth += chipData.size.spacing
+            totalWidth += chipData.appearance.size.spacing
         }
         
-        let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.size) ?? .undefined
+        let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.appearance.size) ?? .undefined
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
         
-        if let _ = chipData.buttonImage, let buttomImageSize = chipData.size.buttonImageSize {
+        if let _ = chipData.buttonImage, let buttomImageSize = chipData.appearance.size.buttonImageSize {
             totalWidth += buttomImageSize.width
-            totalWidth += chipData.size.spacing
+            totalWidth += chipData.appearance.size.spacing
         }
-        totalWidth += chipData.size.trailingInset
+        totalWidth += chipData.appearance.size.trailingInset
         
         return totalWidth
     }
@@ -202,6 +156,6 @@ public struct SDDSChipGroup: View {
         guard let chipData = data.first else {
             return 0
         }
-        return chipData.size.height
+        return chipData.appearance.size.height
     }
 }

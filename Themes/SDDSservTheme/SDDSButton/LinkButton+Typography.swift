@@ -1,5 +1,6 @@
+/* This file is code generated. */
+
 import Foundation
-import SDDSServTheme
 import SDDSComponents
 import SDDSThemeCore
 
@@ -9,8 +10,7 @@ public extension LinkButton {
             large: AdaptiveTypographyToken.bodyLBold.typography,
             medium: AdaptiveTypographyToken.bodyMBold.typography,
             small: AdaptiveTypographyToken.bodySBold.typography,
-            extraSmall: AdaptiveTypographyToken.bodyXsBold.typography,
-            extraExtraSmall: AdaptiveTypographyToken.bodyXsBold.typography
+            extraSmall: AdaptiveTypographyToken.bodyXsBold.typography
         )
         .asContainer
     }

@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponentsPreview
 import Combine
 import SDDSComponents
+import SDDSServTheme
 
 struct ChipGroupView: View {
     @ObservedObject private var viewModel: ChipGroupViewModel
@@ -35,9 +36,20 @@ struct ChipGroupView: View {
                         Text(size.debugDescription).tag(size.debugDescription)
                     }
                 }
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(ChipAppearance.allCases, id: \.self) { appearance in
-                        Text(appearance.name).tag(appearance)
+                
+                HStack {
+                    Text("Appearance")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(SDDSChip.all, id: \.self) { variation in
+                            Button(variation.name) {
+                                viewModel.appearance = variation.appearance.size(viewModel.chipSize)
+                                viewModel.variationName = variation.name
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.variationName.capitalized)
                     }
                 }
             }

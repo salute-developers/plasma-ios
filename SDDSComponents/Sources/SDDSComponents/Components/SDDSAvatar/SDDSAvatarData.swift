@@ -20,7 +20,6 @@ public struct SDDSAvatarData {
     public let placeholderImage: AvatarImageSource?
     public let status: AvatarStatus
     public let appearance: AvatarAppearance
-    public let size: AvatarSizeConfiguration
     public let accessibility: AvatarAccessibility
 
     /**
@@ -32,7 +31,6 @@ public struct SDDSAvatarData {
         - placeholderImage: Изображение-заглушка, отображаемое при отсутствии основного изображения.
         - status: Статус аватара (`hidden`, `online`, `offline`).
         - appearance: Параметры внешнего вида аватара.
-        - size: Конфигурация размеров для аватара.
         - accessibility: Параметры доступности для аватара.
      */
     public init(
@@ -41,7 +39,6 @@ public struct SDDSAvatarData {
         placeholderImage: AvatarImageSource? = nil,
         status: AvatarStatus = .hidden,
         appearance: AvatarAppearance,
-        size: AvatarSizeConfiguration,
         accessibility: AvatarAccessibility = AvatarAccessibility()
     ) {
         self.text = text
@@ -49,7 +46,6 @@ public struct SDDSAvatarData {
         self.placeholderImage = placeholderImage
         self.status = status
         self.appearance = appearance
-        self.size = size
         self.accessibility = accessibility
     }
 }

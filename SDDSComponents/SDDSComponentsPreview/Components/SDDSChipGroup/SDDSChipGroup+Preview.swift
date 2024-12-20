@@ -5,7 +5,6 @@ import SwiftUI
 // Пример данных и конфигурации для предварительного просмотра
 struct SDDSChipGroupPreview: PreviewProvider {
     static var previews: some View {
-        let chipSize = SDDSChipSize.medium(.pilled)
         let chipAccessibility = ChipAccessibility()
         
         let chipData = (1...32).map { index in
@@ -14,8 +13,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: Image.image("chipIcon"),
                 buttonImage: Image.image("chipClose"),
-                appearance: .default,
-                size: chipSize,
+                appearance: SDDSChip.medium.accent.pilled.appearance,
                 accessibility: chipAccessibility,
                 removeAction: {}
             )

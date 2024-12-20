@@ -25,8 +25,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -34,8 +33,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: .image(Image.image("checker")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -43,8 +41,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: .default,
-                size: DefaultAvatarSize.extraExtraLarge,
+                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
                 accessibility: defaultAccessibility
             ),
         ]
@@ -56,8 +53,7 @@ final class AvatarGroupViewModel: ObservableObject {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: .default,
-            size: DefaultAvatarSize.extraExtraLarge,
+            appearance: SDDSAvatar.default.extraExtraLarge.appearance,
             accessibility: defaultAccessibility
         )
     }

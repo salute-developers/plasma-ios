@@ -21,7 +21,6 @@ struct ChipView: View {
                         iconImage: viewModel.iconImage,
                         buttonImage: viewModel.buttonImage,
                         appearance: viewModel.appearance,
-                        size: viewModel.size,
                         removeAction: viewModel.removeAction
                     )
                 }
@@ -39,10 +38,19 @@ struct ChipView: View {
                 Toggle("Enabled", isOn: $viewModel.isEnabled)
                 Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
                 Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
-
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSChipSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size)
+                
+                HStack {
+                    Text("Size")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(SDDSChipSize.allCases, id: \.self) { size in
+                            Button(size.debugDescription) {
+                                viewModel.size = size
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.size.debugDescription)
                     }
                 }
 
@@ -50,10 +58,20 @@ struct ChipView: View {
                     Text("Default").tag(ChipBorderStyle.default(viewModel.size.shapeToken.cornerRadius))
                     Text("Pilled").tag(ChipBorderStyle.pilled)
                 }
-
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(ChipAppearance.allCases, id: \.self) { appearance in
-                        Text(appearance.name).tag(appearance)
+                
+                HStack {
+                    Text("Appearance")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(SDDSChip.all, id: \.self) { variation in
+                            Button(variation.name) {
+                                viewModel.appearance = variation.appearance.size(viewModel.size)
+                                viewModel.variationName = variation.name
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.variationName.capitalized)
                     }
                 }
             }

@@ -2,60 +2,6 @@ import Foundation
 import SwiftUI
 
 /**
- `CheckboxData` представляет собой структуру, содержащую данные для чекбокса.
- 
- - Properties:
- - state: Состояние чекбокса.
- - title: Текст заголовка для чекбокса.
- - subtitle: Текст подзаголовка для чекбокса.
- - isEnabled: Флаг, указывающий, включен ли чекбокс.
- - images: Изображения для различных состояний чекбокса.
- - size: Конфигурация размеров для чекбокса.
- - appearance: Параметры внешнего вида чекбокса.
- - accessibility: Параметры доступности для чекбокса.
- */
-public struct CheckboxData: Hashable {
-    let id = UUID()
-    let state: Binding<SelectionControlState>
-    let title: String
-    let subtitle: String?
-    let isEnabled: Bool
-    let images: SelectionControlStateImages
-    let size: SelectionControlSizeConfiguration
-    let appearance: CheckboxAppearance
-    let accessibility: SelectionControlAccessibility
-    
-    public init(
-        state: Binding<SelectionControlState>,
-        title: String,
-        subtitle: String? = nil,
-        isEnabled: Bool,
-        images: SelectionControlStateImages,
-        size: SelectionControlSizeConfiguration,
-        appearance: CheckboxAppearance,
-        accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
-    ) {
-        self.state = state
-        self.title = title
-        self.subtitle = subtitle
-        self.isEnabled = isEnabled
-        self.images = images
-        self.size = size
-        self.appearance = appearance
-        self.accessibility = accessibility
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id.uuidString)
-        hasher.combine(state.wrappedValue.rawValue)
-    }
-    
-    public static func == (lhs: CheckboxData, rhs: CheckboxData) -> Bool {
-        lhs.id == rhs.id && lhs.state.wrappedValue == rhs.state.wrappedValue
-    }
-}
-
-/**
  `SDDSCheckbox` представляет собой настраиваемый чекбокс, который может быть настроен с помощью различных параметров.
  
  - Parameters:
@@ -64,7 +10,6 @@ public struct CheckboxData: Hashable {
  - subtitle: Текст подзаголовка для чекбокса.
  - isEnabled: Флаг, указывающий, включен ли чекбокс.
  - images: Изображения для различных состояний чекбокса.
- - size: Конфигурация размеров для чекбокса.
  - appearance: Параметры внешнего вида чекбокса.
  - accessibility: Параметры доступности для чекбокса.
  */
@@ -74,7 +19,6 @@ public struct SDDSCheckbox: View {
     let subtitle: String?
     let isEnabled: Bool
     let images: SelectionControlStateImages
-    let size: SelectionControlSizeConfiguration
     let appearance: CheckboxAppearance
     let accessibility: SelectionControlAccessibility
     
@@ -97,7 +41,6 @@ public struct SDDSCheckbox: View {
         subtitle: String? = nil,
         isEnabled: Bool,
         images: SelectionControlStateImages,
-        size: SelectionControlSizeConfiguration,
         appearance: CheckboxAppearance,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -106,7 +49,6 @@ public struct SDDSCheckbox: View {
         self.subtitle = subtitle
         self.isEnabled = isEnabled
         self.images = images
-        self.size = size
         self.appearance = appearance
         self.accessibility = accessibility
     }
@@ -123,7 +65,6 @@ public struct SDDSCheckbox: View {
         self.subtitle = data.subtitle
         self.isEnabled = data.isEnabled
         self.images = data.images
-        self.size = data.size
         self.appearance = data.appearance
         self.accessibility = data.accessibility
     }
@@ -135,7 +76,6 @@ public struct SDDSCheckbox: View {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            size: size,
             appearance: appearance,
             images: images,
             accessibility: accessibility

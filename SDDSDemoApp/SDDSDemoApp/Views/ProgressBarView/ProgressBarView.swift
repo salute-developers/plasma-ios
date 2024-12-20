@@ -18,8 +18,7 @@ struct ProgressBarView: View {
                     SDDSProgressView(
                         progress: $viewModel.progress,
                         isEnabled: viewModel.isEnabled,
-                        appearance: viewModel.appearance,
-                        size: viewModel.size
+                        appearance: viewModel.variation.appearance
                     )
                     Spacer()
                 }
@@ -44,76 +43,10 @@ struct ProgressBarView: View {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
                 
-                HStack {
-                    Text("Tint Color")
-                    Spacer()
-                    Menu {
-                        ForEach(ColorStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue) {
-                                viewModel.tintColor = style
-                            }
-                        }
-                    } label: {
-                        HStack {
-                            Rectangle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.tintColor.color)
-                            
-                            Text(viewModel.tintColor.rawValue)
-                        }
+                Picker("Appearance", selection: $viewModel.variation) {
+                    ForEach(SDDSProgressView.all, id: \.appearance) { variation in
+                        Text(variation.name).tag(variation)
                     }
-                }
-                
-                HStack {
-                    Text("Track Color")
-                    Spacer()
-                    Menu {
-                        ForEach(ColorStyle.allCases, id: \.self) { style in
-                            Button(style.rawValue) {
-                                viewModel.trackColor = style
-                            }
-                        }
-                    } label: {
-                        HStack {
-                            Rectangle()
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(viewModel.trackColor.color)
-                            
-                            Text(viewModel.trackColor.rawValue)
-                        }
-                    }
-                }
-                
-                HStack {
-                    Text("Height")
-                    Spacer()
-                    TextField("Height", value: $viewModel.height, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
-                }
-                
-                HStack {
-                    Text("Indicator Height")
-                    Spacer()
-                    TextField("Height", value: $viewModel.indicatorHeight, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
-                }
-                
-                HStack {
-                    Text("Corner Radius")
-                    Spacer()
-                    TextField("Radius", value: $viewModel.cornerRadius, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
-                }
-                
-                HStack {
-                    Text("Indicator Corner Radius")
-                    Spacer()
-                    TextField("Radius", value: $viewModel.indicatorCornerRadius, formatter: NumberFormatter())
-                        .keyboardType(.decimalPad)
-                        .frame(maxWidth: 100)
                 }
             }
         }

@@ -12,8 +12,7 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
             subtitle: "Parent Description",
             isEnabled: true,
             images: SelectionControlStateImages.checkbox,
-            size: SDDSCheckboxSize.medium,
-            appearance: CheckboxAppearance.default,
+            appearance: SDDSCheckbox.medium.default.appearance,
             accessibility: SelectionControlAccessibility()
         )
         
@@ -24,8 +23,7 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
                 subtitle: "Description \(index + 1)",
                 isEnabled: true,
                 images: SelectionControlStateImages.checkbox,
-                size: SDDSCheckboxSize.medium,
-                appearance: CheckboxAppearance.default,
+                appearance: SDDSCheckbox.medium.default.appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }

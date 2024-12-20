@@ -545,7 +545,7 @@ public struct SDDSTextField: View {
     
     private var backgroundColor: Color {
         if readOnly {
-            appearance.backgroundColorDefault.color(for: colorScheme)
+            return appearance.backgroundColorDefault.color(for: colorScheme)
         }
         return appearance.backgroundColor(for: style, isFocused: isFocused, readOnly: readOnly).color(for: colorScheme)
     }
@@ -645,10 +645,11 @@ public struct SDDSTextField: View {
     // MARK: - Computed Properties for Conditions
     
     private func calculateTextWidth(text: String, placeholder: String, proxy: GeometryProxy) -> CGFloat {
+        let deltaPadding: CGFloat = 1.0
         let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
         if displayChips {
             if !text.isEmpty {
-                return textSize.width + size.textHorizontalPadding
+                return textSize.width + deltaPadding
             } else {
                 let placeholderSize = (placeholder as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
                 return placeholderSize.width
@@ -659,17 +660,17 @@ public struct SDDSTextField: View {
         maxWidth -= size.textInputPaddings.leading + size.textInputPaddings.trailing
         if !textBefore.isEmpty && !displayChips {
             let textBeforeSize = (textBefore as NSString).size(withAttributes: [NSAttributedString.Key.font: textBeforeTypography.uiFont])
-            maxWidth -= (textBeforeSize.width + size.textHorizontalPadding)
+            maxWidth -= (textBeforeSize.width + deltaPadding)
             maxWidth -= (size.textBeforeLeadingPadding + size.textBeforeTrailingPadding)
         }
         if !textAfter.isEmpty && !displayChips {
             let textBeforeSize = (textAfter as NSString).size(withAttributes: [NSAttributedString.Key.font: textAfterTypography.uiFont])
-            maxWidth -= (textBeforeSize.width + size.textHorizontalPadding)
+            maxWidth -= (textBeforeSize.width + deltaPadding)
             maxWidth -= (size.textAfterLeadingPadding + size.textAfterTrailingPadding)
         }
         
         return min(
-            textSize.width + size.textHorizontalPadding,
+            textSize.width + deltaPadding,
             maxWidth
         )
     }
@@ -768,7 +769,7 @@ public struct SDDSTextField: View {
         case .single:
             return 0
         case .multiple(_, let chips):
-            guard let chipSize = chips.first?.size else {
+            guard let chipSize = chips.first?.appearance.size else {
                 return 0
             }
             switch chipSize.borderStyle {

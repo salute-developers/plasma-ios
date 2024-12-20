@@ -1,5 +1,4 @@
 import SwiftUI
-import SDDSThemeCore
 
 // MARK: - SDDSAvatar
 
@@ -12,7 +11,6 @@ import SDDSThemeCore
     - placeholderImage: Изображение-заглушка, отображаемое при отсутствии основного изображения.
     - status: Статус аватара (`hidden`, `online`, `offline`).
     - appearance: Параметры внешнего вида аватара.
-    - size: Конфигурация размеров для аватара.
     - accessibility: Параметры доступности для аватара.
  */
 public struct SDDSAvatar: View {
@@ -21,7 +19,6 @@ public struct SDDSAvatar: View {
     let placeholderImage: AvatarImageSource?
     let status: AvatarStatus
     let appearance: AvatarAppearance
-    let size: AvatarSizeConfiguration
     let accessibility: AvatarAccessibility
     @Environment(\.colorScheme) var colorScheme
     
@@ -31,14 +28,12 @@ public struct SDDSAvatar: View {
         placeholderImage: AvatarImageSource?,
         status: AvatarStatus,
         appearance: AvatarAppearance,
-        size: AvatarSizeConfiguration,
         accessibility: AvatarAccessibility) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
         self.appearance = appearance
-        self.size = size
         self.accessibility = accessibility
     }
     
@@ -48,7 +43,6 @@ public struct SDDSAvatar: View {
         self.placeholderImage = data.placeholderImage
         self.status = data.status
         self.appearance = data.appearance
-        self.size = data.size
         self.accessibility = data.accessibility
     }
     
@@ -56,14 +50,14 @@ public struct SDDSAvatar: View {
         ZStack {
             if let placeholderImage = placeholderImage {
                 avatarImage(for: placeholderImage)
-                    .frame(width: size.avatarSize.width, height: size.avatarSize.height)
+                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
             } else {
                 backgroundView
             }
 
             if let image = image {
                 avatarImage(for: image)
-                    .frame(width: size.avatarSize.width, height: size.avatarSize.height)
+                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
             } else {
                 Text(text)
                     .typography(textTypography)
@@ -73,16 +67,16 @@ public struct SDDSAvatar: View {
             if status != .hidden {
                 statusView
                     .frame(
-                        width: size.statusSize.width,
-                        height: size.statusSize.height
+                        width: appearance.size.statusSize.width,
+                        height: appearance.size.statusSize.height
                     )
                     .position(
-                        x: size.statusInsets.leading + size.statusSize.width / 2,
-                        y: size.statusInsets.top + size.statusSize.height / 2
+                        x: appearance.size.statusInsets.leading + appearance.size.statusSize.width / 2,
+                        y: appearance.size.statusInsets.top + appearance.size.statusSize.height / 2
                     )
             }
         }
-        .frame(width: size.avatarSize.width, height: size.avatarSize.height)
+        .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
         .accessibilityElement()
         .accessibilityLabel(accessibility.label)
         .accessibilityHint(accessibility.hint)
@@ -146,113 +140,10 @@ public struct SDDSAvatar: View {
     }
     
     private var textTypography: TypographyToken {
-        if let typography = appearance.textTypography.typography(with: size) {
+        if let typography = appearance.textTypography.typography(with: appearance.size) {
             return typography
         } else {
             fatalError("Undefined Avatar Typography")
         }
-    }
-}
-
-// MARK: - AvatarStatus
-
-public enum AvatarStatus: String {
-    case hidden
-    case online
-    case offline
-}
-
-// MARK: - AvatarSizeConfiguration
-
-/**
- `AvatarSizeConfiguration` определяет размеры и отступы для аватара.
-
- - Properties:
-    - avatarSize: Размер аватара.
-    - statusSize: Размер иконки статуса.
-    - statusInsets: Отступы иконки статуса относительно нижнего правого угла.
- */
-public protocol AvatarSizeConfiguration {
-    var avatarSize: CGSize { get }
-    var statusSize: CGSize { get }
-    var statusInsets: EdgeInsets { get }
-}
-
-// MARK: - AvatarAppearance
-
-/**
- `AvatarAppearance` определяет внешний вид аватара, включая цвет текста, фона, цвета статусов и типографику.
-
- - Properties:
-    - textFillStyle: Стиль заливки текста (цвет или градиент).
-    - backgroundFillStyle: Стиль заливки фона (цвет или градиент).
-    - onlineStatusColor: Цвет индикатора статуса "онлайн".
-    - offlineStatusColor: Цвет индикатора статуса "оффлайн".
-    - textTypography: Типографика текста.
- */
-public struct AvatarAppearance: Hashable {
-    let id = UUID()
-    public let textFillStyle: FillStyle
-    public let backgroundFillStyle: FillStyle
-    public let backgroundOpacity: CGFloat
-    public let onlineStatusColor: ColorToken
-    public let offlineStatusColor: ColorToken
-    public let textTypography: TypographyConfiguration
-    
-    public init(
-        textFillStyle: FillStyle,
-        backgroundFillStyle: FillStyle,
-        backgroundOpacity: CGFloat,
-        onlineStatusColor: ColorToken,
-        offlineStatusColor: ColorToken,
-        textTypography: TypographyConfiguration
-    ) {
-        self.textFillStyle = textFillStyle
-        self.backgroundFillStyle = backgroundFillStyle
-        self.backgroundOpacity = backgroundOpacity
-        self.onlineStatusColor = onlineStatusColor
-        self.offlineStatusColor = offlineStatusColor
-        self.textTypography = textTypography
-    }
-    
-    public static func == (lhs: AvatarAppearance, rhs: AvatarAppearance) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-// MARK: - AvatarImageSource
-
-/**
- `AvatarImageSource` определяет источник изображения для аватара.
-
- - Cases:
-    - url: URL изображения, загружаемого асинхронно.
-    - image: Локальное изображение типа `Image`.
- */
-public enum AvatarImageSource {
-    case url(URL)
-    case image(Image)
-}
-
-// MARK: - AvatarAccessibility
-
-/**
- `AvatarAccessibility` предоставляет параметры доступности для аватара.
-
- - Properties:
-    - label: Метка доступности для аватара.
-    - hint: Подсказка доступности для аватара.
- */
-public struct AvatarAccessibility {
-    public let label: String
-    public let hint: String
-    
-    public init(label: String = "", hint: String = "") {
-        self.label = label
-        self.hint = hint
     }
 }

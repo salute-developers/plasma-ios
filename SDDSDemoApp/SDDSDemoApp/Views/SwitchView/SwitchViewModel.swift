@@ -3,6 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSComponentsPreview
+import SDDSServTheme
 
 final class SwitchViewModel: ObservableObject {
     // MARK: - Switch Properties
@@ -10,99 +11,50 @@ final class SwitchViewModel: ObservableObject {
     @Published var subtitle: String = "Switch Subtitle"
     @Published var isOn: Bool = true
     @Published var isEnabled: Bool = true
-    @Published var size: SwitchSizeConfiguration = SwitchSize()
-    @Published var appearance: SwitchAppearance = .defaultAppearance
+    @Published var size: SDDSSwitchSize = .medium
+    @Published var appearance: SwitchAppearance = SDDSSwitch.default.appearance
+    @Published var variationName: String = SDDSSwitch.default.name
     @Published var switchAccessibility: SwitchAccessibility = SwitchAccessibility()
-    
-    // MARK: - Screen properties
-    @Published var tintColor: ColorStyle = .green
-    @Published var titleColor: ColorStyle = .black
-    @Published var subtitleColor: ColorStyle = .gray
-    @Published var verticalGap: CGFloat = 0
     
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
-        observeColors()
-        observeSize()
+        observeSizeChange()
     }
     
-    private func observeColors() {
-        $tintColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTintColor(style.color.token) ?? .defaultAppearance
-            }
-            .store(in: &cancellables)
-        
-        $titleColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withTitleColor(style.color.token) ?? .defaultAppearance
-            }
-            .store(in: &cancellables)
-        
-        $subtitleColor
-            .sink { [weak self] style in
-                self?.appearance = self?.appearance.withSubtitleColor(style.color.token) ?? .defaultAppearance
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func observeSize() {
-        $verticalGap
-            .sink { [weak self] gap in
-                self?.size = SwitchSize(verticalGap: gap)
+    private func observeSizeChange() {
+        $size
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                self.appearance = self.appearance.size(value)
             }
             .store(in: &cancellables)
     }
 }
 
-// Custom Size Configuration
-struct SwitchSize: SwitchSizeConfiguration {
-    var debugDescription: String {
-        String(reflecting: self)
+extension SDDSSwitchSize: Hashable, CaseIterable {
+    public static func == (lhs: SDDSSwitchSize, rhs: SDDSSwitchSize) -> Bool {
+        lhs.hashValue == rhs.hashValue
     }
 
-    var width: CGFloat?
-    var verticalGap: CGFloat
-    
-    init(width: CGFloat? = 170, verticalGap: CGFloat = 0) {
-        self.width = width
-        self.verticalGap = verticalGap
+    public static var allCases: [SDDSSwitchSize] {
+        [.large, .medium, .small]
     }
-}
 
-// Extension for Appearance to update colors
-extension SwitchAppearance {
-    func withTintColor(_ color: ColorToken) -> SwitchAppearance {
-        .init(
-            titleTypography: titleTypography,
-            subtitleTypography: subtitleTypography,
-            titleColor: titleColor,
-            subtitleColor: subtitleColor,
-            tintColor: color,
-            disabledAlpha: disabledAlpha
-        )
+    var description: String {
+        switch self {
+        case .large:
+            return "Large"
+        case .medium:
+            return "Medium"
+        case .small:
+            return "Small"
+        }
     }
-    
-    func withTitleColor(_ color: ColorToken) -> SwitchAppearance {
-        .init(
-            titleTypography: titleTypography,
-            subtitleTypography: subtitleTypography,
-            titleColor: color,
-            subtitleColor: subtitleColor,
-            tintColor: tintColor,
-            disabledAlpha: disabledAlpha
-        )
-    }
-    
-    func withSubtitleColor(_ color: ColorToken) -> SwitchAppearance {
-        .init(
-            titleTypography: titleTypography,
-            subtitleTypography: subtitleTypography,
-            titleColor: titleColor,
-            subtitleColor: color,
-            tintColor: tintColor,
-            disabledAlpha:  disabledAlpha
-        )
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
 }

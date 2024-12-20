@@ -3,6 +3,7 @@ import SDDSComponentsPreview
 import Combine
 import SDDSComponents
 import PhotosUI
+import SDDSServTheme
 
 struct AvatarView: View {
     @ObservedObject private var viewModel: AvatarViewModel
@@ -24,7 +25,6 @@ struct AvatarView: View {
                         placeholderImage: viewModel.placeholderImage,
                         status: viewModel.status,
                         appearance: viewModel.appearance,
-                        size: viewModel.size,
                         accessibility: viewModel.accessibility
                     )
                     Spacer()
@@ -79,23 +79,20 @@ struct AvatarView: View {
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
                 }
-
-                HStack {
-                    Text("Avatar Size")
-                    Spacer()
-                    Picker("Size", selection: $viewModel.size) {
-                        ForEach(DefaultAvatarSize.allCases, id: \.self) { size in
-                            Text(size.description).tag(size)
+                
+                Picker("Size", selection: $viewModel.size) {
+                    ForEach(SDDSAvatarSize.allCases, id: \.self) { size in
+                        Button(size.description) {
+                            viewModel.size = size
                         }
                     }
                 }
-
-                HStack {
-                    Text("Appearance")
-                    Spacer()
-                    Picker("Appearance", selection: $viewModel.appearance) {
-                        ForEach(AvatarAppearance.allCases, id: \.self) { appearance in
-                            Text(appearance.name).tag(appearance)
+                
+                Picker("Appearance", selection: $viewModel.appearance) {
+                    ForEach(SDDSAvatar.all, id: \.self) { variation in
+                        Button(variation.name) {
+                            viewModel.appearance = variation.appearance.size(viewModel.size)
+                            viewModel.variationName = variation.name
                         }
                     }
                 }

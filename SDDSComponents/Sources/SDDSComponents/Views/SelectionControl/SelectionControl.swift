@@ -19,6 +19,14 @@ public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebu
     var verticalGap: CGFloat { get }
 }
 
+public struct ZeroSelectionControlSize: SelectionControlSizeConfiguration {
+    public var debugDescription: String { "ZeroSelectionControlSize "}
+    public var imageSize: CGSize { .zero }
+    public var horizontalGap: CGFloat { 0 }
+    public var verticalGap: CGFloat { 0 }
+    public init() {}
+}
+
 public struct SelectionControlStateImages {
     public let selectedImage: Image
     public let deselectedImage: Image
@@ -62,7 +70,6 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     let title: String
     let subtitle: String?
     let isEnabled: Bool
-    let size: SelectionControlSizeConfiguration
     let appearance: AppearanceType
     let images: SelectionControlStateImages
     let accessibility: SelectionControlAccessibility
@@ -70,8 +77,8 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        VStack(alignment: .leading, spacing: size.verticalGap) {
-            HStack(spacing: size.horizontalGap) {
+        VStack(alignment: .leading, spacing: appearance.size.verticalGap) {
+            HStack(spacing: appearance.size.horizontalGap) {
                 controlView
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(Text(accessibility.controlLabel))
@@ -85,8 +92,8 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     titleText
                 }
             }
-            HStack(spacing: size.horizontalGap) {
-                Spacer().frame(width: size.imageSize.width)
+            HStack(spacing: appearance.size.horizontalGap) {
+                Spacer().frame(width: appearance.size.imageSize.width)
                 
                 if !title.isEmpty {
                     subtitleText
@@ -104,7 +111,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @ViewBuilder
     private var titleText: some View {
         Text(title)
-            .typography(appearance.titleTypography.typography(with: size) ?? .undefined)
+            .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
             .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
@@ -114,7 +121,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     private var subtitleText: some View {
         if let subtitle = subtitle {
             Text(subtitle)
-                .typography(appearance.subtitleTypography.typography(with: size) ?? .undefined)
+                .typography(appearance.subtitleTypography.typography(with: appearance.size) ?? .undefined)
                 .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.subtitleLabel))
                 .accessibilityValue(Text(subtitle))
@@ -154,7 +161,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     private var controlView: some View {
         if let image = image {
             tintImage(image: image)
-                .frame(width: size.imageSize.width, height: size.imageSize.height)
+                .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
                 .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         } else {
             EmptyView()

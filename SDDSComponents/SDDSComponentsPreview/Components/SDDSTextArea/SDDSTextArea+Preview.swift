@@ -14,7 +14,6 @@ struct SDDSTextAreaPreview: PreviewProvider {
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
                 appearance: .textArea,
-                size: TextAreaChipSize.medium,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )

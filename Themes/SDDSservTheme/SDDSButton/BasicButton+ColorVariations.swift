@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import Foundation
 import SDDSComponents
 import SDDSThemeCore

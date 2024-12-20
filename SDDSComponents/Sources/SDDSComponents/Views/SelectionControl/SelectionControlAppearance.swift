@@ -3,6 +3,7 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public protocol SelectionControlAppearance {
+    var size: SelectionControlSizeConfiguration { get }
     var titleTypography: TypographyConfiguration { get }
     var subtitleTypography: TypographyConfiguration { get }
     var titleColor: ColorToken { get }

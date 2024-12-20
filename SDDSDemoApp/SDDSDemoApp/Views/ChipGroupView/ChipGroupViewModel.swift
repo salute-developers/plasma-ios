@@ -9,7 +9,12 @@ final class ChipGroupViewModel: ObservableObject {
     @Published var chipSize: SDDSChipSize = .medium(.pilled)
     @Published var chipGroupSize: DefaultChipGroupSize = .init(alignment: .left)
     @Published var chips: [ChipData] = []
-    @Published var appearance: ChipAppearance = .default
+    @Published var appearance: ChipAppearance = SDDSChip.default.appearance {
+        didSet {
+            updateChips(appearance: appearance, size: chipSize)
+        }
+    }
+    @Published var variationName: String = SDDSChip.default.name
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -32,8 +37,21 @@ final class ChipGroupViewModel: ObservableObject {
                 isEnabled: chip.isEnabled,
                 iconImage: chip.iconImage,
                 buttonImage: chip.buttonImage,
-                appearance: chip.appearance,
-                size: size,
+                appearance: chip.appearance.size(size),
+                accessibility: chip.accessibility,
+                removeAction: chip.removeAction
+            )
+        }
+    }
+    
+    private func updateChips(appearance: ChipAppearance, size: SDDSChipSize) {
+        chips = chips.map { chip in
+            ChipData(
+                title: chip.title,
+                isEnabled: chip.isEnabled,
+                iconImage: chip.iconImage,
+                buttonImage: chip.buttonImage,
+                appearance: appearance.size(size),
                 accessibility: chip.accessibility,
                 removeAction: chip.removeAction
             )
@@ -46,8 +64,7 @@ final class ChipGroupViewModel: ObservableObject {
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
-            appearance: .default,
-            size: chipSize,
+            appearance: appearance.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: {}
         )
@@ -62,8 +79,7 @@ final class ChipGroupViewModel: ObservableObject {
             isEnabled: updatedChip.isEnabled,
             iconImage: updatedChip.iconImage,
             buttonImage: updatedChip.buttonImage,
-            appearance: updatedChip.appearance,
-            size: updatedChip.size,
+            appearance: updatedChip.appearance.size(updatedChip.appearance.size),
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )
