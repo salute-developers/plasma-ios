@@ -127,6 +127,27 @@ struct ButtonView: View {
                 HStack {
                     Toggle("Icon", isOn: $viewModel.isIconVisible)
                 }
+                if viewModel.buttonType == .icon {
+                    HStack {
+                        Toggle("Pilled", isOn: $viewModel.isPilled)
+                    }
+                }
+                if viewModel.buttonType != .icon {
+                    HStack {
+                        Text("Icon Alignment")
+                        Spacer()
+                            .frame(maxWidth: .infinity)
+                        Menu {
+                            ForEach(ButtonAlignment.allCases, id: \.self) { alignment in
+                                Button(alignment.rawValue) {
+                                    viewModel.alignment = alignment
+                                }
+                            }
+                        } label: {
+                            Text(viewModel.alignment.rawValue)
+                        }
+                    }
+                }
                 HStack {
                     Text("Size")
                     Spacer()
