@@ -409,9 +409,9 @@ public extension BasicButton {
                     hoveredColor: .textOnLightPrimaryHover
                 ),
                 backgroundColor: ButtonColor(
-                    defaultColor: .surfaceOnLightSolidDefault,
-                    highlightedColor: .surfaceOnLightSolidDefaultActive,
-                    hoveredColor: .surfaceOnLightSolidDefaultHover
+                    defaultColor: .surfaceOnDarkSolidDefault,
+                    highlightedColor: .surfaceOnDarkSolidDefaultActive,
+                    hoveredColor: .surfaceOnDarkSolidDefaultHover
                 ),
                 disabledAlpha: 0.4,
                 loadingAlpha: 0
