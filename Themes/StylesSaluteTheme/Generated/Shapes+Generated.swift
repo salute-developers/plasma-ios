@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
