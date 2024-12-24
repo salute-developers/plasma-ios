@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes/sdds_serv/latest.zip"
+            argument = "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes/stylesSalute/0.2.0.zip"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
