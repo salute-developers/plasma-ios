@@ -37,7 +37,6 @@
 		811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1702C5783B6000DD354 /* HierarchicalList.swift */; };
 		811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
-		814E30202C999469004601F7 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 814E301F2C999469004601F7 /* SDDSThemeUtilities */; };
 		814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */; };
 		814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */; };
 		814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0A22C82368300FBDAC8 /* SDDSAvatarModifiers.swift */; };
@@ -45,7 +44,6 @@
 		814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0932C82244000FBDAC8 /* BackportAsyncImage.swift */; };
 		814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0972C82273100FBDAC8 /* Text+FillModifier.swift */; };
 		814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */; };
-		815142892C99942E00E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 815142882C99942E00E6A00D /* SDDSThemeCore */; };
 		8151428B2C99944200E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8151428A2C99944200E6A00D /* SDDSThemeCore */; };
 		8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154644A2C96FDE600DAD8EA /* ViewProvider.swift */; };
 		8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F72F2C5D1CFE00622836 /* FillStyle.swift */; };
@@ -316,8 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				819CB7FD2C7CC34A00B4FBF4 /* SDDSThemeCore in Frameworks */,
-				815142892C99942E00E6A00D /* SDDSThemeCore in Frameworks */,
-				814E30202C999469004601F7 /* SDDSThemeUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,8 +1006,6 @@
 			name = SDDSComponents;
 			packageProductDependencies = (
 				819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */,
-				815142882C99942E00E6A00D /* SDDSThemeCore */,
-				814E301F2C999469004601F7 /* SDDSThemeUtilities */,
 			);
 			productName = SDDSComponents;
 			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
@@ -1050,7 +1044,6 @@
 			mainGroup = 81D2B1832C32B39B00CAA7FD;
 			packageReferences = (
 				815142872C99942E00E6A00D /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
-				814E301E2C999469004601F7 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeUtilities" */,
 				81737DC72CF84F24002A6A74 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
 			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
@@ -1592,10 +1585,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		814E301E2C999469004601F7 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeUtilities" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSThemeBuilder/SDDSThemeUtilities;
-		};
 		815142872C99942E00E6A00D /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
@@ -1611,14 +1600,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		814E301F2C999469004601F7 /* SDDSThemeUtilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSThemeUtilities;
-		};
-		815142882C99942E00E6A00D /* SDDSThemeCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSThemeCore;
-		};
 		8151428A2C99944200E6A00D /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;

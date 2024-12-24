@@ -1,5 +1,4 @@
 import UIKit
-import SDDSThemeUtilities
 
 public extension UIColor {
     convenience init(hex: String) {

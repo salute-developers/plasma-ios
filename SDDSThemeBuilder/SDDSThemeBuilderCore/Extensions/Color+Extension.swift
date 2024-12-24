@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-import SDDSThemeUtilities
 
 extension Color {
     init(hex: String) {
