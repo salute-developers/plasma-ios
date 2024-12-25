@@ -23,6 +23,7 @@ final class ButtonViewModel: ObservableObject {
     
     // MARK: - Screen properties
     @Published var isIconVisible: Bool = false
+    @Published var isPilled: Bool = false
     @Published var alignment: SDDSComponents.ButtonAlignment = .leading
     @Published var colorStyle: SDDSServeB2CStyle = .accent
     
@@ -44,6 +45,19 @@ final class ButtonViewModel: ObservableObject {
                     self.setIconAttributes(alignment: self.alignment)
                 } else {
                     self.iconAttributes = nil
+                }
+            }
+            .store(in: &cancellables)
+        
+        $isPilled
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                if value {
+                    self.appearance = self.appearance.shapeStyle(.pilled)
+                } else {
+                    self.appearance = self.appearance.shapeStyle(.default)
                 }
             }
             .store(in: &cancellables)
