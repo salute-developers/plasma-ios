@@ -6,7 +6,7 @@ import SDDSServTheme
 
 final class ChipGroupViewModel: ObservableObject {
     @Published var chipTitle: String = ""
-    @Published var chipSize: SDDSChipSize = .medium(.pilled)
+    @Published var chipSize: SDDSChipSize = .medium
     @Published var chipGroupSize: DefaultChipGroupSize = .init(alignment: .left)
     @Published var chips: [ChipData] = []
     @Published var appearance: ChipAppearance = SDDSChip.default.appearance {

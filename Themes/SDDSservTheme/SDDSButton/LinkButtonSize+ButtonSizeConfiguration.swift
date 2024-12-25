@@ -12,7 +12,7 @@ public enum LinkButtonSize: String, CaseIterable {
 }
 
 extension LinkButtonSize: ButtonSizeConfiguration {
-
+    
     public var height: CGFloat {
         switch self {
         case .large: return 56
@@ -21,12 +21,12 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 32
         }
     }
-
+    
     public func cornerRadius(style: SDDSComponents.ComponentShapeStyle) -> CGFloat {
         0
     }
-
-    public var paddings: EdgeInsets {
+    
+    public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
         switch self {
         case .large: return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         case .medium: return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
@@ -34,7 +34,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         }
     }
-
+    
     public var iconSize: CGSize {
         switch self {
         case .large: return CGSize(width: 24, height: 24)
@@ -43,7 +43,16 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return CGSize(width: 16, height: 16)
         }
     }
-
+    
+    public var counterSize: CounterSizeConfiguration {
+        switch self {
+        case .large: return CounterSize.small
+        case .medium: return CounterSize.extraSmall
+        case .small: return CounterSize.extraSmall
+        case .extraSmall: return CounterSize.extraExtraSmall
+        }
+    }
+    
     public var spinnerSize: CGSize {
         switch self {
         case .large: return CGSize(width: 22, height: 22)
@@ -52,7 +61,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return CGSize(width: 16, height: 16)
         }
     }
-
+    
     public var titleHorizontalGap: CGFloat {
         switch self {
         case .large: return 4
@@ -61,7 +70,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 2
         }
     }
-        
+    
     public var iconHorizontalGap: CGFloat {
         switch self {
         case .large: return 8
@@ -70,7 +79,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 4
         }
     }
-
+    
     public var debugDescription: String {
         return "LinkButtonSize"
     }

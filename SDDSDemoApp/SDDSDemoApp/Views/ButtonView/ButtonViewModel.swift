@@ -57,7 +57,7 @@ final class ButtonViewModel: ObservableObject {
                 if value {
                     self.appearance = self.appearance.shapeStyle(.pilled)
                 } else {
-                    self.appearance = self.appearance.shapeStyle(.default)
+                    self.appearance = self.appearance.shapeStyle(.cornered)
                 }
             }
             .store(in: &cancellables)
@@ -114,5 +114,4 @@ final class ButtonViewModel: ObservableObject {
     private func iconAttributes(with alignment: SDDSComponents.ButtonAlignment) -> ButtonIconAttributes {
         .init(image: Image("buttonIcon"), alignment: alignment)
     }
-        
 }

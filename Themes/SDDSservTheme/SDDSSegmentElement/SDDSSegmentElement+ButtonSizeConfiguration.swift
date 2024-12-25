@@ -1,17 +1,15 @@
-/* This file is code generated. */
-
 import Foundation
 import SDDSComponents
 import SwiftUI
 
-public enum BasicButtonSize: String, CaseIterable {
+public enum SegmentElementSize: String, CaseIterable {
     case large
     case medium
     case small
     case extraSmall
 }
 
-extension BasicButtonSize: ButtonSizeConfiguration {
+extension SegmentElementSize: SegmentElementSizeConfiguration {
     public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
         switch style {
         case .cornered:
@@ -36,11 +34,29 @@ extension BasicButtonSize: ButtonSizeConfiguration {
     }
     
     public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
-        switch self {
-        case .large: return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
-        case .medium: return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-        case .small: return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-        case .extraSmall: return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
+        switch style {
+        case .cornered:
+            switch self {
+            case .large:
+                return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
+            case .medium:
+                return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+            case .small:
+                return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+            case .extraSmall:
+                return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
+            }
+        case .pilled:
+            switch self {
+            case .large:
+                return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+            case .medium:
+                return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
+            case .small:
+                return EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
+            case .extraSmall:
+                return EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
+            }
         }
     }
     
@@ -63,33 +79,28 @@ extension BasicButtonSize: ButtonSizeConfiguration {
     }
     
     public var spinnerSize: CGSize {
-        switch self {
-        case .large: return CGSize(width: 22, height: 22)
-        case .medium: return CGSize(width: 22, height: 22)
-        case .small: return CGSize(width: 22, height: 22)
-        case .extraSmall: return CGSize(width: 16, height: 16)
-        }
+        CGSize(width: 0, height: 0)
     }
     
     public var titleHorizontalGap: CGFloat {
         switch self {
-        case .large: return 4
+        case .large: return 6
         case .medium: return 4
-        case .small: return 4
+        case .small: return 2
         case .extraSmall: return 2
         }
     }
     
     public var iconHorizontalGap: CGFloat {
         switch self {
-        case .large: return 8
-        case .medium: return 6
-        case .small: return 4
-        case .extraSmall: return 4
+        case .large: return 6
+        case .medium: return 4
+        case .small: return 2
+        case .extraSmall: return 2
         }
     }
     
     public var debugDescription: String {
-        return "BasicButtonSize"
+        return "SegmentElementSize"
     }
 }

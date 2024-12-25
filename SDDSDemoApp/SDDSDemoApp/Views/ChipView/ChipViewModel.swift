@@ -9,8 +9,8 @@ final class ChipViewModel: ObservableObject {
     @Published var isEnabled: Bool = true
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    @Published var size: SDDSChipSize = .medium(.default(8))
-    @Published var borderStyle: ChipBorderStyle = .default(8)
+    @Published var size: SDDSChipSize = .medium
+    @Published var borderStyle: ComponentShapeStyle = .cornered
     @Published var appearance: ChipAppearance = SDDSChip.accent.appearance
     @Published var variationName: String = SDDSChip.accent.name
     @Published var iconImage: Image? = nil
@@ -21,7 +21,6 @@ final class ChipViewModel: ObservableObject {
     init() {
         setIconImage()
         setButtonImage()
-        
         observeSizeChange()
     }
     
@@ -48,17 +47,8 @@ final class ChipViewModel: ObservableObject {
         buttonImage = Image.image("chipClose")
     }
     
-    func updateBorderStyle(borderStyle: ChipBorderStyle) {
-        switch size {
-        case .small:
-            size = .small(borderStyle)
-        case .medium:
-            size = .medium(borderStyle)
-        case .large:
-            size = .large(borderStyle)
-        case .extraSmall:
-            size = .extraSmall(borderStyle)
-        }
+    func updateBorderStyle(borderStyle: ComponentShapeStyle) {        
+        appearance = appearance.shapeStyle(borderStyle)
     }
 }
 
@@ -66,7 +56,7 @@ final class ChipViewModel: ObservableObject {
 
 extension SDDSChipSize: Hashable, CaseIterable {
     public static var allCases: [SDDSChipSize] {
-        [.large(.default(8)), .medium(.default(8)), .small(.default(8)), .extraSmall(.default(8))]
+        [.large, .medium, .small, .extraSmall]
     }
 
     public var debugDescription: String {
