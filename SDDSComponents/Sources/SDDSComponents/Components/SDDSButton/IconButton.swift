@@ -43,6 +43,7 @@ public struct IconButton: View {
             appearance: appearance,
             layoutMode: layoutMode,
             accessibility: accessibility,
+            counter: nil,
             action: action
         )
     }

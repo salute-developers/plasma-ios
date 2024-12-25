@@ -16,4 +16,8 @@ public extension View {
     func gradient(_ token: GradientToken, colorScheme: ColorScheme = .light) -> some View {
         modifier(GradientModifier(token: token, colorScheme: colorScheme))
     }
+    
+    func undefinedTypographyErrorText(sizeDescription: String) -> String {
+        "Undefined \(Self.self) Typography for size \(sizeDescription). Using a default value."
+    }
 }

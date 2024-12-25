@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445D2D1C367700559ABA /* SDDSCounter.swift */; };
+		698744602D1C367700559ABA /* CounterAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445A2D1C367700559ABA /* CounterAppearance+Extensions.swift */; };
+		698744612D1C367700559ABA /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744582D1C367700559ABA /* CounterSize.swift */; };
+		698744622D1C367700559ABA /* CounterColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744572D1C367700559ABA /* CounterColor.swift */; };
+		698744632D1C367700559ABA /* CounterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445C2D1C367700559ABA /* CounterData.swift */; };
+		698744642D1C367700559ABA /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744562D1C367700559ABA /* CounterAppearance.swift */; };
+		698744672D1C368E00559ABA /* SDDSSegmentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744652D1C368E00559ABA /* SDDSSegmentElement.swift */; };
 		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
 		8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */; };
 		8102BA312CBE9B3300C589D3 /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */; };
@@ -146,6 +153,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		698744562D1C367700559ABA /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
+		698744572D1C367700559ABA /* CounterColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterColor.swift; sourceTree = "<group>"; };
+		698744582D1C367700559ABA /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
+		6987445A2D1C367700559ABA /* CounterAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		6987445C2D1C367700559ABA /* CounterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterData.swift; sourceTree = "<group>"; };
+		6987445D2D1C367700559ABA /* SDDSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounter.swift; sourceTree = "<group>"; };
+		698744652D1C368E00559ABA /* SDDSSegmentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentElement.swift; sourceTree = "<group>"; };
 		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
 		8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAccessibility.swift; sourceTree = "<group>"; };
 		8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
@@ -324,6 +338,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		698744592D1C367700559ABA /* CounterAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				698744562D1C367700559ABA /* CounterAppearance.swift */,
+				698744572D1C367700559ABA /* CounterColor.swift */,
+				698744582D1C367700559ABA /* CounterSize.swift */,
+			);
+			path = CounterAppearance;
+			sourceTree = "<group>";
+		};
+		6987445B2D1C367700559ABA /* CounterAppearance+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6987445A2D1C367700559ABA /* CounterAppearance+Extensions.swift */,
+			);
+			path = "CounterAppearance+Extensions";
+			sourceTree = "<group>";
+		};
+		6987445E2D1C367700559ABA /* SDDSCounter */ = {
+			isa = PBXGroup;
+			children = (
+				698744592D1C367700559ABA /* CounterAppearance */,
+				6987445B2D1C367700559ABA /* CounterAppearance+Extensions */,
+				6987445C2D1C367700559ABA /* CounterData.swift */,
+				6987445D2D1C367700559ABA /* SDDSCounter.swift */,
+			);
+			path = SDDSCounter;
+			sourceTree = "<group>";
+		};
+		698744662D1C368E00559ABA /* SDDSSegmentElement */ = {
+			isa = PBXGroup;
+			children = (
+				698744652D1C368E00559ABA /* SDDSSegmentElement.swift */,
+			);
+			path = SDDSSegmentElement;
+			sourceTree = "<group>";
+		};
 		8102BA282CBE9B3300C589D3 /* SDDSTextArea */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +662,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				698744662D1C368E00559ABA /* SDDSSegmentElement */,
+				6987445E2D1C367700559ABA /* SDDSCounter */,
 				8102BA282CBE9B3300C589D3 /* SDDSTextArea */,
 				81E9FA8D2C92B12C0041B5FF /* SDDSTextField */,
 				81CBC09B2C82326600FBDAC8 /* SDDSAvatarGroup */,
@@ -1145,6 +1198,12 @@
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */,
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
+				6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */,
+				698744602D1C367700559ABA /* CounterAppearance+Extensions.swift in Sources */,
+				698744612D1C367700559ABA /* CounterSize.swift in Sources */,
+				698744622D1C367700559ABA /* CounterColor.swift in Sources */,
+				698744632D1C367700559ABA /* CounterData.swift in Sources */,
+				698744642D1C367700559ABA /* CounterAppearance.swift in Sources */,
 				814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */,
 				817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
@@ -1192,6 +1251,7 @@
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */,
+				698744672D1C368E00559ABA /* SDDSSegmentElement.swift in Sources */,
 				811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */,
 				8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */,
 				81F7531E2CF46793000156D9 /* ButtonAlignment.swift in Sources */,
