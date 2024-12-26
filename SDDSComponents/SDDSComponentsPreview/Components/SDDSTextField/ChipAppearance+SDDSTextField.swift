@@ -10,7 +10,7 @@ public extension ChipAppearance {
             titleTypography: ChipTextFieldTypography.text,
             imageTintColor: ColorToken.textDefaultPrimary,
             buttonTintColor: ColorToken.textDefaultPrimary,
-            backgroundColor: .surfaceDefaultTransparentSecondary,
+            backgroundColor: .surfaceDefaultSolidPrimary,
             disabledAlpha: 0.5
         )
     }

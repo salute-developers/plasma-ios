@@ -49,7 +49,11 @@ public extension TextAreaAppearance {
             placeholderColorDefault: .textDefaultSecondary,
             placeholderColorError: .textDefaultNegative,
             placeholderColorWarning: .textDefaultWarning,
-            placeholderColorSuccess: .textDefaultAccent
+            placeholderColorSuccess: .textDefaultAccent,
+            endContentColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            textColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            captionColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            placeholderColorReadOnly: .textDefaultSecondary
         )
     }
 }

@@ -53,7 +53,12 @@ public extension TextFieldAppearance {
             placeholderColorWarning: .textDefaultWarning,
             placeholderColorSuccess: .textDefaultAccent,
             textBeforeColor: .textDefaultTertiary,
-            textAfterColor: .textDefaultTertiary
+            textAfterColor: .textDefaultTertiary,
+            startContentColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            endContentColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            textColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            captionColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            placeholderColorReadOnly: .textDefaultSecondary
         )
     }
 }

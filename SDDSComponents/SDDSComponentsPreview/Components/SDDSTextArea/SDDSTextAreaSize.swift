@@ -49,8 +49,21 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     public var textAfterTrailingPadding: CGFloat {
         return 2
     }
-
-    public var fieldHorizontalPadding: CGFloat {
+    
+    public var boxLeadingPadding: CGFloat {
+        switch self {
+        case .large:
+            16
+        case .medium:
+            8
+        case .small:
+            8
+        case .extraSmall:
+            8
+        }
+    }
+    
+    public var boxTrailingPadding: CGFloat {
         switch self {
         case .large:
             16

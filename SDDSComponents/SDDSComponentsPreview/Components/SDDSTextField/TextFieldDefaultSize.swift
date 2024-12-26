@@ -53,8 +53,21 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     public var textAfterTrailingPadding: CGFloat {
         return 2
     }
+    
+    public var boxLeadingPadding: CGFloat {
+        switch self {
+        case .large:
+            16
+        case .medium:
+            8
+        case .small:
+            8
+        case .extraSmall:
+            8
+        }
+    }
 
-    public var fieldHorizontalPadding: CGFloat {
+    public var boxTrailingPadding: CGFloat {
         switch self {
         case .large:
             16
@@ -70,13 +83,9 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
     public var captionTopPadding: CGFloat {
         4
     }
-
-    public var textInputPaddings: EdgeInsets {
-        .init(top: 2, leading: 0, bottom: 0, trailing: 0)
-    }
     
-    public var textHorizontalPadding: CGFloat {
-        return 1.0
+    public var optionalPadding: CGFloat {
+        4
     }
 
     public var cornerRadius: CGFloat {
@@ -237,12 +246,16 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
             CGSize(width: 16, height: 16)
         }
     }
+    
+    public var chipsPadding: CGFloat {
+        6
+    }
 
     public var multipleValueHorizontalPadding: CGFloat {
         2
     }
 
-    public var lineWidth: CGFloat {
+    public var dividerHeight: CGFloat {
         1
     }
     

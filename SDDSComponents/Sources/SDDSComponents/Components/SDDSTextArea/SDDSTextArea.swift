@@ -86,6 +86,7 @@ public enum TextAreaValue: Equatable {
     - style: Стиль текстового поля (`default`, `error`, `warning`, `success`).
     - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
     - required: Флаг, указывающий, является ли поле обязательным.
+    - divider: Флаг, указывающий, показывать ли линию разделителя.
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - dynamicHeight: Флаг, указывающий, расширяется ли текстовое поле по высоте в зависимости от высоты текста.
     - appearance: Параметры внешнего вида текстового поля.
@@ -108,6 +109,7 @@ public struct SDDSTextArea: View {
     public let style: TextAreaStyle
     public let labelPlacement: TextAreaLabelPlacement
     public let required: Bool
+    public let divider: Bool
     public let requiredPlacement: TextAreaRequiredPlacement
     public let dynamicHeight: Bool
     public let appearance: TextAreaAppearance
@@ -135,6 +137,7 @@ public struct SDDSTextArea: View {
         style: TextAreaStyle = .default,
         labelPlacement: TextAreaLabelPlacement = .outer,
         required: Bool = false,
+        divider: Bool = true,
         requiredPlacement: TextAreaRequiredPlacement = .left,
         dynamicHeight: Bool = false,
         appearance: TextAreaAppearance,
@@ -166,6 +169,7 @@ public struct SDDSTextArea: View {
         self.readOnly = readOnly
         self.style = style
         self.required = required
+        self.divider = divider
         self.requiredPlacement = requiredPlacement
         self.title = title
         self.optionalTitle = optionalTitle
@@ -287,14 +291,14 @@ public struct SDDSTextArea: View {
                         .padding(.trailing, size.textInputPaddings.trailing)
                     
                     iconActionView
-                        .padding(.trailing, fieldHorizontalPadding)
+                        .padding(.trailing, boxTrailingPadding)
                 } else {
                     textEditor(id: textAreaOuterTitleId)
                         .padding(size.textInputPaddings)
                     
                     iconActionView
                         .padding(.top, size.textInputPaddings.top)
-                        .padding(.trailing, fieldHorizontalPadding)
+                        .padding(.trailing, boxTrailingPadding)
                 }
             }
         case .multiple(_, let chips):
@@ -310,7 +314,7 @@ public struct SDDSTextArea: View {
                     
                     iconActionView
                         .padding(.top, size.textInputPaddings.top)
-                        .padding(.trailing, layout == .clear ? size.iconActionClearTrailingPadding : fieldHorizontalPadding)
+                        .padding(.trailing, layout == .clear ? size.iconActionClearTrailingPadding : boxTrailingPadding)
                 }
                 
                 textEditor(id: textAreaMultipleId)
@@ -431,8 +435,8 @@ public struct SDDSTextArea: View {
                     .frame(maxWidth: .infinity)
             }
             .frame(height: size.fieldHeight(layout: layout), debug: debugConfiguration.fieldHeight)
-            .padding(.leading, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
-            .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.fieldHorizontalPadding)
+            .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
+            .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
             
             VStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -464,8 +468,8 @@ public struct SDDSTextArea: View {
                     bottomLineView
                 }
             }
-            .padding(.leading, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
-            .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.fieldHorizontalPadding)
+            .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
+            .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
             
             if shouldShowIndicatorForInnerLabelDefaultLayout || shouldShowIndicatorForNoneLabelDefaultLayout {
                 indicatorOverlayView
@@ -541,12 +545,15 @@ public struct SDDSTextArea: View {
     }
     
     private var counterColor: Color {
+        if readOnly {
+            return appearance.counterColorReadOnly.color(for: colorScheme)
+        }
         return appearance.counterColorDefault.color(for: colorScheme)
     }
     
     private var backgroundColor: Color {
         if readOnly {
-            return appearance.backgroundColorDefault.color(for: colorScheme)
+            return appearance.backgroundColorReadOnly.color(for: colorScheme)
         }
         return appearance.backgroundColor(for: style, isFocused: isFocused).color(for: colorScheme)
     }
@@ -559,10 +566,16 @@ public struct SDDSTextArea: View {
     }
     
     private var placeholderColor: Color {
+        if readOnly {
+            return appearance.placeholderColorReadOnly.color(for: colorScheme)
+        }
         return appearance.placeholderColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
     }
     
     private var textColor: Color {
+        if readOnly {
+            return appearance.textColorReadOnly.color(for: colorScheme)
+        }
         return appearance.textColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
     }
     
@@ -583,6 +596,7 @@ public struct SDDSTextArea: View {
     private var iconActionView: some View {
         if let rightView = iconActionViewProvider?.view {
             rightView
+                .foregroundColor(appearance.endContentColor.color(for: colorScheme))
                 .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
                 .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {
@@ -639,9 +653,13 @@ public struct SDDSTextArea: View {
     
     @ViewBuilder
     private var bottomLineView: some View {
-        Rectangle()
-            .fill(bottomLineColor)
-            .frame(height: size.lineWidth, debug: debugConfiguration.fieldView)
+        if divider {
+            Rectangle()
+                .fill(bottomLineColor)
+                .frame(height: size.lineWidth, debug: debugConfiguration.fieldView)
+        } else {
+            EmptyView()
+        }
     }
 
     // MARK: - Computed Properties for Conditions
@@ -663,7 +681,7 @@ public struct SDDSTextArea: View {
     }
     
     private var captionTrailingPadding: CGFloat {
-        fieldHorizontalPadding
+        boxTrailingPadding
     }
     
     private var fieldTrailingPadding: CGFloat {
@@ -825,8 +843,16 @@ public struct SDDSTextArea: View {
         return typography
     }
 
-    private var fieldHorizontalPadding: CGFloat {
-        layout == .clear ? 0 : size.fieldHorizontalPadding
+    private var boxLeadingPadding: CGFloat {
+        if displayChips {
+            return size.chipsPadding
+        }
+        
+        return layout == .clear ? 0 : size.boxLeadingPadding
+    }
+    
+    private var boxTrailingPadding: CGFloat {
+        layout == .clear ? 0 : size.boxTrailingPadding
     }
 
 }
