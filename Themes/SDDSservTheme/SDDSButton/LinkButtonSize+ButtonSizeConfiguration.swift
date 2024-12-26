@@ -22,7 +22,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         }
     }
 
-    public var cornerRadius: CGFloat {
+    public func cornerRadius(style: SDDSComponents.ComponentShapeStyle) -> CGFloat {
         0
     }
 

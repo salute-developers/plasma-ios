@@ -9,8 +9,8 @@ final class ChipViewModel: ObservableObject {
     @Published var isEnabled: Bool = true
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    @Published var size: SDDSChipSize = .medium(.default(8))
-    @Published var borderStyle: ChipBorderStyle = .default(8)
+    @Published var size: SDDSChipSize = .medium
+    @Published var shapeStyle: ComponentShapeStyle = .cornered
     @Published var appearance: ChipAppearance = SDDSChip.accent.appearance
     @Published var variationName: String = SDDSChip.accent.name
     @Published var iconImage: Image? = nil
@@ -47,26 +47,13 @@ final class ChipViewModel: ObservableObject {
     func setButtonImage() {
         buttonImage = Image.image("chipClose")
     }
-    
-    func updateBorderStyle(borderStyle: ChipBorderStyle) {
-        switch size {
-        case .small:
-            size = .small(borderStyle)
-        case .medium:
-            size = .medium(borderStyle)
-        case .large:
-            size = .large(borderStyle)
-        case .extraSmall:
-            size = .extraSmall(borderStyle)
-        }
-    }
 }
 
 // MARK: - SDDSChipSize Extensions
 
 extension SDDSChipSize: Hashable, CaseIterable {
     public static var allCases: [SDDSChipSize] {
-        [.large(.default(8)), .medium(.default(8)), .small(.default(8)), .extraSmall(.default(8))]
+        [.large, .medium, .small, .extraSmall]
     }
 
     public var debugDescription: String {

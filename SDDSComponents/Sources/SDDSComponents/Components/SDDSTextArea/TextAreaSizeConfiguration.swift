@@ -5,7 +5,8 @@ import SwiftUI
 public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var titleBottomPadding: CGFloat { get }
     var titleInnerPadding: CGFloat { get }
-    var fieldHorizontalPadding: CGFloat { get }
+    var boxLeadingPadding: CGFloat { get }
+    var boxTrailingPadding: CGFloat { get }
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
     var textInputPaddings: EdgeInsets { get }
@@ -27,6 +28,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipGroupVerticalBottomPadding: CGFloat { get }
     var textInputBottomPadding: CGFloat { get }
     var iconActionClearTrailingPadding: CGFloat { get }
+    var chipsPadding: CGFloat { get }
     
     func fieldHeight(layout: TextAreaLayout) -> CGFloat
     func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat

@@ -13,7 +13,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
-                appearance: .textField,
+                appearance: SDDSChip.accent.medium.pilled.appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -76,7 +76,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 disabled: false,
                 style: .default,
                 labelPlacement: .inner,
-                required: true,
+                required: false,
                 requiredPlacement: .left,
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
@@ -144,7 +144,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
                 layout: .default,
-                iconViewProvider: ViewProvider(iconView),
+                iconViewProvider: nil,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")

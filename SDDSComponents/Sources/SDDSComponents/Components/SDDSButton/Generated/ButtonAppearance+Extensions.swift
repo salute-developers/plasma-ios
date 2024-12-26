@@ -18,7 +18,7 @@ public extension ButtonAppearance {
         )
     }
     
-    func shapeStyle(_ shapeStyle: ButtonShapeStyle) -> ButtonAppearance {
+    func shapeStyle(_ shapeStyle: ComponentShapeStyle) -> ButtonAppearance {
         return ButtonAppearance(
             size: self.size,
             shapeStyle: shapeStyle,
