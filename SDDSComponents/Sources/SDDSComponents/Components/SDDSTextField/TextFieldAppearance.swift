@@ -49,6 +49,11 @@ public struct TextFieldAppearance {
     public let placeholderColorSuccess: ColorToken
     public let textBeforeColor: ColorToken
     public let textAfterColor: ColorToken
+    public let startContentColor: ColorToken
+    public let endContentColor: ColorToken
+    public let textColorReadOnly: ColorToken
+    public let captionColorReadOnly: ColorToken
+    public let placeholderColorReadOnly: ColorToken
     
     public init(
         textTypography: TypographyConfiguration,
@@ -95,7 +100,12 @@ public struct TextFieldAppearance {
         placeholderColorWarning: ColorToken,
         placeholderColorSuccess: ColorToken,
         textBeforeColor: ColorToken,
-        textAfterColor: ColorToken
+        textAfterColor: ColorToken,
+        startContentColor: ColorToken,
+        endContentColor: ColorToken,
+        textColorReadOnly: ColorToken,
+        captionColorReadOnly: ColorToken,
+        placeholderColorReadOnly: ColorToken
     ) {
         self.textTypography = textTypography
         self.titleTypography = titleTypography
@@ -142,6 +152,11 @@ public struct TextFieldAppearance {
         self.placeholderColorSuccess = placeholderColorSuccess
         self.textBeforeColor =  textBeforeColor
         self.textAfterColor = textAfterColor
+        self.startContentColor = startContentColor
+        self.endContentColor = endContentColor
+        self.textColorReadOnly = textColorReadOnly
+        self.captionColorReadOnly = captionColorReadOnly
+        self.placeholderColorReadOnly = placeholderColorReadOnly
     }
     
     public func borderColor(for style: TextFieldStyle) -> ColorToken {

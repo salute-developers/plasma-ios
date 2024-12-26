@@ -22,12 +22,17 @@ extension IconButtonSize: ButtonSizeConfiguration {
         }
     }
 
-    public var cornerRadius: CGFloat {
-        switch self {
-        case .large: return ShapeToken.roundL.cornerRadius - 2.0
-        case .medium: return ShapeToken.roundM.cornerRadius
-        case .small: return ShapeToken.roundM.cornerRadius - 2.0
-        case .extraSmall: return ShapeToken.roundS.cornerRadius
+    public func cornerRadius(style: SDDSComponents.ComponentShapeStyle) -> CGFloat {
+        switch style {
+        case .cornered:
+            switch self {
+            case .large: return ShapeToken.roundL.cornerRadius - 2.0
+            case .medium: return ShapeToken.roundM.cornerRadius
+            case .small: return ShapeToken.roundM.cornerRadius - 2.0
+            case .extraSmall: return ShapeToken.roundS.cornerRadius
+            }
+        case .pilled:
+            return height / 2
         }
     }
 

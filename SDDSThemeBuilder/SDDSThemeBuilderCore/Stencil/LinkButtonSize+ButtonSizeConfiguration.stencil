@@ -20,9 +20,7 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         }
     }
 
-    public var cornerRadius: CGFloat {
-        0
-    }
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
 
     public var paddings: EdgeInsets {
         switch self {

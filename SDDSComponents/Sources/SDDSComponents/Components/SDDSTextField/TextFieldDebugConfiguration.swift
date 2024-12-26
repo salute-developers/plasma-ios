@@ -11,7 +11,8 @@ struct TextFieldDebugConfiguration {
     let caption: Bool
     let captionTopPadding: Bool
     let fieldView: Bool
-    let fieldHorizontalPadding: Bool
+    let boxLeadingPadding: Bool
+    let boxTrailingPadding: Bool
     let placeholder: Bool
     let icon: Bool
     let iconPadding: Bool
@@ -32,7 +33,8 @@ struct TextFieldDebugConfiguration {
         caption: Bool = false,
         captionTopPadding: Bool = false,
         fieldView: Bool = false,
-        fieldHorizontalPadding: Bool = false,
+        boxLeadingPadding: Bool = false,
+        boxTrailingPadding: Bool = false,
         placeholder: Bool = false,
         icon: Bool = false,
         iconPadding: Bool = false,
@@ -52,7 +54,8 @@ struct TextFieldDebugConfiguration {
         self.caption = caption
         self.captionTopPadding = captionTopPadding
         self.fieldView = fieldView
-        self.fieldHorizontalPadding = fieldHorizontalPadding
+        self.boxLeadingPadding = boxLeadingPadding
+        self.boxTrailingPadding = boxTrailingPadding
         self.placeholder = placeholder
         self.icon = icon
         self.iconPadding = iconPadding

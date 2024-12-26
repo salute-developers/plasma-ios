@@ -54,9 +54,9 @@ struct ChipView: View {
                     }
                 }
 
-                Picker("Border Style", selection: $viewModel.borderStyle) {
-                    Text("Default").tag(ChipBorderStyle.default(viewModel.size.shapeToken.cornerRadius))
-                    Text("Pilled").tag(ChipBorderStyle.pilled)
+                Picker("Border Style", selection: $viewModel.shapeStyle) {
+                    Text("Default").tag(ComponentShapeStyle.cornered)
+                    Text("Pilled").tag(ComponentShapeStyle.pilled)
                 }
                 
                 HStack {
@@ -90,9 +90,6 @@ struct ChipView: View {
             } else {
                 viewModel.buttonImage = nil
             }
-        }
-        .onChange(of: viewModel.borderStyle) { borderStyle in
-            viewModel.updateBorderStyle(borderStyle: borderStyle)
         }
     }
 }

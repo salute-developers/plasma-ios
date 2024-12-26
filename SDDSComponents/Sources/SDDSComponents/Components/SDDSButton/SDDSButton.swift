@@ -174,12 +174,7 @@ public struct SDDSButton: View {
 
 private extension SDDSButton {
     var cornerRadius: CGFloat {
-        switch appearance.shapeStyle {
-        case .default:
-            return appearance.size.cornerRadius
-        case .pilled:
-            return appearance.size.height / 2
-        }
+        return appearance.size.cornerRadius(style: appearance.shapeStyle)
     }
     
     func currentColor(for buttonColor: ButtonColor) -> Color {

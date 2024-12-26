@@ -105,6 +105,12 @@ public extension ColorToken {
     }
 }
 
+public extension ShapeToken {
+    static var `default`: ShapeToken {
+        .default
+    }
+}
+
 public extension ColorToken {
     func withOpacity(_ opacity: Double) -> ColorToken {
         return ColorToken(
