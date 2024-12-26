@@ -20,39 +20,18 @@
 		};
 /* End PBXAggregateTarget section */
 
-/* Begin PBXBuildFile section */
-		242BF24F2BBC687700E4D112 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BF24E2BBC687700E4D112 /* Assets.swift */; };
-		2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */; };
-		2430DEA62BB5B53B00277123 /* SDDSIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */; };
-		2430DEAB2BB5B53B00277123 /* SDDSIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */; };
-		2430DEAC2BB5B53B00277123 /* SDDSIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = 2430DE9E2BB5B53B00277123 /* SDDSIcons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		814F719C2C58CEBB006385E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814F719B2C58CEBB006385E4 /* Assets.xcassets */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2430DEA72BB5B53B00277123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2430DE922BB5B53B00277123 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2430DE9A2BB5B53B00277123;
-			remoteInfo = SDDSIcons;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		242BF24E2BBC687700E4D112 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
 		242BF2582BBD941D00E4D112 /* build_xcframework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_xcframework.sh; sourceTree = "<group>"; };
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DE9E2BB5B53B00277123 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
-		2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
-		2430DEA52BB5B53B00277123 /* SDDSIconsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSIconsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIconsTests.swift; sourceTree = "<group>"; };
 		243C6C462BBF14E900525EAD /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		814F718F2C58CA7E006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		814F719B2C58CEBB006385E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		817FF89D2D1D8C300090E989 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
+		817FF89E2D1D8C300090E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		817FF89F2D1D8C300090E989 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
+		817FF8A02D1D8C300090E989 /* SDDSIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIcons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEA22BB5B53B00277123 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2430DEA62BB5B53B00277123 /* SDDSIcons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,15 +72,13 @@
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
-				2430DE9F2BB5B53B00277123 /* SDDSIcons.docc */,
-				814F71912C58CB4F006385E4 /* Sources */,
+				817FF89C2D1D8C300090E989 /* SDDSIcons */,
 				814F718F2C58CA7E006385E4 /* Package.swift */,
 				243C6C462BBF14E900525EAD /* info.plist */,
 				242BF2472BBC673300E4D112 /* swiftgen.yml */,
 				242BF26A2BBDA47A00E4D112 /* build */,
 				242BF2572BBD940700E4D112 /* Scripts */,
 				242BF2542BBD8AB000E4D112 /* Templates */,
-				2430DEA92BB5B53B00277123 /* SDDSIconsTests */,
 				2430DE9C2BB5B53B00277123 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,33 +87,17 @@
 			isa = PBXGroup;
 			children = (
 				2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */,
-				2430DEA52BB5B53B00277123 /* SDDSIconsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2430DEA92BB5B53B00277123 /* SDDSIconsTests */ = {
+		817FF89C2D1D8C300090E989 /* SDDSIcons */ = {
 			isa = PBXGroup;
 			children = (
-				2430DEAA2BB5B53B00277123 /* SDDSIconsTests.swift */,
-			);
-			path = SDDSIconsTests;
-			sourceTree = "<group>";
-		};
-		814F71912C58CB4F006385E4 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				814F71922C58CB4F006385E4 /* SDDSIcons */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		814F71922C58CB4F006385E4 /* SDDSIcons */ = {
-			isa = PBXGroup;
-			children = (
-				814F719B2C58CEBB006385E4 /* Assets.xcassets */,
-				242BF24E2BBC687700E4D112 /* Assets.swift */,
-				2430DE9E2BB5B53B00277123 /* SDDSIcons.h */,
+				817FF89D2D1D8C300090E989 /* SDDSIcons.h */,
+				817FF89E2D1D8C300090E989 /* Assets.xcassets */,
+				817FF89F2D1D8C300090E989 /* SDDSIcons.docc */,
+				817FF8A02D1D8C300090E989 /* SDDSIcons.swift */,
 			);
 			path = SDDSIcons;
 			sourceTree = "<group>";
@@ -156,7 +109,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DEAC2BB5B53B00277123 /* SDDSIcons.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,24 +134,6 @@
 			productReference = 2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2430DEA42BB5B53B00277123 /* SDDSIconsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2430DEB22BB5B53B00277123 /* Build configuration list for PBXNativeTarget "SDDSIconsTests" */;
-			buildPhases = (
-				2430DEA12BB5B53B00277123 /* Sources */,
-				2430DEA22BB5B53B00277123 /* Frameworks */,
-				2430DEA32BB5B53B00277123 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2430DEA82BB5B53B00277123 /* PBXTargetDependency */,
-			);
-			name = SDDSIconsTests;
-			productName = SDDSIconsTests;
-			productReference = 2430DEA52BB5B53B00277123 /* SDDSIconsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,9 +148,6 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					2430DE9A2BB5B53B00277123 = {
-						CreatedOnToolsVersion = 15.2;
-					};
-					2430DEA42BB5B53B00277123 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -235,7 +166,6 @@
 			projectRoot = "";
 			targets = (
 				2430DE9A2BB5B53B00277123 /* SDDSIcons */,
-				2430DEA42BB5B53B00277123 /* SDDSIconsTests */,
 				242BF25E2BBDA0C300E4D112 /* Build XCFramework */,
 			);
 		};
@@ -243,14 +173,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		2430DE992BB5B53B00277123 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				814F719C2C58CEBB006385E4 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEA32BB5B53B00277123 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,28 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2430DEA02BB5B53B00277123 /* SDDSIcons.docc in Sources */,
-				242BF24F2BBC687700E4D112 /* Assets.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2430DEA12BB5B53B00277123 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2430DEAB2BB5B53B00277123 /* SDDSIconsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2430DEA82BB5B53B00277123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2430DE9A2BB5B53B00277123 /* SDDSIcons */;
-			targetProxy = 2430DEA72BB5B53B00277123 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		242BF25F2BBDA0C400E4D112 /* Debug */ = {
@@ -550,48 +454,6 @@
 			};
 			name = Release;
 		};
-		2430DEB32BB5B53B00277123 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSIconsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2430DEB42BB5B53B00277123 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSIconsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -618,15 +480,6 @@
 			buildConfigurations = (
 				2430DEB02BB5B53B00277123 /* Debug */,
 				2430DEB12BB5B53B00277123 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2430DEB22BB5B53B00277123 /* Build configuration list for PBXNativeTarget "SDDSIconsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2430DEB32BB5B53B00277123 /* Debug */,
-				2430DEB42BB5B53B00277123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

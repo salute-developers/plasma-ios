@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "SDDSIcons",
             dependencies: [],
-            path: "Sources/SDDSIcons",
+            path: "SDDSIcons",
             resources: [
                 .process("Assets.xcassets")
             ]
