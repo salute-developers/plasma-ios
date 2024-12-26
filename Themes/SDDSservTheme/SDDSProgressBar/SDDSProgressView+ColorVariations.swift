@@ -59,7 +59,7 @@ public extension SDDSProgressView {
             appearance:
                 .init(
                     size: SDDSProgressViewSize(),
-                    tintFillStyle: .color(ColorToken.surfaceDefaultSolidPrimary),
+                    tintFillStyle: .color(ColorToken.surfaceDefaultSolidDefault),
                     trackColor: ColorToken.surfaceDefaultTransparentSecondary
                 )
         )
