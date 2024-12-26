@@ -5,9 +5,6 @@
       location = "group:Package.swift">
    </FileRef>
    <FileRef
-      location = "group:SDDSCore/SDDSCore.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:SDDSIcons/SDDSIcons.xcodeproj">
    </FileRef>
    <FileRef

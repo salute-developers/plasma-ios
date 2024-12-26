@@ -8,7 +8,7 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules)
   print_info "Корневая директория проекта: #{project_root_dir}"
   
   if modules.empty?
-      modules = ['SDDSComponents', 'SDDSIcons', 'SDDSCore']
+      modules = ['SDDSComponents', 'SDDSIcons']
   end
 
   if workspace_name
