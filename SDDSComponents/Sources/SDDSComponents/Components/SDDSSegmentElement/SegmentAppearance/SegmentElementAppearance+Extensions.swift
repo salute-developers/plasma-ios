@@ -15,7 +15,7 @@ public extension SegmentElementAppearance {
         )
     }
     
-    func shapeStyle(_ shapeStyle: SegmentElementShapeStyle) -> SegmentElementAppearance {
+    func shapeStyle(_ shapeStyle: ButtonShapeStyle) -> SegmentElementAppearance {
         return SegmentElementAppearance(
             size: self.size,
             shapeStyle: shapeStyle,
@@ -43,7 +43,7 @@ public extension SegmentElementAppearance {
         )
     }
     
-    func titleColor(_ titleColor: SegmentElementColor) -> SegmentElementAppearance {
+    func titleColor(_ titleColor: ButtonColor) -> SegmentElementAppearance {
         return SegmentElementAppearance(
             size: self.size,
             shapeStyle: self.shapeStyle,
@@ -71,7 +71,7 @@ public extension SegmentElementAppearance {
         )
     }
     
-    func subtitleColor(_ subtitleColor: SegmentElementColor) -> SegmentElementAppearance {
+    func subtitleColor(_ subtitleColor: ButtonColor) -> SegmentElementAppearance {
         return SegmentElementAppearance(
             size: self.size,
             shapeStyle: self.shapeStyle,
@@ -85,7 +85,7 @@ public extension SegmentElementAppearance {
         )
     }
     
-    func iconColor(_ iconColor: SegmentElementColor) -> SegmentElementAppearance {
+    func iconColor(_ iconColor: ButtonColor) -> SegmentElementAppearance {
         return SegmentElementAppearance(
             size: self.size,
             shapeStyle: self.shapeStyle,
@@ -99,7 +99,7 @@ public extension SegmentElementAppearance {
         )
     }
     
-    func backgroundColor(_ backgroundColor: SegmentElementColor) -> SegmentElementAppearance {
+    func backgroundColor(_ backgroundColor: ButtonColor) -> SegmentElementAppearance {
         return SegmentElementAppearance(
             size: self.size,
             shapeStyle: self.shapeStyle,

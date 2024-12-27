@@ -4,31 +4,31 @@ import Foundation
 public struct SegmentElementAppearance {
     public let size: SegmentElementSizeConfiguration
     
-    public let shapeStyle: SegmentElementShapeStyle
+    public let shapeStyle: ButtonShapeStyle
     
     public let titleTypography: TypographyConfiguration
     
-    public let titleColor: SegmentElementColor
+    public let titleColor: ButtonColor
     
     public let subtitleTypography: TypographyConfiguration
     
-    public let subtitleColor: SegmentElementColor
+    public let subtitleColor: ButtonColor
     
-    public let iconColor: SegmentElementColor
+    public let iconColor: ButtonColor
     
-    public let backgroundColor: SegmentElementColor
+    public let backgroundColor: ButtonColor
     
     public let disabledAlpha: CGFloat
     
     public init(
         size: SegmentElementSizeConfiguration = DefaultSegmentElementSize(),
-        shapeStyle: SegmentElementShapeStyle = .pilled,
+        shapeStyle: ButtonShapeStyle = .pilled,
         titleTypography: TypographyConfiguration = .default,
-        titleColor: SegmentElementColor = SegmentElementColor(),
+        titleColor: ButtonColor = ButtonColor(),
         subtitleTypography: TypographyConfiguration = .default,
-        subtitleColor: SegmentElementColor = SegmentElementColor(),
-        iconColor: SegmentElementColor = SegmentElementColor(),
-        backgroundColor: SegmentElementColor = SegmentElementColor(),
+        subtitleColor: ButtonColor = ButtonColor(),
+        iconColor: ButtonColor = ButtonColor(),
+        backgroundColor: ButtonColor = ButtonColor(),
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
@@ -40,5 +40,24 @@ public struct SegmentElementAppearance {
         self.iconColor = iconColor
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
+    }
+}
+
+// в отдельный файл
+extension SegmentElementAppearance {
+    var buttonAppearance: ButtonAppearance {
+        .init(
+            size: size,
+            shapeStyle: .default,
+            titleTypography: .default,
+            titleColor: ButtonColor(),
+            subtitleTypography: .default,
+            subtitleColor: ButtonColor(),
+            iconColor: ButtonColor(),
+            spinnerColor: ButtonColor(),
+            backgroundColor: ButtonColor(),
+            disabledAlpha: 0,
+            loadingAlpha: 0
+        )
     }
 }

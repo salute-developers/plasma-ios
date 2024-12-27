@@ -39,8 +39,7 @@ public struct SDDSSegmentElement: View {
     public let isDisabled: Bool
     public let appearance: SegmentElementAppearance
     public let content: SegmentElementContentRight = .subtitle("")
-    //    public let layoutMode: ButtonLayoutMode
-    //    public let accessibility: ButtonAccessibility
+    public let accessibility: ButtonAccessibility // сделать SegmentElementAccessibility
     public var action: () -> Void
     
     public init(
@@ -48,7 +47,6 @@ public struct SDDSSegmentElement: View {
         contentType: SegmentElementContent,
         isDisabled: Bool = false,
         appearance: SegmentElementAppearance,
-        //        layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
         action: @escaping () -> Void
     ) {
@@ -56,8 +54,7 @@ public struct SDDSSegmentElement: View {
         self.contentType = contentType
         self.isDisabled = isDisabled
         self.appearance = appearance
-        //        self.layoutMode = layoutMode
-        //        self.accessibility = accessibility
+        self.accessibility = accessibility
         self.action = action
     }
 
@@ -73,22 +70,12 @@ public struct SDDSSegmentElement: View {
                     isLoading: false,
                     spinnerImage: nil,
                     buttonStyle: .basic,
-                    appearance: ButtonAppearance(
-                        size: size,
-                        titleTypography: appearance.titleTypography,
-                        titleColor: titleColor,
-                        subtitleTypography: appearance.subtitleTypography,
-                        subtitleColor: subtitleColor,
-                        iconColor: iconColor,
-                        backgroundColor: backgroundColor,
-                        disabledAlpha: appearance.disabledAlpha
-                    ),
-                    //                layoutMode: layoutMode,
+                    appearance: appearance.buttonAppearance,
                     counter: nil,
                     action: action
                 )
         case .right(let segmentElementContentRight):
-             EmptyView()
+            caseRightView(content: segmentElementContentRight)
         case .none:
              SDDSButton(
                 title: title,
@@ -98,29 +85,17 @@ public struct SDDSSegmentElement: View {
                 isLoading: false,
                 spinnerImage: nil,
                 buttonStyle: .basic,
-                appearance: ButtonAppearance(
-                    size: size,
-                    titleTypography: appearance.titleTypography,
-                    titleColor: titleColor,
-                    subtitleTypography: appearance.subtitleTypography,
-                    subtitleColor: subtitleColor,
-                    iconColor: iconColor,
-                    backgroundColor: backgroundColor,
-                    disabledAlpha: appearance.disabledAlpha
-                ),
-                //                layoutMode: layoutMode,
+                appearance: appearance.buttonAppearance,
                 counter: nil,
                 action: action
             )
         }
     }
-}
-
-extension SDDSSegmentElement {
-    func caseRightView(_ content: SegmentElementContentRight) -> some View {
+    
+    func caseRightView(content: SegmentElementContentRight) -> some View {
         switch content {
         case .icon(let image):
-        return SDDSButton(
+            SDDSButton(
                 title: title,
                 subtitle: "",
                 iconAttributes: .init(image: image, alignment: .trailing),
@@ -128,23 +103,13 @@ extension SDDSSegmentElement {
                 isLoading: false,
                 spinnerImage: nil,
                 buttonStyle: .basic,
-                appearance: ButtonAppearance(
-                    size: size,
-                    titleTypography: appearance.titleTypography,
-                    titleColor: titleColor,
-                    subtitleTypography: appearance.subtitleTypography,
-                    subtitleColor: subtitleColor,
-                    iconColor: iconColor,
-                    backgroundColor: backgroundColor,
-                    disabledAlpha: appearance.disabledAlpha
-                ),
-                //                    layoutMode: layoutMode,
+                appearance: appearance.buttonAppearance,
                 accessibility: accessibility,
                 counter: nil,
                 action: action
             )
         case .counter(let counterData):
-            return SDDSButton(
+            SDDSButton(
                 title: title,
                 subtitle: "",
                 iconAttributes: nil,
@@ -152,23 +117,13 @@ extension SDDSSegmentElement {
                 isLoading: false,
                 spinnerImage: nil,
                 buttonStyle: .basic,
-                appearance: ButtonAppearance(
-                    size: size,
-                    titleTypography: appearance.titleTypography,
-                    titleColor: titleColor,
-                    subtitleTypography: appearance.subtitleTypography,
-                    subtitleColor: subtitleColor,
-                    iconColor: iconColor,
-                    backgroundColor: backgroundColor,
-                    disabledAlpha: appearance.disabledAlpha
-                ),
-                //                    layoutMode: layoutMode,
+                appearance: appearance.buttonAppearance,
                 accessibility: accessibility,
                 counter: ViewProvider(counterData),
                 action: action
             )
         case .subtitle(let subtitle):
-            return SDDSButton(
+            SDDSButton(
                 title: title,
                 subtitle: subtitle,
                 iconAttributes: nil,
@@ -176,17 +131,7 @@ extension SDDSSegmentElement {
                 isLoading: false,
                 spinnerImage: nil,
                 buttonStyle: .basic,
-                appearance: ButtonAppearance(
-                    size: size,
-                    titleTypography: appearance.titleTypography,
-                    titleColor: titleColor,
-                    subtitleTypography: appearance.subtitleTypography,
-                    subtitleColor: subtitleColor,
-                    iconColor: iconColor,
-                    backgroundColor: backgroundColor,
-                    disabledAlpha: appearance.disabledAlpha
-                ),
-                //                    layoutMode: layoutMode,
+                appearance: appearance.buttonAppearance,
                 accessibility: accessibility,
                 counter: nil,
                 action: action
