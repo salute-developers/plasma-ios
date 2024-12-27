@@ -45,6 +45,7 @@ public struct SegmentElementView: View {
             segmentView
             Section {
                 title
+                subtitle
                 size
                 appearance
             }
@@ -71,13 +72,13 @@ public struct SegmentElementView: View {
         }
     }
     
-//    public var subtitle: some View {
-//        HStack {
-//            Text("Value")
-//            TextField("Subtitle", text: $viewModel)
-//                .multilineTextAlignment(.trailing)
-//        }
-//    }
+    public var subtitle: some View {
+        HStack {
+            Text("Value")
+            TextField("Subtitle", text: $viewModel.subtitle)
+                .multilineTextAlignment(.trailing)
+        }
+    }
     
     public var size: some View {
         HStack {
