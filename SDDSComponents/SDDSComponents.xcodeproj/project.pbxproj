@@ -23,6 +23,8 @@
 		698744632D1C367700559ABA /* CounterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445C2D1C367700559ABA /* CounterData.swift */; };
 		698744642D1C367700559ABA /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744562D1C367700559ABA /* CounterAppearance.swift */; };
 		698744672D1C368E00559ABA /* SDDSSegmentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744652D1C368E00559ABA /* SDDSSegmentElement.swift */; };
+		69D45AF92D1ECF3D00919713 /* SegmentElementIconAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D45AF82D1ECF0D00919713 /* SegmentElementIconAttributes.swift */; };
+		69D45AFB2D1ECFEA00919713 /* SegmentElementAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D45AFA2D1ECFE000919713 /* SegmentElementAlignment.swift */; };
 		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
 		8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */; };
 		8102BA312CBE9B3300C589D3 /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */; };
@@ -178,6 +180,8 @@
 		6987445C2D1C367700559ABA /* CounterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterData.swift; sourceTree = "<group>"; };
 		6987445D2D1C367700559ABA /* SDDSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounter.swift; sourceTree = "<group>"; };
 		698744652D1C368E00559ABA /* SDDSSegmentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentElement.swift; sourceTree = "<group>"; };
+		69D45AF82D1ECF0D00919713 /* SegmentElementIconAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementIconAttributes.swift; sourceTree = "<group>"; };
+		69D45AFA2D1ECFE000919713 /* SegmentElementAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementAlignment.swift; sourceTree = "<group>"; };
 		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
 		8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAccessibility.swift; sourceTree = "<group>"; };
 		8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 		6950A1262D1D4BE1001695C5 /* SegmentAppearance */ = {
 			isa = PBXGroup;
 			children = (
+				69D45AFA2D1ECFE000919713 /* SegmentElementAlignment.swift */,
+				69D45AF82D1ECF0D00919713 /* SegmentElementIconAttributes.swift */,
 				696843442D1EA348002F8C7A /* SegmentElementAccessibility.swift */,
 				696843422D1EA11A002F8C7A /* SegmentElementAppearance+ButtonAppearance.swift */,
 				696843402D1E71FE002F8C7A /* SegmentElement+ShapeStyle.swift */,
@@ -1231,6 +1237,7 @@
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,
 				69573D682D1D638600359D53 /* AppearanceConfiguration.swift in Sources */,
 				817339F12D033EF30092608A /* AvatarImageSource.swift in Sources */,
+				69D45AFB2D1ECFEA00919713 /* SegmentElementAlignment.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */,
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
@@ -1318,6 +1325,7 @@
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
+				69D45AF92D1ECF3D00919713 /* SegmentElementIconAttributes.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */,
 				81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */,

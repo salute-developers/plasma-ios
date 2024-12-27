@@ -5,32 +5,10 @@ import SDDSComponents
 import SDDSComponentsPreview
 import SDDSServTheme
 
-final class SegmentElementViewModel: ObservableObject {
-    @Published var title: String = ""
-    @Published var subtitle: String = ""
-    @Published var size: SegmentElementSizeConfiguration = SegmentElementSize.medium
-    @Published var contentType: SegmentElementContent = .none
-    @Published var iconAttributes: ButtonIconAttributes? = nil
-    @Published var isDisabled: Bool = false
-    @Published var appearance: SegmentElementAppearance = SDDSSegmentElement.default.appearance
-    @Published var variationName: String = SDDSSegmentElement.clear.name
-
-    var cancellables: Set<AnyCancellable> = []
-    
-    init() {
-        observeSizeChange()
-    }
-
-    private func observeSizeChange() {
-        $size
-            .sink { [weak self] value in
-                guard let self = self else {
-                    return
-                }
-                self.appearance = self.appearance.size(value)
-            }
-            .store(in: &cancellables)
-    }
+public enum SegmentElementContentType: String, CaseIterable {
+    case left = "left"
+    case right = "right"
+    case none = "none"
 }
 
 public struct SegmentElementView: View {
@@ -48,6 +26,8 @@ public struct SegmentElementView: View {
                 subtitle
                 size
                 appearance
+                icon
+                alignment
             }
         }
     }
@@ -57,6 +37,7 @@ public struct SegmentElementView: View {
             Spacer()
             SDDSSegmentElement(title: viewModel.title,
                                contentType: .none,
+                               iconAttributes: viewModel.iconAttributes,
                                appearance: viewModel.appearance,
                                action: {}
             )
@@ -115,10 +96,47 @@ public struct SegmentElementView: View {
         }
     }
     
-//    public var contentType: some View {
-//        
-//    }
+    public var contentType: some View {
+        HStack {
+            Text("type")
+            Spacer()
+            Menu {
+                ForEach(SegmentElementContentType.allCases, id: \.self) { type in
+                    Button(type.rawValue) {
+                        //                        switch type {
+                        //                        case .left:
+                        //
+                        //                            viewModel.contentType = .left()
+                        //                        }
+                    }
+                }
+            } label: {
+                Text("type")
+            }
+        }
+    }
     
+    public var icon: some View {
+        HStack {
+            Toggle("Icon", isOn: $viewModel.isIconVisible)
+        }
+    }
+    
+    public var alignment: some View {
+        HStack {
+            Text("Alignment")
+            Spacer()
+            Menu {
+                ForEach(SegmentElementAlignment.allCases, id: \.self) { alignment in
+                    Button(alignment.rawValue) {
+                        viewModel.alignment = alignment
+                    }
+                }
+            } label: {
+                Text(viewModel.alignment.rawValue)
+            }
+        }
+    }
 }
 
 #Preview {

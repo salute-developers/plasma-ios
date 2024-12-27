@@ -114,5 +114,4 @@ final class ButtonViewModel: ObservableObject {
     private func iconAttributes(with alignment: SDDSComponents.ButtonAlignment) -> ButtonIconAttributes {
         .init(image: Image("buttonIcon"), alignment: alignment)
     }
-        
 }

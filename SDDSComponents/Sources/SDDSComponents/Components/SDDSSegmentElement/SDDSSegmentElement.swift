@@ -16,6 +16,7 @@ public enum SegmentElementContent {
 public struct SDDSSegmentElement: View {
     public let title: String
     public let contentType: SegmentElementContent
+    public let iconAttributes: SegmentElementIconAttributes?
     public let isDisabled: Bool
     public let appearance: SegmentElementAppearance
     public let accessibility: SegmentElementAccessibility
@@ -24,6 +25,7 @@ public struct SDDSSegmentElement: View {
     public init(
         title: String,
         contentType: SegmentElementContent,
+        iconAttributes: SegmentElementIconAttributes?,
         isDisabled: Bool = false,
         appearance: SegmentElementAppearance,
         accessibility: SegmentElementAccessibility = SegmentElementAccessibility() ,
@@ -31,6 +33,7 @@ public struct SDDSSegmentElement: View {
     ) {
         self.title = title
         self.contentType = contentType
+        self.iconAttributes = iconAttributes
         self.isDisabled = isDisabled
         self.appearance = appearance
         self.accessibility = accessibility
