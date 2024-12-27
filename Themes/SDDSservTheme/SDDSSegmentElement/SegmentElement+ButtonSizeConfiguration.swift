@@ -9,7 +9,7 @@ public enum SegmentElementSize: String, CaseIterable {
     case extraSmall
 }
 
-extension SegmentElementSize: ButtonSizeConfiguration {
+extension SegmentElementSize: SegmentElementSizeConfiguration {
 
     public var height: CGFloat {
         switch self {
@@ -21,12 +21,7 @@ extension SegmentElementSize: ButtonSizeConfiguration {
     }
 
     public var cornerRadius: CGFloat {
-        switch self {
-        case .large: return ShapeToken.roundL.cornerRadius - 2.0
-        case .medium: return ShapeToken.roundM.cornerRadius
-        case .small: return ShapeToken.roundM.cornerRadius - 2.0
-        case .extraSmall: return ShapeToken.roundS.cornerRadius
-        }
+        0
     }
 
     public var paddings: EdgeInsets {

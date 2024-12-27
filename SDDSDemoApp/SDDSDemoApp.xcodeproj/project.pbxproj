@@ -15,6 +15,8 @@
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
 		6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744692D1C3B6400559ABA /* CounterView.swift */; };
 		6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987446A2D1C3B6400559ABA /* CounterViewModel.swift */; };
+		698744742D1C6EC300559ABA /* SegmentElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744732D1C6EB800559ABA /* SegmentElementView.swift */; };
+		698744762D1C6F0100559ABA /* SegmentElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentElementViewModel.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */; };
@@ -91,6 +93,8 @@
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		698744692D1C3B6400559ABA /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		6987446A2D1C3B6400559ABA /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		698744732D1C6EB800559ABA /* SegmentElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementView.swift; sourceTree = "<group>"; };
+		698744752D1C6EC600559ABA /* SegmentElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementViewModel.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +251,15 @@
 			path = CounterView;
 			sourceTree = "<group>";
 		};
+		698744722D1C6E9C00559ABA /* SegmentElementView */ = {
+			isa = PBXGroup;
+			children = (
+				698744752D1C6EC600559ABA /* SegmentElementViewModel.swift */,
+				698744732D1C6EB800559ABA /* SegmentElementView.swift */,
+			);
+			path = SegmentElementView;
+			sourceTree = "<group>";
+		};
 		811C684B2CC8023600480F89 /* TextAreaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +280,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				698744722D1C6E9C00559ABA /* SegmentElementView */,
 				698744682D1C38A200559ABA /* CounterView */,
 				811C684B2CC8023600480F89 /* TextAreaView */,
 				819A382D2CC6927700A1377F /* ChipGroupView */,
@@ -605,6 +619,7 @@
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
 				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
+				698744762D1C6F0100559ABA /* SegmentElementViewModel.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
@@ -628,6 +643,7 @@
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
 				816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */,
+				698744742D1C6EC300559ABA /* SegmentElementView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
