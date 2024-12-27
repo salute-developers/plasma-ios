@@ -21,23 +21,23 @@ public extension SDDSSegmentElement {
             name: "clear",
             appearance: SegmentElementAppearance(
                 titleTypography: SDDSSegmentElement.titleTypography,
-                titleColor: SegmentElementColor(
+                titleColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
                     hoveredColor: .textDefaultPrimaryHover
                 ),
                 subtitleTypography: SDDSSegmentElement.subtitleTypography,
-                subtitleColor: SegmentElementColor(
+                subtitleColor: ButtonColor(
                     defaultColor: .textDefaultSecondary,
                     highlightedColor: .textDefaultSecondaryActive,
                     hoveredColor: .textDefaultSecondaryHover
                 ),
-                iconColor: SegmentElementColor(
+                iconColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
                     hoveredColor: .textDefaultPrimaryHover
                 ),
-                backgroundColor: SegmentElementColor(
+                backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultClear,
                     highlightedColor: .surfaceDefaultClearActive,
                     hoveredColor: .surfaceDefaultClearHover
@@ -51,23 +51,23 @@ public extension SDDSSegmentElement {
             name: "default",
             appearance: SegmentElementAppearance(
                 titleTypography: SDDSSegmentElement.titleTypography,
-                titleColor: SegmentElementColor(
+                titleColor: ButtonColor(
                     defaultColor: .textInversePrimary,
                     highlightedColor: .textInversePrimaryActive,
                     hoveredColor: .textInversePrimaryHover
                 ),
                 subtitleTypography: SDDSSegmentElement.subtitleTypography,
-                subtitleColor: SegmentElementColor(
+                subtitleColor: ButtonColor(
                     defaultColor: .textDefaultSecondary,
                     highlightedColor: .textDefaultSecondaryActive,
                     hoveredColor: .textDefaultSecondaryHover
                 ),
-                iconColor: SegmentElementColor(
+                iconColor: ButtonColor(
                     defaultColor: .textInversePrimary,
                     highlightedColor: .textInversePrimaryActive,
                     hoveredColor: .textInversePrimaryHover
                 ),
-                backgroundColor: SegmentElementColor(
+                backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultSolidDefault,
                     highlightedColor: .surfaceDefaultSolidDefaultActive,
                     hoveredColor: .surfaceDefaultSolidDefaultHover

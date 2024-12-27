@@ -7,12 +7,12 @@ import SDDSServTheme
 
 final class SegmentElementViewModel: ObservableObject {
     @Published var title: String = ""
+    @Published var subtitle: String = ""
     @Published var size: SegmentElementSizeConfiguration = SegmentElementSize.medium
     @Published var contentType: SegmentElementContent = .none
     @Published var iconAttributes: ButtonIconAttributes? = nil
     @Published var isDisabled: Bool = false
     @Published var appearance: SegmentElementAppearance = SDDSSegmentElement.default.appearance
-//    @Published var layoutMode: ButtonLayoutMode = .wrapContent
     @Published var variationName: String = SDDSSegmentElement.clear.name
 
     var cancellables: Set<AnyCancellable> = []

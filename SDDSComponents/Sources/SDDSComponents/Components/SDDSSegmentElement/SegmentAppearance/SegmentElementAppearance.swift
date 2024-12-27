@@ -42,22 +42,3 @@ public struct SegmentElementAppearance {
         self.disabledAlpha = disabledAlpha
     }
 }
-
-// в отдельный файл
-extension SegmentElementAppearance {
-    var buttonAppearance: ButtonAppearance {
-        .init(
-            size: size,
-            shapeStyle: .default,
-            titleTypography: .default,
-            titleColor: ButtonColor(),
-            subtitleTypography: .default,
-            subtitleColor: ButtonColor(),
-            iconColor: ButtonColor(),
-            spinnerColor: ButtonColor(),
-            backgroundColor: ButtonColor(),
-            disabledAlpha: 0,
-            loadingAlpha: 0
-        )
-    }
-}

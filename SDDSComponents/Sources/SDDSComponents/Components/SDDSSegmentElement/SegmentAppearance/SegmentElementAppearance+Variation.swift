@@ -4,7 +4,7 @@ public extension SegmentElementAppearance {
     func applyColorVariation(variation: SegmentElementAppearance) -> SegmentElementAppearance {
         SegmentElementAppearance(
             size: size,
-//            shapeStyle: shapeStyle,
+            shapeStyle: shapeStyle,
             titleTypography: titleTypography,
             titleColor: variation.titleColor,
             subtitleTypography: subtitleTypography,

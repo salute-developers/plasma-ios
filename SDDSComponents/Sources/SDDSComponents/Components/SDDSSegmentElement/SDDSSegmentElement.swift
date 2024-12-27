@@ -1,26 +1,6 @@
 import Foundation
 import SwiftUI
 
-public struct SegmentElementSizeToButtonSizeConfigurationMapper: ButtonSizeConfiguration, SegmentElementSizeConfiguration {
-    public var height: CGFloat
-    
-    public var cornerRadius: CGFloat
-    
-    public var paddings: EdgeInsets
-    
-    public var iconSize: CGSize
-    
-    public var spinnerSize: CGSize = .zero
-    
-    public var iconHorizontalGap: CGFloat
-    
-    public var titleHorizontalGap: CGFloat
-    
-    public var debugDescription: String {
-        "SizeExample"
-    }
-}
-
 public enum SegmentElementContentRight {
     case icon(Image)
     case subtitle(String)
@@ -38,8 +18,7 @@ public struct SDDSSegmentElement: View {
     public let contentType: SegmentElementContent
     public let isDisabled: Bool
     public let appearance: SegmentElementAppearance
-    public let content: SegmentElementContentRight = .subtitle("")
-    public let accessibility: ButtonAccessibility // сделать SegmentElementAccessibility
+    public let accessibility: SegmentElementAccessibility
     public var action: () -> Void
     
     public init(
@@ -47,7 +26,7 @@ public struct SDDSSegmentElement: View {
         contentType: SegmentElementContent,
         isDisabled: Bool = false,
         appearance: SegmentElementAppearance,
-        accessibility: ButtonAccessibility = ButtonAccessibility(),
+        accessibility: SegmentElementAccessibility = SegmentElementAccessibility() ,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -104,7 +83,7 @@ public struct SDDSSegmentElement: View {
                 spinnerImage: nil,
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
-                accessibility: accessibility,
+                accessibility: accessibility.buttonAccessibility,
                 counter: nil,
                 action: action
             )
@@ -118,7 +97,7 @@ public struct SDDSSegmentElement: View {
                 spinnerImage: nil,
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
-                accessibility: accessibility,
+                accessibility: accessibility.buttonAccessibility,
                 counter: ViewProvider(counterData),
                 action: action
             )
@@ -132,7 +111,7 @@ public struct SDDSSegmentElement: View {
                 spinnerImage: nil,
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
-                accessibility: accessibility,
+                accessibility: accessibility.buttonAccessibility,
                 counter: nil,
                 action: action
             )
