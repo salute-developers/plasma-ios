@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 
 public struct SegmentElementTypography: GeneralTypographyConfiguration {
-    typealias S = ButtonSizeConfiguration
+    typealias S = SegmentElementSizeConfiguration
     
     let large: TypographyToken?
     let medium: TypographyToken?
@@ -22,7 +22,7 @@ public struct SegmentElementTypography: GeneralTypographyConfiguration {
      - Parameter size: Размер кнопки.
      - Returns: Типографика для заданного размера кнопки или nil, если не задана.
      */
-    public func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: SegmentElementSizeConfiguration) -> TypographyToken? {
         switch size as? SegmentElementSize {
         case .large:
             return large

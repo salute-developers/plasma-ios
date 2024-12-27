@@ -28,6 +28,7 @@ public struct SDDSCounter: View {
                 counterMinimumSize
             }
         }
+        .padding(appearance.size.paddings)
         .background(currentColor(for: appearance.backgroundColor))
         .cornerRadius(cornerRadius)
         .frame(maxWidth: dynamicWidth, minHeight: appearance.size.height)
@@ -37,7 +38,7 @@ public struct SDDSCounter: View {
         Text(text)
             .typography(dataTypography)
             .foregroundColor(currentColor(for: appearance.dataColor))
-            .padding(appearance.size.paddings)
+//            .padding(appearance.size.paddings)
     }
     
     @ViewBuilder
@@ -47,7 +48,7 @@ public struct SDDSCounter: View {
         Text(text)
             .typography(dataTypography)
             .foregroundColor(currentColor(for: appearance.dataColor))
-            .padding(appearance.size.paddings)
+//            .padding(appearance.size.paddings)
     }
 }
 
