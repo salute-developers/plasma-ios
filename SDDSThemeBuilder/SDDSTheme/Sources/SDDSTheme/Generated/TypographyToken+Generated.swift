@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import Foundation
 @_exported import SDDSThemeCore
 
@@ -10,7 +12,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -18,7 +20,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -26,7 +28,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -38,7 +40,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -46,7 +48,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -54,7 +56,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 22.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -66,7 +68,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -74,7 +76,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -82,7 +84,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -94,7 +96,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -102,7 +104,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -110,7 +112,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -122,7 +124,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -130,7 +132,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -138,7 +140,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -150,7 +152,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -158,7 +160,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -166,7 +168,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 18.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -178,7 +180,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -186,7 +188,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -194,7 +196,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -206,7 +208,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -214,7 +216,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -222,7 +224,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 14.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -234,7 +236,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -242,7 +244,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -250,7 +252,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -262,7 +264,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -270,7 +272,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -278,7 +280,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 10.0,
                 lineHeight: 12.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -738,7 +740,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 26.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -746,7 +748,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 20.0,
                 lineHeight: 28.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -754,7 +756,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 24.0,
                 lineHeight: 32.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -766,7 +768,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 26.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -774,7 +776,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 20.0,
                 lineHeight: 28.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -782,7 +784,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 24.0,
                 lineHeight: 32.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -794,7 +796,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 24.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -802,7 +804,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 24.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -810,7 +812,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 26.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -822,7 +824,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 24.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -830,7 +832,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 16.0,
                 lineHeight: 24.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -838,7 +840,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 26.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -850,7 +852,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -858,7 +860,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -866,7 +868,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -878,7 +880,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -886,7 +888,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -894,7 +896,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 14.0,
                 lineHeight: 20.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -906,7 +908,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -914,7 +916,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Semibold",
@@ -922,7 +924,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }
@@ -934,7 +936,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             medium: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -942,7 +944,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             ),
             large: TypographyToken(
                 fontName: "SBSansText-Regular",
@@ -950,7 +952,7 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 12.0,
                 lineHeight: 16.0,
-                kerning: -0,02
+                kerning: -0.02
             )
         )
     }

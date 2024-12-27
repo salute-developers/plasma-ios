@@ -62,7 +62,7 @@ public struct SDDSButton: View {
             }
             .buttonStyle(NoHighlightButtonStyle())
             .opacity(contentOpacity)
-            .background(currentColor(for: appearance.backgroundColor))
+            .background(currentColor(for: appearance.backgroundColor).opacity(backgroundOpacity))
             .cornerRadius(cornerRadius)
             .frame(height: appearance.size.height)
             .disabled(isDisabled)
@@ -99,6 +99,7 @@ public struct SDDSButton: View {
             }
             if !title.isEmpty {
                 Text(title)
+                    .lineLimit(1)
                     .typography(titleTypography)
                     .foregroundColor(currentColor(for: appearance.titleColor))
             }
@@ -110,6 +111,7 @@ public struct SDDSButton: View {
                     Spacer().frame(width: appearance.size.titleHorizontalGap)
                 }
                 Text(subtitle)
+                    .lineLimit(1)
                     .typography(subtitleTypography)
                     .foregroundColor(currentColor(for: appearance.subtitleColor))
             }
@@ -123,14 +125,9 @@ public struct SDDSButton: View {
                 Spacer()
             }
         }
-        .frame(
-            minHeight: max(
-                subtitleTypography.lineHeight,
-                titleTypography.lineHeight
-            ),
-            maxHeight: appearance.size.iconSize.height
-        )
-        .padding(appearance.size.paddings)
+        .frame(height: appearance.size.height)
+        .padding(.leading, appearance.size.paddings.leading)
+        .padding(.trailing, appearance.size.paddings.trailing)
     }
     
     @ViewBuilder
@@ -201,10 +198,6 @@ private extension SDDSButton {
     
     var backgroundOpacity: Double {
         isDisabled ? Opacity.fourty : 1.0
-    }
-    
-    func backgroundColor(for colorScheme: ColorScheme) -> Color {
-        currentColor(for: appearance.backgroundColor).opacity(backgroundOpacity)
     }
     
     var contentOpacity: Double {

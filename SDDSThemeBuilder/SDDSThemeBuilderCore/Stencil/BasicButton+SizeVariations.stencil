@@ -1,0 +1,27 @@
+/* This file is code generated. */
+
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+
+// MARK: - Size
+public extension ButtonAppearanceVariation<BasicButton> {
+    {% for variation, config in variations.size %}
+    var {{ variation | sizeKey }}: Self {
+        .init(
+            appearance: appearance
+                .size(BasicButtonSize.{{ variation | sizeKey }})
+                .titleTypography(BasicButton.titleTypography)
+                .subtitleTypography(BasicButton.subtitleTypography)
+        )
+    }
+    {% endfor %}
+}
+
+public extension BasicButton {
+    {% for variation, config in variations.size %}
+    static var {{ variation | sizeKey }}: ButtonAppearanceVariation<BasicButton> {
+        return ButtonAppearanceVariation().{{ variation | sizeKey }}
+    }
+    {% endfor %}
+}
