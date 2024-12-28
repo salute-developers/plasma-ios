@@ -26,6 +26,7 @@ public struct SegmentElementView: View {
                 subtitle
                 size
                 appearance
+//                contentType
                 icon
                 alignment
             }
@@ -36,7 +37,7 @@ public struct SegmentElementView: View {
         HStack {
             Spacer()
             SDDSSegmentElement(title: viewModel.title,
-                               contentType: .none,
+                               contentType: viewModel.contentType,
                                iconAttributes: viewModel.iconAttributes,
                                appearance: viewModel.appearance,
                                action: {}
@@ -96,25 +97,21 @@ public struct SegmentElementView: View {
         }
     }
     
-    public var contentType: some View {
-        HStack {
-            Text("type")
-            Spacer()
-            Menu {
-                ForEach(SegmentElementContentType.allCases, id: \.self) { type in
-                    Button(type.rawValue) {
-                        //                        switch type {
-                        //                        case .left:
-                        //
-                        //                            viewModel.contentType = .left()
-                        //                        }
-                    }
-                }
-            } label: {
-                Text("type")
-            }
-        }
-    }
+//    public var contentType: some View {
+//        HStack {
+//            Text("Content Type")
+//            Spacer()
+//            Menu {
+//                ForEach(SegmentElementContentType.allCases, id: \.self) { type in
+//                    Button(type.rawValue) {
+//                        viewModel.contentStyle = type
+//                    }
+//                }
+//            } label: {
+//                Text(viewModel.contentStyle.rawValue)
+//            }
+//        }
+//    }
     
     public var icon: some View {
         HStack {
