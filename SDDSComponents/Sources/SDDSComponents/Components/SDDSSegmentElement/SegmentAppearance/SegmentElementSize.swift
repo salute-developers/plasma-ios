@@ -1,7 +1,9 @@
 import Foundation
 import SwiftUI
 
-public protocol SegmentElementSizeConfiguration: ButtonSizeConfiguration, CustomDebugStringConvertible {}
+public protocol SegmentElementSizeConfiguration: ButtonSizeConfiguration, CustomDebugStringConvertible {
+    
+}
 
 public struct DefaultSegmentElementSize: SegmentElementSizeConfiguration {
     public var height: CGFloat = 0

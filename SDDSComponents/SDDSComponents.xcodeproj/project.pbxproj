@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		6950A1282D1D4C47001695C5 /* SegmentElementAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950A1272D1D4C28001695C5 /* SegmentElementAppearance.swift */; };
 		6950A12A2D1D4D56001695C5 /* SegmentElementSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950A1292D1D4D4E001695C5 /* SegmentElementSize.swift */; };
-		69573D682D1D638600359D53 /* AppearanceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D672D1D637D00359D53 /* AppearanceConfiguration.swift */; };
 		69573D6A2D1D756000359D53 /* SegmentElementAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D692D1D754400359D53 /* SegmentElementAppearance+Extensions.swift */; };
 		69573D6C2D1D7C5D00359D53 /* SegmentElementAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D6B2D1D7C4300359D53 /* SegmentElementAppearance+Variation.swift */; };
 		696843412D1E720B002F8C7A /* SegmentElement+ShapeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843402D1E71FE002F8C7A /* SegmentElement+ShapeStyle.swift */; };
 		696843432D1EA12E002F8C7A /* SegmentElementAppearance+ButtonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843422D1EA11A002F8C7A /* SegmentElementAppearance+ButtonAppearance.swift */; };
 		696843452D1EA35B002F8C7A /* SegmentElementAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843442D1EA348002F8C7A /* SegmentElementAccessibility.swift */; };
 		6969EADE2D1D5B8E008536E5 /* SegmentElementAppearanceVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6969EADD2D1D5B73008536E5 /* SegmentElementAppearanceVariations.swift */; };
+		697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */; };
 		6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445D2D1C367700559ABA /* SDDSCounter.swift */; };
 		698744602D1C367700559ABA /* CounterAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445A2D1C367700559ABA /* CounterAppearance+Extensions.swift */; };
 		698744612D1C367700559ABA /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744582D1C367700559ABA /* CounterSize.swift */; };
@@ -166,13 +166,13 @@
 /* Begin PBXFileReference section */
 		6950A1272D1D4C28001695C5 /* SegmentElementAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementAppearance.swift; sourceTree = "<group>"; };
 		6950A1292D1D4D4E001695C5 /* SegmentElementSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementSize.swift; sourceTree = "<group>"; };
-		69573D672D1D637D00359D53 /* AppearanceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfiguration.swift; sourceTree = "<group>"; };
 		69573D692D1D754400359D53 /* SegmentElementAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentElementAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		69573D6B2D1D7C4300359D53 /* SegmentElementAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentElementAppearance+Variation.swift"; sourceTree = "<group>"; };
 		696843402D1E71FE002F8C7A /* SegmentElement+ShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentElement+ShapeStyle.swift"; sourceTree = "<group>"; };
 		696843422D1EA11A002F8C7A /* SegmentElementAppearance+ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentElementAppearance+ButtonAppearance.swift"; sourceTree = "<group>"; };
 		696843442D1EA348002F8C7A /* SegmentElementAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementAccessibility.swift; sourceTree = "<group>"; };
 		6969EADD2D1D5B73008536E5 /* SegmentElementAppearanceVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentElementAppearanceVariations.swift; sourceTree = "<group>"; };
+		697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Variation.swift"; sourceTree = "<group>"; };
 		698744562D1C367700559ABA /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		698744572D1C367700559ABA /* CounterColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterColor.swift; sourceTree = "<group>"; };
 		698744582D1C367700559ABA /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
@@ -380,6 +380,7 @@
 		698744592D1C367700559ABA /* CounterAppearance */ = {
 			isa = PBXGroup;
 			children = (
+				697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */,
 				698744562D1C367700559ABA /* CounterAppearance.swift */,
 				698744572D1C367700559ABA /* CounterColor.swift */,
 				698744582D1C367700559ABA /* CounterSize.swift */,
@@ -702,7 +703,6 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				69573D672D1D637D00359D53 /* AppearanceConfiguration.swift */,
 				698744662D1C368E00559ABA /* SDDSSegmentElement */,
 				6987445E2D1C367700559ABA /* SDDSCounter */,
 				8102BA282CBE9B3300C589D3 /* SDDSTextArea */,
@@ -1235,7 +1235,6 @@
 				8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,
-				69573D682D1D638600359D53 /* AppearanceConfiguration.swift in Sources */,
 				817339F12D033EF30092608A /* AvatarImageSource.swift in Sources */,
 				69D45AFB2D1ECFEA00919713 /* SegmentElementAlignment.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
@@ -1272,6 +1271,7 @@
 				814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */,
 				817339E62D033E650092608A /* RadioboxData.swift in Sources */,
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
+				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				817339E22D033DA30092608A /* ChipBorderStyle.swift in Sources */,

@@ -26,9 +26,12 @@ public struct SegmentElementView: View {
                 subtitle
                 size
                 appearance
-//                contentType
                 icon
                 alignment
+            }
+            
+            Section {
+                counter
             }
         }
     }
@@ -97,22 +100,6 @@ public struct SegmentElementView: View {
         }
     }
     
-//    public var contentType: some View {
-//        HStack {
-//            Text("Content Type")
-//            Spacer()
-//            Menu {
-//                ForEach(SegmentElementContentType.allCases, id: \.self) { type in
-//                    Button(type.rawValue) {
-//                        viewModel.contentStyle = type
-//                    }
-//                }
-//            } label: {
-//                Text(viewModel.contentStyle.rawValue)
-//            }
-//        }
-//    }
-    
     public var icon: some View {
         HStack {
             Toggle("Icon", isOn: $viewModel.isIconVisible)
@@ -134,7 +121,36 @@ public struct SegmentElementView: View {
             }
         }
     }
+    
+    public var counter: some View {
+        VStack {
+            HStack {
+                Toggle("Counter", isOn: $viewModel.isCounterVisible)
+                    .multilineTextAlignment(.trailing)
+            }
+            HStack {
+                Text("Appearance")
+                Spacer()
+                Menu {
+                    ForEach(SDDSCounter.all, id: \.self) { variation in
+                        Button(variation.name) {
+                            viewModel.counterAppearance = variation.appearance.size(viewModel.counterSize)
+                            viewModel.variationName = variation.name
+                        }
+                    }
+                } label: {
+                    Text(viewModel.variationName.capitalized)
+                }
+            }
+            HStack {
+                Text("Counter data")
+                TextField("Number", text: $viewModel.counterData.value)
+                    .multilineTextAlignment(.trailing)
+            }
+        }
+    }
 }
+
 
 #Preview {
     SegmentElementView(viewModel: SegmentElementViewModel())

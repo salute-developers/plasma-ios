@@ -14,7 +14,7 @@ public struct SDDSButton: View {
     public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
-    public let counter: ViewProvider?
+    public let counterView: SDDSCounter?
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
@@ -34,7 +34,7 @@ public struct SDDSButton: View {
         appearance: ButtonAppearance,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
-        counter: ViewProvider?,
+        counterView: SDDSCounter? = nil,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -47,7 +47,7 @@ public struct SDDSButton: View {
         self.appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
-        self.counter = counter
+        self.counterView = counterView
         self.action = action
     }
     
@@ -124,6 +124,8 @@ public struct SDDSButton: View {
                 }
                 icon
             }
+            //MARK: SDDSCounter
+            counter
             if isCentered {
                 Spacer()
             }
@@ -172,6 +174,12 @@ public struct SDDSButton: View {
         } else {
             EmptyView()
         }
+    }
+    
+    //MARK: SDDSCounter
+    @ViewBuilder
+    private var counter: some View {
+        SDDSCounter(data: CounterData(value: "1"), appearance: CounterAppearance())
     }
 }
 

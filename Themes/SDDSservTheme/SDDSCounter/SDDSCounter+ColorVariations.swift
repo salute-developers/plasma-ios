@@ -207,21 +207,19 @@ public extension SDDSCounter {
     static var all: [CounterAppearanceVariation] {
         [
             SDDSCounter.black,
+            
             SDDSCounter.negative,
+            
             SDDSCounter.warning,
+            
             SDDSCounter.positive,
+            
             SDDSCounter.accent,
+            
             SDDSCounter.white,
+            
             SDDSCounter.default
         ]
-    }
-}
-
-public extension CounterAppearance {
-    func applyColorVariation(variation: CounterAppearance) -> CounterAppearance {
-        CounterAppearance(
-            size: size
-        )
     }
 }
 

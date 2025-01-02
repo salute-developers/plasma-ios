@@ -58,9 +58,9 @@ public extension SDDSSegmentElement {
                 ),
                 subtitleTypography: SDDSSegmentElement.subtitleTypography,
                 subtitleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
+                    defaultColor: .textInverseSecondary,
+                    highlightedColor: .textInverseSecondaryActive,
+                    hoveredColor: .textInverseSecondaryHover
                 ),
                 iconColor: ButtonColor(
                     defaultColor: .textInversePrimary,

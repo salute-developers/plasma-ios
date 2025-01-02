@@ -254,8 +254,8 @@
 		698744722D1C6E9C00559ABA /* SegmentElementView */ = {
 			isa = PBXGroup;
 			children = (
-				698744752D1C6EC600559ABA /* SegmentElementViewModel.swift */,
 				698744732D1C6EB800559ABA /* SegmentElementView.swift */,
+				698744752D1C6EC600559ABA /* SegmentElementViewModel.swift */,
 			);
 			path = SegmentElementView;
 			sourceTree = "<group>";

@@ -3,7 +3,7 @@ import SwiftUI
 
 public enum SegmentElementContentRight {
     case icon(Image)
-    case subtitle(String)
+    case subtitle(String, Image?)
     case counter(SDDSCounter)
 }
 
@@ -53,7 +53,7 @@ public struct SDDSSegmentElement: View {
                     spinnerImage: nil,
                     buttonStyle: .basic,
                     appearance: appearance.buttonAppearance,
-                    counter: nil,
+                    counterView: nil,
                     action: action
                 )
         case .right(let segmentElementContentRight):
@@ -68,7 +68,7 @@ public struct SDDSSegmentElement: View {
                 spinnerImage: nil,
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
-                counter: nil,
+                counterView: nil,
                 action: action
             )
         }
@@ -87,10 +87,10 @@ public struct SDDSSegmentElement: View {
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
                 accessibility: accessibility.buttonAccessibility,
-                counter: nil,
+                counterView: nil,
                 action: action
             )
-        case .counter(let counterData):
+        case .counter(let counter):
             SDDSButton(
                 title: title,
                 subtitle: "",
@@ -101,23 +101,39 @@ public struct SDDSSegmentElement: View {
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance,
                 accessibility: accessibility.buttonAccessibility,
-                counter: ViewProvider(counterData),
+                counterView: counter,
                 action: action
             )
-        case .subtitle(let subtitle):
-            SDDSButton(
-                title: title,
-                subtitle: subtitle,
-                iconAttributes: nil,
-                isDisabled: isDisabled,
-                isLoading: false,
-                spinnerImage: nil,
-                buttonStyle: .basic,
-                appearance: appearance.buttonAppearance,
-                accessibility: accessibility.buttonAccessibility,
-                counter: nil,
-                action: action
-            )
+        case .subtitle(let subtitle, let image):
+            if let image = image {
+                SDDSButton(
+                    title: title,
+                    subtitle: subtitle,
+                    iconAttributes: .init(image: image, alignment: .leading),
+                    isDisabled: isDisabled,
+                    isLoading: false,
+                    spinnerImage: nil,
+                    buttonStyle: .basic,
+                    appearance: appearance.buttonAppearance,
+                    accessibility: accessibility.buttonAccessibility,
+                    counterView: nil,
+                    action: action
+                )
+            } else {
+                SDDSButton(
+                    title: title,
+                    subtitle: subtitle,
+                    iconAttributes: nil,
+                    isDisabled: isDisabled,
+                    isLoading: false,
+                    spinnerImage: nil,
+                    buttonStyle: .basic,
+                    appearance: appearance.buttonAppearance,
+                    accessibility: accessibility.buttonAccessibility,
+                    counterView: nil,
+                    action: action
+                )
+            }
         }
     }
 }
