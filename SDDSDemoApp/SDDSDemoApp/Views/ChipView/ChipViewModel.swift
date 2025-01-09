@@ -21,7 +21,6 @@ final class ChipViewModel: ObservableObject {
     init() {
         setIconImage()
         setButtonImage()
-        
         observeSizeChange()
     }
     
@@ -46,6 +45,10 @@ final class ChipViewModel: ObservableObject {
     
     func setButtonImage() {
         buttonImage = Image.image("chipClose")
+    }
+    
+    func updateBorderStyle(borderStyle: ComponentShapeStyle) {        
+        appearance = appearance.shapeStyle(borderStyle)
     }
 }
 

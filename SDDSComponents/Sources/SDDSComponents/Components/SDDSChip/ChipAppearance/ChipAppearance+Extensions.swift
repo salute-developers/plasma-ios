@@ -14,6 +14,19 @@ public extension ChipAppearance {
         )
     }
     
+    func shapeStyle(_ shapeStyle: ComponentShapeStyle) -> ChipAppearance {
+        return ChipAppearance(
+            size: self.size,
+            titleColor: self.titleColor,
+            titleTypography: self.titleTypography,
+            imageTintColor: self.imageTintColor,
+            buttonTintColor: self.buttonTintColor,
+            backgroundColor: self.backgroundColor,
+            shapeStyle: shapeStyle,
+            disabledAlpha: self.disabledAlpha
+        )
+    }
+    
     func titleColor(_ titleColor: ColorToken) -> ChipAppearance {
         return ChipAppearance(
             size: self.size,
