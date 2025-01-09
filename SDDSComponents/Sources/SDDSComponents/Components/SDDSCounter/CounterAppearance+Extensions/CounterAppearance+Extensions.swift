@@ -8,6 +8,7 @@ public extension CounterAppearance {
             textTypography: self.textTypography,
             textColor: self.textColor,
             backgroundColor: self.backgroundColor
+
         )
     }
     

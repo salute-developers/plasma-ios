@@ -27,6 +27,10 @@
 		242BF26B2BBDA47A00E4D112 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
 		2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		243C6C462BBF14E900525EAD /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		69414C7B2D352A6300E17FF0 /* CounterAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Variation.swift"; sourceTree = "<group>"; };
+		69414C7C2D352A6300E17FF0 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
+		69414C7D2D352A6300E17FF0 /* CounterColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterColor.swift; sourceTree = "<group>"; };
+		69414C7E2D352A6300E17FF0 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		814F718F2C58CA7E006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		817FF89D2D1D8C300090E989 /* SDDSIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSIcons.h; sourceTree = "<group>"; };
 		817FF89E2D1D8C300090E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 		242BF2542BBD8AB000E4D112 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				69414C7F2D352A6300E17FF0 /* CounterAppearance */,
 				242BF2552BBD8AB000E4D112 /* assets.stencil */,
 			);
 			path = Templates;
@@ -89,6 +94,17 @@
 				2430DE9B2BB5B53B00277123 /* SDDSIcons.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		69414C7F2D352A6300E17FF0 /* CounterAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				69414C7B2D352A6300E17FF0 /* CounterAppearance+Variation.swift */,
+				69414C7C2D352A6300E17FF0 /* CounterAppearance.swift */,
+				69414C7D2D352A6300E17FF0 /* CounterColor.swift */,
+				69414C7E2D352A6300E17FF0 /* CounterSize.swift */,
+			);
+			path = CounterAppearance;
 			sourceTree = "<group>";
 		};
 		817FF89C2D1D8C300090E989 /* SDDSIcons */ = {
