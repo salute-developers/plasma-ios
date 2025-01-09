@@ -33,7 +33,7 @@ extension CheckboxTypography {
     
     static var description: TypographyConfiguration {
         CheckboxTypography(
-            medium: Typographies.bodyMNormal.typography,
+            medium: Typographies.bodySNormal.typography,
             small: Typographies.bodyXsNormal.typography
         ).asContainer
     }

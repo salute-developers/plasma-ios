@@ -7,10 +7,11 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var titleInnerPadding: CGFloat { get }
     var boxLeadingPadding: CGFloat { get }
     var boxTrailingPadding: CGFloat { get }
+    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
-    var textInputPaddings: EdgeInsets { get }
     var cornerRadius: CGFloat { get }
     var borderWidth: CGFloat { get }
     var iconActionPadding: CGFloat { get }
@@ -27,7 +28,6 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipGroupHeight: CGFloat { get }
     var chipGroupVerticalTopPadding: CGFloat { get }
     var chipGroupVerticalBottomPadding: CGFloat { get }
-    var textInputBottomPadding: CGFloat { get }
     var iconActionClearTrailingPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
     

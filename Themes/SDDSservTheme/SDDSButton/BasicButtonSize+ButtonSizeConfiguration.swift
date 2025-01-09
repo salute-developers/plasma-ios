@@ -12,6 +12,7 @@ public enum BasicButtonSize: String, CaseIterable {
 }
 
 extension BasicButtonSize: ButtonSizeConfiguration {
+
     public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
         switch style {
         case .cornered:
@@ -34,8 +35,8 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 32
         }
     }
-
-    public var paddings: EdgeInsets {
+    
+    public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
         switch self {
         case .large: return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
         case .medium: return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
@@ -43,7 +44,7 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
         }
     }
-
+    
     public var iconSize: CGSize {
         switch self {
         case .large: return CGSize(width: 24, height: 24)
@@ -52,7 +53,16 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return CGSize(width: 16, height: 16)
         }
     }
-
+    
+    public var counterSize: CounterSizeConfiguration {
+        switch self {
+        case .large: return CounterSize.small
+        case .medium: return CounterSize.extraSmall
+        case .small: return CounterSize.extraSmall
+        case .extraSmall: return CounterSize.extraExtraSmall
+        }
+    }
+    
     public var spinnerSize: CGSize {
         switch self {
         case .large: return CGSize(width: 22, height: 22)
@@ -61,7 +71,7 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return CGSize(width: 16, height: 16)
         }
     }
-
+    
     public var titleHorizontalGap: CGFloat {
         switch self {
         case .large: return 4
@@ -70,7 +80,7 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 2
         }
     }
-        
+    
     public var iconHorizontalGap: CGFloat {
         switch self {
         case .large: return 8
@@ -79,7 +89,7 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .extraSmall: return 4
         }
     }
-
+    
     public var debugDescription: String {
         return "BasicButtonSize"
     }

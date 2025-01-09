@@ -81,6 +81,110 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
         }
     }
     
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+        switch layout {
+        case .clear:
+            switch labelPlacement {
+            case .outer:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            case .inner:
+                switch self {
+                case .large:
+                    9
+                case .medium:
+                    6
+                case .small:
+                    4
+                case .extraSmall:
+                    0
+                }
+            case .none:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            }
+        case .default:
+            switch self {
+            case .large:
+                16
+            case .medium:
+                12
+            case .small:
+                8
+            case .extraSmall:
+                8
+            }
+        }
+    }
+    
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+        switch layout {
+        case .clear:
+            switch labelPlacement {
+            case .outer:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            case .inner:
+                switch self {
+                case .large:
+                    9
+                case .medium:
+                    6
+                case .small:
+                    4
+                case .extraSmall:
+                    0
+                }
+            case .none:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            }
+        case .default:
+            switch self {
+            case .large:
+                16
+            case .medium:
+                12
+            case .small:
+                8
+            case .extraSmall:
+                8
+            }
+        }
+    }
+    
     public var iconActionClearTrailingPadding: CGFloat {
         switch self {
         case .large:
@@ -104,19 +208,6 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     
     public var optionalPadding: CGFloat {
         4
-    }
-
-    public var textInputPaddings: EdgeInsets {
-        switch self {
-        case .large:
-            .init(top: 16, leading: 0, bottom: 8, trailing: 0)
-        case .medium:
-            .init(top: 14, leading: 0, bottom: 6, trailing: 0)
-        case .small:
-            .init(top: 12, leading: 0, bottom: 4, trailing: 0)
-        case .extraSmall:
-            .init(top: 8, leading: 0, bottom: 4, trailing: 0)
-        }
     }
     
     public var textHorizontalPadding: CGFloat {
@@ -344,10 +435,6 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     
     public var chipGroupVerticalTopPadding: CGFloat {
         return 8
-    }
-    
-    public var textInputBottomPadding: CGFloat {
-        return 0
     }
 
     public var debugDescription: String {

@@ -111,7 +111,8 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @ViewBuilder
     private var titleText: some View {
         Text(title)
-            .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
+            .typography(titleTypography)
+            .frame(height: titleTypography.lineHeight)
             .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
@@ -121,7 +122,8 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     private var subtitleText: some View {
         if let subtitle = subtitle {
             Text(subtitle)
-                .typography(appearance.subtitleTypography.typography(with: appearance.size) ?? .undefined)
+                .typography(subtitleTypography)
+                .frame(height: subtitleTypography.lineHeight)
                 .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.subtitleLabel))
                 .accessibilityValue(Text(subtitle))
@@ -176,6 +178,14 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .deselected, .indeterminate:
             return accessibility.controlDisabledValue
         }
+    }
+    
+    private var titleTypography: TypographyToken {
+        appearance.titleTypography.typography(with: appearance.size) ?? .undefined
+    }
+    
+    private var subtitleTypography: TypographyToken {
+        appearance.subtitleTypography.typography(with: appearance.size) ?? .undefined
     }
 }
 

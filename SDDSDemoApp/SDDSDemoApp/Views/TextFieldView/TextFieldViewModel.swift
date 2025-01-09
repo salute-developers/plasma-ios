@@ -113,3 +113,28 @@ extension TextFieldAppearance: CaseIterable {
         return "Default"
     }
 }
+
+extension TextFieldViewModel: Equatable {
+    static func == (lhs: TextFieldViewModel, rhs: TextFieldViewModel) -> Bool {
+        return lhs.value == rhs.value &&
+        lhs.textValue == rhs.textValue &&
+        lhs.title == rhs.title &&
+        lhs.optionalTitle == rhs.optionalTitle &&
+        lhs.placeholder == rhs.placeholder &&
+        lhs.caption == rhs.caption &&
+        lhs.textBefore == rhs.textBefore &&
+        lhs.textAfter == rhs.textAfter &&
+        lhs.disabled == rhs.disabled &&
+        lhs.readOnly == rhs.readOnly &&
+        lhs.required == rhs.required &&
+        lhs.iconViewEnabled == rhs.iconViewEnabled &&
+        lhs.iconActionViewEnabled == rhs.iconActionViewEnabled &&
+        lhs.style == rhs.style &&
+        lhs.labelPlacement == rhs.labelPlacement &&
+        lhs.requiredPlacement == rhs.requiredPlacement &&
+        lhs.layout == rhs.layout &&
+        lhs.size == rhs.size &&
+        lhs.appearance == rhs.appearance &&
+        lhs.chips == rhs.chips
+    }
+}

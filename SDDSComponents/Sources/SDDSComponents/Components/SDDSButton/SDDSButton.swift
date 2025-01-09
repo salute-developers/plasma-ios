@@ -9,11 +9,12 @@ public struct SDDSButton: View {
     public let iconAttributes: ButtonIconAttributes?
     public let isDisabled: Bool
     public let isLoading: Bool
-    public let spinnerImage: Image
+    public let spinnerImage: Image?
     public let buttonStyle: SDDSComponents.ButtonStyle
     public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
+    public let counterView: SDDSCounter?
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
@@ -28,11 +29,12 @@ public struct SDDSButton: View {
         iconAttributes: ButtonIconAttributes? = nil,
         isDisabled: Bool = false,
         isLoading: Bool = false,
-        spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
+        spinnerImage: Image? = Image("spinner", bundle: Bundle(for: Components.self)),
         buttonStyle: SDDSComponents.ButtonStyle = .basic,
         appearance: ButtonAppearance,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
+        counterView: SDDSCounter? = nil,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -45,6 +47,7 @@ public struct SDDSButton: View {
         self.appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
+        self.counterView = counterView
         self.action = action
     }
     
@@ -106,7 +109,7 @@ public struct SDDSButton: View {
             if isSideBySide {
                 Spacer()
             }
-            if !subtitle.isEmpty {
+            if !subtitle.isEmpty && counterView == nil {
                 if !title.isEmpty {
                     Spacer().frame(width: appearance.size.titleHorizontalGap)
                 }
@@ -121,13 +124,14 @@ public struct SDDSButton: View {
                 }
                 icon
             }
+            counter
             if isCentered {
                 Spacer()
             }
         }
         .frame(height: appearance.size.height)
-        .padding(.leading, appearance.size.paddings.leading)
-        .padding(.trailing, appearance.size.paddings.trailing)
+        .padding(.leading, appearance.size.paddings(style: appearance.shapeStyle).leading)
+        .padding(.trailing, appearance.size.paddings(style: appearance.shapeStyle).trailing)
     }
     
     @ViewBuilder
@@ -161,11 +165,26 @@ public struct SDDSButton: View {
     
     @ViewBuilder
     private var spinner: some View {
-        if isLoading {
+        if let spinnerImage = spinnerImage, isLoading {
             SpinnerView(
                 image: spinnerImage,
                 foregroundColor: currentColor(for: appearance.spinnerColor)
             )
+        } else {
+            EmptyView()
+        }
+    }
+    
+    @ViewBuilder
+    private var counter: some View {
+        if let counter = counterView {
+            SDDSCounter(
+                text: counter.text,
+                appearance: counter.appearance,
+                isAnimating: isAnimating,
+                isHighlighted: isHighlighted,
+                isHovered: isHovered
+                )
         } else {
             EmptyView()
         }

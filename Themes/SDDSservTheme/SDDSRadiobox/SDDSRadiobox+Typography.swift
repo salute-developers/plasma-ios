@@ -33,7 +33,7 @@ public extension RadioboxTypography {
     
     static var description: TypographyConfiguration {
         RadioboxTypography(
-            medium: Typographies.bodyMNormal.typography,
+            medium: Typographies.bodySNormal.typography,
             small: Typographies.bodyXsNormal.typography
         ).asContainer
     }

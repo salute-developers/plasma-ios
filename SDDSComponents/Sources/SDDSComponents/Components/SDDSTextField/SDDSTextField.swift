@@ -197,10 +197,6 @@ public struct SDDSTextField: View {
                         .debug(condition: debugConfiguration.fieldView)
                 }
                 HStack(spacing: 0) {
-                    if showInnerTitleIndicatorForClearLayout {
-                        Spacer()
-                            .frame(width: size.indicatorSize.width)
-                    }
                     captionLabel
                 }
             }
@@ -585,6 +581,10 @@ public struct SDDSTextField: View {
     }
     
     private var iconViewColor: Color {
+        if isFocused {
+            return appearance.startContentColor.color(for: colorScheme)
+        }
+        
         switch style {
         case .error, .success, .warning:
             return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)

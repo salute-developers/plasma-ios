@@ -21,8 +21,8 @@ final class ChipViewModel: ObservableObject {
     init() {
         setIconImage()
         setButtonImage()
-        
         observeSizeChange()
+        observeShapeStyleChange()
     }
     
     private func observeSizeChange() {
@@ -32,6 +32,17 @@ final class ChipViewModel: ObservableObject {
                     return
                 }
                 self.appearance = self.appearance.size(value)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func observeShapeStyleChange() {
+        $shapeStyle
+            .sink { [weak self] value in
+                guard let self = self else {
+                    return
+                }
+                self.appearance = self.appearance.shapeStyle(value)
             }
             .store(in: &cancellables)
     }
@@ -46,6 +57,10 @@ final class ChipViewModel: ObservableObject {
     
     func setButtonImage() {
         buttonImage = Image.image("chipClose")
+    }
+    
+    func updateBorderStyle(borderStyle: ComponentShapeStyle) {        
+        appearance = appearance.shapeStyle(borderStyle)
     }
 }
 

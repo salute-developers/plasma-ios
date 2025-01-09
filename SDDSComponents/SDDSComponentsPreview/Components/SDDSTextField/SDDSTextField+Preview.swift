@@ -13,7 +13,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
-                appearance: SDDSChip.accent.medium.pilled.appearance,
+                appearance: SDDSChip.secondary.medium.pilled.appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -32,12 +32,12 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 textAfter: "",
                 disabled: false,
                 readOnly: false,
-                style: .warning,
-                labelPlacement: .inner,
-                required: false,
-                requiredPlacement: .right,
+                style: .default,
+                labelPlacement: .none,
+                required: true,
+                requiredPlacement: .left,
                 appearance: .defaultAppearance,
-                size: SDDSTextFieldSize.medium,
+                size: SDDSTextFieldSize.large,
                 layout: .clear,
                 iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
@@ -148,6 +148,27 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")
+            .previewLayout(.sizeThatFits)
+            .padding()
+            
+            SDDSTextField(
+                value: .constant(.multiple("", chips)),
+                title: "Title",
+                optionalTitle: "optional",
+                placeholder: "Placeholder",
+                caption: "caption",
+                disabled: false,
+                style: .default,
+                labelPlacement: .outer,
+                required: true,
+                requiredPlacement: .left,
+                appearance: .defaultAppearance,
+                size: SDDSTextFieldSize.large,
+                layout: .clear,
+                iconViewProvider: nil,
+                iconActionViewProvider: ViewProvider(iconActionView)
+            )
+            .previewDisplayName("Multiple – Clear Label")
             .previewLayout(.sizeThatFits)
             .padding()
         }

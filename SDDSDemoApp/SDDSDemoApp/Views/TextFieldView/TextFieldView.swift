@@ -155,6 +155,12 @@ struct TextFieldView: View {
     }
 }
 
+extension TextFieldView: Equatable {
+    static func == (lhs: TextFieldView, rhs: TextFieldView) -> Bool {
+        return lhs.viewModel == rhs.viewModel
+    }
+}
+
 #Preview {
     NavigationView {
         TextFieldView()

@@ -138,6 +138,12 @@ struct TextAreaView: View {
     }
 }
 
+extension TextAreaView: Equatable {
+    static func == (lhs: TextAreaView, rhs: TextAreaView) -> Bool {
+        return lhs.viewModel == rhs.viewModel
+    }
+}
+
 #Preview {
     NavigationView {
         TextAreaView()
