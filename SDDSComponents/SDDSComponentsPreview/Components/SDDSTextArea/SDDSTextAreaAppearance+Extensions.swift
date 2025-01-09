@@ -53,7 +53,9 @@ public extension TextAreaAppearance {
             endContentColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
             textColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.96),
             captionColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.56),
-            placeholderColorReadOnly: .textDefaultSecondary
+            counterColorReadOnly: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            placeholderColorReadOnly: .textDefaultSecondary,
+            backgroundColorReadOnly: .surfaceDefaultTransparentPrimary
         )
     }
 }

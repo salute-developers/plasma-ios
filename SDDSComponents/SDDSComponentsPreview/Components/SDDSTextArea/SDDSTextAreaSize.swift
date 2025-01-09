@@ -3,6 +3,7 @@ import SwiftUI
 import SDDSComponents
 
 public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
+    
     case large
     case medium
     case small
@@ -32,6 +33,10 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
         case .extraSmall:
             2
         }
+    }
+    
+    public var chipsPadding: CGFloat {
+        6
     }
     
     public var textBeforeLeadingPadding: CGFloat {
