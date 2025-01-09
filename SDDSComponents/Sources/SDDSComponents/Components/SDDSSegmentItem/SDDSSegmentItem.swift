@@ -54,8 +54,6 @@ public struct SDDSSegmentItem: View {
     }
 }
 
-
-
 extension SDDSSegmentItem {
     var hasIconAttributes: Bool {
         iconAttributes != nil

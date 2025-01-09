@@ -25,7 +25,11 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         case .cornered:
             switch self {
             {%- for variation, config in variations.size %}
+<<<<<<< HEAD
             case .{{ variation | sizeKey }}: return {{ config.shape.value | adjustedCornerRadius:config.shape.adjustment }}
+=======
+            case .{{ variation | sizeKey }}: return {{ config.shape.name | adjustedCornerRadius:config.shape.adjustment }}
+>>>>>>> 1f036210 (chore: unified textfield/textarea api to match config)
             {%- endfor %}
             }
         case .pilled:
