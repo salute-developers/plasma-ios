@@ -12,7 +12,7 @@ public enum BasicButtonSize: String, CaseIterable {
 }
 
 extension BasicButtonSize: ButtonSizeConfiguration {
-    public func cornerRadius(style: SDDSComponents.ComponentShapeStyle) -> CGFloat {
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
         switch style {
         case .cornered:
             switch self {
