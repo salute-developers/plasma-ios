@@ -779,15 +779,10 @@ public struct SDDSTextField: View {
         case .single:
             return 0
         case .multiple(_, let chips):
-            guard let chipSize = chips.first?.appearance.size else {
+            guard let chipAppearance = chips.first?.appearance else {
                 return 0
             }
-            switch chipSize.borderStyle {
-            case .default(let radius):
-                return radius
-            case .pilled:
-                return chipSize.height / 2
-            }
+            return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
         }
     }
     

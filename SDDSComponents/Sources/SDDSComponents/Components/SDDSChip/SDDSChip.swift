@@ -123,12 +123,7 @@ public struct SDDSChip: View {
     }
     
     private var borderRadius: CGFloat {
-        switch appearance.size.borderStyle {
-        case .default(let cornerRadius):
-            return cornerRadius
-        case .pilled:
-            return appearance.size.height / 2
-        }
+        return appearance.size.cornerRadius(style: appearance.shapeStyle)
     }
     
     private func handleRemove() {

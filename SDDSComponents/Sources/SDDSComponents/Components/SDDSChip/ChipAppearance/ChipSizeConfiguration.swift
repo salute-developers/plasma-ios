@@ -18,8 +18,8 @@ public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConve
     var leadingInset: CGFloat { get }
     var trailingInset: CGFloat { get }
     var spacing: CGFloat { get }
-    var borderStyle: ChipBorderStyle { get }
     var height: CGFloat { get }
+    func cornerRadius(style: ComponentShapeStyle) -> CGFloat
 }
 
 public struct ZeroChipSize: ChipSizeConfiguration {
@@ -28,8 +28,8 @@ public struct ZeroChipSize: ChipSizeConfiguration {
     public var leadingInset: CGFloat { 0 }
     public var trailingInset: CGFloat { 0 }
     public var spacing: CGFloat { 0 }
-    public var borderStyle: ChipBorderStyle { .default(0) }
     public var height: CGFloat { 0 }
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
     public var debugDescription: String { "ZeroChipSize" }
     public init() {}
 }

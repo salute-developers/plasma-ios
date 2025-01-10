@@ -21,6 +21,7 @@ public struct ChipAppearance: Hashable {
     public let imageTintColor: ColorToken
     public let buttonTintColor: ColorToken
     public let backgroundColor: ColorToken
+    public let shapeStyle: ComponentShapeStyle
     public let disabledAlpha: CGFloat
 
     public init(
@@ -30,6 +31,7 @@ public struct ChipAppearance: Hashable {
         imageTintColor: ColorToken = .clearColor,
         buttonTintColor: ColorToken = .clearColor,
         backgroundColor: ColorToken = .clearColor,
+        shapeStyle: ComponentShapeStyle = .cornered,
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
@@ -38,6 +40,7 @@ public struct ChipAppearance: Hashable {
         self.imageTintColor = imageTintColor
         self.buttonTintColor = buttonTintColor
         self.backgroundColor = backgroundColor
+        self.shapeStyle = shapeStyle
         self.disabledAlpha = disabledAlpha
     }
     
