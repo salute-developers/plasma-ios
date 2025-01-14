@@ -25,7 +25,5 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var textAfterLeadingPadding: CGFloat { get }
     var textAfterTrailingPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
-    
-    func indicatorPadding(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
-    func indicatorYOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
+    func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGPoint
 }

@@ -9,6 +9,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var boxTrailingPadding: CGFloat { get }
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
+    var optionalPadding: CGFloat { get }
     var textInputPaddings: EdgeInsets { get }
     var cornerRadius: CGFloat { get }
     var borderWidth: CGFloat { get }
@@ -31,6 +32,5 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipsPadding: CGFloat { get }
     
     func fieldHeight(layout: TextAreaLayout) -> CGFloat
-    func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
-    func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint
 }

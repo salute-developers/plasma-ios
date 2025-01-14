@@ -25,7 +25,7 @@ extension IconButtonSize: ButtonSizeConfiguration {
         case .cornered:
             switch self {
             {%- for variation, config in variations.size %}
-            case .{{ variation | sizeKey }}: return {{ config.shape.name | adjustedCornerRadius:config.shape.adjustment }}
+            case .{{ variation | sizeKey }}: return {{ config.shape.value | adjustedCornerRadius:config.shape.adjustment }}
             {%- endfor %}
             }
         case .pilled:
