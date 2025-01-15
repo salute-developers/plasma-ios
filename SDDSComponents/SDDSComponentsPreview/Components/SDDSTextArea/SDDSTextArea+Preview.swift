@@ -9,7 +9,7 @@ struct SDDSTextAreaPreview: PreviewProvider {
     static var previews: some View {
         let chips = (1...12).map { index in
             ChipData(
-                title: "Label",
+                title: "ChipTitle",
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
@@ -21,7 +21,7 @@ struct SDDSTextAreaPreview: PreviewProvider {
         
         return Group {
             SDDSTextArea(
-                value: .constant(.single("hi")),
+                value: .constant(.single("Value")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
@@ -35,7 +35,7 @@ struct SDDSTextAreaPreview: PreviewProvider {
                 requiredPlacement: .left,
                 dynamicHeight: true,
                 appearance: .defaultAppearance,
-                size: SDDSTextAreaSize.large,
+                size: SDDSTextAreaSize.medium,
                 chipGroupSize: SDDSTextAreaSize.large.chipGroupSize,
                 layout: .clear,
                 iconActionViewProvider: ViewProvider(iconActionView)

@@ -31,6 +31,5 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipsPadding: CGFloat { get }
     
     func fieldHeight(layout: TextAreaLayout) -> CGFloat
-    func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
-    func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint
 }
