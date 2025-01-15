@@ -124,11 +124,11 @@ extension TextAreaTypography {
 public extension ChipAppearance {
     static var textArea: ChipAppearance {
         ChipAppearance(
-            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            titleColor: .textDefaultPrimary,
             titleTypography: ChipTextFieldTypography.text,
-            imageTintColor: ColorToken.textDefaultPrimary,
-            buttonTintColor: ColorToken.textDefaultPrimary,
-            backgroundColor: .surfaceDefaultSolidPrimary,
+            imageTintColor: .textDefaultPrimary,
+            buttonTintColor: .textDefaultPrimary,
+            backgroundColor: .surfaceDefaultTransparentSecondary,
             disabledAlpha: 0.5
         )
     }

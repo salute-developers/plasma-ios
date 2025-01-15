@@ -101,6 +101,10 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     public var captionBottomPadding: CGFloat {
         4
     }
+    
+    public var optionalPadding: CGFloat {
+        4
+    }
 
     public var textInputPaddings: EdgeInsets {
         switch self {

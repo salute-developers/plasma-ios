@@ -247,6 +247,7 @@ public struct SDDSTextField: View {
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
             .debug(condition: debugConfiguration.title)
+            .padding(.leading, size.optionalPadding)
     }
     
     @ViewBuilder
@@ -439,7 +440,7 @@ public struct SDDSTextField: View {
     
     @ViewBuilder
     private var innerOrNonePlacementOptionalTitleView: some View {
-        Text(" \(optionalTitle)")
+        Text(optionalTitle)
             .typography(textTypography)
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
             .padding(.leading, size.optionalPadding)
@@ -582,12 +583,21 @@ public struct SDDSTextField: View {
             return appearance.lineColor.color(for: colorScheme)
         }
     }
+    
+    private var iconViewColor: Color {
+        switch style {
+        case .error, .success, .warning:
+            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
+        case .default:
+            return appearance.startContentColor.color(for: colorScheme)
+        }
+    }
 
     @ViewBuilder
     private var iconView: some View {
         if let leftView = iconViewProvider?.view {
             leftView
-                .foregroundColor(appearance.startContentColor.color(for: colorScheme))
+                .foregroundColor(iconViewColor)
                 .frame(width: iconViewWidth, height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
                 .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
         } else {
@@ -733,10 +743,6 @@ public struct SDDSTextField: View {
         case .multiple:
             return true
         }
-    }
-
-    private var formattedOptionalTitle: String {
-        " \(optionalTitle)"
     }
 
     private var chipCornerRadius: CGFloat {

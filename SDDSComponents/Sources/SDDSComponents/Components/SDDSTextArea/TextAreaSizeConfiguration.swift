@@ -9,6 +9,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var boxTrailingPadding: CGFloat { get }
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
+    var optionalPadding: CGFloat { get }
     var textInputPaddings: EdgeInsets { get }
     var cornerRadius: CGFloat { get }
     var borderWidth: CGFloat { get }

@@ -246,12 +246,13 @@ public struct SDDSTextArea: View {
 
     @ViewBuilder
     private var optionalTitleView: some View {
-        Text(formattedOptionalTitle)
+        Text(optionalTitle)
             .typography(titleTypography)
             .frame(height: titleTypography.lineHeight)
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
             .debug(condition: debugConfiguration.title)
+            .padding(.leading, size.optionalPadding)
     }
     
     @ViewBuilder
@@ -259,11 +260,12 @@ public struct SDDSTextArea: View {
         if required {
             EmptyView()
         } else {
-            Text(formattedOptionalTitle)
+            Text(optionalTitle)
                 .typography(innerTitleTypography)
                 .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
                 .multilineTextAlignment(appearance.titleTextAlignment)
                 .debug(condition: debugConfiguration.title)
+                .padding(.leading, size.optionalPadding)
         }
     }
 
@@ -315,7 +317,6 @@ public struct SDDSTextArea: View {
                     .frame(height: calculatedChipGroupHeight)
                     .padding(.bottom, size.chipGroupVerticalBottomPadding)
                     .padding(.top, size.chipGroupVerticalTopPadding)
-                    .debug(color: .blue, condition: true)
                     
                     iconActionView
                         .padding(.top, size.textInputPaddings.top)
@@ -413,9 +414,10 @@ public struct SDDSTextArea: View {
         if required {
             EmptyView()
         } else {
-            Text(" \(optionalTitle)")
+            Text(optionalTitle)
                 .typography(textTypography)
                 .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .padding(.leading, size.optionalPadding)
         }
     }
     
@@ -767,10 +769,6 @@ public struct SDDSTextArea: View {
     
     private var calculatedChipGroupHeight: CGFloat {
         return min(size.chipGroupHeight, chipGroupContentHeight)
-    }
-
-    private var formattedOptionalTitle: String {
-        " \(optionalTitle)"
     }
 
     private var chipCornerRadius: CGFloat {
