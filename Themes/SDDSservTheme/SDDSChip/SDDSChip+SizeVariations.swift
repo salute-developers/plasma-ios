@@ -1,4 +1,3 @@
-// MARK: - Size
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
@@ -9,7 +8,7 @@ public extension AppearanceVariation<ChipAppearance> {
         .init(
             appearance: appearance
                 .size(SDDSChipSize.large)
-                .titleTypography(AvatarTypography.title)
+                .titleTypography(ChipTypography.title)
         )
     }
     
@@ -17,7 +16,7 @@ public extension AppearanceVariation<ChipAppearance> {
         .init(
             appearance: appearance
                 .size(SDDSChipSize.medium)
-                .titleTypography(AvatarTypography.title)
+                .titleTypography(ChipTypography.title)
         )
     }
     
@@ -25,7 +24,7 @@ public extension AppearanceVariation<ChipAppearance> {
         .init(
             appearance: appearance
                 .size(SDDSChipSize.small)
-                .titleTypography(AvatarTypography.title)
+                .titleTypography(ChipTypography.title)
         )
     }
     
@@ -33,7 +32,7 @@ public extension AppearanceVariation<ChipAppearance> {
         .init(
             appearance: appearance
                 .size(SDDSChipSize.extraSmall)
-                .titleTypography(AvatarTypography.title)
+                .titleTypography(ChipTypography.title)
         )
     }
 }

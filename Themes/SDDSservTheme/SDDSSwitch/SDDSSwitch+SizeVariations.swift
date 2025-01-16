@@ -1,4 +1,3 @@
-// MARK: - Size
 import Foundation
 import SDDSComponents
 import SDDSThemeCore

@@ -29,14 +29,8 @@ public struct SegmentWidthCalculatorImpl {
             }
         }
         
-        switch data.appearance.shapeStyle {
-        case .cornered:
-            totalWidth += data.appearance.size.paddings(style: .cornered).leading
-            totalWidth += data.appearance.size.paddings(style: .cornered).trailing
-        case .pilled:
-            totalWidth += data.appearance.size.paddings(style: .pilled).leading
-            totalWidth += data.appearance.size.paddings(style: .pilled).trailing
-        }
+        totalWidth += data.appearance.size.paddings.leading
+        totalWidth += data.appearance.size.paddings.trailing
         return totalWidth
     }
 }

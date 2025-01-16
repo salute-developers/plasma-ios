@@ -1,0 +1,86 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+{% for key, props in variations %}
+public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {{ component }}Variation.{{ key }}> {
+    {% for variationName, variation in props %}
+    var {{ variationName }}: {{ variation.next }} {
+        var size =  {{ component }}AnySize(size: appearance.size)
+        {%- for property, value in variation.size %}
+        size.{{ property }} = {{ value }}
+        {%- endfor %}
+
+        var appearance = appearance
+        appearance.size = size
+        {%- for property, value in variation.appearance %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+    
+        return .init(
+            name: "{{variationName}}",
+            appearance: appearance
+        )
+    }
+    {% endfor %}{% if variationViews[key] %}{%- for viewKey, view in variationViews[key] %}
+    var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
+        var appearance = appearance
+        {%- for property, value in view.appearance %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+        
+        return .init(
+            name: "{{viewKey}}",
+            appearance: appearance
+        )
+    }
+    {%- endfor %}{% else %}{%- for viewKey, view in views %}
+    var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
+        return .init(
+            name: "{{viewKey}}",
+            appearance: appearance.{{ viewKey }}
+        )
+    }
+    {%- endfor %}
+    {% endif %}
+}
+{% if variationViews[key] %}
+public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
+    {%- for viewKey, view in variationViews[key] %}
+    var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
+        var appearance = appearance
+        {%- for property, value in view.appearance %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+        
+        return .init(
+            name: "{{viewKey}}",
+            appearance: appearance
+        )
+    }
+    {%- endfor %}
+}
+{% endif %}{% endfor %}
+public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
+    {%- for viewKey, view in views %}
+    var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
+        return .init(
+            name: "{{viewKey}}",
+            appearance: appearance.{{ viewKey }}
+        )
+    }
+    {%- endfor %}
+}
+
+private extension {{ appearance }} {
+    {% for viewKey, view in views %}
+    var {{ viewKey }}: {{ appearance }} {
+        var appearance = self
+        {%- for property, value in view.appearance %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+        return appearance
+    }
+    {% endfor %}
+}

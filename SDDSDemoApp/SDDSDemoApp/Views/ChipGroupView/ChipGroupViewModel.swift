@@ -1,20 +1,20 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
 import SDDSServTheme
 
 final class ChipGroupViewModel: ObservableObject {
     @Published var chipTitle: String = ""
     @Published var chipSize: SDDSChipSize = .medium
-    @Published var chipGroupSize: DefaultChipGroupSize = .init(alignment: .left)
     @Published var chips: [ChipData] = []
     @Published var appearance: ChipAppearance = SDDSChip.default.appearance {
         didSet {
             updateChips(appearance: appearance, size: chipSize)
         }
     }
-    @Published var variationName: String = SDDSChip.default.name
+    @Published var chipGroupAppearance: ChipGroupAppearance = SDDSChipGroup.dense.appearance
+    @Published var chipGroupVariationName: String = SDDSChipGroup.dense.name
+    @Published var chipVariationName: String = SDDSChip.default.name
     
     private var cancellables: Set<AnyCancellable> = []
     

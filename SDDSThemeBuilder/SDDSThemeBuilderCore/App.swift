@@ -101,8 +101,9 @@ public final class App {
                 )
             )
         ]
-        
-        commands.append(contentsOf: generateVariations)
+        commands.append(contentsOf: generateTextFieldVariations)
+        commands.append(contentsOf: generateTextAreaVariations)
+        commands.append(contentsOf: generateButtonVariations)
         
         for command in commands {
             let result = command.run()
@@ -126,56 +127,45 @@ public final class App {
 
 // MARK: - Variations
 extension App {
-    private var generateVariations: [GenerateSwiftCodeCommand] {
-        var result = [GenerateSwiftCodeCommand]()
-        result.append(contentsOf: generateBasicButtonVariations)
-        result.append(contentsOf: generateLinkButtonVariations)
-        result.append(contentsOf: generateIconButtonVariations)
-        return result
-    }
-    
-    private var generateBasicButtonVariations: [GenerateSwiftCodeCommand] {
+    private var generateTextFieldVariations: [Command] {
         [
-            GenerateSwiftCodeCommand(
-                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/basic_button_config.json")!,
-                templates: [
-                    .basicButtonColorVariations,
-                    .basicButtonSizeVariations,
-                    .basicButtonTypographyVariations,
-                    .basicButtonTypography,
-                    .basicButtonSizeConfiguration
-                ],
-                outputDirectoryURL: generatedComponentsURL(component: .button)
+            GenerateTextFieldCommand(
+                component: .textField,
+                outputDirectoryURL: generatedComponentsURL(component: .textField)
+            ),
+            GenerateTextFieldCommand(
+                component: .textFieldClear,
+                outputDirectoryURL: generatedComponentsURL(component: .textFieldClear)
             )
         ]
     }
     
-    private var generateLinkButtonVariations: [GenerateSwiftCodeCommand] {
+    private var generateTextAreaVariations: [Command] {
         [
-            GenerateSwiftCodeCommand(
-                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/link_button_config.json")!,
-                templates: [
-                    .linkButtonColorVariations,
-                    .linkButtonSizeVariations,
-                    .linkButtonTypographyVariations,
-                    .linkButtonTypography,
-                    .linkButtonSizeConfiguration
-                ],
-                outputDirectoryURL: generatedComponentsURL(component: .button)
+            GenerateTextAreaCommand(
+                component: .textArea,
+                outputDirectoryURL: generatedComponentsURL(component: .textArea)
+            ),
+            GenerateTextAreaCommand(
+                component: .textAreaClear,
+                outputDirectoryURL: generatedComponentsURL(component: .textAreaClear)
             )
         ]
     }
     
-    private var generateIconButtonVariations: [GenerateSwiftCodeCommand] {
+    private var generateButtonVariations: [Command] {
         [
-            GenerateSwiftCodeCommand(
-                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/icon_button_config.json")!,
-                templates: [
-                    .iconButtonColorVariations,
-                    .iconButtonSizeVariations,
-                    .iconButtonSizeConfiguration
-                ],
-                outputDirectoryURL: generatedComponentsURL(component: .button)
+            GenerateButtonCommand(
+                component: .basicButton,
+                outputDirectoryURL: generatedComponentsURL(component: .basicButton)
+            ),
+            GenerateButtonCommand(
+                component: .linkButton,
+                outputDirectoryURL: generatedComponentsURL(component: .linkButton)
+            ),
+            GenerateButtonCommand(
+                component: .iconButton,
+                outputDirectoryURL: generatedComponentsURL(component: .iconButton)
             )
         ]
     }

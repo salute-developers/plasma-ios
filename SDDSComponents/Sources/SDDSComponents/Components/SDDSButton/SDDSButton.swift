@@ -129,8 +129,8 @@ public struct SDDSButton: View {
             }
         }
         .frame(height: appearance.size.height)
-        .padding(.leading, appearance.size.paddings(style: appearance.shapeStyle).leading)
-        .padding(.trailing, appearance.size.paddings(style: appearance.shapeStyle).trailing)
+        .padding(.leading, appearance.size.paddings.leading)
+        .padding(.trailing, appearance.size.paddings.trailing)
     }
     
     @ViewBuilder
@@ -195,7 +195,7 @@ public struct SDDSButton: View {
 
 private extension SDDSButton {
     var cornerRadius: CGFloat {
-        return appearance.size.cornerRadius(style: appearance.shapeStyle)
+        return appearance.size.cornerRadius
     }
     
     func currentColor(for buttonColor: ButtonColor) -> Color {

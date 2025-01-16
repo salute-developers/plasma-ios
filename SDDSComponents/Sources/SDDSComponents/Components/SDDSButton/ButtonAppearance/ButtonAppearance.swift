@@ -27,57 +27,57 @@ public struct ButtonAppearance: EnvironmentKey {
     /**
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
      */
-    public let size: ButtonSizeConfiguration
+    public var size: ButtonSizeConfiguration
     
     /**
      Стиль формы кнопки (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
      */
-    public let shapeStyle: ComponentShapeStyle
+    public var shapeStyle: ComponentShapeStyle
     
     /**
      Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
      */
-    public let titleTypography: TypographyConfiguration
+    public var titleTypography: TypographyConfiguration
     
     /**
      Цвет текста заголовка кнопки для различных состояний, определяемый `ButtonColor`.
      */
-    public let titleColor: ButtonColor
+    public var titleColor: ButtonColor
     
     /**
      Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
      */
-    public let subtitleTypography: TypographyConfiguration
+    public var subtitleTypography: TypographyConfiguration
     
     /**
      Цвет текста подзаголовка кнопки для различных состояний, определяемый `ButtonColor`.
      */
-    public let subtitleColor: ButtonColor
+    public var subtitleColor: ButtonColor
     
     /**
      Цвет иконки кнопки для различных состояний, определяемый `ButtonColor`.
      */
-    public let iconColor: ButtonColor
+    public var iconColor: ButtonColor
     
     /**
      Цвет спиннера загрузки для различных состояний, определяемый `ButtonColor`.
      */
-    public let spinnerColor: ButtonColor
+    public var spinnerColor: ButtonColor
     
     /**
      Цвет фона кнопки для различных состояний, определяемый `ButtonColor`.
      */
-    public let backgroundColor: ButtonColor
+    public var backgroundColor: ButtonColor
     
     /**
      Прозрачность кнопки, когда она отключена.
      */
-    public let disabledAlpha: CGFloat
+    public var disabledAlpha: CGFloat
     
     /**
      Прозрачность кнопки, когда она находится в состоянии загрузки.
      */
-    public let loadingAlpha: CGFloat
+    public var loadingAlpha: CGFloat
     
     /**
      Инициализатор для создания стилистической конфигурации кнопки.

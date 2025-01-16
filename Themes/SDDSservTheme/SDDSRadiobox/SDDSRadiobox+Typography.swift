@@ -1,5 +1,5 @@
 import Foundation
-import SDDSServTheme
+
 import SDDSComponents
 
 public struct RadioboxTypography: GeneralTypographyConfiguration {
