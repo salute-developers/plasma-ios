@@ -37,7 +37,14 @@ public struct SDDSChip: View {
         - accessibility: Параметры доступности для чипа (по умолчанию `ChipAccessibility`).
         - removeAction: Действие при нажатии на кнопку удаления.
      */
-    public init(title: String, isEnabled: Bool, iconImage: Image? = nil, buttonImage: Image? = nil, appearance: ChipAppearance, accessibility: ChipAccessibility = ChipAccessibility(), removeAction: @escaping () -> Void) {
+    public init(
+        title: String,
+        isEnabled: Bool,
+        iconImage: Image? = nil,
+        buttonImage: Image? = nil,
+        appearance: ChipAppearance,
+        accessibility: ChipAccessibility = ChipAccessibility(),
+        removeAction: @escaping () -> Void) {
         self.title = title
         self.isEnabled = isEnabled
         self.iconImage = iconImage

@@ -1,5 +1,5 @@
 import Foundation
-import SDDSServTheme
+
 import SDDSComponents
 
 struct CheckboxTypography: GeneralTypographyConfiguration {

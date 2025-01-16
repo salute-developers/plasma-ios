@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+
 
 public extension AppearanceVariation<ProgressBarAppearance> {
     var `default`: Self {

@@ -59,7 +59,7 @@ final class GenerateTokensCommand: Command, FileWriter {
         }
         
         for template in templates {
-            result = templateRender.render(context: context, template: template)
+            result = templateRender.render(context: context, template: template, removeLines: true)
             guard let generatedContent = result.asGenerated else {
                 return result
             }

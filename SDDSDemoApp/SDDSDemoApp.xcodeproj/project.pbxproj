@@ -21,7 +21,6 @@
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
-		810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
 		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
@@ -48,21 +47,17 @@
 		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
 		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
 		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
-		816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629A2CB80E0C00352891 /* SDDSComponentsPreview */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
-		816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629F2CB80E2E00352891 /* SDDSComponentsPreview */; };
 		817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EB2C383BA500E45207 /* ButtonViewModel.swift */; };
 		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
-		8183456E2CFDBB080081113B /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456D2CFDBB080081113B /* SDDSComponentsPreview */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
 		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
 		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
-		81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,8 +138,6 @@
 			files = (
 				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
-				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
-				810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */,
 				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
 				8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */,
@@ -152,10 +145,7 @@
 				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
-				8183456E2CFDBB080081113B /* SDDSComponentsPreview in Frameworks */,
-				816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */,
 				810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */,
-				81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,18 +459,13 @@
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
 				816C62982CB80E0C00352891 /* SDDSComponents */,
-				816C629A2CB80E0C00352891 /* SDDSComponentsPreview */,
 				816C629D2CB80E2E00352891 /* SDDSComponents */,
-				816C629F2CB80E2E00352891 /* SDDSComponentsPreview */,
 				819A382B2CC6926300A1377F /* SDDSComponents */,
 				819A38302CC692BD00A1377F /* SDDSComponents */,
 				81CA2C532CC69549002AF2DF /* SDDSComponents */,
-				81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */,
 				8104243C2CFDB83F0009B6E9 /* SDDSServTheme */,
 				8104243F2CFDB8E10009B6E9 /* SDDSComponents */,
-				810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */,
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
-				8183456D2CFDBB080081113B /* SDDSComponentsPreview */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -558,7 +543,6 @@
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
 				818345692CFDBAF30081113B /* XCLocalSwiftPackageReference "../SDDSComponents" */,
-				8183456C2CFDBB080081113B /* XCLocalSwiftPackageReference "../SDDSComponents/SDDSComponentsPreview" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -1027,10 +1011,6 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
 		};
-		8183456C2CFDBB080081113B /* XCLocalSwiftPackageReference "../SDDSComponents/SDDSComponentsPreview" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSComponents/SDDSComponentsPreview;
-		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1042,10 +1022,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
 		};
-		810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
-		};
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
@@ -1054,17 +1030,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
 		};
-		816C629A2CB80E0C00352891 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
-		};
 		816C629D2CB80E2E00352891 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		816C629F2CB80E2E00352891 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1073,10 +1041,6 @@
 		8183456A2CFDBAF30081113B /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		8183456D2CFDBB080081113B /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 		819A382B2CC6926300A1377F /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1089,10 +1053,6 @@
 		81CA2C532CC69549002AF2DF /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

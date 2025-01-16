@@ -13,7 +13,7 @@ extension ContexBuilder {
     
     func prepareContext(from data: Data, transform: (_ json: [String: Any]) -> ([String: Any])) -> CommandResult {
         do {
-            if var dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+            if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 try didReceiveContext(dictionary: dictionary)
                 return prepareContext(fromDictionary: dictionary, transform: transform)
             } else {

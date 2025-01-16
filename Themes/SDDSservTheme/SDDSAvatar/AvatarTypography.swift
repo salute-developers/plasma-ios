@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+
 
 struct AvatarTypography: GeneralTypographyConfiguration {
     let extraExtraLarge: TypographyToken?

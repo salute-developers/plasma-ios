@@ -19,7 +19,7 @@ private enum Filter: String {
     case findState = "findState"
     case escapeSwiftKeyword = "escapeSwiftKeyword"
     case camelCase = "camelCase"
-    case sizeKey = "sizeKey"
+    case capitalized = "capitalized"
     case adjustedCornerRadius = "adjustedCornerRadius"
 }
 
@@ -32,7 +32,7 @@ private enum SwiftKeyword: String, CaseIterable {
 }
 
 final class TemplateRenderer: Renderable {
-    func render(context: [String: Any], template: StencilTemplate) -> CommandResult {
+    func render(context: [String: Any], template: StencilTemplate, removeLines: Bool = true) -> CommandResult {
         let ext = Extension()
         registerFilters(ext: ext)
         registerTags(ext: ext)
@@ -50,8 +50,11 @@ final class TemplateRenderer: Renderable {
         // Swift file generation
         do {
             let rendered = try template.render(context)
-            let content = removeExtraNewlines(from: rendered)
-            return .generated(content)
+            if removeLines {
+                return .generated(removeExtraNewlines(from: rendered))
+            } else {
+                return .generated(rendered)
+            }
         } catch {
             print(error)
             return .error(CodeGenerationError.renderingFailed)
@@ -149,9 +152,9 @@ final class TemplateRenderer: Renderable {
             guard let stringValue = value as? String else { return value }
             return stringValue.camelCase
         }
-        ext.registerFilter(Filter.sizeKey.rawValue) { (value: Any?) in
+        ext.registerFilter(Filter.capitalized.rawValue) { (value: Any?) in
             guard let stringValue = value as? String else { return value }
-            return stringValue.sizeKey
+            return stringValue.capitalized
         }
         ext.registerFilter(Filter.adjustedCornerRadius.rawValue) { (value: Any?, arguments: [Any?]) in
             guard let baseCornerRadiusKey = value as? String else {

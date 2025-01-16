@@ -10,17 +10,12 @@ public enum SegmentItemSize: String, CaseIterable {
 }
 
 extension SegmentItemSize: SegmentItemSizeConfiguration {
-    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
-        switch style {
-        case .cornered:
-            switch self {
-            case .large: return ShapeToken.roundL.cornerRadius - 2.0
-            case .medium: return ShapeToken.roundM.cornerRadius
-            case .small: return ShapeToken.roundM.cornerRadius - 2.0
-            case .extraSmall: return ShapeToken.roundS.cornerRadius
-            }
-        case .pilled:
-            return height / 2
+    public var cornerRadius: CGFloat {
+        switch self {
+        case .large: return ShapeToken.roundL.cornerRadius - 2.0
+        case .medium: return ShapeToken.roundM.cornerRadius
+        case .small: return ShapeToken.roundM.cornerRadius - 2.0
+        case .extraSmall: return ShapeToken.roundS.cornerRadius
         }
     }
     
@@ -33,30 +28,16 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
         }
     }
     
-    public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
-        switch style {
-        case .cornered:
-            switch self {
-            case .large:
-                return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
-            case .medium:
-                return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-            case .small:
-                return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-            case .extraSmall:
-                return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
-            }
-        case .pilled:
-            switch self {
-            case .large:
-                return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-            case .medium:
-                return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
-            case .small:
-                return EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
-            case .extraSmall:
-                return EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
-            }
+    public var paddings: EdgeInsets {
+        switch self {
+        case .large:
+            return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
+        case .medium:
+            return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+        case .small:
+            return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        case .extraSmall:
+            return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
         }
     }
     

@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
 struct TextFieldView: View {
@@ -24,12 +24,10 @@ struct TextFieldView: View {
                     textAfter: viewModel.textAfter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    style: viewModel.style,
                     labelPlacement: viewModel.labelPlacement,
                     required: viewModel.required,
                     requiredPlacement: viewModel.requiredPlacement,
                     appearance: viewModel.appearance,
-                    size: viewModel.size,
                     layout: viewModel.layout,
                     iconViewProvider: iconView,
                     iconActionViewProvider: iconActionView
@@ -37,6 +35,56 @@ struct TextFieldView: View {
             }
 
             Section {
+                Picker("Layout", selection: $viewModel.layout) {
+                    ForEach(TextFieldLayout.allCases, id: \.self) { layout in
+                        Text(layout.rawValue.capitalized).tag(layout)
+                    }
+                }
+                
+                HStack {
+                    Text("Size")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(viewModel.allSizeNames, id: \.self) { sizeName in
+                            Button(sizeName) {
+                                viewModel.sizeName = sizeName
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.sizeName)
+                    }
+                }
+                
+                HStack {
+                    Text("Appearance")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(viewModel.allTextFieldAppearance, id: \.self) { variation in
+                            Button(variation.name) {
+                                viewModel.variation = variation
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.variation.name.capitalized)
+                    }
+                }
+                
+                Picker("Label Placement", selection: $viewModel.labelPlacement) {
+                    ForEach(TextFieldLabelPlacement.allCases, id: \.self) { placement in
+                        Text(placement.rawValue.capitalized).tag(placement)
+                    }
+                }
+                
+                Toggle("Required", isOn: $viewModel.required)
+                
+                Picker("Required Placement", selection: $viewModel.requiredPlacement) {
+                    ForEach(TextFieldRequiredPlacement.allCases, id: \.self) { placement in
+                        Text(placement.rawValue.capitalized).tag(placement)
+                    }
+                }
+                
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -56,46 +104,9 @@ struct TextFieldView: View {
 
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read Only", isOn: $viewModel.readOnly)
-                Toggle("Required", isOn: $viewModel.required)
                 Toggle("Icon", isOn: $viewModel.iconViewEnabled)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
-
-                Picker("Style", selection: $viewModel.style) {
-                    ForEach(SDDSComponents.TextFieldStyle.allCases, id: \.self) { style in
-                        Text(style.rawValue.capitalized).tag(style)
-                    }
-                }
-
-                Picker("Label Placement", selection: $viewModel.labelPlacement) {
-                    ForEach(TextFieldLabelPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-
-                Picker("Required Placement", selection: $viewModel.requiredPlacement) {
-                    ForEach(TextFieldRequiredPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-
-                Picker("Layout", selection: $viewModel.layout) {
-                    ForEach(TextFieldLayout.allCases, id: \.self) { layout in
-                        Text(layout.rawValue.capitalized).tag(layout)
-                    }
-                }
-
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSTextFieldSize.allCases, id: \.self) { size in
-                        Text(size.rawValue).tag(size.rawValue)
-                    }
-                }
-
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(TextFieldAppearance.allCases, id: \.self) { appearance in
-                        Text(appearance.name).tag(appearance)
-                    }
-                }
-
+                
                 Button("Add Chip") {
                     viewModel.addChip()
                 }
@@ -153,6 +164,7 @@ struct TextFieldView: View {
             nil
         }
     }
+    
 }
 
 extension TextFieldView: Equatable {
