@@ -2,7 +2,6 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
-import SDDSComponentsPreview
 import SDDSServTheme
 
 final class ButtonViewModel: ObservableObject {
@@ -25,7 +24,6 @@ final class ButtonViewModel: ObservableObject {
     @Published var isIconVisible: Bool = false
     @Published var isPilled: Bool = false
     @Published var alignment: SDDSComponents.ButtonAlignment = .leading
-    @Published var colorStyle: SDDSServeB2CStyle = .accent
     
     private var cancellables: Set<AnyCancellable> = []
     

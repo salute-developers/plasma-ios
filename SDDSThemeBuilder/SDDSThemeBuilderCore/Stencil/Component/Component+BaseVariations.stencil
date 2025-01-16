@@ -1,0 +1,43 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+public struct {{ component }} {
+    {%- for key, variation in variations %}
+    public static var {{ key }}: {{variation.next}} {
+        var appearance = {{ appearance }}.base
+        appearance.size = {{ component }}Size.{{ key }}
+        {%- for property, value in variation.appearance %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+
+        return .init(
+            name: "{{ key }}",
+            appearance: appearance
+        )
+    }
+    {%- endfor %}
+    
+    public static let all: [Any] = [
+        {%- for key, variation in variations %}
+        {{ component }}.{{ key }},
+        {%- endfor %}
+    ]
+}
+
+public struct {{ component }}Variation {
+    {%- for name in all %}
+    public struct {{ name }} {}
+    {%- endfor %}
+}
+
+private extension {{ appearance }} {
+    static var base: {{ appearance }} {
+        var appearance = {{ appearance }}()
+        {%- for property, value in base %}
+        appearance.{{ property }} = {{ value }}
+        {%- endfor %}
+        return appearance
+    }
+}

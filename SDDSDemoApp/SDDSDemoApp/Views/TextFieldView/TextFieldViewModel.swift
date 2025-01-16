@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
 final class TextFieldViewModel: ObservableObject {
@@ -19,13 +19,52 @@ final class TextFieldViewModel: ObservableObject {
     @Published var iconViewEnabled: Bool = true
     @Published var iconActionViewEnabled: Bool = true
 
-    @Published var style: SDDSComponents.TextFieldStyle = .default
     @Published var labelPlacement: TextFieldLabelPlacement = .outer
     @Published var requiredPlacement: TextFieldRequiredPlacement = .left
-    @Published var layout: TextFieldLayout = .default
-
-    @Published var size: SDDSTextFieldSize = .medium
-    @Published var appearance: TextFieldAppearance = .defaultAppearance
+    @Published var layout: TextFieldLayout = .default {
+        didSet {
+            resetAppearance()
+        }
+    }
+    @Published var size: TextFieldSizeConfiguration = TextFieldSize.medium
+    @Published var sizeName: String = TextFieldSize.medium.rawValue {
+        didSet {
+            size = size(with: sizeName)
+        }
+    }
+    @Published var variation: AppearanceVariation<TextFieldAppearance>!
+    
+    init() {
+        self.resetAppearance()
+    }
+    
+    var appearance: TextFieldAppearance {
+        return variation.appearance.size(size)
+    }
+    
+    var allTextFieldAppearance: [AppearanceVariation<TextFieldAppearance>] {
+        switch layout {
+        case .default:
+            let size = TextFieldSize(rawValue: sizeName) ?? .medium
+            return SDDSComponents.TextField.all.map {
+                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
+            }
+        case .clear:
+            let size = TextFieldClearSize(rawValue: sizeName) ?? .medium
+            return TextFieldClear.all.map {
+                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
+            }
+        }
+    }
+    
+    var allSizeNames: [String] {
+        switch layout {
+        case .default:
+            TextFieldSize.allCases.map { $0.rawValue }
+        case .clear:
+            TextFieldClearSize.allCases.map { $0.rawValue}
+        }
+    }
 
     var chips: [ChipData] {
         get {
@@ -48,13 +87,11 @@ final class TextFieldViewModel: ObservableObject {
     }
 
     func addChip() {
-        let chipSize = mapTextFieldSizeToChipSize(size)
         let newChip = ChipData(
             title: "Chip \(chips.count + 1)",
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("textFieldChipIcon"),
-            appearance: .textField.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: {}
         )
@@ -83,34 +120,21 @@ final class TextFieldViewModel: ObservableObject {
             value = .single(textValue)
         }
     }
+    
+    private func resetAppearance() {
+        variation = allTextFieldAppearance.first
+        sizeName = TextFieldSize.medium.rawValue
+    }
+}
 
-    private func mapTextFieldSizeToChipSize(_ textFieldSize: SDDSTextFieldSize) -> TextFieldChipSize {
-        switch textFieldSize {
-        case .large:
-            return .large
-        case .medium:
-            return .medium
-        case .small:
-            return .small
-        case .extraSmall:
-            return .extraSmall
+extension TextFieldViewModel {
+    private func size(with name: String) -> TextFieldSizeConfiguration {
+        switch layout {
+        case .default:
+            TextFieldSize(rawValue: name) ?? .medium
+        case .clear:
+            TextFieldClearSize(rawValue: name) ?? .medium
         }
-    }
-}
-
-extension SDDSTextFieldSize: CaseIterable {
-    public static var allCases: [SDDSTextFieldSize] {
-        [.large, .medium, .small, .extraSmall]
-    }
-}
-
-extension TextFieldAppearance: CaseIterable {
-    public static var allCases: [TextFieldAppearance] {
-        [.defaultAppearance]
-    }
-
-    public var name: String {
-        return "Default"
     }
 }
 
@@ -129,12 +153,12 @@ extension TextFieldViewModel: Equatable {
         lhs.required == rhs.required &&
         lhs.iconViewEnabled == rhs.iconViewEnabled &&
         lhs.iconActionViewEnabled == rhs.iconActionViewEnabled &&
-        lhs.style == rhs.style &&
         lhs.labelPlacement == rhs.labelPlacement &&
         lhs.requiredPlacement == rhs.requiredPlacement &&
         lhs.layout == rhs.layout &&
-        lhs.size == rhs.size &&
-        lhs.appearance == rhs.appearance &&
+        (lhs.size as? TextFieldSize) == (rhs.size as? TextFieldSize) &&
+        (lhs.size as? TextFieldClearSize) == (rhs.size as? TextFieldClearSize) &&
+        lhs.variation == rhs.variation &&
         lhs.chips == rhs.chips
     }
 }

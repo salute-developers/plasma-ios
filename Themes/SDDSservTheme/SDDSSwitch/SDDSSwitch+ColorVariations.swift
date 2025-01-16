@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+
 
 public extension AppearanceVariation<SwitchAppearance> {
     var `default`: Self {
@@ -19,7 +19,7 @@ public extension SDDSSwitch {
                 subtitleTypography: SwitchTypography.description,
                 titleColor: .backgroundInversePrimary,
                 subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
-                tintColor: .surfaceDefaultAccent,
+                tintColor: .surfaceDefaultWarning,
                 disabledAlpha: 0.4
             )
         )

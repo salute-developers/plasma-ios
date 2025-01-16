@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSComponentsPreview
+
 import Combine
 import SDDSComponents
 import SDDSServTheme
@@ -18,7 +18,7 @@ struct ChipGroupView: View {
                 HStack {
                     SDDSChipGroup(
                         data: viewModel.chips,
-                        size: viewModel.chipGroupSize,
+                        appearance: viewModel.chipGroupAppearance,
                         height: $size
                     )
                     .frame(height: size)
@@ -26,30 +26,35 @@ struct ChipGroupView: View {
             }
             
             Section {
-                Picker("Chip Group Alignment", selection: $viewModel.chipGroupSize) {
-                    ForEach(DefaultChipGroupSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size.debugDescription)
-                    }
-                }
-                Picker("Chip Size", selection: $viewModel.chipSize) {
-                    ForEach(SDDSChipSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size.debugDescription)
-                    }
-                }
-                
                 HStack {
-                    Text("Appearance")
+                    Text("Chip Group Appearance")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(SDDSChipGroup.all, id: \.self) { variation in
+                            Button(variation.name) {
+                                viewModel.chipGroupAppearance = variation.appearance
+                                viewModel.chipGroupVariationName = variation.name
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.chipGroupVariationName.capitalized)
+                    }
+
+                }
+                HStack {
+                    Text("Chip Appearance")
                     Spacer()
                         .frame(maxWidth: .infinity)
                     Menu {
                         ForEach(SDDSChip.all, id: \.self) { variation in
                             Button(variation.name) {
                                 viewModel.appearance = variation.appearance.size(viewModel.chipSize)
-                                viewModel.variationName = variation.name
+                                viewModel.chipVariationName = variation.name
                             }
                         }
                     } label: {
-                        Text(viewModel.variationName.capitalized)
+                        Text(viewModel.chipVariationName.capitalized)
                     }
                 }
             }

@@ -20,11 +20,11 @@ public struct ChipData: Hashable {
     public let isEnabled: Bool
     public let iconImage: Image?
     public let buttonImage: Image?
-    public let appearance: ChipAppearance
+    public var appearance: ChipAppearance
     public let accessibility: ChipAccessibility
     public let removeAction: () -> Void
     
-    public init(id: UUID = UUID(), title: String, isEnabled: Bool, iconImage: Image?, buttonImage: Image?, appearance: ChipAppearance, accessibility: ChipAccessibility, removeAction: @escaping () -> Void) {
+    public init(id: UUID = UUID(), title: String, isEnabled: Bool, iconImage: Image?, buttonImage: Image?, appearance: ChipAppearance = ChipAppearance(), accessibility: ChipAccessibility, removeAction: @escaping () -> Void) {
         self.id = id
         self.title = title
         self.isEnabled = isEnabled

@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+
 
 public struct ChipTypography: GeneralTypographyConfiguration {
     public let large: TypographyToken?

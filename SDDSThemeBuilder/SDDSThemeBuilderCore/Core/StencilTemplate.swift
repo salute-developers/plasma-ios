@@ -11,19 +11,10 @@ enum StencilTemplate: String {
     case shadows = "Shadows"
     case typographies = "Typographies"
     case gradients = "Gradients"
-    case basicButtonColorVariations = "BasicButton+ColorVariations"
-    case basicButtonSizeVariations = "BasicButton+SizeVariations"
-    case basicButtonTypography = "BasicButtonTypography"
-    case basicButtonTypographyVariations = "BasicButton+Typography"
-    case basicButtonSizeConfiguration = "BasicButtonSize+ButtonSizeConfiguration"
-    case linkButtonColorVariations = "LinkButton+ColorVariations"
-    case linkButtonSizeVariations = "LinkButton+SizeVariations"
-    case linkButtonTypography = "LinkButtonTypography"
-    case linkButtonTypographyVariations = "LinkButton+Typography"
-    case linkButtonSizeConfiguration = "LinkButtonSize+ButtonSizeConfiguration"
-    case iconButtonColorVariations = "IconButton+ColorVariations"
-    case iconButtonSizeVariations = "IconButton+SizeVariations"
-    case iconButtonSizeConfiguration = "IconButtonSize+ButtonSizeConfiguration"
+    case componentSize = "ComponentSize"
+    case componentBaseVariations = "Component+BaseVariations"
+    case componentVariations = "Component+Variations"
+    case componentTypography = "ComponentTypography"
     
     var withStencilExt: String {
         rawValue + ".stencil"
@@ -33,5 +24,10 @@ enum StencilTemplate: String {
 extension StencilTemplate {
     var filename: String {
         return "\(rawValue)+Generated.swift"
+    }
+    
+    func generatedFileName(component: GeneratedComponent) -> String {
+        let templateName = self.rawValue.replacingOccurrences(of: "Component", with: "")
+        return "\(component.rawValue)\(templateName).swift"
     }
 }

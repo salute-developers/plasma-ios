@@ -1,0 +1,41 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+struct {{ component }}Size {
+    {%- for key, variation in variations %}
+    static let {{ key }} = {{ component }}Size{{ key | capitalized }}()
+    {%- endfor %}
+
+    static let all: [{{ sizeConfiguration }}] = [
+        {%- for key, variation in variations %}
+        {{ component }}Size.{{ key }},
+        {%- endfor %}
+    ] 
+}
+{%- for key, variation in variations %}
+struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
+    {%- for property, value in variation %}
+    public var {{ property }} = {{ value }}
+    {%- endfor %}
+    public var debugDescription: String {
+        return "{{ component }}Size{{ capitalized }}"
+    }
+}
+{%- endfor %}
+
+struct {{ component }}AnySize: {{ sizeConfiguration }} {
+    {%- for property, value in zeroSize %}
+    public var {{ property }} = {{ value }}
+    {%- endfor %}
+
+    init(size: {{ sizeConfiguration }}) {
+        {%- for property, value in zeroSize %}
+        self.{{ property }} = size.{{ property }}
+        {%- endfor %}
+    }
+    var debugDescription: String {
+        return "{{ component }}AnySize"
+    }
+}
