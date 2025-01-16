@@ -20,35 +20,12 @@ struct SDDSChipGroupPreview: PreviewProvider {
         }
         
         return Group {
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .center))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Center")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .left))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .right))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Standard Layout - Right")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingLeft))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Left")
-                .padding()
-                .debug()
-            
-            SDDSChipGroup(data: chipData, size: DefaultChipGroupSize(alignment: .decreasingRight))
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .previewDisplayName("Decreasing Layout - Right")
-                .padding()
-                .debug()
+            SDDSChipGroup(
+                data: chipData,
+                gap: .dense,
+                appearance: SDDSChipGroup.medium.appearance
+            )
         }
+        .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

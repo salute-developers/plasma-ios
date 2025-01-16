@@ -5,7 +5,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 // MARK: - Size
-public extension ButtonAppearanceVariation<IconButton> {
+public extension ComponentAppearanceVariation<IconButton, ButtonAppearance> {
     var large: Self {
         .init(
             appearance: appearance
@@ -33,16 +33,16 @@ public extension ButtonAppearanceVariation<IconButton> {
 }
 
 public extension IconButton {
-    static var large: ButtonAppearanceVariation<IconButton> {
-        return ButtonAppearanceVariation().large
+    static var large: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        return ComponentAppearanceVariation(appearance: ButtonAppearance()).large
     }
-    static var medium: ButtonAppearanceVariation<IconButton> {
-        return ButtonAppearanceVariation().medium
+    static var medium: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        return ComponentAppearanceVariation(appearance: ButtonAppearance()).medium
     }
-    static var small: ButtonAppearanceVariation<IconButton> {
-        return ButtonAppearanceVariation().small
+    static var small: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        return ComponentAppearanceVariation(appearance: ButtonAppearance()).small
     }
-    static var extraSmall: ButtonAppearanceVariation<IconButton> {
-        return ButtonAppearanceVariation().extraSmall
+    static var extraSmall: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        return ComponentAppearanceVariation(appearance: ButtonAppearance()).extraSmall
     }
 }

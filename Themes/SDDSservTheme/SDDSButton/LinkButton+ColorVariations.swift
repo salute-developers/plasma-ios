@@ -4,7 +4,7 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public extension ButtonAppearanceVariation<LinkButton> {
+public extension ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
     var accent: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: LinkButton.accent.appearance)
@@ -38,7 +38,7 @@ public extension ButtonAppearanceVariation<LinkButton> {
 }
 
 public extension LinkButton {
-    static var accent: ButtonAppearanceVariation<LinkButton> {
+    static var accent: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "accent",
             appearance: ButtonAppearance(
@@ -74,7 +74,7 @@ public extension LinkButton {
             )
         )
     }
-    static var `default`: ButtonAppearanceVariation<LinkButton> {
+    static var `default`: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "default",
             appearance: ButtonAppearance(
@@ -110,7 +110,7 @@ public extension LinkButton {
             )
         )
     }
-    static var negative: ButtonAppearanceVariation<LinkButton> {
+    static var negative: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "negative",
             appearance: ButtonAppearance(
@@ -146,7 +146,7 @@ public extension LinkButton {
             )
         )
     }
-    static var positive: ButtonAppearanceVariation<LinkButton> {
+    static var positive: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "positive",
             appearance: ButtonAppearance(
@@ -182,7 +182,7 @@ public extension LinkButton {
             )
         )
     }
-    static var secondary: ButtonAppearanceVariation<LinkButton> {
+    static var secondary: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "secondary",
             appearance: ButtonAppearance(
@@ -218,7 +218,7 @@ public extension LinkButton {
             )
         )
     }
-    static var warning: ButtonAppearanceVariation<LinkButton> {
+    static var warning: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         .init(
             name: "warning",
             appearance: ButtonAppearance(
@@ -254,7 +254,7 @@ public extension LinkButton {
             )
         )
     }
-    static var all: [ButtonAppearanceVariation<LinkButton>] {
+    static var all: [ComponentAppearanceVariation<LinkButton, ButtonAppearance>] {
         [
             
             LinkButton.accent,

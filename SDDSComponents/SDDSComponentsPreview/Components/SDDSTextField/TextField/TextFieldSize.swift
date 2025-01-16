@@ -1,12 +1,9 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import Foundation
-import SDDSComponents
-import SwiftUI
 import SDDSServTheme
 
-public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
+public enum TextFieldSize: String, TextFieldSizeConfiguration {
     case large
     case medium
     case small
@@ -316,5 +313,17 @@ public enum SDDSTextFieldSize: String, TextFieldSizeConfiguration {
 
     public var debugDescription: String {
         String(reflecting: self)
+    }
+    
+    public var chipGroupHeight: CGFloat {
+        0
+    }
+    
+    public var chipGroupVerticalTopPadding: CGFloat {
+        0
+    }
+    
+    public var chipGroupVerticalBottomPadding: CGFloat {
+        0
     }
 }

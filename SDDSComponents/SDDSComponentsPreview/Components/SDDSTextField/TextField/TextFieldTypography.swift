@@ -11,7 +11,7 @@ struct TextFieldTypography: GeneralTypographyConfiguration {
     let extraSmall: TypographyToken?
     
     func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSTextFieldSize {
+        switch size as? TextFieldSize {
         case .large:
             return large
         case .medium:
@@ -60,8 +60,4 @@ extension TextFieldTypography {
             extraSmall: Typographies.bodyXsNormal.typography
         ).asContainer
     }
-}
-
-#Preview {
-    SDDSTextFieldPreview.previews
 }

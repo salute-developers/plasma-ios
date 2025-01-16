@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum TextFieldChipSize: ChipSizeConfiguration {
+public enum EmbeddedChipSize: ChipSizeConfiguration {
     case large
     case medium
     case small
@@ -17,7 +17,7 @@ public enum TextFieldChipSize: ChipSizeConfiguration {
         case .large:
             return CGSize(width: 24, height: 24)
         case .medium:
-            return CGSize(width: 20, height: 20)
+            return CGSize(width: 24, height: 24)
         case .small:
             return CGSize(width: 16, height: 16)
         case .extraSmall:
@@ -41,17 +41,30 @@ public enum TextFieldChipSize: ChipSizeConfiguration {
     public var leadingInset: CGFloat {
         switch self {
         case .large:
-            return 16
-        case .medium:
             return 14
-        case .small:
+        case .medium:
             return 12
-        case .extraSmall:
+        case .small:
             return 10
+        case .extraSmall:
+            return 6
         }
     }
     
     public var trailingInset: CGFloat {
+        switch self {
+        case .large:
+            return 12
+        case .medium:
+            return 10
+        case .small:
+            return 8
+        case .extraSmall:
+            return 6
+        }
+    }
+    
+    public var spacing: CGFloat {
         switch self {
         case .large:
             return 8
@@ -64,29 +77,16 @@ public enum TextFieldChipSize: ChipSizeConfiguration {
         }
     }
     
-    public var spacing: CGFloat {
-        switch self {
-        case .large:
-            return 6
-        case .medium:
-            return 4
-        case .small:
-            return 2
-        case .extraSmall:
-            return 2
-        }
-    }
-    
     public var height: CGFloat {
         switch self {
         case .large:
             return 44
         case .medium:
-            return 40
+            return 36
         case .small:
-            return 32
+            return 28
         case .extraSmall:
-            return 24
+            return 20
         }
     }
     
@@ -107,8 +107,4 @@ public enum TextFieldChipSize: ChipSizeConfiguration {
             return height / 2
         }
     }
-}
-
-#Preview {
-    SDDSTextFieldPreview.previews
 }

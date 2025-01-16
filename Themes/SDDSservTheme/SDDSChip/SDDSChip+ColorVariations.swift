@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 public extension AppearanceVariation<ChipAppearance> {
     var accent: Self {

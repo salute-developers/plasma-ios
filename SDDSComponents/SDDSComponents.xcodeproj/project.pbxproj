@@ -27,21 +27,12 @@
 		8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */; };
 		8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */; };
 		8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */; };
-		811D2E122D10A4BA001C0F48 /* TextFieldAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E0C2D10A4BA001C0F48 /* TextFieldAppearance+Extensions.swift */; };
-		811D2E132D10A4BA001C0F48 /* TextFieldDefaultSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E0D2D10A4BA001C0F48 /* TextFieldDefaultSize.swift */; };
-		811D2E142D10A4BA001C0F48 /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E0E2D10A4BA001C0F48 /* TextFieldTypography.swift */; };
-		811D2E152D10A4BA001C0F48 /* SDDSTextField+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E0F2D10A4BA001C0F48 /* SDDSTextField+Preview.swift */; };
-		811D2E162D10A4BA001C0F48 /* ChipAppearance+SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E102D10A4BA001C0F48 /* ChipAppearance+SDDSTextField.swift */; };
-		811D2E172D10A4BA001C0F48 /* TextFieldChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E112D10A4BA001C0F48 /* TextFieldChipSize.swift */; };
+		811D2E152D10A4BA001C0F48 /* TextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E0F2D10A4BA001C0F48 /* TextFieldPreview.swift */; };
 		811D2E1D2D10A59F001C0F48 /* TextAreaChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E182D10A59F001C0F48 /* TextAreaChipSize.swift */; };
-		811D2E1E2D10A59F001C0F48 /* SDDSTextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E192D10A59F001C0F48 /* SDDSTextAreaSize.swift */; };
-		811D2E1F2D10A59F001C0F48 /* SDDSTextAreaAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E1A2D10A59F001C0F48 /* SDDSTextAreaAppearance+Extensions.swift */; };
-		811D2E202D10A59F001C0F48 /* SDDSTextAreaChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E1B2D10A59F001C0F48 /* SDDSTextAreaChipGroupSize.swift */; };
-		811D2E212D10A59F001C0F48 /* SDDSTextArea+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E1C2D10A59F001C0F48 /* SDDSTextArea+Preview.swift */; };
+		811D2E212D10A59F001C0F48 /* TextAreaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E1C2D10A59F001C0F48 /* TextAreaPreview.swift */; };
 		811D2E232D10A5B4001C0F48 /* SDDSAvatarGroupPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E222D10A5B4001C0F48 /* SDDSAvatarGroupPreview.swift */; };
 		811D2E252D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E242D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift */; };
 		811D2E282D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E262D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift */; };
-		811D2E292D10A6CF001C0F48 /* DefaultChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E272D10A6CF001C0F48 /* DefaultChipGroupSize.swift */; };
 		811D2E2B2D10A7B9001C0F48 /* SDDSRadioboxGroup+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E2A2D10A7B9001C0F48 /* SDDSRadioboxGroup+Preview.swift */; };
 		811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2E2C2D115FDD001C0F48 /* AppearanceVariation.swift */; };
 		811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1532C50098D000DD354 /* SDDSChip.swift */; };
@@ -50,6 +41,14 @@
 		811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */; };
 		811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1702C5783B6000DD354 /* HierarchicalList.swift */; };
 		811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */; };
+		8125DDDD2D397A3D00088A0D /* TextFieldLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDDC2D397A3D00088A0D /* TextFieldLayout.swift */; };
+		8125DDDF2D397A4E00088A0D /* TextFieldLabelPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDDE2D397A4E00088A0D /* TextFieldLabelPlacement.swift */; };
+		8125DDE12D397A6100088A0D /* TextFieldRequiredPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDE02D397A6100088A0D /* TextFieldRequiredPlacement.swift */; };
+		8125DDE32D397AC400088A0D /* TextFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDE22D397AC400088A0D /* TextFieldValue.swift */; };
+		8125DDE62D397B7200088A0D /* TextAreaLabelPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDE52D397B7200088A0D /* TextAreaLabelPlacement.swift */; };
+		8125DDE82D397B8400088A0D /* TextAreaLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDE72D397B8400088A0D /* TextAreaLayout.swift */; };
+		8125DDEA2D397B9300088A0D /* TextAreaRequiredPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDE92D397B9300088A0D /* TextAreaRequiredPlacement.swift */; };
+		8125DDEC2D397BA500088A0D /* TextAreaValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125DDEB2D397BA500088A0D /* TextAreaValue.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		814E30202C999469004601F7 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 814E301F2C999469004601F7 /* SDDSThemeUtilities */; };
 		814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */; };
@@ -119,6 +118,46 @@
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
 		819CB7FD2C7CC34A00B4FBF4 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
+		819EE2932D3EC57700F0389D /* ChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2922D3EC57700F0389D /* ChipGroupSize.swift */; };
+		819EE2CE2D3ECFBB00F0389D /* ChipGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2CC2D3ECFB200F0389D /* ChipGroupAppearance.swift */; };
+		819EE2D42D3ECFE400F0389D /* ChipGroupAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2CF2D3ECFCE00F0389D /* ChipGroupAlignment.swift */; };
+		819EE2D62D3ECFF900F0389D /* ChipGroupSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2D52D3ECFF900F0389D /* ChipGroupSizeConfiguration.swift */; };
+		819EE2E02D3ED97B00F0389D /* EmbeddedChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2DF2D3ED97B00F0389D /* EmbeddedChip.swift */; };
+		819EE2E22D3EDBE400F0389D /* ComponentAppearanceVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2E12D3EDBE400F0389D /* ComponentAppearanceVariation.swift */; };
+		819EE2EF2D3EDDBB00F0389D /* ChipGroupGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2D12D3ECFDE00F0389D /* ChipGroupGap.swift */; };
+		819EE2F22D3EDE0100F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE2F12D3EDE0100F0389D /* SDDSServTheme */; };
+		819EE2F52D3EDE7200F0389D /* ChipGroupAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2F32D3EDE5100F0389D /* ChipGroupAppearance+Extensions.swift */; };
+		819EE2F82D3EDEAE00F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE2F72D3EDEAE00F0389D /* SDDSServTheme */; };
+		819EE2FA2D3EE12800F0389D /* EmbeddedChipPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE2F92D3EE12800F0389D /* EmbeddedChipPreview.swift */; };
+		819EE2FD2D3EE1C300F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE2FC2D3EE1C300F0389D /* SDDSServTheme */; };
+		819EE3002D3EE3E000F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE2FF2D3EE3E000F0389D /* SDDSServTheme */; };
+		819EE3042D3F793900F0389D /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3032D3F793900F0389D /* TextField.swift */; };
+		819EE3062D3F794400F0389D /* TextFieldClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3052D3F794400F0389D /* TextFieldClear.swift */; };
+		819EE30A2D3F7A3600F0389D /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3092D3F7A3600F0389D /* TextFieldSize.swift */; };
+		819EE30C2D3F7A4C00F0389D /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE30B2D3F7A4C00F0389D /* TextFieldTypography.swift */; };
+		819EE30E2D3F7A6900F0389D /* TextField+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE30D2D3F7A6900F0389D /* TextField+SizeVariations.swift */; };
+		819EE3112D3F7BED00F0389D /* TextFieldAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE30F2D3F7AD500F0389D /* TextFieldAppearance+Extensions.swift */; };
+		819EE3142D3F7C7400F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE3132D3F7C7400F0389D /* SDDSServTheme */; };
+		819EE3162D3F7E0200F0389D /* TextField+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3152D3F7E0200F0389D /* TextField+ColorVariations.swift */; };
+		819EE3182D3F800700F0389D /* TextFieldClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3172D3F800700F0389D /* TextFieldClearSize.swift */; };
+		819EE31A2D3F801800F0389D /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3192D3F801800F0389D /* TextFieldClearTypography.swift */; };
+		819EE31C2D3F802A00F0389D /* TextFieldClear+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE31B2D3F802A00F0389D /* TextFieldClear+SizeVariations.swift */; };
+		819EE31E2D3F807C00F0389D /* TextFieldClear+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE31D2D3F807C00F0389D /* TextFieldClear+ColorVariations.swift */; };
+		819EE3222D3F814900F0389D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3212D3F814900F0389D /* TextAreaSize.swift */; };
+		819EE3242D3F81E400F0389D /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3232D3F81E400F0389D /* TextAreaTypography.swift */; };
+		819EE3262D3F82C300F0389D /* TextArea+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3252D3F82C300F0389D /* TextArea+SizeVariations.swift */; };
+		819EE3282D3F830E00F0389D /* TextAreaAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3272D3F830E00F0389D /* TextAreaAppearance+Extensions.swift */; };
+		819EE32B2D3F832700F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE32A2D3F832700F0389D /* SDDSServTheme */; };
+		819EE32D2D3F83C300F0389D /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE32C2D3F83C300F0389D /* TextArea.swift */; };
+		819EE32F2D3F83CA00F0389D /* TextAreaClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE32E2D3F83CA00F0389D /* TextAreaClear.swift */; };
+		819EE3322D3F849A00F0389D /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 819EE3312D3F849A00F0389D /* SDDSServTheme */; };
+		819EE3342D3F864500F0389D /* TextArea+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3332D3F864500F0389D /* TextArea+ColorVariations.swift */; };
+		819EE3362D3F873200F0389D /* TextAreaClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3352D3F873200F0389D /* TextAreaClearSize.swift */; };
+		819EE3382D3F874B00F0389D /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3372D3F874B00F0389D /* TextAreaClearTypography.swift */; };
+		819EE33A2D3F876600F0389D /* TextAreaClear+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE3392D3F876600F0389D /* TextAreaClear+SizeVariations.swift */; };
+		819EE33C2D3F877A00F0389D /* TextAreaClear+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE33B2D3F877A00F0389D /* TextAreaClear+ColorVariations.swift */; };
+		819EE33E2D3F879E00F0389D /* TextFieldClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE33D2D3F879E00F0389D /* TextFieldClearPreview.swift */; };
+		819EE3402D3F87B300F0389D /* TextAreaClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EE33F2D3F87B300F0389D /* TextAreaClearPreview.swift */; };
 		81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9014D2CF6E8D600992B04 /* ButtonAppearance+Extensions.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
 		81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */; };
@@ -145,7 +184,6 @@
 		81F7532E2CF4689C000156D9 /* ButtonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7532D2CF4689C000156D9 /* ButtonAccessibility.swift */; };
 		81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752FE2CEFA3AF000156D9 /* String+Variations.swift */; };
 		81F753392CF50015000156D9 /* ButtonAppearance+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752F32CEE2C35000156D9 /* ButtonAppearance+Variations.swift */; };
-		81F7533D2CF501AF000156D9 /* ButtonAppearanceVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7533C2CF501AF000156D9 /* ButtonAppearanceVariation.swift */; };
 		81F753422CF505DE000156D9 /* IconButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752F12CEE2B40000156D9 /* IconButton+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,21 +218,12 @@
 		8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaSizeConfiguration.swift; sourceTree = "<group>"; };
 		8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextEditor.swift; sourceTree = "<group>"; };
 		8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextEditor.swift; sourceTree = "<group>"; };
-		811D2E0C2D10A4BA001C0F48 /* TextFieldAppearance+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextFieldAppearance+Extensions.swift"; sourceTree = "<group>"; };
-		811D2E0D2D10A4BA001C0F48 /* TextFieldDefaultSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultSize.swift; sourceTree = "<group>"; };
-		811D2E0E2D10A4BA001C0F48 /* TextFieldTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
-		811D2E0F2D10A4BA001C0F48 /* SDDSTextField+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSTextField+Preview.swift"; sourceTree = "<group>"; };
-		811D2E102D10A4BA001C0F48 /* ChipAppearance+SDDSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChipAppearance+SDDSTextField.swift"; sourceTree = "<group>"; };
-		811D2E112D10A4BA001C0F48 /* TextFieldChipSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldChipSize.swift; sourceTree = "<group>"; };
+		811D2E0F2D10A4BA001C0F48 /* TextFieldPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldPreview.swift; sourceTree = "<group>"; };
 		811D2E182D10A59F001C0F48 /* TextAreaChipSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaChipSize.swift; sourceTree = "<group>"; };
-		811D2E192D10A59F001C0F48 /* SDDSTextAreaSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextAreaSize.swift; sourceTree = "<group>"; };
-		811D2E1A2D10A59F001C0F48 /* SDDSTextAreaAppearance+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSTextAreaAppearance+Extensions.swift"; sourceTree = "<group>"; };
-		811D2E1B2D10A59F001C0F48 /* SDDSTextAreaChipGroupSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextAreaChipGroupSize.swift; sourceTree = "<group>"; };
-		811D2E1C2D10A59F001C0F48 /* SDDSTextArea+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSTextArea+Preview.swift"; sourceTree = "<group>"; };
+		811D2E1C2D10A59F001C0F48 /* TextAreaPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaPreview.swift; sourceTree = "<group>"; };
 		811D2E222D10A5B4001C0F48 /* SDDSAvatarGroupPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSAvatarGroupPreview.swift; sourceTree = "<group>"; };
 		811D2E242D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSCheckboxGroup+Preview.swift"; sourceTree = "<group>"; };
 		811D2E262D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSChipGroup+Preview.swift"; sourceTree = "<group>"; };
-		811D2E272D10A6CF001C0F48 /* DefaultChipGroupSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultChipGroupSize.swift; sourceTree = "<group>"; };
 		811D2E2A2D10A7B9001C0F48 /* SDDSRadioboxGroup+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSRadioboxGroup+Preview.swift"; sourceTree = "<group>"; };
 		811D2E2C2D115FDD001C0F48 /* AppearanceVariation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceVariation.swift; sourceTree = "<group>"; };
 		811DE1532C50098D000DD354 /* SDDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChip.swift; sourceTree = "<group>"; };
@@ -206,6 +235,14 @@
 		811DE1702C5783B6000DD354 /* HierarchicalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalList.swift; sourceTree = "<group>"; };
 		811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckboxGroup.swift; sourceTree = "<group>"; };
 		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
+		8125DDDC2D397A3D00088A0D /* TextFieldLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLayout.swift; sourceTree = "<group>"; };
+		8125DDDE2D397A4E00088A0D /* TextFieldLabelPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLabelPlacement.swift; sourceTree = "<group>"; };
+		8125DDE02D397A6100088A0D /* TextFieldRequiredPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRequiredPlacement.swift; sourceTree = "<group>"; };
+		8125DDE22D397AC400088A0D /* TextFieldValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValue.swift; sourceTree = "<group>"; };
+		8125DDE52D397B7200088A0D /* TextAreaLabelPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaLabelPlacement.swift; sourceTree = "<group>"; };
+		8125DDE72D397B8400088A0D /* TextAreaLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaLayout.swift; sourceTree = "<group>"; };
+		8125DDE92D397B9300088A0D /* TextAreaRequiredPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaRequiredPlacement.swift; sourceTree = "<group>"; };
+		8125DDEB2D397BA500088A0D /* TextAreaValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaValue.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
@@ -276,6 +313,39 @@
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
+		819EE2922D3EC57700F0389D /* ChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSize.swift; sourceTree = "<group>"; };
+		819EE2CC2D3ECFB200F0389D /* ChipGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupAppearance.swift; sourceTree = "<group>"; };
+		819EE2CF2D3ECFCE00F0389D /* ChipGroupAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupAlignment.swift; sourceTree = "<group>"; };
+		819EE2D12D3ECFDE00F0389D /* ChipGroupGap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupGap.swift; sourceTree = "<group>"; };
+		819EE2D52D3ECFF900F0389D /* ChipGroupSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSizeConfiguration.swift; sourceTree = "<group>"; };
+		819EE2DF2D3ED97B00F0389D /* EmbeddedChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChip.swift; sourceTree = "<group>"; };
+		819EE2E12D3EDBE400F0389D /* ComponentAppearanceVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentAppearanceVariation.swift; sourceTree = "<group>"; };
+		819EE2F32D3EDE5100F0389D /* ChipGroupAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroupAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		819EE2F92D3EE12800F0389D /* EmbeddedChipPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipPreview.swift; sourceTree = "<group>"; };
+		819EE3032D3F793900F0389D /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		819EE3052D3F794400F0389D /* TextFieldClear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClear.swift; sourceTree = "<group>"; };
+		819EE3092D3F7A3600F0389D /* TextFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSize.swift; sourceTree = "<group>"; };
+		819EE30B2D3F7A4C00F0389D /* TextFieldTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
+		819EE30D2D3F7A6900F0389D /* TextField+SizeVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+SizeVariations.swift"; sourceTree = "<group>"; };
+		819EE30F2D3F7AD500F0389D /* TextFieldAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		819EE3152D3F7E0200F0389D /* TextField+ColorVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+ColorVariations.swift"; sourceTree = "<group>"; };
+		819EE3172D3F800700F0389D /* TextFieldClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
+		819EE3192D3F801800F0389D /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		819EE31B2D3F802A00F0389D /* TextFieldClear+SizeVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+SizeVariations.swift"; sourceTree = "<group>"; };
+		819EE31D2D3F807C00F0389D /* TextFieldClear+ColorVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+ColorVariations.swift"; sourceTree = "<group>"; };
+		819EE3212D3F814900F0389D /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		819EE3232D3F81E400F0389D /* TextAreaTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
+		819EE3252D3F82C300F0389D /* TextArea+SizeVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+SizeVariations.swift"; sourceTree = "<group>"; };
+		819EE3272D3F830E00F0389D /* TextAreaAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		819EE32C2D3F83C300F0389D /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		819EE32E2D3F83CA00F0389D /* TextAreaClear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClear.swift; sourceTree = "<group>"; };
+		819EE3332D3F864500F0389D /* TextArea+ColorVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+ColorVariations.swift"; sourceTree = "<group>"; };
+		819EE3352D3F873200F0389D /* TextAreaClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearSize.swift; sourceTree = "<group>"; };
+		819EE3372D3F874B00F0389D /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
+		819EE3392D3F876600F0389D /* TextAreaClear+SizeVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+SizeVariations.swift"; sourceTree = "<group>"; };
+		819EE33B2D3F877A00F0389D /* TextAreaClear+ColorVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+ColorVariations.swift"; sourceTree = "<group>"; };
+		819EE33D2D3F879E00F0389D /* TextFieldClearPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearPreview.swift; sourceTree = "<group>"; };
+		819EE33F2D3F87B300F0389D /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
 		81A9014D2CF6E8D600992B04 /* ButtonAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		81A901522CF6EAA800992B04 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreview.swift; sourceTree = "<group>"; };
@@ -317,7 +387,6 @@
 		81F753292CF4684F000156D9 /* ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppearance.swift; sourceTree = "<group>"; };
 		81F7532B2CF46885000156D9 /* ButtonShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonShapeStyle.swift; sourceTree = "<group>"; };
 		81F7532D2CF4689C000156D9 /* ButtonAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAccessibility.swift; sourceTree = "<group>"; };
-		81F7533C2CF501AF000156D9 /* ButtonAppearanceVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppearanceVariation.swift; sourceTree = "<group>"; };
 		81F7533F2CF502B3000156D9 /* ButtonApperance+Extensions.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ButtonApperance+Extensions.stencil"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +405,13 @@
 			files = (
 				81737DC92CF84F24002A6A74 /* SDDSServTheme in Frameworks */,
 				8151428B2C99944200E6A00D /* SDDSThemeCore in Frameworks */,
+				819EE3142D3F7C7400F0389D /* SDDSServTheme in Frameworks */,
+				819EE3002D3EE3E000F0389D /* SDDSServTheme in Frameworks */,
+				819EE2F82D3EDEAE00F0389D /* SDDSServTheme in Frameworks */,
+				819EE3322D3F849A00F0389D /* SDDSServTheme in Frameworks */,
+				819EE2FD2D3EE1C300F0389D /* SDDSServTheme in Frameworks */,
+				819EE32B2D3F832700F0389D /* SDDSServTheme in Frameworks */,
+				819EE2F22D3EDE0100F0389D /* SDDSServTheme in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +482,10 @@
 		8102BA282CBE9B3300C589D3 /* SDDSTextArea */ = {
 			isa = PBXGroup;
 			children = (
+				819EE32C2D3F83C300F0389D /* TextArea.swift */,
+				819EE32E2D3F83CA00F0389D /* TextAreaClear.swift */,
 				8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */,
-				8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */,
-				8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */,
-				8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */,
+				8125DDE42D397B5800088A0D /* TextAreaAppearance */,
 			);
 			path = SDDSTextArea;
 			sourceTree = "<group>";
@@ -426,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				811DE1532C50098D000DD354 /* SDDSChip.swift */,
+				819EE2DF2D3ED97B00F0389D /* EmbeddedChip.swift */,
 				817339E32D033E310092608A /* ChipData.swift */,
 				811DE15C2C51167A000DD354 /* SDDSChip.md */,
 				817339DC2D033D740092608A /* ChipAppearance */,
@@ -445,6 +522,7 @@
 		811DE16D2C578305000DD354 /* SDDSChipGroup */ = {
 			isa = PBXGroup;
 			children = (
+				819EE2CB2D3ECFA200F0389D /* ChipGroupAppearance */,
 				811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */,
 				811DE15E2C511701000DD354 /* SDDSChipGroup.md */,
 			);
@@ -466,6 +544,36 @@
 				811DE1702C5783B6000DD354 /* HierarchicalList.swift */,
 			);
 			path = HierarchicalList;
+			sourceTree = "<group>";
+		};
+		8125DDDB2D397A0000088A0D /* TextFieldAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				816AA9AD2C97421F00C3347C /* TextFieldAppearance.swift */,
+				816AA9AF2C97424000C3347C /* TextFieldSizeConfiguration.swift */,
+				8125DDDC2D397A3D00088A0D /* TextFieldLayout.swift */,
+				8125DDDE2D397A4E00088A0D /* TextFieldLabelPlacement.swift */,
+				8125DDE02D397A6100088A0D /* TextFieldRequiredPlacement.swift */,
+				816AA9B12C97425F00C3347C /* TextFieldAccessibility.swift */,
+				8125DDE22D397AC400088A0D /* TextFieldValue.swift */,
+				819EE30F2D3F7AD500F0389D /* TextFieldAppearance+Extensions.swift */,
+			);
+			path = TextFieldAppearance;
+			sourceTree = "<group>";
+		};
+		8125DDE42D397B5800088A0D /* TextAreaAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8102BA2C2CBE9B3300C589D3 /* TextAreaAppearance.swift */,
+				8102BA2B2CBE9B3300C589D3 /* TextAreaAccessibility.swift */,
+				8102BA2D2CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift */,
+				8125DDE52D397B7200088A0D /* TextAreaLabelPlacement.swift */,
+				8125DDE72D397B8400088A0D /* TextAreaLayout.swift */,
+				8125DDE92D397B9300088A0D /* TextAreaRequiredPlacement.swift */,
+				8125DDEB2D397BA500088A0D /* TextAreaValue.swift */,
+				819EE3272D3F830E00F0389D /* TextAreaAppearance+Extensions.swift */,
+			);
+			path = TextAreaAppearance;
 			sourceTree = "<group>";
 		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
@@ -582,6 +690,7 @@
 		817AE4DC2C99925900F427DE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				817AE50B2C99925A00F427DE /* SDDSChip */,
 				817AE5052C99925A00F427DE /* SDDSComponentsPreview.swift */,
 				817AE4E42C99925900F427DE /* SDDSTextField */,
 				81D73C442CC9528300B7025C /* SDDSTextArea */,
@@ -596,7 +705,6 @@
 				817AE5062C99925A00F427DE /* SDDSChipGroup */,
 				817AE5092C99925A00F427DE /* SDDSRadioboxGroup */,
 				81BBC5C72C8639BB009616CE /* Utilities */,
-				817AE50B2C99925A00F427DE /* SDDSChip */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -620,12 +728,8 @@
 		817AE4E42C99925900F427DE /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
-				811D2E102D10A4BA001C0F48 /* ChipAppearance+SDDSTextField.swift */,
-				811D2E0F2D10A4BA001C0F48 /* SDDSTextField+Preview.swift */,
-				811D2E0C2D10A4BA001C0F48 /* TextFieldAppearance+Extensions.swift */,
-				811D2E112D10A4BA001C0F48 /* TextFieldChipSize.swift */,
-				811D2E0D2D10A4BA001C0F48 /* TextFieldDefaultSize.swift */,
-				811D2E0E2D10A4BA001C0F48 /* TextFieldTypography.swift */,
+				819EE3082D3F7A1A00F0389D /* TextFieldClear */,
+				819EE3072D3F7A1400F0389D /* TextField */,
 			);
 			path = SDDSTextField;
 			sourceTree = "<group>";
@@ -665,7 +769,7 @@
 		817AE5062C99925A00F427DE /* SDDSChipGroup */ = {
 			isa = PBXGroup;
 			children = (
-				811D2E272D10A6CF001C0F48 /* DefaultChipGroupSize.swift */,
+				819EE2922D3EC57700F0389D /* ChipGroupSize.swift */,
 				811D2E262D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift */,
 			);
 			path = SDDSChipGroup;
@@ -683,6 +787,7 @@
 			isa = PBXGroup;
 			children = (
 				81733A3F2D0738300092608A /* SDDSChipPreview.swift */,
+				819EE2F92D3EE12800F0389D /* EmbeddedChipPreview.swift */,
 			);
 			path = SDDSChip;
 			sourceTree = "<group>";
@@ -737,6 +842,7 @@
 				814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */,
 				8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */,
 				81F752FE2CEFA3AF000156D9 /* String+Variations.swift */,
+				819EE2E12D3EDBE400F0389D /* ComponentAppearanceVariation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -821,6 +927,66 @@
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		819EE2CB2D3ECFA200F0389D /* ChipGroupAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				819EE2CC2D3ECFB200F0389D /* ChipGroupAppearance.swift */,
+				819EE2D52D3ECFF900F0389D /* ChipGroupSizeConfiguration.swift */,
+				819EE2CF2D3ECFCE00F0389D /* ChipGroupAlignment.swift */,
+				819EE2D12D3ECFDE00F0389D /* ChipGroupGap.swift */,
+				819EE2F32D3EDE5100F0389D /* ChipGroupAppearance+Extensions.swift */,
+			);
+			path = ChipGroupAppearance;
+			sourceTree = "<group>";
+		};
+		819EE3072D3F7A1400F0389D /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				819EE3092D3F7A3600F0389D /* TextFieldSize.swift */,
+				819EE30B2D3F7A4C00F0389D /* TextFieldTypography.swift */,
+				819EE30D2D3F7A6900F0389D /* TextField+SizeVariations.swift */,
+				819EE3152D3F7E0200F0389D /* TextField+ColorVariations.swift */,
+				811D2E0F2D10A4BA001C0F48 /* TextFieldPreview.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		819EE3082D3F7A1A00F0389D /* TextFieldClear */ = {
+			isa = PBXGroup;
+			children = (
+				819EE3172D3F800700F0389D /* TextFieldClearSize.swift */,
+				819EE3192D3F801800F0389D /* TextFieldClearTypography.swift */,
+				819EE31B2D3F802A00F0389D /* TextFieldClear+SizeVariations.swift */,
+				819EE31D2D3F807C00F0389D /* TextFieldClear+ColorVariations.swift */,
+				819EE33D2D3F879E00F0389D /* TextFieldClearPreview.swift */,
+			);
+			path = TextFieldClear;
+			sourceTree = "<group>";
+		};
+		819EE31F2D3F813600F0389D /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				811D2E1C2D10A59F001C0F48 /* TextAreaPreview.swift */,
+				819EE3212D3F814900F0389D /* TextAreaSize.swift */,
+				819EE3232D3F81E400F0389D /* TextAreaTypography.swift */,
+				819EE3252D3F82C300F0389D /* TextArea+SizeVariations.swift */,
+				819EE3332D3F864500F0389D /* TextArea+ColorVariations.swift */,
+			);
+			path = TextArea;
+			sourceTree = "<group>";
+		};
+		819EE3202D3F813C00F0389D /* TextAreaClear */ = {
+			isa = PBXGroup;
+			children = (
+				819EE3352D3F873200F0389D /* TextAreaClearSize.swift */,
+				819EE3372D3F874B00F0389D /* TextAreaClearTypography.swift */,
+				819EE3392D3F876600F0389D /* TextAreaClear+SizeVariations.swift */,
+				819EE33B2D3F877A00F0389D /* TextAreaClear+ColorVariations.swift */,
+				819EE33F2D3F87B300F0389D /* TextAreaClearPreview.swift */,
+			);
+			path = TextAreaClear;
 			sourceTree = "<group>";
 		};
 		81BBC5732C862492009616CE /* SDDSComponentsPreview */ = {
@@ -940,10 +1106,8 @@
 		81D73C442CC9528300B7025C /* SDDSTextArea */ = {
 			isa = PBXGroup;
 			children = (
-				811D2E1C2D10A59F001C0F48 /* SDDSTextArea+Preview.swift */,
-				811D2E1A2D10A59F001C0F48 /* SDDSTextAreaAppearance+Extensions.swift */,
-				811D2E1B2D10A59F001C0F48 /* SDDSTextAreaChipGroupSize.swift */,
-				811D2E192D10A59F001C0F48 /* SDDSTextAreaSize.swift */,
+				819EE3202D3F813C00F0389D /* TextAreaClear */,
+				819EE31F2D3F813600F0389D /* TextArea */,
 				811D2E182D10A59F001C0F48 /* TextAreaChipSize.swift */,
 			);
 			path = SDDSTextArea;
@@ -960,11 +1124,11 @@
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				819EE3032D3F793900F0389D /* TextField.swift */,
+				819EE3052D3F794400F0389D /* TextFieldClear.swift */,
 				81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */,
-				816AA9AD2C97421F00C3347C /* TextFieldAppearance.swift */,
-				816AA9AF2C97424000C3347C /* TextFieldSizeConfiguration.swift */,
 				816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */,
-				816AA9B12C97425F00C3347C /* TextFieldAccessibility.swift */,
+				8125DDDB2D397A0000088A0D /* TextFieldAppearance */,
 			);
 			path = SDDSTextField;
 			sourceTree = "<group>";
@@ -983,7 +1147,6 @@
 				81F7531B2CF46755000156D9 /* ButtonStyle.swift */,
 				814185C92C34260300D8E524 /* ButtonSize.swift */,
 				81F752F32CEE2C35000156D9 /* ButtonAppearance+Variations.swift */,
-				81F7533C2CF501AF000156D9 /* ButtonAppearanceVariation.swift */,
 				81F752F12CEE2B40000156D9 /* IconButton+Extensions.swift */,
 			);
 			path = ButtonAppearance;
@@ -1070,6 +1233,13 @@
 			packageProductDependencies = (
 				8151428A2C99944200E6A00D /* SDDSThemeCore */,
 				81737DC82CF84F24002A6A74 /* SDDSServTheme */,
+				819EE2F12D3EDE0100F0389D /* SDDSServTheme */,
+				819EE2F72D3EDEAE00F0389D /* SDDSServTheme */,
+				819EE2FC2D3EE1C300F0389D /* SDDSServTheme */,
+				819EE2FF2D3EE3E000F0389D /* SDDSServTheme */,
+				819EE3132D3F7C7400F0389D /* SDDSServTheme */,
+				819EE32A2D3F832700F0389D /* SDDSServTheme */,
+				819EE3312D3F849A00F0389D /* SDDSServTheme */,
 			);
 			productName = SDDSComponentsPreview;
 			productReference = 81BBC5722C862492009616CE /* SDDSComponentsPreview.framework */;
@@ -1133,7 +1303,7 @@
 			packageReferences = (
 				815142872C99942E00E6A00D /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				814E301E2C999469004601F7 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeUtilities" */,
-				81737DC72CF84F24002A6A74 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
+				819EE3302D3F849A00F0389D /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
 			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
@@ -1185,33 +1355,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819EE2FA2D3EE12800F0389D /* EmbeddedChipPreview.swift in Sources */,
 				817AE5302C99925A00F427DE /* SDDSComponentsPreview.swift in Sources */,
-				811D2E1E2D10A59F001C0F48 /* SDDSTextAreaSize.swift in Sources */,
-				811D2E132D10A4BA001C0F48 /* TextFieldDefaultSize.swift in Sources */,
+				819EE3402D3F87B300F0389D /* TextAreaClearPreview.swift in Sources */,
 				811D2E252D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift in Sources */,
 				81733A082D03633A0092608A /* SDDSRadioboxPreview.swift in Sources */,
-				811D2E1F2D10A59F001C0F48 /* SDDSTextAreaAppearance+Extensions.swift in Sources */,
+				819EE3222D3F814900F0389D /* TextAreaSize.swift in Sources */,
 				811D2E2B2D10A7B9001C0F48 /* SDDSRadioboxGroup+Preview.swift in Sources */,
+				819EE30E2D3F7A6900F0389D /* TextField+SizeVariations.swift in Sources */,
+				819EE3242D3F81E400F0389D /* TextAreaTypography.swift in Sources */,
+				819EE31E2D3F807C00F0389D /* TextFieldClear+ColorVariations.swift in Sources */,
+				819EE30C2D3F7A4C00F0389D /* TextFieldTypography.swift in Sources */,
+				819EE33A2D3F876600F0389D /* TextAreaClear+SizeVariations.swift in Sources */,
 				811D2E282D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift in Sources */,
 				81733A2F2D0731420092608A /* SDDSAvatarPreview.swift in Sources */,
 				81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */,
 				81733A2D2D0730A10092608A /* SDDSProgressBarPreview.swift in Sources */,
-				811D2E172D10A4BA001C0F48 /* TextFieldChipSize.swift in Sources */,
-				811D2E142D10A4BA001C0F48 /* TextFieldTypography.swift in Sources */,
+				819EE31A2D3F801800F0389D /* TextFieldClearTypography.swift in Sources */,
+				819EE3382D3F874B00F0389D /* TextAreaClearTypography.swift in Sources */,
+				819EE2932D3EC57700F0389D /* ChipGroupSize.swift in Sources */,
+				819EE33C2D3F877A00F0389D /* TextAreaClear+ColorVariations.swift in Sources */,
+				819EE30A2D3F7A3600F0389D /* TextFieldSize.swift in Sources */,
+				819EE31C2D3F802A00F0389D /* TextFieldClear+SizeVariations.swift in Sources */,
 				81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */,
-				811D2E212D10A59F001C0F48 /* SDDSTextArea+Preview.swift in Sources */,
-				811D2E292D10A6CF001C0F48 /* DefaultChipGroupSize.swift in Sources */,
+				811D2E212D10A59F001C0F48 /* TextAreaPreview.swift in Sources */,
 				81BBC59A2C862817009616CE /* SDDSServeStyle.swift in Sources */,
-				811D2E122D10A4BA001C0F48 /* TextFieldAppearance+Extensions.swift in Sources */,
-				811D2E162D10A4BA001C0F48 /* ChipAppearance+SDDSTextField.swift in Sources */,
 				817AE5262C99925A00F427DE /* SDDSSwitchPreview.swift in Sources */,
 				811D2E232D10A5B4001C0F48 /* SDDSAvatarGroupPreview.swift in Sources */,
 				811D2E1D2D10A59F001C0F48 /* TextAreaChipSize.swift in Sources */,
 				81733A062D0362D00092608A /* SDDSCheckboxPreview.swift in Sources */,
 				81733A402D0738300092608A /* SDDSChipPreview.swift in Sources */,
-				811D2E152D10A4BA001C0F48 /* SDDSTextField+Preview.swift in Sources */,
+				811D2E152D10A4BA001C0F48 /* TextFieldPreview.swift in Sources */,
 				81BBC5952C862764009616CE /* Spacing.swift in Sources */,
-				811D2E202D10A59F001C0F48 /* SDDSTextAreaChipGroupSize.swift in Sources */,
+				819EE33E2D3F879E00F0389D /* TextFieldClearPreview.swift in Sources */,
+				819EE3342D3F864500F0389D /* TextArea+ColorVariations.swift in Sources */,
+				819EE3162D3F7E0200F0389D /* TextField+ColorVariations.swift in Sources */,
+				819EE3362D3F873200F0389D /* TextAreaClearSize.swift in Sources */,
+				819EE3262D3F82C300F0389D /* TextArea+SizeVariations.swift in Sources */,
+				819EE3182D3F800700F0389D /* TextFieldClearSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,9 +1401,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
+				8125DDDD2D397A3D00088A0D /* TextFieldLayout.swift in Sources */,
+				819EE2D62D3ECFF900F0389D /* ChipGroupSizeConfiguration.swift in Sources */,
 				8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */,
+				819EE2F52D3EDE7200F0389D /* ChipGroupAppearance+Extensions.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,
+				819EE3062D3F794400F0389D /* TextFieldClear.swift in Sources */,
 				817339F12D033EF30092608A /* AvatarImageSource.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */,
@@ -1244,6 +1429,7 @@
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
 				816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
+				8125DDE62D397B7200088A0D /* TextAreaLabelPlacement.swift in Sources */,
 				816AA9B22C97425F00C3347C /* TextFieldAccessibility.swift in Sources */,
 				814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */,
 				81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */,
@@ -1251,6 +1437,7 @@
 				69573D6A2D1D756000359D53 /* SegmentItemAppearance+Extensions.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
 				81733A3A2D0733460092608A /* ChipAppearance+Extensions.swift in Sources */,
+				819EE2EF2D3EDDBB00F0389D /* ChipGroupGap.swift in Sources */,
 				81F753422CF505DE000156D9 /* IconButton+Extensions.swift in Sources */,
 				81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */,
 				814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */,
@@ -1258,16 +1445,19 @@
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
+				8125DDE82D397B8400088A0D /* TextAreaLayout.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				817339E22D033DA30092608A /* ChipBorderStyle.swift in Sources */,
 				81F753222CF467CC000156D9 /* ButtonLayoutMode.swift in Sources */,
 				81F753262CF467F6000156D9 /* ButtonIconAttributes.swift in Sources */,
 				817339EB2D033EB90092608A /* AvatarStatus.swift in Sources */,
+				8125DDEC2D397BA500088A0D /* TextAreaValue.swift in Sources */,
 				81F7532C2CF46885000156D9 /* ButtonShapeStyle.swift in Sources */,
 				6950A12A2D1D4D56001695C5 /* SegmentItemSize.swift in Sources */,
 				81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */,
 				69573D6C2D1D7C5D00359D53 /* SegmentItemAppearance+Variation.swift in Sources */,
 				697737852D2EB8030077D1A4 /* View+ErrorString.swift in Sources */,
+				819EE3042D3F793900F0389D /* TextField.swift in Sources */,
 				81F7531C2CF46755000156D9 /* ButtonStyle.swift in Sources */,
 				81F753282CF46831000156D9 /* ButtonColor.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
@@ -1282,12 +1472,16 @@
 				81F753242CF467E5000156D9 /* ButtonContentAlignment.swift in Sources */,
 				6969EADE2D1D5B8E008536E5 /* SegmentItemAppearanceVariations.swift in Sources */,
 				816AA9B02C97424000C3347C /* TextFieldSizeConfiguration.swift in Sources */,
+				819EE3282D3F830E00F0389D /* TextAreaAppearance+Extensions.swift in Sources */,
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
+				819EE32F2D3F83CA00F0389D /* TextAreaClear.swift in Sources */,
+				819EE2D42D3ECFE400F0389D /* ChipGroupAlignment.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */,
 				698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */,
 				811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */,
 				8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */,
+				8125DDDF2D397A4E00088A0D /* TextFieldLabelPlacement.swift in Sources */,
 				81F7531E2CF46793000156D9 /* ButtonAlignment.swift in Sources */,
 				81733A0D2D0367BD0092608A /* ProgressBarAppearance+Extensions.swift in Sources */,
 				81F7532E2CF4689C000156D9 /* ButtonAccessibility.swift in Sources */,
@@ -1296,29 +1490,36 @@
 				696843452D1EA35B002F8C7A /* SegmentItemAccessibility.swift in Sources */,
 				817339E92D033E8E0092608A /* AvatarAppearance.swift in Sources */,
 				6950A1282D1D4C47001695C5 /* SegmentItemAppearance.swift in Sources */,
+				8125DDE12D397A6100088A0D /* TextFieldRequiredPlacement.swift in Sources */,
 				811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */,
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
+				819EE2E22D3EDBE400F0389D /* ComponentAppearanceVariation.swift in Sources */,
 				814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */,
 				81F753392CF50015000156D9 /* ButtonAppearance+Variations.swift in Sources */,
 				816AA9AE2C97421F00C3347C /* TextFieldAppearance.swift in Sources */,
+				819EE2E02D3ED97B00F0389D /* EmbeddedChip.swift in Sources */,
 				8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */,
 				81F7532A2CF4684F000156D9 /* ButtonAppearance.swift in Sources */,
+				8125DDE32D397AC400088A0D /* TextFieldValue.swift in Sources */,
 				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
 				817339E02D033D940092608A /* ChipSizeConfiguration.swift in Sources */,
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				81733A2B2D072FB70092608A /* AvatarAppearance+Extensions.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
+				8125DDEA2D397B9300088A0D /* TextAreaRequiredPlacement.swift in Sources */,
+				819EE2CE2D3ECFBB00F0389D /* ChipGroupAppearance.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */,
 				81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */,
+				819EE32D2D3F83C300F0389D /* TextArea.swift in Sources */,
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
 				8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */,
 				81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */,
-				81F7533D2CF501AF000156D9 /* ButtonAppearanceVariation.swift in Sources */,
 				81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
+				819EE3112D3F7BED00F0389D /* TextFieldAppearance+Extensions.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
 				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
 			);
@@ -1696,13 +1897,13 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
-		81737DC72CF84F24002A6A74 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/SDDSservTheme;
-		};
 		819CB7FB2C7CC34A00B4FBF4 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
+		};
+		819EE3302D3F849A00F0389D /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Themes/SDDSservTheme;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -1731,6 +1932,34 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 819CB7FB2C7CC34A00B4FBF4 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */;
 			productName = SDDSThemeCore;
+		};
+		819EE2F12D3EDE0100F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE2F72D3EDEAE00F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE2FC2D3EE1C300F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE2FF2D3EE3E000F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE3132D3F7C7400F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE32A2D3F832700F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
+		};
+		819EE3312D3F849A00F0389D /* SDDSServTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSServTheme;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

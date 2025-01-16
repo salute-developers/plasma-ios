@@ -2,8 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
-    
+public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
     case large
     case medium
     case small
@@ -442,27 +441,8 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     }
 }
 
-extension SDDSTextAreaSize {
-    public var chipGroupSize: SDDSTextAreaChipGroupSize {
-        switch self {
-        case .large:
-            return .large(.left)
-        case .medium:
-            return .medium(.left)
-        case .small:
-            return .small(.left)
-        case .extraSmall:
-            return .extraSmall(.left)
-        }
-    }
-}
-
-extension SDDSTextAreaSize: Hashable {
+extension TextAreaClearSize: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.rawValue)
     }
-}
-
-#Preview {
-    SDDSTextAreaPreview.previews
 }

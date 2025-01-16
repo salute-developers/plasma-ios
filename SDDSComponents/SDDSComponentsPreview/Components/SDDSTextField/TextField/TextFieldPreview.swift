@@ -5,67 +5,61 @@ import SDDSServTheme
 
 // MARK: - Preview
 
-struct SDDSTextAreaPreview: PreviewProvider {
+struct TextFieldPreview: PreviewProvider {
     static var previews: some View {
-        let chips = (1...12).map { index in
+        let chips = (1...3).map { index in
             ChipData(
-                title: "ChipTitle",
+                title: "Label",
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
-                appearance: .textArea,
+                appearance: EmbeddedChip.secondary.large.appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
         }
         
+        Theme.initialize()
+        
         return Group {
-            SDDSTextArea(
-                value: .constant(.single("Value")),
+            SDDSComponents.TextField(
+                value: .constant(.single("")),
                 title: "Title",
                 optionalTitle: "optional",
                 placeholder: "Placeholder",
                 caption: "caption",
-                counter: "counter",
+                textBefore: "",
+                textAfter: "",
                 disabled: false,
                 readOnly: false,
-                style: .warning,
                 labelPlacement: .inner,
                 required: false,
-                requiredPlacement: .left,
-                dynamicHeight: true,
-                appearance: .defaultAppearance,
-                size: SDDSTextAreaSize.medium,
-                chipGroupSize: SDDSTextAreaSize.large.chipGroupSize,
-                layout: .clear,
+                requiredPlacement: .right,
+                appearance: TextField.default.large.appearance,
+                chipGroupAppearance: SDDSChipGroup.large.appearance,
+                iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Outer Label")
             .previewLayout(.sizeThatFits)
-            .padding()
             
-            SDDSTextArea(
+            SDDSComponents.TextField(
                 value: .constant(.multiple("", chips)),
                 title: "Title",
-                optionalTitle: "",
+                optionalTitle: "optional",
                 placeholder: "Placeholder",
                 caption: "caption",
-                counter: "counter",
                 disabled: false,
-                style: .default,
-                labelPlacement: .inner,
+                labelPlacement: .outer,
                 required: true,
-                requiredPlacement: .right,
-                dynamicHeight: true,
-                appearance: .defaultAppearance,
-                size: SDDSTextAreaSize.large,
-                chipGroupSize: SDDSTextAreaSize.large.chipGroupSize,
-                layout: .clear,
+                requiredPlacement: .left,
+                appearance: TextField.default.large.appearance,
+                chipGroupAppearance: SDDSChipGroup.large.appearance,
+                iconViewProvider: nil,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")
             .previewLayout(.sizeThatFits)
-            .padding()
         }
     }
     
@@ -83,6 +77,5 @@ struct SDDSTextAreaPreview: PreviewProvider {
             .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: .fit)
-        
     }
 }

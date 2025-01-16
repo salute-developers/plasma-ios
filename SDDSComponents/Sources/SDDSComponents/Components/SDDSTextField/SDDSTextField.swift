@@ -2,72 +2,6 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
-// MARK: - Enums and Configurations
-
-/// Определяет возможные стили для текстового поля.
-public enum TextFieldStyle: String, CaseIterable {
-    case `default`
-    case error
-    case warning
-    case success
-}
-
-/// Определяет возможные макеты для текстового поля.
-public enum TextFieldLayout: String, CaseIterable {
-    case `default`
-    case clear
-}
-
-/// Определяет размещение метки текстового поля.
-public enum TextFieldLabelPlacement: String, CaseIterable {
-    case outer
-    case inner
-    case none
-}
-
-/// Определяет размещение обязательного индикатора.
-public enum TextFieldRequiredPlacement: String, CaseIterable {
-    case left
-    case right
-}
-
-/// Определяет возможные значения текстового поля.
-public enum TextFieldValue: Equatable {
-    /// Одиночное текстовое значение.
-    case single(String)
-    /// Множественное значение с чипсами.
-    case multiple(String, [ChipData])
-    
-    public static func == (lhs: TextFieldValue, rhs: TextFieldValue) -> Bool {
-        switch (lhs, rhs) {
-        case (.single(let lhs), .single(let rhs)):
-            return lhs == rhs
-        case (.multiple(let lhsText, let lhsChips), .multiple(let rhsText, let rhsChips)):
-            return lhsText == rhsText && lhsChips == rhsChips
-        default:
-            return false
-        }
-    }
-    
-    public var text: String {
-        switch self {
-        case .single(let text):
-            return text
-        case .multiple(let text, _):
-            return text
-        }
-    }
-    
-    public func updated(with text: String) -> TextFieldValue {
-        switch self {
-        case .single:
-            return .single(text)
-        case .multiple(_, let chips):
-            return .multiple(text, chips)
-        }
-    }
-}
-
 // MARK: - SDDSTextField
 
 /**
@@ -83,13 +17,13 @@ public enum TextFieldValue: Equatable {
     - textAfter: Суффикс после текста или плейсхолдера.
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
-    - style: Стиль текстового поля (`default`, `error`, `warning`, `success`).
     - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
     - required: Флаг, указывающий, является ли поле обязательным.
     - divider: Флаг, указывающий, показывать ли линию разделителя.
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
-    - size: Конфигурация размеров текстового поля.
+    - chipGroupAppearance: Параметры внешнего вида ChipGroup.
+    - chipGroupGap: Распределение элементов в ChipGroup.
     - layout: Макет текстового поля (`default`, `clear`).
     - accessibility: Параметры доступности.
     - iconViewProvider: Поставщик левого иконки.
@@ -106,13 +40,13 @@ public struct SDDSTextField: View {
     public let textAfter: String
     public let disabled: Bool
     public let readOnly: Bool
-    public let style: TextFieldStyle
     public let labelPlacement: TextFieldLabelPlacement
     public let required: Bool
     public let divider: Bool
     public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
-    public let size: TextFieldSizeConfiguration
+    public let chipGroupAppearance: ChipGroupAppearance
+    public let chipGroupGap: ChipGroupGap
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
@@ -120,6 +54,7 @@ public struct SDDSTextField: View {
 
     @Environment(\.colorScheme) private var colorScheme
     @State private var isFocused: Bool = false
+    @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
@@ -132,13 +67,13 @@ public struct SDDSTextField: View {
         textAfter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
-        style: TextFieldStyle = .default,
         labelPlacement: TextFieldLabelPlacement = .outer,
         required: Bool = false,
         divider: Bool = true,
         requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
-        size: TextFieldSizeConfiguration,
+        chipGroupAppearance: ChipGroupAppearance,
+        chipGroupGap: ChipGroupGap,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -157,7 +92,6 @@ public struct SDDSTextField: View {
         self.textAfter = textAfter
         self.disabled = disabled
         self.readOnly = readOnly
-        self.style = style
         self.labelPlacement = labelPlacement
         self.required = required
         self.divider = divider
@@ -166,7 +100,8 @@ public struct SDDSTextField: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.appearance = appearance
-        self.size = size
+        self.chipGroupAppearance = chipGroupAppearance
+        self.chipGroupGap = chipGroupGap
         self.layout = layout
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
@@ -223,7 +158,7 @@ public struct SDDSTextField: View {
                 indicatorWitLeadingPadding
             }
         }
-        .padding(.bottom, size.titleBottomPadding, debug: debugConfiguration.titleBottomPadding)
+        .padding(.bottom, appearance.size.titleBottomPadding, debug: debugConfiguration.titleBottomPadding)
     }
 
     @ViewBuilder
@@ -243,7 +178,7 @@ public struct SDDSTextField: View {
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
             .debug(condition: debugConfiguration.title)
-            .padding(.leading, size.optionalPadding)
+            .padding(.leading, appearance.size.optionalPadding)
     }
     
     @ViewBuilder
@@ -256,22 +191,22 @@ public struct SDDSTextField: View {
                 .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
                 .multilineTextAlignment(appearance.titleTextAlignment)
                 .debug(condition: debugConfiguration.title)
-                .padding(.leading, size.optionalPadding)
+                .padding(.leading, appearance.size.optionalPadding)
         }
     }
 
     @ViewBuilder
     private var indicatorWithTrailingPadding: some View {
         indicatorView
-            .padding(.trailing, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.trailing, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
+            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
     }
     
     @ViewBuilder
     private var indicatorWitLeadingPadding: some View {
         indicatorView
-            .padding(.leading, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.leading, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
+            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
     }
 
     @ViewBuilder
@@ -289,14 +224,20 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private func chipsScrollView(chips: [ChipData], proxy: ScrollViewProxy) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: size.multipleValueHorizontalPadding) {
-                ForEach(chips, id: \.self) { chipData in
-                    SDDSChip(data: chipData)
-                }
+            HStack(spacing: appearance.size.multipleValueHorizontalPadding) {
+                SDDSChipGroup(
+                    data: chips,
+                    gap: chipGroupGap,
+                    appearance: chipGroupAppearance,
+                    height: .constant(appearance.size.chipGroupHeight)
+                )
+                .frame(height: appearance.size.chipGroupHeight)
+                .padding(.bottom, appearance.size.chipGroupVerticalBottomPadding)
+                .padding(.top, appearance.size.chipGroupVerticalTopPadding)
                 
                 textField
                     .id(textFieldIdentifier)
-                    .padding(.leading, size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
+                    .padding(.leading, appearance.size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
                     .onTapGesture {
                         isFocused = true
                     }
@@ -320,8 +261,8 @@ public struct SDDSTextField: View {
                     HStack(spacing: 0) {
                         if showSuffixOrPrefix {
                             textBeforeView
-                                .padding(.leading, size.textBeforeLeadingPadding)
-                                .padding(.trailing, size.textBeforeTrailingPadding)
+                                .padding(.leading, appearance.size.textBeforeLeadingPadding)
+                                .padding(.trailing, appearance.size.textBeforeTrailingPadding)
                         }
                         PlaceholderTextField(
                             text: $text, 
@@ -357,8 +298,8 @@ public struct SDDSTextField: View {
 
                         if showSuffixOrPrefix {
                             textAfterView
-                                .padding(.leading, size.textAfterLeadingPadding)
-                                .padding(.trailing, size.textAfterTrailingPadding)
+                                .padding(.leading, appearance.size.textAfterLeadingPadding)
+                                .padding(.trailing, appearance.size.textAfterTrailingPadding)
                         }
                     }
                     
@@ -439,7 +380,7 @@ public struct SDDSTextField: View {
         Text(optionalTitle)
             .typography(textTypography)
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
-            .padding(.leading, size.optionalPadding)
+            .padding(.leading, appearance.size.optionalPadding)
     }
         
     @ViewBuilder
@@ -488,7 +429,7 @@ public struct SDDSTextField: View {
                 }
                 .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
                 .padding(.trailing, boxTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
-                .frame(height: size.fieldHeight, debug: debugConfiguration.fieldHeight)
+                .frame(height: appearance.size.fieldHeight, debug: debugConfiguration.fieldHeight)
                 
                 if layout == .clear {
                     bottomLineView
@@ -503,13 +444,13 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var backgroundView: some View {
-        RoundedRectangle(cornerRadius: size.cornerRadius)
-            .strokeBorder(appearance.borderColor(for: style).color(for: colorScheme), lineWidth: size.borderWidth)
+        RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
+            .strokeBorder(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.borderWidth)
             .background(
-                RoundedRectangle(cornerRadius: size.cornerRadius)
+                RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
                     .fill(backgroundColor)
             )
-            .frame(height: size.fieldHeight, debug: debugConfiguration.fieldView)
+            .frame(height: appearance.size.fieldHeight, debug: debugConfiguration.fieldView)
     }
 
     @ViewBuilder
@@ -525,7 +466,7 @@ public struct SDDSTextField: View {
                 innerOptionalTitleView
             }
         }
-        .padding([.top, .bottom], size.titleInnerPadding, debug: debugConfiguration.innerTitle)
+        .padding([.top, .bottom], appearance.size.titleInnerPadding, debug: debugConfiguration.innerTitle)
     }
 
     @ViewBuilder
@@ -533,7 +474,7 @@ public struct SDDSTextField: View {
         if divider {
             Rectangle()
                 .fill(bottomLineColor)
-                .frame(height: size.dividerHeight, debug: debugConfiguration.fieldView)
+                .frame(height: appearance.size.dividerHeight, debug: debugConfiguration.fieldView)
         } else {
             EmptyView()
         }
@@ -543,41 +484,48 @@ public struct SDDSTextField: View {
         if readOnly {
             return appearance.backgroundColorReadOnly.color(for: colorScheme)
         }
-        return appearance.backgroundColor(for: style, isFocused: isFocused, readOnly: readOnly).color(for: colorScheme)
+        if isFocused {
+            return appearance.backgroundColorFocused.color(for: colorScheme)
+        }
+        return appearance.backgroundColor.color(for: colorScheme)
     }
     
     private var captionColor: Color {
         if readOnly {
             return appearance.captionColorReadOnly.color(for: colorScheme)
         }
-        return appearance.captionColor(for: isFocused ? .default : style).color(for: colorScheme)
+        if isFocused {
+            return appearance.captionColorFocused.color(for: colorScheme)
+        }
+        return appearance.captionColor.color(for: colorScheme)
     }
     
     private var placeholderColor: Color {
         if readOnly {
             return appearance.placeholderColorReadOnly.color(for: colorScheme)
         }
-        return appearance.placeholderColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
+        if isFocused {
+            return appearance.placeholderColorFocused.color(for: colorScheme)
+        }
+        return appearance.placeholderColor.color(for: colorScheme)
     }
     
     private var textColor: Color {
         if readOnly {
             return appearance.textColorReadOnly.color(for: colorScheme)
         }
-        return appearance.textColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
+        if isFocused {
+            return appearance.textColorFocused.color(for: colorScheme)
+        }
+        return appearance.textColor.color(for: colorScheme)
     }
     
     private var bottomLineColor: Color {
         if isFocused {
-            return appearance.focusedLineColor(for: style).color(for: colorScheme)
+            return appearance.lineColorFocused.color(for: colorScheme)
         }
         
-        switch style {
-        case .error, .success, .warning:
-            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
-        case .default:
-            return appearance.lineColor.color(for: colorScheme)
-        }
+        return appearance.lineColor.color(for: colorScheme)
     }
     
     private var iconViewColor: Color {
@@ -598,8 +546,8 @@ public struct SDDSTextField: View {
         if let leftView = iconViewProvider?.view {
             leftView
                 .foregroundColor(iconViewColor)
-                .frame(width: iconViewWidth, height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
-                .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
+                .frame(width: iconViewWidth, height: min(appearance.size.iconSize.height, appearance.size.fieldHeight), debug: debugConfiguration.icon)
+                .padding(.trailing, appearance.size.iconPadding, debug: debugConfiguration.icon)
         } else {
             EmptyView()
         }
@@ -610,8 +558,8 @@ public struct SDDSTextField: View {
         if let rightView = iconActionViewProvider?.view {
             rightView
                 .foregroundColor(appearance.endContentColor.color(for: colorScheme))
-                .frame(width: iconActionViewWidth, height: min(size.iconActionSize.height, size.fieldHeight), debug: debugConfiguration.iconAction)
-                .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
+                .frame(width: iconActionViewWidth, height: min(appearance.size.iconActionSize.height, appearance.size.fieldHeight), debug: debugConfiguration.iconAction)
+                .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {
             EmptyView()
         }
@@ -624,14 +572,14 @@ public struct SDDSTextField: View {
             .multilineTextAlignment(appearance.captionTextAlignment)
             .foregroundColor(captionColor)
             .debug(condition: debugConfiguration.caption)
-            .padding(.top, size.captionTopPadding, debug: debugConfiguration.captionTopPadding)
+            .padding(.top, appearance.size.captionTopPadding, debug: debugConfiguration.captionTopPadding)
     }
 
     @ViewBuilder
     private var indicatorView: some View {
         Circle()
             .fill(appearance.requiredIndicatorColor.color(for: colorScheme))
-            .frame(width: size.indicatorSize.width, height: size.indicatorSize.height, debug: debugConfiguration.indicatorView)
+            .frame(width: appearance.size.indicatorSize.width, height: appearance.size.indicatorSize.height, debug: debugConfiguration.indicatorView)
     }
 
     @ViewBuilder
@@ -646,7 +594,7 @@ public struct SDDSTextField: View {
             }
             Spacer()
         }
-        .frame(height: size.fieldHeight, debug: debugConfiguration.fieldHeight)
+        .frame(height: appearance.size.fieldHeight, debug: debugConfiguration.fieldHeight)
     }
 
     // MARK: - Computed Properties for Conditions
@@ -667,12 +615,12 @@ public struct SDDSTextField: View {
         if !textBefore.isEmpty && !displayChips {
             let textBeforeSize = (textBefore as NSString).size(withAttributes: [NSAttributedString.Key.font: textBeforeTypography.uiFont])
             maxWidth -= (textBeforeSize.width + deltaPadding)
-            maxWidth -= (size.textBeforeLeadingPadding + size.textBeforeTrailingPadding)
+            maxWidth -= (appearance.size.textBeforeLeadingPadding + appearance.size.textBeforeTrailingPadding)
         }
         if !textAfter.isEmpty && !displayChips {
             let textBeforeSize = (textAfter as NSString).size(withAttributes: [NSAttributedString.Key.font: textAfterTypography.uiFont])
             maxWidth -= (textBeforeSize.width + deltaPadding)
-            maxWidth -= (size.textAfterLeadingPadding + size.textAfterTrailingPadding)
+            maxWidth -= (appearance.size.textAfterLeadingPadding + appearance.size.textAfterTrailingPadding)
         }
         
         return min(
@@ -682,17 +630,17 @@ public struct SDDSTextField: View {
     }
     
     private var iconActionViewWidth: CGFloat {
-        min(size.iconActionSize.width, size.fieldHeight)
+        min(appearance.size.iconActionSize.width, appearance.size.fieldHeight)
     }
     
     private var iconViewWidth: CGFloat {
-        min(size.iconSize.width, size.fieldHeight)
+        min(appearance.size.iconSize.width, appearance.size.fieldHeight)
     }
 
     private var shouldShowInnerTitle: Bool {
         labelPlacement == .inner &&
         !displayChips &&
-        appearance.innerTitleTypography.typography(with: size) != nil &&
+        appearance.innerTitleTypography.typography(with: appearance.size) != nil &&
         !placeholder.isEmpty
     }
 
@@ -757,59 +705,63 @@ public struct SDDSTextField: View {
         }
     }
     
+    private var calculatedChipGroupHeight: CGFloat {
+        return min(appearance.size.chipGroupHeight, chipGroupContentHeight)
+    }
+    
     private let textFieldIdentifier = "TextField"
 
     private var titleTypography: TypographyToken {
-        guard let typography = appearance.titleTypography.typography(with: size) else {
-            fatalError("Undefined Title Typography for size \(size).")
+        guard let typography = appearance.titleTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Title Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
 
     private var innerTitleTypography: TypographyToken {
-        guard let typography = appearance.innerTitleTypography.typography(with: size) else {
-            fatalError("Undefined Inner Title Typography for size \(size).")
+        guard let typography = appearance.innerTitleTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Inner Title Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
 
     private var captionTypography: TypographyToken {
-        guard let typography = appearance.captionTypography.typography(with: size) else {
-            fatalError("Undefined Caption Typography for size \(size).")
+        guard let typography = appearance.captionTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Caption Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
 
     private var textTypography: TypographyToken {
-        guard let typography = appearance.textTypography.typography(with: size) else {
-            fatalError("Undefined Text Typography for size \(size).")
+        guard let typography = appearance.textTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Text Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
     
     private var textBeforeTypography: TypographyToken {
-        guard let typography = appearance.textBeforeTypography.typography(with: size) else {
-            fatalError("Undefined Text Typography for size \(size).")
+        guard let typography = appearance.textBeforeTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Text Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
     
     private var textAfterTypography: TypographyToken {
-        guard let typography = appearance.textAfterTypography.typography(with: size) else {
-            fatalError("Undefined Text Typography for size \(size).")
+        guard let typography = appearance.textAfterTypography.typography(with: appearance.size) else {
+            fatalError("Undefined Text Typography for appearance.size \(appearance.size).")
         }
         return typography
     }
     
     private var boxLeadingPadding: CGFloat {
         if displayChips {
-            return size.chipsPadding
+            return appearance.size.chipsPadding
         }
         
-        return layout == .clear ? 0 : size.boxLeadingPadding
+        return layout == .clear ? 0 : appearance.size.boxLeadingPadding
     }
     
     private var boxTrailingPadding: CGFloat {
-        layout == .clear ? 0 : size.boxTrailingPadding
+        layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
 }

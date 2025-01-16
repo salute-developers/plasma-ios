@@ -109,6 +109,6 @@ public enum TextAreaChipSize: String, ChipSizeConfiguration {
     }
 }
 
-#Preview {
-    SDDSTextAreaPreview.previews
-}
+//#Preview {
+//    SDDSTextAreaPreview.previews
+//}

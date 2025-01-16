@@ -1,28 +1,14 @@
 import Foundation
 import SwiftUI
-import SDDSServTheme
 import SDDSComponents
 
-public extension ChipAppearance {
-    static var textField: ChipAppearance {
-        ChipAppearance(
-            titleColor: .textDefaultPrimary,
-            titleTypography: ChipTextFieldTypography.text,
-            imageTintColor: .textDefaultPrimary,
-            buttonTintColor: .textDefaultPrimary,
-            backgroundColor: .surfaceDefaultTransparentSecondary,
-            disabledAlpha: 0.5
-        )
-    }
-}
-
-struct ChipTextFieldTypography: GeneralTypographyConfiguration {
+public struct EmbeddedChipTypography: GeneralTypographyConfiguration {
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
     let extraSmall: TypographyToken?
     
-    func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: ChipSizeConfiguration) -> TypographyToken? {
         switch size as? SDDSChipSize {
         case .large:
             return large
@@ -36,9 +22,9 @@ struct ChipTextFieldTypography: GeneralTypographyConfiguration {
     }
 }
 
-extension ChipTextFieldTypography {
-    static var text: TypographyConfiguration {
-        ChipTextFieldTypography(
+public extension EmbeddedChipTypography {
+    static var title: TypographyConfiguration {
+        EmbeddedChipTypography(
             large: Typographies.bodyLNormal.typography,
             medium: Typographies.bodyMNormal.typography,
             small: Typographies.bodySNormal.typography,

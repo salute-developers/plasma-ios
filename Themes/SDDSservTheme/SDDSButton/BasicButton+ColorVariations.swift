@@ -4,7 +4,7 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public extension ButtonAppearanceVariation<BasicButton> {
+public extension ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
     var accent: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: BasicButton.accent.appearance)
@@ -58,7 +58,7 @@ public extension ButtonAppearanceVariation<BasicButton> {
 }
 
 public extension BasicButton {
-    static var accent: ButtonAppearanceVariation<BasicButton> {
+    static var accent: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "accent",
             appearance: ButtonAppearance(
@@ -94,7 +94,7 @@ public extension BasicButton {
             )
         )
     }
-    static var black: ButtonAppearanceVariation<BasicButton> {
+    static var black: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "black",
             appearance: ButtonAppearance(
@@ -130,7 +130,7 @@ public extension BasicButton {
             )
         )
     }
-    static var clear: ButtonAppearanceVariation<BasicButton> {
+    static var clear: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "clear",
             appearance: ButtonAppearance(
@@ -166,7 +166,7 @@ public extension BasicButton {
             )
         )
     }
-    static var dark: ButtonAppearanceVariation<BasicButton> {
+    static var dark: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "dark",
             appearance: ButtonAppearance(
@@ -202,7 +202,7 @@ public extension BasicButton {
             )
         )
     }
-    static var `default`: ButtonAppearanceVariation<BasicButton> {
+    static var `default`: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "default",
             appearance: ButtonAppearance(
@@ -238,7 +238,7 @@ public extension BasicButton {
             )
         )
     }
-    static var negative: ButtonAppearanceVariation<BasicButton> {
+    static var negative: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "negative",
             appearance: ButtonAppearance(
@@ -274,7 +274,7 @@ public extension BasicButton {
             )
         )
     }
-    static var positive: ButtonAppearanceVariation<BasicButton> {
+    static var positive: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "positive",
             appearance: ButtonAppearance(
@@ -310,7 +310,7 @@ public extension BasicButton {
             )
         )
     }
-    static var secondary: ButtonAppearanceVariation<BasicButton> {
+    static var secondary: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "secondary",
             appearance: ButtonAppearance(
@@ -346,7 +346,7 @@ public extension BasicButton {
             )
         )
     }
-    static var warning: ButtonAppearanceVariation<BasicButton> {
+    static var warning: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "warning",
             appearance: ButtonAppearance(
@@ -382,7 +382,7 @@ public extension BasicButton {
             )
         )
     }
-    static var white: ButtonAppearanceVariation<BasicButton> {
+    static var white: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         .init(
             name: "white",
             appearance: ButtonAppearance(
@@ -419,7 +419,7 @@ public extension BasicButton {
         )
     }
 
-    static var all: [ButtonAppearanceVariation<BasicButton>] {
+    static var all: [ComponentAppearanceVariation<BasicButton, ButtonAppearance>] {
         [
             
             BasicButton.accent,

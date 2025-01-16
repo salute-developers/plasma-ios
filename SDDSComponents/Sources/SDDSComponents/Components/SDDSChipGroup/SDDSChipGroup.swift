@@ -2,60 +2,34 @@ import Foundation
 import SwiftUI
 
 /**
- Перечисление, определяющее варианты выравнивания группы чипов.
+ Компонент для отображения группы чипов.
 
- - Cases:
-    - left: Выравнивание по левому краю.
-    - right: Выравнивание по правому краю.
-    - center: Центрированное выравнивание.
-    - decreasingLeft: Убывающее количество элементов, выравненных по левому краю.
-    - decreasingRight: Убывающее количество элементов, выравненных по правому краю.
+ - Свойства:
+    - data: Массив данных для отображения чипов.
+    - gap: Расстояние между чипами.
+    - height: Высота компонента, связанная через Binding.
  */
-public enum ChipGroupAlignment: String {
-    case left
-    case right
-    case center
-    case decreasingLeft
-    case decreasingRight
-}
-
-/**
- Протокол конфигурации размеров группы чипов.
-
- - Properties:
-    - insets: Внутренние отступы.
-    - maxColumns: Максимальное количество столбцов в ряду.
-    - alignment: Выравнивание группы чипов.
- */
-public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    var insets: EdgeInsets { get }
-    var maxColumns: Int { get }
-    var alignment: ChipGroupAlignment { get }
-}
-
-/**
- Вью для отображения группы чипов.
-
- - Properties:
-    - data: Массив данных для чипов.
-    - size: Конфигурация размеров для группы чипов.
- */
-
 public struct SDDSChipGroup: View {
     let data: [ChipData]
-    let size: ChipGroupSizeConfiguration
+    let gap: ChipGroupGap
+    let appearance: ChipGroupAppearance
     @Binding var height: CGFloat
 
-    public init(data: [ChipData], size: ChipGroupSizeConfiguration, height: Binding<CGFloat> = .constant(0)) {
+    public init(
+        data: [ChipData],
+        gap: ChipGroupGap,
+        appearance: ChipGroupAppearance,
+        height: Binding<CGFloat> = .constant(0)) {
         self.data = data
-        self.size = size
+        self.gap = gap
+        self.appearance = appearance
         _height = height
     }
 
     public var body: some View {
         GeometryReader { geometry in
-            let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
-            VStack(spacing: size.insets.top) {
+            let maxWidth = geometry.size.width - insets.leading -  insets.trailing
+            VStack(spacing: insets.top) {
                 ForEach(layoutRows(maxWidth: maxWidth, data: data), id: \.self) { row in
                     HStack(spacing: 0) {
                         if size.alignment == .decreasingRight {
@@ -63,7 +37,7 @@ public struct SDDSChipGroup: View {
                         }
                         ForEach(row, id: \.self) { chipData in
                             SDDSChip(data: chipData)
-                                .padding(.trailing, size.insets.trailing)
+                                .padding(.trailing, insets.trailing)
                         }
                         if size.alignment == .decreasingLeft {
                             Spacer()
@@ -79,10 +53,18 @@ public struct SDDSChipGroup: View {
                 self.height = calculateTotalHeight(maxWidth: maxWidth, data: value)
             }
         }
-        .padding(.leading, size.insets.leading)
-        .padding(.top, size.insets.top)
-        .padding(.bottom, size.insets.bottom)
+        .padding(.leading, insets.leading)
+        .padding(.top, insets.top)
+        .padding(.bottom, insets.bottom)
         .frame(height: height)
+    }
+    
+    private var insets: EdgeInsets {
+        return size.insets(for: gap)
+    }
+    
+    private var size: ChipGroupSizeConfiguration {
+        return appearance.size
     }
 
     private var alignment: SwiftUI.Alignment {
@@ -146,8 +128,8 @@ public struct SDDSChipGroup: View {
         let rows = layoutRows(maxWidth: maxWidth, data: data)
         let rowHeight = chipRowHeight(data: data)
         var result = CGFloat(rows.count) * rowHeight
-        result += CGFloat(rows.count - 1) * size.insets.top
-        result += (size.insets.bottom + size.insets.top)
+        result += CGFloat(rows.count - 1) * insets.top
+        result += (insets.bottom + insets.top)
         
         return result
     }
