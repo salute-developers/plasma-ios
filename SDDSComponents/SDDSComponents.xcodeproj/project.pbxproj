@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F72D3EB92C00CED628 /* SDDSSegment.swift */; };
+		690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */; };
 		6950A1282D1D4C47001695C5 /* SegmentItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950A1272D1D4C28001695C5 /* SegmentItemAppearance.swift */; };
 		6950A12A2D1D4D56001695C5 /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950A1292D1D4D4E001695C5 /* SegmentItemSize.swift */; };
 		69573D6A2D1D756000359D53 /* SegmentItemAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */; };
@@ -163,6 +164,7 @@
 
 /* Begin PBXFileReference section */
 		690780F72D3EB92C00CED628 /* SDDSSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegment.swift; sourceTree = "<group>"; };
+		690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemData.swift; sourceTree = "<group>"; };
 		6950A1272D1D4C28001695C5 /* SegmentItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearance.swift; sourceTree = "<group>"; };
 		6950A1292D1D4D4E001695C5 /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
 		69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+Extensions.swift"; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */,
 				6950A1262D1D4BE1001695C5 /* SegmentAppearance */,
 				698744652D1C368E00559ABA /* SDDSSegmentItem.swift */,
+				690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */,
 			);
 			path = SDDSSegmentItem;
 			sourceTree = "<group>";
@@ -1279,6 +1282,7 @@
 				81F753262CF467F6000156D9 /* ButtonIconAttributes.swift in Sources */,
 				817339EB2D033EB90092608A /* AvatarStatus.swift in Sources */,
 				81F7532C2CF46885000156D9 /* ButtonShapeStyle.swift in Sources */,
+				690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */,
 				6950A12A2D1D4D56001695C5 /* SegmentItemSize.swift in Sources */,
 				81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */,
 				69573D6C2D1D7C5D00359D53 /* SegmentItemAppearance+Variation.swift in Sources */,
