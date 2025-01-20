@@ -84,7 +84,7 @@ struct SegmentView: View {
         HStack {
             Text("Max elements")
             Spacer()
-            TextField("Number", text: $viewModel.maxElementsString)
+            TextField("Number", text: $viewModel.maxItemsString)
                 .multilineTextAlignment(.trailing)
         }
     }
@@ -108,7 +108,7 @@ struct SegmentView: View {
                 )
                 Spacer()
                 Button("Delete") {
-                    viewModel.removeElement(at: index)
+                    viewModel.removeItem(at: index)
                 }
                 .foregroundColor(.red)
             }

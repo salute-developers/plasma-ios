@@ -6,27 +6,31 @@ import SDDSComponentsPreview
 import SDDSServTheme
 
 final class SegmentViewModel: ObservableObject {
-    @Published var data: [SegmentElementData] = []
+    @Published var title: String = ""
+    @Published var data: [SDDSSegmentItemData] = []
     @Published var size: SegmentSizeConfiguration = SegmentDefaultSize()
     @Published var layoutMode: SegmentLayoutMode = .horizontal
     
-    @Published var segmentElementAppearance: SegmentElementAppearance = SDDSSegmentElement.default.appearance
-    @Published var segmentElementSize: SegmentElementSizeConfiguration = SegmentElementSize.medium
+    @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
+    @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium
     
     @Published var variationName: String = ""
-    @Published var maxElementsString: String = ""
-    @Published var maxElements: Int = 0
-    @Published var title: String = ""
+    @Published var maxItemsString: String = ""
+    @Published var maxItems: Int = 0
+    
+    @Published var counterAppearance: CounterAppearance = CounterAppearance()
+    @Published var counterText: String = ""
+    
     
     private var cancellabels: Set<AnyCancellable> = []
     
     init() {
         observeSizeChange()
-        observeMaxElements()
+        observeMaxItems()
     }
     
     func observeSizeChange() {
-        //        $segmentElementSize
+        //        $segmentItemSize
         //            .sink { [weak self] value in
         //                guard let self else { return }
         //
@@ -34,8 +38,8 @@ final class SegmentViewModel: ObservableObject {
         //            .store(in: &cancellabels)
     }
     
-    func observeMaxElements() {
-        $maxElementsString
+    func observeMaxItems() {
+        $maxItemsString
             .sink { [weak self] value in
                 guard let self else { return }
                 
@@ -46,13 +50,13 @@ final class SegmentViewModel: ObservableObject {
                 
                 guard let value = Int(value), value < 20 else { return }
                 
-                if value > maxElements {
-                    maxElements = value
-                    addElements()
-                } else if value == maxElements {
+                if value > maxItems {
+                    maxItems = value
+                    addItems()
+                } else if value == maxItems {
                     return
                 } else {
-                    maxElements = 0
+                    maxItems = 0
                     data = []
                 }
                 
@@ -61,17 +65,18 @@ final class SegmentViewModel: ObservableObject {
             .store(in: &cancellabels)
     }
     
-    func addElements() {
-        for _ in 0..<maxElements {
+    func addItems() {
+        for _ in 0..<maxItems {
             data.append(
-                SegmentElementData(
+                SDDSSegmentItemData(
                     title: title,
                     subtitle: "",
                     iconAttributes: nil,
                     isDisabled: false,
-                    appearance: segmentElementAppearance,
-                    accessibility: SegmentElementAccessibility(),
-                    counter: nil,
+                    appearance: segmentItemAppearance,
+                    accessibility: SegmentItemAccessibility(),
+                    counterAppearance: counterAppearance,
+                    counterText: counterText,
                     action: {}
                 )
             )
@@ -80,31 +85,33 @@ final class SegmentViewModel: ObservableObject {
     
     func addSegment() {
         data.append(
-            SegmentElementData(
+            SDDSSegmentItemData(
                 title: title,
                 subtitle: "",
                 iconAttributes: nil,
                 isDisabled: false,
-                appearance: segmentElementAppearance,
-                accessibility: SegmentElementAccessibility(),
-                counter: nil,
+                appearance: segmentItemAppearance,
+                accessibility: SegmentItemAccessibility(),
+                counterAppearance: counterAppearance,
+                counterText: counterText,
                 action: {}
             )
         )
     }
     
-    func updateSegment(at index: Int, title: String) {
+    func updateSegmentItem(at index: Int, title: String) {
         guard data.indices.contains(index) else { return }
         var segment = data[index]
         
-        segment = SegmentElementData(
+        segment = SDDSSegmentItemData(
             title: title,
             subtitle: "",
             iconAttributes: nil,
             isDisabled: false,
             appearance: segment.appearance,
-            accessibility: SegmentElementAccessibility(),
-            counter: nil,
+            accessibility: SegmentItemAccessibility(),
+            counterAppearance: counterAppearance,
+            counterText: counterText,
             action: {}
         )
         
@@ -112,10 +119,8 @@ final class SegmentViewModel: ObservableObject {
     }
     
     
-    func removeElement(at index: Int) {
-        guard data.indices.contains(index) else {
-            return
-        }
+    func removeItem(at index: Int) {
+        guard data.indices.contains(index) else { return }
         data.remove(at: index)
     }
 }
