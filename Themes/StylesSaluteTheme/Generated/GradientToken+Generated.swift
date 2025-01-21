@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
@@ -4111,6 +4113,111 @@ public extension GradientToken {
             ]
         )
     }
+    static var surfaceInverseGradientMain: Self {
+        GradientToken(
+            description: "surfaceInverseGradientMain",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#00A4D1FF"))
+                        ],
+                        angle: 357.71
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#00A4D1FF"))
+                        ],
+                        angle: 357.71
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseGradientMainActive: Self {
+        GradientToken(
+            description: "surfaceInverseGradientMainActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var surfaceInverseGradientMainHover: Self {
+        GradientToken(
+            description: "surfaceInverseGradientMainHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceInversePromoGradient: Self {
         GradientToken(
             description: "surfaceInversePromoGradient",
@@ -8050,6 +8157,531 @@ public extension GradientToken {
             ]
         )
     }
+    static var textInverseGradientAthena: Self {
+        GradientToken(
+            description: "textInverseGradientAthena",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#118CDFFF")), 
+                            Color(UIColor(hex: "#7A7AFFFF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0.06, 
+                            0.9399999999999999
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#52BAFFFF")), 
+                            Color(UIColor(hex: "#ADADFFFF"))
+                        ],
+                        angle: 4.57
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientAthenaActive: Self {
+        GradientToken(
+            description: "textInverseGradientAthenaActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientAthenaHover: Self {
+        GradientToken(
+            description: "textInverseGradientAthenaHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientB2E: Self {
+        GradientToken(
+            description: "textInverseGradientB2E",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#00A4D1FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#05C1F5FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientB2EActive: Self {
+        GradientToken(
+            description: "textInverseGradientB2EActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientB2EHover: Self {
+        GradientToken(
+            description: "textInverseGradientB2EHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientBrand: Self {
+        GradientToken(
+            description: "textInverseGradientBrand",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0.06, 
+                            0.9399999999999999
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#3E79F0FF")), 
+                            Color(UIColor(hex: "#27C6E5FF"))
+                        ],
+                        angle: 4.57
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#528EFFFF")), 
+                            Color(UIColor(hex: "#04C6C9FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientBrandActive: Self {
+        GradientToken(
+            description: "textInverseGradientBrandActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientBrandHover: Self {
+        GradientToken(
+            description: "textInverseGradientBrandHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientJoy: Self {
+        GradientToken(
+            description: "textInverseGradientJoy",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FCA349FF")), 
+                            Color(UIColor(hex: "#FF52C5FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0.06, 
+                            0.9399999999999999
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FD9C68FF")), 
+                            Color(UIColor(hex: "#F391E2FF"))
+                        ],
+                        angle: 4.57
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientJoyActive: Self {
+        GradientToken(
+            description: "textInverseGradientJoyActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientJoyHover: Self {
+        GradientToken(
+            description: "textInverseGradientJoyHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientMain: Self {
+        GradientToken(
+            description: "textInverseGradientMain",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#00A4D1FF"))
+                        ],
+                        angle: 357.71
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#24B23EFF")), 
+                            Color(UIColor(hex: "#05C1F5FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientMainActive: Self {
+        GradientToken(
+            description: "textInverseGradientMainActive",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
+    static var textInverseGradientMainHover: Self {
+        GradientToken(
+            description: "textInverseGradientMainHover",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            1
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#000000"))
+                        ],
+                        angle: 90.0
+                    )
+                )
+            ]
+        )
+    }
     static var textInversePromoGradient: Self {
         GradientToken(
             description: "textInversePromoGradient",
@@ -10251,6 +10883,9 @@ public extension GradientToken {
         surfaceInverseAccentMinorGradient,
         surfaceInverseAccentMinorGradientActive,
         surfaceInverseAccentMinorGradientHover,
+        surfaceInverseGradientMain,
+        surfaceInverseGradientMainActive,
+        surfaceInverseGradientMainHover,
         surfaceInversePromoGradient,
         surfaceInversePromoGradientActive,
         surfaceInversePromoGradientHover,
@@ -10356,6 +10991,21 @@ public extension GradientToken {
         textInverseAccentMinorGradient,
         textInverseAccentMinorGradientActive,
         textInverseAccentMinorGradientHover,
+        textInverseGradientAthena,
+        textInverseGradientAthenaActive,
+        textInverseGradientAthenaHover,
+        textInverseGradientB2E,
+        textInverseGradientB2EActive,
+        textInverseGradientB2EHover,
+        textInverseGradientBrand,
+        textInverseGradientBrandActive,
+        textInverseGradientBrandHover,
+        textInverseGradientJoy,
+        textInverseGradientJoyActive,
+        textInverseGradientJoyHover,
+        textInverseGradientMain,
+        textInverseGradientMainActive,
+        textInverseGradientMainHover,
         textInversePromoGradient,
         textInversePromoGradientActive,
         textInversePromoGradientHover,

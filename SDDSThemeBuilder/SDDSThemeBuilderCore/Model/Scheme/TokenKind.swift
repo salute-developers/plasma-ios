@@ -7,4 +7,5 @@ enum TokenKind: String, Codable {
     case shape
     case typography
     case fontFamily
+    case spacing
 }
