@@ -19,8 +19,10 @@ struct SegmentView: View {
             }
             Section {
                 segmentElementAppearance
+                segmentSize
                 stackOrientation
                 maxElements
+                shape
             }
             Section {
                 maxElementsAdditional
@@ -32,7 +34,8 @@ struct SegmentView: View {
         SDDSSegment(
             data: viewModel.data,
             size: viewModel.size,
-            layoutMode: viewModel.layoutMode
+            layoutMode: viewModel.layoutMode,
+            shapeStyle: viewModel.shapeStyle
         )
     }
     
@@ -40,7 +43,6 @@ struct SegmentView: View {
         HStack {
             Text("Segment Appearance")
             Spacer()
-                .frame(width: .infinity)
             Menu {
                 ForEach(SDDSSegmentItem.all, id: \.self) { variation in
                     Button(variation.name) {
@@ -65,7 +67,9 @@ struct SegmentView: View {
                     }
                 }
             } label: {
-                
+                if let size = viewModel.size as? SegmentItemSize {
+                    Text(size.rawValue)
+                }
             }
         }
     }
@@ -112,6 +116,12 @@ struct SegmentView: View {
                 }
                 .foregroundColor(.red)
             }
+        }
+    }
+    
+    public var shape: some View {
+        HStack {
+            Toggle("Shape style", isOn: $viewModel.shapeStyleToggle)
         }
     }
 }

@@ -2,20 +2,13 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public struct SegmentDefaultSize: SegmentSizeConfiguration {
-    public let maxElements: Int = 0
+    public let maxItems: Int = 0
     
     public init() {}
 }
 
 public protocol SegmentSizeConfiguration: SizeConfiguration {
-    var maxElements: Int { get }
-}
-
-public enum SegmentSize: String, CaseIterable {
-    case large
-    case medium
-    case small
-    case extraSmall
+    var maxItems: Int { get }
 }
 
 public enum SegmentLayoutMode: String, CaseIterable {
@@ -27,15 +20,18 @@ public struct SDDSSegment: View {
     public let data: [SDDSSegmentItemData]
     public let size: SegmentSizeConfiguration
     public let layoutMode: SegmentLayoutMode
+    public let shapeStyle: ComponentShapeStyle
     
     public init(
         data: [SDDSSegmentItemData],
         size: SegmentSizeConfiguration,
-        layoutMode: SegmentLayoutMode
+        layoutMode: SegmentLayoutMode,
+        shapeStyle: ComponentShapeStyle
     ) {
         self.data = data
         self.size = size
         self.layoutMode = layoutMode
+        self.shapeStyle = shapeStyle
     }
     
     public var body: some View {
