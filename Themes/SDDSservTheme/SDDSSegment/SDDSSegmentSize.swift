@@ -10,7 +10,7 @@
 //}
 //
 //extension SegmentSize: SegmentSizeConfiguration {
-//    func height(layoutMode: SegmentLayoutMode) -> CGFloat {
+//    var height: CGFloat {
 //        switch self {
 //        case .large: return 56
 //        case .medium: return 48
@@ -18,6 +18,8 @@
 //        case .extraSmall: return 32
 //        }
 //    }
+//    
+//    
 //}
 
 

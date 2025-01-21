@@ -20,18 +20,15 @@ public struct SDDSSegment: View {
     public let data: [SDDSSegmentItemData]
     public let size: SegmentSizeConfiguration
     public let layoutMode: SegmentLayoutMode
-    public let shapeStyle: ComponentShapeStyle
     
     public init(
         data: [SDDSSegmentItemData],
         size: SegmentSizeConfiguration,
-        layoutMode: SegmentLayoutMode,
-        shapeStyle: ComponentShapeStyle
+        layoutMode: SegmentLayoutMode
     ) {
         self.data = data
         self.size = size
         self.layoutMode = layoutMode
-        self.shapeStyle = shapeStyle
     }
     
     public var body: some View {
@@ -45,7 +42,7 @@ public struct SDDSSegment: View {
     
     public var horizontalOrientation: some View {
         HStack {
-            ForEach(data, id: \.self) { segment in
+            ForEach(data, id: \.id) { segment in
                 SDDSSegmentItem(
                     title: segment.title,
                     subtitle: "",
@@ -58,9 +55,11 @@ public struct SDDSSegment: View {
                 )
             }
         }
+        .background(Color.gray.opacity(0.8))
     }
     
     public var verticalOrientation: some View {
         VStack {}
     }
 }
+

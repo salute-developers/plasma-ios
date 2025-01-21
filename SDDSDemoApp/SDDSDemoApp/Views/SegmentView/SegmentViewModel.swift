@@ -10,10 +10,7 @@ final class SegmentViewModel: ObservableObject {
     @Published var data: [SDDSSegmentItemData] = []
     @Published var size: SegmentSizeConfiguration = SegmentDefaultSize()
     @Published var layoutMode: SegmentLayoutMode = .horizontal
-    
-    @Published var shapeStyle: ComponentShapeStyle = .cornered
-    @Published var shapeStyleToggle: Bool = false
-    
+
     @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
     @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium
     
@@ -24,12 +21,17 @@ final class SegmentViewModel: ObservableObject {
     @Published var counterAppearance: CounterAppearance = CounterAppearance()
     @Published var counterText: String = ""
     
+    @Published var isSelected: Bool = false
+    @Published var selectedItem: UUID = UUID()
+    
+    @Published var isPilled: Bool
     
     private var cancellabels: Set<AnyCancellable> = []
     
     init() {
         observeSizeChange()
         observeMaxItems()
+        observeShapeStyle()
     }
     
     func observeSizeChange() {
@@ -68,6 +70,21 @@ final class SegmentViewModel: ObservableObject {
             .store(in: &cancellabels)
     }
     
+    func observeShapeStyle() {
+        $isPilled
+            .sink { [weak self] value in
+                guard let self else {
+                    return
+                }
+                if value {
+                    self.segmentItemAppearance = self.segmentItemAppearance.shapeStyle(.pilled)
+                } else {
+                    self.segmentItemAppearance = self.segmentItemAppearance.shapeStyle(.cornered)
+                }
+            }
+            .store(in: &cancellabels)
+    }
+    
     func addItems() {
         for _ in 0..<maxItems {
             data.append(
@@ -80,6 +97,7 @@ final class SegmentViewModel: ObservableObject {
                     accessibility: SegmentItemAccessibility(),
                     counterAppearance: counterAppearance,
                     counterText: counterText,
+                    isSelected: isSelected,
                     action: {}
                 )
             )
@@ -97,6 +115,7 @@ final class SegmentViewModel: ObservableObject {
                 accessibility: SegmentItemAccessibility(),
                 counterAppearance: counterAppearance,
                 counterText: counterText,
+                isSelected: isSelected,
                 action: {}
             )
         )
@@ -115,6 +134,7 @@ final class SegmentViewModel: ObservableObject {
             accessibility: SegmentItemAccessibility(),
             counterAppearance: counterAppearance,
             counterText: counterText,
+            isSelected: isSelected,
             action: {}
         )
         

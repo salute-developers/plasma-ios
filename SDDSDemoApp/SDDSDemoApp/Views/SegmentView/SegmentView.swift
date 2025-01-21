@@ -21,8 +21,8 @@ struct SegmentView: View {
                 segmentElementAppearance
                 segmentSize
                 stackOrientation
-                maxElements
                 shape
+                maxElements
             }
             Section {
                 maxElementsAdditional
@@ -34,8 +34,7 @@ struct SegmentView: View {
         SDDSSegment(
             data: viewModel.data,
             size: viewModel.size,
-            layoutMode: viewModel.layoutMode,
-            shapeStyle: viewModel.shapeStyle
+            layoutMode: viewModel.layoutMode
         )
     }
     
@@ -121,7 +120,7 @@ struct SegmentView: View {
     
     public var shape: some View {
         HStack {
-            Toggle("Shape style", isOn: $viewModel.shapeStyleToggle)
+            Toggle("Pilled", isOn: $viewModel.isPilled)
         }
     }
 }
