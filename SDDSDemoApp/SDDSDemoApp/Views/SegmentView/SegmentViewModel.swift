@@ -24,9 +24,9 @@ final class SegmentViewModel: ObservableObject {
     @Published var isSelected: Bool = false
     @Published var selectedItem: UUID = UUID()
     
-    @Published var isPilled: Bool
+    @Published var isPilled: Bool = false
     
-    private var cancellabels: Set<AnyCancellable> = []
+    private var cancellables: Set<AnyCancellable> = []
     
     init() {
         observeSizeChange()
@@ -40,7 +40,7 @@ final class SegmentViewModel: ObservableObject {
                 guard let self else { return }
                 self.segmentItemAppearance = self.segmentItemAppearance.size(value)
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     func observeMaxItems() {
@@ -67,7 +67,7 @@ final class SegmentViewModel: ObservableObject {
                 
                 
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     func observeShapeStyle() {
@@ -82,7 +82,7 @@ final class SegmentViewModel: ObservableObject {
                     self.segmentItemAppearance = self.segmentItemAppearance.shapeStyle(.cornered)
                 }
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     func addItems() {

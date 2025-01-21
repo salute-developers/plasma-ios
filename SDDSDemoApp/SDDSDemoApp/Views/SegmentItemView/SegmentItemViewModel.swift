@@ -53,7 +53,7 @@ final class SegmentItemViewModel: ObservableObject {
                     self.iconAttributes = nil
                 }
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
         
         $alignment
             .sink { [weak self] value in
@@ -62,7 +62,7 @@ final class SegmentItemViewModel: ObservableObject {
                 }
                 setIconAttributes(alignment: value)
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
         
         $isPilled
             .sink { [weak self] value in
@@ -75,7 +75,7 @@ final class SegmentItemViewModel: ObservableObject {
                     self.appearance = self.appearance.shapeStyle(.cornered)
                 }
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     private func observeSizeChange() {
@@ -89,7 +89,7 @@ final class SegmentItemViewModel: ObservableObject {
                 }
                 self.appearance = self.appearance.size(value)
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     private func observeCounter() {
@@ -104,7 +104,7 @@ final class SegmentItemViewModel: ObservableObject {
                     self.counterAppearance = nil
                 }
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     private func observeContentType() {
@@ -137,7 +137,7 @@ final class SegmentItemViewModel: ObservableObject {
                     counterAppearance = nil
                 }
             }
-            .store(in: &cancellabels)
+            .store(in: &cancellables)
     }
     
     private func setIconAttributes(alignment: SDDSComponents.ButtonAlignment) {
