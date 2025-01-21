@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
@@ -103,6 +105,9 @@ public struct Gradients {
     public static let surfaceInverseAccentMinorGradient = GradientToken.surfaceInverseAccentMinorGradient
     public static let surfaceInverseAccentMinorGradientActive = GradientToken.surfaceInverseAccentMinorGradientActive
     public static let surfaceInverseAccentMinorGradientHover = GradientToken.surfaceInverseAccentMinorGradientHover
+    public static let surfaceInverseGradientMain = GradientToken.surfaceInverseGradientMain
+    public static let surfaceInverseGradientMainActive = GradientToken.surfaceInverseGradientMainActive
+    public static let surfaceInverseGradientMainHover = GradientToken.surfaceInverseGradientMainHover
     public static let surfaceInversePromoGradient = GradientToken.surfaceInversePromoGradient
     public static let surfaceInversePromoGradientActive = GradientToken.surfaceInversePromoGradientActive
     public static let surfaceInversePromoGradientHover = GradientToken.surfaceInversePromoGradientHover
@@ -208,6 +213,21 @@ public struct Gradients {
     public static let textInverseAccentMinorGradient = GradientToken.textInverseAccentMinorGradient
     public static let textInverseAccentMinorGradientActive = GradientToken.textInverseAccentMinorGradientActive
     public static let textInverseAccentMinorGradientHover = GradientToken.textInverseAccentMinorGradientHover
+    public static let textInverseGradientAthena = GradientToken.textInverseGradientAthena
+    public static let textInverseGradientAthenaActive = GradientToken.textInverseGradientAthenaActive
+    public static let textInverseGradientAthenaHover = GradientToken.textInverseGradientAthenaHover
+    public static let textInverseGradientB2E = GradientToken.textInverseGradientB2E
+    public static let textInverseGradientB2EActive = GradientToken.textInverseGradientB2EActive
+    public static let textInverseGradientB2EHover = GradientToken.textInverseGradientB2EHover
+    public static let textInverseGradientBrand = GradientToken.textInverseGradientBrand
+    public static let textInverseGradientBrandActive = GradientToken.textInverseGradientBrandActive
+    public static let textInverseGradientBrandHover = GradientToken.textInverseGradientBrandHover
+    public static let textInverseGradientJoy = GradientToken.textInverseGradientJoy
+    public static let textInverseGradientJoyActive = GradientToken.textInverseGradientJoyActive
+    public static let textInverseGradientJoyHover = GradientToken.textInverseGradientJoyHover
+    public static let textInverseGradientMain = GradientToken.textInverseGradientMain
+    public static let textInverseGradientMainActive = GradientToken.textInverseGradientMainActive
+    public static let textInverseGradientMainHover = GradientToken.textInverseGradientMainHover
     public static let textInversePromoGradient = GradientToken.textInversePromoGradient
     public static let textInversePromoGradientActive = GradientToken.textInversePromoGradientActive
     public static let textInversePromoGradientHover = GradientToken.textInversePromoGradientHover
