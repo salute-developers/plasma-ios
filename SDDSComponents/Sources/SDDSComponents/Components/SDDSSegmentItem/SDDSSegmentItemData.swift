@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 public struct SDDSSegmentItemData: Hashable {
-    let id: UUID
+    public let id: UUID
     public var title: String
     public var subtitle: String
     public var iconAttributes: ButtonIconAttributes?

@@ -361,6 +361,8 @@
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
+				695F43852D40C35F00FF936B /* Segmnet+Variation.swift */,
+				695F43722D40BA4D00FF936B /* SegmentAppearance.swift */,
 				690780F72D3EB92C00CED628 /* SDDSSegment.swift */,
 			);
 			path = SDDSSegment;
@@ -1237,6 +1239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
+				695F43862D40C36B00FF936B /* Segmnet+Variation.swift in Sources */,
 				8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,

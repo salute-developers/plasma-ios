@@ -33,8 +33,11 @@ struct SegmentView: View {
     var segment: some View {
         SDDSSegment(
             data: viewModel.data,
-            size: viewModel.size,
-            layoutMode: viewModel.layoutMode
+            appearance: viewModel.appearance
+//            size: viewModel.size,
+//            backgroundColor: viewModel.backgroundColor,
+//            layoutMode: viewModel.layoutMode,
+//            sizeItem: viewModel.itemSize
         )
     }
     
@@ -66,7 +69,7 @@ struct SegmentView: View {
                     }
                 }
             } label: {
-                if let size = viewModel.size as? SegmentItemSize {
+                if let size = viewModel.segmentItemAppearance.size as? SegmentItemSize {
                     Text(size.rawValue)
                 }
             }

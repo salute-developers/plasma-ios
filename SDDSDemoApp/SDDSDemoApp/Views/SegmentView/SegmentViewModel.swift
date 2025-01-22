@@ -6,11 +6,13 @@ import SDDSComponentsPreview
 import SDDSServTheme
 
 final class SegmentViewModel: ObservableObject {
-    @Published var title: String = ""
+    @Published var title: String = "Label"
     @Published var data: [SDDSSegmentItemData] = []
     @Published var size: SegmentSizeConfiguration = SegmentDefaultSize()
     @Published var layoutMode: SegmentLayoutMode = .horizontal
-
+    @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
+    
+    
     @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
     @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium
     
@@ -25,6 +27,9 @@ final class SegmentViewModel: ObservableObject {
     @Published var selectedItem: UUID = UUID()
     
     @Published var isPilled: Bool = false
+    
+    @Published var itemSize: ItemSize = .fixed
+    @Published var backgroundColor: Color = .black
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -115,7 +120,7 @@ final class SegmentViewModel: ObservableObject {
                 accessibility: SegmentItemAccessibility(),
                 counterAppearance: counterAppearance,
                 counterText: counterText,
-                isSelected: isSelected,
+                isSelected: false,
                 action: {}
             )
         )
@@ -134,7 +139,7 @@ final class SegmentViewModel: ObservableObject {
             accessibility: SegmentItemAccessibility(),
             counterAppearance: counterAppearance,
             counterText: counterText,
-            isSelected: isSelected,
+            isSelected: segment.isSelected,
             action: {}
         )
         
@@ -146,4 +151,11 @@ final class SegmentViewModel: ObservableObject {
         guard data.indices.contains(index) else { return }
         data.remove(at: index)
     }
+    
+//    func selectItem(with id: UUID) {
+//        for index in data.indices {
+//            data[index].isSelected = data[index].id == id
+//        }
+//        selectedItem = id
+//    }
 }
