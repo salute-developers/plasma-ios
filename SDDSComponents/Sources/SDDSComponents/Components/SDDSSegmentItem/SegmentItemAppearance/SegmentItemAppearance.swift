@@ -17,7 +17,7 @@ public struct SegmentItemAppearance {
     public let iconColor: ButtonColor
     
     public let backgroundColor: ButtonColor
-    
+        
     public let disabledAlpha: CGFloat
     
     public init(

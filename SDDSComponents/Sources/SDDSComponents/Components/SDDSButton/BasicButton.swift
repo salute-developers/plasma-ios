@@ -49,7 +49,6 @@ public struct BasicButton: View {
             appearance: appearance,
             layoutMode: layoutMode,
             accessibility: accessibility,
-            counterView: nil,
             action: action
         )
     }

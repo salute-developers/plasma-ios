@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public extension SegmentItemAppearanceVariation {
+public extension AppearanceVariation<SegmentItemAppearance> {
     var large: Self {
         .init(
             appearance: appearance
@@ -38,16 +38,16 @@ public extension SegmentItemAppearanceVariation {
 }
 
 public extension SDDSSegmentItem {
-    static var large: SegmentItemAppearanceVariation {
-        return SegmentItemAppearanceVariation().large
+    static var large: AppearanceVariation<SegmentItemAppearance> {
+        return AppearanceVariation(appearance: SegmentItemAppearance()).large
     }
-    static var medium: SegmentItemAppearanceVariation {
-        return SegmentItemAppearanceVariation().medium
+    static var medium: AppearanceVariation<SegmentItemAppearance> {
+        return AppearanceVariation(appearance: SegmentItemAppearance()).medium
     }
-    static var small: SegmentItemAppearanceVariation {
-        return SegmentItemAppearanceVariation().small
+    static var small: AppearanceVariation<SegmentItemAppearance> {
+        return AppearanceVariation(appearance: SegmentItemAppearance()).small
     }
-    static var extraSmall: SegmentItemAppearanceVariation {
-        return SegmentItemAppearanceVariation().extraSmall
+    static var extraSmall: AppearanceVariation<SegmentItemAppearance> {
+        return AppearanceVariation(appearance: SegmentItemAppearance()).extraSmall
     }
 }

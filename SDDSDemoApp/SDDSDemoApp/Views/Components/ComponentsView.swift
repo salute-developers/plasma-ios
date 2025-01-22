@@ -16,7 +16,8 @@ struct ComponentsView: View {
         ("SDDSTextArea", AnyView(TextAreaView())),
         ("SDDSTextField", AnyView(TextFieldView())),
         ("SDDSCounter", AnyView(CounterView())),
-        ("SDDSSegmentElement", AnyView(SegmentItemView()))
+        ("SDDSSegmentElement", AnyView(SegmentItemView())),
+        ("SDDSSegment", AnyView(SegmentView()))
     ]
 
     var body: some View {

@@ -91,15 +91,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
         }
     }
     
-    public var counterHorizontalGap: CGFloat {
-        switch self {
-        case .large: return 6
-        case .medium: return 4
-        case .small: return 2
-        case .extraSmall: return 2
-        }
-    }
-    
     public var debugDescription: String {
         return "SegmentItemSize"
     }

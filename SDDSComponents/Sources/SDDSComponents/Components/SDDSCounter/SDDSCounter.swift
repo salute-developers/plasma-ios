@@ -35,9 +35,9 @@ public struct SDDSCounter: View {
                 counterMinimumSize
             }
         }
+        .frame(height: appearance.size.height)
         .background(currentColor(for: appearance.backgroundColor))
         .cornerRadius(cornerRadius)
-        .frame(height: appearance.size.height)
     }
     
     public var counterAutomationSize: some View {
