@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 public struct SDDSSegmentItem: View {
+    public let id: UUID
     public let title: String
     public let subtitle: String
     public let iconAttributes: ButtonIconAttributes?
@@ -14,6 +15,7 @@ public struct SDDSSegmentItem: View {
     public var action: () -> Void
     
     public init(
+        id: UUID = UUID(),
         title: String,
         subtitle: String,
         iconAttributes: ButtonIconAttributes?,
@@ -25,6 +27,7 @@ public struct SDDSSegmentItem: View {
         isSelected: Bool = false,
         action: @escaping () -> Void
     ) {
+        self.id = id
         self.title = title
         self.subtitle = subtitle
         self.iconAttributes = iconAttributes

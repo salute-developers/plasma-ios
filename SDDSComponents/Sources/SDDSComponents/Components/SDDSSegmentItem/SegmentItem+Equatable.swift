@@ -1,7 +1,7 @@
 import Foundation
 
-extension SegmentItemAppearance: Hashable {
-    public static func == (lhs: SegmentItemAppearance, rhs: SegmentItemAppearance) -> Bool {
+extension SDDSSegmentItem: Hashable {
+    public static func == (lhs: SDDSSegmentItem, rhs: SDDSSegmentItem) -> Bool {
         return lhs.id == rhs.id
     }
     
