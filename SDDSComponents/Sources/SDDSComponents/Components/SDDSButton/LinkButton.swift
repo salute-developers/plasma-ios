@@ -46,7 +46,6 @@ public struct LinkButton: View {
             appearance: appearance,
             layoutMode: layoutMode,
             accessibility: accessibility,
-            counterView: nil,
             action: action
         )
     }

@@ -2,25 +2,7 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public struct CounterAppearanceVariation: Hashable {
-    public let name: String
-    public let appearance: CounterAppearance
-    
-    public init(name: String = "", appearance: CounterAppearance = CounterAppearance()) {
-        self.name = name
-        self.appearance = appearance
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
-    
-    public static func == (lhs: CounterAppearanceVariation, rhs: CounterAppearanceVariation) -> Bool {
-        return lhs.name == rhs.name
-    }
-}
-
-public extension CounterAppearanceVariation {
+public extension AppearanceVariation<CounterAppearance> {
     var black: Self {
         .init(
             appearance: appearance.applyColorVariation(variation: SDDSCounter.black.appearance)
@@ -64,10 +46,10 @@ public extension CounterAppearanceVariation {
 }
 
 public extension SDDSCounter {
-    static var black: CounterAppearanceVariation {
+    static var black: AppearanceVariation<CounterAppearance> {
         .init(
             name: "black",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnDarkPrimary,
@@ -82,10 +64,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var negative: CounterAppearanceVariation {
+    static var negative: AppearanceVariation<CounterAppearance> {
         .init(
             name: "negative",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnDarkPrimary,
@@ -100,10 +82,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var warning: CounterAppearanceVariation {
+    static var warning: AppearanceVariation<CounterAppearance> {
         .init(
             name: "warning",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnDarkPrimary,
@@ -118,10 +100,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var positive: CounterAppearanceVariation {
+    static var positive: AppearanceVariation<CounterAppearance> {
         .init(
             name: "positive",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnDarkPrimary,
@@ -136,10 +118,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var accent: CounterAppearanceVariation {
+    static var accent: AppearanceVariation<CounterAppearance> {
         .init(
             name: "accent",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnDarkPrimary,
@@ -154,10 +136,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var white: CounterAppearanceVariation {
+    static var white: AppearanceVariation<CounterAppearance> {
         .init(
             name: "white",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textOnLightPrimary,
@@ -172,10 +154,10 @@ public extension SDDSCounter {
             )
         )
     }
-    static var `default`: CounterAppearanceVariation {
+    static var `default`: AppearanceVariation<CounterAppearance> {
         .init(
             name: "default",
-            appearance: CounterAppearance(
+            appearance: .init(
                 textTypography: SDDSCounter.textTypography,
                 textColor: ButtonColor(
                     defaultColor: .textInversePrimary,
@@ -190,7 +172,7 @@ public extension SDDSCounter {
             )
         )
     }
-    static var all: [CounterAppearanceVariation] {
+    static var all: [AppearanceVariation<CounterAppearance>] {
         [
             SDDSCounter.black,
             

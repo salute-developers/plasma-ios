@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /**
  `ButtonLayoutMode` определяет различные режимы макета для кнопки.
@@ -15,6 +16,7 @@ import Foundation
     - title: Возвращает строку, представляющую название режима макета.
  */
 public enum ButtonLayoutMode: CaseIterable, Hashable {
+
     /**
      Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
      */

@@ -2,15 +2,10 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public extension SegmentItemAppearanceVariation {
-    var clear: Self {
+public extension AppearanceVariation<SegmentItemAppearance> {
+    var primary: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSSegmentItem.clear.appearance)
-        )
-    }
-    var `default`: Self {
-        .init(
-            appearance: appearance.applyColorVariation(variation: SDDSSegmentItem.default.appearance)
+            appearance: appearance.applyColorVariation(variation: SDDSSegmentItem.primary.appearance)
         )
     }
     var secondary: Self {
@@ -21,67 +16,41 @@ public extension SegmentItemAppearanceVariation {
 }
 
 public extension SDDSSegmentItem {
-    static var clear: SegmentItemAppearanceVariation {
+    static var primary: AppearanceVariation<SegmentItemAppearance> {
         .init(
-            name: "clear",
-            appearance: SegmentItemAppearance(
+            name: "primary",
+            appearance: .init(
                 titleTypography: SDDSSegmentItem.titleTypography,
                 titleColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
+                    highlightedColor: .textInversePrimaryActive,
+                    hoveredColor: .textInversePrimaryHover,
+                    selectedColor: .textInversePrimary
                 ),
                 subtitleTypography: SDDSSegmentItem.subtitleTypography,
                 subtitleColor: ButtonColor(
                     defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
+                    highlightedColor: .textInverseSecondaryActive,
+                    hoveredColor: .textInverseSecondaryHover,
+                    selectedColor: .textInverseSecondary
                 ),
                 iconColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
+                    highlightedColor: .textInversePrimaryActive,
+                    hoveredColor: .textInversePrimaryHover,
+                    selectedColor: .textInversePrimary
                 ),
                 backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultClear,
                     highlightedColor: .surfaceDefaultClearActive,
-                    hoveredColor: .surfaceDefaultClearHover
+                    hoveredColor: .surfaceDefaultClearHover,
+                    selectedColor: .surfaceDefaultSolidDefault
                 ),
                 disabledAlpha: 0.4
             )
         )
     }
-    static var `default`: SegmentItemAppearanceVariation {
-        .init(
-            name: "default",
-            appearance: SegmentItemAppearance(
-                titleTypography: SDDSSegmentItem.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textInversePrimary,
-                    highlightedColor: .textInversePrimaryActive,
-                    hoveredColor: .textInversePrimaryHover
-                ),
-                subtitleTypography: SDDSSegmentItem.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .textInverseSecondary,
-                    highlightedColor: .textInverseSecondaryActive,
-                    hoveredColor: .textInverseSecondaryHover
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textInversePrimary,
-                    highlightedColor: .textInversePrimaryActive,
-                    hoveredColor: .textInversePrimaryHover
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultSolidDefault,
-                    highlightedColor: .surfaceDefaultSolidDefaultActive,
-                    hoveredColor: .surfaceDefaultSolidDefaultHover
-                ),
-                disabledAlpha: 0.4
-            )
-        )
-    }
-    static var secondary: SegmentItemAppearanceVariation {
+    static var secondary: AppearanceVariation<SegmentItemAppearance> {
         .init(
             name: "secondary",
             appearance: SegmentItemAppearance(
@@ -89,34 +58,70 @@ public extension SDDSSegmentItem {
                 titleColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
+                    hoveredColor: .textDefaultPrimaryHover,
+                    selectedColor: .textDefaultPrimary
                 ),
                 subtitleTypography: SDDSSegmentItem.subtitleTypography,
                 subtitleColor: ButtonColor(
                     defaultColor: .textDefaultSecondary,
                     highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover
+                    hoveredColor: .textDefaultSecondaryHover,
+                    selectedColor: .textDefaultSecondary
                 ),
                 iconColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover
+                    hoveredColor: .textDefaultPrimaryHover,
+                    selectedColor: .textDefaultPrimary
                 ),
                 backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultTransparentCard,
-                    highlightedColor: .surfaceDefaultTransparentCardActive,
-                    hoveredColor: .surfaceDefaultTransparentCardHover
+                    defaultColor: .surfaceDefaultClear,
+                    highlightedColor: .surfaceDefaultClearActive,
+                    hoveredColor: .surfaceDefaultClearHover,
+                    selectedColor: .surfaceDefaultTransparentCard
                 ),
                 disabledAlpha: 0.4
             )
         )
     }
-    static var all: [SegmentItemAppearanceVariation] {
+    static var accent: AppearanceVariation<SegmentItemAppearance> {
+        .init(
+            name: "accent",
+            appearance: .init(
+                titleTypography: SDDSSegmentItem.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textOnDarkPrimaryActive,
+                    hoveredColor: .textOnDarkPrimaryHover,
+                    selectedColor: .textOnDarkPrimary
+                ),
+                subtitleTypography: SDDSSegmentItem.subtitleTypography,
+                subtitleColor: ButtonColor(
+                    defaultColor: .textDefaultSecondary,
+                    highlightedColor: .textOnDarkSecondaryActive,
+                    hoveredColor: .textOnDarkSecondaryHover,
+                    selectedColor: .textOnDarkSecondary
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textOnDarkPrimaryActive,
+                    hoveredColor: .textOnDarkPrimaryHover,
+                    selectedColor: .textOnDarkPrimary
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .surfaceDefaultClear,
+                    highlightedColor: .surfaceDefaultClearActive,
+                    hoveredColor: .surfaceDefaultClearHover,
+                    selectedColor: .surfaceDefaultAccent
+                ),
+                disabledAlpha: 0.4
+            )
+        )
+    }
+    static var all: [AppearanceVariation<SegmentItemAppearance>] {
         [
             
-            SDDSSegmentItem.clear,
-            
-            SDDSSegmentItem.default,
+            SDDSSegmentItem.primary,
             
             SDDSSegmentItem.secondary
             
