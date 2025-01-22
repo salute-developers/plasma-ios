@@ -41,6 +41,23 @@ struct SegmentView: View {
         )
     }
     
+//    var segmentAppearance: some View {
+//        HStack {
+//            Text("Appearance")
+//            Spacer()
+//            Menu {
+//                ForEach(SDDSSegment.all, id: \.self) { variation in
+//                    Button(variation.name) {
+//                        viewModel.appearance = variation.appearance.size(viewModel.size)
+//                        viewModel.variationName = variation.name
+//                    }
+//                }
+//            } label: {
+//                Text(viewModel.variationName.capitalized)
+//            }
+//        }
+//    }
+    
     var segmentElementAppearance: some View {
         HStack {
             Text("Segment Appearance")

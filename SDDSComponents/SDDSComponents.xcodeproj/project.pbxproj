@@ -361,6 +361,7 @@
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
+				695F43872D40D35600FF936B /* Segment+Extensions.swift */,
 				695F43852D40C35F00FF936B /* Segmnet+Variation.swift */,
 				695F43722D40BA4D00FF936B /* SegmentAppearance.swift */,
 				690780F72D3EB92C00CED628 /* SDDSSegment.swift */,
@@ -1331,6 +1332,7 @@
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				81733A2B2D072FB70092608A /* AvatarAppearance+Extensions.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
+				695F43882D40D39C00FF936B /* Segment+Extensions.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,

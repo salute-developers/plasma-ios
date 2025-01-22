@@ -26,10 +26,10 @@ public enum SegmentLayoutMode: String, CaseIterable {
 public struct SDDSSegment: View {
     public let data: [SDDSSegmentItemData]
     public let appearance: SegmentAppearance
-//    public let size: SegmentSizeConfiguration
-//    public let shapeStyle: ComponentShapeStyle
-//    public let layoutMode: SegmentLayoutMode
-//    public let sizeItem: ItemSize
+    //    public let size: SegmentSizeConfiguration
+    //    public let shapeStyle: ComponentShapeStyle
+    //    public let layoutMode: SegmentLayoutMode
+    //    public let sizeItem: ItemSize
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
@@ -39,17 +39,17 @@ public struct SDDSSegment: View {
     
     public init(
         data: [SDDSSegmentItemData],
-//        size: SegmentSizeConfiguration,
-//        shapeStyle: ComponentShapeStyle,
-//        layoutMode: SegmentLayoutMode,
-//        sizeItem: ItemSize
+        //        size: SegmentSizeConfiguration,
+        //        shapeStyle: ComponentShapeStyle,
+        //        layoutMode: SegmentLayoutMode,
+        //        sizeItem: ItemSize
         appearance: SegmentAppearance
     ) {
         self.data = data
-//        self.size = size
-//        self.shapeStyle = shapeStyle
-//        self.layoutMode = layoutMode
-//        self.sizeItem = sizeItem
+        //        self.size = size
+        //        self.shapeStyle = shapeStyle
+        //        self.layoutMode = layoutMode
+        //        self.sizeItem = sizeItem
         self.appearance = appearance
     }
     
@@ -84,8 +84,8 @@ public struct SDDSSegment: View {
     }
     
     public var verticalOrientation: some View {
-        VStack(alignment: .center, spacing: 0) {
-            ForEach(data, id: \.self) { segment in
+        VStack(spacing: 0) {
+            ForEach(data, id: \.id) { segment in
                 SDDSSegmentItem(
                     title: segment.title,
                     subtitle: "",
@@ -94,9 +94,7 @@ public struct SDDSSegment: View {
                     appearance: segment.appearance,
                     counterAppearance: segment.counterAppearance,
                     counterText: segment.counterText,
-                    action: {
-                        
-                    }
+                    action: {}
                 )
             }
         }

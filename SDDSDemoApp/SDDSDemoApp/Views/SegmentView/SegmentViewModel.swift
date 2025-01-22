@@ -8,7 +8,7 @@ import SDDSServTheme
 final class SegmentViewModel: ObservableObject {
     @Published var title: String = "Label"
     @Published var data: [SDDSSegmentItemData] = []
-    @Published var size: SegmentSizeConfiguration = SegmentDefaultSize()
+    @Published var size: SegmentSizeConfiguration = SegmentSize.medium
     @Published var layoutMode: SegmentLayoutMode = .horizontal
     @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
     
