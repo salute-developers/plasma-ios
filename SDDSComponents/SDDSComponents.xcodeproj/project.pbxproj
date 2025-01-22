@@ -11,6 +11,7 @@
 		6950A12A2D1D4D56001695C5 /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6950A1292D1D4D4E001695C5 /* SegmentItemSize.swift */; };
 		69573D6A2D1D756000359D53 /* SegmentItemAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */; };
 		69573D6C2D1D7C5D00359D53 /* SegmentItemAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D6B2D1D7C4300359D53 /* SegmentItemAppearance+Variation.swift */; };
+		695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */; };
 		696843432D1EA12E002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843422D1EA11A002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift */; };
 		696843452D1EA35B002F8C7A /* SegmentItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843442D1EA348002F8C7A /* SegmentItemAccessibility.swift */; };
 		6969EADE2D1D5B8E008536E5 /* SegmentItemAppearanceVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6969EADD2D1D5B73008536E5 /* SegmentItemAppearanceVariations.swift */; };
@@ -164,6 +165,7 @@
 		6950A1292D1D4D4E001695C5 /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
 		69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		69573D6B2D1D7C4300359D53 /* SegmentItemAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+Variation.swift"; sourceTree = "<group>"; };
+		695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+Equatable.swift"; sourceTree = "<group>"; };
 		696843422D1EA11A002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+ButtonAppearance.swift"; sourceTree = "<group>"; };
 		696843442D1EA348002F8C7A /* SegmentItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAccessibility.swift; sourceTree = "<group>"; };
 		6969EADD2D1D5B73008536E5 /* SegmentItemAppearanceVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearanceVariations.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		698744662D1C368E00559ABA /* SDDSSegmentItem */ = {
 			isa = PBXGroup;
 			children = (
+				695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */,
 				6950A1262D1D4BE1001695C5 /* SegmentAppearance */,
 				698744652D1C368E00559ABA /* SDDSSegmentItem.swift */,
 			);
@@ -1305,6 +1308,7 @@
 				81F7532A2CF4684F000156D9 /* ButtonAppearance.swift in Sources */,
 				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
 				817339E02D033D940092608A /* ChipSizeConfiguration.swift in Sources */,
+				695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */,
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				81733A2B2D072FB70092608A /* AvatarAppearance+Extensions.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,

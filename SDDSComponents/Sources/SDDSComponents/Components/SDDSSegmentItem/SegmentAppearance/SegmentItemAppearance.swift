@@ -2,6 +2,8 @@ import Foundation
 @_exported import SDDSThemeCore
 
 public struct SegmentItemAppearance {
+    public let id = UUID()
+    
     public let size: SegmentItemSizeConfiguration
     
     public let shapeStyle: ComponentShapeStyle
