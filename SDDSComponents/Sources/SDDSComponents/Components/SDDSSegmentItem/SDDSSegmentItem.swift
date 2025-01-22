@@ -10,6 +10,7 @@ public struct SDDSSegmentItem: View {
     public let accessibility: SegmentItemAccessibility
     public let counterAppearance: CounterAppearance?
     public let counterText: String
+    public let isSelected: Bool
     public var action: () -> Void
     
     public init(
@@ -21,6 +22,7 @@ public struct SDDSSegmentItem: View {
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterAppearance: CounterAppearance? = CounterAppearance(),
         counterText: String,
+        isSelected: Bool = false,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -31,6 +33,7 @@ public struct SDDSSegmentItem: View {
         self.accessibility = accessibility
         self.counterAppearance = counterAppearance
         self.counterText = counterText
+        self.isSelected = isSelected
         self.action = action
     }
     
