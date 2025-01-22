@@ -39,61 +39,21 @@ public struct SDDSSegmentItem: View {
     
     @ViewBuilder
     public var body: some View {
-        if hasTitle && !hasSubtitle && !hasCounter {
-            SDDSButton(
-                title: title,
-                subtitle: "",
-                iconAttributes: iconAttributes,
-                isDisabled: isDisabled,
-                isLoading: false,
-                spinnerImage: nil,
-                buttonStyle: .basic,
-                appearance: appearance.buttonAppearance,
-                counterView: nil,
-                action: action
-            )
-        } else if hasTitle && hasSubtitle && !hasCounter {
-            SDDSButton(
-                title: title,
-                subtitle: subtitle,
-                iconAttributes: iconAttributes,
-                isDisabled: isDisabled,
-                isLoading: false,
-                spinnerImage: nil,
-                buttonStyle: .basic,
-                appearance: appearance.buttonAppearance,
-                counterView: nil,
-                action: action
-            )
-        } else if hasTitle && !hasSubtitle && isIconLeading && hasCounter {
-            SDDSButton(
-                title: title,
-                subtitle: "",
-                iconAttributes: iconAttributes,
-                isDisabled: isDisabled,
-                isLoading: false,
-                spinnerImage: nil,
-                buttonStyle: .basic,
-                appearance: appearance.buttonAppearance,
-                counterView: counterView,
-                action: action
-            )
-        } else {
-            SDDSButton(
-                title: title,
-                subtitle: "",
-                iconAttributes: iconAttributes,
-                isDisabled: isDisabled,
-                isLoading: false,
-                spinnerImage: nil,
-                buttonStyle: .basic,
-                appearance: appearance.buttonAppearance,
-                counterView: nil,
-                action: action
-            )
-        }
+        SDDSButton(
+            title: title,
+            subtitle: hasSubtitle ? subtitle : "",
+            iconAttributes: hasIconAttributes ? iconAttributes : nil,
+            isDisabled: isDisabled,
+            isLoading: false,
+            spinnerImage: nil,
+            buttonStyle: .basic,
+            appearance: appearance.buttonAppearance,
+            counterView: hasCounter ? counterView : nil,
+            action: action
+        )
     }
 }
+
 
 
 extension SDDSSegmentItem {
