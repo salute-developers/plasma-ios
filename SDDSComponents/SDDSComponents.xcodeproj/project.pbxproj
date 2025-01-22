@@ -14,6 +14,9 @@
 		69573D6A2D1D756000359D53 /* SegmentItemAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */; };
 		69573D6C2D1D7C5D00359D53 /* SegmentItemAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69573D6B2D1D7C4300359D53 /* SegmentItemAppearance+Variation.swift */; };
 		695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */; };
+		695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F438C2D412A9D00FF936B /* SegmentAppearance.swift */; };
+		695F438F2D412A9D00FF936B /* Segmnet+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F438D2D412A9D00FF936B /* Segmnet+Variation.swift */; };
+		695F43902D412A9D00FF936B /* Segment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F438B2D412A9D00FF936B /* Segment+Extensions.swift */; };
 		696843432D1EA12E002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843422D1EA11A002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift */; };
 		696843452D1EA35B002F8C7A /* SegmentItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696843442D1EA348002F8C7A /* SegmentItemAccessibility.swift */; };
 		6969EADE2D1D5B8E008536E5 /* SegmentItemAppearanceVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6969EADD2D1D5B73008536E5 /* SegmentItemAppearanceVariations.swift */; };
@@ -170,6 +173,9 @@
 		69573D692D1D754400359D53 /* SegmentItemAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		69573D6B2D1D7C4300359D53 /* SegmentItemAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+Variation.swift"; sourceTree = "<group>"; };
 		695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+Equatable.swift"; sourceTree = "<group>"; };
+		695F438B2D412A9D00FF936B /* Segment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+Extensions.swift"; sourceTree = "<group>"; };
+		695F438C2D412A9D00FF936B /* SegmentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAppearance.swift; sourceTree = "<group>"; };
+		695F438D2D412A9D00FF936B /* Segmnet+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmnet+Variation.swift"; sourceTree = "<group>"; };
 		696843422D1EA11A002F8C7A /* SegmentItemAppearance+ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+ButtonAppearance.swift"; sourceTree = "<group>"; };
 		696843442D1EA348002F8C7A /* SegmentItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAccessibility.swift; sourceTree = "<group>"; };
 		6969EADD2D1D5B73008536E5 /* SegmentItemAppearanceVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearanceVariations.swift; sourceTree = "<group>"; };
@@ -361,9 +367,9 @@
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
-				695F43872D40D35600FF936B /* Segment+Extensions.swift */,
-				695F43852D40C35F00FF936B /* Segmnet+Variation.swift */,
-				695F43722D40BA4D00FF936B /* SegmentAppearance.swift */,
+				695F438B2D412A9D00FF936B /* Segment+Extensions.swift */,
+				695F438C2D412A9D00FF936B /* SegmentAppearance.swift */,
+				695F438D2D412A9D00FF936B /* Segmnet+Variation.swift */,
 				690780F72D3EB92C00CED628 /* SDDSSegment.swift */,
 			);
 			path = SDDSSegment;
@@ -1240,7 +1246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
-				695F43862D40C36B00FF936B /* Segmnet+Variation.swift in Sources */,
 				8102BA322CBE9B3300C589D3 /* TextAreaSizeConfiguration.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,
@@ -1297,6 +1302,9 @@
 				817339F32D035D2D0092608A /* CheckboxAppearance+Extensions.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
+				695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */,
+				695F438F2D412A9D00FF936B /* Segmnet+Variation.swift in Sources */,
+				695F43902D412A9D00FF936B /* Segment+Extensions.swift in Sources */,
 				8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */,
 				818C03C92C451424002C6D0A /* RadioboxAppearance.swift in Sources */,
 				8102BA312CBE9B3300C589D3 /* TextAreaAppearance.swift in Sources */,
@@ -1332,7 +1340,6 @@
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				81733A2B2D072FB70092608A /* AvatarAppearance+Extensions.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
-				695F43882D40D39C00FF936B /* Segment+Extensions.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
