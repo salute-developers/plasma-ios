@@ -78,11 +78,14 @@ final class TextFieldContextBuilder {
         
         let nodes: [TextFieldVariationNode] = [.requiredStart, .requiredEnd]
         for node in nodes {
-            if let child = configuration.child(for: sizeVariationKey, nodes: nodes) {
+            if let child = configuration.child(for: sizeVariationKey, nodes: [node]) {
                 let (width, height) = valueExtractor(child.props)
-                result[sizeVariationKey.rawValue.sizeKey] = [
-                    node.rawValue: .init(width: width ?? 0, height: height ?? 0)
-                ]
+                var current = result[sizeVariationKey.rawValue.sizeKey] ?? [:]
+                current[node.rawValue] = .init(width: width ?? 0, height: height ?? 0)
+                
+                result[sizeVariationKey.rawValue.sizeKey] = current
+            } else {
+                print("key not found")
             }
         }
         
@@ -91,9 +94,13 @@ final class TextFieldContextBuilder {
             for node in nodes {
                 if let child = configuration.child(for: sizeVariationKey, nodes: [labelNode, node]) {
                     let (width, height) = valueExtractor(child.props)
-                    result[labelNode.rawValue] = [
-                        node.rawValue: .init(width: width ?? 0, height: height ?? 0)
-                    ]
+                    print((width, height))
+                    
+                    var current = result[labelNode.rawValue] ?? [:]
+                    current[node.rawValue] = .init(width: width ?? 0, height: height ?? 0)
+                    result[labelNode.rawValue] = current
+                } else {
+                    print("key not found")
                 }
             }
         }

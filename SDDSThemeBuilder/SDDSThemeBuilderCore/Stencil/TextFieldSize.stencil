@@ -9,166 +9,316 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
     {%- for sizeKey, sizeVariation in data %}
     case {{ sizeKey }}
     {%- endfor %}
-
+    
     public var titleBottomPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.titleBottomPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var titleInnerPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.titleInnerPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var textBeforeTrailingPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.textBeforeTrailingPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var textAfterLeadingPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.textAfterLeadingPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var boxLeadingPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.boxLeadingPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var boxTrailingPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.boxTrailingPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var captionTopPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.captionTopPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var optionalPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.optionalPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var iconPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.iconPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var iconActionPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.iconActionPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var fieldHeight: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.fieldHeight }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var iconSize: CGSize {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return CGSize(width: {{ sizeVariation.iconSize.width }}, height: {{ sizeVariation.iconSize.height }})
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var iconActionSize: CGSize {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return CGSize(width: {{ sizeVariation.iconActionSize.width }}, height: {{ sizeVariation.iconActionSize.height }})
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var chipsPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipsPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var chipContainerHorizontalPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipContainerHorizontalPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var chipGroupHeight: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupHeight }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var chipGroupVerticalTopPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupVerticalTopPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
-
+    
     public var chipGroupVerticalBottomPadding: CGFloat {
         switch self {
-        {%- for sizeKey, sizeVariation in data %}
+            {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupVerticalBottomPadding }}
-        {%- endfor %}
+            {%- endfor %}
         }
     }
+    
+    public func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGPoint {
+        switch labelPlacement {
+        case .none:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets[sizeKey]["required-start"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets[sizeKey]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets[sizeKey]["required-end"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets[sizeKey]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        case .inner:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets["inner-label"]["required-start"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets["inner-label"]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets["inner-label"]["required-end"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets["inner-label"]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        case .outer:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets["outer-label"]["required-start"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets["outer-label"]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGPoint(
+                        x: {{ sizeVariation.indicatorOffsets["outer-label"]["required-end"].width | default: 0 }},
+                        y: {{ sizeVariation.indicatorOffsets["outer-label"]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        }
+    }
+        
+    public func indicatorSize(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGSize {
+        switch labelPlacement {
+        case .none:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes[sizeKey]["required-start"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes[sizeKey]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes[sizeKey]["required-end"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes[sizeKey]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        case .inner:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes["inner-label"]["required-start"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes["inner-label"]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes["inner-label"]["required-end"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes["inner-label"]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        case .outer:
+            switch requiredPlacement {
+            case .left:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes["outer-label"]["required-start"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes["outer-label"]["required-start"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            case .right:
+                switch self {
+                    {%- for sizeKey, sizeVariation in data %}
+                case .{{ sizeKey }}:
+                    return CGSize(
+                        width: {{ sizeVariation.indicatorSizes["outer-label"]["required-end"].width | default: 0 }},
+                        height: {{ sizeVariation.indicatorSizes["outer-label"]["required-end"].height | default: 0 }}
+                    )
+                    {%- endfor %}
+                }
+            }
+        }
+    }
+        
+
 }
