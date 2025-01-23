@@ -127,133 +127,13 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
             4
         }
     }
-
-    public var indicatorSize: CGSize {
-        switch self {
-        case .large:
-            CGSize(width: 8, height: 8)
-        case .medium:
-            CGSize(width: 8, height: 8)
-        case .small:
-            CGSize(width: 6, height: 6)
-        case .extraSmall:
-            CGSize(width: 6, height: 6)
-        }
+    
+    public func indicatorSize(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGSize {
+        .zero
     }
     
-    public func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGPoint {
-        switch layout {
-        case .default:
-            switch labelPlacement {
-            case .none:
-                return .zero
-            case .inner:
-                return .zero
-            case .outer:
-                switch requiredPlacement {
-                case .left:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 6, y: 8)
-                    case .medium:
-                        return CGPoint(x: 6, y: 7)
-                    case .small:
-                        return CGPoint(x: 4, y: 6)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 4)
-                    }
-                case .right:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 4, y: 4)
-                    case .medium:
-                        return CGPoint(x: 4, y: 4)
-                    case .small:
-                        return CGPoint(x: 4, y: 4)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 2)
-                    }
-                }
-            }
-        case .clear:
-            switch labelPlacement {
-            case .none:
-                switch requiredPlacement {
-                case .left:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 6, y: 24)
-                    case .medium:
-                        return CGPoint(x: 6, y: 20)
-                    case .small:
-                        return CGPoint(x: 6, y: 17)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 13)
-                    }
-                case .right:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 4, y: 24)
-                    case .medium:
-                        return CGPoint(x: 4, y: 20)
-                    case .small:
-                        return CGPoint(x: 6, y: 17)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 13)
-                    }
-                }
-            case .inner:
-                switch requiredPlacement {
-                case .left:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 6, y: 24)
-                    case .medium:
-                        return CGPoint(x: 6, y: 20)
-                    case .small:
-                        return CGPoint(x: 6, y: 17)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 13)
-                    }
-                case .right:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 4, y: 24)
-                    case .medium:
-                        return CGPoint(x: 4, y: 20)
-                    case .small:
-                        return CGPoint(x: 6, y: 17)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 13)
-                    }
-                }
-            case .outer:
-                switch requiredPlacement {
-                case .left:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 6, y: 8)
-                    case .medium:
-                        return CGPoint(x: 6, y: 7)
-                    case .small:
-                        return CGPoint(x: 4, y: 6)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 4)
-                    }
-                case .right:
-                    switch self {
-                    case .large:
-                        return CGPoint(x: 4, y: 4)
-                    case .medium:
-                        return CGPoint(x: 4, y: 4)
-                    case .small:
-                        return CGPoint(x: 4, y: 4)
-                    case .extraSmall:
-                        return CGPoint(x: 4, y: 2)
-                    }
-                }
-            }
-        }
+    public func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGPoint {
+        .zero
     }
 
     public var fieldHeight: CGFloat {

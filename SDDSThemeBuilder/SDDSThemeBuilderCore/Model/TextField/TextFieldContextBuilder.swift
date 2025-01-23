@@ -70,10 +70,6 @@ final class TextFieldContextBuilder {
         valueExtractor: (TextFieldProps) -> (Double?, Double?)
     ) -> [String: [String: TextFieldSizeConfiguration.Size]] {
         let allProps = configuration.allProps
-        guard let variation = allProps[sizeVariationKey.rawValue] else {
-            return [:]
-        }
-        
         var result = [String: [String: TextFieldSizeConfiguration.Size]]()
         
         let nodes: [TextFieldVariationNode] = [.requiredStart, .requiredEnd]

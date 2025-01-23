@@ -198,15 +198,15 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private var indicatorWithTrailingPadding: some View {
         indicatorView
-            .padding(.trailing, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.trailing, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).x)
+            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).y)
     }
     
     @ViewBuilder
     private var indicatorWitLeadingPadding: some View {
         indicatorView
-            .padding(.leading, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.leading, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).x)
+            .padding(.top, appearance.size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).y)
     }
 
     @ViewBuilder
@@ -579,7 +579,7 @@ public struct SDDSTextField: View {
     private var indicatorView: some View {
         Circle()
             .fill(appearance.requiredIndicatorColor.color(for: colorScheme))
-            .frame(width: appearance.size.indicatorSize.width, height: appearance.size.indicatorSize.height, debug: debugConfiguration.indicatorView)
+            .frame(width: indicatorSize.width, height: indicatorSize.height, debug: debugConfiguration.indicatorView)
     }
 
     @ViewBuilder
@@ -635,6 +635,10 @@ public struct SDDSTextField: View {
     
     private var iconViewWidth: CGFloat {
         min(appearance.size.iconSize.width, appearance.size.fieldHeight)
+    }
+    
+    private var indicatorSize: CGSize {
+        return appearance.size.indicatorSize(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
     }
 
     private var shouldShowInnerTitle: Bool {
