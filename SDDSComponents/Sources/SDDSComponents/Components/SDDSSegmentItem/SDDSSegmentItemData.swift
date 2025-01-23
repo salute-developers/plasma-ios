@@ -3,15 +3,15 @@ import SwiftUI
 
 public struct SDDSSegmentItemData: Hashable {
     public let id: UUID
-    public var title: String
-    public var subtitle: String
-    public var iconAttributes: ButtonIconAttributes?
-    public var isDisabled: Bool
-    public var appearance: SegmentItemAppearance
-    public var accessibility: SegmentItemAccessibility
-    public var counterAppearance: CounterAppearance?
-    public var counterText: String
-    public var isSelected: Bool
+    public let title: String
+    public let subtitle: String
+    public let iconAttributes: ButtonIconAttributes?
+    public let isDisabled: Bool
+    public let appearance: SegmentItemAppearance
+    public let accessibility: SegmentItemAccessibility
+    public let counterAppearance: CounterAppearance?
+    public let counterText: String
+    public var isSelected: Binding<Bool>
     public var action: () -> Void
     
     public init(
@@ -24,7 +24,7 @@ public struct SDDSSegmentItemData: Hashable {
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterAppearance: CounterAppearance? = CounterAppearance(),
         counterText: String,
-        isSelected: Bool,
+        isSelected: Binding<Bool>,
         action: @escaping () -> Void
     ) {
         self.id = id

@@ -11,7 +11,7 @@ public struct SDDSSegmentItem: View {
     public let accessibility: SegmentItemAccessibility
     public let counterAppearance: CounterAppearance?
     public let counterText: String
-    public let isSelected: Bool
+    @Binding public var isSelected: Bool
     public var action: () -> Void
     
     public init(
@@ -24,7 +24,7 @@ public struct SDDSSegmentItem: View {
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterAppearance: CounterAppearance? = CounterAppearance(),
         counterText: String,
-        isSelected: Bool = false,
+        isSelected: Binding<Bool>,
         action: @escaping () -> Void
     ) {
         self.id = id
@@ -36,7 +36,7 @@ public struct SDDSSegmentItem: View {
         self.accessibility = accessibility
         self.counterAppearance = counterAppearance
         self.counterText = counterText
-        self.isSelected = isSelected
+        self._isSelected = isSelected
         self.action = action
     }
     
@@ -54,6 +54,9 @@ public struct SDDSSegmentItem: View {
             counterView: hasCounter ? counterView : nil,
             action: action
         )
+        .onTapGesture {
+            isSelected.toggle()
+        }
     }
 }
 

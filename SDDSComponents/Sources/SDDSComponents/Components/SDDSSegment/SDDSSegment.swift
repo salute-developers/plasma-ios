@@ -28,10 +28,6 @@ public enum SegmentLayoutMode: String, CaseIterable {
 public struct SDDSSegment: View {
     public let data: [SDDSSegmentItemData]
     public let appearance: SegmentAppearance
-    //    public let size: SegmentSizeConfiguration
-    //    public let shapeStyle: ComponentShapeStyle
-    //    public let layoutMode: SegmentLayoutMode
-    //    public let sizeItem: ItemSize
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
@@ -41,17 +37,9 @@ public struct SDDSSegment: View {
     
     public init(
         data: [SDDSSegmentItemData],
-        //        size: SegmentSizeConfiguration,
-        //        shapeStyle: ComponentShapeStyle,
-        //        layoutMode: SegmentLayoutMode,
-        //        sizeItem: ItemSize
         appearance: SegmentAppearance
     ) {
         self.data = data
-        //        self.size = size
-        //        self.shapeStyle = shapeStyle
-        //        self.layoutMode = layoutMode
-        //        self.sizeItem = sizeItem
         self.appearance = appearance
     }
     
@@ -111,6 +99,7 @@ public struct SDDSSegment: View {
             appearance: appearance,
             counterAppearance: segmentData.counterAppearance,
             counterText: segmentData.counterText,
+            isSelected: segmentData.isSelected,
             action: {}
         )
     }

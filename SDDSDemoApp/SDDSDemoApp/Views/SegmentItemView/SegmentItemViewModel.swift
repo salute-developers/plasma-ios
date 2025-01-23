@@ -32,6 +32,8 @@ final class SegmentItemViewModel: ObservableObject {
     @Published var counterAppearance: CounterAppearance? = nil
     @Published var counterVariationName: String = SDDSCounter.accent.name
     
+    @Published var isSelected: Bool = false
+    
     var cancellables: Set<AnyCancellable> = []
     
     init() {

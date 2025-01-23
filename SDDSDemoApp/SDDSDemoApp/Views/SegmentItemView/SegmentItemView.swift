@@ -42,6 +42,7 @@ public struct SegmentItemView: View {
                 appearance: viewModel.appearance,
                 counterAppearance: viewModel.counterAppearance,
                 counterText: viewModel.counterText,
+                isSelected: $viewModel.isSelected,
                 action: {}
             )
             Spacer()

@@ -35,29 +35,8 @@ struct SegmentView: View {
         SDDSSegment(
             data: viewModel.data,
             appearance: viewModel.appearance
-//            size: viewModel.size,
-//            backgroundColor: viewModel.backgroundColor,
-//            layoutMode: viewModel.layoutMode,
-//            sizeItem: viewModel.itemSize
         )
     }
-    
-//    var segmentAppearance: some View {
-//        HStack {
-//            Text("Appearance")
-//            Spacer()
-//            Menu {
-//                ForEach(SDDSSegment.all, id: \.self) { variation in
-//                    Button(variation.name) {
-//                        viewModel.appearance = variation.appearance.size(viewModel.size)
-//                        viewModel.variationName = variation.name
-//                    }
-//                }
-//            } label: {
-//                Text(viewModel.variationName.capitalized)
-//            }
-//        }
-//    }
     
     var segmentItemAppearance: some View {
         HStack {

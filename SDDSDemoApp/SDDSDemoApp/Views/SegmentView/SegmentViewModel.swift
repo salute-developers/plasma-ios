@@ -109,7 +109,9 @@ final class SegmentViewModel: ObservableObject {
                     accessibility: SegmentItemAccessibility(),
                     counterAppearance: counterAppearance,
                     counterText: counterText,
-                    isSelected: isSelected,
+                    isSelected: Binding(
+                        get: { self.isSelected },
+                        set: { self.isSelected = $0 }),
                     action: {}
                 )
             )
@@ -127,7 +129,9 @@ final class SegmentViewModel: ObservableObject {
                 accessibility: SegmentItemAccessibility(),
                 counterAppearance: counterAppearance,
                 counterText: counterText,
-                isSelected: false,
+                isSelected: Binding(
+                    get: { self.isSelected },
+                    set: { self.isSelected = $0 }),
                 action: {}
             )
         )
