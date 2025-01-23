@@ -101,8 +101,8 @@ public final class App {
                 )
             )
         ]
-        
-        commands.append(contentsOf: generateVariations)
+        commands.append(contentsOf: generateTextFieldVariations)
+//        commands.append(contentsOf: generateVariations)
         
         for command in commands {
             let result = command.run()
@@ -132,6 +132,18 @@ extension App {
         result.append(contentsOf: generateLinkButtonVariations)
         result.append(contentsOf: generateIconButtonVariations)
         return result
+    }
+    
+    private var generateTextFieldVariations: [GenerateTextFieldCommand] {
+        [
+            GenerateTextFieldCommand(
+                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/text_field_config.json")!,
+                templates: [
+                    .textFieldSize
+                ],
+                outputDirectoryURL: generatedComponentsURL(component: .button)
+            )
+        ]
     }
     
     private var generateBasicButtonVariations: [GenerateSwiftCodeCommand] {

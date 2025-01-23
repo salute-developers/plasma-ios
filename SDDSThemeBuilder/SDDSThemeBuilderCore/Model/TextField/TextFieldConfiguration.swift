@@ -31,6 +31,19 @@ struct ShapeKeyValue: Codable {
     let type: String?
     let value: String?
     let adjustment: Double?
+    
+    init(type: String? = nil, value: String? = nil, adjustment: Double? = nil) {
+        self.type = type
+        self.value = value
+        self.adjustment = adjustment
+    }
+}
+
+enum TextFieldVariationNode: String, Codable {
+    case outerLabel = "outer-label"
+    case innerLabel = "inner-label"
+    case requiredEnd = "required-end"
+    case requiredStart = "required-start"
 }
 
 struct TextFieldProps: Codable {
@@ -95,4 +108,23 @@ struct TextFieldConfiguration: Codable {
     let view: [String: Style]
     let props: TextFieldProps
     let variations: [TextFieldVariation]
+}
+
+extension TextFieldConfiguration {
+    var allProps: [String: TextFieldVariation] {
+        var result = [String: TextFieldVariation]()
+        for variation in self.variations {
+            result[variation.id] = variation
+        }
+        return result
+    }
+    
+    func child(for key: SizeVariationKey, nodes: [TextFieldVariationNode]) -> TextFieldVariation? {
+        return child(props: allProps, key: key, nodes: nodes)
+    }
+    
+    func child(props: [String: TextFieldVariation], key: SizeVariationKey, nodes: [TextFieldVariationNode]) -> TextFieldVariation? {
+        let path = ([key.rawValue] + nodes.map { $0.rawValue }).joined(separator: ".")
+        return props[path]
+    }
 }

@@ -13,6 +13,10 @@ extension String {
             return "medium"
         case "l":
             return "large"
+        case "xl":
+            return "extraLarge"
+        case "xxl":
+            return "extraExtraLarge"
         default:
             return "unknownSize"
         }

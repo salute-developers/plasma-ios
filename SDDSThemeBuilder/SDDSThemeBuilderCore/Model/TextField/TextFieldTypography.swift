@@ -6,11 +6,18 @@ struct TextFieldTypography {
         let text: String
         let innnerTitle: String
         let caption: String
+        
+        init(title: String = "", text: String = "", innnerTitle: String = "", caption: String = "") {
+            self.title = title
+            self.text = text
+            self.innnerTitle = innnerTitle
+            self.caption = caption
+        }
     }
     
-    let extraLarge: SizeClass
-    let large: SizeClass
-    let medium: SizeClass
-    let small: SizeClass
-    let extraSmall: SizeClass
+    let data: [String: SizeClass]
+    
+    init(data: [String : SizeClass] = [:]) {
+        self.data = data
+    }
 }

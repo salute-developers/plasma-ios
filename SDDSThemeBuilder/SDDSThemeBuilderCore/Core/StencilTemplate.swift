@@ -24,6 +24,7 @@ enum StencilTemplate: String {
     case iconButtonColorVariations = "IconButton+ColorVariations"
     case iconButtonSizeVariations = "IconButton+SizeVariations"
     case iconButtonSizeConfiguration = "IconButtonSize+ButtonSizeConfiguration"
+    case textFieldSize = "TextFieldSize"
     
     var withStencilExt: String {
         rawValue + ".stencil"

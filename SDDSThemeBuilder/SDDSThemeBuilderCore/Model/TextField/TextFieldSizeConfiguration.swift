@@ -6,37 +6,29 @@ struct TextFieldSizeConfiguration: Codable {
         let height: Double
     }
 
-    struct SizeClass: Codable {
+    struct SizeVariation: Codable {
         let titleBottomPadding: Double
         let titleInnerPadding: Double
-        let textBeforeLeadingPadding: Double
         let textBeforeTrailingPadding: Double
         let textAfterLeadingPadding: Double
-        let textAfterTrailingPadding: Double
         let boxLeadingPadding: Double
         let boxTrailingPadding: Double
         let captionTopPadding: Double
         let optionalPadding: Double
-        let cornerRadius: Double
-        let borderWidth: Double
+        let shape: ShapeKeyValue
         let iconPadding: Double
         let iconActionPadding: Double
-        let indicatorSize: Size
         let fieldHeight: Double
         let iconSize: Size
         let iconActionSize: Size
         let chipsPadding: Double
-        let multipleValueHorizontalPadding: Double
-        let dividerHeight: Double
         let chipContainerHorizontalPadding: Double
         let chipGroupHeight: Double
         let chipGroupVerticalTopPadding: Double
         let chipGroupVerticalBottomPadding: Double
+        let indicatorOffsets: [String: [String: Size]]
+        let indicatorSizes: [String: [String: Size]]
     }
-
-    let extraLarge: SizeClass
-    let large: SizeClass
-    let medium: SizeClass
-    let small: SizeClass
-    let extraSmall: SizeClass
+    
+    let data: [String: SizeVariation]
 }
