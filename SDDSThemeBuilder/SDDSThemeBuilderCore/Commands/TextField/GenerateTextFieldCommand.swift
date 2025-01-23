@@ -43,7 +43,7 @@ final class GenerateTextFieldCommand: Command, FileWriter {
         }
         
         for template in templates {
-            let result = templateRender.render(context: jsonDictionary, template: template)
+            let result = templateRender.render(context: jsonDictionary, template: template, removeLines: false)
             
             guard let generatedContent = result.asGenerated else {
                 return result

@@ -10,6 +10,15 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
     case {{ sizeKey }}
     {%- endfor %}
     
+    public var cornerRadius: CGFloat {
+        switch self {
+            {%- for sizeKey, sizeVariation in data %}
+        case .{{ sizeKey }}:
+            return {{ sizeVariation.shape.value | adjustedCornerRadius:sizeVariation.shape.adjustment }}
+            {%- endfor %}
+        }
+    }
+    
     public var titleBottomPadding: CGFloat {
         switch self {
             {%- for sizeKey, sizeVariation in data %}
