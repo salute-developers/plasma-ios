@@ -18,7 +18,8 @@ struct SegmentView: View {
                 segment
             }
             Section {
-                segmentElementAppearance
+                segmentItemSize
+                segmentItemAppearance
                 segmentSize
                 stackOrientation
                 shape
@@ -58,9 +59,9 @@ struct SegmentView: View {
 //        }
 //    }
     
-    var segmentElementAppearance: some View {
+    var segmentItemAppearance: some View {
         HStack {
-            Text("Segment Appearance")
+            Text("Segment Item Appearance")
             Spacer()
             Menu {
                 ForEach(SDDSSegmentItem.all, id: \.self) { variation in
@@ -75,19 +76,37 @@ struct SegmentView: View {
         }
     }
     
+    var segmentItemSize: some View {
+        HStack {
+            Text("Segment item size")
+            Spacer()
+            Menu {
+                ForEach(SegmentItemSize.allCases, id: \.self) { size in
+                    Button(size.rawValue) {
+                        viewModel.segmentItemSize = size
+                    }
+                }
+            } label: {
+                if let size = viewModel.segmentItemSize as? SegmentItemSize {
+                    Text(size.rawValue.capitalized)
+                }
+            }
+        }
+    }
+    
     var segmentSize: some View {
         HStack {
             Text("Segment size")
             Spacer()
             Menu {
-                ForEach(SegmentItemSize.allCases, id: \.self) { size in
+                ForEach(SegmentSize.allCases, id: \.self) { size in
                     Button(size.rawValue) {
-                        viewModel.segmentItemAppearance = viewModel.segmentItemAppearance.size(size)
+                        viewModel.size = size
                     }
                 }
             } label: {
-                if let size = viewModel.segmentItemAppearance.size as? SegmentItemSize {
-                    Text(size.rawValue)
+                if let size = viewModel.size as? SegmentSize {
+                    Text(size.rawValue.capitalized)
                 }
             }
         }

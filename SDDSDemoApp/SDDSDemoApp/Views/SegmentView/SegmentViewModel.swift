@@ -11,12 +11,12 @@ final class SegmentViewModel: ObservableObject {
     @Published var size: SegmentSizeConfiguration = SegmentSize.medium
     @Published var layoutMode: SegmentLayoutMode = .horizontal
     @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
-    
+    @Published var shapeStyle: ComponentShapeStyle = .cornered
     
     @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
     @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium
     
-    @Published var variationName: String = ""
+    @Published var variationName: String = SDDSSegmentItem.default.name
     @Published var maxItemsString: String = ""
     @Published var maxItems: Int = 0
     
@@ -40,6 +40,13 @@ final class SegmentViewModel: ObservableObject {
     }
     
     func observeSizeChange() {
+        $size
+            .sink { [weak self] value in
+                guard let self else { return }
+                self.appearance = self.appearance.size(value)
+            }
+            .store(in: &cancellables)
+        
         $segmentItemSize
             .sink { [weak self] value in
                 guard let self else { return }
@@ -82,9 +89,9 @@ final class SegmentViewModel: ObservableObject {
                     return
                 }
                 if value {
-                    self.segmentItemAppearance = self.segmentItemAppearance.shapeStyle(.pilled)
+                    self.appearance = self.appearance.shapeStyle(.pilled)
                 } else {
-                    self.segmentItemAppearance = self.segmentItemAppearance.shapeStyle(.cornered)
+                    self.appearance = self.appearance.shapeStyle(.cornered)
                 }
             }
             .store(in: &cancellables)

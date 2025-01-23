@@ -4,6 +4,7 @@ import SwiftUI
 public struct SegmentDefaultSize: SegmentSizeConfiguration {
     public let height: CGFloat = 0
     public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
+    public let horizontalPaddings: CGFloat = 0
     
     public init() {}
 }
@@ -11,6 +12,7 @@ public struct SegmentDefaultSize: SegmentSizeConfiguration {
 public protocol SegmentSizeConfiguration: SizeConfiguration {
     var height: CGFloat { get }
     func cornerRadius(style: ComponentShapeStyle) -> CGFloat
+    var horizontalPaddings: CGFloat { get }
 }
 
 public enum ItemSize {
@@ -64,38 +66,20 @@ public struct SDDSSegment: View {
     
     public var horizontalOrientation: some View {
         HStack(spacing: 0) {
-            ForEach(data, id: \.self) { segment in
-                SDDSSegmentItem(
-                    title: segment.title,
-                    subtitle: "",
-                    iconAttributes: nil,
-                    isDisabled: false,
-                    appearance: segment.appearance,
-                    counterAppearance: segment.counterAppearance,
-                    counterText: segment.counterText,
-                    action: {
-                        
-                    }
-                )
+            ForEach(data, id: \.id) { segmentData in
+                setSegmentItem(segmentData: segmentData)
             }
         }
+        .frame(height: appearance.size.height)
+        .padding(.horizontal, appearance.size.horizontalPaddings)
         .background(currentColor(for: appearance.backgroundColor))
         .cornerRadius(cornerRadius)
     }
     
     public var verticalOrientation: some View {
         VStack(spacing: 0) {
-            ForEach(data, id: \.id) { segment in
-                SDDSSegmentItem(
-                    title: segment.title,
-                    subtitle: "",
-                    iconAttributes: nil,
-                    isDisabled: false,
-                    appearance: segment.appearance,
-                    counterAppearance: segment.counterAppearance,
-                    counterText: segment.counterText,
-                    action: {}
-                )
+            ForEach(data, id: \.id) { segmentData in
+                setSegmentItem(segmentData: segmentData)
             }
         }
         .background(currentColor(for: appearance.backgroundColor))
@@ -113,12 +97,22 @@ public struct SDDSSegment: View {
     }
     
     var cornerRadius: CGFloat {
-        switch appearance.itemShapeStyle {
-        case .cornered:
-            return appearance.size.cornerRadius(style: .cornered)
-        case .pilled:
-            return appearance.size.cornerRadius(style: .pilled)
-        }
+        appearance.size.cornerRadius(style: appearance.shapeStyle)
+    }
+    
+    func setSegmentItem(segmentData: SDDSSegmentItemData) -> SDDSSegmentItem {
+        let appearance = segmentData.appearance.shapeStyle(appearance.shapeStyle)
+        
+        return SDDSSegmentItem(
+            title: segmentData.title,
+            subtitle: "",
+            iconAttributes: nil,
+            isDisabled: false,
+            appearance: appearance,
+            counterAppearance: segmentData.counterAppearance,
+            counterText: segmentData.counterText,
+            action: {}
+        )
     }
 }
 
