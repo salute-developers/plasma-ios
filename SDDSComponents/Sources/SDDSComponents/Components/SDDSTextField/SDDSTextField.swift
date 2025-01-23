@@ -22,7 +22,6 @@ import SDDSComponents
     - divider: Флаг, указывающий, показывать ли линию разделителя.
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
-    - chipGroupAppearance: Параметры внешнего вида ChipGroup.
     - chipGroupGap: Распределение элементов в ChipGroup.
     - layout: Макет текстового поля (`default`, `clear`).
     - accessibility: Параметры доступности.
@@ -45,7 +44,6 @@ public struct SDDSTextField: View {
     public let divider: Bool
     public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
-    public let chipGroupAppearance: ChipGroupAppearance
     public let chipGroupGap: ChipGroupGap
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
@@ -72,7 +70,6 @@ public struct SDDSTextField: View {
         divider: Bool = true,
         requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
-        chipGroupAppearance: ChipGroupAppearance,
         chipGroupGap: ChipGroupGap,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
@@ -100,7 +97,6 @@ public struct SDDSTextField: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.appearance = appearance
-        self.chipGroupAppearance = chipGroupAppearance
         self.chipGroupGap = chipGroupGap
         self.layout = layout
         self.accessibility = accessibility
@@ -216,7 +212,12 @@ public struct SDDSTextField: View {
             case .single:
                 textField
             case .multiple(_, let chips):
-                chipsScrollView(chips: chips, proxy: proxy)
+                let updatedChips: [ChipData] = chips.map { chipData in
+                    var chipData = chipData
+                    chipData.appearance = self.appearance.chipAppearance
+                    return chipData
+                }
+                chipsScrollView(chips: updatedChips, proxy: proxy)
             }
         }
     }
@@ -228,12 +229,10 @@ public struct SDDSTextField: View {
                 SDDSChipGroup(
                     data: chips,
                     gap: chipGroupGap,
-                    appearance: chipGroupAppearance,
-                    height: .constant(appearance.size.chipGroupHeight)
+                    appearance: appearance.chipGroupAppearance,
+                    height: .constant(appearance.chipAppearance.size.height)
                 )
-                .frame(height: appearance.size.chipGroupHeight)
-                .padding(.bottom, appearance.size.chipGroupVerticalBottomPadding)
-                .padding(.top, appearance.size.chipGroupVerticalTopPadding)
+                .frame(height: appearance.chipAppearance.size.height)
                 
                 textField
                     .id(textFieldIdentifier)
@@ -710,7 +709,7 @@ public struct SDDSTextField: View {
     }
     
     private var calculatedChipGroupHeight: CGFloat {
-        return min(appearance.size.chipGroupHeight, chipGroupContentHeight)
+        return min(appearance.chipAppearance.size.height, chipGroupContentHeight)
     }
     
     private let textFieldIdentifier = "TextField"

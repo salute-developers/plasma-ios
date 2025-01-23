@@ -16,7 +16,6 @@ public struct TextField: View {
     public let divider: Bool
     public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
-    public let chipGroupAppearance: ChipGroupAppearance
     public let chipGroupGap: ChipGroupGap
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
@@ -37,7 +36,6 @@ public struct TextField: View {
         divider: Bool = true,
         requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
-        chipGroupAppearance: ChipGroupAppearance,
         chipGroupGap: ChipGroupGap = .dense,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -57,7 +55,6 @@ public struct TextField: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.appearance = appearance
-        self.chipGroupAppearance = chipGroupAppearance
         self.chipGroupGap = chipGroupGap
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
@@ -80,7 +77,6 @@ public struct TextField: View {
             divider: divider,
             requiredPlacement: requiredPlacement,
             appearance: appearance,
-            chipGroupAppearance: chipGroupAppearance,
             chipGroupGap: chipGroupGap,
             layout: .default,
             accessibility: accessibility,

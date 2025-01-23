@@ -23,9 +23,6 @@ struct TextFieldSizeConfiguration: Codable {
         let iconActionSize: Size
         let chipsPadding: Double
         let chipContainerHorizontalPadding: Double
-        let chipGroupHeight: Double
-        let chipGroupVerticalTopPadding: Double
-        let chipGroupVerticalBottomPadding: Double
         let indicatorOffsets: [String: [String: Size]]
         let indicatorSizes: [String: [String: Size]]
     }

@@ -194,16 +194,4 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
     public var debugDescription: String {
         String(reflecting: self)
     }
-    
-    public var chipGroupHeight: CGFloat {
-        0
-    }
-    
-    public var chipGroupVerticalTopPadding: CGFloat {
-        0
-    }
-    
-    public var chipGroupVerticalBottomPadding: CGFloat {
-        0
-    }
 }

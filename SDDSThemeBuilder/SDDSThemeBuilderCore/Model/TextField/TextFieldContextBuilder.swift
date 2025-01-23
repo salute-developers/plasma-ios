@@ -44,9 +44,6 @@ final class TextFieldContextBuilder {
                 iconActionSize: .init(width: props.endContentSize?.value ?? 0, height: props.endContentSize?.value ?? 0),
                 chipsPadding: invariantProps.chipsPadding?.value ?? 0,
                 chipContainerHorizontalPadding: props.chipsPadding?.value ?? 0,
-                chipGroupHeight: 0,
-                chipGroupVerticalTopPadding: 0,
-                chipGroupVerticalBottomPadding: 0,
                 indicatorOffsets: indiciatorOffsets(from: configuration, sizeVariationKey: sizeVariationKey),
                 indicatorSizes: indiciatorSizes(from: configuration, sizeVariationKey: sizeVariationKey)
             )

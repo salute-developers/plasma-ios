@@ -154,33 +154,6 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
         }
     }
     
-    public var chipGroupHeight: CGFloat {
-        switch self {
-            {%- for sizeKey, sizeVariation in data %}
-        case .{{ sizeKey }}:
-            return {{ sizeVariation.chipGroupHeight }}
-            {%- endfor %}
-        }
-    }
-    
-    public var chipGroupVerticalTopPadding: CGFloat {
-        switch self {
-            {%- for sizeKey, sizeVariation in data %}
-        case .{{ sizeKey }}:
-            return {{ sizeVariation.chipGroupVerticalTopPadding }}
-            {%- endfor %}
-        }
-    }
-    
-    public var chipGroupVerticalBottomPadding: CGFloat {
-        switch self {
-            {%- for sizeKey, sizeVariation in data %}
-        case .{{ sizeKey }}:
-            return {{ sizeVariation.chipGroupVerticalBottomPadding }}
-            {%- endfor %}
-        }
-    }
-    
     public func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGPoint {
         switch labelPlacement {
         case .none:

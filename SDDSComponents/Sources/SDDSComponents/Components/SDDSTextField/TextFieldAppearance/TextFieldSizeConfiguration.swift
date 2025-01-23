@@ -24,9 +24,6 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var textAfterLeadingPadding: CGFloat { get }
     var textAfterTrailingPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
-    var chipGroupHeight: CGFloat { get }
-    var chipGroupVerticalTopPadding: CGFloat { get }
-    var chipGroupVerticalBottomPadding: CGFloat { get }
     func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGPoint
     func indicatorSize(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGSize
 }
@@ -54,9 +51,6 @@ public struct ZeroTextFieldSize: TextFieldSizeConfiguration {
     public var textAfterLeadingPadding: CGFloat { 0 }
     public var textAfterTrailingPadding: CGFloat { 0 }
     public var chipsPadding: CGFloat { 0 }
-    public var chipGroupHeight: CGFloat { 0 }
-    public var chipGroupVerticalTopPadding: CGFloat { 0 }
-    public var chipGroupVerticalBottomPadding: CGFloat { 0 }
     public func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGPoint { .zero }
     public func indicatorSize(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement) -> CGSize { .zero }
     
