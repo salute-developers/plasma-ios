@@ -5,7 +5,7 @@ public extension SegmentAppearance {
         SegmentAppearance(
             size: size,
             shapeStyle: shapeStyle,
-            layoutMode: layoutMode,
+            layoutOrientation: layoutOrientation,
             backgroundColor: variation.backgroundColor
         )
     }

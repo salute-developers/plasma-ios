@@ -93,8 +93,8 @@ struct SegmentView: View {
     
     var stackOrientation: some View {
         HStack {
-            Picker("Stack orientation", selection: $viewModel.layoutMode) {
-                ForEach(SegmentLayoutMode.allCases, id: \.self) { orientation in
+            Picker("Stack orientation", selection: $viewModel.layoutOrientation) {
+                ForEach(SegmentLayoutOrientation.allCases, id: \.self) { orientation in
                     Text(orientation.rawValue)
                 }
             }
@@ -111,25 +111,20 @@ struct SegmentView: View {
     }
     
     var maxElementsAdditional: some View {
-        ForEach(viewModel.data.indices, id: \.self) { index in
+        ForEach(viewModel.data, id: \.id) { item in
             HStack {
                 TextField(
                     "Label",
                     text: Binding(
-                        get: {
-                            guard !viewModel.data.isEmpty else {
-                                return ""
-                            }
-                            return viewModel.data[index].title
-                        },
+                        get: { item.title },
                         set: { newTitle in
-                            viewModel.updateSegmentItem(at: index, title: newTitle)
+                            viewModel.updateSegmentItem(id: item.id, title: newTitle)
                         }
                     )
                 )
                 Spacer()
                 Button("Delete") {
-                    viewModel.removeItem(at: index)
+                    viewModel.removeItem(id: item.id)
                 }
                 .foregroundColor(.red)
             }

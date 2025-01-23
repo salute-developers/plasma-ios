@@ -3,18 +3,18 @@ import Foundation
 public struct SegmentAppearance {
     public let size: SegmentSizeConfiguration
     public let shapeStyle: ComponentShapeStyle
-    public let layoutMode: SegmentLayoutMode
+    public let layoutOrientation: SegmentLayoutOrientation
     public let backgroundColor: ButtonColor
     
     public init(
         size: SegmentSizeConfiguration = SegmentDefaultSize(),
         shapeStyle: ComponentShapeStyle = .cornered,
-        layoutMode: SegmentLayoutMode = .horizontal,
+        layoutOrientation: SegmentLayoutOrientation = .horizontal,
         backgroundColor: ButtonColor = ButtonColor()
     ) {
         self.size = size
         self.shapeStyle = shapeStyle
-        self.layoutMode = layoutMode
+        self.layoutOrientation = layoutOrientation
         self.backgroundColor = backgroundColor
     }
 }

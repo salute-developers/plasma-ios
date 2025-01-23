@@ -5,7 +5,7 @@ public extension SegmentAppearance {
         return SegmentAppearance(
             size: size,
             shapeStyle: self.shapeStyle,
-            layoutMode: self.layoutMode,
+            layoutOrientation: self.layoutOrientation,
             backgroundColor: self.backgroundColor
         )
     }
@@ -14,7 +14,16 @@ public extension SegmentAppearance {
         return SegmentAppearance(
             size: self.size,
             shapeStyle: shapeStyle,
-            layoutMode: self.layoutMode,
+            layoutOrientation: self.layoutOrientation,
+            backgroundColor: self.backgroundColor
+        )
+    }
+    
+    func layoutOrientation(_ layoutOrientation: SegmentLayoutOrientation) -> SegmentAppearance {
+        return SegmentAppearance(
+            size: self.size,
+            shapeStyle: self.shapeStyle,
+            layoutOrientation: layoutOrientation,
             backgroundColor: self.backgroundColor
         )
     }

@@ -9,7 +9,7 @@ final class SegmentViewModel: ObservableObject {
     @Published var title: String = "Label"
     @Published var data: [SDDSSegmentItemData] = []
     @Published var size: SegmentSizeConfiguration = SegmentSize.medium
-    @Published var layoutMode: SegmentLayoutMode = .horizontal
+    @Published var layoutOrientation: SegmentLayoutOrientation = .horizontal
     @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
     @Published var shapeStyle: ComponentShapeStyle = .cornered
     
@@ -24,7 +24,6 @@ final class SegmentViewModel: ObservableObject {
     @Published var counterText: String = ""
     
     @Published var isSelected: Bool = false
-    @Published var selectedItem: UUID = UUID()
     
     @Published var isPilled: Bool = false
     
@@ -37,6 +36,7 @@ final class SegmentViewModel: ObservableObject {
         observeSizeChange()
         observeMaxItems()
         observeShapeStyle()
+        observeOrientation()
     }
     
     func observeSizeChange() {
@@ -55,6 +55,7 @@ final class SegmentViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    //TODO: Подумать над оптимизацией
     func observeMaxItems() {
         $maxItemsString
             .sink { [weak self] value in
@@ -76,8 +77,6 @@ final class SegmentViewModel: ObservableObject {
                     maxItems = 0
                     data = []
                 }
-                
-                
             }
             .store(in: &cancellables)
     }
@@ -97,8 +96,21 @@ final class SegmentViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func observeOrientation() {
+        $layoutOrientation
+            .sink { [weak self] value in
+                guard let self else {
+                    return
+                }
+                self.appearance = self.appearance.layoutOrientation(layoutOrientation)
+            }
+            .store(in: &cancellables)
+    }
+    
     func addItems() {
-        for _ in 0..<maxItems {
+        for i in 0..<maxItems {
+            //TODO: Подумать над оптимизацией
+            isSelected = i == 0 ? true : false
             data.append(
                 SDDSSegmentItemData(
                     title: title,
@@ -109,64 +121,46 @@ final class SegmentViewModel: ObservableObject {
                     accessibility: SegmentItemAccessibility(),
                     counterAppearance: counterAppearance,
                     counterText: counterText,
+                    //TODO: Проверить что состояние передано (Нужно ли это делать?)
                     isSelected: Binding(
                         get: { self.isSelected },
-                        set: { self.isSelected = $0 }),
+                        set: { newValue in
+                            self.isSelected = newValue
+                        }
+                    ),
                     action: {}
                 )
             )
         }
     }
     
-    func addSegment() {
-        data.append(
-            SDDSSegmentItemData(
+    func updateSegmentItem(id: UUID, title: String) {
+        if let index = data.firstIndex(where: { $0.id == id }) {
+            var segment = data[index]
+            segment = SDDSSegmentItemData(
                 title: title,
                 subtitle: "",
                 iconAttributes: nil,
                 isDisabled: false,
-                appearance: segmentItemAppearance,
+                appearance: segment.appearance,
                 accessibility: SegmentItemAccessibility(),
                 counterAppearance: counterAppearance,
                 counterText: counterText,
+                //TODO: Проверить что состояние передано (Нужно ли это делать?)
                 isSelected: Binding(
                     get: { self.isSelected },
-                    set: { self.isSelected = $0 }),
+                    set: { self.isSelected = $0 }
+                ),
                 action: {}
             )
-        )
+            data[index] = segment
+        }
     }
     
-    func updateSegmentItem(at index: Int, title: String) {
-        guard data.indices.contains(index) else { return }
-        var segment = data[index]
-        
-        segment = SDDSSegmentItemData(
-            title: title,
-            subtitle: "",
-            iconAttributes: nil,
-            isDisabled: false,
-            appearance: segment.appearance,
-            accessibility: SegmentItemAccessibility(),
-            counterAppearance: counterAppearance,
-            counterText: counterText,
-            isSelected: segment.isSelected,
-            action: {}
-        )
-        
-        data[index] = segment
+    func removeItem(id: UUID) {
+        if let index = data.firstIndex(where: { $0.id == id }) {
+            data.remove(at: index)
+        }
     }
-    
-    
-    func removeItem(at index: Int) {
-        guard data.indices.contains(index) else { return }
-        data.remove(at: index)
-    }
-    
-//    func selectItem(with id: UUID) {
-//        for index in data.indices {
-//            data[index].isSelected = data[index].id == id
-//        }
-//        selectedItem = id
-//    }
 }
+

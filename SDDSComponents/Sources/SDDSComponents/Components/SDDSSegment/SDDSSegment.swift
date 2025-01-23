@@ -20,7 +20,7 @@ public enum ItemSize {
     case stretched
 }
 
-public enum SegmentLayoutMode: String, CaseIterable {
+public enum SegmentLayoutOrientation: String, CaseIterable {
     case horizontal
     case vertical
 }
@@ -44,7 +44,7 @@ public struct SDDSSegment: View {
     }
     
     public var body: some View {
-        switch appearance.layoutMode {
+        switch appearance.layoutOrientation {
         case .horizontal:
             horizontalOrientation
         case .vertical:
@@ -70,6 +70,8 @@ public struct SDDSSegment: View {
                 setSegmentItem(segmentData: segmentData)
             }
         }
+        .frame(height: appearance.size.height)
+        .padding(.horizontal, appearance.size.horizontalPaddings)
         .background(currentColor(for: appearance.backgroundColor))
         .cornerRadius(cornerRadius)
     }
@@ -89,7 +91,8 @@ public struct SDDSSegment: View {
     }
     
     func setSegmentItem(segmentData: SDDSSegmentItemData) -> SDDSSegmentItem {
-        let appearance = segmentData.appearance.shapeStyle(appearance.shapeStyle)
+        //Подумать над оптимизацией и передачей состояния
+        var appearance = segmentData.appearance.shapeStyle(appearance.shapeStyle)
         
         return SDDSSegmentItem(
             title: segmentData.title,

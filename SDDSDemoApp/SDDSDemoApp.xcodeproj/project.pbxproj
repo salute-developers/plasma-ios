@@ -301,7 +301,6 @@
 				8199E5A12CBD088000AF3D22 /* TextFieldView */,
 				816243592CB9414000506E1C /* CheckboxGroupView */,
 				816243582CB9413800506E1C /* RadioboxGroupView */,
-				816243522CB93EDE00506E1C /* ChipView */,
 				8162434B2CB93E1100506E1C /* PhotoPicker */,
 				8162434A2CB93DC200506E1C /* AvatarGroupView */,
 				816243472CB90F9800506E1C /* GradientPickerView */,
@@ -312,6 +311,7 @@
 				811DE1372C4D0EBD000DD354 /* CheckboxView */,
 				817D9F122C3704AD006C4814 /* ButtonView */,
 				811DE1332C4D0C58000DD354 /* Components */,
+				816243522CB93EDE00506E1C /* ChipView */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -56,6 +56,7 @@ public struct SDDSSegmentItem: View {
         )
         .onTapGesture {
             isSelected.toggle()
+            print("Item ID: \(id), isSelected: \(isSelected)")
         }
     }
 }
