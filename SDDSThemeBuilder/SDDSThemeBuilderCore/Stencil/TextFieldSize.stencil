@@ -1,173 +1,174 @@
-import Foundation
+
 import SDDSComponents
 import SDDSServTheme
 import SDDSThemeCore
+import Foundation
 import SwiftUI
 
 public enum TextFieldSize: String, TextFieldSizeConfiguration {
-    {% for sizeKey, sizeVariation in data %}
+    {%- for sizeKey, sizeVariation in data %}
     case {{ sizeKey }}
-    {% endfor %}
-    
-    {% for sizeKey, sizeVariation in data %}
+    {%- endfor %}
+
     public var titleBottomPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.titleBottomPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var titleInnerPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.titleInnerPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var textBeforeTrailingPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.textBeforeTrailingPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var textAfterLeadingPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.textAfterLeadingPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var boxLeadingPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.boxLeadingPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var boxTrailingPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.boxTrailingPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var captionTopPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.captionTopPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var optionalPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.optionalPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var iconPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.iconPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var iconActionPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.iconActionPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var fieldHeight: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.fieldHeight }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var iconSize: CGSize {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return CGSize(width: {{ sizeVariation.iconSize.width }}, height: {{ sizeVariation.iconSize.height }})
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var iconActionSize: CGSize {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return CGSize(width: {{ sizeVariation.iconActionSize.width }}, height: {{ sizeVariation.iconActionSize.height }})
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var chipsPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipsPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var chipContainerHorizontalPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipContainerHorizontalPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var chipGroupHeight: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupHeight }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var chipGroupVerticalTopPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupVerticalTopPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 
-    {% for sizeKey, sizeVariation in data %}
     public var chipGroupVerticalBottomPadding: CGFloat {
         switch self {
+        {%- for sizeKey, sizeVariation in data %}
         case .{{ sizeKey }}:
             return {{ sizeVariation.chipGroupVerticalBottomPadding }}
-        {% endfor %}
+        {%- endfor %}
         }
     }
 }
