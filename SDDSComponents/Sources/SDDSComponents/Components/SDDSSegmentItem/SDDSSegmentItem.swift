@@ -40,7 +40,22 @@ public struct SDDSSegmentItem: View {
         self.action = action
     }
     
-    @ViewBuilder
+    public init(
+        data: SDDSSegmentItemData
+    ) {
+        self.id = data.id
+        self.title = data.title
+        self.subtitle = data.subtitle
+        self.iconAttributes = data.iconAttributes
+        self.isDisabled = data.isDisabled
+        self.appearance = data.appearance
+        self.accessibility = data.accessibility
+        self.counterAppearance = data.counterAppearance
+        self.counterText = data.counterText
+        self._isSelected = data.isSelected
+        self.action = data.action
+    }
+    
     public var body: some View {
         SDDSButton(
             title: title,
@@ -66,19 +81,8 @@ extension SDDSSegmentItem {
         iconAttributes != nil
     }
     
-    var isIconLeading: Bool {
-        if let iconAttributes = iconAttributes, iconAttributes.alignment == .leading {
-            return true
-        }
-        return false
-    }
-    
     var hasCounter: Bool {
         counterAppearance != nil
-    }
-    
-    var hasTitle: Bool {
-        !title.isEmpty
     }
     
     var hasSubtitle: Bool {

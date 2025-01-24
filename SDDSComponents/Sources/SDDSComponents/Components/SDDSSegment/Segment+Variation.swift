@@ -4,11 +4,10 @@ public extension SegmentAppearance {
     func applyColorVariation(variation: SegmentAppearance) -> SegmentAppearance {
         SegmentAppearance(
             size: size,
-            shapeStyle: shapeStyle,
             layoutOrientation: layoutOrientation,
             backgroundColor: variation.backgroundColor,
             segmentItemAppearance: segmentItemAppearance,
-            stretchMode: stretchMode
+            StrechMode: StrechMode
         )
     }
 }

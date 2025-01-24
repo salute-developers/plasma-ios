@@ -55,7 +55,7 @@ public struct SDDSSegment: View {
         }
         .padding(appearance.size.paddings)
         .background(currentColor(for: appearance.backgroundColor))
-//        .cornerRadius(cornerRadius)
+        .cornerRadius(cornerRadius)
     }
     
     public var verticalOrientation: some View {
@@ -66,7 +66,7 @@ public struct SDDSSegment: View {
         }
         .padding(appearance.size.paddings)
         .background(currentColor(for: appearance.backgroundColor))
-//        .cornerRadius(cornerRadius)
+        .cornerRadius(cornerRadius)
     }
     
     func currentColor(for counterColor: ButtonColor) -> Color {
@@ -80,12 +80,12 @@ public struct SDDSSegment: View {
     }
     
     var cornerRadius: CGFloat {
-        appearance.size.cornerRadius(style: appearance.shapeStyle)
+        appearance.size.cornerRadius(style: appearance.segmentItemAppearance.shapeStyle)
     }
     
     func setSegmentItem(segmentData: SDDSSegmentItemData) -> SDDSSegmentItem {
         //Подумать над оптимизацией и передачей состояния
-        var appearance = segmentData.appearance.shapeStyle(appearance.shapeStyle)
+        var appearance = segmentData.appearance.shapeStyle(appearance.segmentItemAppearance.shapeStyle)
         
         return SDDSSegmentItem(
             title: segmentData.title,

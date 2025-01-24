@@ -5,11 +5,10 @@ import Foundation
 
  - Properties:
     - size: Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
-    - shapeStyle: Стиль формы сегмента (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
     - layoutOrientation: Ориентация сегмента (горизонтальная или вертикальная), определяемая `SegmentLayoutOrientation`.
     - backgroundColor: Цвет фона сегмента для различных состояний, определяемый `ButtonColor`.
     - segmentItemAppearance: Внешний вид элементов сегмента, определяемый `SegmentItemAppearance`.
-    - stretchMode: Режим растяжения элементов в контейнере, определяемый `StretchMode`.
+    - StrechMode: Режим растяжения элементов в контейнере, определяемый `StrechMode`.
 
  - Methods:
     - init: Инициализирует стили сегмента с заданными параметрами.
@@ -20,11 +19,6 @@ public struct SegmentAppearance {
      Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
      */
     public let size: SegmentSizeConfiguration
-
-    /**
-     Стиль формы сегмента (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
-     */
-    public let shapeStyle: ComponentShapeStyle
 
     /**
      Ориентация сегмента (горизонтальная или вертикальная), определяемая `SegmentLayoutOrientation`.
@@ -42,34 +36,31 @@ public struct SegmentAppearance {
     public let segmentItemAppearance: SegmentItemAppearance
 
     /**
-     Режим растяжения элементов в контейнере, определяемый `StretchMode`.
+     Режим растяжения элементов в контейнере, определяемый `StrechMode`.
      */
-    public let stretchMode: StretchMode
+    public let StrechMode: StrechMode
 
     /**
      Инициализатор для создания стилистической конфигурации сегмента.
 
      - Parameters:
         - size: Конфигурация размеров сегмента.
-        - shapeStyle: Стиль формы сегмента.
         - layoutOrientation: Ориентация сегмента.
         - backgroundColor: Цвет фона сегмента для различных состояний.
         - segmentItemAppearance: Внешний вид элементов сегмента.
-        - stretchMode: Режим растяжения элементов в контейнере.
+        - StrechMode: Режим растяжения элементов в контейнере.
      */
     public init(
         size: SegmentSizeConfiguration = SegmentDefaultSize(),
-        shapeStyle: ComponentShapeStyle = .cornered,
         layoutOrientation: SegmentLayoutOrientation = .horizontal,
         backgroundColor: ButtonColor = ButtonColor(),
         segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance(),
-        stretchMode: StretchMode = .fixed
+        StrechMode: StrechMode = .fixed
     ) {
         self.size = size
-        self.shapeStyle = shapeStyle
         self.layoutOrientation = layoutOrientation
         self.backgroundColor = backgroundColor
         self.segmentItemAppearance = segmentItemAppearance
-        self.stretchMode = stretchMode
+        self.StrechMode = StrechMode
     }
 }

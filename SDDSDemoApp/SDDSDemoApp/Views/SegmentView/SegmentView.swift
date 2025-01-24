@@ -23,10 +23,11 @@ struct SegmentView: View {
                 segmentSize
                 stackOrientation
                 shape
+                stretch
                 maxElements
             }
             Section {
-                maxElementsAdditional
+                maxElementsAdditionalWindow
             }
         }
     }
@@ -73,6 +74,12 @@ struct SegmentView: View {
         }
     }
     
+    var stretch: some View {
+        HStack {
+            Toggle("Strech", isOn: $viewModel.strechMode)
+        }
+    }
+    
     var segmentSize: some View {
         HStack {
             Text("Segment size")
@@ -110,7 +117,7 @@ struct SegmentView: View {
         }
     }
     
-    var maxElementsAdditional: some View {
+    var maxElementsAdditionalWindow: some View {
         ForEach(viewModel.data, id: \.id) { item in
             HStack {
                 TextField(

@@ -11,24 +11,19 @@ final class SegmentViewModel: ObservableObject {
     @Published var size: SegmentSizeConfiguration = SegmentSize.medium
     @Published var layoutOrientation: SegmentLayoutOrientation = .horizontal
     @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
-    @Published var shapeStyle: ComponentShapeStyle = .cornered
     
     @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
     @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium
-    
     @Published var variationName: String = SDDSSegmentItem.default.name
+    @Published var counterAppearance: CounterAppearance? = nil
+    @Published var counterText: String = ""
+    @Published var isSelected: Bool = false
+    @Published var isPilled: Bool = false
+    
     @Published var maxItemsString: String = ""
     @Published var maxItems: Int = 0
     
-    @Published var counterAppearance: CounterAppearance = CounterAppearance()
-    @Published var counterText: String = ""
-    
-    @Published var isSelected: Bool = false
-    
-    @Published var isPilled: Bool = false
-    
-    @Published var itemSize: StretchMode = .fixed
-    @Published var backgroundColor: Color = .black
+    @Published var strechMode: Bool = false
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -51,6 +46,13 @@ final class SegmentViewModel: ObservableObject {
             .sink { [weak self] value in
                 guard let self else { return }
                 self.segmentItemAppearance = self.segmentItemAppearance.size(value)
+            }
+            .store(in: &cancellables)
+        
+        $strechMode
+            .sink { [weak self] value in
+                guard let self, value else { return }
+                self.appearance = self.appearance.strechMode(.flexible)
             }
             .store(in: &cancellables)
     }
@@ -88,9 +90,11 @@ final class SegmentViewModel: ObservableObject {
                     return
                 }
                 if value {
-                    self.appearance = self.appearance.shapeStyle(.pilled)
+                    self.segmentItemAppearance = segmentItemAppearance.shapeStyle(.pilled)
+                    self.appearance = self.appearance.segmentItemAppearance(self.segmentItemAppearance)
                 } else {
-                    self.appearance = self.appearance.shapeStyle(.cornered)
+                    self.segmentItemAppearance = segmentItemAppearance.shapeStyle(.cornered)
+                    self.appearance = self.appearance.segmentItemAppearance(self.segmentItemAppearance)
                 }
             }
             .store(in: &cancellables)
@@ -118,7 +122,6 @@ final class SegmentViewModel: ObservableObject {
                     iconAttributes: nil,
                     isDisabled: false,
                     appearance: segmentItemAppearance,
-                    accessibility: SegmentItemAccessibility(),
                     counterAppearance: counterAppearance,
                     counterText: counterText,
                     //TODO: Проверить что состояние передано (Нужно ли это делать?)
@@ -143,7 +146,6 @@ final class SegmentViewModel: ObservableObject {
                 iconAttributes: nil,
                 isDisabled: false,
                 appearance: segment.appearance,
-                accessibility: SegmentItemAccessibility(),
                 counterAppearance: counterAppearance,
                 counterText: counterText,
                 //TODO: Проверить что состояние передано (Нужно ли это делать?)
