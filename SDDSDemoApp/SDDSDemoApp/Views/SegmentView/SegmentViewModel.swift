@@ -11,6 +11,7 @@ final class SegmentViewModel: ObservableObject {
     @Published var size: SegmentSizeConfiguration = SegmentSize.medium
     @Published var layoutOrientation: SegmentLayoutOrientation = .horizontal
     @Published var appearance: SegmentAppearance = SDDSSegment.default.appearance
+    @Published var backgroundColor: Bool = true
     
     @Published var segmentItemAppearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
     @Published var segmentItemSize: SegmentItemSizeConfiguration = SegmentItemSize.medium

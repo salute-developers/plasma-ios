@@ -23,6 +23,7 @@ public enum SegmentLayoutOrientation: String, CaseIterable {
 public struct SDDSSegment: View {
     public let data: [SDDSSegmentItemData]
     public let appearance: SegmentAppearance
+    public let hasBackground: Bool
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
@@ -32,10 +33,12 @@ public struct SDDSSegment: View {
     
     public init(
         data: [SDDSSegmentItemData],
-        appearance: SegmentAppearance
+        appearance: SegmentAppearance,
+        hasBackground: Bool
     ) {
         self.data = data
         self.appearance = appearance
+        self.hasBackground = hasBackground
     }
     
     public var body: some View {
@@ -54,7 +57,7 @@ public struct SDDSSegment: View {
             }
         }
         .padding(appearance.size.paddings)
-        .background(currentColor(for: appearance.backgroundColor))
+        .background(setBackground())
         .cornerRadius(cornerRadius)
     }
     
@@ -65,7 +68,7 @@ public struct SDDSSegment: View {
             }
         }
         .padding(appearance.size.paddings)
-        .background(currentColor(for: appearance.backgroundColor))
+        .background(setBackground())
         .cornerRadius(cornerRadius)
     }
     
@@ -81,6 +84,11 @@ public struct SDDSSegment: View {
     
     var cornerRadius: CGFloat {
         appearance.size.cornerRadius(style: appearance.segmentItemAppearance.shapeStyle)
+    }
+    
+    func setBackground() -> Color {
+        let color = hasBackground ? currentColor(for: appearance.backgroundColor) : .clear
+        return color
     }
     
     func setSegmentItem(segmentData: SDDSSegmentItemData) -> SDDSSegmentItem {

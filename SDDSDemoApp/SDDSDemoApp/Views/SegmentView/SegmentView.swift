@@ -25,6 +25,7 @@ struct SegmentView: View {
                 shape
                 stretch
                 maxElements
+                background
             }
             Section {
                 maxElementsAdditionalWindow
@@ -35,7 +36,8 @@ struct SegmentView: View {
     var segment: some View {
         SDDSSegment(
             data: viewModel.data,
-            appearance: viewModel.appearance
+            appearance: viewModel.appearance,
+            hasBackground: viewModel.backgroundColor
         )
     }
     
@@ -141,6 +143,12 @@ struct SegmentView: View {
     public var shape: some View {
         HStack {
             Toggle("Pilled", isOn: $viewModel.isPilled)
+        }
+    }
+    
+    public var background: some View {
+        HStack {
+            Toggle("Background", isOn: $viewModel.backgroundColor)
         }
     }
 }
