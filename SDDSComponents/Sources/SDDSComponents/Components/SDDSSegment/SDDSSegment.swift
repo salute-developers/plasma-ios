@@ -4,7 +4,7 @@ import SwiftUI
 public struct SegmentDefaultSize: SegmentSizeConfiguration {
     public let height: CGFloat = 0
     public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
-    public let horizontalPaddings: CGFloat = 0
+    public let paddings: CGFloat = 0
     
     public init() {}
 }
@@ -12,12 +12,7 @@ public struct SegmentDefaultSize: SegmentSizeConfiguration {
 public protocol SegmentSizeConfiguration: SizeConfiguration {
     var height: CGFloat { get }
     func cornerRadius(style: ComponentShapeStyle) -> CGFloat
-    var horizontalPaddings: CGFloat { get }
-}
-
-public enum ItemSize {
-    case fixed
-    case stretched
+    var paddings: CGFloat { get }
 }
 
 public enum SegmentLayoutOrientation: String, CaseIterable {
@@ -58,10 +53,9 @@ public struct SDDSSegment: View {
                 setSegmentItem(segmentData: segmentData)
             }
         }
-        .frame(height: appearance.size.height)
-        .padding(.horizontal, appearance.size.horizontalPaddings)
+        .padding(appearance.size.paddings)
         .background(currentColor(for: appearance.backgroundColor))
-        .cornerRadius(cornerRadius)
+//        .cornerRadius(cornerRadius)
     }
     
     public var verticalOrientation: some View {
@@ -70,10 +64,9 @@ public struct SDDSSegment: View {
                 setSegmentItem(segmentData: segmentData)
             }
         }
-        .frame(height: appearance.size.height)
-        .padding(.horizontal, appearance.size.horizontalPaddings)
+        .padding(appearance.size.paddings)
         .background(currentColor(for: appearance.backgroundColor))
-        .cornerRadius(cornerRadius)
+//        .cornerRadius(cornerRadius)
     }
     
     func currentColor(for counterColor: ButtonColor) -> Color {

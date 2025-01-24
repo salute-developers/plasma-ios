@@ -6,7 +6,9 @@ public extension SegmentAppearance {
             size: size,
             shapeStyle: self.shapeStyle,
             layoutOrientation: self.layoutOrientation,
-            backgroundColor: self.backgroundColor
+            backgroundColor: self.backgroundColor,
+            segmentItemAppearance: self.segmentItemAppearance,
+            stretchMode: self.stretchMode
         )
     }
     
@@ -15,7 +17,9 @@ public extension SegmentAppearance {
             size: self.size,
             shapeStyle: shapeStyle,
             layoutOrientation: self.layoutOrientation,
-            backgroundColor: self.backgroundColor
+            backgroundColor: self.backgroundColor,
+            segmentItemAppearance: self.segmentItemAppearance,
+            stretchMode: self.stretchMode
         )
     }
     
@@ -24,7 +28,31 @@ public extension SegmentAppearance {
             size: self.size,
             shapeStyle: self.shapeStyle,
             layoutOrientation: layoutOrientation,
-            backgroundColor: self.backgroundColor
+            backgroundColor: self.backgroundColor,
+            segmentItemAppearance: self.segmentItemAppearance,
+            stretchMode: self.stretchMode
+        )
+    }
+    
+    func backgroundColor(_ backgroundColor: ButtonColor) -> SegmentAppearance {
+        return SegmentAppearance(
+            size: self.size,
+            shapeStyle: self.shapeStyle,
+            layoutOrientation: self.layoutOrientation,
+            backgroundColor: backgroundColor,
+            segmentItemAppearance: self.segmentItemAppearance,
+            stretchMode: self.stretchMode
+        )
+    }
+    
+    func segmentItemAppearance(_ segmentItemAppearance: SegmentItemAppearance) -> SegmentAppearance {
+        return SegmentAppearance(
+            size: self.size,
+            shapeStyle: self.shapeStyle,
+            layoutOrientation: self.layoutOrientation,
+            backgroundColor: self.backgroundColor,
+            segmentItemAppearance: segmentItemAppearance,
+            stretchMode: self.stretchMode
         )
     }
 }

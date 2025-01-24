@@ -27,7 +27,7 @@ final class SegmentViewModel: ObservableObject {
     
     @Published var isPilled: Bool = false
     
-    @Published var itemSize: ItemSize = .fixed
+    @Published var itemSize: StretchMode = .fixed
     @Published var backgroundColor: Color = .black
     
     private var cancellables: Set<AnyCancellable> = []
@@ -102,7 +102,7 @@ final class SegmentViewModel: ObservableObject {
                 guard let self else {
                     return
                 }
-                self.appearance = self.appearance.layoutOrientation(layoutOrientation)
+                self.appearance = self.appearance.layoutOrientation(value)
             }
             .store(in: &cancellables)
     }

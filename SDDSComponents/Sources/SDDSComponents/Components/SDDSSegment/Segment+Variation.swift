@@ -6,7 +6,10 @@ public extension SegmentAppearance {
             size: size,
             shapeStyle: shapeStyle,
             layoutOrientation: layoutOrientation,
-            backgroundColor: variation.backgroundColor
+            backgroundColor: variation.backgroundColor,
+            segmentItemAppearance: segmentItemAppearance,
+            stretchMode: stretchMode
         )
     }
 }
+

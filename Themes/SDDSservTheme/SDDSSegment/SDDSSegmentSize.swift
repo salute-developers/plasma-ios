@@ -27,14 +27,14 @@ extension SegmentSize: SegmentSizeConfiguration {
     
     public var height: CGFloat {
         switch self {
-        case .large: return 60
-        case .medium: return 52
-        case .small: return 44
+        case .large: return 56
+        case .medium: return 48
+        case .small: return 40
         case .extraSmall: return 36
         }
     }
     
-    public var horizontalPaddings: CGFloat {
+    public var paddings: CGFloat {
         switch self {
         case .large: return 2
         case .medium: return 2
