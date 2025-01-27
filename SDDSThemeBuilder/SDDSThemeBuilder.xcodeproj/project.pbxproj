@@ -49,8 +49,6 @@
 		810DE5492C2AC77800F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
 		811D2DE82D1095A6001C0F48 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 811D2DE72D1095A6001C0F48 /* SDDSComponents */; };
-		811D2DEA2D1098A9001C0F48 /* BasicButtonTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 811D2DE92D1098A9001C0F48 /* BasicButtonTypography.stencil */; };
-		811D2DEE2D1099DA001C0F48 /* LinkButtonTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 811D2DED2D1099DA001C0F48 /* LinkButtonTypography.stencil */; };
 		811D2DFE2D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2DF12D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift */; };
 		811D2DFF2D109A92001C0F48 /* BasicButton+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2DF22D109A92001C0F48 /* BasicButton+ColorVariations.swift */; };
 		811D2E002D109A92001C0F48 /* LinkButtonSize+ButtonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2DF32D109A92001C0F48 /* LinkButtonSize+ButtonSizeConfiguration.swift */; };
@@ -78,10 +76,21 @@
 		8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB452C1B4F3600D6A049 /* ThemeContext.swift */; };
 		8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB472C20403C00D6A049 /* String+Hex.swift */; };
 		8139EB4A2C2040E300D6A049 /* ColorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB492C2040E300D6A049 /* ColorContext.swift */; };
+		815F42BA2D47DE5B00F97E63 /* LinkButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42AA2D47DE5B00F97E63 /* LinkButton+ColorVariations.stencil */; };
+		815F42BB2D47DE5B00F97E63 /* LinkButtonTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42AB2D47DE5B00F97E63 /* LinkButtonTypography.stencil */; };
+		815F42BC2D47DE5B00F97E63 /* LinkButton+Typography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42AC2D47DE5B00F97E63 /* LinkButton+Typography.stencil */; };
+		815F42BD2D47DE5B00F97E63 /* LinkButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42AD2D47DE5B00F97E63 /* LinkButton+SizeVariations.stencil */; };
+		815F42BE2D47DE5B00F97E63 /* LinkButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42AE2D47DE5B00F97E63 /* LinkButtonSize+ButtonSizeConfiguration.stencil */; };
+		815F42BF2D47DE5B00F97E63 /* IconButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B02D47DE5B00F97E63 /* IconButtonSize+ButtonSizeConfiguration.stencil */; };
+		815F42C02D47DE5B00F97E63 /* IconButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B12D47DE5B00F97E63 /* IconButton+ColorVariations.stencil */; };
+		815F42C12D47DE5B00F97E63 /* IconButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B22D47DE5B00F97E63 /* IconButton+SizeVariations.stencil */; };
+		815F42C22D47DE5B00F97E63 /* BasicButtonTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B52D47DE5B00F97E63 /* BasicButtonTypography.stencil */; };
+		815F42C32D47DE5B00F97E63 /* BasicButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B62D47DE5B00F97E63 /* BasicButton+ColorVariations.stencil */; };
+		815F42C42D47DE5B00F97E63 /* BasicButton+Typography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B72D47DE5B00F97E63 /* BasicButton+Typography.stencil */; };
+		815F42C52D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B82D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil */; };
+		815F42C62D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B92D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil */; };
+		815F42C82D47DE6C00F97E63 /* TextFieldSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */; };
 		816E049D2C58DCDB00EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E049C2C58DCDB00EE7A7F /* SDDSThemeCore */; };
-		81733A172D07066F0092608A /* BasicButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81733A142D07066F0092608A /* BasicButtonSize+ButtonSizeConfiguration.stencil */; };
-		81733A182D07066F0092608A /* IconButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81733A152D07066F0092608A /* IconButtonSize+ButtonSizeConfiguration.stencil */; };
-		81733A192D07066F0092608A /* LinkButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81733A162D07066F0092608A /* LinkButtonSize+ButtonSizeConfiguration.stencil */; };
 		8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */; };
 		817539622BD0077300138866 /* SDDSThemeBuilderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; };
 		817539682BD0077300138866 /* SDDSThemeBuilderCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8175395A2BD0077200138866 /* SDDSThemeBuilderCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,14 +178,6 @@
 		8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3A92BFB6A5F00D4012C /* GradientContextBuilder.swift */; };
 		8181E3BC2BFB9DFF00D4012C /* GradientContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */; };
 		818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */; };
-		818345792CFE30FF0081113B /* BasicButton+Typography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345712CFE30FE0081113B /* BasicButton+Typography.stencil */; };
-		8183457A2CFE30FF0081113B /* IconButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345722CFE30FE0081113B /* IconButton+ColorVariations.stencil */; };
-		8183457B2CFE30FF0081113B /* LinkButton+Typography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345732CFE30FE0081113B /* LinkButton+Typography.stencil */; };
-		8183457C2CFE30FF0081113B /* LinkButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345742CFE30FE0081113B /* LinkButton+SizeVariations.stencil */; };
-		8183457D2CFE30FF0081113B /* BasicButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345752CFE30FE0081113B /* BasicButton+SizeVariations.stencil */; };
-		8183457E2CFE30FF0081113B /* LinkButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345762CFE30FE0081113B /* LinkButton+ColorVariations.stencil */; };
-		8183457F2CFE30FF0081113B /* BasicButton+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345772CFE30FF0081113B /* BasicButton+ColorVariations.stencil */; };
-		818345802CFE30FF0081113B /* IconButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818345782CFE30FF0081113B /* IconButton+SizeVariations.stencil */; };
 		818345822CFE3CC00081113B /* String+SizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818345812CFE3CC00081113B /* String+SizeKey.swift */; };
 		818C03BD2C43C0FE002C6D0A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
@@ -186,6 +187,14 @@
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
 		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
 		819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81A753452D47DDF1006E1BE7 /* GenerateTextFieldCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753442D47DDF0006E1BE7 /* GenerateTextFieldCommand.swift */; };
+		81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753472D47DE03006E1BE7 /* TextFieldAppearance.swift */; };
+		81A7534F2D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753482D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift */; };
+		81A753502D47DE03006E1BE7 /* TextFieldContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753492D47DE03006E1BE7 /* TextFieldContext.swift */; };
+		81A753512D47DE03006E1BE7 /* TextFieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7534A2D47DE03006E1BE7 /* TextFieldConfiguration.swift */; };
+		81A753522D47DE03006E1BE7 /* TextFieldContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7534B2D47DE03006E1BE7 /* TextFieldContextBuilder.swift */; };
+		81A753532D47DE03006E1BE7 /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7534C2D47DE03006E1BE7 /* TextFieldTypography.swift */; };
+		81A753552D47DE24006E1BE7 /* SizeVariationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */; };
 		81BC36762C58E46000A363D0 /* SDDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36752C58E46000A363D0 /* SDDSTheme */; };
 		81BC36782C58E4B300A363D0 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36772C58E4B300A363D0 /* SDDSThemeCore */; };
 		81BC36862C591D6F00A363D0 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36852C591D6F00A363D0 /* SDDSThemeUtilities */; };
@@ -347,8 +356,6 @@
 		8106AC692D1093FC004348B7 /* GeneratedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedComponent.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
-		811D2DE92D1098A9001C0F48 /* BasicButtonTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = BasicButtonTypography.stencil; sourceTree = "<group>"; };
-		811D2DED2D1099DA001C0F48 /* LinkButtonTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = LinkButtonTypography.stencil; sourceTree = "<group>"; };
 		811D2DF12D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconButtonSize+ButtonSizeConfiguration.swift"; sourceTree = "<group>"; };
 		811D2DF22D109A92001C0F48 /* BasicButton+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasicButton+ColorVariations.swift"; sourceTree = "<group>"; };
 		811D2DF32D109A92001C0F48 /* LinkButtonSize+ButtonSizeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LinkButtonSize+ButtonSizeConfiguration.swift"; sourceTree = "<group>"; };
@@ -376,10 +383,21 @@
 		8139EB472C20403C00D6A049 /* String+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
 		8139EB492C2040E300D6A049 /* ColorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContext.swift; sourceTree = "<group>"; };
 		814F71E92C58D4A0006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		815F42AA2D47DE5B00F97E63 /* LinkButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+ColorVariations.stencil"; sourceTree = "<group>"; };
+		815F42AB2D47DE5B00F97E63 /* LinkButtonTypography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LinkButtonTypography.stencil; sourceTree = "<group>"; };
+		815F42AC2D47DE5B00F97E63 /* LinkButton+Typography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+Typography.stencil"; sourceTree = "<group>"; };
+		815F42AD2D47DE5B00F97E63 /* LinkButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+SizeVariations.stencil"; sourceTree = "<group>"; };
+		815F42AE2D47DE5B00F97E63 /* LinkButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
+		815F42B02D47DE5B00F97E63 /* IconButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
+		815F42B12D47DE5B00F97E63 /* IconButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButton+ColorVariations.stencil"; sourceTree = "<group>"; };
+		815F42B22D47DE5B00F97E63 /* IconButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButton+SizeVariations.stencil"; sourceTree = "<group>"; };
+		815F42B52D47DE5B00F97E63 /* BasicButtonTypography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BasicButtonTypography.stencil; sourceTree = "<group>"; };
+		815F42B62D47DE5B00F97E63 /* BasicButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+ColorVariations.stencil"; sourceTree = "<group>"; };
+		815F42B72D47DE5B00F97E63 /* BasicButton+Typography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+Typography.stencil"; sourceTree = "<group>"; };
+		815F42B82D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
+		815F42B92D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+SizeVariations.stencil"; sourceTree = "<group>"; };
+		815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFieldSize.stencil; sourceTree = "<group>"; };
 		816E04A22C58DD5600EE7A7F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		81733A142D07066F0092608A /* BasicButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
-		81733A152D07066F0092608A /* IconButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
-		81733A162D07066F0092608A /* LinkButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
 		817539362BCE745600138866 /* ColorToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorToken.stencil; sourceTree = "<group>"; };
 		8175393C2BCE83EF00138866 /* CodeGenerationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationError.swift; sourceTree = "<group>"; };
 		8175393E2BCE869C00138866 /* StencilTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StencilTemplate.swift; sourceTree = "<group>"; };
@@ -455,14 +473,6 @@
 		8181E3A92BFB6A5F00D4012C /* GradientContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilder.swift; sourceTree = "<group>"; };
 		8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilderTests.swift; sourceTree = "<group>"; };
 		8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSwiftCodeCommand.swift; sourceTree = "<group>"; };
-		818345712CFE30FE0081113B /* BasicButton+Typography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+Typography.stencil"; sourceTree = "<group>"; };
-		818345722CFE30FE0081113B /* IconButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		818345732CFE30FE0081113B /* LinkButton+Typography.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+Typography.stencil"; sourceTree = "<group>"; };
-		818345742CFE30FE0081113B /* LinkButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+SizeVariations.stencil"; sourceTree = "<group>"; };
-		818345752CFE30FE0081113B /* BasicButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+SizeVariations.stencil"; sourceTree = "<group>"; };
-		818345762CFE30FE0081113B /* LinkButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LinkButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		818345772CFE30FF0081113B /* BasicButton+ColorVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+ColorVariations.stencil"; sourceTree = "<group>"; };
-		818345782CFE30FF0081113B /* IconButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "IconButton+SizeVariations.stencil"; sourceTree = "<group>"; };
 		818345812CFE3CC00081113B /* String+SizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SizeKey.swift"; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -470,6 +480,14 @@
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
+		81A753442D47DDF0006E1BE7 /* GenerateTextFieldCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateTextFieldCommand.swift; sourceTree = "<group>"; };
+		81A753472D47DE03006E1BE7 /* TextFieldAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAppearance.swift; sourceTree = "<group>"; };
+		81A753482D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSizeConfiguration.swift; sourceTree = "<group>"; };
+		81A753492D47DE03006E1BE7 /* TextFieldContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldContext.swift; sourceTree = "<group>"; };
+		81A7534A2D47DE03006E1BE7 /* TextFieldConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldConfiguration.swift; sourceTree = "<group>"; };
+		81A7534B2D47DE03006E1BE7 /* TextFieldContextBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldContextBuilder.swift; sourceTree = "<group>"; };
+		81A7534C2D47DE03006E1BE7 /* TextFieldTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
+		81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeVariationKey.swift; sourceTree = "<group>"; };
 		81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81C10A1C2C2929850055BB04 /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		81C10A212C292E4D0055BB04 /* Double+Stencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Stencil.swift"; sourceTree = "<group>"; };
@@ -644,6 +662,8 @@
 		2489D0C92BC7F44F0053AAB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				81A7534D2D47DE03006E1BE7 /* Button */,
+				81A753462D47DE03006E1BE7 /* TextField */,
 				81E1EE722BE4E16200F86AE1 /* FontFamily */,
 				81E1EE4D2BE3A63A00F86AE1 /* Scheme */,
 			);
@@ -653,6 +673,7 @@
 		2489D0CA2BC7F45E0053AAB1 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				81A753432D47DDF0006E1BE7 /* TextField */,
 				249C3D4D2BD92595007533DE /* GenerateTokensCommand.swift */,
 				2489D0C72BC7F3EC0053AAB1 /* Command.swift */,
 				2489D0CD2BC7F5AD0053AAB1 /* DownloadCommand.swift */,
@@ -668,6 +689,7 @@
 		2489D0CF2BC7F5E10053AAB1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */,
 				2489D0D02BC7F5EA0053AAB1 /* Constants.swift */,
 				8175393C2BCE83EF00138866 /* CodeGenerationError.swift */,
 				8175393E2BCE869C00138866 /* StencilTemplate.swift */,
@@ -757,6 +779,40 @@
 			path = SDDSThemeCore;
 			sourceTree = "<group>";
 		};
+		815F42A92D47DE5B00F97E63 /* LinkButton */ = {
+			isa = PBXGroup;
+			children = (
+				815F42AA2D47DE5B00F97E63 /* LinkButton+ColorVariations.stencil */,
+				815F42AB2D47DE5B00F97E63 /* LinkButtonTypography.stencil */,
+				815F42AC2D47DE5B00F97E63 /* LinkButton+Typography.stencil */,
+				815F42AD2D47DE5B00F97E63 /* LinkButton+SizeVariations.stencil */,
+				815F42AE2D47DE5B00F97E63 /* LinkButtonSize+ButtonSizeConfiguration.stencil */,
+			);
+			path = LinkButton;
+			sourceTree = "<group>";
+		};
+		815F42AF2D47DE5B00F97E63 /* IconButton */ = {
+			isa = PBXGroup;
+			children = (
+				815F42B02D47DE5B00F97E63 /* IconButtonSize+ButtonSizeConfiguration.stencil */,
+				815F42B12D47DE5B00F97E63 /* IconButton+ColorVariations.stencil */,
+				815F42B22D47DE5B00F97E63 /* IconButton+SizeVariations.stencil */,
+			);
+			path = IconButton;
+			sourceTree = "<group>";
+		};
+		815F42B42D47DE5B00F97E63 /* BasicButton */ = {
+			isa = PBXGroup;
+			children = (
+				815F42B52D47DE5B00F97E63 /* BasicButtonTypography.stencil */,
+				815F42B62D47DE5B00F97E63 /* BasicButton+ColorVariations.stencil */,
+				815F42B72D47DE5B00F97E63 /* BasicButton+Typography.stencil */,
+				815F42B82D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil */,
+				815F42B92D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil */,
+			);
+			path = BasicButton;
+			sourceTree = "<group>";
+		};
 		816E04A02C58DD3800EE7A7F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,19 +836,10 @@
 		817539352BCE744300138866 /* Stencil */ = {
 			isa = PBXGroup;
 			children = (
-				811D2DE92D1098A9001C0F48 /* BasicButtonTypography.stencil */,
-				811D2DED2D1099DA001C0F48 /* LinkButtonTypography.stencil */,
-				81733A142D07066F0092608A /* BasicButtonSize+ButtonSizeConfiguration.stencil */,
-				81733A152D07066F0092608A /* IconButtonSize+ButtonSizeConfiguration.stencil */,
-				81733A162D07066F0092608A /* LinkButtonSize+ButtonSizeConfiguration.stencil */,
-				818345772CFE30FF0081113B /* BasicButton+ColorVariations.stencil */,
-				818345752CFE30FE0081113B /* BasicButton+SizeVariations.stencil */,
-				818345712CFE30FE0081113B /* BasicButton+Typography.stencil */,
-				818345722CFE30FE0081113B /* IconButton+ColorVariations.stencil */,
-				818345782CFE30FF0081113B /* IconButton+SizeVariations.stencil */,
-				818345762CFE30FE0081113B /* LinkButton+ColorVariations.stencil */,
-				818345742CFE30FE0081113B /* LinkButton+SizeVariations.stencil */,
-				818345732CFE30FE0081113B /* LinkButton+Typography.stencil */,
+				815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */,
+				815F42B42D47DE5B00F97E63 /* BasicButton */,
+				815F42AF2D47DE5B00F97E63 /* IconButton */,
+				815F42A92D47DE5B00F97E63 /* LinkButton */,
 				817539362BCE745600138866 /* ColorToken.stencil */,
 				81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */,
 				81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */,
@@ -1017,6 +1064,34 @@
 				819B2AD02BF280FB00688624 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		81A753432D47DDF0006E1BE7 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				81A753442D47DDF0006E1BE7 /* GenerateTextFieldCommand.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		81A753462D47DE03006E1BE7 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				81A753472D47DE03006E1BE7 /* TextFieldAppearance.swift */,
+				81A753482D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift */,
+				81A753492D47DE03006E1BE7 /* TextFieldContext.swift */,
+				81A7534A2D47DE03006E1BE7 /* TextFieldConfiguration.swift */,
+				81A7534B2D47DE03006E1BE7 /* TextFieldContextBuilder.swift */,
+				81A7534C2D47DE03006E1BE7 /* TextFieldTypography.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		81A7534D2D47DE03006E1BE7 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		81CB0FDC2C245046003B1064 /* Validators */ = {
@@ -1385,28 +1460,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81733A182D07066F0092608A /* IconButtonSize+ButtonSizeConfiguration.stencil in Resources */,
-				8183457F2CFE30FF0081113B /* BasicButton+ColorVariations.stencil in Resources */,
 				810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */,
+				815F42C02D47DE5B00F97E63 /* IconButton+ColorVariations.stencil in Resources */,
 				243C1D192C05D3B200C17C0F /* Typographies.stencil in Resources */,
-				811D2DEA2D1098A9001C0F48 /* BasicButtonTypography.stencil in Resources */,
+				815F42C32D47DE5B00F97E63 /* BasicButton+ColorVariations.stencil in Resources */,
+				815F42C12D47DE5B00F97E63 /* IconButton+SizeVariations.stencil in Resources */,
+				815F42BF2D47DE5B00F97E63 /* IconButtonSize+ButtonSizeConfiguration.stencil in Resources */,
 				810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */,
 				243C1D132C05D1D300C17C0F /* Colors.stencil in Resources */,
-				81733A192D07066F0092608A /* LinkButtonSize+ButtonSizeConfiguration.stencil in Resources */,
-				811D2DEE2D1099DA001C0F48 /* LinkButtonTypography.stencil in Resources */,
-				81733A172D07066F0092608A /* BasicButtonSize+ButtonSizeConfiguration.stencil in Resources */,
+				815F42BB2D47DE5B00F97E63 /* LinkButtonTypography.stencil in Resources */,
+				815F42C82D47DE6C00F97E63 /* TextFieldSize.stencil in Resources */,
+				815F42C42D47DE5B00F97E63 /* BasicButton+Typography.stencil in Resources */,
+				815F42BC2D47DE5B00F97E63 /* LinkButton+Typography.stencil in Resources */,
 				243C1D172C05D39E00C17C0F /* Shadows.stencil in Resources */,
+				815F42C52D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil in Resources */,
+				815F42BE2D47DE5B00F97E63 /* LinkButtonSize+ButtonSizeConfiguration.stencil in Resources */,
+				815F42BD2D47DE5B00F97E63 /* LinkButton+SizeVariations.stencil in Resources */,
+				815F42C22D47DE5B00F97E63 /* BasicButtonTypography.stencil in Resources */,
 				243C1D152C05D38600C17C0F /* Shapes.stencil in Resources */,
-				818345792CFE30FF0081113B /* BasicButton+Typography.stencil in Resources */,
 				810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */,
 				810DE53F2C2AC77700F1C96F /* ColorToken.stencil in Resources */,
-				8183457C2CFE30FF0081113B /* LinkButton+SizeVariations.stencil in Resources */,
-				8183457B2CFE30FF0081113B /* LinkButton+Typography.stencil in Resources */,
-				818345802CFE30FF0081113B /* IconButton+SizeVariations.stencil in Resources */,
-				8183457D2CFE30FF0081113B /* BasicButton+SizeVariations.stencil in Resources */,
-				8183457A2CFE30FF0081113B /* IconButton+ColorVariations.stencil in Resources */,
+				815F42C62D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil in Resources */,
 				810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */,
-				8183457E2CFE30FF0081113B /* LinkButton+ColorVariations.stencil in Resources */,
+				815F42BA2D47DE5B00F97E63 /* LinkButton+ColorVariations.stencil in Resources */,
 				243C1D1B2C05D3C800C17C0F /* Gradients.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1528,6 +1604,7 @@
 				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
+				81A753512D47DE03006E1BE7 /* TextFieldConfiguration.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
@@ -1544,9 +1621,14 @@
 				8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */,
 				81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */,
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,
+				81A753522D47DE03006E1BE7 /* TextFieldContextBuilder.swift in Sources */,
 				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
 				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
+				81A753452D47DDF1006E1BE7 /* GenerateTextFieldCommand.swift in Sources */,
+				81A7534F2D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift in Sources */,
+				81A753502D47DE03006E1BE7 /* TextFieldContext.swift in Sources */,
+				81A753552D47DE24006E1BE7 /* SizeVariationKey.swift in Sources */,
 				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
 				813340302C073C42005AD84F /* URL+Extensions.swift in Sources */,
@@ -1568,7 +1650,9 @@
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
+				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,
 				81CB10022C258823003B1064 /* TemplateRendererError.swift in Sources */,
+				81A753532D47DE03006E1BE7 /* TextFieldTypography.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
 				81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */,
 				81CB0FEC2C245052003B1064 /* EnsureDoubleInRangeNode.swift in Sources */,
