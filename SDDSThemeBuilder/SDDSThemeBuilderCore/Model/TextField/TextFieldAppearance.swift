@@ -11,8 +11,6 @@ struct TextFieldAppearance: Codable {
         let cursorColor: String
         let disabledAlpha: CGFloat
         let endContentColor: String
-        let lineColor: String
-        let lineColorFocused: String
         let optionalTitleColor: String
         let placeholderColor: String
         let placeholderColorFocused: String
@@ -36,8 +34,6 @@ struct TextFieldAppearance: Codable {
             cursorColor: String,
             disabledAlpha: CGFloat,
             endContentColor: String,
-            lineColor: String,
-            lineColorFocused: String,
             optionalTitleColor: String,
             placeholderColor: String,
             placeholderColorFocused: String,
@@ -60,8 +56,6 @@ struct TextFieldAppearance: Codable {
             self.cursorColor = cursorColor
             self.disabledAlpha = disabledAlpha
             self.endContentColor = endContentColor
-            self.lineColor = lineColor
-            self.lineColorFocused = lineColorFocused
             self.optionalTitleColor = optionalTitleColor
             self.placeholderColor = placeholderColor
             self.placeholderColorFocused = placeholderColorFocused
@@ -77,5 +71,5 @@ struct TextFieldAppearance: Codable {
         }
     }
     
-    let data: [TextFieldConfiguration.Style.Key: AppearanceVariation]
+    let data: [String: AppearanceVariation]
 }

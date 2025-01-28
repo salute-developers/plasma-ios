@@ -56,10 +56,10 @@ final class TextFieldContextBuilder {
     private func appearance(from configuration: TextFieldConfiguration) -> TextFieldAppearance {
         var invariantProps = configuration.props
         
-        var data = [TextFieldConfiguration.Style.Key: TextFieldAppearance.AppearanceVariation]()
+        var data = [String: TextFieldAppearance.AppearanceVariation]()
         for key in TextFieldConfiguration.Style.Key.allCases {
 
-            guard let props = configuration.view[key]?.props else {
+            guard let props = configuration.view[key.rawValue]?.props else {
                 print("Undefined value for key '\(key)'")
                 continue
             }
@@ -68,7 +68,7 @@ final class TextFieldContextBuilder {
             let cursorColor = mergedProps.cursorColor?.default ?? ""
             let optionalTitleColor = mergedProps.optionalColor?.default ?? ""
             
-            data[key] = TextFieldAppearance.AppearanceVariation(
+            data[key.rawValue] = TextFieldAppearance.AppearanceVariation(
                 backgroundColor: mergedProps.backgroundColor?.default ?? "",
                 backgroundColorFocused: mergedProps.backgroundColor?.value(for: [.activated]) ?? "",
                 backgroundColorReadOnly: mergedProps.backgroundColor?.default ?? "",
@@ -78,8 +78,6 @@ final class TextFieldContextBuilder {
                 cursorColor: cursorColor,
                 disabledAlpha: mergedProps.disableAlpha?.value ?? 0.0,
                 endContentColor: mergedProps.endContentColor?.default ?? "",
-                lineColor: mergedProps.lineColor?.default ?? "",
-                lineColorFocused: cursorColor,
                 optionalTitleColor: optionalTitleColor,
                 placeholderColor: mergedProps.placeholderColor?.default ?? "",
                 placeholderColorFocused: mergedProps.placeholderColor?.value(for: [.activated]) ?? "",

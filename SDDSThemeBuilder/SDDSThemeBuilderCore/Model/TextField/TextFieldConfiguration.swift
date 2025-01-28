@@ -24,6 +24,8 @@ struct ColorWithAlphaKeyValue: Codable {
 struct ColorState: Codable {
     enum State: String, Codable {
         case activated
+        case pressed
+        case hovered
     }
     
     let state: [State]?
@@ -171,7 +173,7 @@ struct TextFieldConfiguration: Codable {
         }
     }
 
-    let view: [Style.Key: Style]
+    let view: [String: Style]
     let props: TextFieldProps
     let variations: [TextFieldVariation]
 }

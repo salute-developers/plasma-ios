@@ -94,6 +94,9 @@
 		815F42CC2D48B8E800F97E63 /* TextFieldTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */; };
 		815F42CE2D48BAC100F97E63 /* TextField+SizeVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */; };
 		815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */; };
+		815F42D12D48C18A00F97E63 /* TextField+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */; };
+		815F42D22D48C18A00F97E63 /* TextField+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */; };
+		815F42D32D48C18A00F97E63 /* TextFieldTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */; };
 		816E049D2C58DCDB00EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E049C2C58DCDB00EE7A7F /* SDDSThemeCore */; };
 		8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */; };
 		817539622BD0077300138866 /* SDDSThemeBuilderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; };
@@ -1472,6 +1475,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815F42D12D48C18A00F97E63 /* TextField+ColorVariations.stencil in Resources */,
+				815F42D22D48C18A00F97E63 /* TextField+SizeVariations.stencil in Resources */,
+				815F42D32D48C18A00F97E63 /* TextFieldTypography.stencil in Resources */,
 				810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */,
 				815F42C02D47DE5B00F97E63 /* IconButton+ColorVariations.stencil in Resources */,
 				243C1D192C05D3B200C17C0F /* Typographies.stencil in Resources */,

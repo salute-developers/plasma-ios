@@ -24,26 +24,29 @@ final class GenerateTextFieldCommand: Command, FileWriter {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let textFieldConfiguration = try? decoder.decode(TextFieldConfiguration.self, from: jsonData) else {
+        
+        do {
+            let textFieldConfiguration = try decoder.decode(TextFieldConfiguration.self, from: jsonData)
+            let textFieldContextBuilder = TextFieldContextBuilder(configuration: textFieldConfiguration)
+            let context = textFieldContextBuilder.build()
+            let inputs: [CodeGenerationInput] = [
+                .init(template: .textFieldSize, configuration: context.sizeConfiguration),
+                .init(template: .textFieldTypography, configuration: context.typography),
+                .init(template: .textFieldSizeVariations, configuration: context.sizeConfiguration),
+                .init(template: .textFieldColorVariations, configuration: context.appearance)
+            ]
+            for input in inputs {
+                let result = generate(input: input)
+                guard result == .success else {
+                    return result
+                }
+            }
+                    
+            return .success
+        } catch {
+            print(error)
             return .error(GeneralError.decoding)
         }
-        
-        let textFieldContextBuilder = TextFieldContextBuilder(configuration: textFieldConfiguration)
-        let context = textFieldContextBuilder.build()
-        let inputs: [CodeGenerationInput] = [
-            .init(template: .textFieldSize, configuration: context.sizeConfiguration),
-            .init(template: .textFieldTypography, configuration: context.typography),
-            .init(template: .textFieldSizeVariations, configuration: context.sizeConfiguration),
-            .init(template: .textFieldColorVariations, configuration: context.appearance)
-        ]
-        for input in inputs {
-            let result = generate(input: input)
-            guard result == .success else {
-                return result
-            }
-        }
-                
-        return .success
     }
     
     private func generate(input: CodeGenerationInput) -> CommandResult {

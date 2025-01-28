@@ -6,9 +6,7 @@ import SDDSThemeCore
 
 struct TextFieldTypography: GeneralTypographyConfiguration {
     {%- for key, sizeVariation in data %}
-    var {{ key }}: Self {
-        let {{ key }}: TypographyToken?
-    }
+    let {{ key }}: TypographyToken?
     {%- endfor %}
     
     func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
