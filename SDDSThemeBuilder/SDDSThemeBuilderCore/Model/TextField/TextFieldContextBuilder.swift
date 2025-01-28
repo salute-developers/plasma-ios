@@ -25,40 +25,101 @@ final class TextFieldContextBuilder {
                 continue
             }
             let props = variation.props
+            let mergedProps = props.merge(rhs: invariantProps)
             let key = sizeVariationKey.rawValue.sizeKey
             
             data[key] = TextFieldSizeConfiguration.SizeVariation(
                 titleBottomPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelPadding?.value ?? 0,
                 titleInnerPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelPadding?.value ?? 0,
-                textBeforeTrailingPadding: invariantProps.prefixPadding?.value ?? 0,
-                textAfterLeadingPadding: invariantProps.suffixPadding?.value ?? 0,
-                boxLeadingPadding: props.boxPaddingStart?.value ?? 0,
-                boxTrailingPadding: props.boxPaddingEnd?.value ?? 0,
-                captionTopPadding: invariantProps.helperTextPadding?.value ?? 0,
-                optionalPadding: invariantProps.optionalPadding?.value ?? 0,
-                shape: props.shape ?? ShapeKeyValue(),
-                iconPadding: props.startContentPadding?.value ?? 0,
-                iconActionPadding: props.endContentPadding?.value ?? 0,
-                fieldHeight: props.boxMinHeight?.value ?? 0,
-                iconSize: .init(width: props.startContentSize?.value ?? 0, height: props.startContentSize?.value ?? 0),
-                iconActionSize: .init(width: props.endContentSize?.value ?? 0, height: props.endContentSize?.value ?? 0),
-                chipsPadding: invariantProps.chipsPadding?.value ?? 0,
-                chipContainerHorizontalPadding: props.chipsPadding?.value ?? 0,
+                textBeforeTrailingPadding: mergedProps.prefixPadding?.value ?? 0,
+                textAfterLeadingPadding: mergedProps.suffixPadding?.value ?? 0,
+                boxLeadingPadding: mergedProps.boxPaddingStart?.value ?? 0,
+                boxTrailingPadding: mergedProps.boxPaddingEnd?.value ?? 0,
+                captionTopPadding: mergedProps.helperTextPadding?.value ?? 0,
+                optionalPadding: mergedProps.optionalPadding?.value ?? 0,
+                shape: mergedProps.shape ?? ShapeKeyValue(),
+                iconPadding: mergedProps.startContentPadding?.value ?? 0,
+                iconActionPadding: mergedProps.endContentPadding?.value ?? 0,
+                fieldHeight: mergedProps.boxMinHeight?.value ?? 0,
+                iconSize: .init(width: mergedProps.startContentSize?.value ?? 0, height: mergedProps.startContentSize?.value ?? 0),
+                iconActionSize: .init(width: mergedProps.endContentSize?.value ?? 0, height: mergedProps.endContentSize?.value ?? 0),
+                chipsPadding: mergedProps.chipsPadding?.value ?? 0,
+                chipContainerHorizontalPadding: mergedProps.chipsPadding?.value ?? 0,
                 indicatorOffsets: indiciatorOffsets(from: configuration, sizeVariationKey: sizeVariationKey),
                 indicatorSizes: indiciatorSizes(from: configuration, sizeVariationKey: sizeVariationKey)
             )
-            
         }
         
         return TextFieldSizeConfiguration(data: data)
     }
     
     private func appearance(from configuration: TextFieldConfiguration) -> TextFieldAppearance {
-        TextFieldAppearance()
+        var invariantProps = configuration.props
+        
+        var data = [TextFieldConfiguration.Style.Key: TextFieldAppearance.AppearanceVariation]()
+        for key in TextFieldConfiguration.Style.Key.allCases {
+
+            guard let props = configuration.view[key]?.props else {
+                print("Undefined value for key '\(key)'")
+                continue
+            }
+            
+            let mergedProps = props.merge(rhs: invariantProps)
+            let cursorColor = mergedProps.cursorColor?.default ?? ""
+            let optionalTitleColor = mergedProps.optionalColor?.default ?? ""
+            
+            data[key] = TextFieldAppearance.AppearanceVariation(
+                backgroundColor: mergedProps.backgroundColor?.default ?? "",
+                backgroundColorFocused: mergedProps.backgroundColor?.value(for: [.activated]) ?? "",
+                backgroundColorReadOnly: mergedProps.backgroundColor?.default ?? "",
+                captionColor: mergedProps.captionColor?.default ?? "",
+                captionColorFocused: cursorColor,
+                captionColorReadOnly: mergedProps.captionColor?.default ?? "",
+                cursorColor: cursorColor,
+                disabledAlpha: mergedProps.disableAlpha?.value ?? 0.0,
+                endContentColor: mergedProps.endContentColor?.default ?? "",
+                lineColor: mergedProps.lineColor?.default ?? "",
+                lineColorFocused: cursorColor,
+                optionalTitleColor: optionalTitleColor,
+                placeholderColor: mergedProps.placeholderColor?.default ?? "",
+                placeholderColorFocused: mergedProps.placeholderColor?.value(for: [.activated]) ?? "",
+                placeholderColorReadOnly: mergedProps.placeholderColor?.default ?? "",
+                requiredIndicatorColor: mergedProps.indicatorColor?.default ?? "",
+                startContentColor: mergedProps.startContentColor?.default ?? "",
+                textAfterColor: optionalTitleColor,
+                textBeforeColor: optionalTitleColor,
+                textColor: mergedProps.valueColor?.default ?? "",
+                textColorFocused: mergedProps.valueColor?.default ?? "",
+                textColorReadOnly: mergedProps.valueColor?.default ?? "",
+                titleColor: mergedProps.valueColor?.default ?? ""
+            )
+        }
+        
+        return TextFieldAppearance(data: data)
     }
     
     private func typography(from configuration: TextFieldConfiguration) -> TextFieldTypography {
-        TextFieldTypography()
+        let invariantProps = configuration.props
+        let allProps = configuration.allProps
+        
+        var data = [String: TextFieldTypography.SizeVariation]()
+        for variation in configuration.variations {
+            guard let sizeVariationKey = SizeVariationKey(rawValue: variation.id) else {
+                continue
+            }
+            let props = variation.props
+            let mergedProps = props.merge(rhs: invariantProps)
+            let key = sizeVariationKey.rawValue.sizeKey
+            
+            data[key] = TextFieldTypography.SizeVariation(
+                title: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelStyle?.value ?? "",
+                text: mergedProps.valueStyle?.value ?? "",
+                innnerTitle: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelStyle?.value ?? "",
+                caption: mergedProps.captionStyle?.value ?? ""
+            )
+        }
+        
+        return TextFieldTypography(data: data)
     }
     
     private func extractIndicatorValues(
@@ -66,7 +127,6 @@ final class TextFieldContextBuilder {
         sizeVariationKey: SizeVariationKey,
         valueExtractor: (TextFieldProps) -> (Double?, Double?)
     ) -> [String: [String: TextFieldSizeConfiguration.Size]] {
-        let allProps = configuration.allProps
         var result = [String: [String: TextFieldSizeConfiguration.Size]]()
         
         let nodes: [TextFieldVariationNode] = [.requiredStart, .requiredEnd]

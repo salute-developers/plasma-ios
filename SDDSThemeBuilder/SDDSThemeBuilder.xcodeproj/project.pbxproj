@@ -90,6 +90,10 @@
 		815F42C52D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B82D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil */; };
 		815F42C62D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42B92D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil */; };
 		815F42C82D47DE6C00F97E63 /* TextFieldSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */; };
+		815F42CA2D48B73500F97E63 /* TextField+ColorVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */; };
+		815F42CC2D48B8E800F97E63 /* TextFieldTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */; };
+		815F42CE2D48BAC100F97E63 /* TextField+SizeVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */; };
+		815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */; };
 		816E049D2C58DCDB00EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E049C2C58DCDB00EE7A7F /* SDDSThemeCore */; };
 		8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */; };
 		817539622BD0077300138866 /* SDDSThemeBuilderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; };
@@ -397,6 +401,10 @@
 		815F42B82D47DE5B00F97E63 /* BasicButtonSize+ButtonSizeConfiguration.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButtonSize+ButtonSizeConfiguration.stencil"; sourceTree = "<group>"; };
 		815F42B92D47DE5B00F97E63 /* BasicButton+SizeVariations.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BasicButton+SizeVariations.stencil"; sourceTree = "<group>"; };
 		815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextFieldSize.stencil; sourceTree = "<group>"; };
+		815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextField+ColorVariations.stencil"; sourceTree = "<group>"; };
+		815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextFieldTypography.stencil; sourceTree = "<group>"; };
+		815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextField+SizeVariations.stencil"; sourceTree = "<group>"; };
+		815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationInput.swift; sourceTree = "<group>"; };
 		816E04A22C58DD5600EE7A7F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		817539362BCE745600138866 /* ColorToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorToken.stencil; sourceTree = "<group>"; };
 		8175393C2BCE83EF00138866 /* CodeGenerationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationError.swift; sourceTree = "<group>"; };
@@ -703,6 +711,7 @@
 				8133402F2C073C42005AD84F /* URL+Extensions.swift */,
 				818345812CFE3CC00081113B /* String+SizeKey.swift */,
 				8106AC692D1093FC004348B7 /* GeneratedComponent.swift */,
+				815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -837,6 +846,9 @@
 			isa = PBXGroup;
 			children = (
 				815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */,
+				815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */,
+				815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */,
+				815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */,
 				815F42B42D47DE5B00F97E63 /* BasicButton */,
 				815F42AF2D47DE5B00F97E63 /* IconButton */,
 				815F42A92D47DE5B00F97E63 /* LinkButton */,
@@ -1598,6 +1610,7 @@
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
+				815F42CE2D48BAC100F97E63 /* TextField+SizeVariations.stencil in Sources */,
 				81E1EDC52BD6BBD200F86AE1 /* SchemeDirectory.swift in Sources */,
 				818345822CFE3CC00081113B /* String+SizeKey.swift in Sources */,
 				81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */,
@@ -1613,6 +1626,7 @@
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
+				815F42CA2D48B73500F97E63 /* TextField+ColorVariations.stencil in Sources */,
 				81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */,
 				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
@@ -1635,6 +1649,7 @@
 				8180A5112C107DA900009AF5 /* TypographyToken.swift in Sources */,
 				81CB0FED2C245052003B1064 /* SchemeValidationLogger.swift in Sources */,
 				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,
+				815F42CC2D48B8E800F97E63 /* TextFieldTypography.stencil in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
 				81CB0FE92C245052003B1064 /* EnsureValueExistsNode.swift in Sources */,
 				8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */,
@@ -1650,6 +1665,7 @@
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
+				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
 				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,
 				81CB10022C258823003B1064 /* TemplateRendererError.swift in Sources */,
 				81A753532D47DE03006E1BE7 /* TextFieldTypography.swift in Sources */,

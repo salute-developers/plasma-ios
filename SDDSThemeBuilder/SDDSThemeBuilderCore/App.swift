@@ -137,10 +137,6 @@ extension App {
     private var generateTextFieldVariations: [GenerateTextFieldCommand] {
         [
             GenerateTextFieldCommand(
-                jsonURL: URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/text_field_config.json")!,
-                templates: [
-                    .textFieldSize
-                ],
                 outputDirectoryURL: generatedComponentsURL(component: .button)
             )
         ]

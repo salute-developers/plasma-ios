@@ -1,0 +1,50 @@
+import Foundation
+import SDDSComponents
+import SDDSServTheme
+import SDDSThemeCore
+
+public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
+    {%- for key, appearanceVariation in data %}
+    var {{ key }}: Self {
+        .init(
+            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.{{ key }}.appearance)
+        )
+    }
+    {%- endfor %}
+}
+
+public extension SDDSComponents.TextField {
+    {%- for key, appearanceVariation in data %}
+    static var {{ key }}: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
+        .init(
+            name: "{{ key }}",
+            appearance: .init(
+                backgroundColor: {{ appearanceVariation.backgroundColor }},
+                backgroundColorFocused: {{ appearanceVariation.backgroundColorFocused }},
+                backgroundColorReadOnly: {{ appearanceVariation.backgroundColorReadOnly }},
+                captionColor: {{ appearanceVariation.captionColor }},
+                captionColorFocused: {{ appearanceVariation.captionColorFocused }},
+                captionColorReadOnly: {{ appearanceVariation.captionColorReadOnly }},
+                captionTypography: {{ appearanceVariation.captionTypography }},
+                cursorColor: {{ appearanceVariation.cursorColor }},
+                disabledAlpha: {{ appearanceVariation.disabledAlpha }},
+                endContentColor: {{ appearanceVariation.endContentColor }},
+                lineColor: {{ appearanceVariation.lineColor }},
+                lineColorFocused: {{ appearanceVariation.lineColorFocused }},
+                optionalTitleColor: {{ appearanceVariation.optionalTitleColor }},
+                placeholderColor: {{ appearanceVariation.placeholderColor }},
+                placeholderColorFocused: {{ appearanceVariation.placeholderColorFocused }},
+                placeholderColorReadOnly: {{ appearanceVariation.placeholderColorReadOnly }},
+                requiredIndicatorColor: {{ appearanceVariation.requiredIndicatorColor }},
+                startContentColor: {{ appearanceVariation.startContentColor }},
+                textAfterColor: {{ appearanceVariation.textAfterColor }},
+                textBeforeColor: {{ appearanceVariation.textBeforeColor }},
+                textColor: {{ appearanceVariation.textColor }},
+                textColorFocused: {{ appearanceVariation.textColorFocused }},
+                textColorReadOnly: {{ appearanceVariation.textColorReadOnly }},
+                titleColor: {{ appearanceVariation.titleColor }}
+            )
+        )
+    }
+    {%- endfor %}
+}

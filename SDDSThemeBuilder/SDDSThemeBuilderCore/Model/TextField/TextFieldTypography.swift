@@ -1,13 +1,13 @@
 import Foundation
 
-struct TextFieldTypography {
-    struct SizeClass {
+struct TextFieldTypography: Codable {
+    struct SizeVariation: Codable {
         let title: String
         let text: String
         let innnerTitle: String
         let caption: String
         
-        init(title: String = "", text: String = "", innnerTitle: String = "", caption: String = "") {
+        init(title: String, text: String, innnerTitle: String, caption: String) {
             self.title = title
             self.text = text
             self.innnerTitle = innnerTitle
@@ -15,9 +15,9 @@ struct TextFieldTypography {
         }
     }
     
-    let data: [String: SizeClass]
+    let data: [String: SizeVariation]
     
-    init(data: [String : SizeClass] = [:]) {
+    init(data: [String : SizeVariation] = [:]) {
         self.data = data
     }
 }
