@@ -13,7 +13,7 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
     public var imageSize: CGSize {
         switch self {
         case .medium:
-            .init(width: 20, height: 20)
+            .init(width: 24, height: 24)
         case .small:
             .init(width: 16, height: 16)
         }

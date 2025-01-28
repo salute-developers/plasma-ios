@@ -13,7 +13,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("textFieldChipIcon"),
-                appearance: .textField,
+                appearance: SDDSChip.secondary.medium.pilled.appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -31,14 +31,14 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 textBefore: "",
                 textAfter: "",
                 disabled: false,
-                readOnly: true,
+                readOnly: false,
                 style: .default,
                 labelPlacement: .none,
-                required: false,
-                requiredPlacement: .right,
+                required: true,
+                requiredPlacement: .left,
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
-                layout: .default,
+                layout: .clear,
                 iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
@@ -54,8 +54,8 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 caption: "caption",
                 disabled: false,
                 style: .default,
-                labelPlacement: .outer,
-                required: false,
+                labelPlacement: .none,
+                required: true,
                 requiredPlacement: .left,
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
@@ -76,7 +76,7 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 disabled: false,
                 style: .default,
                 labelPlacement: .inner,
-                required: true,
+                required: false,
                 requiredPlacement: .left,
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
@@ -144,10 +144,31 @@ struct SDDSTextFieldPreview: PreviewProvider {
                 appearance: .defaultAppearance,
                 size: SDDSTextFieldSize.large,
                 layout: .default,
-                iconViewProvider: ViewProvider(iconView),
+                iconViewProvider: nil,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")
+            .previewLayout(.sizeThatFits)
+            .padding()
+            
+            SDDSTextField(
+                value: .constant(.multiple("", chips)),
+                title: "Title",
+                optionalTitle: "optional",
+                placeholder: "Placeholder",
+                caption: "caption",
+                disabled: false,
+                style: .default,
+                labelPlacement: .outer,
+                required: true,
+                requiredPlacement: .left,
+                appearance: .defaultAppearance,
+                size: SDDSTextFieldSize.large,
+                layout: .clear,
+                iconViewProvider: nil,
+                iconActionViewProvider: ViewProvider(iconActionView)
+            )
+            .previewDisplayName("Multiple – Clear Label")
             .previewLayout(.sizeThatFits)
             .padding()
         }

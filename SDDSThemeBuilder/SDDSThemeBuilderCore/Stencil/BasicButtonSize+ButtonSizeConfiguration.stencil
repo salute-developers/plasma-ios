@@ -19,16 +19,21 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         {%- endfor %}
         }
     }
-
-    public var cornerRadius: CGFloat {
-        switch self {
-        {%- for variation, config in variations.size %}
-        case .{{ variation | sizeKey }}: return {{ config.shape.name | adjustedCornerRadius:config.shape.adjustment }}
-        {%- endfor %}
+    
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
+        switch style {
+        case .cornered:
+            switch self {
+            {%- for variation, config in variations.size %}
+            case .{{ variation | sizeKey }}: return {{ config.shape.value | adjustedCornerRadius:config.shape.adjustment }}
+            {%- endfor %}
+            }
+        case .pilled:
+            return height / 2
         }
     }
 
-    public var paddings: EdgeInsets {
+    public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
         switch self {
         {%- for variation, config in variations.size %}
         case .{{ variation | sizeKey }}: return EdgeInsets(top: 0, leading: {{ config.paddingStart }}, bottom: 0, trailing: {{ config.paddingEnd }})

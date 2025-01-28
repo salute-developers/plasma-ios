@@ -12,9 +12,9 @@ public extension TextAreaAppearance {
             innerTitleTypography: TextAreaTypography.innerTitle,
             captionTypography: TextAreaTypography.caption,
             counterTypography: TextAreaTypography.counter,
-            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
-            optionalTitleColor: .surfaceInverseSolidPrimary.withOpacity(0.28),
-            textColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            titleColor: .textDefaultPrimary,
+            optionalTitleColor: .textDefaultTertiary,
+            textColor: .textDefaultPrimary,
             textColorError: .textDefaultNegative,
             textColorWarning: .textDefaultWarning,
             textColorSuccess: .textDefaultAccent,
@@ -32,24 +32,24 @@ public extension TextAreaAppearance {
             borderColorWarning: Color.clear.token,
             borderColorSuccess: Color.clear.token,
             backgroundColorDefault: .surfaceDefaultTransparentPrimary,
-            backgroundColorError: ColorToken(
-                darkColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.2)),
-                lightColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.12))
-            ),
-            backgroundColorWarning: .surfaceDefaultTransparentWarning.inverted,
-            backgroundColorSuccess: ColorToken(
-                darkColor: Color(UIColor(hex: "#1A9E32").withAlphaComponent(0.2)),
-                lightColor: Color(UIColor(hex: "#1A9E32").withAlphaComponent(0.12))
-            ),
-            captionColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            backgroundColorError: .surfaceDefaultTransparentNegative,
+            backgroundColorWarning: .surfaceDefaultTransparentWarning,
+            backgroundColorSuccess: .surfaceDefaultTransparentPositive,
+            captionColorDefault: .textDefaultSecondary,
             captionColorError: .textDefaultNegative,
             captionColorWarning: .textDefaultWarning,
             captionColorSuccess: .textDefaultAccent,
-            counterColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            counterColorDefault: .textDefaultSecondary,
             placeholderColorDefault: .textDefaultSecondary,
             placeholderColorError: .textDefaultNegative,
             placeholderColorWarning: .textDefaultWarning,
-            placeholderColorSuccess: .textDefaultAccent
+            placeholderColorSuccess: .textDefaultAccent,
+            endContentColor: .textDefaultSecondary,
+            textColorReadOnly: .textDefaultPrimary,
+            captionColorReadOnly: .textDefaultSecondary,
+            counterColorReadOnly: .textDefaultSecondary,
+            placeholderColorReadOnly: .textDefaultSecondary,
+            backgroundColorReadOnly: .surfaceDefaultSolidPrimary
         )
     }
 }
@@ -124,11 +124,10 @@ extension TextAreaTypography {
 public extension ChipAppearance {
     static var textArea: ChipAppearance {
         ChipAppearance(
-            size: ZeroChipSize(),
-            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
-            titleTypography: ChipTextAreaTypography.text,
-            imageTintColor: Color.clear.token,
-            buttonTintColor: Color.clear.token,
+            titleColor: .textDefaultPrimary,
+            titleTypography: ChipTextFieldTypography.text,
+            imageTintColor: .textDefaultPrimary,
+            buttonTintColor: .textDefaultPrimary,
             backgroundColor: .surfaceDefaultTransparentSecondary,
             disabledAlpha: 0.5
         )

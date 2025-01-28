@@ -5,10 +5,13 @@ import SwiftUI
 public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var titleBottomPadding: CGFloat { get }
     var titleInnerPadding: CGFloat { get }
-    var fieldHorizontalPadding: CGFloat { get }
+    var boxLeadingPadding: CGFloat { get }
+    var boxTrailingPadding: CGFloat { get }
+    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
-    var textInputPaddings: EdgeInsets { get }
+    var optionalPadding: CGFloat { get }
     var cornerRadius: CGFloat { get }
     var borderWidth: CGFloat { get }
     var iconActionPadding: CGFloat { get }
@@ -25,10 +28,9 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipGroupHeight: CGFloat { get }
     var chipGroupVerticalTopPadding: CGFloat { get }
     var chipGroupVerticalBottomPadding: CGFloat { get }
-    var textInputBottomPadding: CGFloat { get }
     var iconActionClearTrailingPadding: CGFloat { get }
+    var chipsPadding: CGFloat { get }
     
     func fieldHeight(layout: TextAreaLayout) -> CGFloat
-    func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
-    func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint
 }

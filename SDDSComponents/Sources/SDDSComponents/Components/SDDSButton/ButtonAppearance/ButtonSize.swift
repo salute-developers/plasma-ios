@@ -22,12 +22,12 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     /**
      Радиус скругления углов кнопки.
      */
-    var cornerRadius: CGFloat { get }
+    func cornerRadius(style: ComponentShapeStyle) -> CGFloat
     
     /**
      Внутренние отступы кнопки.
      */
-    var paddings: EdgeInsets { get }
+    func paddings(style: ComponentShapeStyle) -> EdgeInsets
     
     /**
      Размер иконки, отображаемой в кнопке.
@@ -48,13 +48,15 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
      Горизонтальный промежуток между заголовком и подзаголовком кнопки.
      */
     var titleHorizontalGap: CGFloat { get }
+    
 }
 
 public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var height: CGFloat = 0
-    public var cornerRadius: CGFloat = 0
-    public var paddings: EdgeInsets = .init()
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
+    public func paddings(style: ComponentShapeStyle) -> EdgeInsets { .init() }
     public var iconSize: CGSize = .zero
+    public var counterSize: CounterSizeConfiguration = DefaultCounterSize()
     public var spinnerSize: CGSize = .zero
     public var iconHorizontalGap: CGFloat = 0
     public var titleHorizontalGap: CGFloat = 0

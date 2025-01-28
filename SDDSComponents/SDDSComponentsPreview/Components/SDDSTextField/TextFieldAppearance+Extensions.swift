@@ -14,9 +14,9 @@ public extension TextFieldAppearance {
             captionTypography: TextFieldTypography.caption,
             textBeforeTypography: TextFieldTypography.text,
             textAfterTypography: TextFieldTypography.text,
-            titleColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
-            optionalTitleColor: .surfaceInverseSolidPrimary.withOpacity(0.28),
-            textColor: .surfaceInverseSolidPrimary.withOpacity(0.96),
+            titleColor: .textDefaultPrimary,
+            optionalTitleColor: .textDefaultTertiary,
+            textColor: .textDefaultPrimary,
             textColorError: .textDefaultNegative,
             textColorWarning: .textDefaultWarning,
             textColorSuccess: .textDefaultAccent,
@@ -34,17 +34,11 @@ public extension TextFieldAppearance {
             borderColorWarning: Color.clear.token,
             borderColorSuccess: Color.clear.token,
             backgroundColorDefault: .surfaceDefaultTransparentPrimary,
-            backgroundColorReadOnly: .surfaceDefaultTransparentPrimary,
-            backgroundColorError: ColorToken(
-                darkColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.2)),
-                lightColor: Color(UIColor(hex: "#FF293E").withAlphaComponent(0.12))
-            ),
-            backgroundColorWarning: .surfaceDefaultTransparentWarning.inverted,
-            backgroundColorSuccess: ColorToken(
-                darkColor: Color(UIColor(hex: "#1A9E32").withAlphaComponent(0.2)),
-                lightColor: Color(UIColor(hex: "#1A9E32").withAlphaComponent(0.12))
-            ),
-            captionColorDefault: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            backgroundColorReadOnly: .surfaceDefaultSolidPrimary,
+            backgroundColorError: .surfaceDefaultTransparentNegative,
+            backgroundColorWarning: .surfaceDefaultTransparentWarning,
+            backgroundColorSuccess: .surfaceDefaultTransparentPositive,
+            captionColorDefault: .textDefaultSecondary,
             captionColorError: .textDefaultNegative,
             captionColorWarning: .textDefaultWarning,
             captionColorSuccess: .textDefaultAccent,
@@ -53,7 +47,12 @@ public extension TextFieldAppearance {
             placeholderColorWarning: .textDefaultWarning,
             placeholderColorSuccess: .textDefaultAccent,
             textBeforeColor: .textDefaultTertiary,
-            textAfterColor: .textDefaultTertiary
+            textAfterColor: .textDefaultTertiary,
+            startContentColor: .textDefaultSecondary,
+            endContentColor: .textDefaultSecondary,
+            textColorReadOnly: .textDefaultPrimary,
+            captionColorReadOnly: .textDefaultSecondary,
+            placeholderColorReadOnly: .textDefaultSecondary
         )
     }
 }

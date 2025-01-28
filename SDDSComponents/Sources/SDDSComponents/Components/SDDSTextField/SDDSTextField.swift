@@ -86,6 +86,7 @@ public enum TextFieldValue: Equatable {
     - style: Стиль текстового поля (`default`, `error`, `warning`, `success`).
     - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
     - required: Флаг, указывающий, является ли поле обязательным.
+    - divider: Флаг, указывающий, показывать ли линию разделителя.
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
     - size: Конфигурация размеров текстового поля.
@@ -108,6 +109,7 @@ public struct SDDSTextField: View {
     public let style: TextFieldStyle
     public let labelPlacement: TextFieldLabelPlacement
     public let required: Bool
+    public let divider: Bool
     public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
     public let size: TextFieldSizeConfiguration
@@ -133,6 +135,7 @@ public struct SDDSTextField: View {
         style: TextFieldStyle = .default,
         labelPlacement: TextFieldLabelPlacement = .outer,
         required: Bool = false,
+        divider: Bool = true,
         requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
         size: TextFieldSizeConfiguration,
@@ -157,6 +160,7 @@ public struct SDDSTextField: View {
         self.style = style
         self.labelPlacement = labelPlacement
         self.required = required
+        self.divider = divider
         self.requiredPlacement = requiredPlacement
         self.title = title
         self.optionalTitle = optionalTitle
@@ -172,7 +176,7 @@ public struct SDDSTextField: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            if showOuterTitleIndicatorForDefaultLayout || showNoneTitleLeftIndicatorForClearLayout {
+            if showOuterTitleIndicatorForDefaultLayout || showInnerTitleIndicatorForClearLayout {
                 indicatorWithTrailingPadding
             }
             
@@ -180,13 +184,9 @@ public struct SDDSTextField: View {
                 if labelPlacement == .outer {
                     titleLabel
                         .multilineTextAlignment(appearance.titleTextAlignment)
-                        .debug(condition: debugConfiguration.title)
                 }
 
                 HStack(spacing: 0) {
-                    if showInnerTitleIndicatorForClearLayout {
-                        indicatorWithTrailingPadding
-                    }
                     fieldView
                         .onTapGesture {
                             guard !displayChips else {
@@ -197,17 +197,12 @@ public struct SDDSTextField: View {
                         .debug(condition: debugConfiguration.fieldView)
                 }
                 HStack(spacing: 0) {
-                    if showInnerTitleIndicatorForClearLayout {
-                        Spacer()
-                            .frame(width: size.indicatorSize.width)
-                            .padding(.trailing, indicatorPadding, debug: debugConfiguration.indicatorPadding)
-                    }
                     captionLabel
                 }
             }
             
             if showInnerTitleRightIndicatorForClearLayout {
-                indicator
+                indicatorWitLeadingPadding
             }
         }
         .opacity(disabled ? appearance.disabledAlpha : 1)
@@ -218,14 +213,14 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var titleLabel: some View {
-        HStack(alignment: .center, spacing: 0) {
+        HStack(alignment: .top, spacing: 0) {
             mainTitleView
 
             if !optionalTitle.isEmpty && !required {
                 optionalTitleView
             }
             if shouldShowRequiredIndicatorAfterTitle {
-                indicator
+                indicatorWitLeadingPadding
             }
         }
         .padding(.bottom, size.titleBottomPadding, debug: debugConfiguration.titleBottomPadding)
@@ -235,18 +230,20 @@ public struct SDDSTextField: View {
     private var mainTitleView: some View {
         Text(title)
             .typography(titleTypography)
+            .frame(height: titleTypography.lineHeight)
             .foregroundColor(appearance.titleColor.color(for: colorScheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
-            .debug(condition: debugConfiguration.title)
     }
 
     @ViewBuilder
     private var optionalTitleView: some View {
-        Text(formattedOptionalTitle)
+        Text(optionalTitle)
             .typography(titleTypography)
+            .frame(height: titleTypography.lineHeight)
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
             .debug(condition: debugConfiguration.title)
+            .padding(.leading, size.optionalPadding)
     }
     
     @ViewBuilder
@@ -254,26 +251,27 @@ public struct SDDSTextField: View {
         if required {
             EmptyView()
         } else {
-            Text(formattedOptionalTitle)
+            Text(optionalTitle)
                 .typography(innerTitleTypography)
                 .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
                 .multilineTextAlignment(appearance.titleTextAlignment)
                 .debug(condition: debugConfiguration.title)
+                .padding(.leading, size.optionalPadding)
         }
-    }
-
-    @ViewBuilder
-    private var indicator: some View {
-        indicatorView
-            .offset(y: indicatorYOffset, debug: debugConfiguration.indicatorYOffset)
-            .padding(.leading, indicatorPadding, debug: debugConfiguration.indicatorPadding)
     }
 
     @ViewBuilder
     private var indicatorWithTrailingPadding: some View {
         indicatorView
-            .offset(y: indicatorYOffset, debug: debugConfiguration.indicatorYOffset)
-            .padding(.trailing, indicatorPadding, debug: debugConfiguration.indicatorPadding)
+            .padding(.trailing, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
+            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+    }
+    
+    @ViewBuilder
+    private var indicatorWitLeadingPadding: some View {
+        indicatorView
+            .padding(.leading, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
+            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
     }
 
     @ViewBuilder
@@ -294,7 +292,6 @@ public struct SDDSTextField: View {
             HStack(spacing: size.multipleValueHorizontalPadding) {
                 ForEach(chips, id: \.self) { chipData in
                     SDDSChip(data: chipData)
-                        .debug(condition: debugConfiguration.fieldView)
                 }
                 
                 textField
@@ -323,8 +320,6 @@ public struct SDDSTextField: View {
                     HStack(spacing: 0) {
                         if showSuffixOrPrefix {
                             textBeforeView
-                                .padding(.top, size.textInputPaddings.top)
-                                .padding(.bottom, size.textInputPaddings.bottom)
                                 .padding(.leading, size.textBeforeLeadingPadding)
                                 .padding(.trailing, size.textBeforeTrailingPadding)
                         }
@@ -345,7 +340,6 @@ public struct SDDSTextField: View {
                             placeholderAfterContent: {
                                 HStack(spacing: 0) {
                                     textAfterView
-                                    placeholderIndicator
                                 }
                             },
                             onEditingChanged: { focused in
@@ -363,8 +357,6 @@ public struct SDDSTextField: View {
 
                         if showSuffixOrPrefix {
                             textAfterView
-                                .padding(.top, size.textInputPaddings.top)
-                                .padding(.bottom, size.textInputPaddings.bottom)
                                 .padding(.leading, size.textAfterLeadingPadding)
                                 .padding(.trailing, size.textAfterTrailingPadding)
                         }
@@ -386,7 +378,7 @@ public struct SDDSTextField: View {
                 readOnly: readOnly,
                 placeholderBeforeContent: {},
                 placeholderContent: { placeholderView },
-                placeholderAfterContent: { placeholderIndicator },
+                placeholderAfterContent: { EmptyView() },
                 onEditingChanged: { focused in
                     isFocused = focused
                 },
@@ -401,7 +393,6 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private func textFieldConfiguration(textField: FocusableTextField) -> some View {
         textField
-            .padding(size.textInputPaddings, debug: debugConfiguration.textField)
             .onChange(of: text) { newText in
                 guard !readOnly else {
                     return
@@ -445,9 +436,10 @@ public struct SDDSTextField: View {
     
     @ViewBuilder
     private var innerOrNonePlacementOptionalTitleView: some View {
-        Text(" \(optionalTitle)")
+        Text(optionalTitle)
             .typography(textTypography)
             .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+            .padding(.leading, size.optionalPadding)
     }
         
     @ViewBuilder
@@ -494,8 +486,8 @@ public struct SDDSTextField: View {
                     
                     iconActionView
                 }
-                .padding(.leading, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
-                .padding(.trailing, fieldHorizontalPadding, debug: debugConfiguration.fieldHorizontalPadding)
+                .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
+                .padding(.trailing, boxTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
                 .frame(height: size.fieldHeight, debug: debugConfiguration.fieldHeight)
                 
                 if layout == .clear {
@@ -503,7 +495,7 @@ public struct SDDSTextField: View {
                 }
             }
             
-            if shouldShowIndicatorForInnerLabelDefaultLayout {
+            if shouldShowEdgeIndicatorForDefaultLayout {
                 indicatorOverlayView
             }
         }
@@ -538,30 +530,40 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var bottomLineView: some View {
-        Rectangle()
-            .fill(bottomLineColor)
-            .frame(height: size.lineWidth, debug: debugConfiguration.fieldView)
+        if divider {
+            Rectangle()
+                .fill(bottomLineColor)
+                .frame(height: size.dividerHeight, debug: debugConfiguration.fieldView)
+        } else {
+            EmptyView()
+        }
     }
     
     private var backgroundColor: Color {
         if readOnly {
-            return appearance.backgroundColorDefault.color(for: colorScheme)
+            return appearance.backgroundColorReadOnly.color(for: colorScheme)
         }
         return appearance.backgroundColor(for: style, isFocused: isFocused, readOnly: readOnly).color(for: colorScheme)
     }
     
     private var captionColor: Color {
         if readOnly {
-            return appearance.captionColorDefault.color(for: colorScheme)
+            return appearance.captionColorReadOnly.color(for: colorScheme)
         }
         return appearance.captionColor(for: isFocused ? .default : style).color(for: colorScheme)
     }
     
     private var placeholderColor: Color {
+        if readOnly {
+            return appearance.placeholderColorReadOnly.color(for: colorScheme)
+        }
         return appearance.placeholderColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
     }
     
     private var textColor: Color {
+        if readOnly {
+            return appearance.textColorReadOnly.color(for: colorScheme)
+        }
         return appearance.textColor(for: isFocused ? .default : style, layout: layout).color(for: colorScheme)
     }
     
@@ -577,12 +579,25 @@ public struct SDDSTextField: View {
             return appearance.lineColor.color(for: colorScheme)
         }
     }
+    
+    private var iconViewColor: Color {
+        if isFocused {
+            return appearance.startContentColor.color(for: colorScheme)
+        }
+        
+        switch style {
+        case .error, .success, .warning:
+            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
+        case .default:
+            return appearance.startContentColor.color(for: colorScheme)
+        }
+    }
 
     @ViewBuilder
     private var iconView: some View {
         if let leftView = iconViewProvider?.view {
             leftView
-                .foregroundColor(textColor)
+                .foregroundColor(iconViewColor)
                 .frame(width: iconViewWidth, height: min(size.iconSize.height, size.fieldHeight), debug: debugConfiguration.icon)
                 .padding(.trailing, size.iconPadding, debug: debugConfiguration.icon)
         } else {
@@ -594,6 +609,7 @@ public struct SDDSTextField: View {
     private var iconActionView: some View {
         if let rightView = iconActionViewProvider?.view {
             rightView
+                .foregroundColor(appearance.endContentColor.color(for: colorScheme))
                 .frame(width: iconActionViewWidth, height: min(size.iconActionSize.height, size.fieldHeight), debug: debugConfiguration.iconAction)
                 .padding(.leading, size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {
@@ -616,15 +632,6 @@ public struct SDDSTextField: View {
         Circle()
             .fill(appearance.requiredIndicatorColor.color(for: colorScheme))
             .frame(width: size.indicatorSize.width, height: size.indicatorSize.height, debug: debugConfiguration.indicatorView)
-    }
-
-    @ViewBuilder
-    private var placeholderIndicator: some View {
-        if showNoneTitleIndicatorForClearLayout {
-            indicator
-        } else {
-            EmptyView()
-        }
     }
 
     @ViewBuilder
@@ -657,7 +664,6 @@ public struct SDDSTextField: View {
         }
         
         var maxWidth = proxy.size.width
-        maxWidth -= size.textInputPaddings.leading + size.textInputPaddings.trailing
         if !textBefore.isEmpty && !displayChips {
             let textBeforeSize = (textBefore as NSString).size(withAttributes: [NSAttributedString.Key.font: textBeforeTypography.uiFont])
             maxWidth -= (textBeforeSize.width + deltaPadding)
@@ -683,14 +689,6 @@ public struct SDDSTextField: View {
         min(size.iconSize.width, size.fieldHeight)
     }
 
-    private var indicatorYOffset: CGFloat {
-        size.indicatorYOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout)
-    }
-
-    private var indicatorPadding: CGFloat {
-        size.indicatorPadding(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout)
-    }
-
     private var shouldShowInnerTitle: Bool {
         labelPlacement == .inner &&
         !displayChips &&
@@ -698,8 +696,8 @@ public struct SDDSTextField: View {
         !placeholder.isEmpty
     }
 
-    private var shouldShowIndicatorForInnerLabelDefaultLayout: Bool {
-        labelPlacement == .inner &&
+    private var shouldShowEdgeIndicatorForDefaultLayout: Bool {
+        (labelPlacement == .inner || labelPlacement == .none) &&
         required &&
         layout == .default
     }
@@ -710,14 +708,14 @@ public struct SDDSTextField: View {
     }
 
     private var showInnerTitleIndicatorForClearLayout: Bool {
-        labelPlacement == .inner &&
+        (labelPlacement == .inner || labelPlacement == .none) &&
         required &&
         requiredPlacement == .left &&
         layout == .clear
     }
     
     private var showInnerTitleRightIndicatorForClearLayout: Bool {
-        labelPlacement == .inner &&
+        (labelPlacement == .inner || labelPlacement == .none) &&
         required &&
         requiredPlacement == .right &&
         layout == .clear
@@ -726,21 +724,8 @@ public struct SDDSTextField: View {
     private var showOuterTitleIndicatorForDefaultLayout: Bool {
         labelPlacement == .outer &&
         required &&
-        requiredPlacement == .left
-    }
-    
-    private var showNoneTitleLeftIndicatorForClearLayout: Bool {
-        labelPlacement == .none &&
-        required &&
         requiredPlacement == .left &&
-        !isFocused
-    }
-
-    private var showNoneTitleIndicatorForClearLayout: Bool {
-        labelPlacement == .none &&
-        required &&
-        requiredPlacement == .right &&
-        !isFocused
+        layout == .default
     }
     
     private var shouldCenterText: Bool {
@@ -760,24 +745,15 @@ public struct SDDSTextField: View {
         }
     }
 
-    private var formattedOptionalTitle: String {
-        " \(optionalTitle)"
-    }
-
     private var chipCornerRadius: CGFloat {
         switch value {
         case .single:
             return 0
         case .multiple(_, let chips):
-            guard let chipSize = chips.first?.appearance.size else {
+            guard let chipAppearance = chips.first?.appearance else {
                 return 0
             }
-            switch chipSize.borderStyle {
-            case .default(let radius):
-                return radius
-            case .pilled:
-                return chipSize.height / 2
-            }
+            return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
         }
     }
     
@@ -824,8 +800,16 @@ public struct SDDSTextField: View {
         }
         return typography
     }
-
-    private var fieldHorizontalPadding: CGFloat {
-        layout == .clear ? 0 : size.fieldHorizontalPadding
+    
+    private var boxLeadingPadding: CGFloat {
+        if displayChips {
+            return size.chipsPadding
+        }
+        
+        return layout == .clear ? 0 : size.boxLeadingPadding
+    }
+    
+    private var boxTrailingPadding: CGFloat {
+        layout == .clear ? 0 : size.boxTrailingPadding
     }
 }

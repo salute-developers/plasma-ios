@@ -90,19 +90,23 @@ public enum TextAreaChipSize: String, ChipSizeConfiguration {
         }
     }
     
-    public var borderStyle: ChipBorderStyle {
-        switch self {
-        case .large:
-            return .default(8)
-        case .medium:
-            return .default(6)
-        case .small:
-            return .default(4)
-        case .extraSmall:
-            return .default(2)
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
+        switch style {
+        case .cornered:
+            switch self {
+            case .large:
+                return 8
+            case .medium:
+                return 6
+            case .small:
+                return 4
+            case .extraSmall:
+                return 2
+            }
+        case .pilled:
+            return height / 2
         }
     }
-
 }
 
 #Preview {

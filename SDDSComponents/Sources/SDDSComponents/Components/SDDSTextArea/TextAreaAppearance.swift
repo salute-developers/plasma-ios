@@ -46,6 +46,12 @@ public struct TextAreaAppearance {
     public let placeholderColorError: ColorToken
     public let placeholderColorWarning: ColorToken
     public let placeholderColorSuccess: ColorToken
+    public let endContentColor: ColorToken
+    public let textColorReadOnly: ColorToken
+    public let captionColorReadOnly: ColorToken
+    public let counterColorReadOnly: ColorToken
+    public let placeholderColorReadOnly: ColorToken
+    public let backgroundColorReadOnly: ColorToken
     
     public init(
         textTypography: TypographyConfiguration,
@@ -89,7 +95,13 @@ public struct TextAreaAppearance {
         placeholderColorDefault: ColorToken,
         placeholderColorError: ColorToken,
         placeholderColorWarning: ColorToken,
-        placeholderColorSuccess: ColorToken
+        placeholderColorSuccess: ColorToken,
+        endContentColor: ColorToken,
+        textColorReadOnly: ColorToken,
+        captionColorReadOnly: ColorToken,
+        counterColorReadOnly: ColorToken,
+        placeholderColorReadOnly: ColorToken,
+        backgroundColorReadOnly: ColorToken
     ) {
         self.textTypography = textTypography
         self.titleTypography = titleTypography
@@ -133,6 +145,12 @@ public struct TextAreaAppearance {
         self.placeholderColorError = placeholderColorError
         self.placeholderColorWarning = placeholderColorWarning
         self.placeholderColorSuccess = placeholderColorSuccess
+        self.endContentColor = endContentColor
+        self.textColorReadOnly = textColorReadOnly
+        self.captionColorReadOnly = captionColorReadOnly
+        self.placeholderColorReadOnly = placeholderColorReadOnly
+        self.backgroundColorReadOnly = backgroundColorReadOnly
+        self.counterColorReadOnly = counterColorReadOnly
     }
     
     public func borderColor(for style: TextAreaStyle) -> ColorToken {

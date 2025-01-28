@@ -29,6 +29,504 @@
       location = "group:CONTRIBUTING.md">
    </FileRef>
    <Group
+      location = "container:SDDSThemeBuilder"
+      name = "SDDSThemeBuilder">
+      <Group
+         location = "group:SDDSThemeBuilder"
+         name = "SDDSThemeBuilder">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:SDDSThemeBuilderCore"
+         name = "SDDSThemeBuilderCore">
+         <Group
+            location = "group:ContextBuilders"
+            name = "ContextBuilders">
+            <FileRef
+               location = "group:ContexBuilder.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GradientContextBuilder.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorContext.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorContextBuilder.swift">
+            </FileRef>
+            <FileRef
+               location = "group:TypographyContextBuilder.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ThemeContext.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GeneralContextBuilder.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Core"
+            name = "Core">
+            <FileRef
+               location = "group:Constants.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SchemeDirectory.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GeneratedComponent.swift">
+            </FileRef>
+            <FileRef
+               location = "group:FileWriter.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GeneralError.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ScreenSize+Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Renderable.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ScreenSize.swift">
+            </FileRef>
+            <FileRef
+               location = "group:CodeGenerationError.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PaletteAlias.swift">
+            </FileRef>
+            <FileRef
+               location = "group:FileExtension.swift">
+            </FileRef>
+            <FileRef
+               location = "group:URL+Extensions.swift">
+            </FileRef>
+            <FileRef
+               location = "group:String+SizeKey.swift">
+            </FileRef>
+            <FileRef
+               location = "group:StencilTemplate.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Stencil"
+            name = "Stencil">
+            <FileRef
+               location = "group:IconButtonSize+ButtonSizeConfiguration.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:GradientToken.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:Colors.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:LinkButton+ColorVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:BasicButtonTypography.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:Shadows.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:ShapeToken.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:ShadowToken.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:BasicButton+ColorVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:LinkButtonTypography.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:Gradients.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:TypographyToken.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:BasicButton+Typography.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:BasicButtonSize+ButtonSizeConfiguration.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:Typographies.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:LinkButton+Typography.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:Shapes.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:ColorToken.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:BasicButton+SizeVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:IconButton+ColorVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:IconButton+SizeVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:FilterFindState.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:LinkButton+SizeVariations.stencil">
+            </FileRef>
+            <FileRef
+               location = "group:LinkButtonSize+ButtonSizeConfiguration.stencil">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:SDDSThemeBuilderCore.h">
+         </FileRef>
+         <FileRef
+            location = "group:SDDSThemeBuilderCore.docc">
+         </FileRef>
+         <Group
+            location = "group:Extensions"
+            name = "Extensions">
+            <FileRef
+               location = "group:String+Hex.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Font+FontName.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Color+Extension.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Utilities"
+            name = "Utilities">
+            <FileRef
+               location = "group:Logger.swift">
+            </FileRef>
+            <FileRef
+               location = "group:SchemeValidationLogger.swift">
+            </FileRef>
+            <FileRef
+               location = "group:HexConverter.swift">
+            </FileRef>
+            <Group
+               location = "group:TemplateRenderer"
+               name = "TemplateRenderer">
+               <FileRef
+                  location = "group:Double+Stencil.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:TemplateRenderer.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:EnsureFloatNonNegativeNode.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:EnsureValueExistsNode.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:EnsureAnyValueExistsNode.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:EnsureValueNode.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:TemplateRendererError.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:EnsureDoubleInRangeNode.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Model"
+            name = "Model">
+            <Group
+               location = "group:Scheme"
+               name = "Scheme">
+               <FileRef
+                  location = "group:TokenKind.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ShadowKind.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:FontFamilyStyle.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Mode.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Subcategory.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ShadowStyle.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Weight.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:FontFamilyKind.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:TypographyStyle.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Size.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ShapeStyle.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Scheme.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Screen.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ShapeKind.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Category.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Style.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:TypographyKind.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Token.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Direction.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:FontFamily"
+               name = "FontFamily">
+               <FileRef
+                  location = "group:FontFamilyContainer.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:FontFamily.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Font.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Commands"
+            name = "Commands">
+            <FileRef
+               location = "group:DecodeCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:UnpackThemeCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GenerateTokensCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DecodeSchemeCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Command.swift">
+            </FileRef>
+            <FileRef
+               location = "group:DownloadCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GenerateSwiftCodeCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:PrepareDirectoriesCommand.swift">
+            </FileRef>
+            <FileRef
+               location = "group:InstallFontsCommand.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Validators"
+            name = "Validators">
+            <FileRef
+               location = "group:SchemeTokenNameValidator.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:App.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:SDDSThemeCoreTests"
+         name = "SDDSThemeCoreTests">
+         <FileRef
+            location = "group:SDDSThemeCoreTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Output"
+         name = "Output">
+         <FileRef
+            location = "group:general.json">
+         </FileRef>
+         <FileRef
+            location = "group:0.1.0.zip">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:SDDSThemeCore">
+      </FileRef>
+      <FileRef
+         location = "group:SDDSTheme">
+      </FileRef>
+      <Group
+         location = "group:SDDSThemeBuilderCoreTests"
+         name = "SDDSThemeBuilderCoreTests">
+         <Group
+            location = "group:Mocks"
+            name = "Mocks">
+            <FileRef
+               location = "group:RunnableMock.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ContextBuilderMock.swift">
+            </FileRef>
+            <FileRef
+               location = "group:RenderableMock.swift">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:ContextBuilders"
+            name = "ContextBuilders">
+            <FileRef
+               location = "group:TypographyContextBuilderTests.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GradientContextBuilderTests.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GeneralContextBuilderTests.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ColorContextBuilderTests.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ContextBuilderTests.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:GenerateColorTokensCommandTests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:DownloadCommandTests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:TemplateRendererTests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SchemeTokenNameValidatorTests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:DecodeSchemeCommandTests.swift">
+         </FileRef>
+         <Group
+            location = "group:Files"
+            name = "Files">
+            <FileRef
+               location = "group:ios_shape.json">
+            </FileRef>
+            <FileRef
+               location = "group:empty.json">
+            </FileRef>
+            <FileRef
+               location = "group:scheme.json">
+            </FileRef>
+            <FileRef
+               location = "group:ios_gradient_invalid.json">
+            </FileRef>
+            <FileRef
+               location = "group:SBSansDisplay-Medium.otf">
+            </FileRef>
+            <FileRef
+               location = "group:palette.json">
+            </FileRef>
+            <FileRef
+               location = "group:ios_colors.json">
+            </FileRef>
+            <FileRef
+               location = "group:SBSansDisplay-Bold.otf">
+            </FileRef>
+            <FileRef
+               location = "group:ios_gradient.json">
+            </FileRef>
+            <FileRef
+               location = "group:meta.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:DownloadSchemeCommandTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:SDDSDemo"
+         name = "SDDSDemo">
+         <FileRef
+            location = "group:Assets.xcassets">
+         </FileRef>
+         <Group
+            location = "group:Preview Content"
+            name = "Preview Content">
+            <FileRef
+               location = "group:Preview Assets.xcassets">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:SDDSDemoApp.swift">
+         </FileRef>
+         <Group
+            location = "group:Views"
+            name = "Views">
+            <FileRef
+               location = "group:TypographyView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:MainView.swift">
+            </FileRef>
+            <FileRef
+               location = "group:GradientView.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:SDDSThemeTests"
+         name = "SDDSThemeTests">
+         <FileRef
+            location = "group:SDDSThemeTests.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:SDDSThemeBuilder.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SDDSThemeUtilities">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:fastlane"
       name = "fastlane">
       <FileRef

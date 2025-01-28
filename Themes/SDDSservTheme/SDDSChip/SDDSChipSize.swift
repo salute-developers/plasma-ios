@@ -2,21 +2,39 @@ import Foundation
 import SDDSComponents
 
 public enum SDDSChipSize: ChipSizeConfiguration {
-    case large(ChipBorderStyle)
-    case medium(ChipBorderStyle)
-    case small(ChipBorderStyle)
-    case extraSmall(ChipBorderStyle)
+    case large
+    case medium
+    case small
+    case extraSmall
     
     public var debugDescription: String {
         switch self {
-        case .large(let style):
-            return "large\(style)"
-        case .medium(let style):
-            return "medium\(style)"
-        case .small(let style):
-            return "small\(style)"
-        case .extraSmall(let style):
-            return "extraSmall\(style)"
+        case .large:
+            return "large"
+        case .medium:
+            return "medium"
+        case .small:
+            return "small"
+        case .extraSmall:
+            return "extraSmall"
+        }
+    }
+    
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
+        switch style {
+        case .cornered:
+            switch self {
+            case .large:
+                return 12
+            case .medium:
+                return 10
+            case .small:
+                return 8
+            case .extraSmall:
+                return 6
+            }
+        case .pilled:
+            return height / 2
         }
     }
     
@@ -38,7 +56,7 @@ public enum SDDSChipSize: ChipSizeConfiguration {
         case .large:
             return CGSize(width: 24, height: 24)
         case .medium:
-            return CGSize(width: 20, height: 20)
+            return CGSize(width: 24, height: 24)
         case .small:
             return CGSize(width: 16, height: 16)
         case .extraSmall:
@@ -97,32 +115,7 @@ public enum SDDSChipSize: ChipSizeConfiguration {
             return 24
         }
     }
-    
-    public var borderStyle: ChipBorderStyle {
-        switch self {
-        case .large(let style):
-            return style
-        case .medium(let style):
-            return style
-        case .small(let style):
-            return style
-        case .extraSmall(let style):
-            return style
-        }
-    }
-    
-    public var pilled: SDDSChipSize {
-        switch self {
-        case .large:
-            return .large(.pilled)
-        case .medium:
-            return .medium(.pilled)
-        case .small:
-            return .small(.pilled)
-        case .extraSmall:
-            return .extraSmall(.pilled)
-        }
-    }
+
 }
 
 extension SDDSChipSize: Hashable {

@@ -20,11 +20,9 @@ extension LinkButtonSize: ButtonSizeConfiguration {
         }
     }
 
-    public var cornerRadius: CGFloat {
-        0
-    }
+    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
 
-    public var paddings: EdgeInsets {
+    public func paddings(style: ComponentShapeStyle) -> EdgeInsets {
         switch self {
         {%- for variation, config in variations.size %}
         case .{{ variation | sizeKey }}: return EdgeInsets(top: 0, leading: {{ config.paddingStart }}, bottom: 0, trailing: {{ config.paddingEnd }})

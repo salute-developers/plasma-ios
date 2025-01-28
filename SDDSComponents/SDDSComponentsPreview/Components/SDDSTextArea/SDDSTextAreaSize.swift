@@ -3,6 +3,7 @@ import SwiftUI
 import SDDSComponents
 
 public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
+    
     case large
     case medium
     case small
@@ -34,6 +35,10 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
         }
     }
     
+    public var chipsPadding: CGFloat {
+        6
+    }
+    
     public var textBeforeLeadingPadding: CGFloat {
         return 0
     }
@@ -49,8 +54,8 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     public var textAfterTrailingPadding: CGFloat {
         return 2
     }
-
-    public var fieldHorizontalPadding: CGFloat {
+    
+    public var boxLeadingPadding: CGFloat {
         switch self {
         case .large:
             16
@@ -60,6 +65,123 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
             8
         case .extraSmall:
             8
+        }
+    }
+    
+    public var boxTrailingPadding: CGFloat {
+        switch self {
+        case .large:
+            16
+        case .medium:
+            8
+        case .small:
+            8
+        case .extraSmall:
+            8
+        }
+    }
+    
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+        switch layout {
+        case .clear:
+            switch labelPlacement {
+            case .outer:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            case .inner:
+                switch self {
+                case .large:
+                    9
+                case .medium:
+                    6
+                case .small:
+                    4
+                case .extraSmall:
+                    0
+                }
+            case .none:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            }
+        case .default:
+            switch self {
+            case .large:
+                16
+            case .medium:
+                12
+            case .small:
+                8
+            case .extraSmall:
+                8
+            }
+        }
+    }
+    
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+        switch layout {
+        case .clear:
+            switch labelPlacement {
+            case .outer:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            case .inner:
+                switch self {
+                case .large:
+                    9
+                case .medium:
+                    6
+                case .small:
+                    4
+                case .extraSmall:
+                    0
+                }
+            case .none:
+                switch self {
+                case .large:
+                    16
+                case .medium:
+                    12
+                case .small:
+                    8
+                case .extraSmall:
+                    8
+                }
+            }
+        case .default:
+            switch self {
+            case .large:
+                16
+            case .medium:
+                12
+            case .small:
+                8
+            case .extraSmall:
+                8
+            }
         }
     }
     
@@ -83,18 +205,9 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     public var captionBottomPadding: CGFloat {
         4
     }
-
-    public var textInputPaddings: EdgeInsets {
-        switch self {
-        case .large:
-            .init(top: 16, leading: 0, bottom: 8, trailing: 0)
-        case .medium:
-            .init(top: 14, leading: 0, bottom: 6, trailing: 0)
-        case .small:
-            .init(top: 12, leading: 0, bottom: 4, trailing: 0)
-        case .extraSmall:
-            .init(top: 8, leading: 0, bottom: 4, trailing: 0)
-        }
+    
+    public var optionalPadding: CGFloat {
+        4
     }
     
     public var textHorizontalPadding: CGFloat {
@@ -144,65 +257,122 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
         }
     }
     
-    public func indicatorYOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
-        switch (self, labelPlacement, requiredPlacement, layout) {
-        case (.large, .outer, .left, _):
-            return 7
-        case (.medium, .outer, .left, _):
-            return 6
-        case (.small, .outer, .left, _):
-            return 5
-        case (.extraSmall, .outer, .left, _):
-            return 4
-        case (.large, .inner, .right, .clear), (.large, .inner, .left, .clear):
-            return 25
-        case (.medium, .inner, .right, .clear), (.medium, .inner, .left, .clear):
-            return 22
-        case (.small, .inner, .right, .clear), (.small, .inner, .left, .clear):
-            return 19
-        case (.extraSmall, .inner, .right, .clear), (.extraSmall, .inner, .left, .clear):
-            return 12
-        case (.large, .none, .left, .clear), (.large, .none, .right, .clear):
-            return 20
-        case (.medium, .none, .left, .clear), (.medium, .none, .right, .clear):
-            return 19
-        case (.small, .none, .left, .clear), (.small, .none, .right, .clear):
-            return 18
-        case (.extraSmall, .none, .left, .clear), (.extraSmall, .none, .right, .clear):
-            return 17
-        case (.large, .outer, .right, _), (.medium, .outer, .right, _), (.small, .outer, .right, _):
-            return -2
-        case (.extraSmall, .outer, .right, _):
-            return 0
-        default:
-            break
+    public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint {
+        switch layout {
+        case .default:
+            switch labelPlacement {
+            case .none:
+                return .zero
+            case .inner:
+                return .zero
+            case .outer:
+                switch requiredPlacement {
+                case .left:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 6, y: 8)
+                    case .medium:
+                        return CGPoint(x: 6, y: 7)
+                    case .small:
+                        return CGPoint(x: 4, y: 6)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 4)
+                    }
+                case .right:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 4, y: 4)
+                    case .medium:
+                        return CGPoint(x: 4, y: 4)
+                    case .small:
+                        return CGPoint(x: 4, y: 4)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 2)
+                    }
+                }
+            }
+        case .clear:
+            switch labelPlacement {
+            case .none:
+                switch requiredPlacement {
+                case .left:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 6, y: 24)
+                    case .medium:
+                        return CGPoint(x: 6, y: 20)
+                    case .small:
+                        return CGPoint(x: 6, y: 17)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 13)
+                    }
+                case .right:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 4, y: 24)
+                    case .medium:
+                        return CGPoint(x: 4, y: 20)
+                    case .small:
+                        return CGPoint(x: 6, y: 17)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 13)
+                    }
+                }
+            case .inner:
+                switch requiredPlacement {
+                case .left:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 6, y: 24)
+                    case .medium:
+                        return CGPoint(x: 6, y: 20)
+                    case .small:
+                        return CGPoint(x: 6, y: 17)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 13)
+                    }
+                case .right:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 4, y: 24)
+                    case .medium:
+                        return CGPoint(x: 4, y: 20)
+                    case .small:
+                        return CGPoint(x: 6, y: 17)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 13)
+                    }
+                }
+            case .outer:
+                switch requiredPlacement {
+                case .left:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 6, y: 8)
+                    case .medium:
+                        return CGPoint(x: 6, y: 7)
+                    case .small:
+                        return CGPoint(x: 4, y: 6)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 4)
+                    }
+                case .right:
+                    switch self {
+                    case .large:
+                        return CGPoint(x: 4, y: 4)
+                    case .medium:
+                        return CGPoint(x: 4, y: 4)
+                    case .small:
+                        return CGPoint(x: 4, y: 4)
+                    case .extraSmall:
+                        return CGPoint(x: 4, y: 2)
+                    }
+                }
+            }
         }
-        
-        return 0
     }
-
-    public func indicatorPadding(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
-        switch (self, labelPlacement, requiredPlacement, layout) {
-        case (.large, .outer, .left, _), (.medium, .outer, .left, _):
-            return 6
-        case (.small, .outer, .left, _), (.extraSmall, .outer, .left, _):
-            return 4
-        case (.large, .outer, .right, _), (.medium, .outer, .right, .default), (.small, .outer, .right, _), (.extraSmall, .outer, .right, _):
-            return 4
-        case (.large, .inner, .left, .clear), (.medium, .inner, .left, .clear):
-            return 6
-        case (.small, .inner, .left, .clear), (.extraSmall, .inner, .left, .clear):
-            return 4
-        case (.large, .inner, .right, .clear), (.medium, .inner, .right, .clear), (.small, .inner, .right, .clear), (.extraSmall, .inner, .right, .clear):
-            return 4
-        case (.large, .none, .right, .clear), (.medium, .none, .right, .clear):
-            return 6
-        case (.small, .none, .right, .clear), (.extraSmall, .none, .right, .clear):
-            return 4
-        default:
-            return 6
-        }
-    }
+    
+    
     public func fieldHeight(layout: TextAreaLayout) -> CGFloat {
         switch layout {
         case .default:
@@ -265,10 +435,6 @@ public enum SDDSTextAreaSize: String, TextAreaSizeConfiguration {
     
     public var chipGroupVerticalTopPadding: CGFloat {
         return 8
-    }
-    
-    public var textInputBottomPadding: CGFloat {
-        return 0
     }
 
     public var debugDescription: String {

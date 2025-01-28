@@ -8,7 +8,7 @@ public extension AppearanceVariation<ChipAppearance> {
     var large: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipSize.large(.default(12)))
+                .size(SDDSChipSize.large)
                 .titleTypography(AvatarTypography.title)
         )
     }
@@ -16,7 +16,7 @@ public extension AppearanceVariation<ChipAppearance> {
     var medium: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipSize.medium(.default(10)))
+                .size(SDDSChipSize.medium)
                 .titleTypography(AvatarTypography.title)
         )
     }
@@ -24,7 +24,7 @@ public extension AppearanceVariation<ChipAppearance> {
     var small: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipSize.small(.default(8)))
+                .size(SDDSChipSize.small)
                 .titleTypography(AvatarTypography.title)
         )
     }
@@ -32,7 +32,7 @@ public extension AppearanceVariation<ChipAppearance> {
     var extraSmall: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipSize.extraSmall(.default(6)))
+                .size(SDDSChipSize.extraSmall)
                 .titleTypography(AvatarTypography.title)
         )
     }

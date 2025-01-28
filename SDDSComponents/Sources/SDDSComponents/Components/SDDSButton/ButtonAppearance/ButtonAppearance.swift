@@ -28,9 +28,9 @@ public struct ButtonAppearance {
     public let size: ButtonSizeConfiguration
     
     /**
-     Стиль формы кнопки (например, закругленная или овальная), определяемый `ButtonShapeStyle`.
+     Стиль формы кнопки (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
      */
-    public let shapeStyle: ButtonShapeStyle
+    public let shapeStyle: ComponentShapeStyle
     
     /**
      Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
@@ -95,7 +95,7 @@ public struct ButtonAppearance {
      */
     public init(
         size: ButtonSizeConfiguration = DefaultButtonSize(),
-        shapeStyle: ButtonShapeStyle = .default,
+        shapeStyle: ComponentShapeStyle = .cornered,
         titleTypography: TypographyConfiguration = .default,
         titleColor: ButtonColor = ButtonColor(),
         subtitleTypography: TypographyConfiguration = .default,

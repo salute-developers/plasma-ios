@@ -5,9 +5,10 @@ import SwiftUI
 public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var titleBottomPadding: CGFloat { get }
     var titleInnerPadding: CGFloat { get }
-    var fieldHorizontalPadding: CGFloat { get }
+    var boxLeadingPadding: CGFloat { get }
+    var boxTrailingPadding: CGFloat { get }
     var captionTopPadding: CGFloat { get }
-    var textInputPaddings: EdgeInsets { get }
+    var optionalPadding: CGFloat { get }
     var cornerRadius: CGFloat { get }
     var borderWidth: CGFloat { get }
     var iconPadding: CGFloat { get }
@@ -18,12 +19,11 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var iconActionSize: CGSize { get }
     var multipleValueHorizontalPadding: CGFloat { get }
     var chipContainerHorizontalPadding: CGFloat { get }
-    var lineWidth: CGFloat { get }
+    var dividerHeight: CGFloat { get }
     var textBeforeLeadingPadding: CGFloat { get }
     var textBeforeTrailingPadding: CGFloat { get }
     var textAfterLeadingPadding: CGFloat { get }
-    var textAfterTrailingPadding: CGFloat { get } 
-    
-    func indicatorPadding(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
-    func indicatorYOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGFloat
+    var textAfterTrailingPadding: CGFloat { get }
+    var chipsPadding: CGFloat { get }
+    func indicatorOffset(labelPlacement: TextFieldLabelPlacement, requiredPlacement: TextFieldRequiredPlacement, layout: TextFieldLayout) -> CGPoint
 }
