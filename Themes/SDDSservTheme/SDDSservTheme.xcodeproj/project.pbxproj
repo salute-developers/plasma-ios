@@ -45,6 +45,8 @@
 		81A901872CF8479B00992B04 /* BasicButton+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901792CF8479B00992B04 /* BasicButton+ColorVariations.swift */; };
 		81A901882CF8479B00992B04 /* IconButton+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9017A2CF8479B00992B04 /* IconButton+ColorVariations.swift */; };
 		81A901892CF8479B00992B04 /* BasicButton+Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9017B2CF8479B00992B04 /* BasicButton+Typography.swift */; };
+		81E4CD3F2D49FB9200E7F395 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; };
+		81E4CD402D49FB9200E7F395 /* SDDSComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8ECEBDF0B77610192BA89968 /* SBSansText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */; };
 		9B88E9F86DE5AD9E28D0511B /* SBSansDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */; };
 		A059B00A8A90DFA2B44A01F5 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B23BD6BB8A0CE36B12D28 /* Shadows+Generated.swift */; };
@@ -68,6 +70,20 @@
 		EAB76217C251883AD02527AD /* SBSansText-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 19188BDF45581E780A189E9D /* SBSansText-Regular.otf */; };
 		EBDE829F3377BCF3EFF634CC /* SBSansText-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7FDDE46FE053811DACEDC98 /* SBSansText-BoldItalic.otf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81E4CD412D49FB9200E7F395 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81E4CD402D49FB9200E7F395 /* SDDSComponents.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0728278978145C6472888FD0 /* SBSansText-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-Light.otf"; sourceTree = "<group>"; };
@@ -104,6 +120,7 @@
 		81A901792CF8479B00992B04 /* BasicButton+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasicButton+ColorVariations.swift"; sourceTree = "<group>"; };
 		81A9017A2CF8479B00992B04 /* IconButton+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IconButton+ColorVariations.swift"; sourceTree = "<group>"; };
 		81A9017B2CF8479B00992B04 /* BasicButton+Typography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasicButton+Typography.swift"; sourceTree = "<group>"; };
+		81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		8E63361D6FA1A21DB3E6F39B /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		9D2E64FA6BD8F29DDA2475D5 /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
 		ADCA8DEA7A9F7CA47E7A910D /* SBSansDisplay-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Light.otf"; sourceTree = "<group>"; };
@@ -124,6 +141,7 @@
 			files = (
 				50F6440882E4EAEA8E579906 /* Foundation.framework in Frameworks */,
 				C4A3561B2AC1A35B57C4318C /* SDDSThemeCore.xcframework in Frameworks */,
+				81E4CD3F2D49FB9200E7F395 /* SDDSComponents.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +174,7 @@
 		162A3C52391589A140A5FEB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */,
 				070383931FADEEF4A8128687 /* iOS */,
 			);
 			name = Frameworks;
@@ -259,6 +278,7 @@
 				178ED5D775B1703E10009641 /* Sources */,
 				5DDD47397723796B51C1F782 /* Frameworks */,
 				C8ADDE6BD472D9EEC794F10E /* Resources */,
+				81E4CD412D49FB9200E7F395 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
