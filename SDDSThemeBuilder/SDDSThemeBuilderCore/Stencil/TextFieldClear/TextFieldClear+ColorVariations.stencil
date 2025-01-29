@@ -6,7 +6,7 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
     {%- for appearanceKey, appearanceVariation in data %}
     var {{ appearanceKey | escapeSwiftKeyword }}: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextFieldClear.{{ key }}.appearance)
+            appearance: appearance.applyColorVariation(variation: TextFieldClear.{{ appearanceKey }}.appearance)
         )
     }
     {%- endfor %}

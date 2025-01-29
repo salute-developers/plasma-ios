@@ -5,22 +5,22 @@ import SDDSThemeCore
 public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
     var `default`: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextFieldClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextFieldClear.default.appearance)
         )
     }
     var error: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextFieldClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextFieldClear.error.appearance)
         )
     }
     var success: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextFieldClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextFieldClear.success.appearance)
         )
     }
     var warning: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextFieldClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextFieldClear.warning.appearance)
         )
     }
 }

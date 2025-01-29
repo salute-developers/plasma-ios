@@ -6,22 +6,22 @@ import SDDSThemeCore
 public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
     var `default`: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField..appearance)
+            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.default.appearance)
         )
     }
     var error: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField..appearance)
+            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.error.appearance)
         )
     }
     var success: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField..appearance)
+            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.success.appearance)
         )
     }
     var warning: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField..appearance)
+            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.warning.appearance)
         )
     }
 }

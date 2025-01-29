@@ -6,22 +6,22 @@ import SDDSThemeCore
 public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
     var `default`: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextAreaClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextAreaClear.default.appearance)
         )
     }
     var error: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextAreaClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextAreaClear.error.appearance)
         )
     }
     var success: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextAreaClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextAreaClear.success.appearance)
         )
     }
     var warning: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: TextAreaClear..appearance)
+            appearance: appearance.applyColorVariation(variation: TextAreaClear.warning.appearance)
         )
     }
 }
