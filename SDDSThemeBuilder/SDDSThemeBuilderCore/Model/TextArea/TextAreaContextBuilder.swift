@@ -47,7 +47,7 @@ final class TextAreaContextBuilder {
                 chipsPadding: mergedProps.chipsPadding?.value ?? 0,
                 chipContainerHorizontalPadding: mergedProps.chipsPadding?.value ?? 0,
                 indicatorOffsets: indiciatorOffsets(from: configuration, sizeVariationKey: sizeVariationKey),
-                indicatorSizes: indiciatorSizes(from: configuration, sizeVariationKey: sizeVariationKey),
+                indicatorSizes: indicatorSizes(from: configuration, sizeVariationKey: sizeVariationKey),
                 boxPaddingTops: boxPaddingTops(from: configuration, sizeVariationKey: sizeVariationKey),
                 boxPaddingBottoms: boxPaddingBottoms(from: configuration, sizeVariationKey: sizeVariationKey)
             )
@@ -192,7 +192,7 @@ final class TextAreaContextBuilder {
         }
     }
 
-    private func indiciatorSizes(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaSizeConfiguration.Size]] {
+    private func indicatorSizes(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey

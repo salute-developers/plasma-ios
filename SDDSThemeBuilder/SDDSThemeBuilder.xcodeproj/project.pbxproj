@@ -222,6 +222,23 @@
 		818E39172D4A5DF100B3A02D /* TextAreaClearContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39162D4A5DF100B3A02D /* TextAreaClearContext.swift */; };
 		818E39192D4A5E0900B3A02D /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39182D4A5E0900B3A02D /* TextAreaClearTypography.swift */; };
 		818E391B2D4A5E4800B3A02D /* TextAreaClearConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E391A2D4A5E4800B3A02D /* TextAreaClearConfiguration.swift */; };
+		818E39232D4A978700B3A02D /* TextField+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E391F2D4A978700B3A02D /* TextField+SizeVariations.swift */; };
+		818E39242D4A978700B3A02D /* TextField+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39202D4A978700B3A02D /* TextField+ColorVariations.swift */; };
+		818E39252D4A978700B3A02D /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39212D4A978700B3A02D /* TextFieldSize.swift */; };
+		818E39262D4A978700B3A02D /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39222D4A978700B3A02D /* TextFieldTypography.swift */; };
+		818E392D2D4AA22700B3A02D /* TextFieldClear+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39292D4AA22700B3A02D /* TextFieldClear+SizeVariations.swift */; };
+		818E392E2D4AA22700B3A02D /* TextFieldClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E392A2D4AA22700B3A02D /* TextFieldClearSize.swift */; };
+		818E392F2D4AA22700B3A02D /* TextFieldClear+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E392B2D4AA22700B3A02D /* TextFieldClear+ColorVariations.swift */; };
+		818E39302D4AA22700B3A02D /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E392C2D4AA22700B3A02D /* TextFieldClearTypography.swift */; };
+		818E39362D4AA45400B3A02D /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39322D4AA45400B3A02D /* TextAreaTypography.swift */; };
+		818E39372D4AA45400B3A02D /* TextArea+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39332D4AA45400B3A02D /* TextArea+SizeVariations.swift */; };
+		818E39382D4AA45400B3A02D /* TextArea+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39342D4AA45400B3A02D /* TextArea+ColorVariations.swift */; };
+		818E39392D4AA45400B3A02D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39352D4AA45400B3A02D /* TextAreaSize.swift */; };
+		818E393B2D4AA91600B3A02D /* TextAreaClearContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E393A2D4AA91600B3A02D /* TextAreaClearContextBuilder.swift */; };
+		818E39412D4AAA4700B3A02D /* TextAreaClear+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E393D2D4AAA4700B3A02D /* TextAreaClear+ColorVariations.swift */; };
+		818E39422D4AAA4700B3A02D /* TextAreaClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E393E2D4AAA4700B3A02D /* TextAreaClearSize.swift */; };
+		818E39432D4AAA4700B3A02D /* TextAreaClear+SizeVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E393F2D4AAA4700B3A02D /* TextAreaClear+SizeVariations.swift */; };
+		818E39442D4AAA4700B3A02D /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E39402D4AAA4700B3A02D /* TextAreaClearTypography.swift */; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
@@ -552,6 +569,23 @@
 		818E39162D4A5DF100B3A02D /* TextAreaClearContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearContext.swift; sourceTree = "<group>"; };
 		818E39182D4A5E0900B3A02D /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
 		818E391A2D4A5E4800B3A02D /* TextAreaClearConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearConfiguration.swift; sourceTree = "<group>"; };
+		818E391F2D4A978700B3A02D /* TextField+SizeVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+SizeVariations.swift"; sourceTree = "<group>"; };
+		818E39202D4A978700B3A02D /* TextField+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+ColorVariations.swift"; sourceTree = "<group>"; };
+		818E39212D4A978700B3A02D /* TextFieldSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSize.swift; sourceTree = "<group>"; };
+		818E39222D4A978700B3A02D /* TextFieldTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
+		818E39292D4AA22700B3A02D /* TextFieldClear+SizeVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+SizeVariations.swift"; sourceTree = "<group>"; };
+		818E392A2D4AA22700B3A02D /* TextFieldClearSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
+		818E392B2D4AA22700B3A02D /* TextFieldClear+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+ColorVariations.swift"; sourceTree = "<group>"; };
+		818E392C2D4AA22700B3A02D /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		818E39322D4AA45400B3A02D /* TextAreaTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
+		818E39332D4AA45400B3A02D /* TextArea+SizeVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextArea+SizeVariations.swift"; sourceTree = "<group>"; };
+		818E39342D4AA45400B3A02D /* TextArea+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextArea+ColorVariations.swift"; sourceTree = "<group>"; };
+		818E39352D4AA45400B3A02D /* TextAreaSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		818E393A2D4AA91600B3A02D /* TextAreaClearContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearContextBuilder.swift; sourceTree = "<group>"; };
+		818E393D2D4AAA4700B3A02D /* TextAreaClear+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+ColorVariations.swift"; sourceTree = "<group>"; };
+		818E393E2D4AAA4700B3A02D /* TextAreaClearSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearSize.swift; sourceTree = "<group>"; };
+		818E393F2D4AAA4700B3A02D /* TextAreaClear+SizeVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+SizeVariations.swift"; sourceTree = "<group>"; };
+		818E39402D4AAA4700B3A02D /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
@@ -905,6 +939,10 @@
 		816E04A12C58DD4200EE7A7F /* SDDSTheme */ = {
 			isa = PBXGroup;
 			children = (
+				818E393C2D4AAA4700B3A02D /* TextAreaClear */,
+				818E39312D4AA45400B3A02D /* TextArea */,
+				818E39282D4AA22700B3A02D /* TextFieldClear */,
+				818E391E2D4A978700B3A02D /* TextField */,
 				811D2DCF2D1094F4001C0F48 /* SDDSButton */,
 				8180A54E2C1106A700009AF5 /* Theme.swift */,
 				8180A53E2C11067100009AF5 /* SDDSTheme.h */,
@@ -1190,6 +1228,7 @@
 				818E39162D4A5DF100B3A02D /* TextAreaClearContext.swift */,
 				818E39182D4A5E0900B3A02D /* TextAreaClearTypography.swift */,
 				818E391A2D4A5E4800B3A02D /* TextAreaClearConfiguration.swift */,
+				818E393A2D4AA91600B3A02D /* TextAreaClearContextBuilder.swift */,
 			);
 			path = TextAreaClear;
 			sourceTree = "<group>";
@@ -1209,6 +1248,50 @@
 				243C1D1A2C05D3C800C17C0F /* Gradients.stencil */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		818E391E2D4A978700B3A02D /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				818E391F2D4A978700B3A02D /* TextField+SizeVariations.swift */,
+				818E39202D4A978700B3A02D /* TextField+ColorVariations.swift */,
+				818E39212D4A978700B3A02D /* TextFieldSize.swift */,
+				818E39222D4A978700B3A02D /* TextFieldTypography.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		818E39282D4AA22700B3A02D /* TextFieldClear */ = {
+			isa = PBXGroup;
+			children = (
+				818E39292D4AA22700B3A02D /* TextFieldClear+SizeVariations.swift */,
+				818E392A2D4AA22700B3A02D /* TextFieldClearSize.swift */,
+				818E392B2D4AA22700B3A02D /* TextFieldClear+ColorVariations.swift */,
+				818E392C2D4AA22700B3A02D /* TextFieldClearTypography.swift */,
+			);
+			path = TextFieldClear;
+			sourceTree = "<group>";
+		};
+		818E39312D4AA45400B3A02D /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				818E39322D4AA45400B3A02D /* TextAreaTypography.swift */,
+				818E39332D4AA45400B3A02D /* TextArea+SizeVariations.swift */,
+				818E39342D4AA45400B3A02D /* TextArea+ColorVariations.swift */,
+				818E39352D4AA45400B3A02D /* TextAreaSize.swift */,
+			);
+			path = TextArea;
+			sourceTree = "<group>";
+		};
+		818E393C2D4AAA4700B3A02D /* TextAreaClear */ = {
+			isa = PBXGroup;
+			children = (
+				818E393D2D4AAA4700B3A02D /* TextAreaClear+ColorVariations.swift */,
+				818E393E2D4AAA4700B3A02D /* TextAreaClearSize.swift */,
+				818E393F2D4AAA4700B3A02D /* TextAreaClear+SizeVariations.swift */,
+				818E39402D4AAA4700B3A02D /* TextAreaClearTypography.swift */,
+			);
+			path = TextAreaClear;
 			sourceTree = "<group>";
 		};
 		819B2A872BF23B0100688624 /* Extensions */ = {
@@ -1850,6 +1933,7 @@
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
+				818E393B2D4AA91600B3A02D /* TextAreaClearContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
 				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,
 				818E39152D4A5DDA00B3A02D /* TextAreaClearSizeConfiguration.swift in Sources */,
@@ -1908,24 +1992,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818E39302D4AA22700B3A02D /* TextFieldClearTypography.swift in Sources */,
+				818E39412D4AAA4700B3A02D /* TextAreaClear+ColorVariations.swift in Sources */,
 				811D2E042D109A92001C0F48 /* LinkButtonTypography.swift in Sources */,
 				811D2E002D109A92001C0F48 /* LinkButtonSize+ButtonSizeConfiguration.swift in Sources */,
+				818E392F2D4AA22700B3A02D /* TextFieldClear+ColorVariations.swift in Sources */,
+				818E39252D4A978700B3A02D /* TextFieldSize.swift in Sources */,
 				811D2E012D109A92001C0F48 /* IconButton+SizeVariations.swift in Sources */,
+				818E39392D4AA45400B3A02D /* TextAreaSize.swift in Sources */,
 				8180A5BA2C131CC100009AF5 /* TypographyToken+Generated.swift in Sources */,
+				818E392D2D4AA22700B3A02D /* TextFieldClear+SizeVariations.swift in Sources */,
 				811D2E072D109A92001C0F48 /* BasicButton+Typography.swift in Sources */,
 				811D2E082D109A92001C0F48 /* BasicButtonSize+ButtonSizeConfiguration.swift in Sources */,
 				8180A5B72C131CC100009AF5 /* Shadows+Generated.swift in Sources */,
+				818E39432D4AAA4700B3A02D /* TextAreaClear+SizeVariations.swift in Sources */,
+				818E39262D4A978700B3A02D /* TextFieldTypography.swift in Sources */,
+				818E39422D4AAA4700B3A02D /* TextAreaClearSize.swift in Sources */,
 				8180A54F2C1106A700009AF5 /* Theme.swift in Sources */,
 				8180A5B62C131CC100009AF5 /* Gradients+Generated.swift in Sources */,
 				811D2E032D109A92001C0F48 /* BasicButton+SizeVariations.swift in Sources */,
 				8180A5BF2C131CC100009AF5 /* ShadowToken+Generated.swift in Sources */,
+				818E39242D4A978700B3A02D /* TextField+ColorVariations.swift in Sources */,
 				811D2DFE2D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift in Sources */,
+				818E392E2D4AA22700B3A02D /* TextFieldClearSize.swift in Sources */,
+				818E39362D4AA45400B3A02D /* TextAreaTypography.swift in Sources */,
 				8180A5B82C131CC100009AF5 /* Shapes+Generated.swift in Sources */,
 				8180A5B92C131CC100009AF5 /* Typographies+Generated.swift in Sources */,
+				818E39382D4AA45400B3A02D /* TextArea+ColorVariations.swift in Sources */,
+				818E39372D4AA45400B3A02D /* TextArea+SizeVariations.swift in Sources */,
+				818E39442D4AAA4700B3A02D /* TextAreaClearTypography.swift in Sources */,
 				811D2E062D109A92001C0F48 /* IconButton+ColorVariations.swift in Sources */,
 				811D2E092D109A92001C0F48 /* LinkButton+Typography.swift in Sources */,
 				8180A5BD2C131CC100009AF5 /* ShapeToken+Generated.swift in Sources */,
 				811D2DFF2D109A92001C0F48 /* BasicButton+ColorVariations.swift in Sources */,
+				818E39232D4A978700B3A02D /* TextField+SizeVariations.swift in Sources */,
 				811D2E0A2D109A92001C0F48 /* LinkButton+SizeVariations.swift in Sources */,
 				8180A5BB2C131CC100009AF5 /* Colors+Generated.swift in Sources */,
 				8180A5BC2C131CC100009AF5 /* ColorToken+Generated.swift in Sources */,

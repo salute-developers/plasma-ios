@@ -149,10 +149,11 @@ extension App {
     private var generateTextAreaVariations: [Command] {
         [
             GenerateTextAreaCommand(
-                outputDirectoryURL: generatedComponentsURL(component: .textField)
-            ),
+                outputDirectoryURL: generatedComponentsURL(component: .textArea)
+            )
+            ,
             GenerateTextAreaClearCommand(
-                outputDirectoryURL: generatedComponentsURL(component: .textFieldClear)
+                outputDirectoryURL: generatedComponentsURL(component: .textAreaClear)
             )
         ]
     }

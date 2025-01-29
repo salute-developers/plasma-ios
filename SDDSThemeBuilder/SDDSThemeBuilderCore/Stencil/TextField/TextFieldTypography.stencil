@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
 struct TextFieldTypography: GeneralTypographyConfiguration {
@@ -24,7 +23,7 @@ extension TextFieldTypography {
     static var title: TypographyConfiguration {
         TextFieldTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.title and not sizeVariation.title.isEmpty %}Typographies.{{ sizeVariation.title | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -32,7 +31,7 @@ extension TextFieldTypography {
     static var text: TypographyConfiguration {
         TextFieldTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.text | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.text and not sizeVariation.text.isEmpty %}Typographies.{{ sizeVariation.text | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -40,15 +39,15 @@ extension TextFieldTypography {
     static var innerTitle: TypographyConfiguration {
         TextFieldTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.innerTitle and not sizeVariation.innerTitle.isEmpty %}Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
-    
+     
     static var caption: TypographyConfiguration {
         TextFieldTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.caption | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.caption and not sizeVariation.caption.isEmpty %}Typographies.{{ sizeVariation.caption | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }

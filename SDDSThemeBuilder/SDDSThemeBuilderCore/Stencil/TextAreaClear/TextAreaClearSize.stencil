@@ -1,21 +1,16 @@
+
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 import Foundation
 import SwiftUI
 
-public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
+public enum TextAreaClearSize: String, TextAreaClearSizeConfiguration {
     {%- for sizeKey, sizeVariation in data %}
     case {{ sizeKey }}
     {%- endfor %}
     
     public var cornerRadius: CGFloat {
-        switch self {
-            {%- for sizeKey, sizeVariation in data %}
-        case .{{ sizeKey }}:
-            return {{ sizeVariation.shape.value | adjustedCornerRadius:sizeVariation.shape.adjustment }}
-            {%- endfor %}
-        }
+        0
     }
     
     public var titleBottomPadding: CGFloat {
@@ -163,7 +158,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
                 switch self {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
-                    return return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
+                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
                     {%- endfor %}
                 }
             }
@@ -174,6 +169,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
                     return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-start"] | default: 0 }}
+                    {%- endfor %}
                 }
             case .right:
                 switch self {
@@ -218,7 +214,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
                 switch self {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
-                    return return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
+                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
                     {%- endfor %}
                 }
             }
@@ -229,6 +225,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
                     return {{ sizeVariation.boxPaddingTops["inner-label"]["required-start"] | default: 0 }}
+                    {%- endfor %}
                 }
             case .right:
                 switch self {

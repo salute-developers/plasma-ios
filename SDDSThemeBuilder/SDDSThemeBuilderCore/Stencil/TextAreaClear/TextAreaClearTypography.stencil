@@ -24,7 +24,7 @@ extension TextAreaClearTypography {
     static var title: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.title and not sizeVariation.title.isEmpty %}Typographies.{{ sizeVariation.title | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -32,7 +32,7 @@ extension TextAreaClearTypography {
     static var text: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.text | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.title and not sizeVariation.text.isEmpty %}Typographies.{{ sizeVariation.text | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -40,7 +40,7 @@ extension TextAreaClearTypography {
     static var innerTitle: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.title and not sizeVariation.innerTitle.isEmpty %}Typographies.{{ sizeVariation.title | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -48,7 +48,7 @@ extension TextAreaClearTypography {
     static var caption: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.caption | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.caption and not sizeVariation.innerTitle.isEmpty %}Typographies.{{ sizeVariation.caption | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -56,7 +56,7 @@ extension TextAreaClearTypography {
     static var counter: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.counter | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.counter and not sizeVariation.counter.isEmpty %}Typographies.{{ sizeVariation.counter | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }

@@ -31,6 +31,8 @@ struct TextAreaClearProps: Codable {
     let backgroundColorReadOnly: ColorWithAlphaKeyValue?
     let indicatorColor: ColorKeyValue?
     let cursorColor: ColorKeyValue?
+    let dividerColor: ColorKeyValue?
+    let dividerColorReadOnly: ColorKeyValue?
     let captionColorReadOnly: ColorKeyValue?
     let lineColor: ColorKeyValue?
     let labelPlacement: KeyValue<String>?
@@ -57,8 +59,8 @@ struct TextAreaClearProps: Codable {
     let indicatorOffsetX: KeyValue<Double>?
     let indicatorOffsetY: KeyValue<Double>?
     
-    func merge(rhs: TextAreaProps) -> TextAreaProps {
-        return TextAreaProps(
+    func merge(rhs: TextAreaClearProps) -> TextAreaClearProps {
+        return TextAreaClearProps(
             disableAlpha: self.disableAlpha ?? rhs.disableAlpha,
             prefixPadding: self.prefixPadding ?? rhs.prefixPadding,
             suffixPadding: self.suffixPadding ?? rhs.suffixPadding,
@@ -82,6 +84,8 @@ struct TextAreaClearProps: Codable {
             backgroundColorReadOnly: self.backgroundColorReadOnly ?? rhs.backgroundColorReadOnly,
             indicatorColor: self.indicatorColor ?? rhs.indicatorColor,
             cursorColor: self.cursorColor ?? rhs.cursorColor,
+            dividerColor: self.dividerColor ?? rhs.dividerColor,
+            dividerColorReadOnly: self.dividerColorReadOnly ?? rhs.dividerColorReadOnly,
             captionColorReadOnly: self.captionColorReadOnly ?? rhs.captionColorReadOnly,
             lineColor: self.lineColor ?? rhs.lineColor,
             labelPlacement: self.labelPlacement ?? rhs.labelPlacement,

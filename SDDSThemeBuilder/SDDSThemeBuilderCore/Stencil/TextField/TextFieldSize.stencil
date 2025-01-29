@@ -1,6 +1,5 @@
 
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 import Foundation
 import SwiftUI

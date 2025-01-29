@@ -6,7 +6,7 @@ final class GenerateTextFieldClearCommand: Command, FileWriter {
     private let outputDirectoryURL: URL
     private let templateRender: Renderable
 
-    init(jsonURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/text_field_config_clear.json")!,
+    init(jsonURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/text_field_clear_config.json")!,
          outputDirectoryURL: URL,
          templateRender: Renderable = TemplateRenderer()) {
         self.jsonURL = jsonURL

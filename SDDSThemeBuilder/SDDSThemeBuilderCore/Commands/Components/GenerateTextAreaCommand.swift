@@ -26,8 +26,8 @@ final class GenerateTextAreaCommand: Command, FileWriter {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
-            let configuration = try decoder.decode(TextFieldConfiguration.self, from: jsonData)
-            let builder = TextFieldContextBuilder(configuration: configuration)
+            let configuration = try decoder.decode(TextAreaConfiguration.self, from: jsonData)
+            let builder = TextAreaContextBuilder(configuration: configuration)
             let context = builder.build()
             let inputs: [CodeGenerationInput] = [
                 .init(template: .textAreaSize, configuration: context.sizeConfiguration),

@@ -1,6 +1,5 @@
 
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 import Foundation
 import SwiftUI
@@ -164,7 +163,7 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
                 switch self {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
-                    return return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
+                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
                     {%- endfor %}
                 }
             }
@@ -175,6 +174,7 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
                     return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-start"] | default: 0 }}
+                    {%- endfor %}
                 }
             case .right:
                 switch self {
@@ -219,7 +219,7 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
                 switch self {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
-                    return return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
+                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
                     {%- endfor %}
                 }
             }
@@ -230,6 +230,7 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
                     {%- for sizeKey, sizeVariation in data %}
                 case .{{ sizeKey }}:
                     return {{ sizeVariation.boxPaddingTops["inner-label"]["required-start"] | default: 0 }}
+                    {%- endfor %}
                 }
             case .right:
                 switch self {

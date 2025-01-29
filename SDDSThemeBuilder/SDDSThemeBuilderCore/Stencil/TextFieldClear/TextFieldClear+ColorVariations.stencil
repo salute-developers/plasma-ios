@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
 public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
@@ -19,9 +18,6 @@ public extension TextFieldClear {
         .init(
             name: "{{ key }}",
             appearance: .init(
-                backgroundColor: {{ appearanceVariation.backgroundColor | camelCase }},
-                backgroundColorFocused: {{ appearanceVariation.backgroundColorFocused | camelCase }},
-                backgroundColorReadOnly: {{ appearanceVariation.backgroundColorReadOnly | camelCase }},
                 captionColor: {{ appearanceVariation.captionColor | camelCase }},
                 captionColorFocused: {{ appearanceVariation.captionColorFocused | camelCase }},
                 captionColorReadOnly: {{ appearanceVariation.captionColorReadOnly | camelCase }},

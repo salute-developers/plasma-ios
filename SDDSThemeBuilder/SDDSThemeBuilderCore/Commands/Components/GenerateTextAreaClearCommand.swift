@@ -26,8 +26,8 @@ final class GenerateTextAreaClearCommand: Command, FileWriter {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
-            let configuration = try decoder.decode(TextFieldConfiguration.self, from: jsonData)
-            let builder = TextFieldContextBuilder(configuration: configuration)
+            let configuration = try decoder.decode(TextAreaClearConfiguration.self, from: jsonData)
+            let builder = TextAreaClearContextBuilder(configuration: configuration)
             let context = builder.build()
             let inputs: [CodeGenerationInput] = [
                 .init(template: .textAreaClearSize, configuration: context.sizeConfiguration),

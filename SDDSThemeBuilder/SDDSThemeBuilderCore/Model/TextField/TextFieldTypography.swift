@@ -4,13 +4,13 @@ struct TextFieldTypography: Codable {
     struct SizeVariation: Codable {
         let title: String
         let text: String
-        let innnerTitle: String
+        let innerTitle: String
         let caption: String
         
-        init(title: String, text: String, innnerTitle: String, caption: String) {
+        init(title: String, text: String, innerTitle: String, caption: String) {
             self.title = title
             self.text = text
-            self.innnerTitle = innnerTitle
+            self.innerTitle = innerTitle
             self.caption = caption
         }
     }

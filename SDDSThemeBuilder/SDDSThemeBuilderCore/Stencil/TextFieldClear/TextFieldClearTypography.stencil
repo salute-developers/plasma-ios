@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
 struct TextFieldClearTypography: GeneralTypographyConfiguration {
@@ -9,7 +8,7 @@ struct TextFieldClearTypography: GeneralTypographyConfiguration {
     let {{ key }}: TypographyToken?
     {%- endfor %}
     
-    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+    func typography(with size: TextFieldClearSizeConfiguration) -> TypographyToken? {
         switch size as? TextFieldClearSize {
         {%- for key, sizeVariation in data %}
         case .{{ key }}:
@@ -24,7 +23,7 @@ extension TextFieldClearTypography {
     static var title: TypographyConfiguration {
         TextFieldClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.title and not sizeVariation.title.isEmpty %}Typographies.{{ sizeVariation.title | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -32,7 +31,7 @@ extension TextFieldClearTypography {
     static var text: TypographyConfiguration {
         TextFieldClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.text | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.text and not sizeVariation.text.isEmpty %}Typographies.{{ sizeVariation.text | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
@@ -40,15 +39,15 @@ extension TextFieldClearTypography {
     static var innerTitle: TypographyConfiguration {
         TextFieldClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.innerTitle and not sizeVariation.innerTitle.isEmpty %}Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
-    
+     
     static var caption: TypographyConfiguration {
         TextFieldClearTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.caption | camelCase }}.typography,
+            {{ key }}: {% if sizeVariation.caption and not sizeVariation.caption.isEmpty %}Typographies.{{ sizeVariation.caption | camelCase }}.typography{% else %}nil{% endif %}{% if not forloop.last %},{% endif %}
             {%- endfor %}
         ).asContainer
     }
