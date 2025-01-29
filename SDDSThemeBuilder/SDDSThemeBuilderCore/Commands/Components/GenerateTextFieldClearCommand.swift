@@ -28,14 +28,14 @@ final class GenerateTextFieldClearCommand: Command, FileWriter {
         do {
             let configuration = try decoder.decode(TextFieldClearConfiguration.self, from: jsonData)
             let builder = TextFieldClearContextBuilder(configuration: configuration)
-            let context = configuration.build()
+            let context = builder.build()
             let inputs: [CodeGenerationInput] = [
                 .init(template: .textFieldClearSize, configuration: context.sizeConfiguration),
                 .init(template: .textFieldClearTypography, configuration: context.typography),
                 .init(template: .textFieldClearSizeVariations, configuration: context.sizeConfiguration),
                 .init(template: .textFieldClearColorVariations, configuration: context.appearance)
             ]
-            return generate(inputs: inputs)
+            return generate(renderer: templateRender, inputs: inputs, outputURL: outputDirectoryURL, fileWriter: self)
         } catch {
             print(error)
             return .error(GeneralError.decoding)

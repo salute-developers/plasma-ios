@@ -1,6 +1,6 @@
 import Foundation
 
-struct TextAreaTypography: Codable {
+struct TextAreaClearTypography: Codable {
     struct SizeVariation: Codable {
         let title: String
         let text: String

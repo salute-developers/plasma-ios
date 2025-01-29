@@ -35,7 +35,7 @@ final class GenerateTextFieldCommand: Command, FileWriter {
                 .init(template: .textFieldSizeVariations, configuration: context.sizeConfiguration),
                 .init(template: .textFieldColorVariations, configuration: context.appearance)
             ]
-            return generate(inputs: inputs)
+            return generate(renderer: templateRender, inputs: inputs, outputURL: outputDirectoryURL, fileWriter: self)
         } catch {
             print(error)
             return .error(GeneralError.decoding)

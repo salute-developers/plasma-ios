@@ -57,10 +57,10 @@ final class TextFieldClearContextBuilder {
         var invariantProps = configuration.props
         
         var data = [String: TextFieldClearAppearance.AppearanceVariation]()
-        for key in TextFieldClearConfiguration.Style.Key.allCases {
-
-            guard let props = configuration.view[key.rawValue]?.props else {
-                print("Undefined value for key '\(key)'")
+        for styleKey in TextFieldClearConfiguration.Style.Key.allCases {
+        
+            guard let props = configuration.view[styleKey.rawValue]?.props else {
+                print("Undefined value for key '\(styleKey)'")
                 continue
             }
             
@@ -68,7 +68,7 @@ final class TextFieldClearContextBuilder {
             let cursorColor = mergedProps.cursorColor?.default ?? ""
             let optionalTitleColor = mergedProps.optionalColor?.default ?? ""
             
-            data[key.rawValue] = TextFieldClearAppearance.AppearanceVariation(
+            let variation = TextFieldClearAppearance.AppearanceVariation(
                 backgroundColor: mergedProps.backgroundColor?.default ?? "",
                 backgroundColorFocused: mergedProps.backgroundColor?.value(for: [.activated]) ?? "",
                 backgroundColorReadOnly: mergedProps.backgroundColor?.default ?? "",
@@ -89,6 +89,7 @@ final class TextFieldClearContextBuilder {
                 placeholderColorReadOnly: mergedProps.placeholderColor?.default ?? "",
                 requiredIndicatorColor: mergedProps.indicatorColor?.default ?? "",
                 startContentColor: mergedProps.startContentColor?.default ?? "",
+                startContentColorReadonly: mergedProps.startContentColor?.default ?? "",
                 textAfterColor: optionalTitleColor,
                 textBeforeColor: optionalTitleColor,
                 textColor: mergedProps.valueColor?.default ?? "",
@@ -96,6 +97,8 @@ final class TextFieldClearContextBuilder {
                 textColorReadOnly: mergedProps.valueColor?.default ?? "",
                 titleColor: mergedProps.valueColor?.default ?? ""
             )
+ 
+            data[styleKey.rawValue] = variation
         }
         
         return TextFieldClearAppearance(data: data)

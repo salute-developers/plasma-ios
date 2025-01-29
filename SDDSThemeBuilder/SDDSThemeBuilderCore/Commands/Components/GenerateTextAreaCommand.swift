@@ -35,7 +35,7 @@ final class GenerateTextAreaCommand: Command, FileWriter {
                 .init(template: .textAreaSizeVariations, configuration: context.sizeConfiguration),
                 .init(template: .textAreaColorVariations, configuration: context.appearance)
             ]
-            return generate(inputs: inputs)
+            return generate(renderer: templateRender, inputs: inputs, outputURL: outputDirectoryURL, fileWriter: self)
         } catch {
             print(error)
             return .error(GeneralError.decoding)

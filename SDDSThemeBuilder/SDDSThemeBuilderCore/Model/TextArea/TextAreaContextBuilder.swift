@@ -47,7 +47,9 @@ final class TextAreaContextBuilder {
                 chipsPadding: mergedProps.chipsPadding?.value ?? 0,
                 chipContainerHorizontalPadding: mergedProps.chipsPadding?.value ?? 0,
                 indicatorOffsets: indiciatorOffsets(from: configuration, sizeVariationKey: sizeVariationKey),
-                indicatorSizes: indiciatorSizes(from: configuration, sizeVariationKey: sizeVariationKey)
+                indicatorSizes: indiciatorSizes(from: configuration, sizeVariationKey: sizeVariationKey),
+                boxPaddingTops: boxPaddingTops(from: configuration, sizeVariationKey: sizeVariationKey),
+                boxPaddingBottoms: boxPaddingBottoms(from: configuration, sizeVariationKey: sizeVariationKey)
             )
         }
         
@@ -55,7 +57,7 @@ final class TextAreaContextBuilder {
     }
     
     private func appearance(from configuration: TextAreaConfiguration) -> TextAreaAppearance {
-        var invariantProps = configuration.props
+        let invariantProps = configuration.props
         
         var data = [String: TextAreaAppearance.AppearanceVariation]()
         for key in TextAreaConfiguration.Style.Key.allCases {
@@ -76,6 +78,7 @@ final class TextAreaContextBuilder {
                 captionColor: mergedProps.captionColor?.default ?? "",
                 captionColorFocused: cursorColor,
                 captionColorReadOnly: mergedProps.captionColor?.default ?? "",
+                counterColor: mergedProps.counterColor?.default ?? "",
                 cursorColor: cursorColor,
                 disabledAlpha: mergedProps.disableAlpha?.value ?? 0.0,
                 endContentColor: mergedProps.endContentColor?.default ?? "",
@@ -116,26 +119,27 @@ final class TextAreaContextBuilder {
                 title: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelStyle?.value ?? "",
                 text: mergedProps.valueStyle?.value ?? "",
                 innnerTitle: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelStyle?.value ?? "",
-                caption: mergedProps.captionStyle?.value ?? ""
+                caption: mergedProps.captionStyle?.value ?? "",
+                counter: mergedProps.counterStyle?.value ?? ""
             )
         }
         
         return TextAreaTypography(data: data)
     }
     
-    private func extractIndicatorValues(
+    private func extractIndicatorValues<Value>(
         from configuration: TextAreaConfiguration,
         sizeVariationKey: SizeVariationKey,
-        valueExtractor: (TextAreaProps) -> (Double?, Double?)
-    ) -> [String: [String: TextAreaSizeConfiguration.Size]] {
-        var result = [String: [String: TextAreaSizeConfiguration.Size]]()
+        valueExtractor: (TextAreaProps) -> (Value?)
+    ) -> [String: [String: Value]] {
+        var result = [String: [String: Value]]()
         
         let nodes: [TextAreaVariationNode] = [.requiredStart, .requiredEnd]
         for node in nodes {
             if let child = configuration.child(for: sizeVariationKey, nodes: [node]) {
-                let (width, height) = valueExtractor(child.props)
+                let extractedValue = valueExtractor(child.props)
                 var current = result[sizeVariationKey.rawValue.sizeKey] ?? [:]
-                current[node.rawValue] = .init(width: width ?? 0, height: height ?? 0)
+                current[node.rawValue] = extractedValue
                 
                 result[sizeVariationKey.rawValue.sizeKey] = current
             } else {
@@ -147,11 +151,10 @@ final class TextAreaContextBuilder {
         for labelNode in labelNodes {
             for node in nodes {
                 if let child = configuration.child(for: sizeVariationKey, nodes: [labelNode, node]) {
-                    let (width, height) = valueExtractor(child.props)
-                    print((width, height))
+                    let extractedValue = valueExtractor(child.props)
                     
                     var current = result[labelNode.rawValue] ?? [:]
-                    current[node.rawValue] = .init(width: width ?? 0, height: height ?? 0)
+                    current[node.rawValue] = extractedValue
                     result[labelNode.rawValue] = current
                 } else {
                     print("key not found")
@@ -161,13 +164,31 @@ final class TextAreaContextBuilder {
         
         return result
     }
+    
+    private func boxPaddingTops(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: Double]] {
+        return extractIndicatorValues(
+            from: configuration,
+            sizeVariationKey: sizeVariationKey
+        ) { props in
+            return props.boxPaddingTop?.value
+        }
+    }
+    
+    private func boxPaddingBottoms(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: Double]] {
+        return extractIndicatorValues(
+            from: configuration,
+            sizeVariationKey: sizeVariationKey
+        ) { props in
+            return props.boxPaddingBottom?.value
+        }
+    }
 
     private func indiciatorOffsets(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey
         ) { props in
-            return (props.indicatorOffsetX?.value, props.indicatorOffsetY?.value)
+            return TextAreaSizeConfiguration.Size(width: props.indicatorOffsetX?.value ?? 0, height: props.indicatorOffsetY?.value ?? 0)
         }
     }
 
@@ -176,8 +197,7 @@ final class TextAreaContextBuilder {
             from: configuration,
             sizeVariationKey: sizeVariationKey
         ) { props in
-            let size = props.indicatorSize?.value
-            return (size, size)
+            return TextAreaSizeConfiguration.Size(width: props.indicatorSize?.value ?? 0, height: props.indicatorSize?.value ?? 0)
         }
     }
 

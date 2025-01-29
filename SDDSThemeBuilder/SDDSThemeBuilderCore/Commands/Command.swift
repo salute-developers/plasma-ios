@@ -51,7 +51,7 @@ extension CommandResult: Equatable {
 }
 
 extension Command {
-    func generate(input: CodeGenerationInput) -> CommandResult {
+    func generate(renderer: Renderable, input: CodeGenerationInput, outputURL: URL, fileWriter: FileWriter) -> CommandResult {
         let encoder = JSONEncoder()
         guard let jsonData = try? encoder.encode(input.configuration) else {
             return .error(GeneralError.decoding)
@@ -60,14 +60,14 @@ extension Command {
             return .error(GeneralError.decoding)
         }
         
-        let result = templateRender.render(context: jsonDictionary, template: input.template, removeLines: false)
+        let result = renderer.render(context: jsonDictionary, template: input.template, removeLines: false)
         
         guard let generatedContent = result.asGenerated else {
             return result
         }
         
         let filename = input.template.rawValue + ".swift"
-        let saveResult = saveFile(content: generatedContent, outputURL: outputDirectoryURL, filename: filename)
+        let saveResult = fileWriter.saveFile(content: generatedContent, outputURL: outputURL, filename: filename)
         
         if saveResult.isError {
             return saveResult
@@ -76,9 +76,9 @@ extension Command {
         return .success
     }
     
-    func generate(inputs: [CodeGenerationInput]) -> CommandResult {
+    func generate(renderer: Renderable, inputs: [CodeGenerationInput], outputURL: URL, fileWriter: FileWriter) -> CommandResult {
         for input in inputs {
-            let result = generate(input: input)
+            let result = generate(renderer: renderer, input: input, outputURL: outputURL, fileWriter: fileWriter)
             guard result == .success else {
                 return result
             }

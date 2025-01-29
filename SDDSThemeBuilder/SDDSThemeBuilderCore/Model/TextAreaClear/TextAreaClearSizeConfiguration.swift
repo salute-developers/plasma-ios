@@ -1,6 +1,6 @@
 import Foundation
 
-struct TextAreaSizeConfiguration: Codable {
+struct TextAreaClearSizeConfiguration: Codable {
     struct Size: Codable {
         let width: Double
         let height: Double
