@@ -225,7 +225,7 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private func chipsScrollView(chips: [ChipData], proxy: ScrollViewProxy) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: appearance.size.multipleValueHorizontalPadding) {
+            HStack(spacing: 0) {
                 SDDSChipGroup(
                     data: chips,
                     gap: chipGroupGap,
@@ -479,6 +479,13 @@ public struct SDDSTextField: View {
         }
     }
     
+    private var endContentColor: Color {
+        if readOnly {
+            return appearance.endContentColorReadonly.color(for: colorScheme)
+        }
+        return appearance.endContentColor.color(for: colorScheme)
+    }
+    
     private var backgroundColor: Color {
         if readOnly {
             return appearance.backgroundColorReadOnly.color(for: colorScheme)
@@ -532,12 +539,7 @@ public struct SDDSTextField: View {
             return appearance.startContentColor.color(for: colorScheme)
         }
         
-        switch style {
-        case .error, .success, .warning:
-            return appearance.placeholderColor(for: style, layout: layout).color(for: colorScheme)
-        case .default:
-            return appearance.startContentColor.color(for: colorScheme)
-        }
+        return appearance.startContentColor.color(for: colorScheme)
     }
 
     @ViewBuilder
@@ -556,7 +558,7 @@ public struct SDDSTextField: View {
     private var iconActionView: some View {
         if let rightView = iconActionViewProvider?.view {
             rightView
-                .foregroundColor(appearance.endContentColor.color(for: colorScheme))
+                .foregroundColor(endContentColor)
                 .frame(width: iconActionViewWidth, height: min(appearance.size.iconActionSize.height, appearance.size.fieldHeight), debug: debugConfiguration.iconAction)
                 .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
         } else {

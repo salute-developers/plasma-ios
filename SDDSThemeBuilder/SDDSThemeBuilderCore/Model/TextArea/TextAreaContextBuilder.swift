@@ -1,25 +1,25 @@
 import Foundation
 
-final class TextFieldContextBuilder {
-    let configuration: TextFieldConfiguration
+final class TextAreaContextBuilder {
+    let configuration: TextAreaConfiguration
     
-    init(configuration: TextFieldConfiguration) {
+    init(configuration: TextAreaConfiguration) {
         self.configuration = configuration
     }
     
-    func build() -> TextFieldContext {
-        return TextFieldContext(
+    func build() -> TextAreaContext {
+        return TextAreaContext(
             sizeConfiguration: sizeConfiguration(from: configuration),
             appearance: appearance(from: configuration),
             typography: typography(from: configuration)
         )
     }
     
-    private func sizeConfiguration(from configuration: TextFieldConfiguration) -> TextFieldSizeConfiguration {
+    private func sizeConfiguration(from configuration: TextAreaConfiguration) -> TextAreaSizeConfiguration {
         let invariantProps = configuration.props
         let allProps = configuration.allProps
         
-        var data = [String: TextFieldSizeConfiguration.SizeVariation]()
+        var data = [String: TextAreaSizeConfiguration.SizeVariation]()
         for variation in configuration.variations {
             guard let sizeVariationKey = SizeVariationKey(rawValue: variation.id) else {
                 continue
@@ -28,7 +28,7 @@ final class TextFieldContextBuilder {
             let mergedProps = props.merge(rhs: invariantProps)
             let key = sizeVariationKey.rawValue.sizeKey
             
-            data[key] = TextFieldSizeConfiguration.SizeVariation(
+            data[key] = TextAreaSizeConfiguration.SizeVariation(
                 titleBottomPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelPadding?.value ?? 0,
                 titleInnerPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelPadding?.value ?? 0,
                 textBeforeTrailingPadding: mergedProps.prefixPadding?.value ?? 0,
@@ -36,6 +36,7 @@ final class TextFieldContextBuilder {
                 boxLeadingPadding: mergedProps.boxPaddingStart?.value ?? 0,
                 boxTrailingPadding: mergedProps.boxPaddingEnd?.value ?? 0,
                 captionTopPadding: mergedProps.helperTextPadding?.value ?? 0,
+                captionBottomPadding: mergedProps.helperTextPadding?.value ?? 0,
                 optionalPadding: mergedProps.optionalPadding?.value ?? 0,
                 shape: mergedProps.shape ?? ShapeKeyValue(),
                 iconPadding: mergedProps.startContentPadding?.value ?? 0,
@@ -50,14 +51,14 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldSizeConfiguration(data: data)
+        return TextAreaSizeConfiguration(data: data)
     }
     
-    private func appearance(from configuration: TextFieldConfiguration) -> TextFieldAppearance {
+    private func appearance(from configuration: TextAreaConfiguration) -> TextAreaAppearance {
         var invariantProps = configuration.props
         
-        var data = [String: TextFieldAppearance.AppearanceVariation]()
-        for key in TextFieldConfiguration.Style.Key.allCases {
+        var data = [String: TextAreaAppearance.AppearanceVariation]()
+        for key in TextAreaConfiguration.Style.Key.allCases {
 
             guard let props = configuration.view[key.rawValue]?.props else {
                 print("Undefined value for key '\(key)'")
@@ -68,7 +69,7 @@ final class TextFieldContextBuilder {
             let cursorColor = mergedProps.cursorColor?.default ?? ""
             let optionalTitleColor = mergedProps.optionalColor?.default ?? ""
             
-            data[key.rawValue] = TextFieldAppearance.AppearanceVariation(
+            data[key.rawValue] = TextAreaAppearance.AppearanceVariation(
                 backgroundColor: mergedProps.backgroundColor?.default ?? "",
                 backgroundColorFocused: mergedProps.backgroundColor?.value(for: [.activated]) ?? "",
                 backgroundColorReadOnly: mergedProps.backgroundColor?.default ?? "",
@@ -95,14 +96,14 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldAppearance(data: data)
+        return TextAreaAppearance(data: data)
     }
     
-    private func typography(from configuration: TextFieldConfiguration) -> TextFieldTypography {
+    private func typography(from configuration: TextAreaConfiguration) -> TextAreaTypography {
         let invariantProps = configuration.props
         let allProps = configuration.allProps
         
-        var data = [String: TextFieldTypography.SizeVariation]()
+        var data = [String: TextAreaTypography.SizeVariation]()
         for variation in configuration.variations {
             guard let sizeVariationKey = SizeVariationKey(rawValue: variation.id) else {
                 continue
@@ -111,7 +112,7 @@ final class TextFieldContextBuilder {
             let mergedProps = props.merge(rhs: invariantProps)
             let key = sizeVariationKey.rawValue.sizeKey
             
-            data[key] = TextFieldTypography.SizeVariation(
+            data[key] = TextAreaTypography.SizeVariation(
                 title: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelStyle?.value ?? "",
                 text: mergedProps.valueStyle?.value ?? "",
                 innnerTitle: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelStyle?.value ?? "",
@@ -119,17 +120,17 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldTypography(data: data)
+        return TextAreaTypography(data: data)
     }
     
     private func extractIndicatorValues(
-        from configuration: TextFieldConfiguration,
+        from configuration: TextAreaConfiguration,
         sizeVariationKey: SizeVariationKey,
-        valueExtractor: (TextFieldProps) -> (Double?, Double?)
-    ) -> [String: [String: TextFieldSizeConfiguration.Size]] {
-        var result = [String: [String: TextFieldSizeConfiguration.Size]]()
+        valueExtractor: (TextAreaProps) -> (Double?, Double?)
+    ) -> [String: [String: TextAreaSizeConfiguration.Size]] {
+        var result = [String: [String: TextAreaSizeConfiguration.Size]]()
         
-        let nodes: [TextFieldVariationNode] = [.requiredStart, .requiredEnd]
+        let nodes: [TextAreaVariationNode] = [.requiredStart, .requiredEnd]
         for node in nodes {
             if let child = configuration.child(for: sizeVariationKey, nodes: [node]) {
                 let (width, height) = valueExtractor(child.props)
@@ -142,7 +143,7 @@ final class TextFieldContextBuilder {
             }
         }
         
-        let labelNodes: [TextFieldVariationNode] = [.innerLabel, .outerLabel]
+        let labelNodes: [TextAreaVariationNode] = [.innerLabel, .outerLabel]
         for labelNode in labelNodes {
             for node in nodes {
                 if let child = configuration.child(for: sizeVariationKey, nodes: [labelNode, node]) {
@@ -161,7 +162,7 @@ final class TextFieldContextBuilder {
         return result
     }
 
-    private func indiciatorOffsets(from configuration: TextFieldConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldSizeConfiguration.Size]] {
+    private func indiciatorOffsets(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey
@@ -170,7 +171,7 @@ final class TextFieldContextBuilder {
         }
     }
 
-    private func indiciatorSizes(from configuration: TextFieldConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldSizeConfiguration.Size]] {
+    private func indiciatorSizes(from configuration: TextAreaConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey

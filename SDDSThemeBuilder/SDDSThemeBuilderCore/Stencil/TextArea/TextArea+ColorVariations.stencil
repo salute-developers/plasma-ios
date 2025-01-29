@@ -3,19 +3,19 @@ import SDDSComponents
 import SDDSServTheme
 import SDDSThemeCore
 
-public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
+public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
     {%- for appearanceKey, appearanceVariation in data %}
     var {{ appearanceKey | escapeSwiftKeyword }}: Self {
         .init(
-            appearance: appearance.applyColorVariation(variation: SDDSComponents.TextField.{{ key }}.appearance)
+            appearance: appearance.applyColorVariation(variation: TextArea.{{ key }}.appearance)
         )
     }
     {%- endfor %}
 }
 
-public extension SDDSComponents.TextField {
+public extension TextFieldClear {
     {%- for appearanceKey, appearanceVariation in data %}
-    static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
+    static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             name: "{{ key }}",
             appearance: .init(
@@ -25,6 +25,8 @@ public extension SDDSComponents.TextField {
                 captionColor: {{ appearanceVariation.captionColor | camelCase }},
                 captionColorFocused: {{ appearanceVariation.captionColorFocused | camelCase }},
                 captionColorReadOnly: {{ appearanceVariation.captionColorReadOnly | camelCase }},
+                counterColor: {{ appearanceVariation.counterColor | camelCase }},
+                counterColorReadOnly: {{ appearanceVariation.counterColor | camelCase }},
                 cursorColor: {{ appearanceVariation.cursorColor | camelCase }},
                 disabledAlpha: {{ appearanceVariation.disabledAlpha | camelCase }},
                 endContentColor: {{ appearanceVariation.endContentColor | camelCase }},
@@ -34,8 +36,6 @@ public extension SDDSComponents.TextField {
                 placeholderColorReadOnly: {{ appearanceVariation.placeholderColorReadOnly | camelCase }},
                 requiredIndicatorColor: {{ appearanceVariation.requiredIndicatorColor | camelCase }},
                 startContentColor: {{ appearanceVariation.startContentColor | camelCase }},
-                textAfterColor: {{ appearanceVariation.textAfterColor | camelCase }},
-                textBeforeColor: {{ appearanceVariation.textBeforeColor | camelCase }},
                 textColor: {{ appearanceVariation.textColor | camelCase }},
                 textColorFocused: {{ appearanceVariation.textColorFocused | camelCase }},
                 textColorReadOnly: {{ appearanceVariation.textColorReadOnly | camelCase }},

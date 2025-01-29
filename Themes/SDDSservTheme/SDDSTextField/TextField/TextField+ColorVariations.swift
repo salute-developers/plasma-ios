@@ -27,6 +27,7 @@ public extension SDDSComponents.TextField {
                 cursorColor: .textDefaultAccent,
                 disabledAlpha: 0.4,
                 endContentColor: .textDefaultSecondary,
+                endContentColorReadonly: textDefaultSecondary.withOpacity(0.3),
                 innerTitleTypography: TextFieldTypography.innerTitle,
                 lineColor: .surfaceDefaultTransparentTertiary,
                 lineColorFocused: .textDefaultAccent,

@@ -4,13 +4,13 @@ import SDDSComponents
 import SDDSServTheme
 import SDDSThemeCore
 
-struct TextFieldTypography: GeneralTypographyConfiguration {
+struct TextAreaTypography: GeneralTypographyConfiguration {
     {%- for key, sizeVariation in data %}
     let {{ key }}: TypographyToken?
     {%- endfor %}
     
     func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
-        switch size as? TextFieldSize {
+        switch size as? TextAreaSize {
         {%- for key, sizeVariation in data %}
         case .{{ key }}:
             return {{ key }}
@@ -20,9 +20,9 @@ struct TextFieldTypography: GeneralTypographyConfiguration {
     }
 }
 
-extension TextFieldTypography {
+extension TextAreaTypography {
     static var title: TypographyConfiguration {
-        TextFieldTypography(
+        TextAreaTypography(
             {%- for key, sizeVariation in data %}
             {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
             {%- endfor %}
@@ -30,7 +30,7 @@ extension TextFieldTypography {
     }
     
     static var text: TypographyConfiguration {
-        TextFieldTypography(
+        TextAreaTypography(
             {%- for key, sizeVariation in data %}
             {{ key }}: Typographies.{{ sizeVariation.text | camelCase }}.typography,
             {%- endfor %}
@@ -38,17 +38,25 @@ extension TextFieldTypography {
     }
     
     static var innerTitle: TypographyConfiguration {
-        TextFieldTypography(
+        TextAreaTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {{ key }}: Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography,
             {%- endfor %}
         ).asContainer
     }
     
     static var caption: TypographyConfiguration {
-        TextFieldTypography(
+        TextAreaTypography(
             {%- for key, sizeVariation in data %}
-            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {{ key }}: Typographies.{{ sizeVariation.caption | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+    
+    static var counter: TypographyConfiguration {
+        TextAreaTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.counter | camelCase }}.typography,
             {%- endfor %}
         ).asContainer
     }

@@ -17,20 +17,12 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var iconActionPadding: CGFloat { get }
     var indicatorSize: CGSize { get }
     var iconActionSize: CGSize { get }
-    var multipleValueHorizontalPadding: CGFloat { get }
     var chipContainerHorizontalPadding: CGFloat { get }
     var lineWidth: CGFloat { get }
-    var textBeforeLeadingPadding: CGFloat { get }
-    var textBeforeTrailingPadding: CGFloat { get }
-    var textAfterLeadingPadding: CGFloat { get }
-    var textAfterTrailingPadding: CGFloat { get }
-    var textHorizontalPadding: CGFloat { get }
     var chipGroupHeight: CGFloat { get }
-    var chipGroupVerticalTopPadding: CGFloat { get }
-    var chipGroupVerticalBottomPadding: CGFloat { get }
     var iconActionClearTrailingPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
     
-    func fieldHeight(layout: TextAreaLayout) -> CGFloat
+    var fieldHeight: CGFloat { get }
     func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint
 }

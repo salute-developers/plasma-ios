@@ -179,10 +179,6 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
         6
     }
 
-    public var multipleValueHorizontalPadding: CGFloat {
-        2
-    }
-
     public var dividerHeight: CGFloat {
         1
     }

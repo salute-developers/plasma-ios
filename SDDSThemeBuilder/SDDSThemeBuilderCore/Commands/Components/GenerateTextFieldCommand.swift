@@ -26,52 +26,19 @@ final class GenerateTextFieldCommand: Command, FileWriter {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         do {
-            let textFieldConfiguration = try decoder.decode(TextFieldConfiguration.self, from: jsonData)
-            let textFieldContextBuilder = TextFieldContextBuilder(configuration: textFieldConfiguration)
-            let context = textFieldContextBuilder.build()
+            let configuration = try decoder.decode(TextFieldConfiguration.self, from: jsonData)
+            let builder = TextFieldContextBuilder(configuration: configuration)
+            let context = builder.build()
             let inputs: [CodeGenerationInput] = [
                 .init(template: .textFieldSize, configuration: context.sizeConfiguration),
                 .init(template: .textFieldTypography, configuration: context.typography),
                 .init(template: .textFieldSizeVariations, configuration: context.sizeConfiguration),
                 .init(template: .textFieldColorVariations, configuration: context.appearance)
             ]
-            for input in inputs {
-                let result = generate(input: input)
-                guard result == .success else {
-                    return result
-                }
-            }
-                    
-            return .success
+            return generate(inputs: inputs)
         } catch {
             print(error)
             return .error(GeneralError.decoding)
         }
     }
-    
-    private func generate(input: CodeGenerationInput) -> CommandResult {
-        let encoder = JSONEncoder()
-        guard let jsonData = try? encoder.encode(input.configuration) else {
-            return .error(GeneralError.decoding)
-        }
-        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
-            return .error(GeneralError.decoding)
-        }
-        
-        let result = templateRender.render(context: jsonDictionary, template: input.template, removeLines: false)
-        
-        guard let generatedContent = result.asGenerated else {
-            return result
-        }
-        
-        let filename = input.template.rawValue + ".swift"
-        let saveResult = saveFile(content: generatedContent, outputURL: outputDirectoryURL, filename: filename)
-        
-        if saveResult.isError {
-            return saveResult
-        }
-        
-        return .success
-    }
-
 }

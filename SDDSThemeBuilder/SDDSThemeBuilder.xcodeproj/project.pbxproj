@@ -187,6 +187,45 @@
 		818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */; };
 		818345822CFE3CC00081113B /* String+SizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818345812CFE3CC00081113B /* String+SizeKey.swift */; };
 		818C03BD2C43C0FE002C6D0A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		818E38CA2D4A3A6500B3A02D /* TextFieldClearAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38C92D4A3A6500B3A02D /* TextFieldClearAppearance.swift */; };
+		818E38CC2D4A3A7B00B3A02D /* TextFieldClearSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38CB2D4A3A7B00B3A02D /* TextFieldClearSizeConfiguration.swift */; };
+		818E38CE2D4A3A9000B3A02D /* TextFieldClearContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38CD2D4A3A9000B3A02D /* TextFieldClearContext.swift */; };
+		818E38D02D4A3AAD00B3A02D /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38CF2D4A3AAD00B3A02D /* TextFieldClearTypography.swift */; };
+		818E38D22D4A3AD600B3A02D /* TextFieldClearConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38D12D4A3AD600B3A02D /* TextFieldClearConfiguration.swift */; };
+		818E38D42D4A3B3300B3A02D /* TextFieldClearContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38D32D4A3B3300B3A02D /* TextFieldClearContextBuilder.swift */; };
+		818E38D82D4A447400B3A02D /* TextFieldClearSize.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38D72D4A447400B3A02D /* TextFieldClearSize.stencil */; };
+		818E38DA2D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38D92D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil */; };
+		818E38DC2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38DB2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil */; };
+		818E38DE2D4A450100B3A02D /* TextFieldClearTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38DD2D4A450100B3A02D /* TextFieldClearTypography.stencil */; };
+		818E38DF2D4A456B00B3A02D /* TextFieldClearSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38D72D4A447400B3A02D /* TextFieldClearSize.stencil */; };
+		818E38E02D4A456B00B3A02D /* TextFieldClear+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38D92D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil */; };
+		818E38E12D4A456B00B3A02D /* TextFieldClear+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38DB2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil */; };
+		818E38E22D4A456B00B3A02D /* TextFieldClearTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38DD2D4A450100B3A02D /* TextFieldClearTypography.stencil */; };
+		818E38E42D4A484400B3A02D /* GenerateTextFieldClearCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38E32D4A484400B3A02D /* GenerateTextFieldClearCommand.swift */; };
+		818E38E72D4A4B3E00B3A02D /* GenerateTextAreaCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38E62D4A4B3E00B3A02D /* GenerateTextAreaCommand.swift */; };
+		818E38E92D4A4B5A00B3A02D /* GenerateTextAreaClearCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38E82D4A4B5A00B3A02D /* GenerateTextAreaClearCommand.swift */; };
+		818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */; };
+		818E38EE2D4A4C3300B3A02D /* TextAreaSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38ED2D4A4C3300B3A02D /* TextAreaSizeConfiguration.swift */; };
+		818E38F02D4A4C4600B3A02D /* TextAreaContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EF2D4A4C4600B3A02D /* TextAreaContext.swift */; };
+		818E38F22D4A4C5C00B3A02D /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38F12D4A4C5C00B3A02D /* TextAreaTypography.swift */; };
+		818E38F42D4A4C7600B3A02D /* TextAreaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38F32D4A4C7600B3A02D /* TextAreaConfiguration.swift */; };
+		818E38F62D4A4CA200B3A02D /* TextAreaContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38F52D4A4CA200B3A02D /* TextAreaContextBuilder.swift */; };
+		818E38F92D4A4E6900B3A02D /* TextArea+ColorVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38F82D4A4E6900B3A02D /* TextArea+ColorVariations.stencil */; };
+		818E38FC2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38FB2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil */; };
+		818E38FE2D4A50A700B3A02D /* TextAreaTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38FD2D4A50A600B3A02D /* TextAreaTypography.stencil */; };
+		818E39002D4A50FC00B3A02D /* TextAreaClearTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E38FF2D4A50FC00B3A02D /* TextAreaClearTypography.stencil */; };
+		818E39022D4A512B00B3A02D /* TextAreaSize.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E39012D4A512B00B3A02D /* TextAreaSize.stencil */; };
+		818E39042D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E39032D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil */; };
+		818E39062D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E39052D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil */; };
+		818E39082D4A5AEB00B3A02D /* TextAreaClearSize.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 818E39072D4A5AEB00B3A02D /* TextAreaClearSize.stencil */; };
+		818E39092D4A5B1F00B3A02D /* TextAreaClear+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38FB2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil */; };
+		818E390A2D4A5B1F00B3A02D /* TextAreaClearTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38FF2D4A50FC00B3A02D /* TextAreaClearTypography.stencil */; };
+		818E390B2D4A5B1F00B3A02D /* TextAreaClear+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E39052D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil */; };
+		818E390C2D4A5B1F00B3A02D /* TextAreaClearSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E39072D4A5AEB00B3A02D /* TextAreaClearSize.stencil */; };
+		818E390D2D4A5B1F00B3A02D /* TextAreaSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E39012D4A512B00B3A02D /* TextAreaSize.stencil */; };
+		818E390E2D4A5B1F00B3A02D /* TextArea+ColorVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38F82D4A4E6900B3A02D /* TextArea+ColorVariations.stencil */; };
+		818E390F2D4A5B1F00B3A02D /* TextAreaTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E38FD2D4A50A600B3A02D /* TextAreaTypography.stencil */; };
+		818E39102D4A5B1F00B3A02D /* TextArea+SizeVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 818E39032D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil */; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
@@ -485,6 +524,33 @@
 		8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilderTests.swift; sourceTree = "<group>"; };
 		8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSwiftCodeCommand.swift; sourceTree = "<group>"; };
 		818345812CFE3CC00081113B /* String+SizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SizeKey.swift"; sourceTree = "<group>"; };
+		818E38C92D4A3A6500B3A02D /* TextFieldClearAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearAppearance.swift; sourceTree = "<group>"; };
+		818E38CB2D4A3A7B00B3A02D /* TextFieldClearSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSizeConfiguration.swift; sourceTree = "<group>"; };
+		818E38CD2D4A3A9000B3A02D /* TextFieldClearContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearContext.swift; sourceTree = "<group>"; };
+		818E38CF2D4A3AAD00B3A02D /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		818E38D12D4A3AD600B3A02D /* TextFieldClearConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearConfiguration.swift; sourceTree = "<group>"; };
+		818E38D32D4A3B3300B3A02D /* TextFieldClearContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearContextBuilder.swift; sourceTree = "<group>"; };
+		818E38D72D4A447400B3A02D /* TextFieldClearSize.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextFieldClearSize.stencil; sourceTree = "<group>"; };
+		818E38D92D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextFieldClear+ColorVariations.stencil"; sourceTree = "<group>"; };
+		818E38DB2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextFieldClear+SizeVariations.stencil"; sourceTree = "<group>"; };
+		818E38DD2D4A450100B3A02D /* TextFieldClearTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextFieldClearTypography.stencil; sourceTree = "<group>"; };
+		818E38E32D4A484400B3A02D /* GenerateTextFieldClearCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateTextFieldClearCommand.swift; sourceTree = "<group>"; };
+		818E38E62D4A4B3E00B3A02D /* GenerateTextAreaCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateTextAreaCommand.swift; sourceTree = "<group>"; };
+		818E38E82D4A4B5A00B3A02D /* GenerateTextAreaClearCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateTextAreaClearCommand.swift; sourceTree = "<group>"; };
+		818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
+		818E38ED2D4A4C3300B3A02D /* TextAreaSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSizeConfiguration.swift; sourceTree = "<group>"; };
+		818E38EF2D4A4C4600B3A02D /* TextAreaContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaContext.swift; sourceTree = "<group>"; };
+		818E38F12D4A4C5C00B3A02D /* TextAreaTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
+		818E38F32D4A4C7600B3A02D /* TextAreaConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaConfiguration.swift; sourceTree = "<group>"; };
+		818E38F52D4A4CA200B3A02D /* TextAreaContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaContextBuilder.swift; sourceTree = "<group>"; };
+		818E38F82D4A4E6900B3A02D /* TextArea+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextArea+ColorVariations.stencil"; sourceTree = "<group>"; };
+		818E38FB2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextAreaClear+ColorVariations.stencil"; sourceTree = "<group>"; };
+		818E38FD2D4A50A600B3A02D /* TextAreaTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextAreaTypography.stencil; sourceTree = "<group>"; };
+		818E38FF2D4A50FC00B3A02D /* TextAreaClearTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextAreaClearTypography.stencil; sourceTree = "<group>"; };
+		818E39012D4A512B00B3A02D /* TextAreaSize.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextAreaSize.stencil; sourceTree = "<group>"; };
+		818E39032D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextArea+SizeVariations.stencil"; sourceTree = "<group>"; };
+		818E39052D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TextAreaClear+SizeVariations.stencil"; sourceTree = "<group>"; };
+		818E39072D4A5AEB00B3A02D /* TextAreaClearSize.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextAreaClearSize.stencil; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
@@ -673,7 +739,8 @@
 		2489D0C92BC7F44F0053AAB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				81A7534D2D47DE03006E1BE7 /* Button */,
+				818E38EA2D4A4C0800B3A02D /* TextArea */,
+				818E38C82D4A3A3F00B3A02D /* TextFieldClear */,
 				81A753462D47DE03006E1BE7 /* TextField */,
 				81E1EE722BE4E16200F86AE1 /* FontFamily */,
 				81E1EE4D2BE3A63A00F86AE1 /* Scheme */,
@@ -684,7 +751,7 @@
 		2489D0CA2BC7F45E0053AAB1 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				81A753432D47DDF0006E1BE7 /* TextField */,
+				81A753432D47DDF0006E1BE7 /* Components */,
 				249C3D4D2BD92595007533DE /* GenerateTokensCommand.swift */,
 				2489D0C72BC7F3EC0053AAB1 /* Command.swift */,
 				2489D0CD2BC7F5AD0053AAB1 /* DownloadCommand.swift */,
@@ -848,10 +915,10 @@
 		817539352BCE744300138866 /* Stencil */ = {
 			isa = PBXGroup;
 			children = (
-				815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */,
-				815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */,
-				815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */,
-				815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */,
+				818E38FA2D4A4FDC00B3A02D /* TextAreaClear */,
+				818E38F72D4A4E5700B3A02D /* TextArea */,
+				818E38D62D4A445400B3A02D /* TextFieldClear */,
+				818E38D52D4A444A00B3A02D /* TextField */,
 				815F42B42D47DE5B00F97E63 /* BasicButton */,
 				815F42AF2D47DE5B00F97E63 /* IconButton */,
 				815F42A92D47DE5B00F97E63 /* LinkButton */,
@@ -1052,6 +1119,76 @@
 			path = SDDSThemeCore;
 			sourceTree = "<group>";
 		};
+		818E38C82D4A3A3F00B3A02D /* TextFieldClear */ = {
+			isa = PBXGroup;
+			children = (
+				818E38C92D4A3A6500B3A02D /* TextFieldClearAppearance.swift */,
+				818E38CB2D4A3A7B00B3A02D /* TextFieldClearSizeConfiguration.swift */,
+				818E38CD2D4A3A9000B3A02D /* TextFieldClearContext.swift */,
+				818E38CF2D4A3AAD00B3A02D /* TextFieldClearTypography.swift */,
+				818E38D12D4A3AD600B3A02D /* TextFieldClearConfiguration.swift */,
+				818E38D32D4A3B3300B3A02D /* TextFieldClearContextBuilder.swift */,
+			);
+			path = TextFieldClear;
+			sourceTree = "<group>";
+		};
+		818E38D52D4A444A00B3A02D /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				815F42C72D47DE6C00F97E63 /* TextFieldSize.stencil */,
+				815F42C92D48B73500F97E63 /* TextField+ColorVariations.stencil */,
+				815F42CD2D48BAC100F97E63 /* TextField+SizeVariations.stencil */,
+				815F42CB2D48B8E800F97E63 /* TextFieldTypography.stencil */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		818E38D62D4A445400B3A02D /* TextFieldClear */ = {
+			isa = PBXGroup;
+			children = (
+				818E38D72D4A447400B3A02D /* TextFieldClearSize.stencil */,
+				818E38D92D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil */,
+				818E38DB2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil */,
+				818E38DD2D4A450100B3A02D /* TextFieldClearTypography.stencil */,
+			);
+			path = TextFieldClear;
+			sourceTree = "<group>";
+		};
+		818E38EA2D4A4C0800B3A02D /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */,
+				818E38ED2D4A4C3300B3A02D /* TextAreaSizeConfiguration.swift */,
+				818E38EF2D4A4C4600B3A02D /* TextAreaContext.swift */,
+				818E38F12D4A4C5C00B3A02D /* TextAreaTypography.swift */,
+				818E38F32D4A4C7600B3A02D /* TextAreaConfiguration.swift */,
+				818E38F52D4A4CA200B3A02D /* TextAreaContextBuilder.swift */,
+			);
+			path = TextArea;
+			sourceTree = "<group>";
+		};
+		818E38F72D4A4E5700B3A02D /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				818E39012D4A512B00B3A02D /* TextAreaSize.stencil */,
+				818E38F82D4A4E6900B3A02D /* TextArea+ColorVariations.stencil */,
+				818E38FD2D4A50A600B3A02D /* TextAreaTypography.stencil */,
+				818E39032D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil */,
+			);
+			path = TextArea;
+			sourceTree = "<group>";
+		};
+		818E38FA2D4A4FDC00B3A02D /* TextAreaClear */ = {
+			isa = PBXGroup;
+			children = (
+				818E38FB2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil */,
+				818E38FF2D4A50FC00B3A02D /* TextAreaClearTypography.stencil */,
+				818E39052D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil */,
+				818E39072D4A5AEB00B3A02D /* TextAreaClearSize.stencil */,
+			);
+			path = TextAreaClear;
+			sourceTree = "<group>";
+		};
 		819B2A872BF23B0100688624 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1081,12 +1218,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		81A753432D47DDF0006E1BE7 /* TextField */ = {
+		81A753432D47DDF0006E1BE7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				81A753442D47DDF0006E1BE7 /* GenerateTextFieldCommand.swift */,
+				818E38E32D4A484400B3A02D /* GenerateTextFieldClearCommand.swift */,
+				818E38E62D4A4B3E00B3A02D /* GenerateTextAreaCommand.swift */,
+				818E38E82D4A4B5A00B3A02D /* GenerateTextAreaClearCommand.swift */,
 			);
-			path = TextField;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		81A753462D47DE03006E1BE7 /* TextField */ = {
@@ -1100,13 +1240,6 @@
 				81A7534C2D47DE03006E1BE7 /* TextFieldTypography.swift */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		81A7534D2D47DE03006E1BE7 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		81CB0FDC2C245046003B1064 /* Validators */ = {
@@ -1475,6 +1608,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818E39092D4A5B1F00B3A02D /* TextAreaClear+ColorVariations.stencil in Resources */,
+				818E390A2D4A5B1F00B3A02D /* TextAreaClearTypography.stencil in Resources */,
+				818E390B2D4A5B1F00B3A02D /* TextAreaClear+SizeVariations.stencil in Resources */,
+				818E390C2D4A5B1F00B3A02D /* TextAreaClearSize.stencil in Resources */,
+				818E390D2D4A5B1F00B3A02D /* TextAreaSize.stencil in Resources */,
+				818E390E2D4A5B1F00B3A02D /* TextArea+ColorVariations.stencil in Resources */,
+				818E390F2D4A5B1F00B3A02D /* TextAreaTypography.stencil in Resources */,
+				818E39102D4A5B1F00B3A02D /* TextArea+SizeVariations.stencil in Resources */,
+				818E38DF2D4A456B00B3A02D /* TextFieldClearSize.stencil in Resources */,
+				818E38E02D4A456B00B3A02D /* TextFieldClear+ColorVariations.stencil in Resources */,
+				818E38E12D4A456B00B3A02D /* TextFieldClear+SizeVariations.stencil in Resources */,
+				818E38E22D4A456B00B3A02D /* TextFieldClearTypography.stencil in Resources */,
 				815F42D12D48C18A00F97E63 /* TextField+ColorVariations.stencil in Resources */,
 				815F42D22D48C18A00F97E63 /* TextField+SizeVariations.stencil in Resources */,
 				815F42D32D48C18A00F97E63 /* TextFieldTypography.stencil in Resources */,
@@ -1613,6 +1758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E1EE572BE3A69200F86AE1 /* FontFamilyStyle.swift in Sources */,
+				818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
@@ -1621,30 +1767,41 @@
 				818345822CFE3CC00081113B /* String+SizeKey.swift in Sources */,
 				81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */,
 				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
+				818E39042D4A5A5D00B3A02D /* TextArea+SizeVariations.stencil in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
 				81A753512D47DE03006E1BE7 /* TextFieldConfiguration.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
+				818E38E42D4A484400B3A02D /* GenerateTextFieldClearCommand.swift in Sources */,
 				24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
+				818E38F22D4A4C5C00B3A02D /* TextAreaTypography.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
+				818E38D02D4A3AAD00B3A02D /* TextFieldClearTypography.swift in Sources */,
 				815F42CA2D48B73500F97E63 /* TextField+ColorVariations.stencil in Sources */,
 				81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */,
 				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
+				818E38F42D4A4C7600B3A02D /* TextAreaConfiguration.swift in Sources */,
 				81E1EE4A2BE3A61B00F86AE1 /* Screen.swift in Sources */,
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
+				818E38EE2D4A4C3300B3A02D /* TextAreaSizeConfiguration.swift in Sources */,
 				8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */,
+				818E38D82D4A447400B3A02D /* TextFieldClearSize.stencil in Sources */,
+				818E38DC2D4A44A300B3A02D /* TextFieldClear+SizeVariations.stencil in Sources */,
 				81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */,
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,
+				818E38F92D4A4E6900B3A02D /* TextArea+ColorVariations.stencil in Sources */,
 				81A753522D47DE03006E1BE7 /* TextFieldContextBuilder.swift in Sources */,
 				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
+				818E38CC2D4A3A7B00B3A02D /* TextFieldClearSizeConfiguration.swift in Sources */,
 				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
+				818E38F62D4A4CA200B3A02D /* TextAreaContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateTextFieldCommand.swift in Sources */,
 				81A7534F2D47DE03006E1BE7 /* TextFieldSizeConfiguration.swift in Sources */,
 				81A753502D47DE03006E1BE7 /* TextFieldContext.swift in Sources */,
@@ -1652,8 +1809,12 @@
 				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
 				813340302C073C42005AD84F /* URL+Extensions.swift in Sources */,
+				818E38DE2D4A450100B3A02D /* TextFieldClearTypography.stencil in Sources */,
 				8180A5112C107DA900009AF5 /* TypographyToken.swift in Sources */,
+				818E38D42D4A3B3300B3A02D /* TextFieldClearContextBuilder.swift in Sources */,
+				818E39022D4A512B00B3A02D /* TextAreaSize.stencil in Sources */,
 				81CB0FED2C245052003B1064 /* SchemeValidationLogger.swift in Sources */,
+				818E38F02D4A4C4600B3A02D /* TextAreaContext.swift in Sources */,
 				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,
 				815F42CC2D48B8E800F97E63 /* TextFieldTypography.stencil in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
@@ -1662,8 +1823,10 @@
 				8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */,
 				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
 				81CB0FE72C245052003B1064 /* TemplateRenderer.swift in Sources */,
+				818E39062D4A5AA100B3A02D /* TextAreaClear+SizeVariations.stencil in Sources */,
 				8106AC6A2D1093FC004348B7 /* GeneratedComponent.swift in Sources */,
 				8139EB4A2C2040E300D6A049 /* ColorContext.swift in Sources */,
+				818E38FC2D4A4FEC00B3A02D /* TextAreaClear+ColorVariations.stencil in Sources */,
 				817539882BD008A500138866 /* Constants.swift in Sources */,
 				81CB0FEA2C245052003B1064 /* EnsureAnyValueExistsNode.swift in Sources */,
 				81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */,
@@ -1677,21 +1840,30 @@
 				81A753532D47DE03006E1BE7 /* TextFieldTypography.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
 				81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */,
+				818E38CE2D4A3A9000B3A02D /* TextFieldClearContext.swift in Sources */,
 				81CB0FEC2C245052003B1064 /* EnsureDoubleInRangeNode.swift in Sources */,
+				818E38D22D4A3AD600B3A02D /* TextFieldClearConfiguration.swift in Sources */,
 				81E1EDDC2BD6D6BD00F86AE1 /* GeneralContextBuilder.swift in Sources */,
+				818E38E72D4A4B3E00B3A02D /* GenerateTextAreaCommand.swift in Sources */,
 				817539752BD007D300138866 /* App.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
 				817539762BD0087500138866 /* Command.swift in Sources */,
 				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
+				818E38E92D4A4B5A00B3A02D /* GenerateTextAreaClearCommand.swift in Sources */,
+				818E39002D4A50FC00B3A02D /* TextAreaClearTypography.stencil in Sources */,
+				818E39082D4A5AEB00B3A02D /* TextAreaClearSize.stencil in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
 				81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */,
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
+				818E38FE2D4A50A700B3A02D /* TextAreaTypography.stencil in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
 				810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */,
+				818E38DA2D4A449000B3A02D /* TextFieldClear+ColorVariations.stencil in Sources */,
 				8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */,
+				818E38CA2D4A3A6500B3A02D /* TextFieldClearAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

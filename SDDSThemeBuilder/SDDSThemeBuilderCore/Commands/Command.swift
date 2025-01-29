@@ -50,6 +50,44 @@ extension CommandResult: Equatable {
     }
 }
 
+extension Command {
+    func generate(input: CodeGenerationInput) -> CommandResult {
+        let encoder = JSONEncoder()
+        guard let jsonData = try? encoder.encode(input.configuration) else {
+            return .error(GeneralError.decoding)
+        }
+        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
+            return .error(GeneralError.decoding)
+        }
+        
+        let result = templateRender.render(context: jsonDictionary, template: input.template, removeLines: false)
+        
+        guard let generatedContent = result.asGenerated else {
+            return result
+        }
+        
+        let filename = input.template.rawValue + ".swift"
+        let saveResult = saveFile(content: generatedContent, outputURL: outputDirectoryURL, filename: filename)
+        
+        if saveResult.isError {
+            return saveResult
+        }
+        
+        return .success
+    }
+    
+    func generate(inputs: [CodeGenerationInput]) -> CommandResult {
+        for input in inputs {
+            let result = generate(input: input)
+            guard result == .success else {
+                return result
+            }
+        }
+                
+        return .success
+    }
+}
+
 extension CommandResult {
     var asData: Data? {
         switch self {

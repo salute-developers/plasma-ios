@@ -1,25 +1,25 @@
 import Foundation
 
-final class TextFieldContextBuilder {
-    let configuration: TextFieldConfiguration
+final class TextFieldClearContextBuilder {
+    let configuration: TextFieldClearConfiguration
     
-    init(configuration: TextFieldConfiguration) {
+    init(configuration: TextFieldClearConfiguration) {
         self.configuration = configuration
     }
     
-    func build() -> TextFieldContext {
-        return TextFieldContext(
+    func build() -> TextFieldClearContext {
+        return TextFieldClearContext(
             sizeConfiguration: sizeConfiguration(from: configuration),
             appearance: appearance(from: configuration),
             typography: typography(from: configuration)
         )
     }
     
-    private func sizeConfiguration(from configuration: TextFieldConfiguration) -> TextFieldSizeConfiguration {
+    private func sizeConfiguration(from configuration: TextFieldClearConfiguration) -> TextFieldClearSizeConfiguration {
         let invariantProps = configuration.props
         let allProps = configuration.allProps
         
-        var data = [String: TextFieldSizeConfiguration.SizeVariation]()
+        var data = [String: TextFieldClearSizeConfiguration.SizeVariation]()
         for variation in configuration.variations {
             guard let sizeVariationKey = SizeVariationKey(rawValue: variation.id) else {
                 continue
@@ -28,7 +28,7 @@ final class TextFieldContextBuilder {
             let mergedProps = props.merge(rhs: invariantProps)
             let key = sizeVariationKey.rawValue.sizeKey
             
-            data[key] = TextFieldSizeConfiguration.SizeVariation(
+            data[key] = TextFieldClearSizeConfiguration.SizeVariation(
                 titleBottomPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelPadding?.value ?? 0,
                 titleInnerPadding: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelPadding?.value ?? 0,
                 textBeforeTrailingPadding: mergedProps.prefixPadding?.value ?? 0,
@@ -50,14 +50,14 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldSizeConfiguration(data: data)
+        return TextFieldClearSizeConfiguration(data: data)
     }
     
-    private func appearance(from configuration: TextFieldConfiguration) -> TextFieldAppearance {
+    private func appearance(from configuration: TextFieldClearConfiguration) -> TextFieldClearAppearance {
         var invariantProps = configuration.props
         
-        var data = [String: TextFieldAppearance.AppearanceVariation]()
-        for key in TextFieldConfiguration.Style.Key.allCases {
+        var data = [String: TextFieldClearAppearance.AppearanceVariation]()
+        for key in TextFieldClearConfiguration.Style.Key.allCases {
 
             guard let props = configuration.view[key.rawValue]?.props else {
                 print("Undefined value for key '\(key)'")
@@ -68,7 +68,7 @@ final class TextFieldContextBuilder {
             let cursorColor = mergedProps.cursorColor?.default ?? ""
             let optionalTitleColor = mergedProps.optionalColor?.default ?? ""
             
-            data[key.rawValue] = TextFieldAppearance.AppearanceVariation(
+            data[key.rawValue] = TextFieldClearAppearance.AppearanceVariation(
                 backgroundColor: mergedProps.backgroundColor?.default ?? "",
                 backgroundColorFocused: mergedProps.backgroundColor?.value(for: [.activated]) ?? "",
                 backgroundColorReadOnly: mergedProps.backgroundColor?.default ?? "",
@@ -77,6 +77,9 @@ final class TextFieldContextBuilder {
                 captionColorReadOnly: mergedProps.captionColor?.default ?? "",
                 cursorColor: cursorColor,
                 disabledAlpha: mergedProps.disableAlpha?.value ?? 0.0,
+                lineColor: mergedProps.dividerColor?.default ?? "",
+                lineColorFocused: mergedProps.dividerColor?.value(for: [.activated]) ?? "",
+                lineColorReadOnly: mergedProps.dividerColorReadOnly?.default ?? "",
                 endContentColor: mergedProps.endContentColor?.default ?? "",
                 endContentColorReadonly: mergedProps.endContentColorReadOnly?.default ?? "",
                 endContentColorReadonlyAlpha: mergedProps.endContentColorReadOnly?.alpha ?? 0,
@@ -95,14 +98,14 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldAppearance(data: data)
+        return TextFieldClearAppearance(data: data)
     }
     
-    private func typography(from configuration: TextFieldConfiguration) -> TextFieldTypography {
+    private func typography(from configuration: TextFieldClearConfiguration) -> TextFieldClearTypography {
         let invariantProps = configuration.props
         let allProps = configuration.allProps
         
-        var data = [String: TextFieldTypography.SizeVariation]()
+        var data = [String: TextFieldClearTypography.SizeVariation]()
         for variation in configuration.variations {
             guard let sizeVariationKey = SizeVariationKey(rawValue: variation.id) else {
                 continue
@@ -111,7 +114,7 @@ final class TextFieldContextBuilder {
             let mergedProps = props.merge(rhs: invariantProps)
             let key = sizeVariationKey.rawValue.sizeKey
             
-            data[key] = TextFieldTypography.SizeVariation(
+            data[key] = TextFieldClearTypography.SizeVariation(
                 title: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.outerLabel])?.props.labelStyle?.value ?? "",
                 text: mergedProps.valueStyle?.value ?? "",
                 innnerTitle: configuration.child(props: allProps, key: sizeVariationKey, nodes: [.innerLabel])?.props.labelStyle?.value ?? "",
@@ -119,17 +122,17 @@ final class TextFieldContextBuilder {
             )
         }
         
-        return TextFieldTypography(data: data)
+        return TextFieldClearTypography(data: data)
     }
     
     private func extractIndicatorValues(
-        from configuration: TextFieldConfiguration,
+        from configuration: TextFieldClearConfiguration,
         sizeVariationKey: SizeVariationKey,
-        valueExtractor: (TextFieldProps) -> (Double?, Double?)
-    ) -> [String: [String: TextFieldSizeConfiguration.Size]] {
-        var result = [String: [String: TextFieldSizeConfiguration.Size]]()
+        valueExtractor: (TextFieldClearProps) -> (Double?, Double?)
+    ) -> [String: [String: TextFieldClearSizeConfiguration.Size]] {
+        var result = [String: [String: TextFieldClearSizeConfiguration.Size]]()
         
-        let nodes: [TextFieldVariationNode] = [.requiredStart, .requiredEnd]
+        let nodes: [TextFieldClearVariationNode] = [.requiredStart, .requiredEnd]
         for node in nodes {
             if let child = configuration.child(for: sizeVariationKey, nodes: [node]) {
                 let (width, height) = valueExtractor(child.props)
@@ -142,7 +145,7 @@ final class TextFieldContextBuilder {
             }
         }
         
-        let labelNodes: [TextFieldVariationNode] = [.innerLabel, .outerLabel]
+        let labelNodes: [TextFieldClearVariationNode] = [.innerLabel, .outerLabel]
         for labelNode in labelNodes {
             for node in nodes {
                 if let child = configuration.child(for: sizeVariationKey, nodes: [labelNode, node]) {
@@ -161,7 +164,7 @@ final class TextFieldContextBuilder {
         return result
     }
 
-    private func indiciatorOffsets(from configuration: TextFieldConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldSizeConfiguration.Size]] {
+    private func indiciatorOffsets(from configuration: TextFieldClearConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldClearSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey
@@ -170,7 +173,7 @@ final class TextFieldContextBuilder {
         }
     }
 
-    private func indiciatorSizes(from configuration: TextFieldConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldSizeConfiguration.Size]] {
+    private func indiciatorSizes(from configuration: TextFieldClearConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextFieldClearSizeConfiguration.Size]] {
         return extractIndicatorValues(
             from: configuration,
             sizeVariationKey: sizeVariationKey

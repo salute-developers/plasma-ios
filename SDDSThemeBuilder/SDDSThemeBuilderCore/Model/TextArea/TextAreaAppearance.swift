@@ -1,6 +1,6 @@
 import Foundation
 
-struct TextFieldAppearance: Codable {
+struct TextAreaAppearance: Codable {
     struct AppearanceVariation: Codable {
         let backgroundColor: String
         let backgroundColorFocused: String
@@ -8,6 +8,7 @@ struct TextFieldAppearance: Codable {
         let captionColor: String
         let captionColorFocused: String
         let captionColorReadOnly: String
+        let counterColor: String
         let cursorColor: String
         let disabledAlpha: CGFloat
         let endContentColor: String
@@ -33,6 +34,7 @@ struct TextFieldAppearance: Codable {
             captionColor: String,
             captionColorFocused: String,
             captionColorReadOnly: String,
+            counterColor: String,
             cursorColor: String,
             disabledAlpha: CGFloat,
             endContentColor: String,
@@ -57,6 +59,7 @@ struct TextFieldAppearance: Codable {
             self.captionColor = captionColor
             self.captionColorFocused = captionColorFocused
             self.captionColorReadOnly = captionColorReadOnly
+            self.counterColor = counterColor
             self.cursorColor = cursorColor
             self.disabledAlpha = disabledAlpha
             self.endContentColor = endContentColor

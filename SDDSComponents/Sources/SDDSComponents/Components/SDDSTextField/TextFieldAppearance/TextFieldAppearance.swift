@@ -19,6 +19,7 @@ public struct TextFieldAppearance {
     public let cursorColor: ColorToken
     public let disabledAlpha: CGFloat
     public let endContentColor: ColorToken
+    public let endContentColorReadonly: ColorToken
     public let inputTextAlignment: TextAlignment
     public let innerTitleTextAlignment: TextAlignment
     public let innerTitleTypography: TypographyConfiguration
@@ -58,6 +59,7 @@ public struct TextFieldAppearance {
         cursorColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
         endContentColor: ColorToken = .clearColor,
+        endContentColorReadonly: ColorToken = .clearColor,
         inputTextAlignment: TextAlignment = .leading,
         innerTitleTextAlignment: TextAlignment = .leading,
         innerTitleTypography: TypographyConfiguration = .default,
@@ -96,6 +98,7 @@ public struct TextFieldAppearance {
         self.cursorColor = cursorColor
         self.disabledAlpha = disabledAlpha
         self.endContentColor = endContentColor
+        self.endContentColorReadonly = endContentColorReadonly
         self.inputTextAlignment = inputTextAlignment
         self.innerTitleTextAlignment = innerTitleTextAlignment
         self.innerTitleTypography = innerTitleTypography

@@ -1,0 +1,63 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSServTheme
+import SDDSThemeCore
+
+struct TextAreaClearTypography: GeneralTypographyConfiguration {
+    {%- for key, sizeVariation in data %}
+    let {{ key }}: TypographyToken?
+    {%- endfor %}
+    
+    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+        switch size as? TextAreaClearSize {
+        {%- for key, sizeVariation in data %}
+        case .{{ key }}:
+            return {{ key }}
+        {%- endfor %}
+        case .none:
+            return nil
+    }
+}
+
+extension TextAreaClearTypography {
+    static var title: TypographyConfiguration {
+        TextAreaClearTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.title | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+    
+    static var text: TypographyConfiguration {
+        TextAreaClearTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.text | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+    
+    static var innerTitle: TypographyConfiguration {
+        TextAreaClearTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.innerTitle | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+    
+    static var caption: TypographyConfiguration {
+        TextAreaClearTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.caption | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+    
+    static var counter: TypographyConfiguration {
+        TextAreaClearTypography(
+            {%- for key, sizeVariation in data %}
+            {{ key }}: Typographies.{{ sizeVariation.counter | camelCase }}.typography,
+            {%- endfor %}
+        ).asContainer
+    }
+}

@@ -28,6 +28,18 @@ enum StencilTemplate: String {
     case textFieldColorVariations = "TextField+ColorVariations"
     case textFieldSizeVariations = "TextField+SizeVariations"
     case textFieldTypography = "TextFieldTypography"
+    case textFieldClearSize = "TextFieldClearSize"
+    case textFieldClearColorVariations = "TextFieldClear+ColorVariations"
+    case textFieldClearSizeVariations = "TextFieldClear+SizeVariations"
+    case textFieldClearTypography = "TextFieldClearTypography"
+    case textAreaSize = "TextAreaSize"
+    case textAreaColorVariations = "TextArea+ColorVariations"
+    case textAreaSizeVariations = "TextArea+SizeVariations"
+    case textAreaTypography = "TextAreaTypography"
+    case textAreaClearSize = "TextAreaClearSize"
+    case textAreaClearColorVariations = "TextAreaClear+ColorVariations"
+    case textAreaClearSizeVariations = "TextAreaClear+SizeVariations"
+    case textAreaClearTypography = "TextAreaClearTypography"
     
     var withStencilExt: String {
         rawValue + ".stencil"

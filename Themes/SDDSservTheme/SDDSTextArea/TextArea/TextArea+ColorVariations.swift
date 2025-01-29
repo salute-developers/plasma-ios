@@ -18,19 +18,15 @@ public extension TextArea {
             appearance: .init(
                 backgroundColor: .surfaceDefaultTransparentPrimary,
                 backgroundColorReadOnly: .surfaceDefaultTransparentPrimary,
-                borderColor: .clearColor,
                 captionColor: .textDefaultSecondary,
                 captionColorFocused: .textDefaultAccent,
                 captionColorReadOnly: .textDefaultSecondary,
-                captionTypography: TextAreaTypography.caption,
                 counterColor: .textDefaultSecondary,
                 counterColorReadOnly: .textDefaultSecondary,
-                counterTypography: TextAreaTypography.counter,
                 cursorColor: .textDefaultAccent,
                 disabledAlpha: 0.4,
                 endContentColor: .textDefaultPrimary,
                 backgroundColorFocused: .surfaceDefaultTransparentSecondary,
-                innerTitleTypography: TextAreaTypography.innerTitle,
                 lineColor: .surfaceDefaultTransparentTertiary,
                 lineColorFocused: .textDefaultAccent,
                 optionalTitleColor: .textDefaultTertiary,
@@ -44,9 +40,7 @@ public extension TextArea {
                 textColor: .textDefaultPrimary,
                 textColorFocused: .textDefaultPrimary,
                 textColorReadOnly: .textDefaultPrimary,
-                textTypography: TextAreaTypography.text,
-                titleColor: .textDefaultPrimary,
-                titleTypography: TextAreaTypography.title
+                titleColor: .textDefaultPrimary
             )
         )
     }

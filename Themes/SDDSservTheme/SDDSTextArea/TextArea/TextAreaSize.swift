@@ -37,23 +37,7 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
     public var chipsPadding: CGFloat {
         6
     }
-    
-    public var textBeforeLeadingPadding: CGFloat {
-        return 0
-    }
-    
-    public var textBeforeTrailingPadding: CGFloat {
-        return 2
-    }
-    
-    public var textAfterLeadingPadding: CGFloat {
-        return 0
-    }
-    
-    public var textAfterTrailingPadding: CGFloat {
-        return 2
-    }
-    
+        
     public var boxLeadingPadding: CGFloat {
         switch self {
         case .large:
@@ -105,23 +89,6 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
         4
     }
 
-    public var textInputPaddings: EdgeInsets {
-        switch self {
-        case .large:
-            .init(top: 16, leading: 0, bottom: 8, trailing: 0)
-        case .medium:
-            .init(top: 14, leading: 0, bottom: 6, trailing: 0)
-        case .small:
-            .init(top: 12, leading: 0, bottom: 4, trailing: 0)
-        case .extraSmall:
-            .init(top: 8, leading: 0, bottom: 4, trailing: 0)
-        }
-    }
-    
-    public var textHorizontalPadding: CGFloat {
-        return 1.0
-    }
-
     public var cornerRadius: CGFloat {
         switch self {
         case .large:
@@ -163,6 +130,14 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
         case .extraSmall:
             CGSize(width: 6, height: 6)
         }
+    }
+    
+    public func boxPaddingBottom(labelPlacement: SDDSComponents.TextAreaLabelPlacement, requiredPlacement: SDDSComponents.TextAreaRequiredPlacement, layout: SDDSComponents.TextAreaLayout) -> CGFloat {
+        return 0
+    }
+    
+    public func boxPaddingTop(labelPlacement: SDDSComponents.TextAreaLabelPlacement, requiredPlacement: SDDSComponents.TextAreaRequiredPlacement, layout: SDDSComponents.TextAreaLayout) -> CGFloat {
+        return 0
     }
     
     public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint {
@@ -282,29 +257,15 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
     
     
     public func fieldHeight(layout: TextAreaLayout) -> CGFloat {
-        switch layout {
-        case .default:
-            switch self {
-            case .large:
-                130
-            case .medium:
-                134
-            case .small:
-                140
-            case .extraSmall:
-                140
-            }
-        case .clear:
-            switch self {
-            case .large:
-                56
-            case .medium:
-                48
-            case .small:
-                40
-            case .extraSmall:
-                32
-            }
+        switch self {
+        case .large:
+            56
+        case .medium:
+            48
+        case .small:
+            40
+        case .extraSmall:
+            32
         }
     }
 
@@ -321,32 +282,12 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
         }
     }
 
-    public var multipleValueHorizontalPadding: CGFloat {
-        2
-    }
-
     public var lineWidth: CGFloat {
         1
     }
     
     public var chipContainerHorizontalPadding: CGFloat {
         4
-    }
-    
-    public var chipGroupHeight: CGFloat {
-        return 82
-    }
-    
-    public var chipGroupVerticalBottomPadding: CGFloat {
-        return 8
-    }
-    
-    public var chipGroupVerticalTopPadding: CGFloat {
-        return 8
-    }
-    
-    public var textInputBottomPadding: CGFloat {
-        return 0
     }
 
     public var debugDescription: String {

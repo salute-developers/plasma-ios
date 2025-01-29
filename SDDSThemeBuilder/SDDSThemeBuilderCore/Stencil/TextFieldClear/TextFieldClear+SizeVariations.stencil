@@ -1,0 +1,30 @@
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+import SDDSServTheme
+
+// MARK: - Size
+public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+    {%- for sizeKey, sizeVariation in data %}
+    var {{ sizeKey }}: Self {
+        .init(
+            appearance: appearance
+                .size(TextFieldSize.{{ sizeKey }})
+                .titleTypography(TextFieldTypography.title)
+                .innerTitleTypography(TextFieldTypography.innerTitle)
+                .textTypography(TextFieldTypography.text)
+                .textAfterTypography(TextFieldTypography.text)
+                .textBeforeTypography(TextFieldTypography.text)
+                .captionTypography(TextFieldTypography.caption)
+        )
+    }
+    {%- endfor %}
+}
+
+public extension SDDSComponents.TextField {
+    {%- for sizeKey, sizeVariation in data %}
+    static var {{ sizeKey }}: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        return ComponentAppearanceVariation(appearance: TextFieldAppearance()).{{ sizeKey }}
+    }
+    {%- endfor %}
+}

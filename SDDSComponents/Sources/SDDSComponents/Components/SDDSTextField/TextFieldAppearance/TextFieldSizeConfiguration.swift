@@ -16,7 +16,6 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var fieldHeight: CGFloat { get }
     var iconSize: CGSize { get }
     var iconActionSize: CGSize { get }
-    var multipleValueHorizontalPadding: CGFloat { get }
     var chipContainerHorizontalPadding: CGFloat { get }
     var dividerHeight: CGFloat { get }
     var textBeforeLeadingPadding: CGFloat { get }
@@ -43,7 +42,6 @@ public struct ZeroTextFieldSize: TextFieldSizeConfiguration {
     public var fieldHeight: CGFloat { 0 }
     public var iconSize: CGSize { .zero }
     public var iconActionSize: CGSize { .zero }
-    public var multipleValueHorizontalPadding: CGFloat { 0 }
     public var chipContainerHorizontalPadding: CGFloat { 0 }
     public var dividerHeight: CGFloat { 0 }
     public var textBeforeLeadingPadding: CGFloat { 0 }

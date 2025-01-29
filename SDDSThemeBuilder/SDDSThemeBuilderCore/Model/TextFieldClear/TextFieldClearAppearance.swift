@@ -1,6 +1,6 @@
 import Foundation
 
-struct TextFieldAppearance: Codable {
+struct TextFieldClearAppearance: Codable {
     struct AppearanceVariation: Codable {
         let backgroundColor: String
         let backgroundColorFocused: String
@@ -10,6 +10,9 @@ struct TextFieldAppearance: Codable {
         let captionColorReadOnly: String
         let cursorColor: String
         let disabledAlpha: CGFloat
+        let lineColor: String
+        let lineColorFocused: String
+        let lineColorReadOnly: String
         let endContentColor: String
         let endContentColorReadonly: String
         let endContentColorReadonlyAlpha: CGFloat
@@ -19,6 +22,7 @@ struct TextFieldAppearance: Codable {
         let placeholderColorReadOnly: String
         let requiredIndicatorColor: String
         let startContentColor: String
+        let startContentColorReadonly: String
         let textAfterColor: String
         let textBeforeColor: String
         let textColor: String
@@ -35,6 +39,9 @@ struct TextFieldAppearance: Codable {
             captionColorReadOnly: String,
             cursorColor: String,
             disabledAlpha: CGFloat,
+            lineColor: String,
+            lineColorFocused: String,
+            lineColorReadOnly: String,
             endContentColor: String,
             endContentColorReadonly: String,
             endContentColorReadonlyAlpha: CGFloat,
@@ -44,6 +51,7 @@ struct TextFieldAppearance: Codable {
             placeholderColorReadOnly: String,
             requiredIndicatorColor: String,
             startContentColor: String,
+            startContentColorReadonly: String,
             textAfterColor: String,
             textBeforeColor: String,
             textColor: String,
@@ -59,6 +67,9 @@ struct TextFieldAppearance: Codable {
             self.captionColorReadOnly = captionColorReadOnly
             self.cursorColor = cursorColor
             self.disabledAlpha = disabledAlpha
+            self.lineColor = lineColor
+            self.lineColorFocused = lineColorFocused
+            self.lineColorReadOnly = lineColorReadOnly
             self.endContentColor = endContentColor
             self.endContentColorReadonly = endContentColorReadonly
             self.endContentColorReadonlyAlpha = endContentColorReadonlyAlpha
@@ -68,6 +79,7 @@ struct TextFieldAppearance: Codable {
             self.placeholderColorReadOnly = placeholderColorReadOnly
             self.requiredIndicatorColor = requiredIndicatorColor
             self.startContentColor = startContentColor
+            self.startContentColorReadonly = startContentColorReadonly
             self.textAfterColor = textAfterColor
             self.textBeforeColor = textBeforeColor
             self.textColor = textColor
@@ -79,3 +91,4 @@ struct TextFieldAppearance: Codable {
     
     let data: [String: AppearanceVariation]
 }
+

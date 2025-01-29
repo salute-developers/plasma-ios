@@ -304,7 +304,7 @@ public struct SDDSTextArea: View {
     private func textEditorId(with hashable: (any Hashable)? = nil) -> Int {
         var hasher = Hasher()
         hasher.combine(readOnly)
-        hasher.combine(appearance.size.fieldHeight(layout: layout))
+        hasher.combine(appearance.size.fieldHeight)
         if let hashable = hashable {
             hasher.combine(hashable)
         }
@@ -377,7 +377,7 @@ public struct SDDSTextArea: View {
                 iconActionView
                     .padding(.trailing, boxTrailingPadding)
             }
-            .frame(height: appearance.size.fieldHeight(layout: layout), debug: debugConfiguration.fieldHeight)
+            .frame(height: appearance.size.fieldHeight, debug: debugConfiguration.fieldHeight)
             .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
             .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
             
@@ -450,7 +450,7 @@ public struct SDDSTextArea: View {
             result += max(captionTypography.lineHeight, counterTypography.lineHeight)
         }
         result += totalTextHeight
-        return max(result, appearance.size.fieldHeight(layout: layout))
+        return max(result, appearance.size.fieldHeight)
     }
     
     private var totalTextHeight: CGFloat {
@@ -614,11 +614,11 @@ public struct SDDSTextArea: View {
     // MARK: - Computed Properties for Conditions
     
     private var iconActionViewWidth: CGFloat {
-        min(appearance.size.iconActionSize.width, appearance.size.fieldHeight(layout: layout))
+        min(appearance.size.iconActionSize.width, appearance.size.fieldHeight)
     }
     
     private var iconActionViewHeight: CGFloat {
-        min(appearance.size.iconActionSize.height, appearance.size.fieldHeight(layout: layout))
+        min(appearance.size.iconActionSize.height, appearance.size.fieldHeight)
     }
     
     private var captionTrailingPadding: CGFloat {
@@ -710,7 +710,7 @@ public struct SDDSTextArea: View {
     }
     
     private var calculatedChipGroupHeight: CGFloat {
-        return min(appearance.size.chipGroupHeight, chipGroupContentHeight)
+        return chipGroupContentHeight
     }
 
     private var chipCornerRadius: CGFloat {

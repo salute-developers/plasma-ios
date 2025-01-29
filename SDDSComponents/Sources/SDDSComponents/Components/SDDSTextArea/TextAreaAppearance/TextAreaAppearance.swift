@@ -30,8 +30,6 @@ public struct TextAreaAppearance {
     public let placeholderColorReadOnly: ColorToken
     public let requiredIndicatorColor: ColorToken
     public let startContentColor: ColorToken
-    public let textAfterColor: ColorToken
-    public let textBeforeColor: ColorToken
     public let textColor: ColorToken
     public let textColorFocused: ColorToken
     public let textColorReadOnly: ColorToken
@@ -67,8 +65,6 @@ public struct TextAreaAppearance {
         placeholderColorReadOnly: ColorToken = .clearColor,
         requiredIndicatorColor: ColorToken = .clearColor,
         startContentColor: ColorToken = .clearColor,
-        textAfterColor: ColorToken = .clearColor,
-        textBeforeColor: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
         textColorFocused: ColorToken = .clearColor,
         textColorReadOnly: ColorToken = .clearColor,
@@ -103,8 +99,6 @@ public struct TextAreaAppearance {
         self.placeholderColorReadOnly = placeholderColorReadOnly
         self.requiredIndicatorColor = requiredIndicatorColor
         self.startContentColor = startContentColor
-        self.textAfterColor = textAfterColor
-        self.textBeforeColor = textBeforeColor
         self.textColor = textColor
         self.textColorFocused = textColorFocused
         self.textColorReadOnly = textColorReadOnly

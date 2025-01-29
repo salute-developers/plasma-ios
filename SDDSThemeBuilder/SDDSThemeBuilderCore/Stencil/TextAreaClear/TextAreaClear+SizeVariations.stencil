@@ -1,0 +1,31 @@
+import Foundation
+import SDDSComponents
+import SDDSThemeCore
+import SDDSServTheme
+
+// MARK: - Size
+public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+    {%- for sizeKey, sizeVariation in data %}
+    var {{ sizeKey }}: Self {
+        .init(
+            appearance: appearance
+                .size(TextAreaClearSize.{{ sizeKey }})
+                .titleTypography(TextAreaClearTypography.title)
+                .innerTitleTypography(TextAreaClearTypography.innerTitle)
+                .textTypography(TextAreaClearTypography.text)
+                .textAfterTypography(TextAreaClearTypography.text)
+                .textBeforeTypography(TextAreaClearTypography.text)
+                .captionTypography(TextAreaClearTypography.caption)
+                .counterTypography(TextAreaClearTypography.counter)
+        )
+    }
+    {%- endfor %}
+}
+
+public extension TextArea {
+    {%- for sizeKey, sizeVariation in data %}
+    static var {{ sizeKey }}: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        return ComponentAppearanceVariation(appearance: TextAreaAppearance()).{{ sizeKey }}
+    }
+    {%- endfor %}
+}

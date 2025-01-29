@@ -412,9 +412,6 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
         }
     }
 
-    public var multipleValueHorizontalPadding: CGFloat {
-        2
-    }
 
     public var lineWidth: CGFloat {
         1

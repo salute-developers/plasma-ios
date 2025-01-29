@@ -102,6 +102,7 @@ public final class App {
             )
         ]
         commands.append(contentsOf: generateTextFieldVariations)
+        commands.append(contentsOf: generateTextAreaVariations)
 //        commands.append(contentsOf: generateVariations)
         
         for command in commands {
@@ -134,10 +135,24 @@ extension App {
         return result
     }
     
-    private var generateTextFieldVariations: [GenerateTextFieldCommand] {
+    private var generateTextFieldVariations: [Command] {
         [
             GenerateTextFieldCommand(
-                outputDirectoryURL: generatedComponentsURL(component: .button)
+                outputDirectoryURL: generatedComponentsURL(component: .textField)
+            ),
+            GenerateTextFieldClearCommand(
+                outputDirectoryURL: generatedComponentsURL(component: .textFieldClear)
+            )
+        ]
+    }
+    
+    private var generateTextAreaVariations: [Command] {
+        [
+            GenerateTextAreaCommand(
+                outputDirectoryURL: generatedComponentsURL(component: .textField)
+            ),
+            GenerateTextAreaClearCommand(
+                outputDirectoryURL: generatedComponentsURL(component: .textFieldClear)
             )
         ]
     }
