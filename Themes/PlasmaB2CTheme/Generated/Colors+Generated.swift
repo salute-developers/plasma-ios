@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
@@ -7,9 +9,11 @@ public struct Colors {
     public static let backgroundDarkSecondary = ColorToken.backgroundDarkSecondary
     public static let backgroundDarkTertiary = ColorToken.backgroundDarkTertiary
     public static let backgroundDefaultPrimary = ColorToken.backgroundDefaultPrimary
+    public static let backgroundDefaultPrimaryBrightness = ColorToken.backgroundDefaultPrimaryBrightness
     public static let backgroundDefaultSecondary = ColorToken.backgroundDefaultSecondary
     public static let backgroundDefaultTertiary = ColorToken.backgroundDefaultTertiary
     public static let backgroundInversePrimary = ColorToken.backgroundInversePrimary
+    public static let backgroundInversePrimaryBrightness = ColorToken.backgroundInversePrimaryBrightness
     public static let backgroundInverseSecondary = ColorToken.backgroundInverseSecondary
     public static let backgroundInverseTertiary = ColorToken.backgroundInverseTertiary
     public static let backgroundLightPrimary = ColorToken.backgroundLightPrimary
@@ -362,12 +366,14 @@ public struct Colors {
     public static let surfaceDefaultPromoMinorHover = ColorToken.surfaceDefaultPromoMinorHover
     public static let surfaceDefaultSolidCard = ColorToken.surfaceDefaultSolidCard
     public static let surfaceDefaultSolidCardActive = ColorToken.surfaceDefaultSolidCardActive
+    public static let surfaceDefaultSolidCardBrightness = ColorToken.surfaceDefaultSolidCardBrightness
     public static let surfaceDefaultSolidCardHover = ColorToken.surfaceDefaultSolidCardHover
     public static let surfaceDefaultSolidDefault = ColorToken.surfaceDefaultSolidDefault
     public static let surfaceDefaultSolidDefaultActive = ColorToken.surfaceDefaultSolidDefaultActive
     public static let surfaceDefaultSolidDefaultHover = ColorToken.surfaceDefaultSolidDefaultHover
     public static let surfaceDefaultSolidPrimary = ColorToken.surfaceDefaultSolidPrimary
     public static let surfaceDefaultSolidPrimaryActive = ColorToken.surfaceDefaultSolidPrimaryActive
+    public static let surfaceDefaultSolidPrimaryBrightness = ColorToken.surfaceDefaultSolidPrimaryBrightness
     public static let surfaceDefaultSolidPrimaryHover = ColorToken.surfaceDefaultSolidPrimaryHover
     public static let surfaceDefaultSolidSecondary = ColorToken.surfaceDefaultSolidSecondary
     public static let surfaceDefaultSolidSecondaryActive = ColorToken.surfaceDefaultSolidSecondaryActive
@@ -380,13 +386,11 @@ public struct Colors {
     public static let surfaceDefaultTransparentAccentHover = ColorToken.surfaceDefaultTransparentAccentHover
     public static let surfaceDefaultTransparentCard = ColorToken.surfaceDefaultTransparentCard
     public static let surfaceDefaultTransparentCardActive = ColorToken.surfaceDefaultTransparentCardActive
+    public static let surfaceDefaultTransparentCardBrightness = ColorToken.surfaceDefaultTransparentCardBrightness
     public static let surfaceDefaultTransparentCardHover = ColorToken.surfaceDefaultTransparentCardHover
     public static let surfaceDefaultTransparentDeep = ColorToken.surfaceDefaultTransparentDeep
     public static let surfaceDefaultTransparentDeepActive = ColorToken.surfaceDefaultTransparentDeepActive
     public static let surfaceDefaultTransparentDeepHover = ColorToken.surfaceDefaultTransparentDeepHover
-    public static let surfaceDefaultTransparentDefault = ColorToken.surfaceDefaultTransparentDefault
-    public static let surfaceDefaultTransparentDefaultActive = ColorToken.surfaceDefaultTransparentDefaultActive
-    public static let surfaceDefaultTransparentDefaultHover = ColorToken.surfaceDefaultTransparentDefaultHover
     public static let surfaceDefaultTransparentInfo = ColorToken.surfaceDefaultTransparentInfo
     public static let surfaceDefaultTransparentInfoActive = ColorToken.surfaceDefaultTransparentInfoActive
     public static let surfaceDefaultTransparentInfoHover = ColorToken.surfaceDefaultTransparentInfoHover
@@ -452,12 +456,14 @@ public struct Colors {
     public static let surfaceInversePromoMinorHover = ColorToken.surfaceInversePromoMinorHover
     public static let surfaceInverseSolidCard = ColorToken.surfaceInverseSolidCard
     public static let surfaceInverseSolidCardActive = ColorToken.surfaceInverseSolidCardActive
+    public static let surfaceInverseSolidCardBrightness = ColorToken.surfaceInverseSolidCardBrightness
     public static let surfaceInverseSolidCardHover = ColorToken.surfaceInverseSolidCardHover
     public static let surfaceInverseSolidDefault = ColorToken.surfaceInverseSolidDefault
     public static let surfaceInverseSolidDefaultActive = ColorToken.surfaceInverseSolidDefaultActive
     public static let surfaceInverseSolidDefaultHover = ColorToken.surfaceInverseSolidDefaultHover
     public static let surfaceInverseSolidPrimary = ColorToken.surfaceInverseSolidPrimary
     public static let surfaceInverseSolidPrimaryActive = ColorToken.surfaceInverseSolidPrimaryActive
+    public static let surfaceInverseSolidPrimaryBrightness = ColorToken.surfaceInverseSolidPrimaryBrightness
     public static let surfaceInverseSolidPrimaryHover = ColorToken.surfaceInverseSolidPrimaryHover
     public static let surfaceInverseSolidSecondary = ColorToken.surfaceInverseSolidSecondary
     public static let surfaceInverseSolidSecondaryActive = ColorToken.surfaceInverseSolidSecondaryActive
@@ -470,13 +476,11 @@ public struct Colors {
     public static let surfaceInverseTransparentAccentHover = ColorToken.surfaceInverseTransparentAccentHover
     public static let surfaceInverseTransparentCard = ColorToken.surfaceInverseTransparentCard
     public static let surfaceInverseTransparentCardActive = ColorToken.surfaceInverseTransparentCardActive
+    public static let surfaceInverseTransparentCardBrightness = ColorToken.surfaceInverseTransparentCardBrightness
     public static let surfaceInverseTransparentCardHover = ColorToken.surfaceInverseTransparentCardHover
     public static let surfaceInverseTransparentDeep = ColorToken.surfaceInverseTransparentDeep
     public static let surfaceInverseTransparentDeepActive = ColorToken.surfaceInverseTransparentDeepActive
     public static let surfaceInverseTransparentDeepHover = ColorToken.surfaceInverseTransparentDeepHover
-    public static let surfaceInverseTransparentDefault = ColorToken.surfaceInverseTransparentDefault
-    public static let surfaceInverseTransparentDefaultActive = ColorToken.surfaceInverseTransparentDefaultActive
-    public static let surfaceInverseTransparentDefaultHover = ColorToken.surfaceInverseTransparentDefaultHover
     public static let surfaceInverseTransparentInfo = ColorToken.surfaceInverseTransparentInfo
     public static let surfaceInverseTransparentInfoActive = ColorToken.surfaceInverseTransparentInfoActive
     public static let surfaceInverseTransparentInfoHover = ColorToken.surfaceInverseTransparentInfoHover
@@ -542,12 +546,14 @@ public struct Colors {
     public static let surfaceOnDarkPromoMinorHover = ColorToken.surfaceOnDarkPromoMinorHover
     public static let surfaceOnDarkSolidCard = ColorToken.surfaceOnDarkSolidCard
     public static let surfaceOnDarkSolidCardActive = ColorToken.surfaceOnDarkSolidCardActive
+    public static let surfaceOnDarkSolidCardBrightness = ColorToken.surfaceOnDarkSolidCardBrightness
     public static let surfaceOnDarkSolidCardHover = ColorToken.surfaceOnDarkSolidCardHover
     public static let surfaceOnDarkSolidDefault = ColorToken.surfaceOnDarkSolidDefault
     public static let surfaceOnDarkSolidDefaultActive = ColorToken.surfaceOnDarkSolidDefaultActive
     public static let surfaceOnDarkSolidDefaultHover = ColorToken.surfaceOnDarkSolidDefaultHover
     public static let surfaceOnDarkSolidPrimary = ColorToken.surfaceOnDarkSolidPrimary
     public static let surfaceOnDarkSolidPrimaryActive = ColorToken.surfaceOnDarkSolidPrimaryActive
+    public static let surfaceOnDarkSolidPrimaryBrightness = ColorToken.surfaceOnDarkSolidPrimaryBrightness
     public static let surfaceOnDarkSolidPrimaryHover = ColorToken.surfaceOnDarkSolidPrimaryHover
     public static let surfaceOnDarkSolidSecondary = ColorToken.surfaceOnDarkSolidSecondary
     public static let surfaceOnDarkSolidSecondaryActive = ColorToken.surfaceOnDarkSolidSecondaryActive
@@ -560,13 +566,11 @@ public struct Colors {
     public static let surfaceOnDarkTransparentAccentHover = ColorToken.surfaceOnDarkTransparentAccentHover
     public static let surfaceOnDarkTransparentCard = ColorToken.surfaceOnDarkTransparentCard
     public static let surfaceOnDarkTransparentCardActive = ColorToken.surfaceOnDarkTransparentCardActive
+    public static let surfaceOnDarkTransparentCardBrightness = ColorToken.surfaceOnDarkTransparentCardBrightness
     public static let surfaceOnDarkTransparentCardHover = ColorToken.surfaceOnDarkTransparentCardHover
     public static let surfaceOnDarkTransparentDeep = ColorToken.surfaceOnDarkTransparentDeep
     public static let surfaceOnDarkTransparentDeepActive = ColorToken.surfaceOnDarkTransparentDeepActive
     public static let surfaceOnDarkTransparentDeepHover = ColorToken.surfaceOnDarkTransparentDeepHover
-    public static let surfaceOnDarkTransparentDefault = ColorToken.surfaceOnDarkTransparentDefault
-    public static let surfaceOnDarkTransparentDefaultActive = ColorToken.surfaceOnDarkTransparentDefaultActive
-    public static let surfaceOnDarkTransparentDefaultHover = ColorToken.surfaceOnDarkTransparentDefaultHover
     public static let surfaceOnDarkTransparentInfo = ColorToken.surfaceOnDarkTransparentInfo
     public static let surfaceOnDarkTransparentInfoActive = ColorToken.surfaceOnDarkTransparentInfoActive
     public static let surfaceOnDarkTransparentInfoHover = ColorToken.surfaceOnDarkTransparentInfoHover
@@ -632,12 +636,14 @@ public struct Colors {
     public static let surfaceOnLightPromoMinorHover = ColorToken.surfaceOnLightPromoMinorHover
     public static let surfaceOnLightSolidCard = ColorToken.surfaceOnLightSolidCard
     public static let surfaceOnLightSolidCardActive = ColorToken.surfaceOnLightSolidCardActive
+    public static let surfaceOnLightSolidCardBrightness = ColorToken.surfaceOnLightSolidCardBrightness
     public static let surfaceOnLightSolidCardHover = ColorToken.surfaceOnLightSolidCardHover
     public static let surfaceOnLightSolidDefault = ColorToken.surfaceOnLightSolidDefault
     public static let surfaceOnLightSolidDefaultActive = ColorToken.surfaceOnLightSolidDefaultActive
     public static let surfaceOnLightSolidDefaultHover = ColorToken.surfaceOnLightSolidDefaultHover
     public static let surfaceOnLightSolidPrimary = ColorToken.surfaceOnLightSolidPrimary
     public static let surfaceOnLightSolidPrimaryActive = ColorToken.surfaceOnLightSolidPrimaryActive
+    public static let surfaceOnLightSolidPrimaryBrightness = ColorToken.surfaceOnLightSolidPrimaryBrightness
     public static let surfaceOnLightSolidPrimaryHover = ColorToken.surfaceOnLightSolidPrimaryHover
     public static let surfaceOnLightSolidSecondary = ColorToken.surfaceOnLightSolidSecondary
     public static let surfaceOnLightSolidSecondaryActive = ColorToken.surfaceOnLightSolidSecondaryActive
@@ -650,13 +656,11 @@ public struct Colors {
     public static let surfaceOnLightTransparentAccentHover = ColorToken.surfaceOnLightTransparentAccentHover
     public static let surfaceOnLightTransparentCard = ColorToken.surfaceOnLightTransparentCard
     public static let surfaceOnLightTransparentCardActive = ColorToken.surfaceOnLightTransparentCardActive
+    public static let surfaceOnLightTransparentCardBrightness = ColorToken.surfaceOnLightTransparentCardBrightness
     public static let surfaceOnLightTransparentCardHover = ColorToken.surfaceOnLightTransparentCardHover
     public static let surfaceOnLightTransparentDeep = ColorToken.surfaceOnLightTransparentDeep
     public static let surfaceOnLightTransparentDeepActive = ColorToken.surfaceOnLightTransparentDeepActive
     public static let surfaceOnLightTransparentDeepHover = ColorToken.surfaceOnLightTransparentDeepHover
-    public static let surfaceOnLightTransparentDefault = ColorToken.surfaceOnLightTransparentDefault
-    public static let surfaceOnLightTransparentDefaultActive = ColorToken.surfaceOnLightTransparentDefaultActive
-    public static let surfaceOnLightTransparentDefaultHover = ColorToken.surfaceOnLightTransparentDefaultHover
     public static let surfaceOnLightTransparentInfo = ColorToken.surfaceOnLightTransparentInfo
     public static let surfaceOnLightTransparentInfoActive = ColorToken.surfaceOnLightTransparentInfoActive
     public static let surfaceOnLightTransparentInfoHover = ColorToken.surfaceOnLightTransparentInfoHover
@@ -716,6 +720,7 @@ public struct Colors {
     public static let textDefaultPositiveMinorHover = ColorToken.textDefaultPositiveMinorHover
     public static let textDefaultPrimary = ColorToken.textDefaultPrimary
     public static let textDefaultPrimaryActive = ColorToken.textDefaultPrimaryActive
+    public static let textDefaultPrimaryBrightness = ColorToken.textDefaultPrimaryBrightness
     public static let textDefaultPrimaryHover = ColorToken.textDefaultPrimaryHover
     public static let textDefaultPromo = ColorToken.textDefaultPromo
     public static let textDefaultPromoActive = ColorToken.textDefaultPromoActive
@@ -764,6 +769,7 @@ public struct Colors {
     public static let textInversePositiveMinorHover = ColorToken.textInversePositiveMinorHover
     public static let textInversePrimary = ColorToken.textInversePrimary
     public static let textInversePrimaryActive = ColorToken.textInversePrimaryActive
+    public static let textInversePrimaryBrightness = ColorToken.textInversePrimaryBrightness
     public static let textInversePrimaryHover = ColorToken.textInversePrimaryHover
     public static let textInversePromo = ColorToken.textInversePromo
     public static let textInversePromoActive = ColorToken.textInversePromoActive
@@ -812,6 +818,7 @@ public struct Colors {
     public static let textOnDarkPositiveMinorHover = ColorToken.textOnDarkPositiveMinorHover
     public static let textOnDarkPrimary = ColorToken.textOnDarkPrimary
     public static let textOnDarkPrimaryActive = ColorToken.textOnDarkPrimaryActive
+    public static let textOnDarkPrimaryBrightness = ColorToken.textOnDarkPrimaryBrightness
     public static let textOnDarkPrimaryHover = ColorToken.textOnDarkPrimaryHover
     public static let textOnDarkPromo = ColorToken.textOnDarkPromo
     public static let textOnDarkPromoActive = ColorToken.textOnDarkPromoActive
@@ -860,6 +867,7 @@ public struct Colors {
     public static let textOnLightPositiveMinorHover = ColorToken.textOnLightPositiveMinorHover
     public static let textOnLightPrimary = ColorToken.textOnLightPrimary
     public static let textOnLightPrimaryActive = ColorToken.textOnLightPrimaryActive
+    public static let textOnLightPrimaryBrightness = ColorToken.textOnLightPrimaryBrightness
     public static let textOnLightPrimaryHover = ColorToken.textOnLightPrimaryHover
     public static let textOnLightPromo = ColorToken.textOnLightPromo
     public static let textOnLightPromoActive = ColorToken.textOnLightPromoActive

@@ -54,15 +54,6 @@ extension BasicButtonSize: ButtonSizeConfiguration {
         }
     }
     
-    public var counterSize: CounterSizeConfiguration {
-        switch self {
-        case .large: return CounterSize.small
-        case .medium: return CounterSize.extraSmall
-        case .small: return CounterSize.extraSmall
-        case .extraSmall: return CounterSize.extraExtraSmall
-        }
-    }
-    
     public var spinnerSize: CGSize {
         switch self {
         case .large: return CGSize(width: 22, height: 22)
