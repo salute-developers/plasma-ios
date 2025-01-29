@@ -148,7 +148,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
         }
     }
     
-    public func boxPaddingBottom(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement, layout: TextAreaClearLayout) -> CGFloat {
+    public func boxPaddingBottom(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGFloat {
         switch labelPlacement {
         case .none:
             switch requiredPlacement {
@@ -203,7 +203,7 @@ public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
         }
     }
     
-    public func boxPaddingTop(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement, layout: TextAreaClearLayout) -> CGFloat {
+    public func boxPaddingTop(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGFloat {
         switch labelPlacement {
         case .none:
             switch requiredPlacement {
