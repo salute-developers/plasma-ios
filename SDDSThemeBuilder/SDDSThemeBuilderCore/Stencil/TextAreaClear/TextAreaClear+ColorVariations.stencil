@@ -13,15 +13,12 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
     {%- endfor %}
 }
 
-public extension TextFieldClear {
+public extension TextAreaClear {
     {%- for appearanceKey, appearanceVariation in data %}
     static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         .init(
             name: "{{ key }}",
             appearance: .init(
-                backgroundColor: {{ appearanceVariation.backgroundColor | camelCase }},
-                backgroundColorFocused: {{ appearanceVariation.backgroundColorFocused | camelCase }},
-                backgroundColorReadOnly: {{ appearanceVariation.backgroundColorReadOnly | camelCase }},
                 captionColor: {{ appearanceVariation.captionColor | camelCase }},
                 captionColorFocused: {{ appearanceVariation.captionColorFocused | camelCase }},
                 captionColorReadOnly: {{ appearanceVariation.captionColorReadOnly | camelCase }},

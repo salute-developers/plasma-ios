@@ -26,14 +26,11 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
     }
 }
 
-public extension TextFieldClear {
+public extension TextAreaClear {
     static var `default`: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         .init(
             name: "",
             appearance: .init(
-                backgroundColor: ,
-                backgroundColorFocused: ,
-                backgroundColorReadOnly: ,
                 captionColor: textDefaultSecondary,
                 captionColorFocused: textDefaultAccent,
                 captionColorReadOnly: textDefaultSecondary,
@@ -61,9 +58,6 @@ public extension TextFieldClear {
         .init(
             name: "",
             appearance: .init(
-                backgroundColor: ,
-                backgroundColorFocused: ,
-                backgroundColorReadOnly: ,
                 captionColor: textDefaultNegative,
                 captionColorFocused: textDefaultAccent,
                 captionColorReadOnly: textDefaultNegative,
@@ -91,9 +85,6 @@ public extension TextFieldClear {
         .init(
             name: "",
             appearance: .init(
-                backgroundColor: ,
-                backgroundColorFocused: ,
-                backgroundColorReadOnly: ,
                 captionColor: textDefaultPositive,
                 captionColorFocused: textDefaultAccent,
                 captionColorReadOnly: textDefaultPositive,
@@ -121,9 +112,6 @@ public extension TextFieldClear {
         .init(
             name: "",
             appearance: .init(
-                backgroundColor: ,
-                backgroundColorFocused: ,
-                backgroundColorReadOnly: ,
                 captionColor: textDefaultWarning,
                 captionColorFocused: textDefaultAccent,
                 captionColorReadOnly: textDefaultWarning,
