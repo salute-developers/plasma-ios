@@ -201,15 +201,15 @@ public struct SDDSTextArea: View {
     @ViewBuilder
     private var indicatorWithTrailingPadding: some View {
         indicatorView
-            .padding(.trailing, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.trailing, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).x)
+            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).y)
     }
     
     @ViewBuilder
     private var indicatorWithLeadingPadding: some View {
         indicatorView
-            .padding(.leading, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).x)
-            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout).y)
+            .padding(.leading, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).x)
+            .padding(.top, size.indicatorOffset(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement).y)
     }
 
     @ViewBuilder
@@ -219,16 +219,16 @@ public struct SDDSTextArea: View {
             ZStack(alignment: .topTrailing) {
                 if shouldShowInnerTitle {
                     textEditor(id: textAreaInnerTitleId)
-                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
+                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
                     
                 } else {
                     textEditor(id: textAreaOuterTitleId)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
-                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
                     
                     iconActionView
                         .opacity(0)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
                         .padding(.trailing, boxTrailingPadding)
                 }
             }
@@ -245,17 +245,17 @@ public struct SDDSTextArea: View {
                         .padding(.trailing, iconActionTrailingPadding)
                     }
                     .frame(height: calculatedChipGroupHeight)
-                    .padding(.bottom, appearance.size.chipGroupVerticalBottomPadding)
-                    .padding(.top, appearance.size.chipGroupVerticalTopPadding)
+                    .padding(.bottom, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                    .padding(.top, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
                     
                     iconActionView
                         .opacity(0)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
                         .padding(.trailing, layout == .clear ? size.iconActionClearTrailingPadding : boxTrailingPadding)
                 }
                 
                 textEditor(id: textAreaMultipleId)
-                    .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout))
+                    .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
             }
         }
     }
@@ -441,8 +441,8 @@ public struct SDDSTextArea: View {
             result += innerTitleTypography.lineHeight
         }
         if displayChips {
-            result += appearance.size.chipGroupVerticalBottomPadding
-            result += appearance.size.chipGroupVerticalTopPadding
+            result += size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
+            result += size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
         }
         if layout == .default {
             result += 2 * appearance.size.captionTopPadding
@@ -460,10 +460,10 @@ public struct SDDSTextArea: View {
         if displayChips {
             result += calculatedChipGroupHeight
         } else {
-            result += size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout)
+            result += size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
         }
         if labelPlacement != .inner {
-            result += size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement, layout: layout)
+            result += size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
         }
         return result
     }
@@ -612,6 +612,10 @@ public struct SDDSTextArea: View {
     }
 
     // MARK: - Computed Properties for Conditions
+    
+    private var size: TextAreaSizeConfiguration {
+        appearance.size
+    }
     
     private var iconActionViewWidth: CGFloat {
         min(appearance.size.iconActionSize.width, appearance.size.fieldHeight)

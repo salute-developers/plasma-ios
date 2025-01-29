@@ -40,13 +40,6 @@
 		810DE53F2C2AC77700F1C96F /* ColorToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 817539362BCE745600138866 /* ColorToken.stencil */; };
 		810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
 		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
-		810DE5422C2AC77800F1C96F /* Shapes.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D142C05D38600C17C0F /* Shapes.stencil */; };
-		810DE5432C2AC77800F1C96F /* Colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D122C05D1D300C17C0F /* Colors.stencil */; };
-		810DE5452C2AC77800F1C96F /* Shadows.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D162C05D39E00C17C0F /* Shadows.stencil */; };
-		810DE5462C2AC77800F1C96F /* Gradients.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D1A2C05D3C800C17C0F /* Gradients.stencil */; };
-		810DE5472C2AC77800F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
-		810DE5482C2AC77800F1C96F /* Typographies.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D182C05D3B200C17C0F /* Typographies.stencil */; };
-		810DE5492C2AC77800F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
 		811D2DE82D1095A6001C0F48 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 811D2DE72D1095A6001C0F48 /* SDDSComponents */; };
 		811D2DFE2D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D2DF12D109A92001C0F48 /* IconButtonSize+ButtonSizeConfiguration.swift */; };
@@ -70,7 +63,6 @@
 		8133401C2C0636F0005AD84F /* ios_gradient.json in Resources */ = {isa = PBXBuildFile; fileRef = 8133401B2C0636EF005AD84F /* ios_gradient.json */; };
 		8133401E2C063907005AD84F /* ContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133401D2C063907005AD84F /* ContextBuilderTests.swift */; };
 		813340242C063A71005AD84F /* ios_shape.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340232C063A71005AD84F /* ios_shape.json */; };
-		8133402C2C072F78005AD84F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
 		8133402E2C073924005AD84F /* ios_gradient_invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 8133402D2C073924005AD84F /* ios_gradient_invalid.json */; };
 		813340302C073C42005AD84F /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133402F2C073C42005AD84F /* URL+Extensions.swift */; };
 		8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB452C1B4F3600D6A049 /* ThemeContext.swift */; };
@@ -121,7 +113,6 @@
 		817539932BD12E7500138866 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 817539922BD12E7500138866 /* empty.json */; };
 		817539952BD12ED400138866 /* DownloadCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817539942BD12ED400138866 /* DownloadCommandTests.swift */; };
 		8175399D2BD1303400138866 /* RunnableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8175399C2BD1303400138866 /* RunnableMock.swift */; };
-		817539A02BD1676200138866 /* ColorToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 817539362BCE745600138866 /* ColorToken.stencil */; };
 		817539A22BD1681100138866 /* ios_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 817539A12BD1681100138866 /* ios_colors.json */; };
 		817539A62BD1699B00138866 /* RenderableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817539A52BD1699B00138866 /* RenderableMock.swift */; };
 		817539AC2BD16D7E00138866 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 817539AB2BD16D7E00138866 /* OHHTTPStubs */; };
@@ -926,6 +917,7 @@
 		817539352BCE744300138866 /* Stencil */ = {
 			isa = PBXGroup;
 			children = (
+				818E391C2D4A66CF00B3A02D /* Tokens */,
 				818E38FA2D4A4FDC00B3A02D /* TextAreaClear */,
 				818E38F72D4A4E5700B3A02D /* TextArea */,
 				818E38D62D4A445400B3A02D /* TextFieldClear */,
@@ -933,16 +925,6 @@
 				815F42B42D47DE5B00F97E63 /* BasicButton */,
 				815F42AF2D47DE5B00F97E63 /* IconButton */,
 				815F42A92D47DE5B00F97E63 /* LinkButton */,
-				817539362BCE745600138866 /* ColorToken.stencil */,
-				81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */,
-				81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */,
-				81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */,
-				810CB4872BF786C0002E718E /* GradientToken.stencil */,
-				243C1D122C05D1D300C17C0F /* Colors.stencil */,
-				243C1D142C05D38600C17C0F /* Shapes.stencil */,
-				243C1D162C05D39E00C17C0F /* Shadows.stencil */,
-				243C1D182C05D3B200C17C0F /* Typographies.stencil */,
-				243C1D1A2C05D3C800C17C0F /* Gradients.stencil */,
 			);
 			path = Stencil;
 			sourceTree = "<group>";
@@ -1210,6 +1192,23 @@
 				818E391A2D4A5E4800B3A02D /* TextAreaClearConfiguration.swift */,
 			);
 			path = TextAreaClear;
+			sourceTree = "<group>";
+		};
+		818E391C2D4A66CF00B3A02D /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				817539362BCE745600138866 /* ColorToken.stencil */,
+				81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */,
+				81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */,
+				81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */,
+				810CB4872BF786C0002E718E /* GradientToken.stencil */,
+				243C1D122C05D1D300C17C0F /* Colors.stencil */,
+				243C1D142C05D38600C17C0F /* Shapes.stencil */,
+				243C1D162C05D39E00C17C0F /* Shadows.stencil */,
+				243C1D182C05D3B200C17C0F /* Typographies.stencil */,
+				243C1D1A2C05D3C800C17C0F /* Gradients.stencil */,
+			);
+			path = Tokens;
 			sourceTree = "<group>";
 		};
 		819B2A872BF23B0100688624 /* Extensions */ = {
@@ -1682,19 +1681,10 @@
 				8133401C2C0636F0005AD84F /* ios_gradient.json in Resources */,
 				813340162C0632EA005AD84F /* palette.json in Resources */,
 				817539912BD11E5500138866 /* scheme.json in Resources */,
-				810DE5462C2AC77800F1C96F /* Gradients.stencil in Resources */,
-				810DE5492C2AC77800F1C96F /* TypographyToken.stencil in Resources */,
-				8133402C2C072F78005AD84F /* ShapeToken.stencil in Resources */,
-				817539A02BD1676200138866 /* ColorToken.stencil in Resources */,
-				810DE5452C2AC77800F1C96F /* Shadows.stencil in Resources */,
-				810DE5482C2AC77800F1C96F /* Typographies.stencil in Resources */,
 				817539932BD12E7500138866 /* empty.json in Resources */,
 				817539A22BD1681100138866 /* ios_colors.json in Resources */,
 				813340192C0635AA005AD84F /* SBSansDisplay-Bold.otf in Resources */,
-				810DE5432C2AC77800F1C96F /* Colors.stencil in Resources */,
-				810DE5472C2AC77800F1C96F /* ShadowToken.stencil in Resources */,
 				813340242C063A71005AD84F /* ios_shape.json in Resources */,
-				810DE5422C2AC77800F1C96F /* Shapes.stencil in Resources */,
 				8133402E2C073924005AD84F /* ios_gradient_invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

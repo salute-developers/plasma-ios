@@ -7,8 +7,8 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var titleInnerPadding: CGFloat { get }
     var boxLeadingPadding: CGFloat { get }
     var boxTrailingPadding: CGFloat { get }
-    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
-    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat
+    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
+    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
@@ -23,12 +23,11 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var chipsPadding: CGFloat { get }
     
     var fieldHeight: CGFloat { get }
-    func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint
+    func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGPoint
 }
 
 public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
-    public var chipContainerHorizontalPadding: CGFloat
-    
+    public var chipContainerHorizontalPadding: CGFloat { 0 }
     public var titleBottomPadding: CGFloat { 0 }
     public var titleInnerPadding: CGFloat { 0 }
     public var boxLeadingPadding: CGFloat { 0 }
@@ -53,15 +52,15 @@ public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
     public var chipsPadding: CGFloat { 0 }
     public var fieldHeight: CGFloat { 0 }
     
-    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
         return 0
     }
     
-    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGFloat {
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
         return 0
     }
 
-    public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement, layout: TextAreaLayout) -> CGPoint {
+    public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGPoint {
         .zero
     }
 

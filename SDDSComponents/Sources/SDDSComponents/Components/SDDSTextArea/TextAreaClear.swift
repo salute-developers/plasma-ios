@@ -1,5 +1,7 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
+import SDDSComponents
 
 public struct TextAreaClear: View {
     @Binding public var value: TextAreaValue
