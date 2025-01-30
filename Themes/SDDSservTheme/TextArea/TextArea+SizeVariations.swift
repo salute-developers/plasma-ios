@@ -8,6 +8,8 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             appearance: appearance
                 .size(TextAreaSize.extraSmall)
+                .chipAppearance(EmbeddedChip.extraSmall.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
@@ -19,6 +21,8 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             appearance: appearance
                 .size(TextAreaSize.large)
+                .chipAppearance(EmbeddedChip.large.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
@@ -30,6 +34,8 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             appearance: appearance
                 .size(TextAreaSize.medium)
+                .chipAppearance(EmbeddedChip.medium.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
@@ -41,6 +47,8 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             appearance: appearance
                 .size(TextAreaSize.small)
+                .chipAppearance(EmbeddedChip.small.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)

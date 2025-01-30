@@ -34,7 +34,6 @@ struct TextAreaPreview: PreviewProvider {
                 requiredPlacement: .left,
                 dynamicHeight: true,
                 appearance: TextArea.default.large.appearance,
-                chipGroupAppearance: SDDSChipGroup.large.appearance,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Outer Label")
@@ -54,7 +53,6 @@ struct TextAreaPreview: PreviewProvider {
                 requiredPlacement: .right,
                 dynamicHeight: true,
                 appearance: TextArea.default.large.appearance,
-                chipGroupAppearance: SDDSChipGroup.large.appearance,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
             .previewDisplayName("Multiple – Default Label")

@@ -8,6 +8,8 @@ public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFiel
         .init(
             appearance: appearance
                 .size(TextFieldSize.extraSmall)
+                .chipAppearance(EmbeddedChip.extraSmall.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextFieldTypography.title)
                 .innerTitleTypography(TextFieldTypography.innerTitle)
                 .textTypography(TextFieldTypography.text)
@@ -20,6 +22,8 @@ public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFiel
         .init(
             appearance: appearance
                 .size(TextFieldSize.large)
+                .chipAppearance(EmbeddedChip.large.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextFieldTypography.title)
                 .innerTitleTypography(TextFieldTypography.innerTitle)
                 .textTypography(TextFieldTypography.text)
@@ -32,6 +36,8 @@ public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFiel
         .init(
             appearance: appearance
                 .size(TextFieldSize.medium)
+                .chipAppearance(EmbeddedChip.medium.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextFieldTypography.title)
                 .innerTitleTypography(TextFieldTypography.innerTitle)
                 .textTypography(TextFieldTypography.text)
@@ -44,6 +50,8 @@ public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFiel
         .init(
             appearance: appearance
                 .size(TextFieldSize.small)
+                .chipAppearance(EmbeddedChip.small.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextFieldTypography.title)
                 .innerTitleTypography(TextFieldTypography.innerTitle)
                 .textTypography(TextFieldTypography.text)

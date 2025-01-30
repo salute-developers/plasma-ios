@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 
 public enum SDDSAvatarSize: AvatarSizeConfiguration {
     case extraExtraLarge

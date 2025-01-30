@@ -22,8 +22,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
         return Group {
             SDDSChipGroup(
                 data: chipData,
-                gap: .dense,
-                appearance: SDDSChipGroup.medium.appearance
+                appearance: SDDSChipGroup.dense.appearance
             )
         }
         .previewLayout(PreviewLayout.sizeThatFits)

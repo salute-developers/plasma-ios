@@ -3,49 +3,27 @@ import SDDSComponents
 
 //// MARK: - Size
 public extension AppearanceVariation<ChipGroupAppearance> {
-    var large: Self {
+    var dense: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipGroupSize.large)
+                .gap(.dense)
         )
     }
     
-    var medium: Self {
+    var wide: Self {
         .init(
             appearance: appearance
-                .size(SDDSChipGroupSize.medium)
-        )
-    }
-    
-    var small: Self {
-        .init(
-            appearance: appearance
-                .size(SDDSChipGroupSize.small)
-        )
-    }
-    
-    var extraSmall: Self {
-        .init(
-            appearance: appearance
-                .size(SDDSChipGroupSize.extraSmall)
+                .gap(.wide)
         )
     }
 }
 
 public extension SDDSChipGroup {
-    static var large: AppearanceVariation<ChipGroupAppearance> {
-        return AppearanceVariation(appearance: ChipGroupAppearance()).large
+    static var dense: AppearanceVariation<ChipGroupAppearance> {
+        return AppearanceVariation(appearance: ChipGroupAppearance()).dense
     }
     
-    static var medium: AppearanceVariation<ChipGroupAppearance> {
-        return AppearanceVariation(appearance: ChipGroupAppearance()).medium
-    }
-    
-    static var small: AppearanceVariation<ChipGroupAppearance> {
-        return AppearanceVariation(appearance: ChipGroupAppearance()).small
-    }
-    
-    static var extraSmall: AppearanceVariation<ChipGroupAppearance> {
-        return AppearanceVariation(appearance: ChipGroupAppearance()).extraSmall
+    static var wide: AppearanceVariation<ChipGroupAppearance> {
+        return AppearanceVariation(appearance: ChipGroupAppearance()).wide
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+
 
 // MARK: - Size
 public extension ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
@@ -51,7 +51,7 @@ public extension EmbeddedChip {
         return ComponentAppearanceVariation(appearance: ChipAppearance()).small
     }
     
-    static var embeddedExtraSmall: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
+    static var extraSmall: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         return ComponentAppearanceVariation(appearance: ChipAppearance()).extraSmall
     }
 }
