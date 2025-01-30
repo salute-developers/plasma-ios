@@ -424,6 +424,7 @@ public struct SDDSTextArea: View {
     @ViewBuilder
     private var backgroundView: some View {
         RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
+            .strokeBorder(.clear, lineWidth: 0)
             .background(
                 RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
                     .fill(backgroundColor)
