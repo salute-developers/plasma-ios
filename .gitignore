@@ -4,6 +4,7 @@
 .DS_Store
 
 ## Generated
+./SDDSThemeBuilder/SDDSTheme/
 ./SDDSThemeBuilder/SDDSTheme/Generated/
 ./SDDSThemeBuilder/SDDSTheme/Fonts/
 ./SDDSThemeBuilder/Output/
