@@ -5,6 +5,28 @@ enum TextAreaClearVariationNode: String, Codable {
     case innerLabel = "inner-label"
     case requiredEnd = "required-end"
     case requiredStart = "required-start"
+    case `default` = ""
+}
+
+extension TextAreaClearProps {
+    subscript(keyPath: AnyKeyPath) -> Any? {
+        get {
+            switch keyPath {
+            case let keyPath as KeyPath<TextAreaClearProps, KeyValue<Double>?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaClearProps, KeyValue<String>?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaClearProps, ColorKeyValue?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaClearProps, ColorWithAlphaKeyValue?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaClearProps, ShapeKeyValue?>:
+                return self[keyPath: keyPath]
+            default:
+                return nil
+            }
+        }
+    }
 }
 
 struct TextAreaClearProps: Codable {

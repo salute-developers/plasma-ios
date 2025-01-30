@@ -6,6 +6,7 @@ public struct TextAreaAppearance {
     public let id = UUID()
     public let size: TextAreaSizeConfiguration
     public let backgroundColor: ColorToken
+    public let backgroundColorFocused: ColorToken
     public let backgroundColorReadOnly: ColorToken
     public let borderColor: ColorToken
     public let captionColor: ColorToken
@@ -18,7 +19,6 @@ public struct TextAreaAppearance {
     public let cursorColor: ColorToken
     public let disabledAlpha: CGFloat
     public let endContentColor: ColorToken
-    public let backgroundColorFocused: ColorToken
     public let innerTitleTextAlignment: TextAlignment
     public let innerTitleTypography: TypographyConfiguration
     public let inputTextAlignment: TextAlignment
@@ -41,6 +41,7 @@ public struct TextAreaAppearance {
     public init(
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
         backgroundColor: ColorToken = .clearColor,
+        backgroundColorFocused: ColorToken = .clearColor,
         backgroundColorReadOnly: ColorToken = .clearColor,
         borderColor: ColorToken = .clearColor,
         captionColor: ColorToken = .clearColor,
@@ -53,7 +54,6 @@ public struct TextAreaAppearance {
         cursorColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
         endContentColor: ColorToken = .clearColor,
-        backgroundColorFocused: ColorToken = .clearColor,
         innerTitleTextAlignment: TextAlignment = .leading,
         innerTitleTypography: TypographyConfiguration = .default,
         inputTextAlignment: TextAlignment = .leading,

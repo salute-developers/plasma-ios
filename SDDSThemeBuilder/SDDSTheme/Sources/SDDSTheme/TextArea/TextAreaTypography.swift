@@ -1,16 +1,15 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
-struct TextAreaTypography: GeneralTypographyConfiguration {
+public struct TextAreaTypography: GeneralTypographyConfiguration {
     let extraSmall: TypographyToken?
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
     
-    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: TextAreaSizeConfiguration) -> TypographyToken? {
         switch size as? TextAreaSize {
         case .extraSmall:
             return extraSmall
@@ -22,10 +21,11 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
             return small
         case .none:
             return nil
+        }
     }
 }
 
-extension TextAreaTypography {
+public extension TextAreaTypography {
     static var title: TypographyConfiguration {
         TextAreaTypography(
             extraSmall: Typographies.bodyXsNormal.typography,

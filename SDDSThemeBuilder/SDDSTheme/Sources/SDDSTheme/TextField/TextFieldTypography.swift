@@ -3,13 +3,13 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct TextFieldTypography: GeneralTypographyConfiguration {
+public struct TextFieldTypography: GeneralTypographyConfiguration {
     let extraSmall: TypographyToken?
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
     
-    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
         switch size as? TextFieldSize {
         case .extraSmall:
             return extraSmall
@@ -21,10 +21,11 @@ struct TextFieldTypography: GeneralTypographyConfiguration {
             return small
         case .none:
             return nil
+        }
     }
 }
 
-extension TextFieldTypography {
+public extension TextFieldTypography {
     static var title: TypographyConfiguration {
         TextFieldTypography(
             extraSmall: Typographies.bodyXsNormal.typography,

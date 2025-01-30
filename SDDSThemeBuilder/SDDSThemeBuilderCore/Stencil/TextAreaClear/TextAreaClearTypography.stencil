@@ -1,15 +1,14 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
-struct TextAreaClearTypography: GeneralTypographyConfiguration {
+public struct TextAreaClearTypography: GeneralTypographyConfiguration {
     {%- for key, sizeVariation in data %}
     let {{ key }}: TypographyToken?
     {%- endfor %}
     
-    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: TextAreaSizeConfiguration) -> TypographyToken? {
         switch size as? TextAreaClearSize {
         {%- for key, sizeVariation in data %}
         case .{{ key }}:
@@ -17,10 +16,11 @@ struct TextAreaClearTypography: GeneralTypographyConfiguration {
         {%- endfor %}
         case .none:
             return nil
+        }
     }
 }
 
-extension TextAreaClearTypography {
+public extension TextAreaClearTypography {
     static var title: TypographyConfiguration {
         TextAreaClearTypography(
             {%- for key, sizeVariation in data %}

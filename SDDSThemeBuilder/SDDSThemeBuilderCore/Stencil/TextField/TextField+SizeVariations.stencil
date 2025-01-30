@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 
 // MARK: - Size
 public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {

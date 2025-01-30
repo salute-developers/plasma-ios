@@ -219,16 +219,16 @@ public struct SDDSTextArea: View {
             ZStack(alignment: .topTrailing) {
                 if shouldShowInnerTitle {
                     textEditor(id: textAreaInnerTitleId)
-                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement))
                     
                 } else {
                     textEditor(id: textAreaOuterTitleId)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
-                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement))
+                        .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement))
                     
                     iconActionView
                         .opacity(0)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement))
                         .padding(.trailing, boxTrailingPadding)
                 }
             }
@@ -245,17 +245,17 @@ public struct SDDSTextArea: View {
                         .padding(.trailing, iconActionTrailingPadding)
                     }
                     .frame(height: calculatedChipGroupHeight)
-                    .padding(.bottom, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
-                    .padding(.top, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                    .padding(.bottom, size.boxPaddingTop(labelPlacement: labelPlacement))
+                    .padding(.top, size.boxPaddingBottom(labelPlacement: labelPlacement))
                     
                     iconActionView
                         .opacity(0)
-                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                        .padding(.top, size.boxPaddingTop(labelPlacement: labelPlacement))
                         .padding(.trailing, layout == .clear ? size.iconActionClearTrailingPadding : boxTrailingPadding)
                 }
                 
                 textEditor(id: textAreaMultipleId)
-                    .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement))
+                    .padding(.bottom, size.boxPaddingBottom(labelPlacement: labelPlacement))
             }
         }
     }
@@ -426,7 +426,6 @@ public struct SDDSTextArea: View {
     @ViewBuilder
     private var backgroundView: some View {
         RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
-            .strokeBorder(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.borderWidth)
             .background(
                 RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
                     .fill(backgroundColor)
@@ -441,8 +440,8 @@ public struct SDDSTextArea: View {
             result += innerTitleTypography.lineHeight
         }
         if displayChips {
-            result += size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
-            result += size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
+            result += size.boxPaddingBottom(labelPlacement: labelPlacement)
+            result += size.boxPaddingTop(labelPlacement: labelPlacement)
         }
         if layout == .default {
             result += 2 * appearance.size.captionTopPadding
@@ -460,10 +459,10 @@ public struct SDDSTextArea: View {
         if displayChips {
             result += calculatedChipGroupHeight
         } else {
-            result += size.boxPaddingTop(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
+            result += size.boxPaddingTop(labelPlacement: labelPlacement)
         }
         if labelPlacement != .inner {
-            result += size.boxPaddingBottom(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
+            result += size.boxPaddingBottom(labelPlacement: labelPlacement)
         }
         return result
     }
@@ -578,7 +577,7 @@ public struct SDDSTextArea: View {
     private var indicatorView: some View {
         Circle()
             .fill(appearance.requiredIndicatorColor.color(for: colorScheme))
-            .frame(width: appearance.size.indicatorSize.width, height: appearance.size.indicatorSize.height, debug: debugConfiguration.indicatorView)
+            .frame(width: indicatorSize.width, height: indicatorSize.height, debug: debugConfiguration.indicatorView)
     }
 
     @ViewBuilder
@@ -615,6 +614,10 @@ public struct SDDSTextArea: View {
     
     private var size: TextAreaSizeConfiguration {
         appearance.size
+    }
+    
+    private var indicatorSize: CGSize {
+        return appearance.size.indicatorSize(labelPlacement: labelPlacement, requiredPlacement: requiredPlacement)
     }
     
     private var iconActionViewWidth: CGFloat {

@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 
 // MARK: - Size
 public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
@@ -12,8 +11,6 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
-                .textAfterTypography(TextAreaTypography.text)
-                .textBeforeTypography(TextAreaTypography.text)
                 .captionTypography(TextAreaTypography.caption)
                 .counterTypography(TextAreaTypography.counter)
         )
@@ -25,8 +22,6 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
-                .textAfterTypography(TextAreaTypography.text)
-                .textBeforeTypography(TextAreaTypography.text)
                 .captionTypography(TextAreaTypography.caption)
                 .counterTypography(TextAreaTypography.counter)
         )
@@ -38,8 +33,6 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
-                .textAfterTypography(TextAreaTypography.text)
-                .textBeforeTypography(TextAreaTypography.text)
                 .captionTypography(TextAreaTypography.caption)
                 .counterTypography(TextAreaTypography.counter)
         )
@@ -51,8 +44,6 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)
-                .textAfterTypography(TextAreaTypography.text)
-                .textBeforeTypography(TextAreaTypography.text)
                 .captionTypography(TextAreaTypography.caption)
                 .counterTypography(TextAreaTypography.counter)
         )

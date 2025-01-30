@@ -3,13 +3,13 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct TextFieldClearTypography: GeneralTypographyConfiguration {
+public struct TextFieldClearTypography: GeneralTypographyConfiguration {
     let extraSmall: TypographyToken?
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
     
-    func typography(with size: TextFieldClearSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
         switch size as? TextFieldClearSize {
         case .extraSmall:
             return extraSmall
@@ -21,10 +21,11 @@ struct TextFieldClearTypography: GeneralTypographyConfiguration {
             return small
         case .none:
             return nil
+        }
     }
 }
 
-extension TextFieldClearTypography {
+public extension TextFieldClearTypography {
     static var title: TypographyConfiguration {
         TextFieldClearTypography(
             extraSmall: Typographies.bodyXsNormal.typography,

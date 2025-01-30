@@ -26,8 +26,8 @@ struct TextAreaSizeConfiguration: Codable {
         let chipContainerHorizontalPadding: Double
         let indicatorOffsets: [String: [String: Size]]
         let indicatorSizes: [String: [String: Size]]
-        let boxPaddingTops: [String: [String: Double]]
-        let boxPaddingBottoms: [String: [String: Double]]
+        let boxPaddingTops: [String: Double]
+        let boxPaddingBottoms: [String: Double]
     }
     
     let data: [String: SizeVariation]

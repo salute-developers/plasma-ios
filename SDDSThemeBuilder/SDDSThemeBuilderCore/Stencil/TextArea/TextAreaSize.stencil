@@ -148,115 +148,35 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
         }
     }
     
-    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
-        switch labelPlacement {
-        case .none:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
+        switch self {
+            {%- for sizeKey, sizeVariation in data %}
+        case .{{ sizeKey }}:
+            switch labelPlacement {
+            case .inner:
+                return {{ sizeVariation.boxPaddingBottoms["inner-label"] | default: 0 }}
+            case .outer:
+                return {{ sizeVariation.boxPaddingBottoms["outer-label"] | default: 0 }}
+            case .none:
+                return {{ sizeVariation.boxPaddingBottoms[""] | default: 0 }}
             }
-        case .inner:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
-        case .outer:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["outer-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["outer-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
+            {%- endfor %}
         }
     }
     
-    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
-        switch labelPlacement {
-        case .none:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
+        switch self {
+            {%- for sizeKey, sizeVariation in data %}
+        case .{{ sizeKey }}:
+            switch labelPlacement {
+            case .inner:
+                return {{ sizeVariation.boxPaddingTops["inner-label"] | default: 0 }}
+            case .outer:
+                return {{ sizeVariation.boxPaddingTops["outer-label"] | default: 0 }}
+            case .none:
+                return {{ sizeVariation.boxPaddingTops[""] | default: 0 }}
             }
-        case .inner:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["inner-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["inner-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
-        case .outer:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["outer-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["outer-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
+            {%- endfor %}
         }
     }
     
@@ -410,6 +330,10 @@ public enum TextAreaSize: String, TextAreaSizeConfiguration {
     
     public var lineWidth: CGFloat {
         1
+    }
+    
+    public var debugDescription: String {
+        return "TextAreaSize"
     }
         
 }

@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
 public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
@@ -13,33 +12,33 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
     {%- endfor %}
 }
 
-public extension TextFieldClear {
+public extension TextArea {
     {%- for appearanceKey, appearanceVariation in data %}
     static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             name: "{{ key }}",
             appearance: .init(
-                backgroundColor: {{ appearanceVariation.backgroundColor | camelCase }},
-                backgroundColorFocused: {{ appearanceVariation.backgroundColorFocused | camelCase }},
-                backgroundColorReadOnly: {{ appearanceVariation.backgroundColorReadOnly | camelCase }},
-                captionColor: {{ appearanceVariation.captionColor | camelCase }},
-                captionColorFocused: {{ appearanceVariation.captionColorFocused | camelCase }},
-                captionColorReadOnly: {{ appearanceVariation.captionColorReadOnly | camelCase }},
-                counterColor: {{ appearanceVariation.counterColor | camelCase }},
-                counterColorReadOnly: {{ appearanceVariation.counterColor | camelCase }},
-                cursorColor: {{ appearanceVariation.cursorColor | camelCase }},
+                backgroundColor: .{{ appearanceVariation.backgroundColor | camelCase }},
+                backgroundColorFocused: .{{ appearanceVariation.backgroundColorFocused | camelCase }},
+                backgroundColorReadOnly: .{{ appearanceVariation.backgroundColorReadOnly | camelCase }},
+                captionColor: .{{ appearanceVariation.captionColor | camelCase }},
+                captionColorFocused: .{{ appearanceVariation.captionColorFocused | camelCase }},
+                captionColorReadOnly: .{{ appearanceVariation.captionColorReadOnly | camelCase }},
+                counterColor: .{{ appearanceVariation.counterColor | camelCase }},
+                counterColorReadOnly: .{{ appearanceVariation.counterColor | camelCase }},
+                cursorColor: .{{ appearanceVariation.cursorColor | camelCase }},
                 disabledAlpha: {{ appearanceVariation.disabledAlpha | camelCase }},
-                endContentColor: {{ appearanceVariation.endContentColor | camelCase }},
-                optionalTitleColor: {{ appearanceVariation.optionalTitleColor | camelCase }},
-                placeholderColor: {{ appearanceVariation.placeholderColor | camelCase }},
-                placeholderColorFocused: {{ appearanceVariation.placeholderColorFocused | camelCase }},
-                placeholderColorReadOnly: {{ appearanceVariation.placeholderColorReadOnly | camelCase }},
-                requiredIndicatorColor: {{ appearanceVariation.requiredIndicatorColor | camelCase }},
-                startContentColor: {{ appearanceVariation.startContentColor | camelCase }},
-                textColor: {{ appearanceVariation.textColor | camelCase }},
-                textColorFocused: {{ appearanceVariation.textColorFocused | camelCase }},
-                textColorReadOnly: {{ appearanceVariation.textColorReadOnly | camelCase }},
-                titleColor: {{ appearanceVariation.titleColor | camelCase }}
+                endContentColor: .{{ appearanceVariation.endContentColor | camelCase }},
+                optionalTitleColor: .{{ appearanceVariation.optionalTitleColor | camelCase }},
+                placeholderColor: .{{ appearanceVariation.placeholderColor | camelCase }},
+                placeholderColorFocused: .{{ appearanceVariation.placeholderColorFocused | camelCase }},
+                placeholderColorReadOnly: .{{ appearanceVariation.placeholderColorReadOnly | camelCase }},
+                requiredIndicatorColor: .{{ appearanceVariation.requiredIndicatorColor | camelCase }},
+                startContentColor: .{{ appearanceVariation.startContentColor | camelCase }},
+                textColor: .{{ appearanceVariation.textColor | camelCase }},
+                textColorFocused: .{{ appearanceVariation.textColorFocused | camelCase }},
+                textColorReadOnly: .{{ appearanceVariation.textColorReadOnly | camelCase }},
+                titleColor: .{{ appearanceVariation.titleColor | camelCase }}
             )
         )
     }

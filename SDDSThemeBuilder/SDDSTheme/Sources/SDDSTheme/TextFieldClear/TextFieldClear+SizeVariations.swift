@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 
 // MARK: - Size
 public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
@@ -55,7 +54,7 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
     }
 }
 
-public extension SDDSComponents.TextField {
+public extension TextFieldClear {
     static var extraSmall: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         return ComponentAppearanceVariation(appearance: TextFieldAppearance()).extraSmall
     }

@@ -1,63 +1,64 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
-struct TextFieldClearTypography: GeneralTypographyConfiguration {
+public struct TextFieldClearTypography: GeneralTypographyConfiguration {
+    let extraSmall: TypographyToken?
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
-    let extraSmall: TypographyToken?
     
-    func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+    public func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
         switch size as? TextFieldClearSize {
+        case .extraSmall:
+            return extraSmall
         case .large:
             return large
         case .medium:
             return medium
-        case .small, .none:
+        case .small:
             return small
-        case .extraSmall:
-            return extraSmall
+        case .none:
+            return nil
         }
     }
 }
 
-extension TextFieldClearTypography {
+public extension TextFieldClearTypography {
     static var title: TypographyConfiguration {
-        TextFieldTypography(
+        TextFieldClearTypography(
+            extraSmall: Typographies.bodyXsNormal.typography,
             large: Typographies.bodyLNormal.typography,
             medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography,
-            extraSmall: Typographies.bodyXsNormal.typography
+            small: Typographies.bodySNormal.typography
         ).asContainer
     }
     
     static var text: TypographyConfiguration {
-        TextFieldTypography(
+        TextFieldClearTypography(
+            extraSmall: Typographies.bodyXsNormal.typography,
             large: Typographies.bodyLNormal.typography,
             medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography,
-            extraSmall: Typographies.bodyXsNormal.typography
+            small: Typographies.bodySNormal.typography
         ).asContainer
     }
     
     static var innerTitle: TypographyConfiguration {
-        TextFieldTypography(
-            large: Typographies.bodyXsNormal.typography,
-            medium: Typographies.bodyXsNormal.typography,
-            small: Typographies.bodyXsNormal.typography,
-            extraSmall: nil
+        TextFieldClearTypography(
+            extraSmall: nil,
+            large: nil,
+            medium: nil,
+            small: nil
         ).asContainer
     }
-    
+     
     static var caption: TypographyConfiguration {
-        TextFieldTypography(
+        TextFieldClearTypography(
+            extraSmall: Typographies.bodyXsNormal.typography,
             large: Typographies.bodyXsNormal.typography,
             medium: Typographies.bodyXsNormal.typography,
-            small: Typographies.bodyXsNormal.typography,
-            extraSmall: Typographies.bodyXsNormal.typography
+            small: Typographies.bodyXsNormal.typography
         ).asContainer
     }
 }

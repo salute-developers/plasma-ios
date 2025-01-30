@@ -48,8 +48,8 @@ final class TextAreaClearContextBuilder {
                 chipContainerHorizontalPadding: mergedProps.chipsPadding?.value ?? 0,
                 indicatorOffsets: indiciatorOffsets(from: configuration, sizeVariationKey: sizeVariationKey),
                 indicatorSizes: indicatorSizes(from: configuration, sizeVariationKey: sizeVariationKey),
-                boxPaddingTops: boxPaddingTops(from: configuration, sizeVariationKey: sizeVariationKey),
-                boxPaddingBottoms: boxPaddingBottoms(from: configuration, sizeVariationKey: sizeVariationKey)
+                boxPaddingTops: boxPaddings(props: mergedProps, from: configuration, sizeVariationKey: sizeVariationKey, keyPath: \TextAreaProps.boxPaddingTop),
+                boxPaddingBottoms: boxPaddings(props: mergedProps, from: configuration, sizeVariationKey: sizeVariationKey, keyPath: \TextAreaProps.boxPaddingBottom)
             )
         }
         
@@ -168,22 +168,23 @@ final class TextAreaClearContextBuilder {
         return result
     }
     
-    private func boxPaddingTops(from configuration: TextAreaClearConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: Double]] {
-        return extractIndicatorValues(
-            from: configuration,
-            sizeVariationKey: sizeVariationKey
-        ) { props in
-            return props.boxPaddingTop?.value
+    private func boxPaddings(props: TextAreaClearProps, from configuration: TextAreaClearConfiguration, sizeVariationKey: SizeVariationKey, keyPath: AnyKeyPath) -> [String: Double] {
+        var result = [String: Double]()
+        
+        let defaultValue = (props[keyPath] as? KeyValue<Double>)?.value ?? 0.0
+        let nodes: [TextAreaClearVariationNode] = [.default, .innerLabel, .outerLabel]
+        for node in nodes {
+            let padding: Double
+            if let child = configuration.child(props: configuration.allProps, key: sizeVariationKey, nodes: [node]),
+                let keyValue = child.props[keyPath] as? KeyValue<Double> {
+                padding = keyValue.value ?? 0.0
+            } else {
+                padding = defaultValue
+            }
+            result[node.rawValue] = padding
         }
-    }
-    
-    private func boxPaddingBottoms(from configuration: TextAreaClearConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: Double]] {
-        return extractIndicatorValues(
-            from: configuration,
-            sizeVariationKey: sizeVariationKey
-        ) { props in
-            return props.boxPaddingBottom?.value
-        }
+        
+        return result
     }
 
     private func indiciatorOffsets(from configuration: TextAreaClearConfiguration, sizeVariationKey: SizeVariationKey) -> [String: [String: TextAreaClearSizeConfiguration.Size]] {

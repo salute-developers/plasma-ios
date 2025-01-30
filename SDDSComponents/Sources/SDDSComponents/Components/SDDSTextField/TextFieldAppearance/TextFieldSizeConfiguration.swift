@@ -10,7 +10,6 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var captionTopPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
     var cornerRadius: CGFloat { get }
-    var borderWidth: CGFloat { get }
     var iconPadding: CGFloat { get }
     var iconActionPadding: CGFloat { get }
     var fieldHeight: CGFloat { get }
@@ -35,7 +34,6 @@ public struct ZeroTextFieldSize: TextFieldSizeConfiguration {
     public var captionTopPadding: CGFloat { 0 }
     public var optionalPadding: CGFloat { 0 }
     public var cornerRadius: CGFloat { 0 }
-    public var borderWidth: CGFloat { 0 }
     public var iconPadding: CGFloat { 0 }
     public var iconActionPadding: CGFloat { 0 }
     public var indicatorSize: CGSize { .zero }

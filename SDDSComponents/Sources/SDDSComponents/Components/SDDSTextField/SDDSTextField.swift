@@ -444,7 +444,6 @@ public struct SDDSTextField: View {
     @ViewBuilder
     private var backgroundView: some View {
         RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
-            .strokeBorder(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.borderWidth)
             .background(
                 RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
                     .fill(backgroundColor)

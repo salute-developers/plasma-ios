@@ -5,6 +5,28 @@ enum TextAreaVariationNode: String, Codable {
     case innerLabel = "inner-label"
     case requiredEnd = "required-end"
     case requiredStart = "required-start"
+    case `default` = ""
+}
+
+extension TextAreaProps {
+    subscript(keyPath: AnyKeyPath) -> Any? {
+        get {
+            switch keyPath {
+            case let keyPath as KeyPath<TextAreaProps, KeyValue<Double>?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaProps, KeyValue<String>?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaProps, ColorKeyValue?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaProps, ColorWithAlphaKeyValue?>:
+                return self[keyPath: keyPath]
+            case let keyPath as KeyPath<TextAreaProps, ShapeKeyValue?>:
+                return self[keyPath: keyPath]
+            default:
+                return nil
+            }
+        }
+    }
 }
 
 struct TextAreaProps: Codable {

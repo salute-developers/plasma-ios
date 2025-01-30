@@ -1,6 +1,4 @@
 import SDDSComponents
-import SDDSServTheme
-import SDDSThemeCore
 import Foundation
 import SwiftUI
 
@@ -306,5 +304,9 @@ public enum TextFieldClearSize: String, TextFieldSizeConfiguration {
     
     public var dividerHeight: CGFloat {
         1
+    }
+    
+    public var debugDescription: String {
+        return "TextFieldClearSize"
     }
 }

@@ -7,15 +7,13 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var titleInnerPadding: CGFloat { get }
     var boxLeadingPadding: CGFloat { get }
     var boxTrailingPadding: CGFloat { get }
-    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
-    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat
+    func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement) -> CGFloat
+    func boxPaddingTop(labelPlacement: TextAreaLabelPlacement) -> CGFloat
     var captionTopPadding: CGFloat { get }
     var captionBottomPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
     var cornerRadius: CGFloat { get }
-    var borderWidth: CGFloat { get }
     var iconActionPadding: CGFloat { get }
-    var indicatorSize: CGSize { get }
     var iconActionSize: CGSize { get }
     var chipContainerHorizontalPadding: CGFloat { get }
     var lineWidth: CGFloat { get }
@@ -24,6 +22,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     
     var fieldHeight: CGFloat { get }
     func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGPoint
+    func indicatorSize(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGSize
 }
 
 public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
@@ -36,9 +35,7 @@ public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
     public var captionBottomPadding: CGFloat { 0 }
     public var optionalPadding: CGFloat { 0 }
     public var cornerRadius: CGFloat { 0 }
-    public var borderWidth: CGFloat { 0 }
     public var iconActionPadding: CGFloat { 0 }
-    public var indicatorSize: CGSize { .zero }
     public var iconActionSize: CGSize { .zero }
     public var lineWidth: CGFloat { 0 }
     public var textBeforeLeadingPadding: CGFloat { 0 }
@@ -52,15 +49,19 @@ public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
     public var chipsPadding: CGFloat { 0 }
     public var fieldHeight: CGFloat { 0 }
     
-    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
         return 0
     }
     
-    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGFloat {
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
         return 0
     }
 
     public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGPoint {
+        .zero
+    }
+    
+    public func indicatorSize(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGSize {
         .zero
     }
 

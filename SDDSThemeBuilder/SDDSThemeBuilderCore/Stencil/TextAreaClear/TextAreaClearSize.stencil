@@ -4,7 +4,7 @@ import SDDSThemeCore
 import Foundation
 import SwiftUI
 
-public enum TextAreaClearSize: String, TextAreaClearSizeConfiguration {
+public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
     {%- for sizeKey, sizeVariation in data %}
     case {{ sizeKey }}
     {%- endfor %}
@@ -143,119 +143,39 @@ public enum TextAreaClearSize: String, TextAreaClearSizeConfiguration {
         }
     }
     
-    public func boxPaddingBottom(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGFloat {
-        switch labelPlacement {
-        case .none:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms[sizeKey]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
+    public func boxPaddingBottom(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
+        switch self {
+            {%- for sizeKey, sizeVariation in data %}
+        case .{{ sizeKey }}:
+            switch labelPlacement {
+            case .inner:
+                return {{ sizeVariation.boxPaddingBottoms["inner-label"] | default: 0 }}
+            case .outer:
+                return {{ sizeVariation.boxPaddingBottoms["outer-label"] | default: 0 }}
+            case .none:
+                return {{ sizeVariation.boxPaddingBottoms[""] | default: 0 }}
             }
-        case .inner:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["inner-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
-        case .outer:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["outer-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingBottoms["outer-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
+            {%- endfor %}
         }
     }
     
-    public func boxPaddingTop(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGFloat {
-        switch labelPlacement {
-        case .none:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops[sizeKey]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
+    public func boxPaddingTop(labelPlacement: TextAreaLabelPlacement) -> CGFloat {
+        switch self {
+            {%- for sizeKey, sizeVariation in data %}
+        case .{{ sizeKey }}:
+            switch labelPlacement {
+            case .inner:
+                return {{ sizeVariation.boxPaddingTops["inner-label"] | default: 0 }}
+            case .outer:
+                return {{ sizeVariation.boxPaddingTops["outer-label"] | default: 0 }}
+            case .none:
+                return {{ sizeVariation.boxPaddingTops[""] | default: 0 }}
             }
-        case .inner:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["inner-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["inner-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
-        case .outer:
-            switch requiredPlacement {
-            case .left:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["outer-label"]["required-start"] | default: 0 }}
-                    {%- endfor %}
-                }
-            case .right:
-                switch self {
-                    {%- for sizeKey, sizeVariation in data %}
-                case .{{ sizeKey }}:
-                    return {{ sizeVariation.boxPaddingTops["outer-label"]["required-end"] | default: 0 }}
-                    {%- endfor %}
-                }
-            }
+            {%- endfor %}
         }
     }
     
-    public func indicatorOffset(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGPoint {
+    public func indicatorOffset(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGPoint {
         switch labelPlacement {
         case .none:
             switch requiredPlacement {
@@ -329,7 +249,7 @@ public enum TextAreaClearSize: String, TextAreaClearSizeConfiguration {
         }
     }
         
-    public func indicatorSize(labelPlacement: TextAreaClearLabelPlacement, requiredPlacement: TextAreaClearRequiredPlacement) -> CGSize {
+    public func indicatorSize(labelPlacement: TextAreaLabelPlacement, requiredPlacement: TextAreaRequiredPlacement) -> CGSize {
         switch labelPlacement {
         case .none:
             switch requiredPlacement {
@@ -405,6 +325,10 @@ public enum TextAreaClearSize: String, TextAreaClearSizeConfiguration {
     
     public var lineWidth: CGFloat {
         1
+    }
+    
+    public var debugDescription: String {
+        return "TextAreaClearSize"
     }
         
 }

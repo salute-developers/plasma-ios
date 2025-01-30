@@ -312,6 +312,9 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
     public var dividerHeight: CGFloat {
         1
     }
-        
+       
+    public var debugDescription: String {
+        return "TextFieldSize"
+    }
 
 }
