@@ -9,6 +9,8 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
         .init(
             appearance: appearance
                 .size(TextFieldSize.{{ sizeKey }})
+                .chipAppearance({{ sizeVariation.chipStyle }}.appearance)
+                .chipGroupAppearance({{ sizeVariation.chipGroupStyle }}.appearance)
                 .titleTypography(TextFieldTypography.title)
                 .innerTitleTypography(TextFieldTypography.innerTitle)
                 .textTypography(TextFieldTypography.text)

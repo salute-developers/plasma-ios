@@ -17,6 +17,8 @@ struct TextAreaSizeConfiguration: Codable {
         let captionBottomPadding: Double
         let optionalPadding: Double
         let shape: ShapeKeyValue
+        let chipGroupStyle: String
+        let chipStyle: String
         let iconPadding: Double
         let iconActionPadding: Double
         let fieldHeight: Double

@@ -11,17 +11,14 @@ import SwiftUI
  */
 public struct SDDSChipGroup: View {
     let data: [ChipData]
-    let gap: ChipGroupGap
     let appearance: ChipGroupAppearance
     @Binding var height: CGFloat
 
     public init(
         data: [ChipData],
-        gap: ChipGroupGap,
         appearance: ChipGroupAppearance,
         height: Binding<CGFloat> = .constant(0)) {
         self.data = data
-        self.gap = gap
         self.appearance = appearance
         _height = height
     }
@@ -65,6 +62,10 @@ public struct SDDSChipGroup: View {
     
     private var size: ChipGroupSizeConfiguration {
         return appearance.size
+    }
+    
+    private var gap: ChipGroupGap {
+        return appearance.gap
     }
 
     private var alignment: SwiftUI.Alignment {

@@ -44,7 +44,6 @@ public struct SDDSTextField: View {
     public let divider: Bool
     public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
-    public let chipGroupGap: ChipGroupGap
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
@@ -70,7 +69,6 @@ public struct SDDSTextField: View {
         divider: Bool = true,
         requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
-        chipGroupGap: ChipGroupGap,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -97,7 +95,6 @@ public struct SDDSTextField: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.appearance = appearance
-        self.chipGroupGap = chipGroupGap
         self.layout = layout
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
@@ -228,7 +225,6 @@ public struct SDDSTextField: View {
             HStack(spacing: 0) {
                 SDDSChipGroup(
                     data: chips,
-                    gap: chipGroupGap,
                     appearance: appearance.chipGroupAppearance,
                     height: .constant(appearance.chipAppearance.size.height)
                 )
@@ -701,10 +697,8 @@ public struct SDDSTextField: View {
         switch value {
         case .single:
             return 0
-        case .multiple(_, let chips):
-            guard let chipAppearance = chips.first?.appearance else {
-                return 0
-            }
+        case .multiple:
+            let chipAppearance = appearance.chipAppearance
             return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
         }
     }

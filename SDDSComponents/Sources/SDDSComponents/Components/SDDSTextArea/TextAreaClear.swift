@@ -18,8 +18,6 @@ public struct TextAreaClear: View {
     public let requiredPlacement: TextAreaRequiredPlacement
     public let dynamicHeight: Bool
     public let appearance: TextAreaAppearance
-    public let chipGroupAppearance: ChipGroupAppearance
-    public let chipGroupGap: ChipGroupGap
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
     
@@ -38,8 +36,6 @@ public struct TextAreaClear: View {
         requiredPlacement: TextAreaRequiredPlacement = .left,
         dynamicHeight: Bool = false,
         appearance: TextAreaAppearance,
-        chipGroupAppearance: ChipGroupAppearance,
-        chipGroupGap: ChipGroupGap = .dense,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
     ) {
@@ -57,8 +53,6 @@ public struct TextAreaClear: View {
         self.placeholder = placeholder
         self.dynamicHeight = dynamicHeight
         self.appearance = appearance
-        self.chipGroupAppearance = chipGroupAppearance
-        self.chipGroupGap = chipGroupGap
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
     }
@@ -79,8 +73,6 @@ public struct TextAreaClear: View {
             requiredPlacement: requiredPlacement,
             dynamicHeight: dynamicHeight,
             appearance: appearance,
-            chipGroupAppearance: chipGroupAppearance,
-            chipGroupGap: chipGroupGap,
             layout: .clear,
             accessibility: accessibility,
             iconActionViewProvider: iconActionViewProvider

@@ -4,6 +4,8 @@ public extension TextFieldAppearance {
     func size(_ size: TextFieldSizeConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -44,6 +46,8 @@ public extension TextFieldAppearance {
     func captionTypography(_ captionTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -84,6 +88,8 @@ public extension TextFieldAppearance {
     func innerTitleTypography(_ innerTitleTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -124,6 +130,8 @@ public extension TextFieldAppearance {
     func textAfterTypography(_ textAfterTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -164,6 +172,8 @@ public extension TextFieldAppearance {
     func textBeforeTypography(_ textBeforeTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -204,6 +214,8 @@ public extension TextFieldAppearance {
     func textTypography(_ textTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -244,6 +256,92 @@ public extension TextFieldAppearance {
     func titleTypography(_ titleTypography: TypographyConfiguration) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
+            backgroundColor: self.backgroundColor,
+            backgroundColorFocused: self.backgroundColorFocused,
+            backgroundColorReadOnly: self.backgroundColorReadOnly,
+            borderColor: self.borderColor,
+            captionColor: self.captionColor,
+            captionColorFocused: self.captionColorFocused,
+            captionColorReadOnly: self.captionColorReadOnly,
+            captionTextAlignment: self.captionTextAlignment,
+            captionTypography: self.captionTypography,
+            cursorColor: self.cursorColor,
+            disabledAlpha: self.disabledAlpha,
+            endContentColor: self.endContentColor,
+            inputTextAlignment: self.inputTextAlignment,
+            innerTitleTextAlignment: self.innerTitleTextAlignment,
+            innerTitleTypography: self.innerTitleTypography,
+            lineColor: self.lineColor,
+            lineColorFocused: self.lineColorFocused,
+            optionalTitleColor: self.optionalTitleColor,
+            placeholderColor: self.placeholderColor,
+            placeholderColorFocused: self.placeholderColorFocused,
+            placeholderColorReadOnly: self.placeholderColorReadOnly,
+            requiredIndicatorColor: self.requiredIndicatorColor,
+            startContentColor: self.startContentColor,
+            textAfterColor: self.textAfterColor,
+            textAfterTypography: self.textAfterTypography,
+            textBeforeColor: self.textBeforeColor,
+            textBeforeTypography: self.textBeforeTypography,
+            textColor: self.textColor,
+            textColorFocused: self.textColorFocused,
+            textColorReadOnly: self.textColorReadOnly,
+            textTypography: self.textTypography,
+            titleColor: self.titleColor,
+            titleTextAlignment: self.titleTextAlignment,
+            titleTypography: titleTypography
+        )
+    }
+    
+    func chipAppearance(_ chipAppearance: ChipAppearance) -> TextFieldAppearance {
+        return TextFieldAppearance(
+            size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: chipAppearance,
+            backgroundColor: self.backgroundColor,
+            backgroundColorFocused: self.backgroundColorFocused,
+            backgroundColorReadOnly: self.backgroundColorReadOnly,
+            borderColor: self.borderColor,
+            captionColor: self.captionColor,
+            captionColorFocused: self.captionColorFocused,
+            captionColorReadOnly: self.captionColorReadOnly,
+            captionTextAlignment: self.captionTextAlignment,
+            captionTypography: self.captionTypography,
+            cursorColor: self.cursorColor,
+            disabledAlpha: self.disabledAlpha,
+            endContentColor: self.endContentColor,
+            inputTextAlignment: self.inputTextAlignment,
+            innerTitleTextAlignment: self.innerTitleTextAlignment,
+            innerTitleTypography: self.innerTitleTypography,
+            lineColor: self.lineColor,
+            lineColorFocused: self.lineColorFocused,
+            optionalTitleColor: self.optionalTitleColor,
+            placeholderColor: self.placeholderColor,
+            placeholderColorFocused: self.placeholderColorFocused,
+            placeholderColorReadOnly: self.placeholderColorReadOnly,
+            requiredIndicatorColor: self.requiredIndicatorColor,
+            startContentColor: self.startContentColor,
+            textAfterColor: self.textAfterColor,
+            textAfterTypography: self.textAfterTypography,
+            textBeforeColor: self.textBeforeColor,
+            textBeforeTypography: self.textBeforeTypography,
+            textColor: self.textColor,
+            textColorFocused: self.textColorFocused,
+            textColorReadOnly: self.textColorReadOnly,
+            textTypography: self.textTypography,
+            titleColor: self.titleColor,
+            titleTextAlignment: self.titleTextAlignment,
+            titleTypography: titleTypography
+        )
+    }
+    
+    func chipGroupAppearance(_ chipGroupAppearance: ChipGroupAppearance) -> TextFieldAppearance {
+        return TextFieldAppearance(
+            size: self.size,
+            chipGroupAppearance: chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -284,6 +382,8 @@ public extension TextFieldAppearance {
     func applyColorVariation(variation: TextFieldAppearance) -> TextFieldAppearance {
         return TextFieldAppearance(
             size: self.size,
+            chipGroupAppearance: self.chipGroupAppearance,
+            chipAppearance: self.chipAppearance,
             backgroundColor: variation.backgroundColor,
             backgroundColorFocused: variation.backgroundColorFocused,
             backgroundColorReadOnly: variation.backgroundColorReadOnly,

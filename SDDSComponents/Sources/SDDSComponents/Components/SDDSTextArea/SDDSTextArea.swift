@@ -46,8 +46,6 @@ public struct SDDSTextArea: View {
     public let requiredPlacement: TextAreaRequiredPlacement
     public let dynamicHeight: Bool
     public let appearance: TextAreaAppearance
-    public let chipGroupAppearance: ChipGroupAppearance
-    public let chipGroupGap: ChipGroupGap
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
@@ -73,8 +71,6 @@ public struct SDDSTextArea: View {
         requiredPlacement: TextAreaRequiredPlacement = .left,
         dynamicHeight: Bool = false,
         appearance: TextAreaAppearance,
-        chipGroupAppearance: ChipGroupAppearance,
-        chipGroupGap: ChipGroupGap = .dense,
         layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
@@ -107,8 +103,6 @@ public struct SDDSTextArea: View {
         self.placeholder = placeholder
         self.dynamicHeight = dynamicHeight
         self.appearance = appearance
-        self.chipGroupAppearance = chipGroupAppearance
-        self.chipGroupGap = chipGroupGap
         self.layout = layout
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
@@ -233,13 +227,17 @@ public struct SDDSTextArea: View {
                 }
             }
         case .multiple(_, let chips):
+            let updatedChips: [ChipData] = chips.map { chipData in
+                var chipData = chipData
+                chipData.appearance = self.appearance.chipAppearance
+                return chipData
+            }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
                     ScrollView {
                         SDDSChipGroup(
-                            data: chips,
-                            gap: chipGroupGap,
-                            appearance: chipGroupAppearance,
+                            data: updatedChips,
+                            appearance: appearance.chipGroupAppearance,
                             height: $chipGroupContentHeight
                         )
                         .padding(.trailing, iconActionTrailingPadding)
@@ -724,10 +722,8 @@ public struct SDDSTextArea: View {
         switch value {
         case .single:
             return 0
-        case .multiple(_, let chips):
-            guard let chipAppearance = chips.first?.appearance else {
-                return 0
-            }
+        case .multiple:
+            let chipAppearance = appearance.chipAppearance
             return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
         }
     }

@@ -39,6 +39,8 @@ final class TextAreaClearContextBuilder {
                 captionBottomPadding: mergedProps.helperTextPadding?.value ?? 0,
                 optionalPadding: mergedProps.optionalPadding?.value ?? 0,
                 shape: mergedProps.shape ?? ShapeKeyValue(),
+                chipGroupStyle: ComponentStyleContextBuilder(mergedProps.chipGroupStyle?.value ?? "").context,
+                chipStyle: ComponentStyleContextBuilder(mergedProps.chipStyle?.value ?? "").context,
                 iconPadding: mergedProps.startContentPadding?.value ?? 0,
                 iconActionPadding: mergedProps.endContentPadding?.value ?? 0,
                 fieldHeight: mergedProps.boxMinHeight?.value ?? 0,

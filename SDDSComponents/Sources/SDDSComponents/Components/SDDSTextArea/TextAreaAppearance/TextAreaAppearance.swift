@@ -5,6 +5,8 @@ import SDDSThemeCore
 public struct TextAreaAppearance {
     public let id = UUID()
     public let size: TextAreaSizeConfiguration
+    public let chipAppearance: ChipAppearance
+    public let chipGroupAppearance: ChipGroupAppearance
     public let backgroundColor: ColorToken
     public let backgroundColorFocused: ColorToken
     public let backgroundColorReadOnly: ColorToken
@@ -40,6 +42,8 @@ public struct TextAreaAppearance {
 
     public init(
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
+        chipAppearance: ChipAppearance = ChipAppearance(),
+        chipGroupAppearance: ChipGroupAppearance = ChipGroupAppearance(),
         backgroundColor: ColorToken = .clearColor,
         backgroundColorFocused: ColorToken = .clearColor,
         backgroundColorReadOnly: ColorToken = .clearColor,
@@ -74,6 +78,8 @@ public struct TextAreaAppearance {
         titleTypography: TypographyConfiguration = .default
     ) {
         self.size = size
+        self.chipAppearance = chipAppearance
+        self.chipGroupAppearance = chipGroupAppearance
         self.backgroundColor = backgroundColor
         self.backgroundColorReadOnly = backgroundColorReadOnly
         self.borderColor = borderColor

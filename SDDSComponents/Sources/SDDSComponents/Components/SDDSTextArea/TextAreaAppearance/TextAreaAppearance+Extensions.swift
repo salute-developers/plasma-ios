@@ -4,6 +4,8 @@ public extension TextAreaAppearance {
     func size(_ size: TextAreaSizeConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -42,6 +44,8 @@ public extension TextAreaAppearance {
     func captionTypography(_ captionTypography: TypographyConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -80,6 +84,8 @@ public extension TextAreaAppearance {
     func counterTypography(_ counterTypography: TypographyConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -118,6 +124,8 @@ public extension TextAreaAppearance {
     func textTypography(_ textTypography: TypographyConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -156,6 +164,8 @@ public extension TextAreaAppearance {
     func innerTitleTypography(_ innerTitleTypography: TypographyConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,
@@ -194,6 +204,88 @@ public extension TextAreaAppearance {
     func titleTypography(_ titleTypography: TypographyConfiguration) -> TextAreaAppearance {
         return TextAreaAppearance(
             size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
+            backgroundColor: self.backgroundColor,
+            backgroundColorFocused: self.backgroundColorFocused,
+            backgroundColorReadOnly: self.backgroundColorReadOnly,
+            borderColor: self.borderColor,
+            captionColor: self.captionColor,
+            captionColorFocused: self.captionColorFocused,
+            captionColorReadOnly: self.captionColorReadOnly,
+            captionTypography: self.captionTypography,
+            counterColor: self.counterColor,
+            counterColorReadOnly: self.counterColorReadOnly,
+            counterTypography: self.counterTypography,
+            cursorColor: self.cursorColor,
+            disabledAlpha: self.disabledAlpha,
+            endContentColor: self.endContentColor,
+            innerTitleTextAlignment: self.innerTitleTextAlignment,
+            innerTitleTypography: self.innerTitleTypography,
+            inputTextAlignment: self.inputTextAlignment,
+            lineColor: self.lineColor,
+            lineColorFocused: self.lineColorFocused,
+            optionalTitleColor: self.optionalTitleColor,
+            placeholderColor: self.placeholderColor,
+            placeholderColorFocused: self.placeholderColorFocused,
+            placeholderColorReadOnly: self.placeholderColorReadOnly,
+            requiredIndicatorColor: self.requiredIndicatorColor,
+            startContentColor: self.startContentColor,
+            textColor: self.textColor,
+            textColorFocused: self.textColorFocused,
+            textColorReadOnly: self.textColorReadOnly,
+            textTypography: self.textTypography,
+            titleColor: self.titleColor,
+            titleTextAlignment: self.titleTextAlignment,
+            titleTypography: titleTypography
+        )
+    }
+    
+    func chipAppearance(_ chipAppearance: ChipAppearance) -> TextAreaAppearance {
+        return TextAreaAppearance(
+            size: self.size,
+            chipAppearance: chipAppearance,
+            chipGroupAppearance: self.chipGroupAppearance,
+            backgroundColor: self.backgroundColor,
+            backgroundColorFocused: self.backgroundColorFocused,
+            backgroundColorReadOnly: self.backgroundColorReadOnly,
+            borderColor: self.borderColor,
+            captionColor: self.captionColor,
+            captionColorFocused: self.captionColorFocused,
+            captionColorReadOnly: self.captionColorReadOnly,
+            captionTypography: self.captionTypography,
+            counterColor: self.counterColor,
+            counterColorReadOnly: self.counterColorReadOnly,
+            counterTypography: self.counterTypography,
+            cursorColor: self.cursorColor,
+            disabledAlpha: self.disabledAlpha,
+            endContentColor: self.endContentColor,
+            innerTitleTextAlignment: self.innerTitleTextAlignment,
+            innerTitleTypography: self.innerTitleTypography,
+            inputTextAlignment: self.inputTextAlignment,
+            lineColor: self.lineColor,
+            lineColorFocused: self.lineColorFocused,
+            optionalTitleColor: self.optionalTitleColor,
+            placeholderColor: self.placeholderColor,
+            placeholderColorFocused: self.placeholderColorFocused,
+            placeholderColorReadOnly: self.placeholderColorReadOnly,
+            requiredIndicatorColor: self.requiredIndicatorColor,
+            startContentColor: self.startContentColor,
+            textColor: self.textColor,
+            textColorFocused: self.textColorFocused,
+            textColorReadOnly: self.textColorReadOnly,
+            textTypography: self.textTypography,
+            titleColor: self.titleColor,
+            titleTextAlignment: self.titleTextAlignment,
+            titleTypography: titleTypography
+        )
+    }
+    
+    func chipGroupAppearance(_ chipGroupAppearance: ChipGroupAppearance) -> TextAreaAppearance {
+        return TextAreaAppearance(
+            size: self.size,
+            chipAppearance: self.chipAppearance,
+            chipGroupAppearance: chipGroupAppearance,
             backgroundColor: self.backgroundColor,
             backgroundColorFocused: self.backgroundColorFocused,
             backgroundColorReadOnly: self.backgroundColorReadOnly,

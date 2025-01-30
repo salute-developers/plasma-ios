@@ -9,6 +9,8 @@ public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         .init(
             appearance: appearance
                 .size(TextAreaSize.{{ sizeKey }})
+                .chipAppearance({{ sizeVariation.chipStyle }}.appearance)
+                .chipGroupAppearance({{ sizeVariation.chipGroupStyle }}.appearance)
                 .titleTypography(TextAreaTypography.title)
                 .innerTitleTypography(TextAreaTypography.innerTitle)
                 .textTypography(TextAreaTypography.text)

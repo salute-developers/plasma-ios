@@ -18,7 +18,7 @@ extension String {
         case "xxl":
             return "extraExtraLarge"
         default:
-            return "unknownSize"
+            return ""
         }
     }
 }

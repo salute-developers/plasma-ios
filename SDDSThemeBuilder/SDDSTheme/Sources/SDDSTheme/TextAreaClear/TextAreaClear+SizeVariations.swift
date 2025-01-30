@@ -8,6 +8,8 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
         .init(
             appearance: appearance
                 .size(TextAreaClearSize.extraSmall)
+                .chipAppearance(EmbeddedChip.extraSmall.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaClearTypography.title)
                 .innerTitleTypography(TextAreaClearTypography.innerTitle)
                 .textTypography(TextAreaClearTypography.text)
@@ -19,6 +21,8 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
         .init(
             appearance: appearance
                 .size(TextAreaClearSize.large)
+                .chipAppearance(EmbeddedChip.large.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaClearTypography.title)
                 .innerTitleTypography(TextAreaClearTypography.innerTitle)
                 .textTypography(TextAreaClearTypography.text)
@@ -30,6 +34,8 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
         .init(
             appearance: appearance
                 .size(TextAreaClearSize.medium)
+                .chipAppearance(EmbeddedChip.medium.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaClearTypography.title)
                 .innerTitleTypography(TextAreaClearTypography.innerTitle)
                 .textTypography(TextAreaClearTypography.text)
@@ -41,6 +47,8 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
         .init(
             appearance: appearance
                 .size(TextAreaClearSize.small)
+                .chipAppearance(EmbeddedChip.small.secondary.appearance)
+                .chipGroupAppearance(SDDSChipGroup.dense.appearance)
                 .titleTypography(TextAreaClearTypography.title)
                 .innerTitleTypography(TextAreaClearTypography.innerTitle)
                 .textTypography(TextAreaClearTypography.text)

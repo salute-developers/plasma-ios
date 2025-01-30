@@ -36,7 +36,6 @@ struct TextFieldClearPreview: PreviewProvider {
                 required: false,
                 requiredPlacement: .right,
                 appearance: TextField.default.large.appearance,
-                chipGroupAppearance: SDDSChipGroup.large.appearance,
                 iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
@@ -54,7 +53,6 @@ struct TextFieldClearPreview: PreviewProvider {
                 required: true,
                 requiredPlacement: .left,
                 appearance: TextField.default.large.appearance,
-                chipGroupAppearance: SDDSChipGroup.large.appearance,
                 iconViewProvider: nil,
                 iconActionViewProvider: ViewProvider(iconActionView)
             )
