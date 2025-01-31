@@ -42,4 +42,12 @@ public extension TextAreaClear {
         )
     }
     {%- endfor %}
+    
+    static var all: [ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>] {
+        [
+            {%- for appearanceKey, appearanceVariation in data %}
+            TextAreaClear.{{ appearanceKey | escapeSwiftKeyword }}{% if not forloop.last %},{% endif %}
+            {%- endfor %}
+        ]
+    }
 }

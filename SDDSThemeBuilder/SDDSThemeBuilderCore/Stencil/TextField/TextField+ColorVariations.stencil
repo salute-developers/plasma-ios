@@ -16,7 +16,7 @@ public extension SDDSComponents.TextField {
     {%- for appearanceKey, appearanceVariation in data %}
     static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
         .init(
-            name: "{{ key }}",
+            name: "{{ appearanceKey }}",
             appearance: .init(
                 backgroundColor: .{{ appearanceVariation.backgroundColor | camelCase }},
                 backgroundColorFocused: .{{ appearanceVariation.backgroundColorFocused | camelCase }},
@@ -44,4 +44,12 @@ public extension SDDSComponents.TextField {
         )
     }
     {%- endfor %}
+    
+    static var all: [ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance>] {
+        [
+            {%- for appearanceKey, appearanceVariation in data %}
+            SDDSComponents.TextField.{{ appearanceKey | escapeSwiftKeyword }}{% if not forloop.last %},{% endif %}
+            {%- endfor %}
+        ]
+    }
 }

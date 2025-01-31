@@ -16,7 +16,7 @@ public extension TextFieldClear {
     {%- for appearanceKey, appearanceVariation in data %}
     static var {{ appearanceKey | escapeSwiftKeyword }}: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         .init(
-            name: "{{ key }}",
+            name: "{{ appearanceKey }}",
             appearance: .init(
                 captionColor: .{{ appearanceVariation.captionColor | camelCase }},
                 captionColorFocused: .{{ appearanceVariation.captionColorFocused | camelCase }},
@@ -43,4 +43,12 @@ public extension TextFieldClear {
         )
     }
     {%- endfor %}
+    
+    static var all: [ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance>] {
+        [
+            {%- for appearanceKey, appearanceVariation in data %}
+            TextFieldClear.{{ appearanceKey | escapeSwiftKeyword }}{% if not forloop.last %},{% endif %}
+            {%- endfor %}
+        ]
+    }
 }

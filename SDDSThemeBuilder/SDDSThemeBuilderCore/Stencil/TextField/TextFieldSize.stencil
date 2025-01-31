@@ -4,7 +4,7 @@ import SDDSThemeCore
 import Foundation
 import SwiftUI
 
-public enum TextFieldSize: String, TextFieldSizeConfiguration {
+public enum TextFieldSize: String, CaseIterable, TextFieldSizeConfiguration {
     {%- for sizeKey, sizeVariation in data %}
     case {{ sizeKey }}
     {%- endfor %}

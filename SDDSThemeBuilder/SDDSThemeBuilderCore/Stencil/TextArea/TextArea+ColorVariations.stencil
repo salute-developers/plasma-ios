@@ -43,4 +43,12 @@ public extension TextArea {
         )
     }
     {%- endfor %}
+    
+    static var all: [ComponentAppearanceVariation<TextArea, TextAreaAppearance>] {
+        [
+            {%- for appearanceKey, appearanceVariation in data %}
+            TextArea.{{ appearanceKey | escapeSwiftKeyword }}{% if not forloop.last %},{% endif %}
+            {%- endfor %}
+        ]
+    }
 }

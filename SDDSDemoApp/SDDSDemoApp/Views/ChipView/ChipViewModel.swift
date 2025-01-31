@@ -1,18 +1,46 @@
 import SwiftUI
-
 import Combine
 import SDDSComponents
 import SDDSServTheme
+import PlasmaB2CTheme
+
+enum Theme {
+    case sddsServ
+    case plasmaB2C
+}
+
+extension Theme {
+    var chips: [AppearanceVariation<ChipAppearance>] {
+        switch self {
+        case .sddsServ:
+            return SDDSServTheme.SDDSChip.all
+        case .plasmaB2C:
+            return PlasmaB2CTheme.SDDSChip.all
+        }
+    }
+    
+    var chipSizes: [ChipSizeConfiguration] {
+        switch self {
+        case .sddsServ:
+            return SDDSServTheme.SDDSChipSize.allCases
+        case .plasmaB2C:
+            return PlasmaB2CTheme.SDDSChipSize.allCases
+        }
+    }
+}
+
+let variations = Theme.sddsServ.chips // вернет чипы всех цветов для темы sddsServ
+let sizes = Theme.sddsServ.chipSizes // вернет всевозможные размеры чипов для темы sddsServ
 
 final class ChipViewModel: ObservableObject {
     @Published var title: String = "Chip Title"
     @Published var isEnabled: Bool = true
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    @Published var size: SDDSChipSize = .medium
+    @Published var size: SDDSServTheme.SDDSChipSize = .medium
     @Published var shapeStyle: ComponentShapeStyle = .cornered
-    @Published var appearance: ChipAppearance = SDDSChip.accent.appearance
-    @Published var variationName: String = SDDSChip.accent.name
+    @Published var appearance: ChipAppearance = SDDSServTheme.SDDSChip.accent.appearance
+    @Published var variationName: String = SDDSServTheme.SDDSChip.accent.name
     @Published var iconImage: Image? = nil
     @Published var buttonImage: Image? = nil
     
@@ -66,8 +94,8 @@ final class ChipViewModel: ObservableObject {
 
 // MARK: - SDDSChipSize Extensions
 
-extension SDDSChipSize: Hashable, CaseIterable {
-    public static var allCases: [SDDSChipSize] {
+extension SDDSServTheme.SDDSChipSize: Hashable, CaseIterable {
+    public static var allCases: [SDDSServTheme.SDDSChipSize] {
         [.large, .medium, .small, .extraSmall]
     }
 
@@ -85,15 +113,16 @@ extension SDDSChipSize: Hashable, CaseIterable {
     }
     
     public var shapeToken: ShapeToken {
-        switch self {
-        case .large:
-            return ShapeToken.roundL
-        case .medium:
-            return ShapeToken.roundM
-        case .small:
-            return ShapeToken.roundS
-        case .extraSmall:
-            return ShapeToken.roundXs
-        }
+        fatalError()
+//        switch self {
+//        case .large:
+//            return SDDSServTheme.ShapeToken.roundL
+//        case .medium:
+//            return SDDSServTheme.ShapeToken.roundM
+//        case .small:
+//            return SDDSServTheme.ShapeToken.roundS
+//        case .extraSmall:
+//            return SDDSServTheme.ShapeToken.roundXs
+//        }
     }
 }
