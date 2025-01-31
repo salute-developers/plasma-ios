@@ -4,7 +4,7 @@ import SDDSThemeCore
 import Foundation
 import SwiftUI
 
-public enum TextAreaClearSize: String, TextAreaSizeConfiguration {
+public enum TextAreaClearSize: String, CaseIterable, TextAreaSizeConfiguration {
     case extraSmall
     case large
     case medium

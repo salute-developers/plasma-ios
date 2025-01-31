@@ -28,7 +28,7 @@ public extension ComponentAppearanceVariation<SDDSComponents.TextField, TextFiel
 public extension SDDSComponents.TextField {
     static var `default`: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "default",
             appearance: .init(
                 backgroundColor: .surfaceDefaultTransparentPrimary,
                 backgroundColorFocused: .surfaceDefaultTransparentSecondary,
@@ -57,7 +57,7 @@ public extension SDDSComponents.TextField {
     }
     static var error: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "error",
             appearance: .init(
                 backgroundColor: .surfaceDefaultTransparentNegative,
                 backgroundColorFocused: .surfaceDefaultTransparentSecondary,
@@ -86,7 +86,7 @@ public extension SDDSComponents.TextField {
     }
     static var success: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "success",
             appearance: .init(
                 backgroundColor: .surfaceDefaultTransparentPositive,
                 backgroundColorFocused: .surfaceDefaultTransparentSecondary,
@@ -115,7 +115,7 @@ public extension SDDSComponents.TextField {
     }
     static var warning: ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "warning",
             appearance: .init(
                 backgroundColor: .surfaceDefaultTransparentWarning,
                 backgroundColorFocused: .surfaceDefaultTransparentSecondary,
@@ -142,4 +142,14 @@ public extension SDDSComponents.TextField {
             )
         )
     }
+    
+    static var all: [ComponentAppearanceVariation<SDDSComponents.TextField, TextFieldAppearance>] {
+        [
+            TextField.default,
+            TextField.success,
+            TextField.warning,
+            TextField.error
+        ]
+    }
+    
 }

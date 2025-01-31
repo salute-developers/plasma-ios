@@ -4,7 +4,7 @@ import SDDSThemeCore
 import Foundation
 import SwiftUI
 
-public enum TextFieldSize: String, TextFieldSizeConfiguration {
+public enum TextFieldSize: String, CaseIterable, TextFieldSizeConfiguration {
     case extraSmall
     case large
     case medium
@@ -535,7 +535,7 @@ public enum TextFieldSize: String, TextFieldSizeConfiguration {
     }
        
     public var debugDescription: String {
-        return "TextFieldSize"
+        return String(describing: "TextFieldSize.\(self.rawValue)")
     }
 
 }

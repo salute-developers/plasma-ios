@@ -2,7 +2,7 @@ import SDDSComponents
 import Foundation
 import SwiftUI
 
-public enum TextFieldClearSize: String, TextFieldSizeConfiguration {
+public enum TextFieldClearSize: String, CaseIterable, TextFieldSizeConfiguration {
     case extraSmall
     case large
     case medium

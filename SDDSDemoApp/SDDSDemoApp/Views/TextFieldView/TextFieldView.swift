@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
 struct TextFieldView: View {
@@ -24,12 +24,10 @@ struct TextFieldView: View {
                     textAfter: viewModel.textAfter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    style: viewModel.style,
                     labelPlacement: viewModel.labelPlacement,
                     required: viewModel.required,
                     requiredPlacement: viewModel.requiredPlacement,
-                    appearance: viewModel.appearance,
-                    size: viewModel.size,
+                    appearance: viewModel.appearance.size(viewModel.size),
                     layout: viewModel.layout,
                     iconViewProvider: iconView,
                     iconActionViewProvider: iconActionView
@@ -37,6 +35,18 @@ struct TextFieldView: View {
             }
 
             Section {
+                Picker("Size", selection: $viewModel.sizeName) {
+                    ForEach(viewModel.allSizeNames, id: \.self) { sizeName in
+                        Text(sizeName).tag(viewModel.sizeName)
+                    }
+                }
+
+                Picker("Appearance", selection: $viewModel.appearance) {
+                    ForEach(viewModel.allTextFieldAppearance, id: \.self) { variation in
+                        Text(variation.name).tag(variation.name)
+                    }
+                }
+                
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -60,12 +70,6 @@ struct TextFieldView: View {
                 Toggle("Icon", isOn: $viewModel.iconViewEnabled)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
 
-                Picker("Style", selection: $viewModel.style) {
-                    ForEach(SDDSComponents.TextFieldStyle.allCases, id: \.self) { style in
-                        Text(style.rawValue.capitalized).tag(style)
-                    }
-                }
-
                 Picker("Label Placement", selection: $viewModel.labelPlacement) {
                     ForEach(TextFieldLabelPlacement.allCases, id: \.self) { placement in
                         Text(placement.rawValue.capitalized).tag(placement)
@@ -83,19 +87,7 @@ struct TextFieldView: View {
                         Text(layout.rawValue.capitalized).tag(layout)
                     }
                 }
-
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSTextFieldSize.allCases, id: \.self) { size in
-                        Text(size.rawValue).tag(size.rawValue)
-                    }
-                }
-
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(TextFieldAppearance.allCases, id: \.self) { appearance in
-                        Text(appearance.name).tag(appearance)
-                    }
-                }
-
+                
                 Button("Add Chip") {
                     viewModel.addChip()
                 }

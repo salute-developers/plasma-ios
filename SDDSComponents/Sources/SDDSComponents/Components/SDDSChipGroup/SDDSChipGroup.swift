@@ -50,9 +50,6 @@ public struct SDDSChipGroup: View {
                 self.height = calculateTotalHeight(maxWidth: maxWidth, data: value)
             }
         }
-        .padding(.leading, insets.leading)
-        .padding(.top, insets.top)
-        .padding(.bottom, insets.bottom)
         .frame(height: height)
     }
     

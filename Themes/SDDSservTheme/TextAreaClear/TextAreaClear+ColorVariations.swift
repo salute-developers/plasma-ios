@@ -134,4 +134,13 @@ public extension TextAreaClear {
             )
         )
     }
+    
+    static var all: [ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>] {
+        [
+            TextAreaClear.default,
+            TextAreaClear.success,
+            TextAreaClear.warning,
+            TextAreaClear.error
+        ]
+    }
 }

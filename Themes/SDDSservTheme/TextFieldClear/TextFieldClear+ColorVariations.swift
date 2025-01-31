@@ -28,7 +28,7 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
 public extension TextFieldClear {
     static var `default`: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "default",
             appearance: .init(
                 captionColor: .textDefaultSecondary,
                 captionColorFocused: .textDefaultAccent,
@@ -56,7 +56,7 @@ public extension TextFieldClear {
     }
     static var error: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "error",
             appearance: .init(
                 captionColor: .textDefaultNegative,
                 captionColorFocused: .textDefaultAccent,
@@ -84,7 +84,7 @@ public extension TextFieldClear {
     }
     static var success: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "success",
             appearance: .init(
                 captionColor: .textDefaultPositive,
                 captionColorFocused: .textDefaultAccent,
@@ -112,7 +112,7 @@ public extension TextFieldClear {
     }
     static var warning: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
         .init(
-            name: "",
+            name: "warning",
             appearance: .init(
                 captionColor: .textDefaultWarning,
                 captionColorFocused: .textDefaultAccent,
@@ -137,5 +137,14 @@ public extension TextFieldClear {
                 titleColor: .textDefaultWarning
             )
         )
+    }
+    
+    static var all: [ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance>] {
+        [
+            TextFieldClear.default,
+            TextFieldClear.success,
+            TextFieldClear.warning,
+            TextFieldClear.error
+        ]
     }
 }

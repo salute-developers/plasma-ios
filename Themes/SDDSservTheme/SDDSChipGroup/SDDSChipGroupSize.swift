@@ -2,25 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum SDDSChipGroupSize: ChipGroupSizeConfiguration, Hashable {
-    case large
-    case medium
-    case small
-    case extraSmall
-    
-    public var debugDescription: String {
-        switch self {
-        case .large:
-            return "large"
-        case .medium:
-            return "medium"
-        case .small:
-            return "small"
-        case .extraSmall:
-            return "extraSmall"
-        }
-    }
-    
+public struct SDDSChipGroupSize: ChipGroupSizeConfiguration, Hashable {
     public func insets(for gap: ChipGroupGap) -> EdgeInsets {
         switch gap {
         case .dense:
@@ -37,8 +19,14 @@ public enum SDDSChipGroupSize: ChipGroupSizeConfiguration, Hashable {
     public var alignment: ChipGroupAlignment {
         return .left
     }
+    
+    public init() {}
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(alignment)
+    }
+    
+    public var debugDescription: String {
+        "SDDSChipGroupSize"
     }
 }

@@ -2,14 +2,14 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum EmbeddedChipSize: ChipSizeConfiguration {
+public enum EmbeddedChipSize: String, ChipSizeConfiguration {
     case large
     case medium
     case small
     case extraSmall
     
     public var debugDescription: String {
-        String(reflecting: self)
+        String(reflecting: self.rawValue)
     }
     
     public var iconImageSize: CGSize? {

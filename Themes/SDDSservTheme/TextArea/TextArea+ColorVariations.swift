@@ -138,4 +138,13 @@ public extension TextArea {
             )
         )
     }
+    
+    static var all: [ComponentAppearanceVariation<TextArea, TextAreaAppearance>] {
+        [
+            TextArea.default,
+            TextArea.success,
+            TextArea.warning,
+            TextArea.error
+        ]
+    }
 }
