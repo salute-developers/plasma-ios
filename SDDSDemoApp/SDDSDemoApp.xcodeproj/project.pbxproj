@@ -19,6 +19,8 @@
 		6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987446A2D1C3B6400559ABA /* CounterViewModel.swift */; };
 		698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744732D1C6EB800559ABA /* SegmentItemView.swift */; };
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
+		699101502D55E75A002C1135 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991014F2D55E74C002C1135 /* CellView.swift */; };
+		699101522D55E810002C1135 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699101512D55E80A002C1135 /* CellViewModel.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
@@ -100,6 +102,8 @@
 		6987446A2D1C3B6400559ABA /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		698744732D1C6EB800559ABA /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
+		6991014F2D55E74C002C1135 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		699101512D55E80A002C1135 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -276,6 +280,15 @@
 			path = SegmentItemView;
 			sourceTree = "<group>";
 		};
+		6991014E2D55E741002C1135 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				6991014F2D55E74C002C1135 /* CellView.swift */,
+				699101512D55E80A002C1135 /* CellViewModel.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		811C684B2CC8023600480F89 /* TextAreaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +310,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6991014E2D55E741002C1135 /* CellView */,
 				690780FB2D3EBA4100CED628 /* SegmentView */,
 				698744722D1C6E9C00559ABA /* SegmentItemView */,
 				698744682D1C38A200559ABA /* CounterView */,
@@ -653,6 +667,7 @@
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
+				699101502D55E75A002C1135 /* CellView.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
@@ -675,6 +690,7 @@
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
 				816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */,
+				699101522D55E810002C1135 /* CellViewModel.swift in Sources */,
 				698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

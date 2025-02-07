@@ -25,6 +25,11 @@
 		698744612D1C367700559ABA /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744582D1C367700559ABA /* CounterSize.swift */; };
 		698744642D1C367700559ABA /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744562D1C367700559ABA /* CounterAppearance.swift */; };
 		698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744652D1C368E00559ABA /* SDDSSegmentItem.swift */; };
+		6991014A2D55E35C002C1135 /* SDDSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699101492D55E358002C1135 /* SDDSCell.swift */; };
+		6991014D2D55E6CE002C1135 /* SDDSCellPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991014C2D55E6C3002C1135 /* SDDSCellPreview.swift */; };
+		699101562D563424002C1135 /* CellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699101552D56341D002C1135 /* CellAppearance.swift */; };
+		699101582D563479002C1135 /* CellSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699101572D563471002C1135 /* CellSizeConfiguration.swift */; };
+		6991015E2D564A9C002C1135 /* CellAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991015D2D564A4E002C1135 /* CellAppearance+Extensions.swift */; };
 		69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */; };
 		69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */; };
 		69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */; };
@@ -202,6 +207,11 @@
 		6987445A2D1C367700559ABA /* CounterAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		6987445D2D1C367700559ABA /* SDDSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounter.swift; sourceTree = "<group>"; };
 		698744652D1C368E00559ABA /* SDDSSegmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItem.swift; sourceTree = "<group>"; };
+		699101492D55E358002C1135 /* SDDSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCell.swift; sourceTree = "<group>"; };
+		6991014C2D55E6C3002C1135 /* SDDSCellPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCellPreview.swift; sourceTree = "<group>"; };
+		699101552D56341D002C1135 /* CellAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAppearance.swift; sourceTree = "<group>"; };
+		699101572D563471002C1135 /* CellSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSizeConfiguration.swift; sourceTree = "<group>"; };
+		6991015D2D564A4E002C1135 /* CellAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutMode.swift; sourceTree = "<group>"; };
 		69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculator.swift; sourceTree = "<group>"; };
 		69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculatorImpl.swift; sourceTree = "<group>"; };
@@ -469,6 +479,25 @@
 				690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */,
 			);
 			path = SDDSSegmentItem;
+			sourceTree = "<group>";
+		};
+		699101462D55E328002C1135 /* SDDSCell */ = {
+			isa = PBXGroup;
+			children = (
+				6991015D2D564A4E002C1135 /* CellAppearance+Extensions.swift */,
+				699101572D563471002C1135 /* CellSizeConfiguration.swift */,
+				699101552D56341D002C1135 /* CellAppearance.swift */,
+				699101492D55E358002C1135 /* SDDSCell.swift */,
+			);
+			path = SDDSCell;
+			sourceTree = "<group>";
+		};
+		6991014B2D55E6BA002C1135 /* SDDSCell */ = {
+			isa = PBXGroup;
+			children = (
+				6991014C2D55E6C3002C1135 /* SDDSCellPreview.swift */,
+			);
+			path = SDDSCell;
 			sourceTree = "<group>";
 		};
 		69F967B12D4CC9EA00C0B50F /* SDDSSegment */ = {
@@ -749,6 +778,7 @@
 		817AE4DC2C99925900F427DE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6991014B2D55E6BA002C1135 /* SDDSCell */,
 				69F967B92D4E6E9C00C0B50F /* SDDSCounter */,
 				69F967B12D4CC9EA00C0B50F /* SDDSSegment */,
 				81B23F562D4BA0E80042A657 /* SDDSSegmentItem */,
@@ -855,6 +885,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				699101462D55E328002C1135 /* SDDSCell */,
 				690780F62D3EB92300CED628 /* SDDSSegment */,
 				698744662D1C368E00559ABA /* SDDSSegmentItem */,
 				6987445E2D1C367700559ABA /* SDDSCounter */,
@@ -1361,6 +1392,7 @@
 				69F967B32D4CC9FC00C0B50F /* SDDSSegmentPreview.swift in Sources */,
 				811D2E252D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift in Sources */,
 				812DB7702D57B50A00D3F4A3 /* TextAreaPreview.swift in Sources */,
+				6991014D2D55E6CE002C1135 /* SDDSCellPreview.swift in Sources */,
 				81733A082D03633A0092608A /* SDDSRadioboxPreview.swift in Sources */,
 				811D2E2B2D10A7B9001C0F48 /* SDDSRadioboxGroup+Preview.swift in Sources */,
 				812DB7712D57B50A00D3F4A3 /* TextAreaClearPreview.swift in Sources */,
@@ -1410,6 +1442,7 @@
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
+				699101582D563479002C1135 /* CellSizeConfiguration.swift in Sources */,
 				816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */,
@@ -1478,6 +1511,8 @@
 				81F7531E2CF46793000156D9 /* ButtonAlignment.swift in Sources */,
 				81733A0D2D0367BD0092608A /* ProgressBarAppearance+Extensions.swift in Sources */,
 				812DB7562D57B44100D3F4A3 /* TextFieldAccessibility.swift in Sources */,
+				6991015E2D564A9C002C1135 /* CellAppearance+Extensions.swift in Sources */,
+
 				81F7532E2CF4689C000156D9 /* ButtonAccessibility.swift in Sources */,
 				81685C2B2CFF898D00278446 /* SwitchAppearance+Extensions.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
@@ -1507,12 +1542,15 @@
 				812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */,
 				81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */,
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
+				8102BA302CBE9B3300C589D3 /* TextAreaAccessibility.swift in Sources */,
+				699101562D563424002C1135 /* CellAppearance.swift in Sources */,
 				81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */,
 				81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 				69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
 				812DB7612D57B49F00D3F4A3 /* ChipGroupSizeConfiguration.swift in Sources */,
+				6991014A2D55E35C002C1135 /* SDDSCell.swift in Sources */,
 				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
