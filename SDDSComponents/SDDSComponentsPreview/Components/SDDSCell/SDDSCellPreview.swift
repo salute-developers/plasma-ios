@@ -4,6 +4,18 @@ import SDDSComponents
 import SDDSServTheme
 
 struct SDDSCellPreview: PreviewProvider {
+    static var iconButton: IconButton {
+        IconButton(
+            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+            isDisabled: false,
+            isLoading: false,
+            spinnerImage: Image.image("spinner"),
+            appearance: IconButton.large.accent.appearance,
+            layoutMode: .fixedWidth(.packed),
+            action: {}
+        )
+    }
+    
     static var avatar: SDDSAvatar {
         SDDSAvatar(
             text: "",
@@ -22,6 +34,10 @@ struct SDDSCellPreview: PreviewProvider {
                 label: "Label",
                 title: "Title",
                 subtitle: "Subtitle"
+            ),
+            rightContent: CellContentRight(
+                disclosureEnabled: false,
+                view: ViewProvider(iconButton)
             )
         )
         .previewLayout(PreviewLayout.sizeThatFits)
