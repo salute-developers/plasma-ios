@@ -18,12 +18,14 @@
 		695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */; };
 		695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F438C2D412A9D00FF936B /* SegmentAppearance.swift */; };
 		695F43902D412A9D00FF936B /* Segment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F438B2D412A9D00FF936B /* Segment+Extensions.swift */; };
-		6975721F2D59FC2800F1B904 /* CellAddittionalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975721E2D59FC1800F1B904 /* CellAddittionalViews.swift */; };
+		6975721F2D59FC2800F1B904 /* CellAdditionalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975721E2D59FC1800F1B904 /* CellAdditionalViews.swift */; };
 		697572212D59FED100F1B904 /* CellCustomViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697572202D59FEC300F1B904 /* CellCustomViewProvider.swift */; };
 		697572232D5A006200F1B904 /* CellContentLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697572222D5A005300F1B904 /* CellContentLeft.swift */; };
 		697572252D5A008B00F1B904 /* CellContentCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697572242D5A008000F1B904 /* CellContentCenter.swift */; };
 		697572272D5A00B800F1B904 /* CellContentRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697572262D5A00B100F1B904 /* CellContentRight.swift */; };
 		697572292D5A010200F1B904 /* CellContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697572282D5A00F600F1B904 /* CellContentConfiguration.swift */; };
+		6975722E2D5A05CA00F1B904 /* Disclosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975722D2D5A05C400F1B904 /* Disclosure.swift */; };
+		697572302D5A1CDE00F1B904 /* CellContentAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975722F2D5A1CD700F1B904 /* CellContentAlignment.swift */; };
 		697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */; };
 		697737852D2EB8030077D1A4 /* View+ErrorString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697737842D2EB7F80077D1A4 /* View+ErrorString.swift */; };
 		6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987445D2D1C367700559ABA /* SDDSCounter.swift */; };
@@ -206,12 +208,14 @@
 		695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+Equatable.swift"; sourceTree = "<group>"; };
 		695F438B2D412A9D00FF936B /* Segment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+Extensions.swift"; sourceTree = "<group>"; };
 		695F438C2D412A9D00FF936B /* SegmentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAppearance.swift; sourceTree = "<group>"; };
-		6975721E2D59FC1800F1B904 /* CellAddittionalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAddittionalViews.swift; sourceTree = "<group>"; };
+		6975721E2D59FC1800F1B904 /* CellAdditionalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAdditionalViews.swift; sourceTree = "<group>"; };
 		697572202D59FEC300F1B904 /* CellCustomViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCustomViewProvider.swift; sourceTree = "<group>"; };
 		697572222D5A005300F1B904 /* CellContentLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentLeft.swift; sourceTree = "<group>"; };
 		697572242D5A008000F1B904 /* CellContentCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentCenter.swift; sourceTree = "<group>"; };
 		697572262D5A00B100F1B904 /* CellContentRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentRight.swift; sourceTree = "<group>"; };
 		697572282D5A00F600F1B904 /* CellContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentConfiguration.swift; sourceTree = "<group>"; };
+		6975722D2D5A05C400F1B904 /* Disclosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclosure.swift; sourceTree = "<group>"; };
+		6975722F2D5A1CD700F1B904 /* CellContentAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentAlignment.swift; sourceTree = "<group>"; };
 		697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Variation.swift"; sourceTree = "<group>"; };
 		697737842D2EB7F80077D1A4 /* View+ErrorString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ErrorString.swift"; sourceTree = "<group>"; };
 		698744562D1C367700559ABA /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
@@ -507,12 +511,14 @@
 		699101462D55E328002C1135 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
+				6975722F2D5A1CD700F1B904 /* CellContentAlignment.swift */,
 				6975722A2D5A02C700F1B904 /* SDDSCellContent */,
 				697572202D59FEC300F1B904 /* CellCustomViewProvider.swift */,
 				6991015D2D564A4E002C1135 /* CellAppearance+Extensions.swift */,
 				699101572D563471002C1135 /* CellSizeConfiguration.swift */,
 				699101552D56341D002C1135 /* CellAppearance.swift */,
 				699101492D55E358002C1135 /* SDDSCell.swift */,
+				6975722D2D5A05C400F1B904 /* Disclosure.swift */,
 			);
 			path = SDDSCell;
 			sourceTree = "<group>";
@@ -520,7 +526,7 @@
 		6991014B2D55E6BA002C1135 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
-				6975721E2D59FC1800F1B904 /* CellAddittionalViews.swift */,
+				6975721E2D59FC1800F1B904 /* CellAdditionalViews.swift */,
 				6991014C2D55E6C3002C1135 /* SDDSCellPreview.swift */,
 			);
 			path = SDDSCell;
@@ -687,8 +693,8 @@
 			children = (
 				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
 				81F752E12CECD40A000156D9 /* BasicButton.swift */,
-				81A901522CF6EAA800992B04 /* LinkButton.swift */,
 				81F752E32CECD4B1000156D9 /* IconButton.swift */,
+				81A901522CF6EAA800992B04 /* LinkButton.swift */,
 				81F753412CF502DE000156D9 /* Generated */,
 				81F753332CF4F687000156D9 /* Templates */,
 				81F7532F2CF469AC000156D9 /* ButtonAppearance */,
@@ -1424,7 +1430,7 @@
 				812DB7712D57B50A00D3F4A3 /* TextAreaClearPreview.swift in Sources */,
 				811D2E282D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift in Sources */,
 				81733A2F2D0731420092608A /* SDDSAvatarPreview.swift in Sources */,
-				6975721F2D59FC2800F1B904 /* CellAddittionalViews.swift in Sources */,
+				6975721F2D59FC2800F1B904 /* CellAdditionalViews.swift in Sources */,
 				81B23F582D4BA1100042A657 /* SDDSSegmentItemPreview.swift in Sources */,
 				81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */,
 				81733A2D2D0730A10092608A /* SDDSProgressBarPreview.swift in Sources */,
@@ -1541,6 +1547,7 @@
 				812DB73F2D57B43900D3F4A3 /* TextAreaAccessibility.swift in Sources */,
 				811DE1542C50098D000DD354 /* SDDSChip.swift in Sources */,
 				8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */,
+				6975722E2D5A05CA00F1B904 /* Disclosure.swift in Sources */,
 				81F7531E2CF46793000156D9 /* ButtonAlignment.swift in Sources */,
 				81733A0D2D0367BD0092608A /* ProgressBarAppearance+Extensions.swift in Sources */,
 				812DB7562D57B44100D3F4A3 /* TextFieldAccessibility.swift in Sources */,
@@ -1563,6 +1570,7 @@
 				817339E02D033D940092608A /* ChipSizeConfiguration.swift in Sources */,
 				695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */,
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
+				697572302D5A1CDE00F1B904 /* CellContentAlignment.swift in Sources */,
 				81733A2B2D072FB70092608A /* AvatarAppearance+Extensions.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,

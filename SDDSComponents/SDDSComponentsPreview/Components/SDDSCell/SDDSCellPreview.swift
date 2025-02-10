@@ -6,6 +6,33 @@ import SDDSIcons
 
 struct SDDSCellPreview: PreviewProvider {
     static var previews: some View {
+        
+        SDDSCell(
+            leftContent: CellContentLeft(
+                data: [
+                    avatar
+                ]),
+            centerContent: CellContentCenter(
+                label: "Label",
+                title: "Title",
+                subtitle: "Subtitle"
+            ),
+            rightContent: CellContentRight(
+                data: [
+                    avatar
+                ],
+                disclosure: .default(DefaultDisclosure(
+                    text: "Disclosure",
+                    icon: Image("BuildingsOutline16")
+                                
+                )
+            )
+        ),
+        alignment: .center
+        )
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Cell with disclosure")
+        
         SDDSCell(
             leftContent: CellContentLeft(
                 data: [
@@ -13,19 +40,20 @@ struct SDDSCellPreview: PreviewProvider {
                     iconButton,
                     text
                 ]),
-            
             centerContent: CellContentCenter(
                 label: "Label",
                 title: "Title",
                 subtitle: "Subtitle"
-            )
-            //
-            //            rightContent: CellContentRight(
-            //                disclosureEnabled: true,
-            //                buttonIcon: iconButton
-            //            )
+            ),
+            rightContent: CellContentRight(
+                data: [
+                    avatar
+                ],
+                disclosure: nil
+            ),
+            alignment: .center
         )
         .previewLayout(PreviewLayout.sizeThatFits)
-        .previewDisplayName("Default")
+        .previewDisplayName("Cell without disclosure")
     }
 }
