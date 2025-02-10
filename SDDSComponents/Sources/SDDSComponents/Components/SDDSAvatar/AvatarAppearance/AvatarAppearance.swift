@@ -17,13 +17,13 @@ public struct AvatarAppearance: EnvironmentKey, Hashable {
     public static let defaultValue: Self = .init()
     
     let id = UUID()
-    public let size: AvatarSizeConfiguration
-    public let textFillStyle: FillStyle
-    public let backgroundFillStyle: FillStyle
-    public let backgroundOpacity: CGFloat
-    public let onlineStatusColor: ColorToken
-    public let offlineStatusColor: ColorToken
-    public let textTypography: TypographyConfiguration
+    public var size: AvatarSizeConfiguration
+    public var textFillStyle: FillStyle
+    public var backgroundFillStyle: FillStyle
+    public var backgroundOpacity: CGFloat
+    public var onlineStatusColor: ColorToken
+    public var offlineStatusColor: ColorToken
+    public var textTypography: TypographyConfiguration
     
     public init(
         size: AvatarSizeConfiguration = ZeroAvatarSize(),

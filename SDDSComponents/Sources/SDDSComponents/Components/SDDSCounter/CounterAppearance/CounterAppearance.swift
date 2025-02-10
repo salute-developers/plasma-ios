@@ -5,10 +5,10 @@ import SwiftUI
 public struct CounterAppearance: EnvironmentKey {
     public static let defaultValue: Self = .init()
     
-    public let size: CounterSizeConfiguration
-    public let textTypography: TypographyConfiguration
-    public let textColor: ButtonColor
-    public let backgroundColor: ButtonColor
+    public var size: CounterSizeConfiguration
+    public var textTypography: TypographyConfiguration
+    public var textColor: ButtonColor
+    public var backgroundColor: ButtonColor
 
     public init(
         size: CounterSizeConfiguration = DefaultCounterSize(),

@@ -9,7 +9,7 @@ enum Component: String {
         case .embeddedChip:
             return "EmbeddedChip"
         case .chipGroup:
-            return "SDDSChipGroup"
+            return "ChipGroup"
         }
     }
 }

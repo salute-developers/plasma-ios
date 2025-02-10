@@ -746,7 +746,7 @@ public struct SDDSTextArea: View {
             return 0
         case .multiple:
             let chipAppearance = appearance.chipAppearance
-            return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
+            return chipAppearance.size.cornerRadius
         }
     }
 

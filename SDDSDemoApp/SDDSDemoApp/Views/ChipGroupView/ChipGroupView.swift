@@ -5,12 +5,8 @@ import SDDSComponents
 import SDDSServTheme
 
 struct ChipGroupView: View {
-    @ObservedObject private var viewModel: ChipGroupViewModel
+    @ObservedObject var viewModel = ChipGroupViewModel()
     @State var size: CGFloat = 0
-
-    init(viewModel: ChipGroupViewModel = ChipGroupViewModel()) {
-        self.viewModel = viewModel
-    }
 
     var body: some View {
         List {
@@ -18,63 +14,22 @@ struct ChipGroupView: View {
                 HStack {
                     SDDSChipGroup(
                         data: viewModel.chips,
-                        appearance: viewModel.chipGroupAppearance,
+                        appearance: viewModel.appearance,
                         height: $size
                     )
                     .frame(height: size)
                 }
             }
             
-            Section {
-                HStack {
-                    Text("Chip Group Appearance")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(SDDSChipGroup.all, id: \.self) { variation in
-                            Button(variation.name) {
-                                viewModel.chipGroupAppearance = variation.appearance
-                                viewModel.chipGroupVariationName = variation.name
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.chipGroupVariationName.capitalized)
-                    }
-
-                }
-                HStack {
-                    Text("Chip Appearance")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(SDDSChip.all, id: \.self) { variation in
-                            Button(variation.name) {
-                                viewModel.appearance = variation.appearance.size(viewModel.chipSize)
-                                viewModel.chipVariationName = variation.name
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.chipVariationName.capitalized)
-                    }
-                }
+            Section(header: Text("ChipGroup")) {
+                VariationsView(viewModel: viewModel)
+            }
+            Section(header: Text("Chip")) {
+                VariationsView(viewModel: viewModel.chipViewModel)
             }
             Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
             Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
-            
-            HStack {
-                Text("Size")
-                Spacer()
-                    .frame(maxWidth: .infinity)
-                Menu {
-                    ForEach(SDDSChipSize.allCases, id: \.self) { size in
-                        Button(size.debugDescription) {
-                            viewModel.chipSize = size
-                        }
-                    }
-                } label: {
-                    Text(viewModel.chipSize.debugDescription)
-                }
-            }
+
             
             Section {
                 ForEach(viewModel.chips.indices, id: \.self) { index in
@@ -101,7 +56,7 @@ struct ChipGroupView: View {
                     }
                 }
                 HStack {
-                    TextField("Chip Title", text: $viewModel.chipTitle)
+                    TextField("Chip Title", text: $viewModel.chipViewModel.value)
                     Spacer()
                     Button("Add Chip") {
                         viewModel.addChip()

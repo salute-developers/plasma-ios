@@ -5,11 +5,7 @@ import SDDSComponents
 import SDDSServTheme
 
 struct SwitchView: View {
-    @ObservedObject private var viewModel: SwitchViewModel
-
-    init(viewModel: SwitchViewModel = SwitchViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: SwitchViewModel = SwitchViewModel()
     
     var body: some View {
         List {
@@ -29,6 +25,7 @@ struct SwitchView: View {
             }
             
             Section {
+                VariationsView(viewModel: viewModel)
                 HStack {
                     Text("Title")
                     Spacer()
@@ -50,23 +47,6 @@ struct SwitchView: View {
                 HStack {
                     Toggle("On/Off", isOn: $viewModel.isOn)
                 }
-                
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSSwitchSize.allCases, id: \.self) { size in
-                        Button(size.description) {
-                            viewModel.size = size
-                        }
-                    }
-                }
-                
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(SDDSSwitch.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            viewModel.appearance = variation.appearance.size(viewModel.size)
-                            viewModel.variationName = variation.name
-                        }
-                    }
-                }
             }
         }
         .navigationTitle("SDDSSwitch")
@@ -74,5 +54,5 @@ struct SwitchView: View {
 }
 
 #Preview {
-    SwitchView(viewModel: SwitchViewModel())
+    SwitchView()
 }

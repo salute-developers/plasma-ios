@@ -7,4 +7,6 @@ protocol VariationProvider: AnyObject {
     var variations: [Variation<Appearance>] { get }
     
     var defaultValue: Appearance { get }
+    
+    var theme: Theme { get set }
 }

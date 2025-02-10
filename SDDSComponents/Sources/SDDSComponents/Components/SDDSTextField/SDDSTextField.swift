@@ -726,7 +726,7 @@ public struct SDDSTextField: View {
             return 0
         case .multiple:
             let chipAppearance = appearance.chipAppearance
-            return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
+            return chipAppearance.size.cornerRadius
         }
     }
     
@@ -734,7 +734,11 @@ public struct SDDSTextField: View {
         return min(appearance.chipAppearance.size.height, chipGroupContentHeight)
     }
     
-    private let textFieldIdentifier = "TextField"
+    private var textFieldIdentifier: String {
+        var hasher = Hasher()
+        appearance.hash(into: &hasher)
+        return String(hasher.finalize())
+    }
 
     private var titleTypography: TypographyToken {
         guard let typography = appearance.titleTypography.typography(with: appearance.size) else {

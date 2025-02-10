@@ -136,7 +136,7 @@ private extension TextFieldAppearance {
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
         appearance.captionTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
+        appearance.chipGroupAppearance = ChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
