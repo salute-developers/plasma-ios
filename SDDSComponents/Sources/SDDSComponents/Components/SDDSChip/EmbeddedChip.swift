@@ -33,8 +33,8 @@ public struct EmbeddedChip: View {
         SDDSChip(
             title: title,
             isEnabled: isEnabled,
-            iconImage: iconImage,
-            buttonImage: buttonImage,
+            contentStart: iconImage,
+            contentEnd: buttonImage,
             appearance: appearance,
             accessibility: accessibility,
             removeAction: removeAction
