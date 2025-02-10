@@ -6,17 +6,19 @@ final class TextFieldVariationProvider: VariationProvider {
     typealias Appearance = TextFieldAppearance
     
     var layout: TextFieldLayout
+    var theme: Theme
     
-    init(layout: TextFieldLayout) {
+    init(layout: TextFieldLayout, theme: Theme = .sdddsServTheme) {
         self.layout = layout
+        self.theme = theme
     }
     
     var variations: [Variation<TextFieldAppearance>] {
         switch layout {
         case .clear:
-            TextFieldClear.all
+            theme.textFieldClearVariations
         case .default:
-            TextField.all
+            theme.textFieldVariations
         }
     }
     

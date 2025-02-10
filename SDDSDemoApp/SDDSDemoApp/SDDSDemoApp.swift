@@ -7,7 +7,7 @@ struct SDDSDemoApp: App {
         WindowGroup {
             ComponentsView()
                 .onAppear {
-                    Theme.initialize()
+                    SDDSServTheme.Theme.initialize()
                 }
         }
     }

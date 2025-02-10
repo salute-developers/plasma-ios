@@ -15,7 +15,17 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
             }
         }
     }
-    @Published var appearance: Provider.Appearance
+    @Published var appearance: Provider.Appearance {
+        didSet {
+            onUpdateAppearance()
+        }
+    }
+    @Published var theme: Theme = .sdddsServTheme {
+        didSet {
+            self.variationProvider.theme = theme
+            self.variation = variationProvider.variations.first
+        }
+    }
 
     let variationProvider: Provider
     var cancellables: Set<AnyCancellable> = []
@@ -28,6 +38,14 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
         self.style = variation?.styles.first
         self.appearance = variationProvider.defaultValue
         self.variationProvider = variationProvider
+        
+        if let firstVariation = variations.first {
+            selectVariation(firstVariation)
+        }
+    }
+    
+    func selectTheme(_ theme: Theme) {
+        self.theme = theme
     }
     
     func selectVariation(_ variation: Variation<Provider.Appearance>?) {
@@ -45,4 +63,6 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     var styles: [AppearanceVariation<Provider.Appearance>] {
         return variation?.styles ?? []
     }
+    
+    func onUpdateAppearance() {}
 }

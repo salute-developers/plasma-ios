@@ -1,7 +1,7 @@
 import SwiftUI
-
 import Combine
 import SDDSComponents
+import SDDSServTheme
 
 final class AvatarGroupViewModel: ObservableObject {
     @Published var avatarData: [SDDSAvatarData] = AvatarGroupViewModel.defaultAvatars
@@ -25,7 +25,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
+                appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -33,7 +33,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: .image(Image.image("checker")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
+                appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -41,7 +41,7 @@ final class AvatarGroupViewModel: ObservableObject {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: SDDSAvatar.default.extraExtraLarge.appearance,
+                appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
         ]
@@ -53,7 +53,7 @@ final class AvatarGroupViewModel: ObservableObject {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: SDDSAvatar.default.extraExtraLarge.appearance,
+            appearance: Avatar.l.default.appearance,
             accessibility: defaultAccessibility
         )
     }

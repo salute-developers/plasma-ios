@@ -114,18 +114,18 @@ public struct SDDSChipGroup: View {
     private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
         var totalWidth = CGFloat(0)
         totalWidth += chipData.appearance.size.leadingInset
-        if let _ = chipData.iconImage, let iconImageSize = chipData.appearance.size.iconImageSize {
-            totalWidth += iconImageSize.width
-            totalWidth += chipData.appearance.size.spacing
+        if let _ = chipData.iconImage, let size = chipData.appearance.size.iconImageSize {
+            totalWidth += size.width
+            totalWidth += chipData.appearance.size.contentStartPadding
         }
         
         let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.appearance.size) ?? .undefined
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
         
-        if let _ = chipData.buttonImage, let buttomImageSize = chipData.appearance.size.buttonImageSize {
-            totalWidth += buttomImageSize.width
-            totalWidth += chipData.appearance.size.spacing
+        if let _ = chipData.buttonImage, let size = chipData.appearance.size.buttonImageSize {
+            totalWidth += size.width
+            totalWidth += chipData.appearance.size.contentEndPadding
         }
         totalWidth += chipData.appearance.size.trailingInset
         

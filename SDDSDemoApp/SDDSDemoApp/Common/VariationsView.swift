@@ -7,6 +7,22 @@ struct VariationsView<Provider: VariationProvider>: View {
     var body: some View {
         Section {
             HStack {
+                Text("Theme")
+                
+                Menu {
+                    ForEach(Theme.allCases, id: \.self) { theme in
+                        Button(theme.name) {
+                            viewModel.selectTheme(theme)
+                        }
+                    }
+                } label: {
+                    HStack {
+                        Spacer().frame(maxWidth: .infinity)
+                        Text(viewModel.theme.name)
+                    }
+                }
+            }
+            HStack {
                 Text("Variation")
                 Menu {
                     ForEach(viewModel.variations, id: \.self) { variation in

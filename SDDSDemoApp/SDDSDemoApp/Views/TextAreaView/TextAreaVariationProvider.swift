@@ -6,17 +6,19 @@ final class TextAreaVariationProvider: VariationProvider {
     typealias Appearance = TextAreaAppearance
     
     var layout: TextAreaLayout
+    var theme: Theme
     
-    init(layout: TextAreaLayout) {
+    init(layout: TextAreaLayout, theme: Theme = .sdddsServTheme) {
         self.layout = layout
+        self.theme = theme
     }
     
     var variations: [Variation<TextAreaAppearance>] {
         switch layout {
         case .clear:
-            TextAreaClear.all
+            theme.textAreaClearVariations
         case .default:
-            TextArea.all
+            theme.textAreaVariations
         }
     }
     

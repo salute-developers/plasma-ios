@@ -10,7 +10,7 @@ final class GenerateSwiftCodeCommand: Command, FileWriter {
     init(jsonURL: URL,
          templates: [StencilTemplate],
          outputDirectoryURL: URL,
-         templateRender: Renderable = TemplateRenderer()) {
+         templateRender: Renderable) {
         self.jsonURL = jsonURL
         self.templates = templates
         self.outputDirectoryURL = outputDirectoryURL

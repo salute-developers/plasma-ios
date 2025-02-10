@@ -127,7 +127,7 @@ private extension TextAreaAppearance {
         var appearance = TextAreaAppearance()
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
         appearance.captionTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
+        appearance.chipGroupAppearance = ChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary
         appearance.counterTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccent

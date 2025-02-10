@@ -35,8 +35,8 @@ public struct ThemeBuilderConfiguration: Codable {
     
     public var paletteURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json")!
     public var themes: [ThemeConfiguration] = [
-        Theme.plasmaB2C,
         Theme.sddsServTheme,
+        Theme.plasmaB2C,
         Theme.stylesSalute
     ].map { $0.themeConfiguration }
     
@@ -81,7 +81,7 @@ public extension ThemeBuilderConfiguration.Theme {
         case .sddsOs:
             .init(name: self.rawValue, url: themeURL(name: "sdds_os"))
         case .stylesSalute:
-            .init(name: self.rawValue, url: themeURL(name: "styles_salute"))
+            .init(name: self.rawValue, url: themeURL(name: "stylesSalute"))
         case .default:
             .init(name: self.rawValue, url: themeURL(name: "default"))
         }

@@ -1,0 +1,21 @@
+import Foundation
+import SDDSComponents
+import SDDSServTheme
+
+final class SegmentVariationProvider: VariationProvider {
+    typealias Appearance = SegmentAppearance
+    
+    var theme: Theme
+    
+    init(theme: Theme = .sdddsServTheme) {
+        self.theme = theme
+    }
+    
+    var variations: [Variation<SegmentAppearance>] {
+        theme.segmentVariations
+    }
+    
+    var defaultValue: SegmentAppearance {
+        variations.first?.appearance ?? Segment.l.default.appearance
+    }
+}

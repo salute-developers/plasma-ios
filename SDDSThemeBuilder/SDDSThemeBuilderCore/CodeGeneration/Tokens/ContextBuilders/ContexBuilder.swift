@@ -28,6 +28,10 @@ extension ContexBuilder {
         var dictionary = dictionary
         dictionary.replaceKeys(transform: { $0.camelCase })
         
+        if dictionary.keys.isEmpty {
+            return .error(.emptyData)
+        }
+        
         return .dictionary(transform(dictionary))
     }
     

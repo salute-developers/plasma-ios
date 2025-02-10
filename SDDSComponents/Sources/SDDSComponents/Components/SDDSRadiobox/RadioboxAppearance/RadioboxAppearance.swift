@@ -5,13 +5,13 @@ import SwiftUI
 public struct RadioboxAppearance: SelectionControlAppearance, EnvironmentKey, Hashable {
     public static let defaultValue: Self = .init()
     let id = UUID()
-    public let size: SelectionControlSizeConfiguration
-    public let titleTypography: TypographyConfiguration
-    public let subtitleTypography: TypographyConfiguration
-    public let titleColor: ColorToken
-    public let subtitleColor: ColorToken
-    public let disabledAlpha: CGFloat
-    public let imageTintColor: ColorToken?
+    public var size: SelectionControlSizeConfiguration
+    public var titleTypography: TypographyConfiguration
+    public var subtitleTypography: TypographyConfiguration
+    public var titleColor: ColorToken
+    public var subtitleColor: ColorToken
+    public var disabledAlpha: CGFloat
+    public var imageTintColor: ColorToken?
     
     public init(
         size: SelectionControlSizeConfiguration = ZeroSelectionControlSize(),
