@@ -18,9 +18,12 @@ public struct SDDSSwitch: View {
     public let subtitle: String
     @Binding public var isOn: Bool
     public let isEnabled: Bool
-    public let appearance: SwitchAppearance
     public let switchAccessibility: SwitchAccessibility
-    
+    private var _appearance: SwitchAppearance?
+    private var appearance: SwitchAppearance {
+        _appearance ?? switchAppearance
+    }
+    @Environment(\.switchAppearance) var switchAppearance
     @Environment(\.colorScheme) var colorScheme
     
     /**
@@ -39,24 +42,24 @@ public struct SDDSSwitch: View {
         subtitle: String = "",
         isOn: Binding<Bool> = .constant(true),
         isEnabled: Bool = true,
-        appearance: SwitchAppearance,
+        appearance: SwitchAppearance? = nil,
         switchAccessibility: SwitchAccessibility
     ) {
         self.title = title
         self.subtitle = subtitle
         self._isOn = isOn
         self.isEnabled = isEnabled
-        self.appearance = appearance
+        self._appearance = appearance
         self.switchAccessibility = switchAccessibility
     }
     
     public var body: some View {
-        if let width = appearance.size.width {
-            content
-                .frame(width: width)
-        } else {
+        if title.isEmpty && subtitle.isEmpty {
             content
                 .fixedSize(horizontal: true, vertical: false)
+        } else if let width = appearance.size.width {
+            content
+                .frame(width: width)
         }
     }
     
