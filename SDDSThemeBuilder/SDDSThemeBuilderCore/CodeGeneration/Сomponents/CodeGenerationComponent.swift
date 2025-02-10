@@ -21,7 +21,6 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL)
         }
     }
-    
     /// Название структуры Appearance в `SDDSComponents`
     var appearance: String {
         switch self {
@@ -67,6 +66,14 @@ extension CodeGenerationComponent {
     
     var url: URL {
         baseURL.appending(component: configurationFilename)
+    }
+    
+    var appearance: String {
+        String(describing: appearanceType)
+    }
+    
+    var sizeConfiguration: String {
+        String(describing: sizeType)
     }
 
     var baseURL: URL {
