@@ -99,20 +99,18 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             return fallback
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Avatar.all
         }
     }
     
     var counterVariations: [Variation<CounterAppearance>] {
-        let fallback = SDDSServTheme.Counter.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Counter.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Counter.all
         }
     }
     
@@ -199,7 +197,7 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             return fallback
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.SegmentItem.all
         }
     }
     
@@ -303,6 +301,17 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Indicator.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Indicator.all
+        }
+    }
+    
+    var cellVariations: [Variation<CellAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Cell.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Cell.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Cell.all
         }
     }
 }

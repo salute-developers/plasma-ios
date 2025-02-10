@@ -22,7 +22,7 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
             title: "Value",
             subtitle: "Subtitle",
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-            isSelected: true, 
+            isSelected: true,
             appearance: SegmentItem.l.primary.appearance,
             action: {}
         )

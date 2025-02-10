@@ -19,7 +19,8 @@ struct ComponentsView: View {
         ("SDDSSegmentElement", AnyView(SegmentItemView())),
         ("SDDSSegment", AnyView(SegmentView())),
         ("SDDSBadge", AnyView(BadgeView())),
-        ("SDDSIndicator", AnyView(IndicatorView()))
+        ("SDDSIndicator", AnyView(IndicatorView())),
+        ("SDDSCell", AnyView(CellView()))
     ]
 
     var body: some View {

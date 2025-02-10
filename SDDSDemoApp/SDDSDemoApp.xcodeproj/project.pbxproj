@@ -15,12 +15,21 @@
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
 		690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FC2D3EBA4A00CED628 /* SegmentView.swift */; };
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
+		697970CF2D63A3F5008306A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970CE2D63A3EC008306A8 /* CellView.swift */; };
+		697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970D02D63A453008306A8 /* CellViewModel.swift */; };
 		6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744692D1C3B6400559ABA /* CounterView.swift */; };
 		6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987446A2D1C3B6400559ABA /* CounterViewModel.swift */; };
 		698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744732D1C6EB800559ABA /* SegmentItemView.swift */; };
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
+		698902672D65176F003DCE58 /* CellVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902662D651763003DCE58 /* CellVariationProvider.swift */; };
+		69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
+		69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
+		69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
+		69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
+		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
+		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
+		69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 69E190A72D7764CE00BC8D03 /* SDDSIcons */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
-		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
 		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
@@ -50,14 +59,12 @@
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
 		8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */; };
-		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
 		8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */; };
 		8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */; };
 		8174BA4C2D5DEFAA00EA3E68 /* ChipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */; };
 		8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4D2D5DF2FA00EA3E68 /* SegmentItemVariationProvider.swift */; };
 		8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4F2D5DFB5E00EA3E68 /* CheckboxVariationProvider.swift */; };
-		8174BA522D5DFBDB00EA3E68 /* RadioboxVariationProvider.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */; };
 		8174BA532D5DFC8800EA3E68 /* RadioboxVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */; };
 		8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA542D5DFC9000EA3E68 /* ProgressBarVariationProvider.swift */; };
 		8174BA572D5DFD9C00EA3E68 /* SwitchVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA562D5DFD9800EA3E68 /* SwitchVariationProvider.swift */; };
@@ -66,14 +73,10 @@
 		81763B122D6DF43600904D4A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B112D6DF43400904D4A /* BadgeView.swift */; };
 		81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B132D6DF43800904D4A /* BadgeViewProvider.swift */; };
 		81763B162D6DF43F00904D4A /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B152D6DF43D00904D4A /* BadgeViewModel.swift */; };
-		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
-		8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
-		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
-		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
 		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
 		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };
@@ -116,10 +119,13 @@
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		690780FC2D3EBA4A00CED628 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewModel.swift; sourceTree = "<group>"; };
+		697970CE2D63A3EC008306A8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		697970D02D63A453008306A8 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		698744692D1C3B6400559ABA /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		6987446A2D1C3B6400559ABA /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		698744732D1C6EB800559ABA /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
+		698902662D651763003DCE58 /* CellVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVariationProvider.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -185,18 +191,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
+				69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */,
+				69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */,
+				69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */,
+				69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */,
+				69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */,
+				69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */,
+				69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
-				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
 				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
-				8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */,
-				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
-				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
 				8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */,
-				810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,16 @@
 			path = SegmentView;
 			sourceTree = "<group>";
 		};
+		697970CD2D63A3CC008306A8 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				697970CE2D63A3EC008306A8 /* CellView.swift */,
+				697970D02D63A453008306A8 /* CellViewModel.swift */,
+				698902662D651763003DCE58 /* CellVariationProvider.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		698744682D1C38A200559ABA /* CounterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +358,7 @@
 			children = (
 				81FD6D5C2D6E28A7002A6E51 /* IndicatorView */,
 				81763B102D6DF42F00904D4A /* BadgeView */,
+				697970CD2D63A3CC008306A8 /* CellView */,
 				690780FB2D3EBA4100CED628 /* SegmentView */,
 				698744722D1C6E9C00559ABA /* SegmentItemView */,
 				698744682D1C38A200559ABA /* CounterView */,
@@ -566,6 +584,7 @@
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
 				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
 				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
+				69E190A72D7764CE00BC8D03 /* SDDSIcons */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -663,7 +682,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */,
-				8174BA522D5DFBDB00EA3E68 /* RadioboxVariationProvider.swift in Resources */,
 				24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,6 +729,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8174BA532D5DFC8800EA3E68 /* RadioboxVariationProvider.swift in Sources */,
+				697970CF2D63A3F5008306A8 /* CellView.swift in Sources */,
+				698902672D65176F003DCE58 /* CellVariationProvider.swift in Sources */,
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */,
 				8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */,
@@ -765,6 +785,7 @@
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
+				697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */,
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
 				8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */,
@@ -1150,6 +1171,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		69E190A72D7764CE00BC8D03 /* SDDSIcons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDDSIcons;
+		};
 		8104243C2CFDB83F0009B6E9 /* SDDSServTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSServTheme;

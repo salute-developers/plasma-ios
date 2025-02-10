@@ -17,6 +17,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeClear = "IconBadgeClear"
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
+    case cell = "Cell"
+    case counter = "SDDSCounter"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -33,7 +35,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .iconBadge,
             .iconBadgeClear,
             .iconBadgeTransparent,
-            .indicator
+            .indicator,
+            .cell,     
+            .counter
         ]
     }
 }
@@ -53,9 +57,12 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .indicator:
             GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .cell:
+            GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .counter:
+            GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
-    
     /// Название структуры Appearance в `SDDSComponents`
     var appearance: String {
         switch self {
@@ -71,6 +78,10 @@ extension CodeGenerationComponent {
             "BadgeAppearance"
         case .indicator:
             "IndicatorAppearance"
+        case .cell:
+            "CellAppearance"
+        case .counter:
+            "CounterAppearance"
         }
     }
     
@@ -89,6 +100,10 @@ extension CodeGenerationComponent {
             "BadgeSizeConfiguration"
         case .indicator:
             "IndicatorSizeConfiguration"
+        case .cell:
+            "CellSizeConfiguration"
+        case .counter:
+            "CounterSizeConfiguration"
         }
     }
     
@@ -126,6 +141,10 @@ extension CodeGenerationComponent {
             "icon_badge_transparent_config.json"
         case .indicator:
             "indicator_config.json"
+        case .cell:
+            "cell_config.json"
+        case .counter:
+            "counter_config.json"
         }
     }
     
