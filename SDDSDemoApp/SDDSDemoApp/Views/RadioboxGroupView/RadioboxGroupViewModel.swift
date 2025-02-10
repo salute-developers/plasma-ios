@@ -8,7 +8,7 @@ final class RadioboxGroupViewModel: ObservableObject {
     @Published var size: SDDSRadioboxGroupSize = .medium
 
     var radioboxData: [RadioboxData] {
-        radioboxViewModels.map { $0.toRadioboxData(with: size.radioboxSize) }
+        []//radioboxViewModels.map { $0.toRadioboxData(with: size.radioboxSize) }
     }
 
     init() {
@@ -39,20 +39,16 @@ struct RadioboxItemViewModel {
     var subtitle: String
     var isSelected: Bool
     var isEnabled: Bool
-
-    func toRadioboxData(with size: SDDSRadioboxSize) -> RadioboxData {
-        var appearance = Radiobox.m.default.appearance
-        appearance.size = size
-        return RadioboxData(
-            title: title,
-            subtitle: subtitle,
-            isSelected: .constant(isSelected),
-            isEnabled: isEnabled,
-            images: RadioboxView.radiobox,
-            appearance: appearance,
-            accessibility: .init()
-        )
-    }
+//
+//    func toRadioboxData(with size: SDDSRadioboxSize) -> RadioboxData {
+//        RadioboxData(
+//            title: title,
+//            subtitle: subtitle,
+//            isSelected: .constant(isSelected),
+//            isEnabled: isEnabled,
+//            images: RadioboxView.radiobox,
+//            appearance: SDDSRadiobox.default.appearance.size(size),
+//            accessibility: .init()
+//        )
+//    }
 }
-
-

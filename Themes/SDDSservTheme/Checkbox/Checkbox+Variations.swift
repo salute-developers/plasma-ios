@@ -31,8 +31,8 @@ extension Checkbox {
                 .init(
                     titleTypography: CheckboxTypography.label,
                     subtitleTypography: CheckboxTypography.description,
-                    titleColor: .textDefaultPrimary,
-                    subtitleColor: .textDefaultSecondary,
+                    titleColor: .backgroundInversePrimary,
+                    subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
                     disabledAlpha: 0.4
                 )
         )

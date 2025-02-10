@@ -2,15 +2,15 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
+enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
     case medium
     case small
     
-    public var debugDescription: String {
+    var debugDescription: String {
         rawValue
     }
     
-    public var imageSize: CGSize {
+    var imageSize: CGSize {
         switch self {
         case .medium:
             .init(width: 24, height: 24)
@@ -19,11 +19,11 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
         }
     }
     
-    public public var verticalGap: CGFloat {
+    public var verticalGap: CGFloat {
         0.0
     }
     
-    public var horizontalGap: CGFloat {
+    var horizontalGap: CGFloat {
         switch self {
         case .medium:
             12.0

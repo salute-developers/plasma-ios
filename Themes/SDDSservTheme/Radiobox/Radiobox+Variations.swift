@@ -29,8 +29,13 @@ extension Radiobox {
                 .init(
                     titleTypography: RadioboxTypography.label,
                     subtitleTypography: RadioboxTypography.description,
+<<<<<<< HEAD
                     titleColor: .textDefaultPrimary,
                     subtitleColor: .textDefaultSecondary,
+=======
+                    titleColor: .backgroundInversePrimary,
+                    subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
+>>>>>>> 90f142c4 (feat: added multiple themes support)
                     disabledAlpha: 0.4
                 )
         )
