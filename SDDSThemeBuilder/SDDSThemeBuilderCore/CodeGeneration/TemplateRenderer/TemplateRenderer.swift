@@ -23,6 +23,7 @@ private enum Filter: String {
     case camelCase = "camelCase"
     case capitalized = "capitalized"
     case adjustedCornerRadius = "adjustedCornerRadius"
+    case paletteColor = "palette_color"
 }
 
 private enum SwiftKeyword: String, CaseIterable {
@@ -34,6 +35,12 @@ private enum SwiftKeyword: String, CaseIterable {
 }
 
 final class TemplateRenderer: Renderable {
+    let paletteMapper: PaletteMapper?
+    
+    init(paletteMapper: PaletteMapper? = nil) {
+        self.paletteMapper = paletteMapper
+    }
+    
     func render(context: [String: Any], template: StencilTemplate, removeLines: Bool = true) -> CommandResult {
         let ext = Extension()
         registerFilters(ext: ext)
@@ -177,6 +184,14 @@ final class TemplateRenderer: Renderable {
             let adjustment = adjustmentValue > 0 ? "+ \(adjustmentValue)" : adjustmentValue < 0 ? "- \(-adjustmentValue)" : ""
             
             return "ShapeToken.\(baseCornerRadiusKey.camelCase).cornerRadius \(adjustment)".trimmingCharacters(in: .whitespaces)
+        }
+        ext.registerFilter(Filter.paletteColor.rawValue) { [weak self] (value: Any?) in
+            guard let paletteMapper = self?.paletteMapper, let value = value as? String else {
+                return value
+            }
+            
+            let color = try? self?.paletteMapper?.colorMap(value).hexWithAlpha
+            return color
         }
 
     }

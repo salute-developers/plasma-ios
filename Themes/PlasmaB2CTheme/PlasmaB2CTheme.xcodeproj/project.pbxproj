@@ -26,8 +26,6 @@
 		7F393EDF8591DF9FBB3650E0 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA415EB0DF247D7C7F2AC24 /* Shadows+Generated.swift */; };
 		81157CEB2D64F48700254FB6 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157CEA2D64F48700254FB6 /* SpacingToken+Generated.swift */; };
 		81157CEC2D64F48700254FB6 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157CE92D64F48700254FB6 /* Spacings+Generated.swift */; };
-		81157CEE2D64F4CF00254FB6 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
-		81157CEF2D64F4CF00254FB6 /* SDDSComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81157D142D64F4DF00254FB6 /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D002D64F4DF00254FB6 /* TextArea+BaseVariations.swift */; };
 		81157D152D64F4DF00254FB6 /* TextAreaClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D052D64F4DF00254FB6 /* TextAreaClear+BaseVariations.swift */; };
 		81157D162D64F4DF00254FB6 /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D0C2D64F4DF00254FB6 /* TextFieldSize.swift */; };
@@ -56,6 +54,13 @@
 		81157D2D2D64F4DF00254FB6 /* BasicButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157CF42D64F4DF00254FB6 /* BasicButtonTypography.swift */; };
 		81157D2E2D64F4DF00254FB6 /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D0D2D64F4DF00254FB6 /* TextFieldTypography.swift */; };
 		81157D2F2D64F4DF00254FB6 /* TextFieldClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D0F2D64F4DF00254FB6 /* TextFieldClear+BaseVariations.swift */; };
+		81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
+		81BBE21F2D75A14500612681 /* EmbeddedChip+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE21B2D75A14500612681 /* EmbeddedChip+Variations.swift */; };
+		81BBE2202D75A14500612681 /* EmbeddedChip+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE21A2D75A14500612681 /* EmbeddedChip+BaseVariations.swift */; };
+		81BBE2212D75A14500612681 /* EmbeddedChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE21D2D75A14500612681 /* EmbeddedChipTypography.swift */; };
+		81BBE2222D75A14500612681 /* SDDSChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2182D75A14500612681 /* SDDSChipGroupSize.swift */; };
+		81BBE2232D75A14500612681 /* EmbeddedChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE21C2D75A14500612681 /* EmbeddedChipSize.swift */; };
+		81BBE2242D75A14500612681 /* ChipGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2172D75A14500612681 /* ChipGroup+BaseVariations.swift */; };
 		81E9D4CD6A4716F2C3A78BDB /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = 44471238CEF59A81ECFC4067 /* SBSansText-Light.otf */; };
 		820F7A98E10920F19277CB49 /* SBSansText-LightItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = F9A13760FC2D3CE34F04B44F /* SBSansText-LightItalic.otf */; };
 		83E75171E405A41BF0C30A3C /* Typographies+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3164B05EC282FAC17A390 /* Typographies+Generated.swift */; };
@@ -87,20 +92,6 @@
 		F9EB3E6E4C06179FA0CBFCD1 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C8F586E8F47846573CDDF00C /* SBSansText-Bold.otf */; };
 		FB7782E667F1F07322ECDFDB /* SBSansText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2EF9ACD6E98751134C339F4E /* SBSansText-Semibold.otf */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		81157CF02D64F4CF00254FB6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				81157CEF2D64F4CF00254FB6 /* SDDSComponents.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		093E1A6E1E5A77A5C05B85CE /* TypographyToken+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TypographyToken+Generated.swift"; sourceTree = "<group>"; };
@@ -150,6 +141,12 @@
 		81157D102D64F4DF00254FB6 /* TextFieldClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+Variations.swift"; sourceTree = "<group>"; };
 		81157D112D64F4DF00254FB6 /* TextFieldClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
 		81157D122D64F4DF00254FB6 /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		81BBE2172D75A14500612681 /* ChipGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81BBE2182D75A14500612681 /* SDDSChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroupSize.swift; sourceTree = "<group>"; };
+		81BBE21A2D75A14500612681 /* EmbeddedChip+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+BaseVariations.swift"; sourceTree = "<group>"; };
+		81BBE21B2D75A14500612681 /* EmbeddedChip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+Variations.swift"; sourceTree = "<group>"; };
+		81BBE21C2D75A14500612681 /* EmbeddedChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipSize.swift; sourceTree = "<group>"; };
+		81BBE21D2D75A14500612681 /* EmbeddedChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipTypography.swift; sourceTree = "<group>"; };
 		8201E0E7836F9D965836D743 /* SBSansDisplay-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Regular.otf"; sourceTree = "<group>"; };
 		8DD40C795EA7425C475814E6 /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		97DA004AB1D6CC5AF7FF4B10 /* Colors+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
@@ -175,7 +172,7 @@
 			files = (
 				E3ACC110AEAAC45B30A581A9 /* Foundation.framework in Frameworks */,
 				8D31E1FF75E2E2345BB02C93 /* SDDSThemeCore.xcframework in Frameworks */,
-				81157CEE2D64F4CF00254FB6 /* SDDSComponents.xcframework in Frameworks */,
+				81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +281,26 @@
 			path = TextFieldClear;
 			sourceTree = "<group>";
 		};
+		81BBE2192D75A14500612681 /* ChipGroup */ = {
+			isa = PBXGroup;
+			children = (
+				81BBE2172D75A14500612681 /* ChipGroup+BaseVariations.swift */,
+				81BBE2182D75A14500612681 /* SDDSChipGroupSize.swift */,
+			);
+			path = ChipGroup;
+			sourceTree = "<group>";
+		};
+		81BBE21E2D75A14500612681 /* EmbeddedChip */ = {
+			isa = PBXGroup;
+			children = (
+				81BBE21A2D75A14500612681 /* EmbeddedChip+BaseVariations.swift */,
+				81BBE21B2D75A14500612681 /* EmbeddedChip+Variations.swift */,
+				81BBE21C2D75A14500612681 /* EmbeddedChipSize.swift */,
+				81BBE21D2D75A14500612681 /* EmbeddedChipTypography.swift */,
+			);
+			path = EmbeddedChip;
+			sourceTree = "<group>";
+		};
 		9348E83A24E2D917E9313984 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +354,8 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81BBE2192D75A14500612681 /* ChipGroup */,
+				81BBE21E2D75A14500612681 /* EmbeddedChip */,
 				81157CF52D64F4DF00254FB6 /* BasicButton */,
 				81157CFA2D64F4DF00254FB6 /* IconButton */,
 				81157CFF2D64F4DF00254FB6 /* LinkButton */,
@@ -377,7 +396,6 @@
 				8B6716AF8F8CDF52DB95F49F /* Sources */,
 				E357E349AF36DC1FE02797AC /* Frameworks */,
 				E012FEDD34FCB20B511CE474 /* Resources */,
-				81157CF02D64F4CF00254FB6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -470,6 +488,12 @@
 				81157D1A2D64F4DF00254FB6 /* TextFieldClear+Variations.swift in Sources */,
 				81157D1B2D64F4DF00254FB6 /* TextField+Variations.swift in Sources */,
 				81157D1C2D64F4DF00254FB6 /* LinkButtonTypography.swift in Sources */,
+				81BBE21F2D75A14500612681 /* EmbeddedChip+Variations.swift in Sources */,
+				81BBE2202D75A14500612681 /* EmbeddedChip+BaseVariations.swift in Sources */,
+				81BBE2212D75A14500612681 /* EmbeddedChipTypography.swift in Sources */,
+				81BBE2222D75A14500612681 /* SDDSChipGroupSize.swift in Sources */,
+				81BBE2232D75A14500612681 /* EmbeddedChipSize.swift in Sources */,
+				81BBE2242D75A14500612681 /* ChipGroup+BaseVariations.swift in Sources */,
 				81157D1D2D64F4DF00254FB6 /* IconButton+BaseVariations.swift in Sources */,
 				81157D1E2D64F4DF00254FB6 /* TextArea+Variations.swift in Sources */,
 				81157D1F2D64F4DF00254FB6 /* LinkButtonSize.swift in Sources */,
@@ -526,13 +550,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.3.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;
@@ -627,13 +651,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.3.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;

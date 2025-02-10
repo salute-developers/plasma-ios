@@ -14,26 +14,11 @@ import SwiftUI
  */
 public struct SegmentAppearance: EnvironmentKey {
     public static let defaultValue: Self = .init()
-    /**
-     Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
-     */
-    public let size: SegmentSizeConfiguration
 
-    /**
-     Цвет фона сегмента для различных состояний, определяемый `ButtonColor`.
-     */
-    public let hasBackground: Bool
-    
-    public let backgroundColor: ButtonColor?
-    
-    public let stretch: Bool
-
-    /**
-     Внешний вид элементов сегмента, определяемый `SegmentItemAppearance`.
-     */
-    public let segmentItemAppearance: SegmentItemAppearance
-
-    public let disabledAlpha: CGFloat
+    public var size: SegmentSizeConfiguration
+    public var backgroundColor: ButtonColor?
+    public var segmentItemAppearance: SegmentItemAppearance
+    public var disabledAlpha: CGFloat
 
     /**
      Инициализатор для создания стилистической конфигурации сегмента.
@@ -45,15 +30,11 @@ public struct SegmentAppearance: EnvironmentKey {
      */
     public init(
         size: SegmentSizeConfiguration = SegmentZeroSize(),
-        stretch: Bool = false,
-        hasBackground: Bool = true,
         backgroundColor: ButtonColor? = ButtonColor(),
         segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance(),
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
-        self.stretch = stretch
-        self.hasBackground = hasBackground
         self.backgroundColor = backgroundColor
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = disabledAlpha

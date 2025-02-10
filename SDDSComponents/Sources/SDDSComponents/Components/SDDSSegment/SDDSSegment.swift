@@ -7,8 +7,8 @@ public struct SDDSSegment: View {
     public let layoutMode: SegmentLayoutMode
     public let layoutOrientation: SegmentLayoutOrientation
     public let isDisabled: Bool
-    
-    private var maxWidth: CGFloat = 0
+    public let stretch: Bool
+    public let hasBackground: Bool
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     
@@ -24,7 +24,9 @@ public struct SDDSSegment: View {
         layoutMode: SegmentLayoutMode = .flexible,
         layoutOrientation: SegmentLayoutOrientation,
         selectedItemId: Binding<UUID?>,
-        isDisabled: Bool = false
+        isDisabled: Bool = false,
+        stretch: Bool = false,
+        hasBackground: Bool = true
     ) {
         self.items = items
         self.appearance = appearance
@@ -32,13 +34,8 @@ public struct SDDSSegment: View {
         self.layoutOrientation = layoutOrientation
         self._selectedItemId = selectedItemId
         self.isDisabled = isDisabled
-        
-        self.maxWidth = items.map { segmentData in
-            let calculator = SegmentWidthCalculatorImpl(
-                counterWidthCalculator: segmentData.counterWidthCalculator
-            )
-            return calculator.width(with: segmentData)
-        }.max() ?? 0
+        self.stretch = stretch
+        self.hasBackground = hasBackground
     }
     
     public var body: some View {
@@ -53,7 +50,7 @@ public struct SDDSSegment: View {
         .padding(appearance.size.paddings)
         .background(backgroundColor)
         .cornerRadius(cornerRadius)
-        .opacity(isDisabled ? appearance.disabledAlpha : 1)
+        .disabled(isDisabled)
     }
     
     public var horizontalOrientation: some View {
@@ -65,10 +62,10 @@ public struct SDDSSegment: View {
                     iconAttributes: segmentData.iconAttributes,
                     isDisabled: segmentData.isDisabled,
                     isSelected: selectedItemId == segmentData.id,
-                    strech: appearance.stretch,
-                    appearance: segmentData.appearance,
+                    strech: stretch,
+                    counterEnabled: segmentData.counterEnabled,
+                    appearance: appearance.segmentItemAppearance,
                     counterViewProvider: segmentData.counterViewProvider,
-                    counterAppearance: segmentData.counterAppearance,
                     action: {
                         selectedItemId = segmentData.id
                     }
@@ -89,10 +86,10 @@ public struct SDDSSegment: View {
                     iconAttributes: segmentData.iconAttributes,
                     isDisabled: segmentData.isDisabled,
                     isSelected: selectedItemId == segmentData.id,
-                    strech: true,
-                    appearance: segmentData.appearance,
-                    counterViewProvider: segmentData.counterViewProvider,
-                    counterAppearance: segmentData.counterAppearance
+                    strech: false,
+                    counterEnabled: segmentData.counterEnabled,
+                    appearance: appearance.segmentItemAppearance,
+                    counterViewProvider: segmentData.counterViewProvider
                 )
                 .highPriorityGesture(
                     TapGesture()
@@ -102,15 +99,8 @@ public struct SDDSSegment: View {
                 )
             }
         }
-        .frame(width: verticalWidth)
-    }
-
-    private var verticalWidth: CGFloat {
-        switch layoutMode {
-        case .fixed:
-            appearance.size.verticalWidth
-        case .flexible:
-            maxWidth
+        .applyIf(layoutMode == .fixed) {
+            $0.frame(height: appearance.size.verticalWidth)
         }
     }
     
@@ -129,7 +119,7 @@ public struct SDDSSegment: View {
     }
     
     private var backgroundColor: Color {
-        if let backgroundColor = appearance.backgroundColor, appearance.hasBackground {
+        if let backgroundColor = appearance.backgroundColor, hasBackground {
             return currentColor(for: backgroundColor)
         }
         return .clear

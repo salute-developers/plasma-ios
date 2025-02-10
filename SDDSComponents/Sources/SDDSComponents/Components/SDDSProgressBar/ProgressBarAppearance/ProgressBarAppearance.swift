@@ -24,10 +24,14 @@ public struct ProgressBarAppearance: EnvironmentKey, Hashable {
     }
     
     public static func == (lhs: ProgressBarAppearance, rhs: ProgressBarAppearance) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id &&
+        lhs.tintFillStyle == rhs.tintFillStyle &&
+        lhs.trackColor == rhs.trackColor
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+        hasher.combine(tintFillStyle)
+        hasher.combine(trackColor)
     }
 }

@@ -87,11 +87,20 @@ extension GradientContextBuilder {
                     return gradientDictionary
                 }
                 let gradient = gradients.first
-                guard let locations = gradient?[GradientDictionaryKey.locations.rawValue] as? [Double],
-                      let colors = gradient?[GradientDictionaryKey.colors.rawValue] as? [String], locations.count == colors.count else {
+                
+                let kindString = (gradient?[GradientDictionaryKey.kind.rawValue] as? String) ?? ""
+                switch kindString {
+                case GradientKind.color.rawValue:
+                    break
+                case GradientKind.angular.rawValue, GradientKind.radial.rawValue, GradientKind.linear.rawValue:
+                    guard let locations = gradient?[GradientDictionaryKey.locations.rawValue] as? [Double],
+                          let colors = gradient?[GradientDictionaryKey.colors.rawValue] as? [String], locations.count == colors.count else {
+                        return .failure(GeneralError.invalidColorTokenFormat)
+                    }
+                default:
                     return .failure(GeneralError.invalidColorTokenFormat)
                 }
-
+                
                 value[mode.rawValue] = gradients
                 result[colorName] = value
             }
@@ -107,4 +116,12 @@ private enum GradientDictionaryKey: String {
     case colors
     case background
     case locations
+    case kind
+}
+
+private enum GradientKind: String {
+    case linear
+    case radial
+    case angular
+    case color
 }

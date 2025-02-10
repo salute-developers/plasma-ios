@@ -12,7 +12,7 @@ concurrency:
 jobs:
   generate-distribution:
     name: Generate themes distribution zip
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     environment: sdds
     steps:
       - name: Checkout the code

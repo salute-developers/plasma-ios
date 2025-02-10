@@ -1,0 +1,21 @@
+import Foundation
+import SDDSComponents
+import SDDSServTheme
+
+final class CheckboxVariationProvider: VariationProvider {
+    typealias Appearance = CheckboxAppearance
+    
+    var theme: Theme
+    
+    init(theme: Theme = .sdddsServTheme) {
+        self.theme = theme
+    }
+    
+    var variations: [Variation<CheckboxAppearance>] {
+        theme.checkboxVariations
+    }
+    
+    var defaultValue: CheckboxAppearance {
+        variations.first?.appearance ?? Checkbox.m.default.appearance
+    }
+}

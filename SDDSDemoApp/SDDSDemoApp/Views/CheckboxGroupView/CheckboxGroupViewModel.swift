@@ -4,8 +4,16 @@ import SDDSComponents
 import SDDSServTheme
 
 final class CheckboxGroupViewModel: ObservableObject {
-    @Published var checkboxViewModels: [CheckboxItemViewModel] = []
-    @Published var size: SDDSCheckboxGroupSize = .medium
+    @Published var checkboxViewModels: [CheckboxItemViewModel] = [] {
+        didSet {
+            self.updateGroupBehaviour()
+        }
+    }
+    @Published var size: SDDSCheckboxGroupSize = .medium {
+        didSet {
+            self.update()
+        }
+    }
     @Published var groupBehaviour: CheckboxGroupBehaviour?
     
     @Published var states: [Int: SelectionControlState] = [:]
@@ -57,13 +65,15 @@ struct CheckboxItemViewModel: Identifiable {
     var isEnabled: Bool
 
     func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
-        CheckboxData(
+        var appearance = Checkbox.m.default.appearance
+        appearance.size = size
+        return CheckboxData(
             state: state,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
             images: CheckboxView.checkbox,
-            appearance: SDDSCheckbox.default.appearance.size(size),
+            appearance: appearance,
             accessibility: .init()
         )
     }

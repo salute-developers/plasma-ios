@@ -19,5 +19,6 @@ public enum GeneralError: Error {
     case unableWriteData
     case nsError(Error)
     case codeGeneration(CodeGenerationError)
+    case emptyData
 }
 

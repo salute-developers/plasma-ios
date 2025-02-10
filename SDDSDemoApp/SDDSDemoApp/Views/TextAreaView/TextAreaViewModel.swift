@@ -96,4 +96,9 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
         }
     }
     
+    override func onUpdateAppearance() {
+        chips = []
+        value = .single(textValue)
+    }
+    
 }

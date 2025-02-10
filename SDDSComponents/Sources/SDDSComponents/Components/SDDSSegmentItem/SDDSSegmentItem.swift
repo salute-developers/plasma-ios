@@ -9,10 +9,10 @@ public struct SDDSSegmentItem: View {
     public let isDisabled: Bool
     public let isSelected: Bool
     public let strech: Bool
+    public let counterEnabled: Bool
     public let appearance: SegmentItemAppearance
     public let accessibility: SegmentItemAccessibility
     public let counterViewProvider: CounterViewProvider?
-    public let counterAppearance: CounterAppearance?
     public var action: () -> Void
     
     public init(item: SDDSSegmentItemData) {
@@ -23,10 +23,10 @@ public struct SDDSSegmentItem: View {
         self.isSelected = item.isSelected
         self.isDisabled = item.isDisabled
         self.strech = item.stretch
+        self.counterEnabled = item.counterEnabled
         self.appearance = item.appearance
         self.accessibility = item.accessibility
         self.counterViewProvider = item.counterViewProvider
-        self.counterAppearance = item.counterAppearance
         self.action = item.action
     }
     
@@ -38,10 +38,10 @@ public struct SDDSSegmentItem: View {
         isDisabled: Bool = false,
         isSelected: Bool,
         strech: Bool = false,
+        counterEnabled: Bool = false,
         appearance: SegmentItemAppearance,
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterViewProvider: CounterViewProvider? = nil,
-        counterAppearance: CounterAppearance? = nil,
         counterText: String = "",
         action: @escaping () -> Void = {}
     ) {
@@ -52,10 +52,10 @@ public struct SDDSSegmentItem: View {
         self.isDisabled = isDisabled
         self.isSelected = isSelected
         self.strech = strech
+        self.counterEnabled = counterEnabled
         self.appearance = appearance
         self.accessibility = accessibility
         self.counterViewProvider = counterViewProvider
-        self.counterAppearance = counterAppearance
         self.action = action
     }
     
@@ -87,18 +87,15 @@ extension SDDSSegmentItem {
     }
     
     var counterView: ViewProvider? {
-        guard let counterViewProvider = counterViewProvider else {
+        guard let counterViewProvider = counterViewProvider, counterEnabled else {
             return nil
         }
         switch counterViewProvider {
         case .default(let text):
-            guard let appearance = counterAppearance else {
-                return nil
-            }
             return ViewProvider(
                 SDDSCounter(
                     text: text,
-                    appearance: appearance,
+                    appearance: appearance.counterAppearance,
                     isAnimating: false,
                     isHighlighted: false,
                     isHovered: false

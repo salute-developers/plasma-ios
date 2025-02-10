@@ -13,13 +13,13 @@ public final class App {
     private func executeCommands(config: ThemeBuilderConfiguration, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
         PrepareDirectoriesCommand(
             themeBuilderURL: themeBuilderURL,
-            outputDirectoryURL: outputDirectoryURL,
+            outputDirectoryURL: outputDirectoryURL(config: themeConfig),
             themeURL: themeURL(config: themeConfig)
         ).run()
         DownloadCommand(fileURL: themeConfig.url, outputURL: schemeZipLocalURL(themeConfig: themeConfig)).run()
-        DownloadCommand(fileURL: config.paletteURL, outputURL: paletteLocalURL(config: config)).run()
+        DownloadCommand(fileURL: config.paletteURL, outputURL: paletteLocalURL(config: config, themeConfig: themeConfig)).run()
         
-        guard let schemeDirectory = UnpackThemeCommand(schemeURL: schemeZipLocalURL(themeConfig: themeConfig), outputDirectoryURL: outputDirectoryURL)
+        guard let schemeDirectory = UnpackThemeCommand(schemeURL: schemeZipLocalURL(themeConfig: themeConfig), outputDirectoryURL: outputDirectoryURL(config: themeConfig))
             .run()
             .asSchemeDirectory else {
             Logger.terminate("No scheme directory")
@@ -55,8 +55,9 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.colorToken, .colors],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: ColorContextBuilder(
-                    paletteURL: paletteLocalURL(config: config),
+                    paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
                 )
             ),
@@ -66,6 +67,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.shadowToken, .shadows],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .shadow,
                     metaScheme: metaScheme
@@ -77,6 +79,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.spacingToken, .spacings],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .spacing,
                     metaScheme: metaScheme
@@ -88,6 +91,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.shapeToken, .shapes],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .shape,
                     metaScheme: metaScheme
@@ -99,6 +103,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.typographyToken, .typographies],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: TypographyContextBuilder(
                     fontFamiliesContainer: fontFamiliesContainer, 
                     metaScheme: metaScheme
@@ -110,8 +115,9 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.gradientToken, .gradients],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GradientContextBuilder(
-                    paletteURL: paletteLocalURL(config: config),
+                    paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
                 )
             )
@@ -140,7 +146,7 @@ public final class App {
 // MARK: - Variations
 extension App {
     private func generateComponentVariations(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> [Command] {
-        CodeGenerationComponent.allCases.map { component in
+        CodeGenerationComponent.supportedComponents.map { component in
             return component.command(outputURL: generatedComponentsURL(component: component, config: themeConfig), themeConfig: themeConfig)
         }
     }
@@ -155,8 +161,10 @@ extension App {
         return path
     }
     
-    private var outputDirectoryURL: URL {
-        themeBuilderURL.appending(component: "Output")
+    private func outputDirectoryURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        themeBuilderURL
+            .appending(component: "Output")
+            .appending(component: config.name)
     }
     
     private var xcodeProjectURL: URL {
@@ -168,11 +176,12 @@ extension App {
     }
     
     private func schemeZipLocalURL(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
-        outputDirectoryURL.appending(component: themeConfig.url.lastPathComponent)
+        outputDirectoryURL(config: themeConfig)
+            .appending(component: themeConfig.url.lastPathComponent)
     }
     
-    private func paletteLocalURL(config: ThemeBuilderConfiguration) -> URL {
-        outputDirectoryURL.appending(component: config.paletteURL.lastPathComponent)
+    private func paletteLocalURL(config: ThemeBuilderConfiguration, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        outputDirectoryURL(config: themeConfig).appending(component: config.paletteURL.lastPathComponent)
     }
     
     private func generatedTokensURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {

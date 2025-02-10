@@ -127,6 +127,7 @@ public struct SDDSTextField: View {
             }
         }
         .opacity(disabled ? appearance.disabledAlpha : 1)
+        .disabled(disabled)
         .debug(condition: debugConfiguration.textField)
     }
 
@@ -229,8 +230,8 @@ public struct SDDSTextField: View {
                 .frame(height: appearance.chipAppearance.size.height)
                 
                 textField
-                    .id(textFieldIdentifier)
                     .padding(.leading, appearance.size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
+                    .id(textFieldIdentifier)
                     .onTapGesture {
                         isFocused = true
                     }
@@ -318,10 +319,19 @@ public struct SDDSTextField: View {
                 },
                 textFieldConfiguration: { textField in
                     textFieldConfiguration(textField: textField)
-                        .frame(height: textTypography.lineHeight, debug: debugConfiguration.textField)
+                        .frame(
+                            width: chipsTextSize,
+                            height: textTypography.lineHeight,
+                            debug: debugConfiguration.textField
+                        )
                 }
             )
         }
+    }
+    
+    private var chipsTextSize: CGFloat {
+        let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
+        return ceil(textSize.width)
     }
     
     @ViewBuilder
@@ -339,7 +349,9 @@ public struct SDDSTextField: View {
                 guard !readOnly else {
                     return
                 }
-                self.text = newValue.text
+                DispatchQueue.main.async {
+                    self.text = newValue.text
+                }
             }
     }
     
@@ -726,7 +738,7 @@ public struct SDDSTextField: View {
             return 0
         case .multiple:
             let chipAppearance = appearance.chipAppearance
-            return chipAppearance.size.cornerRadius(style: chipAppearance.shapeStyle)
+            return chipAppearance.size.cornerRadius
         }
     }
     
@@ -734,7 +746,12 @@ public struct SDDSTextField: View {
         return min(appearance.chipAppearance.size.height, chipGroupContentHeight)
     }
     
-    private let textFieldIdentifier = "TextField"
+    private var textFieldIdentifier: String {
+        var hasher = Hasher()
+        appearance.hash(into: &hasher)
+        text.hash(into: &hasher)
+        return String(hasher.finalize())
+    }
 
     private var titleTypography: TypographyToken {
         guard let typography = appearance.titleTypography.typography(with: appearance.size) else {

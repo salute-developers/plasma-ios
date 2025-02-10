@@ -5,11 +5,7 @@ import SDDSComponents
 import SDDSServTheme
 
 struct RadioboxView: View {
-    @ObservedObject private var viewModel: RadioboxViewModel
-    
-    init(viewModel: RadioboxViewModel = RadioboxViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: RadioboxViewModel = RadioboxViewModel()
     
     var body: some View {
         List {
@@ -29,6 +25,7 @@ struct RadioboxView: View {
             }
             
             Section {
+                VariationsView(viewModel: viewModel)
                 HStack {
                     Text("Title")
                     Spacer()
@@ -53,23 +50,6 @@ struct RadioboxView: View {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
                 
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSRadioboxSize.allCases, id: \.self) { size in
-                        Button(size.description) {
-                            viewModel.size = size
-                        }
-                    }
-                }
-                
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(SDDSRadiobox.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            viewModel.appearance = variation.appearance.size(viewModel.size)
-                            viewModel.variationName = variation.name
-                        }
-                    }
-                }
-                
             }
         }
         .navigationTitle("SDDSRadiobox")
@@ -86,5 +66,5 @@ extension RadioboxView {
 }
 
 #Preview {
-    RadioboxView(viewModel: RadioboxViewModel())
+    RadioboxView()
 }
