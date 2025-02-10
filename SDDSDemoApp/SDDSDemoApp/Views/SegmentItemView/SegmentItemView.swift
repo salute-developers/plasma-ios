@@ -40,7 +40,7 @@ public struct SegmentItemView: View {
             Spacer()
         }
     }
-        
+
     public var title: some View {
         HStack {
             Text("Title")
