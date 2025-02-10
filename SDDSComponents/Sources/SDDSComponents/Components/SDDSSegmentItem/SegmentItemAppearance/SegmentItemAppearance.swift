@@ -4,24 +4,17 @@ import SwiftUI
 
 public struct SegmentItemAppearance: EnvironmentKey {
     public static let defaultValue: Self = .init()
-    
-    public let size: SegmentItemSizeConfiguration
-    
-    public let shapeStyle: ComponentShapeStyle
-    
-    public let titleTypography: TypographyConfiguration
-    
-    public let titleColor: ButtonColor
-    
-    public let subtitleTypography: TypographyConfiguration
-    
-    public let subtitleColor: ButtonColor
-    
-    public let iconColor: ButtonColor
-    
-    public let backgroundColor: ButtonColor
-        
-    public let disabledAlpha: CGFloat
+
+    public var size: SegmentItemSizeConfiguration
+    public var shapeStyle: ComponentShapeStyle
+    public var titleTypography: TypographyConfiguration
+    public var titleColor: ButtonColor
+    public var subtitleTypography: TypographyConfiguration
+    public var subtitleColor: ButtonColor
+    public var iconColor: ButtonColor
+    public var backgroundColor: ButtonColor
+    public var disabledAlpha: CGFloat
+    public var counterAppearance: CounterAppearance
     
     public init(
         size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
@@ -44,5 +37,6 @@ public struct SegmentItemAppearance: EnvironmentKey {
         self.iconColor = iconColor
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
+        self.counterAppearance = counterAppearance
     }
 }

@@ -6,19 +6,21 @@ final class ButtonVariationProvider: VariationProvider {
     typealias Appearance = ButtonAppearance
     
     var buttonType: SDDSButtonType
+    var theme: Theme
     
-    init(buttonType: SDDSButtonType) {
+    init(buttonType: SDDSButtonType, theme: Theme = .sdddsServTheme) {
         self.buttonType = buttonType
+        self.theme = theme
     }
     
     var variations: [Variation<ButtonAppearance>] {
         switch buttonType {
         case .basic:
-            BasicButton.all
+            theme.basicButtonVariations
         case .link:
-            LinkButton.all
+            theme.linkButtonVariations
         case .icon:
-            IconButton.all
+            theme.iconButtonVariations
         }
     }
     

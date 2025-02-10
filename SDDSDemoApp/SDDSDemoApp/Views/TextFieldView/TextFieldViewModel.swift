@@ -66,12 +66,13 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     func updateChipTitle(at index: Int, with newTitle: String) {
         guard chips.indices.contains(index) else { return }
         var updatedChip = chips[index]
+        
         updatedChip = ChipData(
             title: newTitle,
             isEnabled: updatedChip.isEnabled,
             iconImage: updatedChip.iconImage,
             buttonImage: updatedChip.buttonImage,
-            appearance: updatedChip.appearance.size(updatedChip.appearance.size),
+            appearance: updatedChip.appearance,
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )
@@ -84,6 +85,11 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
         if chips.isEmpty {
             value = .single(textValue)
         }
+    }
+    
+    override func onUpdateAppearance() {
+        chips = []
+        value = .single(textValue)
     }
 
 }

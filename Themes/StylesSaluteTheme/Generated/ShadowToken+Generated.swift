@@ -9,7 +9,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000066")),
+                    color: Color(UIColor(hex: "#66000000")),
                     offsetX: 0.0,
                     offsetY: 60.0,
                     blurRadius: 112.0,
@@ -22,7 +22,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#0000003D")),
+                    color: Color(UIColor(hex: "#3D000000")),
                     offsetX: 0.0,
                     offsetY: 16.0,
                     blurRadius: 32.0,
@@ -35,14 +35,14 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#08080829")),
+                    color: Color(UIColor(hex: "#29080808")),
                     offsetX: 0.0,
                     offsetY: 4.0,
                     blurRadius: 12.0,
                     spreadRadius: -3.0
                 ),
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000014")),
+                    color: Color(UIColor(hex: "#14000000")),
                     offsetX: 0.0,
                     offsetY: 1.0,
                     blurRadius: 4.0,
@@ -55,7 +55,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000014")),
+                    color: Color(UIColor(hex: "#14000000")),
                     offsetX: 0.0,
                     offsetY: 60.0,
                     blurRadius: 112.0,
@@ -68,7 +68,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000014")),
+                    color: Color(UIColor(hex: "#14000000")),
                     offsetX: 0.0,
                     offsetY: 24.0,
                     blurRadius: 48.0,
@@ -81,14 +81,14 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#08080814")),
+                    color: Color(UIColor(hex: "#14080808")),
                     offsetX: 0.0,
                     offsetY: 4.0,
                     blurRadius: 14.0,
                     spreadRadius: -4.0
                 ),
                 Self.Layer(
-                    color: Color(UIColor(hex: "#0000000A")),
+                    color: Color(UIColor(hex: "#0A000000")),
                     offsetX: 0.0,
                     offsetY: 1.0,
                     blurRadius: 4.0,
@@ -101,7 +101,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000066")),
+                    color: Color(UIColor(hex: "#66000000")),
                     offsetX: 0.0,
                     offsetY: -60.0,
                     blurRadius: 112.0,
@@ -114,7 +114,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#0000003D")),
+                    color: Color(UIColor(hex: "#3D000000")),
                     offsetX: 0.0,
                     offsetY: -16.0,
                     blurRadius: 32.0,
@@ -127,14 +127,14 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#08080833")),
+                    color: Color(UIColor(hex: "#33080808")),
                     offsetX: 0.0,
                     offsetY: -4.0,
                     blurRadius: 12.0,
                     spreadRadius: -3.0
                 ),
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000008")),
+                    color: Color(UIColor(hex: "#08000000")),
                     offsetX: 0.0,
                     offsetY: -1.0,
                     blurRadius: 4.0,
@@ -147,7 +147,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000014")),
+                    color: Color(UIColor(hex: "#14000000")),
                     offsetX: 0.0,
                     offsetY: -60.0,
                     blurRadius: 112.0,
@@ -160,7 +160,7 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000014")),
+                    color: Color(UIColor(hex: "#14000000")),
                     offsetX: 0.0,
                     offsetY: -24.0,
                     blurRadius: 48.0,
@@ -173,14 +173,14 @@ public extension ShadowToken {
         Self(
             layers: [
                 Self.Layer(
-                    color: Color(UIColor(hex: "#08080814")),
+                    color: Color(UIColor(hex: "#14080808")),
                     offsetX: 0.0,
                     offsetY: -4.0,
                     blurRadius: 14.0,
                     spreadRadius: -4.0
                 ),
                 Self.Layer(
-                    color: Color(UIColor(hex: "#00000008")),
+                    color: Color(UIColor(hex: "#08000000")),
                     offsetX: 0.0,
                     offsetY: -1.0,
                     blurRadius: 4.0,

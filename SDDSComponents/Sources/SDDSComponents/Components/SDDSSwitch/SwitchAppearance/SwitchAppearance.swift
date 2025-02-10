@@ -17,13 +17,13 @@ public struct SwitchAppearance: EnvironmentKey, Hashable {
     public static let defaultValue: Self = .init()
     
     let id = UUID()
-    public let size: SwitchSizeConfiguration
-    public let titleTypography: TypographyConfiguration
-    public let subtitleTypography: TypographyConfiguration
-    public let titleColor: ColorToken
-    public let subtitleColor: ColorToken
-    public let tintColor: ColorToken
-    public let disabledAlpha: CGFloat
+    public var size: SwitchSizeConfiguration
+    public var titleTypography: TypographyConfiguration
+    public var subtitleTypography: TypographyConfiguration
+    public var titleColor: ColorToken
+    public var subtitleColor: ColorToken
+    public var tintColor: ColorToken
+    public var disabledAlpha: CGFloat
     
     public init(
         size: SwitchSizeConfiguration = DefaultSwitchSize(),

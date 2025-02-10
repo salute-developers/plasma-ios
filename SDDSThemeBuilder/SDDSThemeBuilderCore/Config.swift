@@ -81,7 +81,7 @@ public extension ThemeBuilderConfiguration.Theme {
         case .sddsOs:
             .init(name: self.rawValue, url: themeURL(name: "sdds_os"))
         case .stylesSalute:
-            .init(name: self.rawValue, url: themeURL(name: "styles_salute"))
+            .init(name: self.rawValue, url: themeURL(name: "stylesSalute"))
         case .default:
             .init(name: self.rawValue, url: themeURL(name: "default"))
         }

@@ -7,6 +7,8 @@ public struct SDDSSegment: View {
     public let layoutMode: SegmentLayoutMode
     public let layoutOrientation: SegmentLayoutOrientation
     public let isDisabled: Bool
+    public let stretch: Bool
+    public let hasBackground: Bool
     
     private var maxWidth: CGFloat = 0
     
@@ -24,7 +26,9 @@ public struct SDDSSegment: View {
         layoutMode: SegmentLayoutMode = .flexible,
         layoutOrientation: SegmentLayoutOrientation,
         selectedItemId: Binding<UUID?>,
-        isDisabled: Bool = false
+        isDisabled: Bool = false,
+        stretch: Bool = false,
+        hasBackground: Bool = true
     ) {
         self.items = items
         self.appearance = appearance
@@ -32,6 +36,8 @@ public struct SDDSSegment: View {
         self.layoutOrientation = layoutOrientation
         self._selectedItemId = selectedItemId
         self.isDisabled = isDisabled
+        self.stretch = stretch
+        self.hasBackground = hasBackground
         
         self.maxWidth = items.map { segmentData in
             let calculator = SegmentWidthCalculatorImpl(
@@ -53,7 +59,7 @@ public struct SDDSSegment: View {
         .padding(appearance.size.paddings)
         .background(backgroundColor)
         .cornerRadius(cornerRadius)
-        .opacity(isDisabled ? appearance.disabledAlpha : 1)
+        .disabled(isDisabled)
     }
     
     public var horizontalOrientation: some View {
@@ -65,10 +71,10 @@ public struct SDDSSegment: View {
                     iconAttributes: segmentData.iconAttributes,
                     isDisabled: segmentData.isDisabled,
                     isSelected: selectedItemId == segmentData.id,
-                    strech: appearance.stretch,
-                    appearance: segmentData.appearance,
+                    strech: stretch,
+                    counterEnabled: segmentData.counterEnabled,
+                    appearance: appearance.segmentItemAppearance,
                     counterViewProvider: segmentData.counterViewProvider,
-                    counterAppearance: segmentData.counterAppearance,
                     action: {
                         selectedItemId = segmentData.id
                     }
@@ -90,9 +96,9 @@ public struct SDDSSegment: View {
                     isDisabled: segmentData.isDisabled,
                     isSelected: selectedItemId == segmentData.id,
                     strech: true,
-                    appearance: segmentData.appearance,
-                    counterViewProvider: segmentData.counterViewProvider,
-                    counterAppearance: segmentData.counterAppearance
+                    counterEnabled: segmentData.counterEnabled,
+                    appearance: appearance.segmentItemAppearance,
+                    counterViewProvider: segmentData.counterViewProvider
                 )
                 .highPriorityGesture(
                     TapGesture()
@@ -129,7 +135,7 @@ public struct SDDSSegment: View {
     }
     
     private var backgroundColor: Color {
-        if let backgroundColor = appearance.backgroundColor, appearance.hasBackground {
+        if let backgroundColor = appearance.backgroundColor, hasBackground {
             return currentColor(for: backgroundColor)
         }
         return .clear

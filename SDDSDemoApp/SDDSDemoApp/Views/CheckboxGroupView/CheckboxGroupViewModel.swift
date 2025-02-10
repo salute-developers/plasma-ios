@@ -11,13 +11,14 @@ final class CheckboxGroupViewModel: ObservableObject {
     @Published var states: [Int: SelectionControlState] = [:]
 
     var checkboxData: [CheckboxData] {
-        return checkboxViewModels.enumerated().map { index, value in
-            return value.toCheckboxData(with: size.checkboxSize, state: Binding(get: { [weak self] in
-                self?.states[index] ?? .deselected
-            }, set: { [weak self] newState in
-                self?.states[index] = newState
-            }))
-        }
+        []
+//        return checkboxViewModels.enumerated().map { index, value in
+//            return value.toCheckboxData(with: size.checkboxSize, state: Binding(get: { [weak self] in
+//                self?.states[index] ?? .deselected
+//            }, set: { [weak self] newState in
+//                self?.states[index] = newState
+//            }))
+//        }
     }
     
     init() {
@@ -56,28 +57,28 @@ struct CheckboxItemViewModel: Identifiable {
     var subtitle: String
     var isEnabled: Bool
 
-    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
-        CheckboxData(
-            state: state,
-            title: title,
-            subtitle: subtitle,
-            isEnabled: isEnabled,
-            images: CheckboxView.checkbox,
-            appearance: SDDSCheckbox.default.appearance.size(size),
-            accessibility: .init()
-        )
-    }
+//    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
+//        CheckboxData(
+//            state: state,
+//            title: title,
+//            subtitle: subtitle,
+//            isEnabled: isEnabled,
+//            images: CheckboxView.checkbox,
+//            appearance: SDDSCheckbox.default.appearance.size(size),
+//            accessibility: .init()
+//        )
+//    }
 }
 
 // MARK: - Extension
 
-private extension SDDSCheckboxGroupSize {
-    var checkboxSize: SDDSCheckboxSize {
-        switch self {
-        case .medium:
-            return .medium
-        case .small:
-            return .small
-        }
-    }
-}
+//private extension SDDSCheckboxGroupSize {
+//    var checkboxSize: SDDSCheckboxSize {
+//        switch self {
+//        case .medium:
+//            return .medium
+//        case .small:
+//            return .small
+//        }
+//    }
+//}

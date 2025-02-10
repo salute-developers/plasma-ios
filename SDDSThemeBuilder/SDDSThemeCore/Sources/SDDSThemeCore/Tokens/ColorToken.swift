@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ColorToken {
+public struct ColorToken: Hashable {
     /// Цвет для тёмной темы
     public let darkColor: Color
         
@@ -10,5 +10,15 @@ public struct ColorToken {
     public init(darkColor: Color, lightColor: Color) {
         self.darkColor = darkColor
         self.lightColor = lightColor
+    }
+    
+    public static func == (lhs: ColorToken, rhs: ColorToken) -> Bool {
+        lhs.darkColor == rhs.darkColor &&
+        lhs.lightColor == rhs.lightColor
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(darkColor)
+        hasher.combine(lightColor)
     }
 }

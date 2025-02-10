@@ -116,6 +116,9 @@
 		816FBD1D2D6355350009AC1C /* Spacings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 816FBD1A2D63530D0009AC1C /* Spacings.stencil */; };
 		816FBD202D63563E0009AC1C /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FBD1E2D63563E0009AC1C /* Spacings+Generated.swift */; };
 		816FBD212D63563E0009AC1C /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FBD1F2D63563E0009AC1C /* SpacingToken+Generated.swift */; };
+		8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA412D5DDF4F00EA3E68 /* ChipAppearance.swift */; };
+		8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA432D5DDF5700EA3E68 /* ChipSize.swift */; };
+		8174BA462D5DE10200EA3E68 /* ChipProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA452D5DE10000EA3E68 /* ChipProps.swift */; };
 		8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */; };
 		817539622BD0077300138866 /* SDDSThemeBuilderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; };
 		817539682BD0077300138866 /* SDDSThemeBuilderCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8175395A2BD0077200138866 /* SDDSThemeBuilderCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -496,6 +499,9 @@
 		816FBD1A2D63530D0009AC1C /* Spacings.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Spacings.stencil; sourceTree = "<group>"; };
 		816FBD1E2D63563E0009AC1C /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		816FBD1F2D63563E0009AC1C /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
+		8174BA412D5DDF4F00EA3E68 /* ChipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipAppearance.swift; sourceTree = "<group>"; };
+		8174BA432D5DDF5700EA3E68 /* ChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSize.swift; sourceTree = "<group>"; };
+		8174BA452D5DE10000EA3E68 /* ChipProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipProps.swift; sourceTree = "<group>"; };
 		817539362BCE745600138866 /* ColorToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorToken.stencil; sourceTree = "<group>"; };
 		8175393C2BCE83EF00138866 /* CodeGenerationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationError.swift; sourceTree = "<group>"; };
 		8175393E2BCE869C00138866 /* StencilTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StencilTemplate.swift; sourceTree = "<group>"; };
@@ -929,6 +935,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA452D5DE10000EA3E68 /* ChipProps.swift */,
 				812DB6FE2D55E4E800D3F4A3 /* TextFieldProps.swift */,
 				812DB7992D59D85400D3F4A3 /* ButtonProps.swift */,
 			);
@@ -940,6 +947,7 @@
 			children = (
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				812DB79D2D59D9FB00D3F4A3 /* Button */,
+				8174BA402D5DDF4600EA3E68 /* Chip */,
 				818E38EA2D4A4C0800B3A02D /* TextArea */,
 				81A753462D47DE03006E1BE7 /* TextField */,
 			);
@@ -1098,6 +1106,15 @@
 				8180A54D2C11068700009AF5 /* Generated */,
 			);
 			path = SDDSTheme;
+			sourceTree = "<group>";
+		};
+		8174BA402D5DDF4600EA3E68 /* Chip */ = {
+			isa = PBXGroup;
+			children = (
+				8174BA412D5DDF4F00EA3E68 /* ChipAppearance.swift */,
+				8174BA432D5DDF5700EA3E68 /* ChipSize.swift */,
+			);
+			path = Chip;
 			sourceTree = "<group>";
 		};
 		817539352BCE744300138866 /* Stencil */ = {
@@ -1964,6 +1981,7 @@
 				818345822CFE3CC00081113B /* String+Extensions.swift in Sources */,
 				81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */,
 				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
+				8174BA462D5DE10200EA3E68 /* ChipProps.swift in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
@@ -1995,6 +2013,7 @@
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */,
+				8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */,
 				81A7534F2D47DE03006E1BE7 /* TextFieldSize.swift in Sources */,
 				812DB6ED2D55E41E00D3F4A3 /* SizeContextBuilder.swift in Sources */,
 				81A753502D47DE03006E1BE7 /* ComponentContext.swift in Sources */,
@@ -2061,6 +2080,7 @@
 				81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */,
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
+				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
 				81B23FA92D4BEBA00042A657 /* Component.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
 				812DB6DE2D55E2BD00D3F4A3 /* MergeableConfiguration.swift in Sources */,

@@ -8,7 +8,8 @@ import Foundation
     - buttonImageSize: Размер изображения кнопки.
     - leadingInset: Внутренний отступ слева.
     - trailingInset: Внутренний отступ справа.
-    - spacing: Расстояние между элементами.
+    - contentStartPadding: Отступ от .contentStart
+    - contentEndPadding: Отступ от .contentEnd
     - borderStyle: Стиль границы чипа.
     - height: Высота чипа.
  */
@@ -17,12 +18,22 @@ public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConve
     var buttonImageSize: CGSize? { get }
     var leadingInset: CGFloat { get }
     var trailingInset: CGFloat { get }
-    var spacing: CGFloat { get }
+    var contentStartPadding: CGFloat { get }
+    var contentEndPadding: CGFloat { get }
     var height: CGFloat { get }
+    var cornerRadius: CGFloat { get }
+    
+    @available(*, deprecated, message: "use contentEndPadding, contentStartPadding instead")
+    var spacing: CGFloat { get }
+    
+    @available(*, deprecated, renamed: "cornerRadius")
     func cornerRadius(style: ComponentShapeStyle) -> CGFloat
 }
 
 public struct ZeroChipSize: ChipSizeConfiguration {
+    public var cornerRadius: CGFloat { 0 }
+    public var contentStartPadding: CGFloat { 0 }
+    public var contentEndPadding: CGFloat { 0 }
     public var iconImageSize: CGSize? { nil }
     public var buttonImageSize: CGSize? { nil }
     public var leadingInset: CGFloat { 0 }

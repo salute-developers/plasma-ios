@@ -8,6 +8,20 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textFieldClear = "TextFieldClear"
     case textArea = "TextArea"
     case textAreaClear = "TextAreaClear"
+    case chip = "Chip"
+    case embeddedChip = "EmbeddedChip"
+    
+    static var supportedComponents: [CodeGenerationComponent] {
+        [
+            .basicButton,
+            .linkButton,
+            .iconButton,
+            .textField,
+            .textFieldClear,
+            .textArea,
+            .textAreaClear
+        ]
+    }
 }
 
 extension CodeGenerationComponent {
@@ -19,6 +33,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .textArea, .textAreaClear:
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .chip, .embeddedChip:
+            GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     
@@ -31,6 +47,8 @@ extension CodeGenerationComponent {
             "TextAreaAppearance"
         case .textField, .textFieldClear:
             "TextFieldAppearance"
+        case .chip, .embeddedChip:
+            "ChipAppearance"
         }
     }
     
@@ -43,6 +61,8 @@ extension CodeGenerationComponent {
             "TextAreaSizeConfiguration"
         case .textField, .textFieldClear:
             "TextFieldSizeConfiguration"
+        case .chip, .embeddedChip:
+            "ChipSizeConfiguration"
         }
     }
     
@@ -62,6 +82,10 @@ extension CodeGenerationComponent {
             "text_area_config.json"
         case .textAreaClear:
             "text_area_clear_config.json"
+        case .chip:
+            "chip_config.json"
+        case .embeddedChip:
+            "embedded_chip_config.json"
         }
     }
     

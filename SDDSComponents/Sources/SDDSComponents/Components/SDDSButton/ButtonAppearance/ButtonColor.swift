@@ -9,7 +9,7 @@ import Foundation
     - highlightedColor: Цвет для состояния, когда кнопка нажата.
     - hoveredColor: Цвет для состояния, когда кнопка находится под курсором.
  */
-public struct ButtonColor {
+public struct ButtonColor: Hashable {
     /**
      Цвет для стандартного состояния кнопки.
      */
@@ -51,5 +51,19 @@ public struct ButtonColor {
         self.highlightedColor = highlightedColor
         self.hoveredColor = hoveredColor
         self.selectedColor = selectedColor
+    }
+    
+    public static func == (lhs: ButtonColor, rhs: ButtonColor) -> Bool {
+        lhs.defaultColor == rhs.defaultColor &&
+        lhs.highlightedColor == rhs.highlightedColor &&
+        lhs.hoveredColor == rhs.hoveredColor &&
+        lhs.selectedColor == rhs.selectedColor
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(defaultColor)
+        hasher.combine(highlightedColor)
+        hasher.combine(hoveredColor)
+        hasher.combine(selectedColor)
     }
 }
