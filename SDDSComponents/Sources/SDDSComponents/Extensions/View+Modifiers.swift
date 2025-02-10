@@ -18,3 +18,14 @@ public extension View {
         transform(self)
     }
 }
+
+extension View {
+    func environment(cellAppearance: CellAppearance) -> some View {
+        self
+            .environment(\.avatarAppearance, cellAppearance.avatarAppearance)
+            .environment(\.buttonAppearance, cellAppearance.buttonAppearance)
+            .environment(\.switchAppearance, cellAppearance.switchAppearance)
+            .environment(\.checkboxAppearance, cellAppearance.checkboxAppearance)
+            .environment(\.radioboxAppearance, cellAppearance.radioboxAppearance)
+    }
+}
