@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSServTheme
 
 final class RadioboxGroupViewModel: ObservableObject {
-    @Published var radioboxViewModels: [RadioboxItemViewModel]
+    @Published var radioboxViewModels: [RadioboxItemViewModel] = []
     @Published var size: SDDSRadioboxGroupSize = .medium
 
     var radioboxData: [RadioboxData] {
@@ -26,6 +26,8 @@ final class RadioboxGroupViewModel: ObservableObject {
  extension SDDSRadioboxGroupSize {
      var radioboxSize: SDDSRadioboxSize {
          switch self {
+         case .large:
+             return .large
          case .medium:
              return .medium
          case .small:

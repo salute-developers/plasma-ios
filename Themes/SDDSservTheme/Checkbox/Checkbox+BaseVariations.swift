@@ -3,6 +3,17 @@ import SDDSComponents
 import SDDSThemeCore
 
 public struct Checkbox {
+    public static var l: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
+        var appearance = CheckboxAppearance()
+        appearance.size = SDDSCheckboxSize.large
+        appearance.titleTypography = CheckboxTypography.label
+        appearance.subtitleTypography = CheckboxTypography.description
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     public static var m: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance()
         appearance.size = SDDSCheckboxSize.medium
@@ -25,5 +36,5 @@ public struct Checkbox {
         )
     }
     
-    public static let all: [Variation<CheckboxAppearance>] = [m, s].map { $0.variation }
+    public static let all: [Variation<CheckboxAppearance>] = [l, m, s].map { $0.variation }
 }

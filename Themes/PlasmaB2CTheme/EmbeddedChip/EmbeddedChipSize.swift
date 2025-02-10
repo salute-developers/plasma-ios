@@ -4,17 +4,36 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct EmbeddedChipSize {
+    static let xl = EmbeddedChipSizeXl()
     static let l = EmbeddedChipSizeL()
     static let m = EmbeddedChipSizeM()
     static let s = EmbeddedChipSizeS()
     static let xs = EmbeddedChipSizeXs()
 
     static let all: [ChipSizeConfiguration] = [
+        EmbeddedChipSize.xl,
         EmbeddedChipSize.l,
         EmbeddedChipSize.m,
         EmbeddedChipSize.s,
-        EmbeddedChipSize.xs,
+        EmbeddedChipSize.xs
     ] 
+}
+struct EmbeddedChipSizeXl: ChipSizeConfiguration {
+    public var spacing: CGFloat { 0 }
+    public func cornerRadius(style: SDDSComponents.ComponentShapeStyle) -> CGFloat {
+        0
+    }
+    public var buttonImageSize: CGSize? = CGSize(width:24.0, height:24.0)
+    public var contentEndPadding = CGFloat(8.0)
+    public var contentStartPadding = CGFloat(8.0)
+    public var cornerRadius = ShapeToken.roundS.cornerRadius
+    public var height = CGFloat(52.0)
+    public var iconImageSize: CGSize? = CGSize(width:24.0, height:24.0)
+    public var leadingInset = CGFloat(14.0)
+    public var trailingInset = CGFloat(12.0)
+    public var debugDescription: String {
+        return "EmbeddedChipSize"
+    }
 }
 struct EmbeddedChipSizeL: ChipSizeConfiguration {
     public var spacing: CGFloat { 0 }

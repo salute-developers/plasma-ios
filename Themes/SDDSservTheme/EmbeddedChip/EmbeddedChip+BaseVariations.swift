@@ -4,6 +4,17 @@ import SDDSComponents
 import SDDSThemeCore
 
 public struct EmbeddedChip {
+    public static var xl: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
+        var appearance = ChipAppearance.base
+        appearance.size = EmbeddedChipSize.xl
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
+    
     public static var l: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.l
@@ -46,6 +57,7 @@ public struct EmbeddedChip {
     }
     
     public static let all: [Variation<ChipAppearance>] = [
+        EmbeddedChip.xl.variation,
         EmbeddedChip.l.variation,
         EmbeddedChip.m.variation,
         EmbeddedChip.s.variation,
@@ -54,6 +66,7 @@ public struct EmbeddedChip {
 }
 
 public struct EmbeddedChipVariation {
+    public struct Xl {}
     public struct L {}
     public struct M {}
     public struct S {}

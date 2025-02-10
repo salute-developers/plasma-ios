@@ -148,24 +148,29 @@ public struct SDDSCheckboxGroup: View {
 }
 
 public enum SDDSCheckboxGroupSize: String, CheckboxGroupSizeConfiguration, CaseIterable {
+    case large
     case medium
     case small
     
     public var horizontalIndent: CGFloat {
         switch self {
+        case .large:
+            36
         case .medium:
-            24
+            36
         case .small:
-            12
+            24
         }
     }
     
     public var verticalSpacing: CGFloat {
         switch self {
+        case .large:
+            7
         case .medium:
-            8
+            6
         case .small:
-            4
+            5
         }
     }
     
