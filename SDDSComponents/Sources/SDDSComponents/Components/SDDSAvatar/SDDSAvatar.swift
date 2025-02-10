@@ -18,22 +18,26 @@ public struct SDDSAvatar: View {
     let image: AvatarImageSource?
     let placeholderImage: AvatarImageSource?
     let status: AvatarStatus
-    let appearance: AvatarAppearance
     let accessibility: AvatarAccessibility
+    var _appearance: AvatarAppearance?
+    private var appearance: AvatarAppearance {
+        _appearance ?? avatarAppearance
+    }
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.avatarAppearance) var avatarAppearance
     
     public init(
         text: String,
         image: AvatarImageSource?,
         placeholderImage: AvatarImageSource?,
         status: AvatarStatus,
-        appearance: AvatarAppearance,
+        appearance: AvatarAppearance? = nil,
         accessibility: AvatarAccessibility) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
     }
     
@@ -42,7 +46,7 @@ public struct SDDSAvatar: View {
         self.image = data.image
         self.placeholderImage = data.placeholderImage
         self.status = data.status
-        self.appearance = data.appearance
+        self._appearance = data.appearance
         self.accessibility = data.accessibility
     }
     

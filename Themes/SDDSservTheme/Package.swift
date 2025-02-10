@@ -13,12 +13,13 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "SDDSThemeCore", path: "../../SDDSThemeBuilder/SDDSThemeCore"),
-        .package(name: "SDDSComponents", path: "../../SDDSComponents")
+        .package(name: "SDDSComponents", path: "../../SDDSComponents"),
+        .package(name: "SDDSIcons", path: "../../SDDSIcons")
     ],
     targets: [
         .target(
             name: "SDDSServTheme",
-            dependencies: ["SDDSThemeCore", "SDDSComponents"],
+            dependencies: ["SDDSThemeCore", "SDDSComponents", "SDDSIcons"],
             path: ".",
             exclude: ["SDDSServTheme.xcodeproj", "SDDSTheme.h"],
             resources: [

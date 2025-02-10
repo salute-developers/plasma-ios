@@ -7,17 +7,22 @@ public struct IconButton: View {
     public let isDisabled: Bool
     public let isLoading: Bool
     public let spinnerImage: Image
-    public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
     public var action: () -> Void
+    private var _appearance: ButtonAppearance?
+    private var appearance: ButtonAppearance {
+        _appearance ?? buttonAppearance
+    }
+    
+    @Environment(\.buttonAppearance) var buttonAppearance
     
     public init(
         iconAttributes: ButtonIconAttributes? = nil,
         isDisabled: Bool = false,
         isLoading: Bool = false,
         spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
-        appearance: ButtonAppearance,
+        appearance: ButtonAppearance? = nil,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
         action: @escaping () -> Void
@@ -26,7 +31,7 @@ public struct IconButton: View {
         self.isDisabled = isDisabled
         self.isLoading = isLoading
         self.spinnerImage = spinnerImage
-        self.appearance = appearance
+        self._appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
         self.action = action

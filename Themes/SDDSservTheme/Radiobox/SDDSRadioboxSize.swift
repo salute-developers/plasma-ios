@@ -1,15 +1,15 @@
 import Foundation
 import SDDSComponents
 
-enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
+public enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
     case medium
     case small
     
-    var debugDescription: String {
+    public var debugDescription: String {
         rawValue
     }
     
-    var imageSize: CGSize {
+    public var imageSize: CGSize {
         switch self {
         case .medium:
             .init(width: 24, height: 24)
@@ -18,11 +18,11 @@ enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
         }
     }
     
-    var verticalGap: CGFloat {
+    public var verticalGap: CGFloat {
         0.0
     }
     
-    var horizontalGap: CGFloat {
+    public var horizontalGap: CGFloat {
         switch self {
         case .medium:
             12.0

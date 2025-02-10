@@ -101,8 +101,8 @@
 		812DAC4D2D673F5500A87D5F /* Checkbox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DABFC2D673F5500A87D5F /* Checkbox+BaseVariations.swift */; };
 		812DAC4E2D673F5500A87D5F /* Counter+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DAC092D673F5500A87D5F /* Counter+BaseVariations.swift */; };
 		812DAC4F2D673F5500A87D5F /* RadioboxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DAC182D673F5500A87D5F /* RadioboxTypography.swift */; };
-		81BBE20B2D759E8000612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; };
-		81BBE2112D75A08D00612681 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */; };
+		81E4CD3F2D49FB9200E7F395 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; };
+		81E4CD402D49FB9200E7F395 /* SDDSComponents.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8ECEBDF0B77610192BA89968 /* SBSansText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278BDEAA29DA8A198501A22B /* SBSansText-SemiboldItalic.otf */; };
 		9B88E9F86DE5AD9E28D0511B /* SBSansDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69390BBA41E7EFEFFE5EE1DA /* SBSansDisplay-Regular.otf */; };
 		A059B00A8A90DFA2B44A01F5 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B23BD6BB8A0CE36B12D28 /* Shadows+Generated.swift */; };
