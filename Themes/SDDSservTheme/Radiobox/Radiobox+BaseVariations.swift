@@ -3,6 +3,17 @@ import SDDSComponents
 import SDDSThemeCore
 
 public struct Radiobox {
+    public static var l: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
+        var appearance = RadioboxAppearance()
+        appearance.size = SDDSRadioboxSize.large
+        appearance.titleTypography = RadioboxTypography.label
+        appearance.subtitleTypography = RadioboxTypography.description
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     public static var m: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance()
         appearance.size = SDDSRadioboxSize.medium
@@ -25,5 +36,5 @@ public struct Radiobox {
         )
     }
     
-    public static let all: [Variation<RadioboxAppearance>] = [m, s].map { $0.variation }
+    public static let all: [Variation<RadioboxAppearance>] = [l, m, s].map { $0.variation }
 }
