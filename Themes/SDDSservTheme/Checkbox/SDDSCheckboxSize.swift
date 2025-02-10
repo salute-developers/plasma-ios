@@ -19,7 +19,7 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
         }
     }
     
-    public  var verticalGap: CGFloat {
+    public public var verticalGap: CGFloat {
         0.0
     }
     
