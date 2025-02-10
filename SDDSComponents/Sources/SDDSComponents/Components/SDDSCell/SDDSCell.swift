@@ -2,62 +2,53 @@ import Foundation
 import SwiftUI
 
 /*
- MARK: - Cell Content
- */
-public enum CellContentLeft {
-    case icon(Image)
-    case avatar(SDDSAvatar)
-    case custom(ViewProvider)
-}
-
-public struct CellContentCenter {
-    public let label: String
-    public let title: String
-    public let subtitle: String
-    
-    public init(label: String, title: String, subtitle: String) {
-        self.label = label
-        self.title = title
-        self.subtitle = subtitle
-    }
-}
-
-public struct CellContentRight {
-    let disclosureEnabled: Bool
-    let view: ViewProvider
-    
-    public init(
-        disclosureEnabled: Bool,
-        view: ViewProvider
-    ) {
-        self.disclosureEnabled = disclosureEnabled
-        self.view = view
-    }
-}
-
-/*
  MARK: - Disclosure
  */
-public struct DisclosureViewProvider {
-    let alignment: CellContentRightAlignment //in API Documentation name is `gravity`
+public struct DisclosureViewProvider: View {
     let disclosureText: String
     let disclosureIcon: ViewProvider? //ButtonIcon?
     let disclosure: ViewProvider?
+    let arrow: DisclosureArrow
     
     init(
-        alignment: CellContentRightAlignment,
         disclosureText: String,
         disclosureIcon: ViewProvider?,
-        disclosure: ViewProvider?
+        disclosure: ViewProvider?,
+        arrow: DisclosureArrow
     ) {
-        self.alignment = alignment
         self.disclosureText = disclosureText
         self.disclosureIcon = disclosureIcon
         self.disclosure = disclosure
+        self.arrow = arrow
+    }
+    
+    @ViewBuilder
+    public var body: some View {
+        HStack {
+            Text(disclosureText)
+            
+            switch arrow {
+            case .image(let image):
+                image
+                //                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 16, height: 16)
+                //                    .foregroundColor(.gray)
+                    .debug(color: .yellow, condition: true)
+            case .custom(let viewProvider):
+                viewProvider.view
+            }
+        }
     }
 }
 
-public enum CellContentRightAlignment {
+public enum DisclosureArrow {
+    case image(Image)
+    case custom(ViewProvider)
+}
+
+public enum CellContentAlignment {
     case top
     case center
     case bottom
@@ -70,52 +61,58 @@ public struct SDDSCell: View {
     public let leftContent: CellContentLeft?
     public let centerContent: CellContentCenter
     public let rightContent: CellContentRight?
+    public let disclosure: DisclosureViewProvider?
+    public let alignment: CellContentAlignment
     
     public init(
         leftContent: CellContentLeft? = nil,
         centerContent: CellContentCenter,
-        rightContent: CellContentRight = nil?
+        rightContent: CellContentRight? = nil,
+        disclosure: DisclosureViewProvider? = nil,
+        alignment: CellContentAlignment = .center
     ) {
         self.leftContent = leftContent
         self.centerContent = centerContent
         self.rightContent = rightContent
+        self.disclosure = disclosure
+        self.alignment = alignment
     }
     
     public var body: some View {
         HStack {
             leftView
-            
+                .debug(color: .blue, condition: true)
             /*
              Mock left-center Spacers
              */
             Spacer()
-                .frame(width: 30)
+                .frame(width: 50)
             
             centerView
+                .debug(color: .blue, condition: true)
             
             /*
              Mock right-center Spacers
              */
             Spacer()
-                .frame(width: 30)
+                .frame(width: 50)
             
-            rightContent
+            rightView
+                .debug(color: .blue, condition: true)
         }
+        .debug(color: .red, condition: true)
     }
 }
 
 extension SDDSCell {
     @ViewBuilder
     private var leftView: some View {
-        switch leftContent {
-        case .icon(let icon):
-            icon
-        case .avatar(let SDDSAvatar):
-            SDDSAvatar
-        case .none:
-            EmptyView()
-        default:
-            EmptyView()
+        HStack(spacing: 0) {
+            if let leftContent = leftContent {
+                ForEach(leftContent.data, id: \.self) { content in
+                    content
+                }
+            }
         }
     }
     
@@ -137,10 +134,17 @@ extension SDDSCell {
     @ViewBuilder
     private var rightView: some View {
         HStack {
-            if let view = rightContent?.view, rightContent?.disclosureEnabled {
-                DisclosureViewProvider
+            if let rightContent = rightContent {
+                rightContent.buttonIcon
                 
-                view
+                if rightContent.disclosureEnabled {
+                    DisclosureViewProvider(
+                        disclosureText: "disclosure",
+                        disclosureIcon: nil,
+                        disclosure: nil,
+                        arrow: .image(Image("square.and.arrow.up"))
+                    )
+                }
             }
         }
     }
@@ -152,9 +156,5 @@ extension SDDSCell {
     
     private var hasCenterContent: Bool {
         !centerContent.label.isEmpty || !centerContent.title.isEmpty || !centerContent.subtitle.isEmpty
-    }
-    
-    private var hasRightContentWithoutDisclosure: Bool {
-        rightContent != nil && rightContent?.disclosureEnabled
     }
 }
