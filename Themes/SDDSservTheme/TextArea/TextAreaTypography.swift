@@ -29,6 +29,9 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: TextAreaSizeConfiguration) -> TypographyToken? {
+        if size is TextAreaAnySize {
+            return l
+        }
         if size is TextAreaSizeL {
             return l
         }

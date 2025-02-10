@@ -23,11 +23,8 @@ struct TextAreaView: View {
                     counter: viewModel.counter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    labelPlacement: viewModel.labelPlacement,
-                    required: viewModel.required,
-                    requiredPlacement: viewModel.requiredPlacement,
                     dynamicHeight: viewModel.dynamicHeight,
-                    appearance: viewModel.appearance.size(viewModel.size),
+                    appearance: viewModel.appearance,
                     layout: viewModel.layout,
                     iconActionViewProvider: iconActionView
                 )
@@ -39,47 +36,7 @@ struct TextAreaView: View {
                         Text(layout.rawValue.capitalized).tag(layout)
                     }
                 }
-                HStack {
-                    Text("Size")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(viewModel.allSizeNames, id: \.self) { sizeName in
-                            Button(sizeName) {
-                                viewModel.sizeName = sizeName
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.sizeName)
-                    }
-                }
-                
-                HStack {
-                    Text("Appearance")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(viewModel.allTextAreaAppearance, id: \.self) { variation in
-                            Button(variation.name) {
-                                viewModel.variation = variation
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.variation.name.capitalized)
-                    }
-                }
-                Picker("Label Placement", selection: $viewModel.labelPlacement) {
-                    ForEach(TextAreaLabelPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-                Toggle("Required", isOn: $viewModel.required)
-                Picker("Required Placement", selection: $viewModel.requiredPlacement) {
-                    ForEach(TextAreaRequiredPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-                
+                VariationsView(viewModel: viewModel)
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -144,12 +101,6 @@ struct TextAreaView: View {
         } else {
             nil
         }
-    }
-}
-
-extension TextAreaView: Equatable {
-    static func == (lhs: TextAreaView, rhs: TextAreaView) -> Bool {
-        return lhs.viewModel == rhs.viewModel
     }
 }
 

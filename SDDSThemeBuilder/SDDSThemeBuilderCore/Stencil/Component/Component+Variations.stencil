@@ -19,7 +19,7 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
         {%- endfor %}
     
         return .init(
-            name: "{{variationName}}",
+            name: "{{variation.chain}}",
             appearance: appearance
         )
     }
@@ -42,8 +42,19 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
             appearance: appearance.{{ viewKey }}
         )
     }
-    {%- endfor %}
-    {% endif %}
+    {%- endfor %}{% endif %}
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            {%- for viewKey, view in views %}
+                self.{{ viewKey }},
+            {%- endfor %}
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 {% if variationViews[key] %}
 public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
@@ -71,6 +82,18 @@ public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
         )
     }
     {%- endfor %}
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            {%- for viewKey, view in views %}
+                self.{{ viewKey }},
+            {%- endfor %}
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 private extension {{ appearance }} {

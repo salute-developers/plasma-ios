@@ -14,7 +14,7 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
         appearance.size = size
     
         return .init(
-            name: "pilled",
+            name: "l.pilled",
             appearance: appearance
         )
     }
@@ -79,7 +79,25 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.white
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.M> {
@@ -92,7 +110,7 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
         appearance.size = size
     
         return .init(
-            name: "pilled",
+            name: "m.pilled",
             appearance: appearance
         )
     }
@@ -157,7 +175,25 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.white
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.S> {
@@ -170,7 +206,7 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
         appearance.size = size
     
         return .init(
-            name: "pilled",
+            name: "s.pilled",
             appearance: appearance
         )
     }
@@ -235,7 +271,25 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.white
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.Xs> {
@@ -248,7 +302,7 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
         appearance.size = size
     
         return .init(
-            name: "pilled",
+            name: "xs.pilled",
             appearance: appearance
         )
     }
@@ -313,7 +367,25 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.white
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension ComponentAppearanceVariation<IconButton, ButtonAppearance> {
@@ -375,6 +447,25 @@ public extension ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         return .init(
             name: "white",
             appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
         )
     }
 }

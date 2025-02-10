@@ -29,6 +29,9 @@ struct TextAreaClearTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: TextAreaSizeConfiguration) -> TypographyToken? {
+        if size is TextAreaClearAnySize {
+            return l
+        }
         if size is TextAreaClearSizeL {
             return l
         }

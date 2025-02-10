@@ -7,6 +7,7 @@ struct ColorKeyValue: Codable {
     let states: [ColorState]?
     
     func value(for statesSet: [ColorState.State]) -> ColorState? {
-        return states?.first(where: { $0.state == statesSet })
+        let defaultState = ColorState(state: [], value: `default`)
+        return states?.first(where: { $0.state == statesSet }) ?? defaultState
     }
 }

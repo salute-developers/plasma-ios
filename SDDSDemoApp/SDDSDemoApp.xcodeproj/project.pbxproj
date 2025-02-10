@@ -57,6 +57,12 @@
 		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
 		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
+		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
+		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
+		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };
+		81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132E2D5BADC800ADE1CD /* VariationsView.swift */; };
+		81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */; };
+		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -126,6 +132,12 @@
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		819A382E2CC6928700A1377F /* ChipGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupView.swift; sourceTree = "<group>"; };
+		81A613282D5BAB4200ADE1CD /* VariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationProvider.swift; sourceTree = "<group>"; };
+		81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModel.swift; sourceTree = "<group>"; };
+		81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVariationProvider.swift; sourceTree = "<group>"; };
+		81A6132E2D5BADC800ADE1CD /* VariationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsView.swift; sourceTree = "<group>"; };
+		81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVariationProvider.swift; sourceTree = "<group>"; };
+		81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaVariationProvider.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +202,7 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				81A613272D5BAB3500ADE1CD /* Common */,
 				811DE1362C4D0EB2000DD354 /* Views */,
 				8199A1702C3BF94500AD650A /* Constants */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
@@ -268,6 +281,7 @@
 			children = (
 				811C684C2CC8024A00480F89 /* TextAreaView.swift */,
 				811C684E2CC8027600480F89 /* TextAreaViewModel.swift */,
+				81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */,
 			);
 			path = TextAreaView;
 			sourceTree = "<group>";
@@ -408,6 +422,7 @@
 			children = (
 				817D9F132C3704CF006C4814 /* ButtonView.swift */,
 				817580EB2C383BA500E45207 /* ButtonViewModel.swift */,
+				81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
@@ -425,6 +440,7 @@
 			children = (
 				8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */,
 				81E968152CBD20C300256968 /* TextFieldViewModel.swift */,
+				81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */,
 			);
 			path = TextFieldView;
 			sourceTree = "<group>";
@@ -436,6 +452,16 @@
 				811C68502CC8059800480F89 /* ChipGroupViewModel.swift */,
 			);
 			path = ChipGroupView;
+			sourceTree = "<group>";
+		};
+		81A613272D5BAB3500ADE1CD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				81A613282D5BAB4200ADE1CD /* VariationProvider.swift */,
+				81A6132E2D5BADC800ADE1CD /* VariationsView.swift */,
+				81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,6 +636,7 @@
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
+				81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */,
 				811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */,
 				6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */,
 				6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */,
@@ -620,15 +647,18 @@
 				690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */,
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
+				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
+				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
+				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
@@ -636,7 +666,9 @@
 				816243542CB93EEB00506E1C /* ChipView.swift in Sources */,
 				811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */,
 				8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */,
+				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
+				81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
@@ -740,6 +772,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -795,6 +828,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -24,6 +24,8 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var chipsPadding: CGFloat { get }
     var indicatorOffset: CGPoint { get }
     var indicatorSize: CGSize { get }
+    var boxPaddingTop: CGFloat { get }
+    var boxPaddingBottom: CGFloat { get }
 }
 
 public struct ZeroTextFieldSize: TextFieldSizeConfiguration {
@@ -48,6 +50,8 @@ public struct ZeroTextFieldSize: TextFieldSizeConfiguration {
     public var chipsPadding: CGFloat { 0 }
     public var indicatorOffset: CGPoint { .zero }
     public var indicatorSize: CGSize { .zero }
+    public var boxPaddingTop: CGFloat { 0 }
+    public var boxPaddingBottom: CGFloat { 0 }
 
     public init() {}
 

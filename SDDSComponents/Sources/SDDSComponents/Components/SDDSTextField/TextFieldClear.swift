@@ -11,10 +11,7 @@ public struct TextFieldClear: View {
     public let textAfter: String
     public let disabled: Bool
     public let readOnly: Bool
-    public let labelPlacement: TextFieldLabelPlacement
-    public let required: Bool
     public let divider: Bool
-    public let requiredPlacement: TextFieldRequiredPlacement
     public let appearance: TextFieldAppearance
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
@@ -30,10 +27,7 @@ public struct TextFieldClear: View {
         textAfter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
-        labelPlacement: TextFieldLabelPlacement = .outer,
-        required: Bool = false,
         divider: Bool = true,
-        requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -45,10 +39,7 @@ public struct TextFieldClear: View {
         self.textAfter = textAfter
         self.disabled = disabled
         self.readOnly = readOnly
-        self.labelPlacement = labelPlacement
-        self.required = required
         self.divider = divider
-        self.requiredPlacement = requiredPlacement
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
@@ -69,10 +60,7 @@ public struct TextFieldClear: View {
             textAfter: textAfter,
             disabled: disabled,
             readOnly: readOnly,
-            labelPlacement: labelPlacement,
-            required: required,
             divider: divider,
-            requiredPlacement: requiredPlacement,
             appearance: appearance,
             layout: .clear,
             accessibility: accessibility,

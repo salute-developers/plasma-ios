@@ -26,6 +26,8 @@ struct TextFieldSize: CodeGenerationSize {
     var textBeforeLeadingPadding: String?
     var textAfterTrailingPadding: String?
     var dividerHeight: String?
+    var boxPaddingTop: String?
+    var boxPaddingBottom: String?
     
     init(variation: TextFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -53,6 +55,8 @@ struct TextFieldSize: CodeGenerationSize {
         self.textBeforeLeadingPadding = CGFloat.defaultContext
         self.textAfterTrailingPadding = CGFloat.defaultContext
         self.dividerHeight = CGFloat(1).context
+        self.boxPaddingTop = CGFloatContextBuilder(props.boxPaddingBottom?.value, nullify: nullify).context
+        self.boxPaddingBottom = CGFloatContextBuilder(props.boxPaddingBottom?.value, nullify: nullify).context
     }
     
     init() {
@@ -77,5 +81,7 @@ struct TextFieldSize: CodeGenerationSize {
         self.textAfterTrailingPadding = CGFloat.defaultContext
         self.dividerHeight = CGFloat.defaultContext
         self.cornerRadius = CGFloat.defaultContext
+        self.boxPaddingTop = CGFloat.defaultContext
+        self.boxPaddingBottom = CGFloat.defaultContext
     }
 }

@@ -17,6 +17,7 @@ struct ComponentBaseContext<Appearance: Codable>: Codable {
     var appearance: String
     var variations: [String: Variation]
     var all: [String]
+    var chains: [String]
     var base: Appearance
 }
 
@@ -25,6 +26,7 @@ struct ComponentVariationsContext<Appearance: Codable, Size: Codable>: Codable {
         let appearance: Appearance
         let size: Size
         let next: String
+        let chain: String
     }
     
     struct View: Codable {

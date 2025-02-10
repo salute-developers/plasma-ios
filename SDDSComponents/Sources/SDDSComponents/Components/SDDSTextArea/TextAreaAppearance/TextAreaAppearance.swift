@@ -11,7 +11,7 @@ public struct TextAreaAppearance {
     public var requiredPlacement: TextAreaRequiredPlacement
     public var backgroundColor: ColorToken
     public var backgroundColorFocused: ColorToken
-    public var backgroundColorReadOnly: ColorToken
+    public var backgroundColorReadOnly: ColorToken?
     public var borderColor: ColorToken
     public var captionColor: ColorToken
     public var captionColorFocused: ColorToken
@@ -23,7 +23,8 @@ public struct TextAreaAppearance {
     public var cursorColor: ColorToken
     public var disabledAlpha: CGFloat
     public var endContentColor: ColorToken
-    public var endContentColorReadonly: ColorToken
+    public var endContentColorReadOnly: ColorToken?
+    public var endContentColorFocused: ColorToken
     public var innerTitleTextAlignment: TextAlignment
     public var innerTitleTypography: TypographyConfiguration
     public var inputTextAlignment: TextAlignment
@@ -33,12 +34,13 @@ public struct TextAreaAppearance {
     public var optionalTitleColor: ColorToken
     public var placeholderColor: ColorToken
     public var placeholderColorFocused: ColorToken
-    public var placeholderColorReadOnly: ColorToken
+    public var placeholderColorReadOnly: ColorToken?
     public var requiredIndicatorColor: ColorToken
     public var startContentColor: ColorToken
+    public var startContentColorReadOnly: ColorToken
     public var textColor: ColorToken
     public var textColorFocused: ColorToken
-    public var textColorReadOnly: ColorToken
+    public var textColorReadOnly: ColorToken?
     public var textTypography: TypographyConfiguration
     public var titleColor: ColorToken
     public var titleTextAlignment: TextAlignment
@@ -48,11 +50,11 @@ public struct TextAreaAppearance {
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
         chipAppearance: ChipAppearance = ChipAppearance(),
         chipGroupAppearance: ChipGroupAppearance = ChipGroupAppearance(),
-        labelPlacement: TextAreaLabelPlacement = .inner,
-        requiredPlacement: TextAreaRequiredPlacement = .left,
+        labelPlacement: TextAreaLabelPlacement = .none,
+        requiredPlacement: TextAreaRequiredPlacement = .none,
         backgroundColor: ColorToken = .clearColor,
         backgroundColorFocused: ColorToken = .clearColor,
-        backgroundColorReadOnly: ColorToken = .clearColor,
+        backgroundColorReadOnly: ColorToken? = nil,
         borderColor: ColorToken = .clearColor,
         captionColor: ColorToken = .clearColor,
         captionColorFocused: ColorToken = .clearColor,
@@ -62,7 +64,8 @@ public struct TextAreaAppearance {
         cursorColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
         endContentColor: ColorToken = .clearColor,
-        endContentColorReadonly: ColorToken = .clearColor,
+        endContentColorReadOnly: ColorToken? = nil,
+        endContentColorFocused: ColorToken = .clearColor,
         innerTitleTextAlignment: TextAlignment = .leading,
         inputTextAlignment: TextAlignment = .leading,
         lineColor: ColorToken = .clearColor,
@@ -71,12 +74,13 @@ public struct TextAreaAppearance {
         optionalTitleColor: ColorToken = .clearColor,
         placeholderColor: ColorToken = .clearColor,
         placeholderColorFocused: ColorToken = .clearColor,
-        placeholderColorReadOnly: ColorToken = .clearColor,
+        placeholderColorReadOnly: ColorToken? = nil,
         requiredIndicatorColor: ColorToken = .clearColor,
         startContentColor: ColorToken = .clearColor,
+        startContentColorReadOnly: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
         textColorFocused: ColorToken = .clearColor,
-        textColorReadOnly: ColorToken = .clearColor,
+        textColorReadOnly: ColorToken? = nil,
         titleColor: ColorToken = .clearColor,
         titleTextAlignment: TextAlignment = .leading,
         captionTypography: TypographyConfiguration = .default,
@@ -103,7 +107,8 @@ public struct TextAreaAppearance {
         self.cursorColor = cursorColor
         self.disabledAlpha = disabledAlpha
         self.endContentColor = endContentColor
-        self.endContentColorReadonly = endContentColorReadonly
+        self.endContentColorReadOnly = endContentColorReadOnly
+        self.endContentColorFocused = endContentColorFocused
         self.backgroundColorFocused = backgroundColorFocused
         self.innerTitleTextAlignment = innerTitleTextAlignment
         self.innerTitleTypography = innerTitleTypography
@@ -117,6 +122,7 @@ public struct TextAreaAppearance {
         self.placeholderColorReadOnly = placeholderColorReadOnly
         self.requiredIndicatorColor = requiredIndicatorColor
         self.startContentColor = startContentColor
+        self.startContentColorReadOnly = startContentColorReadOnly
         self.textColor = textColor
         self.textColorFocused = textColorFocused
         self.textColorReadOnly = textColorReadOnly

@@ -65,6 +65,25 @@ public extension ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
             appearance: appearance.white
         )
     }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 private extension ButtonAppearance {
@@ -75,8 +94,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textInverseSecondary, highlightedColor: ColorToken.textInverseSecondaryActive, hoveredColor: ColorToken.textInverseSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textInverseSecondary, highlightedColor: ColorToken.textInverseSecondaryActive, hoveredColor: ColorToken.textInverseSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover)
         return appearance
     }
     
@@ -86,8 +105,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -97,8 +116,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -108,8 +127,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.06)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         return appearance
     }
     
@@ -119,8 +138,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -130,8 +149,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -141,8 +160,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -152,8 +171,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         return appearance
     }
     
@@ -163,8 +182,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     
@@ -174,8 +193,8 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover)
         appearance.loadingAlpha = CGFloat(0.0)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnLightSecondary, highlightedColor: ColorToken.textOnLightSecondaryActive, hoveredColor: ColorToken.textOnLightSecondaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnLightSecondary, highlightedColor: ColorToken.textOnLightSecondaryActive, hoveredColor: ColorToken.textOnLightSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover)
         return appearance
     }
     

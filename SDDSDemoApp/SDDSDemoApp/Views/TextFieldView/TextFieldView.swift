@@ -5,11 +5,7 @@ import SDDSComponents
 import SDDSServTheme
 
 struct TextFieldView: View {
-    @ObservedObject private var viewModel: TextFieldViewModel
-
-    init(viewModel: TextFieldViewModel = TextFieldViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: TextFieldViewModel = TextFieldViewModel()
 
     var body: some View {
         List {
@@ -24,9 +20,6 @@ struct TextFieldView: View {
                     textAfter: viewModel.textAfter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    labelPlacement: viewModel.labelPlacement,
-                    required: viewModel.required,
-                    requiredPlacement: viewModel.requiredPlacement,
                     appearance: viewModel.appearance,
                     layout: viewModel.layout,
                     iconViewProvider: iconView,
@@ -40,50 +33,7 @@ struct TextFieldView: View {
                         Text(layout.rawValue.capitalized).tag(layout)
                     }
                 }
-                
-                HStack {
-                    Text("Size")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(viewModel.allSizeNames, id: \.self) { sizeName in
-                            Button(sizeName) {
-                                viewModel.sizeName = sizeName
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.sizeName)
-                    }
-                }
-                
-                HStack {
-                    Text("Appearance")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(viewModel.allTextFieldAppearance, id: \.self) { variation in
-                            Button(variation.name) {
-                                viewModel.variation = variation
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.variation.name.capitalized)
-                    }
-                }
-                
-                Picker("Label Placement", selection: $viewModel.labelPlacement) {
-                    ForEach(TextFieldLabelPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-                
-                Toggle("Required", isOn: $viewModel.required)
-                
-                Picker("Required Placement", selection: $viewModel.requiredPlacement) {
-                    ForEach(TextFieldRequiredPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
+                VariationsView(viewModel: viewModel)
                 
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
@@ -165,12 +115,6 @@ struct TextFieldView: View {
         }
     }
     
-}
-
-extension TextFieldView: Equatable {
-    static func == (lhs: TextFieldView, rhs: TextFieldView) -> Bool {
-        return lhs.viewModel == rhs.viewModel
-    }
 }
 
 #Preview {

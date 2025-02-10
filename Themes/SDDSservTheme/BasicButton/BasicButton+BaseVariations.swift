@@ -7,8 +7,8 @@ public struct BasicButton {
     public static var l: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.l
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyLBold.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,8 +18,8 @@ public struct BasicButton {
     public static var m: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.m
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyMBold.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -29,8 +29,8 @@ public struct BasicButton {
     public static var s: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.s
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodySBold.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -40,8 +40,8 @@ public struct BasicButton {
     public static var xs: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.xs
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xs",
@@ -49,11 +49,11 @@ public struct BasicButton {
         )
     }
     
-    public static let all: [Any] = [
-        BasicButton.l,
-        BasicButton.m,
-        BasicButton.s,
-        BasicButton.xs,
+    public static let all: [Variation<ButtonAppearance>] = [
+        BasicButton.l.variation,
+        BasicButton.m.variation,
+        BasicButton.s.variation,
+        BasicButton.xs.variation,
     ]
 }
 

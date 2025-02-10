@@ -76,14 +76,16 @@ struct ExpandingTextEditor: UIViewRepresentable {
         }
         
         updateTextViewProperties(textView: textView)
-        
-        if isFocused {
-            textView.becomeFirstResponder()
-        } else {
-            textView.resignFirstResponder()
-        }
-        
+                
         DispatchQueue.main.async {
+            if isFocused {
+                if !textView.isFirstResponder {
+                    textView.becomeFirstResponder()
+                }
+            } else {
+                textView.resignFirstResponder()
+            }
+            
             textView.text = text
 
             self.updateHeight(textView)

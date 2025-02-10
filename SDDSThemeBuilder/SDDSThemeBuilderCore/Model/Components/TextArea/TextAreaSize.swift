@@ -22,6 +22,7 @@ struct TextAreaSize: CodeGenerationSize {
     var indicatorOffset: String?
     var boxPaddingTop: String?
     var boxPaddingBottom: String?
+    var endContentPadding: String?
         
     init(variation: TextFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -40,11 +41,12 @@ struct TextAreaSize: CodeGenerationSize {
         self.iconActionPadding = CGFloatContextBuilder(props.endContentPadding?.value, nullify: nullify).context
         self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
         self.fieldHeight = CGFloatContextBuilder(props.boxMinHeight?.value, nullify: nullify).context
-        self.iconActionSize = SizeContextBuilder(x: props.endContentSize?.value ?? 0, y: props.endContentSize?.value ?? 0, style: .size, nullify: nullify).context
+        self.iconActionSize = SizeContextBuilder(x: props.endContentSize?.value, y: props.endContentSize?.value, style: .size, nullify: nullify).context
         self.chipsPadding = CGFloatContextBuilder(props.chipsPadding?.value, nullify: nullify).context
         self.chipContainerHorizontalPadding = CGFloatContextBuilder(props.chipsPadding?.value, nullify: nullify).context
         self.indicatorSize = SizeContextBuilder(x: props.indicatorSize?.value, y: props.indicatorSize?.value, style: .size, nullify: nullify).context
         self.indicatorOffset = SizeContextBuilder(x: props.indicatorOffsetX?.value, y: props.indicatorOffsetY?.value, style: .point, nullify: nullify).context
+        self.endContentPadding = CGFloatContextBuilder(props.endContentPadding?.value, nullify: nullify).context
     }
     
     init() {
@@ -65,6 +67,7 @@ struct TextAreaSize: CodeGenerationSize {
         self.indicatorSize = CGSize.defaultContext
         self.indicatorOffset = CGPoint.defaultContext
         self.cornerRadius = CGFloat.defaultContext
+        self.endContentPadding = CGFloat.defaultContext
     }
 
 }

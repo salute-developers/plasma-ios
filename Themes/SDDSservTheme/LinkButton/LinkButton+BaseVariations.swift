@@ -7,7 +7,7 @@ public struct LinkButton {
     public static var l: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.l
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -17,7 +17,7 @@ public struct LinkButton {
     public static var m: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.m
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -27,7 +27,7 @@ public struct LinkButton {
     public static var s: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.s
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -37,7 +37,7 @@ public struct LinkButton {
     public static var xs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xs
-        appearance.subtitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xs",
@@ -45,11 +45,11 @@ public struct LinkButton {
         )
     }
     
-    public static let all: [Any] = [
-        LinkButton.l,
-        LinkButton.m,
-        LinkButton.s,
-        LinkButton.xs,
+    public static let all: [Variation<ButtonAppearance>] = [
+        LinkButton.l.variation,
+        LinkButton.m.variation,
+        LinkButton.s.variation,
+        LinkButton.xs.variation,
     ]
 }
 
@@ -63,7 +63,7 @@ public struct LinkButtonVariation {
 private extension ButtonAppearance {
     static var base: ButtonAppearance {
         var appearance = ButtonAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClear)
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.loadingAlpha = CGFloat(0.06)
         return appearance

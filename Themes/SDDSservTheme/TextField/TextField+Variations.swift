@@ -8,6 +8,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
     
     var innerLabel: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.LInnerlabel> {
         var size =  TextFieldAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(9.0)
+        size.boxPaddingTop = CGFloat(9.0)
         size.dividerHeight = CGFloat(1.0)
         size.textAfterTrailingPadding = CGFloat(0)
         size.textBeforeLeadingPadding = CGFloat(0)
@@ -16,11 +18,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(l: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(l: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
-            name: "innerLabel",
+            name: "l.innerLabel",
             appearance: appearance
         )
     }
@@ -35,11 +39,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(l: Typographies.bodyLNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(l: Typographies.bodyLNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
     
         return .init(
-            name: "outerLabel",
+            name: "l.outerLabel",
             appearance: appearance
         )
     }
@@ -53,9 +59,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "l.requiredEnd",
             appearance: appearance
         )
     }
@@ -69,9 +76,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "l.requiredStart",
             appearance: appearance
         )
     }
@@ -100,7 +108,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.LInnerlabel> {
@@ -114,9 +134,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "l.innerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -130,9 +151,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "l.innerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -161,7 +183,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.LOuterlabel> {
@@ -176,9 +210,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "l.outerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -193,9 +228,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "l.outerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -224,13 +260,27 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.M> {
     
     var innerLabel: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.MInnerlabel> {
         var size =  TextFieldAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(6.0)
+        size.boxPaddingTop = CGFloat(6.0)
         size.dividerHeight = CGFloat(1.0)
         size.textAfterTrailingPadding = CGFloat(0)
         size.textBeforeLeadingPadding = CGFloat(0)
@@ -239,11 +289,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(m: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(m: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
-            name: "innerLabel",
+            name: "m.innerLabel",
             appearance: appearance
         )
     }
@@ -258,11 +310,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(m: Typographies.bodyMNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(m: Typographies.bodyMNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
     
         return .init(
-            name: "outerLabel",
+            name: "m.outerLabel",
             appearance: appearance
         )
     }
@@ -276,9 +330,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "m.requiredEnd",
             appearance: appearance
         )
     }
@@ -292,9 +347,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "m.requiredStart",
             appearance: appearance
         )
     }
@@ -323,7 +379,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.MInnerlabel> {
@@ -337,9 +405,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "m.innerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -353,9 +422,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "m.innerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -384,7 +454,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.MOuterlabel> {
@@ -399,9 +481,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "m.outerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -416,9 +499,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "m.outerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -447,13 +531,27 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.S> {
     
     var innerLabel: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.SInnerlabel> {
         var size =  TextFieldAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(4.0)
+        size.boxPaddingTop = CGFloat(4.0)
         size.dividerHeight = CGFloat(1.0)
         size.textAfterTrailingPadding = CGFloat(0)
         size.textBeforeLeadingPadding = CGFloat(0)
@@ -462,11 +560,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(s: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(s: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
-            name: "innerLabel",
+            name: "s.innerLabel",
             appearance: appearance
         )
     }
@@ -481,11 +581,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(s: Typographies.bodySNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(s: Typographies.bodySNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
     
         return .init(
-            name: "outerLabel",
+            name: "s.outerLabel",
             appearance: appearance
         )
     }
@@ -499,9 +601,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "s.requiredEnd",
             appearance: appearance
         )
     }
@@ -515,9 +618,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "s.requiredStart",
             appearance: appearance
         )
     }
@@ -546,7 +650,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.SInnerlabel> {
@@ -560,9 +676,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "s.innerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -576,9 +693,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "s.innerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -607,7 +725,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.SOuterlabel> {
@@ -622,9 +752,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "s.outerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -639,9 +770,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "s.outerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -670,13 +802,27 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.Xs> {
     
     var outerLabel: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.XsOuterlabel> {
         var size =  TextFieldAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(8.0)
+        size.boxPaddingTop = CGFloat(8.0)
         size.dividerHeight = CGFloat(1.0)
         size.textAfterTrailingPadding = CGFloat(0)
         size.textBeforeLeadingPadding = CGFloat(0)
@@ -685,11 +831,13 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldTypography(xs: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = TextFieldTypography(xs: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
-            name: "outerLabel",
+            name: "xs.outerLabel",
             appearance: appearance
         )
     }
@@ -703,9 +851,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "xs.requiredEnd",
             appearance: appearance
         )
     }
@@ -719,9 +868,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "xs.requiredStart",
             appearance: appearance
         )
     }
@@ -750,7 +900,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.XsOuterlabel> {
@@ -765,9 +927,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
-            name: "requiredEnd",
+            name: "xs.outerLabel.requiredEnd",
             appearance: appearance
         )
     }
@@ -782,9 +945,10 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
-            name: "requiredStart",
+            name: "xs.outerLabel.requiredStart",
             appearance: appearance
         )
     }
@@ -813,7 +977,19 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
-    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
@@ -841,6 +1017,19 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
             appearance: appearance.warning
         )
     }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 private extension TextFieldAppearance {
@@ -849,9 +1038,8 @@ private extension TextFieldAppearance {
         var appearance = self
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPrimary
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultTransparentPrimary
         appearance.captionColor = ColorToken.textDefaultSecondary
-        appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
     
@@ -859,9 +1047,8 @@ private extension TextFieldAppearance {
         var appearance = self
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentNegative
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultTransparentNegative
         appearance.captionColor = ColorToken.textDefaultNegative
-        appearance.captionColorReadOnly = ColorToken.textDefaultNegative
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
     
@@ -869,9 +1056,8 @@ private extension TextFieldAppearance {
         var appearance = self
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPositive
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultTransparentPositive
         appearance.captionColor = ColorToken.textDefaultPositive
-        appearance.captionColorReadOnly = ColorToken.textDefaultPositive
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
     
@@ -879,9 +1065,8 @@ private extension TextFieldAppearance {
         var appearance = self
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentWarning
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultTransparentWarning
         appearance.captionColor = ColorToken.textDefaultWarning
-        appearance.captionColorReadOnly = ColorToken.textDefaultWarning
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
     

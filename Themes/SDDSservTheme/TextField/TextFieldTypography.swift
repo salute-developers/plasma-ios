@@ -29,6 +29,9 @@ struct TextFieldTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: TextFieldSizeConfiguration) -> TypographyToken? {
+        if size is TextFieldAnySize {
+            return l
+        }
         if size is TextFieldSizeL {
             return l
         }

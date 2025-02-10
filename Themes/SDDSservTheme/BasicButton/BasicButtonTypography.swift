@@ -29,6 +29,9 @@ struct BasicButtonTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
+        if size is BasicButtonAnySize {
+            return l
+        }
         if size is BasicButtonSizeL {
             return l
         }

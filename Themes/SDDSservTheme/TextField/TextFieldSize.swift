@@ -18,6 +18,8 @@ struct TextFieldSize {
 }
 struct TextFieldSizeL: TextFieldSizeConfiguration {
     public var boxLeadingPadding = CGFloat(16.0)
+    public var boxPaddingBottom = CGFloat(16.0)
+    public var boxPaddingTop = CGFloat(16.0)
     public var boxTrailingPadding = CGFloat(16.0)
     public var captionTopPadding = CGFloat(4.0)
     public var chipContainerHorizontalPadding = CGFloat(6.0)
@@ -44,6 +46,8 @@ struct TextFieldSizeL: TextFieldSizeConfiguration {
 }
 struct TextFieldSizeM: TextFieldSizeConfiguration {
     public var boxLeadingPadding = CGFloat(14.0)
+    public var boxPaddingBottom = CGFloat(12.0)
+    public var boxPaddingTop = CGFloat(12.0)
     public var boxTrailingPadding = CGFloat(14.0)
     public var captionTopPadding = CGFloat(4.0)
     public var chipContainerHorizontalPadding = CGFloat(6.0)
@@ -70,6 +74,8 @@ struct TextFieldSizeM: TextFieldSizeConfiguration {
 }
 struct TextFieldSizeS: TextFieldSizeConfiguration {
     public var boxLeadingPadding = CGFloat(12.0)
+    public var boxPaddingBottom = CGFloat(8.0)
+    public var boxPaddingTop = CGFloat(8.0)
     public var boxTrailingPadding = CGFloat(12.0)
     public var captionTopPadding = CGFloat(4.0)
     public var chipContainerHorizontalPadding = CGFloat(6.0)
@@ -96,6 +102,8 @@ struct TextFieldSizeS: TextFieldSizeConfiguration {
 }
 struct TextFieldSizeXs: TextFieldSizeConfiguration {
     public var boxLeadingPadding = CGFloat(8.0)
+    public var boxPaddingBottom = CGFloat(8.0)
+    public var boxPaddingTop = CGFloat(8.0)
     public var boxTrailingPadding = CGFloat(8.0)
     public var captionTopPadding = CGFloat(4.0)
     public var chipContainerHorizontalPadding = CGFloat(6.0)
@@ -123,6 +131,8 @@ struct TextFieldSizeXs: TextFieldSizeConfiguration {
 
 struct TextFieldAnySize: TextFieldSizeConfiguration {
     public var boxLeadingPadding = CGFloat(0)
+    public var boxPaddingBottom = CGFloat(0)
+    public var boxPaddingTop = CGFloat(0)
     public var boxTrailingPadding = CGFloat(0)
     public var captionTopPadding = CGFloat(0)
     public var chipContainerHorizontalPadding = CGFloat(0)
@@ -146,6 +156,8 @@ struct TextFieldAnySize: TextFieldSizeConfiguration {
 
     init(size: TextFieldSizeConfiguration) {
         self.boxLeadingPadding = size.boxLeadingPadding
+        self.boxPaddingBottom = size.boxPaddingBottom
+        self.boxPaddingTop = size.boxPaddingTop
         self.boxTrailingPadding = size.boxTrailingPadding
         self.captionTopPadding = size.captionTopPadding
         self.chipContainerHorizontalPadding = size.chipContainerHorizontalPadding
