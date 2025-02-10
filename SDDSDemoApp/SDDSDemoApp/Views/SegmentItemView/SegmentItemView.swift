@@ -16,7 +16,7 @@ public struct SegmentItemView: View {
         List {
             segmentView
             Section {
-                segmentElementType
+                segmentItemType
                 title
                 subtitle
                 size
@@ -39,16 +39,41 @@ public struct SegmentItemView: View {
                 subtitle: viewModel.subtitle,
                 iconAttributes: viewModel.iconAttributes,
                 isDisabled: viewModel.isDisabled,
+                isSelected: true,
                 appearance: viewModel.appearance,
+                counterViewProvider: .default(text: viewModel.counterText),
                 counterAppearance: viewModel.counterAppearance,
-                counterText: viewModel.counterText,
                 action: {}
             )
             Spacer()
         }
     }
     
-    public var segmentElementType: some View {
+    @ViewBuilder
+    private var icon: some View {
+        HStack {
+            Toggle("Icon", isOn: $viewModel.isIconVisible)
+        }
+    }
+    
+    @ViewBuilder
+    private var iconAlignment: some View {
+        HStack {
+            Text("Icon Alignment")
+            Spacer()
+            Menu {
+                ForEach(ButtonAlignment.allCases, id: \.self) { alignment in
+                    Button(alignment.rawValue) {
+                        viewModel.alignment = alignment
+                    }
+                }
+            } label: {
+                Text(viewModel.alignment.rawValue)
+            }
+        }
+    }
+    
+    public var segmentItemType: some View {
         HStack {
             Text("Content Type")
             Spacer()

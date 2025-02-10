@@ -18,8 +18,8 @@ final class SegmentItemViewModel: ObservableObject {
     @Published var size: SegmentItemSizeConfiguration = SegmentItemSize.medium
     @Published var iconAttributes: ButtonIconAttributes? = nil
     @Published var isDisabled: Bool = false
-    @Published var appearance: SegmentItemAppearance = SDDSSegmentItem.default.appearance
-    @Published var variationName: String = SDDSSegmentItem.default.name
+    @Published var appearance: SegmentItemAppearance = SDDSSegmentItem.primary.appearance
+    @Published var variationName: String = SDDSSegmentItem.primary.name
     @Published var isPilled: Bool = false
     
     @Published var contentType: SegmentItemContentType = .none
@@ -31,6 +31,8 @@ final class SegmentItemViewModel: ObservableObject {
     @Published var counterText: String = ""
     @Published var counterAppearance: CounterAppearance? = nil
     @Published var counterVariationName: String = SDDSCounter.accent.name
+    
+    @Published var isSelected: Bool = false
     
     var cancellables: Set<AnyCancellable> = []
     

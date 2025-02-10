@@ -26,16 +26,30 @@ public struct ButtonColor {
     public let hoveredColor: ColorToken
     
     /**
+     Цвет, используемый для кнопки, когда она находится в выбранном состоянии.
+     Этот цвет применяется к кнопке, когда она выбрана в контейнере элементов.
+     */
+    public let selectedColor: ColorToken
+    
+    /**
      Инициализатор для создания `ButtonColor`.
      
      - Parameters:
         - defaultColor: Цвет для стандартного состояния.
         - highlightedColor: Цвет для состояния нажатия.
         - hoveredColor: Цвет для состояния наведения.
+        - selectedColor: Цвет для  в выбранном состоянии
+     
      */
-    public init(defaultColor: ColorToken = .clearColor, highlightedColor: ColorToken = .clearColor, hoveredColor: ColorToken = .clearColor) {
+    public init(
+        defaultColor: ColorToken = .clearColor,
+        highlightedColor: ColorToken = .clearColor,
+        hoveredColor: ColorToken = .clearColor,
+        selectedColor: ColorToken = .clearColor
+    ) {
         self.defaultColor = defaultColor
         self.highlightedColor = highlightedColor
         self.hoveredColor = hoveredColor
+        self.selectedColor = selectedColor
     }
 }

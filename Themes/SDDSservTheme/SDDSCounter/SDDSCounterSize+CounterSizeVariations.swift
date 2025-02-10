@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public extension CounterAppearanceVariation {
+public extension AppearanceVariation<CounterAppearance> {
     var large: Self {
         .init(
             appearance: appearance
@@ -41,20 +41,20 @@ public extension CounterAppearanceVariation {
 }
 
 public extension SDDSCounter {
-    static var large: CounterAppearanceVariation {
-        return CounterAppearanceVariation().large
+    static var large: AppearanceVariation<CounterAppearance> {
+        return AppearanceVariation(appearance: CounterAppearance()).large
     }
-    static var medium: CounterAppearanceVariation {
-        return CounterAppearanceVariation().medium
+    static var medium: AppearanceVariation<CounterAppearance> {
+        return AppearanceVariation(appearance: CounterAppearance()).medium
     }
-    static var small: CounterAppearanceVariation {
-        return CounterAppearanceVariation().small
+    static var small: AppearanceVariation<CounterAppearance> {
+        return AppearanceVariation(appearance: CounterAppearance()).small
     }
-    static var extraSmall: CounterAppearanceVariation {
-        return CounterAppearanceVariation().extraSmall
+    static var extraSmall: AppearanceVariation<CounterAppearance> {
+        return AppearanceVariation(appearance: CounterAppearance()).extraSmall
     }
-    static var extraExtraSmall: CounterAppearanceVariation {
-        return CounterAppearanceVariation().extraExtraSmall
+    static var extraExtraSmall: AppearanceVariation<CounterAppearance> {
+        return AppearanceVariation(appearance: CounterAppearance()).extraExtraSmall
     }
 }
 

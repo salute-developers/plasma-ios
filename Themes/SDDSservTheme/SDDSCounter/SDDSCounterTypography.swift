@@ -10,11 +10,12 @@ public struct CounterTypography: GeneralTypographyConfiguration {
     let extraSmall: TypographyToken?
     let extraExtraSmall: TypographyToken?
     
-    init(large: TypographyToken?,
-         medium: TypographyToken?,
-         small: TypographyToken?,
-         extraSmall: TypographyToken?,
-         extraExtraSmall: TypographyToken?
+    init(
+        large: TypographyToken?,
+        medium: TypographyToken?,
+        small: TypographyToken?,
+        extraSmall: TypographyToken?,
+        extraExtraSmall: TypographyToken?
     ) {
         self.large = large
         self.medium = medium

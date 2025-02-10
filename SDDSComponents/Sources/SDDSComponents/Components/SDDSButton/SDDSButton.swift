@@ -14,7 +14,8 @@ public struct SDDSButton: View {
     public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
-    public let counterView: SDDSCounter?
+    public let counterViewProvider: ViewProvider?
+    public let isSelected: Bool
     
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
@@ -34,7 +35,8 @@ public struct SDDSButton: View {
         appearance: ButtonAppearance,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
-        counterView: SDDSCounter? = nil,
+        counterViewProvider: ViewProvider? = nil,
+        isSelected: Bool = false,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -47,7 +49,8 @@ public struct SDDSButton: View {
         self.appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
-        self.counterView = counterView
+        self.counterViewProvider = counterViewProvider
+        self.isSelected = isSelected
         self.action = action
     }
     
@@ -80,7 +83,6 @@ public struct SDDSButton: View {
             .onHover { hovering in
                 isHovered = hovering
             }
-            
             if isLoading {
                 spinner
                     .frame(width: appearance.size.spinnerSize.width, height: appearance.size.spinnerSize.height)
@@ -90,9 +92,9 @@ public struct SDDSButton: View {
     
     @ViewBuilder
     private var basicButton: some View {
-        HStack {
+        HStack(spacing: 0) {
             if isCentered {
-                Spacer()
+                spacer
             }
             if shouldShowLeftAlignedIcon() {
                 icon
@@ -101,22 +103,20 @@ public struct SDDSButton: View {
                 }
             }
             if !title.isEmpty {
-                Text(title)
-                    .lineLimit(1)
-                    .typography(titleTypography)
-                    .foregroundColor(currentColor(for: appearance.titleColor))
+                value(for: title, typographyToken: titleTypography, textColor: appearance.titleColor)
+                    .fixedSize()
             }
             if isSideBySide {
                 Spacer()
             }
-            if !subtitle.isEmpty && counterView == nil {
+            counter
+                .fixedSize()
+            if !subtitle.isEmpty {
                 if !title.isEmpty {
                     Spacer().frame(width: appearance.size.titleHorizontalGap)
                 }
-                Text(subtitle)
-                    .lineLimit(1)
-                    .typography(subtitleTypography)
-                    .foregroundColor(currentColor(for: appearance.subtitleColor))
+                value(for: subtitle, typographyToken: subtitleTypography, textColor: appearance.subtitleColor)
+                    .fixedSize()
             }
             if shouldShowRightAlignedIcon() {
                 if hasTitleOrSubtitle() {
@@ -124,9 +124,8 @@ public struct SDDSButton: View {
                 }
                 icon
             }
-            counter
             if isCentered {
-                Spacer()
+                spacer
             }
         }
         .frame(height: appearance.size.height)
@@ -177,17 +176,20 @@ public struct SDDSButton: View {
     
     @ViewBuilder
     private var counter: some View {
-        if let counter = counterView {
-            SDDSCounter(
-                text: counter.text,
-                appearance: counter.appearance,
-                isAnimating: isAnimating,
-                isHighlighted: isHighlighted,
-                isHovered: isHovered
-                )
+        if let counter = counterViewProvider?.view {
+            counter
+                .padding(.leading, appearance.size.iconHorizontalGap)
         } else {
             EmptyView()
         }
+    }
+    
+    @ViewBuilder
+    private func value(for text: String, typographyToken: TypographyToken, textColor: ButtonColor) -> some View {
+        Text(text)
+            .lineLimit(1)
+            .typography(typographyToken)
+            .foregroundColor(currentColor(for: textColor))
     }
 }
 
@@ -197,7 +199,9 @@ private extension SDDSButton {
     }
     
     func currentColor(for buttonColor: ButtonColor) -> Color {
-        if isHighlighted {
+        if isSelected {
+            return buttonColor.selectedColor.color(for: colorScheme)
+        } else if isHighlighted {
             return buttonColor.highlightedColor.color(for: colorScheme)
         } else if isHovered {
             return buttonColor.hoveredColor.color(for: colorScheme)
@@ -224,7 +228,7 @@ private extension SDDSButton {
             return 1.0
         }
     }
-        
+    
     var isCentered: Bool {
         layoutMode.isCentered
     }
@@ -254,11 +258,11 @@ private extension SDDSButton {
     func shouldShowRightAlignedIcon() -> Bool {
         return isIconRightAligned && hasIconAttributes()
     }
-
+    
     func shouldShowLeftAlignedIcon() -> Bool {
         return !shouldShowRightAlignedIcon() && hasIconAttributes()
     }
-        
+    
     func hasTitleOrSubtitle() -> Bool {
         return !title.isEmpty || !subtitle.isEmpty
     }
@@ -270,7 +274,7 @@ private extension SDDSButton {
     var isIconRightAligned: Bool {
         iconAttributes?.alignment == .trailing || (iconAttributes?.alignment == .leading && isOnlyTitleAndImage)
     }
-
+    
     var titleTypography: TypographyToken {
         if let typography = appearance.titleTypography.typography(with: appearance.size) {
             return typography
@@ -284,6 +288,13 @@ private extension SDDSButton {
             return typography
         } else {
             fatalError("Undefined Button Typography for size \(appearance.size.debugDescription). Using a default value.")
+        }
+    }
+    
+    var spacer: some View {
+        GeometryReader { geometry in
+            Color.clear
+                .frame(width: geometry.size.width)
         }
     }
 }
