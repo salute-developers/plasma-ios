@@ -14,11 +14,11 @@ struct ButtonAppearance: CodeGenerationAppearance {
     var titleTypography: String?
     var subtitleTypography: String?
     
-    init(variation: ButtonConfiguration.Variation) {
-        self.init(props: variation.props, id: variation.id)
+    init(variation: ButtonConfiguration.Variation, component: CodeGenerationComponent) {
+        self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: ButtonProps, id: String? = nil) {
+    init(props: ButtonProps, id: String? = nil, component: CodeGenerationComponent) {
         self.loadingAlpha = CGFloatContextBuilder(props.loadingAlpha?.value, nullify: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
         self.backgroundColor = ButtonColorContextBuilder(
@@ -36,17 +36,17 @@ struct ButtonAppearance: CodeGenerationAppearance {
             highlightedColor: props.iconColor?.value(for: [.pressed]),
             hoveredColor: props.iconColor?.value(for: [.hovered])
         ).context
-        self.subtitleColor = ButtonColorContextBuilder(
+        self.titleColor = ButtonColorContextBuilder(
             defaultColor: props.labelColor,
             highlightedColor: props.labelColor?.value(for: [.pressed]),
             hoveredColor: props.labelColor?.value(for: [.hovered])
         ).context
-        self.titleColor = ButtonColorContextBuilder(
+        self.subtitleColor = ButtonColorContextBuilder(
             defaultColor: props.valueColor,
             highlightedColor: props.valueColor?.value(for: [.pressed]),
             hoveredColor: props.valueColor?.value(for: [.hovered])
         ).context
-        self.titleTypography = TypographyTokenContextBuilder(props.valueStyle?.value, id?.baseKey).context
-        self.subtitleTypography = TypographyTokenContextBuilder(props.labelStyle?.value, id?.baseKey).context
+        self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
+        self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
     }
 }

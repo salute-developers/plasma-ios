@@ -3,22 +3,22 @@ import Foundation
 struct ButtonProps: MergeableConfiguration, Codable {
     typealias Props = ButtonProps
     
-    let loadingAlpha: KeyValue<Double>?
-    let disableAlpha: KeyValue<Double>?
-    let shape: ShapeKeyValue?
-    let labelStyle: KeyValue<String>?
-    let valueStyle: KeyValue<String>?
-    let height: KeyValue<Double>?
-    let paddingStart: KeyValue<Double>?
-    let paddingEnd: KeyValue<Double>?
-    let minWidth: KeyValue<Double>?
-    let iconSize: KeyValue<Double>?
-    let spinnerSize: KeyValue<Double>?
-    let iconMargin: KeyValue<Double>?
-    let valueMargin: KeyValue<Double>?
-    let iconColor: ColorKeyValue?
-    let spinnerColor: ColorKeyValue?
-    let labelColor: ColorKeyValue?
-    let valueColor: ColorKeyValue?
-    let backgroundColor: ColorKeyValue?
+    var loadingAlpha: KeyValue<Double>?
+    var disableAlpha: KeyValue<Double>?
+    var shape: ShapeKeyValue?
+    var labelStyle: KeyValue<String>?
+    var valueStyle: KeyValue<String>?
+    var height: KeyValue<Double>?
+    var paddingStart: KeyValue<Double>?
+    var paddingEnd: KeyValue<Double>?
+    var minWidth: KeyValue<Double>?
+    var iconSize: KeyValue<Double>?
+    var spinnerSize: KeyValue<Double>?
+    var iconMargin: KeyValue<Double>?
+    var valueMargin: KeyValue<Double>?
+    var iconColor: ColorKeyValue?
+    var spinnerColor: ColorKeyValue?
+    var labelColor: ColorKeyValue?
+    var valueColor: ColorKeyValue?
+    var backgroundColor: ColorKeyValue?
 }

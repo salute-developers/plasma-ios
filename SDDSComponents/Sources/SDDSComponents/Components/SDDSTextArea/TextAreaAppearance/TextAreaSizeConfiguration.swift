@@ -20,6 +20,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var fieldHeight: CGFloat { get }
     var indicatorOffset: CGPoint { get }
     var indicatorSize: CGSize { get }
+    var endContentPadding: CGFloat { get }
 }
 
 public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
@@ -47,6 +48,7 @@ public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
     public var fieldHeight: CGFloat { 0 }
     public var indicatorSize: CGSize { .zero }
     public var indicatorOffset: CGPoint { .zero }
+    public var endContentPadding: CGFloat { 0 }
 
     public var debugDescription: String {
         "ZeroTextAreaSize with all zero values."

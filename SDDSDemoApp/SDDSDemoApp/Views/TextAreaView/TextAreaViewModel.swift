@@ -4,7 +4,7 @@ import SDDSComponents
 
 import SDDSServTheme
 
-final class TextAreaViewModel: ObservableObject {
+final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
     @Published var value: TextAreaValue = .single("")
     @Published var textValue: String = ""
     @Published var title: String = "Title"
@@ -14,54 +14,20 @@ final class TextAreaViewModel: ObservableObject {
     @Published var counter: String = "Counter"
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
-    @Published var required: Bool = false
     @Published var iconActionViewEnabled: Bool = true
     @Published var dynamicHeight: Bool = true
-    @Published var labelPlacement: TextAreaLabelPlacement = .outer
-    @Published var requiredPlacement: TextAreaRequiredPlacement = .left
     @Published var layout: TextAreaLayout = .default {
         didSet {
-            resetAppearance()
+            variationProvider.layout = layout
+            self.selectVariation(variations.first)
         }
     }
-    @Published var size: TextAreaSizeConfiguration = TextAreaSize.medium
-    @Published var sizeName: String = TextAreaSize.medium.rawValue {
-        didSet {
-            size = size(with: sizeName)
-        }
-    }
-    
-    @Published var variation: AppearanceVariation<TextAreaAppearance>!
     
     init() {
-        self.resetAppearance()
-    }
-    
-    var appearance: TextAreaAppearance {
-        return variation.appearance.size(size)
-    }
-    
-    var allTextAreaAppearance: [AppearanceVariation<TextAreaAppearance>] {
-        switch layout {
-        case .default:
-            let size = TextAreaSize(rawValue: sizeName) ?? .medium
-            return TextArea.all.map {
-                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
-            }
-        case .clear:
-            let size = TextAreaClearSize(rawValue: sizeName) ?? .medium
-            return TextAreaClear.all.map {
-                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
-            }
-        }
-    }
-    
-    var allSizeNames: [String] {
-        switch layout {
-        case .default:
-            TextAreaSize.allCases.map { $0.rawValue }
-        case .clear:
-            TextAreaClearSize.allCases.map { $0.rawValue}
+        super.init(variationProvider: TextAreaVariationProvider(layout: .default))
+        
+        if let firstVariation = variations.first {
+            selectVariation(firstVariation)
         }
     }
 
@@ -130,42 +96,4 @@ final class TextAreaViewModel: ObservableObject {
         }
     }
     
-    private func resetAppearance() {
-        variation = allTextAreaAppearance.first
-        sizeName = TextAreaSize.medium.rawValue
-    }
-}
-
-extension TextAreaViewModel {
-    private func size(with name: String) -> TextAreaSizeConfiguration {
-        switch layout {
-        case .default:
-            TextAreaSize(rawValue: name) ?? .medium
-        case .clear:
-            TextAreaClearSize(rawValue: name) ?? .medium
-        }
-    }
-}
-
-extension TextAreaViewModel: Equatable {
-    static func == (lhs: TextAreaViewModel, rhs: TextAreaViewModel) -> Bool {
-        return lhs.value == rhs.value &&
-        lhs.textValue == rhs.textValue &&
-        lhs.title == rhs.title &&
-        lhs.optionalTitle == rhs.optionalTitle &&
-        lhs.placeholder == rhs.placeholder &&
-        lhs.caption == rhs.caption &&
-        lhs.counter == rhs.counter &&
-        lhs.disabled == rhs.disabled &&
-        lhs.readOnly == rhs.readOnly &&
-        lhs.required == rhs.required &&
-        lhs.iconActionViewEnabled == rhs.iconActionViewEnabled &&
-        lhs.labelPlacement == rhs.labelPlacement &&
-        lhs.requiredPlacement == rhs.requiredPlacement &&
-        lhs.layout == rhs.layout &&
-        (lhs.size as? TextAreaSize) == (rhs.size as? TextAreaSize) &&
-        (lhs.size as? TextAreaClearSize) == (rhs.size as? TextAreaClearSize) &&
-        lhs.appearance == rhs.appearance &&
-        lhs.chips == rhs.chips
-    }
 }

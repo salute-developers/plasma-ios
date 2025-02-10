@@ -19,9 +19,9 @@ public struct {{ component }} {
     }
     {%- endfor %}
     
-    public static let all: [Any] = [
-        {%- for key, variation in variations %}
-        {{ component }}.{{ key }},
+    public static let all: [Variation<{{ appearance }}>] = [
+        {%- for chain in chains %}
+        {{ component }}.{{ chain }}.variation,
         {%- endfor %}
     ]
 }

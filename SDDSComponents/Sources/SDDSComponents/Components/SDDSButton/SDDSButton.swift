@@ -120,7 +120,11 @@ public struct SDDSButton: View {
             }
             if shouldShowRightAlignedIcon() {
                 if hasTitleOrSubtitle() {
-                    Spacer().frame(width: appearance.size.titleHorizontalGap)
+                    if subtitle.isEmpty {
+                        Spacer().frame(width: appearance.size.iconHorizontalGap)
+                    } else {
+                        Spacer().frame(width: appearance.size.titleHorizontalGap)
+                    }
                 }
                 icon
             }

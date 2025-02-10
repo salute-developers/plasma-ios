@@ -41,6 +41,21 @@ public extension ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
             appearance: appearance.warning
         )
     }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
 }
 
 private extension ButtonAppearance {
@@ -49,7 +64,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
         return appearance
     }
     
@@ -57,7 +72,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover)
         return appearance
     }
     
@@ -65,7 +80,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultNegative, highlightedColor: ColorToken.textDefaultNegativeActive, hoveredColor: ColorToken.textDefaultNegativeHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultNegative, highlightedColor: ColorToken.textDefaultNegativeActive, hoveredColor: ColorToken.textDefaultNegativeHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultNegative, highlightedColor: ColorToken.textDefaultNegativeActive, hoveredColor: ColorToken.textDefaultNegativeHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultNegative, highlightedColor: ColorToken.textDefaultNegativeActive, hoveredColor: ColorToken.textDefaultNegativeHover)
         return appearance
     }
     
@@ -73,7 +88,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPositive, highlightedColor: ColorToken.textDefaultPositiveActive, hoveredColor: ColorToken.textDefaultPositiveHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPositive, highlightedColor: ColorToken.textDefaultPositiveActive, hoveredColor: ColorToken.textDefaultPositiveHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultPositive, highlightedColor: ColorToken.textDefaultPositiveActive, hoveredColor: ColorToken.textDefaultPositiveHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPositive, highlightedColor: ColorToken.textDefaultPositiveActive, hoveredColor: ColorToken.textDefaultPositiveHover)
         return appearance
     }
     
@@ -81,7 +96,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover)
         return appearance
     }
     
@@ -89,7 +104,7 @@ private extension ButtonAppearance {
         var appearance = self
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultWarning, highlightedColor: ColorToken.textDefaultWarningActive, hoveredColor: ColorToken.textDefaultWarningHover)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultWarning, highlightedColor: ColorToken.textDefaultWarningActive, hoveredColor: ColorToken.textDefaultWarningHover)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultWarning, highlightedColor: ColorToken.textDefaultWarningActive, hoveredColor: ColorToken.textDefaultWarningHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultWarning, highlightedColor: ColorToken.textDefaultWarningActive, hoveredColor: ColorToken.textDefaultWarningHover)
         return appearance
     }
     

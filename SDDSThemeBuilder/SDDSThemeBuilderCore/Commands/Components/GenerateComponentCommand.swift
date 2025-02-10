@@ -4,9 +4,9 @@ import Stencil
 final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: CodeGenerationAppearance, Size: CodeGenerationSize>: Command, FileWriter {
     private let outputDirectoryURL: URL
     private let templateRender: Renderable
-    private let component: GeneratedComponent
+    private let component: CodeGenerationComponent
 
-    init(component: GeneratedComponent,
+    init(component: CodeGenerationComponent,
          outputDirectoryURL: URL,
          templateRender: Renderable = TemplateRenderer()) {
         self.component = component

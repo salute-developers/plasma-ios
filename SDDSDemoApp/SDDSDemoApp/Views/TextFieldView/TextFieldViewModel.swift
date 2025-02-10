@@ -1,10 +1,9 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-
 import SDDSServTheme
 
-final class TextFieldViewModel: ObservableObject {
+final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     @Published var value: TextFieldValue = .single("")
     @Published var textValue: String = ""
     @Published var title: String = "Title"
@@ -15,57 +14,23 @@ final class TextFieldViewModel: ObservableObject {
     @Published var textAfter: String = ""
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
-    @Published var required: Bool = false
     @Published var iconViewEnabled: Bool = true
     @Published var iconActionViewEnabled: Bool = true
-
-    @Published var labelPlacement: TextFieldLabelPlacement = .outer
-    @Published var requiredPlacement: TextFieldRequiredPlacement = .left
     @Published var layout: TextFieldLayout = .default {
         didSet {
-            resetAppearance()
+            variationProvider.layout = layout
+            self.selectVariation(variations.first)
         }
     }
-    @Published var size: TextFieldSizeConfiguration = TextFieldSize.medium
-    @Published var sizeName: String = TextFieldSize.medium.rawValue {
-        didSet {
-            size = size(with: sizeName)
-        }
-    }
-    @Published var variation: AppearanceVariation<TextFieldAppearance>!
     
     init() {
-        self.resetAppearance()
-    }
-    
-    var appearance: TextFieldAppearance {
-        return variation.appearance.size(size)
-    }
-    
-    var allTextFieldAppearance: [AppearanceVariation<TextFieldAppearance>] {
-        switch layout {
-        case .default:
-            let size = TextFieldSize(rawValue: sizeName) ?? .medium
-            return SDDSComponents.TextField.all.map {
-                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
-            }
-        case .clear:
-            let size = TextFieldClearSize(rawValue: sizeName) ?? .medium
-            return TextFieldClear.all.map {
-                AppearanceVariation(name: $0.name, appearance: $0.size(size).appearance)
-            }
+        super.init(variationProvider: TextFieldVariationProvider(layout: .default))
+        
+        if let firstVariation = variations.first {
+            selectVariation(firstVariation)
         }
     }
     
-    var allSizeNames: [String] {
-        switch layout {
-        case .default:
-            TextFieldSize.allCases.map { $0.rawValue }
-        case .clear:
-            TextFieldClearSize.allCases.map { $0.rawValue}
-        }
-    }
-
     var chips: [ChipData] {
         get {
             if case let .multiple(_, chips) = value {
@@ -120,45 +85,5 @@ final class TextFieldViewModel: ObservableObject {
             value = .single(textValue)
         }
     }
-    
-    private func resetAppearance() {
-        variation = allTextFieldAppearance.first
-        sizeName = TextFieldSize.medium.rawValue
-    }
-}
 
-extension TextFieldViewModel {
-    private func size(with name: String) -> TextFieldSizeConfiguration {
-        switch layout {
-        case .default:
-            TextFieldSize(rawValue: name) ?? .medium
-        case .clear:
-            TextFieldClearSize(rawValue: name) ?? .medium
-        }
-    }
-}
-
-extension TextFieldViewModel: Equatable {
-    static func == (lhs: TextFieldViewModel, rhs: TextFieldViewModel) -> Bool {
-        return lhs.value == rhs.value &&
-        lhs.textValue == rhs.textValue &&
-        lhs.title == rhs.title &&
-        lhs.optionalTitle == rhs.optionalTitle &&
-        lhs.placeholder == rhs.placeholder &&
-        lhs.caption == rhs.caption &&
-        lhs.textBefore == rhs.textBefore &&
-        lhs.textAfter == rhs.textAfter &&
-        lhs.disabled == rhs.disabled &&
-        lhs.readOnly == rhs.readOnly &&
-        lhs.required == rhs.required &&
-        lhs.iconViewEnabled == rhs.iconViewEnabled &&
-        lhs.iconActionViewEnabled == rhs.iconActionViewEnabled &&
-        lhs.labelPlacement == rhs.labelPlacement &&
-        lhs.requiredPlacement == rhs.requiredPlacement &&
-        lhs.layout == rhs.layout &&
-        (lhs.size as? TextFieldSize) == (rhs.size as? TextFieldSize) &&
-        (lhs.size as? TextFieldClearSize) == (rhs.size as? TextFieldClearSize) &&
-        lhs.variation == rhs.variation &&
-        lhs.chips == rhs.chips
-    }
 }

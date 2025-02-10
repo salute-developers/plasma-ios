@@ -34,7 +34,7 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
-		8106AC6A2D1093FC004348B7 /* GeneratedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* GeneratedComponent.swift */; };
+		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */; };
 		810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */; };
 		810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
 		810DE53F2C2AC77700F1C96F /* ColorToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 817539362BCE745600138866 /* ColorToken.stencil */; };
@@ -71,7 +71,6 @@
 		812DB7A32D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A22D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift */; };
 		812DB7A72D59E1B000D3F4A3 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A62D59E1B000D3F4A3 /* ButtonSize.swift */; };
 		812DB7A92D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A82D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift */; };
-		812DB7AB2D59EDA300D3F4A3 /* CodeGenerationCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7AA2D59EDA300D3F4A3 /* CodeGenerationCommands.swift */; };
 		813340122C063151005AD84F /* TypographyContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340112C063151005AD84F /* TypographyContextBuilderTests.swift */; };
 		813340142C0631D0005AD84F /* ColorContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */; };
 		813340162C0632EA005AD84F /* palette.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340152C0632EA005AD84F /* palette.json */; };
@@ -108,6 +107,8 @@
 		815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */; };
 		815F42D22D48C18A00F97E63 /* Component+BaseVariations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */; };
 		815F42D32D48C18A00F97E63 /* ComponentTypography.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */; };
+		8166B4402D5BD7C40044A680 /* RequiredPlacementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B43F2D5BD7C30044A680 /* RequiredPlacementContextBuilder.swift */; };
+		8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */; };
 		816E049D2C58DCDB00EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E049C2C58DCDB00EE7A7F /* SDDSThemeCore */; };
 		8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */; };
 		817539622BD0077300138866 /* SDDSThemeBuilderCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817539582BD0077200138866 /* SDDSThemeBuilderCore.framework */; };
@@ -206,6 +207,18 @@
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
 		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
 		819CB8032C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81A613122D5BA1A600ADE1CD /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */; };
+		81A613132D5BA1A600ADE1CD /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */; };
+		81A613142D5BA1A600ADE1CD /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */; };
+		81A613152D5BA1A600ADE1CD /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613112D5BA1A600ADE1CD /* TextAreaTypography.swift */; };
+		81A6131A2D5BA1AC00ADE1CD /* TextAreaClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613162D5BA1AC00ADE1CD /* TextAreaClear+Variations.swift */; };
+		81A6131B2D5BA1AC00ADE1CD /* TextAreaClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613172D5BA1AC00ADE1CD /* TextAreaClear+BaseVariations.swift */; };
+		81A6131C2D5BA1AC00ADE1CD /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613182D5BA1AC00ADE1CD /* TextAreaClearTypography.swift */; };
+		81A6131D2D5BA1AC00ADE1CD /* TextAreaClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613192D5BA1AC00ADE1CD /* TextAreaClearSize.swift */; };
+		81A613222D5BA1B200ADE1CD /* TextFieldClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6131E2D5BA1B100ADE1CD /* TextFieldClearSize.swift */; };
+		81A613232D5BA1B200ADE1CD /* TextFieldClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6131F2D5BA1B100ADE1CD /* TextFieldClear+BaseVariations.swift */; };
+		81A613242D5BA1B200ADE1CD /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613202D5BA1B200ADE1CD /* TextFieldClearTypography.swift */; };
+		81A613252D5BA1B200ADE1CD /* TextFieldClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613212D5BA1B200ADE1CD /* TextFieldClear+Variations.swift */; };
 		81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753442D47DDF0006E1BE7 /* GenerateComponentCommand.swift */; };
 		81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753472D47DE03006E1BE7 /* TextFieldAppearance.swift */; };
 		81A7534F2D47DE03006E1BE7 /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753482D47DE03006E1BE7 /* TextFieldSize.swift */; };
@@ -403,7 +416,7 @@
 		24CB39172BC96CDE00B32463 /* DecodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeCommand.swift; sourceTree = "<group>"; };
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
-		8106AC692D1093FC004348B7 /* GeneratedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedComponent.swift; sourceTree = "<group>"; };
+		8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationComponent.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
 		812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationContexts.swift; sourceTree = "<group>"; };
@@ -433,7 +446,6 @@
 		812DB7A22D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColorContextBuilder.swift; sourceTree = "<group>"; };
 		812DB7A62D59E1B000D3F4A3 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		812DB7A82D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetsContextBuilder.swift; sourceTree = "<group>"; };
-		812DB7AA2D59EDA300D3F4A3 /* CodeGenerationCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationCommands.swift; sourceTree = "<group>"; };
 		813340112C063151005AD84F /* TypographyContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340152C0632EA005AD84F /* palette.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = palette.json; sourceTree = "<group>"; };
@@ -469,6 +481,8 @@
 		815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComponentTypography.stencil; sourceTree = "<group>"; };
 		815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+BaseVariations.stencil"; sourceTree = "<group>"; };
 		815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationInput.swift; sourceTree = "<group>"; };
+		8166B43F2D5BD7C30044A680 /* RequiredPlacementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredPlacementContextBuilder.swift; sourceTree = "<group>"; };
+		8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPlacementContextBuilder.swift; sourceTree = "<group>"; };
 		816E04A22C58DD5600EE7A7F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		817539362BCE745600138866 /* ColorToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorToken.stencil; sourceTree = "<group>"; };
 		8175393C2BCE83EF00138866 /* CodeGenerationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationError.swift; sourceTree = "<group>"; };
@@ -554,6 +568,18 @@
 		819B2ACD2BF280FB00688624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819B2AD02BF280FB00688624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenSize+Extensions.swift"; sourceTree = "<group>"; };
+		81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextArea+Variations.swift"; sourceTree = "<group>"; };
+		81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextArea+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A613112D5BA1A600ADE1CD /* TextAreaTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
+		81A613162D5BA1AC00ADE1CD /* TextAreaClear+Variations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+Variations.swift"; sourceTree = "<group>"; };
+		81A613172D5BA1AC00ADE1CD /* TextAreaClear+BaseVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A613182D5BA1AC00ADE1CD /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
+		81A613192D5BA1AC00ADE1CD /* TextAreaClearSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearSize.swift; sourceTree = "<group>"; };
+		81A6131E2D5BA1B100ADE1CD /* TextFieldClearSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
+		81A6131F2D5BA1B100ADE1CD /* TextFieldClear+BaseVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A613202D5BA1B200ADE1CD /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		81A613212D5BA1B200ADE1CD /* TextFieldClear+Variations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+Variations.swift"; sourceTree = "<group>"; };
 		81A753442D47DDF0006E1BE7 /* GenerateComponentCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateComponentCommand.swift; sourceTree = "<group>"; };
 		81A753472D47DE03006E1BE7 /* TextFieldAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAppearance.swift; sourceTree = "<group>"; };
 		81A753482D47DE03006E1BE7 /* TextFieldSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSize.swift; sourceTree = "<group>"; };
@@ -796,8 +822,11 @@
 			children = (
 				81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */,
 				2489D0D02BC7F5EA0053AAB1 /* Constants.swift */,
+				819B2A882BF23B1600688624 /* Font+FontName.swift */,
 				8175393C2BCE83EF00138866 /* CodeGenerationError.swift */,
 				8175393E2BCE869C00138866 /* StencilTemplate.swift */,
+				81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */,
+				8139EB472C20403C00D6A049 /* String+Hex.swift */,
 				817539402BCE87B700138866 /* Renderable.swift */,
 				817539442BCE94E000138866 /* GeneralError.swift */,
 				817539512BD0032700138866 /* FileWriter.swift */,
@@ -807,7 +836,6 @@
 				819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */,
 				8133402F2C073C42005AD84F /* URL+Extensions.swift */,
 				818345812CFE3CC00081113B /* String+Extensions.swift */,
-				8106AC692D1093FC004348B7 /* GeneratedComponent.swift */,
 				815F42CF2D48BD8600F97E63 /* CodeGenerationInput.swift */,
 				812DB6DD2D55E2BD00D3F4A3 /* MergeableConfiguration.swift */,
 				812DB6DF2D55E38100D3F4A3 /* Double+Extensions.swift */,
@@ -818,10 +846,9 @@
 		2489D0D22BC7F7C10053AAB1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */,
+				81CB0FDD2C245046003B1064 /* SchemeTokenNameValidator.swift */,
 				81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */,
 				81CB0FE62C245052003B1064 /* SchemeValidationLogger.swift */,
-				81CB0FDF2C245052003B1064 /* TemplateRenderer */,
 				2489D0D52BC7F7E60053AAB1 /* Logger.swift */,
 			);
 			path = Utilities;
@@ -838,9 +865,9 @@
 		812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
-				812DB6E12D55E3C100D3F4A3 /* ContextBuilders */,
-				812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */,
-				81A7534B2D47DE03006E1BE7 /* ComponentContextBuilder.swift */,
+				81CB0FDF2C245052003B1064 /* TemplateRenderer */,
+				81CF30642D5B254900FCBC79 /* Tokens */,
+				81CF30632D5B253E00FCBC79 /* Сomponents */,
 			);
 			path = CodeGeneration;
 			sourceTree = "<group>";
@@ -848,6 +875,8 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */,
+				8166B43F2D5BD7C30044A680 /* RequiredPlacementContextBuilder.swift */,
 				812DB6E22D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift */,
 				812DB6E42D55E3DE00D3F4A3 /* ComponentStyleContextBuilder.swift */,
 				812DB6E62D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift */,
@@ -925,6 +954,10 @@
 		8140A46A2D5A0484002CF32B /* TextFieldClear */ = {
 			isa = PBXGroup;
 			children = (
+				81A6131F2D5BA1B100ADE1CD /* TextFieldClear+BaseVariations.swift */,
+				81A613212D5BA1B200ADE1CD /* TextFieldClear+Variations.swift */,
+				81A6131E2D5BA1B100ADE1CD /* TextFieldClearSize.swift */,
+				81A613202D5BA1B200ADE1CD /* TextFieldClearTypography.swift */,
 			);
 			path = TextFieldClear;
 			sourceTree = "<group>";
@@ -943,6 +976,10 @@
 		8140A4742D5A0484002CF32B /* TextAreaClear */ = {
 			isa = PBXGroup;
 			children = (
+				81A613172D5BA1AC00ADE1CD /* TextAreaClear+BaseVariations.swift */,
+				81A613162D5BA1AC00ADE1CD /* TextAreaClear+Variations.swift */,
+				81A613192D5BA1AC00ADE1CD /* TextAreaClearSize.swift */,
+				81A613182D5BA1AC00ADE1CD /* TextAreaClearTypography.swift */,
 			);
 			path = TextAreaClear;
 			sourceTree = "<group>";
@@ -950,6 +987,10 @@
 		8140A4792D5A0484002CF32B /* TextArea */ = {
 			isa = PBXGroup;
 			children = (
+				81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */,
+				81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */,
+				81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */,
+				81A613112D5BA1A600ADE1CD /* TextAreaTypography.swift */,
 			);
 			path = TextArea;
 			sourceTree = "<group>";
@@ -1055,10 +1096,8 @@
 		817539592BD0077200138866 /* SDDSThemeBuilderCore */ = {
 			isa = PBXGroup;
 			children = (
-				81CB0FDC2C245046003B1064 /* Validators */,
-				819B2A872BF23B0100688624 /* Extensions */,
-				81E1EDB92BD2B9E300F86AE1 /* ContextBuilders */,
 				817539352BCE744300138866 /* Stencil */,
+				812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */,
 				2489D0C92BC7F44F0053AAB1 /* Model */,
 				2489D0D22BC7F7C10053AAB1 /* Utilities */,
 				2489D0CA2BC7F45E0053AAB1 /* Commands */,
@@ -1272,16 +1311,6 @@
 			path = Tokens;
 			sourceTree = "<group>";
 		};
-		819B2A872BF23B0100688624 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				819B2A882BF23B1600688624 /* Font+FontName.swift */,
-				8139EB472C20403C00D6A049 /* String+Hex.swift */,
-				81CB0FBF2C2194DF003B1064 /* Color+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		819B2AC82BF280F900688624 /* SDDSDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1305,7 +1334,6 @@
 			isa = PBXGroup;
 			children = (
 				81A753442D47DDF0006E1BE7 /* GenerateComponentCommand.swift */,
-				812DB7AA2D59EDA300D3F4A3 /* CodeGenerationCommands.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1407,14 +1435,6 @@
 			path = SDDSProgressBar;
 			sourceTree = "<group>";
 		};
-		81CB0FDC2C245046003B1064 /* Validators */ = {
-			isa = PBXGroup;
-			children = (
-				81CB0FDD2C245046003B1064 /* SchemeTokenNameValidator.swift */,
-			);
-			path = Validators;
-			sourceTree = "<group>";
-		};
 		81CB0FDF2C245052003B1064 /* TemplateRenderer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,6 +1448,25 @@
 				81C10A212C292E4D0055BB04 /* Double+Stencil.swift */,
 			);
 			path = TemplateRenderer;
+			sourceTree = "<group>";
+		};
+		81CF30632D5B253E00FCBC79 /* Сomponents */ = {
+			isa = PBXGroup;
+			children = (
+				812DB6E12D55E3C100D3F4A3 /* ContextBuilders */,
+				812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */,
+				8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */,
+				81A7534B2D47DE03006E1BE7 /* ComponentContextBuilder.swift */,
+			);
+			path = "Сomponents";
+			sourceTree = "<group>";
+		};
+		81CF30642D5B254900FCBC79 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				81E1EDB92BD2B9E300F86AE1 /* ContextBuilders */,
+			);
+			path = Tokens;
 			sourceTree = "<group>";
 		};
 		81CF63482C6E8E82008F3BB2 /* SDDSThemeUtilities */ = {
@@ -1944,8 +1983,8 @@
 				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,
 				815F42CC2D48B8E800F97E63 /* ComponentTypography.stencil in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
+				8166B4402D5BD7C40044A680 /* RequiredPlacementContextBuilder.swift in Sources */,
 				81CB0FE92C245052003B1064 /* EnsureValueExistsNode.swift in Sources */,
-				812DB7AB2D59EDA300D3F4A3 /* CodeGenerationCommands.swift in Sources */,
 				8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */,
 				8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */,
 				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
@@ -1953,7 +1992,7 @@
 				812DB7A12D59DAF000D3F4A3 /* ComponentConfigurations.swift in Sources */,
 				812DB6E02D55E38100D3F4A3 /* Double+Extensions.swift in Sources */,
 				81D5D9D32D53A9740022CF32 /* ContextVariationUtility.swift in Sources */,
-				8106AC6A2D1093FC004348B7 /* GeneratedComponent.swift in Sources */,
+				8106AC6A2D1093FC004348B7 /* CodeGenerationComponent.swift in Sources */,
 				8139EB4A2C2040E300D6A049 /* ColorContext.swift in Sources */,
 				817539882BD008A500138866 /* Constants.swift in Sources */,
 				81CB0FEA2C245052003B1064 /* EnsureAnyValueExistsNode.swift in Sources */,
@@ -1967,6 +2006,7 @@
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
 				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,
 				81CB10022C258823003B1064 /* TemplateRendererError.swift in Sources */,
+				8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */,
 				812DB7162D56597700D3F4A3 /* DefaultValueContextBuilder.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
 				81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */,
@@ -2026,6 +2066,7 @@
 			files = (
 				81B23FF32D4BF0600042A657 /* SDDSSwitchSize.swift in Sources */,
 				81B240122D4BF0600042A657 /* SDDSChip+ColorVariations.swift in Sources */,
+				81A6131B2D5BA1AC00ADE1CD /* TextAreaClear+BaseVariations.swift in Sources */,
 				81B2401E2D4BF0600042A657 /* SDDSRadiobox+ColorVariations.swift in Sources */,
 				8140A4A82D5A07A0002CF32B /* LinkButtonTypography.swift in Sources */,
 				8140A4AA2D5A07A0002CF32B /* IconButtonSize.swift in Sources */,
@@ -2033,19 +2074,24 @@
 				81B23FF52D4BF0600042A657 /* SDDSSwitch+SizeVariations.swift in Sources */,
 				81B240202D4BF0600042A657 /* SDDSProgressViewSize.swift in Sources */,
 				8180A5BA2C131CC100009AF5 /* TypographyToken+Generated.swift in Sources */,
+				81A6131C2D5BA1AC00ADE1CD /* TextAreaClearTypography.swift in Sources */,
+				81A6131A2D5BA1AC00ADE1CD /* TextAreaClear+Variations.swift in Sources */,
 				8180A5B72C131CC100009AF5 /* Shadows+Generated.swift in Sources */,
 				81B240062D4BF0600042A657 /* SDDSAvatarSize.swift in Sources */,
 				8140A4692D59FF00002CF32B /* Test.swift in Sources */,
 				81B23FF72D4BF0600042A657 /* SDDSChipGroup+SizeVariations.swift in Sources */,
 				8140A4A62D5A07A0002CF32B /* LinkButton+Variations.swift in Sources */,
+				81A613232D5BA1B200ADE1CD /* TextFieldClear+BaseVariations.swift in Sources */,
 				81B2400D2D4BF0600042A657 /* EmbeddedChip+SizeVariations.swift in Sources */,
 				8140A4AB2D5A07A0002CF32B /* IconButton+BaseVariations.swift in Sources */,
 				81B240132D4BF0600042A657 /* SDDSCheckbox+ColorVariations.swift in Sources */,
 				81B2401C2D4BF0600042A657 /* SDDSRadiobox+Typography.swift in Sources */,
+				81A613252D5BA1B200ADE1CD /* TextFieldClear+Variations.swift in Sources */,
 				8180A54F2C1106A700009AF5 /* Theme.swift in Sources */,
 				81B240112D4BF0600042A657 /* SDDSChip+SizeVariations.swift in Sources */,
 				81B23FF42D4BF0600042A657 /* SDDSSwitch+Typography.swift in Sources */,
 				81B2400B2D4BF0600042A657 /* EmbeddedChip+ColorVariations.swift in Sources */,
+				81A613152D5BA1A600ADE1CD /* TextAreaTypography.swift in Sources */,
 				8140A4AD2D5A07A0002CF32B /* BasicButton+BaseVariations.swift in Sources */,
 				81B2400A2D4BF0600042A657 /* SDDSChip+Pilled.swift in Sources */,
 				8180A5B62C131CC100009AF5 /* Gradients+Generated.swift in Sources */,
@@ -2053,6 +2099,7 @@
 				8140A4A72D5A07A0002CF32B /* LinkButton+BaseVariations.swift in Sources */,
 				81B240162D4BF0600042A657 /* SDDSCheckboxSize.swift in Sources */,
 				81B240152D4BF0600042A657 /* SDDSCheckbox+SizeVariations.swift in Sources */,
+				81A613242D5BA1B200ADE1CD /* TextFieldClearTypography.swift in Sources */,
 				81B23FF62D4BF0600042A657 /* SDDSSwitch+ColorVariations.swift in Sources */,
 				81B2400E2D4BF0600042A657 /* EmbeddedChipTypography.swift in Sources */,
 				81B23FF22D4BF0600042A657 /* SwitchTypography.swift in Sources */,
@@ -2062,6 +2109,8 @@
 				8180A5BF2C131CC100009AF5 /* ShadowToken+Generated.swift in Sources */,
 				8180A5B82C131CC100009AF5 /* Shapes+Generated.swift in Sources */,
 				8140A4AC2D5A07A0002CF32B /* IconButtonTypography.swift in Sources */,
+				81A613132D5BA1A600ADE1CD /* TextArea+Variations.swift in Sources */,
+				81A6131D2D5BA1AC00ADE1CD /* TextAreaClearSize.swift in Sources */,
 				81B23FF82D4BF0600042A657 /* SDDSChipGroupSize.swift in Sources */,
 				8140A4932D5A04FC002CF32B /* TextField+Variations.swift in Sources */,
 				8140A4AE2D5A07A0002CF32B /* BasicButtonSize.swift in Sources */,
@@ -2075,13 +2124,16 @@
 				8180A5BB2C131CC100009AF5 /* Colors+Generated.swift in Sources */,
 				8140A4942D5A04FC002CF32B /* TextField+BaseVariations.swift in Sources */,
 				8140A4AF2D5A07A0002CF32B /* BasicButtonTypography.swift in Sources */,
+				81A613142D5BA1A600ADE1CD /* TextArea+BaseVariations.swift in Sources */,
 				81B240082D4BF0600042A657 /* AvatarTypography.swift in Sources */,
 				8180A5BC2C131CC100009AF5 /* ColorToken+Generated.swift in Sources */,
 				8140A4A92D5A07A0002CF32B /* IconButton+Variations.swift in Sources */,
+				81A613122D5BA1A600ADE1CD /* TextAreaSize.swift in Sources */,
 				81B240212D4BF0600042A657 /* SDDSProgressView+ColorVariations.swift in Sources */,
 				81B240092D4BF0600042A657 /* SDDSAvatar+SizeVariations.swift in Sources */,
 				81B2401D2D4BF0600042A657 /* SDDSRadioboxSize.swift in Sources */,
 				8140A4922D5A04FC002CF32B /* TextFieldSize.swift in Sources */,
+				81A613222D5BA1B200ADE1CD /* TextFieldClearSize.swift in Sources */,
 				8180A5BE2C131CC100009AF5 /* GradientToken+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

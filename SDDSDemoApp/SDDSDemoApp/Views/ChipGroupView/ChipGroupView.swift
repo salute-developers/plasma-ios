@@ -58,6 +58,23 @@ struct ChipGroupView: View {
                     }
                 }
             }
+            Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
+            Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
+            
+            HStack {
+                Text("Size")
+                Spacer()
+                    .frame(maxWidth: .infinity)
+                Menu {
+                    ForEach(SDDSChipSize.allCases, id: \.self) { size in
+                        Button(size.debugDescription) {
+                            viewModel.chipSize = size
+                        }
+                    }
+                } label: {
+                    Text(viewModel.chipSize.debugDescription)
+                }
+            }
             
             Section {
                 ForEach(viewModel.chips.indices, id: \.self) { index in

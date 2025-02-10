@@ -25,6 +25,13 @@ struct {{ component }}Typography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: {{ sizeConfiguration }}) -> TypographyToken? {
+        if size is {{ component }}AnySize {
+            {%- for key, variation in variations %}
+            {%- if forloop.first %}
+            return {{ key }}
+            {%- endif %}
+            {%- endfor %}
+        }
         {%- for key, variation in variations %}
         if size is {{ component }}Size{{ key | capitalized }} {
             return {{ key }}

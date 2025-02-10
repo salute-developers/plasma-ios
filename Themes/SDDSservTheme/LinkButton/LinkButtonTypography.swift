@@ -29,6 +29,9 @@ struct LinkButtonTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: ButtonSizeConfiguration) -> TypographyToken? {
+        if size is LinkButtonAnySize {
+            return l
+        }
         if size is LinkButtonSizeL {
             return l
         }
