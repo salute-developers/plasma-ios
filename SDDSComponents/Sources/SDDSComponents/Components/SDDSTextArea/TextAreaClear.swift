@@ -12,10 +12,7 @@ public struct TextAreaClear: View {
     public let counter: String
     public let disabled: Bool
     public let readOnly: Bool
-    public let labelPlacement: TextAreaLabelPlacement
-    public let required: Bool
     public let divider: Bool
-    public let requiredPlacement: TextAreaRequiredPlacement
     public let dynamicHeight: Bool
     public let appearance: TextAreaAppearance
     public let accessibility: TextAreaAccessibility
@@ -30,24 +27,18 @@ public struct TextAreaClear: View {
         counter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
-        labelPlacement: TextAreaLabelPlacement = .outer,
-        required: Bool = false,
         divider: Bool = true,
-        requiredPlacement: TextAreaRequiredPlacement = .left,
         dynamicHeight: Bool = false,
         appearance: TextAreaAppearance,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
     ) {
         _value = value
-        self.labelPlacement = labelPlacement
         self.caption = caption
         self.counter = counter
         self.disabled = disabled
         self.readOnly = readOnly
-        self.required = required
         self.divider = divider
-        self.requiredPlacement = requiredPlacement
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
@@ -67,10 +58,7 @@ public struct TextAreaClear: View {
             counter: counter,
             disabled: disabled,
             readOnly: readOnly,
-            labelPlacement: labelPlacement,
-            required: required,
             divider: divider,
-            requiredPlacement: requiredPlacement,
             dynamicHeight: dynamicHeight,
             appearance: appearance,
             layout: .clear,

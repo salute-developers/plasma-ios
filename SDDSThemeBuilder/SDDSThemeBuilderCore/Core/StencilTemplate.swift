@@ -1,6 +1,7 @@
 import Foundation
 
 enum StencilTemplate: String {
+    // MARK: - Tokens
     case colorToken = "ColorToken"
     case shapeToken = "ShapeToken"
     case shadowToken = "ShadowToken"
@@ -11,6 +12,8 @@ enum StencilTemplate: String {
     case shadows = "Shadows"
     case typographies = "Typographies"
     case gradients = "Gradients"
+    
+    // MARK: - Components
     case componentSize = "ComponentSize"
     case componentBaseVariations = "Component+BaseVariations"
     case componentVariations = "Component+Variations"
@@ -26,7 +29,7 @@ extension StencilTemplate {
         return "\(rawValue)+Generated.swift"
     }
     
-    func generatedFileName(component: GeneratedComponent) -> String {
+    func generatedFileName(component: CodeGenerationComponent) -> String {
         let templateName = self.rawValue.replacingOccurrences(of: "Component", with: "")
         return "\(component.rawValue)\(templateName).swift"
     }

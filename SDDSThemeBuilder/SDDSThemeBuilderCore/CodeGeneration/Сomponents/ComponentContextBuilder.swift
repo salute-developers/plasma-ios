@@ -15,9 +15,9 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
     private typealias SizeContext = ComponentSizeContext<Size>
     
     let configuration: ComponentConfiguration<Props>
-    let component: GeneratedComponent
+    let component: CodeGenerationComponent
     
-    init(configuration: ComponentConfiguration<Props>, component: GeneratedComponent) {
+    init(configuration: ComponentConfiguration<Props>, component: CodeGenerationComponent) {
         self.configuration = configuration
         self.component = component
     }
@@ -75,13 +75,14 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
             let next = nextContextBuilder.context ?? ""
             
             variations[key.codeGenString] = .init(
-                appearance: Appearance(props: appearanceProps, id: nil),
+                appearance: Appearance(props: appearanceProps, id: nil, component: component),
                 next: next
             )
         }
         
         let keys = configuration.allProps.keys.sorted()
-        let all: [String] = keys.map { $0.joinedVariationPath }
+        let all: [String] = keys.map({ $0.joinedVariationPath }).sorted()
+        let chains: [String] = keys.map({ $0.chain }).sorted()
         
         guard let configurationProps = configuration.props as? Appearance.Props else {
             fatalError("Bad definition")
@@ -92,7 +93,8 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
             appearance: component.appearance,
             variations: variations,
             all: all,
-            base: Appearance(props: configurationProps, id: nil)
+            chains: chains,
+            base: Appearance(props: configurationProps, id: nil, component: component)
         )
     }
     
@@ -127,9 +129,10 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                 }
                 
                 let variationContext = VariationsContext.Variation(
-                    appearance: Appearance(props: appearanceProps, id: variation.id),
+                    appearance: Appearance(props: appearanceProps, id: variation.id, component: component),
                     size: Size(props: sizeProps, id: variation.id, nullify: true),
-                    next: next
+                    next: next, 
+                    chain: key.chain
                 )
                 
                 var currentVariation = variations[variationKey, default: [:]]
@@ -145,7 +148,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                     }
                     
                     var currentView = variationViews[parentKey.joinedVariationPath.codeGenString, default: [:]]
-                    currentView[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil))
+                    currentView[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
                     variationViews[parentKey.joinedVariationPath.codeGenString] = currentView
                 }
             }
@@ -155,7 +158,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                     continue
                 }
                 
-                views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil))
+                views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
             }
         }
         
@@ -176,7 +179,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
             guard let variation = configuration.allProps[key], let appearanceProps = variation.props as? Appearance.Props else {
                 continue
             }
-            variations[key.codeGenString] = Appearance(props: appearanceProps, id: variation.id)
+            variations[key.codeGenString] = Appearance(props: appearanceProps, id: variation.id, component: component)
         }
         
         return .init(

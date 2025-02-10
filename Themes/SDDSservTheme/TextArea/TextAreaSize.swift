@@ -26,6 +26,7 @@ struct TextAreaSizeL: TextAreaSizeConfiguration {
     public var chipContainerHorizontalPadding = CGFloat(6.0)
     public var chipsPadding = CGFloat(6.0)
     public var cornerRadius = ShapeToken.roundM.cornerRadius+2.0
+    public var endContentPadding = CGFloat(10.0)
     public var fieldHeight = CGFloat(56.0)
     public var iconActionPadding = CGFloat(10.0)
     public var iconActionSize = CGSize(width:24.0, height:24.0)
@@ -48,6 +49,7 @@ struct TextAreaSizeM: TextAreaSizeConfiguration {
     public var chipContainerHorizontalPadding = CGFloat(6.0)
     public var chipsPadding = CGFloat(6.0)
     public var cornerRadius = ShapeToken.roundM.cornerRadius
+    public var endContentPadding = CGFloat(8.0)
     public var fieldHeight = CGFloat(48.0)
     public var iconActionPadding = CGFloat(8.0)
     public var iconActionSize = CGSize(width:24.0, height:24.0)
@@ -70,6 +72,7 @@ struct TextAreaSizeS: TextAreaSizeConfiguration {
     public var chipContainerHorizontalPadding = CGFloat(6.0)
     public var chipsPadding = CGFloat(6.0)
     public var cornerRadius = ShapeToken.roundM.cornerRadius
+    public var endContentPadding = CGFloat(6.0)
     public var fieldHeight = CGFloat(40.0)
     public var iconActionPadding = CGFloat(6.0)
     public var iconActionSize = CGSize(width:24.0, height:24.0)
@@ -92,6 +95,7 @@ struct TextAreaSizeXs: TextAreaSizeConfiguration {
     public var chipContainerHorizontalPadding = CGFloat(6.0)
     public var chipsPadding = CGFloat(6.0)
     public var cornerRadius = ShapeToken.roundS.cornerRadius
+    public var endContentPadding = CGFloat(4.0)
     public var fieldHeight = CGFloat(32.0)
     public var iconActionPadding = CGFloat(4.0)
     public var iconActionSize = CGSize(width:16.0, height:16.0)
@@ -115,6 +119,7 @@ struct TextAreaAnySize: TextAreaSizeConfiguration {
     public var chipContainerHorizontalPadding = CGFloat(0)
     public var chipsPadding = CGFloat(0)
     public var cornerRadius = CGFloat(0)
+    public var endContentPadding = CGFloat(0)
     public var fieldHeight = CGFloat(0)
     public var iconActionPadding = CGFloat(0)
     public var iconActionSize = CGSize.zero
@@ -134,6 +139,7 @@ struct TextAreaAnySize: TextAreaSizeConfiguration {
         self.chipContainerHorizontalPadding = size.chipContainerHorizontalPadding
         self.chipsPadding = size.chipsPadding
         self.cornerRadius = size.cornerRadius
+        self.endContentPadding = size.endContentPadding
         self.fieldHeight = size.fieldHeight
         self.iconActionPadding = size.iconActionPadding
         self.iconActionSize = size.iconActionSize

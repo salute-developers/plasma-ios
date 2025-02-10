@@ -18,7 +18,6 @@ import SDDSComponents
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
     - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
-    - required: Флаг, указывающий, является ли поле обязательным.
     - divider: Флаг, указывающий, показывать ли линию разделителя.
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
@@ -39,7 +38,6 @@ public struct SDDSTextField: View {
     public let textAfter: String
     public let disabled: Bool
     public let readOnly: Bool
-    public let required: Bool
     public let divider: Bool
     public let appearance: TextFieldAppearance
     public let layout: TextFieldLayout
@@ -62,10 +60,8 @@ public struct SDDSTextField: View {
         textAfter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
-        labelPlacement: TextFieldLabelPlacement = .outer,
         required: Bool = false,
         divider: Bool = true,
-        requiredPlacement: TextFieldRequiredPlacement = .left,
         appearance: TextFieldAppearance,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
@@ -85,7 +81,6 @@ public struct SDDSTextField: View {
         self.textAfter = textAfter
         self.disabled = disabled
         self.readOnly = readOnly
-        self.required = required
         self.divider = divider
         self.title = title
         self.optionalTitle = optionalTitle
@@ -100,7 +95,7 @@ public struct SDDSTextField: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            if showOuterTitleIndicatorForDefaultLayout || showInnerTitleIndicatorForClearLayout {
+            if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
                 indicatorWithTrailingPadding
             }
             
@@ -116,7 +111,9 @@ public struct SDDSTextField: View {
                             guard !displayChips else {
                                 return
                             }
-                            isFocused = true
+                            withAnimation {
+                                isFocused = true
+                            }
                         }
                         .debug(condition: debugConfiguration.fieldView)
                 }
@@ -161,13 +158,17 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var optionalTitleView: some View {
-        Text(optionalTitle)
-            .typography(titleTypography)
-            .frame(height: titleTypography.lineHeight)
-            .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
-            .multilineTextAlignment(appearance.titleTextAlignment)
-            .debug(condition: debugConfiguration.title)
-            .padding(.leading, appearance.size.optionalPadding)
+        if required {
+            EmptyView()
+        } else {
+            Text(optionalTitle)
+                .typography(titleTypography)
+                .frame(height: titleTypography.lineHeight)
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .multilineTextAlignment(appearance.titleTextAlignment)
+                .debug(condition: debugConfiguration.title)
+                .padding(.leading, appearance.size.optionalPadding)
+        }
     }
     
     @ViewBuilder
@@ -344,15 +345,25 @@ public struct SDDSTextField: View {
     
     @ViewBuilder
     private var placeholderView: some View {
-        if placeholder.isEmpty && appearance.labelPlacement == .inner && !displayChips {
-            HStack(spacing: 0) {
-                if !title.isEmpty {
-                    Text(title)
-                        .typography(textTypography)
-                        .foregroundColor(placeholderColor)
-                }
-                if !optionalTitle.isEmpty {
-                    innerOrNonePlacementOptionalTitleView
+        if appearance.labelPlacement == .inner && !displayChips {
+            if isFocused {
+                Text(placeholder)
+                    .typography(textTypography)
+                    .foregroundColor(placeholderColor)
+            } else {
+                HStack(spacing: 0) {
+                    if !title.isEmpty {
+                        Text(title)
+                            .typography(textTypography)
+                            .foregroundColor(placeholderColor)
+                    } else {
+                        Text(placeholder)
+                            .typography(textTypography)
+                            .foregroundColor(placeholderColor)
+                    }
+                    if !optionalTitle.isEmpty {
+                        innerOrNonePlacementOptionalTitleView
+                    }
                 }
             }
         } else {
@@ -368,11 +379,20 @@ public struct SDDSTextField: View {
     }
     
     @ViewBuilder
+    private var titleOrPlaceholder: some View {
+        EmptyView()
+    }
+    
+    @ViewBuilder
     private var innerOrNonePlacementOptionalTitleView: some View {
-        Text(optionalTitle)
-            .typography(textTypography)
-            .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
-            .padding(.leading, appearance.size.optionalPadding)
+        if required {
+            EmptyView()
+        } else {
+            Text(optionalTitle)
+                .typography(textTypography)
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .padding(.leading, appearance.size.optionalPadding)
+        }
     }
         
     @ViewBuilder
@@ -458,7 +478,8 @@ public struct SDDSTextField: View {
                 innerOptionalTitleView
             }
         }
-        .padding([.top, .bottom], appearance.size.titleInnerPadding, debug: debugConfiguration.innerTitle)
+        .padding(.top, appearance.size.boxPaddingTop)
+        .padding(.bottom, appearance.size.titleInnerPadding)
     }
 
     @ViewBuilder
@@ -474,14 +495,14 @@ public struct SDDSTextField: View {
     
     private var endContentColor: Color {
         if readOnly {
-            return appearance.endContentColorReadonly.color(for: colorScheme)
+            return appearance.endContentColorReadOnly?.color(for: colorScheme) ?? appearance.endContentColor.color(for: colorScheme)
         }
         return appearance.endContentColor.color(for: colorScheme)
     }
     
     private var backgroundColor: Color {
         if readOnly {
-            return appearance.backgroundColorReadOnly.color(for: colorScheme)
+            return appearance.backgroundColorReadOnly?.color(for: colorScheme) ?? appearance.backgroundColor.color(for: colorScheme)
         }
         if isFocused {
             return appearance.backgroundColorFocused.color(for: colorScheme)
@@ -501,7 +522,7 @@ public struct SDDSTextField: View {
     
     private var placeholderColor: Color {
         if readOnly {
-            return appearance.placeholderColorReadOnly.color(for: colorScheme)
+            return appearance.placeholderColorReadOnly?.color(for: colorScheme) ?? appearance.placeholderColor.color(for: colorScheme)
         }
         if isFocused {
             return appearance.placeholderColorFocused.color(for: colorScheme)
@@ -511,7 +532,7 @@ public struct SDDSTextField: View {
     
     private var textColor: Color {
         if readOnly {
-            return appearance.textColorReadOnly.color(for: colorScheme)
+            return appearance.textColorReadOnly?.color(for: colorScheme) ?? appearance.textColor.color(for: colorScheme)
         }
         if isFocused {
             return appearance.textColorFocused.color(for: colorScheme)
@@ -520,18 +541,22 @@ public struct SDDSTextField: View {
     }
     
     private var bottomLineColor: Color {
+        if readOnly {
+            return appearance.lineColorReadOnly.color(for: colorScheme)
+        }
         if isFocused {
             return appearance.lineColorFocused.color(for: colorScheme)
         }
-        
         return appearance.lineColor.color(for: colorScheme)
     }
     
     private var iconViewColor: Color {
-        if isFocused {
-            return appearance.startContentColor.color(for: colorScheme)
+        if readOnly {
+            return appearance.startContentColorReadOnly?.color(for: colorScheme) ?? appearance.startContentColor.color(for: colorScheme)
         }
-        
+        if isFocused {
+            return appearance.startContentColorFocused.color(for: colorScheme)
+        }
         return appearance.startContentColor.color(for: colorScheme)
     }
 
@@ -639,7 +664,8 @@ public struct SDDSTextField: View {
         appearance.labelPlacement == .inner &&
         !displayChips &&
         appearance.innerTitleTypography.typography(with: appearance.size) != nil &&
-        !placeholder.isEmpty
+        (!text.isEmpty || isFocused) &&
+        !(title.isEmpty && required)
     }
 
     private var shouldShowEdgeIndicatorForDefaultLayout: Bool {
@@ -667,11 +693,14 @@ public struct SDDSTextField: View {
         layout == .clear
     }
 
-    private var showOuterTitleIndicatorForDefaultLayout: Bool {
+    private var showOuterTitleIndicator: Bool {
         appearance.labelPlacement == .outer &&
         required &&
-        appearance.requiredPlacement == .left &&
-        layout == .default
+        appearance.requiredPlacement == .left
+    }
+    
+    private var required: Bool {
+        appearance.requiredPlacement != .none
     }
     
     private var shouldCenterText: Bool {

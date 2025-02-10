@@ -4,4 +4,5 @@ import Foundation
 public enum TextFieldRequiredPlacement: String, CaseIterable {
     case left
     case right
+    case none
 }

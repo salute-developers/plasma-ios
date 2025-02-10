@@ -12,12 +12,8 @@ enum SDDSButtonType: String, CaseIterable {
 }
 
 struct ButtonView: View {
-    @ObservedObject private var viewModel: ButtonViewModel
+    @ObservedObject private var viewModel: ButtonViewModel = ButtonViewModel()
     @Environment(\.colorScheme) private var colorScheme
-    
-    init(viewModel: ButtonViewModel = ButtonViewModel()) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
         List {
@@ -27,8 +23,8 @@ struct ButtonView: View {
                     switch viewModel.buttonType {
                     case .basic:
                         BasicButton(
-                            title: viewModel.title,
-                            subtitle: viewModel.subtitle,
+                            title: viewModel.label,
+                            subtitle: viewModel.value,
                             iconAttributes: viewModel.iconAttributes,
                             isDisabled: viewModel.isDisabled,
                             isLoading: viewModel.isLoading,
@@ -39,7 +35,7 @@ struct ButtonView: View {
                         )
                     case .link:
                         LinkButton(
-                            title: viewModel.title,
+                            title: viewModel.label,
                             iconAttributes: viewModel.iconAttributes,
                             isDisabled: viewModel.isDisabled,
                             isLoading: viewModel.isLoading,
@@ -78,117 +74,36 @@ struct ButtonView: View {
                         Text(viewModel.buttonType.rawValue.capitalized)
                     }
                 }
+                VariationsView(viewModel: viewModel)
                 HStack {
-                    Text("Appearance")
+                    Text("Label")
                     Spacer()
                         .frame(maxWidth: .infinity)
-                    Menu {
-                        switch viewModel.buttonType {
-                        case .basic:
-                            ForEach(BasicButton.all, id: \.self) { variation in
-                                Button(variation.name) {
-                                    viewModel.appearance = variation.appearance.size(viewModel.size)
-                                    viewModel.variationName = variation.name
-                                }
-                            }
-                        case .link:
-                            ForEach(LinkButton.all, id: \.self) { variation in
-                                Button(variation.name) {
-                                    viewModel.appearance = variation.appearance.size(viewModel.size)
-                                    viewModel.variationName = variation.name
-                                }
-                            }
-                        case .icon:
-                            ForEach(IconButton.all, id: \.self) { variation in
-                                Button(variation.name) {
-                                    viewModel.appearance = variation.appearance.size(viewModel.size)
-                                    viewModel.variationName = variation.name
-                                }
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.variationName.capitalized)
-                    }
-                }
-                HStack {
-                    Text("Title")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    TextField("Button Title", text: $viewModel.title)
+                    TextField("Button Label", text: $viewModel.label)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
                     Text("Value")
                     Spacer()
                         .frame(maxWidth: .infinity)
-                    TextField("Button Value", text: $viewModel.subtitle)
+                    TextField("Button Value", text: $viewModel.value)
                         .multilineTextAlignment(.trailing)
                 }
                 HStack {
-                    Toggle("Icon", isOn: $viewModel.isIconVisible)
-                }
-                if viewModel.buttonType == .icon {
-                    HStack {
-                        Toggle("Pilled", isOn: $viewModel.isPilled)
-                    }
-                }
-                if viewModel.buttonType != .icon {
-                    HStack {
-                        Text("Icon Alignment")
-                        Spacer()
-                            .frame(maxWidth: .infinity)
-                        Menu {
-                            ForEach(ButtonAlignment.allCases, id: \.self) { alignment in
-                                Button(alignment.rawValue) {
-                                    viewModel.alignment = alignment
-                                }
-                            }
-                        } label: {
-                            Text(viewModel.alignment.rawValue)
-                        }
-                    }
+                    Toggle("Icon", isOn: $viewModel.iconVisible)
                 }
                 HStack {
-                    Text("Size")
+                    Text("Icon Alignment")
                     Spacer()
                         .frame(maxWidth: .infinity)
-                    switch viewModel.buttonType {
-                    case .basic:
-                        Menu {
-                            ForEach(BasicButtonSize.allCases, id: \.self) { size in
-                                Button(size.rawValue) {
-                                    viewModel.size = size
-                                }
-                            }
-                        } label: {
-                            if let size = viewModel.size as? BasicButtonSize {
-                                Text(size.rawValue)
+                    Menu {
+                        ForEach(ButtonAlignment.allCases, id: \.self) { alignment in
+                            Button(alignment.rawValue) {
+                                viewModel.alignment = alignment
                             }
                         }
-                    case .link:
-                        Menu {
-                            ForEach(LinkButtonSize.allCases, id: \.self) { size in
-                                Button(size.rawValue) {
-                                    viewModel.size = size
-                                }
-                            }
-                        } label: {
-                            if let size = viewModel.size as? LinkButtonSize {
-                                Text(size.rawValue)
-                            }
-                        }
-                    case .icon:
-                        Menu {
-                            ForEach(IconButtonSize.allCases, id: \.self) { size in
-                                Button(size.rawValue) {
-                                    viewModel.size = size
-                                }
-                            }
-                        } label: {
-                            if let size = viewModel.size as? IconButtonSize {
-                                Text(size.rawValue)
-                            }
-                        }
+                    } label: {
+                        Text(viewModel.alignment.rawValue)
                     }
                 }
                 HStack {
@@ -218,5 +133,5 @@ struct ButtonView: View {
 }
 
 #Preview {
-    ButtonView(viewModel: ButtonViewModel())
+    ButtonView()
 }

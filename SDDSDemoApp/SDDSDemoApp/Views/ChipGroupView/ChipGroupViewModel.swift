@@ -5,7 +5,6 @@ import SDDSServTheme
 
 final class ChipGroupViewModel: ObservableObject {
     @Published var chipTitle: String = ""
-    @Published var chipSize: SDDSChipSize = .medium
     @Published var chips: [ChipData] = []
     @Published var appearance: ChipAppearance = SDDSChip.default.appearance {
         didSet {
@@ -15,6 +14,9 @@ final class ChipGroupViewModel: ObservableObject {
     @Published var chipGroupAppearance: ChipGroupAppearance = SDDSChipGroup.dense.appearance
     @Published var chipGroupVariationName: String = SDDSChipGroup.dense.name
     @Published var chipVariationName: String = SDDSChip.default.name
+    @Published var iconImageEnabled: Bool = true
+    @Published var buttomImageEnabled: Bool = true
+    @Published var chipSize: SDDSChipSize = .medium
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -62,8 +64,8 @@ final class ChipGroupViewModel: ObservableObject {
         let newChip = ChipData(
             title: chipTitle,
             isEnabled: true,
-            iconImage: Image.image("chipIcon"),
-            buttonImage: Image.image("chipClose"),
+            iconImage: iconImageEnabled ? Image.image("chipIcon") : nil,
+            buttonImage: buttomImageEnabled ? Image.image("chipClose") : nil,
             appearance: appearance.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: {}

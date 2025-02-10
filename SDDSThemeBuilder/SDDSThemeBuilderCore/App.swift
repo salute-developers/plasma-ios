@@ -101,9 +101,7 @@ public final class App {
                 )
             )
         ]
-        commands.append(contentsOf: generateTextFieldVariations)
-        commands.append(contentsOf: generateTextAreaVariations)
-        commands.append(contentsOf: generateButtonVariations)
+        commands.append(contentsOf: generateComponentVariations)
         
         for command in commands {
             let result = command.run()
@@ -127,47 +125,10 @@ public final class App {
 
 // MARK: - Variations
 extension App {
-    private var generateTextFieldVariations: [Command] {
-        [
-            GenerateTextFieldCommand(
-                component: .textField,
-                outputDirectoryURL: generatedComponentsURL(component: .textField)
-            ),
-            GenerateTextFieldCommand(
-                component: .textFieldClear,
-                outputDirectoryURL: generatedComponentsURL(component: .textFieldClear)
-            )
-        ]
-    }
-    
-    private var generateTextAreaVariations: [Command] {
-        [
-            GenerateTextAreaCommand(
-                component: .textArea,
-                outputDirectoryURL: generatedComponentsURL(component: .textArea)
-            ),
-            GenerateTextAreaCommand(
-                component: .textAreaClear,
-                outputDirectoryURL: generatedComponentsURL(component: .textAreaClear)
-            )
-        ]
-    }
-    
-    private var generateButtonVariations: [Command] {
-        [
-            GenerateButtonCommand(
-                component: .basicButton,
-                outputDirectoryURL: generatedComponentsURL(component: .basicButton)
-            ),
-            GenerateButtonCommand(
-                component: .linkButton,
-                outputDirectoryURL: generatedComponentsURL(component: .linkButton)
-            ),
-            GenerateButtonCommand(
-                component: .iconButton,
-                outputDirectoryURL: generatedComponentsURL(component: .iconButton)
-            )
-        ]
+    private var generateComponentVariations: [Command] {
+        CodeGenerationComponent.allCases.map { component in
+            return component.command(outputURL: generatedComponentsURL(component: component))
+        }
     }
 }
 
@@ -201,8 +162,9 @@ extension App {
         themeURL.appending(component: "Generated")
     }
     
-    private func generatedComponentsURL(component: GeneratedComponent) -> URL {
-        themeURL.appending(component: component.rawValue)
+    private func generatedComponentsURL(component: CodeGenerationComponent) -> URL {
+        //themeURL.appending(component: component.rawValue)
+        sddsServURL.appending(component: component.rawValue)
     }
     
     private var fontsURL: URL {
@@ -219,6 +181,10 @@ extension App {
     
     private var themePlistURL: URL {
         themeURL.appending(component: "info.plist")
+    }
+    
+    private var sddsServURL: URL {
+        themeBuilderURL.appending(component: "../Themes/SDDSservTheme")
     }
 }
 
