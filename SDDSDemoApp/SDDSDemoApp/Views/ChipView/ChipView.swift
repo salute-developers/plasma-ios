@@ -14,8 +14,8 @@ struct ChipView: View {
                     SDDSChip(
                         title: viewModel.value,
                         isEnabled: viewModel.isEnabled,
-                        iconImage: viewModel.iconImage,
-                        buttonImage: viewModel.buttonImage,
+                        contentStart: viewModel.iconImage,
+                        contentEnd: viewModel.buttonImage,
                         appearance: viewModel.appearance,
                         removeAction: viewModel.removeAction
                     )

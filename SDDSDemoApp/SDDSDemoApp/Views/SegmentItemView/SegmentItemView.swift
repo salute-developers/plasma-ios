@@ -32,7 +32,11 @@ public struct SegmentItemView: View {
                 iconAttributes: viewModel.iconAttributes,
                 isDisabled: viewModel.isDisabled,
                 isSelected: viewModel.isSelected,
+<<<<<<< HEAD
                 counterEnabled: viewModel.isCounterVisible,
+=======
+                counterEnabled: viewModel.counterEnabled,
+>>>>>>> 7e47872f (feat: added multiple themes support)
                 appearance: viewModel.appearance,
                 counterViewProvider: .default(text: viewModel.counterViewModel.text),
                 action: {}
@@ -40,7 +44,29 @@ public struct SegmentItemView: View {
             Spacer()
         }
     }
+<<<<<<< HEAD
         
+=======
+    
+    public var segmentItemType: some View {
+        HStack {
+            Text("Content Type")
+            Spacer()
+            Menu {
+                ForEach(SegmentItemContentType.allCases, id: \.self) { content in
+                    Button {
+                        viewModel.contentType = content
+                    } label: {
+                        Text(content.rawValue.capitalized)
+                    }
+                }
+            } label: {
+                Text(viewModel.contentType.rawValue.capitalized)
+            }
+        }
+    }
+    
+>>>>>>> 7e47872f (feat: added multiple themes support)
     public var title: some View {
         HStack {
             Text("Title")
@@ -82,6 +108,7 @@ public struct SegmentItemView: View {
     public var iconVisible: some View {
         HStack {
             Toggle("Icon Visible", isOn: $viewModel.iconVisible)
+<<<<<<< HEAD
         }
     }
     
@@ -96,8 +123,11 @@ public struct SegmentItemView: View {
                 TextField("Number", text: $viewModel.counterViewModel.text)
                     .multilineTextAlignment(.trailing)
             }
+=======
+>>>>>>> 7e47872f (feat: added multiple themes support)
         }
     }
+
 }
 
 #Preview {
