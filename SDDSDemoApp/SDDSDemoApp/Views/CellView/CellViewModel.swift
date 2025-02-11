@@ -7,6 +7,9 @@ import SDDSServTheme
 enum CellContentPreview: String, CaseIterable {
     case avatar
     case icon
+    case `switch`
+//    case checkbox
+//    case radiobox
     case text
     case none
 }
@@ -50,28 +53,25 @@ final class CellViewModel: ObservableObject {
             updateView(in: &rightContent.contentView, for: contentRightPreview)
         }
     }
-    
-    //MARK: - Size Variations
-    // -
-    
     //MARK: - Additional views
-    @Published var avatar: SDDSAvatar
-    @Published var avatarAppearance: AvatarAppearance = SDDSAvatar.extraExtraLarge.large.appearance
-    @Published var iconButton: IconButton
-    @Published var iconButtonAppearance: ButtonAppearance =  IconButton.large.clear.appearance
+    @Published var avatar: SDDSAvatar? = nil
+    @Published var iconButton: IconButton? = nil
+    @Published var `switch`: SDDSSwitch? = nil
+    @Published var checkbox: SDDSCheckbox? = nil
+    @Published var radiobox: SDDSRadiobox? = nil
     @Published var text: String = "Custom text"
     
     init() {
         self.avatar = SDDSAvatar(
-            text: "",
-            image: .image(Image.image("checker")),
+            text: "AB",
+            image: nil,
             placeholderImage: nil,
             status: .online,
-            appearance: SDDSAvatar.extraExtraLarge.large.appearance,
+            appearance: SDDSAvatar.default.large.appearance,
             accessibility: AvatarAccessibility()
         )
         self.iconButton = IconButton(
-            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+            iconAttributes: .init(image: Image("buttonIcon"), alignment: ButtonAlignment.leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
@@ -79,6 +79,30 @@ final class CellViewModel: ObservableObject {
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
+        self.switch = SDDSSwitch(
+            title: "",
+            subtitle: "",
+            isOn: .constant(true),
+            isEnabled: true,
+            appearance: SDDSSwitch.large.default.appearance,
+            switchAccessibility: SwitchAccessibility()
+        )
+//        self.checkbox = SDDSCheckbox(
+//            state: .constant(.indeterminate),
+//            title: "Valur",
+//            subtitle: "Description",
+//            isEnabled: true,
+//            images: .checkbox,
+//            appearance: SDDSCheckbox.medium.default.appearance
+//        )
+//        self.radiobox = SDDSRadiobox(
+//            isSelected: .constant(true),
+//            title: "Value",
+//            subtitle: "Description",
+//            isEnabled: true,
+//            images: .defaultImages,
+//            appearance: SDDSRadiobox.medium.default.appearance
+//        )
     }
     
     //MARK: - Add preview in content
@@ -96,6 +120,18 @@ final class CellViewModel: ObservableObject {
             CellCustomViewProvider(
                 view: Text(text)
             )
+        case .switch:
+            CellCustomViewProvider(
+                view: `switch`
+            )
+//        case .checkbox:
+//            CellCustomViewProvider(
+//                view: checkbox
+//            )
+//        case .radiobox:
+//            CellCustomViewProvider(
+//                view: radiobox
+//            )
         case .none:
             CellCustomViewProvider(
                 view: EmptyView()

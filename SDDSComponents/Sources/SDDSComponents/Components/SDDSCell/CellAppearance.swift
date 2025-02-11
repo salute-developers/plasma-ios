@@ -97,6 +97,6 @@ public struct CellAppearance {
      */
     public var switchStyle: SwitchAppearance
     
-    public var disclosureIcon: Any
+    public var disclosureIcon: Image
     
 }

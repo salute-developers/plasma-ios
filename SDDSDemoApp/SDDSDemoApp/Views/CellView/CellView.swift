@@ -22,6 +22,7 @@ struct CellView: View {
                 contentRight
                 hasDisclosure
                 disclosureText
+                alignment
             }
         }
     }
@@ -97,6 +98,22 @@ struct CellView: View {
             Text("Disclosure text")
             Spacer()
             TextField("Disclosure text", text: $viewModel.disclosureText)
+        }
+    }
+    
+    private var alignment: some View {
+        HStack {
+            Text("Alignment")
+            Spacer()
+            Menu {
+                ForEach(CellContentAlignment.allCases, id: \.self) { alignment in
+                    Button(alignment.rawValue) {
+                        viewModel.alignment = alignment
+                    }
+                }
+            } label: {
+                Text(viewModel.alignment.rawValue.capitalized)
+            }
         }
     }
 }

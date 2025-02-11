@@ -8,7 +8,7 @@ import Foundation
     - center: Контент выравнивается по центру cell.
     - bottom: Контент выравнивается по нижней границе cell.
  */
-public enum CellContentAlignment {
+public enum CellContentAlignment: String, CaseIterable {
     case top
     case center
     case bottom
