@@ -8,7 +8,6 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.l
         appearance.chipAppearance = EmbeddedChip.l.secondary.appearance
-        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,7 +19,6 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.m
         appearance.chipAppearance = EmbeddedChip.m.secondary.appearance
-        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
 
         return .init(
@@ -32,7 +30,6 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.s
         appearance.chipAppearance = EmbeddedChip.s.secondary.appearance
-        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
 
         return .init(
@@ -44,7 +41,6 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xs
         appearance.chipAppearance = EmbeddedChip.xs.secondary.appearance
-        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 
         return .init(
@@ -150,8 +146,11 @@ private extension TextAreaAppearance {
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
 =======
         appearance.endContentColorReadonly = ColorToken.textDefaultSecondary.withOpacity(0.4)
+<<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary

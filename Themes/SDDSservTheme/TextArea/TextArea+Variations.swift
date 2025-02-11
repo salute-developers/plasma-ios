@@ -63,9 +63,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -81,9 +84,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -133,9 +139,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -151,9 +160,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -204,9 +216,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -223,9 +238,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -325,9 +343,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -343,9 +364,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -395,9 +419,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -413,9 +440,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -466,9 +496,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -485,9 +518,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -587,9 +623,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -605,9 +644,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -657,9 +699,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -675,9 +720,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -728,9 +776,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -747,9 +798,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -825,9 +879,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -843,9 +900,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -896,9 +956,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -915,9 +978,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -1002,8 +1068,11 @@ private extension TextAreaAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+<<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
@@ -1016,8 +1085,11 @@ private extension TextAreaAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultNegative
+<<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
@@ -1030,8 +1102,11 @@ private extension TextAreaAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultWarning
+<<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     

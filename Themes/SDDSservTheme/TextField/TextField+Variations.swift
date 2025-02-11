@@ -72,9 +72,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -93,9 +96,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -171,9 +177,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -192,9 +201,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -271,9 +283,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -293,9 +308,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -427,9 +445,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -448,9 +469,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -526,9 +550,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -547,9 +574,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -626,9 +656,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -648,9 +681,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -782,9 +818,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -803,9 +842,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -881,9 +923,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -902,9 +947,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -981,9 +1029,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1003,9 +1054,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1110,9 +1164,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1131,9 +1188,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1210,9 +1270,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1232,9 +1295,12 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         var appearance = appearance
         appearance.size = size
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1365,8 +1431,11 @@ private extension TextFieldAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+<<<<<<< HEAD
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
@@ -1379,8 +1448,11 @@ private extension TextFieldAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultNegative
+<<<<<<< HEAD
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
@@ -1393,8 +1465,11 @@ private extension TextFieldAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultPositive
+<<<<<<< HEAD
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
@@ -1407,8 +1482,11 @@ private extension TextFieldAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorReadOnly = ColorToken.textDefaultWarning
+<<<<<<< HEAD
         appearance.labelPlacement = TextFieldLabelPlacement.none
 >>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
+=======
+>>>>>>> cb314b2b (chore: regenerated theme)
         return appearance
     }
     
