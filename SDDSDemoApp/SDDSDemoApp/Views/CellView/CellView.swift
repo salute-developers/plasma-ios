@@ -31,6 +31,7 @@ struct CellView: View {
             leftContent: viewModel.leftContent,
             centerContent: viewModel.centerContent,
             rightContent: viewModel.rightContent,
+            disclosure: viewModel.disclosure,
             alignment: viewModel.alignment
         )
     }

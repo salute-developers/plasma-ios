@@ -20,13 +20,13 @@ struct SDDSCellPreview: PreviewProvider {
             rightContent: CellContentRight(
                 data: [
                     iconButton
-                ],
-                disclosure: .default(DefaultDisclosure(
-                    text: "Disclosure",
-                    icon: Image("BuildingsOutline16")
-                )
+                ]
+            ),
+            disclosure: .default(DefaultDisclosure(
+                text: "Disclosure",
+                icon: Image("BuildingsOutline16")
             )
-        ),
+            ),
         alignment: .center
         )
             .previewLayout(PreviewLayout.sizeThatFits)
@@ -47,9 +47,9 @@ struct SDDSCellPreview: PreviewProvider {
             rightContent: CellContentRight(
                 data: [
                     avatar
-                ],
-                disclosure: nil
+                ]
             ),
+            disclosure: nil,
             alignment: .center
         )
         .previewLayout(PreviewLayout.sizeThatFits)

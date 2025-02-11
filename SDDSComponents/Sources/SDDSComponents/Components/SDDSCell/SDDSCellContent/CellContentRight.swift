@@ -13,13 +13,10 @@ import SwiftUI
  */
 public struct CellContentRight: CellContentConfiguration {
     public var data: [CellCustomViewProvider]
-    public var disclosure: Disclosure?
 
     public init(
-        data: [CellCustomViewProvider] = [],
-        disclosure: Disclosure? = nil
+        data: [CellCustomViewProvider] = []
     ) {
         self.data = data
-        self.disclosure = disclosure
     }
 }

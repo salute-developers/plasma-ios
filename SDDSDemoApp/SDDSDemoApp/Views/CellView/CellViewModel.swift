@@ -27,6 +27,7 @@ final class CellViewModel: ObservableObject {
             setDisclosure()
         }
     }
+    @Published var disclosure: Disclosure? = nil
     @Published var disclosureText: String = ""
     
     //MARK: - Content alignment
@@ -109,13 +110,13 @@ final class CellViewModel: ObservableObject {
     //MARK: - Set disclosure
     private func setDisclosure() {
         if hasDisclosure {
-            rightContent.disclosure = .default(DefaultDisclosure(
+            disclosure = .default(DefaultDisclosure(
                 text: disclosureText,
                 icon: .init(systemName: "arrowshape.right")
             )
             )
         } else {
-            rightContent.disclosure = nil
+            disclosure = nil
         }
     }
     

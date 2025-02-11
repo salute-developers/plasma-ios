@@ -5,17 +5,20 @@ public struct SDDSCell: View {
     public let leftContent: CellContentLeft?
     public let centerContent: CellContentCenter
     public let rightContent: CellContentRight?
+    public let disclosure: Disclosure?
     public let alignment: CellContentAlignment
     
     public init(
         leftContent: CellContentLeft? = nil,
         centerContent: CellContentCenter,
         rightContent: CellContentRight? = nil,
+        disclosure: Disclosure? = nil,
         alignment: CellContentAlignment = .center
     ) {
         self.leftContent = leftContent
         self.centerContent = centerContent
         self.rightContent = rightContent
+        self.disclosure = disclosure
         self.alignment = alignment
     }
     
@@ -91,7 +94,7 @@ extension SDDSCell {
     //MARK: - Disclosure view
     @ViewBuilder
     private var disclosureView: some View {
-        switch rightContent?.disclosure {
+        switch disclosure {
         case .default(let defaultDisclosure):
             defaultDisclosureView(for: defaultDisclosure)
         case .custom(let viewProvider):
