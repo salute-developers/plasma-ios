@@ -28,9 +28,9 @@ struct CellView: View {
     
     private var cell: some View {
         SDDSCell(
-            leftContent: viewModel.contentLeft,
-            centerContent: viewModel.contentCenter,
-            rightContent: viewModel.contentRight,
+            leftContent: viewModel.leftContent,
+            centerContent: viewModel.centerContent,
+            rightContent: viewModel.rightContent,
             alignment: viewModel.alignment
         )
     }
@@ -51,6 +51,26 @@ struct CellView: View {
         }
     }
     
+    private var contentCenter: some View {
+        HStack {
+            Text("Content Center")
+            Spacer()
+            VStack {
+                HStack {
+                    TextField("Label", text: $viewModel.centerContent.label)
+                }
+                Divider()
+                HStack {
+                    TextField("Title", text: $viewModel.centerContent.title)
+                }
+                Divider()
+                HStack {
+                    TextField("Subtitle", text: $viewModel.centerContent.subtitle)
+                }
+            }
+        }
+    }
+    
     private var contentRight: some View {
         HStack {
             Text("Content Right")
@@ -67,32 +87,14 @@ struct CellView: View {
         }
     }
     
-    private var contentCenter: some View {
-        HStack {
-            Text("Content Center")
-            Spacer()
-            VStack {
-                HStack {
-                    TextField("Label", text: $viewModel.label)
-                }
-                Divider()
-                HStack {
-                    TextField("Title", text: $viewModel.title)
-                }
-                Divider()
-                HStack {
-                    TextField("Subtitle", text: $viewModel.subtitle)
-                }
-            }
-        }
-    }
-    
     private var hasDisclosure: some View {
         Toggle("Disclosure", isOn: $viewModel.hasDisclosure)
     }
     
     private var disclosureText: some View {
         HStack {
+            Text("Disclosure text")
+            Spacer()
             TextField("Disclosure text", text: $viewModel.disclosureText)
         }
     }

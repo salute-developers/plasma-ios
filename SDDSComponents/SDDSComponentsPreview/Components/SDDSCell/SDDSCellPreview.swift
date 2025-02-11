@@ -19,7 +19,7 @@ struct SDDSCellPreview: PreviewProvider {
             ),
             rightContent: CellContentRight(
                 data: [
-                    avatar
+                    iconButton
                 ],
                 disclosure: .default(DefaultDisclosure(
                     text: "Disclosure",

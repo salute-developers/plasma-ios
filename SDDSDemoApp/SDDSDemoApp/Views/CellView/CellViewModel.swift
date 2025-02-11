@@ -13,49 +13,69 @@ enum CellContentPreview: String, CaseIterable {
 
 final class CellViewModel: ObservableObject {
     //MARK: - Content left
-    @Published var contentLeft: CellContentLeft = CellContentLeft()
+    @Published var leftContent: CellContentLeft = CellContentLeft()
     
     //MARK: - Content center
-    @Published var contentCenter: CellContentCenter = CellContentCenter()
-    @Published var label: String = ""
-    @Published var title: String = ""
-    @Published var subtitle: String = ""
+    @Published var centerContent: CellContentCenter = CellContentCenter()
     
     //MARK: - Content right
-    @Published var contentRight: CellContentRight = CellContentRight()
+    @Published var rightContent: CellContentRight = CellContentRight()
     
     //MARK: - Disclosure
-    @Published var hasDisclosure: Bool = false
+    @Published var hasDisclosure: Bool = false {
+        didSet {
+            setDisclosure()
+        }
+    }
     @Published var disclosureText: String = ""
     
     //MARK: - Content alignment
     @Published var alignment: CellContentAlignment = .center
     
-    //MARK: - Additional views
-    @Published var avatar: SDDSAvatar? = nil
-    @Published var avatarAppearance: AvatarAppearance = SDDSAvatar.default.appearance
-    @Published var iconButton: IconButton? = nil
-    @Published var iconButtonAppearance: ButtonAppearance = IconButton.medium.accent.appearance
-    @Published var text: String = ""
-    
     //MARK: - Cell content variations
     @Published var contentLeftPreview: CellContentPreview = .none {
         didSet {
-            contentLeft.data.append(addView(for: contentLeftPreview))
+            updateView(in: &leftContent.data, for: contentLeftPreview)
         }
     }
     
     @Published var contentRightPreview: CellContentPreview = .none {
         didSet {
-            contentLeft.data.append(addView(for: contentRightPreview))
+            updateView(in: &rightContent.data, for: contentRightPreview)
         }
     }
     
     //MARK: - Size Variations
+    // -
     
-    init() {}
+    //MARK: - Additional views
+    @Published var avatar: SDDSAvatar
+    @Published var avatarAppearance: AvatarAppearance = SDDSAvatar.extraExtraLarge.large.appearance
+    @Published var iconButton: IconButton
+    @Published var iconButtonAppearance: ButtonAppearance =  IconButton.large.clear.appearance
+    @Published var text: String = "Custom text"
     
-    //MARK: - Add preview variations
+    init() {
+        self.avatar = SDDSAvatar(
+            text: "",
+            image: .image(Image.image("checker")),
+            placeholderImage: nil,
+            status: .online,
+            appearance: SDDSAvatar.extraExtraLarge.large.appearance,
+            accessibility: AvatarAccessibility()
+        )
+        self.iconButton = IconButton(
+            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+            isDisabled: false,
+            isLoading: false,
+            spinnerImage: Image.image("spinner"),
+            appearance: IconButton.large.clear.appearance,
+            layoutMode: .fixedWidth(.packed),
+            action: {}
+        )
+    }
+    
+    //MARK: - Add preview in content
     func addView(for content: CellContentPreview) -> CellCustomViewProvider {
         switch content {
         case .avatar:
@@ -77,7 +97,28 @@ final class CellViewModel: ObservableObject {
         }
     }
     
-    func removeView(index: Int) {
-        
+    //MARK: - Update view
+    private func updateView(in data: inout [CellCustomViewProvider], for contentPreview: CellContentPreview) {
+        if data.isEmpty {
+            data.append(addView(for: contentPreview))
+        } else {
+            data[0] = addView(for: contentPreview)
+        }
     }
+    
+    //MARK: - Set disclosure
+    private func setDisclosure() {
+        if hasDisclosure {
+            rightContent.disclosure = .default(DefaultDisclosure(
+                text: disclosureText,
+                icon: .init(systemName: "arrowshape.right")
+            )
+            )
+        } else {
+            rightContent.disclosure = nil
+        }
+    }
+    
+    //MARK: - Remove view from content
+    func removeView(index: Int) {}
 }

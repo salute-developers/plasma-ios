@@ -13,7 +13,7 @@ import SwiftUI
  */
 public struct CellContentRight: CellContentConfiguration {
     public var data: [CellCustomViewProvider]
-    public let disclosure: Disclosure?
+    public var disclosure: Disclosure?
 
     public init(
         data: [CellCustomViewProvider] = [],

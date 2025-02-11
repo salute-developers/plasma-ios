@@ -27,7 +27,6 @@ public struct SDDSCell: View {
              Mock left-center paddings
              */
             Spacer()
-                .frame(width: 20)
             
             centerView
                 .debug(color: .blue, condition: true)
@@ -36,7 +35,6 @@ public struct SDDSCell: View {
              Mock right-center paddings
              */
             Spacer()
-                .frame(width: 20)
             
             rightView
                 .debug(color: .blue, condition: true)

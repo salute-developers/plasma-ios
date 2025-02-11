@@ -15,9 +15,9 @@ import SwiftUI
  */
 public struct CellContentCenter: CellContentConfiguration {
     public let data: [CellCustomViewProvider]
-    public let label: String
-    public let title: String
-    public let subtitle: String
+    public var label: String
+    public var title: String
+    public var subtitle: String
 
     public init(
         data: [CellCustomViewProvider] = [],
