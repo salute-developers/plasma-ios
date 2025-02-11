@@ -18,6 +18,7 @@ struct CellView: View {
             }
             Section(header: Text("Cell")) {
                 contentLeft
+                contentCenter
                 contentRight
             }
         }
@@ -68,7 +69,19 @@ struct CellView: View {
         HStack {
             Text("Content Center")
             Spacer()
-            
+            VStack {
+                HStack {
+                    TextField("Label", text: $viewModel.label)
+                }
+                Divider()
+                HStack {
+                    TextField("Title", text: $viewModel.title)
+                }
+                Divider()
+                HStack {
+                    TextField("Subtitle", text: $viewModel.subtitle)
+                }
+            }
         }
     }
 }
