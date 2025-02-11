@@ -8,17 +8,17 @@ struct SDDSCellPreview: PreviewProvider {
     static var previews: some View {
         SDDSCell(
             leftContent: CellContentLeft(
-                data: [
+                contentView: [
                     avatar
                 ]),
             centerContent: CellContentCenter(
-                data: [/*some view*/],
+                contentView: [/*some view*/],
                 label: "Label",
                 title: "Title",
                 subtitle: "Subtitle"
             ),
             rightContent: CellContentRight(
-                data: [
+                contentView: [
                     iconButton
                 ]
             ),
@@ -34,7 +34,7 @@ struct SDDSCellPreview: PreviewProvider {
         
         SDDSCell(
             leftContent: CellContentLeft(
-                data: [
+                contentView: [
                     avatar,
                     iconButton,
                     text
@@ -45,7 +45,7 @@ struct SDDSCellPreview: PreviewProvider {
                 subtitle: "Subtitle"
             ),
             rightContent: CellContentRight(
-                data: [
+                contentView: [
                     avatar
                 ]
             ),

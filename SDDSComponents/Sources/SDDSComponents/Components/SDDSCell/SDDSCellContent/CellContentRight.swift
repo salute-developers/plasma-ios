@@ -12,11 +12,11 @@ import SwiftUI
     - init(data:disclosure:): Инициализирует новый экземпляр `CellContentRight` с указанным массивом представлений и дискложуром.
  */
 public struct CellContentRight: CellContentConfiguration {
-    public var data: [CellCustomViewProvider]
+    public var contentView: [CellCustomViewProvider]
 
     public init(
-        data: [CellCustomViewProvider] = []
+        contentView: [CellCustomViewProvider] = []
     ) {
-        self.data = data
+        self.contentView = contentView
     }
 }

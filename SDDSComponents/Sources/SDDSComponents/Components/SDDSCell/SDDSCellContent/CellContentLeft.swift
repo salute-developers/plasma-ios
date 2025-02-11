@@ -8,12 +8,12 @@ import SwiftUI
     - data: Массив представлений (`CellCustomViewProvider`).
 
  - Initializer:
-    - init(data:): Инициализатор для создания экземпляра `CellContentLeft`.
+    - init(contentView:): Инициализатор для создания экземпляра `CellContentLeft`.
  */
 public struct CellContentLeft: CellContentConfiguration {
-    public var data: [CellCustomViewProvider]
+    public var contentView: [CellCustomViewProvider]
     
-    public init(data: [CellCustomViewProvider] = []) {
-        self.data = data
+    public init(contentView: [CellCustomViewProvider] = []) {
+        self.contentView = contentView
     }
 }

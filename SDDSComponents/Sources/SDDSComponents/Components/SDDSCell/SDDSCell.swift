@@ -52,7 +52,7 @@ extension SDDSCell {
     private var leftView: some View {
         HStack(spacing: 0) {
             if let leftContent = leftContent {
-                ForEach(leftContent.data, id: \.self) { content in
+                ForEach(leftContent.contentView, id: \.self) { content in
                     content
                 }
             }
@@ -63,14 +63,20 @@ extension SDDSCell {
     private var centerView: some View {
         VStack {
             if hasCenterContent {
-                value(for: centerContent.label)
+                if !centerContent.label.isEmpty {
+                    value(for: centerContent.label)
+                }
                 
-                value(for: centerContent.title)
+                if !centerContent.title.isEmpty {
+                    value(for: centerContent.title)
+                }
                 
-                value(for: centerContent.subtitle)
+                if !centerContent.subtitle.isEmpty {
+                    value(for: centerContent.subtitle)
+                }
                 
-                if !centerContent.data.isEmpty {
-                    ForEach(centerContent.data, id: \.self) { content in
+                if !centerContent.contentView.isEmpty {
+                    ForEach(centerContent.contentView, id: \.self) { content in
                         content
                     }
                 }
@@ -82,7 +88,7 @@ extension SDDSCell {
     private var rightView: some View {
         HStack {
             if let rightContent = rightContent {
-                ForEach(rightContent.data, id: \.self) { content in
+                ForEach(rightContent.contentView, id: \.self) { content in
                     content
                 }
                 

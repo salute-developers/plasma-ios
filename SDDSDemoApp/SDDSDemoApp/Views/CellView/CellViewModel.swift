@@ -17,6 +17,11 @@ final class CellViewModel: ObservableObject {
     
     //MARK: - Content center
     @Published var centerContent: CellContentCenter = CellContentCenter()
+    @Published var contentCenterPreview: CellContentPreview = .none {
+        didSet {
+            updateView(in: &leftContent.contentView, for: contentCenterPreview)
+        }
+    }
     
     //MARK: - Content right
     @Published var rightContent: CellContentRight = CellContentRight()
@@ -36,13 +41,13 @@ final class CellViewModel: ObservableObject {
     //MARK: - Cell content variations
     @Published var contentLeftPreview: CellContentPreview = .none {
         didSet {
-            updateView(in: &leftContent.data, for: contentLeftPreview)
+            updateView(in: &leftContent.contentView, for: contentLeftPreview)
         }
     }
     
     @Published var contentRightPreview: CellContentPreview = .none {
         didSet {
-            updateView(in: &rightContent.data, for: contentRightPreview)
+            updateView(in: &rightContent.contentView, for: contentRightPreview)
         }
     }
     
@@ -99,11 +104,11 @@ final class CellViewModel: ObservableObject {
     }
     
     //MARK: - Update view
-    private func updateView(in data: inout [CellCustomViewProvider], for contentPreview: CellContentPreview) {
-        if data.isEmpty {
-            data.append(addView(for: contentPreview))
+    private func updateView(in contentView: inout [CellCustomViewProvider], for contentPreview: CellContentPreview) {
+        if contentView.isEmpty {
+            contentView.append(addView(for: contentPreview))
         } else {
-            data[0] = addView(for: contentPreview)
+            contentView[0] = addView(for: contentPreview)
         }
     }
     

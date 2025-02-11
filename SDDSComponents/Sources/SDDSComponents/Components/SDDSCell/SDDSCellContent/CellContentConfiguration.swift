@@ -8,5 +8,5 @@ import SwiftUI
     - data: Массив представлений (`CellCustomViewProvider`), используемых в контенте ячейки.
  */
 public protocol CellContentConfiguration {
-    var data: [CellCustomViewProvider] { get }
+    var contentView: [CellCustomViewProvider] { get }
 }
