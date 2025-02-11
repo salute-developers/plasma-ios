@@ -109,6 +109,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -121,6 +124,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -130,6 +134,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -194,6 +200,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -206,6 +215,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -215,6 +225,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -281,6 +293,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -293,6 +308,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -302,6 +318,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -410,6 +428,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -422,6 +443,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -431,6 +453,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -495,6 +519,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -507,6 +534,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -516,6 +544,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -582,6 +612,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -594,6 +627,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -603,6 +637,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -711,6 +747,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -723,6 +762,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -732,6 +772,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -796,6 +838,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -808,6 +853,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -817,6 +863,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -883,6 +931,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -895,6 +946,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -904,6 +956,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -991,6 +1045,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1003,6 +1060,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -1012,6 +1070,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1078,6 +1138,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1090,6 +1153,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -1099,6 +1163,8 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1128,6 +1194,9 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1140,6 +1209,7 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextFieldAppearance>] {
         [
@@ -1149,6 +1219,8 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 

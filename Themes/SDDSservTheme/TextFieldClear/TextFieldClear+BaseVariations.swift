@@ -58,6 +58,9 @@ public struct TextFieldClear {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     public static let all: [Variation<TextFieldAppearance>] = [
         TextFieldClear.l.variation,
         TextFieldClear.l.innerLabel.variation,
@@ -92,6 +95,7 @@ public struct TextFieldClear {
         TextFieldClear.xs.outerLabel.requiredStart.variation,
         TextFieldClear.xs.requiredEnd.variation,
         TextFieldClear.xs.requiredStart.variation,
+<<<<<<< HEAD
 =======
     public static let all: [VariationDescription<TextFieldAppearance>] = [
         TextFieldClear.l.variationDescription,
@@ -128,6 +132,8 @@ public struct TextFieldClear {
         TextFieldClear.xs.requiredEnd.variationDescription,
         TextFieldClear.xs.requiredStart.variationDescription,
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -170,7 +176,11 @@ public struct TextFieldClearVariation {
 private extension TextFieldAppearance {
     static var base: TextFieldAppearance {
         var appearance = TextFieldAppearance()
+<<<<<<< HEAD
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorFocused = ColorToken.textDefaultAccent
+>>>>>>> eae55595 (feat: added variations support in demo app)
         appearance.captionTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent

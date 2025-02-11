@@ -44,6 +44,9 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
     }
     {%- endfor %}{% endif %}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -55,6 +58,7 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<{{ appearance }}>] {
         [
@@ -63,6 +67,8 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
         {%- endfor %}
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 {% if variationViews[key] %}

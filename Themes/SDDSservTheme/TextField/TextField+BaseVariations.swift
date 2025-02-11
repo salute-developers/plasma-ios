@@ -58,6 +58,9 @@ public struct TextField {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     public static let all: [Variation<TextFieldAppearance>] = [
         TextField.l.variation,
         TextField.l.innerLabel.variation,
@@ -92,6 +95,7 @@ public struct TextField {
         TextField.xs.outerLabel.requiredStart.variation,
         TextField.xs.requiredEnd.variation,
         TextField.xs.requiredStart.variation,
+<<<<<<< HEAD
 =======
     public static let all: [VariationDescription<TextFieldAppearance>] = [
         TextField.l.variationDescription,
@@ -128,6 +132,8 @@ public struct TextField {
         TextField.xs.requiredEnd.variationDescription,
         TextField.xs.requiredStart.variationDescription,
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 

@@ -15,10 +15,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "l.innerLabel",
@@ -33,10 +38,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(l: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(l: Typographies.bodyLNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "l.outerLabel",
@@ -93,6 +103,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -104,6 +117,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -112,6 +126,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -166,6 +182,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -177,6 +196,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -185,6 +205,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -239,6 +261,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -250,6 +275,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -258,6 +284,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -272,10 +300,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "m.innerLabel",
@@ -290,10 +323,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(m: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(m: Typographies.bodyMNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "m.outerLabel",
@@ -350,6 +388,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -361,6 +402,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -369,6 +411,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -423,6 +467,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -434,6 +481,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -442,6 +490,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -496,6 +546,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -507,6 +560,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -515,6 +569,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -529,10 +585,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "s.innerLabel",
@@ -547,10 +608,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(s: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(s: Typographies.bodySNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "s.outerLabel",
@@ -607,6 +673,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -618,6 +687,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -626,6 +696,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -680,6 +752,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -691,6 +766,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -699,6 +775,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -753,6 +831,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -764,6 +845,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -772,6 +854,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -786,10 +870,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+=======
+        appearance.innerTitleTypography = TextAreaClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
     
         return .init(
             name: "xs.outerLabel",
@@ -846,6 +935,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -857,6 +949,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -865,6 +958,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -919,6 +1014,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -930,6 +1028,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -938,6 +1037,8 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -961,6 +1062,9 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
         )
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -972,6 +1076,7 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             name: name,
             appearance: appearance
         )
+<<<<<<< HEAD
 =======
     var views: [AppearanceVariation<TextAreaAppearance>] {
         [
@@ -980,6 +1085,8 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             self.warning,
         ]
 >>>>>>> b01b2af7 (chore: added fixes to demo app)
+=======
+>>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 

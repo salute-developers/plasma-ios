@@ -82,7 +82,11 @@ public struct TextArea {
         TextArea.xs.outerLabel.requiredEnd.variation,
         TextArea.xs.outerLabel.requiredStart.variation,
         TextArea.xs.requiredEnd.variation,
+<<<<<<< HEAD
         TextArea.xs.requiredStart.variation
+=======
+        TextArea.xs.requiredStart.variation,
+>>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -125,8 +129,12 @@ public struct TextAreaVariation {
 private extension TextAreaAppearance {
     static var base: TextAreaAppearance {
         var appearance = TextAreaAppearance()
+<<<<<<< HEAD
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorFocused = ColorToken.textDefaultAccent
+>>>>>>> eae55595 (feat: added variations support in demo app)
         appearance.captionTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary

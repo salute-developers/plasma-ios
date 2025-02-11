@@ -7,7 +7,11 @@ public struct LinkButton {
     public static var l: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.l
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+=======
+        appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
 
         return .init(
             name: "l",
@@ -17,7 +21,11 @@ public struct LinkButton {
     public static var m: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.m
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+=======
+        appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
 
         return .init(
             name: "m",
@@ -27,7 +35,11 @@ public struct LinkButton {
     public static var s: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.s
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+=======
+        appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
 
         return .init(
             name: "s",
@@ -37,7 +49,11 @@ public struct LinkButton {
     public static var xs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xs
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+=======
+        appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+>>>>>>> eae55595 (feat: added variations support in demo app)
 
         return .init(
             name: "xs",

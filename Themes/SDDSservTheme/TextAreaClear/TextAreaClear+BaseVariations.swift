@@ -82,7 +82,11 @@ public struct TextAreaClear {
         TextAreaClear.xs.outerLabel.requiredEnd.variation,
         TextAreaClear.xs.outerLabel.requiredStart.variation,
         TextAreaClear.xs.requiredEnd.variation,
+<<<<<<< HEAD
         TextAreaClear.xs.requiredStart.variation
+=======
+        TextAreaClear.xs.requiredStart.variation,
+>>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -125,7 +129,11 @@ public struct TextAreaClearVariation {
 private extension TextAreaAppearance {
     static var base: TextAreaAppearance {
         var appearance = TextAreaAppearance()
+<<<<<<< HEAD
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorFocused = ColorToken.textDefaultAccent
+>>>>>>> eae55595 (feat: added variations support in demo app)
         appearance.captionTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary
