@@ -86,7 +86,7 @@ extension SDDSCell {
     
     @ViewBuilder
     private var rightView: some View {
-        HStack {
+        HStack(spacing: 0) {
             if let rightContent = rightContent {
                 ForEach(rightContent.contentView, id: \.self) { content in
                     content
