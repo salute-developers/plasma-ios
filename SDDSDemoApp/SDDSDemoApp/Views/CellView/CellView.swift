@@ -16,8 +16,9 @@ struct CellView: View {
             Section {
                 cell
             }
-            Section(header: Text("Segment")) {
+            Section(header: Text("Cell")) {
                 contentLeft
+                contentRight
             }
         }
     }
@@ -58,8 +59,16 @@ struct CellView: View {
                     }
                 }
             } label: {
-                Text(viewModel.contentLeftPreview.rawValue.capitalized)
+                Text(viewModel.contentRightPreview.rawValue.capitalized)
             }
+        }
+    }
+    
+    private var contentCenter: some View {
+        HStack {
+            Text("Content Center")
+            Spacer()
+            
         }
     }
 }
