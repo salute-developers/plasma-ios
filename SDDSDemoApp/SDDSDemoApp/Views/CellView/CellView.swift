@@ -20,6 +20,7 @@ struct CellView: View {
                 contentLeft
                 contentCenter
                 contentRight
+                hasDisclosure
             }
         }
     }
@@ -83,6 +84,10 @@ struct CellView: View {
                 }
             }
         }
+    }
+    
+    private var hasDisclosure: some View {
+        Toggle("Disclosure", isOn: $viewModel.hasDisclosure)
     }
 }
 
