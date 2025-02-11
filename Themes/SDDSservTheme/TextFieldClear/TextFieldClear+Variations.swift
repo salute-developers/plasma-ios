@@ -25,6 +25,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleTypography = TextFieldClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -51,6 +52,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(l: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleTypography = TextFieldClearTypography(l: Typographies.bodyLNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -70,6 +72,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -88,6 +94,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -163,6 +173,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -181,6 +195,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -256,6 +274,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -274,6 +296,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -358,6 +384,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleTypography = TextFieldClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -384,6 +411,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(m: Typographies.bodyMNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleTypography = TextFieldClearTypography(m: Typographies.bodyMNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -403,6 +431,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -421,6 +453,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -496,6 +532,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -514,6 +554,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -589,6 +633,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -607,6 +655,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -691,6 +743,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleTypography = TextFieldClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -717,6 +770,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(s: Typographies.bodySNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleTypography = TextFieldClearTypography(s: Typographies.bodySNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -736,6 +790,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -754,6 +812,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -829,6 +891,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -847,6 +913,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -922,6 +992,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -940,6 +1014,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1024,6 +1102,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextFieldClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleTypography = TextFieldClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -1043,6 +1122,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1061,6 +1144,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1136,6 +1223,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1154,6 +1245,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1278,7 +1373,12 @@ private extension TextFieldAppearance {
     var `default`: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultSecondary
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.lineColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultSecondary
@@ -1293,7 +1393,12 @@ private extension TextFieldAppearance {
     var error: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultNegative
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultNegative
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.lineColor = ColorToken.surfaceDefaultNegative
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultNegative
@@ -1308,7 +1413,12 @@ private extension TextFieldAppearance {
     var success: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultPositive
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultPositive
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.lineColor = ColorToken.surfaceDefaultPositive
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultPositive
@@ -1323,7 +1433,12 @@ private extension TextFieldAppearance {
     var warning: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultWarning
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultWarning
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.lineColor = ColorToken.surfaceDefaultWarning
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultWarning

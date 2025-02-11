@@ -22,6 +22,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(l: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(l: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -45,6 +46,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(l: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(l: Typographies.bodyLNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -60,6 +62,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -74,6 +80,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -122,6 +132,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -136,6 +150,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -185,6 +203,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -200,6 +222,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -258,6 +284,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(m: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(m: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -281,6 +308,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(m: Typographies.bodyMNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(m: Typographies.bodyMNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -296,6 +324,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -310,6 +342,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -358,6 +394,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -372,6 +412,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -421,6 +465,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -436,6 +484,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -494,6 +546,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(s: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(s: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -517,6 +570,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(s: Typographies.bodySNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(s: Typographies.bodySNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -532,6 +586,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -546,6 +604,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -594,6 +656,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -608,6 +674,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -657,6 +727,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -672,6 +746,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -730,6 +808,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 =======
         appearance.innerTitleTypography = TextAreaTypography(xs: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(xs: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
     
@@ -745,6 +824,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -759,6 +842,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -808,6 +895,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -823,6 +914,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
+=======
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -903,7 +998,12 @@ private extension TextAreaAppearance {
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPrimary
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
         appearance.captionColor = ColorToken.textDefaultSecondary
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         return appearance
     }
     
@@ -912,7 +1012,12 @@ private extension TextAreaAppearance {
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentNegative
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
         appearance.captionColor = ColorToken.textDefaultNegative
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultNegative
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         return appearance
     }
     
@@ -921,7 +1026,12 @@ private extension TextAreaAppearance {
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentWarning
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
         appearance.captionColor = ColorToken.textDefaultWarning
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
+=======
+        appearance.captionColorReadOnly = ColorToken.textDefaultWarning
+        appearance.labelPlacement = TextAreaLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         return appearance
     }
     

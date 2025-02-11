@@ -8,6 +8,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.l
         appearance.chipAppearance = EmbeddedChip.l.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
@@ -21,6 +22,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.m
         appearance.chipAppearance = EmbeddedChip.m.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
@@ -34,6 +36,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.s
         appearance.chipAppearance = EmbeddedChip.s.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
@@ -47,6 +50,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xs
         appearance.chipAppearance = EmbeddedChip.xs.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
@@ -186,7 +190,12 @@ private extension TextFieldAppearance {
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
+<<<<<<< HEAD
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
+=======
+        appearance.endContentColorReadonly = ColorToken.textDefaultSecondary.withOpacity(0.4)
+        appearance.labelPlacement = TextFieldLabelPlacement.none
+>>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
         appearance.lineColorReadOnly = ColorToken.surfaceDefaultTransparentPrimary
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
