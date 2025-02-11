@@ -21,9 +21,9 @@ public struct CellContentCenter: CellContentConfiguration {
 
     public init(
         data: [CellCustomViewProvider] = [],
-        label: String,
-        title: String,
-        subtitle: String
+        label: String = "",
+        title: String = "",
+        subtitle: String = ""
     ) {
         self.data = data
         self.label = label

@@ -6,13 +6,13 @@ import SDDSIcons
 
 struct SDDSCellPreview: PreviewProvider {
     static var previews: some View {
-        
         SDDSCell(
             leftContent: CellContentLeft(
                 data: [
                     avatar
                 ]),
             centerContent: CellContentCenter(
+                data: [/*some view*/],
                 label: "Label",
                 title: "Title",
                 subtitle: "Subtitle"
@@ -24,7 +24,6 @@ struct SDDSCellPreview: PreviewProvider {
                 disclosure: .default(DefaultDisclosure(
                     text: "Disclosure",
                     icon: Image("BuildingsOutline16")
-                                
                 )
             )
         ),

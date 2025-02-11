@@ -14,5 +14,3 @@ FOUNDATION_EXPORT double SDDSComponentsPreviewVersionNumber;
 FOUNDATION_EXPORT const unsigned char SDDSComponentsPreviewVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SDDSComponentsPreview/PublicHeader.h>
-
-

@@ -216,6 +216,8 @@
 		697572282D5A00F600F1B904 /* CellContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentConfiguration.swift; sourceTree = "<group>"; };
 		6975722D2D5A05C400F1B904 /* Disclosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclosure.swift; sourceTree = "<group>"; };
 		6975722F2D5A1CD700F1B904 /* CellContentAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContentAlignment.swift; sourceTree = "<group>"; };
+		697572322D5A477A00F1B904 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		697572362D5A49F900F1B904 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterAppearance+Variation.swift"; sourceTree = "<group>"; };
 		697737842D2EB7F80077D1A4 /* View+ErrorString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ErrorString.swift"; sourceTree = "<group>"; };
 		698744562D1C367700559ABA /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
@@ -1025,6 +1027,8 @@
 		81998FD32C3436E1009074B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				697572362D5A49F900F1B904 /* SDDSIcons.framework */,
+				697572322D5A477A00F1B904 /* SDDSIcons.framework */,
 				8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */,
 				81CF633E2C6E8E18008F3BB2 /* SDDSThemeCore.framework */,
 				8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */,
