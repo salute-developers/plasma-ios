@@ -82,7 +82,7 @@ public struct TextAreaClear {
         TextAreaClear.xs.outerLabel.requiredEnd.variation,
         TextAreaClear.xs.outerLabel.requiredStart.variation,
         TextAreaClear.xs.requiredEnd.variation,
-        TextAreaClear.xs.requiredStart.variation,
+        TextAreaClear.xs.requiredStart.variation
     ]
 }
 

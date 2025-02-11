@@ -82,7 +82,7 @@ public struct TextArea {
         TextArea.xs.outerLabel.requiredEnd.variation,
         TextArea.xs.outerLabel.requiredStart.variation,
         TextArea.xs.requiredEnd.variation,
-        TextArea.xs.requiredStart.variation,
+        TextArea.xs.requiredStart.variation
     ]
 }
 

@@ -26,7 +26,7 @@ public struct ComponentAppearanceVariation<Component, Appearance>: StylesFactory
     }
 }
 
-public struct GeneralAppearanceVariation<Component, Appearance, Variation1>: Hashable {
+public struct GeneralAppearanceVariation<Component, Appearance, Variation1>: StylesFactory, Hashable {
     public let name: String
     public let appearance: Appearance
     

@@ -95,5 +95,4 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
             value = .single(textValue)
         }
     }
-    
 }

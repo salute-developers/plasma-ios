@@ -23,6 +23,5 @@ final class TypographyTokenContextBuilder: CodeGenerationContextBuilder {
             sizeString = oneSizeString
         }
         return "\(component.rawValue)Typography(\(sizeString): Typographies.\(string.camelCase).typography).asContainer"
-        
     }
 }

@@ -92,6 +92,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -103,6 +104,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -156,6 +165,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -167,6 +177,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -220,6 +238,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -231,6 +250,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -322,6 +349,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -333,6 +361,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -386,6 +422,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -397,6 +434,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -450,6 +495,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -461,6 +507,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -552,6 +606,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -563,6 +618,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -616,6 +679,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -627,6 +691,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -680,6 +752,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -691,6 +764,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -764,6 +845,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -775,6 +857,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -828,6 +918,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -839,6 +930,14 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -861,6 +960,7 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -872,6 +972,14 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextAreaAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 

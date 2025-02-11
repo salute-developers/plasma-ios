@@ -108,6 +108,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -120,6 +121,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -183,6 +193,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -195,6 +206,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -260,6 +280,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -272,6 +293,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -379,6 +409,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -391,6 +422,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -454,6 +494,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -466,6 +507,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -531,6 +581,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -543,6 +594,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -650,6 +710,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -662,6 +723,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -725,6 +795,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -737,6 +808,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -802,6 +882,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -814,6 +895,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -900,6 +990,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -912,6 +1003,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -977,6 +1077,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -989,6 +1090,15 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 
@@ -1017,6 +1127,7 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
             appearance: appearance.warning
         )
     }
+<<<<<<< HEAD
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1029,6 +1140,15 @@ public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
             name: name,
             appearance: appearance
         )
+=======
+    var views: [AppearanceVariation<TextFieldAppearance>] {
+        [
+            self.`default`,
+            self.error,
+            self.success,
+            self.warning,
+        ]
+>>>>>>> b01b2af7 (chore: added fixes to demo app)
     }
 }
 

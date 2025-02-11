@@ -67,14 +67,6 @@ extension CodeGenerationComponent {
     var url: URL {
         baseURL.appending(component: configurationFilename)
     }
-    
-    var appearance: String {
-        String(describing: appearanceType)
-    }
-    
-    var sizeConfiguration: String {
-        String(describing: sizeType)
-    }
 
     var baseURL: URL {
         return URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/")!

@@ -85,5 +85,4 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
             value = .single(textValue)
         }
     }
-
 }
