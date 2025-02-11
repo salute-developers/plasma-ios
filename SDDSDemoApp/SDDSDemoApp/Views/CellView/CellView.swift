@@ -21,6 +21,7 @@ struct CellView: View {
                 contentCenter
                 contentRight
                 hasDisclosure
+                disclosureText
             }
         }
     }
@@ -88,6 +89,12 @@ struct CellView: View {
     
     private var hasDisclosure: some View {
         Toggle("Disclosure", isOn: $viewModel.hasDisclosure)
+    }
+    
+    private var disclosureText: some View {
+        HStack {
+            TextField("Disclosure text", text: $viewModel.disclosureText)
+        }
     }
 }
 
