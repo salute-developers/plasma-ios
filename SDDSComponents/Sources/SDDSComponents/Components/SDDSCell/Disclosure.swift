@@ -25,13 +25,18 @@ public enum Disclosure {
  */
 public struct DefaultDisclosure {
     let text: String
-    let icon: Image
+    let icon: DisclosureImage
 
     public init(
         text: String,
-        icon: Image
+        icon: DisclosureImage
     ) {
         self.text = text
         self.icon = icon
     }
+}
+
+public enum DisclosureImage {
+    case image(Image)
+    case custom(ViewProvider)
 }

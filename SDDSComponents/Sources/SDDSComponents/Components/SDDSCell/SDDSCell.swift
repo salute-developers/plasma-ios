@@ -116,11 +116,16 @@ extension SDDSCell {
                 value(for: disclosure.text)
                 
                 ZStack {
-                    disclosure.icon
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 10, height: 10)
-                        .foregroundColor(Color.gray)
+                    switch disclosure.icon {
+                    case .image(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(Color.gray)
+                    case .custom(let viewProvider):
+                        viewProvider.view
+                    }
                 }
                 .frame(width: 16, height: 16)
                 .debug(color: Color.yellow, condition: true)

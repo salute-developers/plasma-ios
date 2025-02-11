@@ -153,7 +153,7 @@ final class CellViewModel: ObservableObject {
         if hasDisclosure {
             disclosure = .default(DefaultDisclosure(
                 text: disclosureText,
-                icon: .init(systemName: "arrowshape.right")
+                icon: .image(.init(systemName: "arrowshape.right"))
             )
             )
         } else {

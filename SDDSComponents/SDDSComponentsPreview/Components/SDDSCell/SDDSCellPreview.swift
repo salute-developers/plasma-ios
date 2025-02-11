@@ -24,7 +24,7 @@ struct SDDSCellPreview: PreviewProvider {
             ),
             disclosure: .default(DefaultDisclosure(
                 text: "Disclosure",
-                icon: Image("BuildingsOutline16")
+                icon: .image(Image("BuildingsOutline16"))
             )
             ),
         alignment: .center
