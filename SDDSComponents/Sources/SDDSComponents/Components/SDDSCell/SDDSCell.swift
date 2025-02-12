@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+@_exported import SDDSThemeCore
 
 public struct Cell: View {
     public let leftContent: CellContentLeft?
@@ -26,21 +27,19 @@ public struct Cell: View {
     }
     
     public var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             leftView
                 .debug(color: .blue, condition: true)
-            /*
-             Mock left-center paddings
-             */
+            
             Spacer()
+                .frame(width: appearance.size.contentPaddingStart)
             
             centerView
                 .debug(color: .blue, condition: true)
             
-            /*
-             Mock right-center paddings
-             */
             Spacer()
+                .frame(width: appearance.size.contentPaddingEnd)
+                .debug(color: .pink, condition: true)
             
             rightView
                 .debug(color: .blue, condition: true)
@@ -67,15 +66,15 @@ extension Cell {
         VStack {
             if hasCenterContent {
                 if !centerContent.label.isEmpty {
-                    value(for: centerContent.label)
+                    value(for: centerContent.label, typography: applyTypography(for: appearance.labelTypography))
                 }
                 
                 if !centerContent.title.isEmpty {
-                    value(for: centerContent.title)
+                    value(for: centerContent.title, typography: applyTypography(for: appearance.titleTypography))
                 }
                 
                 if !centerContent.subtitle.isEmpty {
-                    value(for: centerContent.subtitle)
+                    value(for: centerContent.subtitle, typography: applyTypography(for: appearance.subtitleTypography))
                 }
                 
                 if !centerContent.contentView.isEmpty {
@@ -116,7 +115,7 @@ extension Cell {
     @ViewBuilder
     private func defaultDisclosureView(for disclosure: DefaultDisclosure)-> some View {
             HStack {
-                value(for: disclosure.text)
+                value(for: disclosure.text, typography: applyTypography(for: appearance.disclosureTextTypography))
                 
                 ZStack {
                     switch disclosure.icon {
@@ -138,12 +137,22 @@ extension Cell {
     
     //MARK: - Other additional view
     @ViewBuilder
-    private func value(for value: String) -> some View {
+    private func value(for value: String, typography: TypographyToken) -> some View {
         Text(value)
+            .typography(typography)
     }
     
     //MARK: - Computed values
     private var hasCenterContent: Bool {
         !centerContent.label.isEmpty || !centerContent.title.isEmpty || !centerContent.subtitle.isEmpty
+    }
+    
+    //MARK: - Typography
+    private func applyTypography(for text: TypographyConfiguration) -> TypographyToken {
+        if let typography = text.typography(with: appearance.size) {
+            return typography
+        } else {
+            fatalError("Undefined Cell Typography for size \(appearance.size.debugDescription).")
+        }
     }
 }
