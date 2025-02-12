@@ -27,7 +27,7 @@ struct CellView: View {
     }
     
     private var cell: some View {
-        SDDSCell(
+        Cell(
             leftContent: viewModel.leftContent,
             centerContent: viewModel.centerContent,
             rightContent: viewModel.rightContent,

@@ -4,9 +4,9 @@ import SDDSComponents
 import SDDSServTheme
 import SDDSIcons
 
-struct SDDSCellPreview: PreviewProvider {
+struct CellPreview: PreviewProvider {
     static var previews: some View {
-        SDDSCell(
+        Cell(
             leftContent: CellContentLeft(
                 contentView: [
                     avatar
@@ -22,6 +22,7 @@ struct SDDSCellPreview: PreviewProvider {
                     iconButton
                 ]
             ),
+            appearance: Cell.l.appearance,
             disclosure: .default(DefaultDisclosure(
                 text: "Disclosure",
                 icon: .image(Image("BuildingsOutline16"))
@@ -32,7 +33,7 @@ struct SDDSCellPreview: PreviewProvider {
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Cell with disclosure")
         
-        SDDSCell(
+        Cell(
             leftContent: CellContentLeft(
                 contentView: [
                     avatar,
@@ -49,6 +50,7 @@ struct SDDSCellPreview: PreviewProvider {
                     avatar
                 ]
             ),
+            appearance: Cell.l.appearance,
             disclosure: nil,
             alignment: .center
         )

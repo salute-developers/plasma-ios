@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSServTheme
 import SDDSIcons
 
-extension SDDSCellPreview {
+extension CellPreview {
     static var iconButton: CellCustomViewProvider {
         CellCustomViewProvider(
             view: IconButton(

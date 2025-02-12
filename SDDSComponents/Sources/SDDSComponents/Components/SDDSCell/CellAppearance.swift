@@ -75,28 +75,53 @@ public struct CellAppearance {
     /**
      Стиль компонента Avatar.
      */
-    public var avatarAppearance: AvatarAppearance
+//    public var avatarAppearance: AvatarAppearance
     
     /**
      Стиль компонента IconButton.
      */
-    public var iconButtonAppearance: ButtonAppearance
+//    public var iconButtonAppearance: ButtonAppearance
+//    
+//    /**
+//     Стиль компонента CheckBox.
+//     */
+//    public var checkBoxStyle: CheckboxAppearance
+//    
+//    /**
+//     Стиль компонента RadioBox.
+//     */
+//    public var radioBoxStyle: RadioboxAppearance
+//    
+//    /**
+//     Стиль компонента Switch.
+//     */
+//    public var switchStyle: SwitchAppearance
+//    
+//    public var disclosureIcon: DisclosureImage
     
-    /**
-     Стиль компонента CheckBox.
-     */
-    public var checkBoxStyle: CheckboxAppearance
-    
-    /**
-     Стиль компонента RadioBox.
-     */
-    public var radioBoxStyle: RadioboxAppearance
-    
-    /**
-     Стиль компонента Switch.
-     */
-    public var switchStyle: SwitchAppearance
-    
-    public var disclosureIcon: DisclosureImage
-    
+    public init(
+        size: CellSizeConfiguration = ZeroCellSize(),
+        labelTypography: TypographyConfiguration = .default,
+        labelColor: ColorToken = .clearColor,
+        titleTypography: TypographyConfiguration = .default,
+        titleColor: ColorToken = .clearColor,
+        subtitleTypography: TypographyConfiguration = .default,
+        subtitleColor: ColorToken = .clearColor,
+        disclosureTextTypography: TypographyConfiguration = .default,
+        disclosureTextColor: ColorToken = .clearColor,
+        disclosureIconColor: ColorToken = .clearColor
+//        avatarAppearance: AvatarAppearance
+    ) {
+        self.size = size
+        self.labelTypography = labelTypography
+        self.labelColor = labelColor
+        self.titleTypography = titleTypography
+        self.titleColor = titleColor
+        self.subtitleTypography = subtitleTypography
+        self.subtitleColor = subtitleColor
+        self.disclosureTextTypography = disclosureTextTypography
+        self.disclosureTextColor = disclosureTextColor
+        self.disclosureIconColor = disclosureIconColor
+//        self.avatarAppearance = avatarAppearance
+    }
 }

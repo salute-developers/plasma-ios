@@ -1,10 +1,11 @@
 import Foundation
 import SwiftUI
 
-public struct SDDSCell: View {
+public struct Cell: View {
     public let leftContent: CellContentLeft?
     public let centerContent: CellContentCenter
     public let rightContent: CellContentRight?
+    public let appearance: CellAppearance
     public let disclosure: Disclosure?
     public let alignment: CellContentAlignment
     
@@ -12,12 +13,14 @@ public struct SDDSCell: View {
         leftContent: CellContentLeft? = nil,
         centerContent: CellContentCenter,
         rightContent: CellContentRight? = nil,
+        appearance: CellAppearance,
         disclosure: Disclosure? = nil,
         alignment: CellContentAlignment = .center
     ) {
         self.leftContent = leftContent
         self.centerContent = centerContent
         self.rightContent = rightContent
+        self.appearance = appearance
         self.disclosure = disclosure
         self.alignment = alignment
     }
@@ -46,7 +49,7 @@ public struct SDDSCell: View {
     }
 }
 
-extension SDDSCell {
+extension Cell {
     //MARK: - Content view
     @ViewBuilder
     private var leftView: some View {

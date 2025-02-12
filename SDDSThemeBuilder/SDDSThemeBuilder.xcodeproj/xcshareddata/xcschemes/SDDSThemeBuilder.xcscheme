@@ -60,7 +60,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "file:///Users/vladimirkaltyrin/plasma-ios/SDDSThemeBuilder"
+            argument = "file:///Users/22686886/plasma-ios-2/SDDSThemeBuilder"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

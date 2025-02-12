@@ -8,7 +8,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textFieldClear = "TextFieldClear"
     case textArea = "TextArea"
     case textAreaClear = "TextAreaClear"
-//    case cell = "Cell"
+    case cell = "Cell"
 }
 
 extension CodeGenerationComponent {
@@ -20,8 +20,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL)
         case .textArea, .textAreaClear:
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL)
-//        case .cell:
-//            GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL)
+        case .cell:
+            GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -33,8 +33,8 @@ extension CodeGenerationComponent {
             "TextAreaAppearance"
         case .textField, .textFieldClear:
             "TextFieldAppearance"
-//        case .cell:
-//            "CellAppearance"
+        case .cell:
+            "CellAppearance"
         }
     }
     
@@ -47,8 +47,8 @@ extension CodeGenerationComponent {
             "TextAreaSizeConfiguration"
         case .textField, .textFieldClear:
             "TextFieldSizeConfiguration"
-//        case .cell:
-//            "CellSizeConfiguration"
+        case .cell:
+            "CellSizeConfiguration"
         }
     }
     
@@ -68,8 +68,8 @@ extension CodeGenerationComponent {
             "text_area_config.json"
         case .textAreaClear:
             "text_area_clear_config.json"
-//        case .cell:
-//            "cell_config.json"
+        case .cell:
+            "cell_config.json"
         }
     }
     
