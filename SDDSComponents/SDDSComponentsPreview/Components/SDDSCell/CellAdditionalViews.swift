@@ -12,7 +12,7 @@ extension SDDSCellPreview {
                 isDisabled: false,
                 isLoading: false,
                 spinnerImage: Image.image("spinner"),
-                appearance: IconButton.default.large.clear.appearance,
+                appearance: IconButton.l.accent.appearance,
                 layoutMode: .fixedWidth(.packed),
                 action: {}
             )

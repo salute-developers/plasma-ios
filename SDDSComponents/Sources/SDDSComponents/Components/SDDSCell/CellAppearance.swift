@@ -1,5 +1,5 @@
 import Foundation
-import SwiftUI
+@_exported import SDDSThemeCore
 
 /**
  Структура `CellAppearance` определяет внешний вид и стили ячейки, включая типографику и цвета для различных элементов.
@@ -30,47 +30,47 @@ public struct CellAppearance {
     /**
      Стиль типографики для лейбла.
      */
-    public var labelTypography: Font
+    public var labelTypography: TypographyConfiguration
     
     /**
      Цвет лейбла.
      */
-    public var labelColor: Color
+    public var labelColor: ColorToken
     
     /**
      Стиль типографики для заголовка.
      */
-    public var titleTypography: Font
+    public var titleTypography: TypographyConfiguration
     
     /**
      Цвет заголовка.
      */
-    public var titleColor: Color
+    public var titleColor: ColorToken
     
     /**
      Стиль типографики для подзаголовка.
      */
-    public var subtitleTypography: Font
+    public var subtitleTypography: TypographyConfiguration
     
     /**
      Цвет подзаголовка.
      */
-    public var subtitleColor: Color
+    public var subtitleColor: ColorToken
     
     /**
      Стиль типографики для текста disclosure.
      */
-    public var disclosureTextTypography: Font
+    public var disclosureTextTypography: TypographyConfiguration
     
     /**
      Цвет текста disclosure.
      */
-    public var disclosureTextColor: Color
+    public var disclosureTextColor: ColorToken
     
     /**
      Цвет иконки disclosure.
      */
-    public var disclosureIconColor: Color
+    public var disclosureIconColor: ColorToken
     
     /**
      Стиль компонента Avatar.
@@ -97,6 +97,6 @@ public struct CellAppearance {
      */
     public var switchStyle: SwitchAppearance
     
-    public var disclosureIcon: Image
+    public var disclosureIcon: DisclosureImage
     
 }

@@ -1,12 +1,11 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSComponentsPreview
 import SDDSServTheme
 
 enum CellContentPreview: String, CaseIterable {
     case avatar
-    case icon
+//    case icon
     case `switch`
 //    case checkbox
 //    case radiobox
@@ -55,7 +54,7 @@ final class CellViewModel: ObservableObject {
     }
     //MARK: - Additional views
     @Published var avatar: SDDSAvatar? = nil
-    @Published var iconButton: IconButton? = nil
+//    @Published var iconButton: IconButton? = nil
     @Published var `switch`: SDDSSwitch? = nil
     @Published var checkbox: SDDSCheckbox? = nil
     @Published var radiobox: SDDSRadiobox? = nil
@@ -70,15 +69,15 @@ final class CellViewModel: ObservableObject {
             appearance: SDDSAvatar.default.large.appearance,
             accessibility: AvatarAccessibility()
         )
-        self.iconButton = IconButton(
-            iconAttributes: .init(image: Image("buttonIcon"), alignment: ButtonAlignment.leading),
-            isDisabled: false,
-            isLoading: false,
-            spinnerImage: Image.image("spinner"),
-            appearance: IconButton.large.clear.appearance,
-            layoutMode: .fixedWidth(.packed),
-            action: {}
-        )
+//        self.iconButton = IconButton(
+//            iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
+//            isDisabled: false,
+//            isLoading: false,
+//            spinnerImage: Image.image("spinner"),
+//            appearance: IconButton.l.accent.appearance,
+//            layoutMode: .fixedWidth(.packed),
+//            action: {}
+//        )
         self.switch = SDDSSwitch(
             title: "",
             subtitle: "",
@@ -112,10 +111,10 @@ final class CellViewModel: ObservableObject {
             CellCustomViewProvider(
                 view: avatar
             )
-        case .icon:
-            CellCustomViewProvider(
-                view: iconButton
-            )
+//        case .icon:
+//            CellCustomViewProvider(
+//                view: iconButton
+//            )
         case .text:
             CellCustomViewProvider(
                 view: Text(text)
