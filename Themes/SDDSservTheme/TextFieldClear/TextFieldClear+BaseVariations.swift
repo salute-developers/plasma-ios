@@ -177,10 +177,13 @@ private extension TextFieldAppearance {
     static var base: TextFieldAppearance {
         var appearance = TextFieldAppearance()
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorFocused = ColorToken.textDefaultAccent
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+>>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent

@@ -10,11 +10,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(9.0)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
@@ -25,6 +27,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(l: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.innerLabel",
@@ -34,11 +42,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.LOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(12.0)
         size.titleInnerPadding = CGFloat(12.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
@@ -49,6 +59,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(l: Typographies.bodyLNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.outerLabel",
@@ -58,6 +74,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -79,6 +96,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -134,6 +152,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -155,6 +174,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -210,6 +230,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -232,6 +253,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:8.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -290,11 +312,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(6.0)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
@@ -305,6 +329,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(m: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.innerLabel",
@@ -314,11 +344,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.MOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(10.0)
         size.titleInnerPadding = CGFloat(10.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
@@ -329,6 +361,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(m: Typographies.bodyMNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.outerLabel",
@@ -338,6 +376,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -359,6 +398,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -414,6 +454,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -435,6 +476,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -490,6 +532,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -512,6 +555,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:7.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -570,11 +614,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(4.0)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(0.0)
         size.titleInnerPadding = CGFloat(0.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
@@ -585,6 +631,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleTypography = TextAreaTypography(s: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.innerLabel",
@@ -594,11 +646,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.SOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(8.0)
         size.titleInnerPadding = CGFloat(8.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
@@ -609,6 +663,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(s: Typographies.bodySNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.outerLabel",
@@ -618,6 +678,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -639,6 +700,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -694,6 +756,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -715,6 +778,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -770,6 +834,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -792,6 +857,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:6.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -850,11 +916,13 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(8.0)
         size.boxPaddingTop = CGFloat(8.0)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(6.0)
         size.titleInnerPadding = CGFloat(6.0)
 
         var appearance = appearance
         appearance.size = size
+<<<<<<< HEAD
 <<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
@@ -865,6 +933,12 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleTypography = TextAreaTypography(xs: Typographies.bodyXsNormal.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "xs.outerLabel",
@@ -874,6 +948,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -895,6 +970,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
@@ -950,6 +1026,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:2.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -972,6 +1049,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
@@ -1082,8 +1160,12 @@ private extension TextAreaAppearance {
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
         appearance.captionColor = ColorToken.textDefaultNegative
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
+=======
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
+>>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionColorReadOnly = ColorToken.textDefaultNegative
 <<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none
@@ -1099,8 +1181,12 @@ private extension TextAreaAppearance {
         appearance.backgroundColorFocused = ColorToken.surfaceDefaultTransparentSecondary
         appearance.captionColor = ColorToken.textDefaultWarning
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
 =======
+=======
+        appearance.captionColorFocused = ColorToken.textDefaultSecondary
+>>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionColorReadOnly = ColorToken.textDefaultWarning
 <<<<<<< HEAD
         appearance.labelPlacement = TextAreaLabelPlacement.none

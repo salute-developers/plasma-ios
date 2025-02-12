@@ -8,10 +8,14 @@ public struct LinkButton {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.l
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
 =======
         appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
 
         return .init(
             name: "l",
@@ -22,10 +26,14 @@ public struct LinkButton {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.m
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
 =======
         appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
 
         return .init(
             name: "m",
@@ -36,10 +44,14 @@ public struct LinkButton {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.s
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
 =======
         appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
 
         return .init(
             name: "s",
@@ -50,10 +62,14 @@ public struct LinkButton {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xs
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
 =======
         appearance.subtitleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+>>>>>>> c1d5e653 (chore: added fixes)
 
         return .init(
             name: "xs",

@@ -176,8 +176,11 @@ public struct TextFieldVariation {
 private extension TextFieldAppearance {
     static var base: TextFieldAppearance {
         var appearance = TextFieldAppearance()
+<<<<<<< HEAD
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
+=======
+>>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent
@@ -202,6 +205,10 @@ private extension TextFieldAppearance {
         appearance.textBeforeColor = ColorToken.textDefaultTertiary
         appearance.textColor = ColorToken.textDefaultPrimary
         appearance.textColorFocused = ColorToken.textDefaultPrimary
+<<<<<<< HEAD
+=======
+        appearance.textColorReadOnly = ColorToken.textDefaultPrimary
+>>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
 }

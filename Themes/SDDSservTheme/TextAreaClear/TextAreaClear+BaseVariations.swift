@@ -130,10 +130,13 @@ private extension TextAreaAppearance {
     static var base: TextAreaAppearance {
         var appearance = TextAreaAppearance()
 <<<<<<< HEAD
+<<<<<<< HEAD
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
 =======
         appearance.captionColorFocused = ColorToken.textDefaultAccent
 >>>>>>> eae55595 (feat: added variations support in demo app)
+=======
+>>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary
