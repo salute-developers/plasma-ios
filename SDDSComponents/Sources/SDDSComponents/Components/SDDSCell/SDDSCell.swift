@@ -21,19 +21,26 @@ public enum CellElement: Hashable {
 
 public struct Cell: View {
     public let leftContent: [CellElement]
-    public let centerContent: CellContentCenter
+    public let centerContent: [CellElement]
     public let rightContent: [CellElement]
     public let appearance: CellAppearance
     public let disclosure: Disclosure?
     public let alignment: CellContentAlignment
     
+    public let label: String
+    public let title: String
+    public let subtitle: String
+    
     public init(
         leftContent: [CellElement] = [],
-        centerContent: CellContentCenter,
+        centerContent: [CellElement] = [],
         rightContent: [CellElement] = [],
         appearance: CellAppearance,
         disclosure: Disclosure? = nil,
-        alignment: CellContentAlignment = .center
+        alignment: CellContentAlignment = .center,
+        label: String = "",
+        title: String = "",
+        subtitle: String = ""
     ) {
         self.leftContent = leftContent
         self.centerContent = centerContent
@@ -41,6 +48,9 @@ public struct Cell: View {
         self.appearance = appearance
         self.disclosure = disclosure
         self.alignment = alignment
+        self.label = label
+        self.title = title
+        self.subtitle = subtitle
     }
     
     public var body: some View {
@@ -53,7 +63,6 @@ public struct Cell: View {
             
             centerView
                 .debug(color: .blue, condition: true)
-            
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
                 .debug(color: .pink, condition: true)
@@ -67,7 +76,7 @@ public struct Cell: View {
 
 extension Cell {
     //MARK: - Drowing content type
-    private func content(for type: [CellElement]) -> some View {
+    private func drawContent(for type: [CellElement]) -> some View {
         ForEach(type, id: \.self) { content in
             switch content {
             case .avatar(let avatarData):
@@ -99,39 +108,40 @@ extension Cell {
     @ViewBuilder
     private var leftView: some View {
         HStack(spacing: 0) {
-            content(for: leftContent)
+            drawContent(for: leftContent)
         }
     }
     
     @ViewBuilder
     private var centerView: some View {
-        VStack {
-            if hasCenterContent {
-                if !centerContent.label.isEmpty {
-                    value(for: centerContent.label, typography: applyTypography(for: appearance.labelTypography))
-                }
-                
-                if !centerContent.title.isEmpty {
-                    value(for: centerContent.title, typography: applyTypography(for: appearance.titleTypography))
-                }
-                
-                if !centerContent.subtitle.isEmpty {
-                    value(for: centerContent.subtitle, typography: applyTypography(for: appearance.subtitleTypography))
-                }
-                
-                if !centerContent.contentView.isEmpty {
-                    ForEach(centerContent.contentView, id: \.self) { content in
-                        content
+        HStack(spacing: 0) {
+            VStack(spacing: 0) {
+                if hasCenterContent {
+                    if !label.isEmpty {
+                        value(for: label, typography: applyTypography(for: appearance.labelTypography))
+                    }
+                    
+                    if !title.isEmpty {
+                        value(for: title, typography: applyTypography(for: appearance.titleTypography))
+                    }
+                    
+                    if !subtitle.isEmpty {
+                        value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography))
+                    }
+                    
+                    if !centerContent.isEmpty {
+                        drawContent(for: centerContent)
                     }
                 }
             }
         }
+        .frame(maxWidth: .infinity)
     }
     
     @ViewBuilder
     private var rightView: some View {
         HStack(spacing: 0) {
-            content(for: rightContent)
+            drawContent(for: rightContent)
             
             disclosureView
         }
@@ -182,7 +192,7 @@ extension Cell {
     
     //MARK: - Computed values
     private var hasCenterContent: Bool {
-        !centerContent.label.isEmpty || !centerContent.title.isEmpty || !centerContent.subtitle.isEmpty
+        !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
     }
     
     //MARK: - Typography
@@ -191,6 +201,17 @@ extension Cell {
             return typography
         } else {
             fatalError("Undefined Cell Typography for size \(appearance.size.debugDescription).")
+        }
+    }
+    //MARK: - Alignment
+    private func contentAlignment(alignment: CellContentAlignment) -> Alignment {
+        switch alignment {
+        case .top:
+            return .top
+        case .center:
+            return .center
+        case .bottom:
+            return .bottom
         }
     }
 }

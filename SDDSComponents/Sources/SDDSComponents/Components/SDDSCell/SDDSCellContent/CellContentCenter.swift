@@ -14,13 +14,13 @@ import SwiftUI
  - init(contentView:label:title:subtitle:): Инициализатор для создания экземпляра `CellContentCenter`.
  */
 public struct CellContentCenter {
-    public let contentView: [CellCustomViewProvider]
+    public let contentView: [CellElement]
     public var label: String
     public var title: String
     public var subtitle: String
     
     public init(
-        contentView: [CellCustomViewProvider] = [],
+        contentView: [CellElement] = [],
         label: String = "",
         title: String = "",
         subtitle: String = ""

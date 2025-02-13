@@ -31,8 +31,12 @@ struct CellView: View {
             leftContent: viewModel.leftContent,
             centerContent: viewModel.centerContent,
             rightContent: viewModel.rightContent,
+            appearance: viewModel.appearance,
             disclosure: viewModel.disclosure,
-            alignment: viewModel.alignment
+            alignment: viewModel.alignment,
+            label: viewModel.label,
+            title: viewModel.title,
+            subtitle: viewModel.subtitle
         )
     }
     
@@ -58,15 +62,15 @@ struct CellView: View {
             Spacer()
             VStack {
                 HStack {
-                    TextField("Label", text: $viewModel.centerContent.label)
+                    TextField("Label", text: $viewModel.label)
                 }
                 Divider()
                 HStack {
-                    TextField("Title", text: $viewModel.centerContent.title)
+                    TextField("Title", text: $viewModel.title)
                 }
                 Divider()
                 HStack {
-                    TextField("Subtitle", text: $viewModel.centerContent.subtitle)
+                    TextField("Subtitle", text: $viewModel.subtitle)
                 }
             }
         }
