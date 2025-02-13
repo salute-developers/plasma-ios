@@ -14,11 +14,7 @@ struct CellPreview: PreviewProvider {
                 title: "Title",
                 subtitle: "Subtitle"
             ),
-            rightContent: CellContentRight(
-                contentView: [
-                    iconButton
-                ]
-            ),
+            rightContent: [.iconButton(iconButton)],
             appearance: Cell.l.appearance,
             disclosure: .default(DefaultDisclosure(
                 text: "Disclosure",
@@ -37,11 +33,7 @@ struct CellPreview: PreviewProvider {
                 title: "Title",
                 subtitle: "Subtitle"
             ),
-            rightContent: CellContentRight(
-                contentView: [
-                    customAvatar
-                ]
-            ),
+            rightContent: [.iconButton(iconButton)],
             appearance: Cell.l.appearance,
             disclosure: nil,
             alignment: .center

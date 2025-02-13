@@ -4,42 +4,33 @@ import SwiftUI
 
 public enum CellElement: Hashable {
     case avatar(SDDSAvatarData)
+    case iconButton(IconButtonData)
     case custom(CellCustomViewProvider)
     
     public func hash(into hasher: inout Hasher) {
         switch self {
-        case .avatar(let data):
-            hasher.combine(data)
+        case .avatar(let avatarData):
+            hasher.combine(avatarData)
+        case .iconButton(let iconButtonData):
+            hasher.combine(iconButtonData)
         case .custom(let provider):
             hasher.combine(provider)
         }
     }
-    
-//    public static func == (lhs: CellElement, rhs: CellElement) -> Bool {
-//        switch (lhs, rhs) {
-//        case let (.avatar(lhsData), .avatar(rhsData)):
-//            return lhsData == rhsData
-//        case let (.custom(lhsCustom), .custom(rhsCustom)):
-//            return lhsCustom == rhsCustom
-//        default:
-//            return false
-//        }
-//    }
 }
 
 public struct Cell: View {
     public let leftContent: [CellElement]
     public let centerContent: CellContentCenter
-    public let rightContent: CellContentRight?
+    public let rightContent: [CellElement]
     public let appearance: CellAppearance
     public let disclosure: Disclosure?
     public let alignment: CellContentAlignment
     
     public init(
-        content: [CellElement] = [],
         leftContent: [CellElement] = [],
         centerContent: CellContentCenter,
-        rightContent: CellContentRight? = nil,
+        rightContent: [CellElement] = [],
         appearance: CellAppearance,
         disclosure: Disclosure? = nil,
         alignment: CellContentAlignment = .center
@@ -75,25 +66,40 @@ public struct Cell: View {
 }
 
 extension Cell {
+    //MARK: - Drowing content type
+    private func content(for type: [CellElement]) -> some View {
+        ForEach(type, id: \.self) { content in
+            switch content {
+            case .avatar(let avatarData):
+                SDDSAvatar(
+                    text: avatarData.text,
+                    image: avatarData.image,
+                    placeholderImage: avatarData.placeholderImage,
+                    status: avatarData.status,
+                    appearance: appearance.avatarAppearance,
+                    accessibility: avatarData.accessibility
+                )
+            case .iconButton(let iconButtonData):
+                IconButton(
+                    iconAttributes: iconButtonData.iconAttributes ,
+                    isDisabled: iconButtonData.isDisabled,
+                    isLoading: iconButtonData.isLoading,
+                    spinnerImage: iconButtonData.spinnerImage,
+                    appearance: appearance.iconButtonAppearance,
+                    layoutMode: iconButtonData.layoutMode,
+                    accessibility: iconButtonData.accessibility,
+                    action: iconButtonData.action
+                )
+            case .custom(let customView):
+                customView
+            }
+        }
+    }
     //MARK: - Content view
     @ViewBuilder
     private var leftView: some View {
         HStack(spacing: 0) {
-            ForEach(leftContent, id: \.self) { content in
-                switch content {
-                case .avatar(let avatarData):
-                    SDDSAvatar(
-                        text: avatarData.text,
-                        image: avatarData.image,
-                        placeholderImage: avatarData.placeholderImage,
-                        status: avatarData.status,
-                        appearance: appearance.avatarAppearance,
-                        accessibility: avatarData.accessibility
-                    )
-                case .custom(let customView):
-                    customView
-                }
-            }
+            content(for: leftContent)
         }
     }
     
@@ -125,13 +131,9 @@ extension Cell {
     @ViewBuilder
     private var rightView: some View {
         HStack(spacing: 0) {
-            if let rightContent = rightContent {
-                ForEach(rightContent.contentView, id: \.self) { content in
-                    content
-                }
-                
-                disclosureView
-            }
+            content(for: rightContent)
+            
+            disclosureView
         }
     }
     

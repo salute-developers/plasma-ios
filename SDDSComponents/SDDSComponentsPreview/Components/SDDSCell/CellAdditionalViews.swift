@@ -5,7 +5,7 @@ import SDDSServTheme
 //import SDDSIcons
 
 extension CellPreview {
-    static var iconButton: CellCustomViewProvider {
+    static var customIconButton: CellCustomViewProvider {
         CellCustomViewProvider(
             view: IconButton(
                 iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -16,6 +16,18 @@ extension CellPreview {
                 layoutMode: .fixedWidth(.packed),
                 action: {}
             )
+        )
+    }
+    
+    static var iconButton: IconButtonData {
+        IconButtonData(
+            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+            isDisabled: false,
+            isLoading: false,
+            spinnerImage: Image.image("spinner"),
+            appearance: IconButton.l.accent.appearance,
+            layoutMode: .fixedWidth(.packed),
+            action: {}
         )
     }
     
