@@ -43,6 +43,7 @@
 		69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975272D511A0E00CAF208 /* CounterWidthCalculatorImpl.swift */; };
 		69C0356C2D4F8AC4005D3B95 /* SegmentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C0356B2D4F8AAB005D3B95 /* SegmentSizeConfiguration.swift */; };
 		69C0356E2D4F8B1F005D3B95 /* SegmentLayoutOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C0356D2D4F8AFF005D3B95 /* SegmentLayoutOrientation.swift */; };
+		69E6EA9B2D5E352300A344C0 /* CellSDDSAvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E6EA9A2D5E351900A344C0 /* CellSDDSAvatarData.swift */; };
 		69F967B32D4CC9FC00C0B50F /* SDDSSegmentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F967B22D4CC9F700C0B50F /* SDDSSegmentPreview.swift */; };
 		69F967BB2D4E6EAA00C0B50F /* SDDSCounterPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F967BA2D4E6EA400C0B50F /* SDDSCounterPreview.swift */; };
 		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
@@ -234,6 +235,7 @@
 		69B975272D511A0E00CAF208 /* CounterWidthCalculatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterWidthCalculatorImpl.swift; sourceTree = "<group>"; };
 		69C0356B2D4F8AAB005D3B95 /* SegmentSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSizeConfiguration.swift; sourceTree = "<group>"; };
 		69C0356D2D4F8AFF005D3B95 /* SegmentLayoutOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutOrientation.swift; sourceTree = "<group>"; };
+		69E6EA9A2D5E351900A344C0 /* CellSDDSAvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSDDSAvatarData.swift; sourceTree = "<group>"; };
 		69F967B22D4CC9F700C0B50F /* SDDSSegmentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentPreview.swift; sourceTree = "<group>"; };
 		69F967BA2D4E6EA400C0B50F /* SDDSCounterPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounterPreview.swift; sourceTree = "<group>"; };
 		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 		699101462D55E328002C1135 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
+				69E6EA9A2D5E351900A344C0 /* CellSDDSAvatarData.swift */,
 				6975722F2D5A1CD700F1B904 /* CellContentAlignment.swift */,
 				6975722A2D5A02C700F1B904 /* SDDSCellContent */,
 				697572202D59FEC300F1B904 /* CellCustomViewProvider.swift */,
@@ -1450,6 +1453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E6EA9B2D5E352300A344C0 /* CellSDDSAvatarData.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				697572272D5A00B800F1B904 /* CellContentRight.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,

@@ -2,8 +2,33 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+public enum CellElement: Hashable {
+    case avatar(SDDSAvatarData)
+    case custom(CellCustomViewProvider)
+    
+    public func hash(into hasher: inout Hasher) {
+        switch self {
+        case .avatar(let data):
+            hasher.combine(data)
+        case .custom(let provider):
+            hasher.combine(provider)
+        }
+    }
+    
+//    public static func == (lhs: CellElement, rhs: CellElement) -> Bool {
+//        switch (lhs, rhs) {
+//        case let (.avatar(lhsData), .avatar(rhsData)):
+//            return lhsData == rhsData
+//        case let (.custom(lhsCustom), .custom(rhsCustom)):
+//            return lhsCustom == rhsCustom
+//        default:
+//            return false
+//        }
+//    }
+}
+
 public struct Cell: View {
-    public let leftContent: CellContentLeft?
+    public let leftContent: [CellElement]
     public let centerContent: CellContentCenter
     public let rightContent: CellContentRight?
     public let appearance: CellAppearance
@@ -11,7 +36,8 @@ public struct Cell: View {
     public let alignment: CellContentAlignment
     
     public init(
-        leftContent: CellContentLeft? = nil,
+        content: [CellElement] = [],
+        leftContent: [CellElement] = [],
         centerContent: CellContentCenter,
         rightContent: CellContentRight? = nil,
         appearance: CellAppearance,
@@ -53,10 +79,19 @@ extension Cell {
     @ViewBuilder
     private var leftView: some View {
         HStack(spacing: 0) {
-            if let leftContent = leftContent {
-                ForEach(leftContent.contentView, id: \.self) { content in
-                    content
-                        
+            ForEach(leftContent, id: \.self) { content in
+                switch content {
+                case .avatar(let avatarData):
+                    SDDSAvatar(
+                        text: avatarData.text,
+                        image: avatarData.image,
+                        placeholderImage: avatarData.placeholderImage,
+                        status: avatarData.status,
+                        appearance: appearance.avatarAppearance,
+                        accessibility: avatarData.accessibility
+                    )
+                case .custom(let customView):
+                    customView
                 }
             }
         }
@@ -115,25 +150,25 @@ extension Cell {
     
     @ViewBuilder
     private func defaultDisclosureView(for disclosure: DefaultDisclosure)-> some View {
-            HStack {
-                value(for: disclosure.text, typography: applyTypography(for: appearance.disclosureTextTypography))
-                
-                ZStack {
-                    switch disclosure.icon {
-                    case .image(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
-                            .foregroundColor(Color.gray)
-                    case .custom(let viewProvider):
-                        viewProvider.view
-                    }
+        HStack {
+            value(for: disclosure.text, typography: applyTypography(for: appearance.disclosureTextTypography))
+            
+            ZStack {
+                switch disclosure.icon {
+                case .image(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 10, height: 10)
+                        .foregroundColor(Color.gray)
+                case .custom(let viewProvider):
+                    viewProvider.view
                 }
-                .frame(width: 16, height: 16)
-                .debug(color: Color.yellow, condition: true)
             }
-            .debug(color: Color.green, condition: true)
+            .frame(width: 16, height: 16)
+            .debug(color: Color.yellow, condition: true)
+        }
+        .debug(color: Color.green, condition: true)
     }
     
     //MARK: - Other additional view

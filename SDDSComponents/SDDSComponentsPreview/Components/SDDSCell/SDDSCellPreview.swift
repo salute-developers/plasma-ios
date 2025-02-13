@@ -7,10 +7,7 @@ import SDDSServTheme
 struct CellPreview: PreviewProvider {
     static var previews: some View {
         Cell(
-            leftContent: CellContentLeft(
-                contentView: [
-                    avatar
-                ]),
+            leftContent: [.avatar(avatar)],
             centerContent: CellContentCenter(
                 contentView: [/*some view*/],
                 label: "Label",
@@ -34,12 +31,7 @@ struct CellPreview: PreviewProvider {
             .previewDisplayName("Cell with disclosure")
         
         Cell(
-            leftContent: CellContentLeft(
-                contentView: [
-                    avatar,
-                    iconButton,
-                    text
-                ]),
+            leftContent: [.avatar(avatar)],
             centerContent: CellContentCenter(
                 label: "Label",
                 title: "Title",
@@ -47,7 +39,7 @@ struct CellPreview: PreviewProvider {
             ),
             rightContent: CellContentRight(
                 contentView: [
-                    avatar
+                    customAvatar
                 ]
             ),
             appearance: Cell.l.appearance,

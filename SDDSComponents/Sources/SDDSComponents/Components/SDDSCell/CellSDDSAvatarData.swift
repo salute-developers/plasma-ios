@@ -1,19 +1,7 @@
 import Foundation
 import SwiftUI
 
-/**
- `SDDSAvatarData` представляет собой структуру, содержащую все параметры, необходимые для создания аватара с использованием `SDDSAvatar`.
-
- - Properties:
-    - text: Текст, который отображается, если нет изображения; обычно инициалы.
-    - image: Изображение аватара, передается как `AvatarImageSource`.
-    - placeholderImage: Изображение-заглушка, отображаемое при отсутствии основного изображения.
-    - status: Статус аватара (`hidden`, `online`, `offline`).
-    - appearance: Параметры внешнего вида аватара.
-    - size: Конфигурация размеров для аватара.
-    - accessibility: Параметры доступности для аватара.
- */
-public struct SDDSAvatarData {
+public struct CellSDDSAvatarData {
     let id = UUID()
     public let text: String
     public let image: AvatarImageSource?
@@ -50,9 +38,9 @@ public struct SDDSAvatarData {
     }
 }
 
-extension SDDSAvatarData: Hashable {
-    public static func == (lhs: SDDSAvatarData, rhs: SDDSAvatarData) -> Bool {
-        return lhs.id == rhs.id
+extension CellSDDSAvatarData: Hashable {
+    public static func == (lhs: CellSDDSAvatarData, rhs: CellSDDSAvatarData) -> Bool {
+        lhs.id == rhs.id
     }
     
     public func hash(into hasher: inout Hasher) {

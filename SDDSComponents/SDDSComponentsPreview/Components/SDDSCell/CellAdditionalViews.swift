@@ -25,7 +25,7 @@ extension CellPreview {
         )
     }
     
-    static var avatar: CellCustomViewProvider {
+    static var customAvatar: CellCustomViewProvider {
         CellCustomViewProvider(
             view: SDDSAvatar(
                 text: "",
@@ -35,6 +35,16 @@ extension CellPreview {
                 appearance: SDDSAvatar.extraExtraLarge.large.appearance,
                 accessibility: AvatarAccessibility()
             )
+        )
+    }
+    static var avatar: SDDSAvatarData {
+        SDDSAvatarData(
+            text: "AB",
+            image: .image(Image.image("checker")),
+            placeholderImage: nil,
+            status: .online,
+            appearance: SDDSAvatar.extraExtraLarge.large.appearance,
+            accessibility: AvatarAccessibility()
         )
     }
 }
