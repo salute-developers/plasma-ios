@@ -10,7 +10,7 @@ import SwiftUI
  - Initializer:
     - init(contentView:): Инициализатор для создания экземпляра `CellContentLeft`.
  */
-public struct CellContentLeft: CellContentConfiguration {
+public struct CellContentLeft {
     public var contentView: [CellCustomViewProvider]
     
     public init(contentView: [CellCustomViewProvider] = []) {

@@ -11,7 +11,7 @@ import SwiftUI
  - Initializer:
     - init(data:disclosure:): Инициализирует новый экземпляр `CellContentRight` с указанным массивом представлений и дискложуром.
  */
-public struct CellContentRight: CellContentConfiguration {
+public struct CellContentRight {
     public var contentView: [CellCustomViewProvider]
 //    public var availableViews: [ViewCase]
 

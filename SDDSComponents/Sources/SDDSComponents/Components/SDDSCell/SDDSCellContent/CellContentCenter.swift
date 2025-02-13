@@ -13,7 +13,7 @@ import SwiftUI
  - Initializer:
  - init(contentView:label:title:subtitle:): Инициализатор для создания экземпляра `CellContentCenter`.
  */
-public struct CellContentCenter: CellContentConfiguration {
+public struct CellContentCenter {
     public let contentView: [CellCustomViewProvider]
     public var label: String
     public var title: String
