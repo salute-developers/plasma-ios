@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSServTheme
-import SDDSIcons
+//import SDDSIcons
 
 extension CellPreview {
     static var iconButton: CellCustomViewProvider {

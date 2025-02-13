@@ -75,27 +75,27 @@ public struct CellAppearance {
     /**
      Стиль компонента Avatar.
      */
-//    public var avatarAppearance: AvatarAppearance
+    public var avatarAppearance: AvatarAppearance
     
     /**
      Стиль компонента IconButton.
      */
-//    public var iconButtonAppearance: ButtonAppearance
+    public var iconButtonAppearance: ButtonAppearance
 //    
 //    /**
 //     Стиль компонента CheckBox.
 //     */
-//    public var checkBoxStyle: CheckboxAppearance
+    public var checkBoxStyle: CheckboxAppearance
 //    
 //    /**
 //     Стиль компонента RadioBox.
 //     */
-//    public var radioBoxStyle: RadioboxAppearance
+    public var radioBoxStyle: RadioboxAppearance
 //    
 //    /**
 //     Стиль компонента Switch.
 //     */
-//    public var switchStyle: SwitchAppearance
+    public var switchStyle: SwitchAppearance
 //    
 //    public var disclosureIcon: DisclosureImage
     
@@ -109,8 +109,13 @@ public struct CellAppearance {
         subtitleColor: ColorToken = .clearColor,
         disclosureTextTypography: TypographyConfiguration = .default,
         disclosureTextColor: ColorToken = .clearColor,
-        disclosureIconColor: ColorToken = .clearColor
-//        avatarAppearance: AvatarAppearance
+        disclosureIconColor: ColorToken = .clearColor,
+        avatarAppearance: AvatarAppearance = AvatarAppearance(),
+        iconButtonAppearance: ButtonAppearance = ButtonAppearance(),
+        checkBoxStyle: CheckboxAppearance = CheckboxAppearance(),
+        radioBoxStyle: RadioboxAppearance = RadioboxAppearance(),
+        switchStyle: SwitchAppearance = SwitchAppearance()
+//        disclosureIcon: DisclosureImage
     ) {
         self.size = size
         self.labelTypography = labelTypography
@@ -122,6 +127,11 @@ public struct CellAppearance {
         self.disclosureTextTypography = disclosureTextTypography
         self.disclosureTextColor = disclosureTextColor
         self.disclosureIconColor = disclosureIconColor
-//        self.avatarAppearance = avatarAppearance
+        self.avatarAppearance = avatarAppearance
+        self.iconButtonAppearance = iconButtonAppearance
+        self.checkBoxStyle = checkBoxStyle
+        self.radioBoxStyle = radioBoxStyle
+        self.switchStyle = switchStyle
+//        self.disclosureIcon: DisclosureImage
     }
 }

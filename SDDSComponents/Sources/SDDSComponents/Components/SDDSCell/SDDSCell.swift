@@ -56,6 +56,7 @@ extension Cell {
             if let leftContent = leftContent {
                 ForEach(leftContent.contentView, id: \.self) { content in
                     content
+                        
                 }
             }
         }

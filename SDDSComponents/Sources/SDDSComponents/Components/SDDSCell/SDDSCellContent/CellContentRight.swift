@@ -13,6 +13,7 @@ import SwiftUI
  */
 public struct CellContentRight: CellContentConfiguration {
     public var contentView: [CellCustomViewProvider]
+//    public var availableViews: [ViewCase]
 
     public init(
         contentView: [CellCustomViewProvider] = []
@@ -20,3 +21,4 @@ public struct CellContentRight: CellContentConfiguration {
         self.contentView = contentView
     }
 }
+
