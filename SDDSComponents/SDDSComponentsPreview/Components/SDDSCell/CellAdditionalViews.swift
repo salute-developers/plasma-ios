@@ -5,7 +5,7 @@ import SDDSServTheme
 //import SDDSIcons
 
 extension CellPreview {    
-//    static var iconButton: IconButton {
+//    static var iconButtonPreviw: IconButton {
 //        IconButton(
 //            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
 //            isDisabled: false,
@@ -31,14 +31,4 @@ extension CellPreview {
             accessibility: AvatarAccessibility()
         )
     }
-//    static var avatar: SDDSAvatarData {
-//        SDDSAvatarData(
-//            text: "AB",
-//            image: .image(Image.image("checker")),
-//            placeholderImage: nil,
-//            status: .online,
-//            appearance: SDDSAvatar.extraExtraLarge.large.appearance,
-//            accessibility: AvatarAccessibility()
-//        )
-//    }
 }

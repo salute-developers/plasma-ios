@@ -8,23 +8,44 @@ struct CellPreview: PreviewProvider {
     static var previews: some View {
         Cell(
             appearance: Cell.l.appearance,
+            contentAlignment: .center,
             label: "label",
             title: "title",
             subtitle: "subtitle",
-            disclosureText: "disclosure",
+            disclosureText: "",
             leftContent: {
                 avatar
-//                iconButton
             },
             centerContent: {
                 avatar
             },
             rightContent: {
                 avatar
-                text
-            }
+            },
+            disclosure: {}
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Cell without disclosure")
+        
+        Cell(
+            appearance: Cell.l.appearance,
+            contentAlignment: .center,
+            label: "label",
+            title: "title",
+            subtitle: "subtitle",
+            disclosureText: "disclosure",
+            leftContent: {
+                avatar
+            },
+            centerContent: {
+                avatar
+            },
+            rightContent: {
+                avatar
+            },
+            disclosure: {}
+        )
+        .previewLayout(PreviewLayout.sizeThatFits)
+        .previewDisplayName("Cell with disclosure")
     }
 }

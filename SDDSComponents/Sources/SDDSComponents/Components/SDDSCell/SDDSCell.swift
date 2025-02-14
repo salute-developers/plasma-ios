@@ -4,53 +4,62 @@ import SwiftUI
 
 public struct Cell: View {
     public let appearance: CellAppearance
-    //    public let alignment: CellContentAlignment
-    //
+    public let contentAlignment: CellContentAlignment
+
     public let label: String
     public let title: String
     public let subtitle: String
-    //
-    //    public let disclosureIcon: AnyView
+    
+    public let disclosureIcon: Image?
     public let disclosureText: String
-    //
+    
     public let leftContent: AnyView
     public let centerContent: AnyView
     public let rightContent: AnyView
+    public let disclosure: AnyView
     
     public init(
         appearance: CellAppearance,
-        //        alignment: CellContentAlignment,
-        label: String,
-        title: String,
-        subtitle: String,
-        //        disclosureIcon: some View,
-        disclosureText: String,
+        contentAlignment: CellContentAlignment = .center,
+        label: String = "",
+        title: String = "",
+        subtitle: String = "",
+        disclosureIcon: Image? = nil,
+        disclosureText: String = "",
         @ViewBuilder leftContent: @escaping () -> some View,
         @ViewBuilder centerContent: @escaping () -> some View,
-        @ViewBuilder rightContent: @escaping () -> some View
+        @ViewBuilder rightContent: @escaping () -> some View,
+        @ViewBuilder disclosure: @escaping () -> some View
     ) {
         self.appearance = appearance
-        //        self.alignment = alignment
+        self.contentAlignment = contentAlignment
         self.label = label
         self.title = title
         self.subtitle = subtitle
-        //        self.disclosureIcon = disclosureIcon
+        self.disclosureIcon = disclosureIcon
         self.disclosureText = disclosureText
         self.leftContent = AnyView(leftContent())
         self.centerContent = AnyView(centerContent())
         self.rightContent = AnyView(rightContent())
+        self.disclosure = AnyView(disclosure())
     }
-    
     
     public var body: some View {
         HStack {
             leftContent
+            
             if hasCenterContent {
                 centerView
             } else {
                 centerContent                
             }
             rightContent
+            
+            if hasDefaultDisclosure {
+                defaultDisclosureView
+            } else {
+                disclosure
+            }
         }
     }
 }
@@ -82,9 +91,20 @@ extension Cell {
             .typography(typography)
     }
     
+    @ViewBuilder
+    private var defaultDisclosureView: some View {
+        HStack(spacing: 0) {
+            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography))
+        }
+    }
+    
     //MARK: - Computed values
     private var hasCenterContent: Bool {
         !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
+    }
+    
+    private var hasDefaultDisclosure: Bool {
+        !disclosureText.isEmpty
     }
     
     //MARK: - Typography
