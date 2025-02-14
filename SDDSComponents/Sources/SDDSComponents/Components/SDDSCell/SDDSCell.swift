@@ -45,15 +45,28 @@ public struct Cell: View {
     }
     
     public var body: some View {
-        HStack {
-            leftContent
-            
-            if hasCenterContent {
-                centerView
-            } else {
-                centerContent                
+        HStack(spacing: 0) {
+            VStack(spacing: 0) {
+                leftContent
             }
-            rightContent
+            .frame(maxHeight: .infinity , alignment: cellAlignment(contentAlignment))
+            .debug(color: Color.purple, condition: true)
+            
+            VStack(spacing: 0) {
+                if hasCenterContent {
+                    centerView
+                } else {
+                    centerContent
+                }
+            }
+            .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            .debug(color: Color.purple, condition: true)
+            
+            VStack(spacing: 0) {
+                rightContent
+            }
+            .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            .debug(color: Color.purple, condition: true)
             
             if hasDefaultDisclosure {
                 defaultDisclosureView
@@ -61,6 +74,7 @@ public struct Cell: View {
                 disclosure
             }
         }
+        .debug(color: Color.blue, condition: true)
     }
 }
 
@@ -125,14 +139,14 @@ extension Cell {
         }
     }
     //MARK: - Alignment
-    private func contentAlignment(alignment: CellContentAlignment) -> Alignment {
+    private func cellAlignment(_ alignment: CellContentAlignment) -> Alignment {
         switch alignment {
         case .top:
-            return .top
+            return Alignment.top
         case .center:
-            return .center
+            return Alignment.center
         case .bottom:
-            return .bottom
+            return Alignment.bottom
         }
     }
 }
