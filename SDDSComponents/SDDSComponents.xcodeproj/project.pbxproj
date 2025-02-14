@@ -39,7 +39,6 @@
 		69C0356C2D4F8AC4005D3B95 /* SegmentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C0356B2D4F8AAB005D3B95 /* SegmentSizeConfiguration.swift */; };
 		69C0356E2D4F8B1F005D3B95 /* SegmentLayoutOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C0356D2D4F8AFF005D3B95 /* SegmentLayoutOrientation.swift */; };
 		69E6EA9D2D5E47BC00A344C0 /* IconButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E6EA9C2D5E47AE00A344C0 /* IconButtonData.swift */; };
-		69E6EAB82D5F557C00A344C0 /* Appearances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E6EAB72D5F557B00A344C0 /* Appearances.swift */; };
 		69F967B32D4CC9FC00C0B50F /* SDDSSegmentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F967B22D4CC9F700C0B50F /* SDDSSegmentPreview.swift */; };
 		69F967BB2D4E6EAA00C0B50F /* SDDSCounterPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F967BA2D4E6EA400C0B50F /* SDDSCounterPreview.swift */; };
 		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
@@ -227,7 +226,6 @@
 		69C0356B2D4F8AAB005D3B95 /* SegmentSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSizeConfiguration.swift; sourceTree = "<group>"; };
 		69C0356D2D4F8AFF005D3B95 /* SegmentLayoutOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutOrientation.swift; sourceTree = "<group>"; };
 		69E6EA9C2D5E47AE00A344C0 /* IconButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonData.swift; sourceTree = "<group>"; };
-		69E6EAB72D5F557B00A344C0 /* Appearances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearances.swift; sourceTree = "<group>"; };
 		69F967B22D4CC9F700C0B50F /* SDDSSegmentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentPreview.swift; sourceTree = "<group>"; };
 		69F967BA2D4E6EA400C0B50F /* SDDSCounterPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounterPreview.swift; sourceTree = "<group>"; };
 		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
@@ -510,14 +508,6 @@
 				6991014C2D55E6C3002C1135 /* SDDSCellPreview.swift */,
 			);
 			path = SDDSCell;
-			sourceTree = "<group>";
-		};
-		69E6EAB62D5F54F500A344C0 /* EnvironmentValues */ = {
-			isa = PBXGroup;
-			children = (
-				69E6EAB72D5F557B00A344C0 /* Appearances.swift */,
-			);
-			path = EnvironmentValues;
 			sourceTree = "<group>";
 		};
 		69F967B12D4CC9EA00C0B50F /* SDDSSegment */ = {
@@ -940,7 +930,6 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				69E6EAB62D5F54F500A344C0 /* EnvironmentValues */,
 				812DB7642D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift */,
 				811D2E2C2D115FDD001C0F48 /* AppearanceVariation.swift */,
 				81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */,
@@ -1464,7 +1453,6 @@
 				817339FC2D03628F0092608A /* RadioboxAppearance+Extensions.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
 				812DB7402D57B43900D3F4A3 /* TextAreaLabelPlacement.swift in Sources */,
-				69E6EAB82D5F557C00A344C0 /* Appearances.swift in Sources */,
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
