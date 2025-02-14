@@ -95,6 +95,15 @@ extension Cell {
     private var defaultDisclosureView: some View {
         HStack(spacing: 0) {
             value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography))
+            
+            ZStack {
+                if let icon = disclosureIcon {
+                    icon
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16)
+                }
+            }
         }
     }
     

@@ -27,7 +27,11 @@ final class CellViewModel: ObservableObject {
     @Published var rightContent: AnyView? = nil
     
     //MARK: - Disclosure
-    @Published var hasDisclosure: Bool = false
+    @Published var hasDisclosure: Bool = false {
+        didSet {
+            setDisclosureIcon()
+        }
+    }
     @Published var disclosure: AnyView? = nil
     @Published var disclosureText: String = ""
     @Published var disclosureIcon: Image? = nil
@@ -126,6 +130,17 @@ final class CellViewModel: ObservableObject {
             AnyView(Text(customText))
         case .none:
             AnyView(EmptyView())
+        }
+    }
+    
+    //MARK: - Set Disclosure
+    private func setDisclosureIcon () {
+        if hasDisclosure {
+            disclosureText = "disclosure"
+            disclosureIcon = Image(systemName: "arrow.right.to.line.compact")
+        } else {
+            disclosureIcon = nil
+            disclosureText = ""
         }
     }
 }
