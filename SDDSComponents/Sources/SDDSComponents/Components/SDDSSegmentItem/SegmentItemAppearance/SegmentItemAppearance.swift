@@ -1,7 +1,10 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct SegmentItemAppearance {
+public struct SegmentItemAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
     public let size: SegmentItemSizeConfiguration
     
     public let shapeStyle: ComponentShapeStyle

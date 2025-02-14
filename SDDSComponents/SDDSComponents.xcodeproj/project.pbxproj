@@ -99,6 +99,7 @@
 		816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9A62C97280400C3347C /* PlaceholderTextField.swift */; };
 		816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */; };
 		816C62A22CB80EC400352891 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
+		816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */; };
 		817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339D42D033BF50092608A /* ProgressBarSizeConfiguration.swift */; };
 		817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339D62D033C0A0092608A /* ProgressBarAccessibility.swift */; };
 		817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339DA2D033D3A0092608A /* CheckboxData.swift */; };
@@ -269,6 +270,10 @@
 		81685C2A2CFF898D00278446 /* SwitchAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwitchAppearance+Extensions.swift"; sourceTree = "<group>"; };
 		816AA9A62C97280400C3347C /* PlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextField.swift; sourceTree = "<group>"; };
 		816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDebugConfiguration.swift; sourceTree = "<group>"; };
+		816AA9AD2C97421F00C3347C /* TextFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAppearance.swift; sourceTree = "<group>"; };
+		816AA9AF2C97424000C3347C /* TextFieldSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSizeConfiguration.swift; sourceTree = "<group>"; };
+		816AA9B12C97425F00C3347C /* TextFieldAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAccessibility.swift; sourceTree = "<group>"; };
+		816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
 		817339D42D033BF50092608A /* ProgressBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		817339D62D033C0A0092608A /* ProgressBarAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAccessibility.swift; sourceTree = "<group>"; };
 		817339DA2D033D3A0092608A /* CheckboxData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxData.swift; sourceTree = "<group>"; };
@@ -671,6 +676,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		816E7B512D5F7F1A008A903E /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 		817339D32D033BD20092608A /* ProgressBarAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,6 +1028,7 @@
 		81BC36842C591B7400A363D0 /* SDDSComponents */ = {
 			isa = PBXGroup;
 			children = (
+				816E7B512D5F7F1A008A903E /* Environment */,
 				818FE9302C3C1CDC00F64958 /* Components.swift */,
 				81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */,
 				817580E72C37E02800E45207 /* Spinner */,
@@ -1388,6 +1402,7 @@
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				812DB7552D57B44100D3F4A3 /* TextFieldRequiredPlacement.swift in Sources */,
+				816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				817339FC2D03628F0092608A /* RadioboxAppearance+Extensions.swift in Sources */,

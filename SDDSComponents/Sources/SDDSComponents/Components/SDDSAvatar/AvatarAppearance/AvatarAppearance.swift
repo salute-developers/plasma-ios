@@ -1,6 +1,6 @@
 import Foundation
+import SwiftUI
 import SDDSThemeCore
-
 
 /**
  `AvatarAppearance` определяет внешний вид аватара, включая цвет текста, фона, цвета статусов и типографику.
@@ -13,7 +13,9 @@ import SDDSThemeCore
     - offlineStatusColor: Цвет индикатора статуса "оффлайн".
     - textTypography: Типографика текста.
  */
-public struct AvatarAppearance: Hashable {
+public struct AvatarAppearance: EnvironmentKey, Hashable {
+    public static let defaultValue: Self = .init()
+    
     let id = UUID()
     public let size: AvatarSizeConfiguration
     public let textFillStyle: FillStyle

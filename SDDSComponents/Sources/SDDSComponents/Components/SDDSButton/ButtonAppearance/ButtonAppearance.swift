@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
@@ -20,7 +21,8 @@ import Foundation
  - Methods:
     - init: Инициализирует стили кнопки с заданными параметрами.
  */
-public struct ButtonAppearance {
+public struct ButtonAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
 
     /**
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
