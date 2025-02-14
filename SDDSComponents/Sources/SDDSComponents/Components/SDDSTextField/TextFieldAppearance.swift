@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
-public struct TextFieldAppearance {
+public struct TextFieldAppearance {    
     let id = UUID()
     public let textTypography: TypographyConfiguration
     public let titleTypography: TypographyConfiguration
