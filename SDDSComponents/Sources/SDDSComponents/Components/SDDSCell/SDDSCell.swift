@@ -46,26 +46,41 @@ public struct Cell: View {
     
     public var body: some View {
         HStack(spacing: 0) {
-            VStack(spacing: 0) {
-                leftContent
-            }
-            .frame(maxHeight: .infinity , alignment: cellAlignment(contentAlignment))
-            .debug(color: Color.purple, condition: true)
-            
-            VStack(spacing: 0) {
-                if hasCenterContent {
-                    centerView
-                } else {
-                    centerContent
+            HStack {
+                VStack(spacing: 0) {
+                    leftContent
                 }
+                .frame(maxHeight: .infinity , alignment: cellAlignment(contentAlignment))
             }
-            .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            .frame(maxWidth: .infinity)
             .debug(color: Color.purple, condition: true)
             
-            VStack(spacing: 0) {
-                rightContent
+            Spacer()
+                .frame(width: appearance.size.contentPaddingStart)
+            
+            HStack {
+                VStack(spacing: 0) {
+                    if hasCenterContent {
+                        centerView
+                    } else {
+                        centerContent
+                    }
+                }
+                .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
             }
-            .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            .frame(maxWidth: .infinity)
+            .debug(color: Color.purple, condition: true)
+            
+            Spacer()
+                .frame(width: appearance.size.contentPaddingEnd)
+            
+            HStack {
+                VStack(spacing: 0) {
+                    rightContent
+                }
+                .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            }
+            .frame(maxWidth: .infinity)
             .debug(color: Color.purple, condition: true)
             
             if hasDefaultDisclosure {
@@ -142,11 +157,11 @@ extension Cell {
     private func cellAlignment(_ alignment: CellContentAlignment) -> Alignment {
         switch alignment {
         case .top:
-            return Alignment.top
+            return .top
         case .center:
-            return Alignment.center
+            return .center
         case .bottom:
-            return Alignment.bottom
+            return .bottom
         }
     }
 }
