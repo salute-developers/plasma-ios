@@ -15,7 +15,7 @@ public struct TextAreaAppearance {
     public var borderColor: ColorToken
     public var captionColor: ColorToken
     public var captionColorFocused: ColorToken
-    public var captionColorReadOnly: ColorToken
+    public var captionColorReadOnly: ColorToken?
     public var captionTypography: TypographyConfiguration
     public var counterColor: ColorToken
     public var counterColorReadOnly: ColorToken
@@ -58,7 +58,7 @@ public struct TextAreaAppearance {
         borderColor: ColorToken = .clearColor,
         captionColor: ColorToken = .clearColor,
         captionColorFocused: ColorToken = .clearColor,
-        captionColorReadOnly: ColorToken = .clearColor,
+        captionColorReadOnly: ColorToken? = nil,
         counterColor: ColorToken = .clearColor,
         counterColorReadOnly: ColorToken = .clearColor,
         cursorColor: ColorToken = .clearColor,
