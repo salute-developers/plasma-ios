@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
@@ -13,7 +14,9 @@ import Foundation
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
-public struct ChipAppearance: Hashable {
+public struct ChipAppearance: EnvironmentKey, Hashable {
+    public static let defaultValue: Self = .init()
+    
     let id = UUID()
     public let size: ChipSizeConfiguration
     public let titleColor: ColorToken

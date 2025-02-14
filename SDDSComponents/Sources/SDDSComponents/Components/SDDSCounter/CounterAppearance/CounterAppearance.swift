@@ -1,7 +1,10 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct CounterAppearance {
+public struct CounterAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
     public let size: CounterSizeConfiguration
     public let textTypography: TypographyConfiguration
     public let textColor: ButtonColor

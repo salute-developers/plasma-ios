@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /**
  `SegmentAppearance` определяет стили сегмента, включая размеры, форму, цвета и другие параметры.
@@ -11,7 +12,8 @@ import Foundation
  - Methods:
     - init: Инициализирует стили сегмента с заданными параметрами.
  */
-public struct SegmentAppearance {
+public struct SegmentAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
     /**
      Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
      */

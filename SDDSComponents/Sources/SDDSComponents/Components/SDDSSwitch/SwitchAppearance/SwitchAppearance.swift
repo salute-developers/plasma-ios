@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
@@ -12,7 +13,9 @@ import Foundation
     - subtitleColor: Цвет подзаголовка, когда переключатель включен.
     - tintColor: Цвет переключателя, когда он включен.
  */
-public struct SwitchAppearance: Hashable {
+public struct SwitchAppearance: EnvironmentKey, Hashable {
+    public static let defaultValue: Self = .init()
+    
     let id = UUID()
     public let size: SwitchSizeConfiguration
     public let titleTypography: TypographyConfiguration
