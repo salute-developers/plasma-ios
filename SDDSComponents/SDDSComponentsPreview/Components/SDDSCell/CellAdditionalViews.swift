@@ -17,10 +17,8 @@ extension CellPreview {
 //        )
 //    }
     
-    static var text: CellCustomViewProvider {
-        CellCustomViewProvider(
-            view: Text("Custom text")
-        )
+    static var text: some View {
+           Text("Custom text")
     }
     
     static var avatar: SDDSAvatar {
