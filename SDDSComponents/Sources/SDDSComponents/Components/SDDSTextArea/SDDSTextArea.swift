@@ -514,7 +514,7 @@ public struct SDDSTextArea: View {
     
     private var captionColor: Color {
         if readOnly {
-            return appearance.captionColor.color(for: colorScheme)
+            return appearance.captionColorReadOnly?.color(for: colorScheme) ?? appearance.captionColor.color(for: colorScheme)
         }
         if isFocused {
             return appearance.captionColorFocused.color(for: colorScheme)
