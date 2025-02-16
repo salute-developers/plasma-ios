@@ -8,19 +8,21 @@ struct CellPreview: PreviewProvider {
     static var previews: some View {
         Cell(
             appearance: Cell.l.appearance,
-            contentAlignment: .center,
+            alignment: .center,
             label: "label",
             title: "title",
             subtitle: "subtitle",
             disclosureText: "",
             leftContent: {
                 avatar
+                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
             },
-            centerContent: {
-                avatar
-            },
+            centerContent: {},
             rightContent: {
                 avatar
+                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
+                avatar
+                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
             },
             disclosure: {}
         )
@@ -29,7 +31,7 @@ struct CellPreview: PreviewProvider {
         
         Cell(
             appearance: Cell.l.appearance,
-            contentAlignment: .center,
+            alignment: .center,
             label: "label",
             title: "title",
             subtitle: "subtitle",

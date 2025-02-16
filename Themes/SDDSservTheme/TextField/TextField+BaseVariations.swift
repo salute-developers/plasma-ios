@@ -57,10 +57,6 @@ public struct TextField {
         )
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     public static let all: [Variation<TextFieldAppearance>] = [
         TextField.l.variation,
         TextField.l.innerLabel.variation,
@@ -95,45 +91,6 @@ public struct TextField {
         TextField.xs.outerLabel.requiredStart.variation,
         TextField.xs.requiredEnd.variation,
         TextField.xs.requiredStart.variation,
-<<<<<<< HEAD
-=======
-    public static let all: [VariationDescription<TextFieldAppearance>] = [
-        TextField.l.variationDescription,
-        TextField.l.innerLabel.variationDescription,
-        TextField.l.innerLabel.requiredEnd.variationDescription,
-        TextField.l.innerLabel.requiredStart.variationDescription,
-        TextField.l.outerLabel.variationDescription,
-        TextField.l.outerLabel.requiredEnd.variationDescription,
-        TextField.l.outerLabel.requiredStart.variationDescription,
-        TextField.l.requiredEnd.variationDescription,
-        TextField.l.requiredStart.variationDescription,
-        TextField.m.variationDescription,
-        TextField.m.innerLabel.variationDescription,
-        TextField.m.innerLabel.requiredEnd.variationDescription,
-        TextField.m.innerLabel.requiredStart.variationDescription,
-        TextField.m.outerLabel.variationDescription,
-        TextField.m.outerLabel.requiredEnd.variationDescription,
-        TextField.m.outerLabel.requiredStart.variationDescription,
-        TextField.m.requiredEnd.variationDescription,
-        TextField.m.requiredStart.variationDescription,
-        TextField.s.variationDescription,
-        TextField.s.innerLabel.variationDescription,
-        TextField.s.innerLabel.requiredEnd.variationDescription,
-        TextField.s.innerLabel.requiredStart.variationDescription,
-        TextField.s.outerLabel.variationDescription,
-        TextField.s.outerLabel.requiredEnd.variationDescription,
-        TextField.s.outerLabel.requiredStart.variationDescription,
-        TextField.s.requiredEnd.variationDescription,
-        TextField.s.requiredStart.variationDescription,
-        TextField.xs.variationDescription,
-        TextField.xs.outerLabel.variationDescription,
-        TextField.xs.outerLabel.requiredEnd.variationDescription,
-        TextField.xs.outerLabel.requiredStart.variationDescription,
-        TextField.xs.requiredEnd.variationDescription,
-        TextField.xs.requiredStart.variationDescription,
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -176,25 +133,14 @@ public struct TextFieldVariation {
 private extension TextFieldAppearance {
     static var base: TextFieldAppearance {
         var appearance = TextFieldAppearance()
-<<<<<<< HEAD
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-=======
->>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-=======
-        appearance.endContentColorReadonly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-<<<<<<< HEAD
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
@@ -205,10 +151,6 @@ private extension TextFieldAppearance {
         appearance.textBeforeColor = ColorToken.textDefaultTertiary
         appearance.textColor = ColorToken.textDefaultPrimary
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-<<<<<<< HEAD
-=======
-        appearance.textColorReadOnly = ColorToken.textDefaultPrimary
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
 }

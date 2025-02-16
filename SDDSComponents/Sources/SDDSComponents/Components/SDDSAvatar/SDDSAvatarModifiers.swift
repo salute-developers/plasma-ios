@@ -9,7 +9,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: self.status,
-            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }
@@ -20,7 +19,6 @@ public extension View where Self == SDDSAvatar {
             image: newImage,
             placeholderImage: self.placeholderImage,
             status: self.status,
-            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }
@@ -31,7 +29,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: newPlaceholderImage,
             status: self.status,
-            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }
@@ -42,7 +39,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: newStatus,
-            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }
@@ -53,7 +49,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: self.status,
-            appearance: newAppearance,
             accessibility: self.accessibility
         )
     }
@@ -64,7 +59,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: self.status,
-            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }
@@ -75,7 +69,6 @@ public extension View where Self == SDDSAvatar {
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: self.status,
-            appearance: self.appearance,
             accessibility: newAccessibility
         )
     }

@@ -29,7 +29,7 @@ struct CellView: View {
     private var cell: some View {
         Cell(
             appearance: viewModel.appearance,
-            contentAlignment: viewModel.alignment,
+            alignment: viewModel.alignment,
             label: viewModel.label,
             title: viewModel.title,
             subtitle: viewModel.subtitle,

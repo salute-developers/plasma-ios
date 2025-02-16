@@ -18,23 +18,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleTypography = TextFieldClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.innerLabel",
@@ -52,23 +39,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(l: Typographies.bodyLNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleTypography = TextFieldClearTypography(l: Typographies.bodyLNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.outerLabel",
@@ -86,13 +60,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -111,13 +78,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -150,10 +110,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -166,18 +122,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -193,13 +137,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -218,13 +155,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -257,10 +187,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -273,18 +199,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -300,13 +214,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -325,13 +232,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -364,10 +264,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -380,18 +276,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -409,23 +293,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleTypography = TextFieldClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.innerLabel",
@@ -443,23 +314,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(m: Typographies.bodyMNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleTypography = TextFieldClearTypography(m: Typographies.bodyMNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.outerLabel",
@@ -477,13 +335,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -502,13 +353,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -541,10 +385,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -557,18 +397,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -584,13 +412,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -609,13 +430,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -648,10 +462,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -664,18 +474,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -691,13 +489,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -716,13 +507,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -755,10 +539,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -771,18 +551,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -800,23 +568,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleTypography = TextFieldClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.innerLabel",
@@ -834,23 +589,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(s: Typographies.bodySNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleTypography = TextFieldClearTypography(s: Typographies.bodySNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.outerLabel",
@@ -868,13 +610,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -893,13 +628,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -932,10 +660,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -948,18 +672,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -975,13 +687,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1000,13 +705,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1039,10 +737,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1055,18 +749,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1082,13 +764,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1107,13 +782,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1146,10 +814,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1162,18 +826,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1191,23 +843,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleTypography = TextFieldClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextFieldLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "xs.outerLabel",
@@ -1225,13 +864,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1250,13 +882,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1289,10 +914,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1305,18 +926,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1332,13 +941,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.right
     
         return .init(
@@ -1357,13 +959,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextFieldRequiredPlacement.left
     
         return .init(
@@ -1396,10 +991,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1412,18 +1003,6 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1452,10 +1031,6 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1468,18 +1043,6 @@ public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearanc
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextFieldAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.success,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1488,15 +1051,7 @@ private extension TextFieldAppearance {
     var `default`: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-        appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultSecondary
@@ -1505,29 +1060,13 @@ private extension TextFieldAppearance {
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-<<<<<<< HEAD
-=======
-        appearance.textColorReadOnly = ColorToken.textDefaultPrimary
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     
     var error: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultNegative
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
->>>>>>> c1d5e653 (chore: added fixes)
-        appearance.captionColorReadOnly = ColorToken.textDefaultNegative
-<<<<<<< HEAD
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultNegative
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultNegative
@@ -1535,31 +1074,14 @@ private extension TextFieldAppearance {
         appearance.startContentColor = ColorToken.textDefaultNegative
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultNegative
-<<<<<<< HEAD
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-=======
-        appearance.textColorFocused = ColorToken.textDefaultNegative
-        appearance.textColorReadOnly = ColorToken.textDefaultNegative
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     
     var success: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultPositive
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
->>>>>>> c1d5e653 (chore: added fixes)
-        appearance.captionColorReadOnly = ColorToken.textDefaultPositive
-<<<<<<< HEAD
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultPositive
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultPositive
@@ -1567,31 +1089,14 @@ private extension TextFieldAppearance {
         appearance.startContentColor = ColorToken.textDefaultPositive
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPositive
-<<<<<<< HEAD
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-=======
-        appearance.textColorFocused = ColorToken.textDefaultPositive
-        appearance.textColorReadOnly = ColorToken.textDefaultPositive
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     
     var warning: TextFieldAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultWarning
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
->>>>>>> c1d5e653 (chore: added fixes)
-        appearance.captionColorReadOnly = ColorToken.textDefaultWarning
-<<<<<<< HEAD
-        appearance.labelPlacement = TextFieldLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultWarning
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultWarning
@@ -1599,12 +1104,7 @@ private extension TextFieldAppearance {
         appearance.startContentColor = ColorToken.textDefaultWarning
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultWarning
-<<<<<<< HEAD
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-=======
-        appearance.textColorFocused = ColorToken.textDefaultWarning
-        appearance.textColorReadOnly = ColorToken.textDefaultWarning
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     

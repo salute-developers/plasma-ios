@@ -56,49 +56,7 @@ final class CellViewModel: ObservableObject {
     //MARK: - Additional views
     @Published var customText: String = "Custom text"
     
-    init() {
-        //        self.avatar = SDDSAvatar(
-        //            text: "AB",
-        //            image: nil,
-        //            placeholderImage: nil,
-        //            status: .online,
-        //            appearance: appearance.avatarAppearance,
-        //            accessibility: AvatarAccessibility()
-        //        )
-        //        self.iconButton = IconButton(
-        //            iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
-        //            isDisabled: false,
-        //            isLoading: false,
-        //            spinnerImage: Image.image("spinner"),
-        //            appearance: appearance.iconButtonAppearance,
-        //            layoutMode: .fixedWidth(.packed),
-        //            action: {}
-        //        )
-        //        self.switch = SDDSSwitch(
-        //            title: "",
-        //            subtitle: "",
-        //            isOn: .constant(true),
-        //            isEnabled: true,
-        //            appearance: SDDSSwitch.large.default.appearance,
-        //            switchAccessibility: SwitchAccessibility()
-        //        )
-        //        self.checkbox = SDDSCheckbox(
-        //            state: .constant(.indeterminate),
-        //            title: "Valur",
-        //            subtitle: "Description",
-        //            isEnabled: true,
-        //            images: .checkbox,
-        //            appearance: SDDSCheckbox.medium.default.appearance
-        //        )
-        //        self.radiobox = SDDSRadiobox(
-        //            isSelected: .constant(true),
-        //            title: "Value",
-        //            subtitle: "Description",
-        //            isEnabled: true,
-        //            images: .defaultImages,
-        //            appearance: SDDSRadiobox.medium.default.appearance
-        //        )
-    }
+    init() {}
     
     //MARK: - Add preview in content
     func addView(for content: CellContentPreview) -> AnyView {
@@ -107,12 +65,12 @@ final class CellViewModel: ObservableObject {
             AnyView(
                 SDDSAvatar(
                     text: "AB",
-                    image: .image(Image.image("checker")),
+                    image: nil,
                     placeholderImage: nil,
                     status: .online,
-                    appearance: appearance.avatarAppearance,
                     accessibility: AvatarAccessibility()
                 )
+                .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
             )
         case .iconButton:
             AnyView(

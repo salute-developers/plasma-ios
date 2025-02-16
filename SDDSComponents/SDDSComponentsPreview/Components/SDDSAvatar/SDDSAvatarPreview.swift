@@ -11,9 +11,9 @@ struct SDDSAvatarPreview: PreviewProvider {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: SDDSAvatar.extraExtraLarge.medium.appearance,
             accessibility: AvatarAccessibility()
         )
+        .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")
     }

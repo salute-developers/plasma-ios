@@ -20,11 +20,11 @@ struct CellAppearance: CodeGenerationAppearance {
 //    public var switchAppearance: String?
 //    public var disclosureIcon: String?
     
-    init(variation: ComponentConfiguration<CellProps>.Variation, component: CodeGenerationComponent) {
+    init(variation: CellConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: CellProps, id: String?, component: CodeGenerationComponent) {
+    init(props: CellProps, id: String? = nil, component: CodeGenerationComponent) {
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.labelColor = ColorTokenContextBuilder(props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context

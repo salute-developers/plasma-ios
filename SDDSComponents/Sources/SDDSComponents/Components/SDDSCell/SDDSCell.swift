@@ -4,8 +4,8 @@ import SwiftUI
 
 public struct Cell: View {
     public let appearance: CellAppearance
-    public let contentAlignment: CellContentAlignment
-
+    public let alignment: CellContentAlignment
+    
     public let label: String
     public let title: String
     public let subtitle: String
@@ -18,9 +18,11 @@ public struct Cell: View {
     public let rightContent: AnyView
     public let disclosure: AnyView
     
+    @Environment(\.colorScheme) var colorScheme
+    
     public init(
         appearance: CellAppearance,
-        contentAlignment: CellContentAlignment = .center,
+        alignment: CellContentAlignment = .center,
         label: String = "",
         title: String = "",
         subtitle: String = "",
@@ -32,56 +34,37 @@ public struct Cell: View {
         @ViewBuilder disclosure: @escaping () -> some View
     ) {
         self.appearance = appearance
-        self.contentAlignment = contentAlignment
+        self.alignment = alignment
         self.label = label
         self.title = title
         self.subtitle = subtitle
         self.disclosureIcon = disclosureIcon
         self.disclosureText = disclosureText
-        self.leftContent = AnyView(leftContent())
-        self.centerContent = AnyView(centerContent())
-        self.rightContent = AnyView(rightContent())
+        self.leftContent = AnyView(HStack { AnyView(leftContent()) })
+        self.centerContent = AnyView(VStack { AnyView(leftContent()) })
+        self.rightContent = AnyView(HStack { AnyView(rightContent()) })
         self.disclosure = AnyView(disclosure())
     }
     
     public var body: some View {
-        HStack(spacing: 0) {
-            HStack {
-                VStack(spacing: 0) {
-                    leftContent
-                }
-                .frame(maxHeight: .infinity , alignment: cellAlignment(contentAlignment))
-            }
-            .frame(maxWidth: .infinity)
-            .debug(color: Color.purple, condition: true)
+        HStack(alignment: contentAlignment, spacing: 0) {
+            leftContent
+                .frame(maxWidth: .infinity)
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingStart)
             
-            HStack {
-                VStack(spacing: 0) {
-                    if hasCenterContent {
-                        centerView
-                    } else {
-                        centerContent
-                    }
-                }
-                .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
+            if hasCenterContent {
+                centerView
+            } else {
+                centerContent
             }
-            .frame(maxWidth: .infinity)
-            .debug(color: Color.purple, condition: true)
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
             
-            HStack {
-                VStack(spacing: 0) {
-                    rightContent
-                }
-                .frame(maxHeight: .infinity ,alignment: cellAlignment(contentAlignment))
-            }
-            .frame(maxWidth: .infinity)
-            .debug(color: Color.purple, condition: true)
+            rightContent
+                .frame(maxWidth: .infinity)
             
             if hasDefaultDisclosure {
                 defaultDisclosureView
@@ -89,7 +72,6 @@ public struct Cell: View {
                 disclosure
             }
         }
-        .debug(color: Color.blue, condition: true)
     }
 }
 
@@ -99,15 +81,15 @@ extension Cell {
         VStack(spacing: 0) {
             if hasCenterContent {
                 if !label.isEmpty {
-                    value(for: label, typography: applyTypography(for: appearance.labelTypography))
+                    value(for: label, typography: applyTypography(for: appearance.labelTypography), textColor: appearance.labelColor)
                 }
                 
                 if !title.isEmpty {
-                    value(for: title, typography: applyTypography(for: appearance.titleTypography))
+                    value(for: title, typography: applyTypography(for: appearance.titleTypography), textColor: appearance.titleColor)
                 }
                 
                 if !subtitle.isEmpty {
-                    value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography))
+                    value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
                 }
             }
         }
@@ -115,15 +97,16 @@ extension Cell {
     
     //MARK: - Other additional view
     @ViewBuilder
-    private func value(for value: String, typography: TypographyToken) -> some View {
+    private func value(for value: String, typography: TypographyToken, textColor: ColorToken) -> some View {
         Text(value)
             .typography(typography)
+            .foregroundColor(textColor.color(for: colorScheme))
     }
     
     @ViewBuilder
     private var defaultDisclosureView: some View {
         HStack(spacing: 0) {
-            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography))
+            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
             
             ZStack {
                 if let icon = disclosureIcon {
@@ -153,8 +136,9 @@ extension Cell {
             fatalError("Undefined Cell Typography for size \(appearance.size.debugDescription).")
         }
     }
+    
     //MARK: - Alignment
-    private func cellAlignment(_ alignment: CellContentAlignment) -> Alignment {
+    private var contentAlignment: VerticalAlignment {
         switch alignment {
         case .top:
             return .top

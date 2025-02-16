@@ -10,29 +10,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var size =  TextAreaClearAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(9.0)
         size.boxPaddingTop = CGFloat(9.0)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleTypography = TextAreaClearTypography(l: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.innerLabel",
@@ -42,29 +28,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var outerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.LOuterlabel> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(4.0)
         size.titleInnerPadding = CGFloat(4.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(l: Typographies.bodyLNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleTypography = TextAreaClearTypography(l: Typographies.bodyLNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "l.outerLabel",
@@ -74,19 +46,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:24.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -97,19 +61,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:24.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -136,10 +92,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -151,17 +103,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -169,19 +110,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:24.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -192,19 +125,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:24.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -231,10 +156,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -246,17 +167,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -264,19 +174,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -287,19 +189,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:8.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -326,10 +220,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -341,17 +231,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -361,29 +240,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var size =  TextAreaClearAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(6.0)
         size.boxPaddingTop = CGFloat(6.0)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleTypography = TextAreaClearTypography(m: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.innerLabel",
@@ -393,29 +258,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var outerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.MOuterlabel> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(4.0)
         size.titleInnerPadding = CGFloat(4.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(m: Typographies.bodyMNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleTypography = TextAreaClearTypography(m: Typographies.bodyMNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "m.outerLabel",
@@ -425,19 +276,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:20.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -448,19 +291,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:20.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -487,10 +322,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -502,17 +333,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -520,19 +340,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:20.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -543,19 +355,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:20.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -582,10 +386,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -597,17 +397,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -615,19 +404,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -638,19 +419,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:7.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -677,10 +450,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -692,17 +461,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -712,29 +470,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var size =  TextAreaClearAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(4.0)
         size.boxPaddingTop = CGFloat(4.0)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(0.0)
         size.titleInnerPadding = CGFloat(0.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleTypography = TextAreaClearTypography(s: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.inner
-        appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.innerLabel",
@@ -744,29 +488,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var outerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.SOuterlabel> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(4.0)
         size.titleInnerPadding = CGFloat(4.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(s: Typographies.bodySNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleTypography = TextAreaClearTypography(s: Typographies.bodySNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "s.outerLabel",
@@ -776,19 +506,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:17.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -799,19 +521,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:17.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -838,10 +552,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -853,17 +563,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -871,19 +570,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:17.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -894,19 +585,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:6.0, y:17.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -933,10 +616,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -948,17 +627,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -966,19 +634,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -989,19 +649,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:6.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -1028,10 +680,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1043,17 +691,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1063,29 +700,15 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var size =  TextAreaClearAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(8.0)
         size.boxPaddingTop = CGFloat(8.0)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleTypography = TextAreaClearTypography(xs: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
-        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelPlacement = TextAreaLabelPlacement.outer
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
->>>>>>> c1d5e653 (chore: added fixes)
     
         return .init(
             name: "xs.outerLabel",
@@ -1095,19 +718,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:13.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -1118,19 +733,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:13.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -1157,10 +764,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1172,17 +775,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1190,19 +782,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:2.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.right
     
         return .init(
@@ -1213,19 +797,11 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.iconActionSize = CGSize(width:0.0, height:0.0)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
 
         var appearance = appearance
         appearance.size = size
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.requiredPlacement = TextAreaRequiredPlacement.left
     
         return .init(
@@ -1252,10 +828,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1267,17 +839,6 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1300,10 +861,6 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             appearance: appearance.warning
         )
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -1315,17 +872,6 @@ public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance>
             name: name,
             appearance: appearance
         )
-<<<<<<< HEAD
-=======
-    var views: [AppearanceVariation<TextAreaAppearance>] {
-        [
-            self.`default`,
-            self.error,
-            self.warning,
-        ]
->>>>>>> b01b2af7 (chore: added fixes to demo app)
-=======
->>>>>>> eae55595 (feat: added variations support in demo app)
     }
 }
 
@@ -1334,15 +880,7 @@ private extension TextAreaAppearance {
     var `default`: TextAreaAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-        appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultSecondary
@@ -1350,72 +888,34 @@ private extension TextAreaAppearance {
         appearance.startContentColor = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-<<<<<<< HEAD
-=======
-        appearance.textColorReadOnly = ColorToken.textDefaultPrimary
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     
     var error: TextAreaAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultNegative
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
->>>>>>> c1d5e653 (chore: added fixes)
-        appearance.captionColorReadOnly = ColorToken.textDefaultNegative
-<<<<<<< HEAD
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultNegative
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultNegative
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
         appearance.startContentColor = ColorToken.textDefaultNegative
         appearance.textColor = ColorToken.textDefaultNegative
-<<<<<<< HEAD
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-=======
-        appearance.textColorFocused = ColorToken.textDefaultNegative
-        appearance.textColorReadOnly = ColorToken.textDefaultNegative
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     
     var warning: TextAreaAppearance {
         var appearance = self
         appearance.captionColor = ColorToken.textDefaultWarning
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
-=======
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
->>>>>>> c1d5e653 (chore: added fixes)
-        appearance.captionColorReadOnly = ColorToken.textDefaultWarning
-<<<<<<< HEAD
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColor = ColorToken.surfaceDefaultWarning
         appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
         appearance.placeholderColor = ColorToken.textDefaultWarning
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
         appearance.startContentColor = ColorToken.textDefaultWarning
         appearance.textColor = ColorToken.textDefaultWarning
-<<<<<<< HEAD
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-=======
-        appearance.textColorFocused = ColorToken.textDefaultWarning
-        appearance.textColorReadOnly = ColorToken.textDefaultWarning
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
     

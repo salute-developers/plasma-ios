@@ -82,11 +82,7 @@ public struct TextArea {
         TextArea.xs.outerLabel.requiredEnd.variation,
         TextArea.xs.outerLabel.requiredStart.variation,
         TextArea.xs.requiredEnd.variation,
-<<<<<<< HEAD
-        TextArea.xs.requiredStart.variation
-=======
         TextArea.xs.requiredStart.variation,
->>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -129,15 +125,8 @@ public struct TextAreaVariation {
 private extension TextAreaAppearance {
     static var base: TextAreaAppearance {
         var appearance = TextAreaAppearance()
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultAccent
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
->>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary
@@ -145,15 +134,7 @@ private extension TextAreaAppearance {
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-=======
-        appearance.endContentColorReadonly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-<<<<<<< HEAD
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
@@ -161,10 +142,6 @@ private extension TextAreaAppearance {
         appearance.startContentColor = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
         appearance.textColorFocused = ColorToken.textDefaultPrimary
-<<<<<<< HEAD
-=======
-        appearance.textColorReadOnly = ColorToken.textDefaultPrimary
->>>>>>> c1d5e653 (chore: added fixes)
         return appearance
     }
 }

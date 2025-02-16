@@ -24,9 +24,9 @@ struct AvatarView: View {
                         image: viewModel.image,
                         placeholderImage: viewModel.placeholderImage,
                         status: viewModel.status,
-                        appearance: viewModel.appearance,
                         accessibility: viewModel.accessibility
                     )
+                    .environment(\.avatarAppearance, viewModel.appearance)
                     Spacer()
                 }
             }

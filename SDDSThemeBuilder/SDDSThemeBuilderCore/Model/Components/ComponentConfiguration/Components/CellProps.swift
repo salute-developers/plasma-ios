@@ -3,11 +3,6 @@ import Foundation
 struct CellProps: MergeableConfiguration, Codable {
     typealias Props = CellProps
     
-    var labelColor: ColorKeyValue?
-    var titleColor: ColorKeyValue?
-    var subtitleColor: ColorKeyValue?
-    var disclosureTextColor: ColorKeyValue?
-    var disclosureIconColor: ColorKeyValue?
     var contentPaddingStart: KeyValue<Double>?
     var contentPaddingEnd: KeyValue<Double>?
     var labelStyle: KeyValue<String>?
@@ -15,6 +10,11 @@ struct CellProps: MergeableConfiguration, Codable {
     var subtitleStyle: KeyValue<String>?
     var disclosureTextStyle: KeyValue<String>?
     var avatarStyle: KeyValue<String>?
+    var labelColor: ColorKeyValue?
+    var titleColor: ColorKeyValue?
+    var subtitleColor: ColorKeyValue?
+    var disclosureTextColor: ColorKeyValue?
+    var disclosureIconColor: ColorKeyValue?
 //    var iconButtonStyle: KeyValue<String>?
 //    var checkBoxStyle: KeyValue<String>?
 //    var radioBoxStyle: KeyValue<String>?

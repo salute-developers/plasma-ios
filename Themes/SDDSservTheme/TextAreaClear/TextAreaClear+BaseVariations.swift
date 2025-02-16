@@ -82,11 +82,7 @@ public struct TextAreaClear {
         TextAreaClear.xs.outerLabel.requiredEnd.variation,
         TextAreaClear.xs.outerLabel.requiredStart.variation,
         TextAreaClear.xs.requiredEnd.variation,
-<<<<<<< HEAD
-        TextAreaClear.xs.requiredStart.variation
-=======
         TextAreaClear.xs.requiredStart.variation,
->>>>>>> eae55595 (feat: added variations support in demo app)
     ]
 }
 
@@ -129,14 +125,7 @@ public struct TextAreaClearVariation {
 private extension TextAreaAppearance {
     static var base: TextAreaAppearance {
         var appearance = TextAreaAppearance()
-<<<<<<< HEAD
-<<<<<<< HEAD
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-=======
-        appearance.captionColorFocused = ColorToken.textDefaultAccent
->>>>>>> eae55595 (feat: added variations support in demo app)
-=======
->>>>>>> c1d5e653 (chore: added fixes)
         appearance.captionTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.chipGroupAppearance = SDDSChipGroup.dense.appearance
         appearance.counterColor = ColorToken.textDefaultSecondary
@@ -144,15 +133,7 @@ private extension TextAreaAppearance {
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
-<<<<<<< HEAD
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-=======
-        appearance.endContentColorReadonly = ColorToken.textDefaultSecondary.withOpacity(0.4)
-<<<<<<< HEAD
-        appearance.labelPlacement = TextAreaLabelPlacement.none
->>>>>>> 677b6f22 (chore: fixed label placement and required placement handling)
-=======
->>>>>>> cb314b2b (chore: regenerated theme)
         appearance.lineColorReadOnly = ColorToken.surfaceDefaultTransparentPrimary
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary

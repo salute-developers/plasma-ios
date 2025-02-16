@@ -27,7 +27,6 @@ extension CellPreview {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: SDDSAvatar.extraExtraLarge.large.appearance,
             accessibility: AvatarAccessibility()
         )
     }

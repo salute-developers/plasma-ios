@@ -703,10 +703,6 @@ public struct SDDSTextField: View {
         appearance.requiredPlacement != .none
     }
     
-    private var required: Bool {
-        appearance.requiredPlacement != .none
-    }
-    
     private var shouldCenterText: Bool {
         return appearance.labelPlacement == .outer || appearance.labelPlacement == .none || !shouldShowInnerTitle
     }
