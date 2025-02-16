@@ -14,10 +14,10 @@ struct CellAppearance: CodeGenerationAppearance {
     public var disclosureTextColor: String?
     public var disclosureIconColor: String?
     public var avatarAppearance: String?
-    public var iconButtonAppearance: String?
-    public var checkBoxAppearance: String?
-    public var radioBoxAppearance: String?
-    public var switchAppearance: String?
+//    public var iconButtonAppearance: String?
+//    public var checkBoxAppearance: String?
+//    public var radioBoxAppearance: String?
+//    public var switchAppearance: String?
 //    public var disclosureIcon: String?
     
     init(variation: ComponentConfiguration<CellProps>.Variation, component: CodeGenerationComponent) {
@@ -39,17 +39,17 @@ struct CellAppearance: CodeGenerationAppearance {
         if let avatarStyle = props.avatarStyle?.value {
             self.avatarAppearance = ComponentStyleContextBuilder(avatarStyle).context
         }
-        if let iconButtonStyle = props.iconButtonStyle?.value {
-            self.iconButtonAppearance = ComponentStyleContextBuilder(iconButtonStyle).context
-        }
-        if let checkBoxStyle = props.checkBoxStyle?.value {
-            self.checkBoxAppearance = ComponentStyleContextBuilder(checkBoxStyle).context
-        }
-        if let radioBoxStyle = props.radioBoxStyle?.value {
-            self.radioBoxAppearance = ComponentStyleContextBuilder(radioBoxStyle).context
-        }
-        if let switchStyle = props.switchStyle?.value {
-            self.switchAppearance = ComponentStyleContextBuilder(switchStyle).context
-        }
+//        if let iconButtonStyle = props.iconButtonStyle?.value {
+//            self.iconButtonAppearance = ComponentStyleContextBuilder(iconButtonStyle).context
+//        }
+//        if let checkBoxStyle = props.checkBoxStyle?.value {
+//            self.checkBoxAppearance = ComponentStyleContextBuilder(checkBoxStyle).context
+//        }
+//        if let radioBoxStyle = props.radioBoxStyle?.value {
+//            self.radioBoxAppearance = ComponentStyleContextBuilder(radioBoxStyle).context
+//        }
+//        if let switchStyle = props.switchStyle?.value {
+//            self.switchAppearance = ComponentStyleContextBuilder(switchStyle).context
+//        }
     }
 }

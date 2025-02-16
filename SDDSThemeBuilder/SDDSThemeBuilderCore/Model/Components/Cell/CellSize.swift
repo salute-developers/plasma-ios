@@ -6,10 +6,10 @@ struct CellSize: CodeGenerationSize {
     var contentPaddingStart: String?
     var contentPaddingEnd: String?
     var avatarStyle: String?
-    var iconButtonStyle: String?
-    var checkBoxStyle: String?
-    var radioBoxStyle: String?
-    var switchStyle: String?
+//    var iconButtonStyle: String?
+//    var checkBoxStyle: String?
+//    var radioBoxStyle: String?
+//    var switchStyle: String?
     
     init(variation: ComponentConfiguration<CellProps>.Variation, nullify: Bool) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
