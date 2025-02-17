@@ -2,11 +2,13 @@ import Foundation
 
 enum StencilTemplate: String {
     // MARK: - Tokens
+    case spacingToken = "SpacingToken"
     case colorToken = "ColorToken"
     case shapeToken = "ShapeToken"
     case shadowToken = "ShadowToken"
     case typographyToken = "TypographyToken"
     case gradientToken = "GradientToken"
+    case spacings = "Spacings"
     case colors = "Colors"
     case shapes = "Shapes"
     case shadows = "Shadows"

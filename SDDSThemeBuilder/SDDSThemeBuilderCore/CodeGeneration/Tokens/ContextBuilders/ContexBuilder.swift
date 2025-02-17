@@ -20,7 +20,7 @@ extension ContexBuilder {
                 return .error(GeneralError.decoding)
             }
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
     

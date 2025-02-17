@@ -5,21 +5,29 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
     private let outputDirectoryURL: URL
     private let templateRender: Renderable
     private let component: CodeGenerationComponent
+    private let themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
 
     init(component: CodeGenerationComponent,
          outputDirectoryURL: URL,
-         templateRender: Renderable = TemplateRenderer()) {
+         templateRender: Renderable = TemplateRenderer(),
+         themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
         self.component = component
         self.outputDirectoryURL = outputDirectoryURL
         self.templateRender = templateRender
-        super.init(name: "Generate Swift Code")
+        self.themeConfig = themeConfig
+        
+        super.init(name: "Generate \(themeConfig.name)Theme.\(component.rawValue) component")
     }
 
     @discardableResult override func run() -> CommandResult {
         super.run()
         
-        guard let jsonData = try? Data(contentsOf: component.url) else {
-            return .error(GeneralError.invalidFilename)
+        let baseURL = URL(string: ThemeBuilderConfiguration.Theme.baseURL)?
+            .deletingLastPathComponent()
+            .appending(component: "components")
+            .appending(component: themeConfig.url.deletingLastPathComponent().lastPathComponent)
+        guard let baseURL = baseURL, let jsonData = try? Data(contentsOf: component.url(baseURL: baseURL)) else {
+            return .error(GeneralError.schemeNotFound)
         }
         
         let decoder = JSONDecoder()

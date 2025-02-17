@@ -25,7 +25,7 @@ public enum CommandResult {
     case data(Data)
     case dictionary([String: Any])
     case generated(String)
-    case error(Error)
+    case error(GeneralError)
     case url(URL)
     case schemeDirectory(SchemeDirectory)
     case value(Any)

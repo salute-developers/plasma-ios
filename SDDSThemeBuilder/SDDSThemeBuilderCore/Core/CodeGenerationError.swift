@@ -1,13 +1,13 @@
 import Foundation
 
-enum CodeGenerationError: Error, Equatable {
+public enum CodeGenerationError: Error, Equatable {
     case templateLoadingFailed
     case renderingFailed
     case invalidData
     case fileManager(Error)
 }
 
-func == (lhs: CodeGenerationError, rhs: CodeGenerationError) -> Bool {
+public func == (lhs: CodeGenerationError, rhs: CodeGenerationError) -> Bool {
     switch (lhs, rhs) {
     case (.templateLoadingFailed, .templateLoadingFailed),
          (.renderingFailed, .renderingFailed),

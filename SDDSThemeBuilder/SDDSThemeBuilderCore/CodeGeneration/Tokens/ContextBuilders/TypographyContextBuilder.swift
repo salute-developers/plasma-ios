@@ -23,7 +23,7 @@ final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
                 return .error(GeneralError.decoding)
             }
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
 }

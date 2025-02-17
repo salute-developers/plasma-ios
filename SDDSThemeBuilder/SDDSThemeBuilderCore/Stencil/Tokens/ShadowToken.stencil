@@ -6,22 +6,19 @@ import UIKit
 
 public extension ShadowToken {
     {%- for key, value in json %}
-    
-    {% ensure_value_exists value.color %}
-    {% ensure_value_exists value.offset.width %}
-    {% ensure_value_exists value.offset.height %}
-    {% ensure_value_exists value.opacity %}
-    {% ensure_value_exists value.radius %}
-    
     static var {{ key }}: Self {
         Self(
-            color: Color(UIColor(hex: "{{ value.color|ensure }}")),
-            offset: Offset(
-                width: {{ value.offset.width|ensure }},
-                height: {{ value.offset.height|ensure }}
-            ),
-            opacity: {{ value.opacity|ensure }},
-            radius: {{ value.radius|ensure }}
+            layers: [
+                {%- for value in json[key] %}
+                Self.Layer(
+                    color: Color(UIColor(hex: "{{ value.color|ensure_valid_hex|default:'' }}")),
+                    offsetX: {{ value.offsetX|ensure|ensure_double_exists|default: 0 }},
+                    offsetY: {{ value.offsetY|ensure|ensure_double_exists|default: 0 }},
+                    blurRadius: {{ value.blurRadius|ensure|ensure_double_exists|default: 0 }},
+                    spreadRadius: {{ value.spreadRadius|ensure|ensure_double_exists|default: 0 }}
+                ){% if not forloop.last %},{% endif %}
+                {%- endfor %}
+            ]
         )
     }
     {%- endfor %}

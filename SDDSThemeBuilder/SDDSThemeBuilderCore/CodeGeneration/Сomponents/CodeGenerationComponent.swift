@@ -11,14 +11,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 }
 
 extension CodeGenerationComponent {
-    func command(outputURL: URL) -> Command {
+    func command(outputURL: URL, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> Command {
         switch self {
         case .basicButton, .iconButton, .linkButton:
-            GenerateComponentCommand<ButtonProps, ButtonAppearance, ButtonSize>(component: self, outputDirectoryURL: outputURL)
+            GenerateComponentCommand<ButtonProps, ButtonAppearance, ButtonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .textField, .textFieldClear:
-            GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL)
+            GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .textArea, .textAreaClear:
-            GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL)
+            GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     
@@ -65,12 +65,11 @@ extension CodeGenerationComponent {
         }
     }
     
-    var url: URL {
-        baseURL.appending(component: configurationFilename)
-    }
-
-    var baseURL: URL {
-        return URL(string: "https://raw.githubusercontent.com/salute-developers/theme-converter/refs/heads/main/components/sdds_serv/")!
+    func url(baseURL: URL) -> URL {
+        let result = baseURL
+            .appending(component: configurationFilename)
+        
+        return result
     }
 }
 

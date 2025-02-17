@@ -1,7 +1,8 @@
 import Foundation
 
-enum GeneralError: Error {
+public enum GeneralError: Error {
     case decoding
+    case schemeNotFound
     case invalidFilename
     case invalidSchemeDirectory
     case invalidThemeDirectory
@@ -15,5 +16,8 @@ enum GeneralError: Error {
     case invalidPalette
     case fontNotFound
     case fontExtensionError
+    case unableWriteData
+    case nsError(Error)
+    case codeGeneration(CodeGenerationError)
 }
 
