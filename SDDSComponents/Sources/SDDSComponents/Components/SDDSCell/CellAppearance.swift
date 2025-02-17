@@ -6,7 +6,7 @@ import Foundation
  
  - Properties:
  - size: Конфигурация размеров ячейки.
- - labelStyle: Стиль типографики для лейбла.
+ - labelAppearance: Стиль типографики для лейбла.
  - labelColor: Цвет лейбла.
  - titleStyle: Стиль типографики для заголовка.
  - titleColor: Цвет заголовка.
@@ -85,18 +85,18 @@ public struct CellAppearance {
 //    /**
 //     Стиль компонента CheckBox.
 //     */
-    public var checkBoxStyle: CheckboxAppearance
-//    
+    public var checkBoxAppearance: CheckboxAppearance
+//
 //    /**
 //     Стиль компонента RadioBox.
 //     */
-    public var radioBoxStyle: RadioboxAppearance
-//    
+    public var radioBoxAppearance: RadioboxAppearance
+//
 //    /**
 //     Стиль компонента Switch.
 //     */
-    public var switchStyle: SwitchAppearance
-//    
+    public var switchAppearance: SwitchAppearance
+//
 //    public var disclosureIcon: DisclosureImage
     
     public init(
@@ -112,9 +112,9 @@ public struct CellAppearance {
         disclosureIconColor: ColorToken = .clearColor,
         avatarAppearance: AvatarAppearance = AvatarAppearance(),
         iconButtonAppearance: ButtonAppearance = ButtonAppearance(),
-        checkBoxStyle: CheckboxAppearance = CheckboxAppearance(),
-        radioBoxStyle: RadioboxAppearance = RadioboxAppearance(),
-        switchStyle: SwitchAppearance = SwitchAppearance()
+        checkBoxAppearance: CheckboxAppearance = CheckboxAppearance(),
+        radioBoxAppearance: RadioboxAppearance = RadioboxAppearance(),
+        switchAppearance: SwitchAppearance = SwitchAppearance()
 //        disclosureIcon: DisclosureImage
     ) {
         self.size = size
@@ -129,9 +129,9 @@ public struct CellAppearance {
         self.disclosureIconColor = disclosureIconColor
         self.avatarAppearance = avatarAppearance
         self.iconButtonAppearance = iconButtonAppearance
-        self.checkBoxStyle = checkBoxStyle
-        self.radioBoxStyle = radioBoxStyle
-        self.switchStyle = switchStyle
+        self.checkBoxAppearance = checkBoxAppearance
+        self.radioBoxAppearance = radioBoxAppearance
+        self.switchAppearance = switchAppearance
 //        self.disclosureIcon: DisclosureImage
     }
 }

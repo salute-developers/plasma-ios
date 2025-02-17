@@ -18,6 +18,7 @@ public struct SDDSButton: View {
     public let isSelected: Bool
     
     @Environment(\.colorScheme) var colorScheme
+    
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
     @State private var isHovered: Bool = false

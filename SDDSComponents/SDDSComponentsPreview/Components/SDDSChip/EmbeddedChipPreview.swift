@@ -10,7 +10,7 @@ struct EmbeddedChipPreview: PreviewProvider {
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
-            appearance: EmbeddedChip.medium.secondary.appearance,
+            appearance: EmbeddedChip.m.secondary.appearance,
             removeAction: {}
         )
         .previewLayout(PreviewLayout.sizeThatFits)

@@ -10,14 +10,14 @@ struct CellProps: MergeableConfiguration, Codable {
     var subtitleStyle: KeyValue<String>?
     var disclosureTextStyle: KeyValue<String>?
     var avatarStyle: KeyValue<String>?
+    var iconButtonStyle: KeyValue<String>?
+    var checkBoxStyle: KeyValue<String>?
+    var radioBoxStyle: KeyValue<String>?
+    var switchStyle: KeyValue<String>?
+    var disclosureIcon: ColorKeyValue?
     var labelColor: ColorKeyValue?
     var titleColor: ColorKeyValue?
     var subtitleColor: ColorKeyValue?
     var disclosureTextColor: ColorKeyValue?
     var disclosureIconColor: ColorKeyValue?
-//    var iconButtonStyle: KeyValue<String>?
-//    var checkBoxStyle: KeyValue<String>?
-//    var radioBoxStyle: KeyValue<String>?
-//    var switchStyle: KeyValue<String>?
-    //    var disclosureIcon:
 }

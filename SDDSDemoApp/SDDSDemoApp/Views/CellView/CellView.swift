@@ -16,6 +16,7 @@ struct CellView: View {
                 cell
             }
             Section(header: Text("Cell")) {
+                cellVariations
                 contentLeft
                 contentCenter
                 contentRight
@@ -40,6 +41,10 @@ struct CellView: View {
             rightContent: { viewModel.rightContent },
             disclosure: { viewModel.disclosure }
         )
+    }
+    
+    private var cellVariations: some View {
+        VariationsView(viewModel: viewModel)
     }
     
     private var contentLeft: some View {

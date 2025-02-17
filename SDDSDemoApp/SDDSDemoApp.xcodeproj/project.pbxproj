@@ -21,6 +21,7 @@
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
 		699101502D55E75A002C1135 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6991014F2D55E74C002C1135 /* CellView.swift */; };
 		699101522D55E810002C1135 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699101512D55E80A002C1135 /* CellViewModel.swift */; };
+		69C0685B2D62FFEC008634ED /* CellVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C0685A2D62FFE1008634ED /* CellVariationProvider.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
@@ -104,6 +105,7 @@
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
 		6991014F2D55E74C002C1135 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		699101512D55E80A002C1135 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		69C0685A2D62FFE1008634ED /* CellVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVariationProvider.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				6991014F2D55E74C002C1135 /* CellView.swift */,
 				699101512D55E80A002C1135 /* CellViewModel.swift */,
+				69C0685A2D62FFE1008634ED /* CellVariationProvider.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
+				69C0685B2D62FFEC008634ED /* CellVariationProvider.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,

@@ -15,11 +15,17 @@ let package = Package(
         .package(name: "SDDSComponents", path: "../"),
         .package(name: "SDDSThemeCore", path: "../../SDDSThemeBuilder/SDDSThemeCore"),
         .package(name: "SDDSServTheme", path: "../../Themes/SDDSservTheme")
+//        .package(name: "SDDSIcons", path: "../../SDDSIcons")
     ],
     targets: [
         .target(
             name: "SDDSComponentsPreview",
-            dependencies: ["SDDSServTheme", "SDDSThemeCore", "SDDSComponents"],
+            dependencies: [
+                "SDDSServTheme",
+                "SDDSThemeCore",
+                "SDDSComponents"
+//                .product(name: "SDDSIcons", package: "SDDSIcons")
+                          ],
             path: "./",
             exclude: ["SDDSComponentsPreview.h"],
             resources: [

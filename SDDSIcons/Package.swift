@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "SDDSIcons",
             type: .dynamic,
-            targets: ["SDDSIcons"]),
+            targets: ["SDDSIcons"])
     ],
     targets: [
         .target(
@@ -25,6 +25,6 @@ let package = Package(
             name: "SDDSIconsTests",
             dependencies: ["SDDSIcons"],
             path: "SDDSIconsTests"
-        ),
+        )
     ]
 )
