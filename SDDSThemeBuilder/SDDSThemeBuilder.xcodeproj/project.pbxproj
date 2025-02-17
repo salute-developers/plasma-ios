@@ -34,6 +34,7 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
+<<<<<<< HEAD
 		6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */; };
 		6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */; };
 		6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */; };
@@ -41,6 +42,11 @@
 		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
 		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
 		697FAC462D660E2100959E8F /* ImageContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697FAC452D660E0600959E8F /* ImageContextBuilder.swift */; };
+=======
+		697970E22D63A71C008306A8 /* CellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E12D63A715008306A8 /* CellAppearance.swift */; };
+		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
+		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
+>>>>>>> a7ec33d0 (feat: added selection appearance in avatar)
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */; };
 		810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */; };
 		810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
@@ -442,6 +448,7 @@
 		24CB39172BC96CDE00B32463 /* DecodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeCommand.swift; sourceTree = "<group>"; };
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProps.swift; sourceTree = "<group>"; };
@@ -449,6 +456,11 @@
 		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
 		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
 		697FAC452D660E0600959E8F /* ImageContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContextBuilder.swift; sourceTree = "<group>"; };
+=======
+		697970E12D63A715008306A8 /* CellAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAppearance.swift; sourceTree = "<group>"; };
+		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
+		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
+>>>>>>> a7ec33d0 (feat: added selection appearance in avatar)
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationComponent.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
@@ -916,6 +928,7 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		6935CEB52D6C8B5400C8A186 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,6 +938,8 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> a7ec33d0 (feat: added selection appearance in avatar)
 		697970E02D63A6DE008306A8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,7 +1016,10 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				6935CEB52D6C8B5400C8A186 /* Counter */,
+=======
+>>>>>>> a7ec33d0 (feat: added selection appearance in avatar)
 				697970E02D63A6DE008306A8 /* Cell */,
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				81FD6D542D6E2768002A6E51 /* Indicator */,
