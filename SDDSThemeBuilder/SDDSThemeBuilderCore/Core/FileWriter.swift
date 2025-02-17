@@ -21,17 +21,12 @@ extension FileWriter {
             }
             
             guard let data = content.data(using: .utf8) else {
-                return .error(FileWriterError.invalidData)
+                return .error(.unableWriteData)
             }
             fileManager.createFile(atPath: outputURL.path(), contents: data)
             return .success
         } catch {
-            return .error(FileWriterError.fileManager(error))
+            return .error(.nsError(error))
         }
     }
-}
-
-enum FileWriterError: Error {
-    case invalidData
-    case fileManager(Error)
 }

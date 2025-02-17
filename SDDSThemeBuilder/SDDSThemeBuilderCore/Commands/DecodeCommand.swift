@@ -19,7 +19,7 @@ final class DecodeCommand<T: Codable>: Command {
             
             return .value(scheme)
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
 }

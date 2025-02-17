@@ -36,8 +36,14 @@ class ContextBuilderTests: XCTestCase {
         let result = contextBuilder.buildContext(from: jsonData)
 
         // then
-        if case .error(let error as GeneralError) = result {
-            XCTAssertEqual(error, GeneralError.decoding, "Expected decoding error from stubbed context builder")
+        if case .error(let error) = result {
+            switch error {
+            case .schemeNotFound:
+                XCTAssertTrue(true)
+            default:
+                XCTFail("Expected error result from stubbed context builder")
+            }
+            
         } else {
             XCTFail("Expected error result from stubbed context builder")
         }

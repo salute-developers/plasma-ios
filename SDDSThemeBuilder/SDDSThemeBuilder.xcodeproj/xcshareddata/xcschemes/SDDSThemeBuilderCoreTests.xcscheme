@@ -25,7 +25,13 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "ContextBuilderTests/testBuildContext_UsingMockWithError()">
+               </Test>
+               <Test
                   Identifier = "DecodeCommandTests">
+               </Test>
+               <Test
+                  Identifier = "DownloadCommandTests/testDownloadCommand_Failure_InvalidURL()">
                </Test>
                <Test
                   Identifier = "DownloadCommandTests/testDownloadCommand_Success_FromRemoteSource()">

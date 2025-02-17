@@ -7,11 +7,13 @@ private enum Tag: String {
     case ensureValueExists = "ensure_value_exists"
     case ensureAnyValueExists = "ensure_any_value_exists"
     case ensureDoubleNonNegative = "ensure_double_non_negative"
+    case ensureDouble = "ensure_double_exists"
     case ensureDoubleInRange = "ensure_double_in_range"
 }
 
 private enum Filter: String {
     case ensure = "ensure"
+    case ensureDouble = "ensure_double_exists"
     case ensureDoubleNonNegative = "ensure_double_non_negative"
     case ensureDoubleInRange = "ensure_double_in_range"
     case ensureShapeKindInRange = "ensure_shape_kind_in_range"
@@ -38,13 +40,13 @@ final class TemplateRenderer: Renderable {
         registerTags(ext: ext)
         
         guard let templatesURL = Bundle(for: TemplateRenderer.self).url(forResource: template.rawValue, withExtension: "stencil")?.deletingLastPathComponent() else {
-            return .error(CodeGenerationError.templateLoadingFailed)
+            return .error(.codeGeneration(.templateLoadingFailed))
         }
         let templatesPath = templatesURL.path()
         let stencilEnvironment = Environment(loader: FileSystemLoader(paths: [Path(templatesPath)]), extensions: [ext])
         
         guard let template = try? stencilEnvironment.loadTemplate(name: template.withStencilExt) else {
-            return .error(CodeGenerationError.templateLoadingFailed)
+            return .error(.codeGeneration(.templateLoadingFailed))
         }
         
         // Swift file generation
@@ -57,7 +59,7 @@ final class TemplateRenderer: Renderable {
             }
         } catch {
             print(error)
-            return .error(CodeGenerationError.renderingFailed)
+            return .error(.codeGeneration(.renderingFailed))
         }
     }
     
@@ -83,6 +85,10 @@ final class TemplateRenderer: Renderable {
         ext.registerTag(Tag.ensureDoubleInRange.rawValue) { parser, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureDoubleInRangeNode(arguments: arguments, token: token)
+        }
+        ext.registerTag(Tag.ensureDouble.rawValue) { parser, token in
+            let arguments = token.components.dropFirst().map { $0 }
+            return EnsureFloatExistsNode(arguments: arguments, token: token)
         }
     }
     
@@ -110,6 +116,12 @@ final class TemplateRenderer: Renderable {
         }
         ext.registerFilter(Filter.ensureDoubleNonNegative.rawValue) { (value: Any?) in
             guard let doubleValue = Double.convert(value), doubleValue >= 0 else {
+                throw TemplateSyntaxError("Value \(String(describing: value)) is not a non-negative double")
+            }
+            return doubleValue
+        }
+        ext.registerFilter(Filter.ensureDouble.rawValue) { (value: Any?) in
+            guard let doubleValue = Double.convert(value) else {
                 throw TemplateSyntaxError("Value \(String(describing: value)) is not a non-negative double")
             }
             return doubleValue

@@ -30,13 +30,13 @@ final class GradientContextBuilder: ContexBuilder, ThemeContext, ColorContext, S
                         return context
                     }
                 case .failure(let error):
-                    return .error(error)
+                    return .error(.nsError(error))
                 }
             } else {
                 return .error(GeneralError.decoding)
             }
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
 }

@@ -39,7 +39,7 @@ final class DownloadCommand: Command {
         case "http", "https":
             downloadFromRemoteSource()
         default:
-            .error(URLError(.badURL))
+            .error(.nsError(URLError(.badURL)))
         }
     }
     
@@ -54,11 +54,11 @@ final class DownloadCommand: Command {
             }
 
             guard let data = try? Data(contentsOf: fileURL) else {
-                return .error(URLError(.badURL))
+                return .error(.nsError(URLError(.badURL)))
             }
             return .data(data)
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
     
@@ -103,7 +103,7 @@ final class DownloadCommand: Command {
         case .success(let commandResult):
             return commandResult
         case .failure(let error):
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
 }
