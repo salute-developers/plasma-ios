@@ -18,16 +18,17 @@ public struct SDDSAvatar: View {
     let image: AvatarImageSource?
     let placeholderImage: AvatarImageSource?
     let status: AvatarStatus
-    let appearance: AvatarAppearance
+    let appearance: AvatarAppearance?
     let accessibility: AvatarAccessibility
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.avatarAppearance) var avatarAppearance
     
     public init(
         text: String,
         image: AvatarImageSource?,
         placeholderImage: AvatarImageSource?,
         status: AvatarStatus,
-        appearance: AvatarAppearance,
+        appearance: AvatarAppearance? = nil,
         accessibility: AvatarAccessibility) {
         self.text = text
         self.image = image
@@ -50,33 +51,33 @@ public struct SDDSAvatar: View {
         ZStack {
             if let placeholderImage = placeholderImage {
                 avatarImage(for: placeholderImage)
-                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                    .frame(width: selectedAppearance.size.avatarSize.width, height: selectedAppearance.size.avatarSize.height)
             } else {
                 backgroundView
             }
 
             if let image = image {
                 avatarImage(for: image)
-                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                    .frame(width: selectedAppearance.size.avatarSize.width, height: selectedAppearance.size.avatarSize.height)
             } else {
                 Text(text)
                     .typography(textTypography)
-                    .fillText(style: appearance.textFillStyle)
+                    .fillText(style: selectedAppearance.textFillStyle)
             }
             
             if status != .hidden {
                 statusView
                     .frame(
-                        width: appearance.size.statusSize.width,
-                        height: appearance.size.statusSize.height
+                        width: selectedAppearance.size.statusSize.width,
+                        height: selectedAppearance.size.statusSize.height
                     )
                     .position(
-                        x: appearance.size.statusInsets.leading + appearance.size.statusSize.width / 2,
-                        y: appearance.size.statusInsets.top + appearance.size.statusSize.height / 2
+                        x: selectedAppearance.size.statusInsets.leading + selectedAppearance.size.statusSize.width / 2,
+                        y: selectedAppearance.size.statusInsets.top + selectedAppearance.size.statusSize.height / 2
                     )
             }
         }
-        .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+        .frame(width: selectedAppearance.size.avatarSize.width, height: selectedAppearance.size.avatarSize.height)
         .accessibilityElement()
         .accessibilityLabel(accessibility.label)
         .accessibilityHint(accessibility.hint)
@@ -84,7 +85,7 @@ public struct SDDSAvatar: View {
     
     @ViewBuilder
     private var backgroundView: some View {
-        switch appearance.backgroundFillStyle {
+        switch selectedAppearance.backgroundFillStyle {
         case .color(let colorToken):
             Circle()
                 .fill(colorToken.color(for: colorScheme))
@@ -97,7 +98,7 @@ public struct SDDSAvatar: View {
                 Circle()
                     .fill(.white)
                     .gradient(gradientToken, colorScheme: colorScheme)
-                    .opacity(appearance.backgroundOpacity)
+                    .opacity(selectedAppearance.backgroundOpacity)
                     .clipShape(Circle())
             }
         }
@@ -131,19 +132,23 @@ public struct SDDSAvatar: View {
     private var statusColor: Color {
         switch status {
         case .online:
-            return appearance.onlineStatusColor.color(for: colorScheme)
+            return selectedAppearance.onlineStatusColor.color(for: colorScheme)
         case .offline:
-            return appearance.offlineStatusColor.color(for: colorScheme)
+            return selectedAppearance.offlineStatusColor.color(for: colorScheme)
         default:
             return .clear
         }
     }
     
     private var textTypography: TypographyToken {
-        if let typography = appearance.textTypography.typography(with: appearance.size) {
+        if let typography = selectedAppearance.textTypography.typography(with: selectedAppearance.size) {
             return typography
         } else {
             fatalError("Undefined Avatar Typography")
         }
+    }
+    
+    private var selectedAppearance: AvatarAppearance {
+        appearance ?? avatarAppearance
     }
 }

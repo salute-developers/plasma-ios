@@ -17,6 +17,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeClear = "IconBadgeClear"
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
+    case cell = "Cell"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -53,9 +54,10 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .indicator:
             GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .cell:
+            GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
-    
     /// Название структуры Appearance в `SDDSComponents`
     var appearance: String {
         switch self {
@@ -71,6 +73,8 @@ extension CodeGenerationComponent {
             "BadgeAppearance"
         case .indicator:
             "IndicatorAppearance"
+        case .cell:
+            "CellAppearance"
         }
     }
     
@@ -89,6 +93,8 @@ extension CodeGenerationComponent {
             "BadgeSizeConfiguration"
         case .indicator:
             "IndicatorSizeConfiguration"
+        case .cell:
+            "CellSizeConfiguration"
         }
     }
     
@@ -126,6 +132,8 @@ extension CodeGenerationComponent {
             "icon_badge_transparent_config.json"
         case .indicator:
             "indicator_config.json"
+        case .cell:
+            "cell_config.json"
         }
     }
     

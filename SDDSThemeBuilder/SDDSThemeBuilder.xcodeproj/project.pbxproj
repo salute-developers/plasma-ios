@@ -34,6 +34,9 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
+		697970E22D63A71C008306A8 /* CellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E12D63A715008306A8 /* CellAppearance.swift */; };
+		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
+		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */; };
 		810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */; };
 		810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
@@ -435,6 +438,9 @@
 		24CB39172BC96CDE00B32463 /* DecodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeCommand.swift; sourceTree = "<group>"; };
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
+		697970E12D63A715008306A8 /* CellAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAppearance.swift; sourceTree = "<group>"; };
+		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
+		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationComponent.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
@@ -902,6 +908,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		697970E02D63A6DE008306A8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				697970E32D63A723008306A8 /* CellSize.swift */,
+				697970E12D63A715008306A8 /* CellAppearance.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,6 +972,7 @@
 				81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */,
 				81763AFE2D6DE67B00904D4A /* BadgeProps.swift */,
 				8174BA452D5DE10000EA3E68 /* ChipProps.swift */,
+				697970E52D63A7FB008306A8 /* CellProps.swift */,
 				812DB6FE2D55E4E800D3F4A3 /* TextFieldProps.swift */,
 				812DB7992D59D85400D3F4A3 /* ButtonProps.swift */,
 			);
@@ -966,6 +982,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				697970E02D63A6DE008306A8 /* Cell */,
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				81FD6D542D6E2768002A6E51 /* Indicator */,
 				812DB79D2D59D9FB00D3F4A3 /* Button */,
@@ -2015,6 +2032,7 @@
 			files = (
 				81E1EE572BE3A69200F86AE1 /* FontFamilyStyle.swift in Sources */,
 				818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */,
+				697970E42D63A72E008306A8 /* CellSize.swift in Sources */,
 				812DB7A72D59E1B000D3F4A3 /* ButtonSize.swift in Sources */,
 				81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
@@ -2077,7 +2095,9 @@
 				81CB0FED2C245052003B1064 /* SchemeValidationLogger.swift in Sources */,
 				812DB6D22D5490E000D3F4A3 /* CodeGenerationContexts.swift in Sources */,
 				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,
+				697970E62D63A801008306A8 /* CellProps.swift in Sources */,
 				815F42CC2D48B8E800F97E63 /* ComponentTypography.stencil in Sources */,
+				697970E22D63A71C008306A8 /* CellAppearance.swift in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
 				8166B4402D5BD7C40044A680 /* RequiredPlacementContextBuilder.swift in Sources */,
 				81CB0FE92C245052003B1064 /* EnsureValueExistsNode.swift in Sources */,
