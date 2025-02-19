@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSIcons
 @_exported import SDDSThemeCore
 
 public struct SDDSCell<LeftContent: View, RightContent: View>: View {
