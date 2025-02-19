@@ -1127,7 +1127,6 @@
 		81BBC5732C862492009616CE /* SDDSComponentsPreview */ = {
 			isa = PBXGroup;
 			children = (
-				812DB7682D57B4E900D3F4A3 /* TextField */,
 				816243402CB81A4300506E1C /* Assets.xcassets */,
 				816C62A32CB80ED600352891 /* Constants */,
 				817AE4DC2C99925900F427DE /* Components */,
