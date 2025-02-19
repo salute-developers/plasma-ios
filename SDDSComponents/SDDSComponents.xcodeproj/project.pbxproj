@@ -75,7 +75,6 @@
 		812DB7622D57B49F00D3F4A3 /* ChipGroupAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB75D2D57B49F00D3F4A3 /* ChipGroupAlignment.swift */; };
 		812DB7652D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7642D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift */; };
 		812DB76A2D57B4E900D3F4A3 /* TextFieldClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */; };
-		812DB76B2D57B4E900D3F4A3 /* TextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7692D57B4E900D3F4A3 /* TextFieldPreview.swift */; };
 		812DB7702D57B50A00D3F4A3 /* TextAreaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */; };
 		812DB7712D57B50A00D3F4A3 /* TextAreaClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */; };
 		8140A4672D59FA06002CF32B /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8140A4662D59FA06002CF32B /* SDDSServTheme */; };
@@ -278,7 +277,6 @@
 		812DB75D2D57B49F00D3F4A3 /* ChipGroupAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipGroupAlignment.swift; sourceTree = "<group>"; };
 		812DB7642D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentAppearanceVariation.swift; sourceTree = "<group>"; };
 		812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearPreview.swift; sourceTree = "<group>"; };
-		812DB7692D57B4E900D3F4A3 /* TextFieldPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldPreview.swift; sourceTree = "<group>"; };
 		812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaPreview.swift; sourceTree = "<group>"; };
 		812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
@@ -643,14 +641,6 @@
 				812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */,
 			);
 			path = TextFieldClear;
-			sourceTree = "<group>";
-		};
-		812DB7682D57B4E900D3F4A3 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				812DB7692D57B4E900D3F4A3 /* TextFieldPreview.swift */,
-			);
-			path = TextField;
 			sourceTree = "<group>";
 		};
 		812DB76C2D57B50A00D3F4A3 /* TextArea */ = {
@@ -1075,7 +1065,6 @@
 		81BBC5732C862492009616CE /* SDDSComponentsPreview */ = {
 			isa = PBXGroup;
 			children = (
-				812DB7682D57B4E900D3F4A3 /* TextField */,
 				816243402CB81A4300506E1C /* Assets.xcassets */,
 				816C62A32CB80ED600352891 /* Constants */,
 				817AE4DC2C99925900F427DE /* Components */,
@@ -1431,7 +1420,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				812DB76B2D57B4E900D3F4A3 /* TextFieldPreview.swift in Sources */,
 				817AE5302C99925A00F427DE /* SDDSComponentsPreview.swift in Sources */,
 				69F967B32D4CC9FC00C0B50F /* SDDSSegmentPreview.swift in Sources */,
 				811D2E252D10A64C001C0F48 /* SDDSCheckboxGroup+Preview.swift in Sources */,
