@@ -11,7 +11,7 @@ public struct Cell: View {
     public let subtitle: String
     
     public let disclosureEnabled: Bool
-    public let disclosureIcon: Image?
+    public let disclosureImage: Image?
     public let disclosureText: String
 
     public let leftContent: AnyView
@@ -28,7 +28,7 @@ public struct Cell: View {
         title: String = "",
         subtitle: String = "",
         disclosureEnabled: Bool = false,
-        disclosureIcon: Image? = nil,
+        disclosureImage: Image? = nil,
         disclosureText: String = "",
         @ViewBuilder leftContent: @escaping () -> some View,
         @ViewBuilder centerContent: @escaping () -> some View,
@@ -41,7 +41,7 @@ public struct Cell: View {
         self.title = title
         self.subtitle = subtitle
         self.disclosureEnabled = disclosureEnabled
-        self.disclosureIcon = disclosureIcon
+        self.disclosureImage = disclosureImage
         self.disclosureText = disclosureText
         self.leftContent = AnyView(HStack { AnyView(leftContent()) })
         self.centerContent = AnyView(VStack { AnyView(leftContent()) })
@@ -114,12 +114,12 @@ extension Cell {
                 value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
                 
                 ZStack {
-                    if let icon = disclosureIcon {
-                        icon
+                    if let image = disclosureImage {
+                        image
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .foregroundColor(appearance.disclosureIconColor.color(for: colorScheme))
+                            .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme))
                     }
                 }
             }

@@ -13,7 +13,7 @@ struct CellPreview: PreviewProvider {
             title: "title",
             subtitle: "subtitle",
             disclosureEnabled: false,
-            disclosureIcon: nil,
+            disclosureImage: nil,
             disclosureText: "",
             leftContent: {
                 avatar
@@ -32,17 +32,17 @@ struct CellPreview: PreviewProvider {
         .previewDisplayName("Cell without disclosure")
         
         Cell(
-            appearance: Cell.xs.appearance,
+            appearance: Cell.l.appearance,
             alignment: .center,
             label: "label",
             title: "title",
             subtitle: "subtitle",
             disclosureEnabled: true,
-            disclosureIcon: nil,
+            disclosureImage: Asset.disclosureRightOutline16.image,
             disclosureText: "disclosure",
             leftContent: {
                 avatar
-                    .environment(\.avatarAppearance, SDDSAvatar.default.small.appearance)
+                    .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
             },
             centerContent: {},
             rightContent: {

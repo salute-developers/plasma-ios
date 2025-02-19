@@ -12,7 +12,7 @@ import Foundation
  - subtitleColor: Цвет подзаголовка.
  - disclosureTextStyle: Стиль типографики для текста disclosure.
  - disclosureTextColor: Цвет текста disclosure.
- - disclosureIconColor: Цвет иконки disclosure.
+ - disclosureImageColor: Цвет иконки disclosure.
  - avatarStyle: Стиль компонента Avatar.
  - iconButtonStyle: Стиль компонента IconButton.
  - checkBoxStyle: Стиль компонента CheckBox.
@@ -29,7 +29,7 @@ public struct CellAppearance {
     public var subtitleColor: ColorToken
     public var disclosureTextTypography: TypographyConfiguration
     public var disclosureTextColor: ColorToken
-    public var disclosureIconColor: ColorToken
+    public var disclosureImageColor: ColorToken
     public var avatarAppearance: AvatarAppearance
     public var iconButtonAppearance: ButtonAppearance
     public var checkBoxAppearance: CheckboxAppearance
@@ -46,7 +46,7 @@ public struct CellAppearance {
         subtitleColor: ColorToken = .clearColor,
         disclosureTextTypography: TypographyConfiguration = .default,
         disclosureTextColor: ColorToken = .clearColor,
-        disclosureIconColor: ColorToken = .clearColor,
+        disclosureImageColor: ColorToken = .clearColor,
         avatarAppearance: AvatarAppearance? = nil,
         iconButtonAppearance: ButtonAppearance? = nil,
         checkBoxAppearance: CheckboxAppearance? = nil,
@@ -62,7 +62,7 @@ public struct CellAppearance {
         self.subtitleColor = subtitleColor
         self.disclosureTextTypography = disclosureTextTypography
         self.disclosureTextColor = disclosureTextColor
-        self.disclosureIconColor = disclosureIconColor
+        self.disclosureImageColor = disclosureImageColor
         self.avatarAppearance = AvatarAppearance.defaultValue
         self.iconButtonAppearance = ButtonAppearance.defaultValue
         self.checkBoxAppearance = CheckboxAppearance.defaultValue
