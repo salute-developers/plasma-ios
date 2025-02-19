@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-import SDDSIcons
 @_exported import SDDSThemeCore
 
 public struct Cell: View {
@@ -112,14 +111,16 @@ extension Cell {
     private var defaultDisclosureView: some View {
         HStack(spacing: 0) {
             if disclosureEnabled {
-            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
-            
-            ZStack {
-                Asset.disclosureRightOutline.image
-                        .renderingMode(.template)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(appearance.disclosureIconColor.color(for: colorScheme))
+                value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+                
+                ZStack {
+                    if let icon = disclosureIcon {
+                        icon
+                            .renderingMode(.template)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(appearance.disclosureIconColor.color(for: colorScheme))
+                    }
                 }
             }
         }
