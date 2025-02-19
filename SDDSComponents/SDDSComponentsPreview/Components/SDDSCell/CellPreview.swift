@@ -32,7 +32,7 @@ struct CellPreview: PreviewProvider {
         .previewDisplayName("Cell without disclosure")
         
         Cell(
-            appearance: Cell.l.appearance,
+            appearance: Cell.s.appearance,
             alignment: .center,
             label: "label",
             title: "title",

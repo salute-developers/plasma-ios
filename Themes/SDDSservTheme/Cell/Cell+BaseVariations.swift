@@ -28,12 +28,12 @@ public struct Cell {
         var appearance = CellAppearance.base
         appearance.size = CellSize.m
         appearance.avatarAppearance = SDDSAvatar.medium.appearance
-//        appearance.checkBoxAppearance = SDDSCheckbox.medium.appearance
+//        appearance.checkBoxAppearance = SDDSCheckbox.m.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.m.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-//        appearance.radioBoxAppearance = SDDSRadiobox.medium.appearance
+//        appearance.radioBoxAppearance = SDDSRadiobox.m.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.switchAppearance = SDDSSwitch.medium.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
@@ -47,12 +47,12 @@ public struct Cell {
         var appearance = CellAppearance.base
         appearance.size = CellSize.s
         appearance.avatarAppearance = SDDSAvatar.small.appearance
-//        appearance.checkBoxAppearance = SDDSCheckbox.small.appearance
+//        appearance.checkBoxAppearance = SDDSCheckbox.s.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.s.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-//        appearance.radioBoxAppearance = SDDSRadiobox.small.appearance
+//        appearance.radioBoxAppearance = SDDSRadiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.switchAppearance = SDDSSwitch.small.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
@@ -66,12 +66,12 @@ public struct Cell {
         var appearance = CellAppearance.base
         appearance.size = CellSize.xs
         appearance.avatarAppearance = SDDSAvatar.small.appearance
-//        appearance.checkBoxAppearance = SDDSCheckbox.small.appearance
+//        appearance.checkBoxAppearance = SDDSCheckbox.s.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.xs.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-//        appearance.radioBoxAppearance = SDDSRadiobox.small.appearance
+//        appearance.radioBoxAppearance = SDDSRadiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.switchAppearance = SDDSSwitch.small.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
@@ -100,6 +100,7 @@ public struct CellVariation {
 private extension CellAppearance {
     static var base: CellAppearance {
         var appearance = CellAppearance()
+        appearance.disclosureImageColor = ColorToken.textDefaultSecondary
         appearance.disclosureTextColor = ColorToken.textDefaultSecondary
         appearance.labelColor = ColorToken.textDefaultSecondary
         appearance.subtitleColor = ColorToken.textDefaultSecondary

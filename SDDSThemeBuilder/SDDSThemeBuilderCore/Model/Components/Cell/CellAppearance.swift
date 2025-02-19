@@ -33,8 +33,8 @@ struct CellAppearance: CodeGenerationAppearance {
         self.subtitleColor = ColorTokenContextBuilder(props.subtitleColor).context
         self.disclosureTextTypography = TypographyTokenContextBuilder(string: props.disclosureTextStyle?.value, id: id, component: component).context
         self.disclosureTextColor = ColorTokenContextBuilder(props.disclosureTextColor).context
-        self.disclosureImageColor = ColorTokenContextBuilder(props.disclosureImageColor).context
-        self.disclosureImage = ImageContextBuilder(props.disclosureIcon?.value, id: id, component: component).context
+        self.disclosureImageColor = ColorTokenContextBuilder(props.disclosureIconColor).context
+        self.disclosureImage = ImageContextBuilder(props.disclosureIcon?.value).context
         
         if let avatarStyle = props.avatarStyle?.value {
             self.avatarAppearance = ComponentStyleContextBuilder(avatarStyle).context

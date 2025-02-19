@@ -2,13 +2,9 @@ import Foundation
 
 final class ImageContextBuilder: CodeGenerationContextBuilder {
     let string: String?
-    let id: String?
-    let component: CodeGenerationComponent
     
-    init(_ string: String?, id: String?, component: CodeGenerationComponent) {
+    init(_ string: String?) {
         self.string = string
-        self.id = id
-        self.component = component
     }
 
     var context: String? {
