@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSServTheme
+import SDDSIcons
 
 struct CellPreview: PreviewProvider {
     static var previews: some View {
@@ -34,15 +35,16 @@ struct CellPreview: PreviewProvider {
             label: "label",
             title: "title",
             subtitle: "subtitle",
+            disclosureIcon: nil,
             disclosureText: "disclosure",
             leftContent: {
                 avatar
+                    .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
             },
-            centerContent: {
-                avatar
-            },
+            centerContent: {},
             rightContent: {
                 avatar
+                    .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
             },
             disclosure: {}
         )

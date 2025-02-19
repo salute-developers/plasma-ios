@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
@@ -16,6 +15,7 @@ struct CellView: View {
                 cell
             }
             Section(header: Text("Cell")) {
+                variations
                 contentLeft
                 contentCenter
                 contentRight
@@ -42,12 +42,16 @@ struct CellView: View {
         )
     }
     
+    var variations: some View {
+        VariationsView(viewModel: viewModel)
+    }
+    
     private var contentLeft: some View {
         HStack {
             Text("Content Left")
             Spacer()
             Menu {
-                ForEach(CellContentPreview.allCases, id: \.self) { content in
+                ForEach(CellContentType.allCases, id: \.self) { content in
                     Button(content.rawValue) {
                         viewModel.contentLeftPreview = content
                     }
@@ -83,7 +87,7 @@ struct CellView: View {
             Text("Content Right")
             Spacer()
             Menu {
-                ForEach(CellContentPreview.allCases, id: \.self) { content in
+                ForEach(CellContentType.allCases, id: \.self) { content in
                     Button(content.rawValue) {
                         viewModel.contentRightPreview = content
                     }

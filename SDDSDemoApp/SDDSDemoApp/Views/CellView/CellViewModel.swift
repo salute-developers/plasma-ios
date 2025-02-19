@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-enum CellContentPreview: String, CaseIterable {
+enum CellContentType: String, CaseIterable {
     case avatar
     case iconButton
     case `switch`
@@ -13,9 +13,8 @@ enum CellContentPreview: String, CaseIterable {
     case none
 }
 
-final class CellViewModel: ObservableObject {
+final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var alignment: CellContentAlignment = .center
-    @Published var appearance: CellAppearance = Cell.l.appearance
     
     @Published var label: String = "label"
     @Published var title: String = "title"
@@ -37,17 +36,17 @@ final class CellViewModel: ObservableObject {
     @Published var disclosureIcon: Image? = nil
     
     //MARK: - Cell content elements
-    @Published var contentLeftPreview: CellContentPreview = .none {
+    @Published var contentLeftPreview: CellContentType = .none {
         didSet {
             leftContent = addView(for: contentLeftPreview)
         }
     }
-    @Published var contentCenterPreview: CellContentPreview = .none {
+    @Published var contentCenterPreview: CellContentType = .none {
         didSet {
             centerContent = addView(for: contentCenterPreview)
         }
     }
-    @Published var contentRightPreview: CellContentPreview = .none {
+    @Published var contentRightPreview: CellContentType = .none {
         didSet {
             rightContent = addView(for: contentRightPreview)
         }
@@ -56,10 +55,16 @@ final class CellViewModel: ObservableObject {
     //MARK: - Additional views
     @Published var customText: String = "Custom text"
     
-    init() {}
+    init() {
+        super.init(variationProvider: CellVariationProvider(contentType: .none))
+        
+        if let firstVAriation = variations.first {
+            selectVariation(firstVAriation)
+        }
+    }
     
     //MARK: - Add preview in content
-    func addView(for content: CellContentPreview) -> AnyView {
+    func addView(for content: CellContentType) -> AnyView {
         switch content {
         case .avatar:
             AnyView(
@@ -68,7 +73,7 @@ final class CellViewModel: ObservableObject {
                     image: nil,
                     placeholderImage: nil,
                     status: .online,
-                    appearance: SDDSAvatar.default.large.appearance,
+                    appearance: appearance.avatarAppearance,
                     accessibility: AvatarAccessibility()
                 )
             )

@@ -68,6 +68,7 @@ public struct Cell: View {
             
             if hasDefaultDisclosure {
                 defaultDisclosureView
+                    .fixedSize()
             } else {
                 disclosure
             }
@@ -95,7 +96,7 @@ extension Cell {
         }
     }
     
-    //MARK: - Other additional view
+    // MARK : - Other additional view
     @ViewBuilder
     private func value(for value: String, typography: TypographyToken, textColor: ColorToken) -> some View {
         Text(value)
@@ -111,15 +112,16 @@ extension Cell {
             ZStack {
                 if let icon = disclosureIcon {
                     icon
+                        .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 16)
+                        .foregroundColor(appearance.disclosureIconColor.color(for: colorScheme))
                 }
             }
         }
     }
     
-    //MARK: - Computed values
+    // MARK : - Computed values
     private var hasCenterContent: Bool {
         !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
     }
@@ -128,7 +130,7 @@ extension Cell {
         !disclosureText.isEmpty
     }
     
-    //MARK: - Typography
+    // MARK : - Typography
     private func applyTypography(for text: TypographyConfiguration) -> TypographyToken {
         if let typography = text.typography(with: appearance.size) {
             return typography
@@ -137,7 +139,7 @@ extension Cell {
         }
     }
     
-    //MARK: - Alignment
+    // MARK : - Alignment
     private var contentAlignment: VerticalAlignment {
         switch alignment {
         case .top:

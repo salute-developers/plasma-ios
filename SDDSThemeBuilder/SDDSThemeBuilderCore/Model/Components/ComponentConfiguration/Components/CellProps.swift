@@ -14,7 +14,7 @@ struct CellProps: MergeableConfiguration, Codable {
     var checkBoxStyle: KeyValue<String>?
     var radioBoxStyle: KeyValue<String>?
     var switchStyle: KeyValue<String>?
-    var disclosureIcon: ColorKeyValue?
+    var disclosureIcon: KeyValue<String>?
     var labelColor: ColorKeyValue?
     var titleColor: ColorKeyValue?
     var subtitleColor: ColorKeyValue?

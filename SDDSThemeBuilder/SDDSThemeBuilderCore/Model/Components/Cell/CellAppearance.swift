@@ -35,7 +35,6 @@ struct CellAppearance: CodeGenerationAppearance {
         self.disclosureTextColor = ColorTokenContextBuilder(props.disclosureTextColor).context
         self.disclosureIconColor = ColorTokenContextBuilder(props.disclosureIconColor).context
         
-        //MARK: - Написать один метод
         if let avatarStyle = props.avatarStyle?.value {
             self.avatarAppearance = ComponentStyleContextBuilder(avatarStyle).context
         }
