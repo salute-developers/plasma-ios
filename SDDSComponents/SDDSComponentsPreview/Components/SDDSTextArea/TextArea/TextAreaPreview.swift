@@ -5,7 +5,6 @@ import SDDSServTheme
 
 // MARK: - Preview
 
-<<<<<<< HEAD
 struct TextAreaPreview: PreviewProvider {
     static var previews: some View {
         let chips = (1...12).map { index in
@@ -73,74 +72,3 @@ struct TextAreaPreview: PreviewProvider {
         
     }
 }
-=======
-//struct TextAreaPreview: PreviewProvider {
-//    static var previews: some View {
-//        let chips = (1...12).map { index in
-//            ChipData(
-//                title: "ChipTitle",
-//                isEnabled: true,
-//                iconImage: nil,
-//                buttonImage: Image.image("textFieldChipIcon"),
-//                appearance: EmbeddedChip.l.secondary.appearance,
-//                accessibility: ChipAccessibility(),
-//                removeAction: {}
-//            )
-//        }
-//        
-//        return Group {
-//            TextArea(
-//                value: .constant(.single("Value")),
-//                title: "Title",
-//                optionalTitle: "optional",
-//                placeholder: "Placeholder",
-//                caption: "caption",
-//                counter: "counter",
-//                disabled: false,
-//                readOnly: false,
-//                required: false,
-//                dynamicHeight: true,
-//                appearance: TextArea.l.default.appearance,
-//                iconActionViewProvider: ViewProvider(iconActionView)
-//            )
-//            .previewDisplayName("Outer Label")
-//            .previewLayout(.sizeThatFits)
-//            .padding()
-//            
-//            TextAreaClear(
-//                value: .constant(.multiple("", chips)),
-//                title: "Title",
-//                optionalTitle: "",
-//                placeholder: "Placeholder",
-//                caption: "caption",
-//                counter: "counter",
-//                disabled: false,
-//                required: true,
-//                dynamicHeight: true,
-//                appearance: TextArea.l.default.appearance,
-//                iconActionViewProvider: ViewProvider(iconActionView)
-//            )
-//            .previewDisplayName("Multiple – Default Label")
-//            .previewLayout(.sizeThatFits)
-//            .padding()
-//        }
-//    }
-//    
-//    @ViewBuilder
-//    private static var iconView: some View {
-//        Image.image("textFieldIcon")
-//            .renderingMode(.template)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//    }
-//    
-//    @ViewBuilder
-//    private static var iconActionView: some View {
-//        Image.image("textFieldIconAction")
-//            .renderingMode(.template)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//        
-//    }
-//}
->>>>>>> d278e665 (feat: added selection appearance in avatar)
