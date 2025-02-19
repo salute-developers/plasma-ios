@@ -33,13 +33,13 @@ extension CellPreview {
     }
     
     static var `switch`: SDDSSwitch {
-        SDDSAvatar(
-            text: "",
-            image: .image(Image.image("checker")),
-            placeholderImage: nil,
-            status: .online,
-            appearance: nil,
-            accessibility: AvatarAccessibility()
+        SDDSSwitch(
+            title: "",
+            subtitle: "",
+            isOn: .constant(false),
+            isEnabled: true,
+            appearance: SDDSSwitch.large.default.appearance,
+            switchAccessibility: SwitchAccessibility()
         )
     }
 }

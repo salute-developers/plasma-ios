@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSIcons
 @_exported import SDDSThemeCore
 
 public struct Cell: View {
@@ -10,9 +11,10 @@ public struct Cell: View {
     public let title: String
     public let subtitle: String
     
+    public let disclosureEnabled: Bool
     public let disclosureIcon: Image?
     public let disclosureText: String
-    
+
     public let leftContent: AnyView
     public let centerContent: AnyView
     public let rightContent: AnyView
@@ -26,6 +28,7 @@ public struct Cell: View {
         label: String = "",
         title: String = "",
         subtitle: String = "",
+        disclosureEnabled: Bool = false,
         disclosureIcon: Image? = nil,
         disclosureText: String = "",
         @ViewBuilder leftContent: @escaping () -> some View,
@@ -38,6 +41,7 @@ public struct Cell: View {
         self.label = label
         self.title = title
         self.subtitle = subtitle
+        self.disclosureEnabled = disclosureEnabled
         self.disclosureIcon = disclosureIcon
         self.disclosureText = disclosureText
         self.leftContent = AnyView(HStack { AnyView(leftContent()) })
@@ -107,11 +111,11 @@ extension Cell {
     @ViewBuilder
     private var defaultDisclosureView: some View {
         HStack(spacing: 0) {
+            if disclosureEnabled {
             value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
             
             ZStack {
-                if let icon = disclosureIcon {
-                    icon
+                Asset.disclosureRightOutline.image
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
