@@ -19,5 +19,5 @@ struct CellProps: MergeableConfiguration, Codable {
     var titleColor: ColorKeyValue?
     var subtitleColor: ColorKeyValue?
     var disclosureTextColor: ColorKeyValue?
-    var disclosureIconColor: ColorKeyValue?
+    var disclosureImageColor: ColorKeyValue?
 }

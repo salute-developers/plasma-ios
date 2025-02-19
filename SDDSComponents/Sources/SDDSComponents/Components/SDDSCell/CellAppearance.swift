@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
@@ -30,6 +31,7 @@ public struct CellAppearance {
     public var disclosureTextTypography: TypographyConfiguration
     public var disclosureTextColor: ColorToken
     public var disclosureImageColor: ColorToken
+    public var disclosureImage: Image?
     public var avatarAppearance: AvatarAppearance
     public var iconButtonAppearance: ButtonAppearance
     public var checkBoxAppearance: CheckboxAppearance
@@ -47,11 +49,12 @@ public struct CellAppearance {
         disclosureTextTypography: TypographyConfiguration = .default,
         disclosureTextColor: ColorToken = .clearColor,
         disclosureImageColor: ColorToken = .clearColor,
-        avatarAppearance: AvatarAppearance? = nil,
-        iconButtonAppearance: ButtonAppearance? = nil,
-        checkBoxAppearance: CheckboxAppearance? = nil,
-        radioBoxAppearance: RadioboxAppearance? = nil,
-        switchAppearance: SwitchAppearance? = nil
+        disclosureImage: Image? = nil,
+        avatarAppearance: AvatarAppearance = AvatarAppearance(),
+        iconButtonAppearance: ButtonAppearance = ButtonAppearance(),
+        checkBoxAppearance: CheckboxAppearance = CheckboxAppearance(),
+        radioBoxAppearance: RadioboxAppearance = RadioboxAppearance(),
+        switchAppearance: SwitchAppearance = SwitchAppearance()
     ) {
         self.size = size
         self.labelTypography = labelTypography
@@ -63,6 +66,7 @@ public struct CellAppearance {
         self.disclosureTextTypography = disclosureTextTypography
         self.disclosureTextColor = disclosureTextColor
         self.disclosureImageColor = disclosureImageColor
+        self.disclosureImage = disclosureImage
         self.avatarAppearance = AvatarAppearance.defaultValue
         self.iconButtonAppearance = ButtonAppearance.defaultValue
         self.checkBoxAppearance = CheckboxAppearance.defaultValue

@@ -38,7 +38,6 @@ struct CellPreview: PreviewProvider {
             title: "title",
             subtitle: "subtitle",
             disclosureEnabled: true,
-            disclosureImage: Asset.disclosureRightOutline16.image,
             disclosureText: "disclosure",
             leftContent: {
                 avatar

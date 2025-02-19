@@ -69,7 +69,7 @@ public struct Cell: View {
             rightContent
                 .frame(maxWidth: .infinity)
             
-            if hasDefaultDisclosure {
+            if disclosureEnabled {
                 defaultDisclosureView
                     .fixedSize()
             } else {
@@ -114,7 +114,7 @@ extension Cell {
                 value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
                 
                 ZStack {
-                    if let image = disclosureImage {
+                    if let image = appearance.disclosureImage {
                         image
                             .renderingMode(.template)
                             .resizable()
@@ -129,10 +129,6 @@ extension Cell {
     // MARK : - Computed values
     private var hasCenterContent: Bool {
         !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
-    }
-    
-    private var hasDefaultDisclosure: Bool {
-        !disclosureText.isEmpty
     }
     
     // MARK : - Typography

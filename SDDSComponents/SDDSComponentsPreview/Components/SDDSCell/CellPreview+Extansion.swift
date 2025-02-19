@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSServTheme
-import SDDSIcons
 
 extension CellPreview {
     static var iconButton: some View {
@@ -17,8 +16,26 @@ extension CellPreview {
         )
     }
     
-    static var text: some View {
-           Text("Custom text")
+    static var checkbox: some View {
+        SDDSCheckbox(
+            state: .constant(.indeterminate),
+            title: "Valur",
+            subtitle: "Description",
+            isEnabled: true,
+            images: .checkbox,
+            appearance: SDDSCheckbox.medium.default.appearance
+        )
+    }
+    
+    static var radiobox: some View {
+        SDDSCheckbox(
+            state: .constant(.indeterminate),
+            title: "Valur",
+            subtitle: "Description",
+            isEnabled: true,
+            images: .checkbox,
+            appearance: SDDSCheckbox.medium.default.appearance
+        )
     }
     
     static var avatar: SDDSAvatar {

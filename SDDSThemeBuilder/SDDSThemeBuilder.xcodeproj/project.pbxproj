@@ -37,6 +37,7 @@
 		697970E22D63A71C008306A8 /* CellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E12D63A715008306A8 /* CellAppearance.swift */; };
 		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
 		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
+		697FAC462D660E2100959E8F /* ImageContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697FAC452D660E0600959E8F /* ImageContextBuilder.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */; };
 		810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */; };
 		810DE53E2C2AC77700F1C96F /* ShapeToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */; };
@@ -441,6 +442,7 @@
 		697970E12D63A715008306A8 /* CellAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAppearance.swift; sourceTree = "<group>"; };
 		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
 		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
+		697FAC452D660E0600959E8F /* ImageContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContextBuilder.swift; sourceTree = "<group>"; };
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationComponent.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
@@ -931,6 +933,7 @@
 			isa = PBXGroup;
 			children = (
 				81D85D142D6F63D9007E758F /* PathDrawerContextBuilder.swift */,
+				697FAC452D660E0600959E8F /* ImageContextBuilder.swift */,
 				8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */,
 				8166B43F2D5BD7C30044A680 /* RequiredPlacementContextBuilder.swift */,
 				812DB6E22D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift */,
@@ -2092,6 +2095,7 @@
 				812DB7052D56328C00D3F4A3 /* CodeGenerationSize.swift in Sources */,
 				813340302C073C42005AD84F /* URL+Extensions.swift in Sources */,
 				8180A5112C107DA900009AF5 /* TypographyToken.swift in Sources */,
+				697FAC462D660E2100959E8F /* ImageContextBuilder.swift in Sources */,
 				81CB0FED2C245052003B1064 /* SchemeValidationLogger.swift in Sources */,
 				812DB6D22D5490E000D3F4A3 /* CodeGenerationContexts.swift in Sources */,
 				81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */,

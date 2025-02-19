@@ -12,13 +12,13 @@ struct CellAppearance: CodeGenerationAppearance {
     public var subtitleColor: String?
     public var disclosureTextTypography: String?
     public var disclosureTextColor: String?
-    public var disclosureIconColor: String?
+    public var disclosureImageColor: String?
     public var avatarAppearance: String?
     public var iconButtonAppearance: String?
     public var checkBoxAppearance: String?
     public var radioBoxAppearance: String?
     public var switchAppearance: String?
-    public var disclosureIcon: String?
+    public var disclosureImage: String?
     
     init(variation: CellConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -33,7 +33,8 @@ struct CellAppearance: CodeGenerationAppearance {
         self.subtitleColor = ColorTokenContextBuilder(props.subtitleColor).context
         self.disclosureTextTypography = TypographyTokenContextBuilder(string: props.disclosureTextStyle?.value, id: id, component: component).context
         self.disclosureTextColor = ColorTokenContextBuilder(props.disclosureTextColor).context
-        self.disclosureIconColor = ColorTokenContextBuilder(props.disclosureIconColor).context
+        self.disclosureImageColor = ColorTokenContextBuilder(props.disclosureImageColor).context
+        self.disclosureImage = ImageContextBuilder(props.disclosureIcon?.value, id: id, component: component).context
         
         if let avatarStyle = props.avatarStyle?.value {
             self.avatarAppearance = ComponentStyleContextBuilder(avatarStyle).context
