@@ -100,6 +100,7 @@ public struct CellVariation {
 private extension CellAppearance {
     static var base: CellAppearance {
         var appearance = CellAppearance()
+        appearance.disclosureImageColor = ColorToken.textDefaultSecondary
         appearance.disclosureTextColor = ColorToken.textDefaultSecondary
         appearance.labelColor = ColorToken.textDefaultSecondary
         appearance.subtitleColor = ColorToken.textDefaultSecondary
