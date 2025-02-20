@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct Cell: View {
+public struct Cell<LeftContent: View, RightContent: View, Disclosure: View>: View {
     public let appearance: CellAppearance
     public let alignment: CellContentAlignment
     
@@ -13,11 +13,10 @@ public struct Cell: View {
     public let disclosureEnabled: Bool
     public let disclosureImage: Image?
     public let disclosureText: String
-
-    public let leftContent: AnyView
-    public let centerContent: AnyView
-    public let rightContent: AnyView
-    public let disclosure: AnyView
+    
+    public let leftContent: LeftContent
+    public let rightContent: RightContent
+    public let disclosure: Disclosure
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -30,10 +29,9 @@ public struct Cell: View {
         disclosureEnabled: Bool = false,
         disclosureImage: Image? = nil,
         disclosureText: String = "",
-        @ViewBuilder leftContent: @escaping () -> some View,
-        @ViewBuilder centerContent: @escaping () -> some View,
-        @ViewBuilder rightContent: @escaping () -> some View,
-        @ViewBuilder disclosure: @escaping () -> some View
+        @ViewBuilder leftContent: @escaping () -> LeftContent,
+        @ViewBuilder rightContent: @escaping () -> RightContent,
+        @ViewBuilder disclosure: @escaping () -> Disclosure
     ) {
         self.appearance = appearance
         self.alignment = alignment
@@ -43,45 +41,28 @@ public struct Cell: View {
         self.disclosureEnabled = disclosureEnabled
         self.disclosureImage = disclosureImage
         self.disclosureText = disclosureText
-        self.leftContent = AnyView(HStack { AnyView(leftContent()) })
-        self.centerContent = AnyView(VStack { AnyView(leftContent()) })
-        self.rightContent = AnyView(HStack { AnyView(rightContent()) })
-        self.disclosure = AnyView(disclosure())
+        self.leftContent = leftContent()
+        self.rightContent = rightContent()
+        self.disclosure = disclosure()
     }
     
     public var body: some View {
         HStack(alignment: contentAlignment, spacing: 0) {
             leftContent
-//                .frame(maxWidth: .infinity)
-                .debug(color: Color.pink, condition: true)
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingStart)
-                .debug(color: Color.red, condition: true)
             
-            if hasCenterContent {
-                centerView
-                    .frame(maxWidth: .infinity)
-                    .debug(color: Color.pink, condition: true)
-            } else {
-                centerContent
-            }
+            centerView
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
-                .debug(color: Color.red, condition: true)
             
             rightContent
-//                .frame(maxWidth: .infinity)
-                .debug(color: Color.pink, condition: true)
             
-            if disclosureEnabled {
-                defaultDisclosureView
-                    .fixedSize()
-                    .debug(color: Color.pink, condition: true)
-            } else {
-                disclosure
-            }
+            disclosureDefaultContent
+            
+            disclosure
         }
     }
 }
@@ -89,20 +70,28 @@ public struct Cell: View {
 extension Cell {
     @ViewBuilder
     private var centerView: some View {
-        VStack(spacing: 0) {
-            if hasCenterContent {
+        if hasCenterContent {
+            VStack(spacing: 0) {
                 if !label.isEmpty {
-                    value(for: label, typography: applyTypography(for: appearance.labelTypography), textColor: appearance.labelColor)
+                    HStack {
+                        value(for: label, typography: applyTypography(for: appearance.labelTypography), textColor: appearance.labelColor)
+                        Spacer()
+                    }
                 }
-                
                 if !title.isEmpty {
-                    value(for: title, typography: applyTypography(for: appearance.titleTypography), textColor: appearance.titleColor)
+                    HStack {
+                        value(for: title, typography: applyTypography(for: appearance.titleTypography), textColor: appearance.titleColor)
+                        Spacer()
+                    }
                 }
-                
                 if !subtitle.isEmpty {
-                    value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
+                    HStack {
+                        value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
+                        Spacer()
+                    }
                 }
             }
+            .frame(maxWidth: .infinity)
         }
     }
     
@@ -114,20 +103,26 @@ extension Cell {
             .foregroundColor(textColor.color(for: colorScheme))
     }
     
+    // MARK : - Disclosure
     @ViewBuilder
-    private var defaultDisclosureView: some View {
+    private var disclosureDefaultContent: some View {
+        if disclosureEnabled {
+            disclosureDefault
+        } else if let disclosureImage = disclosureImage {
+            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+            disclosureImage
+        }
+    }
+    
+    @ViewBuilder
+    private var disclosureDefault: some View {
         HStack(spacing: 0) {
-            if disclosureEnabled {
-                value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
-                
-                ZStack {
-                    if let image = appearance.disclosureImage {
-                        image
-                            .renderingMode(.template)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme))
-                    }
+            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+            ZStack {
+                if let image = appearance.disclosureImage {
+                    image
+                        .renderingMode(.template)
+                        .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme))
                 }
             }
         }

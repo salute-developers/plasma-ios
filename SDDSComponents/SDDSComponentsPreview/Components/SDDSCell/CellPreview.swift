@@ -6,30 +6,29 @@ import SDDSIcons
 
 struct CellPreview: PreviewProvider {
     static var previews: some View {
-        Cell(
-            appearance: Cell.l.appearance,
-            alignment: .center,
-            label: "label",
-            title: "title",
-            subtitle: "subtitle",
-            disclosureEnabled: false,
-            disclosureImage: nil,
-            disclosureText: "",
-            leftContent: {
-                avatar
-                    .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
-            },
-            centerContent: {},
-            rightContent: {
-                avatar
-                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
-                avatar
-                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
-            },
-            disclosure: {}
-        )
+        HStack {
+            Cell(
+                appearance: Cell.l.appearance,
+                alignment: .center,
+                label: "label",
+                title: "title",
+                subtitle: "subtitle",
+                disclosureEnabled: true,
+                disclosureImage: nil,
+                disclosureText: "disclosure",
+                leftContent: {
+                    avatar
+                        .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
+                },
+                rightContent: {
+                    iconButton
+                        .environment(\.buttonAppearance, IconButton.l.black.appearance)
+                },
+                disclosure: {}
+            )
+        }
         .previewLayout(PreviewLayout.sizeThatFits)
-        .previewDisplayName("Cell without disclosure")
+        .previewDisplayName("Cell")
         
         Cell(
             appearance: Cell.s.appearance,
@@ -37,27 +36,27 @@ struct CellPreview: PreviewProvider {
             label: "label",
             title: "title",
             subtitle: "subtitle",
-            disclosureEnabled: true,
+            disclosureEnabled: false,
+            disclosureImage: Image(systemName: "pencil.circle.fill"),
             disclosureText: "disclosure",
             leftContent: {
                 avatar
                     .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
             },
-            centerContent: {},
             rightContent: {
                 iconButton
             },
             disclosure: {}
         )
         .previewLayout(PreviewLayout.sizeThatFits)
-        .previewDisplayName("Cell with disclosure")
+        .previewDisplayName("Cell with custom disclosure image")
         
         Cell(
             appearance: Cell.l.appearance,
             alignment: .center,
-            label: "label",
-            title: "title",
-            subtitle: "subtitle",
+            label: "",
+            title: "",
+            subtitle: "",
             disclosureEnabled: true,
             disclosureText: "disclosure",
             leftContent: {
@@ -70,7 +69,6 @@ struct CellPreview: PreviewProvider {
                     accessibility: AvatarAccessibility()
                 )
             },
-            centerContent: {},
             rightContent: {
                 IconButton(
                     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),

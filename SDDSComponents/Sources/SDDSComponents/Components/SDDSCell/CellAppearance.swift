@@ -50,11 +50,11 @@ public struct CellAppearance {
         disclosureTextColor: ColorToken = .clearColor,
         disclosureImageColor: ColorToken = .clearColor,
         disclosureImage: Image? = nil,
-        avatarAppearance: AvatarAppearance = AvatarAppearance(),
-        iconButtonAppearance: ButtonAppearance = ButtonAppearance(),
-        checkBoxAppearance: CheckboxAppearance = CheckboxAppearance(),
-        radioBoxAppearance: RadioboxAppearance = RadioboxAppearance(),
-        switchAppearance: SwitchAppearance = SwitchAppearance()
+        avatarAppearance: AvatarAppearance? = nil,
+        iconButtonAppearance: ButtonAppearance? = nil,
+        checkBoxAppearance: CheckboxAppearance? = nil,
+        radioBoxAppearance: RadioboxAppearance? = nil,
+        switchAppearance: SwitchAppearance? = nil
     ) {
         self.size = size
         self.labelTypography = labelTypography
