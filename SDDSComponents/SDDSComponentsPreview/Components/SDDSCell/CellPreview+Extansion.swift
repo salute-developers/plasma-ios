@@ -38,7 +38,7 @@ extension CellPreview {
         )
     }
     
-    static var avatar: SDDSAvatar {
+    static var avatar: some View {
         SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
