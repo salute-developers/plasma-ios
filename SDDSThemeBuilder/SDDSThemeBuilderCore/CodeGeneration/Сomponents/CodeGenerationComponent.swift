@@ -18,6 +18,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
     case cell = "Cell"
+    case counter = "SDDSCounter"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -34,7 +35,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .iconBadge,
             .iconBadgeClear,
             .iconBadgeTransparent,
-            .indicator
+            .indicator,
+            .cell,     
+            .counter
         ]
     }
 }
@@ -56,6 +59,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .cell:
             GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .counter:
+            GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -75,6 +80,8 @@ extension CodeGenerationComponent {
             "IndicatorAppearance"
         case .cell:
             "CellAppearance"
+        case .counter:
+            "CounterAppearance"
         }
     }
     
@@ -95,6 +102,8 @@ extension CodeGenerationComponent {
             "IndicatorSizeConfiguration"
         case .cell:
             "CellSizeConfiguration"
+        case .counter:
+            "CounterSizeConfiguration"
         }
     }
     
@@ -134,6 +143,8 @@ extension CodeGenerationComponent {
             "indicator_config.json"
         case .cell:
             "cell_config.json"
+        case .counter:
+            "counter_config.json"
         }
     }
     

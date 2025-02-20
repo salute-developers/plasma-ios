@@ -52,26 +52,33 @@ public struct Cell: View {
     public var body: some View {
         HStack(alignment: contentAlignment, spacing: 0) {
             leftContent
-                .frame(maxWidth: .infinity)
+//                .frame(maxWidth: .infinity)
+                .debug(color: Color.pink, condition: true)
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingStart)
+                .debug(color: Color.red, condition: true)
             
             if hasCenterContent {
                 centerView
+                    .frame(maxWidth: .infinity)
+                    .debug(color: Color.pink, condition: true)
             } else {
                 centerContent
             }
             
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
+                .debug(color: Color.red, condition: true)
             
             rightContent
-                .frame(maxWidth: .infinity)
+//                .frame(maxWidth: .infinity)
+                .debug(color: Color.pink, condition: true)
             
             if disclosureEnabled {
                 defaultDisclosureView
                     .fixedSize()
+                    .debug(color: Color.pink, condition: true)
             } else {
                 disclosure
             }
