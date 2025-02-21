@@ -1,0 +1,144 @@
+{
+    "down.soft.s": [
+        {
+            "color": "#08080814",
+            "offsetX": 0,
+            "offsetY": 4.0,
+            "spreadRadius": -4.0,
+            "blurRadius": 14.0,
+            "fallbackElevation": 2.0
+        },
+        {
+            "color": "#0000000A",
+            "offsetX": 0,
+            "offsetY": 1.0,
+            "spreadRadius": -1.0,
+            "blurRadius": 4.0
+        }
+    ],
+    "down.soft.m": [
+        {
+            "color": "#00000014",
+            "offsetX": 0,
+            "offsetY": 24.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 48.0,
+            "fallbackElevation": 4.0
+        }
+    ],
+    "down.soft.l": [
+        {
+            "color": "#00000014",
+            "offsetX": 0,
+            "offsetY": 60.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 112.0,
+            "fallbackElevation": 6.0
+        }
+    ],
+    "down.hard.s": [
+        {
+            "color": "#08080829",
+            "offsetX": 0,
+            "offsetY": 4.0,
+            "spreadRadius": -3.0,
+            "blurRadius": 12.0,
+            "fallbackElevation": 2.0
+        },
+        {
+            "color": "#00000014",
+            "offsetX": 0,
+            "offsetY": 1.0,
+            "spreadRadius": -2.0,
+            "blurRadius": 4.0
+        }
+    ],
+    "down.hard.m": [
+        {
+            "color": "#0000003D",
+            "offsetX": 0,
+            "offsetY": 16.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 32.0,
+            "fallbackElevation": 4.0
+        }
+    ],
+    "down.hard.l": [
+        {
+            "color": "#00000066",
+            "offsetX": 0,
+            "offsetY": 60.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 112.0,
+            "fallbackElevation": 6.0
+        }
+    ],
+    "up.soft.s": [
+        {
+            "color": "#08080814",
+            "offsetX": 0,
+            "offsetY": -4.0,
+            "spreadRadius": -4.0,
+            "blurRadius": 14.0
+        },
+        {
+            "color": "#00000008",
+            "offsetX": 0,
+            "offsetY": -1.0,
+            "spreadRadius": -1.0,
+            "blurRadius": 4.0
+        }
+    ],
+    "up.soft.m": [
+        {
+            "color": "#00000014",
+            "offsetX": 0,
+            "offsetY": -24.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 48.0
+        }
+    ],
+    "up.soft.l": [
+        {
+            "color": "#00000014",
+            "offsetX": 0,
+            "offsetY": -60.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 112.0
+        }
+    ],
+    "up.hard.s": [
+        {
+            "color": "#08080833",
+            "offsetX": 0,
+            "offsetY": -4.0,
+            "spreadRadius": -3.0,
+            "blurRadius": 12.0
+        },
+        {
+            "color": "#00000008",
+            "offsetX": 0,
+            "offsetY": -1.0,
+            "spreadRadius": -1.0,
+            "blurRadius": 4.0
+        }
+    ],
+    "up.hard.m": [
+        {
+            "color": "#0000003D",
+            "offsetX": 0,
+            "offsetY": -16.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 32.0
+        }
+    ],
+    "up.hard.l": [
+        {
+            "color": "#00000066",
+            "offsetX": 0,
+            "offsetY": -60.0,
+            "spreadRadius": -8.0,
+            "blurRadius": 112.0
+        }
+    ]
+}
