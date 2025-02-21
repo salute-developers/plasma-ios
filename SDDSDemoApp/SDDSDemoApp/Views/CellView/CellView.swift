@@ -33,10 +33,10 @@ struct CellView: View {
             label: viewModel.label,
             title: viewModel.title,
             subtitle: viewModel.subtitle,
-            disclosureIcon: viewModel.disclosureIcon,
+            disclosureEnabled: viewModel.disclosureEnabled,
+            disclosureImage: viewModel.disclosureIcon,
             disclosureText: viewModel.disclosureText,
             leftContent: { viewModel.leftContent },
-            centerContent: { viewModel.centerContent },
             rightContent: { viewModel.rightContent },
             disclosure: { viewModel.disclosure }
         )

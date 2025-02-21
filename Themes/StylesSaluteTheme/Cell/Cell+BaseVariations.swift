@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSIcons
 
 public struct Cell {
     public static var l: ComponentAppearanceVariation<Cell, CellAppearance> {

@@ -17,7 +17,7 @@ enum Component: String {
         case .chipGroup:
             return "ChipGroup"
         case .avatar:
-            return "SDDSAvatar"
+            return "Avatar"
         case .iconButton:
             return "IconButton"
         case .checkBox:

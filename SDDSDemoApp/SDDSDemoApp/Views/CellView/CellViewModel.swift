@@ -32,6 +32,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
         }
     }
     @Published var disclosure: AnyView? = nil
+    @Published var disclosureEnabled: Bool = false
     @Published var disclosureText: String = ""
     @Published var disclosureIcon: Image? = nil
     
