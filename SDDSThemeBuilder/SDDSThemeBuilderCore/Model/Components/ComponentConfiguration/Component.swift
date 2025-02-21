@@ -8,27 +8,26 @@ enum Component: String {
     case checkBox = "check-box"
     case radioBox = "radio-box"
     case `switch` = "switch"
+    case cell = "cell"
     
     var componentName: String {
         switch self {
         case .embeddedChip:
             return "EmbeddedChip"
         case .chipGroup:
-<<<<<<< HEAD
             return "ChipGroup"
-=======
-            return "SDDSChipGroup"
         case .avatar:
             return "SDDSAvatar"
         case .iconButton:
             return "IconButton"
         case .checkBox:
-            return "SDDSCheckbox"
+            return "Checkbox"
         case .radioBox:
-            return "SDDSRadiobox"
+            return "Radiobox"
         case .switch:
-            return "SDDSSwitch"
->>>>>>> 97aac20f (feat: added selection appearance in avatar)
+            return "Switch"
+        case .cell:
+            return "Cell"
         }
     }
 }
