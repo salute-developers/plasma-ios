@@ -55,8 +55,8 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
         let newChip = ChipData(
             title: "Chip \(chips.count + 1)",
             isEnabled: true,
-            contentStartImage: nil,
-            contentEndImage: Image.image("textFieldChipIcon"),
+            iconImage: nil,
+            buttonImage: Image.image("textFieldChipIcon"),
             accessibility: ChipAccessibility(),
             removeAction: {}
         )

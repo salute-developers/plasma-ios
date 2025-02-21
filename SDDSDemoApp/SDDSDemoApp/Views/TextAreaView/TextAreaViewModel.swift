@@ -57,8 +57,8 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
             id: id,
             title: "Chip \( chips.count + 1)",
             isEnabled: true,
-            contentStartImage: nil,
-            contentEndImage: Image.image("textFieldChipIcon"),
+            iconImage: nil,
+            buttonImage: Image.image("textFieldChipIcon"),
             accessibility: ChipAccessibility(),
             removeAction: { [weak self] in
                 self?.removeChip(with: id)
@@ -73,8 +73,8 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
         updatedChip = ChipData(
             title: newTitle,
             isEnabled: updatedChip.isEnabled,
-            contentStartImage: updatedChip.contentStartImage,
-            contentEndImage: updatedChip.contentEndImage,
+            iconImage: updatedChip.iconImage,
+            buttonImage: updatedChip.buttonImage,
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )
