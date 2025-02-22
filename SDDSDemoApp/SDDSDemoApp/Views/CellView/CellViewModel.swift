@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-enum CellContentType: String, CaseIterable {
+enum CellContent: String, CaseIterable {
     case avatar
     case iconButton
     case `switch`
@@ -20,56 +20,27 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var title: String = "title"
     @Published var subtitle: String = "subtitle"
     
-    //MARK: - Cell Content
-    @Published var leftContent: AnyView? = nil
-    @Published var centerContent: AnyView? = nil
-    @Published var rightContent: AnyView? = nil
-    
+    @Published var leftContentType: CellContent = .none
+    @Published var rightContentType: CellContent = .none
     //MARK: - Disclosure
-    @Published var hasDisclosure: Bool = false {
-        didSet {
-            setDisclosureIcon()
-        }
-    }
-    @Published var disclosure: AnyView? = nil
     @Published var disclosureEnabled: Bool = false
+    @Published var disclosure: AnyView? = nil
     @Published var disclosureText: String = ""
     @Published var disclosureIcon: Image? = nil
-    
-    //MARK: - Cell content elements
-    @Published var contentLeftPreview: CellContentType = .none {
-        didSet {
-            leftContent = addView(for: contentLeftPreview)
-        }
-    }
-    @Published var contentCenterPreview: CellContentType = .none {
-        didSet {
-            centerContent = addView(for: contentCenterPreview)
-        }
-    }
-    @Published var contentRightPreview: CellContentType = .none {
-        didSet {
-            rightContent = addView(for: contentRightPreview)
-        }
-    }
     
     //MARK: - Additional views
     @Published var customText: String = "Custom text"
     
     init() {
-        super.init(variationProvider: CellVariationProvider(contentType: .none))
-        
-        if let firstVAriation = variations.first {
-            selectVariation(firstVAriation)
-        }
+        super.init(variationProvider: CellVariationProvider())
     }
     
     //MARK: - Add preview in content
-    func addView(for content: CellContentType) -> AnyView {
-        switch content {
+    @ViewBuilder
+    func addContent(type: CellContent) -> some View {
+        switch type {
         case .avatar:
-            AnyView(
-                SDDSAvatar(
+                Avatar(
                     text: "AB",
                     image: nil,
                     placeholderImage: nil,
@@ -77,9 +48,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                     appearance: appearance.avatarAppearance,
                     accessibility: AvatarAccessibility()
                 )
-            )
         case .iconButton:
-            AnyView(
                 IconButton(
                     iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
                     isDisabled: false,
@@ -89,9 +58,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                     layoutMode: .fixedWidth(.packed),
                     action: {}
                 )
-            )
         case .switch:
-            AnyView(
                 SDDSSwitch(
                     title: "Label",
                     subtitle: "Description",
@@ -100,9 +67,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                     appearance: appearance.switchAppearance,
                     switchAccessibility: SwitchAccessibility()
                 )
-            )
 //        case .radiobox:
-//            AnyView(
 //                SDDSRadiobox(
 //                    isSelected: .constant(true),
 //                    title: "Value",
@@ -111,9 +76,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
 //                    images: .defaultImages,
 //                    appearance: SDDSRadiobox.medium.default.appearance
 //                )
-//            )
 //        case .checkbox:
-//            AnyView(
 //                SDDSCheckbox(
 //                    state: .constant(.indeterminate),
 //                    title: "Valur",
@@ -122,22 +85,19 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
 //                    images: .checkbox,
 //                    appearance: SDDSCheckbox.medium.default.appearance
 //                )
-//            )
         case .text:
-            AnyView(Text(customText))
+            Text(customText)
         case .none:
-            AnyView(EmptyView())
+            EmptyView()
         }
     }
     
-    //MARK: - Set Disclosure
-    private func setDisclosureIcon () {
-        if hasDisclosure {
-            disclosureText = "disclosure"
-            disclosureIcon = Image(systemName: "arrow.right.to.line.compact")
-        } else {
-            disclosureIcon = nil
-            disclosureText = ""
-        }
+    
+    var leftContent: some View {
+        addContent(type: leftContentType)
+    }
+    
+    var rightContent: some View {
+        addContent(type: rightContentType)
     }
 }

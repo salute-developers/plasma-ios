@@ -5,25 +5,14 @@ import SDDSServTheme
 final class CellVariationProvider: VariationProvider {
     typealias Appearance = CellAppearance
     
-    var contentType: CellContentType
+    var theme: Theme
     
-    init(contentType: CellContentType) {
-        self.contentType = contentType
+    init(theme: Theme = .sdddsServTheme) {
+        self.theme = theme
     }
     
     var variations: [Variation<CellAppearance>] {
-        switch contentType {
-        case .avatar:
-            Cell.all
-        case .iconButton:
-            Cell.all
-        case .switch:
-            Cell.all
-        case .text:
-            Cell.all
-        case .none:
-            Cell.all
-        }
+        theme.cellVariations
     }
     
     var defaultValue: CellAppearance {

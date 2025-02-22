@@ -51,13 +51,13 @@ struct CellView: View {
             Text("Content Left")
             Spacer()
             Menu {
-                ForEach(CellContentType.allCases, id: \.self) { content in
+                ForEach(CellContent.allCases, id: \.self) { content in
                     Button(content.rawValue) {
-                        viewModel.contentLeftPreview = content
+                        viewModel.leftContentType = content
                     }
                 }
             } label: {
-                Text(viewModel.contentLeftPreview.rawValue.capitalized)
+                Text(viewModel.leftContentType.rawValue.capitalized)
             }
         }
     }
@@ -87,19 +87,19 @@ struct CellView: View {
             Text("Content Right")
             Spacer()
             Menu {
-                ForEach(CellContentType.allCases, id: \.self) { content in
+                ForEach(CellContent.allCases, id: \.self) { content in
                     Button(content.rawValue) {
-                        viewModel.contentRightPreview = content
+                        viewModel.rightContentType = content
                     }
                 }
             } label: {
-                Text(viewModel.contentRightPreview.rawValue.capitalized)
+                Text(viewModel.rightContentType.rawValue.capitalized)
             }
         }
     }
     
     private var hasDisclosure: some View {
-        Toggle("Disclosure", isOn: $viewModel.hasDisclosure)
+        Toggle("Disclosure", isOn: $viewModel.disclosureEnabled)
     }
     
     private var disclosureText: some View {

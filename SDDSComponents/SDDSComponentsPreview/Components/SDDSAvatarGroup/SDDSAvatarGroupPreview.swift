@@ -5,9 +5,9 @@ import SDDSServTheme
 
 // MARK: - Preview
 
-struct SDDSAvatarGroupPreview: PreviewProvider {
+struct AvatarGroupPreview: PreviewProvider {
     static var previews: some View {
-        SDDSAvatarGroup(
+        AvatarGroup(
             data: exampleAvatars,
             lastAvatar: lastAvatarData,
             size: defaultSize
@@ -16,9 +16,9 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
         .padding()
     }
 
-    static var exampleAvatars: [SDDSAvatarData] {
+    static var exampleAvatars: [AvatarData] {
         [
-            SDDSAvatarData(
+            AvatarData(
                 text: "JD",
                 image: nil,
                 placeholderImage: nil,
@@ -26,7 +26,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
-            SDDSAvatarData(
+            AvatarData(
                 text: "ML",
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
@@ -34,7 +34,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
-            SDDSAvatarData(
+            AvatarData(
                 text: "ML",
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
@@ -45,8 +45,8 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
         ]
     }
 
-    static var lastAvatarData: SDDSAvatarData {
-        SDDSAvatarData(
+    static var lastAvatarData: AvatarData {
+        AvatarData(
             text: "+5",
             image: nil,
             placeholderImage: nil,
