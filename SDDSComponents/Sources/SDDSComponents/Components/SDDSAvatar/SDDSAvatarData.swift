@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 /**
- `SDDSAvatarData` представляет собой структуру, содержащую все параметры, необходимые для создания аватара с использованием `SDDSAvatar`.
+ `AvatarData` представляет собой структуру, содержащую все параметры, необходимые для создания аватара с использованием `Avatar`.
 
  - Properties:
     - text: Текст, который отображается, если нет изображения; обычно инициалы.
@@ -13,7 +13,7 @@ import SwiftUI
     - size: Конфигурация размеров для аватара.
     - accessibility: Параметры доступности для аватара.
  */
-public struct SDDSAvatarData {
+public struct AvatarData {
     let id = UUID()
     public let text: String
     public let image: AvatarImageSource?
@@ -23,7 +23,7 @@ public struct SDDSAvatarData {
     public let accessibility: AvatarAccessibility
 
     /**
-     Инициализатор для создания `SDDSAvatarData`.
+     Инициализатор для создания `AvatarData`.
 
      - Parameters:
         - text: Текст, который отображается, если нет изображения; обычно инициалы.
@@ -50,8 +50,8 @@ public struct SDDSAvatarData {
     }
 }
 
-extension SDDSAvatarData: Equatable {
-    public static func == (lhs: SDDSAvatarData, rhs: SDDSAvatarData) -> Bool {
+extension AvatarData: Equatable {
+    public static func == (lhs: AvatarData, rhs: AvatarData) -> Bool {
         return lhs.id == rhs.id
     }
 }

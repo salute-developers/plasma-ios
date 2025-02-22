@@ -1,23 +1,23 @@
 import SwiftUI
 
-// MARK: - SDDSAvatarGroup
+// MARK: - AvatarGroup
 
 /**
- `SDDSAvatarGroup` представляет собой группу аватаров, отображаемых в ряд с наложением и обводкой между ними.
+ `AvatarGroup` представляет собой группу аватаров, отображаемых в ряд с наложением и обводкой между ними.
 
  - Properties:
     - data: Массив данных аватаров для отображения.
     - lastAvatar: Данные для последнего аватара, который отображается, если количество аватаров превышает `maxDisplayingAvatarCount`.
     - size: Конфигурация размеров для группы аватаров, включая максимальное количество отображаемых аватаров, ширину обводки и расстояние между аватарами.
  */
-public struct SDDSAvatarGroup: View {
-    let data: [SDDSAvatarData]
-    let lastAvatar: SDDSAvatarData
+public struct AvatarGroup: View {
+    let data: [AvatarData]
+    let lastAvatar: AvatarData
     let size: AvatarGroupSizeConfiguration
 
     public init(
-        data: [SDDSAvatarData],
-        lastAvatar: SDDSAvatarData,
+        data: [AvatarData],
+        lastAvatar: AvatarData,
         size: AvatarGroupSizeConfiguration
     ) {
         self.data = data
@@ -28,7 +28,7 @@ public struct SDDSAvatarGroup: View {
     public var body: some View {
         HStack(spacing: -size.borderWidth - size.spacing) {
             ForEach(displayingAvatars, id: \.id) { avatarData in
-                SDDSAvatar(data: avatarData)
+                Avatar(data: avatarData)
                     .status(.hidden)
                     .overlay(
                         Circle()
@@ -39,7 +39,7 @@ public struct SDDSAvatarGroup: View {
         }
     }
 
-    private var displayingAvatars: [SDDSAvatarData] {
+    private var displayingAvatars: [AvatarData] {
         if data.count > size.maxDisplayingAvatarCount {
             return Array(data.prefix(size.maxDisplayingAvatarCount)) + [lastAvatar]
         } else {

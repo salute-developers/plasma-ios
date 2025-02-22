@@ -3,7 +3,6 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-
 public extension ComponentAppearanceVariation<Cell, CellAppearance> {
     var variation: Variation<Appearance> {
         .init(

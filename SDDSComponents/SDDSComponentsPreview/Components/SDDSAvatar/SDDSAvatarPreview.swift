@@ -4,9 +4,9 @@ import SDDSServTheme
 import SwiftUI
 
 // MARK: - Preview
-struct SDDSAvatarPreview: PreviewProvider {
+struct AvatarPreview: PreviewProvider {
     static var previews: some View {
-        SDDSAvatar(
+        Avatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,

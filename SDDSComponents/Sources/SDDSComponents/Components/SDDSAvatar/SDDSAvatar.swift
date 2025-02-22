@@ -1,9 +1,9 @@
 import SwiftUI
 
-// MARK: - SDDSAvatar
+// MARK: - Avatar
 
 /**
- `SDDSAvatar` представляет собой аватар пользователя, отображающий текст, изображение или плейсхолдер с возможностью указания статуса.
+ `Avatar` представляет собой аватар пользователя, отображающий текст, изображение или плейсхолдер с возможностью указания статуса.
 
  - Properties:
     - text: Текст, который отображается, если нет изображения; обычно инициалы.
@@ -13,7 +13,7 @@ import SwiftUI
     - appearance: Параметры внешнего вида аватара.
     - accessibility: Параметры доступности для аватара.
  */
-public struct SDDSAvatar: View {
+public struct Avatar: View {
     let text: String
     let image: AvatarImageSource?
     let placeholderImage: AvatarImageSource?
@@ -45,7 +45,7 @@ public struct SDDSAvatar: View {
         self.accessibility = accessibility
     }
     
-    public init(data: SDDSAvatarData) {
+    public init(data: AvatarData) {
         self.text = data.text
         self.image = data.image
         self.placeholderImage = data.placeholderImage
