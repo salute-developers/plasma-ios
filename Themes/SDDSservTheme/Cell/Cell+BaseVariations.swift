@@ -2,21 +2,20 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSIcons
 
 public struct Cell {
     public static var l: ComponentAppearanceVariation<Cell, CellAppearance> {
         var appearance = CellAppearance.base
         appearance.size = CellSize.l
-        appearance.avatarAppearance = Avatar.l.appearance
-        appearance.checkBoxAppearance = Checkbox.m.appearance
+        appearance.avatarAppearance = SDDSAvatar.l.appearance
+        appearance.checkBoxAppearance = SDDSCheckbox.m.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.l.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.radioBoxAppearance = Radiobox.m.appearance
+        appearance.radioBoxAppearance = SDDSRadiobox.m.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.switchAppearance = Switch.l.appearance
+        appearance.switchAppearance = SDDSSwitch.l.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
 
         return .init(
@@ -27,15 +26,15 @@ public struct Cell {
     public static var m: ComponentAppearanceVariation<Cell, CellAppearance> {
         var appearance = CellAppearance.base
         appearance.size = CellSize.m
-        appearance.avatarAppearance = Avatar.m.appearance
-        appearance.checkBoxAppearance = Checkbox.m.appearance
+        appearance.avatarAppearance = SDDSAvatar.m.appearance
+        appearance.checkBoxAppearance = SDDSCheckbox.m.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.m.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.radioBoxAppearance = Radiobox.m.appearance
+        appearance.radioBoxAppearance = SDDSRadiobox.m.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.switchAppearance = Switch.m.appearance
+        appearance.switchAppearance = SDDSSwitch.m.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
 
         return .init(
@@ -46,15 +45,15 @@ public struct Cell {
     public static var s: ComponentAppearanceVariation<Cell, CellAppearance> {
         var appearance = CellAppearance.base
         appearance.size = CellSize.s
-        appearance.avatarAppearance = Avatar.s.appearance
-        appearance.checkBoxAppearance = Checkbox.s.appearance
+        appearance.avatarAppearance = SDDSAvatar.s.appearance
+        appearance.checkBoxAppearance = SDDSCheckbox.s.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.s.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.radioBoxAppearance = Radiobox.s.appearance
+        appearance.radioBoxAppearance = SDDSRadiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.switchAppearance = Switch.s.appearance
+        appearance.switchAppearance = SDDSSwitch.s.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
 
         return .init(
@@ -65,15 +64,15 @@ public struct Cell {
     public static var xs: ComponentAppearanceVariation<Cell, CellAppearance> {
         var appearance = CellAppearance.base
         appearance.size = CellSize.xs
-        appearance.avatarAppearance = Avatar.s.appearance
-        appearance.checkBoxAppearance = Checkbox.s.appearance
+        appearance.avatarAppearance = SDDSAvatar.s.appearance
+        appearance.checkBoxAppearance = SDDSCheckbox.s.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.iconButtonAppearance = IconButton.xs.clear.appearance
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.radioBoxAppearance = Radiobox.s.appearance
+        appearance.radioBoxAppearance = SDDSRadiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.switchAppearance = Switch.s.appearance
+        appearance.switchAppearance = SDDSSwitch.s.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 
         return .init(

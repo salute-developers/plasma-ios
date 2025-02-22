@@ -7,18 +7,18 @@ import SDDSServTheme
 
 struct AvatarGroupPreview: PreviewProvider {
     static var previews: some View {
-        AvatarGroup(
+        SDDSAvatarGroup(
             data: exampleAvatars,
-            lastAvatar: lastAvatarData,
+            lastAvatar: lastSDDSAvatarData,
             size: defaultSize
         )
         .previewLayout(.sizeThatFits)
         .padding()
     }
 
-    static var exampleAvatars: [AvatarData] {
+    static var exampleAvatars: [SDDSAvatarData] {
         [
-            AvatarData(
+            SDDSAvatarData(
                 text: "JD",
                 image: nil,
                 placeholderImage: nil,
@@ -26,7 +26,7 @@ struct AvatarGroupPreview: PreviewProvider {
                 appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
-            AvatarData(
+            SDDSAvatarData(
                 text: "ML",
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
@@ -34,7 +34,7 @@ struct AvatarGroupPreview: PreviewProvider {
                 appearance: Avatar.l.default.appearance,
                 accessibility: defaultAccessibility
             ),
-            AvatarData(
+            SDDSAvatarData(
                 text: "ML",
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
@@ -45,8 +45,8 @@ struct AvatarGroupPreview: PreviewProvider {
         ]
     }
 
-    static var lastAvatarData: AvatarData {
-        AvatarData(
+    static var lastSDDSAvatarData: SDDSAvatarData {
+        SDDSAvatarData(
             text: "+5",
             image: nil,
             placeholderImage: nil,

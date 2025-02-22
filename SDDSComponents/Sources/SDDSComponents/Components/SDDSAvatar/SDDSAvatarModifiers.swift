@@ -1,10 +1,10 @@
 import SwiftUI
 
-// MARK: - Avatar Modifiers
+// MARK: - SDDSAvatar Modifiers
 
-public extension View where Self == Avatar {
-    func text(_ newText: String) -> Avatar {
-        Avatar(
+public extension View where Self == SDDSAvatar {
+    func text(_ newText: String) -> SDDSAvatar {
+        SDDSAvatar(
             text: newText,
             image: self.image,
             placeholderImage: self.placeholderImage,
@@ -14,8 +14,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func image(_ newImage: AvatarImageSource?) -> Avatar {
-        Avatar(
+    func image(_ newImage: AvatarImageSource?) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: newImage,
             placeholderImage: self.placeholderImage,
@@ -25,8 +25,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func placeholderImage(_ newPlaceholderImage: AvatarImageSource?) -> Avatar {
-        Avatar(
+    func placeholderImage(_ newPlaceholderImage: AvatarImageSource?) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: newPlaceholderImage,
@@ -36,8 +36,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func status(_ newStatus: AvatarStatus) -> Avatar {
-        Avatar(
+    func status(_ newStatus: AvatarStatus) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: self.placeholderImage,
@@ -47,8 +47,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func appearance(_ newAppearance: AvatarAppearance) -> Avatar {
-        Avatar(
+    func appearance(_ newAppearance: AvatarAppearance) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: self.placeholderImage,
@@ -58,8 +58,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func size(_ newSize: AvatarSizeConfiguration) -> Avatar {
-        Avatar(
+    func size(_ newSize: AvatarSizeConfiguration) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: self.placeholderImage,
@@ -69,8 +69,8 @@ public extension View where Self == Avatar {
         )
     }
 
-    func accessibility(_ newAccessibility: AvatarAccessibility) -> Avatar {
-        Avatar(
+    func accessibility(_ newAccessibility: AvatarAccessibility) -> SDDSAvatar {
+        SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: self.placeholderImage,

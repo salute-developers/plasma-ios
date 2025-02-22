@@ -18,7 +18,7 @@ struct CellPreview: PreviewProvider {
                 disclosureText: "disclosure",
                 leftContent: {
                     avatar
-                        .environment(\.avatarAppearance, Avatar.default.large.appearance)
+                        .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
                 },
                 rightContent: {
                     iconButton
@@ -41,7 +41,7 @@ struct CellPreview: PreviewProvider {
             disclosureText: "disclosure",
             leftContent: {
                 avatar
-                    .environment(\.avatarAppearance, Avatar.default.medium.appearance)
+                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
             },
             rightContent: {
                 iconButton
@@ -60,7 +60,7 @@ struct CellPreview: PreviewProvider {
             disclosureEnabled: true,
             disclosureText: "disclosure",
             leftContent: {
-                Avatar(
+                SDDSAvatar(
                     text: "",
                     image: .image(Image.image("checker")),
                     placeholderImage: nil,
