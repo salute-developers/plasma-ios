@@ -13,7 +13,7 @@ import SwiftUI
     - appearance: Параметры внешнего вида аватара.
     - accessibility: Параметры доступности для аватара.
  */
-public struct Avatar: View {
+public struct SDDSAvatar: View {
     let text: String
     let image: AvatarImageSource?
     let placeholderImage: AvatarImageSource?
@@ -45,7 +45,7 @@ public struct Avatar: View {
         self.accessibility = accessibility
     }
     
-    public init(data: AvatarData) {
+    public init(data: SDDSAvatarData) {
         self.text = data.text
         self.image = data.image
         self.placeholderImage = data.placeholderImage

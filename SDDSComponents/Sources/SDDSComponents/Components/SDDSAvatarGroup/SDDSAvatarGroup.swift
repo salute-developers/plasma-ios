@@ -10,14 +10,14 @@ import SwiftUI
     - lastAvatar: Данные для последнего аватара, который отображается, если количество аватаров превышает `maxDisplayingAvatarCount`.
     - size: Конфигурация размеров для группы аватаров, включая максимальное количество отображаемых аватаров, ширину обводки и расстояние между аватарами.
  */
-public struct AvatarGroup: View {
-    let data: [AvatarData]
-    let lastAvatar: AvatarData
+public struct SDDSAvatarGroup: View {
+    let data: [SDDSAvatarData]
+    let lastAvatar: SDDSAvatarData
     let size: AvatarGroupSizeConfiguration
 
     public init(
-        data: [AvatarData],
-        lastAvatar: AvatarData,
+        data: [SDDSAvatarData],
+        lastAvatar: SDDSAvatarData,
         size: AvatarGroupSizeConfiguration
     ) {
         self.data = data
@@ -27,19 +27,19 @@ public struct AvatarGroup: View {
 
     public var body: some View {
         HStack(spacing: -size.borderWidth - size.spacing) {
-            ForEach(displayingAvatars, id: \.id) { avatarData in
-                Avatar(data: avatarData)
+            ForEach(displayingAvatars, id: \.id) { SDDSAvatarData in
+                Avatar(data: SDDSAvatarData)
                     .status(.hidden)
                     .overlay(
                         Circle()
                             .stroke(Color.white, lineWidth: size.borderWidth)
                     )
-                    .zIndex(-Double(data.count) + Double(displayingAvatars.firstIndex(of: avatarData) ?? 0))
+                    .zIndex(-Double(data.count) + Double(displayingAvatars.firstIndex(of: SDDSAvatarData) ?? 0))
             }
         }
     }
 
-    private var displayingAvatars: [AvatarData] {
+    private var displayingAvatars: [SDDSAvatarData] {
         if data.count > size.maxDisplayingAvatarCount {
             return Array(data.prefix(size.maxDisplayingAvatarCount)) + [lastAvatar]
         } else {
