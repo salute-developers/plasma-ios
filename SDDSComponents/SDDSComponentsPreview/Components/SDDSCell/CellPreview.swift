@@ -18,7 +18,7 @@ struct CellPreview: PreviewProvider {
                 disclosureText: "disclosure",
                 leftContent: {
                     avatar
-                        .environment(\.avatarAppearance, SDDSAvatar.default.large.appearance)
+                        .environment(\.avatarAppearance, Avatar.l.default.appearance)
                 },
                 rightContent: {
                     iconButton
@@ -41,7 +41,7 @@ struct CellPreview: PreviewProvider {
             disclosureText: "disclosure",
             leftContent: {
                 avatar
-                    .environment(\.avatarAppearance, SDDSAvatar.default.medium.appearance)
+                    .environment(\.avatarAppearance, Avatar.m.default.appearance)
             },
             rightContent: {
                 iconButton

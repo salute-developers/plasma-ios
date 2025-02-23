@@ -23,7 +23,7 @@ extension CellPreview {
             subtitle: "Description",
             isEnabled: true,
             images: .checkbox,
-            appearance: SDDSCheckbox.medium.default.appearance
+            appearance: Checkbox.m.default.appearance
         )
     }
     
@@ -34,7 +34,7 @@ extension CellPreview {
             subtitle: "Description",
             isEnabled: true,
             images: .checkbox,
-            appearance: SDDSCheckbox.medium.default.appearance
+            appearance: Checkbox.m.default.appearance
         )
     }
     
@@ -55,7 +55,7 @@ extension CellPreview {
             subtitle: "",
             isOn: .constant(false),
             isEnabled: true,
-            appearance: SDDSSwitch.large.default.appearance,
+            appearance: Switch.l.default.appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }

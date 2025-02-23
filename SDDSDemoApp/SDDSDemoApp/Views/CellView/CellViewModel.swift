@@ -25,7 +25,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     //MARK: - Disclosure
     @Published var disclosureEnabled: Bool = false
     @Published var disclosure: AnyView? = nil
-    @Published var disclosureText: String = ""
+    @Published var disclosureText: String = "disclosure"
     @Published var disclosureIcon: Image? = nil
     
     //MARK: - Additional views
@@ -40,7 +40,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     func addContent(type: CellContent) -> some View {
         switch type {
         case .avatar:
-                Avatar(
+                SDDSAvatar(
                     text: "AB",
                     image: nil,
                     placeholderImage: nil,
