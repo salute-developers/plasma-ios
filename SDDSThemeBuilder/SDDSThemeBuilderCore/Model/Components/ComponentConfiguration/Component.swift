@@ -17,15 +17,15 @@ enum Component: String {
         case .chipGroup:
             return "ChipGroup"
         case .avatar:
-            return "SDDSAvatar"
+            return "Avatar"
         case .iconButton:
             return "IconButton"
         case .checkBox:
-            return "SDDSCheckbox"
+            return "Checkbox"
         case .radioBox:
-            return "SDDSRadiobox"
+            return "Radiobox"
         case .switch:
-            return "SDDSSwitch"
+            return "Switch"
         case .cell:
             return "Cell"
         }

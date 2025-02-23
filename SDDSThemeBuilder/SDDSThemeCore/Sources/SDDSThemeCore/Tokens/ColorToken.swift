@@ -22,3 +22,13 @@ public struct ColorToken: Hashable {
         hasher.combine(lightColor)
     }
 }
+
+extension ColorToken: Hashable {
+    public static func ==(lhs: ColorToken, rhs: ColorToken) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

@@ -28,7 +28,7 @@ public struct SDDSAvatarGroup: View {
     public var body: some View {
         HStack(spacing: -size.borderWidth - size.spacing) {
             ForEach(displayingAvatars, id: \.id) { SDDSAvatarData in
-                Avatar(data: SDDSAvatarData)
+                SDDSAvatar(data: SDDSAvatarData)
                     .status(.hidden)
                     .overlay(
                         Circle()
