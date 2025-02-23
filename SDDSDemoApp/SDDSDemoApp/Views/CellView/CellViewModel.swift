@@ -7,9 +7,8 @@ enum CellContent: String, CaseIterable {
     case avatar
     case iconButton
     case `switch`
-//    case checkbox
-//    case radiobox
-    case text
+    case checkbox
+    case radiobox
     case none
 }
 
@@ -67,26 +66,24 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                     appearance: appearance.switchAppearance,
                     switchAccessibility: SwitchAccessibility()
                 )
-//        case .radiobox:
-//                SDDSRadiobox(
-//                    isSelected: .constant(true),
-//                    title: "Value",
-//                    subtitle: "Description",
-//                    isEnabled: true,
-//                    images: .defaultImages,
-//                    appearance: SDDSRadiobox.medium.default.appearance
-//                )
-//        case .checkbox:
-//                SDDSCheckbox(
-//                    state: .constant(.indeterminate),
-//                    title: "Valur",
-//                    subtitle: "Description",
-//                    isEnabled: true,
-//                    images: .checkbox,
-//                    appearance: SDDSCheckbox.medium.default.appearance
-//                )
-        case .text:
-            Text(customText)
+        case .radiobox:
+                SDDSRadiobox(
+                    isSelected: .constant(true),
+                    title: "Value",
+                    subtitle: "Description",
+                    isEnabled: true,
+                    images: .defaultImages,
+                    appearance: appearance.radioBoxAppearance
+                )
+        case .checkbox:
+                SDDSCheckbox(
+                    state: .constant(.indeterminate),
+                    title: "Valur",
+                    subtitle: "Description",
+                    isEnabled: true,
+                    images: .checkbox,
+                    appearance: appearance.checkBoxAppearance
+                )
         case .none:
             EmptyView()
         }
