@@ -50,11 +50,11 @@ public struct CellAppearance {
         disclosureTextColor: ColorToken = .clearColor,
         disclosureImageColor: ColorToken = .clearColor,
         disclosureImage: Image? = nil,
-        avatarAppearance: AvatarAppearance? = nil,
-        iconButtonAppearance: ButtonAppearance? = nil,
-        checkBoxAppearance: CheckboxAppearance? = nil,
-        radioBoxAppearance: RadioboxAppearance? = nil,
-        switchAppearance: SwitchAppearance? = nil
+        avatarAppearance: AvatarAppearance = AvatarAppearance.defaultValue,
+        iconButtonAppearance: ButtonAppearance = ButtonAppearance.defaultValue,
+        checkBoxAppearance: CheckboxAppearance = CheckboxAppearance.defaultValue,
+        radioBoxAppearance: RadioboxAppearance = RadioboxAppearance.defaultValue,
+        switchAppearance: SwitchAppearance = SwitchAppearance.defaultValue
     ) {
         self.size = size
         self.labelTypography = labelTypography
@@ -67,10 +67,10 @@ public struct CellAppearance {
         self.disclosureTextColor = disclosureTextColor
         self.disclosureImageColor = disclosureImageColor
         self.disclosureImage = disclosureImage
-        self.avatarAppearance = AvatarAppearance.defaultValue
-        self.iconButtonAppearance = ButtonAppearance.defaultValue
-        self.checkBoxAppearance = CheckboxAppearance.defaultValue
-        self.radioBoxAppearance = RadioboxAppearance.defaultValue
-        self.switchAppearance = SwitchAppearance.defaultValue
+        self.avatarAppearance = avatarAppearance
+        self.iconButtonAppearance = iconButtonAppearance
+        self.checkBoxAppearance = checkBoxAppearance
+        self.radioBoxAppearance = radioBoxAppearance
+        self.switchAppearance = switchAppearance
     }
 }

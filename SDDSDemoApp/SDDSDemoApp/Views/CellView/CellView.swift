@@ -37,8 +37,7 @@ struct CellView: View {
             disclosureImage: viewModel.disclosureIcon,
             disclosureText: viewModel.disclosureText,
             leftContent: { viewModel.leftContent },
-            rightContent: { viewModel.rightContent },
-            disclosure: {}
+            rightContent: { viewModel.rightContent }
         )
     }
     

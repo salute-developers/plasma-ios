@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct Cell<LeftContent: View, RightContent: View, Disclosure: View>: View {
+public struct Cell<LeftContent: View, RightContent: View>: View {
     public let appearance: CellAppearance
     public let alignment: CellContentAlignment
     
@@ -16,12 +16,11 @@ public struct Cell<LeftContent: View, RightContent: View, Disclosure: View>: Vie
     
     public let leftContent: LeftContent
     public let rightContent: RightContent
-    public let disclosure: Disclosure
     
     @Environment(\.colorScheme) var colorScheme
     
     public init(
-        appearance: CellAppearance,
+        appearance: CellAppearance = CellAppearance(),
         alignment: CellContentAlignment = .center,
         label: String = "",
         title: String = "",
@@ -30,8 +29,7 @@ public struct Cell<LeftContent: View, RightContent: View, Disclosure: View>: Vie
         disclosureImage: Image? = nil,
         disclosureText: String = "",
         @ViewBuilder leftContent: @escaping () -> LeftContent,
-        @ViewBuilder rightContent: @escaping () -> RightContent,
-        @ViewBuilder disclosure: @escaping () -> Disclosure
+        @ViewBuilder rightContent: @escaping () -> RightContent
     ) {
         self.appearance = appearance
         self.alignment = alignment
@@ -43,25 +41,17 @@ public struct Cell<LeftContent: View, RightContent: View, Disclosure: View>: Vie
         self.disclosureText = disclosureText
         self.leftContent = leftContent()
         self.rightContent = rightContent()
-        self.disclosure = disclosure()
     }
     
     public var body: some View {
         HStack(alignment: contentAlignment, spacing: 0) {
             leftContent
-            
             Spacer()
                 .frame(width: appearance.size.contentPaddingStart)
-            
             centerView
-            
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
-            
             rightContent
-            
-            disclosureDefaultContent
-            
             disclosure
         }
     }
@@ -74,19 +64,19 @@ extension Cell {
             VStack(spacing: 0) {
                 if !label.isEmpty {
                     HStack {
-                        value(for: label, typography: applyTypography(for: appearance.labelTypography), textColor: appearance.labelColor)
+                        value(for: label, typography: typographyToken(for: appearance.labelTypography), textColor: appearance.labelColor)
                         Spacer()
                     }
                 }
                 if !title.isEmpty {
                     HStack {
-                        value(for: title, typography: applyTypography(for: appearance.titleTypography), textColor: appearance.titleColor)
+                        value(for: title, typography: typographyToken(for: appearance.titleTypography), textColor: appearance.titleColor)
                         Spacer()
                     }
                 }
                 if !subtitle.isEmpty {
                     HStack {
-                        value(for: subtitle, typography: applyTypography(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
+                        value(for: subtitle, typography: typographyToken(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
                         Spacer()
                     }
                 }
@@ -95,7 +85,7 @@ extension Cell {
         }
     }
     
-    // MARK : - Other additional view
+    // MARK: - Other additional view
     @ViewBuilder
     private func value(for value: String, typography: TypographyToken, textColor: ColorToken) -> some View {
         Text(value)
@@ -103,13 +93,13 @@ extension Cell {
             .foregroundColor(textColor.color(for: colorScheme))
     }
     
-    // MARK : - Disclosure
+    // MARK: - Disclosure
     @ViewBuilder
-    private var disclosureDefaultContent: some View {
+    private var disclosure: some View {
         if disclosureEnabled {
             disclosureDefault
         } else if let disclosureImage = disclosureImage {
-            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+            value(for: disclosureText, typography: typographyToken(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
             disclosureImage
         }
     }
@@ -117,7 +107,7 @@ extension Cell {
     @ViewBuilder
     private var disclosureDefault: some View {
         HStack(spacing: 0) {
-            value(for: disclosureText, typography: applyTypography(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+            value(for: disclosureText, typography: typographyToken(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
             ZStack {
                 if let image = appearance.disclosureImage {
                     image
@@ -128,13 +118,13 @@ extension Cell {
         }
     }
     
-    // MARK : - Computed values
+    // MARK: - Computed values
     private var hasCenterContent: Bool {
         !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
     }
     
-    // MARK : - Typography
-    private func applyTypography(for text: TypographyConfiguration) -> TypographyToken {
+    // MARK: - Typography
+    private func typographyToken(for text: TypographyConfiguration) -> TypographyToken {
         if let typography = text.typography(with: appearance.size) {
             return typography
         } else {
@@ -142,7 +132,7 @@ extension Cell {
         }
     }
     
-    // MARK : - Alignment
+    // MARK: - Alignment
     private var contentAlignment: VerticalAlignment {
         switch alignment {
         case .top:

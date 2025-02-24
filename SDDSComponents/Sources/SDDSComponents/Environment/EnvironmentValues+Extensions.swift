@@ -6,42 +6,42 @@ public extension EnvironmentValues {
         set { self[CounterAppearance.self] = newValue }
     }
     
-    public var buttonAppearance: ButtonAppearance {
+    var buttonAppearance: ButtonAppearance {
         get { self[ButtonAppearance.self] }
         set { self[ButtonAppearance.self] = newValue }
     }
     
-    public var segmentItemAppearance: SegmentItemAppearance {
+    var segmentItemAppearance: SegmentItemAppearance {
         get { self[SegmentItemAppearance.self] }
         set { self[SegmentItemAppearance.self] = newValue }
     }
     
-    public var segmentAppearance: SegmentAppearance {
+    var segmentAppearance: SegmentAppearance {
         get { self[SegmentAppearance.self] }
         set { self[SegmentAppearance.self] = newValue }
     }
     
-    public var avatarAppearance: AvatarAppearance {
+    var avatarAppearance: AvatarAppearance {
         get { self[AvatarAppearance.self] }
         set { self[AvatarAppearance.self] = newValue }
     }
     
-    public var chipAppearance: ChipAppearance {
+    var chipAppearance: ChipAppearance {
         get { self[ChipAppearance.self] }
         set { self[ChipAppearance.self] = newValue }
     }
     
-    public var switchAppearance: SwitchAppearance {
+    var switchAppearance: SwitchAppearance {
         get { self[SwitchAppearance.self] }
         set { self[SwitchAppearance.self] = newValue }
     }
     
-    public var checkboxAppearance: CheckboxAppearance {
+    var checkboxAppearance: CheckboxAppearance {
         get { self[CheckboxAppearance.self] }
         set { self[CheckboxAppearance.self] = newValue }
     }
     
-    public var radioboxAppearance: RadioboxAppearance {
+    var radioboxAppearance: RadioboxAppearance {
         get { self[RadioboxAppearance.self] }
         set { self[RadioboxAppearance.self] = newValue }
     }
