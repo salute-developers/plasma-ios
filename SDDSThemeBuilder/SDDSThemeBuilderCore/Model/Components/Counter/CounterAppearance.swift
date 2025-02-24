@@ -20,9 +20,9 @@ struct CounterAppearance: CodeGenerationAppearance {
             hoveredColor: props.textColor?.value(for: [.hovered])
         ).context
         self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.textColor,
-            highlightedColor: props.textColor?.value(for: [.pressed]),
-            hoveredColor: props.textColor?.value(for: [.hovered])
+            defaultColor: props.backgroundColor,
+            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
+            hoveredColor: props.backgroundColor?.value(for: [.hovered])
         ).context
     }
 }

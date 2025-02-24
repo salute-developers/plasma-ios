@@ -110,9 +110,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             return SDDSServTheme.Counter.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.SDDSCounter.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.SDDSCounter.all
         }
     }
     
