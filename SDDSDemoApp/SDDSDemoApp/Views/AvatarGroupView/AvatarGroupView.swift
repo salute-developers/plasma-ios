@@ -15,11 +15,11 @@ struct AvatarGroupView: View {
             Section {
                 HStack {
                     Spacer()
-//                    AvatarGroup(
-//                        data: viewModel.avatarData,
-//                        lastAvatar: viewModel.lastAvatar,
-//                        size: viewModel.sizeConfiguration
-//                    )
+                    SDDSAvatarGroup(
+                        data: viewModel.avatarData,
+                        lastAvatar: viewModel.lastAvatar,
+                        size: viewModel.sizeConfiguration
+                    )
                     Spacer()
                 }
             }
