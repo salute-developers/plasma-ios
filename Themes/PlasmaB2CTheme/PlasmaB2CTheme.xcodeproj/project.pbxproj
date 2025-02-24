@@ -21,6 +21,10 @@
 		5689DAEB64A5A6D5FA1D2D31 /* SBSansText-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9ACD6E98751134C339F4E /* SBSansText-Semibold.otf */; };
 		57EB7AE3B4AFFAD7A2354225 /* project.pbxproj in Sources */ = {isa = PBXBuildFile; fileRef = 8DD40C795EA7425C475814E6 /* project.pbxproj */; };
 		596447220ADE178114B06DE7 /* SBSansDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97EC9AF87C452DF5B93B825E /* SBSansDisplay-Thin.otf */; };
+		6981B6DF2D6C5A2000BEC5EE /* Avatar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981B6DA2D6C5A2000BEC5EE /* Avatar+BaseVariations.swift */; };
+		6981B6E02D6C5A2000BEC5EE /* SDDSAvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981B6DD2D6C5A2000BEC5EE /* SDDSAvatarSize.swift */; };
+		6981B6E12D6C5A2000BEC5EE /* AvatarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981B6DC2D6C5A2000BEC5EE /* AvatarTypography.swift */; };
+		6981B6E22D6C5A2000BEC5EE /* Avatar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6981B6DB2D6C5A2000BEC5EE /* Avatar+Variations.swift */; };
 		73F4C65B8BCF4138A7E2DF97 /* SBSansDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C9C1E51E4DF950AAD190987 /* SBSansDisplay-Semibold.otf */; };
 		772721E38E3D7C9D0E1C4A25 /* SBSansDisplay-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = 8201E0E7836F9D965836D743 /* SBSansDisplay-Regular.otf */; };
 		7F393EDF8591DF9FBB3650E0 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA415EB0DF247D7C7F2AC24 /* Shadows+Generated.swift */; };
@@ -108,6 +112,10 @@
 		4865EAF86C63B2466DF565F2 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		53AE2EB317987DE8CE8D4B43 /* SBSansText-BoldItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-BoldItalic.otf"; sourceTree = "<group>"; };
 		5BA3164B05EC282FAC17A390 /* Typographies+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Typographies+Generated.swift"; sourceTree = "<group>"; };
+		6981B6DA2D6C5A2000BEC5EE /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
+		6981B6DB2D6C5A2000BEC5EE /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
+		6981B6DC2D6C5A2000BEC5EE /* AvatarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTypography.swift; sourceTree = "<group>"; };
+		6981B6DD2D6C5A2000BEC5EE /* SDDSAvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarSize.swift; sourceTree = "<group>"; };
 		6DB6D6107D07059E3016F845 /* PlasmaB2CTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlasmaB2CTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBC58852E0F1249263F95D6 /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
 		81157CE92D64F48700254FB6 /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
@@ -202,6 +210,17 @@
 				8DD40C795EA7425C475814E6 /* project.pbxproj */,
 			);
 			path = PlasmaB2CTheme.xcodeproj;
+			sourceTree = "<group>";
+		};
+		6981B6DE2D6C5A2000BEC5EE /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				6981B6DA2D6C5A2000BEC5EE /* Avatar+BaseVariations.swift */,
+				6981B6DB2D6C5A2000BEC5EE /* Avatar+Variations.swift */,
+				6981B6DC2D6C5A2000BEC5EE /* AvatarTypography.swift */,
+				6981B6DD2D6C5A2000BEC5EE /* SDDSAvatarSize.swift */,
+			);
+			path = Avatar;
 			sourceTree = "<group>";
 		};
 		81157CF52D64F4DF00254FB6 /* BasicButton */ = {
@@ -354,8 +373,7 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
-				81BBE2192D75A14500612681 /* ChipGroup */,
-				81BBE21E2D75A14500612681 /* EmbeddedChip */,
+				6981B6DE2D6C5A2000BEC5EE /* Avatar */,
 				81157CF52D64F4DF00254FB6 /* BasicButton */,
 				81157CFA2D64F4DF00254FB6 /* IconButton */,
 				81157CFF2D64F4DF00254FB6 /* LinkButton */,
@@ -513,6 +531,10 @@
 				81157D2D2D64F4DF00254FB6 /* BasicButtonTypography.swift in Sources */,
 				81157D2E2D64F4DF00254FB6 /* TextFieldTypography.swift in Sources */,
 				81157D2F2D64F4DF00254FB6 /* TextFieldClear+BaseVariations.swift in Sources */,
+				6981B6DF2D6C5A2000BEC5EE /* Avatar+BaseVariations.swift in Sources */,
+				6981B6E02D6C5A2000BEC5EE /* SDDSAvatarSize.swift in Sources */,
+				6981B6E12D6C5A2000BEC5EE /* AvatarTypography.swift in Sources */,
+				6981B6E22D6C5A2000BEC5EE /* Avatar+Variations.swift in Sources */,
 				8D4707CBC080C6B2B07B42D4 /* SBSansText-Italic.otf in Sources */,
 				F544D874328E3C9C688C4DBE /* SBSansDisplay-Light.otf in Sources */,
 				772721E38E3D7C9D0E1C4A25 /* SBSansDisplay-Regular.otf in Sources */,
