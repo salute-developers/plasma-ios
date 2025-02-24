@@ -45,6 +45,10 @@ struct TextAreaPreview: PreviewProvider {
                 caption: "caption",
                 counter: "counter",
                 disabled: false,
+<<<<<<< HEAD
+=======
+                required: true,
+>>>>>>> 0d0e82d7 (chore: update cell in demo-app)
                 dynamicHeight: true,
                 appearance: TextArea.l.default.appearance,
                 iconActionViewProvider: ViewProvider(iconActionView)
