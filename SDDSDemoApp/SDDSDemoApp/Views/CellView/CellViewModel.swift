@@ -23,7 +23,6 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var rightContentType: CellContent = .none
     //MARK: - Disclosure
     @Published var disclosureEnabled: Bool = false
-    @Published var disclosure: AnyView? = nil
     @Published var disclosureText: String = "disclosure"
     @Published var disclosureIcon: Image? = nil
     
