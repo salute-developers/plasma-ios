@@ -199,7 +199,7 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             return fallback
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.SegmentItem.all
         }
     }
     
