@@ -44,7 +44,7 @@ extension CellPreview {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: nil,
+            appearance: Avatar.l.default.appearance,
             accessibility: AvatarAccessibility()
         )
     }
