@@ -9,7 +9,7 @@ struct AvatarGroupPreview: PreviewProvider {
     static var previews: some View {
         SDDSAvatarGroup(
             data: exampleAvatars,
-            lastAvatar: lastSDDSAvatarData,
+            lastAvatar: lastAvatarData,
             size: defaultSize
         )
         .previewLayout(.sizeThatFits)
@@ -45,7 +45,7 @@ struct AvatarGroupPreview: PreviewProvider {
         ]
     }
 
-    static var lastSDDSAvatarData: SDDSAvatarData {
+    static var lastAvatarData: SDDSAvatarData {
         SDDSAvatarData(
             text: "+5",
             image: nil,
