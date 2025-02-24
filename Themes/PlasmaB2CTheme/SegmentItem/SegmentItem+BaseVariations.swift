@@ -8,7 +8,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.large
         appearance.titleTypography = SegmentItemTypography.titleTypography
         appearance.subtitleTypography = SegmentItemTypography.subtitleTypography
-        appearance.counterAppearance = Counter.l.accent.appearance
+        appearance.counterAppearance = SDDSCounter.l.accent.appearance
         return .init(
             name: "l",
             appearance: appearance
@@ -19,7 +19,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.medium
         appearance.titleTypography = SwitchTypography.label
         appearance.subtitleTypography = SwitchTypography.description
-        appearance.counterAppearance = Counter.m.accent.appearance
+        appearance.counterAppearance = SDDSCounter.m.accent.appearance
         return .init(
             name: "m",
             appearance: appearance
@@ -30,7 +30,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.small
         appearance.titleTypography = SwitchTypography.label
         appearance.subtitleTypography = SwitchTypography.description
-        appearance.counterAppearance = Counter.s.accent.appearance
+        appearance.counterAppearance = SDDSCounter.s.accent.appearance
         return .init(
             name: "s",
             appearance: appearance
@@ -41,7 +41,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.extraSmall
         appearance.titleTypography = SwitchTypography.label
         appearance.subtitleTypography = SwitchTypography.description
-        appearance.counterAppearance = Counter.xs.accent.appearance
+        appearance.counterAppearance = SDDSCounter.xs.accent.appearance
         return .init(
             name: "xs",
             appearance: appearance

@@ -3,19 +3,19 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-
-public extension ComponentAppearanceVariation<Cell, CellAppearance> {
+public extension ComponentAppearanceVariation<Switch, SwitchAppearance> {
+    var `default`: AppearanceVariation<SwitchAppearance> {
+        .init(name: "default", appearance: self.appearance)
+    }
+    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
             styles: [
+                self.`default`
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-private extension CellAppearance {
-    
 }
