@@ -34,14 +34,13 @@ struct CellView: View {
             title: viewModel.title,
             subtitle: viewModel.subtitle,
             disclosureEnabled: viewModel.disclosureEnabled,
-            disclosureImage: viewModel.disclosureIcon,
             disclosureText: viewModel.disclosureText,
             leftContent: { viewModel.leftContent },
             rightContent: { viewModel.rightContent }
         )
     }
     
-    var variations: some View {
+    private var variations: some View {
         VariationsView(viewModel: viewModel)
     }
     

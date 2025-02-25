@@ -15,25 +15,20 @@ enum CellContent: String, CaseIterable {
 final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var alignment: CellContentAlignment = .center
     
-    @Published var label: String = "label"
-    @Published var title: String = "title"
-    @Published var subtitle: String = "subtitle"
+    @Published var label: String = ""
+    @Published var title: String = ""
+    @Published var subtitle: String = ""
     
     @Published var leftContentType: CellContent = .none
     @Published var rightContentType: CellContent = .none
-    //MARK: - Disclosure
+
     @Published var disclosureEnabled: Bool = false
     @Published var disclosureText: String = "disclosure"
-    @Published var disclosureIcon: Image? = nil
-    
-    //MARK: - Additional views
-    @Published var customText: String = "Custom text"
     
     init() {
         super.init(variationProvider: CellVariationProvider())
     }
     
-    //MARK: - Add preview in content
     @ViewBuilder
     func addContent(type: CellContent) -> some View {
         switch type {
@@ -87,7 +82,6 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
             EmptyView()
         }
     }
-    
     
     var leftContent: some View {
         addContent(type: leftContentType)

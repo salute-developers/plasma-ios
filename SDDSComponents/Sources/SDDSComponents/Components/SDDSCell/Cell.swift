@@ -100,6 +100,7 @@ extension Cell {
             disclosureDefault
         } else if let disclosureImage = disclosureImage {
             value(for: disclosureText, typography: typographyToken(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+                .fixedSize()
             disclosureImage
         }
     }
@@ -108,6 +109,7 @@ extension Cell {
     private var disclosureDefault: some View {
         HStack(spacing: 0) {
             value(for: disclosureText, typography: typographyToken(for: appearance.disclosureTextTypography), textColor: appearance.disclosureTextColor)
+                .fixedSize()
             ZStack {
                 if let image = appearance.disclosureImage {
                     image

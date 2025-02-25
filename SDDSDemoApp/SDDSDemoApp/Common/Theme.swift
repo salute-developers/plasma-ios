@@ -104,11 +104,9 @@ enum Theme: String, CaseIterable {
     }
     
     var counterVariations: [Variation<CounterAppearance>] {
-        let fallback = SDDSServTheme.Counter.all
-        
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Counter.all
+            return SDDSServTheme.SDDSCounter.all
         case .stylesSalute:
             return StylesSaluteTheme.SDDSCounter.all
         case .plasmaB2CTheme:
