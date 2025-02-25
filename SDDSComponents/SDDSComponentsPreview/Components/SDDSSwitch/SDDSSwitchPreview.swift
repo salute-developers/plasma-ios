@@ -11,7 +11,7 @@ struct SDDSSwitchPreview: PreviewProvider {
             subtitle: "Description",
             isOn: .constant(true),
             isEnabled: true,
-            appearance: SDDSSwitch.large.default.appearance, 
+            appearance: Switch.l.default.appearance, 
             switchAccessibility: SwitchAccessibility()
         )
         .previewLayout(PreviewLayout.sizeThatFits)
