@@ -12,6 +12,12 @@ enum SDDSComponentsType: String {
     }
 }
 
+extension Path {
+    static var defaultContext: String {
+        "Path()"
+    }
+}
+
 extension CGFloat {
     static var defaultContext: String {
         "CGFloat(0)"

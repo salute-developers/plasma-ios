@@ -50,4 +50,9 @@ public extension EnvironmentValues {
         get { self[BadgeAppearance.self] }
         set { self[BadgeAppearance.self] = newValue }
     }
+    
+    var indicatorAppearance: IndicatorAppearance {
+        get { self[IndicatorAppearance.self] }
+        set { self[IndicatorAppearance.self] = newValue }
+    }
 }
