@@ -10,6 +10,12 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textAreaClear = "TextAreaClear"
     case chip = "Chip"
     case embeddedChip = "EmbeddedChip"
+    case badge = "Badge"
+    case badgeClear = "BadgeClear"
+    case badgeTransparent = "BadgeTransparent"
+    case iconBadge = "IconBadge"
+    case iconBadgeClear = "IconBadgeClear"
+    case iconBadgeTransparent = "IconBadgeTransparent"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -19,7 +25,13 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .textField,
             .textFieldClear,
             .textArea,
-            .textAreaClear
+            .textAreaClear,
+            .badge,
+            .badgeClear,
+            .badgeTransparent,
+            .iconBadge,
+            .iconBadgeClear,
+            .iconBadgeTransparent,
         ]
     }
 }
@@ -35,6 +47,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .chip, .embeddedChip:
             GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     
@@ -49,6 +63,8 @@ extension CodeGenerationComponent {
             "TextFieldAppearance"
         case .chip, .embeddedChip:
             "ChipAppearance"
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            "BadgeAppearance"
         }
     }
     
@@ -63,6 +79,8 @@ extension CodeGenerationComponent {
             "TextFieldSizeConfiguration"
         case .chip, .embeddedChip:
             "ChipSizeConfiguration"
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            "BadgeSizeConfiguration"
         }
     }
     
@@ -86,6 +104,18 @@ extension CodeGenerationComponent {
             "chip_config.json"
         case .embeddedChip:
             "embedded_chip_config.json"
+        case .badge:
+            "badge_solid_config.json"
+        case .badgeClear:
+            "badge_clear_config.json"
+        case .badgeTransparent:
+            "badge_transparent_config.json"
+        case .iconBadge:
+            "icon_badge_solid_config.json"
+        case .iconBadgeClear:
+            "icon_badge_clear_config.json"
+        case .iconBadgeTransparent:
+            "icon_badge_transparent_config.json"
         }
     }
     

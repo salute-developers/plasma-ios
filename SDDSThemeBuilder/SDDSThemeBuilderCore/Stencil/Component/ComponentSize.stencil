@@ -17,7 +17,7 @@ struct {{ component }}Size {
 {%- for key, variation in variations %}
 struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
     {%- for property, value in variation %}
-    public var {{ property }} = {{ value }}
+    var {{ property }} = {{ value }}
     {%- endfor %}
     public var debugDescription: String {
         return "{{ component }}Size{{ capitalized }}"
@@ -27,7 +27,7 @@ struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
 
 struct {{ component }}AnySize: {{ sizeConfiguration }} {
     {%- for property, value in zeroSize %}
-    public var {{ property }} = {{ value }}
+    var {{ property }} = {{ value }}
     {%- endfor %}
 
     init(size: {{ sizeConfiguration }}) {

@@ -118,6 +118,15 @@ public extension ColorToken {
             lightColor: self.lightColor.opacity(opacity)
         )
     }
+    
+    var buttonColor: ButtonColor {
+        ButtonColor(
+            defaultColor: self,
+            highlightedColor: self,
+            hoveredColor: self,
+            selectedColor: self
+        )
+    }
 }
 
 public extension Color {

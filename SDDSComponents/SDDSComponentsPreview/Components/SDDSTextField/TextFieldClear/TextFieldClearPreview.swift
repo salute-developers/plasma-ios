@@ -32,7 +32,6 @@ struct TextFieldClearPreview: PreviewProvider {
                 textAfter: "",
                 disabled: false,
                 readOnly: false,
-                required: false,
                 appearance: TextField.l.default.appearance,
                 iconViewProvider: ViewProvider(iconView),
                 iconActionViewProvider: ViewProvider(iconActionView)
@@ -47,7 +46,6 @@ struct TextFieldClearPreview: PreviewProvider {
                 placeholder: "Placeholder",
                 caption: "caption",
                 disabled: false,
-                required: true,
                 appearance: TextField.l.default.appearance,
                 iconViewProvider: nil,
                 iconActionViewProvider: ViewProvider(iconActionView)
