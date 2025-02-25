@@ -24,6 +24,7 @@ private enum Filter: String {
     case capitalized = "capitalized"
     case adjustedCornerRadius = "adjustedCornerRadius"
     case paletteColor = "palette_color"
+    case generateFunction = "generate_function"
 }
 
 private enum SwiftKeyword: String, CaseIterable {
@@ -193,7 +194,12 @@ final class TemplateRenderer: Renderable {
             let color = try? self?.paletteMapper?.colorMap(value).hexWithAlpha
             return color
         }
-
+        ext.registerFilter(Filter.generateFunction.rawValue) { (value: Any?) in
+            guard let valueString = value as? String, valueString.hasPrefix("function") else {
+                return false
+            }
+            return true
+        }
     }
 }
 
