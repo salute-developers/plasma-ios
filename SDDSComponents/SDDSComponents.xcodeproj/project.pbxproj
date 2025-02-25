@@ -112,6 +112,18 @@
 		81733A402D0738300092608A /* SDDSChipPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81733A3F2D0738300092608A /* SDDSChipPreview.swift */; };
 		81737DC92CF84F24002A6A74 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81737DC82CF84F24002A6A74 /* SDDSServTheme */; };
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
+		81763AF02D6DD84D00904D4A /* SDDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AEF2D6DD84A00904D4A /* SDDSBadge.swift */; };
+		81763AF22D6DE58800904D4A /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AF12D6DE58600904D4A /* BadgeAppearance.swift */; };
+		81763AF52D6DE5B000904D4A /* BadgeSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AF42D6DE5AB00904D4A /* BadgeSizeConfiguration.swift */; };
+		81763AF72D6DE5D200904D4A /* BadgeAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AF62D6DE5CE00904D4A /* BadgeAlignment.swift */; };
+		81763AF92D6DE60400904D4A /* BadgeAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AF82D6DE5FC00904D4A /* BadgeAppearance+Extensions.swift */; };
+		81763AFB2D6DE61F00904D4A /* BadgeSizeConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AFA2D6DE61D00904D4A /* BadgeSizeConfiguration+Extensions.swift */; };
+		81763AFD2D6DE64600904D4A /* BadgeAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AFC2D6DE63F00904D4A /* BadgeAlignment+Extensions.swift */; };
+		81763B062D6DEFC400904D4A /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B052D6DEFC200904D4A /* IconBadge.swift */; };
+		81763B082D6DF00400904D4A /* BadgeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B072D6DF00200904D4A /* BadgeStyle.swift */; };
+		81763B0A2D6DF02000904D4A /* BadgeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B092D6DF01C00904D4A /* BadgeStyle+Extensions.swift */; };
+		81763B0C2D6DF0D700904D4A /* BasicBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B0B2D6DF0D300904D4A /* BasicBadge.swift */; };
+		81763B0F2D6DF39E00904D4A /* SDDSBadgePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */; };
 		817AE5262C99925A00F427DE /* SDDSSwitchPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */; };
 		817AE5302C99925A00F427DE /* SDDSComponentsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE5052C99925A00F427DE /* SDDSComponentsPreview.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
@@ -268,6 +280,18 @@
 		81733A2E2D0731420092608A /* SDDSAvatarPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarPreview.swift; sourceTree = "<group>"; };
 		81733A3F2D0738300092608A /* SDDSChipPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipPreview.swift; sourceTree = "<group>"; };
 		817580E82C37E04000E45207 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		81763AEF2D6DD84A00904D4A /* SDDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadge.swift; sourceTree = "<group>"; };
+		81763AF12D6DE58600904D4A /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
+		81763AF42D6DE5AB00904D4A /* BadgeSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSizeConfiguration.swift; sourceTree = "<group>"; };
+		81763AF62D6DE5CE00904D4A /* BadgeAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAlignment.swift; sourceTree = "<group>"; };
+		81763AF82D6DE5FC00904D4A /* BadgeAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		81763AFA2D6DE61D00904D4A /* BadgeSizeConfiguration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSizeConfiguration+Extensions.swift"; sourceTree = "<group>"; };
+		81763AFC2D6DE63F00904D4A /* BadgeAlignment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeAlignment+Extensions.swift"; sourceTree = "<group>"; };
+		81763B052D6DEFC200904D4A /* IconBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadge.swift; sourceTree = "<group>"; };
+		81763B072D6DF00200904D4A /* BadgeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStyle.swift; sourceTree = "<group>"; };
+		81763B092D6DF01C00904D4A /* BadgeStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeStyle+Extensions.swift"; sourceTree = "<group>"; };
+		81763B0B2D6DF0D300904D4A /* BasicBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBadge.swift; sourceTree = "<group>"; };
+		81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadgePreview.swift; sourceTree = "<group>"; };
 		8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeCore.framework"; sourceTree = "<group>"; };
 		8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeUtilities.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeUtilities.framework"; sourceTree = "<group>"; };
 		817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSSwitchPreview.swift; sourceTree = "<group>"; };
@@ -691,9 +715,44 @@
 			path = Spinner;
 			sourceTree = "<group>";
 		};
+		81763AEE2D6DD83000904D4A /* SDDSBadge */ = {
+			isa = PBXGroup;
+			children = (
+				81763AF32D6DE5A600904D4A /* BadgeAppearance */,
+				81763AEF2D6DD84A00904D4A /* SDDSBadge.swift */,
+				81763B052D6DEFC200904D4A /* IconBadge.swift */,
+				81763B0B2D6DF0D300904D4A /* BasicBadge.swift */,
+			);
+			path = SDDSBadge;
+			sourceTree = "<group>";
+		};
+		81763AF32D6DE5A600904D4A /* BadgeAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81763B092D6DF01C00904D4A /* BadgeStyle+Extensions.swift */,
+				81763B072D6DF00200904D4A /* BadgeStyle.swift */,
+				81763AF62D6DE5CE00904D4A /* BadgeAlignment.swift */,
+				81763AF42D6DE5AB00904D4A /* BadgeSizeConfiguration.swift */,
+				81763AF12D6DE58600904D4A /* BadgeAppearance.swift */,
+				81763AF82D6DE5FC00904D4A /* BadgeAppearance+Extensions.swift */,
+				81763AFA2D6DE61D00904D4A /* BadgeSizeConfiguration+Extensions.swift */,
+				81763AFC2D6DE63F00904D4A /* BadgeAlignment+Extensions.swift */,
+			);
+			path = BadgeAppearance;
+			sourceTree = "<group>";
+		};
+		81763B0D2D6DF10300904D4A /* SDDSBadge */ = {
+			isa = PBXGroup;
+			children = (
+				81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */,
+			);
+			path = SDDSBadge;
+			sourceTree = "<group>";
+		};
 		817AE4DC2C99925900F427DE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81763B0D2D6DF10300904D4A /* SDDSBadge */,
 				69F967B92D4E6E9C00C0B50F /* SDDSCounter */,
 				69F967B12D4CC9EA00C0B50F /* SDDSSegment */,
 				81B23F562D4BA0E80042A657 /* SDDSSegmentItem */,
@@ -800,6 +859,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81763AEE2D6DD83000904D4A /* SDDSBadge */,
 				690780F62D3EB92300CED628 /* SDDSSegment */,
 				698744662D1C368E00559ABA /* SDDSSegmentItem */,
 				6987445E2D1C367700559ABA /* SDDSCounter */,
@@ -1289,6 +1349,7 @@
 				81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */,
 				81733A2D2D0730A10092608A /* SDDSProgressBarPreview.swift in Sources */,
 				81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */,
+				81763B0F2D6DF39E00904D4A /* SDDSBadgePreview.swift in Sources */,
 				69F967BB2D4E6EAA00C0B50F /* SDDSCounterPreview.swift in Sources */,
 				817AE5262C99925A00F427DE /* SDDSSwitchPreview.swift in Sources */,
 				811D2E232D10A5B4001C0F48 /* SDDSAvatarGroupPreview.swift in Sources */,
@@ -1320,17 +1381,23 @@
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				812DB7552D57B44100D3F4A3 /* TextFieldRequiredPlacement.swift in Sources */,
+				81763AFB2D6DE61F00904D4A /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
+				81763AF02D6DD84D00904D4A /* SDDSBadge.swift in Sources */,
 				812DB7402D57B43900D3F4A3 /* TextAreaLabelPlacement.swift in Sources */,
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
+				81763AF92D6DE60400904D4A /* BadgeAppearance+Extensions.swift in Sources */,
 				816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */,
+				81763AF52D6DE5B000904D4A /* BadgeSizeConfiguration.swift in Sources */,
+				81763B0C2D6DF0D700904D4A /* BasicBadge.swift in Sources */,
+				81763B0A2D6DF02000904D4A /* BadgeStyle+Extensions.swift in Sources */,
 				812DB7542D57B44100D3F4A3 /* TextFieldValue.swift in Sources */,
 				812DB7432D57B43900D3F4A3 /* TextArea.swift in Sources */,
 				81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */,
@@ -1353,6 +1420,7 @@
 				6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */,
 				6919BD9C2D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift in Sources */,
 				812DB7502D57B44100D3F4A3 /* TextFieldLayout.swift in Sources */,
+				81763B062D6DEFC400904D4A /* IconBadge.swift in Sources */,
 				812DB73E2D57B43900D3F4A3 /* TextAreaValue.swift in Sources */,
 				6919BD9D2D4A6CF800A77774 /* SegmentItemSize.swift in Sources */,
 				812DB75F2D57B49F00D3F4A3 /* ChipGroupGap.swift in Sources */,
@@ -1368,7 +1436,9 @@
 				81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */,
 				812DB73C2D57B43900D3F4A3 /* TextAreaLayout.swift in Sources */,
 				697737852D2EB8030077D1A4 /* View+ErrorString.swift in Sources */,
+				81763AF72D6DE5D200904D4A /* BadgeAlignment.swift in Sources */,
 				81F7531C2CF46755000156D9 /* ButtonStyle.swift in Sources */,
+				81763AFD2D6DE64600904D4A /* BadgeAlignment+Extensions.swift in Sources */,
 				81F753282CF46831000156D9 /* ButtonColor.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
@@ -1381,6 +1451,7 @@
 				69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */,
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
+				81763AF22D6DE58800904D4A /* BadgeAppearance.swift in Sources */,
 				69C0356E2D4F8B1F005D3B95 /* SegmentLayoutOrientation.swift in Sources */,
 				816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */,
 				698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */,
@@ -1416,6 +1487,7 @@
 				81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */,
 				81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
+				81763B082D6DF00400904D4A /* BadgeStyle.swift in Sources */,
 				69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
 				812DB7612D57B49F00D3F4A3 /* ChipGroupSizeConfiguration.swift in Sources */,

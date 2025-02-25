@@ -146,6 +146,9 @@
 		817539A62BD1699B00138866 /* RenderableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817539A52BD1699B00138866 /* RenderableMock.swift */; };
 		817539AC2BD16D7E00138866 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 817539AB2BD16D7E00138866 /* OHHTTPStubs */; };
 		817539AE2BD16D7E00138866 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 817539AD2BD16D7E00138866 /* OHHTTPStubsSwift */; };
+		81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763AFE2D6DE67B00904D4A /* BadgeProps.swift */; };
+		81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */; };
+		81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B032D6DE79500904D4A /* BadgeSize.swift */; };
 		8178A7412C733CB300DFDA61 /* SDDSThemeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */; };
 		8178A7452C733CFD00DFDA61 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63572C6E8F18008F3BB2 /* HexConverter.swift */; };
 		8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63572C6E8F18008F3BB2 /* HexConverter.swift */; };
@@ -520,6 +523,9 @@
 		8175399C2BD1303400138866 /* RunnableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnableMock.swift; sourceTree = "<group>"; };
 		817539A12BD1681100138866 /* ios_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ios_colors.json; sourceTree = "<group>"; };
 		817539A52BD1699B00138866 /* RenderableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableMock.swift; sourceTree = "<group>"; };
+		81763AFE2D6DE67B00904D4A /* BadgeProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeProps.swift; sourceTree = "<group>"; };
+		81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
+		81763B032D6DE79500904D4A /* BadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSize.swift; sourceTree = "<group>"; };
 		8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDDSThemeUtilities.h; path = SDDSThemeUtilities/SDDSThemeUtilities.h; sourceTree = "<group>"; };
 		8180A4992C0F71A500009AF5 /* FontsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsService.swift; sourceTree = "<group>"; };
 		8180A49B2C0F71A500009AF5 /* TypographyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyToken.swift; sourceTree = "<group>"; };
@@ -938,6 +944,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81763AFE2D6DE67B00904D4A /* BadgeProps.swift */,
 				8174BA452D5DE10000EA3E68 /* ChipProps.swift */,
 				812DB6FE2D55E4E800D3F4A3 /* TextFieldProps.swift */,
 				812DB7992D59D85400D3F4A3 /* ButtonProps.swift */,
@@ -951,6 +958,7 @@
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				812DB79D2D59D9FB00D3F4A3 /* Button */,
 				8174BA402D5DDF4600EA3E68 /* Chip */,
+				81763B002D6DE6E500904D4A /* Badge */,
 				818E38EA2D4A4C0800B3A02D /* TextArea */,
 				81A753462D47DE03006E1BE7 /* TextField */,
 			);
@@ -1194,6 +1202,15 @@
 				813340152C0632EA005AD84F /* palette.json */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		81763B002D6DE6E500904D4A /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				81763B032D6DE79500904D4A /* BadgeSize.swift */,
+				81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		8180A49A2C0F71A500009AF5 /* Tokens */ = {
@@ -1986,6 +2003,7 @@
 				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
 				8174BA462D5DE10200EA3E68 /* ChipProps.swift in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
+				81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
@@ -1996,6 +2014,8 @@
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
+				81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */,
+				81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
 				81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */,

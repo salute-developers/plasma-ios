@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
+import SDDSServTheme
 
 /**
  Пример для предварительного просмотра `SDDSRadioboxGroup`.
@@ -13,7 +14,7 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
                 subtitle: "Description \(index + 1)",
                 isSelected: .constant(index == 0),
                 images: RadioboxImages.defaultImages,
-                appearance: SDDSRadiobox.medium.default.appearance,
+                appearance: Radiobox.m.default.appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }
