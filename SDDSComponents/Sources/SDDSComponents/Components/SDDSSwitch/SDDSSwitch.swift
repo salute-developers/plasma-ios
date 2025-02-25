@@ -51,12 +51,12 @@ public struct SDDSSwitch: View {
     }
     
     public var body: some View {
-        if let width = appearance.size.width {
-            content
-                .frame(width: width)
-        } else {
+        if title.isEmpty && subtitle.isEmpty {
             content
                 .fixedSize(horizontal: true, vertical: false)
+        } else if let width = appearance.size.width {
+            content
+                .frame(width: width)
         }
     }
     

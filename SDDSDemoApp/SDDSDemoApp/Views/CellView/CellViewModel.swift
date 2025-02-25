@@ -51,7 +51,7 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                     isDisabled: false,
                     isLoading: false,
                     spinnerImage: Image.image("spinner"),
-                    appearance: appearance.iconButtonAppearance,
+                    appearance: IconButton.l.accent.appearance,
                     layoutMode: .fixedWidth(.packed),
                     action: {}
                 )

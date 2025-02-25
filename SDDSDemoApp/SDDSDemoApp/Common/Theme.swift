@@ -303,4 +303,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Indicator.all
         }
     }
+    
+    var cellVariations: [Variation<CellAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Cell.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Cell.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Cell.all
+        }
+    }
 }
