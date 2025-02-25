@@ -106,7 +106,7 @@ enum Theme: String, CaseIterable {
     var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Counter.all
+            return SDDSServTheme.SDDSCounter.all
         case .stylesSalute:
             return StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:

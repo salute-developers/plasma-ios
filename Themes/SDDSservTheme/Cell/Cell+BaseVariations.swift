@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Cell {
     public static var l: ComponentAppearanceVariation<Cell, CellAppearance> {
@@ -15,7 +16,7 @@ public struct Cell {
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.m.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.switchAppearance = 
+        appearance.switchAppearance = Switch.l.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
 
         return .init(
@@ -34,7 +35,7 @@ public struct Cell {
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.m.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.switchAppearance = 
+        appearance.switchAppearance = Switch.m.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
 
         return .init(
@@ -53,7 +54,7 @@ public struct Cell {
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.switchAppearance = 
+        appearance.switchAppearance = Switch.s.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
 
         return .init(
@@ -72,7 +73,7 @@ public struct Cell {
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
         appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.switchAppearance = 
+        appearance.switchAppearance = Switch.s.appearance
         appearance.titleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
 
         return .init(

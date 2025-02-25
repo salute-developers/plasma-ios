@@ -15,9 +15,9 @@ enum CellContent: String, CaseIterable {
 final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var alignment: CellContentAlignment = .center
     
-    @Published var label: String = "label"
-    @Published var title: String = "title"
-    @Published var subtitle: String = "subtitle"
+    @Published var label: String = ""
+    @Published var title: String = ""
+    @Published var subtitle: String = ""
     
     @Published var leftContentType: CellContent = .avatar
     @Published var rightContentType: CellContent = .iconButton
