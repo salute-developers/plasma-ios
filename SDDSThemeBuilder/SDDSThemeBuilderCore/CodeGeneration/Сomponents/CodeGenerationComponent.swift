@@ -16,6 +16,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadge = "IconBadge"
     case iconBadgeClear = "IconBadgeClear"
     case iconBadgeTransparent = "IconBadgeTransparent"
+    case indicator = "Indicator"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -32,6 +33,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .iconBadge,
             .iconBadgeClear,
             .iconBadgeTransparent,
+            .indicator
         ]
     }
 }
@@ -49,6 +51,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .indicator:
+            GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     
@@ -65,6 +69,8 @@ extension CodeGenerationComponent {
             "ChipAppearance"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeAppearance"
+        case .indicator:
+            "IndicatorAppearance"
         }
     }
     
@@ -81,6 +87,8 @@ extension CodeGenerationComponent {
             "ChipSizeConfiguration"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeSizeConfiguration"
+        case .indicator:
+            "IndicatorSizeConfiguration"
         }
     }
     
@@ -116,6 +124,8 @@ extension CodeGenerationComponent {
             "icon_badge_clear_config.json"
         case .iconBadgeTransparent:
             "icon_badge_transparent_config.json"
+        case .indicator:
+            "indicator_config.json"
         }
     }
     

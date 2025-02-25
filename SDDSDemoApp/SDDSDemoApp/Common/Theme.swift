@@ -294,4 +294,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.IconBadgeTransparent.all
         }
     }
+    
+    var indicatorVariations: [Variation<IndicatorAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Indicator.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Indicator.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Indicator.all
+        }
+    }
 }
