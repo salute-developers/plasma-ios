@@ -12,12 +12,9 @@ public struct SDDSIndicator: View {
     }
     
     public var body: some View {
-        GeometryReader { geometry in
-            Circle()
-                .frame(width: min(width, height), height: min(width, height))
-                .foregroundColor(appearance.backgroundColor.color(for: colorScheme))
-        }
-        .frame(width: width, height: height)
+        Circle()
+            .frame(width: min(width, height), height: min(width, height))
+            .foregroundColor(appearance.backgroundColor.color(for: colorScheme))
     }
     
     private var width: CGFloat {
