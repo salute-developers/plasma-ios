@@ -124,6 +124,7 @@
 		81763B0A2D6DF02000904D4A /* BadgeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B092D6DF01C00904D4A /* BadgeStyle+Extensions.swift */; };
 		81763B0C2D6DF0D700904D4A /* BasicBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B0B2D6DF0D300904D4A /* BasicBadge.swift */; };
 		81763B0F2D6DF39E00904D4A /* SDDSBadgePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */; };
+		81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */; };
 		817AE5262C99925A00F427DE /* SDDSSwitchPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */; };
 		817AE5302C99925A00F427DE /* SDDSComponentsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE5052C99925A00F427DE /* SDDSComponentsPreview.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
@@ -292,6 +293,7 @@
 		81763B092D6DF01C00904D4A /* BadgeStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeStyle+Extensions.swift"; sourceTree = "<group>"; };
 		81763B0B2D6DF0D300904D4A /* BasicBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBadge.swift; sourceTree = "<group>"; };
 		81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadgePreview.swift; sourceTree = "<group>"; };
+		81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSizeTypography.swift; sourceTree = "<group>"; };
 		8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeCore.framework"; sourceTree = "<group>"; };
 		8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeUtilities.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeUtilities.framework"; sourceTree = "<group>"; };
 		817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSSwitchPreview.swift; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */,
 				812DB7642D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift */,
 				811D2E2C2D115FDD001C0F48 /* AppearanceVariation.swift */,
 				81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */,
@@ -1416,6 +1419,7 @@
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
 				812DB74F2D57B44100D3F4A3 /* TextFieldAppearance.swift in Sources */,
 				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
+				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */,
 				6919BD9C2D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift in Sources */,
