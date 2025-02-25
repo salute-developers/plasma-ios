@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
+import SDDSServTheme
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
@@ -125,11 +126,65 @@ struct CellView: View {
     }
     
     private var leftContent: some View {
-        viewModel.addContent(type: viewModel.leftContentType)
+        addContent(type: viewModel.leftContentType)
     }
     
     private var rightContent: some View {
-        viewModel.addContent(type: viewModel.rightContentType)
+        addContent(type: viewModel.rightContentType)
+    }
+    
+    @ViewBuilder
+    private func addContent(type: CellContent) -> some View {
+        switch type {
+        case .avatar:
+                SDDSAvatar(
+                    text: "AB",
+                    image: nil,
+                    placeholderImage: nil,
+                    status: .online,
+                    appearance: Avatar.l.appearance,
+                    accessibility: AvatarAccessibility()
+                )
+        case .iconButton:
+                IconButton(
+                    iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
+                    isDisabled: false,
+                    isLoading: false,
+                    spinnerImage: Image.image("spinner"),
+                    appearance: IconButton.l.accent.appearance,
+                    layoutMode: .fixedWidth(.packed),
+                    action: {}
+                )
+        case .switch:
+                SDDSSwitch(
+                    title: "",
+                    subtitle: "",
+                    isOn: Binding(get: { self.viewModel.isOn }, set: { newValue in self.viewModel.isOn = newValue }),
+                    isEnabled: true,
+                    appearance: Switch.l.appearance,
+                    switchAccessibility: SwitchAccessibility()
+                )
+        case .radiobox:
+                SDDSRadiobox(
+                    isSelected: Binding(get: { self.viewModel.isSelected }, set: { newValue in self.viewModel.isSelected = newValue }),
+                    title: "",
+                    subtitle: "",
+                    isEnabled: true,
+                    images: .defaultImages,
+                    appearance: Radiobox.m.appearance
+                )
+        case .checkbox:
+                SDDSCheckbox(
+                    state: Binding(get: { self.viewModel.state }, set: { newValue in self.viewModel.state = newValue }),
+                    title: "",
+                    subtitle: "",
+                    isEnabled: true,
+                    images: .checkbox,
+                    appearance: Checkbox.m.appearance
+                )
+        case .none:
+            EmptyView()
+        }
     }
 }
 
