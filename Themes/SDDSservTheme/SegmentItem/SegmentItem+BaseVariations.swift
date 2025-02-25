@@ -30,11 +30,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.small
         appearance.titleTypography = SwitchTypography.label
         appearance.subtitleTypography = SwitchTypography.description
-<<<<<<< HEAD
         appearance.counterAppearance = Counter.xs.accent.appearance
-=======
-        appearance.counterAppearance = Counter.s.accent.appearance
->>>>>>> 7e47872f (feat: added multiple themes support)
         return .init(
             name: "s",
             appearance: appearance
@@ -45,11 +41,7 @@ public struct SegmentItem {
         appearance.size = SegmentItemSize.extraSmall
         appearance.titleTypography = SwitchTypography.label
         appearance.subtitleTypography = SwitchTypography.description
-<<<<<<< HEAD
         appearance.counterAppearance = Counter.xxs.accent.appearance
-=======
-        appearance.counterAppearance = Counter.xs.accent.appearance
->>>>>>> 7e47872f (feat: added multiple themes support)
         return .init(
             name: "xs",
             appearance: appearance
