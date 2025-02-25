@@ -24,6 +24,7 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isSelected: true, 
             appearance: SDDSSegmentItem.large.primary.appearance,
+            counterAppearance: nil,
             action: {}
         )
         .previewLayout(.sizeThatFits)
