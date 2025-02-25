@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - AvatarGroup
+// MARK: - SDDSAvatarGroup
 
 /**
  `SDDSAvatarGroup` представляет собой группу аватаров, отображаемых в ряд с наложением и обводкой между ними.
@@ -27,14 +27,14 @@ public struct SDDSAvatarGroup: View {
 
     public var body: some View {
         HStack(spacing: -size.borderWidth - size.spacing) {
-            ForEach(displayingAvatars, id: \.id) { SDDSAvatarData in
-                SDDSAvatar(data: SDDSAvatarData)
+            ForEach(displayingAvatars, id: \.id) { avatarData in
+                SDDSAvatar(data: avatarData)
                     .status(.hidden)
                     .overlay(
                         Circle()
                             .stroke(Color.white, lineWidth: size.borderWidth)
                     )
-                    .zIndex(-Double(data.count) + Double(displayingAvatars.firstIndex(of: SDDSAvatarData) ?? 0))
+                    .zIndex(-Double(data.count) + Double(displayingAvatars.firstIndex(of: avatarData) ?? 0))
             }
         }
     }
