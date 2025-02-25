@@ -4,49 +4,53 @@ struct TextFieldAppearance: CodeGenerationAppearance {
     typealias Variation = TextFieldConfiguration.Variation
     typealias Props = TextFieldProps
     
-    var backgroundColor: String?
-    var backgroundColorFocused: String?
-    var backgroundColorReadOnly: String?
-    var captionColor: String?
-    var captionColorFocused: String?
-    var captionColorReadOnly: String?
-    var cursorColor: String?
-    var disabledAlpha: Double?
-    let lineColor: String?
-    let lineColorFocused: String?
-    let lineColorReadOnly: String?
-    var endContentColor: String?
-    var endContentColorReadOnly: String?
-    var optionalTitleColor: String?
-    var placeholderColor: String?
-    var placeholderColorFocused: String?
-    var placeholderColorReadOnly: String?
-    var requiredIndicatorColor: String?
-    var startContentColor: String?
-    var startContentColorReadOnly: String?
-    var startContentColorFocused: String?
-    var textAfterColor: String?
-    var textBeforeColor: String?
-    var textColor: String?
-    var textColorFocused: String?
-    var textColorReadOnly: String?
-    var titleColor: String?
-    var chipAppearance: String?
-    var chipGroupAppearance: String?
-    var labelPlacement: String?
-    var requiredPlacement: String?
-    var captionTypography: String?
-    var innerTitleTypography: String?
-    var textTypography: String?
-    var textAfterTypography: String?
-    var textBeforeTypography: String?
-    var titleTypography: String?
+    var backgroundColor: String? = nil
+    var backgroundColorFocused: String? = nil
+    var backgroundColorReadOnly: String? = nil
+    var captionColor: String? = nil
+    var captionColorFocused: String? = nil
+    var captionColorReadOnly: String? = nil
+    var cursorColor: String? = nil
+    var disabledAlpha: Double? = nil
+    var lineColor: String? = nil
+    var lineColorFocused: String? = nil
+    var lineColorReadOnly: String? = nil
+    var endContentColor: String? = nil
+    var endContentColorReadOnly: String? = nil
+    var optionalTitleColor: String? = nil
+    var placeholderColor: String? = nil
+    var placeholderColorFocused: String? = nil
+    var placeholderColorReadOnly: String? = nil
+    var requiredIndicatorColor: String? = nil
+    var startContentColor: String? = nil
+    var startContentColorReadOnly: String? = nil
+    var startContentColorFocused: String? = nil
+    var textAfterColor: String? = nil
+    var textBeforeColor: String? = nil
+    var textColor: String? = nil
+    var textColorFocused: String? = nil
+    var textColorReadOnly: String? = nil
+    var titleColor: String? = nil
+    var chipAppearance: String? = nil
+    var chipGroupAppearance: String? = nil
+    var labelPlacement: String? = nil
+    var requiredPlacement: String? = nil
+    var captionTypography: String? = nil
+    var innerTitleTypography: String? = nil
+    var textTypography: String? = nil
+    var textAfterTypography: String? = nil
+    var textBeforeTypography: String? = nil
+    var titleTypography: String? = nil
     
     init(variation: TextFieldConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: TextFieldProps, id: String? = nil, component: CodeGenerationComponent) {
+    init(props: TextFieldProps?, id: String? = nil, component: CodeGenerationComponent) {
+        guard let props = props else {
+            return
+        }
+        
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
         self.backgroundColorFocused = ColorTokenContextBuilder(props.backgroundColor?.value(for: [.activated])).context
         self.backgroundColorReadOnly = ColorTokenContextBuilder(props.backgroundColorReadOnly).context
