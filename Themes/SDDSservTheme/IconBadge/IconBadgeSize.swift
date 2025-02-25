@@ -18,11 +18,11 @@ struct IconBadgeSize {
 }
 struct IconBadgeSizeL: BadgeSizeConfiguration {
     var cornerRadius = ShapeToken.roundS.cornerRadius
-    var endContentPadding = CGFloat(16.0)
-    var endContentSize = CGSize(width:16.0, height:16.0)
+    var endContentPadding = CGFloat(0)
+    var endContentSize = CGSize.zero
     var endPadding = CGFloat(6.0)
     var height = CGFloat(28.0)
-    var startContentPadding = CGFloat(16.0)
+    var startContentPadding = CGFloat(0)
     var startContentSize = CGSize(width:16.0, height:16.0)
     var startPadding = CGFloat(6.0)
     public var debugDescription: String {
@@ -31,11 +31,11 @@ struct IconBadgeSizeL: BadgeSizeConfiguration {
 }
 struct IconBadgeSizeM: BadgeSizeConfiguration {
     var cornerRadius = ShapeToken.roundXs.cornerRadius
-    var endContentPadding = CGFloat(12.0)
-    var endContentSize = CGSize(width:12.0, height:12.0)
+    var endContentPadding = CGFloat(0)
+    var endContentSize = CGSize.zero
     var endPadding = CGFloat(6.0)
     var height = CGFloat(24.0)
-    var startContentPadding = CGFloat(12.0)
+    var startContentPadding = CGFloat(0)
     var startContentSize = CGSize(width:12.0, height:12.0)
     var startPadding = CGFloat(6.0)
     public var debugDescription: String {
@@ -44,11 +44,11 @@ struct IconBadgeSizeM: BadgeSizeConfiguration {
 }
 struct IconBadgeSizeS: BadgeSizeConfiguration {
     var cornerRadius = ShapeToken.roundXs.cornerRadius
-    var endContentPadding = CGFloat(12.0)
-    var endContentSize = CGSize(width:12.0, height:12.0)
+    var endContentPadding = CGFloat(0)
+    var endContentSize = CGSize.zero
     var endPadding = CGFloat(4.0)
     var height = CGFloat(20.0)
-    var startContentPadding = CGFloat(12.0)
+    var startContentPadding = CGFloat(0)
     var startContentSize = CGSize(width:12.0, height:12.0)
     var startPadding = CGFloat(4.0)
     public var debugDescription: String {
@@ -57,11 +57,11 @@ struct IconBadgeSizeS: BadgeSizeConfiguration {
 }
 struct IconBadgeSizeXs: BadgeSizeConfiguration {
     var cornerRadius = ShapeToken.roundXxs.cornerRadius
-    var endContentPadding = CGFloat(10.0)
-    var endContentSize = CGSize(width:10.0, height:10.0)
+    var endContentPadding = CGFloat(0)
+    var endContentSize = CGSize.zero
     var endPadding = CGFloat(3.0)
     var height = CGFloat(16.0)
-    var startContentPadding = CGFloat(10.0)
+    var startContentPadding = CGFloat(0)
     var startContentSize = CGSize(width:10.0, height:10.0)
     var startPadding = CGFloat(3.0)
     public var debugDescription: String {
