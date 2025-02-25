@@ -15,15 +15,19 @@ enum CellContent: String, CaseIterable {
 final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var alignment: CellContentAlignment = .center
     
-    @Published var label: String = ""
-    @Published var title: String = ""
-    @Published var subtitle: String = ""
+    @Published var label: String = "label"
+    @Published var title: String = "title"
+    @Published var subtitle: String = "subtitle"
     
-    @Published var leftContentType: CellContent = .none
-    @Published var rightContentType: CellContent = .none
+    @Published var leftContentType: CellContent = .avatar
+    @Published var rightContentType: CellContent = .iconButton
 
-    @Published var disclosureEnabled: Bool = false
-    @Published var disclosureText: String = "disclosure"
+    @Published var disclosureEnabled: Bool = true
+    @Published var disclosureText: String = ""
+   
+    @Published var isOn: Bool = false
+    @Published var isSelected: Bool = false
+    @Published var state: SelectionControlState = .deselected
     
     init() {
         super.init(variationProvider: CellVariationProvider())
@@ -53,27 +57,27 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
                 )
         case .switch:
                 SDDSSwitch(
-                    title: "Label",
-                    subtitle: "Description",
-                    isOn: .constant(true),
-                    isEnabled: false,
+                    title: "",
+                    subtitle: "",
+                    isOn: Binding(get: { self.isOn }, set: { newValue in self.isOn = newValue }),
+                    isEnabled: true,
                     appearance: appearance.switchAppearance,
                     switchAccessibility: SwitchAccessibility()
                 )
         case .radiobox:
                 SDDSRadiobox(
-                    isSelected: .constant(true),
-                    title: "Value",
-                    subtitle: "Description",
+                    isSelected: Binding(get: { self.isSelected }, set: { newValue in self.isSelected = newValue }),
+                    title: "",
+                    subtitle: "",
                     isEnabled: true,
                     images: .defaultImages,
                     appearance: appearance.radioBoxAppearance
                 )
         case .checkbox:
                 SDDSCheckbox(
-                    state: .constant(.indeterminate),
-                    title: "Valur",
-                    subtitle: "Description",
+                    state: Binding(get: { self.state }, set: { newValue in self.state = newValue }),
+                    title: "",
+                    subtitle: "",
                     isEnabled: true,
                     images: .checkbox,
                     appearance: appearance.checkBoxAppearance
@@ -81,13 +85,5 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
         case .none:
             EmptyView()
         }
-    }
-    
-    var leftContent: some View {
-        addContent(type: leftContentType)
-    }
-    
-    var rightContent: some View {
-        addContent(type: rightContentType)
     }
 }

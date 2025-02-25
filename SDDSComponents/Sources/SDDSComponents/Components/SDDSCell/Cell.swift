@@ -60,29 +60,30 @@ public struct Cell<LeftContent: View, RightContent: View>: View {
 extension Cell {
     @ViewBuilder
     private var centerView: some View {
-        if hasCenterContent {
             VStack(spacing: 0) {
                 if !label.isEmpty {
                     HStack {
                         value(for: label, typography: typographyToken(for: appearance.labelTypography), textColor: appearance.labelColor)
+                            .fixedSize()
                         Spacer()
                     }
                 }
                 if !title.isEmpty {
                     HStack {
                         value(for: title, typography: typographyToken(for: appearance.titleTypography), textColor: appearance.titleColor)
+                            .fixedSize()
                         Spacer()
                     }
                 }
                 if !subtitle.isEmpty {
                     HStack {
                         value(for: subtitle, typography: typographyToken(for: appearance.subtitleTypography), textColor: appearance.subtitleColor)
+                            .fixedSize()
                         Spacer()
                     }
                 }
             }
             .frame(maxWidth: .infinity)
-        }
     }
     
     // MARK: - Other additional view
@@ -118,11 +119,6 @@ extension Cell {
                 }
             }
         }
-    }
-    
-    // MARK: - Computed values
-    private var hasCenterContent: Bool {
-        !label.isEmpty || !title.isEmpty || !subtitle.isEmpty
     }
     
     // MARK: - Typography

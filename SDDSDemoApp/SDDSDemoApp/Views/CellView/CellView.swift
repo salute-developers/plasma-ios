@@ -35,8 +35,8 @@ struct CellView: View {
             subtitle: viewModel.subtitle,
             disclosureEnabled: viewModel.disclosureEnabled,
             disclosureText: viewModel.disclosureText,
-            leftContent: { viewModel.leftContent },
-            rightContent: { viewModel.rightContent }
+            leftContent: { leftContent },
+            rightContent: { rightContent }
         )
     }
     
@@ -122,6 +122,14 @@ struct CellView: View {
                 Text(viewModel.alignment.rawValue.capitalized)
             }
         }
+    }
+    
+    private var leftContent: some View {
+        viewModel.addContent(type: viewModel.leftContentType)
+    }
+    
+    private var rightContent: some View {
+        viewModel.addContent(type: viewModel.rightContentType)
     }
 }
 

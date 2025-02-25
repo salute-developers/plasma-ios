@@ -7,7 +7,7 @@ struct SDDSCounterPreview: PreviewProvider {
     static var previews: some View {
         SDDSCounter(
             text: "1",
-            appearance: Counter.l.warning.appearance,
+            appearance: SDDSCounter.large.warning.appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false

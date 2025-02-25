@@ -23,7 +23,7 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
             subtitle: "Subtitle",
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isSelected: true, 
-            appearance: SegmentItem.l.primary.appearance,
+            appearance: SDDSSegmentItem.large.primary.appearance,
             action: {}
         )
         .previewLayout(.sizeThatFits)

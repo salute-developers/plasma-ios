@@ -14,7 +14,7 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
                 subtitle: "Description \(index + 1)",
                 isSelected: .constant(index == 0),
                 images: RadioboxImages.defaultImages,
-                appearance: Radiobox.m.default.appearance,
+                appearance: SDDSRadiobox.medium.default.appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }

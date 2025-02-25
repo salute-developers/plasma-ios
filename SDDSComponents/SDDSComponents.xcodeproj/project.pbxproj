@@ -29,6 +29,7 @@
 		698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744652D1C368E00559ABA /* SDDSSegmentItem.swift */; };
 		698902682D659A8B003DCE58 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
 		6989026B2D65A8E8003DCE58 /* TextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902692D65A8E8003DCE58 /* TextFieldPreview.swift */; };
+		6992E38F2D6DE52C00DEBEED /* ChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */; };
 		69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */; };
 		69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */; };
 		69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */; };
@@ -150,8 +151,6 @@
 		818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */; platformFilter = ios; };
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
-		819CB7FD2C7CC34A00B4FBF4 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
-		81A9014F2CF6E8E400992B04 /* ButtonAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9014D2CF6E8D600992B04 /* ButtonAppearance+Extensions.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
 		81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */; };
 		81B23F582D4BA1100042A657 /* SDDSSegmentItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */; };
@@ -228,6 +227,7 @@
 		6987445D2D1C367700559ABA /* SDDSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounter.swift; sourceTree = "<group>"; };
 		698744652D1C368E00559ABA /* SDDSSegmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItem.swift; sourceTree = "<group>"; };
 		698902692D65A8E8003DCE58 /* TextFieldPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPreview.swift; sourceTree = "<group>"; };
+		6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSize.swift; sourceTree = "<group>"; };
 		69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutMode.swift; sourceTree = "<group>"; };
 		69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculator.swift; sourceTree = "<group>"; };
 		69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculatorImpl.swift; sourceTree = "<group>"; };
@@ -892,6 +892,7 @@
 		817AE5062C99925A00F427DE /* SDDSChipGroup */ = {
 			isa = PBXGroup;
 			children = (
+				6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */,
 				811D2E262D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift */,
 			);
 			path = SDDSChipGroup;
@@ -1430,6 +1431,7 @@
 				811D2E282D10A6CF001C0F48 /* SDDSChipGroup+Preview.swift in Sources */,
 				81733A2F2D0731420092608A /* SDDSAvatarPreview.swift in Sources */,
 				81B23F582D4BA1100042A657 /* SDDSSegmentItemPreview.swift in Sources */,
+				6992E38F2D6DE52C00DEBEED /* ChipGroupSize.swift in Sources */,
 				81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */,
 				6989026B2D65A8E8003DCE58 /* TextFieldPreview.swift in Sources */,
 				81733A2D2D0730A10092608A /* SDDSProgressBarPreview.swift in Sources */,
@@ -1498,7 +1500,6 @@
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
 				697970DA2D63A58F008306A8 /* CellSizeConfigurations.swift in Sources */,
-				81733A3A2D0733460092608A /* ChipAppearance+Extensions.swift in Sources */,
 				81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */,
 				814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */,
 				812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */,
