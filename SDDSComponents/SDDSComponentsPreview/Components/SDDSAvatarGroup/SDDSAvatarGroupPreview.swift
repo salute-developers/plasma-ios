@@ -5,7 +5,7 @@ import SDDSServTheme
 
 // MARK: - Preview
 
-struct AvatarGroupPreview: PreviewProvider {
+struct SDDSAvatarGroupPreview: PreviewProvider {
     static var previews: some View {
         SDDSAvatarGroup(
             data: exampleAvatars,

@@ -4,7 +4,7 @@ import SDDSServTheme
 import SwiftUI
 
 // MARK: - Preview
-struct AvatarPreview: PreviewProvider {
+struct SDDSAvatarPreview: PreviewProvider {
     static var previews: some View {
         SDDSAvatar(
             text: "",
