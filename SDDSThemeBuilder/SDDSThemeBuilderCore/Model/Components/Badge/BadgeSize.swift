@@ -23,9 +23,9 @@ struct BadgeSize: CodeGenerationSize {
         self.startPadding = CGFloatContextBuilder(props.startPadding?.value, nullify: nullify).context
         self.endPadding = CGFloatContextBuilder(props.endPadding?.value, nullify: nullify).context
         self.startContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context
-        self.endContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context
-        self.startContentPadding = CGFloatContextBuilder(props.startContentSize?.value, nullify: nullify).context
-        self.endContentPadding = CGFloatContextBuilder(props.startContentSize?.value, nullify: nullify).context
+        self.endContentSize = SizeContextBuilder(x: props.endContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context
+        self.startContentPadding = CGFloatContextBuilder(props.startContentMargin?.value, nullify: nullify).context
+        self.endContentPadding = CGFloatContextBuilder(props.endContentMargin?.value, nullify: nullify).context
     }
     
     init() {

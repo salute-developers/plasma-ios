@@ -17,13 +17,14 @@ struct ComponentsView: View {
         ("SDDSTextField", AnyView(TextFieldView())),
         ("SDDSCounter", AnyView(CounterView())),
         ("SDDSSegmentElement", AnyView(SegmentItemView())),
-        ("SDDSSegment", AnyView(SegmentView()))
+        ("SDDSSegment", AnyView(SegmentView())),
+        ("SDDSBadge", AnyView(BadgeView()))
     ]
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(components, id: \.name) { component in
+                ForEach(components.sorted(by: { $0.name < $1.name }), id: \.name) { component in
                     NavigationLink {
                         component.view
                     } label: {
