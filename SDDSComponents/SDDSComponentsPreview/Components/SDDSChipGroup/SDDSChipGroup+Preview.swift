@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SwiftUI
-import SDDSServTheme
 
 // Пример данных и конфигурации для предварительного просмотра
 struct SDDSChipGroupPreview: PreviewProvider {
@@ -14,7 +13,11 @@ struct SDDSChipGroupPreview: PreviewProvider {
                 isEnabled: true,
                 iconImage: Image.image("chipIcon"),
                 buttonImage: Image.image("chipClose"),
+<<<<<<< HEAD
                 appearance: Chip.m.default.appearance,
+=======
+                appearance: SDDSChip.medium.accent.pilled.appearance,
+>>>>>>> 88aa9aeb (chore: revert naming in componetns-preview)
                 accessibility: chipAccessibility,
                 removeAction: {}
             )
@@ -23,7 +26,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
         return Group {
             SDDSChipGroup(
                 data: chipData,
-                appearance: ChipGroup.dense.appearance
+                appearance: SDDSChipGroup.dense.appearance
             )
         }
         .previewLayout(PreviewLayout.sizeThatFits)

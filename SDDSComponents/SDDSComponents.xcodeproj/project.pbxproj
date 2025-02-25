@@ -1554,7 +1554,6 @@
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
 				697970DA2D63A58F008306A8 /* CellSizeConfigurations.swift in Sources */,
-				81733A3A2D0733460092608A /* ChipAppearance+Extensions.swift in Sources */,
 				81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */,
 				814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */,
 				812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */,

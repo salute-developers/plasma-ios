@@ -23,18 +23,18 @@ extension CellPreview {
             subtitle: "Description",
             isEnabled: true,
             images: .checkbox,
-            appearance: Checkbox.m.default.appearance
+            appearance: SDDSCheckbox.medium.default.appearance
         )
     }
     
     static var radiobox: some View {
-        SDDSCheckbox(
-            state: .constant(.indeterminate),
-            title: "Valur",
+        SDDSRadiobox(
+            isSelected: .constant(true),
+            title: "Value",
             subtitle: "Description",
             isEnabled: true,
-            images: .checkbox,
-            appearance: Checkbox.m.default.appearance
+            images: .defaultImages,
+            appearance: SDDSRadiobox.medium.default.appearance
         )
     }
     
@@ -44,7 +44,7 @@ extension CellPreview {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.l.default.appearance,
+            appearance: SDDSAvatar.extraExtraLarge.medium.appearance,
             accessibility: AvatarAccessibility()
         )
     }

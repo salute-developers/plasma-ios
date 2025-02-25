@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 
 // MARK: - Preview
 
@@ -23,7 +22,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: nil,
                 placeholderImage: nil,
                 status: .online,
-                appearance: Avatar.l.default.appearance,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -31,7 +30,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: Avatar.l.default.appearance,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -39,7 +38,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: Avatar.l.default.appearance,
+                appearance: SDDSAvatar.large.default.appearance,
                 accessibility: defaultAccessibility
             )
         ]
@@ -51,7 +50,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.l.default.appearance,
+            appearance: SDDSAvatar.large.default.appearance,
             accessibility: defaultAccessibility
         )
     }

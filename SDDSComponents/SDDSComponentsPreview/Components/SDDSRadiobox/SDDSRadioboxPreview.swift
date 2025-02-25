@@ -12,7 +12,7 @@ struct SDDSRadioboxPreview: PreviewProvider {
             subtitle: "Description",
             isEnabled: true,
             images: .defaultImages,
-            appearance: Radiobox.m.default.appearance
+            appearance: SDDSRadiobox.medium.default.appearance
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")
