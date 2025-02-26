@@ -24,7 +24,11 @@ struct CellAppearance: CodeGenerationAppearance {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: CellProps, id: String? = nil, component: CodeGenerationComponent) {
+    init(props: CellProps?, id: String? = nil, component: CodeGenerationComponent) {
+        guard let props = props else {
+            return
+        }
+        
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.labelColor = ColorTokenContextBuilder(props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context

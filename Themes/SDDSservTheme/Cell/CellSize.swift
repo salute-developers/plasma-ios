@@ -17,37 +17,37 @@ struct CellSize {
     ] 
 }
 struct CellSizeL: CellSizeConfiguration {
-    public var contentPaddingEnd = CGFloat(8.0)
-    public var contentPaddingStart = CGFloat(8.0)
+    var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(8.0)
     public var debugDescription: String {
         return "CellSize"
     }
 }
 struct CellSizeM: CellSizeConfiguration {
-    public var contentPaddingEnd = CGFloat(8.0)
-    public var contentPaddingStart = CGFloat(8.0)
+    var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(8.0)
     public var debugDescription: String {
         return "CellSize"
     }
 }
 struct CellSizeS: CellSizeConfiguration {
-    public var contentPaddingEnd = CGFloat(6.0)
-    public var contentPaddingStart = CGFloat(6.0)
+    var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(6.0)
     public var debugDescription: String {
         return "CellSize"
     }
 }
 struct CellSizeXs: CellSizeConfiguration {
-    public var contentPaddingEnd = CGFloat(6.0)
-    public var contentPaddingStart = CGFloat(6.0)
+    var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(6.0)
     public var debugDescription: String {
         return "CellSize"
     }
 }
 
 struct CellAnySize: CellSizeConfiguration {
-    public var contentPaddingEnd = CGFloat(0)
-    public var contentPaddingStart = CGFloat(0)
+    var contentPaddingEnd = CGFloat(0)
+    var contentPaddingStart = CGFloat(0)
 
     init(size: CellSizeConfiguration) {
         self.contentPaddingEnd = size.contentPaddingEnd

@@ -6,3 +6,4 @@ typealias ChipConfiguration = ComponentConfiguration<ChipProps>
 typealias BadgeConfiguration = ComponentConfiguration<BadgeProps>
 typealias IndicatorConfiguration = ComponentConfiguration<IndicatorProps>
 typealias CellConfiguration = ComponentConfiguration<CellProps>
+typealias CounterConfiguration = ComponentConfiguration<CounterProps>
