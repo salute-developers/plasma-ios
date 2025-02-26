@@ -5,5 +5,6 @@ struct IndicatorProps: MergeableConfiguration, Codable {
     
     var height: KeyValue<Double>?
     var width: KeyValue<Double>?
+    var shape: ShapeKeyValue?
     var backgroundColor: ColorKeyValue?
 }

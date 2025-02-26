@@ -293,6 +293,8 @@
 		81CF635C2C6E8F18008F3BB2 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63582C6E8F18008F3BB2 /* FileExtension.swift */; };
 		81D5D9D32D53A9740022CF32 /* ContextVariationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */; };
 		81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D122D6F3619007E758F /* PaletteMapper.swift */; };
+		81D85D152D6F63DE007E758F /* PathFunctionContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D142D6F63D9007E758F /* PathFunctionContextBuilder.swift */; };
+		81D85D172D6F6FF9007E758F /* PathDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D162D6F6FF5007E758F /* PathDrawer.swift */; };
 		81DE5FE32D634E1B0041B639 /* SpacingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE22D634E180041B639 /* SpacingToken.swift */; };
 		81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */; };
 		81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDBA2BD2B9F400F86AE1 /* ContexBuilder.swift */; };
@@ -668,6 +670,8 @@
 		81CF635D2C6E8F1E008F3BB2 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextVariationUtility.swift; sourceTree = "<group>"; };
 		81D85D122D6F3619007E758F /* PaletteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteMapper.swift; sourceTree = "<group>"; };
+		81D85D142D6F63D9007E758F /* PathFunctionContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFunctionContextBuilder.swift; sourceTree = "<group>"; };
+		81D85D162D6F6FF5007E758F /* PathDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathDrawer.swift; sourceTree = "<group>"; };
 		81DE5FE22D634E180041B639 /* SpacingToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingToken.swift; sourceTree = "<group>"; };
 		81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpacingToken.stencil; sourceTree = "<group>"; };
 		81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShapeToken.stencil; sourceTree = "<group>"; };
@@ -912,6 +916,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				81D85D142D6F63D9007E758F /* PathFunctionContextBuilder.swift */,
 				8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */,
 				8166B43F2D5BD7C30044A680 /* RequiredPlacementContextBuilder.swift */,
 				812DB6E22D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift */,
@@ -1267,6 +1272,7 @@
 		8180A4B32C0F71A500009AF5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				81D85D162D6F6FF5007E758F /* PathDrawer.swift */,
 				8180A4B42C0F71A500009AF5 /* Device.swift */,
 			);
 			path = Utilities;
@@ -2032,6 +2038,7 @@
 				24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */,
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
+				81D85D152D6F63DE007E758F /* PathFunctionContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */,
 				81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */,
@@ -2253,6 +2260,7 @@
 				8180A5942C11C34000009AF5 /* ShapeModifier.swift in Sources */,
 				8180A5A42C11C35000009AF5 /* ShadowToken.swift in Sources */,
 				8180A5A32C11C34400009AF5 /* UIColor+Hex.swift in Sources */,
+				81D85D172D6F6FF9007E758F /* PathDrawer.swift in Sources */,
 				8180A5A52C11C35200009AF5 /* GradientToken.swift in Sources */,
 				8180A5A02C11C34400009AF5 /* View+Conditional.swift in Sources */,
 				8180A59C2C11C34400009AF5 /* ColorToken+Theme.swift in Sources */,

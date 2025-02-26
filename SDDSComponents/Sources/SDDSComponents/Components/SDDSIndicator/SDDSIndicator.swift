@@ -12,9 +12,10 @@ public struct SDDSIndicator: View {
     }
     
     public var body: some View {
-        Circle()
-            .frame(width: min(width, height), height: min(width, height))
-            .foregroundColor(appearance.backgroundColor.color(for: colorScheme))
+        indicatorAppearance.size
+            .path(in: CGRect(x: 0, y: 0, width: width, height: height))
+            .fill(appearance.backgroundColor.color(for: colorScheme))
+            .frame(width: width, height: height)
     }
     
     private var width: CGFloat {
