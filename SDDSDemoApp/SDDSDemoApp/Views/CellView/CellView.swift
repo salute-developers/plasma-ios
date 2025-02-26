@@ -142,7 +142,6 @@ struct CellView: View {
                     image: nil,
                     placeholderImage: nil,
                     status: .online,
-                    appearance: Avatar.l.appearance,
                     accessibility: AvatarAccessibility()
                 )
         case .iconButton:
@@ -151,7 +150,6 @@ struct CellView: View {
                     isDisabled: false,
                     isLoading: false,
                     spinnerImage: Image.image("spinner"),
-                    appearance: IconButton.l.accent.appearance,
                     layoutMode: .fixedWidth(.packed),
                     action: {}
                 )
@@ -161,7 +159,6 @@ struct CellView: View {
                     subtitle: "",
                     isOn: Binding(get: { self.viewModel.isOn }, set: { newValue in self.viewModel.isOn = newValue }),
                     isEnabled: true,
-                    appearance: Switch.l.appearance,
                     switchAccessibility: SwitchAccessibility()
                 )
         case .radiobox:
@@ -170,8 +167,7 @@ struct CellView: View {
                     title: "",
                     subtitle: "",
                     isEnabled: true,
-                    images: .defaultImages,
-                    appearance: Radiobox.m.appearance
+                    images: .defaultImages
                 )
         case .checkbox:
                 SDDSCheckbox(
@@ -179,8 +175,7 @@ struct CellView: View {
                     title: "",
                     subtitle: "",
                     isEnabled: true,
-                    images: .checkbox,
-                    appearance: Checkbox.m.appearance
+                    images: .checkbox
                 )
         case .none:
             EmptyView()

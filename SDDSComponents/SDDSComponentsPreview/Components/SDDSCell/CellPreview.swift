@@ -7,7 +7,7 @@ struct CellPreview: PreviewProvider {
     static var previews: some View {
         HStack {
             Cell(
-                appearance: Cell.l.appearance,
+                appearance: Cell.s.appearance,
                 alignment: .center,
                 label: "label",
                 title: "title",
@@ -19,7 +19,7 @@ struct CellPreview: PreviewProvider {
                     avatar
                 },
                 rightContent: {
-                    iconButton
+                    `switch`
                 }
             )
         }
