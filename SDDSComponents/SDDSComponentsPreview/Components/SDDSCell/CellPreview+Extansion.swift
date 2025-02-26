@@ -3,27 +3,14 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-extension CellPreview {
-    static var iconButton: some View {
-        IconButton(
-            iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-            isDisabled: false,
-            isLoading: false,
-            spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.accent.appearance,
-            layoutMode: .fixedWidth(.packed),
-            action: {}
-        )
-    }
-    
+extension CellPreview {    
     static var checkbox: some View {
         SDDSCheckbox(
             state: .constant(.indeterminate),
             title: "Valur",
             subtitle: "Description",
             isEnabled: true,
-            images: .checkbox,
-            appearance: Checkbox.m.default.appearance
+            images: .checkbox
         )
     }
     
@@ -33,8 +20,7 @@ extension CellPreview {
             title: "Value",
             subtitle: "Description",
             isEnabled: true,
-            images: .defaultImages,
-            appearance: Radiobox.m.default.appearance
+            images: .defaultImages
         )
     }
     
@@ -44,7 +30,6 @@ extension CellPreview {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.m.appearance,
             accessibility: AvatarAccessibility()
         )
     }
@@ -55,7 +40,6 @@ extension CellPreview {
             subtitle: "",
             isOn: .constant(false),
             isEnabled: true,
-            appearance: Switch.l.default.appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
