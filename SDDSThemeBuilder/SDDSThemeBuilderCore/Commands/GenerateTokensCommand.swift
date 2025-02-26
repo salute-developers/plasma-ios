@@ -15,7 +15,7 @@ final class GenerateTokensCommand: Command, FileWriter {
          themeURL: URL,
          templates: [StencilTemplate],
          generatedOutputURL: URL,
-         templateRender: Renderable = TemplateRenderer(),
+         templateRender: Renderable,
          contextBuilder: ContexBuilder
     ) {
         self.schemeURL = schemeURL

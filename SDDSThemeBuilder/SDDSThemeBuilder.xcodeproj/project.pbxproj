@@ -289,6 +289,7 @@
 		81CF635B2C6E8F18008F3BB2 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63572C6E8F18008F3BB2 /* HexConverter.swift */; };
 		81CF635C2C6E8F18008F3BB2 /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63582C6E8F18008F3BB2 /* FileExtension.swift */; };
 		81D5D9D32D53A9740022CF32 /* ContextVariationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */; };
+		81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D122D6F3619007E758F /* PaletteMapper.swift */; };
 		81DE5FE32D634E1B0041B639 /* SpacingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE22D634E180041B639 /* SpacingToken.swift */; };
 		81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */; };
 		81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDBA2BD2B9F400F86AE1 /* ContexBuilder.swift */; };
@@ -657,6 +658,7 @@
 		81CF63582C6E8F18008F3BB2 /* FileExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
 		81CF635D2C6E8F1E008F3BB2 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextVariationUtility.swift; sourceTree = "<group>"; };
+		81D85D122D6F3619007E758F /* PaletteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteMapper.swift; sourceTree = "<group>"; };
 		81DE5FE22D634E180041B639 /* SpacingToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingToken.swift; sourceTree = "<group>"; };
 		81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpacingToken.stencil; sourceTree = "<group>"; };
 		81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShapeToken.stencil; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 		2489D0D22BC7F7C10053AAB1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				81D85D122D6F3619007E758F /* PaletteMapper.swift */,
 				81CB0FDD2C245046003B1064 /* SchemeTokenNameValidator.swift */,
 				81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */,
 				81CB0FE62C245052003B1064 /* SchemeValidationLogger.swift */,
@@ -2048,6 +2051,7 @@
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
+				81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */,
 				812DB6E92D55E3FB00D3F4A3 /* ColorTokenContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
 				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,

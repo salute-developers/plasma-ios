@@ -55,6 +55,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.colorToken, .colors],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: ColorContextBuilder(
                     paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
@@ -66,6 +67,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.shadowToken, .shadows],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .shadow,
                     metaScheme: metaScheme
@@ -77,6 +79,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.spacingToken, .spacings],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .spacing,
                     metaScheme: metaScheme
@@ -88,6 +91,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.shapeToken, .shapes],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GeneralContextBuilder(
                     kind: .shape,
                     metaScheme: metaScheme
@@ -99,6 +103,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.typographyToken, .typographies],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: TypographyContextBuilder(
                     fontFamiliesContainer: fontFamiliesContainer, 
                     metaScheme: metaScheme
@@ -110,6 +115,7 @@ public final class App {
                 themeURL: themeURL(config: themeConfig),
                 templates: [.gradientToken, .gradients],
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: GradientContextBuilder(
                     paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
