@@ -526,6 +526,32 @@
 			path = SDDSCell;
 			sourceTree = "<group>";
 		};
+		696942AB2D6F1D1700F43C38 /* BadgeAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				696942A32D6F1D1700F43C38 /* BadgeAlignment.swift */,
+				696942A42D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift */,
+				696942A52D6F1D1700F43C38 /* BadgeAppearance.swift */,
+				696942A62D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift */,
+				696942A72D6F1D1700F43C38 /* BadgeSizeConfiguration.swift */,
+				696942A82D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift */,
+				696942A92D6F1D1700F43C38 /* BadgeStyle.swift */,
+				696942AA2D6F1D1700F43C38 /* BadgeStyle+Extensions.swift */,
+			);
+			path = BadgeAppearance;
+			sourceTree = "<group>";
+		};
+		696942AF2D6F1D1700F43C38 /* SDDSBadge */ = {
+			isa = PBXGroup;
+			children = (
+				696942AB2D6F1D1700F43C38 /* BadgeAppearance */,
+				696942AC2D6F1D1700F43C38 /* BasicBadge.swift */,
+				696942AD2D6F1D1700F43C38 /* IconBadge.swift */,
+				696942AE2D6F1D1700F43C38 /* SDDSBadge.swift */,
+			);
+			path = SDDSBadge;
+			sourceTree = "<group>";
+		};
 		697970DB2D63A5EF008306A8 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1533,6 +1559,17 @@
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				812DB7552D57B44100D3F4A3 /* TextFieldRequiredPlacement.swift in Sources */,
 				816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */,
+				696942B02D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift in Sources */,
+				696942B12D6F1D1700F43C38 /* IconBadge.swift in Sources */,
+				696942B22D6F1D1700F43C38 /* BadgeStyle.swift in Sources */,
+				696942B32D6F1D1700F43C38 /* BadgeStyle+Extensions.swift in Sources */,
+				696942B42D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
+				696942B52D6F1D1700F43C38 /* BadgeAppearance.swift in Sources */,
+				696942B62D6F1D1700F43C38 /* BadgeAlignment.swift in Sources */,
+				696942B72D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift in Sources */,
+				696942B82D6F1D1700F43C38 /* BadgeSizeConfiguration.swift in Sources */,
+				696942B92D6F1D1700F43C38 /* SDDSBadge.swift in Sources */,
+				696942BA2D6F1D1700F43C38 /* BasicBadge.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
@@ -1587,11 +1624,7 @@
 				6969429F2D6F0D8C00F43C38 /* CellSizeConfigurations.swift in Sources */,
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,
 				696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */,
-<<<<<<< HEAD
 				696942A22D6F0D8C00F43C38 /* SDDSCell.swift in Sources */,
-=======
-				696942A22D6F0D8C00F43C38 /* Cell.swift in Sources */,
->>>>>>> 20897212 (fix: fixed cell and counter generator)
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
