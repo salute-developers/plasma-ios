@@ -23,7 +23,7 @@ extension CellPreview {
             subtitle: "Description",
             isEnabled: true,
             images: .checkbox,
-            appearance: SDDSCheckbox.medium.default.appearance
+            appearance: Checkbox.m.default.appearance
         )
     }
     
@@ -34,7 +34,7 @@ extension CellPreview {
             subtitle: "Description",
             isEnabled: true,
             images: .defaultImages,
-            appearance: SDDSRadiobox.medium.default.appearance
+            appearance: Radiobox.m.default.appearance
         )
     }
     
@@ -44,7 +44,7 @@ extension CellPreview {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: SDDSAvatar.extraExtraLarge.medium.appearance,
+            appearance: Avatar.m.appearance,
             accessibility: AvatarAccessibility()
         )
     }
