@@ -94,7 +94,6 @@
 		814E30202C999469004601F7 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 814E301F2C999469004601F7 /* SDDSThemeUtilities */; };
 		814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */; };
 		814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */; };
-		814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0A22C82368300FBDAC8 /* SDDSAvatarModifiers.swift */; };
 		814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */; };
 		814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0932C82244000FBDAC8 /* BackportAsyncImage.swift */; };
 		814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC0972C82273100FBDAC8 /* Text+FillModifier.swift */; };
@@ -382,7 +381,6 @@
 		81CBC0992C82325400FBDAC8 /* SDDSAvatar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSAvatar.md; sourceTree = "<group>"; };
 		81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarData.swift; sourceTree = "<group>"; };
 		81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarGroup.swift; sourceTree = "<group>"; };
-		81CBC0A22C82368300FBDAC8 /* SDDSAvatarModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarModifiers.swift; sourceTree = "<group>"; };
 		81CBC0A42C8237E800FBDAC8 /* SDDSAvatarGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSAvatarGroup.md; sourceTree = "<group>"; };
 		81CF12182C6E686D0074174F /* SDDSRadioboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRadioboxGroup.swift; sourceTree = "<group>"; };
 		81CF121A2C6E6AB40074174F /* SDDSRadioboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRadioboxGroup.md; sourceTree = "<group>"; };
@@ -1140,7 +1138,6 @@
 			children = (
 				81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */,
 				81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */,
-				81CBC0A22C82368300FBDAC8 /* SDDSAvatarModifiers.swift */,
 				81CBC0992C82325400FBDAC8 /* SDDSAvatar.md */,
 				817339E72D033E7E0092608A /* AvatarAppearance */,
 			);
@@ -1541,7 +1538,6 @@
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
 				812DB74F2D57B44100D3F4A3 /* TextFieldAppearance.swift in Sources */,
-				814E30382C99AFB0004601F7 /* SDDSAvatarModifiers.swift in Sources */,
 				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */,

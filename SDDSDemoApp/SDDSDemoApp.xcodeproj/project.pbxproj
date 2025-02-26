@@ -23,7 +23,6 @@
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
 		698902672D65176F003DCE58 /* CellVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902662D651763003DCE58 /* CellVariationProvider.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
-		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
 		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
@@ -53,7 +52,6 @@
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
 		8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */; };
-		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
 		8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */; };
 		8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */; };
@@ -69,14 +67,10 @@
 		81763B122D6DF43600904D4A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B112D6DF43400904D4A /* BadgeView.swift */; };
 		81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B132D6DF43800904D4A /* BadgeViewProvider.swift */; };
 		81763B162D6DF43F00904D4A /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B152D6DF43D00904D4A /* BadgeViewModel.swift */; };
-		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
-		8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
-		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
-		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
 		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
 		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };
@@ -191,18 +185,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
-				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
 				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
-				8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */,
-				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
-				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
 				8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */,
-				810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

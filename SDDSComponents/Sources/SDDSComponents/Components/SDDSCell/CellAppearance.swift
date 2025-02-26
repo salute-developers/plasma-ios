@@ -33,9 +33,9 @@ public struct CellAppearance {
     public var disclosureImageColor: ColorToken
     public var disclosureImage: Image?
     public var avatarAppearance: AvatarAppearance
-    public var iconButtonAppearance: ButtonAppearance
-    public var checkBoxAppearance: CheckboxAppearance
-    public var radioBoxAppearance: RadioboxAppearance
+    public var buttonAppearance: ButtonAppearance
+    public var checkboxAppearance: CheckboxAppearance
+    public var radioboxAppearance: RadioboxAppearance
     public var switchAppearance: SwitchAppearance
     
     public init(
@@ -51,9 +51,9 @@ public struct CellAppearance {
         disclosureImageColor: ColorToken = .clearColor,
         disclosureImage: Image? = nil,
         avatarAppearance: AvatarAppearance = AvatarAppearance.defaultValue,
-        iconButtonAppearance: ButtonAppearance = ButtonAppearance.defaultValue,
-        checkBoxAppearance: CheckboxAppearance = CheckboxAppearance.defaultValue,
-        radioBoxAppearance: RadioboxAppearance = RadioboxAppearance.defaultValue,
+        buttonAppearance: ButtonAppearance = ButtonAppearance.defaultValue,
+        checkboxAppearance: CheckboxAppearance = CheckboxAppearance.defaultValue,
+        radioboxAppearance: RadioboxAppearance = RadioboxAppearance.defaultValue,
         switchAppearance: SwitchAppearance = SwitchAppearance.defaultValue
     ) {
         self.size = size
@@ -68,9 +68,9 @@ public struct CellAppearance {
         self.disclosureImageColor = disclosureImageColor
         self.disclosureImage = disclosureImage
         self.avatarAppearance = avatarAppearance
-        self.iconButtonAppearance = iconButtonAppearance
-        self.checkBoxAppearance = checkBoxAppearance
-        self.radioBoxAppearance = radioBoxAppearance
+        self.buttonAppearance = buttonAppearance
+        self.checkboxAppearance = checkboxAppearance
+        self.radioboxAppearance = radioboxAppearance
         self.switchAppearance = switchAppearance
     }
 }

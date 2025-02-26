@@ -19,8 +19,12 @@ public struct SDDSCheckbox: View {
     let subtitle: String?
     let isEnabled: Bool
     let images: SelectionControlStateImages
-    let appearance: CheckboxAppearance
     let accessibility: SelectionControlAccessibility
+    private var _appearance: CheckboxAppearance?
+    private var appearance: CheckboxAppearance {
+        _appearance ?? checkboxAppearance
+    }
+    @Environment(\.checkboxAppearance) var checkboxAppearance
     
     /**
      Инициализатор для создания чекбокса с заданными параметрами.
@@ -41,7 +45,7 @@ public struct SDDSCheckbox: View {
         subtitle: String? = nil,
         isEnabled: Bool,
         images: SelectionControlStateImages,
-        appearance: CheckboxAppearance,
+        appearance: CheckboxAppearance? = nil,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
         self._state = state
@@ -49,7 +53,7 @@ public struct SDDSCheckbox: View {
         self.subtitle = subtitle
         self.isEnabled = isEnabled
         self.images = images
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
     }
     
@@ -65,7 +69,7 @@ public struct SDDSCheckbox: View {
         self.subtitle = data.subtitle
         self.isEnabled = data.isEnabled
         self.images = data.images
-        self.appearance = data.appearance
+        self._appearance = data.appearance
         self.accessibility = data.accessibility
     }
     
