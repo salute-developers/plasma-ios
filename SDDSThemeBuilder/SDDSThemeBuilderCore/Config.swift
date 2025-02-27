@@ -91,7 +91,6 @@ public extension ThemeBuilderConfiguration.Theme {
         "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes"
     }
     private func themeURL(name: String) -> String {
-        "file:///Users/vladimirkaltyrin/Downloads/T1053-try.zip"
-        //"\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/latest.zip"
+        "\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/latest.zip"
     }
 }
