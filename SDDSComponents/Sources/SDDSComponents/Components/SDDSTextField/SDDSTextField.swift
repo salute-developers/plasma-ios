@@ -107,15 +107,7 @@ public struct SDDSTextField: View {
 
                 HStack(spacing: 0) {
                     fieldView
-                        .onTapGesture {
-                            guard !displayChips else {
-                                return
-                            }
-                            withAnimation {
-                                isFocused = true
-                            }
-                        }
-                        .debug(condition: debugConfiguration.fieldView)
+                        
                 }
                 HStack(spacing: 0) {
                     captionLabel
@@ -127,7 +119,15 @@ public struct SDDSTextField: View {
             }
         }
         .opacity(disabled ? appearance.disabledAlpha : 1)
-        .debug(condition: debugConfiguration.textField)
+        .disabled(disabled)
+        .onTapGesture {
+            guard !displayChips && !disabled else {
+                return
+            }
+            withAnimation {
+                isFocused = true
+            }
+        }
     }
 
     // MARK: - Subviews
@@ -246,58 +246,61 @@ public struct SDDSTextField: View {
     private var textField: some View {
         switch value {
         case .single:
-            GeometryReader { proxy in
-                VStack(spacing: 0) {
-                    if shouldCenterText {
-                        Spacer()
-                    }
-                    HStack(spacing: 0) {
-                        if showSuffixOrPrefix {
-                            textBeforeView
-                                .padding(.leading, appearance.size.textBeforeLeadingPadding)
-                                .padding(.trailing, appearance.size.textBeforeTrailingPadding)
+            ScrollViewReader { scrollViewProxy in
+                GeometryReader { proxy in
+                    VStack(spacing: 0) {
+                        if shouldCenterText {
+                            Spacer()
                         }
-                        PlaceholderTextField(
-                            text: $text, 
-                            isFocused: $isFocused,
-                            textColor: textColor,
-                            textAlignment: appearance.inputTextAlignment,
-                            cursorColor: appearance.cursorColor.color(for: colorScheme),
-                            textTypography: textTypography,
-                            readOnly: readOnly,
-                            placeholderBeforeContent: {
-                                textBeforeView
-                            },
-                            placeholderContent: {
-                                placeholderView
-                            },
-                            placeholderAfterContent: {
-                                HStack(spacing: 0) {
-                                    textAfterView
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 0) {
+                                if showSuffixOrPrefix {
+                                    textBeforeView
                                 }
-                            },
-                            onEditingChanged: { focused in
-                                isFocused = focused
-                            },
-                            textFieldConfiguration: { textField in
-                                textFieldConfiguration(textField: textField)
-                                    .frame(
-                                        width: calculateTextWidth(text: text, placeholder: placeholder, proxy: proxy),
-                                        height: textTypography.lineHeight,
-                                        debug: debugConfiguration.textField
-                                    )
+                                PlaceholderTextField(
+                                    text: $text,
+                                    isFocused: $isFocused,
+                                    textColor: textColor,
+                                    textAlignment: appearance.inputTextAlignment,
+                                    cursorColor: appearance.cursorColor.color(for: colorScheme),
+                                    textTypography: textTypography,
+                                    readOnly: readOnly,
+                                    placeholderBeforeContent: {
+                                        EmptyView()
+                                    },
+                                    placeholderContent: {
+                                        placeholderView
+                                    },
+                                    placeholderAfterContent: {
+                                        EmptyView()
+                                    },
+                                    onEditingChanged: { focused in
+                                        isFocused = focused
+                                    },
+                                    textFieldConfiguration: { textField in
+                                        textFieldConfiguration(textField: textField)
+                                            .id(textFieldIdentifier)
+                                            .frame(
+                                                width: calculatedTextSize,
+                                                height: textTypography.lineHeight
+                                            )
+                                    }
+                                )
+                                if showSuffixOrPrefix {
+                                    textAfterView
+                                        .id(textAfterIdentifier)
+                                }
                             }
-                        )
-
-                        if showSuffixOrPrefix {
-                            textAfterView
-                                .padding(.leading, appearance.size.textAfterLeadingPadding)
-                                .padding(.trailing, appearance.size.textAfterTrailingPadding)
                         }
-                    }
-                    
-                    if shouldCenterText {
-                        Spacer()
+                        .onChange(of: text) { _ in
+                            scroll(with: scrollViewProxy)
+                        }
+                        .onChange(of: textAfter) { _ in
+                            scroll(with: scrollViewProxy)
+                        }
+                        if shouldCenterText {
+                            Spacer()
+                        }
                     }
                 }
             }
@@ -319,7 +322,7 @@ public struct SDDSTextField: View {
                 textFieldConfiguration: { textField in
                     textFieldConfiguration(textField: textField)
                         .frame(
-                            width: chipsTextSize,
+                            width: calculatedTextSize,
                             height: textTypography.lineHeight,
                             debug: debugConfiguration.textField
                         )
@@ -327,12 +330,7 @@ public struct SDDSTextField: View {
             )
         }
     }
-    
-    private var chipsTextSize: CGFloat {
-        let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
-        return ceil(textSize.width)
-    }
-    
+        
     @ViewBuilder
     private func textFieldConfiguration(textField: FocusableTextField) -> some View {
         textField
@@ -413,6 +411,8 @@ public struct SDDSTextField: View {
                 .typography(textBeforeTypography)
                 .frame(height: textTypography.lineHeight)
                 .foregroundColor(appearance.textBeforeColor.color(for: colorScheme))
+                .padding(.leading, appearance.size.textBeforeLeadingPadding)
+                .padding(.trailing, appearance.size.textBeforeTrailingPadding)
         }
     }
     
@@ -425,6 +425,8 @@ public struct SDDSTextField: View {
                 .typography(textAfterTypography)
                 .frame(height: textTypography.lineHeight)
                 .foregroundColor(appearance.textAfterColor.color(for: colorScheme))
+                .padding(.leading, appearance.size.textAfterLeadingPadding)
+                .padding(.trailing, appearance.size.textAfterTrailingPadding)
         }
     }
     
@@ -502,6 +504,14 @@ public struct SDDSTextField: View {
         }
     }
     
+    private func scroll(with proxy: ScrollViewProxy) {
+        if !textAfter.isEmpty {
+            proxy.scrollTo(textAfterIdentifier, anchor: .trailing)
+        } else {
+            proxy.scrollTo(textFieldIdentifier, anchor: .trailing)
+        }
+    }
+        
     private var endContentColor: Color {
         if readOnly {
             return appearance.endContentColorReadOnly?.color(for: colorScheme) ?? appearance.endContentColor.color(for: colorScheme)
@@ -627,34 +637,9 @@ public struct SDDSTextField: View {
 
     // MARK: - Computed Properties for Conditions
     
-    private func calculateTextWidth(text: String, placeholder: String, proxy: GeometryProxy) -> CGFloat {
-        let deltaPadding: CGFloat = 1.0
+    private var calculatedTextSize: CGFloat {
         let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
-        if displayChips {
-            if !text.isEmpty {
-                return textSize.width + deltaPadding
-            } else {
-                let placeholderSize = (placeholder as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
-                return placeholderSize.width
-            }
-        }
-        
-        var maxWidth = proxy.size.width
-        if !textBefore.isEmpty && !displayChips {
-            let textBeforeSize = (textBefore as NSString).size(withAttributes: [NSAttributedString.Key.font: textBeforeTypography.uiFont])
-            maxWidth -= (textBeforeSize.width + deltaPadding)
-            maxWidth -= (appearance.size.textBeforeLeadingPadding + appearance.size.textBeforeTrailingPadding)
-        }
-        if !textAfter.isEmpty && !displayChips {
-            let textBeforeSize = (textAfter as NSString).size(withAttributes: [NSAttributedString.Key.font: textAfterTypography.uiFont])
-            maxWidth -= (textBeforeSize.width + deltaPadding)
-            maxWidth -= (appearance.size.textAfterLeadingPadding + appearance.size.textAfterTrailingPadding)
-        }
-        
-        return min(
-            textSize.width + deltaPadding,
-            maxWidth
-        )
+        return max(ceil(textSize.width), 1.0)
     }
     
     private var iconActionViewWidth: CGFloat {
@@ -674,7 +659,8 @@ public struct SDDSTextField: View {
         !displayChips &&
         appearance.innerTitleTypography.typography(with: appearance.size) != nil &&
         (!text.isEmpty || isFocused) &&
-        !(title.isEmpty && required)
+        !(title.isEmpty && required) &&
+        (!title.isEmpty || !optionalTitle.isEmpty)
     }
 
     private var shouldShowEdgeIndicatorForDefaultLayout: Bool {
@@ -717,7 +703,7 @@ public struct SDDSTextField: View {
     }
     
     private var showSuffixOrPrefix: Bool {
-        !text.isEmpty && !displayChips
+        !displayChips
     }
 
     private var displayChips: Bool {
@@ -746,7 +732,12 @@ public struct SDDSTextField: View {
     private var textFieldIdentifier: String {
         var hasher = Hasher()
         appearance.hash(into: &hasher)
-        text.hash(into: &hasher)
+        return String(hasher.finalize())
+    }
+    
+    private var textAfterIdentifier: String {
+        var hasher = Hasher()
+        textAfter.hash(into: &hasher)
         return String(hasher.finalize())
     }
 
