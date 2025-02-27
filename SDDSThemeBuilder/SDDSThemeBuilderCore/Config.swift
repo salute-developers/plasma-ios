@@ -36,8 +36,8 @@ public struct ThemeBuilderConfiguration: Codable {
     public var paletteURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json")!
     public var themes: [ThemeConfiguration] = [
         Theme.sddsServTheme,
-//        Theme.plasmaB2C,
-//        Theme.stylesSalute
+        Theme.plasmaB2C,
+        Theme.stylesSalute
     ].map { $0.themeConfiguration }
     
     public init() {}
@@ -91,7 +91,6 @@ public extension ThemeBuilderConfiguration.Theme {
         "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes"
     }
     private func themeURL(name: String) -> String {
-        "file:///Users/vladimirkaltyrin/Downloads/T1053-try.zip"
-        //"\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/latest.zip"
+        "\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/latest.zip"
     }
 }
