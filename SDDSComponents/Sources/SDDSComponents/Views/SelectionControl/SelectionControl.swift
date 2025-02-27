@@ -27,16 +27,22 @@ public struct ZeroSelectionControlSize: SelectionControlSizeConfiguration {
     public init() {}
 }
 
-public struct SelectionControlStateImages {
-    public let selectedImage: Image
-    public let deselectedImage: Image
-    public let indeterminateImage: Image?
-    
-    public init(selectedImage: Image, deselectedImage: Image, indeterminateImage: Image?) {
-        self.selectedImage = selectedImage
-        self.deselectedImage = deselectedImage
-        self.indeterminateImage = indeterminateImage
-    }
+//public struct SelectionControlStateImages {
+//    public let selectedImage: Image
+//    public let deselectedImage: Image
+//    public let indeterminateImage: Image?
+//    
+//    public init(selectedImage: Image, deselectedImage: Image, indeterminateImage: Image?) {
+//        self.selectedImage = selectedImage
+//        self.deselectedImage = deselectedImage
+//        self.indeterminateImage = indeterminateImage
+//    }
+//}
+
+public enum SelectionControlStateImages {
+    case selected
+    case deselected
+    case indeterminate
 }
 
 public struct SelectionControlAccessibility {
@@ -132,16 +138,16 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
     }
     
-    private var image: Image? {
-        switch state {
-        case .selected:
-            return images.selectedImage
-        case .deselected:
-            return images.deselectedImage
-        case .indeterminate:
-            return images.indeterminateImage
-        }
-    }
+//    private var image: Image? {
+//        switch state {
+//        case .selected:
+//            return images.selectedImage
+//        case .deselected:
+//            return images.deselectedImage
+//        case .indeterminate:
+//            return images.indeterminateImage
+//        }
+//    }
     
     @ViewBuilder
     private func tintImage(image: Image) -> some View {
@@ -161,12 +167,61 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     @ViewBuilder
     private var controlView: some View {
-        if let image = image {
-            tintImage(image: image)
-                .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
-        } else {
-            EmptyView()
+//        if let image = image {
+//            tintImage(image: image)
+//                .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
+//                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
+//        } else {
+//            EmptyView()
+//        }
+        switch images {
+        case .selected:
+            deselectedView
+        case .deselected:
+            selectedView
+        case .indeterminate:
+            <#code#>
+        }
+        deselectedView
+            .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
+    }
+
+    private var deselectedView: some View {
+        Circle()
+            .stroke(
+                style: StrokeStyle(
+                    lineWidth: 2
+                )
+            )
+            .padding(1)
+            .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
+    }
+    
+    private var circleView: some View {
+        Circle()
+            .modifier(RadioboxViewModifier(lineWidth: <#T##CGFloat#>, color: <#T##Color#>))
+            .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
+    }
+    
+    extension View {
+        func radioboxStyle(lineWidth: CGFloat) -> some View {
+            self.modifier(RadioboxViewModifier(lineWidth: lineWidth))
+        }
+    }
+    
+    struct RadioboxViewModifier: ViewModifier {
+        let lineWidth: CGFloat
+        
+        func body(content: Content) -> some View {
+            content
+                .overlay(
+                    Circle()
+                        .stroke(
+                            style: StrokeStyle(
+                                lineWidth: lineWidth
+                            )
+                        )
+                )
         }
     }
     
