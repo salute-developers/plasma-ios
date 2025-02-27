@@ -221,9 +221,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             return SDDSServTheme.Switch.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Switch.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Switch.all
         }
     }
     

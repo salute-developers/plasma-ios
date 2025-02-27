@@ -553,6 +553,13 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		69BF1F922D704C5600438C5B /* View+Extansion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View+Extansion";
+			sourceTree = "<group>";
+		};
 		69F967B12D4CC9EA00C0B50F /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,6 +1023,7 @@
 		818C03C32C45128E002C6D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				69BF1F922D704C5600438C5B /* View+Extansion */,
 				81E968122CBD194300256968 /* FocusableTextField */,
 				81CF121E2C6E740A0074174F /* RoundedCornersMask */,
 				811DE16F2C578331000DD354 /* HierarchicalList */,
