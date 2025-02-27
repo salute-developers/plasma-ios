@@ -229,8 +229,8 @@ public struct SDDSTextField: View {
                 .frame(height: appearance.chipAppearance.size.height)
                 
                 textField
-                    .id(textFieldIdentifier)
                     .padding(.leading, appearance.size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
+                    .id(textFieldIdentifier)
                     .onTapGesture {
                         isFocused = true
                     }
@@ -318,10 +318,19 @@ public struct SDDSTextField: View {
                 },
                 textFieldConfiguration: { textField in
                     textFieldConfiguration(textField: textField)
-                        .frame(height: textTypography.lineHeight, debug: debugConfiguration.textField)
+                        .frame(
+                            width: chipsTextSize,
+                            height: textTypography.lineHeight,
+                            debug: debugConfiguration.textField
+                        )
                 }
             )
         }
+    }
+    
+    private var chipsTextSize: CGFloat {
+        let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
+        return ceil(textSize.width)
     }
     
     @ViewBuilder
@@ -737,6 +746,7 @@ public struct SDDSTextField: View {
     private var textFieldIdentifier: String {
         var hasher = Hasher()
         appearance.hash(into: &hasher)
+        text.hash(into: &hasher)
         return String(hasher.finalize())
     }
 
