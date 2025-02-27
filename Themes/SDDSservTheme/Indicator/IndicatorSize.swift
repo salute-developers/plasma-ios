@@ -15,9 +15,6 @@ struct IndicatorSize {
     ] 
 }
 struct IndicatorSizeL: IndicatorSizeConfiguration {
-    func path(in rect: CGRect) -> Path {
-        PathDrawer.circle(in: rect)
-    }  
     var height = CGFloat(12.0)
     var pathDrawer = CircleDrawer() as PathDrawer
     var width = CGFloat(12.0)
@@ -26,9 +23,6 @@ struct IndicatorSizeL: IndicatorSizeConfiguration {
     }
 }
 struct IndicatorSizeM: IndicatorSizeConfiguration {
-    func path(in rect: CGRect) -> Path {
-        PathDrawer.circle(in: rect)
-    }  
     var height = CGFloat(8.0)
     var pathDrawer = CircleDrawer() as PathDrawer
     var width = CGFloat(8.0)
@@ -37,9 +31,6 @@ struct IndicatorSizeM: IndicatorSizeConfiguration {
     }
 }
 struct IndicatorSizeS: IndicatorSizeConfiguration {
-    func path(in rect: CGRect) -> Path {
-        PathDrawer.circle(in: rect)
-    }  
     var height = CGFloat(6.0)
     var pathDrawer = CircleDrawer() as PathDrawer
     var width = CGFloat(6.0)
@@ -49,9 +40,6 @@ struct IndicatorSizeS: IndicatorSizeConfiguration {
 }
 
 struct IndicatorAnySize: IndicatorSizeConfiguration {
-    func path(in rect: CGRect) -> Path {
-        return Path()
-    }
     var height = CGFloat(0)
     var pathDrawer = DefaultPathDrawer() as PathDrawer
     var width = CGFloat(0)
