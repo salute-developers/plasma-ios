@@ -12,7 +12,8 @@ public struct SDDSIndicator: View {
     }
     
     public var body: some View {
-        indicatorAppearance.size
+        appearance.size
+            .pathDrawer
             .path(in: CGRect(x: 0, y: 0, width: width, height: height))
             .fill(appearance.backgroundColor.color(for: colorScheme))
             .frame(width: width, height: height)
