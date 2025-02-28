@@ -91,13 +91,11 @@ enum Theme: String, CaseIterable {
     }
     
     var avatarVariations: [Variation<AvatarAppearance>] {
-        let fallback = SDDSServTheme.Avatar.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Avatar.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Avatar.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Avatar.all
         }
@@ -106,7 +104,7 @@ enum Theme: String, CaseIterable {
     var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.SDDSCounter.all
+            return SDDSServTheme.Counter.all
         case .stylesSalute:
             return StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:
@@ -126,41 +124,35 @@ enum Theme: String, CaseIterable {
     }
     
     var checkboxVariations: [Variation<CheckboxAppearance>] {
-        let fallback = SDDSServTheme.Checkbox.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Checkbox.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Checkbox.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Checkbox.all
         }
     }
     
     var radioboxVariations: [Variation<RadioboxAppearance>] {
-        let fallback = SDDSServTheme.Radiobox.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Radiobox.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Radiobox.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Radiobox.all
         }
     }
     
     var chipVariations: [Variation<ChipAppearance>] {
-        let fallback = SDDSServTheme.Chip.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Chip.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Chip.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Chip.all
         }
     }
     
@@ -176,47 +168,39 @@ enum Theme: String, CaseIterable {
     }
     
     var progressBarVariations: [Variation<ProgressBarAppearance>] {
-        let fallback: [Variation<ProgressBarAppearance>] = SDDSServTheme.ProgressBar.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.ProgressBar.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.ProgressBar.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.ProgressBar.all
         }
     }
     
     var segmentItemVariations: [Variation<SegmentItemAppearance>] {
-        let fallback: [Variation<SegmentItemAppearance>] = SDDSServTheme.SegmentItem.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.SegmentItem.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.SegmentItem.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.SegmentItem.all
         }
     }
     
     var segmentVariations: [Variation<SegmentAppearance>] {
-        let fallback: [Variation<SegmentAppearance>] = SDDSServTheme.Segment.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Segment.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Segment.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Segment.all
         }
     }
     
     var switchVariations: [Variation<SwitchAppearance>] {
-        let fallback: [Variation<SwitchAppearance>] = SDDSServTheme.Switch.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Switch.all
