@@ -4,20 +4,17 @@ import SDDSComponents
 struct SegmentItemTypography: GeneralTypographyConfiguration {
     typealias S = SegmentItemSizeConfiguration
     
-    let extraLarge: TypographyToken?
     let large: TypographyToken?
     let medium: TypographyToken?
     let small: TypographyToken?
     let extraSmall: TypographyToken?
     
     init(
-        extraLarge: TypographyToken?,
         large: TypographyToken?,
         medium: TypographyToken?,
         small: TypographyToken?,
         extraSmall: TypographyToken?
     ) {
-        self.extraLarge = extraLarge
         self.large = large
         self.medium = medium
         self.small = small
@@ -32,8 +29,6 @@ struct SegmentItemTypography: GeneralTypographyConfiguration {
      */
     func typography(with size: SegmentItemSizeConfiguration) -> TypographyToken? {
         switch size as? SegmentItemSize {
-        case .extraLarge:
-            return extraLarge
         case .large:
             return large
         case .medium:
@@ -51,7 +46,6 @@ struct SegmentItemTypography: GeneralTypographyConfiguration {
 extension SegmentItemTypography {
     static var titleTypography: TypographyConfiguration {
         SegmentItemTypography(
-            extraLarge: AdaptiveTypographyToken.bodyLBold.typography,
             large: AdaptiveTypographyToken.bodyLBold.typography,
             medium: AdaptiveTypographyToken.bodyMBold.typography,
             small: AdaptiveTypographyToken.bodySBold.typography,
@@ -61,7 +55,6 @@ extension SegmentItemTypography {
     }
     static var subtitleTypography: TypographyConfiguration {
         SegmentItemTypography(
-            extraLarge: AdaptiveTypographyToken.bodyLBold.typography,
             large: AdaptiveTypographyToken.bodyLBold.typography,
             medium: AdaptiveTypographyToken.bodyMBold.typography,
             small: AdaptiveTypographyToken.bodySBold.typography,

@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 
-public extension ComponentAppearanceVariation<SDDSCounter, CounterAppearance> {
+public extension ComponentAppearanceVariation<Counter, CounterAppearance> {
     var `default`: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "`default`",

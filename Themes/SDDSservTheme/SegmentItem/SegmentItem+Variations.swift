@@ -19,12 +19,21 @@ public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance
         return .init(name: "secondary", appearance: appearance)
     }
     
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        var appearance = SegmentItem.accent.appearance
+        appearance.size = self.appearance.size
+        appearance.counterAppearance = self.appearance.counterAppearance
+
+        return .init(name: "accent", appearance: appearance)
+    }
+    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
             styles: [
                 self.primary,
-                self.secondary
+                self.secondary,
+                self.accent
             ],
             name: name,
             appearance: appearance
@@ -70,6 +79,40 @@ private extension SegmentItem {
     static var secondary: AppearanceVariation<SegmentItemAppearance> {
         .init(
             name: "secondary",
+            appearance: SegmentItemAppearance(
+                titleTypography: SegmentItemTypography.titleTypography,
+                titleColor: ButtonColor(
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textDefaultPrimaryActive,
+                    hoveredColor: .textDefaultPrimaryHover,
+                    selectedColor: .textDefaultPrimary
+                ),
+                subtitleTypography: SegmentItemTypography.subtitleTypography,
+                subtitleColor: ButtonColor(
+                    defaultColor: .textDefaultSecondary,
+                    highlightedColor: .textDefaultSecondaryActive,
+                    hoveredColor: .textDefaultSecondaryHover,
+                    selectedColor: .textDefaultSecondary
+                ),
+                iconColor: ButtonColor(
+                    defaultColor: .textDefaultPrimary,
+                    highlightedColor: .textDefaultPrimaryActive,
+                    hoveredColor: .textDefaultPrimaryHover,
+                    selectedColor: .textDefaultPrimary
+                ),
+                backgroundColor: ButtonColor(
+                    defaultColor: .surfaceDefaultClear,
+                    highlightedColor: .surfaceDefaultClearActive,
+                    hoveredColor: .surfaceDefaultClearHover,
+                    selectedColor: .surfaceDefaultTransparentCard
+                ),
+                disabledAlpha: 0.4
+            )
+        )
+    }
+    static var accent: AppearanceVariation<SegmentItemAppearance> {
+        .init(
+            name: "accent",
             appearance: SegmentItemAppearance(
                 titleTypography: SegmentItemTypography.titleTypography,
                 titleColor: ButtonColor(

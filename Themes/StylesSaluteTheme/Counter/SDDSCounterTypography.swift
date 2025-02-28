@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct SDDSCounterTypography: GeneralTypographyConfiguration {
+struct CounterTypography: GeneralTypographyConfiguration {
     var l: TypographyToken?
     var m: TypographyToken?
     var s: TypographyToken?
@@ -33,22 +33,22 @@ struct SDDSCounterTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: CounterSizeConfiguration) -> TypographyToken? {
-        if size is SDDSCounterAnySize {
+        if size is CounterAnySize {
             return l
         }
-        if size is SDDSCounterSizeL {
+        if size is CounterSizeL {
             return l
         }
-        if size is SDDSCounterSizeM {
+        if size is CounterSizeM {
             return m
         }
-        if size is SDDSCounterSizeS {
+        if size is CounterSizeS {
             return s
         }
-        if size is SDDSCounterSizeXs {
+        if size is CounterSizeXs {
             return xs
         }
-        if size is SDDSCounterSizeXxs {
+        if size is CounterSizeXxs {
             return xxs
         }
         return nil

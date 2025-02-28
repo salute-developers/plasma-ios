@@ -62,8 +62,8 @@ extension AvatarAppearance {
             textFillStyle: .gradient(Gradients.textDefaultAccentGradient),
             backgroundFillStyle: .gradient(Gradients.surfaceDefaultAccentGradient),
             backgroundOpacity: 0.2,
-            onlineStatusColor: Colors.textDefaultAccent,
-            offlineStatusColor: Colors.surfaceDefaultPositive,
+            onlineStatusColor: Colors.textDefaultPositive,
+            offlineStatusColor: Colors.surfaceDefaultSolidTertiary,
             textTypography: AvatarTypography.title
         )
     }
