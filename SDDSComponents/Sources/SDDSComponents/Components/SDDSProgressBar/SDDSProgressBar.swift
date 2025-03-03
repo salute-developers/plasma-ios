@@ -55,6 +55,7 @@ public struct SDDSProgressView: View {
             }
         }
         .frame(height: appearance.size.indicatorHeight)
+        .clipped()
         .accessibilityLabel(Text(accessibility.progressLabel))
         .accessibilityValue(Text("\(Int(normalizedProgress * 100))%"))
         .accessibilityHint(Text(accessibility.progressHint))
@@ -79,4 +80,10 @@ public struct SDDSProgressView: View {
         max(min(progress, 1.0), 0.0)
     }
 
+}
+
+extension SDDSProgressView: Equatable {
+    public static func == (lhs: SDDSProgressView, rhs: SDDSProgressView) -> Bool {
+        return lhs.appearance == rhs.appearance && lhs.progress == rhs.progress
+    }
 }

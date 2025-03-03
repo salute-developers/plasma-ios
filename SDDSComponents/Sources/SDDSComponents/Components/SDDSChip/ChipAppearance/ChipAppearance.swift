@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
@@ -8,30 +9,30 @@ import Foundation
     - size: Конфигурация размеров для чипа.
     - titleColor: Цвет текста заголовка.
     - titleTypography: Типографика заголовка.
-    - imageTintColor: Цвет иконки.
-    - buttonTintColor: Цвет кнопки.
+    - imageTintColor: Цвет Image.
+    - buttonTintColor: Цвет Button.
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
-public struct ChipAppearance: Hashable {
+public struct ChipAppearance: EnvironmentKey, Hashable {
+    public static let defaultValue: Self = .init()
+    
     let id = UUID()
-    public let size: ChipSizeConfiguration
-    public let titleColor: ColorToken
-    public let titleTypography: TypographyConfiguration
-    public let imageTintColor: ColorToken
-    public let buttonTintColor: ColorToken
-    public let backgroundColor: ColorToken
-    public let shapeStyle: ComponentShapeStyle
-    public let disabledAlpha: CGFloat
+    public var size: ChipSizeConfiguration
+    public var titleColor: ButtonColor
+    public var titleTypography: TypographyConfiguration
+    public var imageTintColor: ButtonColor
+    public var buttonTintColor: ButtonColor
+    public var backgroundColor: ButtonColor
+    public var disabledAlpha: CGFloat
 
     public init(
         size: ChipSizeConfiguration = ZeroChipSize(),
-        titleColor: ColorToken = .clearColor,
+        titleColor: ButtonColor = ButtonColor(),
         titleTypography: TypographyConfiguration = .default,
-        imageTintColor: ColorToken = .clearColor,
-        buttonTintColor: ColorToken = .clearColor,
-        backgroundColor: ColorToken = .clearColor,
-        shapeStyle: ComponentShapeStyle = .cornered,
+        imageTintColor: ButtonColor = ButtonColor(),
+        buttonTintColor: ButtonColor = ButtonColor(),
+        backgroundColor: ButtonColor = ButtonColor(),
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
@@ -40,15 +41,22 @@ public struct ChipAppearance: Hashable {
         self.imageTintColor = imageTintColor
         self.buttonTintColor = buttonTintColor
         self.backgroundColor = backgroundColor
-        self.shapeStyle = shapeStyle
         self.disabledAlpha = disabledAlpha
     }
     
     public static func == (lhs: ChipAppearance, rhs: ChipAppearance) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id &&
+        lhs.titleColor == rhs.titleColor &&
+        lhs.imageTintColor == rhs.imageTintColor &&
+        lhs.buttonTintColor == rhs.buttonTintColor &&
+        lhs.backgroundColor == rhs.backgroundColor
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+        hasher.combine(titleColor)
+        hasher.combine(imageTintColor)
+        hasher.combine(buttonTintColor)
+        hasher.combine(backgroundColor)
     }
 }

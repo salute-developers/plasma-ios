@@ -37,7 +37,14 @@ public struct SDDSChip: View {
         - accessibility: Параметры доступности для чипа (по умолчанию `ChipAccessibility`).
         - removeAction: Действие при нажатии на кнопку удаления.
      */
-    public init(title: String, isEnabled: Bool, iconImage: Image? = nil, buttonImage: Image? = nil, appearance: ChipAppearance, accessibility: ChipAccessibility = ChipAccessibility(), removeAction: @escaping () -> Void) {
+    public init(
+        title: String,
+        isEnabled: Bool,
+        iconImage: Image? = nil,
+        buttonImage: Image? = nil,
+        appearance: ChipAppearance,
+        accessibility: ChipAccessibility = ChipAccessibility(),
+        removeAction: @escaping () -> Void) {
         self.title = title
         self.isEnabled = isEnabled
         self.iconImage = iconImage
@@ -46,6 +53,8 @@ public struct SDDSChip: View {
         self.accessibility = accessibility
         self.removeAction = removeAction
     }
+    
+    
     
     /**
      Инициализатор для создания чипа на основе данных структуры `ChipData`.
@@ -67,36 +76,36 @@ public struct SDDSChip: View {
         HStack(spacing: 0) {
             Spacer()
                 .frame(width: appearance.size.leadingInset)
-            if let iconImage = iconImage, let iconImageSize = appearance.size.iconImageSize {
-                iconImage
+            if let contentStart = iconImage, let size = appearance.size.iconImageSize {
+                contentStart
                     .resizable()
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: iconImageSize.width, height: iconImageSize.height)
-                    .foregroundColor(appearance.imageTintColor.color(for: colorScheme))
+                    .frame(width: size.width, height: size.height)
+                    .foregroundColor(appearance.imageTintColor.defaultColor.color(for: colorScheme))
                     .accessibilityHidden(true)
                 Spacer()
-                    .frame(width: appearance.size.spacing)
+                    .frame(width: appearance.size.contentStartPadding)
             }
             
             Text(title)
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
                 .frame(width: textWidth)
-                .foregroundColor(appearance.titleColor.color(for: colorScheme))
+                .foregroundColor(appearance.titleColor.defaultColor.color(for: colorScheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
-            if let buttonImageSize = appearance.size.buttonImageSize, let buttonImage = buttonImage {
+            if let contentEnd = buttonImage, let size = appearance.size.buttonImageSize {
                 Spacer()
-                    .frame(width: appearance.size.spacing)
+                    .frame(width: appearance.size.contentEndPadding)
                 Button(action: handleRemove) {
-                    buttonImage
+                    contentEnd
                         .resizable()
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: buttonImageSize.width, height: buttonImageSize.height)
-                        .foregroundColor(appearance.buttonTintColor.color(for: colorScheme))
+                        .frame(width: size.width, height: size.height)
+                        .foregroundColor(appearance.buttonTintColor.defaultColor.color(for: colorScheme))
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -109,7 +118,7 @@ public struct SDDSChip: View {
         .frame(height: appearance.size.height)
         .background(
             RoundedRectangle(cornerRadius: borderRadius)
-                .fill(appearance.backgroundColor.color(for: colorScheme))
+                .fill(appearance.backgroundColor.defaultColor.color(for: colorScheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
         .accessibilityElement(children: .combine)
@@ -123,7 +132,7 @@ public struct SDDSChip: View {
     }
     
     private var borderRadius: CGFloat {
-        return appearance.size.cornerRadius(style: appearance.shapeStyle)
+        return appearance.size.cornerRadius
     }
     
     private func handleRemove() {

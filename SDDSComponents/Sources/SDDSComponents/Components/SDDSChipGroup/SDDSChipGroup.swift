@@ -2,68 +2,43 @@ import Foundation
 import SwiftUI
 
 /**
- Перечисление, определяющее варианты выравнивания группы чипов.
+ Компонент для отображения группы чипов.
 
- - Cases:
-    - left: Выравнивание по левому краю.
-    - right: Выравнивание по правому краю.
-    - center: Центрированное выравнивание.
-    - decreasingLeft: Убывающее количество элементов, выравненных по левому краю.
-    - decreasingRight: Убывающее количество элементов, выравненных по правому краю.
+ - Свойства:
+    - data: Массив данных для отображения чипов.
+    - appearance: Объект, определяющий внешний вид вариации ChipGroup.
+    - flat: Если`true`, то нет переноса чипов на следующую строку.
+    - height: Высота компонента, связанная через Binding.
  */
-public enum ChipGroupAlignment: String {
-    case left
-    case right
-    case center
-    case decreasingLeft
-    case decreasingRight
-}
-
-/**
- Протокол конфигурации размеров группы чипов.
-
- - Properties:
-    - insets: Внутренние отступы.
-    - maxColumns: Максимальное количество столбцов в ряду.
-    - alignment: Выравнивание группы чипов.
- */
-public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    var insets: EdgeInsets { get }
-    var maxColumns: Int { get }
-    var alignment: ChipGroupAlignment { get }
-}
-
-/**
- Вью для отображения группы чипов.
-
- - Properties:
-    - data: Массив данных для чипов.
-    - size: Конфигурация размеров для группы чипов.
- */
-
 public struct SDDSChipGroup: View {
     let data: [ChipData]
-    let size: ChipGroupSizeConfiguration
+    let appearance: ChipGroupAppearance
+    let flat: Bool
     @Binding var height: CGFloat
 
-    public init(data: [ChipData], size: ChipGroupSizeConfiguration, height: Binding<CGFloat> = .constant(0)) {
+    public init(
+        data: [ChipData],
+        appearance: ChipGroupAppearance,
+        flat: Bool = false,
+        height: Binding<CGFloat> = .constant(0)) {
         self.data = data
-        self.size = size
+        self.appearance = appearance
+        self.flat = flat
         _height = height
     }
 
     public var body: some View {
         GeometryReader { geometry in
-            let maxWidth = geometry.size.width - size.insets.leading - size.insets.trailing
-            VStack(spacing: size.insets.top) {
-                ForEach(layoutRows(maxWidth: maxWidth, data: data), id: \.self) { row in
+            let maxWidth = geometry.size.width - insets.leading -  insets.trailing
+            VStack(spacing: insets.top) {
+                ForEach(layoutRows(maxWidth: flat ? .infinity : maxWidth, data: data).rows, id: \.self) { row in
                     HStack(spacing: 0) {
                         if size.alignment == .decreasingRight {
                             Spacer()
                         }
                         ForEach(row, id: \.self) { chipData in
                             SDDSChip(data: chipData)
-                                .padding(.trailing, size.insets.trailing)
+                                .padding(.trailing, insets.trailing)
                         }
                         if size.alignment == .decreasingLeft {
                             Spacer()
@@ -79,10 +54,24 @@ public struct SDDSChipGroup: View {
                 self.height = calculateTotalHeight(maxWidth: maxWidth, data: value)
             }
         }
-        .padding(.leading, size.insets.leading)
-        .padding(.top, size.insets.top)
-        .padding(.bottom, size.insets.bottom)
         .frame(height: height)
+        .applyIf(flat, transform: { $0.frame(width: maxCalculatedWidth) })
+    }
+                 
+    private var maxCalculatedWidth: CGFloat {
+        return layoutRows(maxWidth: .infinity, data: data).currentRowWidth
+    }
+    
+    private var insets: EdgeInsets {
+        return size.insets(for: gap)
+    }
+    
+    private var size: ChipGroupSizeConfiguration {
+        return appearance.size
+    }
+    
+    private var gap: ChipGroupGap {
+        return appearance.gap
     }
 
     private var alignment: SwiftUI.Alignment {
@@ -96,13 +85,14 @@ public struct SDDSChipGroup: View {
         }
     }
 
-    private func layoutRows(maxWidth: CGFloat, data: [ChipData]) -> [[ChipData]] {
+    private func layoutRows(maxWidth: CGFloat, data: [ChipData]) -> (rows: [[ChipData]], currentRowWidth: CGFloat) {
         var rows: [[ChipData]] = []
         var currentRow: [ChipData] = []
         var currentRowWidth: CGFloat = 0
+        var chipWidth: CGFloat = 0
 
         for chipData in data {
-            let chipWidth = calculateChipWidth(for: chipData)
+            chipWidth = calculateChipWidth(for: chipData)
 
             if currentRowWidth + chipWidth > maxWidth {
                 rows.append(currentRow)
@@ -118,24 +108,24 @@ public struct SDDSChipGroup: View {
             rows.append(currentRow)
         }
 
-        return rows
+        return (rows, currentRowWidth)
     }
 
     private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
         var totalWidth = CGFloat(0)
         totalWidth += chipData.appearance.size.leadingInset
-        if let _ = chipData.iconImage, let iconImageSize = chipData.appearance.size.iconImageSize {
-            totalWidth += iconImageSize.width
-            totalWidth += chipData.appearance.size.spacing
+        if let _ = chipData.iconImage, let size = chipData.appearance.size.iconImageSize {
+            totalWidth += size.width
+            totalWidth += chipData.appearance.size.contentStartPadding
         }
         
         let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.appearance.size) ?? .undefined
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
         
-        if let _ = chipData.buttonImage, let buttomImageSize = chipData.appearance.size.buttonImageSize {
-            totalWidth += buttomImageSize.width
-            totalWidth += chipData.appearance.size.spacing
+        if let _ = chipData.buttonImage, let size = chipData.appearance.size.buttonImageSize {
+            totalWidth += size.width
+            totalWidth += chipData.appearance.size.contentEndPadding
         }
         totalWidth += chipData.appearance.size.trailingInset
         
@@ -143,11 +133,11 @@ public struct SDDSChipGroup: View {
     }
 
     private func calculateTotalHeight(maxWidth: CGFloat, data: [ChipData]) -> CGFloat {
-        let rows = layoutRows(maxWidth: maxWidth, data: data)
+        let rows = layoutRows(maxWidth: maxWidth, data: data).rows
         let rowHeight = chipRowHeight(data: data)
         var result = CGFloat(rows.count) * rowHeight
-        result += CGFloat(rows.count - 1) * size.insets.top
-        result += (size.insets.bottom + size.insets.top)
+        result += CGFloat(rows.count - 1) * insets.top
+        result += (insets.bottom + insets.top)
         
         return result
     }

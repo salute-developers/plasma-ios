@@ -1,18 +1,14 @@
 import SwiftUI
-import SDDSComponentsPreview
+
 import Combine
 import SDDSComponents
 import PhotosUI
 import SDDSServTheme
 
 struct AvatarView: View {
-    @ObservedObject private var viewModel: AvatarViewModel
+    @ObservedObject private var viewModel: AvatarViewModel = AvatarViewModel()
     @State private var showImagePicker = false
     @State private var showGradientPicker = false
-
-    init(viewModel: AvatarViewModel = AvatarViewModel()) {
-        self.viewModel = viewModel
-    }
 
     var body: some View {
         List {
@@ -32,6 +28,7 @@ struct AvatarView: View {
             }
 
             Section {
+                VariationsView(viewModel: viewModel)
                 HStack {
                     Text("Text")
                     Spacer()
@@ -78,23 +75,6 @@ struct AvatarView: View {
                     }
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
-                }
-                
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSAvatarSize.allCases, id: \.self) { size in
-                        Button(size.description) {
-                            viewModel.size = size
-                        }
-                    }
-                }
-                
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(SDDSAvatar.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            viewModel.appearance = variation.appearance.size(viewModel.size)
-                            viewModel.variationName = variation.name
-                        }
-                    }
                 }
             }
         }

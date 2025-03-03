@@ -2,31 +2,23 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
 public struct SegmentItemView: View {
-    @ObservedObject private var viewModel: SegmentItemViewModel
-    
-    init(viewModel: SegmentItemViewModel = SegmentItemViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: SegmentItemViewModel = SegmentItemViewModel()
     
     public var body: some View {
         List {
             segmentView
-            Section {
-                segmentItemType
+            Section(header: Text("SegmentItem")) {
+                VariationsView(viewModel: viewModel)
                 title
                 subtitle
-                size
-                appearance
+                iconVisible
+                counter
                 alignment
                 disabled
-                shapeStyle
-            }
-            Section {
-                counter
             }
         }
     }
@@ -39,58 +31,16 @@ public struct SegmentItemView: View {
                 subtitle: viewModel.subtitle,
                 iconAttributes: viewModel.iconAttributes,
                 isDisabled: viewModel.isDisabled,
-                isSelected: true,
+                isSelected: viewModel.isSelected,
+                counterEnabled: viewModel.isCounterVisible,
                 appearance: viewModel.appearance,
-                counterViewProvider: .default(text: viewModel.counterText),
-                counterAppearance: viewModel.counterAppearance,
+                counterViewProvider: .default(text: viewModel.counterViewModel.text),
                 action: {}
             )
             Spacer()
         }
     }
-    
-    @ViewBuilder
-    private var icon: some View {
-        HStack {
-            Toggle("Icon", isOn: $viewModel.isIconVisible)
-        }
-    }
-    
-    @ViewBuilder
-    private var iconAlignment: some View {
-        HStack {
-            Text("Icon Alignment")
-            Spacer()
-            Menu {
-                ForEach(ButtonAlignment.allCases, id: \.self) { alignment in
-                    Button(alignment.rawValue) {
-                        viewModel.alignment = alignment
-                    }
-                }
-            } label: {
-                Text(viewModel.alignment.rawValue)
-            }
-        }
-    }
-    
-    public var segmentItemType: some View {
-        HStack {
-            Text("Content Type")
-            Spacer()
-            Menu {
-                ForEach(SegmentItemContentType.allCases, id: \.self) { content in
-                    Button {
-                        viewModel.contentType = content
-                    } label: {
-                        Text(content.rawValue.capitalized)
-                    }
-                }
-            } label: {
-                Text(viewModel.contentType.rawValue.capitalized)
-            }
-        }
-    }
-    
+        
     public var title: some View {
         HStack {
             Text("Title")
@@ -104,47 +54,6 @@ public struct SegmentItemView: View {
             Text("Value")
             TextField("Subtitle", text: $viewModel.subtitle)
                 .multilineTextAlignment(.trailing)
-        }
-    }
-    
-    public var size: some View {
-        HStack {
-            Text("Size")
-            Spacer()
-            Menu {
-                ForEach(SegmentItemSize.allCases, id: \.self) { size in
-                    Button(size.rawValue) {
-                        viewModel.size = size
-                    }
-                }
-            } label: {
-                if let size = viewModel.size as? SegmentItemSize {
-                    Text(size.rawValue)
-                }
-            }
-        }
-    }
-    
-    public var appearance: some View {
-        HStack {
-            Text("Appearance")
-            Spacer()
-            Menu {
-                ForEach(SDDSSegmentItem.all, id: \.self) { variation in
-                    Button(variation.name) {
-                        viewModel.appearance = variation.appearance.size(viewModel.size)
-                        viewModel.variationName = variation.name
-                    }
-                }
-            } label: {
-                Text(viewModel.variationName.capitalized)
-            }
-        }
-    }
-    
-    public var shapeStyle: some View {
-        HStack {
-            Toggle("Pilled", isOn: $viewModel.isPilled)
         }
     }
     
@@ -170,45 +79,27 @@ public struct SegmentItemView: View {
         }
     }
     
-    public var counter: some View {
-        VStack {
+    public var iconVisible: some View {
+        HStack {
+            Toggle("Icon Visible", isOn: $viewModel.iconVisible)
+        }
+    }
+    
+    @ViewBuilder
+    private var counter: some View {
+        Group {
             HStack {
-                Text("Appearance")
-                Spacer()
-                Menu {
-                    ForEach(SDDSCounter.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            if let counterSize = viewModel.setCounterSize(viewModel.size) {
-                                viewModel.counterAppearance = variation.appearance.size(counterSize)
-                                viewModel.counterVariationName = variation.name
-                            }
-                        }
-                    }
-                } label: {
-                    Text(viewModel.counterVariationName.capitalized)
-                }
+                Toggle("Counter", isOn: $viewModel.isCounterVisible)
             }
-            Divider()
             HStack {
                 Text("Counter data")
-                TextField("Number", text: $viewModel.counterText)
+                TextField("Number", text: $viewModel.counterViewModel.text)
                     .multilineTextAlignment(.trailing)
-            }
-            Divider()
-            HStack {
-                Text("Current Size")
-                Spacer()
-                if let counterAppearance = viewModel.counterAppearance, let counterSize = counterAppearance.size as? CounterSize, viewModel.isCounterVisible {
-                    Text(counterSize.rawValue)
-                } else {
-                    Text("none")
-                        .foregroundColor(Color.gray.opacity(0.5))
-                }
             }
         }
     }
 }
 
 #Preview {
-    SegmentItemView(viewModel: SegmentItemViewModel())
+    SegmentItemView()
 }

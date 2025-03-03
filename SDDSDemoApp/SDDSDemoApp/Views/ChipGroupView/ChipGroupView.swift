@@ -1,16 +1,12 @@
 import SwiftUI
-import SDDSComponentsPreview
+
 import Combine
 import SDDSComponents
 import SDDSServTheme
 
 struct ChipGroupView: View {
-    @ObservedObject private var viewModel: ChipGroupViewModel
+    @ObservedObject var viewModel = ChipGroupViewModel()
     @State var size: CGFloat = 0
-
-    init(viewModel: ChipGroupViewModel = ChipGroupViewModel()) {
-        self.viewModel = viewModel
-    }
 
     var body: some View {
         List {
@@ -18,41 +14,22 @@ struct ChipGroupView: View {
                 HStack {
                     SDDSChipGroup(
                         data: viewModel.chips,
-                        size: viewModel.chipGroupSize,
+                        appearance: viewModel.appearance,
                         height: $size
                     )
                     .frame(height: size)
                 }
             }
             
-            Section {
-                Picker("Chip Group Alignment", selection: $viewModel.chipGroupSize) {
-                    ForEach(DefaultChipGroupSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size.debugDescription)
-                    }
-                }
-                Picker("Chip Size", selection: $viewModel.chipSize) {
-                    ForEach(SDDSChipSize.allCases, id: \.self) { size in
-                        Text(size.debugDescription).tag(size.debugDescription)
-                    }
-                }
-                
-                HStack {
-                    Text("Appearance")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    Menu {
-                        ForEach(SDDSChip.all, id: \.self) { variation in
-                            Button(variation.name) {
-                                viewModel.appearance = variation.appearance.size(viewModel.chipSize)
-                                viewModel.variationName = variation.name
-                            }
-                        }
-                    } label: {
-                        Text(viewModel.variationName.capitalized)
-                    }
-                }
+            Section(header: Text("ChipGroup")) {
+                VariationsView(viewModel: viewModel)
             }
+            Section(header: Text("Chip")) {
+                VariationsView(viewModel: viewModel.chipViewModel)
+            }
+            Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
+            Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
+
             
             Section {
                 ForEach(viewModel.chips.indices, id: \.self) { index in
@@ -79,7 +56,7 @@ struct ChipGroupView: View {
                     }
                 }
                 HStack {
-                    TextField("Chip Title", text: $viewModel.chipTitle)
+                    TextField("Chip Title", text: $viewModel.chipViewModel.value)
                     Spacer()
                     Button("Add Chip") {
                         viewModel.addChip()

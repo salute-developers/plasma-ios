@@ -25,7 +25,7 @@ public enum CommandResult {
     case data(Data)
     case dictionary([String: Any])
     case generated(String)
-    case error(Error)
+    case error(GeneralError)
     case url(URL)
     case schemeDirectory(SchemeDirectory)
     case value(Any)
@@ -47,6 +47,49 @@ extension CommandResult: Equatable {
         default:
             return false
         }
+    }
+}
+
+extension Command {
+    func generate(renderer: Renderable, input: CodeGenerationInput, outputURL: URL, fileWriter: FileWriter) -> CommandResult {
+        let encoder = JSONEncoder()
+        guard let jsonData = try? encoder.encode(input.configuration) else {
+            return .error(GeneralError.decoding)
+        }
+        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
+            return .error(GeneralError.decoding)
+        }
+        
+        let result = renderer.render(context: jsonDictionary, template: input.template, removeLines: false)
+        
+        guard let generatedContent = result.asGenerated else {
+            return result
+        }
+        
+        let filename: String
+        if let component = input.component {
+            filename = input.template.generatedFileName(component: component)
+        } else {
+            filename = input.template.rawValue + ".swift"
+        }
+        let saveResult = fileWriter.saveFile(content: generatedContent, outputURL: outputURL, filename: filename)
+        
+        if saveResult.isError {
+            return saveResult
+        }
+        
+        return .success
+    }
+    
+    func generate(renderer: Renderable, inputs: [CodeGenerationInput], outputURL: URL, fileWriter: FileWriter) -> CommandResult {
+        for input in inputs {
+            let result = generate(renderer: renderer, input: input, outputURL: outputURL, fileWriter: fileWriter)
+            guard result == .success else {
+                return result
+            }
+        }
+                
+        return .success
     }
 }
 

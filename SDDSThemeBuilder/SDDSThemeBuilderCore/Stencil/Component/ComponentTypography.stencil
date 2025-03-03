@@ -1,0 +1,42 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+struct {{ component }}Typography: GeneralTypographyConfiguration {
+    {%- for key, variation in variations %}
+    var {{ key }}: TypographyToken?
+    {%- endfor %}
+    
+    init(
+        {%- for key, variation in variations %}
+        {{ key }}: TypographyToken? = nil{% if not forloop.last %},{% endif %}
+        {%- endfor %}
+    ) {
+    {%- for key, variation in variations %}
+        self.{{ key }} = {{ key }}
+    {%- endfor %}
+    }
+    
+    init(oneSize: TypographyToken) {
+    {%- for key, variation in variations %}
+        self.{{ key }} = oneSize
+    {%- endfor %}
+    }
+    
+    func typography(with size: {{ sizeConfiguration }}) -> TypographyToken? {
+        if size is {{ component }}AnySize {
+            {%- for key, variation in variations %}
+            {%- if forloop.first %}
+            return {{ key }}
+            {%- endif %}
+            {%- endfor %}
+        }
+        {%- for key, variation in variations %}
+        if size is {{ component }}Size{{ key | capitalized }} {
+            return {{ key }}
+        }
+        {%- endfor %}
+        return nil
+    }
+}

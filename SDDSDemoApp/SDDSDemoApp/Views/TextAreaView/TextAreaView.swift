@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
 struct TextAreaView: View {
@@ -23,20 +23,20 @@ struct TextAreaView: View {
                     counter: viewModel.counter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    style: viewModel.style,
-                    labelPlacement: viewModel.labelPlacement,
-                    required: viewModel.required,
-                    requiredPlacement: viewModel.requiredPlacement,
                     dynamicHeight: viewModel.dynamicHeight,
                     appearance: viewModel.appearance,
-                    size: viewModel.size, 
-                    chipGroupSize: viewModel.size.chipGroupSize,
                     layout: viewModel.layout,
                     iconActionViewProvider: iconActionView
                 )
             }
 
             Section {
+                Picker("Layout", selection: $viewModel.layout) {
+                    ForEach(TextAreaLayout.allCases, id: \.self) { layout in
+                        Text(layout.rawValue.capitalized).tag(layout)
+                    }
+                }
+                VariationsView(viewModel: viewModel)
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -55,42 +55,8 @@ struct TextAreaView: View {
 
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read Only", isOn: $viewModel.readOnly)
-                Toggle("Required", isOn: $viewModel.required)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
                 Toggle("Dynamic Height", isOn: $viewModel.dynamicHeight)
-
-                Picker("Style", selection: $viewModel.style) {
-                    ForEach(SDDSComponents.TextAreaStyle.allCases, id: \.self) { style in
-                        Text(style.rawValue.capitalized).tag(style)
-                    }
-                }
-
-                Picker("Label Placement", selection: $viewModel.labelPlacement) {
-                    ForEach(TextAreaLabelPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-
-                Picker("Required Placement", selection: $viewModel.requiredPlacement) {
-                    ForEach(TextAreaRequiredPlacement.allCases, id: \.self) { placement in
-                        Text(placement.rawValue.capitalized).tag(placement)
-                    }
-                }
-
-                Picker("Layout", selection: $viewModel.layout) {
-                    ForEach(TextAreaLayout.allCases, id: \.self) { layout in
-                        Text(layout.rawValue.capitalized).tag(layout)
-                    }
-                }
-
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSTextAreaSize.allCases, id: \.self) { size in
-                        Text(size.rawValue).tag(size.rawValue)
-                    }
-                }
-                .onChange(of: viewModel.size) { newValue in
-                    viewModel.updateChipSize(with: newValue)
-                }
 
                 Button("Add Chip") {
                     viewModel.addChip()
@@ -135,12 +101,6 @@ struct TextAreaView: View {
         } else {
             nil
         }
-    }
-}
-
-extension TextAreaView: Equatable {
-    static func == (lhs: TextAreaView, rhs: TextAreaView) -> Bool {
-        return lhs.viewModel == rhs.viewModel
     }
 }
 

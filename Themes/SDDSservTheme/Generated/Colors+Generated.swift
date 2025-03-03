@@ -1,3 +1,5 @@
+/* This file is code generated. */
+
 import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
@@ -17,6 +19,42 @@ public struct Colors {
     public static let backgroundLightPrimary = ColorToken.backgroundLightPrimary
     public static let backgroundLightSecondary = ColorToken.backgroundLightSecondary
     public static let backgroundLightTertiary = ColorToken.backgroundLightTertiary
+    public static let dataDefaultYellow = ColorToken.dataDefaultYellow
+    public static let dataDefaultYellowActive = ColorToken.dataDefaultYellowActive
+    public static let dataDefaultYellowHover = ColorToken.dataDefaultYellowHover
+    public static let dataDefaultYellowMinor = ColorToken.dataDefaultYellowMinor
+    public static let dataDefaultYellowMinorActive = ColorToken.dataDefaultYellowMinorActive
+    public static let dataDefaultYellowMinorHover = ColorToken.dataDefaultYellowMinorHover
+    public static let dataDefaultYellowTransparent = ColorToken.dataDefaultYellowTransparent
+    public static let dataDefaultYellowTransparentActive = ColorToken.dataDefaultYellowTransparentActive
+    public static let dataDefaultYellowTransparentHover = ColorToken.dataDefaultYellowTransparentHover
+    public static let dataInverseYellow = ColorToken.dataInverseYellow
+    public static let dataInverseYellowActive = ColorToken.dataInverseYellowActive
+    public static let dataInverseYellowHover = ColorToken.dataInverseYellowHover
+    public static let dataInverseYellowMinor = ColorToken.dataInverseYellowMinor
+    public static let dataInverseYellowMinorActive = ColorToken.dataInverseYellowMinorActive
+    public static let dataInverseYellowMinorHover = ColorToken.dataInverseYellowMinorHover
+    public static let dataInverseYellowTransparent = ColorToken.dataInverseYellowTransparent
+    public static let dataInverseYellowTransparentActive = ColorToken.dataInverseYellowTransparentActive
+    public static let dataInverseYellowTransparentHover = ColorToken.dataInverseYellowTransparentHover
+    public static let dataOnDarkYellow = ColorToken.dataOnDarkYellow
+    public static let dataOnDarkYellowActive = ColorToken.dataOnDarkYellowActive
+    public static let dataOnDarkYellowHover = ColorToken.dataOnDarkYellowHover
+    public static let dataOnDarkYellowMinor = ColorToken.dataOnDarkYellowMinor
+    public static let dataOnDarkYellowMinorActive = ColorToken.dataOnDarkYellowMinorActive
+    public static let dataOnDarkYellowMinorHover = ColorToken.dataOnDarkYellowMinorHover
+    public static let dataOnDarkYellowTransparent = ColorToken.dataOnDarkYellowTransparent
+    public static let dataOnDarkYellowTransparentActive = ColorToken.dataOnDarkYellowTransparentActive
+    public static let dataOnDarkYellowTransparentHover = ColorToken.dataOnDarkYellowTransparentHover
+    public static let dataOnLightYellow = ColorToken.dataOnLightYellow
+    public static let dataOnLightYellowActive = ColorToken.dataOnLightYellowActive
+    public static let dataOnLightYellowHover = ColorToken.dataOnLightYellowHover
+    public static let dataOnLightYellowMinor = ColorToken.dataOnLightYellowMinor
+    public static let dataOnLightYellowMinorActive = ColorToken.dataOnLightYellowMinorActive
+    public static let dataOnLightYellowMinorHover = ColorToken.dataOnLightYellowMinorHover
+    public static let dataOnLightYellowTransparent = ColorToken.dataOnLightYellowTransparent
+    public static let dataOnLightYellowTransparentActive = ColorToken.dataOnLightYellowTransparentActive
+    public static let dataOnLightYellowTransparentHover = ColorToken.dataOnLightYellowTransparentHover
     public static let outlineDefaultAccent = ColorToken.outlineDefaultAccent
     public static let outlineDefaultAccentActive = ColorToken.outlineDefaultAccentActive
     public static let outlineDefaultAccentHover = ColorToken.outlineDefaultAccentHover

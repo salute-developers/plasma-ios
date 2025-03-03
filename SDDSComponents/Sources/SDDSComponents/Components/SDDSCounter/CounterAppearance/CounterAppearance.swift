@@ -1,11 +1,14 @@
 import Foundation
+import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct CounterAppearance {
-    public let size: CounterSizeConfiguration
-    public let textTypography: TypographyConfiguration
-    public let textColor: ButtonColor
-    public let backgroundColor: ButtonColor
+public struct CounterAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
+    public var size: CounterSizeConfiguration
+    public var textTypography: TypographyConfiguration
+    public var textColor: ButtonColor
+    public var backgroundColor: ButtonColor
 
     public init(
         size: CounterSizeConfiguration = DefaultCounterSize(),

@@ -1,7 +1,6 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
 import SDDSServTheme
 
 final class RadioboxGroupViewModel: ObservableObject {
@@ -23,6 +22,17 @@ final class RadioboxGroupViewModel: ObservableObject {
         }
     }
 }
+         
+ extension SDDSRadioboxGroupSize {
+     var radioboxSize: SDDSRadioboxSize {
+         switch self {
+         case .medium:
+             return .medium
+         case .small:
+             return .small
+         }
+     }
+}
 
 struct RadioboxItemViewModel {
     var title: String
@@ -31,25 +41,18 @@ struct RadioboxItemViewModel {
     var isEnabled: Bool
 
     func toRadioboxData(with size: SDDSRadioboxSize) -> RadioboxData {
-        RadioboxData(
+        var appearance = Radiobox.m.default.appearance
+        appearance.size = size
+        return RadioboxData(
             title: title,
             subtitle: subtitle,
             isSelected: .constant(isSelected),
             isEnabled: isEnabled,
             images: RadioboxView.radiobox,
-            appearance: SDDSRadiobox.default.appearance.size(size),
+            appearance: appearance,
             accessibility: .init()
         )
     }
 }
 
-private extension SDDSRadioboxGroupSize {
-    var radioboxSize: SDDSRadioboxSize {
-        switch self {
-        case .medium:
-            return .medium
-        case .small:
-            return .small
-        }
-    }
-}
+

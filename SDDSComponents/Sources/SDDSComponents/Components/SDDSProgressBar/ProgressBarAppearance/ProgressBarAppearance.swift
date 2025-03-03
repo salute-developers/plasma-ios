@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /**
  `ProgressBarAppearance` определяет внешний вид прогресс-бара, включая цвет индикатора и фона.
@@ -8,7 +9,9 @@ import Foundation
     - tintColor: Цвет индикатора прогресса.
     - trackColor: Цвет фона прогресс-бара.
  */
-public struct ProgressBarAppearance: Hashable {
+public struct ProgressBarAppearance: EnvironmentKey, Hashable {
+    public static let defaultValue: Self = .init()
+    
     let id = UUID()
     public let size: ProgressBarSizeConfiguration
     public let tintFillStyle: FillStyle
@@ -21,10 +24,14 @@ public struct ProgressBarAppearance: Hashable {
     }
     
     public static func == (lhs: ProgressBarAppearance, rhs: ProgressBarAppearance) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id &&
+        lhs.tintFillStyle == rhs.tintFillStyle &&
+        lhs.trackColor == rhs.trackColor
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+        hasher.combine(tintFillStyle)
+        hasher.combine(trackColor)
     }
 }

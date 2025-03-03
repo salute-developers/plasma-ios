@@ -10,7 +10,7 @@ final class GenerateSwiftCodeCommand: Command, FileWriter {
     init(jsonURL: URL,
          templates: [StencilTemplate],
          outputDirectoryURL: URL,
-         templateRender: Renderable = TemplateRenderer()) {
+         templateRender: Renderable) {
         self.jsonURL = jsonURL
         self.templates = templates
         self.outputDirectoryURL = outputDirectoryURL
@@ -30,7 +30,7 @@ final class GenerateSwiftCodeCommand: Command, FileWriter {
         }
         
         for template in templates {
-            let result = templateRender.render(context: jsonDictionary, template: template)
+            let result = templateRender.render(context: jsonDictionary, template: template, removeLines: false)
             
             guard let generatedContent = result.asGenerated else {
                 return result

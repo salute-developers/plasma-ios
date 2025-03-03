@@ -1,50 +1,21 @@
 import SwiftUI
-import SDDSComponentsPreview
 import Combine
 import SDDSComponents
 import SDDSServTheme
 
-final class ChipViewModel: ObservableObject {
-    @Published var title: String = "Chip Title"
+final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
+    @Published var value: String = "Value"
     @Published var isEnabled: Bool = true
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    @Published var size: SDDSChipSize = .medium
-    @Published var shapeStyle: ComponentShapeStyle = .cornered
-    @Published var appearance: ChipAppearance = SDDSChip.accent.appearance
-    @Published var variationName: String = SDDSChip.accent.name
     @Published var iconImage: Image? = nil
     @Published var buttonImage: Image? = nil
     
-    private var cancellables: Set<AnyCancellable> = []
-    
     init() {
-        setIconImage()
-        setButtonImage()
-        observeSizeChange()
-        observeShapeStyleChange()
-    }
-    
-    private func observeSizeChange() {
-        $size
-            .sink { [weak self] value in
-                guard let self = self else {
-                    return
-                }
-                self.appearance = self.appearance.size(value)
-            }
-            .store(in: &cancellables)
-    }
-    
-    private func observeShapeStyleChange() {
-        $shapeStyle
-            .sink { [weak self] value in
-                guard let self = self else {
-                    return
-                }
-                self.appearance = self.appearance.shapeStyle(value)
-            }
-            .store(in: &cancellables)
+        super.init(variationProvider: ChipVariationProvider())
+        
+        self.setIconImage()
+        self.setButtonImage()
     }
 
     var removeAction: () -> Void {
@@ -57,43 +28,5 @@ final class ChipViewModel: ObservableObject {
     
     func setButtonImage() {
         buttonImage = Image.image("chipClose")
-    }
-    
-    func updateBorderStyle(borderStyle: ComponentShapeStyle) {        
-        appearance = appearance.shapeStyle(borderStyle)
-    }
-}
-
-// MARK: - SDDSChipSize Extensions
-
-extension SDDSChipSize: Hashable, CaseIterable {
-    public static var allCases: [SDDSChipSize] {
-        [.large, .medium, .small, .extraSmall]
-    }
-
-    public var debugDescription: String {
-        switch self {
-        case .large:
-            return "Large"
-        case .medium:
-            return "Medium"
-        case .small:
-            return "Small"
-        case .extraSmall:
-            return "Extra Small"
-        }
-    }
-    
-    public var shapeToken: ShapeToken {
-        switch self {
-        case .large:
-            return ShapeToken.roundL
-        case .medium:
-            return ShapeToken.roundM
-        case .small:
-            return ShapeToken.roundS
-        case .extraSmall:
-            return ShapeToken.roundXs
-        }
     }
 }

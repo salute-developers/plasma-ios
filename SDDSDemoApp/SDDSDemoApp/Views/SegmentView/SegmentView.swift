@@ -2,15 +2,10 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
 import SDDSServTheme
 
 struct SegmentView: View {
-    @ObservedObject private var viewModel: SegmentViewModel
-    
-    init(viewModel: SegmentViewModel = SegmentViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: SegmentViewModel = SegmentViewModel()
     
     var body: some View {
         List {
@@ -18,15 +13,13 @@ struct SegmentView: View {
                 segment
             }
             Section(header: Text("Segment")) {
-                segmentSize
-                shape
+                VariationsView(viewModel: viewModel)
                 stackOrientation
                 strech
                 background
                 isDisabled
             }
-            Section(header: Text("Segment Element")) {
-                segmentItemAppearance
+            Section(header: Text("Add Segment Element")) {
                 value
                 helperText
                 icon
@@ -103,53 +96,20 @@ struct SegmentView: View {
                     appearance: viewModel.appearance,
                     layoutOrientation: viewModel.layoutOrientation,
                     selectedItemId: $viewModel.selectedItemId,
-                    isDisabled: viewModel.isDisabled
+                    isDisabled: viewModel.isDisabled,
+                    stretch: viewModel.stretch,
+                    hasBackground: viewModel.hasBackground
                 )
             }
             .frame(width: geometry.size.width)
         }
         .frame(height: viewModel.segmentHeight)
     }
-    
-    @ViewBuilder
-    private var segmentItemAppearance: some View {
-        HStack {
-            Text("Segment Item Appearance")
-            Spacer()
-            Menu {
-                ForEach(SDDSSegmentItem.all, id: \.self) { variation in
-                    Button(variation.name) {
-                        viewModel.segmentItemAppearance = variation.appearance.size(viewModel.segmentItemSize)
-                        viewModel.variationName = variation.name
-                    }
-                }
-            } label: {
-                Text(viewModel.variationName.capitalized)
-            }
-        }
-    }
-    
+        
     @ViewBuilder
     private var isDisabled: some View {
         HStack {
             Toggle("Disabled", isOn: $viewModel.isDisabled)
-        }
-    }
-    
-    @ViewBuilder
-    private var segmentSize: some View {
-        HStack {
-            Text("Segment size")
-            Spacer()
-            Menu {
-                ForEach(SegmentSize.allCases, id: \.self) { size in
-                    Button(size.rawValue) {
-                        viewModel.segmentSize = size
-                    }
-                }
-            } label: {
-                Text(viewModel.segmentSize.rawValue.capitalized)
-            }
         }
     }
     
@@ -160,7 +120,6 @@ struct SegmentView: View {
                 Toggle("Counter", isOn: $viewModel.isCounterVisible)
             }
             if viewModel.isCounterVisible {
-                counterAppearance
                 counterText
             }
         }
@@ -200,38 +159,11 @@ struct SegmentView: View {
             }
         }
     }
-    
-    @ViewBuilder
-    private var shape: some View {
-        HStack {
-            Toggle("Pilled", isOn: $viewModel.isPilled)
-        }
-    }
-    
+        
     @ViewBuilder
     private var background: some View {
         HStack {
             Toggle("Has Background", isOn: $viewModel.hasBackground)
-        }
-    }
-    
-    @ViewBuilder
-    private var counterAppearance: some View {
-        VStack {
-            HStack {
-                Text("Counter Appearance")
-                Spacer()
-                Menu {
-                    ForEach(SDDSCounter.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            viewModel.counterAppearance = variation.appearance.size(viewModel.counterSize)
-                            viewModel.counterVariationName = variation.name
-                        }
-                    }
-                } label: {
-                    Text(viewModel.counterVariationName.capitalized)
-                }
-            }
         }
     }
     
@@ -246,5 +178,5 @@ struct SegmentView: View {
 }
 
 #Preview {
-    SegmentView(viewModel: SegmentViewModel())
+    SegmentView()
 }

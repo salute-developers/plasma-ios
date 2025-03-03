@@ -1,10 +1,10 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSComponentsPreview
+
 import SDDSServTheme
 
-final class TextAreaViewModel: ObservableObject {
+final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
     @Published var value: TextAreaValue = .single("")
     @Published var textValue: String = ""
     @Published var title: String = "Title"
@@ -14,17 +14,22 @@ final class TextAreaViewModel: ObservableObject {
     @Published var counter: String = "Counter"
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
-    @Published var required: Bool = false
     @Published var iconActionViewEnabled: Bool = true
     @Published var dynamicHeight: Bool = true
-
-    @Published var style: SDDSComponents.TextAreaStyle = .default
-    @Published var labelPlacement: TextAreaLabelPlacement = .outer
-    @Published var requiredPlacement: TextAreaRequiredPlacement = .left
-    @Published var layout: TextAreaLayout = .default
-
-    @Published var size: SDDSTextAreaSize = .medium
-    @Published var appearance: TextAreaAppearance = .defaultAppearance
+    @Published var layout: TextAreaLayout = .default {
+        didSet {
+            variationProvider.layout = layout
+            self.selectVariation(variations.first)
+        }
+    }
+    
+    init() {
+        super.init(variationProvider: TextAreaVariationProvider(layout: .default))
+        
+        if let firstVariation = variations.first {
+            selectVariation(firstVariation)
+        }
+    }
 
     var chips: [ChipData] {
         get {
@@ -47,7 +52,6 @@ final class TextAreaViewModel: ObservableObject {
     }
 
     func addChip() {
-        let chipSize = mapTextAreaSizeToChipSize(size)
         let id = UUID()
         let newChip = ChipData(
             id: id,
@@ -55,7 +59,6 @@ final class TextAreaViewModel: ObservableObject {
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("textFieldChipIcon"),
-            appearance: .textField.size(chipSize),
             accessibility: ChipAccessibility(),
             removeAction: { [weak self] in
                 self?.removeChip(with: id)
@@ -72,30 +75,10 @@ final class TextAreaViewModel: ObservableObject {
             isEnabled: updatedChip.isEnabled,
             iconImage: updatedChip.iconImage,
             buttonImage: updatedChip.buttonImage,
-            appearance: updatedChip.appearance.size(updatedChip.appearance.size),
             accessibility: updatedChip.accessibility,
             removeAction: updatedChip.removeAction
         )
         chips[index] = updatedChip
-    }
-    
-    func updateChipSize(with size: SDDSTextAreaSize) {
-        guard !chips.isEmpty else {
-            return
-        }
-        let chipSize = mapTextAreaSizeToChipSize(size)
-        chips = chips.map { chip in
-            ChipData(
-                id: chip.id,
-                title: chip.title,
-                isEnabled: chip.isEnabled,
-                iconImage: chip.iconImage,
-                buttonImage: chip.buttonImage,
-                appearance: chip.appearance.size(chipSize),
-                accessibility: chip.accessibility,
-                removeAction: chip.removeAction
-            )
-        }
     }
 
     func removeChip(at index: Int) {
@@ -112,56 +95,10 @@ final class TextAreaViewModel: ObservableObject {
             value = .single(textValue)
         }
     }
-
-    private func mapTextAreaSizeToChipSize(_ textFieldSize: SDDSTextAreaSize) -> TextAreaChipSize {
-        switch textFieldSize {
-        case .large:
-            return .large
-        case .medium:
-            return .medium
-        case .small:
-            return .small
-        case .extraSmall:
-            return .extraSmall
-        }
+    
+    override func onUpdateAppearance() {
+        chips = []
+        value = .single(textValue)
     }
-}
-
-extension SDDSTextAreaSize: CaseIterable {
-    public static var allCases: [SDDSTextAreaSize] {
-        [.large, .medium, .small, .extraSmall]
-    }
-}
-
-extension TextAreaAppearance: CaseIterable {
-    public static var allCases: [TextAreaAppearance] {
-        [.defaultAppearance]
-    }
-
-    public var name: String {
-        return "Default"
-    }
-}
-
-extension TextAreaViewModel: Equatable {
-    static func == (lhs: TextAreaViewModel, rhs: TextAreaViewModel) -> Bool {
-        return lhs.value == rhs.value &&
-        lhs.textValue == rhs.textValue &&
-        lhs.title == rhs.title &&
-        lhs.optionalTitle == rhs.optionalTitle &&
-        lhs.placeholder == rhs.placeholder &&
-        lhs.caption == rhs.caption &&
-        lhs.counter == rhs.counter &&
-        lhs.disabled == rhs.disabled &&
-        lhs.readOnly == rhs.readOnly &&
-        lhs.required == rhs.required &&
-        lhs.iconActionViewEnabled == rhs.iconActionViewEnabled &&
-        lhs.style == rhs.style &&
-        lhs.labelPlacement == rhs.labelPlacement &&
-        lhs.requiredPlacement == rhs.requiredPlacement &&
-        lhs.layout == rhs.layout &&
-        lhs.size == rhs.size &&
-        lhs.appearance == rhs.appearance &&
-        lhs.chips == rhs.chips
-    }
+    
 }

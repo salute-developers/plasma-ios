@@ -2,10 +2,8 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
-import SDDSComponentsPreview
-import SDDSServTheme
 
-final class ProgressBarViewModel: ObservableObject {
+final class ProgressBarViewModel: ComponentViewModel<ProgressBarVariationProvider> {
     // MARK: - Progress Bar Properties
     @Published var progress: Double = 0.5 {
         didSet {
@@ -29,10 +27,13 @@ final class ProgressBarViewModel: ObservableObject {
         }
     }
     @Published var isEnabled: Bool = true
-    @Published var variation: AppearanceVariation<ProgressBarAppearance> = SDDSProgressView.accent
     
     // MARK: - Screen properties
     
     private var isUpdatingProgress = false
     private var isUpdatingProgressString = false
+    
+    init() {
+        super.init(variationProvider: ProgressBarVariationProvider())
+    }
 }

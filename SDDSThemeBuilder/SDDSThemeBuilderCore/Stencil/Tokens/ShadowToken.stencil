@@ -1,0 +1,25 @@
+/* This file is code generated. */
+
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public extension ShadowToken {
+    {%- for key, value in json %}
+    static var {{ key }}: Self {
+        Self(
+            layers: [
+                {%- for value in json[key] %}
+                Self.Layer(
+                    color: Color(UIColor(hex: "{{ value.color|palette_color|ensure_valid_hex|default:'' }}")),
+                    offsetX: {{ value.offsetX|ensure|ensure_double_exists|default: 0 }},
+                    offsetY: {{ value.offsetY|ensure|ensure_double_exists|default: 0 }},
+                    blurRadius: {{ value.blurRadius|ensure|ensure_double_exists|default: 0 }},
+                    spreadRadius: {{ value.spreadRadius|ensure|ensure_double_exists|default: 0 }}
+                ){% if not forloop.last %},{% endif %}
+                {%- endfor %}
+            ]
+        )
+    }
+    {%- endfor %}
+}

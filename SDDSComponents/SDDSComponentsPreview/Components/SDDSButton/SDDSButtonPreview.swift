@@ -14,7 +14,7 @@ struct SDDSButtonPreview: PreviewProvider {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.large.accent.appearance,
+            appearance: BasicButton.l.appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -27,7 +27,7 @@ struct SDDSButtonPreview: PreviewProvider {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.large.accent.appearance,
+            appearance: LinkButton.l.accent.appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -39,7 +39,7 @@ struct SDDSButtonPreview: PreviewProvider {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.large.accent.appearance,
+            appearance: IconButton.l.accent.appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -51,7 +51,7 @@ struct SDDSButtonPreview: PreviewProvider {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.large.accent.pilled.appearance,
+            appearance: IconButton.l.pilled.accent.appearance,
             layoutMode: .wrapContent,
             action: {}
         )

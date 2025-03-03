@@ -21,7 +21,6 @@
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
-		810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
 		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
@@ -47,22 +46,38 @@
 		8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */; };
 		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
 		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
+		8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4432D5C7C9E0044A680 /* Theme.swift */; };
+		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
+		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
+		8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */; };
 		816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
-		816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629A2CB80E0C00352891 /* SDDSComponentsPreview */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
-		816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629F2CB80E2E00352891 /* SDDSComponentsPreview */; };
+		8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */; };
+		8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */; };
+		8174BA4C2D5DEFAA00EA3E68 /* ChipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */; };
+		8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4D2D5DF2FA00EA3E68 /* SegmentItemVariationProvider.swift */; };
+		8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4F2D5DFB5E00EA3E68 /* CheckboxVariationProvider.swift */; };
+		8174BA522D5DFBDB00EA3E68 /* RadioboxVariationProvider.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */; };
+		8174BA532D5DFC8800EA3E68 /* RadioboxVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */; };
+		8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA542D5DFC9000EA3E68 /* ProgressBarVariationProvider.swift */; };
+		8174BA572D5DFD9C00EA3E68 /* SwitchVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA562D5DFD9800EA3E68 /* SwitchVariationProvider.swift */; };
+		8174BA592D5DFEF600EA3E68 /* SegmentVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA582D5DFEF000EA3E68 /* SegmentVariationProvider.swift */; };
 		817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580EB2C383BA500E45207 /* ButtonViewModel.swift */; };
 		8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
-		8183456E2CFDBB080081113B /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456D2CFDBB080081113B /* SDDSComponentsPreview */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
 		819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
 		819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
+		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
+		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
+		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };
+		81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132E2D5BADC800ADE1CD /* VariationsView.swift */; };
+		81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */; };
+		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
-		81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +138,17 @@
 		8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupViewModel.swift; sourceTree = "<group>"; };
 		816243602CB9430200506E1C /* CheckboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupView.swift; sourceTree = "<group>"; };
 		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
+		8166B4432D5C7C9E0044A680 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA4D2D5DF2FA00EA3E68 /* SegmentItemVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA4F2D5DFB5E00EA3E68 /* CheckboxVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA542D5DFC9000EA3E68 /* ProgressBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA562D5DFD9800EA3E68 /* SwitchVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVariationProvider.swift; sourceTree = "<group>"; };
+		8174BA582D5DFEF000EA3E68 /* SegmentVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentVariationProvider.swift; sourceTree = "<group>"; };
 		817580EB2C383BA500E45207 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +157,12 @@
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		819A382E2CC6928700A1377F /* ChipGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupView.swift; sourceTree = "<group>"; };
+		81A613282D5BAB4200ADE1CD /* VariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationProvider.swift; sourceTree = "<group>"; };
+		81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModel.swift; sourceTree = "<group>"; };
+		81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVariationProvider.swift; sourceTree = "<group>"; };
+		81A6132E2D5BADC800ADE1CD /* VariationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsView.swift; sourceTree = "<group>"; };
+		81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVariationProvider.swift; sourceTree = "<group>"; };
+		81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaVariationProvider.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -143,19 +175,16 @@
 			files = (
 				819A38312CC692BD00A1377F /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
-				816C629B2CB80E0C00352891 /* SDDSComponentsPreview in Frameworks */,
-				810424422CFDB8FD0009B6E9 /* SDDSComponentsPreview in Frameworks */,
 				819A382C2CC6926300A1377F /* SDDSComponents in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
+				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
 				8183456B2CFDBAF30081113B /* SDDSComponents in Frameworks */,
 				8178A7772C74ABDA00DFDA61 /* SDDSComponents in Frameworks */,
 				816C62992CB80E0C00352891 /* SDDSComponents in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
-				8183456E2CFDBB080081113B /* SDDSComponentsPreview in Frameworks */,
-				816C62A02CB80E2E00352891 /* SDDSComponentsPreview in Frameworks */,
+				8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */,
 				810424402CFDB8E10009B6E9 /* SDDSComponents in Frameworks */,
-				81CA2C562CC69549002AF2DF /* SDDSComponentsPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +229,7 @@
 		24C154042BB3020A00963FAA /* SDDSDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				81A613272D5BAB3500ADE1CD /* Common */,
 				811DE1362C4D0EB2000DD354 /* Views */,
 				8199A1702C3BF94500AD650A /* Constants */,
 				24C154052BB3020A00963FAA /* SDDSDemoApp.swift */,
@@ -249,6 +279,7 @@
 		690780FB2D3EBA4100CED628 /* SegmentView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA582D5DFEF000EA3E68 /* SegmentVariationProvider.swift */,
 				690780FC2D3EBA4A00CED628 /* SegmentView.swift */,
 				690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */,
 			);
@@ -258,6 +289,7 @@
 		698744682D1C38A200559ABA /* CounterView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */,
 				698744692D1C3B6400559ABA /* CounterView.swift */,
 				6987446A2D1C3B6400559ABA /* CounterViewModel.swift */,
 			);
@@ -267,6 +299,7 @@
 		698744722D1C6E9C00559ABA /* SegmentItemView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA4D2D5DF2FA00EA3E68 /* SegmentItemVariationProvider.swift */,
 				698744732D1C6EB800559ABA /* SegmentItemView.swift */,
 				698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */,
 			);
@@ -278,6 +311,7 @@
 			children = (
 				811C684C2CC8024A00480F89 /* TextAreaView.swift */,
 				811C684E2CC8027600480F89 /* TextAreaViewModel.swift */,
+				81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */,
 			);
 			path = TextAreaView;
 			sourceTree = "<group>";
@@ -319,6 +353,7 @@
 		811DE1372C4D0EBD000DD354 /* CheckboxView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA4F2D5DFB5E00EA3E68 /* CheckboxVariationProvider.swift */,
 				811DE1382C4D0EC9000DD354 /* CheckboxView.swift */,
 				811DE13B2C4D0ED5000DD354 /* CheckboxViewModel.swift */,
 			);
@@ -328,6 +363,7 @@
 		811DE1402C4D15EF000DD354 /* RadioboxView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA512D5DFBD500EA3E68 /* RadioboxVariationProvider.swift */,
 				811DE1412C4D15FA000DD354 /* RadioboxView.swift */,
 				811DE1432C4D160E000DD354 /* RadioboxViewModel.swift */,
 			);
@@ -337,6 +373,7 @@
 		811DE1452C4D19C3000DD354 /* ProgressBarView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA542D5DFC9000EA3E68 /* ProgressBarVariationProvider.swift */,
 				811DE1462C4D19D3000DD354 /* ProgressBarView.swift */,
 				811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */,
 			);
@@ -346,6 +383,7 @@
 		811DE14A2C4D1D9C000DD354 /* SwitchView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA562D5DFD9800EA3E68 /* SwitchVariationProvider.swift */,
 				811DE14B2C4D1DA6000DD354 /* SwitchView.swift */,
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
@@ -355,6 +393,7 @@
 		816243422CB9056A00506E1C /* AvatarView */ = {
 			isa = PBXGroup;
 			children = (
+				8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */,
 				816243432CB9057E00506E1C /* AvatarView.swift */,
 				816243452CB907E900506E1C /* AvatarViewModel.swift */,
 			);
@@ -389,6 +428,7 @@
 		816243522CB93EDE00506E1C /* ChipView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */,
 				816243532CB93EEB00506E1C /* ChipView.swift */,
 				816243562CB940F400506E1C /* ChipViewModel.swift */,
 			);
@@ -418,6 +458,7 @@
 			children = (
 				817D9F132C3704CF006C4814 /* ButtonView.swift */,
 				817580EB2C383BA500E45207 /* ButtonViewModel.swift */,
+				81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */,
 			);
 			path = ButtonView;
 			sourceTree = "<group>";
@@ -435,6 +476,7 @@
 			children = (
 				8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */,
 				81E968152CBD20C300256968 /* TextFieldViewModel.swift */,
+				81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */,
 			);
 			path = TextFieldView;
 			sourceTree = "<group>";
@@ -442,10 +484,22 @@
 		819A382D2CC6927700A1377F /* ChipGroupView */ = {
 			isa = PBXGroup;
 			children = (
+				8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */,
 				819A382E2CC6928700A1377F /* ChipGroupView.swift */,
 				811C68502CC8059800480F89 /* ChipGroupViewModel.swift */,
 			);
 			path = ChipGroupView;
+			sourceTree = "<group>";
+		};
+		81A613272D5BAB3500ADE1CD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8166B4432D5C7C9E0044A680 /* Theme.swift */,
+				81A613282D5BAB4200ADE1CD /* VariationProvider.swift */,
+				81A6132E2D5BADC800ADE1CD /* VariationsView.swift */,
+				81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,18 +523,15 @@
 				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
 				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
 				816C62982CB80E0C00352891 /* SDDSComponents */,
-				816C629A2CB80E0C00352891 /* SDDSComponentsPreview */,
 				816C629D2CB80E2E00352891 /* SDDSComponents */,
-				816C629F2CB80E2E00352891 /* SDDSComponentsPreview */,
 				819A382B2CC6926300A1377F /* SDDSComponents */,
 				819A38302CC692BD00A1377F /* SDDSComponents */,
 				81CA2C532CC69549002AF2DF /* SDDSComponents */,
-				81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */,
 				8104243C2CFDB83F0009B6E9 /* SDDSServTheme */,
 				8104243F2CFDB8E10009B6E9 /* SDDSComponents */,
-				810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */,
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
-				8183456D2CFDBB080081113B /* SDDSComponentsPreview */,
+				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
+				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -558,7 +609,8 @@
 				8159F72A2C5CFDCF00622836 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
 				818345692CFDBAF30081113B /* XCLocalSwiftPackageReference "../SDDSComponents" */,
-				8183456C2CFDBB080081113B /* XCLocalSwiftPackageReference "../SDDSComponents/SDDSComponentsPreview" */,
+				8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */,
+				8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -577,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */,
+				8174BA522D5DFBDB00EA3E68 /* RadioboxVariationProvider.swift in Resources */,
 				24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,41 +676,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8174BA532D5DFC8800EA3E68 /* RadioboxVariationProvider.swift in Sources */,
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
+				8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */,
+				8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
+				81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */,
 				811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */,
 				6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */,
 				6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */,
+				8174BA592D5DFEF600EA3E68 /* SegmentVariationProvider.swift in Sources */,
 				816243572CB940F400506E1C /* ChipViewModel.swift in Sources */,
 				817580EC2C383BA500E45207 /* ButtonViewModel.swift in Sources */,
 				811DE1422C4D15FA000DD354 /* RadioboxView.swift in Sources */,
 				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
 				690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */,
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
+				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
+				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
+				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
+				8174BA572D5DFD9C00EA3E68 /* SwitchVariationProvider.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
+				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
+				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
 				816243542CB93EEB00506E1C /* ChipView.swift in Sources */,
 				811DE13C2C4D0ED5000DD354 /* CheckboxViewModel.swift in Sources */,
+				8174BA4C2D5DEFAA00EA3E68 /* ChipVariationProvider.swift in Sources */,
 				8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */,
+				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
+				81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
+				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
+				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
+				8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */,
 				816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */,
 				698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */,
 			);
@@ -756,6 +826,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -811,6 +882,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1023,13 +1095,17 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
+		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Themes/PlasmaB2CTheme;
+		};
+		8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Themes/StylesSaluteTheme;
+		};
 		818345692CFDBAF30081113B /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
-		};
-		8183456C2CFDBB080081113B /* XCLocalSwiftPackageReference "../SDDSComponents/SDDSComponentsPreview" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSComponents/SDDSComponentsPreview;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -1042,29 +1118,25 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
 		};
-		810424412CFDB8FD0009B6E9 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
-		};
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
+		};
+		8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlasmaB2CTheme;
+		};
+		8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StylesSaluteTheme;
 		};
 		816C62982CB80E0C00352891 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
 		};
-		816C629A2CB80E0C00352891 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
-		};
 		816C629D2CB80E2E00352891 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		816C629F2CB80E2E00352891 /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1073,10 +1145,6 @@
 		8183456A2CFDBAF30081113B /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		8183456D2CFDBB080081113B /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 		819A382B2CC6926300A1377F /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1089,10 +1157,6 @@
 		81CA2C532CC69549002AF2DF /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
-		};
-		81CA2C552CC69549002AF2DF /* SDDSComponentsPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponentsPreview;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

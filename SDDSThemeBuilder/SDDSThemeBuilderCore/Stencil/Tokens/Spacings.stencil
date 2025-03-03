@@ -1,0 +1,11 @@
+/* This file is code generated. */
+
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public struct Spacings {
+    {%- for key, value in json %}
+    public static let {{ key }} = SpacingToken.{{ key }}
+    {%- endfor %}
+}

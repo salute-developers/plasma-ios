@@ -5,11 +5,7 @@ import Combine
 import SDDSComponents
 
 struct CheckboxView: View {
-    @ObservedObject private var viewModel: CheckboxViewModel
-    
-    init(viewModel: CheckboxViewModel = CheckboxViewModel()) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel: CheckboxViewModel = CheckboxViewModel()
     
     var body: some View {
         List {
@@ -29,6 +25,7 @@ struct CheckboxView: View {
             }
             
             Section {
+                VariationsView(viewModel: viewModel)
                 HStack {
                     Text("Title")
                     Spacer()
@@ -60,23 +57,6 @@ struct CheckboxView: View {
                 HStack {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
-                
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSCheckboxSize.allCases, id: \.self) { size in
-                        Button(size.description) {
-                            viewModel.size = size
-                        }
-                    }
-                }
-                
-                Picker("Appearance", selection: $viewModel.appearance) {
-                    ForEach(SDDSCheckbox.all, id: \.self) { variation in
-                        Button(variation.name) {
-                            viewModel.appearance = variation.appearance.size(viewModel.size)
-                            viewModel.variationName = variation.name
-                        }
-                    }
-                }
             }
         }
         .navigationTitle("SDDSCheckbox")
@@ -94,6 +74,6 @@ extension CheckboxView {
 }
 
 #Preview {
-    CheckboxView(viewModel: CheckboxViewModel())
+    CheckboxView()
 }
 

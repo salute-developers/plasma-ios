@@ -1,0 +1,16 @@
+/* This file is code generated. */
+
+import SwiftUI
+import UIKit
+@_exported import SDDSThemeCore
+
+public extension SpacingToken {
+    {%- for key, token in json %}
+    
+    static var {{ key }}: Self {
+        Self(
+            value: {{ token.value|ensure|ensure_double_non_negative }}
+        )
+    }
+    {%- endfor %}
+}

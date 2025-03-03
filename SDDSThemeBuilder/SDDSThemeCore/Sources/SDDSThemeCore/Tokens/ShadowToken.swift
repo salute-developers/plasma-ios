@@ -1,25 +1,25 @@
 import SwiftUI
 
 public struct ShadowToken {
-    public struct Offset {
-        public let width: CGFloat
-        public let height: CGFloat
+    public struct Layer {
+        public let color: Color
+        public let offsetX: CGFloat
+        public let offsetY: CGFloat
+        public let blurRadius: CGFloat
+        public let spreadRadius: CGFloat
         
-        public init(width: CGFloat, height: CGFloat) {
-            self.width = width
-            self.height = height
+        public init(color: Color, offsetX: CGFloat, offsetY: CGFloat, blurRadius: CGFloat, spreadRadius: CGFloat) {
+            self.color = color
+            self.offsetX = offsetX
+            self.offsetY = offsetY
+            self.blurRadius = blurRadius
+            self.spreadRadius = spreadRadius
         }
     }
-        
-    public let color: Color
-    public let offset: Offset
-    public let opacity: CGFloat
-    public let radius: CGFloat
     
-    public init(color: Color, offset: Offset, opacity: CGFloat, radius: CGFloat) {
-        self.color = color
-        self.offset = offset
-        self.opacity = opacity
-        self.radius = radius
+    public let layers: [Layer]
+    
+    public init(layers: [Layer]) {
+        self.layers = layers
     }
 }

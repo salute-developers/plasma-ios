@@ -15,7 +15,7 @@ final class GenerateTokensCommand: Command, FileWriter {
          themeURL: URL,
          templates: [StencilTemplate],
          generatedOutputURL: URL,
-         templateRender: Renderable = TemplateRenderer(),
+         templateRender: Renderable,
          contextBuilder: ContexBuilder
     ) {
         self.schemeURL = schemeURL
@@ -59,7 +59,7 @@ final class GenerateTokensCommand: Command, FileWriter {
         }
         
         for template in templates {
-            result = templateRender.render(context: context, template: template)
+            result = templateRender.render(context: context, template: template, removeLines: true)
             guard let generatedContent = result.asGenerated else {
                 return result
             }

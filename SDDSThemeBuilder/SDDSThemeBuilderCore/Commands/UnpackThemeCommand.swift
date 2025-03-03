@@ -50,7 +50,7 @@ final class UnpackThemeCommand: Command {
                 return .error(GeneralError.invalidFilename)
             }
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
     
@@ -72,7 +72,7 @@ final class UnpackThemeCommand: Command {
             
             return .success
         } catch {
-            return .error(error)
+            return .error(.nsError(error))
         }
     }
     

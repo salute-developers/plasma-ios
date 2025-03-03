@@ -8,4 +8,5 @@ enum Category: String, Codable {
     case overlay
     case banner
     case banners
+    case data
 }

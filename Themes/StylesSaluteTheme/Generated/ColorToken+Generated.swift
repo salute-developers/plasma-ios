@@ -89,6 +89,222 @@ public extension ColorToken {
             lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
+    static var dataDefaultYellow: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+    }
+    static var dataDefaultYellowActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#EDA20CFF")),
+            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+        )
+    }
+    static var dataDefaultYellowHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F4B22FFF")),
+            lightColor: Color(UIColor(hex: "#F5B638FF"))
+        )
+    }
+    static var dataDefaultYellowMinor: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#A16B00")),
+            lightColor: Color(UIColor(hex: "#FFD37A"))
+        )
+    }
+    static var dataDefaultYellowMinorActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#996600FF")),
+            lightColor: Color(UIColor(hex: "#FFCC66FF"))
+        )
+    }
+    static var dataDefaultYellowMinorHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#B87A00FF")),
+            lightColor: Color(UIColor(hex: "#FFDA8FFF"))
+        )
+    }
+    static var dataDefaultYellowTransparent: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A9118E")),
+            lightColor: Color(UIColor(hex: "#F3A9118E"))
+        )
+    }
+    static var dataDefaultYellowTransparentActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A81280")),
+            lightColor: Color(UIColor(hex: "#F3A81299"))
+        )
+    }
+    static var dataDefaultYellowTransparentHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A812AD")),
+            lightColor: Color(UIColor(hex: "#F3A8127A"))
+        )
+    }
+    static var dataInverseYellow: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+    }
+    static var dataInverseYellowActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#EDA20CFF")),
+            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+        )
+    }
+    static var dataInverseYellowHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F4B22FFF")),
+            lightColor: Color(UIColor(hex: "#F5B638FF"))
+        )
+    }
+    static var dataInverseYellowMinor: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFD37A")),
+            lightColor: Color(UIColor(hex: "#A16B00"))
+        )
+    }
+    static var dataInverseYellowMinorActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFCF70FF")),
+            lightColor: Color(UIColor(hex: "#8F5F00FF"))
+        )
+    }
+    static var dataInverseYellowMinorHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFDA8FFF")),
+            lightColor: Color(UIColor(hex: "#B87A00FF"))
+        )
+    }
+    static var dataInverseYellowTransparent: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A9118E")),
+            lightColor: Color(UIColor(hex: "#F3A9118E"))
+        )
+    }
+    static var dataInverseYellowTransparentActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A81280")),
+            lightColor: Color(UIColor(hex: "#F3A81299"))
+        )
+    }
+    static var dataInverseYellowTransparentHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A812AD")),
+            lightColor: Color(UIColor(hex: "#F3A8127A"))
+        )
+    }
+    static var dataOnDarkYellow: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+    }
+    static var dataOnDarkYellowActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#EDA20CFF")),
+            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+        )
+    }
+    static var dataOnDarkYellowHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F4B22FFF")),
+            lightColor: Color(UIColor(hex: "#F5B638FF"))
+        )
+    }
+    static var dataOnDarkYellowMinor: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#A16B00")),
+            lightColor: Color(UIColor(hex: "#A16B00"))
+        )
+    }
+    static var dataOnDarkYellowMinorActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#996600FF")),
+            lightColor: Color(UIColor(hex: "#8F5F00FF"))
+        )
+    }
+    static var dataOnDarkYellowMinorHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#B87A00FF")),
+            lightColor: Color(UIColor(hex: "#B87A00FF"))
+        )
+    }
+    static var dataOnDarkYellowTransparent: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A9118E")),
+            lightColor: Color(UIColor(hex: "#F3A9118E"))
+        )
+    }
+    static var dataOnDarkYellowTransparentActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A81280")),
+            lightColor: Color(UIColor(hex: "#F3A81299"))
+        )
+    }
+    static var dataOnDarkYellowTransparentHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A812AD")),
+            lightColor: Color(UIColor(hex: "#F3A8127A"))
+        )
+    }
+    static var dataOnLightYellow: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+    }
+    static var dataOnLightYellowActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#EDA20CFF")),
+            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+        )
+    }
+    static var dataOnLightYellowHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F4B22FFF")),
+            lightColor: Color(UIColor(hex: "#F5B638FF"))
+        )
+    }
+    static var dataOnLightYellowMinor: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFD37A")),
+            lightColor: Color(UIColor(hex: "#FFD37A"))
+        )
+    }
+    static var dataOnLightYellowMinorActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFCF70FF")),
+            lightColor: Color(UIColor(hex: "#FFCC66FF"))
+        )
+    }
+    static var dataOnLightYellowMinorHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#FFDA8FFF")),
+            lightColor: Color(UIColor(hex: "#FFDA8FFF"))
+        )
+    }
+    static var dataOnLightYellowTransparent: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A9118E")),
+            lightColor: Color(UIColor(hex: "#F3A9118E"))
+        )
+    }
+    static var dataOnLightYellowTransparentActive: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A81280")),
+            lightColor: Color(UIColor(hex: "#F3A81299"))
+        )
+    }
+    static var dataOnLightYellowTransparentHover: Self {
+        Self(
+            darkColor: Color(UIColor(hex: "#F3A812AD")),
+            lightColor: Color(UIColor(hex: "#F3A8127A"))
+        )
+    }
     static var outlineDefaultAccent: Self {
         Self(
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),

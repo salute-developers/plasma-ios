@@ -7,134 +7,186 @@ import UIKit
 public extension ShadowToken {
     static var downHardL: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000066")),
+                    offsetX: 0,
+                    offsetY: 60,
+                    blurRadius: 112,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var downHardM: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#0000003D")),
+                    offsetX: 0,
+                    offsetY: 16,
+                    blurRadius: 32,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var downHardS: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#08080829")),
+                    offsetX: 0,
+                    offsetY: 4,
+                    blurRadius: 12,
+                    spreadRadius: -3
+                ),
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000014")),
+                    offsetX: 0,
+                    offsetY: 1,
+                    blurRadius: 4,
+                    spreadRadius: -2
+                )
+            ]
         )
     }
     static var downSoftL: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000014")),
+                    offsetX: 0,
+                    offsetY: 60,
+                    blurRadius: 112,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var downSoftM: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000014")),
+                    offsetX: 0,
+                    offsetY: 24,
+                    blurRadius: 48,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var downSoftS: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#08080814")),
+                    offsetX: 0,
+                    offsetY: 4,
+                    blurRadius: 14,
+                    spreadRadius: -4
+                ),
+                Self.Layer(
+                    color: Color(UIColor(hex: "#0000000A")),
+                    offsetX: 0,
+                    offsetY: 1,
+                    blurRadius: 4,
+                    spreadRadius: -1
+                )
+            ]
         )
     }
     static var upHardL: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000066")),
+                    offsetX: 0,
+                    offsetY: -60,
+                    blurRadius: 112,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var upHardM: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#0000003D")),
+                    offsetX: 0,
+                    offsetY: -16,
+                    blurRadius: 32,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var upHardS: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#08080833")),
+                    offsetX: 0,
+                    offsetY: -4,
+                    blurRadius: 12,
+                    spreadRadius: -3
+                ),
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000008")),
+                    offsetX: 0,
+                    offsetY: -1,
+                    blurRadius: 4,
+                    spreadRadius: -1
+                )
+            ]
         )
     }
     static var upSoftL: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000014")),
+                    offsetX: 0,
+                    offsetY: -60,
+                    blurRadius: 112,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var upSoftM: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000014")),
+                    offsetX: 0,
+                    offsetY: -24,
+                    blurRadius: 48,
+                    spreadRadius: -8
+                )
+            ]
         )
     }
     static var upSoftS: Self {
         Self(
-            color: Color(UIColor(hex: "#000000")),
-            offset: Offset(
-                width: 0,
-                height: 5
-            ),
-            opacity: 0.5,
-            radius: 1.5
+            layers: [
+                Self.Layer(
+                    color: Color(UIColor(hex: "#08080814")),
+                    offsetX: 0,
+                    offsetY: -4,
+                    blurRadius: 14,
+                    spreadRadius: -4
+                ),
+                Self.Layer(
+                    color: Color(UIColor(hex: "#00000008")),
+                    offsetX: 0,
+                    offsetY: -1,
+                    blurRadius: 4,
+                    spreadRadius: -1
+                )
+            ]
         )
     }
 }
