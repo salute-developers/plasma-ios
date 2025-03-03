@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct Cell<LeftContent: View, RightContent: View>: View {
+public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     public let appearance: CellAppearance
     public let alignment: CellContentAlignment
     
@@ -67,7 +67,7 @@ public struct Cell<LeftContent: View, RightContent: View>: View {
     }
 }
 
-extension Cell {
+extension SDDSCell {
     @ViewBuilder
     private var centerView: some View {
             VStack(spacing: 0) {

@@ -28,7 +28,7 @@ struct CellView: View {
     }
     
     private var cell: some View {
-        Cell(
+        SDDSCell(
             appearance: viewModel.appearance,
             alignment: viewModel.alignment,
             label: viewModel.label,
@@ -137,46 +137,53 @@ struct CellView: View {
     private func addContent(type: CellContent) -> some View {
         switch type {
         case .avatar:
-                SDDSAvatar(
-                    text: "AB",
-                    image: nil,
-                    placeholderImage: nil,
-                    status: .online,
-                    accessibility: AvatarAccessibility()
-                )
+            SDDSAvatar(
+                text: "AB",
+                image: nil,
+                placeholderImage: nil,
+                status: .online,
+                accessibility: AvatarAccessibility()
+            )
         case .iconButton:
-                IconButton(
-                    iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
-                    isDisabled: false,
-                    isLoading: false,
-                    spinnerImage: Image.image("spinner"),
-                    layoutMode: .fixedWidth(.packed),
-                    action: {}
-                )
+            IconButton(
+                iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
+                isDisabled: false,
+                isLoading: false,
+                spinnerImage: Image.image("spinner"),
+                layoutMode: .fixedWidth(.packed),
+                action: {}
+            )
         case .switch:
-                SDDSSwitch(
-                    title: "",
-                    subtitle: "",
-                    isOn: Binding(get: { self.viewModel.isOn }, set: { newValue in self.viewModel.isOn = newValue }),
-                    isEnabled: true,
-                    switchAccessibility: SwitchAccessibility()
-                )
+            SDDSSwitch(
+                title: "",
+                subtitle: "",
+                isOn: Binding(get: { self.viewModel.isOn }, set: { newValue in self.viewModel.isOn = newValue }),
+                isEnabled: true,
+                switchAccessibility: SwitchAccessibility()
+            )
         case .radiobox:
-                SDDSRadiobox(
-                    isSelected: Binding(get: { self.viewModel.isSelected }, set: { newValue in self.viewModel.isSelected = newValue }),
-                    title: "",
-                    subtitle: "",
-                    isEnabled: true,
-                    images: .defaultImages
+            SDDSRadiobox(
+                isSelected: Binding(get: { self.viewModel.isSelected }, set: { newValue in self.viewModel.isSelected = newValue }),
+                title: "",
+                subtitle: nil,
+                isEnabled: true,
+                images: .init(
+                    selectedImage: Image.image("radioboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
+                    deselectedImage: Image.image("radioboxIconOff", bundle: Bundle(for: CheckboxViewModel.self))
                 )
+            )
         case .checkbox:
-                SDDSCheckbox(
-                    state: Binding(get: { self.viewModel.state }, set: { newValue in self.viewModel.state = newValue }),
-                    title: "",
-                    subtitle: "",
-                    isEnabled: true,
-                    images: .checkbox
+            SDDSCheckbox(
+                state: Binding(get: { self.viewModel.state }, set: { newValue in self.viewModel.state = newValue }),
+                title: "",
+                subtitle: nil,
+                isEnabled: true,
+                images:  .init(
+                    selectedImage: Image.image("checkboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
+                    deselectedImage: Image.image("checkboxIconOff", bundle: Bundle(for: CheckboxViewModel.self)),
+                    indeterminateImage: Image.image("checkboxMulti", bundle: Bundle(for: CheckboxViewModel.self))
                 )
+            )
         case .none:
             EmptyView()
         }

@@ -38,8 +38,6 @@ public struct SDDSSegment: View {
         self.isDisabled = isDisabled
         self.stretch = stretch
         self.hasBackground = hasBackground
-<<<<<<< HEAD
-=======
         
         self.maxWidth = items.map { segmentData in
             let calculator = SegmentWidthCalculatorImpl(
@@ -47,7 +45,6 @@ public struct SDDSSegment: View {
             )
             return calculator.width(with: segmentData)
         }.max() ?? 0
->>>>>>> 90f142c4 (feat: added multiple themes support)
     }
     
     public var body: some View {
@@ -98,11 +95,7 @@ public struct SDDSSegment: View {
                     iconAttributes: segmentData.iconAttributes,
                     isDisabled: segmentData.isDisabled,
                     isSelected: selectedItemId == segmentData.id,
-<<<<<<< HEAD
-                    strech: false,
-=======
                     strech: true,
->>>>>>> 90f142c4 (feat: added multiple themes support)
                     counterEnabled: segmentData.counterEnabled,
                     appearance: appearance.segmentItemAppearance,
                     counterViewProvider: segmentData.counterViewProvider
