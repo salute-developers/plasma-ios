@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 import SwiftUI
 
 public enum SegmentSize: String, CaseIterable {
