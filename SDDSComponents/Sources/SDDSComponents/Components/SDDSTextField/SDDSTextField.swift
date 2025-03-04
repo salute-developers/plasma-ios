@@ -749,6 +749,7 @@ public struct SDDSTextField: View {
     private var textFieldIdentifier: String {
         var hasher = Hasher()
         appearance.hash(into: &hasher)
+        text.hash(into: &hasher)
         return String(hasher.finalize())
     }
 

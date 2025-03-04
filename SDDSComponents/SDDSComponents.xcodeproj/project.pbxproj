@@ -41,6 +41,17 @@
 		698902682D659A8B003DCE58 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
 		6989026B2D65A8E8003DCE58 /* TextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902692D65A8E8003DCE58 /* TextFieldPreview.swift */; };
 		6992E38F2D6DE52C00DEBEED /* ChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */; };
+		6993CAAF2D76E073006E81D5 /* SDDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAAD2D76E073006E81D5 /* SDDSBadge.swift */; };
+		6993CAB02D76E073006E81D5 /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA42D76E073006E81D5 /* BadgeAppearance.swift */; };
+		6993CAB12D76E073006E81D5 /* BadgeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA92D76E073006E81D5 /* BadgeStyle+Extensions.swift */; };
+		6993CAB22D76E073006E81D5 /* BadgeAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA32D76E073006E81D5 /* BadgeAlignment+Extensions.swift */; };
+		6993CAB32D76E073006E81D5 /* BadgeSizeConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA72D76E073006E81D5 /* BadgeSizeConfiguration+Extensions.swift */; };
+		6993CAB42D76E073006E81D5 /* BadgeSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA62D76E073006E81D5 /* BadgeSizeConfiguration.swift */; };
+		6993CAB52D76E073006E81D5 /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAAC2D76E073006E81D5 /* IconBadge.swift */; };
+		6993CAB62D76E073006E81D5 /* BadgeAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA52D76E073006E81D5 /* BadgeAppearance+Extensions.swift */; };
+		6993CAB72D76E073006E81D5 /* BadgeAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA22D76E073006E81D5 /* BadgeAlignment.swift */; };
+		6993CAB82D76E073006E81D5 /* BasicBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAAB2D76E073006E81D5 /* BasicBadge.swift */; };
+		6993CAB92D76E073006E81D5 /* BadgeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6993CAA82D76E073006E81D5 /* BadgeStyle.swift */; };
 		6995FA932D6F5C11003D5DBB /* SDDSAvatarModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */; };
 		69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */; };
 		69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */; };
@@ -253,6 +264,17 @@
 		698744652D1C368E00559ABA /* SDDSSegmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItem.swift; sourceTree = "<group>"; };
 		698902692D65A8E8003DCE58 /* TextFieldPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPreview.swift; sourceTree = "<group>"; };
 		6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSize.swift; sourceTree = "<group>"; };
+		6993CAA22D76E073006E81D5 /* BadgeAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAlignment.swift; sourceTree = "<group>"; };
+		6993CAA32D76E073006E81D5 /* BadgeAlignment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeAlignment+Extensions.swift"; sourceTree = "<group>"; };
+		6993CAA42D76E073006E81D5 /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
+		6993CAA52D76E073006E81D5 /* BadgeAppearance+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeAppearance+Extensions.swift"; sourceTree = "<group>"; };
+		6993CAA62D76E073006E81D5 /* BadgeSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSizeConfiguration.swift; sourceTree = "<group>"; };
+		6993CAA72D76E073006E81D5 /* BadgeSizeConfiguration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeSizeConfiguration+Extensions.swift"; sourceTree = "<group>"; };
+		6993CAA82D76E073006E81D5 /* BadgeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStyle.swift; sourceTree = "<group>"; };
+		6993CAA92D76E073006E81D5 /* BadgeStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeStyle+Extensions.swift"; sourceTree = "<group>"; };
+		6993CAAB2D76E073006E81D5 /* BasicBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBadge.swift; sourceTree = "<group>"; };
+		6993CAAC2D76E073006E81D5 /* IconBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadge.swift; sourceTree = "<group>"; };
+		6993CAAD2D76E073006E81D5 /* SDDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadge.swift; sourceTree = "<group>"; };
 		6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarModifiers.swift; sourceTree = "<group>"; };
 		69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutMode.swift; sourceTree = "<group>"; };
 		69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculator.swift; sourceTree = "<group>"; };
@@ -526,32 +548,6 @@
 			path = SDDSCell;
 			sourceTree = "<group>";
 		};
-		696942AB2D6F1D1700F43C38 /* BadgeAppearance */ = {
-			isa = PBXGroup;
-			children = (
-				696942A32D6F1D1700F43C38 /* BadgeAlignment.swift */,
-				696942A42D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift */,
-				696942A52D6F1D1700F43C38 /* BadgeAppearance.swift */,
-				696942A62D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift */,
-				696942A72D6F1D1700F43C38 /* BadgeSizeConfiguration.swift */,
-				696942A82D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift */,
-				696942A92D6F1D1700F43C38 /* BadgeStyle.swift */,
-				696942AA2D6F1D1700F43C38 /* BadgeStyle+Extensions.swift */,
-			);
-			path = BadgeAppearance;
-			sourceTree = "<group>";
-		};
-		696942AF2D6F1D1700F43C38 /* SDDSBadge */ = {
-			isa = PBXGroup;
-			children = (
-				696942AB2D6F1D1700F43C38 /* BadgeAppearance */,
-				696942AC2D6F1D1700F43C38 /* BasicBadge.swift */,
-				696942AD2D6F1D1700F43C38 /* IconBadge.swift */,
-				696942AE2D6F1D1700F43C38 /* SDDSBadge.swift */,
-			);
-			path = SDDSBadge;
-			sourceTree = "<group>";
-		};
 		697970DB2D63A5EF008306A8 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,11 +596,30 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		69BF1F922D704C5600438C5B /* View+Extansion */ = {
+		6993CAAA2D76E073006E81D5 /* BadgeAppearance */ = {
 			isa = PBXGroup;
 			children = (
+				6993CAA22D76E073006E81D5 /* BadgeAlignment.swift */,
+				6993CAA32D76E073006E81D5 /* BadgeAlignment+Extensions.swift */,
+				6993CAA42D76E073006E81D5 /* BadgeAppearance.swift */,
+				6993CAA52D76E073006E81D5 /* BadgeAppearance+Extensions.swift */,
+				6993CAA62D76E073006E81D5 /* BadgeSizeConfiguration.swift */,
+				6993CAA72D76E073006E81D5 /* BadgeSizeConfiguration+Extensions.swift */,
+				6993CAA82D76E073006E81D5 /* BadgeStyle.swift */,
+				6993CAA92D76E073006E81D5 /* BadgeStyle+Extensions.swift */,
 			);
-			path = "View+Extansion";
+			path = BadgeAppearance;
+			sourceTree = "<group>";
+		};
+		6993CAAE2D76E073006E81D5 /* SDDSBadge */ = {
+			isa = PBXGroup;
+			children = (
+				6993CAAA2D76E073006E81D5 /* BadgeAppearance */,
+				6993CAAB2D76E073006E81D5 /* BasicBadge.swift */,
+				6993CAAC2D76E073006E81D5 /* IconBadge.swift */,
+				6993CAAD2D76E073006E81D5 /* SDDSBadge.swift */,
+			);
+			path = SDDSBadge;
 			sourceTree = "<group>";
 		};
 		69F967B12D4CC9EA00C0B50F /* SDDSSegment */ = {
@@ -1081,7 +1096,6 @@
 		818C03C32C45128E002C6D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				69BF1F922D704C5600438C5B /* View+Extansion */,
 				81E968122CBD194300256968 /* FocusableTextField */,
 				81CF121E2C6E740A0074174F /* RoundedCornersMask */,
 				811DE16F2C578331000DD354 /* HierarchicalList */,
@@ -1581,6 +1595,7 @@
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
+				81FD6D4C2D6E25DC002A6E51 /* SDDSIndicator.swift in Sources */,
 				812DB7402D57B43900D3F4A3 /* TextAreaLabelPlacement.swift in Sources */,
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
@@ -1693,6 +1708,17 @@
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 				69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
+				6993CAAF2D76E073006E81D5 /* SDDSBadge.swift in Sources */,
+				6993CAB02D76E073006E81D5 /* BadgeAppearance.swift in Sources */,
+				6993CAB12D76E073006E81D5 /* BadgeStyle+Extensions.swift in Sources */,
+				6993CAB22D76E073006E81D5 /* BadgeAlignment+Extensions.swift in Sources */,
+				6993CAB32D76E073006E81D5 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
+				6993CAB42D76E073006E81D5 /* BadgeSizeConfiguration.swift in Sources */,
+				6993CAB52D76E073006E81D5 /* IconBadge.swift in Sources */,
+				6993CAB62D76E073006E81D5 /* BadgeAppearance+Extensions.swift in Sources */,
+				6993CAB72D76E073006E81D5 /* BadgeAlignment.swift in Sources */,
+				6993CAB82D76E073006E81D5 /* BasicBadge.swift in Sources */,
+				6993CAB92D76E073006E81D5 /* BadgeStyle.swift in Sources */,
 				812DB7612D57B49F00D3F4A3 /* ChipGroupSizeConfiguration.swift in Sources */,
 				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
 			);
