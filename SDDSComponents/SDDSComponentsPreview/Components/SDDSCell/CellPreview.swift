@@ -6,7 +6,7 @@ import SDDSServTheme
 struct CellPreview: PreviewProvider {
     static var previews: some View {
         HStack {
-            Cell(
+            SDDSCell(
                 appearance: Cell.s.appearance,
                 alignment: .center,
                 label: "label",

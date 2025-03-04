@@ -19,17 +19,6 @@
 		696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942982D6F0D8C00F43C38 /* CellContentAlignment.swift */; };
 		696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942972D6F0D8C00F43C38 /* CellAppearance.swift */; };
 		696942A22D6F0D8C00F43C38 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942962D6F0D8C00F43C38 /* Cell.swift */; };
-		696942B02D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A42D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift */; };
-		696942B12D6F1D1700F43C38 /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942AD2D6F1D1700F43C38 /* IconBadge.swift */; };
-		696942B22D6F1D1700F43C38 /* BadgeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A92D6F1D1700F43C38 /* BadgeStyle.swift */; };
-		696942B32D6F1D1700F43C38 /* BadgeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942AA2D6F1D1700F43C38 /* BadgeStyle+Extensions.swift */; };
-		696942B42D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A82D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift */; };
-		696942B52D6F1D1700F43C38 /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A52D6F1D1700F43C38 /* BadgeAppearance.swift */; };
-		696942B62D6F1D1700F43C38 /* BadgeAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A32D6F1D1700F43C38 /* BadgeAlignment.swift */; };
-		696942B72D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A62D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift */; };
-		696942B82D6F1D1700F43C38 /* BadgeSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942A72D6F1D1700F43C38 /* BadgeSizeConfiguration.swift */; };
-		696942B92D6F1D1700F43C38 /* SDDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942AE2D6F1D1700F43C38 /* SDDSBadge.swift */; };
-		696942BA2D6F1D1700F43C38 /* BasicBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696942AC2D6F1D1700F43C38 /* BasicBadge.swift */; };
 		697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697736FE2D26C2310077D1A4 /* CounterAppearance+Variation.swift */; };
 		697737852D2EB8030077D1A4 /* View+ErrorString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697737842D2EB7F80077D1A4 /* View+ErrorString.swift */; };
 		697970DD2D63A622008306A8 /* CellPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970DC2D63A61A008306A8 /* CellPreview.swift */; };
@@ -1534,17 +1523,6 @@
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				812DB7552D57B44100D3F4A3 /* TextFieldRequiredPlacement.swift in Sources */,
 				816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */,
-				696942B02D6F1D1700F43C38 /* BadgeAlignment+Extensions.swift in Sources */,
-				696942B12D6F1D1700F43C38 /* IconBadge.swift in Sources */,
-				696942B22D6F1D1700F43C38 /* BadgeStyle.swift in Sources */,
-				696942B32D6F1D1700F43C38 /* BadgeStyle+Extensions.swift in Sources */,
-				696942B42D6F1D1700F43C38 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
-				696942B52D6F1D1700F43C38 /* BadgeAppearance.swift in Sources */,
-				696942B62D6F1D1700F43C38 /* BadgeAlignment.swift in Sources */,
-				696942B72D6F1D1700F43C38 /* BadgeAppearance+Extensions.swift in Sources */,
-				696942B82D6F1D1700F43C38 /* BadgeSizeConfiguration.swift in Sources */,
-				696942B92D6F1D1700F43C38 /* SDDSBadge.swift in Sources */,
-				696942BA2D6F1D1700F43C38 /* BasicBadge.swift in Sources */,
 				818C03CB2C45158A002C6D0A /* SDDSCheckbox.swift in Sources */,
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
