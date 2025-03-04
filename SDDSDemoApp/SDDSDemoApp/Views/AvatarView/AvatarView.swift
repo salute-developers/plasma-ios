@@ -3,7 +3,6 @@ import Combine
 import SDDSComponents
 import PhotosUI
 import SDDSServTheme
-import PlasmaB2CTheme
 
 struct AvatarView: View {
     @ObservedObject private var viewModel: AvatarViewModel = AvatarViewModel()

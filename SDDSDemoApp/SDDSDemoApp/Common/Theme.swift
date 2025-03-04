@@ -29,7 +29,7 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             return SDDSServTheme.IconButton.all
         case .stylesSalute:
-            return StylesSaluteTheme.BasicButton.all
+            return StylesSaluteTheme.IconButton.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconButton.all
         }

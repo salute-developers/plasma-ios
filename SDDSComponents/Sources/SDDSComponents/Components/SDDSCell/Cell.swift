@@ -46,22 +46,14 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     public var body: some View {
         HStack(alignment: contentAlignment, spacing: 0) {
             leftContent
-                .environment(\.avatarAppearance, appearance.avatarAppearance)
-                .environment(\.buttonAppearance, appearance.buttonAppearance)
-                .environment(\.switchAppearance, appearance.switchAppearance)
-                .environment(\.checkboxAppearance, appearance.checkboxAppearance)
-                .environment(\.radioboxAppearance, appearance.radioboxAppearance)
+                .environment(cellAppearance: appearance)
             Spacer()
                 .frame(width: appearance.size.contentPaddingStart)
             centerView
             Spacer()
                 .frame(width: appearance.size.contentPaddingEnd)
             rightContent
-                .environment(\.avatarAppearance, appearance.avatarAppearance)
-                .environment(\.buttonAppearance, appearance.buttonAppearance)
-                .environment(\.switchAppearance, appearance.switchAppearance)
-                .environment(\.checkboxAppearance, appearance.checkboxAppearance)
-                .environment(\.radioboxAppearance, appearance.radioboxAppearance)
+                .environment(cellAppearance: appearance)
             disclosure
         }
     }
