@@ -64,17 +64,19 @@ struct CheckboxItemViewModel: Identifiable {
     var subtitle: String
     var isEnabled: Bool
 
-//    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
-//        CheckboxData(
-//            state: state,
-//            title: title,
-//            subtitle: subtitle,
-//            isEnabled: isEnabled,
-//            images: CheckboxView.checkbox,
-//            appearance: SDDSCheckbox.default.appearance.size(size),
-//            accessibility: .init()
-//        )
-//    }
+    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
+        var appearance = Checkbox.m.default.appearance
+        appearance.size = size
+        return CheckboxData(
+            state: state,
+            title: title,
+            subtitle: subtitle,
+            isEnabled: isEnabled,
+            images: CheckboxView.checkbox,
+            appearance: appearance,
+            accessibility: .init()
+        )
+    }
 }
 
 // MARK: - Extension
