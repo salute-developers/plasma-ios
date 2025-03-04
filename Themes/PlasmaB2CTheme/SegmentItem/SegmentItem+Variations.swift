@@ -117,23 +117,23 @@ private extension SegmentItem {
             appearance: SegmentItemAppearance(
                 titleTypography: SegmentItemTypography.titleTypography,
                 titleColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
+                    defaultColor: .textOnDarkPrimary,
+                    highlightedColor: .textOnDarkPrimaryActive,
+                    hoveredColor: .textOnDarkPrimaryHover,
+                    selectedColor: .textOnDarkPrimary
                 ),
                 subtitleTypography: SegmentItemTypography.subtitleTypography,
                 subtitleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
+                    defaultColor: .textOnDarkSecondary,
                     highlightedColor: .textDefaultSecondaryActive,
                     hoveredColor: .textDefaultSecondaryHover,
-                    selectedColor: .textDefaultSecondary
+                    selectedColor: .textOnDarkSecondary
                 ),
                 iconColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
+                    defaultColor: .textOnDarkPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
                     hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
+                    selectedColor: .textOnDarkPrimary
                 ),
                 backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultClear,
