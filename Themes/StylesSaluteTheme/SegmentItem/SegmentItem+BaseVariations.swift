@@ -3,18 +3,6 @@ import SDDSComponents
 import SDDSThemeCore
 
 public struct SegmentItem {
-    public static var xl: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
-        var appearance = SegmentItemAppearance.base
-        appearance.size = SegmentItemSize.extraLarge
-        appearance.titleTypography = SwitchTypography.label
-        appearance.subtitleTypography = SwitchTypography.description
-        appearance.counterAppearance = Counter.s.accent.appearance
-        return .init(
-            name: "xl",
-            appearance: appearance
-        )
-    }
-    
     public static var l: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.large
@@ -60,7 +48,7 @@ public struct SegmentItem {
         )
     }
     
-    public static let all: [Variation<SegmentItemAppearance>] = [xl, l, m, s, xs].map { $0.variation }
+    public static let all: [Variation<SegmentItemAppearance>] = [l, m, s, xs].map { $0.variation }
 }
 
 extension SegmentItemAppearance {
