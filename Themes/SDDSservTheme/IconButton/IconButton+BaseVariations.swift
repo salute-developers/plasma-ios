@@ -31,12 +31,30 @@ public struct IconButton {
             appearance: appearance
         )
     }
+    public static var xl: GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.Xl> {
+        var appearance = ButtonAppearance.base
+        appearance.size = IconButtonSize.xl
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
     public static var xs: GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.Xs> {
         var appearance = ButtonAppearance.base
         appearance.size = IconButtonSize.xs
 
         return .init(
             name: "xs",
+            appearance: appearance
+        )
+    }
+    public static var xxs: GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.Xxs> {
+        var appearance = ButtonAppearance.base
+        appearance.size = IconButtonSize.xxs
+
+        return .init(
+            name: "xxs",
             appearance: appearance
         )
     }
@@ -48,8 +66,12 @@ public struct IconButton {
         IconButton.m.pilled.variation,
         IconButton.s.variation,
         IconButton.s.pilled.variation,
+        IconButton.xl.variation,
+        IconButton.xl.pilled.variation,
         IconButton.xs.variation,
         IconButton.xs.pilled.variation,
+        IconButton.xxs.variation,
+        IconButton.xxs.pilled.variation,
     ]
 }
 
@@ -60,8 +82,12 @@ public struct IconButtonVariation {
     public struct MPilled {}
     public struct S {}
     public struct SPilled {}
+    public struct Xl {}
+    public struct XlPilled {}
     public struct Xs {}
     public struct XsPilled {}
+    public struct Xxs {}
+    public struct XxsPilled {}
 }
 
 private extension ButtonAppearance {
