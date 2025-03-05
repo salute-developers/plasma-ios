@@ -98,7 +98,6 @@ public struct SegmentItemView: View {
             }
         }
     }
-
 }
 
 #Preview {
