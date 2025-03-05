@@ -28,7 +28,6 @@
 		69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
-		69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 69E190A72D7764CE00BC8D03 /* SDDSIcons */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
@@ -192,7 +191,6 @@
 			files = (
 				69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */,
 				69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */,
@@ -582,7 +580,6 @@
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
 				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
 				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
-				69E190A72D7764CE00BC8D03 /* SDDSIcons */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -1169,10 +1166,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		69E190A72D7764CE00BC8D03 /* SDDSIcons */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSIcons;
-		};
 		8104243C2CFDB83F0009B6E9 /* SDDSServTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSServTheme;
