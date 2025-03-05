@@ -167,7 +167,6 @@
 		81763B152D6DF43D00904D4A /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -287,7 +286,6 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */,
 				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
