@@ -3,7 +3,6 @@ import SDDSComponents
 import SwiftUI
 
 enum SegmentItemSize: String, CaseIterable {
-    case extraLarge
     case large
     case medium
     case small
@@ -13,7 +12,6 @@ enum SegmentItemSize: String, CaseIterable {
 extension SegmentItemSize: SegmentItemSizeConfiguration {
     var cornerRadius: CGFloat {
         switch self {
-        case .extraLarge: return ShapeToken.roundL.cornerRadius
         case .large: return ShapeToken.roundL.cornerRadius - 2.0
         case .medium: return ShapeToken.roundM.cornerRadius
         case .small: return ShapeToken.roundM.cornerRadius - 2.0
@@ -23,7 +21,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
     
     var height: CGFloat {
         switch self {
-        case .extraLarge: return 64
         case .large: return 56
         case .medium: return 48
         case .small: return 40
@@ -33,8 +30,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
     
     var paddings: EdgeInsets {
         switch self {
-        case .extraLarge:
-            return EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 28)
         case .large:
             return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
         case .medium:
@@ -48,7 +43,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
     
     var iconSize: CGSize {
         switch self {
-        case .extraLarge: return CGSize(width: 24, height: 24)
         case .large: return CGSize(width: 24, height: 24)
         case .medium: return CGSize(width: 24, height: 24)
         case .small: return CGSize(width: 24, height: 24)
@@ -62,7 +56,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
     
     var titleHorizontalGap: CGFloat {
         switch self {
-        case .extraLarge: return 6
         case .large: return 6
         case .medium: return 4
         case .small: return 2
@@ -72,7 +65,6 @@ extension SegmentItemSize: SegmentItemSizeConfiguration {
     
     var iconHorizontalGap: CGFloat {
         switch self {
-        case .extraLarge: return 6
         case .large: return 6
         case .medium: return 4
         case .small: return 2
