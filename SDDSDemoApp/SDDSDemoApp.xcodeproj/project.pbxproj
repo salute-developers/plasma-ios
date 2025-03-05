@@ -28,7 +28,6 @@
 		69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
-		69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */ = {isa = PBXBuildFile; productRef = 69E190A72D7764CE00BC8D03 /* SDDSIcons */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
@@ -107,6 +106,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8101F6E92D78377C004ED8A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24C154022BB3020A00963FAA /* SDDSDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154052BB3020A00963FAA /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
@@ -167,7 +179,6 @@
 		81763B152D6DF43D00904D4A /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -193,7 +204,6 @@
 			files = (
 				69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69E190A82D7764CE00BC8D03 /* SDDSIcons in Frameworks */,
 				69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */,
@@ -287,7 +297,6 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				817D9F1E2C3707AE006C4814 /* SDDSIcons.framework */,
 				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
@@ -565,6 +574,7 @@
 				24C153FF2BB3020A00963FAA /* Frameworks */,
 				24C154002BB3020A00963FAA /* Resources */,
 				2430DEEA2BB6B33700277123 /* Lint */,
+				8101F6E92D78377C004ED8A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -584,7 +594,6 @@
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
 				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
 				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
-				69E190A72D7764CE00BC8D03 /* SDDSIcons */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -1171,10 +1180,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		69E190A72D7764CE00BC8D03 /* SDDSIcons */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSIcons;
-		};
 		8104243C2CFDB83F0009B6E9 /* SDDSServTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSServTheme;
