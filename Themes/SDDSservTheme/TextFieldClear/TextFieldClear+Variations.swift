@@ -829,6 +829,281 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
     }
 }
 
+public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xl> {
+    
+    var innerLabel: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XlInnerlabel> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(13.0)
+        size.boxPaddingTop = CGFloat(13.0)
+        size.dividerHeight = CGFloat(1.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+        size.titleBottomPadding = CGFloat(2.0)
+        size.titleInnerPadding = CGFloat(2.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+    
+        return .init(
+            name: "xl.innerLabel",
+            appearance: appearance
+        )
+    }
+    
+    var outerLabel: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XlOuterlabel> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+        size.titleBottomPadding = CGFloat(4.0)
+        size.titleInnerPadding = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextFieldLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+    
+        return .init(
+            name: "xl.outerLabel",
+            appearance: appearance
+        )
+    }
+    
+    var requiredEnd: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
+    
+        return .init(
+            name: "xl.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
+    
+        return .init(
+            name: "xl.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var success: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "success",
+            appearance: appearance.success
+        )
+    }
+    var warning: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XlInnerlabel> {
+    
+    var requiredEnd: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
+    
+        return .init(
+            name: "xl.innerLabel.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
+    
+        return .init(
+            name: "xl.innerLabel.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var success: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "success",
+            appearance: appearance.success
+        )
+    }
+    var warning: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XlOuterlabel> {
+    
+    var requiredEnd: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:4.0, y:4.0)
+        size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.right
+    
+        return .init(
+            name: "xl.outerLabel.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
+        var size =  TextFieldClearAnySize(size: appearance.size)
+        size.dividerHeight = CGFloat(1.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:8.0)
+        size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.textAfterTrailingPadding = CGFloat(0)
+        size.textBeforeLeadingPadding = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextFieldRequiredPlacement.left
+    
+        return .init(
+            name: "xl.outerLabel.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var success: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "success",
+            appearance: appearance.success
+        )
+    }
+    var warning: AppearanceVariation<TextFieldAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.success,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xs> {
     
     var outerLabel: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XsOuterlabel> {

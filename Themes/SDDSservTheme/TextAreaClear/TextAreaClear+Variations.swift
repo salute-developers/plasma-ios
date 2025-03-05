@@ -694,6 +694,236 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     }
 }
 
+public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.Xl> {
+    
+    var innerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XlInnerlabel> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.boxPaddingBottom = CGFloat(9.0)
+        size.boxPaddingTop = CGFloat(9.0)
+        size.titleBottomPadding = CGFloat(2.0)
+        size.titleInnerPadding = CGFloat(2.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.inner
+        appearance.titleColor = ColorToken.textDefaultSecondary
+        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+    
+        return .init(
+            name: "xl.innerLabel",
+            appearance: appearance
+        )
+    }
+    
+    var outerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XlOuterlabel> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.titleBottomPadding = CGFloat(4.0)
+        size.titleInnerPadding = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.innerTitleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.labelPlacement = TextAreaLabelPlacement.outer
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleTypography = TextAreaClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+    
+        return .init(
+            name: "xl.outerLabel",
+            appearance: appearance
+        )
+    }
+    
+    var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.right
+    
+        return .init(
+            name: "xl.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.left
+    
+        return .init(
+            name: "xl.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var warning: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XlInnerlabel> {
+    
+    var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.right
+    
+        return .init(
+            name: "xl.innerLabel.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorSize = CGSize(width:8.0, height:8.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.left
+    
+        return .init(
+            name: "xl.innerLabel.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var warning: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XlOuterlabel> {
+    
+    var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:4.0, y:4.0)
+        size.indicatorSize = CGSize(width:6.0, height:6.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.right
+    
+        return .init(
+            name: "xl.outerLabel.requiredEnd",
+            appearance: appearance
+        )
+    }
+    
+    var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
+        var size =  TextAreaClearAnySize(size: appearance.size)
+        size.indicatorOffset = CGPoint(x:6.0, y:8.0)
+        size.indicatorSize = CGSize(width:6.0, height:6.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.requiredPlacement = TextAreaRequiredPlacement.left
+    
+        return .init(
+            name: "xl.outerLabel.requiredStart",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var error: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "error",
+            appearance: appearance.error
+        )
+    }
+    var warning: AppearanceVariation<TextAreaAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.error,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.Xs> {
     
     var outerLabel: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XsOuterlabel> {
