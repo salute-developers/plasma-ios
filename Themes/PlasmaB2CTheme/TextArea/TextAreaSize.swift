@@ -7,12 +7,14 @@ struct TextAreaSize {
     static let l = TextAreaSizeL()
     static let m = TextAreaSizeM()
     static let s = TextAreaSizeS()
+    static let xl = TextAreaSizeXl()
     static let xs = TextAreaSizeXs()
 
     static let all: [TextAreaSizeConfiguration] = [
         TextAreaSize.l,
         TextAreaSize.m,
         TextAreaSize.s,
+        TextAreaSize.xl,
         TextAreaSize.xs,
     ] 
 }
@@ -75,6 +77,29 @@ struct TextAreaSizeS: TextAreaSizeConfiguration {
     var endContentPadding = CGFloat(6.0)
     var fieldHeight = CGFloat(40.0)
     var iconActionPadding = CGFloat(6.0)
+    var iconActionSize = CGSize(width:24.0, height:24.0)
+    var indicatorOffset = CGPoint.zero
+    var indicatorSize = CGSize.zero
+    var optionalPadding = CGFloat(4.0)
+    var titleBottomPadding = CGFloat(0)
+    var titleInnerPadding = CGFloat(0)
+    public var debugDescription: String {
+        return "TextAreaSize"
+    }
+}
+struct TextAreaSizeXl: TextAreaSizeConfiguration {
+    var boxLeadingPadding = CGFloat(20.0)
+    var boxPaddingBottom = CGFloat(12.0)
+    var boxPaddingTop = CGFloat(12.0)
+    var boxTrailingPadding = CGFloat(18.0)
+    var captionBottomPadding = CGFloat(12.0)
+    var captionTopPadding = CGFloat(12.0)
+    var chipContainerHorizontalPadding = CGFloat(6.0)
+    var chipsPadding = CGFloat(6.0)
+    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var endContentPadding = CGFloat(10.0)
+    var fieldHeight = CGFloat(56.0)
+    var iconActionPadding = CGFloat(10.0)
     var iconActionSize = CGSize(width:24.0, height:24.0)
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
