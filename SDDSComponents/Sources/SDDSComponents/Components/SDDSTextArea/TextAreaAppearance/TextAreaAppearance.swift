@@ -2,7 +2,9 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
-public struct TextAreaAppearance {
+public struct TextAreaAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
     public var id = UUID()
     public var size: TextAreaSizeConfiguration
     public var chipAppearance: ChipAppearance

@@ -19,11 +19,12 @@ public struct SDDSChip: View {
     let isEnabled: Bool
     let iconImage: Image?
     let buttonImage: Image?
-    let appearance: ChipAppearance
+    private let _appearance: ChipAppearance?
     let accessibility: ChipAccessibility
     let removeAction: () -> Void
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.chipAppearance) private var chipAppearance
 
     /**
      Инициализатор для создания чипа с заданными параметрами.
@@ -42,14 +43,14 @@ public struct SDDSChip: View {
         isEnabled: Bool,
         iconImage: Image? = nil,
         buttonImage: Image? = nil,
-        appearance: ChipAppearance,
+        appearance: ChipAppearance? = nil,
         accessibility: ChipAccessibility = ChipAccessibility(),
         removeAction: @escaping () -> Void) {
         self.title = title
         self.isEnabled = isEnabled
         self.iconImage = iconImage
         self.buttonImage = buttonImage
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
         self.removeAction = removeAction
     }
@@ -67,7 +68,7 @@ public struct SDDSChip: View {
         self.isEnabled = data.isEnabled
         self.iconImage = data.iconImage
         self.buttonImage = data.buttonImage
-        self.appearance = data.appearance
+        self._appearance = data.appearance
         self.accessibility = data.accessibility
         self.removeAction = data.removeAction
     }
@@ -140,5 +141,9 @@ public struct SDDSChip: View {
             return
         }
         removeAction()
+    }
+    
+    private var appearance: ChipAppearance {
+        _appearance ?? chipAppearance
     }
 }

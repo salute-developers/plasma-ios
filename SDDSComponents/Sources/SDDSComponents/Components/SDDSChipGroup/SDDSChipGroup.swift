@@ -12,17 +12,19 @@ import SwiftUI
  */
 public struct SDDSChipGroup: View {
     let data: [ChipData]
-    let appearance: ChipGroupAppearance
+    private let _appearance: ChipGroupAppearance?
     let flat: Bool
     @Binding var height: CGFloat
 
+    @Environment(\.chipGroupAppearance) private var chipGroupAppearance
+    
     public init(
         data: [ChipData],
-        appearance: ChipGroupAppearance,
+        appearance: ChipGroupAppearance? = nil,
         flat: Bool = false,
         height: Binding<CGFloat> = .constant(0)) {
         self.data = data
-        self.appearance = appearance
+        self._appearance = appearance
         self.flat = flat
         _height = height
     }
@@ -147,5 +149,9 @@ public struct SDDSChipGroup: View {
             return 0
         }
         return chipData.appearance.size.height
+    }
+    
+    private var appearance: ChipGroupAppearance {
+        _appearance ?? chipGroupAppearance
     }
 }

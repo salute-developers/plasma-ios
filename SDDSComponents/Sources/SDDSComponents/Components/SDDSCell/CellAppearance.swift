@@ -20,7 +20,9 @@ import SwiftUI
  - switchStyle: Стиль компонента Switch.
  - radioBoxStyle: Стиль компонента RadioBox.
  */
-public struct CellAppearance {
+public struct CellAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
     public var size: CellSizeConfiguration
     public var labelTypography: TypographyConfiguration
     public var labelColor: ColorToken

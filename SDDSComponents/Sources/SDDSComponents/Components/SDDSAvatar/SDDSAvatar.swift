@@ -20,9 +20,6 @@ public struct SDDSAvatar: View {
     let status: AvatarStatus
     let accessibility: AvatarAccessibility
     var _appearance: AvatarAppearance?
-    private var appearance: AvatarAppearance {
-        _appearance ?? avatarAppearance
-    }
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.avatarAppearance) var avatarAppearance
     
@@ -149,5 +146,9 @@ public struct SDDSAvatar: View {
         } else {
             fatalError("Undefined Avatar Typography")
         }
+    }
+    
+    private var appearance: AvatarAppearance {
+        _appearance ?? avatarAppearance
     }
 }

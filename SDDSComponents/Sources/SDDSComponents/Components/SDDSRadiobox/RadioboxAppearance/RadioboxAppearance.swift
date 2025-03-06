@@ -4,6 +4,7 @@ import SwiftUI
 
 public struct RadioboxAppearance: SelectionControlAppearance, EnvironmentKey, Hashable {
     public static let defaultValue: Self = .init()
+    
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
     public var titleTypography: TypographyConfiguration

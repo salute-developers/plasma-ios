@@ -14,9 +14,11 @@ public struct TextArea: View {
     public let readOnly: Bool
     public let divider: Bool
     public let dynamicHeight: Bool
-    public let appearance: TextAreaAppearance
+    private let _appearance: TextAreaAppearance?
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
+    
+    @Environment(\.textAreaAppearance) private var textAreaAppearance
     
     public init(
         value: Binding<TextAreaValue>,
@@ -29,7 +31,7 @@ public struct TextArea: View {
         readOnly: Bool = false,
         divider: Bool = true,
         dynamicHeight: Bool = false,
-        appearance: TextAreaAppearance,
+        appearance: TextAreaAppearance? = nil,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
     ) {
@@ -43,7 +45,7 @@ public struct TextArea: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.dynamicHeight = dynamicHeight
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
     }
@@ -60,11 +62,10 @@ public struct TextArea: View {
             readOnly: readOnly,
             divider: divider,
             dynamicHeight: dynamicHeight,
-            appearance: appearance,
+            appearance: _appearance,
             layout: .default,
             accessibility: accessibility,
             iconActionViewProvider: iconActionViewProvider
         )
     }
-    
 }

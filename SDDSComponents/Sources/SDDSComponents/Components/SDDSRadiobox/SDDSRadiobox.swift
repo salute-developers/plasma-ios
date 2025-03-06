@@ -20,10 +20,7 @@ public struct SDDSRadiobox: View {
     let images: RadioboxImages
     let accessibility: SelectionControlAccessibility
     private var _appearance: RadioboxAppearance?
-    private var appearance: RadioboxAppearance {
-        _appearance ?? radioboxAppearance
-    }
-    @Environment(\.radioboxAppearance) var radioboxAppearance
+    @Environment(\.radioboxAppearance) private var radioboxAppearance
     
     public init(
         isSelected: Binding<Bool>,
@@ -65,6 +62,10 @@ public struct SDDSRadiobox: View {
             ),
             accessibility: accessibility
         )
+    }
+    
+    private var appearance: RadioboxAppearance {
+        _appearance ?? radioboxAppearance
     }
 }
 
