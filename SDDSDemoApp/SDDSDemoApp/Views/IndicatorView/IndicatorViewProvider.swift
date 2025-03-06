@@ -16,6 +16,6 @@ final class IndicatorVariationProvider: VariationProvider {
     }
     
     var defaultValue: IndicatorAppearance {
-        variations.first?.appearance ?? Indicator.l.default.appearance
+        IndicatorAppearance.defaultValue
     }
 }

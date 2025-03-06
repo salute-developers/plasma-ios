@@ -2,9 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct SegmentItemAppearance: EnvironmentKey {
-    public static let defaultValue: Self = .init()
-
+public struct SegmentItemAppearance {
     public var size: SegmentItemSizeConfiguration
     public var shapeStyle: ComponentShapeStyle
     public var titleTypography: TypographyConfiguration
@@ -38,5 +36,11 @@ public struct SegmentItemAppearance: EnvironmentKey {
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
         self.counterAppearance = counterAppearance
+    }
+}
+
+extension SegmentItemAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: SegmentItemAppearance.self, fallback: SegmentItemAppearance())
     }
 }
