@@ -16,6 +16,6 @@ final class CounterVariationProvider: VariationProvider {
     }
     
     var defaultValue: CounterAppearance {
-        variations.first?.appearance ?? Counter.l.default.appearance
+        CounterAppearance.defaultValue
     }
 }

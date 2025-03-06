@@ -39,13 +39,14 @@ public struct SDDSTextField: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    public let appearance: TextFieldAppearance
+    private let _appearance: TextFieldAppearance?
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
     public let iconActionViewProvider: ViewProvider?
 
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.textFieldAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
@@ -62,7 +63,7 @@ public struct SDDSTextField: View {
         readOnly: Bool = false,
         required: Bool = false,
         divider: Bool = true,
-        appearance: TextFieldAppearance,
+        appearance: TextFieldAppearance? = nil,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -85,7 +86,7 @@ public struct SDDSTextField: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self.appearance = appearance
+        self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
@@ -795,5 +796,10 @@ public struct SDDSTextField: View {
     
     private var boxTrailingPadding: CGFloat {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: TextFieldAppearance {
+        _appearance ?? environmentAppearance
     }
 }

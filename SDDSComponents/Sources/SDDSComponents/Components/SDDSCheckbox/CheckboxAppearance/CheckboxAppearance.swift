@@ -2,9 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
     public var titleTypography: TypographyConfiguration
@@ -37,5 +35,11 @@ public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Ha
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+extension CheckboxAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: CheckboxAppearance.self, fallback: CheckboxAppearance())
     }
 }

@@ -3,7 +3,7 @@ import Foundation
 import SDDSThemeCore
 
 public struct SDDSIndicator: View {
-    @Environment(\.indicatorAppearance) private var indicatorAppearance
+    @Environment(\.indicatorAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     private let _appearance: IndicatorAppearance?
     
@@ -27,7 +27,8 @@ public struct SDDSIndicator: View {
         appearance.size.height
     }
     
-    private var appearance: IndicatorAppearance {
-        _appearance ?? indicatorAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: IndicatorAppearance {
+        _appearance ?? environmentAppearance
     }
 }

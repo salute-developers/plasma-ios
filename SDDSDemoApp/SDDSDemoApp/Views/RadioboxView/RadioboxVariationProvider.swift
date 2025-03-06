@@ -16,6 +16,6 @@ final class RadioboxVariationProvider: VariationProvider {
     }
     
     var defaultValue: RadioboxAppearance {
-        variations.first?.appearance ?? Radiobox.m.default.appearance
+        RadioboxAppearance.defaultValue
     }
 }

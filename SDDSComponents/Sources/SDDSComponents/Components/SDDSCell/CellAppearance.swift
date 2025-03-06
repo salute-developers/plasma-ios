@@ -74,3 +74,9 @@ public struct CellAppearance {
         self.switchAppearance = switchAppearance
     }
 }
+
+extension CellAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: CellAppearance.self, fallback: CellAppearance())
+    }
+}

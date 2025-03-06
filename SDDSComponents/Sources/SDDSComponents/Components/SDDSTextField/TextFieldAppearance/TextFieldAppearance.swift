@@ -48,7 +48,7 @@ public struct TextFieldAppearance {
     public var titleColor: ColorToken
     public var titleTextAlignment: TextAlignment
     public var titleTypography: TypographyConfiguration
-
+    
     public init(
         size: TextFieldSizeConfiguration = ZeroTextFieldSize(),
         chipGroupAppearance: ChipGroupAppearance = ChipGroupAppearance(),
@@ -182,7 +182,7 @@ extension TextFieldAppearance {
             lhs.titleColor == rhs.titleColor &&
             lhs.titleTextAlignment == rhs.titleTextAlignment
     }
-
+    
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(chipAppearance)
@@ -224,3 +224,8 @@ extension TextFieldAppearance {
     }
 }
 
+extension TextFieldAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: TextFieldAppearance.self, fallback: TextFieldAppearance())
+    }
+}

@@ -40,6 +40,6 @@ final class BadgeVariationProvider: VariationProvider {
     }
     
     var defaultValue: BadgeAppearance {
-        variations.first?.appearance ?? Badge.l.default.appearance
+        BadgeAppearance.defaultValue
     }
 }

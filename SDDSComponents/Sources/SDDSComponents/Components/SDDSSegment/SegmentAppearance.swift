@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+@_exported import SDDSThemeCore
 
 /**
  `SegmentAppearance` определяет стили сегмента, включая размеры, форму, цвета и другие параметры.
@@ -12,9 +13,7 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили сегмента с заданными параметрами.
  */
-public struct SegmentAppearance: EnvironmentKey {
-    public static let defaultValue: Self = .init()
-
+public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
     public var backgroundColor: ButtonColor?
     public var segmentItemAppearance: SegmentItemAppearance
@@ -38,5 +37,11 @@ public struct SegmentAppearance: EnvironmentKey {
         self.backgroundColor = backgroundColor
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = disabledAlpha
+    }
+}
+
+extension SegmentAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: SegmentAppearance.self, fallback: SegmentAppearance())
     }
 }
