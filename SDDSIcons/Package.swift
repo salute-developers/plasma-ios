@@ -9,22 +9,17 @@ let package = Package(
     products: [
         .library(
             name: "SDDSIcons",
-            type: .dynamic,
             targets: ["SDDSIcons"]),
     ],
     targets: [
         .target(
             name: "SDDSIcons",
             dependencies: [],
-            path: "SDDSIcons",
+            path: "./",
+            exclude: ["SDDSIcons.xcodeproj", "SDDSIcons/SDDSIcons.h"],
             resources: [
-                .process("Assets.xcassets")
+                .process("SDDSIcons/Assets.xcassets")
             ]
-        ),
-        .testTarget(
-            name: "SDDSIconsTests",
-            dependencies: ["SDDSIcons"],
-            path: "SDDSIconsTests"
-        ),
+        )
     ]
 )
