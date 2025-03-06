@@ -10,10 +10,12 @@ public struct SDDSSegmentItem: View {
     public let isSelected: Bool
     public let strech: Bool
     public let counterEnabled: Bool
-    public let appearance: SegmentItemAppearance
+    private let _appearance: SegmentItemAppearance?
     public let accessibility: SegmentItemAccessibility
     public let counterViewProvider: CounterViewProvider?
     public var action: () -> Void
+    
+    @Environment(\.segmentItemAppearance) private var segmentItemAppearance
     
     public init(item: SDDSSegmentItemData) {
         self.id = item.id
@@ -24,7 +26,7 @@ public struct SDDSSegmentItem: View {
         self.isDisabled = item.isDisabled
         self.strech = item.stretch
         self.counterEnabled = item.counterEnabled
-        self.appearance = item.appearance
+        self._appearance = item.appearance
         self.accessibility = item.accessibility
         self.counterViewProvider = item.counterViewProvider
         self.action = item.action
@@ -53,7 +55,7 @@ public struct SDDSSegmentItem: View {
         self.isSelected = isSelected
         self.strech = strech
         self.counterEnabled = counterEnabled
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
         self.counterViewProvider = counterViewProvider
         self.action = action
@@ -104,5 +106,9 @@ extension SDDSSegmentItem {
         case .custom(let viewProvider, _):
             return viewProvider
         }
+    }
+    
+    private var appearance: SegmentItemAppearance {
+        _appearance ?? segmentItemAppearance
     }
 }

@@ -4,9 +4,10 @@ import SwiftUI
 
 public struct SDDSCounter: View {
     public let text: String
-    public let appearance: CounterAppearance
+    private let _appearance: CounterAppearance?
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.counterAppearance) private var counterAppearance
     
     var isAnimating: Bool
     var isHighlighted: Bool
@@ -20,7 +21,7 @@ public struct SDDSCounter: View {
         isHovered: Bool
     ) {
         self.text = text
-        self.appearance = appearance
+        self._appearance = appearance
         self.isAnimating = isAnimating
         self.isHighlighted = isHighlighted
         self.isHovered = isHovered
@@ -92,5 +93,9 @@ private extension SDDSCounter {
     
     var isAuto: Bool {
         text.count > 1
+    }
+    
+    private var appearance: CounterAppearance {
+        _appearance ?? counterAppearance
     }
 }
