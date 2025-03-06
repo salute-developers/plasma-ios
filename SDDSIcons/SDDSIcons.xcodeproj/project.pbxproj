@@ -20,6 +20,11 @@
 		};
 /* End PBXAggregateTarget section */
 
+/* Begin PBXBuildFile section */
+		81BA13F72D79EB41008F0A59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 817FF89E2D1D8C300090E989 /* Assets.xcassets */; };
+		81D5428C2D79E09300C0089C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D5428A2D79E09300C0089C /* Assets.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		242BF2472BBC673300E4D112 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		242BF2552BBD8AB000E4D112 /* assets.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assets.stencil; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		817FF89E2D1D8C300090E989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		817FF89F2D1D8C300090E989 /* SDDSIcons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSIcons.docc; sourceTree = "<group>"; };
 		817FF8A02D1D8C300090E989 /* SDDSIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIcons.swift; sourceTree = "<group>"; };
+		81D5428A2D79E09300C0089C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		2430DE912BB5B53B00277123 = {
 			isa = PBXGroup;
 			children = (
+				81D5428B2D79E09300C0089C /* Generated */,
 				817FF89C2D1D8C300090E989 /* SDDSIcons */,
 				814F718F2C58CA7E006385E4 /* Package.swift */,
 				243C6C462BBF14E900525EAD /* info.plist */,
@@ -100,6 +107,14 @@
 				817FF8A02D1D8C300090E989 /* SDDSIcons.swift */,
 			);
 			path = SDDSIcons;
+			sourceTree = "<group>";
+		};
+		81D5428B2D79E09300C0089C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				81D5428A2D79E09300C0089C /* Assets.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +164,7 @@
 					};
 					2430DE9A2BB5B53B00277123 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -176,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BA13F72D79EB41008F0A59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D5428C2D79E09300C0089C /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +399,7 @@
 		2430DEB02BB5B53B00277123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -411,6 +430,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,6 +439,7 @@
 		2430DEB12BB5B53B00277123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
