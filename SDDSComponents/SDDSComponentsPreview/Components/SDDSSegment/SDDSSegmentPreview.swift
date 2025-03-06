@@ -18,7 +18,7 @@ struct SDDSSegmentPreview: PreviewProvider {
                 title: "T 1",
                 subtitle: "S 1",
                 iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-                appearance: SDDSSegmentItem.accent.medium.appearance,
+                appearance: SegmentItem.m.primary.appearance,
                 action: {
                     selectItem(ids[0])
                 }
@@ -28,7 +28,7 @@ struct SDDSSegmentPreview: PreviewProvider {
                 title: "T 2",
                 subtitle: "S 2",
                 iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-                appearance: SDDSSegmentItem.accent.medium.appearance,
+                appearance: SegmentItem.m.primary.appearance,
                 action: {
                     selectItem(ids[1])
                 }
@@ -39,7 +39,7 @@ struct SDDSSegmentPreview: PreviewProvider {
                 title: "T 2",
                 subtitle: "S 2",
                 iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-                appearance: SDDSSegmentItem.accent.medium.appearance,
+                appearance: SegmentItem.m.primary.appearance,
                 action: {
                     selectItem(ids[2])
                 }
@@ -49,9 +49,8 @@ struct SDDSSegmentPreview: PreviewProvider {
         return Group {
             SDDSSegment(
                 items: items,
-                appearance: SDDSSegment.default.medium
-                    .appearance
-                    .stretch(false),
+                appearance: Segment.m.default
+                    .appearance,
                 layoutOrientation: .vertical,
                 selectedItemId: .constant(selectedId),
                 isDisabled: false

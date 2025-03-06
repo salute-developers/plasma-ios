@@ -12,7 +12,7 @@ struct SDDSCheckboxPreview: PreviewProvider {
             subtitle: "Description",
             isEnabled: true,
             images: .checkbox,
-            appearance: SDDSCheckbox.medium.default.appearance
+            appearance: Checkbox.m.default.appearance
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")

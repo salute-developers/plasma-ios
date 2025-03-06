@@ -53,8 +53,8 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
 
 public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var height: CGFloat = 0
-    public var cornerRadius: CGFloat { 0 }
-    public var paddings: EdgeInsets { .init() }
+    public var cornerRadius: CGFloat = 0
+    public var paddings: EdgeInsets = .init()
     public var iconSize: CGSize = .zero
     public var counterSize: CounterSizeConfiguration = DefaultCounterSize()
     public var spinnerSize: CGSize = .zero

@@ -11,7 +11,7 @@ struct SDDSChipPreview: PreviewProvider {
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: Image.image("chipClose"),
-            appearance: SDDSChip.accent.medium.pilled.appearance,
+            appearance: Chip.m.pilled.accent.appearance,
             removeAction: {}
         )
         .previewLayout(PreviewLayout.sizeThatFits)

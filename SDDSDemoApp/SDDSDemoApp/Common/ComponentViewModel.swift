@@ -5,7 +5,11 @@ import SDDSComponents
 class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     @Published var variation: Variation<Provider.Appearance>? {
         didSet {
-            self.style = variation?.styles.first
+            if let style = variation?.styles.first {
+                self.style = style
+            } else if let appearance = variation?.appearance {
+                self.appearance = appearance
+            }
         }
     }
     @Published var style: AppearanceVariation<Provider.Appearance>? {

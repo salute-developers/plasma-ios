@@ -13,7 +13,7 @@ struct ComponentConfiguration<Props: MergeableConfiguration>: Codable {
     }
 
     let view: [String: View]
-    let props: Props
+    let props: Props?
     let variations: [Variation]
 }
 
