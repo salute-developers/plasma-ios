@@ -18,7 +18,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
     case cell = "Cell"
-    case counter = "SDDSCounter"
+    case counter = "Counter"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
