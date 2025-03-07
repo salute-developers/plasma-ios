@@ -13,6 +13,7 @@
 		6919BD9C2D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD942D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift */; };
 		6919BD9D2D4A6CF800A77774 /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD982D4A6CF800A77774 /* SegmentItemSize.swift */; };
 		6919BD9E2D4A6CF800A77774 /* SegmentItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD922D4A6CF800A77774 /* SegmentItemAccessibility.swift */; };
+		6924BD8C2D7AFAB900E771BE /* AppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6924BD8B2D7AFAB300E771BE /* AppearanceProvider.swift */; };
 		6925101C2D7632CA00545542 /* BadgeStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510162D7632CA00545542 /* BadgeStyle+Extensions.swift */; };
 		6925101D2D7632CA00545542 /* BasicBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510182D7632CA00545542 /* BasicBadge.swift */; };
 		6925101E2D7632CA00545542 /* BadgeAppearance+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510122D7632CA00545542 /* BadgeAppearance+Extensions.swift */; };
@@ -211,6 +212,7 @@
 		6919BD932D4A6CF800A77774 /* SegmentItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearance.swift; sourceTree = "<group>"; };
 		6919BD942D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+ButtonAppearance.swift"; sourceTree = "<group>"; };
 		6919BD982D4A6CF800A77774 /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
+		6924BD8B2D7AFAB300E771BE /* AppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceProvider.swift; sourceTree = "<group>"; };
 		6925100F2D7632CA00545542 /* BadgeAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAlignment.swift; sourceTree = "<group>"; };
 		692510102D7632CA00545542 /* BadgeAlignment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeAlignment+Extensions.swift"; sourceTree = "<group>"; };
 		692510112D7632CA00545542 /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
@@ -476,6 +478,14 @@
 				6919BD982D4A6CF800A77774 /* SegmentItemSize.swift */,
 			);
 			path = SegmentItemAppearance;
+			sourceTree = "<group>";
+		};
+		6924BD8A2D7AFA9300E771BE /* AppearanceProvider */ = {
+			isa = PBXGroup;
+			children = (
+				6924BD8B2D7AFAB300E771BE /* AppearanceProvider.swift */,
+			);
+			path = AppearanceProvider;
 			sourceTree = "<group>";
 		};
 		692510172D7632CA00545542 /* BadgeAppearance */ = {
@@ -1143,6 +1153,7 @@
 		81BC36842C591B7400A363D0 /* SDDSComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6924BD8A2D7AFA9300E771BE /* AppearanceProvider */,
 				816E7B512D5F7F1A008A903E /* Environment */,
 				818FE9302C3C1CDC00F64958 /* Components.swift */,
 				81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */,
@@ -1527,6 +1538,7 @@
 				811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */,
 				818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */,
 				812DB7402D57B43900D3F4A3 /* TextAreaLabelPlacement.swift in Sources */,
+				6924BD8C2D7AFAB900E771BE /* AppearanceProvider.swift in Sources */,
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,

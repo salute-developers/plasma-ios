@@ -13,9 +13,7 @@ import SDDSThemeCore
     - offlineStatusColor: Цвет индикатора статуса "оффлайн".
     - textTypography: Типографика текста.
  */
-public struct AvatarAppearance: EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct AvatarAppearance: Hashable {
     let id = UUID()
     public var size: AvatarSizeConfiguration
     public var textFillStyle: FillStyle
@@ -49,5 +47,20 @@ public struct AvatarAppearance: EnvironmentKey, Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+extension AvatarAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        guard let defaultAppearance = provider?.defaultValue as? AvatarAppearance else {
+            return .init()
+        }
+        return defaultAppearance
+    }
+    
+    public static var provider: (any AppearanceProvider.Type)?
+    
+    public static func registerProvider(_ provider: any AppearanceProvider.Type) {
+        self.provider = provider
     }
 }
