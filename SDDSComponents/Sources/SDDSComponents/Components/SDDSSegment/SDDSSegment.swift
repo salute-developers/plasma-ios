@@ -21,7 +21,7 @@ public struct SDDSSegment: View {
     
     public init(
         items: [SDDSSegmentItemData],
-        appearance: SegmentAppearance,
+        appearance: SegmentAppearance? = nil,
         layoutMode: SegmentLayoutMode = .flexible,
         layoutOrientation: SegmentLayoutOrientation,
         selectedItemId: Binding<UUID?>,

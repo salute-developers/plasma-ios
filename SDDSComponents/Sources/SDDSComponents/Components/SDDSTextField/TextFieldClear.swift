@@ -12,7 +12,7 @@ public struct TextFieldClear: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    private let _appearance: TextFieldAppearance?
+    public let appearance: TextFieldAppearance
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
     public let iconActionViewProvider: ViewProvider?
@@ -28,7 +28,7 @@ public struct TextFieldClear: View {
         disabled: Bool = false,
         readOnly: Bool = false,
         divider: Bool = true,
-        appearance: TextFieldAppearance? = nil,
+        appearance: TextFieldAppearance,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
         iconActionViewProvider: ViewProvider? = nil
@@ -43,7 +43,7 @@ public struct TextFieldClear: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self._appearance = appearance
+        self.appearance = appearance
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
         self.iconActionViewProvider = iconActionViewProvider
@@ -61,7 +61,7 @@ public struct TextFieldClear: View {
             disabled: disabled,
             readOnly: readOnly,
             divider: divider,
-            appearance: _appearance,
+            appearance: appearance,
             layout: .clear,
             accessibility: accessibility,
             iconViewProvider: iconViewProvider,

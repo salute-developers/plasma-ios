@@ -15,7 +15,7 @@ public struct SDDSCounter: View {
     
     public init(
         text: String,
-        appearance: CounterAppearance,
+        appearance: CounterAppearance? = nil,
         isAnimating: Bool,
         isHighlighted: Bool,
         isHovered: Bool

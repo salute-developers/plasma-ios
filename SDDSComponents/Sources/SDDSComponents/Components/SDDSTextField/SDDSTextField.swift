@@ -39,7 +39,8 @@ public struct SDDSTextField: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    private let _appearance: TextFieldAppearance?
+//    private let _appearance: TextFieldAppearance?
+    public let appearance: TextFieldAppearance
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     public let iconViewProvider: ViewProvider?
@@ -63,7 +64,7 @@ public struct SDDSTextField: View {
         readOnly: Bool = false,
         required: Bool = false,
         divider: Bool = true,
-        appearance: TextFieldAppearance? = nil,
+        appearance: TextFieldAppearance,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconViewProvider: ViewProvider? = nil,
@@ -86,7 +87,7 @@ public struct SDDSTextField: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self._appearance = appearance
+        self.appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
         self.iconViewProvider = iconViewProvider
@@ -798,7 +799,7 @@ public struct SDDSTextField: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    private var appearance: TextFieldAppearance {
-        _appearance ?? textFieldAppearance
-    }
+//    private var appearance: TextFieldAppearance {
+//        _appearance ?? textFieldAppearance
+//    }
 }

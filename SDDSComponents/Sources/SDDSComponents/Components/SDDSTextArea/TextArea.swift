@@ -18,8 +18,6 @@ public struct TextArea: View {
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
     
-    @Environment(\.textAreaAppearance) private var textAreaAppearance
-    
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",

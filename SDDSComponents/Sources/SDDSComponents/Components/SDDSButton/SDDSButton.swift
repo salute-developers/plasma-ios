@@ -16,7 +16,7 @@ public struct SDDSButton: View {
     public let counterViewProvider: ViewProvider?
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
-    @Environment(\.buttonAppearance) var buttonAppearance
+    @Environment(\.buttonAppearance) private var buttonAppearance
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false

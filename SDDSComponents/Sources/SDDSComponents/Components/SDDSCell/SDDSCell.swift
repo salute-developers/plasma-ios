@@ -21,7 +21,7 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     @Environment(\.cellAppearance) private var cellAppearance
     
     public init(
-        appearance: CellAppearance = CellAppearance(),
+        appearance: CellAppearance? = nil,
         alignment: CellContentAlignment = .center,
         label: String = "",
         title: String = "",
