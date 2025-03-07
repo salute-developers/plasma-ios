@@ -41,7 +41,7 @@ public struct SDDSSegmentItem: View {
         isSelected: Bool,
         strech: Bool = false,
         counterEnabled: Bool = false,
-        appearance: SegmentItemAppearance,
+        appearance: SegmentItemAppearance? = nil,
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterViewProvider: CounterViewProvider? = nil,
         counterText: String = "",

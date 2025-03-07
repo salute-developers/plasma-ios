@@ -21,7 +21,7 @@ public struct SDDSAvatar: View {
     let accessibility: AvatarAccessibility
     var _appearance: AvatarAppearance?
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.avatarAppearance) var avatarAppearance
+    @Environment(\.avatarAppearance) private var avatarAppearance
     
     public init(
         text: String,

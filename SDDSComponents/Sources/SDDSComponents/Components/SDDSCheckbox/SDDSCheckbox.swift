@@ -21,10 +21,7 @@ public struct SDDSCheckbox: View {
     let images: SelectionControlStateImages
     let accessibility: SelectionControlAccessibility
     private var _appearance: CheckboxAppearance?
-    private var appearance: CheckboxAppearance {
-        _appearance ?? checkboxAppearance
-    }
-    @Environment(\.checkboxAppearance) var checkboxAppearance
+    @Environment(\.checkboxAppearance) private var checkboxAppearance
     
     /**
      Инициализатор для создания чекбокса с заданными параметрами.
@@ -84,6 +81,10 @@ public struct SDDSCheckbox: View {
             images: images,
             accessibility: accessibility
         )
+    }
+    
+    private var appearance: CheckboxAppearance {
+        _appearance ?? checkboxAppearance
     }
 }
 
