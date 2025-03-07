@@ -14,7 +14,7 @@ public struct TextAreaClear: View {
     public let readOnly: Bool
     public let divider: Bool
     public let dynamicHeight: Bool
-    public let appearance: TextAreaAppearance
+    private let _appearance: TextAreaAppearance?
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
     
@@ -29,7 +29,7 @@ public struct TextAreaClear: View {
         readOnly: Bool = false,
         divider: Bool = true,
         dynamicHeight: Bool = false,
-        appearance: TextAreaAppearance,
+        appearance: TextAreaAppearance? = nil,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
     ) {
@@ -43,7 +43,7 @@ public struct TextAreaClear: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.dynamicHeight = dynamicHeight
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
     }
@@ -60,11 +60,10 @@ public struct TextAreaClear: View {
             readOnly: readOnly,
             divider: divider,
             dynamicHeight: dynamicHeight,
-            appearance: appearance,
+            appearance: _appearance,
             layout: .clear,
             accessibility: accessibility,
             iconActionViewProvider: iconActionViewProvider
         )
     }
-    
 }

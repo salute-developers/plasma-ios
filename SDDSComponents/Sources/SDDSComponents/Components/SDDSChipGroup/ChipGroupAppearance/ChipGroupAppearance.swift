@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /**
  `ChipGroupAppearance` определяет внешний вид `ChipGroup`
@@ -6,7 +7,9 @@ import Foundation
  - Свойства:
     - size: Конфигурация размеров группы чипов.
  */
-public struct ChipGroupAppearance {
+public struct ChipGroupAppearance: EnvironmentKey {
+    public static let defaultValue: Self = .init()
+    
     public var size: ChipGroupSizeConfiguration
     public var gap: ChipGroupGap
     

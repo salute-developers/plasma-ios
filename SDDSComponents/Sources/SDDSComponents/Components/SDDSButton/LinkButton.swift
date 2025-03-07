@@ -7,7 +7,7 @@ public struct LinkButton: View {
     public let isDisabled: Bool
     public let isLoading: Bool
     public let spinnerImage: Image
-    public let appearance: ButtonAppearance
+    private let _appearance: ButtonAppearance?
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
     public var action: () -> Void
@@ -18,7 +18,7 @@ public struct LinkButton: View {
         isDisabled: Bool = false,
         isLoading: Bool = false,
         spinnerImage: Image = Image("spinner", bundle: Bundle(for: Components.self)),
-        appearance: ButtonAppearance,
+        appearance: ButtonAppearance? = nil,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
         action: @escaping () -> Void
@@ -28,7 +28,7 @@ public struct LinkButton: View {
         self.isDisabled = isDisabled
         self.isLoading = isLoading
         self.spinnerImage = spinnerImage
-        self.appearance = appearance
+        self._appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
         self.action = action
@@ -43,7 +43,7 @@ public struct LinkButton: View {
             isLoading: isLoading,
             spinnerImage: spinnerImage,
             buttonStyle: .basic,
-            appearance: appearance,
+            appearance: _appearance,
             layoutMode: layoutMode,
             accessibility: accessibility,
             action: action
