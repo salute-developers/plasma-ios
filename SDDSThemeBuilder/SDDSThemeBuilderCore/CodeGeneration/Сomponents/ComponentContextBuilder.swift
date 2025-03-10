@@ -39,7 +39,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
             guard let variation = configuration.allProps[key], let rhsProps = variation.props as? Props.Props else {
                 continue
             }
-            let props = configuration.props.merge(rhs: rhsProps)
+            let props = configuration.props?.merge(rhs: rhsProps) ?? rhsProps
             guard let sizeProps = props as? Size.Props else {
                 fatalError()
             }
@@ -83,10 +83,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         let keys = configuration.allProps.keys.sorted()
         let all: [String] = keys.map({ $0.joinedVariationPath }).sorted()
         let chains: [String] = keys.map({ $0.chain }).sorted()
-        
-        guard let configurationProps = configuration.props as? Appearance.Props else {
-            fatalError("Bad definition")
-        }
+        let configurationProps = configuration.props as? Appearance.Props
         
         return .init(
             component: component.rawValue,

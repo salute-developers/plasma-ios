@@ -29,7 +29,6 @@ struct TextAreaClearPreview: PreviewProvider {
                 counter: "counter",
                 disabled: false,
                 readOnly: false,
-                required: false,
                 dynamicHeight: true,
                 appearance: TextAreaClear.l.default.appearance,
                 iconActionViewProvider: ViewProvider(iconActionView)
@@ -46,7 +45,6 @@ struct TextAreaClearPreview: PreviewProvider {
                 caption: "caption",
                 counter: "counter",
                 disabled: false,
-                required: true,
                 dynamicHeight: true,
                 appearance: TextAreaClear.l.default.appearance,
                 iconActionViewProvider: ViewProvider(iconActionView)

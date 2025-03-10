@@ -17,62 +17,62 @@ struct BasicButtonSize {
     ] 
 }
 struct BasicButtonSizeL: ButtonSizeConfiguration {
-    public var cornerRadius = ShapeToken.roundL.cornerRadius
-    public var height = CGFloat(56.0)
-    public var iconHorizontalGap = CGFloat(8.0)
-    public var iconSize = CGSize(width:24.0, height:24.0)
-    public var paddings = EdgeInsets(top: 0.0, leading: 24.0, bottom: 0.0, trailing: 24.0)
-    public var spinnerSize = CGSize(width:22.0, height:22.0)
-    public var titleHorizontalGap = CGFloat(4.0)
+    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var height = CGFloat(56.0)
+    var iconHorizontalGap = CGFloat(8.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 24.0, bottom: 0.0, trailing: 24.0)
+    var spinnerSize = CGSize(width:22.0, height:22.0)
+    var titleHorizontalGap = CGFloat(4.0)
     public var debugDescription: String {
         return "BasicButtonSize"
     }
 }
 struct BasicButtonSizeM: ButtonSizeConfiguration {
-    public var cornerRadius = ShapeToken.roundM.cornerRadius
-    public var height = CGFloat(48.0)
-    public var iconHorizontalGap = CGFloat(6.0)
-    public var iconSize = CGSize(width:24.0, height:24.0)
-    public var paddings = EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
-    public var spinnerSize = CGSize(width:22.0, height:22.0)
-    public var titleHorizontalGap = CGFloat(4.0)
+    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var height = CGFloat(48.0)
+    var iconHorizontalGap = CGFloat(6.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+    var spinnerSize = CGSize(width:22.0, height:22.0)
+    var titleHorizontalGap = CGFloat(4.0)
     public var debugDescription: String {
         return "BasicButtonSize"
     }
 }
 struct BasicButtonSizeS: ButtonSizeConfiguration {
-    public var cornerRadius = ShapeToken.roundM.cornerRadius
-    public var height = CGFloat(40.0)
-    public var iconHorizontalGap = CGFloat(4.0)
-    public var iconSize = CGSize(width:24.0, height:24.0)
-    public var paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
-    public var spinnerSize = CGSize(width:22.0, height:22.0)
-    public var titleHorizontalGap = CGFloat(4.0)
+    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var height = CGFloat(40.0)
+    var iconHorizontalGap = CGFloat(4.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+    var spinnerSize = CGSize(width:22.0, height:22.0)
+    var titleHorizontalGap = CGFloat(4.0)
     public var debugDescription: String {
         return "BasicButtonSize"
     }
 }
 struct BasicButtonSizeXs: ButtonSizeConfiguration {
-    public var cornerRadius = ShapeToken.roundS.cornerRadius
-    public var height = CGFloat(32.0)
-    public var iconHorizontalGap = CGFloat(4.0)
-    public var iconSize = CGSize(width:16.0, height:16.0)
-    public var paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
-    public var spinnerSize = CGSize(width:16.0, height:16.0)
-    public var titleHorizontalGap = CGFloat(2.0)
+    var cornerRadius = ShapeToken.roundS.cornerRadius
+    var height = CGFloat(32.0)
+    var iconHorizontalGap = CGFloat(4.0)
+    var iconSize = CGSize(width:16.0, height:16.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+    var spinnerSize = CGSize(width:16.0, height:16.0)
+    var titleHorizontalGap = CGFloat(2.0)
     public var debugDescription: String {
         return "BasicButtonSize"
     }
 }
 
 struct BasicButtonAnySize: ButtonSizeConfiguration {
-    public var cornerRadius = CGFloat(0)
-    public var height = CGFloat(0)
-    public var iconHorizontalGap = CGFloat(0)
-    public var iconSize = CGSize.zero
-    public var paddings = EdgeInsets()
-    public var spinnerSize = CGSize.zero
-    public var titleHorizontalGap = CGFloat(0)
+    var cornerRadius = CGFloat(0)
+    var height = CGFloat(0)
+    var iconHorizontalGap = CGFloat(0)
+    var iconSize = CGSize.zero
+    var paddings = EdgeInsets()
+    var spinnerSize = CGSize.zero
+    var titleHorizontalGap = CGFloat(0)
 
     init(size: ButtonSizeConfiguration) {
         self.cornerRadius = size.cornerRadius

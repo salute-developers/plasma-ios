@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension EnvironmentValues {
+public extension EnvironmentValues {
     var counterAppearance: CounterAppearance {
         get { self[CounterAppearance.self] }
         set { self[CounterAppearance.self] = newValue }
@@ -44,5 +44,15 @@ extension EnvironmentValues {
     var radioboxAppearance: RadioboxAppearance {
         get { self[RadioboxAppearance.self] }
         set { self[RadioboxAppearance.self] = newValue }
+    }
+    
+    var badgeAppearance: BadgeAppearance {
+        get { self[BadgeAppearance.self] }
+        set { self[BadgeAppearance.self] = newValue }
+    }
+    
+    var indicatorAppearance: IndicatorAppearance {
+        get { self[IndicatorAppearance.self] }
+        set { self[IndicatorAppearance.self] = newValue }
     }
 }

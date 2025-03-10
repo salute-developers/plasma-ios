@@ -4,18 +4,22 @@ struct ChipAppearance: CodeGenerationAppearance {
     typealias Variation = ChipConfiguration.Variation
     typealias Props = ChipProps
     
-    var titleColor: String?
-    var titleTypography: String?
-    var imageTintColor: String?
-    var buttonTintColor: String?
-    var disabledAlpha: String?
-    var backgroundColor: String?
+    var titleColor: String? = nil
+    var titleTypography: String? = nil
+    var imageTintColor: String? = nil
+    var buttonTintColor: String? = nil
+    var disabledAlpha: String? = nil
+    var backgroundColor: String? = nil
     
     init(variation: ChipConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: ChipProps, id: String? = nil, component: CodeGenerationComponent) {
+    init(props: ChipProps?, id: String? = nil, component: CodeGenerationComponent) {
+        guard let props = props else {
+            return
+        }
+        
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
         self.backgroundColor = ButtonColorContextBuilder(
             defaultColor: props.backgroundColor,

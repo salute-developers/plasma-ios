@@ -54,5 +54,3 @@ struct RadioboxItemViewModel {
         )
     }
 }
-
-

@@ -71,8 +71,10 @@ struct FocusableTextField: UIViewRepresentable {
         configure(textField)
 
         DispatchQueue.main.async {
-            if isFocused {
-                textField.becomeFirstResponder()
+            if isFocused  {
+                if !textField.isFirstResponder {
+                    textField.becomeFirstResponder()
+                }
             } else {
                 textField.resignFirstResponder()
             }
