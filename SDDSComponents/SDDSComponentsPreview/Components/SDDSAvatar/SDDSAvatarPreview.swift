@@ -6,15 +6,15 @@ import SwiftUI
 // MARK: - Preview
 struct SDDSAvatarPreview: PreviewProvider {
     static var previews: some View {
-        SDDSAvatar(
+        Theme.initialize()
+        return SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.xxl.default.appearance,
             accessibility: AvatarAccessibility()
         )
-        .previewLayout(PreviewLayout.sizeThatFits)
+        .previewLayout(.sizeThatFits)
         .previewDisplayName("Default")
     }
 }

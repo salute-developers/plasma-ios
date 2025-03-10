@@ -4,18 +4,16 @@ import SDDSThemeCore
 
 /**
  `AvatarAppearance` определяет внешний вид аватара, включая цвет текста, фона, цвета статусов и типографику.
-
+ 
  - Properties:
-    - size: Конфигурация размеров для аватара.
-    - textFillStyle: Стиль заливки текста (цвет или градиент).
-    - backgroundFillStyle: Стиль заливки фона (цвет или градиент).
-    - onlineStatusColor: Цвет индикатора статуса "онлайн".
-    - offlineStatusColor: Цвет индикатора статуса "оффлайн".
-    - textTypography: Типографика текста.
+ - size: Конфигурация размеров для аватара.
+ - textFillStyle: Стиль заливки текста (цвет или градиент).
+ - backgroundFillStyle: Стиль заливки фона (цвет или градиент).
+ - onlineStatusColor: Цвет индикатора статуса "онлайн".
+ - offlineStatusColor: Цвет индикатора статуса "оффлайн".
+ - textTypography: Типографика текста.
  */
-public struct AvatarAppearance: EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct AvatarAppearance: Hashable {
     let id = UUID()
     public var size: AvatarSizeConfiguration
     public var textFillStyle: FillStyle
@@ -49,5 +47,11 @@ public struct AvatarAppearance: EnvironmentKey, Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+extension AvatarAppearance: EnvironmentKey {
+    public static var defaultValue: AvatarAppearance {
+        return EnvironmentValueProvider.shared.value(forKey: AvatarAppearance.self)
     }
 }

@@ -16,10 +16,7 @@ public struct SDDSButton: View {
     public let counterViewProvider: ViewProvider?
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
-    private var appearance: ButtonAppearance {
-        _appearance ?? buttonAppearance
-    }
-    @Environment(\.buttonAppearance) var buttonAppearance
+    @Environment(\.buttonAppearance) private var buttonAppearance
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
@@ -303,6 +300,10 @@ private extension SDDSButton {
             Color.clear
                 .frame(width: geometry.size.width)
         }
+    }
+    
+    private var appearance: ButtonAppearance {
+        _appearance ?? buttonAppearance
     }
 }
 

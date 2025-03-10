@@ -20,10 +20,7 @@ public struct SDDSSwitch: View {
     public let isEnabled: Bool
     public let switchAccessibility: SwitchAccessibility
     private var _appearance: SwitchAppearance?
-    private var appearance: SwitchAppearance {
-        _appearance ?? switchAppearance
-    }
-    @Environment(\.switchAppearance) var switchAppearance
+    @Environment(\.switchAppearance) private var switchAppearance
     @Environment(\.colorScheme) var colorScheme
     
     /**
@@ -119,5 +116,9 @@ public struct SDDSSwitch: View {
             .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
             .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
             .accessibilityValue(Text(subtitle))
+    }
+    
+    private var appearance: SwitchAppearance {
+        _appearance ?? switchAppearance
     }
 }
