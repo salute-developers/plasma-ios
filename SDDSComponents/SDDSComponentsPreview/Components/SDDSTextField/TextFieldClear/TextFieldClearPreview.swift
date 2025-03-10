@@ -19,8 +19,6 @@ struct TextFieldClearPreview: PreviewProvider {
             )
         }
         
-        Theme.initialize()
-        
         return Group {
             TextFieldClear(
                 value: .constant(.single("")),

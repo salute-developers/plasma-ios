@@ -2,20 +2,6 @@ import Foundation
 import SDDSComponents
 import SDDSThemeCore
 
-public struct AvatarProvider: AppearanceProvider {
-    public typealias Appearance = AvatarAppearance
-    
-    public static var defaultValue: AvatarAppearance {
-        return Avatar.m.default.appearance
-    }
-}
-
-public struct ServThemeInitializer {
-    public static func initialize() {
-        AvatarAppearance.registerProvider(AvatarProvider.self)
-    }
-}
-
 public struct Avatar {
     public static var xxl: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
         var appearance = AvatarAppearance.base

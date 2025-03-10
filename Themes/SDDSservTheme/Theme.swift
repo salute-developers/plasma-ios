@@ -15,6 +15,7 @@ public class Theme {
         }
         
         FontsService.shared.initialize(fontsDirectoryURL: themeBundleURL)
+        EnvironmentValueProvider.shared.initialize()
     }
     
     private static var bundleName: String {
