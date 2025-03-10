@@ -9,10 +9,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "l.pilled",
             appearance: appearance
@@ -77,10 +77,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "m.pilled",
             appearance: appearance
@@ -145,10 +145,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "s.pilled",
             appearance: appearance
@@ -213,10 +213,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "xs.pilled",
             appearance: appearance
@@ -371,9 +371,9 @@ private extension ChipAppearance {
     var secondary: ChipAppearance {
         var appearance = self
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnLightSecondary, highlightedColor: ColorToken.textOnLightSecondaryActive, hoveredColor: ColorToken.textOnLightSecondaryHover)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
+        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
     

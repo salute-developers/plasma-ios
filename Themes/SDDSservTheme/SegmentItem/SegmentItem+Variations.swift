@@ -119,26 +119,26 @@ private extension SegmentItem {
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
                     hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
+                    selectedColor: .textOnDarkPrimary
                 ),
                 subtitleTypography: SegmentItemTypography.subtitleTypography,
                 subtitleColor: ButtonColor(
                     defaultColor: .textDefaultSecondary,
                     highlightedColor: .textDefaultSecondaryActive,
                     hoveredColor: .textDefaultSecondaryHover,
-                    selectedColor: .textDefaultSecondary
+                    selectedColor: .textOnDarkPrimary
                 ),
                 iconColor: ButtonColor(
                     defaultColor: .textDefaultPrimary,
                     highlightedColor: .textDefaultPrimaryActive,
                     hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
+                    selectedColor: .textOnDarkPrimary
                 ),
                 backgroundColor: ButtonColor(
                     defaultColor: .surfaceDefaultClear,
                     highlightedColor: .surfaceDefaultClearActive,
                     hoveredColor: .surfaceDefaultClearHover,
-                    selectedColor: .surfaceDefaultTransparentCard
+                    selectedColor: .surfaceInverseAccent
                 ),
                 disabledAlpha: 0.4
             )

@@ -11,11 +11,24 @@ public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
         return .init(name: "primary", appearance: appearance)
     }
     
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = Segment.default.appearance
+        appearance.size = self.appearance.size
+        
+        var secondary = SegmentItem.m.secondary.appearance
+        secondary.size = self.appearance.segmentItemAppearance.size
+        secondary.counterAppearance = self.appearance.segmentItemAppearance.counterAppearance
+        appearance.segmentItemAppearance = secondary
+        
+        return .init(name: "secondary", appearance: appearance)
+    }
+    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
             styles: [
-                self.`default`
+                self.`default`,
+                self.secondary
             ],
             name: name,
             appearance: appearance
