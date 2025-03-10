@@ -59,7 +59,7 @@ struct ChipSizeS: ChipSizeConfiguration {
     public var contentEndPadding = CGFloat(4.0)
     public var contentStartPadding = CGFloat(4.0)
     public var cornerRadius = ShapeToken.roundS.cornerRadius
-    public var height = CGFloat(40.0)
+    public var height = CGFloat(32.0)
     public var iconImageSize: CGSize? = CGSize(width:16.0, height:16.0)
     public var leadingInset = CGFloat(12.0)
     public var trailingInset = CGFloat(12.0)
