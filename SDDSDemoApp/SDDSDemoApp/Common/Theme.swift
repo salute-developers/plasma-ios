@@ -298,4 +298,26 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Cell.all
         }
     }
+    
+    var cardVariations: [Variation<CardAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Card.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Card.all
+        }
+    }
+    
+    var cardClearVariations: [Variation<CardAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CardClear.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CardClear.all
+        }
+    }
 }

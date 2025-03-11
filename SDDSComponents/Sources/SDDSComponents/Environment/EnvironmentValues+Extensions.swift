@@ -1,5 +1,6 @@
 import SwiftUI
 
+// MARK: - Appearance
 public extension EnvironmentValues {
     var counterAppearance: CounterAppearance {
         get { self[CounterAppearance.self] }
@@ -80,4 +81,10 @@ public extension EnvironmentValues {
         get { self[ProgressBarAppearance.self] }
         set { self[ProgressBarAppearance.self] = newValue }
     }
+
+    var cardAppearance: CardAppearance {
+        get { self[CardAppearance.self] }
+        set { self[CardAppearance.self] = newValue }
+    }
+    
 }

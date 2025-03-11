@@ -176,6 +176,10 @@
 		81F7532C2CF46885000156D9 /* ButtonShapeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7532B2CF46885000156D9 /* ButtonShapeStyle.swift */; };
 		81F7532E2CF4689C000156D9 /* ButtonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7532D2CF4689C000156D9 /* ButtonAccessibility.swift */; };
 		81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752FE2CEFA3AF000156D9 /* String+Variations.swift */; };
+		81F89DE82D808A8500A41C89 /* SDDSCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DE72D808A8200A41C89 /* SDDSCard.swift */; };
+		81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DE92D808A8800A41C89 /* CardAppearance.swift */; };
+		81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DEB2D808A9200A41C89 /* CardSizeConfiguration.swift */; };
+		81F89DEF2D808C9700A41C89 /* SDDSCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */; };
 		81FD6D4E2D6E2609002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */; };
 		81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */; };
 		81FD6D5B2D6E285C002A6E51 /* SDDSIndicatorPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */; };
@@ -416,6 +420,10 @@
 		81F753292CF4684F000156D9 /* ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAppearance.swift; sourceTree = "<group>"; };
 		81F7532B2CF46885000156D9 /* ButtonShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonShapeStyle.swift; sourceTree = "<group>"; };
 		81F7532D2CF4689C000156D9 /* ButtonAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAccessibility.swift; sourceTree = "<group>"; };
+		81F89DE72D808A8200A41C89 /* SDDSCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCard.swift; sourceTree = "<group>"; };
+		81F89DE92D808A8800A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
+		81F89DEB2D808A9200A41C89 /* CardSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSizeConfiguration.swift; sourceTree = "<group>"; };
+		81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCardContent.swift; sourceTree = "<group>"; };
 		81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIndicator.swift; sourceTree = "<group>"; };
 		81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
 		81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSizeConfiguration.swift; sourceTree = "<group>"; };
@@ -966,6 +974,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F89DE62D808A7B00A41C89 /* SDDSCard */,
 				6925101B2D7632CA00545542 /* SDDSBadge */,
 				81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */,
 				6969429A2D6F0D8C00F43C38 /* SDDSCell */,
@@ -1272,6 +1281,25 @@
 			path = ButtonAppearance;
 			sourceTree = "<group>";
 		};
+		81F89DE62D808A7B00A41C89 /* SDDSCard */ = {
+			isa = PBXGroup;
+			children = (
+				81F89DED2D808AB300A41C89 /* CardAppearance */,
+				81F89DE72D808A8200A41C89 /* SDDSCard.swift */,
+				81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */,
+			);
+			path = SDDSCard;
+			sourceTree = "<group>";
+		};
+		81F89DED2D808AB300A41C89 /* CardAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81F89DEB2D808A9200A41C89 /* CardSizeConfiguration.swift */,
+				81F89DE92D808A8800A41C89 /* CardAppearance.swift */,
+			);
+			path = CardAppearance;
+			sourceTree = "<group>";
+		};
 		81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1504,6 +1532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
 				817339DE2D033D860092608A /* ChipAccessibility.swift in Sources */,
@@ -1536,6 +1565,7 @@
 				812DB7542D57B44100D3F4A3 /* TextFieldValue.swift in Sources */,
 				812DB7432D57B43900D3F4A3 /* TextArea.swift in Sources */,
 				81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */,
+				81F89DEF2D808C9700A41C89 /* SDDSCardContent.swift in Sources */,
 				69C0356C2D4F8AC4005D3B95 /* SegmentSizeConfiguration.swift in Sources */,
 				81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */,
 				812DB7602D57B49F00D3F4A3 /* ChipGroupAppearance.swift in Sources */,
@@ -1589,6 +1619,7 @@
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
 				692510212D7632CA00545542 /* SDDSBadge.swift in Sources */,
+				81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */,
 				692510222D7632CA00545542 /* BadgeAlignment+Extensions.swift in Sources */,
 				692510232D7632CA00545542 /* BadgeAlignment.swift in Sources */,
 				692510242D7632CA00545542 /* BadgeSizeConfiguration.swift in Sources */,
@@ -1625,6 +1656,7 @@
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
+				81F89DE82D808A8500A41C89 /* SDDSCard.swift in Sources */,
 				69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */,

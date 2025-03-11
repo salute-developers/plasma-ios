@@ -334,6 +334,10 @@
 		81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */; };
 		81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE732BE4E17800F86AE1 /* FontFamily.swift */; };
 		81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE752BE4E18800F86AE1 /* Font.swift */; };
+		81F89E472D819AA100A41C89 /* ShapeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E462D819A9E00A41C89 /* ShapeContent.swift */; };
+		81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E502D81A6E900A41C89 /* CardSize.swift */; };
+		81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E522D81A6ED00A41C89 /* CardAppearance.swift */; };
+		81F89E552D81A92000A41C89 /* CardProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E542D81A91E00A41C89 /* CardProps.swift */; };
 		81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */; };
 		81FD6D562D6E2779002A6E51 /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */; };
 		81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */; };
@@ -722,6 +726,10 @@
 		81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallFontsCommand.swift; sourceTree = "<group>"; };
 		81E1EE732BE4E17800F86AE1 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
 		81E1EE752BE4E18800F86AE1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		81F89E462D819A9E00A41C89 /* ShapeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeContent.swift; sourceTree = "<group>"; };
+		81F89E502D81A6E900A41C89 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
+		81F89E522D81A6ED00A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
+		81F89E542D81A91E00A41C89 /* CardProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProps.swift; sourceTree = "<group>"; };
 		81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProps.swift; sourceTree = "<group>"; };
 		81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSize.swift; sourceTree = "<group>"; };
 		81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
@@ -987,6 +995,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F89E542D81A91E00A41C89 /* CardProps.swift */,
 				81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */,
 				81763AFE2D6DE67B00904D4A /* BadgeProps.swift */,
 				6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */,
@@ -1001,6 +1010,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F89E4F2D81A6E100A41C89 /* Card */,
 				6935CEB52D6C8B5400C8A186 /* Counter */,
 				697970E02D63A6DE008306A8 /* Cell */,
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
@@ -1318,6 +1328,7 @@
 		8180A4B52C0F71A500009AF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81F89E462D819A9E00A41C89 /* ShapeContent.swift */,
 				8180A4B62C0F71A500009AF5 /* GradientView.swift */,
 			);
 			path = Views;
@@ -1655,6 +1666,15 @@
 				81E1EE752BE4E18800F86AE1 /* Font.swift */,
 			);
 			path = FontFamily;
+			sourceTree = "<group>";
+		};
+		81F89E4F2D81A6E100A41C89 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				81F89E522D81A6ED00A41C89 /* CardAppearance.swift */,
+				81F89E502D81A6E900A41C89 /* CardSize.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		81FD6D542D6E2768002A6E51 /* Indicator */ = {
@@ -2081,6 +2101,7 @@
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */,
+				81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */,
 				81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */,
 				81E1EDF62BDA7B9900F86AE1 /* ScreenSize.swift in Sources */,
 				81E1EE422BE3A5D700F86AE1 /* TypographyKind.swift in Sources */,
@@ -2137,9 +2158,11 @@
 				817539882BD008A500138866 /* Constants.swift in Sources */,
 				81CB0FEA2C245052003B1064 /* EnsureAnyValueExistsNode.swift in Sources */,
 				81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */,
+				81F89E552D81A92000A41C89 /* CardProps.swift in Sources */,
 				81CB0FE82C245052003B1064 /* EnsureFloatNonNegativeNode.swift in Sources */,
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
+				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
 				81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */,
@@ -2308,6 +2331,7 @@
 				8180A5A52C11C35200009AF5 /* GradientToken.swift in Sources */,
 				8180A5A02C11C34400009AF5 /* View+Conditional.swift in Sources */,
 				8180A59C2C11C34400009AF5 /* ColorToken+Theme.swift in Sources */,
+				81F89E472D819AA100A41C89 /* ShapeContent.swift in Sources */,
 				8180A5AB2C11C37F00009AF5 /* Device.swift in Sources */,
 				8180A5A22C11C34400009AF5 /* GradientToken+SwiftUI.swift in Sources */,
 				8180A5A12C11C34400009AF5 /* TypographyToken+Extensions.swift in Sources */,
