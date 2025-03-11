@@ -736,7 +736,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -751,7 +751,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -800,7 +800,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredEnd: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
@@ -815,7 +815,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
     
     var requiredStart: ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
         var size =  TextAreaClearAnySize(size: appearance.size)
-        size.indicatorOffset = CGPoint(x:6.0, y:24.0)
+        size.indicatorOffset = CGPoint(x:6.0, y:28.0)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
 
         var appearance = appearance
