@@ -20,9 +20,7 @@ import SwiftUI
  - switchStyle: Стиль компонента Switch.
  - radioBoxStyle: Стиль компонента RadioBox.
  */
-public struct CellAppearance: EnvironmentKey {
-    public static let defaultValue: Self = .init()
-    
+public struct CellAppearance {
     public var size: CellSizeConfiguration
     public var labelTypography: TypographyConfiguration
     public var labelColor: ColorToken
@@ -74,5 +72,11 @@ public struct CellAppearance: EnvironmentKey {
         self.checkboxAppearance = checkboxAppearance
         self.radioboxAppearance = radioboxAppearance
         self.switchAppearance = switchAppearance
+    }
+}
+
+extension CellAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: CellAppearance.self, fallback: CellAppearance())
     }
 }
