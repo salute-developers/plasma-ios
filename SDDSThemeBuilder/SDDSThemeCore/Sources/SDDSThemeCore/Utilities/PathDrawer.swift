@@ -7,7 +7,7 @@ public protocol PathDrawer: AnyObject {
 
 public final class DefaultPathDrawer: PathDrawer {
     public func path(in rect: CGRect) -> Path {
-        return Path()
+        return Path(rect)
     }
     
     public init(){}
@@ -23,4 +23,19 @@ public final class CircleDrawer: PathDrawer {
     }
     
     public init(){}
+}
+
+public final class CornerRadiusDrawer: PathDrawer {
+    let cornerRadius: CGFloat
+    
+    public init(cornerRadius: CGFloat) {
+        self.cornerRadius = cornerRadius
+    }
+    
+    public func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.addRoundedRect(in: rect, cornerSize: CGSize(width: cornerRadius, height: cornerRadius))
+        return path
+    }
+    
 }

@@ -20,7 +20,8 @@ struct ComponentsView: View {
         ("SDDSSegment", AnyView(SegmentView())),
         ("SDDSBadge", AnyView(BadgeView())),
         ("SDDSIndicator", AnyView(IndicatorView())),
-        ("SDDSCell", AnyView(CellView()))
+        ("SDDSCell", AnyView(CellView())),
+        ("SDDSCard", AnyView(CardView()))
     ]
 
     var body: some View {

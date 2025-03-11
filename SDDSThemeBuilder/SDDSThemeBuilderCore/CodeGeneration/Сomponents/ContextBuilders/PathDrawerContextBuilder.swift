@@ -1,12 +1,29 @@
 import Foundation
 
 enum PathDrawerSupportedType: String {
+    static let pathDrawerArgument: String = "%@"
+    
     case circle = "round.circle"
+    case `default` = "round"
     
     var name: String {
         switch self {
         case .circle:
             "CircleDrawer()"
+        case .`default`:
+            "CornerRadiusDrawer(cornerRadius: \(PathDrawerSupportedType.pathDrawerArgument))"
+        }
+    }
+    
+    func applyArgument(argument: String) -> String {
+        switch self {
+        case .circle:
+            return name
+        case .default:
+            return name.replacingOccurrences(
+                of: PathDrawerSupportedType.pathDrawerArgument,
+                with: argument
+            )
         }
     }
 }
@@ -25,11 +42,18 @@ final class PathDrawerContextBuilder: CodeGenerationContextBuilder {
             return nullify ? nil : PathDrawerContextBuilder.context(name: PathDrawerContextBuilder.defaultContext)
         }
         
-        guard let supportedType = PathDrawerSupportedType(rawValue: value) else {
+        if let recognizedType = PathDrawerSupportedType(rawValue: value) {
+            return PathDrawerContextBuilder.context(name: recognizedType.name)
+        } else {
+            let prefix = value.components(separatedBy: ".").first ?? ""
+            if prefix == PathDrawerSupportedType.default.rawValue {
+                let defaultType = PathDrawerSupportedType.default
+                let cornerRadius = ShapeTokenContexBuilder.init(shape: shape).context ?? ""
+                return PathDrawerContextBuilder.context(name: defaultType.applyArgument(argument: cornerRadius))
+            }
+            
             return PathDrawerContextBuilder.context(name: PathDrawerContextBuilder.defaultContext)
         }
-        
-        return PathDrawerContextBuilder.context(name: supportedType.name)
     }
     
     private static func context(name: String) -> String {

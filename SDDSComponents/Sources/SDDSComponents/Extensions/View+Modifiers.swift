@@ -9,7 +9,7 @@ public extension View {
             self
         }
     }
-    
+        
     @ViewBuilder func hiddenIf(_ condition: @autoclosure () -> Bool) -> some View {
         applyIf(condition(), transform: { $0.hidden() })
     }
@@ -17,6 +17,17 @@ public extension View {
     @ViewBuilder func apply<Content: View>(transform: (Self) -> Content) -> some View {
         transform(self)
     }
+    
+    @ViewBuilder func applyIfLet<Content: View, T>(
+            _ value: T?,
+            transform: (Self, T) -> Content
+        ) -> some View {
+            if let unwrappedValue = value {
+                transform(self, unwrappedValue)
+            } else {
+                self
+            }
+        }
 }
 
 extension View {
