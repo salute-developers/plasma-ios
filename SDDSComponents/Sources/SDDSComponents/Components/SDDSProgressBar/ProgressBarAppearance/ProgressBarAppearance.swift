@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-import SDDSThemeCore
+@_exported import SDDSThemeCore
 
 /**
  `ProgressBarAppearance` определяет внешний вид прогресс-бара, включая цвет индикатора и фона.
