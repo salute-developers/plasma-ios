@@ -34,6 +34,16 @@ public struct LinkButton {
             appearance: appearance
         )
     }
+    public static var xl: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
+        var appearance = ButtonAppearance.base
+        appearance.size = LinkButtonSize.xl
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
     public static var xs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xs
@@ -44,12 +54,24 @@ public struct LinkButton {
             appearance: appearance
         )
     }
+    public static var xxs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
+        var appearance = ButtonAppearance.base
+        appearance.size = LinkButtonSize.xxs
+        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+
+        return .init(
+            name: "xxs",
+            appearance: appearance
+        )
+    }
     
     public static let all: [Variation<ButtonAppearance>] = [
         LinkButton.l.variation,
         LinkButton.m.variation,
         LinkButton.s.variation,
+        LinkButton.xl.variation,
         LinkButton.xs.variation,
+        LinkButton.xxs.variation,
     ]
 }
 
@@ -57,7 +79,9 @@ public struct LinkButtonVariation {
     public struct L {}
     public struct M {}
     public struct S {}
+    public struct Xl {}
     public struct Xs {}
+    public struct Xxs {}
 }
 
 private extension ButtonAppearance {
