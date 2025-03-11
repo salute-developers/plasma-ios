@@ -9,4 +9,3 @@ extension EnvironmentValueProvider {
         self.set(value: Counter.m.default.appearance, forKey: CounterAppearance.self)
     }
 }
-
