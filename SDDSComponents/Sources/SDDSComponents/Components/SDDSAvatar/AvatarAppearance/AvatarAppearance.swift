@@ -4,14 +4,14 @@ import SDDSThemeCore
 
 /**
  `AvatarAppearance` определяет внешний вид аватара, включая цвет текста, фона, цвета статусов и типографику.
- 
+
  - Properties:
- - size: Конфигурация размеров для аватара.
- - textFillStyle: Стиль заливки текста (цвет или градиент).
- - backgroundFillStyle: Стиль заливки фона (цвет или градиент).
- - onlineStatusColor: Цвет индикатора статуса "онлайн".
- - offlineStatusColor: Цвет индикатора статуса "оффлайн".
- - textTypography: Типографика текста.
+    - size: Конфигурация размеров для аватара.
+    - textFillStyle: Стиль заливки текста (цвет или градиент).
+    - backgroundFillStyle: Стиль заливки фона (цвет или градиент).
+    - onlineStatusColor: Цвет индикатора статуса "онлайн".
+    - offlineStatusColor: Цвет индикатора статуса "оффлайн".
+    - textTypography: Типографика текста.
  */
 public struct AvatarAppearance: Hashable {
     let id = UUID()
