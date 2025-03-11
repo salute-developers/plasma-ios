@@ -52,6 +52,6 @@ public struct AvatarAppearance: Hashable {
 
 extension AvatarAppearance: EnvironmentKey {
     public static var defaultValue: AvatarAppearance {
-        return EnvironmentValueProvider.shared.value(forKey: AvatarAppearance.self)
+        EnvironmentValueProvider.shared.value(forKey: AvatarAppearance.self, fallback: AvatarAppearance())
     }
 }

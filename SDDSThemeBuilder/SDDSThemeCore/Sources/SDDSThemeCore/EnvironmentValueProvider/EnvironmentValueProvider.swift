@@ -12,17 +12,13 @@ public final class EnvironmentValueProvider {
         values[String(describing: key)] = value
     }
 
-    public func value<Value>(forKey key: any EnvironmentKey.Type) -> Value {
+    public func value<Value>(forKey key: any EnvironmentKey.Type, fallback: Value) -> Value {
         print("values: \(values.count)")
         if let value = values[String(describing: key)] as? Value {
             print("VALUE: \(value)")
             return value
         } else {
-            if let value = key.defaultValue as? Value {
-                print("KEY: \(value)")
-                return value
-            }
-            fatalError()
+            return fallback
         }
     }
 }
