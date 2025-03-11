@@ -3,6 +3,7 @@ import SwiftUI
 import SDDSComponents
 
 public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
+    case large
     case medium
     case small
     
@@ -12,10 +13,12 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
     
     public var imageSize: CGSize {
         switch self {
+        case .large:
+                .init(width: 24, height: 24)
         case .medium:
-            .init(width: 24, height: 24)
+                .init(width: 24, height: 24)
         case .small:
-            .init(width: 16, height: 16)
+                .init(width: 16, height: 16)
         }
     }
     
@@ -25,6 +28,8 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
     
     public var horizontalGap: CGFloat {
         switch self {
+        case .large:
+            12.0
         case .medium:
             12.0
         case .small:

@@ -26,6 +26,8 @@ final class RadioboxGroupViewModel: ObservableObject {
  extension SDDSRadioboxGroupSize {
      var radioboxSize: SDDSRadioboxSize {
          switch self {
+         case .large:
+             return .large
          case .medium:
              return .medium
          case .small:

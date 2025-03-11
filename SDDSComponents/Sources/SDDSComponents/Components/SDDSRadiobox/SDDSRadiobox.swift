@@ -78,11 +78,14 @@ public extension RadioboxImages {
 }
 
 public enum SDDSRadioboxGroupSize: String, RadioboxGroupSizeConfiguration, CaseIterable {
+    case large
     case medium
     case small
     
     public var verticalSpacing: CGFloat {
         switch self {
+        case .large:
+            8
         case .medium:
             8
         case .small:

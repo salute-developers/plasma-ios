@@ -84,6 +84,8 @@ struct CheckboxItemViewModel: Identifiable {
 private extension SDDSCheckboxGroupSize {
    var checkboxSize: SDDSCheckboxSize {
        switch self {
+       case .large:
+           return .large
        case .medium:
            return .medium
        case .small:
