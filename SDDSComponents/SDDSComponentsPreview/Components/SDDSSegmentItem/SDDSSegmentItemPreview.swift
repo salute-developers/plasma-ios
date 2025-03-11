@@ -5,15 +5,11 @@ import SDDSServTheme
 
 // MARK: - Preview
 struct SDDSSegmentItemsPreview: PreviewProvider {
-    static var counterAppearance: CounterAppearance {
-        SDDSCounter.accent.small.appearance
-    }
-    
     static var counterViewProvider: ViewProvider {
         ViewProvider(
             SDDSCounter(
                 text: "1",
-                appearance: counterAppearance,
+                appearance: Counter.s.accent.appearance,
                 isAnimating: false,
                 isHighlighted: false,
                 isHovered: false
@@ -26,9 +22,8 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
             title: "Value",
             subtitle: "Subtitle",
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-            isSelected: true, 
-            appearance: SDDSSegmentItem.large.primary.appearance,
-            counterAppearance: nil,
+            isSelected: true,
+            appearance: SegmentItem.l.primary.appearance,
             action: {}
         )
         .previewLayout(.sizeThatFits)

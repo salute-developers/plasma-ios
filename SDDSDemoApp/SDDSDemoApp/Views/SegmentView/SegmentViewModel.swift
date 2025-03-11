@@ -82,7 +82,6 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
 extension SegmentViewModel {
     func addItem() {
         let counterApp = self.appearance.segmentItemAppearance.counterAppearance
-        print(counterApp)
         let id = UUID()
         let item = SDDSSegmentItemData(
             id: id,

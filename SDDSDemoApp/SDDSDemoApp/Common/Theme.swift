@@ -99,20 +99,18 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             return fallback
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Avatar.all
         }
     }
     
     var counterVariations: [Variation<CounterAppearance>] {
-        let fallback = SDDSServTheme.Counter.all
-        
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Counter.all
         case .stylesSalute:
-            return fallback
+            return StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.Counter.all
         }
     }
     
@@ -199,7 +197,7 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             return fallback
         case .plasmaB2CTheme:
-            return fallback
+            return PlasmaB2CTheme.SegmentItem.all
         }
     }
     
@@ -226,6 +224,94 @@ enum Theme: String, CaseIterable {
             return fallback
         case .plasmaB2CTheme:
             return fallback
+        }
+    }
+    
+    var badgeVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Badge.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Badge.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Badge.all
+        }
+    }
+    
+    var badgeClearVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.BadgeClear.all
+        case .stylesSalute:
+            return StylesSaluteTheme.BadgeClear.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.BadgeClear.all
+        }
+    }
+    
+    var badgeTransparentVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.BadgeTransparent.all
+        case .stylesSalute:
+            return StylesSaluteTheme.BadgeTransparent.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.BadgeTransparent.all
+        }
+    }
+    
+    var iconBadgeVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.IconBadge.all
+        case .stylesSalute:
+            return StylesSaluteTheme.IconBadge.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.IconBadge.all
+        }
+    }
+    
+    var iconBadgeClearVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.IconBadgeClear.all
+        case .stylesSalute:
+            return StylesSaluteTheme.IconBadgeClear.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.IconBadgeClear.all
+        }
+    }
+    
+    var iconBadgeTransparentVariations: [Variation<BadgeAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.IconBadgeTransparent.all
+        case .stylesSalute:
+            return StylesSaluteTheme.IconBadgeTransparent.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.IconBadgeTransparent.all
+        }
+    }
+    
+    var indicatorVariations: [Variation<IndicatorAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Indicator.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Indicator.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Indicator.all
+        }
+    }
+    
+    var cellVariations: [Variation<CellAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Cell.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Cell.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Cell.all
         }
     }
 }

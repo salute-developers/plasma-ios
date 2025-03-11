@@ -11,12 +11,15 @@ public struct SDDSButton: View {
     public let isLoading: Bool
     public let spinnerImage: Image?
     public let buttonStyle: SDDSComponents.ButtonStyle
-    public let appearance: ButtonAppearance
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
     public let counterViewProvider: ViewProvider?
     public let isSelected: Bool
-    
+    private var _appearance: ButtonAppearance?
+    private var appearance: ButtonAppearance {
+        _appearance ?? buttonAppearance
+    }
+    @Environment(\.buttonAppearance) var buttonAppearance
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
@@ -32,7 +35,7 @@ public struct SDDSButton: View {
         isLoading: Bool = false,
         spinnerImage: Image? = Image("spinner", bundle: Bundle(for: Components.self)),
         buttonStyle: SDDSComponents.ButtonStyle = .basic,
-        appearance: ButtonAppearance,
+        appearance: ButtonAppearance? = nil,
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
         counterViewProvider: ViewProvider? = nil,
@@ -46,7 +49,7 @@ public struct SDDSButton: View {
         self.isLoading = isLoading
         self.spinnerImage = spinnerImage
         self.buttonStyle = buttonStyle
-        self.appearance = appearance
+        self._appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
         self.counterViewProvider = counterViewProvider
