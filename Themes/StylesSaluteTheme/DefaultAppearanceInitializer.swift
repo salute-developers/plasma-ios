@@ -6,7 +6,7 @@ extension EnvironmentValueProvider {
     func initialize() {
         self.set(value: Avatar.m.default.appearance, forKey: AvatarAppearance.self)
         self.set(value: Counter.m.default.appearance, forKey: CounterAppearance.self)
-        self.set(value: Badge.m.default.appearance, forKey: BadgeAppearance.self)
+//        self.set(value: Badge.m.default.appearance, forKey: BadgeAppearance.self)
         self.set(value: BasicButton.m.default.appearance, forKey: ButtonAppearance.self)
         self.set(value: Cell.m.appearance, forKey: CellAppearance.self)
         self.set(value: Checkbox.m.default.appearance, forKey: CheckboxAppearance.self)
