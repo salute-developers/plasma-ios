@@ -2,9 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
-public struct TextAreaAppearance: EnvironmentKey {
-    public static let defaultValue: Self = .init()
-    
+public struct TextAreaAppearance {
     public var id = UUID()
     public var size: TextAreaSizeConfiguration
     public var chipAppearance: ChipAppearance
@@ -208,5 +206,11 @@ extension TextAreaAppearance: Hashable {
         hasher.combine(textColorReadOnly)
         hasher.combine(titleColor)
         hasher.combine(titleTextAlignment)
+    }
+}
+
+extension TextAreaAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: TextAreaAppearance.self, fallback: TextAreaAppearance())
     }
 }

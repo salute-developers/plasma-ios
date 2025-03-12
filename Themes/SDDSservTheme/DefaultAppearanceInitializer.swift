@@ -18,5 +18,7 @@ extension EnvironmentValueProvider {
         self.set(value: Segment.m.default.appearance, forKey: SegmentAppearance.self)
         self.set(value: SegmentItem.m.primary.appearance, forKey: SegmentItemAppearance.self)
         self.set(value: Switch.m.default.appearance, forKey: SwitchAppearance.self)
+        self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
+        self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
     }
 }
