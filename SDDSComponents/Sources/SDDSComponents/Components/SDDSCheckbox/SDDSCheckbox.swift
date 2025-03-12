@@ -21,7 +21,7 @@ public struct SDDSCheckbox: View {
     let images: SelectionControlStateImages
     let accessibility: SelectionControlAccessibility
     private var _appearance: CheckboxAppearance?
-    @Environment(\.checkboxAppearance) private var checkboxAppearance
+    @Environment(\.checkboxAppearance) private var environmentAppearance
     
     /**
      Инициализатор для создания чекбокса с заданными параметрами.
@@ -83,8 +83,9 @@ public struct SDDSCheckbox: View {
         )
     }
     
-    private var appearance: CheckboxAppearance {
-        _appearance ?? checkboxAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: CheckboxAppearance {
+        _appearance ?? environmentAppearance
     }
 }
 

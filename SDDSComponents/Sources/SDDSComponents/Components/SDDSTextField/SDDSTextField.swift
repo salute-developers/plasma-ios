@@ -46,7 +46,7 @@ public struct SDDSTextField: View {
     public let iconActionViewProvider: ViewProvider?
 
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.textFieldAppearance) private var textFieldAppearance
+    @Environment(\.textFieldAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
@@ -798,7 +798,8 @@ public struct SDDSTextField: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    private var appearance: TextFieldAppearance {
-        _appearance ?? textFieldAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: TextFieldAppearance {
+        _appearance ?? environmentAppearance
     }
 }

@@ -21,7 +21,7 @@ public struct SDDSAvatar: View {
     let accessibility: AvatarAccessibility
     var _appearance: AvatarAppearance?
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.avatarAppearance) private var avatarAppearance
+    @Environment(\.avatarAppearance) private var environmentAppearance
     
     public init(
         text: String,
@@ -148,7 +148,8 @@ public struct SDDSAvatar: View {
         }
     }
     
-    private var appearance: AvatarAppearance {
-        _appearance ?? avatarAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: AvatarAppearance {
+        _appearance ?? environmentAppearance
     }
 }

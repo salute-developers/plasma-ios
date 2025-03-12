@@ -48,7 +48,7 @@ public struct SDDSTextArea: View {
     public let iconActionViewProvider: ViewProvider?
 
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.textAreaAppearance) private var textAreaAppearance
+    @Environment(\.textAreaAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var textHeight: CGFloat = 0.0
     @State private var chipGroupContentHeight: CGFloat = 0
@@ -802,8 +802,9 @@ public struct SDDSTextArea: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    private var appearance: TextAreaAppearance {
-        _appearance ?? textAreaAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: TextAreaAppearance {
+        _appearance ?? environmentAppearance
     }
 
 }

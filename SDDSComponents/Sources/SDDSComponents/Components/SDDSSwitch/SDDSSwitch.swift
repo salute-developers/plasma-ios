@@ -20,7 +20,7 @@ public struct SDDSSwitch: View {
     public let isEnabled: Bool
     public let switchAccessibility: SwitchAccessibility
     private var _appearance: SwitchAppearance?
-    @Environment(\.switchAppearance) private var switchAppearance
+    @Environment(\.switchAppearance) private var environmentAppearance
     @Environment(\.colorScheme) var colorScheme
     
     /**
@@ -118,7 +118,8 @@ public struct SDDSSwitch: View {
             .accessibilityValue(Text(subtitle))
     }
     
-    private var appearance: SwitchAppearance {
-        _appearance ?? switchAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: SwitchAppearance {
+        _appearance ?? environmentAppearance
     }
 }

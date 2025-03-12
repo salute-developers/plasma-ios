@@ -11,7 +11,7 @@ public struct SDDSSegment: View {
     public let hasBackground: Bool
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
-    @Environment(\.segmentAppearance) private var segmentAppearance: SegmentAppearance
+    @Environment(\.segmentAppearance) private var environmentAppearance
     
     @Binding public var selectedItemId: UUID?
 
@@ -126,7 +126,8 @@ public struct SDDSSegment: View {
         return .clear
     }
     
-    private var appearance: SegmentAppearance {
-        _appearance ?? segmentAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: SegmentAppearance {
+        _appearance ?? environmentAppearance
     }
 }

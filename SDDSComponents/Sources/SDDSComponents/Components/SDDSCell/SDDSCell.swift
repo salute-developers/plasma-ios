@@ -18,7 +18,7 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     public let rightContent: RightContent
     
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.cellAppearance) private var cellAppearance
+    @Environment(\.cellAppearance) private var environmentAppearance
     
     public init(
         appearance: CellAppearance? = nil,
@@ -140,7 +140,8 @@ extension SDDSCell {
         }
     }
     
-    private var appearance: CellAppearance {
-        _appearance ?? cellAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: CellAppearance {
+        _appearance ?? environmentAppearance
     }
 }

@@ -16,7 +16,7 @@ public struct SDDSChipGroup: View {
     let flat: Bool
     @Binding var height: CGFloat
 
-    @Environment(\.chipGroupAppearance) private var chipGroupAppearance
+    @Environment(\.chipGroupAppearance) private var environmentAppearance
     
     public init(
         data: [ChipData],
@@ -151,7 +151,8 @@ public struct SDDSChipGroup: View {
         return chipData.appearance.size.height
     }
     
-    private var appearance: ChipGroupAppearance {
-        _appearance ?? chipGroupAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: ChipGroupAppearance {
+        _appearance ?? environmentAppearance
     }
 }

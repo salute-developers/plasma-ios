@@ -24,7 +24,7 @@ public struct SDDSChip: View {
     let removeAction: () -> Void
     
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.chipAppearance) private var chipAppearance
+    @Environment(\.chipAppearance) private var environmentAppearance
 
     /**
      Инициализатор для создания чипа с заданными параметрами.
@@ -143,7 +143,8 @@ public struct SDDSChip: View {
         removeAction()
     }
     
-    private var appearance: ChipAppearance {
-        _appearance ?? chipAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: ChipAppearance {
+        _appearance ?? environmentAppearance
     }
 }

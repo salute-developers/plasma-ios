@@ -16,6 +16,6 @@ final class CellVariationProvider: VariationProvider {
     }
     
     var defaultValue: CellAppearance {
-        variations.first?.appearance ?? Cell.m.appearance
+        CellAppearance.defaultValue
     }
 }

@@ -16,7 +16,7 @@ public struct SDDSButton: View {
     public let counterViewProvider: ViewProvider?
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
-    @Environment(\.buttonAppearance) private var buttonAppearance
+    @Environment(\.buttonAppearance) private var environmentAppearance
     @Environment(\.colorScheme) var colorScheme
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
@@ -302,8 +302,9 @@ private extension SDDSButton {
         }
     }
     
-    private var appearance: ButtonAppearance {
-        _appearance ?? buttonAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: ButtonAppearance {
+        _appearance ?? environmentAppearance
     }
 }
 

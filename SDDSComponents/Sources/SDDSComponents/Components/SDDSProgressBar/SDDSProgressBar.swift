@@ -18,7 +18,7 @@ public struct SDDSProgressView: View {
     let accessibility: ProgressBarAccessibility
     
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.progressBarAppearance) private var progressBarAppearance
+    @Environment(\.progressBarAppearance) private var environmentAppearance
     
     /**
      Инициализатор для создания прогресс-бара с заданными параметрами.
@@ -81,8 +81,9 @@ public struct SDDSProgressView: View {
         max(min(progress, 1.0), 0.0)
     }
 
-    private var appearance: ProgressBarAppearance {
-        _appearance ?? progressBarAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: ProgressBarAppearance {
+        _appearance ?? environmentAppearance
     }
 }
 

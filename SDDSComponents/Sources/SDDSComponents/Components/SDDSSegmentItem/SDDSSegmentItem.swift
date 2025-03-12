@@ -15,7 +15,7 @@ public struct SDDSSegmentItem: View {
     public let counterViewProvider: CounterViewProvider?
     public var action: () -> Void
     
-    @Environment(\.segmentItemAppearance) private var segmentItemAppearance
+    @Environment(\.segmentItemAppearance) private var environmentAppearance
     
     public init(item: SDDSSegmentItemData) {
         self.id = item.id
@@ -108,7 +108,8 @@ extension SDDSSegmentItem {
         }
     }
     
-    private var appearance: SegmentItemAppearance {
-        _appearance ?? segmentItemAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: SegmentItemAppearance {
+        _appearance ?? environmentAppearance
     }
 }

@@ -7,7 +7,7 @@ public struct SDDSCounter: View {
     private let _appearance: CounterAppearance?
     
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.counterAppearance) private var counterAppearance
+    @Environment(\.counterAppearance) private var environmentAppearance
     
     var isAnimating: Bool
     var isHighlighted: Bool
@@ -95,7 +95,8 @@ private extension SDDSCounter {
         text.count > 1
     }
     
-    private var appearance: CounterAppearance {
-        _appearance ?? counterAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: CounterAppearance {
+        _appearance ?? environmentAppearance
     }
 }
