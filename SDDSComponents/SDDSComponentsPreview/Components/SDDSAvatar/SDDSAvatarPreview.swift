@@ -6,7 +6,7 @@ import SwiftUI
 // MARK: - Preview
 struct SDDSAvatarPreview: PreviewProvider {
     static var previews: some View {
-        return SDDSAvatar(
+        SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,
