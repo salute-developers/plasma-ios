@@ -145,42 +145,42 @@ public struct TextFieldAppearance {
 extension TextFieldAppearance {
     public static func == (lhs: TextFieldAppearance, rhs: TextFieldAppearance) -> Bool {
         return lhs.id == rhs.id &&
-        lhs.chipAppearance == rhs.chipAppearance &&
-        lhs.labelPlacement == rhs.labelPlacement &&
-        lhs.requiredPlacement == rhs.requiredPlacement &&
-        lhs.backgroundColor == rhs.backgroundColor &&
-        lhs.backgroundColorFocused == rhs.backgroundColorFocused &&
-        lhs.backgroundColorReadOnly == rhs.backgroundColorReadOnly &&
-        lhs.borderColor == rhs.borderColor &&
-        lhs.captionColor == rhs.captionColor &&
-        lhs.captionColorFocused == rhs.captionColorFocused &&
-        lhs.captionColorReadOnly == rhs.captionColorReadOnly &&
-        lhs.captionTextAlignment == rhs.captionTextAlignment &&
-        lhs.cursorColor == rhs.cursorColor &&
-        lhs.disabledAlpha == rhs.disabledAlpha &&
-        lhs.endContentColor == rhs.endContentColor &&
-        lhs.endContentColorReadOnly == rhs.endContentColorReadOnly &&
-        lhs.endContentColorFocused == rhs.endContentColorFocused &&
-        lhs.inputTextAlignment == rhs.inputTextAlignment &&
-        lhs.innerTitleTextAlignment == rhs.innerTitleTextAlignment &&
-        lhs.lineColor == rhs.lineColor &&
-        lhs.lineColorFocused == rhs.lineColorFocused &&
-        lhs.lineColorReadOnly == rhs.lineColorReadOnly &&
-        lhs.optionalTitleColor == rhs.optionalTitleColor &&
-        lhs.placeholderColor == rhs.placeholderColor &&
-        lhs.placeholderColorFocused == rhs.placeholderColorFocused &&
-        lhs.placeholderColorReadOnly == rhs.placeholderColorReadOnly &&
-        lhs.requiredIndicatorColor == rhs.requiredIndicatorColor &&
-        lhs.startContentColor == rhs.startContentColor &&
-        lhs.startContentColorFocused == rhs.startContentColorFocused &&
-        lhs.startContentColorReadOnly == rhs.startContentColorReadOnly &&
-        lhs.textAfterColor == rhs.textAfterColor &&
-        lhs.textBeforeColor == rhs.textBeforeColor &&
-        lhs.textColor == rhs.textColor &&
-        lhs.textColorFocused == rhs.textColorFocused &&
-        lhs.textColorReadOnly == rhs.textColorReadOnly &&
-        lhs.titleColor == rhs.titleColor &&
-        lhs.titleTextAlignment == rhs.titleTextAlignment
+            lhs.chipAppearance == rhs.chipAppearance &&
+            lhs.labelPlacement == rhs.labelPlacement &&
+            lhs.requiredPlacement == rhs.requiredPlacement &&
+            lhs.backgroundColor == rhs.backgroundColor &&
+            lhs.backgroundColorFocused == rhs.backgroundColorFocused &&
+            lhs.backgroundColorReadOnly == rhs.backgroundColorReadOnly &&
+            lhs.borderColor == rhs.borderColor &&
+            lhs.captionColor == rhs.captionColor &&
+            lhs.captionColorFocused == rhs.captionColorFocused &&
+            lhs.captionColorReadOnly == rhs.captionColorReadOnly &&
+            lhs.captionTextAlignment == rhs.captionTextAlignment &&
+            lhs.cursorColor == rhs.cursorColor &&
+            lhs.disabledAlpha == rhs.disabledAlpha &&
+            lhs.endContentColor == rhs.endContentColor &&
+            lhs.endContentColorReadOnly == rhs.endContentColorReadOnly &&
+            lhs.endContentColorFocused == rhs.endContentColorFocused &&
+            lhs.inputTextAlignment == rhs.inputTextAlignment &&
+            lhs.innerTitleTextAlignment == rhs.innerTitleTextAlignment &&
+            lhs.lineColor == rhs.lineColor &&
+            lhs.lineColorFocused == rhs.lineColorFocused &&
+            lhs.lineColorReadOnly == rhs.lineColorReadOnly &&
+            lhs.optionalTitleColor == rhs.optionalTitleColor &&
+            lhs.placeholderColor == rhs.placeholderColor &&
+            lhs.placeholderColorFocused == rhs.placeholderColorFocused &&
+            lhs.placeholderColorReadOnly == rhs.placeholderColorReadOnly &&
+            lhs.requiredIndicatorColor == rhs.requiredIndicatorColor &&
+            lhs.startContentColor == rhs.startContentColor &&
+            lhs.startContentColorFocused == rhs.startContentColorFocused &&
+            lhs.startContentColorReadOnly == rhs.startContentColorReadOnly &&
+            lhs.textAfterColor == rhs.textAfterColor &&
+            lhs.textBeforeColor == rhs.textBeforeColor &&
+            lhs.textColor == rhs.textColor &&
+            lhs.textColorFocused == rhs.textColorFocused &&
+            lhs.textColorReadOnly == rhs.textColorReadOnly &&
+            lhs.titleColor == rhs.titleColor &&
+            lhs.titleTextAlignment == rhs.titleTextAlignment
     }
     
     public func hash(into hasher: inout Hasher) {
