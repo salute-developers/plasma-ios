@@ -72,7 +72,6 @@ struct CheckboxItemViewModel: Identifiable {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            images: CheckboxView.checkbox,
             appearance: appearance,
             accessibility: .init()
         )

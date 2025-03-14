@@ -166,23 +166,14 @@ struct CellView: View {
                 isSelected: Binding(get: { self.viewModel.isSelected }, set: { newValue in self.viewModel.isSelected = newValue }),
                 title: "",
                 subtitle: nil,
-                isEnabled: true,
-                images: .init(
-                    selectedImage: Image.image("radioboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
-                    deselectedImage: Image.image("radioboxIconOff", bundle: Bundle(for: CheckboxViewModel.self))
-                )
+                isEnabled: true
             )
         case .checkbox:
             SDDSCheckbox(
                 state: Binding(get: { self.viewModel.state }, set: { newValue in self.viewModel.state = newValue }),
                 title: "",
                 subtitle: nil,
-                isEnabled: true,
-                images:  .init(
-                    selectedImage: Image.image("checkboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
-                    deselectedImage: Image.image("checkboxIconOff", bundle: Bundle(for: CheckboxViewModel.self)),
-                    indeterminateImage: Image.image("checkboxMulti", bundle: Bundle(for: CheckboxViewModel.self))
-                )
+                isEnabled: true
             )
         case .none:
             EmptyView()

@@ -4,15 +4,14 @@ import SDDSServTheme
 import SwiftUI
 
 // MARK: - Preview
-struct SDDSCheckboxPreview: PreviewProvider {
+struct SDDSCheckboxPreview: PreviewProvider {    
     static var previews: some View {
         SDDSCheckbox(
-            state: .constant(.indeterminate),
-            title: "Valur",
+            state: .constant(.deselected),
+            title: "Value",
             subtitle: "Description",
             isEnabled: true,
-            images: .checkbox,
-            appearance: Checkbox.m.default.appearance
+            appearance: Checkbox.l.default.appearance
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")

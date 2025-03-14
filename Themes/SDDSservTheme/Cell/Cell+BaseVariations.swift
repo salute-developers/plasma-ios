@@ -10,7 +10,7 @@ public struct Cell {
         appearance.size = CellSize.l
         appearance.avatarAppearance = Avatar.l.appearance
         appearance.buttonAppearance = IconButton.l.clear.appearance
-        appearance.checkboxAppearance = Checkbox.m.appearance
+        appearance.checkboxAppearance = Checkbox.m.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer

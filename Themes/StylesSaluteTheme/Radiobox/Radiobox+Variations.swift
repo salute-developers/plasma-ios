@@ -1,5 +1,6 @@
 import Foundation
 import SDDSComponents
+import SwiftUI
 
 public extension ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
     var `default`: AppearanceVariation<RadioboxAppearance> {
@@ -26,13 +27,17 @@ extension Radiobox {
         .init(
             name: "default",
             appearance:
-                .init(
-                    titleTypography: RadioboxTypography.label,
-                    subtitleTypography: RadioboxTypography.description,
-                    titleColor: .backgroundInversePrimary,
-                    subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
-                    disabledAlpha: 0.4
-                )
+                    .init(
+                        color: .surfaceDefaultAccent,
+                        borderColor: .outlineDefaultTransparentTertiary,
+                        checkedIcon: CircleDrawer(),
+                        checkedIconColor: .textOnDarkPrimary,
+                        titleTypography: RadioboxTypography.label,
+                        subtitleTypography: RadioboxTypography.description,
+                        titleColor: .backgroundInversePrimary,
+                        subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
+                        disabledAlpha: 0.4
+                    )
         )
     }
 }

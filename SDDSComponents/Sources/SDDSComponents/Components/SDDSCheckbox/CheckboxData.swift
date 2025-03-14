@@ -20,7 +20,7 @@ public struct CheckboxData: Hashable {
     let title: String
     let subtitle: String?
     let isEnabled: Bool
-    let images: SelectionControlStateImages
+    let images: SelectionControlStateImages?
     let appearance: CheckboxAppearance
     let accessibility: SelectionControlAccessibility
     
@@ -29,16 +29,16 @@ public struct CheckboxData: Hashable {
         title: String,
         subtitle: String? = nil,
         isEnabled: Bool,
-        images: SelectionControlStateImages,
         appearance: CheckboxAppearance,
+        images: SelectionControlStateImages? = nil,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
         self.state = state
         self.title = title
         self.subtitle = subtitle
         self.isEnabled = isEnabled
-        self.images = images
         self.appearance = appearance
+        self.images = images
         self.accessibility = accessibility
     }
     
