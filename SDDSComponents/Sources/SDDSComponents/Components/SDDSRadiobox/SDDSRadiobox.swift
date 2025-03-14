@@ -5,7 +5,6 @@ import UIKit
 public struct RadioboxImages {
     public let selectedImage: Image
     public let deselectedImage: Image
-    
     public init(selectedImage: Image, deselectedImage: Image) {
         self.selectedImage = selectedImage
         self.deselectedImage = deselectedImage
@@ -17,7 +16,7 @@ public struct SDDSRadiobox: View {
     let title: String
     let subtitle: String?
     let isEnabled: Bool
-    let images: RadioboxImages
+    let images: RadioboxImages?
     let accessibility: SelectionControlAccessibility
     private var _appearance: RadioboxAppearance?
     @Environment(\.radioboxAppearance) private var environmentAppearance
@@ -27,7 +26,7 @@ public struct SDDSRadiobox: View {
         title: String,
         subtitle: String? = nil,
         isEnabled: Bool,
-        images: RadioboxImages,
+        images: RadioboxImages? = nil,
         appearance: RadioboxAppearance? = nil,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -36,6 +35,7 @@ public struct SDDSRadiobox: View {
         self.subtitle = subtitle
         self.isEnabled = isEnabled
         self.images = images
+        self.selectionControlStateImages = selectionControlStateImages
         self._appearance = appearance
         self.accessibility = accessibility
     }
@@ -50,16 +50,11 @@ public struct SDDSRadiobox: View {
                     self.isSelected = value.isSelected
                 }
             ),
-            type: .radiobox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
+            selectionControlToggle: selectionControlToggle,
             appearance: appearance,
-            images: .init(
-                selectedImage: images.selectedImage,
-                deselectedImage: images.deselectedImage,
-                indeterminateImage: nil
-            ),
             accessibility: accessibility
         )
     }
@@ -68,13 +63,13 @@ public struct SDDSRadiobox: View {
     public var appearance: RadioboxAppearance {
         _appearance ?? environmentAppearance
     }
-}
-
-public extension RadioboxImages {
-    static var defaultImages: RadioboxImages {
-        .init(
-            selectedImage: Image.image("radioboxOn"),
-            deselectedImage: Image.image("radioboxOff")
+    
+    private var selectionControlToggle: SelectionControlToggle {
+        guard let images = images else {
+            return .pathDrawer
+        }
+        return .images(
+            .init(selectedImage: images.selectedImage, deselectedImage: images.deselectedImage, indeterminateImage: nil)
         )
     }
 }

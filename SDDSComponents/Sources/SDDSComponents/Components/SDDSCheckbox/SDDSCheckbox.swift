@@ -18,8 +18,8 @@ public struct SDDSCheckbox: View {
     let title: String
     let subtitle: String?
     let isEnabled: Bool
-    let images: SelectionControlStateImages
     let accessibility: SelectionControlAccessibility
+    let images: SelectionControlStateImages?
     private var _appearance: CheckboxAppearance?
     @Environment(\.checkboxAppearance) private var environmentAppearance
     
@@ -41,7 +41,7 @@ public struct SDDSCheckbox: View {
         title: String,
         subtitle: String? = nil,
         isEnabled: Bool,
-        images: SelectionControlStateImages,
+        images: SelectionControlStateImages? = nil,
         appearance: CheckboxAppearance? = nil,
         accessibility: SelectionControlAccessibility = SelectionControlAccessibility()
     ) {
@@ -49,8 +49,8 @@ public struct SDDSCheckbox: View {
         self.title = title
         self.subtitle = subtitle
         self.isEnabled = isEnabled
-        self.images = images
         self._appearance = appearance
+        self.images = images
         self.accessibility = accessibility
     }
     
@@ -65,20 +65,19 @@ public struct SDDSCheckbox: View {
         self.title = data.title
         self.subtitle = data.subtitle
         self.isEnabled = data.isEnabled
-        self.images = data.images
         self._appearance = data.appearance
+        self.images = data.images
         self.accessibility = data.accessibility
     }
     
     public var body: some View {
         SelectionControl(
             state: $state,
-            type: .checkbox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
+            selectionControlToggle: selectionControlToggle,
             appearance: appearance,
-            images: images,
             accessibility: accessibility
         )
     }
@@ -86,6 +85,13 @@ public struct SDDSCheckbox: View {
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public var appearance: CheckboxAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    private var selectionControlToggle: SelectionControlToggle {
+        guard let images = images else {
+            return .pathDrawer
+        }
+        return .images(images)
     }
 }
 

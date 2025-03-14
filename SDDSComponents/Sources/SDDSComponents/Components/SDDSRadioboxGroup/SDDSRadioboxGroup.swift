@@ -37,7 +37,7 @@ public struct SDDSRadioboxGroup: View {
                     title: data.title,
                     subtitle: data.subtitle,
                     isEnabled: data.isEnabled,
-                    images: data.images,
+                    selectionControlStateImages: data.images,
                     appearance: data.appearance,
                     accessibility: data.accessibility
                 )

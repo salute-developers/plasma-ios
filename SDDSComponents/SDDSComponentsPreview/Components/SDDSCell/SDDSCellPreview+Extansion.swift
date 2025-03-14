@@ -9,8 +9,7 @@ extension CellPreview {
             state: .constant(.indeterminate),
             title: "Valur",
             subtitle: "Description",
-            isEnabled: true,
-            images: .checkbox
+            isEnabled: true
         )
     }
     
@@ -19,8 +18,7 @@ extension CellPreview {
             isSelected: .constant(true),
             title: "Value",
             subtitle: "Description",
-            isEnabled: true,
-            images: .defaultImages
+            isEnabled: true
         )
     }
     

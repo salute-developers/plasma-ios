@@ -2,76 +2,13 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-enum SelectionControlType {
-    case checkbox
-    case radiobox
-}
-
-public enum SelectionControlState: String, CaseIterable {
-    case selected
-    case deselected
-    case indeterminate
-}
-
-public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    var imageSize: CGSize { get }
-    var horizontalGap: CGFloat { get }
-    var verticalGap: CGFloat { get }
-}
-
-public struct ZeroSelectionControlSize: SelectionControlSizeConfiguration {
-    public var debugDescription: String { "ZeroSelectionControlSize "}
-    public var imageSize: CGSize { .zero }
-    public var horizontalGap: CGFloat { 0 }
-    public var verticalGap: CGFloat { 0 }
-    public init() {}
-}
-
-public struct SelectionControlStateImages {
-    public let selectedImage: Image
-    public let deselectedImage: Image
-    public let indeterminateImage: Image?
-    
-    public init(selectedImage: Image, deselectedImage: Image, indeterminateImage: Image?) {
-        self.selectedImage = selectedImage
-        self.deselectedImage = deselectedImage
-        self.indeterminateImage = indeterminateImage
-    }
-}
-
-public struct SelectionControlAccessibility {
-    public var titleLabel: String
-    public var subtitleLabel: String
-    public var controlLabel: String
-    public var controlHint: String
-    public var controlEnabledValue: String
-    public var controlDisabledValue: String
-    
-    public init(
-        titleLabel: String = "Title",
-        subtitleLabel: String = "Subtitle",
-        controlLabel: String = "Control",
-        controlHint: String = "Double-tap to toggle the control.",
-        controlEnabledValue: String = "Enabled",
-        controlDisabledValue: String = "Disabled"
-    ) {
-        self.titleLabel = titleLabel
-        self.subtitleLabel = subtitleLabel
-        self.controlLabel = controlLabel
-        self.controlHint = controlHint
-        self.controlEnabledValue = controlEnabledValue
-        self.controlDisabledValue = controlDisabledValue
-    }
-}
-
 struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @Binding var state: SelectionControlState
-    let type: SelectionControlType
     let title: String
     let subtitle: String?
     let isEnabled: Bool
+    let selectionControlToggle: SelectionControlToggle
     let appearance: AppearanceType
-    let images: SelectionControlStateImages
     let accessibility: SelectionControlAccessibility
     
     @Environment(\.colorScheme) var colorScheme
@@ -93,7 +30,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 }
             }
             HStack(spacing: appearance.size.horizontalGap) {
-                Spacer().frame(width: appearance.size.imageSize.width)
+                Spacer().frame(width: appearance.size.width)
                 
                 if !title.isEmpty {
                     subtitleText
@@ -132,42 +69,104 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
     }
     
-    private var image: Image? {
-        switch state {
-        case .selected:
-            return images.selectedImage
-        case .deselected:
-            return images.deselectedImage
-        case .indeterminate:
-            return images.indeterminateImage
-        }
+    @ViewBuilder
+    private func toggleImage(image: Image) -> some View {
+        image
+            .resizable()
+            .renderingMode(.original)
+            .aspectRatio(contentMode: .fit)
     }
     
-    @ViewBuilder
-    private func tintImage(image: Image) -> some View {
-        if let tintColor = appearance.imageTintColor {
-            image
-                .resizable()
-                .renderingMode(.template)
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(tintColor.color(for: colorScheme))
-        } else {
-            image
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fit)
+    private var image: Image? {
+        guard case .images(let selectionControlStateImages) = selectionControlToggle else {
+            return nil
+        }
+        switch state {
+        case .selected:
+            return selectionControlStateImages.selectedImage
+        case .deselected:
+            return selectionControlStateImages.deselectedImage
+        case .indeterminate:
+            return selectionControlStateImages.indeterminateImage
         }
     }
     
     @ViewBuilder
     private var controlView: some View {
-        if let image = image {
-            tintImage(image: image)
-                .frame(width: appearance.size.imageSize.width, height: appearance.size.imageSize.height)
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
+        ZStack {
+            switch selectionControlToggle {
+            case .images(let selectionControlStateImages):
+                if let image = image {
+                    toggleImage(image: image)
+                } else {
+                    EmptyView()
+                }
+            case .pathDrawer:
+                pathDrawerView
+            }
+        }
+        .padding(appearance.size.togglePaddings)
+        .frame(width: appearance.size.width, height: appearance.size.height)
+        .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
+    }
+    
+    @ViewBuilder
+    private var pathDrawerView: some View {
+        switch state {
+        case .selected:
+            fillView
+            icon(
+                icon: appearance.checkedIcon,
+                iconColor: appearance.checkedIconColor,
+                width: appearance.size.toggleCheckedIconWidth,
+                height: appearance.size.toggleCheckedIconHeight
+            )
+        case .deselected:
+            borderView
+        case .indeterminate:
+            fillView
+            icon(
+                icon: appearance.toggleIndeterminateIcon,
+                iconColor: appearance.toggleIndeterminateIconColor,
+                width: appearance.size.toggleIndeterminateIconWidth,
+                height: appearance.size.toggleIndeterminateIconHeight
+            )
+        }
+    }
+    
+    @ViewBuilder
+    private func icon(icon: PathDrawer?, iconColor: ColorToken, width: CGFloat, height: CGFloat) -> some View {
+        if let icon = icon {
+            icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
+                    .foregroundColor(iconColor.color(for: colorScheme))
+                    .frame(width: width, height: height)
         } else {
             EmptyView()
         }
+    }
+    
+    private var borderView: some View {
+        appearance.size.togglePathDrawer
+            .path(
+                in: CGRect(
+                    x: rectLocation,
+                    y: rectLocation,
+                    width: toggleWidth,
+                    height: toggleHeight)
+            )
+            .stroke(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
+    }
+    
+    private var fillView: some View {
+        appearance.size.togglePathDrawer
+            .path(
+                in: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: appearance.size.width - paddings,
+                    height: appearance.size.height - paddings)
+            )
+            .fill(appearance.color.color(for: colorScheme))
     }
     
     // MARK: - Accessibility
@@ -186,6 +185,22 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     private var subtitleTypography: TypographyToken {
         appearance.subtitleTypography.typography(with: appearance.size) ?? .undefined
+    }
+    
+    private var paddings: CGFloat {
+        appearance.size.togglePaddings + appearance.size.togglePaddings
+    }
+    
+    private var toggleWidth: CGFloat {
+        appearance.size.width - paddings - appearance.size.lineWidth
+    }
+    
+    private var toggleHeight: CGFloat {
+        appearance.size.height - paddings - appearance.size.lineWidth
+    }
+    
+    private var rectLocation: CGFloat {
+        appearance.size.lineWidth / 2
     }
 }
 

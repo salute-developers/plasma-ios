@@ -4,7 +4,7 @@ import SDDSThemeCore
 
 public struct Radiobox {
     public static var l: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
-        var appearance = RadioboxAppearance()
+        var appearance = RadioboxAppearance.base
         appearance.size = SDDSRadioboxSize.large
         appearance.titleTypography = RadioboxTypography.label
         appearance.subtitleTypography = RadioboxTypography.description
@@ -15,7 +15,7 @@ public struct Radiobox {
     }
     
     public static var m: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
-        var appearance = RadioboxAppearance()
+        var appearance = RadioboxAppearance.base
         appearance.size = SDDSRadioboxSize.medium
         appearance.titleTypography = RadioboxTypography.label
         appearance.subtitleTypography = RadioboxTypography.description
@@ -26,7 +26,7 @@ public struct Radiobox {
     }
     
     public static var s: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
-        var appearance = RadioboxAppearance()
+        var appearance = RadioboxAppearance.base
         appearance.size = SDDSRadioboxSize.small
         appearance.titleTypography = RadioboxTypography.label
         appearance.subtitleTypography = RadioboxTypography.description
@@ -37,4 +37,20 @@ public struct Radiobox {
     }
     
     public static let all: [Variation<RadioboxAppearance>] = [l, m, s].map { $0.variation }
+}
+
+extension RadioboxAppearance {
+    static var base: RadioboxAppearance {
+        RadioboxAppearance(
+            color: .surfaceDefaultAccent,
+            borderColor: .outlineDefaultTransparentTertiary,
+            checkedIcon: CircleDrawer(),
+            checkedIconColor: .textOnDarkPrimary,
+            titleTypography: RadioboxTypography.label,
+            subtitleTypography: RadioboxTypography.description,
+            titleColor: .backgroundInversePrimary,
+            subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
+            disabledAlpha: 0.4
+        )
+    }
 }
