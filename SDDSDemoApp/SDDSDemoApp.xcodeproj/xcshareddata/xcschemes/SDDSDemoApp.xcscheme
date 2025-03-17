@@ -62,6 +62,17 @@
                ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "81ADB0112D88132B005910B2"
+               BuildableName = "SnapshotTests.xctest"
+               BlueprintName = "SnapshotTests"
+               ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

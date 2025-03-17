@@ -54,7 +54,6 @@
 		8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */; };
 		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
 		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
-		81641B6C2D84550900AEE88B /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 81641B6B2D84550900AEE88B /* SDSnapshots */; };
 		8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4432D5C7C9E0044A680 /* Theme.swift */; };
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
@@ -83,6 +82,7 @@
 		81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132E2D5BADC800ADE1CD /* VariationsView.swift */; };
 		81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */; };
 		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
+		81ADB01D2D88135C005910B2 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 81ADB01C2D88135C005910B2 /* SDSnapshots */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81FD6D5E2D6E28AF002A6E51 /* IndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5D2D6E28AC002A6E51 /* IndicatorViewModel.swift */; };
@@ -105,7 +105,7 @@
 			remoteGlobalIDString = 24C154012BB3020A00963FAA;
 			remoteInfo = PlasmaDemoApp;
 		};
-		81641AB02D8454F700AEE88B /* PBXContainerItemProxy */ = {
+		81ADB0162D88132B005910B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24C153FA2BB3020A00963FAA /* Project object */;
 			proxyType = 1;
@@ -170,7 +170,6 @@
 		8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupViewModel.swift; sourceTree = "<group>"; };
 		816243602CB9430200506E1C /* CheckboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupView.swift; sourceTree = "<group>"; };
 		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
-		81641AAC2D8454F700AEE88B /* Snapshot tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snapshot tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8166B4432D5C7C9E0044A680 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVariationProvider.swift; sourceTree = "<group>"; };
 		8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVariationProvider.swift; sourceTree = "<group>"; };
@@ -198,6 +197,7 @@
 		81A6132E2D5BADC800ADE1CD /* VariationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsView.swift; sourceTree = "<group>"; };
 		81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVariationProvider.swift; sourceTree = "<group>"; };
 		81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaVariationProvider.swift; sourceTree = "<group>"; };
+		81ADB0122D88132B005910B2 /* SnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		81641AAD2D8454F700AEE88B /* Snapshot tests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Snapshot tests"; sourceTree = "<group>"; };
+		81ADB0132D88132B005910B2 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,11 +244,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81641AA92D8454F700AEE88B /* Frameworks */ = {
+		81ADB00F2D88132B005910B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81641B6C2D84550900AEE88B /* SDSnapshots in Frameworks */,
+				81ADB01D2D88135C005910B2 /* SDSnapshots in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +261,7 @@
 				24C154042BB3020A00963FAA /* SDDSDemoApp */,
 				24C154152BB3020B00963FAA /* SDDSDemoAppTests */,
 				24C1541F2BB3020B00963FAA /* SDDSDemoAppUITests */,
-				81641AAD2D8454F700AEE88B /* Snapshot tests */,
+				81ADB0132D88132B005910B2 /* SnapshotTests */,
 				24C154032BB3020A00963FAA /* Products */,
 				24D212DF2BB45A4B005B717B /* Frameworks */,
 			);
@@ -273,7 +273,7 @@
 				24C154022BB3020A00963FAA /* SDDSDemoApp.app */,
 				24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */,
 				24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */,
-				81641AAC2D8454F700AEE88B /* Snapshot tests.xctest */,
+				81ADB0122D88132B005910B2 /* SnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -658,28 +658,28 @@
 			productReference = 24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		81641AAB2D8454F700AEE88B /* Snapshot tests */ = {
+		81ADB0112D88132B005910B2 /* SnapshotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81641AB42D8454F700AEE88B /* Build configuration list for PBXNativeTarget "Snapshot tests" */;
+			buildConfigurationList = 81ADB0182D88132B005910B2 /* Build configuration list for PBXNativeTarget "SnapshotTests" */;
 			buildPhases = (
-				81641AA82D8454F700AEE88B /* Sources */,
-				81641AA92D8454F700AEE88B /* Frameworks */,
-				81641AAA2D8454F700AEE88B /* Resources */,
+				81ADB00E2D88132B005910B2 /* Sources */,
+				81ADB00F2D88132B005910B2 /* Frameworks */,
+				81ADB0102D88132B005910B2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				81641AB12D8454F700AEE88B /* PBXTargetDependency */,
+				81ADB0172D88132B005910B2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				81641AAD2D8454F700AEE88B /* Snapshot tests */,
+				81ADB0132D88132B005910B2 /* SnapshotTests */,
 			);
-			name = "Snapshot tests";
+			name = SnapshotTests;
 			packageProductDependencies = (
-				81641B6B2D84550900AEE88B /* SDSnapshots */,
+				81ADB01C2D88135C005910B2 /* SDSnapshots */,
 			);
-			productName = "Snapshot tests";
-			productReference = 81641AAC2D8454F700AEE88B /* Snapshot tests.xctest */;
+			productName = SnapshotTests;
+			productReference = 81ADB0122D88132B005910B2 /* SnapshotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -703,7 +703,7 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 24C154012BB3020A00963FAA;
 					};
-					81641AAB2D8454F700AEE88B = {
+					81ADB0112D88132B005910B2 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 24C154012BB3020A00963FAA;
 					};
@@ -724,7 +724,7 @@
 				818345692CFDBAF30081113B /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 				8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */,
 				8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */,
-				81641B6A2D84550800AEE88B /* XCLocalSwiftPackageReference "../SDSnapshots" */,
+				81ADB01B2D88135C005910B2 /* XCLocalSwiftPackageReference "../SDSnapshots" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -733,7 +733,7 @@
 				24C154012BB3020A00963FAA /* SDDSDemoApp */,
 				24C154112BB3020B00963FAA /* SDDSDemoAppTests */,
 				24C1541B2BB3020B00963FAA /* SDDSDemoAppUITests */,
-				81641AAB2D8454F700AEE88B /* Snapshot tests */,
+				81ADB0112D88132B005910B2 /* SnapshotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -762,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81641AAA2D8454F700AEE88B /* Resources */ = {
+		81ADB0102D88132B005910B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -880,7 +880,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81641AA82D8454F700AEE88B /* Sources */ = {
+		81ADB00E2D88132B005910B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -900,10 +900,10 @@
 			target = 24C154012BB3020A00963FAA /* SDDSDemoApp */;
 			targetProxy = 24C1541D2BB3020B00963FAA /* PBXContainerItemProxy */;
 		};
-		81641AB12D8454F700AEE88B /* PBXTargetDependency */ = {
+		81ADB0172D88132B005910B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 24C154012BB3020A00963FAA /* SDDSDemoApp */;
-			targetProxy = 81641AB02D8454F700AEE88B /* PBXContainerItemProxy */;
+			targetProxy = 81ADB0162D88132B005910B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1187,24 +1187,18 @@
 			};
 			name = Release;
 		};
-		81641AB22D8454F700AEE88B /* Debug */ = {
+		81ADB0192D88132B005910B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDMYYG676V;
-				ENABLE_APP_SANDBOX = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sdds.Snapshot-tests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SnapshotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1212,24 +1206,18 @@
 			};
 			name = Debug;
 		};
-		81641AB32D8454F700AEE88B /* Release */ = {
+		81ADB01A2D88132B005910B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDMYYG676V;
-				ENABLE_APP_SANDBOX = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sdds.Snapshot-tests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SnapshotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1276,11 +1264,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81641AB42D8454F700AEE88B /* Build configuration list for PBXNativeTarget "Snapshot tests" */ = {
+		81ADB0182D88132B005910B2 /* Build configuration list for PBXNativeTarget "SnapshotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81641AB22D8454F700AEE88B /* Debug */,
-				81641AB32D8454F700AEE88B /* Release */,
+				81ADB0192D88132B005910B2 /* Debug */,
+				81ADB01A2D88132B005910B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1296,10 +1284,6 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
 		};
-		81641B6A2D84550800AEE88B /* XCLocalSwiftPackageReference "../SDSnapshots" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDSnapshots;
-		};
 		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/PlasmaB2CTheme;
@@ -1311,6 +1295,10 @@
 		818345692CFDBAF30081113B /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
+		};
+		81ADB01B2D88135C005910B2 /* XCLocalSwiftPackageReference "../SDSnapshots" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SDSnapshots;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -1326,10 +1314,6 @@
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
-		};
-		81641B6B2D84550900AEE88B /* SDSnapshots */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDSnapshots;
 		};
 		8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1362,6 +1346,10 @@
 		819A38302CC692BD00A1377F /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSComponents;
+		};
+		81ADB01C2D88135C005910B2 /* SDSnapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDSnapshots;
 		};
 		81CA2C532CC69549002AF2DF /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,8 +1,8 @@
 //
-//  Snapshot_tests.swift
-//  Snapshot tests
+//  SnapshotTests.swift
+//  SnapshotTests
 //
-//  Created by Vladimir Kaltyrin on 14.03.2025.
+//  Created by Vladimir Kaltyrin on 17.03.2025.
 //
 
 import XCTest

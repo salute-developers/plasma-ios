@@ -19,9 +19,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81641AAB2D8454F700AEE88B"
-               BuildableName = "Snapshot tests.xctest"
-               BlueprintName = "Snapshot tests"
+               BlueprintIdentifier = "81ADB0112D88132B005910B2"
+               BuildableName = "SnapshotTests.xctest"
+               BlueprintName = "SnapshotTests"
                ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
