@@ -3,8 +3,7 @@ name: Build and Deploy to TestFlight
 on:
   push:
     branches:
-      - main
-      - develop
+      - feature/vsdimitraki/testflight-update-build-add-release
   workflow_dispatch:
 
 jobs:
@@ -13,6 +12,12 @@ jobs:
 
     environment: sdds
     steps:
+      # - name: Fail if branch is not develop
+      #   if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/develop'
+      #   run: |
+      #     echo "This workflow should not be triggered with workflow_dispatch on a branch other than develop"
+      #     exit 1
+
       - name: Checkout code
         uses: actions/checkout@v4
         
