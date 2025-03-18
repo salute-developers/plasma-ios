@@ -34,6 +34,9 @@
 		7CC9AD16F990387C0E8316F9 /* SBSansDisplay-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = 11136B25B2CB4FFA8B642C19 /* SBSansDisplay-Medium.otf */; };
 		81157D322D64F4ED00254FB6 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D312D64F4ED00254FB6 /* SpacingToken+Generated.swift */; };
 		81157D332D64F4ED00254FB6 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D302D64F4ED00254FB6 /* Spacings+Generated.swift */; };
+		8139924E2D9FD4B80015AF83 /* BottomSheet+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139924B2D9FD4B80015AF83 /* BottomSheet+Variations.swift */; };
+		8139924F2D9FD4B80015AF83 /* BottomSheet+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139924A2D9FD4B80015AF83 /* BottomSheet+BaseVariations.swift */; };
+		813992502D9FD4B80015AF83 /* BottomSheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139924C2D9FD4B80015AF83 /* BottomSheetSize.swift */; };
 		81BA173A2D8067CF008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17392D8067CF008F0A59 /* SDDSIcons.xcframework */; };
 		81FC48982D931AF500A83F87 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC484C2D931AF500A83F87 /* SpacingToken+Generated.swift */; };
 		81FC48992D931AF500A83F87 /* CellTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC48182D931AF500A83F87 /* CellTypography.swift */; };
@@ -260,6 +263,9 @@
 		81157C9F2D64F42A00254FB6 /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
 		81157D302D64F4ED00254FB6 /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		81157D312D64F4ED00254FB6 /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
+		8139924A2D9FD4B80015AF83 /* BottomSheet+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+BaseVariations.swift"; sourceTree = "<group>"; };
+		8139924B2D9FD4B80015AF83 /* BottomSheet+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+Variations.swift"; sourceTree = "<group>"; };
+		8139924C2D9FD4B80015AF83 /* BottomSheetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSize.swift; sourceTree = "<group>"; };
 		81BA17392D8067CF008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81FC47F22D931AF500A83F87 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
@@ -429,6 +435,7 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				8139924D2D9FD4B80015AF83 /* BottomSheet */,
 				81FC47F62D931AF500A83F87 /* Avatar */,
 				81FC47FB2D931AF500A83F87 /* Badge */,
 				81FC48002D931AF500A83F87 /* BadgeClear */,
@@ -538,6 +545,16 @@
 				44086615942D02F7443042C3 /* SDDSservTheme.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8139924D2D9FD4B80015AF83 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				8139924A2D9FD4B80015AF83 /* BottomSheet+BaseVariations.swift */,
+				8139924B2D9FD4B80015AF83 /* BottomSheet+Variations.swift */,
+				8139924C2D9FD4B80015AF83 /* BottomSheetSize.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		81FC47C72D93195C00A83F87 /* Recovered References */ = {
@@ -1202,6 +1219,9 @@
 				7129879F8EE2142C7ACD89D3 /* SBSansText-Bold.otf in Sources */,
 				33A8632680C2AB36CAC7C6AA /* SBSansText-Thin.otf in Sources */,
 				A6E9073EC0514AF9A317FB09 /* project.pbxproj in Sources */,
+				8139924E2D9FD4B80015AF83 /* BottomSheet+Variations.swift in Sources */,
+				8139924F2D9FD4B80015AF83 /* BottomSheet+BaseVariations.swift in Sources */,
+				813992502D9FD4B80015AF83 /* BottomSheetSize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,7 +1377,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.6.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;
@@ -1398,7 +1418,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.6.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;

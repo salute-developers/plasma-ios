@@ -126,6 +126,9 @@
 		810AFBEF2D93284F000B2A7A /* Indicator+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5A2D93284F000B2A7A /* Indicator+BaseVariations.swift */; };
 		810AFBF02D93284F000B2A7A /* EmbeddedChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB432D93284F000B2A7A /* EmbeddedChipTypography.swift */; };
 		810AFBF12D93284F000B2A7A /* Badge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB152D93284F000B2A7A /* Badge+BaseVariations.swift */; };
+		813992472D9FD4900015AF83 /* BottomSheet+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */; };
+		813992482D9FD4900015AF83 /* BottomSheet+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */; };
+		813992492D9FD4900015AF83 /* BottomSheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992452D9FD4900015AF83 /* BottomSheetSize.swift */; };
 		81BA173E2D8067F4008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA173D2D8067F4008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2742D75A20500612681 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2722D75A20500612681 /* Spacings+Generated.swift */; };
 		81BBE2752D75A20500612681 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2732D75A20500612681 /* SpacingToken+Generated.swift */; };
@@ -324,6 +327,9 @@
 		810AFB8A2D93284F000B2A7A /* TextFieldClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+Variations.swift"; sourceTree = "<group>"; };
 		810AFB8B2D93284F000B2A7A /* TextFieldClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
 		810AFB8C2D93284F000B2A7A /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
+		813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+BaseVariations.swift"; sourceTree = "<group>"; };
+		813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+Variations.swift"; sourceTree = "<group>"; };
+		813992452D9FD4900015AF83 /* BottomSheetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSize.swift; sourceTree = "<group>"; };
 		81BA173D2D8067F4008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81BBE2722D75A20500612681 /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		81BBE2732D75A20500612681 /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
@@ -679,6 +685,16 @@
 			path = TextFieldClear;
 			sourceTree = "<group>";
 		};
+		813992462D9FD4900015AF83 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */,
+				813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */,
+				813992452D9FD4900015AF83 /* BottomSheetSize.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		81FC47C62D93184400A83F87 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +771,7 @@
 		B30D10EF1B9A708790D4AADE = {
 			isa = PBXGroup;
 			children = (
+				813992462D9FD4900015AF83 /* BottomSheet */,
 				810AFB142D93284F000B2A7A /* Avatar */,
 				810AFB192D93284F000B2A7A /* Badge */,
 				810AFB1E2D93284F000B2A7A /* BadgeClear */,
@@ -896,6 +913,9 @@
 				7F050B284444F4CA3DBFE23E /* Theme.swift in Sources */,
 				78AAC56012247EC6364186C7 /* ShapeToken+Generated.swift in Sources */,
 				81BBE2742D75A20500612681 /* Spacings+Generated.swift in Sources */,
+				813992472D9FD4900015AF83 /* BottomSheet+Variations.swift in Sources */,
+				813992482D9FD4900015AF83 /* BottomSheet+BaseVariations.swift in Sources */,
+				813992492D9FD4900015AF83 /* BottomSheetSize.swift in Sources */,
 				81BBE2752D75A20500612681 /* SpacingToken+Generated.swift in Sources */,
 				5C9AB00E144E6E7902E3BC4C /* TypographyToken+Generated.swift in Sources */,
 				75ACAEECC84123BE0233A532 /* Shapes+Generated.swift in Sources */,
@@ -1117,7 +1137,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.6.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;
@@ -1158,7 +1178,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.6.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;
