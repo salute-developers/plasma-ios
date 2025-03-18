@@ -1,7 +1,47 @@
 default_platform(:ios)
 
 platform :ios do
+  lane :update_build_version_before_release do
+    ENV['BUILD_NUMBER_RESET_FLAG'] = '0'
+    branch_name = git_branch
+    if branch_name == "develop"
+      project_version = get_version_number(
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+        target: "SDDSDemoApp"
+      )
+      UI.message("Current project version: #{project_version}")
+
+      project_version = project_version.split('.').map(&:to_i)
+      project_version[1] += 1
+      project_version = project_version.join('.')
+
+      UI.message("New project version: #{project_version}")
+
+      updated_build_version = increment_version_number(
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+        version_number: project_version
+      )
+      UI.message("Updated project version to #{updated_build_version}")
+
+      reseting_build_number = increment_build_number(
+        build_number: 0,
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+      )
+      UI.message("Build number reset to: #{reseting_build_number}")
+      UI.message("Automatic call build_and_upload lane...")
+
+      ENV['BUILD_NUMBER_RESET_FLAG'] = '1'
+
+      Fastlane::Actions.sh("fastlane", "ios", "build_and_upload")
+    end
+  end
+
   lane :build_and_upload do
+    UI.header("Starting build_and_upload lane")
+
+    branch_name = git_branch
+    UI.message("Building from branch: #{branch_name}")
+
     def check_env_variable(key)
       if ENV[key].nil? || ENV[key].empty?
         UI.user_error!("Missing environment variable: #{key}")
@@ -11,49 +51,55 @@ platform :ios do
     check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
     check_env_variable("APP_STORE_CONNECT_API_KEY")
     check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
+    UI.success("✅ All required environment variables are set")
 
-    UI.message("All required environment variables are set!")
-    
-    # Получаем текущую версию из Info.plist
-    version = get_version_number(
+    project_version = get_version_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
       target: "SDDSDemoApp"
     )
+    UI.message("Current project version: #{project_version}")
 
-    if version.nil?
-      UI.user_error!("Version number is missing.")
-    end
-    
-    # Получение последнего номера сборки из TestFlight
-    latset_build_number_testflight = latest_testflight_build_number(
+    UI.user_error!("Version number is missing") if project_version.nil?
+
+    if ENV['BUILD_NUMBER_RESET_FLAG'] == '1'
+      latest_tf_build = 0
+    else
+      latest_tf_build = latest_testflight_build_number(
       app_identifier: "com.sd.SDDSDemo",
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
         issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
         key: ENV["APP_STORE_CONNECT_API_KEY"]
-        }
-      )
-      
-    latset_build_number_testflight = (latset_build_number_testflight.to_i + 1).to_s
+      }
+    )
+    UI.message("Latest TestFlight build: #{latest_tf_build}")
+    end
 
-    # Увеличиваем номер сборки в Xcode проекте
+    build_number = (latest_tf_build.to_i + 1).to_s
+
     increment_build_number(
-      build_number: latset_build_number_testflight,
+      build_number: build_number,
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
     )
-    
-    next_build_number = get_build_number(xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj")
+    UI.success("New build number: #{build_number}")
 
-    # Определяем имя сборки в зависимости от ветки
-    branch_name = git_branch
-    build_name = if branch_name == "develop"
-                   "SDDSDemo #{version} #{next_build_number} (dev)"
+    build_name = case branch_name
+                 when "main"
+                   "SDDSDemo #{project_version} #{build_number}"
+                 when "develop"
+                   "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
-                   "SDDSDemo"
+                   "SDDSDemo #{project_version} #{build_number}"
                  end
+    UI.message("Build name: #{build_name}")
 
-    # Сборка приложения
-    UI.message("Building app...")
+    update_info_plist(
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+      plist_path: "SDDSDemoApp/Info.plist",
+      display_name: build_name
+    )
+
+    UI.message("Starting build process...")
     build_app(
       scheme: "SDDSDemoApp",
       export_method: "app-store",
@@ -62,14 +108,11 @@ platform :ios do
         teamID: "KDMYYG676V",
         provisioningProfiles: {
           "com.sd.SDDSDemo" => "SDDS Demo Distribution"
-        },
-        certificate: "iPhone Distribution: SALUTEDEV, MChJ (KDMYYG676V)",
-        profile: "SDDS Demo Distribution"
+        }
       },
       output_name: build_name
     )
 
-    # Загрузка в TestFlight
     UI.message("Uploading to TestFlight...")
     upload_to_testflight(
       api_key: {
@@ -78,5 +121,7 @@ platform :ios do
         key: ENV["APP_STORE_CONNECT_API_KEY"]
       }
     )
+
+    UI.success("🎉 Build #{build_name} successfully uploaded!")
   end
 end
