@@ -320,4 +320,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.CardClear.all
         }
     }
+    
+    var bottomSheetVariations: [Variation<BottomSheetAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.BottomSheet.all
+        case .stylesSalute:
+            return StylesSaluteTheme.BottomSheet.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.BottomSheet.all
+        }
+    }
 }

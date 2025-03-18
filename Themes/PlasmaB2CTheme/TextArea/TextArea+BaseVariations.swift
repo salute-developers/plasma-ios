@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct TextArea {
     public static var l: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.L> {

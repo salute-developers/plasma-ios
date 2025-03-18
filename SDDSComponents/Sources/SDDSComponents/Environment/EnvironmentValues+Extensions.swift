@@ -87,4 +87,9 @@ public extension EnvironmentValues {
         set { self[CardAppearance.self] = newValue }
     }
     
+    var bottomSheetAppearance: BottomSheetAppearance {
+        get { self[BottomSheetAppearance.self] }
+        set { self[BottomSheetAppearance.self] = newValue }
+    }
+    
 }

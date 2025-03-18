@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct TextField {
     public static var l: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.L> {

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Badge {
     public static var l: GeneralAppearanceVariation<Badge, BadgeAppearance, BadgeVariation.L> {

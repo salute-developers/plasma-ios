@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Indicator {
     public static var l: ComponentAppearanceVariation<Indicator, IndicatorAppearance> {
