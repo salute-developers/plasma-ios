@@ -2,9 +2,7 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
-public struct CardAppearance: EnvironmentKey {
-    public static var defaultValue: CardAppearance = CardAppearance()
-    
+public struct CardAppearance {
     public var size: CardSizeConfiguration
     public var backgroundColor: ColorToken
     
@@ -14,5 +12,11 @@ public struct CardAppearance: EnvironmentKey {
     ) {
         self.backgroundColor = backgroundColor
         self.size = size
+    }
+}
+
+extension CardAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: CardAppearance.self, fallback: CardAppearance())
     }
 }
