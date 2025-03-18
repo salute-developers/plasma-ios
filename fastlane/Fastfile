@@ -48,28 +48,20 @@ platform :ios do
                    "SDDSDemo"
                  end
 
-    if branch_name == "feature/vsdimitraki/testflight-update-build-add-release"
-      update_info_plist(
-        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-        plist_path: "SDDSDemoApp/Info.plist",
-        display_name: build_name
-      )
-    end
-
     UI.message("Build name is #{build_name}")
 
-    # build_app(
-    #   scheme: "SDDSDemoApp",
-    #   export_method: "app-store",
-    #   export_options: {
-    #     signingStyle: "manual",
-    #     teamID: "KDMYYG676V",
-    #     provisioningProfiles: {
-    #       "com.sd.SDDSDemo" => "SDDS Demo Distribution"
-    #     }
-    #   },
-    #   output_name: build_name
-    # )
+    build_app(
+      scheme: "SDDSDemoApp",
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "manual",
+        teamID: "KDMYYG676V",
+        provisioningProfiles: {
+          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+        }
+      },
+      output_name: build_name
+    )
 
     # upload_to_testflight(
     #   api_key: {
