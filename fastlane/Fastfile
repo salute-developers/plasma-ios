@@ -1,6 +1,37 @@
 default_platform(:ios)
 
 platform :ios do
+  lane :update_version do
+    branch_name = git_branch
+    UI.user_error!("This lane should be run only in develop branch") unless branch_name == "develop"
+
+    last_commit_message = last_git_commit[:message]
+    unless last_commit_message.include?("Merge branch 'main' into develop")
+      UI.important("No merge from main detected. Skipping version increment")
+      next
+    end
+
+    latest_main_version = latest_testflight_version_number(
+      app_identifier: "com.sd.SDDSDemo",
+      api_key: {
+        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
+    )
+
+    increment_version_number(
+      bump_type: "minor",
+      version_number: latest_main_version,
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    )
+
+    increment_build_number(
+      build_number: 1,
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    )
+  end
+
   lane :build_and_upload do
     def check_env_variable(key)
       if ENV[key].nil? || ENV[key].empty?
@@ -13,55 +44,55 @@ platform :ios do
     check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
 
     UI.message("All required environment variables are set!")
-    
-    # Получаем текущую версию из Info.plist
-    # version = get_version_number(
-    #   xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-    #   target: "SDDSDemoApp"
-    # )
 
-    # UI.user_error!("Version number is missing.") if version.nil?
-    
-    # # Получение последнего номера сборки из TestFlight
-    # latest_build_number = latest_testflight_build_number(
-    #   app_identifier: "com.sd.SDDSDemo",
-    #   api_key: {
-    #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-    #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-    #     key: ENV["APP_STORE_CONNECT_API_KEY"]
-    #   }
-    # )
-    
-    # increment_build_number(
-    #   build_number: (latest_build_number.to_i + 1).to_s,
-    #   xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    # )
+    project_version = get_version_number(
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+      target: "SDDSDemoApp"
+    )
 
-    # Определяем имя сборки
+    UI.user_error!("Version number is missing.") if project_version.nil?
+
+    latest_build_number_from_testflight = latest_testflight_build_number(
+      app_identifier: "com.sd.SDDSDemo",
+      api_key: {
+        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
+    )
+
+    build_number = (latest_build_number_from_testflight.to_i + 1).to_s
+
     branch_name = git_branch
     build_name = case branch_name
-                 when "main"
-                   "SDDSDemo #{0} #{0}"
                  when "feature/vsdimitraki/testflight-update-build-add-release"
-                   "SDDSDemo [Dev]"
+                   "SDDSDemo #{project_version} #{build_number}"
+                 when "develop"
+                   "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
-                   "SDDSDemo"
+                   "SDDSDemo #{project_version}"
                  end
 
-    UI.message("Build name is #{build_name}")
+    if branch_name == "develop"
+      update_info_plist(
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+        plist_path: "SDDSDemoApp/Info.plist",
+        display_name: build_name
+      )
+    end
 
-    build_app(
-      scheme: "SDDSDemoApp",
-      export_method: "app-store",
-      export_options: {
-        signingStyle: "manual",
-        teamID: "KDMYYG676V",
-        provisioningProfiles: {
-          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
-        }
-      },
-      output_name: build_name
-    )
+    # build_app(
+    #   scheme: "SDDSDemoApp",
+    #   export_method: "app-store",
+    #   export_options: {
+    #     signingStyle: "manual",
+    #     teamID: "KDMYYG676V",
+    #     provisioningProfiles: {
+    #       "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+    #     }
+    #   },
+    #   output_name: build_name
+    # )
 
     # upload_to_testflight(
     #   api_key: {
