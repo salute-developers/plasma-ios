@@ -4,46 +4,43 @@ platform :ios do
   lane :update_version do
     branch_name = git_branch
     UI.header("Starting update_version lane on branch: #{branch_name}")
-    
-    UI.user_error!("This lane should be run only in develop branch") unless branch_name == "develop"
-
-    last_commit_message = last_git_commit[:message]
-    UI.message("Last commit message: #{last_commit_message}")
-    
-    unless last_commit_message.include?("Merge branch 'main' into develop")
-      UI.important("❌ No merge from main detected. Skipping version increment")
-      next
+  
+    if branch_name != "develop"
+      UI.important("This lane should be run only in develop branch. Skipping execution.")
+    else
+      last_commit_message = last_git_commit[:message]
+      if last_commit_message.include?("Merge branch 'main' into develop")
+        UI.message("Merge from main detected.")
+  
+        latest_main_version = latest_testflight_version_number(
+          app_identifier: "com.sd.SDDSDemo",
+          api_key: {
+            key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+            issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+            key: ENV["APP_STORE_CONNECT_API_KEY"]
+          }
+        )
+  
+        new_version = increment_version_number(
+          bump_type: "minor",
+          version_number: latest_main_version,
+          xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+        )
+  
+        UI.message("Updated version to #{new_version}")
+  
+        increment_build_number(
+          build_number: 1,
+          xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+        )
+  
+        UI.message("Build number reset to 1")
+      else
+        UI.important("No merge from main detected. Skipping version increment")
+      end
     end
-
-    UI.success("✅ Detected merge from main to develop")
-    
-    latest_main_version = latest_testflight_version_number(
-      app_identifier: "com.sd.SDDSDemo",
-      api_key: {
-        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-        key: ENV["APP_STORE_CONNECT_API_KEY"]
-      }
-    )
-    UI.message("Latest production version from TestFlight: #{latest_main_version}")
-
-    new_version = increment_version_number(
-      bump_type: "minor",
-      version_number: latest_main_version,
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    )
-    UI.success("Bumped version to: #{new_version}")
-
-    increment_build_number(
-      build_number: 1,
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    )
-    UI.success("Reset build number to 1")
-    
-    UI.success("🚀 Version update completed!")
-    return { version: new_version, build: 1 }
   end
-
+  
   lane :build_and_upload do
     UI.header("Starting build_and_upload lane")
     
