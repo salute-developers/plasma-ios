@@ -40,7 +40,7 @@ platform :ios do
       end
     end
   end
-  
+
   lane :build_and_upload do
     UI.header("Starting build_and_upload lane")
     
@@ -86,11 +86,11 @@ platform :ios do
 
     build_name = case branch_name
                  when "feature/vsdimitraki/testflight-update-build-add-release"
-                   "SDDSDemo #{project_version}.#{build_number}"
+                   "SDDSDemo #{project_version} #{build_number}"
                  when "develop"
-                   "SDDSDemo #{project_version}.#{build_number} [Dev]"
+                   "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
-                   "SDDSDemo #{project_version}.#{build_number}"
+                   "SDDSDemo #{project_version} #{build_number}"
                  end
     UI.message("build name: #{build_name}")
 
