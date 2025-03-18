@@ -9,7 +9,7 @@ struct SheetWithDetentsViewModifier<Header: View, Body: View, Footer: View>: Vie
     let content: () -> SDDSBottomSheet<Header, Body, Footer>
     
     func body(content: Content) -> some View {
-        content.overlay(
+        content.background(
             SheetPresentationForSwiftUI(
                 $isPresented,
                 scrollProgress: $scrollProgress,

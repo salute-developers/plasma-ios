@@ -33,6 +33,9 @@ struct BottomSheetView: View {
             }
         }
         .navigationTitle("SDDSBottomSheet")
+        .onTapGesture {
+            viewModel.isBottomSheetPresented = false
+        }
         .bottomSheet(isPresented: $viewModel.isBottomSheetPresented) {
             SDDSBottomSheet(
                 appearance: viewModel.appearance,
