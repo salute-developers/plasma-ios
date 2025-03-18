@@ -107,6 +107,10 @@
 		815142892C99942E00E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 815142882C99942E00E6A00D /* SDDSThemeCore */; };
 		8151428B2C99944200E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8151428A2C99944200E6A00D /* SDDSThemeCore */; };
 		8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154644A2C96FDE600DAD8EA /* ViewProvider.swift */; };
+		81578DB82D89ADBA00BC7038 /* BottomSheetAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */; };
+		81578DBA2D89ADD200BC7038 /* BottomSheetSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DB92D89ADBC00BC7038 /* BottomSheetSizeConfiguration.swift */; };
+		81578DBC2D89ADD900BC7038 /* SDDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */; };
+		81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DBD2D89AEE900BC7038 /* BottomSheetHandlePlacement.swift */; };
 		8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F72F2C5D1CFE00622836 /* FillStyle.swift */; };
 		816243412CB81A4300506E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816243402CB81A4300506E1C /* Assets.xcassets */; };
 		81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81685C242CFF881300278446 /* SwitchAppearance.swift */; };
@@ -185,6 +189,15 @@
 		81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DE92D808A8800A41C89 /* CardAppearance.swift */; };
 		81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DEB2D808A9200A41C89 /* CardSizeConfiguration.swift */; };
 		81F89DEF2D808C9700A41C89 /* SDDSCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */; };
+		81FC47B02D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47A52D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift */; };
+		81FC47B12D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47A72D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift */; };
+		81FC47B22D928A2500A83F87 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47A62D928A2500A83F87 /* BottomSheetPresentationController.swift */; };
+		81FC47B32D928A2500A83F87 /* View+SDDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47AE2D928A2500A83F87 /* View+SDDSBottomSheet.swift */; };
+		81FC47B42D928A2500A83F87 /* BottomSheetHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47AB2D928A2500A83F87 /* BottomSheetHandleView.swift */; };
+		81FC47B52D928A2500A83F87 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47A82D928A2500A83F87 /* BottomSheetViewController.swift */; };
+		81FC47B62D928A2500A83F87 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47A42D928A2500A83F87 /* BottomSheetContainerViewController.swift */; };
+		81FC47B72D928A2500A83F87 /* BottomSheetDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47AD2D928A2500A83F87 /* BottomSheetDetent.swift */; };
+		81FC47B82D928A2500A83F87 /* BottomSheetHandleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47AA2D928A2500A83F87 /* BottomSheetHandleUIView.swift */; };
 		81FD6D4E2D6E2609002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */; };
 		81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */; };
 		81FD6D5B2D6E285C002A6E51 /* SDDSIndicatorPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */; };
@@ -323,6 +336,10 @@
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
+		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
+		81578DB92D89ADBC00BC7038 /* BottomSheetSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSizeConfiguration.swift; sourceTree = "<group>"; };
+		81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBottomSheet.swift; sourceTree = "<group>"; };
+		81578DBD2D89AEE900BC7038 /* BottomSheetHandlePlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHandlePlacement.swift; sourceTree = "<group>"; };
 		8159F72F2C5D1CFE00622836 /* FillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyle.swift; sourceTree = "<group>"; };
 		816243402CB81A4300506E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81685C222CFF87CA00278446 /* AppearanceVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceVariation.swift; sourceTree = "<group>"; };
@@ -434,6 +451,15 @@
 		81F89DE92D808A8800A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
 		81F89DEB2D808A9200A41C89 /* CardSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSizeConfiguration.swift; sourceTree = "<group>"; };
 		81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCardContent.swift; sourceTree = "<group>"; };
+		81FC47A42D928A2500A83F87 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
+		81FC47A52D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationConfiguration.swift; sourceTree = "<group>"; };
+		81FC47A62D928A2500A83F87 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		81FC47A72D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTransitioningDelegate.swift; sourceTree = "<group>"; };
+		81FC47A82D928A2500A83F87 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		81FC47AA2D928A2500A83F87 /* BottomSheetHandleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHandleUIView.swift; sourceTree = "<group>"; };
+		81FC47AB2D928A2500A83F87 /* BottomSheetHandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHandleView.swift; sourceTree = "<group>"; };
+		81FC47AD2D928A2500A83F87 /* BottomSheetDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDetent.swift; sourceTree = "<group>"; };
+		81FC47AE2D928A2500A83F87 /* View+SDDSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+SDDSBottomSheet.swift"; sourceTree = "<group>"; };
 		81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIndicator.swift; sourceTree = "<group>"; };
 		81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
 		81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSizeConfiguration.swift; sourceTree = "<group>"; };
@@ -785,6 +811,28 @@
 			path = SDDSAvatarGroup;
 			sourceTree = "<group>";
 		};
+		81578DB52D89AD9100BC7038 /* SDDSBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				81FC47A92D928A2500A83F87 /* BottomSheetPresentation */,
+				81FC47AC2D928A2500A83F87 /* Handle */,
+				81FC47AF2D928A2500A83F87 /* Modifier */,
+				81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */,
+				81578DB62D89AD9F00BC7038 /* BottomSheetAppearance */,
+			);
+			path = SDDSBottomSheet;
+			sourceTree = "<group>";
+		};
+		81578DB62D89AD9F00BC7038 /* BottomSheetAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81578DBD2D89AEE900BC7038 /* BottomSheetHandlePlacement.swift */,
+				81578DB92D89ADBC00BC7038 /* BottomSheetSizeConfiguration.swift */,
+				81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */,
+			);
+			path = BottomSheetAppearance;
+			sourceTree = "<group>";
+		};
 		81685C212CFF87AD00278446 /* SwitchAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,6 +1037,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81578DB52D89AD9100BC7038 /* SDDSBottomSheet */,
 				81F89DE62D808A7B00A41C89 /* SDDSCard */,
 				6925101B2D7632CA00545542 /* SDDSBadge */,
 				81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */,
@@ -1315,6 +1364,36 @@
 			path = CardAppearance;
 			sourceTree = "<group>";
 		};
+		81FC47A92D928A2500A83F87 /* BottomSheetPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				81FC47A42D928A2500A83F87 /* BottomSheetContainerViewController.swift */,
+				81FC47A52D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift */,
+				81FC47A62D928A2500A83F87 /* BottomSheetPresentationController.swift */,
+				81FC47A72D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift */,
+				81FC47A82D928A2500A83F87 /* BottomSheetViewController.swift */,
+			);
+			path = BottomSheetPresentation;
+			sourceTree = "<group>";
+		};
+		81FC47AC2D928A2500A83F87 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				81FC47AA2D928A2500A83F87 /* BottomSheetHandleUIView.swift */,
+				81FC47AB2D928A2500A83F87 /* BottomSheetHandleView.swift */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		81FC47AF2D928A2500A83F87 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				81FC47AD2D928A2500A83F87 /* BottomSheetDetent.swift */,
+				81FC47AE2D928A2500A83F87 /* View+SDDSBottomSheet.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1555,6 +1634,7 @@
 				817339F12D033EF30092608A /* AvatarImageSource.swift in Sources */,
 				69ED5C0F2D7847E00019EE99 /* SDDSCell.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
+				81578DBA2D89ADD200BC7038 /* BottomSheetSizeConfiguration.swift in Sources */,
 				812DB7582D57B44100D3F4A3 /* TextFieldClear.swift in Sources */,
 				817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */,
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
@@ -1575,11 +1655,21 @@
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
 				816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */,
+				81FC47B02D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift in Sources */,
+				81FC47B12D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift in Sources */,
+				81FC47B22D928A2500A83F87 /* BottomSheetPresentationController.swift in Sources */,
+				81FC47B32D928A2500A83F87 /* View+SDDSBottomSheet.swift in Sources */,
+				81FC47B42D928A2500A83F87 /* BottomSheetHandleView.swift in Sources */,
+				81FC47B52D928A2500A83F87 /* BottomSheetViewController.swift in Sources */,
+				81FC47B62D928A2500A83F87 /* BottomSheetContainerViewController.swift in Sources */,
+				81FC47B72D928A2500A83F87 /* BottomSheetDetent.swift in Sources */,
+				81FC47B82D928A2500A83F87 /* BottomSheetHandleUIView.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
 				814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */,
 				812DB7542D57B44100D3F4A3 /* TextFieldValue.swift in Sources */,
 				812DB7432D57B43900D3F4A3 /* TextArea.swift in Sources */,
 				81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */,
+				81578DBC2D89ADD900BC7038 /* SDDSBottomSheet.swift in Sources */,
 				81F89DEF2D808C9700A41C89 /* SDDSCardContent.swift in Sources */,
 				69C0356C2D4F8AC4005D3B95 /* SegmentSizeConfiguration.swift in Sources */,
 				81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */,
@@ -1636,6 +1726,7 @@
 				6925101E2D7632CA00545542 /* BadgeAppearance+Extensions.swift in Sources */,
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
+				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
 				692510212D7632CA00545542 /* SDDSBadge.swift in Sources */,
 				81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */,
 				692510222D7632CA00545542 /* BadgeAlignment+Extensions.swift in Sources */,
@@ -1662,6 +1753,7 @@
 				817339E92D033E8E0092608A /* AvatarAppearance.swift in Sources */,
 				811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */,
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
+				81578DB82D89ADBA00BC7038 /* BottomSheetAppearance.swift in Sources */,
 				814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */,
 				812DB7412D57B43900D3F4A3 /* TextAreaAppearance.swift in Sources */,
 				8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */,
