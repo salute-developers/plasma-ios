@@ -10,40 +10,34 @@ platform :ios do
     if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
-      last_commit = last_git_commit
-      last_commit_message = last_commit[:message]
-      UI.message("Last commit message: #{last_commit_message}")
+      latest_main_version = latest_testflight_version_number(
+        app_identifier: "com.sd.SDDSDemo",
+        api_key: {
+          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+          key: ENV["APP_STORE_CONNECT_API_KEY"]
+        }
+      )
+      UI.message("latest main version: #{latest_main_version}")
 
-        latest_main_version = latest_testflight_version_number(
-          app_identifier: "com.sd.SDDSDemo",
-          api_key: {
-            key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-            issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-            key: ENV["APP_STORE_CONNECT_API_KEY"]
-          }
-        )
+      new_version = increment_version_number(
+        bump_type: "minor",
+        version_number: latest_main_version,
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+      )
+      UI.message("Updated version to #{new_version}")
 
-        new_version = increment_version_number(
-          bump_type: "minor",
-          version_number: latest_main_version,
-          xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-        )
-        UI.message("Updated version to #{new_version}")
-
-        increment_build_number(
-          build_number: 1,
-          xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-        )
-        UI.message("Build number reset to 1")
-      else
-        UI.important("No merge from main detected. Skipping version increment")
+      increment_build_number(
+        build_number: 1,
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+      )
+      UI.message("Build number reset to 1")
     end
   end
-end
 
   lane :build_and_upload do
     UI.header("Starting build_and_upload lane")
-    
+
     def check_env_variable(key)
       if ENV[key].nil? || ENV[key].empty?
         UI.user_error!("Missing environment variable: #{key}")
@@ -92,7 +86,7 @@ end
                  else
                    "SDDSDemo #{project_version} #{build_number}"
                  end
-    UI.message("build name: #{build_name}")
+    UI.message("Build name: #{build_name}")
 
     if branch_name == "develop"
       update_info_plist(
@@ -124,7 +118,7 @@ end
     #     key: ENV["APP_STORE_CONNECT_API_KEY"]
     #   }
     # )
-    
+
     # UI.success("🎉 Build #{build_name} successfully uploaded!")
   end
 end
