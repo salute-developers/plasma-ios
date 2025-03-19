@@ -11,8 +11,22 @@ platform :ios do
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
 
-      latest_build_version = lane_context[SharedValues::LATEST_TESTFLIGHT_VERSION]
-      UI.message("latest main version: #{latest_build_version}")
+      latest_build_version = get_version_number(
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+        target: "SDDSDemoApp"
+      )
+
+    UI.message("latest_version: #{latest_build_version}")
+
+      latest_build_number = latest_testflight_build_number(
+        app_identifier: "com.sd.SDDSDemo",
+        api_key: {
+          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+          key: ENV["APP_STORE_CONNECT_API_KEY"]
+        }
+      )
+    UI.message("latest_build_number: #{latest_build_number}")
 
       new_version = increment_version_number(
         bump_type: "minor",
