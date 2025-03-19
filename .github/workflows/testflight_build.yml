@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - feature/vsdimitraki/testflight-update-build-add-release
+  pull_request:
+      types: [opened, synchronize, reopened]
+      branches:
+        - test/vsdimitraki/main
+
   workflow_dispatch:
 
 jobs:

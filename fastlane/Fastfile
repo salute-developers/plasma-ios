@@ -3,13 +3,15 @@ default_platform(:ios)
 platform :ios do
   lane :update_version do
     branch_name = git_branch
-    UI.header("Starting update_version lane on branch: #{branch_name}")
+    main_branch = "test/vsdimitraki/main"
+
+    UI.header("Current branch on lane update_version: #{branch_name}")
   
-    if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
+    if branch_name != "#{branch_name}"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
       last_commit_message = last_git_commit[:message]
-      if last_commit_message.include?("Merge branch 'main' into develop")
+      if last_commit_message.include?("Merge branch #{main_branch} into develop")
         UI.message("Merge from main detected.")
   
         latest_main_version = latest_testflight_version_number(
