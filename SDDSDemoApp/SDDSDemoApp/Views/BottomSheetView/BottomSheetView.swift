@@ -18,7 +18,7 @@ struct BottomSheetView: View {
                         title: "Open Bottom Sheet",
                         subtitle: "",
                         appearance: BasicButton.l.accent.appearance) {
-                            viewModel.isBottomSheetPresented.toggle()
+                            viewModel.isBottomSheetPresented = true
                         }
                     Spacer()
                 }
@@ -33,9 +33,6 @@ struct BottomSheetView: View {
             }
         }
         .navigationTitle("SDDSBottomSheet")
-        .onTapGesture {
-            viewModel.isBottomSheetPresented = false
-        }
         .bottomSheet(isPresented: $viewModel.isBottomSheetPresented) {
             SDDSBottomSheet(
                 appearance: viewModel.appearance,
