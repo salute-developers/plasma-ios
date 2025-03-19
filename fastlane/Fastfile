@@ -4,20 +4,16 @@ platform :ios do
   lane :update_version do
     branch_name = git_branch
     main_branch = "test/vsdimitraki/main"
-    UI.header("main branch on lane update_version: #{main_branch}")
-    UI.header("Current branch on lane update_version: #{branch_name}")
-  
+
+    UI.header("Current branch: #{branch_name}")
+
     if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
-    #   last_commit = last_git_commit
-    #   last_commit_message = last_commit[:message]
+      last_commit = last_git_commit
+      last_commit_message = last_commit[:message]
+      UI.message("Last commit message: #{last_commit_message}")
 
-    # UI.message("Last commit message: #{last_commit_message}")
-
-    #   if last_commit_message.include?("Merge branch #{main_branch} into develop")
-    #     UI.message("Merge from main detected.")
-  
         latest_main_version = latest_testflight_version_number(
           app_identifier: "com.sd.SDDSDemo",
           api_key: {
@@ -26,26 +22,24 @@ platform :ios do
             key: ENV["APP_STORE_CONNECT_API_KEY"]
           }
         )
-  
+
         new_version = increment_version_number(
           bump_type: "minor",
           version_number: latest_main_version,
           xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
         )
-  
         UI.message("Updated version to #{new_version}")
-  
+
         increment_build_number(
           build_number: 1,
           xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
         )
-  
         UI.message("Build number reset to 1")
       else
         UI.important("No merge from main detected. Skipping version increment")
-      end
     end
   end
+end
 
   lane :build_and_upload do
     UI.header("Starting build_and_upload lane")
