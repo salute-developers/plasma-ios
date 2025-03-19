@@ -16,23 +16,23 @@ platform :ios do
         target: "SDDSDemoApp"
       )
 
-    UI.message("latest_version: #{latest_build_version}")
+    new_build_version = (latest_build_version.to_f + 0.1).to_s
 
-      latest_build_number = latest_testflight_build_number(
-        app_identifier: "com.sd.SDDSDemo",
-        api_key: {
-          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-          key: ENV["APP_STORE_CONNECT_API_KEY"]
-        }
-      )
-    UI.message("latest_build_number: #{latest_build_number}")
+      # latest_build_number = latest_testflight_build_number(
+      #   app_identifier: "com.sd.SDDSDemo",
+      #   api_key: {
+      #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      #     key: ENV["APP_STORE_CONNECT_API_KEY"]
+      #   }
+      # )
+    # UI.message("latest_build_number: #{latest_build_number}")
 
-      new_version = increment_version_number(
-        bump_type: "minor",
-        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+      updated_build_version = increment_version_number(
+        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+        version_number: new_build_version
       )
-      UI.message("Updated version to #{new_version}")
+      UI.message("Updated version to #{updated_build_version}")
 
       reseting_build_number = increment_build_number(
         build_number: 1,
