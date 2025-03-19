@@ -7,7 +7,7 @@ platform :ios do
 
     UI.header("Current branch: #{branch_name}")
 
-    if branch_name != "test/vsdimitraki/main"
+    if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
 
@@ -30,7 +30,6 @@ platform :ios do
 
       new_version = increment_version_number(
         bump_type: "minor",
-        version_number: latest_build_version,
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
       )
       UI.message("Updated version to #{new_version}")
