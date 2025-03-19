@@ -10,15 +10,9 @@ platform :ios do
     if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
-      latest_main_version = latest_testflight_version_number(
-        app_identifier: "com.sd.SDDSDemo",
-        api_key: {
-          key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-          issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-          key: ENV["APP_STORE_CONNECT_API_KEY"]
-        }
-      )
-      UI.message("latest main version: #{latest_main_version}")
+
+      latest_build_version = lane_context[SharedValues::LATEST_TESTFLIGHT_VERSION]
+      UI.message("latest main version: #{latest_build_version}")
 
       new_version = increment_version_number(
         bump_type: "minor",
