@@ -2,21 +2,10 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
-private struct ScrollProgressKey: EnvironmentKey {
-    static let defaultValue: CGFloat = 0
-}
-
-extension EnvironmentValues {
-    var scrollProgress: CGFloat {
-        get { self[ScrollProgressKey.self] }
-        set { self[ScrollProgressKey.self] = newValue }
-    }
-}
-
 public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.scrollProgress) private var scrollProgress
+    @Environment(\.bottomSheetScrollProgress) private var bottomSheetScrollProgress
     private let _appearance: BottomSheetAppearance?
     
     public let header: Header
@@ -37,33 +26,55 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     
     public var body: some View {
         ZStack(alignment: .top) {
-            if shouldShowHandle {
-                handleView
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .offset(y: handleOffset)
+            ZStack(alignment: .bottom) {
+                if let cornerRadiusDrawer = appearance.size.pathDrawer as? CornerRadiusDrawer {
+                    Rectangle()
+                        .fill(appearance.backgroundColor.color(for: colorScheme))
+                        .frame(height: cornerRadiusDrawer.cornerRadius)
+                        .frame(maxWidth: .infinity)
+                }
+                
+                VStack(spacing: 0) {
+                    header
+                    content
+                    footer
+                }
+                .applyIf(appearance.size.paddingTop > 0) {
+                    $0.padding(.top, appearance.size.paddingTop)
+                }
+                .applyIf(appearance.size.paddingBottom > 0) {
+                    $0.padding(.bottom, appearance.size.paddingBottom)
+                }
+                .applyIf(appearance.size.paddingStart > 0) {
+                    $0.padding(.leading, appearance.size.paddingStart)
+                }
+                .applyIf(appearance.size.paddingEnd > 0) {
+                    $0.padding(.trailing, appearance.size.paddingEnd)
+                }
+                .frame(maxWidth: .infinity)
+                .background(appearance.backgroundColor.color(for: colorScheme))
+                .shape(pathDrawer: appearance.size.pathDrawer)
             }
             
-            VStack(spacing: 0) {
-                header
-                content
-                    .applyIf(appearance.size.paddingTop > 0) {
-                        $0.padding(.top, appearance.size.paddingTop)
-                    }
-                    .applyIf(appearance.size.paddingBottom > 0) {
-                        $0.padding(.bottom, appearance.size.paddingBottom)
-                    }
-                    .applyIf(appearance.size.paddingStart > 0) {
-                        $0.padding(.leading, appearance.size.paddingStart)
-                    }
-                    .applyIf(appearance.size.paddingEnd > 0) {
-                        $0.padding(.trailing, appearance.size.paddingEnd)
-                    }
-                footer
+            if appearance.handlePlacement != .none {
+                handleView
+                    .offset(x: 0, y: handleOffset)
             }
-            .offset(y: contentOffset)
         }
-        .background(appearance.backgroundColor.color(for: colorScheme))
-        .shape(pathDrawer: appearance.size.pathDrawer)
+        .frame(maxHeight: .infinity)
+    }
+    
+    private var handleOffset: CGFloat {
+        switch handlePlacement {
+        case .auto:
+            return -appearance.size.handleOffset - appearance.size.handleHeight + (appearance.size.handleOffset * 2 + appearance.size.handleHeight) * bottomSheetScrollProgress
+        case .outer:
+            return -appearance.size.handleOffset - appearance.size.handleHeight
+        case .inner:
+            return appearance.size.handleOffset
+        case .none:
+            return 0
+        }
     }
     
     private var appearance: BottomSheetAppearance {
@@ -83,14 +94,12 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         }
     }
     
-    private var contentOffset: CGFloat {
-        shouldShowHandle && handlePlacement == .outer ? appearance.size.handleOffset + appearance.size.handleHeight : 0
+    private var showHandleOutside: Bool {
+        handlePlacement == .outer || handlePlacement == .auto
     }
     
-    private var handleOffset: CGFloat {
-        let baseOffset = handlePlacement == .outer ? -appearance.size.handleOffset : appearance.size.handleOffset
-        let scrollOffset = scrollProgress * appearance.size.handleHeight
-        return baseOffset + scrollOffset
+    private var contentOffset: CGFloat {
+        shouldShowHandle && handlePlacement == .outer ? appearance.size.handleOffset + appearance.size.handleHeight : 0
     }
     
     private var handleView: some View {
@@ -99,4 +108,24 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
             .frame(width: appearance.size.handleWidth, height: appearance.size.handleHeight)
             .shape(pathDrawer: appearance.size.handlePathDrawer)
     }
+}
+
+#Preview {
+    SDDSBottomSheet(
+        appearance: .init(
+            size: DefaultBottomSheetSize(),
+            backgroundColor: Color.white.token,
+            handleColor: Color.accentColor.token,
+            handlePlacement: .auto
+        ),
+        header: {
+            Text("Header")
+        },
+        content: {
+            Text("Content")
+        },
+        footer: {
+            Text("Footer")
+        }
+    )
 }

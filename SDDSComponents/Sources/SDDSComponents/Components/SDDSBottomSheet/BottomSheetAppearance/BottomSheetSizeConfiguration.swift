@@ -15,15 +15,15 @@ public protocol BottomSheetSizeConfiguration: CustomDebugStringConvertible {
 }
 
 public struct DefaultBottomSheetSize: BottomSheetSizeConfiguration {
-    public var paddingStart: CGFloat = 0
-    public var paddingEnd: CGFloat = 0
-    public var paddingTop: CGFloat = 0
-    public var paddingBottom: CGFloat = 0
-    public var pathDrawer: any SDDSThemeCore.PathDrawer = DefaultPathDrawer()
-    public var handlePathDrawer: any SDDSThemeCore.PathDrawer = DefaultPathDrawer()
-    public var handleWidth: CGFloat = 0
-    public var handleHeight: CGFloat = 0
-    public var handleOffset: CGFloat = 0
+    public var paddingStart: CGFloat = 16
+    public var paddingEnd: CGFloat = 16
+    public var paddingTop: CGFloat = 16
+    public var paddingBottom: CGFloat = 16
+    public var pathDrawer: any SDDSThemeCore.PathDrawer = CornerRadiusDrawer(cornerRadius: 16)
+    public var handlePathDrawer: any SDDSThemeCore.PathDrawer = CornerRadiusDrawer(cornerRadius: 3)
+    public var handleWidth: CGFloat = 48
+    public var handleHeight: CGFloat = 6
+    public var handleOffset: CGFloat = 6
     
     public var debugDescription: String {
         return "Default BottomSheet Size"
