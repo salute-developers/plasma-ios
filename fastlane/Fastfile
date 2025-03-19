@@ -10,14 +10,13 @@ platform :ios do
     if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
-      last_commit = last_git_commit
-      last_commit_message = last_commit[:message]
+    #   last_commit = last_git_commit
+    #   last_commit_message = last_commit[:message]
 
-    UI.message("Last commit message: #{last_commit_message}")
-    UI.message("Last commit: #{last_commit}")
+    # UI.message("Last commit message: #{last_commit_message}")
 
-      if last_commit_message.include?("Merge branch #{main_branch} into develop")
-        UI.message("Merge from main detected.")
+    #   if last_commit_message.include?("Merge branch #{main_branch} into develop")
+    #     UI.message("Merge from main detected.")
   
         latest_main_version = latest_testflight_version_number(
           app_identifier: "com.sd.SDDSDemo",
