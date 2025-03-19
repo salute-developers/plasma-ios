@@ -30,7 +30,7 @@ platform :ios do
 
       new_version = increment_version_number(
         bump_type: "minor",
-        version_number: latest_main_version,
+        version_number: latest_build_version,
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
       )
       UI.message("Updated version to #{new_version}")
