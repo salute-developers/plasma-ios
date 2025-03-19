@@ -5,7 +5,7 @@ platform :ios do
     branch_name = git_branch
     UI.header("Starting update_version lane on branch: #{branch_name}")
   
-    if branch_name != "develop"
+    if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
       UI.important("This lane should be run only in develop branch. Skipping execution.")
     else
       last_commit_message = last_git_commit[:message]
@@ -85,9 +85,9 @@ platform :ios do
     UI.success("New build number: #{build_number}")
 
     build_name = case branch_name
-                 when "feature/vsdimitraki/testflight-update-build-add-release"
+                 when "test/vsdimitraki/main"
                    "SDDSDemo #{project_version} #{build_number}"
-                 when "develop"
+                 when "feature/vsdimitraki/testflight-update-build-add-release"
                    "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
                    "SDDSDemo #{project_version} #{build_number}"
