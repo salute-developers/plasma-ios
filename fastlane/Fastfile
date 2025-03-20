@@ -61,7 +61,7 @@ platform :ios do
 
     UI.user_error!("Version number is missing") if project_version.nil?
 
-    if ENV['BUILD_RESET_FLAG'] == '1'
+    if ENV['BUILD_NUMBER_RESET_FLAG'] == '1'
       latest_tf_build = 0
     else
       latest_tf_build = latest_testflight_build_number(
