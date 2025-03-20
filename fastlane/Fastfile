@@ -79,7 +79,7 @@ platform :ios do
                  when "main"
                    "SDDSDemo #{project_version} #{build_number}"
                  when "feature/vsdimitraki/testflight-update-build-add-release"
-                   "SDDSDemo #{project_version} #{0} [Dev]"
+                   "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
                    "SDDSDemo #{project_version} #{build_number}"
                  end
