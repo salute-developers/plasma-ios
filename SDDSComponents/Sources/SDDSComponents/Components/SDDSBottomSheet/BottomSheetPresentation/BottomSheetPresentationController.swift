@@ -99,10 +99,14 @@ final class BottomSheetPresentationController: UIPresentationController {
             isDragging = true
             isFullScreen = currentHeight >= containerView.bounds.height
             
-        case .changed:
+        case .changed:            
             let newHeight: CGFloat
             if translation.y < 0 {
-                // Скролл вверх
+                // Скролл вниз из полного экрана
+                if isFullScreen {
+                    return
+                }
+                // Скролл вверх из частичного экрана
                 if supportsFullScreen {
                     newHeight = min(containerView.bounds.height, initialHeight - translation.y)
                 } else {
@@ -233,6 +237,9 @@ final class BottomSheetPresentationController: UIPresentationController {
     }
     
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
+        presentedViewController.view.setNeedsLayout()
+        presentedViewController.view.layoutIfNeeded()
+        
         let contentSize = presentedViewController.view.systemLayoutSizeFitting(
             CGSize(width: parentSize.width, height: UIView.layoutFittingExpandedSize.height),
             withHorizontalFittingPriority: .required,
