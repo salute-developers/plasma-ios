@@ -1,60 +1,53 @@
 default_platform(:ios)
 
 platform :ios do
-  lane :update_version do
+  lane :update_build_version_before_release do
     branch_name = git_branch
-    main_branch = "test/vsdimitraki/main"
-
-    UI.header("Current branch: #{branch_name}")
-
-    if branch_name != "feature/vsdimitraki/testflight-update-build-add-release"
-      UI.important("This lane should be run only in develop branch. Skipping execution.")
-    else
-
-      latest_build_version = get_version_number(
+    if branch_name == "feature/vsdimitraki/testflight-update-build-add-release"
+      project_version = get_version_number(
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
         target: "SDDSDemoApp"
       )
+      UI.message("Current project version: #{project_version}")
 
-    new_build_version = (latest_build_version.to_f + 0.1).to_s
+      project_version = project_version.split('.').map(&:to_i)
+      project_version[1] += 1
+      project_version = project_version.join('.')
 
-      # latest_build_number = latest_testflight_build_number(
-      #   app_identifier: "com.sd.SDDSDemo",
-      #   api_key: {
-      #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-      #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-      #     key: ENV["APP_STORE_CONNECT_API_KEY"]
-      #   }
-      # )
-    # UI.message("latest_build_number: #{latest_build_number}")
+      UI.message("New project version: #{project_version}")
 
       updated_build_version = increment_version_number(
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-        version_number: new_build_version
+        version_number: project_version
       )
-      UI.message("Updated version to #{updated_build_version}")
+      UI.message("Updated project version to #{updated_build_version}")
 
       reseting_build_number = increment_build_number(
-        build_number: 1,
+        build_number: 0,
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
       )
-      UI.message("Build number reset to #{reseting_build_number}")
+      UI.message("Build number reset to: #{reseting_build_number}")
+      UI.message("Automatic call build_and_upload lane...")
+      Fastlane::Actions.sh("fastlane", "ios", "build_and_upload")
     end
   end
 
   lane :build_and_upload do
     UI.header("Starting build_and_upload lane")
 
-    def check_env_variable(key)
-      if ENV[key].nil? || ENV[key].empty?
-        UI.user_error!("Missing environment variable: #{key}")
-      end
-    end
+    branch_name = git_branch
+    UI.message("Building from branch: #{branch_name}")
 
-    check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
-    check_env_variable("APP_STORE_CONNECT_API_KEY")
-    check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
-    UI.success("✅ All required environment variables are set")
+    # def check_env_variable(key)
+    #   if ENV[key].nil? || ENV[key].empty?
+    #     UI.user_error!("Missing environment variable: #{key}")
+    #   end
+    # end
+
+    # check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
+    # check_env_variable("APP_STORE_CONNECT_API_KEY")
+    # check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
+    # UI.success("✅ All required environment variables are set")
 
     project_version = get_version_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
@@ -62,46 +55,41 @@ platform :ios do
     )
     UI.message("Current project version: #{project_version}")
 
-    UI.user_error!("Version number is missing") if project_version.nil?
+    # UI.user_error!("Version number is missing") if project_version.nil?
 
-    branch_name = git_branch
-    UI.message("Building from branch: #{branch_name}")
+    # latest_tf_build = latest_testflight_build_number(
+    #   app_identifier: "com.sd.SDDSDemo",
+    #   api_key: {
+    #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+    #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+    #     key: ENV["APP_STORE_CONNECT_API_KEY"]
+    #   }
+    # )
+    # UI.message("Latest TestFlight build: #{latest_tf_build}")
 
-    latest_tf_build = latest_testflight_build_number(
-      app_identifier: "com.sd.SDDSDemo",
-      api_key: {
-        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-        key: ENV["APP_STORE_CONNECT_API_KEY"]
-      }
-    )
-    UI.message("Latest TestFlight build: #{latest_tf_build}")
+    # build_number = (latest_tf_build.to_i + 1).to_s
 
-    build_number = (latest_tf_build.to_i + 1).to_s
-
-    increment_build_number(
-      build_number: build_number,
-      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    )
-    UI.success("New build number: #{build_number}")
+    # increment_build_number(
+    #   build_number: build_number,
+    #   xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    # )
+    # UI.success("New build number: #{build_number}")
 
     build_name = case branch_name
-                 when "test/vsdimitraki/main"
+                 when "main"
                    "SDDSDemo #{project_version} #{build_number}"
                  when "feature/vsdimitraki/testflight-update-build-add-release"
-                   "SDDSDemo #{project_version} #{build_number} [Dev]"
+                   "SDDSDemo #{project_version} #{0} [Dev]"
                  else
                    "SDDSDemo #{project_version} #{build_number}"
                  end
     UI.message("Build name: #{build_name}")
 
-    if branch_name == "develop"
-      update_info_plist(
-        xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-        plist_path: "SDDSDemoApp/Info.plist",
-        display_name: build_name
-      )
-    end
+    update_info_plist(
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
+      plist_path: "SDDSDemoApp/Info.plist",
+      display_name: build_name
+    )
 
     # UI.message("Starting build process...")
     # build_app(
@@ -126,6 +114,6 @@ platform :ios do
     #   }
     # )
 
-    # UI.success("🎉 Build #{build_name} successfully uploaded!")
+    UI.success("🎉 Build #{build_name} successfully uploaded!")
   end
 end
