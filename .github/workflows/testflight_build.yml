@@ -3,7 +3,7 @@ name: Build and Deploy to TestFlight
 on:
   push:
     branches:
-      - feature/vsdimitraki/testflight-update-build-add-release
+      - main
   workflow_dispatch:
     inputs:
       lane:
