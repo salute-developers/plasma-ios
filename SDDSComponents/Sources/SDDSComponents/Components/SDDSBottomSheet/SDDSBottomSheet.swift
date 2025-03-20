@@ -5,12 +5,13 @@ import SDDSThemeCore
 public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.bottomSheetScrollProgress) private var bottomSheetScrollProgress
     private let _appearance: BottomSheetAppearance?
     
     public let header: Header
     public let content: Content
     public let footer: Footer
+    
+    @Binding var bottomSheetScrollProgress: CGFloat
     
     public init(
         appearance: BottomSheetAppearance? = nil,
@@ -22,6 +23,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         self.header = header()
         self.content = content()
         self.footer = footer()
+        _bottomSheetScrollProgress = .constant(0)
     }
     
     public var body: some View {
@@ -33,35 +35,40 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
                         .frame(height: cornerRadiusDrawer.cornerRadius)
                         .frame(maxWidth: .infinity)
                 }
-                
                 VStack(spacing: 0) {
-                    header
-                    content
-                    footer
+                    Spacer()
+                        .frame(height: 2 * appearance.size.handleHeight + appearance.size.handleOffset)
+                    VStack(spacing: 0) {
+                        header
+                        content
+                        footer
+                    }
+                    .applyIf(appearance.size.paddingTop > 0) {
+                        $0.padding(.top, appearance.size.paddingTop)
+                    }
+                    .applyIf(appearance.size.paddingBottom > 0) {
+                        $0.padding(.bottom, appearance.size.paddingBottom)
+                    }
+                    .applyIf(appearance.size.paddingStart > 0) {
+                        $0.padding(.leading, appearance.size.paddingStart)
+                    }
+                    .applyIf(appearance.size.paddingEnd > 0) {
+                        $0.padding(.trailing, appearance.size.paddingEnd)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(appearance.backgroundColor.color(for: colorScheme))
+                    .shape(pathDrawer: appearance.size.pathDrawer)
+                    .debug(color: .green, condition: true)
                 }
-                .applyIf(appearance.size.paddingTop > 0) {
-                    $0.padding(.top, appearance.size.paddingTop)
-                }
-                .applyIf(appearance.size.paddingBottom > 0) {
-                    $0.padding(.bottom, appearance.size.paddingBottom)
-                }
-                .applyIf(appearance.size.paddingStart > 0) {
-                    $0.padding(.leading, appearance.size.paddingStart)
-                }
-                .applyIf(appearance.size.paddingEnd > 0) {
-                    $0.padding(.trailing, appearance.size.paddingEnd)
-                }
-                .frame(maxWidth: .infinity)
-                .background(appearance.backgroundColor.color(for: colorScheme))
-                .shape(pathDrawer: appearance.size.pathDrawer)
+                .debug(color: .red, condition: true)
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             
             if appearance.handlePlacement != .none {
                 handleView
                     .offset(x: 0, y: handleOffset)
             }
         }
-        .frame(maxHeight: .infinity)
     }
     
     private var handleOffset: CGFloat {
@@ -69,7 +76,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         case .auto:
             return -appearance.size.handleOffset - appearance.size.handleHeight + (appearance.size.handleOffset * 2 + appearance.size.handleHeight) * bottomSheetScrollProgress
         case .outer:
-            return -appearance.size.handleOffset - appearance.size.handleHeight
+            return appearance.size.handleHeight
         case .inner:
             return appearance.size.handleOffset
         case .none:
@@ -77,7 +84,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         }
     }
     
-    private var appearance: BottomSheetAppearance {
+    var appearance: BottomSheetAppearance {
         _appearance ?? environmentAppearance
     }
     

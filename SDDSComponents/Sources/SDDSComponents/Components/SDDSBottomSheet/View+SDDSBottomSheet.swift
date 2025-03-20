@@ -10,11 +10,9 @@ public extension View {
         return self.background(
             BottomSheetViewController(
                 isPresented: isPresented,
+                bottomSheetScrollProgress: contentView.$bottomSheetScrollProgress,
                 content: contentView,
-                configuration: configuration,
-                onBottomSheetScrollChange: { change in
-                    contentView.environment(\.bottomSheetScrollProgress, change)
-                }
+                configuration: configuration
             )
         )
     }

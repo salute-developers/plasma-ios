@@ -132,24 +132,28 @@ final class BottomSheetPresentationController: UIPresentationController {
             
         case .ended:
             isDragging = false
-            let snapToFull = velocity.y < 0 && supportsFullScreen // Двигаемся вверх
-            let snapToInitial = velocity.y >= 0 && presentedViewController.view.frame.height > containerView.bounds.height * 0.75
-            let snapToDismiss = velocity.y >= 0 && presentedViewController.view.frame.height <= containerView.bounds.height * 0.5
+            let velocityThreshold: CGFloat = 1000
+            let heightThreshold = containerView.bounds.height * 0.5
+            
+            let isQuickSwipeUp = velocity.y < -velocityThreshold
+            let isQuickSwipeDown = velocity.y > velocityThreshold
+            let isAboveHalfScreen = presentedViewController.view.frame.height > heightThreshold
+            
+            let snapToFull = (isQuickSwipeUp || isAboveHalfScreen) && supportsFullScreen
             
             if snapToFull {
                 animateToFullState()
-            } else if snapToInitial {
+            } else if isFullScreen && isQuickSwipeDown {
+                // Если мы в fullscreen и пользователь быстро смахнул вниз, возвращаемся в initialState
                 animateToInitialState()
-            } else if snapToDismiss && isDismissEnabled {
-                if isFullScreen {
-                    animateToInitialState()
-                } else {
-                    dismissIfEnabled()
-                }
+            } else {
+                // В остальных случаях возвращаемся в initialState
+                animateToInitialState()
             }
             
         case .cancelled:
             isDragging = false
+            animateToInitialState()
             
         default:
             break
@@ -160,12 +164,12 @@ final class BottomSheetPresentationController: UIPresentationController {
         guard let containerView = containerView else { return }
         isAnimating = true
         UIView.animate(withDuration: 0.3) {
-            self.presentedViewController.view.frame.size.height = self.initialHeight
-            self.presentedViewController.view.frame.origin.y = containerView.bounds.height - self.initialHeight
+            self.presentedViewController.view.frame.origin.y = self.frameOfPresentedViewInContainerView.origin.y
             if self.isDimmingEnabled {
                 self.dimmingView?.alpha = self.dimmingAlphaWhenInitial
             }
         } completion: { _ in
+            self.presentedViewController.view.frame.size.height = self.frameOfPresentedViewInContainerView.height
             self.isAnimating = false
             self.isFullScreen = false
             self.currentHeight = self.initialHeight
