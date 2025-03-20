@@ -2,6 +2,7 @@ default_platform(:ios)
 
 platform :ios do
   lane :update_build_version_before_release do
+    ENV['BUILD_NUMBER_RESET_FLAG'] = '0'
     branch_name = git_branch
     if branch_name == "feature/vsdimitraki/testflight-update-build-add-release"
       project_version = get_version_number(
@@ -28,6 +29,9 @@ platform :ios do
       )
       UI.message("Build number reset to: #{reseting_build_number}")
       UI.message("Automatic call build_and_upload lane...")
+
+      ENV['BUILD_NUMBER_RESET_FLAG'] = '1'
+
       Fastlane::Actions.sh("fastlane", "ios", "build_and_upload")
     end
   end
@@ -57,7 +61,10 @@ platform :ios do
 
     UI.user_error!("Version number is missing") if project_version.nil?
 
-    latest_tf_build = latest_testflight_build_number(
+    if ENV['BUILD_RESET_FLAG'] == '1'
+      latest_tf_build = 0
+    else
+      latest_tf_build = latest_testflight_build_number(
       app_identifier: "com.sd.SDDSDemo",
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
@@ -66,6 +73,7 @@ platform :ios do
       }
     )
     UI.message("Latest TestFlight build: #{latest_tf_build}")
+    end
 
     build_number = (latest_tf_build.to_i + 1).to_s
 
