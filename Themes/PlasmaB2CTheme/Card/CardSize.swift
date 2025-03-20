@@ -29,7 +29,7 @@ struct CardSizeM: CardSizeConfiguration {
     var paddingEnd = CGFloat(10.0)
     var paddingStart = CGFloat(10.0)
     var paddingTop = CGFloat(10.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius + 2.0) as PathDrawer
     public var debugDescription: String {
         return "CardSize"
     }
