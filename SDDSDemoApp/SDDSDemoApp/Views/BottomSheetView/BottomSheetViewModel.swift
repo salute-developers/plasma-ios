@@ -11,4 +11,10 @@ final class BottomSheetViewModel: ComponentViewModel<BottomSheetVariationProvide
     init() {
         super.init(variationProvider: BottomSheetVariationProvider())
     }
+    
+    func updateHandlePlacement(_ placement: BottomSheetHandlePlacement) {
+        var newAppearance = appearance
+        newAppearance.handlePlacement = placement
+        appearance = newAppearance
+    }
 }

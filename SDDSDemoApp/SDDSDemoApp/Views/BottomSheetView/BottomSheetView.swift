@@ -15,10 +15,10 @@ struct BottomSheetView: View {
                 HStack {
                     Spacer()
                     BasicButton(
-                        title: "Open Bottom Sheet",
+                        title: "Open",
                         subtitle: "",
                         appearance: BasicButton.l.accent.appearance) {
-                            viewModel.isBottomSheetPresented = true
+                            viewModel.isBottomSheetPresented.toggle()
                         }
                     Spacer()
                 }
@@ -30,6 +30,7 @@ struct BottomSheetView: View {
                 VariationsView(viewModel: viewModel)
                 headerToggle
                 footerToogle
+                handlePositionPicker
             }
         }
         .navigationTitle("SDDSBottomSheet")
@@ -81,6 +82,17 @@ struct BottomSheetView: View {
     private var headerToggle: some View {
         HStack {
             Toggle("Header", isOn: $viewModel.isHeaderEnabled)
+        }
+    }
+    
+    private var handlePositionPicker: some View {
+        Picker("Handle Placement", selection: Binding(
+            get: { viewModel.appearance.handlePlacement },
+            set: { viewModel.updateHandlePlacement($0) }
+        )) {
+            ForEach(BottomSheetHandlePlacement.allCases, id: \.self) { placement in
+                Text(placement.rawValue.capitalized).tag(placement)
+            }
         }
     }
 }
