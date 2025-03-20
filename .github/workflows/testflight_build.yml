@@ -3,7 +3,7 @@ name: Build and Deploy to TestFlight
 on:
   push:
     branches:
-      - main
+      - feature/vsdimitraki/testflight-update-build-add-release
   workflow_dispatch:
     inputs:
       lane:
@@ -81,4 +81,9 @@ jobs:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-        run: fastlane ${{ github.event.inputs.lane }}
+        run: |
+         if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            fastlane ${{ github.event.inputs.lane }}
+          else
+            fastlane build_and_upload
+          fi

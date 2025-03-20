@@ -4,7 +4,7 @@ platform :ios do
   lane :update_build_version_before_release do
     ENV['BUILD_NUMBER_RESET_FLAG'] = '0'
     branch_name = git_branch
-    if branch_name == "feature/vsdimitraki/testflight-update-build-add-release"
+    if branch_name == "develop"
       project_version = get_version_number(
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
         target: "SDDSDemoApp"
@@ -86,7 +86,7 @@ platform :ios do
     build_name = case branch_name
                  when "main"
                    "SDDSDemo #{project_version} #{build_number}"
-                 when "feature/vsdimitraki/testflight-update-build-add-release"
+                 when "develop"
                    "SDDSDemo #{project_version} #{build_number} [Dev]"
                  else
                    "SDDSDemo #{project_version} #{build_number}"
@@ -99,28 +99,28 @@ platform :ios do
       display_name: build_name
     )
 
-    UI.message("Starting build process...")
-    build_app(
-      scheme: "SDDSDemoApp",
-      export_method: "app-store",
-      export_options: {
-        signingStyle: "manual",
-        teamID: "KDMYYG676V",
-        provisioningProfiles: {
-          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
-        }
-      },
-      output_name: build_name
-    )
+    # UI.message("Starting build process...")
+    # build_app(
+    #   scheme: "SDDSDemoApp",
+    #   export_method: "app-store",
+    #   export_options: {
+    #     signingStyle: "manual",
+    #     teamID: "KDMYYG676V",
+    #     provisioningProfiles: {
+    #       "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+    #     }
+    #   },
+    #   output_name: build_name
+    # )
 
-    UI.message("Uploading to TestFlight...")
-    upload_to_testflight(
-      api_key: {
-        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-        key: ENV["APP_STORE_CONNECT_API_KEY"]
-      }
-    )
+    # UI.message("Uploading to TestFlight...")
+    # upload_to_testflight(
+    #   api_key: {
+    #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+    #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+    #     key: ENV["APP_STORE_CONNECT_API_KEY"]
+    #   }
+    # )
 
     UI.success("🎉 Build #{build_name} successfully uploaded!")
   end
