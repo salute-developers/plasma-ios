@@ -99,28 +99,28 @@ platform :ios do
       display_name: build_name
     )
 
-    # UI.message("Starting build process...")
-    # build_app(
-    #   scheme: "SDDSDemoApp",
-    #   export_method: "app-store",
-    #   export_options: {
-    #     signingStyle: "manual",
-    #     teamID: "KDMYYG676V",
-    #     provisioningProfiles: {
-    #       "com.sd.SDDSDemo" => "SDDS Demo Distribution"
-    #     }
-    #   },
-    #   output_name: build_name
-    # )
+    UI.message("Starting build process...")
+    build_app(
+      scheme: "SDDSDemoApp",
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "manual",
+        teamID: "KDMYYG676V",
+        provisioningProfiles: {
+          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+        }
+      },
+      output_name: build_name
+    )
 
-    # UI.message("Uploading to TestFlight...")
-    # upload_to_testflight(
-    #   api_key: {
-    #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-    #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-    #     key: ENV["APP_STORE_CONNECT_API_KEY"]
-    #   }
-    # )
+    UI.message("Uploading to TestFlight...")
+    upload_to_testflight(
+      api_key: {
+        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
+    )
 
     UI.success("🎉 Build #{build_name} successfully uploaded!")
   end
