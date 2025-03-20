@@ -21,7 +21,8 @@ struct ComponentsView: View {
         ("SDDSBadge", AnyView(BadgeView())),
         ("SDDSIndicator", AnyView(IndicatorView())),
         ("SDDSCell", AnyView(CellView())),
-        ("SDDSCard", AnyView(CardView()))
+        ("SDDSCard", AnyView(CardView())),
+        ("SDDSBottomSheet", AnyView(BottomSheetView()))
     ]
 
     var body: some View {

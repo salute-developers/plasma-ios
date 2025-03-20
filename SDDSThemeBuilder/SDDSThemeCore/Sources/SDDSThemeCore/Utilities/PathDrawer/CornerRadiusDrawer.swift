@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 public final class CornerRadiusDrawer: PathDrawer {
-    let cornerRadius: CGFloat
+    public let cornerRadius: CGFloat
     
     public init(cornerRadius: CGFloat) {
         self.cornerRadius = cornerRadius

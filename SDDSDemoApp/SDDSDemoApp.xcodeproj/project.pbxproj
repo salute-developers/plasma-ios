@@ -41,6 +41,9 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
+		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
+		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
+		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
 		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
@@ -153,6 +156,9 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
+		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
+		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		816243432CB9057E00506E1C /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		816243452CB907E900506E1C /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
 		816243482CB90FA800506E1C /* GradientPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPickerView.swift; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81578DD32D89FACF00BC7038 /* BottomSheetView */,
 				81F89E482D81A39B00A41C89 /* CardView */,
 				81FD6D5C2D6E28A7002A6E51 /* IndicatorView */,
 				81763B102D6DF42F00904D4A /* BadgeView */,
@@ -436,6 +443,16 @@
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
 			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		81578DD32D89FACF00BC7038 /* BottomSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				81578DD82D89FBA900BC7038 /* BottomSheetView.swift */,
+				81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */,
+				81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */,
+			);
+			path = BottomSheetView;
 			sourceTree = "<group>";
 		};
 		816243422CB9056A00506E1C /* AvatarView */ = {
@@ -765,7 +782,10 @@
 				81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */,
 				811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */,
 				81763B162D6DF43F00904D4A /* BadgeViewModel.swift in Sources */,
+				81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */,
+				81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */,
 				6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */,
+				81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */,
 				6987446C2D1C3B6400559ABA /* CounterViewModel.swift in Sources */,
 				8174BA592D5DFEF600EA3E68 /* SegmentVariationProvider.swift in Sources */,
 				81763B122D6DF43600904D4A /* BadgeView.swift in Sources */,

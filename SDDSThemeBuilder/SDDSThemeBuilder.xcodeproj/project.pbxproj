@@ -300,7 +300,6 @@
 		81D5D9D32D53A9740022CF32 /* ContextVariationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */; };
 		81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D122D6F3619007E758F /* PaletteMapper.swift */; };
 		81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D142D6F63D9007E758F /* PathDrawerContextBuilder.swift */; };
-		81D85D172D6F6FF9007E758F /* PathDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D85D162D6F6FF5007E758F /* PathDrawer.swift */; };
 		81DE5FE32D634E1B0041B639 /* SpacingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE22D634E180041B639 /* SpacingToken.swift */; };
 		81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */; };
 		81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EDBA2BD2B9F400F86AE1 /* ContexBuilder.swift */; };
@@ -338,6 +337,12 @@
 		81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E502D81A6E900A41C89 /* CardSize.swift */; };
 		81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E522D81A6ED00A41C89 /* CardAppearance.swift */; };
 		81F89E552D81A92000A41C89 /* CardProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E542D81A91E00A41C89 /* CardProps.swift */; };
+		81FB2D642D8C9B8F002409CE /* CircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D5E2D8C9B8F002409CE /* CircleDrawer.swift */; };
+		81FB2D652D8C9B8F002409CE /* CheckmarkDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D5D2D8C9B8F002409CE /* CheckmarkDrawer.swift */; };
+		81FB2D662D8C9B8F002409CE /* IndeterminateDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D612D8C9B8F002409CE /* IndeterminateDrawer.swift */; };
+		81FB2D672D8C9B8F002409CE /* DefaultDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D602D8C9B8F002409CE /* DefaultDrawer.swift */; };
+		81FB2D682D8C9B8F002409CE /* PathDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D622D8C9B8F002409CE /* PathDrawer.swift */; };
+		81FB2D692D8C9B8F002409CE /* CornerRadiusDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FB2D5F2D8C9B8F002409CE /* CornerRadiusDrawer.swift */; };
 		81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */; };
 		81FD6D562D6E2779002A6E51 /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */; };
 		81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */; };
@@ -688,7 +693,6 @@
 		81D5D9D22D53A9740022CF32 /* ContextVariationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextVariationUtility.swift; sourceTree = "<group>"; };
 		81D85D122D6F3619007E758F /* PaletteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteMapper.swift; sourceTree = "<group>"; };
 		81D85D142D6F63D9007E758F /* PathDrawerContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathDrawerContextBuilder.swift; sourceTree = "<group>"; };
-		81D85D162D6F6FF5007E758F /* PathDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathDrawer.swift; sourceTree = "<group>"; };
 		81DE5FE22D634E180041B639 /* SpacingToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingToken.swift; sourceTree = "<group>"; };
 		81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpacingToken.stencil; sourceTree = "<group>"; };
 		81E1EDB52BD2B4CD00F86AE1 /* ShapeToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShapeToken.stencil; sourceTree = "<group>"; };
@@ -730,6 +734,12 @@
 		81F89E502D81A6E900A41C89 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
 		81F89E522D81A6ED00A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
 		81F89E542D81A91E00A41C89 /* CardProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProps.swift; sourceTree = "<group>"; };
+		81FB2D5D2D8C9B8F002409CE /* CheckmarkDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkDrawer.swift; sourceTree = "<group>"; };
+		81FB2D5E2D8C9B8F002409CE /* CircleDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDrawer.swift; sourceTree = "<group>"; };
+		81FB2D5F2D8C9B8F002409CE /* CornerRadiusDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDrawer.swift; sourceTree = "<group>"; };
+		81FB2D602D8C9B8F002409CE /* DefaultDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDrawer.swift; sourceTree = "<group>"; };
+		81FB2D612D8C9B8F002409CE /* IndeterminateDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateDrawer.swift; sourceTree = "<group>"; };
+		81FB2D622D8C9B8F002409CE /* PathDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathDrawer.swift; sourceTree = "<group>"; };
 		81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProps.swift; sourceTree = "<group>"; };
 		81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSize.swift; sourceTree = "<group>"; };
 		81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
@@ -1318,8 +1328,8 @@
 		8180A4B32C0F71A500009AF5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				81FB2D632D8C9B8F002409CE /* PathDrawer */,
 				81BBE20F2D759FE300612681 /* HexConverter.swift */,
-				81D85D162D6F6FF5007E758F /* PathDrawer.swift */,
 				8180A4B42C0F71A500009AF5 /* Device.swift */,
 			);
 			path = Utilities;
@@ -1675,6 +1685,19 @@
 				81F89E502D81A6E900A41C89 /* CardSize.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		81FB2D632D8C9B8F002409CE /* PathDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				81FB2D5D2D8C9B8F002409CE /* CheckmarkDrawer.swift */,
+				81FB2D5E2D8C9B8F002409CE /* CircleDrawer.swift */,
+				81FB2D5F2D8C9B8F002409CE /* CornerRadiusDrawer.swift */,
+				81FB2D602D8C9B8F002409CE /* DefaultDrawer.swift */,
+				81FB2D612D8C9B8F002409CE /* IndeterminateDrawer.swift */,
+				81FB2D622D8C9B8F002409CE /* PathDrawer.swift */,
+			);
+			path = PathDrawer;
 			sourceTree = "<group>";
 		};
 		81FD6D542D6E2768002A6E51 /* Indicator */ = {
@@ -2327,7 +2350,12 @@
 				8180A5942C11C34000009AF5 /* ShapeModifier.swift in Sources */,
 				8180A5A42C11C35000009AF5 /* ShadowToken.swift in Sources */,
 				8180A5A32C11C34400009AF5 /* UIColor+Hex.swift in Sources */,
-				81D85D172D6F6FF9007E758F /* PathDrawer.swift in Sources */,
+				81FB2D642D8C9B8F002409CE /* CircleDrawer.swift in Sources */,
+				81FB2D652D8C9B8F002409CE /* CheckmarkDrawer.swift in Sources */,
+				81FB2D662D8C9B8F002409CE /* IndeterminateDrawer.swift in Sources */,
+				81FB2D672D8C9B8F002409CE /* DefaultDrawer.swift in Sources */,
+				81FB2D682D8C9B8F002409CE /* PathDrawer.swift in Sources */,
+				81FB2D692D8C9B8F002409CE /* CornerRadiusDrawer.swift in Sources */,
 				8180A5A52C11C35200009AF5 /* GradientToken.swift in Sources */,
 				8180A5A02C11C34400009AF5 /* View+Conditional.swift in Sources */,
 				8180A59C2C11C34400009AF5 /* ColorToken+Theme.swift in Sources */,

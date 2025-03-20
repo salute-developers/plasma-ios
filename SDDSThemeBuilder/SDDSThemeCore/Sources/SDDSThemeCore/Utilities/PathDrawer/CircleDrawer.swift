@@ -3,10 +3,9 @@ import SwiftUI
 
 public final class CircleDrawer: PathDrawer {
     public func path(in rect: CGRect) -> Path {
-        let radius = min(rect.width, rect.height) / 2
-        let center = CGPoint(x: rect.midX, y: rect.midY)
+        let radius = rect.height / 2
         var path = Path()
-        path.addArc(center: center, radius: radius, startAngle: .zero, endAngle: .degrees(360), clockwise: false)
+        path.addRoundedRect(in: rect, cornerSize: CGSize(width: radius, height: radius))
         return path
     }
     

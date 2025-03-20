@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct LinkButton {
     public static var l: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {

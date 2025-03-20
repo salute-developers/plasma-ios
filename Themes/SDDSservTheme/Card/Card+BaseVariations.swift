@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Card {
     public static var l: ComponentAppearanceVariation<Card, CardAppearance> {
