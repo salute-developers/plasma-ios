@@ -38,16 +38,16 @@ platform :ios do
     branch_name = git_branch
     UI.message("Building from branch: #{branch_name}")
 
-    # def check_env_variable(key)
-    #   if ENV[key].nil? || ENV[key].empty?
-    #     UI.user_error!("Missing environment variable: #{key}")
-    #   end
-    # end
+    def check_env_variable(key)
+      if ENV[key].nil? || ENV[key].empty?
+        UI.user_error!("Missing environment variable: #{key}")
+      end
+    end
 
-    # check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
-    # check_env_variable("APP_STORE_CONNECT_API_KEY")
-    # check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
-    # UI.success("✅ All required environment variables are set")
+    check_env_variable("APP_STORE_CONNECT_API_KEY_ID")
+    check_env_variable("APP_STORE_CONNECT_API_KEY")
+    check_env_variable("APP_STORE_CONNECT_ISSUER_ID")
+    UI.success("✅ All required environment variables are set")
 
     project_version = get_version_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
@@ -55,25 +55,25 @@ platform :ios do
     )
     UI.message("Current project version: #{project_version}")
 
-    # UI.user_error!("Version number is missing") if project_version.nil?
+    UI.user_error!("Version number is missing") if project_version.nil?
 
-    # latest_tf_build = latest_testflight_build_number(
-    #   app_identifier: "com.sd.SDDSDemo",
-    #   api_key: {
-    #     key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-    #     issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-    #     key: ENV["APP_STORE_CONNECT_API_KEY"]
-    #   }
-    # )
-    # UI.message("Latest TestFlight build: #{latest_tf_build}")
+    latest_tf_build = latest_testflight_build_number(
+      app_identifier: "com.sd.SDDSDemo",
+      api_key: {
+        key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+        key: ENV["APP_STORE_CONNECT_API_KEY"]
+      }
+    )
+    UI.message("Latest TestFlight build: #{latest_tf_build}")
 
-    # build_number = (latest_tf_build.to_i + 1).to_s
+    build_number = (latest_tf_build.to_i + 1).to_s
 
-    # increment_build_number(
-    #   build_number: build_number,
-    #   xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
-    # )
-    # UI.success("New build number: #{build_number}")
+    increment_build_number(
+      build_number: build_number,
+      xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj"
+    )
+    UI.success("New build number: #{build_number}")
 
     build_name = case branch_name
                  when "main"
