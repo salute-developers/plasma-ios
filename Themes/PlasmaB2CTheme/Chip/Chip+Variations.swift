@@ -9,10 +9,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "l.pilled",
             appearance: appearance
@@ -77,10 +77,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "m.pilled",
             appearance: appearance
@@ -145,10 +145,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "s.pilled",
             appearance: appearance
@@ -213,10 +213,10 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
         var size =  ChipAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
-
+        
         var appearance = appearance
         appearance.size = size
-    
+        
         return .init(
             name: "xs.pilled",
             appearance: appearance

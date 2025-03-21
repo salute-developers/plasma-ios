@@ -84,6 +84,9 @@
 		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
+		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
+		81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */; };
+		81F89E4E2D81A3AE00A41C89 /* CardViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4D2D81A3A900A41C89 /* CardViewProvider.swift */; };
 		81FD6D5E2D6E28AF002A6E51 /* IndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5D2D6E28AC002A6E51 /* IndicatorViewModel.swift */; };
 		81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5F2D6E28B1002A6E51 /* IndicatorViewProvider.swift */; };
 		81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D612D6E28B8002A6E51 /* IndicatorView.swift */; };
@@ -192,6 +195,9 @@
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		81F89E4D2D81A3A900A41C89 /* CardViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewProvider.swift; sourceTree = "<group>"; };
 		81FD6D5D2D6E28AC002A6E51 /* IndicatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewModel.swift; sourceTree = "<group>"; };
 		81FD6D5F2D6E28B1002A6E51 /* IndicatorViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewProvider.swift; sourceTree = "<group>"; };
 		81FD6D612D6E28B8002A6E51 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
@@ -365,6 +371,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81F89E482D81A39B00A41C89 /* CardView */,
 				81FD6D5C2D6E28A7002A6E51 /* IndicatorView */,
 				81763B102D6DF42F00904D4A /* BadgeView */,
 				697970CD2D63A3CC008306A8 /* CellView */,
@@ -551,6 +558,16 @@
 				81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		81F89E482D81A39B00A41C89 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				81F89E4D2D81A3A900A41C89 /* CardViewProvider.swift */,
+				81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */,
+				81F89E492D81A3A100A41C89 /* CardView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		81FD6D5C2D6E28A7002A6E51 /* IndicatorView */ = {
@@ -771,6 +788,7 @@
 				8174BA572D5DFD9C00EA3E68 /* SwitchVariationProvider.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
+				81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */,
@@ -799,7 +817,9 @@
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,
 				8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */,
 				816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */,
+				81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */,
 				698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */,
+				81F89E4E2D81A3AE00A41C89 /* CardViewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

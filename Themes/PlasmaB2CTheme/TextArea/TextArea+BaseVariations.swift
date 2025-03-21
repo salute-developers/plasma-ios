@@ -37,6 +37,17 @@ public struct TextArea {
             appearance: appearance
         )
     }
+    public static var xl: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.Xl> {
+        var appearance = TextAreaAppearance.base
+        appearance.size = TextAreaSize.xl
+        appearance.chipAppearance = EmbeddedChip.l.secondary.appearance
+        appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
     public static var xs: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.Xs> {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xs
@@ -77,6 +88,15 @@ public struct TextArea {
         TextArea.s.outerLabel.requiredStart.variation,
         TextArea.s.requiredEnd.variation,
         TextArea.s.requiredStart.variation,
+        TextArea.xl.variation,
+        TextArea.xl.innerLabel.variation,
+        TextArea.xl.innerLabel.requiredEnd.variation,
+        TextArea.xl.innerLabel.requiredStart.variation,
+        TextArea.xl.outerLabel.variation,
+        TextArea.xl.outerLabel.requiredEnd.variation,
+        TextArea.xl.outerLabel.requiredStart.variation,
+        TextArea.xl.requiredEnd.variation,
+        TextArea.xl.requiredStart.variation,
         TextArea.xs.variation,
         TextArea.xs.outerLabel.variation,
         TextArea.xs.outerLabel.requiredEnd.variation,
@@ -114,6 +134,15 @@ public struct TextAreaVariation {
     public struct SOuterlabelRequiredstart {}
     public struct SRequiredend {}
     public struct SRequiredstart {}
+    public struct Xl {}
+    public struct XlInnerlabel {}
+    public struct XlInnerlabelRequiredend {}
+    public struct XlInnerlabelRequiredstart {}
+    public struct XlOuterlabel {}
+    public struct XlOuterlabelRequiredend {}
+    public struct XlOuterlabelRequiredstart {}
+    public struct XlRequiredend {}
+    public struct XlRequiredstart {}
     public struct Xs {}
     public struct XsOuterlabel {}
     public struct XsOuterlabelRequiredend {}

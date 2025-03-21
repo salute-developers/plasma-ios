@@ -20,7 +20,7 @@ public struct RadioboxData: Identifiable {
     public let subtitle: String?
     public let isSelected: Binding<Bool>
     public let isEnabled: Bool
-    public let images: RadioboxImages
+    public let images: RadioboxImages?
     public let appearance: RadioboxAppearance
     public let accessibility: SelectionControlAccessibility
 
@@ -30,7 +30,7 @@ public struct RadioboxData: Identifiable {
         subtitle: String? = nil,
         isSelected: Binding<Bool>,
         isEnabled: Bool = true,
-        images: RadioboxImages,
+        images: RadioboxImages? = nil,
         appearance: RadioboxAppearance,
         accessibility: SelectionControlAccessibility
     ) {

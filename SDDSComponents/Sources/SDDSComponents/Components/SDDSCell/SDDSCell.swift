@@ -3,7 +3,7 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public struct SDDSCell<LeftContent: View, RightContent: View>: View {
-    public let appearance: CellAppearance
+    private let _appearance: CellAppearance?
     public let alignment: CellContentAlignment
     
     public let label: String
@@ -18,9 +18,10 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     public let rightContent: RightContent
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.cellAppearance) private var environmentAppearance
     
     public init(
-        appearance: CellAppearance = CellAppearance(),
+        appearance: CellAppearance? = nil,
         alignment: CellContentAlignment = .center,
         label: String = "",
         title: String = "",
@@ -31,7 +32,7 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
         @ViewBuilder leftContent: @escaping () -> LeftContent,
         @ViewBuilder rightContent: @escaping () -> RightContent
     ) {
-        self.appearance = appearance
+        self._appearance = appearance
         self.alignment = alignment
         self.label = label
         self.title = title
@@ -137,5 +138,10 @@ extension SDDSCell {
         case .bottom:
             return .bottom
         }
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: CellAppearance {
+        _appearance ?? environmentAppearance
     }
 }

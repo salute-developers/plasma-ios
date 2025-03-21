@@ -3,7 +3,7 @@ import Foundation
 import SDDSThemeCore
 
 public struct SDDSBadge: View {
-    @Environment(\.badgeAppearance) private var badgeAppearance
+    @Environment(\.badgeAppearance) private var environmentAppearance
     private let _appearance: BadgeAppearance?
     
     let label: String
@@ -68,7 +68,8 @@ public struct SDDSBadge: View {
         return appearance.buttonAppearance(iconColor: iconColor, iconSize: iconSize, iconPadding: iconPadding)
     }
     
-    private var appearance: BadgeAppearance {
-        _appearance ?? badgeAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: BadgeAppearance {
+        _appearance ?? environmentAppearance
     }
 }

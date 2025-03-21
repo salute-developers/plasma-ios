@@ -1,18 +1,6 @@
 import Foundation
 import SwiftUI
 
-public protocol PathDrawer: AnyObject {
-    func path(in rect: CGRect) -> Path
-}
-
-public final class DefaultPathDrawer: PathDrawer {
-    public func path(in rect: CGRect) -> Path {
-        return Path()
-    }
-    
-    public init(){}
-}
-
 public final class CircleDrawer: PathDrawer {
     public func path(in rect: CGRect) -> Path {
         let radius = min(rect.width, rect.height) / 2

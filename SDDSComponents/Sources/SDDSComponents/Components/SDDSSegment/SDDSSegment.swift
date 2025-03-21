@@ -3,7 +3,7 @@ import SwiftUI
 
 public struct SDDSSegment: View {
     public let items: [SDDSSegmentItemData]
-    public let appearance: SegmentAppearance
+    private let _appearance: SegmentAppearance?
     public let layoutMode: SegmentLayoutMode
     public let layoutOrientation: SegmentLayoutOrientation
     public let isDisabled: Bool
@@ -11,6 +11,7 @@ public struct SDDSSegment: View {
     public let hasBackground: Bool
     
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
+    @Environment(\.segmentAppearance) private var environmentAppearance
     
     @Binding public var selectedItemId: UUID?
 
@@ -20,7 +21,7 @@ public struct SDDSSegment: View {
     
     public init(
         items: [SDDSSegmentItemData],
-        appearance: SegmentAppearance,
+        appearance: SegmentAppearance? = nil,
         layoutMode: SegmentLayoutMode = .flexible,
         layoutOrientation: SegmentLayoutOrientation,
         selectedItemId: Binding<UUID?>,
@@ -29,7 +30,7 @@ public struct SDDSSegment: View {
         hasBackground: Bool = true
     ) {
         self.items = items
-        self.appearance = appearance
+        self._appearance = appearance
         self.layoutMode = layoutMode
         self.layoutOrientation = layoutOrientation
         self._selectedItemId = selectedItemId
@@ -123,5 +124,10 @@ public struct SDDSSegment: View {
             return currentColor(for: backgroundColor)
         }
         return .clear
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: SegmentAppearance {
+        _appearance ?? environmentAppearance
     }
 }

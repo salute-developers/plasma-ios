@@ -14,9 +14,7 @@ import SwiftUI
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
-public struct ChipAppearance: EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct ChipAppearance: Hashable {
     let id = UUID()
     public var size: ChipSizeConfiguration
     public var titleColor: ButtonColor
@@ -58,5 +56,11 @@ public struct ChipAppearance: EnvironmentKey, Hashable {
         hasher.combine(imageTintColor)
         hasher.combine(buttonTintColor)
         hasher.combine(backgroundColor)
+    }
+}
+
+extension ChipAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: ChipAppearance.self, fallback: ChipAppearance())
     }
 }

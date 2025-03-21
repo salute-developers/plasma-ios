@@ -5,7 +5,6 @@ public extension ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
     var `default`: AppearanceVariation<RadioboxAppearance> {
         var appearance = Radiobox.default.appearance
         appearance.size = self.appearance.size
-        
         return .init(name: "default", appearance: appearance)
     }
     
@@ -27,6 +26,10 @@ extension Radiobox {
             name: "default",
             appearance:
                 .init(
+                    color: .surfaceDefaultAccent,
+                    borderColor: .outlineDefaultTransparentTertiary,
+                    checkedIcon: CircleDrawer(),
+                    checkedIconColor: .textOnDarkPrimary,
                     titleTypography: RadioboxTypography.label,
                     subtitleTypography: RadioboxTypography.description,
                     titleColor: .backgroundInversePrimary,

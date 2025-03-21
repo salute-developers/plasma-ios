@@ -1,5 +1,6 @@
 import SwiftUI
 
+// MARK: - Appearance
 public extension EnvironmentValues {
     var counterAppearance: CounterAppearance {
         get { self[CounterAppearance.self] }
@@ -55,4 +56,35 @@ public extension EnvironmentValues {
         get { self[IndicatorAppearance.self] }
         set { self[IndicatorAppearance.self] = newValue }
     }
+    
+    var cellAppearance: CellAppearance {
+        get { self[CellAppearance.self] }
+        set { self[CellAppearance.self] = newValue }
+    }
+    
+    var textAreaAppearance: TextAreaAppearance {
+        get { self[TextAreaAppearance.self] }
+        set { self[TextAreaAppearance.self] = newValue }
+    }
+    
+    var textFieldAppearance: TextFieldAppearance {
+        get { self[TextFieldAppearance.self] }
+        set { self[TextFieldAppearance.self] = newValue }
+    }
+    
+    var chipGroupAppearance: ChipGroupAppearance {
+        get { self[ChipGroupAppearance.self] }
+        set { self[ChipGroupAppearance.self] = newValue }
+    }
+    
+    var progressBarAppearance: ProgressBarAppearance {
+        get { self[ProgressBarAppearance.self] }
+        set { self[ProgressBarAppearance.self] = newValue }
+    }
+
+    var cardAppearance: CardAppearance {
+        get { self[CardAppearance.self] }
+        set { self[CardAppearance.self] = newValue }
+    }
+    
 }

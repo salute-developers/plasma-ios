@@ -23,6 +23,6 @@ final class TextAreaVariationProvider: VariationProvider {
     }
     
     var defaultValue: TextAreaAppearance {
-        variations.first?.appearance ?? TextArea.l.default.appearance
+        TextAreaAppearance.defaultValue
     }
 }

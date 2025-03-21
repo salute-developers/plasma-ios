@@ -2,33 +2,105 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 
-enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
+public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIterable {
     case medium
     case small
     
-    var debugDescription: String {
+    public var debugDescription: String {
         rawValue
     }
     
-    var imageSize: CGSize {
-        switch self {
-        case .medium:
-            .init(width: 24, height: 24)
-        case .small:
-            .init(width: 16, height: 16)
-        }
-    }
-    
-    var verticalGap: CGFloat {
+    public var verticalGap: CGFloat {
         0.0
     }
     
-    var horizontalGap: CGFloat {
+    public var horizontalGap: CGFloat {
         switch self {
         case .medium:
             12.0
         case .small:
             8.0
+        }
+    }
+    
+    public var togglePathDrawer: PathDrawer {
+        switch self {
+        case .medium:
+            return CornerRadiusDrawer(cornerRadius: ShapeToken.roundXs.cornerRadius) as PathDrawer
+        case .small:
+            return CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxs.cornerRadius) as PathDrawer
+        }
+    }
+    
+    public var lineWidth: CGFloat {
+        switch self {
+        case .medium:
+            return 2
+        case .small:
+            return 1.5
+        }
+    }
+    
+    public var height: CGFloat {
+        switch self {
+        case .medium:
+            return 24
+        case .small:
+            return 16
+        }
+    }
+    
+    public var width: CGFloat {
+        switch self {
+        case .medium:
+            return 24
+        case .small:
+            return 16
+        }
+    }
+    
+    public var togglePaddings: CGFloat {
+        switch self {
+        case .medium:
+            return 2
+        case .small:
+            return 1
+        }
+    }
+    
+    public var toggleCheckedIconWidth: CGFloat {
+        switch self {
+        case .medium:
+            return 9
+        case .small:
+            return 6
+        }
+    }
+    
+    public var toggleCheckedIconHeight: CGFloat {
+        switch self {
+        case .medium:
+            return 6
+        case .small:
+            return 4
+        }
+    }
+    
+    public var toggleIndeterminateIconWidth: CGFloat {
+        switch self {
+        case .medium:
+            return 12
+        case .small:
+            return 8
+        }
+    }
+    
+    public var toggleIndeterminateIconHeight: CGFloat {
+        switch self {
+        case .medium:
+            return 2
+        case .small:
+            return 2
         }
     }
 }

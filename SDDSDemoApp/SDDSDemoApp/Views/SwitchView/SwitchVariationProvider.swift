@@ -16,6 +16,6 @@ final class SwitchVariationProvider: VariationProvider {
     }
     
     var defaultValue: SwitchAppearance {
-        variations.first?.appearance ?? Switch.m.default.appearance
+        SwitchAppearance.defaultValue
     }
 }

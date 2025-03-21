@@ -16,6 +16,6 @@ final class ChipVariationProvider: VariationProvider {
     }
     
     var defaultValue: ChipAppearance {
-        variations.first?.appearance ?? Chip.m.default.appearance
+        ChipAppearance.defaultValue
     }
 }

@@ -25,6 +25,6 @@ final class ButtonVariationProvider: VariationProvider {
     }
     
     var defaultValue: ButtonAppearance {
-        variations.first?.appearance ?? BasicButton.l.default.appearance
+        ButtonAppearance.defaultValue
     }
 }

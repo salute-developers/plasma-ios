@@ -208,3 +208,9 @@ extension TextAreaAppearance: Hashable {
         hasher.combine(titleTextAlignment)
     }
 }
+
+extension TextAreaAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: TextAreaAppearance.self, fallback: TextAreaAppearance())
+    }
+}

@@ -21,9 +21,7 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили кнопки с заданными параметрами.
  */
-public struct ButtonAppearance: EnvironmentKey {
-    public static let defaultValue: Self = .init()
-
+public struct ButtonAppearance {
     /**
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
      */
@@ -119,5 +117,11 @@ public struct ButtonAppearance: EnvironmentKey {
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
         self.loadingAlpha = loadingAlpha
+    }
+}
+
+extension ButtonAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: ButtonAppearance.self, fallback: ButtonAppearance())
     }
 }

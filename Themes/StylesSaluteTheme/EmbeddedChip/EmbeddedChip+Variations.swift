@@ -17,28 +17,10 @@ public extension ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
             appearance: appearance.accent
         )
     }
-    var negative: AppearanceVariation<ChipAppearance> {
-        return .init(
-            name: "negative",
-            appearance: appearance.negative
-        )
-    }
-    var positive: AppearanceVariation<ChipAppearance> {
-        return .init(
-            name: "positive",
-            appearance: appearance.positive
-        )
-    }
     var secondary: AppearanceVariation<ChipAppearance> {
         return .init(
             name: "secondary",
             appearance: appearance.secondary
-        )
-    }
-    var warning: AppearanceVariation<ChipAppearance> {
-        return .init(
-            name: "warning",
-            appearance: appearance.warning
         )
     }
     var variation: Variation<Appearance> {
@@ -47,10 +29,7 @@ public extension ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
             styles: [
                 self.`default`,
                 self.accent,
-                self.negative,
-                self.positive,
-                self.secondary,
-                self.warning,
+                self.secondary
             ],
             name: name,
             appearance: appearance
@@ -78,24 +57,6 @@ private extension ChipAppearance {
         return appearance
     }
     
-    var negative: ChipAppearance {
-        var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultNegative, highlightedColor: ColorToken.surfaceDefaultNegativeActive, hoveredColor: ColorToken.surfaceDefaultNegativeHover)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        return appearance
-    }
-    
-    var positive: ChipAppearance {
-        var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultPositive, highlightedColor: ColorToken.surfaceDefaultPositiveActive, hoveredColor: ColorToken.surfaceDefaultPositiveHover)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        return appearance
-    }
-    
     var secondary: ChipAppearance {
         var appearance = self
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover)
@@ -104,14 +65,4 @@ private extension ChipAppearance {
         appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
         return appearance
     }
-    
-    var warning: ChipAppearance {
-        var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultWarning, highlightedColor: ColorToken.surfaceDefaultWarningActive, hoveredColor: ColorToken.surfaceDefaultWarningHover)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover)
-        return appearance
-    }
-    
 }

@@ -59,11 +59,11 @@ public struct Avatar {
 extension AvatarAppearance {
     static var base: AvatarAppearance {
         .init(
-            textFillStyle: .gradient(Gradients.textDefaultAccentGradient),
-            backgroundFillStyle: .gradient(Gradients.surfaceDefaultAccentGradient),
+            textFillStyle: .gradient(Gradients.textDefaultGradientMain),
+            backgroundFillStyle: .gradient(Gradients.surfaceDefaultGradientMain),
             backgroundOpacity: 0.2,
-            onlineStatusColor: Colors.textDefaultAccent,
-            offlineStatusColor: Colors.surfaceDefaultPositive,
+            onlineStatusColor: Colors.textDefaultPositive,
+            offlineStatusColor: Colors.surfaceDefaultSolidTertiary,
             textTypography: AvatarTypography.title
         )
     }

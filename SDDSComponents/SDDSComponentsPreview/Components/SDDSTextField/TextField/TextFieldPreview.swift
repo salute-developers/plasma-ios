@@ -19,8 +19,6 @@ struct TextFieldPreview: PreviewProvider {
             )
         }
         
-        Theme.initialize()
-        
         return Group {
             SDDSComponents.TextField(
                 value: .constant(.single("")),

@@ -16,6 +16,6 @@ final class SegmentVariationProvider: VariationProvider {
     }
     
     var defaultValue: SegmentAppearance {
-        variations.first?.appearance ?? Segment.l.default.appearance
+        SegmentAppearance.defaultValue
     }
 }

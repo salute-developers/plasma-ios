@@ -11,11 +11,6 @@ public struct IconButton: View {
     public let accessibility: ButtonAccessibility
     public var action: () -> Void
     private var _appearance: ButtonAppearance?
-    private var appearance: ButtonAppearance {
-        _appearance ?? buttonAppearance
-    }
-    
-    @Environment(\.buttonAppearance) var buttonAppearance
     
     public init(
         iconAttributes: ButtonIconAttributes? = nil,
@@ -46,7 +41,7 @@ public struct IconButton: View {
             isLoading: isLoading,
             spinnerImage: spinnerImage,
             buttonStyle: .icon,
-            appearance: appearance,
+            appearance: _appearance,
             layoutMode: layoutMode,
             accessibility: accessibility,
             action: action

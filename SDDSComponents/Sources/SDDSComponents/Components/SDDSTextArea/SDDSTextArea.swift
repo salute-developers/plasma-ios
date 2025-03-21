@@ -42,12 +42,13 @@ public struct SDDSTextArea: View {
     public let readOnly: Bool
     public let divider: Bool
     public let dynamicHeight: Bool
-    public let appearance: TextAreaAppearance
+    private let _appearance: TextAreaAppearance?
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
 
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.textAreaAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var textHeight: CGFloat = 0.0
     @State private var chipGroupContentHeight: CGFloat = 0
@@ -65,7 +66,7 @@ public struct SDDSTextArea: View {
         required: Bool = false,
         divider: Bool = true,
         dynamicHeight: Bool = false,
-        appearance: TextAreaAppearance,
+        appearance: TextAreaAppearance? = nil,
         layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
         iconActionViewProvider: ViewProvider? = nil
@@ -87,7 +88,7 @@ public struct SDDSTextArea: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.dynamicHeight = dynamicHeight
-        self.appearance = appearance
+        self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
@@ -799,6 +800,11 @@ public struct SDDSTextArea: View {
     
     private var boxTrailingPadding: CGFloat {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: TextAreaAppearance {
+        _appearance ?? environmentAppearance
     }
 
 }

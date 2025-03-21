@@ -16,6 +16,6 @@ final class ChipGroupVariationProvider: VariationProvider {
     }
     
     var defaultValue: ChipGroupAppearance {
-        variations.first?.appearance ?? ChipGroup.dense.appearance
+        ChipGroupAppearance.defaultValue
     }
 }

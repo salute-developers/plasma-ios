@@ -13,9 +13,7 @@ import SwiftUI
     - subtitleColor: Цвет подзаголовка, когда переключатель включен.
     - tintColor: Цвет переключателя, когда он включен.
  */
-public struct SwitchAppearance: EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct SwitchAppearance: Hashable {
     let id = UUID()
     public var size: SwitchSizeConfiguration
     public var titleTypography: TypographyConfiguration
@@ -81,5 +79,11 @@ public extension SwitchAppearance {
      */
     func subtitleColor(for isEnabled: Bool) -> ColorToken {
         return isEnabled ? subtitleColor : subtitleColor.withOpacity(disabledAlpha)
+    }
+}
+
+extension SwitchAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: SwitchAppearance.self, fallback: SwitchAppearance())
     }
 }

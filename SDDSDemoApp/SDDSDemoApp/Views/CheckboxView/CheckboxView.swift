@@ -17,7 +17,6 @@ struct CheckboxView: View {
                         title: viewModel.title,
                         subtitle: viewModel.subtitle,
                         isEnabled: viewModel.isEnabled,
-                        images: CheckboxView.checkbox,
                         appearance: viewModel.appearance
                     )
                     Spacer()
@@ -60,16 +59,6 @@ struct CheckboxView: View {
             }
         }
         .navigationTitle("SDDSCheckbox")
-    }
-}
-
-extension CheckboxView {
-    static var checkbox: SelectionControlStateImages {
-        .init(
-            selectedImage: Image.image("checkboxOn", bundle: Bundle(for: CheckboxViewModel.self)),
-            deselectedImage: Image.image("checkboxIconOff", bundle: Bundle(for: CheckboxViewModel.self)),
-            indeterminateImage: Image.image("checkboxMulti", bundle: Bundle(for: CheckboxViewModel.self))
-        )
     }
 }
 

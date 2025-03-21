@@ -16,6 +16,6 @@ final class AvatarVariationProvider: VariationProvider {
     }
     
     var defaultValue: AvatarAppearance {
-        variations.first?.appearance ?? SDDSServTheme.Avatar.l.default.appearance
+        AvatarAppearance.defaultValue
     }
 }

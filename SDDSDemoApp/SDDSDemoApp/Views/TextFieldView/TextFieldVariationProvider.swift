@@ -23,6 +23,6 @@ final class TextFieldVariationProvider: VariationProvider {
     }
     
     var defaultValue: TextFieldAppearance {
-        variations.first?.appearance ?? TextField.l.default.appearance
+        TextFieldAppearance.defaultValue
     }
 }

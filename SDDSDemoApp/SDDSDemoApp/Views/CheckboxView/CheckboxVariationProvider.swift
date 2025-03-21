@@ -16,6 +16,6 @@ final class CheckboxVariationProvider: VariationProvider {
     }
     
     var defaultValue: CheckboxAppearance {
-        variations.first?.appearance ?? Checkbox.m.default.appearance
+        CheckboxAppearance.defaultValue
     }
 }
