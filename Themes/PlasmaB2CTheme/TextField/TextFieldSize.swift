@@ -7,12 +7,14 @@ struct TextFieldSize {
     static let l = TextFieldSizeL()
     static let m = TextFieldSizeM()
     static let s = TextFieldSizeS()
+    static let xl = TextFieldSizeXl()
     static let xs = TextFieldSizeXs()
 
     static let all: [TextFieldSizeConfiguration] = [
         TextFieldSize.l,
         TextFieldSize.m,
         TextFieldSize.s,
+        TextFieldSize.xl,
         TextFieldSize.xs,
     ] 
 }
@@ -86,6 +88,34 @@ struct TextFieldSizeS: TextFieldSizeConfiguration {
     var iconActionPadding = CGFloat(6.0)
     var iconActionSize = CGSize(width:24.0, height:24.0)
     var iconPadding = CGFloat(4.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var indicatorOffset = CGPoint.zero
+    var indicatorSize = CGSize.zero
+    var optionalPadding = CGFloat(4.0)
+    var textAfterLeadingPadding = CGFloat(6.0)
+    var textAfterTrailingPadding = CGFloat(0)
+    var textBeforeLeadingPadding = CGFloat(0)
+    var textBeforeTrailingPadding = CGFloat(6.0)
+    var titleBottomPadding = CGFloat(0)
+    var titleInnerPadding = CGFloat(0)
+    public var debugDescription: String {
+        return "TextFieldSize"
+    }
+}
+struct TextFieldSizeXl: TextFieldSizeConfiguration {
+    var boxLeadingPadding = CGFloat(18.0)
+    var boxPaddingBottom = CGFloat(20.0)
+    var boxPaddingTop = CGFloat(20.0)
+    var boxTrailingPadding = CGFloat(18.0)
+    var captionTopPadding = CGFloat(4.0)
+    var chipContainerHorizontalPadding = CGFloat(6.0)
+    var chipsPadding = CGFloat(6.0)
+    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var dividerHeight = CGFloat(1.0)
+    var fieldHeight = CGFloat(64.0)
+    var iconActionPadding = CGFloat(10.0)
+    var iconActionSize = CGSize(width:24.0, height:24.0)
+    var iconPadding = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero

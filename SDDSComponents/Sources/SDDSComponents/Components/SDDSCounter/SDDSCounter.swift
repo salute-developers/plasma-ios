@@ -4,9 +4,10 @@ import SwiftUI
 
 public struct SDDSCounter: View {
     public let text: String
-    public let appearance: CounterAppearance
+    private let _appearance: CounterAppearance?
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.counterAppearance) private var environmentAppearance
     
     var isAnimating: Bool
     var isHighlighted: Bool
@@ -14,13 +15,13 @@ public struct SDDSCounter: View {
     
     public init(
         text: String,
-        appearance: CounterAppearance,
+        appearance: CounterAppearance? = nil,
         isAnimating: Bool,
         isHighlighted: Bool,
         isHovered: Bool
     ) {
         self.text = text
-        self.appearance = appearance
+        self._appearance = appearance
         self.isAnimating = isAnimating
         self.isHighlighted = isHighlighted
         self.isHovered = isHovered
@@ -92,5 +93,10 @@ private extension SDDSCounter {
     
     var isAuto: Bool {
         text.count > 1
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: CounterAppearance {
+        _appearance ?? environmentAppearance
     }
 }

@@ -11,7 +11,6 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
             title: "Parent Label",
             subtitle: "Parent Description",
             isEnabled: true,
-            images: SelectionControlStateImages.checkbox,
             appearance: Checkbox.m.default.appearance,
             accessibility: SelectionControlAccessibility()
         )
@@ -22,7 +21,6 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
                 title: "Label \(index + 1)",
                 subtitle: "Description \(index + 1)",
                 isEnabled: true,
-                images: SelectionControlStateImages.checkbox,
                 appearance: Checkbox.m.default.appearance,
                 accessibility: SelectionControlAccessibility()
             )

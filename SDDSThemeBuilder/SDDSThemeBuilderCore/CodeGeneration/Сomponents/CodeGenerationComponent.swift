@@ -18,7 +18,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
     case cell = "Cell"
-    case counter = "SDDSCounter"
+    case counter = "Counter"
+    case card = "Card"
+    case cardClear = "CardClear"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -37,7 +39,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .iconBadgeTransparent,
             .indicator,
             .cell,     
-            .counter
+            .counter,
+            .card,
+            .cardClear
         ]
     }
 }
@@ -61,6 +65,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .counter:
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .card, .cardClear:
+            GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -82,6 +88,8 @@ extension CodeGenerationComponent {
             "CellAppearance"
         case .counter:
             "CounterAppearance"
+        case .card, .cardClear:
+            "CardAppearance"
         }
     }
     
@@ -104,6 +112,8 @@ extension CodeGenerationComponent {
             "CellSizeConfiguration"
         case .counter:
             "CounterSizeConfiguration"
+        case .card, .cardClear:
+            "CardSizeConfiguration"
         }
     }
     
@@ -145,6 +155,10 @@ extension CodeGenerationComponent {
             "cell_config.json"
         case .counter:
             "counter_config.json"
+        case .card:
+            "card_solid_config.json"
+        case .cardClear:
+            "card_clear_config.json"
         }
     }
     

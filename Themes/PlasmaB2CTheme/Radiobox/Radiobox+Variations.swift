@@ -27,6 +27,10 @@ extension Radiobox {
             name: "default",
             appearance:
                 .init(
+                    color: .surfaceDefaultAccent,
+                    borderColor: .outlineDefaultTransparentTertiary,
+                    checkedIcon: CircleDrawer(),
+                    checkedIconColor: .textOnDarkPrimary,
                     titleTypography: RadioboxTypography.label,
                     subtitleTypography: RadioboxTypography.description,
                     titleColor: .backgroundInversePrimary,

@@ -72,7 +72,6 @@ struct CheckboxItemViewModel: Identifiable {
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
-            images: CheckboxView.checkbox,
             appearance: appearance,
             accessibility: .init()
         )
@@ -84,6 +83,8 @@ struct CheckboxItemViewModel: Identifiable {
 private extension SDDSCheckboxGroupSize {
    var checkboxSize: SDDSCheckboxSize {
        switch self {
+       case .large:
+           return .large
        case .medium:
            return .medium
        case .small:

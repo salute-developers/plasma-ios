@@ -7,7 +7,7 @@ struct CellPreview: PreviewProvider {
     static var previews: some View {
         HStack {
             SDDSCell(
-                appearance: Cell.s.appearance,
+                appearance: Cell.l.appearance,
                 alignment: .center,
                 label: "label",
                 title: "title",

@@ -7,17 +7,20 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
     var l: TypographyToken?
     var m: TypographyToken?
     var s: TypographyToken?
+    var xl: TypographyToken?
     var xs: TypographyToken?
     
     init(
         l: TypographyToken? = nil,
         m: TypographyToken? = nil,
         s: TypographyToken? = nil,
+        xl: TypographyToken? = nil,
         xs: TypographyToken? = nil
     ) {
         self.l = l
         self.m = m
         self.s = s
+        self.xl = xl
         self.xs = xs
     }
     
@@ -25,6 +28,7 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
         self.l = oneSize
         self.m = oneSize
         self.s = oneSize
+        self.xl = oneSize
         self.xs = oneSize
     }
     
@@ -40,6 +44,9 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
         }
         if size is TextAreaSizeS {
             return s
+        }
+        if size is TextAreaSizeXl {
+            return xl
         }
         if size is TextAreaSizeXs {
             return xs

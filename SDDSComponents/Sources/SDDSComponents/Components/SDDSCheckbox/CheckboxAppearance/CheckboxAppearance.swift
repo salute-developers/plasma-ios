@@ -2,9 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Hashable {
-    public static let defaultValue: Self = .init()
-    
+public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
     public var titleTypography: TypographyConfiguration
@@ -12,7 +10,13 @@ public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Ha
     public var titleColor: ColorToken
     public var subtitleColor: ColorToken
     public var disabledAlpha: CGFloat
-    public var imageTintColor: ColorToken?
+    public var color: ColorToken
+    public var borderColor: ColorToken
+    public var checkedIcon: PathDrawer?
+    public var checkedIconColor: ColorToken
+    public var toggleIndeterminateIcon: PathDrawer?
+    public var toggleIndeterminateIconColor: ColorToken
+    
     
     public init(
         size: SelectionControlSizeConfiguration = ZeroSelectionControlSize(),
@@ -21,14 +25,25 @@ public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Ha
         titleColor: ColorToken = .clearColor,
         subtitleColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
-        imageTintColor: ColorToken? = nil) {
+        color: ColorToken = .clearColor,
+        borderColor: ColorToken = .clearColor,
+        checkedIcon: PathDrawer? = nil,
+        checkedIconColor: ColorToken = .clearColor,
+        toggleIndeterminateIcon: PathDrawer? = nil,
+        toggleIndeterminateIconColor: ColorToken = .clearColor
+    ) {
         self.size = size
         self.titleTypography = titleTypography
         self.subtitleTypography = subtitleTypography
         self.titleColor = titleColor
         self.subtitleColor = subtitleColor
         self.disabledAlpha = disabledAlpha
-        self.imageTintColor = imageTintColor
+        self.color = color
+        self.borderColor = borderColor
+        self.checkedIcon = checkedIcon
+        self.checkedIconColor = checkedIconColor
+        self.toggleIndeterminateIcon = toggleIndeterminateIcon
+        self.toggleIndeterminateIconColor = toggleIndeterminateIconColor
     }
     
     public static func == (lhs: CheckboxAppearance, rhs: CheckboxAppearance) -> Bool {
@@ -37,5 +52,11 @@ public struct CheckboxAppearance: SelectionControlAppearance, EnvironmentKey, Ha
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+extension CheckboxAppearance: EnvironmentKey {
+    public static var defaultValue: Self {
+        EnvironmentValueProvider.shared.value(forKey: CheckboxAppearance.self, fallback: CheckboxAppearance())
     }
 }

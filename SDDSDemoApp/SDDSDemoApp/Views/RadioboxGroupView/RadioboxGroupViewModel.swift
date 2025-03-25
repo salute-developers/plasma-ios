@@ -26,6 +26,8 @@ final class RadioboxGroupViewModel: ObservableObject {
  extension SDDSRadioboxGroupSize {
      var radioboxSize: SDDSRadioboxSize {
          switch self {
+         case .large:
+             return .large
          case .medium:
              return .medium
          case .small:
@@ -48,7 +50,6 @@ struct RadioboxItemViewModel {
             subtitle: subtitle,
             isSelected: .constant(isSelected),
             isEnabled: isEnabled,
-            images: RadioboxView.radiobox,
             appearance: appearance,
             accessibility: .init()
         )

@@ -14,10 +14,11 @@ import SwiftUI
 public struct SDDSProgressView: View {
     @Binding var progress: Double
     let isEnabled: Bool
-    let appearance: ProgressBarAppearance
+    private let _appearance: ProgressBarAppearance?
     let accessibility: ProgressBarAccessibility
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.progressBarAppearance) private var environmentAppearance
     
     /**
      Инициализатор для создания прогресс-бара с заданными параметрами.
@@ -31,12 +32,12 @@ public struct SDDSProgressView: View {
     public init(
         progress: Binding<Double>,
         isEnabled: Bool = true,
-        appearance: ProgressBarAppearance,
+        appearance: ProgressBarAppearance? = nil,
         accessibility: ProgressBarAccessibility = ProgressBarAccessibility()
     ) {
         self._progress = progress
         self.isEnabled = isEnabled
-        self.appearance = appearance
+        self._appearance = appearance
         self.accessibility = accessibility
     }
     
@@ -80,6 +81,10 @@ public struct SDDSProgressView: View {
         max(min(progress, 1.0), 0.0)
     }
 
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: ProgressBarAppearance {
+        _appearance ?? environmentAppearance
+    }
 }
 
 extension SDDSProgressView: Equatable {

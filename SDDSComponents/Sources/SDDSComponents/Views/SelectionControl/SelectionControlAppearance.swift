@@ -9,7 +9,12 @@ public protocol SelectionControlAppearance {
     var titleColor: ColorToken { get }
     var subtitleColor: ColorToken { get }
     var disabledAlpha: CGFloat { get }
-    var imageTintColor: ColorToken? { get }
+    var color: ColorToken { get }
+    var borderColor: ColorToken { get }
+    var checkedIcon: PathDrawer? { get }
+    var checkedIconColor: ColorToken { get }
+    var toggleIndeterminateIcon: PathDrawer? { get }
+    var toggleIndeterminateIconColor: ColorToken { get }
     
     func titleColor(for isEnabled: Bool) -> ColorToken
     func subtitleColor(for isEnabled: Bool) -> ColorToken
