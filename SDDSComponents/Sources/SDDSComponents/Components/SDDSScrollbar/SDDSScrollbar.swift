@@ -1,63 +1,50 @@
 import Foundation
 import SwiftUI
 
-public enum ScrollbarLayoutOrientation {
-    case v
-    case h
-}
-
-public struct TrackSize {
-    let length: CGFloat
-}
-
 public struct SDDSScrollbar: View {
-//    public let visibility: Bool
     public let hasTrack: Bool
-    public let orientation: ScrollbarLayoutOrientation
-    public let trackSize: TrackSize
+    public let thumbHeight: CGFloat
+    public let thumbWidth: CGFloat
+    public let trackWidth: CGFloat
+    public let thumbYOffset: CGFloat
     
-    public init(hasTrack: Bool, orientation: ScrollbarLayoutOrientation, trackSize: TrackSize) {
+    public init(
+        hasTrack: Bool,
+        thumbHeight: CGFloat,
+        thumbWidth: CGFloat,
+        trackWidth: CGFloat,
+        thumbYOffset: CGFloat
+    ) {
         self.hasTrack = hasTrack
-        self.orientation = orientation
-        self.trackSize = trackSize
+        self.thumbHeight = thumbHeight
+        self.thumbWidth = thumbWidth
+        self.trackWidth = trackWidth
+        self.thumbYOffset = thumbYOffset
     }
     
     public var body: some View {
-        switch orientation {
-        case .h:
-            HStack {
-                indicator
-            }
-        case .v:
-            VStack {
-                
+        ZStack(alignment: .top) {
+            thumb
+//                .offset(
+//                    x: 0,
+//                    y: thumbYOffset
+//                )
+            if hasTrack {
+                track
             }
         }
     }
     
     @ViewBuilder
-    private var indicator: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color.gray)
-                .frame(width: 5, height: 25)
-            if hasTrack {
-                track
-            }
-        }
-        .cornerRadius(5)
+    private var thumb: some View {
+        Rectangle()
+            .foregroundColor(Color.gray)
+            .frame(width: thumbWidth, height: thumbHeight)
     }
     
     private var track: some View {
         Rectangle()
             .foregroundColor(Color.gray.opacity(0.2))
-            .frame(width: 5, height: 100)
+            .frame(width: trackWidth)
     }
-}
-
-#Preview {
-    SDDSScrollbar(
-        hasTrack: true,
-        orientation: .h,
-        trackSize: TrackSize(length: 0))
 }
