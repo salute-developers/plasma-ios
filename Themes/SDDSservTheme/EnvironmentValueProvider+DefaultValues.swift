@@ -1,5 +1,6 @@
 import Foundation
 import SDDSComponents
+import SDDSThemeCore
 import SwiftUI
 
 extension EnvironmentValueProvider {
