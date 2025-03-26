@@ -54,8 +54,6 @@ public struct SDDSTextArea: View {
     @State private var chipGroupContentHeight: CGFloat = 0
     
     private let debugConfiguration: TextFieldDebugConfiguration
-    
-    @State private var scrollMetrics: ScrollMetrics = .init()
 
     public init(
         value: Binding<TextAreaValue>,
@@ -286,7 +284,7 @@ public struct SDDSTextArea: View {
                     .padding(.bottom, size.boxPaddingTop)
                     .padding(.top, size.boxPaddingBottom)
                     .debug(color: Color.pink, condition: true)
-//                    
+                    
                     iconActionView
                         .opacity(0)
                         .padding(.top, size.boxPaddingTop)
@@ -306,7 +304,6 @@ public struct SDDSTextArea: View {
             text: $text,
             textHeight: $textHeight,
             isFocused: $isFocused,
-            scrollMetrics: $scrollMetrics,
             readOnly: readOnly,
             placeholderContent: { placeholderView },
             textTypography: textTypography,

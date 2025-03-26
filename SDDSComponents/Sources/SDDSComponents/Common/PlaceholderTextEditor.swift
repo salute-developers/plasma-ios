@@ -7,7 +7,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
-    @Binding var scrollMetrics: ScrollMetrics
+    @State var scrollMetrics: ScrollMetrics = .init()
     let readOnly: Bool
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     let textTypography: TypographyToken
@@ -18,10 +18,10 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     let textColor: Color
     let colorScheme: ColorScheme
     let onChange: (_ newText: String) -> ()
-
+    
     var body: some View {
         ZStack(alignment: .trailing) {
-        ZStack(alignment: .topLeading) {
+            ZStack(alignment: .topLeading) {
                 if text.isEmpty {
                     placeholderContent()
                 }
@@ -43,15 +43,15 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 .frame(maxWidth: .infinity)
                 .debug(color: Color.red, condition: true)
             }
+            .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
             SDDSScrollbar(
                 hasTrack: true,
-                thumbHeight: 10,
+                thumbHeight: scrollMetrics.calculateThumbHeight(),
                 thumbWidth: 9,
                 trackWidth: 7,
-                thumbYOffset: scrollMetrics.thumbOffset()
+                thumbOffsetY: scrollMetrics.contentOffset.y
             )
-            .padding(.trailing, 2)
+            .padding(.trailing, 5)
         }
-        .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
     }
 }

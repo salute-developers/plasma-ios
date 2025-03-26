@@ -6,20 +6,20 @@ public struct SDDSScrollbar: View {
     public let thumbHeight: CGFloat
     public let thumbWidth: CGFloat
     public let trackWidth: CGFloat
-    public let thumbYOffset: CGFloat
+    public let thumbOffsetY: CGFloat
     
     public init(
         hasTrack: Bool,
         thumbHeight: CGFloat,
         thumbWidth: CGFloat,
         trackWidth: CGFloat,
-        thumbYOffset: CGFloat
+        thumbOffsetY: CGFloat
     ) {
         self.hasTrack = hasTrack
         self.thumbHeight = thumbHeight
         self.thumbWidth = thumbWidth
         self.trackWidth = trackWidth
-        self.thumbYOffset = thumbYOffset
+        self.thumbOffsetY = thumbOffsetY
     }
     
     public var body: some View {
@@ -27,7 +27,7 @@ public struct SDDSScrollbar: View {
             thumb
                 .offset(
                     x: 0,
-                    y: thumbYOffset
+                    y: thumbOffsetY
                 )
             if hasTrack {
                 track
