@@ -2480,19 +2480,19 @@ public extension ColorToken {
     static var surfaceDefaultTransparentAccent: Self {
         Self(
             darkColor: Color(UIColor(hex: "#1A9E3233")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            lightColor: Color(UIColor(hex: "#108E261F"))
         )
     }
     static var surfaceDefaultTransparentAccentActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#1A9E3224")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            lightColor: Color(UIColor(hex: "#108E2529"))
         )
     }
     static var surfaceDefaultTransparentAccentHover: Self {
         Self(
             darkColor: Color(UIColor(hex: "#1A9E3252")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            lightColor: Color(UIColor(hex: "#108E250A"))
         )
     }
     static var surfaceDefaultTransparentCard: Self {
