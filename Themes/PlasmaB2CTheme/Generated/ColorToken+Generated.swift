@@ -500,49 +500,49 @@ public extension ColorToken {
     static var outlineDefaultSolidDefault: Self {
         Self(
             darkColor: Color(UIColor(hex: "#F9F9F9")),
-            lightColor: Color(UIColor(hex: "#F9F9F9"))
+            lightColor: Color(UIColor(hex: "#080808"))
         )
     }
     static var outlineDefaultSolidDefaultActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#E0E0E0FF")),
-            lightColor: Color(UIColor(hex: "#C7C7C7FF"))
+            lightColor: Color(UIColor(hex: "#303030FF"))
         )
     }
     static var outlineDefaultSolidDefaultHover: Self {
         Self(
             darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            lightColor: Color(UIColor(hex: "#595959FF"))
         )
     }
     static var outlineDefaultSolidPrimary: Self {
         Self(
             darkColor: Color(UIColor(hex: "#262626")),
-            lightColor: Color(UIColor(hex: "#262626"))
+            lightColor: Color(UIColor(hex: "#DDDDDD"))
         )
     }
     static var outlineDefaultSolidPrimaryActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#ADADADFF")),
-            lightColor: Color(UIColor(hex: "#4F4F4FFF"))
+            lightColor: Color(UIColor(hex: "#B3B3B3FF"))
         )
     }
     static var outlineDefaultSolidPrimaryHover: Self {
         Self(
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#787878FF"))
+            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
     static var outlineDefaultSolidSecondary: Self {
         Self(
             darkColor: Color(UIColor(hex: "#4E4E4E")),
-            lightColor: Color(UIColor(hex: "#4E4E4E"))
+            lightColor: Color(UIColor(hex: "#949494"))
         )
     }
     static var outlineDefaultSolidSecondaryActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#8C8C8CFF")),
-            lightColor: Color(UIColor(hex: "#404040FF"))
+            lightColor: Color(UIColor(hex: "#757575FF"))
         )
     }
     static var outlineDefaultSolidSecondaryHover: Self {
@@ -980,31 +980,31 @@ public extension ColorToken {
     static var outlineInverseSolidPrimary: Self {
         Self(
             darkColor: Color(UIColor(hex: "#DDDDDD")),
-            lightColor: Color(UIColor(hex: "#DDDDDD"))
+            lightColor: Color(UIColor(hex: "#262626"))
         )
     }
     static var outlineInverseSolidPrimaryActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#C4C4C4FF")),
-            lightColor: Color(UIColor(hex: "#B3B3B3FF"))
+            lightColor: Color(UIColor(hex: "#4F4F4FFF"))
         )
     }
     static var outlineInverseSolidPrimaryHover: Self {
         Self(
             darkColor: Color(UIColor(hex: "#ABABABFF")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            lightColor: Color(UIColor(hex: "#787878FF"))
         )
     }
     static var outlineInverseSolidSecondary: Self {
         Self(
             darkColor: Color(UIColor(hex: "#949494")),
-            lightColor: Color(UIColor(hex: "#949494"))
+            lightColor: Color(UIColor(hex: "#4E4E4E"))
         )
     }
     static var outlineInverseSolidSecondaryActive: Self {
         Self(
             darkColor: Color(UIColor(hex: "#575757FF")),
-            lightColor: Color(UIColor(hex: "#757575FF"))
+            lightColor: Color(UIColor(hex: "#404040FF"))
         )
     }
     static var outlineInverseSolidSecondaryHover: Self {
