@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ScrollViewMetrics {
+public struct ScrollMetrics {
     public var visibleHeight: CGFloat = 0
     public var contentHeight: CGFloat = 0
     public var contentOffset: CGPoint = .zero

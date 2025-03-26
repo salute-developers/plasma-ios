@@ -6,7 +6,9 @@ import SDDSServTheme
 
 final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
     @Published var value: TextAreaValue = .single("")
-    @Published var textValue: String = ""
+    @Published var textValue: String = """
+    You will need to pass a @Binding var offset: CGPoint into the UIScrollViewWrapper then when the button is clicked in your SwiftUI view, you can update the binding value which can then be used in the update method for UIViewControllerRepresentable. Another idea is to use UIViewRepresentable instead and use that with UIScrollView. Here is a helpful article doing that and setting its offset
+    """
     @Published var title: String = "Title"
     @Published var optionalTitle: String = "Optional"
     @Published var placeholder: String = "Placeholder"

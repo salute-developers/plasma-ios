@@ -43,8 +43,8 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
     public func updateUIView(_ uiView: UIScrollView, context: UIViewRepresentableContext<ScrollViewWrapper>) {
         uiView.contentOffset = self.contentOffset
         
-        uiView.setNeedsLayout()
-        uiView.layoutIfNeeded()
+//        uiView.setNeedsLayout()
+//        uiView.layoutIfNeeded()
         
         DispatchQueue.main.async {
             self.scrollViewHeight = uiView.contentSize.height
@@ -53,7 +53,6 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
             if let hostedView = uiView.subviews.first {
                 print("hostedView height: \(hostedView.frame.size.height)")
                 print("hostedView width: \(hostedView.frame.size.width)")
-//                hostedView.subviews.
             }
         }
     }

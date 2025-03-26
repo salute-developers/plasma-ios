@@ -55,7 +55,7 @@ public struct SDDSTextArea: View {
     
     private let debugConfiguration: TextFieldDebugConfiguration
     
-    @State private var scrollViewMetrics: ScrollViewMetrics = .init()
+    @State private var scrollMetrics: ScrollMetrics = .init()
 
     public init(
         value: Binding<TextAreaValue>,
@@ -109,7 +109,6 @@ public struct SDDSTextArea: View {
                         titleLabel
                             .multilineTextAlignment(appearance.titleTextAlignment)
                     }
-
                     HStack(spacing: 0) {
                         fieldView
                             .onTapGesture {
@@ -121,6 +120,7 @@ public struct SDDSTextArea: View {
                                 }
                             }
                     }
+                    .debug(color: Color.red, condition: true)
                     HStack(spacing: 0) {
                         if layout == .clear {
                             captionLabel
@@ -128,7 +128,9 @@ public struct SDDSTextArea: View {
                             counterLabel
                         }
                     }
+                    .debug(color: Color.blue, condition: true)
                 }
+                .debug(color: Color.green, condition: true)
                 
                 if showInnerTitleRightIndicatorForClearLayout {
                     indicatorWithLeadingPadding
@@ -217,6 +219,7 @@ public struct SDDSTextArea: View {
                 if shouldShowInnerTitle {
                     textEditor(id: textAreaInnerTitleId)
                         .padding(.bottom, size.boxPaddingBottom)
+                        .debug(color: Color.red, condition: true)
                     
                 } else {
                     textEditor(id: textAreaOuterTitleId)
@@ -228,6 +231,7 @@ public struct SDDSTextArea: View {
                         .padding(.leading, size.endContentPadding)
                         .padding(.top, size.boxPaddingTop)
                         .padding(.trailing, boxTrailingPadding)
+                        .debug(color: Color.green, condition: true)
                 }
             }
         case .multiple(_, let chips):
@@ -238,14 +242,39 @@ public struct SDDSTextArea: View {
             }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-                    CustomScrollView(
-                        scrollViewMetrics: Binding(
-                            get: { self.scrollViewMetrics },
-                            set: { newMetrics in
-                                self.scrollViewMetrics = newMetrics
-                            }
-                        )
-                    ) {
+//                    CustomScrollView(
+//                        scrollViewMetrics: Binding(
+//                            get: { self.scrollViewMetrics },
+//                            set: { newMetrics in
+//                                self.scrollViewMetrics = newMetrics
+//                            }
+//                        )
+//                    ) {
+//                        ZStack(alignment: .trailing) {
+//                            VStack {
+//                                SDDSChipGroup(
+//                                    data: updatedChips,
+//                                    appearance: appearance.chipGroupAppearance,
+//                                    height: $chipGroupContentHeight
+//                                )
+//                                .padding(.trailing, iconActionTrailingPadding)
+//                            }
+//                            SDDSScrollbar(
+//                                hasTrack: true,
+//                                thumbHeight: 74,
+//                                thumbWidth: 9,
+//                                trackWidth: 7,
+//                                thumbYOffset: 0
+//                            )
+//                            .padding(.trailing, 2)
+//                        }
+//                    }
+//                    .frame(height: calculatedChipGroupHeight)
+//                    .padding(.bottom, size.boxPaddingTop)
+//                    .padding(.top, size.boxPaddingBottom)
+//                    .debug(color: Color.pink, condition: true)
+//                    .id(updatedChips)
+                    ScrollView {
                         SDDSChipGroup(
                             data: updatedChips,
                             appearance: appearance.chipGroupAppearance,
@@ -257,20 +286,7 @@ public struct SDDSTextArea: View {
                     .padding(.bottom, size.boxPaddingTop)
                     .padding(.top, size.boxPaddingBottom)
                     .debug(color: Color.pink, condition: true)
-                    .id(updatedChips)
-//                    ScrollView {
-//                        SDDSChipGroup(
-//                            data: updatedChips,
-//                            appearance: appearance.chipGroupAppearance,
-//                            height: $chipGroupContentHeight
-//                        )
-//                        .padding(.trailing, iconActionTrailingPadding)
-//                    }
-//                    .frame(height: calculatedChipGroupHeight)
-//                    .padding(.bottom, size.boxPaddingTop)
-//                    .padding(.top, size.boxPaddingBottom)
-//                    .debug(color: Color.pink, condition: true)
-                    
+//                    
                     iconActionView
                         .opacity(0)
                         .padding(.top, size.boxPaddingTop)
@@ -290,6 +306,7 @@ public struct SDDSTextArea: View {
             text: $text,
             textHeight: $textHeight,
             isFocused: $isFocused,
+            scrollMetrics: $scrollMetrics,
             readOnly: readOnly,
             placeholderContent: { placeholderView },
             textTypography: textTypography,
@@ -322,6 +339,7 @@ public struct SDDSTextArea: View {
                 isFocused = false
             }
         }
+        
     }
     
     private func textEditorId(with hashable: (any Hashable)? = nil) -> Int {

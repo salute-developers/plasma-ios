@@ -25,10 +25,10 @@ public struct SDDSScrollbar: View {
     public var body: some View {
         ZStack(alignment: .top) {
             thumb
-//                .offset(
-//                    x: 0,
-//                    y: thumbYOffset
-//                )
+                .offset(
+                    x: 0,
+                    y: thumbYOffset
+                )
             if hasTrack {
                 track
             }

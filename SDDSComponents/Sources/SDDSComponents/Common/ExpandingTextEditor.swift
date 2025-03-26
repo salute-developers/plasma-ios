@@ -5,6 +5,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
+    @Binding var scrollMetrics: ScrollMetrics
     let readOnly: Bool
     let typographyToken: TypographyToken
     let accentColor: Color
@@ -18,6 +19,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     init(text: Binding<String>,
          textHeight: Binding<CGFloat>,
          isFocused: Binding<Bool>,
+         scrollMetrics: Binding<ScrollMetrics>,
          readOnly: Bool,
          typographyToken: TypographyToken,
          accentColor: Color = .blue,
@@ -32,6 +34,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         _text = text
         _textHeight = textHeight
         _isFocused = isFocused
+        self._scrollMetrics = scrollMetrics
         self.readOnly = readOnly
         self.typographyToken = typographyToken
         self.accentColor = accentColor
@@ -56,6 +59,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.textContainer.maximumNumberOfLines = 0
         textView.autocorrectionType = .no
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.showsVerticalScrollIndicator = false
         updateTextViewProperties(textView: textView)
         
         containerView.addSubview(textView)
@@ -78,6 +82,11 @@ struct ExpandingTextEditor: UIViewRepresentable {
         updateTextViewProperties(textView: textView)
                 
         DispatchQueue.main.async {
+            scrollMetrics.contentHeight = textView.contentSize.height
+            scrollMetrics.visibleHeight = textView.frame.size.height
+            print("contentHeight: \(scrollMetrics.contentHeight)")
+            print("visibleHeight: \(scrollMetrics.visibleHeight)")
+            
             if isFocused {
                 if !textView.isFirstResponder {
                     textView.becomeFirstResponder()
@@ -146,6 +155,11 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         func textViewDidEndEditing(_ textView: UITextView) {
             parent.isFocused = false
+        }
+        
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            parent.scrollMetrics.contentOffset = scrollView.contentOffset
+            print("contentOffset: \(parent.scrollMetrics.contentOffset)")
         }
     }
 }
