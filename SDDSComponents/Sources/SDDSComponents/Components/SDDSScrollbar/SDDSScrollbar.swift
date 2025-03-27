@@ -4,6 +4,7 @@ import SwiftUI
 public struct SDDSScrollbar: View {
     public let hasTrack: Bool
     public let thumbLength: CGFloat
+    public let trackThickness: CGFloat
     public let thumbOffsetY: CGFloat
     private let trackColor: Color
     private let thumbColor: Color
@@ -11,12 +12,14 @@ public struct SDDSScrollbar: View {
     public init(
         hasTrack: Bool,
         thumbLength: CGFloat,
+        trackThickness: CGFloat,
         thumbOffsetY: CGFloat,
         trackColor: Color,
         thumbColor: Color
     ) {
         self.hasTrack = hasTrack
         self.thumbLength = thumbLength
+        self.trackThickness = trackThickness
         self.thumbOffsetY = thumbOffsetY
         self.trackColor = trackColor
         self.thumbColor = thumbColor
@@ -36,13 +39,17 @@ public struct SDDSScrollbar: View {
     }
     
     private var thumb: some View {
-        Rectangle()
+        baseScrollBar
             .foregroundColor(thumbColor)
             .frame(height: thumbLength)
     }
     
     private var track: some View {
-        Rectangle()
+        baseScrollBar
             .foregroundColor(trackColor)
+    }
+    
+    private var baseScrollBar: some View {
+        RoundedRectangle(cornerRadius: trackThickness / 2)
     }
 }

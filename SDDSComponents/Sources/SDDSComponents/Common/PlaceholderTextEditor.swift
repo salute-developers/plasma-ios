@@ -7,7 +7,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
-    @State var scrollMetrics: ScrollMetrics = .init()
+    @Binding var scrollbarData: ScrollbarData
     let readOnly: Bool
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     let textTypography: TypographyToken
@@ -29,7 +29,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                     text: $text,
                     textHeight: $textHeight,
                     isFocused: $isFocused,
-                    scrollMetrics: $scrollMetrics,
+                    scrollbarData: $scrollbarData,
                     readOnly: readOnly,
                     typographyToken: textTypography,
                     accentColor: appearance.cursorColor.color(for: colorScheme),
@@ -41,29 +41,28 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                     onChange: onChange
                 )
                 .frame(maxWidth: .infinity)
-                .debug(color: Color.red, condition: true)
             }
             .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
-            .debug(color: Color.yellow, condition: true)
-            if !allContentIsVisible {
+            if !allContentInTextEditorIsVisible {
                 SDDSScrollbar(
                     hasTrack: true,
-                    thumbLength: scrollMetrics.calculateThumbHeight(),
-                    thumbOffsetY: scrollMetrics.thumbOffset(),
-                    trackColor: /*appearance.scrollBarTrackColor.color(for: colorScheme)*/ Color.green,
-                    thumbColor: Color.black
+                    thumbLength: scrollbarData.calculateThumbLength(),
+                    trackThickness: appearance.size.scrollBarThickness,
+                    thumbOffsetY: scrollbarData.thumbOffset(),
+                    trackColor: appearance.scrollBarTrackColor.color(for: colorScheme),
+                    thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
                 )
                 .frame(width: appearance.size.scrollBarThickness)
+                .padding(.trailing, appearance.size.scrollBarPaddings.trailing)
+                .opacity(scrollbarData.scrollEnded ? 0 : 1)
+                .animation(.easeInOut, value: scrollbarData.scrollEnded)
             }
-            //                    .frame(width: appearance.size.scrollBarThickness)
-            //                    .padding(appearance.size.scrollBarPaddings)
         }
-        .debug(color: Color.blue, condition: true)
     }
 }
 
 extension PlaceholderTextEditor {
-    private var allContentIsVisible: Bool {
-        scrollMetrics.visibleHeight == scrollMetrics.contentHeight
+    var allContentInTextEditorIsVisible: Bool {
+        scrollbarData.contentHeight == scrollbarData.visibleHeight
     }
 }

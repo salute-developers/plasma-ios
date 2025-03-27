@@ -1,11 +1,13 @@
 import Foundation
 
-public struct ScrollMetrics {
+public struct ScrollbarData {
     public var visibleHeight: CGFloat = 0
     public var contentHeight: CGFloat = 0
     public var contentOffset: CGPoint = .zero
+    public var scrollEnded: Bool = true
+    public var atBottomOrTop: Bool = false
     
-    public func calculateThumbHeight() -> CGFloat {
+    public func calculateThumbLength() -> CGFloat {
         guard contentHeight > 0 else {
             return visibleHeight
         }
@@ -14,7 +16,7 @@ public struct ScrollMetrics {
     
     public func thumbOffset() -> CGFloat {
         let maxContentOffset = max(0, contentHeight - visibleHeight)
-        let thumbMaxOffset = visibleHeight - calculateThumbHeight()
+        let thumbMaxOffset = visibleHeight - calculateThumbLength()
         let max = max(0, (contentOffset.y / maxContentOffset) * thumbMaxOffset)
         let thumbPosition = min(max, thumbMaxOffset)
         return thumbPosition

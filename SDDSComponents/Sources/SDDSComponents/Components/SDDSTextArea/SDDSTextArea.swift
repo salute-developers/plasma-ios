@@ -52,6 +52,7 @@ public struct SDDSTextArea: View {
     @State private var isFocused: Bool = false
     @State private var textHeight: CGFloat = 0.0
     @State private var chipGroupContentHeight: CGFloat = 0
+    @State private var scrollbarData: ScrollbarData = .init()
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
@@ -96,45 +97,46 @@ public struct SDDSTextArea: View {
     }
 
     public var body: some View {
-        HStack(alignment: .top, spacing: 0) {
-            if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
-                indicatorWithTrailingPadding
-            }
-            
-            VStack(alignment: .leading, spacing: 0) {
-                if appearance.labelPlacement == .outer {
-                    titleLabel
-                        .multilineTextAlignment(appearance.titleTextAlignment)
+            HStack(alignment: .top, spacing: 0) {
+                if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
+                    indicatorWithTrailingPadding
                 }
-
-                HStack(spacing: 0) {
-                    fieldView
-                        .onTapGesture {
-                            guard !displayChips else {
-                                return
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    if appearance.labelPlacement == .outer {
+                        titleLabel
+                            .multilineTextAlignment(appearance.titleTextAlignment)
+                    }
+                    HStack(spacing: 0) {
+                        fieldView
+                            .onTapGesture {
+                                guard !displayChips else {
+                                    return
+                                }
+                                withAnimation {
+                                    isFocused = true
+                                }
                             }
-                            withAnimation {
-                                isFocused = true
-                            }
+                    }
+                    .debug(color: Color.red, condition: true)
+                    HStack(spacing: 0) {
+                        if layout == .clear {
+                            captionLabel
+                            Spacer()
+                            counterLabel
                         }
-                }
-                HStack(spacing: 0) {
-                    if layout == .clear {
-                        captionLabel
-                        Spacer()
-                        counterLabel
                     }
                 }
+                
+                if showInnerTitleRightIndicatorForClearLayout {
+                    indicatorWithLeadingPadding
+                }
             }
-            
-            if showInnerTitleRightIndicatorForClearLayout {
-                indicatorWithLeadingPadding
-            }
-        }
         .opacity(disabled ? appearance.disabledAlpha : 1)
         .disabled(disabled)
+        .debug(color: Color.black, condition: true)
     }
-    
+
     // MARK: - Subviews
 
     @ViewBuilder
@@ -236,38 +238,6 @@ public struct SDDSTextArea: View {
             }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-//                    CustomScrollView(
-//                        scrollViewMetrics: Binding(
-//                            get: { self.scrollViewMetrics },
-//                            set: { newMetrics in
-//                                self.scrollViewMetrics = newMetrics
-//                            }
-//                        )
-//                    ) {
-//                        ZStack(alignment: .trailing) {
-//                            VStack {
-//                                SDDSChipGroup(
-//                                    data: updatedChips,
-//                                    appearance: appearance.chipGroupAppearance,
-//                                    height: $chipGroupContentHeight
-//                                )
-//                                .padding(.trailing, iconActionTrailingPadding)
-//                            }
-//                            SDDSScrollbar(
-//                                hasTrack: true,
-//                                thumbHeight: 74,
-//                                thumbWidth: 9,
-//                                trackWidth: 7,
-//                                thumbYOffset: 0
-//                            )
-//                            .padding(.trailing, 2)
-//                        }
-//                    }
-//                    .frame(height: calculatedChipGroupHeight)
-//                    .padding(.bottom, size.boxPaddingTop)
-//                    .padding(.top, size.boxPaddingBottom)
-//                    .debug(color: Color.pink, condition: true)
-//                    .id(updatedChips)
                     ScrollView {
                         SDDSChipGroup(
                             data: updatedChips,
@@ -279,7 +249,6 @@ public struct SDDSTextArea: View {
                     .frame(height: calculatedChipGroupHeight)
                     .padding(.bottom, size.boxPaddingTop)
                     .padding(.top, size.boxPaddingBottom)
-                    .debug(color: Color.pink, condition: true)
                     
                     iconActionView
                         .opacity(0)
@@ -296,25 +265,26 @@ public struct SDDSTextArea: View {
 
     @ViewBuilder
     private func textEditor(id: (any Hashable)? = nil) -> some View {
-        PlaceholderTextEditor(
-            text: $text,
-            textHeight: $textHeight,
-            isFocused: $isFocused,
-            readOnly: readOnly,
-            placeholderContent: { placeholderView },
-            textTypography: textTypography,
-            appearance: appearance, 
-            showsVerticalScrollIndicator: layout == .default,
-            trailingContentPadding: trailingContentPadding,
-            dynamicHeight: dynamicHeight,
-            textColor: textColor,
-            colorScheme: colorScheme,
-            onChange: { newText in
-                if newText != self.value.text {
-                    self.value = self.value.updated(with: newText)
+            PlaceholderTextEditor(
+                text: $text,
+                textHeight: $textHeight,
+                isFocused: $isFocused,
+                scrollbarData: $scrollbarData,
+                readOnly: readOnly,
+                placeholderContent: { placeholderView },
+                textTypography: textTypography,
+                appearance: appearance,
+                showsVerticalScrollIndicator: false,
+                trailingContentPadding: trailingContentPadding,
+                dynamicHeight: dynamicHeight,
+                textColor: textColor,
+                colorScheme: colorScheme,
+                onChange: { newText in
+                    if newText != self.value.text {
+                        self.value = self.value.updated(with: newText)
+                    }
                 }
-            }
-        )
+            )
         .id(textEditorId(with: id))
         .onChange(of: value) { newValue in
             guard !readOnly else {
@@ -836,9 +806,12 @@ public struct SDDSTextArea: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
+    private var allContentInTextEditorIsVisible: Bool {
+        scrollbarData.contentHeight == scrollbarData.visibleHeight
+    }
+    
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public var appearance: TextAreaAppearance {
         _appearance ?? environmentAppearance
     }
-
 }
