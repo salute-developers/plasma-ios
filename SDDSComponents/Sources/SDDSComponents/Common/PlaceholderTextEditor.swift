@@ -45,17 +45,25 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
             }
             .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
             .debug(color: Color.yellow, condition: true)
-            SDDSScrollbar(
-                hasTrack: true,
-                thumbLength: scrollMetrics.calculateThumbHeight(),
-                thumbOffsetY: scrollMetrics.thumbOffset(),
-                trackColor: /*appearance.scrollBarTrackColor.color(for: colorScheme)*/ Color.green,
-                thumbColor: Color.black
-            )
-            .frame(width: appearance.size.scrollBarThickness)
+            if !allContentIsVisible {
+                SDDSScrollbar(
+                    hasTrack: true,
+                    thumbLength: scrollMetrics.calculateThumbHeight(),
+                    thumbOffsetY: scrollMetrics.thumbOffset(),
+                    trackColor: /*appearance.scrollBarTrackColor.color(for: colorScheme)*/ Color.green,
+                    thumbColor: Color.black
+                )
+                .frame(width: appearance.size.scrollBarThickness)
+            }
             //                    .frame(width: appearance.size.scrollBarThickness)
             //                    .padding(appearance.size.scrollBarPaddings)
         }
         .debug(color: Color.blue, condition: true)
+    }
+}
+
+extension PlaceholderTextEditor {
+    private var allContentIsVisible: Bool {
+        scrollMetrics.visibleHeight == scrollMetrics.contentHeight
     }
 }
