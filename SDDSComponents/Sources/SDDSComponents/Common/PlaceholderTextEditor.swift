@@ -48,7 +48,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
             SDDSScrollbar(
                 hasTrack: true,
                 thumbLength: scrollMetrics.calculateThumbHeight(),
-                thumbOffsetY: scrollMetrics.contentOffset.y,
+                thumbOffsetY: scrollMetrics.thumbOffset(),
                 trackColor: /*appearance.scrollBarTrackColor.color(for: colorScheme)*/ Color.green,
                 thumbColor: Color.black
             )

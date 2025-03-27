@@ -78,6 +78,8 @@ struct ExpandingTextEditor: UIViewRepresentable {
         DispatchQueue.main.async {
             scrollMetrics.contentHeight = textView.contentSize.height
             scrollMetrics.visibleHeight = textView.frame.size.height
+            print("textViewHeight:\(textView.frame.size.height)")
+            print("textViewContentHeight:\(textView.contentSize.height)")
             
             if isFocused {
                 if !textView.isFirstResponder {
@@ -145,8 +147,13 @@ struct ExpandingTextEditor: UIViewRepresentable {
         }
         
         func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            print("contentSize.height:\(scrollView.contentSize.height)")
-            print("bounds.height:\(scrollView.bounds.height)")
+            print("ScrollViewcontentHeight:\(scrollView.contentSize.height)")
+            print("ScrollViewHeight:\(scrollView.frame.height)")
+            print("ScrollViewcontentOffset:\(scrollView.contentOffset)")
+//            let contentHeight = scrollView.contentSize.height
+//            let visibleHeight = scrollView.frame.height
+//            let availableSpace = contentHeight - visibleHeight
+            
             parent.scrollMetrics.contentOffset = scrollView.contentOffset
         }
     }
