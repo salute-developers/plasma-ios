@@ -58,8 +58,8 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainer.maximumNumberOfLines = 0
         textView.autocorrectionType = .no
+
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.showsVerticalScrollIndicator = false
         updateTextViewProperties(textView: textView)
         
         containerView.addSubview(textView)
@@ -78,7 +78,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         guard let textView = uiView.subviews.first as? UITextView else {
             return
         }
-        
         updateTextViewProperties(textView: textView)
         
         DispatchQueue.main.async {
@@ -156,12 +155,8 @@ struct ExpandingTextEditor: UIViewRepresentable {
         }
         
         func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let maxOffset = scrollView.contentSize.height - scrollView.bounds.height
-            let clampedY = min(max(0, scrollView.contentOffset.y), scrollView.bounds.height)
-            
-            if scrollView.contentOffset.y != clampedY {
-                scrollView.contentOffset.y = clampedY
-            }
+            print("contentSize.height:\(scrollView.contentSize.height)")
+            print("bounds.height:\(scrollView.bounds.height)")
             parent.scrollMetrics.contentOffset = scrollView.contentOffset
         }
     }

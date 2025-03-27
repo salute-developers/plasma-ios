@@ -10,6 +10,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(9.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
@@ -28,6 +29,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.LOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(12.0)
         size.titleInnerPadding = CGFloat(12.0)
 
@@ -47,6 +49,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -61,6 +64,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -109,6 +113,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -123,6 +128,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -172,6 +178,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -187,6 +194,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:6.0, y:8.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -236,6 +244,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
@@ -254,6 +263,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.MOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(10.0)
         size.titleInnerPadding = CGFloat(10.0)
 
@@ -273,6 +283,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -287,6 +298,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -335,6 +347,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -349,6 +362,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -398,6 +412,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -413,6 +428,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:6.0, y:7.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -462,6 +478,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(4.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(0.0)
         size.titleInnerPadding = CGFloat(0.0)
 
@@ -480,6 +497,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.SOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(8.0)
         size.titleInnerPadding = CGFloat(8.0)
 
@@ -499,6 +517,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -513,6 +532,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -561,6 +581,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -575,6 +596,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -624,6 +646,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -639,6 +662,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:6.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -688,6 +712,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(12.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(2.0)
         size.titleInnerPadding = CGFloat(2.0)
 
@@ -706,6 +731,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     
     var outerLabel: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.XlOuterlabel> {
         var size =  TextAreaAnySize(size: appearance.size)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(12.0)
         size.titleInnerPadding = CGFloat(12.0)
 
@@ -725,6 +751,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -739,6 +766,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -787,6 +815,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -801,6 +830,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:8.0, height:8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -850,6 +880,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -865,6 +896,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:6.0, y:8.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -914,6 +946,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.boxPaddingBottom = CGFloat(8.0)
         size.boxPaddingTop = CGFloat(8.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
         size.titleBottomPadding = CGFloat(6.0)
         size.titleInnerPadding = CGFloat(6.0)
 
@@ -933,6 +966,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredEnd: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -947,6 +981,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     var requiredStart: ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -996,6 +1031,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:2.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size
@@ -1011,6 +1047,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
         var size =  TextAreaAnySize(size: appearance.size)
         size.indicatorOffset = CGPoint(x:4.0, y:4.0)
         size.indicatorSize = CGSize(width:6.0, height:6.0)
+        size.scrollBarPaddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
         appearance.size = size

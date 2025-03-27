@@ -39,6 +39,8 @@ struct TextAreaAppearance: CodeGenerationAppearance {
     var innerTitleTypography: String? = nil
     var textTypography: String? = nil
     var titleTypography: String? = nil
+    var scrollBarTrackColor: String? = nil
+    var scrollBarThumbColor: String? = nil
     
     init(variation: TextFieldConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -80,6 +82,8 @@ struct TextAreaAppearance: CodeGenerationAppearance {
         self.counterTypography = TypographyTokenContextBuilder(string: props.counterStyle?.value, id: id, component: component).context
         self.labelPlacement = LabelPlacementContextBuilder(id: id, component: .textArea).context
         self.requiredPlacement = RequiredPlacementContextBuilder(id: id, component: .textArea).context
+        self.scrollBarTrackColor = ColorTokenContextBuilder(props.scrollBarTrackColor).context
+        self.scrollBarThumbColor = ColorTokenContextBuilder(props.scrollBarThumbColor).context
 
         if let chipStyle = props.chipStyle?.value {
             self.chipAppearance = ComponentStyleContextBuilder(chipStyle).context

@@ -44,14 +44,18 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 .debug(color: Color.red, condition: true)
             }
             .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
+            .debug(color: Color.yellow, condition: true)
             SDDSScrollbar(
                 hasTrack: true,
-                thumbHeight: scrollMetrics.calculateThumbHeight(),
-                thumbWidth: 9,
-                trackWidth: 7,
-                thumbOffsetY: scrollMetrics.contentOffset.y
+                thumbLength: scrollMetrics.calculateThumbHeight(),
+                thumbOffsetY: scrollMetrics.contentOffset.y,
+                trackColor: /*appearance.scrollBarTrackColor.color(for: colorScheme)*/ Color.green,
+                thumbColor: Color.black
             )
-            .padding(.trailing, 5)
+            .frame(width: appearance.size.scrollBarThickness)
+            //                    .frame(width: appearance.size.scrollBarThickness)
+            //                    .padding(appearance.size.scrollBarPaddings)
         }
+        .debug(color: Color.blue, condition: true)
     }
 }
