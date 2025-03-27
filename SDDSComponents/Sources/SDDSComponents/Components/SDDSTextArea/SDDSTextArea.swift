@@ -96,48 +96,45 @@ public struct SDDSTextArea: View {
     }
 
     public var body: some View {
-            HStack(alignment: .top, spacing: 0) {
-                if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
-                    indicatorWithTrailingPadding
+        HStack(alignment: .top, spacing: 0) {
+            if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
+                indicatorWithTrailingPadding
+            }
+            
+            VStack(alignment: .leading, spacing: 0) {
+                if appearance.labelPlacement == .outer {
+                    titleLabel
+                        .multilineTextAlignment(appearance.titleTextAlignment)
                 }
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    if appearance.labelPlacement == .outer {
-                        titleLabel
-                            .multilineTextAlignment(appearance.titleTextAlignment)
-                    }
-                    HStack(spacing: 0) {
-                        fieldView
-                            .onTapGesture {
-                                guard !displayChips else {
-                                    return
-                                }
-                                withAnimation {
-                                    isFocused = true
-                                }
+
+                HStack(spacing: 0) {
+                    fieldView
+                        .onTapGesture {
+                            guard !displayChips else {
+                                return
                             }
-                    }
-                    .debug(color: Color.red, condition: true)
-                    HStack(spacing: 0) {
-                        if layout == .clear {
-                            captionLabel
-                            Spacer()
-                            counterLabel
+                            withAnimation {
+                                isFocused = true
+                            }
                         }
-                    }
-                    .debug(color: Color.blue, condition: true)
                 }
-                .debug(color: Color.green, condition: true)
-                
-                if showInnerTitleRightIndicatorForClearLayout {
-                    indicatorWithLeadingPadding
+                HStack(spacing: 0) {
+                    if layout == .clear {
+                        captionLabel
+                        Spacer()
+                        counterLabel
+                    }
                 }
             }
+            
+            if showInnerTitleRightIndicatorForClearLayout {
+                indicatorWithLeadingPadding
+            }
+        }
         .opacity(disabled ? appearance.disabledAlpha : 1)
         .disabled(disabled)
-        .debug(color: Color.black, condition: true)
     }
-
+    
     // MARK: - Subviews
 
     @ViewBuilder
