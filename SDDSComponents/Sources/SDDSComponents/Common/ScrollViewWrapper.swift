@@ -43,9 +43,6 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
     public func updateUIView(_ uiView: UIScrollView, context: UIViewRepresentableContext<ScrollViewWrapper>) {
         uiView.contentOffset = self.contentOffset
         
-//        uiView.setNeedsLayout()
-//        uiView.layoutIfNeeded()
-        
         DispatchQueue.main.async {
             self.scrollViewHeight = uiView.contentSize.height
             self.visibleHeight = uiView.frame.size.height

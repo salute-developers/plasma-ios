@@ -15,7 +15,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
     let showsVerticalScrollIndicator: Bool
     let dynamicHeight: Bool
     let onChange: (_ newText: String) -> ()
-    
     init(text: Binding<String>,
          textHeight: Binding<CGFloat>,
          isFocused: Binding<Bool>,
@@ -45,7 +44,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         self.dynamicHeight = dynamicHeight
         self.onChange = onChange
     }
-    
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .clear
@@ -58,7 +56,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainer.maximumNumberOfLines = 0
         textView.autocorrectionType = .no
-
         textView.translatesAutoresizingMaskIntoConstraints = false
         updateTextViewProperties(textView: textView)
         
@@ -73,13 +70,11 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         return containerView
     }
-    
     func updateUIView(_ uiView: UIView, context: Context) {
         guard let textView = uiView.subviews.first as? UITextView else {
             return
         }
         updateTextViewProperties(textView: textView)
-        
         DispatchQueue.main.async {
             scrollMetrics.contentHeight = textView.contentSize.height
             scrollMetrics.visibleHeight = textView.frame.size.height
@@ -93,7 +88,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
             }
             
             textView.text = text
-            
             self.updateHeight(textView)
         }
     }
@@ -106,7 +100,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         var fixedWidth = textView.bounds.size.width
         let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
         let estimatedSize = textView.sizeThatFits(size)
-        
         let newHeight = max(typographyToken.lineHeight, estimatedSize.height)
         if textHeight != newHeight {
             textHeight = newHeight
@@ -127,18 +120,15 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.isEditable = !readOnly
         textView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
     }
-    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
     class Coordinator: NSObject, UITextViewDelegate {
         var parent: ExpandingTextEditor
         
         init(_ parent: ExpandingTextEditor) {
             self.parent = parent
         }
-        
         func textViewDidChange(_ textView: UITextView) {
             parent.text = textView.text
             parent.updateHeight(textView)

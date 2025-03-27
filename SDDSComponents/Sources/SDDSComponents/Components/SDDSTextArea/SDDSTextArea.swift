@@ -52,7 +52,6 @@ public struct SDDSTextArea: View {
     @State private var isFocused: Bool = false
     @State private var textHeight: CGFloat = 0.0
     @State private var chipGroupContentHeight: CGFloat = 0
-    
     private let debugConfiguration: TextFieldDebugConfiguration
 
     public init(
@@ -336,7 +335,6 @@ public struct SDDSTextArea: View {
                 isFocused = false
             }
         }
-        
     }
     
     private func textEditorId(with hashable: (any Hashable)? = nil) -> Int {
@@ -434,7 +432,7 @@ public struct SDDSTextArea: View {
                             .padding(.top, appearance.size.boxPaddingTop)
                             .padding(.bottom, appearance.size.titleInnerPadding)
                     }
-                        contentView
+                    contentView
                 }
                 .frame(height: totalFieldHeight)
                 
