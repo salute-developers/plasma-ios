@@ -5,6 +5,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
+    @Binding var scrollbarData: ScrollbarData
     let readOnly: Bool
     let typographyToken: TypographyToken
     let accentColor: Color
@@ -14,10 +15,10 @@ struct ExpandingTextEditor: UIViewRepresentable {
     let showsVerticalScrollIndicator: Bool
     let dynamicHeight: Bool
     let onChange: (_ newText: String) -> ()
-
     init(text: Binding<String>,
          textHeight: Binding<CGFloat>,
          isFocused: Binding<Bool>,
+         scrollbarData: Binding<ScrollbarData>,
          readOnly: Bool,
          typographyToken: TypographyToken,
          accentColor: Color = .blue,
@@ -32,6 +33,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         _text = text
         _textHeight = textHeight
         _isFocused = isFocused
+        self._scrollbarData = scrollbarData
         self.readOnly = readOnly
         self.typographyToken = typographyToken
         self.accentColor = accentColor
@@ -42,7 +44,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         self.dynamicHeight = dynamicHeight
         self.onChange = onChange
     }
-
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .clear
@@ -69,15 +70,17 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         return containerView
     }
-
     func updateUIView(_ uiView: UIView, context: Context) {
         guard let textView = uiView.subviews.first as? UITextView else {
             return
         }
-        
         updateTextViewProperties(textView: textView)
-                
         DispatchQueue.main.async {
+            scrollbarData.contentHeight = textView.contentSize.height
+            scrollbarData.visibleHeight = textView.frame.size.height
+            print("textViewHeight:\(textView.frame.size.height)")
+            print("textViewContentHeight:\(textView.contentSize.height)")
+            
             if isFocused {
                 if !textView.isFirstResponder {
                     textView.becomeFirstResponder()
@@ -87,7 +90,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
             }
             
             textView.text = text
-
             self.updateHeight(textView)
         }
     }
@@ -100,7 +102,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         var fixedWidth = textView.bounds.size.width
         let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
         let estimatedSize = textView.sizeThatFits(size)
-
         let newHeight = max(typographyToken.lineHeight, estimatedSize.height)
         if textHeight != newHeight {
             textHeight = newHeight
@@ -121,18 +122,17 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.isEditable = !readOnly
         textView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
     }
-
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
     class Coordinator: NSObject, UITextViewDelegate {
         var parent: ExpandingTextEditor
-
+        var hideScrollbarTimer: Timer?
+        var myTimer: (start: Date, end: Date) = (Date(), Date())
+        
         init(_ parent: ExpandingTextEditor) {
             self.parent = parent
         }
-
         func textViewDidChange(_ textView: UITextView) {
             parent.text = textView.text
             parent.updateHeight(textView)
@@ -146,6 +146,44 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         func textViewDidEndEditing(_ textView: UITextView) {
             parent.isFocused = false
+        }
+        
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            parent.scrollbarData.contentOffset = scrollView.contentOffset
+        }
+        
+        func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            hideScrollbarTimer?.invalidate()
+            let newTime = myTimer.start = Date()
+            print("TIMER START: \(newTime)")
+            parent.scrollbarData.scrollEnded = false
+        }
+        
+        func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate: Bool) {
+            myTimer.end = Date()
+            let newTime = myTimer.end.timeIntervalSince(myTimer.start)
+            print("TIMER END: \(newTime)")
+            hideScrollbarTimer = Timer.scheduledTimer(
+                withTimeInterval: 1,
+                repeats: false
+            ) { [weak self] _ in
+                self?.parent.scrollbarData.scrollEnded = true
+            }
+        }
+        
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            print("scrollViewDidEndDecelerating\n Сообщает делегату, что вид прокрутки завершил замедление движения прокрутки.")
+        }
+        
+        func startScrollBarTimer() {
+            hideScrollbarTimer?.invalidate()
+            
+            hideScrollbarTimer = Timer(
+                timeInterval: 1.8,
+                repeats: false
+            ) { [weak self] _ in
+                print("SCROLL BAR IS HIDDEN")
+            }
         }
     }
 }

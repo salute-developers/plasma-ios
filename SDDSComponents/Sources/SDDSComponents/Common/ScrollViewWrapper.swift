@@ -17,7 +17,6 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
             self._contentOffset = contentOffset
             self._scrollViewHeight = scrollViewHeight
             self._visibleHeight = visibleHeight
-            
             self.content = content
         }
     
@@ -26,6 +25,7 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
         view.delegate = context.coordinator
         
         let controller = UIHostingController(rootView: content())
+        controller.view.backgroundColor = .clear
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controller.view)
         
@@ -48,7 +48,8 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
             self.visibleHeight = uiView.frame.size.height
             
             if let hostedView = uiView.subviews.first {
-                hostedView.frame = CGRect(origin: .zero, size: uiView.contentSize)
+                print("hostedView height: \(hostedView.frame.size.height)")
+                print("hostedView width: \(hostedView.frame.size.width)")
             }
         }
     }
