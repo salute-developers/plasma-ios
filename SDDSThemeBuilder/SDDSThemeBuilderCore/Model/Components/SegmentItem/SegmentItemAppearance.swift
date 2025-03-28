@@ -1,0 +1,63 @@
+import Foundation
+
+struct SegmentItemAppearance: CodeGenerationAppearance {
+    typealias Variation = SegmentItemConfiguration.Variation
+    typealias Props = SegmentItemProps
+    
+    var backgroundColor: String?
+    var disabledAlpha: String?
+    var startContentColor: String?
+    var endContentColor: String?
+    var subtitleColor: String?
+    var titleColor: String?
+    var titleTypography: String?
+    var subtitleTypography: String?
+    var counterAppearance: String?
+    
+    init(variation: SegmentItemConfiguration.Variation, component: CodeGenerationComponent) {
+        self.init(props: variation.props, id: variation.id, component: component)
+    }
+    
+    init(props: SegmentItemProps?, id: String? = nil, component: CodeGenerationComponent) {
+        guard let props = props else {
+            return
+        }
+        
+        self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
+        self.backgroundColor = ButtonColorContextBuilder(
+            defaultColor: props.backgroundColor,
+            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
+            hoveredColor: props.backgroundColor?.value(for: [.hovered])
+        ).context
+        self.startContentColor = ButtonColorContextBuilder(
+            defaultColor: props.startContentColor,
+            highlightedColor: props.startContentColor?.value(for: [.pressed]),
+            hoveredColor: props.startContentColor?.value(for: [.hovered])
+        ).context
+        self.endContentColor = ButtonColorContextBuilder(
+            defaultColor: props.endContentColor,
+            highlightedColor: props.endContentColor?.value(for: [.pressed]),
+            hoveredColor: props.endContentColor?.value(for: [.hovered])
+        ).context
+        self.titleColor = ButtonColorContextBuilder(
+            defaultColor: props.labelColor,
+            highlightedColor: props.labelColor?.value(for: [.pressed]),
+            hoveredColor: props.labelColor?.value(for: [.hovered])
+        ).context
+        self.subtitleColor = ButtonColorContextBuilder(
+            defaultColor: props.valueColor,
+            highlightedColor: props.valueColor?.value(for: [.pressed]),
+            hoveredColor: props.valueColor?.value(for: [.hovered])
+        ).context
+        self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
+        self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
+        
+        var reflectable: (any Reflectable)? = nil
+        if let counterStyleProps = props.counterStyle?.props {
+            reflectable = CounterAppearance(props: props.counterStyle?.props, component: .counter)
+        }
+        if let counterAppearance = ComponentStyleContextBuilder(props.counterStyle?.value ?? "", reflectable: reflectable).context {
+            self.counterAppearance = counterAppearance
+        }
+    }
+}

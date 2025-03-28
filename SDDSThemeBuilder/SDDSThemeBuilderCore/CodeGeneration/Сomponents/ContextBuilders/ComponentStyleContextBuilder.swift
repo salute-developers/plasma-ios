@@ -2,9 +2,11 @@ import Foundation
 
 final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     let string: String
+    let reflectable: (any Reflectable)?
     
-    init(_ string: String) {
+    init(_ string: String, reflectable: (any Reflectable)? = nil) {
         self.string = string
+        self.reflectable = reflectable
     }
     
     var context: String? {
@@ -19,6 +21,17 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
         result += [component.componentName]
         result += variations
         result += ["appearance"]
+        
+        if let reflectable = reflectable {
+            let modifyString = """
+            modify { appearance in
+                var appearance = appearance
+                \(reflectable.context)
+                return appearance
+            }
+            """
+            result += [modifyString]
+        }
         
         return result.joined(separator: comma)
     }

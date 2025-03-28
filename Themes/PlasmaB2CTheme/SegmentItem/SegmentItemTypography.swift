@@ -1,72 +1,56 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 struct SegmentItemTypography: GeneralTypographyConfiguration {
-    typealias S = SegmentItemSizeConfiguration
-    
-    let extraLarge: TypographyToken?
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
-    let extraSmall: TypographyToken?
+    var l: TypographyToken?
+    var m: TypographyToken?
+    var s: TypographyToken?
+    var xl: TypographyToken?
+    var xs: TypographyToken?
     
     init(
-        extraLarge: TypographyToken?,
-        large: TypographyToken?,
-        medium: TypographyToken?,
-        small: TypographyToken?,
-        extraSmall: TypographyToken?
+        l: TypographyToken? = nil,
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil,
+        xl: TypographyToken? = nil,
+        xs: TypographyToken? = nil
     ) {
-        self.extraLarge = extraLarge
-        self.large = large
-        self.medium = medium
-        self.small = small
-        self.extraSmall = extraSmall
+        self.l = l
+        self.m = m
+        self.s = s
+        self.xl = xl
+        self.xs = xs
     }
     
-    /**
-     Возвращает типографику для заданного размера кнопки.
-     
-     - Parameter size: Размер кнопки.
-     - Returns: Типографика для заданного размера кнопки или nil, если не задана.
-     */
+    init(oneSize: TypographyToken) {
+        self.l = oneSize
+        self.m = oneSize
+        self.s = oneSize
+        self.xl = oneSize
+        self.xs = oneSize
+    }
+    
     func typography(with size: SegmentItemSizeConfiguration) -> TypographyToken? {
-        switch size as? SegmentItemSize {
-        case .extraLarge:
-            return extraLarge
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small:
-            return small
-        case .extraSmall:
-            return extraSmall
-        case .none:
-            return medium
+        if size is SegmentItemAnySize {
+            return l
         }
-    }
-}
-
-extension SegmentItemTypography {
-    static var titleTypography: TypographyConfiguration {
-        SegmentItemTypography(
-            extraLarge: AdaptiveTypographyToken.bodyLBold.typography,
-            large: AdaptiveTypographyToken.bodyLBold.typography,
-            medium: AdaptiveTypographyToken.bodyMBold.typography,
-            small: AdaptiveTypographyToken.bodySBold.typography,
-            extraSmall: AdaptiveTypographyToken.bodyXsBold.typography
-        )
-        .asContainer
-    }
-    static var subtitleTypography: TypographyConfiguration {
-        SegmentItemTypography(
-            extraLarge: AdaptiveTypographyToken.bodyLBold.typography,
-            large: AdaptiveTypographyToken.bodyLBold.typography,
-            medium: AdaptiveTypographyToken.bodyMBold.typography,
-            small: AdaptiveTypographyToken.bodySBold.typography,
-            extraSmall: AdaptiveTypographyToken.bodyXsBold.typography
-        )
-        .asContainer
+        if size is SegmentItemSizeL {
+            return l
+        }
+        if size is SegmentItemSizeM {
+            return m
+        }
+        if size is SegmentItemSizeS {
+            return s
+        }
+        if size is SegmentItemSizeXl {
+            return xl
+        }
+        if size is SegmentItemSizeXs {
+            return xs
+        }
+        return nil
     }
 }

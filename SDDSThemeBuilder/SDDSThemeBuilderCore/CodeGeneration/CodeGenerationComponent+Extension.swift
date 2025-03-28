@@ -21,27 +21,29 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case counter = "Counter"
     case card = "Card"
     case cardClear = "CardClear"
+    case segmentItem = "SegmentItem"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
-            .textField,
-            .textFieldClear,
-            .textArea,
-            .textAreaClear,
-            .badge,
-            .badgeClear,
-            .badgeTransparent,
-            .iconBadge,
-            .iconBadgeClear,
-            .iconBadgeTransparent,
-            .indicator,
-            .cell,     
-            .counter,
-            .card,
-            .cardClear
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
+//            .textField,
+//            .textFieldClear,
+//            .textArea,
+//            .textAreaClear,
+//            .badge,
+//            .badgeClear,
+//            .badgeTransparent,
+//            .iconBadge,
+//            .iconBadgeClear,
+//            .iconBadgeTransparent,
+//            .indicator,
+//            .cell,     
+//            .counter,
+//            .card,
+//            .cardClear,
+            .segmentItem
         ]
     }
 }
@@ -67,6 +69,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .card, .cardClear:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .segmentItem:
+            GenerateComponentCommand<SegmentItemProps, SegmentItemAppearance, SegmentItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -90,6 +94,8 @@ extension CodeGenerationComponent {
             "CounterAppearance"
         case .card, .cardClear:
             "CardAppearance"
+        case .segmentItem:
+            "SegmentItemAppearance"
         }
     }
     
@@ -114,6 +120,8 @@ extension CodeGenerationComponent {
             "CounterSizeConfiguration"
         case .card, .cardClear:
             "CardSizeConfiguration"
+        case .segmentItem:
+            "SegmentItemSizeConfiguration"
         }
     }
     
@@ -159,6 +167,8 @@ extension CodeGenerationComponent {
             "card_solid_config.json"
         case .cardClear:
             "card_clear_config.json"
+        case .segmentItem:
+            "segment_item_config.json"
         }
     }
     

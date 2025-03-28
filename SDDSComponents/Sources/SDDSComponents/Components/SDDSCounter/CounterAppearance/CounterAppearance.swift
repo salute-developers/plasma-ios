@@ -27,3 +27,4 @@ extension CounterAppearance: EnvironmentKey {
     }
 }
 
+extension CounterAppearance: Modifiable {}

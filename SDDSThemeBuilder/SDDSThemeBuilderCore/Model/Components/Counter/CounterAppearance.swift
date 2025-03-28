@@ -30,3 +30,19 @@ struct CounterAppearance: CodeGenerationAppearance {
         ).context
     }
 }
+
+extension CounterAppearance: Reflectable {
+    var properties: [(WritableKeyPath<CounterAppearance, String?>, String?)] {
+        return [
+            (\CounterAppearance.textTypography, textTypography),
+            (\CounterAppearance.textColor, textColor),
+            (\CounterAppearance.backgroundColor, backgroundColor)
+        ]
+    }
+    
+    func update(keyPath: WritableKeyPath<CounterAppearance, String?>, value: String?) -> CounterAppearance {
+        var result = self
+        result[keyPath: keyPath] = value
+        return result
+    }
+}
