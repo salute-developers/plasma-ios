@@ -35,14 +35,27 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
             appearance: appearance
         )
     }
-    {%- endfor %}{% else %}{%- for viewKey, view in views %}
+    {%- endfor %}
+    var variation: Variation<{{ appearance }}> {
+        .init(
+            originalVariation: self,
+            styles: [
+            {%- for viewKey, view in variationViews[key] %}
+                self.{{ viewKey }},
+            {%- endfor %}
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    {% else %}{%- for viewKey, view in views %}
     var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
         return .init(
             name: "{{viewKey}}",
             appearance: appearance.{{ viewKey }}
         )
     }
-    {%- endfor %}{% endif %}
+    {%- endfor %}
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -55,24 +68,10 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
             appearance: appearance
         )
     }
+    {% endif %}
 }
-{% if variationViews[key] %}
-public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
-    {%- for viewKey, view in variationViews[key] %}
-    var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
-        var appearance = appearance
-        {%- for property, value in view.appearance %}
-        appearance.{{ property }} = {{ value }}
-        {%- endfor %}
-        
-        return .init(
-            name: "{{viewKey}}",
-            appearance: appearance
-        )
-    }
-    {%- endfor %}
-}
-{% endif %}{% endfor %}
+{% endfor %}
+
 public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
     {%- for viewKey, view in views %}
     var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {

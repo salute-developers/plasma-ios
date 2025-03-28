@@ -33,6 +33,9 @@ struct SegmentView: View {
                 maxElementsAdditionalWindow
             }
         }
+        .onAppear {
+            viewModel.updateAppearance()
+        }
     }
     
     // MARK: - Segment Element

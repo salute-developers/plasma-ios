@@ -1,17 +1,21 @@
 import Foundation
+import SwiftUI
+import SDDSThemeCore
 
 public protocol SegmentSizeConfiguration: SizeConfiguration {
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     var horizontalHeight: CGFloat { get }
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     var verticalWidth: CGFloat { get }
-    func cornerRadius(style: ComponentShapeStyle) -> CGFloat
-    var paddings: CGFloat { get }
+    var pathDrawer: PathDrawer { get }
+    var paddings: EdgeInsets { get }
 }
 
 public struct SegmentZeroSize: SegmentSizeConfiguration {
     public var horizontalHeight: CGFloat = 0
     public var verticalWidth: CGFloat = 0
-    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
-    public let paddings: CGFloat = 0
+    public var pathDrawer: PathDrawer = DefaultPathDrawer()
+    public let paddings: EdgeInsets = .init()
     
     public init() {}
 }

@@ -19,7 +19,7 @@ final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvide
         }
     }
     @Published var isCounterVisible: Bool = false
-    @Published var isSelected: Bool = true
+    @Published var isSelected: Bool = false
     @Published var iconVisible: Bool = false {
         didSet {
             if iconVisible {
@@ -30,7 +30,7 @@ final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvide
         }
     }
     
-    var counterViewModel = CounterViewModel()
+    @Published var counterViewModel = CounterViewModel()
     
     init() {
         super.init(variationProvider: SegmentItemVariationProvider())

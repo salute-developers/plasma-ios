@@ -6,7 +6,6 @@ public final class CheckmarkDrawer: PathDrawer {
     
     public init(lineWidth: CGFloat) {
         self.lineWidth = lineWidth
-        print("linewidth: \(self.lineWidth)")
     }
     
     public func path(in rect: CGRect) -> Path {

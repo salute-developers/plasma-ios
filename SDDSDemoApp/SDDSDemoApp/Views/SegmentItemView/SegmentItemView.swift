@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-
 import SDDSServTheme
 
 public struct SegmentItemView: View {
@@ -16,6 +15,7 @@ public struct SegmentItemView: View {
                 title
                 subtitle
                 iconVisible
+                selected
                 counter
                 alignment
                 disabled
@@ -82,6 +82,12 @@ public struct SegmentItemView: View {
     public var iconVisible: some View {
         HStack {
             Toggle("Icon Visible", isOn: $viewModel.iconVisible)
+        }
+    }
+    
+    public var selected: some View {
+        HStack {
+            Toggle("Selected", isOn: $viewModel.isSelected)
         }
     }
     

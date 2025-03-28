@@ -4,6 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+
 public extension ComponentAppearanceVariation<Indicator, IndicatorAppearance> {
     var `default`: AppearanceVariation<IndicatorAppearance> {
         return .init(

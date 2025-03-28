@@ -4,7 +4,7 @@ struct CardAppearance: CodeGenerationAppearance {
     typealias Variation = CardConfiguration.Variation
     typealias Props = CardProps
     
-    public var backgroundColor: String?
+    var backgroundColor: String?
     
     init(variation: CardConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
