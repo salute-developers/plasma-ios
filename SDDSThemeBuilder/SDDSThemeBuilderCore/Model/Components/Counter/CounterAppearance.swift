@@ -29,4 +29,18 @@ struct CounterAppearance: CodeGenerationAppearance {
             hoveredColor: props.backgroundColor?.value(for: [.hovered])
         ).context
     }
+    
+    var context: String {
+        var result: [String] = []
+        if let textTypography = self.textTypography {
+            result += ["textTypography: \(textTypography)"]
+        }
+        if let textColor = self.textColor {
+            result += ["textColor: \(textColor)"]
+        }
+        if let backgroundColor = self.backgroundColor {
+            result += ["backgroundColor: \(backgroundColor)"]
+        }
+        return ".init(\(result.joined(separator: ","))"
+    }
 }

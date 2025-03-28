@@ -2,9 +2,11 @@ import Foundation
 
 final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     let string: String
+    let appearance: String?
     
-    init(_ string: String) {
+    init(_ string: String, appearance: String? = nil) {
         self.string = string
+        self.appearance = appearance
     }
     
     var context: String? {
@@ -19,6 +21,13 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
         result += [component.componentName]
         result += variations
         result += ["appearance"]
+        
+        if let appearance = appearance {
+            let modifyString = """
+            modify(\(appearance))
+            """
+            result += [modifyString]
+        }
         
         return result.joined(separator: comma)
     }
