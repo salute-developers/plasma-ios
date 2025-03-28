@@ -77,6 +77,7 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.M> {
@@ -152,6 +153,7 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.S> {
@@ -227,6 +229,7 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.Xs> {
@@ -302,7 +305,9 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
             appearance: appearance
         )
     }
+    
 }
+
 
 public extension ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
     var `default`: AppearanceVariation<BadgeAppearance> {

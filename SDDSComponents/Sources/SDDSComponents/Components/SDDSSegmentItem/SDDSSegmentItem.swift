@@ -70,25 +70,51 @@ public struct SDDSSegmentItem: View {
             isLoading: false,
             spinnerImage: nil,
             buttonStyle: .basic,
-            appearance: appearance.buttonAppearance,
+            appearance: buttonAppearance,
             layoutMode: strech ? .fixedWidth(.packed) : .wrapContent,
             counterViewProvider: counterView,
             isSelected: isSelected,
             action: action
         )
     }
+    
+    private var buttonAppearance: ButtonAppearance {
+        .init(
+            size: buttonSize,
+            shapeStyle: appearance.shapeStyle,
+            titleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.titleTypography.typography(with: appearance.size)).asContainer,
+            titleColor: appearance.titleColor,
+            subtitleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.subtitleTypography.typography(with: appearance.size)).asContainer,
+            subtitleColor: appearance.subtitleColor,
+            iconColor: iconAttributes?.alignment == .leading ? appearance.startContentColor : appearance.endContentColor,
+            backgroundColor: appearance.backgroundColor,
+            disabledAlpha: appearance.disabledAlpha
+        )
+    }
+    
+    private var buttonSize: ButtonSizeConfiguration {
+        var size = DefaultButtonSize()
+        size.height = appearance.size.height
+        size.cornerRadius = appearance.size.cornerRadius
+        size.iconSize = iconAttributes?.alignment == .leading ? appearance.size.startContentSize : appearance.size.endContentSize
+        size.counterSize = appearance.counterAppearance.size
+        size.iconHorizontalGap = appearance.size.iconHorizontalGap
+        size.titleHorizontalGap = appearance.size.titleHorizontalGap
+        size.paddings = appearance.size.paddings
+        return size
+    }
 }
 
 extension SDDSSegmentItem {
-    var hasIconAttributes: Bool {
+    private var hasIconAttributes: Bool {
         iconAttributes != nil
     }
     
-    var hasSubtitle: Bool {
+    private var hasSubtitle: Bool {
         !subtitle.isEmpty
     }
     
-    var counterView: ViewProvider? {
+    private var counterView: ViewProvider? {
         guard let counterViewProvider = counterViewProvider, counterEnabled else {
             return nil
         }
@@ -100,7 +126,8 @@ extension SDDSSegmentItem {
                     appearance: appearance.counterAppearance,
                     isAnimating: false,
                     isHighlighted: false,
-                    isHovered: false
+                    isHovered: false,
+                    isSelected: isSelected
                 )
             )
         case .custom(let viewProvider, _):
@@ -108,8 +135,7 @@ extension SDDSSegmentItem {
         }
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: SegmentItemAppearance {
+    private var appearance: SegmentItemAppearance {
         _appearance ?? environmentAppearance
     }
 }

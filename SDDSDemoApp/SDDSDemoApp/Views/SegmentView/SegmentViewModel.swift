@@ -58,7 +58,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     var segmentHeight: CGFloat {
         switch layoutOrientation {
         case .horizontal:
-            return appearance.size.horizontalHeight
+            return appearance.segmentItemAppearance.size.height
         case .vertical:
             return appearance.segmentItemAppearance.size.height * CGFloat(data.count)
         }
@@ -72,7 +72,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
         }
     }
     
-    override func onUpdateAppearance() {
+    func updateAppearance() {
         self.selectedItemId = nil
         self.data = []
         self.addItem()
@@ -81,7 +81,6 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
 
 extension SegmentViewModel {
     func addItem() {
-        let counterApp = self.appearance.segmentItemAppearance.counterAppearance
         let id = UUID()
         let item = SDDSSegmentItemData(
             id: id,

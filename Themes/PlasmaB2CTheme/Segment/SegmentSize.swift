@@ -1,53 +1,82 @@
 import Foundation
-import SDDSComponents
 import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
 
-public enum SegmentSize: String, CaseIterable {
-    case large
-    case medium
-    case small
-    case extraSmall
+struct SegmentSize {
+    static let l = SegmentSizeL()
+    static let m = SegmentSizeM()
+    static let s = SegmentSizeS()
+    static let xl = SegmentSizeXl()
+    static let xs = SegmentSizeXs()
+
+    static let all: [SegmentSizeConfiguration] = [
+        SegmentSize.l,
+        SegmentSize.m,
+        SegmentSize.s,
+        SegmentSize.xl,
+        SegmentSize.xs,
+    ] 
+}
+struct SegmentSizeL: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius + 2.0) as PathDrawer
+    var verticalWidth = CGFloat(0)
+    public var debugDescription: String {
+        return "SegmentSize"
+    }
+}
+struct SegmentSizeM: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
+    var verticalWidth = CGFloat(0)
+    public var debugDescription: String {
+        return "SegmentSize"
+    }
+}
+struct SegmentSizeS: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius + 2.0) as PathDrawer
+    var verticalWidth = CGFloat(0)
+    public var debugDescription: String {
+        return "SegmentSize"
+    }
+}
+struct SegmentSizeXl: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius + 2.0) as PathDrawer
+    var verticalWidth = CGFloat(0)
+    public var debugDescription: String {
+        return "SegmentSize"
+    }
+}
+struct SegmentSizeXs: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
+    var verticalWidth = CGFloat(0)
+    public var debugDescription: String {
+        return "SegmentSize"
+    }
 }
 
-extension SegmentSize: SegmentSizeConfiguration {
-    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat {
-        switch style {
-        case .cornered:
-            switch self {
-            case .large: return ShapeToken.roundL.cornerRadius - 2.0
-            case .medium: return ShapeToken.roundM.cornerRadius
-            case .small: return ShapeToken.roundM.cornerRadius - 2.0
-            case .extraSmall: return ShapeToken.roundS.cornerRadius
-            }
-        case .pilled:
-            return horizontalHeight / 2
-        }
+struct SegmentAnySize: SegmentSizeConfiguration {
+    var horizontalHeight = CGFloat(0)
+    var paddings = EdgeInsets()
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
+    var verticalWidth = CGFloat(0)
+
+    init(size: SegmentSizeConfiguration) {
+        self.horizontalHeight = size.horizontalHeight
+        self.paddings = size.paddings
+        self.pathDrawer = size.pathDrawer
+        self.verticalWidth = size.verticalWidth
     }
-    
-    public var horizontalHeight: CGFloat {
-        switch self {
-        case .large: return 56
-        case .medium: return 48
-        case .small: return 40
-        case .extraSmall: return 32
-        }
-    }
-    
-    public var verticalWidth: CGFloat {
-        switch self {
-        case .large: return 102
-        case .medium: return 88
-        case .small: return 75
-        case .extraSmall: return 61
-        }
-    }
-    
-    public var paddings: CGFloat {
-        switch self {
-        case .large: return 2
-        case .medium: return 2
-        case .small: return 2
-        case .extraSmall: return 2
-        }
+    var debugDescription: String {
+        return "SegmentAnySize"
     }
 }

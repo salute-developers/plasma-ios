@@ -1,42 +1,45 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Segment {
-    public static var l: ComponentAppearanceVariation<Segment, SegmentAppearance> {
-        var appearance = SegmentAppearance()
-        appearance.size = SegmentSize.large
-        appearance.segmentItemAppearance = SegmentItem.l.primary.appearance
+    public static var l: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.L> {
+        var appearance = SegmentAppearance.base
+        appearance.size = SegmentSize.l
+        appearance.disabledAlpha = CGFloat(0)
+
         return .init(
             name: "l",
             appearance: appearance
         )
     }
-    
-    public static var m: ComponentAppearanceVariation<Segment, SegmentAppearance> {
-        var appearance = SegmentAppearance()
-        appearance.size = SegmentSize.medium
-        appearance.segmentItemAppearance = SegmentItem.m.primary.appearance
+    public static var m: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.M> {
+        var appearance = SegmentAppearance.base
+        appearance.size = SegmentSize.m
+        appearance.disabledAlpha = CGFloat(0)
+
         return .init(
             name: "m",
             appearance: appearance
         )
     }
-    
-    public static var s: ComponentAppearanceVariation<Segment, SegmentAppearance> {
-        var appearance = SegmentAppearance()
-        appearance.size = SegmentSize.small
-        appearance.segmentItemAppearance = SegmentItem.s.primary.appearance
+    public static var s: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.S> {
+        var appearance = SegmentAppearance.base
+        appearance.size = SegmentSize.s
+        appearance.disabledAlpha = CGFloat(0)
+
         return .init(
             name: "s",
             appearance: appearance
         )
     }
-    
-    public static var xs: ComponentAppearanceVariation<Segment, SegmentAppearance> {
-        var appearance = SegmentAppearance()
-        appearance.size = SegmentSize.extraSmall
-        appearance.segmentItemAppearance = SegmentItem.xs.primary.appearance
+    public static var xs: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xs> {
+        var appearance = SegmentAppearance.base
+        appearance.size = SegmentSize.xs
+        appearance.disabledAlpha = CGFloat(0)
+
         return .init(
             name: "xs",
             appearance: appearance
@@ -44,10 +47,33 @@ public struct Segment {
     }
     
     public static let all: [Variation<SegmentAppearance>] = [
-        l,
-        m,
-        s,
-        xs
-    ].map { $0.variation }
+        Segment.l.variation,
+        Segment.l.pilled.variation,
+        Segment.m.variation,
+        Segment.m.pilled.variation,
+        Segment.s.variation,
+        Segment.s.pilled.variation,
+        Segment.xs.variation,
+        Segment.xs.pilled.variation,
+    ]
+}
 
+public struct SegmentVariation {
+    public struct L {}
+    public struct LPilled {}
+    public struct M {}
+    public struct MPilled {}
+    public struct S {}
+    public struct SPilled {}
+    public struct Xs {}
+    public struct XsPilled {}
+}
+
+private extension SegmentAppearance {
+    static var base: SegmentAppearance {
+        var appearance = SegmentAppearance()
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondary, hoveredColor: ColorToken.surfaceDefaultTransparentSecondary, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
+        appearance.disabledAlpha = CGFloat(0)
+        return appearance
+    }
 }

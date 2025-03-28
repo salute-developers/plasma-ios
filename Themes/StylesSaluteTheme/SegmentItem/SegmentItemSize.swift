@@ -1,78 +1,107 @@
 import Foundation
-import SDDSComponents
 import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
 
-enum SegmentItemSize: String, CaseIterable {
-    case large
-    case medium
-    case small
-    case extraSmall
+struct SegmentItemSize {
+    static let l = SegmentItemSizeL()
+    static let m = SegmentItemSizeM()
+    static let s = SegmentItemSizeS()
+    static let xs = SegmentItemSizeXs()
+
+    static let all: [SegmentItemSizeConfiguration] = [
+        SegmentItemSize.l,
+        SegmentItemSize.m,
+        SegmentItemSize.s,
+        SegmentItemSize.xs,
+    ] 
+}
+struct SegmentItemSizeL: SegmentItemSizeConfiguration {
+    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var counterPadding = CGFloat(6.0)
+    var endContentSize = CGSize(width:24.0, height:24.0)
+    var height = CGFloat(56.0)
+    var iconHorizontalGap = CGFloat(6.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 24.0, bottom: 0.0, trailing: 24.0)
+    var startContentSize = CGSize(width:24.0, height:24.0)
+    var titleHorizontalGap = CGFloat(6.0)
+    var width = CGFloat(102.0)
+    public var debugDescription: String {
+        return "SegmentItemSize"
+    }
+}
+struct SegmentItemSizeM: SegmentItemSizeConfiguration {
+    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var counterPadding = CGFloat(4.0)
+    var endContentSize = CGSize(width:24.0, height:24.0)
+    var height = CGFloat(48.0)
+    var iconHorizontalGap = CGFloat(4.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+    var startContentSize = CGSize(width:24.0, height:24.0)
+    var titleHorizontalGap = CGFloat(4.0)
+    var width = CGFloat(88.0)
+    public var debugDescription: String {
+        return "SegmentItemSize"
+    }
+}
+struct SegmentItemSizeS: SegmentItemSizeConfiguration {
+    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var counterPadding = CGFloat(2.0)
+    var endContentSize = CGSize(width:24.0, height:24.0)
+    var height = CGFloat(40.0)
+    var iconHorizontalGap = CGFloat(2.0)
+    var iconSize = CGSize(width:24.0, height:24.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+    var startContentSize = CGSize(width:24.0, height:24.0)
+    var titleHorizontalGap = CGFloat(2.0)
+    var width = CGFloat(75.0)
+    public var debugDescription: String {
+        return "SegmentItemSize"
+    }
+}
+struct SegmentItemSizeXs: SegmentItemSizeConfiguration {
+    var cornerRadius = ShapeToken.roundS.cornerRadius
+    var counterPadding = CGFloat(2.0)
+    var endContentSize = CGSize(width:16.0, height:16.0)
+    var height = CGFloat(32.0)
+    var iconHorizontalGap = CGFloat(2.0)
+    var iconSize = CGSize(width:16.0, height:16.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+    var startContentSize = CGSize(width:16.0, height:16.0)
+    var titleHorizontalGap = CGFloat(2.0)
+    var width = CGFloat(61.0)
+    public var debugDescription: String {
+        return "SegmentItemSize"
+    }
 }
 
-extension SegmentItemSize: SegmentItemSizeConfiguration {
-    var cornerRadius: CGFloat {
-        switch self {
-        case .large: return ShapeToken.roundL.cornerRadius - 2.0
-        case .medium: return ShapeToken.roundM.cornerRadius
-        case .small: return ShapeToken.roundM.cornerRadius - 2.0
-        case .extraSmall: return ShapeToken.roundS.cornerRadius
-        }
+struct SegmentItemAnySize: SegmentItemSizeConfiguration {
+    var cornerRadius = CGFloat(0)
+    var counterPadding = CGFloat(0)
+    var endContentSize = CGSize.zero
+    var height = CGFloat(0)
+    var iconHorizontalGap = CGFloat(0)
+    var iconSize = CGSize.zero
+    var paddings = EdgeInsets()
+    var startContentSize = CGSize.zero
+    var titleHorizontalGap = CGFloat(0)
+    var width = CGFloat(0)
+
+    init(size: SegmentItemSizeConfiguration) {
+        self.cornerRadius = size.cornerRadius
+        self.counterPadding = size.counterPadding
+        self.endContentSize = size.endContentSize
+        self.height = size.height
+        self.iconHorizontalGap = size.iconHorizontalGap
+        self.iconSize = size.iconSize
+        self.paddings = size.paddings
+        self.startContentSize = size.startContentSize
+        self.titleHorizontalGap = size.titleHorizontalGap
+        self.width = size.width
     }
-    
-    var height: CGFloat {
-        switch self {
-        case .large: return 56
-        case .medium: return 48
-        case .small: return 40
-        case .extraSmall: return 32
-        }
-    }
-    
-    var paddings: EdgeInsets {
-        switch self {
-        case .large:
-            return EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24)
-        case .medium:
-            return EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
-        case .small:
-            return EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-        case .extraSmall:
-            return EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
-        }
-    }
-    
-    var iconSize: CGSize {
-        switch self {
-        case .large: return CGSize(width: 24, height: 24)
-        case .medium: return CGSize(width: 24, height: 24)
-        case .small: return CGSize(width: 24, height: 24)
-        case .extraSmall: return CGSize(width: 16, height: 16)
-        }
-    }
-    
-    var spinnerSize: CGSize {
-        CGSize(width: 0, height: 0)
-    }
-    
-    var titleHorizontalGap: CGFloat {
-        switch self {
-        case .large: return 6
-        case .medium: return 4
-        case .small: return 2
-        case .extraSmall: return 2
-        }
-    }
-    
-    var iconHorizontalGap: CGFloat {
-        switch self {
-        case .large: return 6
-        case .medium: return 4
-        case .small: return 2
-        case .extraSmall: return 2
-        }
-    }
-    
     var debugDescription: String {
-        return "SegmentItemSize"
+        return "SegmentItemAnySize"
     }
 }
