@@ -117,8 +117,8 @@ public struct SDDSTextArea: View {
                                     isFocused = true
                                 }
                             }
-                    }
-                    .debug(color: Color.red, condition: true)
+                        }
+                    .debug(color: Color.orange, condition: true)
                     HStack(spacing: 0) {
                         if layout == .clear {
                             captionLabel
@@ -221,13 +221,13 @@ public struct SDDSTextArea: View {
                     textEditor(id: textAreaOuterTitleId)
                         .padding(.top, size.boxPaddingTop)
                         .padding(.bottom, size.boxPaddingBottom)
+                        .padding(.trailing, size.boxTrailingPadding)
                     
                     iconActionView
                         .opacity(0)
                         .padding(.leading, size.endContentPadding)
                         .padding(.top, size.boxPaddingTop)
                         .padding(.trailing, boxTrailingPadding)
-                        .debug(color: Color.green, condition: true)
                 }
             }
         case .multiple(_, let chips):
@@ -285,6 +285,7 @@ public struct SDDSTextArea: View {
                     }
                 }
             )
+            .debug(color: Color.red, condition: true)
         .id(textEditorId(with: id))
         .onChange(of: value) { newValue in
             guard !readOnly else {
@@ -410,7 +411,9 @@ public struct SDDSTextArea: View {
                         counterLabel
                     }
                     .padding(.bottom, appearance.size.captionBottomPadding)
+                    .debug(color: Color.yellow, condition: true)
                     .padding(.trailing, captionTrailingPadding)
+                    .debug(color: Color.blue, condition: true)
                 }
                 
                 if layout == .clear {
@@ -422,6 +425,20 @@ public struct SDDSTextArea: View {
             
             if shouldShowEdgeIndicatorForDefaultLayout || shouldShowIndicatorForNoneLabelDefaultLayout {
                 indicatorOverlayView
+            }
+            if !allContentInTextEditorIsVisible {
+                SDDSScrollbar(
+                    hasTrack: true,
+                    thumbLength: scrollbarData.calculateThumbLength(),
+                    trackThickness: appearance.size.scrollBarThickness,
+                    thumbOffsetY: scrollbarData.thumbOffset(),
+                    trackColor: appearance.scrollBarTrackColor.color(for: colorScheme),
+                    thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
+                )
+                .frame(width: appearance.size.scrollBarThickness)
+                .padding(appearance.size.scrollBarPaddings)
+                .opacity(scrollbarData.scrollEnded ? 0 : 1)
+                .animation(.easeInOut, value: scrollbarData.scrollEnded)
             }
         }
         .frame(height: totalHeight, debug: debugConfiguration.fieldHeight)
@@ -564,6 +581,7 @@ public struct SDDSTextArea: View {
                 .foregroundColor(endContentColor)
                 .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
                 .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
+                .debug(color: Color.green, condition: true)
         } else {
             EmptyView()
         }

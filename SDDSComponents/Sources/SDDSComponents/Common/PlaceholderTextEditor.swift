@@ -43,20 +43,20 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 .frame(maxWidth: .infinity)
             }
             .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
-            if !allContentInTextEditorIsVisible {
-                SDDSScrollbar(
-                    hasTrack: true,
-                    thumbLength: scrollbarData.calculateThumbLength(),
-                    trackThickness: appearance.size.scrollBarThickness,
-                    thumbOffsetY: scrollbarData.thumbOffset(),
-                    trackColor: appearance.scrollBarTrackColor.color(for: colorScheme),
-                    thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
-                )
-                .frame(width: appearance.size.scrollBarThickness)
-                .padding(.trailing, appearance.size.scrollBarPaddings.trailing)
-                .opacity(scrollbarData.scrollEnded ? 0 : 1)
-                .animation(.easeInOut, value: scrollbarData.scrollEnded)
-            }
+//            if !allContentInTextEditorIsVisible {
+//                SDDSScrollbar(
+//                    hasTrack: true,
+//                    thumbLength: scrollbarData.calculateThumbLength(),
+//                    trackThickness: appearance.size.scrollBarThickness,
+//                    thumbOffsetY: scrollbarData.thumbOffset(),
+//                    trackColor: appearance.scrollBarTrackColor.color(for: colorScheme),
+//                    thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
+//                )
+//                .frame(width: appearance.size.scrollBarThickness)
+//                .padding(.trailing, appearance.size.scrollBarPaddings.trailing)
+//                .opacity(scrollbarData.scrollEnded ? 0 : 1)
+//                .animation(.easeInOut, value: scrollbarData.scrollEnded)
+//            }
         }
     }
 }
