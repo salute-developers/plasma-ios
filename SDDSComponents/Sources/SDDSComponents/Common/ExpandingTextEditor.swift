@@ -78,8 +78,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
         DispatchQueue.main.async {
             scrollbarData.contentHeight = textView.contentSize.height
             scrollbarData.visibleHeight = textView.frame.size.height
-            print("textViewHeight:\(textView.frame.size.height)")
-            print("textViewContentHeight:\(textView.contentSize.height)")
             
             if isFocused {
                 if !textView.isFirstResponder {
@@ -128,7 +126,6 @@ struct ExpandingTextEditor: UIViewRepresentable {
     class Coordinator: NSObject, UITextViewDelegate {
         var parent: ExpandingTextEditor
         var hideScrollbarTimer: Timer?
-        var myTimer: (start: Date, end: Date) = (Date(), Date())
         
         init(_ parent: ExpandingTextEditor) {
             self.parent = parent
@@ -153,36 +150,15 @@ struct ExpandingTextEditor: UIViewRepresentable {
         }
         
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            hideScrollbarTimer?.invalidate()
-            let newTime = myTimer.start = Date()
-            print("TIMER START: \(newTime)")
             parent.scrollbarData.scrollEnded = false
         }
         
         func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate: Bool) {
-            myTimer.end = Date()
-            let newTime = myTimer.end.timeIntervalSince(myTimer.start)
-            print("TIMER END: \(newTime)")
             hideScrollbarTimer = Timer.scheduledTimer(
                 withTimeInterval: 1,
                 repeats: false
             ) { [weak self] _ in
                 self?.parent.scrollbarData.scrollEnded = true
-            }
-        }
-        
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            print("scrollViewDidEndDecelerating\n Сообщает делегату, что вид прокрутки завершил замедление движения прокрутки.")
-        }
-        
-        func startScrollBarTimer() {
-            hideScrollbarTimer?.invalidate()
-            
-            hideScrollbarTimer = Timer(
-                timeInterval: 1.8,
-                repeats: false
-            ) { [weak self] _ in
-                print("SCROLL BAR IS HIDDEN")
             }
         }
     }

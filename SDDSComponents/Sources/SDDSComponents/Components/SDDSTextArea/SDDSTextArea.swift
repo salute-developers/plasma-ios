@@ -221,7 +221,6 @@ public struct SDDSTextArea: View {
                     textEditor(id: textAreaOuterTitleId)
                         .padding(.top, size.boxPaddingTop)
                         .padding(.bottom, size.boxPaddingBottom)
-                        .padding(.trailing, size.boxTrailingPadding)
                     
                     iconActionView
                         .opacity(0)
@@ -238,18 +237,34 @@ public struct SDDSTextArea: View {
             }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-                    ScrollView {
-                        SDDSChipGroup(
-                            data: updatedChips,
-                            appearance: appearance.chipGroupAppearance,
-                            height: $chipGroupContentHeight
-                        )
-                        .padding(.trailing, iconActionTrailingPadding)
+                    CustomScrollView(scrollbarData: $scrollbarData) {
+                            SDDSChipGroup(
+                                data: updatedChips,
+                                appearance: appearance.chipGroupAppearance,
+                                height: $chipGroupContentHeight
+                            )
+                            .padding(.trailing, iconActionTrailingPadding)
                     }
-                    .frame(height: calculatedChipGroupHeight)
+                    .frame(height: 40)
                     .padding(.bottom, size.boxPaddingTop)
                     .padding(.top, size.boxPaddingBottom)
-                    
+                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
+                    .id(updatedChips)
+                    .onAppear {
+                        let _ = print("scrollData: \(scrollbarData)")
+                    }
+//                    ScrollView(showsIndicators: false) {
+//                        SDDSChipGroup(
+//                            data: updatedChips,
+//                            appearance: appearance.chipGroupAppearance,
+//                            height: $chipGroupContentHeight
+//                        )
+//                        .padding(.trailing, iconActionTrailingPadding)
+//                    }
+//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
+//                    .frame(height: 40)
+//                    .padding(.bottom, size.boxPaddingTop)
+//                    .padding(.top, size.boxPaddingBottom)
                     iconActionView
                         .opacity(0)
                         .padding(.top, size.boxPaddingTop)
@@ -269,7 +284,6 @@ public struct SDDSTextArea: View {
                 text: $text,
                 textHeight: $textHeight,
                 isFocused: $isFocused,
-                scrollbarData: $scrollbarData,
                 readOnly: readOnly,
                 placeholderContent: { placeholderView },
                 textTypography: textTypography,
@@ -425,20 +439,6 @@ public struct SDDSTextArea: View {
             
             if shouldShowEdgeIndicatorForDefaultLayout || shouldShowIndicatorForNoneLabelDefaultLayout {
                 indicatorOverlayView
-            }
-            if !allContentInTextEditorIsVisible {
-                SDDSScrollbar(
-                    hasTrack: true,
-                    thumbLength: scrollbarData.calculateThumbLength(),
-                    trackThickness: appearance.size.scrollBarThickness,
-                    thumbOffsetY: scrollbarData.thumbOffset(),
-                    trackColor: appearance.scrollBarTrackColor.color(for: colorScheme),
-                    thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
-                )
-                .frame(width: appearance.size.scrollBarThickness)
-                .padding(appearance.size.scrollBarPaddings)
-                .opacity(scrollbarData.scrollEnded ? 0 : 1)
-                .animation(.easeInOut, value: scrollbarData.scrollEnded)
             }
         }
         .frame(height: totalHeight, debug: debugConfiguration.fieldHeight)
@@ -823,11 +823,7 @@ public struct SDDSTextArea: View {
     private var boxTrailingPadding: CGFloat {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
-    
-    private var allContentInTextEditorIsVisible: Bool {
-        scrollbarData.contentHeight == scrollbarData.visibleHeight
-    }
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public var appearance: TextAreaAppearance {
         _appearance ?? environmentAppearance
