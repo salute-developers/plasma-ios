@@ -237,34 +237,32 @@ public struct SDDSTextArea: View {
             }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-                    CustomScrollView(scrollbarData: $scrollbarData) {
-                            SDDSChipGroup(
-                                data: updatedChips,
-                                appearance: appearance.chipGroupAppearance,
-                                height: $chipGroupContentHeight
-                            )
-                            .padding(.trailing, iconActionTrailingPadding)
-                    }
-                    .frame(height: 40)
-                    .padding(.bottom, size.boxPaddingTop)
-                    .padding(.top, size.boxPaddingBottom)
-                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
-                    .id(updatedChips)
-                    .onAppear {
-                        let _ = print("scrollData: \(scrollbarData)")
-                    }
-//                    ScrollView(showsIndicators: false) {
-//                        SDDSChipGroup(
-//                            data: updatedChips,
-//                            appearance: appearance.chipGroupAppearance,
-//                            height: $chipGroupContentHeight
-//                        )
-//                        .padding(.trailing, iconActionTrailingPadding)
+//                    CustomScrollView(scrollbarData: $scrollbarData) {
+//                            SDDSChipGroup(
+//                                data: updatedChips,
+//                                appearance: appearance.chipGroupAppearance,
+//                                height: $chipGroupContentHeight
+//                            )
+//                            .padding(.trailing, iconActionTrailingPadding)
 //                    }
-//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
 //                    .frame(height: 40)
 //                    .padding(.bottom, size.boxPaddingTop)
 //                    .padding(.top, size.boxPaddingBottom)
+//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
+//                    .id(updatedChips)
+                    ScrollView(showsIndicators: false) {
+                        SDDSChipGroup(
+                            data: updatedChips,
+                            appearance: appearance.chipGroupAppearance,
+                            height: $chipGroupContentHeight
+                        )
+                        .padding(.trailing, iconActionTrailingPadding)
+                    }
+//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
+                    .frame(height: 40)
+                    .padding(.bottom, size.boxPaddingTop)
+                    .padding(.top, size.boxPaddingBottom)
+                    
                     iconActionView
                         .opacity(0)
                         .padding(.top, size.boxPaddingTop)

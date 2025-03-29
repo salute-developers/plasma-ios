@@ -25,6 +25,7 @@ struct ScrollbarModifier: ViewModifier {
 //                .animation(.easeInOut, value: scrollbarData.scrollEnded)
             }
         }
+        .debug(color: Color.orange, condition: true)
     }
     
     var allContentInTextEditorIsVisible: Bool {
@@ -47,36 +48,5 @@ public extension View {
                 hasTrack: hasTrack
             )
         )
-//        switch viewType {
-//        case .customView:
-//            return self
-//                .modifier(
-//                    ScrollbarModifier(
-//                        scrollbarData: data,
-//                        appearance: appearance,
-//                        hasTrack: hasTrack
-//                    )
-//                )
-//        case .scrollView:
-//            return
-//        }
     }
 }
-
-//struct ScrollViewModifier: ViewModifier {
-//    @Binding var scrollbarData: ScrollbarData
-//    
-//    func body(content: Content) -> some View {
-//        content
-//    }
-//}
-
-//struct ScrollViewPreferenceKey: PreferenceKey {
-//    static var defaultValue: CGFloat = 0
-//    
-//    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-//        print("value: \(value)")
-//        print("nextValue: \(nextValue())")
-//        value = nextValue()
-//    }
-//}
