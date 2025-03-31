@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public struct SDDSScrollbar: View {
+struct Scrollbar: View {
     public let hasTrack: Bool
     public let thumbLength: CGFloat
     public let trackThickness: CGFloat
@@ -9,7 +9,7 @@ public struct SDDSScrollbar: View {
     private let trackColor: Color
     private let thumbColor: Color
     
-    public init(
+    init(
         hasTrack: Bool,
         thumbLength: CGFloat,
         trackThickness: CGFloat,
@@ -25,7 +25,7 @@ public struct SDDSScrollbar: View {
         self.thumbColor = thumbColor
     }
     
-    public var body: some View {
+    var body: some View {
         ZStack(alignment: .top) {
             if hasTrack {
                 track

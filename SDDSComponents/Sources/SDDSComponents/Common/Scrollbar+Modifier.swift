@@ -6,12 +6,14 @@ struct ScrollbarModifier: ViewModifier {
     
     let appearance: TextAreaAppearance
     let hasTrack: Bool
+    let alignment: Alignment
+    let paddings: EdgeInsets
     
     func body(content: Content) -> some View {
-        ZStack(alignment: .trailing) {
+        ZStack(alignment: alignment) {
             content
             if !allContentInTextEditorIsVisible {
-                SDDSScrollbar(
+                Scrollbar(
                     hasTrack: hasTrack,
                     thumbLength: scrollbarData.calculateThumbLength(),
                     trackThickness: appearance.size.scrollBarThickness,
@@ -20,12 +22,11 @@ struct ScrollbarModifier: ViewModifier {
                     thumbColor: appearance.scrollBarThumbColor.color(for: colorScheme)
                 )
                 .frame(width: appearance.size.scrollBarThickness)
-                .padding(.trailing, appearance.size.scrollBarPaddings.trailing)
-//                .opacity(scrollbarData.scrollEnded ? 0 : 1)
-//                .animation(.easeInOut, value: scrollbarData.scrollEnded)
+                .padding(paddings)
+                .opacity(scrollbarData.scrollEnded ? 0 : 1)
+                .animation(.easeInOut, value: scrollbarData.scrollEnded)
             }
         }
-        .debug(color: Color.orange, condition: true)
     }
     
     var allContentInTextEditorIsVisible: Bool {
@@ -33,19 +34,15 @@ struct ScrollbarModifier: ViewModifier {
     }
 }
 
-public enum TypeOfView {
-    case customView
-    case scrollView
-}
-
 public extension View {
-    func scrollbar(hasTrack: Bool, appearance: TextAreaAppearance, data: Binding<ScrollbarData>) -> some View {
-        self
-        .modifier(
+    func scrollbar(hasTrack: Bool, appearance: TextAreaAppearance, data: Binding<ScrollbarData>, alignment: Alignment, paddings: EdgeInsets) -> some View {
+        self.modifier(
             ScrollbarModifier(
                 scrollbarData: data,
                 appearance: appearance,
-                hasTrack: hasTrack
+                hasTrack: hasTrack,
+                alignment: alignment,
+                paddings: paddings
             )
         )
     }

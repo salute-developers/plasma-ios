@@ -41,7 +41,13 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
             )
             .frame(maxWidth: .infinity)
         }
-        .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
+        .scrollbar(
+            hasTrack: true,
+            appearance: appearance,
+            data: $scrollbarData,
+            alignment: .trailing,
+            paddings: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: appearance.size.scrollBarPaddings.trailing)
+        )
         .applyIf(dynamicHeight) { $0.frame(height: textHeight) }
     }
 }

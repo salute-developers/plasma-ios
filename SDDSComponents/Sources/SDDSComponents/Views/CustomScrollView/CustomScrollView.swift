@@ -25,6 +25,10 @@ public struct CustomScrollView<Content: View>: View {
             visibleHeight: Binding(
                 get: { scrollbarData.wrappedValue.visibleHeight },
                 set: { newValue in scrollbarData.wrappedValue.visibleHeight = newValue }
+            ),
+            scrollEnded: Binding(
+                get: { scrollbarData.wrappedValue.scrollEnded },
+                set: { newValue in scrollbarData.wrappedValue.scrollEnded = newValue }
             )
         ) {
             content

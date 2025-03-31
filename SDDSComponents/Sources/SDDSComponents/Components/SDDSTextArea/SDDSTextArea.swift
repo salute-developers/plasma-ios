@@ -107,6 +107,7 @@ public struct SDDSTextArea: View {
                         titleLabel
                             .multilineTextAlignment(appearance.titleTextAlignment)
                     }
+                    
                     HStack(spacing: 0) {
                         fieldView
                             .onTapGesture {
@@ -118,7 +119,6 @@ public struct SDDSTextArea: View {
                                 }
                             }
                         }
-                    .debug(color: Color.orange, condition: true)
                     HStack(spacing: 0) {
                         if layout == .clear {
                             captionLabel
@@ -134,7 +134,6 @@ public struct SDDSTextArea: View {
             }
         .opacity(disabled ? appearance.disabledAlpha : 1)
         .disabled(disabled)
-        .debug(color: Color.black, condition: true)
     }
 
     // MARK: - Subviews
@@ -215,8 +214,6 @@ public struct SDDSTextArea: View {
                 if shouldShowInnerTitle {
                     textEditor(id: textAreaInnerTitleId)
                         .padding(.bottom, size.boxPaddingBottom)
-                        .debug(color: Color.red, condition: true)
-                    
                 } else {
                     textEditor(id: textAreaOuterTitleId)
                         .padding(.top, size.boxPaddingTop)
@@ -237,31 +234,26 @@ public struct SDDSTextArea: View {
             }
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-//                    CustomScrollView(scrollbarData: $scrollbarData) {
-//                            SDDSChipGroup(
-//                                data: updatedChips,
-//                                appearance: appearance.chipGroupAppearance,
-//                                height: $chipGroupContentHeight
-//                            )
-//                            .padding(.trailing, iconActionTrailingPadding)
-//                    }
-//                    .frame(height: 40)
-//                    .padding(.bottom, size.boxPaddingTop)
-//                    .padding(.top, size.boxPaddingBottom)
-//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
-//                    .id(updatedChips)
-                    ScrollView(showsIndicators: false) {
-                        SDDSChipGroup(
-                            data: updatedChips,
-                            appearance: appearance.chipGroupAppearance,
-                            height: $chipGroupContentHeight
-                        )
-                        .padding(.trailing, iconActionTrailingPadding)
+                    CustomScrollView(scrollbarData: $scrollbarData) {
+                            SDDSChipGroup(
+                                data: updatedChips,
+                                appearance: appearance.chipGroupAppearance,
+                                height: $chipGroupContentHeight
+                            )
+                            .padding(.trailing, iconActionTrailingPadding)
                     }
-//                    .scrollbar(hasTrack: true, appearance: appearance, data: $scrollbarData)
-                    .frame(height: 40)
+                    .frame(height: calculatedChipGroupHeight)
                     .padding(.bottom, size.boxPaddingTop)
                     .padding(.top, size.boxPaddingBottom)
+                    .id(updatedChips)
+                    .id(chipGroupContentHeight)
+                    .scrollbar(
+                        hasTrack: true,
+                        appearance: appearance,
+                        data: $scrollbarData,
+                        alignment: .trailing,
+                        paddings: appearance.size.scrollBarPaddings
+                    )
                     
                     iconActionView
                         .opacity(0)
@@ -297,7 +289,6 @@ public struct SDDSTextArea: View {
                     }
                 }
             )
-            .debug(color: Color.red, condition: true)
         .id(textEditorId(with: id))
         .onChange(of: value) { newValue in
             guard !readOnly else {
@@ -423,9 +414,7 @@ public struct SDDSTextArea: View {
                         counterLabel
                     }
                     .padding(.bottom, appearance.size.captionBottomPadding)
-                    .debug(color: Color.yellow, condition: true)
                     .padding(.trailing, captionTrailingPadding)
-                    .debug(color: Color.blue, condition: true)
                 }
                 
                 if layout == .clear {
@@ -579,7 +568,6 @@ public struct SDDSTextArea: View {
                 .foregroundColor(endContentColor)
                 .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
                 .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
-                .debug(color: Color.green, condition: true)
         } else {
             EmptyView()
         }

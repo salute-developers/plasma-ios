@@ -6,6 +6,7 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
     @Binding var contentOffset: CGPoint
     @Binding var scrollViewHeight: CGFloat
     @Binding var visibleHeight: CGFloat
+    @Binding var scrollEnded: Bool
     
     let content: () -> Content
     
@@ -13,10 +14,12 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
         contentOffset: Binding<CGPoint> = .constant(.zero),
         scrollViewHeight: Binding<CGFloat> = .constant(0),
         visibleHeight: Binding<CGFloat> = .constant(0),
+        scrollEnded: Binding<Bool> = .constant(false),
         @ViewBuilder _ content: @escaping () -> Content) {
             self._contentOffset = contentOffset
             self._scrollViewHeight = scrollViewHeight
             self._visibleHeight = visibleHeight
+            self._scrollEnded = scrollEnded
             self.content = content
         }
     
@@ -27,6 +30,7 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
         let controller = UIHostingController(rootView: content())
         controller.view.backgroundColor = .clear
         controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.showsVerticalScrollIndicator = false
         view.addSubview(controller.view)
         
         NSLayoutConstraint.activate([
@@ -41,34 +45,43 @@ public struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
     }
     
     public func updateUIView(_ uiView: UIScrollView, context: UIViewRepresentableContext<ScrollViewWrapper>) {
-        uiView.contentOffset = self.contentOffset
-        
         DispatchQueue.main.async {
             self.scrollViewHeight = uiView.contentSize.height
             self.visibleHeight = uiView.frame.size.height
             
             if let hostedView = uiView.subviews.first {
-                print("hostedView height: \(hostedView.frame.size.height)")
-                print("hostedView width: \(hostedView.frame.size.width)")
+                hostedView.frame = CGRect(origin: .zero, size: uiView.contentSize)
             }
         }
     }
     
     public func makeCoordinator() -> Coordinator {
-        Coordinator(contentOffset: self._contentOffset, scrollViewHeight: self._scrollViewHeight)
+        Coordinator(self)
     }
     
     public class Coordinator: NSObject, UIScrollViewDelegate {
-        let contentOffset: Binding<CGPoint>
-        let scrollViewHeight: Binding<CGFloat>
+        let parent: ScrollViewWrapper
+        var hideScrollbarTimer: Timer?
         
-        init(contentOffset: Binding<CGPoint>, scrollViewHeight: Binding<CGFloat>) {
-            self.contentOffset = contentOffset
-            self.scrollViewHeight = scrollViewHeight
+        init(_ parent: ScrollViewWrapper) {
+            self.parent = parent
         }
         
         public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            contentOffset.wrappedValue = scrollView.contentOffset
+            parent.contentOffset = scrollView.contentOffset
+        }
+        
+        public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+            parent.scrollEnded = false
+        }
+        
+        public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate: Bool) {
+            hideScrollbarTimer = Timer.scheduledTimer(
+                withTimeInterval: 1,
+                repeats: false
+            ) { [weak self] _ in
+                self?.parent.scrollEnded = true
+            }
         }
     }
 }
