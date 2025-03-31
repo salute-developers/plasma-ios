@@ -44,6 +44,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         self.dynamicHeight = dynamicHeight
         self.onChange = onChange
     }
+    
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .clear
@@ -70,14 +71,18 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         return containerView
     }
+    
     func updateUIView(_ uiView: UIView, context: Context) {
         guard let textView = uiView.subviews.first as? UITextView else {
             return
         }
+        
         updateTextViewProperties(textView: textView)
+        
+        scrollbarData.contentHeight = textView.contentSize.height
+        scrollbarData.visibleHeight = textView.frame.size.height
+        
         DispatchQueue.main.async {
-            scrollbarData.contentHeight = textView.contentSize.height
-            scrollbarData.visibleHeight = textView.frame.size.height
             
             if isFocused {
                 if !textView.isFirstResponder {
@@ -120,9 +125,11 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.isEditable = !readOnly
         textView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
     }
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
+    
     class Coordinator: NSObject, UITextViewDelegate {
         var parent: ExpandingTextEditor
         var hideScrollbarTimer: Timer?
