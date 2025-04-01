@@ -40,8 +40,13 @@
 		698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744652D1C368E00559ABA /* SDDSSegmentItem.swift */; };
 		698902682D659A8B003DCE58 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 819CB7FC2C7CC34A00B4FBF4 /* SDDSThemeCore */; };
 		6989026B2D65A8E8003DCE58 /* TextFieldPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902692D65A8E8003DCE58 /* TextFieldPreview.swift */; };
+		698DAAFD2D9AB45500CF0607 /* Scrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698DAAFB2D9AB45500CF0607 /* Scrollbar.swift */; };
+		698DAB002D9AB63800CF0607 /* ScrollbarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698DAAFF2D9AB63700CF0607 /* ScrollbarData.swift */; };
+		698DAB012D9AB63800CF0607 /* Scrollbar+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698DAAFE2D9AB63700CF0607 /* Scrollbar+Modifier.swift */; };
+		698DAB022D9AB78400CF0607 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */; };
 		6992E38F2D6DE52C00DEBEED /* ChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */; };
 		6995FA932D6F5C11003D5DBB /* SDDSAvatarModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */; };
+		69A3A6CE2D8D8621009727EB /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3A6CD2D8D8604009727EB /* CustomScrollView.swift */; };
 		69A4B80A2D883B3100E9E204 /* SelectionControlAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */; };
 		69A4B80B2D883B3100E9E204 /* SelectionControlSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */; };
 		69A4B80C2D883B3100E9E204 /* SelectionControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8092D883B3100E9E204 /* SelectionControlState.swift */; };
@@ -274,8 +279,12 @@
 		6987445D2D1C367700559ABA /* SDDSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCounter.swift; sourceTree = "<group>"; };
 		698744652D1C368E00559ABA /* SDDSSegmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItem.swift; sourceTree = "<group>"; };
 		698902692D65A8E8003DCE58 /* TextFieldPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPreview.swift; sourceTree = "<group>"; };
+		698DAAFB2D9AB45500CF0607 /* Scrollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollbar.swift; sourceTree = "<group>"; };
+		698DAAFE2D9AB63700CF0607 /* Scrollbar+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+Modifier.swift"; sourceTree = "<group>"; };
+		698DAAFF2D9AB63700CF0607 /* ScrollbarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarData.swift; sourceTree = "<group>"; };
 		6992E38E2D6DE52C00DEBEED /* ChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSize.swift; sourceTree = "<group>"; };
 		6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarModifiers.swift; sourceTree = "<group>"; };
+		69A3A6CD2D8D8604009727EB /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlAccessibility.swift; sourceTree = "<group>"; };
 		69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlSizeConfiguration.swift; sourceTree = "<group>"; };
 		69A4B8092D883B3100E9E204 /* SelectionControlState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlState.swift; sourceTree = "<group>"; };
@@ -605,6 +614,22 @@
 				698902692D65A8E8003DCE58 /* TextFieldPreview.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		698DAAFC2D9AB45500CF0607 /* Scrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				698DAAFB2D9AB45500CF0607 /* Scrollbar.swift */,
+			);
+			path = Scrollbar;
+			sourceTree = "<group>";
+		};
+		69A3A6CC2D8D85AC009727EB /* CustomScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				69A3A6CD2D8D8604009727EB /* CustomScrollView.swift */,
+			);
+			path = CustomScrollView;
 			sourceTree = "<group>";
 		};
 		69F967B12D4CC9EA00C0B50F /* SDDSSegment */ = {
@@ -1075,6 +1100,8 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				698DAAFE2D9AB63700CF0607 /* Scrollbar+Modifier.swift */,
+				698DAAFF2D9AB63700CF0607 /* ScrollbarData.swift */,
 				81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */,
 				812DB7642D57B4BA00D3F4A3 /* ComponentAppearanceVariation.swift */,
 				811D2E2C2D115FDD001C0F48 /* AppearanceVariation.swift */,
@@ -1110,6 +1137,8 @@
 		818C03C32C45128E002C6D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				698DAAFC2D9AB45500CF0607 /* Scrollbar */,
+				69A3A6CC2D8D85AC009727EB /* CustomScrollView */,
 				81E968122CBD194300256968 /* FocusableTextField */,
 				81CF121E2C6E740A0074174F /* RoundedCornersMask */,
 				811DE16F2C578331000DD354 /* HierarchicalList */,
@@ -1626,6 +1655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698DAB022D9AB78400CF0607 /* ScrollViewWrapper.swift in Sources */,
 				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
@@ -1654,6 +1684,7 @@
 				817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */,
 				81685C272CFF883900278446 /* SwitchSizeConfiguration.swift in Sources */,
 				81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */,
+				698DAAFD2D9AB45500CF0607 /* Scrollbar.swift in Sources */,
 				816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */,
 				81FC47B02D928A2500A83F87 /* BottomSheetPresentationConfiguration.swift in Sources */,
 				81FC47B12D928A2500A83F87 /* BottomSheetTransitioningDelegate.swift in Sources */,
@@ -1684,6 +1715,7 @@
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
+				69A3A6CE2D8D8621009727EB /* CustomScrollView.swift in Sources */,
 				812DB74F2D57B44100D3F4A3 /* TextFieldAppearance.swift in Sources */,
 				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
@@ -1717,6 +1749,8 @@
 				696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
+				698DAB002D9AB63800CF0607 /* ScrollbarData.swift in Sources */,
+				698DAB012D9AB63800CF0607 /* Scrollbar+Modifier.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
 				695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */,
 				8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */,

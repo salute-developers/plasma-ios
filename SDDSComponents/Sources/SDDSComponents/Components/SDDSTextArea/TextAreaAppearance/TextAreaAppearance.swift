@@ -45,6 +45,8 @@ public struct TextAreaAppearance {
     public var titleColor: ColorToken
     public var titleTextAlignment: TextAlignment
     public var titleTypography: TypographyConfiguration
+    public var scrollBarThumbColor: ColorToken
+    public var scrollBarTrackColor: ColorToken
 
     public init(
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
@@ -87,7 +89,9 @@ public struct TextAreaAppearance {
         counterTypography: TypographyConfiguration = .default,
         innerTitleTypography: TypographyConfiguration = .default,
         textTypography: TypographyConfiguration = .default,
-        titleTypography: TypographyConfiguration = .default
+        titleTypography: TypographyConfiguration = .default,
+        scrollBarThumbColor: ColorToken = .clearColor,
+        scrollBarTrackColor: ColorToken = .clearColor
     ) {
         self.size = size
         self.chipAppearance = chipAppearance
@@ -130,6 +134,8 @@ public struct TextAreaAppearance {
         self.titleColor = titleColor
         self.titleTextAlignment = titleTextAlignment
         self.titleTypography = titleTypography
+        self.scrollBarThumbColor = scrollBarThumbColor
+        self.scrollBarTrackColor = scrollBarTrackColor
     }
 }
 
