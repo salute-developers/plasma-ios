@@ -79,10 +79,10 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         updateTextViewProperties(textView: textView)
         
-        scrollbarData.contentHeight = textView.contentSize.height
-        scrollbarData.visibleHeight = textView.frame.size.height
         
         DispatchQueue.main.async {
+            scrollbarData.contentHeight = textView.contentSize.height
+            scrollbarData.visibleHeight = textView.frame.size.height
             
             if isFocused {
                 if !textView.isFirstResponder {
