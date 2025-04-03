@@ -1,45 +1,42 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 struct CheckboxTypography: GeneralTypographyConfiguration {
-    typealias S = SelectionControlSizeConfiguration
+    var l: TypographyToken?
+    var m: TypographyToken?
+    var s: TypographyToken?
     
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
+    init(
+        l: TypographyToken? = nil,
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil
+    ) {
+        self.l = l
+        self.m = m
+        self.s = s
+    }
     
-    init(large: TypographyToken?, medium: TypographyToken?, small: TypographyToken?) {
-        self.large = large
-        self.medium = medium
-        self.small = small
+    init(oneSize: TypographyToken) {
+        self.l = oneSize
+        self.m = oneSize
+        self.s = oneSize
     }
     
     func typography(with size: SelectionControlSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSCheckboxSize {
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small, .none:
-            return small
+        if size is CheckboxAnySize {
+            return l
         }
-    }
-}
-
-extension CheckboxTypography {
-    static var label: TypographyConfiguration {
-        CheckboxTypography(
-            large: Typographies.bodyLNormal.typography,
-            medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography
-        ).asContainer
-    }
-    
-    static var description: TypographyConfiguration {
-        CheckboxTypography(
-            large: Typographies.bodyMNormal.typography,
-            medium: Typographies.bodySNormal.typography,
-            small: Typographies.bodyXsNormal.typography
-        ).asContainer
+        if size is CheckboxSizeL {
+            return l
+        }
+        if size is CheckboxSizeM {
+            return m
+        }
+        if size is CheckboxSizeS {
+            return s
+        }
+        return nil
     }
 }

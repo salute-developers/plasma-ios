@@ -15,6 +15,8 @@
 		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
 		690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FC2D3EBA4A00CED628 /* SegmentView.swift */; };
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
+		693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */; };
+		694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */; };
 		697970CF2D63A3F5008306A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970CE2D63A3EC008306A8 /* CellView.swift */; };
 		697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970D02D63A453008306A8 /* CellViewModel.swift */; };
 		6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744692D1C3B6400559ABA /* CounterView.swift */; };
@@ -139,6 +141,8 @@
 		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		690780FC2D3EBA4A00CED628 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewModel.swift; sourceTree = "<group>"; };
+		693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupVariationProvider.swift; sourceTree = "<group>"; };
+		694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupVariationProvider.swift; sourceTree = "<group>"; };
 		697970CE2D63A3EC008306A8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		697970D02D63A453008306A8 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		698744692D1C3B6400559ABA /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
@@ -507,6 +511,7 @@
 		816243582CB9413800506E1C /* RadioboxGroupView */ = {
 			isa = PBXGroup;
 			children = (
+				693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */,
 				8162435A2CB9418B00506E1C /* RadioboxGroupView.swift */,
 				8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */,
 			);
@@ -516,6 +521,7 @@
 		816243592CB9414000506E1C /* CheckboxGroupView */ = {
 			isa = PBXGroup;
 			children = (
+				694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */,
 				816243602CB9430200506E1C /* CheckboxGroupView.swift */,
 				816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */,
 			);
@@ -813,6 +819,7 @@
 				811DE1442C4D160E000DD354 /* RadioboxViewModel.swift in Sources */,
 				8174BA572D5DFD9C00EA3E68 /* SwitchVariationProvider.swift in Sources */,
 				811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */,
+				693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
 				81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
@@ -838,6 +845,7 @@
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
+				694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */,
 				697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */,
 				811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */,
 				8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */,

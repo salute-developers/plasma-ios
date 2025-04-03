@@ -10,7 +10,11 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var titleColor: ColorToken
     public var subtitleColor: ColorToken
     public var disabledAlpha: CGFloat
+    @available(*, deprecated, message: "use 'toggleColor' instead")
     public var color: ColorToken
+    public var toggleColor: ColorToken
+    public var toggleColorChecked: ColorToken
+    public var toggleColorIndeterminate: ColorToken
     public var borderColor: ColorToken
     public var checkedIcon: PathDrawer?
     public var checkedIconColor: ColorToken
@@ -26,6 +30,9 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
         subtitleColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
         color: ColorToken = .clearColor,
+        toggleColor: ColorToken = .clearColor,
+        toggleColorChecked: ColorToken = .clearColor,
+        toggleColorIndeterminate: ColorToken = .clearColor,
         borderColor: ColorToken = .clearColor,
         checkedIcon: PathDrawer? = nil,
         checkedIconColor: ColorToken = .clearColor,
@@ -39,6 +46,9 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
         self.subtitleColor = subtitleColor
         self.disabledAlpha = disabledAlpha
         self.color = color
+        self.toggleColorChecked = toggleColorChecked
+        self.toggleColorIndeterminate = toggleColorIndeterminate
+        self.toggleColor = toggleColor
         self.borderColor = borderColor
         self.checkedIcon = checkedIcon
         self.checkedIconColor = checkedIconColor

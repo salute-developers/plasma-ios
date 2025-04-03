@@ -49,6 +49,7 @@ public struct SDDSRadiobox: View {
                     self.isSelected = value.isSelected
                 }
             ),
+            selectionControlType: .radiobox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
@@ -76,7 +77,7 @@ public enum SDDSRadioboxGroupSize: String, RadioboxGroupSizeConfiguration, CaseI
     case large
     case medium
     case small
-    
+
     public var verticalSpacing: CGFloat {
         switch self {
         case .large:
@@ -87,7 +88,7 @@ public enum SDDSRadioboxGroupSize: String, RadioboxGroupSizeConfiguration, CaseI
             4
         }
     }
-    
+
     public var debugDescription: String {
         return rawValue
     }

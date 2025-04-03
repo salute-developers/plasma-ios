@@ -1,17 +1,11 @@
 import SwiftUI
-import Combine
 import SDDSComponents
 import SDDSServTheme
 
-final class CheckboxGroupViewModel: ObservableObject {
+final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationProvider>, ViewModelDelegate {
     @Published var checkboxViewModels: [CheckboxItemViewModel] = [] {
         didSet {
             self.updateGroupBehaviour()
-        }
-    }
-    @Published var size: SDDSCheckboxGroupSize = .medium {
-        didSet {
-            self.update()
         }
     }
     @Published var groupBehaviour: CheckboxGroupBehaviour?
@@ -20,7 +14,7 @@ final class CheckboxGroupViewModel: ObservableObject {
 
     var checkboxData: [CheckboxData] {
        return checkboxViewModels.enumerated().map { index, value in
-           return value.toCheckboxData(with: size.checkboxSize, state: Binding(get: { [weak self] in
+           return value.toCheckboxData(with: appearance.checkboxAppearance, state: Binding(get: { [weak self] in
                self?.states[index] ?? .deselected
            }, set: { [weak self] newState in
                self?.states[index] = newState
@@ -29,7 +23,9 @@ final class CheckboxGroupViewModel: ObservableObject {
     }
     
     init() {
+        super.init(variationProvider: CheckboxGroupVariationProvider())
         self.update()
+        delegate = self
     }
     
     func update() {
@@ -39,7 +35,8 @@ final class CheckboxGroupViewModel: ObservableObject {
                 id: index,
                 title: "Label \(index + 1)",
                 subtitle: "Description \(index + 1)",
-                isEnabled: true
+                isEnabled: true,
+                appearance: self?.appearance.checkboxAppearance ?? .init()
             )
         }
         updateGroupBehaviour()
@@ -56,6 +53,15 @@ final class CheckboxGroupViewModel: ObservableObject {
             self?.updateGroupBehaviour()
         })
     }
+    
+    func updateAppearance() {
+        checkboxViewModels = checkboxViewModels.map { item in
+            var itemViewModel = item
+            itemViewModel.appearance = appearance.checkboxAppearance
+            return itemViewModel
+        }
+        updateGroupBehaviour()
+    }
 }
 
 struct CheckboxItemViewModel: Identifiable {
@@ -63,10 +69,9 @@ struct CheckboxItemViewModel: Identifiable {
     var title: String
     var subtitle: String
     var isEnabled: Bool
+    var appearance: CheckboxAppearance
 
-    func toCheckboxData(with size: SDDSCheckboxSize, state: Binding<SelectionControlState>) -> CheckboxData {
-        var appearance = Checkbox.m.default.appearance
-        appearance.size = size
+    func toCheckboxData(with appearance: CheckboxAppearance, state: Binding<SelectionControlState>) -> CheckboxData {
         return CheckboxData(
             state: state,
             title: title,
@@ -76,19 +81,4 @@ struct CheckboxItemViewModel: Identifiable {
             accessibility: .init()
         )
     }
-}
-
-// MARK: - Extension
-
-private extension SDDSCheckboxGroupSize {
-   var checkboxSize: SDDSCheckboxSize {
-       switch self {
-       case .large:
-           return .large
-       case .medium:
-           return .medium
-       case .small:
-           return .small
-       }
-   }
 }

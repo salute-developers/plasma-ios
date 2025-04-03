@@ -4,7 +4,7 @@ import SDDSServTheme
 import SwiftUI
 
 // MARK: - Preview
-struct SDDSCheckboxPreview: PreviewProvider {    
+struct SDDSCheckboxPreview: PreviewProvider {
     static var previews: some View {
         SDDSCheckbox(
             state: .constant(.deselected),

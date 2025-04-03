@@ -9,6 +9,11 @@ final class CGFloatContextBuilder: CodeGenerationContextBuilder {
         self.nullify = nullify
     }
     
+    init<T>(_ value: ValueState<T>?, nullify: Bool = false) {
+        self.value = value?.value as? Double
+        self.nullify = nullify
+    }
+    
     var context: String? {
         if let value = value {
             return "CGFloat(\(value))"

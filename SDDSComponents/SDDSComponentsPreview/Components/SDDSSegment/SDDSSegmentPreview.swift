@@ -49,7 +49,7 @@ struct SDDSSegmentPreview: PreviewProvider {
         return Group {
             SDDSSegment(
                 items: items,
-                appearance: Segment.m.default
+                appearance: Segment.m
                     .appearance,
                 layoutOrientation: .vertical,
                 selectedItemId: .constant(selectedId),

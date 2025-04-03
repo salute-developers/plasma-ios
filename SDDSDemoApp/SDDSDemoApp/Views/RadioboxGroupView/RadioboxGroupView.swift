@@ -14,17 +14,14 @@ struct RadioboxGroupView: View {
             Section {
                 SDDSRadioboxGroup(
                     radioboxData: viewModel.radioboxData,
-                    size: viewModel.size
+                    size: viewModel.appearance.size,
+                    appearance: viewModel.appearance
                 )
             }
 
             Section(header: Text("Configuration")) {
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSRadioboxGroupSize.allCases, id: \.self) { size in
-                        Text(size.rawValue.capitalized).tag(size)
-                    }
-                }
-
+                VariationsView(viewModel: viewModel)
+                
                 ForEach(viewModel.radioboxViewModels.indices, id: \.self) { index in
                     VStack(alignment: .leading) {
                         Text("Radiobox \(index + 1) Configuration")

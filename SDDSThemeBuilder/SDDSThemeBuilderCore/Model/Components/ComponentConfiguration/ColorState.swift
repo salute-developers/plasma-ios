@@ -7,6 +7,8 @@ struct ColorState: Codable {
         case hovered
         case checked
         case selected
+        case focused
+        case indeterminate
     }
     
     let state: [State]?
