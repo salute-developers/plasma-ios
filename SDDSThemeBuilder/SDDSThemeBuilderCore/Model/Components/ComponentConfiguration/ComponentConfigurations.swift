@@ -12,3 +12,7 @@ typealias SegmentItemConfiguration = ComponentConfiguration<SegmentItemProps>
 typealias SegmentConfiguration = ComponentConfiguration<SegmentProps>
 typealias BottomSheetConfiguration = ComponentConfiguration<BottomSheetProps>
 typealias SwitchConfiguration = ComponentConfiguration<SwitchProps>
+typealias RadioboxConfiguration = ComponentConfiguration<RadioboxProps>
+typealias RadioboxGroupConfiguration = ComponentConfiguration<RadioboxGroupProps>
+typealias CheckboxConfiguration = ComponentConfiguration<CheckboxProps>
+typealias CheckboxGroupConfiguration = ComponentConfiguration<CheckboxGroupProps>

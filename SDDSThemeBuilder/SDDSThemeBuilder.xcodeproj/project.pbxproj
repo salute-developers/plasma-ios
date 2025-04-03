@@ -41,6 +41,18 @@
 		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
 		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
 		697FAC462D660E2100959E8F /* ImageContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697FAC452D660E0600959E8F /* ImageContextBuilder.swift */; };
+		69A8758D2DAF9E290074C1BD /* RadioboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875882DAF9E290074C1BD /* RadioboxSize.swift */; };
+		69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875842DAF9E290074C1BD /* CheckboxGroupAppearance.swift */; };
+		69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875872DAF9E290074C1BD /* RadioboxAppearance.swift */; };
+		69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8758A2DAF9E290074C1BD /* RadioboxGroupAppearance.swift */; };
+		69A875912DAF9E290074C1BD /* CheckboxGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875852DAF9E290074C1BD /* CheckboxGroupSize.swift */; };
+		69A875922DAF9E290074C1BD /* CheckboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875812DAF9E290074C1BD /* CheckboxAppearance.swift */; };
+		69A875932DAF9E290074C1BD /* RadioboxGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8758B2DAF9E290074C1BD /* RadioboxGroupSize.swift */; };
+		69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875822DAF9E290074C1BD /* CheckboxSize.swift */; };
+		69A875992DAF9E470074C1BD /* RadioboxProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875982DAF9E470074C1BD /* RadioboxProps.swift */; };
+		69A8759A2DAF9E470074C1BD /* CheckboxProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875962DAF9E470074C1BD /* CheckboxProps.swift */; };
+		69A8759B2DAF9E470074C1BD /* CheckboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */; };
+		69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */; };
 		810AFD3D2D96DBA8000B2A7A /* SegmentItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */; };
 		810AFD3F2D96DD1F000B2A7A /* ComponentStyleKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */; };
@@ -475,6 +487,18 @@
 		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
 		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
 		697FAC452D660E0600959E8F /* ImageContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContextBuilder.swift; sourceTree = "<group>"; };
+		69A875812DAF9E290074C1BD /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
+		69A875822DAF9E290074C1BD /* CheckboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxSize.swift; sourceTree = "<group>"; };
+		69A875842DAF9E290074C1BD /* CheckboxGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupAppearance.swift; sourceTree = "<group>"; };
+		69A875852DAF9E290074C1BD /* CheckboxGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupSize.swift; sourceTree = "<group>"; };
+		69A875872DAF9E290074C1BD /* RadioboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxAppearance.swift; sourceTree = "<group>"; };
+		69A875882DAF9E290074C1BD /* RadioboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxSize.swift; sourceTree = "<group>"; };
+		69A8758A2DAF9E290074C1BD /* RadioboxGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupAppearance.swift; sourceTree = "<group>"; };
+		69A8758B2DAF9E290074C1BD /* RadioboxGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupSize.swift; sourceTree = "<group>"; };
+		69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupProps.swift; sourceTree = "<group>"; };
+		69A875962DAF9E470074C1BD /* CheckboxProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxProps.swift; sourceTree = "<group>"; };
+		69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupProps.swift; sourceTree = "<group>"; };
+		69A875982DAF9E470074C1BD /* RadioboxProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxProps.swift; sourceTree = "<group>"; };
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeGenerationComponent+Extension.swift"; sourceTree = "<group>"; };
 		810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemProps.swift; sourceTree = "<group>"; };
 		810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentStyleKeyValue.swift; sourceTree = "<group>"; };
@@ -986,6 +1010,42 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		69A875832DAF9E290074C1BD /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				69A875812DAF9E290074C1BD /* CheckboxAppearance.swift */,
+				69A875822DAF9E290074C1BD /* CheckboxSize.swift */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		69A875862DAF9E290074C1BD /* CheckboxGroup */ = {
+			isa = PBXGroup;
+			children = (
+				69A875842DAF9E290074C1BD /* CheckboxGroupAppearance.swift */,
+				69A875852DAF9E290074C1BD /* CheckboxGroupSize.swift */,
+			);
+			path = CheckboxGroup;
+			sourceTree = "<group>";
+		};
+		69A875892DAF9E290074C1BD /* Radiobox */ = {
+			isa = PBXGroup;
+			children = (
+				69A875872DAF9E290074C1BD /* RadioboxAppearance.swift */,
+				69A875882DAF9E290074C1BD /* RadioboxSize.swift */,
+			);
+			path = Radiobox;
+			sourceTree = "<group>";
+		};
+		69A8758C2DAF9E290074C1BD /* RadioboxGroup */ = {
+			isa = PBXGroup;
+			children = (
+				69A8758A2DAF9E290074C1BD /* RadioboxGroupAppearance.swift */,
+				69A8758B2DAF9E290074C1BD /* RadioboxGroupSize.swift */,
+			);
+			path = RadioboxGroup;
+			sourceTree = "<group>";
+		};
 		810AFD402D96DD85000B2A7A /* SegmentItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1112,10 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */,
+				69A875962DAF9E470074C1BD /* CheckboxProps.swift */,
+				69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */,
+				69A875982DAF9E470074C1BD /* RadioboxProps.swift */,
 				813992412D9EDA080015AF83 /* SegmentProps.swift */,
 				810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */,
 				81C3D7E12DAE430B0090739E /* BottomSheetProps.swift */,
@@ -1071,6 +1135,10 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				69A875832DAF9E290074C1BD /* Checkbox */,
+				69A875862DAF9E290074C1BD /* CheckboxGroup */,
+				69A875892DAF9E290074C1BD /* Radiobox */,
+				69A8758C2DAF9E290074C1BD /* RadioboxGroup */,
 				8139923C2D9ED9AD0015AF83 /* Segment */,
 				810AFD402D96DD85000B2A7A /* SegmentItem */,
 				81C3D7E52DAE43430090739E /* BottomSheet */,
@@ -2192,6 +2260,10 @@
 				818345822CFE3CC00081113B /* String+Extensions.swift in Sources */,
 				81E1EE382BE3A58600F86AE1 /* Category.swift in Sources */,
 				81E1EE532BE3A67200F86AE1 /* ShapeStyle.swift in Sources */,
+				69A875992DAF9E470074C1BD /* RadioboxProps.swift in Sources */,
+				69A8759A2DAF9E470074C1BD /* CheckboxProps.swift in Sources */,
+				69A8759B2DAF9E470074C1BD /* CheckboxGroupProps.swift in Sources */,
+				69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */,
 				8174BA462D5DE10200EA3E68 /* ChipProps.swift in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
 				81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */,
@@ -2322,6 +2394,14 @@
 				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
 				81B23FA92D4BEBA00042A657 /* Component.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
+				69A8758D2DAF9E290074C1BD /* RadioboxSize.swift in Sources */,
+				69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */,
+				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
+				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,
+				69A875912DAF9E290074C1BD /* CheckboxGroupSize.swift in Sources */,
+				69A875922DAF9E290074C1BD /* CheckboxAppearance.swift in Sources */,
+				69A875932DAF9E290074C1BD /* RadioboxGroupSize.swift in Sources */,
+				69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */,
 				812DB6DE2D55E2BD00D3F4A3 /* MergeableConfiguration.swift in Sources */,
 				810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */,
 				8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */,

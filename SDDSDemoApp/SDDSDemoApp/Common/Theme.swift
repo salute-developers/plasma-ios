@@ -134,6 +134,17 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var checkboxGroupVariations: [Variation<CheckboxGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CheckboxGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.CheckboxGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CheckboxGroup.all
+        }
+    }
+    
     var radioboxVariations: [Variation<RadioboxAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -142,6 +153,17 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Radiobox.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Radiobox.all
+        }
+    }
+    
+    var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.RadioboxGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.RadioboxGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.RadioboxGroup.all
         }
     }
     

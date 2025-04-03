@@ -25,6 +25,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case segment = "Segment"
     case bottomSheet = "BottomSheet"
     case `switch` = "Switch"
+    case radiobox = "Radiobox"
+    case radioboxGroup = "RadioboxGroup"
+    case checkbox = "Checkbox"
+    case checkboxGroup = "CheckboxGroup"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -51,7 +55,11 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .bottomSheet,
             .switch,
             .embeddedChip,
-            .chip
+            .chip,
+            .radiobox,
+            .radioboxGroup,
+            .checkbox,
+            .checkboxGroup
         ]
     }
 }
@@ -85,6 +93,14 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<BottomSheetProps, BottomSheetAppearance, BottomSheetSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .switch:
             GenerateComponentCommand<SwitchProps, SwitchAppearance, SwitchSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .radiobox:
+            GenerateComponentCommand<RadioboxProps, RadioboxAppearance, RadioboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .radioboxGroup:
+            GenerateComponentCommand<RadioboxGroupProps, RadioboxGroupAppearance, RadioboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .checkbox:
+            GenerateComponentCommand<CheckboxProps, CheckboxAppearance, CheckboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .checkboxGroup:
+            GenerateComponentCommand<CheckboxGroupProps, CheckboxGroupAppearance, CheckboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -116,6 +132,14 @@ extension CodeGenerationComponent {
             "BottomSheetAppearance"
         case .switch:
             "SwitchAppearance"
+        case .radiobox:
+            "RadioboxAppearance"
+        case .radioboxGroup:
+            "RadioboxGroupAppearance"
+        case .checkbox:
+            "CheckboxAppearance"
+        case .checkboxGroup:
+            "CheckboxGroupAppearance"
         }
     }
     
@@ -148,6 +172,14 @@ extension CodeGenerationComponent {
             "BottomSheetSizeConfiguration"
         case .switch:
             "SwitchSizeConfiguration"
+        case .radiobox:
+            "SelectionControlSizeConfiguration"
+        case .radioboxGroup:
+            "RadioboxGroupSizeConfiguration"
+        case .checkbox:
+            "SelectionControlSizeConfiguration"
+        case .checkboxGroup:
+            "CheckboxGroupSizeConfiguration"
         }
     }
     
@@ -201,6 +233,14 @@ extension CodeGenerationComponent {
             "bottom_sheet_config.json"
         case .switch:
             "switch_config.json"
+        case .radiobox:
+            "radiobox_config.json"
+        case .radioboxGroup:
+            "radiobox_group_config.json"
+        case .checkbox:
+            "checkbox_config.json"
+        case .checkboxGroup:
+            "checkbox_group_config.json"
         }
     }
     

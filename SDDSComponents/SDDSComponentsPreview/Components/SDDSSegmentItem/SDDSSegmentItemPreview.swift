@@ -12,7 +12,8 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
                 appearance: Counter.s.accent.appearance,
                 isAnimating: false,
                 isHighlighted: false,
-                isHovered: false
+                isHovered: false,
+                isSelected: false
             )
         )
     }

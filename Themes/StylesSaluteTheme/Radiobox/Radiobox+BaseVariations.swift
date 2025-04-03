@@ -1,46 +1,54 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SwiftUI
+import SDDSIcons
 
 public struct Radiobox {
     public static var m: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance.base
-        appearance.size = SDDSRadioboxSize.medium
-        appearance.titleTypography = RadioboxTypography.label
-        appearance.subtitleTypography = RadioboxTypography.description
+        appearance.size = RadioboxSize.m
+        appearance.subtitleTypography = RadioboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = RadioboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+
         return .init(
             name: "m",
             appearance: appearance
         )
     }
-    
     public static var s: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance.base
-        appearance.size = SDDSRadioboxSize.small
-        appearance.titleTypography = RadioboxTypography.label
-        appearance.subtitleTypography = RadioboxTypography.description
+        appearance.size = RadioboxSize.s
+        appearance.subtitleTypography = RadioboxTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = RadioboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+
         return .init(
             name: "s",
             appearance: appearance
         )
     }
     
-    public static let all: [Variation<RadioboxAppearance>] = [m, s].map { $0.variation }
+    public static let all: [Variation<RadioboxAppearance>] = [
+        Radiobox.m.variation,
+        Radiobox.s.variation,
+    ]
 }
 
-extension RadioboxAppearance {
+public struct RadioboxVariation {
+    public struct M {}
+    public struct S {}
+}
+
+private extension RadioboxAppearance {
     static var base: RadioboxAppearance {
-        RadioboxAppearance(
-            color: .surfaceDefaultAccent,
-            borderColor: .outlineDefaultTransparentTertiary,
-            checkedIcon: CircleDrawer(),
-            checkedIconColor: .textOnDarkPrimary,
-            titleTypography: RadioboxTypography.label,
-            subtitleTypography: RadioboxTypography.description,
-            titleColor: .backgroundInversePrimary,
-            subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
-            disabledAlpha: 0.4
-        )
+        var appearance = RadioboxAppearance()
+        appearance.borderColor = ColorToken.textDefaultSecondary
+        appearance.checkedIconColor = ColorToken.textOnDarkPrimary
+        appearance.disabledAlpha = CGFloat(0.4)
+        appearance.subtitleColor = ColorToken.textDefaultSecondary
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.toggleColor = ColorToken.surfaceDefaultAccentMain
+        appearance.toggleColorChecked = ColorToken.textOnDarkPrimary
+        return appearance
     }
 }
