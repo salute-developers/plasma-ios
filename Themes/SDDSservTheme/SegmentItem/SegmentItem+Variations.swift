@@ -1,39 +1,51 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
-    var primary: AppearanceVariation<SegmentItemAppearance> {
-        var appearance = SegmentItem.primary.appearance
-        appearance.size = self.appearance.size
-        appearance.counterAppearance = self.appearance.counterAppearance
-        
-        return .init(name: "primary", appearance: appearance)
-    }
-    
-    var secondary: AppearanceVariation<SegmentItemAppearance> {
-        var appearance = SegmentItem.secondary.appearance
-        appearance.size = self.appearance.size
-        appearance.counterAppearance = self.appearance.counterAppearance
 
-        return .init(name: "secondary", appearance: appearance)
+public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.L> {
+    
+    var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+        var size =  SegmentItemAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+        size.paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+        size.width = CGFloat(86.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
     }
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
-        var appearance = SegmentItem.accent.appearance
-        appearance.size = self.appearance.size
-        appearance.counterAppearance = self.appearance.counterAppearance
-
-        return .init(name: "accent", appearance: appearance)
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
     }
-    
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
                 self.primary,
                 self.secondary,
-                self.accent
             ],
             name: name,
             appearance: appearance
@@ -41,107 +53,266 @@ public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance
     }
 }
 
-private extension SegmentItem {
-    static var primary: AppearanceVariation<SegmentItemAppearance> {
-        .init(
-            name: "primary",
-            appearance: .init(
-                titleTypography: SegmentItemTypography.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textInversePrimaryActive,
-                    hoveredColor: .textInversePrimaryHover,
-                    selectedColor: .textInversePrimary
-                ),
-                subtitleTypography: SegmentItemTypography.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textInverseSecondaryActive,
-                    hoveredColor: .textInverseSecondaryHover,
-                    selectedColor: .textInverseSecondary
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textInversePrimaryActive,
-                    hoveredColor: .textInversePrimaryHover,
-                    selectedColor: .textInversePrimary
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultClear,
-                    highlightedColor: .surfaceDefaultClearActive,
-                    hoveredColor: .surfaceDefaultClearHover,
-                    selectedColor: .surfaceDefaultSolidDefault
-                ),
-                disabledAlpha: 0.4
-            )
+public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.M> {
+    
+    var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+        var size =  SegmentItemAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+        size.paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+        size.width = CGFloat(72.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
         )
     }
-    static var secondary: AppearanceVariation<SegmentItemAppearance> {
-        .init(
-            name: "secondary",
-            appearance: SegmentItemAppearance(
-                titleTypography: SegmentItemTypography.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
-                ),
-                subtitleTypography: SegmentItemTypography.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover,
-                    selectedColor: .textDefaultSecondary
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textDefaultPrimary
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultClear,
-                    highlightedColor: .surfaceDefaultClearActive,
-                    hoveredColor: .surfaceDefaultClearHover,
-                    selectedColor: .surfaceDefaultTransparentCard
-                ),
-                disabledAlpha: 0.4
-            )
-        )
-    }
-    static var accent: AppearanceVariation<SegmentItemAppearance> {
-        .init(
+    
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
             name: "accent",
-            appearance: SegmentItemAppearance(
-                titleTypography: SegmentItemTypography.titleTypography,
-                titleColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textOnDarkPrimary
-                ),
-                subtitleTypography: SegmentItemTypography.subtitleTypography,
-                subtitleColor: ButtonColor(
-                    defaultColor: .textDefaultSecondary,
-                    highlightedColor: .textDefaultSecondaryActive,
-                    hoveredColor: .textDefaultSecondaryHover,
-                    selectedColor: .textOnDarkPrimary
-                ),
-                iconColor: ButtonColor(
-                    defaultColor: .textDefaultPrimary,
-                    highlightedColor: .textDefaultPrimaryActive,
-                    hoveredColor: .textDefaultPrimaryHover,
-                    selectedColor: .textOnDarkPrimary
-                ),
-                backgroundColor: ButtonColor(
-                    defaultColor: .surfaceDefaultClear,
-                    highlightedColor: .surfaceDefaultClearActive,
-                    hoveredColor: .surfaceDefaultClearHover,
-                    selectedColor: .surfaceInverseAccent
-                ),
-                disabledAlpha: 0.4
-            )
+            appearance: appearance.accent
         )
     }
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.S> {
+    
+    var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+        var size =  SegmentItemAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+        size.paddings = EdgeInsets(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0)
+        size.width = CGFloat(59.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xl> {
+    
+    var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+        var size =  SegmentItemAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+        size.paddings = EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        size.width = CGFloat(94.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xl.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xs> {
+    
+    var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+        var size =  SegmentItemAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+        size.paddings = EdgeInsets(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0)
+        size.width = CGFloat(53.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
+    var accent: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var primary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "primary",
+            appearance: appearance.primary
+        )
+    }
+    var secondary: AppearanceVariation<SegmentItemAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+private extension SegmentItemAppearance {
+    
+    var accent: SegmentItemAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClearHover)
+        appearance.counterAppearance = Counter.s.accent.appearance.modify(.init(textColor: ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimary, hoveredColor: ColorToken.textOnDarkPrimary),backgroundColor: ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccent, hoveredColor: ColorToken.surfaceDefaultAccent))
+        appearance.endContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.startContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondary, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        return appearance
+    }
+    
+    var primary: SegmentItemAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClearHover)
+        appearance.endContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.startContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondary, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        return appearance
+    }
+    
+    var secondary: SegmentItemAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClearHover)
+        appearance.endContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.startContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondary, hoveredColor: ColorToken.textDefaultSecondaryHover)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
+        return appearance
+    }
+    
 }

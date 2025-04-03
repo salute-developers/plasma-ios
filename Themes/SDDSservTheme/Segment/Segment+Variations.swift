@@ -1,34 +1,62 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var `default`: AppearanceVariation<SegmentAppearance> {
-        var appearance = Segment.default.appearance
-        appearance.size = self.appearance.size
-        appearance.segmentItemAppearance = self.appearance.segmentItemAppearance
-        
-        return .init(name: "primary", appearance: appearance)
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.L> {
+    
+    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+        var size =  SegmentAnySize(size: appearance.size)
+        size.horizontalHeight = CGFloat(0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
+        size.verticalWidth = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disabledAlpha = CGFloat(0)
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
     }
     
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
     var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = Segment.default.appearance
-        appearance.size = self.appearance.size
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
         
-        var secondary = SegmentItem.m.secondary.appearance
-        secondary.size = self.appearance.segmentItemAppearance.size
-        secondary.counterAppearance = self.appearance.segmentItemAppearance.counterAppearance
-        appearance.segmentItemAppearance = secondary
-        
-        return .init(name: "secondary", appearance: appearance)
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
     }
-    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
             styles: [
-                self.`default`,
-                self.secondary
             ],
             name: name,
             appearance: appearance
@@ -36,18 +64,423 @@ public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
     }
 }
 
-private extension Segment {
-    static var `default`: AppearanceVariation<SegmentAppearance> {
-        .init(
-            name: "default",
-            appearance: .init(
-                backgroundColor: ButtonColor(
-                    defaultColor: .backgroundDefaultPrimary,
-                    highlightedColor: .backgroundDefaultPrimary,
-                    hoveredColor: .backgroundDefaultPrimary
-                ),
-                disabledAlpha: 0.4
-            )
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
         )
     }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.M> {
+    
+    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+        var size =  SegmentAnySize(size: appearance.size)
+        size.horizontalHeight = CGFloat(0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
+        size.verticalWidth = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disabledAlpha = CGFloat(0)
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.S> {
+    
+    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+        var size =  SegmentAnySize(size: appearance.size)
+        size.horizontalHeight = CGFloat(0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
+        size.verticalWidth = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disabledAlpha = CGFloat(0)
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xl> {
+    
+    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+        var size =  SegmentAnySize(size: appearance.size)
+        size.horizontalHeight = CGFloat(0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
+        size.verticalWidth = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disabledAlpha = CGFloat(0)
+    
+        return .init(
+            name: "xl.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xs> {
+    
+    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+        var size =  SegmentAnySize(size: appearance.size)
+        size.horizontalHeight = CGFloat(0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
+        size.verticalWidth = CGFloat(0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disabledAlpha = CGFloat(0)
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var accent: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = 
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+}
+
+public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+private extension SegmentAppearance {
+    
 }
