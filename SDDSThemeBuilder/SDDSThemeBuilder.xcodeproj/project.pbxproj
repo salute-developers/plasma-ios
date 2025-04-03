@@ -37,6 +37,7 @@
 		692EDE162D9D5EE000A6B384 /* RadioboxProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692EDE152D9D5ED800A6B384 /* RadioboxProps.swift */; };
 		692EDE192D9D602E00A6B384 /* RadioboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692EDE182D9D602C00A6B384 /* RadioboxAppearance.swift */; };
 		692EDE1B2D9D61C900A6B384 /* RadioboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692EDE1A2D9D61BF00A6B384 /* RadioboxSize.swift */; };
+		692EDE1D2D9E518E00A6B384 /* SelectionControContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692EDE1C2D9E516500A6B384 /* SelectionControContextBuilder.swift */; };
 		6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */; };
 		6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */; };
 		6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */; };
@@ -458,6 +459,7 @@
 		692EDE152D9D5ED800A6B384 /* RadioboxProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxProps.swift; sourceTree = "<group>"; };
 		692EDE182D9D602C00A6B384 /* RadioboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxAppearance.swift; sourceTree = "<group>"; };
 		692EDE1A2D9D61BF00A6B384 /* RadioboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxSize.swift; sourceTree = "<group>"; };
+		692EDE1C2D9E516500A6B384 /* SelectionControContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControContextBuilder.swift; sourceTree = "<group>"; };
 		6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProps.swift; sourceTree = "<group>"; };
@@ -982,6 +984,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				692EDE1C2D9E516500A6B384 /* SelectionControContextBuilder.swift */,
 				81D85D142D6F63D9007E758F /* PathDrawerContextBuilder.swift */,
 				697FAC452D660E0600959E8F /* ImageContextBuilder.swift */,
 				8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */,
@@ -1004,7 +1007,6 @@
 		812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				692EDE172D9D601200A6B384 /* Radiobox */,
 				812DB7982D59D83B00D3F4A3 /* Components */,
 				812DB6F32D55E48C00D3F4A3 /* KeyValue.swift */,
 				812DB6F72D55E4A800D3F4A3 /* ColorKeyValue.swift */,
@@ -1039,6 +1041,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				692EDE172D9D601200A6B384 /* Radiobox */,
 				81F89E4F2D81A6E100A41C89 /* Card */,
 				6935CEB52D6C8B5400C8A186 /* Counter */,
 				697970E02D63A6DE008306A8 /* Cell */,
@@ -2228,6 +2231,7 @@
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				692EDE162D9D5EE000A6B384 /* RadioboxProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
+				692EDE1D2D9E518E00A6B384 /* SelectionControContextBuilder.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
