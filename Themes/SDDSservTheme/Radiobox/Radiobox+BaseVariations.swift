@@ -42,8 +42,8 @@ public struct Radiobox {
 extension RadioboxAppearance {
     static var base: RadioboxAppearance {
         RadioboxAppearance(
-            color: .surfaceDefaultAccent,
-            borderColor: .outlineDefaultTransparentTertiary,
+            toggleColor: .surfaceDefaultAccent,
+            toggleBorderColor: .outlineDefaultTransparentTertiary,
             checkedIcon: CircleDrawer(),
             checkedIconColor: .textOnDarkPrimary,
             titleTypography: RadioboxTypography.label,

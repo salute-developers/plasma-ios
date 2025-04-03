@@ -30,7 +30,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 }
             }
             HStack(spacing: appearance.size.horizontalGap) {
-                Spacer().frame(width: appearance.size.width)
+                Spacer().frame(width: appearance.size.toggleWidth)
                 
                 if !title.isEmpty {
                     subtitleText
@@ -106,7 +106,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             }
         }
         .padding(appearance.size.togglePaddings)
-        .frame(width: appearance.size.width, height: appearance.size.height)
+        .frame(width: appearance.size.toggleWidth, height: appearance.size.toggleHeight)
         .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
     }
     
@@ -146,7 +146,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var borderView: some View {
-        appearance.size.togglePathDrawer
+        appearance.size.pathDrawer
             .path(
                 in: CGRect(
                     x: rectLocation,
@@ -154,19 +154,19 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: toggleWidth,
                     height: toggleHeight)
             )
-            .stroke(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
+            .stroke(appearance.toggleBorderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
     }
     
     private var fillView: some View {
-        appearance.size.togglePathDrawer
+        appearance.size.pathDrawer
             .path(
                 in: CGRect(
                     x: 0,
                     y: 0,
-                    width: appearance.size.width - paddings,
-                    height: appearance.size.height - paddings)
+                    width: appearance.size.toggleWidth - paddings,
+                    height: appearance.size.toggleHeight - paddings)
             )
-            .fill(appearance.color.color(for: colorScheme))
+            .fill(appearance.toggleColor.color(for: colorScheme))
     }
     
     // MARK: - Accessibility
@@ -192,11 +192,11 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var toggleWidth: CGFloat {
-        appearance.size.width - paddings - appearance.size.lineWidth
+        appearance.size.toggleWidth - paddings - appearance.size.lineWidth
     }
     
     private var toggleHeight: CGFloat {
-        appearance.size.height - paddings - appearance.size.lineWidth
+        appearance.size.toggleHeight - paddings - appearance.size.lineWidth
     }
     
     private var rectLocation: CGFloat {

@@ -36,7 +36,7 @@ public enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
         }
     }
     
-    public var togglePathDrawer: PathDrawer {
+    public var pathDrawer: PathDrawer {
         switch self {
         case .large:
             return CircleDrawer() as PathDrawer
@@ -58,7 +58,7 @@ public enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
         }
     }
     
-    public var height: CGFloat {
+    public var toggleHeight: CGFloat {
         switch self {
         case .large:
             return 24
@@ -69,7 +69,7 @@ public enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
         }
     }
     
-    public var width: CGFloat {
+    public var toggleWidth: CGFloat {
         switch self {
         case .large:
             return 24
@@ -112,6 +112,7 @@ public enum SDDSRadioboxSize: String, SelectionControlSizeConfiguration {
             return 8
         }
     }
+    
     
     public var toggleIndeterminateIconWidth: CGFloat { 0 }
     

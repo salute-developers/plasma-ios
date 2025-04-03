@@ -26,7 +26,7 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
         }
     }
     
-    public var togglePathDrawer: PathDrawer {
+    public var pathDrawer: PathDrawer {
         switch self {
         case .large:
             return CornerRadiusDrawer(cornerRadius: ShapeToken.roundXs.cornerRadius) as PathDrawer
@@ -48,7 +48,7 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
         }
     }
     
-    public var height: CGFloat {
+    public var toggleHeight: CGFloat {
         switch self {
         case .large:
             return 24
@@ -59,7 +59,7 @@ public enum SDDSCheckboxSize: String, SelectionControlSizeConfiguration, CaseIte
         }
     }
     
-    public var width: CGFloat {
+    public var toggleWidth: CGFloat {
         switch self {
         case .large:
             return 24

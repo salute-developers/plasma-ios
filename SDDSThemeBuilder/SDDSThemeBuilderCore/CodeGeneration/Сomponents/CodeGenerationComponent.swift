@@ -21,6 +21,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case counter = "Counter"
     case card = "Card"
     case cardClear = "CardClear"
+    case radiobox = "Radiobox"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -41,7 +42,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .cell,     
             .counter,
             .card,
-            .cardClear
+            .cardClear,
+            .radiobox
         ]
     }
 }
@@ -67,6 +69,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .card, .cardClear:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .radiobox:
+            GenerateComponentCommand<RadioboxProps, RadioboxAppearance, RadioboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -90,6 +94,8 @@ extension CodeGenerationComponent {
             "CounterAppearance"
         case .card, .cardClear:
             "CardAppearance"
+        case .radiobox:
+            "Radiobox"
         }
     }
     
@@ -114,6 +120,8 @@ extension CodeGenerationComponent {
             "CounterSizeConfiguration"
         case .card, .cardClear:
             "CardSizeConfiguration"
+        case .radiobox:
+            "SelectionControlSizeConfiguration"
         }
     }
     
@@ -159,6 +167,8 @@ extension CodeGenerationComponent {
             "card_solid_config.json"
         case .cardClear:
             "card_clear_config.json"
+        case .radiobox:
+            "radiobox_config.json"
         }
     }
     
