@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct IconButton {
     public static var l: GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.L> {
