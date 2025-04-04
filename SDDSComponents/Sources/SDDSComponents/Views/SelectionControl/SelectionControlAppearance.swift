@@ -9,8 +9,8 @@ public protocol SelectionControlAppearance {
     var titleColor: ColorToken { get }
     var subtitleColor: ColorToken { get }
     var disabledAlpha: CGFloat { get }
-    var toggleColor: ColorToken { get }
-    var toggleBorderColor: ColorToken { get }
+    var toggleColor: SelectionControColor { get }
+    var toggleBorderColor: SelectionControColor { get }
     var checkedIcon: PathDrawer? { get }
     var checkedIconColor: ColorToken { get }
     var toggleIndeterminateIcon: PathDrawer? { get }
