@@ -34,6 +34,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.M> {
@@ -66,6 +67,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.S> {
@@ -82,6 +84,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
         var appearance = appearance
         appearance.size = size
         appearance.tintColor = .clearColor
+        appearance.titleTypography = SwitchTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "s.toggleS",
@@ -98,7 +101,9 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
             appearance: appearance
         )
     }
+    
 }
+
 
 public extension ComponentAppearanceVariation<Switch, SwitchAppearance> {
     var variation: Variation<Appearance> {

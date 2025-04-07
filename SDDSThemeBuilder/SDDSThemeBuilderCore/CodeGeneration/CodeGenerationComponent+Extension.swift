@@ -49,7 +49,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .segmentItem,
             .segment,
             .bottomSheet,
-            .switch
+            .switch,
+            .embeddedChip,
+            .chip
         ]
     }
 }
