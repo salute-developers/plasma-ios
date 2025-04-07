@@ -11,7 +11,7 @@ struct SDDSRadioboxPreview: PreviewProvider {
             title: "Value",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Radiobox.m.default.appearance
+            appearance: Radiobox.m.appearance
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")

@@ -11,6 +11,7 @@ struct RadioboxAppearance: CodeGenerationAppearance {
     var subtitleTypography: String? = nil
     var subtitleColor: String? = nil
     var checkedIconColor: String? = nil
+    var toggleIndeterminateIconColor: String? = nil
     
     init(variation: RadioboxConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -27,12 +28,10 @@ struct RadioboxAppearance: CodeGenerationAppearance {
             defaultColor: props.toggleColor,
             checkedColor: props.toggleColor?.value(for: [.checked])
         ).context
-        self.toggleBorderColor = SelectionControContextBuilder(
-            defaultColor: props.toggleBorderColor,
-            checkedColor: props.toggleBorderColor?.value(for: [.checked])
-        ).context
+        self.toggleBorderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
         self.titleColor = ColorTokenContextBuilder(props.labelColor).context
         self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
         self.checkedIconColor = ColorTokenContextBuilder(props.toggleIconColor).context
+        self.toggleIndeterminateIconColor = ColorTokenContextBuilder(props.toggleIndeterminateIconColor).context
     }
 }

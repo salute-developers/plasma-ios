@@ -10,7 +10,7 @@ final class SelectionControContextBuilder: CodeGenerationContextBuilder {
     }
     
     var context: String? {
-        if defaultColor == nil {
+        if defaultColor == nil, checkedColor == nil {
             return nil
         }
         

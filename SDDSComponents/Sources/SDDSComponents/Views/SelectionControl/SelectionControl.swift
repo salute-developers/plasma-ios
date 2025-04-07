@@ -116,7 +116,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .selected:
             fillView
             icon(
-                icon: appearance.checkedIcon,
+                icon: appearance.size.pathDrawer,
                 iconColor: appearance.checkedIconColor,
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
@@ -126,7 +126,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .indeterminate:
             fillView
             icon(
-                icon: appearance.toggleIndeterminateIcon,
+                icon: appearance.size.pathDrawer,
                 iconColor: appearance.toggleIndeterminateIconColor,
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
@@ -166,7 +166,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.toggleWidth - paddings,
                     height: appearance.size.toggleHeight - paddings)
             )
-            .fill(appearance.toggleColor.color(for: colorScheme))
+            .fill(currentColorForToggleFill(for: appearance.toggleColor))
     }
     
     // MARK: - Accessibility
@@ -201,6 +201,16 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     private var rectLocation: CGFloat {
         appearance.size.lineWidth / 2
+    }
+    
+    private func currentColorForToggleFill(for selectionControlColor: SelectionControlColor) -> Color {
+        if state == .selected {
+            return selectionControlColor.checkedColor.color(for: colorScheme)
+        } else if state == .indeterminate {
+            return selectionControlColor.checkedColor.color(for: colorScheme)
+        } else {
+            return selectionControlColor.defaultColor.color(for: colorScheme)
+        }
     }
 }
 

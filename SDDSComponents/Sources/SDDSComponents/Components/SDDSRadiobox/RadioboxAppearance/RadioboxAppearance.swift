@@ -4,8 +4,8 @@ import SwiftUI
 
 public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
-    public var toggleColor: SelectionControColor
-    public var toggleBorderColor: SelectionControColor
+    public var toggleColor: SelectionControlColor
+    public var toggleBorderColor: ColorToken
     public var checkedIcon: PathDrawer?
     public var checkedIconColor: ColorToken
     public var toggleIndeterminateIcon: PathDrawer?
@@ -18,8 +18,8 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     public var disabledAlpha: CGFloat
     
     public init(
-        toggleColor: SelectionControColor = SelectionControColor(),
-        toggleBorderColor: SelectionControColor = SelectionControColor(),
+        toggleColor: SelectionControlColor = SelectionControlColor(),
+        toggleBorderColor: ColorToken = .clearColor,
         checkedIcon: PathDrawer? = nil,
         checkedIconColor: ColorToken = .clearColor,
         toggleIndeterminateIcon: PathDrawer? = nil,
