@@ -95,7 +95,7 @@ extension CodeGenerationComponent {
         case .card, .cardClear:
             "CardAppearance"
         case .radiobox:
-            "Radiobox"
+            "RadioboxAppearance"
         }
     }
     
