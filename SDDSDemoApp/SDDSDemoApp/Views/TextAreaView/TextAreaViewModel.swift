@@ -1,7 +1,6 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-
 import SDDSServTheme
 
 final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
@@ -15,7 +14,7 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
     @Published var iconActionViewEnabled: Bool = true
-    @Published var dynamicHeight: Bool = true
+    @Published var heightMode: TextAreaHeightMode = .dynamic
     @Published var layout: TextAreaLayout = .default {
         didSet {
             variationProvider.layout = layout
@@ -28,6 +27,15 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
         
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
+        }
+    }
+    
+    var isDynamicHeight: Bool {
+        switch heightMode {
+        case .fixed(let cGFloat):
+            return false
+        case .dynamic:
+            return true
         }
     }
 

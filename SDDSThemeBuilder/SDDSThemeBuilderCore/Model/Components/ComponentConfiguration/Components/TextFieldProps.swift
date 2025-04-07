@@ -56,4 +56,10 @@ struct TextFieldProps: MergeableConfiguration, Codable {
     var optionalStyle: KeyValue<String>?
     var indicatorOffsetX: KeyValue<Double>?
     var indicatorOffsetY: KeyValue<Double>?
+    var scrollBarThickness: KeyValue<Double>?
+    var scrollBarPaddingTop: KeyValue<Double>?
+    var scrollBarPaddingBottom: KeyValue<Double>?
+    var scrollBarPaddingEnd: KeyValue<Double>?
+    var scrollBarTrackColor: ColorKeyValue?
+    var scrollBarThumbColor: ColorKeyValue?
 }

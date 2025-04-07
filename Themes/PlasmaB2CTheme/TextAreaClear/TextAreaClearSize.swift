@@ -35,6 +35,10 @@ struct TextAreaClearSizeL: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(4.0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
     public var debugDescription: String {
@@ -58,6 +62,10 @@ struct TextAreaClearSizeM: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(4.0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
     public var debugDescription: String {
@@ -81,6 +89,10 @@ struct TextAreaClearSizeS: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(4.0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
     public var debugDescription: String {
@@ -104,6 +116,10 @@ struct TextAreaClearSizeXl: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(4.0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
     public var debugDescription: String {
@@ -127,6 +143,10 @@ struct TextAreaClearSizeXs: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(4.0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
     public var debugDescription: String {
@@ -151,6 +171,10 @@ struct TextAreaClearAnySize: TextAreaSizeConfiguration {
     var indicatorOffset = CGPoint.zero
     var indicatorSize = CGSize.zero
     var optionalPadding = CGFloat(0)
+    var scrollBarPaddingBottom = CGFloat(0)
+    var scrollBarPaddingEnd = CGFloat(0)
+    var scrollBarPaddingTop = CGFloat(0)
+    var scrollBarThickness = CGFloat(0)
     var titleBottomPadding = CGFloat(0)
     var titleInnerPadding = CGFloat(0)
 
@@ -171,6 +195,10 @@ struct TextAreaClearAnySize: TextAreaSizeConfiguration {
         self.indicatorOffset = size.indicatorOffset
         self.indicatorSize = size.indicatorSize
         self.optionalPadding = size.optionalPadding
+        self.scrollBarPaddingBottom = size.scrollBarPaddingBottom
+        self.scrollBarPaddingEnd = size.scrollBarPaddingEnd
+        self.scrollBarPaddingTop = size.scrollBarPaddingTop
+        self.scrollBarThickness = size.scrollBarThickness
         self.titleBottomPadding = size.titleBottomPadding
         self.titleInnerPadding = size.titleInnerPadding
     }

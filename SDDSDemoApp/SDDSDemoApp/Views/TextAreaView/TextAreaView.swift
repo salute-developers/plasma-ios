@@ -23,7 +23,7 @@ struct TextAreaView: View {
                     counter: viewModel.counter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
-                    dynamicHeight: viewModel.dynamicHeight,
+                    heightMode: viewModel.heightMode,
                     appearance: viewModel.appearance,
                     layout: viewModel.layout,
                     iconActionViewProvider: iconActionView
@@ -56,7 +56,12 @@ struct TextAreaView: View {
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read Only", isOn: $viewModel.readOnly)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
-                Toggle("Dynamic Height", isOn: $viewModel.dynamicHeight)
+                Toggle("Dynamic Height", isOn:
+                        Binding(
+                            get: { return viewModel.isDynamicHeight },
+                            set: { value in viewModel.heightMode = value ? .dynamic : .fixed(80) }
+                        )
+                )
 
                 Button("Add Chip") {
                     viewModel.addChip()
