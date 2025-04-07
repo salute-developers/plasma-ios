@@ -7,6 +7,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
+    @Binding var isScrolling: Bool
     let readOnly: Bool
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     let textTypography: TypographyToken
@@ -27,6 +28,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 text: $text,
                 textHeight: $textHeight,
                 isFocused: $isFocused,
+                isScrolling: $isScrolling,
                 readOnly: readOnly,
                 typographyToken: textTypography,
                 accentColor: appearance.cursorColor.color(for: colorScheme),

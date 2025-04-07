@@ -23,6 +23,10 @@ struct TextAreaSize: CodeGenerationSize {
     var boxPaddingTop: String?
     var boxPaddingBottom: String?
     var endContentPadding: String?
+    let scrollBarThickness: String?
+    let scrollBarPaddingTop: String?
+    let scrollBarPaddingBottom: String?
+    let scrollBarPaddingEnd: String?
         
     init(variation: TextFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -47,6 +51,10 @@ struct TextAreaSize: CodeGenerationSize {
         self.indicatorSize = SizeContextBuilder(x: props.indicatorSize?.value, y: props.indicatorSize?.value, style: .size, nullify: nullify).context
         self.indicatorOffset = SizeContextBuilder(x: props.indicatorOffsetX?.value, y: props.indicatorOffsetY?.value, style: .point, nullify: nullify).context
         self.endContentPadding = CGFloatContextBuilder(props.endContentPadding?.value, nullify: nullify).context
+        self.scrollBarThickness = CGFloatContextBuilder(props.scrollBarThickness?.value, nullify: nullify).context
+        self.scrollBarPaddingTop = CGFloatContextBuilder(props.scrollBarPaddingTop?.value, nullify: nullify).context
+        self.scrollBarPaddingBottom = CGFloatContextBuilder(props.scrollBarPaddingBottom?.value, nullify: nullify).context
+        self.scrollBarPaddingEnd = CGFloatContextBuilder(props.scrollBarPaddingEnd?.value, nullify: nullify).context
     }
     
     init() {
@@ -68,6 +76,10 @@ struct TextAreaSize: CodeGenerationSize {
         self.indicatorOffset = CGPoint.defaultContext
         self.cornerRadius = CGFloat.defaultContext
         self.endContentPadding = CGFloat.defaultContext
+        self.scrollBarThickness = CGFloat.defaultContext
+        self.scrollBarPaddingTop = CGFloat.defaultContext
+        self.scrollBarPaddingBottom = CGFloat.defaultContext
+        self.scrollBarPaddingEnd = CGFloat.defaultContext
     }
 
 }

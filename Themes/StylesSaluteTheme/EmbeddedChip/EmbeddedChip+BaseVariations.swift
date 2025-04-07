@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct EmbeddedChip {
     public static var l: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
@@ -63,7 +64,7 @@ public struct EmbeddedChipVariation {
 private extension ChipAppearance {
     static var base: ChipAppearance {
         var appearance = ChipAppearance()
-        appearance.disabledAlpha = CGFloat(0.5)
+        appearance.disabledAlpha = CGFloat(0.4)
         return appearance
     }
 }

@@ -2,19 +2,9 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct EmbeddedChip {
-    public static var xl: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
-        var appearance = ChipAppearance.base
-        appearance.size = EmbeddedChipSize.xl
-        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-
-        return .init(
-            name: "xl",
-            appearance: appearance
-        )
-    }
-    
     public static var l: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.l
@@ -57,7 +47,6 @@ public struct EmbeddedChip {
     }
     
     public static let all: [Variation<ChipAppearance>] = [
-        EmbeddedChip.xl.variation,
         EmbeddedChip.l.variation,
         EmbeddedChip.m.variation,
         EmbeddedChip.s.variation,
@@ -66,7 +55,6 @@ public struct EmbeddedChip {
 }
 
 public struct EmbeddedChipVariation {
-    public struct Xl {}
     public struct L {}
     public struct M {}
     public struct S {}
@@ -76,7 +64,7 @@ public struct EmbeddedChipVariation {
 private extension ChipAppearance {
     static var base: ChipAppearance {
         var appearance = ChipAppearance()
-        appearance.disabledAlpha = CGFloat(0.5)
+        appearance.disabledAlpha = CGFloat(0.4)
         return appearance
     }
 }

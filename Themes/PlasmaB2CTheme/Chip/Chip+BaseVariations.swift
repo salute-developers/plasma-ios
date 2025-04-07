@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Chip {
     public static var l: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.L> {

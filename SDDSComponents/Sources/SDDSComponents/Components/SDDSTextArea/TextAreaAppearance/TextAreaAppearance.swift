@@ -45,6 +45,8 @@ public struct TextAreaAppearance {
     public var titleColor: ColorToken
     public var titleTextAlignment: TextAlignment
     public var titleTypography: TypographyConfiguration
+    public var scrollBarTrackColor: ColorToken
+    public var scrollBarThumbColor: ColorToken
 
     public init(
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
@@ -76,6 +78,8 @@ public struct TextAreaAppearance {
         placeholderColorFocused: ColorToken = .clearColor,
         placeholderColorReadOnly: ColorToken? = nil,
         requiredIndicatorColor: ColorToken = .clearColor,
+        scrollBarTrackColor: ColorToken = .clearColor,
+        scrollBarThumbColor: ColorToken = .clearColor,
         startContentColor: ColorToken = .clearColor,
         startContentColorReadOnly: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
@@ -123,6 +127,8 @@ public struct TextAreaAppearance {
         self.requiredIndicatorColor = requiredIndicatorColor
         self.startContentColor = startContentColor
         self.startContentColorReadOnly = startContentColorReadOnly
+        self.scrollBarThumbColor = scrollBarThumbColor
+        self.scrollBarTrackColor = scrollBarTrackColor
         self.textColor = textColor
         self.textColorFocused = textColorFocused
         self.textColorReadOnly = textColorReadOnly
@@ -164,6 +170,8 @@ extension TextAreaAppearance: Hashable {
             lhs.requiredIndicatorColor == rhs.requiredIndicatorColor &&
             lhs.startContentColor == rhs.startContentColor &&
             lhs.startContentColorReadOnly == rhs.startContentColorReadOnly &&
+            lhs.scrollBarThumbColor == rhs.scrollBarThumbColor &&
+            lhs.scrollBarTrackColor == rhs.scrollBarTrackColor &&
             lhs.textColor == rhs.textColor &&
             lhs.textColorFocused == rhs.textColorFocused &&
             lhs.textColorReadOnly == rhs.textColorReadOnly &&
@@ -201,6 +209,8 @@ extension TextAreaAppearance: Hashable {
         hasher.combine(requiredIndicatorColor)
         hasher.combine(startContentColor)
         hasher.combine(startContentColorReadOnly)
+        hasher.combine(scrollBarThumbColor)
+        hasher.combine(scrollBarTrackColor)
         hasher.combine(textColor)
         hasher.combine(textColorFocused)
         hasher.combine(textColorReadOnly)

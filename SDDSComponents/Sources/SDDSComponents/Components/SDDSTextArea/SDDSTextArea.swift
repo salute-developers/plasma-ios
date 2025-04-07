@@ -2,6 +2,11 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
+public enum TextAreaHeightMode {
+    case fixed(CGFloat)
+    case dynamic
+}
+
 // MARK: - SDDSTextArea
 
 /**
@@ -41,8 +46,9 @@ public struct SDDSTextArea: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
+    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
     public let dynamicHeight: Bool
-    private let _appearance: TextAreaAppearance?
+    public let heightMode: TextAreaHeightMode
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
@@ -50,10 +56,14 @@ public struct SDDSTextArea: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.textAreaAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
+    @State private var isScrolling: Bool = false
     @State private var textHeight: CGFloat = 0.0
     @State private var chipGroupContentHeight: CGFloat = 0
+    private let _appearance: TextAreaAppearance?
+
     private let debugConfiguration: TextFieldDebugConfiguration
 
+    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -66,6 +76,7 @@ public struct SDDSTextArea: View {
         required: Bool = false,
         divider: Bool = true,
         dynamicHeight: Bool = false,
+        heightMode: TextAreaHeightMode = .dynamic,
         appearance: TextAreaAppearance? = nil,
         layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
@@ -87,7 +98,60 @@ public struct SDDSTextArea: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self.dynamicHeight = dynamicHeight
+        self.heightMode = heightMode
+        switch heightMode {
+        case .dynamic:
+            self.dynamicHeight = true
+        case .fixed:
+            self.dynamicHeight = false
+        }
+        self._appearance = appearance
+        self.layout = layout
+        self.accessibility = accessibility
+        self.iconActionViewProvider = iconActionViewProvider
+        self.debugConfiguration = TextFieldDebugConfiguration()
+    }
+    
+    public init(
+        value: Binding<TextAreaValue>,
+        title: String = "",
+        optionalTitle: String = "",
+        placeholder: String = "",
+        caption: String = "",
+        counter: String = "",
+        disabled: Bool = false,
+        readOnly: Bool = false,
+        required: Bool = false,
+        divider: Bool = true,
+        heightMode: TextAreaHeightMode = .dynamic,
+        appearance: TextAreaAppearance? = nil,
+        layout: TextAreaLayout,
+        accessibility: TextAreaAccessibility = TextAreaAccessibility(),
+        iconActionViewProvider: ViewProvider? = nil
+    ) {
+        switch value.wrappedValue {
+        case .single(let text):
+            _text = State(wrappedValue: text)
+        case .multiple(let text, _):
+            _text = State(wrappedValue: text)
+        }
+        _value = value
+    
+        self.caption = caption
+        self.counter = counter
+        self.disabled = disabled
+        self.readOnly = readOnly
+        self.divider = divider
+        self.title = title
+        self.optionalTitle = optionalTitle
+        self.placeholder = placeholder
+        self.heightMode = heightMode
+        switch heightMode {
+        case .dynamic:
+            self.dynamicHeight = true
+        case .fixed:
+            self.dynamicHeight = false
+        }
         self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
@@ -215,10 +279,14 @@ public struct SDDSTextArea: View {
                         .padding(.bottom, size.boxPaddingBottom)
                     
                 } else {
-                    textEditor(id: textAreaOuterTitleId)
-                        .padding(.top, size.boxPaddingTop)
-                        .padding(.bottom, size.boxPaddingBottom)
-                    
+                    ScrollView(showsIndicators: false) {
+                        textEditor(id: textAreaOuterTitleId)
+                            .frame(height: textHeight)
+                            .padding(.top, size.boxPaddingTop)
+                            .padding(.bottom, size.boxPaddingBottom)
+                    }
+                    .scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
+
                     iconActionView
                         .opacity(0)
                         .padding(.leading, size.endContentPadding)
@@ -232,29 +300,30 @@ public struct SDDSTextArea: View {
                 chipData.appearance = self.appearance.chipAppearance
                 return chipData
             }
-            VStack(alignment: .leading, spacing: 0) {
-                ZStack(alignment: .topTrailing) {
-                    ScrollView {
+            ZStack(alignment: .topTrailing) {
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 0) {
                         SDDSChipGroup(
                             data: updatedChips,
                             appearance: appearance.chipGroupAppearance,
                             height: $chipGroupContentHeight
                         )
+                        .frame(height: calculatedChipGroupHeight)
                         .padding(.trailing, iconActionTrailingPadding)
+                        
+                        textEditor(id: textAreaMultipleId)
+                            .frame(height: textHeight)
+                            .padding(.leading, boxLeadingPadding)
                     }
-                    .frame(height: calculatedChipGroupHeight)
-                    .padding(.bottom, size.boxPaddingTop)
-                    .padding(.top, size.boxPaddingBottom)
-                    
-                    iconActionView
-                        .opacity(0)
-                        .padding(.top, size.boxPaddingTop)
-                        .padding(.trailing, layout == .clear ? 0 : boxTrailingPadding)
                 }
+                .scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
+                .padding(.bottom, size.boxPaddingTop)
+                .padding(.top, size.boxPaddingBottom)
                 
-                textEditor(id: textAreaMultipleId)
-                    .padding(.leading, boxLeadingPadding)
-                    .padding(.bottom, size.boxPaddingBottom)
+                iconActionView
+                    .opacity(0)
+                    .padding(.top, size.boxPaddingTop)
+                    .padding(.trailing, layout == .clear ? 0 : boxTrailingPadding)
             }
         }
     }
@@ -265,13 +334,14 @@ public struct SDDSTextArea: View {
             text: $text,
             textHeight: $textHeight,
             isFocused: $isFocused,
+            isScrolling: $isScrolling,
             readOnly: readOnly,
             placeholderContent: { placeholderView },
             textTypography: textTypography,
             appearance: appearance, 
-            showsVerticalScrollIndicator: layout == .default,
+            showsVerticalScrollIndicator: false,
             trailingContentPadding: trailingContentPadding,
-            dynamicHeight: dynamicHeight,
+            dynamicHeight: true,
             textColor: textColor,
             colorScheme: colorScheme,
             onChange: { newText in
@@ -460,9 +530,15 @@ public struct SDDSTextArea: View {
     
     private var totalTextHeight: CGFloat {
         var result = CGFloat(0)
-        result += textHeight
         
-        if displayChips {
+        switch heightMode {
+        case .fixed(let value):
+            result += value
+        case .dynamic:
+            result += textHeight
+        }
+        
+        if displayChips && dynamicHeight {
             result += calculatedChipGroupHeight
         } else {
             result += size.boxPaddingTop
@@ -802,9 +878,18 @@ public struct SDDSTextArea: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: TextAreaAppearance {
+    private var appearance: TextAreaAppearance {
         _appearance ?? environmentAppearance
     }
-
+    
+    private var scrollBarData: ScrollBarData {
+        .init(
+            scrollBarThickness: appearance.size.scrollBarThickness,
+            scrollBarPaddingTop: appearance.size.scrollBarPaddingTop,
+            scrollBarPaddingBottom: appearance.size.scrollBarPaddingBottom,
+            scrollBarPaddingEnd: appearance.size.scrollBarPaddingEnd,
+            scrollBarTrackColor: appearance.scrollBarTrackColor,
+            scrollBarThumbColor: appearance.scrollBarThumbColor
+        )
+    }
 }
