@@ -5,23 +5,25 @@ struct ColorState: Codable {
         case activated
         case pressed
         case hovered
+        case checked
+        case focused
     }
     
-    enum Checked: String, Codable {
-        case checked
-    }
+//    enum Checked: String, Codable {
+//        case checked
+//    }
     
     let state: [State]?
-    let checkedState: [Checked]?
+//    let checkedState: [Checked]?
     let value: String?
     
     init(
         state: [State]? = nil,
-        checkedState: [Checked]? = nil,
+//        checkedState: [Checked]? = nil,
         value: String? = nil
     ) {
         self.state = state
-        self.checkedState = checkedState
+//        self.checkedState = checkedState
         self.value = value
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 @_exported import SDDSThemeCore
 
-public struct SelectionControColor {
+public struct SelectionControlColor {
     public let defaultColor: ColorToken
     public let checkedColor: ColorToken
     
