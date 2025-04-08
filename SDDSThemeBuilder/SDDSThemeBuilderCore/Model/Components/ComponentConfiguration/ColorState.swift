@@ -11,12 +11,4 @@ struct ColorState: Codable {
     
     let state: [State]?
     let value: String?
-    
-    init(
-        state: [State]? = nil,
-        value: String? = nil
-    ) {
-        self.state = state
-        self.value = value
-    }
 }
