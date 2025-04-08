@@ -145,6 +145,17 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.RadioboxGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.RadioboxGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.RadioboxGroup.all
+        }
+    }
+    
     var chipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:

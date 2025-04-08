@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct RadioboxTypography: GeneralTypographyConfiguration {
+struct RadioboxGroupTypography: GeneralTypographyConfiguration {
     var m: TypographyToken?
     var s: TypographyToken?
     
@@ -20,14 +20,14 @@ struct RadioboxTypography: GeneralTypographyConfiguration {
         self.s = oneSize
     }
     
-    func typography(with size: SelectionControlSizeConfiguration) -> TypographyToken? {
-        if size is RadioboxAnySize {
+    func typography(with size: RadioboxGroupSizeConfiguration) -> TypographyToken? {
+        if size is RadioboxGroupAnySize {
             return m
         }
-        if size is RadioboxSizeM {
+        if size is RadioboxGroupSizeM {
             return m
         }
-        if size is RadioboxSizeS {
+        if size is RadioboxGroupSizeS {
             return s
         }
         return nil

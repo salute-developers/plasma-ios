@@ -18,7 +18,7 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
             )
         }
         
-        return SDDSRadioboxGroup(radioboxData: radioboxData, size: SDDSRadioboxGroupSize.medium)
+        return SDDSRadioboxGroup(radioboxData: radioboxData, appearance: RadioboxGroup.m.appearance)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("SDDSRadioboxGroup Preview")
     }

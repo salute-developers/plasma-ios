@@ -3,9 +3,8 @@ import Combine
 import SDDSComponents
 import SDDSServTheme
 
-final class RadioboxGroupViewModel: ObservableObject {
+final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationProvider> {
     @Published var radioboxViewModels: [RadioboxItemViewModel]
-    @Published var size: SDDSRadioboxGroupSize = .medium
 
     var radioboxData: [RadioboxData] {
         radioboxViewModels.map { $0.toRadioboxData(with: size.radioboxSize) }
@@ -22,19 +21,6 @@ final class RadioboxGroupViewModel: ObservableObject {
         }
     }
 }
-         
- extension SDDSRadioboxGroupSize {
-     var radioboxSize: SDDSRadioboxSize {
-         switch self {
-         case .large:
-             return .large
-         case .medium:
-             return .medium
-         case .small:
-             return .small
-         }
-     }
-}
 
 struct RadioboxItemViewModel {
     var title: String
@@ -43,7 +29,7 @@ struct RadioboxItemViewModel {
     var isEnabled: Bool
 
     func toRadioboxData(with size: SDDSRadioboxSize) -> RadioboxData {
-        var appearance = Radiobox.m.default.appearance
+        var appearance = Radiobox.m.appearance
         appearance.size = size
         return RadioboxData(
             title: title,

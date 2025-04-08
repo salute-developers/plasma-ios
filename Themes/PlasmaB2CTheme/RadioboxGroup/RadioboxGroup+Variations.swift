@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 
-public extension ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
+public extension ComponentAppearanceVariation<RadioboxGroup, RadioboxGroupAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -16,6 +16,6 @@ public extension ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
     }
 }
 
-private extension RadioboxAppearance {
+private extension RadioboxGroupAppearance {
     
 }

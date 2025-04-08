@@ -14,7 +14,7 @@ struct RadioboxGroupView: View {
             Section {
                 SDDSRadioboxGroup(
                     radioboxData: viewModel.radioboxData,
-                    size: viewModel.size
+                    appearance: viewModel.appearance
                 )
             }
 

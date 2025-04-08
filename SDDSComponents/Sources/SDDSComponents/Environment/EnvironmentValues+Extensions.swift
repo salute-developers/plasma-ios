@@ -47,6 +47,11 @@ public extension EnvironmentValues {
         set { self[RadioboxAppearance.self] = newValue }
     }
     
+    var radioboxGroupAppearance: RadioboxGroupAppearance {
+        get { self[RadioboxGroupAppearance.self] }
+        set { self[RadioboxGroupAppearance.self] = newValue }
+    }
+    
     var badgeAppearance: BadgeAppearance {
         get { self[BadgeAppearance.self] }
         set { self[BadgeAppearance.self] = newValue }
