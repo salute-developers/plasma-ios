@@ -34,8 +34,11 @@ extension Checkbox {
                     titleColor: .backgroundInversePrimary,
                     subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
                     disabledAlpha: 0.4,
-                    color: .surfaceDefaultAccent,
-                    borderColor: .outlineDefaultTransparentTertiary,
+                    toggleColor: SelectionControlColor(
+                        defaultColor: .surfaceDefaultClear,
+                        checkedColor: .surfaceDefaultAccent
+                    ),
+                    toggleBorderColor: .outlineDefaultTransparentTertiary,
                     checkedIconColor: .textOnDarkPrimary,
                     toggleIndeterminateIconColor: .textOnDarkPrimary
                 )
