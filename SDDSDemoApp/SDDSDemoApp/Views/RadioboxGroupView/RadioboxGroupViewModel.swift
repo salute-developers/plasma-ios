@@ -7,7 +7,7 @@ final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationPro
     @Published var radioboxViewModels: [RadioboxItemViewModel]
 
     var radioboxData: [RadioboxData] {
-        radioboxViewModels.map { $0.toRadioboxData(with: size.radioboxSize) }
+        radioboxViewModels.map { $0.toRadioboxData(with: appearance.radioboxAppearance) }
     }
 
     init() {
@@ -19,6 +19,7 @@ final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationPro
                 isEnabled: true
             )
         }
+        super.init(variationProvider: RadioboxGroupVariationProvider())
     }
 }
 
@@ -28,9 +29,7 @@ struct RadioboxItemViewModel {
     var isSelected: Bool
     var isEnabled: Bool
 
-    func toRadioboxData(with size: SDDSRadioboxSize) -> RadioboxData {
-        var appearance = Radiobox.m.appearance
-        appearance.size = size
+    func toRadioboxData(with appearance: RadioboxAppearance) -> RadioboxData {
         return RadioboxData(
             title: title,
             subtitle: subtitle,
