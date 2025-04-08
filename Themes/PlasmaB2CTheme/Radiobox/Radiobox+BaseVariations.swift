@@ -56,6 +56,7 @@ private extension RadioboxAppearance {
     static var base: RadioboxAppearance {
         var appearance = RadioboxAppearance()
         appearance.checkedIconColor = ColorToken.surfaceOnDarkSolidDefault
+        appearance.disabledAlpha = CGFloat(0.4)
         appearance.subtitleColor = ColorToken.textDefaultSecondary
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.toggleBorderColor = ColorToken.outlineDefaultTransparentTertiary

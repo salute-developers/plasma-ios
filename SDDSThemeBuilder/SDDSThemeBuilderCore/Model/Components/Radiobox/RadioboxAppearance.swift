@@ -12,6 +12,7 @@ struct RadioboxAppearance: CodeGenerationAppearance {
     var subtitleColor: String? = nil
     var checkedIconColor: String? = nil
     var toggleIndeterminateIconColor: String? = nil
+    var disabledAlpha: String? = nil
     
     init(variation: RadioboxConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -33,5 +34,6 @@ struct RadioboxAppearance: CodeGenerationAppearance {
         self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
         self.checkedIconColor = ColorTokenContextBuilder(props.toggleIconColor).context
         self.toggleIndeterminateIconColor = ColorTokenContextBuilder(props.toggleIndeterminateIconColor).context
+        self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
     }
 }

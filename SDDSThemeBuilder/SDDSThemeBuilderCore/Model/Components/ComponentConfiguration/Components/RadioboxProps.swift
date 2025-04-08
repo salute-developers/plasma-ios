@@ -13,6 +13,7 @@ struct RadioboxProps: MergeableConfiguration, Codable {
     var descriptionPadding: KeyValue<Double>?
     var toggleIndeterminateWidth: KeyValue<Double>?
     var toggleIndeterminateHeight: KeyValue<Double>?
+    var disableAlpha: KeyValue<Double>?
     var labelStyle: KeyValue<String>?
     var descriptionStyle: KeyValue<String>?
     var shape: ShapeKeyValue?
