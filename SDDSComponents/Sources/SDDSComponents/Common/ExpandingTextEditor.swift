@@ -5,6 +5,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     @Binding var text: String
     @Binding var textHeight: CGFloat
     @Binding var isFocused: Bool
+    @Binding var isScrolling: Bool
     let readOnly: Bool
     let typographyToken: TypographyToken
     let accentColor: Color
@@ -18,6 +19,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     init(text: Binding<String>,
          textHeight: Binding<CGFloat>,
          isFocused: Binding<Bool>,
+         isScrolling: Binding<Bool>,
          readOnly: Bool,
          typographyToken: TypographyToken,
          accentColor: Color = .blue,
@@ -32,6 +34,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         _text = text
         _textHeight = textHeight
         _isFocused = isFocused
+        _isScrolling = isScrolling
         self.readOnly = readOnly
         self.typographyToken = typographyToken
         self.accentColor = accentColor
@@ -47,7 +50,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         let containerView = UIView()
         containerView.backgroundColor = .clear
         
-        let textView = UITextView()
+        let textView = ObservableUITextView()
         textView.delegate = context.coordinator
         textView.isScrollEnabled = !dynamicHeight
         textView.backgroundColor = .clear
@@ -56,6 +59,9 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.textContainer.maximumNumberOfLines = 0
         textView.autocorrectionType = .no
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.onContentSizeChanged = {
+            context.coordinator.contentSizeChanged(textView)
+        }
         updateTextViewProperties(textView: textView)
         
         containerView.addSubview(textView)
@@ -146,6 +152,25 @@ struct ExpandingTextEditor: UIViewRepresentable {
         
         func textViewDidEndEditing(_ textView: UITextView) {
             parent.isFocused = false
+        }
+        
+        func contentSizeChanged(_ textView: UITextView) {
+            parent.isScrolling = true
+            DispatchQueue.main.async {
+                self.parent.isScrolling = false
+            }
+        }
+    }
+}
+
+private class ObservableUITextView: UITextView {
+    var onContentSizeChanged: (() -> Void)?
+    
+    override var contentSize: CGSize {
+        didSet {
+            if contentSize != oldValue {
+                onContentSizeChanged?()
+            }
         }
     }
 }

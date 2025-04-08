@@ -41,7 +41,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .cell,     
             .counter,
             .card,
-            .cardClear
+            .cardClear,
+            .embeddedChip,
+            .chip
         ]
     }
 }

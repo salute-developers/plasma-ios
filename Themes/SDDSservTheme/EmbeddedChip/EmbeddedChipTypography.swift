@@ -32,9 +32,6 @@ struct EmbeddedChipTypography: GeneralTypographyConfiguration {
         if size is EmbeddedChipAnySize {
             return l
         }
-        if size is EmbeddedChipSizeXl {
-            return l
-        }
         if size is EmbeddedChipSizeL {
             return l
         }
