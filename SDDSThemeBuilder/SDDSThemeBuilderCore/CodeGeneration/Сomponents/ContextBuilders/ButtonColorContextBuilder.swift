@@ -5,7 +5,7 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
     let highlightedColor: ColorState?
     let hoveredColor: ColorState?
     
-    init(defaultColor: ColorKeyValue?, highlightedColor: ColorState?, hoveredColor: ColorState?) {
+    init(defaultColor: ColorKeyValue?, highlightedColor: ColorState?, hoveredColor: ColorState? = nil) {
         self.defaultColor = defaultColor
         self.highlightedColor = highlightedColor
         self.hoveredColor = hoveredColor
@@ -15,10 +15,15 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
         if defaultColor == nil, highlightedColor == nil, hoveredColor == nil {
             return nil
         }
-        
+         
         let defaultColorToken = ColorTokenContextBuilder(defaultColor, hasDefault: true).context ?? ""
         let highlightedColorToken = ColorTokenContextBuilder(highlightedColor, hasDefault: true).context ?? ""
         let hoveredColorToken = ColorTokenContextBuilder(hoveredColor, hasDefault: true).context ?? ""
+        
+        if hoveredColor == nil {
+            return "ButtonColor(defaultColor: \(defaultColorToken), highlightedColor: \(highlightedColorToken)"
+        }
+        
         return """
         ButtonColor(defaultColor: \(defaultColorToken), highlightedColor: \(highlightedColorToken), hoveredColor: \(hoveredColorToken))
         """

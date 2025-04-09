@@ -25,9 +25,9 @@ struct RadioboxAppearance: CodeGenerationAppearance {
         
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
-        self.toggleColor = SelectionControContextBuilder(
+        self.toggleColor = ButtonColorContextBuilder(
             defaultColor: props.toggleColor,
-            checkedColor: props.toggleColor?.value(for: [.checked])
+            highlightedColor: props.toggleColor?.value(for: [.checked])
         ).context
         self.toggleBorderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
         self.titleColor = ColorTokenContextBuilder(props.labelColor).context

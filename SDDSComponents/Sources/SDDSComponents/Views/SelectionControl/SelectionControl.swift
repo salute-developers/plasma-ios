@@ -30,7 +30,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 }
             }
             HStack(spacing: appearance.size.horizontalGap) {
-                Spacer().frame(width: appearance.size.toggleWidth)
+                Spacer().frame(width: appearance.size.width)
                 
                 if !title.isEmpty {
                     subtitleText
@@ -106,7 +106,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             }
         }
         .padding(appearance.size.togglePaddings)
-        .frame(width: appearance.size.toggleWidth, height: appearance.size.toggleHeight)
+        .frame(width: appearance.size.width, height: appearance.size.height)
         .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
     }
     
@@ -116,7 +116,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .selected:
             fillView
             icon(
-                icon: appearance.size.pathDrawer,
+                icon: appearance.size.togglePathDrawer,
                 iconColor: appearance.checkedIconColor,
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
@@ -126,7 +126,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .indeterminate:
             fillView
             icon(
-                icon: appearance.size.pathDrawer,
+                icon: appearance.size.togglePathDrawer,
                 iconColor: appearance.toggleIndeterminateIconColor,
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
@@ -146,7 +146,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var borderView: some View {
-        appearance.size.pathDrawer
+        appearance.size.togglePathDrawer
             .path(
                 in: CGRect(
                     x: rectLocation,
@@ -158,13 +158,13 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var fillView: some View {
-        appearance.size.pathDrawer
+        appearance.size.togglePathDrawer
             .path(
                 in: CGRect(
                     x: 0,
                     y: 0,
-                    width: appearance.size.toggleWidth - paddings,
-                    height: appearance.size.toggleHeight - paddings)
+                    width: appearance.size.width - paddings,
+                    height: appearance.size.height - paddings)
             )
             .fill(currentColorForToggleFill(for: appearance.toggleColor))
     }
@@ -192,11 +192,11 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var toggleWidth: CGFloat {
-        appearance.size.toggleWidth - paddings - appearance.size.lineWidth
+        appearance.size.width - paddings - appearance.size.lineWidth
     }
     
     private var toggleHeight: CGFloat {
-        appearance.size.toggleHeight - paddings - appearance.size.lineWidth
+        appearance.size.height - paddings - appearance.size.lineWidth
     }
     
     private var rectLocation: CGFloat {

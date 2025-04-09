@@ -19,14 +19,15 @@ public protocol RadioboxGroupSizeConfiguration: SizeConfiguration, CustomDebugSt
  */
 public struct SDDSRadioboxGroup: View {
     let radioboxData: [RadioboxData]
-    let appearance: RadioboxGroupAppearance
+    private var _appearance: RadioboxGroupAppearance?
+    @Environment(\.radioboxGroupAppearance) private var environmentAppearance
 
     public init(
         radioboxData: [RadioboxData],
-        appearance: RadioboxGroupAppearance
+        appearance: RadioboxGroupAppearance? = nil
     ) {
         self.radioboxData = radioboxData
-        self.appearance = appearance
+        self._appearance = appearance
     }
 
     public var body: some View {
@@ -43,5 +44,10 @@ public struct SDDSRadioboxGroup: View {
                 )
             }
         }
+    }
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    public var appearance: RadioboxGroupAppearance {
+        _appearance ?? environmentAppearance
     }
 }
