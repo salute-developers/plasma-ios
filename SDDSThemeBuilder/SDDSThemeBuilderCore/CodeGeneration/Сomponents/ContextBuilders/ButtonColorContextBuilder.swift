@@ -5,7 +5,7 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
     let highlightedColor: ColorState?
     let hoveredColor: ColorState?
     
-    init(defaultColor: ColorKeyValue?, highlightedColor: ColorState?, hoveredColor: ColorState? = nil) {
+    init(defaultColor: ColorKeyValue?, highlightedColor: ColorState? = nil, hoveredColor: ColorState? = nil) {
         self.defaultColor = defaultColor
         self.highlightedColor = highlightedColor
         self.hoveredColor = hoveredColor
@@ -15,17 +15,26 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
         if defaultColor == nil, highlightedColor == nil, hoveredColor == nil {
             return nil
         }
-         
-        let defaultColorToken = ColorTokenContextBuilder(defaultColor, hasDefault: true).context ?? ""
-        let highlightedColorToken = ColorTokenContextBuilder(highlightedColor, hasDefault: true).context ?? ""
-        let hoveredColorToken = ColorTokenContextBuilder(hoveredColor, hasDefault: true).context ?? ""
         
-        if hoveredColor == nil {
-            return "ButtonColor(defaultColor: \(defaultColorToken), highlightedColor: \(highlightedColorToken)"
+        let allStates: [(String, ColorState?)] = [
+            ("highlightedColor", highlightedColor),
+           ( "hoveredColor", hoveredColor)
+        ]
+        
+        let buttonColorString = """
+        ButtonColor(defaultColor: \(ColorTokenContextBuilder(defaultColor, hasDefault: true).context ?? "")
+        """
+        
+        let colorStatesString = allStates.compactMap { (stateColorString, stateColor) -> String? in
+            guard stateColor != nil else {
+                return nil
+            }
+            let colorToken = ColorTokenContextBuilder(stateColor, hasDefault: true).context ?? ""
+            return ", \(stateColorString): \(colorToken)"
         }
         
-        return """
-        ButtonColor(defaultColor: \(defaultColorToken), highlightedColor: \(highlightedColorToken), hoveredColor: \(hoveredColorToken))
-        """
+        let combinedColorStatesString = colorStatesString.joined()
+        
+        return buttonColorString + combinedColorStatesString + ")"
     }
 }
