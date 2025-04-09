@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F72D3EB92C00CED628 /* SDDSSegment.swift */; };
 		690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */; };
+		690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690D464F2DA6B94F00693950 /* SelectionControlType.swift */; };
 		6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD932D4A6CF800A77774 /* SegmentItemAppearance.swift */; };
 		6919BD9C2D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD942D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift */; };
 		6919BD9D2D4A6CF800A77774 /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919BD982D4A6CF800A77774 /* SegmentItemSize.swift */; };
@@ -230,6 +231,7 @@
 /* Begin PBXFileReference section */
 		690780F72D3EB92C00CED628 /* SDDSSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegment.swift; sourceTree = "<group>"; };
 		690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemData.swift; sourceTree = "<group>"; };
+		690D464F2DA6B94F00693950 /* SelectionControlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlType.swift; sourceTree = "<group>"; };
 		6919BD922D4A6CF800A77774 /* SegmentItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAccessibility.swift; sourceTree = "<group>"; };
 		6919BD932D4A6CF800A77774 /* SegmentItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearance.swift; sourceTree = "<group>"; };
 		6919BD942D4A6CF800A77774 /* SegmentItemAppearance+ButtonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItemAppearance+ButtonAppearance.swift"; sourceTree = "<group>"; };
@@ -711,6 +713,7 @@
 		811DE16E2C578325000DD354 /* SelectionControl */ = {
 			isa = PBXGroup;
 			children = (
+				690D464F2DA6B94F00693950 /* SelectionControlType.swift */,
 				694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */,
 				694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */,
 				69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */,
@@ -1686,6 +1689,7 @@
 				81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */,
 				812DB7602D57B49F00D3F4A3 /* ChipGroupAppearance.swift in Sources */,
 				690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */,
+				690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
 				81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */,

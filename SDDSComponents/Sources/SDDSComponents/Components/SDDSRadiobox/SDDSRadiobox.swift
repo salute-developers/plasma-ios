@@ -49,6 +49,7 @@ public struct SDDSRadiobox: View {
                     self.isSelected = value.isSelected
                 }
             ),
+            type: .radiobox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
