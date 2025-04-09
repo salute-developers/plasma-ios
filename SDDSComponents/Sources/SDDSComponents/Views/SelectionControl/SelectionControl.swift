@@ -203,13 +203,11 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         appearance.size.lineWidth / 2
     }
     
-    private func currentColorForToggleFill(for selectionControlColor: SelectionControlColor) -> Color {
-        if state == .selected {
-            return selectionControlColor.checkedColor.color(for: colorScheme)
-        } else if state == .indeterminate {
-            return selectionControlColor.checkedColor.color(for: colorScheme)
+    private func currentColorForToggleFill(for buttonColor: ButtonColor) -> Color {
+        if state == .deselected {
+            return buttonColor.defaultColor.color(for: colorScheme)
         } else {
-            return selectionControlColor.defaultColor.color(for: colorScheme)
+            return buttonColor.highlightedColor.color(for: colorScheme)
         }
     }
 }

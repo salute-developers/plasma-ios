@@ -60,7 +60,7 @@ private extension RadioboxAppearance {
         appearance.subtitleColor = ColorToken.textDefaultSecondary
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.toggleBorderColor = ColorToken.outlineDefaultTransparentTertiary
-        appearance.toggleColor = SelectionControlColor(defaultColor: ColorToken.surfaceDefaultClear, checkedColor: ColorToken.surfaceDefaultAccent)
+        appearance.toggleColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultAccent)
         return appearance
     }
 }

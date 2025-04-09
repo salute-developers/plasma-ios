@@ -10,7 +10,7 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var titleColor: ColorToken
     public var subtitleColor: ColorToken
     public var disabledAlpha: CGFloat
-    public var toggleColor: SelectionControlColor
+    public var toggleColor: ButtonColor
     public var toggleBorderColor: ColorToken
     public var checkedIcon: PathDrawer?
     public var checkedIconColor: ColorToken
@@ -25,7 +25,7 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
         titleColor: ColorToken = .clearColor,
         subtitleColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
-        toggleColor: SelectionControlColor = SelectionControlColor(),
+        toggleColor: ButtonColor = ButtonColor(),
         toggleBorderColor: ColorToken = .clearColor,
         checkedIcon: PathDrawer? = nil,
         checkedIconColor: ColorToken = .clearColor,
