@@ -82,9 +82,9 @@ public struct SDDSSegmentItem: View {
         .init(
             size: buttonSize,
             shapeStyle: appearance.shapeStyle,
-            titleTypography: appearance.titleTypography,
+            titleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.titleTypography.typography(with: appearance.size)).asContainer,
             titleColor: appearance.titleColor,
-            subtitleTypography: appearance.subtitleTypography,
+            subtitleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.subtitleTypography.typography(with: appearance.size)).asContainer,
             subtitleColor: appearance.subtitleColor,
             iconColor: iconAttributes?.alignment == .leading ? appearance.startContentColor : appearance.endContentColor,
             backgroundColor: appearance.backgroundColor

@@ -16,7 +16,7 @@ extension EnvironmentValueProvider {
         self.set(value: Indicator.m.default.appearance, forKey: IndicatorAppearance.self)
         self.set(value: ProgressBar.default.appearance, forKey: ProgressBarAppearance.self)
         self.set(value: Radiobox.m.default.appearance, forKey: RadioboxAppearance.self)
-        self.set(value: Segment.m.default.appearance, forKey: SegmentAppearance.self)
+        self.set(value: Segment.m.primary.appearance, forKey: SegmentAppearance.self)
         self.set(value: SegmentItem.m.primary.appearance, forKey: SegmentItemAppearance.self)
         self.set(value: Switch.m.default.appearance, forKey: SwitchAppearance.self)
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)

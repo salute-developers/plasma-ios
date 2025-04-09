@@ -9,6 +9,7 @@ enum Component: String {
     case `switch` = "switch"
     case iconButton = "icon-button"
     case counter = "counter"
+    case segmentItem = "segment-item"
     
     var componentName: String {
         switch self {
@@ -28,6 +29,8 @@ enum Component: String {
             return "IconButton"
         case .counter:
             return "Counter"
+        case .segmentItem:
+            return "SegmentItem"
         }
     }
 }

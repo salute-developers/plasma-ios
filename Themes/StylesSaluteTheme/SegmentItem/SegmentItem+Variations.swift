@@ -44,6 +44,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.M> {
@@ -86,6 +87,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.S> {
@@ -128,6 +130,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xs> {
@@ -170,6 +173,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {

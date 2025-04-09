@@ -26,7 +26,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var accent: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.l.pilled.accent.appearance
         
         return .init(
             name: "accent",
@@ -36,7 +36,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.l.pilled.primary.appearance
         
         return .init(
             name: "primary",
@@ -46,7 +46,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var secondary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.l.pilled.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -57,44 +57,15 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var accent: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var primary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "primary",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
+    
 }
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.M> {
@@ -119,7 +90,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var accent: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.m.pilled.accent.appearance
         
         return .init(
             name: "accent",
@@ -129,7 +100,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.m.pilled.primary.appearance
         
         return .init(
             name: "primary",
@@ -139,7 +110,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var secondary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.m.pilled.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -150,44 +121,15 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var accent: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var primary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "primary",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
+    
 }
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.S> {
@@ -212,7 +154,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var accent: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.s.pilled.accent.appearance
         
         return .init(
             name: "accent",
@@ -222,7 +164,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.s.pilled.primary.appearance
         
         return .init(
             name: "primary",
@@ -232,7 +174,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var secondary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.s.pilled.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -243,44 +185,15 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var accent: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var primary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "primary",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
+    
 }
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xl> {
@@ -305,7 +218,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var accent: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xl.pilled.accent.appearance
         
         return .init(
             name: "accent",
@@ -315,7 +228,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xl.pilled.primary.appearance
         
         return .init(
             name: "primary",
@@ -325,7 +238,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var secondary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xl.pilled.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -336,44 +249,15 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var accent: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var primary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "primary",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
+    
 }
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xs> {
@@ -398,7 +282,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var accent: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xs.pilled.accent.appearance
         
         return .init(
             name: "accent",
@@ -408,7 +292,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xs.pilled.primary.appearance
         
         return .init(
             name: "primary",
@@ -418,7 +302,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     var secondary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
         appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
+        appearance.segmentItemAppearance = SegmentItem.xs.pilled.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -429,44 +313,15 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
         .init(
             originalVariation: self,
             styles: [
+                self.accent,
+                self.primary,
+                self.secondary,
             ],
             name: name,
             appearance: appearance
         )
     }
-}
-
-public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
-    var accent: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var primary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "primary",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<SegmentAppearance> {
-        var appearance = appearance
-        appearance.disabledAlpha = CGFloat(0)
-        appearance.segmentItemAppearance = 
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
+    
 }
 
 public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {

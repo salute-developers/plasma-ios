@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-
 import SDDSServTheme
 
 public struct SegmentItemView: View {

@@ -41,6 +41,6 @@ struct CounterAppearance: CodeGenerationAppearance {
         if let backgroundColor = self.backgroundColor {
             result += ["backgroundColor: \(backgroundColor)"]
         }
-        return ".init(\(result.joined(separator: ","))"
+        return ".init(\(result.joined(separator: ",")))"
     }
 }

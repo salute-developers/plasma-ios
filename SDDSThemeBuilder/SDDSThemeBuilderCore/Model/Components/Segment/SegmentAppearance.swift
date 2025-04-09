@@ -24,6 +24,7 @@ struct SegmentAppearance: CodeGenerationAppearance {
             highlightedColor: props.backgroundColor?.value(for: [.pressed]),
             hoveredColor: props.backgroundColor?.value(for: [.hovered])
         ).context
+        
         if let segmentItemStyle = props.segmentItemStyle?.value {
             self.segmentItemAppearance = ComponentStyleContextBuilder(segmentItemStyle).context
         }

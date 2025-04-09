@@ -51,6 +51,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.M> {
@@ -100,6 +101,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.S> {
@@ -149,6 +151,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xl> {
@@ -198,6 +201,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xs> {
@@ -247,6 +251,7 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
+    
 }
 
 public extension ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
@@ -287,7 +292,7 @@ private extension SegmentItemAppearance {
     var accent: SegmentItemAppearance {
         var appearance = self
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClearHover)
-        appearance.counterAppearance = Counter.s.accent.appearance.modify(.init(textColor: ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimary, hoveredColor: ColorToken.textOnDarkPrimary),backgroundColor: ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccent, hoveredColor: ColorToken.surfaceDefaultAccent))
+        appearance.counterAppearance = Counter.s.accent.appearance.modify(.init(textColor: ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimary, hoveredColor: ColorToken.textOnDarkPrimary),backgroundColor: ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccent, hoveredColor: ColorToken.surfaceDefaultAccent)))
         appearance.endContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
         appearance.startContentColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimary, hoveredColor: ColorToken.textDefaultPrimaryHover)
         appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondary, hoveredColor: ColorToken.textDefaultSecondaryHover)

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public protocol SegmentItemSizeConfiguration: CustomDebugStringConvertible {
+public protocol SegmentItemSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var height: CGFloat { get }
     var width: CGFloat { get }
     var counterPadding: CGFloat { get }
