@@ -32,6 +32,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case avatar = "Avatar"
     case avatarGroup = "AvatarGroup"
     case progressbar = "Progressbar"
+    case progressBar = "ProgressBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -66,6 +67,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .avatar,
             .avatarGroup,
             .progressbar
+            .progressBar
         ]
     }
     
