@@ -8,3 +8,4 @@ typealias IndicatorConfiguration = ComponentConfiguration<IndicatorProps>
 typealias CellConfiguration = ComponentConfiguration<CellProps>
 typealias CounterConfiguration = ComponentConfiguration<CounterProps>
 typealias CardConfiguration = ComponentConfiguration<CardProps>
+typealias ProgressbarConfiguration = ComponentConfiguration<ProgressbarProps>
