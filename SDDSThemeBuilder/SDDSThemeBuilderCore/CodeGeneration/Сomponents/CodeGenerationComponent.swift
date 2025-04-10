@@ -21,6 +21,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case counter = "Counter"
     case card = "Card"
     case cardClear = "CardClear"
+    case progressBar = "ProgressBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -41,7 +42,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .cell,     
             .counter,
             .card,
-            .cardClear
+            .cardClear,
+            .progressBar
         ]
     }
 }
@@ -67,6 +69,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .card, .cardClear:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .progressBar:
+            GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -90,6 +94,8 @@ extension CodeGenerationComponent {
             "CounterAppearance"
         case .card, .cardClear:
             "CardAppearance"
+        case .progressBar:
+            "ProgressBarAppearance"
         }
     }
     
@@ -114,6 +120,8 @@ extension CodeGenerationComponent {
             "CounterSizeConfiguration"
         case .card, .cardClear:
             "CardSizeConfiguration"
+        case .progressBar:
+            "ProgressBarSizeConfiguration"
         }
     }
     
@@ -159,6 +167,8 @@ extension CodeGenerationComponent {
             "card_solid_config.json"
         case .cardClear:
             "card_clear_config.json"
+        case .progressBar:
+            "progress_bar_config.json"
         }
     }
     

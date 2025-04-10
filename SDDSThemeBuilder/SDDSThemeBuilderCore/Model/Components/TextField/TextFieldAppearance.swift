@@ -82,8 +82,8 @@ struct TextFieldAppearance: CodeGenerationAppearance {
         self.textAfterTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
         self.innerTitleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
-        self.labelPlacement = LabelPlacementContextBuilder(id: id, component: .textField).context
-        self.requiredPlacement = RequiredPlacementContextBuilder(id: id, component: .textField).context
+//        self.labelPlacement = LabelPlacementContextBuilder(id: id, component: .textField).context
+//        self.requiredPlacement = RequiredPlacementContextBuilder(id: id, component: .textField).context
         
         if let chipStyle = props.chipStyle?.value {
             self.chipAppearance = ComponentStyleContextBuilder(chipStyle).context
