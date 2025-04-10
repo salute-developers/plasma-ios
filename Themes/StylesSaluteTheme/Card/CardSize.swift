@@ -4,10 +4,10 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct CardSize {
-    static let Default = CardSizeDefault()
+    static let `default` = CardSizeDefault()
 
     static let all: [CardSizeConfiguration] = [
-        CardSize.Default,
+        CardSize.`default`,
     ] 
 }
 struct CardSizeDefault: CardSizeConfiguration {

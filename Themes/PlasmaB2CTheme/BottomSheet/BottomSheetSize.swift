@@ -4,10 +4,10 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct BottomSheetSize {
-    static let Default = BottomSheetSizeDefault()
+    static let `default` = BottomSheetSizeDefault()
 
     static let all: [BottomSheetSizeConfiguration] = [
-        BottomSheetSize.Default,
+        BottomSheetSize.`default`,
     ] 
 }
 struct BottomSheetSizeDefault: BottomSheetSizeConfiguration {

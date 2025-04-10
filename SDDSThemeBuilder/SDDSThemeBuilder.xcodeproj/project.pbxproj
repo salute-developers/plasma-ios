@@ -34,6 +34,9 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
+		692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692CEBE62DC26685003DFEFA /* ProgressBarAppearance.swift */; };
+		692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692CEBE72DC26685003DFEFA /* ProgressBarSize.swift */; };
+		692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */; };
 		6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */; };
 		6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */; };
 		6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */; };
@@ -492,6 +495,9 @@
 		24CB39172BC96CDE00B32463 /* DecodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeCommand.swift; sourceTree = "<group>"; };
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
+		692CEBE62DC26685003DFEFA /* ProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAppearance.swift; sourceTree = "<group>"; };
+		692CEBE72DC26685003DFEFA /* ProgressBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSize.swift; sourceTree = "<group>"; };
+		692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarProps.swift; sourceTree = "<group>"; };
 		6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProps.swift; sourceTree = "<group>"; };
@@ -1016,6 +1022,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		692CEBE82DC26685003DFEFA /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				692CEBE62DC26685003DFEFA /* ProgressBarAppearance.swift */,
+				692CEBE72DC26685003DFEFA /* ProgressBarSize.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 		6935CEB52D6C8B5400C8A186 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,6 +1164,7 @@
 			isa = PBXGroup;
 			children = (
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
+				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
 				81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */,
 				69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */,
 				69A875962DAF9E470074C1BD /* CheckboxProps.swift */,
@@ -1175,6 +1191,7 @@
 			isa = PBXGroup;
 			children = (
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
+				692CEBE82DC26685003DFEFA /* ProgressBar */,
 				81F635D12DBB8D53003C8C26 /* Avatar */,
 				69A875832DAF9E290074C1BD /* Checkbox */,
 				69A875862DAF9E290074C1BD /* CheckboxGroup */,
@@ -2358,6 +2375,8 @@
 				81CB0FDE2C245046003B1064 /* SchemeTokenNameValidator.swift in Sources */,
 				6941E1C52DC0EB3C0084EA76 /* FillStyleContextBuilder.swift in Sources */,
 				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
+				692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */,
+				692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */,
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
 				812DB7012D55E54400D3F4A3 /* ComponentConfiguration.swift in Sources */,
 				812DB6F82D55E4A800D3F4A3 /* ColorKeyValue.swift in Sources */,
@@ -2440,6 +2459,7 @@
 				817539752BD007D300138866 /* App.swift in Sources */,
 				810AFD422D96DD91000B2A7A /* SegmentItemAppearance.swift in Sources */,
 				812DB7032D562DDE00D3F4A3 /* CodeGenerationAppearance.swift in Sources */,
+				692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */,
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
