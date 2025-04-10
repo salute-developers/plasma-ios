@@ -25,5 +25,6 @@ extension EnvironmentValueProvider {
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
         self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
         self.set(value: Card.m.appearance, forKey: CardAppearance.self)
+        self.set(value: BottomSheet.default.appearance, forKey: BottomSheetAppearance.self)
     }
 }

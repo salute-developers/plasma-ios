@@ -62,7 +62,12 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
     private func baseContext(from configuration: Configuration) -> BaseContext {
         var variations: [String: BaseContext.Variation] = [:]
         
-        let baseKeys = configuration.allBaseKeys
+        var baseKeys = configuration.allBaseKeys
+        
+        if baseKeys.isEmpty {
+            baseKeys.append("default")
+        }
+        
         for key in baseKeys {
             guard let variation = configuration.allProps[key],
                   let appearanceProps = variation.props as? Appearance.Props
@@ -86,7 +91,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         
         let keys = configuration.allProps.keys.sorted()
         let all: [String] = keys.map({ $0.joinedVariationPath }).sorted()
-        let chains: [String] = keys.map({ $0.chain }).sorted()
+        let chains: [String] = configuration.variations.isEmpty ? ["default"] : keys.map({ $0.chain }).sorted()
         let configurationProps = configuration.props as? Appearance.Props
         
         return .init(
@@ -105,6 +110,22 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var views: [String: VariationsContext.View] = [:]
         
         let keys = configuration.allProps.keys.sorted()
+        
+        guard !keys.isEmpty else {
+            return .init(
+                component: component.rawValue,
+                appearance: component.appearance,
+                variations: variations,
+                variationViews: variationViews,
+                views: configuration.view.keys.sorted().reduce(into: [:]) { result, viewKey in
+                    guard let props = configuration.view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
+                        return
+                    }
+                    return result[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
+                }
+            )
+        }
+       
         for parentKey in keys {
             let childKeys = configuration.childKeys(for: parentKey)
             
@@ -227,7 +248,6 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                 
                 views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
             }
-            
         }
         
         return .init(
@@ -267,6 +287,4 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         }
         return nextVariation
     }
-
 }
-

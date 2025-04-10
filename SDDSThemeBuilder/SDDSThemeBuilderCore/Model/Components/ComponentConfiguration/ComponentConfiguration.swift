@@ -10,8 +10,20 @@ struct ComponentConfiguration<Props: MergeableConfiguration>: Codable {
         let parent: String?
         let props: Props
         let view: [String: View]?
+        
+        init(
+            id: String = "default",
+            parent: String? = nil,
+            props: Props,
+            view: [String: View]? = nil
+        ) {
+            self.id = id
+            self.parent = parent
+            self.props = props
+            self.view = view
+        }
     }
-
+    
     let view: [String: View]
     let props: Props?
     let variations: [Variation]
@@ -20,6 +32,11 @@ struct ComponentConfiguration<Props: MergeableConfiguration>: Codable {
 extension ComponentConfiguration {
     var allProps: [String: ComponentConfiguration.Variation] {
         var result = [String: ComponentConfiguration.Variation]()
+        
+        if variations.isEmpty, let props = props {
+            result["default"] = ComponentConfiguration.Variation(props: props, view: view)
+            return result
+        }
         for variation in self.variations {
             result[variation.id] = variation
         }

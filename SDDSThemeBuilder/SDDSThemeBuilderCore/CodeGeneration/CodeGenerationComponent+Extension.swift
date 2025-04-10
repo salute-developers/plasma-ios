@@ -32,6 +32,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case avatar = "Avatar"
     case avatarGroup = "AvatarGroup"
     case circularProgressBar = "CircularProgressBar"
+    case progressBar = "ProgressBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -65,7 +66,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .checkboxGroup,
             .avatar,
             .avatarGroup,
-            .circularProgressBar
+            .circularProgressBar,
+            .progressBar
         ]
     }
     
@@ -114,6 +116,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .circularProgressBar:
             GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .progressBar:
+            GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -159,6 +163,8 @@ extension CodeGenerationComponent {
             "AvatarGroupAppearance"
         case .circularProgressBar:
             "CircularProgressBarAppearance"
+        case .progressBar:
+            "ProgressBarAppearance"
         }
     }
     
@@ -205,6 +211,8 @@ extension CodeGenerationComponent {
             "AvatarGroupSizeConfiguration"
         case .circularProgressBar:
             "CircularProgressBarSizeConfiguration"
+        case .progressBar:
+            "ProgressBarSizeConfiguration"
         }
     }
     
@@ -272,6 +280,8 @@ extension CodeGenerationComponent {
             "avatar_group_config.json"
         case .circularProgressBar:
             "circular_progress_bar_config.json"
+        case .progressBar:
+            "progress_bar_config.json"
         }
     }
     
