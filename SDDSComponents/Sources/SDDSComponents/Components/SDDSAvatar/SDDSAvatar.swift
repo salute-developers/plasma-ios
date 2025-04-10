@@ -148,8 +148,7 @@ public struct SDDSAvatar: View {
         }
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: AvatarAppearance {
+    var appearance: AvatarAppearance {
         _appearance ?? environmentAppearance
     }
 }

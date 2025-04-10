@@ -302,8 +302,7 @@ private extension SDDSButton {
         }
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ButtonAppearance {
+    var appearance: ButtonAppearance {
         _appearance ?? environmentAppearance
     }
 }

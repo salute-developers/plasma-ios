@@ -4,9 +4,21 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct CardSize {
+    static let Default = CardSizeDefault()
 
     static let all: [CardSizeConfiguration] = [
+        CardSize.Default,
     ] 
+}
+struct CardSizeDefault: CardSizeConfiguration {
+    var paddingBottom = CGFloat(0)
+    var paddingEnd = CGFloat(0)
+    var paddingStart = CGFloat(0)
+    var paddingTop = CGFloat(0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
+    public var debugDescription: String {
+        return "CardSize"
+    }
 }
 
 struct CardAnySize: CardSizeConfiguration {

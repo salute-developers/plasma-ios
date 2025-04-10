@@ -10,3 +10,5 @@ typealias CounterConfiguration = ComponentConfiguration<CounterProps>
 typealias CardConfiguration = ComponentConfiguration<CardProps>
 typealias SegmentItemConfiguration = ComponentConfiguration<SegmentItemProps>
 typealias SegmentConfiguration = ComponentConfiguration<SegmentProps>
+typealias BottomSheetConfiguration = ComponentConfiguration<BottomSheetProps>
+typealias SwitchConfiguration = ComponentConfiguration<SwitchProps>

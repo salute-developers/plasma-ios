@@ -51,44 +51,43 @@ public struct SDDSSwitch: View {
     }
     
     public var body: some View {
-        if title.isEmpty && subtitle.isEmpty {
-            content
-                .fixedSize(horizontal: true, vertical: false)
-        } else if let width = appearance.size.width {
-            content
-                .frame(width: width)
-        }
+        content
     }
     
     private var content: some View {
-        VStack(alignment: .leading, spacing: appearance.size.verticalGap) {
-            HStack {
+        VStack(alignment: .leading, spacing: appearance.size.descriptionPadding) {
+            HStack(spacing: appearance.size.textPadding) {
                 if !title.isEmpty {
                     Text(title)
                         .typography(titleTypography)
                         .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
                         .accessibilityLabel(Text(switchAccessibility.titleLabel))
                         .accessibilityValue(Text(title))
-                } else if !subtitle.isEmpty {
-                    subtitleText
+                    Spacer()
                 }
-                if title.isEmpty && subtitle.isEmpty {
-                    Spacer(minLength: 0)
-                }
-                Toggle("", isOn: $isOn)
-                    .toggleStyle(SwitchToggleStyle(tint: appearance.tintColor(for: isEnabled).color(for: colorScheme)))
-                    .padding(.leading, -10.0)
-                    .accessibilityLabel(Text(switchAccessibility.toggleLabel))
-                    .accessibilityValue(Text(isOn ? "On" : "Off"))
-                    .accessibilityHint(Text(switchAccessibility.toggleHint))
+                SDDSToggle(
+                    isOn: $isOn,
+                    size: appearance.size,
+                    onColor: appearance.toggleTrackColorChecked,
+                    offColor: appearance.toggleTrackColor,
+                    thumbColor: appearance.toggleThumbColor
+                )
+                .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
+                .border(appearance.toggleTrackBorderColor.color(for: colorScheme))
+                .accessibilityLabel(Text(switchAccessibility.toggleLabel))
+                .accessibilityValue(Text(isOn ? "On" : "Off"))
+                .accessibilityHint(Text(switchAccessibility.toggleHint))
             }
             if !subtitle.isEmpty && !title.isEmpty {
-                subtitleText
+                HStack {
+                    subtitleText
+                    Spacer()
+                }
             }
         }
         .disabled(!isEnabled)
         .padding([.leading, .trailing], 1.0)
-        .accessibilityElement(children: .combine) // Объединяет элементы переключателя в один элемент доступности
+        .accessibilityElement(children: .combine)
         .accessibilityLabel(Text(switchAccessibility.switchLabel))
         .accessibilityValue(Text(isEnabled ? switchAccessibility.switchEnabledValue : switchAccessibility.switchDisabledValue))
     }
@@ -118,8 +117,7 @@ public struct SDDSSwitch: View {
             .accessibilityValue(Text(subtitle))
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: SwitchAppearance {
+    var appearance: SwitchAppearance {
         _appearance ?? environmentAppearance
     }
 }

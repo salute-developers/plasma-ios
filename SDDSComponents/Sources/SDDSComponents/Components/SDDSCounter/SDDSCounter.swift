@@ -100,8 +100,7 @@ private extension SDDSCounter {
         text.count > 1
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: CounterAppearance {
+    var appearance: CounterAppearance {
         _appearance ?? environmentAppearance
     }
 }

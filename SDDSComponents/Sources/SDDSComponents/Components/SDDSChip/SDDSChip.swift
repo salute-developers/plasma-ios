@@ -143,8 +143,7 @@ public struct SDDSChip: View {
         removeAction()
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ChipAppearance {
+    var appearance: ChipAppearance {
         _appearance ?? environmentAppearance
     }
 }

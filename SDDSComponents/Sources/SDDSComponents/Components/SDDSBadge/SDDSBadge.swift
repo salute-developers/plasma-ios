@@ -68,8 +68,7 @@ public struct SDDSBadge: View {
         return appearance.buttonAppearance(iconColor: iconColor, iconSize: iconSize, iconPadding: iconPadding)
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: BadgeAppearance {
+    var appearance: BadgeAppearance {
         _appearance ?? environmentAppearance
     }
 }

@@ -81,8 +81,7 @@ public struct SDDSProgressView: View {
         max(min(progress, 1.0), 0.0)
     }
 
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ProgressBarAppearance {
+    var appearance: ProgressBarAppearance {
         _appearance ?? environmentAppearance
     }
 }

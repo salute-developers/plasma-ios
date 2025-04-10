@@ -802,8 +802,7 @@ public struct SDDSTextArea: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: TextAreaAppearance {
+    var appearance: TextAreaAppearance {
         _appearance ?? environmentAppearance
     }
 

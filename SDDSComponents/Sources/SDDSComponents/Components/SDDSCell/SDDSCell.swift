@@ -140,8 +140,7 @@ extension SDDSCell {
         }
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: CellAppearance {
+    var appearance: CellAppearance {
         _appearance ?? environmentAppearance
     }
 }
