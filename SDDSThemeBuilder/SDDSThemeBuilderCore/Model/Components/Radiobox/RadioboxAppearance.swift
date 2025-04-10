@@ -4,8 +4,8 @@ struct RadioboxAppearance: CodeGenerationAppearance {
     typealias Variation = RadioboxConfiguration.Variation
     typealias Props = RadioboxProps
     
-    var toggleColor: String? = nil
-    var toggleBorderColor: String? = nil
+    var color: String? = nil
+    var borderColor: String? = nil
     var titleTypography: String? = nil
     var titleColor: String? = nil
     var subtitleTypography: String? = nil
@@ -25,11 +25,11 @@ struct RadioboxAppearance: CodeGenerationAppearance {
         
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
-        self.toggleColor = ButtonColorContextBuilder(
+        self.color = ButtonColorContextBuilder(
             defaultColor: props.toggleColor,
             highlightedColor: props.toggleColor?.value(for: [.checked])
         ).context
-        self.toggleBorderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
+        self.borderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
         self.titleColor = ColorTokenContextBuilder(props.labelColor).context
         self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
         self.checkedIconColor = ColorTokenContextBuilder(props.toggleIconColor).context

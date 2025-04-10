@@ -152,7 +152,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: toggleWidth,
                     height: toggleHeight)
             )
-            .stroke(appearance.toggleBorderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
+            .stroke(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
     }
     
     private var fillView: some View {
@@ -164,7 +164,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.width - paddings,
                     height: appearance.size.height - paddings)
             )
-            .fill(currentColorForToggleFill(for: appearance.toggleColor))
+            .fill(currentColorForToggleFill(for: appearance.color))
     }
     
     // MARK: - Accessibility

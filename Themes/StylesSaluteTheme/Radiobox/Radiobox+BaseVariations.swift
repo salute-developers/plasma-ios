@@ -42,12 +42,12 @@ public struct RadioboxVariation {
 private extension RadioboxAppearance {
     static var base: RadioboxAppearance {
         var appearance = RadioboxAppearance()
+        appearance.borderColor = ColorToken.textDefaultSecondary
         appearance.checkedIconColor = ColorToken.textOnDarkPrimary
+        appearance.color = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultAccentMain)
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.subtitleColor = ColorToken.textDefaultSecondary
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.toggleBorderColor = ColorToken.textDefaultSecondary
-        appearance.toggleColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultAccentMain)
         return appearance
     }
 }
