@@ -15,7 +15,6 @@ public struct TypographyConfiguration {
     public init<T: GeneralTypographyConfiguration>(_ configuration: T) {
         self.original = configuration
         applyTypography = { size in
-            print(T.Size.self)
             guard let size = size as? T.Size else { return nil }
             return configuration.typography(with: size)
         }

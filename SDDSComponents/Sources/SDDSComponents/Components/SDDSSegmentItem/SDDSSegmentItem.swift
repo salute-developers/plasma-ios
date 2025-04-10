@@ -125,7 +125,8 @@ extension SDDSSegmentItem {
                     appearance: appearance.counterAppearance,
                     isAnimating: false,
                     isHighlighted: false,
-                    isHovered: false
+                    isHovered: false,
+                    isSelected: isSelected
                 )
             )
         case .custom(let viewProvider, _):

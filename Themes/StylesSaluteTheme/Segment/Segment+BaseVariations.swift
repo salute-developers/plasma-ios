@@ -72,7 +72,7 @@ public struct SegmentVariation {
 private extension SegmentAppearance {
     static var base: SegmentAppearance {
         var appearance = SegmentAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondary, hoveredColor: ColorToken.surfaceDefaultTransparentSecondary)
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondary, hoveredColor: ColorToken.surfaceDefaultTransparentSecondary, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
         appearance.disabledAlpha = CGFloat(0)
         return appearance
     }

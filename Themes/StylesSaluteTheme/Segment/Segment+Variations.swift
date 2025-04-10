@@ -6,7 +6,7 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.L> {
     
-    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var pilled: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.LPilled> {
         var size =  SegmentAnySize(size: appearance.size)
         size.horizontalHeight = CGFloat(0)
         size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
@@ -22,6 +22,42 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
+    
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.l.primary.appearance
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.l.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<SegmentAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.LPilled> {
     
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
@@ -43,7 +79,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
-    var variation: Variation<Appearance> {
+    var variation: Variation<SegmentAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -59,7 +95,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.M> {
     
-    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var pilled: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.MPilled> {
         var size =  SegmentAnySize(size: appearance.size)
         size.horizontalHeight = CGFloat(0)
         size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
@@ -75,6 +111,42 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
+    
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.m.primary.appearance
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.m.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<SegmentAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.MPilled> {
     
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
@@ -96,7 +168,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
-    var variation: Variation<Appearance> {
+    var variation: Variation<SegmentAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -112,7 +184,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.S> {
     
-    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var pilled: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.SPilled> {
         var size =  SegmentAnySize(size: appearance.size)
         size.horizontalHeight = CGFloat(0)
         size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
@@ -128,6 +200,42 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
+    
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.s.primary.appearance
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.s.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<SegmentAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.SPilled> {
     
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
@@ -149,7 +257,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
-    var variation: Variation<Appearance> {
+    var variation: Variation<SegmentAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -165,7 +273,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xs> {
     
-    var pilled: ComponentAppearanceVariation<Segment, SegmentAppearance> {
+    var pilled: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.XsPilled> {
         var size =  SegmentAnySize(size: appearance.size)
         size.horizontalHeight = CGFloat(0)
         size.paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
@@ -181,6 +289,42 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
+    
+    var primary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.xs.primary.appearance
+        
+        return .init(
+            name: "primary",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<SegmentAppearance> {
+        var appearance = appearance
+        appearance.disabledAlpha = CGFloat(0)
+        appearance.segmentItemAppearance = SegmentItem.xs.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<SegmentAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.primary,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.XsPilled> {
     
     var primary: AppearanceVariation<SegmentAppearance> {
         var appearance = appearance
@@ -202,7 +346,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
             appearance: appearance
         )
     }
-    var variation: Variation<Appearance> {
+    var variation: Variation<SegmentAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -215,6 +359,7 @@ public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentV
     }
     
 }
+
 
 public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
     var variation: Variation<Appearance> {

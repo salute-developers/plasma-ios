@@ -36,7 +36,7 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
         )
     }
     {%- endfor %}
-    var variation: Variation<Appearance> {
+    var variation: Variation<{{ appearance }}> {
         .init(
             originalVariation: self,
             styles: [
@@ -71,6 +71,7 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
     {% endif %}
 }
 {% endfor %}
+
 public extension ComponentAppearanceVariation<{{component}}, {{ appearance }}> {
     {%- for viewKey, view in views %}
     var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
