@@ -31,6 +31,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case checkboxGroup = "CheckboxGroup"
     case avatar = "Avatar"
     case avatarGroup = "AvatarGroup"
+    case progressbar = "Progressbar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -63,7 +64,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .checkbox,
             .checkboxGroup,
             .avatar,
-            .avatarGroup
+            .avatarGroup,
+            .progressbar
         ]
     }
     
@@ -110,6 +112,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<AvatarProps, AvatarAppearance, AvatarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .avatarGroup:
             GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .progressbar:
+            GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -153,6 +157,8 @@ extension CodeGenerationComponent {
             "AvatarAppearance"
         case .avatarGroup:
             "AvatarGroupAppearance"
+        case .progressbar:
+            "ProgressbarAppearance"
         }
     }
     
@@ -197,6 +203,8 @@ extension CodeGenerationComponent {
             "AvatarSizeConfiguration"
         case .avatarGroup:
             "AvatarGroupSizeConfiguration"
+        case .progressbar:
+            "ProgressbarSizeConfigurations"
         }
     }
     
@@ -262,6 +270,8 @@ extension CodeGenerationComponent {
             "avatar_config.json"
         case .avatarGroup:
             "avatar_group_config.json"
+        case .progressbar
+            "progress_bar_config.json"
         }
     }
     
