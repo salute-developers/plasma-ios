@@ -12,9 +12,9 @@ import SwiftUI
  */
 public struct ProgressBarAppearance: Hashable {
     let id = UUID()
-    public let size: ProgressBarSizeConfiguration
-    public let tintFillStyle: FillStyle
-    public let trackColor: ColorToken
+    public var size: ProgressBarSizeConfiguration
+    public var tintFillStyle: FillStyle
+    public var trackColor: ColorToken
     
     public init(size: ProgressBarSizeConfiguration = ZeroProgressBarSize(), tintFillStyle: FillStyle = .color(.clearColor), trackColor: ColorToken = .clearColor) {
         self.size = size
