@@ -46,8 +46,7 @@ public struct SDDSRadioboxGroup: View {
         }
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: RadioboxGroupAppearance {
+    var appearance: RadioboxGroupAppearance {
         _appearance ?? environmentAppearance
     }
 }
