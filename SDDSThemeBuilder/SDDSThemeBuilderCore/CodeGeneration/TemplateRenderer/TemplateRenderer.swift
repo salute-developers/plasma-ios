@@ -174,6 +174,11 @@ final class TemplateRenderer: Renderable {
         }
         ext.registerFilter(Filter.capitalized.rawValue) { (value: Any?) in
             guard let stringValue = value as? String else { return value }
+            guard !stringValue.contains("`default`") else {
+                return stringValue
+                    .replacingOccurrences(of: stringValue, with: "default")
+                    .capitalized
+            }
             return stringValue.capitalized
         }
         ext.registerFilter(Filter.adjustedCornerRadius.rawValue) { (value: Any?, arguments: [Any?]) in

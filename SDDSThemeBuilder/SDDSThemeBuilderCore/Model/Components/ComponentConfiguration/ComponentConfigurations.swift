@@ -19,3 +19,4 @@ typealias CheckboxGroupConfiguration = ComponentConfiguration<CheckboxGroupProps
 typealias AvatarConfiguration = ComponentConfiguration<AvatarProps>
 typealias AvatarGroupConfiguration = ComponentConfiguration<AvatarGroupProps>
 typealias CircularProgressBarConfiguration = ComponentConfiguration<CircularProgressBarProps>
+typealias ProgressBarConfiguration = ComponentConfiguration<ProgressBarProps>

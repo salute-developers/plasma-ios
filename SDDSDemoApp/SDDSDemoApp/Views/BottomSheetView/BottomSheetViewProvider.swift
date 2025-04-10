@@ -16,6 +16,6 @@ final class BottomSheetVariationProvider: VariationProvider {
     }
     
     var defaultValue: BottomSheetAppearance {
-        variations.first?.appearance ?? .init()
+        BottomSheetAppearance.defaultValue
     }
 }
