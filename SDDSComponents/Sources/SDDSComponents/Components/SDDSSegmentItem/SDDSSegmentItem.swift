@@ -135,7 +135,7 @@ extension SDDSSegmentItem {
         }
     }
     
-    private var appearance: SegmentItemAppearance {
+    var appearance: SegmentItemAppearance {
         _appearance ?? environmentAppearance
     }
 }

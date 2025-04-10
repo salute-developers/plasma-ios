@@ -1,37 +1,42 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 struct SwitchTypography: GeneralTypographyConfiguration {
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
+    var l: TypographyToken?
+    var m: TypographyToken?
+    var s: TypographyToken?
+    
+    init(
+        l: TypographyToken? = nil,
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil
+    ) {
+        self.l = l
+        self.m = m
+        self.s = s
+    }
+    
+    init(oneSize: TypographyToken) {
+        self.l = oneSize
+        self.m = oneSize
+        self.s = oneSize
+    }
     
     func typography(with size: SwitchSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSSwitchSize {
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small, .none:
-            return small
+        if size is SwitchAnySize {
+            return l
         }
-    }
-}
-
-extension SwitchTypography {
-    static var label: TypographyConfiguration {
-        SwitchTypography(
-            large: Typographies.bodyLNormal.typography,
-            medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography
-        ).asContainer
-    }
-    
-    static var description: TypographyConfiguration {
-        SwitchTypography(
-            large: Typographies.bodyMNormal.typography,
-            medium: Typographies.bodySNormal.typography,
-            small: Typographies.bodyXsNormal.typography
-        ).asContainer
+        if size is SwitchSizeL {
+            return l
+        }
+        if size is SwitchSizeM {
+            return m
+        }
+        if size is SwitchSizeS {
+            return s
+        }
+        return nil
     }
 }

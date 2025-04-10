@@ -151,8 +151,7 @@ public struct SDDSChipGroup: View {
         return chipData.appearance.size.height
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ChipGroupAppearance {
+    var appearance: ChipGroupAppearance {
         _appearance ?? environmentAppearance
     }
 }

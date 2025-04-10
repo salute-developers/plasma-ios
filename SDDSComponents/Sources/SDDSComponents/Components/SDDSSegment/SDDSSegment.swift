@@ -130,7 +130,7 @@ public struct SDDSSegment: View {
         return .clear
     }
     
-    private var appearance: SegmentAppearance {
+    var appearance: SegmentAppearance {
         _appearance ?? environmentAppearance
     }
 }

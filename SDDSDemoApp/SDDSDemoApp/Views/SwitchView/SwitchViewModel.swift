@@ -5,8 +5,8 @@ import SDDSComponents
 
 final class SwitchViewModel: ComponentViewModel<SwitchVariationProvider> {
     // MARK: - Switch Properties
-    @Published var title: String = "Switch Title"
-    @Published var subtitle: String = "Switch Subtitle"
+    @Published var title: String = "Label"
+    @Published var subtitle: String = "Description"
     @Published var isOn: Bool = true
     @Published var isEnabled: Bool = true
     @Published var switchAccessibility: SwitchAccessibility = SwitchAccessibility()

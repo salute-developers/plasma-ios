@@ -798,8 +798,7 @@ public struct SDDSTextField: View {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: TextFieldAppearance {
+    var appearance: TextFieldAppearance {
         _appearance ?? environmentAppearance
     }
 }

@@ -82,8 +82,7 @@ public struct SDDSCheckbox: View {
         )
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: CheckboxAppearance {
+    var appearance: CheckboxAppearance {
         _appearance ?? environmentAppearance
     }
     

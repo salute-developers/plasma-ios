@@ -165,6 +165,7 @@
 		81BBC5752C862492009616CE /* SDDSComponentsPreview.h in Headers */ = {isa = PBXBuildFile; fileRef = 81BBC5742C862492009616CE /* SDDSComponentsPreview.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81BBC5952C862764009616CE /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBC5C82C8639CC009616CE /* Image+Extensions.swift */; };
+		81C3D7D92DAD6DE90090739E /* SDDSToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C3D7D82DAD6DE40090739E /* SDDSToggle.swift */; };
 		81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF12182C6E686D0074174F /* SDDSRadioboxGroup.swift */; };
 		81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF121F2C6E74180074174F /* RoundedCornersMask.swift */; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -415,6 +416,7 @@
 		81BBC5742C862492009616CE /* SDDSComponentsPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponentsPreview.h; sourceTree = "<group>"; };
 		81BBC5C82C8639CC009616CE /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		81BC36812C591B0B00A363D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		81C3D7D82DAD6DE40090739E /* SDDSToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSToggle.swift; sourceTree = "<group>"; };
 		81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
 		81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatar.swift; sourceTree = "<group>"; };
 		81CBC0932C82244000FBDAC8 /* BackportAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackportAsyncImage.swift; sourceTree = "<group>"; };
@@ -1062,6 +1064,7 @@
 		818C03B02C418725002C6D0A /* SDDSSwitch */ = {
 			isa = PBXGroup;
 			children = (
+				81C3D7D82DAD6DE40090739E /* SDDSToggle.swift */,
 				818C03B12C418A90002C6D0A /* SDDSSwitch.swift */,
 				818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */,
 				81685C212CFF87AD00278446 /* SwitchAppearance */,
@@ -1737,6 +1740,7 @@
 				818C03CE2C4515ED002C6D0A /* SDDSRadiobox.swift in Sources */,
 				81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */,
 				69C0356E2D4F8B1F005D3B95 /* SegmentLayoutOrientation.swift in Sources */,
+				81C3D7D92DAD6DE90090739E /* SDDSToggle.swift in Sources */,
 				816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */,
 				698744672D1C368E00559ABA /* SDDSSegmentItem.swift in Sources */,
 				812DB73F2D57B43900D3F4A3 /* TextAreaAccessibility.swift in Sources */,

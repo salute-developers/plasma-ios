@@ -35,15 +35,19 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var variations: [String: Size] = [:]
         
         let baseKeys = configuration.allBaseKeys
-        for key in baseKeys {
-            guard let variation = configuration.allProps[key], let rhsProps = variation.props as? Props.Props else {
-                continue
+        if let sizeProps = configuration.props as? Size.Props, baseKeys.isEmpty {
+            variations["Default".codeGenString] = Size(props: sizeProps, id: nil, nullify: false)
+        } else {
+            for key in baseKeys {
+                guard let variation = configuration.allProps[key], let rhsProps = variation.props as? Props.Props else {
+                    continue
+                }
+                let props = configuration.props?.merge(rhs: rhsProps) ?? rhsProps
+                guard let sizeProps = props as? Size.Props else {
+                    fatalError()
+                }
+                variations[key.codeGenString] = Size(props: sizeProps, id: nil, nullify: false)
             }
-            let props = configuration.props?.merge(rhs: rhsProps) ?? rhsProps
-            guard let sizeProps = props as? Size.Props else {
-                fatalError()
-            }
-            variations[key.codeGenString] = Size(props: sizeProps, id: nil, nullify: false)
         }
         
         return .init(
@@ -265,3 +269,4 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
     }
 
 }
+

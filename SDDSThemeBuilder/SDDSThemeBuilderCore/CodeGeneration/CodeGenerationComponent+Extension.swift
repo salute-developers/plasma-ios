@@ -23,6 +23,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case cardClear = "CardClear"
     case segmentItem = "SegmentItem"
     case segment = "Segment"
+    case bottomSheet = "BottomSheet"
+    case `switch` = "Switch"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -45,7 +47,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .card,
             .cardClear,
             .segmentItem,
-            .segment
+            .segment,
+            .bottomSheet,
+            .switch
         ]
     }
 }
@@ -75,6 +79,10 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<SegmentItemProps, SegmentItemAppearance, SegmentItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .segment:
             GenerateComponentCommand<SegmentProps, SegmentAppearance, SegmentSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .bottomSheet:
+            GenerateComponentCommand<BottomSheetProps, BottomSheetAppearance, BottomSheetSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .switch:
+            GenerateComponentCommand<SwitchProps, SwitchAppearance, SwitchSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -102,6 +110,10 @@ extension CodeGenerationComponent {
             "SegmentItemAppearance"
         case .segment:
             "SegmentAppearance"
+        case .bottomSheet:
+            "BottomSheetAppearance"
+        case .switch:
+            "SwitchAppearance"
         }
     }
     
@@ -130,6 +142,10 @@ extension CodeGenerationComponent {
             "SegmentItemSizeConfiguration"
         case .segment:
             "SegmentSizeConfiguration"
+        case .bottomSheet:
+            "BottomSheetSizeConfiguration"
+        case .switch:
+            "SwitchSizeConfiguration"
         }
     }
     
@@ -179,6 +195,10 @@ extension CodeGenerationComponent {
             "segment_item_config.json"
         case .segment:
             "segment_config.json"
+        case .bottomSheet:
+            "bottom_sheet_config.json"
+        case .switch:
+            "switch_config.json"
         }
     }
     
