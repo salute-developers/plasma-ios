@@ -78,8 +78,8 @@ struct TextAreaAppearance: CodeGenerationAppearance {
         self.innerTitleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
         self.counterTypography = TypographyTokenContextBuilder(string: props.counterStyle?.value, id: id, component: component).context
-        self.labelPlacement = LabelPlacementContextBuilder(id: id, component: .textArea).context
-        self.requiredPlacement = RequiredPlacementContextBuilder(id: id, component: .textArea).context
+//        self.labelPlacement = LabelPlacementContextBuilder(id: id, component: .textArea).context
+//        self.requiredPlacement = RequiredPlacementContextBuilder(id: id, component: .textArea).context
 
         if let chipStyle = props.chipStyle?.value {
             self.chipAppearance = ComponentStyleContextBuilder(chipStyle).context

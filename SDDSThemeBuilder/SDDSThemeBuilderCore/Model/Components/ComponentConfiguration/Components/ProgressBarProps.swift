@@ -1,7 +1,7 @@
 import Foundation
 
-struct ProgressbarProps: MergeableConfiguration, Codable {
-    typealias Props = ProgressbarProps
+struct ProgressBarProps: MergeableConfiguration, Codable {
+    typealias Props = ProgressBarProps
     
     var indicatorColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?

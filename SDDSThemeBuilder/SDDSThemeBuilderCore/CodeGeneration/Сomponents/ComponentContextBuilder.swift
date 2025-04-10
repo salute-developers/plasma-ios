@@ -149,14 +149,11 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                     variationViews[parentKey.joinedVariationPath.codeGenString] = currentView
                 }
             }
-            
-            for viewKey in configuration.view.keys.sorted() {
-                guard let props = configuration.view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
-                    continue
-                }
-                
-                views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
-            }
+            addViewVariation(views: &views)
+        }
+        
+        if variations.isEmpty {
+            addViewVariation(views: &views)
         }
         
         return .init(
@@ -195,4 +192,16 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         return nextVariation
     }
 
+}
+
+extension ComponentContextBuilderImpl {
+   private func addViewVariation(views: inout [String: VariationsContext.View]) {
+        for viewKey in configuration.view.keys.sorted() {
+            guard let props = configuration.view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
+                continue
+            }
+            
+            views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
+        }
+    }
 }

@@ -22,7 +22,7 @@ final class FillStyleContextBuilder: CodeGenerationContextBuilder {
             return ".color(.\(string.camelCase))"
         }
         
-        let gradientString = " .gradient(Gradients.\(string.camelCase)),"
+        let gradientString = ".gradient(Gradients.\(string.camelCase))"
         
         return gradientString
     }
