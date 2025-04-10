@@ -87,7 +87,8 @@ public struct SDDSSegmentItem: View {
             subtitleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.subtitleTypography.typography(with: appearance.size)).asContainer,
             subtitleColor: appearance.subtitleColor,
             iconColor: iconAttributes?.alignment == .leading ? appearance.startContentColor : appearance.endContentColor,
-            backgroundColor: appearance.backgroundColor
+            backgroundColor: appearance.backgroundColor,
+            disabledAlpha: appearance.disabledAlpha
         )
     }
     

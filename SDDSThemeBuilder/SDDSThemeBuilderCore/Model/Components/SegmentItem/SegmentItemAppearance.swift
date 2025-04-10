@@ -51,8 +51,8 @@ struct SegmentItemAppearance: CodeGenerationAppearance {
         self.subtitleColor = ButtonColorContextBuilder(
             defaultColor: props.valueColor,
             highlightedColor: props.valueColor?.value(for: [.pressed]),
-            hoveredColor: props.labelColor?.value(for: [.hovered]),
-            selectedColor: props.labelColor?.value(for: [.selected])
+            hoveredColor: props.valueColor?.value(for: [.hovered]),
+            selectedColor: props.valueColor?.value(for: [.selected])
         ).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
