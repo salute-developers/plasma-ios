@@ -34,7 +34,7 @@ struct SegmentItemAppearance: CodeGenerationAppearance {
             defaultColor: props.startContentColor,
             highlightedColor: props.startContentColor?.value(for: [.pressed]),
             hoveredColor: props.startContentColor?.value(for: [.hovered]),
-            selectedColor: props.backgroundColor?.value(for: [.selected])
+            selectedColor: props.startContentColor?.value(for: [.selected])
         ).context
         self.endContentColor = ButtonColorContextBuilder(
             defaultColor: props.endContentColor,
