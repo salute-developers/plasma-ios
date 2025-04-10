@@ -25,8 +25,8 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
         titleColor: ColorToken = .clearColor,
         subtitleColor: ColorToken = .clearColor,
         disabledAlpha: CGFloat = 0,
-        toggleColor: ButtonColor = ButtonColor(),
-        toggleBorderColor: ColorToken = .clearColor,
+        color: ButtonColor = ButtonColor(),
+        borderColor: ColorToken = .clearColor,
         checkedIcon: PathDrawer? = nil,
         checkedIconColor: ColorToken = .clearColor,
         toggleIndeterminateIcon: PathDrawer? = nil,
@@ -38,8 +38,8 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
         self.titleColor = titleColor
         self.subtitleColor = subtitleColor
         self.disabledAlpha = disabledAlpha
-        self.color = toggleColor
-        self.borderColor = toggleBorderColor
+        self.color = color
+        self.borderColor = borderColor
         self.checkedIcon = checkedIcon
         self.checkedIconColor = checkedIconColor
         self.toggleIndeterminateIcon = toggleIndeterminateIcon
