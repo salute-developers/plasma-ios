@@ -32,17 +32,16 @@ struct CounterAppearance: CodeGenerationAppearance {
         ).context
     }
     
-    var context: String {
+    func context(with defaultStyle: String) -> String {
         var result: [String] = []
-        if let textTypography = self.textTypography {
-            result += ["textTypography: \(textTypography)"]
-        }
-        if let textColor = self.textColor {
-            result += ["textColor: \(textColor)"]
-        }
-        if let backgroundColor = self.backgroundColor {
-            result += ["backgroundColor: \(backgroundColor)"]
-        }
+        let textTypography = self.textTypography ?? "\(defaultStyle).textTypography"
+        result += ["textTypography: \(textTypography)"]
+        
+        let textColor = self.textColor ?? "\(defaultStyle).textColor"
+        result += ["textColor: \(textColor)"]
+        
+        let backgroundColor = self.backgroundColor ?? "\(defaultStyle).backgroundColor"
+        result += ["backgroundColor: \(backgroundColor)"]
         return ".init(\(result.joined(separator: ",")))"
     }
 }

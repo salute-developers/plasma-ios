@@ -62,7 +62,8 @@ struct SegmentItemAppearance: CodeGenerationAppearance {
             if let counterStyleProps = props.counterStyle?.props {
                 updatedAppearance = CounterAppearance(props: counterStyleProps, component: .counter)
             }
-            self.counterAppearance = ComponentStyleContextBuilder(counterStyleValue, appearance: updatedAppearance?.context).context
+            let updatedAppearanceContext = updatedAppearance?.context(with: ComponentStyleContextBuilder(counterStyleValue).context ?? "")
+            self.counterAppearance = ComponentStyleContextBuilder(counterStyleValue, appearance: updatedAppearanceContext).context
         }
     }
 }
