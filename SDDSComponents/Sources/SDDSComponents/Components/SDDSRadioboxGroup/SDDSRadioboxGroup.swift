@@ -31,7 +31,7 @@ public struct SDDSRadioboxGroup: View {
     }
 
     public var body: some View {
-        VStack(spacing: appearance.size.verticalSpacing) {
+        VStack(spacing: appearance.size.verticalSpacing / 2) {
             ForEach(radioboxData) { data in
                 SDDSRadiobox(
                     isSelected: data.isSelected,
@@ -42,6 +42,7 @@ public struct SDDSRadioboxGroup: View {
                     appearance: data.appearance,
                     accessibility: data.accessibility
                 )
+                .debug(color: Color.red, condition: true)
             }
         }
     }
