@@ -12,19 +12,22 @@ public struct SDDSCounter: View {
     var isAnimating: Bool
     var isHighlighted: Bool
     var isHovered: Bool
+    var isSelected: Bool
     
     public init(
         text: String,
         appearance: CounterAppearance? = nil,
         isAnimating: Bool,
         isHighlighted: Bool,
-        isHovered: Bool
+        isHovered: Bool,
+        isSelected: Bool
     ) {
         self.text = text
         self._appearance = appearance
         self.isAnimating = isAnimating
         self.isHighlighted = isHighlighted
         self.isHovered = isHovered
+        self.isSelected = isSelected
     }
     
     public var body: some View {
@@ -82,7 +85,9 @@ private extension SDDSCounter {
     }
     
     func currentColor(for counterColor: ButtonColor) -> Color {
-        if isHighlighted {
+        if isSelected {
+            return counterColor.selectedColor.color(for: colorScheme)
+        } else if isHighlighted {
             return counterColor.highlightedColor.color(for: colorScheme)
         } else if isHovered {
             return counterColor.hoveredColor.color(for: colorScheme)

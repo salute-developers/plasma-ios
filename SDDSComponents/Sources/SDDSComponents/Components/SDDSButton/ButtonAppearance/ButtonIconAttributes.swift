@@ -31,3 +31,10 @@ public struct ButtonIconAttributes {
         self.alignment = alignment
     }
 }
+
+extension ButtonIconAttributes: Equatable {
+    public static func == (lhs: ButtonIconAttributes, rhs: ButtonIconAttributes) -> Bool {
+        return lhs.image == rhs.image &&
+        lhs.alignment == rhs.alignment
+    }
+}

@@ -61,7 +61,7 @@ public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var iconHorizontalGap: CGFloat = 0
     public var titleHorizontalGap: CGFloat = 0
     public var debugDescription: String {
-        return "Default Size"
+        return "Default Button Size"
     }
     
     public init() {}

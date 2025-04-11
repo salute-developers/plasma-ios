@@ -25,9 +25,6 @@ public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConve
     
     @available(*, deprecated, message: "use contentEndPadding, contentStartPadding instead")
     var spacing: CGFloat { get }
-    
-    @available(*, deprecated, renamed: "cornerRadius")
-    func cornerRadius(style: ComponentShapeStyle) -> CGFloat
 }
 
 public struct ZeroChipSize: ChipSizeConfiguration {
@@ -40,7 +37,6 @@ public struct ZeroChipSize: ChipSizeConfiguration {
     public var trailingInset: CGFloat { 0 }
     public var spacing: CGFloat { 0 }
     public var height: CGFloat { 0 }
-    public func cornerRadius(style: ComponentShapeStyle) -> CGFloat { 0 }
     public var debugDescription: String { "ZeroChipSize" }
     public init() {}
 }

@@ -27,7 +27,8 @@ public struct CounterView: View {
                     appearance: viewModel.appearance,
                     isAnimating: false,
                     isHighlighted: false,
-                    isHovered: false
+                    isHovered: false,
+                    isSelected: false
                 )
                 Spacer()
             }

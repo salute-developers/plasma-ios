@@ -17,6 +17,7 @@ public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
     public var backgroundColor: ButtonColor?
     public var segmentItemAppearance: SegmentItemAppearance
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public var disabledAlpha: CGFloat
 
     /**
@@ -27,6 +28,7 @@ public struct SegmentAppearance {
         - backgroundColor: Цвет фона сегмента для различных состояний.
         - segmentItemAppearance: Внешний вид элементов сегмента.
      */
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         size: SegmentSizeConfiguration = SegmentZeroSize(),
         backgroundColor: ButtonColor? = ButtonColor(),
@@ -37,6 +39,17 @@ public struct SegmentAppearance {
         self.backgroundColor = backgroundColor
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = disabledAlpha
+    }
+    
+    public init(
+        size: SegmentSizeConfiguration = SegmentZeroSize(),
+        backgroundColor: ButtonColor? = ButtonColor(),
+        segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance()
+    ) {
+        self.size = size
+        self.backgroundColor = backgroundColor
+        self.segmentItemAppearance = segmentItemAppearance
+        self.disabledAlpha = 0
     }
 }
 
