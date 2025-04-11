@@ -15,22 +15,23 @@ public protocol RadioboxGroupSizeConfiguration: SizeConfiguration, CustomDebugSt
 
  - Properties:
     - radioboxData: Массив данных для инициализации группы радиобоксов.
-    - size: Конфигурация размеров
+    - appearance: Параметры внешнего вида
  */
 public struct SDDSRadioboxGroup: View {
     let radioboxData: [RadioboxData]
-    let size: RadioboxGroupSizeConfiguration
+    private var _appearance: RadioboxGroupAppearance?
+    @Environment(\.radioboxGroupAppearance) private var environmentAppearance
 
     public init(
         radioboxData: [RadioboxData],
-        size: RadioboxGroupSizeConfiguration
+        appearance: RadioboxGroupAppearance? = nil
     ) {
         self.radioboxData = radioboxData
-        self.size = size
+        self._appearance = appearance
     }
 
     public var body: some View {
-        VStack(spacing: size.verticalSpacing) {
+        VStack(spacing: appearance.size.verticalSpacing / 2) {
             ForEach(radioboxData) { data in
                 SDDSRadiobox(
                     isSelected: data.isSelected,
@@ -41,7 +42,12 @@ public struct SDDSRadioboxGroup: View {
                     appearance: data.appearance,
                     accessibility: data.accessibility
                 )
+                .debug(color: Color.red, condition: true)
             }
         }
+    }
+    
+    var appearance: RadioboxGroupAppearance {
+        _appearance ?? environmentAppearance
     }
 }

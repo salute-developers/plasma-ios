@@ -49,6 +49,7 @@ public struct SDDSRadiobox: View {
                     self.isSelected = value.isSelected
                 }
             ),
+            selectionControlType: .radiobox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
@@ -70,26 +71,5 @@ public struct SDDSRadiobox: View {
         return .images(
             .init(selectedImage: images.selectedImage, deselectedImage: images.deselectedImage, indeterminateImage: nil)
         )
-    }
-}
-
-public enum SDDSRadioboxGroupSize: String, RadioboxGroupSizeConfiguration, CaseIterable {
-    case large
-    case medium
-    case small
-    
-    public var verticalSpacing: CGFloat {
-        switch self {
-        case .large:
-            8
-        case .medium:
-            8
-        case .small:
-            4
-        }
-    }
-    
-    public var debugDescription: String {
-        return rawValue
     }
 }

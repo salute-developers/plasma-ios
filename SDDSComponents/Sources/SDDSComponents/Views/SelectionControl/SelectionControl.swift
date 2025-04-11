@@ -4,6 +4,7 @@ import SwiftUI
 
 struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @Binding var state: SelectionControlState
+    let selectionControlType: SelectionControlType
     let title: String
     let subtitle: String?
     let isEnabled: Bool
@@ -116,7 +117,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .selected:
             fillView
             icon(
-                icon: appearance.checkedIcon,
+                icon: selectionControlType == .checkbox ? CheckmarkDrawer(lineWidth: appearance.size.lineWidth) : CircleDrawer(),
                 iconColor: appearance.checkedIconColor,
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
@@ -126,7 +127,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         case .indeterminate:
             fillView
             icon(
-                icon: appearance.toggleIndeterminateIcon,
+                icon: IndeterminateDrawer(lineWidth: appearance.size.lineWidth),
                 iconColor: appearance.toggleIndeterminateIconColor,
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
@@ -134,15 +135,10 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
     }
     
-    @ViewBuilder
-    private func icon(icon: PathDrawer?, iconColor: ColorToken, width: CGFloat, height: CGFloat) -> some View {
-        if let icon = icon {
-            icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
-                    .foregroundColor(iconColor.color(for: colorScheme))
-                    .frame(width: width, height: height)
-        } else {
-            EmptyView()
-        }
+    private func icon(icon: PathDrawer, iconColor: ColorToken, width: CGFloat, height: CGFloat) -> some View {
+        icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
+            .foregroundColor(iconColor.color(for: colorScheme))
+            .frame(width: width, height: height)
     }
     
     private var borderView: some View {
@@ -166,7 +162,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.width - paddings,
                     height: appearance.size.height - paddings)
             )
-            .fill(appearance.color.color(for: colorScheme))
+            .fill(currentColorForToggleFill(for: appearance.toggleColor))
     }
     
     // MARK: - Accessibility
@@ -201,6 +197,15 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     private var rectLocation: CGFloat {
         appearance.size.lineWidth / 2
+    }
+    
+    private func currentColorForToggleFill(for buttonColor: ButtonColor) -> Color {
+        switch state {
+        case .deselected:
+            return buttonColor.defaultColor.color(for: colorScheme)
+        default:
+            return buttonColor.highlightedColor.color(for: colorScheme)
+        }
     }
 }
 

@@ -21,6 +21,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case counter = "Counter"
     case card = "Card"
     case cardClear = "CardClear"
+    case radiobox = "Radiobox"
+    case radioboxGroup = "RadioboxGroup"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -41,7 +43,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .cell,     
             .counter,
             .card,
-            .cardClear
+            .cardClear,
+            .radiobox,
+            .radioboxGroup
         ]
     }
 }
@@ -67,6 +71,10 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .card, .cardClear:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .radiobox:
+            GenerateComponentCommand<RadioboxProps, RadioboxAppearance, RadioboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .radioboxGroup:
+            GenerateComponentCommand<RadioboxGroupProps, RadioboxGroupAppearance, RadioboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -90,6 +98,10 @@ extension CodeGenerationComponent {
             "CounterAppearance"
         case .card, .cardClear:
             "CardAppearance"
+        case .radiobox:
+            "RadioboxAppearance"
+        case .radioboxGroup:
+            "RadioboxGroupAppearance"
         }
     }
     
@@ -114,6 +126,10 @@ extension CodeGenerationComponent {
             "CounterSizeConfiguration"
         case .card, .cardClear:
             "CardSizeConfiguration"
+        case .radiobox:
+            "SelectionControlSizeConfiguration"
+        case .radioboxGroup:
+            "RadioboxGroupSizeConfiguration"
         }
     }
     
@@ -159,6 +175,10 @@ extension CodeGenerationComponent {
             "card_solid_config.json"
         case .cardClear:
             "card_clear_config.json"
+        case .radiobox:
+            "radiobox_config.json"
+        case .radioboxGroup:
+            "radiobox_group_config.json"
         }
     }
     
