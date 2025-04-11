@@ -9,7 +9,11 @@ public protocol SelectionControlAppearance {
     var titleColor: ColorToken { get }
     var subtitleColor: ColorToken { get }
     var disabledAlpha: CGFloat { get }
-    var color: ButtonColor { get }
+    
+    @available(*, deprecated, message: "use toggleColor instead")
+    var color: ColorToken { get }
+    
+    var toggleColor: ButtonColor { get }
     var borderColor: ColorToken { get }
     var checkedIcon: PathDrawer? { get }
     var checkedIconColor: ColorToken { get }

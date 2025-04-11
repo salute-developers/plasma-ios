@@ -1,6 +1,6 @@
 import Foundation
 
-public enum SelectionControlType {
+enum SelectionControlType {
     case checkbox
     case radiobox
 }

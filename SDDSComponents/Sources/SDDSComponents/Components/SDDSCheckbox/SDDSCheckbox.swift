@@ -73,7 +73,7 @@ public struct SDDSCheckbox: View {
     public var body: some View {
         SelectionControl(
             state: $state,
-            type: .checkbox,
+            selectionControlType: .checkbox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
