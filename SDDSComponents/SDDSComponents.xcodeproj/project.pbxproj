@@ -46,6 +46,8 @@
 		69A4B80A2D883B3100E9E204 /* SelectionControlAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */; };
 		69A4B80B2D883B3100E9E204 /* SelectionControlSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */; };
 		69A4B80C2D883B3100E9E204 /* SelectionControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8092D883B3100E9E204 /* SelectionControlState.swift */; };
+		69B15FA82DAEC6AD001E9115 /* AvatarGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */; };
+		69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */; };
 		69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */; };
 		69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */; };
 		69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */; };
@@ -288,6 +290,7 @@
 		69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlAccessibility.swift; sourceTree = "<group>"; };
 		69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlSizeConfiguration.swift; sourceTree = "<group>"; };
 		69A4B8092D883B3100E9E204 /* SelectionControlState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlState.swift; sourceTree = "<group>"; };
+		69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupAppearance.swift; sourceTree = "<group>"; };
 		69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutMode.swift; sourceTree = "<group>"; };
 		69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculator.swift; sourceTree = "<group>"; };
 		69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculatorImpl.swift; sourceTree = "<group>"; };
@@ -1289,6 +1292,7 @@
 		81CBC09B2C82326600FBDAC8 /* SDDSAvatarGroup */ = {
 			isa = PBXGroup;
 			children = (
+				69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */,
 				81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */,
 				81CBC0A42C8237E800FBDAC8 /* SDDSAvatarGroup.md */,
 			);
@@ -1664,6 +1668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */,
 				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
@@ -1678,6 +1683,7 @@
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
 				6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */,
 				698744612D1C367700559ABA /* CounterSize.swift in Sources */,
+				69B15FA82DAEC6AD001E9115 /* AvatarGroupAppearance.swift in Sources */,
 				698744642D1C367700559ABA /* CounterAppearance.swift in Sources */,
 				814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */,
 				817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */,

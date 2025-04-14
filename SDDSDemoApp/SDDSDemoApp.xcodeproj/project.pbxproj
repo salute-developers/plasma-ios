@@ -17,6 +17,7 @@
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
 		693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */; };
 		694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */; };
+		69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */; };
 		697970CF2D63A3F5008306A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970CE2D63A3EC008306A8 /* CellView.swift */; };
 		697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970D02D63A453008306A8 /* CellViewModel.swift */; };
 		6987446B2D1C3B6400559ABA /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744692D1C3B6400559ABA /* CounterView.swift */; };
@@ -146,6 +147,7 @@
 		693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupVariationProvider.swift; sourceTree = "<group>"; };
 		694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupVariationProvider.swift; sourceTree = "<group>"; };
 		694C288A2D89BC9A00D7F341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupVariationProvider.swift; sourceTree = "<group>"; };
 		697970CE2D63A3EC008306A8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		697970D02D63A453008306A8 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		698744692D1C3B6400559ABA /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 		8162434A2CB93DC200506E1C /* AvatarGroupView */ = {
 			isa = PBXGroup;
 			children = (
+				69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */,
 				8162434E2CB93E6F00506E1C /* AvatarGroupView.swift */,
 				816243502CB93EC800506E1C /* AvatarGroupViewModel.swift */,
 			);
@@ -858,6 +861,7 @@
 				8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */,
 				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
+				69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */,
 				81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,

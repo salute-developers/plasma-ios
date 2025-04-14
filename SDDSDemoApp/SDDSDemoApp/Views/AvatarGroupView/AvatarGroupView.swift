@@ -17,13 +17,18 @@ struct AvatarGroupView: View {
                     SDDSAvatarGroup(
                         data: viewModel.avatarData,
                         lastAvatar: viewModel.lastAvatar,
-                        size: viewModel.sizeConfiguration
+                        maxDisplayingAvatarCount: viewModel.maxDisplayingAvatarCount,
+                        size: viewModel.sizeConfiguration,
+                        appearance: viewModel.appearance
                     )
                     Spacer()
                 }
             }
-
+            Section(header: Text("Avatar appaerence")) {
+                VariationsView(viewModel: viewModel.avatarViewModel)
+            }
             Section(header: Text("Configuration")) {
+                VariationsView(viewModel: viewModel)
                 HStack {
                     Text("Max Displaying Count")
                     Spacer()

@@ -17,3 +17,4 @@ typealias RadioboxGroupConfiguration = ComponentConfiguration<RadioboxGroupProps
 typealias CheckboxConfiguration = ComponentConfiguration<CheckboxProps>
 typealias CheckboxGroupConfiguration = ComponentConfiguration<CheckboxGroupProps>
 typealias AvatarConfiguration = ComponentConfiguration<AvatarProps>
+typealias AvatarGroupConfiguration = ComponentConfiguration<AvatarGroupProps>

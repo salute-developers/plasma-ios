@@ -37,13 +37,13 @@ public struct SDDSAvatarData {
         - accessibility: Параметры доступности для аватара.
      */
     public init(
-        text: String,
+        text: String = "",
         image: AvatarImageSource? = nil,
         placeholderImage: AvatarImageSource? = nil,
         status: AvatarStatus = .hidden,
         extraContent: AnyView = AnyView(EmptyView()),
         extraPlacement: AvatarExtraPlacement = .topRight,
-        appearance: AvatarAppearance,
+        appearance: AvatarAppearance = AvatarAppearance(),
         accessibility: AvatarAccessibility = AvatarAccessibility()
     ) {
         self.text = text
