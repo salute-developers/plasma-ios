@@ -101,6 +101,17 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AvatarGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AvatarGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AvatarGroup.all
+        }
+    }
+    
     var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:

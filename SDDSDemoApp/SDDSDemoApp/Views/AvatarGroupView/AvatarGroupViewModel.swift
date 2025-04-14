@@ -3,63 +3,72 @@ import Combine
 import SDDSComponents
 import SDDSServTheme
 
-final class AvatarGroupViewModel: ObservableObject {
-    @Published var avatarData: [SDDSAvatarData] = AvatarGroupViewModel.defaultAvatars
-    @Published var lastAvatar: SDDSAvatarData = AvatarGroupViewModel.defaultLastAvatar
+final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvider>, ViewModelDelegate {
+    @Published var avatarData: [SDDSAvatarData] = []
+    @Published var lastAvatar: SDDSAvatarData = SDDSAvatarData()
     @Published var maxDisplayingAvatarCount: Int = 3
     @Published var borderWidth: CGFloat = 4
     @Published var spacing: CGFloat = 15
-
-    var sizeConfiguration: AvatarGroupSizeConfiguration {
-        DefaultAvatarGroupSize(
-            maxDisplayingAvatarCount: maxDisplayingAvatarCount,
-            borderWidth: borderWidth,
-            spacing: spacing
-        )
+    var avatarViewModel = AvatarViewModel()
+    
+    init() {
+        super.init(variationProvider: AvatarGroupVariationProvider())
+        self.avatarData = defaultAvatars
+        self.lastAvatar = defaultLastAvatar
+        avatarViewModel.delegate = self
     }
+    
+    var sizeConfiguration: AvatarGroupSizeConfiguration {
+          DefaultAvatarGroupSize(
+              maxDisplayingAvatarCount: maxDisplayingAvatarCount,
+              borderWidth: borderWidth,
+              spacing: spacing
+          )
+      }
 
-    static var defaultAvatars: [SDDSAvatarData] {
+    var defaultAvatars: [SDDSAvatarData] {
         [
             SDDSAvatarData(
                 text: "JD",
-                image: nil,
+                image: .image(Image.image("checker")),
                 placeholderImage: nil,
-                status: .online,
-                appearance: Avatar.l.appearance,
+                appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
                 text: "ML",
                 image: .image(Image.image("checker")),
                 placeholderImage: nil,
-                status: .offline,
-                appearance: Avatar.l.appearance,
+                appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
                 text: "SP",
-                image: nil,
+                image: .image(Image.image("checker")),
                 placeholderImage: nil,
-                status: .online,
-                appearance: Avatar.l.appearance,
+                appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
-            ),
+            )
         ]
     }
 
-    static var defaultLastAvatar: SDDSAvatarData {
+    var defaultLastAvatar: SDDSAvatarData {
         SDDSAvatarData(
             text: "+5",
-            image: nil,
+            image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.l.appearance,
+            appearance: avatarViewModel.appearance,
             accessibility: defaultAccessibility
         )
     }
 
-    static var defaultAccessibility: AvatarAccessibility {
+    var defaultAccessibility: AvatarAccessibility {
         AvatarAccessibility(label: "User Avatar", hint: "Displays user status and initials or image")
+    }
+    
+    func updateAppearance() {
+        appearance.avatarAppearance = avatarViewModel.appearance
     }
 }
 

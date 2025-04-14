@@ -30,16 +30,17 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case checkbox = "Checkbox"
     case checkboxGroup = "CheckboxGroup"
     case avatar = "Avatar"
+    case avatarGroup = "AvatarGroup"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
             .basicButton,
             .linkButton,
             .iconButton,
-//            .textField,
-//            .textFieldClear,
-//            .textArea,
-//            .textAreaClear,
+        //    .textField,
+        //    .textFieldClear,
+        //    .textArea,
+        //    .textAreaClear,
             .badge,
             .badgeClear,
             .badgeTransparent,
@@ -61,7 +62,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .radioboxGroup,
             .checkbox,
             .checkboxGroup,
-            .avatar
+            .avatar,
+            .avatarGroup
         ]
     }
     
@@ -106,6 +108,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CheckboxGroupProps, CheckboxGroupAppearance, CheckboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .avatar:
             GenerateComponentCommand<AvatarProps, AvatarAppearance, AvatarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .avatarGroup:
+            GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -147,6 +151,8 @@ extension CodeGenerationComponent {
             "CheckboxGroupAppearance"
         case .avatar:
             "AvatarAppearance"
+        case .avatarGroup:
+            "AvatarGroupAppearance"
         }
     }
     
@@ -189,6 +195,8 @@ extension CodeGenerationComponent {
             "CheckboxGroupSizeConfiguration"
         case .avatar:
             "AvatarSizeConfiguration"
+        case .avatarGroup:
+            "AvatarGroupSizeConfiguration"
         }
     }
     
@@ -252,6 +260,8 @@ extension CodeGenerationComponent {
             "checkbox_group_config.json"
         case .avatar:
             "avatar_config.json"
+        case .avatarGroup:
+            "avatar_group_config.json"
         }
     }
     

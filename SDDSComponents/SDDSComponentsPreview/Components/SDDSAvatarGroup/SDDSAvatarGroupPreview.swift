@@ -10,7 +10,8 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
         SDDSAvatarGroup(
             data: exampleAvatars,
             lastAvatar: lastAvatarData,
-            size: defaultSize
+            size: defaultSize,
+            appearance: AvatarGroup.s.appearance
         )
         .previewLayout(.sizeThatFits)
         .padding()
@@ -22,7 +23,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 text: "JD",
                 image: nil,
                 placeholderImage: nil,
-                status: .online,
+                status: .offline,
                 appearance: Avatar.l.appearance,
                 accessibility: defaultAccessibility
             ),

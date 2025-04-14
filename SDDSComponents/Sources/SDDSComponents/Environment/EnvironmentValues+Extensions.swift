@@ -27,6 +27,11 @@ public extension EnvironmentValues {
         set { self[AvatarAppearance.self] = newValue }
     }
     
+    var avatarGroupAppearance: AvatarGroupAppearance {
+        get { self[AvatarGroupAppearance.self] }
+        set { self[AvatarGroupAppearance.self] = newValue }
+    }
+    
     var chipAppearance: ChipAppearance {
         get { self[ChipAppearance.self] }
         set { self[ChipAppearance.self] = newValue }

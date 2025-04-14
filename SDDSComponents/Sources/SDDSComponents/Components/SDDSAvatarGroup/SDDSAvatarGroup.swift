@@ -13,25 +13,33 @@ import SwiftUI
 public struct SDDSAvatarGroup: View {
     let data: [SDDSAvatarData]
     let lastAvatar: SDDSAvatarData
+    @available(*, deprecated, message: "use appearance instead")
     let size: AvatarGroupSizeConfiguration
+    private let _appearance: AvatarGroupAppearance?
+    let maxDisplayingAvatarCount: Int
+    @Environment(\.avatarGroupAppearance) private var environmentAppearance
 
     public init(
         data: [SDDSAvatarData],
         lastAvatar: SDDSAvatarData,
-        size: AvatarGroupSizeConfiguration
+        maxDisplayingAvatarCount: Int = 3,
+        size: AvatarGroupSizeConfiguration,
+        appearance: AvatarGroupAppearance? = nil
     ) {
         self.data = data
         self.lastAvatar = lastAvatar
+        self.maxDisplayingAvatarCount = maxDisplayingAvatarCount
         self.size = size
+        self._appearance = appearance
     }
 
     public var body: some View {
-        HStack(spacing: -size.borderWidth - size.spacing) {
+        HStack(spacing: -appearance.size.borderWidth - appearance.size.spacing) {
             ForEach(displayingAvatars, id: \.id) { avatarData in
                 SDDSAvatar<AnyView>(data: avatarDataHidden(avatarData: avatarData))
                     .overlay(
                         Circle()
-                            .stroke(Color.white, lineWidth: size.borderWidth)
+                            .stroke(Color.white, lineWidth: appearance.size.borderWidth)
                     )
                     .zIndex(-Double(data.count) + Double(displayingAvatars.firstIndex(of: avatarData) ?? 0))
             }
@@ -39,11 +47,15 @@ public struct SDDSAvatarGroup: View {
     }
 
     private var displayingAvatars: [SDDSAvatarData] {
-        if data.count > size.maxDisplayingAvatarCount {
-            return Array(data.prefix(size.maxDisplayingAvatarCount)) + [lastAvatar]
+        if data.count > maxDisplayingAvatarCount {
+            return Array(data.prefix(maxDisplayingAvatarCount)) + [lastAvatar]
         } else {
             return data
         }
+    }
+    
+    public var appearance: AvatarGroupAppearance {
+        _appearance ?? environmentAppearance
     }
     
     private func avatarDataHidden(avatarData: SDDSAvatarData) -> SDDSAvatarData {
@@ -53,11 +65,10 @@ public struct SDDSAvatarGroup: View {
             placeholderImage: avatarData.placeholderImage,
             status: .hidden,
             extraContent: avatarData.extraContent,
-            appearance: avatarData.appearance,
+            appearance: appearance.avatarAppearance,
             accessibility: avatarData.accessibility
         )
     }
-
 }
 
 // MARK: - AvatarGroupSizeConfiguration
@@ -71,6 +82,7 @@ public struct SDDSAvatarGroup: View {
     - spacing: Расстояние между аватарами.
  */
 public protocol AvatarGroupSizeConfiguration {
+    @available(*, deprecated, message: "use public api instead")
     var maxDisplayingAvatarCount: Int { get }
     var borderWidth: CGFloat { get }
     var spacing: CGFloat { get }
