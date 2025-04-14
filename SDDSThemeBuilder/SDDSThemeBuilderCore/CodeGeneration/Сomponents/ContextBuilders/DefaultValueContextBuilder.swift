@@ -45,3 +45,9 @@ extension CGPoint {
         "CGPoint.zero"
     }
 }
+
+extension FillStyle {
+    static var defaultContext: String {
+        "FillStyle()"
+    }
+}

@@ -1,6 +1,6 @@
 import Foundation
 
-final class ShapeTokenContexBuilder: CodeGenerationContextBuilder {
+final class ShapeTokenContextBuilder: CodeGenerationContextBuilder {
     let shape: ShapeKeyValue?
     let nullify: Bool
     

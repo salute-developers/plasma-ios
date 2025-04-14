@@ -42,7 +42,7 @@ struct TextFieldSize: CodeGenerationSize {
         self.boxTrailingPadding = CGFloatContextBuilder(props.boxPaddingEnd?.value, nullify: nullify).context
         self.captionTopPadding = CGFloatContextBuilder(props.helperTextPadding?.value, nullify: nullify).context
         self.optionalPadding = CGFloatContextBuilder(props.optionalPadding?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.iconPadding = CGFloatContextBuilder(props.startContentPadding?.value, nullify: nullify).context
         self.iconActionPadding = CGFloatContextBuilder(props.endContentPadding?.value, nullify: nullify).context
         self.fieldHeight = CGFloatContextBuilder(props.boxMinHeight?.value, nullify: nullify).context

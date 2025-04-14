@@ -39,7 +39,7 @@ struct TextAreaSize: CodeGenerationSize {
         self.captionBottomPadding = CGFloatContextBuilder(props.helperTextPadding?.value, nullify: nullify).context
         self.optionalPadding = CGFloatContextBuilder(props.optionalPadding?.value, nullify: nullify).context
         self.iconActionPadding = CGFloatContextBuilder(props.endContentPadding?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.fieldHeight = CGFloatContextBuilder(props.boxMinHeight?.value, nullify: nullify).context
         self.iconActionSize = SizeContextBuilder(x: props.endContentSize?.value, y: props.endContentSize?.value, style: .size, nullify: nullify).context
         self.chipsPadding = CGFloatContextBuilder(props.chipsPadding?.value, nullify: nullify).context
