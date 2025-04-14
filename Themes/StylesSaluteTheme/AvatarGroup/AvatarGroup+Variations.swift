@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 
-public extension ComponentAppearanceVariation<Avatar, AvatarAppearance> {
+public extension ComponentAppearanceVariation<AvatarGroup, AvatarGroupAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -16,6 +16,6 @@ public extension ComponentAppearanceVariation<Avatar, AvatarAppearance> {
     }
 }
 
-private extension AvatarAppearance {
+private extension AvatarGroupAppearance {
     
 }

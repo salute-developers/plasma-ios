@@ -980,8 +980,8 @@
 		697970E02D63A6DE008306A8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				697970E32D63A723008306A8 /* CellSize.swift */,
 				697970E12D63A715008306A8 /* CellAppearance.swift */,
+				697970E32D63A723008306A8 /* CellSize.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

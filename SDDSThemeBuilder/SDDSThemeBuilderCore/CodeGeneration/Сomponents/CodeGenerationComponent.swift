@@ -10,15 +10,15 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //    case textAreaClear = "TextAreaClear"
 //    case chip = "Chip"
 //    case embeddedChip = "EmbeddedChip"
-//    case badge = "Badge"
-//    case badgeClear = "BadgeClear"
-//    case badgeTransparent = "BadgeTransparent"
-//    case iconBadge = "IconBadge"
-//    case iconBadgeClear = "IconBadgeClear"
-//    case iconBadgeTransparent = "IconBadgeTransparent"
-//    case indicator = "Indicator"
+    case badge = "Badge"
+    case badgeClear = "BadgeClear"
+    case badgeTransparent = "BadgeTransparent"
+    case iconBadge = "IconBadge"
+    case iconBadgeClear = "IconBadgeClear"
+    case iconBadgeTransparent = "IconBadgeTransparent"
+    case indicator = "Indicator"
 //    case cell = "Cell"
-//    case counter = "Counter"
+    case counter = "Counter"
 //    case card = "Card"
 //    case cardClear = "CardClear"
     case avatar = "Avatar"
@@ -33,15 +33,15 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .textFieldClear,
 //            .textArea,
 //            .textAreaClear,
-//            .badge,
-//            .badgeClear,
-//            .badgeTransparent,
+            .badge,
+            .badgeClear,
+            .badgeTransparent,
 //            .iconBadge,
 //            .iconBadgeClear,
 //            .iconBadgeTransparent,
-//            .indicator,
+            .indicator,
 //            .cell,     
-//            .counter,
+            .counter,
 //            .card,
 //            .cardClear
             .avatar,
@@ -61,14 +61,14 @@ extension CodeGenerationComponent {
 //            GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
 //        case .chip, .embeddedChip:
 //            GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-//        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
-//            GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-//        case .indicator:
-//            GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .indicator:
+            GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
 //        case .cell:
 //            GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-//        case .counter:
-//            GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .counter:
+            GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
 //        case .card, .cardClear:
 //            GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .avatar:
@@ -89,14 +89,14 @@ extension CodeGenerationComponent {
 //            "TextFieldAppearance"
 //        case .chip, .embeddedChip:
 //            "ChipAppearance"
-//        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
-//            "BadgeAppearance"
-//        case .indicator:
-//            "IndicatorAppearance"
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            "BadgeAppearance"
+        case .indicator:
+            "IndicatorAppearance"
 //        case .cell:
 //            "CellAppearance"
-//        case .counter:
-//            "CounterAppearance"
+        case .counter:
+            "CounterAppearance"
 //        case .card, .cardClear:
 //            "CardAppearance"
         case .avatar:
@@ -117,14 +117,14 @@ extension CodeGenerationComponent {
 //            "TextFieldSizeConfiguration"
 //        case .chip, .embeddedChip:
 //            "ChipSizeConfiguration"
-//        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
-//            "BadgeSizeConfiguration"
-//        case .indicator:
-//            "IndicatorSizeConfiguration"
+        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
+            "BadgeSizeConfiguration"
+        case .indicator:
+            "IndicatorSizeConfiguration"
 //        case .cell:
 //            "CellSizeConfiguration"
-//        case .counter:
-//            "CounterSizeConfiguration"
+        case .counter:
+            "CounterSizeConfiguration"
 //        case .card, .cardClear:
 //            "CardSizeConfiguration"
         case .avatar:
@@ -142,7 +142,7 @@ extension CodeGenerationComponent {
 //            "icon_button_config.json"
 //        case .linkButton:
 //            "link_button_config.json"
-//        case .textField:
+//        case .textField:/Users/22686886/plasma-ios-1/Themes/PlasmaB2CTheme/Avatar/Avatar+BaseVariations.swift
 //            "text_field_config.json"
 //        case .textFieldClear:
 //            "text_field_clear_config.json"
@@ -154,24 +154,24 @@ extension CodeGenerationComponent {
 //            "chip_config.json"
 //        case .embeddedChip:
 //            "embedded_chip_config.json"
-//        case .badge:
-//            "badge_solid_config.json"
-//        case .badgeClear:
-//            "badge_clear_config.json"
-//        case .badgeTransparent:
-//            "badge_transparent_config.json"
-//        case .iconBadge:
-//            "icon_badge_solid_config.json"
-//        case .iconBadgeClear:
-//            "icon_badge_clear_config.json"
-//        case .iconBadgeTransparent:
-//            "icon_badge_transparent_config.json"
-//        case .indicator:
-//            "indicator_config.json"
+        case .badge:
+            "badge_solid_config.json"
+        case .badgeClear:
+            "badge_clear_config.json"
+        case .badgeTransparent:
+            "badge_transparent_config.json"
+        case .iconBadge:
+            "icon_badge_solid_config.json"
+        case .iconBadgeClear:
+            "icon_badge_clear_config.json"
+        case .iconBadgeTransparent:
+            "icon_badge_transparent_config.json"
+        case .indicator:
+            "indicator_config.json"
 //        case .cell:
 //            "cell_config.json"
-//        case .counter:
-//            "counter_config.json"
+        case .counter:
+            "counter_config.json"
 //        case .card:
 //            "card_solid_config.json"
 //        case .cardClear:

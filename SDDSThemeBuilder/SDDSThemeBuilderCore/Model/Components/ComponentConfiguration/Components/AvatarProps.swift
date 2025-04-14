@@ -9,8 +9,8 @@ struct AvatarProps: MergeableConfiguration, Codable {
     var statusOffsetX: KeyValue<Double>?
     var statusOffsetY: KeyValue<Double>?
     var statusStyle: KeyValue<String>?
-    var counterStyle: KeyValue<String>?
     var badgeStyle: KeyValue<String>?
+    var counterStyle: KeyValue<String>?
     var background: ColorKeyValue?
     var shape: ShapeKeyValue?
     var textColor: ColorKeyValue?

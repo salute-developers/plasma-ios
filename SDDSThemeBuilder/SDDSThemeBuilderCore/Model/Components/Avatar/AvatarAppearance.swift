@@ -23,11 +23,12 @@ struct AvatarAppearance: CodeGenerationAppearance {
             return
         }
         self.shape = ShapeTokenContextBuilder(shape: props.shape, nullify: true).context
-//        self.backgroundFillStyle = FillStyleContextBuilder(props.background, hasDefault: true).context
-//        self.textFillStyle = FillStyleContextBuilder(props.textColor, hasDefault: true).context
+        self.backgroundFillStyle = FillStyleContextBuilder(props.background, hasDefault: true).context
+        self.textFillStyle = FillStyleContextBuilder(props.textColor, hasDefault: true).context
         self.onlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor).context
         self.offlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor).context
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
+        
         if let indicatorAppearance = props.statusStyle?.value {
             self.indicatorAppearance = ComponentStyleContextBuilder(indicatorAppearance).context
         }
