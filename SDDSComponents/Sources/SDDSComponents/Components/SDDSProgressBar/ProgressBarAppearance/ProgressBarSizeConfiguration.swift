@@ -14,7 +14,7 @@ import SwiftUI
 public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var height: CGFloat { get }
     var indicatorHeight: CGFloat { get }
-    var cornerRadius: CGFloat { get }
+    var cornerRadius: PathDrawer { get }
     var indicatorCornerRadius: CGFloat { get }
 }
 
@@ -22,7 +22,7 @@ public struct ZeroProgressBarSize: ProgressBarSizeConfiguration {
     public var debugDescription: String { "ZeroProgressBarSize" }
     public var height: CGFloat { 0 }
     public var indicatorHeight: CGFloat { 0 }
-    public var cornerRadius: CGFloat { 0 }
+    public var cornerRadius: PathDrawer = DefaultPathDrawer()
     public var indicatorCornerRadius: CGFloat { 0 }
     public init() {}
 }
