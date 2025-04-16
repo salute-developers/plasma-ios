@@ -20,8 +20,8 @@ struct ProgressBarSize: CodeGenerationSize {
         self.indicatorHeight = CGFloatContextBuilder(props.indicatorHeight?.value, nullify: nullify).context
         self.indicatorPathDrawer = PathDrawerContextBuilder(shape: props.indicatorShape, nullify: nullify).context
         self.pathDrawer = PathDrawerContextBuilder(shape: props.backgroundShape, nullify: nullify).context
-        self.cornerRadius = CGFloatContextBuilder(<#T##Double?#>, nullify: <#T##Bool#>)
-        self.indicatorCornerRadius = CGFloatContextBuilder(<#T##Double?#>, nullify: <#T##Bool#>)
+        self.cornerRadius = CGFloat.defaultContext
+        self.indicatorCornerRadius = CGFloat.defaultContext
     }
     
     init() {
