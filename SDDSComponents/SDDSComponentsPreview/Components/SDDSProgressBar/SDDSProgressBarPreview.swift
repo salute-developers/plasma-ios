@@ -9,7 +9,7 @@ struct SDDSProgressBarPreview: PreviewProvider {
         SDDSProgressView(
             progress: .constant(0.5),
             isEnabled: true,
-            appearance: ProgressBar.
+            appearance: .init(size: ProgressBarSize.Default)
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")
