@@ -4,10 +4,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case basicButton = "BasicButton"
     case linkButton = "LinkButton"
     case iconButton = "IconButton"
-    case textField = "TextField"
-    case textFieldClear = "TextFieldClear"
-    case textArea = "TextArea"
-    case textAreaClear = "TextAreaClear"
+//    case textField = "TextField"
+//    case textFieldClear = "TextFieldClear"
+//    case textArea = "TextArea"
+//    case textAreaClear = "TextAreaClear"
     case chip = "Chip"
     case embeddedChip = "EmbeddedChip"
     case badge = "Badge"
@@ -32,7 +32,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case avatar = "Avatar"
     case avatarGroup = "AvatarGroup"
     case progressbar = "Progressbar"
+<<<<<<< HEAD
     case progressBar = "ProgressBar"
+=======
+>>>>>>> 3739281b (feat: generate variations)
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -67,7 +70,6 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .avatar,
             .avatarGroup,
             .progressbar
-            .progressBar
         ]
     }
     
@@ -78,10 +80,10 @@ extension CodeGenerationComponent {
         switch self {
         case .basicButton, .iconButton, .linkButton:
             GenerateComponentCommand<ButtonProps, ButtonAppearance, ButtonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .textField, .textFieldClear:
-            GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .textArea, .textAreaClear:
-            GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+//        case .textField, .textFieldClear:
+//            GenerateComponentCommand<TextFieldProps, TextFieldAppearance, TextFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+//        case .textArea, .textAreaClear:
+//            GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .chip, .embeddedChip:
             GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
@@ -123,10 +125,10 @@ extension CodeGenerationComponent {
         switch self {
         case .basicButton, .iconButton, .linkButton:
             "ButtonAppearance"
-        case .textArea, .textAreaClear:
-            "TextAreaAppearance"
-        case .textField, .textFieldClear:
-            "TextFieldAppearance"
+//        case .textArea, .textAreaClear:
+//            "TextAreaAppearance"
+//        case .textField, .textFieldClear:
+//            "TextFieldAppearance"
         case .chip, .embeddedChip:
             "ChipAppearance"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
@@ -169,10 +171,10 @@ extension CodeGenerationComponent {
         switch self {
         case .basicButton, .iconButton, .linkButton:
             "ButtonSizeConfiguration"
-        case .textArea, .textAreaClear:
-            "TextAreaSizeConfiguration"
-        case .textField, .textFieldClear:
-            "TextFieldSizeConfiguration"
+//        case .textArea, .textAreaClear:
+//            "TextAreaSizeConfiguration"
+//        case .textField, .textFieldClear:
+//            "TextFieldSizeConfiguration"
         case .chip, .embeddedChip:
             "ChipSizeConfiguration"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
@@ -218,14 +220,14 @@ extension CodeGenerationComponent {
             "icon_button_config.json"
         case .linkButton:
             "link_button_config.json"
-        case .textField:
-            "text_field_config.json"
-        case .textFieldClear:
-            "text_field_clear_config.json"
-        case .textArea:
-            "text_area_config.json"
-        case .textAreaClear:
-            "text_area_clear_config.json"
+//        case .textField:
+//            "text_field_config.json"
+//        case .textFieldClear:
+//            "text_field_clear_config.json"
+//        case .textArea:
+//            "text_area_config.json"
+//        case .textAreaClear:
+//            "text_area_clear_config.json"
         case .chip:
             "chip_config.json"
         case .embeddedChip:

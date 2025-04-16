@@ -6,24 +6,30 @@ struct ProgressBarSize: CodeGenerationSize {
     
     var height: String?
     var indicatorHeight: String?
-    var indicatorCornerRadius: String?
+    var indicatorPathDrawer: String?
+    var pathDrawer: String?
     var cornerRadius: String?
+    var indicatorCornerRadius: String?
     
-    init(variation: ProgressBarConfiguration.Variation, nullify: Bool = false) {
+    init(variation: ComponentConfiguration<ProgressBarProps>.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
     
     init(props: ProgressBarProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.backgroundHeight?.value, nullify: nullify).context
         self.indicatorHeight = CGFloatContextBuilder(props.indicatorHeight?.value, nullify: nullify).context
-        self.indicatorCornerRadius = PathDrawerContextBuilder(shape: props.indicatorShape, nullify: nullify).context
-        self.cornerRadius = PathDrawerContextBuilder(shape: props.backgroundShape, nullify: nullify).context
+        self.indicatorPathDrawer = PathDrawerContextBuilder(shape: props.indicatorShape, nullify: nullify).context
+        self.pathDrawer = PathDrawerContextBuilder(shape: props.backgroundShape, nullify: nullify).context
+        self.cornerRadius = CGFloatContextBuilder(<#T##Double?#>, nullify: <#T##Bool#>)
+        self.indicatorCornerRadius = CGFloatContextBuilder(<#T##Double?#>, nullify: <#T##Bool#>)
     }
     
     init() {
         self.height = CGFloat.defaultContext
         self.indicatorHeight = CGFloat.defaultContext
-        self.indicatorCornerRadius = PathDrawerContextBuilder.defaultContext
-        self.cornerRadius = PathDrawerContextBuilder.defaultContext
+        self.indicatorPathDrawer = PathDrawerContextBuilder.defaultContext
+        self.pathDrawer = PathDrawerContextBuilder.defaultContext
+        self.cornerRadius = CGFloat.defaultContext
+        self.indicatorCornerRadius = CGFloat.defaultContext
     }
 }

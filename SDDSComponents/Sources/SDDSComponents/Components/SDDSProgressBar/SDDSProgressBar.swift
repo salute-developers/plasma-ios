@@ -45,10 +45,10 @@ public struct SDDSProgressView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 // Background track
-                appearance.size.cornerRadius
+                appearance.size.pathDrawer
                     .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.height)))
                     .fill(appearance.trackColor.color(for: colorScheme))
-//                    .frame(width: geometry.size.width, height: appearance.size.height)
+                    .frame(width: geometry.size.width, height: appearance.size.height)
                 
                 // Progress indicator
                 rectangle
