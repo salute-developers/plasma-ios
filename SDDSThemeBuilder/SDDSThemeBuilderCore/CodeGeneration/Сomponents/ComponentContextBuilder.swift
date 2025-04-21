@@ -35,6 +35,18 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var variations: [String: Size] = [:]
         
         let baseKeys = configuration.allBaseKeys
+        
+        guard baseKeys.isEmpty else {
+            
+            return .init(
+                component: component.rawValue,
+                appearance: component.appearance,
+                sizeConfiguration: component.sizeConfiguration,
+                variations: variations,
+                zeroSize: Size()
+            )
+        }
+        
         if let sizeProps = configuration.props as? Size.Props, baseKeys.isEmpty {
             variations["Default".codeGenString] = Size(props: sizeProps, id: nil, nullify: false)
         } else {
@@ -104,7 +116,38 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var variationViews: [String: [String: VariationsContext.View]] = [:]
         var views: [String: VariationsContext.View] = [:]
         
+//        guard configuration.variations.isEmpty {
+//            
+//        }
+        
         let keys = configuration.allProps.keys.sorted()
+        
+        guard !keys.isEmpty else {
+            private func addViewVariation(views: inout [String: VariationsContext.View]) {
+                for viewKey in configuration.view.keys.sorted() {
+                    guard let props = configuration.view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
+                        continue
+                    }
+                    
+                    views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
+                }
+            return .init(
+                component: component.rawValue,
+                appearance: component.appearance,
+                variations: variations,
+                variationViews: variationViews,
+                views: views
+            )
+        }
+        
+//        guard !keys.isEmpty else {
+//            addedVariationViews(
+//                view: view,
+//                variationViews: &variationViews,
+//                key: key
+//            )
+//        }
+        
         for parentKey in keys {
             let childKeys = configuration.childKeys(for: parentKey)
             
@@ -153,6 +196,12 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                     currentView[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
                     variationViews[variationViewKey] = currentView
                 }
+//                addedVariationViews(
+//                    views: nil,
+//                    view: view,
+//                    variationViews: &variationViews,
+//                    key: key
+//                )
             }
             
             if configuration.view.keys.isEmpty {
@@ -227,7 +276,6 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                 
                 views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
             }
-            
         }
         
         return .init(
@@ -267,6 +315,23 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         }
         return nextVariation
     }
-
 }
 
+//extension ComponentContextBuilderImpl {
+//    private func addedVariationViews(views: inout [String: VariationsContext.View]? = nil, view: [String : ComponentConfiguration<Props>.View]? = nil, variationViews: inout [String: [String: VariationsContext.View]], key: String) {
+//        let variationViewKey = key.joinedVariationPath.codeGenString
+//        var currentView = variationViews[variationViewKey, default: [:]]
+//        guard let views = views, view = view, key = key else {
+//            views[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
+//            return
+//        }
+//        
+//        for viewKey in view.keys.sorted() {
+//            guard let props = view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
+//                continue
+//            }
+//            currentView[viewKey.codeGenString] = .init(appearance: Appearance(props: appearanceProps, id: nil, component: component))
+//            variationViews[variationViewKey] = currentView
+//        }
+//    }
+//}
