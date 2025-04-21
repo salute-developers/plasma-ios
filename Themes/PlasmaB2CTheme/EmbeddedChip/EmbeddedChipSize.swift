@@ -77,7 +77,6 @@ struct EmbeddedChipAnySize: ChipSizeConfiguration {
     var height = CGFloat(0)
     var iconImageSize = CGSize.zero
     var leadingInset = CGFloat(0)
-    var spacing = CGFloat(0)
     var trailingInset = CGFloat(0)
 
     init(size: ChipSizeConfiguration) {
@@ -88,7 +87,6 @@ struct EmbeddedChipAnySize: ChipSizeConfiguration {
         self.height = size.height
         self.iconImageSize = size.iconImageSize
         self.leadingInset = size.leadingInset
-        self.spacing = size.spacing
         self.trailingInset = size.trailingInset
     }
     var debugDescription: String {
