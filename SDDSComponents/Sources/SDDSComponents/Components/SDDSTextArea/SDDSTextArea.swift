@@ -310,9 +310,6 @@ public struct SDDSTextArea: View {
                         .frame(height: textHeight)
                         .padding(.leading, boxLeadingPadding)
                 }
-                .applyIf(!dynamicHeight) {
-                    $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
-                }
                 .padding(.bottom, size.boxPaddingTop)
                 .padding(.top, size.boxPaddingBottom)
                 
@@ -320,6 +317,9 @@ public struct SDDSTextArea: View {
                     .opacity(0)
                     .padding(.top, size.boxPaddingTop)
                     .padding(.trailing, layout == .clear ? 0 : boxTrailingPadding)
+            }
+            .applyIf(!dynamicHeight) {
+                $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
             }
         }
     }
@@ -886,7 +886,7 @@ public struct SDDSTextArea: View {
     
     private var scrollBarData: ScrollBarData {
         .init(
-            offsetY: shouldLayoutInnerTitle ? innerTitlePadding : 0,
+            offsetY: scrollBarOffsetY,
             totalHeight: totalHeight,
             scrollBarThickness: appearance.size.scrollBarThickness,
             scrollBarPaddingTop: appearance.size.scrollBarPaddingTop,
@@ -895,6 +895,10 @@ public struct SDDSTextArea: View {
             scrollBarTrackColor: appearance.scrollBarTrackColor,
             scrollBarThumbColor: appearance.scrollBarThumbColor
         )
+    }
+    
+    private var scrollBarOffsetY: CGFloat {
+        return shouldLayoutInnerTitle ? innerTitlePadding : 0
     }
 
 }

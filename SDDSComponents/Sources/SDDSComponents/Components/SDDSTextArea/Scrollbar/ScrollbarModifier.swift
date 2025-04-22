@@ -121,7 +121,6 @@ struct ScrollBarModifier: ViewModifier {
                     }
                     .frame(width: scrollBarData.scrollBarThickness, height: trackHeight)
                     .clipped()
-                    //.debug(color: .green, condition: true)
                     .padding(.trailing, scrollBarData.scrollBarPaddingEnd)
                     .onAppear {
                         scrollViewHeight = currentScrollViewHeight
