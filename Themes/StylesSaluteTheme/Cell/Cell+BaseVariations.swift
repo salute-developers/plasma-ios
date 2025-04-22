@@ -10,7 +10,7 @@ public struct Cell {
         appearance.size = CellSize.l
         appearance.avatarAppearance = Avatar.l.appearance
         appearance.buttonAppearance = IconButton.l.clear.appearance
-        appearance.checkboxAppearance = Checkbox.m.appearance
+        appearance.checkboxAppearance = Checkbox.m.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
@@ -29,7 +29,7 @@ public struct Cell {
         appearance.size = CellSize.m
         appearance.avatarAppearance = Avatar.m.appearance
         appearance.buttonAppearance = IconButton.m.clear.appearance
-        appearance.checkboxAppearance = Checkbox.m.appearance
+        appearance.checkboxAppearance = Checkbox.m.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
@@ -48,7 +48,7 @@ public struct Cell {
         appearance.size = CellSize.s
         appearance.avatarAppearance = Avatar.s.appearance
         appearance.buttonAppearance = IconButton.s.clear.appearance
-        appearance.checkboxAppearance = Checkbox.s.appearance
+        appearance.checkboxAppearance = Checkbox.s.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
@@ -67,7 +67,7 @@ public struct Cell {
         appearance.size = CellSize.xs
         appearance.avatarAppearance = Avatar.s.appearance
         appearance.buttonAppearance = IconButton.xs.clear.appearance
-        appearance.checkboxAppearance = Checkbox.s.appearance
+        appearance.checkboxAppearance = Checkbox.s.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
         appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
