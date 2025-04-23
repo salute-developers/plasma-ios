@@ -45,10 +45,16 @@ public struct SDDSProgressView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 // Background track
-                appearance.size.pathDrawer
-                    .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.height)))
+//                appearance.size.pathDrawer
+//                    .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.height)))
+                Rectangle()
                     .fill(appearance.trackColor.color(for: colorScheme))
-                    .frame(width: geometry.size.width, height: appearance.size.height)
+                    .frame(width: geometry.size.width, height: 4)
+                    .onAppear {
+                        let _ = print("COLOR: \(appearance.trackColor)")
+                        let _ = print("GEOMETY Width: \(geometry.size.width)")
+                        let _ = print("Height: \(appearance.size.height)")
+                    }
                 
                 // Progress indicator
                 rectangle
@@ -68,6 +74,8 @@ public struct SDDSProgressView: View {
     private var rectangle: some View {
         switch appearance.tintFillStyle {
         case .color(let colorToken):
+//            appearance.size.indicatorPathDrawer
+//                .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 0, height: 0)))
             RoundedRectangle(cornerRadius: appearance.size.indicatorCornerRadius)
                 .fill(colorToken.color(for: colorScheme))
         case .gradient(let gradientToken):
