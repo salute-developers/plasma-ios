@@ -30,7 +30,8 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
             self.variation = variationProvider.variations.first
         }
     }
-
+    
+    weak var delegate: ViewModelDelegate?
     let variationProvider: Provider
     var cancellables: Set<AnyCancellable> = []
 
@@ -68,5 +69,11 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
         return variation?.styles ?? []
     }
     
-    func onUpdateAppearance() {}
+    func onUpdateAppearance() {
+        delegate?.updateAppearance()
+    }
+}
+
+protocol ViewModelDelegate: AnyObject {
+    func updateAppearance()
 }

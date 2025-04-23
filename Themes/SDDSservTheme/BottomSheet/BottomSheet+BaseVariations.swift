@@ -5,14 +5,15 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct BottomSheet {
+    
     public static let all: [Variation<BottomSheetAppearance>] = [
-        .init(
-            originalVariation: BottomSheetAppearance.base,
-            styles: [],
-            name: "base",
-            appearance: BottomSheetAppearance.base
-        )
-    ]}
+        .init(originalVariation: BottomSheetAppearance.base,
+              styles: [.init(appearance: BottomSheetAppearance.base)],
+              name: "Default",
+              appearance: BottomSheetAppearance.base
+             )
+    ]
+}
 
 public struct BottomSheetVariation {
 }

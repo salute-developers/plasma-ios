@@ -1,39 +1,42 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 struct RadioboxTypography: GeneralTypographyConfiguration {
-    typealias S = SelectionControlSizeConfiguration
+    var l: TypographyToken?
+    var m: TypographyToken?
+    var s: TypographyToken?
     
-    let medium: TypographyToken?
-    let small: TypographyToken?
+    init(
+        l: TypographyToken? = nil,
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil
+    ) {
+        self.l = l
+        self.m = m
+        self.s = s
+    }
     
-    init(medium: TypographyToken?, small: TypographyToken?) {
-        self.medium = medium
-        self.small = small
+    init(oneSize: TypographyToken) {
+        self.l = oneSize
+        self.m = oneSize
+        self.s = oneSize
     }
     
     func typography(with size: SelectionControlSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSRadioboxSize {
-        case .medium:
-            return medium
-        case .small, .none:
-            return small
+        if size is RadioboxAnySize {
+            return l
         }
-    }
-}
-
-extension RadioboxTypography {
-    static var label: TypographyConfiguration {
-        RadioboxTypography(
-            medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography
-        ).asContainer
-    }
-    
-    static var description: TypographyConfiguration {
-        RadioboxTypography(
-            medium: Typographies.bodySNormal.typography,
-            small: Typographies.bodyXsNormal.typography
-        ).asContainer
+        if size is RadioboxSizeL {
+            return l
+        }
+        if size is RadioboxSizeM {
+            return m
+        }
+        if size is RadioboxSizeS {
+            return s
+        }
+        return nil
     }
 }

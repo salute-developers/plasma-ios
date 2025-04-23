@@ -26,113 +26,131 @@
 		78AAC56012247EC6364186C7 /* ShapeToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6EAD15767A44BF6114F7A6 /* ShapeToken+Generated.swift */; };
 		79F93A50BB01323E71998FC1 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B791C0ED33E9F8D9DF53F644 /* SBSansText-Bold.otf */; };
 		7F050B284444F4CA3DBFE23E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343400BC1F1F415B618C0730 /* Theme.swift */; };
-		810AFB8E2D93284F000B2A7A /* Switch+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB772D93284F000B2A7A /* Switch+Variations.swift */; };
-		810AFB8F2D93284F000B2A7A /* Segment+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB6C2D93284F000B2A7A /* Segment+BaseVariations.swift */; };
-		810AFB902D93284F000B2A7A /* BadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB172D93284F000B2A7A /* BadgeSize.swift */; };
-		810AFB912D93284F000B2A7A /* RadioboxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB692D93284F000B2A7A /* RadioboxTypography.swift */; };
-		810AFB922D93284F000B2A7A /* Checkbox+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB2F2D93284F000B2A7A /* Checkbox+Variations.swift */; };
-		810AFB932D93284F000B2A7A /* SDDSSwitchSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB752D93284F000B2A7A /* SDDSSwitchSize.swift */; };
-		810AFB942D93284F000B2A7A /* TextFieldClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB8B2D93284F000B2A7A /* TextFieldClearSize.swift */; };
-		810AFB952D93284F000B2A7A /* CounterTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB3E2D93284F000B2A7A /* CounterTypography.swift */; };
-		810AFB962D93284F000B2A7A /* SegmentItemTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB732D93284F000B2A7A /* SegmentItemTypography.swift */; };
-		810AFB972D93284F000B2A7A /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5C2D93284F000B2A7A /* IndicatorSize.swift */; };
-		810AFB982D93284F000B2A7A /* IndicatorTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5D2D93284F000B2A7A /* IndicatorTypography.swift */; };
-		810AFB992D93284F000B2A7A /* BasicButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB242D93284F000B2A7A /* BasicButton+BaseVariations.swift */; };
-		810AFB9A2D93284F000B2A7A /* BadgeClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB1D2D93284F000B2A7A /* BadgeClearTypography.swift */; };
-		810AFB9B2D93284F000B2A7A /* TextAreaClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB812D93284F000B2A7A /* TextAreaClearSize.swift */; };
-		810AFB9C2D93284F000B2A7A /* IconBadgeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB492D93284F000B2A7A /* IconBadgeTypography.swift */; };
-		810AFB9D2D93284F000B2A7A /* EmbeddedChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB422D93284F000B2A7A /* EmbeddedChipSize.swift */; };
-		810AFB9E2D93284F000B2A7A /* Radiobox+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB682D93284F000B2A7A /* Radiobox+Variations.swift */; };
-		810AFB9F2D93284F000B2A7A /* BadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB202D93284F000B2A7A /* BadgeTransparent+Variations.swift */; };
-		810AFBA02D93284F000B2A7A /* TextFieldClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB8A2D93284F000B2A7A /* TextFieldClear+Variations.swift */; };
-		810AFBA12D93284F000B2A7A /* AvatarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB122D93284F000B2A7A /* AvatarTypography.swift */; };
-		810AFBA22D93284F000B2A7A /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB3D2D93284F000B2A7A /* CounterSize.swift */; };
-		810AFBA32D93284F000B2A7A /* IconBadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB482D93284F000B2A7A /* IconBadgeSize.swift */; };
-		810AFBA42D93284F000B2A7A /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB8C2D93284F000B2A7A /* TextFieldClearTypography.swift */; };
-		810AFBA52D93284F000B2A7A /* SDDSAvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB132D93284F000B2A7A /* SDDSAvatarSize.swift */; };
-		810AFBA62D93284F000B2A7A /* CellTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB2C2D93284F000B2A7A /* CellTypography.swift */; };
-		810AFBA72D93284F000B2A7A /* BadgeClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB1C2D93284F000B2A7A /* BadgeClearSize.swift */; };
-		810AFBA82D93284F000B2A7A /* IconBadgeTransparentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB522D93284F000B2A7A /* IconBadgeTransparentSize.swift */; };
-		810AFBA92D93284F000B2A7A /* TextField+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB842D93284F000B2A7A /* TextField+BaseVariations.swift */; };
-		810AFBAA2D93284F000B2A7A /* BadgeTransparentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB212D93284F000B2A7A /* BadgeTransparentSize.swift */; };
-		810AFBAB2D93284F000B2A7A /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB7A2D93284F000B2A7A /* TextArea+BaseVariations.swift */; };
-		810AFBAC2D93284F000B2A7A /* Counter+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB3B2D93284F000B2A7A /* Counter+BaseVariations.swift */; };
-		810AFBAD2D93284F000B2A7A /* ChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB352D93284F000B2A7A /* ChipSize.swift */; };
-		810AFBAE2D93284F000B2A7A /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB7B2D93284F000B2A7A /* TextArea+Variations.swift */; };
-		810AFBAF2D93284F000B2A7A /* IconBadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB512D93284F000B2A7A /* IconBadgeTransparent+Variations.swift */; };
-		810AFBB02D93284F000B2A7A /* EmbeddedChip+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB402D93284F000B2A7A /* EmbeddedChip+BaseVariations.swift */; };
-		810AFBB12D93284F000B2A7A /* TextFieldClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB892D93284F000B2A7A /* TextFieldClear+BaseVariations.swift */; };
-		810AFBB22D93284F000B2A7A /* SDDSProgressViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB652D93284F000B2A7A /* SDDSProgressViewSize.swift */; };
-		810AFBB32D93284F000B2A7A /* Checkbox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB2E2D93284F000B2A7A /* Checkbox+BaseVariations.swift */; };
-		810AFBB42D93284F000B2A7A /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB722D93284F000B2A7A /* SegmentItemSize.swift */; };
-		810AFBB52D93284F000B2A7A /* BadgeTransparent+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB1F2D93284F000B2A7A /* BadgeTransparent+BaseVariations.swift */; };
-		810AFBB62D93284F000B2A7A /* BadgeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB182D93284F000B2A7A /* BadgeTypography.swift */; };
-		810AFBB72D93284F000B2A7A /* TextField+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB852D93284F000B2A7A /* TextField+Variations.swift */; };
-		810AFBB82D93284F000B2A7A /* LinkButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB612D93284F000B2A7A /* LinkButtonSize.swift */; };
-		810AFBB92D93284F000B2A7A /* ChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB362D93284F000B2A7A /* ChipTypography.swift */; };
-		810AFBBA2D93284F000B2A7A /* Badge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB162D93284F000B2A7A /* Badge+Variations.swift */; };
-		810AFBBB2D93284F000B2A7A /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB822D93284F000B2A7A /* TextAreaClearTypography.swift */; };
-		810AFBBC2D93284F000B2A7A /* LinkButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB622D93284F000B2A7A /* LinkButtonTypography.swift */; };
-		810AFBBD2D93284F000B2A7A /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB7C2D93284F000B2A7A /* TextAreaSize.swift */; };
-		810AFBBE2D93284F000B2A7A /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB872D93284F000B2A7A /* TextFieldTypography.swift */; };
-		810AFBBF2D93284F000B2A7A /* LinkButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5F2D93284F000B2A7A /* LinkButton+BaseVariations.swift */; };
 		810AFBC02D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */; };
-		810AFBC12D93284F000B2A7A /* SDDSRadioboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB6A2D93284F000B2A7A /* SDDSRadioboxSize.swift */; };
-		810AFBC22D93284F000B2A7A /* BasicButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB252D93284F000B2A7A /* BasicButton+Variations.swift */; };
-		810AFBC32D93284F000B2A7A /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB2B2D93284F000B2A7A /* CellSize.swift */; };
-		810AFBC42D93284F000B2A7A /* IconBadge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB462D93284F000B2A7A /* IconBadge+BaseVariations.swift */; };
-		810AFBC52D93284F000B2A7A /* Switch+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB762D93284F000B2A7A /* Switch+BaseVariations.swift */; };
-		810AFBC62D93284F000B2A7A /* TextAreaClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB802D93284F000B2A7A /* TextAreaClear+Variations.swift */; };
-		810AFBC72D93284F000B2A7A /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB7D2D93284F000B2A7A /* TextAreaTypography.swift */; };
-		810AFBC82D93284F000B2A7A /* ProgressBar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB642D93284F000B2A7A /* ProgressBar+Variations.swift */; };
-		810AFBC92D93284F000B2A7A /* ChipGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB382D93284F000B2A7A /* ChipGroup+BaseVariations.swift */; };
-		810AFBCA2D93284F000B2A7A /* SDDSChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB392D93284F000B2A7A /* SDDSChipGroupSize.swift */; };
-		810AFBCB2D93284F000B2A7A /* Chip+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB332D93284F000B2A7A /* Chip+BaseVariations.swift */; };
-		810AFBCC2D93284F000B2A7A /* SDDSCheckboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB312D93284F000B2A7A /* SDDSCheckboxSize.swift */; };
-		810AFBCD2D93284F000B2A7A /* Segment+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB6D2D93284F000B2A7A /* Segment+Variations.swift */; };
-		810AFBCE2D93284F000B2A7A /* LinkButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB602D93284F000B2A7A /* LinkButton+Variations.swift */; };
-		810AFBCF2D93284F000B2A7A /* SegmentItem+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB702D93284F000B2A7A /* SegmentItem+BaseVariations.swift */; };
-		810AFBD02D93284F000B2A7A /* Cell+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB292D93284F000B2A7A /* Cell+BaseVariations.swift */; };
-		810AFBD12D93284F000B2A7A /* BadgeClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB1A2D93284F000B2A7A /* BadgeClear+BaseVariations.swift */; };
-		810AFBD22D93284F000B2A7A /* IconBadgeClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB4B2D93284F000B2A7A /* IconBadgeClear+BaseVariations.swift */; };
-		810AFBD32D93284F000B2A7A /* Chip+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB342D93284F000B2A7A /* Chip+Variations.swift */; };
-		810AFBD42D93284F000B2A7A /* IconButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB582D93284F000B2A7A /* IconButtonTypography.swift */; };
-		810AFBD52D93284F000B2A7A /* BadgeClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB1B2D93284F000B2A7A /* BadgeClear+Variations.swift */; };
-		810AFBD62D93284F000B2A7A /* Counter+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB3C2D93284F000B2A7A /* Counter+Variations.swift */; };
-		810AFBD72D93284F000B2A7A /* SegmentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB6E2D93284F000B2A7A /* SegmentSize.swift */; };
-		810AFBD82D93284F000B2A7A /* IconBadgeClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB4E2D93284F000B2A7A /* IconBadgeClearTypography.swift */; };
-		810AFBD92D93284F000B2A7A /* Cell+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB2A2D93284F000B2A7A /* Cell+Variations.swift */; };
-		810AFBDA2D93284F000B2A7A /* IconBadgeClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB4D2D93284F000B2A7A /* IconBadgeClearSize.swift */; };
-		810AFBDB2D93284F000B2A7A /* CheckboxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB302D93284F000B2A7A /* CheckboxTypography.swift */; };
-		810AFBDC2D93284F000B2A7A /* Avatar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB102D93284F000B2A7A /* Avatar+BaseVariations.swift */; };
-		810AFBDD2D93284F000B2A7A /* BasicButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB272D93284F000B2A7A /* BasicButtonTypography.swift */; };
-		810AFBDE2D93284F000B2A7A /* BasicButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB262D93284F000B2A7A /* BasicButtonSize.swift */; };
-		810AFBDF2D93284F000B2A7A /* IconButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB572D93284F000B2A7A /* IconButtonSize.swift */; };
-		810AFBE02D93284F000B2A7A /* Indicator+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5B2D93284F000B2A7A /* Indicator+Variations.swift */; };
-		810AFBE12D93284F000B2A7A /* TextAreaClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB7F2D93284F000B2A7A /* TextAreaClear+BaseVariations.swift */; };
-		810AFBE22D93284F000B2A7A /* BadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB222D93284F000B2A7A /* BadgeTransparentTypography.swift */; };
-		810AFBE32D93284F000B2A7A /* IconButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB552D93284F000B2A7A /* IconButton+BaseVariations.swift */; };
-		810AFBE42D93284F000B2A7A /* IconBadgeTransparent+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB502D93284F000B2A7A /* IconBadgeTransparent+BaseVariations.swift */; };
-		810AFBE52D93284F000B2A7A /* IconButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB562D93284F000B2A7A /* IconButton+Variations.swift */; };
-		810AFBE62D93284F000B2A7A /* SwitchTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB782D93284F000B2A7A /* SwitchTypography.swift */; };
-		810AFBE72D93284F000B2A7A /* Radiobox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB672D93284F000B2A7A /* Radiobox+BaseVariations.swift */; };
-		810AFBE82D93284F000B2A7A /* IconBadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB532D93284F000B2A7A /* IconBadgeTransparentTypography.swift */; };
-		810AFBE92D93284F000B2A7A /* SegmentItem+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB712D93284F000B2A7A /* SegmentItem+Variations.swift */; };
-		810AFBEA2D93284F000B2A7A /* Avatar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB112D93284F000B2A7A /* Avatar+Variations.swift */; };
-		810AFBEB2D93284F000B2A7A /* IconBadge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB472D93284F000B2A7A /* IconBadge+Variations.swift */; };
-		810AFBEC2D93284F000B2A7A /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB862D93284F000B2A7A /* TextFieldSize.swift */; };
-		810AFBED2D93284F000B2A7A /* IconBadgeClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB4C2D93284F000B2A7A /* IconBadgeClear+Variations.swift */; };
-		810AFBEE2D93284F000B2A7A /* EmbeddedChip+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB412D93284F000B2A7A /* EmbeddedChip+Variations.swift */; };
-		810AFBEF2D93284F000B2A7A /* Indicator+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB5A2D93284F000B2A7A /* Indicator+BaseVariations.swift */; };
-		810AFBF02D93284F000B2A7A /* EmbeddedChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB432D93284F000B2A7A /* EmbeddedChipTypography.swift */; };
-		810AFBF12D93284F000B2A7A /* Badge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB152D93284F000B2A7A /* Badge+BaseVariations.swift */; };
-		813992472D9FD4900015AF83 /* BottomSheet+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */; };
-		813992482D9FD4900015AF83 /* BottomSheet+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */; };
-		813992492D9FD4900015AF83 /* BottomSheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992452D9FD4900015AF83 /* BottomSheetSize.swift */; };
 		81BA173E2D8067F4008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA173D2D8067F4008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2742D75A20500612681 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2722D75A20500612681 /* Spacings+Generated.swift */; };
 		81BBE2752D75A20500612681 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE2732D75A20500612681 /* SpacingToken+Generated.swift */; };
 		81BBE2772D75A21000612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BBE2762D75A21000612681 /* SDDSComponents.xcframework */; };
+		81F632A72DB92DB9003C8C26 /* SwitchTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632912DB92DB9003C8C26 /* SwitchTypography.swift */; };
+		81F632A82DB92DB9003C8C26 /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632932DB92DB9003C8C26 /* TextArea+BaseVariations.swift */; };
+		81F632A92DB92DB9003C8C26 /* SegmentItemTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6328C2DB92DB9003C8C26 /* SegmentItemTypography.swift */; };
+		81F632AA2DB92DB9003C8C26 /* Counter+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6324F2DB92DB9003C8C26 /* Counter+BaseVariations.swift */; };
+		81F632AB2DB92DB9003C8C26 /* RadioboxGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6327F2DB92DB9003C8C26 /* RadioboxGroup+BaseVariations.swift */; };
+		81F632AC2DB92DB9003C8C26 /* BottomSheet+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6322A2DB92DB9003C8C26 /* BottomSheet+Variations.swift */; };
+		81F632AD2DB92DB9003C8C26 /* Avatar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632102DB92DB9003C8C26 /* Avatar+BaseVariations.swift */; };
+		81F632AE2DB92DB9003C8C26 /* TextFieldClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632A22DB92DB9003C8C26 /* TextFieldClear+BaseVariations.swift */; };
+		81F632AF2DB92DB9003C8C26 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632512DB92DB9003C8C26 /* CounterSize.swift */; };
+		81F632B02DB92DB9003C8C26 /* Cell+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632392DB92DB9003C8C26 /* Cell+Variations.swift */; };
+		81F632B12DB92DB9003C8C26 /* SDDSAvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632132DB92DB9003C8C26 /* SDDSAvatarSize.swift */; };
+		81F632B22DB92DB9003C8C26 /* BasicButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632262DB92DB9003C8C26 /* BasicButtonSize.swift */; };
+		81F632B32DB92DB9003C8C26 /* TextAreaTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632962DB92DB9003C8C26 /* TextAreaTypography.swift */; };
+		81F632B42DB92DB9003C8C26 /* Cell+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632382DB92DB9003C8C26 /* Cell+BaseVariations.swift */; };
+		81F632B52DB92DB9003C8C26 /* TextField+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6329E2DB92DB9003C8C26 /* TextField+Variations.swift */; };
+		81F632B62DB92DB9003C8C26 /* ProgressBar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632772DB92DB9003C8C26 /* ProgressBar+Variations.swift */; };
+		81F632B72DB92DB9003C8C26 /* Chip+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632482DB92DB9003C8C26 /* Chip+Variations.swift */; };
+		81F632B82DB92DB9003C8C26 /* BasicButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632252DB92DB9003C8C26 /* BasicButton+Variations.swift */; };
+		81F632B92DB92DB9003C8C26 /* LinkButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632722DB92DB9003C8C26 /* LinkButton+BaseVariations.swift */; };
+		81F632BA2DB92DB9003C8C26 /* TextFieldClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632A32DB92DB9003C8C26 /* TextFieldClear+Variations.swift */; };
+		81F632BB2DB92DB9003C8C26 /* TextField+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6329D2DB92DB9003C8C26 /* TextField+BaseVariations.swift */; };
+		81F632BC2DB92DB9003C8C26 /* Card+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6322E2DB92DB9003C8C26 /* Card+BaseVariations.swift */; };
+		81F632BD2DB92DB9003C8C26 /* BadgeClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6321A2DB92DB9003C8C26 /* BadgeClear+BaseVariations.swift */; };
+		81F632BE2DB92DB9003C8C26 /* LinkButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632732DB92DB9003C8C26 /* LinkButton+Variations.swift */; };
+		81F632BF2DB92DB9003C8C26 /* SDDSProgressViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632782DB92DB9003C8C26 /* SDDSProgressViewSize.swift */; };
+		81F632C02DB92DB9003C8C26 /* BasicButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632242DB92DB9003C8C26 /* BasicButton+BaseVariations.swift */; };
+		81F632C12DB92DB9003C8C26 /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6326F2DB92DB9003C8C26 /* IndicatorSize.swift */; };
+		81F632C22DB92DB9003C8C26 /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632952DB92DB9003C8C26 /* TextAreaSize.swift */; };
+		81F632C32DB92DB9003C8C26 /* CheckboxGroup+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632432DB92DB9003C8C26 /* CheckboxGroup+Variations.swift */; };
+		81F632C42DB92DB9003C8C26 /* BadgeTransparent+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6321F2DB92DB9003C8C26 /* BadgeTransparent+BaseVariations.swift */; };
+		81F632C52DB92DB9003C8C26 /* Segment+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632852DB92DB9003C8C26 /* Segment+Variations.swift */; };
+		81F632C62DB92DB9003C8C26 /* IndicatorTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632702DB92DB9003C8C26 /* IndicatorTypography.swift */; };
+		81F632C72DB92DB9003C8C26 /* AvatarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632122DB92DB9003C8C26 /* AvatarTypography.swift */; };
+		81F632C82DB92DB9003C8C26 /* BottomSheet+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632292DB92DB9003C8C26 /* BottomSheet+BaseVariations.swift */; };
+		81F632C92DB92DB9003C8C26 /* TextAreaClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632992DB92DB9003C8C26 /* TextAreaClear+Variations.swift */; };
+		81F632CA2DB92DB9003C8C26 /* IconBadgeClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6325E2DB92DB9003C8C26 /* IconBadgeClear+BaseVariations.swift */; };
+		81F632CB2DB92DB9003C8C26 /* EmbeddedChip+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632552DB92DB9003C8C26 /* EmbeddedChip+Variations.swift */; };
+		81F632CC2DB92DB9003C8C26 /* IconBadgeTransparentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632652DB92DB9003C8C26 /* IconBadgeTransparentSize.swift */; };
+		81F632CD2DB92DB9003C8C26 /* Indicator+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6326E2DB92DB9003C8C26 /* Indicator+Variations.swift */; };
+		81F632CE2DB92DB9003C8C26 /* BadgeClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6321C2DB92DB9003C8C26 /* BadgeClearSize.swift */; };
+		81F632CF2DB92DB9003C8C26 /* IconBadgeClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632602DB92DB9003C8C26 /* IconBadgeClearSize.swift */; };
+		81F632D02DB92DB9003C8C26 /* IconButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632692DB92DB9003C8C26 /* IconButton+Variations.swift */; };
+		81F632D12DB92DB9003C8C26 /* BasicButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632272DB92DB9003C8C26 /* BasicButtonTypography.swift */; };
+		81F632D22DB92DB9003C8C26 /* CheckboxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632402DB92DB9003C8C26 /* CheckboxTypography.swift */; };
+		81F632D32DB92DB9003C8C26 /* IconButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6326A2DB92DB9003C8C26 /* IconButtonSize.swift */; };
+		81F632D42DB92DB9003C8C26 /* RadioboxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6327D2DB92DB9003C8C26 /* RadioboxTypography.swift */; };
+		81F632D52DB92DB9003C8C26 /* RadioboxGroupTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632822DB92DB9003C8C26 /* RadioboxGroupTypography.swift */; };
+		81F632D62DB92DB9003C8C26 /* CheckboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6323F2DB92DB9003C8C26 /* CheckboxSize.swift */; };
+		81F632D72DB92DB9003C8C26 /* TextFieldTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632A02DB92DB9003C8C26 /* TextFieldTypography.swift */; };
+		81F632D82DB92DB9003C8C26 /* CheckboxGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632422DB92DB9003C8C26 /* CheckboxGroup+BaseVariations.swift */; };
+		81F632D92DB92DB9003C8C26 /* SegmentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632862DB92DB9003C8C26 /* SegmentSize.swift */; };
+		81F632DA2DB92DB9003C8C26 /* IconBadgeTransparent+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632632DB92DB9003C8C26 /* IconBadgeTransparent+BaseVariations.swift */; };
+		81F632DB2DB92DB9003C8C26 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632302DB92DB9003C8C26 /* CardSize.swift */; };
+		81F632DC2DB92DB9003C8C26 /* Checkbox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6323D2DB92DB9003C8C26 /* Checkbox+BaseVariations.swift */; };
+		81F632DD2DB92DB9003C8C26 /* BadgeClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6321D2DB92DB9003C8C26 /* BadgeClearTypography.swift */; };
+		81F632DE2DB92DB9003C8C26 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6323A2DB92DB9003C8C26 /* CellSize.swift */; };
+		81F632DF2DB92DB9003C8C26 /* Card+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6322F2DB92DB9003C8C26 /* Card+Variations.swift */; };
+		81F632E02DB92DB9003C8C26 /* IconBadge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6325A2DB92DB9003C8C26 /* IconBadge+Variations.swift */; };
+		81F632E12DB92DB9003C8C26 /* SegmentItem+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6328A2DB92DB9003C8C26 /* SegmentItem+Variations.swift */; };
+		81F632E22DB92DB9003C8C26 /* Badge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632152DB92DB9003C8C26 /* Badge+BaseVariations.swift */; };
+		81F632E32DB92DB9003C8C26 /* IconButton+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632682DB92DB9003C8C26 /* IconButton+BaseVariations.swift */; };
+		81F632E42DB92DB9003C8C26 /* CardClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632362DB92DB9003C8C26 /* CardClearTypography.swift */; };
+		81F632E52DB92DB9003C8C26 /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6329F2DB92DB9003C8C26 /* TextFieldSize.swift */; };
+		81F632E62DB92DB9003C8C26 /* RadioboxGroup+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632802DB92DB9003C8C26 /* RadioboxGroup+Variations.swift */; };
+		81F632E72DB92DB9003C8C26 /* Avatar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632112DB92DB9003C8C26 /* Avatar+Variations.swift */; };
+		81F632E82DB92DB9003C8C26 /* Radiobox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6327A2DB92DB9003C8C26 /* Radiobox+BaseVariations.swift */; };
+		81F632E92DB92DB9003C8C26 /* RadioboxGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632812DB92DB9003C8C26 /* RadioboxGroupSize.swift */; };
+		81F632EA2DB92DB9003C8C26 /* EmbeddedChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632562DB92DB9003C8C26 /* EmbeddedChipSize.swift */; };
+		81F632EB2DB92DB9003C8C26 /* Chip+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632472DB92DB9003C8C26 /* Chip+BaseVariations.swift */; };
+		81F632EC2DB92DB9003C8C26 /* CounterTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632522DB92DB9003C8C26 /* CounterTypography.swift */; };
+		81F632ED2DB92DB9003C8C26 /* EmbeddedChip+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632542DB92DB9003C8C26 /* EmbeddedChip+BaseVariations.swift */; };
+		81F632EE2DB92DB9003C8C26 /* Switch+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6328F2DB92DB9003C8C26 /* Switch+Variations.swift */; };
+		81F632EF2DB92DB9003C8C26 /* CardClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632342DB92DB9003C8C26 /* CardClear+Variations.swift */; };
+		81F632F02DB92DB9003C8C26 /* IconBadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632642DB92DB9003C8C26 /* IconBadgeTransparent+Variations.swift */; };
+		81F632F12DB92DB9003C8C26 /* Counter+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632502DB92DB9003C8C26 /* Counter+Variations.swift */; };
+		81F632F22DB92DB9003C8C26 /* IconBadgeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6325C2DB92DB9003C8C26 /* IconBadgeTypography.swift */; };
+		81F632F32DB92DB9003C8C26 /* Switch+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6328E2DB92DB9003C8C26 /* Switch+BaseVariations.swift */; };
+		81F632F42DB92DB9003C8C26 /* TextFieldClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632A52DB92DB9003C8C26 /* TextFieldClearTypography.swift */; };
+		81F632F52DB92DB9003C8C26 /* BadgeTransparentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632212DB92DB9003C8C26 /* BadgeTransparentSize.swift */; };
+		81F632F62DB92DB9003C8C26 /* IconBadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632662DB92DB9003C8C26 /* IconBadgeTransparentTypography.swift */; };
+		81F632F72DB92DB9003C8C26 /* CardClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632332DB92DB9003C8C26 /* CardClear+BaseVariations.swift */; };
+		81F632F82DB92DB9003C8C26 /* BadgeClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6321B2DB92DB9003C8C26 /* BadgeClear+Variations.swift */; };
+		81F632F92DB92DB9003C8C26 /* ChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6324A2DB92DB9003C8C26 /* ChipTypography.swift */; };
+		81F632FA2DB92DB9003C8C26 /* IconBadgeClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632612DB92DB9003C8C26 /* IconBadgeClearTypography.swift */; };
+		81F632FB2DB92DB9003C8C26 /* IconBadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6325B2DB92DB9003C8C26 /* IconBadgeSize.swift */; };
+		81F632FC2DB92DB9003C8C26 /* BadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632222DB92DB9003C8C26 /* BadgeTransparentTypography.swift */; };
+		81F632FD2DB92DB9003C8C26 /* IconBadge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632592DB92DB9003C8C26 /* IconBadge+BaseVariations.swift */; };
+		81F632FE2DB92DB9003C8C26 /* BottomSheetTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6322C2DB92DB9003C8C26 /* BottomSheetTypography.swift */; };
+		81F632FF2DB92DB9003C8C26 /* BadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632172DB92DB9003C8C26 /* BadgeSize.swift */; };
+		81F633002DB92DB9003C8C26 /* SegmentItem+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632892DB92DB9003C8C26 /* SegmentItem+BaseVariations.swift */; };
+		81F633012DB92DB9003C8C26 /* TextFieldClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632A42DB92DB9003C8C26 /* TextFieldClearSize.swift */; };
+		81F633022DB92DB9003C8C26 /* CardClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632352DB92DB9003C8C26 /* CardClearSize.swift */; };
+		81F633032DB92DB9003C8C26 /* BottomSheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6322B2DB92DB9003C8C26 /* BottomSheetSize.swift */; };
+		81F633042DB92DB9003C8C26 /* ChipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632492DB92DB9003C8C26 /* ChipSize.swift */; };
+		81F633052DB92DB9003C8C26 /* BadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632202DB92DB9003C8C26 /* BadgeTransparent+Variations.swift */; };
+		81F633062DB92DB9003C8C26 /* IconButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6326B2DB92DB9003C8C26 /* IconButtonTypography.swift */; };
+		81F633072DB92DB9003C8C26 /* RadioboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6327C2DB92DB9003C8C26 /* RadioboxSize.swift */; };
+		81F633082DB92DB9003C8C26 /* CardTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632312DB92DB9003C8C26 /* CardTypography.swift */; };
+		81F633092DB92DB9003C8C26 /* Radiobox+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6327B2DB92DB9003C8C26 /* Radiobox+Variations.swift */; };
+		81F6330A2DB92DB9003C8C26 /* Segment+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632842DB92DB9003C8C26 /* Segment+BaseVariations.swift */; };
+		81F6330B2DB92DB9003C8C26 /* ChipGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6324C2DB92DB9003C8C26 /* ChipGroup+BaseVariations.swift */; };
+		81F6330C2DB92DB9003C8C26 /* SwitchSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632902DB92DB9003C8C26 /* SwitchSize.swift */; };
+		81F6330D2DB92DB9003C8C26 /* SegmentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632872DB92DB9003C8C26 /* SegmentTypography.swift */; };
+		81F6330E2DB92DB9003C8C26 /* SDDSChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6324D2DB92DB9003C8C26 /* SDDSChipGroupSize.swift */; };
+		81F6330F2DB92DB9003C8C26 /* TextAreaClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6329A2DB92DB9003C8C26 /* TextAreaClearSize.swift */; };
+		81F633102DB92DB9003C8C26 /* EmbeddedChipTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632572DB92DB9003C8C26 /* EmbeddedChipTypography.swift */; };
+		81F633112DB92DB9003C8C26 /* LinkButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632742DB92DB9003C8C26 /* LinkButtonSize.swift */; };
+		81F633122DB92DB9003C8C26 /* CheckboxGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632442DB92DB9003C8C26 /* CheckboxGroupSize.swift */; };
+		81F633132DB92DB9003C8C26 /* Indicator+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6326D2DB92DB9003C8C26 /* Indicator+BaseVariations.swift */; };
+		81F633142DB92DB9003C8C26 /* IconBadgeClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6325F2DB92DB9003C8C26 /* IconBadgeClear+Variations.swift */; };
+		81F633152DB92DB9003C8C26 /* TextAreaClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632982DB92DB9003C8C26 /* TextAreaClear+BaseVariations.swift */; };
+		81F633162DB92DB9003C8C26 /* Checkbox+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6323E2DB92DB9003C8C26 /* Checkbox+Variations.swift */; };
+		81F633172DB92DB9003C8C26 /* BadgeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632182DB92DB9003C8C26 /* BadgeTypography.swift */; };
+		81F633182DB92DB9003C8C26 /* SegmentItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6328B2DB92DB9003C8C26 /* SegmentItemSize.swift */; };
+		81F633192DB92DB9003C8C26 /* CellTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6323B2DB92DB9003C8C26 /* CellTypography.swift */; };
+		81F6331A2DB92DB9003C8C26 /* TextAreaClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6329B2DB92DB9003C8C26 /* TextAreaClearTypography.swift */; };
+		81F6331B2DB92DB9003C8C26 /* CheckboxGroupTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632452DB92DB9003C8C26 /* CheckboxGroupTypography.swift */; };
+		81F6331C2DB92DB9003C8C26 /* Badge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632162DB92DB9003C8C26 /* Badge+Variations.swift */; };
+		81F6331D2DB92DB9003C8C26 /* LinkButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632752DB92DB9003C8C26 /* LinkButtonTypography.swift */; };
+		81F6331E2DB92DB9003C8C26 /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F632942DB92DB9003C8C26 /* TextArea+Variations.swift */; };
 		85BC007047D4A7AF489CFC15 /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = AAC11EFCF1B0ACE2B2545C9F /* SBSansText-Light.otf */; };
 		8DE42D89F43270CE57D2F9AE /* SBSansText-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FE8A397F0299FA6A02EC419 /* SBSansText-BoldItalic.otf */; };
 		8F748AA0CD417335813C8F79 /* SBSansText-Semibold.otf in Sources */ = {isa = PBXBuildFile; fileRef = 1C953B532335A9BBB967B7BE /* SBSansText-Semibold.otf */; };
@@ -227,113 +245,131 @@
 		6B06C6A5AB8FDC905458A41E /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
 		70B7AD1E3F291B575B2C1E80 /* SBSansDisplay-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Light.otf"; sourceTree = "<group>"; };
 		7AB2344B825A510C92F3D159 /* Shadows+Generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Shadows+Generated.swift"; sourceTree = "<group>"; };
-		810AFB102D93284F000B2A7A /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB112D93284F000B2A7A /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
-		810AFB122D93284F000B2A7A /* AvatarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTypography.swift; sourceTree = "<group>"; };
-		810AFB132D93284F000B2A7A /* SDDSAvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarSize.swift; sourceTree = "<group>"; };
-		810AFB152D93284F000B2A7A /* Badge+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB162D93284F000B2A7A /* Badge+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+Variations.swift"; sourceTree = "<group>"; };
-		810AFB172D93284F000B2A7A /* BadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSize.swift; sourceTree = "<group>"; };
-		810AFB182D93284F000B2A7A /* BadgeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTypography.swift; sourceTree = "<group>"; };
-		810AFB1A2D93284F000B2A7A /* BadgeClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeClear+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB1B2D93284F000B2A7A /* BadgeClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeClear+Variations.swift"; sourceTree = "<group>"; };
-		810AFB1C2D93284F000B2A7A /* BadgeClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeClearSize.swift; sourceTree = "<group>"; };
-		810AFB1D2D93284F000B2A7A /* BadgeClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeClearTypography.swift; sourceTree = "<group>"; };
-		810AFB1F2D93284F000B2A7A /* BadgeTransparent+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeTransparent+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB202D93284F000B2A7A /* BadgeTransparent+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeTransparent+Variations.swift"; sourceTree = "<group>"; };
-		810AFB212D93284F000B2A7A /* BadgeTransparentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTransparentSize.swift; sourceTree = "<group>"; };
-		810AFB222D93284F000B2A7A /* BadgeTransparentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTransparentTypography.swift; sourceTree = "<group>"; };
-		810AFB242D93284F000B2A7A /* BasicButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButton+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB252D93284F000B2A7A /* BasicButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButton+Variations.swift"; sourceTree = "<group>"; };
-		810AFB262D93284F000B2A7A /* BasicButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonSize.swift; sourceTree = "<group>"; };
-		810AFB272D93284F000B2A7A /* BasicButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonTypography.swift; sourceTree = "<group>"; };
-		810AFB292D93284F000B2A7A /* Cell+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB2A2D93284F000B2A7A /* Cell+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Variations.swift"; sourceTree = "<group>"; };
-		810AFB2B2D93284F000B2A7A /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
-		810AFB2C2D93284F000B2A7A /* CellTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypography.swift; sourceTree = "<group>"; };
-		810AFB2E2D93284F000B2A7A /* Checkbox+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkbox+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB2F2D93284F000B2A7A /* Checkbox+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkbox+Variations.swift"; sourceTree = "<group>"; };
-		810AFB302D93284F000B2A7A /* CheckboxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTypography.swift; sourceTree = "<group>"; };
-		810AFB312D93284F000B2A7A /* SDDSCheckboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckboxSize.swift; sourceTree = "<group>"; };
-		810AFB332D93284F000B2A7A /* Chip+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chip+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB342D93284F000B2A7A /* Chip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chip+Variations.swift"; sourceTree = "<group>"; };
-		810AFB352D93284F000B2A7A /* ChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSize.swift; sourceTree = "<group>"; };
-		810AFB362D93284F000B2A7A /* ChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTypography.swift; sourceTree = "<group>"; };
-		810AFB382D93284F000B2A7A /* ChipGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroup+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB392D93284F000B2A7A /* SDDSChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroupSize.swift; sourceTree = "<group>"; };
-		810AFB3B2D93284F000B2A7A /* Counter+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB3C2D93284F000B2A7A /* Counter+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+Variations.swift"; sourceTree = "<group>"; };
-		810AFB3D2D93284F000B2A7A /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
-		810AFB3E2D93284F000B2A7A /* CounterTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTypography.swift; sourceTree = "<group>"; };
-		810AFB402D93284F000B2A7A /* EmbeddedChip+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB412D93284F000B2A7A /* EmbeddedChip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+Variations.swift"; sourceTree = "<group>"; };
-		810AFB422D93284F000B2A7A /* EmbeddedChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipSize.swift; sourceTree = "<group>"; };
-		810AFB432D93284F000B2A7A /* EmbeddedChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipTypography.swift; sourceTree = "<group>"; };
 		810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValueProvider+DefaultValues.swift"; sourceTree = "<group>"; };
-		810AFB462D93284F000B2A7A /* IconBadge+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB472D93284F000B2A7A /* IconBadge+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+Variations.swift"; sourceTree = "<group>"; };
-		810AFB482D93284F000B2A7A /* IconBadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeSize.swift; sourceTree = "<group>"; };
-		810AFB492D93284F000B2A7A /* IconBadgeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTypography.swift; sourceTree = "<group>"; };
-		810AFB4B2D93284F000B2A7A /* IconBadgeClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB4C2D93284F000B2A7A /* IconBadgeClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+Variations.swift"; sourceTree = "<group>"; };
-		810AFB4D2D93284F000B2A7A /* IconBadgeClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearSize.swift; sourceTree = "<group>"; };
-		810AFB4E2D93284F000B2A7A /* IconBadgeClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearTypography.swift; sourceTree = "<group>"; };
-		810AFB502D93284F000B2A7A /* IconBadgeTransparent+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB512D93284F000B2A7A /* IconBadgeTransparent+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+Variations.swift"; sourceTree = "<group>"; };
-		810AFB522D93284F000B2A7A /* IconBadgeTransparentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentSize.swift; sourceTree = "<group>"; };
-		810AFB532D93284F000B2A7A /* IconBadgeTransparentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentTypography.swift; sourceTree = "<group>"; };
-		810AFB552D93284F000B2A7A /* IconButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButton+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB562D93284F000B2A7A /* IconButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButton+Variations.swift"; sourceTree = "<group>"; };
-		810AFB572D93284F000B2A7A /* IconButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonSize.swift; sourceTree = "<group>"; };
-		810AFB582D93284F000B2A7A /* IconButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonTypography.swift; sourceTree = "<group>"; };
-		810AFB5A2D93284F000B2A7A /* Indicator+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Indicator+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB5B2D93284F000B2A7A /* Indicator+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Indicator+Variations.swift"; sourceTree = "<group>"; };
-		810AFB5C2D93284F000B2A7A /* IndicatorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSize.swift; sourceTree = "<group>"; };
-		810AFB5D2D93284F000B2A7A /* IndicatorTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTypography.swift; sourceTree = "<group>"; };
-		810AFB5F2D93284F000B2A7A /* LinkButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkButton+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB602D93284F000B2A7A /* LinkButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkButton+Variations.swift"; sourceTree = "<group>"; };
-		810AFB612D93284F000B2A7A /* LinkButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonSize.swift; sourceTree = "<group>"; };
-		810AFB622D93284F000B2A7A /* LinkButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonTypography.swift; sourceTree = "<group>"; };
-		810AFB642D93284F000B2A7A /* ProgressBar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressBar+Variations.swift"; sourceTree = "<group>"; };
-		810AFB652D93284F000B2A7A /* SDDSProgressViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSProgressViewSize.swift; sourceTree = "<group>"; };
-		810AFB672D93284F000B2A7A /* Radiobox+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Radiobox+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB682D93284F000B2A7A /* Radiobox+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Radiobox+Variations.swift"; sourceTree = "<group>"; };
-		810AFB692D93284F000B2A7A /* RadioboxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxTypography.swift; sourceTree = "<group>"; };
-		810AFB6A2D93284F000B2A7A /* SDDSRadioboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRadioboxSize.swift; sourceTree = "<group>"; };
-		810AFB6C2D93284F000B2A7A /* Segment+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB6D2D93284F000B2A7A /* Segment+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+Variations.swift"; sourceTree = "<group>"; };
-		810AFB6E2D93284F000B2A7A /* SegmentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSize.swift; sourceTree = "<group>"; };
-		810AFB702D93284F000B2A7A /* SegmentItem+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB712D93284F000B2A7A /* SegmentItem+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+Variations.swift"; sourceTree = "<group>"; };
-		810AFB722D93284F000B2A7A /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
-		810AFB732D93284F000B2A7A /* SegmentItemTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemTypography.swift; sourceTree = "<group>"; };
-		810AFB752D93284F000B2A7A /* SDDSSwitchSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitchSize.swift; sourceTree = "<group>"; };
-		810AFB762D93284F000B2A7A /* Switch+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Switch+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB772D93284F000B2A7A /* Switch+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Switch+Variations.swift"; sourceTree = "<group>"; };
-		810AFB782D93284F000B2A7A /* SwitchTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTypography.swift; sourceTree = "<group>"; };
-		810AFB7A2D93284F000B2A7A /* TextArea+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB7B2D93284F000B2A7A /* TextArea+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+Variations.swift"; sourceTree = "<group>"; };
-		810AFB7C2D93284F000B2A7A /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
-		810AFB7D2D93284F000B2A7A /* TextAreaTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
-		810AFB7F2D93284F000B2A7A /* TextAreaClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB802D93284F000B2A7A /* TextAreaClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+Variations.swift"; sourceTree = "<group>"; };
-		810AFB812D93284F000B2A7A /* TextAreaClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearSize.swift; sourceTree = "<group>"; };
-		810AFB822D93284F000B2A7A /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
-		810AFB842D93284F000B2A7A /* TextField+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB852D93284F000B2A7A /* TextField+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Variations.swift"; sourceTree = "<group>"; };
-		810AFB862D93284F000B2A7A /* TextFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSize.swift; sourceTree = "<group>"; };
-		810AFB872D93284F000B2A7A /* TextFieldTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
-		810AFB892D93284F000B2A7A /* TextFieldClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+BaseVariations.swift"; sourceTree = "<group>"; };
-		810AFB8A2D93284F000B2A7A /* TextFieldClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+Variations.swift"; sourceTree = "<group>"; };
-		810AFB8B2D93284F000B2A7A /* TextFieldClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
-		810AFB8C2D93284F000B2A7A /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
-		813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+BaseVariations.swift"; sourceTree = "<group>"; };
-		813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+Variations.swift"; sourceTree = "<group>"; };
-		813992452D9FD4900015AF83 /* BottomSheetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSize.swift; sourceTree = "<group>"; };
 		81BA173D2D8067F4008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81BBE2722D75A20500612681 /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		81BBE2732D75A20500612681 /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
 		81BBE2762D75A21000612681 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		81F632102DB92DB9003C8C26 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632112DB92DB9003C8C26 /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
+		81F632122DB92DB9003C8C26 /* AvatarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTypography.swift; sourceTree = "<group>"; };
+		81F632132DB92DB9003C8C26 /* SDDSAvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarSize.swift; sourceTree = "<group>"; };
+		81F632152DB92DB9003C8C26 /* Badge+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632162DB92DB9003C8C26 /* Badge+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Badge+Variations.swift"; sourceTree = "<group>"; };
+		81F632172DB92DB9003C8C26 /* BadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSize.swift; sourceTree = "<group>"; };
+		81F632182DB92DB9003C8C26 /* BadgeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTypography.swift; sourceTree = "<group>"; };
+		81F6321A2DB92DB9003C8C26 /* BadgeClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6321B2DB92DB9003C8C26 /* BadgeClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeClear+Variations.swift"; sourceTree = "<group>"; };
+		81F6321C2DB92DB9003C8C26 /* BadgeClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeClearSize.swift; sourceTree = "<group>"; };
+		81F6321D2DB92DB9003C8C26 /* BadgeClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeClearTypography.swift; sourceTree = "<group>"; };
+		81F6321F2DB92DB9003C8C26 /* BadgeTransparent+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeTransparent+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632202DB92DB9003C8C26 /* BadgeTransparent+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BadgeTransparent+Variations.swift"; sourceTree = "<group>"; };
+		81F632212DB92DB9003C8C26 /* BadgeTransparentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTransparentSize.swift; sourceTree = "<group>"; };
+		81F632222DB92DB9003C8C26 /* BadgeTransparentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTransparentTypography.swift; sourceTree = "<group>"; };
+		81F632242DB92DB9003C8C26 /* BasicButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButton+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632252DB92DB9003C8C26 /* BasicButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButton+Variations.swift"; sourceTree = "<group>"; };
+		81F632262DB92DB9003C8C26 /* BasicButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonSize.swift; sourceTree = "<group>"; };
+		81F632272DB92DB9003C8C26 /* BasicButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonTypography.swift; sourceTree = "<group>"; };
+		81F632292DB92DB9003C8C26 /* BottomSheet+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6322A2DB92DB9003C8C26 /* BottomSheet+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+Variations.swift"; sourceTree = "<group>"; };
+		81F6322B2DB92DB9003C8C26 /* BottomSheetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSize.swift; sourceTree = "<group>"; };
+		81F6322C2DB92DB9003C8C26 /* BottomSheetTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTypography.swift; sourceTree = "<group>"; };
+		81F6322E2DB92DB9003C8C26 /* Card+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6322F2DB92DB9003C8C26 /* Card+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Variations.swift"; sourceTree = "<group>"; };
+		81F632302DB92DB9003C8C26 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
+		81F632312DB92DB9003C8C26 /* CardTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypography.swift; sourceTree = "<group>"; };
+		81F632332DB92DB9003C8C26 /* CardClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632342DB92DB9003C8C26 /* CardClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardClear+Variations.swift"; sourceTree = "<group>"; };
+		81F632352DB92DB9003C8C26 /* CardClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClearSize.swift; sourceTree = "<group>"; };
+		81F632362DB92DB9003C8C26 /* CardClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClearTypography.swift; sourceTree = "<group>"; };
+		81F632382DB92DB9003C8C26 /* Cell+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632392DB92DB9003C8C26 /* Cell+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Variations.swift"; sourceTree = "<group>"; };
+		81F6323A2DB92DB9003C8C26 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
+		81F6323B2DB92DB9003C8C26 /* CellTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypography.swift; sourceTree = "<group>"; };
+		81F6323D2DB92DB9003C8C26 /* Checkbox+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkbox+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6323E2DB92DB9003C8C26 /* Checkbox+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkbox+Variations.swift"; sourceTree = "<group>"; };
+		81F6323F2DB92DB9003C8C26 /* CheckboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxSize.swift; sourceTree = "<group>"; };
+		81F632402DB92DB9003C8C26 /* CheckboxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTypography.swift; sourceTree = "<group>"; };
+		81F632422DB92DB9003C8C26 /* CheckboxGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckboxGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632432DB92DB9003C8C26 /* CheckboxGroup+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckboxGroup+Variations.swift"; sourceTree = "<group>"; };
+		81F632442DB92DB9003C8C26 /* CheckboxGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupSize.swift; sourceTree = "<group>"; };
+		81F632452DB92DB9003C8C26 /* CheckboxGroupTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupTypography.swift; sourceTree = "<group>"; };
+		81F632472DB92DB9003C8C26 /* Chip+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chip+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632482DB92DB9003C8C26 /* Chip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chip+Variations.swift"; sourceTree = "<group>"; };
+		81F632492DB92DB9003C8C26 /* ChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipSize.swift; sourceTree = "<group>"; };
+		81F6324A2DB92DB9003C8C26 /* ChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTypography.swift; sourceTree = "<group>"; };
+		81F6324C2DB92DB9003C8C26 /* ChipGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6324D2DB92DB9003C8C26 /* SDDSChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroupSize.swift; sourceTree = "<group>"; };
+		81F6324F2DB92DB9003C8C26 /* Counter+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632502DB92DB9003C8C26 /* Counter+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+Variations.swift"; sourceTree = "<group>"; };
+		81F632512DB92DB9003C8C26 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
+		81F632522DB92DB9003C8C26 /* CounterTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTypography.swift; sourceTree = "<group>"; };
+		81F632542DB92DB9003C8C26 /* EmbeddedChip+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632552DB92DB9003C8C26 /* EmbeddedChip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+Variations.swift"; sourceTree = "<group>"; };
+		81F632562DB92DB9003C8C26 /* EmbeddedChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipSize.swift; sourceTree = "<group>"; };
+		81F632572DB92DB9003C8C26 /* EmbeddedChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipTypography.swift; sourceTree = "<group>"; };
+		81F632592DB92DB9003C8C26 /* IconBadge+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6325A2DB92DB9003C8C26 /* IconBadge+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+Variations.swift"; sourceTree = "<group>"; };
+		81F6325B2DB92DB9003C8C26 /* IconBadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeSize.swift; sourceTree = "<group>"; };
+		81F6325C2DB92DB9003C8C26 /* IconBadgeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTypography.swift; sourceTree = "<group>"; };
+		81F6325E2DB92DB9003C8C26 /* IconBadgeClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6325F2DB92DB9003C8C26 /* IconBadgeClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+Variations.swift"; sourceTree = "<group>"; };
+		81F632602DB92DB9003C8C26 /* IconBadgeClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearSize.swift; sourceTree = "<group>"; };
+		81F632612DB92DB9003C8C26 /* IconBadgeClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearTypography.swift; sourceTree = "<group>"; };
+		81F632632DB92DB9003C8C26 /* IconBadgeTransparent+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632642DB92DB9003C8C26 /* IconBadgeTransparent+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+Variations.swift"; sourceTree = "<group>"; };
+		81F632652DB92DB9003C8C26 /* IconBadgeTransparentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentSize.swift; sourceTree = "<group>"; };
+		81F632662DB92DB9003C8C26 /* IconBadgeTransparentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentTypography.swift; sourceTree = "<group>"; };
+		81F632682DB92DB9003C8C26 /* IconButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButton+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632692DB92DB9003C8C26 /* IconButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButton+Variations.swift"; sourceTree = "<group>"; };
+		81F6326A2DB92DB9003C8C26 /* IconButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonSize.swift; sourceTree = "<group>"; };
+		81F6326B2DB92DB9003C8C26 /* IconButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonTypography.swift; sourceTree = "<group>"; };
+		81F6326D2DB92DB9003C8C26 /* Indicator+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Indicator+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6326E2DB92DB9003C8C26 /* Indicator+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Indicator+Variations.swift"; sourceTree = "<group>"; };
+		81F6326F2DB92DB9003C8C26 /* IndicatorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSize.swift; sourceTree = "<group>"; };
+		81F632702DB92DB9003C8C26 /* IndicatorTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorTypography.swift; sourceTree = "<group>"; };
+		81F632722DB92DB9003C8C26 /* LinkButton+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkButton+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632732DB92DB9003C8C26 /* LinkButton+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkButton+Variations.swift"; sourceTree = "<group>"; };
+		81F632742DB92DB9003C8C26 /* LinkButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonSize.swift; sourceTree = "<group>"; };
+		81F632752DB92DB9003C8C26 /* LinkButtonTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonTypography.swift; sourceTree = "<group>"; };
+		81F632772DB92DB9003C8C26 /* ProgressBar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressBar+Variations.swift"; sourceTree = "<group>"; };
+		81F632782DB92DB9003C8C26 /* SDDSProgressViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSProgressViewSize.swift; sourceTree = "<group>"; };
+		81F6327A2DB92DB9003C8C26 /* Radiobox+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Radiobox+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6327B2DB92DB9003C8C26 /* Radiobox+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Radiobox+Variations.swift"; sourceTree = "<group>"; };
+		81F6327C2DB92DB9003C8C26 /* RadioboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxSize.swift; sourceTree = "<group>"; };
+		81F6327D2DB92DB9003C8C26 /* RadioboxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxTypography.swift; sourceTree = "<group>"; };
+		81F6327F2DB92DB9003C8C26 /* RadioboxGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadioboxGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632802DB92DB9003C8C26 /* RadioboxGroup+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadioboxGroup+Variations.swift"; sourceTree = "<group>"; };
+		81F632812DB92DB9003C8C26 /* RadioboxGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupSize.swift; sourceTree = "<group>"; };
+		81F632822DB92DB9003C8C26 /* RadioboxGroupTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupTypography.swift; sourceTree = "<group>"; };
+		81F632842DB92DB9003C8C26 /* Segment+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632852DB92DB9003C8C26 /* Segment+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segment+Variations.swift"; sourceTree = "<group>"; };
+		81F632862DB92DB9003C8C26 /* SegmentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSize.swift; sourceTree = "<group>"; };
+		81F632872DB92DB9003C8C26 /* SegmentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTypography.swift; sourceTree = "<group>"; };
+		81F632892DB92DB9003C8C26 /* SegmentItem+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6328A2DB92DB9003C8C26 /* SegmentItem+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentItem+Variations.swift"; sourceTree = "<group>"; };
+		81F6328B2DB92DB9003C8C26 /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
+		81F6328C2DB92DB9003C8C26 /* SegmentItemTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemTypography.swift; sourceTree = "<group>"; };
+		81F6328E2DB92DB9003C8C26 /* Switch+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Switch+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6328F2DB92DB9003C8C26 /* Switch+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Switch+Variations.swift"; sourceTree = "<group>"; };
+		81F632902DB92DB9003C8C26 /* SwitchSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSize.swift; sourceTree = "<group>"; };
+		81F632912DB92DB9003C8C26 /* SwitchTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTypography.swift; sourceTree = "<group>"; };
+		81F632932DB92DB9003C8C26 /* TextArea+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632942DB92DB9003C8C26 /* TextArea+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextArea+Variations.swift"; sourceTree = "<group>"; };
+		81F632952DB92DB9003C8C26 /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		81F632962DB92DB9003C8C26 /* TextAreaTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaTypography.swift; sourceTree = "<group>"; };
+		81F632982DB92DB9003C8C26 /* TextAreaClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632992DB92DB9003C8C26 /* TextAreaClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextAreaClear+Variations.swift"; sourceTree = "<group>"; };
+		81F6329A2DB92DB9003C8C26 /* TextAreaClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearSize.swift; sourceTree = "<group>"; };
+		81F6329B2DB92DB9003C8C26 /* TextAreaClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaClearTypography.swift; sourceTree = "<group>"; };
+		81F6329D2DB92DB9003C8C26 /* TextField+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6329E2DB92DB9003C8C26 /* TextField+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Variations.swift"; sourceTree = "<group>"; };
+		81F6329F2DB92DB9003C8C26 /* TextFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSize.swift; sourceTree = "<group>"; };
+		81F632A02DB92DB9003C8C26 /* TextFieldTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTypography.swift; sourceTree = "<group>"; };
+		81F632A22DB92DB9003C8C26 /* TextFieldClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F632A32DB92DB9003C8C26 /* TextFieldClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldClear+Variations.swift"; sourceTree = "<group>"; };
+		81F632A42DB92DB9003C8C26 /* TextFieldClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearSize.swift; sourceTree = "<group>"; };
+		81F632A52DB92DB9003C8C26 /* TextFieldClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearTypography.swift; sourceTree = "<group>"; };
 		9047DBBE21A8C9A933382C9C /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		A4118B88704BA52412552A16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AAC11EFCF1B0ACE2B2545C9F /* SBSansText-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-Light.otf"; sourceTree = "<group>"; };
@@ -404,295 +440,341 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		810AFB142D93284F000B2A7A /* Avatar */ = {
+		81F632142DB92DB9003C8C26 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB102D93284F000B2A7A /* Avatar+BaseVariations.swift */,
-				810AFB112D93284F000B2A7A /* Avatar+Variations.swift */,
-				810AFB122D93284F000B2A7A /* AvatarTypography.swift */,
-				810AFB132D93284F000B2A7A /* SDDSAvatarSize.swift */,
+				81F632102DB92DB9003C8C26 /* Avatar+BaseVariations.swift */,
+				81F632112DB92DB9003C8C26 /* Avatar+Variations.swift */,
+				81F632122DB92DB9003C8C26 /* AvatarTypography.swift */,
+				81F632132DB92DB9003C8C26 /* SDDSAvatarSize.swift */,
 			);
 			path = Avatar;
 			sourceTree = "<group>";
 		};
-		810AFB192D93284F000B2A7A /* Badge */ = {
+		81F632192DB92DB9003C8C26 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB152D93284F000B2A7A /* Badge+BaseVariations.swift */,
-				810AFB162D93284F000B2A7A /* Badge+Variations.swift */,
-				810AFB172D93284F000B2A7A /* BadgeSize.swift */,
-				810AFB182D93284F000B2A7A /* BadgeTypography.swift */,
+				81F632152DB92DB9003C8C26 /* Badge+BaseVariations.swift */,
+				81F632162DB92DB9003C8C26 /* Badge+Variations.swift */,
+				81F632172DB92DB9003C8C26 /* BadgeSize.swift */,
+				81F632182DB92DB9003C8C26 /* BadgeTypography.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
 		};
-		810AFB1E2D93284F000B2A7A /* BadgeClear */ = {
+		81F6321E2DB92DB9003C8C26 /* BadgeClear */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB1A2D93284F000B2A7A /* BadgeClear+BaseVariations.swift */,
-				810AFB1B2D93284F000B2A7A /* BadgeClear+Variations.swift */,
-				810AFB1C2D93284F000B2A7A /* BadgeClearSize.swift */,
-				810AFB1D2D93284F000B2A7A /* BadgeClearTypography.swift */,
+				81F6321A2DB92DB9003C8C26 /* BadgeClear+BaseVariations.swift */,
+				81F6321B2DB92DB9003C8C26 /* BadgeClear+Variations.swift */,
+				81F6321C2DB92DB9003C8C26 /* BadgeClearSize.swift */,
+				81F6321D2DB92DB9003C8C26 /* BadgeClearTypography.swift */,
 			);
 			path = BadgeClear;
 			sourceTree = "<group>";
 		};
-		810AFB232D93284F000B2A7A /* BadgeTransparent */ = {
+		81F632232DB92DB9003C8C26 /* BadgeTransparent */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB1F2D93284F000B2A7A /* BadgeTransparent+BaseVariations.swift */,
-				810AFB202D93284F000B2A7A /* BadgeTransparent+Variations.swift */,
-				810AFB212D93284F000B2A7A /* BadgeTransparentSize.swift */,
-				810AFB222D93284F000B2A7A /* BadgeTransparentTypography.swift */,
+				81F6321F2DB92DB9003C8C26 /* BadgeTransparent+BaseVariations.swift */,
+				81F632202DB92DB9003C8C26 /* BadgeTransparent+Variations.swift */,
+				81F632212DB92DB9003C8C26 /* BadgeTransparentSize.swift */,
+				81F632222DB92DB9003C8C26 /* BadgeTransparentTypography.swift */,
 			);
 			path = BadgeTransparent;
 			sourceTree = "<group>";
 		};
-		810AFB282D93284F000B2A7A /* BasicButton */ = {
+		81F632282DB92DB9003C8C26 /* BasicButton */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB242D93284F000B2A7A /* BasicButton+BaseVariations.swift */,
-				810AFB252D93284F000B2A7A /* BasicButton+Variations.swift */,
-				810AFB262D93284F000B2A7A /* BasicButtonSize.swift */,
-				810AFB272D93284F000B2A7A /* BasicButtonTypography.swift */,
+				81F632242DB92DB9003C8C26 /* BasicButton+BaseVariations.swift */,
+				81F632252DB92DB9003C8C26 /* BasicButton+Variations.swift */,
+				81F632262DB92DB9003C8C26 /* BasicButtonSize.swift */,
+				81F632272DB92DB9003C8C26 /* BasicButtonTypography.swift */,
 			);
 			path = BasicButton;
 			sourceTree = "<group>";
 		};
-		810AFB2D2D93284F000B2A7A /* Cell */ = {
+		81F6322D2DB92DB9003C8C26 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB292D93284F000B2A7A /* Cell+BaseVariations.swift */,
-				810AFB2A2D93284F000B2A7A /* Cell+Variations.swift */,
-				810AFB2B2D93284F000B2A7A /* CellSize.swift */,
-				810AFB2C2D93284F000B2A7A /* CellTypography.swift */,
+				81F632292DB92DB9003C8C26 /* BottomSheet+BaseVariations.swift */,
+				81F6322A2DB92DB9003C8C26 /* BottomSheet+Variations.swift */,
+				81F6322B2DB92DB9003C8C26 /* BottomSheetSize.swift */,
+				81F6322C2DB92DB9003C8C26 /* BottomSheetTypography.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		81F632322DB92DB9003C8C26 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				81F6322E2DB92DB9003C8C26 /* Card+BaseVariations.swift */,
+				81F6322F2DB92DB9003C8C26 /* Card+Variations.swift */,
+				81F632302DB92DB9003C8C26 /* CardSize.swift */,
+				81F632312DB92DB9003C8C26 /* CardTypography.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		81F632372DB92DB9003C8C26 /* CardClear */ = {
+			isa = PBXGroup;
+			children = (
+				81F632332DB92DB9003C8C26 /* CardClear+BaseVariations.swift */,
+				81F632342DB92DB9003C8C26 /* CardClear+Variations.swift */,
+				81F632352DB92DB9003C8C26 /* CardClearSize.swift */,
+				81F632362DB92DB9003C8C26 /* CardClearTypography.swift */,
+			);
+			path = CardClear;
+			sourceTree = "<group>";
+		};
+		81F6323C2DB92DB9003C8C26 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				81F632382DB92DB9003C8C26 /* Cell+BaseVariations.swift */,
+				81F632392DB92DB9003C8C26 /* Cell+Variations.swift */,
+				81F6323A2DB92DB9003C8C26 /* CellSize.swift */,
+				81F6323B2DB92DB9003C8C26 /* CellTypography.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		810AFB322D93284F000B2A7A /* Checkbox */ = {
+		81F632412DB92DB9003C8C26 /* Checkbox */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB2E2D93284F000B2A7A /* Checkbox+BaseVariations.swift */,
-				810AFB2F2D93284F000B2A7A /* Checkbox+Variations.swift */,
-				810AFB302D93284F000B2A7A /* CheckboxTypography.swift */,
-				810AFB312D93284F000B2A7A /* SDDSCheckboxSize.swift */,
+				81F6323D2DB92DB9003C8C26 /* Checkbox+BaseVariations.swift */,
+				81F6323E2DB92DB9003C8C26 /* Checkbox+Variations.swift */,
+				81F6323F2DB92DB9003C8C26 /* CheckboxSize.swift */,
+				81F632402DB92DB9003C8C26 /* CheckboxTypography.swift */,
 			);
 			path = Checkbox;
 			sourceTree = "<group>";
 		};
-		810AFB372D93284F000B2A7A /* Chip */ = {
+		81F632462DB92DB9003C8C26 /* CheckboxGroup */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB332D93284F000B2A7A /* Chip+BaseVariations.swift */,
-				810AFB342D93284F000B2A7A /* Chip+Variations.swift */,
-				810AFB352D93284F000B2A7A /* ChipSize.swift */,
-				810AFB362D93284F000B2A7A /* ChipTypography.swift */,
+				81F632422DB92DB9003C8C26 /* CheckboxGroup+BaseVariations.swift */,
+				81F632432DB92DB9003C8C26 /* CheckboxGroup+Variations.swift */,
+				81F632442DB92DB9003C8C26 /* CheckboxGroupSize.swift */,
+				81F632452DB92DB9003C8C26 /* CheckboxGroupTypography.swift */,
+			);
+			path = CheckboxGroup;
+			sourceTree = "<group>";
+		};
+		81F6324B2DB92DB9003C8C26 /* Chip */ = {
+			isa = PBXGroup;
+			children = (
+				81F632472DB92DB9003C8C26 /* Chip+BaseVariations.swift */,
+				81F632482DB92DB9003C8C26 /* Chip+Variations.swift */,
+				81F632492DB92DB9003C8C26 /* ChipSize.swift */,
+				81F6324A2DB92DB9003C8C26 /* ChipTypography.swift */,
 			);
 			path = Chip;
 			sourceTree = "<group>";
 		};
-		810AFB3A2D93284F000B2A7A /* ChipGroup */ = {
+		81F6324E2DB92DB9003C8C26 /* ChipGroup */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB382D93284F000B2A7A /* ChipGroup+BaseVariations.swift */,
-				810AFB392D93284F000B2A7A /* SDDSChipGroupSize.swift */,
+				81F6324C2DB92DB9003C8C26 /* ChipGroup+BaseVariations.swift */,
+				81F6324D2DB92DB9003C8C26 /* SDDSChipGroupSize.swift */,
 			);
 			path = ChipGroup;
 			sourceTree = "<group>";
 		};
-		810AFB3F2D93284F000B2A7A /* Counter */ = {
+		81F632532DB92DB9003C8C26 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB3B2D93284F000B2A7A /* Counter+BaseVariations.swift */,
-				810AFB3C2D93284F000B2A7A /* Counter+Variations.swift */,
-				810AFB3D2D93284F000B2A7A /* CounterSize.swift */,
-				810AFB3E2D93284F000B2A7A /* CounterTypography.swift */,
+				81F6324F2DB92DB9003C8C26 /* Counter+BaseVariations.swift */,
+				81F632502DB92DB9003C8C26 /* Counter+Variations.swift */,
+				81F632512DB92DB9003C8C26 /* CounterSize.swift */,
+				81F632522DB92DB9003C8C26 /* CounterTypography.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
 		};
-		810AFB442D93284F000B2A7A /* EmbeddedChip */ = {
+		81F632582DB92DB9003C8C26 /* EmbeddedChip */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB402D93284F000B2A7A /* EmbeddedChip+BaseVariations.swift */,
-				810AFB412D93284F000B2A7A /* EmbeddedChip+Variations.swift */,
-				810AFB422D93284F000B2A7A /* EmbeddedChipSize.swift */,
-				810AFB432D93284F000B2A7A /* EmbeddedChipTypography.swift */,
+				81F632542DB92DB9003C8C26 /* EmbeddedChip+BaseVariations.swift */,
+				81F632552DB92DB9003C8C26 /* EmbeddedChip+Variations.swift */,
+				81F632562DB92DB9003C8C26 /* EmbeddedChipSize.swift */,
+				81F632572DB92DB9003C8C26 /* EmbeddedChipTypography.swift */,
 			);
 			path = EmbeddedChip;
 			sourceTree = "<group>";
 		};
-		810AFB4A2D93284F000B2A7A /* IconBadge */ = {
+		81F6325D2DB92DB9003C8C26 /* IconBadge */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB462D93284F000B2A7A /* IconBadge+BaseVariations.swift */,
-				810AFB472D93284F000B2A7A /* IconBadge+Variations.swift */,
-				810AFB482D93284F000B2A7A /* IconBadgeSize.swift */,
-				810AFB492D93284F000B2A7A /* IconBadgeTypography.swift */,
+				81F632592DB92DB9003C8C26 /* IconBadge+BaseVariations.swift */,
+				81F6325A2DB92DB9003C8C26 /* IconBadge+Variations.swift */,
+				81F6325B2DB92DB9003C8C26 /* IconBadgeSize.swift */,
+				81F6325C2DB92DB9003C8C26 /* IconBadgeTypography.swift */,
 			);
 			path = IconBadge;
 			sourceTree = "<group>";
 		};
-		810AFB4F2D93284F000B2A7A /* IconBadgeClear */ = {
+		81F632622DB92DB9003C8C26 /* IconBadgeClear */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB4B2D93284F000B2A7A /* IconBadgeClear+BaseVariations.swift */,
-				810AFB4C2D93284F000B2A7A /* IconBadgeClear+Variations.swift */,
-				810AFB4D2D93284F000B2A7A /* IconBadgeClearSize.swift */,
-				810AFB4E2D93284F000B2A7A /* IconBadgeClearTypography.swift */,
+				81F6325E2DB92DB9003C8C26 /* IconBadgeClear+BaseVariations.swift */,
+				81F6325F2DB92DB9003C8C26 /* IconBadgeClear+Variations.swift */,
+				81F632602DB92DB9003C8C26 /* IconBadgeClearSize.swift */,
+				81F632612DB92DB9003C8C26 /* IconBadgeClearTypography.swift */,
 			);
 			path = IconBadgeClear;
 			sourceTree = "<group>";
 		};
-		810AFB542D93284F000B2A7A /* IconBadgeTransparent */ = {
+		81F632672DB92DB9003C8C26 /* IconBadgeTransparent */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB502D93284F000B2A7A /* IconBadgeTransparent+BaseVariations.swift */,
-				810AFB512D93284F000B2A7A /* IconBadgeTransparent+Variations.swift */,
-				810AFB522D93284F000B2A7A /* IconBadgeTransparentSize.swift */,
-				810AFB532D93284F000B2A7A /* IconBadgeTransparentTypography.swift */,
+				81F632632DB92DB9003C8C26 /* IconBadgeTransparent+BaseVariations.swift */,
+				81F632642DB92DB9003C8C26 /* IconBadgeTransparent+Variations.swift */,
+				81F632652DB92DB9003C8C26 /* IconBadgeTransparentSize.swift */,
+				81F632662DB92DB9003C8C26 /* IconBadgeTransparentTypography.swift */,
 			);
 			path = IconBadgeTransparent;
 			sourceTree = "<group>";
 		};
-		810AFB592D93284F000B2A7A /* IconButton */ = {
+		81F6326C2DB92DB9003C8C26 /* IconButton */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB552D93284F000B2A7A /* IconButton+BaseVariations.swift */,
-				810AFB562D93284F000B2A7A /* IconButton+Variations.swift */,
-				810AFB572D93284F000B2A7A /* IconButtonSize.swift */,
-				810AFB582D93284F000B2A7A /* IconButtonTypography.swift */,
+				81F632682DB92DB9003C8C26 /* IconButton+BaseVariations.swift */,
+				81F632692DB92DB9003C8C26 /* IconButton+Variations.swift */,
+				81F6326A2DB92DB9003C8C26 /* IconButtonSize.swift */,
+				81F6326B2DB92DB9003C8C26 /* IconButtonTypography.swift */,
 			);
 			path = IconButton;
 			sourceTree = "<group>";
 		};
-		810AFB5E2D93284F000B2A7A /* Indicator */ = {
+		81F632712DB92DB9003C8C26 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB5A2D93284F000B2A7A /* Indicator+BaseVariations.swift */,
-				810AFB5B2D93284F000B2A7A /* Indicator+Variations.swift */,
-				810AFB5C2D93284F000B2A7A /* IndicatorSize.swift */,
-				810AFB5D2D93284F000B2A7A /* IndicatorTypography.swift */,
+				81F6326D2DB92DB9003C8C26 /* Indicator+BaseVariations.swift */,
+				81F6326E2DB92DB9003C8C26 /* Indicator+Variations.swift */,
+				81F6326F2DB92DB9003C8C26 /* IndicatorSize.swift */,
+				81F632702DB92DB9003C8C26 /* IndicatorTypography.swift */,
 			);
 			path = Indicator;
 			sourceTree = "<group>";
 		};
-		810AFB632D93284F000B2A7A /* LinkButton */ = {
+		81F632762DB92DB9003C8C26 /* LinkButton */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB5F2D93284F000B2A7A /* LinkButton+BaseVariations.swift */,
-				810AFB602D93284F000B2A7A /* LinkButton+Variations.swift */,
-				810AFB612D93284F000B2A7A /* LinkButtonSize.swift */,
-				810AFB622D93284F000B2A7A /* LinkButtonTypography.swift */,
+				81F632722DB92DB9003C8C26 /* LinkButton+BaseVariations.swift */,
+				81F632732DB92DB9003C8C26 /* LinkButton+Variations.swift */,
+				81F632742DB92DB9003C8C26 /* LinkButtonSize.swift */,
+				81F632752DB92DB9003C8C26 /* LinkButtonTypography.swift */,
 			);
 			path = LinkButton;
 			sourceTree = "<group>";
 		};
-		810AFB662D93284F000B2A7A /* ProgressBar */ = {
+		81F632792DB92DB9003C8C26 /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB642D93284F000B2A7A /* ProgressBar+Variations.swift */,
-				810AFB652D93284F000B2A7A /* SDDSProgressViewSize.swift */,
+				81F632772DB92DB9003C8C26 /* ProgressBar+Variations.swift */,
+				81F632782DB92DB9003C8C26 /* SDDSProgressViewSize.swift */,
 			);
 			path = ProgressBar;
 			sourceTree = "<group>";
 		};
-		810AFB6B2D93284F000B2A7A /* Radiobox */ = {
+		81F6327E2DB92DB9003C8C26 /* Radiobox */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB672D93284F000B2A7A /* Radiobox+BaseVariations.swift */,
-				810AFB682D93284F000B2A7A /* Radiobox+Variations.swift */,
-				810AFB692D93284F000B2A7A /* RadioboxTypography.swift */,
-				810AFB6A2D93284F000B2A7A /* SDDSRadioboxSize.swift */,
+				81F6327A2DB92DB9003C8C26 /* Radiobox+BaseVariations.swift */,
+				81F6327B2DB92DB9003C8C26 /* Radiobox+Variations.swift */,
+				81F6327C2DB92DB9003C8C26 /* RadioboxSize.swift */,
+				81F6327D2DB92DB9003C8C26 /* RadioboxTypography.swift */,
 			);
 			path = Radiobox;
 			sourceTree = "<group>";
 		};
-		810AFB6F2D93284F000B2A7A /* Segment */ = {
+		81F632832DB92DB9003C8C26 /* RadioboxGroup */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB6C2D93284F000B2A7A /* Segment+BaseVariations.swift */,
-				810AFB6D2D93284F000B2A7A /* Segment+Variations.swift */,
-				810AFB6E2D93284F000B2A7A /* SegmentSize.swift */,
+				81F6327F2DB92DB9003C8C26 /* RadioboxGroup+BaseVariations.swift */,
+				81F632802DB92DB9003C8C26 /* RadioboxGroup+Variations.swift */,
+				81F632812DB92DB9003C8C26 /* RadioboxGroupSize.swift */,
+				81F632822DB92DB9003C8C26 /* RadioboxGroupTypography.swift */,
+			);
+			path = RadioboxGroup;
+			sourceTree = "<group>";
+		};
+		81F632882DB92DB9003C8C26 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				81F632842DB92DB9003C8C26 /* Segment+BaseVariations.swift */,
+				81F632852DB92DB9003C8C26 /* Segment+Variations.swift */,
+				81F632862DB92DB9003C8C26 /* SegmentSize.swift */,
+				81F632872DB92DB9003C8C26 /* SegmentTypography.swift */,
 			);
 			path = Segment;
 			sourceTree = "<group>";
 		};
-		810AFB742D93284F000B2A7A /* SegmentItem */ = {
+		81F6328D2DB92DB9003C8C26 /* SegmentItem */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB702D93284F000B2A7A /* SegmentItem+BaseVariations.swift */,
-				810AFB712D93284F000B2A7A /* SegmentItem+Variations.swift */,
-				810AFB722D93284F000B2A7A /* SegmentItemSize.swift */,
-				810AFB732D93284F000B2A7A /* SegmentItemTypography.swift */,
+				81F632892DB92DB9003C8C26 /* SegmentItem+BaseVariations.swift */,
+				81F6328A2DB92DB9003C8C26 /* SegmentItem+Variations.swift */,
+				81F6328B2DB92DB9003C8C26 /* SegmentItemSize.swift */,
+				81F6328C2DB92DB9003C8C26 /* SegmentItemTypography.swift */,
 			);
 			path = SegmentItem;
 			sourceTree = "<group>";
 		};
-		810AFB792D93284F000B2A7A /* Switch */ = {
+		81F632922DB92DB9003C8C26 /* Switch */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB752D93284F000B2A7A /* SDDSSwitchSize.swift */,
-				810AFB762D93284F000B2A7A /* Switch+BaseVariations.swift */,
-				810AFB772D93284F000B2A7A /* Switch+Variations.swift */,
-				810AFB782D93284F000B2A7A /* SwitchTypography.swift */,
+				81F6328E2DB92DB9003C8C26 /* Switch+BaseVariations.swift */,
+				81F6328F2DB92DB9003C8C26 /* Switch+Variations.swift */,
+				81F632902DB92DB9003C8C26 /* SwitchSize.swift */,
+				81F632912DB92DB9003C8C26 /* SwitchTypography.swift */,
 			);
 			path = Switch;
 			sourceTree = "<group>";
 		};
-		810AFB7E2D93284F000B2A7A /* TextArea */ = {
+		81F632972DB92DB9003C8C26 /* TextArea */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB7A2D93284F000B2A7A /* TextArea+BaseVariations.swift */,
-				810AFB7B2D93284F000B2A7A /* TextArea+Variations.swift */,
-				810AFB7C2D93284F000B2A7A /* TextAreaSize.swift */,
-				810AFB7D2D93284F000B2A7A /* TextAreaTypography.swift */,
+				81F632932DB92DB9003C8C26 /* TextArea+BaseVariations.swift */,
+				81F632942DB92DB9003C8C26 /* TextArea+Variations.swift */,
+				81F632952DB92DB9003C8C26 /* TextAreaSize.swift */,
+				81F632962DB92DB9003C8C26 /* TextAreaTypography.swift */,
 			);
 			path = TextArea;
 			sourceTree = "<group>";
 		};
-		810AFB832D93284F000B2A7A /* TextAreaClear */ = {
+		81F6329C2DB92DB9003C8C26 /* TextAreaClear */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB7F2D93284F000B2A7A /* TextAreaClear+BaseVariations.swift */,
-				810AFB802D93284F000B2A7A /* TextAreaClear+Variations.swift */,
-				810AFB812D93284F000B2A7A /* TextAreaClearSize.swift */,
-				810AFB822D93284F000B2A7A /* TextAreaClearTypography.swift */,
+				81F632982DB92DB9003C8C26 /* TextAreaClear+BaseVariations.swift */,
+				81F632992DB92DB9003C8C26 /* TextAreaClear+Variations.swift */,
+				81F6329A2DB92DB9003C8C26 /* TextAreaClearSize.swift */,
+				81F6329B2DB92DB9003C8C26 /* TextAreaClearTypography.swift */,
 			);
 			path = TextAreaClear;
 			sourceTree = "<group>";
 		};
-		810AFB882D93284F000B2A7A /* TextField */ = {
+		81F632A12DB92DB9003C8C26 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB842D93284F000B2A7A /* TextField+BaseVariations.swift */,
-				810AFB852D93284F000B2A7A /* TextField+Variations.swift */,
-				810AFB862D93284F000B2A7A /* TextFieldSize.swift */,
-				810AFB872D93284F000B2A7A /* TextFieldTypography.swift */,
+				81F6329D2DB92DB9003C8C26 /* TextField+BaseVariations.swift */,
+				81F6329E2DB92DB9003C8C26 /* TextField+Variations.swift */,
+				81F6329F2DB92DB9003C8C26 /* TextFieldSize.swift */,
+				81F632A02DB92DB9003C8C26 /* TextFieldTypography.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		810AFB8D2D93284F000B2A7A /* TextFieldClear */ = {
+		81F632A62DB92DB9003C8C26 /* TextFieldClear */ = {
 			isa = PBXGroup;
 			children = (
-				810AFB892D93284F000B2A7A /* TextFieldClear+BaseVariations.swift */,
-				810AFB8A2D93284F000B2A7A /* TextFieldClear+Variations.swift */,
-				810AFB8B2D93284F000B2A7A /* TextFieldClearSize.swift */,
-				810AFB8C2D93284F000B2A7A /* TextFieldClearTypography.swift */,
+				81F632A22DB92DB9003C8C26 /* TextFieldClear+BaseVariations.swift */,
+				81F632A32DB92DB9003C8C26 /* TextFieldClear+Variations.swift */,
+				81F632A42DB92DB9003C8C26 /* TextFieldClearSize.swift */,
+				81F632A52DB92DB9003C8C26 /* TextFieldClearTypography.swift */,
 			);
 			path = TextFieldClear;
-			sourceTree = "<group>";
-		};
-		813992462D9FD4900015AF83 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				813992432D9FD4900015AF83 /* BottomSheet+BaseVariations.swift */,
-				813992442D9FD4900015AF83 /* BottomSheet+Variations.swift */,
-				813992452D9FD4900015AF83 /* BottomSheetSize.swift */,
-			);
-			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		81FC47C62D93184400A83F87 /* Recovered References */ = {
@@ -771,34 +853,38 @@
 		B30D10EF1B9A708790D4AADE = {
 			isa = PBXGroup;
 			children = (
-				813992462D9FD4900015AF83 /* BottomSheet */,
-				810AFB142D93284F000B2A7A /* Avatar */,
-				810AFB192D93284F000B2A7A /* Badge */,
-				810AFB1E2D93284F000B2A7A /* BadgeClear */,
-				810AFB232D93284F000B2A7A /* BadgeTransparent */,
-				810AFB282D93284F000B2A7A /* BasicButton */,
-				810AFB2D2D93284F000B2A7A /* Cell */,
-				810AFB322D93284F000B2A7A /* Checkbox */,
-				810AFB372D93284F000B2A7A /* Chip */,
-				810AFB3A2D93284F000B2A7A /* ChipGroup */,
-				810AFB3F2D93284F000B2A7A /* Counter */,
-				810AFB442D93284F000B2A7A /* EmbeddedChip */,
+				81F632142DB92DB9003C8C26 /* Avatar */,
+				81F632192DB92DB9003C8C26 /* Badge */,
+				81F6321E2DB92DB9003C8C26 /* BadgeClear */,
+				81F632232DB92DB9003C8C26 /* BadgeTransparent */,
+				81F632282DB92DB9003C8C26 /* BasicButton */,
+				81F6322D2DB92DB9003C8C26 /* BottomSheet */,
+				81F632322DB92DB9003C8C26 /* Card */,
+				81F632372DB92DB9003C8C26 /* CardClear */,
+				81F6323C2DB92DB9003C8C26 /* Cell */,
+				81F632412DB92DB9003C8C26 /* Checkbox */,
+				81F632462DB92DB9003C8C26 /* CheckboxGroup */,
+				81F6324B2DB92DB9003C8C26 /* Chip */,
+				81F6324E2DB92DB9003C8C26 /* ChipGroup */,
+				81F632532DB92DB9003C8C26 /* Counter */,
+				81F632582DB92DB9003C8C26 /* EmbeddedChip */,
+				81F6325D2DB92DB9003C8C26 /* IconBadge */,
+				81F632622DB92DB9003C8C26 /* IconBadgeClear */,
+				81F632672DB92DB9003C8C26 /* IconBadgeTransparent */,
+				81F6326C2DB92DB9003C8C26 /* IconButton */,
+				81F632712DB92DB9003C8C26 /* Indicator */,
+				81F632762DB92DB9003C8C26 /* LinkButton */,
+				81F632792DB92DB9003C8C26 /* ProgressBar */,
+				81F6327E2DB92DB9003C8C26 /* Radiobox */,
+				81F632832DB92DB9003C8C26 /* RadioboxGroup */,
+				81F632882DB92DB9003C8C26 /* Segment */,
+				81F6328D2DB92DB9003C8C26 /* SegmentItem */,
+				81F632922DB92DB9003C8C26 /* Switch */,
+				81F632972DB92DB9003C8C26 /* TextArea */,
+				81F6329C2DB92DB9003C8C26 /* TextAreaClear */,
+				81F632A12DB92DB9003C8C26 /* TextField */,
+				81F632A62DB92DB9003C8C26 /* TextFieldClear */,
 				810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */,
-				810AFB4A2D93284F000B2A7A /* IconBadge */,
-				810AFB4F2D93284F000B2A7A /* IconBadgeClear */,
-				810AFB542D93284F000B2A7A /* IconBadgeTransparent */,
-				810AFB592D93284F000B2A7A /* IconButton */,
-				810AFB5E2D93284F000B2A7A /* Indicator */,
-				810AFB632D93284F000B2A7A /* LinkButton */,
-				810AFB662D93284F000B2A7A /* ProgressBar */,
-				810AFB6B2D93284F000B2A7A /* Radiobox */,
-				810AFB6F2D93284F000B2A7A /* Segment */,
-				810AFB742D93284F000B2A7A /* SegmentItem */,
-				810AFB792D93284F000B2A7A /* Switch */,
-				810AFB7E2D93284F000B2A7A /* TextArea */,
-				810AFB832D93284F000B2A7A /* TextAreaClear */,
-				810AFB882D93284F000B2A7A /* TextField */,
-				810AFB8D2D93284F000B2A7A /* TextFieldClear */,
 				6DD26A8CD2D763366157C193 /* Products */,
 				D7B88A95547ADF6D00531EBF /* Frameworks */,
 				4A8EDA9D7C1C6EADE8CBB534 /* SDDSTheme.h */,
@@ -913,112 +999,10 @@
 				7F050B284444F4CA3DBFE23E /* Theme.swift in Sources */,
 				78AAC56012247EC6364186C7 /* ShapeToken+Generated.swift in Sources */,
 				81BBE2742D75A20500612681 /* Spacings+Generated.swift in Sources */,
-				813992472D9FD4900015AF83 /* BottomSheet+Variations.swift in Sources */,
-				813992482D9FD4900015AF83 /* BottomSheet+BaseVariations.swift in Sources */,
-				813992492D9FD4900015AF83 /* BottomSheetSize.swift in Sources */,
 				81BBE2752D75A20500612681 /* SpacingToken+Generated.swift in Sources */,
 				5C9AB00E144E6E7902E3BC4C /* TypographyToken+Generated.swift in Sources */,
 				75ACAEECC84123BE0233A532 /* Shapes+Generated.swift in Sources */,
-				810AFB8E2D93284F000B2A7A /* Switch+Variations.swift in Sources */,
-				810AFB8F2D93284F000B2A7A /* Segment+BaseVariations.swift in Sources */,
-				810AFB902D93284F000B2A7A /* BadgeSize.swift in Sources */,
-				810AFB912D93284F000B2A7A /* RadioboxTypography.swift in Sources */,
-				810AFB922D93284F000B2A7A /* Checkbox+Variations.swift in Sources */,
-				810AFB932D93284F000B2A7A /* SDDSSwitchSize.swift in Sources */,
-				810AFB942D93284F000B2A7A /* TextFieldClearSize.swift in Sources */,
-				810AFB952D93284F000B2A7A /* CounterTypography.swift in Sources */,
-				810AFB962D93284F000B2A7A /* SegmentItemTypography.swift in Sources */,
-				810AFB972D93284F000B2A7A /* IndicatorSize.swift in Sources */,
-				810AFB982D93284F000B2A7A /* IndicatorTypography.swift in Sources */,
-				810AFB992D93284F000B2A7A /* BasicButton+BaseVariations.swift in Sources */,
-				810AFB9A2D93284F000B2A7A /* BadgeClearTypography.swift in Sources */,
-				810AFB9B2D93284F000B2A7A /* TextAreaClearSize.swift in Sources */,
-				810AFB9C2D93284F000B2A7A /* IconBadgeTypography.swift in Sources */,
-				810AFB9D2D93284F000B2A7A /* EmbeddedChipSize.swift in Sources */,
-				810AFB9E2D93284F000B2A7A /* Radiobox+Variations.swift in Sources */,
-				810AFB9F2D93284F000B2A7A /* BadgeTransparent+Variations.swift in Sources */,
-				810AFBA02D93284F000B2A7A /* TextFieldClear+Variations.swift in Sources */,
-				810AFBA12D93284F000B2A7A /* AvatarTypography.swift in Sources */,
-				810AFBA22D93284F000B2A7A /* CounterSize.swift in Sources */,
-				810AFBA32D93284F000B2A7A /* IconBadgeSize.swift in Sources */,
-				810AFBA42D93284F000B2A7A /* TextFieldClearTypography.swift in Sources */,
-				810AFBA52D93284F000B2A7A /* SDDSAvatarSize.swift in Sources */,
-				810AFBA62D93284F000B2A7A /* CellTypography.swift in Sources */,
-				810AFBA72D93284F000B2A7A /* BadgeClearSize.swift in Sources */,
-				810AFBA82D93284F000B2A7A /* IconBadgeTransparentSize.swift in Sources */,
-				810AFBA92D93284F000B2A7A /* TextField+BaseVariations.swift in Sources */,
-				810AFBAA2D93284F000B2A7A /* BadgeTransparentSize.swift in Sources */,
-				810AFBAB2D93284F000B2A7A /* TextArea+BaseVariations.swift in Sources */,
-				810AFBAC2D93284F000B2A7A /* Counter+BaseVariations.swift in Sources */,
-				810AFBAD2D93284F000B2A7A /* ChipSize.swift in Sources */,
-				810AFBAE2D93284F000B2A7A /* TextArea+Variations.swift in Sources */,
-				810AFBAF2D93284F000B2A7A /* IconBadgeTransparent+Variations.swift in Sources */,
-				810AFBB02D93284F000B2A7A /* EmbeddedChip+BaseVariations.swift in Sources */,
-				810AFBB12D93284F000B2A7A /* TextFieldClear+BaseVariations.swift in Sources */,
-				810AFBB22D93284F000B2A7A /* SDDSProgressViewSize.swift in Sources */,
-				810AFBB32D93284F000B2A7A /* Checkbox+BaseVariations.swift in Sources */,
-				810AFBB42D93284F000B2A7A /* SegmentItemSize.swift in Sources */,
-				810AFBB52D93284F000B2A7A /* BadgeTransparent+BaseVariations.swift in Sources */,
-				810AFBB62D93284F000B2A7A /* BadgeTypography.swift in Sources */,
-				810AFBB72D93284F000B2A7A /* TextField+Variations.swift in Sources */,
-				810AFBB82D93284F000B2A7A /* LinkButtonSize.swift in Sources */,
-				810AFBB92D93284F000B2A7A /* ChipTypography.swift in Sources */,
-				810AFBBA2D93284F000B2A7A /* Badge+Variations.swift in Sources */,
-				810AFBBB2D93284F000B2A7A /* TextAreaClearTypography.swift in Sources */,
-				810AFBBC2D93284F000B2A7A /* LinkButtonTypography.swift in Sources */,
-				810AFBBD2D93284F000B2A7A /* TextAreaSize.swift in Sources */,
-				810AFBBE2D93284F000B2A7A /* TextFieldTypography.swift in Sources */,
-				810AFBBF2D93284F000B2A7A /* LinkButton+BaseVariations.swift in Sources */,
 				810AFBC02D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift in Sources */,
-				810AFBC12D93284F000B2A7A /* SDDSRadioboxSize.swift in Sources */,
-				810AFBC22D93284F000B2A7A /* BasicButton+Variations.swift in Sources */,
-				810AFBC32D93284F000B2A7A /* CellSize.swift in Sources */,
-				810AFBC42D93284F000B2A7A /* IconBadge+BaseVariations.swift in Sources */,
-				810AFBC52D93284F000B2A7A /* Switch+BaseVariations.swift in Sources */,
-				810AFBC62D93284F000B2A7A /* TextAreaClear+Variations.swift in Sources */,
-				810AFBC72D93284F000B2A7A /* TextAreaTypography.swift in Sources */,
-				810AFBC82D93284F000B2A7A /* ProgressBar+Variations.swift in Sources */,
-				810AFBC92D93284F000B2A7A /* ChipGroup+BaseVariations.swift in Sources */,
-				810AFBCA2D93284F000B2A7A /* SDDSChipGroupSize.swift in Sources */,
-				810AFBCB2D93284F000B2A7A /* Chip+BaseVariations.swift in Sources */,
-				810AFBCC2D93284F000B2A7A /* SDDSCheckboxSize.swift in Sources */,
-				810AFBCD2D93284F000B2A7A /* Segment+Variations.swift in Sources */,
-				810AFBCE2D93284F000B2A7A /* LinkButton+Variations.swift in Sources */,
-				810AFBCF2D93284F000B2A7A /* SegmentItem+BaseVariations.swift in Sources */,
-				810AFBD02D93284F000B2A7A /* Cell+BaseVariations.swift in Sources */,
-				810AFBD12D93284F000B2A7A /* BadgeClear+BaseVariations.swift in Sources */,
-				810AFBD22D93284F000B2A7A /* IconBadgeClear+BaseVariations.swift in Sources */,
-				810AFBD32D93284F000B2A7A /* Chip+Variations.swift in Sources */,
-				810AFBD42D93284F000B2A7A /* IconButtonTypography.swift in Sources */,
-				810AFBD52D93284F000B2A7A /* BadgeClear+Variations.swift in Sources */,
-				810AFBD62D93284F000B2A7A /* Counter+Variations.swift in Sources */,
-				810AFBD72D93284F000B2A7A /* SegmentSize.swift in Sources */,
-				810AFBD82D93284F000B2A7A /* IconBadgeClearTypography.swift in Sources */,
-				810AFBD92D93284F000B2A7A /* Cell+Variations.swift in Sources */,
-				810AFBDA2D93284F000B2A7A /* IconBadgeClearSize.swift in Sources */,
-				810AFBDB2D93284F000B2A7A /* CheckboxTypography.swift in Sources */,
-				810AFBDC2D93284F000B2A7A /* Avatar+BaseVariations.swift in Sources */,
-				810AFBDD2D93284F000B2A7A /* BasicButtonTypography.swift in Sources */,
-				810AFBDE2D93284F000B2A7A /* BasicButtonSize.swift in Sources */,
-				810AFBDF2D93284F000B2A7A /* IconButtonSize.swift in Sources */,
-				810AFBE02D93284F000B2A7A /* Indicator+Variations.swift in Sources */,
-				810AFBE12D93284F000B2A7A /* TextAreaClear+BaseVariations.swift in Sources */,
-				810AFBE22D93284F000B2A7A /* BadgeTransparentTypography.swift in Sources */,
-				810AFBE32D93284F000B2A7A /* IconButton+BaseVariations.swift in Sources */,
-				810AFBE42D93284F000B2A7A /* IconBadgeTransparent+BaseVariations.swift in Sources */,
-				810AFBE52D93284F000B2A7A /* IconButton+Variations.swift in Sources */,
-				810AFBE62D93284F000B2A7A /* SwitchTypography.swift in Sources */,
-				810AFBE72D93284F000B2A7A /* Radiobox+BaseVariations.swift in Sources */,
-				810AFBE82D93284F000B2A7A /* IconBadgeTransparentTypography.swift in Sources */,
-				810AFBE92D93284F000B2A7A /* SegmentItem+Variations.swift in Sources */,
-				810AFBEA2D93284F000B2A7A /* Avatar+Variations.swift in Sources */,
-				810AFBEB2D93284F000B2A7A /* IconBadge+Variations.swift in Sources */,
-				810AFBEC2D93284F000B2A7A /* TextFieldSize.swift in Sources */,
-				810AFBED2D93284F000B2A7A /* IconBadgeClear+Variations.swift in Sources */,
-				810AFBEE2D93284F000B2A7A /* EmbeddedChip+Variations.swift in Sources */,
-				810AFBEF2D93284F000B2A7A /* Indicator+BaseVariations.swift in Sources */,
-				810AFBF02D93284F000B2A7A /* EmbeddedChipTypography.swift in Sources */,
-				810AFBF12D93284F000B2A7A /* Badge+BaseVariations.swift in Sources */,
 				987FDF9C95C11661C810FC4A /* Gradients+Generated.swift in Sources */,
 				A4B48BB99F86CC0CBAD8BB5C /* ShadowToken+Generated.swift in Sources */,
 				E8B70BDB1B37D35BE0E691B8 /* Colors+Generated.swift in Sources */,
@@ -1029,6 +1013,126 @@
 				F624F0ABF094246A623EF653 /* SBSansText-Regular.otf in Sources */,
 				015ABD4C433DC6D8F62F1DD9 /* SBSansText-LightItalic.otf in Sources */,
 				BC44AFCFCA1101411602A24B /* SBSansText-Italic.otf in Sources */,
+				81F632A72DB92DB9003C8C26 /* SwitchTypography.swift in Sources */,
+				81F632A82DB92DB9003C8C26 /* TextArea+BaseVariations.swift in Sources */,
+				81F632A92DB92DB9003C8C26 /* SegmentItemTypography.swift in Sources */,
+				81F632AA2DB92DB9003C8C26 /* Counter+BaseVariations.swift in Sources */,
+				81F632AB2DB92DB9003C8C26 /* RadioboxGroup+BaseVariations.swift in Sources */,
+				81F632AC2DB92DB9003C8C26 /* BottomSheet+Variations.swift in Sources */,
+				81F632AD2DB92DB9003C8C26 /* Avatar+BaseVariations.swift in Sources */,
+				81F632AE2DB92DB9003C8C26 /* TextFieldClear+BaseVariations.swift in Sources */,
+				81F632AF2DB92DB9003C8C26 /* CounterSize.swift in Sources */,
+				81F632B02DB92DB9003C8C26 /* Cell+Variations.swift in Sources */,
+				81F632B12DB92DB9003C8C26 /* SDDSAvatarSize.swift in Sources */,
+				81F632B22DB92DB9003C8C26 /* BasicButtonSize.swift in Sources */,
+				81F632B32DB92DB9003C8C26 /* TextAreaTypography.swift in Sources */,
+				81F632B42DB92DB9003C8C26 /* Cell+BaseVariations.swift in Sources */,
+				81F632B52DB92DB9003C8C26 /* TextField+Variations.swift in Sources */,
+				81F632B62DB92DB9003C8C26 /* ProgressBar+Variations.swift in Sources */,
+				81F632B72DB92DB9003C8C26 /* Chip+Variations.swift in Sources */,
+				81F632B82DB92DB9003C8C26 /* BasicButton+Variations.swift in Sources */,
+				81F632B92DB92DB9003C8C26 /* LinkButton+BaseVariations.swift in Sources */,
+				81F632BA2DB92DB9003C8C26 /* TextFieldClear+Variations.swift in Sources */,
+				81F632BB2DB92DB9003C8C26 /* TextField+BaseVariations.swift in Sources */,
+				81F632BC2DB92DB9003C8C26 /* Card+BaseVariations.swift in Sources */,
+				81F632BD2DB92DB9003C8C26 /* BadgeClear+BaseVariations.swift in Sources */,
+				81F632BE2DB92DB9003C8C26 /* LinkButton+Variations.swift in Sources */,
+				81F632BF2DB92DB9003C8C26 /* SDDSProgressViewSize.swift in Sources */,
+				81F632C02DB92DB9003C8C26 /* BasicButton+BaseVariations.swift in Sources */,
+				81F632C12DB92DB9003C8C26 /* IndicatorSize.swift in Sources */,
+				81F632C22DB92DB9003C8C26 /* TextAreaSize.swift in Sources */,
+				81F632C32DB92DB9003C8C26 /* CheckboxGroup+Variations.swift in Sources */,
+				81F632C42DB92DB9003C8C26 /* BadgeTransparent+BaseVariations.swift in Sources */,
+				81F632C52DB92DB9003C8C26 /* Segment+Variations.swift in Sources */,
+				81F632C62DB92DB9003C8C26 /* IndicatorTypography.swift in Sources */,
+				81F632C72DB92DB9003C8C26 /* AvatarTypography.swift in Sources */,
+				81F632C82DB92DB9003C8C26 /* BottomSheet+BaseVariations.swift in Sources */,
+				81F632C92DB92DB9003C8C26 /* TextAreaClear+Variations.swift in Sources */,
+				81F632CA2DB92DB9003C8C26 /* IconBadgeClear+BaseVariations.swift in Sources */,
+				81F632CB2DB92DB9003C8C26 /* EmbeddedChip+Variations.swift in Sources */,
+				81F632CC2DB92DB9003C8C26 /* IconBadgeTransparentSize.swift in Sources */,
+				81F632CD2DB92DB9003C8C26 /* Indicator+Variations.swift in Sources */,
+				81F632CE2DB92DB9003C8C26 /* BadgeClearSize.swift in Sources */,
+				81F632CF2DB92DB9003C8C26 /* IconBadgeClearSize.swift in Sources */,
+				81F632D02DB92DB9003C8C26 /* IconButton+Variations.swift in Sources */,
+				81F632D12DB92DB9003C8C26 /* BasicButtonTypography.swift in Sources */,
+				81F632D22DB92DB9003C8C26 /* CheckboxTypography.swift in Sources */,
+				81F632D32DB92DB9003C8C26 /* IconButtonSize.swift in Sources */,
+				81F632D42DB92DB9003C8C26 /* RadioboxTypography.swift in Sources */,
+				81F632D52DB92DB9003C8C26 /* RadioboxGroupTypography.swift in Sources */,
+				81F632D62DB92DB9003C8C26 /* CheckboxSize.swift in Sources */,
+				81F632D72DB92DB9003C8C26 /* TextFieldTypography.swift in Sources */,
+				81F632D82DB92DB9003C8C26 /* CheckboxGroup+BaseVariations.swift in Sources */,
+				81F632D92DB92DB9003C8C26 /* SegmentSize.swift in Sources */,
+				81F632DA2DB92DB9003C8C26 /* IconBadgeTransparent+BaseVariations.swift in Sources */,
+				81F632DB2DB92DB9003C8C26 /* CardSize.swift in Sources */,
+				81F632DC2DB92DB9003C8C26 /* Checkbox+BaseVariations.swift in Sources */,
+				81F632DD2DB92DB9003C8C26 /* BadgeClearTypography.swift in Sources */,
+				81F632DE2DB92DB9003C8C26 /* CellSize.swift in Sources */,
+				81F632DF2DB92DB9003C8C26 /* Card+Variations.swift in Sources */,
+				81F632E02DB92DB9003C8C26 /* IconBadge+Variations.swift in Sources */,
+				81F632E12DB92DB9003C8C26 /* SegmentItem+Variations.swift in Sources */,
+				81F632E22DB92DB9003C8C26 /* Badge+BaseVariations.swift in Sources */,
+				81F632E32DB92DB9003C8C26 /* IconButton+BaseVariations.swift in Sources */,
+				81F632E42DB92DB9003C8C26 /* CardClearTypography.swift in Sources */,
+				81F632E52DB92DB9003C8C26 /* TextFieldSize.swift in Sources */,
+				81F632E62DB92DB9003C8C26 /* RadioboxGroup+Variations.swift in Sources */,
+				81F632E72DB92DB9003C8C26 /* Avatar+Variations.swift in Sources */,
+				81F632E82DB92DB9003C8C26 /* Radiobox+BaseVariations.swift in Sources */,
+				81F632E92DB92DB9003C8C26 /* RadioboxGroupSize.swift in Sources */,
+				81F632EA2DB92DB9003C8C26 /* EmbeddedChipSize.swift in Sources */,
+				81F632EB2DB92DB9003C8C26 /* Chip+BaseVariations.swift in Sources */,
+				81F632EC2DB92DB9003C8C26 /* CounterTypography.swift in Sources */,
+				81F632ED2DB92DB9003C8C26 /* EmbeddedChip+BaseVariations.swift in Sources */,
+				81F632EE2DB92DB9003C8C26 /* Switch+Variations.swift in Sources */,
+				81F632EF2DB92DB9003C8C26 /* CardClear+Variations.swift in Sources */,
+				81F632F02DB92DB9003C8C26 /* IconBadgeTransparent+Variations.swift in Sources */,
+				81F632F12DB92DB9003C8C26 /* Counter+Variations.swift in Sources */,
+				81F632F22DB92DB9003C8C26 /* IconBadgeTypography.swift in Sources */,
+				81F632F32DB92DB9003C8C26 /* Switch+BaseVariations.swift in Sources */,
+				81F632F42DB92DB9003C8C26 /* TextFieldClearTypography.swift in Sources */,
+				81F632F52DB92DB9003C8C26 /* BadgeTransparentSize.swift in Sources */,
+				81F632F62DB92DB9003C8C26 /* IconBadgeTransparentTypography.swift in Sources */,
+				81F632F72DB92DB9003C8C26 /* CardClear+BaseVariations.swift in Sources */,
+				81F632F82DB92DB9003C8C26 /* BadgeClear+Variations.swift in Sources */,
+				81F632F92DB92DB9003C8C26 /* ChipTypography.swift in Sources */,
+				81F632FA2DB92DB9003C8C26 /* IconBadgeClearTypography.swift in Sources */,
+				81F632FB2DB92DB9003C8C26 /* IconBadgeSize.swift in Sources */,
+				81F632FC2DB92DB9003C8C26 /* BadgeTransparentTypography.swift in Sources */,
+				81F632FD2DB92DB9003C8C26 /* IconBadge+BaseVariations.swift in Sources */,
+				81F632FE2DB92DB9003C8C26 /* BottomSheetTypography.swift in Sources */,
+				81F632FF2DB92DB9003C8C26 /* BadgeSize.swift in Sources */,
+				81F633002DB92DB9003C8C26 /* SegmentItem+BaseVariations.swift in Sources */,
+				81F633012DB92DB9003C8C26 /* TextFieldClearSize.swift in Sources */,
+				81F633022DB92DB9003C8C26 /* CardClearSize.swift in Sources */,
+				81F633032DB92DB9003C8C26 /* BottomSheetSize.swift in Sources */,
+				81F633042DB92DB9003C8C26 /* ChipSize.swift in Sources */,
+				81F633052DB92DB9003C8C26 /* BadgeTransparent+Variations.swift in Sources */,
+				81F633062DB92DB9003C8C26 /* IconButtonTypography.swift in Sources */,
+				81F633072DB92DB9003C8C26 /* RadioboxSize.swift in Sources */,
+				81F633082DB92DB9003C8C26 /* CardTypography.swift in Sources */,
+				81F633092DB92DB9003C8C26 /* Radiobox+Variations.swift in Sources */,
+				81F6330A2DB92DB9003C8C26 /* Segment+BaseVariations.swift in Sources */,
+				81F6330B2DB92DB9003C8C26 /* ChipGroup+BaseVariations.swift in Sources */,
+				81F6330C2DB92DB9003C8C26 /* SwitchSize.swift in Sources */,
+				81F6330D2DB92DB9003C8C26 /* SegmentTypography.swift in Sources */,
+				81F6330E2DB92DB9003C8C26 /* SDDSChipGroupSize.swift in Sources */,
+				81F6330F2DB92DB9003C8C26 /* TextAreaClearSize.swift in Sources */,
+				81F633102DB92DB9003C8C26 /* EmbeddedChipTypography.swift in Sources */,
+				81F633112DB92DB9003C8C26 /* LinkButtonSize.swift in Sources */,
+				81F633122DB92DB9003C8C26 /* CheckboxGroupSize.swift in Sources */,
+				81F633132DB92DB9003C8C26 /* Indicator+BaseVariations.swift in Sources */,
+				81F633142DB92DB9003C8C26 /* IconBadgeClear+Variations.swift in Sources */,
+				81F633152DB92DB9003C8C26 /* TextAreaClear+BaseVariations.swift in Sources */,
+				81F633162DB92DB9003C8C26 /* Checkbox+Variations.swift in Sources */,
+				81F633172DB92DB9003C8C26 /* BadgeTypography.swift in Sources */,
+				81F633182DB92DB9003C8C26 /* SegmentItemSize.swift in Sources */,
+				81F633192DB92DB9003C8C26 /* CellTypography.swift in Sources */,
+				81F6331A2DB92DB9003C8C26 /* TextAreaClearTypography.swift in Sources */,
+				81F6331B2DB92DB9003C8C26 /* CheckboxGroupTypography.swift in Sources */,
+				81F6331C2DB92DB9003C8C26 /* Badge+Variations.swift in Sources */,
+				81F6331D2DB92DB9003C8C26 /* LinkButtonTypography.swift in Sources */,
+				81F6331E2DB92DB9003C8C26 /* TextArea+Variations.swift in Sources */,
 				09C96EA435565039DC71E7F6 /* SBSansDisplay-Light.otf in Sources */,
 				B487E7D4839C4EF615324910 /* SBSansDisplay-Regular.otf in Sources */,
 				5A2DD10AA9EECBD8C8F1CAE9 /* SBSansDisplay-Medium.otf in Sources */,
@@ -1137,7 +1241,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;
@@ -1178,7 +1282,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;

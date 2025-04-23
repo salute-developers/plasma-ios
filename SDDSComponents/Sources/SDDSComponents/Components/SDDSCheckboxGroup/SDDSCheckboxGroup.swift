@@ -44,9 +44,12 @@ public struct SDDSCheckboxGroup: View {
     @State private var parentState: SelectionControlState?
     @State private var childStates: [SelectionControlState]
     let behaviour: CheckboxGroupBehaviour
+    @available(*, deprecated, message: "use 'appearance' instead")
     let size: CheckboxGroupSizeConfiguration
+    private let _appearance: CheckboxGroupAppearance?
+    @Environment(\.checkboxGroupAppearance) private var environmentAppearnce
     
-    public init(behaviour: CheckboxGroupBehaviour, size: CheckboxGroupSizeConfiguration) {
+    public init(behaviour: CheckboxGroupBehaviour, size: CheckboxGroupSizeConfiguration, appearance: CheckboxGroupAppearance? = nil) {
         self.behaviour = behaviour
         
         switch behaviour {
@@ -57,18 +60,18 @@ public struct SDDSCheckboxGroup: View {
             self._parentState = State(initialValue: nil)
             self._childStates = State(initialValue: data.map { $0.state.wrappedValue })
         }
-        
+        self._appearance = appearance
         self.size = size
     }
     
     public var body: some View {
-        VStack(spacing: size.verticalSpacing) {
+        VStack(spacing: appearance.size.verticalSpacing) {
             switch behaviour {
             case .hierarchical(let parent, let children, let onChildChange, let onParentChange):
                 SDDSCheckbox(
                     state: Binding(
                         get: { self.parentState ?? .deselected },
-                        set: { 
+                        set: {
                             self.updateParentState($0)
                             onParentChange?($0)
                         }
@@ -83,7 +86,7 @@ public struct SDDSCheckboxGroup: View {
                     SDDSCheckbox(
                         state: Binding(
                             get: { self.childStates[index] },
-                            set: { 
+                            set: {
                                 self.updateChildState($0, at: index)
                                 onChildChange?(index, $0)
                             }
@@ -94,14 +97,14 @@ public struct SDDSCheckboxGroup: View {
                         appearance: child.appearance,
                         accessibility: child.accessibility
                     )
-                    .padding(.leading, size.horizontalIndent)
+                    .padding(.leading, appearance.size.horizontalIndent)
                 }
             case .default(let data, let onChange):
                 ForEach(Array(data.enumerated()), id: \.offset) { index, item in
                     SDDSCheckbox(
                         state: Binding(
                             get: { self.childStates[index] },
-                            set: { 
+                            set: {
                                 self.childStates[index] = $0
                                 onChange?(index, $0)
                             }
@@ -112,7 +115,7 @@ public struct SDDSCheckboxGroup: View {
                         appearance: item.appearance,
                         accessibility: item.accessibility
                     )
-                    .padding(.leading, index > 0 ? size.horizontalIndent : 0)
+                    .padding(.leading, index > 0 ? appearance.size.horizontalIndent : 0)
                 }
             }
         }
@@ -141,6 +144,10 @@ public struct SDDSCheckboxGroup: View {
             }
             parent.state.wrappedValue = parentState ?? .deselected
         }
+    }
+    
+    private var appearance: CheckboxGroupAppearance {
+        _appearance ?? environmentAppearnce
     }
 }
 

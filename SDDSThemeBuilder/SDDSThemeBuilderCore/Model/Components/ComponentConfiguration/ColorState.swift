@@ -5,6 +5,10 @@ struct ColorState: Codable {
         case activated
         case pressed
         case hovered
+        case checked
+        case selected
+        case focused
+        case indeterminate
     }
     
     let state: [State]?

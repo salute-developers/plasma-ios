@@ -1,7 +1,5 @@
 import SwiftUI
-import Combine
 import SDDSComponents
-
 import SDDSServTheme
 
 struct CheckboxGroupView: View {
@@ -17,19 +15,15 @@ struct CheckboxGroupView: View {
                 if let groupBehaviour = viewModel.groupBehaviour {
                     SDDSCheckboxGroup(
                         behaviour: groupBehaviour,
-                        size: viewModel.size
+                        size: viewModel.appearance.size,
+                        appearance: viewModel.appearance
                     )
                     .id(UUID())
                 }
             }
 
             Section(header: Text("Configuration")) {
-                Picker("Size", selection: $viewModel.size) {
-                    ForEach(SDDSCheckboxGroupSize.allCases, id: \.self) { size in
-                        Text(size.rawValue).tag(size)
-                    }
-                }
-
+                VariationsView(viewModel: viewModel)
                 ForEach(viewModel.checkboxViewModels.indices, id: \.self) { index in
                     VStack(alignment: .leading) {
                         Text("Checkbox \(index + 1) Configuration")

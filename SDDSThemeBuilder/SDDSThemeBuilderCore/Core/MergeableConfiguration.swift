@@ -16,7 +16,10 @@ extension MergeableConfiguration {
             let rhsDict = try JSONSerialization.jsonObject(with: rhsData, options: []) as! [String: Any?]
 
             let mergedDict = lhsDict.merging(rhsDict) { lhs, rhs in
-                return lhs ?? rhs
+                if let rhs = rhs {
+                    return rhs
+                }
+                return lhs
             }
 
             let mergedData = try JSONSerialization.data(withJSONObject: mergedDict, options: [])

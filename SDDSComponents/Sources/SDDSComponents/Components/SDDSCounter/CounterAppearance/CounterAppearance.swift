@@ -2,7 +2,9 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct CounterAppearance {
+public struct CounterAppearance: Modifiable {
+    public typealias ModifiableType = Self
+    
     public var size: CounterSizeConfiguration
     public var textTypography: TypographyConfiguration
     public var textColor: ButtonColor
@@ -18,6 +20,14 @@ public struct CounterAppearance {
         self.textTypography = textTypography
         self.textColor = textColor
         self.backgroundColor = backgroundColor
+    }
+    
+    public func modify(_ value: CounterAppearance) -> CounterAppearance {
+        var result = self
+        result.textTypography = value.textTypography
+        result.textColor = value.textColor
+        result.backgroundColor = value.backgroundColor
+        return result
     }
 }
 

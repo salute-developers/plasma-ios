@@ -19,6 +19,10 @@ extension Path {
 }
 
 extension CGFloat {
+    static var defaultOptionalContext: String {
+        "CGFloat?(0)"
+    }
+    
     static var defaultContext: String {
         "CGFloat(0)"
     }

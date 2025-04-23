@@ -50,7 +50,7 @@ public struct SDDSSegment: View {
         }
         .padding(appearance.size.paddings)
         .background(backgroundColor)
-        .cornerRadius(cornerRadius)
+        .shape(pathDrawer: appearance.size.pathDrawer)
         .disabled(isDisabled)
     }
     
@@ -74,7 +74,7 @@ public struct SDDSSegment: View {
             }
         }
         .applyIf(layoutMode == .fixed) {
-            $0.frame(height: appearance.size.horizontalHeight)
+            $0.frame(height: horizontalHeight)
         }
     }
     
@@ -101,8 +101,16 @@ public struct SDDSSegment: View {
             }
         }
         .applyIf(layoutMode == .fixed) {
-            $0.frame(height: appearance.size.verticalWidth)
+            $0.frame(height: verticalWidth)
         }
+    }
+    
+    private var horizontalHeight: CGFloat {
+        items.map({ $0.appearance.size.height }).max() ?? 0
+    }
+    
+    private var verticalWidth: CGFloat {
+        items.map({ $0.appearance.size.width }).max() ?? 0
     }
     
     private func currentColor(for counterColor: ButtonColor) -> Color {
@@ -115,10 +123,6 @@ public struct SDDSSegment: View {
         }
     }
     
-    private var cornerRadius: CGFloat {
-        appearance.size.cornerRadius(style: appearance.segmentItemAppearance.shapeStyle)
-    }
-    
     private var backgroundColor: Color {
         if let backgroundColor = appearance.backgroundColor, hasBackground {
             return currentColor(for: backgroundColor)
@@ -126,8 +130,7 @@ public struct SDDSSegment: View {
         return .clear
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: SegmentAppearance {
+    var appearance: SegmentAppearance {
         _appearance ?? environmentAppearance
     }
 }

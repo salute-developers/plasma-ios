@@ -73,6 +73,7 @@ public struct SDDSCheckbox: View {
     public var body: some View {
         SelectionControl(
             state: $state,
+            selectionControlType: .checkbox,
             title: title,
             subtitle: subtitle,
             isEnabled: isEnabled,
@@ -82,8 +83,7 @@ public struct SDDSCheckbox: View {
         )
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: CheckboxAppearance {
+    var appearance: CheckboxAppearance {
         _appearance ?? environmentAppearance
     }
     

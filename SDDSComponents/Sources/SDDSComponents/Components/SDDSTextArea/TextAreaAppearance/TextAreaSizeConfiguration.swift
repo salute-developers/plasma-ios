@@ -21,6 +21,10 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var indicatorOffset: CGPoint { get }
     var indicatorSize: CGSize { get }
     var endContentPadding: CGFloat { get }
+    var scrollBarThickness: CGFloat { get }
+    var scrollBarPaddingTop: CGFloat { get }
+    var scrollBarPaddingBottom: CGFloat { get }
+    var scrollBarPaddingEnd: CGFloat { get }
 }
 
 public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
@@ -49,6 +53,10 @@ public struct ZeroTextAreaSize: TextAreaSizeConfiguration {
     public var indicatorSize: CGSize { .zero }
     public var indicatorOffset: CGPoint { .zero }
     public var endContentPadding: CGFloat { 0 }
+    public var scrollBarThickness: CGFloat { 0 }
+    public var scrollBarPaddingTop: CGFloat { 0 }
+    public var scrollBarPaddingBottom: CGFloat { 0 }
+    public var scrollBarPaddingEnd: CGFloat { 0 }
 
     public var debugDescription: String {
         "ZeroTextAreaSize with all zero values."

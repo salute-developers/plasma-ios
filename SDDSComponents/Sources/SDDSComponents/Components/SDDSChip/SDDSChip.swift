@@ -77,12 +77,12 @@ public struct SDDSChip: View {
         HStack(spacing: 0) {
             Spacer()
                 .frame(width: appearance.size.leadingInset)
-            if let contentStart = iconImage, let size = appearance.size.iconImageSize {
+            if let contentStart = iconImage {
                 contentStart
                     .resizable()
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: size.width, height: size.height)
+                    .frame(width: appearance.size.iconImageSize.width, height: appearance.size.iconImageSize.height)
                     .foregroundColor(appearance.imageTintColor.defaultColor.color(for: colorScheme))
                     .accessibilityHidden(true)
                 Spacer()
@@ -97,7 +97,7 @@ public struct SDDSChip: View {
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
-            if let contentEnd = buttonImage, let size = appearance.size.buttonImageSize {
+            if let contentEnd = buttonImage {
                 Spacer()
                     .frame(width: appearance.size.contentEndPadding)
                 Button(action: handleRemove) {
@@ -105,7 +105,7 @@ public struct SDDSChip: View {
                         .resizable()
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: size.width, height: size.height)
+                        .frame(width: appearance.size.buttonImageSize.width, height: appearance.size.buttonImageSize.height)
                         .foregroundColor(appearance.buttonTintColor.defaultColor.color(for: colorScheme))
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
@@ -143,8 +143,7 @@ public struct SDDSChip: View {
         removeAction()
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ChipAppearance {
+    var appearance: ChipAppearance {
         _appearance ?? environmentAppearance
     }
 }

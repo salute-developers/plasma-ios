@@ -12,7 +12,6 @@ struct ChipSize: CodeGenerationSize {
     var contentEndPadding: String?
     var leadingInset: String?
     var trailingInset: String?
-    var spacing: String?
     
     init(variation: ChipConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -38,6 +37,5 @@ struct ChipSize: CodeGenerationSize {
         self.contentEndPadding = CGFloat.defaultContext
         self.iconImageSize = CGSize.defaultContext
         self.buttonImageSize = CGSize.defaultContext
-        self.spacing = CGFloat.defaultContext
     }
 }

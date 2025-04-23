@@ -10,7 +10,8 @@ struct SDDSCounterPreview: PreviewProvider {
             appearance: Counter.l.warning.appearance,
             isAnimating: false,
             isHighlighted: false,
-            isHovered: false
+            isHovered: false,
+            isSelected: false
         )
     }
 }

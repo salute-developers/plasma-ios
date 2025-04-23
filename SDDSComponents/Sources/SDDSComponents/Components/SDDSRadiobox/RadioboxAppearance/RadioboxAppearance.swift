@@ -4,12 +4,16 @@ import SwiftUI
 
 public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
+    @available(*, deprecated, message: "use 'toggleColor' instead")
     public var color: ColorToken
+    public var toggleColor: ColorToken
     public var borderColor: ColorToken
     public var checkedIcon: PathDrawer?
     public var checkedIconColor: ColorToken
     public var toggleIndeterminateIcon: PathDrawer?
     public var toggleIndeterminateIconColor: ColorToken
+    public var toggleColorChecked: ColorToken
+    public var toggleColorIndeterminate: ColorToken
     public var size: SelectionControlSizeConfiguration
     public var titleTypography: TypographyConfiguration
     public var subtitleTypography: TypographyConfiguration
@@ -19,7 +23,10 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     
     public init(
         color: ColorToken = .clearColor,
+        toggleColor: ColorToken = .clearColor,
         borderColor: ColorToken = .clearColor,
+        toggleColorChecked: ColorToken = .clearColor,
+        toggleColorIndeterminate: ColorToken = .clearColor,
         checkedIcon: PathDrawer? = nil,
         checkedIconColor: ColorToken = .clearColor,
         toggleIndeterminateIcon: PathDrawer? = nil,
@@ -32,9 +39,13 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
         disabledAlpha: CGFloat = 0
     ) {
         self.color = color
+        self.toggleColor = toggleColor
+        self.toggleColorChecked = toggleColorChecked
         self.borderColor = borderColor
         self.checkedIcon = checkedIcon
         self.checkedIconColor = checkedIconColor
+        self.toggleColorChecked = toggleColorChecked
+        self.toggleColorIndeterminate = toggleColorIndeterminate
         self.toggleIndeterminateIcon = toggleIndeterminateIcon
         self.toggleIndeterminateIconColor = toggleIndeterminateIconColor
         self.size = size

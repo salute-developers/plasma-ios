@@ -20,6 +20,7 @@ struct SwitchView: View {
                         appearance: viewModel.appearance,
                         switchAccessibility: viewModel.switchAccessibility
                     )
+                    .frame(width: 180)
                     Spacer()
                 }
             }
@@ -29,14 +30,14 @@ struct SwitchView: View {
                 HStack {
                     Text("Title")
                     Spacer()
-                    TextField("Switch Title", text: $viewModel.title)
+                    TextField("Label", text: $viewModel.title)
                         .multilineTextAlignment(.trailing)
                 }
                 
                 HStack {
                     Text("Subtitle")
                     Spacer()
-                    TextField("Switch Subtitle", text: $viewModel.subtitle)
+                    TextField("Description", text: $viewModel.subtitle)
                         .multilineTextAlignment(.trailing)
                 }
                 

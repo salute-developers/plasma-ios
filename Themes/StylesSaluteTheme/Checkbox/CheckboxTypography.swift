@@ -1,39 +1,35 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 struct CheckboxTypography: GeneralTypographyConfiguration {
-    typealias S = SelectionControlSizeConfiguration
+    var m: TypographyToken?
+    var s: TypographyToken?
     
-    let medium: TypographyToken?
-    let small: TypographyToken?
+    init(
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil
+    ) {
+        self.m = m
+        self.s = s
+    }
     
-    init(medium: TypographyToken?, small: TypographyToken?) {
-        self.medium = medium
-        self.small = small
+    init(oneSize: TypographyToken) {
+        self.m = oneSize
+        self.s = oneSize
     }
     
     func typography(with size: SelectionControlSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSCheckboxSize {
-        case .medium:
-            return medium
-        case .small, .none:
-            return small
+        if size is CheckboxAnySize {
+            return m
         }
-    }
-}
-
-extension CheckboxTypography {
-    static var label: TypographyConfiguration {
-        CheckboxTypography(
-            medium: Typographies.bodyMNormal.typography,
-            small: Typographies.bodySNormal.typography
-        ).asContainer
-    }
-    
-    static var description: TypographyConfiguration {
-        CheckboxTypography(
-            medium: Typographies.bodySNormal.typography,
-            small: Typographies.bodyXsNormal.typography
-        ).asContainer
+        if size is CheckboxSizeM {
+            return m
+        }
+        if size is CheckboxSizeS {
+            return s
+        }
+        return nil
     }
 }

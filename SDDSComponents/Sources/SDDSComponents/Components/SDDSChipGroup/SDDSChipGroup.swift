@@ -116,8 +116,8 @@ public struct SDDSChipGroup: View {
     private func calculateChipWidth(for chipData: ChipData) -> CGFloat {
         var totalWidth = CGFloat(0)
         totalWidth += chipData.appearance.size.leadingInset
-        if let _ = chipData.iconImage, let size = chipData.appearance.size.iconImageSize {
-            totalWidth += size.width
+        if let _ = chipData.iconImage {
+            totalWidth += chipData.appearance.size.iconImageSize.width
             totalWidth += chipData.appearance.size.contentStartPadding
         }
         
@@ -125,8 +125,8 @@ public struct SDDSChipGroup: View {
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
         
-        if let _ = chipData.buttonImage, let size = chipData.appearance.size.buttonImageSize {
-            totalWidth += size.width
+        if let _ = chipData.buttonImage {
+            totalWidth += chipData.appearance.size.buttonImageSize.width
             totalWidth += chipData.appearance.size.contentEndPadding
         }
         totalWidth += chipData.appearance.size.trailingInset
@@ -151,8 +151,7 @@ public struct SDDSChipGroup: View {
         return chipData.appearance.size.height
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: ChipGroupAppearance {
+    var appearance: ChipGroupAppearance {
         _appearance ?? environmentAppearance
     }
 }

@@ -27,13 +27,21 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
         }
         
         return Group {
-            SDDSCheckboxGroup(behaviour: .hierarchical(parent: parentData, child: childData), size: SDDSCheckboxGroupSize.medium)
+            SDDSCheckboxGroup(
+                behaviour: .hierarchical(parent: parentData, child: childData),
+                size: SDDSCheckboxGroupSize.large,
+                appearance: CheckboxGroup.m.appearance
+            )
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("SDDSCheckboxGroup with Parent")
                 .padding()
                 .debug()
             
-            SDDSCheckboxGroup(behaviour: .default(data: childData), size: SDDSCheckboxGroupSize.medium)
+            SDDSCheckboxGroup(
+                behaviour: .default(data: childData),
+                size: SDDSCheckboxGroupSize.large,
+                appearance: CheckboxGroup.m.appearance
+            )
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .previewDisplayName("SDDSCheckboxGroup without Parent")
                 .padding()

@@ -1,57 +1,63 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 public struct Checkbox {
     public static var l: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
-        appearance.size = SDDSCheckboxSize.large
-        appearance.titleTypography = CheckboxTypography.label
-        appearance.subtitleTypography = CheckboxTypography.description
+        appearance.size = CheckboxSize.l
+        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+
         return .init(
             name: "l",
             appearance: appearance
         )
     }
-    
     public static var m: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
-        appearance.size = SDDSCheckboxSize.medium
-        appearance.titleTypography = CheckboxTypography.label
-        appearance.subtitleTypography = CheckboxTypography.description
+        appearance.size = CheckboxSize.m
+        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+
         return .init(
             name: "m",
             appearance: appearance
         )
     }
-    
     public static var s: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
-        appearance.size = SDDSCheckboxSize.small
-        appearance.titleTypography = CheckboxTypography.label
-        appearance.subtitleTypography = CheckboxTypography.description
+        appearance.size = CheckboxSize.s
+        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+
         return .init(
             name: "s",
             appearance: appearance
         )
     }
     
-    public static let all: [Variation<CheckboxAppearance>] = [l, m, s].map { $0.variation }
+    public static let all: [Variation<CheckboxAppearance>] = [
+        Checkbox.l.variation,
+        Checkbox.m.variation,
+        Checkbox.s.variation,
+    ]
 }
 
-extension CheckboxAppearance {
+public struct CheckboxVariation {
+    public struct L {}
+    public struct M {}
+    public struct S {}
+}
+
+private extension CheckboxAppearance {
     static var base: CheckboxAppearance {
-        CheckboxAppearance(
-            titleTypography: CheckboxTypography.label,
-            subtitleTypography: CheckboxTypography.description,
-            titleColor: .backgroundInversePrimary,
-            subtitleColor: .surfaceInverseSolidPrimary.withOpacity(0.56),
-            disabledAlpha: 0.4,
-            color: .surfaceDefaultAccent,
-            borderColor: .outlineDefaultTransparentTertiary,
-            checkedIcon: CheckmarkDrawer(lineWidth: 2),
-            checkedIconColor: .textOnDarkPrimary,
-            toggleIndeterminateIconColor: .textOnDarkPrimary
-        )
+        var appearance = CheckboxAppearance()
+        appearance.disabledAlpha = CGFloat(0.4)
+        appearance.subtitleColor = ColorToken.textDefaultSecondary
+        appearance.titleColor = ColorToken.textDefaultPrimary
+        return appearance
     }
 }

@@ -4,6 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+
 public extension ComponentAppearanceVariation<CardClear, CardAppearance> {
     var variation: Variation<Appearance> {
         .init(

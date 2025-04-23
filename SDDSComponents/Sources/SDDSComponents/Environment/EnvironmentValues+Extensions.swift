@@ -42,9 +42,19 @@ public extension EnvironmentValues {
         set { self[CheckboxAppearance.self] = newValue }
     }
     
+    var checkboxGroupAppearance: CheckboxGroupAppearance {
+        get { self[CheckboxGroupAppearance.self] }
+        set { self[CheckboxGroupAppearance.self] = newValue }
+    }
+    
     var radioboxAppearance: RadioboxAppearance {
         get { self[RadioboxAppearance.self] }
         set { self[RadioboxAppearance.self] = newValue }
+    }
+    
+    var radioboxGroupAppearance: RadioboxGroupAppearance {
+        get { self[RadioboxGroupAppearance.self] }
+        set { self[RadioboxGroupAppearance.self] = newValue }
     }
     
     var badgeAppearance: BadgeAppearance {

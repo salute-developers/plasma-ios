@@ -27,8 +27,7 @@ public struct SDDSIndicator: View {
         appearance.size.height
     }
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var appearance: IndicatorAppearance {
+    var appearance: IndicatorAppearance {
         _appearance ?? environmentAppearance
     }
 }

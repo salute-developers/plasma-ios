@@ -77,6 +77,7 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.M> {
@@ -152,6 +153,7 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.S> {
@@ -227,6 +229,7 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.Xs> {
@@ -302,7 +305,9 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
 }
+
 
 public extension ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
     var `default`: AppearanceVariation<BadgeAppearance> {

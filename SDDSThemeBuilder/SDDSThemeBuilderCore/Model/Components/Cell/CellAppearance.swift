@@ -4,21 +4,21 @@ struct CellAppearance: CodeGenerationAppearance {
     typealias Variation = CellConfiguration.Variation
     typealias Props = CellProps
     
-    public var labelTypography: String?
-    public var labelColor: String?
-    public var titleTypography: String?
-    public var titleColor: String?
-    public var subtitleTypography: String?
-    public var subtitleColor: String?
-    public var disclosureTextTypography: String?
-    public var disclosureTextColor: String?
-    public var disclosureImageColor: String?
-    public var avatarAppearance: String?
-    public var buttonAppearance: String?
-    public var checkboxAppearance: String?
-    public var radioboxAppearance: String?
-    public var switchAppearance: String?
-    public var disclosureImage: String?
+    var labelTypography: String?
+    var labelColor: String?
+    var titleTypography: String?
+    var titleColor: String?
+    var subtitleTypography: String?
+    var subtitleColor: String?
+    var disclosureTextTypography: String?
+    var disclosureTextColor: String?
+    var disclosureImageColor: String?
+    var avatarAppearance: String?
+    var buttonAppearance: String?
+    var checkboxAppearance: String?
+    var radioboxAppearance: String?
+    var switchAppearance: String?
+    var disclosureImage: String?
     
     init(variation: CellConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
