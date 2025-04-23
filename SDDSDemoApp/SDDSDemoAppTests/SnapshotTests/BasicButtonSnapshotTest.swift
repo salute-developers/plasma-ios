@@ -18,113 +18,46 @@ import SwiftUI
 final class BasicButtonSnapshotTest: XCTestCase {
     
     func testButtonLDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonLDefault_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonLDefault()
-            )
-        }
+        try await runSnapshotTest(view: ButtonLDefault())
     }
     
-    
     func testButtonMAccent() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonMAccent_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonMAccent()
-            )
-        }
+        try await runSnapshotTest(view: ButtonMAccent())
     }
     
     func testButtonSWarning() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonSWarning_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonSWarning()
-            )
-        }
+        try await runSnapshotTest(view: ButtonSWarning())
     }
     
     func testButtonXsDark() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonXsDark\(themeName)",
-                colorScheme: scheme,
-                view: ButtonXsDark()
-            )
-        }
+        try await runSnapshotTest(view: ButtonXsDark())
     }
     
     func testButtonIsLoading() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonIsLoading\(themeName)",
-                colorScheme: scheme,
-                view: ButtonLIsLoading()
-            )
-        }
+        try await runSnapshotTest(view: ButtonLIsLoading())
     }
     
     func testButtonIsDisabled() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonIsDisabled_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonLIsDisabled()
-            )
-        }
+        try await runSnapshotTest(view: ButtonLIsDisabled())
     }
     
     func testButtonLSecondary() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonLSecondary_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonLSecondary()
-            )
-        }
+        try await runSnapshotTest(view: ButtonLSecondary())
     }
     
     func testButtonMClearSpaceBetween() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonMClearSpaceBetween_\(themeName)",
-                colorScheme: scheme,
-                view: ButtonMClearSpaceBetween()
-            )
-        }
+        try await runSnapshotTest(view: ButtonMClearSpaceBetween())
     }
     
     func testButtonSPositiveLongText() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonSPositiveLongText\(themeName)",
-                colorScheme: scheme,
-                view: ButtonSPositiveLongText()
-            )
-        }
+        try await runSnapshotTest(view: ButtonSPositiveLongText())
     }
     
     func testButtonXlDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonXlDefault\(themeName)",
-                colorScheme: scheme,
-                view: ButtonXlDefault()
-            )
-        }
+        try await runSnapshotTest(view: ButtonXlDefault())
     }
     
     func testButtonXxsDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "ButtonXxsDefault\(themeName)",
-                colorScheme: scheme,
-                view: ButtonXxsDefault()
-            )
-        }
+        try await runSnapshotTest(view:ButtonXxsDefault())
     }
 }
