@@ -15,92 +15,38 @@ import SwiftUI
 final class LinkButtonSnapshotTest: XCTestCase {
     
     func testLinkButtonLDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonLDefault\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonLDefault()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonLDefault())
     }
     
     func testLinkButtonLIsLoading() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonLIsLoading\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonLIsLoading()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonLIsLoading())
     }
     
     func testLinkButtonLSecondary() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonLSecondary\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonLSecondary()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonLSecondary())
     }
     
     func testLinkButtonMAccent() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonMAccent\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonMAccent()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonMAccent())
     }
     
     func testLinkButtonLIsDisabled() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonLIsDisabled\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonLIsDisabled()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonLIsDisabled())
     }
     
     func testLinkButtonSWarning() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonSWarning\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonSWarning()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonSWarning())
     }
     
     func testLinkButtonXsNegative() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonXsNegative\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonXsNegative()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonXsNegative())
     }
     
     func testLinkButtonXlDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonXlDefault\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonXlDefault()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonXlDefault())
     }
     
     func testLinkButtonXxsDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "LinkButtonXxsDefault\(themeName)",
-                colorScheme: scheme,
-                view: LinkButtonXxsDefault()
-            )
-        }
+        try await runSnapshotTest(view: LinkButtonXxsDefault())
     }
 }

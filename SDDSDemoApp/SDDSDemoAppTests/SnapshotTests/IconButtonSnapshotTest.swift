@@ -15,132 +15,54 @@ import SwiftUI
 final class IconButtonSnapshotTest: XCTestCase {
     
     func testIсonButtonLDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IсonButtonLDefault\(themeName)",
-                colorScheme: scheme,
-                view: IсonButtonLDefault()
-            )
-        }
+        try await runSnapshotTest(view: IсonButtonLDefault())
     }
     
     func testIconButtonMAccent() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonMAccent\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonMAccent()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonMAccent())
     }
     
     func testIconButtonSWarning() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonSWarning\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonSWarning()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonSWarning())
     }
     
     func testIconButtonXsDark() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonXsDark\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonXsDark()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonXsDark())
     }
     
     func testIconButtonIsLoading() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonIsLoading\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonIsLoading()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonIsLoading())
     }
     
     func testIconButtonIsDisabled() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonIsDisabled\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonIsDisabled()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonIsDisabled())
     }
     
     func testIconButtonLSecondaryPilled() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonLSecondaryPilled\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonLSecondaryPilled()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonLSecondaryPilled())
     }
     
     func testIconButtonMClear() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonMClear\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonMClear()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonMClear())
     }
     
     func testIconButtonSPositive() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonSPositive\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonSPositive()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonSPositive())
     }
     
     func testIconButtonXsNegativePilledIsLoading() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonXsNegativePilledIsLoading\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonXsNegativePilledIsLoading()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonXsNegativePilledIsLoading())
     }
     
     func testIconButtonLWhite() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonLWhite\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonLWhite()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonLWhite())
     }
     
     func testIconButtonXlDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonXlDefault\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonXlDefault()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonXlDefault())
     }
     
     func testIconButtonXxsDefault() async throws {
-        for (themeName, scheme) in SnapshotTestConfig.testTheme {
-            try await runSnapshotTest(
-                name: "IconButtonXxsDefault\(themeName)",
-                colorScheme: scheme,
-                view: IconButtonXxsDefault()
-            )
-        }
+        try await runSnapshotTest(view: IconButtonXxsDefault())
     }
 }
