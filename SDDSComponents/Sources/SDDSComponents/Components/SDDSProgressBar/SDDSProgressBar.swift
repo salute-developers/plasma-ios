@@ -45,11 +45,10 @@ public struct SDDSProgressView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 // Background track
-//                appearance.size.pathDrawer
-//                    .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.height)))
-                Rectangle()
+                appearance.size.pathDrawer
+                    .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.indicatorHeight)))
                     .fill(appearance.trackColor.color(for: colorScheme))
-                    .frame(width: geometry.size.width, height: 4)
+//                    .frame(width: geometry.size.width, height: 4)
                     .onAppear {
                         let _ = print("COLOR: \(appearance.trackColor)")
                         let _ = print("GEOMETY Width: \(geometry.size.width)")
@@ -57,9 +56,12 @@ public struct SDDSProgressView: View {
                     }
                 
                 // Progress indicator
-                rectangle
+                rectangle(CGFloat(normalizedProgress) * geometry.size.width)
                     .frame(width: CGFloat(normalizedProgress) * geometry.size.width, height: appearance.size.indicatorHeight)
                     .position(x: CGFloat(normalizedProgress) * geometry.size.width / 2, y: geometry.size.height / 2)
+                    .onAppear {
+                        let _ = print("geomertyWidth: \(CGFloat(normalizedProgress) * geometry.size.width / 2)")
+                    }
             }
         }
         .frame(height: appearance.size.indicatorHeight)
@@ -71,17 +73,16 @@ public struct SDDSProgressView: View {
     }
     
     @ViewBuilder
-    private var rectangle: some View {
+    private func rectangle(_ progressWidth: CGFloat) -> some View {
         switch appearance.tintFillStyle {
         case .color(let colorToken):
-//            appearance.size.indicatorPathDrawer
-//                .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 0, height: 0)))
             RoundedRectangle(cornerRadius: appearance.size.indicatorCornerRadius)
-                .fill(colorToken.color(for: colorScheme))
+//            pathDrawer(width: progressWidth)
+//                .foregroundColor(colorToken.color(for: colorScheme))
         case .gradient(let gradientToken):
             RoundedCornersMask(
                 cornerRadius: appearance.size.indicatorCornerRadius,
-                content: Rectangle().gradient(gradientToken)
+                content: pathDrawer(width: progressWidth).gradient(gradientToken)
             )
         }
     }
@@ -92,6 +93,11 @@ public struct SDDSProgressView: View {
 
     var appearance: ProgressBarAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    private func pathDrawer(width: CGFloat) -> some View {
+        appearance.size.indicatorPathDrawer
+            .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: width, height: appearance.size.indicatorHeight)))
     }
 }
 

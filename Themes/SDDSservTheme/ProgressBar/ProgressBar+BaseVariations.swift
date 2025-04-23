@@ -25,6 +25,7 @@ private extension ProgressBarAppearance {
         var appearance = ProgressBarAppearance()
         appearance.tintFillStyle = .color(.clearColor)
         appearance.trackColor = .clearColor
+        appearance.size = ProgressBarSize.Default
         return appearance
     }
 }
