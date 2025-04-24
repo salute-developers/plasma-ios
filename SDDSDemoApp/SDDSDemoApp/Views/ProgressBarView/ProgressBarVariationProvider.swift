@@ -16,6 +16,6 @@ final class ProgressBarVariationProvider: VariationProvider {
     }
     
     var defaultValue: ProgressBarAppearance {
-        ProgressBarAppearance.defaultValue
+        variations.first?.appearance ?? .init()
     }
 }

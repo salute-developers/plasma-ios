@@ -51,7 +51,6 @@ public struct SDDSProgressView: View {
                 
                 // Progress indicator
                 rectangle(CGFloat(normalizedProgress) * geometry.size.width)
-                    .frame(width: CGFloat(normalizedProgress) * geometry.size.width, height: appearance.size.indicatorHeight)
             }
         }
         .frame(height: appearance.size.indicatorHeight)
@@ -66,13 +65,15 @@ public struct SDDSProgressView: View {
     private func rectangle(_ progressWidth: CGFloat) -> some View {
         switch appearance.tintFillStyle {
         case .color(let colorToken):
-            pathDrawer(width: progressWidth)
-                .foregroundColor(colorToken.color(for: colorScheme))
+            appearance.size.indicatorPathDrawer
+                .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: progressWidth, height: appearance.size.indicatorHeight)))
+                .fill(colorToken.color(for: colorScheme))
         case .gradient(let gradientToken):
             let shape = ShapeContent(pathDrawer: appearance.size.indicatorPathDrawer)
             Rectangle()
                 .gradient(gradientToken)
                 .shape(shapeContent: shape)
+                .frame(width: progressWidth, height: appearance.size.indicatorHeight)
         }
     }
     
@@ -82,11 +83,6 @@ public struct SDDSProgressView: View {
 
     var appearance: ProgressBarAppearance {
         _appearance ?? environmentAppearance
-    }
-    
-    private func pathDrawer(width: CGFloat) -> some View {
-        appearance.size.indicatorPathDrawer
-            .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: width, height: appearance.size.indicatorHeight)))
     }
 }
 
