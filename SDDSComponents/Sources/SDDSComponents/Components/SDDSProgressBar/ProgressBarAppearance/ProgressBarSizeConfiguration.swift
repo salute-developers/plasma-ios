@@ -18,6 +18,7 @@ public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStri
     var pathDrawer: PathDrawer { get }
     @available(*, deprecated, message: "use 'pathDrawer' instead")
     var cornerRadius: CGFloat { get }
+    @available(*, deprecated, message: "use 'indicatorPathDrawer' instead")
     var indicatorCornerRadius: CGFloat { get }
 }
 

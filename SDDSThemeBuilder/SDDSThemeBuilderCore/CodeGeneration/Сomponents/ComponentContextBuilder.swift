@@ -35,7 +35,6 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var variations: [String: Size] = [:]
         
         let baseKeys = configuration.allBaseKeys
-        
         if let sizeProps = configuration.props as? Size.Props, baseKeys.isEmpty {
             variations["Default".codeGenString] = Size(props: sizeProps, id: nil, nullify: false)
         } else {
