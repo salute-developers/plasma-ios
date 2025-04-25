@@ -10,6 +10,12 @@ enum Component: String {
     case iconButton = "icon-button"
     case counter = "counter"
     case segmentItem = "segment-item"
+    case badge = "badge-solid"
+    case badgeClear = "badge-clear"
+    case badgeTransparent = "badge-transparent"
+    case iconBadge = "icon-badge"
+    case iconBadgeTransparent = "icon-badge-transparent"
+    case indicator = "indicator"
     
     var componentName: String {
         switch self {
@@ -31,6 +37,18 @@ enum Component: String {
             return "Counter"
         case .segmentItem:
             return "SegmentItem"
+        case .badge:
+            return "Badge"
+        case .badgeClear:
+            return "BadgeClear"
+        case .badgeTransparent:
+            return "BadgeTransparent"
+        case .iconBadge:
+            return "IconBadge"
+        case .iconBadgeTransparent:
+            return "IconBadgeTransparent"
+        case .indicator:
+            return "Indicator"
         }
     }
 }

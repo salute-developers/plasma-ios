@@ -28,8 +28,7 @@ public struct SDDSAvatarGroup: View {
     public var body: some View {
         HStack(spacing: -size.borderWidth - size.spacing) {
             ForEach(displayingAvatars, id: \.id) { avatarData in
-                SDDSAvatar(data: avatarData)
-                    .status(.hidden)
+                SDDSAvatar<AnyView>(data: avatarDataHidden(avatarData: avatarData))
                     .overlay(
                         Circle()
                             .stroke(Color.white, lineWidth: size.borderWidth)
@@ -46,6 +45,19 @@ public struct SDDSAvatarGroup: View {
             return data
         }
     }
+    
+    private func avatarDataHidden(avatarData: SDDSAvatarData) -> SDDSAvatarData {
+        SDDSAvatarData(
+            text: avatarData.text,
+            image: avatarData.image,
+            placeholderImage: avatarData.placeholderImage,
+            status: .hidden,
+            extraContent: avatarData.extraContent,
+            appearance: avatarData.appearance,
+            accessibility: avatarData.accessibility
+        )
+    }
+
 }
 
 // MARK: - AvatarGroupSizeConfiguration

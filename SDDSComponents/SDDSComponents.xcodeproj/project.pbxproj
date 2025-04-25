@@ -179,6 +179,8 @@
 		81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D80F8D2D677C560043F174 /* EmbeddedChip.swift */; };
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
+		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
+		81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
 		81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E32CECD4B1000156D9 /* IconButton.swift */; };
 		81F7531C2CF46755000156D9 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7531B2CF46755000156D9 /* ButtonStyle.swift */; };
@@ -447,6 +449,7 @@
 		81D80F8D2D677C560043F174 /* EmbeddedChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChip.swift; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
+		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
 		81F752E12CECD40A000156D9 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		81F752E32CECD4B1000156D9 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		81F752FE2CEFA3AF000156D9 /* String+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Variations.swift"; sourceTree = "<group>"; };
@@ -1265,6 +1268,7 @@
 		81CBC08D2C821A4400FBDAC8 /* SDDSAvatar */ = {
 			isa = PBXGroup;
 			children = (
+				81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */,
 				6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */,
 				81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */,
 				81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */,
@@ -1718,6 +1722,7 @@
 				812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */,
 				817339E62D033E650092608A /* RadioboxData.swift in Sources */,
 				694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */,
+				81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */,
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
@@ -1754,6 +1759,7 @@
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,
 				696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
+				81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
 				695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */,

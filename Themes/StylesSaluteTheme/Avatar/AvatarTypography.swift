@@ -1,37 +1,49 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-
+import SDDSThemeCore
 
 struct AvatarTypography: GeneralTypographyConfiguration {
-    let extraExtraLarge: TypographyToken?
-    let large: TypographyToken?
-    let medium: TypographyToken?
-    let small: TypographyToken?
+    var l: TypographyToken?
+    var m: TypographyToken?
+    var s: TypographyToken?
+    var xxl: TypographyToken?
+    
+    init(
+        l: TypographyToken? = nil,
+        m: TypographyToken? = nil,
+        s: TypographyToken? = nil,
+        xxl: TypographyToken? = nil
+    ) {
+        self.l = l
+        self.m = m
+        self.s = s
+        self.xxl = xxl
+    }
+    
+    init(oneSize: TypographyToken) {
+        self.l = oneSize
+        self.m = oneSize
+        self.s = oneSize
+        self.xxl = oneSize
+    }
     
     func typography(with size: AvatarSizeConfiguration) -> TypographyToken? {
-        switch size as? SDDSAvatarSize {
-        case .extraExtraLarge:
-            return extraExtraLarge
-        case .large:
-            return large
-        case .medium:
-            return medium
-        case .small:
-            return small
-        case .scalable, .none:
-            return medium
+        if size is AvatarAnySize {
+            return l
         }
-    }
-}
-
-extension AvatarTypography {
-   static var title: TypographyConfiguration {
-        return AvatarTypography(
-            extraExtraLarge: Typographies.headerH2Bold.typography,
-            large: Typographies.headerH4Bold.typography,
-            medium: Typographies.headerH5Bold.typography,
-            small: Typographies.textXsBold.typography
-        ).asContainer
+        if size is AvatarSizeL {
+            return l
+        }
+        if size is AvatarSizeM {
+            return m
+        }
+        if size is AvatarSizeS {
+            return s
+        }
+        if size is AvatarSizeXxl {
+            return xxl
+        }
+        return nil
     }
 }

@@ -23,7 +23,7 @@ struct ChipSize: CodeGenerationSize {
         self.trailingInset = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
         self.contentStartPadding = CGFloatContextBuilder(props.contentStartPadding?.value, nullify: nullify).context
         self.contentEndPadding = CGFloatContextBuilder(props.contentEndPadding?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.iconImageSize = SizeContextBuilder(x: props.contentStartSize?.value, y: props.contentStartSize?.value, style: .size, nullify: nullify).context
         self.buttonImageSize = SizeContextBuilder(x: props.contentEndSize?.value, y: props.contentEndSize?.value, style: .size, nullify: nullify).context
     }

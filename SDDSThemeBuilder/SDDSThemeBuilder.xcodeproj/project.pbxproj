@@ -361,6 +361,11 @@
 		81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */; };
 		81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE732BE4E17800F86AE1 /* FontFamily.swift */; };
 		81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE752BE4E18800F86AE1 /* Font.swift */; };
+		81F635D02DBB8D4C003C8C26 /* FillStyleContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635CF2DBB8D4C003C8C26 /* FillStyleContextBuilder.swift */; };
+		81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */; };
+		81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D62DBB9106003C8C26 /* AvatarSize.swift */; };
+		81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */; };
+		81F635DA2DBB9192003C8C26 /* ShapeTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */; };
 		81F89E472D819AA100A41C89 /* ShapeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E462D819A9E00A41C89 /* ShapeContent.swift */; };
 		81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E502D81A6E900A41C89 /* CardSize.swift */; };
 		81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E522D81A6ED00A41C89 /* CardAppearance.swift */; };
@@ -787,6 +792,11 @@
 		81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallFontsCommand.swift; sourceTree = "<group>"; };
 		81E1EE732BE4E17800F86AE1 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
 		81E1EE752BE4E18800F86AE1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		81F635CF2DBB8D4C003C8C26 /* FillStyleContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyleContextBuilder.swift; sourceTree = "<group>"; };
+		81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarProps.swift; sourceTree = "<group>"; };
+		81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAppearance.swift; sourceTree = "<group>"; };
+		81F635D62DBB9106003C8C26 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
+		81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTokenContextBuilder.swift; sourceTree = "<group>"; };
 		81F89E462D819A9E00A41C89 /* ShapeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeContent.swift; sourceTree = "<group>"; };
 		81F89E502D81A6E900A41C89 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
 		81F89E522D81A6ED00A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
@@ -1069,6 +1079,8 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */,
+				81F635CF2DBB8D4C003C8C26 /* FillStyleContextBuilder.swift */,
 				81C3D7E82DAE46B10090739E /* BottomSheetPlacementContextBuilder.swift */,
 				81C3D7E92DAE46B10090739E /* BottomSheetSizeContextBuilder.swift */,
 				81D85D142D6F63D9007E758F /* PathDrawerContextBuilder.swift */,
@@ -1112,6 +1124,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */,
 				69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */,
 				69A875962DAF9E470074C1BD /* CheckboxProps.swift */,
 				69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */,
@@ -1135,6 +1148,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F635D12DBB8D53003C8C26 /* Avatar */,
 				69A875832DAF9E290074C1BD /* Checkbox */,
 				69A875862DAF9E290074C1BD /* CheckboxGroup */,
 				69A875892DAF9E290074C1BD /* Radiobox */,
@@ -1829,6 +1843,15 @@
 			path = FontFamily;
 			sourceTree = "<group>";
 		};
+		81F635D12DBB8D53003C8C26 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */,
+				81F635D62DBB9106003C8C26 /* AvatarSize.swift */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
 		81F89E4F2D81A6E100A41C89 /* Card */ = {
 			isa = PBXGroup;
 			children = (
@@ -2314,6 +2337,7 @@
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */,
+				81F635D02DBB8D4C003C8C26 /* FillStyleContextBuilder.swift in Sources */,
 				8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */,
 				81A7534F2D47DE03006E1BE7 /* TextFieldSize.swift in Sources */,
 				81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */,
@@ -2340,6 +2364,8 @@
 				8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */,
 				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
 				81CB0FE72C245052003B1064 /* TemplateRenderer.swift in Sources */,
+				81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */,
+				81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */,
 				812DB7A12D59DAF000D3F4A3 /* ComponentConfigurations.swift in Sources */,
 				812DB6E02D55E38100D3F4A3 /* Double+Extensions.swift in Sources */,
 				81D5D9D32D53A9740022CF32 /* ContextVariationUtility.swift in Sources */,
@@ -2394,6 +2420,7 @@
 				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
 				81B23FA92D4BEBA00042A657 /* Component.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
+				81F635DA2DBB9192003C8C26 /* ShapeTokenContextBuilder.swift in Sources */,
 				69A8758D2DAF9E290074C1BD /* RadioboxSize.swift in Sources */,
 				69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */,
 				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
@@ -2401,6 +2428,7 @@
 				69A875912DAF9E290074C1BD /* CheckboxGroupSize.swift in Sources */,
 				69A875922DAF9E290074C1BD /* CheckboxAppearance.swift in Sources */,
 				69A875932DAF9E290074C1BD /* RadioboxGroupSize.swift in Sources */,
+				81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */,
 				69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */,
 				812DB6DE2D55E2BD00D3F4A3 /* MergeableConfiguration.swift in Sources */,
 				810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */,
