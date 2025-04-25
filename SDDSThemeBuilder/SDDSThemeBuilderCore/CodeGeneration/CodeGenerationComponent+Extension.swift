@@ -29,6 +29,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case radioboxGroup = "RadioboxGroup"
     case checkbox = "Checkbox"
     case checkboxGroup = "CheckboxGroup"
+    case avatar = "Avatar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -59,9 +60,11 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .radiobox,
             .radioboxGroup,
             .checkbox,
-            .checkboxGroup
+            .checkboxGroup,
+            .avatar
         ]
     }
+    
 }
 
 extension CodeGenerationComponent {
@@ -101,6 +104,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CheckboxProps, CheckboxAppearance, CheckboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .checkboxGroup:
             GenerateComponentCommand<CheckboxGroupProps, CheckboxGroupAppearance, CheckboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .avatar:
+            GenerateComponentCommand<AvatarProps, AvatarAppearance, AvatarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -140,6 +145,8 @@ extension CodeGenerationComponent {
             "CheckboxAppearance"
         case .checkboxGroup:
             "CheckboxGroupAppearance"
+        case .avatar:
+            "AvatarAppearance"
         }
     }
     
@@ -180,6 +187,8 @@ extension CodeGenerationComponent {
             "SelectionControlSizeConfiguration"
         case .checkboxGroup:
             "CheckboxGroupSizeConfiguration"
+        case .avatar:
+            "AvatarSizeConfiguration"
         }
     }
     
@@ -241,6 +250,8 @@ extension CodeGenerationComponent {
             "checkbox_config.json"
         case .checkboxGroup:
             "checkbox_group_config.json"
+        case .avatar:
+            "avatar_config.json"
         }
     }
     

@@ -2,6 +2,13 @@ import SwiftUI
 
 // MARK: - SDDSAvatar
 
+public enum AvatarExtraPlacement: String, CaseIterable {
+    case bottomLeft
+    case bottomRight
+    case topLeft
+    case topRight
+}
+
 /**
  `SDDSAvatar` представляет собой аватар пользователя, отображающий текст, изображение или плейсхолдер с возможностью указания статуса.
 
@@ -13,13 +20,16 @@ import SwiftUI
     - appearance: Параметры внешнего вида аватара.
     - accessibility: Параметры доступности для аватара.
  */
-public struct SDDSAvatar: View {
+public struct SDDSAvatar<Content: View>: View {
     let text: String
     let image: AvatarImageSource?
     let placeholderImage: AvatarImageSource?
     let status: AvatarStatus
     let accessibility: AvatarAccessibility
-    var _appearance: AvatarAppearance?
+    let extraContent: Content
+    let extraPlacement: AvatarExtraPlacement
+    private var _appearance: AvatarAppearance?
+    
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.avatarAppearance) private var environmentAppearance
     
@@ -29,52 +39,53 @@ public struct SDDSAvatar: View {
         placeholderImage: AvatarImageSource?,
         status: AvatarStatus,
         appearance: AvatarAppearance? = nil,
-        accessibility: AvatarAccessibility) {
+        accessibility: AvatarAccessibility,
+        @ViewBuilder extraContent: () -> Content =  { EmptyView() },
+        extraPlacement: AvatarExtraPlacement = .topRight
+    ) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
         self._appearance = appearance
+        self.extraContent = extraContent()
+        self.extraPlacement = extraPlacement
         self.accessibility = accessibility
     }
     
-    public init(data: SDDSAvatarData) {
+    public init(data: SDDSAvatarData) where Content == AnyView {
         self.text = data.text
         self.image = data.image
         self.placeholderImage = data.placeholderImage
         self.status = data.status
+        self.extraContent = data.extraContent
+        self.extraPlacement = data.extraPlacement
         self._appearance = data.appearance
         self.accessibility = data.accessibility
     }
     
     public var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             if let placeholderImage = placeholderImage {
-                avatarImage(for: placeholderImage)
-                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                avatar(imageSource: placeholderImage)
             } else {
                 backgroundView
             }
 
             if let image = image {
-                avatarImage(for: image)
-                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                avatar(imageSource: image)
             } else {
-                Text(text)
-                    .typography(textTypography)
-                    .fillText(style: appearance.textFillStyle)
+                AvatarPlacementContainer(extraPlacement: extraPlacement) {
+                    Text(text)
+                        .typography(textTypography)
+                        .fillText(style: appearance.textFillStyle)
+                }
             }
-            
-            if status != .hidden {
-                statusView
-                    .frame(
-                        width: appearance.size.statusSize.width,
-                        height: appearance.size.statusSize.height
-                    )
-                    .position(
-                        x: appearance.size.statusInsets.leading + appearance.size.statusSize.width / 2,
-                        y: appearance.size.statusInsets.top + appearance.size.statusSize.height / 2
-                    )
+                        
+            AvatarPlacementContainer(extraPlacement: extraPlacement, extraOffset: appearance.size.extraOffset) {
+                extraContent
+                    .environment(\.badgeAppearance, appearance.badgeAppearance)
+                    .environment(\.counterAppearance, appearance.counterAppearance)
             }
         }
         .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
@@ -84,22 +95,48 @@ public struct SDDSAvatar: View {
     }
     
     @ViewBuilder
-    private var backgroundView: some View {
-        switch appearance.backgroundFillStyle {
-        case .color(let colorToken):
-            Circle()
-                .fill(colorToken.color(for: colorScheme))
-                .clipShape(Circle())
-        case .gradient(let gradientToken):
+    private func avatar(imageSource: AvatarImageSource) -> some View {
+        AvatarPlacementContainer(extraPlacement: extraPlacement) {
             ZStack {
-                Circle()
-                    .fill(.white)
-                    .clipShape(Circle())
-                Circle()
-                    .fill(.white)
-                    .gradient(gradientToken, colorScheme: colorScheme)
-                    .opacity(appearance.backgroundOpacity)
-                    .clipShape(Circle())
+                avatarImage(for: imageSource)
+                    .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                
+                if status != .hidden && extraPlacement != .bottomRight {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            statusView
+                                .padding(.trailing, appearance.size.statusInsets.trailing)
+                                .padding(.bottom, appearance.size.statusInsets.bottom)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var backgroundView: some View {
+        AvatarPlacementContainer(extraPlacement: extraPlacement) {
+            Group {
+                switch appearance.backgroundFillStyle {
+                case .color(let colorToken):
+                    Circle()
+                        .fill(colorToken.color(for: colorScheme))
+                        .clipShape(Circle())
+                case .gradient(let gradientToken):
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                            .clipShape(Circle())
+                        Circle()
+                            .fill(.white)
+                            .gradient(gradientToken, colorScheme: colorScheme)
+                            .opacity(appearance.backgroundOpacity)
+                            .clipShape(Circle())
+                    }
+                }
             }
         }
     }
@@ -125,18 +162,23 @@ public struct SDDSAvatar: View {
     }
     
     private var statusView: some View {
-        Circle()
-            .fill(statusColor)
+        SDDSIndicator(appearance: indicatorAppearance)
     }
     
-    private var statusColor: Color {
+    private var indicatorAppearance: IndicatorAppearance {
+        var appearance = appearance.indicatorAppearance
+        appearance.backgroundColor = statusColor
+        return appearance
+    }
+    
+    private var statusColor: ColorToken {
         switch status {
         case .online:
-            return appearance.onlineStatusColor.color(for: colorScheme)
+            return appearance.onlineStatusColor
         case .offline:
-            return appearance.offlineStatusColor.color(for: colorScheme)
+            return appearance.offlineStatusColor
         default:
-            return .clear
+            return Color.clear.token
         }
     }
     

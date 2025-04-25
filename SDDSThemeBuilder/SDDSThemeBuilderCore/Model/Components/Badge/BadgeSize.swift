@@ -19,7 +19,7 @@ struct BadgeSize: CodeGenerationSize {
     
     init(props: BadgeProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.startPadding = CGFloatContextBuilder(props.startPadding?.value, nullify: nullify).context
         self.endPadding = CGFloatContextBuilder(props.endPadding?.value, nullify: nullify).context
         self.startContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context

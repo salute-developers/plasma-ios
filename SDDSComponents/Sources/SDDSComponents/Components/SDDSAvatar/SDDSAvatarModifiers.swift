@@ -2,14 +2,15 @@ import SwiftUI
 
 // MARK: - SDDSAvatar Modifiers
 
-public extension View where Self == SDDSAvatar {
-    func status(_ newStatus: AvatarStatus) -> SDDSAvatar {
+@available(*, deprecated, message: "will be removed in future versions")
+public extension View where Self == SDDSAvatar<EmptyView> {
+    func status(_ newStatus: AvatarStatus) -> SDDSAvatar<EmptyView> {
         SDDSAvatar(
             text: self.text,
             image: self.image,
             placeholderImage: self.placeholderImage,
             status: newStatus,
-            appearance: self._appearance,
+            appearance: self.appearance,
             accessibility: self.accessibility
         )
     }

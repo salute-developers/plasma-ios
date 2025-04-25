@@ -25,7 +25,7 @@ struct SegmentItemSize: CodeGenerationSize {
         self.titleHorizontalGap = CGFloatContextBuilder(props.valueMargin?.value, nullify: nullify).context
         self.iconHorizontalGap = CGFloatContextBuilder(props.iconMargin?.value, nullify: nullify).context
         self.counterPadding = CGFloatContextBuilder(props.counterMargin?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.paddings = EdgeInsetsContextBuilder(top: nil, leading: props.paddingStart?.value, bottom: nil, trailing: props.paddingEnd?.value, nullify: nullify).context
         self.iconSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context
         self.startContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context

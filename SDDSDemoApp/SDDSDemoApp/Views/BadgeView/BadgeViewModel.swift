@@ -23,7 +23,7 @@ final class BadgeViewModel: ComponentViewModel<BadgeVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: BadgeVariationProvider(badgeType: .badge))
+    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
+        super.init(variationProvider: BadgeVariationProvider(badgeType: .badge), componentViewLayoutMode: componentViewLayoutMode)
     }
 }

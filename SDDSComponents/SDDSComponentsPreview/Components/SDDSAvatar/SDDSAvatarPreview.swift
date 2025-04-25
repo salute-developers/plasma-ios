@@ -11,7 +11,7 @@ struct SDDSAvatarPreview: PreviewProvider {
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.xxl.default.appearance,
+            appearance: Avatar.xxl.appearance,
             accessibility: AvatarAccessibility()
         )
         .previewLayout(PreviewLayout.sizeThatFits)

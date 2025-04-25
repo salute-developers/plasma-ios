@@ -20,7 +20,7 @@ struct ButtonSize: CodeGenerationSize {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.titleHorizontalGap = CGFloatContextBuilder(props.valueMargin?.value, nullify: nullify).context
         self.iconHorizontalGap = CGFloatContextBuilder(props.iconMargin?.value, nullify: nullify).context
-        self.cornerRadius = ShapeTokenContexBuilder(shape: props.shape, nullify: nullify).context
+        self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
         self.paddings = EdgeInsetsContextBuilder(top: nil, leading: props.paddingStart?.value, bottom: nil, trailing: props.paddingEnd?.value, nullify: nullify).context
         self.iconSize = SizeContextBuilder(x: props.iconSize?.value, y: props.iconSize?.value, style: .size, nullify: nullify).context
         self.spinnerSize = SizeContextBuilder(x: props.spinnerSize?.value, y: props.spinnerSize?.value, style: .size, nullify: nullify).context

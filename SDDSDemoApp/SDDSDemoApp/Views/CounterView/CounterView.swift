@@ -9,13 +9,25 @@ public struct CounterView: View {
     @ObservedObject var viewModel: CounterViewModel = CounterViewModel()
     
     public var body: some View {
-        List {
-            counterView
-            Section {
-                VariationsView(viewModel: viewModel)
-                dataTextField
+        switch viewModel.componentViewLayoutMode {
+        case .screen:
+            List {
+                counterView
+                Section {
+                    settings
+                }
             }
+        case .subScreen:
+            settings
         }
+    }
+    
+    @ViewBuilder
+    private var settings: some View {
+        if viewModel.componentViewLayoutMode == .screen {
+            VariationsView(viewModel: viewModel)
+        }
+        dataTextField
     }
     
     public var counterView: some View {

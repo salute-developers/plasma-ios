@@ -5,34 +5,49 @@ import SDDSComponents
 import SDDSServTheme
 
 struct BadgeView: View {
-    @ObservedObject private var viewModel: BadgeViewModel = BadgeViewModel()
+    @ObservedObject private var viewModel: BadgeViewModel
     @Environment(\.colorScheme) private var colorScheme
+    
+    init(viewModel: BadgeViewModel = BadgeViewModel()) {
+        self.viewModel = viewModel
+    }
         
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Spacer()
-                    SDDSBadge(
-                        label: viewModel.label,
-                        image: image,
-                        alignment: viewModel.alignment,
-                        style: viewModel.badgeStyle,
-                        appearance: viewModel.appearance
-                    )
-                    Spacer()
+        switch viewModel.componentViewLayoutMode {
+        case .screen:
+            List {
+                Section {
+                    HStack {
+                        Spacer()
+                        SDDSBadge(
+                            label: viewModel.label,
+                            image: image,
+                            alignment: viewModel.alignment,
+                            style: viewModel.badgeStyle,
+                            appearance: viewModel.appearance
+                        )
+                        Spacer()
+                    }
                 }
+                
+                settings
             }
-            
-            Section {
+            .navigationTitle("SDDSBadge")
+        case .subScreen:
+            settings
+        }
+    }
+    
+    private var settings: some View {
+        Section {
+            if viewModel.componentViewLayoutMode == .screen {
                 badgeTypeSelectionView
                 VariationsView(viewModel: viewModel)
-                labelTextField
-                iconToggle
-                iconAlignmentSelectionView
             }
+            labelTextField
+            iconToggle
+            iconAlignmentSelectionView
         }
-        .navigationTitle("SDDSBadge")
     }
     
     private var image: Image? {
