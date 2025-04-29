@@ -278,7 +278,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
             case .multiple(_, let chips):
                 let updatedChips: [ChipData] = chips.map { chipData in
                     var chipData = chipData
-                    chipData.appearance = self.appearance.chipAppearance
+                    chipData.appearance = self.appearance.chipGroupAppearance.chipAppearance
                     return chipData
                 }
                 chipsScrollView(chips: updatedChips, proxy: proxy)
@@ -294,9 +294,9 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                     data: chips,
                     appearance: appearance.chipGroupAppearance,
                     flat: true,
-                    height: .constant(appearance.chipAppearance.size.height)
+                    height: .constant(appearance.chipGroupAppearance.chipAppearance.size.height)
                 )
-                .frame(height: appearance.chipAppearance.size.height)
+                .frame(height: appearance.chipGroupAppearance.chipAppearance.size.height)
                 
                 textField
                     .padding(.leading, appearance.size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
@@ -784,7 +784,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         case .single:
             return 0
         case .multiple:
-            let chipAppearance = appearance.chipAppearance
+            let chipAppearance = appearance.chipGroupAppearance.chipAppearance
             return chipAppearance.size.cornerRadius
         }
     }

@@ -48,6 +48,9 @@
 		697970E42D63A72E008306A8 /* CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E32D63A723008306A8 /* CellSize.swift */; };
 		697970E62D63A801008306A8 /* CellProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970E52D63A7FB008306A8 /* CellProps.swift */; };
 		697FAC462D660E2100959E8F /* ImageContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697FAC452D660E0600959E8F /* ImageContextBuilder.swift */; };
+		699E16572DC9EDE60022D4FF /* ChipGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E16542DC9EDE60022D4FF /* ChipGroupAppearance.swift */; };
+		699E16582DC9EDE60022D4FF /* ChipGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E16552DC9EDE60022D4FF /* ChipGroupSize.swift */; };
+		699E165A2DC9EE000022D4FF /* ChipGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E16592DC9EE000022D4FF /* ChipGroupProps.swift */; };
 		69A8758D2DAF9E290074C1BD /* RadioboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875882DAF9E290074C1BD /* RadioboxSize.swift */; };
 		69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875842DAF9E290074C1BD /* CheckboxGroupAppearance.swift */; };
 		69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875872DAF9E290074C1BD /* RadioboxAppearance.swift */; };
@@ -509,6 +512,9 @@
 		697970E32D63A723008306A8 /* CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSize.swift; sourceTree = "<group>"; };
 		697970E52D63A7FB008306A8 /* CellProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProps.swift; sourceTree = "<group>"; };
 		697FAC452D660E0600959E8F /* ImageContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContextBuilder.swift; sourceTree = "<group>"; };
+		699E16542DC9EDE60022D4FF /* ChipGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupAppearance.swift; sourceTree = "<group>"; };
+		699E16552DC9EDE60022D4FF /* ChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupSize.swift; sourceTree = "<group>"; };
+		699E16592DC9EE000022D4FF /* ChipGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupProps.swift; sourceTree = "<group>"; };
 		69A875812DAF9E290074C1BD /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
 		69A875822DAF9E290074C1BD /* CheckboxSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxSize.swift; sourceTree = "<group>"; };
 		69A875842DAF9E290074C1BD /* CheckboxGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupAppearance.swift; sourceTree = "<group>"; };
@@ -1058,6 +1064,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		699E16562DC9EDE60022D4FF /* ChipGroup */ = {
+			isa = PBXGroup;
+			children = (
+				699E16542DC9EDE60022D4FF /* ChipGroupAppearance.swift */,
+				699E16552DC9EDE60022D4FF /* ChipGroupSize.swift */,
+			);
+			path = ChipGroup;
+			sourceTree = "<group>";
+		};
 		69A875832DAF9E290074C1BD /* Checkbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -1165,6 +1180,7 @@
 			children = (
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
+				699E16592DC9EE000022D4FF /* ChipGroupProps.swift */,
 				81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */,
 				69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */,
 				69A875962DAF9E470074C1BD /* CheckboxProps.swift */,
@@ -1192,6 +1208,7 @@
 			children = (
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
+				699E16562DC9EDE60022D4FF /* ChipGroup */,
 				81F635D12DBB8D53003C8C26 /* Avatar */,
 				69A875832DAF9E290074C1BD /* Checkbox */,
 				69A875862DAF9E290074C1BD /* CheckboxGroup */,
@@ -2387,7 +2404,10 @@
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
 				810AFD502D96F203000B2A7A /* SegmentItemSize.swift in Sources */,
 				818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */,
+				699E16572DC9EDE60022D4FF /* ChipGroupAppearance.swift in Sources */,
+				699E16582DC9EDE60022D4FF /* ChipGroupSize.swift in Sources */,
 				8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */,
+				699E165A2DC9EE000022D4FF /* ChipGroupProps.swift in Sources */,
 				81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */,
 				6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */,
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,

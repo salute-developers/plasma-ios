@@ -11,14 +11,38 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     
     var context: String? {
         let comma = "."
-        let items = string.components(separatedBy: comma)
-        guard let component = Component(rawValue: items.first ?? "") else {
+        let parts = string.components(separatedBy: ".")
+        var componentVariation = [String]()
+        let _ = parts.filter {
+            if $0.contains("-") {
+                componentVariation = $0.components(separatedBy: "-")
+            }
+            return false
+        }
+        let componentParts = componentVariation
+            .filter {
+                if $0.contains("solid") {
+                    return false
+                }
+                return true
+            }
+        
+        let componentName = componentVariation.isEmpty ? parts.first?.capitalized : componentParts
+            .map {
+                if !$0.contains("box") {
+                    return $0.capitalized
+                }
+                return $0
+            }
+            .joined()
+        
+        guard let component = CodeGenerationComponent(rawValue: componentName ?? "") else {
             return ""
         }
-        let variations = Array(items[1..<items.count])
+        let variations = Array(parts[1..<parts.count])
         
         var result = [String]()
-        result += [component.componentName]
+        result += [component.rawValue]
         result += variations
         result += ["appearance"]
         

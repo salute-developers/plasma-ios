@@ -71,6 +71,16 @@ public struct SDDSChip: View {
         self.removeAction = data.removeAction
     }
     
+    public init(data: ChipData, appearance: ChipAppearance) {
+        self.title = data.title
+        self.isEnabled = data.isEnabled
+        self.iconImage = data.iconImage
+        self.buttonImage = data.buttonImage
+        self._appearance = appearance
+        self.accessibility = data.accessibility
+        self.removeAction = data.removeAction
+    }
+    
     public var body: some View {
         HStack(spacing: 0) {
             Spacer()
