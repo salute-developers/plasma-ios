@@ -14,33 +14,40 @@ public struct SDDSChipGroup: View {
     let data: [ChipData]
     private let _appearance: ChipGroupAppearance?
     let flat: Bool
+    let gap: ChipGroupGap
     @Binding var height: CGFloat
-
+    
     @Environment(\.chipGroupAppearance) private var environmentAppearance
     
     public init(
         data: [ChipData],
         appearance: ChipGroupAppearance? = nil,
         flat: Bool = false,
-        height: Binding<CGFloat> = .constant(0)) {
+        height: Binding<CGFloat> = .constant(0),
+        gap: ChipGroupGap = .dense
+    ) {
         self.data = data
         self._appearance = appearance
         self.flat = flat
+        self.gap = gap
         _height = height
     }
 
     public var body: some View {
         GeometryReader { geometry in
-            let maxWidth = geometry.size.width - insets.leading -  insets.trailing
-            VStack(spacing: insets.top) {
+            let maxWidth = geometry.size.width - appearance.size.lineSpacing - appearance.size.lineSpacing
+            VStack(spacing: appearance.size.lineSpacing) {
                 ForEach(layoutRows(maxWidth: flat ? .infinity : maxWidth, data: data).rows, id: \.self) { row in
                     HStack(spacing: 0) {
                         if size.alignment == .decreasingRight {
                             Spacer()
                         }
                         ForEach(row, id: \.self) { chipData in
-                            SDDSChip(data: chipData)
-                                .padding(.trailing, insets.trailing)
+                            SDDSChip(
+                                data: chipData,
+                                appearance: appearance.chipAppearance
+                            )
+                            .padding(.trailing, appearance.size.gap)
                         }
                         if size.alignment == .decreasingLeft {
                             Spacer()
@@ -64,16 +71,12 @@ public struct SDDSChipGroup: View {
         return layoutRows(maxWidth: .infinity, data: data).currentRowWidth
     }
     
-    private var insets: EdgeInsets {
-        return size.insets(for: gap)
+    private var inset: CGFloat {
+        appearance.size.lineSpacing
     }
     
     private var size: ChipGroupSizeConfiguration {
         return appearance.size
-    }
-    
-    private var gap: ChipGroupGap {
-        return appearance.gap
     }
 
     private var alignment: SwiftUI.Alignment {
@@ -120,7 +123,6 @@ public struct SDDSChipGroup: View {
             totalWidth += chipData.appearance.size.iconImageSize.width
             totalWidth += chipData.appearance.size.contentStartPadding
         }
-        
         let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.appearance.size) ?? .undefined
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
@@ -138,8 +140,8 @@ public struct SDDSChipGroup: View {
         let rows = layoutRows(maxWidth: maxWidth, data: data).rows
         let rowHeight = chipRowHeight(data: data)
         var result = CGFloat(rows.count) * rowHeight
-        result += CGFloat(rows.count - 1) * insets.top
-        result += (insets.bottom + insets.top)
+        result += CGFloat(rows.count - 1) * appearance.size.lineSpacing
+        result += (appearance.size.lineSpacing + appearance.size.lineSpacing)
         
         return result
     }

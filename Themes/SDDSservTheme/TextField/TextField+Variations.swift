@@ -1263,6 +1263,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
     }
 }
 
+
 public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
     var `default`: AppearanceVariation<TextFieldAppearance> {
         return .init(
@@ -1340,5 +1341,4 @@ private extension TextFieldAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
-    
 }

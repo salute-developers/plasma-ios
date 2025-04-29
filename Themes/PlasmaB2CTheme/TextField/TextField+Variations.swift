@@ -120,7 +120,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.LInnerlabel> {
@@ -195,7 +195,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.LOuterlabel> {
@@ -272,7 +272,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.M> {
@@ -391,7 +391,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.MInnerlabel> {
@@ -466,7 +466,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.MOuterlabel> {
@@ -543,7 +543,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.S> {
@@ -662,7 +662,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.SInnerlabel> {
@@ -737,7 +737,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.SOuterlabel> {
@@ -814,7 +814,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.Xl> {
@@ -933,7 +933,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.XlInnerlabel> {
@@ -1008,7 +1008,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.XlOuterlabel> {
@@ -1085,7 +1085,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.Xs> {
@@ -1183,7 +1183,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.XsOuterlabel> {
@@ -1260,8 +1260,9 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
+
 
 public extension ComponentAppearanceVariation<TextField, TextFieldAppearance> {
     var `default`: AppearanceVariation<TextFieldAppearance> {
@@ -1339,6 +1340,5 @@ private extension TextFieldAppearance {
         appearance.captionColor = ColorToken.textDefaultWarning
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
-    }
-    
+    }    
 }

@@ -20,12 +20,10 @@ struct SDDSChipGroupPreview: PreviewProvider {
             )
         }
         
-        return Group {
-            SDDSChipGroup(
+        return SDDSChipGroup(
                 data: chipData,
-                appearance: ChipGroup.dense.appearance
+                appearance: ChipGroupWide.s.accent.appearance
             )
-        }
-        .previewLayout(PreviewLayout.sizeThatFits)
+            .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

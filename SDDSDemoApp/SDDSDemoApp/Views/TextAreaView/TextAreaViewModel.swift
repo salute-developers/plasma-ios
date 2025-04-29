@@ -67,6 +67,7 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("textFieldChipIcon"),
+            appearance: appearance.chipGroupAppearance.chipAppearance,
             accessibility: ChipAccessibility(),
             removeAction: { [weak self] in
                 self?.removeChip(with: id)

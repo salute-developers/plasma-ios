@@ -122,7 +122,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.LInnerlabel> {
@@ -199,7 +199,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.LOuterlabel> {
@@ -276,7 +276,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.M> {
@@ -397,7 +397,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.MInnerlabel> {
@@ -474,7 +474,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.MOuterlabel> {
@@ -551,7 +551,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.S> {
@@ -672,7 +672,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.SInnerlabel> {
@@ -749,7 +749,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.SOuterlabel> {
@@ -826,7 +826,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xs> {
@@ -926,7 +926,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.XsOuterlabel> {
@@ -1003,8 +1003,9 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
+
 
 public extension ComponentAppearanceVariation<TextFieldClear, TextFieldAppearance> {
     var `default`: AppearanceVariation<TextFieldAppearance> {
@@ -1106,6 +1107,5 @@ private extension TextFieldAppearance {
         appearance.textColor = ColorToken.textDefaultWarning
         appearance.textColorFocused = ColorToken.textDefaultPrimary
         return appearance
-    }
-    
+    }    
 }

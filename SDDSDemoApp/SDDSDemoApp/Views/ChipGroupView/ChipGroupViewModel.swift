@@ -1,26 +1,59 @@
 import SwiftUI
-import Combine
 import SDDSComponents
 import SDDSServTheme
 
+enum ChipGroupGapStyle: String, CaseIterable {
+    case dense
+    case wide
+}
+
+enum ChipGroupStyle: String, CaseIterable {
+    case `default`
+    case embedded
+}
+
 final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
-    @Published var chips: [ChipData] = []
+    @Published var chips: [ChipData] = [] {
+        didSet {
+            guard chips.isEmpty else {
+                return
+            }
+            self.selectVariation(variations.first)
+        }
+    }
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    
-    var chipViewModel = ChipViewModel()
+    @Published var gapStyle: ChipGroupGapStyle = .wide {
+        didSet {
+            variationProvider.gapStyle = gapStyle
+            guard chips.isEmpty else {
+                return
+            }
+            self.selectVariation(variations.first)
+        }
+    }
+    @Published var chipGroupStyle: ChipGroupStyle = .default {
+        didSet {
+            variationProvider.chipGroupStyle = chipGroupStyle
+            guard chips.isEmpty else {
+                return
+            }
+            self.selectVariation(variations.first)
+        }
+    }
+    @Published var value: String = "Value"
     
     init() {
-        super.init(variationProvider: ChipGroupVariationProvider())
+        super.init(variationProvider: ChipGroupVariationProvider(gapStyle: .dense, chipGroupStyle: .default))
     }
     
     func addChip() {
         let newChip = ChipData(
-            title: chipViewModel.value,
+            title: value,
             isEnabled: true,
             iconImage: iconImageEnabled ? Image.image("chipIcon") : nil,
             buttonImage: buttomImageEnabled ? Image.image("chipClose") : nil,
-            appearance: chipViewModel.appearance,
+            appearance: appearance.chipAppearance,
             accessibility: ChipAccessibility(),
             removeAction: {}
         )

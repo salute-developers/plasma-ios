@@ -291,7 +291,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         case .multiple(_, let chips):
             let updatedChips: [ChipData] = chips.map { chipData in
                 var chipData = chipData
-                chipData.appearance = self.appearance.chipAppearance
+                chipData.appearance = self.appearance.chipGroupAppearance.chipAppearance
                 return chipData
             }
             ZStack(alignment: .topTrailing) {

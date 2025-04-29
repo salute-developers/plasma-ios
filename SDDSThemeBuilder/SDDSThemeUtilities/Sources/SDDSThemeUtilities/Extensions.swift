@@ -50,3 +50,19 @@ public extension Dictionary {
         }
     }
 }
+
+public extension String {
+    func argumentParser(type: String) -> Self? {
+        let cleaned = self
+            .replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+        
+        let parts = cleaned.components(separatedBy: ":")
+        
+        guard parts.count == 2 else { return nil }
+        
+        let part = parts[0].components(separatedBy: " ")
+        
+        return "(" + part[0] + ":" + " \(type)" + ")"
+    }
+}

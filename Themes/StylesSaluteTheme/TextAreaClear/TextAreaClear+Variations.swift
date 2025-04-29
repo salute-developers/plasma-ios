@@ -103,7 +103,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.LInnerlabel> {
@@ -167,7 +167,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.LOuterlabel> {
@@ -231,7 +231,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.M> {
@@ -333,7 +333,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.MInnerlabel> {
@@ -397,7 +397,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.MOuterlabel> {
@@ -461,7 +461,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.S> {
@@ -563,7 +563,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.SInnerlabel> {
@@ -627,7 +627,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.SOuterlabel> {
@@ -691,7 +691,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.Xs> {
@@ -775,7 +775,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.XsOuterlabel> {
@@ -839,8 +839,9 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
+
 
 public extension ComponentAppearanceVariation<TextAreaClear, TextAreaAppearance> {
     var `default`: AppearanceVariation<TextAreaAppearance> {
@@ -917,6 +918,5 @@ private extension TextAreaAppearance {
         appearance.textColor = ColorToken.textDefaultWarning
         appearance.textColorFocused = ColorToken.textDefaultPrimary
         return appearance
-    }
-    
+    }    
 }
