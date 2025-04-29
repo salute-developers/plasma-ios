@@ -101,7 +101,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.LInnerlabel> {
@@ -163,7 +163,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.LOuterlabel> {
@@ -227,7 +227,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.M> {
@@ -327,7 +327,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.MInnerlabel> {
@@ -389,7 +389,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.MOuterlabel> {
@@ -453,7 +453,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.S> {
@@ -553,7 +553,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.SInnerlabel> {
@@ -615,7 +615,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.SOuterlabel> {
@@ -679,7 +679,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.Xl> {
@@ -779,7 +779,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.XlInnerlabel> {
@@ -841,7 +841,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.XlOuterlabel> {
@@ -905,7 +905,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.Xs> {
@@ -987,7 +987,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.XsOuterlabel> {
@@ -1051,8 +1051,9 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
             name: name,
             appearance: appearance
         )
-    }
+    }    
 }
+
 
 public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
     var `default`: AppearanceVariation<TextAreaAppearance> {
@@ -1114,6 +1115,5 @@ private extension TextAreaAppearance {
         appearance.captionColor = ColorToken.textDefaultWarning
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
-    }
-    
+    }    
 }

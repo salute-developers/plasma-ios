@@ -24,8 +24,15 @@ struct ChipGroupView: View {
             Section(header: Text("ChipGroup")) {
                 VariationsView(viewModel: viewModel)
             }
-            Section(header: Text("Chip")) {
-                VariationsView(viewModel: viewModel.chipViewModel)
+            Picker("Chip group style", selection: $viewModel.chipGroupStyle) {
+                ForEach(ChipGroupStyle.allCases, id: \.self) {
+                    Text("\($0.rawValue.capitalized)")
+                }
+            }
+            Picker("Chip group gap", selection: $viewModel.gapStyle) {
+                ForEach(ChipGroupGapStyle.allCases, id: \.self) {
+                    Text("\($0.rawValue.capitalized)")
+                }
             }
             Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
             Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
@@ -56,7 +63,7 @@ struct ChipGroupView: View {
                     }
                 }
                 HStack {
-                    TextField("Chip Title", text: $viewModel.chipViewModel.value)
+                    TextField("Chip Title", text: $viewModel.value)
                     Spacer()
                     Button("Add Chip") {
                         viewModel.addChip()

@@ -3,6 +3,7 @@ import Foundation
 typealias TextFieldConfiguration = ComponentConfiguration<TextFieldProps>
 typealias ButtonConfiguration = ComponentConfiguration<ButtonProps>
 typealias ChipConfiguration = ComponentConfiguration<ChipProps>
+typealias ChipGroupConfiguration = ComponentConfiguration<ChipGroupProps>
 typealias BadgeConfiguration = ComponentConfiguration<BadgeProps>
 typealias IndicatorConfiguration = ComponentConfiguration<IndicatorProps>
 typealias CellConfiguration = ComponentConfiguration<CellProps>

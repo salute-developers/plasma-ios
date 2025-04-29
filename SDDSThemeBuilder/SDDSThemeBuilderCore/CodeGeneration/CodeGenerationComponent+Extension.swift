@@ -9,6 +9,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textArea = "TextArea"
     case textAreaClear = "TextAreaClear"
     case chip = "Chip"
+    case chipGroupDense = "ChipGroupDense"
+    case chipGroupWide = "ChipGroupWide"
+    case embeddedChipGroupDense = "EmbeddedChipGroupDense"
+    case embeddedChipGroupWide = "EmbeddedChipGroupWide"
     case embeddedChip = "EmbeddedChip"
     case badge = "Badge"
     case badgeClear = "BadgeClear"
@@ -39,10 +43,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .basicButton,
             .linkButton,
             .iconButton,
-        //    .textField,
-        //    .textFieldClear,
-        //    .textArea,
-        //    .textAreaClear,
+        // .textField,
+        // .textFieldClear,
+        // .textArea,
+        // .textAreaClear,
             .badge,
             .badgeClear,
             .badgeTransparent,
@@ -60,6 +64,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .switch,
             .embeddedChip,
             .chip,
+            .embeddedChipGroupDense,
+            .embeddedChipGroupWide,
+            .chipGroupDense,
+            .chipGroupWide,
             .radiobox,
             .radioboxGroup,
             .checkbox,
@@ -84,6 +92,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .chip, .embeddedChip:
             GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            GenerateComponentCommand<ChipGroupProps, ChipGroupAppearance, ChipGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .indicator:
@@ -131,6 +141,8 @@ extension CodeGenerationComponent {
             "TextFieldAppearance"
         case .chip, .embeddedChip:
             "ChipAppearance"
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            "ChipGroupAppearance"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeAppearance"
         case .indicator:
@@ -179,6 +191,8 @@ extension CodeGenerationComponent {
             "TextFieldSizeConfiguration"
         case .chip, .embeddedChip:
             "ChipSizeConfiguration"
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            "ChipGroupSizeConfiguration"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeSizeConfiguration"
         case .indicator:
@@ -234,6 +248,14 @@ extension CodeGenerationComponent {
             "text_area_clear_config.json"
         case .chip:
             "chip_config.json"
+        case .chipGroupDense:
+            "chip_group_dense_config.json"
+        case .chipGroupWide:
+            "chip_group_wide_config.json"
+        case .embeddedChipGroupDense:
+            "embedded_chip_group_dense_config.json"
+        case .embeddedChipGroupWide:
+            "embedded_chip_group_wide_config.json"
         case .embeddedChip:
             "embedded_chip_config.json"
         case .badge:

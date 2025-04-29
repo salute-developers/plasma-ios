@@ -8,7 +8,7 @@ public struct TextFieldClear {
     public static var l: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.L> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.l
-        appearance.chipAppearance = EmbeddedChip.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
@@ -21,7 +21,7 @@ public struct TextFieldClear {
     public static var m: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.M> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.m
-        appearance.chipAppearance = EmbeddedChip.m.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
@@ -34,7 +34,7 @@ public struct TextFieldClear {
     public static var s: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.S> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.s
-        appearance.chipAppearance = EmbeddedChip.s.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
@@ -47,7 +47,7 @@ public struct TextFieldClear {
     public static var xl: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xl> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xl
-        appearance.chipAppearance = EmbeddedChip.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
@@ -60,7 +60,7 @@ public struct TextFieldClear {
     public static var xs: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xs> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xs
-        appearance.chipAppearance = EmbeddedChip.xs.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
@@ -167,7 +167,6 @@ private extension TextFieldAppearance {
         var appearance = TextFieldAppearance()
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
         appearance.captionTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.chipGroupAppearance = ChipGroup.dense.appearance
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary

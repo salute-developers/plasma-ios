@@ -3,6 +3,10 @@ import SwiftUI
 import SDDSComponents
 
 public enum ChipGroupSize: ChipGroupSizeConfiguration, Hashable {
+    public var gap: CGFloat { 0 }
+    
+    public var lineSpacing: CGFloat { 0 }
+    
     case large
     case medium
     case small

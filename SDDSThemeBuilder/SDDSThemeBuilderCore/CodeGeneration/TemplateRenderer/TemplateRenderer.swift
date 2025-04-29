@@ -25,6 +25,8 @@ private enum Filter: String {
     case adjustedCornerRadius = "adjustedCornerRadius"
     case paletteColor = "palette_color"
     case generateFunction = "generate_function"
+    case removeFuncKeyword = "remove_func_keyword"
+    case insertArguments = "insert_arguments"
 }
 
 private enum SwiftKeyword: String, CaseIterable {
@@ -200,10 +202,16 @@ final class TemplateRenderer: Renderable {
             return color
         }
         ext.registerFilter(Filter.generateFunction.rawValue) { (value: Any?) in
-            guard let valueString = value as? String, valueString.hasPrefix("function") else {
-                return false
-            }
-            return true
+            guard let valueString = value as? String else { return false }
+            return valueString.hasPrefix("func")
+        }
+        ext.registerFilter(Filter.removeFuncKeyword.rawValue) { (value: Any?) in
+            guard let valueString = value as? String else { return value }
+            return valueString.replacingOccurrences(of: "func", with: "")
+        }
+        ext.registerFilter(Filter.insertArguments.rawValue) { (value: Any?) in
+            guard let valueString = value as? String else { return value }
+            return valueString.argumentParser(type: ".dense")
         }
     }
 }
