@@ -31,7 +31,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case checkboxGroup = "CheckboxGroup"
     case avatar = "Avatar"
     case avatarGroup = "AvatarGroup"
-    case progressbar = "Progressbar"
+    case progressbar = "ProgressBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -270,7 +270,7 @@ extension CodeGenerationComponent {
             "avatar_config.json"
         case .avatarGroup:
             "avatar_group_config.json"
-        case .progressbar
+        case .progressbar:
             "progress_bar_config.json"
         }
     }
