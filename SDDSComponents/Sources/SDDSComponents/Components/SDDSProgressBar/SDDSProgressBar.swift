@@ -89,6 +89,6 @@ public struct SDDSProgressView: View {
 
 extension SDDSProgressView: Equatable {
     public static func == (lhs: SDDSProgressView, rhs: SDDSProgressView) -> Bool {
-        return lhs.appearance == rhs.appearance && lhs.progress == rhs.progress
+        return lhs.appearance == rhs.appearance && lhs.progress == rhs.progress && lhs.isEnabled == rhs.isEnabled
     }
 }
