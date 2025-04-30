@@ -59,6 +59,7 @@ public struct SDDSProgressView: View {
         .accessibilityValue(Text("\(Int(normalizedProgress * 100))%"))
         .accessibilityHint(Text(accessibility.progressHint))
         .disabled(!isEnabled)
+        .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
     }
     
     @ViewBuilder
