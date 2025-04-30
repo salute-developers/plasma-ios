@@ -15,7 +15,7 @@ extension EnvironmentValueProvider {
         self.set(value: Chip.m.default.appearance, forKey: ChipAppearance.self)
         self.set(value: ChipGroup.dense.appearance, forKey: ChipGroupAppearance.self)
         self.set(value: Indicator.m.default.appearance, forKey: IndicatorAppearance.self)
-//        self.set(value: ProgressBar.default.appearance, forKey: ProgressBarAppearance.self)
+        self.set(value: ProgressBar.Default.appearance, forKey: ProgressBarAppearance.self)
         self.set(value: Radiobox.m.appearance, forKey: RadioboxAppearance.self)
         self.set(value: RadioboxGroup.m.appearance, forKey: RadioboxGroupAppearance.self)
         self.set(value: Segment.m.appearance, forKey: SegmentAppearance.self)
@@ -23,5 +23,6 @@ extension EnvironmentValueProvider {
         self.set(value: Switch.m.appearance, forKey: SwitchAppearance.self)
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
         self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
+        self.set(value: BottomSheet.Default.appearance, forKey: BottomSheetAppearance.self)
     }
 }
