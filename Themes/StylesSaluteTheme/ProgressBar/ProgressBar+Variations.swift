@@ -4,6 +4,97 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<ProgressBar, ProgressBarAppearance, ProgressBarVariation.Default> {
+    
+    var `default`: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultSolidDefault)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var accent: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultAccentMain)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var gradient: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .gradient(Gradients.surfaceDefaultGradientMain)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "gradient",
+            appearance: appearance
+        )
+    }
+    var negative: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultNegative)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "negative",
+            appearance: appearance
+        )
+    }
+    var positive: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultPositive)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "positive",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultSolidTertiary)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var warning: AppearanceVariation<ProgressBarAppearance> {
+        var appearance = appearance
+        appearance.tintFillStyle = .color(.surfaceDefaultWarning)
+        appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
+        
+        return .init(
+            name: "warning",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ProgressBarAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<ProgressBar, ProgressBarAppearance> {
     var `default`: AppearanceVariation<ProgressBarAppearance> {
