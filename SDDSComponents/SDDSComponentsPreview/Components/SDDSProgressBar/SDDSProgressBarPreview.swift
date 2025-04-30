@@ -5,20 +5,11 @@ import SwiftUI
 
 // MARK: - Preview
 struct SDDSProgressBarPreview: PreviewProvider {
-    private static let variation = ComponentAppearanceVariation<ProgressBar, ProgressBarAppearance>(
-            name: "ProgressBar",
-            appearance: ProgressBarAppearance(
-                size: DefaultProgressBarSize(),
-                tintFillStyle: .color(.surfaceDefaultSolidDefault),
-                trackColor: .surfaceDefaultTransparentSecondary
-            )
-        )
-    
     static var previews: some View {
         SDDSProgressView(
             progress: .constant(0.5),
             isEnabled: true,
-            appearance: variation.default.appearance
+            appearance: ProgressBar.Default.accent.appearance
         )
         .previewLayout(PreviewLayout.sizeThatFits)
         .previewDisplayName("Default")
