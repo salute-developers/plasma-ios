@@ -9,4 +9,5 @@ struct ProgressBarProps: MergeableConfiguration, Codable {
     var backgroundShape: ShapeKeyValue?
     var backgroundHeight: KeyValue<Double>?
     var indicatorHeight: KeyValue<Double>?
+    var disableAlpha: KeyValue<Double>?
 }

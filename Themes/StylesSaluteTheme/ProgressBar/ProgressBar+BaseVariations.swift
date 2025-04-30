@@ -8,6 +8,7 @@ public struct ProgressBar {
     public static var Default: GeneralAppearanceVariation<ProgressBar, ProgressBarAppearance, ProgressBarVariation.Default> {
         var appearance = ProgressBarAppearance.base
         appearance.size = ProgressBarSize.Default
+        appearance.disabledAlpha = CGFloat(0.4)
         appearance.tintFillStyle = .color(.clearColor)
         appearance.trackColor = .clearColor
 
@@ -29,6 +30,7 @@ public struct ProgressBarVariation {
 private extension ProgressBarAppearance {
     static var base: ProgressBarAppearance {
         var appearance = ProgressBarAppearance()
+        appearance.disabledAlpha = CGFloat(0.4)
         appearance.tintFillStyle = .color(.clearColor)
         appearance.trackColor = .clearColor
         return appearance
