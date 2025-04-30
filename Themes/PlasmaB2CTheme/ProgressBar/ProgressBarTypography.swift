@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct BottomSheetTypography: GeneralTypographyConfiguration {
+struct ProgressBarTypography: GeneralTypographyConfiguration {
     var Default: TypographyToken?
     
     init(
@@ -16,11 +16,11 @@ struct BottomSheetTypography: GeneralTypographyConfiguration {
         self.Default = oneSize
     }
     
-    func typography(with size: BottomSheetSizeConfiguration) -> TypographyToken? {
-        if size is BottomSheetAnySize {
+    func typography(with size: ProgressBarSizeConfiguration) -> TypographyToken? {
+        if size is ProgressBarAnySize {
             return Default
         }
-        if size is BottomSheetSizeDefault {
+        if size is ProgressBarSizeDefault {
             return Default
         }
         return nil

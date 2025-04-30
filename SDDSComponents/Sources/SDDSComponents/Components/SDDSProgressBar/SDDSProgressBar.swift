@@ -45,14 +45,12 @@ public struct SDDSProgressView: View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 // Background track
-                RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
+                appearance.size.pathDrawer
+                    .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.indicatorHeight)))
                     .fill(appearance.trackColor.color(for: colorScheme))
-                    .frame(width: geometry.size.width, height: appearance.size.height)
                 
                 // Progress indicator
-                rectangle
-                    .frame(width: CGFloat(normalizedProgress) * geometry.size.width, height: appearance.size.indicatorHeight)
-                    .position(x: CGFloat(normalizedProgress) * geometry.size.width / 2, y: geometry.size.height / 2)
+                rectangle(CGFloat(normalizedProgress) * geometry.size.width)
             }
         }
         .frame(height: appearance.size.indicatorHeight)
@@ -61,19 +59,22 @@ public struct SDDSProgressView: View {
         .accessibilityValue(Text("\(Int(normalizedProgress * 100))%"))
         .accessibilityHint(Text(accessibility.progressHint))
         .disabled(!isEnabled)
+        .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
     }
     
     @ViewBuilder
-    private var rectangle: some View {
+    private func rectangle(_ progressWidth: CGFloat) -> some View {
         switch appearance.tintFillStyle {
         case .color(let colorToken):
-            RoundedRectangle(cornerRadius: appearance.size.indicatorCornerRadius)
+            appearance.size.indicatorPathDrawer
+                .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: progressWidth, height: appearance.size.indicatorHeight)))
                 .fill(colorToken.color(for: colorScheme))
         case .gradient(let gradientToken):
-            RoundedCornersMask(
-                cornerRadius: appearance.size.indicatorCornerRadius,
-                content: Rectangle().gradient(gradientToken)
-            )
+            let shape = ShapeContent(pathDrawer: appearance.size.indicatorPathDrawer)
+            Rectangle()
+                .gradient(gradientToken)
+                .shape(shapeContent: shape)
+                .frame(width: progressWidth, height: appearance.size.indicatorHeight)
         }
     }
     
@@ -88,6 +89,6 @@ public struct SDDSProgressView: View {
 
 extension SDDSProgressView: Equatable {
     public static func == (lhs: SDDSProgressView, rhs: SDDSProgressView) -> Bool {
-        return lhs.appearance == rhs.appearance && lhs.progress == rhs.progress
+        return lhs.appearance == rhs.appearance && lhs.progress == rhs.progress && lhs.isEnabled == rhs.isEnabled
     }
 }
