@@ -62,7 +62,12 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
     private func baseContext(from configuration: Configuration) -> BaseContext {
         var variations: [String: BaseContext.Variation] = [:]
         
-        let baseKeys = configuration.allBaseKeys
+        var baseKeys = configuration.allBaseKeys
+        
+        if baseKeys.isEmpty {
+            baseKeys.append("Default")
+        }
+        
         for key in baseKeys {
             guard let variation = configuration.allProps[key],
                   let appearanceProps = variation.props as? Appearance.Props
@@ -86,7 +91,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         
         let keys = configuration.allProps.keys.sorted()
         let all: [String] = keys.map({ $0.joinedVariationPath }).sorted()
-        let chains: [String] = keys.map({ $0.chain }).sorted()
+        let chains: [String] = configuration.variations.isEmpty ? ["Default"] : keys.map({ $0.chain }).sorted()
         let configurationProps = configuration.props as? Appearance.Props
         
         return .init(
