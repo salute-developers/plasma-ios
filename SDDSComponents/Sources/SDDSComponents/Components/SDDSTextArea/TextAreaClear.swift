@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
-public struct TextAreaClear: View {
+public struct TextAreaClear<ActionContent: View>: View {
     @Binding public var value: TextAreaValue
     public let title: String
     public let optionalTitle: String
@@ -13,14 +13,11 @@ public struct TextAreaClear: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
-    public let dynamicHeight: Bool
     public let heightMode: TextAreaHeightMode
+    public let actionContent: Action<ActionContent>
     private let _appearance: TextAreaAppearance?
     public let accessibility: TextAreaAccessibility
-    public let iconActionViewProvider: ViewProvider?
     
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -30,12 +27,13 @@ public struct TextAreaClear: View {
         counter: String = "",
         disabled: Bool = false,
         readOnly: Bool = false,
+        required: Bool = false,
         divider: Bool = true,
-        dynamicHeight: Bool = false,
         heightMode: TextAreaHeightMode = .dynamic,
         appearance: TextAreaAppearance? = nil,
+        layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil
+        actionContent: Action<ActionContent> = Action { EmptyView() }
     ) {
         _value = value
         self.caption = caption
@@ -46,11 +44,10 @@ public struct TextAreaClear: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self.dynamicHeight = false
         self.heightMode = heightMode
         self._appearance = appearance
         self.accessibility = accessibility
-        self.iconActionViewProvider = iconActionViewProvider
+        self.actionContent = actionContent
     }
     
     public var body: some View {
@@ -68,7 +65,7 @@ public struct TextAreaClear: View {
             appearance: _appearance,
             layout: .clear,
             accessibility: accessibility,
-            iconActionViewProvider: iconActionViewProvider
+            actionContent: actionContent
         )
     }
 }

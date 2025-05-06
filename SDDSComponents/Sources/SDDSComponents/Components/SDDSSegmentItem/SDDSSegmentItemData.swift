@@ -3,10 +3,11 @@ import SwiftUI
 
 public enum CounterViewProvider {
     case `default`(text: String)
+    
     case custom(viewProvider: ViewProvider, widthCalculator: CounterWidthCalculator)
 }
 
-public struct SDDSSegmentItemData: Identifiable, Hashable {
+public struct SDDSSegmentItemData<Counter: View>: Identifiable, Hashable {
     public var id: UUID
     public var title: String
     public var subtitle: String
@@ -18,9 +19,12 @@ public struct SDDSSegmentItemData: Identifiable, Hashable {
     public var appearance: SegmentItemAppearance
     public var accessibility: SegmentItemAccessibility
     public var counterViewProvider: CounterViewProvider
+    public let counterText: String
+    public let counter: Counter
     public var counterWidthCalculator: CounterWidthCalculator?
     public var action: () -> Void
     
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         id: UUID = UUID(),
         title: String,
@@ -33,6 +37,9 @@ public struct SDDSSegmentItemData: Identifiable, Hashable {
         appearance: SegmentItemAppearance,
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterViewProvider: CounterViewProvider = .default(text: ""),
+        counterText: String = "",
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
+        counterWidthCalculator: CounterWidthCalculator? = nil,
         action: @escaping () -> Void
     ) {
         self.id = id
@@ -54,8 +61,57 @@ public struct SDDSSegmentItemData: Identifiable, Hashable {
                 counterAppearance: appearance.counterAppearance,
                 counterText: text
             )
-        case .custom(_, let calculator):
+            self.counterText = counterText
+            self.counter = counter()
+        case .custom(let viewProvider, let calculator):
             self.counterWidthCalculator = calculator
+            self.counterText = ""
+            if let counter = AnyViewWrapperView(view: viewProvider.view) as? Counter {
+                self.counter = counter
+            } else {
+                self.counter = counter()
+            }
+        }
+    }
+    
+    public init(
+        id: UUID = UUID(),
+        title: String,
+        subtitle: String,
+        iconAttributes: ButtonIconAttributes?,
+        isDisabled: Bool = false,
+        isSelected: Bool = false,
+        stretch: Bool = false,
+        counterEnabled: Bool = false,
+        appearance: SegmentItemAppearance,
+        accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
+        counterText: String = "",
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
+        counterWidthCalculator: CounterWidthCalculator? = nil,
+        action: @escaping () -> Void
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.iconAttributes = iconAttributes
+        self.isDisabled = isDisabled
+        self.isSelected = isSelected
+        self.stretch = stretch
+        self.counterEnabled = counterEnabled
+        self.appearance = appearance
+        self.accessibility = accessibility
+        self.counterViewProvider = .default(text: "")
+        self.action = action
+        self.counterText = counterText
+        self.counter = counter()
+        
+        if let counterWidthCalculator = counterWidthCalculator, counterText.isEmpty {
+            self.counterWidthCalculator = counterWidthCalculator
+        } else {
+            self.counterWidthCalculator = CounterWidthCalculatorImpl(
+                counterAppearance: appearance.counterAppearance,
+                counterText: counterText
+            )
         }
     }
     

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 public struct SegmentWidthCalculatorImpl {
     public let counterWidthCalculator: CounterWidthCalculator?
@@ -7,7 +8,7 @@ public struct SegmentWidthCalculatorImpl {
         self.counterWidthCalculator = counterWidthCalculator
     }
         
-    private func segmentItemWidthCalculator(data: SDDSSegmentItemData) -> CGFloat {
+    private func segmentItemWidthCalculator(data: SDDSSegmentItemData<AnyView>) -> CGFloat {
         var totalWidth: CGFloat = 0
         
         let titleTypography = data.appearance.titleTypography.typography(with: data.appearance.size) ?? .undefined
@@ -36,7 +37,7 @@ public struct SegmentWidthCalculatorImpl {
 }
 
 extension SegmentWidthCalculatorImpl: SegmentWidthCalculator {    
-    public func width(with data: SDDSSegmentItemData) -> CGFloat {
+    public func width(with data: SDDSSegmentItemData<AnyView>) -> CGFloat {
         let segmentItemWidth = segmentItemWidthCalculator(data: data)
         guard let counterWidth = counterWidthCalculator?.width else { return segmentItemWidth }
         
