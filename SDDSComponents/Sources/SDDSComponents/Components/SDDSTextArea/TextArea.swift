@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
-public struct TextArea: View {
+public struct TextArea<ActionContent: View>: View {
     @Binding public var value: TextAreaValue
     public let title: String
     public let optionalTitle: String
@@ -13,14 +13,13 @@ public struct TextArea: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
-    public let dynamicHeight: Bool
     public let heightMode: TextAreaHeightMode
     private let _appearance: TextAreaAppearance?
     public let accessibility: TextAreaAccessibility
     public let iconActionViewProvider: ViewProvider?
+    public let actionContent: ActionContent
     
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -31,11 +30,11 @@ public struct TextArea: View {
         disabled: Bool = false,
         readOnly: Bool = false,
         divider: Bool = true,
-        dynamicHeight: Bool = false,
         heightMode: TextAreaHeightMode = .dynamic,
         appearance: TextAreaAppearance? = nil,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil
+        iconActionViewProvider: ViewProvider? = nil,
+        @ViewBuilder actionContent: @escaping () -> ActionContent = { EmptyView() }
     ) {
         _value = value
         self.caption = caption
@@ -50,7 +49,7 @@ public struct TextArea: View {
         self._appearance = appearance
         self.accessibility = accessibility
         self.iconActionViewProvider = iconActionViewProvider
-        self.dynamicHeight = false
+        self.actionContent = actionContent()
     }
     
     public init(
@@ -66,7 +65,7 @@ public struct TextArea: View {
         heightMode: TextAreaHeightMode = .dynamic,
         appearance: TextAreaAppearance? = nil,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil
+        @ViewBuilder actionContent: @escaping () -> ActionContent = { EmptyView() }
     ) {
         _value = value
         self.caption = caption
@@ -77,11 +76,11 @@ public struct TextArea: View {
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
-        self.dynamicHeight = false
         self.heightMode = heightMode
         self._appearance = appearance
         self.accessibility = accessibility
-        self.iconActionViewProvider = iconActionViewProvider
+        self.iconActionViewProvider = nil
+        self.actionContent = actionContent()
     }
     
     public var body: some View {
@@ -99,7 +98,8 @@ public struct TextArea: View {
             appearance: _appearance,
             layout: .default,
             accessibility: accessibility,
-            iconActionViewProvider: iconActionViewProvider
+            iconActionViewProvider: iconActionViewProvider,
+            actionContent: { actionContent }
         )
     }
 }

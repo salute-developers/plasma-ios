@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+@available(*, deprecated, message: "Don't use it, public struct will be removed")
 public struct ViewProvider {
     let view: AnyView
     
