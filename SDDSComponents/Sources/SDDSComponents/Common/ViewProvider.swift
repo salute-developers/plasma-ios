@@ -8,3 +8,11 @@ public struct ViewProvider {
         self.view = AnyView(view)
     }
 }
+
+struct AnyViewWrapperView: View {
+    let view: AnyView
+    
+    var body: some View {
+        view
+    }
+}
