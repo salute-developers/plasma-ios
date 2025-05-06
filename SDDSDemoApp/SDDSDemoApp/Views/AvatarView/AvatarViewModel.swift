@@ -6,8 +6,8 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
     typealias Appearance = AvatarAppearance
     
     @Published var text: String = "AB"
-    @Published var image: AvatarImageSource? = .image(Image.image("checker"))
-    @Published var placeholderImage: AvatarImageSource? = nil
+    @Published var image: AvatarImageSource? = nil
+    @Published var placeholderImage: AvatarImageSource? = .image(Image.image("checker"))
     @Published var status: AvatarStatus = .online
     @Published var extraPlacement: AvatarExtraPlacement = .topRight
     @Published var accessibility: AvatarAccessibility = AvatarAccessibility()

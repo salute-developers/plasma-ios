@@ -21,10 +21,10 @@ struct AvatarAppearance: CodeGenerationAppearance {
         guard let props = props else {
             return
         }
-        self.backgroundFillStyle = FillStyleContextBuilder(props.background, hasDefault: true).context
-        self.textFillStyle = FillStyleContextBuilder(props.textColor, hasDefault: true).context
-        self.onlineStatusColor = ColorTokenContextBuilder(props.activeStatusColor).context
-        self.offlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor).context
+        self.backgroundFillStyle = FillStyleContextBuilder(props.background, hasDefault: false).context
+        self.textFillStyle = FillStyleContextBuilder(props.textColor, hasDefault: false).context
+        self.onlineStatusColor = ColorTokenContextBuilder(props.activeStatusColor, hasDefault: false).context
+        self.offlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor, hasDefault: false).context
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
         
         if let indicatorAppearance = props.statusStyle?.value {

@@ -77,6 +77,7 @@ public struct SDDSAvatar<Content: View>: View {
             } else {
                 AvatarPlacementContainer(extraPlacement: extraPlacement) {
                     Text(text)
+                        .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
                         .typography(textTypography)
                         .fillText(style: appearance.textFillStyle)
                 }
