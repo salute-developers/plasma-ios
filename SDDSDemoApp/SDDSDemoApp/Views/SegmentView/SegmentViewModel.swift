@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSServTheme
 
 final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
-    @Published var data: [SDDSSegmentItemData] = []
+    @Published var data: [SDDSSegmentItemData<AnyView>] = []
     
     // MARK: - Segment Element
     @Published var value: String = "Value"
@@ -82,7 +82,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
 extension SegmentViewModel {
     func addItem() {
         let id = UUID()
-        let item = SDDSSegmentItemData(
+        let item = SDDSSegmentItemData<AnyView>(
             id: id,
             title: value,
             subtitle: helperText,
@@ -90,7 +90,8 @@ extension SegmentViewModel {
             isDisabled: isDisabled,
             counterEnabled: isCounterVisible,
             appearance: appearance.segmentItemAppearance,
-            counterViewProvider: .default(text: counterText),
+            counterText: counterText,
+            counter: { AnyView(EmptyView()) },
             action: { [weak self] in
                 self?.selectSegmentItem(id: id)
             }

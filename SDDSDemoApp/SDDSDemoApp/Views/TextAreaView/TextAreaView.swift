@@ -26,7 +26,16 @@ struct TextAreaView: View {
                     heightMode: viewModel.heightMode,
                     appearance: viewModel.appearance,
                     layout: viewModel.layout,
-                    iconActionViewProvider: iconActionView
+                    actionContent: Action {
+                        if viewModel.iconActionViewEnabled {
+                            Image.image("textFieldIconAction")
+                                .renderingMode(.template)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } else {
+                            EmptyView()
+                        }
+                    }
                 )
             }
 
@@ -93,19 +102,6 @@ struct TextAreaView: View {
             }
         }
         .navigationTitle("SDDSTextArea")
-    }
-    
-    private var iconActionView: ViewProvider? {
-        if viewModel.iconActionViewEnabled {
-            ViewProvider(
-                Image.image("textFieldIconAction")
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            )
-        } else {
-            nil
-        }
     }
 }
 

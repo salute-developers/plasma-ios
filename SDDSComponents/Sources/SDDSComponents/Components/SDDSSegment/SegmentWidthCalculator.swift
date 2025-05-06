@@ -1,7 +1,6 @@
 import Foundation
-
 import SwiftUI
 
 public protocol SegmentWidthCalculator {
-    func width(with data: SDDSSegmentItemData) -> CGFloat
+    func width(with data: SDDSSegmentItemData<AnyView>) -> CGFloat
 }

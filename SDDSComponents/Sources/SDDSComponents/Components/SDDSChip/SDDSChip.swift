@@ -55,8 +55,6 @@ public struct SDDSChip: View {
         self.removeAction = removeAction
     }
     
-    
-    
     /**
      Инициализатор для создания чипа на основе данных структуры `ChipData`.
      
