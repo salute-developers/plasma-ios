@@ -2,7 +2,18 @@ import SwiftUI
 
 // MARK: - SDDSAvatar
 
+public struct AvatarExtra<Content: View> {
+    let placement: AvatarExtraPlacement
+    let content: Content
+    
+    public init(placement: AvatarExtraPlacement, @ViewBuilder content: () -> Content = { EmptyView() }) {
+        self.placement = placement
+        self.content = content()
+    }
+}
+
 public enum AvatarExtraPlacement: String, CaseIterable {
+    case none
     case bottomLeft
     case bottomRight
     case topLeft
@@ -26,9 +37,9 @@ public struct SDDSAvatar<Content: View>: View {
     let placeholderImage: AvatarImageSource?
     let status: AvatarStatus
     let accessibility: AvatarAccessibility
-    let extraContent: Content
-    let extraPlacement: AvatarExtraPlacement
+    let extra: AvatarExtra<Content>
     private var _appearance: AvatarAppearance?
+    private let extraContent: Content
     
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.avatarAppearance) private var environmentAppearance
@@ -40,16 +51,15 @@ public struct SDDSAvatar<Content: View>: View {
         status: AvatarStatus,
         appearance: AvatarAppearance? = nil,
         accessibility: AvatarAccessibility,
-        @ViewBuilder extraContent: () -> Content =  { EmptyView() },
-        extraPlacement: AvatarExtraPlacement = .topRight
+        extra: AvatarExtra<Content> = AvatarExtra(placement: .none)
     ) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
         self._appearance = appearance
-        self.extraContent = extraContent()
-        self.extraPlacement = extraPlacement
+        self.extra = extra
+        self.extraContent = extra.content
         self.accessibility = accessibility
     }
     
@@ -58,8 +68,8 @@ public struct SDDSAvatar<Content: View>: View {
         self.image = data.image
         self.placeholderImage = data.placeholderImage
         self.status = data.status
-        self.extraContent = data.extraContent
-        self.extraPlacement = data.extraPlacement
+        self.extra = data.extra
+        self.extraContent = extra.content
         self._appearance = data.appearance
         self.accessibility = data.accessibility
     }
@@ -76,16 +86,22 @@ public struct SDDSAvatar<Content: View>: View {
                 avatar(imageSource: image)
             } else {
                 AvatarPlacementContainer(extraPlacement: extraPlacement) {
-                    Text(text)
-                        .typography(textTypography)
-                        .fillText(style: appearance.textFillStyle)
+                    ZStack {
+                        Text(text)
+                            .typography(textTypography)
+                            .fillText(style: appearance.textFillStyle)
+                            .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                        indicatorView
+                    }
                 }
             }
-                        
-            AvatarPlacementContainer(extraPlacement: extraPlacement, extraOffset: appearance.size.extraOffset) {
-                extraContent
-                    .environment(\.badgeAppearance, appearance.badgeAppearance)
-                    .environment(\.counterAppearance, appearance.counterAppearance)
+            
+            if extraPlacement != .none {
+                AvatarPlacementContainer(extraPlacement: extraPlacement, extraOffset: appearance.size.extraOffset) {
+                    extraContent
+                        .environment(\.badgeAppearance, appearance.badgeAppearance ?? .defaultValue)
+                        .environment(\.counterAppearance, appearance.counterAppearance)
+                }
             }
         }
         .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
@@ -101,18 +117,25 @@ public struct SDDSAvatar<Content: View>: View {
                 avatarImage(for: imageSource)
                     .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
                 
-                if status != .hidden && extraPlacement != .bottomRight {
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            statusView
-                                .padding(.trailing, appearance.size.statusInsets.trailing)
-                                .padding(.bottom, appearance.size.statusInsets.bottom)
-                        }
-                    }
+                indicatorView
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var indicatorView: some View {
+        if status != .hidden && (extraPlacement != .bottomRight) {
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    statusView
+                        .padding(.trailing, appearance.size.statusInsets.trailing)
+                        .padding(.bottom, appearance.size.statusInsets.bottom)
                 }
             }
+        } else {
+            EmptyView()
         }
     }
     
@@ -138,6 +161,7 @@ public struct SDDSAvatar<Content: View>: View {
                     }
                 }
             }
+            .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
         }
     }
     
@@ -192,5 +216,9 @@ public struct SDDSAvatar<Content: View>: View {
     
     var appearance: AvatarAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    private var extraPlacement: AvatarExtraPlacement {
+        extra.placement
     }
 }

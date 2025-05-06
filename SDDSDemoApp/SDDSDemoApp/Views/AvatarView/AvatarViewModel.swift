@@ -6,10 +6,14 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
     typealias Appearance = AvatarAppearance
     
     @Published var text: String = "AB"
-    @Published var image: AvatarImageSource? = .image(Image.image("checker"))
-    @Published var placeholderImage: AvatarImageSource? = nil
+    @Published var image: AvatarImageSource? = nil
+    @Published var placeholderImage: AvatarImageSource? = .image(Image.image("checker"))
     @Published var status: AvatarStatus = .online
-    @Published var extraPlacement: AvatarExtraPlacement = .topRight
+    @Published var extraPlacement: AvatarExtraPlacement = .none {
+        didSet {
+            updateExtra()
+        }
+    }
     @Published var accessibility: AvatarAccessibility = AvatarAccessibility()
     @Published var isPlaceholder = false
     @Published var isBadgeEnabled = false {
@@ -17,6 +21,7 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
             if isBadgeEnabled {
                 isCounterEnabled = false
             }
+            updatePlacement()
         }
     }
     @Published var isCounterEnabled = false {
@@ -24,6 +29,7 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
             if isCounterEnabled {
                 isBadgeEnabled = false
             }
+            updatePlacement()
         }
     }
     @Published var badgeViewModel = BadgeViewModel(componentViewLayoutMode: .subScreen)
@@ -47,6 +53,28 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)
+    }
+    
+    private func updatePlacement() {
+        if !isBadgeEnabled && !isCounterEnabled {
+            extraPlacement = .none
+        }
+        if (isBadgeEnabled || isCounterEnabled) && extraPlacement == .none {
+            extraPlacement = .topRight
+        }
+    }
+    
+    private func updateExtra() {
+        if extraPlacement != .none && !isBadgeEnabled {
+            isBadgeEnabled = true
+        } else if extraPlacement == .none {
+            if isBadgeEnabled {
+                isBadgeEnabled = false
+            }
+            if isCounterEnabled {
+                isCounterEnabled = false
+            }
+        }
     }
 }
 
