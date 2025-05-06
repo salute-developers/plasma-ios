@@ -35,7 +35,7 @@ public enum TextAreaHeightMode {
     - iconViewProvider: Поставщик левого иконки.
     - iconActionViewProvider: Поставщик правой иконки действия.
  */
-public struct SDDSTextArea: View {
+public struct SDDSTextArea<ActionContent: View>: View {
     @State var text: String
     @Binding public var value: TextAreaValue
     public let title: String
@@ -46,12 +46,14 @@ public struct SDDSTextArea: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
-    public let dynamicHeight: Bool
     public let heightMode: TextAreaHeightMode
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
+
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public let iconActionViewProvider: ViewProvider?
+    
+    let actionContent: Action<ActionContent>
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.textAreaAppearance) private var environmentAppearance
@@ -62,8 +64,8 @@ public struct SDDSTextArea: View {
     private let _appearance: TextAreaAppearance?
 
     private let debugConfiguration: TextFieldDebugConfiguration
-
-    @available(*, deprecated, message: "Don't use dynamicHeight, use heightMode instead.")
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -75,12 +77,12 @@ public struct SDDSTextArea: View {
         readOnly: Bool = false,
         required: Bool = false,
         divider: Bool = true,
-        dynamicHeight: Bool = false,
         heightMode: TextAreaHeightMode = .dynamic,
         appearance: TextAreaAppearance? = nil,
         layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil
+        iconActionViewProvider: ViewProvider? = nil,
+        actionContent: Action<ActionContent> = Action { EmptyView() }
     ) {
         switch value.wrappedValue {
         case .single(let text):
@@ -99,17 +101,18 @@ public struct SDDSTextArea: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.heightMode = heightMode
-        switch heightMode {
-        case .dynamic:
-            self.dynamicHeight = true
-        case .fixed:
-            self.dynamicHeight = false
-        }
         self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
-        self.iconActionViewProvider = iconActionViewProvider
         self.debugConfiguration = TextFieldDebugConfiguration()
+        
+        if let action = iconActionViewProvider,
+           let castedAction = AnyViewWrapperView(view: action.view) as? ActionContent {
+            self.actionContent = .init(content: { castedAction })
+        } else {
+            self.actionContent = actionContent
+        }
+        self.iconActionViewProvider = nil
     }
     
     public init(
@@ -127,7 +130,7 @@ public struct SDDSTextArea: View {
         appearance: TextAreaAppearance? = nil,
         layout: TextAreaLayout,
         accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil
+        actionContent: Action<ActionContent> = Action { EmptyView() }
     ) {
         switch value.wrappedValue {
         case .single(let text):
@@ -146,17 +149,12 @@ public struct SDDSTextArea: View {
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
         self.heightMode = heightMode
-        switch heightMode {
-        case .dynamic:
-            self.dynamicHeight = true
-        case .fixed:
-            self.dynamicHeight = false
-        }
         self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
-        self.iconActionViewProvider = iconActionViewProvider
         self.debugConfiguration = TextFieldDebugConfiguration()
+        self.actionContent = actionContent
+        self.iconActionViewProvider = nil
     }
 
     public var body: some View {
@@ -632,14 +630,10 @@ public struct SDDSTextArea: View {
 
     @ViewBuilder
     private var iconActionView: some View {
-        if let rightView = iconActionViewProvider?.view {
-            rightView
-                .foregroundColor(endContentColor)
-                .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
-                .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
-        } else {
-            EmptyView()
-        }
+        actionContent
+            .foregroundColor(endContentColor)
+            .frame(width: iconActionViewWidth, height: iconActionViewHeight, debug: debugConfiguration.iconAction)
+            .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
     }
 
     @ViewBuilder
@@ -732,7 +726,7 @@ public struct SDDSTextArea: View {
     }
     
     private var iconActionTrailingPadding: CGFloat {
-        if let _ = iconActionViewProvider?.view {
+        if !actionContent.isEmpty {
             return iconActionViewWidth + appearance.size.iconActionPadding
         } else {
             return 0
@@ -799,7 +793,7 @@ public struct SDDSTextArea: View {
     }
     
     private var trailingContentPadding: CGFloat {
-        (iconActionViewProvider?.view != nil ? (iconActionTrailingPadding + size.endContentPadding) : 0)
+        (!actionContent.isEmpty ? (iconActionTrailingPadding + size.endContentPadding) : 0)
     }
     
     private var shouldCenterText: Bool {
@@ -826,6 +820,15 @@ public struct SDDSTextArea: View {
         case .multiple:
             let chipAppearance = appearance.chipAppearance
             return chipAppearance.size.cornerRadius
+        }
+    }
+    
+    private var dynamicHeight: Bool {
+        switch heightMode {
+        case .dynamic:
+            return true
+        case .fixed:
+            return false
         }
     }
 
@@ -901,4 +904,18 @@ public struct SDDSTextArea: View {
         return shouldLayoutInnerTitle ? innerTitlePadding : 0
     }
 
+}
+
+public struct Action<Content: View>: View {
+    let content: Content
+    
+    public init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    public var body: some View {
+        content
+    }
+    
+    var isEmpty: Bool { Content.self == EmptyView.self }
 }

@@ -27,7 +27,7 @@ import SDDSComponents
     - iconViewProvider: Поставщик левого иконки.
     - iconActionViewProvider: Поставщик правой иконки действия.
  */
-public struct SDDSTextField: View {
+public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     @State var text: String
     @Binding public var value: TextFieldValue
     public let title: String
@@ -42,15 +42,22 @@ public struct SDDSTextField: View {
     private let _appearance: TextFieldAppearance?
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public let iconViewProvider: ViewProvider?
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public let iconActionViewProvider: ViewProvider?
-
+    
+    let iconContent: Action<IconContent>
+    let actionContent: Action<ActionContent>
+    
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.textFieldAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
-
+    
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         value: Binding<TextFieldValue>,
         title: String = "",
@@ -66,8 +73,10 @@ public struct SDDSTextField: View {
         appearance: TextFieldAppearance? = nil,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
-        iconViewProvider: ViewProvider? = nil,
-        iconActionViewProvider: ViewProvider? = nil
+        iconViewProvider: ViewProvider?,
+        iconActionViewProvider: ViewProvider?,
+        iconContent: Action<IconContent> = Action { EmptyView() },
+        actionContent: Action<ActionContent> = Action { EmptyView() }
     ) {
         switch value.wrappedValue {
         case .single(let text):
@@ -89,9 +98,69 @@ public struct SDDSTextField: View {
         self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
-        self.iconViewProvider = iconViewProvider
-        self.iconActionViewProvider = iconActionViewProvider
         self.debugConfiguration = TextFieldDebugConfiguration()
+        
+        if let icon = iconViewProvider,
+           let castedIcon = AnyViewWrapperView(view: icon.view) as? IconContent {
+            self.iconContent = .init { castedIcon }
+        } else {
+            self.iconContent = iconContent
+        }
+
+        if let action = iconActionViewProvider,
+           let castedAction = AnyViewWrapperView(view: action.view) as? ActionContent {
+            self.actionContent = .init { castedAction }
+        } else {
+            self.actionContent = actionContent
+        }
+        
+        self.iconViewProvider = nil
+        self.iconActionViewProvider = nil
+    }
+    
+    public init(
+        value: Binding<TextFieldValue>,
+        title: String = "",
+        optionalTitle: String = "",
+        placeholder: String = "",
+        caption: String = "",
+        textBefore: String = "",
+        textAfter: String = "",
+        disabled: Bool = false,
+        readOnly: Bool = false,
+        required: Bool = false,
+        divider: Bool = true,
+        appearance: TextFieldAppearance? = nil,
+        layout: TextFieldLayout = .default,
+        accessibility: TextFieldAccessibility = TextFieldAccessibility(),
+        iconContent: Action<IconContent> = Action { EmptyView() },
+        actionContent: Action<ActionContent> = Action { EmptyView() }
+    ) {
+        switch value.wrappedValue {
+        case .single(let text):
+            _text = State(wrappedValue: text)
+        case .multiple(let text, _):
+            _text = State(wrappedValue: text)
+        }
+    
+        _value = value
+        self.caption = caption
+        self.textBefore = textBefore
+        self.textAfter = textAfter
+        self.disabled = disabled
+        self.readOnly = readOnly
+        self.divider = divider
+        self.title = title
+        self.optionalTitle = optionalTitle
+        self.placeholder = placeholder
+        self._appearance = appearance
+        self.layout = layout
+        self.accessibility = accessibility
+        self.debugConfiguration = TextFieldDebugConfiguration()
+        self.iconContent = iconContent
+        self.actionContent = actionContent
+        self.iconViewProvider = nil
+        self.iconActionViewProvider = nil
     }
 
     public var body: some View {
@@ -584,26 +653,18 @@ public struct SDDSTextField: View {
 
     @ViewBuilder
     private var iconView: some View {
-        if let leftView = iconViewProvider?.view {
-            leftView
-                .foregroundColor(iconViewColor)
-                .frame(width: iconViewWidth, height: min(appearance.size.iconSize.height, appearance.size.fieldHeight), debug: debugConfiguration.icon)
-                .padding(.trailing, appearance.size.iconPadding, debug: debugConfiguration.icon)
-        } else {
-            EmptyView()
-        }
+        iconContent
+            .foregroundColor(iconViewColor)
+            .frame(width: iconViewWidth, height: min(appearance.size.iconSize.height, appearance.size.fieldHeight), debug: debugConfiguration.icon)
+            .padding(.trailing, appearance.size.iconPadding, debug: debugConfiguration.icon)
     }
 
     @ViewBuilder
     private var iconActionView: some View {
-        if let rightView = iconActionViewProvider?.view {
-            rightView
-                .foregroundColor(endContentColor)
-                .frame(width: iconActionViewWidth, height: min(appearance.size.iconActionSize.height, appearance.size.fieldHeight), debug: debugConfiguration.iconAction)
-                .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
-        } else {
-            EmptyView()
-        }
+        actionContent
+            .foregroundColor(endContentColor)
+            .frame(width: iconActionViewWidth, height: min(appearance.size.iconActionSize.height, appearance.size.fieldHeight), debug: debugConfiguration.iconAction)
+            .padding(.leading, appearance.size.iconActionPadding, debug: debugConfiguration.iconAction)
     }
 
     @ViewBuilder
