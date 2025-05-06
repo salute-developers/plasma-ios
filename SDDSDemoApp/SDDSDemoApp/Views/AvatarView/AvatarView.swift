@@ -21,29 +21,31 @@ struct AvatarView: View {
                         status: viewModel.status,
                         appearance: viewModel.appearance,
                         accessibility: viewModel.accessibility,
-                        extraContent: {
-                            if viewModel.isBadgeEnabled {
-                                SDDSBadge(
-                                    label: viewModel.badgeViewModel.label,
-                                    image: image,
-                                    alignment: viewModel.badgeViewModel.alignment,
-                                    style: .basic,
-                                    appearance: viewModel.appearance.badgeAppearance
-                                )
-                            } else if viewModel.isCounterEnabled {
-                                SDDSCounter(
-                                    text: viewModel.counterViewModel.text,
-                                    appearance: viewModel.appearance.counterAppearance,
-                                    isAnimating: false,
-                                    isHighlighted: false,
-                                    isHovered: false,
-                                    isSelected: false
-                                )
-                            } else {
-                                EmptyView()
+                        extra: .init(
+                            placement: viewModel.extraPlacement,
+                            content: {
+                                if let badgeAppearance = viewModel.appearance.badgeAppearance, viewModel.isBadgeEnabled {
+                                    SDDSBadge(
+                                        label: viewModel.badgeViewModel.label,
+                                        image: image,
+                                        alignment: viewModel.badgeViewModel.alignment,
+                                        style: .basic,
+                                        appearance: badgeAppearance
+                                    )
+                                } else if viewModel.isCounterEnabled {
+                                    SDDSCounter(
+                                        text: viewModel.counterViewModel.text,
+                                        appearance: viewModel.appearance.counterAppearance,
+                                        isAnimating: false,
+                                        isHighlighted: false,
+                                        isHovered: false,
+                                        isSelected: false
+                                    )
+                                } else {
+                                    EmptyView()
+                                }
                             }
-                        },
-                        extraPlacement: viewModel.extraPlacement
+                        )
                     )
                     Spacer()
                 }
@@ -115,23 +117,27 @@ struct AvatarView: View {
                 }
             }
             
-            Section {
-                HStack {
-                    Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+            if viewModel.extraPlacement != .none {
+                if viewModel.appearance.badgeAppearance != nil {
+                    Section {
+                        HStack {
+                            Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+                        }
+                        
+                        if viewModel.isBadgeEnabled {
+                            BadgeView(viewModel: viewModel.badgeViewModel)
+                        }
+                    }
                 }
                 
-                if viewModel.isBadgeEnabled {
-                    BadgeView(viewModel: viewModel.badgeViewModel)
-                }
-            }
-            
-            Section {
-                HStack {
-                    Toggle("Counter", isOn: $viewModel.isCounterEnabled)
-                }
-                
-                if viewModel.isCounterEnabled {
-                    CounterView(viewModel: viewModel.counterViewModel)
+                Section {
+                    HStack {
+                        Toggle("Counter", isOn: $viewModel.isCounterEnabled)
+                    }
+                    
+                    if viewModel.isCounterEnabled {
+                        CounterView(viewModel: viewModel.counterViewModel)
+                    }
                 }
             }
         }

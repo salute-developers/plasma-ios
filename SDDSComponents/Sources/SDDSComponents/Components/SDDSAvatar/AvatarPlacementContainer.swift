@@ -23,7 +23,7 @@ struct AvatarPlacementContainer<Content: View>: View {
     @ViewBuilder
     private var content: some View {
         switch extraPlacement {
-        case .topRight:
+        case .topRight, .none:
             HStack {
                 Spacer()
                     .frame(minWidth: 0)
