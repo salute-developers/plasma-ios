@@ -64,9 +64,9 @@ public struct SDDSAvatarGroup: View {
             image: avatarData.image,
             placeholderImage: avatarData.placeholderImage,
             status: .hidden,
-            extraContent: avatarData.extraContent,
             appearance: appearance.avatarAppearance,
-            accessibility: avatarData.accessibility
+            accessibility: avatarData.accessibility,
+            extra: avatarData.extra
         )
     }
 }

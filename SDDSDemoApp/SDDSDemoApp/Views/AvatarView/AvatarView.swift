@@ -21,29 +21,31 @@ struct AvatarView: View {
                         status: viewModel.status,
                         appearance: viewModel.appearance,
                         accessibility: viewModel.accessibility,
-                        extraContent: {
-                            if viewModel.isBadgeEnabled {
-                                SDDSBadge(
-                                    label: viewModel.badgeViewModel.label,
-                                    image: image,
-                                    alignment: viewModel.badgeViewModel.alignment,
-                                    style: .basic,
-                                    appearance: viewModel.appearance.badgeAppearance
-                                )
-                            } else if viewModel.isCounterEnabled {
-                                SDDSCounter(
-                                    text: viewModel.counterViewModel.text,
-                                    appearance: viewModel.appearance.counterAppearance,
-                                    isAnimating: false,
-                                    isHighlighted: false,
-                                    isHovered: false,
-                                    isSelected: false
-                                )
-                            } else {
-                                EmptyView()
+                        extra: .init(
+                            placement: viewModel.extraPlacement,
+                            content: {
+                                if viewModel.isBadgeEnabled {
+                                    SDDSBadge(
+                                        label: viewModel.badgeViewModel.label,
+                                        image: image,
+                                        alignment: viewModel.badgeViewModel.alignment,
+                                        style: .basic,
+                                        appearance: viewModel.appearance.badgeAppearance
+                                    )
+                                } else if viewModel.isCounterEnabled {
+                                    SDDSCounter(
+                                        text: viewModel.counterViewModel.text,
+                                        appearance: viewModel.appearance.counterAppearance,
+                                        isAnimating: false,
+                                        isHighlighted: false,
+                                        isHovered: false,
+                                        isSelected: false
+                                    )
+                                } else {
+                                    EmptyView()
+                                }
                             }
-                        },
-                        extraPlacement: viewModel.extraPlacement
+                        )
                     )
                     Spacer()
                 }

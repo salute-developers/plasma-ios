@@ -19,8 +19,7 @@ public struct SDDSAvatarData {
     public let image: AvatarImageSource?
     public let placeholderImage: AvatarImageSource?
     public let status: AvatarStatus
-    public let extraContent: AnyView
-    public let extraPlacement: AvatarExtraPlacement
+    public let extra: AvatarExtra<AnyView>
     public let appearance: AvatarAppearance
     public let accessibility: AvatarAccessibility
 
@@ -41,17 +40,15 @@ public struct SDDSAvatarData {
         image: AvatarImageSource? = nil,
         placeholderImage: AvatarImageSource? = nil,
         status: AvatarStatus = .hidden,
-        extraContent: AnyView = AnyView(EmptyView()),
-        extraPlacement: AvatarExtraPlacement = .topRight,
         appearance: AvatarAppearance = AvatarAppearance(),
-        accessibility: AvatarAccessibility = AvatarAccessibility()
+        accessibility: AvatarAccessibility = AvatarAccessibility(),
+        extra: AvatarExtra<AnyView> = .init(placement: .none) { AnyView(EmptyView()) }
     ) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
-        self.extraContent = extraContent
-        self.extraPlacement = extraPlacement
+        self.extra = extra
         self.appearance = appearance
         self.accessibility = accessibility
     }
