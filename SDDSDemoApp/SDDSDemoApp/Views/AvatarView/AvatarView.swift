@@ -24,13 +24,13 @@ struct AvatarView: View {
                         extra: .init(
                             placement: viewModel.extraPlacement,
                             content: {
-                                if viewModel.isBadgeEnabled {
+                                if let badgeAppearance = viewModel.appearance.badgeAppearance, viewModel.isBadgeEnabled {
                                     SDDSBadge(
                                         label: viewModel.badgeViewModel.label,
                                         image: image,
                                         alignment: viewModel.badgeViewModel.alignment,
                                         style: .basic,
-                                        appearance: viewModel.appearance.badgeAppearance
+                                        appearance: badgeAppearance
                                     )
                                 } else if viewModel.isCounterEnabled {
                                     SDDSCounter(
@@ -118,13 +118,15 @@ struct AvatarView: View {
             }
             
             if viewModel.extraPlacement != .none {
-                Section {
-                    HStack {
-                        Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
-                    }
-                    
-                    if viewModel.isBadgeEnabled {
-                        BadgeView(viewModel: viewModel.badgeViewModel)
+                if viewModel.appearance.badgeAppearance != nil {
+                    Section {
+                        HStack {
+                            Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+                        }
+                        
+                        if viewModel.isBadgeEnabled {
+                            BadgeView(viewModel: viewModel.badgeViewModel)
+                        }
                     }
                 }
                 

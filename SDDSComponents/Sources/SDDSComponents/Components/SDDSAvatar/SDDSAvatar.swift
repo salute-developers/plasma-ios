@@ -99,7 +99,7 @@ public struct SDDSAvatar<Content: View>: View {
             if extraPlacement != .none {
                 AvatarPlacementContainer(extraPlacement: extraPlacement, extraOffset: appearance.size.extraOffset) {
                     extraContent
-                        .environment(\.badgeAppearance, appearance.badgeAppearance)
+                        .environment(\.badgeAppearance, appearance.badgeAppearance ?? .defaultValue)
                         .environment(\.counterAppearance, appearance.counterAppearance)
                 }
             }

@@ -23,7 +23,7 @@ public struct AvatarAppearance: Hashable {
     public var offlineStatusColor: ColorToken
     public var textTypography: TypographyConfiguration
     public var counterAppearance: CounterAppearance
-    public var badgeAppearance: BadgeAppearance
+    public var badgeAppearance: BadgeAppearance?
     public var indicatorAppearance: IndicatorAppearance
     
     public init(
@@ -35,7 +35,7 @@ public struct AvatarAppearance: Hashable {
         offlineStatusColor: ColorToken = .clearColor,
         textTypography: TypographyConfiguration = .default,
         counterAppearance: CounterAppearance = .defaultValue,
-        badgeAppearance: BadgeAppearance = .defaultValue,
+        badgeAppearance: BadgeAppearance? = nil,
         indicatorAppearance: IndicatorAppearance = .defaultValue
     ) {
         self.size = size
