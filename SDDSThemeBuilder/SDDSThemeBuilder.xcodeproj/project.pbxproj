@@ -142,6 +142,10 @@
 		8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */; };
 		8166CB412D970FE700323C26 /* Modifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166CB402D970FDF00323C26 /* Modifiable.swift */; };
 		816E049D2C58DCDB00EE7A7F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 816E049C2C58DCDB00EE7A7F /* SDDSThemeCore */; };
+		816F62D72DCBAE9600EC9121 /* CircularProgressBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62D52DCBAE9600EC9121 /* CircularProgressBarSize.swift */; };
+		816F62D82DCBAE9600EC9121 /* CircularProgressBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62D42DCBAE9600EC9121 /* CircularProgressBarAppearance.swift */; };
+		816F62DA2DCBAEAC00EC9121 /* CircularProgressBarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */; };
+		816F63722DCBB35500EC9121 /* BoolContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */; };
 		816FBD1B2D63530F0009AC1C /* Spacings.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 816FBD1A2D63530D0009AC1C /* Spacings.stencil */; };
 		816FBD1C2D6355350009AC1C /* SpacingToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81DE5FE42D634E4A0041B639 /* SpacingToken.stencil */; };
 		816FBD1D2D6355350009AC1C /* Spacings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 816FBD1A2D63530D0009AC1C /* Spacings.stencil */; };
@@ -587,6 +591,10 @@
 		8166B4412D5BD7E10044A680 /* LabelPlacementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPlacementContextBuilder.swift; sourceTree = "<group>"; };
 		8166CB402D970FDF00323C26 /* Modifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiable.swift; sourceTree = "<group>"; };
 		816E04A22C58DD5600EE7A7F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		816F62D42DCBAE9600EC9121 /* CircularProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarAppearance.swift; sourceTree = "<group>"; };
+		816F62D52DCBAE9600EC9121 /* CircularProgressBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarSize.swift; sourceTree = "<group>"; };
+		816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarProps.swift; sourceTree = "<group>"; };
+		816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolContextBuilder.swift; sourceTree = "<group>"; };
 		816FBD1A2D63530D0009AC1C /* Spacings.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Spacings.stencil; sourceTree = "<group>"; };
 		816FBD1E2D63563E0009AC1C /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		816FBD1F2D63563E0009AC1C /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
@@ -1094,6 +1102,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */,
 				6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */,
 				81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */,
 				81C3D7E82DAE46B10090739E /* BottomSheetPlacementContextBuilder.swift */,
@@ -1139,6 +1148,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */,
 				69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */,
 				69A875962DAF9E470074C1BD /* CheckboxProps.swift */,
@@ -1164,6 +1174,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				81F635D12DBB8D53003C8C26 /* Avatar */,
 				69A875832DAF9E290074C1BD /* Checkbox */,
 				69A875862DAF9E290074C1BD /* CheckboxGroup */,
@@ -1349,6 +1360,15 @@
 				8180A54D2C11068700009AF5 /* Generated */,
 			);
 			path = SDDSTheme;
+			sourceTree = "<group>";
+		};
+		816F62D62DCBAE9600EC9121 /* CircularProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				816F62D42DCBAE9600EC9121 /* CircularProgressBarAppearance.swift */,
+				816F62D52DCBAE9600EC9121 /* CircularProgressBarSize.swift */,
+			);
+			path = CircularProgressBar;
 			sourceTree = "<group>";
 		};
 		8174BA402D5DDF4600EA3E68 /* Chip */ = {
@@ -2307,6 +2327,8 @@
 				69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */,
 				8174BA462D5DE10200EA3E68 /* ChipProps.swift in Sources */,
 				818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */,
+				816F62D72DCBAE9600EC9121 /* CircularProgressBarSize.swift in Sources */,
+				816F62D82DCBAE9600EC9121 /* CircularProgressBarAppearance.swift in Sources */,
 				81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */,
 				8139923E2D9ED9BA0015AF83 /* SegmentSize.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
@@ -2318,6 +2340,7 @@
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
 				81C1C3282D648B9D0041AB56 /* Config.swift in Sources */,
+				816F62DA2DCBAEAC00EC9121 /* CircularProgressBarProps.swift in Sources */,
 				812DB7A92D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift in Sources */,
 				24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */,
 				6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */,
@@ -2422,6 +2445,7 @@
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
+				816F63722DCBB35500EC9121 /* BoolContextBuilder.swift in Sources */,
 				812DB6EB2D55E40C00D3F4A3 /* ShapeTokenContextBuilder.swift in Sources */,
 				817539762BD0087500138866 /* Command.swift in Sources */,
 				816FBD1B2D63530F0009AC1C /* Spacings.stencil in Sources */,

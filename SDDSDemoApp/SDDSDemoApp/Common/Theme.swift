@@ -364,4 +364,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.BottomSheet.all
         }
     }
+    
+    var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CircularProgressBar.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CircularProgressBar.all
+        }
+    }
 }
