@@ -59,7 +59,7 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
         if !isBadgeEnabled && !isCounterEnabled {
             extraPlacement = .none
         }
-        if isBadgeEnabled || isCounterEnabled {
+        if (isBadgeEnabled || isCounterEnabled) && extraPlacement == .none {
             extraPlacement = .topRight
         }
     }

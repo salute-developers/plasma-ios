@@ -117,23 +117,25 @@ struct AvatarView: View {
                 }
             }
             
-            Section {
-                HStack {
-                    Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+            if viewModel.extraPlacement != .none {
+                Section {
+                    HStack {
+                        Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+                    }
+                    
+                    if viewModel.isBadgeEnabled {
+                        BadgeView(viewModel: viewModel.badgeViewModel)
+                    }
                 }
                 
-                if viewModel.isBadgeEnabled {
-                    BadgeView(viewModel: viewModel.badgeViewModel)
-                }
-            }
-            
-            Section {
-                HStack {
-                    Toggle("Counter", isOn: $viewModel.isCounterEnabled)
-                }
-                
-                if viewModel.isCounterEnabled {
-                    CounterView(viewModel: viewModel.counterViewModel)
+                Section {
+                    HStack {
+                        Toggle("Counter", isOn: $viewModel.isCounterEnabled)
+                    }
+                    
+                    if viewModel.isCounterEnabled {
+                        CounterView(viewModel: viewModel.counterViewModel)
+                    }
                 }
             }
         }
