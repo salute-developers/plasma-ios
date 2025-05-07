@@ -27,4 +27,36 @@ final class AvatarSnapshotTest: XCTestCase {
     func testAvatarGroupSizeS() async throws {
         try await runSnapshotTest(view: AvatarGroupSizeS())
     }
+    
+    func testAvatarSizeXxlCounterTopLeft() async throws {
+        try await runSnapshotTest(view: AvatarSizeXxlCounterTopLeft())
+    }
+    
+    func testAvatarSizeLCounterTopRight() async throws {
+        try await runSnapshotTest(view: AvatarSizeLCounterTopRight())
+    }
+    
+    func testAvatarSizeMCounterBottomRight() async throws {
+        try await runSnapshotTest(view: AvatarSizeMCounterBottomRight())
+    }
+    
+    func testAvatarSizeSCounterBottomLeft() async throws {
+        try await runSnapshotTest(view: AvatarSizeSCounterBottomLeft())
+    }
+    
+    func testAvatarSizeXxlBadgeTopLeft() async throws {
+        try await runSnapshotTest(view: AvatarSizeXxlBadgeTopLeft())
+    }
+    
+    func testAvatarSizeXxlBadgeBottomRight() async throws {
+        try await runSnapshotTest(view: AvatarSizeXxlBadgeBottomRight())
+    }
+    
+    func testAvatarSizeLBadgeTopRight() async throws {
+        try await runSnapshotTest(view: AvatarSizeLBadgeTopRight())
+    }
+    
+    func testAvatarSizeMBadgeBottomLeft() async throws {
+        try await runSnapshotTest(view: AvatarSizeMBadgeBottomLeft())
+    }
 }
