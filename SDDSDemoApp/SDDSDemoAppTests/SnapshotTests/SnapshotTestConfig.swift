@@ -39,20 +39,29 @@ enum SnapshotTestConfig {
 Для проверки снэпшотов нужно проставить mode .verify
  */
 func runSnapshotTest(
-    name: String,
-    colorScheme: ColorScheme,
-    view: some View
+    view: some View,
+    function: StaticString = #function
 ) async throws {
-    await Xct.snapshotAsync(
-        testName: name,
-        mode: .verify,
-        deviceGroup: SnapshotTestConfig.iPhone13Mini,
-        prepareSut: { _ in
-            view
-                .padding()
-                .background(Color(.systemBackground))
-                .environment(\.colorScheme, colorScheme)
-                .snapshotSut()
-        }
-    )
+    
+    let baseName = extractTestName(from: function)
+    
+    for (themeName, scheme) in SnapshotTestConfig.testTheme {
+        await Xct.snapshotAsync(
+            testName: "\(baseName)_\(themeName)",
+            mode: .verify,
+            deviceGroup: SnapshotTestConfig.iPhone13Mini,
+            prepareSut: { _ in
+                view
+                    .padding()
+                    .background(Color(.systemBackground))
+                    .environment(\.colorScheme, scheme)
+                    .snapshotSut()
+            }
+        )
+    }
+}
+
+private func extractTestName(from function: StaticString) -> String {
+    let fullName = String(describing: function)
+    return fullName
 }

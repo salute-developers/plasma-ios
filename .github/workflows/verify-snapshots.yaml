@@ -1,0 +1,39 @@
+name: Verify snapshot tests
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - release/*
+      - hotfix/*
+  
+concurrency:
+  # New commit on branch cancels running workflows of the same branch
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    environment: sdds
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.1'
+          
+      - name: Run snapshot tests
+        working-directory: SDDSDemoApp
+        run: |
+          xcodebuild clean test \
+          -project SDDSDemoApp.xcodeproj \
+          -scheme SDDSDemoApp \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+
