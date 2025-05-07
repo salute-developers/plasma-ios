@@ -76,6 +76,7 @@ private extension AvatarAppearance {
     static var base: AvatarAppearance {
         var appearance = AvatarAppearance()
         appearance.backgroundFillStyle = .gradient(Gradients.surfaceDefaultGradientMain)
+        appearance.backgroundOpacity = CGFloat(0.2)
         appearance.offlineStatusColor = ColorToken.surfaceOnLightSolidTertiary
         appearance.onlineStatusColor = ColorToken.surfaceDefaultPositive
         appearance.textFillStyle = .gradient(Gradients.textDefaultGradientMain)

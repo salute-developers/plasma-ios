@@ -12,6 +12,7 @@ struct AvatarAppearance: CodeGenerationAppearance {
     var indicatorAppearance: String? = nil
     var badgeAppearance: String? = nil
     var counterAppearance: String? = nil
+    var backgroundOpacity: String? = nil
     
     init(variation: AvatarConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -22,6 +23,7 @@ struct AvatarAppearance: CodeGenerationAppearance {
             return
         }
         self.backgroundFillStyle = FillStyleContextBuilder(props.background, hasDefault: false).context
+        self.backgroundOpacity = CGFloatContextBuilder(props.background?.alpha, nullify: true).context
         self.textFillStyle = FillStyleContextBuilder(props.textColor, hasDefault: false).context
         self.onlineStatusColor = ColorTokenContextBuilder(props.activeStatusColor, hasDefault: false).context
         self.offlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor, hasDefault: false).context
