@@ -107,4 +107,8 @@ public extension EnvironmentValues {
         set { self[BottomSheetAppearance.self] = newValue }
     }
     
+    var circularProgressBarAppearance: CircularProgressBarAppearance {
+        get { self[CircularProgressBarAppearance.self] }
+        set { self[CircularProgressBarAppearance.self] = newValue }
+    }
 }

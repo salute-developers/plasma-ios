@@ -4,9 +4,13 @@ import SDDSTheme
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Test text")
-                .applyTypography(AdaptiveTypographyToken.bodyLBold.medium)
+        NavigationView {
+            List {
+                NavigationLink("Circular Progress Bar") {
+                    CircularProgressBarView()
+                }
+            }
+            .navigationTitle("SDDS Components")
         }
     }
 }

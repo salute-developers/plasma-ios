@@ -65,6 +65,9 @@
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
 		8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
+		816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */; };
+		816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636C2DCBB21600EC9121 /* CircularProgressBarViewModel.swift */; };
+		816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636B2DCBB21600EC9121 /* CircularProgressBarView.swift */; };
 		8174BA482D5DEA7200EA3E68 /* CounterVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */; };
 		8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */; };
 		8174BA4C2D5DEFAA00EA3E68 /* ChipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */; };
@@ -184,6 +187,9 @@
 		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
 		8166B4432D5C7C9E0044A680 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVariationProvider.swift; sourceTree = "<group>"; };
+		816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarVariationProvider.swift; sourceTree = "<group>"; };
+		816F636B2DCBB21600EC9121 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		816F636C2DCBB21600EC9121 /* CircularProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarViewModel.swift; sourceTree = "<group>"; };
 		8174BA472D5DEA6D00EA3E68 /* CounterVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVariationProvider.swift; sourceTree = "<group>"; };
 		8174BA492D5DED8500EA3E68 /* ChipGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupVariationProvider.swift; sourceTree = "<group>"; };
 		8174BA4B2D5DEFA600EA3E68 /* ChipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipVariationProvider.swift; sourceTree = "<group>"; };
@@ -418,6 +424,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				816F636D2DCBB21600EC9121 /* CircularProgressBarView */,
 				81578DD32D89FACF00BC7038 /* BottomSheetView */,
 				81F89E482D81A39B00A41C89 /* CardView */,
 				81FD6D5C2D6E28A7002A6E51 /* IndicatorView */,
@@ -560,6 +567,16 @@
 				816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */,
 			);
 			path = CheckboxGroupView;
+			sourceTree = "<group>";
+		};
+		816F636D2DCBB21600EC9121 /* CircularProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */,
+				816F636B2DCBB21600EC9121 /* CircularProgressBarView.swift */,
+				816F636C2DCBB21600EC9121 /* CircularProgressBarViewModel.swift */,
+			);
+			path = CircularProgressBarView;
 			sourceTree = "<group>";
 		};
 		81763B102D6DF42F00904D4A /* BadgeView */ = {
@@ -860,6 +877,9 @@
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
+				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
+				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,
+				816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */,
 				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
