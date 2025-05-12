@@ -224,6 +224,15 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
+		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
+		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
+		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
+		D3FEDC002DB91F10009A2867 /* ChipTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChipTestCase; sourceTree = "<group>"; };
+		D3FEDC042DB91F3C009A2867 /* CounterTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CounterTestCase; sourceTree = "<group>"; };
+		D3FEDCE12DB923F3009A2867 /* AvatarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AvatarTestCase; sourceTree = "<group>"; };
+		D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RadioBoxTestCase; sourceTree = "<group>"; };
+		D3FEDD122DB92C8D009A2867 /* SwitchTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwitchTestCase; sourceTree = "<group>"; };
+		D3FEDD312DB9338E009A2867 /* CellTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CellTestCase; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +322,15 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3FEDD312DB9338E009A2867 /* CellTestCase */,
+				D3FEDD122DB92C8D009A2867 /* SwitchTestCase */,
+				D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */,
+				D3FEDCE12DB923F3009A2867 /* AvatarTestCase */,
+				D3FEDC042DB91F3C009A2867 /* CounterTestCase */,
+				D3FEDC002DB91F10009A2867 /* ChipTestCase */,
+				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
+				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
+				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */,
@@ -678,6 +696,15 @@
 			fileSystemSynchronizedGroups = (
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
+				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
+				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
+				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
+				D3FEDC002DB91F10009A2867 /* ChipTestCase */,
+				D3FEDC042DB91F3C009A2867 /* CounterTestCase */,
+				D3FEDCE12DB923F3009A2867 /* AvatarTestCase */,
+				D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */,
+				D3FEDD122DB92C8D009A2867 /* SwitchTestCase */,
+				D3FEDD312DB9338E009A2867 /* CellTestCase */,
 			);
 			name = SDDSDemoAppTests;
 			productName = PlasmaDemoAppTests;
