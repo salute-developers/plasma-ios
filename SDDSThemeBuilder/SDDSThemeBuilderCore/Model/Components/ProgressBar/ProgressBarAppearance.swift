@@ -4,9 +4,9 @@ struct ProgressBarAppearance: CodeGenerationAppearance {
     typealias Variation = ProgressBarConfiguration.Variation
     typealias Props = ProgressBarProps
     
-    var tintFillStyle: String? = nil
-    var trackColor: String? = nil
-    var disabledAlpha: String? = nil
+    var tintFillStyle: String?
+    var trackColor: String?
+    var disabledAlpha: String?
     
     init(variation: ProgressBarConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
