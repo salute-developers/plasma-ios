@@ -94,3 +94,13 @@ struct ProgressBarAccent: View {
         )
     }
 }
+
+struct ProgressBarInfo: View {
+    var body: some View {
+        SDDSProgressView(
+            progress: .constant(0.5),
+            isEnabled: true,
+            appearance: ProgressBar.default.info.appearance
+        )
+    }
+}

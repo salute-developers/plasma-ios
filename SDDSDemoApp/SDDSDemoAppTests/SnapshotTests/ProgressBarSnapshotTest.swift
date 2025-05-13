@@ -47,4 +47,8 @@ final class ProgressBarSnapshotTest: XCTestCase {
     func testProgressBarAccent() async throws {
         try await runSnapshotTest(view: ProgressBarAccent())
     }
+    
+    func testProgressBarInfo() async throws {
+        try await runSnapshotTest(view: ProgressBarInfo())
+    }
 }
