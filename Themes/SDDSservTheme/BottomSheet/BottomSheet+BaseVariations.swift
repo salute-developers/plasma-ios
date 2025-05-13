@@ -5,21 +5,22 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct BottomSheet {
-    public static var Default: ComponentAppearanceVariation<BottomSheet, BottomSheetAppearance> {
+    public static var `default`: ComponentAppearanceVariation<BottomSheet, BottomSheetAppearance> {
         var appearance = BottomSheetAppearance.base
-        appearance.size = BottomSheetSize.Default
+        appearance.size = BottomSheetSize.`default`
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
         appearance.handleColor = ColorToken.surfaceDefaultSolidTertiary
         appearance.handlePlacement = BottomSheetHandlePlacement.auto
         appearance.size = BottomSheetSizeDefault()
 
         return .init(
-            name: "Default",
+            name: "`default`",
             appearance: appearance
         )
     }
     
     public static let all: [Variation<BottomSheetAppearance>] = [
+        BottomSheet.default.variation,
     ]
 }
 

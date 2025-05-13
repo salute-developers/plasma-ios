@@ -5,21 +5,21 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct ProgressBar {
-    public static var Default: GeneralAppearanceVariation<ProgressBar, ProgressBarAppearance, ProgressBarVariation.Default> {
+    public static var `default`: GeneralAppearanceVariation<ProgressBar, ProgressBarAppearance, ProgressBarVariation.Default> {
         var appearance = ProgressBarAppearance.base
-        appearance.size = ProgressBarSize.Default
+        appearance.size = ProgressBarSize.`default`
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.tintFillStyle = .color(.clearColor)
         appearance.trackColor = .clearColor
 
         return .init(
-            name: "Default",
+            name: "`default`",
             appearance: appearance
         )
     }
     
     public static let all: [Variation<ProgressBarAppearance>] = [
-        ProgressBar.Default.variation,
+        ProgressBar.default.variation,
     ]
 }
 

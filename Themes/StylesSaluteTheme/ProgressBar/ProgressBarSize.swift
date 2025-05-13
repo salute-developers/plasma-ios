@@ -4,10 +4,10 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct ProgressBarSize {
-    static let Default = ProgressBarSizeDefault()
+    static let `default` = ProgressBarSizeDefault()
 
     static let all: [ProgressBarSizeConfiguration] = [
-        ProgressBarSize.Default,
+        ProgressBarSize.`default`,
     ] 
 }
 struct ProgressBarSizeDefault: ProgressBarSizeConfiguration {

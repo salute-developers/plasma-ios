@@ -4,24 +4,24 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct BottomSheetTypography: GeneralTypographyConfiguration {
-    var Default: TypographyToken?
+    var `default`: TypographyToken?
     
     init(
-        Default: TypographyToken? = nil
+        `default`: TypographyToken? = nil
     ) {
-        self.Default = Default
+        self.`default` = `default`
     }
     
     init(oneSize: TypographyToken) {
-        self.Default = oneSize
+        self.`default` = oneSize
     }
     
     func typography(with size: BottomSheetSizeConfiguration) -> TypographyToken? {
         if size is BottomSheetAnySize {
-            return Default
+            return `default`
         }
         if size is BottomSheetSizeDefault {
-            return Default
+            return `default`
         }
         return nil
     }

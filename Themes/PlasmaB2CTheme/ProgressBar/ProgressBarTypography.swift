@@ -4,24 +4,24 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct ProgressBarTypography: GeneralTypographyConfiguration {
-    var Default: TypographyToken?
+    var `default`: TypographyToken?
     
     init(
-        Default: TypographyToken? = nil
+        `default`: TypographyToken? = nil
     ) {
-        self.Default = Default
+        self.`default` = `default`
     }
     
     init(oneSize: TypographyToken) {
-        self.Default = oneSize
+        self.`default` = oneSize
     }
     
     func typography(with size: ProgressBarSizeConfiguration) -> TypographyToken? {
         if size is ProgressBarAnySize {
-            return Default
+            return `default`
         }
         if size is ProgressBarSizeDefault {
-            return Default
+            return `default`
         }
         return nil
     }

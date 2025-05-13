@@ -65,7 +65,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         var baseKeys = configuration.allBaseKeys
         
         if baseKeys.isEmpty {
-            baseKeys.append("Default")
+            baseKeys.append("default")
         }
         
         for key in baseKeys {
@@ -91,7 +91,7 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
         
         let keys = configuration.allProps.keys.sorted()
         let all: [String] = keys.map({ $0.joinedVariationPath }).sorted()
-        let chains: [String] = configuration.variations.isEmpty ? ["Default"] : keys.map({ $0.chain }).sorted()
+        let chains: [String] = configuration.variations.isEmpty ? ["default"] : keys.map({ $0.chain }).sorted()
         let configurationProps = configuration.props as? Appearance.Props
         
         return .init(

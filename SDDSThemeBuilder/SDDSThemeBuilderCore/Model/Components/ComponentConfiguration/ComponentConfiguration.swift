@@ -12,7 +12,7 @@ struct ComponentConfiguration<Props: MergeableConfiguration>: Codable {
         let view: [String: View]?
         
         init(
-            id: String = "Default",
+            id: String = "default",
             parent: String? = nil,
             props: Props,
             view: [String: View]? = nil
@@ -34,7 +34,7 @@ extension ComponentConfiguration {
         var result = [String: ComponentConfiguration.Variation]()
         
         if variations.isEmpty, let props = props {
-            result["Default"] = ComponentConfiguration.Variation(props: props, view: view)
+            result["default"] = ComponentConfiguration.Variation(props: props, view: view)
             return result
         }
         for variation in self.variations {
