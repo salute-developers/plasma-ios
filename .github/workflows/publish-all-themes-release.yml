@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "SDDSTheme-all-v[0-9]+.[0-9]+.[0-9]+"
+  repository_dispatch:
+    types: [publish-all-themes-release]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}

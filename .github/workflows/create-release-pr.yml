@@ -1,0 +1,256 @@
+name: 'Create Release Pull Request'
+
+on:
+  workflow_dispatch:
+    inputs:
+      create_jira_task:
+        type: boolean
+        required: true
+        description: "Создать релизную задачу в JIRA."
+        default: true
+      bump_type:
+        type: choice
+        description: 'Тип версионного изменения'
+        required: true
+        default: 'patch'
+        options:
+          - patch   # для 1.0.0 -> 1.0.1
+          - minor   # для 1.0.1 -> 1.1.0
+          - major   # для 1.1.0 -> 2.0.0
+
+jobs:
+  release-pr:
+    name: Create release pull request
+    runs-on: ubuntu-latest
+    environment: sdds
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+          fetch-depth: 0
+
+      - name: Computed envs
+        run: |
+          DATE=$(date +'%d.%m.%Y')
+          echo "DATE=$DATE" >> $GITHUB_ENV
+          echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
+          echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
+          SAFE_DATE=$(echo "$DATE" | tr '.' '-')
+          echo "SAFE_DATE=$SAFE_DATE" >> $GITHUB_ENV
+          echo "NEW_TAG=release-$SAFE_DATE" >> $GITHUB_ENV
+          echo "New date is $SAFE_DATE"
+
+      - name: Determine changed modules
+        id: changed_modules
+        run: |
+          scripts/changed-modules.sh "${{ env.FROM_TAG }}"
+
+      - name: Create version bump branch
+        id: bump_branch
+        run: |
+          BRANCH_NAME="chore/version-bump-${{ env.SAFE_DATE }}"
+          git checkout -b "$BRANCH_NAME"
+          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+      # Get current versions and bump them
+      - name: Get and bump versions
+        id: versions
+        run: |
+          # Function to get latest tag version
+          get_latest_version() {
+            local prefix=$1
+            local latest_tag
+            latest_tag=$(git tag -l "${prefix}-v*" | sort -V | tail -n 1)
+            if [ -z "$latest_tag" ]; then
+              echo "${prefix}-v0.1.0"
+            else
+              local version
+              version=$(echo $latest_tag | grep -oE '[0-9]+\.[0-9]+\.[0-9]+$')
+              local major minor patch
+              IFS='.' read -r major minor patch <<< "$version"
+              case "${{ github.event.inputs.bump_type }}" in
+                major)
+                  echo "${prefix}-v$((major + 1)).0.0"
+                  ;;
+                minor)
+                  echo "${prefix}-v${major}.$((minor + 1)).0"
+                  ;;
+                patch)
+                  echo "${prefix}-v${major}.${minor}.$((patch + 1))"
+                  ;;
+              esac
+            fi
+          }
+
+          # Get new versions for each module
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSComponents"* ]]; then
+            COMPONENTS_VERSION=$(get_latest_version "SDDSComponents")
+            echo "components_version=$COMPONENTS_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSComponents version: $COMPONENTS_VERSION"
+          fi
+
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSIcons"* ]]; then
+            ICONS_VERSION=$(get_latest_version "SDDSIcons")
+            echo "icons_version=$ICONS_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSIcons version: $ICONS_VERSION"
+          fi
+
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSDemoApp"* ]]; then
+            DEMO_VERSION=$(get_latest_version "SDDSDemoApp")
+            echo "demo_version=$DEMO_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSDemoApp version: $DEMO_VERSION"
+          fi
+
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSThemeCore"* ]]; then
+            THEME_CORE_VERSION=$(get_latest_version "SDDSThemeCore")
+            echo "theme_core_version=$THEME_CORE_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSThemeCore version: $THEME_CORE_VERSION"
+          fi
+
+      # Create tags for changed modules
+      - name: Create tags
+        if: steps.versions.outputs.components_version != '' || steps.versions.outputs.icons_version != '' || steps.versions.outputs.demo_version != '' || steps.versions.outputs.theme_core_version != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.components_version }}" -m "Release ${{ steps.versions.outputs.components_version }}"
+            git push origin "${{ steps.versions.outputs.components_version }}"
+          fi
+          
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.icons_version }}" -m "Release ${{ steps.versions.outputs.icons_version }}"
+            git push origin "${{ steps.versions.outputs.icons_version }}"
+          fi
+          
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.demo_version }}" -m "Release ${{ steps.versions.outputs.demo_version }}"
+            git push origin "${{ steps.versions.outputs.demo_version }}"
+          fi
+
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.theme_core_version }}" -m "Release ${{ steps.versions.outputs.theme_core_version }}"
+            git push origin "${{ steps.versions.outputs.theme_core_version }}"
+          fi
+
+      # Create empty commit to allow PR creation
+      - name: Commit version changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Prepare commit message
+          COMMIT_MSG="chore: Bump versions for changed modules\n\nChanged modules and their new versions:"
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSComponents: ${{ steps.versions.outputs.components_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSIcons: ${{ steps.versions.outputs.icons_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSDemoApp: ${{ steps.versions.outputs.demo_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSThemeCore: ${{ steps.versions.outputs.theme_core_version }}"
+          fi
+          
+          # Create commit with prepared message
+          git commit --allow-empty -m "$COMMIT_MSG"
+          git push origin ${{ steps.bump_branch.outputs.branch }}
+
+      - name: Create PR to develop
+        run: |
+          # Prepare PR body
+          PR_BODY="Автоматический PR для обновления версий Swift-пакетов\n\nНовые версии:"
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSComponents: ${{ steps.versions.outputs.components_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSIcons: ${{ steps.versions.outputs.icons_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSDemoApp: ${{ steps.versions.outputs.demo_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSThemeCore: ${{ steps.versions.outputs.theme_core_version }}"
+          fi
+          
+          gh pr create \
+            --title "chore: Bump versions for changed modules" \
+            --body "$PR_BODY" \
+            --base develop \
+            --head ${{ steps.bump_branch.outputs.branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v4.1.0
+        with:
+          fromTag: ${{ env.FROM_TAG }}
+          toTag: HEAD
+
+      - name: List pull request
+        run: echo "pull_requests --> ${{ steps.github_release.outputs.pull_requests }}"
+
+      - name: Create "changelog_artifacts.md"
+        # Пока отключаем генерацию changelog
+        if: false
+        run: |
+          cat > ${{ env.FILE }} <<'EOF'
+          ${{ steps.github_release.outputs.changelog }}
+
+      - name: Upload "changelog_artifacts.md"
+        uses: actions/upload-artifact@master
+        # Пока отключаем генерацию changelog
+        if: false
+        with:
+          name: release-changelog-artifacts
+          path: ${{ env.FILE }}
+
+      - name: Create release branch
+        id: release_branch
+        run: |
+          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
+          git checkout -b "$BRANCH_NAME" origin/develop
+          git push origin "$BRANCH_NAME"
+          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"    
+
+      - name: Create release PR
+        run: |
+          changelog='${{ steps.changelog.outputs.changelog }}'
+          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "The name of tag to publish release: ${{ env.NEW_TAG }}"
+
+      - name: Extract JIRA IDs from PRs
+        id: jira_tasks
+        run: |
+          scripts/extract-jira-ids.sh "${{ steps.github_release.outputs.pull_requests }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send MM
+        uses: mattermost/action-mattermost-notify@master
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.create_jira_task == 'true'
+        with:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_RELEASE_LF_MM }}
+          TEXT: |-
+            {
+              "name": "plasma-ios",
+              "version": "Release ${{ env.DATE }}",
+              "applicationType": "native",
+              "hotfix": false,
+              "authorMmUser": "alexmali",
+              "configurationElement": "${{ secrets.CE }}",
+              "distributionLink": "",
+              "tasks": ${{ steps.jira_tasks.outputs.jira_ids }},
+              "jiraProject": "PLASMA"
+            } 

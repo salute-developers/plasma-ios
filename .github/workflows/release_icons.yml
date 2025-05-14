@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "SDDSIcons-v[0-9]+.[0-9]+.[0-9]+"
+  repository_dispatch:
+    types: [publish-icons]
 
 concurrency:
   # New commit on branch cancels running workflows of the same branch
