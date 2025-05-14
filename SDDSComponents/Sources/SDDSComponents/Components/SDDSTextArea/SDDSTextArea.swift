@@ -276,15 +276,14 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     .frame(height: textHeight)
                     .padding(.top, shouldShowInnerTitle ? 0 : size.boxPaddingTop)
                     .padding(.bottom, size.boxPaddingBottom)
-                .applyIf(!dynamicHeight) {
-                    $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
-                }
-                
+                    .applyIf(!dynamicHeight) {
+                        $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
+                    }
+                                
                 if !shouldShowInnerTitle {
                     iconActionView
                         .opacity(0)
                         .padding(.leading, size.endContentPadding)
-                        .padding(.top, size.boxPaddingTop)
                         .padding(.trailing, boxTrailingPadding)
                 }
             }
@@ -303,13 +302,14 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     )
                     .frame(height: calculatedChipGroupHeight)
                     .padding(.trailing, iconActionTrailingPadding)
+                    .padding(.bottom, chipsBottomPadding)
+                    .padding(.top, appearance.labelPlacement == .inner ? appearance.size.boxPaddingTop : 0)
                     
                     textEditor(id: textAreaMultipleId)
                         .frame(height: textHeight)
                         .padding(.leading, boxLeadingPadding)
                 }
-                .padding(.bottom, size.boxPaddingTop)
-                .padding(.top, size.boxPaddingBottom)
+                .padding(.bottom, size.boxPaddingBottom)
                 
                 iconActionView
                     .opacity(0)
@@ -320,6 +320,12 @@ public struct SDDSTextArea<ActionContent: View>: View {
                 $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
             }
         }
+    }
+    
+    private var chipsBottomPadding: CGFloat {
+        let chipAppearance = appearance.chipGroupAppearance.chipAppearance
+        let result = appearance.chipGroupAppearance.size.lineSpacing + (chipAppearance.size.height - chipTypography.lineHeight) / 2.0
+        return result
     }
 
     @ViewBuilder
@@ -337,6 +343,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             trailingContentPadding: trailingContentPadding,
             dynamicHeight: true,
             textColor: textColor,
+            numberOfLines: 0,
             colorScheme: colorScheme,
             onChange: { newText in
                 if newText != self.value.text {
@@ -427,7 +434,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                 backgroundView
             }
 
-            HStack {
+            HStack(alignment: .center) {
                 VStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
                         if shouldShowInnerTitle {
@@ -505,7 +512,8 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         if displayChips {
             result += size.boxPaddingBottom
-            result += size.boxPaddingTop
+            result += chipsBottomPadding
+            result += (appearance.labelPlacement == .inner ? appearance.size.boxPaddingTop : 0)
         }
         result += totalTextHeight
         return result
@@ -867,6 +875,14 @@ public struct SDDSTextArea<ActionContent: View>: View {
     private var textTypography: TypographyToken {
         guard let typography = appearance.textTypography.typography(with: appearance.size) else {
             fatalError("Undefined Text Typography for appearance.size \(appearance.size).")
+        }
+        return typography
+    }
+    
+    private var chipTypography: TypographyToken {
+        let chipAppearance = appearance.chipGroupAppearance.chipAppearance
+        guard let typography = chipAppearance.titleTypography.typography(with: chipAppearance.size) else {
+            fatalError("Undefined Text Typography for appearance.size \(chipAppearance.size).")
         }
         return typography
     }

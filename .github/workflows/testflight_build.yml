@@ -10,6 +10,8 @@ on:
         description: 'Choose the Fastlane lane to run'
         required: true
         default: 'build_and_upload'
+  repository_dispatch:
+    types: [publish-demo-app]
 
 jobs:
   build:

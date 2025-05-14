@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "SDDSComponents-v[0-9]+.[0-9]+.[0-9]+"  # Теги только для SDDSComponents
+  repository_dispatch:
+    types: [publish-components]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
