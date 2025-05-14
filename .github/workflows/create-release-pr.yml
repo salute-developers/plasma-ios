@@ -1,0 +1,163 @@
+name: 'Create Release Pull Request'
+
+on:
+  workflow_dispatch:
+    inputs:
+      create_jira_task:
+        type: boolean
+        required: true
+        description: "Создать релизную задачу в JIRA."
+        default: true
+      bump_type:
+        type: choice
+        description: 'Тип версионного изменения'
+        required: true
+        default: 'patch'
+        options:
+          - patch   # для 1.0.0 -> 1.0.1
+          - minor   # для 1.0.1 -> 1.1.0
+          - major   # для 1.1.0 -> 2.0.0
+
+jobs:
+  release-pr:
+    name: Create release pull request
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+          fetch-depth: 0
+
+      - name: Computed envs
+        run: |
+          DATE=$(date +'%d.%m.%Y')
+          echo "DATE=$DATE" >> $GITHUB_ENV
+          echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
+          echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
+          SAFE_DATE=$(echo "$DATE" | tr '.' '-')
+          echo "SAFE_DATE=$SAFE_DATE" >> $GITHUB_ENV
+          echo "New date is $SAFE_DATE"
+
+      - name: Determine changed modules
+        id: changed_modules
+        run: |
+          scripts/changed-modules.sh "${{ env.FROM_TAG }}"
+
+      - name: Create version bump branch
+        id: bump_branch
+        run: |
+          BRANCH_NAME="chore/version-bump-${{ env.SAFE_DATE }}"
+          git checkout -b "$BRANCH_NAME"
+          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+
+      - name: Bump SDDSComponents version
+        if: contains(steps.changed_modules.outputs.modules, 'SDDSComponents')
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
+          RELEASE_BRANCHES: develop
+          CUSTOM_TAG: SDDSComponents-v
+          
+      - name: Bump SDDSIcons version
+        if: contains(steps.changed_modules.outputs.modules, 'SDDSIcons')
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
+          RELEASE_BRANCHES: develop
+          CUSTOM_TAG: SDDSIcons-v
+
+      - name: Bump SDDSDemoApp version
+        if: contains(steps.changed_modules.outputs.modules, 'SDDSDemoApp')
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
+          RELEASE_BRANCHES: develop
+          CUSTOM_TAG: SDDSDemoApp-v
+
+      - name: Create PR to develop
+        run: |
+          gh pr create \
+            --title "chore: Bump versions for changed modules" \
+            --body "Автоматический PR для обновления версий Swift-пакетов" \
+            --base develop \
+            --head ${{ steps.bump_branch.outputs.branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v4.1.0
+        with:
+          fromTag: ${{ env.FROM_TAG }}
+          toTag: HEAD
+
+      - name: List pull request
+        run: echo "pull_requests --> ${{ steps.github_release.outputs.pull_requests }}"
+
+      - name: Create "changelog_artifacts.md"
+        # Пока отключаем генерацию changelog
+        if: false
+        run: |
+          cat > ${{ env.FILE }} <<'EOF'
+          ${{ steps.github_release.outputs.changelog }}
+
+      - name: Upload "changelog_artifacts.md"
+        uses: actions/upload-artifact@master
+        # Пока отключаем генерацию changelog
+        if: false
+        with:
+          name: release-changelog-artifacts
+          path: ${{ env.FILE }}
+
+      - name: Create release branch
+        id: release_branch
+        run: |
+          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
+          git checkout -b "$BRANCH_NAME" origin/develop
+          git push origin "$BRANCH_NAME"
+          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"    
+
+      - name: Create release PR
+        run: |
+          changelog='${{ steps.changelog.outputs.changelog }}'
+          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "The name of tag to publish release: ${{ env.NEW_TAG }}"
+
+      - name: Extract JIRA IDs from PRs
+        id: jira_tasks
+        run: |
+          scripts/extract-jira-ids.sh "${{ steps.github_release.outputs.pull_requests }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send MM
+        uses: mattermost/action-mattermost-notify@master
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.create_jira_task == 'true'
+        with:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_RELEASE_LF_MM }}
+          TEXT: |-
+            {
+              "name": "plasma-ios",
+              "version": "Release ${{ env.DATE }}",
+              "applicationType": "native",
+              "hotfix": false,
+              "authorMmUser": "alexmali",
+              "configurationElement": "${{ secrets.CE }}",
+              "distributionLink": "",
+              "tasks": ${{ steps.jira_tasks.outputs.jira_ids }},
+              "jiraProject": "PLASMA"
+            } 
