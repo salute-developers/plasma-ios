@@ -59,42 +59,106 @@ jobs:
           git checkout -b "$BRANCH_NAME"
           echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
 
+      # Get current versions and bump them
+      - name: Get and bump versions
+        id: versions
+        run: |
+          # Function to get latest tag version
+          get_latest_version() {
+            local prefix=$1
+            local latest_tag
+            latest_tag=$(git tag -l "${prefix}-v*" | sort -V | tail -n 1)
+            if [ -z "$latest_tag" ]; then
+              echo "${prefix}-v0.1.0"
+            else
+              local version
+              version=$(echo $latest_tag | grep -oE '[0-9]+\.[0-9]+\.[0-9]+$')
+              local major minor patch
+              IFS='.' read -r major minor patch <<< "$version"
+              case "${{ github.event.inputs.bump_type }}" in
+                major)
+                  echo "${prefix}-v$((major + 1)).0.0"
+                  ;;
+                minor)
+                  echo "${prefix}-v${major}.$((minor + 1)).0"
+                  ;;
+                patch)
+                  echo "${prefix}-v${major}.${minor}.$((patch + 1))"
+                  ;;
+              esac
+            fi
+          }
 
-      - name: Bump SDDSComponents version
-        if: contains(steps.changed_modules.outputs.modules, 'SDDSComponents')
-        uses: anothrNick/github-tag-action@1.67.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
-          RELEASE_BRANCHES: develop
-          CUSTOM_TAG: SDDSComponents-v
+          # Get new versions for each module
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSComponents"* ]]; then
+            COMPONENTS_VERSION=$(get_latest_version "SDDSComponents")
+            echo "components_version=$COMPONENTS_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSComponents version: $COMPONENTS_VERSION"
+          fi
+
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSIcons"* ]]; then
+            ICONS_VERSION=$(get_latest_version "SDDSIcons")
+            echo "icons_version=$ICONS_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSIcons version: $ICONS_VERSION"
+          fi
+
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSDemoApp"* ]]; then
+            DEMO_VERSION=$(get_latest_version "SDDSDemoApp")
+            echo "demo_version=$DEMO_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSDemoApp version: $DEMO_VERSION"
+          fi
+
+      # Create tags for changed modules
+      - name: Create tags
+        if: steps.versions.outputs.components_version != '' || steps.versions.outputs.icons_version != '' || steps.versions.outputs.demo_version != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           
-      - name: Bump SDDSIcons version
-        if: contains(steps.changed_modules.outputs.modules, 'SDDSIcons')
-        uses: anothrNick/github-tag-action@1.67.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
-          RELEASE_BRANCHES: develop
-          CUSTOM_TAG: SDDSIcons-v
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.components_version }}" -m "Release ${{ steps.versions.outputs.components_version }}"
+            git push origin "${{ steps.versions.outputs.components_version }}"
+          fi
+          
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.icons_version }}" -m "Release ${{ steps.versions.outputs.icons_version }}"
+            git push origin "${{ steps.versions.outputs.icons_version }}"
+          fi
+          
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.demo_version }}" -m "Release ${{ steps.versions.outputs.demo_version }}"
+            git push origin "${{ steps.versions.outputs.demo_version }}"
+          fi
 
-      - name: Bump SDDSDemoApp version
-        if: contains(steps.changed_modules.outputs.modules, 'SDDSDemoApp')
-        uses: anothrNick/github-tag-action@1.67.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: ${{ github.event.inputs.bump_type }}
-          RELEASE_BRANCHES: develop
-          CUSTOM_TAG: SDDSDemoApp-v
+      # Create empty commit to allow PR creation
+      - name: Commit version changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: Bump versions for changed modules
+          
+          Changed modules and their new versions:
+          ${steps.versions.outputs.components_version:+
+          SDDSComponents: ${{ steps.versions.outputs.components_version }}}
+          ${steps.versions.outputs.icons_version:+
+          SDDSIcons: ${{ steps.versions.outputs.icons_version }}}
+          ${steps.versions.outputs.demo_version:+
+          SDDSDemoApp: ${{ steps.versions.outputs.demo_version }}}"
+          git push origin ${{ steps.bump_branch.outputs.branch }}
 
       - name: Create PR to develop
         run: |
           gh pr create \
             --title "chore: Bump versions for changed modules" \
-            --body "Автоматический PR для обновления версий Swift-пакетов" \
+            --body "Автоматический PR для обновления версий Swift-пакетов
+
+            Новые версии:
+            ${steps.versions.outputs.components_version:+
+            SDDSComponents: ${{ steps.versions.outputs.components_version }}}
+            ${steps.versions.outputs.icons_version:+
+            SDDSIcons: ${{ steps.versions.outputs.icons_version }}}
+            ${steps.versions.outputs.demo_version:+
+            SDDSDemoApp: ${{ steps.versions.outputs.demo_version }}}" \
             --base develop \
             --head ${{ steps.bump_branch.outputs.branch }}
         env:
