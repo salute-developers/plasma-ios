@@ -108,9 +108,15 @@ jobs:
             echo "New SDDSDemoApp version: $DEMO_VERSION"
           fi
 
+          if [[ "${{ steps.changed_modules.outputs.modules }}" == *"SDDSThemeCore"* ]]; then
+            THEME_CORE_VERSION=$(get_latest_version "SDDSThemeCore")
+            echo "theme_core_version=$THEME_CORE_VERSION" >> "$GITHUB_OUTPUT"
+            echo "New SDDSThemeCore version: $THEME_CORE_VERSION"
+          fi
+
       # Create tags for changed modules
       - name: Create tags
-        if: steps.versions.outputs.components_version != '' || steps.versions.outputs.icons_version != '' || steps.versions.outputs.demo_version != ''
+        if: steps.versions.outputs.components_version != '' || steps.versions.outputs.icons_version != '' || steps.versions.outputs.demo_version != '' || steps.versions.outputs.theme_core_version != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -130,35 +136,56 @@ jobs:
             git push origin "${{ steps.versions.outputs.demo_version }}"
           fi
 
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            git tag -a "${{ steps.versions.outputs.theme_core_version }}" -m "Release ${{ steps.versions.outputs.theme_core_version }}"
+            git push origin "${{ steps.versions.outputs.theme_core_version }}"
+          fi
+
       # Create empty commit to allow PR creation
       - name: Commit version changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit --allow-empty -m "chore: Bump versions for changed modules
           
-          Changed modules and their new versions:
-          ${steps.versions.outputs.components_version:+
-          SDDSComponents: ${{ steps.versions.outputs.components_version }}}
-          ${steps.versions.outputs.icons_version:+
-          SDDSIcons: ${{ steps.versions.outputs.icons_version }}}
-          ${steps.versions.outputs.demo_version:+
-          SDDSDemoApp: ${{ steps.versions.outputs.demo_version }}}"
+          # Prepare commit message
+          COMMIT_MSG="chore: Bump versions for changed modules\n\nChanged modules and their new versions:"
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSComponents: ${{ steps.versions.outputs.components_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSIcons: ${{ steps.versions.outputs.icons_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSDemoApp: ${{ steps.versions.outputs.demo_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            COMMIT_MSG="$COMMIT_MSG\nSDDSThemeCore: ${{ steps.versions.outputs.theme_core_version }}"
+          fi
+          
+          # Create commit with prepared message
+          git commit --allow-empty -m "$COMMIT_MSG"
           git push origin ${{ steps.bump_branch.outputs.branch }}
 
       - name: Create PR to develop
         run: |
+          # Prepare PR body
+          PR_BODY="Автоматический PR для обновления версий Swift-пакетов\n\nНовые версии:"
+          if [ ! -z "${{ steps.versions.outputs.components_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSComponents: ${{ steps.versions.outputs.components_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.icons_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSIcons: ${{ steps.versions.outputs.icons_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.demo_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSDemoApp: ${{ steps.versions.outputs.demo_version }}"
+          fi
+          if [ ! -z "${{ steps.versions.outputs.theme_core_version }}" ]; then
+            PR_BODY="$PR_BODY\nSDDSThemeCore: ${{ steps.versions.outputs.theme_core_version }}"
+          fi
+          
           gh pr create \
             --title "chore: Bump versions for changed modules" \
-            --body "Автоматический PR для обновления версий Swift-пакетов
-
-            Новые версии:
-            ${steps.versions.outputs.components_version:+
-            SDDSComponents: ${{ steps.versions.outputs.components_version }}}
-            ${steps.versions.outputs.icons_version:+
-            SDDSIcons: ${{ steps.versions.outputs.icons_version }}}
-            ${steps.versions.outputs.demo_version:+
-            SDDSDemoApp: ${{ steps.versions.outputs.demo_version }}}" \
+            --body "$PR_BODY" \
             --base develop \
             --head ${{ steps.bump_branch.outputs.branch }}
         env:
