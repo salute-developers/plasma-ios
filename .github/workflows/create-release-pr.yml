@@ -45,6 +45,7 @@ jobs:
           echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
           SAFE_DATE=$(echo "$DATE" | tr '.' '-')
           echo "SAFE_DATE=$SAFE_DATE" >> $GITHUB_ENV
+          echo "NEW_TAG=release-$SAFE_DATE" >> $GITHUB_ENV
           echo "New date is $SAFE_DATE"
 
       - name: Determine changed modules
