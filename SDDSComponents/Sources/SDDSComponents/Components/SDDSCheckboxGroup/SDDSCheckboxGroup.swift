@@ -37,8 +37,36 @@ public protocol CheckboxGroupSizeConfiguration: SizeConfiguration, CustomDebugSt
  `SDDSCheckboxGroup` представляет собой группу чекбоксов, настроенных с помощью `CheckboxData`.
  
  - Parameters:
-    - behaviour: Поведение группы чекбоксов, определенное перечислением `CheckboxGroupBehaviour`.
-    - size: Конфигурация размеров.
+    - behaviour: Поведение группы чекбоксов, определенное перечислением ``CheckboxGroupBehaviour``.
+    - size: [Deprecated] Конфигурация размеров.
+ 
+ ```swift
+ let parentData = CheckboxData(
+     state: .constant(.deselected),
+     title: "Parent Label",
+     subtitle: "Parent Description",
+     isEnabled: true,
+     appearance: Checkbox.m.default.appearance,
+     accessibility: SelectionControlAccessibility()
+ )
+ 
+ let childData = (0..<5).map { index in
+     CheckboxData(
+         state: .constant(.deselected),
+         title: "Label \(index + 1)",
+         subtitle: "Description \(index + 1)",
+         isEnabled: true,
+         appearance: Checkbox.m.default.appearance,
+         accessibility: SelectionControlAccessibility()
+     )
+ }
+ 
+SDDSCheckboxGroup(
+         behaviour: .hierarchical(parent: parentData, child: childData),
+         size: SDDSCheckboxGroupSize.large,
+         appearance: CheckboxGroup.m.appearance
+     )
+ ```
  */
 public struct SDDSCheckboxGroup: View {
     @State private var parentState: SelectionControlState?

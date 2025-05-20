@@ -29,9 +29,8 @@ struct TextAreaPreview: PreviewProvider {
                 counter: "counter",
                 disabled: false,
                 readOnly: false,
-                dynamicHeight: true,
                 appearance: TextArea.l.default.appearance,
-                iconActionViewProvider: ViewProvider(iconActionView)
+                actionContent: Action { iconActionView }
             )
             .previewDisplayName("Outer Label")
             .previewLayout(.sizeThatFits)
@@ -45,9 +44,8 @@ struct TextAreaPreview: PreviewProvider {
                 caption: "caption",
                 counter: "counter",
                 disabled: false,
-                dynamicHeight: true,
                 appearance: TextArea.l.default.appearance,
-                iconActionViewProvider: ViewProvider(iconActionView)
+                layout: .clear
             )
             .previewDisplayName("Multiple – Default Label")
             .previewLayout(.sizeThatFits)

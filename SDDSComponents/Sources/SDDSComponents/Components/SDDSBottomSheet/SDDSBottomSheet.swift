@@ -8,6 +8,52 @@ extension SDDSBottomSheet: Equatable {
     }
 }
 
+/**
+ `SDDSBottomSheet` представляет собой модальное окно, которое появляется снизу экрана и может быть настроено с различными параметрами отображения.
+
+ - Parameters:
+    - appearance: Параметры внешнего вида bottom sheet
+    - header: Заголовок bottom sheet
+    - content: Основной контент bottom sheet
+    - footer: Нижняя часть bottom sheet
+
+ ## Окружение
+ 
+ - `bottomSheetAppearance`: Стандартные настройки внешнего вида bottom sheet
+
+ ## Примеры использования
+
+ ```swift
+ // Базовый bottom sheet с заголовком и контентом
+ @State private var isBottomSheetPresented: Bool = false
+ @State private var detent: BottomSheetDetent = .fitContent
+ 
+MyView()
+ .bottomSheet(isPresented: $isBottomSheetPresented, detent: $detent) {
+     SDDSBottomSheet(
+         appearance: viewModel.appearance,
+         header: {
+            Text("User Profile")
+                .padding(.bottom, 2)
+         },
+         content: {
+            VStack(alignment: .leading) {
+            Text("Settings")
+            Text("Manage your account")
+                .foregroundColor(.gray)
+            }
+         },
+         footer: {
+            VStack {
+                Text("Confirm Action")
+                Text("This cannot be undone")
+                    .foregroundColor(.red)
+            }
+         }
+     )
+ }
+ ```
+ */
 public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme

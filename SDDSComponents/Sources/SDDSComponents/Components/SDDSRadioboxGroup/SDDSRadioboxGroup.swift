@@ -13,9 +13,26 @@ public protocol RadioboxGroupSizeConfiguration: SizeConfiguration, CustomDebugSt
 /**
  `SDDSRadioboxGroup` представляет собой группу радиобоксов, настроенных с помощью `RadioboxData`.
 
- - Properties:
+ - Parameters:
     - radioboxData: Массив данных для инициализации группы радиобоксов.
     - appearance: Параметры внешнего вида
+ 
+ ```swift
+ let radioboxData = (0..<5).map { index in
+     RadioboxData(
+         title: "Option \(index + 1)",
+         subtitle: "Description \(index + 1)",
+         isSelected: .constant(index == 0),
+         appearance: Radiobox.m.appearance,
+         accessibility: SelectionControlAccessibility()
+     )
+ }
+ 
+SDDSRadioboxGroup(
+        radioboxData: radioboxData,
+        appearance: RadioboxGroup.m.appearance
+    )
+ ```
  */
 public struct SDDSRadioboxGroup: View {
     let radioboxData: [RadioboxData]
