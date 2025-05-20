@@ -1,6 +1,31 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSCircularProgressBar` представляет собой компонент для отображения кругового прогресс-бара.
+
+ - Parameters:
+    - progress: Значение прогресса от 0 до 1
+    - suffix: Суффикс для отображения значения (по умолчанию "%")
+    - hasTrack: Флаг отображения фоновой дорожки (по умолчанию true)
+    - appearance: Параметры внешнего вида прогресс-бара (опционально)
+    - content: Пользовательское содержимое вместо значения (опционально)
+
+ ## Окружение
+ 
+ - `circularProgressBarAppearance`: Стандартные настройки внешнего вида прогресс-бара
+ - `colorScheme`: Цветовая схема (light/dark)
+
+ ## Примеры использования
+
+ ```swift
+ // Базовый прогресс-бар
+ SDDSCircularProgressBar(
+     progress: 0.75,
+     appearance: CircularProgressBar.l.accent.appearance
+ )
+ ```
+ */
 public struct SDDSCircularProgressBar: View {
     @Environment(\.circularProgressBarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme

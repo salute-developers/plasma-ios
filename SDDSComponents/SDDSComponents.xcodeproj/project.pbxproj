@@ -24,6 +24,19 @@
 		692510242D7632CA00545542 /* BadgeSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510132D7632CA00545542 /* BadgeSizeConfiguration.swift */; };
 		692510252D7632CA00545542 /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510112D7632CA00545542 /* BadgeAppearance.swift */; };
 		692510262D7632CA00545542 /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510192D7632CA00545542 /* IconBadge.swift */; };
+		693FE22F2DD75D0000E14D0E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 693FE22E2DD75D0000E14D0E /* Documentation.docc */; };
+		693FE4662DDC7EBA00E14D0E /* SDDSBadge.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */; };
+		693FE4682DDC814000E14D0E /* SDDSCircularProgressBar.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */; };
+		693FE46A2DDC825400E14D0E /* SDDSBottomSheet.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */; };
+		693FE46C2DDC908E00E14D0E /* SDDSCard.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46B2DDC908E00E14D0E /* SDDSCard.md */; };
+		693FE46E2DDC925000E14D0E /* SDDSIndicator.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46D2DDC925000E14D0E /* SDDSIndicator.md */; };
+		693FE4702DDC92BC00E14D0E /* SDDSCell.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46F2DDC92BC00E14D0E /* SDDSCell.md */; };
+		693FE4722DDC946B00E14D0E /* SDDSSegment.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4712DDC946B00E14D0E /* SDDSSegment.md */; };
+		693FE4742DDC951D00E14D0E /* SDDSSegmentItem.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */; };
+		693FE4762DDC95E100E14D0E /* SDDSCounter.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4752DDC95E100E14D0E /* SDDSCounter.md */; };
+		693FE4782DDC966400E14D0E /* SDDSTextArea.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4772DDC966400E14D0E /* SDDSTextArea.md */; };
+		693FE47A2DDDA28B00E14D0E /* SDDSTextField.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4792DDDA28B00E14D0E /* SDDSTextField.md */; };
+		693FE47C2DDDAE8D00E14D0E /* SDDSButton.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */; };
 		694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */; };
 		694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */; };
 		694C288E2D8AFE2700D7F341 /* SelectionControlStateImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */; };
@@ -258,6 +271,19 @@
 		692510182D7632CA00545542 /* BasicBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBadge.swift; sourceTree = "<group>"; };
 		692510192D7632CA00545542 /* IconBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadge.swift; sourceTree = "<group>"; };
 		6925101A2D7632CA00545542 /* SDDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadge.swift; sourceTree = "<group>"; };
+		693FE22E2DD75D0000E14D0E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSBadge.md; sourceTree = "<group>"; };
+		693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCircularProgressBar.md; sourceTree = "<group>"; };
+		693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSBottomSheet.md; sourceTree = "<group>"; };
+		693FE46B2DDC908E00E14D0E /* SDDSCard.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCard.md; sourceTree = "<group>"; };
+		693FE46D2DDC925000E14D0E /* SDDSIndicator.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSIndicator.md; sourceTree = "<group>"; };
+		693FE46F2DDC92BC00E14D0E /* SDDSCell.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCell.md; sourceTree = "<group>"; };
+		693FE4712DDC946B00E14D0E /* SDDSSegment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSegment.md; sourceTree = "<group>"; };
+		693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSegmentItem.md; sourceTree = "<group>"; };
+		693FE4752DDC95E100E14D0E /* SDDSCounter.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCounter.md; sourceTree = "<group>"; };
+		693FE4772DDC966400E14D0E /* SDDSTextArea.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextArea.md; sourceTree = "<group>"; };
+		693FE4792DDDA28B00E14D0E /* SDDSTextField.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextField.md; sourceTree = "<group>"; };
+		693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSButton.md; sourceTree = "<group>"; };
 		694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupAppearance.swift; sourceTree = "<group>"; };
 		694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlStateImages.swift; sourceTree = "<group>"; };
 		694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlToggle.swift; sourceTree = "<group>"; };
@@ -526,6 +552,7 @@
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4712DDC946B00E14D0E /* SDDSSegment.md */,
 				69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */,
 				69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */,
 				69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */,
@@ -565,6 +592,7 @@
 		6925101B2D7632CA00545542 /* SDDSBadge */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */,
 				692510172D7632CA00545542 /* BadgeAppearance */,
 				692510182D7632CA00545542 /* BasicBadge.swift */,
 				692510192D7632CA00545542 /* IconBadge.swift */,
@@ -573,9 +601,17 @@
 			path = SDDSBadge;
 			sourceTree = "<group>";
 		};
+		693FE2332DD772FD00E14D0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6969429A2D6F0D8C00F43C38 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
+				693FE46F2DDC92BC00E14D0E /* SDDSCell.md */,
 				69ED5C0E2D7847E00019EE99 /* SDDSCell.swift */,
 				696942972D6F0D8C00F43C38 /* CellAppearance.swift */,
 				696942982D6F0D8C00F43C38 /* CellContentAlignment.swift */,
@@ -606,6 +642,8 @@
 		6987445E2D1C367700559ABA /* SDDSCounter */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4752DDC95E100E14D0E /* SDDSCounter.md */,
+				693FE2332DD772FD00E14D0E /* Resources */,
 				698744592D1C367700559ABA /* CounterAppearance */,
 				6987445D2D1C367700559ABA /* SDDSCounter.swift */,
 			);
@@ -615,6 +653,7 @@
 		698744662D1C368E00559ABA /* SDDSSegmentItem */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */,
 				69B975272D511A0E00CAF208 /* CounterWidthCalculatorImpl.swift */,
 				6919BD992D4A6CF800A77774 /* SegmentItemAppearance */,
 				695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */,
@@ -659,6 +698,7 @@
 		8102BA282CBE9B3300C589D3 /* SDDSTextArea */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4772DDC966400E14D0E /* SDDSTextArea.md */,
 				81A079042DA3FB4800260DC9 /* Scrollbar */,
 				812DB7392D57B43900D3F4A3 /* TextArea.swift */,
 				812DB7302D57B43900D3F4A3 /* TextAreaAppearance */,
@@ -830,6 +870,7 @@
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
+				693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */,
 				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
 				81F752E12CECD40A000156D9 /* BasicButton.swift */,
 				81A901522CF6EAA800992B04 /* LinkButton.swift */,
@@ -858,6 +899,7 @@
 		81578DB52D89AD9100BC7038 /* SDDSBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */,
 				81FC47A92D928A2500A83F87 /* BottomSheetPresentation */,
 				81FC47AC2D928A2500A83F87 /* Handle */,
 				81FC47AF2D928A2500A83F87 /* Modifier */,
@@ -915,6 +957,7 @@
 		816F62D02DCBA8F000EC9121 /* SDDSCircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */,
 				816F62CE2DCBA8F000EC9121 /* CircularProgressBarAppearance */,
 				816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */,
 			);
@@ -1238,6 +1281,7 @@
 		81998FFE2C3555C9009074B7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				81998FF72C355033009074B7 /* Extensions */,
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
@@ -1296,10 +1340,10 @@
 				81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */,
 				817580E72C37E02800E45207 /* Spinner */,
 				81998FFE2C3555C9009074B7 /* Constants */,
-				81998FF72C355033009074B7 /* Extensions */,
 				818C03AF2C418705002C6D0A /* Components */,
 				818C03C32C45128E002C6D0A /* Views */,
 				818C03B32C418C3E002C6D0A /* Common */,
+				693FE22E2DD75D0000E14D0E /* Documentation.docc */,
 			);
 			path = SDDSComponents;
 			sourceTree = "<group>";
@@ -1397,6 +1441,7 @@
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				693FE4792DDDA28B00E14D0E /* SDDSTextField.md */,
 				812DB74D2D57B44100D3F4A3 /* TextField.swift */,
 				812DB7442D57B44100D3F4A3 /* TextFieldAppearance */,
 				812DB74E2D57B44100D3F4A3 /* TextFieldClear.swift */,
@@ -1426,6 +1471,7 @@
 		81F89DE62D808A7B00A41C89 /* SDDSCard */ = {
 			isa = PBXGroup;
 			children = (
+				693FE46B2DDC908E00E14D0E /* SDDSCard.md */,
 				81F89DED2D808AB300A41C89 /* CardAppearance */,
 				81F89DE72D808A8200A41C89 /* SDDSCard.swift */,
 				81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */,
@@ -1475,6 +1521,7 @@
 		81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				693FE46D2DDC925000E14D0E /* SDDSIndicator.md */,
 				81FD6D4F2D6E2629002A6E51 /* IndicatorAppearance */,
 				81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */,
 			);
@@ -1652,7 +1699,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FE46C2DDC908E00E14D0E /* SDDSCard.md in Resources */,
+				693FE4782DDC966400E14D0E /* SDDSTextArea.md in Resources */,
+				693FE4702DDC92BC00E14D0E /* SDDSCell.md in Resources */,
+				693FE4742DDC951D00E14D0E /* SDDSSegmentItem.md in Resources */,
+				693FE4662DDC7EBA00E14D0E /* SDDSBadge.md in Resources */,
+				693FE46E2DDC925000E14D0E /* SDDSIndicator.md in Resources */,
+				693FE47A2DDDA28B00E14D0E /* SDDSTextField.md in Resources */,
+				693FE46A2DDC825400E14D0E /* SDDSBottomSheet.md in Resources */,
+				693FE4682DDC814000E14D0E /* SDDSCircularProgressBar.md in Resources */,
+				693FE4722DDC946B00E14D0E /* SDDSSegment.md in Resources */,
+				693FE47C2DDDAE8D00E14D0E /* SDDSButton.md in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
+				693FE4762DDC95E100E14D0E /* SDDSCounter.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1775,6 +1834,7 @@
 				6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */,
 				812DB7502D57B44100D3F4A3 /* TextFieldLayout.swift in Sources */,
 				812DB73E2D57B43900D3F4A3 /* TextAreaValue.swift in Sources */,
+				693FE22F2DD75D0000E14D0E /* Documentation.docc in Sources */,
 				6919BD9D2D4A6CF800A77774 /* SegmentItemSize.swift in Sources */,
 				81FD6D4E2D6E2609002A6E51 /* IndicatorAppearance.swift in Sources */,
 				816F62D12DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift in Sources */,

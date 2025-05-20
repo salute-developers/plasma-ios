@@ -1,10 +1,14 @@
 import Foundation
 
-/// Определяет возможные значения текстового поля.
+/**
+ `TextAreaValue` Определяет возможные значения текстового поля.
+ 
+ - Parameters:
+    - single: Одиночное текстовое значение.
+    - multiple: Текстовое значение с коллекцией чипов
+ */
 public enum TextAreaValue: Equatable {
-    /// Одиночное текстовое значение.
     case single(String)
-    /// Множественное значение с чипсами.
     case multiple(String, [ChipData])
     
     public static func == (lhs: TextAreaValue, rhs: TextAreaValue) -> Bool {

@@ -2,6 +2,36 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSCounter` представляет собой компонент счетчика, отображающий числовое значение с настраиваемым внешним видом и состояниями.
+
+- Parameters:
+    - text: Текст (числовое значение) для отображения в счетчике
+    - appearance: Кастомизация внешнего вида счетчика (опционально)
+    - isAnimating: Флаг анимации счетчика
+    - isHighlighted: Флаг подсветки счетчика
+    - isHovered: Флаг состояния наведения
+    - isSelected: Флаг выбранного состояния
+
+## Окружение
+
+- `counterAppearance`: Стандартные настройки внешнего вида счетчиков
+
+## Пример использования
+
+```swift
+// Создание счетчика с предупреждающим стилем
+SDDSCounter(
+    text: "1",
+    appearance: Counter.l.warning.appearance,
+    isAnimating: false,
+    isHighlighted: true,
+    isHovered: false,
+    isSelected: false
+)
+ ```
+ */
+
 public struct SDDSCounter: View {
     public let text: String
     private let _appearance: CounterAppearance?

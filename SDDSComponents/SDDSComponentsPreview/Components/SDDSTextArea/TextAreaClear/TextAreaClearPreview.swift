@@ -29,9 +29,8 @@ struct TextAreaClearPreview: PreviewProvider {
                 counter: "counter",
                 disabled: false,
                 readOnly: false,
-                dynamicHeight: true,
                 appearance: TextAreaClear.l.default.appearance,
-                iconActionViewProvider: ViewProvider(iconActionView)
+                layout: .clear
             )
             .previewDisplayName("Outer Label")
             .previewLayout(.sizeThatFits)
@@ -45,9 +44,8 @@ struct TextAreaClearPreview: PreviewProvider {
                 caption: "caption",
                 counter: "counter",
                 disabled: false,
-                dynamicHeight: true,
                 appearance: TextAreaClear.l.default.appearance,
-                iconActionViewProvider: ViewProvider(iconActionView)
+                layout: .clear
             )
             .previewDisplayName("Multiple – Default Label")
             .previewLayout(.sizeThatFits)

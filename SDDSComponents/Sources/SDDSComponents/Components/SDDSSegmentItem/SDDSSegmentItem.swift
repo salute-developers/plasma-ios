@@ -1,6 +1,50 @@
 import Foundation
 import SwiftUI
 
+/**
+ `SDDSSegmentItem` представляет собой элемент сегмента, который может содержать заголовок, подзаголовок, иконку и счетчик.
+
+ - Parameters:
+    - id: Уникальный идентификатор элемента
+    - title: Заголовок элемента
+    - subtitle: Подзаголовок элемента
+    - iconAttributes: Атрибуты иконки (опционально)
+    - isDisabled: Флаг отключения элемента
+    - isSelected: Флаг выбранного состояния
+    - strech: Флаг растягивания элемента
+    - counterEnabled: Флаг отображения счетчика
+    - appearance: Параметры внешнего вида элемента (опционально)
+    - accessibility: Параметры доступности
+    - counterViewProvider: Провайдер представления счетчика
+    - action: Действие при нажатии
+
+ ## Окружение
+ - `segmentItemAppearance`: Стандартные настройки внешнего вида элемента сегмента
+
+ ## Примеры использования
+
+ ```swift
+ // Базовый элемент сегмента
+ SDDSSegmentItem(
+     title: "Title",
+     subtitle: "Subtitle",
+     iconAttributes: nil,
+     isSelected: true,
+     appearance: SegmentItem.l.secondary.appearance
+ )
+
+ // Элемент с иконкой и счетчиком
+ SDDSSegmentItem(
+     title: "Title",
+     subtitle: "",
+     iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
+     isSelected: true,
+     counterEnabled: true,
+     appearance: SegmentItem.l.accent.appearance,
+     counterViewProvider: .default(text: "5")
+ )
+ ```
+ */
 public struct SDDSSegmentItem<Counter: View>: View {
     public let id: UUID
     public let title: String

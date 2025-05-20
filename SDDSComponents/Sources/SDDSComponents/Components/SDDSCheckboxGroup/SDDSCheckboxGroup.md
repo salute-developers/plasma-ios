@@ -1,29 +1,46 @@
-# Функциональные Требования к Компоненту SDDSCheckboxGroup
+# SDDSCheckboxGroup
 
-## Поддержка различных состояний
+Компонент для отображения группы связанных чекбоксов.
 
-- **CheckboxData**: Данные для каждого чекбокса, включающие состояние, заголовок, подзаголовок, флаг доступности, изображения для различных состояний, параметры внешнего вида, конфигурацию размеров и параметры доступности.
+## Параметры
 
-## Поддержка различных размеров и отступов
+| Параметр | Тип | Описание |
+|----------|-----|-----------|
+| behaviour | CheckboxGroupBehaviour | Поведение группы чекбоксов |
+| size (Deprecated, use appearance instead) | CheckboxGroupSizeConfiguration | Конфигурация размеров |
+| appearance | CheckboxGroupAppearance? | Параметры внешнего вида группы чекбоксов (опционально) |
 
-- **HorizontalIndent**: Горизонтальный отступ для всех элементов, начиная со второго.
-- **VerticalSpacing**: Вертикальный отступ между элементами.
+## Окружение
+- `checkboxGroupAppearance`: Стандартные настройки внешнего вида группы чекбоксов
 
-## Поддержка различных выравниваний
+## Примеры использования
 
-- Внутренняя структура `HierarchicalList`, обеспечивающая поддержку различных выравниваний и иерархического отображения элементов.
+### Иерархическая группа чекбоксов
 
-## Гибкость в настройке содержимого
+```swift
+let parentData = CheckboxData(
+    state: .constant(.deselected),
+    title: "Parent Label",
+    subtitle: "Parent Description",
+    isEnabled: true,
+    appearance: Checkbox.m.default.appearance,
+    accessibility: SelectionControlAccessibility()
+)
 
-- Возможность создания кастомных чекбоксов с помощью `CheckboxData` и передачи их в `SDDSCheckboxGroup` для отображения.
+let childData = (0..<5).map { index in
+    CheckboxData(
+        state: .constant(.deselected),
+        title: "Label \(index + 1)",
+        subtitle: "Description \(index + 1)",
+        isEnabled: true,
+        appearance: Checkbox.m.default.appearance,
+        accessibility: SelectionControlAccessibility()
+    )
+}
 
-## Доступность (Accessibility)
-
-- Поддержка VoiceOver и других технологий доступности.
-- Настройка меток доступности (accessibility labels) и описаний (hints) для каждого чекбокса.
-- Использование структуры `SelectionControlAccessibility` для настройки параметров доступности.
-
-## Дополнительные настройки
-
-- Возможность настройки горизонтальных и вертикальных отступов для элементов.
-- Использование внутренней структуры `HierarchicalList` для гибкости и настройки иерархии элементов.
+SDDSCheckboxGroup(
+    behaviour: .hierarchical(parent: parentData, child: childData),
+    size: SDDSCheckboxGroupSize.large,
+    appearance: CheckboxGroup.m.appearance
+)
+```

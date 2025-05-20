@@ -2,6 +2,42 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+/**
+ `SDDSBadge` представляет собой компонент для отображения меток, статусов или тегов с возможностью добавления иконок и обработки нажатий.
+ 
+ - Parameters:
+    - label: Текст бейджа
+    - image: Иконка бейджа (опционально)
+    - alignment: Выравнивание иконки (leading/trailing)
+    - style: Стиль бейджа ``BadgeStyle``
+    - appearance: Параметры внешнего вида бейджа
+    - action: Действие при нажатии на бейдж (опционально)
+
+ ## Окружение
+ - `badgeAppearance`: Стандартные настройки внешнего вида бейджей
+
+ ## Пример использования
+
+ ```swift
+ // Базовый бейдж
+SDDSBadge(
+     label: "Label",
+     image: nil,
+     alignment: .leading,
+     style: .basic,
+     appearance: Badge.m.default.appearance
+ )
+
+ // Бейдж с иконкой и акцентным стилем
+SDDSBadge(
+     label: "Label",
+     image: nil,
+     alignment: .leading,
+     style: .icon,
+     appearance: Badge.m.accent.appearance
+ )
+ ```
+ */
 public struct SDDSBadge: View {
     @Environment(\.badgeAppearance) private var environmentAppearance
     private let _appearance: BadgeAppearance?

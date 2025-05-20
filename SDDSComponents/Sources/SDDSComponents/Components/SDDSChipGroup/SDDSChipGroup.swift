@@ -2,13 +2,38 @@ import Foundation
 import SwiftUI
 
 /**
- Компонент для отображения группы чипов.
+ `SDDSChipGroup` представляет собой компонент для отображения группы связанных чипов.
 
- - Свойства:
-    - data: Массив данных для отображения чипов.
-    - appearance: Объект, определяющий внешний вид вариации ChipGroup.
-    - flat: Если`true`, то нет переноса чипов на следующую строку.
-    - height: Высота компонента, связанная через Binding.
+ - Parameters:
+    - data: Массив элементов чипов
+    - appearance: Параметры внешнего вида группы чипов (опционально)
+    - flat: Флаг плоского отображения группы
+    - height: Привязка к высоте группы
+
+ ## Окружение
+ - `chipGroupAppearance`: Стандартные настройки внешнего вида группы чипов
+
+ ## Примеры использования
+
+ ```swift
+ // Базовая группа чипов
+ let chipData = (1...32).map { index in
+     ChipData(
+         title: "Label",
+         isEnabled: true,
+         iconImage: Image.image("chipIcon"),
+         buttonImage: Image.image("chipClose"),
+         appearance: Chip.m.default.appearance,
+         accessibility: chipAccessibility,
+         removeAction: {}
+     )
+ }
+ 
+SDDSChipGroup(
+    data: chipData,
+    appearance: ChipGroup.dense.appearance
+    )
+ ```
  */
 public struct SDDSChipGroup: View {
     let data: [ChipData]

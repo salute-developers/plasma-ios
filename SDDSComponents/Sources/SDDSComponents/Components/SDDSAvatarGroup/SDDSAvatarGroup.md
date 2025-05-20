@@ -1,33 +1,71 @@
-# Функциональные Требования к Компоненту SDDSAvatarGroup
+# SDDSAvatarGroup
 
-## Поддержка отображения аватаров
+Компонент представляет собой группу аватаров, отображаемых в ряд с наложением и обводкой между ними.
 
-- **Data**: Массив данных аватаров `SDDSAvatarData`, который используется для отображения аватаров в группе.
-- **LastAvatar**: Специальный аватар, отображаемый в конце группы, если количество аватаров превышает максимальное значение `maxDisplayingAvatarCount`.
+## Параметры
 
-## Поддержка наложения и обводки
+| Параметр | Тип | Описание |
+|----------|-----|-----------|
+| data | [SDDSAvatarData] | Массив данных аватаров для отображения |
+| lastAvatar | SDDSAvatarData | Данные для последнего аватара, который отображается, если количество аватаров превышает |
+| maxDisplayingAvatarCount | Int | Максимальное количество отображаемых аватаров. По умолчанию 3 |
+| size | AvatarGroupSizeConfiguration | Конфигурация размеров для группы аватаров, включая максимальное количество отображаемых аватаров, ширину обводки и расстояние между аватарами |
+| appearance | AvatarGroupAppearance? | Параметры внешнего вида (опционально) |
 
-- **BorderWidth**: Настраиваемая ширина обводки между аватарами для создания эффекта наложения. Следующий аватар "затирает" часть предыдущего.
-- **Spacing**: Настраиваемое расстояние между аватарами, позволяющее контролировать плотность их размещения в группе.
+## Окружение
 
-## Ограничение количества отображаемых аватаров
 
-- **MaxDisplayingAvatarCount**: Настраиваемое максимальное количество отображаемых аватаров. По умолчанию равно 3. Если количество аватаров превышает это значение, показывается аватар `LastAvatar` с числом, отображающим количество скрытых аватаров.
+- `avatarGroupAppearance`: Стандартные настройки внешнего вида
 
-## Настройка внешнего вида
+## Пример использования
 
-- Поддержка настройки внешнего вида каждого аватара в группе с помощью `SDDSAvatarData`, включая текст, изображение, плейсхолдер, статус, параметры внешнего вида, размеры и доступность.
+```swift
+SDDSAvatarGroup(
+    data: exampleAvatars,
+    lastAvatar: lastAvatarData,
+    size: defaultSize,
+    appearance: AvatarGroup.s.appearance
+)
 
-## Гибкость в настройке размеров и отступов
+// Массив данных аватаров для отображения
+static var exampleAvatars: [SDDSAvatarData] {
+    [
+        SDDSAvatarData(
+            text: "JD",
+            image: nil,
+            placeholderImage: nil,
+            status: .offline,
+            appearance: Avatar.l.appearance,
+            accessibility: defaultAccessibility
+        ),
+        SDDSAvatarData(
+            text: "ML",
+            image: .image(Image(systemName: "person.fill")),
+            placeholderImage: nil,
+            status: .offline,
+            appearance: Avatar.l.appearance,
+            accessibility: defaultAccessibility
+        ),
+        SDDSAvatarData(
+            text: "ML",
+            image: .image(Image(systemName: "person.fill")),
+            placeholderImage: nil,
+            status: .offline,
+            appearance: Avatar.l.appearance,
+            accessibility: defaultAccessibility
+        )
+    ]
+}
 
-- Определение размеров и отступов с помощью протокола **AvatarGroupSizeConfiguration**.
-  - **MaxDisplayingAvatarCount**: Максимальное количество отображаемых аватаров.
-  - **BorderWidth**: Ширина обводки между аватарами.
-  - **Spacing**: Расстояние между аватарами.
-
-## Доступность (Accessibility)
-
-- Поддержка VoiceOver и других технологий доступности.
-- Настройка меток доступности (accessibility labels) и описаний (hints) для каждого аватара в группе.
-- Использование структуры `AvatarAccessibility` для настройки параметров доступности каждого аватара.
-
+// Данные для последнего аватара
+static var lastAvatarData: SDDSAvatarData {
+    SDDSAvatarData(
+        text: "+5",
+        image: nil,
+        placeholderImage: nil,
+        status: .hidden,
+        appearance: Avatar.l.appearance,
+        accessibility: defaultAccessibility
+    )
+}
+```
