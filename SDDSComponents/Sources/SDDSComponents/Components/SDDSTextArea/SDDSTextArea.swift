@@ -2,6 +2,11 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
+/**
+ `TextAreaHeightMode` - Определяет режим высоты.
+- fixed: Фиксированная высота.
+- dynamic: Высота автоматически подстраивается под содержимое.
+*/
 public enum TextAreaHeightMode {
     case fixed(CGFloat)
     case dynamic
@@ -10,30 +15,46 @@ public enum TextAreaHeightMode {
 // MARK: - SDDSTextArea
 
 /**
- `SDDSTextArea` представляет собой настраиваемое текстовое поле с поддержкой различных стилей, макетов и конфигураций.
+ `SDDSTextArea` — настраиваемое текстовое поле с поддержкой различных стилей, макетов и конфигураций.
 
- - Properties:
-    - value: Значение текстового поля (`single` или `multiple`).
+- Parameters:
+    - value: Значение текстового поля (`single` или `multiple`) ``TextAreaValue``.
     - title: Заголовок текстового поля.
     - optionalTitle: Дополнительный заголовок (например, для опциональных полей).
     - placeholder: Текст placeholder, отображаемый при пустом поле.
     - caption: Подпись под текстовым полем.
+    - counter: Текст счетчика (например, для отображения количества символов).
     - textBefore: Префикс перед текстом или плейсхолдером.
     - textAfter: Суффикс после текста или плейсхолдера.
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
-    - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
-    - required: Флаг, указывающий, является ли поле обязательным.
     - divider: Флаг, указывающий, показывать ли линию разделителя.
-    - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
-    - dynamicHeight: Флаг, указывающий, расширяется ли текстовое поле по высоте в зависимости от высоты текста.
+    - dynamicHeight: **[deprecated]** Флаг, указывающий, расширяется ли текстовое поле по высоте в зависимости от высоты текста. Используйте ``heightMode`` вместо этого.
+    - heightMode: Режим высоты текстового поля (фиксированная или динамическая) ``TextAreaHeightMode``.
+    - layout: Макет текстового поля (`default`, `clear`) ``TextAreaLayout``.
+    - accessibility: Параметры доступности текстового поля ``TextAreaAccessibility``.
+    - iconViewProvider: Поставщик левой иконки.
+    - iconActionViewProvider: Поставщик правой иконки действия.
     - appearance: Параметры внешнего вида текстового поля.
     - chipGroupAppearance: Параметры внешнего вида ChipGroup.
     - chipGroupGap: Распределение элементов в ChipGroup.
-    - layout: Макет текстового поля (`default`, `clear`).
-    - accessibility: Параметры доступности.
-    - iconViewProvider: Поставщик левого иконки.
-    - iconActionViewProvider: Поставщик правой иконки действия.
+
+## Пример использования
+```swift
+ TextArea(
+     value: .constant(.single("Value")),
+     title: "Title",
+     optionalTitle: "optional",
+     placeholder: "Placeholder",
+     caption: "caption",
+     counter: "counter",
+     disabled: false,
+     readOnly: false,
+     dynamicHeight: true,
+     appearance: TextArea.l.default.appearance,
+     iconActionViewProvider: ViewProvider(iconActionView)
+ )
+```
  */
 public struct SDDSTextArea<ActionContent: View>: View {
     @State var text: String

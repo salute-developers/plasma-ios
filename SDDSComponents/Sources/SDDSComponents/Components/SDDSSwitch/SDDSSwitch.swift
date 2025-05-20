@@ -12,6 +12,24 @@ import SwiftUI
     - isEnabled: Флаг, указывающий, включен ли переключатель.
     - appearance: Параметры внешнего вида переключателя.
     - switchAccessibility: Параметры доступности для переключателя.
+
+ ## Окружение
+ 
+ - `switchAppearance`: Стандартные настройки внешнего вида переключателя
+
+ ## Пример использования
+ ```swift
+ @State isOn: Bool = true
+ 
+ SDDSSwitch(
+     title: "Label",
+     subtitle: "Description",
+     isOn: $isOn,
+     isEnabled: true,
+     appearance: Switch.l.appearance,
+     switchAccessibility: SwitchAccessibility()
+ )
+```
  */
 public struct SDDSSwitch: View {
     public let title: String

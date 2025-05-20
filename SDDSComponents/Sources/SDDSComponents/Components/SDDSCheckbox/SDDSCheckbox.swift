@@ -5,13 +5,24 @@ import SwiftUI
  `SDDSCheckbox` представляет собой настраиваемый чекбокс, который может быть настроен с помощью различных параметров.
  
  - Parameters:
- - state: Состояние чекбокса.
- - title: Текст заголовка для чекбокса.
- - subtitle: Текст подзаголовка для чекбокса.
- - isEnabled: Флаг, указывающий, включен ли чекбокс.
- - images: Изображения для различных состояний чекбокса.
- - appearance: Параметры внешнего вида чекбокса.
- - accessibility: Параметры доступности для чекбокса.
+    - state: Состояние чекбокса. ``SelectionControlState``
+    - title: Текст заголовка для чекбокса.
+    - subtitle: Текст подзаголовка для чекбокса.
+    - isEnabled: Флаг, указывающий, включен ли чекбокс.
+    - images: Изображения для различных состояний чекбокса.
+    - appearance: Параметры внешнего вида чекбокса.
+    - accessibility: Параметры доступности для чекбокса.
+ 
+ ```swift
+ @State var selectionControl: SelectionControlState = .selected
+ SDDSCheckbox(
+     state: $selectionControl,
+     title: "Value",
+     subtitle: "Description",
+     isEnabled: true,
+     appearance: Checkbox.l.default.appearance
+ )
+ ```
  */
 public struct SDDSCheckbox: View {
     @Binding var state: SelectionControlState
@@ -23,19 +34,6 @@ public struct SDDSCheckbox: View {
     private var _appearance: CheckboxAppearance?
     @Environment(\.checkboxAppearance) private var environmentAppearance
     
-    /**
-     Инициализатор для создания чекбокса с заданными параметрами.
-     
-     - Parameters:
-     - state: Состояние чекбокса.
-     - title: Текст заголовка для чекбокса.
-     - subtitle: Текст подзаголовка для чекбокса (по умолчанию nil).
-     - isEnabled: Флаг, указывающий, включен ли чекбокс.
-     - images: Изображения для различных состояний чекбокса.
-     - size: Конфигурация размеров для чекбокса.
-     - appearance: Параметры внешнего вида чекбокса.
-     - accessibility: Параметры доступности для чекбокса (по умолчанию `SelectionControlAccessibility`).
-     */
     public init(
         state: Binding<SelectionControlState>,
         title: String,
@@ -58,7 +56,7 @@ public struct SDDSCheckbox: View {
      Инициализатор для создания чекбокса на основе данных структуры `CheckboxData`.
      
      - Parameters:
-     - data: Структура `CheckboxData`, содержащая все параметры для создания чекбокса.
+     - data: Структура ``CheckboxData``, содержащая все параметры для создания чекбокса.
      */
     public init(data: CheckboxData) {
         self._state = data.state

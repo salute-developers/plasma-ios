@@ -2,6 +2,31 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+/**
+ `SDDSCard` представляет собой контейнерный компонент для отображения содержимого в виде карточки с настраиваемым внешним видом.
+
+ - Parameters:
+   - appearance: Кастомизация внешнего вида карточки (опционально)
+   - backgroundColor: Цвет фона карточки (опционально)
+   - content: Содержимое карточки
+
+ ## Окружение
+ 
+ - `cardAppearance`: Стандартные настройки внешнего вида карточек
+
+ ## Пример использования
+
+ ```swift
+ // Простая карточка с текстом
+ SDDSCard(appearance: Card.m.default.appearance) {
+      VStack(alignment: .leading, spacing: 8) {
+          Text("Header")
+          Text("Description")
+      }
+  }
+ ```
+ */
+
 public struct SDDSCard<Content: View>: View {
     @Environment(\.cardAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme

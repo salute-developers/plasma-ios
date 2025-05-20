@@ -7,8 +7,8 @@ import SDDSComponents
 /**
  `SDDSTextField` представляет собой настраиваемое текстовое поле с поддержкой различных стилей, макетов и конфигураций.
 
- - Properties:
-    - value: Значение текстового поля (`single` или `multiple`).
+ - Parameters:
+    - value: Значение текстового поля (`single` или `multiple`). ``TextFieldValue``
     - title: Заголовок текстового поля.
     - optionalTitle: Дополнительный заголовок (например, для опциональных полей).
     - placeholder: Текст placeholder, отображаемый при пустом поле.
@@ -22,10 +22,29 @@ import SDDSComponents
     - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
     - chipGroupGap: Распределение элементов в ChipGroup.
-    - layout: Макет текстового поля (`default`, `clear`).
+    - layout: Макет текстового поля (`default`, `clear`). ``TextFieldLayout``
     - accessibility: Параметры доступности.
-    - iconViewProvider: Поставщик левого иконки.
+    - iconViewProvider: Поставщик левой иконки.
     - iconActionViewProvider: Поставщик правой иконки действия.
+
+ ## Окружение
+ 
+ - `textFieldAppearance`: Стандартные настройки внешнего вида текстового поля
+
+ ## Пример использования
+
+ ```swift
+ // Базовое текстовое поле
+ @State private var value = TextFieldValue.single("")
+ 
+  SDDSTextField(
+     value: $value,
+     title: "Title",
+     optionalTitle: "",
+     placeholder: "Enter the text",
+     caption: "Caption",
+     appearance: TextField.m.default.appearance
+ )
  */
 public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     @State var text: String
