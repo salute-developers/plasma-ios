@@ -111,4 +111,9 @@ public extension EnvironmentValues {
         get { self[CircularProgressBarAppearance.self] }
         set { self[CircularProgressBarAppearance.self] = newValue }
     }
+    
+    var popoverAppearance: PopoverAppearance {
+        get { self[PopoverAppearance.self] }
+        set { self[PopoverAppearance.self] = newValue }
+    }
 }

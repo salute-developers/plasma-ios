@@ -163,6 +163,9 @@
 		818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */; };
 		818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03E22C479003002C6D0A /* Image+Extensions.swift */; };
 		818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */; };
+		818E3B7F2DDDCCBD00130AF9 /* PopoverAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E3B7E2DDDCCB900130AF9 /* PopoverAppearance.swift */; };
+		818E3B812DDDCCCB00130AF9 /* PopoverSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E3B802DDDCCC400130AF9 /* PopoverSizeConfiguration.swift */; };
+		818E3B842DDE41C500130AF9 /* SDDSPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E3B832DDE41C000130AF9 /* SDDSPopover.swift */; };
 		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
 		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
 		818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */; platformFilter = ios; };
@@ -422,6 +425,9 @@
 		818C03E22C479003002C6D0A /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSProgressBar.swift; sourceTree = "<group>"; };
 		818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSProgressBar.md; sourceTree = "<group>"; };
+		818E3B7E2DDDCCB900130AF9 /* PopoverAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAppearance.swift; sourceTree = "<group>"; };
+		818E3B802DDDCCC400130AF9 /* PopoverSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSizeConfiguration.swift; sourceTree = "<group>"; };
+		818E3B832DDE41C000130AF9 /* SDDSPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSPopover.swift; sourceTree = "<group>"; };
 		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSComponentsTests.swift; sourceTree = "<group>"; };
@@ -1099,6 +1105,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				818E39642DDDCC4100130AF9 /* SDDSPopover */,
 				816F62D02DCBA8F000EC9121 /* SDDSCircularProgressBar */,
 				81578DB52D89AD9100BC7038 /* SDDSBottomSheet */,
 				81F89DE62D808A7B00A41C89 /* SDDSCard */,
@@ -1202,6 +1209,24 @@
 				817339D32D033BD20092608A /* ProgressBarAppearance */,
 			);
 			path = SDDSProgressBar;
+			sourceTree = "<group>";
+		};
+		818E39642DDDCC4100130AF9 /* SDDSPopover */ = {
+			isa = PBXGroup;
+			children = (
+				818E3B832DDE41C000130AF9 /* SDDSPopover.swift */,
+				818E3B822DDE41AE00130AF9 /* PopoverAppearance */,
+			);
+			path = SDDSPopover;
+			sourceTree = "<group>";
+		};
+		818E3B822DDE41AE00130AF9 /* PopoverAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				818E3B802DDDCCC400130AF9 /* PopoverSizeConfiguration.swift */,
+				818E3B7E2DDDCCB900130AF9 /* PopoverAppearance.swift */,
+			);
+			path = PopoverAppearance;
 			sourceTree = "<group>";
 		};
 		818FE93D2C3C403F00F64958 /* SDDSComponentsTests */ = {
@@ -1715,6 +1740,7 @@
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				81578DBA2D89ADD200BC7038 /* BottomSheetSizeConfiguration.swift in Sources */,
 				812DB7582D57B44100D3F4A3 /* TextFieldClear.swift in Sources */,
+				818E3B812DDDCCCB00130AF9 /* PopoverSizeConfiguration.swift in Sources */,
 				817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */,
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
 				6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */,
@@ -1741,6 +1767,7 @@
 				81FC47B32D928A2500A83F87 /* View+SDDSBottomSheet.swift in Sources */,
 				81FC47B42D928A2500A83F87 /* BottomSheetHandleView.swift in Sources */,
 				81FC47B52D928A2500A83F87 /* BottomSheetViewController.swift in Sources */,
+				818E3B7F2DDDCCBD00130AF9 /* PopoverAppearance.swift in Sources */,
 				81FC47B62D928A2500A83F87 /* BottomSheetContainerViewController.swift in Sources */,
 				81FC47B72D928A2500A83F87 /* BottomSheetDetent.swift in Sources */,
 				81FC47B82D928A2500A83F87 /* BottomSheetHandleUIView.swift in Sources */,
@@ -1765,6 +1792,7 @@
 				817339E62D033E650092608A /* RadioboxData.swift in Sources */,
 				694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */,
 				81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */,
+				818E3B842DDE41C500130AF9 /* SDDSPopover.swift in Sources */,
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,

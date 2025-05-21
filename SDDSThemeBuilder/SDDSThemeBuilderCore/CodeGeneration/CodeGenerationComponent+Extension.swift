@@ -37,12 +37,13 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case avatarGroup = "AvatarGroup"
     case circularProgressBar = "CircularProgressBar"
     case progressBar = "ProgressBar"
+    case popover = "Popover"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
         // .textField,
         // .textFieldClear,
         // .textArea,
@@ -75,7 +76,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .avatar,
             .avatarGroup,
             .circularProgressBar,
-            .progressBar
+            .progressBar,
+            .popover
         ]
     }
     
@@ -128,6 +130,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .progressBar:
             GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .popover:
+            GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -177,6 +181,8 @@ extension CodeGenerationComponent {
             "CircularProgressBarAppearance"
         case .progressBar:
             "ProgressBarAppearance"
+        case .popover:
+            "PopoverAppearance"
         }
     }
     
@@ -227,6 +233,8 @@ extension CodeGenerationComponent {
             "CircularProgressBarSizeConfiguration"
         case .progressBar:
             "ProgressBarSizeConfiguration"
+        case .popover:
+            "PopoverSizeConfiguration"
         }
     }
     
@@ -304,6 +312,8 @@ extension CodeGenerationComponent {
             "circular_progress_bar_config.json"
         case .progressBar:
             "progress_bar_config.json"
+        case .popover:
+            "popover_config.json"
         }
     }
     

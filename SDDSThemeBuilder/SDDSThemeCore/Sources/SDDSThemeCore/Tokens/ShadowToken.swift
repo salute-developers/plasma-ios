@@ -19,7 +19,7 @@ public struct ShadowToken {
     
     public let layers: [Layer]
     
-    public init(layers: [Layer]) {
+    public init(layers: [Layer] = []) {
         self.layers = layers
     }
 }

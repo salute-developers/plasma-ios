@@ -17,6 +17,7 @@ enum Component: String {
     case iconBadgeTransparent = "icon-badge-transparent"
     case indicator = "indicator"
     case circularProgressBar = "circular-progress-bar"
+    case popover = "popover"
     
     var componentName: String {
         switch self {
@@ -52,6 +53,8 @@ enum Component: String {
             return "Indicator"
         case .circularProgressBar:
             return "CircularProgressBar"
+        case .popover:
+            return "Popover"
         }
     }
 }
