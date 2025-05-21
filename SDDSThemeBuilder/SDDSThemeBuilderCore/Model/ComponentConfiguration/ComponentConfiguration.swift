@@ -27,6 +27,30 @@ struct ComponentConfiguration<Props: MergeableConfiguration>: Codable {
     let view: [String: View]
     let props: Props?
     let variations: [Variation]
+    
+    init(view: [String: View]? = nil, props: Props? = nil, variations: [Variation]) {
+        self.view = view ?? [:]
+        self.props = props
+        self.variations = variations
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case view, props, variations
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.view = try container.decodeIfPresent([String: View].self, forKey: .view) ?? [:]
+        self.props = try container.decodeIfPresent(Props.self, forKey: .props)
+        self.variations = try container.decode([Variation].self, forKey: .variations)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(view, forKey: .view)
+        try container.encodeIfPresent(props, forKey: .props)
+        try container.encode(variations, forKey: .variations)
+    }
 }
 
 extension ComponentConfiguration {
