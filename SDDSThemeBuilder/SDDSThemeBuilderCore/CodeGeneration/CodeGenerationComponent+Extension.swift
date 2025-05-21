@@ -39,12 +39,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case progressBar = "ProgressBar"
     case divider = "Divider"
     case overlay = "Overlay"
+    case popover = "Popover"
+    case tooltip = "Tooltip"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
         // .textField,
         // .textFieldClear,
         // .textArea,
@@ -79,7 +81,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .avatarGroup,
             .circularProgressBar,
             .progressBar,
-            .divider
+            .divider,
+            .popover,
+            .tooltip
         ]
     }
     
@@ -136,6 +140,10 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<DividerProps, DividerAppearance, DividerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .overlay:
             GenerateComponentCommand<OverlayProps, OverlayAppearance, OverlaySize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .popover:
+            GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tooltip:
+            GenerateComponentCommand<TooltipProps, TooltipAppearance, TooltipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -189,6 +197,10 @@ extension CodeGenerationComponent {
             "DividerAppearance"
         case .overlay:
              "OverlayAppearance"
+        case .popover:
+            "PopoverAppearance"
+        case .tooltip:
+            "TooltipAppearance"
         }
     }
     
@@ -243,6 +255,10 @@ extension CodeGenerationComponent {
             "DividerSizeConfiguration"
         case .overlay:
              "OverlaySizeConfiguration"
+        case .popover:
+            "PopoverSizeConfiguration"
+        case .tooltip:
+            "TooltipSizeConfiguration"
         }
     }
     
@@ -323,7 +339,11 @@ extension CodeGenerationComponent {
         case .divider:
             "divider_config.json"
         case .overlay:
-             "overlay_config.json"
+            "overlay_config.json"
+        case .popover:
+            "popover_config.json"
+        case .tooltip:
+            "tooltip_config.json"
         }
     }
     

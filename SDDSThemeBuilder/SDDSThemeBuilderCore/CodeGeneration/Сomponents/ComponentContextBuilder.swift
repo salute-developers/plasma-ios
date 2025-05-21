@@ -164,6 +164,8 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                 guard let view = variation.view else {
                     continue
                 }
+                
+                
                 for viewKey in view.keys.sorted() {
                     guard let props = view[viewKey]?.props, let appearanceProps = props as? Appearance.Props else {
                         continue
