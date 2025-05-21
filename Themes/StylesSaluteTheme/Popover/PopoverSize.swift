@@ -13,7 +13,7 @@ struct PopoverSize {
     ] 
 }
 struct PopoverSizeM: PopoverSizeConfiguration {
-    var offset = CGFloat(0.0)
+    var offset = CGFloat(8.0)
     var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
     var tailHeight = CGFloat(8.0)
     var tailPadding = CGFloat(20.0)
@@ -24,7 +24,7 @@ struct PopoverSizeM: PopoverSizeConfiguration {
     }
 }
 struct PopoverSizeS: PopoverSizeConfiguration {
-    var offset = CGFloat(0.0)
+    var offset = CGFloat(8.0)
     var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
     var tailHeight = CGFloat(8.0)
     var tailPadding = CGFloat(16.0)

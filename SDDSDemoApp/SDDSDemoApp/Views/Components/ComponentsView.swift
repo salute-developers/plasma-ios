@@ -26,7 +26,8 @@ struct ComponentsView: View {
         ("SDDSCircularProgressBar", AnyView(CircularProgressBarView())),
         ("SDDSDivider", AnyView(DividerView())),
         ("SDDSOverlay", AnyView(OverlayView())),
-        ("SDDSPopover", AnyView(PopoverView()))
+        ("SDDSPopover", AnyView(PopoverView())),
+        ("SDDSTooltip", AnyView(TooltipView()))
     ]
 
     var body: some View {

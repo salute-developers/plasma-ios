@@ -45,6 +45,7 @@ struct SDDSPopover<Content: View>: View {
     
     @State private var timer: Timer?
     @State private var popoverSize: CGSize = .zero
+    @State private var contentSize: CGSize = .zero
     @State private var isIntersectingWindow: Bool = true
     @State private var placementState: PopoverPlacement
     @State private var autoCloseTimer: Timer?
@@ -77,8 +78,24 @@ struct SDDSPopover<Content: View>: View {
     }
     
     public var body: some View {
-        ZStack {
-            ZStack {
+        ZStack(alignment: .center) {
+            content
+                .frame(width: appearance.size.width, alignment: .trailing)
+                .background(
+                    GeometryReader { geo in
+                        Color.clear
+                            .onAppear { contentSize = geo.size }
+                            .onChange(of: geo.size) { newSize in contentSize = newSize }
+                    }
+                )
+                .onPreferenceChange(PopoverSizeKey.self) { size in
+                    self.contentSize = size
+                }
+                .background(appearance.backgroundColor.color(for: colorScheme))
+                .shape(pathDrawer: appearance.size.pathDrawer)
+                .shadow(appearance.shadow)
+            
+            if tailEnabled {
                 PopoverTailShape(
                     placement: placementState,
                     alignment: alignment,
@@ -88,25 +105,9 @@ struct SDDSPopover<Content: View>: View {
                     tailPadding: tailPadding
                 )
                 .fill(appearance.backgroundColor.color(for: colorScheme))
-                
-                content
-                    .frame(width: appearance.size.width, alignment: .trailing)
-                    .background(appearance.backgroundColor.color(for: colorScheme))
-                    .shape(pathDrawer: appearance.size.pathDrawer)
             }
-            .shadow(appearance.shadow)
-            
-            PopoverTailShape(
-                placement: placementState,
-                alignment: alignment,
-                size: popoverSize,
-                tailWidth: appearance.size.tailWidth,
-                tailHeight: appearance.size.tailHeight,
-                tailPadding: tailPadding
-            )
-            .fill(appearance.backgroundColor.color(for: colorScheme))
-
         }
+        .frame(width: contentSize.width, height: contentSize.height)
         .hiddenIf(!isPresented)
         .background(
             GeometryReader { geo in
@@ -118,20 +119,10 @@ struct SDDSPopover<Content: View>: View {
         .background(
             GeometryReader { geo in
                 Color.clear
-                    .onAppear { updateIntersection(geo: geo) }
-                    .onChange(of: placementState) { _ in updateIntersection(geo: geo) }
-                    .onChange(of: alignment) { _ in updateIntersection(geo: geo) }
-                    .onChange(of: popoverSize) { _ in updateIntersection(geo: geo) }
-                    .onChange(of: isIntersectingWindow) { newValue in
-                        if newValue && placementMode == .loose {
-                            let newPlacement = bestPlacement(
-                                initial: placementState,
-                                popoverSize: popoverSize,
-                                geo: geo
-                            )
-                            placementState = newPlacement
-                        }
-                    }
+                    .onAppear { updateIntersection() }
+                    .onChange(of: placementState) { _ in updateIntersection() }
+                    .onChange(of: alignment) { _ in updateIntersection() }
+                    .onChange(of: popoverSize) { _ in updateIntersection() }
             }
         )
         .onPreferenceChange(PopoverSizeKey.self) { size in
@@ -146,24 +137,23 @@ struct SDDSPopover<Content: View>: View {
         .onChange(of: placement) { newValue in
             placementState = newValue
         }
-        .onChange(of: isPresented) { newValue in
-            if newValue {
-                if let duration = duration {
-                    autoCloseTimer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
-                        guard isPresented else { return }
-                        isPresented = false
-                        onClose?()
-                    }
+        .onAppear {
+            if let duration = duration {
+                autoCloseTimer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
+                    guard isPresented else { return }
+                    isPresented = false
+                    onClose?()
                 }
-            } else {
-                autoCloseTimer?.invalidate()
-                autoCloseTimer = nil
             }
+        }
+        .onDisappear {
+            autoCloseTimer?.invalidate()
+            autoCloseTimer = nil
         }
     }
     
     private var tailPadding: CGFloat {
-        triggerCentered ? (popoverSizeCalculator.frame.size.width - appearance.size.tailWidth) / 2 : appearance.size.tailPadding
+        appearance.size.tailPadding
     }
 
     private func offset(
@@ -172,53 +162,110 @@ struct SDDSPopover<Content: View>: View {
         popoverSize: CGSize,
         triggerSize: CGSize
     ) -> CGSize {
+        let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
+        let verticalExtraOffset: CGFloat = 0//isLandscape ? triggerSize.height : 0
         switch placement {
         case .top:
             switch alignment {
             case .start:
-                return CGSize(width: 0, height: -popoverSize.height - appearance.size.tailHeight)
+                let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: popoverSize.width / 2 - triggerSize.width / 2 + offset,
+                    height: -popoverSize.height / 2 - tailOffset - triggerSize.height / 2 - appearance.size.offset - verticalExtraOffset
+                )
             case .center:
-                return CGSize(width: -(popoverSize.width - triggerSize.width) / 2, height: -popoverSize.height - appearance.size.tailHeight)
+                return CGSize(
+                    width: 0,
+                    height: -popoverSize.height / 2 - tailOffset - triggerSize.height / 2 - appearance.size.offset - verticalExtraOffset)
             case .end:
-                return CGSize(width: -(popoverSize.width - triggerSize.width), height: -popoverSize.height - appearance.size.tailHeight)
+                let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: -popoverSize.width / 2 + triggerSize.width / 2 - offset,
+                    height: -popoverSize.height / 2 - tailOffset - triggerSize.height / 2 - appearance.size.offset - verticalExtraOffset
+                )
             }
         case .bottom:
             switch alignment {
             case .start:
-                return CGSize(width: 0, height: triggerSize.height + appearance.size.tailHeight)
+                let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: popoverSize.width / 2 - triggerSize.width / 2 + offset,
+                    height: popoverSize.height / 2 + tailOffset + triggerSize.height / 2 + appearance.size.offset + verticalExtraOffset
+                )
             case .center:
-                return CGSize(width: -(popoverSize.width - triggerSize.width) / 2, height: triggerSize.height + appearance.size.tailHeight)
+                return CGSize(
+                    width: 0,
+                    height: popoverSize.height / 2 + tailOffset + triggerSize.height / 2 + appearance.size.offset + verticalExtraOffset
+                )
             case .end:
-                return CGSize(width: -(popoverSize.width - triggerSize.width), height: triggerSize.height + appearance.size.tailHeight)
+                let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: -popoverSize.width / 2 + triggerSize.width / 2 - offset,
+                    height: popoverSize.height / 2 + tailOffset + triggerSize.height / 2 + appearance.size.offset + verticalExtraOffset
+                )
             }
         case .start:
             switch alignment {
             case .start:
-                return CGSize(width: -popoverSize.width - appearance.size.tailHeight, height: 0)
+                let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: -popoverSize.width / 2 - tailOffset - triggerSize.width / 2 - appearance.size.offset,
+                    height: popoverSize.height / 2 - triggerSize.height / 2 + offset + verticalExtraOffset
+                )
             case .center:
-                return CGSize(width: -popoverSize.width - appearance.size.tailHeight, height: -(popoverSize.height - triggerSize.height) / 2)
+                return CGSize(
+                    width: -popoverSize.width / 2 - tailOffset - triggerSize.width / 2 - appearance.size.offset,
+                    height: 0 + verticalExtraOffset
+                )
             case .end:
-                return CGSize(width: -popoverSize.width - appearance.size.tailHeight, height: -(popoverSize.height - triggerSize.height))
+                let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: -popoverSize.width / 2 - tailOffset - triggerSize.width / 2 - appearance.size.offset,
+                    height: -popoverSize.height / 2 + triggerSize.height / 2 - offset + verticalExtraOffset
+                )
             }
         case .end:
             switch alignment {
             case .start:
-                return CGSize(width: triggerSize.width + appearance.size.tailHeight, height: 0)
+                let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: popoverSize.width / 2 + tailOffset + triggerSize.width / 2 + appearance.size.offset,
+                    height: popoverSize.height / 2 - triggerSize.height / 2 + offset + verticalExtraOffset
+                )
             case .center:
-                return CGSize(width: triggerSize.width + appearance.size.tailHeight, height: -(popoverSize.height - triggerSize.height) / 2)
+                return CGSize(
+                    width: popoverSize.width / 2 + tailOffset + triggerSize.width / 2 + appearance.size.offset,
+                    height: 0 + verticalExtraOffset
+                )
             case .end:
-                return CGSize(width: triggerSize.width + appearance.size.tailHeight, height: -(popoverSize.height - triggerSize.height))
+                let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
+                return CGSize(
+                    width: popoverSize.width / 2 + tailOffset + triggerSize.width / 2 + appearance.size.offset,
+                    height: -popoverSize.height / 2 + triggerSize.height / 2 - offset + verticalExtraOffset
+                )
             }
         }
     }
-
-    private func updateIntersection(geo: GeometryProxy) {
-        let popoverFrame = geo.frame(in: .global)
-        let screenBounds = UIScreen.main.bounds
-        isIntersectingWindow = !screenBounds.contains(popoverFrame)
+    
+    private var tailOffset: CGFloat {
+        tailEnabled ? appearance.size.tailHeight : 0
     }
 
-    private func bestPlacement(initial: PopoverPlacement, popoverSize: CGSize, geo: GeometryProxy) -> PopoverPlacement {
+    private func updateIntersection() {
+        let isFullyInside = fits(
+            placement: placementState,
+            popoverSize: popoverSize
+        )
+        if !isFullyInside && placementMode == .loose {
+            let newPlacement = bestPlacement(
+                initial: placementState,
+                popoverSize: popoverSize
+            )
+            placementState = newPlacement
+        }
+    }
+
+    private func bestPlacement(initial: PopoverPlacement, popoverSize: CGSize) -> PopoverPlacement {
         let placements: [PopoverPlacement] = [.top, .end, .bottom, .start]
         let clockwise: [PopoverPlacement] = {
             switch initial {
@@ -232,12 +279,12 @@ struct SDDSPopover<Content: View>: View {
             .top: .bottom, .bottom: .top, .start: .end, .end: .start
         ]
         // 1. Пробуем противоположный
-        if let opp = opposite[initial], fits(placement: opp, popoverSize: popoverSize, geo: geo) {
+        if let opp = opposite[initial], fits(placement: opp, popoverSize: popoverSize) {
             return opp
         }
         // 2. Пробуем остальные по часовой стрелке
         for placement in clockwise where placement != initial && placement != opposite[initial] {
-            if fits(placement: placement, popoverSize: popoverSize, geo: geo) {
+            if fits(placement: placement, popoverSize: popoverSize) {
                 return placement
             }
         }
@@ -245,17 +292,23 @@ struct SDDSPopover<Content: View>: View {
         return initial
     }
 
-    private func fits(placement: PopoverPlacement, popoverSize: CGSize, geo: GeometryProxy) -> Bool {
+    private func fits(placement: PopoverPlacement, popoverSize: CGSize) -> Bool {
         let screenBounds = UIScreen.main.bounds
-        let currentFrame = geo.frame(in: .global)
+        let triggerFrame = popoverSizeCalculator.frame
         let offset = offset(
             placement: placement,
             alignment: alignment,
             popoverSize: popoverSize,
             triggerSize: popoverSizeCalculator.frame.size
         )
-        let potentialFrame = currentFrame.offsetBy(dx: offset.width, dy: offset.height)
-        return screenBounds.contains(potentialFrame)
+        let popoverOrigin = CGPoint(
+            x: triggerFrame.origin.x + offset.width - triggerFrame.width / 2,
+            y: triggerFrame.origin.y + offset.height - triggerFrame.height / 2
+        )
+        let popoverFrame = CGRect(origin: popoverOrigin, size: popoverSize)
+        let result = screenBounds.contains(popoverFrame)
+        
+        return result
     }
 
 }

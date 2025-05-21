@@ -28,7 +28,7 @@ struct PopoverTailShape: Shape {
         tailPadding: CGFloat
     ) -> Path {
         var path = Path()
-
+        
         let arc1Rect = CGRect(x: -tailWidth, y: -tailHeight * 2, width: tailWidth, height: tailHeight * 2)
         path.addArc(
             center: CGPoint(x: arc1Rect.midX, y: arc1Rect.midY),
@@ -38,7 +38,7 @@ struct PopoverTailShape: Shape {
             clockwise: false
         )
 
-        path.addLine(to: CGPoint(x: tailWidth / 2, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: 2))
 
         let arc2Rect = CGRect(x: 0, y: -tailHeight * 2, width: tailWidth, height: tailHeight * 2)
         path.addArc(
@@ -48,7 +48,7 @@ struct PopoverTailShape: Shape {
             endAngle: .degrees(180),
             clockwise: false
         )
-
+        
         path.closeSubpath()
 
         // Transform
@@ -71,6 +71,7 @@ struct PopoverTailShape: Shape {
         var transform = CGAffineTransform.identity
             .translatedBy(x: tx, y: ty)
             .rotated(by: rotation * .pi / 180)
+            .scaledBy(x: 1.5, y: 1)
 
         return path.applying(transform)
     }

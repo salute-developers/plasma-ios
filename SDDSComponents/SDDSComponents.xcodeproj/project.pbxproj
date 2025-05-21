@@ -217,6 +217,8 @@
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
 		81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D80F8D2D677C560043F174 /* EmbeddedChip.swift */; };
+		81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */; };
+		81DEDCC82DE73A810035E6A9 /* GlobalPopoverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEDCC52DE73A810035E6A9 /* GlobalPopoverManager.swift */; };
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
 		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
@@ -526,6 +528,8 @@
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
 		81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButton.swift; sourceTree = "<group>"; };
 		81D80F8D2D677C560043F174 /* EmbeddedChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChip.swift; sourceTree = "<group>"; };
+		81DEDCC52DE73A810035E6A9 /* GlobalPopoverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPopoverManager.swift; sourceTree = "<group>"; };
+		81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverShape.swift; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
 		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
@@ -1371,6 +1375,8 @@
 		818E39642DDDCC4100130AF9 /* SDDSPopover */ = {
 			isa = PBXGroup;
 			children = (
+				81DEDCC52DE73A810035E6A9 /* GlobalPopoverManager.swift */,
+				81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */,
 				815D1EF82DE04A5C0005273B /* View+Popover.swift */,
 				815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */,
 				815D1EF42DE04A350005273B /* PopoverSizeKey.swift */,
@@ -1979,6 +1985,8 @@
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
+				81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */,
+				81DEDCC82DE73A810035E6A9 /* GlobalPopoverManager.swift in Sources */,
 				812DB74F2D57B44100D3F4A3 /* TextFieldAppearance.swift in Sources */,
 				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */,

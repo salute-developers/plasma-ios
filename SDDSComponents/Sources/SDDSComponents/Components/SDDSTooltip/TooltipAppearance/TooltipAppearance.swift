@@ -8,16 +8,16 @@ public struct TooltipAppearance: Hashable {
     public var textColor: ColorToken
     public var contentStartColor: ColorToken
     public var shadow: ShadowToken
-    public var size: TooltipSizeConfiguration
     public var textTypography: TypographyConfiguration?
+    public var size: TooltipSizeConfiguration
     
     public init(
         backgroundColor: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
         contentStartColor: ColorToken = .clearColor,
         shadow: ShadowToken = ShadowToken(),
-        size: TooltipSizeConfiguration = ZeroTooltipSize(),
-        textTypography: TypographyConfiguration? = nil
+        textTypography: TypographyConfiguration? = nil,
+        size: TooltipSizeConfiguration = ZeroTooltipSize()
     ) {
         self.backgroundColor = backgroundColor
         self.textColor = textColor

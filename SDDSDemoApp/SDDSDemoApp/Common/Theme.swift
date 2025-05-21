@@ -452,4 +452,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Popover.all
         }
     }
+    
+    var tooltipVariations: [Variation<TooltipAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Tooltip.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Tooltip.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Tooltip.all
+        }
+    }
 }

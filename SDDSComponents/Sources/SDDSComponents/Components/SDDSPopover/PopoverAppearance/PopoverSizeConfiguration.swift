@@ -12,29 +12,17 @@ public protocol PopoverSizeConfiguration: SizeConfiguration, CustomDebugStringCo
 }
 
 public struct DefaultPopoverSize: PopoverSizeConfiguration {
-    public var offset: CGFloat {
-        0
-    }
+    public var offset: CGFloat = 0
     
-    public var pathDrawer: PathDrawer {
-        CornerRadiusDrawer(cornerRadius: 16)
-    }
+    public var pathDrawer: PathDrawer = CornerRadiusDrawer(cornerRadius: 16)
     
-    public var tailHeight: CGFloat {
-        8
-    }
+    public var tailHeight: CGFloat = 8
     
-    public var tailWidth: CGFloat {
-        20
-    }
+    public var tailWidth: CGFloat = 20
     
-    public var tailPadding: CGFloat {
-        20
-    }
+    public var tailPadding: CGFloat = 20
     
-    public var width: CGFloat {
-        182
-    }
+    public var width: CGFloat = 182
     
     public var debugDescription: String {
         "DefaultPopoverSize"

@@ -14,25 +14,43 @@ public extension View {
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
-        self.overlay {
+        self.background(
             GeometryReader { geometry in
-                SDDSPopover(
-                    isPresented: isPresented,
-                    appearance: appearance,
-                    placement: placement,
-                    alignment: alignment,
-                    tailEnabled: tailEnabled,
-                    triggerCentered: triggerCentered,
-                    placementMode: placementMode,
-                    duration: duration,
-                    popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: geometry.frame(in: .global)),
-                    onClose: {
-                        isPresented.wrappedValue = false
-                        onClose?()
-                    },
-                    content: content
-                )
+                Color.clear
+                    .task(id: isPresented.wrappedValue) {
+                        let triggerFrame = geometry.frame(in: .global)
+                        if isPresented.wrappedValue {
+                            GlobalPopoverManager.shared.show(
+                                content: {
+                                    SDDSPopover(
+                                        isPresented: isPresented,
+                                        appearance: appearance,
+                                        placement: placement,
+                                        alignment: alignment,
+                                        tailEnabled: tailEnabled,
+                                        triggerCentered: triggerCentered,
+                                        placementMode: placementMode,
+                                        duration: duration,
+                                        popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
+                                        onClose: {
+                                            isPresented.wrappedValue = false
+                                            GlobalPopoverManager.shared.hide()
+                                            onClose?()
+                                        },
+                                        content: content
+                                    )
+                                },
+                                at: triggerFrame,
+                                onClose: {
+                                    isPresented.wrappedValue = false
+                                    onClose?()
+                                }
+                            )
+                        } else {
+                            GlobalPopoverManager.shared.hide()
+                        }
+                    }
             }
-        }
+        )
     }
 }
