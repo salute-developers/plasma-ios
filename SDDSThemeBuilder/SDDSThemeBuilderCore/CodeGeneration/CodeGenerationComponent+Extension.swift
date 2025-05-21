@@ -39,12 +39,13 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case progressBar = "ProgressBar"
     case divider = "Divider"
     case overlay = "Overlay"
+    case popover = "Popover"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
         // .textField,
         // .textFieldClear,
         // .textArea,
@@ -80,6 +81,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .circularProgressBar,
             .progressBar,
             .divider
+            .popover
         ]
     }
     
@@ -136,6 +138,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<DividerProps, DividerAppearance, DividerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .overlay:
             GenerateComponentCommand<OverlayProps, OverlayAppearance, OverlaySize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .popover:
+            GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -189,6 +193,8 @@ extension CodeGenerationComponent {
             "DividerAppearance"
         case .overlay:
              "OverlayAppearance"
+        case .popover:
+            "PopoverAppearance"
         }
     }
     
@@ -243,6 +249,8 @@ extension CodeGenerationComponent {
             "DividerSizeConfiguration"
         case .overlay:
              "OverlaySizeConfiguration"
+        case .popover:
+            "PopoverSizeConfiguration"
         }
     }
     
@@ -323,7 +331,9 @@ extension CodeGenerationComponent {
         case .divider:
             "divider_config.json"
         case .overlay:
-             "overlay_config.json"
+            "overlay_config.json"
+        case .popover:
+            "popover_config.json"
         }
     }
     

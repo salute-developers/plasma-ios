@@ -430,7 +430,7 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Divider.all
         }
     }
-    
+
     var overlayVariations: [Variation<OverlayAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -439,6 +439,17 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Overlay.all
+        }
+    }
+    
+    var popoverVariations: [Variation<PopoverAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Popover.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Popover.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Popover.all
         }
     }
 }

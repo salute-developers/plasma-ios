@@ -256,6 +256,11 @@
 		818345702CFE2C240081113B /* GenerateSwiftCodeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */; };
 		818345822CFE3CC00081113B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818345812CFE3CC00081113B /* String+Extensions.swift */; };
 		818C03BD2C43C0FE002C6D0A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		818E33102DDDC0AB00130AF9 /* PopoverAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E330F2DDDC0A300130AF9 /* PopoverAppearance.swift */; };
+		818E33122DDDC0B100130AF9 /* PopoverSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33112DDDC0AE00130AF9 /* PopoverSize.swift */; };
+		818E33142DDDC13800130AF9 /* PopoverProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33132DDDC13600130AF9 /* PopoverProps.swift */; };
+		818E33162DDDC18E00130AF9 /* ShadowKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33152DDDC18B00130AF9 /* ShadowKeyValue.swift */; };
+		818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */; };
 		818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */; };
 		818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
@@ -704,6 +709,11 @@
 		8181E3BB2BFB9DFF00D4012C /* GradientContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientContextBuilderTests.swift; sourceTree = "<group>"; };
 		8183456F2CFE2C240081113B /* GenerateSwiftCodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSwiftCodeCommand.swift; sourceTree = "<group>"; };
 		818345812CFE3CC00081113B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		818E330F2DDDC0A300130AF9 /* PopoverAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAppearance.swift; sourceTree = "<group>"; };
+		818E33112DDDC0AE00130AF9 /* PopoverSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSize.swift; sourceTree = "<group>"; };
+		818E33132DDDC13600130AF9 /* PopoverProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverProps.swift; sourceTree = "<group>"; };
+		818E33152DDDC18B00130AF9 /* ShadowKeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowKeyValue.swift; sourceTree = "<group>"; };
+		818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTokenContextBuilder.swift; sourceTree = "<group>"; };
 		818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
 		818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
@@ -974,6 +984,8 @@
 				812DB79B2D59D9CB00D3F4A3 /* Components */,
 				81E1EE722BE4E16200F86AE1 /* FontFamily */,
 				81E1EE4D2BE3A63A00F86AE1 /* Scheme */,
+				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
+				812DB7982D59D83B00D3F4A3 /* Props */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1153,6 +1165,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */,
 				816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */,
 				6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */,
 				81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */,
@@ -1180,7 +1193,7 @@
 		812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				812DB7982D59D83B00D3F4A3 /* Components */,
+				818E33152DDDC18B00130AF9 /* ShadowKeyValue.swift */,
 				812DB6F32D55E48C00D3F4A3 /* KeyValue.swift */,
 				812DB6F72D55E4A800D3F4A3 /* ColorKeyValue.swift */,
 				812DB6F92D55E4B900D3F4A3 /* ColorState.swift */,
@@ -1196,11 +1209,12 @@
 			path = ComponentConfiguration;
 			sourceTree = "<group>";
 		};
-		812DB7982D59D83B00D3F4A3 /* Components */ = {
+		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
 				815D36812DE5B71F0005273B /* OverlayProps.swift */,
 				693FEF362DE4696F00E14D0E /* DividerProps.swift */,
+				818E33132DDDC13600130AF9 /* PopoverProps.swift */,
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
 				699E16592DC9EE000022D4FF /* ChipGroupProps.swift */,
@@ -1223,7 +1237,7 @@
 				812DB6FE2D55E4E800D3F4A3 /* TextFieldProps.swift */,
 				812DB7992D59D85400D3F4A3 /* ButtonProps.swift */,
 			);
-			path = Components;
+			path = Props;
 			sourceTree = "<group>";
 		};
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
@@ -1231,6 +1245,7 @@
 			children = (
 				815D367E2DE5B7120005273B /* Overlay */,
 				693FEF312DE465F300E14D0E /* Divider */,
+				818E330E2DDDC09C00130AF9 /* Popover */,
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
 				699E16562DC9EDE60022D4FF /* ChipGroup */,
@@ -1247,7 +1262,6 @@
 				81F89E4F2D81A6E100A41C89 /* Card */,
 				6935CEB52D6C8B5400C8A186 /* Counter */,
 				697970E02D63A6DE008306A8 /* Cell */,
-				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				81FD6D542D6E2768002A6E51 /* Indicator */,
 				812DB79D2D59D9FB00D3F4A3 /* Button */,
 				8174BA402D5DDF4600EA3E68 /* Chip */,
@@ -1654,6 +1668,15 @@
 				814F71E92C58D4A0006385E4 /* Package.swift */,
 			);
 			path = SDDSThemeCore;
+			sourceTree = "<group>";
+		};
+		818E330E2DDDC09C00130AF9 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				818E33112DDDC0AE00130AF9 /* PopoverSize.swift */,
+				818E330F2DDDC0A300130AF9 /* PopoverAppearance.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		818E38D52D4A444A00B3A02D /* Component */ = {
@@ -2382,6 +2405,7 @@
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
+				818E33142DDDC13800130AF9 /* PopoverProps.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
 				815F42CE2D48BAC100F97E63 /* Component+BaseVariations.stencil in Sources */,
 				81E1EDC52BD6BBD200F86AE1 /* SchemeDirectory.swift in Sources */,
@@ -2451,6 +2475,7 @@
 				81A753522D47DE03006E1BE7 /* ComponentContextBuilder.swift in Sources */,
 				813992402D9ED9C10015AF83 /* SegmentAppearance.swift in Sources */,
 				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
+				818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */,
 				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
@@ -2462,6 +2487,7 @@
 				81A753502D47DE03006E1BE7 /* ComponentContext.swift in Sources */,
 				81A753552D47DE24006E1BE7 /* SizeVariationKey.swift in Sources */,
 				6962DE792DAD0046007666D5 /* AvatarGroupAppearance.swift in Sources */,
+				818E33162DDDC18E00130AF9 /* ShadowKeyValue.swift in Sources */,
 				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				812DB6F42D55E48C00D3F4A3 /* KeyValue.swift in Sources */,
 				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
@@ -2522,6 +2548,7 @@
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
+				818E33122DDDC0B100130AF9 /* PopoverSize.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
 				693FEF332DE4661300E14D0E /* DividerAppearance.swift in Sources */,
@@ -2555,6 +2582,7 @@
 				81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */,
 				69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */,
 				812DB6DE2D55E2BD00D3F4A3 /* MergeableConfiguration.swift in Sources */,
+				818E33102DDDC0AB00130AF9 /* PopoverAppearance.swift in Sources */,
 				810DE53D2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift in Sources */,
 				8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */,
 			);
