@@ -11,7 +11,7 @@ jobs:
   publish-release:
     name: Create Tag & Trigger Module Publishes
     runs-on: macos-latest
-
+    environment: sdds
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
