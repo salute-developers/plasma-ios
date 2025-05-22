@@ -38,6 +38,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case circularProgressBar = "CircularProgressBar"
     case progressBar = "ProgressBar"
     case divider = "Divider"
+    case overlay = "Overlay"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -48,6 +49,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
         // .textFieldClear,
         // .textArea,
         // .textAreaClear,
+            .overlay,
             .badge,
             .badgeClear,
             .badgeTransparent,
@@ -132,6 +134,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .divider:
             GenerateComponentCommand<DividerProps, DividerAppearance, DividerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .overlay:
+            GenerateComponentCommand<OverlayProps, OverlayAppearance, OverlaySize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -183,6 +187,8 @@ extension CodeGenerationComponent {
             "ProgressBarAppearance"
         case .divider:
             "DividerAppearance"
+        case .overlay:
+             "OverlayAppearance"
         }
     }
     
@@ -235,6 +241,8 @@ extension CodeGenerationComponent {
             "ProgressBarSizeConfiguration"
         case .divider:
             "DividerSizeConfiguration"
+        case .overlay:
+             "OverlaySizeConfiguration"
         }
     }
     
@@ -314,6 +322,8 @@ extension CodeGenerationComponent {
             "progress_bar_config.json"
         case .divider:
             "divider_config.json"
+        case .overlay:
+             "overlay_config.json"
         }
     }
     
