@@ -22,3 +22,4 @@ typealias AvatarGroupConfiguration = ComponentConfiguration<AvatarGroupProps>
 typealias CircularProgressBarConfiguration = ComponentConfiguration<CircularProgressBarProps>
 typealias ProgressBarConfiguration = ComponentConfiguration<ProgressBarProps>
 typealias DividerConfiguration = ComponentConfiguration<DividerProps>
+typealias OverlayConfiguration = ComponentConfiguration<OverlayProps>

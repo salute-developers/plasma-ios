@@ -116,4 +116,9 @@ public extension EnvironmentValues {
         get { self[DividerAppearance.self] }
         set { self[DividerAppearance.self] = newValue }
     }
+    
+    var overlayAppearance: OverlayAppearance {
+        get { self[OverlayAppearance.self] }
+        set { self[OverlayAppearance.self] = newValue }
+    }
 }
