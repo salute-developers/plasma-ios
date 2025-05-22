@@ -10,18 +10,25 @@ import SwiftUI
     - alignment: Выравнивание группы чипов.
  */
 public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @available(*, deprecated, message: "use 'appearance' instead")
     func insets(for gap: ChipGroupGap) -> EdgeInsets
     var maxColumns: Int { get }
     var alignment: ChipGroupAlignment { get }
+    var gap: CGFloat { get }
+    var lineSpacing: CGFloat { get }
 }
 
 public struct ZeroChipGroupSize: ChipGroupSizeConfiguration {
+    public var gap: CGFloat = 0
+    
+    public var lineSpacing: CGFloat = 0
+    
     public var debugDescription: String {
         return "ZeroChipGroupSize"
     }
     
     public func insets(for gap: ChipGroupGap) -> EdgeInsets {
-        return EdgeInsets()
+        EdgeInsets()
     }
     
     public var maxColumns: Int = 0

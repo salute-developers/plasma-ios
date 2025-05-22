@@ -3,6 +3,10 @@ import SwiftUI
 import SDDSComponents
 
 struct SDDSChipGroupSize: ChipGroupSizeConfiguration, Hashable {
+    var gap: CGFloat = 0
+    
+    var lineSpacing: CGFloat = 0
+    
     func insets(for gap: ChipGroupGap) -> EdgeInsets {
         switch gap {
         case .dense:

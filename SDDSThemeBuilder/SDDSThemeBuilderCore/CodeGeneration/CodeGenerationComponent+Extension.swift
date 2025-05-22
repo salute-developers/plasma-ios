@@ -9,6 +9,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textArea = "TextArea"
     case textAreaClear = "TextAreaClear"
     case chip = "Chip"
+    case chipGroupDense = "ChipGroupDense"
+    case chipGroupWide = "ChipGroupWide"
+    case embeddedChipGroupDense = "EmbeddedChipGroupDense"
+    case embeddedChipGroupWide = "EmbeddedChipGroupWide"
     case embeddedChip = "EmbeddedChip"
     case badge = "Badge"
     case badgeClear = "BadgeClear"
@@ -29,16 +33,20 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case radioboxGroup = "RadioboxGroup"
     case checkbox = "Checkbox"
     case checkboxGroup = "CheckboxGroup"
+    case avatar = "Avatar"
+    case avatarGroup = "AvatarGroup"
+    case circularProgressBar = "CircularProgressBar"
+    case progressBar = "ProgressBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
             .basicButton,
             .linkButton,
             .iconButton,
-//            .textField,
-//            .textFieldClear,
-//            .textArea,
-//            .textAreaClear,
+        // .textField,
+        // .textFieldClear,
+        // .textArea,
+        // .textAreaClear,
             .badge,
             .badgeClear,
             .badgeTransparent,
@@ -56,12 +64,21 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .switch,
             .embeddedChip,
             .chip,
+            .embeddedChipGroupDense,
+            .embeddedChipGroupWide,
+            .chipGroupDense,
+            .chipGroupWide,
             .radiobox,
             .radioboxGroup,
             .checkbox,
-            .checkboxGroup
+            .checkboxGroup,
+            .avatar,
+            .avatarGroup,
+            .circularProgressBar,
+            .progressBar
         ]
     }
+    
 }
 
 extension CodeGenerationComponent {
@@ -75,6 +92,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TextFieldProps, TextAreaAppearance, TextAreaSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .chip, .embeddedChip:
             GenerateComponentCommand<ChipProps, ChipAppearance, ChipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            GenerateComponentCommand<ChipGroupProps, ChipGroupAppearance, ChipGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .indicator:
@@ -101,6 +120,14 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CheckboxProps, CheckboxAppearance, CheckboxSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .checkboxGroup:
             GenerateComponentCommand<CheckboxGroupProps, CheckboxGroupAppearance, CheckboxGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .avatar:
+            GenerateComponentCommand<AvatarProps, AvatarAppearance, AvatarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .avatarGroup:
+            GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .circularProgressBar:
+            GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .progressBar:
+            GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -114,6 +141,8 @@ extension CodeGenerationComponent {
             "TextFieldAppearance"
         case .chip, .embeddedChip:
             "ChipAppearance"
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            "ChipGroupAppearance"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeAppearance"
         case .indicator:
@@ -140,6 +169,14 @@ extension CodeGenerationComponent {
             "CheckboxAppearance"
         case .checkboxGroup:
             "CheckboxGroupAppearance"
+        case .avatar:
+            "AvatarAppearance"
+        case .avatarGroup:
+            "AvatarGroupAppearance"
+        case .circularProgressBar:
+            "CircularProgressBarAppearance"
+        case .progressBar:
+            "ProgressBarAppearance"
         }
     }
     
@@ -154,6 +191,8 @@ extension CodeGenerationComponent {
             "TextFieldSizeConfiguration"
         case .chip, .embeddedChip:
             "ChipSizeConfiguration"
+        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
+            "ChipGroupSizeConfiguration"
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             "BadgeSizeConfiguration"
         case .indicator:
@@ -180,6 +219,14 @@ extension CodeGenerationComponent {
             "SelectionControlSizeConfiguration"
         case .checkboxGroup:
             "CheckboxGroupSizeConfiguration"
+        case .avatar:
+            "AvatarSizeConfiguration"
+        case .avatarGroup:
+            "AvatarGroupSizeConfiguration"
+        case .circularProgressBar:
+            "CircularProgressBarSizeConfiguration"
+        case .progressBar:
+            "ProgressBarSizeConfiguration"
         }
     }
     
@@ -201,6 +248,14 @@ extension CodeGenerationComponent {
             "text_area_clear_config.json"
         case .chip:
             "chip_config.json"
+        case .chipGroupDense:
+            "chip_group_dense_config.json"
+        case .chipGroupWide:
+            "chip_group_wide_config.json"
+        case .embeddedChipGroupDense:
+            "embedded_chip_group_dense_config.json"
+        case .embeddedChipGroupWide:
+            "embedded_chip_group_wide_config.json"
         case .embeddedChip:
             "embedded_chip_config.json"
         case .badge:
@@ -241,6 +296,14 @@ extension CodeGenerationComponent {
             "checkbox_config.json"
         case .checkboxGroup:
             "checkbox_group_config.json"
+        case .avatar:
+            "avatar_config.json"
+        case .avatarGroup:
+            "avatar_group_config.json"
+        case .circularProgressBar:
+            "circular_progress_bar_config.json"
+        case .progressBar:
+            "progress_bar_config.json"
         }
     }
     

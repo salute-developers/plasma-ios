@@ -26,6 +26,7 @@ public struct SegmentItemView: View {
     public var segmentView: some View {
         HStack {
             Spacer()
+
             SDDSSegmentItem(
                 title: viewModel.title,
                 subtitle: viewModel.subtitle,
@@ -34,7 +35,7 @@ public struct SegmentItemView: View {
                 isSelected: viewModel.isSelected,
                 counterEnabled: viewModel.isCounterVisible,
                 appearance: viewModel.appearance,
-                counterViewProvider: .default(text: viewModel.counterViewModel.text),
+                counterText: viewModel.counterViewModel.text,
                 action: {}
             )
             Spacer()

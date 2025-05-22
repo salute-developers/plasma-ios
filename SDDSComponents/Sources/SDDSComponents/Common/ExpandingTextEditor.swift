@@ -14,6 +14,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     let paddingInsets: EdgeInsets
     let showsVerticalScrollIndicator: Bool
     let dynamicHeight: Bool
+    let numberOfLines: Int
     let onChange: (_ newText: String) -> ()
 
     init(text: Binding<String>,
@@ -29,6 +30,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
          trailingContentPadding: CGFloat = 0,
          showsVerticalScrollIndicator: Bool = true,
          dynamicHeight: Bool = true,
+         numberOfLines: Int = 0,
          onChange: @escaping (_ newText: String) -> ()
     ) {
         _text = text
@@ -43,6 +45,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         self.paddingInsets = paddingInsets
         self.showsVerticalScrollIndicator = showsVerticalScrollIndicator
         self.dynamicHeight = dynamicHeight
+        self.numberOfLines = numberOfLines
         self.onChange = onChange
     }
 
@@ -58,6 +61,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainer.maximumNumberOfLines = 0
         textView.autocorrectionType = .no
+        textView.textContainer.maximumNumberOfLines = numberOfLines
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.onContentSizeChanged = {
             context.coordinator.contentSizeChanged(textView)

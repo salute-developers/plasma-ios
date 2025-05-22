@@ -3,7 +3,7 @@ import SwiftUI
 import Combine
 @_exported import SDDSThemeCore
 
-public struct SDDSButton: View {
+public struct SDDSButton<Counter: View>: View {
     public let title: String
     public let subtitle: String
     public let iconAttributes: ButtonIconAttributes?
@@ -13,7 +13,9 @@ public struct SDDSButton: View {
     public let buttonStyle: SDDSComponents.ButtonStyle
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
+    @available(*, deprecated, message: "Don't use it, public property will be removed")
     public let counterViewProvider: ViewProvider?
+    public let counter: Counter
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
     @Environment(\.buttonAppearance) private var environmentAppearance
@@ -24,6 +26,7 @@ public struct SDDSButton: View {
     
     public var action: () -> Void
     
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         title: String,
         subtitle: String,
@@ -36,6 +39,7 @@ public struct SDDSButton: View {
         layoutMode: ButtonLayoutMode = .wrapContent,
         accessibility: ButtonAccessibility = ButtonAccessibility(),
         counterViewProvider: ViewProvider? = nil,
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
         isSelected: Bool = false,
         action: @escaping () -> Void
     ) {
@@ -49,9 +53,47 @@ public struct SDDSButton: View {
         self._appearance = appearance
         self.layoutMode = layoutMode
         self.accessibility = accessibility
-        self.counterViewProvider = counterViewProvider
         self.isSelected = isSelected
         self.action = action
+        
+        if let counterViewProvider = counterViewProvider,
+           let counter = AnyViewWrapperView(view: counterViewProvider.view) as? Counter {
+            self.counter = counter
+        } else {
+            self.counter = counter()
+        }
+        self.counterViewProvider = nil
+    }
+    
+    public init(
+        title: String,
+        subtitle: String,
+        iconAttributes: ButtonIconAttributes? = nil,
+        isDisabled: Bool = false,
+        isLoading: Bool = false,
+        spinnerImage: Image? = Image("spinner", bundle: Bundle(for: Components.self)),
+        buttonStyle: SDDSComponents.ButtonStyle = .basic,
+        appearance: ButtonAppearance? = nil,
+        layoutMode: ButtonLayoutMode = .wrapContent,
+        accessibility: ButtonAccessibility = ButtonAccessibility(),
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
+        isSelected: Bool = false,
+        action: @escaping () -> Void
+    ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.iconAttributes = iconAttributes
+        self.isDisabled = isDisabled
+        self.isLoading = isLoading
+        self.spinnerImage = spinnerImage
+        self.buttonStyle = buttonStyle
+        self._appearance = appearance
+        self.layoutMode = layoutMode
+        self.accessibility = accessibility
+        self.isSelected = isSelected
+        self.action = action
+        self.counter = counter()
+        self.counterViewProvider = nil
     }
     
     public var body: some View {
@@ -173,16 +215,6 @@ public struct SDDSButton: View {
                 image: spinnerImage,
                 foregroundColor: currentColor(for: appearance.spinnerColor)
             )
-        } else {
-            EmptyView()
-        }
-    }
-    
-    @ViewBuilder
-    private var counter: some View {
-        if let counter = counterViewProvider?.view {
-            counter
-                .padding(.leading, appearance.size.iconHorizontalGap)
         } else {
             EmptyView()
         }

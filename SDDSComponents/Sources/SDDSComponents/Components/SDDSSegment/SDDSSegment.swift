@@ -2,7 +2,7 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public struct SDDSSegment: View {
-    public let items: [SDDSSegmentItemData]
+    public let items: [SDDSSegmentItemData<AnyView>]
     private let _appearance: SegmentAppearance?
     public let layoutMode: SegmentLayoutMode
     public let layoutOrientation: SegmentLayoutOrientation
@@ -20,7 +20,7 @@ public struct SDDSSegment: View {
     @State var isHovered: Bool = false
     
     public init(
-        items: [SDDSSegmentItemData],
+        items: [SDDSSegmentItemData<AnyView>],
         appearance: SegmentAppearance? = nil,
         layoutMode: SegmentLayoutMode = .flexible,
         layoutOrientation: SegmentLayoutOrientation,
@@ -66,7 +66,9 @@ public struct SDDSSegment: View {
                     strech: stretch,
                     counterEnabled: segmentData.counterEnabled,
                     appearance: appearance.segmentItemAppearance,
-                    counterViewProvider: segmentData.counterViewProvider,
+                    counterText: segmentData.counterText,
+                    counter: { segmentData.counter },
+                    counterWidthCalculator: segmentData.counterWidthCalculator,
                     action: {
                         selectedItemId = segmentData.id
                     }
@@ -90,7 +92,9 @@ public struct SDDSSegment: View {
                     strech: false,
                     counterEnabled: segmentData.counterEnabled,
                     appearance: appearance.segmentItemAppearance,
-                    counterViewProvider: segmentData.counterViewProvider
+                    counterText: segmentData.counterText,
+                    counter: { segmentData.counter },
+                    counterWidthCalculator: segmentData.counterWidthCalculator
                 )
                 .highPriorityGesture(
                     TapGesture()

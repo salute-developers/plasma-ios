@@ -101,6 +101,17 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AvatarGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AvatarGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AvatarGroup.all
+        }
+    }
+    
     var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -120,6 +131,50 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ChipGroup.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ChipGroup.all
+        }
+    }
+    
+    var chipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ChipGroupDense.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ChipGroupDense.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ChipGroupDense.all
+        }
+    }
+    
+    var chipGroupWideVariations: [Variation<ChipGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ChipGroupWide.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ChipGroupWide.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ChipGroupWide.all
+        }
+    }
+    
+    var embeddedChipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.EmbeddedChipGroupDense.all
+        case .stylesSalute:
+            return StylesSaluteTheme.EmbeddedChipGroupDense.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.EmbeddedChipGroupDense.all
+        }
+    }
+    
+    var embeddedChipGroupWideVariations: [Variation<ChipGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.EmbeddedChipGroupWide.all
+        case .stylesSalute:
+            return StylesSaluteTheme.EmbeddedChipGroupWide.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.EmbeddedChipGroupWide.all
         }
     }
     
@@ -351,6 +406,17 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.BottomSheet.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BottomSheet.all
+        }
+    }
+    
+    var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CircularProgressBar.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CircularProgressBar.all
         }
     }
 }

@@ -20,7 +20,32 @@ struct AvatarView: View {
                         placeholderImage: viewModel.placeholderImage,
                         status: viewModel.status,
                         appearance: viewModel.appearance,
-                        accessibility: viewModel.accessibility
+                        accessibility: viewModel.accessibility,
+                        extra: .init(
+                            placement: viewModel.extraPlacement,
+                            content: {
+                                if let badgeAppearance = viewModel.appearance.badgeAppearance, viewModel.isBadgeEnabled {
+                                    SDDSBadge(
+                                        label: viewModel.badgeViewModel.label,
+                                        image: image,
+                                        alignment: viewModel.badgeViewModel.alignment,
+                                        style: .basic,
+                                        appearance: badgeAppearance
+                                    )
+                                } else if viewModel.isCounterEnabled {
+                                    SDDSCounter(
+                                        text: viewModel.counterViewModel.text,
+                                        appearance: viewModel.appearance.counterAppearance,
+                                        isAnimating: false,
+                                        isHighlighted: false,
+                                        isHovered: false,
+                                        isSelected: false
+                                    )
+                                } else {
+                                    EmptyView()
+                                }
+                            }
+                        )
                     )
                     Spacer()
                 }
@@ -75,12 +100,55 @@ struct AvatarView: View {
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
                 }
+                
+                HStack {
+                    Text("Extra Placement")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        ForEach(AvatarExtraPlacement.allCases, id: \.self) { extraPlacement in
+                            Button(extraPlacement.rawValue.capitalized) {
+                                viewModel.extraPlacement = extraPlacement
+                            }
+                        }
+                    } label: {
+                        Text(viewModel.extraPlacement.rawValue)
+                    }
+                }
+            }
+            
+            if viewModel.extraPlacement != .none {
+                if viewModel.appearance.badgeAppearance != nil {
+                    Section {
+                        HStack {
+                            Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
+                        }
+                        
+                        if viewModel.isBadgeEnabled {
+                            BadgeView(viewModel: viewModel.badgeViewModel)
+                        }
+                    }
+                }
+                
+                Section {
+                    HStack {
+                        Toggle("Counter", isOn: $viewModel.isCounterEnabled)
+                    }
+                    
+                    if viewModel.isCounterEnabled {
+                        CounterView(viewModel: viewModel.counterViewModel)
+                    }
+                }
             }
         }
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(viewModel: viewModel)
         }
         .navigationTitle("SDDSAvatar")
+    }
+    
+    private var image: Image? {
+        viewModel.badgeViewModel.iconVisible ? Image("buttonIcon") : nil
     }
 }
 

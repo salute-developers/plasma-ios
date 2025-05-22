@@ -19,6 +19,7 @@ public struct SDDSAvatarData {
     public let image: AvatarImageSource?
     public let placeholderImage: AvatarImageSource?
     public let status: AvatarStatus
+    public let extra: AvatarExtra<AnyView>
     public let appearance: AvatarAppearance
     public let accessibility: AvatarAccessibility
 
@@ -30,21 +31,24 @@ public struct SDDSAvatarData {
         - image: Изображение аватара, передается как `AvatarImageSource`.
         - placeholderImage: Изображение-заглушка, отображаемое при отсутствии основного изображения.
         - status: Статус аватара (`hidden`, `online`, `offline`).
+        - extraContent: Extra контент. (`Badge`, `Counter`).
         - appearance: Параметры внешнего вида аватара.
         - accessibility: Параметры доступности для аватара.
      */
     public init(
-        text: String,
+        text: String = "",
         image: AvatarImageSource? = nil,
         placeholderImage: AvatarImageSource? = nil,
         status: AvatarStatus = .hidden,
-        appearance: AvatarAppearance,
-        accessibility: AvatarAccessibility = AvatarAccessibility()
+        appearance: AvatarAppearance = AvatarAppearance(),
+        accessibility: AvatarAccessibility = AvatarAccessibility(),
+        extra: AvatarExtra<AnyView> = .init(placement: .none) { AnyView(EmptyView()) }
     ) {
         self.text = text
         self.image = image
         self.placeholderImage = placeholderImage
         self.status = status
+        self.extra = extra
         self.appearance = appearance
         self.accessibility = accessibility
     }

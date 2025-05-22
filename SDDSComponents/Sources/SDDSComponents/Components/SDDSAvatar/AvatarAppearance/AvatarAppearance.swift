@@ -22,6 +22,9 @@ public struct AvatarAppearance: Hashable {
     public var onlineStatusColor: ColorToken
     public var offlineStatusColor: ColorToken
     public var textTypography: TypographyConfiguration
+    public var counterAppearance: CounterAppearance
+    public var badgeAppearance: BadgeAppearance?
+    public var indicatorAppearance: IndicatorAppearance
     
     public init(
         size: AvatarSizeConfiguration = ZeroAvatarSize(),
@@ -30,7 +33,10 @@ public struct AvatarAppearance: Hashable {
         backgroundOpacity: CGFloat = 0,
         onlineStatusColor: ColorToken = .clearColor,
         offlineStatusColor: ColorToken = .clearColor,
-        textTypography: TypographyConfiguration = .default
+        textTypography: TypographyConfiguration = .default,
+        counterAppearance: CounterAppearance = .defaultValue,
+        badgeAppearance: BadgeAppearance? = nil,
+        indicatorAppearance: IndicatorAppearance = .defaultValue
     ) {
         self.size = size
         self.textFillStyle = textFillStyle
@@ -39,6 +45,9 @@ public struct AvatarAppearance: Hashable {
         self.onlineStatusColor = onlineStatusColor
         self.offlineStatusColor = offlineStatusColor
         self.textTypography = textTypography
+        self.counterAppearance = counterAppearance
+        self.badgeAppearance = badgeAppearance
+        self.indicatorAppearance = indicatorAppearance
     }
     
     public static func == (lhs: AvatarAppearance, rhs: AvatarAppearance) -> Bool {

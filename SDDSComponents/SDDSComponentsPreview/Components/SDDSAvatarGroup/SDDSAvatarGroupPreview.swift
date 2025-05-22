@@ -10,7 +10,8 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
         SDDSAvatarGroup(
             data: exampleAvatars,
             lastAvatar: lastAvatarData,
-            size: defaultSize
+            size: defaultSize,
+            appearance: AvatarGroup.s.appearance
         )
         .previewLayout(.sizeThatFits)
         .padding()
@@ -22,8 +23,8 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 text: "JD",
                 image: nil,
                 placeholderImage: nil,
-                status: .online,
-                appearance: Avatar.l.default.appearance,
+                status: .offline,
+                appearance: Avatar.l.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -31,7 +32,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: Avatar.l.default.appearance,
+                appearance: Avatar.l.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
@@ -39,7 +40,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
                 image: .image(Image(systemName: "person.fill")),
                 placeholderImage: nil,
                 status: .offline,
-                appearance: Avatar.l.default.appearance,
+                appearance: Avatar.l.appearance,
                 accessibility: defaultAccessibility
             )
         ]
@@ -51,7 +52,7 @@ struct SDDSAvatarGroupPreview: PreviewProvider {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.l.default.appearance,
+            appearance: Avatar.l.appearance,
             accessibility: defaultAccessibility
         )
     }

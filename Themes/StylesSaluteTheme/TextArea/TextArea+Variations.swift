@@ -828,6 +828,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
     }
 }
 
+
 public extension ComponentAppearanceVariation<TextArea, TextAreaAppearance> {
     var `default`: AppearanceVariation<TextAreaAppearance> {
         return .init(
@@ -889,5 +890,4 @@ private extension TextAreaAppearance {
         appearance.captionColorFocused = ColorToken.textDefaultSecondary
         return appearance
     }
-    
 }

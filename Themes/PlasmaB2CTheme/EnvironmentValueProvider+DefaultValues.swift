@@ -4,7 +4,8 @@ import SwiftUI
 
 extension EnvironmentValueProvider {
     func setDefaultValues() {
-        self.set(value: Avatar.m.default.appearance, forKey: AvatarAppearance.self)
+        self.set(value: Avatar.m.appearance, forKey: AvatarAppearance.self)
+        self.set(value: AvatarGroup.s.appearance, forKey: AvatarGroupAppearance.self)
         self.set(value: Counter.m.default.appearance, forKey: CounterAppearance.self)
         self.set(value: Badge.m.default.appearance, forKey: BadgeAppearance.self)
         self.set(value: BasicButton.m.default.appearance, forKey: ButtonAppearance.self)
@@ -23,5 +24,6 @@ extension EnvironmentValueProvider {
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
         self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
         self.set(value: Card.m.appearance, forKey: CardAppearance.self)
+        self.set(value: BottomSheet.default.appearance, forKey: BottomSheetAppearance.self)
     }
 }

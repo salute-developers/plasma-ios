@@ -4,8 +4,14 @@ on:
   push:
     branches:
       - main
-      - develop
   workflow_dispatch:
+    inputs:
+      lane:
+        description: 'Choose the Fastlane lane to run'
+        required: true
+        default: 'build_and_upload'
+  repository_dispatch:
+    types: [publish-demo-app]
 
 jobs:
   build:
@@ -65,9 +71,23 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane
 
-      - name: Run Fastlane build and upload
+      - name: Validate lane input
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          LANE="${{ github.event.inputs.lane || 'build_and_upload' }}"
+          if [[ "$LANE" != "build_and_upload" && "$LANE" != "update_build_version_before_release" ]]; then
+            echo "Invalid lane specified. Please choose either 'build_and_upload' or 'update_build_version_before_release'."
+            exit 1
+          fi
+
+      - name: Run Fastlane
         env:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-        run: fastlane build_and_upload
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }}
+          else
+            fastlane build_and_upload
+          fi

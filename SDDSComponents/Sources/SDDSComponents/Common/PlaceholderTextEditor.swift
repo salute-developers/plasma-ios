@@ -16,6 +16,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     let trailingContentPadding: CGFloat
     let dynamicHeight: Bool
     let textColor: Color
+    let numberOfLines: Int
     let colorScheme: ColorScheme
     let onChange: (_ newText: String) -> ()
 
@@ -37,6 +38,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 paddingInsets: .init(top: 0, leading: 0, bottom: 0, trailing: trailingContentPadding),
                 showsVerticalScrollIndicator: showsVerticalScrollIndicator,
                 dynamicHeight: dynamicHeight,
+                numberOfLines: numberOfLines,
                 onChange: onChange
             )
             .frame(maxWidth: .infinity)

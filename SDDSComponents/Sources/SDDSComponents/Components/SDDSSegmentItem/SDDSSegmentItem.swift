@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public struct SDDSSegmentItem: View {
+public struct SDDSSegmentItem<Counter: View>: View {
     public let id: UUID
     public let title: String
     public let subtitle: String
@@ -12,12 +12,16 @@ public struct SDDSSegmentItem: View {
     public let counterEnabled: Bool
     private let _appearance: SegmentItemAppearance?
     public let accessibility: SegmentItemAccessibility
+    @available(*, deprecated, message: "Don't use it, public property will be removed")
     public let counterViewProvider: CounterViewProvider?
+    public let counterText: String
+    public let counter: Counter
+    public let counterWidthCalculator: CounterWidthCalculator?
     public var action: () -> Void
     
     @Environment(\.segmentItemAppearance) private var environmentAppearance
     
-    public init(item: SDDSSegmentItemData) {
+    public init(item: SDDSSegmentItemData<Counter>) {
         self.id = item.id
         self.title = item.title
         self.subtitle = item.subtitle
@@ -29,9 +33,13 @@ public struct SDDSSegmentItem: View {
         self._appearance = item.appearance
         self.accessibility = item.accessibility
         self.counterViewProvider = item.counterViewProvider
+        self.counterText = item.counterText
+        self.counterWidthCalculator = item.counterWidthCalculator
+        self.counter = item.counter
         self.action = item.action
     }
     
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         id: UUID = UUID(),
         title: String,
@@ -44,7 +52,7 @@ public struct SDDSSegmentItem: View {
         appearance: SegmentItemAppearance? = nil,
         accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
         counterViewProvider: CounterViewProvider? = nil,
-        counterText: String = "",
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
         action: @escaping () -> Void = {}
     ) {
         self.id = id
@@ -59,6 +67,60 @@ public struct SDDSSegmentItem: View {
         self.accessibility = accessibility
         self.counterViewProvider = counterViewProvider
         self.action = action
+        
+        if let counterViewProvider = counterViewProvider {
+            switch counterViewProvider {
+            case .default(let text):
+                self.counterText = text
+                self.counter = counter()
+                self.counterWidthCalculator = nil
+            case .custom(let viewProvider, let widthCalculator):
+                self.counterText = ""
+                if let counter = AnyViewWrapperView(view: viewProvider.view) as? Counter {
+                    self.counter = counter
+                } else {
+                    self.counter = counter()
+                }
+                self.counterWidthCalculator = widthCalculator
+            }
+        } else {
+            self.counterText = ""
+            self.counter = counter()
+            self.counterWidthCalculator = nil
+        }
+    }
+    
+    public init(
+        id: UUID = UUID(),
+        title: String,
+        subtitle: String,
+        iconAttributes: ButtonIconAttributes?,
+        isDisabled: Bool = false,
+        isSelected: Bool,
+        strech: Bool = false,
+        counterEnabled: Bool = false,
+        appearance: SegmentItemAppearance? = nil,
+        accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
+        counterText: String = "",
+        @ViewBuilder counter: () -> Counter = { EmptyView() },
+        counterWidthCalculator: CounterWidthCalculator? = nil,
+        action: @escaping () -> Void = {}
+    ) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.iconAttributes = iconAttributes
+        self.isDisabled = isDisabled
+        self.isSelected = isSelected
+        self.strech = strech
+        self.counterEnabled = counterEnabled
+        self._appearance = appearance
+        self.accessibility = accessibility
+        self.counterViewProvider = nil
+        self.counterText = counterText
+        self.counter = counter()
+        self.counterWidthCalculator = counterWidthCalculator
+        self.action = action
     }
     
     public var body: some View {
@@ -72,7 +134,7 @@ public struct SDDSSegmentItem: View {
             buttonStyle: .basic,
             appearance: buttonAppearance,
             layoutMode: strech ? .fixedWidth(.packed) : .wrapContent,
-            counterViewProvider: counterView,
+            counter: { counterView },
             isSelected: isSelected,
             action: action
         )
@@ -114,24 +176,24 @@ extension SDDSSegmentItem {
         !subtitle.isEmpty
     }
     
-    private var counterView: ViewProvider? {
-        guard let counterViewProvider = counterViewProvider, counterEnabled else {
-            return nil
-        }
-        switch counterViewProvider {
-        case .default(let text):
-            return ViewProvider(
+    @ViewBuilder
+    private var counterView: some View {
+        if counterEnabled {
+            if !counterText.isEmpty {
                 SDDSCounter(
-                    text: text,
+                    text: counterText,
                     appearance: appearance.counterAppearance,
                     isAnimating: false,
                     isHighlighted: false,
                     isHovered: false,
                     isSelected: isSelected
                 )
-            )
-        case .custom(let viewProvider, _):
-            return viewProvider
+                .padding(.leading, appearance.size.iconHorizontalGap)
+            } else {
+                counter
+            }
+        } else {
+            EmptyView()
         }
     }
     

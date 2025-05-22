@@ -46,6 +46,8 @@
 		69A4B80A2D883B3100E9E204 /* SelectionControlAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */; };
 		69A4B80B2D883B3100E9E204 /* SelectionControlSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */; };
 		69A4B80C2D883B3100E9E204 /* SelectionControlState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4B8092D883B3100E9E204 /* SelectionControlState.swift */; };
+		69B15FA82DAEC6AD001E9115 /* AvatarGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */; };
+		69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */; };
 		69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */; };
 		69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */; };
 		69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */; };
@@ -71,6 +73,7 @@
 		811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */; };
 		811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1702C5783B6000DD354 /* HierarchicalList.swift */; };
 		811DE1732C57868F000DD354 /* SDDSCheckboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */; };
+		812418122DD341190013FDD2 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812418112DD341170013FDD2 /* Arc.swift */; };
 		812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */; };
 		812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7312D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift */; };
 		812DB73C2D57B43900D3F4A3 /* TextAreaLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7322D57B43900D3F4A3 /* TextAreaLayout.swift */; };
@@ -122,6 +125,9 @@
 		816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */; };
 		816C62A22CB80EC400352891 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
 		816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */; };
+		816F62D12DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62CD2DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift */; };
+		816F62D22DCBA8F000EC9121 /* CircularProgressBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62CC2DCBA8F000EC9121 /* CircularProgressBarAppearance.swift */; };
+		816F62D32DCBA8F000EC9121 /* SDDSCircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */; };
 		817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339D42D033BF50092608A /* ProgressBarSizeConfiguration.swift */; };
 		817339D72D033C0A0092608A /* ProgressBarAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339D62D033C0A0092608A /* ProgressBarAccessibility.swift */; };
 		817339DB2D033D3A0092608A /* CheckboxData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817339DA2D033D3A0092608A /* CheckboxData.swift */; };
@@ -179,6 +185,8 @@
 		81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D80F8D2D677C560043F174 /* EmbeddedChip.swift */; };
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
+		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
+		81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
 		81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E32CECD4B1000156D9 /* IconButton.swift */; };
 		81F7531C2CF46755000156D9 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7531B2CF46755000156D9 /* ButtonStyle.swift */; };
@@ -286,6 +294,7 @@
 		69A4B8072D883B3100E9E204 /* SelectionControlAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlAccessibility.swift; sourceTree = "<group>"; };
 		69A4B8082D883B3100E9E204 /* SelectionControlSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlSizeConfiguration.swift; sourceTree = "<group>"; };
 		69A4B8092D883B3100E9E204 /* SelectionControlState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlState.swift; sourceTree = "<group>"; };
+		69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupAppearance.swift; sourceTree = "<group>"; };
 		69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentLayoutMode.swift; sourceTree = "<group>"; };
 		69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculator.swift; sourceTree = "<group>"; };
 		69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentWidthCalculatorImpl.swift; sourceTree = "<group>"; };
@@ -314,6 +323,7 @@
 		811DE1702C5783B6000DD354 /* HierarchicalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalList.swift; sourceTree = "<group>"; };
 		811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckboxGroup.swift; sourceTree = "<group>"; };
 		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
+		812418112DD341170013FDD2 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClear.swift; sourceTree = "<group>"; };
 		812DB7312D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaRequiredPlacement.swift; sourceTree = "<group>"; };
 		812DB7322D57B43900D3F4A3 /* TextAreaLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaLayout.swift; sourceTree = "<group>"; };
@@ -357,6 +367,9 @@
 		816AA9A62C97280400C3347C /* PlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextField.swift; sourceTree = "<group>"; };
 		816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDebugConfiguration.swift; sourceTree = "<group>"; };
 		816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
+		816F62CC2DCBA8F000EC9121 /* CircularProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarAppearance.swift; sourceTree = "<group>"; };
+		816F62CD2DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarSizeConfiguration.swift; sourceTree = "<group>"; };
+		816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCircularProgressBar.swift; sourceTree = "<group>"; };
 		817339D42D033BF50092608A /* ProgressBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		817339D62D033C0A0092608A /* ProgressBarAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAccessibility.swift; sourceTree = "<group>"; };
 		817339DA2D033D3A0092608A /* CheckboxData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxData.swift; sourceTree = "<group>"; };
@@ -447,6 +460,7 @@
 		81D80F8D2D677C560043F174 /* EmbeddedChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChip.swift; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
+		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
 		81F752E12CECD40A000156D9 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		81F752E32CECD4B1000156D9 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		81F752FE2CEFA3AF000156D9 /* String+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Variations.swift"; sourceTree = "<group>"; };
@@ -742,6 +756,14 @@
 			path = HierarchicalList;
 			sourceTree = "<group>";
 		};
+		812418102DD341130013FDD2 /* Arc */ = {
+			isa = PBXGroup;
+			children = (
+				812418112DD341170013FDD2 /* Arc.swift */,
+			);
+			path = Arc;
+			sourceTree = "<group>";
+		};
 		812DB7302D57B43900D3F4A3 /* TextAreaAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,6 +901,24 @@
 				816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		816F62CE2DCBA8F000EC9121 /* CircularProgressBarAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				816F62CC2DCBA8F000EC9121 /* CircularProgressBarAppearance.swift */,
+				816F62CD2DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift */,
+			);
+			path = CircularProgressBarAppearance;
+			sourceTree = "<group>";
+		};
+		816F62D02DCBA8F000EC9121 /* SDDSCircularProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				816F62CE2DCBA8F000EC9121 /* CircularProgressBarAppearance */,
+				816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */,
+			);
+			path = SDDSCircularProgressBar;
 			sourceTree = "<group>";
 		};
 		817339D32D033BD20092608A /* ProgressBarAppearance */ = {
@@ -1059,6 +1099,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				816F62D02DCBA8F000EC9121 /* SDDSCircularProgressBar */,
 				81578DB52D89AD9100BC7038 /* SDDSBottomSheet */,
 				81F89DE62D808A7B00A41C89 /* SDDSCard */,
 				6925101B2D7632CA00545542 /* SDDSBadge */,
@@ -1133,6 +1174,7 @@
 		818C03C32C45128E002C6D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				812418102DD341130013FDD2 /* Arc */,
 				81E968122CBD194300256968 /* FocusableTextField */,
 				81CF121E2C6E740A0074174F /* RoundedCornersMask */,
 				811DE16F2C578331000DD354 /* HierarchicalList */,
@@ -1265,6 +1307,7 @@
 		81CBC08D2C821A4400FBDAC8 /* SDDSAvatar */ = {
 			isa = PBXGroup;
 			children = (
+				81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */,
 				6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */,
 				81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */,
 				81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */,
@@ -1285,6 +1328,7 @@
 		81CBC09B2C82326600FBDAC8 /* SDDSAvatarGroup */ = {
 			isa = PBXGroup;
 			children = (
+				69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */,
 				81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */,
 				81CBC0A42C8237E800FBDAC8 /* SDDSAvatarGroup.md */,
 			);
@@ -1660,6 +1704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */,
 				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
@@ -1674,6 +1719,7 @@
 				814E30392C99AFB3004601F7 /* SDDSAvatarGroup.swift in Sources */,
 				6987445F2D1C367700559ABA /* SDDSCounter.swift in Sources */,
 				698744612D1C367700559ABA /* CounterSize.swift in Sources */,
+				69B15FA82DAEC6AD001E9115 /* AvatarGroupAppearance.swift in Sources */,
 				698744642D1C367700559ABA /* CounterAppearance.swift in Sources */,
 				814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */,
 				817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */,
@@ -1718,6 +1764,7 @@
 				812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */,
 				817339E62D033E650092608A /* RadioboxData.swift in Sources */,
 				694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */,
+				81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */,
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
@@ -1730,6 +1777,9 @@
 				812DB73E2D57B43900D3F4A3 /* TextAreaValue.swift in Sources */,
 				6919BD9D2D4A6CF800A77774 /* SegmentItemSize.swift in Sources */,
 				81FD6D4E2D6E2609002A6E51 /* IndicatorAppearance.swift in Sources */,
+				816F62D12DCBA8F000EC9121 /* CircularProgressBarSizeConfiguration.swift in Sources */,
+				816F62D22DCBA8F000EC9121 /* CircularProgressBarAppearance.swift in Sources */,
+				816F62D32DCBA8F000EC9121 /* SDDSCircularProgressBar.swift in Sources */,
 				81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */,
 				812DB75F2D57B49F00D3F4A3 /* ChipGroupGap.swift in Sources */,
 				6919BD9E2D4A6CF800A77774 /* SegmentItemAccessibility.swift in Sources */,
@@ -1754,6 +1804,7 @@
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,
 				696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
+				81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */,
 				811DE1562C50179F000DD354 /* ChipAppearance.swift in Sources */,
 				81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */,
 				695F438E2D412A9D00FF936B /* SegmentAppearance.swift in Sources */,
@@ -1772,6 +1823,7 @@
 				692510242D7632CA00545542 /* BadgeSizeConfiguration.swift in Sources */,
 				692510252D7632CA00545542 /* BadgeAppearance.swift in Sources */,
 				692510262D7632CA00545542 /* IconBadge.swift in Sources */,
+				812418122DD341190013FDD2 /* Arc.swift in Sources */,
 				8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */,
 				81F753242CF467E5000156D9 /* ButtonContentAlignment.swift in Sources */,
 				6995FA932D6F5C11003D5DBB /* SDDSAvatarModifiers.swift in Sources */,

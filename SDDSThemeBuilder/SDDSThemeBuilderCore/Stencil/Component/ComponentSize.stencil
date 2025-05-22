@@ -18,7 +18,7 @@ struct {{ component }}Size {
 struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
     {%- for property, value in variation %}
     {%- if property | generate_function %}
-    {{ value }}
+    func {{ property | remove_func_keyword }}{{ value }}
     {%- else %}
     var {{ property }} = {{ value }}
     {%- endif %}
@@ -32,7 +32,7 @@ struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
 struct {{ component }}AnySize: {{ sizeConfiguration }} {
     {%- for property, value in zeroSize %}
     {%- if property | generate_function %}
-    {{ value }}
+    func {{ property | remove_func_keyword }}{{ value }}
     {%- else %}
     var {{ property }} = {{ value }}
     {%- endif %}

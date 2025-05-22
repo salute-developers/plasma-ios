@@ -9,7 +9,11 @@ public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {
     var {{ variationName }}: {{ variation.next }} {
         var size =  {{ component }}AnySize(size: appearance.size)
         {%- for property, value in variation.size %}
+            {%- if property | generate_function %}
+        size.{{ property | remove_func_keyword }}{{ value | insert_arguments }}
+                {%- else %}
         size.{{ property }} = {{ value }}
+            {%- endif %}
         {%- endfor %}
 
         var appearance = appearance

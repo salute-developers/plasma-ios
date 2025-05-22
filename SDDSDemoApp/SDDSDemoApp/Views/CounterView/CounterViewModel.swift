@@ -6,7 +6,7 @@ import SDDSComponents
 final class CounterViewModel: ComponentViewModel<CounterVariationProvider> {
     @Published var text: String = "1"
     
-    init() {
-        super.init(variationProvider: CounterVariationProvider())
+    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
+        super.init(variationProvider: CounterVariationProvider(), componentViewLayoutMode: componentViewLayoutMode)
     }
 }

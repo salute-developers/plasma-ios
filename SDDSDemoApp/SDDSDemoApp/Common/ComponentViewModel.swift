@@ -3,6 +3,7 @@ import Combine
 import SDDSComponents
 
 class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
+    
     @Published var variation: Variation<Provider.Appearance>? {
         didSet {
             if let style = variation?.styles.first {
@@ -33,12 +34,14 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     
     weak var delegate: ViewModelDelegate?
     let variationProvider: Provider
+    let componentViewLayoutMode: ComponentViewLayoutMode
     var cancellables: Set<AnyCancellable> = []
 
-    init(variationProvider: Provider) {
+    init(variationProvider: Provider, componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
         let variations = variationProvider.variations
         let variation = variations.first
         
+        self.componentViewLayoutMode = componentViewLayoutMode
         self.variation = variation
         self.style = variation?.styles.first
         self.appearance = variationProvider.defaultValue

@@ -12,8 +12,12 @@ enum SDDSButtonType: String, CaseIterable {
 }
 
 struct ButtonView: View {
-    @ObservedObject private var viewModel: ButtonViewModel = ButtonViewModel()
+    @ObservedObject private var viewModel: ButtonViewModel
     @Environment(\.colorScheme) private var colorScheme
+    
+    init(viewModel: ButtonViewModel = ButtonViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List {

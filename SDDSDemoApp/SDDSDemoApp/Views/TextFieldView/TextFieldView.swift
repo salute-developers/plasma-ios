@@ -22,8 +22,26 @@ struct TextFieldView: View {
                     readOnly: viewModel.readOnly,
                     appearance: viewModel.appearance,
                     layout: viewModel.layout,
-                    iconViewProvider: iconView,
-                    iconActionViewProvider: iconActionView
+                    iconContent: Action {
+                        if viewModel.iconViewEnabled {
+                            Image.image("textFieldIcon")
+                                .renderingMode(.template)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } else {
+                            EmptyView()
+                        }
+                    },
+                    actionContent: Action {
+                        if viewModel.iconActionViewEnabled {
+                            Image.image("textFieldIconAction")
+                                .renderingMode(.template)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } else {
+                            EmptyView()
+                        }
+                    }
                 )
             }
 
@@ -88,33 +106,6 @@ struct TextFieldView: View {
         }
         .navigationTitle("SDDSTextField")
     }
-    
-    private var iconActionView: ViewProvider? {
-        if viewModel.iconActionViewEnabled {
-            ViewProvider(
-                Image.image("textFieldIconAction")
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            )
-        } else {
-            nil
-        }
-    }
-    
-    private var iconView: ViewProvider? {
-        if viewModel.iconViewEnabled {
-            ViewProvider(
-                Image.image("textFieldIcon")
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            )
-        } else {
-            nil
-        }
-    }
-    
 }
 
 #Preview {
