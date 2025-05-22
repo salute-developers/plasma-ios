@@ -141,6 +141,9 @@
 		8140A4AF2D5A07A0002CF32B /* BasicButtonTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140A4A32D5A07A0002CF32B /* BasicButtonTypography.swift */; };
 		8140A4B02D5A07A0002CF32B /* BasicButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140A4A42D5A07A0002CF32B /* BasicButton+Variations.swift */; };
 		8149BF402D6351120011C402 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8149BF3F2D6351120011C402 /* SDDSThemeCore */; };
+		815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367D2DE5B7120005273B /* OverlayAppearance.swift */; };
+		815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367C2DE5B7120005273B /* OvarlaySize.swift */; };
+		815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36812DE5B71F0005273B /* OverlayProps.swift */; };
 		815F42C82D47DE6C00F97E63 /* ComponentSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42C72D47DE6C00F97E63 /* ComponentSize.stencil */; };
 		815F42CC2D48B8E800F97E63 /* ComponentTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */; };
 		815F42CE2D48BAC100F97E63 /* Component+BaseVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */; };
@@ -601,6 +604,9 @@
 		8140A4A32D5A07A0002CF32B /* BasicButtonTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicButtonTypography.swift; sourceTree = "<group>"; };
 		8140A4A42D5A07A0002CF32B /* BasicButton+Variations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasicButton+Variations.swift"; sourceTree = "<group>"; };
 		814F71E92C58D4A0006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		815D367C2DE5B7120005273B /* OvarlaySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvarlaySize.swift; sourceTree = "<group>"; };
+		815D367D2DE5B7120005273B /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
+		815D36812DE5B71F0005273B /* OverlayProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayProps.swift; sourceTree = "<group>"; };
 		815F42C72D47DE6C00F97E63 /* ComponentSize.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ComponentSize.stencil; sourceTree = "<group>"; };
 		815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComponentTypography.stencil; sourceTree = "<group>"; };
 		815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+BaseVariations.stencil"; sourceTree = "<group>"; };
@@ -1193,6 +1199,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				815D36812DE5B71F0005273B /* OverlayProps.swift */,
 				693FEF362DE4696F00E14D0E /* DividerProps.swift */,
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
@@ -1222,6 +1229,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				815D367E2DE5B7120005273B /* Overlay */,
 				693FEF312DE465F300E14D0E /* Divider */,
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
@@ -1377,6 +1385,15 @@
 				8180A4B52C0F71A500009AF5 /* Views */,
 			);
 			path = SDDSThemeCore;
+			sourceTree = "<group>";
+		};
+		815D367E2DE5B7120005273B /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				815D367C2DE5B7120005273B /* OvarlaySize.swift */,
+				815D367D2DE5B7120005273B /* OverlayAppearance.swift */,
+			);
+			path = Overlay;
 			sourceTree = "<group>";
 		};
 		816E04A02C58DD3800EE7A7F /* Sources */ = {
@@ -2413,6 +2430,8 @@
 				692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */,
 				692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */,
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
+				815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */,
+				815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */,
 				812DB7012D55E54400D3F4A3 /* ComponentConfiguration.swift in Sources */,
 				812DB6F82D55E4A800D3F4A3 /* ColorKeyValue.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
@@ -2474,6 +2493,7 @@
 				81CB0FEA2C245052003B1064 /* EnsureAnyValueExistsNode.swift in Sources */,
 				81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */,
 				81F89E552D81A92000A41C89 /* CardProps.swift in Sources */,
+				815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */,
 				81CB0FE82C245052003B1064 /* EnsureFloatNonNegativeNode.swift in Sources */,
 				693FEF372DE4697900E14D0E /* DividerProps.swift in Sources */,
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,

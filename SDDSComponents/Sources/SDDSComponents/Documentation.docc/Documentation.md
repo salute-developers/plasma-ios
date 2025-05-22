@@ -51,3 +51,5 @@
 - ``SDDSButton``
 
 - ``SDDSDivider``
+
+- ``SDDSOverlay``
