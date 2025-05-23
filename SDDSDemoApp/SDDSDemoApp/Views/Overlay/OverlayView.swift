@@ -20,11 +20,17 @@ struct OverlayView: View {
                 VariationsView(viewModel: viewModel)
                 VStack {
                     HStack {
-                        Text("Blur radius")
+                        Toggle("Blur", isOn: $viewModel.hasBlur)
                     }
-                    Slider(value: $viewModel.appearance.blurRadius)
                     HStack {
                         Toggle("Is present", isOn: $viewModel.isPresent)
+                    }
+                    HStack {
+                        Picker("Background", selection: $viewModel.backgroundColor) {
+                            ForEach(OverlayBackgroundColors.allCases, id: \.self) { color in
+                                Text(color.rawValue)
+                            }
+                        }
                     }
                 }
             }
