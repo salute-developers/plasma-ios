@@ -40,6 +40,9 @@
 		6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */; };
 		6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */; };
 		6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */; };
+		693FE6A52DDF3F4B00E14D0E /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FE6A42DDF3F4200E14D0E /* OverlayAppearance.swift */; };
+		693FE6A72DDF3F5B00E14D0E /* OvarlaySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FE6A62DDF3F4E00E14D0E /* OvarlaySize.swift */; };
+		693FE6A92DDF423D00E14D0E /* OverlayProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FE6A82DDF3FDB00E14D0E /* OverlayProps.swift */; };
 		6941E1C52DC0EB3C0084EA76 /* FillStyleContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */; };
 		6962DE732DACFD33007666D5 /* AvatarGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6962DE722DACFD32007666D5 /* AvatarGroupProps.swift */; };
 		6962DE792DAD0046007666D5 /* AvatarGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6962DE782DAD003D007666D5 /* AvatarGroupAppearance.swift */; };
@@ -504,6 +507,9 @@
 		6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProps.swift; sourceTree = "<group>"; };
+		693FE6A42DDF3F4200E14D0E /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
+		693FE6A62DDF3F4E00E14D0E /* OvarlaySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvarlaySize.swift; sourceTree = "<group>"; };
+		693FE6A82DDF3FDB00E14D0E /* OverlayProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayProps.swift; sourceTree = "<group>"; };
 		6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyleContextBuilder.swift; sourceTree = "<group>"; };
 		6962DE722DACFD32007666D5 /* AvatarGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupProps.swift; sourceTree = "<group>"; };
 		6962DE782DAD003D007666D5 /* AvatarGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupAppearance.swift; sourceTree = "<group>"; };
@@ -1046,6 +1052,15 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
+		693FE6A32DDF3F2F00E14D0E /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				693FE6A42DDF3F4200E14D0E /* OverlayAppearance.swift */,
+				693FE6A62DDF3F4E00E14D0E /* OvarlaySize.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
 		6962DE752DAD0019007666D5 /* AvatarGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1193,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				693FE6A82DDF3FDB00E14D0E /* OverlayProps.swift */,
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
 				699E16592DC9EE000022D4FF /* ChipGroupProps.swift */,
@@ -1206,6 +1222,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				693FE6A32DDF3F2F00E14D0E /* Overlay */,
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
 				699E16562DC9EDE60022D4FF /* ChipGroup */,
@@ -2338,6 +2355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FE6A92DDF423D00E14D0E /* OverlayProps.swift in Sources */,
 				81E1EE572BE3A69200F86AE1 /* FontFamilyStyle.swift in Sources */,
 				810AFD3F2D96DD1F000B2A7A /* ComponentStyleKeyValue.swift in Sources */,
 				818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */,
@@ -2462,6 +2480,7 @@
 				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
+				693FE6A52DDF3F4B00E14D0E /* OverlayAppearance.swift in Sources */,
 				81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */,
 				812DB6E92D55E3FB00D3F4A3 /* ColorTokenContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
@@ -2497,6 +2516,7 @@
 				817539802BD0088400138866 /* Logger.swift in Sources */,
 				81E1EE362BE3A57300F86AE1 /* Mode.swift in Sources */,
 				81C3D7DD2DAE42B80090739E /* SwitchAppearance.swift in Sources */,
+				693FE6A72DDF3F5B00E14D0E /* OvarlaySize.swift in Sources */,
 				81C3D7DE2DAE42B80090739E /* SwitchSize.swift in Sources */,
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,

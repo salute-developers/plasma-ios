@@ -37,6 +37,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case avatarGroup = "AvatarGroup"
     case circularProgressBar = "CircularProgressBar"
     case progressBar = "ProgressBar"
+    case overlay = "Overlay"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -47,6 +48,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
         // .textFieldClear,
         // .textArea,
         // .textAreaClear,
+            .overlay,
             .badge,
             .badgeClear,
             .badgeTransparent,
@@ -128,6 +130,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .progressBar:
             GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .overlay:
+            GenerateComponentCommand<OverlayProps, OverlayAppearance, OverlaySize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -177,6 +181,8 @@ extension CodeGenerationComponent {
             "CircularProgressBarAppearance"
         case .progressBar:
             "ProgressBarAppearance"
+        case .overlay:
+             "OverlayAppearance"
         }
     }
     
@@ -227,6 +233,8 @@ extension CodeGenerationComponent {
             "CircularProgressBarSizeConfiguration"
         case .progressBar:
             "ProgressBarSizeConfiguration"
+        case .overlay:
+             "OverlaySizeConfiguration"
         }
     }
     
@@ -304,6 +312,8 @@ extension CodeGenerationComponent {
             "circular_progress_bar_config.json"
         case .progressBar:
             "progress_bar_config.json"
+        case .overlay:
+             "overlay_config.json"
         }
     }
     
