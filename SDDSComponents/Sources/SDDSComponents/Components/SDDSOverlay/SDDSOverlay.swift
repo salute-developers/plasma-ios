@@ -1,5 +1,24 @@
 import SwiftUI
 
+/**
+ `SDDSOverlay` представляет собой компонент для отображения оверлея с настраиваемым содержимым и внешним видом, который появляется поверх основного интерфейса при условии активации.
+
+ - Parameters:
+    - isPresented: Привязка к булевому значению, определяющему, отображается ли оверлей. По умолчанию `false`.
+    - appearance: Опциональные параметры внешнего вида оверлея (`OverlayAppearance`). Если не переданы, используются значения из окружения.
+    - content: Замыкание, возвращающее содержимое оверлея, реализующее протокол `View`.
+
+ ## Окружение
+ - `overlayAppearance`: Стандартные настройки внешнего вида оверлея, используемые при отсутствии явного указания параметра `appearance`.
+
+ ## Пример использования
+```swift
+@State var isPresent: Bool = true
+ 
+MyView()
+    .overlay(isPresent: $isPresent, appearance: Overlay.default.appearance)
+```
+*/
 public struct SDDSOverlay<Content: View>: View {
     @Binding public var isPresented: Bool
     private let _appearance: OverlayAppearance?
