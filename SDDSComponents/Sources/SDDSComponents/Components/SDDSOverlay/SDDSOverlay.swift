@@ -21,7 +21,7 @@ public struct SDDSOverlay<Content: View>: View {
     public var body: some View {
         if isPresented {
             content()
-                .background(appearance.backgrtoundColor.color(for: colorScheme))
+                .background(appearance.backgroundColor.color(for: colorScheme))
                 .blur(radius: appearance.blurRadius)
                 .overlay {
                     Color.clear

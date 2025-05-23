@@ -25,7 +25,7 @@ struct SDDSOverlayPreview: PreviewProvider {
             .overlay(
                 isPresented: .constant(false),
                 appearance: OverlayAppearance(
-                    backgrtoundColor: ColorToken.surfaceDefaultAccent,
+                    backgroundColor: ColorToken.surfaceDefaultAccent,
                     blurRadius: 10
                 )
             )
@@ -36,7 +36,7 @@ struct SDDSOverlayPreview: PreviewProvider {
             .overlay(
                 isPresented: .constant(true),
                 appearance: OverlayAppearance(
-                    backgrtoundColor: ColorToken.clearColor,
+                    backgroundColor: ColorToken.clearColor,
                     blurRadius: 2
                 )
             )
@@ -47,11 +47,19 @@ struct SDDSOverlayPreview: PreviewProvider {
             .overlay(
                 isPresented: .constant(true),
                 appearance: OverlayAppearance(
-                    backgrtoundColor: ColorToken.textDefaultInfo,
+                    backgroundColor: ColorToken.textDefaultInfo,
                     blurRadius: 0
                 )
             )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("View with backgroundColor")
+        
+        basicButton
+            .overlay(
+                isPresented: .constant(true),
+                appearance: Overlay.default.appearance
+            )
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("View with basic appearance")
     }
 }

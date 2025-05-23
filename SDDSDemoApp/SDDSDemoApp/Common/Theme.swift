@@ -419,4 +419,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.CircularProgressBar.all
         }
     }
+    
+    var overlayVariations: [Variation<OverlayAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Overlay.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Overlay.all
+        }
+    }
 }
