@@ -16,6 +16,9 @@
 		690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FC2D3EBA4A00CED628 /* SegmentView.swift */; };
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
 		693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */; };
+		693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */; };
+		693FF15B2DE49A6700E14D0E /* DividerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */; };
+		693FF15D2DE49A7100E14D0E /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF15C2DE49A6C00E14D0E /* DividerView.swift */; };
 		694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */; };
 		69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */; };
 		697970CF2D63A3F5008306A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970CE2D63A3EC008306A8 /* CellView.swift */; };
@@ -148,6 +151,9 @@
 		690780FC2D3EBA4A00CED628 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewModel.swift; sourceTree = "<group>"; };
 		693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupVariationProvider.swift; sourceTree = "<group>"; };
+		693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewModel.swift; sourceTree = "<group>"; };
+		693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerVariationProvider.swift; sourceTree = "<group>"; };
+		693FF15C2DE49A6C00E14D0E /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupVariationProvider.swift; sourceTree = "<group>"; };
 		694C288A2D89BC9A00D7F341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupVariationProvider.swift; sourceTree = "<group>"; };
@@ -375,6 +381,16 @@
 			path = SegmentView;
 			sourceTree = "<group>";
 		};
+		693FF1572DE499FA00E14D0E /* DividerView */ = {
+			isa = PBXGroup;
+			children = (
+				693FF15C2DE49A6C00E14D0E /* DividerView.swift */,
+				693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */,
+				693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */,
+			);
+			path = DividerView;
+			sourceTree = "<group>";
+		};
 		697970CD2D63A3CC008306A8 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +442,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				693FF1572DE499FA00E14D0E /* DividerView */,
 				816F636D2DCBB21600EC9121 /* CircularProgressBarView */,
 				81578DD32D89FACF00BC7038 /* BottomSheetView */,
 				81F89E482D81A39B00A41C89 /* CardView */,
@@ -858,6 +875,7 @@
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */,
 				8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */,
+				693FF15B2DE49A6700E14D0E /* DividerVariationProvider.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
 				81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */,
@@ -878,6 +896,7 @@
 				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
 				690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */,
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
+				693FF15D2DE49A7100E14D0E /* DividerView.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
@@ -903,6 +922,7 @@
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
+				693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
 				816243542CB93EEB00506E1C /* ChipView.swift in Sources */,
