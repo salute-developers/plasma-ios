@@ -40,6 +40,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case divider = "Divider"
     case overlay = "Overlay"
     case popover = "Popover"
+    case tooltip = "Tooltip"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -80,8 +81,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .avatarGroup,
             .circularProgressBar,
             .progressBar,
-            .divider
-            .popover
+            .divider,
+            .popover,
+            .tooltip
         ]
     }
     
@@ -140,6 +142,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<OverlayProps, OverlayAppearance, OverlaySize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .popover:
             GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tooltip:
+            GenerateComponentCommand<TooltipProps, TooltipAppearance, TooltipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -195,6 +199,8 @@ extension CodeGenerationComponent {
              "OverlayAppearance"
         case .popover:
             "PopoverAppearance"
+        case .tooltip:
+            "TooltipAppearance"
         }
     }
     
@@ -251,6 +257,8 @@ extension CodeGenerationComponent {
              "OverlaySizeConfiguration"
         case .popover:
             "PopoverSizeConfiguration"
+        case .tooltip:
+            "TooltipSizeConfiguration"
         }
     }
     
@@ -334,6 +342,8 @@ extension CodeGenerationComponent {
             "overlay_config.json"
         case .popover:
             "popover_config.json"
+        case .tooltip:
+            "tooltip_config.json"
         }
     }
     
