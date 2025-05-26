@@ -49,3 +49,5 @@
 - ``SDDSSwitch``
 
 - ``SDDSButton``
+
+- ``SDDSDivider``

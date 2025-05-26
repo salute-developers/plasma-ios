@@ -419,4 +419,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.CircularProgressBar.all
         }
     }
+    
+    var dividerVariations: [Variation<DividerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Divider.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Divider.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Divider.all
+        }
+    }
 }

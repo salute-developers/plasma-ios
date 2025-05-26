@@ -24,5 +24,6 @@ extension EnvironmentValueProvider {
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
         self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
         self.set(value: BottomSheet.default.appearance, forKey: BottomSheetAppearance.self)
+        self.set(value: Divider.default.appearance, forKey: DividerAppearance.self)
     }
 }

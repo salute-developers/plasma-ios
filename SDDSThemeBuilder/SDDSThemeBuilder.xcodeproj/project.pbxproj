@@ -40,6 +40,9 @@
 		6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */; };
 		6935CEB92D6C8B8C00C8A186 /* CounterAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */; };
 		6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */; };
+		693FEF332DE4661300E14D0E /* DividerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF322DE4660700E14D0E /* DividerAppearance.swift */; };
+		693FEF352DE4663F00E14D0E /* DividerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF342DE4663700E14D0E /* DividerSize.swift */; };
+		693FEF372DE4697900E14D0E /* DividerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF362DE4696F00E14D0E /* DividerProps.swift */; };
 		6941E1C52DC0EB3C0084EA76 /* FillStyleContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */; };
 		6962DE732DACFD33007666D5 /* AvatarGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6962DE722DACFD32007666D5 /* AvatarGroupProps.swift */; };
 		6962DE792DAD0046007666D5 /* AvatarGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6962DE782DAD003D007666D5 /* AvatarGroupAppearance.swift */; };
@@ -504,6 +507,9 @@
 		6935CEB62D6C8B6D00C8A186 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };
 		6935CEB82D6C8B8600C8A186 /* CounterAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppearance.swift; sourceTree = "<group>"; };
 		6935CEBA2D6C8BC400C8A186 /* CounterProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProps.swift; sourceTree = "<group>"; };
+		693FEF322DE4660700E14D0E /* DividerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerAppearance.swift; sourceTree = "<group>"; };
+		693FEF342DE4663700E14D0E /* DividerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerSize.swift; sourceTree = "<group>"; };
+		693FEF362DE4696F00E14D0E /* DividerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerProps.swift; sourceTree = "<group>"; };
 		6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyleContextBuilder.swift; sourceTree = "<group>"; };
 		6962DE722DACFD32007666D5 /* AvatarGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupProps.swift; sourceTree = "<group>"; };
 		6962DE782DAD003D007666D5 /* AvatarGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupAppearance.swift; sourceTree = "<group>"; };
@@ -1046,6 +1052,15 @@
 			path = Counter;
 			sourceTree = "<group>";
 		};
+		693FEF312DE465F300E14D0E /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				693FEF342DE4663700E14D0E /* DividerSize.swift */,
+				693FEF322DE4660700E14D0E /* DividerAppearance.swift */,
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
 		6962DE752DAD0019007666D5 /* AvatarGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1193,7 @@
 		812DB7982D59D83B00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				693FEF362DE4696F00E14D0E /* DividerProps.swift */,
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
 				699E16592DC9EE000022D4FF /* ChipGroupProps.swift */,
@@ -1206,6 +1222,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				693FEF312DE465F300E14D0E /* Divider */,
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
 				699E16562DC9EDE60022D4FF /* ChipGroup */,
@@ -2380,6 +2397,7 @@
 				6935CEB72D6C8B7E00C8A186 /* CounterSize.swift in Sources */,
 				6935CEBB2D6C8BCE00C8A186 /* CounterProps.swift in Sources */,
 				81C3D7E22DAE430B0090739E /* BottomSheetProps.swift in Sources */,
+				693FEF352DE4663F00E14D0E /* DividerSize.swift in Sources */,
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
@@ -2457,6 +2475,7 @@
 				81E1EE3A2BE3A59500F86AE1 /* Subcategory.swift in Sources */,
 				81F89E552D81A92000A41C89 /* CardProps.swift in Sources */,
 				81CB0FE82C245052003B1064 /* EnsureFloatNonNegativeNode.swift in Sources */,
+				693FEF372DE4697900E14D0E /* DividerProps.swift in Sources */,
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
@@ -2485,6 +2504,7 @@
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
+				693FEF332DE4661300E14D0E /* DividerAppearance.swift in Sources */,
 				816F63722DCBB35500EC9121 /* BoolContextBuilder.swift in Sources */,
 				812DB6EB2D55E40C00D3F4A3 /* ShapeTokenContextBuilder.swift in Sources */,
 				817539762BD0087500138866 /* Command.swift in Sources */,
