@@ -144,10 +144,9 @@
 		815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367D2DE5B7120005273B /* OverlayAppearance.swift */; };
 		815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367C2DE5B7120005273B /* OvarlaySize.swift */; };
 		815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36812DE5B71F0005273B /* OverlayProps.swift */; };
-		815D2E322DE49BE30005273B /* TooltipConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D2E2F2DE49BE30005273B /* TooltipConfiguration.swift */; };
-		815D2E332DE49BE30005273B /* TooltipAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D2E2E2DE49BE30005273B /* TooltipAppearance.swift */; };
-		815D2E342DE49BE30005273B /* TooltipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D2E302DE49BE30005273B /* TooltipSize.swift */; };
-		815D2E362DE49BFA0005273B /* TooltipProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D2E352DE49BFA0005273B /* TooltipProps.swift */; };
+		815D36842DE5B9F80005273B /* TooltipProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36832DE5B9F80005273B /* TooltipProps.swift */; };
+		815D36882DE5BA390005273B /* TooltipSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36862DE5BA390005273B /* TooltipSize.swift */; };
+		815D36892DE5BA390005273B /* TooltipAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36852DE5BA390005273B /* TooltipAppearance.swift */; };
 		815F42C82D47DE6C00F97E63 /* ComponentSize.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 815F42C72D47DE6C00F97E63 /* ComponentSize.stencil */; };
 		815F42CC2D48B8E800F97E63 /* ComponentTypography.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */; };
 		815F42CE2D48BAC100F97E63 /* Component+BaseVariations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */; };
@@ -616,10 +615,9 @@
 		815D367C2DE5B7120005273B /* OvarlaySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvarlaySize.swift; sourceTree = "<group>"; };
 		815D367D2DE5B7120005273B /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
 		815D36812DE5B71F0005273B /* OverlayProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayProps.swift; sourceTree = "<group>"; };
-		815D2E2E2DE49BE30005273B /* TooltipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipAppearance.swift; sourceTree = "<group>"; };
-		815D2E2F2DE49BE30005273B /* TooltipConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipConfiguration.swift; sourceTree = "<group>"; };
-		815D2E302DE49BE30005273B /* TooltipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSize.swift; sourceTree = "<group>"; };
-		815D2E352DE49BFA0005273B /* TooltipProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipProps.swift; sourceTree = "<group>"; };
+		815D36832DE5B9F80005273B /* TooltipProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipProps.swift; sourceTree = "<group>"; };
+		815D36852DE5BA390005273B /* TooltipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipAppearance.swift; sourceTree = "<group>"; };
+		815D36862DE5BA390005273B /* TooltipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSize.swift; sourceTree = "<group>"; };
 		815F42C72D47DE6C00F97E63 /* ComponentSize.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ComponentSize.stencil; sourceTree = "<group>"; };
 		815F42CB2D48B8E800F97E63 /* ComponentTypography.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = ComponentTypography.stencil; sourceTree = "<group>"; };
 		815F42CD2D48BAC100F97E63 /* Component+BaseVariations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+BaseVariations.stencil"; sourceTree = "<group>"; };
@@ -1220,9 +1218,9 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				815D36832DE5B9F80005273B /* TooltipProps.swift */,
 				815D36812DE5B71F0005273B /* OverlayProps.swift */,
 				693FEF362DE4696F00E14D0E /* DividerProps.swift */,
-				815D2E352DE49BFA0005273B /* TooltipProps.swift */,
 				818E33132DDDC13600130AF9 /* PopoverProps.swift */,
 				816F62D92DCBAEAC00EC9121 /* CircularProgressBarProps.swift */,
 				692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */,
@@ -1252,9 +1250,9 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				815D36872DE5BA390005273B /* Tooltip */,
 				815D367E2DE5B7120005273B /* Overlay */,
 				693FEF312DE465F300E14D0E /* Divider */,
-				815D2E312DE49BE30005273B /* Tooltip */,
 				818E330E2DDDC09C00130AF9 /* Popover */,
 				816F62D62DCBAE9600EC9121 /* CircularProgressBar */,
 				692CEBE82DC26685003DFEFA /* ProgressBar */,
@@ -1418,12 +1416,13 @@
 				815D367D2DE5B7120005273B /* OverlayAppearance.swift */,
 			);
 			path = Overlay;
-		815D2E312DE49BE30005273B /* Tooltip */ = {
+			sourceTree = "<group>";
+		};
+		815D36872DE5BA390005273B /* Tooltip */ = {
 			isa = PBXGroup;
 			children = (
-				815D2E2E2DE49BE30005273B /* TooltipAppearance.swift */,
-				815D2E2F2DE49BE30005273B /* TooltipConfiguration.swift */,
-				815D2E302DE49BE30005273B /* TooltipSize.swift */,
+				815D36852DE5BA390005273B /* TooltipAppearance.swift */,
+				815D36862DE5BA390005273B /* TooltipSize.swift */,
 			);
 			path = Tooltip;
 			sourceTree = "<group>";
@@ -2448,6 +2447,7 @@
 				8175397E2BD0088000138866 /* DownloadCommand.swift in Sources */,
 				810AFD3D2D96DBA8000B2A7A /* SegmentItemProps.swift in Sources */,
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
+				815D36842DE5B9F80005273B /* TooltipProps.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
 				81C1C3282D648B9D0041AB56 /* Config.swift in Sources */,
 				816F62DA2DCBAEAC00EC9121 /* CircularProgressBarProps.swift in Sources */,
@@ -2470,12 +2470,13 @@
 				6941E1C52DC0EB3C0084EA76 /* FillStyleContextBuilder.swift in Sources */,
 				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
 				692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */,
-				815D2E362DE49BFA0005273B /* TooltipProps.swift in Sources */,
 				692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */,
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
 				815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */,
 				815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */,
 				812DB7012D55E54400D3F4A3 /* ComponentConfiguration.swift in Sources */,
+				815D36882DE5BA390005273B /* TooltipSize.swift in Sources */,
+				815D36892DE5BA390005273B /* TooltipAppearance.swift in Sources */,
 				812DB6F82D55E4A800D3F4A3 /* ColorKeyValue.swift in Sources */,
 				81E1EDC32BD6ADC100F86AE1 /* UnpackThemeCommand.swift in Sources */,
 				81C3D7E62DAE43430090739E /* BottomSheetSize.swift in Sources */,
@@ -2546,9 +2547,6 @@
 				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
-				815D2E322DE49BE30005273B /* TooltipConfiguration.swift in Sources */,
-				815D2E332DE49BE30005273B /* TooltipAppearance.swift in Sources */,
-				815D2E342DE49BE30005273B /* TooltipSize.swift in Sources */,
 				81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */,
 				812DB6E92D55E3FB00D3F4A3 /* ColorTokenContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,

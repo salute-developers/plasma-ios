@@ -24,3 +24,4 @@ typealias ProgressBarConfiguration = ComponentConfiguration<ProgressBarProps>
 typealias DividerConfiguration = ComponentConfiguration<DividerProps>
 typealias OverlayConfiguration = ComponentConfiguration<OverlayProps>
 typealias PopoverConfiguration = ComponentConfiguration<PopoverProps>
+typealias TooltipConfiguration = ComponentConfiguration<TooltipProps>
