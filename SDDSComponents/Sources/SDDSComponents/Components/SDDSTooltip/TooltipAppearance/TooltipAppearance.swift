@@ -9,7 +9,7 @@ public struct TooltipAppearance: Hashable {
     public var contentStartColor: ColorToken
     public var shadow: ShadowToken
     public var size: TooltipSizeConfiguration
-    public var textStyle: TypographyToken?
+    public var textTypography: TypographyConfiguration?
     
     public init(
         backgroundColor: ColorToken = .clearColor,
@@ -17,14 +17,14 @@ public struct TooltipAppearance: Hashable {
         contentStartColor: ColorToken = .clearColor,
         shadow: ShadowToken = ShadowToken(),
         size: TooltipSizeConfiguration = ZeroTooltipSize(),
-        textStyle: TypographyToken? = nil
+        textTypography: TypographyConfiguration? = nil
     ) {
         self.backgroundColor = backgroundColor
         self.textColor = textColor
         self.contentStartColor = contentStartColor
         self.shadow = shadow
         self.size = size
-        self.textStyle = textStyle
+        self.textTypography = textTypography
     }
     
     public static func == (lhs: TooltipAppearance, rhs: TooltipAppearance) -> Bool {
