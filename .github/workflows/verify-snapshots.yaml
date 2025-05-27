@@ -37,4 +37,6 @@ jobs:
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -parallel-testing-enabled YES \
+          -parallel-testing-worker-count 2
 
