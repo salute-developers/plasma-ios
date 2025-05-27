@@ -83,6 +83,29 @@ struct PopoverView: View {
                 }
                 Spacer()
             }
+        case .topCenter:
+            VStack {
+                HStack {
+                    Spacer()
+                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                        isPopoverPresented = true
+                    }
+                    .popover(
+                        isPresented: $isPopoverPresented,
+                        appearance: viewModel.appearance,
+                        placement: viewModel.placement,
+                        alignment: viewModel.alignment,
+                        tailEnabled: viewModel.tailEnabled,
+                        triggerCentered: viewModel.triggerCentered,
+                        placementMode: viewModel.placementMode,
+                        duration: duration,
+                        content: { popoverContent }
+                    )
+                    .padding(.top, containerPadding)
+                    Spacer()
+                }
+                Spacer()
+            }
         case .topRight:
             VStack {
                 HStack {
@@ -105,7 +128,24 @@ struct PopoverView: View {
                 }
                 Spacer()
             }
-
+        case .centerLeft:
+            HStack {
+                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    isPopoverPresented = true
+                }
+                .popover(
+                    isPresented: $isPopoverPresented,
+                    appearance: viewModel.appearance,
+                    placement: viewModel.placement,
+                    alignment: viewModel.alignment,
+                    tailEnabled: viewModel.tailEnabled,
+                    triggerCentered: viewModel.triggerCentered,
+                    placementMode: viewModel.placementMode,
+                    duration: duration,
+                    content: { popoverContent }
+                )
+                Spacer()
+            }
         case .center:
             HStack {
                 Spacer()
@@ -125,10 +165,51 @@ struct PopoverView: View {
                 )
                 Spacer()
             }
+        case .centerRight:
+            HStack {
+                Spacer()
+                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    isPopoverPresented = true
+                }
+                .popover(
+                    isPresented: $isPopoverPresented,
+                    appearance: viewModel.appearance,
+                    placement: viewModel.placement,
+                    alignment: viewModel.alignment,
+                    tailEnabled: viewModel.tailEnabled,
+                    triggerCentered: viewModel.triggerCentered,
+                    placementMode: viewModel.placementMode,
+                    duration: duration,
+                    content: { popoverContent }
+                )
+            }
         case .bottomLeft:
             VStack {
                 Spacer()
                 HStack {
+                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                        isPopoverPresented = true
+                    }
+                    .popover(
+                        isPresented: $isPopoverPresented,
+                        appearance: viewModel.appearance,
+                        placement: viewModel.placement,
+                        alignment: viewModel.alignment,
+                        tailEnabled: viewModel.tailEnabled,
+                        triggerCentered: viewModel.triggerCentered,
+                        placementMode: viewModel.placementMode,
+                        duration: duration,
+                        content: { popoverContent }
+                    )
+                    .padding(.bottom, containerPadding)
+                    Spacer()
+                }
+            }
+        case .bottomCenter:
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
                     BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
                         isPopoverPresented = true
                     }
