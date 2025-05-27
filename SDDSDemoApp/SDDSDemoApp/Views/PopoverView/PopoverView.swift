@@ -29,7 +29,6 @@ struct PopoverView: View {
                 tailEnabledToggle
                 triggerCenteredToggle
                 placementModeSelectionView
-                durationSelectionView
             }
         }
         .navigationTitle("Popover")
@@ -249,30 +248,6 @@ struct PopoverView: View {
                 }
             } label: {
                 Text(viewModel.placementMode.rawValue.capitalized)
-            }
-        }
-    }
-    
-    private var durationSelectionView: some View {
-        HStack {
-            Text("Duration")
-            Spacer()
-                .frame(maxWidth: .infinity)
-            Menu {
-                Button("None") {
-                    viewModel.duration = nil
-                }
-                Button("1 second") {
-                    viewModel.duration = 1000
-                }
-                Button("3 seconds") {
-                    viewModel.duration = 3000
-                }
-                Button("5 seconds") {
-                    viewModel.duration = 5000
-                }
-            } label: {
-                Text(viewModel.duration.map { "\($0/1000) seconds" } ?? "None")
             }
         }
     }
