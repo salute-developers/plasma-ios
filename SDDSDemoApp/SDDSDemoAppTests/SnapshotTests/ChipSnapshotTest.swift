@@ -35,4 +35,33 @@ final class ChipSnapshotTest: XCTestCase {
     func testChipSizeLDisabled() async throws {
         try await runSnapshotTest(view: ChipSizeLDisabled())
     }
+    
+    func testChipGroupLDense() async throws {
+        try await runSnapshotTest(view: ChipGroupLDense())
+    }
+
+    func testChipGroupMSecondary() async throws {
+        try await runSnapshotTest(view: ChipGroupMSecondary())
+    }
+
+    func testChipGroupSAccent() async throws {
+        try await runSnapshotTest(view: ChipGroupSAccent())
+    }
+
+    func testChipGroupXs() async throws {
+        try await runSnapshotTest(view: ChipGroupXs())
+    }
+
+    func testChipGroupLSecondaryPilled() async throws {
+        try await runSnapshotTest(view: ChipGroupLSecondaryPilled())
+    }
+
+    func testChipGroupMAccentWide() async throws {
+        try await runSnapshotTest(view: ChipGroupMAccentWide())
+    }
+
+    func testChipGroupLSecondaryHasClose() async throws {
+        try await runSnapshotTest(view: ChipGroupLSecondaryHasClose())
+    }
+    
 }
