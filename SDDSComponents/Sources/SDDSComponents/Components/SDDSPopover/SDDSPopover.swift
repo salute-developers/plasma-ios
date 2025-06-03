@@ -43,12 +43,10 @@ struct SDDSPopover<Content: View>: View {
     private let popoverSizeCalculator: PopoverSizeCalculator
     @Binding private var isPresented: Bool
     
-    @State private var timer: Timer?
     @State private var popoverSize: CGSize = .zero
     @State private var contentSize: CGSize = .zero
     @State private var isIntersectingWindow: Bool = true
     @State private var placementState: PopoverPlacement
-    @State private var autoCloseTimer: Timer?
     
     init(
         isPresented: Binding<Bool>,
@@ -137,18 +135,10 @@ struct SDDSPopover<Content: View>: View {
         .onChange(of: placement) { newValue in
             placementState = newValue
         }
-        .onAppear {
-            if let duration = duration {
-                autoCloseTimer = Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
-                    guard isPresented else { return }
-                    isPresented = false
-                    onClose?()
-                }
-            }
-        }
-        .onDisappear {
-            autoCloseTimer?.invalidate()
-            autoCloseTimer = nil
+        .autoClose(duration: duration) {
+            guard isPresented else { return }
+            isPresented = false
+            onClose?()
         }
     }
     

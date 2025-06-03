@@ -389,6 +389,9 @@
 		81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */; };
 		81E1EE742BE4E17800F86AE1 /* FontFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE732BE4E17800F86AE1 /* FontFamily.swift */; };
 		81E1EE762BE4E18800F86AE1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EE752BE4E18800F86AE1 /* Font.swift */; };
+		81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934322DEDF5CB00B76E38 /* ToastAppearance.swift */; };
+		81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934332DEDF5CB00B76E38 /* ToastSize.swift */; };
+		81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934372DEDF5D600B76E38 /* ToastProps.swift */; };
 		81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */; };
 		81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D62DBB9106003C8C26 /* AvatarSize.swift */; };
 		81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */; };
@@ -847,6 +850,9 @@
 		81E1EE5C2BE3B14600F86AE1 /* InstallFontsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallFontsCommand.swift; sourceTree = "<group>"; };
 		81E1EE732BE4E17800F86AE1 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
 		81E1EE752BE4E18800F86AE1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		81E934322DEDF5CB00B76E38 /* ToastAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAppearance.swift; sourceTree = "<group>"; };
+		81E934332DEDF5CB00B76E38 /* ToastSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSize.swift; sourceTree = "<group>"; };
+		81E934372DEDF5D600B76E38 /* ToastProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastProps.swift; sourceTree = "<group>"; };
 		81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarProps.swift; sourceTree = "<group>"; };
 		81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAppearance.swift; sourceTree = "<group>"; };
 		81F635D62DBB9106003C8C26 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
@@ -1218,6 +1224,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81E934372DEDF5D600B76E38 /* ToastProps.swift */,
 				815D36832DE5B9F80005273B /* TooltipProps.swift */,
 				815D36812DE5B71F0005273B /* OverlayProps.swift */,
 				693FEF362DE4696F00E14D0E /* DividerProps.swift */,
@@ -1250,6 +1257,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81E934342DEDF5CB00B76E38 /* Toast */,
 				815D36872DE5BA390005273B /* Tooltip */,
 				815D367E2DE5B7120005273B /* Overlay */,
 				693FEF312DE465F300E14D0E /* Divider */,
@@ -1988,6 +1996,15 @@
 			path = FontFamily;
 			sourceTree = "<group>";
 		};
+		81E934342DEDF5CB00B76E38 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				81E934322DEDF5CB00B76E38 /* ToastAppearance.swift */,
+				81E934332DEDF5CB00B76E38 /* ToastSize.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		81F635D12DBB8D53003C8C26 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2461,6 +2478,8 @@
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
+				81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */,
+				81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */,
 				81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */,
 				81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */,
 				81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */,
@@ -2470,7 +2489,6 @@
 				6941E1C52DC0EB3C0084EA76 /* FillStyleContextBuilder.swift in Sources */,
 				81C10A222C292E4D0055BB04 /* Double+Stencil.swift in Sources */,
 				692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */,
-				815D2E362DE49BFA0005273B /* TooltipProps.swift in Sources */,
 				692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */,
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
 				815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */,
@@ -2548,8 +2566,6 @@
 				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
-				815D2E332DE49BE30005273B /* TooltipAppearance.swift in Sources */,
-				815D2E342DE49BE30005273B /* TooltipSize.swift in Sources */,
 				81D85D132D6F361A007E758F /* PaletteMapper.swift in Sources */,
 				812DB6E92D55E3FB00D3F4A3 /* ColorTokenContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
@@ -2567,6 +2583,7 @@
 				817539752BD007D300138866 /* App.swift in Sources */,
 				810AFD422D96DD91000B2A7A /* SegmentItemAppearance.swift in Sources */,
 				812DB7032D562DDE00D3F4A3 /* CodeGenerationAppearance.swift in Sources */,
+				81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */,
 				692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */,
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,

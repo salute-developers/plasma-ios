@@ -463,4 +463,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Tooltip.all
         }
     }
+    
+    var toastVariations: [Variation<ToastAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Toast.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Toast.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Toast.all
+        }
+    }
 }
