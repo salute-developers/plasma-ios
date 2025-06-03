@@ -18,6 +18,7 @@ enum Component: String {
     case indicator = "indicator"
     case circularProgressBar = "circular-progress-bar"
     case popover = "popover"
+    case toast = "toast"
     
     var componentName: String {
         switch self {
@@ -55,6 +56,8 @@ enum Component: String {
             return "CircularProgressBar"
         case .popover:
             return "Popover"
+        case .toast:
+            return "Toast"
         }
     }
 }

@@ -41,6 +41,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case overlay = "Overlay"
     case popover = "Popover"
     case tooltip = "Tooltip"
+    case toast = "Toast"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -83,7 +84,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .progressBar,
             .divider,
             .popover,
-            .tooltip
+            .tooltip,
+            .toast
         ]
     }
     
@@ -144,6 +146,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tooltip:
             GenerateComponentCommand<TooltipProps, TooltipAppearance, TooltipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .toast:
+            GenerateComponentCommand<ToastProps, ToastAppearance, ToastSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -201,6 +205,8 @@ extension CodeGenerationComponent {
             "PopoverAppearance"
         case .tooltip:
             "TooltipAppearance"
+        case .toast:
+            "ToastAppearance"
         }
     }
     
@@ -259,6 +265,8 @@ extension CodeGenerationComponent {
             "PopoverSizeConfiguration"
         case .tooltip:
             "TooltipSizeConfiguration"
+        case .toast:
+            "ToastSizeConfiguration"
         }
     }
     
@@ -344,6 +352,8 @@ extension CodeGenerationComponent {
             "popover_config.json"
         case .tooltip:
             "tooltip_config.json"
+        case .toast:
+            "toast_config.json"
         }
     }
     
