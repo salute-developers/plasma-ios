@@ -106,6 +106,9 @@
 		81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */; };
 		81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */; };
 		81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */; };
+		81E936DC2DEDFA7300B76E38 /* ToastVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936D82DEDFA7300B76E38 /* ToastVariationProvider.swift */; };
+		81E936DD2DEDFA7300B76E38 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936D92DEDFA7300B76E38 /* ToastView.swift */; };
+		81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81F63B722DBF6C7C003C8C26 /* ComponentViewLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */; };
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
@@ -241,6 +244,9 @@
 		81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipVariationProvider.swift; sourceTree = "<group>"; };
 		81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipViewModel.swift; sourceTree = "<group>"; };
+		81E936D82DEDFA7300B76E38 /* ToastVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastVariationProvider.swift; sourceTree = "<group>"; };
+		81E936D92DEDFA7300B76E38 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		81EDCE472DDE489100FDBA5C /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
@@ -468,6 +474,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81E936DB2DEDFA7300B76E38 /* ToastView */,
 				81DECC832DE5F0EB0035E6A9 /* TooltipView */,
 				815D38B02DE5BC570005273B /* OverlayView */,
 				815D38B42DE5BC570005273B /* PopoverView */,
@@ -725,6 +732,16 @@
 				81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */,
 			);
 			path = TooltipView;
+			sourceTree = "<group>";
+		};
+		81E936DB2DEDFA7300B76E38 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				81E936D82DEDFA7300B76E38 /* ToastVariationProvider.swift */,
+				81E936D92DEDFA7300B76E38 /* ToastView.swift */,
+				81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */,
+			);
+			path = ToastView;
 			sourceTree = "<group>";
 		};
 		81F89E482D81A39B00A41C89 /* CardView */ = {
@@ -994,6 +1011,9 @@
 				693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */,
 				816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */,
 				81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */,
+				81E936DC2DEDFA7300B76E38 /* ToastVariationProvider.swift in Sources */,
+				81E936DD2DEDFA7300B76E38 /* ToastView.swift in Sources */,
+				81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
 				81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */,
