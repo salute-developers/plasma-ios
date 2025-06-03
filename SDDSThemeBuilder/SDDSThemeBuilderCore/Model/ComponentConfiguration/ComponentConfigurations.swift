@@ -1,0 +1,27 @@
+import Foundation
+
+typealias TextFieldConfiguration = ComponentConfiguration<TextFieldProps>
+typealias ButtonConfiguration = ComponentConfiguration<ButtonProps>
+typealias ChipConfiguration = ComponentConfiguration<ChipProps>
+typealias ChipGroupConfiguration = ComponentConfiguration<ChipGroupProps>
+typealias BadgeConfiguration = ComponentConfiguration<BadgeProps>
+typealias IndicatorConfiguration = ComponentConfiguration<IndicatorProps>
+typealias CellConfiguration = ComponentConfiguration<CellProps>
+typealias CounterConfiguration = ComponentConfiguration<CounterProps>
+typealias CardConfiguration = ComponentConfiguration<CardProps>
+typealias SegmentItemConfiguration = ComponentConfiguration<SegmentItemProps>
+typealias SegmentConfiguration = ComponentConfiguration<SegmentProps>
+typealias BottomSheetConfiguration = ComponentConfiguration<BottomSheetProps>
+typealias SwitchConfiguration = ComponentConfiguration<SwitchProps>
+typealias RadioboxConfiguration = ComponentConfiguration<RadioboxProps>
+typealias RadioboxGroupConfiguration = ComponentConfiguration<RadioboxGroupProps>
+typealias CheckboxConfiguration = ComponentConfiguration<CheckboxProps>
+typealias CheckboxGroupConfiguration = ComponentConfiguration<CheckboxGroupProps>
+typealias AvatarConfiguration = ComponentConfiguration<AvatarProps>
+typealias AvatarGroupConfiguration = ComponentConfiguration<AvatarGroupProps>
+typealias CircularProgressBarConfiguration = ComponentConfiguration<CircularProgressBarProps>
+typealias ProgressBarConfiguration = ComponentConfiguration<ProgressBarProps>
+typealias DividerConfiguration = ComponentConfiguration<DividerProps>
+typealias OverlayConfiguration = ComponentConfiguration<OverlayProps>
+typealias PopoverConfiguration = ComponentConfiguration<PopoverProps>
+typealias TooltipConfiguration = ComponentConfiguration<TooltipProps>

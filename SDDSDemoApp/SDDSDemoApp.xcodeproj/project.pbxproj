@@ -16,6 +16,9 @@
 		690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FC2D3EBA4A00CED628 /* SegmentView.swift */; };
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
 		693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */; };
+		693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */; };
+		693FF15B2DE49A6700E14D0E /* DividerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */; };
+		693FF15D2DE49A7100E14D0E /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FF15C2DE49A6C00E14D0E /* DividerView.swift */; };
 		694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */; };
 		69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */; };
 		697970CF2D63A3F5008306A8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697970CE2D63A3EC008306A8 /* CellView.swift */; };
@@ -48,6 +51,12 @@
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
+		815D38B52DE5BC570005273B /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AE2DE5BC570005273B /* OverlayView.swift */; };
+		815D38B62DE5BC570005273B /* OverlayVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AD2DE5BC570005273B /* OverlayVariationProvider.swift */; };
+		815D38B72DE5BC570005273B /* OverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AF2DE5BC570005273B /* OverlayViewModel.swift */; };
+		815D38B82DE5BC570005273B /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B22DE5BC570005273B /* PopoverView.swift */; };
+		815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B32DE5BC570005273B /* PopoverViewModel.swift */; };
+		815D38BA2DE5BC570005273B /* PopoverVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B12DE5BC570005273B /* PopoverVariationProvider.swift */; };
 		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
 		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
 		816243492CB90FA800506E1C /* GradientPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243482CB90FA800506E1C /* GradientPickerView.swift */; };
@@ -94,6 +103,9 @@
 		81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */; };
 		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
+		81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */; };
+		81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */; };
+		81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81F63B722DBF6C7C003C8C26 /* ComponentViewLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */; };
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
@@ -148,6 +160,9 @@
 		690780FC2D3EBA4A00CED628 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewModel.swift; sourceTree = "<group>"; };
 		693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupVariationProvider.swift; sourceTree = "<group>"; };
+		693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewModel.swift; sourceTree = "<group>"; };
+		693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerVariationProvider.swift; sourceTree = "<group>"; };
+		693FF15C2DE49A6C00E14D0E /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		694B1F6E2DAE54B800726B91 /* CheckboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupVariationProvider.swift; sourceTree = "<group>"; };
 		694C288A2D89BC9A00D7F341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		69509FD92DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGroupVariationProvider.swift; sourceTree = "<group>"; };
@@ -173,6 +188,12 @@
 		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
 		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		815D38AD2DE5BC570005273B /* OverlayVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayVariationProvider.swift; sourceTree = "<group>"; };
+		815D38AE2DE5BC570005273B /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		815D38AF2DE5BC570005273B /* OverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewModel.swift; sourceTree = "<group>"; };
+		815D38B12DE5BC570005273B /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
+		815D38B22DE5BC570005273B /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		815D38B32DE5BC570005273B /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 		816243432CB9057E00506E1C /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		816243452CB907E900506E1C /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
 		816243482CB90FA800506E1C /* GradientPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPickerView.swift; sourceTree = "<group>"; };
@@ -217,7 +238,13 @@
 		81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaVariationProvider.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipVariationProvider.swift; sourceTree = "<group>"; };
+		81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
+		81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipViewModel.swift; sourceTree = "<group>"; };
 		81E968152CBD20C300256968 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		81EDCE472DDE489100FDBA5C /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
+		81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
 		81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewLayoutMode.swift; sourceTree = "<group>"; };
 		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -290,6 +317,7 @@
 				24C1541F2BB3020B00963FAA /* SDDSDemoAppUITests */,
 				24C154032BB3020A00963FAA /* Products */,
 				24D212DF2BB45A4B005B717B /* Frameworks */,
+				81DEC9CA2DE5EF740035E6A9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -375,6 +403,16 @@
 			path = SegmentView;
 			sourceTree = "<group>";
 		};
+		693FF1572DE499FA00E14D0E /* DividerView */ = {
+			isa = PBXGroup;
+			children = (
+				693FF15C2DE49A6C00E14D0E /* DividerView.swift */,
+				693FF15A2DE49A5D00E14D0E /* DividerVariationProvider.swift */,
+				693FF1582DE49A4C00E14D0E /* DividerViewModel.swift */,
+			);
+			path = DividerView;
+			sourceTree = "<group>";
+		};
 		697970CD2D63A3CC008306A8 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +464,10 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81DECC832DE5F0EB0035E6A9 /* TooltipView */,
+				815D38B02DE5BC570005273B /* OverlayView */,
+				815D38B42DE5BC570005273B /* PopoverView */,
+				693FF1572DE499FA00E14D0E /* DividerView */,
 				816F636D2DCBB21600EC9121 /* CircularProgressBarView */,
 				81578DD32D89FACF00BC7038 /* BottomSheetView */,
 				81F89E482D81A39B00A41C89 /* CardView */,
@@ -503,6 +545,26 @@
 				81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */,
 			);
 			path = BottomSheetView;
+			sourceTree = "<group>";
+		};
+		815D38B02DE5BC570005273B /* OverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				815D38AD2DE5BC570005273B /* OverlayVariationProvider.swift */,
+				815D38AE2DE5BC570005273B /* OverlayView.swift */,
+				815D38AF2DE5BC570005273B /* OverlayViewModel.swift */,
+			);
+			path = OverlayView;
+			sourceTree = "<group>";
+		};
+		815D38B42DE5BC570005273B /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				815D38B12DE5BC570005273B /* PopoverVariationProvider.swift */,
+				815D38B22DE5BC570005273B /* PopoverView.swift */,
+				815D38B32DE5BC570005273B /* PopoverViewModel.swift */,
+			);
+			path = PopoverView;
 			sourceTree = "<group>";
 		};
 		816243422CB9056A00506E1C /* AvatarView */ = {
@@ -639,6 +701,26 @@
 				81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		81DEC9CA2DE5EF740035E6A9 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				81EDCE472DDE489100FDBA5C /* PopoverView.swift */,
+				81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */,
+				81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		81DECC832DE5F0EB0035E6A9 /* TooltipView */ = {
+			isa = PBXGroup;
+			children = (
+				81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */,
+				81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */,
+				81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */,
+			);
+			path = TooltipView;
 			sourceTree = "<group>";
 		};
 		81F89E482D81A39B00A41C89 /* CardView */ = {
@@ -853,11 +935,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8174BA532D5DFC8800EA3E68 /* RadioboxVariationProvider.swift in Sources */,
+				815D38B52DE5BC570005273B /* OverlayView.swift in Sources */,
+				815D38B62DE5BC570005273B /* OverlayVariationProvider.swift in Sources */,
+				815D38B72DE5BC570005273B /* OverlayViewModel.swift in Sources */,
+				815D38B82DE5BC570005273B /* PopoverView.swift in Sources */,
+				815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */,
+				815D38BA2DE5BC570005273B /* PopoverVariationProvider.swift in Sources */,
 				697970CF2D63A3F5008306A8 /* CellView.swift in Sources */,
 				698902672D65176F003DCE58 /* CellVariationProvider.swift in Sources */,
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */,
 				8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */,
+				693FF15B2DE49A6700E14D0E /* DividerVariationProvider.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
 				811DE1352C4D0C7F000DD354 /* ComponentsView.swift in Sources */,
 				81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */,
@@ -878,8 +967,12 @@
 				811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */,
 				690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */,
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
+				693FF15D2DE49A7100E14D0E /* DividerView.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
+				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
+				81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */,
+				81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
 				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,
 				816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */,
@@ -903,6 +996,7 @@
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
+				693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
 				816243542CB93EEB00506E1C /* ChipView.swift in Sources */,
@@ -1100,12 +1194,11 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SDDSDemoApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SDDSDemo 1.2 0 [Dev]";
+				INFOPLIST_KEY_CFBundleDisplayName = "SDDSDemo 1.0 0 [Dev]";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1148,8 +1241,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

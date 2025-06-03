@@ -2,6 +2,32 @@ import Foundation
 import SwiftUI
 import UIKit
 
+/**
+ `SDDSRadiobox` представляет собой компонент радиокнопки, который позволяет пользователю выбрать один вариант из группы опций.
+
+ - Parameters:
+    - isSelected: Состояние выбранности
+    - title: Текст заголовка радиокнопки
+    - subtitle: Текст подзаголовка радиокнопки (опционально)
+    - isEnabled: Флаг доступности радиокнопки
+    - images: Изображения для состояний выбранности и невыбранности
+    - appearance: Параметры внешнего вида радиокнопки
+    - accessibility: Параметры доступности
+
+ ## Примеры использования
+
+ ```swift
+ // Базовая радиокнопка
+ @State isSelected: Bool = true
+ SDDSRadiobox(
+     isSelected: $isSelected,
+     title: "Value",
+     subtitle: "Description",
+     isEnabled: true,
+     appearance: Radiobox.m.appearance
+ )
+ ```
+ */
 public struct RadioboxImages {
     public let selectedImage: Image
     public let deselectedImage: Image

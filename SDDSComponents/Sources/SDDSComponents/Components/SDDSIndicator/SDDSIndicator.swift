@@ -2,6 +2,24 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+/**
+ `SDDSIndicator` представляет собой компонент для отображения индикатора, который может использоваться для обозначения обязательных полей или других важных элементов интерфейса.
+
+ - Parameters:
+    - appearance: Параметры внешнего вида индикатора (опционально)
+
+ ## Окружение
+ - `indicatorAppearance`: Стандартные настройки внешнего вида индикатора
+
+ ## Примеры использования
+ ```swift
+ // Базовый индикатор
+ SDDSIndicator(
+     appearance: Indicator.m.accent.appearance
+ )
+ ```
+ */
+
 public struct SDDSIndicator: View {
     @Environment(\.indicatorAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme

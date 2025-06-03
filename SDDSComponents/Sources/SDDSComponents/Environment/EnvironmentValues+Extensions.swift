@@ -111,4 +111,19 @@ public extension EnvironmentValues {
         get { self[CircularProgressBarAppearance.self] }
         set { self[CircularProgressBarAppearance.self] = newValue }
     }
+    
+    var dividerAppearance: DividerAppearance {
+        get { self[DividerAppearance.self] }
+        set { self[DividerAppearance.self] = newValue }
+    }
+    
+    var overlayAppearance: OverlayAppearance {
+        get { self[OverlayAppearance.self] }
+        set { self[OverlayAppearance.self] = newValue }
+    }
+
+    var popoverAppearance: PopoverAppearance {
+        get { self[PopoverAppearance.self] }
+        set { self[PopoverAppearance.self] = newValue }
+    }
 }

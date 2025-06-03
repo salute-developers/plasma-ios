@@ -84,7 +84,6 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
         var appearance = appearance
         appearance.size = size
         appearance.tintColor = .clearColor
-        appearance.titleTypography = SwitchTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "s.toggleS",

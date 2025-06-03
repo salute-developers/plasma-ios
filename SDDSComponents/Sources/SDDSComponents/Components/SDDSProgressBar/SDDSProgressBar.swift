@@ -6,10 +6,27 @@ import SwiftUI
  `SDDSProgressView` представляет собой настраиваемый прогресс-бар, который может быть настроен с помощью различных параметров.
  
  - Parameters:
- - progress: Значение прогресса (от 0 до 1), отображаемое в виде заполняющейся полосы.
- - isEnabled: Флаг, указывающий, доступен ли прогресс-бар для взаимодействия.
- - appearance: Параметры внешнего вида прогресс-бара.
- - accessibility: Параметры доступности для прогресс-бара.
+    - progress: Значение прогресса (от 0 до 1), отображаемое в виде заполняющейся полосы.
+    - isEnabled: Флаг, указывающий, доступен ли прогресс-бар для взаимодействия.
+    - appearance: Параметры внешнего вида прогресс-бара.
+    - accessibility: Параметры доступности для прогресс-бара.
+
+ ## Окружение
+ 
+ - `progressBarAppearance`: Стандартные настройки внешнего вида прогресс-бара
+
+ ## Пример использования
+
+ ```swift
+ // Базовый прогресс-бар с акцентным стилем
+ @State private var progress = 0.5
+ 
+ SDDSProgressView(
+     progress: $progress,
+     isEnabled: true,
+     appearance: ProgressBar.default.accent.appearance
+ )
+ ```
  */
 public struct SDDSProgressView: View {
     @Binding var progress: Double
@@ -20,15 +37,6 @@ public struct SDDSProgressView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.progressBarAppearance) private var environmentAppearance
     
-    /**
-     Инициализатор для создания прогресс-бара с заданными параметрами.
-     
-     - Parameters:
-     - progress: Значение прогресса (от 0 до 1), отображаемое в виде заполняющейся полосы.
-     - isEnabled: Флаг, указывающий, доступен ли прогресс-бар для взаимодействия.
-     - appearance: Параметры внешнего вида прогресс-бара.
-     - accessibility: Параметры доступности для прогресс-бара.
-     */
     public init(
         progress: Binding<Double>,
         isEnabled: Bool = true,

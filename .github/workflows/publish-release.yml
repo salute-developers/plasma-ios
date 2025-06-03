@@ -69,10 +69,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      # - name: Dispatch publish workflows for changed modules
-      #   if: steps.changed.outputs.modules != ''
-      #   run: |
-      #     chmod +x scripts/dispatch-publish.sh
-      #     scripts/dispatch-publish.sh "${{ steps.changed.outputs.modules }}" "${{ github.event.inputs.tag_name }}"
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }} 
+      - name: Dispatch publish workflows for changed modules
+        if: steps.changed.outputs.modules != ''
+        run: |
+          chmod +x scripts/dispatch-publish.sh
+          scripts/dispatch-publish.sh "${{ steps.changed.outputs.modules }}" "${{ github.event.inputs.tag_name }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }} 

@@ -1,7 +1,16 @@
 import SwiftUI
 
 // MARK: - SDDSAvatar
+/**
+ `AvatarExtraPlacement` определяет расположение дополнительного контента (`extra`) относительно аватара.
 
+ - Cases:
+    - `none`: Дополнительный контент не отображается.
+    - `bottomLeft`: В левом нижнем углу аватара.
+    - `bottomRight`: В правом нижнем углу аватара.
+    - `topLeft`: В левом верхнем углу аватара.
+    - `topRight`: В правом верхнем углу аватара.
+ */
 public struct AvatarExtra<Content: View> {
     let placement: AvatarExtraPlacement
     let content: Content
@@ -12,6 +21,13 @@ public struct AvatarExtra<Content: View> {
     }
 }
 
+/**
+ `AvatarExtra` позволяет добавить произвольный контент (например, бейдж, иконку или счетчик) к аватару с возможностью указания его расположения.
+
+ - Parameters:
+    - placement: Положение дополнительного контента относительно аватара ``AvatarExtraPlacement``.
+    - content: View-контент, который будет отображаться в выбранном положении.
+*/
 public enum AvatarExtraPlacement: String, CaseIterable {
     case none
     case bottomLeft
@@ -23,13 +39,24 @@ public enum AvatarExtraPlacement: String, CaseIterable {
 /**
  `SDDSAvatar` представляет собой аватар пользователя, отображающий текст, изображение или плейсхолдер с возможностью указания статуса.
 
- - Properties:
+ - Parameters:
     - text: Текст, который отображается, если нет изображения; обычно инициалы.
     - image: Изображение аватара, передается как `AvatarImageSource`.
     - placeholderImage: Изображение-заглушка, отображаемое при отсутствии основного изображения.
     - status: Статус аватара (`hidden`, `online`, `offline`).
     - appearance: Параметры внешнего вида аватара.
     - accessibility: Параметры доступности для аватара.
+ 
+ ```swift
+ SDDSAvatar(
+     text: "JD",
+     image: nil,
+     placeholderImage: nil,
+     status: .online,
+     appearance: Avatar.xxl.appearance,
+     accessibility: AvatarAccessibility()
+ )
+ ```
  */
 public struct SDDSAvatar<Content: View>: View {
     let text: String

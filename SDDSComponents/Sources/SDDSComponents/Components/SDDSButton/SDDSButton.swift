@@ -3,6 +3,78 @@ import SwiftUI
 import Combine
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSButton` представляет собой компонент кнопки с различными стилями и состояниями.
+ 
+ - Parameters:
+   - title: Основной текст кнопки
+   - subtitle: Дополнительный текст кнопки (опционально)
+   - iconAttributes: Атрибуты иконки (опционально)
+   - isDisabled: Флаг отключенного состояния
+   - isLoading: Флаг состояния загрузки
+   - spinnerImage: Изображение для индикатора загрузки
+   - buttonStyle: Стиль кнопки (.basic или .icon) ``ButtonStyle``
+   - appearance: Кастомизация внешнего вида
+   - layoutMode: Режим компоновки (.wrapContent или .fillWidth) ``ButtonLayoutMode``
+   - accessibility: Параметры доступности
+   - counterViewProvider: Провайдер для отображения счетчика
+   - isSelected: Флаг выбранного состояния
+   - action: Действие при нажатии на кнопку
+
+ ## Окружение
+ - `buttonAppearance`: Стандартные настройки внешнего вида кнопок
+
+ ## Пример использования
+
+ ```swift
+ // Базовая кнопка с иконкой
+ BasicButton(
+     title: "Label",
+     subtitle: "Value",
+     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+     isDisabled: false,
+     isLoading: false,
+     spinnerImage: Image.image("spinner"),
+     appearance: BasicButton.l.accent.appearance,
+     layoutMode: .wrapContent,
+     action: { print("Button did tap") }
+ )
+
+ // Кнопка-ссылка с акцентным стилем
+ LinkButton(
+     title: "Label",
+     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+     isDisabled: false,
+     isLoading: false,
+     spinnerImage: Image.image("spinner"),
+     appearance: LinkButton.l.accent.appearance,
+     layoutMode: .wrapContent,
+     action: { print("Link did tap") }
+ )
+
+ // Кнопка-иконка с акцентным стилем
+ IconButton(
+     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+     isDisabled: false,
+     isLoading: false,
+     spinnerImage: Image.image("spinner"),
+     appearance: IconButton.l.accent.appearance,
+     layoutMode: .fixedWidth(.packed),
+     action: { print("Icon did tap") }
+ )
+
+ // Круглая кнопка-иконка с акцентным стилем
+IconButton(
+     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+     isDisabled: false,
+     isLoading: false,
+     spinnerImage: Image.image("spinner"),
+     appearance: IconButton.l.pilled.accent.appearance,
+     layoutMode: .wrapContent,
+     action: { print("Rounded Icon did tap") }
+ )
+ ```
+ */
 public struct SDDSButton<Counter: View>: View {
     public let title: String
     public let subtitle: String

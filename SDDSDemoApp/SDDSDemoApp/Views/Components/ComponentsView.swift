@@ -23,7 +23,11 @@ struct ComponentsView: View {
         ("SDDSCell", AnyView(CellView())),
         ("SDDSCard", AnyView(CardView())),
         ("SDDSBottomSheet", AnyView(BottomSheetView())),
-        ("SDDSCircularProgressBar", AnyView(CircularProgressBarView()))
+        ("SDDSCircularProgressBar", AnyView(CircularProgressBarView())),
+        ("SDDSDivider", AnyView(DividerView())),
+        ("SDDSOverlay", AnyView(OverlayView())),
+        ("SDDSPopover", AnyView(PopoverView())),
+        ("SDDSTooltip", AnyView(TooltipView()))
     ]
 
     var body: some View {

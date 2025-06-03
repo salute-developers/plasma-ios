@@ -1,6 +1,76 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSSegment` представляет собой компонент для отображения группы связанных опций, где пользователь может выбрать один вариант.
+
+ - Parameters:
+    - items: Массив элементов сегмента
+    - appearance: Параметры внешнего вида сегмента (опционально)
+    - layoutMode: Режим расположения элементов (fixed/flexible)
+    - layoutOrientation: Ориентация сегмента (horizontal/vertical)
+    - selectedItemId: ID выбранного элемента
+    - isDisabled: Флаг отключения сегмента
+    - stretch: Флаг растягивания элементов
+    - hasBackground: Флаг отображения фона
+
+ ## Окружение
+ - `segmentAppearance`: Стандартные настройки внешнего вида сегмента
+
+ ## Примеры использования
+
+ ```swift
+ // Горизонтальный сегмент
+ SDDSSegment(
+     items: [
+         SDDSSegmentItemData(
+             title: "Title",
+             subtitle: "Subtitle",
+             iconAttributes: nil,
+             isSelected: true,
+             appearance: SegmentItem.l.accent.appearance,
+             action: {}
+         ),
+         SDDSSegmentItemData(
+             title: "Title",
+             subtitle: "Subtitle",
+             iconAttributes: nil,
+             isSelected: false,
+             appearance: SegmentItem.l.accent.appearance,
+             action: {}
+         )
+     ],
+     appearance: Segment.l.accent.appearance,
+     layoutOrientation: .horizontal,
+     selectedItemId: selectedId
+ )
+ // Вертикальный сегмент
+ SDDSSegment(
+     items: [
+         SDDSSegmentItemData(
+             title: "Title",
+             subtitle: "Subtitle",
+             iconAttributes: nil,
+             isSelected: true,
+             appearance: SegmentItem.l.accent.appearance,
+             action: {}
+         ),
+         SDDSSegmentItemData(
+             title: "Title",
+             subtitle: "Subtitle",
+             iconAttributes: nil,
+             isSelected: false,
+             appearance: SegmentItem.l.accent.appearance,
+             action: {}
+         )
+     ],
+     appearance: Segment.l.accent.appearance,
+     layoutOrientation: .vertical,
+     selectedItemId: selectedId
+     )
+ ```
+
+ */
 public struct SDDSSegment: View {
     public let items: [SDDSSegmentItemData<AnyView>]
     private let _appearance: SegmentAppearance?

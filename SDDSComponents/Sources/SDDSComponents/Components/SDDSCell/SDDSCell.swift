@@ -2,6 +2,46 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSCell` представляет собой компонент для отображения строки с различными типами контента и возможностью настройки выравнивания.
+
+ - Parameters:
+    - appearance: Параметры внешнего вида ячейки
+    - alignment: Выравнивание контента (top/center/bottom)
+    - label: Текст метки
+    - title: Основной текст
+    - subtitle: Дополнительный текст
+    - disclosureEnabled: Включить отображение disclosure
+    - disclosureImage: Изображение для disclosure
+    - disclosureText: Текст для disclosure
+    - leftContent: Контент слева
+    - rightContent: Контент справа
+
+ ## Окружение
+ - cellAppearance: Стандартные настройки внешнего вида ячейки
+
+ ## Примеры использования
+
+ ```swift
+ // Базовая ячейка
+ SDDSCell(
+     appearance: Cell.l.appearance,
+     alignment: .center,
+     label: "label",
+     title: "title",
+     subtitle: "subtitle",
+     disclosureEnabled: true,
+     disclosureImage: nil,
+     disclosureText: "disclosure",
+     leftContent: {
+         MyView()
+     },
+     rightContent: {
+        MyView()
+    }
+ )
+ ```
+ */
 public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     private let _appearance: CellAppearance?
     public let alignment: CellContentAlignment
