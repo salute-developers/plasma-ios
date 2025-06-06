@@ -126,4 +126,9 @@ public extension EnvironmentValues {
         get { self[PopoverAppearance.self] }
         set { self[PopoverAppearance.self] = newValue }
     }
+    
+    var toastAppearance: ToastAppearance {
+        get { self[ToastAppearance.self] }
+        set { self[ToastAppearance.self] = newValue }
+    }
 }

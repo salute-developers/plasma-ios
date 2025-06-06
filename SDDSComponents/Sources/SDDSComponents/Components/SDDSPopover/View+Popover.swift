@@ -20,25 +20,25 @@ public extension View {
                     .task(id: isPresented.wrappedValue) {
                         let triggerFrame = geometry.frame(in: .global)
                         if isPresented.wrappedValue {
-                            GlobalPopoverManager.shared.show(
+                            WindowOverlayService.shared.show(
                                 content: {
-                                    SDDSPopover(
+                SDDSPopover(
                                         isPresented: isPresented,
-                                        appearance: appearance,
-                                        placement: placement,
-                                        alignment: alignment,
-                                        tailEnabled: tailEnabled,
-                                        triggerCentered: triggerCentered,
-                                        placementMode: placementMode,
-                                        duration: duration,
+                    appearance: appearance,
+                    placement: placement,
+                    alignment: alignment,
+                    tailEnabled: tailEnabled,
+                    triggerCentered: triggerCentered,
+                    placementMode: placementMode,
+                    duration: duration,
                                         popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
-                                        onClose: {
-                                            isPresented.wrappedValue = false
-                                            GlobalPopoverManager.shared.hide()
-                                            onClose?()
-                                        },
-                                        content: content
-                                    )
+                    onClose: {
+                        isPresented.wrappedValue = false
+                                            WindowOverlayService.shared.hide()
+                        onClose?()
+                    },
+                    content: content
+                )
                                 },
                                 at: triggerFrame,
                                 onClose: {
@@ -47,10 +47,10 @@ public extension View {
                                 }
                             )
                         } else {
-                            GlobalPopoverManager.shared.hide()
+                            WindowOverlayService.shared.hide()
                         }
-                    }
             }
+        }
         )
     }
 }
