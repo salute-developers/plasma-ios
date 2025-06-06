@@ -39,7 +39,7 @@ enum SnapshotTestConfig {
 Для проверки снэпшотов нужно проставить mode .verify
  */
 func runSnapshotTest(
-    view: some View,
+    view: @autoclosure @escaping () -> some View,
     function: StaticString = #function
 ) async throws {
     
@@ -51,7 +51,7 @@ func runSnapshotTest(
             mode: .verify,
             deviceGroup: SnapshotTestConfig.iPhone13Mini,
             prepareSut: { _ in
-                view
+                view()
                     .padding()
                     .background(Color(.systemBackground))
                     .environment(\.colorScheme, scheme)
