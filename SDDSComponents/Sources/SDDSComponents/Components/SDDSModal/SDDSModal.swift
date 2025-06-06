@@ -26,7 +26,7 @@ public struct SDDSModal<Content: View>: View {
     }
     
     public var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             if useNativeBlackout {
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()

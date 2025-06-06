@@ -42,7 +42,6 @@ struct ModalView: View {
             HStack {
                 Text("Modal")
                 Spacer()
-
             }
             .frame(width: 120)
         }
