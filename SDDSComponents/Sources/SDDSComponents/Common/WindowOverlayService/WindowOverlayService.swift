@@ -231,8 +231,8 @@ final class WindowOverlayService {
         )
         
         withAnimation(.easeInOut(duration: 0.3)) {
-            stackedToasts.append(toast)
-            updateStackedToasts()
+        stackedToasts.append(toast)
+        updateStackedToasts()
         }
         
         if duration > 0 {
@@ -251,7 +251,7 @@ final class WindowOverlayService {
         toast.onClose?()
         
         withAnimation(.easeInOut(duration: 0.3)) {
-            updateStackedToasts()
+        updateStackedToasts()
         }
         
         if stackedToasts.isEmpty {
@@ -264,11 +264,33 @@ final class WindowOverlayService {
         stackedToasts.forEach { $0.onClose?() }
         
         withAnimation(.easeInOut(duration: 0.3)) {
-            stackedToasts.removeAll()
-            updateStackedToasts()
+        stackedToasts.removeAll()
+        updateStackedToasts()
         }
         
         toastContainerView?.removeFromSuperview()
         toastContainerView = nil
+    }
+
+    func showCentered<Content: View>(
+        @ViewBuilder content: @escaping () -> Content,
+        onClose: (() -> Void)? = nil
+    ) {
+        let contentView = content()
+        let hostingController = UIHostingController(rootView: contentView)
+        hostingController.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        hostingController.view.layoutIfNeeded()
+        
+        let size = hostingController.view.systemLayoutSizeFitting(
+            CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height),
+            withHorizontalFittingPriority: .fittingSizeLevel,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        
+        let x = (UIScreen.main.bounds.width - size.width) / 2
+        let y = (UIScreen.main.bounds.height - size.height) / 2
+        let frame = CGRect(x: x, y: y, width: size.width, height: size.height)
+        
+        show(content: { contentView }, at: frame, onClose: onClose)
     }
 }
