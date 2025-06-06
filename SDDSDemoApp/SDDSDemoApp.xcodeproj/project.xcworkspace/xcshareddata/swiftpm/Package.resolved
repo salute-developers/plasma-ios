@@ -1,0 +1,15 @@
+{
+  "originHash" : "dcedfdc59a34a869739ca4c2e631323b6d8246d3dd6fe48db198f12af8eed362",
+  "pins" : [
+    {
+      "identity" : "snapshots-kit-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/salute-developers/snapshots-kit-ios",
+      "state" : {
+        "revision" : "1dc91b1f69775a355671a8bedfabc558c7052b22",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
