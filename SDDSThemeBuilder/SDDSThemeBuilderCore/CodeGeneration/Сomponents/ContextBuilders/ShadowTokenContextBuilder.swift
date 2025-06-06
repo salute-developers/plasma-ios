@@ -14,4 +14,8 @@ final class ShadowTokenContextBuilder: CodeGenerationContextBuilder {
         
         return "ShadowToken.\(value.camelCase)"
     }
+    
+    static var defaultContext: String {
+        "ShadowToken()"
+    }
 }

@@ -67,22 +67,26 @@ final class WindowOverlayService {
     func show<Content: View>(
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect,
+        hideOnTap: Bool = true,
         onClose: (() -> Void)? = nil
     ) {
         guard let window = createWindow() else { return }
         window.isUserInteractionEnabled = true
         
         self.lastFrame = frame
-        self.contentBuilder = { AnyView(content()) }
+        self.contentBuilder = { AnyView(
+            content()
+        ) }
         self.onClose = onClose
         
         setupOrientationObserver()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideGesture))
         self.tapGesture = tapGesture
         window.addGestureRecognizer(tapGesture)
         
         let hosting = createHostingController(for: frame, window: window)
+        
         window.rootViewController = hosting
         self.window = window
     }
@@ -115,13 +119,42 @@ final class WindowOverlayService {
         return hosting
     }
     
-    @objc func hide() {
+    @objc private func hideGesture(_ gesture: UITapGestureRecognizer) {
+        var location = gesture.location(in: window)
+        
+        let screenBounds = UIScreen.main.bounds
+        let offsetX = lastFrame.origin.x - screenBounds.width / 2 + lastFrame.width / 2
+        
+        let isLandscape = UIDevice.current.orientation.isLandscape
+        let offsetY: CGFloat
+        if isLandscape || UIDevice.current.orientation == .portraitUpsideDown {
+            location.y += 20
+            offsetY = lastFrame.origin.y + (window?.safeAreaInsets.bottom ?? 0) - (screenBounds.height - (window?.safeAreaInsets.bottom ?? 0)) / 2
+        } else {
+            location.y -= 40
+            offsetY = lastFrame.origin.y - screenBounds.height / 2 + 3 * lastFrame.height / 2 - (window?.safeAreaInsets.top ?? 0)
+        }
+        
+        let contentFrame = CGRect(
+            x: screenBounds.width / 2 - lastFrame.width / 2 + offsetX,
+            y: lastFrame.origin.y,
+            width: lastFrame.width,
+            height: lastFrame.height
+        )
+                
+        if contentFrame.contains(location) {
+            return
+        }
+        hide()
+    }
+    
+    func hide() {
         removeOrientationObserver()
         window?.isHidden = true
         window = nil
         onClose?()
     }
-
+    
     private func updateStackedToasts() {
         guard !stackedToasts.isEmpty else {
             hostingController?.view.removeFromSuperview()
@@ -231,7 +264,7 @@ final class WindowOverlayService {
         )
         
         withAnimation(.easeInOut(duration: 0.3)) {
-            stackedToasts.append(toast)
+        stackedToasts.append(toast)
             updateStackedToasts()
         }
         
@@ -264,11 +297,37 @@ final class WindowOverlayService {
         stackedToasts.forEach { $0.onClose?() }
         
         withAnimation(.easeInOut(duration: 0.3)) {
-            stackedToasts.removeAll()
-            updateStackedToasts()
+        stackedToasts.removeAll()
+        updateStackedToasts()
         }
         
         toastContainerView?.removeFromSuperview()
         toastContainerView = nil
+    }
+
+    func showCentered<Content: View>(
+        @ViewBuilder content: @escaping () -> Content,
+        onClose: (() -> Void)? = nil
+    ) {
+        let contentView = content()
+        let hostingController = UIHostingController(rootView: contentView)
+        hostingController.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        hostingController.view.layoutIfNeeded()
+        
+        let size = hostingController.view.systemLayoutSizeFitting(
+            CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height),
+            withHorizontalFittingPriority: .fittingSizeLevel,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        
+        let x = (UIScreen.main.bounds.width - size.width) / 2
+        let y = (UIScreen.main.bounds.height - size.height) / 2
+        let frame = CGRect(x: x, y: y, width: size.width, height: size.height)
+        
+        show(
+            content: { contentView },
+            at: frame,
+            onClose: onClose
+        )
     }
 }
