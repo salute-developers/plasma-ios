@@ -474,4 +474,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Toast.all
         }
     }
+    
+    var modalVariations: [Variation<ModalAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Modal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Modal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Modal.all
+        }
+    }
 }

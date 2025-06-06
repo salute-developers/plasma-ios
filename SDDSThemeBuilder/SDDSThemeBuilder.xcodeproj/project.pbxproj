@@ -396,6 +396,9 @@
 		81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D62DBB9106003C8C26 /* AvatarSize.swift */; };
 		81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */; };
 		81F635DA2DBB9192003C8C26 /* ShapeTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */; };
+		81F7EC9D2DF2F0AB00531844 /* ModalProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7EC9C2DF2F0AB00531844 /* ModalProps.swift */; };
+		81F7ECA72DF2F0CA00531844 /* ModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7ECA52DF2F0CA00531844 /* ModalSize.swift */; };
+		81F7ECA82DF2F0CA00531844 /* ModalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7ECA32DF2F0CA00531844 /* ModalAppearance.swift */; };
 		81F89E472D819AA100A41C89 /* ShapeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E462D819A9E00A41C89 /* ShapeContent.swift */; };
 		81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E502D81A6E900A41C89 /* CardSize.swift */; };
 		81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E522D81A6ED00A41C89 /* CardAppearance.swift */; };
@@ -857,6 +860,9 @@
 		81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAppearance.swift; sourceTree = "<group>"; };
 		81F635D62DBB9106003C8C26 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
 		81F635D92DBB9192003C8C26 /* ShapeTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTokenContextBuilder.swift; sourceTree = "<group>"; };
+		81F7EC9C2DF2F0AB00531844 /* ModalProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProps.swift; sourceTree = "<group>"; };
+		81F7ECA32DF2F0CA00531844 /* ModalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAppearance.swift; sourceTree = "<group>"; };
+		81F7ECA52DF2F0CA00531844 /* ModalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSize.swift; sourceTree = "<group>"; };
 		81F89E462D819A9E00A41C89 /* ShapeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeContent.swift; sourceTree = "<group>"; };
 		81F89E502D81A6E900A41C89 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
 		81F89E522D81A6ED00A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
@@ -1224,6 +1230,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81F7EC9C2DF2F0AB00531844 /* ModalProps.swift */,
 				81E934372DEDF5D600B76E38 /* ToastProps.swift */,
 				815D36832DE5B9F80005273B /* TooltipProps.swift */,
 				815D36812DE5B71F0005273B /* OverlayProps.swift */,
@@ -1257,6 +1264,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F7ECA62DF2F0CA00531844 /* Modal */,
 				81E934342DEDF5CB00B76E38 /* Toast */,
 				815D36872DE5BA390005273B /* Tooltip */,
 				815D367E2DE5B7120005273B /* Overlay */,
@@ -2014,6 +2022,15 @@
 			path = Avatar;
 			sourceTree = "<group>";
 		};
+		81F7ECA62DF2F0CA00531844 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				81F7ECA32DF2F0CA00531844 /* ModalAppearance.swift */,
+				81F7ECA52DF2F0CA00531844 /* ModalSize.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		81F89E4F2D81A6E100A41C89 /* Card */ = {
 			isa = PBXGroup;
 			children = (
@@ -2436,6 +2453,8 @@
 				81C3D7E02DAE43040090739E /* SwitchProps.swift in Sources */,
 				812DB7A72D59E1B000D3F4A3 /* ButtonSize.swift in Sources */,
 				81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */,
+				81F7ECA72DF2F0CA00531844 /* ModalSize.swift in Sources */,
+				81F7ECA82DF2F0CA00531844 /* ModalAppearance.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
@@ -2608,6 +2627,7 @@
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				6962DE732DACFD33007666D5 /* AvatarGroupProps.swift in Sources */,
+				81F7EC9D2DF2F0AB00531844 /* ModalProps.swift in Sources */,
 				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
 				81B23FA92D4BEBA00042A657 /* Component.swift in Sources */,
 				817539852BD008A500138866 /* CodeGenerationError.swift in Sources */,
