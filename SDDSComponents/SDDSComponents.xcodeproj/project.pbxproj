@@ -180,6 +180,10 @@
 		817580E92C37E04000E45207 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817580E82C37E04000E45207 /* SpinnerView.swift */; };
 		81763B0F2D6DF39E00904D4A /* SDDSBadgePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */; };
 		81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */; };
+		8178A0852DF2F6B5003F5041 /* ModalSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A0802DF2F6B5003F5041 /* ModalSizeConfiguration.swift */; };
+		8178A0862DF2F6B5003F5041 /* ModalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A07F2DF2F6B5003F5041 /* ModalAppearance.swift */; };
+		8178A0872DF2F6B5003F5041 /* View+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A0832DF2F6B5003F5041 /* View+Modal.swift */; };
+		8178A0882DF2F6B5003F5041 /* SDDSModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A0822DF2F6B5003F5041 /* SDDSModal.swift */; };
 		817AE5262C99925A00F427DE /* SDDSSwitchPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */; };
 		817AE5302C99925A00F427DE /* SDDSComponentsPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AE5052C99925A00F427DE /* SDDSComponentsPreview.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
@@ -476,6 +480,10 @@
 		81763B0B2D6DF0D300904D4A /* BasicBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicBadge.swift; sourceTree = "<group>"; };
 		81763B0E2D6DF39B00904D4A /* SDDSBadgePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadgePreview.swift; sourceTree = "<group>"; };
 		81763B192D6DFB2A00904D4A /* OneSizeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSizeTypography.swift; sourceTree = "<group>"; };
+		8178A07F2DF2F6B5003F5041 /* ModalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAppearance.swift; sourceTree = "<group>"; };
+		8178A0802DF2F6B5003F5041 /* ModalSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSizeConfiguration.swift; sourceTree = "<group>"; };
+		8178A0822DF2F6B5003F5041 /* SDDSModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSModal.swift; sourceTree = "<group>"; };
+		8178A0832DF2F6B5003F5041 /* View+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modal.swift"; sourceTree = "<group>"; };
 		8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeCore.framework"; sourceTree = "<group>"; };
 		8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeUtilities.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeUtilities.framework"; sourceTree = "<group>"; };
 		817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSSwitchPreview.swift; sourceTree = "<group>"; };
@@ -1165,6 +1173,25 @@
 			path = SDDSBadge;
 			sourceTree = "<group>";
 		};
+		8178A0812DF2F6B5003F5041 /* ModalAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8178A07F2DF2F6B5003F5041 /* ModalAppearance.swift */,
+				8178A0802DF2F6B5003F5041 /* ModalSizeConfiguration.swift */,
+			);
+			path = ModalAppearance;
+			sourceTree = "<group>";
+		};
+		8178A0842DF2F6B5003F5041 /* SDDSModal */ = {
+			isa = PBXGroup;
+			children = (
+				8178A0812DF2F6B5003F5041 /* ModalAppearance */,
+				8178A0822DF2F6B5003F5041 /* SDDSModal.swift */,
+				8178A0832DF2F6B5003F5041 /* View+Modal.swift */,
+			);
+			path = SDDSModal;
+			sourceTree = "<group>";
+		};
 		817AE4DC2C99925900F427DE /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1279,6 +1306,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8178A0842DF2F6B5003F5041 /* SDDSModal */,
 				81E9343C2DEDF70D00B76E38 /* SDDSToast */,
 				815D368F2DE5BAA70005273B /* SDDSTooltip */,
 				815D36762DE5B5CC0005273B /* SDDSOverlay */,
@@ -2075,6 +2103,10 @@
 				81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */,
 				81F753282CF46831000156D9 /* ButtonColor.swift in Sources */,
 				6969429F2D6F0D8C00F43C38 /* CellSizeConfigurations.swift in Sources */,
+				8178A0852DF2F6B5003F5041 /* ModalSizeConfiguration.swift in Sources */,
+				8178A0862DF2F6B5003F5041 /* ModalAppearance.swift in Sources */,
+				8178A0872DF2F6B5003F5041 /* View+Modal.swift in Sources */,
+				8178A0882DF2F6B5003F5041 /* SDDSModal.swift in Sources */,
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,
 				696942A12D6F0D8C00F43C38 /* CellAppearance.swift in Sources */,
 				811DE1582C5017C3000DD354 /* ProgressBarAppearance.swift in Sources */,
