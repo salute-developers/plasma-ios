@@ -90,6 +90,9 @@
 		81763B122D6DF43600904D4A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B112D6DF43400904D4A /* BadgeView.swift */; };
 		81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B132D6DF43800904D4A /* BadgeViewProvider.swift */; };
 		81763B162D6DF43F00904D4A /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B152D6DF43D00904D4A /* BadgeViewModel.swift */; };
+		8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31B2DF2F968003F5041 /* ModalView.swift */; };
+		8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31C2DF2F968003F5041 /* ModalViewModel.swift */; };
+		8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
@@ -227,6 +230,9 @@
 		81763B112D6DF43400904D4A /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		81763B132D6DF43800904D4A /* BadgeViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewProvider.swift; sourceTree = "<group>"; };
 		81763B152D6DF43D00904D4A /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
+		8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVariationProvider.swift; sourceTree = "<group>"; };
+		8178A31B2DF2F968003F5041 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		8178A31C2DF2F968003F5041 /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
@@ -474,6 +480,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8178A31D2DF2F968003F5041 /* ModalView */,
 				81E936DB2DEDFA7300B76E38 /* ToastView */,
 				81DECC832DE5F0EB0035E6A9 /* TooltipView */,
 				815D38B02DE5BC570005273B /* OverlayView */,
@@ -662,6 +669,16 @@
 				81763B112D6DF43400904D4A /* BadgeView.swift */,
 			);
 			path = BadgeView;
+			sourceTree = "<group>";
+		};
+		8178A31D2DF2F968003F5041 /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */,
+				8178A31B2DF2F968003F5041 /* ModalView.swift */,
+				8178A31C2DF2F968003F5041 /* ModalViewModel.swift */,
+			);
+			path = ModalView;
 			sourceTree = "<group>";
 		};
 		817D9F122C3704AD006C4814 /* ButtonView */ = {
@@ -991,6 +1008,9 @@
 				690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */,
 				698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */,
 				693FF15D2DE49A7100E14D0E /* DividerView.swift in Sources */,
+				8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */,
+				8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */,
+				8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
