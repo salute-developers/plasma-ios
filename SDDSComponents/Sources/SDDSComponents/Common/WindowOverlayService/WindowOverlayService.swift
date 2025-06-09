@@ -165,7 +165,7 @@ final class WindowOverlayService {
         guard let firstToast = stackedToasts.first else { return }
         let position = firstToast.position
         
-        let stackView = VStack(spacing: 0) {
+        let stackView = VStack(spacing: 8) {
             if position.stackDirection == .down {
                 ForEach(stackedToasts) { toast in
                     toast.view

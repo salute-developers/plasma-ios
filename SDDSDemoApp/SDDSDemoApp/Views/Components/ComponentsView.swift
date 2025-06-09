@@ -29,7 +29,8 @@ struct ComponentsView: View {
         ("SDDSPopover", AnyView(PopoverView())),
         ("SDDSTooltip", AnyView(TooltipView())),
         ("SDDSToast", AnyView(ToastView())),
-        ("SDDSModal", AnyView(ModalView()))
+        ("SDDSModal", AnyView(ModalView())),
+        ("SDDSNotification", AnyView(NotificationView()))
     ]
 
     var body: some View {

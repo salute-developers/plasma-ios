@@ -31,34 +31,38 @@ import SwiftUI
  )
  ```
  */
-public struct SDDSToast<ContentStart: View, ContentEnd: View>: View {
-    let text: String
+public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: View {
     let contentStart: ContentStart
+    let content: Content
     let contentEnd: ContentEnd
     let duration: TimeInterval?
+    let contentEndPosition: ToasContentEndPosition
     let onClose: (() -> ())?
     private let _appearance: ToastAppearance?
     let accessibility: ToastAccessibility
     @State private var isVisible: Bool = false
+    @State private var contentHeight: CGFloat = 0
 
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.toastAppearance) private var environmentAppearance
     
     public init(
-        text: String,
         @ViewBuilder contentStart: () -> ContentStart,
+        @ViewBuilder content: () -> Content,
         @ViewBuilder contentEnd: () -> ContentEnd,
         duration: TimeInterval = 3.0,
         appearance: ToastAppearance? = nil,
+        contentEndPosition: ToasContentEndPosition,
         onClose: (() -> ())?,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
-        self.text = text
         self.contentStart = contentStart()
+        self.content = content()
         self.contentEnd = contentEnd()
         self.duration = duration
         self.onClose = onClose
         self._appearance = appearance
+        self.contentEndPosition = contentEndPosition
         self.accessibility = accessibility
     }
     
@@ -74,25 +78,31 @@ public struct SDDSToast<ContentStart: View, ContentEnd: View>: View {
                     .accessibilityHidden(true)
                 
                 HStack(spacing: appearance.size.contentEndPadding) {
-                    if !text.isEmpty {
-                        Text(text)
-                            .lineLimit(1)
-                            .typography(appearance.textTypography?.typography(with: appearance.size) ?? .undefined)
-                            .foregroundColor(appearance.textColor.color(for: colorScheme))
-                            .accessibilityLabel(Text(accessibility.textLabel))
-                            .accessibilityValue(Text(text))
-                    }
-                    
-                    contentEnd
-                        .foregroundColor(appearance.contentEndColor.color(for: colorScheme))
-                        .frame(width: appearance.size.contentEndSize, height: appearance.size.contentEndSize)
-                        .accessibilityHidden(true)
-                        .onTapGesture {
-                            withAnimation(.easeOut(duration: 0.2)) {
-                                isVisible = false
-                            }
-                            onClose?()
+                    content
+                        .typography(appearance.textTypography?.typography(with: appearance.size) ?? .undefined)
+                        .applyIf(appearance.textColor != nil) {
+                            $0.foregroundColor(appearance.textColor?.color(for: colorScheme) ?? .clear)
                         }
+                        .applyIf(textTypography != nil) {
+                            $0
+                                .typography(textTypography ?? .undefined)
+                                .lineLimit(1)
+                        }
+                        .accessibilityLabel(Text(accessibility.textLabel))
+                        .measureSize { size in
+                            contentHeight = size.height
+                        }
+                    
+                    switch contentEndPosition {
+                    case .centerRight:
+                        contentEndView
+                    case .topRight:
+                        VStack {
+                            contentEndView
+                            Spacer()
+                        }
+                        .frame(height: contentHeight)
+                    }
                 }
             }
 
@@ -118,63 +128,110 @@ public struct SDDSToast<ContentStart: View, ContentEnd: View>: View {
         }
     }
     
+    private var textTypography: TypographyToken? {
+        appearance.textTypography?.typography(with: appearance.size)
+    }
+    
     var appearance: ToastAppearance {
         _appearance ?? environmentAppearance
     }
+    
+    @ViewBuilder
+    private var contentEndView: some View {
+        contentEnd
+            .foregroundColor(appearance.contentEndColor.color(for: colorScheme))
+            .frame(width: appearance.size.contentEndSize, height: appearance.size.contentEndSize)
+            .accessibilityHidden(true)
+            .onTapGesture {
+                withAnimation(.easeOut(duration: 0.2)) {
+                    isVisible = false
+                }
+                onClose?()
+            }
+    }
 }
 
-extension SDDSToast where ContentStart == EmptyView, ContentEnd == EmptyView {
+extension SDDSToast where ContentStart == EmptyView, ContentEnd == EmptyView, Content == Text {
     public init(
         text: String,
+        contentEndPosition: ToasContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
         self.init(
-            text: text,
             contentStart: { EmptyView() },
+            content: { Text(text) },
             contentEnd: { EmptyView() },
             appearance: appearance,
+            contentEndPosition: contentEndPosition,
             onClose: onClose,
             accessibility: accessibility
         )
     }
 }
 
-extension SDDSToast where ContentEnd == EmptyView {
+extension SDDSToast where ContentEnd == EmptyView, Content == Text {
     public init(
         text: String,
         @ViewBuilder contentStart: () -> ContentStart,
+        contentEndPosition: ToasContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
         self.init(
-            text: text,
             contentStart: contentStart,
+            content: { Text(text) },
             contentEnd: { EmptyView() },
             appearance: appearance,
+            contentEndPosition: contentEndPosition,
             onClose: onClose,
             accessibility: accessibility
         )
     }
 }
 
-extension SDDSToast where ContentStart == EmptyView {
+extension SDDSToast where ContentStart == EmptyView, Content == Text {
     public init(
         text: String,
         @ViewBuilder contentEnd: () -> ContentEnd,
+        contentEndPosition: ToasContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
         self.init(
-            text: text,
             contentStart: { EmptyView() },
+            content: { Text(text) },
             contentEnd: contentEnd,
             appearance: appearance,
+            contentEndPosition: contentEndPosition,
             onClose: onClose,
             accessibility: accessibility
+        )
+    }
+}
+
+private struct ContentHeightPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
+extension View {
+    func measureSize(perform action: @escaping (CGSize) -> Void) -> some View {
+        self.background(
+            GeometryReader { geometry in
+                Color.clear
+                    .onAppear {
+                        action(geometry.size)
+                    }
+                    .onChange(of: geometry.size) { newSize in
+                        action(newSize)
+                    }
+            }
         )
     }
 } 
