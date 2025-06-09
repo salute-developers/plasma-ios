@@ -28,15 +28,15 @@ public struct DefaultToastSize: ToastSizeConfiguration {
 }
 
 public struct ZeroToastSize: ToastSizeConfiguration {
-    public var contentStartSize: CGFloat { 0 }
-    public var contentEndSize: CGFloat { 0 }
-    public var contentStartPadding: CGFloat { 0 }
-    public var contentEndPadding: CGFloat { 0 }
-    public var paddingStart: CGFloat { 0 }
-    public var paddingEnd: CGFloat { 0 }
-    public var paddingTop: CGFloat { 0 }
-    public var paddingBottom: CGFloat { 0 }
-    public var shape: PathDrawer { DefaultPathDrawer() }
+    public var contentStartSize: CGFloat = 0
+    public var contentEndSize: CGFloat = 0
+    public var contentStartPadding: CGFloat = 0
+    public var contentEndPadding: CGFloat = 0
+    public var paddingStart: CGFloat = 0
+    public var paddingEnd: CGFloat = 0
+    public var paddingTop: CGFloat = 0
+    public var paddingBottom: CGFloat = 0
+    public var shape: PathDrawer = DefaultPathDrawer()
     public var debugDescription: String { "ZeroToastSize" }
     public init() {}
 } 

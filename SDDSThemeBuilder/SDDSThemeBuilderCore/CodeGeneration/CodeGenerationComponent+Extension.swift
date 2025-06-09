@@ -43,6 +43,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case tooltip = "Tooltip"
     case toast = "Toast"
     case modal = "Modal"
+    case notificationLoose = "NotificationLoose"
+    case notificationCompact = "NotificationCompact"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -87,7 +89,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .popover,
             .tooltip,
             .toast,
-            .modal
+            .modal,
+            .notificationLoose,
+            .notificationCompact
         ]
     }
     
@@ -152,6 +156,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ToastProps, ToastAppearance, ToastSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .modal:
             GenerateComponentCommand<ModalProps, ModalAppearance, ModalSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .notificationLoose, .notificationCompact:
+            GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -213,6 +219,8 @@ extension CodeGenerationComponent {
             "ToastAppearance"
         case .modal:
             "ModalAppearance"
+        case .notificationLoose, .notificationCompact:
+            "NotificationAppearance"
         }
     }
     
@@ -275,6 +283,8 @@ extension CodeGenerationComponent {
             "ToastSizeConfiguration"
         case .modal:
             "ModalSizeConfiguration"
+        case .notificationLoose, .notificationCompact:
+            "NotificationSizeConfiguration"
         }
     }
     
@@ -364,6 +374,10 @@ extension CodeGenerationComponent {
             "toast_config.json"
         case .modal:
             "modal_config.json"
+        case .notificationCompact:
+            "notification_compact_config.json"
+        case .notificationLoose:
+            "notification_loose_config.json"
         }
     }
     

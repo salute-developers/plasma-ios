@@ -5,7 +5,7 @@ import SwiftUI
 public struct ToastAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken
-    public var textColor: ColorToken
+    public var textColor: ColorToken?
     public var contentStartColor: ColorToken
     public var contentEndColor: ColorToken
     public var textTypography: TypographyConfiguration?

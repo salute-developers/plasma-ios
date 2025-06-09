@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSIcons
+@_exported import SDDSIcons
 @_exported import SDDSThemeCore
 
 public struct SDDSModal<Content: View>: View {

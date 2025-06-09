@@ -35,6 +35,9 @@
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
+		8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119E25A2DF6FCA700D1CA9F /* NotificationVariationProvider.swift */; };
+		8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119E25B2DF6FCA700D1CA9F /* NotificationView.swift */; };
+		8119E2602DF6FCA700D1CA9F /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119E25C2DF6FCA700D1CA9F /* NotificationViewModel.swift */; };
 		811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684C2CC8024A00480F89 /* TextAreaView.swift */; };
 		811C684F2CC8027600480F89 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C684E2CC8027600480F89 /* TextAreaViewModel.swift */; };
 		811C68512CC8059800480F89 /* ChipGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811C68502CC8059800480F89 /* ChipGroupViewModel.swift */; };
@@ -179,6 +182,9 @@
 		698744732D1C6EB800559ABA /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
 		698902662D651763003DCE58 /* CellVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVariationProvider.swift; sourceTree = "<group>"; };
+		8119E25A2DF6FCA700D1CA9F /* NotificationVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVariationProvider.swift; sourceTree = "<group>"; };
+		8119E25B2DF6FCA700D1CA9F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		8119E25C2DF6FCA700D1CA9F /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		811C684C2CC8024A00480F89 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		811C684E2CC8027600480F89 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		811C68502CC8059800480F89 /* ChipGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupViewModel.swift; sourceTree = "<group>"; };
@@ -271,7 +277,6 @@
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
-		D3DE039F2DF3201500364691 /* TextFieldTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextFieldTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
 		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
 		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
@@ -371,7 +376,6 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3DE039F2DF3201500364691 /* TextFieldTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3FEDD312DB9338E009A2867 /* CellTestCase */,
@@ -459,6 +463,16 @@
 			path = SegmentItemView;
 			sourceTree = "<group>";
 		};
+		8119E25D2DF6FCA700D1CA9F /* NotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				8119E25A2DF6FCA700D1CA9F /* NotificationVariationProvider.swift */,
+				8119E25B2DF6FCA700D1CA9F /* NotificationView.swift */,
+				8119E25C2DF6FCA700D1CA9F /* NotificationViewModel.swift */,
+			);
+			path = NotificationView;
+			sourceTree = "<group>";
+		};
 		811C684B2CC8023600480F89 /* TextAreaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				8178A31D2DF2F968003F5041 /* ModalView */,
+				8119E25D2DF6FCA700D1CA9F /* NotificationView */,
 				81E936DB2DEDFA7300B76E38 /* ToastView */,
 				81DECC832DE5F0EB0035E6A9 /* TooltipView */,
 				815D38B02DE5BC570005273B /* OverlayView */,
@@ -837,7 +852,6 @@
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
-				D3DE039F2DF3201500364691 /* TextFieldTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
@@ -1058,6 +1072,9 @@
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
+				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,
+				8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */,
+				8119E2602DF6FCA700D1CA9F /* NotificationViewModel.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
 				694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */,
 				697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */,
