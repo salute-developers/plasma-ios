@@ -59,7 +59,7 @@ struct NotificationView: View {
     }
     
     private func present() {
-        guard !viewModel.text.isEmpty else {
+        guard !viewModel.text.isEmpty || viewModel.hasClose else {
             return
         }
         isPresented = true
