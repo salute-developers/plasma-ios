@@ -273,6 +273,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D36B52E22DF98BDB0028FA4E /* TextFieldTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextFieldTestCase; sourceTree = "<group>"; };
 		D37C09022DE8B32400B76DF2 /* SegmentTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SegmentTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
@@ -376,6 +377,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D36B52E22DF98BDB0028FA4E /* TextFieldTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3FEDD312DB9338E009A2867 /* CellTestCase */,
@@ -848,6 +850,7 @@
 				24C154142BB3020B00963FAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				D36B52E22DF98BDB0028FA4E /* TextFieldTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
