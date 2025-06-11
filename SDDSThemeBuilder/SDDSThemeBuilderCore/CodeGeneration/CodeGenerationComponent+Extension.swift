@@ -41,6 +41,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case overlay = "Overlay"
     case popover = "Popover"
     case tooltip = "Tooltip"
+    case toast = "Toast"
+    case modal = "Modal"
+    case notificationLoose = "NotificationLoose"
+    case notificationCompact = "NotificationCompact"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -83,7 +87,11 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .progressBar,
             .divider,
             .popover,
-            .tooltip
+            .tooltip,
+            .toast,
+            .modal,
+            .notificationLoose,
+            .notificationCompact
         ]
     }
     
@@ -144,6 +152,12 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<PopoverProps, PopoverAppearance, PopoverSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tooltip:
             GenerateComponentCommand<TooltipProps, TooltipAppearance, TooltipSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .toast:
+            GenerateComponentCommand<ToastProps, ToastAppearance, ToastSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .modal:
+            GenerateComponentCommand<ModalProps, ModalAppearance, ModalSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .notificationLoose, .notificationCompact:
+            GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -201,6 +215,12 @@ extension CodeGenerationComponent {
             "PopoverAppearance"
         case .tooltip:
             "TooltipAppearance"
+        case .toast:
+            "ToastAppearance"
+        case .modal:
+            "ModalAppearance"
+        case .notificationLoose, .notificationCompact:
+            "NotificationAppearance"
         }
     }
     
@@ -259,6 +279,12 @@ extension CodeGenerationComponent {
             "PopoverSizeConfiguration"
         case .tooltip:
             "TooltipSizeConfiguration"
+        case .toast:
+            "ToastSizeConfiguration"
+        case .modal:
+            "ModalSizeConfiguration"
+        case .notificationLoose, .notificationCompact:
+            "NotificationSizeConfiguration"
         }
     }
     
@@ -344,6 +370,14 @@ extension CodeGenerationComponent {
             "popover_config.json"
         case .tooltip:
             "tooltip_config.json"
+        case .toast:
+            "toast_config.json"
+        case .modal:
+            "modal_config.json"
+        case .notificationCompact:
+            "notification_compact_config.json"
+        case .notificationLoose:
+            "notification_loose_config.json"
         }
     }
     

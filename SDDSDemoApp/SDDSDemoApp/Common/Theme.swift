@@ -463,4 +463,48 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.Tooltip.all
         }
     }
+    
+    var toastVariations: [Variation<ToastAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Toast.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Toast.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Toast.all
+        }
+    }
+    
+    var modalVariations: [Variation<ModalAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Modal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.Modal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Modal.all
+        }
+    }
+    
+    var notificationCompactVariations: [Variation<NotificationAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NotificationCompact.all
+        case .stylesSalute:
+            return StylesSaluteTheme.NotificationCompact.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.NotificationCompact.all
+        }
+    }
+    
+    var notificationLooseVariations: [Variation<NotificationAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NotificationLoose.all
+        case .stylesSalute:
+            return StylesSaluteTheme.NotificationLoose.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.NotificationLoose.all
+        }
+    }
 }

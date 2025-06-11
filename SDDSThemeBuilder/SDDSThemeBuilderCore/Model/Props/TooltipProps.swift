@@ -20,3 +20,4 @@ struct TooltipProps: MergeableConfiguration, Codable {
     var paddingTop: KeyValue<Double>?
     var paddingBottom: KeyValue<Double>?
 }
+ 

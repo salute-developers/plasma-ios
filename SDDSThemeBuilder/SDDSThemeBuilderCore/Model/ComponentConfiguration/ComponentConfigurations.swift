@@ -25,3 +25,6 @@ typealias DividerConfiguration = ComponentConfiguration<DividerProps>
 typealias OverlayConfiguration = ComponentConfiguration<OverlayProps>
 typealias PopoverConfiguration = ComponentConfiguration<PopoverProps>
 typealias TooltipConfiguration = ComponentConfiguration<TooltipProps>
+typealias ToastConfiguration = ComponentConfiguration<ToastProps>
+typealias ModalConfiguration = ComponentConfiguration<ModalProps>
+typealias NotificationConfiguration = ComponentConfiguration<NotificationProps>
