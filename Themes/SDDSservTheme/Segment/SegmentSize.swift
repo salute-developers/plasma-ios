@@ -21,7 +21,7 @@ struct SegmentSize {
 struct SegmentSizeL: SegmentSizeConfiguration {
     var horizontalHeight = CGFloat(0)
     var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius - 2.0) as PathDrawer
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius-2.0) as PathDrawer
     var verticalWidth = CGFloat(0)
     public var debugDescription: String {
         return "SegmentSize"
@@ -39,7 +39,7 @@ struct SegmentSizeM: SegmentSizeConfiguration {
 struct SegmentSizeS: SegmentSizeConfiguration {
     var horizontalHeight = CGFloat(0)
     var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius - 2.0) as PathDrawer
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius-2.0) as PathDrawer
     var verticalWidth = CGFloat(0)
     public var debugDescription: String {
         return "SegmentSize"
@@ -48,7 +48,7 @@ struct SegmentSizeS: SegmentSizeConfiguration {
 struct SegmentSizeXl: SegmentSizeConfiguration {
     var horizontalHeight = CGFloat(0)
     var paddings = EdgeInsets(top: 2.0, leading: 2.0, bottom: 2.0, trailing: 2.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius - 2.0) as PathDrawer
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius-2.0) as PathDrawer
     var verticalWidth = CGFloat(0)
     public var debugDescription: String {
         return "SegmentSize"

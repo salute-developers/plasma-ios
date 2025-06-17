@@ -507,4 +507,26 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.NotificationLoose.all
         }
     }
+    
+    var rectSkeletonVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.RectSkeleton.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.RectSkeleton.all
+        case .stylesSalute:
+            PlasmaB2CTheme.RectSkeleton.all
+        }
+    }
+    
+    var textSkeletonVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TextSkeleton.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.TextSkeleton.all
+        case .stylesSalute:
+            PlasmaB2CTheme.TextSkeleton.all
+        }
+    }
 }

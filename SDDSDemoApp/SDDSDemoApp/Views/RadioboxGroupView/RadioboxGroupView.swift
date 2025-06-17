@@ -49,7 +49,7 @@ struct RadioboxGroupView: View {
                 }
             }
         }
-        .navigationTitle("SDDSRadioboxGroup")
+        .navigationTitle("RadioboxGroup")
     }
 }
 

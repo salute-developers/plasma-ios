@@ -45,12 +45,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case modal = "Modal"
     case notificationLoose = "NotificationLoose"
     case notificationCompact = "NotificationCompact"
+    case rectSkeleton = "RectSkeleton"
+    case textSkeleton = "TextSkeleton"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-//            .basicButton,
-//            .linkButton,
-//            .iconButton,
+            .basicButton,
+            .linkButton,
+            .iconButton,
         // .textField,
         // .textFieldClear,
         // .textArea,
@@ -91,7 +93,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .toast,
             .modal,
             .notificationLoose,
-            .notificationCompact
+            .notificationCompact,
+            .rectSkeleton,
+            .textSkeleton
         ]
     }
     
@@ -158,6 +162,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ModalProps, ModalAppearance, ModalSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .notificationLoose, .notificationCompact:
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .rectSkeleton, .textSkeleton:
+            GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -221,6 +227,8 @@ extension CodeGenerationComponent {
             "ModalAppearance"
         case .notificationLoose, .notificationCompact:
             "NotificationAppearance"
+        case .rectSkeleton, .textSkeleton:
+            "SkeletonAppearance"
         }
     }
     
@@ -285,6 +293,8 @@ extension CodeGenerationComponent {
             "ModalSizeConfiguration"
         case .notificationLoose, .notificationCompact:
             "NotificationSizeConfiguration"
+        case .rectSkeleton, .textSkeleton:
+            "SkeletonSizeConfiguration"
         }
     }
     
@@ -378,6 +388,10 @@ extension CodeGenerationComponent {
             "notification_compact_config.json"
         case .notificationLoose:
             "notification_loose_config.json"
+        case .rectSkeleton:
+            "rect_skeleton_config.json"
+        case .textSkeleton:
+            "text_skeleton_config.json"
         }
     }
     

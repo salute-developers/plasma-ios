@@ -21,7 +21,7 @@ struct BasicButtonSize {
     ] 
 }
 struct BasicButtonSizeL: ButtonSizeConfiguration {
-    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var cornerRadius = ShapeToken.roundL.cornerRadius-2.0
     var height = CGFloat(56.0)
     var iconHorizontalGap = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -45,7 +45,7 @@ struct BasicButtonSizeM: ButtonSizeConfiguration {
     }
 }
 struct BasicButtonSizeS: ButtonSizeConfiguration {
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
     var height = CGFloat(40.0)
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:24.0, height:24.0)

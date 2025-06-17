@@ -19,7 +19,7 @@ final class ShapeTokenContextBuilder: CodeGenerationContextBuilder {
         }
         
         var result = "ShapeToken.\(value.camelCase).cornerRadius"
-        if let adjustment = shape.adjustment, adjustment > 0 {
+        if let adjustment = shape.adjustment, adjustment != 0 {
             let absValue = String(abs(adjustment))
             result += "\(adjustment >= 0 ? "+\(absValue)" : "-\(absValue)" )"
         }

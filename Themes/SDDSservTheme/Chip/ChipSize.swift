@@ -33,7 +33,7 @@ struct ChipSizeM: ChipSizeConfiguration {
     var buttonImageSize = CGSize(width:24.0, height:24.0)
     var contentEndPadding = CGFloat(6.0)
     var contentStartPadding = CGFloat(6.0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
     var height = CGFloat(40.0)
     var iconImageSize = CGSize(width:24.0, height:24.0)
     var leadingInset = CGFloat(14.0)

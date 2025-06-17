@@ -144,7 +144,7 @@ struct AvatarView: View {
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(viewModel: viewModel)
         }
-        .navigationTitle("SDDSAvatar")
+        .navigationTitle("Avatar")
     }
     
     private var image: Image? {

@@ -30,7 +30,7 @@ struct ModalView: View {
                 Toggle("useNativeBlackout", isOn: $viewModel.useNativeBlackout)
             }
         }
-        .navigationTitle("SDDSModal")
+        .navigationTitle("Modal")
         .modal(
             isPresented: $isPresented,
             appearance: viewModel.appearance,
@@ -47,3 +47,6 @@ struct ModalView: View {
         }
     }
 }
+
+
+

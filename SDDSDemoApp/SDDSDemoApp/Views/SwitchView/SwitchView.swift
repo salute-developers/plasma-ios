@@ -50,7 +50,7 @@ struct SwitchView: View {
                 }
             }
         }
-        .navigationTitle("SDDSSwitch")
+        .navigationTitle("Switch")
     }
 }
 
