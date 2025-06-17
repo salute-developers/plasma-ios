@@ -3,7 +3,8 @@ import SwiftUI
 
 public extension LinearGradient {
     var gradient: SwiftUI.LinearGradient {
-        let angleInRadians = angle * .pi / 180
+        let swiftUIAngle = 90 - angle
+        let angleInRadians = swiftUIAngle * .pi / 180
         let startX = cos(angleInRadians + .pi) * 0.5 + 0.5
         let startY = sin(angleInRadians + .pi) * 0.5 + 0.5
         let endX = cos(angleInRadians) * 0.5 + 0.5

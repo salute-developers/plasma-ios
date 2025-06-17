@@ -30,7 +30,9 @@ struct ComponentsView: View {
         ("SDDSTooltip", AnyView(TooltipView())),
         ("SDDSToast", AnyView(ToastView())),
         ("SDDSModal", AnyView(ModalView())),
-        ("SDDSNotification", AnyView(NotificationView()))
+        ("SDDSNotification", AnyView(NotificationView())),
+        ("SDDSRectSkeleton", AnyView(RectSkeletonView())),
+        ("SDDSTextSkeleton", AnyView(TextSkeletonView()))
     ]
 
     var body: some View {
