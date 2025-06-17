@@ -35,7 +35,7 @@ struct BottomSheetView: View {
                 handlePositionPicker
             }
         }
-        .navigationTitle("SDDSBottomSheet")
+        .navigationTitle("BottomSheet")
         .bottomSheet(isPresented: $viewModel.isBottomSheetPresented, detent: $viewModel.detent) {
             SDDSBottomSheet(
                 appearance: viewModel.appearance,

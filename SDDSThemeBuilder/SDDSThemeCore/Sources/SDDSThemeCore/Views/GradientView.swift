@@ -2,8 +2,9 @@ import SwiftUI
 
 public struct GradientView: View {
     private let kinds: [GradientKind]
+    private let offset: CGFloat = 0
     
-    public init(colorScheme: ColorScheme, token: GradientToken) {
+    public init(colorScheme: ColorScheme, token: GradientToken, offset: CGFloat = 0) {
         self.kinds = token.kind(for: colorScheme)
     }
     
@@ -11,6 +12,7 @@ public struct GradientView: View {
         ZStack {
             ForEach(0..<kinds.count, id: \.self) { index in
                 view(with: kinds[kinds.count - 1 - index])
+                    .offset(x: offset)
             }
         }
     }

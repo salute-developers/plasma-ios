@@ -51,7 +51,7 @@ struct RadioboxView: View {
                 
             }
         }
-        .navigationTitle("SDDSRadiobox")
+        .navigationTitle("Radiobox")
     }
 }
 

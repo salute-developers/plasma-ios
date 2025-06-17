@@ -31,7 +31,7 @@ struct NotificationLooseSizeM: NotificationSizeConfiguration {
     var paddingEnd = CGFloat(14.0)
     var paddingStart = CGFloat(14.0)
     var paddingTop = CGFloat(14.0)
-    var shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius - 2.0) as PathDrawer
+    var shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius-2.0) as PathDrawer
     public var debugDescription: String {
         return "NotificationLooseSize"
     }

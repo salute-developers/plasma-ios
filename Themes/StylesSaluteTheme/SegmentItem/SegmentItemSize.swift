@@ -17,7 +17,7 @@ struct SegmentItemSize {
     ] 
 }
 struct SegmentItemSizeL: SegmentItemSizeConfiguration {
-    var cornerRadius = ShapeToken.roundL.cornerRadius
+    var cornerRadius = ShapeToken.roundL.cornerRadius-2.0
     var counterPadding = CGFloat(6.0)
     var endContentSize = CGSize(width:24.0, height:24.0)
     var height = CGFloat(56.0)
@@ -47,7 +47,7 @@ struct SegmentItemSizeM: SegmentItemSizeConfiguration {
     }
 }
 struct SegmentItemSizeS: SegmentItemSizeConfiguration {
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
     var counterPadding = CGFloat(2.0)
     var endContentSize = CGSize(width:24.0, height:24.0)
     var height = CGFloat(40.0)

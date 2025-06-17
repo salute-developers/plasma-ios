@@ -34,7 +34,7 @@ struct CardView: View {
                 orientation
             }
         }
-        .navigationTitle("SDDSCard")
+        .navigationTitle("Card")
     }
     
     private var horizontalView: some View {

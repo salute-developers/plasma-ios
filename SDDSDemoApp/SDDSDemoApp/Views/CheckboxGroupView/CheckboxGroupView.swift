@@ -59,7 +59,7 @@ struct CheckboxGroupView: View {
                 }
             }
         }
-        .navigationTitle("SDDSCheckboxGroup")
+        .navigationTitle("CheckboxGroup")
     }
 }
 

@@ -45,7 +45,7 @@ struct NotificationView: View {
             }
         
         }
-        .navigationTitle("SDDSNotification")
+        .navigationTitle("Notification")
         .notification(
             isPresented: $isPresented,
             appearance: viewModel.appearance,

@@ -110,6 +110,11 @@
 		812DB76A2D57B4E900D3F4A3 /* TextFieldClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */; };
 		812DB7702D57B50A00D3F4A3 /* TextAreaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */; };
 		812DB7712D57B50A00D3F4A3 /* TextAreaClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */; };
+		8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687692E0186A800A1702A /* SDDSTextSkeleton.swift */; };
+		8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687672E0186A800A1702A /* SDDSRectSkeleton.swift */; };
+		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
+		8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */; };
+		81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */; };
 		8140A4672D59FA06002CF32B /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8140A4662D59FA06002CF32B /* SDDSServTheme */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		814E30202C999469004601F7 /* SDDSThemeUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 814E301F2C999469004601F7 /* SDDSThemeUtilities */; };
@@ -413,6 +418,11 @@
 		812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearPreview.swift; sourceTree = "<group>"; };
 		812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaPreview.swift; sourceTree = "<group>"; };
 		812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
+		813687642E0186A800A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
+		813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSizeConfiguration.swift; sourceTree = "<group>"; };
+		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
+		813687692E0186A800A1702A /* SDDSTextSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextSkeleton.swift; sourceTree = "<group>"; };
+		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		814D25602E0430840060C3F2 /* SDDSModal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSModal.md; sourceTree = "<group>"; };
@@ -420,6 +430,8 @@
 		814D25642E0430950060C3F2 /* SDDSToast.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSToast.md; sourceTree = "<group>"; };
 		814D25662E0430A90060C3F2 /* SDDSPopover.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSPopover.md; sourceTree = "<group>"; };
 		814D25682E0431360060C3F2 /* SDDSTooltip.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTooltip.md; sourceTree = "<group>"; };
+		814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextSkeleton.md; sourceTree = "<group>"; };
+		814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRectSkeleton.md; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
 		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
@@ -989,6 +1001,35 @@
 			path = TextAreaClear;
 			sourceTree = "<group>";
 		};
+		813687662E0186A800A1702A /* SkeletonAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				813687642E0186A800A1702A /* SkeletonAppearance.swift */,
+				813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */,
+			);
+			path = SkeletonAppearance;
+			sourceTree = "<group>";
+		};
+		813687682E0186A800A1702A /* SDDSRectSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */,
+				813687662E0186A800A1702A /* SkeletonAppearance */,
+				813687672E0186A800A1702A /* SDDSRectSkeleton.swift */,
+			);
+			path = SDDSRectSkeleton;
+			sourceTree = "<group>";
+		};
+		8136876A2E0186A800A1702A /* SDDSTextSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */,
+				81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */,
+				813687692E0186A800A1702A /* SDDSTextSkeleton.swift */,
+			);
+			path = SDDSTextSkeleton;
+			sourceTree = "<group>";
+		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -1333,6 +1374,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				813687682E0186A800A1702A /* SDDSRectSkeleton */,
+				8136876A2E0186A800A1702A /* SDDSTextSkeleton */,
 				8178A0842DF2F6B5003F5041 /* SDDSModal */,
 				8119DF5D2DF6FB8800D1CA9F /* SDDSNotification */,
 				81E9343C2DEDF70D00B76E38 /* SDDSToast */,
@@ -2075,6 +2118,10 @@
 				690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */,
 				693FEF392DE477AB00E14D0E /* DividerSizeConfiguration.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
+				8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */,
+				8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */,
+				8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */,
+				8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
 				81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */,
 				814E30412C99B090004601F7 /* Text+FillModifier.swift in Sources */,
@@ -2130,6 +2177,7 @@
 				6969429F2D6F0D8C00F43C38 /* CellSizeConfigurations.swift in Sources */,
 				8178A0852DF2F6B5003F5041 /* ModalSizeConfiguration.swift in Sources */,
 				8178A0862DF2F6B5003F5041 /* ModalAppearance.swift in Sources */,
+				81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */,
 				8178A0872DF2F6B5003F5041 /* View+Modal.swift in Sources */,
 				8178A0882DF2F6B5003F5041 /* SDDSModal.swift in Sources */,
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,

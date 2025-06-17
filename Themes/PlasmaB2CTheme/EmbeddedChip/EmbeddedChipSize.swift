@@ -20,7 +20,7 @@ struct EmbeddedChipSizeL: ChipSizeConfiguration {
     var buttonImageSize = CGSize(width:24.0, height:24.0)
     var contentEndPadding = CGFloat(8.0)
     var contentStartPadding = CGFloat(8.0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-4.0
     var height = CGFloat(44.0)
     var iconImageSize = CGSize(width:24.0, height:24.0)
     var leadingInset = CGFloat(14.0)
@@ -33,7 +33,7 @@ struct EmbeddedChipSizeM: ChipSizeConfiguration {
     var buttonImageSize = CGSize(width:24.0, height:24.0)
     var contentEndPadding = CGFloat(6.0)
     var contentStartPadding = CGFloat(6.0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-6.0
     var height = CGFloat(36.0)
     var iconImageSize = CGSize(width:24.0, height:24.0)
     var leadingInset = CGFloat(12.0)
@@ -46,7 +46,7 @@ struct EmbeddedChipSizeS: ChipSizeConfiguration {
     var buttonImageSize = CGSize(width:16.0, height:16.0)
     var contentEndPadding = CGFloat(4.0)
     var contentStartPadding = CGFloat(4.0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-8.0
     var height = CGFloat(28.0)
     var iconImageSize = CGSize(width:16.0, height:16.0)
     var leadingInset = CGFloat(10.0)
@@ -59,7 +59,7 @@ struct EmbeddedChipSizeXs: ChipSizeConfiguration {
     var buttonImageSize = CGSize(width:12.0, height:12.0)
     var contentEndPadding = CGFloat(2.0)
     var contentStartPadding = CGFloat(2.0)
-    var cornerRadius = ShapeToken.roundS.cornerRadius
+    var cornerRadius = ShapeToken.roundS.cornerRadius-6.0
     var height = CGFloat(20.0)
     var iconImageSize = CGSize(width:12.0, height:12.0)
     var leadingInset = CGFloat(6.0)
