@@ -28,10 +28,12 @@ public struct SDDSTextSkeleton: View {
         VStack(alignment: .leading) {
             ForEach(0..<lineCount, id: \.self) { index in
                 GeometryReader { geometry in
-                    let width = geometry.size.width * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
+                    let geometryWidth = geometry.size.width
+                    let width = geometryWidth * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
                     
                     SDDSRectSkeleton(appearance: appearance)
                         .frame(width: width, height: textTypography.lineHeight)
+                        .clipped()
                 }
                 .frame(height: textTypography.lineHeight)
             }
