@@ -50,6 +50,12 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
+		81368A6E2E01879900A1702A /* RectSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */; };
+		81368A6F2E01879900A1702A /* TextSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */; };
+		81368A702E01879900A1702A /* RectSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A682E01879900A1702A /* RectSkeletonViewModel.swift */; };
+		81368A712E01879900A1702A /* TextSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6B2E01879900A1702A /* TextSkeletonView.swift */; };
+		81368A722E01879900A1702A /* TextSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */; };
+		81368A732E01879900A1702A /* RectSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A672E01879900A1702A /* RectSkeletonView.swift */; };
 		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
@@ -198,6 +204,12 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonVariationProvider.swift; sourceTree = "<group>"; };
+		81368A672E01879900A1702A /* RectSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonView.swift; sourceTree = "<group>"; };
+		81368A682E01879900A1702A /* RectSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonViewModel.swift; sourceTree = "<group>"; };
+		81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonVariationProvider.swift; sourceTree = "<group>"; };
+		81368A6B2E01879900A1702A /* TextSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonView.swift; sourceTree = "<group>"; };
+		81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonViewModel.swift; sourceTree = "<group>"; };
 		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
 		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
@@ -497,6 +509,8 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81368A692E01879900A1702A /* RectSkeletonView */,
+				81368A6D2E01879900A1702A /* TextSkeletonView */,
 				8178A31D2DF2F968003F5041 /* ModalView */,
 				8119E25D2DF6FCA700D1CA9F /* NotificationView */,
 				81E936DB2DEDFA7300B76E38 /* ToastView */,
@@ -571,6 +585,26 @@
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
 			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		81368A692E01879900A1702A /* RectSkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */,
+				81368A672E01879900A1702A /* RectSkeletonView.swift */,
+				81368A682E01879900A1702A /* RectSkeletonViewModel.swift */,
+			);
+			path = RectSkeletonView;
+			sourceTree = "<group>";
+		};
+		81368A6D2E01879900A1702A /* TextSkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */,
+				81368A6B2E01879900A1702A /* TextSkeletonView.swift */,
+				81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */,
+			);
+			path = TextSkeletonView;
 			sourceTree = "<group>";
 		};
 		81578DD32D89FACF00BC7038 /* BottomSheetView */ = {
@@ -1040,6 +1074,12 @@
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
 				81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */,
+				81368A6E2E01879900A1702A /* RectSkeletonVariationProvider.swift in Sources */,
+				81368A6F2E01879900A1702A /* TextSkeletonVariationProvider.swift in Sources */,
+				81368A702E01879900A1702A /* RectSkeletonViewModel.swift in Sources */,
+				81368A712E01879900A1702A /* TextSkeletonView.swift in Sources */,
+				81368A722E01879900A1702A /* TextSkeletonViewModel.swift in Sources */,
+				81368A732E01879900A1702A /* RectSkeletonView.swift in Sources */,
 				81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
 				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,

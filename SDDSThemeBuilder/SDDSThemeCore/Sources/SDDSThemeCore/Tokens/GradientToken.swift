@@ -72,6 +72,12 @@ public struct GradientToken {
     }
 }
 
+public extension GradientToken {
+    public static var clearColor: GradientToken {
+        .init(description: "", darkGradients: [], lightGradients: [])
+    }
+}
+
 extension GradientToken: CustomDebugStringConvertible {
     public var debugDescription: String {
         description
