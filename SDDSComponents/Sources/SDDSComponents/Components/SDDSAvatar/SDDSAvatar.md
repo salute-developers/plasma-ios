@@ -6,11 +6,13 @@
 
 | Параметр | Тип | Описание |
 |----------|-----|-----------|
-| image | Image? | Изображение аватара |
-| initials | String? | Инициалы пользователя |
+| text | String | Текст аватара (обычно инициалы пользователя) |
+| image | AvatarImageSource? | Изображение аватара |
+| placeholderImage | AvatarImageSource? | Изображение-заглушка, отображаемое при отсутствии основного изображения |
 | status | AvatarStatus | Статус пользователя |
-| extra | AvatarExtra<Content> | Дополнительный контент с указанием его расположения |
-| appearance | AvatarAppearance? | Параметры внешнего вида аватара |
+| appearance | AvatarAppearance? | Параметры внешнего вида аватара (опционально) |
+| accessibility | AvatarAccessibility | Параметры доступности для аватара |
+| extra | AvatarExtra<Content> | Дополнительный контент с указанием его расположения (опционально) |
 
 ## Окружение
 
@@ -42,13 +44,39 @@
 
 ### Аватар с статусом
 ```swift
- SDDSAvatar(
-     text: "JD",
-     image: nil,
-     placeholderImage: nil,
-     status: .online,
-     appearance: Avatar.xxl.appearance,
-     accessibility: AvatarAccessibility()
- )
+SDDSAvatar(
+    text: "JD",
+    image: nil,
+    placeholderImage: nil,
+    status: .online,
+    appearance: Avatar.xxl.appearance,
+    accessibility: AvatarAccessibility()
+)
+```
+
+### Аватар с изображением
+```swift
+SDDSAvatar(
+    text: "JD",
+    image: .url(URL(string: "https://example.com/avatar.jpg")!),
+    placeholderImage: nil,
+    status: .offline,
+    appearance: Avatar.l.appearance,
+    accessibility: AvatarAccessibility()
+)
+```
+
+### Аватар с дополнительным контентом
+```swift
+SDDSAvatar(
+    text: "JD",
+    image: nil,
+    placeholderImage: nil,
+    status: .hidden,
+    appearance: Avatar.m.appearance,
+    accessibility: AvatarAccessibility(),
+    extra: AvatarExtra(placement: .topRight) {
+        SDDSBadge(text: "3", appearance: Badge.s.appearance)
+    }
 )
 ```

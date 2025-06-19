@@ -1,6 +1,32 @@
 import SwiftUI
 import SDDSIcons
 
+/**
+ Модификатор для отображения уведомлений с возможностью настройки внешнего вида и позиционирования.
+
+ - Parameters:
+    - isPresented: Состояние отображения уведомления.
+    - appearance: Параметры внешнего вида уведомления.
+    - position: Позиция уведомления на экране (по умолчанию `.topCenter`).
+    - duration: Время отображения уведомления в секундах (по умолчанию 3.0).
+    - hasClose: Показывать ли кнопку закрытия (по умолчанию true).
+    - onShow: Обработчик показа уведомления.
+    - onClose: Обработчик закрытия уведомления.
+    - content: View-контент уведомления.
+
+ ```swift
+ Text("Показать уведомление")
+     .notification(
+         isPresented: $isNotificationPresented,
+         appearance: Notification.default.appearance,
+         position: .topCenter,
+         duration: 3.0,
+         hasClose: true
+     ) {
+         Text("Текст уведомления")
+     }
+ ```
+ */
 public extension View {
     func notification<Content: View>(
         isPresented: Binding<Bool>,
