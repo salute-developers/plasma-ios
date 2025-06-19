@@ -14,18 +14,16 @@ import SDDSComponents
     - placeholder: Текст placeholder, отображаемый при пустом поле.
     - caption: Подпись под текстовым полем.
     - textBefore: Префикс перед текстом или плейсхолдером.
-    - textAfter: Суффикс после текста или плейсхолдера.
+    - textAfter: Суффикс после текста или плейсхолдером.
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
-    - labelPlacement: Размещение метки (`outer`, `inner`, `none`).
+    - required: Флаг, указывающий, является ли поле обязательным.
     - divider: Флаг, указывающий, показывать ли линию разделителя.
-    - requiredPlacement: Размещение обязательного индикатора (`left`, `right`).
     - appearance: Параметры внешнего вида текстового поля.
-    - chipGroupGap: Распределение элементов в ChipGroup.
     - layout: Макет текстового поля (`default`, `clear`). ``TextFieldLayout``
     - accessibility: Параметры доступности.
-    - iconViewProvider: Поставщик левой иконки.
-    - iconActionViewProvider: Поставщик правой иконки действия.
+    - iconContent: Левая иконка (используйте вместо deprecated iconViewProvider).
+    - actionContent: Правая иконка действия (используйте вместо deprecated iconActionViewProvider).
 
  ## Окружение
  
@@ -45,6 +43,7 @@ import SDDSComponents
      caption: "Caption",
      appearance: TextField.m.default.appearance
  )
+ ```
  */
 public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     @State var text: String
@@ -62,11 +61,6 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public let iconViewProvider: ViewProvider?
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public let iconActionViewProvider: ViewProvider?
-    
     let iconContent: Action<IconContent>
     let actionContent: Action<ActionContent>
     
@@ -75,67 +69,6 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
     private let debugConfiguration: TextFieldDebugConfiguration
-    
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public init(
-        value: Binding<TextFieldValue>,
-        title: String = "",
-        optionalTitle: String = "",
-        placeholder: String = "",
-        caption: String = "",
-        textBefore: String = "",
-        textAfter: String = "",
-        disabled: Bool = false,
-        readOnly: Bool = false,
-        required: Bool = false,
-        divider: Bool = true,
-        appearance: TextFieldAppearance? = nil,
-        layout: TextFieldLayout = .default,
-        accessibility: TextFieldAccessibility = TextFieldAccessibility(),
-        iconViewProvider: ViewProvider?,
-        iconActionViewProvider: ViewProvider?,
-        iconContent: Action<IconContent> = Action { EmptyView() },
-        actionContent: Action<ActionContent> = Action { EmptyView() }
-    ) {
-        switch value.wrappedValue {
-        case .single(let text):
-            _text = State(wrappedValue: text)
-        case .multiple(let text, _):
-            _text = State(wrappedValue: text)
-        }
-    
-        _value = value
-        self.caption = caption
-        self.textBefore = textBefore
-        self.textAfter = textAfter
-        self.disabled = disabled
-        self.readOnly = readOnly
-        self.divider = divider
-        self.title = title
-        self.optionalTitle = optionalTitle
-        self.placeholder = placeholder
-        self._appearance = appearance
-        self.layout = layout
-        self.accessibility = accessibility
-        self.debugConfiguration = TextFieldDebugConfiguration()
-        
-        if let icon = iconViewProvider,
-           let castedIcon = AnyViewWrapperView(view: icon.view) as? IconContent {
-            self.iconContent = .init { castedIcon }
-        } else {
-            self.iconContent = iconContent
-        }
-
-        if let action = iconActionViewProvider,
-           let castedAction = AnyViewWrapperView(view: action.view) as? ActionContent {
-            self.actionContent = .init { castedAction }
-        } else {
-            self.actionContent = actionContent
-        }
-        
-        self.iconViewProvider = nil
-        self.iconActionViewProvider = nil
-    }
     
     public init(
         value: Binding<TextFieldValue>,
@@ -178,8 +111,6 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         self.debugConfiguration = TextFieldDebugConfiguration()
         self.iconContent = iconContent
         self.actionContent = actionContent
-        self.iconViewProvider = nil
-        self.iconActionViewProvider = nil
     }
 
     public var body: some View {

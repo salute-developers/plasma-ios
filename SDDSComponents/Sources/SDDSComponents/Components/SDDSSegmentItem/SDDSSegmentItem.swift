@@ -56,8 +56,6 @@ public struct SDDSSegmentItem<Counter: View>: View {
     public let counterEnabled: Bool
     private let _appearance: SegmentItemAppearance?
     public let accessibility: SegmentItemAccessibility
-    @available(*, deprecated, message: "Don't use it, public property will be removed")
-    public let counterViewProvider: CounterViewProvider?
     public let counterText: String
     public let counter: Counter
     public let counterWidthCalculator: CounterWidthCalculator?
@@ -76,62 +74,10 @@ public struct SDDSSegmentItem<Counter: View>: View {
         self.counterEnabled = item.counterEnabled
         self._appearance = item.appearance
         self.accessibility = item.accessibility
-        self.counterViewProvider = item.counterViewProvider
         self.counterText = item.counterText
         self.counterWidthCalculator = item.counterWidthCalculator
         self.counter = item.counter
         self.action = item.action
-    }
-    
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public init(
-        id: UUID = UUID(),
-        title: String,
-        subtitle: String,
-        iconAttributes: ButtonIconAttributes?,
-        isDisabled: Bool = false,
-        isSelected: Bool,
-        strech: Bool = false,
-        counterEnabled: Bool = false,
-        appearance: SegmentItemAppearance? = nil,
-        accessibility: SegmentItemAccessibility = SegmentItemAccessibility(),
-        counterViewProvider: CounterViewProvider? = nil,
-        @ViewBuilder counter: () -> Counter = { EmptyView() },
-        action: @escaping () -> Void = {}
-    ) {
-        self.id = id
-        self.title = title
-        self.subtitle = subtitle
-        self.iconAttributes = iconAttributes
-        self.isDisabled = isDisabled
-        self.isSelected = isSelected
-        self.strech = strech
-        self.counterEnabled = counterEnabled
-        self._appearance = appearance
-        self.accessibility = accessibility
-        self.counterViewProvider = counterViewProvider
-        self.action = action
-        
-        if let counterViewProvider = counterViewProvider {
-            switch counterViewProvider {
-            case .default(let text):
-                self.counterText = text
-                self.counter = counter()
-                self.counterWidthCalculator = nil
-            case .custom(let viewProvider, let widthCalculator):
-                self.counterText = ""
-                if let counter = AnyViewWrapperView(view: viewProvider.view) as? Counter {
-                    self.counter = counter
-                } else {
-                    self.counter = counter()
-                }
-                self.counterWidthCalculator = widthCalculator
-            }
-        } else {
-            self.counterText = ""
-            self.counter = counter()
-            self.counterWidthCalculator = nil
-        }
     }
     
     public init(
@@ -160,7 +106,6 @@ public struct SDDSSegmentItem<Counter: View>: View {
         self.counterEnabled = counterEnabled
         self._appearance = appearance
         self.accessibility = accessibility
-        self.counterViewProvider = nil
         self.counterText = counterText
         self.counter = counter()
         self.counterWidthCalculator = counterWidthCalculator
