@@ -439,6 +439,8 @@
 		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextSkeleton.md; sourceTree = "<group>"; };
+		814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRectSkeleton.md; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
 		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
@@ -1019,6 +1021,7 @@
 		813687682E0186A800A1702A /* SDDSRectSkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */,
 				813687662E0186A800A1702A /* SkeletonAppearance */,
 				813687672E0186A800A1702A /* SDDSRectSkeleton.swift */,
 			);
@@ -1028,6 +1031,7 @@
 		8136876A2E0186A800A1702A /* SDDSTextSkeleton */ = {
 			isa = PBXGroup;
 			children = (
+				814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */,
 				81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */,
 				813687692E0186A800A1702A /* SDDSTextSkeleton.swift */,
 			);

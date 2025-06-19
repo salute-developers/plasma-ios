@@ -1,6 +1,26 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SkeletonAppearance` определяет параметры внешнего вида скелетона.
+
+ - Parameters:
+    - shape: Форма скелетона (PathDrawer).
+    - gradient: Градиент для анимации.
+    - size: Конфигурация размеров скелетона.
+    - duration: Длительность анимации в миллисекундах.
+
+ ## Пример использования
+
+ ```swift
+ SkeletonAppearance(
+     shape: CornerRadiusDrawer(cornerRadius: 8),
+     gradient: .skeletonGradient,
+     size: ZeroSkeletonSizeConfiguration(),
+     duration: 2000
+ )
+ ```
+ */
 public struct SkeletonAppearance {
     public var shape: PathDrawer
     public var gradient: GradientToken
@@ -20,6 +40,9 @@ public struct SkeletonAppearance {
     }
 }
 
+/**
+ Расширение для использования SkeletonAppearance как значения окружения.
+ */
 extension SkeletonAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: SkeletonAppearance.self, fallback: SkeletonAppearance())

@@ -1,6 +1,37 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSTextSkeleton` представляет собой компонент для отображения текстового скелетона с несколькими строками.
+
+ Компонент создает эффект загрузки текста, отображая несколько строк прямоугольных скелетонов,
+ которые имитируют загружаемый текст. Каждая строка может иметь разную ширину в зависимости от провайдера.
+
+ - Parameters:
+    - appearance: Параметры внешнего вида скелетона (опционально).
+    - lineCount: Количество строк текста (по умолчанию 3).
+    - textTypography: Типографика для определения высоты строк (по умолчанию .semibold14).
+    - lineWidthProvider: Провайдер ширины строк (по умолчанию FullWidthLineProvider()).
+
+ ## Окружение
+ 
+ - `skeletonAppearance`: Стандартные настройки внешнего вида скелетона
+
+ ## Пример использования
+
+ ```swift
+ SDDSTextSkeleton(
+     appearance: SkeletonAppearance(
+         shape: CornerRadiusDrawer(cornerRadius: 4),
+         gradient: .skeletonGradient,
+         duration: 2000
+     ),
+     lineCount: 3,
+     textTypography: .semibold14,
+     lineWidthProvider: FullWidthLineProvider()
+ )
+ ```
+ */
 public struct SDDSTextSkeleton: View {
     @Environment(\.skeletonAppearance) private var environmentAppearance
     private let lineCount: Int

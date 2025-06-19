@@ -1,6 +1,32 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSRectSkeleton` представляет собой компонент для отображения прямоугольного скелетона с анимированным градиентом.
+
+ Компонент создает эффект загрузки с помощью анимированного градиента, который перемещается по прямоугольной области.
+ Используется для индикации загрузки контента, когда данные еще не загружены.
+
+ - Parameters:
+    - appearance: Параметры внешнего вида скелетона (опционально).
+
+ ## Окружение
+ 
+ - `skeletonAppearance`: Стандартные настройки внешнего вида скелетона
+
+ ## Пример использования
+
+ ```swift
+ SDDSRectSkeleton(
+     appearance: SkeletonAppearance(
+         shape: CornerRadiusDrawer(cornerRadius: 8),
+         gradient: .skeletonGradient,
+         duration: 2000
+     )
+ )
+ .frame(width: 200, height: 100)
+ ```
+ */
 public struct SDDSRectSkeleton: View {
     @Environment(\.skeletonAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -16,6 +42,12 @@ public struct SDDSRectSkeleton: View {
         _appearance ?? environmentAppearance
     }
     
+    /**
+     Конвертирует миллисекунды в секунды для анимации.
+     
+     - Parameter ms: Время в миллисекундах.
+     - Returns: Время в секундах.
+     */
     private func msToSeconds(_ ms: Double) -> Double {
         ms / 1000.0
     }
@@ -40,6 +72,11 @@ public struct SDDSRectSkeleton: View {
         }
     }
     
+    /**
+     Создает градиентный элемент для анимации.
+     
+     Каждый градиент имеет ширину экрана и повторяется для создания бесконечной анимации.
+     */
     @ViewBuilder
     private var gradient: some View {
         Color.clear
@@ -47,25 +84,46 @@ public struct SDDSRectSkeleton: View {
             .frame(width: screenWidth)
     }
     
+    /**
+     Запускает анимацию скелетона.
+     
+     Анимация перемещает градиент слева направо с бесконечным повторением.
+     */
     private func animate() {
         withAnimation(.linear(duration: durationInSeconds).repeatForever(autoreverses: false)) {
             phase = -2.0
         }
     }
     
+    /**
+     Получает длительность анимации в секундах.
+     
+     - Returns: Длительность анимации в секундах.
+     */
     private var durationInSeconds: TimeInterval {
         msToSeconds(appearance.duration)
     }
     
+    /**
+     Получает ширину экрана для расчета анимации.
+     
+     - Returns: Ширина экрана в пикселях.
+     */
     private var screenWidth: CGFloat {
         UIScreen.main.bounds.width
     }
 }
 
+/**
+ Ключ окружения для настроек внешнего вида скелетона.
+ */
 private struct SkeletonAppearanceKey: EnvironmentKey {
     static var defaultValue: SkeletonAppearance = .init()
 }
 
+/**
+ Расширение для доступа к настройкам скелетона через окружение.
+ */
 extension EnvironmentValues {
     var skeletonAppearance: SkeletonAppearance {
         get { self[SkeletonAppearanceKey.self] }
