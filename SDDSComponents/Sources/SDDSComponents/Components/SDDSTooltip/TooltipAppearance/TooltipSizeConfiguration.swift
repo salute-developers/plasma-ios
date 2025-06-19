@@ -2,6 +2,11 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ Протокол для конфигурации размеров tooltip.
+
+ Определяет все необходимые параметры размеров и отступов для tooltip.
+ */
 public protocol TooltipSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var offset: CGFloat { get }
     var pathDrawer: PathDrawer { get }
@@ -16,6 +21,11 @@ public protocol TooltipSizeConfiguration: SizeConfiguration, CustomDebugStringCo
     var paddingBottom: CGFloat { get }
 }
 
+/**
+ Стандартная конфигурация размеров для tooltip.
+
+ Предоставляет стандартные значения для всех параметров размеров tooltip.
+ */
 public struct DefaultTooltipSize: TooltipSizeConfiguration {
     public var offset: CGFloat { 0 }
     public var pathDrawer: PathDrawer { CornerRadiusDrawer(cornerRadius: 12) }
@@ -31,6 +41,11 @@ public struct DefaultTooltipSize: TooltipSizeConfiguration {
     public var debugDescription: String { "DefaultTooltipSize" }
 }
 
+/**
+ Конфигурация размеров с нулевыми значениями для tooltip.
+
+ Используется как значение по умолчанию для создания пустых конфигураций.
+ */
 public struct ZeroTooltipSize: TooltipSizeConfiguration {
     public var offset: CGFloat { 0 }
     public var pathDrawer: PathDrawer { DefaultPathDrawer() }

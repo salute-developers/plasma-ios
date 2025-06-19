@@ -2,6 +2,18 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `ModalSizeConfiguration` определяет протокол для конфигурации размеров и отступов модального окна.
+
+ - Properties:
+    - closeSize: Размер кнопки закрытия модального окна.
+    - paddingStart: Отступ от левого края модального окна.
+    - paddingEnd: Отступ от правого края модального окна.
+    - paddingTop: Отступ от верхнего края модального окна.
+    - paddingBottom: Отступ от нижнего края модального окна.
+    - shape: Форма модального окна.
+    - shadow: Тень модального окна.
+ */
 public protocol ModalSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var closeSize: CGFloat { get }
     var paddingStart: CGFloat { get }

@@ -13,6 +13,33 @@ private struct ToastParams<ContentStart: View, Content: View, ContentEnd: View> 
     let contentEnd: () -> ContentEnd
 }
 
+/**
+ Модификатор для отображения тостов с текстом и кастомными иконками.
+
+ - Parameters:
+    - isPresented: Состояние отображения тоста.
+    - text: Текст тоста.
+    - appearance: Параметры внешнего вида тоста.
+    - position: Позиция тоста на экране (по умолчанию `.topCenter`).
+    - duration: Время отображения тоста в секундах (по умолчанию 3.0).
+    - onShow: Обработчик показа тоста.
+    - onClose: Обработчик закрытия тоста.
+    - contentStart: Начальный контент (иконка, кнопка и т.д.).
+    - contentEnd: Конечный контент (иконка, кнопка и т.д.).
+
+ ```swift
+ Text("Показать тост")
+     .toast(
+         isPresented: $isToastPresented,
+         text: "Текст тоста",
+         appearance: Toast.m.default.appearance,
+         position: .topCenter,
+         duration: 3.0,
+         contentStart: { Image(systemName: "info.circle") },
+         contentEnd: { Image(systemName: "xmark") }
+     )
+ ```
+ */
 public extension View {
     func toast<ContentStart: View, ContentEnd: View>(
         isPresented: Binding<Bool>,
@@ -39,7 +66,38 @@ public extension View {
         )
     }
 } 
- 
+
+/**
+ Модификатор для отображения тостов с произвольным содержимым.
+
+ - Parameters:
+    - isPresented: Состояние отображения тоста.
+    - appearance: Параметры внешнего вида тоста.
+    - position: Позиция тоста на экране (по умолчанию `.topCenter`).
+    - duration: Время отображения тоста в секундах (по умолчанию 3.0).
+    - contentEndPosition: Позиция конечного контента (по умолчанию `.centerRight`).
+    - onShow: Обработчик показа тоста.
+    - onClose: Обработчик закрытия тоста.
+    - contentStart: Начальный контент (иконка, кнопка и т.д.).
+    - content: Произвольный контент тоста.
+    - contentEnd: Конечный контент (иконка, кнопка и т.д.).
+
+ ```swift
+ Text("Показать тост")
+     .toast(
+         isPresented: $isToastPresented,
+         appearance: ToastAppearance(
+             backgroundColor: .surfaceDefaultSolidCard,
+             textColor: .textDefaultPrimary
+         ),
+         position: .topLeft,
+         duration: 4.0,
+         contentStart: { Image(systemName: "star.fill") },
+         content: { Text("Кастомный текст") },
+         contentEnd: { Image(systemName: "xmark") }
+     )
+ ```
+ */
 extension View {
     func toast<ContentStart: View, Content: View, ContentEnd: View>(
         isPresented: Binding<Bool>,

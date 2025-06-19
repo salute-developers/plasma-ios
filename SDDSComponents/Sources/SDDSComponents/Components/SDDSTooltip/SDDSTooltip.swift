@@ -1,6 +1,31 @@
 import SwiftUI
 import SDDSThemeCore
 
+/**
+ `SDDSTooltip` представляет собой компонент для отображения всплывающих подсказок с возможностью настройки внешнего вида и содержимого.
+
+ - Parameters:
+    - width: Ширина tooltip (nil - автоматическая ширина на основе содержимого).
+    - appearance: Параметры внешнего вида tooltip.
+    - text: Текст подсказки.
+    - contentStart: Начальный контент (иконка, кнопка и т.д.).
+
+ ## Окружение
+ 
+ - `tooltipAppearance`: Стандартные настройки внешнего вида tooltip
+
+ ## Пример использования
+
+ ```swift
+ SDDSTooltip(
+     width: nil,
+     appearance: Tooltip.default.appearance,
+     text: "Текст подсказки"
+ ) {
+     Image(systemName: "info.circle")
+ }
+ ```
+ */
 struct SDDSTooltip<ContentStart: View>: View {
     let width: CGFloat?
     let appearance: TooltipAppearance
@@ -61,6 +86,11 @@ struct SDDSTooltip<ContentStart: View>: View {
         }
     }
     
+    /**
+     Вычисляет ширину tooltip на основе переданного значения или автоматически на основе содержимого.
+     
+     - Returns: Ширина tooltip в пикселях.
+     */
     private var calculatedWidth: CGFloat {
         if let width = width {
             return width
@@ -77,11 +107,22 @@ struct SDDSTooltip<ContentStart: View>: View {
         }
     }
     
+    /**
+     Вычисляет высоту tooltip на основе высоты текста.
+     
+     - Returns: Высота tooltip в пикселях.
+     */
     private var height: CGFloat {
         let result = max(textSize.height, textTypography.lineHeight)
         return result
     }
     
+    /**
+     Получает типографику для текста tooltip.
+     
+     - Returns: Типографика текста.
+     - Note: Вызывает fatalError если типографика не определена для текущего размера.
+     */
     private var textTypography: TypographyToken {
         guard let typography = appearance.textTypography?.typography(with: appearance.size) else {
             fatalError("Undefined Text Typography for appearance.size \(appearance.size).")

@@ -24,20 +24,15 @@ public enum TextAreaHeightMode {
     - placeholder: Текст placeholder, отображаемый при пустом поле.
     - caption: Подпись под текстовым полем.
     - counter: Текст счетчика (например, для отображения количества символов).
-    - textBefore: Префикс перед текстом или плейсхолдером.
-    - textAfter: Суффикс после текста или плейсхолдера.
     - disabled: Флаг, указывающий, отключено ли поле.
     - readOnly: Флаг, указывающий, включено ли поле только на режим чтения.
+    - required: Флаг, указывающий, является ли поле обязательным.
     - divider: Флаг, указывающий, показывать ли линию разделителя.
-    - dynamicHeight: **[deprecated]** Флаг, указывающий, расширяется ли текстовое поле по высоте в зависимости от высоты текста. Используйте ``heightMode`` вместо этого.
     - heightMode: Режим высоты текстового поля (фиксированная или динамическая) ``TextAreaHeightMode``.
+    - appearance: Параметры внешнего вида текстового поля.
     - layout: Макет текстового поля (`default`, `clear`) ``TextAreaLayout``.
     - accessibility: Параметры доступности текстового поля ``TextAreaAccessibility``.
-    - iconViewProvider: Поставщик левой иконки.
-    - iconActionViewProvider: Поставщик правой иконки действия.
-    - appearance: Параметры внешнего вида текстового поля.
-    - chipGroupAppearance: Параметры внешнего вида ChipGroup.
-    - chipGroupGap: Распределение элементов в ChipGroup.
+    - actionContent: Правая иконка действия (используйте вместо deprecated iconActionViewProvider).
 
 ## Пример использования
 ```swift
@@ -50,9 +45,9 @@ public enum TextAreaHeightMode {
      counter: "counter",
      disabled: false,
      readOnly: false,
-     dynamicHeight: true,
+     heightMode: .dynamic,
      appearance: TextArea.l.default.appearance,
-     iconActionViewProvider: ViewProvider(iconActionView)
+     actionContent: Action { Image(systemName: "xmark") }
  )
 ```
  */
@@ -70,9 +65,6 @@ public struct SDDSTextArea<ActionContent: View>: View {
     public let heightMode: TextAreaHeightMode
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
-
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public let iconActionViewProvider: ViewProvider?
     
     let actionContent: Action<ActionContent>
 
@@ -85,56 +77,6 @@ public struct SDDSTextArea<ActionContent: View>: View {
     private let _appearance: TextAreaAppearance?
 
     private let debugConfiguration: TextFieldDebugConfiguration
-    
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public init(
-        value: Binding<TextAreaValue>,
-        title: String = "",
-        optionalTitle: String = "",
-        placeholder: String = "",
-        caption: String = "",
-        counter: String = "",
-        disabled: Bool = false,
-        readOnly: Bool = false,
-        required: Bool = false,
-        divider: Bool = true,
-        heightMode: TextAreaHeightMode = .dynamic,
-        appearance: TextAreaAppearance? = nil,
-        layout: TextAreaLayout,
-        accessibility: TextAreaAccessibility = TextAreaAccessibility(),
-        iconActionViewProvider: ViewProvider? = nil,
-        actionContent: Action<ActionContent> = Action { EmptyView() }
-    ) {
-        switch value.wrappedValue {
-        case .single(let text):
-            _text = State(wrappedValue: text)
-        case .multiple(let text, _):
-            _text = State(wrappedValue: text)
-        }
-        _value = value
-    
-        self.caption = caption
-        self.counter = counter
-        self.disabled = disabled
-        self.readOnly = readOnly
-        self.divider = divider
-        self.title = title
-        self.optionalTitle = optionalTitle
-        self.placeholder = placeholder
-        self.heightMode = heightMode
-        self._appearance = appearance
-        self.layout = layout
-        self.accessibility = accessibility
-        self.debugConfiguration = TextFieldDebugConfiguration()
-        
-        if let action = iconActionViewProvider,
-           let castedAction = AnyViewWrapperView(view: action.view) as? ActionContent {
-            self.actionContent = .init(content: { castedAction })
-        } else {
-            self.actionContent = actionContent
-        }
-        self.iconActionViewProvider = nil
-    }
     
     public init(
         value: Binding<TextAreaValue>,
@@ -175,7 +117,6 @@ public struct SDDSTextArea<ActionContent: View>: View {
         self.accessibility = accessibility
         self.debugConfiguration = TextFieldDebugConfiguration()
         self.actionContent = actionContent
-        self.iconActionViewProvider = nil
     }
 
     public var body: some View {

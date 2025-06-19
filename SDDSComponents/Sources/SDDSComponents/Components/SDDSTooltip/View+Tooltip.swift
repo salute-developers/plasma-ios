@@ -1,5 +1,37 @@
 import SwiftUI
 
+/**
+ Модификатор для отображения всплывающих подсказок (tooltip) с возможностью настройки внешнего вида, положения и содержимого.
+
+ - Parameters:
+    - isPresented: Состояние отображения tooltip.
+    - appearance: Параметры внешнего вида tooltip.
+    - width: Ширина tooltip (nil - автоматическая ширина на основе содержимого).
+    - text: Текст подсказки.
+    - placement: Положение tooltip относительно якоря (по умолчанию `.top`).
+    - alignment: Выравнивание tooltip относительно якоря (по умолчанию `.start`).
+    - tailEnabled: Показывать ли хвост tooltip (по умолчанию true).
+    - triggerCentered: Центрировать ли tooltip относительно якоря (по умолчанию false).
+    - placementMode: Режим размещения tooltip (по умолчанию `.loose`).
+    - duration: Время отображения tooltip в секундах (по умолчанию nil - не исчезает автоматически).
+    - onClose: Обработчик закрытия tooltip.
+    - contentStart: Начальный контент (иконка, кнопка и т.д.).
+
+ ```swift
+ Text("Показать tooltip")
+     .tooltip(
+         isPresented: $isTooltipPresented,
+         appearance: Tooltip.default.appearance,
+         width: nil,
+         text: "Текст подсказки",
+         placement: .top,
+         alignment: .start,
+         tailEnabled: true
+     ) {
+         Image(systemName: "info.circle")
+     }
+ ```
+ */
 public extension View {
     func tooltip<ContentStart: View>(
         isPresented: Binding<Bool>,
@@ -33,6 +65,11 @@ public extension View {
     }
 }
 
+/**
+ Внутренний компонент для отображения tooltip с динамической шириной.
+ 
+ Измеряет размеры tooltip и триггера для корректного позиционирования.
+ */
 private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View {
     @Binding var isPresented: Bool
     let appearance: TooltipAppearance
@@ -106,6 +143,12 @@ private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View 
     }
 }
 
+/**
+ Расширение для конвертации конфигурации размеров tooltip в конфигурацию размеров popover.
+ 
+ - Parameter width: Ширина tooltip.
+ - Returns: Конфигурация размеров popover с настройками tooltip.
+ */
 private extension TooltipSizeConfiguration {
     func popoverSizeConfiguration(width: CGFloat) -> PopoverSizeConfiguration {
         var result = DefaultPopoverSize()

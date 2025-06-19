@@ -2,6 +2,30 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `TooltipAppearance` определяет параметры внешнего вида tooltip.
+
+ - Parameters:
+    - backgroundColor: Цвет фона tooltip.
+    - textColor: Цвет текста tooltip.
+    - contentStartColor: Цвет начального контента (иконки).
+    - shadow: Тень tooltip.
+    - textTypography: Типографика текста (опционально).
+    - size: Конфигурация размеров tooltip.
+
+ ## Пример использования
+
+ ```swift
+ TooltipAppearance(
+     backgroundColor: .surfaceDefaultSolidCard,
+     textColor: .textDefaultPrimary,
+     contentStartColor: .iconDefault,
+     shadow: .downSoftL,
+     textTypography: .default,
+     size: DefaultTooltipSize()
+ )
+ ```
+ */
 public struct TooltipAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

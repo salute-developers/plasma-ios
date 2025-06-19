@@ -85,8 +85,6 @@ public struct SDDSButton<Counter: View>: View {
     public let buttonStyle: SDDSComponents.ButtonStyle
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
-    @available(*, deprecated, message: "Don't use it, public property will be removed")
-    public let counterViewProvider: ViewProvider?
     public let counter: Counter
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
@@ -97,45 +95,6 @@ public struct SDDSButton<Counter: View>: View {
     @State private var isHovered: Bool = false
     
     public var action: () -> Void
-    
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public init(
-        title: String,
-        subtitle: String,
-        iconAttributes: ButtonIconAttributes? = nil,
-        isDisabled: Bool = false,
-        isLoading: Bool = false,
-        spinnerImage: Image? = Image("spinner", bundle: Bundle(for: Components.self)),
-        buttonStyle: SDDSComponents.ButtonStyle = .basic,
-        appearance: ButtonAppearance? = nil,
-        layoutMode: ButtonLayoutMode = .wrapContent,
-        accessibility: ButtonAccessibility = ButtonAccessibility(),
-        counterViewProvider: ViewProvider? = nil,
-        @ViewBuilder counter: () -> Counter = { EmptyView() },
-        isSelected: Bool = false,
-        action: @escaping () -> Void
-    ) {
-        self.title = title
-        self.subtitle = subtitle
-        self.iconAttributes = iconAttributes
-        self.isDisabled = isDisabled
-        self.isLoading = isLoading
-        self.spinnerImage = spinnerImage
-        self.buttonStyle = buttonStyle
-        self._appearance = appearance
-        self.layoutMode = layoutMode
-        self.accessibility = accessibility
-        self.isSelected = isSelected
-        self.action = action
-        
-        if let counterViewProvider = counterViewProvider,
-           let counter = AnyViewWrapperView(view: counterViewProvider.view) as? Counter {
-            self.counter = counter
-        } else {
-            self.counter = counter()
-        }
-        self.counterViewProvider = nil
-    }
     
     public init(
         title: String,
@@ -165,7 +124,6 @@ public struct SDDSButton<Counter: View>: View {
         self.isSelected = isSelected
         self.action = action
         self.counter = counter()
-        self.counterViewProvider = nil
     }
     
     public var body: some View {

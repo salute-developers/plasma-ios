@@ -65,8 +65,6 @@ import SwiftUI
 public struct SDDSAvatarGroup: View {
     let data: [SDDSAvatarData]
     let lastAvatar: SDDSAvatarData
-    @available(*, deprecated, message: "use appearance instead")
-    let size: AvatarGroupSizeConfiguration
     private let _appearance: AvatarGroupAppearance?
     let maxDisplayingAvatarCount: Int
     @Environment(\.avatarGroupAppearance) private var environmentAppearance
@@ -75,13 +73,11 @@ public struct SDDSAvatarGroup: View {
         data: [SDDSAvatarData],
         lastAvatar: SDDSAvatarData,
         maxDisplayingAvatarCount: Int = 3,
-        size: AvatarGroupSizeConfiguration,
         appearance: AvatarGroupAppearance? = nil
     ) {
         self.data = data
         self.lastAvatar = lastAvatar
         self.maxDisplayingAvatarCount = maxDisplayingAvatarCount
-        self.size = size
         self._appearance = appearance
     }
 
@@ -129,13 +125,10 @@ public struct SDDSAvatarGroup: View {
  `AvatarGroupSizeConfiguration` определяет конфигурацию размеров для группы аватаров.
 
  - Properties:
-    - maxDisplayingAvatarCount: Максимальное количество отображаемых аватаров. По умолчанию 3.
     - borderWidth: Ширина обводки между аватарами.
     - spacing: Расстояние между аватарами.
  */
 public protocol AvatarGroupSizeConfiguration {
-    @available(*, deprecated, message: "use public api instead")
-    var maxDisplayingAvatarCount: Int { get }
     var borderWidth: CGFloat { get }
     var spacing: CGFloat { get }
 }

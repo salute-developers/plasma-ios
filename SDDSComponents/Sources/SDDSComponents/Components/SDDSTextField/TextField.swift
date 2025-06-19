@@ -14,61 +14,9 @@ public struct TextField<IconContent: View, ActionContent: View>: View {
     public let divider: Bool
     private let _appearance: TextFieldAppearance?
     public let accessibility: TextFieldAccessibility
-    @available(*, deprecated, message: "Don't use it, public property will be removed")
-    public let iconViewProvider: ViewProvider?
-    @available(*, deprecated, message: "Don't use it, public property will be removed")
-    public let iconActionViewProvider: ViewProvider?
     public let actionContent: Action<ActionContent>
     public let iconContent: Action<IconContent>
-    
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public init(
-        value: Binding<TextFieldValue>,
-        title: String = "",
-        optionalTitle: String = "",
-        placeholder: String = "",
-        caption: String = "",
-        textBefore: String = "",
-        textAfter: String = "",
-        disabled: Bool = false,
-        readOnly: Bool = false,
-        divider: Bool = true,
-        appearance: TextFieldAppearance? = nil,
-        accessibility: TextFieldAccessibility = TextFieldAccessibility(),
-        iconViewProvider: ViewProvider? = nil,
-        iconActionViewProvider: ViewProvider? = nil,
-        iconContent: Action<IconContent> = Action { EmptyView() },
-        actionContent: Action<ActionContent> = Action { EmptyView() }
-    ) {
-        _value = value
-        self.caption = caption
-        self.textBefore = textBefore
-        self.textAfter = textAfter
-        self.disabled = disabled
-        self.readOnly = readOnly
-        self.divider = divider
-        self.title = title
-        self.optionalTitle = optionalTitle
-        self.placeholder = placeholder
-        self._appearance = appearance
-        self.accessibility = accessibility
-        if let icon = iconViewProvider,
-           let castedIcon = AnyViewWrapperView(view: icon.view) as? IconContent {
-            self.iconContent = .init { castedIcon }
-        } else {
-            self.iconContent = iconContent
-        }
-
-        if let action = iconActionViewProvider,
-           let castedAction = AnyViewWrapperView(view: action.view) as? ActionContent {
-            self.actionContent = .init { castedAction }
-        } else {
-            self.actionContent = actionContent
-        }
-        self.iconViewProvider = nil
-        self.iconActionViewProvider = nil
-    }
-    
+        
     public init(
         value: Binding<TextFieldValue>,
         title: String = "",
@@ -101,8 +49,6 @@ public struct TextField<IconContent: View, ActionContent: View>: View {
         self.accessibility = accessibility
         self.iconContent = iconContent
         self.actionContent = actionContent
-        self.iconViewProvider = nil
-        self.iconActionViewProvider = nil
     }
     
     public var body: some View {
@@ -120,8 +66,6 @@ public struct TextField<IconContent: View, ActionContent: View>: View {
             appearance: _appearance,
             layout: .default,
             accessibility: accessibility,
-            iconViewProvider: nil,
-            iconActionViewProvider: nil,
             iconContent: iconContent,
             actionContent: actionContent
         )

@@ -25,23 +25,10 @@
 		692510252D7632CA00545542 /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510112D7632CA00545542 /* BadgeAppearance.swift */; };
 		692510262D7632CA00545542 /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510192D7632CA00545542 /* IconBadge.swift */; };
 		693FE22F2DD75D0000E14D0E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 693FE22E2DD75D0000E14D0E /* Documentation.docc */; };
-		693FE4662DDC7EBA00E14D0E /* SDDSBadge.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */; };
-		693FE4682DDC814000E14D0E /* SDDSCircularProgressBar.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */; };
-		693FE46A2DDC825400E14D0E /* SDDSBottomSheet.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */; };
-		693FE46C2DDC908E00E14D0E /* SDDSCard.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46B2DDC908E00E14D0E /* SDDSCard.md */; };
-		693FE46E2DDC925000E14D0E /* SDDSIndicator.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46D2DDC925000E14D0E /* SDDSIndicator.md */; };
-		693FE4702DDC92BC00E14D0E /* SDDSCell.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE46F2DDC92BC00E14D0E /* SDDSCell.md */; };
-		693FE4722DDC946B00E14D0E /* SDDSSegment.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4712DDC946B00E14D0E /* SDDSSegment.md */; };
-		693FE4742DDC951D00E14D0E /* SDDSSegmentItem.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */; };
-		693FE4762DDC95E100E14D0E /* SDDSCounter.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4752DDC95E100E14D0E /* SDDSCounter.md */; };
-		693FE4782DDC966400E14D0E /* SDDSTextArea.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4772DDC966400E14D0E /* SDDSTextArea.md */; };
-		693FE47A2DDDA28B00E14D0E /* SDDSTextField.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE4792DDDA28B00E14D0E /* SDDSTextField.md */; };
-		693FE47C2DDDAE8D00E14D0E /* SDDSButton.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */; };
 		693FEF292DE097F800E14D0E /* SDDSDivider.swift in Resources */ = {isa = PBXBuildFile; fileRef = 693FEF282DE097E200E14D0E /* SDDSDivider.swift */; };
 		693FEF2C2DE0991900E14D0E /* DividerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF2B2DE0990F00E14D0E /* DividerAppearance.swift */; };
 		693FEF302DE4644100E14D0E /* SDDSDividerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF2F2DE4643900E14D0E /* SDDSDividerPreview.swift */; };
 		693FEF392DE477AB00E14D0E /* DividerSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF382DE4779D00E14D0E /* DividerSizeConfiguration.swift */; };
-		693FEF3D2DE4980F00E14D0E /* SDDSDivider.md in Resources */ = {isa = PBXBuildFile; fileRef = 693FEF3C2DE4980F00E14D0E /* SDDSDivider.md */; };
 		694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */; };
 		694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */; };
 		694C288E2D8AFE2700D7F341 /* SelectionControlStateImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */; };
@@ -144,7 +131,6 @@
 		815D1EF72DE04A480005273B /* PopoverSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */; };
 		815D1EF92DE04A5F0005273B /* View+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D1EF82DE04A5C0005273B /* View+Popover.swift */; };
 		815D21142DE452100005273B /* PopoverTailShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D21132DE4520C0005273B /* PopoverTailShape.swift */; };
-		815D36772DE5B5CC0005273B /* SDDSOverlay.md in Resources */ = {isa = PBXBuildFile; fileRef = 815D36742DE5B5CC0005273B /* SDDSOverlay.md */; };
 		815D36782DE5B5CC0005273B /* OverlaySizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36722DE5B5CC0005273B /* OverlaySizeConfiguration.swift */; };
 		815D36792DE5B5CC0005273B /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36712DE5B5CC0005273B /* OverlayAppearance.swift */; };
 		815D367A2DE5B5CC0005273B /* View+SDDSOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D366F2DE5B5CC0005273B /* View+SDDSOverlay.swift */; };
@@ -429,6 +415,11 @@
 		812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
+		814D25602E0430840060C3F2 /* SDDSModal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSModal.md; sourceTree = "<group>"; };
+		814D25622E04308D0060C3F2 /* SDDSNotification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSNotification.md; sourceTree = "<group>"; };
+		814D25642E0430950060C3F2 /* SDDSToast.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSToast.md; sourceTree = "<group>"; };
+		814D25662E0430A90060C3F2 /* SDDSPopover.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSPopover.md; sourceTree = "<group>"; };
+		814D25682E0431360060C3F2 /* SDDSTooltip.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTooltip.md; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
 		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
@@ -832,6 +823,7 @@
 		8119DF5D2DF6FB8800D1CA9F /* SDDSNotification */ = {
 			isa = PBXGroup;
 			children = (
+				814D25622E04308D0060C3F2 /* SDDSNotification.md */,
 				8119DF5A2DF6FB8800D1CA9F /* NotificationAppearance */,
 				8119DF5C2DF6FB8800D1CA9F /* View+Notification.swift */,
 			);
@@ -1089,6 +1081,7 @@
 		815D368F2DE5BAA70005273B /* SDDSTooltip */ = {
 			isa = PBXGroup;
 			children = (
+				814D25682E0431360060C3F2 /* SDDSTooltip.md */,
 				815D368C2DE5BAA70005273B /* TooltipAppearance */,
 				815D368D2DE5BAA70005273B /* SDDSTooltip.swift */,
 				815D368E2DE5BAA70005273B /* View+Tooltip.swift */,
@@ -1218,6 +1211,7 @@
 		8178A0842DF2F6B5003F5041 /* SDDSModal */ = {
 			isa = PBXGroup;
 			children = (
+				814D25602E0430840060C3F2 /* SDDSModal.md */,
 				8178A0812DF2F6B5003F5041 /* ModalAppearance */,
 				8178A0822DF2F6B5003F5041 /* SDDSModal.swift */,
 				8178A0832DF2F6B5003F5041 /* View+Modal.swift */,
@@ -1457,6 +1451,7 @@
 		818E39642DDDCC4100130AF9 /* SDDSPopover */ = {
 			isa = PBXGroup;
 			children = (
+				814D25662E0430A90060C3F2 /* SDDSPopover.md */,
 				81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */,
 				815D1EF82DE04A5C0005273B /* View+Popover.swift */,
 				815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */,
@@ -1672,6 +1667,7 @@
 		81E9343C2DEDF70D00B76E38 /* SDDSToast */ = {
 			isa = PBXGroup;
 			children = (
+				814D25642E0430950060C3F2 /* SDDSToast.md */,
 				816D0EE52DF856ED0086C35C /* ToasContentEndPosition.swift */,
 				81F7E4E62DF0594600531844 /* View+Toast.swift */,
 				81E9343F2DEDF98F00B76E38 /* SDDSToast.swift */,
@@ -1962,22 +1958,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FE46C2DDC908E00E14D0E /* SDDSCard.md in Resources */,
-				693FE4782DDC966400E14D0E /* SDDSTextArea.md in Resources */,
-				693FE4702DDC92BC00E14D0E /* SDDSCell.md in Resources */,
-				693FE4742DDC951D00E14D0E /* SDDSSegmentItem.md in Resources */,
-				693FEF3D2DE4980F00E14D0E /* SDDSDivider.md in Resources */,
 				693FEF292DE097F800E14D0E /* SDDSDivider.swift in Resources */,
-				693FE4662DDC7EBA00E14D0E /* SDDSBadge.md in Resources */,
-				693FE46E2DDC925000E14D0E /* SDDSIndicator.md in Resources */,
-				693FE47A2DDDA28B00E14D0E /* SDDSTextField.md in Resources */,
-				693FE46A2DDC825400E14D0E /* SDDSBottomSheet.md in Resources */,
-				693FE4682DDC814000E14D0E /* SDDSCircularProgressBar.md in Resources */,
-				693FE4722DDC946B00E14D0E /* SDDSSegment.md in Resources */,
-				693FE47C2DDDAE8D00E14D0E /* SDDSButton.md in Resources */,
-				815D36772DE5B5CC0005273B /* SDDSOverlay.md in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
-				693FE4762DDC95E100E14D0E /* SDDSCounter.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
