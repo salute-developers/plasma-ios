@@ -265,7 +265,6 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     .frame(height: calculatedChipGroupHeight)
                     .padding(.trailing, iconActionTrailingPadding)
                     .padding(.bottom, chipsBottomPadding)
-                    .padding(.top, appearance.labelPlacement == .inner ? appearance.size.boxPaddingTop : 0)
                     
                     textEditor(id: textAreaMultipleId)
                         .frame(height: textHeight)
@@ -874,12 +873,17 @@ public struct SDDSTextArea<ActionContent: View>: View {
             scrollBarPaddingBottom: appearance.size.scrollBarPaddingBottom,
             scrollBarPaddingEnd: appearance.size.scrollBarPaddingEnd,
             scrollBarTrackColor: appearance.scrollBarTrackColor,
-            scrollBarThumbColor: appearance.scrollBarThumbColor
+            scrollBarThumbColor: appearance.scrollBarThumbColor,
+            contentInsetTop: chipGroupContentInsetTop
         )
     }
     
     private var scrollBarOffsetY: CGFloat {
         return shouldLayoutInnerTitle ? innerTitlePadding : 0
+    }
+    
+    private var chipGroupContentInsetTop: CGFloat {
+        dynamicHeight ? 0 : appearance.size.chipsPadding
     }
 
 }
