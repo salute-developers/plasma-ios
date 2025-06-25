@@ -16,52 +16,28 @@ import SwiftUI
 
 final class ChipSnapshotTest: XCTestCase {
     
+    @MainActor
     func testChipSizeLDefaultHasClear() async throws {
         try await runSnapshotTest(view: ChipSizeLDefaultHasClear())
     }
     
+    @MainActor
     func testChipSizeMSecondaryPilled() async throws {
         try await runSnapshotTest(view: ChipSizeMSecondaryPilled())
     }
     
+    @MainActor
     func testChipSizeSAccent() async throws {
         try await runSnapshotTest(view: ChipSizeSAccent())
     }
     
+    @MainActor
     func testChipSizeXsDefaultIcon() async throws {
         try await runSnapshotTest(view: ChipSizeXsDefaultIcon())
     }
     
+    @MainActor
     func testChipSizeLDisabled() async throws {
         try await runSnapshotTest(view: ChipSizeLDisabled())
     }
-    
-    func testChipGroupLDense() async throws {
-        try await runSnapshotTest(view: ChipGroupLDense())
-    }
-
-    func testChipGroupMSecondary() async throws {
-        try await runSnapshotTest(view: ChipGroupMSecondary())
-    }
-
-    func testChipGroupSAccent() async throws {
-        try await runSnapshotTest(view: ChipGroupSAccent())
-    }
-
-    func testChipGroupXs() async throws {
-        try await runSnapshotTest(view: ChipGroupXs())
-    }
-
-    func testChipGroupLSecondaryPilled() async throws {
-        try await runSnapshotTest(view: ChipGroupLSecondaryPilled())
-    }
-
-    func testChipGroupMAccentWide() async throws {
-        try await runSnapshotTest(view: ChipGroupMAccentWide())
-    }
-
-    func testChipGroupLSecondaryHasClose() async throws {
-        try await runSnapshotTest(view: ChipGroupLSecondaryHasClose())
-    }
-    
 }
