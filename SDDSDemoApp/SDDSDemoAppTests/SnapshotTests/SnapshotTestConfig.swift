@@ -27,10 +27,38 @@ extension SnapshotTestConfig {
  */
 enum SnapshotTestConfig {
     
-    static let testTheme: [(name: String, scheme: ColorScheme)] = [
+    static let colorTheme: [(name: String, scheme: ColorScheme)] = [
         ("Light", .light),
         ("Dark", .dark)
     ]
+    
+    static var metaData: [SnapshotTestMetadata] {
+        colorTheme.map { colorTheme in
+            let scheme = colorTheme.scheme
+            let colorTheme: String = "\(colorTheme.name)_\(colorTheme.scheme)"
+            let theme: String
+            #if PLASMA_THEME
+            theme = "Plasma"
+            #elseif SALUTE_THEME
+            theme = "StylesSalute"
+            #else
+            theme = "SDDSServ"
+            #endif
+            
+            return .init(colorTheme: colorTheme, scheme: scheme, theme: theme)
+        }
+    }
+    
+}
+
+struct SnapshotTestMetadata {
+    let colorTheme: String
+    let scheme: ColorScheme
+    let theme: String
+    
+    var testName: String {
+        "\(colorTheme)_\(theme)"
+    }
 }
 
 /**
@@ -45,16 +73,16 @@ func runSnapshotTest(
     
     let baseName = extractTestName(from: function)
     
-    for (themeName, scheme) in SnapshotTestConfig.testTheme {
+    for metaData in SnapshotTestConfig.metaData {
         await Xct.snapshotAsync(
-            testName: "\(baseName)_\(themeName)",
-            mode: .verify,
+            testName: metaData.testName,
+            mode: .record,
             deviceGroup: SnapshotTestConfig.iPhone13Mini,
             prepareSut: { _ in
                 view()
                     .padding()
                     .background(Color(.systemBackground))
-                    .environment(\.colorScheme, scheme)
+                    .environment(\.colorScheme, metaData.scheme)
                     .snapshotSut()
             }
         )

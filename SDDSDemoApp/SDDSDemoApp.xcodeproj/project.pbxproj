@@ -50,6 +50,14 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
+		8127ACF62E0D079800B320D1 /* TextSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACF22E0D079800B320D1 /* TextSkeletonView.swift */; };
+		8127ACF72E0D079800B320D1 /* RectSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACEE2E0D079800B320D1 /* RectSkeletonView.swift */; };
+		8127ACF82E0D079800B320D1 /* RectSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACED2E0D079800B320D1 /* RectSkeletonVariationProvider.swift */; };
+		8127ACF92E0D079800B320D1 /* TextSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACF32E0D079800B320D1 /* TextSkeletonViewModel.swift */; };
+		8127ACFA2E0D079800B320D1 /* RectSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACEF2E0D079800B320D1 /* RectSkeletonViewModel.swift */; };
+		8127ACFB2E0D079800B320D1 /* TextSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACF12E0D079800B320D1 /* TextSkeletonVariationProvider.swift */; };
+		8127ACFD2E0D07C100B320D1 /* TextLineCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACFC2E0D07C100B320D1 /* TextLineCounter.swift */; };
+		8127AD002E0D082B00B320D1 /* CardTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127ACFE2E0D082B00B320D1 /* CardTestCases.swift */; };
 		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
@@ -198,6 +206,14 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		8127ACED2E0D079800B320D1 /* RectSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonVariationProvider.swift; sourceTree = "<group>"; };
+		8127ACEE2E0D079800B320D1 /* RectSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonView.swift; sourceTree = "<group>"; };
+		8127ACEF2E0D079800B320D1 /* RectSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonViewModel.swift; sourceTree = "<group>"; };
+		8127ACF12E0D079800B320D1 /* TextSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonVariationProvider.swift; sourceTree = "<group>"; };
+		8127ACF22E0D079800B320D1 /* TextSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonView.swift; sourceTree = "<group>"; };
+		8127ACF32E0D079800B320D1 /* TextSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonViewModel.swift; sourceTree = "<group>"; };
+		8127ACFC2E0D07C100B320D1 /* TextLineCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLineCounter.swift; sourceTree = "<group>"; };
+		8127ACFE2E0D082B00B320D1 /* CardTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTestCases.swift; sourceTree = "<group>"; };
 		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
 		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
@@ -378,6 +394,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				8127ACFF2E0D082B00B320D1 /* CardTestCase */,
 				81F2E52D2DF98A9400708B40 /* TextFieldTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
@@ -497,6 +514,8 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8127ACF02E0D079800B320D1 /* RectSkeletonView */,
+				8127ACF42E0D079800B320D1 /* TextSkeletonView */,
 				8178A31D2DF2F968003F5041 /* ModalView */,
 				8119E25D2DF6FCA700D1CA9F /* NotificationView */,
 				81E936DB2DEDFA7300B76E38 /* ToastView */,
@@ -571,6 +590,34 @@
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
 			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		8127ACF02E0D079800B320D1 /* RectSkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				8127ACED2E0D079800B320D1 /* RectSkeletonVariationProvider.swift */,
+				8127ACEE2E0D079800B320D1 /* RectSkeletonView.swift */,
+				8127ACEF2E0D079800B320D1 /* RectSkeletonViewModel.swift */,
+			);
+			path = RectSkeletonView;
+			sourceTree = "<group>";
+		};
+		8127ACF42E0D079800B320D1 /* TextSkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				8127ACF12E0D079800B320D1 /* TextSkeletonVariationProvider.swift */,
+				8127ACF22E0D079800B320D1 /* TextSkeletonView.swift */,
+				8127ACF32E0D079800B320D1 /* TextSkeletonViewModel.swift */,
+			);
+			path = TextSkeletonView;
+			sourceTree = "<group>";
+		};
+		8127ACFF2E0D082B00B320D1 /* CardTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				8127ACFE2E0D082B00B320D1 /* CardTestCases.swift */,
+			);
+			path = CardTestCase;
 			sourceTree = "<group>";
 		};
 		81578DD32D89FACF00BC7038 /* BottomSheetView */ = {
@@ -740,6 +787,7 @@
 		81A613272D5BAB3500ADE1CD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8127ACFC2E0D07C100B320D1 /* TextLineCounter.swift */,
 				81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */,
 				8166B4432D5C7C9E0044A680 /* Theme.swift */,
 				81A613282D5BAB4200ADE1CD /* VariationProvider.swift */,
@@ -1042,6 +1090,12 @@
 				81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */,
 				81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
+				8127ACF62E0D079800B320D1 /* TextSkeletonView.swift in Sources */,
+				8127ACF72E0D079800B320D1 /* RectSkeletonView.swift in Sources */,
+				8127ACF82E0D079800B320D1 /* RectSkeletonVariationProvider.swift in Sources */,
+				8127ACF92E0D079800B320D1 /* TextSkeletonViewModel.swift in Sources */,
+				8127ACFA2E0D079800B320D1 /* RectSkeletonViewModel.swift in Sources */,
+				8127ACFB2E0D079800B320D1 /* TextSkeletonVariationProvider.swift in Sources */,
 				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,
 				816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */,
 				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
@@ -1086,6 +1140,7 @@
 				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,
 				8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */,
 				8119E2602DF6FCA700D1CA9F /* NotificationViewModel.swift in Sources */,
+				8127ACFD2E0D07C100B320D1 /* TextLineCounter.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
 				694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */,
 				697970D12D63A45A008306A8 /* CellViewModel.swift in Sources */,
@@ -1103,6 +1158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8127AD002E0D082B00B320D1 /* CardTestCases.swift in Sources */,
 				24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */,
 				81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */,
 			);
