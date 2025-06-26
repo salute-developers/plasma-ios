@@ -10,7 +10,13 @@
 @testable import SDDSComponents
 @testable import SDDSIcons
 import XCTest
+#if PLASMA_THEME
+import PlasmaB2CTheme
+#elseif SALUTE_THEME
+import StylesSaluteTheme
+#else
 import SDDSServTheme
+#endif
 import UIKit
 import SwiftUI
 
