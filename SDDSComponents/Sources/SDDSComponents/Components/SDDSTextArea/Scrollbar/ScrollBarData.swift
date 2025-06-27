@@ -11,4 +11,5 @@ struct ScrollBarData {
     let scrollBarPaddingEnd: CGFloat
     let scrollBarTrackColor: ColorToken
     let scrollBarThumbColor: ColorToken
+    let contentInsetTop: CGFloat
 }
