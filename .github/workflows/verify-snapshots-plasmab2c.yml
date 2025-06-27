@@ -1,0 +1,39 @@
+name: Verify snapshot tests - PlasmaB2C
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - feature/*
+      - release/*
+      - hotfix/*
+  
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    environment: sdds
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.1'
+
+      - name: Run snapshot tests - PlasmaB2C
+        working-directory: SDDSDemoApp
+        run: |
+          set -o pipefail && \
+          xcodebuild clean test \
+          -project SDDSDemoApp.xcodeproj \
+          -scheme "Snapshot Tests - PlasmaB2C" \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -resultBundlePath ../TestResults-PlasmaB2C.xcresult
