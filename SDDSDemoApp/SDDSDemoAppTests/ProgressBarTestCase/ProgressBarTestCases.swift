@@ -5,7 +5,13 @@
 //  Created by Булинов Ангрик Александрович on 13.05.2025.
 //
 
+#if PLASMA_THEME
+import PlasmaB2CTheme
+#elseif SALUTE_THEME
+import StylesSaluteTheme
+#else
 import SDDSServTheme
+#endif
 import SDDSComponents
 import UIKit
 import SwiftUI
