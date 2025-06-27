@@ -38,7 +38,7 @@ struct CircularProgressBarView: View {
                 VariationsView(viewModel: viewModel)
             }
         }
-        .navigationTitle("SDDSCircularProgressBar")
+        .navigationTitle("CircularProgressBar")
     }
     
     private var content: AnyView? {

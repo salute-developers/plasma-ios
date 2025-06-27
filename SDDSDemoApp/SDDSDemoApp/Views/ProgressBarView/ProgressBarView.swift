@@ -39,7 +39,7 @@ struct ProgressBarView: View {
                 }
             }
         }
-        .navigationTitle("SDDSProgressView")
+        .navigationTitle("ProgressView")
     }
 }
 

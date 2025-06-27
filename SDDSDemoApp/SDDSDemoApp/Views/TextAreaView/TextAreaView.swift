@@ -101,7 +101,7 @@ struct TextAreaView: View {
                 }
             }
         }
-        .navigationTitle("SDDSTextArea")
+        .navigationTitle("TextArea")
     }
 }
 

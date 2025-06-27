@@ -71,7 +71,7 @@ struct ChipGroupView: View {
                 }
             }
         }
-        .navigationTitle("SDDSChipGroup")
+        .navigationTitle("ChipGroup")
     }
 }
 

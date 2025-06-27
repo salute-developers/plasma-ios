@@ -26,49 +26,52 @@ struct ScrollBarModifier: ViewModifier {
         ZStack {
             ScrollViewReader { scrollProxy in
                 ScrollView(showsIndicators: false) {
-                    content
-                        .background(
-                            GeometryReader { contentGeometry in
-                                Color.clear
-                                    .onAppear {
-                                        contentHeight = contentGeometry.size.height
-                                        maxValue = contentHeight - scrollViewHeight
-                                    }
-                                    .onChange(of: contentGeometry.size.height) { newHeight in
-                                        contentHeight = newHeight
-                                        maxValue = contentHeight - scrollViewHeight
-                                    }
-                            }
-                        )
-                        .background(
-                            GeometryReader {
-                                Color.clear.preference(
-                                    key: ViewOffsetKey.self,
-                                    value: -$0.frame(in: .named(coordinateSpaceName)).origin.y
-                                )
-                            }
-                        )
-                        .id(contentIdentifier)
-                        .onChange(of: isScrollingToBottom) { _ in
-                            if isScrollingToBottom {
-                                scrollProxy.scrollTo(contentIdentifier, anchor: .bottom)
-                            }
-                        }
-                        .onPreferenceChange(ViewOffsetKey.self) { value in
-                            let oldOffset = offset
-                            offset = value
-                            
-                            // Обновляем время последнего скролла
-                            lastScrollTime = Date()
-                            
-                            // Если скролл не был активен, показываем индикатор
-                            if !isScrolling {
-                                isScrolling = true
-                                withAnimation(.easeIn(duration: 0.5)) {
-                                    opacity = 1
+                    VStack {
+                        Spacer().frame(height: scrollBarData.contentInsetTop)
+                        content
+                    }
+                    .background(
+                        GeometryReader { contentGeometry in
+                            Color.clear
+                                .onAppear {
+                                    contentHeight = contentGeometry.size.height
+                                    maxValue = contentHeight - scrollViewHeight
                                 }
+                                .onChange(of: contentGeometry.size.height) { newHeight in
+                                    contentHeight = newHeight
+                                    maxValue = contentHeight - scrollViewHeight
+                                }
+                        }
+                    )
+                    .background(
+                        GeometryReader {
+                            Color.clear.preference(
+                                key: ViewOffsetKey.self,
+                                value: -$0.frame(in: .named(coordinateSpaceName)).origin.y
+                            )
+                        }
+                    )
+                    .id(contentIdentifier)
+                    .onChange(of: isScrollingToBottom) { _ in
+                        if isScrollingToBottom {
+                            scrollProxy.scrollTo(contentIdentifier, anchor: .bottom)
+                        }
+                    }
+                    .onPreferenceChange(ViewOffsetKey.self) { value in
+                        let oldOffset = offset
+                        offset = value
+                        
+                        // Обновляем время последнего скролла
+                        lastScrollTime = Date()
+                        
+                        // Если скролл не был активен, показываем индикатор
+                        if !isScrolling {
+                            isScrolling = true
+                            withAnimation(.easeIn(duration: 0.5)) {
+                                opacity = 1
                             }
                         }
+                    }
                 }
                 .coordinateSpace(name: coordinateSpaceName)
                 .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in

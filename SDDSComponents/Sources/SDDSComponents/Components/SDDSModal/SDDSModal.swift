@@ -2,6 +2,28 @@ import SwiftUI
 @_exported import SDDSIcons
 @_exported import SDDSThemeCore
 
+/**
+ `SDDSModal` представляет собой модальное окно с возможностью настройки внешнего вида и дополнительных элементов.
+
+ - Parameters:
+    - content: View-контент, который будет отображаться внутри модального окна.
+    - closeImage: Изображение кнопки закрытия модального окна.
+    - appearance: Параметры внешнего вида модального окна.
+    - onClose: Обработчик события закрытия модального окна.
+ 
+ ```swift
+ SDDSModal(
+     content: {
+         Text("Содержимое модального окна")
+     },
+     closeImage: Asset.close36.image,
+     appearance: Modal.default.appearance,
+     onClose: {
+         // Обработка закрытия
+     }
+ )
+ ```
+ */
 public struct SDDSModal<Content: View>: View {
     private let content: () -> Content
     private let closeImage: Image?

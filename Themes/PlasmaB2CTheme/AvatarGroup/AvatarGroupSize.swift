@@ -12,7 +12,6 @@ struct AvatarGroupSize {
 }
 struct AvatarGroupSizeS: AvatarGroupSizeConfiguration {
     var borderWidth = CGFloat(2.0)
-    var maxDisplayingAvatarCount = Int(0)
     var spacing = CGFloat(16.0)
     public var debugDescription: String {
         return "AvatarGroupSize"
@@ -21,12 +20,10 @@ struct AvatarGroupSizeS: AvatarGroupSizeConfiguration {
 
 struct AvatarGroupAnySize: AvatarGroupSizeConfiguration {
     var borderWidth = CGFloat(0)
-    var maxDisplayingAvatarCount = Int(0)
     var spacing = CGFloat(0)
 
     init(size: AvatarGroupSizeConfiguration) {
         self.borderWidth = size.borderWidth
-        self.maxDisplayingAvatarCount = size.maxDisplayingAvatarCount
         self.spacing = size.spacing
     }
     var debugDescription: String {

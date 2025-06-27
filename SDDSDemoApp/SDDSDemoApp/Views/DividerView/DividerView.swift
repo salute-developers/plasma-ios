@@ -16,7 +16,7 @@ struct DividerView: View {
                 VariationsView(viewModel: viewModel)
             }
         }
-        .navigationTitle("SDDSDivider")
+        .navigationTitle("Divider")
     }
 }
 
