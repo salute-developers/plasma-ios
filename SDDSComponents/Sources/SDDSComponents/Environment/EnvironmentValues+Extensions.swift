@@ -131,4 +131,14 @@ public extension EnvironmentValues {
         get { self[ToastAppearance.self] }
         set { self[ToastAppearance.self] = newValue }
     }
+    
+    var listAppearance: ListAppearance {
+        get { self[ListAppearance.self] }
+        set { self[ListAppearance.self] = newValue }
+    }
+    
+    var listItemAppearance: ListItemAppearance {
+        get { self[ListItemAppearance.self] }
+        set { self[ListItemAppearance.self] = newValue }
+    }
 }
