@@ -25,6 +25,8 @@ struct ComponentsView: View {
         ("BottomSheet", AnyView(BottomSheetView())),
         ("CircularProgressBar", AnyView(CircularProgressBarView())),
         ("Divider", AnyView(DividerView())),
+        ("List", AnyView(ListView())),
+        ("ListItem", AnyView(ListItemView())),
         ("Overlay", AnyView(OverlayView())),
         ("Popover", AnyView(PopoverView())),
         ("Tooltip", AnyView(TooltipView())),
