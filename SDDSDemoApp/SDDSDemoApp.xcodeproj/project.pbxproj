@@ -131,6 +131,9 @@
 		81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */; };
+		81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2942E16E1010087C834 /* ScrollbarView.swift */; };
+		81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */; };
+		81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */; };
 		81F63B722DBF6C7C003C8C26 /* ComponentViewLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */; };
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
 		81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */; };
@@ -292,6 +295,9 @@
 		81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 		81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
 		81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTestCases.swift; sourceTree = "<group>"; };
+		81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarVariationProvider.swift; sourceTree = "<group>"; };
+		81F5F2942E16E1010087C834 /* ScrollbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarView.swift; sourceTree = "<group>"; };
+		81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarViewModel.swift; sourceTree = "<group>"; };
 		81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewLayoutMode.swift; sourceTree = "<group>"; };
 		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -557,6 +563,7 @@
 			children = (
 				810F958F2E13A1FE008CA4CA /* ListItemView */,
 				810F95932E13A1FE008CA4CA /* ListView */,
+				81F5F2962E16E1010087C834 /* ScrollbarView */,
 				81368A692E01879900A1702A /* RectSkeletonView */,
 				81368A6D2E01879900A1702A /* TextSkeletonView */,
 				8178A31D2DF2F968003F5041 /* ModalView */,
@@ -870,6 +877,16 @@
 			path = TextFieldTestCase;
 			sourceTree = "<group>";
 		};
+		81F5F2962E16E1010087C834 /* ScrollbarView */ = {
+			isa = PBXGroup;
+			children = (
+				81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */,
+				81F5F2942E16E1010087C834 /* ScrollbarView.swift */,
+				81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */,
+			);
+			path = ScrollbarView;
+			sourceTree = "<group>";
+		};
 		81F89E482D81A39B00A41C89 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,6 +1165,9 @@
 				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
+				81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */,
+				81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */,
+				81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,

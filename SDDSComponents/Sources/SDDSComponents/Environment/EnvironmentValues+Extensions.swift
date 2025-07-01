@@ -141,4 +141,9 @@ public extension EnvironmentValues {
         get { self[ListItemAppearance.self] }
         set { self[ListItemAppearance.self] = newValue }
     }
+
+    var scrollbarAppearance: ScrollbarAppearance {
+        get { self[ScrollbarAppearance.self] }
+        set { self[ScrollbarAppearance.self] = newValue }
+    }
 }
