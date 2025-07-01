@@ -75,6 +75,10 @@
 		810F92702E1395AB008CA4CA /* SDDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92632E1395AB008CA4CA /* SDDSList.swift */; };
 		810F92712E1395AB008CA4CA /* ListItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */; };
 		810F92722E1395AB008CA4CA /* ListItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92652E1395AB008CA4CA /* ListItemAppearance.swift */; };
+		810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */ = {isa = PBXBuildFile; fileRef = 810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */; };
+		810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */; };
+		810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */; };
+		810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */; };
 		8119DF5F2DF6FB8800D1CA9F /* NotificationAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */; };
 		8119DF602DF6FB8800D1CA9F /* ZeroNotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */; };
 		8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */; };
@@ -389,6 +393,10 @@
 		810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSizeConfiguration.swift; sourceTree = "<group>"; };
 		810F92682E1395AB008CA4CA /* SDDSListItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSListItem.md; sourceTree = "<group>"; };
 		810F92692E1395AB008CA4CA /* SDDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSListItem.swift; sourceTree = "<group>"; };
+		810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarAppearance.swift; sourceTree = "<group>"; };
+		810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSizeConfiguration.swift; sourceTree = "<group>"; };
+		810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSScrollbar.md; sourceTree = "<group>"; };
+		810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSScrollbar.swift; sourceTree = "<group>"; };
 		8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSizeConfiguration.swift; sourceTree = "<group>"; };
 		8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroNotificationSize.swift; sourceTree = "<group>"; };
@@ -829,7 +837,6 @@
 			isa = PBXGroup;
 			children = (
 				693FE4772DDC966400E14D0E /* SDDSTextArea.md */,
-				81A079042DA3FB4800260DC9 /* Scrollbar */,
 				812DB7392D57B43900D3F4A3 /* TextArea.swift */,
 				812DB7302D57B43900D3F4A3 /* TextAreaAppearance */,
 				812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */,
@@ -874,6 +881,28 @@
 				810F92692E1395AB008CA4CA /* SDDSListItem.swift */,
 			);
 			path = SDDSListItem;
+			sourceTree = "<group>";
+		};
+		810FA5572E144457008CA4CA /* SDDSScrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				810FB5582E16DDED008CA4CA /* ScrollbarAppearance */,
+				810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */,
+				810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */,
+				81A079052DA3FB5400260DC9 /* ScrollBarData.swift */,
+				81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */,
+				81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */,
+			);
+			path = SDDSScrollbar;
+			sourceTree = "<group>";
+		};
+		810FB5582E16DDED008CA4CA /* ScrollbarAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */,
+				810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */,
+			);
+			path = ScrollbarAppearance;
 			sourceTree = "<group>";
 		};
 		8119DF5A2DF6FB8800D1CA9F /* NotificationAppearance */ = {
@@ -1430,6 +1459,7 @@
 			children = (
 				810F92642E1395AB008CA4CA /* SDDSList */,
 				810F926A2E1395AB008CA4CA /* SDDSListItem */,
+				810FA5572E144457008CA4CA /* SDDSScrollbar */,
 				813687682E0186A800A1702A /* SDDSRectSkeleton */,
 				8136876A2E0186A800A1702A /* SDDSTextSkeleton */,
 				8178A0842DF2F6B5003F5041 /* SDDSModal */,
@@ -1609,16 +1639,6 @@
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		81A079042DA3FB4800260DC9 /* Scrollbar */ = {
-			isa = PBXGroup;
-			children = (
-				81A079052DA3FB5400260DC9 /* ScrollBarData.swift */,
-				81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */,
-				81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */,
-			);
-			path = Scrollbar;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -2061,6 +2081,7 @@
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
 				810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */,
 				810F926C2E1395AB008CA4CA /* SDDSList.md in Resources */,
+				810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2294,6 +2315,9 @@
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
 				81578DB82D89ADBA00BC7038 /* BottomSheetAppearance.swift in Sources */,
 				814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */,
+				810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */,
+				810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */,
+				810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */,
 				812DB7412D57B43900D3F4A3 /* TextAreaAppearance.swift in Sources */,
 				81F7E4E02DF058E700531844 /* PassthroughView.swift in Sources */,
 				81F7E4E12DF058E700531844 /* WindowOverlayService.swift in Sources */,

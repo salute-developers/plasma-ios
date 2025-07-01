@@ -573,4 +573,15 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.ListTight.all
         }
     }
+    
+    var scrollbarVariations: [Variation<ScrollbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Scrollbar.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.Scrollbar.all
+        case .stylesSalute:
+            PlasmaB2CTheme.Scrollbar.all
+        }
+    }
 }

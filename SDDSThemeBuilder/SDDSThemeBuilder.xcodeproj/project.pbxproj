@@ -83,6 +83,9 @@
 		810F92592E12EA5D008CA4CA /* ListProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92582E12EA5D008CA4CA /* ListProps.swift */; };
 		810F925D2E12EA6D008CA4CA /* ListAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F925A2E12EA6D008CA4CA /* ListAppearance.swift */; };
 		810F925E2E12EA6D008CA4CA /* ListSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F925B2E12EA6D008CA4CA /* ListSize.swift */; };
+		810FA5592E166607008CA4CA /* ScrollbarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FA5582E166607008CA4CA /* ScrollbarProps.swift */; };
+		810FA55D2E16661F008CA4CA /* ScrollbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FA55B2E16661F008CA4CA /* ScrollbarSize.swift */; };
+		810FA55E2E16661F008CA4CA /* ScrollbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FA55A2E16661F008CA4CA /* ScrollbarAppearance.swift */; };
 		8119DF532DF6F7F600D1CA9F /* NotificationAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF4E2DF6F7F600D1CA9F /* NotificationAppearance.swift */; };
 		8119DF542DF6F7F600D1CA9F /* NotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */; };
 		8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF552DF6F86700D1CA9F /* NotificationProps.swift */; };
@@ -575,6 +578,9 @@
 		810F92582E12EA5D008CA4CA /* ListProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProps.swift; sourceTree = "<group>"; };
 		810F925A2E12EA6D008CA4CA /* ListAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppearance.swift; sourceTree = "<group>"; };
 		810F925B2E12EA6D008CA4CA /* ListSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSize.swift; sourceTree = "<group>"; };
+		810FA5582E166607008CA4CA /* ScrollbarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarProps.swift; sourceTree = "<group>"; };
+		810FA55A2E16661F008CA4CA /* ScrollbarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarAppearance.swift; sourceTree = "<group>"; };
+		810FA55B2E16661F008CA4CA /* ScrollbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSize.swift; sourceTree = "<group>"; };
 		8119DF4E2DF6F7F600D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSize.swift; sourceTree = "<group>"; };
 		8119DF552DF6F86700D1CA9F /* NotificationProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProps.swift; sourceTree = "<group>"; };
@@ -1211,6 +1217,15 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		810FA55C2E16661F008CA4CA /* Scrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				810FA55A2E16661F008CA4CA /* ScrollbarAppearance.swift */,
+				810FA55B2E16661F008CA4CA /* ScrollbarSize.swift */,
+			);
+			path = Scrollbar;
+			sourceTree = "<group>";
+		};
 		8119DF512DF6F7F600D1CA9F /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1283,6 +1298,7 @@
 			children = (
 				810F92582E12EA5D008CA4CA /* ListProps.swift */,
 				810F92512E12E713008CA4CA /* ListItemProps.swift */,
+				810FA5582E166607008CA4CA /* ScrollbarProps.swift */,
 				813687622E01820700A1702A /* SkeletonProps.swift */,
 				81F7EC9C2DF2F0AB00531844 /* ModalProps.swift */,
 				8119DF552DF6F86700D1CA9F /* NotificationProps.swift */,
@@ -1321,6 +1337,7 @@
 			children = (
 				810F925C2E12EA6D008CA4CA /* List */,
 				810F92552E12E720008CA4CA /* ListItem */,
+				810FA55C2E16661F008CA4CA /* Scrollbar */,
 				8136875D2E0181DF00A1702A /* RectSkeleton */,
 				81F7ECA62DF2F0CA00531844 /* Modal */,
 				8119DF512DF6F7F600D1CA9F /* Notification */,
@@ -2569,6 +2586,8 @@
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */,
 				81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */,
+				810FA55D2E16661F008CA4CA /* ScrollbarSize.swift in Sources */,
+				810FA55E2E16661F008CA4CA /* ScrollbarAppearance.swift in Sources */,
 				81763B022D6DE6F100904D4A /* BadgeAppearance.swift in Sources */,
 				81F89E532D81A6F100A41C89 /* CardAppearance.swift in Sources */,
 				81763AFF2D6DE67D00904D4A /* BadgeProps.swift in Sources */,
@@ -2613,6 +2632,7 @@
 				8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */,
 				81A7534F2D47DE03006E1BE7 /* TextFieldSize.swift in Sources */,
 				81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */,
+				810FA5592E166607008CA4CA /* ScrollbarProps.swift in Sources */,
 				812DB6ED2D55E41E00D3F4A3 /* SizeContextBuilder.swift in Sources */,
 				81A753502D47DE03006E1BE7 /* ComponentContext.swift in Sources */,
 				81A753552D47DE24006E1BE7 /* SizeVariationKey.swift in Sources */,
