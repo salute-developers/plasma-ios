@@ -12,6 +12,7 @@ struct ComponentsView: View {
         ("ProgressBar", AnyView(ProgressBarView())),
         ("Radiobox", AnyView(RadioboxView())),
         ("RadioboxGroup", AnyView(RadioboxGroupView())),
+        ("Scrollbar", AnyView(ScrollbarView())),
         ("Switch", AnyView(SwitchView())),
         ("TextArea", AnyView(TextAreaView())),
         ("TextField", AnyView(TextFieldView())),

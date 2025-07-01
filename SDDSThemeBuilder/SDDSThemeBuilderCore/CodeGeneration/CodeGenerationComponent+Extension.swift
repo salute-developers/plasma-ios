@@ -51,6 +51,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case listItemTight = "ListItemTight"
     case listNormal = "ListNormal"
     case listTight = "ListTight"
+    case scrollbar = "Scrollbar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -103,7 +104,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .listItemNormal,
             .listItemTight,
             .listNormal,
-            .listTight
+            .listTight,
+            .scrollbar
         ]
     }
     
@@ -176,6 +178,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .listNormal, .listTight:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .scrollbar:
+            GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -245,6 +249,8 @@ extension CodeGenerationComponent {
             "ListItemAppearance"
         case .listNormal, .listTight:
             "ListAppearance"
+        case .scrollbar:
+            "ScrollbarAppearance"
         }
     }
     
@@ -315,6 +321,8 @@ extension CodeGenerationComponent {
             "ListItemSizeConfiguration"
         case .listNormal, .listTight:
             "ListSizeConfiguration"
+        case .scrollbar:
+            "ScrollbarSizeConfiguration"
         }
     }
     
@@ -420,6 +428,8 @@ extension CodeGenerationComponent {
             "list_normal_config.json"
         case .listTight:
             "list_tight_config.json"
+        case .scrollbar:
+            "scroll_bar_config.json"
         }
     }
     
