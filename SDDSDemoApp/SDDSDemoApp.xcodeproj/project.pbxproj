@@ -292,6 +292,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CardTestCase; sourceTree = "<group>"; };
 		D37C09022DE8B32400B76DF2 /* SegmentTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SegmentTestCase; sourceTree = "<group>"; };
+		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ModalTestCase; sourceTree = "<group>"; };
+		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RectSkeletonTestCase; sourceTree = "<group>"; };
+		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextSkeletonTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
@@ -395,6 +398,9 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
+				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
+				D3839E792E0E8CD000B6E830 /* ModalTestCase */,
 				D336A7EB2E0AE28700A996FC /* CardTestCase */,
 				81F2E52D2DF98A9400708B40 /* TextFieldTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
@@ -902,6 +908,9 @@
 			fileSystemSynchronizedGroups = (
 				D336A7EB2E0AE28700A996FC /* CardTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
+				D3839E792E0E8CD000B6E830 /* ModalTestCase */,
+				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
+				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
