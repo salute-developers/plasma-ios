@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 13.05.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,91 +15,109 @@ import SDDSIcons
  */
 
 struct ProgressBarDefault: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
             isEnabled: true,
-            appearance: ProgressBar.default.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarSecondary: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
             isEnabled: true,
-            appearance: ProgressBar.default.secondary.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarWarning: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
             isEnabled: true,
-            appearance: ProgressBar.default.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarPositive: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),
             isEnabled: true,
-            appearance: ProgressBar.default.positive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarNegative: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.99),
             isEnabled: true,
-            appearance: ProgressBar.default.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarGradient: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),
             isEnabled: true,
-            appearance: ProgressBar.default.gradient.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarDefaultValueOne: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.01),
             isEnabled: true,
-            appearance: ProgressBar.default.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarAccent: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(1),
             isEnabled: true,
-            appearance: ProgressBar.default.accent.appearance
+            appearance: appearance
         )
     }
 }
 
 struct ProgressBarInfo: View {
+    var appearance: ProgressBarAppearance
+    
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),
             isEnabled: true,
-            appearance: ProgressBar.default.info.appearance
+            appearance: appearance
         )
     }
 }

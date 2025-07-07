@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 29.05.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,6 +15,8 @@ import SDDSIcons
  */
 
 struct SegmentItemSizeLPrimary: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -24,7 +25,7 @@ struct SegmentItemSizeLPrimary: View {
             isDisabled: false,
             isSelected: true,
             counterEnabled: true,
-            appearance: SegmentItem.l.primary.appearance,
+            appearance: segmentItemAppearance,
             counterText: "",
             counter: {},
             action: {}
@@ -33,6 +34,8 @@ struct SegmentItemSizeLPrimary: View {
 }
 
 struct SegmentItemSizeMSecondaryPilled: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -41,7 +44,7 @@ struct SegmentItemSizeMSecondaryPilled: View {
             isDisabled: false,
             isSelected: true,
             counterEnabled: true,
-            appearance: SegmentItem.m.pilled.secondary.appearance,
+            appearance: segmentItemAppearance,
             counterText: "",
             counter: {},
             action: {}
@@ -50,6 +53,8 @@ struct SegmentItemSizeMSecondaryPilled: View {
 }
 
 struct SegmentItemSizeSPrimary: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -58,7 +63,7 @@ struct SegmentItemSizeSPrimary: View {
             isDisabled: false,
             isSelected: false,
             counterEnabled: true,
-            appearance: SegmentItem.s.primary.appearance,
+            appearance: segmentItemAppearance,
             counterText: "",
             counter: {},
             action: {}
@@ -67,6 +72,9 @@ struct SegmentItemSizeSPrimary: View {
 }
 
 struct SegmentItemSizeXsCounter: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var counterAppearance: CounterAppearance
+    
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -75,10 +83,17 @@ struct SegmentItemSizeXsCounter: View {
             isDisabled: false,
             isSelected: true,
             counterEnabled: true,
-            appearance: SegmentItem.xs.pilled.primary.appearance,
+            appearance: segmentItemAppearance,
             counterText: "123",
             counter: {
-                CounterForSegmentXxs()
+                SDDSCounter(
+                    text: "123",
+                    appearance: counterAppearance,
+                    isAnimating: false,
+                    isHighlighted: false,
+                    isHovered: false,
+                    isSelected: false
+                )
             },
             action: {}
         )
@@ -86,6 +101,8 @@ struct SegmentItemSizeXsCounter: View {
 }
 
 struct SegmentItemSizeDisabled: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -94,7 +111,7 @@ struct SegmentItemSizeDisabled: View {
             isDisabled: true,
             isSelected: true,
             counterEnabled: true,
-            appearance: SegmentItem.l.primary.appearance,
+            appearance: segmentItemAppearance,
             counterText: "",
             counter: {},
             action: {}
@@ -105,6 +122,9 @@ struct SegmentItemSizeDisabled: View {
 
 
 struct SegmentSizeLPrimary: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -116,12 +136,12 @@ struct SegmentSizeLPrimary: View {
                     iconAttributes: nil,
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.l.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.l.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -132,6 +152,9 @@ struct SegmentSizeLPrimary: View {
 }
 
 struct SegmentSizeMSecondaryPilled: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -143,12 +166,12 @@ struct SegmentSizeMSecondaryPilled: View {
                     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.m.secondary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.m.pilled.secondary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -159,6 +182,9 @@ struct SegmentSizeMSecondaryPilled: View {
 }
 
 struct SegmentSizeS: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -170,12 +196,12 @@ struct SegmentSizeS: View {
                     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.s.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.s.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -186,6 +212,9 @@ struct SegmentSizeS: View {
 }
 
 struct SegmentSizeXs: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -197,12 +226,12 @@ struct SegmentSizeXs: View {
                     iconAttributes: .init(image: Image.image("plasma"), alignment: .trailing),
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.xs.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.xs.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -213,6 +242,9 @@ struct SegmentSizeXs: View {
 }
 
 struct SegmentSizeLVertical: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -224,12 +256,12 @@ struct SegmentSizeLVertical: View {
                     iconAttributes: nil,
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.l.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.l.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .vertical,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -240,6 +272,9 @@ struct SegmentSizeLVertical: View {
 }
 
 struct SegmentDisabled: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -251,12 +286,12 @@ struct SegmentDisabled: View {
                     iconAttributes: nil,
                     isDisabled: true,
                     counterEnabled: false,
-                    appearance: SegmentItem.l.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.l.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: true,
@@ -267,6 +302,9 @@ struct SegmentDisabled: View {
 }
 
 struct SegmentSizeSStretch: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -278,12 +316,12 @@ struct SegmentSizeSStretch: View {
                     iconAttributes: nil,
                     isDisabled: false,
                     counterEnabled: false,
-                    appearance: SegmentItem.s.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: { AnyView(EmptyView()) },
                     action: {}
                 )
             },
-            appearance: Segment.s.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
@@ -294,6 +332,10 @@ struct SegmentSizeSStretch: View {
 }
 
 struct SegmentSizeLCounter: View {
+    var segmentItemAppearance: SegmentItemAppearance
+    var segmentAppearance: SegmentAppearance
+    var counterAppearance: CounterAppearance
+    
     let ids = [UUID(),UUID(), UUID()]
     var body: some View {
         SDDSSegment(
@@ -305,45 +347,28 @@ struct SegmentSizeLCounter: View {
                     iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
                     isDisabled: false,
                     counterEnabled: true,
-                    appearance: SegmentItem.l.primary.appearance,
+                    appearance: segmentItemAppearance,
                     counter: {
-                        AnyView(CounterForSegmentS())
+                        AnyView (
+                            SDDSCounter(
+                                text: "123",
+                                appearance: counterAppearance,
+                                isAnimating: false,
+                                isHighlighted: false,
+                                isHovered: false,
+                                isSelected: false
+                            )
+                        )
                     },
                     action: {}
                 )
             },
-            appearance: Segment.l.primary.appearance,
+            appearance: segmentAppearance,
             layoutOrientation: .horizontal,
             selectedItemId: .constant(ids[0]),
             isDisabled: false,
             stretch: false,
             hasBackground: true
-        )
-    }
-}
-
-struct CounterForSegmentS: View {
-    var body: some View {
-        SDDSCounter(
-            text: "123",
-            appearance: Counter.s.accent.appearance,
-            isAnimating: false,
-            isHighlighted: false,
-            isHovered: false,
-            isSelected: false
-        )
-    }
-}
-
-struct CounterForSegmentXxs: View {
-    var body: some View {
-        SDDSCounter(
-            text: "123",
-            appearance: Counter.xxs.default.appearance,
-            isAnimating: false,
-            isHighlighted: false,
-            isHovered: false,
-            isSelected: false
         )
     }
 }

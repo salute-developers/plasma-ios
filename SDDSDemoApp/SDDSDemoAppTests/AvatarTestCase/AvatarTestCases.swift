@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -14,65 +13,73 @@ import SDDSIcons
  Теск-кейсы для компонента [Avatar, AvatarGroup]
  */
 struct AvatarSizeM: View {
+    var appearance: AvatarAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.m.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility()
         )
     }
 }
 
 struct AvatarSizeXxl: View {
+    var appearance: AvatarAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.xxl.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility()
         )
     }
 }
 
 struct AvatarGroupSizeS: View {
+    var appearance: AvatarAppearance
+    
     var body: some View {
         SDDSAvatarGroup(
-            data: exampleAvatars,
-            lastAvatar: lastAvatarData,
+            data: exampleAvatars(with: appearance),
+            lastAvatar: lastAvatarData(with: appearance),
             appearance: AvatarGroupAppearance(
                 size: defaultSize,
-                avatarAppearance: lastAvatarData.appearance
+                avatarAppearance: lastAvatarData(with: appearance).appearance
             )
         )
     }
 }
-    
-var exampleAvatars: [SDDSAvatarData] = (1...2).map { i in
-    SDDSAvatarData(
-        text: "MS",
-        image: .image(Image.image("checker")),
-        placeholderImage: nil,
-        status: .online,
-        appearance: Avatar.s.appearance,
-        accessibility: AvatarAccessibility()
-    )
-}
 
-    var lastAvatarData: SDDSAvatarData {
+func exampleAvatars(with appearance: AvatarAppearance) -> [SDDSAvatarData] {
+    (1...2).map { i in
         SDDSAvatarData(
-            text: "+3",
-            image: nil,
+            text: "MS",
+            image: .image(Image.image("checker")),
             placeholderImage: nil,
-            status: .hidden,
-            appearance: Avatar.s.appearance,
+            status: .online,
+            appearance: appearance,
             accessibility: AvatarAccessibility()
         )
     }
+}
+    
+func lastAvatarData(with appearance: AvatarAppearance) -> SDDSAvatarData {
+    SDDSAvatarData(
+        text: "+3",
+        image: nil,
+        placeholderImage: nil,
+        status: .hidden,
+        appearance: appearance,
+        accessibility: AvatarAccessibility()
+    )
+}
 
 var defaultSize: AvatarGroupSizeConfiguration {
         DefaultAvatarGroupSize()
@@ -84,20 +91,23 @@ struct DefaultAvatarGroupSize: AvatarGroupSizeConfiguration {
 }
 
 struct AvatarSizeXxlCounterTopLeft: View {
+    var appearance: AvatarAppearance
+    var counterAppearance: CounterAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.xxl.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .topLeft,
                 content: {
                     SDDSCounter(
                         text: "1",
-                        appearance: Counter.m.negative.appearance,
+                        appearance: counterAppearance,
                         isAnimating: false,
                         isHighlighted: false,
                         isHovered: false,
@@ -110,20 +120,23 @@ struct AvatarSizeXxlCounterTopLeft: View {
 }
 
 struct AvatarSizeLCounterTopRight: View {
+    var appearance: AvatarAppearance
+    var counterAppearance: CounterAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.l.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .topRight,
                 content: {
                     SDDSCounter(
                         text: "123",
-                        appearance: Counter.s.negative.appearance,
+                        appearance: counterAppearance,
                         isAnimating: false,
                         isHighlighted: false,
                         isHovered: false,
@@ -136,20 +149,23 @@ struct AvatarSizeLCounterTopRight: View {
 }
 
 struct AvatarSizeMCounterBottomRight: View {
+    var appearance: AvatarAppearance
+    var counterAppearance: CounterAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.m.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .bottomRight,
                 content: {
                         SDDSCounter(
                             text: "1",
-                            appearance: Counter.xs.negative.appearance,
+                            appearance: counterAppearance,
                             isAnimating: false,
                             isHighlighted: false,
                             isHovered: false,
@@ -162,20 +178,23 @@ struct AvatarSizeMCounterBottomRight: View {
 }
 
 struct AvatarSizeSCounterBottomLeft: View {
+    var appearance: AvatarAppearance
+    var counterAppearance: CounterAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.s.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .bottomLeft,
                 content: {
                         SDDSCounter(
                             text: "1",
-                            appearance: Counter.xxs.negative.appearance,
+                            appearance: counterAppearance,
                             isAnimating: false,
                             isHighlighted: false,
                             isHovered: false,
@@ -188,13 +207,16 @@ struct AvatarSizeSCounterBottomLeft: View {
 }
 
 struct AvatarSizeXxlBadgeTopLeft: View {
+    var appearance: AvatarAppearance
+    var badgeAppearance: BadgeAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "",
             image: .image(Image.image("checker")),
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.xxl.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .topLeft,
@@ -204,7 +226,7 @@ struct AvatarSizeXxlBadgeTopLeft: View {
                         image: Image.image("plasma"),
                         alignment: .leading,
                         style: .basic,
-                        appearance: Badge.m.pilled.accent.appearance
+                        appearance: badgeAppearance
                     )
                 }
             )
@@ -213,13 +235,16 @@ struct AvatarSizeXxlBadgeTopLeft: View {
 }
 
 struct AvatarSizeXxlBadgeBottomRight: View {
+    var appearance: AvatarAppearance
+    var badgeAppearance: BadgeAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.xxl.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .bottomRight,
@@ -229,7 +254,7 @@ struct AvatarSizeXxlBadgeBottomRight: View {
                         image: Image.image("plasma"),
                         alignment: .trailing,
                         style: .basic,
-                        appearance: Badge.m.pilled.accent.appearance
+                        appearance: badgeAppearance
                     )
                 }
             )
@@ -238,13 +263,16 @@ struct AvatarSizeXxlBadgeBottomRight: View {
 }
 
 struct AvatarSizeLBadgeTopRight: View {
+    var appearance: AvatarAppearance
+    var badgeAppearance: BadgeAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .online,
-            appearance: Avatar.l.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .topRight,
@@ -254,7 +282,7 @@ struct AvatarSizeLBadgeTopRight: View {
                         image: Image.image("plasma"),
                         alignment: .leading,
                         style: .basic,
-                        appearance: Badge.s.pilled.accent.appearance
+                        appearance: badgeAppearance
                     )
                 }
             )
@@ -263,13 +291,16 @@ struct AvatarSizeLBadgeTopRight: View {
 }
 
 struct AvatarSizeMBadgeBottomLeft: View {
+    var appearance: AvatarAppearance
+    var badgeAppearance: BadgeAppearance
+    
     var body: some View {
         SDDSAvatar(
             text: "MS",
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.m.appearance,
+            appearance: appearance,
             accessibility: AvatarAccessibility(),
             extra: AvatarExtra(
                 placement: .bottomLeft,
@@ -279,7 +310,7 @@ struct AvatarSizeMBadgeBottomLeft: View {
                         image: nil,
                         alignment: .leading,
                         style: .basic,
-                        appearance: Badge.xs.pilled.accent.appearance
+                        appearance: badgeAppearance
                     )
                 }
             )

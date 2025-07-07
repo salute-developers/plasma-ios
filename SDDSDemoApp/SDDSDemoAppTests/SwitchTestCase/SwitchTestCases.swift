@@ -16,65 +16,75 @@ import SDDSIcons
  */
 
 struct SwitchSizeL: View {
+    var appearance: SwitchAppearance
+    
     var body: some View {
         SDDSSwitch(
             title: "Label",
             subtitle: "Description",
             isOn: .constant(true),
             isEnabled: true,
-            appearance: Switch.l.appearance,
+            appearance: appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
 }
 
 struct SwitchSizeM: View {
+    var appearance: SwitchAppearance
+    
     var body: some View {
         SDDSSwitch(
             title: "Label",
             subtitle: "",
             isOn: .constant(false),
             isEnabled: true,
-            appearance: Switch.m.appearance,
+            appearance: appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
 }
 
 struct SwitchSizeS: View {
+    var appearance: SwitchAppearance
+    
     var body: some View {
         SDDSSwitch(
             title: "",
             subtitle: "",
             isOn: .constant(true),
             isEnabled: true,
-            appearance: Switch.s.appearance,
+            appearance: appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
 }
 
 struct SwitchSizeDisabled: View {
+    var appearance: SwitchAppearance
+    
     var body: some View {
         SDDSSwitch(
             title: "Label",
             subtitle: "Description",
             isOn: .constant(true),
             isEnabled: false,
-            appearance: Switch.m.appearance,
+            appearance: appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
 }
 
 struct SwitchSizeDisabledOff: View {
+    var appearance: SwitchAppearance
+    
     var body: some View {
         SDDSSwitch(
             title: "Label",
             subtitle: "Description",
             isOn: .constant(false),
             isEnabled: false,
-            appearance: Switch.m.appearance,
+            appearance: appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }
