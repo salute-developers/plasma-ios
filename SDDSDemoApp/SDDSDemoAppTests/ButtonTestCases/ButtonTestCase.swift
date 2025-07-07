@@ -15,6 +15,8 @@ import SDDSIcons
  */
 
 struct ButtonLDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -22,7 +24,7 @@ struct ButtonLDefault: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -30,6 +32,8 @@ struct ButtonLDefault: View {
 }
 
 struct ButtonMAccent: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -38,7 +42,7 @@ struct ButtonMAccent: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.m.accent.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -46,6 +50,8 @@ struct ButtonMAccent: View {
 }
 
 struct ButtonSWarning: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -54,7 +60,7 @@ struct ButtonSWarning: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.s.warning.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -62,6 +68,8 @@ struct ButtonSWarning: View {
 }
 
 struct ButtonXsDark: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -70,7 +78,7 @@ struct ButtonXsDark: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.xs.dark.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -78,6 +86,8 @@ struct ButtonXsDark: View {
 }
 
 struct ButtonLIsLoading: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -85,7 +95,7 @@ struct ButtonLIsLoading: View {
             isDisabled: false,
             isLoading: true,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -93,6 +103,8 @@ struct ButtonLIsLoading: View {
 }
 
 struct ButtonLIsDisabled: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -100,7 +112,7 @@ struct ButtonLIsDisabled: View {
             isDisabled: true,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -108,6 +120,8 @@ struct ButtonLIsDisabled: View {
 }
 
 struct ButtonLSecondary: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -116,7 +130,7 @@ struct ButtonLSecondary: View {
             isDisabled: true,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.l.secondary.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -124,6 +138,8 @@ struct ButtonLSecondary: View {
 }
 
 struct ButtonMClearSpaceBetween: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -132,7 +148,7 @@ struct ButtonMClearSpaceBetween: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.m.clear.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.spaceBetween),
             action: {}
         )
@@ -140,6 +156,8 @@ struct ButtonMClearSpaceBetween: View {
 }
 
 struct ButtonSPositiveLongText: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "LabelLabelLabelLabelLabelLabelLabelLabel",
@@ -148,7 +166,7 @@ struct ButtonSPositiveLongText: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.s.positive.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -156,6 +174,8 @@ struct ButtonSPositiveLongText: View {
 }
 
 struct ButtonXlDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -163,7 +183,7 @@ struct ButtonXlDefault: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.xl.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -171,6 +191,8 @@ struct ButtonXlDefault: View {
 }
 
 struct ButtonXxsDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         BasicButton(
             title: "Label",
@@ -179,7 +201,7 @@ struct ButtonXxsDefault: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.xxs.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -187,13 +209,15 @@ struct ButtonXxsDefault: View {
 }
 
 struct IсonButtonLDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -201,13 +225,15 @@ struct IсonButtonLDefault: View {
 }
 
 struct IconButtonMAccent: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.m.accent.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -215,13 +241,15 @@ struct IconButtonMAccent: View {
 }
 
 struct IconButtonSWarning: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.s.warning.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -229,13 +257,15 @@ struct IconButtonSWarning: View {
 }
 
 struct IconButtonXsDark: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.xs.dark.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -243,13 +273,15 @@ struct IconButtonXsDark: View {
 }
 
 struct IconButtonIsLoading: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: true,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -257,13 +289,15 @@ struct IconButtonIsLoading: View {
 }
 
 struct IconButtonIsDisabled: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: true,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -271,13 +305,15 @@ struct IconButtonIsDisabled: View {
 }
 
 struct IconButtonLSecondaryPilled: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.pilled.secondary.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -285,13 +321,15 @@ struct IconButtonLSecondaryPilled: View {
 }
 
 struct IconButtonMClear: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.m.clear.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -299,13 +337,15 @@ struct IconButtonMClear: View {
 }
 
 struct IconButtonSPositive: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.s.positive.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -313,13 +353,15 @@ struct IconButtonSPositive: View {
 }
 
 struct IconButtonXsNegativePilledIsLoading: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: true,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.xs.pilled.negative.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -327,13 +369,15 @@ struct IconButtonXsNegativePilledIsLoading: View {
 }
 
 struct IconButtonLWhite: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.l.white.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -341,13 +385,15 @@ struct IconButtonLWhite: View {
 }
 
 struct IconButtonXlDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.xl.default.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -355,13 +401,15 @@ struct IconButtonXlDefault: View {
 }
 
 struct IconButtonXxsDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.xxs.default.appearance,
+            appearance: appearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )
@@ -369,13 +417,15 @@ struct IconButtonXxsDefault: View {
 }
 
 struct LinkButtonLDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -383,13 +433,15 @@ struct LinkButtonLDefault: View {
 }
 
 struct LinkButtonLIsLoading: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: false,
             isLoading: true,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -397,13 +449,15 @@ struct LinkButtonLIsLoading: View {
 }
 
 struct LinkButtonLSecondary: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.l.secondary.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -411,6 +465,8 @@ struct LinkButtonLSecondary: View {
 }
 
 struct LinkButtonMAccent: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
@@ -418,7 +474,7 @@ struct LinkButtonMAccent: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.m.accent.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -426,13 +482,15 @@ struct LinkButtonMAccent: View {
 }
 
 struct LinkButtonLIsDisabled: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: true,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.l.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -440,6 +498,8 @@ struct LinkButtonLIsDisabled: View {
 }
 
 struct LinkButtonSWarning: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
@@ -447,7 +507,7 @@ struct LinkButtonSWarning: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.s.warning.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -455,13 +515,15 @@ struct LinkButtonSWarning: View {
 }
 
 struct LinkButtonXsNegative: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.xs.negative.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -469,13 +531,15 @@ struct LinkButtonXsNegative: View {
 }
 
 struct LinkButtonXlDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.xl.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )
@@ -483,6 +547,8 @@ struct LinkButtonXlDefault: View {
 }
 
 struct LinkButtonXxsDefault: View {
+    var appearance: ButtonAppearance
+    
     var body: some View {
         LinkButton(
             title: "Label",
@@ -490,7 +556,7 @@ struct LinkButtonXxsDefault: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: LinkButton.xxs.default.appearance,
+            appearance: appearance,
             layoutMode: .wrapContent,
             action: {}
         )

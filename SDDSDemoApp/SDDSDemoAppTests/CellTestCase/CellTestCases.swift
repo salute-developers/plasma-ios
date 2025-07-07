@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,9 +15,11 @@ import SDDSIcons
  */
 
 struct CellSizeLAvatarHasDisclosure: View {
+    var appearance: CellAppearance
+
     var body: some View {
         SDDSCell(
-            appearance: Cell.l.appearance,
+            appearance: appearance,
             label: "Label",
             title: "Title",
             subtitle: "Subtitle",
@@ -33,9 +34,11 @@ struct CellSizeLAvatarHasDisclosure: View {
 }
 
 struct CellSizeMTitleAvatar: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.m.appearance,
+            appearance: appearance,
             label: "",
             title: "Title",
             subtitle: "",
@@ -50,9 +53,11 @@ struct CellSizeMTitleAvatar: View {
 }
 
 struct CellSizeSSubtitleHasDisclosure: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.s.appearance,
+            appearance: appearance,
             label: "",
             title: "",
             subtitle: "Subtitle",
@@ -65,9 +70,11 @@ struct CellSizeSSubtitleHasDisclosure: View {
 }
 
 struct CellSizeXsLabelAvatar: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.xs.appearance,
+            appearance: appearance,
             label: "Label",
             title: "",
             subtitle: "",
@@ -82,9 +89,11 @@ struct CellSizeXsLabelAvatar: View {
 }
 
 struct CellLHasDisclosureText: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.l.appearance,
+            appearance: appearance,
             label: "Label",
             title: "Title",
             subtitle: "Subtitle",
@@ -97,9 +106,12 @@ struct CellLHasDisclosureText: View {
 }
 
 struct CellSizeMAvatarIcon: View {
+    var appearance: CellAppearance
+    var iconButtonAppearance: ButtonAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.m.appearance,
+            appearance: appearance,
             label: "Label",
             title: "Title",
             subtitle: "",
@@ -109,23 +121,42 @@ struct CellSizeMAvatarIcon: View {
                 AvatarTestVariation.avatar
             },
             rightContent: {
-                IconButtonTestVariation.iconbutton
+                IconButton(
+                    iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+                    isDisabled: false,
+                    isLoading: false,
+                    spinnerImage: Image.image("spinner"),
+                    appearance: iconButtonAppearance,
+                    layoutMode: .fixedWidth(.packed),
+                    action: {}
+                )
             }
         )
     }
 }
 
 struct CellSizeSIconHasDisclosureText: View {
+    var appearance: CellAppearance
+    var iconButtonAppearance: ButtonAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.s.appearance,
+            appearance: appearance,
             label: "",
             title: "Title",
             subtitle: "Subtitle",
             disclosureEnabled: true,
             disclosureText: "text",
             leftContent: {
-                IconButtonTestVariation.iconbutton
+                IconButton(
+                    iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
+                    isDisabled: false,
+                    isLoading: false,
+                    spinnerImage: Image.image("spinner"),
+                    appearance: iconButtonAppearance,
+                    layoutMode: .fixedWidth(.packed),
+                    action: {}
+                )
             },
             rightContent: {}
         )
@@ -133,9 +164,11 @@ struct CellSizeSIconHasDisclosureText: View {
 }
 
 struct CellSizeXsRadioboxAvatar: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.xs.appearance,
+            appearance: appearance,
             label: "Label",
             title: "Title",
             subtitle: "Subtitle",
@@ -152,9 +185,11 @@ struct CellSizeXsRadioboxAvatar: View {
 }
 
 struct CellSizeLSwitchCheckbox: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.xs.appearance,
+            appearance: appearance,
             label: "",
             title: "Title",
             subtitle: "",
@@ -171,9 +206,11 @@ struct CellSizeLSwitchCheckbox: View {
 }
 
 struct CellSizeMCheckboxHasDisclosure: View {
+    var appearance: CellAppearance
+    
     var body: some View {
         SDDSCell(
-            appearance: Cell.m.appearance,
+            appearance: appearance,
             label: "Label",
             title: "",
             subtitle: "",
@@ -188,13 +225,14 @@ struct CellSizeMCheckboxHasDisclosure: View {
 }
 
 internal struct IconButtonTestVariation {
-   static var iconbutton: some View {
+    var iconButtonAppearance: ButtonAppearance
+    var iconbutton: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: IconButton.s.clear.appearance,
+            appearance: iconButtonAppearance,
             layoutMode: .fixedWidth(.packed),
             action: {}
         )

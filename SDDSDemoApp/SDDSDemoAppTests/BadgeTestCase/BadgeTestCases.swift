@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,217 +15,253 @@ import SDDSIcons
  */
 
 struct BadgeSizeLDefaultContentLeft: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: Badge.l.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeMAccentContentRight: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: Image.image("plasma"),
             alignment: .trailing,
             style: .basic,
-            appearance: Badge.m.accent.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeSPositivePilled: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: Badge.s.pilled.positive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeXsWarning: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: Badge.xs.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeLNegative: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: Badge.l.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeMDark: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: Badge.m.dark.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeSLight: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: Badge.s.light.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeLDefaultClear: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: BadgeClear.l.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeLDefaultTransparent: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: BadgeTransparent.l.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeMNegativeClear: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: BadgeClear.m.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct BadgeSizeSWarningTransparent: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         BasicBadge(
             label: "Label",
             image: nil,
             alignment: .leading,
             style: .basic,
-            appearance: BadgeTransparent.s.pilled.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeLDefault: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadge.l.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeMAccentPilled: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadge.m.pilled.accent.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeSPositiveClear: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadgeClear.s.positive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeXsWarningTransparent: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadgeTransparent.xs.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeLNegative: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadge.l.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeMDark: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadge.m.dark.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IconBadgeSizeSLight: View {
+    var appearance: BadgeAppearance
+    
     var body: some View {
         IconBadge(
             label: "",
             image: Image.image("plasma"),
             alignment: .leading,
             style: .basic,
-            appearance: IconBadge.s.light.appearance
+            appearance: appearance
         )
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,61 +15,72 @@ import SDDSIcons
  */
 
 struct RadioBoxSizeM: View {
+    var appearance: RadioboxAppearance
+    
     var body: some View {
         SDDSRadiobox(
             isSelected: .constant(true),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Radiobox.m.appearance
+            appearance: appearance
         )
     }
 }
 
 struct RadioBoxSizeSUnchecked: View {
+    var appearance: RadioboxAppearance
+    
     var body: some View {
         SDDSRadiobox(
             isSelected: .constant(false),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Radiobox.s.appearance
+            appearance: appearance
         )
     }
 }
 
 struct RadioBoxSizeMNoDescription: View {
+    var appearance: RadioboxAppearance
+    
     var body: some View {
         SDDSRadiobox(
             isSelected: .constant(true),
             title: "Label",
             subtitle: "",
             isEnabled: true,
-            appearance: Radiobox.m.appearance
+            appearance: appearance
         )
     }
 }
 
 struct RadioBoxSizeMDisabled: View {
+    var appearance: RadioboxAppearance
+    
     var body: some View {
         SDDSRadiobox(
             isSelected: .constant(true),
             title: "Label",
             subtitle: "Description",
             isEnabled: false,
-            appearance: Radiobox.m.appearance
+            appearance: appearance
         )
     }
 }
 
 struct RadioBoxGroupSizeM: View {
+    var appearance: RadioboxAppearance
+    var radioBoxGroupAppearance: RadioboxGroupAppearance
+    
     var body: some View {
         let radioboxData = (0...2).map {index in
             RadioboxData(
                 title: "Label",
                 subtitle: "Description",
                 isSelected: .constant(index == 0),
-                appearance: Radiobox.m.appearance,
+                appearance: appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }
@@ -78,19 +88,21 @@ struct RadioBoxGroupSizeM: View {
         return SDDSRadioboxGroup(
             radioboxData: radioboxData,
             size: SDDSRadioboxGroupSize.medium,
-            appearance: RadioboxGroup.m.appearance
+            appearance: radioBoxGroupAppearance
         )
     }
 }
 
 struct RadioBoxGroupSizeS: View {
+    var appearance: RadioboxAppearance
+    var radioBoxGroupAppearance: RadioboxGroupAppearance
     var body: some View {
         let radioboxData = (0...2).map {index in
             RadioboxData(
                 title: "Label",
                 subtitle: "Description",
                 isSelected: .constant(index == 1),
-                appearance: Radiobox.s.appearance,
+                appearance: appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }
@@ -98,19 +110,22 @@ struct RadioBoxGroupSizeS: View {
         return SDDSRadioboxGroup(
             radioboxData: radioboxData,
             size: SDDSRadioboxGroupSize.small,
-            appearance: RadioboxGroup.s.appearance
+            appearance: radioBoxGroupAppearance
         )
     }
 }
 
 struct RadioBoxGroupSizeMDescription: View {
+    var appearance: RadioboxAppearance
+    var radioBoxGroupAppearance: RadioboxGroupAppearance
+    
     var body: some View {
         let radioboxData = (0...2).map {index in
             RadioboxData(
                 title: "",
                 subtitle: "Description",
                 isSelected: .constant(index == 0),
-                appearance: Radiobox.m.appearance,
+                appearance: appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }
@@ -118,19 +133,22 @@ struct RadioBoxGroupSizeMDescription: View {
         return SDDSRadioboxGroup(
             radioboxData: radioboxData,
             size: SDDSRadioboxGroupSize.medium,
-            appearance: RadioboxGroup.m.appearance
+            appearance: radioBoxGroupAppearance
         )
     }
 }
 
 struct RadioBoxGroupSizeSLabel: View {
+    var appearance: RadioboxAppearance
+    var radioBoxGroupAppearance: RadioboxGroupAppearance
+    
     var body: some View {
         let radioboxData = (0...2).map {index in
             RadioboxData(
                 title: "Label",
                 subtitle: "",
                 isSelected: .constant(index == 1),
-                appearance: Radiobox.s.appearance,
+                appearance: appearance,
                 accessibility: SelectionControlAccessibility()
             )
         }
@@ -138,7 +156,7 @@ struct RadioBoxGroupSizeSLabel: View {
         return SDDSRadioboxGroup(
             radioboxData: radioboxData,
             size: SDDSRadioboxGroupSize.small,
-            appearance: RadioboxGroup.s.appearance
+            appearance: radioBoxGroupAppearance
         )
     }
 }

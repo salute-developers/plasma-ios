@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 29.05.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,81 +15,97 @@ import SDDSIcons
  */
 
 struct CircularProgressXxlDefault: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.xxl.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressXlSecondary: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.xl.secondary.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressLAccent: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.l.accent.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressMGradient: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 1,
             hasTrack: true,
-            appearance: CircularProgressBar.m.gradient.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressSInfo: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.s.info.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressXsPositive: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.xs.positive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressXxsWarning: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: true,
-            appearance: CircularProgressBar.xxs.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CircularProgressXxlNegativeNoTrack: View {
+    var appearance: CircularProgressBarAppearance
+    
     var body: some View {
         SDDSCircularProgressBar(
             progress: 0.5,
             hasTrack: false,
-            appearance: CircularProgressBar.xxl.negative.appearance
+            appearance: appearance
         )
     }
 }
