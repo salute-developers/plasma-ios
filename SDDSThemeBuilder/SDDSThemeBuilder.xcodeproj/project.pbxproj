@@ -216,6 +216,9 @@
 		81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B032D6DE79500904D4A /* BadgeSize.swift */; };
 		8178A7412C733CB300DFDA61 /* SDDSThemeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */; };
 		8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63572C6E8F18008F3BB2 /* HexConverter.swift */; };
+		817CF57E2E1C0F3700B9286C /* DropdownMenuAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */; };
+		817CF57F2E1C0F3700B9286C /* DropdownMenuSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */; };
+		817CF5812E1C0F4600B9286C /* DropdownMenuProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */; };
 		8180A5112C107DA900009AF5 /* TypographyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A49B2C0F71A500009AF5 /* TypographyToken.swift */; };
 		8180A53F2C11067100009AF5 /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180A53E2C11067100009AF5 /* SDDSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180A54F2C1106A700009AF5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A54E2C1106A700009AF5 /* Theme.swift */; };
@@ -693,6 +696,9 @@
 		81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
 		81763B032D6DE79500904D4A /* BadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSize.swift; sourceTree = "<group>"; };
 		8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDDSThemeUtilities.h; path = SDDSThemeUtilities/SDDSThemeUtilities.h; sourceTree = "<group>"; };
+		817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuAppearance.swift; sourceTree = "<group>"; };
+		817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuSize.swift; sourceTree = "<group>"; };
+		817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuProps.swift; sourceTree = "<group>"; };
 		8180A4992C0F71A500009AF5 /* FontsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsService.swift; sourceTree = "<group>"; };
 		8180A49B2C0F71A500009AF5 /* TypographyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyToken.swift; sourceTree = "<group>"; };
 		8180A49C2C0F71A500009AF5 /* ShadowToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowToken.swift; sourceTree = "<group>"; };
@@ -1296,6 +1302,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */,
 				810F92582E12EA5D008CA4CA /* ListProps.swift */,
 				810F92512E12E713008CA4CA /* ListItemProps.swift */,
 				810FA5582E166607008CA4CA /* ScrollbarProps.swift */,
@@ -1335,6 +1342,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				817CF57D2E1C0F3700B9286C /* DropdownMenu */,
 				810F925C2E12EA6D008CA4CA /* List */,
 				810F92552E12E720008CA4CA /* ListItem */,
 				810FA55C2E16661F008CA4CA /* Scrollbar */,
@@ -1663,6 +1671,15 @@
 				81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		817CF57D2E1C0F3700B9286C /* DropdownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */,
+				817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */,
+			);
+			path = DropdownMenu;
 			sourceTree = "<group>";
 		};
 		8180A49A2C0F71A500009AF5 /* Tokens */ = {
@@ -2542,6 +2559,8 @@
 				81F7ECA82DF2F0CA00531844 /* ModalAppearance.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */,
+				817CF57E2E1C0F3700B9286C /* DropdownMenuAppearance.swift in Sources */,
+				817CF57F2E1C0F3700B9286C /* DropdownMenuSize.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				818E33142DDDC13800130AF9 /* PopoverProps.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
@@ -2738,6 +2757,7 @@
 				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,
 				69A875912DAF9E290074C1BD /* CheckboxGroupSize.swift in Sources */,
 				69A875922DAF9E290074C1BD /* CheckboxAppearance.swift in Sources */,
+				817CF5812E1C0F4600B9286C /* DropdownMenuProps.swift in Sources */,
 				69A875932DAF9E290074C1BD /* RadioboxGroupSize.swift in Sources */,
 				81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */,
 				69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */,

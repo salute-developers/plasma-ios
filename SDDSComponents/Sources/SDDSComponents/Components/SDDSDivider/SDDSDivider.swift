@@ -20,17 +20,16 @@ public struct SDDSDivider: View {
     private let _appearance: DividerAppearance?
     
     @Environment(\.dividerAppearance) private var environmentAppearance
+    @Environment(\.colorScheme) private var colorScheme
     
     public init(appearance: DividerAppearance? = nil) {
         self._appearance = appearance
     }
     
     public var body: some View {
-        GeometryReader { geo in
-            appearance.shape
-                .path(in: CGRect(x: 0, y: 0, width: geo.size.width, height: appearance.thickness))
-        }
-        .frame(height: appearance.thickness)
+        appearance.backgroundColor.color(for: colorScheme)
+            .frame(height: appearance.thickness)
+            .shape(pathDrawer: appearance.shape)
     }
     
     private var appearance: DividerAppearance {

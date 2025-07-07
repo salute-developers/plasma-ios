@@ -49,60 +49,72 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case textSkeleton = "TextSkeleton"
     case listItemNormal = "ListItemNormal"
     case listItemTight = "ListItemTight"
+    case dropdownMenuItemNormal = "DropdownMenuItemNormal"
+    case dropdownMenuItemTight = "DropdownMenuItemTight"
+    case dropdownMenuListNormal = "DropdownMenuListNormal"
+    case dropdownMenuListTight = "DropdownMenuListTight"
+    case dropdownMenuNormal = "DropdownMenuNormal"
+    case dropdownMenuTight = "DropdownMenuTight"
     case listNormal = "ListNormal"
     case listTight = "ListTight"
-    case scrollbar = "Scrollbar"
+    case scrollbar = "ScrollBar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
-        // .textField,
-        // .textFieldClear,
-        // .textArea,
-        // .textAreaClear,
-            .overlay,
-            .badge,
-            .badgeClear,
-            .badgeTransparent,
-            .iconBadge,
-            .iconBadgeClear,
-            .iconBadgeTransparent,
-            .indicator,
-            .cell,     
-            .counter,
-            .card,
-            .cardClear,
-            .segmentItem,
-            .segment,
-            .bottomSheet,
-            .switch,
-            .embeddedChip,
-            .chip,
-            .embeddedChipGroupDense,
-            .embeddedChipGroupWide,
-            .chipGroupDense,
-            .chipGroupWide,
-            .radiobox,
-            .radioboxGroup,
-            .checkbox,
-            .checkboxGroup,
-            .avatar,
-            .avatarGroup,
-            .circularProgressBar,
-            .progressBar,
-            .divider,
-            .popover,
-            .tooltip,
-            .toast,
-            .modal,
-            .notificationLoose,
-            .notificationCompact,
-            .rectSkeleton,
-            .textSkeleton,
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
+//        // .textField,
+//        // .textFieldClear,
+//        // .textArea,
+//        // .textAreaClear,
+//            .overlay,
+//            .badge,
+//            .badgeClear,
+//            .badgeTransparent,
+//            .iconBadge,
+//            .iconBadgeClear,
+//            .iconBadgeTransparent,
+//            .indicator,
+//            .cell,     
+//            .counter,
+//            .card,
+//            .cardClear,
+//            .segmentItem,
+//            .segment,
+//            .bottomSheet,
+//            .switch,
+//            .embeddedChip,
+//            .chip,
+//            .embeddedChipGroupDense,
+//            .embeddedChipGroupWide,
+//            .chipGroupDense,
+//            .chipGroupWide,
+//            .radiobox,
+//            .radioboxGroup,
+//            .checkbox,
+//            .checkboxGroup,
+//            .avatar,
+//            .avatarGroup,
+//            .circularProgressBar,
+//            .progressBar,
+//            .divider,
+//            .popover,
+//            .tooltip,
+//            .toast,
+//            .modal,
+//            .notificationLoose,
+//            .notificationCompact,
+//            .rectSkeleton,
+//            .textSkeleton,
             .listItemNormal,
             .listItemTight,
+            .dropdownMenuItemNormal,
+            .dropdownMenuItemTight,
+            .dropdownMenuListNormal,
+            .dropdownMenuListTight,
+            .dropdownMenuNormal,
+            .dropdownMenuTight,
             .listNormal,
             .listTight,
             .scrollbar
@@ -174,9 +186,11 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .rectSkeleton, .textSkeleton:
             GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listItemNormal, .listItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
             GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listNormal, .listTight:
+        case .dropdownMenuNormal, .dropdownMenuTight:
+            GenerateComponentCommand<DropdownMenuProps, DropdownMenuAppearance, DropdownMenuSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .scrollbar:
             GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -245,9 +259,11 @@ extension CodeGenerationComponent {
             "NotificationAppearance"
         case .rectSkeleton, .textSkeleton:
             "SkeletonAppearance"
-        case .listItemNormal, .listItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
             "ListItemAppearance"
-        case .listNormal, .listTight:
+        case .dropdownMenuNormal, .dropdownMenuTight:
+            "DropdownMenuAppearance"
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             "ListAppearance"
         case .scrollbar:
             "ScrollbarAppearance"
@@ -317,9 +333,11 @@ extension CodeGenerationComponent {
             "NotificationSizeConfiguration"
         case .rectSkeleton, .textSkeleton:
             "SkeletonSizeConfiguration"
-        case .listItemNormal, .listItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
             "ListItemSizeConfiguration"
-        case .listNormal, .listTight:
+        case .dropdownMenuNormal, .dropdownMenuTight:
+            "DropdownMenuSizeConfiguration"
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             "ListSizeConfiguration"
         case .scrollbar:
             "ScrollbarSizeConfiguration"
@@ -424,6 +442,18 @@ extension CodeGenerationComponent {
             "list_item_normal_config.json"
         case .listItemTight:
             "list_item_tight_config.json"
+        case .dropdownMenuItemNormal:
+            "dropdown_menu_item_normal_config.json"
+        case .dropdownMenuItemTight:
+            "dropdown_menu_item_tight_config.json"
+        case .dropdownMenuListNormal:
+            "dropdown_menu_list_normal_config.json"
+        case .dropdownMenuListTight:
+            "dropdown_menu_list_tight_config.json"
+        case .dropdownMenuNormal:
+            "dropdown_menu_normal_config.json"
+        case .dropdownMenuTight:
+            "dropdown_menu_tight_config.json"
         case .listNormal:
             "list_normal_config.json"
         case .listTight:

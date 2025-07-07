@@ -86,6 +86,9 @@
 		8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */; };
 		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
 		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
+		816332242E1FB2D600110F27 /* DropdownMenuVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */; };
+		816332262E1FB35D00110F27 /* DropdownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332252E1FB35A00110F27 /* DropdownMenuView.swift */; };
+		816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */; };
 		8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4432D5C7C9E0044A680 /* Theme.swift */; };
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
@@ -110,6 +113,9 @@
 		8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31B2DF2F968003F5041 /* ModalView.swift */; };
 		8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31C2DF2F968003F5041 /* ModalViewModel.swift */; };
 		8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */; };
+		817C5D4A2E1F866C00B9286C /* ScrollbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */; };
+		817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */; };
+		817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D472E1F866C00B9286C /* ScrollbarView.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
@@ -131,9 +137,6 @@
 		81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */; };
-		81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2942E16E1010087C834 /* ScrollbarView.swift */; };
-		81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */; };
-		81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */; };
 		81F63B722DBF6C7C003C8C26 /* ComponentViewLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */; };
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
 		81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */; };
@@ -249,6 +252,9 @@
 		8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupViewModel.swift; sourceTree = "<group>"; };
 		816243602CB9430200506E1C /* CheckboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupView.swift; sourceTree = "<group>"; };
 		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
+		816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuVariationProvider.swift; sourceTree = "<group>"; };
+		816332252E1FB35A00110F27 /* DropdownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuView.swift; sourceTree = "<group>"; };
+		816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuViewModel.swift; sourceTree = "<group>"; };
 		8166B4432D5C7C9E0044A680 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVariationProvider.swift; sourceTree = "<group>"; };
 		816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarVariationProvider.swift; sourceTree = "<group>"; };
@@ -270,6 +276,9 @@
 		8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVariationProvider.swift; sourceTree = "<group>"; };
 		8178A31B2DF2F968003F5041 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		8178A31C2DF2F968003F5041 /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
+		817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarVariationProvider.swift; sourceTree = "<group>"; };
+		817C5D472E1F866C00B9286C /* ScrollbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarView.swift; sourceTree = "<group>"; };
+		817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
@@ -295,9 +304,6 @@
 		81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 		81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
 		81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTestCases.swift; sourceTree = "<group>"; };
-		81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarVariationProvider.swift; sourceTree = "<group>"; };
-		81F5F2942E16E1010087C834 /* ScrollbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarView.swift; sourceTree = "<group>"; };
-		81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarViewModel.swift; sourceTree = "<group>"; };
 		81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewLayoutMode.swift; sourceTree = "<group>"; };
 		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -561,9 +567,10 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				816332222E1FB2BB00110F27 /* DropdownMenuView */,
+				817C5D492E1F866C00B9286C /* ScrollbarView */,
 				810F958F2E13A1FE008CA4CA /* ListItemView */,
 				810F95932E13A1FE008CA4CA /* ListView */,
-				81F5F2962E16E1010087C834 /* ScrollbarView */,
 				81368A692E01879900A1702A /* RectSkeletonView */,
 				81368A6D2E01879900A1702A /* TextSkeletonView */,
 				8178A31D2DF2F968003F5041 /* ModalView */,
@@ -758,6 +765,16 @@
 			path = CheckboxGroupView;
 			sourceTree = "<group>";
 		};
+		816332222E1FB2BB00110F27 /* DropdownMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */,
+				816332252E1FB35A00110F27 /* DropdownMenuView.swift */,
+				816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */,
+			);
+			path = DropdownMenuView;
+			sourceTree = "<group>";
+		};
 		816F636D2DCBB21600EC9121 /* CircularProgressBarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +803,16 @@
 				8178A31C2DF2F968003F5041 /* ModalViewModel.swift */,
 			);
 			path = ModalView;
+			sourceTree = "<group>";
+		};
+		817C5D492E1F866C00B9286C /* ScrollbarView */ = {
+			isa = PBXGroup;
+			children = (
+				817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */,
+				817C5D472E1F866C00B9286C /* ScrollbarView.swift */,
+				817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */,
+			);
+			path = ScrollbarView;
 			sourceTree = "<group>";
 		};
 		817D9F122C3704AD006C4814 /* ButtonView */ = {
@@ -875,16 +902,6 @@
 				81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */,
 			);
 			path = TextFieldTestCase;
-			sourceTree = "<group>";
-		};
-		81F5F2962E16E1010087C834 /* ScrollbarView */ = {
-			isa = PBXGroup;
-			children = (
-				81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */,
-				81F5F2942E16E1010087C834 /* ScrollbarView.swift */,
-				81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */,
-			);
-			path = ScrollbarView;
 			sourceTree = "<group>";
 		};
 		81F89E482D81A39B00A41C89 /* CardView */ = {
@@ -1161,13 +1178,13 @@
 				81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
 				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,
+				817C5D4A2E1F866C00B9286C /* ScrollbarViewModel.swift in Sources */,
+				817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */,
+				817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */,
 				816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */,
 				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
-				81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */,
-				81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */,
-				81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,
@@ -1188,6 +1205,8 @@
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
+				816332242E1FB2D600110F27 /* DropdownMenuVariationProvider.swift in Sources */,
+				816332262E1FB35D00110F27 /* DropdownMenuView.swift in Sources */,
 				693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
@@ -1202,6 +1221,7 @@
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
+				816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,

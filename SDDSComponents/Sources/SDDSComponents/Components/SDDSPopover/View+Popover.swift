@@ -50,23 +50,23 @@ public extension View {
                         if isPresented.wrappedValue {
                             WindowOverlayService.shared.show(
                                 content: {
-                SDDSPopover(
+                                    SDDSPopover(
                                         isPresented: isPresented,
-                    appearance: appearance,
-                    placement: placement,
-                    alignment: alignment,
-                    tailEnabled: tailEnabled,
-                    triggerCentered: triggerCentered,
-                    placementMode: placementMode,
-                    duration: duration,
+                                        appearance: appearance,
+                                        placement: placement,
+                                        alignment: alignment,
+                                        tailEnabled: tailEnabled,
+                                        triggerCentered: triggerCentered,
+                                        placementMode: placementMode,
+                                        duration: duration,
                                         popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
-                    onClose: {
-                        isPresented.wrappedValue = false
+                                        onClose: {
+                                            isPresented.wrappedValue = false
                                             WindowOverlayService.shared.hide()
-                        onClose?()
-                    },
-                    content: content
-                )
+                                            onClose?()
+                                        },
+                                        content: content
+                                    )
                                 },
                                 at: triggerFrame,
                                 onClose: {
@@ -76,9 +76,9 @@ public extension View {
                             )
                         } else {
                             WindowOverlayService.shared.hide()
-                        }
+                    }
+                }
             }
-        }
         )
     }
 }

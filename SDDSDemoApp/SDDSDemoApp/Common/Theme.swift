@@ -577,11 +577,33 @@ enum Theme: String, CaseIterable {
     var scrollbarVariations: [Variation<ScrollbarAppearance>] {
         switch self {
         case .sdddsServTheme:
-            SDDSServTheme.Scrollbar.all
+            SDDSServTheme.ScrollBar.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.Scrollbar.all
+            StylesSaluteTheme.ScrollBar.all
         case .stylesSalute:
-            PlasmaB2CTheme.Scrollbar.all
+            PlasmaB2CTheme.ScrollBar.all
+        }
+    }
+    
+    var dropdownMenuNormalVariations: [Variation<DropdownMenuAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.DropdownMenuNormal.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.DropdownMenuNormal.all
+        case .stylesSalute:
+            PlasmaB2CTheme.DropdownMenuNormal.all
+        }
+    }
+    
+    var dropdownMenuTightVariations: [Variation<DropdownMenuAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.DropdownMenuTight.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.DropdownMenuTight.all
+        case .stylesSalute:
+            PlasmaB2CTheme.DropdownMenuTight.all
         }
     }
 }

@@ -146,4 +146,9 @@ public extension EnvironmentValues {
         get { self[ScrollbarAppearance.self] }
         set { self[ScrollbarAppearance.self] = newValue }
     }
+    
+    var dropDownMenuAppearance: DropdownMenuAppearance {
+        get { self[DropdownMenuAppearance.self] }
+        set { self[DropdownMenuAppearance.self] = newValue }
+    }
 }
