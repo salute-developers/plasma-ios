@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct ScrollbarTypography: GeneralTypographyConfiguration {
+struct ScrollBarTypography: GeneralTypographyConfiguration {
     var m: TypographyToken?
     var s: TypographyToken?
     
@@ -21,13 +21,13 @@ struct ScrollbarTypography: GeneralTypographyConfiguration {
     }
     
     func typography(with size: ScrollbarSizeConfiguration) -> TypographyToken? {
-        if size is ScrollbarAnySize {
+        if size is ScrollBarAnySize {
             return m
         }
-        if size is ScrollbarSizeM {
+        if size is ScrollBarSizeM {
             return m
         }
-        if size is ScrollbarSizeS {
+        if size is ScrollBarSizeS {
             return s
         }
         return nil

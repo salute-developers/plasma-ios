@@ -4,19 +4,19 @@ import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
 
-public struct Scrollbar {
-    public static var m: ComponentAppearanceVariation<Scrollbar, ScrollbarAppearance> {
+public struct ScrollBar {
+    public static var m: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
         var appearance = ScrollbarAppearance.base
-        appearance.size = ScrollbarSize.m
+        appearance.size = ScrollBarSize.m
 
         return .init(
             name: "m",
             appearance: appearance
         )
     }
-    public static var s: ComponentAppearanceVariation<Scrollbar, ScrollbarAppearance> {
+    public static var s: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
         var appearance = ScrollbarAppearance.base
-        appearance.size = ScrollbarSize.s
+        appearance.size = ScrollBarSize.s
 
         return .init(
             name: "s",
@@ -25,12 +25,12 @@ public struct Scrollbar {
     }
     
     public static let all: [Variation<ScrollbarAppearance>] = [
-        Scrollbar.m.variation,
-        Scrollbar.s.variation,
+        ScrollBar.m.variation,
+        ScrollBar.s.variation,
     ]
 }
 
-public struct ScrollbarVariation {
+public struct ScrollBarVariation {
     public struct M {}
     public struct S {}
 }

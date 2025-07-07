@@ -3,33 +3,33 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct ScrollbarSize {
-    static let m = ScrollbarSizeM()
-    static let s = ScrollbarSizeS()
+struct ScrollBarSize {
+    static let m = ScrollBarSizeM()
+    static let s = ScrollBarSizeS()
 
     static let all: [ScrollbarSizeConfiguration] = [
-        ScrollbarSize.m,
-        ScrollbarSize.s,
+        ScrollBarSize.m,
+        ScrollBarSize.s,
     ] 
 }
-struct ScrollbarSizeM: ScrollbarSizeConfiguration {
+struct ScrollBarSizeM: ScrollbarSizeConfiguration {
     var hoverExpandFactor = CGFloat(2.0)
     var shape = CircleDrawer() as PathDrawer
     var width = CGFloat(4.0)
     public var debugDescription: String {
-        return "ScrollbarSize"
+        return "ScrollBarSize"
     }
 }
-struct ScrollbarSizeS: ScrollbarSizeConfiguration {
+struct ScrollBarSizeS: ScrollbarSizeConfiguration {
     var hoverExpandFactor = CGFloat(2.0)
     var shape = CircleDrawer() as PathDrawer
     var width = CGFloat(2.0)
     public var debugDescription: String {
-        return "ScrollbarSize"
+        return "ScrollBarSize"
     }
 }
 
-struct ScrollbarAnySize: ScrollbarSizeConfiguration {
+struct ScrollBarAnySize: ScrollbarSizeConfiguration {
     var hoverExpandFactor = CGFloat(0)
     var shape = DefaultPathDrawer() as PathDrawer
     var width = CGFloat(0)
@@ -40,6 +40,6 @@ struct ScrollbarAnySize: ScrollbarSizeConfiguration {
         self.width = size.width
     }
     var debugDescription: String {
-        return "ScrollbarAnySize"
+        return "ScrollBarAnySize"
     }
 }

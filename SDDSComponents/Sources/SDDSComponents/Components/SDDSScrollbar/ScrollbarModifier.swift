@@ -116,6 +116,7 @@ struct ScrollBarModifier: ViewModifier {
             }
             scrollbar
                 .offset(y: scrollBarData.scrollBarPaddingTop - scrollBarData.offsetY)
+                .offset(x: -scrollBarData.scrollBarPaddingEnd)
                 .transition(.opacity.combined(with: .scale(scale: SDDSScrollbarConstants.transitionScale)))
                 .animation(.easeInOut(duration: SDDSScrollbarConstants.fadeInAnimationDuration), value: opacity > 0)
         }

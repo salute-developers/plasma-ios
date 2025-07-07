@@ -1,7 +1,8 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
-public struct DividerAppearance {
+public struct DividerAppearance: Hashable {
+    let id = UUID()
     public var shape: PathDrawer
     public var thickness: CGFloat
     public var backgroundColor: ColorToken
@@ -12,6 +13,16 @@ public struct DividerAppearance {
         self.thickness = thickness
         self.backgroundColor = backgroundColor
         self.size = size
+    }
+    
+    public static func == (lhs: DividerAppearance, rhs: DividerAppearance) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.thickness == rhs.thickness &&
+        lhs.backgroundColor == rhs.backgroundColor
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
