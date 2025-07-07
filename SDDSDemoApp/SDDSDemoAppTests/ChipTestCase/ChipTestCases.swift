@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,71 +15,84 @@ import SDDSIcons
  */
 
 struct ChipSizeLDefaultHasClear: View {
+    var appearance: ChipAppearance
+    
     var body: some View {
         SDDSChip(
             title: "Label",
             isEnabled: true,
             iconImage: nil,
             buttonImage: Image.image("chipClose"),
-            appearance: Chip.l.default.appearance,
+            appearance: appearance,
             removeAction: {}
         )
     }
 }
 
 struct ChipSizeMSecondaryPilled: View {
+    var appearance: ChipAppearance
+    
     var body: some View {
         SDDSChip(
             title: "Label",
             isEnabled: true,
             iconImage: nil,
             buttonImage: nil,
-            appearance: Chip.m.pilled.secondary.appearance,
+            appearance: appearance,
             removeAction: {}
         )
     }
 }
 
 struct ChipSizeSAccent: View {
+    var appearance: ChipAppearance
+    
     var body: some View {
         SDDSChip(
             title: "Label",
             isEnabled: true,
             iconImage: nil,
             buttonImage: nil,
-            appearance: Chip.s.accent.appearance,
+            appearance: appearance,
             removeAction: {}
         )
     }
 }
 
 struct ChipSizeXsDefaultIcon: View {
+    var appearance: ChipAppearance
+    
     var body: some View {
         SDDSChip(
             title: "Label",
             isEnabled: true,
             iconImage: Image.image("chipIcon"),
             buttonImage: nil,
-            appearance: Chip.xs.default.appearance,
+            appearance: appearance,
             removeAction: {}
         )
     }
 }
 
 struct ChipSizeLDisabled: View {
+    var appearance: ChipAppearance
+    
     var body: some View {
         SDDSChip(
             title: "Label",
             isEnabled: false,
             iconImage: nil,
             buttonImage: Image.image("chipClose"),
-            appearance: Chip.l.default.appearance,
+            appearance: appearance,
             removeAction: {}
         )
     }
 }
 
 struct ChipGroupLDense: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -88,7 +100,7 @@ struct ChipGroupLDense: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: nil,
-                appearance: Chip.l.default.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -96,13 +108,16 @@ struct ChipGroupLDense: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupDense.l.default.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 120, alignment: .top)
     }
 }
 
 struct ChipGroupMSecondary: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<20).map { _ in
             ChipData(
@@ -110,7 +125,7 @@ struct ChipGroupMSecondary: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: nil,
-                appearance: Chip.m.secondary.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -118,13 +133,16 @@ struct ChipGroupMSecondary: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupWide.m.secondary.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 250, alignment: .top)
     }
 }
 
 struct ChipGroupSAccent: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<20).map { _ in
             ChipData(
@@ -132,7 +150,7 @@ struct ChipGroupSAccent: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: nil,
-                appearance: Chip.s.accent.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -140,13 +158,16 @@ struct ChipGroupSAccent: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupDense.s.accent.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 120, alignment: .top)
     }
 }
 
 struct ChipGroupXs: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -154,7 +175,7 @@ struct ChipGroupXs: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: nil,
-                appearance: Chip.xs.default.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -162,13 +183,16 @@ struct ChipGroupXs: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupDense.xs.default.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 275, height: 20, alignment: .top)
     }
 }
 
 struct ChipGroupLSecondaryPilled: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -176,7 +200,7 @@ struct ChipGroupLSecondaryPilled: View {
                 isEnabled: true,
                 iconImage: Image.image("chipIcon"),
                 buttonImage: Image.image("chipClose"),
-                appearance: Chip.l.pilled.secondary.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -184,13 +208,16 @@ struct ChipGroupLSecondaryPilled: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupDense.l.pilled.secondary.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 140, alignment: .top)
     }
 }
 
 struct ChipGroupMAccentWide: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -198,7 +225,7 @@ struct ChipGroupMAccentWide: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("chipClose"),
-                appearance: Chip.m.accent.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -206,13 +233,16 @@ struct ChipGroupMAccentWide: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupWide.m.accent.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 120, alignment: .top)
     }
 }
 
 struct ChipGroupLSecondaryHasClose: View {
+    var appearance: ChipAppearance
+    var chipGroupAppearance: ChipGroupAppearance
+    
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -220,7 +250,7 @@ struct ChipGroupLSecondaryHasClose: View {
                 isEnabled: true,
                 iconImage: nil,
                 buttonImage: Image.image("chipClose"),
-                appearance: Chip.l.secondary.appearance,
+                appearance: appearance,
                 accessibility: ChipAccessibility(),
                 removeAction: {}
             )
@@ -228,7 +258,7 @@ struct ChipGroupLSecondaryHasClose: View {
 
         SDDSChipGroup(
             data: chipData,
-            appearance: ChipGroupDense.l.secondary.appearance
+            appearance: chipGroupAppearance
         )
         .frame(width: 375, height: 120, alignment: .top)
     }

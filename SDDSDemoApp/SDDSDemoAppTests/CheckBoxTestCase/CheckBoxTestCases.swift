@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,97 +15,113 @@ import SDDSIcons
  */
 
 struct CheckBoxSizeLNegative: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.l.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeLNegativeUnchecked: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.deselected),
             title: "",
             subtitle: "",
             isEnabled: true,
-            appearance: Checkbox.l.negative.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeM: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.m.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeS: View {
+    var appearance: CheckboxAppearance
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.s.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeSDisabled: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
             title: "Label",
             subtitle: "Description",
             isEnabled: false,
-            appearance: Checkbox.s.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeMIndeterminate: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.indeterminate),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.m.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxSizeMNoLabelNoDescription: View {
+    var appearance: CheckboxAppearance
+    
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
             title: "",
             subtitle: "",
             isEnabled: true,
-            appearance: Checkbox.m.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct CheckBoxGroupSizeM: View {
+    var appearance: CheckboxAppearance
+    var checkBoxGroupAppearance: CheckboxGroupAppearance
+    
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.selected),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.m.default.appearance
+            appearance: appearance
        )
         
         let child = (0..<2).map { index in
@@ -115,27 +130,30 @@ struct CheckBoxGroupSizeM: View {
                 title: "Label",
                 subtitle: "Description",
                 isEnabled: true,
-                appearance: Checkbox.m.default.appearance
+                appearance: appearance
             )
         }
         return Group {
             SDDSCheckboxGroup(
                 behaviour: .hierarchical(parent: parent, child: child),
                 size: SDDSCheckboxGroupSize.medium,
-                appearance: CheckboxGroup.m.appearance
+                appearance: checkBoxGroupAppearance
             )
         }
     }
 }
 
 struct CheckBoxGroupSizeS: View {
+    var appearance: CheckboxAppearance
+    var checkBoxGroupAppearance: CheckboxGroupAppearance
+    
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.indeterminate),
             title: "Label",
             subtitle: "Description",
             isEnabled: true,
-            appearance: Checkbox.s.default.appearance
+            appearance: appearance
        )
         
         let children: [CheckboxData] = (0..<1).flatMap { index in
@@ -145,14 +163,14 @@ struct CheckBoxGroupSizeS: View {
                 title: "Label",
                 subtitle: "Description",
                 isEnabled: true,
-                appearance: Checkbox.s.default.appearance
+                appearance: appearance
             ),
                 CheckboxData(
                 state: .constant(.deselected),
                 title: "Label",
                 subtitle: "Description",
                 isEnabled: true,
-                appearance: Checkbox.s.default.appearance
+                appearance: appearance
                 )
             ]
         }
@@ -160,20 +178,23 @@ struct CheckBoxGroupSizeS: View {
             SDDSCheckboxGroup(
                 behaviour: .hierarchical(parent: parent, child: children),
                 size: SDDSCheckboxGroupSize.small,
-                appearance: CheckboxGroup.s.appearance
+                appearance: checkBoxGroupAppearance
             )
         }
     }
 }
 
 struct CheckBoxGroupSizeMDisabled: View {
+    var appearance: CheckboxAppearance
+    var checkBoxGroupAppearance: CheckboxGroupAppearance
+    
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.deselected),
             title: "Label",
             subtitle: "Description",
             isEnabled: false,
-            appearance: Checkbox.m.default.appearance
+            appearance: appearance
        )
         
         let child = (0..<2).map { index in
@@ -182,14 +203,14 @@ struct CheckBoxGroupSizeMDisabled: View {
                 title: "Label",
                 subtitle: "Description",
                 isEnabled: false,
-                appearance: Checkbox.m.default.appearance
+                appearance: appearance
             )
         }
         return Group {
             SDDSCheckboxGroup(
                 behaviour: .hierarchical(parent: parent, child: child),
                 size: SDDSCheckboxGroupSize.medium,
-                appearance: CheckboxGroup.m.appearance
+                appearance: checkBoxGroupAppearance
             )
         }
     }

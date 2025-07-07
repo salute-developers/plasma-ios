@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 27.06.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -19,6 +18,8 @@ import SDDSIcons
  PLASMA-T2046
  */
 struct ModalUseNativeBlackOutHasClose: View {
+    var appearance: ModalAppearance
+    
     var body: some View {
         ZStack {
             backgroundBlackOut(useNativeBlackout: true)
@@ -35,7 +36,7 @@ struct ModalUseNativeBlackOutHasClose: View {
                         .frame(width: 120)
                     },
                     closeImage: Image(systemName: "xmark"),
-                    appearance: Modal.default.appearance,
+                    appearance: appearance,
                     onClose: {}
                 )
                 .frame(width: 300, height: 200)
@@ -49,6 +50,8 @@ struct ModalUseNativeBlackOutHasClose: View {
  PLASMA-T2047
  */
 struct ModalWithoutNativeBlackOut: View {
+    var appearance: ModalAppearance
+    
     var body: some View {
         ZStack {
             backgroundBlackOut(useNativeBlackout: false)
@@ -65,7 +68,7 @@ struct ModalWithoutNativeBlackOut: View {
                         .frame(width: 120)
                     },
                     closeImage: nil,
-                    appearance: Modal.default.appearance,
+                    appearance: appearance,
                     onClose: {}
                 )
                 .frame(width: 300, height: 200)

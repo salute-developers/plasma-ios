@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 03.06.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -19,6 +18,8 @@ import SDDSIcons
  PLASMA-T1501
  */
 struct TextFieldSizeLDefaultRequiredStartInnerLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -33,7 +34,7 @@ struct TextFieldSizeLDefaultRequiredStartInnerLabel: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.l.innerLabel.requiredStart.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -49,6 +50,8 @@ struct TextFieldSizeLDefaultRequiredStartInnerLabel: View {
  PLASMA-T1517
  */
 struct TextFieldSizeMSuccessOuterOptional: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -63,7 +66,7 @@ struct TextFieldSizeMSuccessOuterOptional: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.m.outerLabel.success.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: Action { },
             actionContent: Action {
@@ -77,6 +80,8 @@ struct TextFieldSizeMSuccessOuterOptional: View {
  PLASMA-T1554
  */
 struct TextFieldSizeSWarningRequiredEndInnerLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -91,7 +96,7 @@ struct TextFieldSizeSWarningRequiredEndInnerLabel: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.s.innerLabel.requiredEnd.warning.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -105,6 +110,8 @@ struct TextFieldSizeSWarningRequiredEndInnerLabel: View {
  PLASMA-T1555
  */
 struct TextFieldSizeXsErrorInnerOptional: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -119,7 +126,7 @@ struct TextFieldSizeXsErrorInnerOptional: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.xs.error.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: Action {},
             actionContent: Action {}
@@ -131,6 +138,8 @@ struct TextFieldSizeXsErrorInnerOptional: View {
  PLASMA-T1556
  */
 struct TextFieldSizeLSuccessRequiredStartOuterLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -145,7 +154,7 @@ struct TextFieldSizeLSuccessRequiredStartOuterLabel: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.l.innerLabel.requiredStart.success.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -161,6 +170,8 @@ struct TextFieldSizeLSuccessRequiredStartOuterLabel: View {
  PLASMA-T1557
  */
 struct TextFieldSizeMWarningInnerOptional: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -175,7 +186,7 @@ struct TextFieldSizeMWarningInnerOptional: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.m.innerLabel.warning.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -191,6 +202,8 @@ struct TextFieldSizeMWarningInnerOptional: View {
  PLASMA-T1558
  */
 struct TextFieldReadOnly: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -205,7 +218,7 @@ struct TextFieldReadOnly: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.s.innerLabel.requiredEnd.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -221,6 +234,8 @@ struct TextFieldReadOnly: View {
  PLASMA-T1559
  */
 struct TextFieldSizeXsSuccessOptionalOuterLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -235,7 +250,7 @@ struct TextFieldSizeXsSuccessOptionalOuterLabel: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.xs.outerLabel.success.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -251,6 +266,8 @@ struct TextFieldSizeXsSuccessOptionalOuterLabel: View {
  PLASMA-T1560
  */
 struct TextFieldDisabled: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -265,7 +282,7 @@ struct TextFieldDisabled: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.l.innerLabel.requiredStart.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -281,6 +298,8 @@ struct TextFieldDisabled: View {
  PLASMA-T1561
  */
 struct TextFieldSizeMErrorOptionalOuterLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -295,7 +314,7 @@ struct TextFieldSizeMErrorOptionalOuterLabel: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.m.outerLabel.error.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -311,6 +330,8 @@ struct TextFieldSizeMErrorOptionalOuterLabel: View {
  PLASMA-T1563
  */
 struct TextFieldSizeSWarningRequiredEndInnerLabelFocused: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -325,7 +346,7 @@ struct TextFieldSizeSWarningRequiredEndInnerLabelFocused: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.s.innerLabel.requiredEnd.warning.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -341,7 +362,19 @@ struct TextFieldSizeSWarningRequiredEndInnerLabelFocused: View {
  PLASMA-T1564
  */
 struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
-    @State private var value = TextFieldValue.multiple("", chips)
+    var appearance: TextFieldAppearance
+    var chipAppearance: ChipAppearance
+    
+    @State private var value: TextFieldValue
+    init(
+        appearance: TextFieldAppearance,
+        chipAppearance: ChipAppearance
+    ) {
+        self.appearance = appearance
+        self.chipAppearance = chipAppearance
+        self._value = State(initialValue: TextFieldValue.multiple("", chips(with: chipAppearance)))
+    }
+    
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -355,7 +388,7 @@ struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.m.innerLabel.success.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -371,7 +404,19 @@ struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
  PLASMA-T1565
  */
 struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
-    @State private var value = TextFieldValue.multiple("", chips)
+    var appearance: TextFieldAppearance
+    var chipAppearance: ChipAppearance
+    
+    @State private var value: TextFieldValue
+    init(
+        appearance: TextFieldAppearance,
+        chipAppearance: ChipAppearance
+    ) {
+        self.appearance = appearance
+        self.chipAppearance = chipAppearance
+        self._value = State(initialValue: TextFieldValue.multiple("", chips(with: chipAppearance)))
+    }
+    
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -385,7 +430,7 @@ struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.s.outerLabel.requiredEnd.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -401,6 +446,8 @@ struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
  PLASMA-T1566
  */
 struct TextFieldClearSizeLErrorOptionalInnerLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -415,7 +462,7 @@ struct TextFieldClearSizeLErrorOptionalInnerLabel: View {
             readOnly: false,
             required: false,
             divider: true,
-            appearance: TextFieldClear.l.innerLabel.error.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -431,6 +478,8 @@ struct TextFieldClearSizeLErrorOptionalInnerLabel: View {
  PLASMA-T1567
  */
 struct TextFieldClearSizeMWarningInnerLabelRequiredStart: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -445,7 +494,7 @@ struct TextFieldClearSizeMWarningInnerLabelRequiredStart: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.m.innerLabel.requiredStart.warning.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -461,6 +510,8 @@ struct TextFieldClearSizeMWarningInnerLabelRequiredStart: View {
  PLASMA-T1568
  */
 struct TextFieldClearSizeSDefaultOptionalOuter: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -475,7 +526,7 @@ struct TextFieldClearSizeSDefaultOptionalOuter: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.s.outerLabel.default.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -491,6 +542,8 @@ struct TextFieldClearSizeSDefaultOptionalOuter: View {
  PLASMA-T1569
  */
 struct TextFieldClearSizeXsSuccessOuterLabelRequireEnd: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -505,7 +558,7 @@ struct TextFieldClearSizeXsSuccessOuterLabelRequireEnd: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.xs.outerLabel.requiredEnd.success.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -521,6 +574,8 @@ struct TextFieldClearSizeXsSuccessOuterLabelRequireEnd: View {
  PLASMA-T1570
  */
 struct TextFieldClearSizeLInnerLabelRequiredEnd: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -535,7 +590,7 @@ struct TextFieldClearSizeLInnerLabelRequiredEnd: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.l.innerLabel.requiredEnd.default.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -551,6 +606,8 @@ struct TextFieldClearSizeLInnerLabelRequiredEnd: View {
  PLASMA-T1571
  */
 struct TextFieldClearSizeMErrorInnerRequiredStart: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -565,7 +622,7 @@ struct TextFieldClearSizeMErrorInnerRequiredStart: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.l.requiredStart.error.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -581,6 +638,8 @@ struct TextFieldClearSizeMErrorInnerRequiredStart: View {
  PLASMA-T1933
  */
 struct TextFieldClearSizeLErrorTBTA: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -595,7 +654,7 @@ struct TextFieldClearSizeLErrorTBTA: View {
             readOnly: false,
             required: true,
             divider: true,
-            appearance: TextFieldClear.l.requiredStart.error.appearance,
+            appearance: appearance,
             layout: .clear,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -611,6 +670,8 @@ struct TextFieldClearSizeLErrorTBTA: View {
  PLASMA-T962
  */
 struct TextFieldInputText: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("абвгдежзabcdefg@#643!#")
     var body: some View {
         SDDSTextField(
@@ -625,7 +686,7 @@ struct TextFieldInputText: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.l.innerLabel.warning.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -639,6 +700,8 @@ struct TextFieldInputText: View {
  PLASMA-T1942
  */
 struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -653,7 +716,7 @@ struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.xl.innerLabel.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -669,6 +732,8 @@ struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
  PLASMA-T1572
  */
 struct TextFieldSizeLTBTA: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -683,7 +748,7 @@ struct TextFieldSizeLTBTA: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.l.outerLabel.requiredStart.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -699,6 +764,8 @@ struct TextFieldSizeLTBTA: View {
  PLASMA-T1891
  */
 struct TextFieldSizeLRequiredStartOuterLabelDisabled: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -713,7 +780,7 @@ struct TextFieldSizeLRequiredStartOuterLabelDisabled: View {
             readOnly: false,
             required: true,
             divider: false,
-            appearance: TextField.l.outerLabel.requiredStart.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -729,6 +796,8 @@ struct TextFieldSizeLRequiredStartOuterLabelDisabled: View {
  PLASMA-T1935
  */
 struct TextFieldSizeLTBTAEmptyValue: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -743,7 +812,7 @@ struct TextFieldSizeLTBTAEmptyValue: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.l.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -759,6 +828,8 @@ struct TextFieldSizeLTBTAEmptyValue: View {
  PLASMA-T1920
  */
 struct TextFieldSizeLTBTACyrillic: View {
+    var appearance: TextFieldAppearance
+    
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -773,7 +844,7 @@ struct TextFieldSizeLTBTACyrillic: View {
             readOnly: false,
             required: false,
             divider: false,
-            appearance: TextField.l.innerLabel.requiredStart.default.appearance,
+            appearance: appearance,
             layout: .default,
             iconContent: .init {
                 Image.image("textFieldIconTest")
@@ -785,14 +856,16 @@ struct TextFieldSizeLTBTACyrillic: View {
     }
 }
 
-private let chips = (1...3).map { _ in
-    ChipData(
-        title: "Chip",
-        isEnabled: true,
-        iconImage: nil,
-        buttonImage: nil,
-        appearance: Chip.s.default.appearance,
-        accessibility: ChipAccessibility(),
-        removeAction: {}
-    )
+func chips(with chipAppearance: ChipAppearance) -> [ChipData] {
+    (1...3).map { _ in
+        ChipData(
+            title: "Chip",
+            isEnabled: true,
+            iconImage: nil,
+            buttonImage: nil,
+            appearance: chipAppearance,
+            accessibility: ChipAccessibility(),
+            removeAction: {}
+        )
+    }
 }

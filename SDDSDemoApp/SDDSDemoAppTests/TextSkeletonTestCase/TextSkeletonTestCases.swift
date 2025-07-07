@@ -5,20 +5,17 @@
 //  Created by Булинов Ангрик Александрович on 27.06.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
 import SDDSIcons
 
 struct TextSkeletonTestNoTextRandom: View {
+    var appearance: SkeletonAppearance
+    
     var body: some View {
         SDDSTextSkeleton(
-            appearance: SkeletonAppearance(
-                shape: CornerRadiusDrawer(cornerRadius: 4),
-                gradient: .surfaceDefaultSkeletonGradient,
-                duration: 2000
-            ),
+            appearance: appearance,
             lineCount: 3,
             textTypography: .semibold14,
             lineWidthProvider: FixedWidthTextSkeleton(),
@@ -28,13 +25,11 @@ struct TextSkeletonTestNoTextRandom: View {
 }
 
 struct TextSkeletonTestFullWidth: View {
+    var appearance: SkeletonAppearance
+    
     var body: some View {
         SDDSTextSkeleton(
-            appearance: SkeletonAppearance(
-                shape: CornerRadiusDrawer(cornerRadius: 4),
-                gradient: .surfaceDefaultSkeletonGradient,
-                duration: 2000
-            ),
+            appearance: appearance,
             lineCount: 10,
             textTypography: .semibold14,
             lineWidthProvider: FullWidthLineProvider(),
