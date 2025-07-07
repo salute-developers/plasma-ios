@@ -1,6 +1,22 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `NotificationAppearance` определяет параметры внешнего вида уведомления.
+
+ - Parameters:
+    - backgroundColor: Цвет фона уведомления.
+    - closeColor: Цвет кнопки закрытия уведомления.
+    - size: Конфигурация размеров и отступов уведомления.
+ 
+ ```swift
+ NotificationAppearance(
+     backgroundColor: .surfaceDefaultSolidCard,
+     closeColor: .textDefaultSecondary,
+     size: NotificationSize.default
+ )
+ ```
+ */
 public struct NotificationAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

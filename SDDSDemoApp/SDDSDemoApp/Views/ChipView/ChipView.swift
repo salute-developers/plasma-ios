@@ -34,7 +34,7 @@ struct ChipView: View {
                 Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
             }
         }
-        .navigationTitle("SDDSChip")
+        .navigationTitle("Chip")
         .onChange(of: viewModel.iconImageEnabled) { iconImageEnabled in
             if iconImageEnabled {
                 viewModel.setIconImage()

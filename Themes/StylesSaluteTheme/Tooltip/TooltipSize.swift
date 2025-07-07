@@ -20,7 +20,7 @@ struct TooltipSizeM: TooltipSizeConfiguration {
     var paddingEnd = CGFloat(14.0)
     var paddingStart = CGFloat(14.0)
     var paddingTop = CGFloat(11.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius - 2.0) as PathDrawer
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius-2.0) as PathDrawer
     var tailHeight = CGFloat(8.0)
     var tailPadding = CGFloat(10.0)
     var tailWidth = CGFloat(20.0)

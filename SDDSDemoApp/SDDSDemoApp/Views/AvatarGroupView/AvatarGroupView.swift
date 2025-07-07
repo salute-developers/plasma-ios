@@ -18,7 +18,6 @@ struct AvatarGroupView: View {
                         data: viewModel.avatarData,
                         lastAvatar: viewModel.lastAvatar,
                         maxDisplayingAvatarCount: viewModel.maxDisplayingAvatarCount,
-                        size: viewModel.sizeConfiguration,
                         appearance: viewModel.appearance
                     )
                     Spacer()
@@ -38,7 +37,7 @@ struct AvatarGroupView: View {
                 }
             }
         }
-        .navigationTitle("SDDSAvatarGroup")
+        .navigationTitle("AvatarGroup")
     }
 }
 

@@ -2,6 +2,22 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+/**
+ `ModalAppearance` определяет параметры внешнего вида модального окна.
+
+ - Parameters:
+    - backgroundColor: Цвет фона модального окна.
+    - closeColor: Цвет кнопки закрытия модального окна.
+    - size: Конфигурация размеров и отступов модального окна.
+ 
+ ```swift
+ ModalAppearance(
+     backgroundColor: .surfaceDefaultSolidCard,
+     closeColor: .textDefaultSecondary,
+     size: ModalSize.default
+ )
+ ```
+ */
 public struct ModalAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

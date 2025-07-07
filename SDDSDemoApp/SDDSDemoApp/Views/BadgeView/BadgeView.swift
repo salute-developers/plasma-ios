@@ -32,7 +32,7 @@ struct BadgeView: View {
                 
                 settings
             }
-            .navigationTitle("SDDSBadge")
+            .navigationTitle("Badge")
         case .subScreen:
             settings
         }

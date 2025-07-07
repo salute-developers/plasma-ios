@@ -120,6 +120,9 @@
 		813340242C063A71005AD84F /* ios_shape.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340232C063A71005AD84F /* ios_shape.json */; };
 		8133402E2C073924005AD84F /* ios_gradient_invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 8133402D2C073924005AD84F /* ios_gradient_invalid.json */; };
 		813340302C073C42005AD84F /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133402F2C073C42005AD84F /* URL+Extensions.swift */; };
+		8136875E2E0181DF00A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136875B2E0181DF00A1702A /* SkeletonAppearance.swift */; };
+		813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136875C2E0181DF00A1702A /* SkeletonSize.swift */; };
+		813687632E01820700A1702A /* SkeletonProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687622E01820700A1702A /* SkeletonProps.swift */; };
 		8139923E2D9ED9BA0015AF83 /* SegmentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139923D2D9ED9B80015AF83 /* SegmentSize.swift */; };
 		813992402D9ED9C10015AF83 /* SegmentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139923F2D9ED9BD0015AF83 /* SegmentAppearance.swift */; };
 		813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813992412D9EDA080015AF83 /* SegmentProps.swift */; };
@@ -600,6 +603,9 @@
 		813340232C063A71005AD84F /* ios_shape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ios_shape.json; sourceTree = "<group>"; };
 		8133402D2C073924005AD84F /* ios_gradient_invalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_gradient_invalid.json; sourceTree = "<group>"; };
 		8133402F2C073C42005AD84F /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		8136875B2E0181DF00A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
+		8136875C2E0181DF00A1702A /* SkeletonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSize.swift; sourceTree = "<group>"; };
+		813687622E01820700A1702A /* SkeletonProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonProps.swift; sourceTree = "<group>"; };
 		8139923D2D9ED9B80015AF83 /* SegmentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSize.swift; sourceTree = "<group>"; };
 		8139923F2D9ED9BD0015AF83 /* SegmentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAppearance.swift; sourceTree = "<group>"; };
 		813992412D9EDA080015AF83 /* SegmentProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentProps.swift; sourceTree = "<group>"; };
@@ -1245,6 +1251,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				813687622E01820700A1702A /* SkeletonProps.swift */,
 				81F7EC9C2DF2F0AB00531844 /* ModalProps.swift */,
 				8119DF552DF6F86700D1CA9F /* NotificationProps.swift */,
 				81E934372DEDF5D600B76E38 /* ToastProps.swift */,
@@ -1280,6 +1287,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8136875D2E0181DF00A1702A /* RectSkeleton */,
 				81F7ECA62DF2F0CA00531844 /* Modal */,
 				8119DF512DF6F7F600D1CA9F /* Notification */,
 				81E934342DEDF5CB00B76E38 /* Toast */,
@@ -1332,6 +1340,15 @@
 				8133401D2C063907005AD84F /* ContextBuilderTests.swift */,
 			);
 			path = ContextBuilders;
+			sourceTree = "<group>";
+		};
+		8136875D2E0181DF00A1702A /* RectSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				8136875B2E0181DF00A1702A /* SkeletonAppearance.swift */,
+				8136875C2E0181DF00A1702A /* SkeletonSize.swift */,
+			);
+			path = RectSkeleton;
 			sourceTree = "<group>";
 		};
 		8139923C2D9ED9AD0015AF83 /* Segment */ = {
@@ -2623,6 +2640,9 @@
 				812DB7032D562DDE00D3F4A3 /* CodeGenerationAppearance.swift in Sources */,
 				81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */,
 				692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */,
+				813687632E01820700A1702A /* SkeletonProps.swift in Sources */,
+				8136875E2E0181DF00A1702A /* SkeletonAppearance.swift in Sources */,
+				813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */,
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,

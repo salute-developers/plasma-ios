@@ -48,7 +48,7 @@ struct ToastView: View {
                 Toggle("Content End", isOn: $viewModel.contentEndEnabled)
             }
         }
-        .navigationTitle("SDDSToast")
+        .navigationTitle("Toast")
     }
     
     @ViewBuilder

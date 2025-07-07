@@ -9,8 +9,8 @@ public extension View {
         modifier(TypographyModifier(token: token))
     }
     
-    func gradient(_ token: GradientToken, colorScheme: ColorScheme = .light) -> some View {
-        modifier(GradientModifier(token: token, colorScheme: colorScheme))
+    func gradient(_ token: GradientToken, offset: CGFloat = 0, colorScheme: ColorScheme = .light) -> some View {
+        modifier(GradientModifier(token: token, offset: offset, colorScheme: colorScheme))
     }
 }
 

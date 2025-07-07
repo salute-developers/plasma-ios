@@ -44,7 +44,10 @@ struct AvatarGroupSizeS: View {
         SDDSAvatarGroup(
             data: exampleAvatars,
             lastAvatar: lastAvatarData,
-            size: defaultSize
+            appearance: AvatarGroupAppearance(
+                size: defaultSize,
+                avatarAppearance: lastAvatarData.appearance
+            )
         )
     }
 }
@@ -76,7 +79,6 @@ var defaultSize: AvatarGroupSizeConfiguration {
     }
 
 struct DefaultAvatarGroupSize: AvatarGroupSizeConfiguration {
-    var maxDisplayingAvatarCount: Int { 1 }
     var borderWidth: CGFloat { 1 }
     var spacing: CGFloat { 5 }
 }

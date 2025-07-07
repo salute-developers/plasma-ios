@@ -104,7 +104,7 @@ struct TextFieldView: View {
                 }
             }
         }
-        .navigationTitle("SDDSTextField")
+        .navigationTitle("TextField")
     }
 }
 

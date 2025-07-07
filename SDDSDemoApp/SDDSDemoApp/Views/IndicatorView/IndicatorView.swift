@@ -24,7 +24,7 @@ struct IndicatorView: View {
                 VariationsView(viewModel: viewModel)
             }
         }
-        .navigationTitle("SDDSIndicator")
+        .navigationTitle("Indicator")
     }
 
 

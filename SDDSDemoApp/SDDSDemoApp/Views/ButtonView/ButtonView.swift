@@ -132,7 +132,7 @@ struct ButtonView: View {
                 }
             }
         }
-        .navigationTitle("SDDSButton")
+        .navigationTitle("Button")
     }
 }
 

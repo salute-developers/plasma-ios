@@ -49,10 +49,6 @@ final class PathDrawerContextBuilder: CodeGenerationContextBuilder {
             if prefix == PathDrawerSupportedType.default.rawValue {
                 let defaultType = PathDrawerSupportedType.default
                 var cornerRadius = ShapeTokenContextBuilder.init(shape: shape).context ?? ""
-                if let adjustment = shape.adjustment {
-                    let sign = adjustment.hashValue < 0 ? " - " : " + "
-                    cornerRadius += "\(sign)\(fabs(adjustment))"
-                }
                 return PathDrawerContextBuilder.context(name: defaultType.applyArgument(argument: cornerRadius))
             }
             

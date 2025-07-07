@@ -31,7 +31,7 @@ struct NotificationCompactSizeM: NotificationSizeConfiguration {
     var paddingEnd = CGFloat(6.0)
     var paddingStart = CGFloat(6.0)
     var paddingTop = CGFloat(6.0)
-    var shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius - 2.0) as PathDrawer
+    var shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius-2.0) as PathDrawer
     public var debugDescription: String {
         return "NotificationCompactSize"
     }

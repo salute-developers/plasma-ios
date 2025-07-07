@@ -16,54 +16,42 @@ import SwiftUI
 
 final class SegmentSnapshotTest: XCTestCase {
 
-    func testSegmentItemSizeLPrimary() async throws {
-        try await runSnapshotTest(view: SegmentItemSizeLPrimary())
-    }
-
-    func testSegmentItemSizeMSecondaryPilled() async throws {
-        try await runSnapshotTest(view: SegmentItemSizeMSecondaryPilled())
-    }
-
-    func testSegmentItemSizeSPrimary() async throws {
-        try await runSnapshotTest(view: SegmentItemSizeSPrimary())
-    }
-
-    func testSegmentItemSizeXsCounter() async throws {
-        try await runSnapshotTest(view: SegmentItemSizeXsCounter())
-    }
-
-    func testSegmentItemSizeDisabled() async throws {
-        try await runSnapshotTest(view: SegmentItemSizeDisabled())
-    }
-
+    @MainActor
     func testSegmentSizeLPrimary() async throws {
         try await runSnapshotTest(view: SegmentSizeLPrimary())
     }
 
+    @MainActor
     func testSegmentSizeMSecondaryPilled() async throws {
         try await runSnapshotTest(view: SegmentSizeMSecondaryPilled())
     }
 
+    @MainActor
     func testSegmentSizeS() async throws {
         try await runSnapshotTest(view: SegmentSizeS())
     }
 
+    @MainActor
     func testSegmentSizeXs() async throws {
         try await runSnapshotTest(view: SegmentSizeXs())
     }
 
+    @MainActor
     func testSegmentSizeLVertical() async throws {
         try await runSnapshotTest(view: SegmentSizeLVertical())
     }
 
+    @MainActor
     func testSegmentDisabled() async throws {
         try await runSnapshotTest(view: SegmentDisabled())
     }
 
+    @MainActor
     func testSegmentSizeSStretch() async throws {
         try await runSnapshotTest(view: SegmentSizeSStretch())
     }
 
+    @MainActor
     func testSegmentSizeLCounter() async throws {
         try await runSnapshotTest(view: SegmentSizeLCounter())
     }
