@@ -19,6 +19,8 @@ import SDDSIcons
  PLASMA-T2061
  */
 struct ListNormalSizeXlHasDisclosure: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -27,7 +29,7 @@ struct ListNormalSizeXlHasDisclosure: View {
                     rightContent: { Image(systemName: "chevron.right") }
                 )
             },
-            appearance: ListNormal.xl.appearance
+            appearance: appearance
         )
     }
 }
@@ -36,6 +38,8 @@ struct ListNormalSizeXlHasDisclosure: View {
  PLASMA-T2062
  */
 struct ListNormalSizeL: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -45,7 +49,7 @@ struct ListNormalSizeL: View {
                     rightContentEnabled: false
                 )
             },
-            appearance: ListNormal.l.appearance
+            appearance: appearance
         )
     }
 }
@@ -54,6 +58,8 @@ struct ListNormalSizeL: View {
  PLASMA-T2063
  */
 struct ListNormalSizeM: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -63,7 +69,7 @@ struct ListNormalSizeM: View {
                     rightContentEnabled: false
                 )
             },
-            appearance: ListNormal.m.appearance
+            appearance: appearance
         )
     }
 }
@@ -72,6 +78,8 @@ struct ListNormalSizeM: View {
  PLASMA-T2064
  */
 struct ListNormalSizeS: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -81,7 +89,7 @@ struct ListNormalSizeS: View {
                     rightContentEnabled: false
                 )
             },
-            appearance: ListNormal.s.appearance
+            appearance: appearance
         )
     }
 }
@@ -90,6 +98,8 @@ struct ListNormalSizeS: View {
  PLASMA-T2065
  */
 struct ListNormalSizeXsAmountTwenty: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...20).map { index in
@@ -99,7 +109,7 @@ struct ListNormalSizeXsAmountTwenty: View {
                     rightContentEnabled: false
                 )
             },
-            appearance: ListNormal.xs.appearance
+            appearance: appearance
         )
     }
 }
@@ -108,6 +118,8 @@ struct ListNormalSizeXsAmountTwenty: View {
  PLASMA-T2067
  */
 struct ListTightSizeXsHasDisclosure: View {
+    var appearance: ListAppearance
+    
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -116,7 +128,7 @@ struct ListTightSizeXsHasDisclosure: View {
                     rightContent: { Image(systemName: "chevron.right") }
                 )
             },
-            appearance: ListTight.xs.appearance
+            appearance: appearance
         )
     }
 }

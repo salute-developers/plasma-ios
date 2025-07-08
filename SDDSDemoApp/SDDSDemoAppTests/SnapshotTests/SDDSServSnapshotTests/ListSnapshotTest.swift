@@ -18,31 +18,37 @@ final class ListSnapshotTest: XCTestCase {
     
     @MainActor
     func testListNormalSizeXlHasDisclosure() async throws {
-        try await runSnapshotTest(view: ListNormalSizeXlHasDisclosure())
+        let appearance = ListNormal.xl.appearance
+        try await runSnapshotTest(view: ListNormalSizeXlHasDisclosure(appearance: appearance))
     }
     
     @MainActor
     func testListNormalSizeL() async throws {
-        try await runSnapshotTest(view: ListNormalSizeL())
+        let appearance = ListNormal.l.appearance
+        try await runSnapshotTest(view: ListNormalSizeL(appearance: appearance))
     }
     
     @MainActor
     func testListNormalSizeM() async throws {
-        try await runSnapshotTest(view: ListNormalSizeM())
+        let appearance = ListNormal.m.appearance
+        try await runSnapshotTest(view: ListNormalSizeM(appearance: appearance))
     }
     
     @MainActor
     func testListNormalSizeS() async throws {
-        try await runSnapshotTest(view: ListNormalSizeS())
+        let appearance = ListNormal.s.appearance
+        try await runSnapshotTest(view: ListNormalSizeS(appearance: appearance))
     }
     
     @MainActor
     func testListNormalSizeXsAmountTwenty() async throws {
-        try await runSnapshotTest(view: ListNormalSizeXsAmountTwenty())
+        let appearance = ListNormal.xs.appearance
+        try await runSnapshotTest(view: ListNormalSizeXsAmountTwenty(appearance: appearance))
     }
     
     @MainActor
     func testListTightSizeXsHasDisclosure() async throws {
-        try await runSnapshotTest(view: ListTightSizeXsHasDisclosure())
+        let appearance = ListTight.xs.appearance
+        try await runSnapshotTest(view: ListTightSizeXsHasDisclosure(appearance: appearance))
     }
 }
