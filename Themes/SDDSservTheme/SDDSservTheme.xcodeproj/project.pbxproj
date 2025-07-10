@@ -35,6 +35,26 @@
 		81157D322D64F4ED00254FB6 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D312D64F4ED00254FB6 /* SpacingToken+Generated.swift */; };
 		81157D332D64F4ED00254FB6 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157D302D64F4ED00254FB6 /* Spacings+Generated.swift */; };
 		81BA173A2D8067CF008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17392D8067CF008F0A59 /* SDDSIcons.xcframework */; };
+		81DE0BDB2E20E6CA00DE2018 /* ListItemTightTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCA2E20E6CA00DE2018 /* ListItemTightTypography.swift */; };
+		81DE0BDC2E20E6CA00DE2018 /* ListTightSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD32E20E6CA00DE2018 /* ListTightSize.swift */; };
+		81DE0BDD2E20E6CA00DE2018 /* ListItemTightSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC92E20E6CA00DE2018 /* ListItemTightSize.swift */; };
+		81DE0BDE2E20E6CA00DE2018 /* ListNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCC2E20E6CA00DE2018 /* ListNormal+BaseVariations.swift */; };
+		81DE0BDF2E20E6CA00DE2018 /* Scrollbar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD62E20E6CA00DE2018 /* Scrollbar+BaseVariations.swift */; };
+		81DE0BE02E20E6CA00DE2018 /* ListTight+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD22E20E6CA00DE2018 /* ListTight+Variations.swift */; };
+		81DE0BE12E20E6CA00DE2018 /* ListItemNormalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC42E20E6CA00DE2018 /* ListItemNormalSize.swift */; };
+		81DE0BE22E20E6CA00DE2018 /* ListItemNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC22E20E6CA00DE2018 /* ListItemNormal+BaseVariations.swift */; };
+		81DE0BE32E20E6CA00DE2018 /* ListNormalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCE2E20E6CA00DE2018 /* ListNormalSize.swift */; };
+		81DE0BE42E20E6CA00DE2018 /* ListTightTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD42E20E6CA00DE2018 /* ListTightTypography.swift */; };
+		81DE0BE52E20E6CA00DE2018 /* ScrollbarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD92E20E6CA00DE2018 /* ScrollbarTypography.swift */; };
+		81DE0BE62E20E6CA00DE2018 /* ListItemTight+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC72E20E6CA00DE2018 /* ListItemTight+BaseVariations.swift */; };
+		81DE0BE72E20E6CA00DE2018 /* ListTight+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD12E20E6CA00DE2018 /* ListTight+BaseVariations.swift */; };
+		81DE0BE82E20E6CA00DE2018 /* ScrollbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD82E20E6CA00DE2018 /* ScrollbarSize.swift */; };
+		81DE0BE92E20E6CA00DE2018 /* ListItemTight+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC82E20E6CA00DE2018 /* ListItemTight+Variations.swift */; };
+		81DE0BEA2E20E6CA00DE2018 /* ListItemNormalTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC52E20E6CA00DE2018 /* ListItemNormalTypography.swift */; };
+		81DE0BEB2E20E6CA00DE2018 /* ListNormalTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCF2E20E6CA00DE2018 /* ListNormalTypography.swift */; };
+		81DE0BEC2E20E6CA00DE2018 /* ListNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCD2E20E6CA00DE2018 /* ListNormal+Variations.swift */; };
+		81DE0BED2E20E6CA00DE2018 /* Scrollbar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD72E20E6CA00DE2018 /* Scrollbar+Variations.swift */; };
+		81DE0BEE2E20E6CA00DE2018 /* ListItemNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC32E20E6CA00DE2018 /* ListItemNormal+Variations.swift */; };
 		81F2E6B02DF9FE6100708B40 /* IconBadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E66C2DF9FE6100708B40 /* IconBadgeSize.swift */; };
 		81F2E6B12DF9FE6100708B40 /* CircularProgressBarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E64F2DF9FE6100708B40 /* CircularProgressBarTypography.swift */; };
 		81F2E6B22DF9FE6100708B40 /* IconButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E67A2DF9FE6100708B40 /* IconButton+Variations.swift */; };
@@ -332,6 +352,26 @@
 		81157D302D64F4ED00254FB6 /* Spacings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacings+Generated.swift"; sourceTree = "<group>"; };
 		81157D312D64F4ED00254FB6 /* SpacingToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingToken+Generated.swift"; sourceTree = "<group>"; };
 		81BA17392D8067CF008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
+		81DE0BC22E20E6CA00DE2018 /* ListItemNormal+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BC32E20E6CA00DE2018 /* ListItemNormal+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BC42E20E6CA00DE2018 /* ListItemNormalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemNormalSize.swift; sourceTree = "<group>"; };
+		81DE0BC52E20E6CA00DE2018 /* ListItemNormalTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemNormalTypography.swift; sourceTree = "<group>"; };
+		81DE0BC72E20E6CA00DE2018 /* ListItemTight+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemTight+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BC82E20E6CA00DE2018 /* ListItemTight+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemTight+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BC92E20E6CA00DE2018 /* ListItemTightSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTightSize.swift; sourceTree = "<group>"; };
+		81DE0BCA2E20E6CA00DE2018 /* ListItemTightTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTightTypography.swift; sourceTree = "<group>"; };
+		81DE0BCC2E20E6CA00DE2018 /* ListNormal+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNormal+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BCD2E20E6CA00DE2018 /* ListNormal+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNormal+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BCE2E20E6CA00DE2018 /* ListNormalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNormalSize.swift; sourceTree = "<group>"; };
+		81DE0BCF2E20E6CA00DE2018 /* ListNormalTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNormalTypography.swift; sourceTree = "<group>"; };
+		81DE0BD12E20E6CA00DE2018 /* ListTight+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTight+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BD22E20E6CA00DE2018 /* ListTight+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTight+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BD32E20E6CA00DE2018 /* ListTightSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTightSize.swift; sourceTree = "<group>"; };
+		81DE0BD42E20E6CA00DE2018 /* ListTightTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTightTypography.swift; sourceTree = "<group>"; };
+		81DE0BD62E20E6CA00DE2018 /* Scrollbar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BD72E20E6CA00DE2018 /* Scrollbar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BD82E20E6CA00DE2018 /* ScrollbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSize.swift; sourceTree = "<group>"; };
+		81DE0BD92E20E6CA00DE2018 /* ScrollbarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarTypography.swift; sourceTree = "<group>"; };
 		81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81F2E5FE2DF9FE6100708B40 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
 		81F2E5FF2DF9FE6100708B40 /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
@@ -571,6 +611,11 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				81DE0BC62E20E6CA00DE2018 /* ListItemNormal */,
+				81DE0BCB2E20E6CA00DE2018 /* ListItemTight */,
+				81DE0BD02E20E6CA00DE2018 /* ListNormal */,
+				81DE0BD52E20E6CA00DE2018 /* ListTight */,
+				81DE0BDA2E20E6CA00DE2018 /* Scrollbar */,
 				81F2E74B2DF9FEBE00708B40 /* ProgressBar */,
 				81F2E7502DF9FEBE00708B40 /* Segment */,
 				81F2E7552DF9FEBE00708B40 /* SegmentItem */,
@@ -697,6 +742,61 @@
 				44086615942D02F7443042C3 /* SDDSservTheme.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		81DE0BC62E20E6CA00DE2018 /* ListItemNormal */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BC22E20E6CA00DE2018 /* ListItemNormal+BaseVariations.swift */,
+				81DE0BC32E20E6CA00DE2018 /* ListItemNormal+Variations.swift */,
+				81DE0BC42E20E6CA00DE2018 /* ListItemNormalSize.swift */,
+				81DE0BC52E20E6CA00DE2018 /* ListItemNormalTypography.swift */,
+			);
+			path = ListItemNormal;
+			sourceTree = "<group>";
+		};
+		81DE0BCB2E20E6CA00DE2018 /* ListItemTight */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BC72E20E6CA00DE2018 /* ListItemTight+BaseVariations.swift */,
+				81DE0BC82E20E6CA00DE2018 /* ListItemTight+Variations.swift */,
+				81DE0BC92E20E6CA00DE2018 /* ListItemTightSize.swift */,
+				81DE0BCA2E20E6CA00DE2018 /* ListItemTightTypography.swift */,
+			);
+			path = ListItemTight;
+			sourceTree = "<group>";
+		};
+		81DE0BD02E20E6CA00DE2018 /* ListNormal */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BCC2E20E6CA00DE2018 /* ListNormal+BaseVariations.swift */,
+				81DE0BCD2E20E6CA00DE2018 /* ListNormal+Variations.swift */,
+				81DE0BCE2E20E6CA00DE2018 /* ListNormalSize.swift */,
+				81DE0BCF2E20E6CA00DE2018 /* ListNormalTypography.swift */,
+			);
+			path = ListNormal;
+			sourceTree = "<group>";
+		};
+		81DE0BD52E20E6CA00DE2018 /* ListTight */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BD12E20E6CA00DE2018 /* ListTight+BaseVariations.swift */,
+				81DE0BD22E20E6CA00DE2018 /* ListTight+Variations.swift */,
+				81DE0BD32E20E6CA00DE2018 /* ListTightSize.swift */,
+				81DE0BD42E20E6CA00DE2018 /* ListTightTypography.swift */,
+			);
+			path = ListTight;
+			sourceTree = "<group>";
+		};
+		81DE0BDA2E20E6CA00DE2018 /* Scrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BD62E20E6CA00DE2018 /* Scrollbar+BaseVariations.swift */,
+				81DE0BD72E20E6CA00DE2018 /* Scrollbar+Variations.swift */,
+				81DE0BD82E20E6CA00DE2018 /* ScrollbarSize.swift */,
+				81DE0BD92E20E6CA00DE2018 /* ScrollbarTypography.swift */,
+			);
+			path = Scrollbar;
 			sourceTree = "<group>";
 		};
 		81F2E6022DF9FE6100708B40 /* Avatar */ = {
@@ -1582,6 +1682,26 @@
 				81F2E7272DF9FE6100708B40 /* ChipGroupDense+BaseVariations.swift in Sources */,
 				81F2E7282DF9FE6100708B40 /* Badge+BaseVariations.swift in Sources */,
 				81F2E7292DF9FE6100708B40 /* CheckboxGroupSize.swift in Sources */,
+				81DE0BDB2E20E6CA00DE2018 /* ListItemTightTypography.swift in Sources */,
+				81DE0BDC2E20E6CA00DE2018 /* ListTightSize.swift in Sources */,
+				81DE0BDD2E20E6CA00DE2018 /* ListItemTightSize.swift in Sources */,
+				81DE0BDE2E20E6CA00DE2018 /* ListNormal+BaseVariations.swift in Sources */,
+				81DE0BDF2E20E6CA00DE2018 /* Scrollbar+BaseVariations.swift in Sources */,
+				81DE0BE02E20E6CA00DE2018 /* ListTight+Variations.swift in Sources */,
+				81DE0BE12E20E6CA00DE2018 /* ListItemNormalSize.swift in Sources */,
+				81DE0BE22E20E6CA00DE2018 /* ListItemNormal+BaseVariations.swift in Sources */,
+				81DE0BE32E20E6CA00DE2018 /* ListNormalSize.swift in Sources */,
+				81DE0BE42E20E6CA00DE2018 /* ListTightTypography.swift in Sources */,
+				81DE0BE52E20E6CA00DE2018 /* ScrollbarTypography.swift in Sources */,
+				81DE0BE62E20E6CA00DE2018 /* ListItemTight+BaseVariations.swift in Sources */,
+				81DE0BE72E20E6CA00DE2018 /* ListTight+BaseVariations.swift in Sources */,
+				81DE0BE82E20E6CA00DE2018 /* ScrollbarSize.swift in Sources */,
+				81DE0BE92E20E6CA00DE2018 /* ListItemTight+Variations.swift in Sources */,
+				81DE0BEA2E20E6CA00DE2018 /* ListItemNormalTypography.swift in Sources */,
+				81DE0BEB2E20E6CA00DE2018 /* ListNormalTypography.swift in Sources */,
+				81DE0BEC2E20E6CA00DE2018 /* ListNormal+Variations.swift in Sources */,
+				81DE0BED2E20E6CA00DE2018 /* Scrollbar+Variations.swift in Sources */,
+				81DE0BEE2E20E6CA00DE2018 /* ListItemNormal+Variations.swift in Sources */,
 				81F2E72A2DF9FE6100708B40 /* NotificationCompact+BaseVariations.swift in Sources */,
 				81F2E72B2DF9FE6100708B40 /* BasicButtonSize.swift in Sources */,
 				81F2E72C2DF9FE6100708B40 /* AvatarGroupTypography.swift in Sources */,
@@ -1777,7 +1897,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;
@@ -1818,7 +1938,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;
