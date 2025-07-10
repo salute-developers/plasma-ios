@@ -55,16 +55,18 @@ public struct SDDSRectSkeleton: View {
     }
     
     public var body: some View {
-        GeometryReader { geometry in
-            HStack(spacing: 0) {
-                ForEach(0..<3) { _ in
-                    gradient
+        Group {
+            GeometryReader { geometry in
+                HStack(spacing: 0) {
+                    ForEach(0..<3) { _ in
+                        gradient
+                    }
                 }
+                .clipped()
+                .offset(x: phase * screenWidth)
             }
-            .clipped()
-            .shape(pathDrawer: appearance.shape)
-            .offset(x: phase * screenWidth)
         }
+        .shape(pathDrawer: appearance.shape)
         .onAppear {
             animate()
         }
