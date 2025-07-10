@@ -8,9 +8,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
     
     var `default`: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.duration = CGFloat(0)
         appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
-        appearance.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
         
         return .init(
             name: "`default`",
@@ -19,9 +17,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
     }
     var lighter: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.duration = CGFloat(0)
         appearance.gradient = GradientToken.surfaceDefaultSkeletonDeepGradient
-        appearance.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
         
         return .init(
             name: "lighter",
@@ -73,17 +69,13 @@ private extension SkeletonAppearance {
     
     var `default`: SkeletonAppearance {
         var appearance = self
-        appearance.duration = CGFloat(0)
         appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
-        appearance.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
         return appearance
     }
     
     var lighter: SkeletonAppearance {
         var appearance = self
-        appearance.duration = CGFloat(0)
         appearance.gradient = GradientToken.surfaceDefaultSkeletonDeepGradient
-        appearance.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
         return appearance
     }
     
