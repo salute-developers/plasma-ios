@@ -41,6 +41,7 @@ struct SDDSPopover<Content: View>: View {
     private let onClose: (() -> Void)?
     private let content: Content
     private let popoverSizeCalculator: PopoverSizeCalculator
+    private let contentHeight: CGFloat?
     @Binding private var isPresented: Bool
     
     @State private var popoverSize: CGSize = .zero
@@ -58,6 +59,7 @@ struct SDDSPopover<Content: View>: View {
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
         popoverSizeCalculator: PopoverSizeCalculator,
+        contentHeight: CGFloat? = nil,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) {
@@ -72,6 +74,7 @@ struct SDDSPopover<Content: View>: View {
         self.onClose = onClose
         self.content = content()
         self.popoverSizeCalculator = popoverSizeCalculator
+        self.contentHeight = contentHeight
         _placementState = State(initialValue: placement)
     }
     
@@ -97,7 +100,7 @@ struct SDDSPopover<Content: View>: View {
                 PopoverTailShape(
                     placement: placementState,
                     alignment: alignment,
-                    size: popoverSize,
+                    size: currentPopoverSize,
                     tailWidth: appearance.size.tailWidth,
                     tailHeight: appearance.size.tailHeight,
                     tailPadding: tailPadding
@@ -110,8 +113,12 @@ struct SDDSPopover<Content: View>: View {
         .background(
             GeometryReader { geo in
                 Color.clear
-                    .onAppear { popoverSize = geo.size }
-                    .onChange(of: geo.size) { newSize in popoverSize = newSize }
+                    .onAppear {
+                        popoverSize = geo.size
+                    }
+                    .onChange(of: geo.size) { newSize in
+                        popoverSize = newSize
+                    }
             }
         )
         .background(
@@ -129,7 +136,7 @@ struct SDDSPopover<Content: View>: View {
         .offset(offset(
             placement: placementState,
             alignment: alignment,
-            popoverSize: popoverSize,
+            popoverSize: currentPopoverSize,
             triggerSize: popoverSizeCalculator.frame.size
         ))
         .onChange(of: placement) { newValue in
@@ -242,14 +249,15 @@ struct SDDSPopover<Content: View>: View {
     }
 
     private func updateIntersection() {
+        print(currentPopoverSize)
         let isFullyInside = fits(
             placement: placementState,
-            popoverSize: popoverSize
+            popoverSize: currentPopoverSize
         )
         if !isFullyInside && placementMode == .loose {
             let newPlacement = bestPlacement(
                 initial: placementState,
-                popoverSize: popoverSize
+                popoverSize: currentPopoverSize
             )
             placementState = newPlacement
         }
@@ -283,7 +291,11 @@ struct SDDSPopover<Content: View>: View {
     }
 
     private func fits(placement: PopoverPlacement, popoverSize: CGSize) -> Bool {
-        let screenBounds = UIScreen.main.bounds
+        guard let window = UIApplication.shared.keyWindow else {
+            return false
+        }
+        
+        let screenBounds = window.bounds
         let triggerFrame = popoverSizeCalculator.frame
         let offset = offset(
             placement: placement,
@@ -293,12 +305,20 @@ struct SDDSPopover<Content: View>: View {
         )
         let popoverOrigin = CGPoint(
             x: triggerFrame.origin.x + offset.width - triggerFrame.width / 2,
-            y: triggerFrame.origin.y + offset.height - triggerFrame.height / 2
+            y: triggerFrame.origin.y + offset.height - triggerFrame.height / 2 - popoverSize.height / 2
         )
         let popoverFrame = CGRect(origin: popoverOrigin, size: popoverSize)
+
         let result = screenBounds.contains(popoverFrame)
         
         return result
+    }
+    
+    private var currentPopoverSize: CGSize {
+        if let contentHeight = contentHeight {
+            return CGSize(width: popoverSize.width, height: popoverSize.height)
+        }
+        return popoverSize
     }
 
 }

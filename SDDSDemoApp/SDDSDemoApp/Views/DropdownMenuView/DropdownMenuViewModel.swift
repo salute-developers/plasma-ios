@@ -16,15 +16,16 @@ enum DropdownMenuButtonPosition: String, CaseIterable {
 }
 
 final class DropdownMenuViewModel: ComponentViewModel<DropdownMenuVariationProvider> {
-    @Published var placement: PopoverPlacement = .bottom
+    @Published var placement: PopoverPlacement = .top
     @Published var alignment: PopoverAlignment = .center
     @Published var autoHide: Bool = true
     @Published var buttonPosition: DropdownMenuButtonPosition = .center
     @Published var duration: Int? = nil
-    @Published var textInput: String = "3"
-    @Published var itemsCount: Int = 3
+    @Published var textInput: String = "10"
+    @Published var itemsCount: Int = 10
     @Published var hasDisclosure: Bool = false
     @Published var dividerEnabled: Bool = false
+    @Published var placementMode: PopoverPlacementMode = .loose
     @Published var layout: DropDownMenuLayout = .normal {
         didSet {
             variationProvider.layout = layout

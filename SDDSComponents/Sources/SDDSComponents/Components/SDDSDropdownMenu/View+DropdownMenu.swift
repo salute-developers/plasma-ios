@@ -40,7 +40,9 @@ public extension View {
         appearance: DropdownMenuAppearance,
         placement: PopoverPlacement = .top,
         alignment: PopoverAlignment = .start,
+        placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
+        contentHeight: CGFloat? = nil,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
@@ -55,8 +57,9 @@ public extension View {
             alignment: alignment,
             tailEnabled: false,
             triggerCentered: true,
-            placementMode: .strict,
+            placementMode: placementMode,
             duration: duration,
+            contentHeight: contentHeight,
             onClose: onClose,
             content: content
         )

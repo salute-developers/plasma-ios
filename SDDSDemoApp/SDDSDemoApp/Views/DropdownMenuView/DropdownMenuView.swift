@@ -8,7 +8,7 @@ struct DropdownMenuView: View {
     @State private var isDropdownMenuPresented = false
     @State private var contentHeight: CGFloat = 0
     @State private var forceUpdate: Bool = false
-    private let maxHeight: CGFloat = 250
+    private let maxHeight: CGFloat = 220
     
     var body: some View {
         List {
@@ -39,6 +39,7 @@ struct DropdownMenuView: View {
                 hasDisclosure
                 dividerEnabled
                 autoHideToggle
+                placementModeSelectionView
             }
         }
         .navigationTitle("DropdownMenu")
@@ -66,8 +67,12 @@ struct DropdownMenuView: View {
             maxHeight: maxHeight,
             appearance: viewModel.appearance.listAppearance
         )
-        .frame(height: min(contentHeight, maxHeight))
+        .frame(height: listHeight)
         .padding([.top, .bottom], viewModel.appearance.size.offset)
+    }
+    
+    private var listHeight: CGFloat {
+        min(contentHeight, maxHeight)
     }
     
     private var listItems: [SDDSListItem<EmptyView>] {
@@ -116,6 +121,8 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        placementMode: viewModel.placementMode,
+                        contentHeight: listHeight,
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -134,6 +141,8 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        placementMode: viewModel.placementMode,
+                        contentHeight: listHeight,
                         content: { dropdownMenuContent() }
                     )
                 }
@@ -149,6 +158,8 @@ struct DropdownMenuView: View {
                     appearance: viewModel.appearance,
                     placement: viewModel.placement,
                     alignment: viewModel.alignment,
+                    placementMode: viewModel.placementMode,
+                    contentHeight: listHeight,
                     content: { dropdownMenuContent() }
                 )
                 Spacer()
@@ -164,6 +175,8 @@ struct DropdownMenuView: View {
                     appearance: viewModel.appearance,
                     placement: viewModel.placement,
                     alignment: viewModel.alignment,
+                    placementMode: viewModel.placementMode,
+                    contentHeight: listHeight,
                     content: { dropdownMenuContent() }
                 )
                 Spacer()
@@ -179,6 +192,8 @@ struct DropdownMenuView: View {
                     appearance: viewModel.appearance,
                     placement: viewModel.placement,
                     alignment: viewModel.alignment,
+                    placementMode: viewModel.placementMode,
+                    contentHeight: listHeight,
                     content: { dropdownMenuContent() }
                 )
             }
@@ -194,6 +209,8 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        placementMode: viewModel.placementMode,
+                        contentHeight: listHeight,
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -212,6 +229,8 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        placementMode: viewModel.placementMode,
+                        contentHeight: contentHeight,
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -230,6 +249,8 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        placementMode: viewModel.placementMode,
+                        contentHeight: contentHeight,
                         content: { dropdownMenuContent() }
                     )
                 }
@@ -305,7 +326,22 @@ struct DropdownMenuView: View {
         Toggle("Divider Enabled", isOn: $viewModel.dividerEnabled)
     }
     
-
+    private var placementModeSelectionView: some View {
+        HStack {
+            Text("Placement Mode")
+            Spacer()
+                .frame(maxWidth: .infinity)
+            Menu {
+                ForEach(PopoverPlacementMode.allCases, id: \.self) { mode in
+                    Button(mode.rawValue.capitalized) {
+                        viewModel.placementMode = mode
+                    }
+                }
+            } label: {
+                Text(viewModel.placementMode.rawValue.capitalized)
+            }
+        }
+    }
 
 }
 
