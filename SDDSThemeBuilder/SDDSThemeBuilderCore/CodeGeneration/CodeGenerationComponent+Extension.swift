@@ -47,6 +47,11 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationCompact = "NotificationCompact"
     case rectSkeleton = "RectSkeleton"
     case textSkeleton = "TextSkeleton"
+    case listItemNormal = "ListItemNormal"
+    case listItemTight = "ListItemTight"
+    case listNormal = "ListNormal"
+    case listTight = "ListTight"
+    case scrollbar = "Scrollbar"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -95,7 +100,12 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .notificationLoose,
             .notificationCompact,
             .rectSkeleton,
-            .textSkeleton
+            .textSkeleton,
+            .listItemNormal,
+            .listItemTight,
+            .listNormal,
+            .listTight,
+            .scrollbar
         ]
     }
     
@@ -164,6 +174,12 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .rectSkeleton, .textSkeleton:
             GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .listItemNormal, .listItemTight:
+            GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .listNormal, .listTight:
+            GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .scrollbar:
+            GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -229,6 +245,12 @@ extension CodeGenerationComponent {
             "NotificationAppearance"
         case .rectSkeleton, .textSkeleton:
             "SkeletonAppearance"
+        case .listItemNormal, .listItemTight:
+            "ListItemAppearance"
+        case .listNormal, .listTight:
+            "ListAppearance"
+        case .scrollbar:
+            "ScrollbarAppearance"
         }
     }
     
@@ -295,6 +317,12 @@ extension CodeGenerationComponent {
             "NotificationSizeConfiguration"
         case .rectSkeleton, .textSkeleton:
             "SkeletonSizeConfiguration"
+        case .listItemNormal, .listItemTight:
+            "ListItemSizeConfiguration"
+        case .listNormal, .listTight:
+            "ListSizeConfiguration"
+        case .scrollbar:
+            "ScrollbarSizeConfiguration"
         }
     }
     
@@ -392,6 +420,16 @@ extension CodeGenerationComponent {
             "rect_skeleton_config.json"
         case .textSkeleton:
             "text_skeleton_config.json"
+        case .listItemNormal:
+            "list_item_normal_config.json"
+        case .listItemTight:
+            "list_item_tight_config.json"
+        case .listNormal:
+            "list_normal_config.json"
+        case .listTight:
+            "list_tight_config.json"
+        case .scrollbar:
+            "scroll_bar_config.json"
         }
     }
     

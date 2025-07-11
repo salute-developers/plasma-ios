@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,10 +15,12 @@ import SDDSIcons
  */
 
 struct CounterSizeLDefault: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "123",
-            appearance: Counter.l.default.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,
@@ -29,10 +30,12 @@ struct CounterSizeLDefault: View {
 }
 
 struct CounterSizeMAccent: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "123",
-            appearance: Counter.m.accent.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,
@@ -42,10 +45,12 @@ struct CounterSizeMAccent: View {
 }
 
 struct CounterSizeSPositive: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "999999999999999",
-            appearance: Counter.s.positive.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,
@@ -55,10 +60,12 @@ struct CounterSizeSPositive: View {
 }
 
 struct CounterSizeXsWarning: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "123",
-            appearance: Counter.xs.warning.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,
@@ -68,10 +75,12 @@ struct CounterSizeXsWarning: View {
 }
 
 struct CounterSizeXxsNegative: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "123",
-            appearance: Counter.xxs.negative.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,
@@ -81,10 +90,12 @@ struct CounterSizeXxsNegative: View {
 }
 
 struct CounterSizeLWhite: View {
+    var appearance: CounterAppearance
+    
     var body: some View {
         SDDSCounter(
             text: "1",
-            appearance: Counter.l.white.appearance,
+            appearance: appearance,
             isAnimating: false,
             isHighlighted: false,
             isHovered: false,

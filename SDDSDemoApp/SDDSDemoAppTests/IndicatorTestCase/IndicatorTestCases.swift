@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,49 +15,61 @@ import SDDSIcons
  */
 
 struct IndicatorLDefault: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.l.default.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IndicatorMAccent: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.m.accent.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IndicatorSInactove: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.s.inactive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IndicatorLPositive: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.l.positive.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IndicatorLWarning: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.l.warning.appearance
+            appearance: appearance
         )
     }
 }
 
 struct IndicatorLNegative: View {
+    var appearance: IndicatorAppearance
+    
     var body: some View {
         SDDSIndicator(
-            appearance: Indicator.l.negative.appearance
+            appearance: appearance
         )
     }
 }

@@ -529,4 +529,59 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.TextSkeleton.all
         }
     }
+    
+    var listItemNormalVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ListItemNormal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ListItemNormal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ListItemNormal.all
+        }
+    }
+    
+    var listItemTightVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ListItemTight.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ListItemTight.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ListItemTight.all
+        }
+    }
+    
+    var listNormalVariations: [Variation<ListAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ListNormal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ListNormal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ListNormal.all
+        }
+    }
+    
+    var listTightVariations: [Variation<ListAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.ListTight.all
+        case .stylesSalute:
+            return StylesSaluteTheme.ListTight.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.ListTight.all
+        }
+    }
+    
+    var scrollbarVariations: [Variation<ScrollbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Scrollbar.all
+        case .plasmaB2CTheme:
+            StylesSaluteTheme.Scrollbar.all
+        case .stylesSalute:
+            PlasmaB2CTheme.Scrollbar.all
+        }
+    }
 }

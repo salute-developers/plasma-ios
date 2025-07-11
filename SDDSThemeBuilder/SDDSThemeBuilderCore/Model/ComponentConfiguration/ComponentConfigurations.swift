@@ -29,3 +29,6 @@ typealias ToastConfiguration = ComponentConfiguration<ToastProps>
 typealias ModalConfiguration = ComponentConfiguration<ModalProps>
 typealias NotificationConfiguration = ComponentConfiguration<NotificationProps>
 typealias SkeletonConfiguration = ComponentConfiguration<SkeletonProps>
+typealias ListItemConfiguration = ComponentConfiguration<ListItemProps>
+typealias ListConfiguration = ComponentConfiguration<ListProps>
+typealias ScrollbarConfiguration = ComponentConfiguration<ScrollbarProps>

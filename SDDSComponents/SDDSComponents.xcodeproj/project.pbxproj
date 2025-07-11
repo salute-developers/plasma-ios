@@ -67,6 +67,18 @@
 		8102BA2F2CBE9B3300C589D3 /* SDDSTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */; };
 		8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */; };
 		8102BA3C2CBEB32700C589D3 /* ExpandingTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */; };
+		810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */ = {isa = PBXBuildFile; fileRef = 810F92682E1395AB008CA4CA /* SDDSListItem.md */; };
+		810F926C2E1395AB008CA4CA /* SDDSList.md in Resources */ = {isa = PBXBuildFile; fileRef = 810F92622E1395AB008CA4CA /* SDDSList.md */; };
+		810F926D2E1395AB008CA4CA /* SDDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92692E1395AB008CA4CA /* SDDSListItem.swift */; };
+		810F926E2E1395AB008CA4CA /* ListSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92602E1395AB008CA4CA /* ListSizeConfiguration.swift */; };
+		810F926F2E1395AB008CA4CA /* ListAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F925F2E1395AB008CA4CA /* ListAppearance.swift */; };
+		810F92702E1395AB008CA4CA /* SDDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92632E1395AB008CA4CA /* SDDSList.swift */; };
+		810F92712E1395AB008CA4CA /* ListItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */; };
+		810F92722E1395AB008CA4CA /* ListItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92652E1395AB008CA4CA /* ListItemAppearance.swift */; };
+		810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */ = {isa = PBXBuildFile; fileRef = 810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */; };
+		810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */; };
+		810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */; };
+		810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */; };
 		8119DF5F2DF6FB8800D1CA9F /* NotificationAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */; };
 		8119DF602DF6FB8800D1CA9F /* ZeroNotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */; };
 		8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */; };
@@ -373,6 +385,18 @@
 		8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSTextArea.swift; sourceTree = "<group>"; };
 		8102BA392CBEAFB800C589D3 /* PlaceholderTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextEditor.swift; sourceTree = "<group>"; };
 		8102BA3B2CBEB32700C589D3 /* ExpandingTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextEditor.swift; sourceTree = "<group>"; };
+		810F925F2E1395AB008CA4CA /* ListAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppearance.swift; sourceTree = "<group>"; };
+		810F92602E1395AB008CA4CA /* ListSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSizeConfiguration.swift; sourceTree = "<group>"; };
+		810F92622E1395AB008CA4CA /* SDDSList.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSList.md; sourceTree = "<group>"; };
+		810F92632E1395AB008CA4CA /* SDDSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSList.swift; sourceTree = "<group>"; };
+		810F92652E1395AB008CA4CA /* ListItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemAppearance.swift; sourceTree = "<group>"; };
+		810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		810F92682E1395AB008CA4CA /* SDDSListItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSListItem.md; sourceTree = "<group>"; };
+		810F92692E1395AB008CA4CA /* SDDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSListItem.swift; sourceTree = "<group>"; };
+		810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarAppearance.swift; sourceTree = "<group>"; };
+		810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSizeConfiguration.swift; sourceTree = "<group>"; };
+		810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSScrollbar.md; sourceTree = "<group>"; };
+		810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSScrollbar.swift; sourceTree = "<group>"; };
 		8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSizeConfiguration.swift; sourceTree = "<group>"; };
 		8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroNotificationSize.swift; sourceTree = "<group>"; };
@@ -813,13 +837,72 @@
 			isa = PBXGroup;
 			children = (
 				693FE4772DDC966400E14D0E /* SDDSTextArea.md */,
-				81A079042DA3FB4800260DC9 /* Scrollbar */,
 				812DB7392D57B43900D3F4A3 /* TextArea.swift */,
 				812DB7302D57B43900D3F4A3 /* TextAreaAppearance */,
 				812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */,
 				8102BA2A2CBE9B3300C589D3 /* SDDSTextArea.swift */,
 			);
 			path = SDDSTextArea;
+			sourceTree = "<group>";
+		};
+		810F92612E1395AB008CA4CA /* ListAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				810F925F2E1395AB008CA4CA /* ListAppearance.swift */,
+				810F92602E1395AB008CA4CA /* ListSizeConfiguration.swift */,
+			);
+			path = ListAppearance;
+			sourceTree = "<group>";
+		};
+		810F92642E1395AB008CA4CA /* SDDSList */ = {
+			isa = PBXGroup;
+			children = (
+				810F92612E1395AB008CA4CA /* ListAppearance */,
+				810F92622E1395AB008CA4CA /* SDDSList.md */,
+				810F92632E1395AB008CA4CA /* SDDSList.swift */,
+			);
+			path = SDDSList;
+			sourceTree = "<group>";
+		};
+		810F92672E1395AB008CA4CA /* ListItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				810F92652E1395AB008CA4CA /* ListItemAppearance.swift */,
+				810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */,
+			);
+			path = ListItemAppearance;
+			sourceTree = "<group>";
+		};
+		810F926A2E1395AB008CA4CA /* SDDSListItem */ = {
+			isa = PBXGroup;
+			children = (
+				810F92672E1395AB008CA4CA /* ListItemAppearance */,
+				810F92682E1395AB008CA4CA /* SDDSListItem.md */,
+				810F92692E1395AB008CA4CA /* SDDSListItem.swift */,
+			);
+			path = SDDSListItem;
+			sourceTree = "<group>";
+		};
+		810FA5572E144457008CA4CA /* SDDSScrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				810FB5582E16DDED008CA4CA /* ScrollbarAppearance */,
+				810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */,
+				810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */,
+				81A079052DA3FB5400260DC9 /* ScrollBarData.swift */,
+				81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */,
+				81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */,
+			);
+			path = SDDSScrollbar;
+			sourceTree = "<group>";
+		};
+		810FB5582E16DDED008CA4CA /* ScrollbarAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */,
+				810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */,
+			);
+			path = ScrollbarAppearance;
 			sourceTree = "<group>";
 		};
 		8119DF5A2DF6FB8800D1CA9F /* NotificationAppearance */ = {
@@ -1374,6 +1457,9 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				810F92642E1395AB008CA4CA /* SDDSList */,
+				810F926A2E1395AB008CA4CA /* SDDSListItem */,
+				810FA5572E144457008CA4CA /* SDDSScrollbar */,
 				813687682E0186A800A1702A /* SDDSRectSkeleton */,
 				8136876A2E0186A800A1702A /* SDDSTextSkeleton */,
 				8178A0842DF2F6B5003F5041 /* SDDSModal */,
@@ -1553,16 +1639,6 @@
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		81A079042DA3FB4800260DC9 /* Scrollbar */ = {
-			isa = PBXGroup;
-			children = (
-				81A079052DA3FB5400260DC9 /* ScrollBarData.swift */,
-				81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */,
-				81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */,
-			);
-			path = Scrollbar;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -2003,6 +2079,9 @@
 			files = (
 				693FEF292DE097F800E14D0E /* SDDSDivider.swift in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
+				810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */,
+				810F926C2E1395AB008CA4CA /* SDDSList.md in Resources */,
+				810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2167,6 +2246,12 @@
 				812DB7522D57B44100D3F4A3 /* TextFieldLabelPlacement.swift in Sources */,
 				815D21142DE452100005273B /* PopoverTailShape.swift in Sources */,
 				69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */,
+				810F926D2E1395AB008CA4CA /* SDDSListItem.swift in Sources */,
+				810F926E2E1395AB008CA4CA /* ListSizeConfiguration.swift in Sources */,
+				810F926F2E1395AB008CA4CA /* ListAppearance.swift in Sources */,
+				810F92702E1395AB008CA4CA /* SDDSList.swift in Sources */,
+				810F92712E1395AB008CA4CA /* ListItemSizeConfiguration.swift in Sources */,
+				810F92722E1395AB008CA4CA /* ListItemAppearance.swift in Sources */,
 				815D1EF52DE04A360005273B /* PopoverSizeKey.swift in Sources */,
 				81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */,
 				812DB73C2D57B43900D3F4A3 /* TextAreaLayout.swift in Sources */,
@@ -2230,6 +2315,9 @@
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
 				81578DB82D89ADBA00BC7038 /* BottomSheetAppearance.swift in Sources */,
 				814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */,
+				810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */,
+				810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */,
+				810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */,
 				812DB7412D57B43900D3F4A3 /* TextAreaAppearance.swift in Sources */,
 				81F7E4E02DF058E700531844 /* PassthroughView.swift in Sources */,
 				81F7E4E12DF058E700531844 /* WindowOverlayService.swift in Sources */,
@@ -2544,7 +2632,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.21.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
@@ -2584,7 +2672,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.21.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;

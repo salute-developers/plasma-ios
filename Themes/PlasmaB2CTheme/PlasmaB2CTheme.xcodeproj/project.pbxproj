@@ -29,6 +29,26 @@
 		81157CEC2D64F48700254FB6 /* Spacings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81157CE92D64F48700254FB6 /* Spacings+Generated.swift */; };
 		81BA174A2D80684C008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
+		81DE0BAE2E20E61900DE2018 /* ListNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9F2E20E61900DE2018 /* ListNormal+BaseVariations.swift */; };
+		81DE0BAF2E20E61900DE2018 /* ListItemTightTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9D2E20E61900DE2018 /* ListItemTightTypography.swift */; };
+		81DE0BB02E20E61900DE2018 /* ScrollbarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BAC2E20E61900DE2018 /* ScrollbarTypography.swift */; };
+		81DE0BB12E20E61900DE2018 /* ListItemNormalTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B982E20E61900DE2018 /* ListItemNormalTypography.swift */; };
+		81DE0BB22E20E61900DE2018 /* Scrollbar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA92E20E61900DE2018 /* Scrollbar+BaseVariations.swift */; };
+		81DE0BB32E20E61900DE2018 /* ListTight+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA42E20E61900DE2018 /* ListTight+BaseVariations.swift */; };
+		81DE0BB42E20E61900DE2018 /* ListItemTightSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9C2E20E61900DE2018 /* ListItemTightSize.swift */; };
+		81DE0BB52E20E61900DE2018 /* ListNormalTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA22E20E61900DE2018 /* ListNormalTypography.swift */; };
+		81DE0BB62E20E61900DE2018 /* Scrollbar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BAA2E20E61900DE2018 /* Scrollbar+Variations.swift */; };
+		81DE0BB72E20E61900DE2018 /* ListItemTight+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9A2E20E61900DE2018 /* ListItemTight+BaseVariations.swift */; };
+		81DE0BB82E20E61900DE2018 /* ListItemNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B952E20E61900DE2018 /* ListItemNormal+BaseVariations.swift */; };
+		81DE0BB92E20E61900DE2018 /* ListItemNormalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B972E20E61900DE2018 /* ListItemNormalSize.swift */; };
+		81DE0BBA2E20E61900DE2018 /* ListItemTight+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9B2E20E61900DE2018 /* ListItemTight+Variations.swift */; };
+		81DE0BBB2E20E61900DE2018 /* ListNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA02E20E61900DE2018 /* ListNormal+Variations.swift */; };
+		81DE0BBC2E20E61900DE2018 /* ListTightTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA72E20E61900DE2018 /* ListTightTypography.swift */; };
+		81DE0BBD2E20E61900DE2018 /* ListItemNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B962E20E61900DE2018 /* ListItemNormal+Variations.swift */; };
+		81DE0BBE2E20E61900DE2018 /* ListTightSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA62E20E61900DE2018 /* ListTightSize.swift */; };
+		81DE0BBF2E20E61900DE2018 /* ListTight+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA52E20E61900DE2018 /* ListTight+Variations.swift */; };
+		81DE0BC02E20E61900DE2018 /* ScrollbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BAB2E20E61900DE2018 /* ScrollbarSize.swift */; };
+		81DE0BC12E20E61900DE2018 /* ListNormalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA12E20E61900DE2018 /* ListNormalSize.swift */; };
 		81E9D4CD6A4716F2C3A78BDB /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = 44471238CEF59A81ECFC4067 /* SBSansText-Light.otf */; };
 		81F2E88C2DF9FF0500708B40 /* IconBadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8242DF9FF0500708B40 /* IconBadgeTransparent+Variations.swift */; };
 		81F2E88D2DF9FF0500708B40 /* Badge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E79A2DF9FF0500708B40 /* Badge+Variations.swift */; };
@@ -339,6 +359,26 @@
 		81BBE21B2D75A14500612681 /* EmbeddedChip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+Variations.swift"; sourceTree = "<group>"; };
 		81BBE21C2D75A14500612681 /* EmbeddedChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipSize.swift; sourceTree = "<group>"; };
 		81BBE21D2D75A14500612681 /* EmbeddedChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipTypography.swift; sourceTree = "<group>"; };
+		81DE0B952E20E61900DE2018 /* ListItemNormal+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0B962E20E61900DE2018 /* ListItemNormal+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+Variations.swift"; sourceTree = "<group>"; };
+		81DE0B972E20E61900DE2018 /* ListItemNormalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemNormalSize.swift; sourceTree = "<group>"; };
+		81DE0B982E20E61900DE2018 /* ListItemNormalTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemNormalTypography.swift; sourceTree = "<group>"; };
+		81DE0B9A2E20E61900DE2018 /* ListItemTight+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemTight+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0B9B2E20E61900DE2018 /* ListItemTight+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemTight+Variations.swift"; sourceTree = "<group>"; };
+		81DE0B9C2E20E61900DE2018 /* ListItemTightSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTightSize.swift; sourceTree = "<group>"; };
+		81DE0B9D2E20E61900DE2018 /* ListItemTightTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTightTypography.swift; sourceTree = "<group>"; };
+		81DE0B9F2E20E61900DE2018 /* ListNormal+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNormal+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BA02E20E61900DE2018 /* ListNormal+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNormal+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BA12E20E61900DE2018 /* ListNormalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNormalSize.swift; sourceTree = "<group>"; };
+		81DE0BA22E20E61900DE2018 /* ListNormalTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNormalTypography.swift; sourceTree = "<group>"; };
+		81DE0BA42E20E61900DE2018 /* ListTight+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTight+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BA52E20E61900DE2018 /* ListTight+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTight+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BA62E20E61900DE2018 /* ListTightSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTightSize.swift; sourceTree = "<group>"; };
+		81DE0BA72E20E61900DE2018 /* ListTightTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTightTypography.swift; sourceTree = "<group>"; };
+		81DE0BA92E20E61900DE2018 /* Scrollbar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+BaseVariations.swift"; sourceTree = "<group>"; };
+		81DE0BAA2E20E61900DE2018 /* Scrollbar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+Variations.swift"; sourceTree = "<group>"; };
+		81DE0BAB2E20E61900DE2018 /* ScrollbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSize.swift; sourceTree = "<group>"; };
+		81DE0BAC2E20E61900DE2018 /* ScrollbarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarTypography.swift; sourceTree = "<group>"; };
 		81F2E78F2DF9FF0500708B40 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
 		81F2E7902DF9FF0500708B40 /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
 		81F2E7912DF9FF0500708B40 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
@@ -659,6 +699,61 @@
 				69397F6B2D79991F001913E2 /* Counter+BaseVariations.swift */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		81DE0B992E20E61900DE2018 /* ListItemNormal */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0B952E20E61900DE2018 /* ListItemNormal+BaseVariations.swift */,
+				81DE0B962E20E61900DE2018 /* ListItemNormal+Variations.swift */,
+				81DE0B972E20E61900DE2018 /* ListItemNormalSize.swift */,
+				81DE0B982E20E61900DE2018 /* ListItemNormalTypography.swift */,
+			);
+			path = ListItemNormal;
+			sourceTree = "<group>";
+		};
+		81DE0B9E2E20E61900DE2018 /* ListItemTight */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0B9A2E20E61900DE2018 /* ListItemTight+BaseVariations.swift */,
+				81DE0B9B2E20E61900DE2018 /* ListItemTight+Variations.swift */,
+				81DE0B9C2E20E61900DE2018 /* ListItemTightSize.swift */,
+				81DE0B9D2E20E61900DE2018 /* ListItemTightTypography.swift */,
+			);
+			path = ListItemTight;
+			sourceTree = "<group>";
+		};
+		81DE0BA32E20E61900DE2018 /* ListNormal */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0B9F2E20E61900DE2018 /* ListNormal+BaseVariations.swift */,
+				81DE0BA02E20E61900DE2018 /* ListNormal+Variations.swift */,
+				81DE0BA12E20E61900DE2018 /* ListNormalSize.swift */,
+				81DE0BA22E20E61900DE2018 /* ListNormalTypography.swift */,
+			);
+			path = ListNormal;
+			sourceTree = "<group>";
+		};
+		81DE0BA82E20E61900DE2018 /* ListTight */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BA42E20E61900DE2018 /* ListTight+BaseVariations.swift */,
+				81DE0BA52E20E61900DE2018 /* ListTight+Variations.swift */,
+				81DE0BA62E20E61900DE2018 /* ListTightSize.swift */,
+				81DE0BA72E20E61900DE2018 /* ListTightTypography.swift */,
+			);
+			path = ListTight;
+			sourceTree = "<group>";
+		};
+		81DE0BAD2E20E61900DE2018 /* Scrollbar */ = {
+			isa = PBXGroup;
+			children = (
+				81DE0BA92E20E61900DE2018 /* Scrollbar+BaseVariations.swift */,
+				81DE0BAA2E20E61900DE2018 /* Scrollbar+Variations.swift */,
+				81DE0BAB2E20E61900DE2018 /* ScrollbarSize.swift */,
+				81DE0BAC2E20E61900DE2018 /* ScrollbarTypography.swift */,
+			);
+			path = Scrollbar;
 			sourceTree = "<group>";
 		};
 		81F2E7932DF9FF0500708B40 /* Avatar */ = {
@@ -1249,6 +1344,11 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81DE0B992E20E61900DE2018 /* ListItemNormal */,
+				81DE0B9E2E20E61900DE2018 /* ListItemTight */,
+				81DE0BA32E20E61900DE2018 /* ListNormal */,
+				81DE0BA82E20E61900DE2018 /* ListTight */,
+				81DE0BAD2E20E61900DE2018 /* Scrollbar */,
 				81F2E7932DF9FF0500708B40 /* Avatar */,
 				81F2E7982DF9FF0500708B40 /* AvatarGroup */,
 				81F2E79D2DF9FF0500708B40 /* Badge */,
@@ -1620,6 +1720,26 @@
 				83E75171E405A41BF0C30A3C /* Typographies+Generated.swift in Sources */,
 				37103CAA961BB40AB55BABD8 /* SBSansText-Regular.otf in Sources */,
 				820F7A98E10920F19277CB49 /* SBSansText-LightItalic.otf in Sources */,
+				81DE0BAE2E20E61900DE2018 /* ListNormal+BaseVariations.swift in Sources */,
+				81DE0BAF2E20E61900DE2018 /* ListItemTightTypography.swift in Sources */,
+				81DE0BB02E20E61900DE2018 /* ScrollbarTypography.swift in Sources */,
+				81DE0BB12E20E61900DE2018 /* ListItemNormalTypography.swift in Sources */,
+				81DE0BB22E20E61900DE2018 /* Scrollbar+BaseVariations.swift in Sources */,
+				81DE0BB32E20E61900DE2018 /* ListTight+BaseVariations.swift in Sources */,
+				81DE0BB42E20E61900DE2018 /* ListItemTightSize.swift in Sources */,
+				81DE0BB52E20E61900DE2018 /* ListNormalTypography.swift in Sources */,
+				81DE0BB62E20E61900DE2018 /* Scrollbar+Variations.swift in Sources */,
+				81DE0BB72E20E61900DE2018 /* ListItemTight+BaseVariations.swift in Sources */,
+				81DE0BB82E20E61900DE2018 /* ListItemNormal+BaseVariations.swift in Sources */,
+				81DE0BB92E20E61900DE2018 /* ListItemNormalSize.swift in Sources */,
+				81DE0BBA2E20E61900DE2018 /* ListItemTight+Variations.swift in Sources */,
+				81DE0BBB2E20E61900DE2018 /* ListNormal+Variations.swift in Sources */,
+				81DE0BBC2E20E61900DE2018 /* ListTightTypography.swift in Sources */,
+				81DE0BBD2E20E61900DE2018 /* ListItemNormal+Variations.swift in Sources */,
+				81DE0BBE2E20E61900DE2018 /* ListTightSize.swift in Sources */,
+				81DE0BBF2E20E61900DE2018 /* ListTight+Variations.swift in Sources */,
+				81DE0BC02E20E61900DE2018 /* ScrollbarSize.swift in Sources */,
+				81DE0BC12E20E61900DE2018 /* ListNormalSize.swift in Sources */,
 				8D4707CBC080C6B2B07B42D4 /* SBSansText-Italic.otf in Sources */,
 				F544D874328E3C9C688C4DBE /* SBSansDisplay-Light.otf in Sources */,
 				772721E38E3D7C9D0E1C4A25 /* SBSansDisplay-Regular.otf in Sources */,
@@ -1664,7 +1784,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;
@@ -1765,7 +1885,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;

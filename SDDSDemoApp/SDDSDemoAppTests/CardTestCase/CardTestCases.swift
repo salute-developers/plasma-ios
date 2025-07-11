@@ -5,7 +5,6 @@
 //  Created by Булинов Ангрик Александрович on 24.06.2025.
 //
 
-import SDDSServTheme
 import SDDSComponents
 import UIKit
 import SwiftUI
@@ -16,8 +15,12 @@ import SDDSIcons
  */
 
 struct CardLHorizontal: View {
+    var apperance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: Card.l.appearance) {
+        SDDSCard(
+            appearance: apperance
+        ) {
             horizontalView
         }
         .padding()
@@ -25,8 +28,12 @@ struct CardLHorizontal: View {
 }
 
 struct CardMVertical: View {
+    var appearance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: Card.m.appearance) {
+        SDDSCard(
+            appearance: appearance
+        ) {
             verticalView
         }
         .padding()
@@ -34,8 +41,12 @@ struct CardMVertical: View {
 }
 
 struct CardSHorizontal: View {
+    var appearance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: Card.s.appearance) {
+        SDDSCard(
+            appearance: appearance
+        ) {
             horizontalView
         }
         .padding()
@@ -43,8 +54,12 @@ struct CardSHorizontal: View {
 }
 
 struct CardLClearVertical: View {
+    var appearance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: CardClear.l.appearance) {
+        SDDSCard(
+            appearance: appearance
+        ) {
             verticalView
         }
         .padding()
@@ -52,8 +67,10 @@ struct CardLClearVertical: View {
 }
 
 struct CardMClearHorizontal: View {
+    var appearance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: CardClear.m.appearance) {
+        SDDSCard(appearance: appearance) {
             verticalView
         }
         .padding()
@@ -61,8 +78,10 @@ struct CardMClearHorizontal: View {
 }
 
 struct CardSClearVertical: View {
+    var appearance: CardAppearance
+    
     var body: some View {
-        SDDSCard(appearance: CardClear.s.appearance) {
+        SDDSCard(appearance: appearance) {
             verticalView
         }
         .padding()
