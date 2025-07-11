@@ -30,6 +30,7 @@ struct DropdownMenuView: View {
             }
             
             Section {
+                layout
                 buttonPositionView
                 placementSelectionView
                 alignmentSelectionView
@@ -41,6 +42,15 @@ struct DropdownMenuView: View {
         .navigationTitle("DropdownMenu")
     }
     
+    @ViewBuilder
+    private var layout: some View {
+        Picker("Layout", selection: $viewModel.layout) {
+            ForEach(DropDownMenuLayout.allCases, id: \.self) { layout in
+                Text(layout.rawValue.capitalized).tag(layout)
+            }
+        }
+    }
+    
     private var duration: TimeInterval? {
         viewModel.autoHide ? 3.0 : nil
     }
@@ -50,7 +60,7 @@ struct DropdownMenuView: View {
         SDDSList(
             items: listItems,
             contentHeight: $contentHeight,
-            showDividers: true,
+            showDividers: viewModel.dividerEnabled,
             maxHeight: maxHeight,
             appearance: viewModel.appearance.listAppearance
         )
@@ -62,7 +72,7 @@ struct DropdownMenuView: View {
         let items = (0..<viewModel.itemsCount).map { index in
             SDDSListItem(
                 title: "Item \(index + 1)",
-                rightContentEnabled: false,
+                rightContentEnabled: viewModel.hasDisclosure,
                 disabled: false,
                 appearance: viewModel.appearance.listAppearance.listItemAppearance,
                 onTap: {}
@@ -283,6 +293,14 @@ struct DropdownMenuView: View {
     
     private var autoHideToggle: some View {
         Toggle("Auto Hide", isOn: $viewModel.autoHide)
+    }
+    
+    private var hasDisclosure: some View {
+        Toggle("Has Disclosure", isOn: $viewModel.hasDisclosure)
+    }
+    
+    private var dividerEnabled: some View {
+        Toggle("Divider Enabled", isOn: $viewModel.dividerEnabled)
     }
     
 

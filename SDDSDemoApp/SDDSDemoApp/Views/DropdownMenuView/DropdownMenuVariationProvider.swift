@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 import SDDSServTheme
 
-enum DropDownMenuStyle {
+enum DropDownMenuLayout: String, CaseIterable {
     case normal
     case tight
 }
@@ -11,15 +11,15 @@ final class DropdownMenuVariationProvider: VariationProvider {
     typealias Appearance = DropdownMenuAppearance
     
     var theme: Theme
-    var style: DropDownMenuStyle
+    var layout: DropDownMenuLayout = .normal
     
-    init(theme: Theme = .sdddsServTheme, style: DropDownMenuStyle = .normal) {
+    init(theme: Theme = .sdddsServTheme, layout: DropDownMenuLayout = .normal) {
         self.theme = theme
-        self.style = style
+        self.layout = layout
     }
     
     var variations: [Variation<DropdownMenuAppearance>] {
-        switch style {
+        switch layout {
         case .normal:
             theme.dropdownMenuNormalVariations
         case .tight:

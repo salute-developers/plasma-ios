@@ -23,6 +23,14 @@ final class DropdownMenuViewModel: ComponentViewModel<DropdownMenuVariationProvi
     @Published var duration: Int? = nil
     @Published var textInput: String = "3"
     @Published var itemsCount: Int = 3
+    @Published var hasDisclosure: Bool = false
+    @Published var dividerEnabled: Bool = false
+    @Published var layout: DropDownMenuLayout = .normal {
+        didSet {
+            variationProvider.layout = layout
+            self.selectVariation(variations.first)
+        }
+    }
     
     init() {
         super.init(variationProvider: DropdownMenuVariationProvider())
