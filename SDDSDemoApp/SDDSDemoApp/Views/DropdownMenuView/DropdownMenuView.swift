@@ -36,6 +36,8 @@ struct DropdownMenuView: View {
                 alignmentSelectionView
                 VariationsView(viewModel: viewModel)
                 itemsCount
+                hasDisclosure
+                dividerEnabled
                 autoHideToggle
             }
         }
