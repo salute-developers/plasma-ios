@@ -606,4 +606,27 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.DropdownMenuTight.all
         }
     }
+    
+    var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DropdownMenuItemNormal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.DropdownMenuItemNormal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.DropdownMenuItemNormal.all
+        }
+    }
+    
+    var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DropdownMenuItemTight.all
+        case .stylesSalute:
+            return StylesSaluteTheme.DropdownMenuItemTight.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.DropdownMenuItemTight.all
+        }
+    }
+    
 }

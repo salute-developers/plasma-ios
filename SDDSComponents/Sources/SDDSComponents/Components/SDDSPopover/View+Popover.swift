@@ -40,6 +40,7 @@ public extension View {
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
+        ignoreTrigger: Bool = false,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
@@ -62,6 +63,7 @@ public extension View {
                                         duration: duration,
                                         popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
                                         contentHeight: contentHeight,
+                                        ignoreTrigger: ignoreTrigger,
                                         onClose: {
                                             isPresented.wrappedValue = false
                                             WindowOverlayService.shared.hide()

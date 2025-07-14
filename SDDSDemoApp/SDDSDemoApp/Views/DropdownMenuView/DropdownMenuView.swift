@@ -35,6 +35,7 @@ struct DropdownMenuView: View {
                 placementSelectionView
                 alignmentSelectionView
                 VariationsView(viewModel: viewModel)
+                dropdownItemStyle
                 itemsCount
                 hasDisclosure
                 dividerEnabled
@@ -43,6 +44,27 @@ struct DropdownMenuView: View {
             }
         }
         .navigationTitle("DropdownMenu")
+    }
+    
+    @ViewBuilder
+    private var dropdownItemStyle: some View {
+        HStack {
+            Text("DropDownItem Style")
+            Menu {
+                ForEach(viewModel.itemStyles, id: \.self) { style in
+                    Button(style.name) {
+                        viewModel.itemStyle = style
+                    }
+                }
+            } label: {
+                HStack {
+                    Spacer()
+                    Text(viewModel.itemStyle?.name ?? "")
+                        .multilineTextAlignment(.trailing)
+                        .padding(.trailing, 8)
+                }
+            }
+        }
     }
     
     @ViewBuilder

@@ -60,6 +60,7 @@ public extension View {
             placementMode: placementMode,
             duration: duration,
             contentHeight: contentHeight,
+            ignoreTrigger: true,
             onClose: onClose,
             content: content
         )
