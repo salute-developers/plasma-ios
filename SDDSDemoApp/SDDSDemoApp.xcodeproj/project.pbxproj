@@ -35,6 +35,14 @@
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
+		810F55DD2E27A9D100218FE7 /* AccordionItemVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */; };
+		810F55DE2E27A9D100218FE7 /* AccordionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */; };
+		810F55DF2E27A9D100218FE7 /* AccordionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */; };
+		810F55E02E27A9D100218FE7 /* AccordionItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */; };
+		810F84BC2E27F5B500218FE7 /* AccordionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84B92E27F5B500218FE7 /* AccordionLayout.swift */; };
+		810F84BD2E27F5B500218FE7 /* AccordionVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */; };
+		810F84BF2E27F5C300218FE7 /* AccordionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */; };
+		810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84C02E27F5D100218FE7 /* AccordionView.swift */; };
 		810F95942E13A1FE008CA4CA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F95912E13A1FE008CA4CA /* ListView.swift */; };
 		810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F95902E13A1FE008CA4CA /* ListVariationProvider.swift */; };
 		810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F958E2E13A1FE008CA4CA /* ListItemViewModel.swift */; };
@@ -203,6 +211,14 @@
 		698744732D1C6EB800559ABA /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
 		698902662D651763003DCE58 /* CellVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVariationProvider.swift; sourceTree = "<group>"; };
+		810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemLayout.swift; sourceTree = "<group>"; };
+		810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemVariationProvider.swift; sourceTree = "<group>"; };
+		810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemView.swift; sourceTree = "<group>"; };
+		810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemViewModel.swift; sourceTree = "<group>"; };
+		810F84B92E27F5B500218FE7 /* AccordionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionLayout.swift; sourceTree = "<group>"; };
+		810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionVariationProvider.swift; sourceTree = "<group>"; };
+		810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionViewModel.swift; sourceTree = "<group>"; };
+		810F84C02E27F5D100218FE7 /* AccordionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionView.swift; sourceTree = "<group>"; };
 		810F958C2E13A1FE008CA4CA /* ListItemVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemVariationProvider.swift; sourceTree = "<group>"; };
 		810F958D2E13A1FE008CA4CA /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		810F958E2E13A1FE008CA4CA /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
@@ -319,6 +335,7 @@
 		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ModalTestCase; sourceTree = "<group>"; };
 		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RectSkeletonTestCase; sourceTree = "<group>"; };
 		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextSkeletonTestCase; sourceTree = "<group>"; };
+		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
@@ -423,6 +440,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
 				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
@@ -516,6 +534,28 @@
 			path = SegmentItemView;
 			sourceTree = "<group>";
 		};
+		810F55DC2E27A9D100218FE7 /* AccordionItemView */ = {
+			isa = PBXGroup;
+			children = (
+				810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */,
+				810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */,
+				810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */,
+				810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */,
+			);
+			path = AccordionItemView;
+			sourceTree = "<group>";
+		};
+		810F84BB2E27F5B500218FE7 /* AccordionView */ = {
+			isa = PBXGroup;
+			children = (
+				810F84C02E27F5D100218FE7 /* AccordionView.swift */,
+				810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */,
+				810F84B92E27F5B500218FE7 /* AccordionLayout.swift */,
+				810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */,
+			);
+			path = AccordionView;
+			sourceTree = "<group>";
+		};
 		810F958F2E13A1FE008CA4CA /* ListItemView */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +607,8 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				810F84BB2E27F5B500218FE7 /* AccordionView */,
+				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
 				816332222E1FB2BB00110F27 /* DropdownMenuView */,
 				817C5D492E1F866C00B9286C /* ScrollbarView */,
 				810F958F2E13A1FE008CA4CA /* ListItemView */,
@@ -981,6 +1023,7 @@
 				D3839E792E0E8CD000B6E830 /* ModalTestCase */,
 				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
 				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
+				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
@@ -1128,8 +1171,11 @@
 				815D38B82DE5BC570005273B /* PopoverView.swift in Sources */,
 				815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */,
 				810F95942E13A1FE008CA4CA /* ListView.swift in Sources */,
+				810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */,
 				810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */,
 				810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */,
+				810F84BC2E27F5B500218FE7 /* AccordionLayout.swift in Sources */,
+				810F84BD2E27F5B500218FE7 /* AccordionVariationProvider.swift in Sources */,
 				810F95972E13A1FE008CA4CA /* ListViewModel.swift in Sources */,
 				810F95982E13A1FE008CA4CA /* ListItemVariationProvider.swift in Sources */,
 				810F95992E13A1FE008CA4CA /* ListItemView.swift in Sources */,
@@ -1165,6 +1211,7 @@
 				8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */,
 				8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */,
 				8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */,
+				810F84BF2E27F5C300218FE7 /* AccordionViewModel.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
@@ -1199,6 +1246,10 @@
 				81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
+				810F55DD2E27A9D100218FE7 /* AccordionItemVariationProvider.swift in Sources */,
+				810F55DE2E27A9D100218FE7 /* AccordionItemView.swift in Sources */,
+				810F55DF2E27A9D100218FE7 /* AccordionItemViewModel.swift in Sources */,
+				810F55E02E27A9D100218FE7 /* AccordionItemLayout.swift in Sources */,
 				81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,

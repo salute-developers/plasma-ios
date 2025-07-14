@@ -23,7 +23,7 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
         }
         let componentParts = componentVariation
             .filter {
-                if $0.contains("solid") {
+                if $0.contains("solid") && !string.contains("accordion") {
                     return false
                 }
                 return true

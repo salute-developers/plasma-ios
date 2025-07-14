@@ -629,4 +629,92 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemClearActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemClearActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemClearActionStart.all
+        }
+    }
+    
+    var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemClearActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemClearActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemClearActionEnd.all
+        }
+    }
+    
+    var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemSolidActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemSolidActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemSolidActionStart.all
+        }
+    }
+    
+    var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemSolidActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemSolidActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemSolidActionEnd.all
+        }
+    }
+    
+    var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionClearActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionClearActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionClearActionStart.all
+        }
+    }
+    
+    var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionClearActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionClearActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionClearActionEnd.all
+        }
+    }
+    
+    var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionSolidActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionSolidActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionSolidActionStart.all
+        }
+    }
+    
+    var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionSolidActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionSolidActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionSolidActionEnd.all
+        }
+    }
+    
 }

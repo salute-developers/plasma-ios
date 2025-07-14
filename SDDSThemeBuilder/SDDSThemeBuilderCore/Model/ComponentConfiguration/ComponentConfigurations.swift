@@ -33,3 +33,5 @@ typealias ListItemConfiguration = ComponentConfiguration<ListItemProps>
 typealias ListConfiguration = ComponentConfiguration<ListProps>
 typealias ScrollbarConfiguration = ComponentConfiguration<ScrollbarProps>
 typealias DropdownMenuConfiguration = ComponentConfiguration<DropdownMenuProps>
+typealias AccordionItemConfiguration = ComponentConfiguration<AccordionItemProps>
+typealias AccordionActionConfiguration = ComponentConfiguration<AccordionActionProps>
