@@ -42,6 +42,7 @@ struct SDDSPopover<Content: View>: View {
     private let content: Content
     private let popoverSizeCalculator: PopoverSizeCalculator
     private let contentHeight: CGFloat?
+    private let ignoreTrigger: Bool
     @Binding private var isPresented: Bool
     
     @State private var popoverSize: CGSize = .zero
@@ -60,6 +61,7 @@ struct SDDSPopover<Content: View>: View {
         duration: TimeInterval? = nil,
         popoverSizeCalculator: PopoverSizeCalculator,
         contentHeight: CGFloat? = nil,
+        ignoreTrigger: Bool = false,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) {
@@ -75,6 +77,7 @@ struct SDDSPopover<Content: View>: View {
         self.content = content()
         self.popoverSizeCalculator = popoverSizeCalculator
         self.contentHeight = contentHeight
+        self.ignoreTrigger = ignoreTrigger
         _placementState = State(initialValue: placement)
     }
     
@@ -160,14 +163,16 @@ struct SDDSPopover<Content: View>: View {
         triggerSize: CGSize
     ) -> CGSize {
         let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
-        let verticalExtraOffset: CGFloat = 0//isLandscape ? triggerSize.height : 0
+        let verticalExtraOffset: CGFloat = 0
+        let triggerWidthFactor: CGFloat = ignoreTrigger ? 1.0 : 2.0
+        
         switch placement {
         case .top:
             switch alignment {
             case .start:
                 let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
-                    width: popoverSize.width / 2 - triggerSize.width / 2 + offset,
+                    width: popoverSize.width / 2 - triggerSize.width / triggerWidthFactor + offset,
                     height: -popoverSize.height / 2 - tailOffset - triggerSize.height / 2 - appearance.size.offset - verticalExtraOffset
                 )
             case .center:
@@ -177,7 +182,7 @@ struct SDDSPopover<Content: View>: View {
             case .end:
                 let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
-                    width: -popoverSize.width / 2 + triggerSize.width / 2 - offset,
+                    width: -popoverSize.width / 2 + triggerSize.width / triggerWidthFactor - offset,
                     height: -popoverSize.height / 2 - tailOffset - triggerSize.height / 2 - appearance.size.offset - verticalExtraOffset
                 )
             }
@@ -186,7 +191,7 @@ struct SDDSPopover<Content: View>: View {
             case .start:
                 let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
-                    width: popoverSize.width / 2 - triggerSize.width / 2 + offset,
+                    width: popoverSize.width / 2 - triggerSize.width / triggerWidthFactor + offset,
                     height: popoverSize.height / 2 + tailOffset + triggerSize.height / 2 + appearance.size.offset + verticalExtraOffset
                 )
             case .center:
@@ -197,7 +202,7 @@ struct SDDSPopover<Content: View>: View {
             case .end:
                 let offset = triggerCentered ? (triggerSize.width / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
-                    width: -popoverSize.width / 2 + triggerSize.width / 2 - offset,
+                    width: -popoverSize.width / 2 + triggerSize.width / triggerWidthFactor - offset,
                     height: popoverSize.height / 2 + tailOffset + triggerSize.height / 2 + appearance.size.offset + verticalExtraOffset
                 )
             }
@@ -207,7 +212,7 @@ struct SDDSPopover<Content: View>: View {
                 let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
                     width: -popoverSize.width / 2 - tailOffset - triggerSize.width / 2 - appearance.size.offset,
-                    height: popoverSize.height / 2 - triggerSize.height / 2 + offset + verticalExtraOffset
+                    height: popoverSize.height / 2 - triggerSize.height / triggerWidthFactor + offset + verticalExtraOffset
                 )
             case .center:
                 return CGSize(
@@ -218,7 +223,7 @@ struct SDDSPopover<Content: View>: View {
                 let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
                     width: -popoverSize.width / 2 - tailOffset - triggerSize.width / 2 - appearance.size.offset,
-                    height: -popoverSize.height / 2 + triggerSize.height / 2 - offset + verticalExtraOffset
+                    height: -popoverSize.height / 2 + triggerSize.height / triggerWidthFactor - offset + verticalExtraOffset
                 )
             }
         case .end:
@@ -227,7 +232,7 @@ struct SDDSPopover<Content: View>: View {
                 let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
                     width: popoverSize.width / 2 + tailOffset + triggerSize.width / 2 + appearance.size.offset,
-                    height: popoverSize.height / 2 - triggerSize.height / 2 + offset + verticalExtraOffset
+                    height: popoverSize.height / 2 - triggerSize.height / triggerWidthFactor + offset + verticalExtraOffset
                 )
             case .center:
                 return CGSize(
@@ -238,7 +243,7 @@ struct SDDSPopover<Content: View>: View {
                 let offset = triggerCentered ? (triggerSize.height / 2 - tailPadding - appearance.size.tailWidth / 2) : 0
                 return CGSize(
                     width: popoverSize.width / 2 + tailOffset + triggerSize.width / 2 + appearance.size.offset,
-                    height: -popoverSize.height / 2 + triggerSize.height / 2 - offset + verticalExtraOffset
+                    height: -popoverSize.height / 2 + triggerSize.height / triggerWidthFactor - offset + verticalExtraOffset
                 )
             }
         }

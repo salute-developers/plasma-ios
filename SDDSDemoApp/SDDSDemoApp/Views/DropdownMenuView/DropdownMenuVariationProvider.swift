@@ -27,6 +27,15 @@ final class DropdownMenuVariationProvider: VariationProvider {
         }
     }
     
+    var itemVariations: [Variation<ListItemAppearance>] {
+        switch layout {
+        case .normal:
+            theme.dropdownItemNormalVariations
+        case .tight:
+            theme.dropdownItemTightVariations
+        }
+    }
+    
     var defaultValue: DropdownMenuAppearance {
         variations.first?.appearance ?? DropdownMenuAppearance()
     }
