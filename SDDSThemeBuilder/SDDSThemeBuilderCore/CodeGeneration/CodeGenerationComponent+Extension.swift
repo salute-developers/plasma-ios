@@ -58,6 +58,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case listNormal = "ListNormal"
     case listTight = "ListTight"
     case scrollbar = "ScrollBar"
+    case accordionItemSolidActionStart = "AccordionItemSolidActionStart"
+    case accordionItemSolidActionEnd = "AccordionItemSolidActionEnd"
+    case accordionItemClearActionStart = "AccordionItemClearActionStart"
+    case accordionItemClearActionEnd = "AccordionItemClearActionEnd"
+    case accordionSolidActionStart = "AccordionSolidActionStart"
+    case accordionSolidActionEnd = "AccordionSolidActionEnd"
+    case accordionClearActionStart = "AccordionClearActionStart"
+    case accordionClearActionEnd = "AccordionClearActionEnd"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -117,7 +125,15 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .dropdownMenuTight,
             .listNormal,
             .listTight,
-            .scrollbar
+            .scrollbar,
+            .accordionItemSolidActionStart,
+            .accordionItemSolidActionEnd,
+            .accordionItemClearActionStart,
+            .accordionItemClearActionEnd,
+            .accordionSolidActionStart,
+            .accordionSolidActionEnd,
+            .accordionClearActionStart,
+            .accordionClearActionEnd
         ]
     }
     
@@ -192,6 +208,10 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<DropdownMenuProps, DropdownMenuAppearance, DropdownMenuSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
+            GenerateComponentCommand<AccordionItemProps, AccordionItemAppearance, AccordionItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .accordionSolidActionStart, .accordionSolidActionEnd, .accordionClearActionStart, .accordionClearActionEnd:
+            GenerateComponentCommand<AccordionActionProps, AccordionAppearance, AccordionSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .scrollbar:
             GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
@@ -265,6 +285,10 @@ extension CodeGenerationComponent {
             "DropdownMenuAppearance"
         case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             "ListAppearance"
+        case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
+            "AccordionItemAppearance"
+        case .accordionSolidActionStart, .accordionSolidActionEnd, .accordionClearActionStart, .accordionClearActionEnd:
+            "AccordionAppearance"
         case .scrollbar:
             "ScrollbarAppearance"
         }
@@ -339,6 +363,10 @@ extension CodeGenerationComponent {
             "DropdownMenuSizeConfiguration"
         case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
             "ListSizeConfiguration"
+        case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
+            "AccordionItemSizeConfiguration"
+        case .accordionSolidActionStart, .accordionSolidActionEnd, .accordionClearActionStart, .accordionClearActionEnd:
+            "AccordionSizeConfiguration"
         case .scrollbar:
             "ScrollbarSizeConfiguration"
         }
@@ -458,6 +486,22 @@ extension CodeGenerationComponent {
             "list_normal_config.json"
         case .listTight:
             "list_tight_config.json"
+        case .accordionItemSolidActionStart:
+            "accordion_item_solid_action_start_config.json"
+        case .accordionItemSolidActionEnd:
+            "accordion_item_solid_action_end_config.json"
+        case .accordionItemClearActionStart:
+            "accordion_item_clear_action_start_config.json"
+        case .accordionItemClearActionEnd:
+            "accordion_item_clear_action_end_config.json"
+        case .accordionSolidActionStart:
+            "accordion_solid_action_start_config.json"
+        case .accordionSolidActionEnd:
+            "accordion_solid_action_end_config.json"
+        case .accordionClearActionStart:
+            "accordion_clear_action_start_config.json"
+        case .accordionClearActionEnd:
+            "accordion_clear_action_end_config.json"
         case .scrollbar:
             "scroll_bar_config.json"
         }
