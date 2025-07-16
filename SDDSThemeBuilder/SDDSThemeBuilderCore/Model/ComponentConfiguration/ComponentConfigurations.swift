@@ -35,3 +35,4 @@ typealias ScrollbarConfiguration = ComponentConfiguration<ScrollbarProps>
 typealias DropdownMenuConfiguration = ComponentConfiguration<DropdownMenuProps>
 typealias AccordionItemConfiguration = ComponentConfiguration<AccordionItemProps>
 typealias AccordionActionConfiguration = ComponentConfiguration<AccordionActionProps>
+typealias SpinnerConfiguration = ComponentConfiguration<SpinnerProps>

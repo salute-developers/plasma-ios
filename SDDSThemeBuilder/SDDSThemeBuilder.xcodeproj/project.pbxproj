@@ -97,6 +97,10 @@
 		8119DF542DF6F7F600D1CA9F /* NotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */; };
 		8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF552DF6F86700D1CA9F /* NotificationProps.swift */; };
 		811D2DE82D1095A6001C0F48 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 811D2DE72D1095A6001C0F48 /* SDDSComponents */; };
+		81205C112E28FDE700AA29ED /* SpinnerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */; };
+		81205C122E28FDE700AA29ED /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */; };
+		81205C142E28FE1B00AA29ED /* SpinnerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C132E28FE1B00AA29ED /* SpinnerProps.swift */; };
+		81205C162E28FFC300AA29ED /* StrokeCapContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */; };
 		812DB6D22D5490E000D3F4A3 /* CodeGenerationContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */; };
 		812DB6D82D54B75400D3F4A3 /* Component+Variations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
 		812DB6D92D54D21D00D3F4A3 /* Component+Variations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
@@ -601,6 +605,10 @@
 		8119DF4E2DF6F7F600D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSize.swift; sourceTree = "<group>"; };
 		8119DF552DF6F86700D1CA9F /* NotificationProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProps.swift; sourceTree = "<group>"; };
+		81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAppearance.swift; sourceTree = "<group>"; };
+		81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
+		81205C132E28FE1B00AA29ED /* SpinnerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProps.swift; sourceTree = "<group>"; };
+		81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeCapContextBuilder.swift; sourceTree = "<group>"; };
 		812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationContexts.swift; sourceTree = "<group>"; };
 		812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+Variations.stencil"; sourceTree = "<group>"; };
 		812DB6DD2D55E2BD00D3F4A3 /* MergeableConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeableConfiguration.swift; sourceTree = "<group>"; };
@@ -1273,6 +1281,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		81205C102E28FDE700AA29ED /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */,
+				81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
 		812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,6 +1305,7 @@
 			isa = PBXGroup;
 			children = (
 				810F4C5D2E26703100218FE7 /* AccordionItemPlacementBuilder.swift */,
+				81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */,
 				818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */,
 				816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */,
 				6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */,
@@ -1337,6 +1355,7 @@
 			children = (
 				810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */,
 				810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */,
+				81205C132E28FE1B00AA29ED /* SpinnerProps.swift */,
 				817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */,
 				810F92582E12EA5D008CA4CA /* ListProps.swift */,
 				810F92512E12E713008CA4CA /* ListItemProps.swift */,
@@ -1379,6 +1398,7 @@
 			children = (
 				810F4C632E2674EB00218FE7 /* Accordion */,
 				810F4C582E266FC500218FE7 /* AccordionItem */,
+				81205C102E28FDE700AA29ED /* Spinner */,
 				817CF57D2E1C0F3700B9286C /* DropdownMenu */,
 				810F925C2E12EA6D008CA4CA /* List */,
 				810F92552E12E720008CA4CA /* ListItem */,
@@ -2617,6 +2637,7 @@
 				816F62D82DCBAE9600EC9121 /* CircularProgressBarAppearance.swift in Sources */,
 				8119DF532DF6F7F600D1CA9F /* NotificationAppearance.swift in Sources */,
 				8119DF542DF6F7F600D1CA9F /* NotificationSize.swift in Sources */,
+				81205C142E28FE1B00AA29ED /* SpinnerProps.swift in Sources */,
 				81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */,
 				8139923E2D9ED9BA0015AF83 /* SegmentSize.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
@@ -2698,6 +2719,7 @@
 				818E33162DDDC18E00130AF9 /* ShadowKeyValue.swift in Sources */,
 				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				812DB6F42D55E48C00D3F4A3 /* KeyValue.swift in Sources */,
+				81205C162E28FFC300AA29ED /* StrokeCapContextBuilder.swift in Sources */,
 				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
 				812DB7052D56328C00D3F4A3 /* CodeGenerationSize.swift in Sources */,
 				813340302C073C42005AD84F /* URL+Extensions.swift in Sources */,
@@ -2716,6 +2738,8 @@
 				8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */,
 				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
 				81CB0FE72C245052003B1064 /* TemplateRenderer.swift in Sources */,
+				81205C112E28FDE700AA29ED /* SpinnerAppearance.swift in Sources */,
+				81205C122E28FDE700AA29ED /* SpinnerSize.swift in Sources */,
 				81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */,
 				81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */,
 				812DB7A12D59DAF000D3F4A3 /* ComponentConfigurations.swift in Sources */,

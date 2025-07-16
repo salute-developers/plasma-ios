@@ -15,6 +15,7 @@ struct ComponentsView: View {
         ("Radiobox", AnyView(RadioboxView())),
         ("RadioboxGroup", AnyView(RadioboxGroupView())),
         ("Scrollbar", AnyView(ScrollbarView())),
+        ("Spinner", AnyView(SpinnerView())),
         ("Switch", AnyView(SwitchView())),
         ("TextArea", AnyView(TextAreaView())),
         ("TextField", AnyView(TextFieldView())),
