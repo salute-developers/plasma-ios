@@ -66,6 +66,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case accordionSolidActionEnd = "AccordionSolidActionEnd"
     case accordionClearActionStart = "AccordionClearActionStart"
     case accordionClearActionEnd = "AccordionClearActionEnd"
+    case spinner = "Spinner"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -133,7 +134,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .accordionSolidActionStart,
             .accordionSolidActionEnd,
             .accordionClearActionStart,
-            .accordionClearActionEnd
+            .accordionClearActionEnd,
+            .spinner
         ]
     }
     
@@ -214,6 +216,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<AccordionActionProps, AccordionAppearance, AccordionSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .scrollbar:
             GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .spinner:
+            GenerateComponentCommand<SpinnerProps, SpinnerAppearance, SpinnerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -291,6 +295,8 @@ extension CodeGenerationComponent {
             "AccordionAppearance"
         case .scrollbar:
             "ScrollbarAppearance"
+        case .spinner:
+            "SpinnerAppearance"
         }
     }
     
@@ -369,6 +375,8 @@ extension CodeGenerationComponent {
             "AccordionSizeConfiguration"
         case .scrollbar:
             "ScrollbarSizeConfiguration"
+        case .spinner:
+            "SpinnerSizeConfiguration"
         }
     }
     
@@ -504,6 +512,8 @@ extension CodeGenerationComponent {
             "accordion_clear_action_end_config.json"
         case .scrollbar:
             "scroll_bar_config.json"
+        case .spinner:
+            "spinner_config.json"
         }
     }
     

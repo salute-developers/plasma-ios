@@ -161,4 +161,9 @@ public extension EnvironmentValues {
         get { self[AccordionAppearance.self] }
         set { self[AccordionAppearance.self] = newValue }
     }
+
+    var spinnerAppearance: SpinnerAppearance {
+        get { self[SpinnerAppearance.self] }
+        set { self[SpinnerAppearance.self] = newValue }
+    }
 }

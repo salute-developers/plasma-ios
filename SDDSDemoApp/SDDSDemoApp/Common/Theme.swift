@@ -717,4 +717,14 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var spinnerVariations: [Variation<SpinnerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Spinner.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Spinner.all
+        }
+    }    
 }
