@@ -151,4 +151,14 @@ public extension EnvironmentValues {
         get { self[DropdownMenuAppearance.self] }
         set { self[DropdownMenuAppearance.self] = newValue }
     }
+    
+    var accordionItemAppearance: AccordionItemAppearance {
+        get { self[AccordionItemAppearance.self] }
+        set { self[AccordionItemAppearance.self] = newValue }
+    }
+    
+    var accordionAppearance: AccordionAppearance {
+        get { self[AccordionAppearance.self] }
+        set { self[AccordionAppearance.self] = newValue }
+    }
 }
