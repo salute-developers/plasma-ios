@@ -64,6 +64,9 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
+		812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065822E29072300AA29ED /* SpinnerViewModel.swift */; };
+		812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065802E29072300AA29ED /* SpinnerVariationProvider.swift */; };
+		812065862E29072400AA29ED /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065812E29072300AA29ED /* SpinnerView.swift */; };
 		8127A0832E0ABD1700B320D1 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8127A0822E0ABD1700B320D1 /* SDSnapshots */; };
 		81368A6E2E01879900A1702A /* RectSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */; };
 		81368A6F2E01879900A1702A /* TextSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */; };
@@ -240,6 +243,9 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		812065802E29072300AA29ED /* SpinnerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVariationProvider.swift; sourceTree = "<group>"; };
+		812065812E29072300AA29ED /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		812065822E29072300AA29ED /* SpinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewModel.swift; sourceTree = "<group>"; };
 		81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonVariationProvider.swift; sourceTree = "<group>"; };
 		81368A672E01879900A1702A /* RectSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonView.swift; sourceTree = "<group>"; };
 		81368A682E01879900A1702A /* RectSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonViewModel.swift; sourceTree = "<group>"; };
@@ -609,6 +615,7 @@
 			children = (
 				810F84BB2E27F5B500218FE7 /* AccordionView */,
 				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
+				812065832E29072300AA29ED /* SpinnerView */,
 				816332222E1FB2BB00110F27 /* DropdownMenuView */,
 				817C5D492E1F866C00B9286C /* ScrollbarView */,
 				810F958F2E13A1FE008CA4CA /* ListItemView */,
@@ -689,6 +696,16 @@
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
 			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		812065832E29072300AA29ED /* SpinnerView */ = {
+			isa = PBXGroup;
+			children = (
+				812065802E29072300AA29ED /* SpinnerVariationProvider.swift */,
+				812065812E29072300AA29ED /* SpinnerView.swift */,
+				812065822E29072300AA29ED /* SpinnerViewModel.swift */,
+			);
+			path = SpinnerView;
 			sourceTree = "<group>";
 		};
 		81368A692E01879900A1702A /* RectSkeletonView */ = {
@@ -1277,6 +1294,9 @@
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,
 				8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */,
+				812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */,
+				812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */,
+				812065862E29072400AA29ED /* SpinnerView.swift in Sources */,
 				8119E2602DF6FCA700D1CA9F /* NotificationViewModel.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
 				694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */,
