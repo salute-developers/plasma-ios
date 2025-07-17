@@ -98,24 +98,23 @@ public struct SDDSAccordion: View {
     }
     
     public var body: some View {
-        LazyVStack(spacing: 0) {
-            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                SDDSAccordionItem(
-                    title: item.title,
-                    content: item.content,
-                    isExpanded: item.isExpanded,
-                    appearance: item.appearance ?? appearance.accordionItemAppearance,
-                    onToggle: item.onToggle,
-                    applyShape: false
-                )
-                .padding([.top, .bottom], appearance.size.itemSpacing)
-                if index != items.count - 1 && showDividers {
-                    SDDSDivider(appearance: appearance.dividerAppearance)
+        ScrollView(showsIndicators: false) {
+            LazyVStack(spacing: 0) {
+                ForEach(Array(items.enumerated()), id: \.offset) { index, item in
+                    SDDSAccordionItem(
+                        title: item.title,
+                        content: item.content,
+                        isExpanded: item.isExpanded,
+                        appearance: item.appearance ?? appearance.accordionItemAppearance,
+                        onToggle: item.onToggle
+                    )
+                    .padding([.top, .bottom], appearance.size.itemSpacing)
+                    if index != items.count - 1 && showDividers {
+                        SDDSDivider(appearance: appearance.dividerAppearance)
+                    }
                 }
             }
         }
-        .background(appearance.accordionItemAppearance.backgroundColor.color(for: colorScheme))
-        .shape(pathDrawer: appearance.accordionItemAppearance.size.shape)
     }
     
     var appearance: AccordionAppearance {

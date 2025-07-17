@@ -12,15 +12,14 @@ struct AccordionView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
+            //ScrollView {
                 SDDSAccordion(
                     items: viewModel.accordionItems,
                     showDividers: viewModel.canChangeDividers ? viewModel.showDividers : false,
                     appearance: viewModel.appearance
                 )
-            }
-            .scrollIndicators(.hidden)
-            Spacer()
+//            }
+//            .scrollIndicators(.hidden)
             List {
                 Section {
                     Picker("Layout", selection: $viewModel.layout) {

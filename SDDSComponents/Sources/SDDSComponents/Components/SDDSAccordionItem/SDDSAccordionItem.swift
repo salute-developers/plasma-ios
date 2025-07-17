@@ -63,7 +63,6 @@ public struct SDDSAccordionItem: View {
     private let title: String
     private let content: String
     private let onToggle: ((Bool) -> ())?
-    private let applyShape: Bool
     @State private var isExpanded: Bool
     @State private var isHovered: Bool = false
     
@@ -72,15 +71,13 @@ public struct SDDSAccordionItem: View {
         content: String = "",
         isExpanded: Bool = false,
         appearance: AccordionItemAppearance? = nil,
-        onToggle: ((Bool) -> ())? = nil,
-        applyShape: Bool = true
+        onToggle: ((Bool) -> ())? = nil
     ) {
         self.title = title
         self.content = content
         self._isExpanded = State(initialValue: isExpanded)
         self.onToggle = onToggle
         self._appearance = appearance
-        self.applyShape = applyShape
     }
     
     public var body: some View {
@@ -103,11 +100,11 @@ public struct SDDSAccordionItem: View {
                     .transition(.opacity)
             }
         }
-        .applyIf(applyShape) { $0.shape(pathDrawer: appearance.size.shape) }
+        .shape(pathDrawer: appearance.size.shape)
     }
     
     @ViewBuilder private var titleCell: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 0) {
+        HStack(alignment: .center, spacing: 0) {
             if appearance.size.iconPlacement == .start {
                 disclosureIcon
                     .padding(.trailing, appearance.size.iconPadding)
@@ -116,9 +113,6 @@ public struct SDDSAccordionItem: View {
             Text(title)
                 .foregroundStyle(appearance.titleColor.color(for: colorScheme))
                 .typography(titleTypography)
-                .alignmentGuide(.firstTextBaseline) { d in
-                    d[.firstTextBaseline]
-                }
             
             Spacer()
             
@@ -150,13 +144,17 @@ public struct SDDSAccordionItem: View {
         if let icon = isExpanded ? appearance.openedIcon : appearance.closedIcon {
             icon
                 .renderingMode(.template)
-                .resizable()
+                //.resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 16, height: 16)
+                .frame(width: iconSize, height: iconSize)
                 .foregroundStyle(appearance.titleColor.color(for: colorScheme))
                 .rotationEffect(.degrees(isExpanded ? rotation : 0))
                 .animation(.easeInOut(duration: 0.2), value: isExpanded)
         }
+    }
+    
+    private var iconSize: CGFloat {
+        titleTypography.lineHeight
     }
     
     var appearance: AccordionItemAppearance {
