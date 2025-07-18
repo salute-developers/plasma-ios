@@ -144,17 +144,11 @@ public struct SDDSAccordionItem: View {
         if let icon = isExpanded ? appearance.openedIcon : appearance.closedIcon {
             icon
                 .renderingMode(.template)
-                //.resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: iconSize, height: iconSize)
                 .foregroundStyle(appearance.titleColor.color(for: colorScheme))
                 .rotationEffect(.degrees(isExpanded ? rotation : 0))
                 .animation(.easeInOut(duration: 0.2), value: isExpanded)
         }
-    }
-    
-    private var iconSize: CGFloat {
-        titleTypography.lineHeight
     }
     
     var appearance: AccordionItemAppearance {
