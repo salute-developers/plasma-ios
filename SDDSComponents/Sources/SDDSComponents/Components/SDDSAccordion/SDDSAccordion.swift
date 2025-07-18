@@ -108,7 +108,7 @@ public struct SDDSAccordion: View {
                         appearance: item.appearance ?? appearance.accordionItemAppearance,
                         onToggle: item.onToggle
                     )
-                    .padding([.top, .bottom], appearance.size.itemSpacing)
+                    .padding([.bottom], appearance.size.itemSpacing)
                     if index != items.count - 1 && showDividers {
                         SDDSDivider(appearance: appearance.dividerAppearance)
                     }
