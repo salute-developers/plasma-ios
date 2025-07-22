@@ -92,6 +92,24 @@ platform :ios do
                    "SDDSDemo #{project_version} #{build_number}"
                  end
     UI.message("Build name: #{build_name}")
+    # Prepare build description with PR link
+    build_description = case branch_name
+                       when "main"
+                         "Production build from main branch"
+                       when "develop"
+                         "Development build from develop branch"
+                       else
+                         if ENV["GITHUB_EVENT_NAME"] == "pull_request" && ENV["GITHUB_PR_NUMBER"]
+                           pr_number = ENV["GITHUB_PR_NUMBER"]
+                           pr_url = "https://github.com/#{ENV["GITHUB_REPOSITORY"]}/pull/#{pr_number}"
+                           "PR build: #{pr_url}"
+                         else
+                           "Build from #{branch_name} branch"
+                         end
+                       end
+    UI.message("Build description: #{build_description}")    
+    # Set environment variable for GitHub Actions
+    ENV['BUILD_NAME'] = build_name
 
     update_info_plist(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
@@ -115,6 +133,8 @@ platform :ios do
 
     UI.message("Uploading to TestFlight...")
     upload_to_testflight(
+      changelog: build_description,
+      
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
         issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
