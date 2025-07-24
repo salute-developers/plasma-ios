@@ -78,7 +78,7 @@ final class BottomSheetContainerViewController: UIViewController {
         let outerPosition = -appearance.size.handleOffset
         // В inner позиции handle находится внутри контента, но не выше safe area
         let safeAreaTop = view.safeAreaInsets.top
-        let innerPosition = max(appearance.size.handleOffset, safeAreaTop)
+        let innerPosition = max(appearance.size.handleOffset + appearance.size.handleHeight, safeAreaTop)
         
         // Интерполируем между позициями
         let currentPosition = outerPosition + (innerPosition - outerPosition) * progress
