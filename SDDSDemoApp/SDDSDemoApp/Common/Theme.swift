@@ -513,9 +513,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.RectSkeleton.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.RectSkeleton.all
-        case .stylesSalute:
             PlasmaB2CTheme.RectSkeleton.all
+        case .stylesSalute:
+            StylesSaluteTheme.RectSkeleton.all
         }
     }
     
@@ -524,9 +524,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.TextSkeleton.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.TextSkeleton.all
-        case .stylesSalute:
             PlasmaB2CTheme.TextSkeleton.all
+        case .stylesSalute:
+            StylesSaluteTheme.TextSkeleton.all
         }
     }
     
@@ -579,9 +579,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.ScrollBar.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.ScrollBar.all
-        case .stylesSalute:
             PlasmaB2CTheme.ScrollBar.all
+        case .stylesSalute:
+            StylesSaluteTheme.ScrollBar.all
         }
     }
     
@@ -590,9 +590,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuNormal.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.DropdownMenuNormal.all
-        case .stylesSalute:
             PlasmaB2CTheme.DropdownMenuNormal.all
+        case .stylesSalute:
+            StylesSaluteTheme.DropdownMenuNormal.all
         }
     }
     
@@ -601,9 +601,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuTight.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.DropdownMenuTight.all
-        case .stylesSalute:
             PlasmaB2CTheme.DropdownMenuTight.all
+        case .stylesSalute:
+            StylesSaluteTheme.DropdownMenuTight.all
         }
     }
     
