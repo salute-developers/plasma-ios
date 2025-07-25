@@ -17,8 +17,14 @@ struct SkeletonAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.shape = PathDrawerContextBuilder(shape: props.shape).context
-        self.gradient = ColorTokenContextBuilder(props.gradient, isGradient: true).context
-        self.duration = CGFloatContextBuilder(props.duration?.value).context
+        if let shape = props.shape {
+            self.shape = PathDrawerContextBuilder(shape: shape).context
+        }
+        if let gradient = props.gradient {
+            self.gradient = ColorTokenContextBuilder(gradient, isGradient: true).context
+        }
+        if let duration = props.duration?.value {
+            self.duration = CGFloatContextBuilder(duration).context
+        }
     }
 } 

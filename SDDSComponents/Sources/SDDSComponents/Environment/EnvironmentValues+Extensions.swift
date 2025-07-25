@@ -146,4 +146,24 @@ public extension EnvironmentValues {
         get { self[ScrollbarAppearance.self] }
         set { self[ScrollbarAppearance.self] = newValue }
     }
+    
+    var dropDownMenuAppearance: DropdownMenuAppearance {
+        get { self[DropdownMenuAppearance.self] }
+        set { self[DropdownMenuAppearance.self] = newValue }
+    }
+    
+    var accordionItemAppearance: AccordionItemAppearance {
+        get { self[AccordionItemAppearance.self] }
+        set { self[AccordionItemAppearance.self] = newValue }
+    }
+    
+    var accordionAppearance: AccordionAppearance {
+        get { self[AccordionAppearance.self] }
+        set { self[AccordionAppearance.self] = newValue }
+    }
+
+    var spinnerAppearance: SpinnerAppearance {
+        get { self[SpinnerAppearance.self] }
+        set { self[SpinnerAppearance.self] = newValue }
+    }
 }

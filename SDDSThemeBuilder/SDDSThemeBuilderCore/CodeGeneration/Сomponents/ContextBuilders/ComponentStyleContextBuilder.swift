@@ -3,10 +3,12 @@ import Foundation
 final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     let string: String
     let appearance: String?
+    let nullify: Bool
     
-    init(_ string: String, appearance: String? = nil) {
-        self.string = string
+    init(_ string: String?, appearance: String? = nil, nullify: Bool = false) {
+        self.string = string ?? ""
         self.appearance = appearance
+        self.nullify = nullify
     }
     
     var context: String? {
@@ -21,7 +23,7 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
         }
         let componentParts = componentVariation
             .filter {
-                if $0.contains("solid") {
+                if $0.contains("solid") && !string.contains("accordion") {
                     return false
                 }
                 return true
@@ -37,13 +39,17 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
             .joined()
         
         guard let component = CodeGenerationComponent(rawValue: componentName ?? "") else {
-            return ""
+            return nullify ? "nil" : ""
         }
         let variations = Array(parts[1..<parts.count])
         
         var result = [String]()
         result += [component.rawValue]
         result += variations
+        
+        if variations.isEmpty {
+            result += ["default"]
+        }
         result += ["appearance"]
         
         if let appearance = appearance {

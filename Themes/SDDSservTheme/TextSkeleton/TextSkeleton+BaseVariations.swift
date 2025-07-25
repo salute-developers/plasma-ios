@@ -5,11 +5,10 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct TextSkeleton {
-    public static var `default`: ComponentAppearanceVariation<TextSkeleton, SkeletonAppearance> {
+    public static var `default`: GeneralAppearanceVariation<TextSkeleton, SkeletonAppearance, TextSkeletonVariation.Default> {
         var appearance = SkeletonAppearance.base
         appearance.size = TextSkeletonSize.`default`
         appearance.duration = CGFloat(5000.0)
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxs.cornerRadius) as PathDrawer
 
         return .init(
@@ -31,7 +30,6 @@ private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
         appearance.duration = CGFloat(5000.0)
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxs.cornerRadius) as PathDrawer
         return appearance
     }

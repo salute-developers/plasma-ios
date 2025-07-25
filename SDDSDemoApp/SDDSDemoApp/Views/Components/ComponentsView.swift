@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ComponentsView: View {
     private let components: [(name: String, view: AnyView)] = [
+        ("Accordion", AnyView(AccordionView())),
+        ("AccordionItem", AnyView(AccordionItemView())),
         ("Avatar", AnyView(AvatarView())),
         ("AvatarGroup", AnyView(AvatarGroupView())),
         ("Button", AnyView(ButtonView())),
@@ -13,6 +15,7 @@ struct ComponentsView: View {
         ("Radiobox", AnyView(RadioboxView())),
         ("RadioboxGroup", AnyView(RadioboxGroupView())),
         ("Scrollbar", AnyView(ScrollbarView())),
+        ("Spinner", AnyView(SpinnerView())),
         ("Switch", AnyView(SwitchView())),
         ("TextArea", AnyView(TextAreaView())),
         ("TextField", AnyView(TextFieldView())),
@@ -35,7 +38,8 @@ struct ComponentsView: View {
         ("Modal", AnyView(ModalView())),
         ("Notification", AnyView(NotificationView())),
         ("RectSkeleton", AnyView(RectSkeletonView())),
-        ("TextSkeleton", AnyView(TextSkeletonView()))
+        ("TextSkeleton", AnyView(TextSkeletonView())),
+        ("DropDownMenu", AnyView(DropdownMenuView()))
     ]
 
     var body: some View {

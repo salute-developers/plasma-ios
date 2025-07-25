@@ -58,40 +58,84 @@ import Foundation
 public struct SDDSList: View {
     @Environment(\.listAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Binding private var contentHeight: CGFloat
     private let _appearance: ListAppearance?
     private let items: [AnyView]
+    private let showDividers: Bool
+    private let maxHeight: CGFloat
     
     public init<RightContent: View>(
         items: [SDDSListItem<RightContent>],
+        contentHeight: Binding<CGFloat> = .constant(0),
+        showDividers: Bool = false,
+        maxHeight: CGFloat = .infinity,
         appearance: ListAppearance? = nil
     ) {
         self.items = items.map { AnyView($0) }
         self._appearance = appearance
+        self._contentHeight = contentHeight
+        self.maxHeight = maxHeight
+        self.showDividers = showDividers
     }
     
     public var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                    item
-                        .environment(\.listItemAppearance, appearance.listItemAppearance)
+        VStack(spacing: 0) {
+            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
+                item
+                    .environment(\.listItemAppearance, appearance.listItemAppearance)
+                if index != items.count - 1 && showDividers {
+                    SDDSDivider(appearance: appearance.dividerAppearance)
                 }
             }
-            .background(Color.clear)
         }
+        .background(Color.clear)
+        .background(
+            GeometryReader { contentGeometry in
+                Color.clear
+                    .onAppear {
+                        print(contentGeometry.size.height)
+                        contentHeight = min(contentGeometry.size.height, maxHeight)
+                    }
+                    .onChange(of: contentGeometry.size.height) { newHeight in
+                        contentHeight = min(newHeight, maxHeight)
+                    }
+            }
+        )
+        .scrollbar(scrollBarData: scrollbarData)
     }
     
     var appearance: ListAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    private var scrollbarData: ScrollBarData {
+        .init(
+            hasTrack: true,
+            hoverExpand: false,
+            offsetY: 0,
+            totalHeight: contentHeight,
+            scrollBarThickness: appearance.scrollBarAppearance.size.width,
+            scrollBarPaddingTop: 0,
+            scrollBarPaddingBottom: 0,
+            scrollBarPaddingEnd: 2,
+            scrollBarTrackColor: appearance.scrollBarAppearance.trackColor,
+            scrollBarThumbColor: appearance.scrollBarAppearance.thumbColor,
+            contentInsetTop: 0
+        )
     }
 }
 
 extension SDDSList {
     public init<RightContent: View>(
         appearance: ListAppearance? = nil,
+        showDividers: Bool = false,
+        maxHeight: CGFloat = .infinity,
         @ViewBuilder content: () -> [SDDSListItem<RightContent>]
     ) {
         self.items = content().map { AnyView($0) }
+        self._contentHeight = .constant(0)
+        self.showDividers = showDividers
+        self.maxHeight = maxHeight
         self._appearance = appearance
     }
 }

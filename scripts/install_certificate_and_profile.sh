@@ -26,5 +26,15 @@ security import "$CERTIFICATE_PATH" -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k "
 security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
 security list-keychain -d user -s "$KEYCHAIN_PATH"
 
+# Install provisioning profile
+mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles/
+
+# Get the profile name from the mobileprovision file
+PROFILE_NAME=$(security cms -D -i "$PP_PATH" | plutil -extract Name xml1 -o - - | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
+
+# Copy and rename the profile to match the expected name
+cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/
+echo "Installed profile: $PROFILE_NAME"
+
 echo "Certificate and provisioning profile installed successfully."
 

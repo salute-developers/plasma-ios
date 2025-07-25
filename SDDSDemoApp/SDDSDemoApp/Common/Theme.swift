@@ -513,9 +513,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.RectSkeleton.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.RectSkeleton.all
-        case .stylesSalute:
             PlasmaB2CTheme.RectSkeleton.all
+        case .stylesSalute:
+            StylesSaluteTheme.RectSkeleton.all
         }
     }
     
@@ -524,9 +524,9 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             SDDSServTheme.TextSkeleton.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.TextSkeleton.all
-        case .stylesSalute:
             PlasmaB2CTheme.TextSkeleton.all
+        case .stylesSalute:
+            StylesSaluteTheme.TextSkeleton.all
         }
     }
     
@@ -577,11 +577,154 @@ enum Theme: String, CaseIterable {
     var scrollbarVariations: [Variation<ScrollbarAppearance>] {
         switch self {
         case .sdddsServTheme:
-            SDDSServTheme.Scrollbar.all
+            SDDSServTheme.ScrollBar.all
         case .plasmaB2CTheme:
-            StylesSaluteTheme.Scrollbar.all
+            PlasmaB2CTheme.ScrollBar.all
         case .stylesSalute:
-            PlasmaB2CTheme.Scrollbar.all
+            StylesSaluteTheme.ScrollBar.all
         }
     }
+    
+    var dropdownMenuNormalVariations: [Variation<DropdownMenuAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.DropdownMenuNormal.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.DropdownMenuNormal.all
+        case .stylesSalute:
+            StylesSaluteTheme.DropdownMenuNormal.all
+        }
+    }
+    
+    var dropdownMenuTightVariations: [Variation<DropdownMenuAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.DropdownMenuTight.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.DropdownMenuTight.all
+        case .stylesSalute:
+            StylesSaluteTheme.DropdownMenuTight.all
+        }
+    }
+    
+    var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DropdownMenuItemNormal.all
+        case .stylesSalute:
+            return StylesSaluteTheme.DropdownMenuItemNormal.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.DropdownMenuItemNormal.all
+        }
+    }
+    
+    var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DropdownMenuItemTight.all
+        case .stylesSalute:
+            return StylesSaluteTheme.DropdownMenuItemTight.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.DropdownMenuItemTight.all
+        }
+    }
+    
+    var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemClearActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemClearActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemClearActionStart.all
+        }
+    }
+    
+    var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemClearActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemClearActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemClearActionEnd.all
+        }
+    }
+    
+    var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemSolidActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemSolidActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemSolidActionStart.all
+        }
+    }
+    
+    var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionItemSolidActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionItemSolidActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionItemSolidActionEnd.all
+        }
+    }
+    
+    var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionClearActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionClearActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionClearActionStart.all
+        }
+    }
+    
+    var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionClearActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionClearActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionClearActionEnd.all
+        }
+    }
+    
+    var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionSolidActionStart.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionSolidActionStart.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionSolidActionStart.all
+        }
+    }
+    
+    var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.AccordionSolidActionEnd.all
+        case .stylesSalute:
+            return StylesSaluteTheme.AccordionSolidActionEnd.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.AccordionSolidActionEnd.all
+        }
+    }
+    
+    var spinnerVariations: [Variation<SpinnerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Spinner.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Spinner.all
+        }
+    }    
 }

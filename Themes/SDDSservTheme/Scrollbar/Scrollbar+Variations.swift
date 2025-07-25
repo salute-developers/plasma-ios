@@ -5,7 +5,7 @@ import SDDSThemeCore
 
 
 
-public extension ComponentAppearanceVariation<Scrollbar, ScrollbarAppearance> {
+public extension ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,

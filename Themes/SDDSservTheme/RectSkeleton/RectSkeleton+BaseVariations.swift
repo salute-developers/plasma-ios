@@ -5,11 +5,10 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct RectSkeleton {
-    public static var `default`: ComponentAppearanceVariation<RectSkeleton, SkeletonAppearance> {
+    public static var `default`: GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, RectSkeletonVariation.Default> {
         var appearance = SkeletonAppearance.base
         appearance.size = RectSkeletonSize.`default`
-        appearance.duration = CGFloat(1000.0)
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
+        appearance.duration = CGFloat(5000.0)
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
 
         return .init(
@@ -30,8 +29,7 @@ public struct RectSkeletonVariation {
 private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
-        appearance.duration = CGFloat(1000.0)
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
+        appearance.duration = CGFloat(5000.0)
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         return appearance
     }

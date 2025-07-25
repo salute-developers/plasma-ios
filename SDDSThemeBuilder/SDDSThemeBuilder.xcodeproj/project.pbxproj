@@ -77,6 +77,13 @@
 		810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
 		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
+		810F4C592E266FC500218FE7 /* AccordionItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C572E266FC500218FE7 /* AccordionItemSize.swift */; };
+		810F4C5A2E266FC500218FE7 /* AccordionItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */; };
+		810F4C5C2E266FDC00218FE7 /* AccordionItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */; };
+		810F4C5E2E26705700218FE7 /* AccordionItemPlacementBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C5D2E26703100218FE7 /* AccordionItemPlacementBuilder.swift */; };
+		810F4C602E2674D800218FE7 /* AccordionActionProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */; };
+		810F4C642E2674EB00218FE7 /* AccordionAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C612E2674EB00218FE7 /* AccordionAppearance.swift */; };
+		810F4C652E2674EB00218FE7 /* AccordionSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C622E2674EB00218FE7 /* AccordionSize.swift */; };
 		810F92522E12E713008CA4CA /* ListItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92512E12E713008CA4CA /* ListItemProps.swift */; };
 		810F92562E12E720008CA4CA /* ListItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92542E12E720008CA4CA /* ListItemSize.swift */; };
 		810F92572E12E720008CA4CA /* ListItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92532E12E720008CA4CA /* ListItemAppearance.swift */; };
@@ -90,6 +97,10 @@
 		8119DF542DF6F7F600D1CA9F /* NotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */; };
 		8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF552DF6F86700D1CA9F /* NotificationProps.swift */; };
 		811D2DE82D1095A6001C0F48 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 811D2DE72D1095A6001C0F48 /* SDDSComponents */; };
+		81205C112E28FDE700AA29ED /* SpinnerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */; };
+		81205C122E28FDE700AA29ED /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */; };
+		81205C142E28FE1B00AA29ED /* SpinnerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C132E28FE1B00AA29ED /* SpinnerProps.swift */; };
+		81205C162E28FFC300AA29ED /* StrokeCapContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */; };
 		812DB6D22D5490E000D3F4A3 /* CodeGenerationContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */; };
 		812DB6D82D54B75400D3F4A3 /* Component+Variations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
 		812DB6D92D54D21D00D3F4A3 /* Component+Variations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
@@ -216,6 +227,9 @@
 		81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81763B032D6DE79500904D4A /* BadgeSize.swift */; };
 		8178A7412C733CB300DFDA61 /* SDDSThemeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */; };
 		8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF63572C6E8F18008F3BB2 /* HexConverter.swift */; };
+		817CF57E2E1C0F3700B9286C /* DropdownMenuAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */; };
+		817CF57F2E1C0F3700B9286C /* DropdownMenuSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */; };
+		817CF5812E1C0F4600B9286C /* DropdownMenuProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */; };
 		8180A5112C107DA900009AF5 /* TypographyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A49B2C0F71A500009AF5 /* TypographyToken.swift */; };
 		8180A53F2C11067100009AF5 /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180A53E2C11067100009AF5 /* SDDSTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8180A54F2C1106A700009AF5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A54E2C1106A700009AF5 /* Theme.swift */; };
@@ -572,6 +586,13 @@
 		810AFD4F2D96F200000B2A7A /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
+		810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemAppearance.swift; sourceTree = "<group>"; };
+		810F4C572E266FC500218FE7 /* AccordionItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemSize.swift; sourceTree = "<group>"; };
+		810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemProps.swift; sourceTree = "<group>"; };
+		810F4C5D2E26703100218FE7 /* AccordionItemPlacementBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemPlacementBuilder.swift; sourceTree = "<group>"; };
+		810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionActionProps.swift; sourceTree = "<group>"; };
+		810F4C612E2674EB00218FE7 /* AccordionAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionAppearance.swift; sourceTree = "<group>"; };
+		810F4C622E2674EB00218FE7 /* AccordionSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionSize.swift; sourceTree = "<group>"; };
 		810F92512E12E713008CA4CA /* ListItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemProps.swift; sourceTree = "<group>"; };
 		810F92532E12E720008CA4CA /* ListItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemAppearance.swift; sourceTree = "<group>"; };
 		810F92542E12E720008CA4CA /* ListItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSize.swift; sourceTree = "<group>"; };
@@ -584,6 +605,10 @@
 		8119DF4E2DF6F7F600D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF502DF6F7F600D1CA9F /* NotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSize.swift; sourceTree = "<group>"; };
 		8119DF552DF6F86700D1CA9F /* NotificationProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProps.swift; sourceTree = "<group>"; };
+		81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAppearance.swift; sourceTree = "<group>"; };
+		81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
+		81205C132E28FE1B00AA29ED /* SpinnerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProps.swift; sourceTree = "<group>"; };
+		81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeCapContextBuilder.swift; sourceTree = "<group>"; };
 		812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationContexts.swift; sourceTree = "<group>"; };
 		812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+Variations.stencil"; sourceTree = "<group>"; };
 		812DB6DD2D55E2BD00D3F4A3 /* MergeableConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeableConfiguration.swift; sourceTree = "<group>"; };
@@ -693,6 +718,9 @@
 		81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppearance.swift; sourceTree = "<group>"; };
 		81763B032D6DE79500904D4A /* BadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSize.swift; sourceTree = "<group>"; };
 		8178A7402C733CB300DFDA61 /* SDDSThemeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDDSThemeUtilities.h; path = SDDSThemeUtilities/SDDSThemeUtilities.h; sourceTree = "<group>"; };
+		817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuAppearance.swift; sourceTree = "<group>"; };
+		817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuSize.swift; sourceTree = "<group>"; };
+		817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuProps.swift; sourceTree = "<group>"; };
 		8180A4992C0F71A500009AF5 /* FontsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsService.swift; sourceTree = "<group>"; };
 		8180A49B2C0F71A500009AF5 /* TypographyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyToken.swift; sourceTree = "<group>"; };
 		8180A49C2C0F71A500009AF5 /* ShadowToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowToken.swift; sourceTree = "<group>"; };
@@ -1199,6 +1227,24 @@
 			path = SegmentItem;
 			sourceTree = "<group>";
 		};
+		810F4C582E266FC500218FE7 /* AccordionItem */ = {
+			isa = PBXGroup;
+			children = (
+				810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */,
+				810F4C572E266FC500218FE7 /* AccordionItemSize.swift */,
+			);
+			path = AccordionItem;
+			sourceTree = "<group>";
+		};
+		810F4C632E2674EB00218FE7 /* Accordion */ = {
+			isa = PBXGroup;
+			children = (
+				810F4C612E2674EB00218FE7 /* AccordionAppearance.swift */,
+				810F4C622E2674EB00218FE7 /* AccordionSize.swift */,
+			);
+			path = Accordion;
+			sourceTree = "<group>";
+		};
 		810F92552E12E720008CA4CA /* ListItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1281,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		81205C102E28FDE700AA29ED /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				81205C0E2E28FDE700AA29ED /* SpinnerAppearance.swift */,
+				81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
 		812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1249,6 +1304,8 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				810F4C5D2E26703100218FE7 /* AccordionItemPlacementBuilder.swift */,
+				81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */,
 				818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */,
 				816F63712DCBB34D00EC9121 /* BoolContextBuilder.swift */,
 				6941E1C42DC0EB330084EA76 /* FillStyleContextBuilder.swift */,
@@ -1296,6 +1353,10 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */,
+				810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */,
+				81205C132E28FE1B00AA29ED /* SpinnerProps.swift */,
+				817CF5802E1C0F4600B9286C /* DropdownMenuProps.swift */,
 				810F92582E12EA5D008CA4CA /* ListProps.swift */,
 				810F92512E12E713008CA4CA /* ListItemProps.swift */,
 				810FA5582E166607008CA4CA /* ScrollbarProps.swift */,
@@ -1335,6 +1396,10 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				810F4C632E2674EB00218FE7 /* Accordion */,
+				810F4C582E266FC500218FE7 /* AccordionItem */,
+				81205C102E28FDE700AA29ED /* Spinner */,
+				817CF57D2E1C0F3700B9286C /* DropdownMenu */,
 				810F925C2E12EA6D008CA4CA /* List */,
 				810F92552E12E720008CA4CA /* ListItem */,
 				810FA55C2E16661F008CA4CA /* Scrollbar */,
@@ -1663,6 +1728,15 @@
 				81763B012D6DE6ED00904D4A /* BadgeAppearance.swift */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		817CF57D2E1C0F3700B9286C /* DropdownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				817CF57B2E1C0F3700B9286C /* DropdownMenuAppearance.swift */,
+				817CF57C2E1C0F3700B9286C /* DropdownMenuSize.swift */,
+			);
+			path = DropdownMenu;
 			sourceTree = "<group>";
 		};
 		8180A49A2C0F71A500009AF5 /* Tokens */ = {
@@ -2542,6 +2616,8 @@
 				81F7ECA82DF2F0CA00531844 /* ModalAppearance.swift in Sources */,
 				817539812BD0088900138866 /* Scheme.swift in Sources */,
 				813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */,
+				817CF57E2E1C0F3700B9286C /* DropdownMenuAppearance.swift in Sources */,
+				817CF57F2E1C0F3700B9286C /* DropdownMenuSize.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				818E33142DDDC13800130AF9 /* PopoverProps.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
@@ -2561,6 +2637,7 @@
 				816F62D82DCBAE9600EC9121 /* CircularProgressBarAppearance.swift in Sources */,
 				8119DF532DF6F7F600D1CA9F /* NotificationAppearance.swift in Sources */,
 				8119DF542DF6F7F600D1CA9F /* NotificationSize.swift in Sources */,
+				81205C142E28FE1B00AA29ED /* SpinnerProps.swift in Sources */,
 				81763B042D6DE79700904D4A /* BadgeSize.swift in Sources */,
 				8139923E2D9ED9BA0015AF83 /* SegmentSize.swift in Sources */,
 				81CB0FC02C2194DF003B1064 /* Color+Extension.swift in Sources */,
@@ -2572,6 +2649,7 @@
 				81E1EE3E2BE3A5B300F86AE1 /* ShadowKind.swift in Sources */,
 				815D36842DE5B9F80005273B /* TooltipProps.swift in Sources */,
 				817539832BD008A500138866 /* GeneralError.swift in Sources */,
+				810F4C5E2E26705700218FE7 /* AccordionItemPlacementBuilder.swift in Sources */,
 				81C1C3282D648B9D0041AB56 /* Config.swift in Sources */,
 				816F62DA2DCBAEAC00EC9121 /* CircularProgressBarProps.swift in Sources */,
 				812DB7A92D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift in Sources */,
@@ -2623,6 +2701,7 @@
 				24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */,
 				81A753522D47DE03006E1BE7 /* ComponentContextBuilder.swift in Sources */,
 				813992402D9ED9C10015AF83 /* SegmentAppearance.swift in Sources */,
+				810F4C602E2674D800218FE7 /* AccordionActionProps.swift in Sources */,
 				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
 				818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */,
 				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
@@ -2640,6 +2719,7 @@
 				818E33162DDDC18E00130AF9 /* ShadowKeyValue.swift in Sources */,
 				81E1EE482BE3A60B00F86AE1 /* Weight.swift in Sources */,
 				812DB6F42D55E48C00D3F4A3 /* KeyValue.swift in Sources */,
+				81205C162E28FFC300AA29ED /* StrokeCapContextBuilder.swift in Sources */,
 				81E1EE3C2BE3A5A300F86AE1 /* Direction.swift in Sources */,
 				812DB7052D56328C00D3F4A3 /* CodeGenerationSize.swift in Sources */,
 				813340302C073C42005AD84F /* URL+Extensions.swift in Sources */,
@@ -2658,6 +2738,8 @@
 				8181E3AA2BFB6A5F00D4012C /* GradientContextBuilder.swift in Sources */,
 				819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */,
 				81CB0FE72C245052003B1064 /* TemplateRenderer.swift in Sources */,
+				81205C112E28FDE700AA29ED /* SpinnerAppearance.swift in Sources */,
+				81205C122E28FDE700AA29ED /* SpinnerSize.swift in Sources */,
 				81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */,
 				81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */,
 				812DB7A12D59DAF000D3F4A3 /* ComponentConfigurations.swift in Sources */,
@@ -2696,7 +2778,10 @@
 				817539752BD007D300138866 /* App.swift in Sources */,
 				810AFD422D96DD91000B2A7A /* SegmentItemAppearance.swift in Sources */,
 				812DB7032D562DDE00D3F4A3 /* CodeGenerationAppearance.swift in Sources */,
+				810F4C642E2674EB00218FE7 /* AccordionAppearance.swift in Sources */,
+				810F4C652E2674EB00218FE7 /* AccordionSize.swift in Sources */,
 				81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */,
+				810F4C5C2E266FDC00218FE7 /* AccordionItemProps.swift in Sources */,
 				692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */,
 				813687632E01820700A1702A /* SkeletonProps.swift in Sources */,
 				810F92562E12E720008CA4CA /* ListItemSize.swift in Sources */,
@@ -2736,8 +2821,11 @@
 				69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */,
 				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
 				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,
+				810F4C592E266FC500218FE7 /* AccordionItemSize.swift in Sources */,
+				810F4C5A2E266FC500218FE7 /* AccordionItemAppearance.swift in Sources */,
 				69A875912DAF9E290074C1BD /* CheckboxGroupSize.swift in Sources */,
 				69A875922DAF9E290074C1BD /* CheckboxAppearance.swift in Sources */,
+				817CF5812E1C0F4600B9286C /* DropdownMenuProps.swift in Sources */,
 				69A875932DAF9E290074C1BD /* RadioboxGroupSize.swift in Sources */,
 				81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */,
 				69A875942DAF9E290074C1BD /* CheckboxSize.swift in Sources */,

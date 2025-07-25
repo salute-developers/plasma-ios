@@ -35,6 +35,14 @@
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
+		810F55DD2E27A9D100218FE7 /* AccordionItemVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */; };
+		810F55DE2E27A9D100218FE7 /* AccordionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */; };
+		810F55DF2E27A9D100218FE7 /* AccordionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */; };
+		810F55E02E27A9D100218FE7 /* AccordionItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */; };
+		810F84BC2E27F5B500218FE7 /* AccordionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84B92E27F5B500218FE7 /* AccordionLayout.swift */; };
+		810F84BD2E27F5B500218FE7 /* AccordionVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */; };
+		810F84BF2E27F5C300218FE7 /* AccordionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */; };
+		810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F84C02E27F5D100218FE7 /* AccordionView.swift */; };
 		810F95942E13A1FE008CA4CA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F95912E13A1FE008CA4CA /* ListView.swift */; };
 		810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F95902E13A1FE008CA4CA /* ListVariationProvider.swift */; };
 		810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F958E2E13A1FE008CA4CA /* ListItemViewModel.swift */; };
@@ -56,6 +64,9 @@
 		811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */; };
 		811DE14C2C4D1DA6000DD354 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14B2C4D1DA6000DD354 /* SwitchView.swift */; };
 		811DE14E2C4D1DAD000DD354 /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */; };
+		812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065822E29072300AA29ED /* SpinnerViewModel.swift */; };
+		812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065802E29072300AA29ED /* SpinnerVariationProvider.swift */; };
+		812065862E29072400AA29ED /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065812E29072300AA29ED /* SpinnerView.swift */; };
 		8127A0832E0ABD1700B320D1 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8127A0822E0ABD1700B320D1 /* SDSnapshots */; };
 		81368A6E2E01879900A1702A /* RectSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */; };
 		81368A6F2E01879900A1702A /* TextSkeletonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */; };
@@ -86,6 +97,9 @@
 		8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */; };
 		816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243602CB9430200506E1C /* CheckboxGroupView.swift */; };
 		816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */; };
+		816332242E1FB2D600110F27 /* DropdownMenuVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */; };
+		816332262E1FB35D00110F27 /* DropdownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332252E1FB35A00110F27 /* DropdownMenuView.swift */; };
+		816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */; };
 		8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4432D5C7C9E0044A680 /* Theme.swift */; };
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
@@ -110,6 +124,9 @@
 		8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31B2DF2F968003F5041 /* ModalView.swift */; };
 		8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31C2DF2F968003F5041 /* ModalViewModel.swift */; };
 		8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */; };
+		817C5D4A2E1F866C00B9286C /* ScrollbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */; };
+		817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */; };
+		817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D472E1F866C00B9286C /* ScrollbarView.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
@@ -131,9 +148,6 @@
 		81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E936DA2DEDFA7300B76E38 /* ToastViewModel.swift */; };
 		81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968152CBD20C300256968 /* TextFieldViewModel.swift */; };
 		81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */; };
-		81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2942E16E1010087C834 /* ScrollbarView.swift */; };
-		81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */; };
-		81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */; };
 		81F63B722DBF6C7C003C8C26 /* ComponentViewLayoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */; };
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
 		81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */; };
@@ -200,6 +214,14 @@
 		698744732D1C6EB800559ABA /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
 		698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemViewModel.swift; sourceTree = "<group>"; };
 		698902662D651763003DCE58 /* CellVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVariationProvider.swift; sourceTree = "<group>"; };
+		810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemLayout.swift; sourceTree = "<group>"; };
+		810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemVariationProvider.swift; sourceTree = "<group>"; };
+		810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemView.swift; sourceTree = "<group>"; };
+		810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemViewModel.swift; sourceTree = "<group>"; };
+		810F84B92E27F5B500218FE7 /* AccordionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionLayout.swift; sourceTree = "<group>"; };
+		810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionVariationProvider.swift; sourceTree = "<group>"; };
+		810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionViewModel.swift; sourceTree = "<group>"; };
+		810F84C02E27F5D100218FE7 /* AccordionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionView.swift; sourceTree = "<group>"; };
 		810F958C2E13A1FE008CA4CA /* ListItemVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemVariationProvider.swift; sourceTree = "<group>"; };
 		810F958D2E13A1FE008CA4CA /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		810F958E2E13A1FE008CA4CA /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
@@ -221,6 +243,9 @@
 		811DE1482C4D19DC000DD354 /* ProgressBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarViewModel.swift; sourceTree = "<group>"; };
 		811DE14B2C4D1DA6000DD354 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		812065802E29072300AA29ED /* SpinnerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVariationProvider.swift; sourceTree = "<group>"; };
+		812065812E29072300AA29ED /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		812065822E29072300AA29ED /* SpinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewModel.swift; sourceTree = "<group>"; };
 		81368A662E01879900A1702A /* RectSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonVariationProvider.swift; sourceTree = "<group>"; };
 		81368A672E01879900A1702A /* RectSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonView.swift; sourceTree = "<group>"; };
 		81368A682E01879900A1702A /* RectSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectSkeletonViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +274,9 @@
 		8162435C2CB9429400506E1C /* RadioboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupViewModel.swift; sourceTree = "<group>"; };
 		816243602CB9430200506E1C /* CheckboxGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupView.swift; sourceTree = "<group>"; };
 		816243622CB9430E00506E1C /* CheckboxGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupViewModel.swift; sourceTree = "<group>"; };
+		816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuVariationProvider.swift; sourceTree = "<group>"; };
+		816332252E1FB35A00110F27 /* DropdownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuView.swift; sourceTree = "<group>"; };
+		816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuViewModel.swift; sourceTree = "<group>"; };
 		8166B4432D5C7C9E0044A680 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVariationProvider.swift; sourceTree = "<group>"; };
 		816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarVariationProvider.swift; sourceTree = "<group>"; };
@@ -270,6 +298,9 @@
 		8178A31A2DF2F968003F5041 /* ModalVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVariationProvider.swift; sourceTree = "<group>"; };
 		8178A31B2DF2F968003F5041 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		8178A31C2DF2F968003F5041 /* ModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewModel.swift; sourceTree = "<group>"; };
+		817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarVariationProvider.swift; sourceTree = "<group>"; };
+		817C5D472E1F866C00B9286C /* ScrollbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarView.swift; sourceTree = "<group>"; };
+		817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarViewModel.swift; sourceTree = "<group>"; };
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
@@ -295,9 +326,6 @@
 		81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewModel.swift; sourceTree = "<group>"; };
 		81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
 		81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTestCases.swift; sourceTree = "<group>"; };
-		81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarVariationProvider.swift; sourceTree = "<group>"; };
-		81F5F2942E16E1010087C834 /* ScrollbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarView.swift; sourceTree = "<group>"; };
-		81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarViewModel.swift; sourceTree = "<group>"; };
 		81F63B712DBF6C74003C8C26 /* ComponentViewLayoutMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewLayoutMode.swift; sourceTree = "<group>"; };
 		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -313,10 +341,12 @@
 		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ModalTestCase; sourceTree = "<group>"; };
 		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RectSkeletonTestCase; sourceTree = "<group>"; };
 		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextSkeletonTestCase; sourceTree = "<group>"; };
+		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
+		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
 		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
 		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
@@ -417,6 +447,8 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
+				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
 				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
@@ -510,6 +542,28 @@
 			path = SegmentItemView;
 			sourceTree = "<group>";
 		};
+		810F55DC2E27A9D100218FE7 /* AccordionItemView */ = {
+			isa = PBXGroup;
+			children = (
+				810F55D82E27A9D100218FE7 /* AccordionItemLayout.swift */,
+				810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */,
+				810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */,
+				810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */,
+			);
+			path = AccordionItemView;
+			sourceTree = "<group>";
+		};
+		810F84BB2E27F5B500218FE7 /* AccordionView */ = {
+			isa = PBXGroup;
+			children = (
+				810F84C02E27F5D100218FE7 /* AccordionView.swift */,
+				810F84BE2E27F5C300218FE7 /* AccordionViewModel.swift */,
+				810F84B92E27F5B500218FE7 /* AccordionLayout.swift */,
+				810F84BA2E27F5B500218FE7 /* AccordionVariationProvider.swift */,
+			);
+			path = AccordionView;
+			sourceTree = "<group>";
+		};
 		810F958F2E13A1FE008CA4CA /* ListItemView */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,9 +615,13 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				810F84BB2E27F5B500218FE7 /* AccordionView */,
+				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
+				812065832E29072300AA29ED /* SpinnerView */,
+				816332222E1FB2BB00110F27 /* DropdownMenuView */,
+				817C5D492E1F866C00B9286C /* ScrollbarView */,
 				810F958F2E13A1FE008CA4CA /* ListItemView */,
 				810F95932E13A1FE008CA4CA /* ListView */,
-				81F5F2962E16E1010087C834 /* ScrollbarView */,
 				81368A692E01879900A1702A /* RectSkeletonView */,
 				81368A6D2E01879900A1702A /* TextSkeletonView */,
 				8178A31D2DF2F968003F5041 /* ModalView */,
@@ -640,6 +698,16 @@
 				811DE14D2C4D1DAD000DD354 /* SwitchViewModel.swift */,
 			);
 			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		812065832E29072300AA29ED /* SpinnerView */ = {
+			isa = PBXGroup;
+			children = (
+				812065802E29072300AA29ED /* SpinnerVariationProvider.swift */,
+				812065812E29072300AA29ED /* SpinnerView.swift */,
+				812065822E29072300AA29ED /* SpinnerViewModel.swift */,
+			);
+			path = SpinnerView;
 			sourceTree = "<group>";
 		};
 		81368A692E01879900A1702A /* RectSkeletonView */ = {
@@ -758,6 +826,16 @@
 			path = CheckboxGroupView;
 			sourceTree = "<group>";
 		};
+		816332222E1FB2BB00110F27 /* DropdownMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */,
+				816332252E1FB35A00110F27 /* DropdownMenuView.swift */,
+				816332232E1FB2CE00110F27 /* DropdownMenuVariationProvider.swift */,
+			);
+			path = DropdownMenuView;
+			sourceTree = "<group>";
+		};
 		816F636D2DCBB21600EC9121 /* CircularProgressBarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +864,16 @@
 				8178A31C2DF2F968003F5041 /* ModalViewModel.swift */,
 			);
 			path = ModalView;
+			sourceTree = "<group>";
+		};
+		817C5D492E1F866C00B9286C /* ScrollbarView */ = {
+			isa = PBXGroup;
+			children = (
+				817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */,
+				817C5D472E1F866C00B9286C /* ScrollbarView.swift */,
+				817C5D482E1F866C00B9286C /* ScrollbarViewModel.swift */,
+			);
+			path = ScrollbarView;
 			sourceTree = "<group>";
 		};
 		817D9F122C3704AD006C4814 /* ButtonView */ = {
@@ -877,16 +965,6 @@
 			path = TextFieldTestCase;
 			sourceTree = "<group>";
 		};
-		81F5F2962E16E1010087C834 /* ScrollbarView */ = {
-			isa = PBXGroup;
-			children = (
-				81F5F2932E16E1010087C834 /* ScrollbarVariationProvider.swift */,
-				81F5F2942E16E1010087C834 /* ScrollbarView.swift */,
-				81F5F2952E16E1010087C834 /* ScrollbarViewModel.swift */,
-			);
-			path = ScrollbarView;
-			sourceTree = "<group>";
-		};
 		81F89E482D81A39B00A41C89 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,10 +1042,12 @@
 				D3839E792E0E8CD000B6E830 /* ModalTestCase */,
 				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
 				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
+				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
+				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
@@ -1111,8 +1191,11 @@
 				815D38B82DE5BC570005273B /* PopoverView.swift in Sources */,
 				815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */,
 				810F95942E13A1FE008CA4CA /* ListView.swift in Sources */,
+				810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */,
 				810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */,
 				810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */,
+				810F84BC2E27F5B500218FE7 /* AccordionLayout.swift in Sources */,
+				810F84BD2E27F5B500218FE7 /* AccordionVariationProvider.swift in Sources */,
 				810F95972E13A1FE008CA4CA /* ListViewModel.swift in Sources */,
 				810F95982E13A1FE008CA4CA /* ListItemVariationProvider.swift in Sources */,
 				810F95992E13A1FE008CA4CA /* ListItemView.swift in Sources */,
@@ -1148,6 +1231,7 @@
 				8178A31E2DF2F968003F5041 /* ModalView.swift in Sources */,
 				8178A31F2DF2F968003F5041 /* ModalViewModel.swift in Sources */,
 				8178A3202DF2F968003F5041 /* ModalVariationProvider.swift in Sources */,
+				810F84BF2E27F5C300218FE7 /* AccordionViewModel.swift in Sources */,
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
@@ -1161,13 +1245,13 @@
 				81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */,
 				816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */,
 				816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */,
+				817C5D4A2E1F866C00B9286C /* ScrollbarViewModel.swift in Sources */,
+				817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */,
+				817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */,
 				816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */,
 				8174BA4E2D5DF2FF00EA3E68 /* SegmentItemVariationProvider.swift in Sources */,
 				811DE1472C4D19D3000DD354 /* ProgressBarView.swift in Sources */,
 				81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */,
-				81F5F2972E16E1010087C834 /* ScrollbarView.swift in Sources */,
-				81F5F2982E16E1010087C834 /* ScrollbarVariationProvider.swift in Sources */,
-				81F5F2992E16E1010087C834 /* ScrollbarViewModel.swift in Sources */,
 				8162435B2CB9418B00506E1C /* RadioboxGroupView.swift in Sources */,
 				816243512CB93EC800506E1C /* AvatarGroupViewModel.swift in Sources */,
 				690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */,
@@ -1182,12 +1266,18 @@
 				81E936DE2DEDFA7300B76E38 /* ToastViewModel.swift in Sources */,
 				81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */,
 				811DE1392C4D0EC9000DD354 /* CheckboxView.swift in Sources */,
+				810F55DD2E27A9D100218FE7 /* AccordionItemVariationProvider.swift in Sources */,
+				810F55DE2E27A9D100218FE7 /* AccordionItemView.swift in Sources */,
+				810F55DF2E27A9D100218FE7 /* AccordionItemViewModel.swift in Sources */,
+				810F55E02E27A9D100218FE7 /* AccordionItemLayout.swift in Sources */,
 				81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
 				816243632CB9430E00506E1C /* CheckboxGroupViewModel.swift in Sources */,
+				816332242E1FB2D600110F27 /* DropdownMenuVariationProvider.swift in Sources */,
+				816332262E1FB35D00110F27 /* DropdownMenuView.swift in Sources */,
 				693FF1592DE49A4D00E14D0E /* DividerViewModel.swift in Sources */,
 				816243442CB9057E00506E1C /* AvatarView.swift in Sources */,
 				24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */,
@@ -1202,10 +1292,14 @@
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
+				816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,
 				8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */,
+				812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */,
+				812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */,
+				812065862E29072400AA29ED /* SpinnerView.swift in Sources */,
 				8119E2602DF6FCA700D1CA9F /* NotificationViewModel.swift in Sources */,
 				81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */,
 				694B1F6F2DAE54C300726B91 /* CheckboxGroupVariationProvider.swift in Sources */,
