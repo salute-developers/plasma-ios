@@ -21,8 +21,8 @@ final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
             self.iconAttributes = .init(image: iconAttributes.image, alignment: alignment)
         }
     }
-    @Published var label: String = ""
-    @Published var value: String = ""
+    @Published var label: String = "Label"
+    @Published var value: String = "Value"
     @Published var iconAttributes: ButtonIconAttributes? = nil
     @Published var isDisabled: Bool = false
     @Published var isLoading: Bool = false

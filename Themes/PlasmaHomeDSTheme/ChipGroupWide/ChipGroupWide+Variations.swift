@@ -1,0 +1,437 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.L> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.l.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.l.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.l.pilled.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.l.pilled.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.M> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.m.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.m.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.m.pilled.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.m.pilled.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.S> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.s.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.s.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.s.pilled.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.s.pilled.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xs> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xs.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xs.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xs.pilled.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xs.pilled.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xxs> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xxs.pilled",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xxs.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xxs.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xxs.pilled.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = Chip.xxs.pilled.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+
+public extension ComponentAppearanceVariation<ChipGroupWide, ChipGroupAppearance> {
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+}
+
+private extension ChipGroupAppearance {
+    
+}

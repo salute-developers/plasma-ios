@@ -38,9 +38,9 @@ jobs:
           -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
           -resultBundlePath ../TestResults.xcresult
 
-      - name: Upload xcresult as artifact
-         if: always()
-         uses: actions/upload-artifact@v4
-         with:
+      - name: Upload xcresult as artifact if failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
           name: xcode-test-results
           path: TestResults.xcresult

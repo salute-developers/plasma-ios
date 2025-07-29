@@ -143,6 +143,7 @@ public struct SDDSAvatar<Content: View>: View {
             ZStack {
                 avatarImage(for: imageSource)
                     .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
+                    .shape(pathDrawer: appearance.size.pathDrawer)
                 
                 indicatorView
             }
@@ -172,19 +173,19 @@ public struct SDDSAvatar<Content: View>: View {
             Group {
                 switch appearance.backgroundFillStyle {
                 case .color(let colorToken):
-                    Circle()
+                    Rectangle()
                         .fill(colorToken.color(for: colorScheme))
-                        .clipShape(Circle())
+                        .shape(pathDrawer: appearance.size.pathDrawer)
                 case .gradient(let gradientToken):
                     ZStack {
-                        Circle()
+                        Rectangle()
                             .fill(.white)
-                            .clipShape(Circle())
-                        Circle()
+                            .shape(pathDrawer: appearance.size.pathDrawer)
+                        Rectangle()
                             .fill(.white)
                             .gradient(gradientToken, colorScheme: colorScheme)
                             .opacity(appearance.backgroundOpacity)
-                            .clipShape(Circle())
+                            .shape(pathDrawer: appearance.size.pathDrawer)
                     }
                 }
             }
@@ -203,12 +204,10 @@ public struct SDDSAvatar<Content: View>: View {
             } placeholder: {
                 backgroundView
             }
-            .clipShape(Circle())
         case .image(let image):
             image
                 .resizable()
                 .scaledToFill()
-                .clipShape(Circle())
         }
     }
     

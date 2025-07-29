@@ -5,7 +5,6 @@ struct SpinnerAppearance: CodeGenerationAppearance {
     typealias Props = SpinnerProps
     
     var backgroundColor: String?
-    var angle: String?
     var strokeCap: String?
     var startColor: String?
     var endColor: String?
@@ -20,7 +19,6 @@ struct SpinnerAppearance: CodeGenerationAppearance {
         }
         
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
-        self.angle = CGFloatContextBuilder(props.angle?.value).context
         self.strokeCap = StrokeCapContextBuilder(props.strokeCap?.value).context
         self.startColor = ColorTokenContextBuilder(props.startColor).context
         self.endColor = ColorTokenContextBuilder(props.endColor).context
