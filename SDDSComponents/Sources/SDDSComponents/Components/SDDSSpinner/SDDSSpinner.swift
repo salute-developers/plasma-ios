@@ -128,7 +128,7 @@ public struct SDDSSpinner: View {
         // Общий угол для двух закруглений + зазор
         let totalGapAngle = capAngle * 2.0 + gapAngle
         
-        return appearance.angle - totalGapAngle
+        return appearance.size.angle - totalGapAngle
     }
     
     private var appearance: SpinnerAppearance {

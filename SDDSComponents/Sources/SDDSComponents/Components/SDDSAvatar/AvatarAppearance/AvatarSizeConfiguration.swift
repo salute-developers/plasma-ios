@@ -21,6 +21,6 @@ public struct ZeroAvatarSize: AvatarSizeConfiguration {
     public var avatarSize: CGSize { .zero }
     public var statusInsets: EdgeInsets { .init() }
     public var extraOffset: CGPoint { .zero }
-    public var pathDrawer: any PathDrawer { DefaultPathDrawer() }
+    public var pathDrawer: any PathDrawer { CircleDrawer() }
     public init() {}
 }

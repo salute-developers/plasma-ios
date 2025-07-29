@@ -3,10 +3,12 @@ import SDDSComponents
 import SDDSServTheme
 import PlasmaB2CTheme
 import StylesSaluteTheme
+import PlasmaHomeDSTheme
 
 enum Theme: String, CaseIterable {
     case sdddsServTheme
     case plasmaB2CTheme
+    case plasmaHomeDSTheme
     case stylesSalute
     
     var name: String {
@@ -16,495 +18,585 @@ enum Theme: String, CaseIterable {
     var basicButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.BasicButton.all
+            SDDSServTheme.BasicButton.all
         case .stylesSalute:
-            return StylesSaluteTheme.BasicButton.all
+            StylesSaluteTheme.BasicButton.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.BasicButton.all
+            PlasmaB2CTheme.BasicButton.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.BasicButton.all
         }
     }
     
     var iconButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.IconButton.all
+            SDDSServTheme.IconButton.all
         case .stylesSalute:
-            return StylesSaluteTheme.IconButton.all
+            StylesSaluteTheme.IconButton.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.IconButton.all
+            PlasmaB2CTheme.IconButton.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.IconButton.all
         }
     }
     
     var linkButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.LinkButton.all
+            SDDSServTheme.LinkButton.all
         case .stylesSalute:
-            return StylesSaluteTheme.LinkButton.all
+            StylesSaluteTheme.LinkButton.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.LinkButton.all
+            PlasmaB2CTheme.LinkButton.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var textFieldVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.TextField.all
+            SDDSServTheme.TextField.all
         case .stylesSalute:
-            return StylesSaluteTheme.TextField.all
+            StylesSaluteTheme.TextField.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.TextField.all
+            PlasmaB2CTheme.TextField.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var textFieldClearVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.TextFieldClear.all
+            SDDSServTheme.TextFieldClear.all
         case .stylesSalute:
-            return StylesSaluteTheme.TextFieldClear.all
+            StylesSaluteTheme.TextFieldClear.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.TextFieldClear.all
+            PlasmaB2CTheme.TextFieldClear.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var textAreaVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.TextArea.all
+            SDDSServTheme.TextArea.all
         case .stylesSalute:
-            return StylesSaluteTheme.TextArea.all
+            StylesSaluteTheme.TextArea.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.TextArea.all
+            PlasmaB2CTheme.TextArea.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var textAreaClearVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.TextAreaClear.all
+            SDDSServTheme.TextAreaClear.all
         case .stylesSalute:
-            return StylesSaluteTheme.TextAreaClear.all
+            StylesSaluteTheme.TextAreaClear.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.TextAreaClear.all
+            PlasmaB2CTheme.TextAreaClear.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var avatarVariations: [Variation<AvatarAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Avatar.all
+            SDDSServTheme.Avatar.all
         case .stylesSalute:
-            return StylesSaluteTheme.Avatar.all
+            StylesSaluteTheme.Avatar.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Avatar.all
+            PlasmaB2CTheme.Avatar.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Avatar.all
         }
     }
     
     var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AvatarGroup.all
+            SDDSServTheme.AvatarGroup.all
         case .stylesSalute:
-            return StylesSaluteTheme.AvatarGroup.all
+            StylesSaluteTheme.AvatarGroup.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AvatarGroup.all
+            PlasmaB2CTheme.AvatarGroup.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.AvatarGroup.all
         }
     }
     
     var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Counter.all
+            SDDSServTheme.Counter.all
         case .stylesSalute:
-            return StylesSaluteTheme.Counter.all
+            StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Counter.all
+            PlasmaB2CTheme.Counter.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Counter.all
         }
     }
     
     var chipGroupVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ChipGroup.all
+            SDDSServTheme.ChipGroup.all
         case .stylesSalute:
-            return StylesSaluteTheme.ChipGroup.all
+            StylesSaluteTheme.ChipGroup.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ChipGroup.all
+            PlasmaB2CTheme.ChipGroup.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var chipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ChipGroupDense.all
+            SDDSServTheme.ChipGroupDense.all
         case .stylesSalute:
-            return StylesSaluteTheme.ChipGroupDense.all
+            StylesSaluteTheme.ChipGroupDense.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ChipGroupDense.all
+            PlasmaB2CTheme.ChipGroupDense.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.ChipGroupDense.all
         }
     }
     
     var chipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ChipGroupWide.all
+            SDDSServTheme.ChipGroupWide.all
         case .stylesSalute:
-            return StylesSaluteTheme.ChipGroupWide.all
+            StylesSaluteTheme.ChipGroupWide.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ChipGroupWide.all
+            PlasmaB2CTheme.ChipGroupWide.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.ChipGroupWide.all
         }
     }
     
     var embeddedChipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.EmbeddedChipGroupDense.all
+            SDDSServTheme.EmbeddedChipGroupDense.all
         case .stylesSalute:
-            return StylesSaluteTheme.EmbeddedChipGroupDense.all
+            StylesSaluteTheme.EmbeddedChipGroupDense.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.EmbeddedChipGroupDense.all
+            PlasmaB2CTheme.EmbeddedChipGroupDense.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var embeddedChipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.EmbeddedChipGroupWide.all
+            SDDSServTheme.EmbeddedChipGroupWide.all
         case .stylesSalute:
-            return StylesSaluteTheme.EmbeddedChipGroupWide.all
+            StylesSaluteTheme.EmbeddedChipGroupWide.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.EmbeddedChipGroupWide.all
+            PlasmaB2CTheme.EmbeddedChipGroupWide.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var checkboxVariations: [Variation<CheckboxAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Checkbox.all
+            SDDSServTheme.Checkbox.all
         case .stylesSalute:
-            return StylesSaluteTheme.Checkbox.all
+            StylesSaluteTheme.Checkbox.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Checkbox.all
+            PlasmaB2CTheme.Checkbox.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Checkbox.all
         }
     }
     
     var checkboxGroupVariations: [Variation<CheckboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.CheckboxGroup.all
+            SDDSServTheme.CheckboxGroup.all
         case .stylesSalute:
-            return StylesSaluteTheme.CheckboxGroup.all
+            StylesSaluteTheme.CheckboxGroup.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.CheckboxGroup.all
+            PlasmaB2CTheme.CheckboxGroup.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.CheckboxGroup.all
         }
     }
     
     var radioboxVariations: [Variation<RadioboxAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Radiobox.all
+            SDDSServTheme.Radiobox.all
         case .stylesSalute:
-            return StylesSaluteTheme.Radiobox.all
+            StylesSaluteTheme.Radiobox.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Radiobox.all
+            PlasmaB2CTheme.Radiobox.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Radiobox.all
         }
     }
     
     var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.RadioboxGroup.all
+            SDDSServTheme.RadioboxGroup.all
         case .stylesSalute:
-            return StylesSaluteTheme.RadioboxGroup.all
+            StylesSaluteTheme.RadioboxGroup.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.RadioboxGroup.all
+            PlasmaB2CTheme.RadioboxGroup.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.RadioboxGroup.all
         }
     }
     
     var chipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Chip.all
+            SDDSServTheme.Chip.all
         case .stylesSalute:
-            return StylesSaluteTheme.Chip.all
+            StylesSaluteTheme.Chip.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Chip.all
+            PlasmaB2CTheme.Chip.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Chip.all
         }
     }
     
     var embeddedChipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.EmbeddedChip.all
+            SDDSServTheme.EmbeddedChip.all
         case .stylesSalute:
-            return StylesSaluteTheme.EmbeddedChip.all
+            StylesSaluteTheme.EmbeddedChip.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.EmbeddedChip.all
+            PlasmaB2CTheme.EmbeddedChip.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var progressBarVariations: [Variation<ProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ProgressBar.all
+            SDDSServTheme.ProgressBar.all
         case .stylesSalute:
-            return StylesSaluteTheme.ProgressBar.all
+            StylesSaluteTheme.ProgressBar.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ProgressBar.all
+            PlasmaB2CTheme.ProgressBar.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var segmentItemVariations: [Variation<SegmentItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.SegmentItem.all
+            SDDSServTheme.SegmentItem.all
         case .stylesSalute:
-            return StylesSaluteTheme.SegmentItem.all
+            StylesSaluteTheme.SegmentItem.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.SegmentItem.all
+            PlasmaB2CTheme.SegmentItem.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var segmentVariations: [Variation<SegmentAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Segment.all
+            SDDSServTheme.Segment.all
         case .stylesSalute:
-            return StylesSaluteTheme.Segment.all
+            StylesSaluteTheme.Segment.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Segment.all
+            PlasmaB2CTheme.Segment.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var switchVariations: [Variation<SwitchAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Switch.all
+            SDDSServTheme.Switch.all
         case .stylesSalute:
-            return StylesSaluteTheme.Switch.all
+            StylesSaluteTheme.Switch.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Switch.all
+            PlasmaB2CTheme.Switch.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Switch.all
         }
     }
     
     var badgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Badge.all
+            SDDSServTheme.Badge.all
         case .stylesSalute:
-            return StylesSaluteTheme.Badge.all
+            StylesSaluteTheme.Badge.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Badge.all
+            PlasmaB2CTheme.Badge.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Badge.all
         }
     }
     
     var badgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.BadgeClear.all
+            SDDSServTheme.BadgeClear.all
         case .stylesSalute:
-            return StylesSaluteTheme.BadgeClear.all
+            StylesSaluteTheme.BadgeClear.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.BadgeClear.all
+            PlasmaB2CTheme.BadgeClear.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.BadgeClear.all
         }
     }
     
     var badgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.BadgeTransparent.all
+            SDDSServTheme.BadgeTransparent.all
         case .stylesSalute:
-            return StylesSaluteTheme.BadgeTransparent.all
+            StylesSaluteTheme.BadgeTransparent.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.BadgeTransparent.all
+            PlasmaB2CTheme.BadgeTransparent.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.BadgeTransparent.all
         }
     }
     
     var iconBadgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.IconBadge.all
+            SDDSServTheme.IconBadge.all
         case .stylesSalute:
-            return StylesSaluteTheme.IconBadge.all
+            StylesSaluteTheme.IconBadge.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.IconBadge.all
+            PlasmaB2CTheme.IconBadge.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.IconBadge.all
         }
     }
     
     var iconBadgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.IconBadgeClear.all
+            SDDSServTheme.IconBadgeClear.all
         case .stylesSalute:
-            return StylesSaluteTheme.IconBadgeClear.all
+            StylesSaluteTheme.IconBadgeClear.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.IconBadgeClear.all
+            PlasmaB2CTheme.IconBadgeClear.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.IconBadgeClear.all
         }
     }
     
     var iconBadgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.IconBadgeTransparent.all
+            SDDSServTheme.IconBadgeTransparent.all
         case .stylesSalute:
-            return StylesSaluteTheme.IconBadgeTransparent.all
+            StylesSaluteTheme.IconBadgeTransparent.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.IconBadgeTransparent.all
+            PlasmaB2CTheme.IconBadgeTransparent.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.IconBadgeTransparent.all
         }
     }
     
     var indicatorVariations: [Variation<IndicatorAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Indicator.all
+            SDDSServTheme.Indicator.all
         case .stylesSalute:
-            return StylesSaluteTheme.Indicator.all
+            StylesSaluteTheme.Indicator.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Indicator.all
+            PlasmaB2CTheme.Indicator.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Indicator.all
         }
     }
     
     var cellVariations: [Variation<CellAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Cell.all
+            SDDSServTheme.Cell.all
         case .stylesSalute:
-            return StylesSaluteTheme.Cell.all
+            StylesSaluteTheme.Cell.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Cell.all
+            PlasmaB2CTheme.Cell.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Cell.all
         }
     }
     
     var cardVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Card.all
+            SDDSServTheme.Card.all
         case .stylesSalute:
-            return []
+            []
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Card.all
+            PlasmaB2CTheme.Card.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var cardClearVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.CardClear.all
+            SDDSServTheme.CardClear.all
         case .stylesSalute:
-            return []
+            []
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.CardClear.all
+            PlasmaB2CTheme.CardClear.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var bottomSheetVariations: [Variation<BottomSheetAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.BottomSheet.all
+            SDDSServTheme.BottomSheet.all
         case .stylesSalute:
-            return StylesSaluteTheme.BottomSheet.all
+            StylesSaluteTheme.BottomSheet.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.BottomSheet.all
+            PlasmaB2CTheme.BottomSheet.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.CircularProgressBar.all
+            SDDSServTheme.CircularProgressBar.all
         case .stylesSalute:
-            return []
+            []
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.CircularProgressBar.all
+            PlasmaB2CTheme.CircularProgressBar.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var dividerVariations: [Variation<DividerAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Divider.all
+            SDDSServTheme.Divider.all
         case .stylesSalute:
-            return StylesSaluteTheme.Divider.all
+            StylesSaluteTheme.Divider.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Divider.all
+            PlasmaB2CTheme.Divider.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Divider.all
         }
     }
-
+    
     var overlayVariations: [Variation<OverlayAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Overlay.all
+            SDDSServTheme.Overlay.all
         case .stylesSalute:
-            return []
+            []
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Overlay.all
+            PlasmaB2CTheme.Overlay.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var popoverVariations: [Variation<PopoverAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Popover.all
+            SDDSServTheme.Popover.all
         case .stylesSalute:
-            return StylesSaluteTheme.Popover.all
+            StylesSaluteTheme.Popover.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Popover.all
+            PlasmaB2CTheme.Popover.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var tooltipVariations: [Variation<TooltipAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Tooltip.all
+            SDDSServTheme.Tooltip.all
         case .stylesSalute:
-            return StylesSaluteTheme.Tooltip.all
+            StylesSaluteTheme.Tooltip.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Tooltip.all
+            PlasmaB2CTheme.Tooltip.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var toastVariations: [Variation<ToastAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Toast.all
+            SDDSServTheme.Toast.all
         case .stylesSalute:
-            return StylesSaluteTheme.Toast.all
+            StylesSaluteTheme.Toast.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Toast.all
+            PlasmaB2CTheme.Toast.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var modalVariations: [Variation<ModalAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Modal.all
+            SDDSServTheme.Modal.all
         case .stylesSalute:
-            return StylesSaluteTheme.Modal.all
+            StylesSaluteTheme.Modal.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Modal.all
+            PlasmaB2CTheme.Modal.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var notificationCompactVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.NotificationCompact.all
+            SDDSServTheme.NotificationCompact.all
         case .stylesSalute:
-            return StylesSaluteTheme.NotificationCompact.all
+            StylesSaluteTheme.NotificationCompact.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.NotificationCompact.all
+            PlasmaB2CTheme.NotificationCompact.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var notificationLooseVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.NotificationLoose.all
+            SDDSServTheme.NotificationLoose.all
         case .stylesSalute:
-            return StylesSaluteTheme.NotificationLoose.all
+            StylesSaluteTheme.NotificationLoose.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.NotificationLoose.all
+            PlasmaB2CTheme.NotificationLoose.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
@@ -516,6 +608,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.RectSkeleton.all
         case .stylesSalute:
             StylesSaluteTheme.RectSkeleton.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
@@ -527,50 +621,60 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.TextSkeleton.all
         case .stylesSalute:
             StylesSaluteTheme.TextSkeleton.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var listItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ListItemNormal.all
+            SDDSServTheme.ListItemNormal.all
         case .stylesSalute:
-            return StylesSaluteTheme.ListItemNormal.all
+            StylesSaluteTheme.ListItemNormal.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ListItemNormal.all
+            PlasmaB2CTheme.ListItemNormal.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var listItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ListItemTight.all
+            SDDSServTheme.ListItemTight.all
         case .stylesSalute:
-            return StylesSaluteTheme.ListItemTight.all
+            StylesSaluteTheme.ListItemTight.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ListItemTight.all
+            PlasmaB2CTheme.ListItemTight.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var listNormalVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ListNormal.all
+            SDDSServTheme.ListNormal.all
         case .stylesSalute:
-            return StylesSaluteTheme.ListNormal.all
+            StylesSaluteTheme.ListNormal.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ListNormal.all
+            PlasmaB2CTheme.ListNormal.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var listTightVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.ListTight.all
+            SDDSServTheme.ListTight.all
         case .stylesSalute:
-            return StylesSaluteTheme.ListTight.all
+            StylesSaluteTheme.ListTight.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.ListTight.all
+            PlasmaB2CTheme.ListTight.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
@@ -582,6 +686,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.ScrollBar.all
         case .stylesSalute:
             StylesSaluteTheme.ScrollBar.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
@@ -593,6 +699,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.DropdownMenuNormal.all
         case .stylesSalute:
             StylesSaluteTheme.DropdownMenuNormal.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
@@ -604,130 +712,153 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.DropdownMenuTight.all
         case .stylesSalute:
             StylesSaluteTheme.DropdownMenuTight.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.DropdownMenuItemNormal.all
+            SDDSServTheme.DropdownMenuItemNormal.all
         case .stylesSalute:
-            return StylesSaluteTheme.DropdownMenuItemNormal.all
+            StylesSaluteTheme.DropdownMenuItemNormal.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.DropdownMenuItemNormal.all
+            PlasmaB2CTheme.DropdownMenuItemNormal.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.DropdownMenuItemTight.all
+            SDDSServTheme.DropdownMenuItemTight.all
         case .stylesSalute:
-            return StylesSaluteTheme.DropdownMenuItemTight.all
+            StylesSaluteTheme.DropdownMenuItemTight.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.DropdownMenuItemTight.all
+            PlasmaB2CTheme.DropdownMenuItemTight.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionItemClearActionStart.all
+            SDDSServTheme.AccordionItemClearActionStart.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionItemClearActionStart.all
+            StylesSaluteTheme.AccordionItemClearActionStart.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionItemClearActionStart.all
+            PlasmaB2CTheme.AccordionItemClearActionStart.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionItemClearActionEnd.all
+            SDDSServTheme.AccordionItemClearActionEnd.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionItemClearActionEnd.all
+            StylesSaluteTheme.AccordionItemClearActionEnd.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionItemClearActionEnd.all
+            PlasmaB2CTheme.AccordionItemClearActionEnd.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionItemSolidActionStart.all
+            SDDSServTheme.AccordionItemSolidActionStart.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionItemSolidActionStart.all
+            StylesSaluteTheme.AccordionItemSolidActionStart.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionItemSolidActionStart.all
+            PlasmaB2CTheme.AccordionItemSolidActionStart.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionItemSolidActionEnd.all
+            SDDSServTheme.AccordionItemSolidActionEnd.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionItemSolidActionEnd.all
+            StylesSaluteTheme.AccordionItemSolidActionEnd.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionItemSolidActionEnd.all
+            PlasmaB2CTheme.AccordionItemSolidActionEnd.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionClearActionStart.all
+            SDDSServTheme.AccordionClearActionStart.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionClearActionStart.all
+            StylesSaluteTheme.AccordionClearActionStart.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionClearActionStart.all
+            PlasmaB2CTheme.AccordionClearActionStart.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionClearActionEnd.all
+            SDDSServTheme.AccordionClearActionEnd.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionClearActionEnd.all
+            StylesSaluteTheme.AccordionClearActionEnd.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionClearActionEnd.all
+            PlasmaB2CTheme.AccordionClearActionEnd.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionSolidActionStart.all
+            SDDSServTheme.AccordionSolidActionStart.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionSolidActionStart.all
+            StylesSaluteTheme.AccordionSolidActionStart.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionSolidActionStart.all
+            PlasmaB2CTheme.AccordionSolidActionStart.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.AccordionSolidActionEnd.all
+            SDDSServTheme.AccordionSolidActionEnd.all
         case .stylesSalute:
-            return StylesSaluteTheme.AccordionSolidActionEnd.all
+            StylesSaluteTheme.AccordionSolidActionEnd.all
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.AccordionSolidActionEnd.all
+            PlasmaB2CTheme.AccordionSolidActionEnd.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
     
     var spinnerVariations: [Variation<SpinnerAppearance>] {
         switch self {
         case .sdddsServTheme:
-            return SDDSServTheme.Spinner.all
+            SDDSServTheme.Spinner.all
         case .stylesSalute:
-            return []
+            []
         case .plasmaB2CTheme:
-            return PlasmaB2CTheme.Spinner.all
+            PlasmaB2CTheme.Spinner.all
+        case .plasmaHomeDSTheme:
+            []
         }
     }
-    
     var codeFieldVariations: [Variation<CodeFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -736,6 +867,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.CodeField.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.CodeField.all
+        case .plasmaHomeDSTheme:
+            return []
         }
-    }    
+    }
 }

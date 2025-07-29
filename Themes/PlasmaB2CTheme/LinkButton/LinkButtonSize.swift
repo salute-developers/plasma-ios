@@ -26,6 +26,7 @@ struct LinkButtonSizeL: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -38,6 +39,7 @@ struct LinkButtonSizeM: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(6.0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -50,6 +52,7 @@ struct LinkButtonSizeS: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -62,6 +65,7 @@ struct LinkButtonSizeXl: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:24.0, height:24.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -74,6 +78,7 @@ struct LinkButtonSizeXs: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:16.0, height:16.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:16.0, height:16.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -86,6 +91,7 @@ struct LinkButtonSizeXxs: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:12.0, height:12.0)
     var paddings = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     var spinnerSize = CGSize(width:12.0, height:12.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -99,6 +105,7 @@ struct LinkButtonAnySize: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize.zero
     var paddings = EdgeInsets()
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     var spinnerSize = CGSize.zero
     var titleHorizontalGap = CGFloat(0)
 
@@ -108,6 +115,7 @@ struct LinkButtonAnySize: ButtonSizeConfiguration {
         self.iconHorizontalGap = size.iconHorizontalGap
         self.iconSize = size.iconSize
         self.paddings = size.paddings
+        self.pathDrawer = size.pathDrawer
         self.spinnerSize = size.spinnerSize
         self.titleHorizontalGap = size.titleHorizontalGap
     }

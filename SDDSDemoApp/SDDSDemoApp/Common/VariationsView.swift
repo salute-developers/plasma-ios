@@ -10,7 +10,7 @@ struct VariationsView<Provider: VariationProvider>: View {
                 Text("Theme")
                 
                 Menu {
-                    ForEach(Theme.allCases, id: \.self) { theme in
+                    ForEach(themes, id: \.self) { theme in
                         Button(theme.name) {
                             viewModel.selectTheme(theme)
                         }
@@ -57,6 +57,17 @@ struct VariationsView<Provider: VariationProvider>: View {
                 }
             }
         }
+    }
+    
+    private var themes: [Theme] {
+        let variationProvider = viewModel.variationProvider
+        let selectedTheme = variationProvider.theme
+        let result = Theme.allCases.filter { theme in
+            viewModel.variationProvider.theme = theme
+            return variationProvider.variations.first != nil
+        }
+        variationProvider.theme = selectedTheme
+        return result
     }
 }
 

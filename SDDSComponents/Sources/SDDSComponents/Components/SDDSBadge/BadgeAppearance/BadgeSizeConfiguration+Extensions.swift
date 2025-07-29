@@ -6,7 +6,7 @@ extension BadgeSizeConfiguration {
     func buttonSize(iconSize: CGSize, iconPadding: CGFloat) -> ButtonSizeConfiguration {
         var size = DefaultButtonSize()
         size.height = height
-        size.cornerRadius = cornerRadius
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: cornerRadius)
         size.iconSize = iconSize
         size.iconHorizontalGap = iconPadding
         size.paddings = EdgeInsets(top: 0, leading: startPadding, bottom: 0, trailing: endPadding)

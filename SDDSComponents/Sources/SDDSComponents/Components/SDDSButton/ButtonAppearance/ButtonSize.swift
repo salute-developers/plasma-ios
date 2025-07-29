@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
 
 /**
  Протокол `ButtonSizeConfiguration` определяет размеры и отступы кнопки, которые можно настроить для различных стилей и вариантов кнопок.
@@ -22,7 +23,13 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     /**
      Радиус скругления углов кнопки.
      */
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     var cornerRadius: CGFloat { get }
+    
+    /**
+     Shape token скругления углов кнопки.
+     */
+    var pathDrawer: PathDrawer { get }
     
     /**
      Внутренние отступы кнопки.
@@ -54,6 +61,7 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
 public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var height: CGFloat = 0
     public var cornerRadius: CGFloat = 0
+    public var pathDrawer: any PathDrawer = DefaultPathDrawer()
     public var paddings: EdgeInsets = .init()
     public var iconSize: CGSize = .zero
     public var counterSize: CounterSizeConfiguration = DefaultCounterSize()

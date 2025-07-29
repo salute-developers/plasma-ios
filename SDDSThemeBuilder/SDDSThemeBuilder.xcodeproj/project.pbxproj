@@ -67,6 +67,8 @@
 		69A8759B2DAF9E470074C1BD /* CheckboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */; };
 		69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */; };
+		81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81090AC52E4393310086BB29 /* SpinnerSize.swift */; };
+		81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81090AC42E4393310086BB29 /* SpinnerAppearance.swift */; };
 		810AFD3D2D96DBA8000B2A7A /* SegmentItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */; };
 		810AFD3F2D96DD1F000B2A7A /* ComponentStyleKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */; };
 		810AFD422D96DD91000B2A7A /* SegmentItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD412D96DD8D000B2A7A /* SegmentItemAppearance.swift */; };
@@ -583,6 +585,8 @@
 		69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupProps.swift; sourceTree = "<group>"; };
 		69A875982DAF9E470074C1BD /* RadioboxProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxProps.swift; sourceTree = "<group>"; };
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeGenerationComponent+Extension.swift"; sourceTree = "<group>"; };
+		81090AC42E4393310086BB29 /* SpinnerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAppearance.swift; sourceTree = "<group>"; };
+		81090AC52E4393310086BB29 /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
 		810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemProps.swift; sourceTree = "<group>"; };
 		810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentStyleKeyValue.swift; sourceTree = "<group>"; };
 		810AFD412D96DD8D000B2A7A /* SegmentItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearance.swift; sourceTree = "<group>"; };
@@ -1224,6 +1228,15 @@
 			path = RadioboxGroup;
 			sourceTree = "<group>";
 		};
+		81090AC62E4393310086BB29 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				81090AC42E4393310086BB29 /* SpinnerAppearance.swift */,
+				81090AC52E4393310086BB29 /* SpinnerSize.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
 		810AFD402D96DD85000B2A7A /* SegmentItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,6 +1416,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81090AC62E4393310086BB29 /* Spinner */,
 				81B510662E3C7CA100504B1D /* CodeField */,
 				810F4C632E2674EB00218FE7 /* Accordion */,
 				810F4C582E266FC500218FE7 /* AccordionItem */,
@@ -2821,6 +2835,8 @@
 				812DB7A32D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift in Sources */,
 				812DB6D82D54B75400D3F4A3 /* Component+Variations.stencil in Sources */,
 				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
+				81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */,
+				81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */,
 				812DB6E32D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift in Sources */,
 				812DB6E52D55E3DE00D3F4A3 /* ComponentStyleContextBuilder.swift in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
