@@ -3,10 +3,12 @@ import SDDSComponents
 import SDDSServTheme
 import PlasmaB2CTheme
 import StylesSaluteTheme
+import PlasmaHomeDSTheme
 
 enum Theme: String, CaseIterable {
     case sdddsServTheme
     case plasmaB2CTheme
+    case plasmaHomeDSTheme
     case stylesSalute
     
     var name: String {
@@ -21,6 +23,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.BasicButton.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BasicButton.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.BasicButton.all
         }
     }
     
@@ -32,6 +36,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.IconButton.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconButton.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.IconButton.all
         }
     }
     
@@ -43,6 +49,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.LinkButton.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.LinkButton.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -54,6 +62,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.TextField.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.TextField.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -65,6 +75,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.TextFieldClear.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.TextFieldClear.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -76,6 +88,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.TextArea.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.TextArea.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -87,6 +101,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.TextAreaClear.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.TextAreaClear.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -98,6 +114,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Avatar.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Avatar.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Avatar.all
         }
     }
     
@@ -109,6 +127,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AvatarGroup.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AvatarGroup.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.AvatarGroup.all
         }
     }
     
@@ -120,6 +140,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Counter.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Counter.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Counter.all
         }
     }
     
@@ -131,6 +153,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ChipGroup.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ChipGroup.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -142,6 +166,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ChipGroupDense.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ChipGroupDense.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.ChipGroupDense.all
         }
     }
     
@@ -153,6 +179,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ChipGroupWide.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ChipGroupWide.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.ChipGroupWide.all
         }
     }
     
@@ -164,6 +192,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.EmbeddedChipGroupDense.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.EmbeddedChipGroupDense.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -175,6 +205,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.EmbeddedChipGroupWide.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.EmbeddedChipGroupWide.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -186,6 +218,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Checkbox.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Checkbox.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Checkbox.all
         }
     }
     
@@ -197,6 +231,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.CheckboxGroup.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.CheckboxGroup.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.CheckboxGroup.all
         }
     }
     
@@ -208,6 +244,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Radiobox.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Radiobox.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Radiobox.all
         }
     }
     
@@ -219,6 +257,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.RadioboxGroup.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.RadioboxGroup.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.RadioboxGroup.all
         }
     }
     
@@ -230,6 +270,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Chip.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Chip.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Chip.all
         }
     }
     
@@ -241,6 +283,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.EmbeddedChip.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.EmbeddedChip.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -252,6 +296,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ProgressBar.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ProgressBar.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -263,6 +309,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.SegmentItem.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.SegmentItem.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -274,6 +322,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Segment.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Segment.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -285,6 +335,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Switch.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Switch.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Switch.all
         }
     }
     
@@ -296,6 +348,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Badge.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Badge.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Badge.all
         }
     }
     
@@ -307,6 +361,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.BadgeClear.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BadgeClear.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.BadgeClear.all
         }
     }
     
@@ -318,6 +374,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.BadgeTransparent.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BadgeTransparent.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.BadgeTransparent.all
         }
     }
     
@@ -329,6 +387,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.IconBadge.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconBadge.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -340,6 +400,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.IconBadgeClear.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconBadgeClear.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -351,6 +413,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.IconBadgeTransparent.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconBadgeTransparent.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -362,6 +426,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Indicator.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Indicator.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Indicator.all
         }
     }
     
@@ -373,6 +439,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Cell.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Cell.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Cell.all
         }
     }
     
@@ -384,6 +452,8 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Card.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -395,6 +465,8 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.CardClear.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -406,6 +478,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.BottomSheet.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BottomSheet.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -417,6 +491,8 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.CircularProgressBar.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -428,6 +504,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Divider.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Divider.all
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Divider.all
         }
     }
 
@@ -439,6 +517,8 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Overlay.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -450,6 +530,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Popover.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Popover.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -461,6 +543,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Tooltip.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Tooltip.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -472,6 +556,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Toast.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Toast.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -483,6 +569,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Modal.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Modal.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -494,6 +582,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.NotificationCompact.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.NotificationCompact.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -505,6 +595,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.NotificationLoose.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.NotificationLoose.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -516,6 +608,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.RectSkeleton.all
         case .stylesSalute:
             StylesSaluteTheme.RectSkeleton.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -527,6 +621,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.TextSkeleton.all
         case .stylesSalute:
             StylesSaluteTheme.TextSkeleton.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -538,6 +634,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ListItemNormal.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ListItemNormal.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -549,6 +647,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ListItemTight.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ListItemTight.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -560,6 +660,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ListNormal.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ListNormal.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -571,6 +673,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.ListTight.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.ListTight.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -582,6 +686,8 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.ScrollBar.all
         case .stylesSalute:
             StylesSaluteTheme.ScrollBar.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -637,6 +743,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionItemClearActionStart.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionItemClearActionStart.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -648,6 +756,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionItemClearActionEnd.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionItemClearActionEnd.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -659,6 +769,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionItemSolidActionStart.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionItemSolidActionStart.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -670,6 +782,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionItemSolidActionEnd.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionItemSolidActionEnd.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -681,6 +795,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionClearActionStart.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionClearActionStart.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -692,6 +808,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionClearActionEnd.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionClearActionEnd.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -703,6 +821,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionSolidActionStart.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionSolidActionStart.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -714,6 +834,8 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.AccordionSolidActionEnd.all
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.AccordionSolidActionEnd.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
     
@@ -725,6 +847,8 @@ enum Theme: String, CaseIterable {
             return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Spinner.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }    
 }
