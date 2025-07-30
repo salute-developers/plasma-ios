@@ -9,9 +9,9 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
-        appearance.textAfterTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -22,9 +22,9 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
-        appearance.textAfterTypography = TextFieldTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.textTypography = TextFieldTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -35,9 +35,9 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
-        appearance.textAfterTypography = TextFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.textTypography = TextFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -48,9 +48,9 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
-        appearance.textAfterTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textTypography = TextFieldTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "xl",
@@ -61,9 +61,9 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
-        appearance.textAfterTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.textTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",
@@ -167,7 +167,7 @@ private extension TextFieldAppearance {
         var appearance = TextFieldAppearance()
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-        appearance.captionTypography = TextFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.captionTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary

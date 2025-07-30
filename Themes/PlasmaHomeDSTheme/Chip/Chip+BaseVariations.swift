@@ -8,7 +8,7 @@ public struct Chip {
     public static var l: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.L> {
         var appearance = ChipAppearance.base
         appearance.size = ChipSize.l
-        appearance.titleTypography = ChipTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = ChipTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct Chip {
     public static var m: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.M> {
         var appearance = ChipAppearance.base
         appearance.size = ChipSize.m
-        appearance.titleTypography = ChipTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = ChipTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct Chip {
     public static var s: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.S> {
         var appearance = ChipAppearance.base
         appearance.size = ChipSize.s
-        appearance.titleTypography = ChipTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = ChipTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct Chip {
     public static var xs: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.Xs> {
         var appearance = ChipAppearance.base
         appearance.size = ChipSize.xs
-        appearance.titleTypography = ChipTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = ChipTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",
@@ -48,7 +48,7 @@ public struct Chip {
     public static var xxs: GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.Xxs> {
         var appearance = ChipAppearance.base
         appearance.size = ChipSize.xxs
-        appearance.titleTypography = ChipTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.titleTypography = ChipTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xxs",

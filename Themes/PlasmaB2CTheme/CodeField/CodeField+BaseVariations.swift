@@ -8,8 +8,8 @@ public struct CodeField {
     public static var l: GeneralAppearanceVariation<CodeField, CodeFieldAppearance, CodeFieldVariation.L> {
         var appearance = CodeFieldAppearance.base
         appearance.size = CodeFieldSize.l
-        appearance.captionTypography = CodeFieldTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.valueTypography = CodeFieldTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.captionTypography = CodeFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.valueTypography = CodeFieldTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -19,8 +19,8 @@ public struct CodeField {
     public static var m: GeneralAppearanceVariation<CodeField, CodeFieldAppearance, CodeFieldVariation.M> {
         var appearance = CodeFieldAppearance.base
         appearance.size = CodeFieldSize.m
-        appearance.captionTypography = CodeFieldTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.valueTypography = CodeFieldTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.captionTypography = CodeFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.valueTypography = CodeFieldTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -46,7 +46,7 @@ public struct CodeFieldVariation {
 private extension CodeFieldAppearance {
     static var base: CodeFieldAppearance {
         var appearance = CodeFieldAppearance()
-        appearance.backgroundColor = ColorToken.surfaceDefaultSolidPrimary
+        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPrimary
         appearance.backgroundColorActivated = ColorToken.surfaceDefaultTransparentSecondary
         appearance.backgroundColorError = ColorToken.surfaceDefaultTransparentNegative
         appearance.captionColor = ColorToken.textDefaultSecondary

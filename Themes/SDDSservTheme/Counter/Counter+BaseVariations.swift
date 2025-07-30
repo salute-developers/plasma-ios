@@ -8,7 +8,7 @@ public struct Counter {
     public static var l: ComponentAppearanceVariation<Counter, CounterAppearance> {
         var appearance = CounterAppearance.base
         appearance.size = CounterSize.l
-        appearance.textTypography = CounterTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.textTypography = CounterTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct Counter {
     public static var m: ComponentAppearanceVariation<Counter, CounterAppearance> {
         var appearance = CounterAppearance.base
         appearance.size = CounterSize.m
-        appearance.textTypography = CounterTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textTypography = CounterTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct Counter {
     public static var s: ComponentAppearanceVariation<Counter, CounterAppearance> {
         var appearance = CounterAppearance.base
         appearance.size = CounterSize.s
-        appearance.textTypography = CounterTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.textTypography = CounterTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct Counter {
     public static var xs: ComponentAppearanceVariation<Counter, CounterAppearance> {
         var appearance = CounterAppearance.base
         appearance.size = CounterSize.xs
-        appearance.textTypography = CounterTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.textTypography = CounterTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xs",
@@ -48,7 +48,7 @@ public struct Counter {
     public static var xxs: ComponentAppearanceVariation<Counter, CounterAppearance> {
         var appearance = CounterAppearance.base
         appearance.size = CounterSize.xxs
-        appearance.textTypography = CounterTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.textTypography = CounterTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xxs",

@@ -38,7 +38,7 @@ public struct CircularProgressBar {
     public static var xl: ComponentAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance> {
         var appearance = CircularProgressBarAppearance.base
         appearance.size = CircularProgressBarSize.xl
-        appearance.valueTypography = CircularProgressBarTypography(oneSize: Typographies.headerH5Bold.typography).asContainer
+        appearance.valueTypography = CircularProgressBarTypography(oneSize: AdaptiveTypographyToken.headerH5Bold.typography).asContainer
 
         return .init(
             name: "xl",
@@ -58,7 +58,7 @@ public struct CircularProgressBar {
     public static var xxl: ComponentAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance> {
         var appearance = CircularProgressBarAppearance.base
         appearance.size = CircularProgressBarSize.xxl
-        appearance.valueTypography = CircularProgressBarTypography(oneSize: Typographies.headerH2Bold.typography).asContainer
+        appearance.valueTypography = CircularProgressBarTypography(oneSize: AdaptiveTypographyToken.headerH2Bold.typography).asContainer
 
         return .init(
             name: "xxl",

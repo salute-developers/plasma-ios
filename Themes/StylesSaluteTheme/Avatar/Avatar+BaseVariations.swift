@@ -11,7 +11,7 @@ public struct Avatar {
         appearance.badgeAppearance = Badge.s.pilled.accent.appearance
         appearance.counterAppearance = Counter.s.negative.appearance
         appearance.indicatorAppearance = Indicator.m.appearance
-        appearance.textTypography = AvatarTypography(oneSize: Typographies.headerH4Bold.typography).asContainer
+        appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
 
         return .init(
             name: "l",
@@ -24,7 +24,7 @@ public struct Avatar {
         appearance.badgeAppearance = Badge.xs.pilled.accent.appearance
         appearance.counterAppearance = Counter.xs.negative.appearance
         appearance.indicatorAppearance = Indicator.m.appearance
-        appearance.textTypography = AvatarTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -36,7 +36,7 @@ public struct Avatar {
         appearance.size = AvatarSize.s
         appearance.counterAppearance = Counter.xxs.negative.appearance
         appearance.indicatorAppearance = Indicator.s.appearance
-        appearance.textTypography = AvatarTypography(oneSize: Typographies.bodyXxsBold.typography).asContainer
+        appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -49,7 +49,7 @@ public struct Avatar {
         appearance.badgeAppearance = Badge.l.pilled.accent.appearance
         appearance.counterAppearance = Counter.l.negative.appearance
         appearance.indicatorAppearance = Indicator.l.appearance
-        appearance.textTypography = AvatarTypography(oneSize: Typographies.headerH2Bold.typography).asContainer
+        appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.headerH2Bold.typography).asContainer
 
         return .init(
             name: "xxl",
@@ -75,11 +75,11 @@ public struct AvatarVariation {
 private extension AvatarAppearance {
     static var base: AvatarAppearance {
         var appearance = AvatarAppearance()
-        appearance.backgroundFillStyle = .gradient(Gradients.surfaceDefaultGradientMain)
+        appearance.backgroundFillStyle = .gradient(GradientToken.surfaceDefaultGradientMain)
         appearance.backgroundOpacity = CGFloat(0.2)
         appearance.offlineStatusColor = ColorToken.surfaceOnLightSolidTertiary
         appearance.onlineStatusColor = ColorToken.surfaceDefaultPositive
-        appearance.textFillStyle = .gradient(Gradients.textDefaultGradientMain)
+        appearance.textFillStyle = .gradient(GradientToken.textDefaultGradientMain)
         return appearance
     }
 }

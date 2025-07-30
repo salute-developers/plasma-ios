@@ -8,7 +8,7 @@ public struct Tooltip {
     public static var m: ComponentAppearanceVariation<Tooltip, TooltipAppearance> {
         var appearance = TooltipAppearance.base
         appearance.size = TooltipSize.m
-        appearance.textTypography = TooltipTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.textTypography = TooltipTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -18,7 +18,7 @@ public struct Tooltip {
     public static var s: ComponentAppearanceVariation<Tooltip, TooltipAppearance> {
         var appearance = TooltipAppearance.base
         appearance.size = TooltipSize.s
-        appearance.textTypography = TooltipTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textTypography = TooltipTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "s",

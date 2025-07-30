@@ -42,7 +42,7 @@ private extension ToastAppearance {
         appearance.contentEndColor = ColorToken.textDefaultSecondary
         appearance.contentStartColor = ColorToken.textDefaultPrimary
         appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textTypography = ToastTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textTypography = ToastTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         return appearance
     }
 }

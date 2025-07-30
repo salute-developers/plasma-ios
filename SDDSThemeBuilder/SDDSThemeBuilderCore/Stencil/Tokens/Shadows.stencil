@@ -4,8 +4,17 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Shadows {
+public enum Shadows {
     {%- for key, value in json %}
-    public static let {{ key }} = ShadowToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: ShadowToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

@@ -15,10 +15,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "l.innerLabel",
@@ -33,10 +33,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
             name: "l.outerLabel",
@@ -241,10 +241,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "m.innerLabel",
@@ -259,10 +259,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
         return .init(
             name: "m.outerLabel",
@@ -467,10 +467,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "s.innerLabel",
@@ -485,10 +485,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
             name: "s.outerLabel",
@@ -693,10 +693,10 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextAreaLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "xs.outerLabel",

@@ -41,7 +41,7 @@ private extension ToastAppearance {
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
         appearance.contentEndColor = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textTypography = ToastTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textTypography = ToastTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         return appearance
     }
 }

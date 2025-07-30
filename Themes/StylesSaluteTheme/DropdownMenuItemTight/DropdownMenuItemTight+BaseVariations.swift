@@ -9,7 +9,7 @@ public struct DropdownMenuItemTight {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemTightSize.l
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -20,7 +20,7 @@ public struct DropdownMenuItemTight {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemTightSize.m
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -31,7 +31,7 @@ public struct DropdownMenuItemTight {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemTightSize.s
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -42,7 +42,7 @@ public struct DropdownMenuItemTight {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemTightSize.xs
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemTightTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",

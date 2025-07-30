@@ -8,7 +8,7 @@ public struct BadgeTransparent {
     public static var l: GeneralAppearanceVariation<BadgeTransparent, BadgeAppearance, BadgeTransparentVariation.L> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeTransparentSize.l
-        appearance.labelTypography = BadgeTransparentTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.labelTypography = BadgeTransparentTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct BadgeTransparent {
     public static var m: GeneralAppearanceVariation<BadgeTransparent, BadgeAppearance, BadgeTransparentVariation.M> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeTransparentSize.m
-        appearance.labelTypography = BadgeTransparentTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTransparentTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct BadgeTransparent {
     public static var s: GeneralAppearanceVariation<BadgeTransparent, BadgeAppearance, BadgeTransparentVariation.S> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeTransparentSize.s
-        appearance.labelTypography = BadgeTransparentTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTransparentTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct BadgeTransparent {
     public static var xs: GeneralAppearanceVariation<BadgeTransparent, BadgeAppearance, BadgeTransparentVariation.Xs> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeTransparentSize.xs
-        appearance.labelTypography = BadgeTransparentTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTransparentTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xs",

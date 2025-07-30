@@ -8,7 +8,7 @@ public struct Badge {
     public static var l: GeneralAppearanceVariation<Badge, BadgeAppearance, BadgeVariation.L> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeSize.l
-        appearance.labelTypography = BadgeTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.labelTypography = BadgeTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct Badge {
     public static var m: GeneralAppearanceVariation<Badge, BadgeAppearance, BadgeVariation.M> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeSize.m
-        appearance.labelTypography = BadgeTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct Badge {
     public static var s: GeneralAppearanceVariation<Badge, BadgeAppearance, BadgeVariation.S> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeSize.s
-        appearance.labelTypography = BadgeTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct Badge {
     public static var xs: GeneralAppearanceVariation<Badge, BadgeAppearance, BadgeVariation.Xs> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeSize.xs
-        appearance.labelTypography = BadgeTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xs",

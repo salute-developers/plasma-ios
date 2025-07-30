@@ -22,7 +22,7 @@ final class TypographyTokenContextBuilder: CodeGenerationContextBuilder {
         } else {
             sizeString = oneSizeString
         }
-        return "\(component.rawValue)Typography(\(sizeString): Typographies.\(string.camelCase).typography).asContainer"
+        return "\(component.rawValue)Typography(\(sizeString): AdaptiveTypographyToken.\(string.camelCase).typography).asContainer"
         
     }
 }
