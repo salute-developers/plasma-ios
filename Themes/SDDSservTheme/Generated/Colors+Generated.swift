@@ -4,923 +4,2764 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Colors {
-    public static let backgroundDarkPrimary = ColorToken.backgroundDarkPrimary
-    public static let backgroundDarkSecondary = ColorToken.backgroundDarkSecondary
-    public static let backgroundDarkTertiary = ColorToken.backgroundDarkTertiary
-    public static let backgroundDefaultPrimary = ColorToken.backgroundDefaultPrimary
-    public static let backgroundDefaultPrimaryBrightness = ColorToken.backgroundDefaultPrimaryBrightness
-    public static let backgroundDefaultSecondary = ColorToken.backgroundDefaultSecondary
-    public static let backgroundDefaultTertiary = ColorToken.backgroundDefaultTertiary
-    public static let backgroundInversePrimary = ColorToken.backgroundInversePrimary
-    public static let backgroundInversePrimaryBrightness = ColorToken.backgroundInversePrimaryBrightness
-    public static let backgroundInverseSecondary = ColorToken.backgroundInverseSecondary
-    public static let backgroundInverseTertiary = ColorToken.backgroundInverseTertiary
-    public static let backgroundLightPrimary = ColorToken.backgroundLightPrimary
-    public static let backgroundLightSecondary = ColorToken.backgroundLightSecondary
-    public static let backgroundLightTertiary = ColorToken.backgroundLightTertiary
-    public static let dataDefaultYellow = ColorToken.dataDefaultYellow
-    public static let dataDefaultYellowActive = ColorToken.dataDefaultYellowActive
-    public static let dataDefaultYellowHover = ColorToken.dataDefaultYellowHover
-    public static let dataDefaultYellowMinor = ColorToken.dataDefaultYellowMinor
-    public static let dataDefaultYellowMinorActive = ColorToken.dataDefaultYellowMinorActive
-    public static let dataDefaultYellowMinorHover = ColorToken.dataDefaultYellowMinorHover
-    public static let dataDefaultYellowTransparent = ColorToken.dataDefaultYellowTransparent
-    public static let dataDefaultYellowTransparentActive = ColorToken.dataDefaultYellowTransparentActive
-    public static let dataDefaultYellowTransparentHover = ColorToken.dataDefaultYellowTransparentHover
-    public static let dataInverseYellow = ColorToken.dataInverseYellow
-    public static let dataInverseYellowActive = ColorToken.dataInverseYellowActive
-    public static let dataInverseYellowHover = ColorToken.dataInverseYellowHover
-    public static let dataInverseYellowMinor = ColorToken.dataInverseYellowMinor
-    public static let dataInverseYellowMinorActive = ColorToken.dataInverseYellowMinorActive
-    public static let dataInverseYellowMinorHover = ColorToken.dataInverseYellowMinorHover
-    public static let dataInverseYellowTransparent = ColorToken.dataInverseYellowTransparent
-    public static let dataInverseYellowTransparentActive = ColorToken.dataInverseYellowTransparentActive
-    public static let dataInverseYellowTransparentHover = ColorToken.dataInverseYellowTransparentHover
-    public static let dataOnDarkYellow = ColorToken.dataOnDarkYellow
-    public static let dataOnDarkYellowActive = ColorToken.dataOnDarkYellowActive
-    public static let dataOnDarkYellowHover = ColorToken.dataOnDarkYellowHover
-    public static let dataOnDarkYellowMinor = ColorToken.dataOnDarkYellowMinor
-    public static let dataOnDarkYellowMinorActive = ColorToken.dataOnDarkYellowMinorActive
-    public static let dataOnDarkYellowMinorHover = ColorToken.dataOnDarkYellowMinorHover
-    public static let dataOnDarkYellowTransparent = ColorToken.dataOnDarkYellowTransparent
-    public static let dataOnDarkYellowTransparentActive = ColorToken.dataOnDarkYellowTransparentActive
-    public static let dataOnDarkYellowTransparentHover = ColorToken.dataOnDarkYellowTransparentHover
-    public static let dataOnLightYellow = ColorToken.dataOnLightYellow
-    public static let dataOnLightYellowActive = ColorToken.dataOnLightYellowActive
-    public static let dataOnLightYellowHover = ColorToken.dataOnLightYellowHover
-    public static let dataOnLightYellowMinor = ColorToken.dataOnLightYellowMinor
-    public static let dataOnLightYellowMinorActive = ColorToken.dataOnLightYellowMinorActive
-    public static let dataOnLightYellowMinorHover = ColorToken.dataOnLightYellowMinorHover
-    public static let dataOnLightYellowTransparent = ColorToken.dataOnLightYellowTransparent
-    public static let dataOnLightYellowTransparentActive = ColorToken.dataOnLightYellowTransparentActive
-    public static let dataOnLightYellowTransparentHover = ColorToken.dataOnLightYellowTransparentHover
-    public static let outlineDefaultAccent = ColorToken.outlineDefaultAccent
-    public static let outlineDefaultAccentActive = ColorToken.outlineDefaultAccentActive
-    public static let outlineDefaultAccentHover = ColorToken.outlineDefaultAccentHover
-    public static let outlineDefaultAccentMinor = ColorToken.outlineDefaultAccentMinor
-    public static let outlineDefaultAccentMinorActive = ColorToken.outlineDefaultAccentMinorActive
-    public static let outlineDefaultAccentMinorHover = ColorToken.outlineDefaultAccentMinorHover
-    public static let outlineDefaultClear = ColorToken.outlineDefaultClear
-    public static let outlineDefaultClearActive = ColorToken.outlineDefaultClearActive
-    public static let outlineDefaultClearHover = ColorToken.outlineDefaultClearHover
-    public static let outlineDefaultInfo = ColorToken.outlineDefaultInfo
-    public static let outlineDefaultInfoActive = ColorToken.outlineDefaultInfoActive
-    public static let outlineDefaultInfoHover = ColorToken.outlineDefaultInfoHover
-    public static let outlineDefaultInfoMinor = ColorToken.outlineDefaultInfoMinor
-    public static let outlineDefaultInfoMinorActive = ColorToken.outlineDefaultInfoMinorActive
-    public static let outlineDefaultInfoMinorHover = ColorToken.outlineDefaultInfoMinorHover
-    public static let outlineDefaultNegative = ColorToken.outlineDefaultNegative
-    public static let outlineDefaultNegativeActive = ColorToken.outlineDefaultNegativeActive
-    public static let outlineDefaultNegativeHover = ColorToken.outlineDefaultNegativeHover
-    public static let outlineDefaultNegativeMinor = ColorToken.outlineDefaultNegativeMinor
-    public static let outlineDefaultNegativeMinorActive = ColorToken.outlineDefaultNegativeMinorActive
-    public static let outlineDefaultNegativeMinorHover = ColorToken.outlineDefaultNegativeMinorHover
-    public static let outlineDefaultPositive = ColorToken.outlineDefaultPositive
-    public static let outlineDefaultPositiveActive = ColorToken.outlineDefaultPositiveActive
-    public static let outlineDefaultPositiveHover = ColorToken.outlineDefaultPositiveHover
-    public static let outlineDefaultPositiveMinor = ColorToken.outlineDefaultPositiveMinor
-    public static let outlineDefaultPositiveMinorActive = ColorToken.outlineDefaultPositiveMinorActive
-    public static let outlineDefaultPositiveMinorHover = ColorToken.outlineDefaultPositiveMinorHover
-    public static let outlineDefaultPromo = ColorToken.outlineDefaultPromo
-    public static let outlineDefaultPromoActive = ColorToken.outlineDefaultPromoActive
-    public static let outlineDefaultPromoHover = ColorToken.outlineDefaultPromoHover
-    public static let outlineDefaultPromoMinor = ColorToken.outlineDefaultPromoMinor
-    public static let outlineDefaultPromoMinorActive = ColorToken.outlineDefaultPromoMinorActive
-    public static let outlineDefaultPromoMinorHover = ColorToken.outlineDefaultPromoMinorHover
-    public static let outlineDefaultSolidPrimary = ColorToken.outlineDefaultSolidPrimary
-    public static let outlineDefaultSolidPrimaryActive = ColorToken.outlineDefaultSolidPrimaryActive
-    public static let outlineDefaultSolidPrimaryHover = ColorToken.outlineDefaultSolidPrimaryHover
-    public static let outlineDefaultSolidSecondary = ColorToken.outlineDefaultSolidSecondary
-    public static let outlineDefaultSolidSecondaryActive = ColorToken.outlineDefaultSolidSecondaryActive
-    public static let outlineDefaultSolidSecondaryHover = ColorToken.outlineDefaultSolidSecondaryHover
-    public static let outlineDefaultSolidTertiary = ColorToken.outlineDefaultSolidTertiary
-    public static let outlineDefaultSolidTertiaryActive = ColorToken.outlineDefaultSolidTertiaryActive
-    public static let outlineDefaultSolidTertiaryHover = ColorToken.outlineDefaultSolidTertiaryHover
-    public static let outlineDefaultTransparentAccent = ColorToken.outlineDefaultTransparentAccent
-    public static let outlineDefaultTransparentAccentActive = ColorToken.outlineDefaultTransparentAccentActive
-    public static let outlineDefaultTransparentAccentHover = ColorToken.outlineDefaultTransparentAccentHover
-    public static let outlineDefaultTransparentDefault = ColorToken.outlineDefaultTransparentDefault
-    public static let outlineDefaultTransparentDefaultActive = ColorToken.outlineDefaultTransparentDefaultActive
-    public static let outlineDefaultTransparentDefaultHover = ColorToken.outlineDefaultTransparentDefaultHover
-    public static let outlineDefaultTransparentInfo = ColorToken.outlineDefaultTransparentInfo
-    public static let outlineDefaultTransparentInfoActive = ColorToken.outlineDefaultTransparentInfoActive
-    public static let outlineDefaultTransparentInfoHover = ColorToken.outlineDefaultTransparentInfoHover
-    public static let outlineDefaultTransparentNegative = ColorToken.outlineDefaultTransparentNegative
-    public static let outlineDefaultTransparentNegativeActive = ColorToken.outlineDefaultTransparentNegativeActive
-    public static let outlineDefaultTransparentNegativeHover = ColorToken.outlineDefaultTransparentNegativeHover
-    public static let outlineDefaultTransparentPositive = ColorToken.outlineDefaultTransparentPositive
-    public static let outlineDefaultTransparentPositiveActive = ColorToken.outlineDefaultTransparentPositiveActive
-    public static let outlineDefaultTransparentPositiveHover = ColorToken.outlineDefaultTransparentPositiveHover
-    public static let outlineDefaultTransparentPrimary = ColorToken.outlineDefaultTransparentPrimary
-    public static let outlineDefaultTransparentPrimaryActive = ColorToken.outlineDefaultTransparentPrimaryActive
-    public static let outlineDefaultTransparentPrimaryHover = ColorToken.outlineDefaultTransparentPrimaryHover
-    public static let outlineDefaultTransparentSecondary = ColorToken.outlineDefaultTransparentSecondary
-    public static let outlineDefaultTransparentSecondaryActive = ColorToken.outlineDefaultTransparentSecondaryActive
-    public static let outlineDefaultTransparentSecondaryHover = ColorToken.outlineDefaultTransparentSecondaryHover
-    public static let outlineDefaultTransparentTertiary = ColorToken.outlineDefaultTransparentTertiary
-    public static let outlineDefaultTransparentTertiaryActive = ColorToken.outlineDefaultTransparentTertiaryActive
-    public static let outlineDefaultTransparentTertiaryHover = ColorToken.outlineDefaultTransparentTertiaryHover
-    public static let outlineDefaultTransparentWarning = ColorToken.outlineDefaultTransparentWarning
-    public static let outlineDefaultTransparentWarningActive = ColorToken.outlineDefaultTransparentWarningActive
-    public static let outlineDefaultTransparentWarningHover = ColorToken.outlineDefaultTransparentWarningHover
-    public static let outlineDefaultWarning = ColorToken.outlineDefaultWarning
-    public static let outlineDefaultWarningActive = ColorToken.outlineDefaultWarningActive
-    public static let outlineDefaultWarningHover = ColorToken.outlineDefaultWarningHover
-    public static let outlineDefaultWarningMinor = ColorToken.outlineDefaultWarningMinor
-    public static let outlineDefaultWarningMinorActive = ColorToken.outlineDefaultWarningMinorActive
-    public static let outlineDefaultWarningMinorHover = ColorToken.outlineDefaultWarningMinorHover
-    public static let outlineInverseAccent = ColorToken.outlineInverseAccent
-    public static let outlineInverseAccentActive = ColorToken.outlineInverseAccentActive
-    public static let outlineInverseAccentHover = ColorToken.outlineInverseAccentHover
-    public static let outlineInverseAccentMinor = ColorToken.outlineInverseAccentMinor
-    public static let outlineInverseAccentMinorActive = ColorToken.outlineInverseAccentMinorActive
-    public static let outlineInverseAccentMinorHover = ColorToken.outlineInverseAccentMinorHover
-    public static let outlineInverseClear = ColorToken.outlineInverseClear
-    public static let outlineInverseClearActive = ColorToken.outlineInverseClearActive
-    public static let outlineInverseClearHover = ColorToken.outlineInverseClearHover
-    public static let outlineInverseInfo = ColorToken.outlineInverseInfo
-    public static let outlineInverseInfoActive = ColorToken.outlineInverseInfoActive
-    public static let outlineInverseInfoHover = ColorToken.outlineInverseInfoHover
-    public static let outlineInverseInfoMinor = ColorToken.outlineInverseInfoMinor
-    public static let outlineInverseInfoMinorActive = ColorToken.outlineInverseInfoMinorActive
-    public static let outlineInverseInfoMinorHover = ColorToken.outlineInverseInfoMinorHover
-    public static let outlineInverseNegative = ColorToken.outlineInverseNegative
-    public static let outlineInverseNegativeActive = ColorToken.outlineInverseNegativeActive
-    public static let outlineInverseNegativeHover = ColorToken.outlineInverseNegativeHover
-    public static let outlineInverseNegativeMinor = ColorToken.outlineInverseNegativeMinor
-    public static let outlineInverseNegativeMinorActive = ColorToken.outlineInverseNegativeMinorActive
-    public static let outlineInverseNegativeMinorHover = ColorToken.outlineInverseNegativeMinorHover
-    public static let outlineInversePositive = ColorToken.outlineInversePositive
-    public static let outlineInversePositiveActive = ColorToken.outlineInversePositiveActive
-    public static let outlineInversePositiveHover = ColorToken.outlineInversePositiveHover
-    public static let outlineInversePositiveMinor = ColorToken.outlineInversePositiveMinor
-    public static let outlineInversePositiveMinorActive = ColorToken.outlineInversePositiveMinorActive
-    public static let outlineInversePositiveMinorHover = ColorToken.outlineInversePositiveMinorHover
-    public static let outlineInversePromo = ColorToken.outlineInversePromo
-    public static let outlineInversePromoActive = ColorToken.outlineInversePromoActive
-    public static let outlineInversePromoHover = ColorToken.outlineInversePromoHover
-    public static let outlineInversePromoMinor = ColorToken.outlineInversePromoMinor
-    public static let outlineInversePromoMinorActive = ColorToken.outlineInversePromoMinorActive
-    public static let outlineInversePromoMinorHover = ColorToken.outlineInversePromoMinorHover
-    public static let outlineInverseSolidPrimary = ColorToken.outlineInverseSolidPrimary
-    public static let outlineInverseSolidPrimaryActive = ColorToken.outlineInverseSolidPrimaryActive
-    public static let outlineInverseSolidPrimaryHover = ColorToken.outlineInverseSolidPrimaryHover
-    public static let outlineInverseSolidSecondary = ColorToken.outlineInverseSolidSecondary
-    public static let outlineInverseSolidSecondaryActive = ColorToken.outlineInverseSolidSecondaryActive
-    public static let outlineInverseSolidSecondaryHover = ColorToken.outlineInverseSolidSecondaryHover
-    public static let outlineInverseSolidTertiary = ColorToken.outlineInverseSolidTertiary
-    public static let outlineInverseSolidTertiaryActive = ColorToken.outlineInverseSolidTertiaryActive
-    public static let outlineInverseSolidTertiaryHover = ColorToken.outlineInverseSolidTertiaryHover
-    public static let outlineInverseTransparentAccent = ColorToken.outlineInverseTransparentAccent
-    public static let outlineInverseTransparentAccentActive = ColorToken.outlineInverseTransparentAccentActive
-    public static let outlineInverseTransparentAccentHover = ColorToken.outlineInverseTransparentAccentHover
-    public static let outlineInverseTransparentDefault = ColorToken.outlineInverseTransparentDefault
-    public static let outlineInverseTransparentDefaultActive = ColorToken.outlineInverseTransparentDefaultActive
-    public static let outlineInverseTransparentDefaultHover = ColorToken.outlineInverseTransparentDefaultHover
-    public static let outlineInverseTransparentInfo = ColorToken.outlineInverseTransparentInfo
-    public static let outlineInverseTransparentInfoActive = ColorToken.outlineInverseTransparentInfoActive
-    public static let outlineInverseTransparentInfoHover = ColorToken.outlineInverseTransparentInfoHover
-    public static let outlineInverseTransparentNegative = ColorToken.outlineInverseTransparentNegative
-    public static let outlineInverseTransparentNegativeActive = ColorToken.outlineInverseTransparentNegativeActive
-    public static let outlineInverseTransparentNegativeHover = ColorToken.outlineInverseTransparentNegativeHover
-    public static let outlineInverseTransparentPositive = ColorToken.outlineInverseTransparentPositive
-    public static let outlineInverseTransparentPositiveActive = ColorToken.outlineInverseTransparentPositiveActive
-    public static let outlineInverseTransparentPositiveHover = ColorToken.outlineInverseTransparentPositiveHover
-    public static let outlineInverseTransparentPrimary = ColorToken.outlineInverseTransparentPrimary
-    public static let outlineInverseTransparentPrimaryActive = ColorToken.outlineInverseTransparentPrimaryActive
-    public static let outlineInverseTransparentPrimaryHover = ColorToken.outlineInverseTransparentPrimaryHover
-    public static let outlineInverseTransparentSecondary = ColorToken.outlineInverseTransparentSecondary
-    public static let outlineInverseTransparentSecondaryActive = ColorToken.outlineInverseTransparentSecondaryActive
-    public static let outlineInverseTransparentSecondaryHover = ColorToken.outlineInverseTransparentSecondaryHover
-    public static let outlineInverseTransparentTertiary = ColorToken.outlineInverseTransparentTertiary
-    public static let outlineInverseTransparentTertiaryActive = ColorToken.outlineInverseTransparentTertiaryActive
-    public static let outlineInverseTransparentTertiaryHover = ColorToken.outlineInverseTransparentTertiaryHover
-    public static let outlineInverseTransparentWarning = ColorToken.outlineInverseTransparentWarning
-    public static let outlineInverseTransparentWarningActive = ColorToken.outlineInverseTransparentWarningActive
-    public static let outlineInverseTransparentWarningHover = ColorToken.outlineInverseTransparentWarningHover
-    public static let outlineInverseWarning = ColorToken.outlineInverseWarning
-    public static let outlineInverseWarningActive = ColorToken.outlineInverseWarningActive
-    public static let outlineInverseWarningHover = ColorToken.outlineInverseWarningHover
-    public static let outlineInverseWarningMinor = ColorToken.outlineInverseWarningMinor
-    public static let outlineInverseWarningMinorActive = ColorToken.outlineInverseWarningMinorActive
-    public static let outlineInverseWarningMinorHover = ColorToken.outlineInverseWarningMinorHover
-    public static let outlineOnDarkAccent = ColorToken.outlineOnDarkAccent
-    public static let outlineOnDarkAccentActive = ColorToken.outlineOnDarkAccentActive
-    public static let outlineOnDarkAccentHover = ColorToken.outlineOnDarkAccentHover
-    public static let outlineOnDarkAccentMinor = ColorToken.outlineOnDarkAccentMinor
-    public static let outlineOnDarkAccentMinorActive = ColorToken.outlineOnDarkAccentMinorActive
-    public static let outlineOnDarkAccentMinorHover = ColorToken.outlineOnDarkAccentMinorHover
-    public static let outlineOnDarkClear = ColorToken.outlineOnDarkClear
-    public static let outlineOnDarkClearActive = ColorToken.outlineOnDarkClearActive
-    public static let outlineOnDarkClearHover = ColorToken.outlineOnDarkClearHover
-    public static let outlineOnDarkInfo = ColorToken.outlineOnDarkInfo
-    public static let outlineOnDarkInfoActive = ColorToken.outlineOnDarkInfoActive
-    public static let outlineOnDarkInfoHover = ColorToken.outlineOnDarkInfoHover
-    public static let outlineOnDarkInfoMinor = ColorToken.outlineOnDarkInfoMinor
-    public static let outlineOnDarkInfoMinorActive = ColorToken.outlineOnDarkInfoMinorActive
-    public static let outlineOnDarkInfoMinorHover = ColorToken.outlineOnDarkInfoMinorHover
-    public static let outlineOnDarkNegative = ColorToken.outlineOnDarkNegative
-    public static let outlineOnDarkNegativeActive = ColorToken.outlineOnDarkNegativeActive
-    public static let outlineOnDarkNegativeHover = ColorToken.outlineOnDarkNegativeHover
-    public static let outlineOnDarkNegativeMinor = ColorToken.outlineOnDarkNegativeMinor
-    public static let outlineOnDarkNegativeMinorActive = ColorToken.outlineOnDarkNegativeMinorActive
-    public static let outlineOnDarkNegativeMinorHover = ColorToken.outlineOnDarkNegativeMinorHover
-    public static let outlineOnDarkPositive = ColorToken.outlineOnDarkPositive
-    public static let outlineOnDarkPositiveActive = ColorToken.outlineOnDarkPositiveActive
-    public static let outlineOnDarkPositiveHover = ColorToken.outlineOnDarkPositiveHover
-    public static let outlineOnDarkPositiveMinor = ColorToken.outlineOnDarkPositiveMinor
-    public static let outlineOnDarkPositiveMinorActive = ColorToken.outlineOnDarkPositiveMinorActive
-    public static let outlineOnDarkPositiveMinorHover = ColorToken.outlineOnDarkPositiveMinorHover
-    public static let outlineOnDarkPromo = ColorToken.outlineOnDarkPromo
-    public static let outlineOnDarkPromoActive = ColorToken.outlineOnDarkPromoActive
-    public static let outlineOnDarkPromoHover = ColorToken.outlineOnDarkPromoHover
-    public static let outlineOnDarkPromoMinor = ColorToken.outlineOnDarkPromoMinor
-    public static let outlineOnDarkPromoMinorActive = ColorToken.outlineOnDarkPromoMinorActive
-    public static let outlineOnDarkPromoMinorHover = ColorToken.outlineOnDarkPromoMinorHover
-    public static let outlineOnDarkSolidPrimary = ColorToken.outlineOnDarkSolidPrimary
-    public static let outlineOnDarkSolidPrimaryActive = ColorToken.outlineOnDarkSolidPrimaryActive
-    public static let outlineOnDarkSolidPrimaryHover = ColorToken.outlineOnDarkSolidPrimaryHover
-    public static let outlineOnDarkSolidSecondary = ColorToken.outlineOnDarkSolidSecondary
-    public static let outlineOnDarkSolidSecondaryActive = ColorToken.outlineOnDarkSolidSecondaryActive
-    public static let outlineOnDarkSolidSecondaryHover = ColorToken.outlineOnDarkSolidSecondaryHover
-    public static let outlineOnDarkSolidTertiary = ColorToken.outlineOnDarkSolidTertiary
-    public static let outlineOnDarkSolidTertiaryActive = ColorToken.outlineOnDarkSolidTertiaryActive
-    public static let outlineOnDarkSolidTertiaryHover = ColorToken.outlineOnDarkSolidTertiaryHover
-    public static let outlineOnDarkTransparentAccent = ColorToken.outlineOnDarkTransparentAccent
-    public static let outlineOnDarkTransparentAccentActive = ColorToken.outlineOnDarkTransparentAccentActive
-    public static let outlineOnDarkTransparentAccentHover = ColorToken.outlineOnDarkTransparentAccentHover
-    public static let outlineOnDarkTransparentDefault = ColorToken.outlineOnDarkTransparentDefault
-    public static let outlineOnDarkTransparentDefaultActive = ColorToken.outlineOnDarkTransparentDefaultActive
-    public static let outlineOnDarkTransparentDefaultHover = ColorToken.outlineOnDarkTransparentDefaultHover
-    public static let outlineOnDarkTransparentInfo = ColorToken.outlineOnDarkTransparentInfo
-    public static let outlineOnDarkTransparentInfoActive = ColorToken.outlineOnDarkTransparentInfoActive
-    public static let outlineOnDarkTransparentInfoHover = ColorToken.outlineOnDarkTransparentInfoHover
-    public static let outlineOnDarkTransparentNegative = ColorToken.outlineOnDarkTransparentNegative
-    public static let outlineOnDarkTransparentNegativeActive = ColorToken.outlineOnDarkTransparentNegativeActive
-    public static let outlineOnDarkTransparentNegativeHover = ColorToken.outlineOnDarkTransparentNegativeHover
-    public static let outlineOnDarkTransparentPositive = ColorToken.outlineOnDarkTransparentPositive
-    public static let outlineOnDarkTransparentPositiveActive = ColorToken.outlineOnDarkTransparentPositiveActive
-    public static let outlineOnDarkTransparentPositiveHover = ColorToken.outlineOnDarkTransparentPositiveHover
-    public static let outlineOnDarkTransparentPrimary = ColorToken.outlineOnDarkTransparentPrimary
-    public static let outlineOnDarkTransparentPrimaryActive = ColorToken.outlineOnDarkTransparentPrimaryActive
-    public static let outlineOnDarkTransparentPrimaryHover = ColorToken.outlineOnDarkTransparentPrimaryHover
-    public static let outlineOnDarkTransparentSecondary = ColorToken.outlineOnDarkTransparentSecondary
-    public static let outlineOnDarkTransparentSecondaryActive = ColorToken.outlineOnDarkTransparentSecondaryActive
-    public static let outlineOnDarkTransparentSecondaryHover = ColorToken.outlineOnDarkTransparentSecondaryHover
-    public static let outlineOnDarkTransparentTertiary = ColorToken.outlineOnDarkTransparentTertiary
-    public static let outlineOnDarkTransparentTertiaryActive = ColorToken.outlineOnDarkTransparentTertiaryActive
-    public static let outlineOnDarkTransparentTertiaryHover = ColorToken.outlineOnDarkTransparentTertiaryHover
-    public static let outlineOnDarkTransparentWarning = ColorToken.outlineOnDarkTransparentWarning
-    public static let outlineOnDarkTransparentWarningActive = ColorToken.outlineOnDarkTransparentWarningActive
-    public static let outlineOnDarkTransparentWarningHover = ColorToken.outlineOnDarkTransparentWarningHover
-    public static let outlineOnDarkWarning = ColorToken.outlineOnDarkWarning
-    public static let outlineOnDarkWarningActive = ColorToken.outlineOnDarkWarningActive
-    public static let outlineOnDarkWarningHover = ColorToken.outlineOnDarkWarningHover
-    public static let outlineOnDarkWarningMinor = ColorToken.outlineOnDarkWarningMinor
-    public static let outlineOnDarkWarningMinorActive = ColorToken.outlineOnDarkWarningMinorActive
-    public static let outlineOnDarkWarningMinorHover = ColorToken.outlineOnDarkWarningMinorHover
-    public static let outlineOnLightAccent = ColorToken.outlineOnLightAccent
-    public static let outlineOnLightAccentActive = ColorToken.outlineOnLightAccentActive
-    public static let outlineOnLightAccentHover = ColorToken.outlineOnLightAccentHover
-    public static let outlineOnLightAccentMinor = ColorToken.outlineOnLightAccentMinor
-    public static let outlineOnLightAccentMinorActive = ColorToken.outlineOnLightAccentMinorActive
-    public static let outlineOnLightAccentMinorHover = ColorToken.outlineOnLightAccentMinorHover
-    public static let outlineOnLightClear = ColorToken.outlineOnLightClear
-    public static let outlineOnLightClearActive = ColorToken.outlineOnLightClearActive
-    public static let outlineOnLightClearHover = ColorToken.outlineOnLightClearHover
-    public static let outlineOnLightInfo = ColorToken.outlineOnLightInfo
-    public static let outlineOnLightInfoActive = ColorToken.outlineOnLightInfoActive
-    public static let outlineOnLightInfoHover = ColorToken.outlineOnLightInfoHover
-    public static let outlineOnLightInfoMinor = ColorToken.outlineOnLightInfoMinor
-    public static let outlineOnLightInfoMinorActive = ColorToken.outlineOnLightInfoMinorActive
-    public static let outlineOnLightInfoMinorHover = ColorToken.outlineOnLightInfoMinorHover
-    public static let outlineOnLightNegative = ColorToken.outlineOnLightNegative
-    public static let outlineOnLightNegativeActive = ColorToken.outlineOnLightNegativeActive
-    public static let outlineOnLightNegativeHover = ColorToken.outlineOnLightNegativeHover
-    public static let outlineOnLightNegativeMinor = ColorToken.outlineOnLightNegativeMinor
-    public static let outlineOnLightNegativeMinorActive = ColorToken.outlineOnLightNegativeMinorActive
-    public static let outlineOnLightNegativeMinorHover = ColorToken.outlineOnLightNegativeMinorHover
-    public static let outlineOnLightPositive = ColorToken.outlineOnLightPositive
-    public static let outlineOnLightPositiveActive = ColorToken.outlineOnLightPositiveActive
-    public static let outlineOnLightPositiveHover = ColorToken.outlineOnLightPositiveHover
-    public static let outlineOnLightPositiveMinor = ColorToken.outlineOnLightPositiveMinor
-    public static let outlineOnLightPositiveMinorActive = ColorToken.outlineOnLightPositiveMinorActive
-    public static let outlineOnLightPositiveMinorHover = ColorToken.outlineOnLightPositiveMinorHover
-    public static let outlineOnLightPromo = ColorToken.outlineOnLightPromo
-    public static let outlineOnLightPromoActive = ColorToken.outlineOnLightPromoActive
-    public static let outlineOnLightPromoHover = ColorToken.outlineOnLightPromoHover
-    public static let outlineOnLightPromoMinor = ColorToken.outlineOnLightPromoMinor
-    public static let outlineOnLightPromoMinorActive = ColorToken.outlineOnLightPromoMinorActive
-    public static let outlineOnLightPromoMinorHover = ColorToken.outlineOnLightPromoMinorHover
-    public static let outlineOnLightSolidPrimary = ColorToken.outlineOnLightSolidPrimary
-    public static let outlineOnLightSolidPrimaryActive = ColorToken.outlineOnLightSolidPrimaryActive
-    public static let outlineOnLightSolidPrimaryHover = ColorToken.outlineOnLightSolidPrimaryHover
-    public static let outlineOnLightSolidSecondary = ColorToken.outlineOnLightSolidSecondary
-    public static let outlineOnLightSolidSecondaryActive = ColorToken.outlineOnLightSolidSecondaryActive
-    public static let outlineOnLightSolidSecondaryHover = ColorToken.outlineOnLightSolidSecondaryHover
-    public static let outlineOnLightSolidTertiary = ColorToken.outlineOnLightSolidTertiary
-    public static let outlineOnLightSolidTertiaryActive = ColorToken.outlineOnLightSolidTertiaryActive
-    public static let outlineOnLightSolidTertiaryHover = ColorToken.outlineOnLightSolidTertiaryHover
-    public static let outlineOnLightTransparentAccent = ColorToken.outlineOnLightTransparentAccent
-    public static let outlineOnLightTransparentAccentActive = ColorToken.outlineOnLightTransparentAccentActive
-    public static let outlineOnLightTransparentAccentHover = ColorToken.outlineOnLightTransparentAccentHover
-    public static let outlineOnLightTransparentDefault = ColorToken.outlineOnLightTransparentDefault
-    public static let outlineOnLightTransparentDefaultActive = ColorToken.outlineOnLightTransparentDefaultActive
-    public static let outlineOnLightTransparentDefaultHover = ColorToken.outlineOnLightTransparentDefaultHover
-    public static let outlineOnLightTransparentInfo = ColorToken.outlineOnLightTransparentInfo
-    public static let outlineOnLightTransparentInfoActive = ColorToken.outlineOnLightTransparentInfoActive
-    public static let outlineOnLightTransparentInfoHover = ColorToken.outlineOnLightTransparentInfoHover
-    public static let outlineOnLightTransparentNegative = ColorToken.outlineOnLightTransparentNegative
-    public static let outlineOnLightTransparentNegativeActive = ColorToken.outlineOnLightTransparentNegativeActive
-    public static let outlineOnLightTransparentNegativeHover = ColorToken.outlineOnLightTransparentNegativeHover
-    public static let outlineOnLightTransparentPositive = ColorToken.outlineOnLightTransparentPositive
-    public static let outlineOnLightTransparentPositiveActive = ColorToken.outlineOnLightTransparentPositiveActive
-    public static let outlineOnLightTransparentPositiveHover = ColorToken.outlineOnLightTransparentPositiveHover
-    public static let outlineOnLightTransparentPrimary = ColorToken.outlineOnLightTransparentPrimary
-    public static let outlineOnLightTransparentPrimaryActive = ColorToken.outlineOnLightTransparentPrimaryActive
-    public static let outlineOnLightTransparentPrimaryHover = ColorToken.outlineOnLightTransparentPrimaryHover
-    public static let outlineOnLightTransparentSecondary = ColorToken.outlineOnLightTransparentSecondary
-    public static let outlineOnLightTransparentSecondaryActive = ColorToken.outlineOnLightTransparentSecondaryActive
-    public static let outlineOnLightTransparentSecondaryHover = ColorToken.outlineOnLightTransparentSecondaryHover
-    public static let outlineOnLightTransparentTertiary = ColorToken.outlineOnLightTransparentTertiary
-    public static let outlineOnLightTransparentTertiaryActive = ColorToken.outlineOnLightTransparentTertiaryActive
-    public static let outlineOnLightTransparentTertiaryHover = ColorToken.outlineOnLightTransparentTertiaryHover
-    public static let outlineOnLightTransparentWarning = ColorToken.outlineOnLightTransparentWarning
-    public static let outlineOnLightTransparentWarningActive = ColorToken.outlineOnLightTransparentWarningActive
-    public static let outlineOnLightTransparentWarningHover = ColorToken.outlineOnLightTransparentWarningHover
-    public static let outlineOnLightWarning = ColorToken.outlineOnLightWarning
-    public static let outlineOnLightWarningActive = ColorToken.outlineOnLightWarningActive
-    public static let outlineOnLightWarningHover = ColorToken.outlineOnLightWarningHover
-    public static let outlineOnLightWarningMinor = ColorToken.outlineOnLightWarningMinor
-    public static let outlineOnLightWarningMinorActive = ColorToken.outlineOnLightWarningMinorActive
-    public static let outlineOnLightWarningMinorHover = ColorToken.outlineOnLightWarningMinorHover
-    public static let overlayDefaultBlur = ColorToken.overlayDefaultBlur
-    public static let overlayDefaultHard = ColorToken.overlayDefaultHard
-    public static let overlayDefaultSoft = ColorToken.overlayDefaultSoft
-    public static let overlayInverseBlur = ColorToken.overlayInverseBlur
-    public static let overlayInverseHard = ColorToken.overlayInverseHard
-    public static let overlayInverseSoft = ColorToken.overlayInverseSoft
-    public static let overlayOnDarkBlur = ColorToken.overlayOnDarkBlur
-    public static let overlayOnDarkHard = ColorToken.overlayOnDarkHard
-    public static let overlayOnDarkSoft = ColorToken.overlayOnDarkSoft
-    public static let overlayOnLightBlur = ColorToken.overlayOnLightBlur
-    public static let overlayOnLightHard = ColorToken.overlayOnLightHard
-    public static let overlayOnLightSoft = ColorToken.overlayOnLightSoft
-    public static let surfaceDefaultAccent = ColorToken.surfaceDefaultAccent
-    public static let surfaceDefaultAccentActive = ColorToken.surfaceDefaultAccentActive
-    public static let surfaceDefaultAccentHover = ColorToken.surfaceDefaultAccentHover
-    public static let surfaceDefaultAccentMinor = ColorToken.surfaceDefaultAccentMinor
-    public static let surfaceDefaultAccentMinorActive = ColorToken.surfaceDefaultAccentMinorActive
-    public static let surfaceDefaultAccentMinorHover = ColorToken.surfaceDefaultAccentMinorHover
-    public static let surfaceDefaultClear = ColorToken.surfaceDefaultClear
-    public static let surfaceDefaultClearActive = ColorToken.surfaceDefaultClearActive
-    public static let surfaceDefaultClearHover = ColorToken.surfaceDefaultClearHover
-    public static let surfaceDefaultInfo = ColorToken.surfaceDefaultInfo
-    public static let surfaceDefaultInfoActive = ColorToken.surfaceDefaultInfoActive
-    public static let surfaceDefaultInfoHover = ColorToken.surfaceDefaultInfoHover
-    public static let surfaceDefaultInfoMinor = ColorToken.surfaceDefaultInfoMinor
-    public static let surfaceDefaultInfoMinorActive = ColorToken.surfaceDefaultInfoMinorActive
-    public static let surfaceDefaultInfoMinorHover = ColorToken.surfaceDefaultInfoMinorHover
-    public static let surfaceDefaultNegative = ColorToken.surfaceDefaultNegative
-    public static let surfaceDefaultNegativeActive = ColorToken.surfaceDefaultNegativeActive
-    public static let surfaceDefaultNegativeHover = ColorToken.surfaceDefaultNegativeHover
-    public static let surfaceDefaultNegativeMinor = ColorToken.surfaceDefaultNegativeMinor
-    public static let surfaceDefaultNegativeMinorActive = ColorToken.surfaceDefaultNegativeMinorActive
-    public static let surfaceDefaultNegativeMinorHover = ColorToken.surfaceDefaultNegativeMinorHover
-    public static let surfaceDefaultPositive = ColorToken.surfaceDefaultPositive
-    public static let surfaceDefaultPositiveActive = ColorToken.surfaceDefaultPositiveActive
-    public static let surfaceDefaultPositiveHover = ColorToken.surfaceDefaultPositiveHover
-    public static let surfaceDefaultPositiveMinor = ColorToken.surfaceDefaultPositiveMinor
-    public static let surfaceDefaultPositiveMinorActive = ColorToken.surfaceDefaultPositiveMinorActive
-    public static let surfaceDefaultPositiveMinorHover = ColorToken.surfaceDefaultPositiveMinorHover
-    public static let surfaceDefaultPromo = ColorToken.surfaceDefaultPromo
-    public static let surfaceDefaultPromoActive = ColorToken.surfaceDefaultPromoActive
-    public static let surfaceDefaultPromoHover = ColorToken.surfaceDefaultPromoHover
-    public static let surfaceDefaultPromoMinor = ColorToken.surfaceDefaultPromoMinor
-    public static let surfaceDefaultPromoMinorActive = ColorToken.surfaceDefaultPromoMinorActive
-    public static let surfaceDefaultPromoMinorHover = ColorToken.surfaceDefaultPromoMinorHover
-    public static let surfaceDefaultSolidCard = ColorToken.surfaceDefaultSolidCard
-    public static let surfaceDefaultSolidCardActive = ColorToken.surfaceDefaultSolidCardActive
-    public static let surfaceDefaultSolidCardBrightness = ColorToken.surfaceDefaultSolidCardBrightness
-    public static let surfaceDefaultSolidCardHover = ColorToken.surfaceDefaultSolidCardHover
-    public static let surfaceDefaultSolidDefault = ColorToken.surfaceDefaultSolidDefault
-    public static let surfaceDefaultSolidDefaultActive = ColorToken.surfaceDefaultSolidDefaultActive
-    public static let surfaceDefaultSolidDefaultHover = ColorToken.surfaceDefaultSolidDefaultHover
-    public static let surfaceDefaultSolidPrimary = ColorToken.surfaceDefaultSolidPrimary
-    public static let surfaceDefaultSolidPrimaryActive = ColorToken.surfaceDefaultSolidPrimaryActive
-    public static let surfaceDefaultSolidPrimaryBrightness = ColorToken.surfaceDefaultSolidPrimaryBrightness
-    public static let surfaceDefaultSolidPrimaryHover = ColorToken.surfaceDefaultSolidPrimaryHover
-    public static let surfaceDefaultSolidSecondary = ColorToken.surfaceDefaultSolidSecondary
-    public static let surfaceDefaultSolidSecondaryActive = ColorToken.surfaceDefaultSolidSecondaryActive
-    public static let surfaceDefaultSolidSecondaryHover = ColorToken.surfaceDefaultSolidSecondaryHover
-    public static let surfaceDefaultSolidTertiary = ColorToken.surfaceDefaultSolidTertiary
-    public static let surfaceDefaultSolidTertiaryActive = ColorToken.surfaceDefaultSolidTertiaryActive
-    public static let surfaceDefaultSolidTertiaryHover = ColorToken.surfaceDefaultSolidTertiaryHover
-    public static let surfaceDefaultTransparentAccent = ColorToken.surfaceDefaultTransparentAccent
-    public static let surfaceDefaultTransparentAccentActive = ColorToken.surfaceDefaultTransparentAccentActive
-    public static let surfaceDefaultTransparentAccentHover = ColorToken.surfaceDefaultTransparentAccentHover
-    public static let surfaceDefaultTransparentCard = ColorToken.surfaceDefaultTransparentCard
-    public static let surfaceDefaultTransparentCardActive = ColorToken.surfaceDefaultTransparentCardActive
-    public static let surfaceDefaultTransparentCardBrightness = ColorToken.surfaceDefaultTransparentCardBrightness
-    public static let surfaceDefaultTransparentCardHover = ColorToken.surfaceDefaultTransparentCardHover
-    public static let surfaceDefaultTransparentDeep = ColorToken.surfaceDefaultTransparentDeep
-    public static let surfaceDefaultTransparentDeepActive = ColorToken.surfaceDefaultTransparentDeepActive
-    public static let surfaceDefaultTransparentDeepHover = ColorToken.surfaceDefaultTransparentDeepHover
-    public static let surfaceDefaultTransparentInfo = ColorToken.surfaceDefaultTransparentInfo
-    public static let surfaceDefaultTransparentInfoActive = ColorToken.surfaceDefaultTransparentInfoActive
-    public static let surfaceDefaultTransparentInfoHover = ColorToken.surfaceDefaultTransparentInfoHover
-    public static let surfaceDefaultTransparentNegative = ColorToken.surfaceDefaultTransparentNegative
-    public static let surfaceDefaultTransparentNegativeActive = ColorToken.surfaceDefaultTransparentNegativeActive
-    public static let surfaceDefaultTransparentNegativeHover = ColorToken.surfaceDefaultTransparentNegativeHover
-    public static let surfaceDefaultTransparentPositive = ColorToken.surfaceDefaultTransparentPositive
-    public static let surfaceDefaultTransparentPositiveActive = ColorToken.surfaceDefaultTransparentPositiveActive
-    public static let surfaceDefaultTransparentPositiveHover = ColorToken.surfaceDefaultTransparentPositiveHover
-    public static let surfaceDefaultTransparentPrimary = ColorToken.surfaceDefaultTransparentPrimary
-    public static let surfaceDefaultTransparentPrimaryActive = ColorToken.surfaceDefaultTransparentPrimaryActive
-    public static let surfaceDefaultTransparentPrimaryHover = ColorToken.surfaceDefaultTransparentPrimaryHover
-    public static let surfaceDefaultTransparentPromo = ColorToken.surfaceDefaultTransparentPromo
-    public static let surfaceDefaultTransparentPromoActive = ColorToken.surfaceDefaultTransparentPromoActive
-    public static let surfaceDefaultTransparentPromoHover = ColorToken.surfaceDefaultTransparentPromoHover
-    public static let surfaceDefaultTransparentSecondary = ColorToken.surfaceDefaultTransparentSecondary
-    public static let surfaceDefaultTransparentSecondaryActive = ColorToken.surfaceDefaultTransparentSecondaryActive
-    public static let surfaceDefaultTransparentSecondaryHover = ColorToken.surfaceDefaultTransparentSecondaryHover
-    public static let surfaceDefaultTransparentTertiary = ColorToken.surfaceDefaultTransparentTertiary
-    public static let surfaceDefaultTransparentTertiaryActive = ColorToken.surfaceDefaultTransparentTertiaryActive
-    public static let surfaceDefaultTransparentTertiaryHover = ColorToken.surfaceDefaultTransparentTertiaryHover
-    public static let surfaceDefaultTransparentWarning = ColorToken.surfaceDefaultTransparentWarning
-    public static let surfaceDefaultTransparentWarningActive = ColorToken.surfaceDefaultTransparentWarningActive
-    public static let surfaceDefaultTransparentWarningHover = ColorToken.surfaceDefaultTransparentWarningHover
-    public static let surfaceDefaultWarning = ColorToken.surfaceDefaultWarning
-    public static let surfaceDefaultWarningActive = ColorToken.surfaceDefaultWarningActive
-    public static let surfaceDefaultWarningHover = ColorToken.surfaceDefaultWarningHover
-    public static let surfaceDefaultWarningMinor = ColorToken.surfaceDefaultWarningMinor
-    public static let surfaceDefaultWarningMinorActive = ColorToken.surfaceDefaultWarningMinorActive
-    public static let surfaceDefaultWarningMinorHover = ColorToken.surfaceDefaultWarningMinorHover
-    public static let surfaceInverseAccent = ColorToken.surfaceInverseAccent
-    public static let surfaceInverseAccentActive = ColorToken.surfaceInverseAccentActive
-    public static let surfaceInverseAccentHover = ColorToken.surfaceInverseAccentHover
-    public static let surfaceInverseAccentMinor = ColorToken.surfaceInverseAccentMinor
-    public static let surfaceInverseAccentMinorActive = ColorToken.surfaceInverseAccentMinorActive
-    public static let surfaceInverseAccentMinorHover = ColorToken.surfaceInverseAccentMinorHover
-    public static let surfaceInverseClear = ColorToken.surfaceInverseClear
-    public static let surfaceInverseClearActive = ColorToken.surfaceInverseClearActive
-    public static let surfaceInverseClearHover = ColorToken.surfaceInverseClearHover
-    public static let surfaceInverseInfo = ColorToken.surfaceInverseInfo
-    public static let surfaceInverseInfoActive = ColorToken.surfaceInverseInfoActive
-    public static let surfaceInverseInfoHover = ColorToken.surfaceInverseInfoHover
-    public static let surfaceInverseInfoMinor = ColorToken.surfaceInverseInfoMinor
-    public static let surfaceInverseInfoMinorActive = ColorToken.surfaceInverseInfoMinorActive
-    public static let surfaceInverseInfoMinorHover = ColorToken.surfaceInverseInfoMinorHover
-    public static let surfaceInverseNegative = ColorToken.surfaceInverseNegative
-    public static let surfaceInverseNegativeActive = ColorToken.surfaceInverseNegativeActive
-    public static let surfaceInverseNegativeHover = ColorToken.surfaceInverseNegativeHover
-    public static let surfaceInverseNegativeMinor = ColorToken.surfaceInverseNegativeMinor
-    public static let surfaceInverseNegativeMinorActive = ColorToken.surfaceInverseNegativeMinorActive
-    public static let surfaceInverseNegativeMinorHover = ColorToken.surfaceInverseNegativeMinorHover
-    public static let surfaceInversePositive = ColorToken.surfaceInversePositive
-    public static let surfaceInversePositiveActive = ColorToken.surfaceInversePositiveActive
-    public static let surfaceInversePositiveHover = ColorToken.surfaceInversePositiveHover
-    public static let surfaceInversePositiveMinor = ColorToken.surfaceInversePositiveMinor
-    public static let surfaceInversePositiveMinorActive = ColorToken.surfaceInversePositiveMinorActive
-    public static let surfaceInversePositiveMinorHover = ColorToken.surfaceInversePositiveMinorHover
-    public static let surfaceInversePromo = ColorToken.surfaceInversePromo
-    public static let surfaceInversePromoActive = ColorToken.surfaceInversePromoActive
-    public static let surfaceInversePromoHover = ColorToken.surfaceInversePromoHover
-    public static let surfaceInversePromoMinor = ColorToken.surfaceInversePromoMinor
-    public static let surfaceInversePromoMinorActive = ColorToken.surfaceInversePromoMinorActive
-    public static let surfaceInversePromoMinorHover = ColorToken.surfaceInversePromoMinorHover
-    public static let surfaceInverseSolidCard = ColorToken.surfaceInverseSolidCard
-    public static let surfaceInverseSolidCardActive = ColorToken.surfaceInverseSolidCardActive
-    public static let surfaceInverseSolidCardBrightness = ColorToken.surfaceInverseSolidCardBrightness
-    public static let surfaceInverseSolidCardHover = ColorToken.surfaceInverseSolidCardHover
-    public static let surfaceInverseSolidDefault = ColorToken.surfaceInverseSolidDefault
-    public static let surfaceInverseSolidDefaultActive = ColorToken.surfaceInverseSolidDefaultActive
-    public static let surfaceInverseSolidDefaultHover = ColorToken.surfaceInverseSolidDefaultHover
-    public static let surfaceInverseSolidPrimary = ColorToken.surfaceInverseSolidPrimary
-    public static let surfaceInverseSolidPrimaryActive = ColorToken.surfaceInverseSolidPrimaryActive
-    public static let surfaceInverseSolidPrimaryBrightness = ColorToken.surfaceInverseSolidPrimaryBrightness
-    public static let surfaceInverseSolidPrimaryHover = ColorToken.surfaceInverseSolidPrimaryHover
-    public static let surfaceInverseSolidSecondary = ColorToken.surfaceInverseSolidSecondary
-    public static let surfaceInverseSolidSecondaryActive = ColorToken.surfaceInverseSolidSecondaryActive
-    public static let surfaceInverseSolidSecondaryHover = ColorToken.surfaceInverseSolidSecondaryHover
-    public static let surfaceInverseSolidTertiary = ColorToken.surfaceInverseSolidTertiary
-    public static let surfaceInverseSolidTertiaryActive = ColorToken.surfaceInverseSolidTertiaryActive
-    public static let surfaceInverseSolidTertiaryHover = ColorToken.surfaceInverseSolidTertiaryHover
-    public static let surfaceInverseTransparentAccent = ColorToken.surfaceInverseTransparentAccent
-    public static let surfaceInverseTransparentAccentActive = ColorToken.surfaceInverseTransparentAccentActive
-    public static let surfaceInverseTransparentAccentHover = ColorToken.surfaceInverseTransparentAccentHover
-    public static let surfaceInverseTransparentCard = ColorToken.surfaceInverseTransparentCard
-    public static let surfaceInverseTransparentCardActive = ColorToken.surfaceInverseTransparentCardActive
-    public static let surfaceInverseTransparentCardBrightness = ColorToken.surfaceInverseTransparentCardBrightness
-    public static let surfaceInverseTransparentCardHover = ColorToken.surfaceInverseTransparentCardHover
-    public static let surfaceInverseTransparentDeep = ColorToken.surfaceInverseTransparentDeep
-    public static let surfaceInverseTransparentDeepActive = ColorToken.surfaceInverseTransparentDeepActive
-    public static let surfaceInverseTransparentDeepHover = ColorToken.surfaceInverseTransparentDeepHover
-    public static let surfaceInverseTransparentInfo = ColorToken.surfaceInverseTransparentInfo
-    public static let surfaceInverseTransparentInfoActive = ColorToken.surfaceInverseTransparentInfoActive
-    public static let surfaceInverseTransparentInfoHover = ColorToken.surfaceInverseTransparentInfoHover
-    public static let surfaceInverseTransparentNegative = ColorToken.surfaceInverseTransparentNegative
-    public static let surfaceInverseTransparentNegativeActive = ColorToken.surfaceInverseTransparentNegativeActive
-    public static let surfaceInverseTransparentNegativeHover = ColorToken.surfaceInverseTransparentNegativeHover
-    public static let surfaceInverseTransparentPositive = ColorToken.surfaceInverseTransparentPositive
-    public static let surfaceInverseTransparentPositiveActive = ColorToken.surfaceInverseTransparentPositiveActive
-    public static let surfaceInverseTransparentPositiveHover = ColorToken.surfaceInverseTransparentPositiveHover
-    public static let surfaceInverseTransparentPrimary = ColorToken.surfaceInverseTransparentPrimary
-    public static let surfaceInverseTransparentPrimaryActive = ColorToken.surfaceInverseTransparentPrimaryActive
-    public static let surfaceInverseTransparentPrimaryHover = ColorToken.surfaceInverseTransparentPrimaryHover
-    public static let surfaceInverseTransparentPromo = ColorToken.surfaceInverseTransparentPromo
-    public static let surfaceInverseTransparentPromoActive = ColorToken.surfaceInverseTransparentPromoActive
-    public static let surfaceInverseTransparentPromoHover = ColorToken.surfaceInverseTransparentPromoHover
-    public static let surfaceInverseTransparentSecondary = ColorToken.surfaceInverseTransparentSecondary
-    public static let surfaceInverseTransparentSecondaryActive = ColorToken.surfaceInverseTransparentSecondaryActive
-    public static let surfaceInverseTransparentSecondaryHover = ColorToken.surfaceInverseTransparentSecondaryHover
-    public static let surfaceInverseTransparentTertiary = ColorToken.surfaceInverseTransparentTertiary
-    public static let surfaceInverseTransparentTertiaryActive = ColorToken.surfaceInverseTransparentTertiaryActive
-    public static let surfaceInverseTransparentTertiaryHover = ColorToken.surfaceInverseTransparentTertiaryHover
-    public static let surfaceInverseTransparentWarning = ColorToken.surfaceInverseTransparentWarning
-    public static let surfaceInverseTransparentWarningActive = ColorToken.surfaceInverseTransparentWarningActive
-    public static let surfaceInverseTransparentWarningHover = ColorToken.surfaceInverseTransparentWarningHover
-    public static let surfaceInverseWarning = ColorToken.surfaceInverseWarning
-    public static let surfaceInverseWarningActive = ColorToken.surfaceInverseWarningActive
-    public static let surfaceInverseWarningHover = ColorToken.surfaceInverseWarningHover
-    public static let surfaceInverseWarningMinor = ColorToken.surfaceInverseWarningMinor
-    public static let surfaceInverseWarningMinorActive = ColorToken.surfaceInverseWarningMinorActive
-    public static let surfaceInverseWarningMinorHover = ColorToken.surfaceInverseWarningMinorHover
-    public static let surfaceOnDarkAccent = ColorToken.surfaceOnDarkAccent
-    public static let surfaceOnDarkAccentActive = ColorToken.surfaceOnDarkAccentActive
-    public static let surfaceOnDarkAccentHover = ColorToken.surfaceOnDarkAccentHover
-    public static let surfaceOnDarkAccentMinor = ColorToken.surfaceOnDarkAccentMinor
-    public static let surfaceOnDarkAccentMinorActive = ColorToken.surfaceOnDarkAccentMinorActive
-    public static let surfaceOnDarkAccentMinorHover = ColorToken.surfaceOnDarkAccentMinorHover
-    public static let surfaceOnDarkClear = ColorToken.surfaceOnDarkClear
-    public static let surfaceOnDarkClearActive = ColorToken.surfaceOnDarkClearActive
-    public static let surfaceOnDarkClearHover = ColorToken.surfaceOnDarkClearHover
-    public static let surfaceOnDarkInfo = ColorToken.surfaceOnDarkInfo
-    public static let surfaceOnDarkInfoActive = ColorToken.surfaceOnDarkInfoActive
-    public static let surfaceOnDarkInfoHover = ColorToken.surfaceOnDarkInfoHover
-    public static let surfaceOnDarkInfoMinor = ColorToken.surfaceOnDarkInfoMinor
-    public static let surfaceOnDarkInfoMinorActive = ColorToken.surfaceOnDarkInfoMinorActive
-    public static let surfaceOnDarkInfoMinorHover = ColorToken.surfaceOnDarkInfoMinorHover
-    public static let surfaceOnDarkNegative = ColorToken.surfaceOnDarkNegative
-    public static let surfaceOnDarkNegativeActive = ColorToken.surfaceOnDarkNegativeActive
-    public static let surfaceOnDarkNegativeHover = ColorToken.surfaceOnDarkNegativeHover
-    public static let surfaceOnDarkNegativeMinor = ColorToken.surfaceOnDarkNegativeMinor
-    public static let surfaceOnDarkNegativeMinorActive = ColorToken.surfaceOnDarkNegativeMinorActive
-    public static let surfaceOnDarkNegativeMinorHover = ColorToken.surfaceOnDarkNegativeMinorHover
-    public static let surfaceOnDarkPositive = ColorToken.surfaceOnDarkPositive
-    public static let surfaceOnDarkPositiveActive = ColorToken.surfaceOnDarkPositiveActive
-    public static let surfaceOnDarkPositiveHover = ColorToken.surfaceOnDarkPositiveHover
-    public static let surfaceOnDarkPositiveMinor = ColorToken.surfaceOnDarkPositiveMinor
-    public static let surfaceOnDarkPositiveMinorActive = ColorToken.surfaceOnDarkPositiveMinorActive
-    public static let surfaceOnDarkPositiveMinorHover = ColorToken.surfaceOnDarkPositiveMinorHover
-    public static let surfaceOnDarkPromo = ColorToken.surfaceOnDarkPromo
-    public static let surfaceOnDarkPromoActive = ColorToken.surfaceOnDarkPromoActive
-    public static let surfaceOnDarkPromoHover = ColorToken.surfaceOnDarkPromoHover
-    public static let surfaceOnDarkPromoMinor = ColorToken.surfaceOnDarkPromoMinor
-    public static let surfaceOnDarkPromoMinorActive = ColorToken.surfaceOnDarkPromoMinorActive
-    public static let surfaceOnDarkPromoMinorHover = ColorToken.surfaceOnDarkPromoMinorHover
-    public static let surfaceOnDarkSolidCard = ColorToken.surfaceOnDarkSolidCard
-    public static let surfaceOnDarkSolidCardActive = ColorToken.surfaceOnDarkSolidCardActive
-    public static let surfaceOnDarkSolidCardBrightness = ColorToken.surfaceOnDarkSolidCardBrightness
-    public static let surfaceOnDarkSolidCardHover = ColorToken.surfaceOnDarkSolidCardHover
-    public static let surfaceOnDarkSolidDefault = ColorToken.surfaceOnDarkSolidDefault
-    public static let surfaceOnDarkSolidDefaultActive = ColorToken.surfaceOnDarkSolidDefaultActive
-    public static let surfaceOnDarkSolidDefaultHover = ColorToken.surfaceOnDarkSolidDefaultHover
-    public static let surfaceOnDarkSolidPrimary = ColorToken.surfaceOnDarkSolidPrimary
-    public static let surfaceOnDarkSolidPrimaryActive = ColorToken.surfaceOnDarkSolidPrimaryActive
-    public static let surfaceOnDarkSolidPrimaryBrightness = ColorToken.surfaceOnDarkSolidPrimaryBrightness
-    public static let surfaceOnDarkSolidPrimaryHover = ColorToken.surfaceOnDarkSolidPrimaryHover
-    public static let surfaceOnDarkSolidSecondary = ColorToken.surfaceOnDarkSolidSecondary
-    public static let surfaceOnDarkSolidSecondaryActive = ColorToken.surfaceOnDarkSolidSecondaryActive
-    public static let surfaceOnDarkSolidSecondaryHover = ColorToken.surfaceOnDarkSolidSecondaryHover
-    public static let surfaceOnDarkSolidTertiary = ColorToken.surfaceOnDarkSolidTertiary
-    public static let surfaceOnDarkSolidTertiaryActive = ColorToken.surfaceOnDarkSolidTertiaryActive
-    public static let surfaceOnDarkSolidTertiaryHover = ColorToken.surfaceOnDarkSolidTertiaryHover
-    public static let surfaceOnDarkTransparentAccent = ColorToken.surfaceOnDarkTransparentAccent
-    public static let surfaceOnDarkTransparentAccentActive = ColorToken.surfaceOnDarkTransparentAccentActive
-    public static let surfaceOnDarkTransparentAccentHover = ColorToken.surfaceOnDarkTransparentAccentHover
-    public static let surfaceOnDarkTransparentCard = ColorToken.surfaceOnDarkTransparentCard
-    public static let surfaceOnDarkTransparentCardActive = ColorToken.surfaceOnDarkTransparentCardActive
-    public static let surfaceOnDarkTransparentCardBrightness = ColorToken.surfaceOnDarkTransparentCardBrightness
-    public static let surfaceOnDarkTransparentCardHover = ColorToken.surfaceOnDarkTransparentCardHover
-    public static let surfaceOnDarkTransparentDeep = ColorToken.surfaceOnDarkTransparentDeep
-    public static let surfaceOnDarkTransparentDeepActive = ColorToken.surfaceOnDarkTransparentDeepActive
-    public static let surfaceOnDarkTransparentDeepHover = ColorToken.surfaceOnDarkTransparentDeepHover
-    public static let surfaceOnDarkTransparentInfo = ColorToken.surfaceOnDarkTransparentInfo
-    public static let surfaceOnDarkTransparentInfoActive = ColorToken.surfaceOnDarkTransparentInfoActive
-    public static let surfaceOnDarkTransparentInfoHover = ColorToken.surfaceOnDarkTransparentInfoHover
-    public static let surfaceOnDarkTransparentNegative = ColorToken.surfaceOnDarkTransparentNegative
-    public static let surfaceOnDarkTransparentNegativeActive = ColorToken.surfaceOnDarkTransparentNegativeActive
-    public static let surfaceOnDarkTransparentNegativeHover = ColorToken.surfaceOnDarkTransparentNegativeHover
-    public static let surfaceOnDarkTransparentPositive = ColorToken.surfaceOnDarkTransparentPositive
-    public static let surfaceOnDarkTransparentPositiveActive = ColorToken.surfaceOnDarkTransparentPositiveActive
-    public static let surfaceOnDarkTransparentPositiveHover = ColorToken.surfaceOnDarkTransparentPositiveHover
-    public static let surfaceOnDarkTransparentPrimary = ColorToken.surfaceOnDarkTransparentPrimary
-    public static let surfaceOnDarkTransparentPrimaryActive = ColorToken.surfaceOnDarkTransparentPrimaryActive
-    public static let surfaceOnDarkTransparentPrimaryHover = ColorToken.surfaceOnDarkTransparentPrimaryHover
-    public static let surfaceOnDarkTransparentPromo = ColorToken.surfaceOnDarkTransparentPromo
-    public static let surfaceOnDarkTransparentPromoActive = ColorToken.surfaceOnDarkTransparentPromoActive
-    public static let surfaceOnDarkTransparentPromoHover = ColorToken.surfaceOnDarkTransparentPromoHover
-    public static let surfaceOnDarkTransparentSecondary = ColorToken.surfaceOnDarkTransparentSecondary
-    public static let surfaceOnDarkTransparentSecondaryActive = ColorToken.surfaceOnDarkTransparentSecondaryActive
-    public static let surfaceOnDarkTransparentSecondaryHover = ColorToken.surfaceOnDarkTransparentSecondaryHover
-    public static let surfaceOnDarkTransparentTertiary = ColorToken.surfaceOnDarkTransparentTertiary
-    public static let surfaceOnDarkTransparentTertiaryActive = ColorToken.surfaceOnDarkTransparentTertiaryActive
-    public static let surfaceOnDarkTransparentTertiaryHover = ColorToken.surfaceOnDarkTransparentTertiaryHover
-    public static let surfaceOnDarkTransparentWarning = ColorToken.surfaceOnDarkTransparentWarning
-    public static let surfaceOnDarkTransparentWarningActive = ColorToken.surfaceOnDarkTransparentWarningActive
-    public static let surfaceOnDarkTransparentWarningHover = ColorToken.surfaceOnDarkTransparentWarningHover
-    public static let surfaceOnDarkWarning = ColorToken.surfaceOnDarkWarning
-    public static let surfaceOnDarkWarningActive = ColorToken.surfaceOnDarkWarningActive
-    public static let surfaceOnDarkWarningHover = ColorToken.surfaceOnDarkWarningHover
-    public static let surfaceOnDarkWarningMinor = ColorToken.surfaceOnDarkWarningMinor
-    public static let surfaceOnDarkWarningMinorActive = ColorToken.surfaceOnDarkWarningMinorActive
-    public static let surfaceOnDarkWarningMinorHover = ColorToken.surfaceOnDarkWarningMinorHover
-    public static let surfaceOnLightAccent = ColorToken.surfaceOnLightAccent
-    public static let surfaceOnLightAccentActive = ColorToken.surfaceOnLightAccentActive
-    public static let surfaceOnLightAccentHover = ColorToken.surfaceOnLightAccentHover
-    public static let surfaceOnLightAccentMinor = ColorToken.surfaceOnLightAccentMinor
-    public static let surfaceOnLightAccentMinorActive = ColorToken.surfaceOnLightAccentMinorActive
-    public static let surfaceOnLightAccentMinorHover = ColorToken.surfaceOnLightAccentMinorHover
-    public static let surfaceOnLightClear = ColorToken.surfaceOnLightClear
-    public static let surfaceOnLightClearActive = ColorToken.surfaceOnLightClearActive
-    public static let surfaceOnLightClearHover = ColorToken.surfaceOnLightClearHover
-    public static let surfaceOnLightInfo = ColorToken.surfaceOnLightInfo
-    public static let surfaceOnLightInfoActive = ColorToken.surfaceOnLightInfoActive
-    public static let surfaceOnLightInfoHover = ColorToken.surfaceOnLightInfoHover
-    public static let surfaceOnLightInfoMinor = ColorToken.surfaceOnLightInfoMinor
-    public static let surfaceOnLightInfoMinorActive = ColorToken.surfaceOnLightInfoMinorActive
-    public static let surfaceOnLightInfoMinorHover = ColorToken.surfaceOnLightInfoMinorHover
-    public static let surfaceOnLightNegative = ColorToken.surfaceOnLightNegative
-    public static let surfaceOnLightNegativeActive = ColorToken.surfaceOnLightNegativeActive
-    public static let surfaceOnLightNegativeHover = ColorToken.surfaceOnLightNegativeHover
-    public static let surfaceOnLightNegativeMinor = ColorToken.surfaceOnLightNegativeMinor
-    public static let surfaceOnLightNegativeMinorActive = ColorToken.surfaceOnLightNegativeMinorActive
-    public static let surfaceOnLightNegativeMinorHover = ColorToken.surfaceOnLightNegativeMinorHover
-    public static let surfaceOnLightPositive = ColorToken.surfaceOnLightPositive
-    public static let surfaceOnLightPositiveActive = ColorToken.surfaceOnLightPositiveActive
-    public static let surfaceOnLightPositiveHover = ColorToken.surfaceOnLightPositiveHover
-    public static let surfaceOnLightPositiveMinor = ColorToken.surfaceOnLightPositiveMinor
-    public static let surfaceOnLightPositiveMinorActive = ColorToken.surfaceOnLightPositiveMinorActive
-    public static let surfaceOnLightPositiveMinorHover = ColorToken.surfaceOnLightPositiveMinorHover
-    public static let surfaceOnLightPromo = ColorToken.surfaceOnLightPromo
-    public static let surfaceOnLightPromoActive = ColorToken.surfaceOnLightPromoActive
-    public static let surfaceOnLightPromoHover = ColorToken.surfaceOnLightPromoHover
-    public static let surfaceOnLightPromoMinor = ColorToken.surfaceOnLightPromoMinor
-    public static let surfaceOnLightPromoMinorActive = ColorToken.surfaceOnLightPromoMinorActive
-    public static let surfaceOnLightPromoMinorHover = ColorToken.surfaceOnLightPromoMinorHover
-    public static let surfaceOnLightSolidCard = ColorToken.surfaceOnLightSolidCard
-    public static let surfaceOnLightSolidCardActive = ColorToken.surfaceOnLightSolidCardActive
-    public static let surfaceOnLightSolidCardBrightness = ColorToken.surfaceOnLightSolidCardBrightness
-    public static let surfaceOnLightSolidCardHover = ColorToken.surfaceOnLightSolidCardHover
-    public static let surfaceOnLightSolidDefault = ColorToken.surfaceOnLightSolidDefault
-    public static let surfaceOnLightSolidDefaultActive = ColorToken.surfaceOnLightSolidDefaultActive
-    public static let surfaceOnLightSolidDefaultHover = ColorToken.surfaceOnLightSolidDefaultHover
-    public static let surfaceOnLightSolidPrimary = ColorToken.surfaceOnLightSolidPrimary
-    public static let surfaceOnLightSolidPrimaryActive = ColorToken.surfaceOnLightSolidPrimaryActive
-    public static let surfaceOnLightSolidPrimaryBrightness = ColorToken.surfaceOnLightSolidPrimaryBrightness
-    public static let surfaceOnLightSolidPrimaryHover = ColorToken.surfaceOnLightSolidPrimaryHover
-    public static let surfaceOnLightSolidSecondary = ColorToken.surfaceOnLightSolidSecondary
-    public static let surfaceOnLightSolidSecondaryActive = ColorToken.surfaceOnLightSolidSecondaryActive
-    public static let surfaceOnLightSolidSecondaryHover = ColorToken.surfaceOnLightSolidSecondaryHover
-    public static let surfaceOnLightSolidTertiary = ColorToken.surfaceOnLightSolidTertiary
-    public static let surfaceOnLightSolidTertiaryActive = ColorToken.surfaceOnLightSolidTertiaryActive
-    public static let surfaceOnLightSolidTertiaryHover = ColorToken.surfaceOnLightSolidTertiaryHover
-    public static let surfaceOnLightTransparentAccent = ColorToken.surfaceOnLightTransparentAccent
-    public static let surfaceOnLightTransparentAccentActive = ColorToken.surfaceOnLightTransparentAccentActive
-    public static let surfaceOnLightTransparentAccentHover = ColorToken.surfaceOnLightTransparentAccentHover
-    public static let surfaceOnLightTransparentCard = ColorToken.surfaceOnLightTransparentCard
-    public static let surfaceOnLightTransparentCardActive = ColorToken.surfaceOnLightTransparentCardActive
-    public static let surfaceOnLightTransparentCardBrightness = ColorToken.surfaceOnLightTransparentCardBrightness
-    public static let surfaceOnLightTransparentCardHover = ColorToken.surfaceOnLightTransparentCardHover
-    public static let surfaceOnLightTransparentDeep = ColorToken.surfaceOnLightTransparentDeep
-    public static let surfaceOnLightTransparentDeepActive = ColorToken.surfaceOnLightTransparentDeepActive
-    public static let surfaceOnLightTransparentDeepHover = ColorToken.surfaceOnLightTransparentDeepHover
-    public static let surfaceOnLightTransparentInfo = ColorToken.surfaceOnLightTransparentInfo
-    public static let surfaceOnLightTransparentInfoActive = ColorToken.surfaceOnLightTransparentInfoActive
-    public static let surfaceOnLightTransparentInfoHover = ColorToken.surfaceOnLightTransparentInfoHover
-    public static let surfaceOnLightTransparentNegative = ColorToken.surfaceOnLightTransparentNegative
-    public static let surfaceOnLightTransparentNegativeActive = ColorToken.surfaceOnLightTransparentNegativeActive
-    public static let surfaceOnLightTransparentNegativeHover = ColorToken.surfaceOnLightTransparentNegativeHover
-    public static let surfaceOnLightTransparentPositive = ColorToken.surfaceOnLightTransparentPositive
-    public static let surfaceOnLightTransparentPositiveActive = ColorToken.surfaceOnLightTransparentPositiveActive
-    public static let surfaceOnLightTransparentPositiveHover = ColorToken.surfaceOnLightTransparentPositiveHover
-    public static let surfaceOnLightTransparentPrimary = ColorToken.surfaceOnLightTransparentPrimary
-    public static let surfaceOnLightTransparentPrimaryActive = ColorToken.surfaceOnLightTransparentPrimaryActive
-    public static let surfaceOnLightTransparentPrimaryHover = ColorToken.surfaceOnLightTransparentPrimaryHover
-    public static let surfaceOnLightTransparentPromo = ColorToken.surfaceOnLightTransparentPromo
-    public static let surfaceOnLightTransparentPromoActive = ColorToken.surfaceOnLightTransparentPromoActive
-    public static let surfaceOnLightTransparentPromoHover = ColorToken.surfaceOnLightTransparentPromoHover
-    public static let surfaceOnLightTransparentSecondary = ColorToken.surfaceOnLightTransparentSecondary
-    public static let surfaceOnLightTransparentSecondaryActive = ColorToken.surfaceOnLightTransparentSecondaryActive
-    public static let surfaceOnLightTransparentSecondaryHover = ColorToken.surfaceOnLightTransparentSecondaryHover
-    public static let surfaceOnLightTransparentTertiary = ColorToken.surfaceOnLightTransparentTertiary
-    public static let surfaceOnLightTransparentTertiaryActive = ColorToken.surfaceOnLightTransparentTertiaryActive
-    public static let surfaceOnLightTransparentTertiaryHover = ColorToken.surfaceOnLightTransparentTertiaryHover
-    public static let surfaceOnLightTransparentWarning = ColorToken.surfaceOnLightTransparentWarning
-    public static let surfaceOnLightTransparentWarningActive = ColorToken.surfaceOnLightTransparentWarningActive
-    public static let surfaceOnLightTransparentWarningHover = ColorToken.surfaceOnLightTransparentWarningHover
-    public static let surfaceOnLightWarning = ColorToken.surfaceOnLightWarning
-    public static let surfaceOnLightWarningActive = ColorToken.surfaceOnLightWarningActive
-    public static let surfaceOnLightWarningHover = ColorToken.surfaceOnLightWarningHover
-    public static let surfaceOnLightWarningMinor = ColorToken.surfaceOnLightWarningMinor
-    public static let surfaceOnLightWarningMinorActive = ColorToken.surfaceOnLightWarningMinorActive
-    public static let surfaceOnLightWarningMinorHover = ColorToken.surfaceOnLightWarningMinorHover
-    public static let textDefaultAccent = ColorToken.textDefaultAccent
-    public static let textDefaultAccentActive = ColorToken.textDefaultAccentActive
-    public static let textDefaultAccentHover = ColorToken.textDefaultAccentHover
-    public static let textDefaultAccentMinor = ColorToken.textDefaultAccentMinor
-    public static let textDefaultAccentMinorActive = ColorToken.textDefaultAccentMinorActive
-    public static let textDefaultAccentMinorHover = ColorToken.textDefaultAccentMinorHover
-    public static let textDefaultInfo = ColorToken.textDefaultInfo
-    public static let textDefaultInfoActive = ColorToken.textDefaultInfoActive
-    public static let textDefaultInfoHover = ColorToken.textDefaultInfoHover
-    public static let textDefaultInfoMinor = ColorToken.textDefaultInfoMinor
-    public static let textDefaultInfoMinorActive = ColorToken.textDefaultInfoMinorActive
-    public static let textDefaultInfoMinorHover = ColorToken.textDefaultInfoMinorHover
-    public static let textDefaultNegative = ColorToken.textDefaultNegative
-    public static let textDefaultNegativeActive = ColorToken.textDefaultNegativeActive
-    public static let textDefaultNegativeHover = ColorToken.textDefaultNegativeHover
-    public static let textDefaultNegativeMinor = ColorToken.textDefaultNegativeMinor
-    public static let textDefaultNegativeMinorActive = ColorToken.textDefaultNegativeMinorActive
-    public static let textDefaultNegativeMinorHover = ColorToken.textDefaultNegativeMinorHover
-    public static let textDefaultParagraph = ColorToken.textDefaultParagraph
-    public static let textDefaultParagraphActive = ColorToken.textDefaultParagraphActive
-    public static let textDefaultParagraphHover = ColorToken.textDefaultParagraphHover
-    public static let textDefaultPositive = ColorToken.textDefaultPositive
-    public static let textDefaultPositiveActive = ColorToken.textDefaultPositiveActive
-    public static let textDefaultPositiveHover = ColorToken.textDefaultPositiveHover
-    public static let textDefaultPositiveMinor = ColorToken.textDefaultPositiveMinor
-    public static let textDefaultPositiveMinorActive = ColorToken.textDefaultPositiveMinorActive
-    public static let textDefaultPositiveMinorHover = ColorToken.textDefaultPositiveMinorHover
-    public static let textDefaultPrimary = ColorToken.textDefaultPrimary
-    public static let textDefaultPrimaryActive = ColorToken.textDefaultPrimaryActive
-    public static let textDefaultPrimaryBrightness = ColorToken.textDefaultPrimaryBrightness
-    public static let textDefaultPrimaryHover = ColorToken.textDefaultPrimaryHover
-    public static let textDefaultPromo = ColorToken.textDefaultPromo
-    public static let textDefaultPromoActive = ColorToken.textDefaultPromoActive
-    public static let textDefaultPromoHover = ColorToken.textDefaultPromoHover
-    public static let textDefaultPromoMinor = ColorToken.textDefaultPromoMinor
-    public static let textDefaultPromoMinorActive = ColorToken.textDefaultPromoMinorActive
-    public static let textDefaultPromoMinorHover = ColorToken.textDefaultPromoMinorHover
-    public static let textDefaultSecondary = ColorToken.textDefaultSecondary
-    public static let textDefaultSecondaryActive = ColorToken.textDefaultSecondaryActive
-    public static let textDefaultSecondaryHover = ColorToken.textDefaultSecondaryHover
-    public static let textDefaultTertiary = ColorToken.textDefaultTertiary
-    public static let textDefaultTertiaryActive = ColorToken.textDefaultTertiaryActive
-    public static let textDefaultTertiaryHover = ColorToken.textDefaultTertiaryHover
-    public static let textDefaultWarning = ColorToken.textDefaultWarning
-    public static let textDefaultWarningActive = ColorToken.textDefaultWarningActive
-    public static let textDefaultWarningHover = ColorToken.textDefaultWarningHover
-    public static let textDefaultWarningMinor = ColorToken.textDefaultWarningMinor
-    public static let textDefaultWarningMinorActive = ColorToken.textDefaultWarningMinorActive
-    public static let textDefaultWarningMinorHover = ColorToken.textDefaultWarningMinorHover
-    public static let textInverseAccent = ColorToken.textInverseAccent
-    public static let textInverseAccentActive = ColorToken.textInverseAccentActive
-    public static let textInverseAccentHover = ColorToken.textInverseAccentHover
-    public static let textInverseAccentMinor = ColorToken.textInverseAccentMinor
-    public static let textInverseAccentMinorActive = ColorToken.textInverseAccentMinorActive
-    public static let textInverseAccentMinorHover = ColorToken.textInverseAccentMinorHover
-    public static let textInverseInfo = ColorToken.textInverseInfo
-    public static let textInverseInfoActive = ColorToken.textInverseInfoActive
-    public static let textInverseInfoHover = ColorToken.textInverseInfoHover
-    public static let textInverseInfoMinor = ColorToken.textInverseInfoMinor
-    public static let textInverseInfoMinorActive = ColorToken.textInverseInfoMinorActive
-    public static let textInverseInfoMinorHover = ColorToken.textInverseInfoMinorHover
-    public static let textInverseNegative = ColorToken.textInverseNegative
-    public static let textInverseNegativeActive = ColorToken.textInverseNegativeActive
-    public static let textInverseNegativeHover = ColorToken.textInverseNegativeHover
-    public static let textInverseNegativeMinor = ColorToken.textInverseNegativeMinor
-    public static let textInverseNegativeMinorActive = ColorToken.textInverseNegativeMinorActive
-    public static let textInverseNegativeMinorHover = ColorToken.textInverseNegativeMinorHover
-    public static let textInverseParagraph = ColorToken.textInverseParagraph
-    public static let textInverseParagraphActive = ColorToken.textInverseParagraphActive
-    public static let textInverseParagraphHover = ColorToken.textInverseParagraphHover
-    public static let textInversePositive = ColorToken.textInversePositive
-    public static let textInversePositiveActive = ColorToken.textInversePositiveActive
-    public static let textInversePositiveHover = ColorToken.textInversePositiveHover
-    public static let textInversePositiveMinor = ColorToken.textInversePositiveMinor
-    public static let textInversePositiveMinorActive = ColorToken.textInversePositiveMinorActive
-    public static let textInversePositiveMinorHover = ColorToken.textInversePositiveMinorHover
-    public static let textInversePrimary = ColorToken.textInversePrimary
-    public static let textInversePrimaryActive = ColorToken.textInversePrimaryActive
-    public static let textInversePrimaryBrightness = ColorToken.textInversePrimaryBrightness
-    public static let textInversePrimaryHover = ColorToken.textInversePrimaryHover
-    public static let textInversePromo = ColorToken.textInversePromo
-    public static let textInversePromoActive = ColorToken.textInversePromoActive
-    public static let textInversePromoHover = ColorToken.textInversePromoHover
-    public static let textInversePromoMinor = ColorToken.textInversePromoMinor
-    public static let textInversePromoMinorActive = ColorToken.textInversePromoMinorActive
-    public static let textInversePromoMinorHover = ColorToken.textInversePromoMinorHover
-    public static let textInverseSecondary = ColorToken.textInverseSecondary
-    public static let textInverseSecondaryActive = ColorToken.textInverseSecondaryActive
-    public static let textInverseSecondaryHover = ColorToken.textInverseSecondaryHover
-    public static let textInverseTertiary = ColorToken.textInverseTertiary
-    public static let textInverseTertiaryActive = ColorToken.textInverseTertiaryActive
-    public static let textInverseTertiaryHover = ColorToken.textInverseTertiaryHover
-    public static let textInverseWarning = ColorToken.textInverseWarning
-    public static let textInverseWarningActive = ColorToken.textInverseWarningActive
-    public static let textInverseWarningHover = ColorToken.textInverseWarningHover
-    public static let textInverseWarningMinor = ColorToken.textInverseWarningMinor
-    public static let textInverseWarningMinorActive = ColorToken.textInverseWarningMinorActive
-    public static let textInverseWarningMinorHover = ColorToken.textInverseWarningMinorHover
-    public static let textOnDarkAccent = ColorToken.textOnDarkAccent
-    public static let textOnDarkAccentActive = ColorToken.textOnDarkAccentActive
-    public static let textOnDarkAccentHover = ColorToken.textOnDarkAccentHover
-    public static let textOnDarkAccentMinor = ColorToken.textOnDarkAccentMinor
-    public static let textOnDarkAccentMinorActive = ColorToken.textOnDarkAccentMinorActive
-    public static let textOnDarkAccentMinorHover = ColorToken.textOnDarkAccentMinorHover
-    public static let textOnDarkInfo = ColorToken.textOnDarkInfo
-    public static let textOnDarkInfoActive = ColorToken.textOnDarkInfoActive
-    public static let textOnDarkInfoHover = ColorToken.textOnDarkInfoHover
-    public static let textOnDarkInfoMinor = ColorToken.textOnDarkInfoMinor
-    public static let textOnDarkInfoMinorActive = ColorToken.textOnDarkInfoMinorActive
-    public static let textOnDarkInfoMinorHover = ColorToken.textOnDarkInfoMinorHover
-    public static let textOnDarkNegative = ColorToken.textOnDarkNegative
-    public static let textOnDarkNegativeActive = ColorToken.textOnDarkNegativeActive
-    public static let textOnDarkNegativeHover = ColorToken.textOnDarkNegativeHover
-    public static let textOnDarkNegativeMinor = ColorToken.textOnDarkNegativeMinor
-    public static let textOnDarkNegativeMinorActive = ColorToken.textOnDarkNegativeMinorActive
-    public static let textOnDarkNegativeMinorHover = ColorToken.textOnDarkNegativeMinorHover
-    public static let textOnDarkParagraph = ColorToken.textOnDarkParagraph
-    public static let textOnDarkParagraphActive = ColorToken.textOnDarkParagraphActive
-    public static let textOnDarkParagraphHover = ColorToken.textOnDarkParagraphHover
-    public static let textOnDarkPositive = ColorToken.textOnDarkPositive
-    public static let textOnDarkPositiveActive = ColorToken.textOnDarkPositiveActive
-    public static let textOnDarkPositiveHover = ColorToken.textOnDarkPositiveHover
-    public static let textOnDarkPositiveMinor = ColorToken.textOnDarkPositiveMinor
-    public static let textOnDarkPositiveMinorActive = ColorToken.textOnDarkPositiveMinorActive
-    public static let textOnDarkPositiveMinorHover = ColorToken.textOnDarkPositiveMinorHover
-    public static let textOnDarkPrimary = ColorToken.textOnDarkPrimary
-    public static let textOnDarkPrimaryActive = ColorToken.textOnDarkPrimaryActive
-    public static let textOnDarkPrimaryBrightness = ColorToken.textOnDarkPrimaryBrightness
-    public static let textOnDarkPrimaryHover = ColorToken.textOnDarkPrimaryHover
-    public static let textOnDarkPromo = ColorToken.textOnDarkPromo
-    public static let textOnDarkPromoActive = ColorToken.textOnDarkPromoActive
-    public static let textOnDarkPromoHover = ColorToken.textOnDarkPromoHover
-    public static let textOnDarkPromoMinor = ColorToken.textOnDarkPromoMinor
-    public static let textOnDarkPromoMinorActive = ColorToken.textOnDarkPromoMinorActive
-    public static let textOnDarkPromoMinorHover = ColorToken.textOnDarkPromoMinorHover
-    public static let textOnDarkSecondary = ColorToken.textOnDarkSecondary
-    public static let textOnDarkSecondaryActive = ColorToken.textOnDarkSecondaryActive
-    public static let textOnDarkSecondaryHover = ColorToken.textOnDarkSecondaryHover
-    public static let textOnDarkTertiary = ColorToken.textOnDarkTertiary
-    public static let textOnDarkTertiaryActive = ColorToken.textOnDarkTertiaryActive
-    public static let textOnDarkTertiaryHover = ColorToken.textOnDarkTertiaryHover
-    public static let textOnDarkWarning = ColorToken.textOnDarkWarning
-    public static let textOnDarkWarningActive = ColorToken.textOnDarkWarningActive
-    public static let textOnDarkWarningHover = ColorToken.textOnDarkWarningHover
-    public static let textOnDarkWarningMinor = ColorToken.textOnDarkWarningMinor
-    public static let textOnDarkWarningMinorActive = ColorToken.textOnDarkWarningMinorActive
-    public static let textOnDarkWarningMinorHover = ColorToken.textOnDarkWarningMinorHover
-    public static let textOnLightAccent = ColorToken.textOnLightAccent
-    public static let textOnLightAccentActive = ColorToken.textOnLightAccentActive
-    public static let textOnLightAccentHover = ColorToken.textOnLightAccentHover
-    public static let textOnLightAccentMinor = ColorToken.textOnLightAccentMinor
-    public static let textOnLightAccentMinorActive = ColorToken.textOnLightAccentMinorActive
-    public static let textOnLightAccentMinorHover = ColorToken.textOnLightAccentMinorHover
-    public static let textOnLightInfo = ColorToken.textOnLightInfo
-    public static let textOnLightInfoActive = ColorToken.textOnLightInfoActive
-    public static let textOnLightInfoHover = ColorToken.textOnLightInfoHover
-    public static let textOnLightInfoMinor = ColorToken.textOnLightInfoMinor
-    public static let textOnLightInfoMinorActive = ColorToken.textOnLightInfoMinorActive
-    public static let textOnLightInfoMinorHover = ColorToken.textOnLightInfoMinorHover
-    public static let textOnLightNegative = ColorToken.textOnLightNegative
-    public static let textOnLightNegativeActive = ColorToken.textOnLightNegativeActive
-    public static let textOnLightNegativeHover = ColorToken.textOnLightNegativeHover
-    public static let textOnLightNegativeMinor = ColorToken.textOnLightNegativeMinor
-    public static let textOnLightNegativeMinorActive = ColorToken.textOnLightNegativeMinorActive
-    public static let textOnLightNegativeMinorHover = ColorToken.textOnLightNegativeMinorHover
-    public static let textOnLightParagraph = ColorToken.textOnLightParagraph
-    public static let textOnLightParagraphActive = ColorToken.textOnLightParagraphActive
-    public static let textOnLightParagraphHover = ColorToken.textOnLightParagraphHover
-    public static let textOnLightPositive = ColorToken.textOnLightPositive
-    public static let textOnLightPositiveActive = ColorToken.textOnLightPositiveActive
-    public static let textOnLightPositiveHover = ColorToken.textOnLightPositiveHover
-    public static let textOnLightPositiveMinor = ColorToken.textOnLightPositiveMinor
-    public static let textOnLightPositiveMinorActive = ColorToken.textOnLightPositiveMinorActive
-    public static let textOnLightPositiveMinorHover = ColorToken.textOnLightPositiveMinorHover
-    public static let textOnLightPrimary = ColorToken.textOnLightPrimary
-    public static let textOnLightPrimaryActive = ColorToken.textOnLightPrimaryActive
-    public static let textOnLightPrimaryBrightness = ColorToken.textOnLightPrimaryBrightness
-    public static let textOnLightPrimaryHover = ColorToken.textOnLightPrimaryHover
-    public static let textOnLightPromo = ColorToken.textOnLightPromo
-    public static let textOnLightPromoActive = ColorToken.textOnLightPromoActive
-    public static let textOnLightPromoHover = ColorToken.textOnLightPromoHover
-    public static let textOnLightPromoMinor = ColorToken.textOnLightPromoMinor
-    public static let textOnLightPromoMinorActive = ColorToken.textOnLightPromoMinorActive
-    public static let textOnLightPromoMinorHover = ColorToken.textOnLightPromoMinorHover
-    public static let textOnLightSecondary = ColorToken.textOnLightSecondary
-    public static let textOnLightSecondaryActive = ColorToken.textOnLightSecondaryActive
-    public static let textOnLightSecondaryHover = ColorToken.textOnLightSecondaryHover
-    public static let textOnLightTertiary = ColorToken.textOnLightTertiary
-    public static let textOnLightTertiaryActive = ColorToken.textOnLightTertiaryActive
-    public static let textOnLightTertiaryHover = ColorToken.textOnLightTertiaryHover
-    public static let textOnLightWarning = ColorToken.textOnLightWarning
-    public static let textOnLightWarningActive = ColorToken.textOnLightWarningActive
-    public static let textOnLightWarningHover = ColorToken.textOnLightWarningHover
-    public static let textOnLightWarningMinor = ColorToken.textOnLightWarningMinor
-    public static let textOnLightWarningMinorActive = ColorToken.textOnLightWarningMinorActive
-    public static let textOnLightWarningMinorHover = ColorToken.textOnLightWarningMinorHover
+public enum Colors {
+    case backgroundDarkPrimary
+    case backgroundDarkSecondary
+    case backgroundDarkTertiary
+    case backgroundDefaultPrimary
+    case backgroundDefaultPrimaryBrightness
+    case backgroundDefaultSecondary
+    case backgroundDefaultTertiary
+    case backgroundInversePrimary
+    case backgroundInversePrimaryBrightness
+    case backgroundInverseSecondary
+    case backgroundInverseTertiary
+    case backgroundLightPrimary
+    case backgroundLightSecondary
+    case backgroundLightTertiary
+    case dataDefaultYellow
+    case dataDefaultYellowActive
+    case dataDefaultYellowHover
+    case dataDefaultYellowMinor
+    case dataDefaultYellowMinorActive
+    case dataDefaultYellowMinorHover
+    case dataDefaultYellowTransparent
+    case dataDefaultYellowTransparentActive
+    case dataDefaultYellowTransparentHover
+    case dataInverseYellow
+    case dataInverseYellowActive
+    case dataInverseYellowHover
+    case dataInverseYellowMinor
+    case dataInverseYellowMinorActive
+    case dataInverseYellowMinorHover
+    case dataInverseYellowTransparent
+    case dataInverseYellowTransparentActive
+    case dataInverseYellowTransparentHover
+    case dataOnDarkYellow
+    case dataOnDarkYellowActive
+    case dataOnDarkYellowHover
+    case dataOnDarkYellowMinor
+    case dataOnDarkYellowMinorActive
+    case dataOnDarkYellowMinorHover
+    case dataOnDarkYellowTransparent
+    case dataOnDarkYellowTransparentActive
+    case dataOnDarkYellowTransparentHover
+    case dataOnLightYellow
+    case dataOnLightYellowActive
+    case dataOnLightYellowHover
+    case dataOnLightYellowMinor
+    case dataOnLightYellowMinorActive
+    case dataOnLightYellowMinorHover
+    case dataOnLightYellowTransparent
+    case dataOnLightYellowTransparentActive
+    case dataOnLightYellowTransparentHover
+    case outlineDefaultAccent
+    case outlineDefaultAccentActive
+    case outlineDefaultAccentHover
+    case outlineDefaultAccentMinor
+    case outlineDefaultAccentMinorActive
+    case outlineDefaultAccentMinorHover
+    case outlineDefaultClear
+    case outlineDefaultClearActive
+    case outlineDefaultClearHover
+    case outlineDefaultInfo
+    case outlineDefaultInfoActive
+    case outlineDefaultInfoHover
+    case outlineDefaultInfoMinor
+    case outlineDefaultInfoMinorActive
+    case outlineDefaultInfoMinorHover
+    case outlineDefaultNegative
+    case outlineDefaultNegativeActive
+    case outlineDefaultNegativeHover
+    case outlineDefaultNegativeMinor
+    case outlineDefaultNegativeMinorActive
+    case outlineDefaultNegativeMinorHover
+    case outlineDefaultPositive
+    case outlineDefaultPositiveActive
+    case outlineDefaultPositiveHover
+    case outlineDefaultPositiveMinor
+    case outlineDefaultPositiveMinorActive
+    case outlineDefaultPositiveMinorHover
+    case outlineDefaultPromo
+    case outlineDefaultPromoActive
+    case outlineDefaultPromoHover
+    case outlineDefaultPromoMinor
+    case outlineDefaultPromoMinorActive
+    case outlineDefaultPromoMinorHover
+    case outlineDefaultSolidPrimary
+    case outlineDefaultSolidPrimaryActive
+    case outlineDefaultSolidPrimaryHover
+    case outlineDefaultSolidSecondary
+    case outlineDefaultSolidSecondaryActive
+    case outlineDefaultSolidSecondaryHover
+    case outlineDefaultSolidTertiary
+    case outlineDefaultSolidTertiaryActive
+    case outlineDefaultSolidTertiaryHover
+    case outlineDefaultTransparentAccent
+    case outlineDefaultTransparentAccentActive
+    case outlineDefaultTransparentAccentHover
+    case outlineDefaultTransparentDefault
+    case outlineDefaultTransparentDefaultActive
+    case outlineDefaultTransparentDefaultHover
+    case outlineDefaultTransparentInfo
+    case outlineDefaultTransparentInfoActive
+    case outlineDefaultTransparentInfoHover
+    case outlineDefaultTransparentNegative
+    case outlineDefaultTransparentNegativeActive
+    case outlineDefaultTransparentNegativeHover
+    case outlineDefaultTransparentPositive
+    case outlineDefaultTransparentPositiveActive
+    case outlineDefaultTransparentPositiveHover
+    case outlineDefaultTransparentPrimary
+    case outlineDefaultTransparentPrimaryActive
+    case outlineDefaultTransparentPrimaryHover
+    case outlineDefaultTransparentSecondary
+    case outlineDefaultTransparentSecondaryActive
+    case outlineDefaultTransparentSecondaryHover
+    case outlineDefaultTransparentTertiary
+    case outlineDefaultTransparentTertiaryActive
+    case outlineDefaultTransparentTertiaryHover
+    case outlineDefaultTransparentWarning
+    case outlineDefaultTransparentWarningActive
+    case outlineDefaultTransparentWarningHover
+    case outlineDefaultWarning
+    case outlineDefaultWarningActive
+    case outlineDefaultWarningHover
+    case outlineDefaultWarningMinor
+    case outlineDefaultWarningMinorActive
+    case outlineDefaultWarningMinorHover
+    case outlineInverseAccent
+    case outlineInverseAccentActive
+    case outlineInverseAccentHover
+    case outlineInverseAccentMinor
+    case outlineInverseAccentMinorActive
+    case outlineInverseAccentMinorHover
+    case outlineInverseClear
+    case outlineInverseClearActive
+    case outlineInverseClearHover
+    case outlineInverseInfo
+    case outlineInverseInfoActive
+    case outlineInverseInfoHover
+    case outlineInverseInfoMinor
+    case outlineInverseInfoMinorActive
+    case outlineInverseInfoMinorHover
+    case outlineInverseNegative
+    case outlineInverseNegativeActive
+    case outlineInverseNegativeHover
+    case outlineInverseNegativeMinor
+    case outlineInverseNegativeMinorActive
+    case outlineInverseNegativeMinorHover
+    case outlineInversePositive
+    case outlineInversePositiveActive
+    case outlineInversePositiveHover
+    case outlineInversePositiveMinor
+    case outlineInversePositiveMinorActive
+    case outlineInversePositiveMinorHover
+    case outlineInversePromo
+    case outlineInversePromoActive
+    case outlineInversePromoHover
+    case outlineInversePromoMinor
+    case outlineInversePromoMinorActive
+    case outlineInversePromoMinorHover
+    case outlineInverseSolidPrimary
+    case outlineInverseSolidPrimaryActive
+    case outlineInverseSolidPrimaryHover
+    case outlineInverseSolidSecondary
+    case outlineInverseSolidSecondaryActive
+    case outlineInverseSolidSecondaryHover
+    case outlineInverseSolidTertiary
+    case outlineInverseSolidTertiaryActive
+    case outlineInverseSolidTertiaryHover
+    case outlineInverseTransparentAccent
+    case outlineInverseTransparentAccentActive
+    case outlineInverseTransparentAccentHover
+    case outlineInverseTransparentDefault
+    case outlineInverseTransparentDefaultActive
+    case outlineInverseTransparentDefaultHover
+    case outlineInverseTransparentInfo
+    case outlineInverseTransparentInfoActive
+    case outlineInverseTransparentInfoHover
+    case outlineInverseTransparentNegative
+    case outlineInverseTransparentNegativeActive
+    case outlineInverseTransparentNegativeHover
+    case outlineInverseTransparentPositive
+    case outlineInverseTransparentPositiveActive
+    case outlineInverseTransparentPositiveHover
+    case outlineInverseTransparentPrimary
+    case outlineInverseTransparentPrimaryActive
+    case outlineInverseTransparentPrimaryHover
+    case outlineInverseTransparentSecondary
+    case outlineInverseTransparentSecondaryActive
+    case outlineInverseTransparentSecondaryHover
+    case outlineInverseTransparentTertiary
+    case outlineInverseTransparentTertiaryActive
+    case outlineInverseTransparentTertiaryHover
+    case outlineInverseTransparentWarning
+    case outlineInverseTransparentWarningActive
+    case outlineInverseTransparentWarningHover
+    case outlineInverseWarning
+    case outlineInverseWarningActive
+    case outlineInverseWarningHover
+    case outlineInverseWarningMinor
+    case outlineInverseWarningMinorActive
+    case outlineInverseWarningMinorHover
+    case outlineOnDarkAccent
+    case outlineOnDarkAccentActive
+    case outlineOnDarkAccentHover
+    case outlineOnDarkAccentMinor
+    case outlineOnDarkAccentMinorActive
+    case outlineOnDarkAccentMinorHover
+    case outlineOnDarkClear
+    case outlineOnDarkClearActive
+    case outlineOnDarkClearHover
+    case outlineOnDarkInfo
+    case outlineOnDarkInfoActive
+    case outlineOnDarkInfoHover
+    case outlineOnDarkInfoMinor
+    case outlineOnDarkInfoMinorActive
+    case outlineOnDarkInfoMinorHover
+    case outlineOnDarkNegative
+    case outlineOnDarkNegativeActive
+    case outlineOnDarkNegativeHover
+    case outlineOnDarkNegativeMinor
+    case outlineOnDarkNegativeMinorActive
+    case outlineOnDarkNegativeMinorHover
+    case outlineOnDarkPositive
+    case outlineOnDarkPositiveActive
+    case outlineOnDarkPositiveHover
+    case outlineOnDarkPositiveMinor
+    case outlineOnDarkPositiveMinorActive
+    case outlineOnDarkPositiveMinorHover
+    case outlineOnDarkPromo
+    case outlineOnDarkPromoActive
+    case outlineOnDarkPromoHover
+    case outlineOnDarkPromoMinor
+    case outlineOnDarkPromoMinorActive
+    case outlineOnDarkPromoMinorHover
+    case outlineOnDarkSolidPrimary
+    case outlineOnDarkSolidPrimaryActive
+    case outlineOnDarkSolidPrimaryHover
+    case outlineOnDarkSolidSecondary
+    case outlineOnDarkSolidSecondaryActive
+    case outlineOnDarkSolidSecondaryHover
+    case outlineOnDarkSolidTertiary
+    case outlineOnDarkSolidTertiaryActive
+    case outlineOnDarkSolidTertiaryHover
+    case outlineOnDarkTransparentAccent
+    case outlineOnDarkTransparentAccentActive
+    case outlineOnDarkTransparentAccentHover
+    case outlineOnDarkTransparentDefault
+    case outlineOnDarkTransparentDefaultActive
+    case outlineOnDarkTransparentDefaultHover
+    case outlineOnDarkTransparentInfo
+    case outlineOnDarkTransparentInfoActive
+    case outlineOnDarkTransparentInfoHover
+    case outlineOnDarkTransparentNegative
+    case outlineOnDarkTransparentNegativeActive
+    case outlineOnDarkTransparentNegativeHover
+    case outlineOnDarkTransparentPositive
+    case outlineOnDarkTransparentPositiveActive
+    case outlineOnDarkTransparentPositiveHover
+    case outlineOnDarkTransparentPrimary
+    case outlineOnDarkTransparentPrimaryActive
+    case outlineOnDarkTransparentPrimaryHover
+    case outlineOnDarkTransparentSecondary
+    case outlineOnDarkTransparentSecondaryActive
+    case outlineOnDarkTransparentSecondaryHover
+    case outlineOnDarkTransparentTertiary
+    case outlineOnDarkTransparentTertiaryActive
+    case outlineOnDarkTransparentTertiaryHover
+    case outlineOnDarkTransparentWarning
+    case outlineOnDarkTransparentWarningActive
+    case outlineOnDarkTransparentWarningHover
+    case outlineOnDarkWarning
+    case outlineOnDarkWarningActive
+    case outlineOnDarkWarningHover
+    case outlineOnDarkWarningMinor
+    case outlineOnDarkWarningMinorActive
+    case outlineOnDarkWarningMinorHover
+    case outlineOnLightAccent
+    case outlineOnLightAccentActive
+    case outlineOnLightAccentHover
+    case outlineOnLightAccentMinor
+    case outlineOnLightAccentMinorActive
+    case outlineOnLightAccentMinorHover
+    case outlineOnLightClear
+    case outlineOnLightClearActive
+    case outlineOnLightClearHover
+    case outlineOnLightInfo
+    case outlineOnLightInfoActive
+    case outlineOnLightInfoHover
+    case outlineOnLightInfoMinor
+    case outlineOnLightInfoMinorActive
+    case outlineOnLightInfoMinorHover
+    case outlineOnLightNegative
+    case outlineOnLightNegativeActive
+    case outlineOnLightNegativeHover
+    case outlineOnLightNegativeMinor
+    case outlineOnLightNegativeMinorActive
+    case outlineOnLightNegativeMinorHover
+    case outlineOnLightPositive
+    case outlineOnLightPositiveActive
+    case outlineOnLightPositiveHover
+    case outlineOnLightPositiveMinor
+    case outlineOnLightPositiveMinorActive
+    case outlineOnLightPositiveMinorHover
+    case outlineOnLightPromo
+    case outlineOnLightPromoActive
+    case outlineOnLightPromoHover
+    case outlineOnLightPromoMinor
+    case outlineOnLightPromoMinorActive
+    case outlineOnLightPromoMinorHover
+    case outlineOnLightSolidPrimary
+    case outlineOnLightSolidPrimaryActive
+    case outlineOnLightSolidPrimaryHover
+    case outlineOnLightSolidSecondary
+    case outlineOnLightSolidSecondaryActive
+    case outlineOnLightSolidSecondaryHover
+    case outlineOnLightSolidTertiary
+    case outlineOnLightSolidTertiaryActive
+    case outlineOnLightSolidTertiaryHover
+    case outlineOnLightTransparentAccent
+    case outlineOnLightTransparentAccentActive
+    case outlineOnLightTransparentAccentHover
+    case outlineOnLightTransparentDefault
+    case outlineOnLightTransparentDefaultActive
+    case outlineOnLightTransparentDefaultHover
+    case outlineOnLightTransparentInfo
+    case outlineOnLightTransparentInfoActive
+    case outlineOnLightTransparentInfoHover
+    case outlineOnLightTransparentNegative
+    case outlineOnLightTransparentNegativeActive
+    case outlineOnLightTransparentNegativeHover
+    case outlineOnLightTransparentPositive
+    case outlineOnLightTransparentPositiveActive
+    case outlineOnLightTransparentPositiveHover
+    case outlineOnLightTransparentPrimary
+    case outlineOnLightTransparentPrimaryActive
+    case outlineOnLightTransparentPrimaryHover
+    case outlineOnLightTransparentSecondary
+    case outlineOnLightTransparentSecondaryActive
+    case outlineOnLightTransparentSecondaryHover
+    case outlineOnLightTransparentTertiary
+    case outlineOnLightTransparentTertiaryActive
+    case outlineOnLightTransparentTertiaryHover
+    case outlineOnLightTransparentWarning
+    case outlineOnLightTransparentWarningActive
+    case outlineOnLightTransparentWarningHover
+    case outlineOnLightWarning
+    case outlineOnLightWarningActive
+    case outlineOnLightWarningHover
+    case outlineOnLightWarningMinor
+    case outlineOnLightWarningMinorActive
+    case outlineOnLightWarningMinorHover
+    case overlayDefaultBlur
+    case overlayDefaultHard
+    case overlayDefaultSoft
+    case overlayInverseBlur
+    case overlayInverseHard
+    case overlayInverseSoft
+    case overlayOnDarkBlur
+    case overlayOnDarkHard
+    case overlayOnDarkSoft
+    case overlayOnLightBlur
+    case overlayOnLightHard
+    case overlayOnLightSoft
+    case surfaceDefaultAccent
+    case surfaceDefaultAccentActive
+    case surfaceDefaultAccentHover
+    case surfaceDefaultAccentMinor
+    case surfaceDefaultAccentMinorActive
+    case surfaceDefaultAccentMinorHover
+    case surfaceDefaultClear
+    case surfaceDefaultClearActive
+    case surfaceDefaultClearHover
+    case surfaceDefaultInfo
+    case surfaceDefaultInfoActive
+    case surfaceDefaultInfoHover
+    case surfaceDefaultInfoMinor
+    case surfaceDefaultInfoMinorActive
+    case surfaceDefaultInfoMinorHover
+    case surfaceDefaultNegative
+    case surfaceDefaultNegativeActive
+    case surfaceDefaultNegativeHover
+    case surfaceDefaultNegativeMinor
+    case surfaceDefaultNegativeMinorActive
+    case surfaceDefaultNegativeMinorHover
+    case surfaceDefaultPositive
+    case surfaceDefaultPositiveActive
+    case surfaceDefaultPositiveHover
+    case surfaceDefaultPositiveMinor
+    case surfaceDefaultPositiveMinorActive
+    case surfaceDefaultPositiveMinorHover
+    case surfaceDefaultPromo
+    case surfaceDefaultPromoActive
+    case surfaceDefaultPromoHover
+    case surfaceDefaultPromoMinor
+    case surfaceDefaultPromoMinorActive
+    case surfaceDefaultPromoMinorHover
+    case surfaceDefaultSolidCard
+    case surfaceDefaultSolidCardActive
+    case surfaceDefaultSolidCardBrightness
+    case surfaceDefaultSolidCardHover
+    case surfaceDefaultSolidDefault
+    case surfaceDefaultSolidDefaultActive
+    case surfaceDefaultSolidDefaultHover
+    case surfaceDefaultSolidPrimary
+    case surfaceDefaultSolidPrimaryActive
+    case surfaceDefaultSolidPrimaryBrightness
+    case surfaceDefaultSolidPrimaryHover
+    case surfaceDefaultSolidSecondary
+    case surfaceDefaultSolidSecondaryActive
+    case surfaceDefaultSolidSecondaryHover
+    case surfaceDefaultSolidTertiary
+    case surfaceDefaultSolidTertiaryActive
+    case surfaceDefaultSolidTertiaryHover
+    case surfaceDefaultTransparentAccent
+    case surfaceDefaultTransparentAccentActive
+    case surfaceDefaultTransparentAccentHover
+    case surfaceDefaultTransparentCard
+    case surfaceDefaultTransparentCardActive
+    case surfaceDefaultTransparentCardBrightness
+    case surfaceDefaultTransparentCardHover
+    case surfaceDefaultTransparentDeep
+    case surfaceDefaultTransparentDeepActive
+    case surfaceDefaultTransparentDeepHover
+    case surfaceDefaultTransparentInfo
+    case surfaceDefaultTransparentInfoActive
+    case surfaceDefaultTransparentInfoHover
+    case surfaceDefaultTransparentNegative
+    case surfaceDefaultTransparentNegativeActive
+    case surfaceDefaultTransparentNegativeHover
+    case surfaceDefaultTransparentPositive
+    case surfaceDefaultTransparentPositiveActive
+    case surfaceDefaultTransparentPositiveHover
+    case surfaceDefaultTransparentPrimary
+    case surfaceDefaultTransparentPrimaryActive
+    case surfaceDefaultTransparentPrimaryHover
+    case surfaceDefaultTransparentPromo
+    case surfaceDefaultTransparentPromoActive
+    case surfaceDefaultTransparentPromoHover
+    case surfaceDefaultTransparentSecondary
+    case surfaceDefaultTransparentSecondaryActive
+    case surfaceDefaultTransparentSecondaryHover
+    case surfaceDefaultTransparentTertiary
+    case surfaceDefaultTransparentTertiaryActive
+    case surfaceDefaultTransparentTertiaryHover
+    case surfaceDefaultTransparentWarning
+    case surfaceDefaultTransparentWarningActive
+    case surfaceDefaultTransparentWarningHover
+    case surfaceDefaultWarning
+    case surfaceDefaultWarningActive
+    case surfaceDefaultWarningHover
+    case surfaceDefaultWarningMinor
+    case surfaceDefaultWarningMinorActive
+    case surfaceDefaultWarningMinorHover
+    case surfaceInverseAccent
+    case surfaceInverseAccentActive
+    case surfaceInverseAccentHover
+    case surfaceInverseAccentMinor
+    case surfaceInverseAccentMinorActive
+    case surfaceInverseAccentMinorHover
+    case surfaceInverseClear
+    case surfaceInverseClearActive
+    case surfaceInverseClearHover
+    case surfaceInverseInfo
+    case surfaceInverseInfoActive
+    case surfaceInverseInfoHover
+    case surfaceInverseInfoMinor
+    case surfaceInverseInfoMinorActive
+    case surfaceInverseInfoMinorHover
+    case surfaceInverseNegative
+    case surfaceInverseNegativeActive
+    case surfaceInverseNegativeHover
+    case surfaceInverseNegativeMinor
+    case surfaceInverseNegativeMinorActive
+    case surfaceInverseNegativeMinorHover
+    case surfaceInversePositive
+    case surfaceInversePositiveActive
+    case surfaceInversePositiveHover
+    case surfaceInversePositiveMinor
+    case surfaceInversePositiveMinorActive
+    case surfaceInversePositiveMinorHover
+    case surfaceInversePromo
+    case surfaceInversePromoActive
+    case surfaceInversePromoHover
+    case surfaceInversePromoMinor
+    case surfaceInversePromoMinorActive
+    case surfaceInversePromoMinorHover
+    case surfaceInverseSolidCard
+    case surfaceInverseSolidCardActive
+    case surfaceInverseSolidCardBrightness
+    case surfaceInverseSolidCardHover
+    case surfaceInverseSolidDefault
+    case surfaceInverseSolidDefaultActive
+    case surfaceInverseSolidDefaultHover
+    case surfaceInverseSolidPrimary
+    case surfaceInverseSolidPrimaryActive
+    case surfaceInverseSolidPrimaryBrightness
+    case surfaceInverseSolidPrimaryHover
+    case surfaceInverseSolidSecondary
+    case surfaceInverseSolidSecondaryActive
+    case surfaceInverseSolidSecondaryHover
+    case surfaceInverseSolidTertiary
+    case surfaceInverseSolidTertiaryActive
+    case surfaceInverseSolidTertiaryHover
+    case surfaceInverseTransparentAccent
+    case surfaceInverseTransparentAccentActive
+    case surfaceInverseTransparentAccentHover
+    case surfaceInverseTransparentCard
+    case surfaceInverseTransparentCardActive
+    case surfaceInverseTransparentCardBrightness
+    case surfaceInverseTransparentCardHover
+    case surfaceInverseTransparentDeep
+    case surfaceInverseTransparentDeepActive
+    case surfaceInverseTransparentDeepHover
+    case surfaceInverseTransparentInfo
+    case surfaceInverseTransparentInfoActive
+    case surfaceInverseTransparentInfoHover
+    case surfaceInverseTransparentNegative
+    case surfaceInverseTransparentNegativeActive
+    case surfaceInverseTransparentNegativeHover
+    case surfaceInverseTransparentPositive
+    case surfaceInverseTransparentPositiveActive
+    case surfaceInverseTransparentPositiveHover
+    case surfaceInverseTransparentPrimary
+    case surfaceInverseTransparentPrimaryActive
+    case surfaceInverseTransparentPrimaryHover
+    case surfaceInverseTransparentPromo
+    case surfaceInverseTransparentPromoActive
+    case surfaceInverseTransparentPromoHover
+    case surfaceInverseTransparentSecondary
+    case surfaceInverseTransparentSecondaryActive
+    case surfaceInverseTransparentSecondaryHover
+    case surfaceInverseTransparentTertiary
+    case surfaceInverseTransparentTertiaryActive
+    case surfaceInverseTransparentTertiaryHover
+    case surfaceInverseTransparentWarning
+    case surfaceInverseTransparentWarningActive
+    case surfaceInverseTransparentWarningHover
+    case surfaceInverseWarning
+    case surfaceInverseWarningActive
+    case surfaceInverseWarningHover
+    case surfaceInverseWarningMinor
+    case surfaceInverseWarningMinorActive
+    case surfaceInverseWarningMinorHover
+    case surfaceOnDarkAccent
+    case surfaceOnDarkAccentActive
+    case surfaceOnDarkAccentHover
+    case surfaceOnDarkAccentMinor
+    case surfaceOnDarkAccentMinorActive
+    case surfaceOnDarkAccentMinorHover
+    case surfaceOnDarkClear
+    case surfaceOnDarkClearActive
+    case surfaceOnDarkClearHover
+    case surfaceOnDarkInfo
+    case surfaceOnDarkInfoActive
+    case surfaceOnDarkInfoHover
+    case surfaceOnDarkInfoMinor
+    case surfaceOnDarkInfoMinorActive
+    case surfaceOnDarkInfoMinorHover
+    case surfaceOnDarkNegative
+    case surfaceOnDarkNegativeActive
+    case surfaceOnDarkNegativeHover
+    case surfaceOnDarkNegativeMinor
+    case surfaceOnDarkNegativeMinorActive
+    case surfaceOnDarkNegativeMinorHover
+    case surfaceOnDarkPositive
+    case surfaceOnDarkPositiveActive
+    case surfaceOnDarkPositiveHover
+    case surfaceOnDarkPositiveMinor
+    case surfaceOnDarkPositiveMinorActive
+    case surfaceOnDarkPositiveMinorHover
+    case surfaceOnDarkPromo
+    case surfaceOnDarkPromoActive
+    case surfaceOnDarkPromoHover
+    case surfaceOnDarkPromoMinor
+    case surfaceOnDarkPromoMinorActive
+    case surfaceOnDarkPromoMinorHover
+    case surfaceOnDarkSolidCard
+    case surfaceOnDarkSolidCardActive
+    case surfaceOnDarkSolidCardBrightness
+    case surfaceOnDarkSolidCardHover
+    case surfaceOnDarkSolidDefault
+    case surfaceOnDarkSolidDefaultActive
+    case surfaceOnDarkSolidDefaultHover
+    case surfaceOnDarkSolidPrimary
+    case surfaceOnDarkSolidPrimaryActive
+    case surfaceOnDarkSolidPrimaryBrightness
+    case surfaceOnDarkSolidPrimaryHover
+    case surfaceOnDarkSolidSecondary
+    case surfaceOnDarkSolidSecondaryActive
+    case surfaceOnDarkSolidSecondaryHover
+    case surfaceOnDarkSolidTertiary
+    case surfaceOnDarkSolidTertiaryActive
+    case surfaceOnDarkSolidTertiaryHover
+    case surfaceOnDarkTransparentAccent
+    case surfaceOnDarkTransparentAccentActive
+    case surfaceOnDarkTransparentAccentHover
+    case surfaceOnDarkTransparentCard
+    case surfaceOnDarkTransparentCardActive
+    case surfaceOnDarkTransparentCardBrightness
+    case surfaceOnDarkTransparentCardHover
+    case surfaceOnDarkTransparentDeep
+    case surfaceOnDarkTransparentDeepActive
+    case surfaceOnDarkTransparentDeepHover
+    case surfaceOnDarkTransparentInfo
+    case surfaceOnDarkTransparentInfoActive
+    case surfaceOnDarkTransparentInfoHover
+    case surfaceOnDarkTransparentNegative
+    case surfaceOnDarkTransparentNegativeActive
+    case surfaceOnDarkTransparentNegativeHover
+    case surfaceOnDarkTransparentPositive
+    case surfaceOnDarkTransparentPositiveActive
+    case surfaceOnDarkTransparentPositiveHover
+    case surfaceOnDarkTransparentPrimary
+    case surfaceOnDarkTransparentPrimaryActive
+    case surfaceOnDarkTransparentPrimaryHover
+    case surfaceOnDarkTransparentPromo
+    case surfaceOnDarkTransparentPromoActive
+    case surfaceOnDarkTransparentPromoHover
+    case surfaceOnDarkTransparentSecondary
+    case surfaceOnDarkTransparentSecondaryActive
+    case surfaceOnDarkTransparentSecondaryHover
+    case surfaceOnDarkTransparentTertiary
+    case surfaceOnDarkTransparentTertiaryActive
+    case surfaceOnDarkTransparentTertiaryHover
+    case surfaceOnDarkTransparentWarning
+    case surfaceOnDarkTransparentWarningActive
+    case surfaceOnDarkTransparentWarningHover
+    case surfaceOnDarkWarning
+    case surfaceOnDarkWarningActive
+    case surfaceOnDarkWarningHover
+    case surfaceOnDarkWarningMinor
+    case surfaceOnDarkWarningMinorActive
+    case surfaceOnDarkWarningMinorHover
+    case surfaceOnLightAccent
+    case surfaceOnLightAccentActive
+    case surfaceOnLightAccentHover
+    case surfaceOnLightAccentMinor
+    case surfaceOnLightAccentMinorActive
+    case surfaceOnLightAccentMinorHover
+    case surfaceOnLightClear
+    case surfaceOnLightClearActive
+    case surfaceOnLightClearHover
+    case surfaceOnLightInfo
+    case surfaceOnLightInfoActive
+    case surfaceOnLightInfoHover
+    case surfaceOnLightInfoMinor
+    case surfaceOnLightInfoMinorActive
+    case surfaceOnLightInfoMinorHover
+    case surfaceOnLightNegative
+    case surfaceOnLightNegativeActive
+    case surfaceOnLightNegativeHover
+    case surfaceOnLightNegativeMinor
+    case surfaceOnLightNegativeMinorActive
+    case surfaceOnLightNegativeMinorHover
+    case surfaceOnLightPositive
+    case surfaceOnLightPositiveActive
+    case surfaceOnLightPositiveHover
+    case surfaceOnLightPositiveMinor
+    case surfaceOnLightPositiveMinorActive
+    case surfaceOnLightPositiveMinorHover
+    case surfaceOnLightPromo
+    case surfaceOnLightPromoActive
+    case surfaceOnLightPromoHover
+    case surfaceOnLightPromoMinor
+    case surfaceOnLightPromoMinorActive
+    case surfaceOnLightPromoMinorHover
+    case surfaceOnLightSolidCard
+    case surfaceOnLightSolidCardActive
+    case surfaceOnLightSolidCardBrightness
+    case surfaceOnLightSolidCardHover
+    case surfaceOnLightSolidDefault
+    case surfaceOnLightSolidDefaultActive
+    case surfaceOnLightSolidDefaultHover
+    case surfaceOnLightSolidPrimary
+    case surfaceOnLightSolidPrimaryActive
+    case surfaceOnLightSolidPrimaryBrightness
+    case surfaceOnLightSolidPrimaryHover
+    case surfaceOnLightSolidSecondary
+    case surfaceOnLightSolidSecondaryActive
+    case surfaceOnLightSolidSecondaryHover
+    case surfaceOnLightSolidTertiary
+    case surfaceOnLightSolidTertiaryActive
+    case surfaceOnLightSolidTertiaryHover
+    case surfaceOnLightTransparentAccent
+    case surfaceOnLightTransparentAccentActive
+    case surfaceOnLightTransparentAccentHover
+    case surfaceOnLightTransparentCard
+    case surfaceOnLightTransparentCardActive
+    case surfaceOnLightTransparentCardBrightness
+    case surfaceOnLightTransparentCardHover
+    case surfaceOnLightTransparentDeep
+    case surfaceOnLightTransparentDeepActive
+    case surfaceOnLightTransparentDeepHover
+    case surfaceOnLightTransparentInfo
+    case surfaceOnLightTransparentInfoActive
+    case surfaceOnLightTransparentInfoHover
+    case surfaceOnLightTransparentNegative
+    case surfaceOnLightTransparentNegativeActive
+    case surfaceOnLightTransparentNegativeHover
+    case surfaceOnLightTransparentPositive
+    case surfaceOnLightTransparentPositiveActive
+    case surfaceOnLightTransparentPositiveHover
+    case surfaceOnLightTransparentPrimary
+    case surfaceOnLightTransparentPrimaryActive
+    case surfaceOnLightTransparentPrimaryHover
+    case surfaceOnLightTransparentPromo
+    case surfaceOnLightTransparentPromoActive
+    case surfaceOnLightTransparentPromoHover
+    case surfaceOnLightTransparentSecondary
+    case surfaceOnLightTransparentSecondaryActive
+    case surfaceOnLightTransparentSecondaryHover
+    case surfaceOnLightTransparentTertiary
+    case surfaceOnLightTransparentTertiaryActive
+    case surfaceOnLightTransparentTertiaryHover
+    case surfaceOnLightTransparentWarning
+    case surfaceOnLightTransparentWarningActive
+    case surfaceOnLightTransparentWarningHover
+    case surfaceOnLightWarning
+    case surfaceOnLightWarningActive
+    case surfaceOnLightWarningHover
+    case surfaceOnLightWarningMinor
+    case surfaceOnLightWarningMinorActive
+    case surfaceOnLightWarningMinorHover
+    case textDefaultAccent
+    case textDefaultAccentActive
+    case textDefaultAccentHover
+    case textDefaultAccentMinor
+    case textDefaultAccentMinorActive
+    case textDefaultAccentMinorHover
+    case textDefaultInfo
+    case textDefaultInfoActive
+    case textDefaultInfoHover
+    case textDefaultInfoMinor
+    case textDefaultInfoMinorActive
+    case textDefaultInfoMinorHover
+    case textDefaultNegative
+    case textDefaultNegativeActive
+    case textDefaultNegativeHover
+    case textDefaultNegativeMinor
+    case textDefaultNegativeMinorActive
+    case textDefaultNegativeMinorHover
+    case textDefaultParagraph
+    case textDefaultParagraphActive
+    case textDefaultParagraphHover
+    case textDefaultPositive
+    case textDefaultPositiveActive
+    case textDefaultPositiveHover
+    case textDefaultPositiveMinor
+    case textDefaultPositiveMinorActive
+    case textDefaultPositiveMinorHover
+    case textDefaultPrimary
+    case textDefaultPrimaryActive
+    case textDefaultPrimaryBrightness
+    case textDefaultPrimaryHover
+    case textDefaultPromo
+    case textDefaultPromoActive
+    case textDefaultPromoHover
+    case textDefaultPromoMinor
+    case textDefaultPromoMinorActive
+    case textDefaultPromoMinorHover
+    case textDefaultSecondary
+    case textDefaultSecondaryActive
+    case textDefaultSecondaryHover
+    case textDefaultTertiary
+    case textDefaultTertiaryActive
+    case textDefaultTertiaryHover
+    case textDefaultWarning
+    case textDefaultWarningActive
+    case textDefaultWarningHover
+    case textDefaultWarningMinor
+    case textDefaultWarningMinorActive
+    case textDefaultWarningMinorHover
+    case textInverseAccent
+    case textInverseAccentActive
+    case textInverseAccentHover
+    case textInverseAccentMinor
+    case textInverseAccentMinorActive
+    case textInverseAccentMinorHover
+    case textInverseInfo
+    case textInverseInfoActive
+    case textInverseInfoHover
+    case textInverseInfoMinor
+    case textInverseInfoMinorActive
+    case textInverseInfoMinorHover
+    case textInverseNegative
+    case textInverseNegativeActive
+    case textInverseNegativeHover
+    case textInverseNegativeMinor
+    case textInverseNegativeMinorActive
+    case textInverseNegativeMinorHover
+    case textInverseParagraph
+    case textInverseParagraphActive
+    case textInverseParagraphHover
+    case textInversePositive
+    case textInversePositiveActive
+    case textInversePositiveHover
+    case textInversePositiveMinor
+    case textInversePositiveMinorActive
+    case textInversePositiveMinorHover
+    case textInversePrimary
+    case textInversePrimaryActive
+    case textInversePrimaryBrightness
+    case textInversePrimaryHover
+    case textInversePromo
+    case textInversePromoActive
+    case textInversePromoHover
+    case textInversePromoMinor
+    case textInversePromoMinorActive
+    case textInversePromoMinorHover
+    case textInverseSecondary
+    case textInverseSecondaryActive
+    case textInverseSecondaryHover
+    case textInverseTertiary
+    case textInverseTertiaryActive
+    case textInverseTertiaryHover
+    case textInverseWarning
+    case textInverseWarningActive
+    case textInverseWarningHover
+    case textInverseWarningMinor
+    case textInverseWarningMinorActive
+    case textInverseWarningMinorHover
+    case textOnDarkAccent
+    case textOnDarkAccentActive
+    case textOnDarkAccentHover
+    case textOnDarkAccentMinor
+    case textOnDarkAccentMinorActive
+    case textOnDarkAccentMinorHover
+    case textOnDarkInfo
+    case textOnDarkInfoActive
+    case textOnDarkInfoHover
+    case textOnDarkInfoMinor
+    case textOnDarkInfoMinorActive
+    case textOnDarkInfoMinorHover
+    case textOnDarkNegative
+    case textOnDarkNegativeActive
+    case textOnDarkNegativeHover
+    case textOnDarkNegativeMinor
+    case textOnDarkNegativeMinorActive
+    case textOnDarkNegativeMinorHover
+    case textOnDarkParagraph
+    case textOnDarkParagraphActive
+    case textOnDarkParagraphHover
+    case textOnDarkPositive
+    case textOnDarkPositiveActive
+    case textOnDarkPositiveHover
+    case textOnDarkPositiveMinor
+    case textOnDarkPositiveMinorActive
+    case textOnDarkPositiveMinorHover
+    case textOnDarkPrimary
+    case textOnDarkPrimaryActive
+    case textOnDarkPrimaryBrightness
+    case textOnDarkPrimaryHover
+    case textOnDarkPromo
+    case textOnDarkPromoActive
+    case textOnDarkPromoHover
+    case textOnDarkPromoMinor
+    case textOnDarkPromoMinorActive
+    case textOnDarkPromoMinorHover
+    case textOnDarkSecondary
+    case textOnDarkSecondaryActive
+    case textOnDarkSecondaryHover
+    case textOnDarkTertiary
+    case textOnDarkTertiaryActive
+    case textOnDarkTertiaryHover
+    case textOnDarkWarning
+    case textOnDarkWarningActive
+    case textOnDarkWarningHover
+    case textOnDarkWarningMinor
+    case textOnDarkWarningMinorActive
+    case textOnDarkWarningMinorHover
+    case textOnLightAccent
+    case textOnLightAccentActive
+    case textOnLightAccentHover
+    case textOnLightAccentMinor
+    case textOnLightAccentMinorActive
+    case textOnLightAccentMinorHover
+    case textOnLightInfo
+    case textOnLightInfoActive
+    case textOnLightInfoHover
+    case textOnLightInfoMinor
+    case textOnLightInfoMinorActive
+    case textOnLightInfoMinorHover
+    case textOnLightNegative
+    case textOnLightNegativeActive
+    case textOnLightNegativeHover
+    case textOnLightNegativeMinor
+    case textOnLightNegativeMinorActive
+    case textOnLightNegativeMinorHover
+    case textOnLightParagraph
+    case textOnLightParagraphActive
+    case textOnLightParagraphHover
+    case textOnLightPositive
+    case textOnLightPositiveActive
+    case textOnLightPositiveHover
+    case textOnLightPositiveMinor
+    case textOnLightPositiveMinorActive
+    case textOnLightPositiveMinorHover
+    case textOnLightPrimary
+    case textOnLightPrimaryActive
+    case textOnLightPrimaryBrightness
+    case textOnLightPrimaryHover
+    case textOnLightPromo
+    case textOnLightPromoActive
+    case textOnLightPromoHover
+    case textOnLightPromoMinor
+    case textOnLightPromoMinorActive
+    case textOnLightPromoMinorHover
+    case textOnLightSecondary
+    case textOnLightSecondaryActive
+    case textOnLightSecondaryHover
+    case textOnLightTertiary
+    case textOnLightTertiaryActive
+    case textOnLightTertiaryHover
+    case textOnLightWarning
+    case textOnLightWarningActive
+    case textOnLightWarningHover
+    case textOnLightWarningMinor
+    case textOnLightWarningMinorActive
+    case textOnLightWarningMinorHover
+
+    public var token: ColorToken {
+        switch self {
+        case .backgroundDarkPrimary:
+            return .backgroundDarkPrimary
+        case .backgroundDarkSecondary:
+            return .backgroundDarkSecondary
+        case .backgroundDarkTertiary:
+            return .backgroundDarkTertiary
+        case .backgroundDefaultPrimary:
+            return .backgroundDefaultPrimary
+        case .backgroundDefaultPrimaryBrightness:
+            return .backgroundDefaultPrimaryBrightness
+        case .backgroundDefaultSecondary:
+            return .backgroundDefaultSecondary
+        case .backgroundDefaultTertiary:
+            return .backgroundDefaultTertiary
+        case .backgroundInversePrimary:
+            return .backgroundInversePrimary
+        case .backgroundInversePrimaryBrightness:
+            return .backgroundInversePrimaryBrightness
+        case .backgroundInverseSecondary:
+            return .backgroundInverseSecondary
+        case .backgroundInverseTertiary:
+            return .backgroundInverseTertiary
+        case .backgroundLightPrimary:
+            return .backgroundLightPrimary
+        case .backgroundLightSecondary:
+            return .backgroundLightSecondary
+        case .backgroundLightTertiary:
+            return .backgroundLightTertiary
+        case .dataDefaultYellow:
+            return .dataDefaultYellow
+        case .dataDefaultYellowActive:
+            return .dataDefaultYellowActive
+        case .dataDefaultYellowHover:
+            return .dataDefaultYellowHover
+        case .dataDefaultYellowMinor:
+            return .dataDefaultYellowMinor
+        case .dataDefaultYellowMinorActive:
+            return .dataDefaultYellowMinorActive
+        case .dataDefaultYellowMinorHover:
+            return .dataDefaultYellowMinorHover
+        case .dataDefaultYellowTransparent:
+            return .dataDefaultYellowTransparent
+        case .dataDefaultYellowTransparentActive:
+            return .dataDefaultYellowTransparentActive
+        case .dataDefaultYellowTransparentHover:
+            return .dataDefaultYellowTransparentHover
+        case .dataInverseYellow:
+            return .dataInverseYellow
+        case .dataInverseYellowActive:
+            return .dataInverseYellowActive
+        case .dataInverseYellowHover:
+            return .dataInverseYellowHover
+        case .dataInverseYellowMinor:
+            return .dataInverseYellowMinor
+        case .dataInverseYellowMinorActive:
+            return .dataInverseYellowMinorActive
+        case .dataInverseYellowMinorHover:
+            return .dataInverseYellowMinorHover
+        case .dataInverseYellowTransparent:
+            return .dataInverseYellowTransparent
+        case .dataInverseYellowTransparentActive:
+            return .dataInverseYellowTransparentActive
+        case .dataInverseYellowTransparentHover:
+            return .dataInverseYellowTransparentHover
+        case .dataOnDarkYellow:
+            return .dataOnDarkYellow
+        case .dataOnDarkYellowActive:
+            return .dataOnDarkYellowActive
+        case .dataOnDarkYellowHover:
+            return .dataOnDarkYellowHover
+        case .dataOnDarkYellowMinor:
+            return .dataOnDarkYellowMinor
+        case .dataOnDarkYellowMinorActive:
+            return .dataOnDarkYellowMinorActive
+        case .dataOnDarkYellowMinorHover:
+            return .dataOnDarkYellowMinorHover
+        case .dataOnDarkYellowTransparent:
+            return .dataOnDarkYellowTransparent
+        case .dataOnDarkYellowTransparentActive:
+            return .dataOnDarkYellowTransparentActive
+        case .dataOnDarkYellowTransparentHover:
+            return .dataOnDarkYellowTransparentHover
+        case .dataOnLightYellow:
+            return .dataOnLightYellow
+        case .dataOnLightYellowActive:
+            return .dataOnLightYellowActive
+        case .dataOnLightYellowHover:
+            return .dataOnLightYellowHover
+        case .dataOnLightYellowMinor:
+            return .dataOnLightYellowMinor
+        case .dataOnLightYellowMinorActive:
+            return .dataOnLightYellowMinorActive
+        case .dataOnLightYellowMinorHover:
+            return .dataOnLightYellowMinorHover
+        case .dataOnLightYellowTransparent:
+            return .dataOnLightYellowTransparent
+        case .dataOnLightYellowTransparentActive:
+            return .dataOnLightYellowTransparentActive
+        case .dataOnLightYellowTransparentHover:
+            return .dataOnLightYellowTransparentHover
+        case .outlineDefaultAccent:
+            return .outlineDefaultAccent
+        case .outlineDefaultAccentActive:
+            return .outlineDefaultAccentActive
+        case .outlineDefaultAccentHover:
+            return .outlineDefaultAccentHover
+        case .outlineDefaultAccentMinor:
+            return .outlineDefaultAccentMinor
+        case .outlineDefaultAccentMinorActive:
+            return .outlineDefaultAccentMinorActive
+        case .outlineDefaultAccentMinorHover:
+            return .outlineDefaultAccentMinorHover
+        case .outlineDefaultClear:
+            return .outlineDefaultClear
+        case .outlineDefaultClearActive:
+            return .outlineDefaultClearActive
+        case .outlineDefaultClearHover:
+            return .outlineDefaultClearHover
+        case .outlineDefaultInfo:
+            return .outlineDefaultInfo
+        case .outlineDefaultInfoActive:
+            return .outlineDefaultInfoActive
+        case .outlineDefaultInfoHover:
+            return .outlineDefaultInfoHover
+        case .outlineDefaultInfoMinor:
+            return .outlineDefaultInfoMinor
+        case .outlineDefaultInfoMinorActive:
+            return .outlineDefaultInfoMinorActive
+        case .outlineDefaultInfoMinorHover:
+            return .outlineDefaultInfoMinorHover
+        case .outlineDefaultNegative:
+            return .outlineDefaultNegative
+        case .outlineDefaultNegativeActive:
+            return .outlineDefaultNegativeActive
+        case .outlineDefaultNegativeHover:
+            return .outlineDefaultNegativeHover
+        case .outlineDefaultNegativeMinor:
+            return .outlineDefaultNegativeMinor
+        case .outlineDefaultNegativeMinorActive:
+            return .outlineDefaultNegativeMinorActive
+        case .outlineDefaultNegativeMinorHover:
+            return .outlineDefaultNegativeMinorHover
+        case .outlineDefaultPositive:
+            return .outlineDefaultPositive
+        case .outlineDefaultPositiveActive:
+            return .outlineDefaultPositiveActive
+        case .outlineDefaultPositiveHover:
+            return .outlineDefaultPositiveHover
+        case .outlineDefaultPositiveMinor:
+            return .outlineDefaultPositiveMinor
+        case .outlineDefaultPositiveMinorActive:
+            return .outlineDefaultPositiveMinorActive
+        case .outlineDefaultPositiveMinorHover:
+            return .outlineDefaultPositiveMinorHover
+        case .outlineDefaultPromo:
+            return .outlineDefaultPromo
+        case .outlineDefaultPromoActive:
+            return .outlineDefaultPromoActive
+        case .outlineDefaultPromoHover:
+            return .outlineDefaultPromoHover
+        case .outlineDefaultPromoMinor:
+            return .outlineDefaultPromoMinor
+        case .outlineDefaultPromoMinorActive:
+            return .outlineDefaultPromoMinorActive
+        case .outlineDefaultPromoMinorHover:
+            return .outlineDefaultPromoMinorHover
+        case .outlineDefaultSolidPrimary:
+            return .outlineDefaultSolidPrimary
+        case .outlineDefaultSolidPrimaryActive:
+            return .outlineDefaultSolidPrimaryActive
+        case .outlineDefaultSolidPrimaryHover:
+            return .outlineDefaultSolidPrimaryHover
+        case .outlineDefaultSolidSecondary:
+            return .outlineDefaultSolidSecondary
+        case .outlineDefaultSolidSecondaryActive:
+            return .outlineDefaultSolidSecondaryActive
+        case .outlineDefaultSolidSecondaryHover:
+            return .outlineDefaultSolidSecondaryHover
+        case .outlineDefaultSolidTertiary:
+            return .outlineDefaultSolidTertiary
+        case .outlineDefaultSolidTertiaryActive:
+            return .outlineDefaultSolidTertiaryActive
+        case .outlineDefaultSolidTertiaryHover:
+            return .outlineDefaultSolidTertiaryHover
+        case .outlineDefaultTransparentAccent:
+            return .outlineDefaultTransparentAccent
+        case .outlineDefaultTransparentAccentActive:
+            return .outlineDefaultTransparentAccentActive
+        case .outlineDefaultTransparentAccentHover:
+            return .outlineDefaultTransparentAccentHover
+        case .outlineDefaultTransparentDefault:
+            return .outlineDefaultTransparentDefault
+        case .outlineDefaultTransparentDefaultActive:
+            return .outlineDefaultTransparentDefaultActive
+        case .outlineDefaultTransparentDefaultHover:
+            return .outlineDefaultTransparentDefaultHover
+        case .outlineDefaultTransparentInfo:
+            return .outlineDefaultTransparentInfo
+        case .outlineDefaultTransparentInfoActive:
+            return .outlineDefaultTransparentInfoActive
+        case .outlineDefaultTransparentInfoHover:
+            return .outlineDefaultTransparentInfoHover
+        case .outlineDefaultTransparentNegative:
+            return .outlineDefaultTransparentNegative
+        case .outlineDefaultTransparentNegativeActive:
+            return .outlineDefaultTransparentNegativeActive
+        case .outlineDefaultTransparentNegativeHover:
+            return .outlineDefaultTransparentNegativeHover
+        case .outlineDefaultTransparentPositive:
+            return .outlineDefaultTransparentPositive
+        case .outlineDefaultTransparentPositiveActive:
+            return .outlineDefaultTransparentPositiveActive
+        case .outlineDefaultTransparentPositiveHover:
+            return .outlineDefaultTransparentPositiveHover
+        case .outlineDefaultTransparentPrimary:
+            return .outlineDefaultTransparentPrimary
+        case .outlineDefaultTransparentPrimaryActive:
+            return .outlineDefaultTransparentPrimaryActive
+        case .outlineDefaultTransparentPrimaryHover:
+            return .outlineDefaultTransparentPrimaryHover
+        case .outlineDefaultTransparentSecondary:
+            return .outlineDefaultTransparentSecondary
+        case .outlineDefaultTransparentSecondaryActive:
+            return .outlineDefaultTransparentSecondaryActive
+        case .outlineDefaultTransparentSecondaryHover:
+            return .outlineDefaultTransparentSecondaryHover
+        case .outlineDefaultTransparentTertiary:
+            return .outlineDefaultTransparentTertiary
+        case .outlineDefaultTransparentTertiaryActive:
+            return .outlineDefaultTransparentTertiaryActive
+        case .outlineDefaultTransparentTertiaryHover:
+            return .outlineDefaultTransparentTertiaryHover
+        case .outlineDefaultTransparentWarning:
+            return .outlineDefaultTransparentWarning
+        case .outlineDefaultTransparentWarningActive:
+            return .outlineDefaultTransparentWarningActive
+        case .outlineDefaultTransparentWarningHover:
+            return .outlineDefaultTransparentWarningHover
+        case .outlineDefaultWarning:
+            return .outlineDefaultWarning
+        case .outlineDefaultWarningActive:
+            return .outlineDefaultWarningActive
+        case .outlineDefaultWarningHover:
+            return .outlineDefaultWarningHover
+        case .outlineDefaultWarningMinor:
+            return .outlineDefaultWarningMinor
+        case .outlineDefaultWarningMinorActive:
+            return .outlineDefaultWarningMinorActive
+        case .outlineDefaultWarningMinorHover:
+            return .outlineDefaultWarningMinorHover
+        case .outlineInverseAccent:
+            return .outlineInverseAccent
+        case .outlineInverseAccentActive:
+            return .outlineInverseAccentActive
+        case .outlineInverseAccentHover:
+            return .outlineInverseAccentHover
+        case .outlineInverseAccentMinor:
+            return .outlineInverseAccentMinor
+        case .outlineInverseAccentMinorActive:
+            return .outlineInverseAccentMinorActive
+        case .outlineInverseAccentMinorHover:
+            return .outlineInverseAccentMinorHover
+        case .outlineInverseClear:
+            return .outlineInverseClear
+        case .outlineInverseClearActive:
+            return .outlineInverseClearActive
+        case .outlineInverseClearHover:
+            return .outlineInverseClearHover
+        case .outlineInverseInfo:
+            return .outlineInverseInfo
+        case .outlineInverseInfoActive:
+            return .outlineInverseInfoActive
+        case .outlineInverseInfoHover:
+            return .outlineInverseInfoHover
+        case .outlineInverseInfoMinor:
+            return .outlineInverseInfoMinor
+        case .outlineInverseInfoMinorActive:
+            return .outlineInverseInfoMinorActive
+        case .outlineInverseInfoMinorHover:
+            return .outlineInverseInfoMinorHover
+        case .outlineInverseNegative:
+            return .outlineInverseNegative
+        case .outlineInverseNegativeActive:
+            return .outlineInverseNegativeActive
+        case .outlineInverseNegativeHover:
+            return .outlineInverseNegativeHover
+        case .outlineInverseNegativeMinor:
+            return .outlineInverseNegativeMinor
+        case .outlineInverseNegativeMinorActive:
+            return .outlineInverseNegativeMinorActive
+        case .outlineInverseNegativeMinorHover:
+            return .outlineInverseNegativeMinorHover
+        case .outlineInversePositive:
+            return .outlineInversePositive
+        case .outlineInversePositiveActive:
+            return .outlineInversePositiveActive
+        case .outlineInversePositiveHover:
+            return .outlineInversePositiveHover
+        case .outlineInversePositiveMinor:
+            return .outlineInversePositiveMinor
+        case .outlineInversePositiveMinorActive:
+            return .outlineInversePositiveMinorActive
+        case .outlineInversePositiveMinorHover:
+            return .outlineInversePositiveMinorHover
+        case .outlineInversePromo:
+            return .outlineInversePromo
+        case .outlineInversePromoActive:
+            return .outlineInversePromoActive
+        case .outlineInversePromoHover:
+            return .outlineInversePromoHover
+        case .outlineInversePromoMinor:
+            return .outlineInversePromoMinor
+        case .outlineInversePromoMinorActive:
+            return .outlineInversePromoMinorActive
+        case .outlineInversePromoMinorHover:
+            return .outlineInversePromoMinorHover
+        case .outlineInverseSolidPrimary:
+            return .outlineInverseSolidPrimary
+        case .outlineInverseSolidPrimaryActive:
+            return .outlineInverseSolidPrimaryActive
+        case .outlineInverseSolidPrimaryHover:
+            return .outlineInverseSolidPrimaryHover
+        case .outlineInverseSolidSecondary:
+            return .outlineInverseSolidSecondary
+        case .outlineInverseSolidSecondaryActive:
+            return .outlineInverseSolidSecondaryActive
+        case .outlineInverseSolidSecondaryHover:
+            return .outlineInverseSolidSecondaryHover
+        case .outlineInverseSolidTertiary:
+            return .outlineInverseSolidTertiary
+        case .outlineInverseSolidTertiaryActive:
+            return .outlineInverseSolidTertiaryActive
+        case .outlineInverseSolidTertiaryHover:
+            return .outlineInverseSolidTertiaryHover
+        case .outlineInverseTransparentAccent:
+            return .outlineInverseTransparentAccent
+        case .outlineInverseTransparentAccentActive:
+            return .outlineInverseTransparentAccentActive
+        case .outlineInverseTransparentAccentHover:
+            return .outlineInverseTransparentAccentHover
+        case .outlineInverseTransparentDefault:
+            return .outlineInverseTransparentDefault
+        case .outlineInverseTransparentDefaultActive:
+            return .outlineInverseTransparentDefaultActive
+        case .outlineInverseTransparentDefaultHover:
+            return .outlineInverseTransparentDefaultHover
+        case .outlineInverseTransparentInfo:
+            return .outlineInverseTransparentInfo
+        case .outlineInverseTransparentInfoActive:
+            return .outlineInverseTransparentInfoActive
+        case .outlineInverseTransparentInfoHover:
+            return .outlineInverseTransparentInfoHover
+        case .outlineInverseTransparentNegative:
+            return .outlineInverseTransparentNegative
+        case .outlineInverseTransparentNegativeActive:
+            return .outlineInverseTransparentNegativeActive
+        case .outlineInverseTransparentNegativeHover:
+            return .outlineInverseTransparentNegativeHover
+        case .outlineInverseTransparentPositive:
+            return .outlineInverseTransparentPositive
+        case .outlineInverseTransparentPositiveActive:
+            return .outlineInverseTransparentPositiveActive
+        case .outlineInverseTransparentPositiveHover:
+            return .outlineInverseTransparentPositiveHover
+        case .outlineInverseTransparentPrimary:
+            return .outlineInverseTransparentPrimary
+        case .outlineInverseTransparentPrimaryActive:
+            return .outlineInverseTransparentPrimaryActive
+        case .outlineInverseTransparentPrimaryHover:
+            return .outlineInverseTransparentPrimaryHover
+        case .outlineInverseTransparentSecondary:
+            return .outlineInverseTransparentSecondary
+        case .outlineInverseTransparentSecondaryActive:
+            return .outlineInverseTransparentSecondaryActive
+        case .outlineInverseTransparentSecondaryHover:
+            return .outlineInverseTransparentSecondaryHover
+        case .outlineInverseTransparentTertiary:
+            return .outlineInverseTransparentTertiary
+        case .outlineInverseTransparentTertiaryActive:
+            return .outlineInverseTransparentTertiaryActive
+        case .outlineInverseTransparentTertiaryHover:
+            return .outlineInverseTransparentTertiaryHover
+        case .outlineInverseTransparentWarning:
+            return .outlineInverseTransparentWarning
+        case .outlineInverseTransparentWarningActive:
+            return .outlineInverseTransparentWarningActive
+        case .outlineInverseTransparentWarningHover:
+            return .outlineInverseTransparentWarningHover
+        case .outlineInverseWarning:
+            return .outlineInverseWarning
+        case .outlineInverseWarningActive:
+            return .outlineInverseWarningActive
+        case .outlineInverseWarningHover:
+            return .outlineInverseWarningHover
+        case .outlineInverseWarningMinor:
+            return .outlineInverseWarningMinor
+        case .outlineInverseWarningMinorActive:
+            return .outlineInverseWarningMinorActive
+        case .outlineInverseWarningMinorHover:
+            return .outlineInverseWarningMinorHover
+        case .outlineOnDarkAccent:
+            return .outlineOnDarkAccent
+        case .outlineOnDarkAccentActive:
+            return .outlineOnDarkAccentActive
+        case .outlineOnDarkAccentHover:
+            return .outlineOnDarkAccentHover
+        case .outlineOnDarkAccentMinor:
+            return .outlineOnDarkAccentMinor
+        case .outlineOnDarkAccentMinorActive:
+            return .outlineOnDarkAccentMinorActive
+        case .outlineOnDarkAccentMinorHover:
+            return .outlineOnDarkAccentMinorHover
+        case .outlineOnDarkClear:
+            return .outlineOnDarkClear
+        case .outlineOnDarkClearActive:
+            return .outlineOnDarkClearActive
+        case .outlineOnDarkClearHover:
+            return .outlineOnDarkClearHover
+        case .outlineOnDarkInfo:
+            return .outlineOnDarkInfo
+        case .outlineOnDarkInfoActive:
+            return .outlineOnDarkInfoActive
+        case .outlineOnDarkInfoHover:
+            return .outlineOnDarkInfoHover
+        case .outlineOnDarkInfoMinor:
+            return .outlineOnDarkInfoMinor
+        case .outlineOnDarkInfoMinorActive:
+            return .outlineOnDarkInfoMinorActive
+        case .outlineOnDarkInfoMinorHover:
+            return .outlineOnDarkInfoMinorHover
+        case .outlineOnDarkNegative:
+            return .outlineOnDarkNegative
+        case .outlineOnDarkNegativeActive:
+            return .outlineOnDarkNegativeActive
+        case .outlineOnDarkNegativeHover:
+            return .outlineOnDarkNegativeHover
+        case .outlineOnDarkNegativeMinor:
+            return .outlineOnDarkNegativeMinor
+        case .outlineOnDarkNegativeMinorActive:
+            return .outlineOnDarkNegativeMinorActive
+        case .outlineOnDarkNegativeMinorHover:
+            return .outlineOnDarkNegativeMinorHover
+        case .outlineOnDarkPositive:
+            return .outlineOnDarkPositive
+        case .outlineOnDarkPositiveActive:
+            return .outlineOnDarkPositiveActive
+        case .outlineOnDarkPositiveHover:
+            return .outlineOnDarkPositiveHover
+        case .outlineOnDarkPositiveMinor:
+            return .outlineOnDarkPositiveMinor
+        case .outlineOnDarkPositiveMinorActive:
+            return .outlineOnDarkPositiveMinorActive
+        case .outlineOnDarkPositiveMinorHover:
+            return .outlineOnDarkPositiveMinorHover
+        case .outlineOnDarkPromo:
+            return .outlineOnDarkPromo
+        case .outlineOnDarkPromoActive:
+            return .outlineOnDarkPromoActive
+        case .outlineOnDarkPromoHover:
+            return .outlineOnDarkPromoHover
+        case .outlineOnDarkPromoMinor:
+            return .outlineOnDarkPromoMinor
+        case .outlineOnDarkPromoMinorActive:
+            return .outlineOnDarkPromoMinorActive
+        case .outlineOnDarkPromoMinorHover:
+            return .outlineOnDarkPromoMinorHover
+        case .outlineOnDarkSolidPrimary:
+            return .outlineOnDarkSolidPrimary
+        case .outlineOnDarkSolidPrimaryActive:
+            return .outlineOnDarkSolidPrimaryActive
+        case .outlineOnDarkSolidPrimaryHover:
+            return .outlineOnDarkSolidPrimaryHover
+        case .outlineOnDarkSolidSecondary:
+            return .outlineOnDarkSolidSecondary
+        case .outlineOnDarkSolidSecondaryActive:
+            return .outlineOnDarkSolidSecondaryActive
+        case .outlineOnDarkSolidSecondaryHover:
+            return .outlineOnDarkSolidSecondaryHover
+        case .outlineOnDarkSolidTertiary:
+            return .outlineOnDarkSolidTertiary
+        case .outlineOnDarkSolidTertiaryActive:
+            return .outlineOnDarkSolidTertiaryActive
+        case .outlineOnDarkSolidTertiaryHover:
+            return .outlineOnDarkSolidTertiaryHover
+        case .outlineOnDarkTransparentAccent:
+            return .outlineOnDarkTransparentAccent
+        case .outlineOnDarkTransparentAccentActive:
+            return .outlineOnDarkTransparentAccentActive
+        case .outlineOnDarkTransparentAccentHover:
+            return .outlineOnDarkTransparentAccentHover
+        case .outlineOnDarkTransparentDefault:
+            return .outlineOnDarkTransparentDefault
+        case .outlineOnDarkTransparentDefaultActive:
+            return .outlineOnDarkTransparentDefaultActive
+        case .outlineOnDarkTransparentDefaultHover:
+            return .outlineOnDarkTransparentDefaultHover
+        case .outlineOnDarkTransparentInfo:
+            return .outlineOnDarkTransparentInfo
+        case .outlineOnDarkTransparentInfoActive:
+            return .outlineOnDarkTransparentInfoActive
+        case .outlineOnDarkTransparentInfoHover:
+            return .outlineOnDarkTransparentInfoHover
+        case .outlineOnDarkTransparentNegative:
+            return .outlineOnDarkTransparentNegative
+        case .outlineOnDarkTransparentNegativeActive:
+            return .outlineOnDarkTransparentNegativeActive
+        case .outlineOnDarkTransparentNegativeHover:
+            return .outlineOnDarkTransparentNegativeHover
+        case .outlineOnDarkTransparentPositive:
+            return .outlineOnDarkTransparentPositive
+        case .outlineOnDarkTransparentPositiveActive:
+            return .outlineOnDarkTransparentPositiveActive
+        case .outlineOnDarkTransparentPositiveHover:
+            return .outlineOnDarkTransparentPositiveHover
+        case .outlineOnDarkTransparentPrimary:
+            return .outlineOnDarkTransparentPrimary
+        case .outlineOnDarkTransparentPrimaryActive:
+            return .outlineOnDarkTransparentPrimaryActive
+        case .outlineOnDarkTransparentPrimaryHover:
+            return .outlineOnDarkTransparentPrimaryHover
+        case .outlineOnDarkTransparentSecondary:
+            return .outlineOnDarkTransparentSecondary
+        case .outlineOnDarkTransparentSecondaryActive:
+            return .outlineOnDarkTransparentSecondaryActive
+        case .outlineOnDarkTransparentSecondaryHover:
+            return .outlineOnDarkTransparentSecondaryHover
+        case .outlineOnDarkTransparentTertiary:
+            return .outlineOnDarkTransparentTertiary
+        case .outlineOnDarkTransparentTertiaryActive:
+            return .outlineOnDarkTransparentTertiaryActive
+        case .outlineOnDarkTransparentTertiaryHover:
+            return .outlineOnDarkTransparentTertiaryHover
+        case .outlineOnDarkTransparentWarning:
+            return .outlineOnDarkTransparentWarning
+        case .outlineOnDarkTransparentWarningActive:
+            return .outlineOnDarkTransparentWarningActive
+        case .outlineOnDarkTransparentWarningHover:
+            return .outlineOnDarkTransparentWarningHover
+        case .outlineOnDarkWarning:
+            return .outlineOnDarkWarning
+        case .outlineOnDarkWarningActive:
+            return .outlineOnDarkWarningActive
+        case .outlineOnDarkWarningHover:
+            return .outlineOnDarkWarningHover
+        case .outlineOnDarkWarningMinor:
+            return .outlineOnDarkWarningMinor
+        case .outlineOnDarkWarningMinorActive:
+            return .outlineOnDarkWarningMinorActive
+        case .outlineOnDarkWarningMinorHover:
+            return .outlineOnDarkWarningMinorHover
+        case .outlineOnLightAccent:
+            return .outlineOnLightAccent
+        case .outlineOnLightAccentActive:
+            return .outlineOnLightAccentActive
+        case .outlineOnLightAccentHover:
+            return .outlineOnLightAccentHover
+        case .outlineOnLightAccentMinor:
+            return .outlineOnLightAccentMinor
+        case .outlineOnLightAccentMinorActive:
+            return .outlineOnLightAccentMinorActive
+        case .outlineOnLightAccentMinorHover:
+            return .outlineOnLightAccentMinorHover
+        case .outlineOnLightClear:
+            return .outlineOnLightClear
+        case .outlineOnLightClearActive:
+            return .outlineOnLightClearActive
+        case .outlineOnLightClearHover:
+            return .outlineOnLightClearHover
+        case .outlineOnLightInfo:
+            return .outlineOnLightInfo
+        case .outlineOnLightInfoActive:
+            return .outlineOnLightInfoActive
+        case .outlineOnLightInfoHover:
+            return .outlineOnLightInfoHover
+        case .outlineOnLightInfoMinor:
+            return .outlineOnLightInfoMinor
+        case .outlineOnLightInfoMinorActive:
+            return .outlineOnLightInfoMinorActive
+        case .outlineOnLightInfoMinorHover:
+            return .outlineOnLightInfoMinorHover
+        case .outlineOnLightNegative:
+            return .outlineOnLightNegative
+        case .outlineOnLightNegativeActive:
+            return .outlineOnLightNegativeActive
+        case .outlineOnLightNegativeHover:
+            return .outlineOnLightNegativeHover
+        case .outlineOnLightNegativeMinor:
+            return .outlineOnLightNegativeMinor
+        case .outlineOnLightNegativeMinorActive:
+            return .outlineOnLightNegativeMinorActive
+        case .outlineOnLightNegativeMinorHover:
+            return .outlineOnLightNegativeMinorHover
+        case .outlineOnLightPositive:
+            return .outlineOnLightPositive
+        case .outlineOnLightPositiveActive:
+            return .outlineOnLightPositiveActive
+        case .outlineOnLightPositiveHover:
+            return .outlineOnLightPositiveHover
+        case .outlineOnLightPositiveMinor:
+            return .outlineOnLightPositiveMinor
+        case .outlineOnLightPositiveMinorActive:
+            return .outlineOnLightPositiveMinorActive
+        case .outlineOnLightPositiveMinorHover:
+            return .outlineOnLightPositiveMinorHover
+        case .outlineOnLightPromo:
+            return .outlineOnLightPromo
+        case .outlineOnLightPromoActive:
+            return .outlineOnLightPromoActive
+        case .outlineOnLightPromoHover:
+            return .outlineOnLightPromoHover
+        case .outlineOnLightPromoMinor:
+            return .outlineOnLightPromoMinor
+        case .outlineOnLightPromoMinorActive:
+            return .outlineOnLightPromoMinorActive
+        case .outlineOnLightPromoMinorHover:
+            return .outlineOnLightPromoMinorHover
+        case .outlineOnLightSolidPrimary:
+            return .outlineOnLightSolidPrimary
+        case .outlineOnLightSolidPrimaryActive:
+            return .outlineOnLightSolidPrimaryActive
+        case .outlineOnLightSolidPrimaryHover:
+            return .outlineOnLightSolidPrimaryHover
+        case .outlineOnLightSolidSecondary:
+            return .outlineOnLightSolidSecondary
+        case .outlineOnLightSolidSecondaryActive:
+            return .outlineOnLightSolidSecondaryActive
+        case .outlineOnLightSolidSecondaryHover:
+            return .outlineOnLightSolidSecondaryHover
+        case .outlineOnLightSolidTertiary:
+            return .outlineOnLightSolidTertiary
+        case .outlineOnLightSolidTertiaryActive:
+            return .outlineOnLightSolidTertiaryActive
+        case .outlineOnLightSolidTertiaryHover:
+            return .outlineOnLightSolidTertiaryHover
+        case .outlineOnLightTransparentAccent:
+            return .outlineOnLightTransparentAccent
+        case .outlineOnLightTransparentAccentActive:
+            return .outlineOnLightTransparentAccentActive
+        case .outlineOnLightTransparentAccentHover:
+            return .outlineOnLightTransparentAccentHover
+        case .outlineOnLightTransparentDefault:
+            return .outlineOnLightTransparentDefault
+        case .outlineOnLightTransparentDefaultActive:
+            return .outlineOnLightTransparentDefaultActive
+        case .outlineOnLightTransparentDefaultHover:
+            return .outlineOnLightTransparentDefaultHover
+        case .outlineOnLightTransparentInfo:
+            return .outlineOnLightTransparentInfo
+        case .outlineOnLightTransparentInfoActive:
+            return .outlineOnLightTransparentInfoActive
+        case .outlineOnLightTransparentInfoHover:
+            return .outlineOnLightTransparentInfoHover
+        case .outlineOnLightTransparentNegative:
+            return .outlineOnLightTransparentNegative
+        case .outlineOnLightTransparentNegativeActive:
+            return .outlineOnLightTransparentNegativeActive
+        case .outlineOnLightTransparentNegativeHover:
+            return .outlineOnLightTransparentNegativeHover
+        case .outlineOnLightTransparentPositive:
+            return .outlineOnLightTransparentPositive
+        case .outlineOnLightTransparentPositiveActive:
+            return .outlineOnLightTransparentPositiveActive
+        case .outlineOnLightTransparentPositiveHover:
+            return .outlineOnLightTransparentPositiveHover
+        case .outlineOnLightTransparentPrimary:
+            return .outlineOnLightTransparentPrimary
+        case .outlineOnLightTransparentPrimaryActive:
+            return .outlineOnLightTransparentPrimaryActive
+        case .outlineOnLightTransparentPrimaryHover:
+            return .outlineOnLightTransparentPrimaryHover
+        case .outlineOnLightTransparentSecondary:
+            return .outlineOnLightTransparentSecondary
+        case .outlineOnLightTransparentSecondaryActive:
+            return .outlineOnLightTransparentSecondaryActive
+        case .outlineOnLightTransparentSecondaryHover:
+            return .outlineOnLightTransparentSecondaryHover
+        case .outlineOnLightTransparentTertiary:
+            return .outlineOnLightTransparentTertiary
+        case .outlineOnLightTransparentTertiaryActive:
+            return .outlineOnLightTransparentTertiaryActive
+        case .outlineOnLightTransparentTertiaryHover:
+            return .outlineOnLightTransparentTertiaryHover
+        case .outlineOnLightTransparentWarning:
+            return .outlineOnLightTransparentWarning
+        case .outlineOnLightTransparentWarningActive:
+            return .outlineOnLightTransparentWarningActive
+        case .outlineOnLightTransparentWarningHover:
+            return .outlineOnLightTransparentWarningHover
+        case .outlineOnLightWarning:
+            return .outlineOnLightWarning
+        case .outlineOnLightWarningActive:
+            return .outlineOnLightWarningActive
+        case .outlineOnLightWarningHover:
+            return .outlineOnLightWarningHover
+        case .outlineOnLightWarningMinor:
+            return .outlineOnLightWarningMinor
+        case .outlineOnLightWarningMinorActive:
+            return .outlineOnLightWarningMinorActive
+        case .outlineOnLightWarningMinorHover:
+            return .outlineOnLightWarningMinorHover
+        case .overlayDefaultBlur:
+            return .overlayDefaultBlur
+        case .overlayDefaultHard:
+            return .overlayDefaultHard
+        case .overlayDefaultSoft:
+            return .overlayDefaultSoft
+        case .overlayInverseBlur:
+            return .overlayInverseBlur
+        case .overlayInverseHard:
+            return .overlayInverseHard
+        case .overlayInverseSoft:
+            return .overlayInverseSoft
+        case .overlayOnDarkBlur:
+            return .overlayOnDarkBlur
+        case .overlayOnDarkHard:
+            return .overlayOnDarkHard
+        case .overlayOnDarkSoft:
+            return .overlayOnDarkSoft
+        case .overlayOnLightBlur:
+            return .overlayOnLightBlur
+        case .overlayOnLightHard:
+            return .overlayOnLightHard
+        case .overlayOnLightSoft:
+            return .overlayOnLightSoft
+        case .surfaceDefaultAccent:
+            return .surfaceDefaultAccent
+        case .surfaceDefaultAccentActive:
+            return .surfaceDefaultAccentActive
+        case .surfaceDefaultAccentHover:
+            return .surfaceDefaultAccentHover
+        case .surfaceDefaultAccentMinor:
+            return .surfaceDefaultAccentMinor
+        case .surfaceDefaultAccentMinorActive:
+            return .surfaceDefaultAccentMinorActive
+        case .surfaceDefaultAccentMinorHover:
+            return .surfaceDefaultAccentMinorHover
+        case .surfaceDefaultClear:
+            return .surfaceDefaultClear
+        case .surfaceDefaultClearActive:
+            return .surfaceDefaultClearActive
+        case .surfaceDefaultClearHover:
+            return .surfaceDefaultClearHover
+        case .surfaceDefaultInfo:
+            return .surfaceDefaultInfo
+        case .surfaceDefaultInfoActive:
+            return .surfaceDefaultInfoActive
+        case .surfaceDefaultInfoHover:
+            return .surfaceDefaultInfoHover
+        case .surfaceDefaultInfoMinor:
+            return .surfaceDefaultInfoMinor
+        case .surfaceDefaultInfoMinorActive:
+            return .surfaceDefaultInfoMinorActive
+        case .surfaceDefaultInfoMinorHover:
+            return .surfaceDefaultInfoMinorHover
+        case .surfaceDefaultNegative:
+            return .surfaceDefaultNegative
+        case .surfaceDefaultNegativeActive:
+            return .surfaceDefaultNegativeActive
+        case .surfaceDefaultNegativeHover:
+            return .surfaceDefaultNegativeHover
+        case .surfaceDefaultNegativeMinor:
+            return .surfaceDefaultNegativeMinor
+        case .surfaceDefaultNegativeMinorActive:
+            return .surfaceDefaultNegativeMinorActive
+        case .surfaceDefaultNegativeMinorHover:
+            return .surfaceDefaultNegativeMinorHover
+        case .surfaceDefaultPositive:
+            return .surfaceDefaultPositive
+        case .surfaceDefaultPositiveActive:
+            return .surfaceDefaultPositiveActive
+        case .surfaceDefaultPositiveHover:
+            return .surfaceDefaultPositiveHover
+        case .surfaceDefaultPositiveMinor:
+            return .surfaceDefaultPositiveMinor
+        case .surfaceDefaultPositiveMinorActive:
+            return .surfaceDefaultPositiveMinorActive
+        case .surfaceDefaultPositiveMinorHover:
+            return .surfaceDefaultPositiveMinorHover
+        case .surfaceDefaultPromo:
+            return .surfaceDefaultPromo
+        case .surfaceDefaultPromoActive:
+            return .surfaceDefaultPromoActive
+        case .surfaceDefaultPromoHover:
+            return .surfaceDefaultPromoHover
+        case .surfaceDefaultPromoMinor:
+            return .surfaceDefaultPromoMinor
+        case .surfaceDefaultPromoMinorActive:
+            return .surfaceDefaultPromoMinorActive
+        case .surfaceDefaultPromoMinorHover:
+            return .surfaceDefaultPromoMinorHover
+        case .surfaceDefaultSolidCard:
+            return .surfaceDefaultSolidCard
+        case .surfaceDefaultSolidCardActive:
+            return .surfaceDefaultSolidCardActive
+        case .surfaceDefaultSolidCardBrightness:
+            return .surfaceDefaultSolidCardBrightness
+        case .surfaceDefaultSolidCardHover:
+            return .surfaceDefaultSolidCardHover
+        case .surfaceDefaultSolidDefault:
+            return .surfaceDefaultSolidDefault
+        case .surfaceDefaultSolidDefaultActive:
+            return .surfaceDefaultSolidDefaultActive
+        case .surfaceDefaultSolidDefaultHover:
+            return .surfaceDefaultSolidDefaultHover
+        case .surfaceDefaultSolidPrimary:
+            return .surfaceDefaultSolidPrimary
+        case .surfaceDefaultSolidPrimaryActive:
+            return .surfaceDefaultSolidPrimaryActive
+        case .surfaceDefaultSolidPrimaryBrightness:
+            return .surfaceDefaultSolidPrimaryBrightness
+        case .surfaceDefaultSolidPrimaryHover:
+            return .surfaceDefaultSolidPrimaryHover
+        case .surfaceDefaultSolidSecondary:
+            return .surfaceDefaultSolidSecondary
+        case .surfaceDefaultSolidSecondaryActive:
+            return .surfaceDefaultSolidSecondaryActive
+        case .surfaceDefaultSolidSecondaryHover:
+            return .surfaceDefaultSolidSecondaryHover
+        case .surfaceDefaultSolidTertiary:
+            return .surfaceDefaultSolidTertiary
+        case .surfaceDefaultSolidTertiaryActive:
+            return .surfaceDefaultSolidTertiaryActive
+        case .surfaceDefaultSolidTertiaryHover:
+            return .surfaceDefaultSolidTertiaryHover
+        case .surfaceDefaultTransparentAccent:
+            return .surfaceDefaultTransparentAccent
+        case .surfaceDefaultTransparentAccentActive:
+            return .surfaceDefaultTransparentAccentActive
+        case .surfaceDefaultTransparentAccentHover:
+            return .surfaceDefaultTransparentAccentHover
+        case .surfaceDefaultTransparentCard:
+            return .surfaceDefaultTransparentCard
+        case .surfaceDefaultTransparentCardActive:
+            return .surfaceDefaultTransparentCardActive
+        case .surfaceDefaultTransparentCardBrightness:
+            return .surfaceDefaultTransparentCardBrightness
+        case .surfaceDefaultTransparentCardHover:
+            return .surfaceDefaultTransparentCardHover
+        case .surfaceDefaultTransparentDeep:
+            return .surfaceDefaultTransparentDeep
+        case .surfaceDefaultTransparentDeepActive:
+            return .surfaceDefaultTransparentDeepActive
+        case .surfaceDefaultTransparentDeepHover:
+            return .surfaceDefaultTransparentDeepHover
+        case .surfaceDefaultTransparentInfo:
+            return .surfaceDefaultTransparentInfo
+        case .surfaceDefaultTransparentInfoActive:
+            return .surfaceDefaultTransparentInfoActive
+        case .surfaceDefaultTransparentInfoHover:
+            return .surfaceDefaultTransparentInfoHover
+        case .surfaceDefaultTransparentNegative:
+            return .surfaceDefaultTransparentNegative
+        case .surfaceDefaultTransparentNegativeActive:
+            return .surfaceDefaultTransparentNegativeActive
+        case .surfaceDefaultTransparentNegativeHover:
+            return .surfaceDefaultTransparentNegativeHover
+        case .surfaceDefaultTransparentPositive:
+            return .surfaceDefaultTransparentPositive
+        case .surfaceDefaultTransparentPositiveActive:
+            return .surfaceDefaultTransparentPositiveActive
+        case .surfaceDefaultTransparentPositiveHover:
+            return .surfaceDefaultTransparentPositiveHover
+        case .surfaceDefaultTransparentPrimary:
+            return .surfaceDefaultTransparentPrimary
+        case .surfaceDefaultTransparentPrimaryActive:
+            return .surfaceDefaultTransparentPrimaryActive
+        case .surfaceDefaultTransparentPrimaryHover:
+            return .surfaceDefaultTransparentPrimaryHover
+        case .surfaceDefaultTransparentPromo:
+            return .surfaceDefaultTransparentPromo
+        case .surfaceDefaultTransparentPromoActive:
+            return .surfaceDefaultTransparentPromoActive
+        case .surfaceDefaultTransparentPromoHover:
+            return .surfaceDefaultTransparentPromoHover
+        case .surfaceDefaultTransparentSecondary:
+            return .surfaceDefaultTransparentSecondary
+        case .surfaceDefaultTransparentSecondaryActive:
+            return .surfaceDefaultTransparentSecondaryActive
+        case .surfaceDefaultTransparentSecondaryHover:
+            return .surfaceDefaultTransparentSecondaryHover
+        case .surfaceDefaultTransparentTertiary:
+            return .surfaceDefaultTransparentTertiary
+        case .surfaceDefaultTransparentTertiaryActive:
+            return .surfaceDefaultTransparentTertiaryActive
+        case .surfaceDefaultTransparentTertiaryHover:
+            return .surfaceDefaultTransparentTertiaryHover
+        case .surfaceDefaultTransparentWarning:
+            return .surfaceDefaultTransparentWarning
+        case .surfaceDefaultTransparentWarningActive:
+            return .surfaceDefaultTransparentWarningActive
+        case .surfaceDefaultTransparentWarningHover:
+            return .surfaceDefaultTransparentWarningHover
+        case .surfaceDefaultWarning:
+            return .surfaceDefaultWarning
+        case .surfaceDefaultWarningActive:
+            return .surfaceDefaultWarningActive
+        case .surfaceDefaultWarningHover:
+            return .surfaceDefaultWarningHover
+        case .surfaceDefaultWarningMinor:
+            return .surfaceDefaultWarningMinor
+        case .surfaceDefaultWarningMinorActive:
+            return .surfaceDefaultWarningMinorActive
+        case .surfaceDefaultWarningMinorHover:
+            return .surfaceDefaultWarningMinorHover
+        case .surfaceInverseAccent:
+            return .surfaceInverseAccent
+        case .surfaceInverseAccentActive:
+            return .surfaceInverseAccentActive
+        case .surfaceInverseAccentHover:
+            return .surfaceInverseAccentHover
+        case .surfaceInverseAccentMinor:
+            return .surfaceInverseAccentMinor
+        case .surfaceInverseAccentMinorActive:
+            return .surfaceInverseAccentMinorActive
+        case .surfaceInverseAccentMinorHover:
+            return .surfaceInverseAccentMinorHover
+        case .surfaceInverseClear:
+            return .surfaceInverseClear
+        case .surfaceInverseClearActive:
+            return .surfaceInverseClearActive
+        case .surfaceInverseClearHover:
+            return .surfaceInverseClearHover
+        case .surfaceInverseInfo:
+            return .surfaceInverseInfo
+        case .surfaceInverseInfoActive:
+            return .surfaceInverseInfoActive
+        case .surfaceInverseInfoHover:
+            return .surfaceInverseInfoHover
+        case .surfaceInverseInfoMinor:
+            return .surfaceInverseInfoMinor
+        case .surfaceInverseInfoMinorActive:
+            return .surfaceInverseInfoMinorActive
+        case .surfaceInverseInfoMinorHover:
+            return .surfaceInverseInfoMinorHover
+        case .surfaceInverseNegative:
+            return .surfaceInverseNegative
+        case .surfaceInverseNegativeActive:
+            return .surfaceInverseNegativeActive
+        case .surfaceInverseNegativeHover:
+            return .surfaceInverseNegativeHover
+        case .surfaceInverseNegativeMinor:
+            return .surfaceInverseNegativeMinor
+        case .surfaceInverseNegativeMinorActive:
+            return .surfaceInverseNegativeMinorActive
+        case .surfaceInverseNegativeMinorHover:
+            return .surfaceInverseNegativeMinorHover
+        case .surfaceInversePositive:
+            return .surfaceInversePositive
+        case .surfaceInversePositiveActive:
+            return .surfaceInversePositiveActive
+        case .surfaceInversePositiveHover:
+            return .surfaceInversePositiveHover
+        case .surfaceInversePositiveMinor:
+            return .surfaceInversePositiveMinor
+        case .surfaceInversePositiveMinorActive:
+            return .surfaceInversePositiveMinorActive
+        case .surfaceInversePositiveMinorHover:
+            return .surfaceInversePositiveMinorHover
+        case .surfaceInversePromo:
+            return .surfaceInversePromo
+        case .surfaceInversePromoActive:
+            return .surfaceInversePromoActive
+        case .surfaceInversePromoHover:
+            return .surfaceInversePromoHover
+        case .surfaceInversePromoMinor:
+            return .surfaceInversePromoMinor
+        case .surfaceInversePromoMinorActive:
+            return .surfaceInversePromoMinorActive
+        case .surfaceInversePromoMinorHover:
+            return .surfaceInversePromoMinorHover
+        case .surfaceInverseSolidCard:
+            return .surfaceInverseSolidCard
+        case .surfaceInverseSolidCardActive:
+            return .surfaceInverseSolidCardActive
+        case .surfaceInverseSolidCardBrightness:
+            return .surfaceInverseSolidCardBrightness
+        case .surfaceInverseSolidCardHover:
+            return .surfaceInverseSolidCardHover
+        case .surfaceInverseSolidDefault:
+            return .surfaceInverseSolidDefault
+        case .surfaceInverseSolidDefaultActive:
+            return .surfaceInverseSolidDefaultActive
+        case .surfaceInverseSolidDefaultHover:
+            return .surfaceInverseSolidDefaultHover
+        case .surfaceInverseSolidPrimary:
+            return .surfaceInverseSolidPrimary
+        case .surfaceInverseSolidPrimaryActive:
+            return .surfaceInverseSolidPrimaryActive
+        case .surfaceInverseSolidPrimaryBrightness:
+            return .surfaceInverseSolidPrimaryBrightness
+        case .surfaceInverseSolidPrimaryHover:
+            return .surfaceInverseSolidPrimaryHover
+        case .surfaceInverseSolidSecondary:
+            return .surfaceInverseSolidSecondary
+        case .surfaceInverseSolidSecondaryActive:
+            return .surfaceInverseSolidSecondaryActive
+        case .surfaceInverseSolidSecondaryHover:
+            return .surfaceInverseSolidSecondaryHover
+        case .surfaceInverseSolidTertiary:
+            return .surfaceInverseSolidTertiary
+        case .surfaceInverseSolidTertiaryActive:
+            return .surfaceInverseSolidTertiaryActive
+        case .surfaceInverseSolidTertiaryHover:
+            return .surfaceInverseSolidTertiaryHover
+        case .surfaceInverseTransparentAccent:
+            return .surfaceInverseTransparentAccent
+        case .surfaceInverseTransparentAccentActive:
+            return .surfaceInverseTransparentAccentActive
+        case .surfaceInverseTransparentAccentHover:
+            return .surfaceInverseTransparentAccentHover
+        case .surfaceInverseTransparentCard:
+            return .surfaceInverseTransparentCard
+        case .surfaceInverseTransparentCardActive:
+            return .surfaceInverseTransparentCardActive
+        case .surfaceInverseTransparentCardBrightness:
+            return .surfaceInverseTransparentCardBrightness
+        case .surfaceInverseTransparentCardHover:
+            return .surfaceInverseTransparentCardHover
+        case .surfaceInverseTransparentDeep:
+            return .surfaceInverseTransparentDeep
+        case .surfaceInverseTransparentDeepActive:
+            return .surfaceInverseTransparentDeepActive
+        case .surfaceInverseTransparentDeepHover:
+            return .surfaceInverseTransparentDeepHover
+        case .surfaceInverseTransparentInfo:
+            return .surfaceInverseTransparentInfo
+        case .surfaceInverseTransparentInfoActive:
+            return .surfaceInverseTransparentInfoActive
+        case .surfaceInverseTransparentInfoHover:
+            return .surfaceInverseTransparentInfoHover
+        case .surfaceInverseTransparentNegative:
+            return .surfaceInverseTransparentNegative
+        case .surfaceInverseTransparentNegativeActive:
+            return .surfaceInverseTransparentNegativeActive
+        case .surfaceInverseTransparentNegativeHover:
+            return .surfaceInverseTransparentNegativeHover
+        case .surfaceInverseTransparentPositive:
+            return .surfaceInverseTransparentPositive
+        case .surfaceInverseTransparentPositiveActive:
+            return .surfaceInverseTransparentPositiveActive
+        case .surfaceInverseTransparentPositiveHover:
+            return .surfaceInverseTransparentPositiveHover
+        case .surfaceInverseTransparentPrimary:
+            return .surfaceInverseTransparentPrimary
+        case .surfaceInverseTransparentPrimaryActive:
+            return .surfaceInverseTransparentPrimaryActive
+        case .surfaceInverseTransparentPrimaryHover:
+            return .surfaceInverseTransparentPrimaryHover
+        case .surfaceInverseTransparentPromo:
+            return .surfaceInverseTransparentPromo
+        case .surfaceInverseTransparentPromoActive:
+            return .surfaceInverseTransparentPromoActive
+        case .surfaceInverseTransparentPromoHover:
+            return .surfaceInverseTransparentPromoHover
+        case .surfaceInverseTransparentSecondary:
+            return .surfaceInverseTransparentSecondary
+        case .surfaceInverseTransparentSecondaryActive:
+            return .surfaceInverseTransparentSecondaryActive
+        case .surfaceInverseTransparentSecondaryHover:
+            return .surfaceInverseTransparentSecondaryHover
+        case .surfaceInverseTransparentTertiary:
+            return .surfaceInverseTransparentTertiary
+        case .surfaceInverseTransparentTertiaryActive:
+            return .surfaceInverseTransparentTertiaryActive
+        case .surfaceInverseTransparentTertiaryHover:
+            return .surfaceInverseTransparentTertiaryHover
+        case .surfaceInverseTransparentWarning:
+            return .surfaceInverseTransparentWarning
+        case .surfaceInverseTransparentWarningActive:
+            return .surfaceInverseTransparentWarningActive
+        case .surfaceInverseTransparentWarningHover:
+            return .surfaceInverseTransparentWarningHover
+        case .surfaceInverseWarning:
+            return .surfaceInverseWarning
+        case .surfaceInverseWarningActive:
+            return .surfaceInverseWarningActive
+        case .surfaceInverseWarningHover:
+            return .surfaceInverseWarningHover
+        case .surfaceInverseWarningMinor:
+            return .surfaceInverseWarningMinor
+        case .surfaceInverseWarningMinorActive:
+            return .surfaceInverseWarningMinorActive
+        case .surfaceInverseWarningMinorHover:
+            return .surfaceInverseWarningMinorHover
+        case .surfaceOnDarkAccent:
+            return .surfaceOnDarkAccent
+        case .surfaceOnDarkAccentActive:
+            return .surfaceOnDarkAccentActive
+        case .surfaceOnDarkAccentHover:
+            return .surfaceOnDarkAccentHover
+        case .surfaceOnDarkAccentMinor:
+            return .surfaceOnDarkAccentMinor
+        case .surfaceOnDarkAccentMinorActive:
+            return .surfaceOnDarkAccentMinorActive
+        case .surfaceOnDarkAccentMinorHover:
+            return .surfaceOnDarkAccentMinorHover
+        case .surfaceOnDarkClear:
+            return .surfaceOnDarkClear
+        case .surfaceOnDarkClearActive:
+            return .surfaceOnDarkClearActive
+        case .surfaceOnDarkClearHover:
+            return .surfaceOnDarkClearHover
+        case .surfaceOnDarkInfo:
+            return .surfaceOnDarkInfo
+        case .surfaceOnDarkInfoActive:
+            return .surfaceOnDarkInfoActive
+        case .surfaceOnDarkInfoHover:
+            return .surfaceOnDarkInfoHover
+        case .surfaceOnDarkInfoMinor:
+            return .surfaceOnDarkInfoMinor
+        case .surfaceOnDarkInfoMinorActive:
+            return .surfaceOnDarkInfoMinorActive
+        case .surfaceOnDarkInfoMinorHover:
+            return .surfaceOnDarkInfoMinorHover
+        case .surfaceOnDarkNegative:
+            return .surfaceOnDarkNegative
+        case .surfaceOnDarkNegativeActive:
+            return .surfaceOnDarkNegativeActive
+        case .surfaceOnDarkNegativeHover:
+            return .surfaceOnDarkNegativeHover
+        case .surfaceOnDarkNegativeMinor:
+            return .surfaceOnDarkNegativeMinor
+        case .surfaceOnDarkNegativeMinorActive:
+            return .surfaceOnDarkNegativeMinorActive
+        case .surfaceOnDarkNegativeMinorHover:
+            return .surfaceOnDarkNegativeMinorHover
+        case .surfaceOnDarkPositive:
+            return .surfaceOnDarkPositive
+        case .surfaceOnDarkPositiveActive:
+            return .surfaceOnDarkPositiveActive
+        case .surfaceOnDarkPositiveHover:
+            return .surfaceOnDarkPositiveHover
+        case .surfaceOnDarkPositiveMinor:
+            return .surfaceOnDarkPositiveMinor
+        case .surfaceOnDarkPositiveMinorActive:
+            return .surfaceOnDarkPositiveMinorActive
+        case .surfaceOnDarkPositiveMinorHover:
+            return .surfaceOnDarkPositiveMinorHover
+        case .surfaceOnDarkPromo:
+            return .surfaceOnDarkPromo
+        case .surfaceOnDarkPromoActive:
+            return .surfaceOnDarkPromoActive
+        case .surfaceOnDarkPromoHover:
+            return .surfaceOnDarkPromoHover
+        case .surfaceOnDarkPromoMinor:
+            return .surfaceOnDarkPromoMinor
+        case .surfaceOnDarkPromoMinorActive:
+            return .surfaceOnDarkPromoMinorActive
+        case .surfaceOnDarkPromoMinorHover:
+            return .surfaceOnDarkPromoMinorHover
+        case .surfaceOnDarkSolidCard:
+            return .surfaceOnDarkSolidCard
+        case .surfaceOnDarkSolidCardActive:
+            return .surfaceOnDarkSolidCardActive
+        case .surfaceOnDarkSolidCardBrightness:
+            return .surfaceOnDarkSolidCardBrightness
+        case .surfaceOnDarkSolidCardHover:
+            return .surfaceOnDarkSolidCardHover
+        case .surfaceOnDarkSolidDefault:
+            return .surfaceOnDarkSolidDefault
+        case .surfaceOnDarkSolidDefaultActive:
+            return .surfaceOnDarkSolidDefaultActive
+        case .surfaceOnDarkSolidDefaultHover:
+            return .surfaceOnDarkSolidDefaultHover
+        case .surfaceOnDarkSolidPrimary:
+            return .surfaceOnDarkSolidPrimary
+        case .surfaceOnDarkSolidPrimaryActive:
+            return .surfaceOnDarkSolidPrimaryActive
+        case .surfaceOnDarkSolidPrimaryBrightness:
+            return .surfaceOnDarkSolidPrimaryBrightness
+        case .surfaceOnDarkSolidPrimaryHover:
+            return .surfaceOnDarkSolidPrimaryHover
+        case .surfaceOnDarkSolidSecondary:
+            return .surfaceOnDarkSolidSecondary
+        case .surfaceOnDarkSolidSecondaryActive:
+            return .surfaceOnDarkSolidSecondaryActive
+        case .surfaceOnDarkSolidSecondaryHover:
+            return .surfaceOnDarkSolidSecondaryHover
+        case .surfaceOnDarkSolidTertiary:
+            return .surfaceOnDarkSolidTertiary
+        case .surfaceOnDarkSolidTertiaryActive:
+            return .surfaceOnDarkSolidTertiaryActive
+        case .surfaceOnDarkSolidTertiaryHover:
+            return .surfaceOnDarkSolidTertiaryHover
+        case .surfaceOnDarkTransparentAccent:
+            return .surfaceOnDarkTransparentAccent
+        case .surfaceOnDarkTransparentAccentActive:
+            return .surfaceOnDarkTransparentAccentActive
+        case .surfaceOnDarkTransparentAccentHover:
+            return .surfaceOnDarkTransparentAccentHover
+        case .surfaceOnDarkTransparentCard:
+            return .surfaceOnDarkTransparentCard
+        case .surfaceOnDarkTransparentCardActive:
+            return .surfaceOnDarkTransparentCardActive
+        case .surfaceOnDarkTransparentCardBrightness:
+            return .surfaceOnDarkTransparentCardBrightness
+        case .surfaceOnDarkTransparentCardHover:
+            return .surfaceOnDarkTransparentCardHover
+        case .surfaceOnDarkTransparentDeep:
+            return .surfaceOnDarkTransparentDeep
+        case .surfaceOnDarkTransparentDeepActive:
+            return .surfaceOnDarkTransparentDeepActive
+        case .surfaceOnDarkTransparentDeepHover:
+            return .surfaceOnDarkTransparentDeepHover
+        case .surfaceOnDarkTransparentInfo:
+            return .surfaceOnDarkTransparentInfo
+        case .surfaceOnDarkTransparentInfoActive:
+            return .surfaceOnDarkTransparentInfoActive
+        case .surfaceOnDarkTransparentInfoHover:
+            return .surfaceOnDarkTransparentInfoHover
+        case .surfaceOnDarkTransparentNegative:
+            return .surfaceOnDarkTransparentNegative
+        case .surfaceOnDarkTransparentNegativeActive:
+            return .surfaceOnDarkTransparentNegativeActive
+        case .surfaceOnDarkTransparentNegativeHover:
+            return .surfaceOnDarkTransparentNegativeHover
+        case .surfaceOnDarkTransparentPositive:
+            return .surfaceOnDarkTransparentPositive
+        case .surfaceOnDarkTransparentPositiveActive:
+            return .surfaceOnDarkTransparentPositiveActive
+        case .surfaceOnDarkTransparentPositiveHover:
+            return .surfaceOnDarkTransparentPositiveHover
+        case .surfaceOnDarkTransparentPrimary:
+            return .surfaceOnDarkTransparentPrimary
+        case .surfaceOnDarkTransparentPrimaryActive:
+            return .surfaceOnDarkTransparentPrimaryActive
+        case .surfaceOnDarkTransparentPrimaryHover:
+            return .surfaceOnDarkTransparentPrimaryHover
+        case .surfaceOnDarkTransparentPromo:
+            return .surfaceOnDarkTransparentPromo
+        case .surfaceOnDarkTransparentPromoActive:
+            return .surfaceOnDarkTransparentPromoActive
+        case .surfaceOnDarkTransparentPromoHover:
+            return .surfaceOnDarkTransparentPromoHover
+        case .surfaceOnDarkTransparentSecondary:
+            return .surfaceOnDarkTransparentSecondary
+        case .surfaceOnDarkTransparentSecondaryActive:
+            return .surfaceOnDarkTransparentSecondaryActive
+        case .surfaceOnDarkTransparentSecondaryHover:
+            return .surfaceOnDarkTransparentSecondaryHover
+        case .surfaceOnDarkTransparentTertiary:
+            return .surfaceOnDarkTransparentTertiary
+        case .surfaceOnDarkTransparentTertiaryActive:
+            return .surfaceOnDarkTransparentTertiaryActive
+        case .surfaceOnDarkTransparentTertiaryHover:
+            return .surfaceOnDarkTransparentTertiaryHover
+        case .surfaceOnDarkTransparentWarning:
+            return .surfaceOnDarkTransparentWarning
+        case .surfaceOnDarkTransparentWarningActive:
+            return .surfaceOnDarkTransparentWarningActive
+        case .surfaceOnDarkTransparentWarningHover:
+            return .surfaceOnDarkTransparentWarningHover
+        case .surfaceOnDarkWarning:
+            return .surfaceOnDarkWarning
+        case .surfaceOnDarkWarningActive:
+            return .surfaceOnDarkWarningActive
+        case .surfaceOnDarkWarningHover:
+            return .surfaceOnDarkWarningHover
+        case .surfaceOnDarkWarningMinor:
+            return .surfaceOnDarkWarningMinor
+        case .surfaceOnDarkWarningMinorActive:
+            return .surfaceOnDarkWarningMinorActive
+        case .surfaceOnDarkWarningMinorHover:
+            return .surfaceOnDarkWarningMinorHover
+        case .surfaceOnLightAccent:
+            return .surfaceOnLightAccent
+        case .surfaceOnLightAccentActive:
+            return .surfaceOnLightAccentActive
+        case .surfaceOnLightAccentHover:
+            return .surfaceOnLightAccentHover
+        case .surfaceOnLightAccentMinor:
+            return .surfaceOnLightAccentMinor
+        case .surfaceOnLightAccentMinorActive:
+            return .surfaceOnLightAccentMinorActive
+        case .surfaceOnLightAccentMinorHover:
+            return .surfaceOnLightAccentMinorHover
+        case .surfaceOnLightClear:
+            return .surfaceOnLightClear
+        case .surfaceOnLightClearActive:
+            return .surfaceOnLightClearActive
+        case .surfaceOnLightClearHover:
+            return .surfaceOnLightClearHover
+        case .surfaceOnLightInfo:
+            return .surfaceOnLightInfo
+        case .surfaceOnLightInfoActive:
+            return .surfaceOnLightInfoActive
+        case .surfaceOnLightInfoHover:
+            return .surfaceOnLightInfoHover
+        case .surfaceOnLightInfoMinor:
+            return .surfaceOnLightInfoMinor
+        case .surfaceOnLightInfoMinorActive:
+            return .surfaceOnLightInfoMinorActive
+        case .surfaceOnLightInfoMinorHover:
+            return .surfaceOnLightInfoMinorHover
+        case .surfaceOnLightNegative:
+            return .surfaceOnLightNegative
+        case .surfaceOnLightNegativeActive:
+            return .surfaceOnLightNegativeActive
+        case .surfaceOnLightNegativeHover:
+            return .surfaceOnLightNegativeHover
+        case .surfaceOnLightNegativeMinor:
+            return .surfaceOnLightNegativeMinor
+        case .surfaceOnLightNegativeMinorActive:
+            return .surfaceOnLightNegativeMinorActive
+        case .surfaceOnLightNegativeMinorHover:
+            return .surfaceOnLightNegativeMinorHover
+        case .surfaceOnLightPositive:
+            return .surfaceOnLightPositive
+        case .surfaceOnLightPositiveActive:
+            return .surfaceOnLightPositiveActive
+        case .surfaceOnLightPositiveHover:
+            return .surfaceOnLightPositiveHover
+        case .surfaceOnLightPositiveMinor:
+            return .surfaceOnLightPositiveMinor
+        case .surfaceOnLightPositiveMinorActive:
+            return .surfaceOnLightPositiveMinorActive
+        case .surfaceOnLightPositiveMinorHover:
+            return .surfaceOnLightPositiveMinorHover
+        case .surfaceOnLightPromo:
+            return .surfaceOnLightPromo
+        case .surfaceOnLightPromoActive:
+            return .surfaceOnLightPromoActive
+        case .surfaceOnLightPromoHover:
+            return .surfaceOnLightPromoHover
+        case .surfaceOnLightPromoMinor:
+            return .surfaceOnLightPromoMinor
+        case .surfaceOnLightPromoMinorActive:
+            return .surfaceOnLightPromoMinorActive
+        case .surfaceOnLightPromoMinorHover:
+            return .surfaceOnLightPromoMinorHover
+        case .surfaceOnLightSolidCard:
+            return .surfaceOnLightSolidCard
+        case .surfaceOnLightSolidCardActive:
+            return .surfaceOnLightSolidCardActive
+        case .surfaceOnLightSolidCardBrightness:
+            return .surfaceOnLightSolidCardBrightness
+        case .surfaceOnLightSolidCardHover:
+            return .surfaceOnLightSolidCardHover
+        case .surfaceOnLightSolidDefault:
+            return .surfaceOnLightSolidDefault
+        case .surfaceOnLightSolidDefaultActive:
+            return .surfaceOnLightSolidDefaultActive
+        case .surfaceOnLightSolidDefaultHover:
+            return .surfaceOnLightSolidDefaultHover
+        case .surfaceOnLightSolidPrimary:
+            return .surfaceOnLightSolidPrimary
+        case .surfaceOnLightSolidPrimaryActive:
+            return .surfaceOnLightSolidPrimaryActive
+        case .surfaceOnLightSolidPrimaryBrightness:
+            return .surfaceOnLightSolidPrimaryBrightness
+        case .surfaceOnLightSolidPrimaryHover:
+            return .surfaceOnLightSolidPrimaryHover
+        case .surfaceOnLightSolidSecondary:
+            return .surfaceOnLightSolidSecondary
+        case .surfaceOnLightSolidSecondaryActive:
+            return .surfaceOnLightSolidSecondaryActive
+        case .surfaceOnLightSolidSecondaryHover:
+            return .surfaceOnLightSolidSecondaryHover
+        case .surfaceOnLightSolidTertiary:
+            return .surfaceOnLightSolidTertiary
+        case .surfaceOnLightSolidTertiaryActive:
+            return .surfaceOnLightSolidTertiaryActive
+        case .surfaceOnLightSolidTertiaryHover:
+            return .surfaceOnLightSolidTertiaryHover
+        case .surfaceOnLightTransparentAccent:
+            return .surfaceOnLightTransparentAccent
+        case .surfaceOnLightTransparentAccentActive:
+            return .surfaceOnLightTransparentAccentActive
+        case .surfaceOnLightTransparentAccentHover:
+            return .surfaceOnLightTransparentAccentHover
+        case .surfaceOnLightTransparentCard:
+            return .surfaceOnLightTransparentCard
+        case .surfaceOnLightTransparentCardActive:
+            return .surfaceOnLightTransparentCardActive
+        case .surfaceOnLightTransparentCardBrightness:
+            return .surfaceOnLightTransparentCardBrightness
+        case .surfaceOnLightTransparentCardHover:
+            return .surfaceOnLightTransparentCardHover
+        case .surfaceOnLightTransparentDeep:
+            return .surfaceOnLightTransparentDeep
+        case .surfaceOnLightTransparentDeepActive:
+            return .surfaceOnLightTransparentDeepActive
+        case .surfaceOnLightTransparentDeepHover:
+            return .surfaceOnLightTransparentDeepHover
+        case .surfaceOnLightTransparentInfo:
+            return .surfaceOnLightTransparentInfo
+        case .surfaceOnLightTransparentInfoActive:
+            return .surfaceOnLightTransparentInfoActive
+        case .surfaceOnLightTransparentInfoHover:
+            return .surfaceOnLightTransparentInfoHover
+        case .surfaceOnLightTransparentNegative:
+            return .surfaceOnLightTransparentNegative
+        case .surfaceOnLightTransparentNegativeActive:
+            return .surfaceOnLightTransparentNegativeActive
+        case .surfaceOnLightTransparentNegativeHover:
+            return .surfaceOnLightTransparentNegativeHover
+        case .surfaceOnLightTransparentPositive:
+            return .surfaceOnLightTransparentPositive
+        case .surfaceOnLightTransparentPositiveActive:
+            return .surfaceOnLightTransparentPositiveActive
+        case .surfaceOnLightTransparentPositiveHover:
+            return .surfaceOnLightTransparentPositiveHover
+        case .surfaceOnLightTransparentPrimary:
+            return .surfaceOnLightTransparentPrimary
+        case .surfaceOnLightTransparentPrimaryActive:
+            return .surfaceOnLightTransparentPrimaryActive
+        case .surfaceOnLightTransparentPrimaryHover:
+            return .surfaceOnLightTransparentPrimaryHover
+        case .surfaceOnLightTransparentPromo:
+            return .surfaceOnLightTransparentPromo
+        case .surfaceOnLightTransparentPromoActive:
+            return .surfaceOnLightTransparentPromoActive
+        case .surfaceOnLightTransparentPromoHover:
+            return .surfaceOnLightTransparentPromoHover
+        case .surfaceOnLightTransparentSecondary:
+            return .surfaceOnLightTransparentSecondary
+        case .surfaceOnLightTransparentSecondaryActive:
+            return .surfaceOnLightTransparentSecondaryActive
+        case .surfaceOnLightTransparentSecondaryHover:
+            return .surfaceOnLightTransparentSecondaryHover
+        case .surfaceOnLightTransparentTertiary:
+            return .surfaceOnLightTransparentTertiary
+        case .surfaceOnLightTransparentTertiaryActive:
+            return .surfaceOnLightTransparentTertiaryActive
+        case .surfaceOnLightTransparentTertiaryHover:
+            return .surfaceOnLightTransparentTertiaryHover
+        case .surfaceOnLightTransparentWarning:
+            return .surfaceOnLightTransparentWarning
+        case .surfaceOnLightTransparentWarningActive:
+            return .surfaceOnLightTransparentWarningActive
+        case .surfaceOnLightTransparentWarningHover:
+            return .surfaceOnLightTransparentWarningHover
+        case .surfaceOnLightWarning:
+            return .surfaceOnLightWarning
+        case .surfaceOnLightWarningActive:
+            return .surfaceOnLightWarningActive
+        case .surfaceOnLightWarningHover:
+            return .surfaceOnLightWarningHover
+        case .surfaceOnLightWarningMinor:
+            return .surfaceOnLightWarningMinor
+        case .surfaceOnLightWarningMinorActive:
+            return .surfaceOnLightWarningMinorActive
+        case .surfaceOnLightWarningMinorHover:
+            return .surfaceOnLightWarningMinorHover
+        case .textDefaultAccent:
+            return .textDefaultAccent
+        case .textDefaultAccentActive:
+            return .textDefaultAccentActive
+        case .textDefaultAccentHover:
+            return .textDefaultAccentHover
+        case .textDefaultAccentMinor:
+            return .textDefaultAccentMinor
+        case .textDefaultAccentMinorActive:
+            return .textDefaultAccentMinorActive
+        case .textDefaultAccentMinorHover:
+            return .textDefaultAccentMinorHover
+        case .textDefaultInfo:
+            return .textDefaultInfo
+        case .textDefaultInfoActive:
+            return .textDefaultInfoActive
+        case .textDefaultInfoHover:
+            return .textDefaultInfoHover
+        case .textDefaultInfoMinor:
+            return .textDefaultInfoMinor
+        case .textDefaultInfoMinorActive:
+            return .textDefaultInfoMinorActive
+        case .textDefaultInfoMinorHover:
+            return .textDefaultInfoMinorHover
+        case .textDefaultNegative:
+            return .textDefaultNegative
+        case .textDefaultNegativeActive:
+            return .textDefaultNegativeActive
+        case .textDefaultNegativeHover:
+            return .textDefaultNegativeHover
+        case .textDefaultNegativeMinor:
+            return .textDefaultNegativeMinor
+        case .textDefaultNegativeMinorActive:
+            return .textDefaultNegativeMinorActive
+        case .textDefaultNegativeMinorHover:
+            return .textDefaultNegativeMinorHover
+        case .textDefaultParagraph:
+            return .textDefaultParagraph
+        case .textDefaultParagraphActive:
+            return .textDefaultParagraphActive
+        case .textDefaultParagraphHover:
+            return .textDefaultParagraphHover
+        case .textDefaultPositive:
+            return .textDefaultPositive
+        case .textDefaultPositiveActive:
+            return .textDefaultPositiveActive
+        case .textDefaultPositiveHover:
+            return .textDefaultPositiveHover
+        case .textDefaultPositiveMinor:
+            return .textDefaultPositiveMinor
+        case .textDefaultPositiveMinorActive:
+            return .textDefaultPositiveMinorActive
+        case .textDefaultPositiveMinorHover:
+            return .textDefaultPositiveMinorHover
+        case .textDefaultPrimary:
+            return .textDefaultPrimary
+        case .textDefaultPrimaryActive:
+            return .textDefaultPrimaryActive
+        case .textDefaultPrimaryBrightness:
+            return .textDefaultPrimaryBrightness
+        case .textDefaultPrimaryHover:
+            return .textDefaultPrimaryHover
+        case .textDefaultPromo:
+            return .textDefaultPromo
+        case .textDefaultPromoActive:
+            return .textDefaultPromoActive
+        case .textDefaultPromoHover:
+            return .textDefaultPromoHover
+        case .textDefaultPromoMinor:
+            return .textDefaultPromoMinor
+        case .textDefaultPromoMinorActive:
+            return .textDefaultPromoMinorActive
+        case .textDefaultPromoMinorHover:
+            return .textDefaultPromoMinorHover
+        case .textDefaultSecondary:
+            return .textDefaultSecondary
+        case .textDefaultSecondaryActive:
+            return .textDefaultSecondaryActive
+        case .textDefaultSecondaryHover:
+            return .textDefaultSecondaryHover
+        case .textDefaultTertiary:
+            return .textDefaultTertiary
+        case .textDefaultTertiaryActive:
+            return .textDefaultTertiaryActive
+        case .textDefaultTertiaryHover:
+            return .textDefaultTertiaryHover
+        case .textDefaultWarning:
+            return .textDefaultWarning
+        case .textDefaultWarningActive:
+            return .textDefaultWarningActive
+        case .textDefaultWarningHover:
+            return .textDefaultWarningHover
+        case .textDefaultWarningMinor:
+            return .textDefaultWarningMinor
+        case .textDefaultWarningMinorActive:
+            return .textDefaultWarningMinorActive
+        case .textDefaultWarningMinorHover:
+            return .textDefaultWarningMinorHover
+        case .textInverseAccent:
+            return .textInverseAccent
+        case .textInverseAccentActive:
+            return .textInverseAccentActive
+        case .textInverseAccentHover:
+            return .textInverseAccentHover
+        case .textInverseAccentMinor:
+            return .textInverseAccentMinor
+        case .textInverseAccentMinorActive:
+            return .textInverseAccentMinorActive
+        case .textInverseAccentMinorHover:
+            return .textInverseAccentMinorHover
+        case .textInverseInfo:
+            return .textInverseInfo
+        case .textInverseInfoActive:
+            return .textInverseInfoActive
+        case .textInverseInfoHover:
+            return .textInverseInfoHover
+        case .textInverseInfoMinor:
+            return .textInverseInfoMinor
+        case .textInverseInfoMinorActive:
+            return .textInverseInfoMinorActive
+        case .textInverseInfoMinorHover:
+            return .textInverseInfoMinorHover
+        case .textInverseNegative:
+            return .textInverseNegative
+        case .textInverseNegativeActive:
+            return .textInverseNegativeActive
+        case .textInverseNegativeHover:
+            return .textInverseNegativeHover
+        case .textInverseNegativeMinor:
+            return .textInverseNegativeMinor
+        case .textInverseNegativeMinorActive:
+            return .textInverseNegativeMinorActive
+        case .textInverseNegativeMinorHover:
+            return .textInverseNegativeMinorHover
+        case .textInverseParagraph:
+            return .textInverseParagraph
+        case .textInverseParagraphActive:
+            return .textInverseParagraphActive
+        case .textInverseParagraphHover:
+            return .textInverseParagraphHover
+        case .textInversePositive:
+            return .textInversePositive
+        case .textInversePositiveActive:
+            return .textInversePositiveActive
+        case .textInversePositiveHover:
+            return .textInversePositiveHover
+        case .textInversePositiveMinor:
+            return .textInversePositiveMinor
+        case .textInversePositiveMinorActive:
+            return .textInversePositiveMinorActive
+        case .textInversePositiveMinorHover:
+            return .textInversePositiveMinorHover
+        case .textInversePrimary:
+            return .textInversePrimary
+        case .textInversePrimaryActive:
+            return .textInversePrimaryActive
+        case .textInversePrimaryBrightness:
+            return .textInversePrimaryBrightness
+        case .textInversePrimaryHover:
+            return .textInversePrimaryHover
+        case .textInversePromo:
+            return .textInversePromo
+        case .textInversePromoActive:
+            return .textInversePromoActive
+        case .textInversePromoHover:
+            return .textInversePromoHover
+        case .textInversePromoMinor:
+            return .textInversePromoMinor
+        case .textInversePromoMinorActive:
+            return .textInversePromoMinorActive
+        case .textInversePromoMinorHover:
+            return .textInversePromoMinorHover
+        case .textInverseSecondary:
+            return .textInverseSecondary
+        case .textInverseSecondaryActive:
+            return .textInverseSecondaryActive
+        case .textInverseSecondaryHover:
+            return .textInverseSecondaryHover
+        case .textInverseTertiary:
+            return .textInverseTertiary
+        case .textInverseTertiaryActive:
+            return .textInverseTertiaryActive
+        case .textInverseTertiaryHover:
+            return .textInverseTertiaryHover
+        case .textInverseWarning:
+            return .textInverseWarning
+        case .textInverseWarningActive:
+            return .textInverseWarningActive
+        case .textInverseWarningHover:
+            return .textInverseWarningHover
+        case .textInverseWarningMinor:
+            return .textInverseWarningMinor
+        case .textInverseWarningMinorActive:
+            return .textInverseWarningMinorActive
+        case .textInverseWarningMinorHover:
+            return .textInverseWarningMinorHover
+        case .textOnDarkAccent:
+            return .textOnDarkAccent
+        case .textOnDarkAccentActive:
+            return .textOnDarkAccentActive
+        case .textOnDarkAccentHover:
+            return .textOnDarkAccentHover
+        case .textOnDarkAccentMinor:
+            return .textOnDarkAccentMinor
+        case .textOnDarkAccentMinorActive:
+            return .textOnDarkAccentMinorActive
+        case .textOnDarkAccentMinorHover:
+            return .textOnDarkAccentMinorHover
+        case .textOnDarkInfo:
+            return .textOnDarkInfo
+        case .textOnDarkInfoActive:
+            return .textOnDarkInfoActive
+        case .textOnDarkInfoHover:
+            return .textOnDarkInfoHover
+        case .textOnDarkInfoMinor:
+            return .textOnDarkInfoMinor
+        case .textOnDarkInfoMinorActive:
+            return .textOnDarkInfoMinorActive
+        case .textOnDarkInfoMinorHover:
+            return .textOnDarkInfoMinorHover
+        case .textOnDarkNegative:
+            return .textOnDarkNegative
+        case .textOnDarkNegativeActive:
+            return .textOnDarkNegativeActive
+        case .textOnDarkNegativeHover:
+            return .textOnDarkNegativeHover
+        case .textOnDarkNegativeMinor:
+            return .textOnDarkNegativeMinor
+        case .textOnDarkNegativeMinorActive:
+            return .textOnDarkNegativeMinorActive
+        case .textOnDarkNegativeMinorHover:
+            return .textOnDarkNegativeMinorHover
+        case .textOnDarkParagraph:
+            return .textOnDarkParagraph
+        case .textOnDarkParagraphActive:
+            return .textOnDarkParagraphActive
+        case .textOnDarkParagraphHover:
+            return .textOnDarkParagraphHover
+        case .textOnDarkPositive:
+            return .textOnDarkPositive
+        case .textOnDarkPositiveActive:
+            return .textOnDarkPositiveActive
+        case .textOnDarkPositiveHover:
+            return .textOnDarkPositiveHover
+        case .textOnDarkPositiveMinor:
+            return .textOnDarkPositiveMinor
+        case .textOnDarkPositiveMinorActive:
+            return .textOnDarkPositiveMinorActive
+        case .textOnDarkPositiveMinorHover:
+            return .textOnDarkPositiveMinorHover
+        case .textOnDarkPrimary:
+            return .textOnDarkPrimary
+        case .textOnDarkPrimaryActive:
+            return .textOnDarkPrimaryActive
+        case .textOnDarkPrimaryBrightness:
+            return .textOnDarkPrimaryBrightness
+        case .textOnDarkPrimaryHover:
+            return .textOnDarkPrimaryHover
+        case .textOnDarkPromo:
+            return .textOnDarkPromo
+        case .textOnDarkPromoActive:
+            return .textOnDarkPromoActive
+        case .textOnDarkPromoHover:
+            return .textOnDarkPromoHover
+        case .textOnDarkPromoMinor:
+            return .textOnDarkPromoMinor
+        case .textOnDarkPromoMinorActive:
+            return .textOnDarkPromoMinorActive
+        case .textOnDarkPromoMinorHover:
+            return .textOnDarkPromoMinorHover
+        case .textOnDarkSecondary:
+            return .textOnDarkSecondary
+        case .textOnDarkSecondaryActive:
+            return .textOnDarkSecondaryActive
+        case .textOnDarkSecondaryHover:
+            return .textOnDarkSecondaryHover
+        case .textOnDarkTertiary:
+            return .textOnDarkTertiary
+        case .textOnDarkTertiaryActive:
+            return .textOnDarkTertiaryActive
+        case .textOnDarkTertiaryHover:
+            return .textOnDarkTertiaryHover
+        case .textOnDarkWarning:
+            return .textOnDarkWarning
+        case .textOnDarkWarningActive:
+            return .textOnDarkWarningActive
+        case .textOnDarkWarningHover:
+            return .textOnDarkWarningHover
+        case .textOnDarkWarningMinor:
+            return .textOnDarkWarningMinor
+        case .textOnDarkWarningMinorActive:
+            return .textOnDarkWarningMinorActive
+        case .textOnDarkWarningMinorHover:
+            return .textOnDarkWarningMinorHover
+        case .textOnLightAccent:
+            return .textOnLightAccent
+        case .textOnLightAccentActive:
+            return .textOnLightAccentActive
+        case .textOnLightAccentHover:
+            return .textOnLightAccentHover
+        case .textOnLightAccentMinor:
+            return .textOnLightAccentMinor
+        case .textOnLightAccentMinorActive:
+            return .textOnLightAccentMinorActive
+        case .textOnLightAccentMinorHover:
+            return .textOnLightAccentMinorHover
+        case .textOnLightInfo:
+            return .textOnLightInfo
+        case .textOnLightInfoActive:
+            return .textOnLightInfoActive
+        case .textOnLightInfoHover:
+            return .textOnLightInfoHover
+        case .textOnLightInfoMinor:
+            return .textOnLightInfoMinor
+        case .textOnLightInfoMinorActive:
+            return .textOnLightInfoMinorActive
+        case .textOnLightInfoMinorHover:
+            return .textOnLightInfoMinorHover
+        case .textOnLightNegative:
+            return .textOnLightNegative
+        case .textOnLightNegativeActive:
+            return .textOnLightNegativeActive
+        case .textOnLightNegativeHover:
+            return .textOnLightNegativeHover
+        case .textOnLightNegativeMinor:
+            return .textOnLightNegativeMinor
+        case .textOnLightNegativeMinorActive:
+            return .textOnLightNegativeMinorActive
+        case .textOnLightNegativeMinorHover:
+            return .textOnLightNegativeMinorHover
+        case .textOnLightParagraph:
+            return .textOnLightParagraph
+        case .textOnLightParagraphActive:
+            return .textOnLightParagraphActive
+        case .textOnLightParagraphHover:
+            return .textOnLightParagraphHover
+        case .textOnLightPositive:
+            return .textOnLightPositive
+        case .textOnLightPositiveActive:
+            return .textOnLightPositiveActive
+        case .textOnLightPositiveHover:
+            return .textOnLightPositiveHover
+        case .textOnLightPositiveMinor:
+            return .textOnLightPositiveMinor
+        case .textOnLightPositiveMinorActive:
+            return .textOnLightPositiveMinorActive
+        case .textOnLightPositiveMinorHover:
+            return .textOnLightPositiveMinorHover
+        case .textOnLightPrimary:
+            return .textOnLightPrimary
+        case .textOnLightPrimaryActive:
+            return .textOnLightPrimaryActive
+        case .textOnLightPrimaryBrightness:
+            return .textOnLightPrimaryBrightness
+        case .textOnLightPrimaryHover:
+            return .textOnLightPrimaryHover
+        case .textOnLightPromo:
+            return .textOnLightPromo
+        case .textOnLightPromoActive:
+            return .textOnLightPromoActive
+        case .textOnLightPromoHover:
+            return .textOnLightPromoHover
+        case .textOnLightPromoMinor:
+            return .textOnLightPromoMinor
+        case .textOnLightPromoMinorActive:
+            return .textOnLightPromoMinorActive
+        case .textOnLightPromoMinorHover:
+            return .textOnLightPromoMinorHover
+        case .textOnLightSecondary:
+            return .textOnLightSecondary
+        case .textOnLightSecondaryActive:
+            return .textOnLightSecondaryActive
+        case .textOnLightSecondaryHover:
+            return .textOnLightSecondaryHover
+        case .textOnLightTertiary:
+            return .textOnLightTertiary
+        case .textOnLightTertiaryActive:
+            return .textOnLightTertiaryActive
+        case .textOnLightTertiaryHover:
+            return .textOnLightTertiaryHover
+        case .textOnLightWarning:
+            return .textOnLightWarning
+        case .textOnLightWarningActive:
+            return .textOnLightWarningActive
+        case .textOnLightWarningHover:
+            return .textOnLightWarningHover
+        case .textOnLightWarningMinor:
+            return .textOnLightWarningMinor
+        case .textOnLightWarningMinorActive:
+            return .textOnLightWarningMinorActive
+        case .textOnLightWarningMinorHover:
+            return .textOnLightWarningMinorHover
+        }
+    }
 }
