@@ -8,7 +8,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -105,7 +106,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -202,7 +204,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -299,7 +302,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -396,7 +400,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -493,7 +498,8 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
     
     var pilled: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
         var size =  IconButtonAnySize(size: appearance.size)
-        size.cornerRadius = size.height / 2
+        size.cornerRadius = CGFloat(0)
+        size.pathDrawer = CircleDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
