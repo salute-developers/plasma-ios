@@ -9,9 +9,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.h2
         appearance.closedIcon = Asset.disclosureDownFill24.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill24.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.headerH2Bold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.headerH2Bold.typography).asContainer
 
         return .init(
             name: "h2",
@@ -22,9 +22,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.h3
         appearance.closedIcon = Asset.disclosureDownFill24.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill24.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.headerH3Bold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.headerH3Bold.typography).asContainer
 
         return .init(
             name: "h3",
@@ -35,9 +35,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.h4
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.headerH4Bold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
 
         return .init(
             name: "h4",
@@ -48,9 +48,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.h5
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.headerH5Bold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.headerH5Bold.typography).asContainer
 
         return .init(
             name: "h5",
@@ -61,9 +61,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.l
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -74,9 +74,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.m
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -87,9 +87,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.s
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -100,9 +100,9 @@ public struct AccordionItemSolidActionStart {
         var appearance = AccordionItemAppearance.base
         appearance.size = AccordionItemSolidActionStartSize.xs
         appearance.closedIcon = Asset.disclosureDownFill16.image
-        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.contentTextTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.openedIcon = Asset.disclosureUpFill16.image
-        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.titleTypography = AccordionItemSolidActionStartTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xs",

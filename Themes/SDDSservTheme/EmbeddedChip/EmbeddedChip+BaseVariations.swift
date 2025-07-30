@@ -8,7 +8,7 @@ public struct EmbeddedChip {
     public static var l: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.l
-        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct EmbeddedChip {
     public static var m: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.m
-        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct EmbeddedChip {
     public static var s: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.s
-        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct EmbeddedChip {
     public static var xs: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.xs
-        appearance.titleTypography = EmbeddedChipTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",

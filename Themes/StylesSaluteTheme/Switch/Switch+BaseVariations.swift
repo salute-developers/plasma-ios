@@ -8,9 +8,9 @@ public struct Switch {
     public static var l: GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.L> {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.l
-        appearance.subtitleTypography = SwitchTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.tintColor = .clearColor
-        appearance.titleTypography = SwitchTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -20,9 +20,9 @@ public struct Switch {
     public static var m: GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.M> {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.m
-        appearance.subtitleTypography = SwitchTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.tintColor = .clearColor
-        appearance.titleTypography = SwitchTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -32,9 +32,9 @@ public struct Switch {
     public static var s: GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.S> {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.s
-        appearance.subtitleTypography = SwitchTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.tintColor = .clearColor
-        appearance.titleTypography = SwitchTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",

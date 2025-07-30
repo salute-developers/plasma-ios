@@ -8,8 +8,8 @@ public struct Checkbox {
     public static var l: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
         appearance.size = CheckboxSize.l
-        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.subtitleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -19,8 +19,8 @@ public struct Checkbox {
     public static var m: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
         appearance.size = CheckboxSize.m
-        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -30,8 +30,8 @@ public struct Checkbox {
     public static var s: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var appearance = CheckboxAppearance.base
         appearance.size = CheckboxSize.s
-        appearance.subtitleTypography = CheckboxTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = CheckboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = CheckboxTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",

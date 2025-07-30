@@ -28,7 +28,7 @@ public extension GeneralAppearanceVariation<ProgressBar, ProgressBarAppearance, 
     }
     var gradient: AppearanceVariation<ProgressBarAppearance> {
         var appearance = appearance
-        appearance.tintFillStyle = .gradient(Gradients.surfaceDefaultGradientMain)
+        appearance.tintFillStyle = .gradient(GradientToken.surfaceDefaultGradientMain)
         appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
         
         return .init(
@@ -175,7 +175,7 @@ private extension ProgressBarAppearance {
     
     var gradient: ProgressBarAppearance {
         var appearance = self
-        appearance.tintFillStyle = .gradient(Gradients.surfaceDefaultGradientMain)
+        appearance.tintFillStyle = .gradient(GradientToken.surfaceDefaultGradientMain)
         appearance.trackColor = ColorToken.surfaceDefaultTransparentSecondary
         return appearance
     }

@@ -4,8 +4,17 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Colors {
+public enum Colors {
     {%- for key, value in json %}
-    public static let {{ key }} = ColorToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: ColorToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

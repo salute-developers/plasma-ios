@@ -12,12 +12,12 @@ public struct Cell {
         appearance.buttonAppearance = IconButton.l.clear.appearance
         appearance.checkboxAppearance = Checkbox.m.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
-        appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.labelTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.disclosureTextTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.labelTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.m.appearance
-        appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.switchAppearance = Switch.l.appearance
-        appearance.titleTypography = CellTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -31,12 +31,12 @@ public struct Cell {
         appearance.buttonAppearance = IconButton.m.clear.appearance
         appearance.checkboxAppearance = Checkbox.m.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline24.image
-        appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.labelTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.disclosureTextTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.labelTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.m.appearance
-        appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.switchAppearance = Switch.m.appearance
-        appearance.titleTypography = CellTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -50,12 +50,12 @@ public struct Cell {
         appearance.buttonAppearance = IconButton.s.clear.appearance
         appearance.checkboxAppearance = Checkbox.s.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
-        appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.disclosureTextTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.labelTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
-        appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.switchAppearance = Switch.s.appearance
-        appearance.titleTypography = CellTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -69,12 +69,12 @@ public struct Cell {
         appearance.buttonAppearance = IconButton.s.clear.appearance
         appearance.checkboxAppearance = Checkbox.s.default.appearance
         appearance.disclosureImage = Asset.disclosureRightOutline16.image
-        appearance.disclosureTextTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.labelTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.disclosureTextTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.labelTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
-        appearance.subtitleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.switchAppearance = Switch.s.appearance
-        appearance.titleTypography = CellTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",

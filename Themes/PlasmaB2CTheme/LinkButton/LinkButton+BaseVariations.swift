@@ -8,7 +8,7 @@ public struct LinkButton {
     public static var l: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.l
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct LinkButton {
     public static var m: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.m
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct LinkButton {
     public static var s: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.s
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct LinkButton {
     public static var xl: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xl
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "xl",
@@ -48,7 +48,7 @@ public struct LinkButton {
     public static var xs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xs
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xs",
@@ -58,7 +58,7 @@ public struct LinkButton {
     public static var xxs: ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = LinkButtonSize.xxs
-        appearance.titleTypography = LinkButtonTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.titleTypography = LinkButtonTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xxs",

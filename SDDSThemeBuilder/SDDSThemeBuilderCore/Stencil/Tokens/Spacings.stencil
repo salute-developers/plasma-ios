@@ -4,8 +4,17 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Spacings {
+public enum Spacings {    
     {%- for key, value in json %}
-    public static let {{ key }} = SpacingToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: SpacingToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

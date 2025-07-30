@@ -8,7 +8,7 @@ public struct BadgeClear {
     public static var l: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.L> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeClearSize.l
-        appearance.labelTypography = BadgeClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.labelTypography = BadgeClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -18,7 +18,7 @@ public struct BadgeClear {
     public static var m: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.M> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeClearSize.m
-        appearance.labelTypography = BadgeClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.labelTypography = BadgeClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -28,7 +28,7 @@ public struct BadgeClear {
     public static var s: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.S> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeClearSize.s
-        appearance.labelTypography = BadgeClearTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeClearTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -38,7 +38,7 @@ public struct BadgeClear {
     public static var xs: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.Xs> {
         var appearance = BadgeAppearance.base
         appearance.size = BadgeClearSize.xs
-        appearance.labelTypography = BadgeClearTypography(oneSize: Typographies.bodyXxsNormal.typography).asContainer
+        appearance.labelTypography = BadgeClearTypography(oneSize: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
 
         return .init(
             name: "xs",

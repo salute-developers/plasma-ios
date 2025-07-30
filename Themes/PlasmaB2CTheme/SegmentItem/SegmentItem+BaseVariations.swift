@@ -9,8 +9,8 @@ public struct SegmentItem {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.l
         appearance.counterAppearance = Counter.s.accent.appearance
-        appearance.subtitleTypography = SegmentItemTypography(oneSize: Typographies.bodyLBold.typography).asContainer
-        appearance.titleTypography = SegmentItemTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
+        appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "l",
@@ -21,8 +21,8 @@ public struct SegmentItem {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.m
         appearance.counterAppearance = Counter.xs.accent.appearance
-        appearance.subtitleTypography = SegmentItemTypography(oneSize: Typographies.bodyMBold.typography).asContainer
-        appearance.titleTypography = SegmentItemTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
+        appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -33,8 +33,8 @@ public struct SegmentItem {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.s
         appearance.counterAppearance = Counter.xs.accent.appearance
-        appearance.subtitleTypography = SegmentItemTypography(oneSize: Typographies.bodySBold.typography).asContainer
-        appearance.titleTypography = SegmentItemTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
+        appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
             name: "s",
@@ -45,8 +45,8 @@ public struct SegmentItem {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.xl
         appearance.counterAppearance = Counter.s.accent.appearance
-        appearance.subtitleTypography = SegmentItemTypography(oneSize: Typographies.bodyLBold.typography).asContainer
-        appearance.titleTypography = SegmentItemTypography(oneSize: Typographies.bodyLBold.typography).asContainer
+        appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
+        appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
         return .init(
             name: "xl",
@@ -57,8 +57,8 @@ public struct SegmentItem {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.xs
         appearance.counterAppearance = Counter.xxs.accent.appearance
-        appearance.subtitleTypography = SegmentItemTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
-        appearance.titleTypography = SegmentItemTypography(oneSize: Typographies.bodyXsBold.typography).asContainer
+        appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
+        appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
 
         return .init(
             name: "xs",

@@ -8,8 +8,8 @@ public struct BasicButton {
     public static var m: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.m
-        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
-        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodyMBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
         return .init(
             name: "m",
@@ -19,8 +19,8 @@ public struct BasicButton {
     public static var s: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
         var appearance = ButtonAppearance.base
         appearance.size = BasicButtonSize.s
-        appearance.subtitleTypography = BasicButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
-        appearance.titleTypography = BasicButtonTypography(oneSize: Typographies.bodySBold.typography).asContainer
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
             name: "s",

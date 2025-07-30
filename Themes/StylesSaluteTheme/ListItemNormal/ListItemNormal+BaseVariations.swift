@@ -9,7 +9,7 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.l
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = ListItemNormalTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -20,7 +20,7 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.m
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = ListItemNormalTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -31,7 +31,7 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.s
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = ListItemNormalTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -42,7 +42,7 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.xl
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = ListItemNormalTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "xl",
@@ -53,7 +53,7 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.xs
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = ListItemNormalTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",

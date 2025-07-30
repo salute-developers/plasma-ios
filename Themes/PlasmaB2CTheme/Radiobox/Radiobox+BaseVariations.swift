@@ -8,8 +8,8 @@ public struct Radiobox {
     public static var l: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance.base
         appearance.size = RadioboxSize.l
-        appearance.subtitleTypography = RadioboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.titleTypography = RadioboxTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.subtitleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.titleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -19,8 +19,8 @@ public struct Radiobox {
     public static var m: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance.base
         appearance.size = RadioboxSize.m
-        appearance.subtitleTypography = RadioboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.titleTypography = RadioboxTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.titleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -30,8 +30,8 @@ public struct Radiobox {
     public static var s: ComponentAppearanceVariation<Radiobox, RadioboxAppearance> {
         var appearance = RadioboxAppearance.base
         appearance.size = RadioboxSize.s
-        appearance.subtitleTypography = RadioboxTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.titleTypography = RadioboxTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = RadioboxTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
