@@ -15,11 +15,12 @@ struct IconButtonSize {
     ] 
 }
 struct IconButtonSizeL: ButtonSizeConfiguration {
-    var cornerRadius = size.height / 2
+    var cornerRadius = CGFloat(0)
     var height = CGFloat(56.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+    var pathDrawer = CircleDrawer() as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -27,11 +28,12 @@ struct IconButtonSizeL: ButtonSizeConfiguration {
     }
 }
 struct IconButtonSizeM: ButtonSizeConfiguration {
-    var cornerRadius = size.height / 2
+    var cornerRadius = CGFloat(0)
     var height = CGFloat(48.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+    var pathDrawer = CircleDrawer() as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -39,11 +41,12 @@ struct IconButtonSizeM: ButtonSizeConfiguration {
     }
 }
 struct IconButtonSizeS: ButtonSizeConfiguration {
-    var cornerRadius = size.height / 2
+    var cornerRadius = CGFloat(0)
     var height = CGFloat(40.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
     var paddings = EdgeInsets(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0)
+    var pathDrawer = CircleDrawer() as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(0)
     public var debugDescription: String {
@@ -57,6 +60,7 @@ struct IconButtonAnySize: ButtonSizeConfiguration {
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize.zero
     var paddings = EdgeInsets()
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     var spinnerSize = CGSize.zero
     var titleHorizontalGap = CGFloat(0)
 
@@ -66,6 +70,7 @@ struct IconButtonAnySize: ButtonSizeConfiguration {
         self.iconHorizontalGap = size.iconHorizontalGap
         self.iconSize = size.iconSize
         self.paddings = size.paddings
+        self.pathDrawer = size.pathDrawer
         self.spinnerSize = size.spinnerSize
         self.titleHorizontalGap = size.titleHorizontalGap
     }

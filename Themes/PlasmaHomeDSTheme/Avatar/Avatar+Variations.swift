@@ -8,7 +8,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
     
     var pilled: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
         var size =  AvatarAnySize(size: appearance.size)
-        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius-2.0) as PathDrawer
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         size.statusInsets = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
@@ -64,7 +64,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
     
     var pilled: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
         var size =  AvatarAnySize(size: appearance.size)
-        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundS.cornerRadius-2.0) as PathDrawer
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundS.cornerRadius) as PathDrawer
         size.statusInsets = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance
@@ -92,7 +92,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
     
     var pilled: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
         var size =  AvatarAnySize(size: appearance.size)
-        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxl.cornerRadius-2.0) as PathDrawer
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius-2.0) as PathDrawer
         size.statusInsets = EdgeInsets(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 0.0)
 
         var appearance = appearance

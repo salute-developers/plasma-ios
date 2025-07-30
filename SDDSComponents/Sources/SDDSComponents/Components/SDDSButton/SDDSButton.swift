@@ -141,7 +141,7 @@ public struct SDDSButton<Counter: View>: View {
             .buttonStyle(NoHighlightButtonStyle())
             .opacity(contentOpacity)
             .background(currentColor(for: appearance.backgroundColor).opacity(backgroundOpacity))
-            .cornerRadius(cornerRadius)
+            .shape(pathDrawer: appearance.size.pathDrawer)
             .frame(height: appearance.size.height)
             .disabled(isDisabled)
             .accessibility(label: Text(accessibility.label))
@@ -260,10 +260,6 @@ public struct SDDSButton<Counter: View>: View {
 }
 
 private extension SDDSButton {
-    var cornerRadius: CGFloat {
-        return appearance.size.cornerRadius
-    }
-    
     func currentColor(for buttonColor: ButtonColor) -> Color {
         if isSelected {
             return buttonColor.selectedColor.color(for: colorScheme)
