@@ -8,6 +8,7 @@ public struct Spinner {
     public static var l: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.l
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "l",
@@ -17,6 +18,7 @@ public struct Spinner {
     public static var m: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.m
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "m",
@@ -26,6 +28,7 @@ public struct Spinner {
     public static var s: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.s
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "s",
@@ -35,6 +38,7 @@ public struct Spinner {
     public static var scalable: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.scalable
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "scalable",
@@ -44,6 +48,7 @@ public struct Spinner {
     public static var xl: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.xl
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "xl",
@@ -53,6 +58,7 @@ public struct Spinner {
     public static var xs: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.xs
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "xs",
@@ -62,6 +68,7 @@ public struct Spinner {
     public static var xxl: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.xxl
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "xxl",
@@ -71,6 +78,7 @@ public struct Spinner {
     public static var xxs: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
         var appearance = SpinnerAppearance.base
         appearance.size = SpinnerSize.xxs
+        appearance.angle = CGFloat(0)
 
         return .init(
             name: "xxs",

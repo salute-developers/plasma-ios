@@ -23,7 +23,7 @@ public extension View {
         modifier(ShapeModifier(shapeContent: shapeContent))
     }
     
-    func shape(pathDrawer: PathDrawer) -> some View {
-        modifier(ShapeModifier(shapeContent: ShapeContent(pathDrawer: pathDrawer)))
+    func shape(pathDrawer: PathDrawer, offset: CGSize = .zero) -> some View {
+        modifier(ShapeModifier(shapeContent: ShapeContent(pathDrawer: pathDrawer), offset: offset))
     }
 }
