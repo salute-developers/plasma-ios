@@ -70,7 +70,7 @@ private extension SpinnerAppearance {
     
     var `default`: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentPrimary
         appearance.startColor = ColorToken.surfaceDefaultSolidDefault
         return appearance
@@ -78,7 +78,7 @@ private extension SpinnerAppearance {
     
     var accent: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentAccent
         appearance.startColor = ColorToken.surfaceDefaultAccent
         return appearance
@@ -86,7 +86,7 @@ private extension SpinnerAppearance {
     
     var info: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentInfo
         appearance.startColor = ColorToken.surfaceDefaultInfo
         return appearance
@@ -94,7 +94,7 @@ private extension SpinnerAppearance {
     
     var negative: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentNegative
         appearance.startColor = ColorToken.surfaceDefaultNegative
         return appearance
@@ -102,7 +102,7 @@ private extension SpinnerAppearance {
     
     var positive: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentPositive
         appearance.startColor = ColorToken.surfaceDefaultPositive
         return appearance
@@ -110,7 +110,7 @@ private extension SpinnerAppearance {
     
     var secondary: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentPrimary.withOpacity(0.32)
         appearance.startColor = ColorToken.surfaceDefaultSolidDefault.withOpacity(0.32)
         return appearance
@@ -118,7 +118,7 @@ private extension SpinnerAppearance {
     
     var warning: SpinnerAppearance {
         var appearance = self
-        appearance.angle = CGFloat(360)
+        appearance.angle = CGFloat(0)
         appearance.endColor = ColorToken.surfaceDefaultTransparentWarning
         appearance.startColor = ColorToken.surfaceDefaultWarning
         return appearance

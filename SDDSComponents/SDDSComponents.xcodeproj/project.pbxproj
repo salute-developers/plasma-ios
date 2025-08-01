@@ -238,6 +238,12 @@
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
 		81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */; };
 		81B23F582D4BA1100042A657 /* SDDSSegmentItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */; };
+		81B510712E3C832600504B1D /* CodeFieldGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106E2E3C832600504B1D /* CodeFieldGroup.swift */; };
+		81B510722E3C832600504B1D /* CodeFieldSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106C2E3C832600504B1D /* CodeFieldSizeConfiguration.swift */; };
+		81B510732E3C832600504B1D /* SDDSCodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106F2E3C832600504B1D /* SDDSCodeField.swift */; };
+		81B510742E3C832600504B1D /* CodeFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106B2E3C832600504B1D /* CodeFieldAppearance.swift */; };
+		81B558152E3D01A900504B1D /* NonSelectableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B558142E3D01A400504B1D /* NonSelectableTextField.swift */; };
+		81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B562502E3D11D900504B1D /* CodeFieldValidation.swift */; };
 		81BBC5752C862492009616CE /* SDDSComponentsPreview.h in Headers */ = {isa = PBXBuildFile; fileRef = 81BBC5742C862492009616CE /* SDDSComponentsPreview.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81BBC5952C862764009616CE /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C62C33080400D8E524 /* Spacing.swift */; };
 		81BBC5C92C8639CC009616CE /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBC5C82C8639CC009616CE /* Image+Extensions.swift */; };
@@ -600,6 +606,12 @@
 		81A901522CF6EAA800992B04 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreview.swift; sourceTree = "<group>"; };
 		81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemPreview.swift; sourceTree = "<group>"; };
+		81B5106B2E3C832600504B1D /* CodeFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldAppearance.swift; sourceTree = "<group>"; };
+		81B5106C2E3C832600504B1D /* CodeFieldSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldSizeConfiguration.swift; sourceTree = "<group>"; };
+		81B5106E2E3C832600504B1D /* CodeFieldGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldGroup.swift; sourceTree = "<group>"; };
+		81B5106F2E3C832600504B1D /* SDDSCodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCodeField.swift; sourceTree = "<group>"; };
+		81B558142E3D01A400504B1D /* NonSelectableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonSelectableTextField.swift; sourceTree = "<group>"; };
+		81B562502E3D11D900504B1D /* CodeFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldValidation.swift; sourceTree = "<group>"; };
 		81BBC5722C862492009616CE /* SDDSComponentsPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponentsPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BBC5742C862492009616CE /* SDDSComponentsPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponentsPreview.h; sourceTree = "<group>"; };
 		81BBC5C82C8639CC009616CE /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
@@ -1576,6 +1588,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81B510702E3C832600504B1D /* SDDSCodeField */,
 				810F7B572E27F25E00218FE7 /* SDDSAccordion */,
 				810F4C712E268E1D00218FE7 /* SDDSAccordionItem */,
 				81205C1D2E29055300AA29ED /* SDDSSpinner */,
@@ -1672,7 +1685,7 @@
 			isa = PBXGroup;
 			children = (
 				812418102DD341130013FDD2 /* Arc */,
-				81E968122CBD194300256968 /* FocusableTextField */,
+				81E968122CBD194300256968 /* TextField */,
 				81CF121E2C6E740A0074174F /* RoundedCornersMask */,
 				811DE16F2C578331000DD354 /* HierarchicalList */,
 				811DE16E2C578325000DD354 /* SelectionControl */,
@@ -1771,6 +1784,26 @@
 				81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */,
 			);
 			path = SDDSSegmentItem;
+			sourceTree = "<group>";
+		};
+		81B5106D2E3C832600504B1D /* CodeFieldAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81B5106B2E3C832600504B1D /* CodeFieldAppearance.swift */,
+				81B5106C2E3C832600504B1D /* CodeFieldSizeConfiguration.swift */,
+			);
+			path = CodeFieldAppearance;
+			sourceTree = "<group>";
+		};
+		81B510702E3C832600504B1D /* SDDSCodeField */ = {
+			isa = PBXGroup;
+			children = (
+				81B5106D2E3C832600504B1D /* CodeFieldAppearance */,
+				81B5106E2E3C832600504B1D /* CodeFieldGroup.swift */,
+				81B562502E3D11D900504B1D /* CodeFieldValidation.swift */,
+				81B5106F2E3C832600504B1D /* SDDSCodeField.swift */,
+			);
+			path = SDDSCodeField;
 			sourceTree = "<group>";
 		};
 		81BBC5732C862492009616CE /* SDDSComponentsPreview */ = {
@@ -1921,12 +1954,13 @@
 			path = SDDSToast;
 			sourceTree = "<group>";
 		};
-		81E968122CBD194300256968 /* FocusableTextField */ = {
+		81E968122CBD194300256968 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				81B558142E3D01A400504B1D /* NonSelectableTextField.swift */,
 				81E968132CBD194F00256968 /* FocusableTextField.swift */,
 			);
-			path = FocusableTextField;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
@@ -2281,6 +2315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F7E4E42DF0591700531844 /* StackedToast.swift in Sources */,
+				81B558152E3D01A900504B1D /* NonSelectableTextField.swift in Sources */,
 				81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */,
 				81E9343E2DEDF70D00B76E38 /* ToastAppearance.swift in Sources */,
 				69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */,
@@ -2444,6 +2479,7 @@
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
 				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
+				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,
 				692510212D7632CA00545542 /* SDDSBadge.swift in Sources */,
 				81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */,
 				692510222D7632CA00545542 /* BadgeAlignment+Extensions.swift in Sources */,
@@ -2507,6 +2543,10 @@
 				69B975262D51162400CAF208 /* SegmentWidthCalculatorImpl.swift in Sources */,
 				818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */,
 				814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */,
+				81B510712E3C832600504B1D /* CodeFieldGroup.swift in Sources */,
+				81B510722E3C832600504B1D /* CodeFieldSizeConfiguration.swift in Sources */,
+				81B510732E3C832600504B1D /* SDDSCodeField.swift in Sources */,
+				81B510742E3C832600504B1D /* CodeFieldAppearance.swift in Sources */,
 				812DB7422D57B43900D3F4A3 /* TextAreaSizeConfiguration.swift in Sources */,
 				812DB7512D57B44100D3F4A3 /* TextFieldSizeConfiguration.swift in Sources */,
 				812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */,

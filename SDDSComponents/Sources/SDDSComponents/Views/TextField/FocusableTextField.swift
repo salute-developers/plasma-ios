@@ -9,7 +9,16 @@ struct FocusableTextField: UIViewRepresentable {
     let cursorColor: Color
     let typography: TypographyToken
     let readOnly: Bool
+    var keyboardType: UIKeyboardType = .default
+    var enableSelection: Bool = true
     var onEditingChanged: ((Bool) -> Void)? = nil
+    
+    private var uiTextField: UITextField {
+        guard enableSelection else {
+            return NonSelectableTextField()
+        }
+        return UITextField()
+    }
 
     class Coordinator: NSObject, UITextFieldDelegate {
         var parent: FocusableTextField
@@ -19,6 +28,9 @@ struct FocusableTextField: UIViewRepresentable {
         }
 
         func textFieldDidChangeSelection(_ textField: UITextField) {
+            guard parent.enableSelection else {
+                return
+            }
             parent.text = textField.text ?? ""
         }
         
@@ -35,6 +47,15 @@ struct FocusableTextField: UIViewRepresentable {
             parent.isFocused = false
             parent.onEditingChanged?(false)
         }
+        
+        @objc func textFieldDidChange(_ textField: UITextField) {
+            parent.text = textField.text ?? ""
+        }
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            parent.isFocused = false
+            return true
+        }
     }
 
     func makeCoordinator() -> Coordinator {
@@ -45,9 +66,11 @@ struct FocusableTextField: UIViewRepresentable {
         let containerView = UIView()
         containerView.backgroundColor = .clear
         
-        let textField = UITextField()
+        let textField = uiTextField
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.keyboardType = keyboardType
         textField.delegate = context.coordinator
+        textField.addTarget(context.coordinator, action: #selector(context.coordinator.textFieldDidChange), for: .editingChanged)
         configure(textField)
         
         containerView.addSubview(textField)
@@ -98,4 +121,5 @@ struct FocusableTextField: UIViewRepresentable {
         textField.tintColor = UIColor(cursorColor)
         textField.font = typography.uiFont
     }
+
 }
