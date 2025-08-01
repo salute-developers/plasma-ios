@@ -1,0 +1,129 @@
+{
+    "view": {},
+    "props": {
+        "itemSpacing": {
+            "type": "dimension",
+            "value": 2
+        },
+        "groupSpacing": {
+            "type": "dimension",
+            "value": 4
+        },
+        "captionColor": {
+            "type": "color",
+            "default": "text.default.secondary",
+            "states": [
+              {
+                "state": [
+                  "error"
+                ],
+                "value": "text.default.negative"
+              }
+            ]
+          },
+          "backgroundColor": {
+              "type": "color",
+              "default": "surface.default.solid-primary",
+              "states": [
+                  {
+                    "state": [
+                      "error"
+                    ],
+                    "value": "surface.default.transparent-negative"
+                  }
+                ]
+            }
+    },
+    "variations": [
+        {
+            "id": "l",
+            "parent": null,
+            "props": {
+                "itemShape": {
+                    "type": "shape",
+                    "value": "round.m",
+                    "adjustment": 2
+                },
+                "captionSpacing": {
+                    "type": "dimension",
+                    "value": 14
+                },
+                "width": {
+                    "type": "dimension",
+                    "value": 44
+                },
+                "height": {
+                    "type": "dimension",
+                    "value": 56
+                },
+                "captionStyle": {
+                    "type": "typography",
+                    "value": "body.s.normal"
+                },
+                "valueStyle": {
+                    "type": "typography",
+                    "value": "body.l.bold"
+                }
+            }
+        },
+        {
+            "id": "l.segmented",
+            "parent": "l",
+            "props": {
+                "itemShape": {
+                    "type": "shape",
+                    "value": "round.xs"
+                },
+                "groupShape": {
+                    "type": "shape",
+                    "value": "round.l",
+                    "adjustment": -2
+                }
+            }
+        },
+        {
+            "id": "m",
+            "parent": null,
+            "props": {
+                "itemShape": {
+                    "type": "shape",
+                    "value": "round.m"
+                },
+                "captionSpacing": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "width": {
+                    "type": "dimension",
+                    "value": 38
+                },
+                "height": {
+                    "type": "dimension",
+                    "value": 48
+                },
+                "captionStyle": {
+                    "type": "typography",
+                    "value": "body.xs.normal"
+                },
+                "valueStyle": {
+                    "type": "typography",
+                    "value": "body.m.bold"
+                }
+            }
+        },
+        {
+            "id": "m.segmented",
+            "parent": "m",
+            "props": {
+                "itemShape": {
+                    "type": "shape",
+                    "value": "round.xxs"
+                },
+                "groupShape": {
+                    "type": "shape",
+                    "value": "round.m"
+                }
+            }
+        }
+    ]
+} 

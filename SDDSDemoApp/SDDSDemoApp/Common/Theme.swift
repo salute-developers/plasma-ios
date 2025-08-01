@@ -726,5 +726,16 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.Spinner.all
         }
+    }
+    
+    var codeFieldVariations: [Variation<CodeFieldAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CodeField.all
+        case .stylesSalute:
+            return StylesSaluteTheme.CodeField.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CodeField.all
+        }
     }    
 }

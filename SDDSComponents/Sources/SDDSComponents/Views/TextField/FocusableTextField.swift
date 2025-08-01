@@ -9,7 +9,42 @@ struct FocusableTextField: UIViewRepresentable {
     let cursorColor: Color
     let typography: TypographyToken
     let readOnly: Bool
-    var onEditingChanged: ((Bool) -> Void)? = nil
+    let onShouldChange: (() -> (Bool))?
+    let keyboardType: UIKeyboardType
+    let enableSelection: Bool
+    let onEditingChanged: ((Bool) -> Void)?
+    
+    init(text: Binding<String>,
+         isFocused: Binding<Bool>,
+         textColor: Color,
+         textAlignment: TextAlignment,
+         cursorColor: Color,
+         typography: TypographyToken,
+         readOnly: Bool,
+         keyboardType: UIKeyboardType = .default,
+         enableSelection: Bool = true,
+         onShouldChange: (() -> (Bool))? = nil,
+         onEditingChanged: ( (Bool) -> Void)? = nil
+    ) {
+        _text = text
+        _isFocused = isFocused
+        self.textColor = textColor
+        self.textAlignment = textAlignment
+        self.cursorColor = cursorColor
+        self.typography = typography
+        self.readOnly = readOnly
+        self.keyboardType = keyboardType
+        self.enableSelection = enableSelection
+        self.onShouldChange = onShouldChange
+        self.onEditingChanged = onEditingChanged
+    }
+    
+    private var uiTextField: UITextField {
+        guard enableSelection else {
+            return NonSelectableTextField()
+        }
+        return UITextField()
+    }
 
     class Coordinator: NSObject, UITextFieldDelegate {
         var parent: FocusableTextField
@@ -19,11 +54,14 @@ struct FocusableTextField: UIViewRepresentable {
         }
 
         func textFieldDidChangeSelection(_ textField: UITextField) {
+            guard parent.enableSelection else {
+                return
+            }
             parent.text = textField.text ?? ""
         }
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            return !parent.readOnly
+            return (parent.onShouldChange?() ?? true) && !parent.readOnly
         }
 
         func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -35,6 +73,15 @@ struct FocusableTextField: UIViewRepresentable {
             parent.isFocused = false
             parent.onEditingChanged?(false)
         }
+        
+        @objc func textFieldDidChange(_ textField: UITextField) {
+            parent.text = textField.text ?? ""
+        }
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            parent.isFocused = false
+            return true
+        }
     }
 
     func makeCoordinator() -> Coordinator {
@@ -45,9 +92,11 @@ struct FocusableTextField: UIViewRepresentable {
         let containerView = UIView()
         containerView.backgroundColor = .clear
         
-        let textField = UITextField()
+        let textField = uiTextField
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.keyboardType = keyboardType
         textField.delegate = context.coordinator
+        textField.addTarget(context.coordinator, action: #selector(context.coordinator.textFieldDidChange), for: .editingChanged)
         configure(textField)
         
         containerView.addSubview(textField)
@@ -98,4 +147,5 @@ struct FocusableTextField: UIViewRepresentable {
         textField.tintColor = UIColor(cursorColor)
         textField.font = typography.uiFont
     }
+
 }

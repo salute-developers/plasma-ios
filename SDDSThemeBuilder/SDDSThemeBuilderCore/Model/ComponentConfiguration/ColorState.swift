@@ -9,6 +9,7 @@ struct ColorState: Codable {
         case selected
         case focused
         case indeterminate
+        case error
     }
     
     let state: [State]?
