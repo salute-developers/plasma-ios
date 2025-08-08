@@ -89,7 +89,7 @@ private extension CircularProgressBarAppearance {
     
     var gradient: CircularProgressBarAppearance {
         var appearance = self
-        appearance.indicatorColor = .gradient(Gradients.surfaceDefaultAccentGradient)
+        appearance.indicatorColor = .gradient(GradientToken.surfaceDefaultAccentGradient)
         return appearance
     }
     

@@ -84,6 +84,7 @@
 		815D38B82DE5BC570005273B /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B22DE5BC570005273B /* PopoverView.swift */; };
 		815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B32DE5BC570005273B /* PopoverViewModel.swift */; };
 		815D38BA2DE5BC570005273B /* PopoverVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B12DE5BC570005273B /* PopoverVariationProvider.swift */; };
+		816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */; };
 		8161ED772E09507A00141F4F /* TextLineCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8161ED762E09507500141F4F /* TextLineCounter.swift */; };
 		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
 		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
@@ -139,6 +140,10 @@
 		81A6132F2D5BADC800ADE1CD /* VariationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132E2D5BADC800ADE1CD /* VariationsView.swift */; };
 		81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */; };
 		81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */; };
+		81B51AB32E3C892600504B1D /* CodeFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB02E3C892600504B1D /* CodeFieldView.swift */; };
+		81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AAF2E3C892600504B1D /* CodeFieldVariationProvider.swift */; };
+		81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */; };
+		81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */; };
 		81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */; };
@@ -313,6 +318,10 @@
 		81A6132E2D5BADC800ADE1CD /* VariationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsView.swift; sourceTree = "<group>"; };
 		81A613302D5BB14400ADE1CD /* TextFieldVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVariationProvider.swift; sourceTree = "<group>"; };
 		81A613322D5BB58900ADE1CD /* TextAreaVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaVariationProvider.swift; sourceTree = "<group>"; };
+		81B51AAF2E3C892600504B1D /* CodeFieldVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldVariationProvider.swift; sourceTree = "<group>"; };
+		81B51AB02E3C892600504B1D /* CodeFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldView.swift; sourceTree = "<group>"; };
+		81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldViewModel.swift; sourceTree = "<group>"; };
+		81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldGroupType.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipVariationProvider.swift; sourceTree = "<group>"; };
@@ -371,6 +380,7 @@
 				69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
+				816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */,
 				81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */,
 				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
@@ -615,6 +625,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81B51AB22E3C892600504B1D /* CodeFieldView */,
 				810F84BB2E27F5B500218FE7 /* AccordionView */,
 				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
 				812065832E29072300AA29ED /* SpinnerView */,
@@ -927,6 +938,17 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		81B51AB22E3C892600504B1D /* CodeFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */,
+				81B51AAF2E3C892600504B1D /* CodeFieldVariationProvider.swift */,
+				81B51AB02E3C892600504B1D /* CodeFieldView.swift */,
+				81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */,
+			);
+			path = CodeFieldView;
+			sourceTree = "<group>";
+		};
 		81DEC9CA2DE5EF740035E6A9 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1040,7 @@
 				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
 				81A0795E2DA6706500260DC9 /* SDDSComponents */,
 				81A079612DA6707100260DC9 /* SDDSThemeCore */,
+				816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -1120,6 +1143,7 @@
 				81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
 				81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				8127A0812E0ABD1700B320D1 /* XCRemoteSwiftPackageReference "snapshots-kit-ios" */,
+				816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -1190,6 +1214,7 @@
 				815D38B72DE5BC570005273B /* OverlayViewModel.swift in Sources */,
 				815D38B82DE5BC570005273B /* PopoverView.swift in Sources */,
 				815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */,
+				81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */,
 				810F95942E13A1FE008CA4CA /* ListView.swift in Sources */,
 				810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */,
 				810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */,
@@ -1290,6 +1315,9 @@
 				69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */,
 				81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
+				81B51AB32E3C892600504B1D /* CodeFieldView.swift in Sources */,
+				81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */,
+				81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
 				816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */,
@@ -1677,6 +1705,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/SDDSservTheme;
 		};
+		816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Themes/PlasmaHomeDSTheme;
+		};
 		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/PlasmaB2CTheme;
@@ -1731,6 +1763,10 @@
 		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDDSThemeCore;
+		};
+		816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlasmaHomeDSTheme;
 		};
 		8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */ = {
 			isa = XCSwiftPackageProductDependency;

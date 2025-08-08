@@ -9,7 +9,7 @@ public struct DropdownMenuItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemNormalSize.l
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -20,7 +20,7 @@ public struct DropdownMenuItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemNormalSize.m
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -31,7 +31,7 @@ public struct DropdownMenuItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemNormalSize.s
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -42,7 +42,7 @@ public struct DropdownMenuItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = DropdownMenuItemNormalSize.xs
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
-        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = DropdownMenuItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",

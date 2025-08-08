@@ -104,7 +104,6 @@ public struct SpinnerVariation {
 private extension SpinnerAppearance {
     static var base: SpinnerAppearance {
         var appearance = SpinnerAppearance()
-        appearance.angle = CGFloat(360.0)
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
         appearance.strokeCap = StrokeCap.round
         return appearance

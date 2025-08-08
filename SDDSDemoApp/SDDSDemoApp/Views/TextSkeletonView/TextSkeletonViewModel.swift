@@ -19,7 +19,7 @@ enum TextSkeletonLineProviderType: String, CaseIterable {
 
 final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvider>  {
     let lineSpacing: CGFloat = 1.0
-    let typography = Typographies.bodyMNormal.typographyToken(for: .medium)
+    let typography = Typographies.bodyMNormal.token.typographyToken(for: .medium)
     @Published var lineCountText: String = "1" {
         didSet {
             if let count = Int(lineCountText), count > 0 {

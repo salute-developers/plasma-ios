@@ -67,6 +67,8 @@
 		69A8759B2DAF9E470074C1BD /* CheckboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */; };
 		69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */; };
+		81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81090AC52E4393310086BB29 /* SpinnerSize.swift */; };
+		81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81090AC42E4393310086BB29 /* SpinnerAppearance.swift */; };
 		810AFD3D2D96DBA8000B2A7A /* SegmentItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */; };
 		810AFD3F2D96DD1F000B2A7A /* ComponentStyleKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */; };
 		810AFD422D96DD91000B2A7A /* SegmentItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFD412D96DD8D000B2A7A /* SegmentItemAppearance.swift */; };
@@ -351,6 +353,9 @@
 		81B240202D4BF0600042A657 /* SDDSProgressViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23FEB2D4BF0600042A657 /* SDDSProgressViewSize.swift */; };
 		81B240212D4BF0600042A657 /* SDDSProgressView+ColorVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23FEC2D4BF0600042A657 /* SDDSProgressView+ColorVariations.swift */; };
 		81B240232D4BF12A0042A657 /* SDDSChipGroup+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B240222D4BF12A0042A657 /* SDDSChipGroup+Variations.swift */; };
+		81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510652E3C7CA100504B1D /* CodeFieldSize.swift */; };
+		81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */; };
+		81B5106A2E3C7CBD00504B1D /* CodeFieldProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510692E3C7CBD00504B1D /* CodeFieldProps.swift */; };
 		81BBE2102D759FE400612681 /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBE20F2D759FE300612681 /* HexConverter.swift */; };
 		81BC36762C58E46000A363D0 /* SDDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36752C58E46000A363D0 /* SDDSTheme */; };
 		81BC36782C58E4B300A363D0 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81BC36772C58E4B300A363D0 /* SDDSThemeCore */; };
@@ -580,6 +585,8 @@
 		69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupProps.swift; sourceTree = "<group>"; };
 		69A875982DAF9E470074C1BD /* RadioboxProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxProps.swift; sourceTree = "<group>"; };
 		8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeGenerationComponent+Extension.swift"; sourceTree = "<group>"; };
+		81090AC42E4393310086BB29 /* SpinnerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAppearance.swift; sourceTree = "<group>"; };
+		81090AC52E4393310086BB29 /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
 		810AFD3C2D96DBA5000B2A7A /* SegmentItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemProps.swift; sourceTree = "<group>"; };
 		810AFD3E2D96DD19000B2A7A /* ComponentStyleKeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentStyleKeyValue.swift; sourceTree = "<group>"; };
 		810AFD412D96DD8D000B2A7A /* SegmentItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemAppearance.swift; sourceTree = "<group>"; };
@@ -842,6 +849,9 @@
 		81B23FEB2D4BF0600042A657 /* SDDSProgressViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSProgressViewSize.swift; sourceTree = "<group>"; };
 		81B23FEC2D4BF0600042A657 /* SDDSProgressView+ColorVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SDDSProgressView+ColorVariations.swift"; sourceTree = "<group>"; };
 		81B240222D4BF12A0042A657 /* SDDSChipGroup+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDDSChipGroup+Variations.swift"; sourceTree = "<group>"; };
+		81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldAppearance.swift; sourceTree = "<group>"; };
+		81B510652E3C7CA100504B1D /* CodeFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldSize.swift; sourceTree = "<group>"; };
+		81B510692E3C7CBD00504B1D /* CodeFieldProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldProps.swift; sourceTree = "<group>"; };
 		81BBE20F2D759FE300612681 /* HexConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConverter.swift; sourceTree = "<group>"; };
 		81BC367D2C58E64900A363D0 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81C10A1C2C2929850055BB04 /* meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
@@ -1218,6 +1228,15 @@
 			path = RadioboxGroup;
 			sourceTree = "<group>";
 		};
+		81090AC62E4393310086BB29 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				81090AC42E4393310086BB29 /* SpinnerAppearance.swift */,
+				81090AC52E4393310086BB29 /* SpinnerSize.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
 		810AFD402D96DD85000B2A7A /* SegmentItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1353,6 +1372,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81B510692E3C7CBD00504B1D /* CodeFieldProps.swift */,
 				810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */,
 				810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */,
 				81205C132E28FE1B00AA29ED /* SpinnerProps.swift */,
@@ -1396,6 +1416,8 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81090AC62E4393310086BB29 /* Spinner */,
+				81B510662E3C7CA100504B1D /* CodeField */,
 				810F4C632E2674EB00218FE7 /* Accordion */,
 				810F4C582E266FC500218FE7 /* AccordionItem */,
 				81205C102E28FDE700AA29ED /* Spinner */,
@@ -2032,6 +2054,15 @@
 				81B23FEC2D4BF0600042A657 /* SDDSProgressView+ColorVariations.swift */,
 			);
 			path = SDDSProgressBar;
+			sourceTree = "<group>";
+		};
+		81B510662E3C7CA100504B1D /* CodeField */ = {
+			isa = PBXGroup;
+			children = (
+				81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */,
+				81B510652E3C7CA100504B1D /* CodeFieldSize.swift */,
+			);
+			path = CodeField;
 			sourceTree = "<group>";
 		};
 		81C3D7DC2DAE42B80090739E /* Switch */ = {
@@ -2788,6 +2819,8 @@
 				810F92572E12E720008CA4CA /* ListItemAppearance.swift in Sources */,
 				8136875E2E0181DF00A1702A /* SkeletonAppearance.swift in Sources */,
 				813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */,
+				81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */,
+				81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */,
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
@@ -2802,6 +2835,8 @@
 				812DB7A32D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift in Sources */,
 				812DB6D82D54B75400D3F4A3 /* Component+Variations.stencil in Sources */,
 				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
+				81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */,
+				81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */,
 				812DB6E32D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift in Sources */,
 				812DB6E52D55E3DE00D3F4A3 /* ComponentStyleContextBuilder.swift in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
@@ -2811,6 +2846,7 @@
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */,
+				81B5106A2E3C7CBD00504B1D /* CodeFieldProps.swift in Sources */,
 				6962DE732DACFD33007666D5 /* AvatarGroupProps.swift in Sources */,
 				81F7EC9D2DF2F0AB00531844 /* ModalProps.swift in Sources */,
 				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
@@ -3398,7 +3434,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.10.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeCore;
@@ -3438,7 +3474,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.10.0;
+				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeCore;

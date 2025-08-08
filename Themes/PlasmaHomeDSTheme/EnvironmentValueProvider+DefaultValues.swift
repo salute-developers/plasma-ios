@@ -1,0 +1,20 @@
+import Foundation
+import SDDSComponents
+import SwiftUI
+
+extension EnvironmentValueProvider {
+    func setDefaultValues() {
+        self.set(value: Avatar.m.appearance, forKey: AvatarAppearance.self)
+        self.set(value: AvatarGroup.s.appearance, forKey: AvatarGroupAppearance.self)
+        self.set(value: Counter.m.default.appearance, forKey: CounterAppearance.self)
+        self.set(value: Badge.m.default.appearance, forKey: BadgeAppearance.self)
+        self.set(value: BasicButton.m.default.appearance, forKey: ButtonAppearance.self)
+        self.set(value: Cell.m.appearance, forKey: CellAppearance.self)
+        self.set(value: Checkbox.m.default.appearance, forKey: CheckboxAppearance.self)
+        self.set(value: CheckboxGroup.m.appearance, forKey: CheckboxGroupAppearance.self)
+        self.set(value: Chip.m.default.appearance, forKey: ChipAppearance.self)
+        self.set(value: Indicator.m.default.appearance, forKey: IndicatorAppearance.self)
+        self.set(value: Radiobox.m.appearance, forKey: RadioboxAppearance.self)
+        self.set(value: RadioboxGroup.m.appearance, forKey: RadioboxGroupAppearance.self)
+    }
+}

@@ -5,7 +5,6 @@ import SwiftUI
 public struct SpinnerAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken
-    public var angle: CGFloat
     public var strokeCap: StrokeCap
     public var startColor: ColorToken
     public var endColor: ColorToken
@@ -13,14 +12,12 @@ public struct SpinnerAppearance: Hashable {
     
     public init(
         backgroundColor: ColorToken = .clearColor,
-        angle: CGFloat = 360,
         strokeCap: StrokeCap = .round,
         startColor: ColorToken = .clearColor,
         endColor: ColorToken = .clearColor,
         size: SpinnerSizeConfiguration = DefaultSpinnerSize()
     ) {
         self.backgroundColor = backgroundColor
-        self.angle = angle
         self.strokeCap = strokeCap
         self.startColor = startColor
         self.endColor = endColor
@@ -30,7 +27,6 @@ public struct SpinnerAppearance: Hashable {
     public static func == (lhs: SpinnerAppearance, rhs: SpinnerAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
-        lhs.angle == rhs.angle &&
         lhs.strokeCap == rhs.strokeCap &&
         lhs.startColor == rhs.startColor &&
         lhs.endColor == rhs.endColor

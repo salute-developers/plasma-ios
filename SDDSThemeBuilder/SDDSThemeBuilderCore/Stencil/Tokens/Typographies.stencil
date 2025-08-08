@@ -3,8 +3,17 @@
 import Foundation
 @_exported import SDDSThemeCore
 
-public struct Typographies {
+public enum Typographies {
     {%- for key, value in json %}
-    public static let {{ key }} = AdaptiveTypographyToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: AdaptiveTypographyToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

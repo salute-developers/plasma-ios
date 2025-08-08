@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
 
 /**
  `SDDSSegmentItem` представляет собой элемент сегмента, который может содержать заголовок, подзаголовок, иконку и счетчик.
@@ -146,7 +147,7 @@ public struct SDDSSegmentItem<Counter: View>: View {
     private var buttonSize: ButtonSizeConfiguration {
         var size = DefaultButtonSize()
         size.height = appearance.size.height
-        size.cornerRadius = appearance.size.cornerRadius
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: appearance.size.cornerRadius)
         size.iconSize = iconAttributes?.alignment == .leading ? appearance.size.startContentSize : appearance.size.endContentSize
         size.counterSize = appearance.counterAppearance.size
         size.iconHorizontalGap = appearance.size.iconHorizontalGap

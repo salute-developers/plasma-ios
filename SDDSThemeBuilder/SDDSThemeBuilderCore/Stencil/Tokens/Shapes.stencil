@@ -4,8 +4,17 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Shapes {
+public enum Shapes {
     {%- for key, value in json %}
-    public static let {{ key }} = ShapeToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: ShapeToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

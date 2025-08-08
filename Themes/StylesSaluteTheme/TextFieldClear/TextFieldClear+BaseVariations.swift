@@ -9,9 +9,9 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
-        appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
-        appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -22,9 +22,9 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
-        appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
-        appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -35,9 +35,9 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
-        appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
-        appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -48,9 +48,9 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
-        appearance.textAfterTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
-        appearance.textTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",
@@ -135,7 +135,7 @@ private extension TextFieldAppearance {
     static var base: TextFieldAppearance {
         var appearance = TextFieldAppearance()
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-        appearance.captionTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.captionTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccentMain
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary

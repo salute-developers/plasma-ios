@@ -6,17 +6,20 @@ struct SpinnerSize: CodeGenerationSize {
     
     var size: String?
     var padding: String?
+    var angle: String?
     
     init(variation: SpinnerConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
     
     init(props: SpinnerProps, id: String? = nil, nullify: Bool = false) {
+        self.angle = CGFloatContextBuilder(props.angle?.value).context
         self.size = CGFloatContextBuilder(props.size?.value, nullify: nullify).context
         self.padding = CGFloatContextBuilder(props.padding?.value, nullify: nullify).context
     }
     
     init() {
+        self.angle = CGFloat.defaultContext
         self.size = CGFloat.defaultContext
         self.padding = CGFloat.defaultContext
     }

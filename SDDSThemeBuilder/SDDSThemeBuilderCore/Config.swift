@@ -6,6 +6,7 @@ public struct ThemeBuilderConfiguration: Codable {
         case plasmaB2C = "PlasmaB2C"
         case plasmaGiga = "PlasmaGiga"
         case plasmaWeb = "PlasmaWeb"
+        case plasmaHomeDS = "PlasmaHomeDS"
         case sberHealth = "SberHealth"
         case sbermarket = "Sbermarket"
         case sbermarketBusiness = "SbermarketBusiness"
@@ -36,8 +37,9 @@ public struct ThemeBuilderConfiguration: Codable {
     public var paletteURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json")!
     public var themes: [ThemeConfiguration] = [
         Theme.sddsServTheme,
+        Theme.stylesSalute,
         Theme.plasmaB2C,
-        Theme.stylesSalute
+        Theme.plasmaHomeDS
     ].map { $0.themeConfiguration }
     
     public init() {}
@@ -54,6 +56,8 @@ public extension ThemeBuilderConfiguration.Theme {
             .init(name: self.rawValue, url: themeURL(name: "plasma_giga"))
         case .plasmaWeb:
             .init(name: self.rawValue, url: themeURL(name: "plasma_web"))
+        case .plasmaHomeDS:
+            .init(name: self.rawValue, url: themeURL(name: "plasma_homeds"))
         case .sberHealth:
             .init(name: self.rawValue, url: themeURL(name: "sberHealth"))
         case .sbermarket:

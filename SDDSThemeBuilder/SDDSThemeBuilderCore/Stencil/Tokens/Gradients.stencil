@@ -4,8 +4,17 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public struct Gradients {
+public enum Gradients {    
     {%- for key, value in json %}
-    public static let {{ key }} = GradientToken.{{ key }}
+    case {{ key }}
     {%- endfor %}
+
+    public var token: GradientToken {
+        switch self {
+            {%- for key, value in json %}
+        case .{{ key }}:
+            return .{{ key }}
+            {%- endfor %}
+        }
+    }
 }

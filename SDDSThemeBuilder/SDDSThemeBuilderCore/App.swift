@@ -185,7 +185,7 @@ extension App {
     }
     
     private func generatedTokensURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
-        themeURL(config: config).appending(component: "Generated")
+        themeURL(config: config).appending(component: "Tokens")
     }
     
     private func generatedComponentsURL(component: CodeGenerationComponent, config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {

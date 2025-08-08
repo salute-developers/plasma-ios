@@ -18,10 +18,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "l.innerLabel",
@@ -39,10 +39,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
             name: "l.outerLabel",
@@ -293,10 +293,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "m.innerLabel",
@@ -314,10 +314,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
         return .init(
             name: "m.outerLabel",
@@ -568,10 +568,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.inner
         appearance.titleColor = ColorToken.textDefaultSecondary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "s.innerLabel",
@@ -589,10 +589,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
             name: "s.outerLabel",
@@ -843,10 +843,10 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.innerTitleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelPlacement = TextFieldLabelPlacement.outer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = TextFieldClearTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.titleTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
             name: "xs.outerLabel",

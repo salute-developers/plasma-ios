@@ -25,6 +25,7 @@ struct SpinnerSize {
     ] 
 }
 struct SpinnerSizeL: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(4.0)
     var size = CGFloat(56.0)
     public var debugDescription: String {
@@ -32,6 +33,7 @@ struct SpinnerSizeL: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeM: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(4.0)
     var size = CGFloat(48.0)
     public var debugDescription: String {
@@ -39,6 +41,7 @@ struct SpinnerSizeM: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeS: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(3.0)
     var size = CGFloat(36.0)
     public var debugDescription: String {
@@ -46,6 +49,7 @@ struct SpinnerSizeS: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeScalable: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(0.0)
     var size = CGFloat(16.0)
     public var debugDescription: String {
@@ -53,6 +57,7 @@ struct SpinnerSizeScalable: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeXl: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(6.0)
     var size = CGFloat(88.0)
     public var debugDescription: String {
@@ -60,6 +65,7 @@ struct SpinnerSizeXl: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeXs: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(2.0)
     var size = CGFloat(24.0)
     public var debugDescription: String {
@@ -67,6 +73,7 @@ struct SpinnerSizeXs: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeXxl: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(8.0)
     var size = CGFloat(128.0)
     public var debugDescription: String {
@@ -74,6 +81,7 @@ struct SpinnerSizeXxl: SpinnerSizeConfiguration {
     }
 }
 struct SpinnerSizeXxs: SpinnerSizeConfiguration {
+    var angle = CGFloat(360.0)
     var padding = CGFloat(1.0)
     var size = CGFloat(16.0)
     public var debugDescription: String {
@@ -82,10 +90,12 @@ struct SpinnerSizeXxs: SpinnerSizeConfiguration {
 }
 
 struct SpinnerAnySize: SpinnerSizeConfiguration {
+    var angle = CGFloat(0)
     var padding = CGFloat(0)
     var size = CGFloat(0)
 
     init(size: SpinnerSizeConfiguration) {
+        self.angle = size.angle
         self.padding = size.padding
         self.size = size.size
     }

@@ -9,7 +9,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
-        appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyLNormal.typography).asContainer
+        appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
             name: "l",
@@ -20,7 +20,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
-        appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyMNormal.typography).asContainer
+        appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
             name: "m",
@@ -31,7 +31,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
-        appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodySNormal.typography).asContainer
+        appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
             name: "s",
@@ -42,7 +42,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
-        appearance.textTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
             name: "xs",
@@ -128,9 +128,9 @@ private extension TextAreaAppearance {
         var appearance = TextAreaAppearance()
         appearance.backgroundColorReadOnly = ColorToken.surfaceDefaultSolidPrimary.withOpacity(0.4)
         appearance.captionColorReadOnly = ColorToken.textDefaultSecondary
-        appearance.captionTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.captionTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.counterColor = ColorToken.textDefaultSecondary
-        appearance.counterTypography = TextAreaTypography(oneSize: Typographies.bodyXsNormal.typography).asContainer
+        appearance.counterTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccentMain
         appearance.disabledAlpha = 0.4
         appearance.endContentColor = ColorToken.textDefaultSecondary
