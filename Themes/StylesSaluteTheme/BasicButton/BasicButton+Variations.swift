@@ -4,6 +4,342 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.L> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var clear: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "clear",
+            appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.M> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var clear: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "clear",
+            appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.S> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var clear: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "clear",
+            appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.Xs> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var clear: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "clear",
+            appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.clear,
+                self.dark,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
     var `default`: AppearanceVariation<ButtonAppearance> {

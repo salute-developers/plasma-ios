@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
     environment: sdds
 
     steps:
@@ -26,6 +26,13 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '16.1'
+
+      - name: List available simulators
+        run: |
+          echo "=== Available iOS Simulators ==="
+          xcrun simctl list devices available | grep "iPhone"
+          echo "=== Available iOS Versions ==="
+          xcrun simctl list runtimes available | grep "iOS"
 
       - name: Run snapshot tests
         working-directory: SDDSDemoApp
