@@ -5,23 +5,27 @@ public struct ShadowModifier: ViewModifier {
     let token: ShadowToken
     
     public func body(content: Content) -> some View {
-        ZStack {
-            ForEach(0..<token.layers.count, id: \.self) { index in
-                content
-                    .shadow(
-                        color: layer(index).color,
-                        radius: layer(index).blurRadius,
-                        x: layer(index).offsetX,
-                        y: layer(index).offsetY
-                    )
-                    .applyIf(layer(index).spreadRadius > 0) {
-                        $0.shadow(
+        if token.layers.isEmpty {
+            content
+        } else {
+            ZStack {
+                ForEach(0..<token.layers.count, id: \.self) { index in
+                    content
+                        .shadow(
                             color: layer(index).color,
-                            radius: layer(index).blurRadius + layer(index).spreadRadius,
-                            x: layer(index).offsetX + layer(index).spreadRadius,
-                            y: layer(index).offsetY + layer(index).spreadRadius
+                            radius: layer(index).blurRadius,
+                            x: layer(index).offsetX,
+                            y: layer(index).offsetY
                         )
-                    }
+                        .applyIf(layer(index).spreadRadius > 0) {
+                            $0.shadow(
+                                color: layer(index).color,
+                                radius: layer(index).blurRadius + layer(index).spreadRadius,
+                                x: layer(index).offsetX + layer(index).spreadRadius,
+                                y: layer(index).offsetY + layer(index).spreadRadius
+                            )
+                        }
+                }
             }
         }
     }

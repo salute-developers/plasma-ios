@@ -4,6 +4,230 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkButtonVariation.L> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkButtonVariation.M> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkButtonVariation.S> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkButtonVariation.Xs> {
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
     var `default`: AppearanceVariation<ButtonAppearance> {

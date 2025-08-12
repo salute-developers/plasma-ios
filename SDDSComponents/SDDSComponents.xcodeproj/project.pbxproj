@@ -134,6 +134,16 @@
 		812DB76A2D57B4E900D3F4A3 /* TextFieldClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */; };
 		812DB7702D57B50A00D3F4A3 /* TextAreaPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */; };
 		812DB7712D57B50A00D3F4A3 /* TextAreaClearPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */; };
+		8131E84F2E4BAF8700FED868 /* TabBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E84D2E4BAF8700FED868 /* TabBarSizeConfiguration.swift */; };
+		8131E8502E4BAF8700FED868 /* TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E84C2E4BAF8700FED868 /* TabBarAppearance.swift */; };
+		8131E85D2E4C507700FED868 /* TabBarItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8582E4C507700FED868 /* TabBarItemAppearance.swift */; };
+		8131E85E2E4C507700FED868 /* TabBarItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8592E4C507700FED868 /* TabBarItemSizeConfiguration.swift */; };
+		8131E8612E4C507700FED868 /* TabBarIslandAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */; };
+		8131E8622E4C507700FED868 /* TabBarIslandSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */; };
+		8131E8672E4C556A00FED868 /* SDDSTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8662E4C556A00FED868 /* SDDSTabBarItem.swift */; };
+		8131E8692E4C62AD00FED868 /* SDDSTabBarIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */; };
+		8131E86B2E4C6F8E00FED868 /* SDDSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */; };
+		8131E86D2E4C6F9800FED868 /* TabBarItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */; };
 		8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687692E0186A800A1702A /* SDDSTextSkeleton.swift */; };
 		8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687672E0186A800A1702A /* SDDSRectSkeleton.swift */; };
 		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
@@ -491,6 +501,16 @@
 		812DB7672D57B4E900D3F4A3 /* TextFieldClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearPreview.swift; sourceTree = "<group>"; };
 		812DB76D2D57B50A00D3F4A3 /* TextAreaPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaPreview.swift; sourceTree = "<group>"; };
 		812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
+		8131E84C2E4BAF8700FED868 /* TabBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAppearance.swift; sourceTree = "<group>"; };
+		8131E84D2E4BAF8700FED868 /* TabBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSizeConfiguration.swift; sourceTree = "<group>"; };
+		8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandAppearance.swift; sourceTree = "<group>"; };
+		8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandSizeConfiguration.swift; sourceTree = "<group>"; };
+		8131E8582E4C507700FED868 /* TabBarItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemAppearance.swift; sourceTree = "<group>"; };
+		8131E8592E4C507700FED868 /* TabBarItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		8131E8662E4C556A00FED868 /* SDDSTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBarItem.swift; sourceTree = "<group>"; };
+		8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBarIsland.swift; sourceTree = "<group>"; };
+		8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBar.swift; sourceTree = "<group>"; };
+		8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemData.swift; sourceTree = "<group>"; };
 		813687642E0186A800A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
 		813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSizeConfiguration.swift; sourceTree = "<group>"; };
 		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
@@ -1217,6 +1237,47 @@
 			path = TextAreaClear;
 			sourceTree = "<group>";
 		};
+		8131E84E2E4BAF8700FED868 /* SDDSTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */,
+				8131E8652E4C50A200FED868 /* TabBarIslandAppearance */,
+				8131E8642E4C509A00FED868 /* TabBarItemAppearance */,
+				8131E8632E4C508B00FED868 /* TabBarAppearance */,
+				8131E8662E4C556A00FED868 /* SDDSTabBarItem.swift */,
+				8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */,
+				8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */,
+			);
+			path = SDDSTabBar;
+			sourceTree = "<group>";
+		};
+		8131E8632E4C508B00FED868 /* TabBarAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8131E84C2E4BAF8700FED868 /* TabBarAppearance.swift */,
+				8131E84D2E4BAF8700FED868 /* TabBarSizeConfiguration.swift */,
+			);
+			path = TabBarAppearance;
+			sourceTree = "<group>";
+		};
+		8131E8642E4C509A00FED868 /* TabBarItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8131E8582E4C507700FED868 /* TabBarItemAppearance.swift */,
+				8131E8592E4C507700FED868 /* TabBarItemSizeConfiguration.swift */,
+			);
+			path = TabBarItemAppearance;
+			sourceTree = "<group>";
+		};
+		8131E8652E4C50A200FED868 /* TabBarIslandAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */,
+				8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */,
+			);
+			path = TabBarIslandAppearance;
+			sourceTree = "<group>";
+		};
 		813687662E0186A800A1702A /* SkeletonAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1611,6 +1672,7 @@
 			isa = PBXGroup;
 			children = (
 				819A3A672E4E6573006A11F8 /* SDDSLoader */,
+				8131E84E2E4BAF8700FED868 /* SDDSTabBar */,
 				81B510702E3C832600504B1D /* SDDSCodeField */,
 				810F7B572E27F25E00218FE7 /* SDDSAccordion */,
 				810F4C712E268E1D00218FE7 /* SDDSAccordionItem */,
@@ -2380,6 +2442,8 @@
 				812DB7622D57B49F00D3F4A3 /* ChipGroupAlignment.swift in Sources */,
 				817339F12D033EF30092608A /* AvatarImageSource.swift in Sources */,
 				69ED5C0F2D7847E00019EE99 /* SDDSCell.swift in Sources */,
+				8131E84F2E4BAF8700FED868 /* TabBarSizeConfiguration.swift in Sources */,
+				8131E8502E4BAF8700FED868 /* TabBarAppearance.swift in Sources */,
 				818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */,
 				81578DBA2D89ADD200BC7038 /* BottomSheetSizeConfiguration.swift in Sources */,
 				812DB7582D57B44100D3F4A3 /* TextFieldClear.swift in Sources */,
@@ -2427,6 +2491,7 @@
 				81FC47B72D928A2500A83F87 /* BottomSheetDetent.swift in Sources */,
 				81FC47B82D928A2500A83F87 /* BottomSheetHandleUIView.swift in Sources */,
 				818C03E32C479003002C6D0A /* Image+Extensions.swift in Sources */,
+				8131E86D2E4C6F9800FED868 /* TabBarItemData.swift in Sources */,
 				814E303A2C99AFBD004601F7 /* BackportAsyncImage.swift in Sources */,
 				812DB7542D57B44100D3F4A3 /* TextFieldValue.swift in Sources */,
 				812DB7432D57B43900D3F4A3 /* TextArea.swift in Sources */,
@@ -2447,6 +2512,7 @@
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */,
 				8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */,
+				8131E86B2E4C6F8E00FED868 /* SDDSTabBar.swift in Sources */,
 				8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */,
 				8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */,
 				817339ED2D033EC90092608A /* AvatarSizeConfiguration.swift in Sources */,
@@ -2497,6 +2563,7 @@
 				812DB7522D57B44100D3F4A3 /* TextFieldLabelPlacement.swift in Sources */,
 				815D21142DE452100005273B /* PopoverTailShape.swift in Sources */,
 				69B975242D5115DB00CAF208 /* SegmentWidthCalculator.swift in Sources */,
+				8131E8672E4C556A00FED868 /* SDDSTabBarItem.swift in Sources */,
 				810F926D2E1395AB008CA4CA /* SDDSListItem.swift in Sources */,
 				810F926E2E1395AB008CA4CA /* ListSizeConfiguration.swift in Sources */,
 				810F4C772E268E1D00218FE7 /* AccordionItemAppearance.swift in Sources */,
@@ -2610,6 +2677,10 @@
 				81B510732E3C832600504B1D /* SDDSCodeField.swift in Sources */,
 				81B510742E3C832600504B1D /* CodeFieldAppearance.swift in Sources */,
 				812DB7422D57B43900D3F4A3 /* TextAreaSizeConfiguration.swift in Sources */,
+				8131E85D2E4C507700FED868 /* TabBarItemAppearance.swift in Sources */,
+				8131E85E2E4C507700FED868 /* TabBarItemSizeConfiguration.swift in Sources */,
+				8131E8612E4C507700FED868 /* TabBarIslandAppearance.swift in Sources */,
+				8131E8622E4C507700FED868 /* TabBarIslandSizeConfiguration.swift in Sources */,
 				812DB7512D57B44100D3F4A3 /* TextFieldSizeConfiguration.swift in Sources */,
 				812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */,
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
@@ -2618,6 +2689,7 @@
 				694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */,
 				694C288E2D8AFE2700D7F341 /* SelectionControlStateImages.swift in Sources */,
 				81B581032E40A21400504B1D /* CodeFieldAlignment.swift in Sources */,
+				8131E8692E4C62AD00FED868 /* SDDSTabBarIsland.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 				819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */,
 				693FEF2C2DE0991900E14D0E /* DividerAppearance.swift in Sources */,

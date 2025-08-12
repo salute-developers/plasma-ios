@@ -80,6 +80,69 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
     
 }
 
+public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.LPilled> {
+    
+    var `default`: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var dark: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var light: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "light",
+            appearance: appearance.light
+        )
+    }
+    var negative: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.dark,
+                self.light,
+                self.negative,
+                self.positive,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.M> {
     
     var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
@@ -94,6 +157,69 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
+    var `default`: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var dark: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var light: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "light",
+            appearance: appearance.light
+        )
+    }
+    var negative: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.dark,
+                self.light,
+                self.negative,
+                self.positive,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.MPilled> {
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
@@ -232,6 +358,69 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
     
 }
 
+public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.SPilled> {
+    
+    var `default`: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var dark: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var light: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "light",
+            appearance: appearance.light
+        )
+    }
+    var negative: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.dark,
+                self.light,
+                self.negative,
+                self.positive,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.Xs> {
     
     var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
@@ -246,6 +435,69 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
             appearance: appearance
         )
     }
+    
+    var `default`: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var dark: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var light: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "light",
+            appearance: appearance.light
+        )
+    }
+    var negative: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<BadgeAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.dark,
+                self.light,
+                self.negative,
+                self.positive,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.XsPilled> {
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
