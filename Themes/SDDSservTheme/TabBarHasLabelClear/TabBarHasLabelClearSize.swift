@@ -1,0 +1,61 @@
+import Foundation
+import SwiftUI
+import SDDSComponents
+import SDDSThemeCore
+
+struct TabBarHasLabelClearSize {
+    static let l = TabBarHasLabelClearSizeL()
+    static let m = TabBarHasLabelClearSizeM()
+
+    static let all: [TabBarSizeConfiguration] = [
+        TabBarHasLabelClearSize.l,
+        TabBarHasLabelClearSize.m,
+    ] 
+}
+struct TabBarHasLabelClearSizeL: TabBarSizeConfiguration {
+    var contentPaddingBottom = CGFloat(2.0)
+    var contentPaddingEnd = CGFloat(2.0)
+    var contentPaddingStart = CGFloat(2.0)
+    var contentPaddingTop = CGFloat(2.0)
+    var dividerThickness = CGFloat(0)
+    var itemSpacing = CGFloat(2.0)
+    var topShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    public var debugDescription: String {
+        return "TabBarHasLabelClearSize"
+    }
+}
+struct TabBarHasLabelClearSizeM: TabBarSizeConfiguration {
+    var contentPaddingBottom = CGFloat(2.0)
+    var contentPaddingEnd = CGFloat(2.0)
+    var contentPaddingStart = CGFloat(2.0)
+    var contentPaddingTop = CGFloat(2.0)
+    var dividerThickness = CGFloat(0)
+    var itemSpacing = CGFloat(2.0)
+    var topShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    public var debugDescription: String {
+        return "TabBarHasLabelClearSize"
+    }
+}
+
+struct TabBarHasLabelClearAnySize: TabBarSizeConfiguration {
+    var contentPaddingBottom = CGFloat(0)
+    var contentPaddingEnd = CGFloat(0)
+    var contentPaddingStart = CGFloat(0)
+    var contentPaddingTop = CGFloat(0)
+    var dividerThickness = CGFloat(0)
+    var itemSpacing = CGFloat(0)
+    var topShape = DefaultPathDrawer() as PathDrawer
+
+    init(size: TabBarSizeConfiguration) {
+        self.contentPaddingBottom = size.contentPaddingBottom
+        self.contentPaddingEnd = size.contentPaddingEnd
+        self.contentPaddingStart = size.contentPaddingStart
+        self.contentPaddingTop = size.contentPaddingTop
+        self.dividerThickness = size.dividerThickness
+        self.itemSpacing = size.itemSpacing
+        self.topShape = size.topShape
+    }
+    var debugDescription: String {
+        return "TabBarHasLabelClearAnySize"
+    }
+}

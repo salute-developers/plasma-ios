@@ -9,6 +9,7 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
             if let style = variation?.styles.first {
                 self.style = style
             } else if let appearance = variation?.appearance {
+                self.style = nil
                 self.appearance = appearance
             }
         }
