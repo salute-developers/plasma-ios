@@ -1,8 +1,8 @@
 //
-//  SwitchSnapshotTest.swift
+//  SwitchPlasmaHomeDSSnapshotTest.swift
 //  SDDSDemoApp
 //
-//  Created by Булинов Ангрик Александрович on 23.04.2025.
+//  Created by Булинов Ангрик Александрович on 12.08.2025.
 //
 
 @testable import SDSnapshots
@@ -10,50 +10,50 @@
 @testable import SDDSComponents
 @testable import SDDSIcons
 import XCTest
-import SDDSServTheme
+import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class SwitchSnapshotTest: XCTestCase {
+final class SwitchPlasmaHomeDSSnapshotTest: XCTestCase {
     
     @MainActor
-    func testSwitchSizeL() async throws {
+    func testSwitchSizeLPlasmaHomeDS() async throws {
         let appearance = Switch.l.appearance
         try await runSnapshotTest(view: SwitchSizeL(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeM() async throws {
+    func testSwitchSizeMPlasmaHomeDS() async throws {
         let appearance = Switch.m.appearance
         try await runSnapshotTest(view: SwitchSizeM(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeS() async throws {
+    func testSwitchSizeSPlasmaHomeDS() async throws {
         let appearance = Switch.s.appearance
         try await runSnapshotTest(view: SwitchSizeS(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeDisabled() async throws {
+    func testSwitchSizeDisabledPlasmaHomeDS() async throws {
         let appearance = Switch.m.appearance
         try await runSnapshotTest(view: SwitchSizeDisabled(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeDisabledOff() async throws {
+    func testSwitchSizeDisabledOffPlasmaHomeDS() async throws {
         let appearance = Switch.m.appearance
         try await runSnapshotTest(view: SwitchSizeDisabledOff(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeLToggleS() async throws {
+    func testSwitchSizeLToggleSPlasmaHomeDS() async throws {
         let appearance = Switch.l.toggleS.appearance
         try await runSnapshotTest(view: SwitchSizeL(appearance: appearance))
     }
     
     @MainActor
-    func testSwitchSizeSToggleS() async throws {
+    func testSwitchSizeSToggleSPlasmaHomeDS() async throws {
         let appearance = Switch.s.toggleS.appearance
         try await runSnapshotTest(view: SwitchSizeM(appearance: appearance))
     }

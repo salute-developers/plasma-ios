@@ -45,4 +45,16 @@ final class SwitchStylesSaluteSnapshotTest: XCTestCase {
         let appearance = Switch.m.appearance
         try await runSnapshotTest(view: SwitchSizeDisabledOff(appearance: appearance))
     }
+    
+    @MainActor
+    func testSwitchSizeLToggleSStylesSalute() async throws {
+        let appearance = Switch.l.toggleS.appearance
+        try await runSnapshotTest(view: SwitchSizeL(appearance: appearance))
+    }
+    
+    @MainActor
+    func testSwitchSizeSToggleSStylesSalute() async throws {
+        let appearance = Switch.s.toggleS.appearance
+        try await runSnapshotTest(view: SwitchSizeM(appearance: appearance))
+    }
 }
