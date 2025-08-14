@@ -6,8 +6,8 @@ import SDDSComponents
 final class SpinnerViewModel: ComponentViewModel<SpinnerVariationProvider> {
     @Published var isAnimating: Bool = true
     
-    init() {
-        super.init(variationProvider: SpinnerVariationProvider())
+    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
+        super.init(variationProvider: SpinnerVariationProvider(), componentViewLayoutMode: componentViewLayoutMode)
         
         if let firstVariation = variations.first {
             selectVariation(firstVariation)

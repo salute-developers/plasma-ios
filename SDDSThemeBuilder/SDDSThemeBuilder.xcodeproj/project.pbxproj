@@ -297,6 +297,9 @@
 		818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */; };
 		818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */; };
 		818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */; };
+		819A2E672E4E6364006A11F8 /* LoaderProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E662E4E6364006A11F8 /* LoaderProps.swift */; };
+		819A2E6B2E4E636C006A11F8 /* LoaderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E692E4E636C006A11F8 /* LoaderSize.swift */; };
+		819A2E6C2E4E636C006A11F8 /* LoaderAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */; };
 		819B2A892BF23B1600688624 /* Font+FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2A882BF23B1600688624 /* Font+FontName.swift */; };
 		819B2ACA2BF280F900688624 /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2AC92BF280F900688624 /* SDDSDemoApp.swift */; };
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
@@ -793,6 +796,9 @@
 		818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTokenContextBuilder.swift; sourceTree = "<group>"; };
 		818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
 		818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		819A2E662E4E6364006A11F8 /* LoaderProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProps.swift; sourceTree = "<group>"; };
+		819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAppearance.swift; sourceTree = "<group>"; };
+		819A2E692E4E636C006A11F8 /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
 		819B2A882BF23B1600688624 /* Font+FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+FontName.swift"; sourceTree = "<group>"; };
 		819B2AC72BF280F900688624 /* SDDSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819B2AC92BF280F900688624 /* SDDSDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDemoApp.swift; sourceTree = "<group>"; };
@@ -1372,6 +1378,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				819A2E662E4E6364006A11F8 /* LoaderProps.swift */,
 				81B510692E3C7CBD00504B1D /* CodeFieldProps.swift */,
 				810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */,
 				810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */,
@@ -1416,6 +1423,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				819A2E6A2E4E636C006A11F8 /* Loader */,
 				81090AC62E4393310086BB29 /* Spinner */,
 				81B510662E3C7CA100504B1D /* CodeField */,
 				810F4C632E2674EB00218FE7 /* Accordion */,
@@ -1930,6 +1938,15 @@
 				816FBD1A2D63530D0009AC1C /* Spacings.stencil */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		819A2E6A2E4E636C006A11F8 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */,
+				819A2E692E4E636C006A11F8 /* LoaderSize.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		819B2AC82BF280F900688624 /* SDDSDemo */ = {
@@ -2763,6 +2780,8 @@
 				815F42CC2D48B8E800F97E63 /* ComponentTypography.stencil in Sources */,
 				697970E22D63A71C008306A8 /* CellAppearance.swift in Sources */,
 				817539842BD008A500138866 /* StencilTemplate.swift in Sources */,
+				819A2E6B2E4E636C006A11F8 /* LoaderSize.swift in Sources */,
+				819A2E6C2E4E636C006A11F8 /* LoaderAppearance.swift in Sources */,
 				8166B4402D5BD7C40044A680 /* RequiredPlacementContextBuilder.swift in Sources */,
 				81CB0FE92C245052003B1064 /* EnsureValueExistsNode.swift in Sources */,
 				8178A7462C733D1400DFDA61 /* HexConverter.swift in Sources */,
@@ -2787,6 +2806,7 @@
 				693FEF372DE4697900E14D0E /* DividerProps.swift in Sources */,
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
+				819A2E672E4E6364006A11F8 /* LoaderProps.swift in Sources */,
 				81F89E512D81A6EA00A41C89 /* CardSize.swift in Sources */,
 				812DB6F12D55E44700D3F4A3 /* NextContextBuilder.swift in Sources */,
 				81E1EDBB2BD2B9F400F86AE1 /* ContexBuilder.swift in Sources */,
