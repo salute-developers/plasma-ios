@@ -859,6 +859,20 @@ enum Theme: String, CaseIterable {
             []
         }
     }
+    
+    var loaderVariations: [Variation<LoaderAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Loader.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.Loader.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
     var codeFieldVariations: [Variation<CodeFieldAppearance>] {
         switch self {
         case .sdddsServTheme:

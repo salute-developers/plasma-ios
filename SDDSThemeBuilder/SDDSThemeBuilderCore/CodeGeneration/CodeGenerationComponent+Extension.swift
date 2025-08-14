@@ -67,6 +67,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case accordionClearActionStart = "AccordionClearActionStart"
     case accordionClearActionEnd = "AccordionClearActionEnd"
     case spinner = "Spinner"
+    case loader = "Loader"
     case codeField = "CodeField"
     
     static var supportedComponents: [CodeGenerationComponent] {
@@ -137,6 +138,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .accordionClearActionStart,
             .accordionClearActionEnd,
             .spinner,
+            .loader,
             .codeField
         ]
     }
@@ -220,6 +222,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ScrollbarProps, ScrollbarAppearance, ScrollbarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .spinner:
             GenerateComponentCommand<SpinnerProps, SpinnerAppearance, SpinnerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .loader:
+            GenerateComponentCommand<LoaderProps, LoaderAppearance, LoaderSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeField:
             GenerateComponentCommand<CodeFieldProps, CodeFieldAppearance, CodeFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
@@ -301,6 +305,8 @@ extension CodeGenerationComponent {
             "ScrollbarAppearance"
         case .spinner:
             "SpinnerAppearance"
+        case .loader:
+            "LoaderAppearance"
         case .codeField:
             "CodeFieldAppearance"
         }
@@ -383,6 +389,8 @@ extension CodeGenerationComponent {
             "ScrollbarSizeConfiguration"
         case .spinner:
             "SpinnerSizeConfiguration"
+        case .loader:
+            "LoaderSizeConfiguration"
         case .codeField:
             "CodeFieldSizeConfiguration"
         }
@@ -522,6 +530,8 @@ extension CodeGenerationComponent {
             "scroll_bar_config.json"
         case .spinner:
             "spinner_config.json"
+        case .loader:
+            "loader_config.json"
         case .codeField:
             "code_field_config.json"
         }

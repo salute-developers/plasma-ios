@@ -166,4 +166,9 @@ public extension EnvironmentValues {
         get { self[SpinnerAppearance.self] }
         set { self[SpinnerAppearance.self] = newValue }
     }
+    
+    var loaderAppearance: LoaderAppearance {
+        get { self[LoaderAppearance.self] }
+        set { self[LoaderAppearance.self] = newValue }
+    }
 }

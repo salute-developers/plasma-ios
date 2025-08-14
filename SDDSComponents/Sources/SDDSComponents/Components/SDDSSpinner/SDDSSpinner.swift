@@ -53,6 +53,10 @@ public struct SDDSSpinner: View {
         self._appearance = appearance
     }
     
+    public init(data: SDDSSpinnerData) {
+        self.init(isAnimating: data.isAnimating, appearance: data.appearance)
+    }
+    
     public var body: some View {
         ZStack {
             if appearance.backgroundColor != .clearColor {

@@ -232,6 +232,11 @@
 		818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */; platformFilter = ios; };
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
+		819A3A682E4E6573006A11F8 /* LoaderAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A642E4E6573006A11F8 /* LoaderAppearance.swift */; };
+		819A3A692E4E6573006A11F8 /* SDDSLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A662E4E6573006A11F8 /* SDDSLoader.swift */; };
+		819A3A6A2E4E6573006A11F8 /* LoaderSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */; };
+		819A3A6D2E4E666A006A11F8 /* SDDSCircularProgressBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */; };
+		819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */; };
 		81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */; };
 		81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */; };
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
@@ -605,6 +610,11 @@
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
+		819A3A642E4E6573006A11F8 /* LoaderAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAppearance.swift; sourceTree = "<group>"; };
+		819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSizeConfiguration.swift; sourceTree = "<group>"; };
+		819A3A662E4E6573006A11F8 /* SDDSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSLoader.swift; sourceTree = "<group>"; };
+		819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCircularProgressBarData.swift; sourceTree = "<group>"; };
+		819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSpinnerData.swift; sourceTree = "<group>"; };
 		81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+ScrollbarModifier.swift"; sourceTree = "<group>"; };
 		81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarModifier.swift; sourceTree = "<group>"; };
 		81A079052DA3FB5400260DC9 /* ScrollBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarData.swift; sourceTree = "<group>"; };
@@ -1131,6 +1141,7 @@
 				81205C222E2905C700AA29ED /* StrokeCap.swift */,
 				81205C192E29055300AA29ED /* SpinnerAppearance */,
 				81205C1C2E29055300AA29ED /* SDDSSpinner.swift */,
+				819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */,
 			);
 			path = SDDSSpinner;
 			sourceTree = "<group>";
@@ -1376,6 +1387,7 @@
 				693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */,
 				816F62CE2DCBA8F000EC9121 /* CircularProgressBarAppearance */,
 				816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */,
+				819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */,
 			);
 			path = SDDSCircularProgressBar;
 			sourceTree = "<group>";
@@ -1598,6 +1610,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				819A3A672E4E6573006A11F8 /* SDDSLoader */,
 				81B510702E3C832600504B1D /* SDDSCodeField */,
 				810F7B572E27F25E00218FE7 /* SDDSAccordion */,
 				810F4C712E268E1D00218FE7 /* SDDSAccordionItem */,
@@ -1788,6 +1801,24 @@
 				81998FFF2C3555D4009074B7 /* Opacity.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		819A3A672E4E6573006A11F8 /* SDDSLoader */ = {
+			isa = PBXGroup;
+			children = (
+				819A3A6B2E4E65B3006A11F8 /* LoaderAppearance */,
+				819A3A662E4E6573006A11F8 /* SDDSLoader.swift */,
+			);
+			path = SDDSLoader;
+			sourceTree = "<group>";
+		};
+		819A3A6B2E4E65B3006A11F8 /* LoaderAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				819A3A642E4E6573006A11F8 /* LoaderAppearance.swift */,
+				819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */,
+			);
+			path = LoaderAppearance;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -2385,6 +2416,9 @@
 				81E934442DEDF98F00B76E38 /* ToastAccessibility.swift in Sources */,
 				81E934462DEDF98F00B76E38 /* SDDSToast.swift in Sources */,
 				81B58B402E40A8B600504B1D /* CodeFieldOnlyDigitsValidation.swift in Sources */,
+				819A3A682E4E6573006A11F8 /* LoaderAppearance.swift in Sources */,
+				819A3A692E4E6573006A11F8 /* SDDSLoader.swift in Sources */,
+				819A3A6A2E4E6573006A11F8 /* LoaderSizeConfiguration.swift in Sources */,
 				81FC47B32D928A2500A83F87 /* View+SDDSBottomSheet.swift in Sources */,
 				81FC47B42D928A2500A83F87 /* BottomSheetHandleView.swift in Sources */,
 				81FC47B52D928A2500A83F87 /* BottomSheetViewController.swift in Sources */,
@@ -2407,6 +2441,7 @@
 				812DB7602D57B49F00D3F4A3 /* ChipGroupAppearance.swift in Sources */,
 				690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */,
 				815D1EF72DE04A480005273B /* PopoverSizeCalculator.swift in Sources */,
+				819A3A6D2E4E666A006A11F8 /* SDDSCircularProgressBarData.swift in Sources */,
 				690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */,
 				693FEF392DE477AB00E14D0E /* DividerSizeConfiguration.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
@@ -2584,6 +2619,7 @@
 				694C288E2D8AFE2700D7F341 /* SelectionControlStateImages.swift in Sources */,
 				81B581032E40A21400504B1D /* CodeFieldAlignment.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
+				819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */,
 				693FEF2C2DE0991900E14D0E /* DividerAppearance.swift in Sources */,
 				69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
