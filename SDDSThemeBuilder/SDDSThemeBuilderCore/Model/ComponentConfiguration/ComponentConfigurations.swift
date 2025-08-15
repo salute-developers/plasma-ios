@@ -36,4 +36,5 @@ typealias DropdownMenuConfiguration = ComponentConfiguration<DropdownMenuProps>
 typealias AccordionItemConfiguration = ComponentConfiguration<AccordionItemProps>
 typealias AccordionActionConfiguration = ComponentConfiguration<AccordionActionProps>
 typealias SpinnerConfiguration = ComponentConfiguration<SpinnerProps>
+typealias LoaderConfiguration = ComponentConfiguration<LoaderProps>
 typealias CodeFieldConfiguration = ComponentConfiguration<CodeFieldProps>

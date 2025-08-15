@@ -3,32 +3,46 @@ import SDDSComponents
 import SDDSIcons
 
 struct SpinnerView: View {
-    @ObservedObject private var viewModel: SpinnerViewModel = SpinnerViewModel()
+    @ObservedObject private var viewModel: SpinnerViewModel
     @Environment(\.colorScheme) private var colorScheme
     
+    init(viewModel: SpinnerViewModel = .init()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Spacer()
-                    SDDSSpinner(
-                        isAnimating: viewModel.isAnimating,
-                        appearance: viewModel.appearance
-                    )
-                    Spacer()
+        switch viewModel.componentViewLayoutMode {
+        case .screen:
+            List {
+                Section {
+                    HStack {
+                        Spacer()
+                        SDDSSpinner(
+                            isAnimating: viewModel.isAnimating,
+                            appearance: viewModel.appearance
+                        )
+                        Spacer()
+                    }
+                }
+                
+                Section {
+                    settings
+                }
+                
+                Section {
+                    VariationsView(viewModel: viewModel)
                 }
             }
-            
-            Section {
-                VStack(alignment: .leading) {
-                    Toggle("Is Animating", isOn: $viewModel.isAnimating)
-                }
-            }
-            
-            Section {
-                VariationsView(viewModel: viewModel)
-            }
+            .navigationTitle("Spinner")
+        case .subScreen:
+            settings
         }
-        .navigationTitle("Spinner")
+    }
+    
+    @ViewBuilder
+    private var settings: some View {
+        VStack(alignment: .leading) {
+            Toggle("Is Animating", isOn: $viewModel.isAnimating)
+        }
     }
 }

@@ -3,42 +3,56 @@ import SDDSComponents
 import SDDSIcons
 
 struct CircularProgressBarView: View {
-    @ObservedObject private var viewModel: CircularProgressBarViewModel = CircularProgressBarViewModel()
+    @ObservedObject private var viewModel: CircularProgressBarViewModel
     @Environment(\.colorScheme) private var colorScheme
     
+    init(viewModel: CircularProgressBarViewModel = .init()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Spacer()
-                    SDDSCircularProgressBar(
-                        progress: viewModel.progress,
-                        hasTrack: viewModel.hasTrack,
-                        appearance: viewModel.appearance,
-                        content: content
-                    )
-                    Spacer()
+        switch viewModel.componentViewLayoutMode {
+        case .screen:
+            List {
+                Section {
+                    HStack {
+                        Spacer()
+                        SDDSCircularProgressBar(
+                            progress: viewModel.progress,
+                            hasTrack: viewModel.hasTrack,
+                            appearance: viewModel.appearance,
+                            content: content
+                        )
+                        Spacer()
+                    }
+                }
+                
+                Section {
+                    settings
+                }
+                
+                Section {
+                    VariationsView(viewModel: viewModel)
                 }
             }
-            
-            Section {
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Progress")
-                        .font(.headline)
-                    
-                    Slider(value: $viewModel.progress, in: 0...1)
-                    
-                    Toggle("Has Track", isOn: $viewModel.hasTrack)
-                    
-                    Toggle("Custom Content", isOn: $viewModel.customContent)
-                }
-            }
-            
-            Section {
-                VariationsView(viewModel: viewModel)
-            }
+            .navigationTitle("CircularProgressBar")
+        case .subScreen:
+            settings
         }
-        .navigationTitle("CircularProgressBar")
+    }
+    
+    @ViewBuilder
+    private var settings: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Progress")
+                .font(.headline)
+            
+            Slider(value: $viewModel.progress, in: 0...1)
+            
+            Toggle("Has Track", isOn: $viewModel.hasTrack)
+            
+            Toggle("Custom Content", isOn: $viewModel.customContent)
+        }
     }
     
     private var content: AnyView? {

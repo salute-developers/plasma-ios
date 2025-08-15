@@ -9,17 +9,11 @@ final class CircularProgressBarViewModel: ComponentViewModel<CircularProgressBar
     @Published var hasTrack: Bool = true
     @Published var customContent: Bool = false
     
-    init() {
-        super.init(variationProvider: CircularProgressBarVariationProvider())
+    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
+        super.init(variationProvider: CircularProgressBarVariationProvider(), componentViewLayoutMode: componentViewLayoutMode)
         
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
-    }
-    
-    override func onUpdateAppearance() {
-        super.onUpdateAppearance()
-        
-        
     }
 }

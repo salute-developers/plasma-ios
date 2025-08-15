@@ -50,6 +50,16 @@ public struct SDDSCircularProgressBar: View {
         self._appearance = appearance
     }
     
+    public init(data: SDDSCircularProgressBarData) {
+        self.init(
+            progress: data.progress,
+            suffix: data.suffix,
+            hasTrack: data.hasTrack,
+            appearance: data.appearance,
+            content: data.content
+        )
+    }
+    
     public var body: some View {
         ZStack {
             if hasTrack {

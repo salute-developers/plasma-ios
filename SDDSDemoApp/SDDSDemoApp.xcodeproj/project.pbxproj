@@ -132,6 +132,9 @@
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
 		819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A382E2CC6928700A1377F /* ChipGroupView.swift */; };
+		819A46692E4E6879006A11F8 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A46682E4E6877006A11F8 /* LoaderView.swift */; };
+		819A466B2E4E687E006A11F8 /* LoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466A2E4E687B006A11F8 /* LoaderViewModel.swift */; };
+		819A466D2E4E6886006A11F8 /* LoaderVariationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466C2E4E6880006A11F8 /* LoaderVariationsProvider.swift */; };
 		81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81A0795E2DA6706500260DC9 /* SDDSComponents */; };
 		81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81A079612DA6707100260DC9 /* SDDSThemeCore */; };
 		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
@@ -312,6 +315,9 @@
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		819A382E2CC6928700A1377F /* ChipGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipGroupView.swift; sourceTree = "<group>"; };
+		819A46682E4E6877006A11F8 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		819A466A2E4E687B006A11F8 /* LoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewModel.swift; sourceTree = "<group>"; };
+		819A466C2E4E6880006A11F8 /* LoaderVariationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderVariationsProvider.swift; sourceTree = "<group>"; };
 		81A613282D5BAB4200ADE1CD /* VariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationProvider.swift; sourceTree = "<group>"; };
 		81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModel.swift; sourceTree = "<group>"; };
 		81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVariationProvider.swift; sourceTree = "<group>"; };
@@ -629,6 +635,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				819A46672E4E686A006A11F8 /* LoaderView */,
 				81B51AB22E3C892600504B1D /* CodeFieldView */,
 				810F84BB2E27F5B500218FE7 /* AccordionView */,
 				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
@@ -929,6 +936,16 @@
 			path = ChipGroupView;
 			sourceTree = "<group>";
 		};
+		819A46672E4E686A006A11F8 /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				819A466C2E4E6880006A11F8 /* LoaderVariationsProvider.swift */,
+				819A466A2E4E687B006A11F8 /* LoaderViewModel.swift */,
+				819A46682E4E6877006A11F8 /* LoaderView.swift */,
+			);
+			path = LoaderView;
+			sourceTree = "<group>";
+		};
 		81A613272D5BAB3500ADE1CD /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,6 +1239,7 @@
 				815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */,
 				81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */,
 				810F95942E13A1FE008CA4CA /* ListView.swift in Sources */,
+				819A466B2E4E687E006A11F8 /* LoaderViewModel.swift in Sources */,
 				810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */,
 				810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */,
 				810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */,
@@ -1266,6 +1284,7 @@
 				8174BA4A2D5DED8A00EA3E68 /* ChipGroupVariationProvider.swift in Sources */,
 				81763B142D6DF43B00904D4A /* BadgeViewProvider.swift in Sources */,
 				81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */,
+				819A466D2E4E6886006A11F8 /* LoaderVariationsProvider.swift in Sources */,
 				81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */,
 				81368A6E2E01879900A1702A /* RectSkeletonVariationProvider.swift in Sources */,
 				81368A6F2E01879900A1702A /* TextSkeletonVariationProvider.swift in Sources */,
@@ -1303,6 +1322,7 @@
 				810F55E02E27A9D100218FE7 /* AccordionItemLayout.swift in Sources */,
 				81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */,
 				8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */,
+				819A46692E4E6879006A11F8 /* LoaderView.swift in Sources */,
 				8162435D2CB9429400506E1C /* RadioboxGroupViewModel.swift in Sources */,
 				81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */,
 				811C684D2CC8024A00480F89 /* TextAreaView.swift in Sources */,
