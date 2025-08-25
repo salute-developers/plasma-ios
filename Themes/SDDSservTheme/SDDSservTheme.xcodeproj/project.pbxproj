@@ -136,6 +136,10 @@
 		81DE0BEC2E20E6CA00DE2018 /* ListNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BCD2E20E6CA00DE2018 /* ListNormal+Variations.swift */; };
 		81DE0BED2E20E6CA00DE2018 /* Scrollbar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BD72E20E6CA00DE2018 /* Scrollbar+Variations.swift */; };
 		81DE0BEE2E20E6CA00DE2018 /* ListItemNormal+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BC32E20E6CA00DE2018 /* ListItemNormal+Variations.swift */; };
+		81EE9ECF2E5CA216006F9E5D /* Loader+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ECB2E5CA216006F9E5D /* Loader+Variations.swift */; };
+		81EE9ED02E5CA216006F9E5D /* LoaderTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ECD2E5CA216006F9E5D /* LoaderTypography.swift */; };
+		81EE9ED12E5CA216006F9E5D /* LoaderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ECC2E5CA216006F9E5D /* LoaderSize.swift */; };
+		81EE9ED22E5CA216006F9E5D /* Loader+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ECA2E5CA216006F9E5D /* Loader+BaseVariations.swift */; };
 		81F2E6B02DF9FE6100708B40 /* IconBadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E66C2DF9FE6100708B40 /* IconBadgeSize.swift */; };
 		81F2E6B12DF9FE6100708B40 /* CircularProgressBarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E64F2DF9FE6100708B40 /* CircularProgressBarTypography.swift */; };
 		81F2E6B22DF9FE6100708B40 /* IconButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E67A2DF9FE6100708B40 /* IconButton+Variations.swift */; };
@@ -516,6 +520,10 @@
 		81DE0BD82E20E6CA00DE2018 /* ScrollbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSize.swift; sourceTree = "<group>"; };
 		81DE0BD92E20E6CA00DE2018 /* ScrollbarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarTypography.swift; sourceTree = "<group>"; };
 		81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		81EE9ECA2E5CA216006F9E5D /* Loader+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loader+BaseVariations.swift"; sourceTree = "<group>"; };
+		81EE9ECB2E5CA216006F9E5D /* Loader+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loader+Variations.swift"; sourceTree = "<group>"; };
+		81EE9ECC2E5CA216006F9E5D /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
+		81EE9ECD2E5CA216006F9E5D /* LoaderTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTypography.swift; sourceTree = "<group>"; };
 		81F2E5FE2DF9FE6100708B40 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
 		81F2E5FF2DF9FE6100708B40 /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
 		81F2E6002DF9FE6100708B40 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
@@ -739,6 +747,7 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				81EE9ECE2E5CA216006F9E5D /* Loader */,
 				8131BEFC2E44786900FED868 /* Tokens */,
 				816168962E33B7F2003C1071 /* AccordionClearActionEnd */,
 				8161689B2E33B7F2003C1071 /* AccordionClearActionStart */,
@@ -1152,6 +1161,17 @@
 				81DE0BD92E20E6CA00DE2018 /* ScrollbarTypography.swift */,
 			);
 			path = Scrollbar;
+			sourceTree = "<group>";
+		};
+		81EE9ECE2E5CA216006F9E5D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				81EE9ECA2E5CA216006F9E5D /* Loader+BaseVariations.swift */,
+				81EE9ECB2E5CA216006F9E5D /* Loader+Variations.swift */,
+				81EE9ECC2E5CA216006F9E5D /* LoaderSize.swift */,
+				81EE9ECD2E5CA216006F9E5D /* LoaderTypography.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		81F2E6022DF9FE6100708B40 /* Avatar */ = {
@@ -1894,6 +1914,10 @@
 				8161692D2E33B7F2003C1071 /* DropdownMenuListNormal+Variations.swift in Sources */,
 				8161692E2E33B7F2003C1071 /* SpinnerSize.swift in Sources */,
 				8161692F2E33B7F2003C1071 /* AccordionSolidActionEndSize.swift in Sources */,
+				81EE9ECF2E5CA216006F9E5D /* Loader+Variations.swift in Sources */,
+				81EE9ED02E5CA216006F9E5D /* LoaderTypography.swift in Sources */,
+				81EE9ED12E5CA216006F9E5D /* LoaderSize.swift in Sources */,
+				81EE9ED22E5CA216006F9E5D /* Loader+BaseVariations.swift in Sources */,
 				816169302E33B7F2003C1071 /* DropdownMenuTightSize.swift in Sources */,
 				816169312E33B7F2003C1071 /* ListItemNormal+Variations.swift in Sources */,
 				816169322E33B7F2003C1071 /* DropdownMenuNormal+BaseVariations.swift in Sources */,
@@ -2297,7 +2321,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.13.0;
+				MARKETING_VERSION = 0.14.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;
@@ -2338,7 +2362,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.13.0;
+				MARKETING_VERSION = 0.14.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSservTheme;

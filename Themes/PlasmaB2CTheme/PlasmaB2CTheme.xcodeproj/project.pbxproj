@@ -132,6 +132,10 @@
 		81DE0BC02E20E61900DE2018 /* ScrollbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BAB2E20E61900DE2018 /* ScrollbarSize.swift */; };
 		81DE0BC12E20E61900DE2018 /* ListNormalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BA12E20E61900DE2018 /* ListNormalSize.swift */; };
 		81E9D4CD6A4716F2C3A78BDB /* SBSansText-Light.otf in Sources */ = {isa = PBXBuildFile; fileRef = 44471238CEF59A81ECFC4067 /* SBSansText-Light.otf */; };
+		81EE9ED82E5CA22E006F9E5D /* LoaderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ED52E5CA22E006F9E5D /* LoaderSize.swift */; };
+		81EE9ED92E5CA22E006F9E5D /* LoaderTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ED62E5CA22E006F9E5D /* LoaderTypography.swift */; };
+		81EE9EDA2E5CA22E006F9E5D /* Loader+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ED42E5CA22E006F9E5D /* Loader+Variations.swift */; };
+		81EE9EDB2E5CA22E006F9E5D /* Loader+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE9ED32E5CA22E006F9E5D /* Loader+BaseVariations.swift */; };
 		81F2E88C2DF9FF0500708B40 /* IconBadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8242DF9FF0500708B40 /* IconBadgeTransparent+Variations.swift */; };
 		81F2E88D2DF9FF0500708B40 /* Badge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E79A2DF9FF0500708B40 /* Badge+Variations.swift */; };
 		81F2E88E2DF9FF0500708B40 /* TextAreaClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8742DF9FF0500708B40 /* TextAreaClear+Variations.swift */; };
@@ -524,6 +528,10 @@
 		81DE0BAA2E20E61900DE2018 /* Scrollbar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scrollbar+Variations.swift"; sourceTree = "<group>"; };
 		81DE0BAB2E20E61900DE2018 /* ScrollbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSize.swift; sourceTree = "<group>"; };
 		81DE0BAC2E20E61900DE2018 /* ScrollbarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarTypography.swift; sourceTree = "<group>"; };
+		81EE9ED32E5CA22E006F9E5D /* Loader+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loader+BaseVariations.swift"; sourceTree = "<group>"; };
+		81EE9ED42E5CA22E006F9E5D /* Loader+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loader+Variations.swift"; sourceTree = "<group>"; };
+		81EE9ED52E5CA22E006F9E5D /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
+		81EE9ED62E5CA22E006F9E5D /* LoaderTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTypography.swift; sourceTree = "<group>"; };
 		81F2E78F2DF9FF0500708B40 /* Avatar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+BaseVariations.swift"; sourceTree = "<group>"; };
 		81F2E7902DF9FF0500708B40 /* Avatar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Avatar+Variations.swift"; sourceTree = "<group>"; };
 		81F2E7912DF9FF0500708B40 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
@@ -1112,6 +1120,17 @@
 			path = Scrollbar;
 			sourceTree = "<group>";
 		};
+		81EE9ED72E5CA22E006F9E5D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				81EE9ED32E5CA22E006F9E5D /* Loader+BaseVariations.swift */,
+				81EE9ED42E5CA22E006F9E5D /* Loader+Variations.swift */,
+				81EE9ED52E5CA22E006F9E5D /* LoaderSize.swift */,
+				81EE9ED62E5CA22E006F9E5D /* LoaderTypography.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		81F2E7932DF9FF0500708B40 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1662,6 +1681,7 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81EE9ED72E5CA22E006F9E5D /* Loader */,
 				8131BF152E44788400FED868 /* Tokens */,
 				8161694A2E33B812003C1071 /* AccordionClearActionEnd */,
 				8161694F2E33B812003C1071 /* AccordionClearActionStart */,
@@ -1954,6 +1974,10 @@
 				816169CC2E33B812003C1071 /* AccordionSolidActionStart+BaseVariations.swift in Sources */,
 				816169CD2E33B812003C1071 /* AccordionClearActionEndTypography.swift in Sources */,
 				816169CE2E33B812003C1071 /* AccordionItemSolidActionStart+Variations.swift in Sources */,
+				81EE9ED82E5CA22E006F9E5D /* LoaderSize.swift in Sources */,
+				81EE9ED92E5CA22E006F9E5D /* LoaderTypography.swift in Sources */,
+				81EE9EDA2E5CA22E006F9E5D /* Loader+Variations.swift in Sources */,
+				81EE9EDB2E5CA22E006F9E5D /* Loader+BaseVariations.swift in Sources */,
 				816169D02E33B812003C1071 /* DropdownMenuTight+Variations.swift in Sources */,
 				816169D12E33B812003C1071 /* AccordionSolidActionStartTypography.swift in Sources */,
 				816169D22E33B812003C1071 /* AccordionClearActionStart+BaseVariations.swift in Sources */,
@@ -2184,7 +2208,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.13.0;
+				MARKETING_VERSION = 0.14.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;
@@ -2285,7 +2309,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.13.0;
+				MARKETING_VERSION = 0.14.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;
