@@ -11,6 +11,7 @@ CHANGED_MODULES=${2:-""}
 
 echo "Bumping versions with type: $BUMP_TYPE"
 echo "Changed modules: $CHANGED_MODULES"
+echo "OS Type: $OSTYPE"
 
 # Функция для повышения версии
 bump_version() {
@@ -62,7 +63,37 @@ update_version_in_project() {
     local new_version=$3
     
     echo "Updating $project_file: $old_version -> $new_version"
-    sed -i '' "s/MARKETING_VERSION = $old_version;/MARKETING_VERSION = $new_version;/g" "$project_file"
+    
+    # Проверяем, что файл существует
+    if [[ ! -f "$project_file" ]]; then
+        echo "Error: Project file $project_file does not exist!" >&2
+        return 1
+    fi
+    
+    # Проверяем, что в файле есть строка с текущей версией
+    if ! grep -q "MARKETING_VERSION = $old_version;" "$project_file"; then
+        echo "Error: Could not find 'MARKETING_VERSION = $old_version;' in $project_file" >&2
+        echo "Available MARKETING_VERSION lines:" >&2
+        grep "MARKETING_VERSION = " "$project_file" >&2
+        return 1
+    fi
+    
+    # Проверяем операционную систему для правильного использования sed
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        sed -i '' "s/MARKETING_VERSION = $old_version;/MARKETING_VERSION = $new_version;/g" "$project_file"
+    else
+        # Linux
+        sed -i "s/MARKETING_VERSION = $old_version;/MARKETING_VERSION = $new_version;/g" "$project_file"
+    fi
+    
+    # Проверяем, что замена прошла успешно
+    if ! grep -q "MARKETING_VERSION = $new_version;" "$project_file"; then
+        echo "Error: Version update failed! Could not find 'MARKETING_VERSION = $new_version;' after update" >&2
+        return 1
+    fi
+    
+    echo "✅ Successfully updated version in $project_file"
 }
 
 # Функция для проверки, нужно ли обновлять модуль
@@ -124,10 +155,21 @@ done
 
 echo "Checking modules for updates..."
 
+# Проверяем, что все файлы проектов существуют
+for project_file in "${PROJECTS[@]}"; do
+    if [[ ! -f "$project_file" ]]; then
+        echo "❌ Error: Project file $project_file does not exist!" >&2
+        exit 1
+    fi
+done
+echo "✅ All project files exist"
+
 # Обновляем версии только для измененных модулей
 for i in "${!MODULES[@]}"; do
     module=${MODULES[$i]}
     project_file=${PROJECTS[$i]}
+    
+    echo "🔍 Checking $module at $project_file"
     
     if should_update_module "$module" "$CHANGED_MODULES"; then
         echo "✅ Processing $module"
@@ -141,7 +183,10 @@ for i in "${!MODULES[@]}"; do
         echo "  New version: $new_version"
         
         # Обновляем версию в проекте
-        update_version_in_project "$project_file" "$current_version" "$new_version"
+        if ! update_version_in_project "$project_file" "$current_version" "$new_version"; then
+            echo "❌ Failed to update version for $module"
+            exit 1
+        fi
     else
         echo "⏭️ Skipping $module (no changes detected)"
     fi
