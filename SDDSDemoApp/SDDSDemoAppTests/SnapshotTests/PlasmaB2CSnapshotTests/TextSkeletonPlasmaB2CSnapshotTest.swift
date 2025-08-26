@@ -35,4 +35,14 @@ final class TextSkeletonPlasmaB2CSnapshotTest: XCTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
     }
+    
+    @MainActor
+    func testTextSkeletonLigtherPlasmaB2C() async throws {
+        let appearance = SkeletonAppearance(
+            shape: CornerRadiusDrawer(cornerRadius: 4),
+            gradient: .surfaceDefaultSkeletonDeepGradient,
+            duration: 2000
+        )
+        try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
+    }
 }
