@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSServTheme
 
 struct ComponentsView: View {
     private let components: [(name: String, view: AnyView)] = [
@@ -32,6 +33,8 @@ struct ComponentsView: View {
         ("List", AnyView(ListView())),
         ("ListItem", AnyView(ListItemView())),
         ("Overlay", AnyView(OverlayView())),
+        ("TabBar", AnyView(TabBarView())),
+        ("TabBarIsland", AnyView(TabBarIslandView())),
         ("Popover", AnyView(PopoverView())),
         ("Tooltip", AnyView(TooltipView())),
         ("Toast", AnyView(ToastView())),
@@ -46,7 +49,7 @@ struct ComponentsView: View {
 
     var body: some View {
         NavigationView {
-            List {
+            List {                
                 ForEach(components.sorted(by: { $0.name < $1.name }), id: \.name) { component in
                     NavigationLink {
                         component.view

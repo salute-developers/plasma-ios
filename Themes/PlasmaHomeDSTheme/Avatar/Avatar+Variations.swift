@@ -32,6 +32,20 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
     
 }
 
+public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.LPilled> {
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.M> {
     
     var pilled: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
@@ -47,6 +61,20 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
             appearance: appearance
         )
     }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.MPilled> {
     
     var variation: Variation<Appearance> {
         .init(
@@ -88,6 +116,20 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
     
 }
 
+public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.SPilled> {
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.Xxl> {
     
     var pilled: ComponentAppearanceVariation<Avatar, AvatarAppearance> {
@@ -103,6 +145,20 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
             appearance: appearance
         )
     }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVariation.XxlPilled> {
     
     var variation: Variation<Appearance> {
         .init(

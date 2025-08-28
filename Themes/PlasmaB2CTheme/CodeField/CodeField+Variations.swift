@@ -32,6 +32,20 @@ public extension GeneralAppearanceVariation<CodeField, CodeFieldAppearance, Code
     
 }
 
+public extension GeneralAppearanceVariation<CodeField, CodeFieldAppearance, CodeFieldVariation.LSegmented> {
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<CodeField, CodeFieldAppearance, CodeFieldVariation.M> {
     
     var segmented: ComponentAppearanceVariation<CodeField, CodeFieldAppearance> {
@@ -47,6 +61,20 @@ public extension GeneralAppearanceVariation<CodeField, CodeFieldAppearance, Code
             appearance: appearance
         )
     }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CodeField, CodeFieldAppearance, CodeFieldVariation.MSegmented> {
     
     var variation: Variation<Appearance> {
         .init(

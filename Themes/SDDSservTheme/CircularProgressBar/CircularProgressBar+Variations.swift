@@ -4,6 +4,496 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.L> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.M> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.S> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.Xl> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.Xs> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.Xxl> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance, CircularProgressBarVariation.Xxs> {
+    
+    var `default`: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var gradient: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "gradient",
+            appearance: appearance.gradient
+        )
+    }
+    var info: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
+    var negative: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<CircularProgressBarAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.gradient,
+                self.info,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<CircularProgressBar, CircularProgressBarAppearance> {
     var `default`: AppearanceVariation<CircularProgressBarAppearance> {

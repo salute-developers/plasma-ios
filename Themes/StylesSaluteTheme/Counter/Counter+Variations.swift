@@ -4,6 +4,321 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterVariation.L> {
+    
+    var `default`: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var negative: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.negative,
+                self.positive,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterVariation.M> {
+    
+    var `default`: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var negative: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.negative,
+                self.positive,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterVariation.S> {
+    
+    var `default`: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var negative: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.negative,
+                self.positive,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterVariation.Xs> {
+    
+    var `default`: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var negative: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.negative,
+                self.positive,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterVariation.Xxs> {
+    
+    var `default`: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var black: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "black",
+            appearance: appearance.black
+        )
+    }
+    var negative: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var warning: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var white: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "white",
+            appearance: appearance.white
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.black,
+                self.negative,
+                self.positive,
+                self.warning,
+                self.white,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<Counter, CounterAppearance> {
     var `default`: AppearanceVariation<CounterAppearance> {

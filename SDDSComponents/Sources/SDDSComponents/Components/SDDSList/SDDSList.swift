@@ -93,7 +93,6 @@ public struct SDDSList: View {
             GeometryReader { contentGeometry in
                 Color.clear
                     .onAppear {
-                        print(contentGeometry.size.height)
                         contentHeight = min(contentGeometry.size.height, maxHeight)
                     }
                     .onChange(of: contentGeometry.size.height) { newHeight in

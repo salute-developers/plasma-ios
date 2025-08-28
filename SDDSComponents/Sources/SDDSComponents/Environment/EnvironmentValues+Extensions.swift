@@ -171,4 +171,33 @@ public extension EnvironmentValues {
         get { self[LoaderAppearance.self] }
         set { self[LoaderAppearance.self] = newValue }
     }
+
+    var tabBarItemAppearance: TabBarItemAppearance {
+        get { self[TabBarItemAppearance.self] }
+        set { self[TabBarItemAppearance.self] = newValue }
+    }
+    
+    var tabBarIslandAppearance: TabBarIslandAppearance {
+        get { self[TabBarIslandAppearance.self] }
+        set { self[TabBarIslandAppearance.self] = newValue }
+    }
+    
+    var tabBarAppearance: TabBarAppearance {
+        get { self[TabBarAppearance.self] }
+        set { self[TabBarAppearance.self] = newValue }
+    }
+}
+
+// MARK: - Utility
+public extension EnvironmentValues {
+    var safeAreaInsets: EdgeInsets {
+        get { self[EdgeInsets.self] }
+        set { self[EdgeInsets.self] = newValue }
+    }
+}
+
+extension EdgeInsets: EnvironmentKey {
+    public static var defaultValue: Self {
+        .init()
+    }
 }

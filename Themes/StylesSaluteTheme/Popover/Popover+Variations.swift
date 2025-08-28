@@ -4,6 +4,62 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<Popover, PopoverAppearance, PopoverVariation.M> {
+    
+    var `default`: AppearanceVariation<PopoverAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<PopoverAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Popover, PopoverAppearance, PopoverVariation.S> {
+    
+    var `default`: AppearanceVariation<PopoverAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<PopoverAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<Popover, PopoverAppearance> {
     var `default`: AppearanceVariation<PopoverAppearance> {

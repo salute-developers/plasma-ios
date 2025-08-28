@@ -885,4 +885,108 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+    
+    var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarIsland.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarIsland.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarIslandClear.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarIslandClear.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarIslandHasLabelClear.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarIslandHasLabelClear.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarIslandHasLabel.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarIslandHasLabel.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarSolidVariations: [Variation<TabBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBar.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBar.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarClearVariations: [Variation<TabBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarClear.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarClear.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarHasLabelClearVariations: [Variation<TabBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarHasLabelClear.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarHasLabelClear.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var tabBarHasLabelSolidVariations: [Variation<TabBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.TabBarHasLabel.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.TabBarHasLabel.all
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
 }

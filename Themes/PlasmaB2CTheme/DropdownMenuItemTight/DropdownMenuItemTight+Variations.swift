@@ -4,6 +4,181 @@ import SDDSComponents
 import SDDSThemeCore
 
 
+public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.L> {
+    
+    var `default`: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var negative: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.negative,
+                self.positive,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.M> {
+    
+    var `default`: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var negative: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.negative,
+                self.positive,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.S> {
+    
+    var `default`: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var negative: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.negative,
+                self.positive,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.Xl> {
+    
+    var `default`: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var negative: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.negative,
+                self.positive,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.Xs> {
+    
+    var `default`: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var negative: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ListItemAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.negative,
+                self.positive,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 
 public extension ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {
     var `default`: AppearanceVariation<ListItemAppearance> {

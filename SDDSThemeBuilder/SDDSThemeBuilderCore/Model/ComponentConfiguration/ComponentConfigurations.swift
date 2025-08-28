@@ -38,3 +38,6 @@ typealias AccordionActionConfiguration = ComponentConfiguration<AccordionActionP
 typealias SpinnerConfiguration = ComponentConfiguration<SpinnerProps>
 typealias LoaderConfiguration = ComponentConfiguration<LoaderProps>
 typealias CodeFieldConfiguration = ComponentConfiguration<CodeFieldProps>
+typealias TabBarItemConfiguration = ComponentConfiguration<TabBarItemProps>
+typealias TabBarIslandConfiguration = ComponentConfiguration<TabBarIslandProps>
+typealias TabBarConfiguration = ComponentConfiguration<TabBarProps>

@@ -45,6 +45,34 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     
 }
 
+public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.LPilled> {
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.M> {
     
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
@@ -59,6 +87,34 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
             appearance: appearance
         )
     }
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.MPilled> {
     
     var `default`: AppearanceVariation<ChipAppearance> {
         return .init(
@@ -127,6 +183,34 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     
 }
 
+public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.SPilled> {
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.Xs> {
     
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
@@ -168,6 +252,34 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
     
 }
 
+public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.XsPilled> {
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.Xxs> {
     
     var pilled: ComponentAppearanceVariation<Chip, ChipAppearance> {
@@ -182,6 +294,34 @@ public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.
             appearance: appearance
         )
     }
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.secondary,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<Chip, ChipAppearance, ChipVariation.XxsPilled> {
     
     var `default`: AppearanceVariation<ChipAppearance> {
         return .init(
