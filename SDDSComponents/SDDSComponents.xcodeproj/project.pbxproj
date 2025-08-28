@@ -25,10 +25,7 @@
 		692510252D7632CA00545542 /* BadgeAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510112D7632CA00545542 /* BadgeAppearance.swift */; };
 		692510262D7632CA00545542 /* IconBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692510192D7632CA00545542 /* IconBadge.swift */; };
 		693FE22F2DD75D0000E14D0E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 693FE22E2DD75D0000E14D0E /* Documentation.docc */; };
-		693FEF292DE097F800E14D0E /* SDDSDivider.swift in Resources */ = {isa = PBXBuildFile; fileRef = 693FEF282DE097E200E14D0E /* SDDSDivider.swift */; };
-		693FEF2C2DE0991900E14D0E /* DividerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF2B2DE0990F00E14D0E /* DividerAppearance.swift */; };
 		693FEF302DE4644100E14D0E /* SDDSDividerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF2F2DE4643900E14D0E /* SDDSDividerPreview.swift */; };
-		693FEF392DE477AB00E14D0E /* DividerSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FEF382DE4779D00E14D0E /* DividerSizeConfiguration.swift */; };
 		694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */; };
 		694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */; };
 		694C288E2D8AFE2700D7F341 /* SelectionControlStateImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */; };
@@ -87,6 +84,8 @@
 		810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */; };
 		810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */; };
 		810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */; };
+		8115FEB02E607C2F00EEDC26 /* TabBarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115FEAE2E607C2F00EEDC26 /* TabBarContent.swift */; };
+		8115FEB12E607C2F00EEDC26 /* View+TabBarIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115FEAF2E607C2F00EEDC26 /* View+TabBarIsland.swift */; };
 		8119DF5F2DF6FB8800D1CA9F /* NotificationAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */; };
 		8119DF602DF6FB8800D1CA9F /* ZeroNotificationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */; };
 		8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */; };
@@ -282,7 +281,6 @@
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
 		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
-		81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
 		81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E32CECD4B1000156D9 /* IconButton.swift */; };
 		81F7531C2CF46755000156D9 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7531B2CF46755000156D9 /* ButtonStyle.swift */; };
@@ -452,6 +450,10 @@
 		810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSizeConfiguration.swift; sourceTree = "<group>"; };
 		810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSScrollbar.md; sourceTree = "<group>"; };
 		810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSScrollbar.swift; sourceTree = "<group>"; };
+		8115FEAC2E607C2F00EEDC26 /* SDDSTabBarIsland.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTabBarIsland.md; sourceTree = "<group>"; };
+		8115FEAD2E607C2F00EEDC26 /* SDDSTabBarItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTabBarItem.md; sourceTree = "<group>"; };
+		8115FEAE2E607C2F00EEDC26 /* TabBarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContent.swift; sourceTree = "<group>"; };
+		8115FEAF2E607C2F00EEDC26 /* View+TabBarIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBarIsland.swift"; sourceTree = "<group>"; };
 		8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
 		8119DF582DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSizeConfiguration.swift; sourceTree = "<group>"; };
 		8119DF592DF6FB8800D1CA9F /* ZeroNotificationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroNotificationSize.swift; sourceTree = "<group>"; };
@@ -1240,6 +1242,10 @@
 		8131E84E2E4BAF8700FED868 /* SDDSTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				8115FEAC2E607C2F00EEDC26 /* SDDSTabBarIsland.md */,
+				8115FEAD2E607C2F00EEDC26 /* SDDSTabBarItem.md */,
+				8115FEAE2E607C2F00EEDC26 /* TabBarContent.swift */,
+				8115FEAF2E607C2F00EEDC26 /* View+TabBarIsland.swift */,
 				8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */,
 				8131E8652E4C50A200FED868 /* TabBarIslandAppearance */,
 				8131E8642E4C509A00FED868 /* TabBarItemAppearance */,
@@ -2370,7 +2376,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693FEF292DE097F800E14D0E /* SDDSDivider.swift in Resources */,
 				810F7B5C2E27F25E00218FE7 /* SDDSAccordion.md in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
 				810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */,
@@ -2508,7 +2513,6 @@
 				815D1EF72DE04A480005273B /* PopoverSizeCalculator.swift in Sources */,
 				819A3A6D2E4E666A006A11F8 /* SDDSCircularProgressBarData.swift in Sources */,
 				690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */,
-				693FEF392DE477AB00E14D0E /* DividerSizeConfiguration.swift in Sources */,
 				814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */,
 				8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */,
 				8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */,
@@ -2521,7 +2525,6 @@
 				812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */,
 				817339E62D033E650092608A /* RadioboxData.swift in Sources */,
 				694B1F712DAE5D8400726B91 /* CheckboxGroupAppearance.swift in Sources */,
-				81F63C042DBF7BD1003C8C26 /* SDDSIndicator.swift in Sources */,
 				818E3B842DDE41C500130AF9 /* SDDSPopover.swift in Sources */,
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
@@ -2545,6 +2548,8 @@
 				816F62D32DCBA8F000EC9121 /* SDDSCircularProgressBar.swift in Sources */,
 				81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */,
 				812DB75F2D57B49F00D3F4A3 /* ChipGroupGap.swift in Sources */,
+				8115FEB02E607C2F00EEDC26 /* TabBarContent.swift in Sources */,
+				8115FEB12E607C2F00EEDC26 /* View+TabBarIsland.swift in Sources */,
 				6919BD9E2D4A6CF800A77774 /* SegmentItemAccessibility.swift in Sources */,
 				817339E22D033DA30092608A /* ChipBorderStyle.swift in Sources */,
 				8119DF5F2DF6FB8800D1CA9F /* NotificationAppearance.swift in Sources */,
@@ -2692,7 +2697,6 @@
 				8131E8692E4C62AD00FED868 /* SDDSTabBarIsland.swift in Sources */,
 				817580E92C37E04000E45207 /* SpinnerView.swift in Sources */,
 				819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */,
-				693FEF2C2DE0991900E14D0E /* DividerAppearance.swift in Sources */,
 				69B975282D511A1300CAF208 /* CounterWidthCalculatorImpl.swift in Sources */,
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
 				812DB7612D57B49F00D3F4A3 /* ChipGroupSizeConfiguration.swift in Sources */,
