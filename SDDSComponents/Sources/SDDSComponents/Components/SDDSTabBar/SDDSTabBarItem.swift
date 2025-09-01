@@ -79,8 +79,10 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         }
         .frame(maxWidth: .infinity)
         .frame(minHeight: appearance.size.minHeight)
-        .background(backgroundColor.color(for: colorScheme))
-        .shape(pathDrawer: appearance.size.shape)
+        .background(
+            backgroundColor.color(for: colorScheme)
+                .shape(pathDrawer: appearance.size.shape)
+        )
         .readSize { size in
             self.itemSize = size
         }

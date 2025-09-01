@@ -70,7 +70,6 @@ public struct SDDSCounter: View {
             }
         }
         .frame(height: appearance.size.height)
-        .frame(minWidth: appearance.size.width)
         .background(currentColor(for: appearance.backgroundColor))
         .cornerRadius(cornerRadius)
     }
