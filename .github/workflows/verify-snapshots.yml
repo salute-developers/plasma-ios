@@ -27,6 +27,13 @@ jobs:
         with:
           xcode-version: '16.1'
 
+      - name: List available simulators
+        run: |
+          echo "=== Available iOS Simulators ==="
+          xcrun simctl list devices available | grep "iPhone"
+          echo "=== Available iOS Versions ==="
+          xcrun simctl list runtimes available | grep "iOS"
+
       - name: Run snapshot tests
         working-directory: SDDSDemoApp
         run: |
