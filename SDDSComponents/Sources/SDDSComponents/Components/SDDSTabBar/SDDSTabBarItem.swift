@@ -103,7 +103,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     }
     
     private var backgroundColor: ColorToken {
-        isSelected ? appearance.backgroundColor.selectedColor : appearance.backgroundColor.defaultColor
+        isSelected ? ColorToken.clearColor : appearance.backgroundColor.defaultColor
     }
     
     private var iconColor: ColorToken {
