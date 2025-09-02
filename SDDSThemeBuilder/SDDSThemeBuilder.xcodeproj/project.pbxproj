@@ -103,6 +103,9 @@
 		81205C122E28FDE700AA29ED /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */; };
 		81205C142E28FE1B00AA29ED /* SpinnerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C132E28FE1B00AA29ED /* SpinnerProps.swift */; };
 		81205C162E28FFC300AA29ED /* StrokeCapContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */; };
+		81225C3B2E6712BA00AA1EFB /* CodeInputProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */; };
+		81225C3F2E6712D100AA1EFB /* CodeInputSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81225C3D2E6712D100AA1EFB /* CodeInputSize.swift */; };
+		81225C402E6712D100AA1EFB /* CodeInputAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81225C3C2E6712D100AA1EFB /* CodeInputAppearance.swift */; };
 		812DB6D22D5490E000D3F4A3 /* CodeGenerationContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */; };
 		812DB6D82D54B75400D3F4A3 /* Component+Variations.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
 		812DB6D92D54D21D00D3F4A3 /* Component+Variations.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */; };
@@ -630,6 +633,9 @@
 		81205C0F2E28FDE700AA29ED /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
 		81205C132E28FE1B00AA29ED /* SpinnerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProps.swift; sourceTree = "<group>"; };
 		81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeCapContextBuilder.swift; sourceTree = "<group>"; };
+		81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputProps.swift; sourceTree = "<group>"; };
+		81225C3C2E6712D100AA1EFB /* CodeInputAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputAppearance.swift; sourceTree = "<group>"; };
+		81225C3D2E6712D100AA1EFB /* CodeInputSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputSize.swift; sourceTree = "<group>"; };
 		812DB6D12D5490E000D3F4A3 /* CodeGenerationContexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationContexts.swift; sourceTree = "<group>"; };
 		812DB6D72D54B75400D3F4A3 /* Component+Variations.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Component+Variations.stencil"; sourceTree = "<group>"; };
 		812DB6DD2D55E2BD00D3F4A3 /* MergeableConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeableConfiguration.swift; sourceTree = "<group>"; };
@@ -1337,6 +1343,15 @@
 			path = Spinner;
 			sourceTree = "<group>";
 		};
+		81225C3E2E6712D100AA1EFB /* CodeInput */ = {
+			isa = PBXGroup;
+			children = (
+				81225C3C2E6712D100AA1EFB /* CodeInputAppearance.swift */,
+				81225C3D2E6712D100AA1EFB /* CodeInputSize.swift */,
+			);
+			path = CodeInput;
+			sourceTree = "<group>";
+		};
 		812DB6DC2D55DE6100D3F4A3 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1402,6 +1417,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */,
 				819A2E662E4E6364006A11F8 /* LoaderProps.swift */,
 				8131DE0C2E4BA33A00FED868 /* TabBarIslandProps.swift */,
 				8131DE0D2E4BA33A00FED868 /* TabBarItemProps.swift */,
@@ -1450,6 +1466,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81225C3E2E6712D100AA1EFB /* CodeInput */,
 				819A2E6A2E4E636C006A11F8 /* Loader */,
 				8131DDFF2E4BA32F00FED868 /* TabBar */,
 				8131DE022E4BA32F00FED868 /* TabBarIsland */,
@@ -2819,6 +2836,7 @@
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */,
 				8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */,
+				81225C3B2E6712BA00AA1EFB /* CodeInputProps.swift in Sources */,
 				81A7534F2D47DE03006E1BE7 /* TextFieldSize.swift in Sources */,
 				81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */,
 				810FA5592E166607008CA4CA /* ScrollbarProps.swift in Sources */,
@@ -2929,6 +2947,8 @@
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */,
 				81B5106A2E3C7CBD00504B1D /* CodeFieldProps.swift in Sources */,
+				81225C3F2E6712D100AA1EFB /* CodeInputSize.swift in Sources */,
+				81225C402E6712D100AA1EFB /* CodeInputAppearance.swift in Sources */,
 				6962DE732DACFD33007666D5 /* AvatarGroupProps.swift in Sources */,
 				81F7EC9D2DF2F0AB00531844 /* ModalProps.swift in Sources */,
 				8174BA422D5DDF5400EA3E68 /* ChipAppearance.swift in Sources */,
@@ -3206,7 +3226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -3264,7 +3284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -3616,7 +3636,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3648,7 +3668,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

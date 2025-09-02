@@ -19,8 +19,9 @@ struct CodeFieldView: View {
                         groups: viewModel.selectedGroups,
                         validation: viewModel.validation,
                         validationResult: $viewModel.validationResult,
-                        caption: viewModel.caption.isEmpty ? "" : viewModel.caption,
+                        caption: viewModel.captionText.isEmpty ? "" : viewModel.captionText,
                         captionAlignment: viewModel.captionAlignment,
+                        isHidden: viewModel.isHidden,
                         appearance: viewModel.appearance,
                         onCodeChanged: { code in
                             self.viewModel.code = code
@@ -46,6 +47,7 @@ struct CodeFieldView: View {
                 code
                 caption
                 captionAlignment
+                hidden
             }
         }
         .background(.tertiary)
@@ -119,6 +121,13 @@ struct CodeFieldView: View {
             }
         }
         .padding()
+    }
+    
+    @ViewBuilder
+    private var hidden: some View {
+        VStack(alignment: .leading) {
+            Toggle("Is Hidden", isOn: $viewModel.isHidden)
+        }
     }
 }
 

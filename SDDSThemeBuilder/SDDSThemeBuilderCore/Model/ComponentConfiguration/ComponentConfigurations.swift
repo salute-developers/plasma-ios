@@ -41,3 +41,4 @@ typealias CodeFieldConfiguration = ComponentConfiguration<CodeFieldProps>
 typealias TabBarItemConfiguration = ComponentConfiguration<TabBarItemProps>
 typealias TabBarIslandConfiguration = ComponentConfiguration<TabBarIslandProps>
 typealias TabBarConfiguration = ComponentConfiguration<TabBarProps>
+typealias CodeInputConfiguration = ComponentConfiguration<CodeInputProps>

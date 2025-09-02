@@ -70,6 +70,9 @@
 		812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065822E29072300AA29ED /* SpinnerViewModel.swift */; };
 		812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065802E29072300AA29ED /* SpinnerVariationProvider.swift */; };
 		812065862E29072400AA29ED /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065812E29072300AA29ED /* SpinnerView.swift */; };
+		812268EC2E671BC800AA1EFB /* CodeInputVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */; };
+		812268ED2E671BC800AA1EFB /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */; };
+		812268EE2E671BC800AA1EFB /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268E92E671BC800AA1EFB /* CodeInputView.swift */; };
 		8127A0832E0ABD1700B320D1 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8127A0822E0ABD1700B320D1 /* SDSnapshots */; };
 		813107E72E4E313900FED868 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813107E52E4E313900FED868 /* TabBarViewModel.swift */; };
 		813107E82E4E313900FED868 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813107E42E4E313900FED868 /* TabBarView.swift */; };
@@ -263,6 +266,9 @@
 		812065802E29072300AA29ED /* SpinnerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVariationProvider.swift; sourceTree = "<group>"; };
 		812065812E29072300AA29ED /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		812065822E29072300AA29ED /* SpinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewModel.swift; sourceTree = "<group>"; };
+		812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputVariationProvider.swift; sourceTree = "<group>"; };
+		812268E92E671BC800AA1EFB /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		813107E32E4E313900FED868 /* TabBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVariationProvider.swift; sourceTree = "<group>"; };
 		813107E42E4E313900FED868 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		813107E52E4E313900FED868 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -664,6 +670,7 @@
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
 				819AF9822E4E506E006A11F8 /* TabBarIslandView */,
 				813107E62E4E313900FED868 /* TabBarView */,
+				812268EB2E671BC800AA1EFB /* CodeInputView */,
 				81B51AB22E3C892600504B1D /* CodeFieldView */,
 				810F84BB2E27F5B500218FE7 /* AccordionView */,
 				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
@@ -758,6 +765,16 @@
 				812065822E29072300AA29ED /* SpinnerViewModel.swift */,
 			);
 			path = SpinnerView;
+			sourceTree = "<group>";
+		};
+		812268EB2E671BC800AA1EFB /* CodeInputView */ = {
+			isa = PBXGroup;
+			children = (
+				812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */,
+				812268E92E671BC800AA1EFB /* CodeInputView.swift */,
+				812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */,
+			);
+			path = CodeInputView;
 			sourceTree = "<group>";
 		};
 		813107E62E4E313900FED868 /* TabBarView */ = {
@@ -1390,6 +1407,9 @@
 				81B51AB32E3C892600504B1D /* CodeFieldView.swift in Sources */,
 				81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */,
 				81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */,
+				812268EC2E671BC800AA1EFB /* CodeInputVariationProvider.swift in Sources */,
+				812268ED2E671BC800AA1EFB /* CodeInputViewModel.swift in Sources */,
+				812268EE2E671BC800AA1EFB /* CodeInputView.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
 				816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */,

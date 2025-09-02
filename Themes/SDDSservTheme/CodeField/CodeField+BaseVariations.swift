@@ -52,6 +52,8 @@ private extension CodeFieldAppearance {
         appearance.captionColor = ColorToken.textDefaultSecondary
         appearance.captionColorError = ColorToken.textDefaultNegative
         appearance.cursorColor = ColorToken.textDefaultAccent
+        appearance.dotColor = ColorToken.surfaceDefaultSolidDefault
+        appearance.dotColorError = ColorToken.surfaceDefaultNegative
         appearance.valueColor = ColorToken.textDefaultPrimary
         appearance.valueColorError = ColorToken.textDefaultNegative
         return appearance

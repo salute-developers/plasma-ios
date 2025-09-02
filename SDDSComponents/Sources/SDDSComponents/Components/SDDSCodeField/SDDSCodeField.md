@@ -14,6 +14,7 @@
 - Настраиваемые размеры и стили
 - Поддержка подписи с различным выравниванием
 - Автоматическое разбиение кода по группам
+- Режим скрытого ввода (secure input) с отображением точек
 
 ## Использование
 
@@ -60,6 +61,28 @@ SDDSCodeField(
 )
 ```
 
+### Скрытый ввод (Secure Input)
+
+```swift
+SDDSCodeField(
+    groups: CodeFieldGroup.four,
+    caption: "Введите PIN-код",
+    captionAlignment: .center,
+    keyboardType: .numberPad,
+    isHidden: true,
+    appearance: CodeField.l.appearance,
+    onCodeChanged: { code in
+        print("Введен PIN: \(code)")
+    }
+)
+```
+
+При `isHidden: true`:
+- Введенные символы отображаются как точки
+- Текущий вводимый символ показывается как текст
+- После ввода и перехода на следующую позицию символ становится точкой
+- Копирование/вставка отключены
+
 ## Параметры
 
 ### groups: [CodeFieldGroup]
@@ -73,6 +96,9 @@ SDDSCodeField(
 
 ### keyboardType: UIKeyboardType
 Тип клавиатуры для ввода (по умолчанию .numberPad).
+
+### isHidden: Bool
+Если `true`, то введенные символы отображаются как точки (режим secure input). По умолчанию `false`.
 
 ### appearance: CodeFieldAppearance?
 Кастомизация внешнего вида компонента.

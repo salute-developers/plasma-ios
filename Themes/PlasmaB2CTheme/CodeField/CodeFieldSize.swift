@@ -14,8 +14,9 @@ struct CodeFieldSize {
 }
 struct CodeFieldSizeL: CodeFieldSizeConfiguration {
     var captionSpacing = CGFloat(14.0)
+    var dotSize = CGFloat(10.0)
     var groupShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var groupSpacing = CGFloat(4.0)
+    var groupSpacing = CGFloat(8.0)
     var height = CGFloat(56.0)
     var itemShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius+2.0) as PathDrawer
     var itemSpacing = CGFloat(2.0)
@@ -26,8 +27,9 @@ struct CodeFieldSizeL: CodeFieldSizeConfiguration {
 }
 struct CodeFieldSizeM: CodeFieldSizeConfiguration {
     var captionSpacing = CGFloat(12.0)
+    var dotSize = CGFloat(8.0)
     var groupShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var groupSpacing = CGFloat(4.0)
+    var groupSpacing = CGFloat(8.0)
     var height = CGFloat(48.0)
     var itemShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
     var itemSpacing = CGFloat(2.0)
@@ -39,6 +41,7 @@ struct CodeFieldSizeM: CodeFieldSizeConfiguration {
 
 struct CodeFieldAnySize: CodeFieldSizeConfiguration {
     var captionSpacing = CGFloat(0)
+    var dotSize = CGFloat(0)
     var groupShape = DefaultPathDrawer() as PathDrawer
     var groupSpacing = CGFloat(0)
     var height = CGFloat(0)
@@ -48,6 +51,7 @@ struct CodeFieldAnySize: CodeFieldSizeConfiguration {
 
     init(size: CodeFieldSizeConfiguration) {
         self.captionSpacing = size.captionSpacing
+        self.dotSize = size.dotSize
         self.groupShape = size.groupShape
         self.groupSpacing = size.groupSpacing
         self.height = size.height

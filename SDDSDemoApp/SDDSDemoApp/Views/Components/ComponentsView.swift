@@ -44,6 +44,7 @@ struct ComponentsView: View {
         ("TextSkeleton", AnyView(TextSkeletonView())),
         ("DropDownMenu", AnyView(DropdownMenuView())),
         ("CodeField", AnyView(CodeFieldView())),
+        ("CodeInput", AnyView(CodeInputView())),
         ("Loader", AnyView(LoaderView()))
     ]
 

@@ -3,19 +3,20 @@ import SwiftUI
 import SDDSComponents
 
 final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
-    private let captionDefaultText = "Enter the code"
     private let captionFailureText = "Invalid code"
     
     @Published var code: String = ""
     @Published var caption: String = "Enter the code"
     @Published var captionAlignment: CodeFieldAlignment = .center
-    @Published var selectedGroupType: CodeFieldGroupType = .four
+    @Published var selectedGroupType: CodeFieldGroupType = .four {
+        didSet {
+            validation = CodeFieldOnlyDigitsValidation(code: validCode, groups: selectedGroups)
+        }
+    }
     @Published var successToastDisplayed = false
     @Published var validationResult: CodeFieldValidationResult = .success(.initial)
-    
-    var validation: CodeFieldValidation {
-        return CodeFieldOnlyDigitsValidation(code: validCode, groups: selectedGroups)
-    }
+    @Published var isHidden = false
+    @Published var validation: CodeFieldValidation = CodeFieldDisabledValidation()
     
     private var validCode: String {
         switch selectedGroupType {
@@ -25,6 +26,17 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
             "12345"
         case .six:
             "123456"
+        }
+    }
+    
+    var captionText: String {
+        switch validationResult {
+        case .success(.validated):
+            return caption
+        case .failure(.invalidCode):
+            return captionFailureText
+        case .failure(.inputFailed), .success(.next), .success(.initial):
+            return caption
         }
     }
     
@@ -40,16 +52,17 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
         switch validationResult {
         case .success(.validated):
             successToastDisplayed = true
-            caption = captionDefaultText
         case .failure(.invalidCode):
-            caption = captionFailureText
+            break
         case .failure(.inputFailed), .success(.next), .success(.initial):
-            caption = captionDefaultText
+            break
         }
     }
     
     init() {
         super.init(variationProvider: CodeFieldVariationProvider())
+        
+        validation = CodeFieldOnlyDigitsValidation(code: validCode, groups: selectedGroups)
         
         $validationResult
             .sink { [weak self] value in

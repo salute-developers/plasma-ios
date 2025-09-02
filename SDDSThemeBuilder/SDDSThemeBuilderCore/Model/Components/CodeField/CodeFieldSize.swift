@@ -11,6 +11,7 @@ struct CodeFieldSize: CodeGenerationSize {
     var captionSpacing: String?
     var width: String?
     var height: String?
+    var dotSize: String?
     
     init(variation: CodeFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -24,6 +25,7 @@ struct CodeFieldSize: CodeGenerationSize {
         self.captionSpacing = CGFloatContextBuilder(props.captionSpacing?.value, nullify: nullify).context
         self.width = CGFloatContextBuilder(props.width?.value, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
+        self.dotSize = CGFloatContextBuilder(props.dotSize?.value, nullify: nullify).context
     }
     
     init() {
@@ -34,5 +36,6 @@ struct CodeFieldSize: CodeGenerationSize {
         self.captionSpacing = CGFloat.defaultContext
         self.width = CGFloat.defaultContext
         self.height = CGFloat.defaultContext
+        self.dotSize = CGFloat.defaultContext
     }
 }

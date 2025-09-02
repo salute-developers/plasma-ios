@@ -88,6 +88,9 @@ public enum Colors {
     case outlineDefaultPromoMinor
     case outlineDefaultPromoMinorActive
     case outlineDefaultPromoMinorHover
+    case outlineDefaultSolidDefault
+    case outlineDefaultSolidDefaultActive
+    case outlineDefaultSolidDefaultHover
     case outlineDefaultSolidPrimary
     case outlineDefaultSolidPrimaryActive
     case outlineDefaultSolidPrimaryHover
@@ -163,6 +166,9 @@ public enum Colors {
     case outlineInversePromoMinor
     case outlineInversePromoMinorActive
     case outlineInversePromoMinorHover
+    case outlineInverseSolidDefault
+    case outlineInverseSolidDefaultActive
+    case outlineInverseSolidDefaultHover
     case outlineInverseSolidPrimary
     case outlineInverseSolidPrimaryActive
     case outlineInverseSolidPrimaryHover
@@ -238,6 +244,9 @@ public enum Colors {
     case outlineOnDarkPromoMinor
     case outlineOnDarkPromoMinorActive
     case outlineOnDarkPromoMinorHover
+    case outlineOnDarkSolidDefault
+    case outlineOnDarkSolidDefaultActive
+    case outlineOnDarkSolidDefaultHover
     case outlineOnDarkSolidPrimary
     case outlineOnDarkSolidPrimaryActive
     case outlineOnDarkSolidPrimaryHover
@@ -313,6 +322,9 @@ public enum Colors {
     case outlineOnLightPromoMinor
     case outlineOnLightPromoMinorActive
     case outlineOnLightPromoMinorHover
+    case outlineOnLightSolidDefault
+    case outlineOnLightSolidDefaultActive
+    case outlineOnLightSolidDefaultHover
     case outlineOnLightSolidPrimary
     case outlineOnLightSolidPrimaryActive
     case outlineOnLightSolidPrimaryHover
@@ -1092,6 +1104,12 @@ public enum Colors {
             return .outlineDefaultPromoMinorActive
         case .outlineDefaultPromoMinorHover:
             return .outlineDefaultPromoMinorHover
+        case .outlineDefaultSolidDefault:
+            return .outlineDefaultSolidDefault
+        case .outlineDefaultSolidDefaultActive:
+            return .outlineDefaultSolidDefaultActive
+        case .outlineDefaultSolidDefaultHover:
+            return .outlineDefaultSolidDefaultHover
         case .outlineDefaultSolidPrimary:
             return .outlineDefaultSolidPrimary
         case .outlineDefaultSolidPrimaryActive:
@@ -1242,6 +1260,12 @@ public enum Colors {
             return .outlineInversePromoMinorActive
         case .outlineInversePromoMinorHover:
             return .outlineInversePromoMinorHover
+        case .outlineInverseSolidDefault:
+            return .outlineInverseSolidDefault
+        case .outlineInverseSolidDefaultActive:
+            return .outlineInverseSolidDefaultActive
+        case .outlineInverseSolidDefaultHover:
+            return .outlineInverseSolidDefaultHover
         case .outlineInverseSolidPrimary:
             return .outlineInverseSolidPrimary
         case .outlineInverseSolidPrimaryActive:
@@ -1392,6 +1416,12 @@ public enum Colors {
             return .outlineOnDarkPromoMinorActive
         case .outlineOnDarkPromoMinorHover:
             return .outlineOnDarkPromoMinorHover
+        case .outlineOnDarkSolidDefault:
+            return .outlineOnDarkSolidDefault
+        case .outlineOnDarkSolidDefaultActive:
+            return .outlineOnDarkSolidDefaultActive
+        case .outlineOnDarkSolidDefaultHover:
+            return .outlineOnDarkSolidDefaultHover
         case .outlineOnDarkSolidPrimary:
             return .outlineOnDarkSolidPrimary
         case .outlineOnDarkSolidPrimaryActive:
@@ -1542,6 +1572,12 @@ public enum Colors {
             return .outlineOnLightPromoMinorActive
         case .outlineOnLightPromoMinorHover:
             return .outlineOnLightPromoMinorHover
+        case .outlineOnLightSolidDefault:
+            return .outlineOnLightSolidDefault
+        case .outlineOnLightSolidDefaultActive:
+            return .outlineOnLightSolidDefaultActive
+        case .outlineOnLightSolidDefaultHover:
+            return .outlineOnLightSolidDefaultHover
         case .outlineOnLightSolidPrimary:
             return .outlineOnLightSolidPrimary
         case .outlineOnLightSolidPrimaryActive:
