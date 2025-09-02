@@ -79,6 +79,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case tabBarClear = "TabBarClear"
     case tabBarHasLabelSolid = "TabBarHasLabel"
     case tabBarHasLabelClear = "TabBarHasLabelClear"
+    case codeInput = "CodeInput"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -159,7 +160,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .tabBarSolid,
             .tabBarClear,
             .tabBarHasLabelSolid,
-            .tabBarHasLabelClear
+            .tabBarHasLabelClear,
+            .codeInput
         ]
     }
     
@@ -209,7 +211,11 @@ extension CodeGenerationComponent {
         case .avatarGroup:
             GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .circularProgressBar:
-            GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+            GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
         case .progressBar:
             GenerateComponentCommand<ProgressBarProps, ProgressBarAppearance, ProgressBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .divider:
@@ -254,6 +260,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TabBarIslandProps, TabBarIslandAppearance, TabBarIslandSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .codeInput:
+            GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -343,6 +351,8 @@ extension CodeGenerationComponent {
             "TabBarIslandAppearance"
         case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             "TabBarAppearance"
+        case .codeInput:
+            "CodeInputAppearance"
         }
     }
     
@@ -433,6 +443,8 @@ extension CodeGenerationComponent {
             "TabBarIslandSizeConfiguration"
         case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             "TabBarSizeConfiguration"
+        case .codeInput:
+            "CodeInputSizeConfiguration"
         }
     }
     
@@ -594,6 +606,8 @@ extension CodeGenerationComponent {
             "tab_bar_has_label_solid_config.json"
         case .tabBarHasLabelClear:
             "tab_bar_has_label_clear_config.json"
+        case .codeInput:
+            "code_input_config.json"
         }
     }
     

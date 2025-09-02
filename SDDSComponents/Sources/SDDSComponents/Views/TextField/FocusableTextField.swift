@@ -9,7 +9,7 @@ struct FocusableTextField: UIViewRepresentable {
     let cursorColor: Color
     let typography: TypographyToken
     let readOnly: Bool
-    let onShouldChange: (() -> (Bool))?
+    let onShouldChange: ((String) -> (Bool))?
     let keyboardType: UIKeyboardType
     let enableSelection: Bool
     let onEditingChanged: ((Bool) -> Void)?
@@ -23,7 +23,7 @@ struct FocusableTextField: UIViewRepresentable {
          readOnly: Bool,
          keyboardType: UIKeyboardType = .default,
          enableSelection: Bool = true,
-         onShouldChange: (() -> (Bool))? = nil,
+         onShouldChange: ((String) -> (Bool))? = nil,
          onEditingChanged: ( (Bool) -> Void)? = nil
     ) {
         _text = text
@@ -61,7 +61,7 @@ struct FocusableTextField: UIViewRepresentable {
         }
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            return (parent.onShouldChange?() ?? true) && !parent.readOnly
+            return (parent.onShouldChange?(string) ?? true) && !parent.readOnly
         }
 
         func textFieldDidBeginEditing(_ textField: UITextField) {

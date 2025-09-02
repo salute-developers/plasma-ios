@@ -24,19 +24,16 @@ enum MenuItem: String, CaseIterable {
 }
 
 struct MainView: View {
-    @State private var path = [MenuItem]()
+    @State private var selectedItem: MenuItem?
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationView {
             List {
                 ForEach(MenuItem.allCases, id: \.self) { item in
-                    Button(item.title) {
-                        path.append(item)
+                    NavigationLink(destination: item.view) {
+                        Text(item.title)
                     }
                 }
-            }
-            .navigationDestination(for: MenuItem.self) { selection in
-                selection.view
             }
         }
     }

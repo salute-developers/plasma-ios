@@ -13,6 +13,7 @@ public protocol CodeFieldSizeConfiguration {
     var captionSpacing: CGFloat { get }
     var itemShape: PathDrawer { get }
     var groupShape: PathDrawer { get }
+    var dotSize: CGFloat { get }
 }
 
 /**
@@ -26,6 +27,7 @@ public struct CodeFieldSize: CodeFieldSizeConfiguration {
     public let captionSpacing: CGFloat
     public let itemShape: PathDrawer
     public let groupShape: PathDrawer
+    public let dotSize: CGFloat
     
     public init(
         width: CGFloat = 0,
@@ -33,6 +35,7 @@ public struct CodeFieldSize: CodeFieldSizeConfiguration {
         itemSpacing: CGFloat = 0,
         groupSpacing: CGFloat = 0,
         captionSpacing: CGFloat = 0,
+        dotSize: CGFloat = 0,
         itemShape: PathDrawer = DefaultPathDrawer(),
         groupShape: PathDrawer = DefaultPathDrawer()
     ) {
@@ -41,6 +44,7 @@ public struct CodeFieldSize: CodeFieldSizeConfiguration {
         self.itemSpacing = itemSpacing
         self.groupSpacing = groupSpacing
         self.captionSpacing = captionSpacing
+        self.dotSize = dotSize
         self.itemShape = itemShape
         self.groupShape = groupShape
     }

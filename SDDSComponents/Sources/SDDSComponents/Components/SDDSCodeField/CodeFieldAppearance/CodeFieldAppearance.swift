@@ -14,6 +14,8 @@ public struct CodeFieldAppearance {
     public var cursorColor: ColorToken
     public var captionColor: ColorToken
     public var captionColorError: ColorToken
+    public var dotColor: ColorToken
+    public var dotColorError: ColorToken
     public var captionTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration
     public var size: CodeFieldSizeConfiguration
@@ -27,6 +29,8 @@ public struct CodeFieldAppearance {
         cursorColor: ColorToken = .clearColor,
         captionColor: ColorToken = .clearColor,
         captionColorError: ColorToken = .clearColor,
+        dotColor: ColorToken = .clearColor,
+        dotColorError: ColorToken = .clearColor,
         captionTypography: TypographyConfiguration = .default,
         valueTypography: TypographyConfiguration = .default,
         size: CodeFieldSizeConfiguration = CodeFieldSize()
@@ -39,6 +43,8 @@ public struct CodeFieldAppearance {
         self.cursorColor = cursorColor
         self.captionColor = captionColor
         self.captionColorError = captionColorError
+        self.dotColor = dotColor
+        self.dotColorError = dotColorError
         self.captionTypography = captionTypography
         self.valueTypography = valueTypography
         self.size = size

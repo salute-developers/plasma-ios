@@ -9,9 +9,11 @@ struct CodeFieldProps: MergeableConfiguration, Codable {
     var cursorColor: ColorKeyValue?
     var captionColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?
+    var dotColor: ColorKeyValue?
     var itemShape: ShapeKeyValue?
     var groupShape: ShapeKeyValue?
     var captionSpacing: KeyValue<Double>?
+    var dotSize: KeyValue<Double>?
     var width: KeyValue<Double>?
     var height: KeyValue<Double>?
     var captionStyle: KeyValue<String>?

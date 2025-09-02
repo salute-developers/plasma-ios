@@ -878,7 +878,7 @@ enum Theme: String, CaseIterable {
         case .sdddsServTheme:
             return SDDSServTheme.CodeField.all
         case .stylesSalute:
-            return StylesSaluteTheme.CodeField.all
+            return []
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.CodeField.all
         case .plasmaHomeDSTheme:
@@ -987,6 +987,19 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.TabBarHasLabel.all
         case .plasmaHomeDSTheme:
             []
+        }
+    }
+
+    var codeInputVariations: [Variation<CodeInputAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.CodeInput.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.CodeInput.all
+        case .plasmaHomeDSTheme:
+            return []
         }
     }
 }
