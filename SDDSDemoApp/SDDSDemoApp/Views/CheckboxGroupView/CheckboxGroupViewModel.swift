@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationProvider>, ViewModelDelegate {
     @Published var checkboxViewModels: [CheckboxItemViewModel] = [] {

@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class CounterVariationProvider: VariationProvider {
     typealias Appearance = CounterAppearance

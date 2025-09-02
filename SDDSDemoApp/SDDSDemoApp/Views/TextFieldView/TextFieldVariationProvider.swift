@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class TextFieldVariationProvider: VariationProvider {
     typealias Appearance = TextFieldAppearance

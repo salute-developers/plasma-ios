@@ -3,7 +3,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 
-import SDDSServTheme
+import SDDSservTheme
 
 public struct CounterView: View {
     @ObservedObject var viewModel: CounterViewModel = CounterViewModel()

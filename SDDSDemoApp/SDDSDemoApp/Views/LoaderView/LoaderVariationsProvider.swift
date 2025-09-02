@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class LoaderVariationProvider: VariationProvider {
     typealias Appearance = LoaderAppearance

@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 struct CodeFieldView: View {
     @ObservedObject private var viewModel: CodeFieldViewModel

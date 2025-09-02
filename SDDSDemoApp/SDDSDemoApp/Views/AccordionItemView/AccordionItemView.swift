@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 import SDDSIcons
 
 struct AccordionItemView: View {

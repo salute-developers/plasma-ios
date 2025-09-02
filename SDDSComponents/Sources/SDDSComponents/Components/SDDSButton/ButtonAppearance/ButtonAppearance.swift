@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ButtonAppearance` определяет стили кнопки, включая типографику, цвета, размеры и другие параметры.

@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 public enum ListItemLayout: String, CaseIterable {
     case normal

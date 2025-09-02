@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class AvatarGroupVariationProvider: VariationProvider {
     typealias Appearance = AvatarGroupAppearance

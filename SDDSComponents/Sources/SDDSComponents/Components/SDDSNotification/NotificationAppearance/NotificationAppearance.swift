@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `NotificationAppearance` определяет параметры внешнего вида уведомления.

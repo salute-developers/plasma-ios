@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SwitchAppearance` определяет внешний вид переключателя, включая типографику и цвета для различных состояний.

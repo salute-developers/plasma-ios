@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel

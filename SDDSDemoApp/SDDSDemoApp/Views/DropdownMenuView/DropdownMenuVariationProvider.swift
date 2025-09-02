@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 enum DropDownMenuLayout: String, CaseIterable {
     case normal

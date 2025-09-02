@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 struct ToastView: View {
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()

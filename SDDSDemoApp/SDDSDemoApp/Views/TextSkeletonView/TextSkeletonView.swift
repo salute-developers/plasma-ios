@@ -2,7 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SDDSservTheme
 
 struct TextSkeletonView: View {
     @ObservedObject private var viewModel: TextSkeletonViewModel = TextSkeletonViewModel()

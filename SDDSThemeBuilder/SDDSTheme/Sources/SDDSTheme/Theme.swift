@@ -1,5 +1,5 @@
 import Foundation
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /// Структура темы, она дает единую точку доступа для всех токенов.
 ///

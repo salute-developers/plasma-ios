@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 enum TextSkeletonLineProviderType: String, CaseIterable {
     case fullWidth

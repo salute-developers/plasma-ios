@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ButtonStyle` определяет стили кнопки, такие как базовая, квадратная или круглая.

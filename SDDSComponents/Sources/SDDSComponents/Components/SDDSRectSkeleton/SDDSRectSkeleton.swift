@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSRectSkeleton` представляет собой компонент для отображения прямоугольного скелетона с анимированным градиентом.

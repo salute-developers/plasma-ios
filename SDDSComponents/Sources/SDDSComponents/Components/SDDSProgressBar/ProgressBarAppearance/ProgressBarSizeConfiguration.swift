@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ProgressBarSizeConfiguration` определяет конфигурацию размеров для прогресс-бара.

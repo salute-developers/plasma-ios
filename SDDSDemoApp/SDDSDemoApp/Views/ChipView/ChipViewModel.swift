@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     @Published var value: String = "Value"

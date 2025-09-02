@@ -1,7 +1,7 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSservTheme
 
 final class ModalVariationProvider: VariationProvider {
     typealias Appearance = ModalAppearance

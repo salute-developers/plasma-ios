@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSDivider` представляет собой компонент для отображения разделителя, который может быть стилизован с помощью кастомного внешнего вида.

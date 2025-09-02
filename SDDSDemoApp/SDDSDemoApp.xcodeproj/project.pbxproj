@@ -6,6 +6,22 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		81FC58882E6A019400553BF9 /* Build Dependencies */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 81FC58892E6A019400553BF9 /* Build configuration list for PBXAggregateTarget "Build Dependencies" */;
+			buildPhases = (
+				81FC588C2E6A019C00553BF9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Dependencies";
+			packageProductDependencies = (
+			);
+			productName = "Build Dependencies";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		24C154062BB3020A00963FAA /* SDDSDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154052BB3020A00963FAA /* SDDSDemoApp.swift */; };
 		24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
@@ -28,13 +44,6 @@
 		698744742D1C6EC300559ABA /* SegmentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744732D1C6EB800559ABA /* SegmentItemView.swift */; };
 		698744762D1C6F0100559ABA /* SegmentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698744752D1C6EC600559ABA /* SegmentItemViewModel.swift */; };
 		698902672D65176F003DCE58 /* CellVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698902662D651763003DCE58 /* CellVariationProvider.swift */; };
-		69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
-		69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
-		69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A382B2CC6926300A1377F /* SDDSComponents */; };
-		69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
-		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
-		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
-		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		810F55DD2E27A9D100218FE7 /* AccordionItemVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55D92E27A9D100218FE7 /* AccordionItemVariationProvider.swift */; };
 		810F55DE2E27A9D100218FE7 /* AccordionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DA2E27A9D100218FE7 /* AccordionItemView.swift */; };
 		810F55DF2E27A9D100218FE7 /* AccordionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F55DB2E27A9D100218FE7 /* AccordionItemViewModel.swift */; };
@@ -83,14 +92,12 @@
 		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
-		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		815D38B52DE5BC570005273B /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AE2DE5BC570005273B /* OverlayView.swift */; };
 		815D38B62DE5BC570005273B /* OverlayVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AD2DE5BC570005273B /* OverlayVariationProvider.swift */; };
 		815D38B72DE5BC570005273B /* OverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38AF2DE5BC570005273B /* OverlayViewModel.swift */; };
 		815D38B82DE5BC570005273B /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B22DE5BC570005273B /* PopoverView.swift */; };
 		815D38B92DE5BC570005273B /* PopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B32DE5BC570005273B /* PopoverViewModel.swift */; };
 		815D38BA2DE5BC570005273B /* PopoverVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D38B12DE5BC570005273B /* PopoverVariationProvider.swift */; };
-		816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */; };
 		8161ED772E09507A00141F4F /* TextLineCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8161ED762E09507500141F4F /* TextLineCounter.swift */; };
 		816243442CB9057E00506E1C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243432CB9057E00506E1C /* AvatarView.swift */; };
 		816243462CB907EA00506E1C /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816243452CB907E900506E1C /* AvatarViewModel.swift */; };
@@ -108,10 +115,7 @@
 		816332262E1FB35D00110F27 /* DropdownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332252E1FB35A00110F27 /* DropdownMenuView.swift */; };
 		816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816332272E1FB36600110F27 /* DropdownMenuViewModel.swift */; };
 		8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B4432D5C7C9E0044A680 /* Theme.swift */; };
-		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
-		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
 		8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166B46E2D5C9F370044A680 /* AvatarVariationProvider.swift */; };
-		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
 		816F636E2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636A2DCBB21600EC9121 /* CircularProgressBarVariationProvider.swift */; };
 		816F636F2DCBB21600EC9121 /* CircularProgressBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636C2DCBB21600EC9121 /* CircularProgressBarViewModel.swift */; };
 		816F63702DCBB21600EC9121 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F636B2DCBB21600EC9121 /* CircularProgressBarView.swift */; };
@@ -143,6 +147,9 @@
 		819AF9842E4E506E006A11F8 /* TabBarIslandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AF9812E4E506E006A11F8 /* TabBarIslandViewModel.swift */; };
 		81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81A0795E2DA6706500260DC9 /* SDDSComponents */; };
 		81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81A079612DA6707100260DC9 /* SDDSThemeCore */; };
+		819A46692E4E6879006A11F8 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A46682E4E6877006A11F8 /* LoaderView.swift */; };
+		819A466B2E4E687E006A11F8 /* LoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466A2E4E687B006A11F8 /* LoaderViewModel.swift */; };
+		819A466D2E4E6886006A11F8 /* LoaderVariationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466C2E4E6880006A11F8 /* LoaderVariationsProvider.swift */; };
 		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
 		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
 		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };
@@ -153,7 +160,6 @@
 		81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AAF2E3C892600504B1D /* CodeFieldVariationProvider.swift */; };
 		81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */; };
 		81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */; };
-		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */; };
 		81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */; };
 		81DECC862DE5F0EB0035E6A9 /* TooltipVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */; };
@@ -166,6 +172,13 @@
 		81F89E4A2D81A3A200A41C89 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E492D81A3A100A41C89 /* CardView.swift */; };
 		81F89E4C2D81A3A700A41C89 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */; };
 		81F89E4E2D81A3AE00A41C89 /* CardViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F89E4D2D81A3A900A41C89 /* CardViewProvider.swift */; };
+		81FC65532E6A04D600553BF9 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC58752E69FF8F00553BF9 /* SDDSThemeCore.xcframework */; };
+		81FC65552E6A04D600553BF9 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC58762E69FF8F00553BF9 /* SDDSIcons.xcframework */; };
+		81FC65572E6A04D600553BF9 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; };
+		81FC655A2E6A04DF00553BF9 /* StylesSaluteTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC58852E6A012F00553BF9 /* StylesSaluteTheme.xcframework */; };
+		81FC655C2E6A04DF00553BF9 /* SDDSservTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC587C2E6A009400553BF9 /* SDDSservTheme.xcframework */; };
+		81FC655E2E6A04DF00553BF9 /* PlasmaHomeDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC587B2E6A009400553BF9 /* PlasmaHomeDSTheme.xcframework */; };
+		81FC65602E6A04DF00553BF9 /* PlasmaB2CTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FC588D2E6A01D300553BF9 /* PlasmaB2CTheme.xcframework */; };
 		81FD6D5E2D6E28AF002A6E51 /* IndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5D2D6E28AC002A6E51 /* IndicatorViewModel.swift */; };
 		81FD6D602D6E28B5002A6E51 /* IndicatorViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5F2D6E28B1002A6E51 /* IndicatorViewProvider.swift */; };
 		81FD6D622D6E28BB002A6E51 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D612D6E28B8002A6E51 /* IndicatorView.swift */; };
@@ -187,20 +200,14 @@
 			remoteGlobalIDString = 24C154012BB3020A00963FAA;
 			remoteInfo = PlasmaDemoApp;
 		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8101F6E92D78377C004ED8A3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+		81FC58912E6A01F800553BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24C153FA2BB3020A00963FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81FC58882E6A019400553BF9;
+			remoteInfo = "Build Dependencies";
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		24C154022BB3020A00963FAA /* SDDSDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,6 +364,12 @@
 		81F89E492D81A3A100A41C89 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		81F89E4B2D81A3A500A41C89 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		81F89E4D2D81A3A900A41C89 /* CardViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewProvider.swift; sourceTree = "<group>"; };
+		81FC58752E69FF8F00553BF9 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		81FC58762E69FF8F00553BF9 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
+		81FC587B2E6A009400553BF9 /* PlasmaHomeDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PlasmaHomeDSTheme.xcframework; path = ../Themes/build/PlasmaHomeDSTheme.xcframework; sourceTree = "<group>"; };
+		81FC587C2E6A009400553BF9 /* SDDSservTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSservTheme.xcframework; path = ../Themes/build/SDDSservTheme.xcframework; sourceTree = "<group>"; };
+		81FC58852E6A012F00553BF9 /* StylesSaluteTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StylesSaluteTheme.xcframework; path = ../Themes/build/StylesSaluteTheme.xcframework; sourceTree = "<group>"; };
+		81FC588D2E6A01D300553BF9 /* PlasmaB2CTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PlasmaB2CTheme.xcframework; path = ../Themes/build/PlasmaB2CTheme.xcframework; sourceTree = "<group>"; };
 		81FD6D5D2D6E28AC002A6E51 /* IndicatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewModel.swift; sourceTree = "<group>"; };
 		81FD6D5F2D6E28B1002A6E51 /* IndicatorViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewProvider.swift; sourceTree = "<group>"; };
 		81FD6D612D6E28B8002A6E51 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
@@ -394,21 +407,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69A261FC2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */,
-				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
-				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
-				816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */,
-				81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */,
-				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
-				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
-				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
-				8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */,
-				81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */,
+				81FC65552E6A04D600553BF9 /* SDDSIcons.xcframework in Frameworks */,
+				81FC655E2E6A04DF00553BF9 /* PlasmaHomeDSTheme.xcframework in Frameworks */,
+				81FC65602E6A04DF00553BF9 /* PlasmaB2CTheme.xcframework in Frameworks */,
+				81FC655C2E6A04DF00553BF9 /* SDDSservTheme.xcframework in Frameworks */,
+				81FC655A2E6A04DF00553BF9 /* StylesSaluteTheme.xcframework in Frameworks */,
+				81FC65532E6A04D600553BF9 /* SDDSThemeCore.xcframework in Frameworks */,
+				81FC65572E6A04D600553BF9 /* SDDSComponents.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +526,12 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81FC588D2E6A01D300553BF9 /* PlasmaB2CTheme.xcframework */,
+				81FC58852E6A012F00553BF9 /* StylesSaluteTheme.xcframework */,
+				81FC587B2E6A009400553BF9 /* PlasmaHomeDSTheme.xcframework */,
+				81FC587C2E6A009400553BF9 /* SDDSservTheme.xcframework */,
+				81FC58762E69FF8F00553BF9 /* SDDSIcons.xcframework */,
+				81FC58752E69FF8F00553BF9 /* SDDSThemeCore.xcframework */,
 				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
@@ -1077,7 +1088,6 @@
 				24C153FF2BB3020A00963FAA /* Frameworks */,
 				24C154002BB3020A00963FAA /* Resources */,
 				2430DEEA2BB6B33700277123 /* Lint */,
-				8101F6E92D78377C004ED8A3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1085,21 +1095,6 @@
 			);
 			name = SDDSDemoApp;
 			packageProductDependencies = (
-				8159F72B2C5CFDCF00622836 /* SDDSThemeCore */,
-				8178A7762C74ABDA00DFDA61 /* SDDSComponents */,
-				816C62982CB80E0C00352891 /* SDDSComponents */,
-				816C629D2CB80E2E00352891 /* SDDSComponents */,
-				819A382B2CC6926300A1377F /* SDDSComponents */,
-				819A38302CC692BD00A1377F /* SDDSComponents */,
-				81CA2C532CC69549002AF2DF /* SDDSComponents */,
-				8104243C2CFDB83F0009B6E9 /* SDDSServTheme */,
-				8104243F2CFDB8E10009B6E9 /* SDDSComponents */,
-				8183456A2CFDBAF30081113B /* SDDSComponents */,
-				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
-				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
-				81A0795E2DA6706500260DC9 /* SDDSComponents */,
-				81A079612DA6707100260DC9 /* SDDSThemeCore */,
-				816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -1116,6 +1111,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				81FC58922E6A01F800553BF9 /* PBXTargetDependency */,
 				24C154142BB3020B00963FAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -1188,6 +1184,9 @@
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 24C154012BB3020A00963FAA;
 					};
+					81FC58882E6A019400553BF9 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 24C153FD2BB3020A00963FAA /* Build configuration list for PBXProject "SDDSDemoApp" */;
@@ -1200,13 +1199,7 @@
 			);
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
-				8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
-				8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */,
-				8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */,
-				81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
-				81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
 				8127A0812E0ABD1700B320D1 /* XCRemoteSwiftPackageReference "snapshots-kit-ios" */,
-				816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -1215,6 +1208,7 @@
 				24C154012BB3020A00963FAA /* SDDSDemoApp */,
 				24C154112BB3020B00963FAA /* SDDSDemoAppTests */,
 				24C1541B2BB3020B00963FAA /* SDDSDemoAppUITests */,
+				81FC58882E6A019400553BF9 /* Build Dependencies */,
 			);
 		};
 /* End PBXProject section */
@@ -1263,6 +1257,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ \"$SKIP_LINT\" == \"YES\" ]; then\n    echo \"Skipping Lint...\"\n    exit 0\nfi\n\n#/bin/sh \"${SRCROOT}/../lint.sh\"\n";
+		};
+		81FC588C2E6A019C00553BF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby scripts/build_demo.rb\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1444,6 +1455,11 @@
 			isa = PBXTargetDependency;
 			target = 24C154012BB3020A00963FAA /* SDDSDemoApp */;
 			targetProxy = 24C1541D2BB3020B00963FAA /* PBXContainerItemProxy */;
+		};
+		81FC58922E6A01F800553BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81FC58882E6A019400553BF9 /* Build Dependencies */;
+			targetProxy = 81FC58912E6A01F800553BF9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1731,6 +1747,24 @@
 			};
 			name = Release;
 		};
+		81FC588A2E6A019400553BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDMYYG676V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		81FC588B2E6A019400553BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KDMYYG676V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1770,34 +1804,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		81FC58892E6A019400553BF9 /* Build configuration list for PBXAggregateTarget "Build Dependencies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81FC588A2E6A019400553BF9 /* Debug */,
+				81FC588B2E6A019400553BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/SDDSservTheme;
-		};
-		816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/PlasmaHomeDSTheme;
-		};
-		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/PlasmaB2CTheme;
-		};
-		8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/StylesSaluteTheme;
-		};
-		81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSComponents;
-		};
-		81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		8127A0812E0ABD1700B320D1 /* XCRemoteSwiftPackageReference "snapshots-kit-ios" */ = {
@@ -1819,70 +1835,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8104243C2CFDB83F0009B6E9 /* SDDSServTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSServTheme;
-		};
-		8104243F2CFDB8E10009B6E9 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
 		8127A0822E0ABD1700B320D1 /* SDSnapshots */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8127A0812E0ABD1700B320D1 /* XCRemoteSwiftPackageReference "snapshots-kit-ios" */;
 			productName = SDSnapshots;
-		};
-		8159F72B2C5CFDCF00622836 /* SDDSThemeCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSThemeCore;
-		};
-		816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlasmaHomeDSTheme;
-		};
-		8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlasmaB2CTheme;
-		};
-		8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = StylesSaluteTheme;
-		};
-		816C62982CB80E0C00352891 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		816C629D2CB80E2E00352891 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		8178A7762C74ABDA00DFDA61 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		8183456A2CFDBAF30081113B /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		819A382B2CC6926300A1377F /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		819A38302CC692BD00A1377F /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		81A0795E2DA6706500260DC9 /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
-		};
-		81A079612DA6707100260DC9 /* SDDSThemeCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSThemeCore;
-		};
-		81CA2C532CC69549002AF2DF /* SDDSComponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SDDSComponents;
 		};
 		D3B8C9EC2DAE587300E5FEE6 /* SDSnapshots */ = {
 			isa = XCSwiftPackageProductDependency;

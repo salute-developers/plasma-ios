@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ModalSizeConfiguration` определяет протокол для конфигурации размеров и отступов модального окна.

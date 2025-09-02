@@ -1,6 +1,6 @@
 import SwiftUI
-@_exported import SDDSIcons
-@_exported import SDDSThemeCore
+import SDDSIcons
+import SDDSThemeCore
 
 /**
  `SDDSModal` представляет собой модальное окно с возможностью настройки внешнего вида и дополнительных элементов.

@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @Binding var state: SelectionControlState

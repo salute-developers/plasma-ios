@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationProvider> {
     @Published var radioboxViewModels: [RadioboxItemViewModel]

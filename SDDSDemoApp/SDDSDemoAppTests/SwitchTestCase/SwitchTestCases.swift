@@ -5,7 +5,7 @@
 //  Created by Булинов Ангрик Александрович on 23.04.2025.
 //
 
-import SDDSServTheme
+import SDDSservTheme
 import SDDSComponents
 import UIKit
 import SwiftUI

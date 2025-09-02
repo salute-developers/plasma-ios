@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 public enum AccordionLayout: String, CaseIterable {
     case clearActionStart = "Clear Action Start"

@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSSpinner` представляет собой компонент для отображения анимированного спиннера загрузки.

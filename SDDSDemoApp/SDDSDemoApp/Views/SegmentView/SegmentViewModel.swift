@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     @Published var data: [SDDSSegmentItemData<AnyView>] = []

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSservTheme
 
 struct GradientPickerView: View {
     @Environment(\.colorScheme) private var colorScheme

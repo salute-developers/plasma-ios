@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class PopoverVariationProvider: VariationProvider {
     typealias Appearance = PopoverAppearance

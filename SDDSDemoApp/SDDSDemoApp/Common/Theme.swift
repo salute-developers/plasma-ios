@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 import PlasmaB2CTheme
 import StylesSaluteTheme
 import PlasmaHomeDSTheme

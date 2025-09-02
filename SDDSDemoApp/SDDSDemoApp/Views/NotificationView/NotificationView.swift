@@ -2,7 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SDDSservTheme
 
 struct NotificationView: View {
     @StateObject private var viewModel = NotificationViewModel()

@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 struct ChipView: View {
     @ObservedObject private var viewModel: ChipViewModel = ChipViewModel()

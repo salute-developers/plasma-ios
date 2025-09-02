@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SkeletonAppearance` определяет параметры внешнего вида скелетона.

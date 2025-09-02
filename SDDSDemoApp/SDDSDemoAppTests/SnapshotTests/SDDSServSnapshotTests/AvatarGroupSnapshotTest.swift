@@ -10,7 +10,7 @@
 @testable import SDDSComponents
 @testable import SDDSIcons
 import XCTest
-import SDDSServTheme
+import SDDSservTheme
 import UIKit
 import SwiftUI
 

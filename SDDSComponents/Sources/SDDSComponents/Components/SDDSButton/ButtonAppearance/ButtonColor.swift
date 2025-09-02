@@ -1,5 +1,5 @@
 import Foundation
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ButtonColor` определяет цвета кнопки для различных состояний.

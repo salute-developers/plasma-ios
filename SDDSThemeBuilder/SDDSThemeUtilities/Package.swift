@@ -9,6 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "SDDSThemeUtilities",
+            type: .static,
             targets: ["SDDSThemeUtilities"]),
     ],
     targets: [

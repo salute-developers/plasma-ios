@@ -1,5 +1,5 @@
 import Foundation
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public protocol SizeConfiguration {}
 

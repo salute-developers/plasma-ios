@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `LoaderAppearance` определяет внешний вид компонента Loader, который может отображать либо Spinner, либо CircularProgressBar.

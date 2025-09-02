@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 enum BadgeType: String, CaseIterable {
     case badge = "Badge Solid"

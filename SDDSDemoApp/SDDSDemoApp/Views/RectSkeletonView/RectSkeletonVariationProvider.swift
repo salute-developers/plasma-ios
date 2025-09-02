@@ -1,7 +1,7 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSservTheme
 
 final class RectSkeletonVariationProvider: VariationProvider {
     typealias Appearance = SkeletonAppearance

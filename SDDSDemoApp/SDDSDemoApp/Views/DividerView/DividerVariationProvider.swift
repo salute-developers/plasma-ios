@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class DividerVariationProvider: VariationProvider {
     typealias Appearance = DividerAppearance

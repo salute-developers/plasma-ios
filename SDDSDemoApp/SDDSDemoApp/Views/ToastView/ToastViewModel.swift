@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class ToastViewModel: ComponentViewModel<ToastVariationProvider> {
     @Published var text: String = "Toast message"

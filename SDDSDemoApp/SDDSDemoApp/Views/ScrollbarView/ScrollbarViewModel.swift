@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class ScrollbarViewModel: ComponentViewModel<ScrollbarVariationProvider> {
     @Published var hasTrack: Bool = true

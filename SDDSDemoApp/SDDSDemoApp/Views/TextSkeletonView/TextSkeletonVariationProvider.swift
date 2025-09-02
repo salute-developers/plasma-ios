@@ -1,7 +1,7 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSservTheme
 
 final class TextSkeletonVariationProvider: VariationProvider {
     typealias Appearance = SkeletonAppearance

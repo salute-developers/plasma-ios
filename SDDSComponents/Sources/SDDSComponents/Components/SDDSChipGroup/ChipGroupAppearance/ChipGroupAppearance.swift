@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
 
 /**
  `ChipGroupAppearance` определяет внешний вид `ChipGroup`

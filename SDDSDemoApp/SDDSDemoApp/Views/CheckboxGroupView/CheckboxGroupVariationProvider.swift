@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
+import SDDSservTheme
 
 final class CheckboxGroupVariationProvider: VariationProvider {
     typealias Appearance = CheckboxGroupAppearance
