@@ -8,7 +8,7 @@
 @testable import SDDSDemoApp
 @testable import SDDSComponents
 import XCTest
-import SDDSservTheme
+import SDDSServTheme
 import UIKit
 import SwiftUI
 

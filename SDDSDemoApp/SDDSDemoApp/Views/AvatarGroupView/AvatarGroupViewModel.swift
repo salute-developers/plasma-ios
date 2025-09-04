@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvider>, ViewModelDelegate {
     @Published var avatarData: [SDDSAvatarData] = []

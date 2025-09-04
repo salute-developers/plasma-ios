@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class ButtonVariationProvider: VariationProvider {
     typealias Appearance = ButtonAppearance

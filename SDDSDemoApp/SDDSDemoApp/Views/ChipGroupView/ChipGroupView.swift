@@ -2,7 +2,7 @@ import SwiftUI
 
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct ChipGroupView: View {
     @ObservedObject var viewModel = ChipGroupViewModel()

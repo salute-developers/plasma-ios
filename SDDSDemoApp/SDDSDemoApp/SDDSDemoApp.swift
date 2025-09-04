@@ -1,5 +1,5 @@
 import SwiftUI
-import SDDSservTheme
+import SDDSServTheme
 import StylesSaluteTheme
 import PlasmaB2CTheme
 
@@ -9,7 +9,7 @@ struct SDDSDemoApp: App {
         WindowGroup {
             ComponentsView()
                 .onAppear {
-                    SDDSservTheme.Theme.initialize()
+                    SDDSServTheme.Theme.initialize()
                     StylesSaluteTheme.Theme.initialize()
                     PlasmaB2CTheme.Theme.initialize()
                 }

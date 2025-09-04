@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct OverlayView: View {
     @ObservedObject private var viewModel: OverlayViewModel

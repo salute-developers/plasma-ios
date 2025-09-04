@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class OverlayVariationProvider: VariationProvider {
     typealias Appearance = OverlayAppearance

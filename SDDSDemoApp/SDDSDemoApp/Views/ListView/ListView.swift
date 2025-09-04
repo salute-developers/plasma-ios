@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 import SDDSIcons
 
 struct ListView: View {
@@ -37,7 +37,7 @@ struct ListView: View {
                     BasicButton(
                         title: "Add Item",
                         subtitle: "",
-                        appearance: SDDSservTheme.BasicButton.m.accent.appearance,
+                        appearance: SDDSServTheme.BasicButton.m.accent.appearance,
                         action: {
                             viewModel.addItem()
                         }

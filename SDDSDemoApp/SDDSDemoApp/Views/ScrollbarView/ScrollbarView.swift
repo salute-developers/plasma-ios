@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct ScrollbarView: View {
     @ObservedObject private var viewModel: ScrollbarViewModel = ScrollbarViewModel()

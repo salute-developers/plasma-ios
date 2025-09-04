@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct RadioboxView: View {
     @ObservedObject private var viewModel: RadioboxViewModel = RadioboxViewModel()

@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct CheckboxGroupView: View {
     @ObservedObject private var viewModel: CheckboxGroupViewModel

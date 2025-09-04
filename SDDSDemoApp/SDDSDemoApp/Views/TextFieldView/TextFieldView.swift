@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 
-import SDDSservTheme
+import SDDSServTheme
 
 struct TextFieldView: View {
     @ObservedObject private var viewModel: TextFieldViewModel = TextFieldViewModel()

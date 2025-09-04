@@ -1,5 +1,5 @@
 import Foundation
-import SDDSservTheme
+import SDDSServTheme
 import SwiftUI
 import Combine
 import SDDSComponents

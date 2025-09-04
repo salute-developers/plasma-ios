@@ -3,7 +3,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 
-import SDDSservTheme
+import SDDSServTheme
 
 enum SDDSButtonType: String, CaseIterable {
     case basic = "Basic Button"

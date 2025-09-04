@@ -2,7 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSservTheme
+import SDDSServTheme
 
 struct RectSkeletonView: View {
     @ObservedObject private var viewModel: RectSkeletonViewModel = RectSkeletonViewModel()

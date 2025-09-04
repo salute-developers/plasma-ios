@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 enum CardType: String, CaseIterable {
     case card = "Card Solid"

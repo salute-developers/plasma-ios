@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct TooltipView: View {
     @ObservedObject private var viewModel: TooltipViewModel = TooltipViewModel()

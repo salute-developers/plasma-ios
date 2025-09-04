@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 struct PopoverView: View {
     @ObservedObject private var viewModel: PopoverViewModel = PopoverViewModel()

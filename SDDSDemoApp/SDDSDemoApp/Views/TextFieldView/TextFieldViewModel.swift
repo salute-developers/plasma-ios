@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     @Published var value: TextFieldValue = .single("")

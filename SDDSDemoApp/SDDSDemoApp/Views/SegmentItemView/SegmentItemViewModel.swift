@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvider> {
     @Published var title: String = "Title"

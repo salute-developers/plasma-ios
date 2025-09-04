@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class ScrollbarVariationProvider: VariationProvider {
     typealias Appearance = ScrollbarAppearance

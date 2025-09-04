@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import PhotosUI
-import SDDSservTheme
+import SDDSServTheme
 
 struct AvatarView: View {
     @ObservedObject private var viewModel: AvatarViewModel = AvatarViewModel()

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 public struct SegmentItemView: View {
     @ObservedObject private var viewModel: SegmentItemViewModel = SegmentItemViewModel()

@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 enum ChipGroupGapStyle: String, CaseIterable {
     case dense

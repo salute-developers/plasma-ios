@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 enum CellContent: String, CaseIterable {
     case avatar

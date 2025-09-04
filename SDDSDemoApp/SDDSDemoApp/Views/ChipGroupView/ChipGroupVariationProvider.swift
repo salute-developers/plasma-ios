@@ -1,6 +1,6 @@
 import Foundation
 import SDDSComponents
-import SDDSservTheme
+import SDDSServTheme
 
 final class ChipGroupVariationProvider: VariationProvider {
     typealias Appearance = ChipGroupAppearance

@@ -189,7 +189,9 @@ extension App {
     }
     
     private func generatedComponentsURL(component: CodeGenerationComponent, config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
-        themeURL(config: config).appending(component: component.rawValue)
+        themeURL(config: config)
+            .appending(component: "Components")
+            .appending(component: component.rawValue)
     }
     
     private func fontsURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
