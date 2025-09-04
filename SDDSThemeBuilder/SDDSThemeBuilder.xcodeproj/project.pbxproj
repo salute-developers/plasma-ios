@@ -79,6 +79,7 @@
 		810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
 		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
+		810EBF642E6AF20500FBAC26 /* CornerRadiusDrawerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */; };
 		810F4C592E266FC500218FE7 /* AccordionItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C572E266FC500218FE7 /* AccordionItemSize.swift */; };
 		810F4C5A2E266FC500218FE7 /* AccordionItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */; };
 		810F4C5C2E266FDC00218FE7 /* AccordionItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */; };
@@ -316,7 +317,6 @@
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
-		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
 		81A613122D5BA1A600ADE1CD /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */; };
 		81A613132D5BA1A600ADE1CD /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */; };
 		81A613142D5BA1A600ADE1CD /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */; };
@@ -607,6 +607,7 @@
 		810AFD4F2D96F200000B2A7A /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
+		810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDrawerType.swift; sourceTree = "<group>"; };
 		810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemAppearance.swift; sourceTree = "<group>"; };
 		810F4C572E266FC500218FE7 /* AccordionItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemSize.swift; sourceTree = "<group>"; };
 		810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemProps.swift; sourceTree = "<group>"; };
@@ -1020,7 +1021,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2307,6 +2307,7 @@
 		81FC47BF2D93163000A83F87 /* PathDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */,
 				81FC47B92D93163000A83F87 /* CheckmarkDrawer.swift */,
 				81FC47BA2D93163000A83F87 /* CircleDrawer.swift */,
 				81FC47BB2D93163000A83F87 /* CornerRadiusDrawer.swift */,
@@ -3080,6 +3081,7 @@
 				8180A5942C11C34000009AF5 /* ShapeModifier.swift in Sources */,
 				81FC47C02D93163000A83F87 /* IndeterminateDrawer.swift in Sources */,
 				81FC47C12D93163000A83F87 /* CheckmarkDrawer.swift in Sources */,
+				810EBF642E6AF20500FBAC26 /* CornerRadiusDrawerType.swift in Sources */,
 				81FC47C22D93163000A83F87 /* DefaultDrawer.swift in Sources */,
 				81FC49282D931CAE00A83F87 /* EnvironmentValueProvider.swift in Sources */,
 				81FC47C32D93163000A83F87 /* CornerRadiusDrawer.swift in Sources */,

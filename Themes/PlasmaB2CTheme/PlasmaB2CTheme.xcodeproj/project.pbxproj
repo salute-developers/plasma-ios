@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -738,6 +738,19 @@
 		F9A13760FC2D3CE34F04B44F /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
 		FDD3C50EA80FDFD03B02B3D7 /* SBSansDisplay-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		810EBF692E6AF39800FBAC26 /* TabBar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBar; sourceTree = "<group>"; };
+		810EBF6E2E6AF39800FBAC26 /* TabBarClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarClear; sourceTree = "<group>"; };
+		810EBF732E6AF39800FBAC26 /* TabBarHasLabel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarHasLabel; sourceTree = "<group>"; };
+		810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarHasLabelClear; sourceTree = "<group>"; };
+		810EBF7D2E6AF39800FBAC26 /* TabBarIsland */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIsland; sourceTree = "<group>"; };
+		810EBF822E6AF39800FBAC26 /* TabBarIslandClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandClear; sourceTree = "<group>"; };
+		810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandHasLabel; sourceTree = "<group>"; };
+		810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandHasLabelClear; sourceTree = "<group>"; };
+		810EBF912E6AF39800FBAC26 /* TabBarItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarItem; sourceTree = "<group>"; };
+		810EBF962E6AF39800FBAC26 /* TabBarItemClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarItemClear; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E357E349AF36DC1FE02797AC /* Frameworks */ = {
@@ -1681,6 +1694,16 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				810EBF692E6AF39800FBAC26 /* TabBar */,
+				810EBF6E2E6AF39800FBAC26 /* TabBarClear */,
+				810EBF732E6AF39800FBAC26 /* TabBarHasLabel */,
+				810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */,
+				810EBF7D2E6AF39800FBAC26 /* TabBarIsland */,
+				810EBF822E6AF39800FBAC26 /* TabBarIslandClear */,
+				810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */,
+				810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */,
+				810EBF912E6AF39800FBAC26 /* TabBarItem */,
+				810EBF962E6AF39800FBAC26 /* TabBarItemClear */,
 				81EE9ED72E5CA22E006F9E5D /* Loader */,
 				8131BF152E44788400FED868 /* Tokens */,
 				8161694A2E33B812003C1071 /* AccordionClearActionEnd */,
@@ -1791,6 +1814,18 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				810EBF692E6AF39800FBAC26 /* TabBar */,
+				810EBF6E2E6AF39800FBAC26 /* TabBarClear */,
+				810EBF732E6AF39800FBAC26 /* TabBarHasLabel */,
+				810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */,
+				810EBF7D2E6AF39800FBAC26 /* TabBarIsland */,
+				810EBF822E6AF39800FBAC26 /* TabBarIslandClear */,
+				810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */,
+				810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */,
+				810EBF912E6AF39800FBAC26 /* TabBarItem */,
+				810EBF962E6AF39800FBAC26 /* TabBarItemClear */,
 			);
 			name = PlasmaB2CTheme;
 			productName = PlasmaB2CTheme;
