@@ -21,7 +21,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
     @Published private(set) var itemCount: Int = TabBarViewModel.defaultCount
     
     var tabBarItems: [TabBarItemData] {
-        return (0..<5).map { index in
+        return (0..<itemCount).map { index in
             TabBarItemData(
                 content: AnyView(icon),
                 selectedContent: AnyView(selectedIcon),
