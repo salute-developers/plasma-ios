@@ -24,4 +24,13 @@ final class RectSkeletonPlasmaB2CSnapshotTest: XCTestCase {
             duration: 2000)
         try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
     }
+    
+    @MainActor
+    func testRectSkeletonLighterPlasmaB2C() async throws {
+        let appearance = SkeletonAppearance(
+            shape: CornerRadiusDrawer(cornerRadius: 8),
+            gradient: .surfaceDefaultSkeletonDeepGradient,
+            duration: 2000)
+        try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
+    }
 }

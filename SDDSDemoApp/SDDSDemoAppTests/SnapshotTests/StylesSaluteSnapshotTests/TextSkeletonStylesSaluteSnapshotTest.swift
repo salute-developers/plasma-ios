@@ -35,4 +35,14 @@ final class TextSkeletonStylesSaluteSnapshotTest: XCTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
     }
+    
+    @MainActor
+    func testTextSkeletonLigtherStylesSalute() async throws {
+        let appearance = SkeletonAppearance(
+            shape: CornerRadiusDrawer(cornerRadius: 4),
+            gradient: .surfaceDefaultSkeletonDeepGradient,
+            duration: 2000
+        )
+        try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
+    }
 }

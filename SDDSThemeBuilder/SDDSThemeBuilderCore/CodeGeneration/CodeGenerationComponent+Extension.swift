@@ -69,6 +69,16 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case spinner = "Spinner"
     case loader = "Loader"
     case codeField = "CodeField"
+    case tabBarItemSolid = "TabBarItem"
+    case tabBarItemClear = "TabBarItemClear"
+    case tabBarIslandSolid = "TabBarIsland"
+    case tabBarIslandClear = "TabBarIslandClear"
+    case tabBarIslandHasLabelSolid = "TabBarIslandHasLabel"
+    case tabBarIslandHasLabelClear = "TabBarIslandHasLabelClear"
+    case tabBarSolid = "TabBar"
+    case tabBarClear = "TabBarClear"
+    case tabBarHasLabelSolid = "TabBarHasLabel"
+    case tabBarHasLabelClear = "TabBarHasLabelClear"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -139,7 +149,17 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .accordionClearActionEnd,
             .spinner,
             .loader,
-            .codeField
+            .codeField,
+            .tabBarItemSolid,
+            .tabBarItemClear,
+            .tabBarIslandSolid,
+            .tabBarIslandClear,
+            .tabBarIslandHasLabelSolid,
+            .tabBarIslandHasLabelClear,
+            .tabBarSolid,
+            .tabBarClear,
+            .tabBarHasLabelSolid,
+            .tabBarHasLabelClear
         ]
     }
     
@@ -226,6 +246,14 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<LoaderProps, LoaderAppearance, LoaderSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeField:
             GenerateComponentCommand<CodeFieldProps, CodeFieldAppearance, CodeFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tabBarItemSolid:
+            GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tabBarItemClear:
+            GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+            GenerateComponentCommand<TabBarIslandProps, TabBarIslandAppearance, TabBarIslandSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+            GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -309,6 +337,12 @@ extension CodeGenerationComponent {
             "LoaderAppearance"
         case .codeField:
             "CodeFieldAppearance"
+        case .tabBarItemSolid, .tabBarItemClear:
+            "TabBarItemAppearance"
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+            "TabBarIslandAppearance"
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+            "TabBarAppearance"
         }
     }
     
@@ -393,6 +427,12 @@ extension CodeGenerationComponent {
             "LoaderSizeConfiguration"
         case .codeField:
             "CodeFieldSizeConfiguration"
+        case .tabBarItemSolid, .tabBarItemClear:
+            "TabBarItemSizeConfiguration"
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+            "TabBarIslandSizeConfiguration"
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+            "TabBarSizeConfiguration"
         }
     }
     
@@ -534,6 +574,26 @@ extension CodeGenerationComponent {
             "loader_config.json"
         case .codeField:
             "code_field_config.json"
+        case .tabBarItemSolid:
+            "tab_bar_item_solid_config.json"
+        case .tabBarItemClear:
+            "tab_bar_item_clear_config.json"
+        case .tabBarIslandSolid:
+            "tab_bar_island_solid_config.json"
+        case .tabBarIslandClear:
+            "tab_bar_island_clear_config.json"
+        case .tabBarIslandHasLabelSolid:
+            "tab_bar_island_has_label_solid_config.json"
+        case .tabBarIslandHasLabelClear:
+            "tab_bar_island_has_label_clear_config.json"
+        case .tabBarSolid:
+            "tab_bar_solid_config.json"
+        case .tabBarClear:
+            "tab_bar_clear_config.json"
+        case .tabBarHasLabelSolid:
+            "tab_bar_has_label_solid_config.json"
+        case .tabBarHasLabelClear:
+            "tab_bar_has_label_clear_config.json"
         }
     }
     

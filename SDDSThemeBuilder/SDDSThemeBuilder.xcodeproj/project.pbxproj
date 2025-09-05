@@ -79,6 +79,7 @@
 		810DE5402C2AC77700F1C96F /* ShadowToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDB72BD2B9B600F86AE1 /* ShadowToken.stencil */; };
 		810DE5412C2AC77700F1C96F /* TypographyToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 81E1EDF02BDA5E6200F86AE1 /* TypographyToken.stencil */; };
 		810DE54A2C2AC7FB00F1C96F /* GradientToken.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 810CB4872BF786C0002E718E /* GradientToken.stencil */; };
+		810EBF642E6AF20500FBAC26 /* CornerRadiusDrawerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */; };
 		810F4C592E266FC500218FE7 /* AccordionItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C572E266FC500218FE7 /* AccordionItemSize.swift */; };
 		810F4C5A2E266FC500218FE7 /* AccordionItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */; };
 		810F4C5C2E266FDC00218FE7 /* AccordionItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */; };
@@ -132,6 +133,17 @@
 		812DB7A32D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A22D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift */; };
 		812DB7A72D59E1B000D3F4A3 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A62D59E1B000D3F4A3 /* ButtonSize.swift */; };
 		812DB7A92D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7A82D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift */; };
+		8131DDFB2E4BA31500FED868 /* TabBarLabelPlacementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DDFA2E4BA31500FED868 /* TabBarLabelPlacementContextBuilder.swift */; };
+		8131DDFC2E4BA31500FED868 /* CodeFieldColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */; };
+		8131DE062E4BA32F00FED868 /* TabBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DDFE2E4BA32F00FED868 /* TabBarSize.swift */; };
+		8131DE072E4BA32F00FED868 /* TabBarItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE032E4BA32F00FED868 /* TabBarItemAppearance.swift */; };
+		8131DE082E4BA32F00FED868 /* TabBarIslandAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE002E4BA32F00FED868 /* TabBarIslandAppearance.swift */; };
+		8131DE092E4BA32F00FED868 /* TabBarItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE042E4BA32F00FED868 /* TabBarItemSize.swift */; };
+		8131DE0A2E4BA32F00FED868 /* TabBarIslandSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE012E4BA32F00FED868 /* TabBarIslandSize.swift */; };
+		8131DE0B2E4BA32F00FED868 /* TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DDFD2E4BA32F00FED868 /* TabBarAppearance.swift */; };
+		8131DE0F2E4BA33A00FED868 /* TabBarItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE0D2E4BA33A00FED868 /* TabBarItemProps.swift */; };
+		8131DE102E4BA33A00FED868 /* TabBarIslandProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE0C2E4BA33A00FED868 /* TabBarIslandProps.swift */; };
+		8131DE112E4BA33A00FED868 /* TabBarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131DE0E2E4BA33A00FED868 /* TabBarProps.swift */; };
 		813340122C063151005AD84F /* TypographyContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340112C063151005AD84F /* TypographyContextBuilderTests.swift */; };
 		813340142C0631D0005AD84F /* ColorContextBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */; };
 		813340162C0632EA005AD84F /* palette.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340152C0632EA005AD84F /* palette.json */; };
@@ -305,7 +317,6 @@
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
-		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
 		81A613122D5BA1A600ADE1CD /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */; };
 		81A613132D5BA1A600ADE1CD /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */; };
 		81A613142D5BA1A600ADE1CD /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */; };
@@ -596,6 +607,7 @@
 		810AFD4F2D96F200000B2A7A /* SegmentItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemSize.swift; sourceTree = "<group>"; };
 		810CB4872BF786C0002E718E /* GradientToken.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = GradientToken.stencil; sourceTree = "<group>"; };
 		810DE53C2C2AC5EB00F1C96F /* PrepareDirectoriesCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDirectoriesCommand.swift; sourceTree = "<group>"; };
+		810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDrawerType.swift; sourceTree = "<group>"; };
 		810F4C562E266FC500218FE7 /* AccordionItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemAppearance.swift; sourceTree = "<group>"; };
 		810F4C572E266FC500218FE7 /* AccordionItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemSize.swift; sourceTree = "<group>"; };
 		810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionItemProps.swift; sourceTree = "<group>"; };
@@ -646,6 +658,17 @@
 		812DB7A22D59DC7A00D3F4A3 /* ButtonColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColorContextBuilder.swift; sourceTree = "<group>"; };
 		812DB7A62D59E1B000D3F4A3 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		812DB7A82D59E9A600D3F4A3 /* EdgeInsetsContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetsContextBuilder.swift; sourceTree = "<group>"; };
+		8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldColorContextBuilder.swift; sourceTree = "<group>"; };
+		8131DDFA2E4BA31500FED868 /* TabBarLabelPlacementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarLabelPlacementContextBuilder.swift; sourceTree = "<group>"; };
+		8131DDFD2E4BA32F00FED868 /* TabBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAppearance.swift; sourceTree = "<group>"; };
+		8131DDFE2E4BA32F00FED868 /* TabBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSize.swift; sourceTree = "<group>"; };
+		8131DE002E4BA32F00FED868 /* TabBarIslandAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandAppearance.swift; sourceTree = "<group>"; };
+		8131DE012E4BA32F00FED868 /* TabBarIslandSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandSize.swift; sourceTree = "<group>"; };
+		8131DE032E4BA32F00FED868 /* TabBarItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemAppearance.swift; sourceTree = "<group>"; };
+		8131DE042E4BA32F00FED868 /* TabBarItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSize.swift; sourceTree = "<group>"; };
+		8131DE0C2E4BA33A00FED868 /* TabBarIslandProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandProps.swift; sourceTree = "<group>"; };
+		8131DE0D2E4BA33A00FED868 /* TabBarItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProps.swift; sourceTree = "<group>"; };
+		8131DE0E2E4BA33A00FED868 /* TabBarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProps.swift; sourceTree = "<group>"; };
 		813340112C063151005AD84F /* TypographyContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340132C0631D0005AD84F /* ColorContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilderTests.swift; sourceTree = "<group>"; };
 		813340152C0632EA005AD84F /* palette.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = palette.json; sourceTree = "<group>"; };
@@ -998,7 +1021,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,6 +1351,8 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */,
+				8131DDFA2E4BA31500FED868 /* TabBarLabelPlacementContextBuilder.swift */,
 				810F4C5D2E26703100218FE7 /* AccordionItemPlacementBuilder.swift */,
 				81205C152E28FFB700AA29ED /* StrokeCapContextBuilder.swift */,
 				818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */,
@@ -1379,6 +1403,9 @@
 			isa = PBXGroup;
 			children = (
 				819A2E662E4E6364006A11F8 /* LoaderProps.swift */,
+				8131DE0C2E4BA33A00FED868 /* TabBarIslandProps.swift */,
+				8131DE0D2E4BA33A00FED868 /* TabBarItemProps.swift */,
+				8131DE0E2E4BA33A00FED868 /* TabBarProps.swift */,
 				81B510692E3C7CBD00504B1D /* CodeFieldProps.swift */,
 				810F4C5F2E2674D800218FE7 /* AccordionActionProps.swift */,
 				810F4C5B2E266FDC00218FE7 /* AccordionItemProps.swift */,
@@ -1424,6 +1451,9 @@
 			isa = PBXGroup;
 			children = (
 				819A2E6A2E4E636C006A11F8 /* Loader */,
+				8131DDFF2E4BA32F00FED868 /* TabBar */,
+				8131DE022E4BA32F00FED868 /* TabBarIsland */,
+				8131DE052E4BA32F00FED868 /* TabBarItem */,
 				81090AC62E4393310086BB29 /* Spinner */,
 				81B510662E3C7CA100504B1D /* CodeField */,
 				810F4C632E2674EB00218FE7 /* Accordion */,
@@ -1474,6 +1504,33 @@
 				812DB7A62D59E1B000D3F4A3 /* ButtonSize.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		8131DDFF2E4BA32F00FED868 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8131DDFD2E4BA32F00FED868 /* TabBarAppearance.swift */,
+				8131DDFE2E4BA32F00FED868 /* TabBarSize.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8131DE022E4BA32F00FED868 /* TabBarIsland */ = {
+			isa = PBXGroup;
+			children = (
+				8131DE002E4BA32F00FED868 /* TabBarIslandAppearance.swift */,
+				8131DE012E4BA32F00FED868 /* TabBarIslandSize.swift */,
+			);
+			path = TabBarIsland;
+			sourceTree = "<group>";
+		};
+		8131DE052E4BA32F00FED868 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				8131DE032E4BA32F00FED868 /* TabBarItemAppearance.swift */,
+				8131DE042E4BA32F00FED868 /* TabBarItemSize.swift */,
+			);
+			path = TabBarItem;
 			sourceTree = "<group>";
 		};
 		8133401F2C06397A005AD84F /* ContextBuilders */ = {
@@ -2250,6 +2307,7 @@
 		81FC47BF2D93163000A83F87 /* PathDrawer */ = {
 			isa = PBXGroup;
 			children = (
+				810EBF632E6AF20500FBAC26 /* CornerRadiusDrawerType.swift */,
 				81FC47B92D93163000A83F87 /* CheckmarkDrawer.swift */,
 				81FC47BA2D93163000A83F87 /* CircleDrawer.swift */,
 				81FC47BB2D93163000A83F87 /* CornerRadiusDrawer.swift */,
@@ -2738,6 +2796,8 @@
 				817539822BD008A500138866 /* Renderable.swift in Sources */,
 				810AFD502D96F203000B2A7A /* SegmentItemSize.swift in Sources */,
 				818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */,
+				8131DDFB2E4BA31500FED868 /* TabBarLabelPlacementContextBuilder.swift in Sources */,
+				8131DDFC2E4BA31500FED868 /* CodeFieldColorContextBuilder.swift in Sources */,
 				699E16572DC9EDE60022D4FF /* ChipGroupAppearance.swift in Sources */,
 				699E16582DC9EDE60022D4FF /* ChipGroupSize.swift in Sources */,
 				8175397C2BD0088000138866 /* DecodeCommand.swift in Sources */,
@@ -2753,6 +2813,9 @@
 				81E1EE4F2BE3A64D00F86AE1 /* Style.swift in Sources */,
 				818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */,
 				81E1EE592BE3A6A100F86AE1 /* Token.swift in Sources */,
+				8131DE0F2E4BA33A00FED868 /* TabBarItemProps.swift in Sources */,
+				8131DE102E4BA33A00FED868 /* TabBarIslandProps.swift in Sources */,
+				8131DE112E4BA33A00FED868 /* TabBarProps.swift in Sources */,
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */,
@@ -2875,6 +2938,12 @@
 				81F635DA2DBB9192003C8C26 /* ShapeTokenContextBuilder.swift in Sources */,
 				69A8758D2DAF9E290074C1BD /* RadioboxSize.swift in Sources */,
 				69A8758E2DAF9E290074C1BD /* CheckboxGroupAppearance.swift in Sources */,
+				8131DE062E4BA32F00FED868 /* TabBarSize.swift in Sources */,
+				8131DE072E4BA32F00FED868 /* TabBarItemAppearance.swift in Sources */,
+				8131DE082E4BA32F00FED868 /* TabBarIslandAppearance.swift in Sources */,
+				8131DE092E4BA32F00FED868 /* TabBarItemSize.swift in Sources */,
+				8131DE0A2E4BA32F00FED868 /* TabBarIslandSize.swift in Sources */,
+				8131DE0B2E4BA32F00FED868 /* TabBarAppearance.swift in Sources */,
 				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
 				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,
 				810F4C592E266FC500218FE7 /* AccordionItemSize.swift in Sources */,
@@ -3012,6 +3081,7 @@
 				8180A5942C11C34000009AF5 /* ShapeModifier.swift in Sources */,
 				81FC47C02D93163000A83F87 /* IndeterminateDrawer.swift in Sources */,
 				81FC47C12D93163000A83F87 /* CheckmarkDrawer.swift in Sources */,
+				810EBF642E6AF20500FBAC26 /* CornerRadiusDrawerType.swift in Sources */,
 				81FC47C22D93163000A83F87 /* DefaultDrawer.swift in Sources */,
 				81FC49282D931CAE00A83F87 /* EnvironmentValueProvider.swift in Sources */,
 				81FC47C32D93163000A83F87 /* CornerRadiusDrawer.swift in Sources */,

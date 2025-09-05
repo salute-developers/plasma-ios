@@ -22,6 +22,18 @@
 		79F93A50BB01323E71998FC1 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B791C0ED33E9F8D9DF53F644 /* SBSansText-Bold.otf */; };
 		7F050B284444F4CA3DBFE23E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343400BC1F1F415B618C0730 /* Theme.swift */; };
 		810AFBC02D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */; };
+		810EBFF22E6AF3C700FBAC26 /* IconBadgeClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFEA2E6AF3C700FBAC26 /* IconBadgeClearSize.swift */; };
+		810EBFF32E6AF3C700FBAC26 /* IconBadgeTransparent+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFED2E6AF3C700FBAC26 /* IconBadgeTransparent+BaseVariations.swift */; };
+		810EBFF42E6AF3C700FBAC26 /* IconBadgeClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE92E6AF3C700FBAC26 /* IconBadgeClear+Variations.swift */; };
+		810EBFF52E6AF3C700FBAC26 /* IconBadgeClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFEB2E6AF3C700FBAC26 /* IconBadgeClearTypography.swift */; };
+		810EBFF62E6AF3C700FBAC26 /* IconBadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFF02E6AF3C700FBAC26 /* IconBadgeTransparentTypography.swift */; };
+		810EBFF72E6AF3C700FBAC26 /* IconBadgeClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE82E6AF3C700FBAC26 /* IconBadgeClear+BaseVariations.swift */; };
+		810EBFF82E6AF3C700FBAC26 /* IconBadgeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE52E6AF3C700FBAC26 /* IconBadgeSize.swift */; };
+		810EBFF92E6AF3C700FBAC26 /* IconBadge+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE32E6AF3C700FBAC26 /* IconBadge+BaseVariations.swift */; };
+		810EBFFA2E6AF3C700FBAC26 /* IconBadgeTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE62E6AF3C700FBAC26 /* IconBadgeTypography.swift */; };
+		810EBFFB2E6AF3C700FBAC26 /* IconBadge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFE42E6AF3C700FBAC26 /* IconBadge+Variations.swift */; };
+		810EBFFC2E6AF3C700FBAC26 /* IconBadgeTransparent+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFEE2E6AF3C700FBAC26 /* IconBadgeTransparent+Variations.swift */; };
+		810EBFFD2E6AF3C700FBAC26 /* IconBadgeTransparentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EBFEF2E6AF3C700FBAC26 /* IconBadgeTransparentSize.swift */; };
 		8131D3B32E45FBC000FED868 /* SpacingToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131D3AF2E45FBC000FED868 /* SpacingToken+Generated.swift */; };
 		8131D3B42E45FBC000FED868 /* Typographies+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131D3B02E45FBC000FED868 /* Typographies+Generated.swift */; };
 		8131D3B52E45FBC000FED868 /* TypographyToken+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131D3B12E45FBC000FED868 /* TypographyToken+Generated.swift */; };
@@ -196,6 +208,18 @@
 		6B06C6A5AB8FDC905458A41E /* SBSansText-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
 		70B7AD1E3F291B575B2C1E80 /* SBSansDisplay-Light.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Light.otf"; sourceTree = "<group>"; };
 		810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValueProvider+DefaultValues.swift"; sourceTree = "<group>"; };
+		810EBFE32E6AF3C700FBAC26 /* IconBadge+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+BaseVariations.swift"; sourceTree = "<group>"; };
+		810EBFE42E6AF3C700FBAC26 /* IconBadge+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadge+Variations.swift"; sourceTree = "<group>"; };
+		810EBFE52E6AF3C700FBAC26 /* IconBadgeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeSize.swift; sourceTree = "<group>"; };
+		810EBFE62E6AF3C700FBAC26 /* IconBadgeTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTypography.swift; sourceTree = "<group>"; };
+		810EBFE82E6AF3C700FBAC26 /* IconBadgeClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		810EBFE92E6AF3C700FBAC26 /* IconBadgeClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeClear+Variations.swift"; sourceTree = "<group>"; };
+		810EBFEA2E6AF3C700FBAC26 /* IconBadgeClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearSize.swift; sourceTree = "<group>"; };
+		810EBFEB2E6AF3C700FBAC26 /* IconBadgeClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeClearTypography.swift; sourceTree = "<group>"; };
+		810EBFED2E6AF3C700FBAC26 /* IconBadgeTransparent+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+BaseVariations.swift"; sourceTree = "<group>"; };
+		810EBFEE2E6AF3C700FBAC26 /* IconBadgeTransparent+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconBadgeTransparent+Variations.swift"; sourceTree = "<group>"; };
+		810EBFEF2E6AF3C700FBAC26 /* IconBadgeTransparentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentSize.swift; sourceTree = "<group>"; };
+		810EBFF02E6AF3C700FBAC26 /* IconBadgeTransparentTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadgeTransparentTypography.swift; sourceTree = "<group>"; };
 		8131D3A62E45FBC000FED868 /* Colors+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		8131D3A72E45FBC000FED868 /* ColorToken+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Generated.swift"; sourceTree = "<group>"; };
 		8131D3A82E45FBC000FED868 /* Gradients+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gradients+Generated.swift"; sourceTree = "<group>"; };
@@ -350,6 +374,39 @@
 				161F21B37CAD378EDC6C041B /* PlasmaHomeDSTheme.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		810EBFE72E6AF3C700FBAC26 /* IconBadge */ = {
+			isa = PBXGroup;
+			children = (
+				810EBFE32E6AF3C700FBAC26 /* IconBadge+BaseVariations.swift */,
+				810EBFE42E6AF3C700FBAC26 /* IconBadge+Variations.swift */,
+				810EBFE52E6AF3C700FBAC26 /* IconBadgeSize.swift */,
+				810EBFE62E6AF3C700FBAC26 /* IconBadgeTypography.swift */,
+			);
+			path = IconBadge;
+			sourceTree = "<group>";
+		};
+		810EBFEC2E6AF3C700FBAC26 /* IconBadgeClear */ = {
+			isa = PBXGroup;
+			children = (
+				810EBFE82E6AF3C700FBAC26 /* IconBadgeClear+BaseVariations.swift */,
+				810EBFE92E6AF3C700FBAC26 /* IconBadgeClear+Variations.swift */,
+				810EBFEA2E6AF3C700FBAC26 /* IconBadgeClearSize.swift */,
+				810EBFEB2E6AF3C700FBAC26 /* IconBadgeClearTypography.swift */,
+			);
+			path = IconBadgeClear;
+			sourceTree = "<group>";
+		};
+		810EBFF12E6AF3C700FBAC26 /* IconBadgeTransparent */ = {
+			isa = PBXGroup;
+			children = (
+				810EBFED2E6AF3C700FBAC26 /* IconBadgeTransparent+BaseVariations.swift */,
+				810EBFEE2E6AF3C700FBAC26 /* IconBadgeTransparent+Variations.swift */,
+				810EBFEF2E6AF3C700FBAC26 /* IconBadgeTransparentSize.swift */,
+				810EBFF02E6AF3C700FBAC26 /* IconBadgeTransparentTypography.swift */,
+			);
+			path = IconBadgeTransparent;
 			sourceTree = "<group>";
 		};
 		8131D3B22E45FBC000FED868 /* Tokens */ = {
@@ -637,6 +694,9 @@
 		B30D10EF1B9A708790D4AADE = {
 			isa = PBXGroup;
 			children = (
+				810EBFE72E6AF3C700FBAC26 /* IconBadge */,
+				810EBFEC2E6AF3C700FBAC26 /* IconBadgeClear */,
+				810EBFF12E6AF3C700FBAC26 /* IconBadgeTransparent */,
 				8131D3B22E45FBC000FED868 /* Tokens */,
 				81F2E95E2DF9FF3B00708B40 /* Avatar */,
 				81F2E9632DF9FF3B00708B40 /* AvatarGroup */,
@@ -794,6 +854,18 @@
 				81F2EA502DF9FF3B00708B40 /* BadgeTransparent+Variations.swift in Sources */,
 				81F2EA512DF9FF3B00708B40 /* Radiobox+Variations.swift in Sources */,
 				81F2EA542DF9FF3B00708B40 /* AvatarGroup+BaseVariations.swift in Sources */,
+				810EBFF22E6AF3C700FBAC26 /* IconBadgeClearSize.swift in Sources */,
+				810EBFF32E6AF3C700FBAC26 /* IconBadgeTransparent+BaseVariations.swift in Sources */,
+				810EBFF42E6AF3C700FBAC26 /* IconBadgeClear+Variations.swift in Sources */,
+				810EBFF52E6AF3C700FBAC26 /* IconBadgeClearTypography.swift in Sources */,
+				810EBFF62E6AF3C700FBAC26 /* IconBadgeTransparentTypography.swift in Sources */,
+				810EBFF72E6AF3C700FBAC26 /* IconBadgeClear+BaseVariations.swift in Sources */,
+				810EBFF82E6AF3C700FBAC26 /* IconBadgeSize.swift in Sources */,
+				810EBFF92E6AF3C700FBAC26 /* IconBadge+BaseVariations.swift in Sources */,
+				810EBFFA2E6AF3C700FBAC26 /* IconBadgeTypography.swift in Sources */,
+				810EBFFB2E6AF3C700FBAC26 /* IconBadge+Variations.swift in Sources */,
+				810EBFFC2E6AF3C700FBAC26 /* IconBadgeTransparent+Variations.swift in Sources */,
+				810EBFFD2E6AF3C700FBAC26 /* IconBadgeTransparentSize.swift in Sources */,
 				81F2EA582DF9FF3B00708B40 /* ChipSize.swift in Sources */,
 				81F2EA5A2DF9FF3B00708B40 /* CheckboxGroup+BaseVariations.swift in Sources */,
 				81F2EA5B2DF9FF3B00708B40 /* CheckboxSize.swift in Sources */,
@@ -969,7 +1041,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;
@@ -1010,7 +1082,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.StylesSaluteTheme;
