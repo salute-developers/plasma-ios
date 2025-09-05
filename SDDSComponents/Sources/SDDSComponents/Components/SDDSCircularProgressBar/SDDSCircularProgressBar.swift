@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSCircularProgressBar` представляет собой компонент для отображения кругового прогресс-бара.

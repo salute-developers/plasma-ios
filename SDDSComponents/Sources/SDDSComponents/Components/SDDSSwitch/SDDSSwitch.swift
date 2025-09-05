@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSSwitch` представляет собой настраиваемый переключатель, который может быть настроен с помощью различных параметров.

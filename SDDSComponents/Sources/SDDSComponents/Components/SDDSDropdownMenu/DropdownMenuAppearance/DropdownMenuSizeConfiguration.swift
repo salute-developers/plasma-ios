@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
 
 /**
  `DropdownMenuSizeConfiguration` определяет протокол для конфигурации размеров выпадающего меню.

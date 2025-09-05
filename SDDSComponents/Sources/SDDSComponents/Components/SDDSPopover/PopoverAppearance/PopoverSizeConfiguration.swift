@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public protocol PopoverSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var offset: CGFloat { get }

@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public protocol SpinnerSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var size: CGFloat { get }

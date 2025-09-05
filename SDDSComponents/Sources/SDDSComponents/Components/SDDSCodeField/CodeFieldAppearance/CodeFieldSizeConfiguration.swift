@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `CodeFieldSizeConfiguration` определяет размеры и отступы компонента CodeField.

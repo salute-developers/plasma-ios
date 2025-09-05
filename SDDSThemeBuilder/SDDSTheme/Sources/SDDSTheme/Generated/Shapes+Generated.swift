@@ -2,7 +2,7 @@
 
 import SwiftUI
 import UIKit
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public struct Shapes {
     public static let roundL = ShapeToken.roundL

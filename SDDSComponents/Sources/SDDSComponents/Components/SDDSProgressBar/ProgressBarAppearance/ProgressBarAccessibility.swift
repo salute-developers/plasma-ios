@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ProgressBarAccessibility` определяет параметры доступности для прогресс-бара.

@@ -143,6 +143,11 @@
 		819AF9842E4E506E006A11F8 /* TabBarIslandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AF9812E4E506E006A11F8 /* TabBarIslandViewModel.swift */; };
 		81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81A0795E2DA6706500260DC9 /* SDDSComponents */; };
 		81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81A079612DA6707100260DC9 /* SDDSThemeCore */; };
+		819A46692E4E6879006A11F8 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A46682E4E6877006A11F8 /* LoaderView.swift */; };
+		819A466B2E4E687E006A11F8 /* LoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466A2E4E687B006A11F8 /* LoaderViewModel.swift */; };
+		819A466D2E4E6886006A11F8 /* LoaderVariationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A466C2E4E6880006A11F8 /* LoaderVariationsProvider.swift */; };
+		81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81A0795E2DA6706500260DC9 /* SDDSComponents */; };
+		81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81A079612DA6707100260DC9 /* SDDSThemeCore */; };
 		81A613292D5BAB4200ADE1CD /* VariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613282D5BAB4200ADE1CD /* VariationProvider.swift */; };
 		81A6132B2D5BAB5D00ADE1CD /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132A2D5BAB5D00ADE1CD /* ComponentViewModel.swift */; };
 		81A6132D2D5BAB8100ADE1CD /* ButtonVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */; };

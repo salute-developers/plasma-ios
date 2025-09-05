@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSCounter` представляет собой компонент счетчика, отображающий числовое значение с настраиваемым внешним видом и состояниями.

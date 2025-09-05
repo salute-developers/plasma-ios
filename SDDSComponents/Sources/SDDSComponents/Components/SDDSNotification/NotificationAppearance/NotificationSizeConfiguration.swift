@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `NotificationSizeConfiguration` определяет протокол для конфигурации размеров и отступов уведомления.

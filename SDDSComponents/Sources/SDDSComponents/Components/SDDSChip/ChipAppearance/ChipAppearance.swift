@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `ChipAppearance` определяет внешний вид чипа, включая цвета и типографику.

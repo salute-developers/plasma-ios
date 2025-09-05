@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSToast` представляет собой настраиваемый тост, который может быть настроен с помощью различных параметров.

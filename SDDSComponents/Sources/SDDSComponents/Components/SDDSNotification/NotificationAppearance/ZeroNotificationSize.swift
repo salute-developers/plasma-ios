@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSThemeCore
 
 public struct ZeroNotificationSize: NotificationSizeConfiguration {
     public var closeSize = CGFloat(0)

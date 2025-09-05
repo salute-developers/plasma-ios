@@ -2,7 +2,7 @@
 
 import SwiftUI
 import UIKit
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public extension ShapeToken {
     static var roundL: Self {

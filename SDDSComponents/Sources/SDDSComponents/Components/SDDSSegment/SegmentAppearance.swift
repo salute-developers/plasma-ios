@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SegmentAppearance` определяет стили сегмента, включая размеры, форму, цвета и другие параметры.

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSButton` представляет собой компонент кнопки с различными стилями и состояниями.

@@ -1,7 +1,7 @@
 /* This file is code generated. */
 
 import Foundation
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public struct Typographies {
     public static let bodyLBold = AdaptiveTypographyToken.bodyLBold

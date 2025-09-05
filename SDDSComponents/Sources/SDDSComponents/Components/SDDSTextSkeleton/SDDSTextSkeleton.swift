@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSTextSkeleton` представляет собой компонент для отображения текстового скелетона с несколькими строками.

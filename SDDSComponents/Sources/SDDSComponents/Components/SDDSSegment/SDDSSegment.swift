@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSSegment` представляет собой компонент для отображения группы связанных опций, где пользователь может выбрать один вариант.

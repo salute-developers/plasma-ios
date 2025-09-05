@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSThemeCore
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 fileprivate struct CodeFieldAnimation {
     static let shakeDelay: TimeInterval = 0.2

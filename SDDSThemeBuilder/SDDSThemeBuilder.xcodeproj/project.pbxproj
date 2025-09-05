@@ -316,7 +316,6 @@
 		819B2ACE2BF280FB00688624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2ACD2BF280FB00688624 /* Assets.xcassets */; };
 		819B2AD12BF280FB00688624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819B2AD02BF280FB00688624 /* Preview Assets.xcassets */; };
 		819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819B2ADE2BF2842300688624 /* ScreenSize+Extensions.swift */; };
-		819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81CF63472C6E8E82008F3BB2 /* SDDSThemeUtilities.framework */; };
 		81A613122D5BA1A600ADE1CD /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130E2D5BA1A600ADE1CD /* TextAreaSize.swift */; };
 		81A613132D5BA1A600ADE1CD /* TextArea+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A6130F2D5BA1A600ADE1CD /* TextArea+Variations.swift */; };
 		81A613142D5BA1A600ADE1CD /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A613102D5BA1A600ADE1CD /* TextArea+BaseVariations.swift */; };
@@ -484,13 +483,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8180A5802C11C01C00009AF5;
 			remoteInfo = SDDSThemeCore;
-		};
-		819CB8042C7CCC4D00B4FBF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2489D0992BC7F3790053AAB1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81CF63462C6E8E82008F3BB2;
-			remoteInfo = SDDSThemeUtilities;
 		};
 		81CF634B2C6E8E82008F3BB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1020,7 +1012,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819CB8022C7CCC4D00B4FBF4 /* SDDSThemeUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2467,7 +2458,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				819CB8052C7CCC4D00B4FBF4 /* PBXTargetDependency */,
 			);
 			name = SDDSThemeCore;
 			packageProductDependencies = (
@@ -3141,11 +3131,6 @@
 			target = 8180A5802C11C01C00009AF5 /* SDDSThemeCore */;
 			targetProxy = 8180A5852C11C01D00009AF5 /* PBXContainerItemProxy */;
 		};
-		819CB8052C7CCC4D00B4FBF4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 81CF63462C6E8E82008F3BB2 /* SDDSThemeUtilities */;
-			targetProxy = 819CB8042C7CCC4D00B4FBF4 /* PBXContainerItemProxy */;
-		};
 		81CF634C2C6E8E82008F3BB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 81CF63462C6E8E82008F3BB2 /* SDDSThemeUtilities */;
@@ -3522,6 +3507,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -3562,6 +3548,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 0.11.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";

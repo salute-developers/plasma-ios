@@ -1,5 +1,5 @@
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public struct OverlayAppearance {
     public var backgroundColor: ColorToken

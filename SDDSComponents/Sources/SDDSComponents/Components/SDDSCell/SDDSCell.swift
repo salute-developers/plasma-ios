@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSCell` представляет собой компонент для отображения строки с различными типами контента и возможностью настройки выравнивания.

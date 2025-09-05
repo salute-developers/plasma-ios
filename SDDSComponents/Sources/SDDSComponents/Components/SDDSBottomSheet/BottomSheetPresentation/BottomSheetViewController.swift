@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import SDDSThemeCore
 
 struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIViewControllerRepresentable {
     @Binding var isPresented: Bool

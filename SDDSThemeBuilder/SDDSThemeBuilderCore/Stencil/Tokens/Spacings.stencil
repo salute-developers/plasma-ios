@@ -2,7 +2,7 @@
 
 import SwiftUI
 import UIKit
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public enum Spacings {    
     {%- for key, value in json %}

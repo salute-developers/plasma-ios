@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 public struct SegmentItemAppearance {
     public var size: SegmentItemSizeConfiguration

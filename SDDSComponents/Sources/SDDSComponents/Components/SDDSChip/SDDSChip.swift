@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-@_exported import SDDSThemeCore
+import SDDSThemeCore
 
 /**
  `SDDSChip` представляет собой настраиваемый чип, который может быть настроен с помощью различных параметров.
