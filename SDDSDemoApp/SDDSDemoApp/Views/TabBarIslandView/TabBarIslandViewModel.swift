@@ -3,8 +3,10 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSIcons
+import SDDSServTheme
 
 final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvider> {
+    private let assistantContentWidth: CGFloat = 44
     @Published var selectedIndex: Int = 0
     @Published var tabBarIslandType: TabBarIslandType = .solid {
         didSet {
@@ -19,17 +21,49 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
         }
     }
     @Published private(set) var itemCount: Int = TabBarViewModel.defaultCount
+    @Published var customWidthEnabled = false
     
     var tabBarItems: [TabBarItemData] {
-        return (0..<itemCount).map { index in
+        let tabBarItemAppearance = self.appearance.tabBarItemAppearance
+        var result = (0..<itemCount).map { index in
             TabBarItemData(
                 content: AnyView(icon),
                 selectedContent: AnyView(selectedIcon),
                 text: "Label",
-                appearance: self.appearance.tabBarItemAppearance,
+                appearance: tabBarItemAppearance,
                 extra: extraView,
-                onTap: nil
+                onTap: { [weak self] in
+                    self?.selectedIndex = index
+                }
             )
+        }
+        if customWidthEnabled && itemCount % 2 == 0 {
+            result.insert(
+                TabBarItemData(
+                    content: AnyView(assistant),
+                    selectedContent: AnyView(assistant),
+                    text: "",
+                    contentWidth: assistantContentWidth,
+                    allowSelection: false,
+                    appearance: tabBarItemAppearance,
+                    extra: AnyView(EmptyView()),
+                    onTap: {}
+                ),
+                at: itemCount / 2
+            )
+        }
+        return result
+    }
+    
+    @ViewBuilder
+    private var assistant: some View {
+        VStack(spacing: 0) {
+            Spacer()
+            Image(systemName: "house.circle.fill")
+                .resizable()
+                .renderingMode(.template)
+                .frame(width: assistantContentWidth, height: 44)
+            Spacer()
         }
     }
     

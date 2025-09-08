@@ -3,6 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSIcons
+import SDDSServTheme
 
 enum TabBarExtra: String, CaseIterable {
     case counter
@@ -11,9 +12,14 @@ enum TabBarExtra: String, CaseIterable {
 }
 
 final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
-    static let defaultCount: Int = 5
+    static let defaultCount: Int = 2
+    private let assistantContentWidth: CGFloat = 44
     
-    @Published var selectedIndex: Int = 0
+    @Published var selectedIndex: Int = 0 {
+        didSet {
+            print("index: \(selectedIndex)")
+        }
+    }
     @Published var tabBarType: TabBarType = .solid {
         didSet {
             self.variationProvider.tabBarType = tabBarType
@@ -27,10 +33,11 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
         }
     }
     @Published private(set) var itemCount: Int = TabBarViewModel.defaultCount
+    @Published var customWidthEnabled = false
     
     var tabBarItems: [TabBarItemData] {
         let tabBarItemAppearance = self.appearance.tabBarItemAppearance
-        return (0..<itemCount).map { index in
+        var result = (0..<itemCount).map { index in
             TabBarItemData(
                 content: AnyView(icon),
                 selectedContent: AnyView(selectedIcon),
@@ -41,6 +48,34 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
                     self?.selectedIndex = index
                 }
             )
+        }
+        if customWidthEnabled && itemCount % 2 == 0 {
+            result.insert(
+                TabBarItemData(
+                    content: AnyView(assistant),
+                    selectedContent: AnyView(assistant),
+                    text: "",
+                    contentWidth: assistantContentWidth,
+                    allowSelection: false,
+                    appearance: tabBarItemAppearance,
+                    extra: AnyView(EmptyView()),
+                    onTap: {}
+                ),
+                at: itemCount / 2
+            )
+        }
+        return result
+    }
+    
+    @ViewBuilder
+    private var assistant: some View {
+        VStack(spacing: 0) {
+            Spacer()
+            Image(systemName: "house.circle.fill")
+                .resizable()
+                .renderingMode(.template)
+                .frame(width: assistantContentWidth, height: 44)
+            Spacer()
         }
     }
     

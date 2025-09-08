@@ -18,6 +18,7 @@ struct TabBarIslandView: View {
                 tabBarTypeSelectionView
                 extraSelectionView
                 countView
+                customWidth
                 VariationsView(viewModel: viewModel)
             }
         }
@@ -72,6 +73,15 @@ struct TabBarIslandView: View {
             } label: {
                 Text(viewModel.extra.rawValue.capitalized)
             }
+        }
+    }
+    
+    @ViewBuilder
+    private var customWidth: some View {
+        HStack {
+            Text("Custom Width")
+            Spacer()
+            Toggle("", isOn: $viewModel.customWidthEnabled)
         }
     }
 }

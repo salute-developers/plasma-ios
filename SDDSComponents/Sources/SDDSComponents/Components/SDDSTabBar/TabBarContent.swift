@@ -19,6 +19,9 @@ public struct TabBarContent: View {
     @State private var selectedItemSize: CGSize = .zero
     @Environment(\.colorScheme) private var colorScheme
     @State private var itemSizes: [Int: CGSize] = [:]
+    @State private var containerWidth: CGFloat = 0
+    @State private var selectedItemOffset: CGFloat = 0
+    @State private var currentSelectedIndex: Int = 0
     
     public init(
         items: [TabBarItemData],
@@ -40,6 +43,7 @@ public struct TabBarContent: View {
         self.contentPaddingBottom = contentPaddingBottom
         self.tabBarItemAppearance = tabBarItemAppearance
         self.onTabSelected = onTabSelected
+        self._currentSelectedIndex = State(initialValue: selectedIndex.wrappedValue)
     }
     
     public var body: some View {
@@ -50,10 +54,13 @@ public struct TabBarContent: View {
                 ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                     SDDSTabBarItem(
                         data: item,
-                        isSelected: index == selectedIndex
+                        isSelected: index == currentSelectedIndex && item.allowSelection
                     )
+                    .frame(width: calculatedItemWidth(for: index))
+                    .frame(maxWidth: shouldExpandItem(at: index) ? CGFloat.infinity : nil)
                     .readSize { size in
                         self.itemSizes[index] = size
+                        self.updateSelectedItemOffset()
                     }
                     .environment(\.tabBarItemAppearance, tabBarItemAppearance)
                     .padding([.leading], index == 0 ? contentPaddingStart : 0)
@@ -61,20 +68,26 @@ public struct TabBarContent: View {
                     .padding([.top], contentPaddingTop)
                     .padding([.bottom], contentPaddingBottom)
                     .onTapGesture {
-                        selectedIndex = index
-                        onTabSelected?(index)
+                        if item.allowSelection {
+                            selectedIndex = index
+                            currentSelectedIndex = index
+                            updateSelectedItemOffset()
+                            onTabSelected?(index)
+                        }
                         item.onTap?()
                     }
                 }
             }
         }
-
+        .readSize { size in
+            self.containerWidth = size.width
+        }
     }
     
     @ViewBuilder private var selectedContent: some View {
-        if let appearance = selectedItemData.appearance {
+        if currentSelectedIndex < items.count, let appearance = items[currentSelectedIndex].appearance, items[currentSelectedIndex].allowSelection {
             appearance.backgroundColor.selectedColor.color(for: colorScheme)
-                .frame(width: itemSizes[selectedIndex]?.width ?? 0, height: itemSizes[selectedIndex]?.height ?? 0)
+                .frame(width: itemSizes[currentSelectedIndex]?.width ?? 0, height: itemSizes[currentSelectedIndex]?.height ?? 0)
                 .shape(pathDrawer: appearance.size.shape)
                 .offset(x: selectedItemOffset)
         } else {
@@ -82,19 +95,43 @@ public struct TabBarContent: View {
         }
     }
     
-    private var selectedItemOffset: CGFloat {
+    private func updateSelectedItemOffset() {
         var offset: CGFloat = contentPaddingStart
         
-        for i in 0..<selectedIndex {
+        for i in 0..<currentSelectedIndex {
             offset += itemSizes[i]?.width ?? 0
             offset += itemSpacing
         }
         
-        return offset
+        selectedItemOffset = offset
     }
     
     private var selectedItemData: TabBarItemData {
         return items[selectedIndex]
     }
+    
+    // MARK: - Width Calculation
+    
+    private func calculatedItemWidth(for index: Int) -> CGFloat? {
+        guard containerWidth > 0, index < items.count else { return nil }
+        
+        let item = items[index]
+        
+        if let contentWidth = item.contentWidth {
+            return contentWidth
+        }
+        
+        return nil
+    }
+    
+    private func shouldExpandItem(at index: Int) -> Bool {
+        guard index < items.count else { return false }
+        let item = items[index]
+        
+        if item.contentWidth != nil {
+            return false
+        }
+        
+        return true
+    }
 }
-

@@ -12,6 +12,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     let text: String
     let isSelected: Bool
     let extra: Extra
+    let contentWidth: CGFloat?
     
     @State private var extraSize = CGSize.zero
     @State private var itemSize = CGSize.zero
@@ -21,6 +22,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         @ViewBuilder selectedContent: () -> Content,
         text: String,
         isSelected: Bool = false,
+        contentWidth: CGFloat? = nil,
         appearance: TabBarItemAppearance? = nil,
         @ViewBuilder extra: () -> Extra = { EmptyView() }
     ) {
@@ -28,6 +30,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         self.selectedContent = selectedContent()
         self.text = text
         self.isSelected = isSelected
+        self.contentWidth = contentWidth
         self._appearance = appearance
         self.extra = extra()
     }
@@ -53,7 +56,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                     }
                 }
                 .foregroundColor(iconColor.color(for: colorScheme))
-                .frame(width: appearance.size.iconSize, height: appearance.size.iconSize)
+                .frame(width: contentWidth ?? appearance.size.iconSize, height: appearance.size.iconSize)
                 
                 extra
                     .environment(\.indicatorAppearance, appearance.indicatorAppearance ?? .defaultValue)
@@ -77,7 +80,6 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
             Spacer()
                 .frame(height: appearance.size.paddingBottom)
         }
-        .frame(maxWidth: .infinity)
         .frame(minHeight: appearance.size.minHeight)
         .background(
             backgroundColor.color(for: colorScheme)
@@ -166,7 +168,8 @@ extension SDDSTabBarItem where Content == AnyView, Extra == AnyView {
             content: { data.content ?? AnyView(EmptyView()) },
             selectedContent: { data.selectedContent ?? data.content ?? AnyView(EmptyView()) },
             text: data.text,
-            isSelected: isSelected,
+            isSelected: data.allowSelection ? isSelected : false,
+            contentWidth: data.contentWidth,
             appearance: data.appearance,
             extra: { data.extra ?? AnyView(EmptyView()) }
         )
