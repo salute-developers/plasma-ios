@@ -11,8 +11,6 @@
 		24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
 		24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */; };
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
-		24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */; };
-		24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */; };
 		690780FD2D3EBA4E00CED628 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FC2D3EBA4A00CED628 /* SegmentView.swift */; };
 		690780FF2D3EBA5E00CED628 /* SegmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */; };
 		693871F62DA53F400094AF52 /* RadioboxGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */; };
@@ -183,13 +181,6 @@
 			remoteGlobalIDString = 24C154012BB3020A00963FAA;
 			remoteInfo = PlasmaDemoApp;
 		};
-		24C1541D2BB3020B00963FAA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24C153FA2BB3020A00963FAA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24C154012BB3020A00963FAA;
-			remoteInfo = PlasmaDemoApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -212,9 +203,6 @@
 		24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppTests.swift; sourceTree = "<group>"; };
-		24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITests.swift; sourceTree = "<group>"; };
-		24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		690780FC2D3EBA4A00CED628 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		690780FE2D3EBA5500CED628 /* SegmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewModel.swift; sourceTree = "<group>"; };
 		693871F52DA53F300094AF52 /* RadioboxGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxGroupVariationProvider.swift; sourceTree = "<group>"; };
@@ -428,13 +416,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C154192BB3020B00963FAA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -443,7 +424,6 @@
 			children = (
 				24C154042BB3020A00963FAA /* SDDSDemoApp */,
 				24C154152BB3020B00963FAA /* SDDSDemoAppTests */,
-				24C1541F2BB3020B00963FAA /* SDDSDemoAppUITests */,
 				24C154032BB3020A00963FAA /* Products */,
 				24D212DF2BB45A4B005B717B /* Frameworks */,
 				81DEC9CA2DE5EF740035E6A9 /* Recovered References */,
@@ -455,7 +435,6 @@
 			children = (
 				24C154022BB3020A00963FAA /* SDDSDemoApp.app */,
 				24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */,
-				24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -515,15 +494,6 @@
 				24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */,
 			);
 			path = SDDSDemoAppTests;
-			sourceTree = "<group>";
-		};
-		24C1541F2BB3020B00963FAA /* SDDSDemoAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				24C154202BB3020B00963FAA /* PlasmaDemoAppUITests.swift */,
-				24C154222BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift */,
-			);
-			path = SDDSDemoAppUITests;
 			sourceTree = "<group>";
 		};
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
@@ -1169,24 +1139,6 @@
 			productReference = 24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		24C1541B2BB3020B00963FAA /* SDDSDemoAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 24C1542C2BB3020B00963FAA /* Build configuration list for PBXNativeTarget "SDDSDemoAppUITests" */;
-			buildPhases = (
-				24C154182BB3020B00963FAA /* Sources */,
-				24C154192BB3020B00963FAA /* Frameworks */,
-				24C1541A2BB3020B00963FAA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24C1541E2BB3020B00963FAA /* PBXTargetDependency */,
-			);
-			name = SDDSDemoAppUITests;
-			productName = PlasmaDemoAppUITests;
-			productReference = 24C1541C2BB3020B00963FAA /* SDDSDemoAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1201,10 +1153,6 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					24C154112BB3020B00963FAA = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 24C154012BB3020A00963FAA;
-					};
-					24C1541B2BB3020B00963FAA = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 24C154012BB3020A00963FAA;
 					};
@@ -1234,7 +1182,6 @@
 			targets = (
 				24C154012BB3020A00963FAA /* SDDSDemoApp */,
 				24C154112BB3020B00963FAA /* SDDSDemoAppTests */,
-				24C1541B2BB3020B00963FAA /* SDDSDemoAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1250,13 +1197,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		24C154102BB3020B00963FAA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24C1541A2BB3020B00963FAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1446,15 +1386,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24C154182BB3020B00963FAA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24C154212BB3020B00963FAA /* PlasmaDemoAppUITests.swift in Sources */,
-				24C154232BB3020B00963FAA /* PlasmaDemoAppUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1462,11 +1393,6 @@
 			isa = PBXTargetDependency;
 			target = 24C154012BB3020A00963FAA /* SDDSDemoApp */;
 			targetProxy = 24C154132BB3020B00963FAA /* PBXContainerItemProxy */;
-		};
-		24C1541E2BB3020B00963FAA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24C154012BB3020A00963FAA /* SDDSDemoApp */;
-			targetProxy = 24C1541D2BB3020B00963FAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1718,42 +1644,6 @@
 			};
 			name = Release;
 		};
-		24C1542D2BB3020B00963FAA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SDDSDemoApp;
-			};
-			name = Debug;
-		};
-		24C1542E2BB3020B00963FAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KDMYYG676V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SDDSDemoApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1780,15 +1670,6 @@
 			buildConfigurations = (
 				24C1542A2BB3020B00963FAA /* Debug */,
 				24C1542B2BB3020B00963FAA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		24C1542C2BB3020B00963FAA /* Build configuration list for PBXNativeTarget "SDDSDemoAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24C1542D2BB3020B00963FAA /* Debug */,
-				24C1542E2BB3020B00963FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
