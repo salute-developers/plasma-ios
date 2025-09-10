@@ -101,3 +101,7 @@ iOSInjectionProject/
 
 # Cursor IDE settings
 .cursor/
+
+# Changelog temporary files
+release-changelog.md
+test-changelog.md

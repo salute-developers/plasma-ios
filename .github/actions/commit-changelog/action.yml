@@ -1,0 +1,79 @@
+name: 'Generate commit-based changelog'
+description: 'Generate changelog from commits instead of PRs'
+inputs:
+  fromTag:
+    description: 'From tag or commit'
+    required: false
+  toTag:
+    description: 'To tag or commit'
+    required: false
+outputs:
+  changelog:
+    description: "Generated changelog"
+    value: ${{ steps.changelog.outputs.changelog }}
+runs:
+  using: "composite"
+  steps:
+    - name: Compute envs
+      shell: bash
+      run: |
+        if [ -z "${{ inputs.fromTag }}" ]; then
+          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+        else
+          FROM_TAG="${{ inputs.fromTag }}"
+        fi
+
+        if [ -z "${{ inputs.toTag }}" ]; then
+          TO_TAG="HEAD"
+        else
+          TO_TAG="${{ inputs.toTag }}"
+        fi
+
+        echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
+        echo "TO_TAG=$TO_TAG" >> $GITHUB_ENV
+        echo "FROM_TAG = $FROM_TAG and TO_TAG = $TO_TAG"
+
+    - name: Generate changelog from commits
+      id: changelog
+      shell: bash
+      run: |
+        echo "🔍 Generating changelog from commits between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
+        
+        # Получаем коммиты между тегами
+        COMMITS=$(git log --pretty=format:"%h|%s|%an|%ad" --date=short ${{ env.FROM_TAG }}..${{ env.TO_TAG }})
+        
+        if [ -z "$COMMITS" ]; then
+          echo "No commits found between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
+          echo "changelog=No changes found in this release." >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # Формируем changelog
+        CHANGELOG=""
+        
+        while IFS='|' read -r hash message author date; do
+          if [ -z "$hash" ]; then
+            continue
+          fi
+          
+          # Пропускаем служебные коммиты
+          if echo "$message" | grep -qiE "^(chore|bump|version|release)"; then
+            continue
+          fi
+          
+          # Добавляем коммит в changelog
+          CHANGELOG="$CHANGELOG- $message ($hash)\n"
+          
+        done <<< "$COMMITS"
+        
+        if [ -z "$CHANGELOG" ]; then
+          CHANGELOG="No changes found in this release."
+        fi
+        
+        echo "Generated changelog:"
+        echo "$CHANGELOG"
+        
+        # Сохраняем в output
+        echo "changelog<<EOF" >> $GITHUB_OUTPUT
+        echo "$CHANGELOG" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT

@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "title": "## 🚀 Features",
+      "labels": ["enhancement"]
+    },
+    {
+      "title": "## 🐛 Bug Fixes",
+      "labels": ["bug"]
+    }
+  ],
+  "ignore_labels": [
+    "changelog-skip"
+  ],
+  "sort": "ASC",
+  "template": "${{CHANGELOG}}",
+  "pr_template": "- ${{TITLE}} (#${{NUMBER}})",
+  "empty_template": "- No changes",
+  "label_extractor": [
+    {
+      "pattern": "^(feat|feature)(\\(.+\\))?:",
+      "target": "enhancement"
+    },
+    {
+      "pattern": "^(fix|bug)(\\(.+\\))?:",
+      "target": "bug"
+    }
+  ]
+}
