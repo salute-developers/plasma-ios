@@ -6,6 +6,26 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.L> {
     
+    var l: GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.L> {
+        var size =  TabBarItemAnySize(size: appearance.size)
+        size.iconSize = CGFloat(36.0)
+        size.labelPlacement = TabBarItemLabelPlacement.none
+        size.minHeight = CGFloat(64.0)
+        size.paddingBottom = CGFloat(14.0)
+        size.paddingTop = CGFloat(14.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.counterAppearance = Counter.s.negative.appearance
+        appearance.indicatorAppearance = Indicator.l.negative.appearance
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var label: ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> {
         var size =  TabBarItemAnySize(size: appearance.size)
         size.labelPadding = CGFloat(0.0)
@@ -56,6 +76,22 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
 }
 
 public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.LLabel> {
+    
+    var label: ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> {
+        var size =  TabBarItemAnySize(size: appearance.size)
+        size.labelPadding = CGFloat(0.0)
+        size.labelPlacement = TabBarItemLabelPlacement.bottom
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingTop = CGFloat(12.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.label",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarItemAppearance> {
         return .init(
@@ -108,6 +144,26 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
         )
     }
     
+    var m: GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.M> {
+        var size =  TabBarItemAnySize(size: appearance.size)
+        size.iconSize = CGFloat(24.0)
+        size.labelPlacement = TabBarItemLabelPlacement.none
+        size.minHeight = CGFloat(48.0)
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingTop = CGFloat(12.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.counterAppearance = Counter.xs.negative.appearance
+        appearance.indicatorAppearance = Indicator.m.negative.appearance
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarItemAppearance> {
         return .init(
             name: "`default`",
@@ -142,6 +198,22 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
 }
 
 public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.MLabel> {
+    
+    var label: ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> {
+        var size =  TabBarItemAnySize(size: appearance.size)
+        size.labelPadding = CGFloat(2.0)
+        size.labelPlacement = TabBarItemLabelPlacement.bottom
+        size.paddingBottom = CGFloat(8.0)
+        size.paddingTop = CGFloat(10.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.label",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarItemAppearance> {
         return .init(

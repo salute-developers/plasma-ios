@@ -13,7 +13,6 @@ struct BasicButtonSize {
     ] 
 }
 struct BasicButtonSizeM: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(48.0)
     var iconHorizontalGap = CGFloat(6.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -26,7 +25,6 @@ struct BasicButtonSizeM: ButtonSizeConfiguration {
     }
 }
 struct BasicButtonSizeS: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(40.0)
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -40,7 +38,6 @@ struct BasicButtonSizeS: ButtonSizeConfiguration {
 }
 
 struct BasicButtonAnySize: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize.zero
@@ -50,7 +47,6 @@ struct BasicButtonAnySize: ButtonSizeConfiguration {
     var titleHorizontalGap = CGFloat(0)
 
     init(size: ButtonSizeConfiguration) {
-        self.cornerRadius = size.cornerRadius
         self.height = size.height
         self.iconHorizontalGap = size.iconHorizontalGap
         self.iconSize = size.iconSize

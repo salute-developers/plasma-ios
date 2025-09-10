@@ -6,6 +6,27 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.M> {
     
+    var m: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
+        var size =  BasicButtonAnySize(size: appearance.size)
+        size.height = CGFloat(48.0)
+        size.iconHorizontalGap = CGFloat(6.0)
+        size.iconSize = CGSize(width:24.0, height:24.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
+        size.spinnerSize = CGSize(width:22.0, height:22.0)
+        size.titleHorizontalGap = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.subtitleTypography = BasicButtonTypography(m: AdaptiveTypographyToken.bodyMBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(m: AdaptiveTypographyToken.bodyMBold.typography).asContainer
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "`default`",
@@ -54,6 +75,27 @@ public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, Basic
 }
 
 public extension GeneralAppearanceVariation<BasicButton, ButtonAppearance, BasicButtonVariation.S> {
+    
+    var s: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
+        var size =  BasicButtonAnySize(size: appearance.size)
+        size.height = CGFloat(40.0)
+        size.iconHorizontalGap = CGFloat(4.0)
+        size.iconSize = CGSize(width:24.0, height:24.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
+        size.spinnerSize = CGSize(width:22.0, height:22.0)
+        size.titleHorizontalGap = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.subtitleTypography = BasicButtonTypography(s: AdaptiveTypographyToken.bodySBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(s: AdaptiveTypographyToken.bodySBold.typography).asContainer
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ButtonAppearance> {
         return .init(

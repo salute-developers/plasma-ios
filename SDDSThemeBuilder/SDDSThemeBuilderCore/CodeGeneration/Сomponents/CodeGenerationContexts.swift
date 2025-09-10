@@ -6,6 +6,11 @@ typealias TextFieldVariationsContext = ComponentVariationsContext<TextFieldAppea
 typealias TextFieldSizeContext = ComponentSizeContext<TextFieldSize>
 typealias TextFieldTypographyContext = ComponentTypographyContext<TextFieldAppearance>
 
+// MARK: - ButtonGroup contexts
+typealias ButtonGroupBaseContext = ComponentBaseContext<ButtonGroupAppearance>
+typealias ButtonGroupVariationsContext = ComponentVariationsContext<ButtonGroupAppearance, ButtonGroupSize>
+typealias ButtonGroupSizeContext = ComponentSizeContext<ButtonGroupSize>
+
 // MARK: - Generic contexts
 struct ComponentBaseContext<Appearance: Codable>: Codable {
     struct Variation: Codable {

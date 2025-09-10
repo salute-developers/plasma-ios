@@ -21,7 +21,6 @@ struct LinkButtonSize {
     ] 
 }
 struct LinkButtonSizeL: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(56.0)
     var iconHorizontalGap = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -34,7 +33,6 @@ struct LinkButtonSizeL: ButtonSizeConfiguration {
     }
 }
 struct LinkButtonSizeM: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(48.0)
     var iconHorizontalGap = CGFloat(6.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -47,7 +45,6 @@ struct LinkButtonSizeM: ButtonSizeConfiguration {
     }
 }
 struct LinkButtonSizeS: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(40.0)
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -60,7 +57,6 @@ struct LinkButtonSizeS: ButtonSizeConfiguration {
     }
 }
 struct LinkButtonSizeXl: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(64.0)
     var iconHorizontalGap = CGFloat(8.0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -73,7 +69,6 @@ struct LinkButtonSizeXl: ButtonSizeConfiguration {
     }
 }
 struct LinkButtonSizeXs: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(32.0)
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:16.0, height:16.0)
@@ -86,7 +81,6 @@ struct LinkButtonSizeXs: ButtonSizeConfiguration {
     }
 }
 struct LinkButtonSizeXxs: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(24.0)
     var iconHorizontalGap = CGFloat(4.0)
     var iconSize = CGSize(width:12.0, height:12.0)
@@ -100,7 +94,6 @@ struct LinkButtonSizeXxs: ButtonSizeConfiguration {
 }
 
 struct LinkButtonAnySize: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize.zero
@@ -110,7 +103,6 @@ struct LinkButtonAnySize: ButtonSizeConfiguration {
     var titleHorizontalGap = CGFloat(0)
 
     init(size: ButtonSizeConfiguration) {
-        self.cornerRadius = size.cornerRadius
         self.height = size.height
         self.iconHorizontalGap = size.iconHorizontalGap
         self.iconSize = size.iconSize

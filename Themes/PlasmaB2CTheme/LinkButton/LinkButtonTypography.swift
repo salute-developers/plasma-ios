@@ -58,6 +58,6 @@ struct LinkButtonTypography: GeneralTypographyConfiguration {
         if size is LinkButtonSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

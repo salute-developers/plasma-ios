@@ -6,6 +6,27 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.L> {
     
+    var l: ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {
+        var size =  DropdownMenuItemTightAnySize(size: appearance.size)
+        size.contentPaddingEnd = CGFloat(8.0)
+        size.height = CGFloat(48.0)
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingEnd = CGFloat(16.0)
+        size.paddingStart = CGFloat(16.0)
+        size.paddingTop = CGFloat(12.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius-2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.titleTypography = DropdownMenuItemTightTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ListItemAppearance> {
         return .init(
             name: "`default`",
@@ -40,6 +61,27 @@ public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppea
 }
 
 public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.M> {
+    
+    var m: ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {
+        var size =  DropdownMenuItemTightAnySize(size: appearance.size)
+        size.contentPaddingEnd = CGFloat(8.0)
+        size.height = CGFloat(40.0)
+        size.paddingBottom = CGFloat(8.0)
+        size.paddingEnd = CGFloat(14.0)
+        size.paddingStart = CGFloat(14.0)
+        size.paddingTop = CGFloat(8.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.titleTypography = DropdownMenuItemTightTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ListItemAppearance> {
         return .init(
@@ -76,6 +118,27 @@ public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppea
 
 public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.S> {
     
+    var s: ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {
+        var size =  DropdownMenuItemTightAnySize(size: appearance.size)
+        size.contentPaddingEnd = CGFloat(6.0)
+        size.height = CGFloat(32.0)
+        size.paddingBottom = CGFloat(7.0)
+        size.paddingEnd = CGFloat(12.0)
+        size.paddingStart = CGFloat(12.0)
+        size.paddingTop = CGFloat(7.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius-2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.titleTypography = DropdownMenuItemTightTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ListItemAppearance> {
         return .init(
             name: "`default`",
@@ -110,6 +173,27 @@ public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppea
 }
 
 public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.Xs> {
+    
+    var xs: ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {
+        var size =  DropdownMenuItemTightAnySize(size: appearance.size)
+        size.contentPaddingEnd = CGFloat(6.0)
+        size.height = CGFloat(24.0)
+        size.paddingBottom = CGFloat(4.0)
+        size.paddingEnd = CGFloat(8.0)
+        size.paddingStart = CGFloat(8.0)
+        size.paddingTop = CGFloat(4.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundS.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.titleTypography = DropdownMenuItemTightTypography(xs: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ListItemAppearance> {
         return .init(

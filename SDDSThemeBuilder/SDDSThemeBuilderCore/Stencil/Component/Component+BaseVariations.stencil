@@ -6,15 +6,15 @@ import SDDSIcons
 
 public struct {{ component }} {
     {%- for key, variation in variations %}
-    public static var {{ key }}: {{variation.next}} {
+    public static var {{ key | camelCase }}: {{variation.next}} {
         var appearance = {{ appearance }}.base
-        appearance.size = {{ component }}Size.{{ key }}
+        appearance.size = {{ component }}Size.{{ key | camelCase }}
         {%- for property, value in variation.appearance %}
         appearance.{{ property }} = {{ value }}
         {%- endfor %}
 
         return .init(
-            name: "{{ key }}",
+            name: "{{ key | camelCase }}",
             appearance: appearance
         )
     }
