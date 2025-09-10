@@ -149,7 +149,6 @@ public struct SDDSSegmentItem<Counter: View>: View {
         size.height = appearance.size.height
         size.pathDrawer = CornerRadiusDrawer(cornerRadius: appearance.size.cornerRadius)
         size.iconSize = iconAttributes?.alignment == .leading ? appearance.size.startContentSize : appearance.size.endContentSize
-        size.counterSize = appearance.counterAppearance.size
         size.iconHorizontalGap = appearance.size.iconHorizontalGap
         size.titleHorizontalGap = appearance.size.titleHorizontalGap
         size.paddings = appearance.size.paddings

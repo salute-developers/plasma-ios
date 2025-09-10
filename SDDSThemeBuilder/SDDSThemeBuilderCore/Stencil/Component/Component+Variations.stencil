@@ -6,7 +6,7 @@ import SDDSThemeCore
 {% for key, props in variations %}
 public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {{ component }}Variation.{{ key }}> {
     {% for variationName, variation in props %}
-    var {{ variationName }}: {{ variation.next }} {
+    var {{ variationName | escapeSwiftKeyword }}: {{ variation.next }} {
         var size =  {{ component }}AnySize(size: appearance.size)
         {%- for property, value in variation.size %}
             {%- if property | generate_function %}

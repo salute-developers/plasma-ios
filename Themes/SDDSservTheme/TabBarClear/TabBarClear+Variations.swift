@@ -20,6 +20,18 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
         )
     }
     
+    var l: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.L> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LRounded> {
         var size =  TabBarClearAnySize(size: appearance.size)
         size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
@@ -90,6 +102,20 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LDivider> {
     
+    var divider: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LDivider> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.dividerThickness = CGFloat(1.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.dividerColor = ColorToken.surfaceDefaultTransparentTertiary
+    
+        return .init(
+            name: "l.divider",
+            appearance: appearance
+        )
+    }
+    
     var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LDividerRounded> {
         var size =  TabBarClearAnySize(size: appearance.size)
         size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
@@ -147,6 +173,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LDividerRounded> {
     
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LDividerRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.divider.rounded",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.default.appearance
@@ -190,6 +229,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 }
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LRounded> {
+    
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.rounded",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
@@ -248,6 +300,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
         )
     }
     
+    var shadow: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LShadow> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.shadow = ShadowToken.upSoftM
+    
+        return .init(
+            name: "l.shadow",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.default.appearance
@@ -291,6 +356,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 }
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LShadowRounded> {
+    
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.LShadowRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.shadow.rounded",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
@@ -346,6 +424,18 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
     
         return .init(
             name: "m.divider",
+            appearance: appearance
+        )
+    }
+    
+    var m: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.M> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
             appearance: appearance
         )
     }
@@ -420,6 +510,20 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MDivider> {
     
+    var divider: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MDivider> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.dividerThickness = CGFloat(1.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.dividerColor = ColorToken.surfaceDefaultTransparentTertiary
+    
+        return .init(
+            name: "m.divider",
+            appearance: appearance
+        )
+    }
+    
     var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MDividerRounded> {
         var size =  TabBarClearAnySize(size: appearance.size)
         size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
@@ -477,6 +581,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MDividerRounded> {
     
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MDividerRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.divider.rounded",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.default.appearance
@@ -520,6 +637,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 }
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MRounded> {
+    
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.rounded",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
@@ -578,6 +708,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
         )
     }
     
+    var shadow: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MShadow> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.shadow = ShadowToken.upSoftM
+    
+        return .init(
+            name: "m.shadow",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.default.appearance
@@ -621,6 +764,19 @@ public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBa
 }
 
 public extension GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MShadowRounded> {
+    
+    var rounded: GeneralAppearanceVariation<TabBarClear, TabBarAppearance, TabBarClearVariation.MShadowRounded> {
+        var size =  TabBarClearAnySize(size: appearance.size)
+        size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius+2.0) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.shadow.rounded",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance

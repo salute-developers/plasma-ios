@@ -6,6 +6,20 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<Indicator, IndicatorAppearance, IndicatorVariation.L> {
     
+    var l: ComponentAppearanceVariation<Indicator, IndicatorAppearance> {
+        var size =  IndicatorAnySize(size: appearance.size)
+        size.height = CGFloat(12.0)
+        size.width = CGFloat(12.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<IndicatorAppearance> {
         return .init(
             name: "`default`",
@@ -83,6 +97,20 @@ public extension GeneralAppearanceVariation<Indicator, IndicatorAppearance, Indi
 
 public extension GeneralAppearanceVariation<Indicator, IndicatorAppearance, IndicatorVariation.M> {
     
+    var m: ComponentAppearanceVariation<Indicator, IndicatorAppearance> {
+        var size =  IndicatorAnySize(size: appearance.size)
+        size.height = CGFloat(8.0)
+        size.width = CGFloat(8.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<IndicatorAppearance> {
         return .init(
             name: "`default`",
@@ -159,6 +187,20 @@ public extension GeneralAppearanceVariation<Indicator, IndicatorAppearance, Indi
 }
 
 public extension GeneralAppearanceVariation<Indicator, IndicatorAppearance, IndicatorVariation.S> {
+    
+    var s: ComponentAppearanceVariation<Indicator, IndicatorAppearance> {
+        var size =  IndicatorAnySize(size: appearance.size)
+        size.height = CGFloat(6.0)
+        size.width = CGFloat(6.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<IndicatorAppearance> {
         return .init(

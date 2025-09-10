@@ -17,7 +17,6 @@ struct IconButtonSize {
     ] 
 }
 struct IconButtonSizeL: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(56.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -30,7 +29,6 @@ struct IconButtonSizeL: ButtonSizeConfiguration {
     }
 }
 struct IconButtonSizeM: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(48.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -43,7 +41,6 @@ struct IconButtonSizeM: ButtonSizeConfiguration {
     }
 }
 struct IconButtonSizeS: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(40.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:24.0, height:24.0)
@@ -56,7 +53,6 @@ struct IconButtonSizeS: ButtonSizeConfiguration {
     }
 }
 struct IconButtonSizeXs: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(32.0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize(width:16.0, height:16.0)
@@ -70,7 +66,6 @@ struct IconButtonSizeXs: ButtonSizeConfiguration {
 }
 
 struct IconButtonAnySize: ButtonSizeConfiguration {
-    var cornerRadius = CGFloat(0)
     var height = CGFloat(0)
     var iconHorizontalGap = CGFloat(0)
     var iconSize = CGSize.zero
@@ -80,7 +75,6 @@ struct IconButtonAnySize: ButtonSizeConfiguration {
     var titleHorizontalGap = CGFloat(0)
 
     init(size: ButtonSizeConfiguration) {
-        self.cornerRadius = size.cornerRadius
         self.height = size.height
         self.iconHorizontalGap = size.iconHorizontalGap
         self.iconSize = size.iconSize
