@@ -1015,4 +1015,30 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+    
+    var basicButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.BasicButtonGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.BasicButtonGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.BasicButtonGroup.all
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
+    
+    var iconButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.IconButtonGroup.all
+        case .stylesSalute:
+            return StylesSaluteTheme.IconButtonGroup.all
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.IconButtonGroup.all
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
 }

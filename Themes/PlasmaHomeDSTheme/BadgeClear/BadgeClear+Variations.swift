@@ -6,6 +6,27 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.L> {
     
+    var l: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.L> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundS.cornerRadius
+        size.endContentPadding = CGFloat(4.0)
+        size.endContentSize = CGSize(width:16.0, height:16.0)
+        size.endPadding = CGFloat(11.0)
+        size.height = CGFloat(28.0)
+        size.startContentPadding = CGFloat(4.0)
+        size.startContentSize = CGSize(width:16.0, height:16.0)
+        size.startPadding = CGFloat(11.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.labelTypography = BadgeClearTypography(l: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
         var size =  BadgeClearAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
@@ -82,6 +103,19 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.LPilled> {
     
+    var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -144,6 +178,27 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.M> {
+    
+    var m: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.M> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXs.cornerRadius
+        size.endContentPadding = CGFloat(3.0)
+        size.endContentSize = CGSize(width:12.0, height:12.0)
+        size.endPadding = CGFloat(9.0)
+        size.height = CGFloat(24.0)
+        size.startContentPadding = CGFloat(3.0)
+        size.startContentSize = CGSize(width:12.0, height:12.0)
+        size.startPadding = CGFloat(9.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.labelTypography = BadgeClearTypography(m: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
         var size =  BadgeClearAnySize(size: appearance.size)
@@ -221,6 +276,19 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.MPilled> {
     
+    var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -297,6 +365,27 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
         )
     }
     
+    var s: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.S> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXs.cornerRadius
+        size.endContentPadding = CGFloat(2.0)
+        size.endContentSize = CGSize(width:12.0, height:12.0)
+        size.endPadding = CGFloat(7.0)
+        size.height = CGFloat(20.0)
+        size.startContentPadding = CGFloat(2.0)
+        size.startContentSize = CGSize(width:12.0, height:12.0)
+        size.startPadding = CGFloat(7.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.labelTypography = BadgeClearTypography(s: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -359,6 +448,19 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.SPilled> {
+    
+    var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
@@ -436,6 +538,27 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
         )
     }
     
+    var xs: GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.Xs> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXxs.cornerRadius
+        size.endContentPadding = CGFloat(2.0)
+        size.endContentSize = CGSize(width:10.0, height:10.0)
+        size.endPadding = CGFloat(4.0)
+        size.height = CGFloat(16.0)
+        size.startContentPadding = CGFloat(2.0)
+        size.startContentSize = CGSize(width:10.0, height:10.0)
+        size.startPadding = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.labelTypography = BadgeClearTypography(xs: AdaptiveTypographyToken.bodyXxsNormal.typography).asContainer
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -498,6 +621,19 @@ public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeCl
 }
 
 public extension GeneralAppearanceVariation<BadgeClear, BadgeAppearance, BadgeClearVariation.XsPilled> {
+    
+    var pilled: ComponentAppearanceVariation<BadgeClear, BadgeAppearance> {
+        var size =  BadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
