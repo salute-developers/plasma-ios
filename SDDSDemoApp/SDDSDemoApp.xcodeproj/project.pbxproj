@@ -70,9 +70,6 @@
 		812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065822E29072300AA29ED /* SpinnerViewModel.swift */; };
 		812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065802E29072300AA29ED /* SpinnerVariationProvider.swift */; };
 		812065862E29072400AA29ED /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812065812E29072300AA29ED /* SpinnerView.swift */; };
-		812268EC2E671BC800AA1EFB /* CodeInputVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */; };
-		812268ED2E671BC800AA1EFB /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */; };
-		812268EE2E671BC800AA1EFB /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812268E92E671BC800AA1EFB /* CodeInputView.swift */; };
 		8127A0832E0ABD1700B320D1 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 8127A0822E0ABD1700B320D1 /* SDSnapshots */; };
 		813107E72E4E313900FED868 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813107E52E4E313900FED868 /* TabBarViewModel.swift */; };
 		813107E82E4E313900FED868 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813107E42E4E313900FED868 /* TabBarView.swift */; };
@@ -83,6 +80,9 @@
 		81368A712E01879900A1702A /* TextSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6B2E01879900A1702A /* TextSkeletonView.swift */; };
 		81368A722E01879900A1702A /* TextSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */; };
 		81368A732E01879900A1702A /* RectSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A672E01879900A1702A /* RectSkeletonView.swift */; };
+		813BCB0A2E716F1200515310 /* CodeInputVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BCB062E716F1100515310 /* CodeInputVariationProvider.swift */; };
+		813BCB0B2E716F1200515310 /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BCB082E716F1100515310 /* CodeInputViewModel.swift */; };
+		813BCB0C2E716F1200515310 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BCB072E716F1100515310 /* CodeInputView.swift */; };
 		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
@@ -266,9 +266,6 @@
 		812065802E29072300AA29ED /* SpinnerVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerVariationProvider.swift; sourceTree = "<group>"; };
 		812065812E29072300AA29ED /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		812065822E29072300AA29ED /* SpinnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewModel.swift; sourceTree = "<group>"; };
-		812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputVariationProvider.swift; sourceTree = "<group>"; };
-		812268E92E671BC800AA1EFB /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
-		812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		813107E32E4E313900FED868 /* TabBarVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVariationProvider.swift; sourceTree = "<group>"; };
 		813107E42E4E313900FED868 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		813107E52E4E313900FED868 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -278,6 +275,9 @@
 		81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonVariationProvider.swift; sourceTree = "<group>"; };
 		81368A6B2E01879900A1702A /* TextSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonView.swift; sourceTree = "<group>"; };
 		81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonViewModel.swift; sourceTree = "<group>"; };
+		813BCB062E716F1100515310 /* CodeInputVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputVariationProvider.swift; sourceTree = "<group>"; };
+		813BCB072E716F1100515310 /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		813BCB082E716F1100515310 /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
 		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
@@ -667,10 +667,10 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				813BCB092E716F1100515310 /* CodeInputView */,
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
 				819AF9822E4E506E006A11F8 /* TabBarIslandView */,
 				813107E62E4E313900FED868 /* TabBarView */,
-				812268EB2E671BC800AA1EFB /* CodeInputView */,
 				81B51AB22E3C892600504B1D /* CodeFieldView */,
 				810F84BB2E27F5B500218FE7 /* AccordionView */,
 				810F55DC2E27A9D100218FE7 /* AccordionItemView */,
@@ -767,16 +767,6 @@
 			path = SpinnerView;
 			sourceTree = "<group>";
 		};
-		812268EB2E671BC800AA1EFB /* CodeInputView */ = {
-			isa = PBXGroup;
-			children = (
-				812268E82E671BC800AA1EFB /* CodeInputVariationProvider.swift */,
-				812268E92E671BC800AA1EFB /* CodeInputView.swift */,
-				812268EA2E671BC800AA1EFB /* CodeInputViewModel.swift */,
-			);
-			path = CodeInputView;
-			sourceTree = "<group>";
-		};
 		813107E62E4E313900FED868 /* TabBarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +795,16 @@
 				81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */,
 			);
 			path = TextSkeletonView;
+			sourceTree = "<group>";
+		};
+		813BCB092E716F1100515310 /* CodeInputView */ = {
+			isa = PBXGroup;
+			children = (
+				813BCB062E716F1100515310 /* CodeInputVariationProvider.swift */,
+				813BCB072E716F1100515310 /* CodeInputView.swift */,
+				813BCB082E716F1100515310 /* CodeInputViewModel.swift */,
+			);
+			path = CodeInputView;
 			sourceTree = "<group>";
 		};
 		81578DD32D89FACF00BC7038 /* BottomSheetView */ = {
@@ -1407,15 +1407,15 @@
 				81B51AB32E3C892600504B1D /* CodeFieldView.swift in Sources */,
 				81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */,
 				81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */,
-				812268EC2E671BC800AA1EFB /* CodeInputVariationProvider.swift in Sources */,
-				812268ED2E671BC800AA1EFB /* CodeInputViewModel.swift in Sources */,
-				812268EE2E671BC800AA1EFB /* CodeInputView.swift in Sources */,
 				8174BA552D5DFC9600EA3E68 /* ProgressBarVariationProvider.swift in Sources */,
 				8166B4442D5C7CAB0044A680 /* Theme.swift in Sources */,
 				816332282E1FB36B00110F27 /* DropdownMenuViewModel.swift in Sources */,
 				811DE1492C4D19DC000DD354 /* ProgressBarViewModel.swift in Sources */,
 				8162434F2CB93E6F00506E1C /* AvatarGroupView.swift in Sources */,
 				8119E25E2DF6FCA700D1CA9F /* NotificationVariationProvider.swift in Sources */,
+				813BCB0A2E716F1200515310 /* CodeInputVariationProvider.swift in Sources */,
+				813BCB0B2E716F1200515310 /* CodeInputViewModel.swift in Sources */,
+				813BCB0C2E716F1200515310 /* CodeInputView.swift in Sources */,
 				8119E25F2DF6FCA700D1CA9F /* NotificationView.swift in Sources */,
 				812065842E29072400AA29ED /* SpinnerViewModel.swift in Sources */,
 				812065852E29072400AA29ED /* SpinnerVariationProvider.swift in Sources */,
