@@ -47,34 +47,6 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
 }
 
-public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.LPilled> {
-    
-    var primary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "primary",
-            appearance: appearance.primary
-        )
-    }
-    var secondary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.primary,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.M> {
     
     var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
@@ -91,34 +63,6 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
-    
-    var primary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "primary",
-            appearance: appearance.primary
-        )
-    }
-    var secondary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.primary,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.MPilled> {
     
     var primary: AppearanceVariation<SegmentItemAppearance> {
         return .init(
@@ -189,34 +133,6 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
 }
 
-public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.SPilled> {
-    
-    var primary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "primary",
-            appearance: appearance.primary
-        )
-    }
-    var secondary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.primary,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xs> {
     
     var pilled: ComponentAppearanceVariation<SegmentItem, SegmentItemAppearance> {
@@ -233,34 +149,6 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
             appearance: appearance
         )
     }
-    
-    var primary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "primary",
-            appearance: appearance.primary
-        )
-    }
-    var secondary: AppearanceVariation<SegmentItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.primary,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.XsPilled> {
     
     var primary: AppearanceVariation<SegmentItemAppearance> {
         return .init(

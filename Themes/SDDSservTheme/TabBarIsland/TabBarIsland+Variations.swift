@@ -61,50 +61,6 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.LShadow> {
-    
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
-        
-        return .init(
-            name: "`default`",
-            appearance: appearance
-        )
-    }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
-    var variation: Variation<TabBarIslandAppearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-                self.accent,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.M> {
     
     var shadow: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.MShadow> {
@@ -119,50 +75,6 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
             appearance: appearance
         )
     }
-    
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
-        
-        return .init(
-            name: "`default`",
-            appearance: appearance
-        )
-    }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
-        
-        return .init(
-            name: "accent",
-            appearance: appearance
-        )
-    }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
-        var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
-        
-        return .init(
-            name: "secondary",
-            appearance: appearance
-        )
-    }
-    var variation: Variation<TabBarIslandAppearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-                self.accent,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.MShadow> {
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance

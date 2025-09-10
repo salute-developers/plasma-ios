@@ -55,41 +55,6 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
     
 }
 
-public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.LLabel> {
-    
-    var `default`: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "`default`",
-            appearance: appearance.`default`
-        )
-    }
-    var accent: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "accent",
-            appearance: appearance.accent
-        )
-    }
-    var secondary: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-                self.accent,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.M> {
     
     var label: ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> {
@@ -107,41 +72,6 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
             appearance: appearance
         )
     }
-    
-    var `default`: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "`default`",
-            appearance: appearance.`default`
-        )
-    }
-    var accent: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "accent",
-            appearance: appearance.accent
-        )
-    }
-    var secondary: AppearanceVariation<TabBarItemAppearance> {
-        return .init(
-            name: "secondary",
-            appearance: appearance.secondary
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-                self.accent,
-                self.secondary,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, TabBarItemVariation.MLabel> {
     
     var `default`: AppearanceVariation<TabBarItemAppearance> {
         return .init(

@@ -80,6 +80,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case tabBarHasLabelSolid = "TabBarHasLabel"
     case tabBarHasLabelClear = "TabBarHasLabelClear"
     case codeInput = "CodeInput"
+    case notificationContent = "NotificationContent"
+    case basicButtonGroup = "BasicButtonGroup"
+    case iconButtonGroup = "IconButtonGroup"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -161,7 +164,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .tabBarClear,
             .tabBarHasLabelSolid,
             .tabBarHasLabelClear,
-            .codeInput
+            .codeInput,
+            .notificationContent,
+            .basicButtonGroup,
+            .iconButtonGroup
         ]
     }
     
@@ -262,6 +268,12 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeInput:
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .notificationContent:
+            GenerateComponentCommand<NotificationContentProps, NotificationContentAppearance, NotificationContentSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .basicButtonGroup:
+            GenerateComponentCommand<BasicButtonGroupProps, BasicButtonGroupAppearance, BasicButtonGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .iconButtonGroup:
+            GenerateComponentCommand<IconButtonGroupProps, IconButtonGroupAppearance, IconButtonGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -353,6 +365,12 @@ extension CodeGenerationComponent {
             "TabBarAppearance"
         case .codeInput:
             "CodeInputAppearance"
+        case .notificationContent:
+            "NotificationContentAppearance"
+        case .basicButtonGroup:
+            "BasicButtonGroupAppearance"
+        case .iconButtonGroup:
+            "IconButtonGroupAppearance"
         }
     }
     
@@ -445,6 +463,12 @@ extension CodeGenerationComponent {
             "TabBarSizeConfiguration"
         case .codeInput:
             "CodeInputSizeConfiguration"
+        case .notificationContent:
+            "NotificationContentSizeConfiguration"
+        case .basicButtonGroup:
+            "BasicButtonGroupSizeConfiguration"
+        case .iconButtonGroup:
+            "IconButtonGroupSizeConfiguration"
         }
     }
     
@@ -608,6 +632,12 @@ extension CodeGenerationComponent {
             "tab_bar_has_label_clear_config.json"
         case .codeInput:
             "code_input_config.json"
+        case .notificationContent:
+            "notification_content_config.json"
+        case .basicButtonGroup:
+            "basic_button_group_config.json"
+        case .iconButtonGroup:
+            "icon_button_group_config.json"
         }
     }
     

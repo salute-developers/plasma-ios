@@ -287,6 +287,14 @@
 		81E934462DEDF98F00B76E38 /* SDDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9343F2DEDF98F00B76E38 /* SDDSToast.swift */; };
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
+		81ED2DF32E71CF0B004DB74B /* NotificationContentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */; };
+		81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */; };
+		81ED2DF52E71CF0B004DB74B /* BasicButtonGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DE52E71CF0B004DB74B /* BasicButtonGroupAppearance.swift */; };
+		81ED2DF62E71CF0B004DB74B /* IconButtonGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DE92E71CF0B004DB74B /* IconButtonGroupAppearance.swift */; };
+		81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */; };
+		81ED2DF82E71CF0B004DB74B /* NotificationContentIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */; };
+		81ED2DF92E71CF0B004DB74B /* IconButtonGroupSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEA2E71CF0B004DB74B /* IconButtonGroupSizeConfiguration.swift */; };
+		81ED2DFA2E71CF0B004DB74B /* BasicButtonGroupSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DE62E71CF0B004DB74B /* BasicButtonGroupSizeConfiguration.swift */; };
 		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
 		81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E32CECD4B1000156D9 /* IconButton.swift */; };
@@ -697,6 +705,14 @@
 		81E934412DEDF98F00B76E38 /* ToastAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAccessibility.swift; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
+		81ED2DE52E71CF0B004DB74B /* BasicButtonGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonGroupAppearance.swift; sourceTree = "<group>"; };
+		81ED2DE62E71CF0B004DB74B /* BasicButtonGroupSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonGroupSizeConfiguration.swift; sourceTree = "<group>"; };
+		81ED2DE92E71CF0B004DB74B /* IconButtonGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonGroupAppearance.swift; sourceTree = "<group>"; };
+		81ED2DEA2E71CF0B004DB74B /* IconButtonGroupSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonGroupSizeConfiguration.swift; sourceTree = "<group>"; };
+		81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentAppearance.swift; sourceTree = "<group>"; };
+		81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentButtonLayout.swift; sourceTree = "<group>"; };
+		81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentIconPlacement.swift; sourceTree = "<group>"; };
+		81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentSizeConfiguration.swift; sourceTree = "<group>"; };
 		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
 		81F752E12CECD40A000156D9 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		81F752E32CECD4B1000156D9 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
@@ -1711,6 +1727,9 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81ED2DE82E71CF0B004DB74B /* SDDSBasicButtonGroup */,
+				81ED2DEC2E71CF0B004DB74B /* SDDSIconButtonGroup */,
+				81ED2DF22E71CF0B004DB74B /* SDDSNotificationContent */,
 				81225C442E6715D200AA1EFB /* SDDSCodeInput */,
 				819A3A672E4E6573006A11F8 /* SDDSLoader */,
 				8131E84E2E4BAF8700FED868 /* SDDSTabBar */,
@@ -2133,6 +2152,59 @@
 				816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */,
 			);
 			path = SDDSTextField;
+			sourceTree = "<group>";
+		};
+		81ED2DE72E71CF0B004DB74B /* BasicButtonGroupAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DE52E71CF0B004DB74B /* BasicButtonGroupAppearance.swift */,
+				81ED2DE62E71CF0B004DB74B /* BasicButtonGroupSizeConfiguration.swift */,
+			);
+			path = BasicButtonGroupAppearance;
+			sourceTree = "<group>";
+		};
+		81ED2DE82E71CF0B004DB74B /* SDDSBasicButtonGroup */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DE72E71CF0B004DB74B /* BasicButtonGroupAppearance */,
+			);
+			path = SDDSBasicButtonGroup;
+			sourceTree = "<group>";
+		};
+		81ED2DEB2E71CF0B004DB74B /* IconButtonGroupAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DE92E71CF0B004DB74B /* IconButtonGroupAppearance.swift */,
+				81ED2DEA2E71CF0B004DB74B /* IconButtonGroupSizeConfiguration.swift */,
+			);
+			path = IconButtonGroupAppearance;
+			sourceTree = "<group>";
+		};
+		81ED2DEC2E71CF0B004DB74B /* SDDSIconButtonGroup */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DEB2E71CF0B004DB74B /* IconButtonGroupAppearance */,
+			);
+			path = SDDSIconButtonGroup;
+			sourceTree = "<group>";
+		};
+		81ED2DF12E71CF0B004DB74B /* NotificationContentAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */,
+				81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */,
+				81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */,
+				81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */,
+			);
+			path = NotificationContentAppearance;
+			sourceTree = "<group>";
+		};
+		81ED2DF22E71CF0B004DB74B /* SDDSNotificationContent */ = {
+			isa = PBXGroup;
+			children = (
+				81ED2DF12E71CF0B004DB74B /* NotificationContentAppearance */,
+			);
+			path = SDDSNotificationContent;
 			sourceTree = "<group>";
 		};
 		81F7532F2CF469AC000156D9 /* ButtonAppearance */ = {
@@ -2707,6 +2779,14 @@
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
 				81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */,
+				81ED2DF32E71CF0B004DB74B /* NotificationContentAppearance.swift in Sources */,
+				81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */,
+				81ED2DF52E71CF0B004DB74B /* BasicButtonGroupAppearance.swift in Sources */,
+				81ED2DF62E71CF0B004DB74B /* IconButtonGroupAppearance.swift in Sources */,
+				81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */,
+				81ED2DF82E71CF0B004DB74B /* NotificationContentIconPlacement.swift in Sources */,
+				81ED2DF92E71CF0B004DB74B /* IconButtonGroupSizeConfiguration.swift in Sources */,
+				81ED2DFA2E71CF0B004DB74B /* BasicButtonGroupSizeConfiguration.swift in Sources */,
 				69DBC1AD2DA52DE000B0CE58 /* RadioboxGroupAppearance.swift in Sources */,
 				816D0F082DF6D399008EC8F9 /* AutoCloseModifier.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,

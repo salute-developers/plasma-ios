@@ -4,48 +4,6 @@ import SDDSComponents
 import SDDSThemeCore
 
 
-public extension GeneralAppearanceVariation<Checkbox, CheckboxAppearance, CheckboxVariation.M> {
-    
-    var `default`: AppearanceVariation<CheckboxAppearance> {
-        return .init(
-            name: "`default`",
-            appearance: appearance.`default`
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<Checkbox, CheckboxAppearance, CheckboxVariation.S> {
-    
-    var `default`: AppearanceVariation<CheckboxAppearance> {
-        return .init(
-            name: "`default`",
-            appearance: appearance.`default`
-        )
-    }
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-                self.`default`,
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 
 public extension ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
     var `default`: AppearanceVariation<CheckboxAppearance> {

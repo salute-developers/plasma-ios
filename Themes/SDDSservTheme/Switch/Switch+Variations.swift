@@ -37,20 +37,6 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
     
 }
 
-public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.LToggles> {
-    
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.M> {
     
     var toggleS: ComponentAppearanceVariation<Switch, SwitchAppearance> {
@@ -84,20 +70,6 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
     
 }
 
-public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.MToggles> {
-    
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
 public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.S> {
     
     var toggleS: ComponentAppearanceVariation<Switch, SwitchAppearance> {
@@ -118,20 +90,6 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
             appearance: appearance
         )
     }
-    
-    var variation: Variation<Appearance> {
-        .init(
-            originalVariation: self,
-            styles: [
-            ],
-            name: name,
-            appearance: appearance
-        )
-    }
-    
-}
-
-public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVariation.SToggles> {
     
     var variation: Variation<Appearance> {
         .init(
