@@ -6,6 +6,20 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<ScrollBar, ScrollbarAppearance, ScrollBarVariation.M> {
     
+    var m: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
+        var size =  ScrollBarAnySize(size: appearance.size)
+        size.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+        size.width = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -19,6 +33,20 @@ public extension GeneralAppearanceVariation<ScrollBar, ScrollbarAppearance, Scro
 }
 
 public extension GeneralAppearanceVariation<ScrollBar, ScrollbarAppearance, ScrollBarVariation.S> {
+    
+    var s: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
+        var size =  ScrollBarAnySize(size: appearance.size)
+        size.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+        size.width = CGFloat(2.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
     
     var variation: Variation<Appearance> {
         .init(

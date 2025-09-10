@@ -6,6 +6,21 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.L> {
     
+    var l: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(4.0)
+        size.size = CGFloat(56.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
             name: "`default`",
@@ -68,6 +83,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 }
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.M> {
+    
+    var m: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(4.0)
+        size.size = CGFloat(48.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
@@ -132,6 +162,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.S> {
     
+    var s: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(3.0)
+        size.size = CGFloat(36.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
             name: "`default`",
@@ -194,6 +239,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 }
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.Scalable> {
+    
+    var scalable: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(0.0)
+        size.size = CGFloat(16.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "scalable",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
@@ -258,6 +318,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.Xl> {
     
+    var xl: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(6.0)
+        size.size = CGFloat(88.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
             name: "`default`",
@@ -320,6 +395,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 }
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.Xs> {
+    
+    var xs: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(2.0)
+        size.size = CGFloat(24.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
@@ -384,6 +474,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.Xxl> {
     
+    var xxl: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(8.0)
+        size.size = CGFloat(128.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xxl",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(
             name: "`default`",
@@ -446,6 +551,21 @@ public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerV
 }
 
 public extension GeneralAppearanceVariation<Spinner, SpinnerAppearance, SpinnerVariation.Xxs> {
+    
+    var xxs: ComponentAppearanceVariation<Spinner, SpinnerAppearance> {
+        var size =  SpinnerAnySize(size: appearance.size)
+        size.angle = CGFloat(0)
+        size.padding = CGFloat(1.0)
+        size.size = CGFloat(16.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xxs",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<SpinnerAppearance> {
         return .init(

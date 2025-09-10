@@ -80,88 +80,94 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case tabBarHasLabelSolid = "TabBarHasLabel"
     case tabBarHasLabelClear = "TabBarHasLabelClear"
     case codeInput = "CodeInput"
+    case notificationContent = "NotificationContent"
+    case basicButtonGroup = "BasicButtonGroup"
+    case iconButtonGroup = "IconButtonGroup"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
-        // .textField,
-        // .textFieldClear,
-        // .textArea,
-        // .textAreaClear,
-            .overlay,
-            .badge,
-            .badgeClear,
-            .badgeTransparent,
-            .iconBadge,
-            .iconBadgeClear,
-            .iconBadgeTransparent,
-            .indicator,
-            .cell,     
-            .counter,
-            .card,
-            .cardClear,
-            .segmentItem,
-            .segment,
-            .bottomSheet,
-            .switch,
-            .embeddedChip,
-            .chip,
-            .embeddedChipGroupDense,
-            .embeddedChipGroupWide,
-            .chipGroupDense,
-            .chipGroupWide,
-            .radiobox,
-            .radioboxGroup,
-            .checkbox,
-            .checkboxGroup,
-            .avatar,
-            .avatarGroup,
-            .circularProgressBar,
-            .progressBar,
-            .divider,
-            .popover,
-            .tooltip,
-            .toast,
-            .modal,
-            .notificationLoose,
-            .notificationCompact,
-            .rectSkeleton,
-            .textSkeleton,
-            .listItemNormal,
-            .listItemTight,
-            .dropdownMenuItemNormal,
-            .dropdownMenuItemTight,
-            .dropdownMenuListNormal,
-            .dropdownMenuListTight,
-            .dropdownMenuNormal,
-            .dropdownMenuTight,
-            .listNormal,
-            .listTight,
-            .scrollbar,
-            .accordionItemSolidActionStart,
-            .accordionItemSolidActionEnd,
-            .accordionItemClearActionStart,
-            .accordionItemClearActionEnd,
-            .accordionSolidActionStart,
-            .accordionSolidActionEnd,
-            .accordionClearActionStart,
-            .accordionClearActionEnd,
-            .spinner,
-            .loader,
-            .codeField,
-            .tabBarItemSolid,
-            .tabBarItemClear,
-            .tabBarIslandSolid,
-            .tabBarIslandClear,
-            .tabBarIslandHasLabelSolid,
-            .tabBarIslandHasLabelClear,
-            .tabBarSolid,
-            .tabBarClear,
-            .tabBarHasLabelSolid,
-            .tabBarHasLabelClear,
-            .codeInput
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
+//        // .textField,
+//        // .textFieldClear,
+//        // .textArea,
+//        // .textAreaClear,
+//           .overlay,
+//           .badge,
+//           .badgeClear,
+//           .badgeTransparent,
+//           .iconBadge,
+//           .iconBadgeClear,
+//           .iconBadgeTransparent,
+//           .indicator,
+//           .cell,     
+//           .counter,
+//           .card,
+//           .cardClear,
+//           .segmentItem,
+//           .segment,
+//           .bottomSheet,
+//           .switch,
+//           .embeddedChip,
+//           .chip,
+//           .embeddedChipGroupDense,
+//           .embeddedChipGroupWide,
+//           .chipGroupDense,
+//           .chipGroupWide,
+//           .radiobox,
+//           .radioboxGroup,
+//           .checkbox,
+//           .checkboxGroup,
+//           .avatar,
+//           .avatarGroup,
+//           .circularProgressBar,
+//           .progressBar,
+//           .divider,
+//           .popover,
+//           .tooltip,
+//           .toast,
+//           .modal,
+//           .notificationLoose,
+//           .notificationCompact,
+//           .rectSkeleton,
+//           .textSkeleton,
+//           .listItemNormal,
+//           .listItemTight,
+//           .dropdownMenuItemNormal,
+//           .dropdownMenuItemTight,
+//           .dropdownMenuListNormal,
+//           .dropdownMenuListTight,
+//           .dropdownMenuNormal,
+//           .dropdownMenuTight,
+//           .listNormal,
+//           .listTight,
+//           .scrollbar,
+//           .accordionItemSolidActionStart,
+//           .accordionItemSolidActionEnd,
+//           .accordionItemClearActionStart,
+//           .accordionItemClearActionEnd,
+//           .accordionSolidActionStart,
+//           .accordionSolidActionEnd,
+//           .accordionClearActionStart,
+//           .accordionClearActionEnd,
+//           .spinner,
+//           .loader,
+//           .codeField,
+//           .tabBarItemSolid,
+//           .tabBarItemClear,
+//           .tabBarIslandSolid,
+//           .tabBarIslandClear,
+//           .tabBarIslandHasLabelSolid,
+//           .tabBarIslandHasLabelClear,
+//           .tabBarSolid,
+//           .tabBarClear,
+//           .tabBarHasLabelSolid,
+//           .tabBarHasLabelClear,
+//           .codeInput,
+//           .notificationContent,
+            .basicButtonGroup,
+            .iconButtonGroup
         ]
     }
     
@@ -262,6 +268,24 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeInput:
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .notificationContent:
+            GenerateComponentCommand<NotificationContentProps, NotificationContentAppearance, NotificationContentSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
+        case .basicButtonGroup:
+            GenerateComponentCommand<ButtonGroupProps, ButtonGroupAppearance, ButtonGroupSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
+        case .iconButtonGroup:
+            GenerateComponentCommand<ButtonGroupProps, ButtonGroupAppearance, ButtonGroupSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -353,6 +377,12 @@ extension CodeGenerationComponent {
             "TabBarAppearance"
         case .codeInput:
             "CodeInputAppearance"
+        case .notificationContent:
+            "NotificationContentAppearance"
+        case .basicButtonGroup:
+            "ButtonGroupAppearance"
+        case .iconButtonGroup:
+            "ButtonGroupAppearance"
         }
     }
     
@@ -445,6 +475,12 @@ extension CodeGenerationComponent {
             "TabBarSizeConfiguration"
         case .codeInput:
             "CodeInputSizeConfiguration"
+        case .notificationContent:
+            "NotificationContentSizeConfiguration"
+        case .basicButtonGroup:
+            "ButtonGroupSizeConfiguration"
+        case .iconButtonGroup:
+            "ButtonGroupSizeConfiguration"
         }
     }
     
@@ -608,6 +644,12 @@ extension CodeGenerationComponent {
             "tab_bar_has_label_clear_config.json"
         case .codeInput:
             "code_input_config.json"
+        case .notificationContent:
+            "notification_content_config.json"
+        case .basicButtonGroup:
+            "basic_button_group_config.json"
+        case .iconButtonGroup:
+            "icon_button_group_config.json"
         }
     }
     

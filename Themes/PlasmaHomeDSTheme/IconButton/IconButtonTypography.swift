@@ -37,6 +37,6 @@ struct IconButtonTypography: GeneralTypographyConfiguration {
         if size is IconButtonSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

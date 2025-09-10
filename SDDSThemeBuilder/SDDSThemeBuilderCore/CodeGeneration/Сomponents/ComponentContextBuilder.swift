@@ -138,7 +138,10 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
                 }
             }
             
-            let childKeys = configuration.childKeys(for: parentKey)
+            var childKeys = configuration.childKeys(for: parentKey)
+            if !hasViewProps {
+                childKeys += [parentKey]
+            }
             
             for key in childKeys {
                 guard let variation = configuration.allProps[key] else {
