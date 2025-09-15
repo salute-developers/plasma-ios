@@ -374,6 +374,7 @@
 		D35F47C72E5701F800B3EC9E /* LoaderTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoaderTestCase; sourceTree = "<group>"; };
 		D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScrollbarTestCase; sourceTree = "<group>"; };
 		D35FCCC02E4F1FB600B3EC9E /* CodeFieldTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CodeFieldTestCase; sourceTree = "<group>"; };
+		D36588AF2E72B73800036483 /* CodeInputTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CodeInputTestCase; sourceTree = "<group>"; };
 		D37C09022DE8B32400B76DF2 /* SegmentTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SegmentTestCase; sourceTree = "<group>"; };
 		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ModalTestCase; sourceTree = "<group>"; };
 		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RectSkeletonTestCase; sourceTree = "<group>"; };
@@ -485,6 +486,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D36588AF2E72B73800036483 /* CodeInputTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
 				D35F47C72E5701F800B3EC9E /* LoaderTestCase */,
 				D35FCCC02E4F1FB600B3EC9E /* CodeFieldTestCase */,
@@ -1141,6 +1143,7 @@
 				D35F47C72E5701F800B3EC9E /* LoaderTestCase */,
 				D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */,
 				D35FCCC02E4F1FB600B3EC9E /* CodeFieldTestCase */,
+				D36588AF2E72B73800036483 /* CodeInputTestCase */,
 				D37C09022DE8B32400B76DF2 /* SegmentTestCase */,
 				D3839E792E0E8CD000B6E830 /* ModalTestCase */,
 				D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */,
