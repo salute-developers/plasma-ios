@@ -40,16 +40,25 @@ enum SnapshotTestConfig {
  */
 func runSnapshotTest(
     view: @autoclosure @escaping () -> some View,
-    function: StaticString = #function
+    function: StaticString = #function,
+    landscape: Bool = false
 ) async throws {
     
     let baseName = extractTestName(from: function)
+    
+    let deviceGroup: SnapshotDeviceGroup
+    if landscape {
+        deviceGroup = SnapshotTestConfig.iPhone13Mini.landscape
+    } else {
+        deviceGroup = SnapshotTestConfig.iPhone13Mini
+    }
+    
     
     for (themeName, scheme) in SnapshotTestConfig.testTheme {
         await Xct.snapshotAsync(
             testName: "\(baseName)_\(themeName)",
             mode: .verify,
-            deviceGroup: SnapshotTestConfig.iPhone13Mini,
+            deviceGroup: deviceGroup,
             prepareSut: { _ in
                 view()
                     .padding()

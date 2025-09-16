@@ -49,13 +49,19 @@ final class CodeInputPlasmaB2CSnapshotTest: XCTestCase {
     @MainActor
     func testCodeInputLInputLetterErrorPlasmaB2C() async throws {
         let appearance = CodeInput.l.appearance
-        try await runSnapshotTest(view: CodeInputLInputLetterError(appearance: appearance))
+        try await runSnapshotTest(
+            view: CodeInputLInputLetterError(appearance: appearance),
+            landscape: true
+        )
     }
     
     @MainActor
     func testCodeInputLInputWrongCodePlasmaB2C() async throws {
         let appearance = CodeInput.l.appearance
-        try await runSnapshotTest(view: CodeInputLInputWrongCode(appearance: appearance))
+        try await runSnapshotTest(
+            view: CodeInputLInputWrongCode(appearance: appearance),
+            landscape: true
+        )
     }
     
     @MainActor

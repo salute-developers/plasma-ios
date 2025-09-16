@@ -49,13 +49,19 @@ final class CodeInputSnapshotTest: XCTestCase {
     @MainActor
     func testCodeInputLInputLetterError() async throws {
         let appearance = CodeInput.l.appearance
-        try await runSnapshotTest(view: CodeInputLInputLetterError(appearance: appearance))
+        try await runSnapshotTest(
+            view: CodeInputLInputLetterError(appearance: appearance),
+            landscape: true
+        )
     }
     
     @MainActor
     func testCodeInputLInputWrongCode() async throws {
         let appearance = CodeInput.l.appearance
-        try await runSnapshotTest(view: CodeInputLInputWrongCode(appearance: appearance))
+        try await runSnapshotTest(
+            view: CodeInputLInputWrongCode(appearance: appearance),
+            landscape: true
+        )
     }
     
     @MainActor
