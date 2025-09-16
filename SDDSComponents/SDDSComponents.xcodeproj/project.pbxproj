@@ -71,16 +71,12 @@
 		810F7B592E27F25E00218FE7 /* AccordionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F7B542E27F25E00218FE7 /* AccordionData.swift */; };
 		810F7B5A2E27F25E00218FE7 /* SDDSAccordion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F7B562E27F25E00218FE7 /* SDDSAccordion.swift */; };
 		810F7B5B2E27F25E00218FE7 /* AccordionSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F7B522E27F25E00218FE7 /* AccordionSizeConfiguration.swift */; };
-		810F7B5C2E27F25E00218FE7 /* SDDSAccordion.md in Resources */ = {isa = PBXBuildFile; fileRef = 810F7B552E27F25E00218FE7 /* SDDSAccordion.md */; };
-		810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */ = {isa = PBXBuildFile; fileRef = 810F92682E1395AB008CA4CA /* SDDSListItem.md */; };
-		810F926C2E1395AB008CA4CA /* SDDSList.md in Resources */ = {isa = PBXBuildFile; fileRef = 810F92622E1395AB008CA4CA /* SDDSList.md */; };
 		810F926D2E1395AB008CA4CA /* SDDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92692E1395AB008CA4CA /* SDDSListItem.swift */; };
 		810F926E2E1395AB008CA4CA /* ListSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92602E1395AB008CA4CA /* ListSizeConfiguration.swift */; };
 		810F926F2E1395AB008CA4CA /* ListAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F925F2E1395AB008CA4CA /* ListAppearance.swift */; };
 		810F92702E1395AB008CA4CA /* SDDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92632E1395AB008CA4CA /* SDDSList.swift */; };
 		810F92712E1395AB008CA4CA /* ListItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */; };
 		810F92722E1395AB008CA4CA /* ListItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F92652E1395AB008CA4CA /* ListItemAppearance.swift */; };
-		810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */ = {isa = PBXBuildFile; fileRef = 810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */; };
 		810FB55C2E16DDED008CA4CA /* ScrollbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */; };
 		810FB55D2E16DDED008CA4CA /* SDDSScrollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */; };
 		810FB55E2E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */; };
@@ -108,11 +104,9 @@
 		81205C232E2905C700AA29ED /* StrokeCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81205C222E2905C700AA29ED /* StrokeCap.swift */; };
 		81225C452E6715D200AA1EFB /* CodeInputSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81225C422E6715D200AA1EFB /* CodeInputSizeConfiguration.swift */; };
 		81225C462E6715D200AA1EFB /* CodeInputAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81225C412E6715D200AA1EFB /* CodeInputAppearance.swift */; };
-		81228ED52E6725DE00AA1EFB /* SDDSCodeInput.md in Resources */ = {isa = PBXBuildFile; fileRef = 81228ED32E6725DE00AA1EFB /* SDDSCodeInput.md */; };
 		81228ED62E6725DE00AA1EFB /* SDDSCodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81228ED42E6725DE00AA1EFB /* SDDSCodeInput.swift */; };
 		81228ED72E6725DE00AA1EFB /* CodeInputGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81228ED22E6725DE00AA1EFB /* CodeInputGroup.swift */; };
 		81228EDA2E6725ED00AA1EFB /* CoreInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81228ED82E6725ED00AA1EFB /* CoreInputView.swift */; };
-		81228EDB2E6725ED00AA1EFB /* SDDSCodeField.md in Resources */ = {isa = PBXBuildFile; fileRef = 81228ED92E6725ED00AA1EFB /* SDDSCodeField.md */; };
 		812418122DD341190013FDD2 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812418112DD341170013FDD2 /* Arc.swift */; };
 		812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */; };
 		812DB73B2D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812DB7312D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift */; };
@@ -278,7 +272,6 @@
 		81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF121F2C6E74180074174F /* RoundedCornersMask.swift */; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */; };
-		81D758C82E2E08EB0049CB92 /* SDDSSpinner.md in Resources */ = {isa = PBXBuildFile; fileRef = 81D758C72E2E08EB0049CB92 /* SDDSSpinner.md */; };
 		81D80F8E2D677C560043F174 /* EmbeddedChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D80F8D2D677C560043F174 /* EmbeddedChip.swift */; };
 		81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */; };
 		81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9343A2DEDF70D00B76E38 /* ToastSizeConfiguration.swift */; };
@@ -305,7 +298,6 @@
 		81F7E4E42DF0591700531844 /* StackedToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7E4E32DF0591600531844 /* StackedToast.swift */; };
 		81F7E4E72DF0594600531844 /* ToastPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7E4E52DF0594600531844 /* ToastPosition.swift */; };
 		81F7E4E82DF0594600531844 /* View+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7E4E62DF0594600531844 /* View+Toast.swift */; };
-		81F7FEBC2E1FD4C300530B33 /* SDDSDivider.md in Resources */ = {isa = PBXBuildFile; fileRef = 81F7FEB92E1FD4C300530B33 /* SDDSDivider.md */; };
 		81F7FEBD2E1FD4C300530B33 /* DividerSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7FEB72E1FD4C300530B33 /* DividerSizeConfiguration.swift */; };
 		81F7FEBE2E1FD4C300530B33 /* SDDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7FEBA2E1FD4C300530B33 /* SDDSDivider.swift */; };
 		81F7FEBF2E1FD4C300530B33 /* DividerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7FEB62E1FD4C300530B33 /* DividerAppearance.swift */; };
@@ -369,23 +361,10 @@
 		692510192D7632CA00545542 /* IconBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBadge.swift; sourceTree = "<group>"; };
 		6925101A2D7632CA00545542 /* SDDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBadge.swift; sourceTree = "<group>"; };
 		693FE22E2DD75D0000E14D0E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
-		693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSBadge.md; sourceTree = "<group>"; };
-		693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCircularProgressBar.md; sourceTree = "<group>"; };
-		693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSBottomSheet.md; sourceTree = "<group>"; };
-		693FE46B2DDC908E00E14D0E /* SDDSCard.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCard.md; sourceTree = "<group>"; };
-		693FE46D2DDC925000E14D0E /* SDDSIndicator.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSIndicator.md; sourceTree = "<group>"; };
-		693FE46F2DDC92BC00E14D0E /* SDDSCell.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCell.md; sourceTree = "<group>"; };
-		693FE4712DDC946B00E14D0E /* SDDSSegment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSegment.md; sourceTree = "<group>"; };
-		693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSegmentItem.md; sourceTree = "<group>"; };
-		693FE4752DDC95E100E14D0E /* SDDSCounter.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCounter.md; sourceTree = "<group>"; };
-		693FE4772DDC966400E14D0E /* SDDSTextArea.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextArea.md; sourceTree = "<group>"; };
-		693FE4792DDDA28B00E14D0E /* SDDSTextField.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextField.md; sourceTree = "<group>"; };
-		693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSButton.md; sourceTree = "<group>"; };
 		693FEF282DE097E200E14D0E /* SDDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDivider.swift; sourceTree = "<group>"; };
 		693FEF2B2DE0990F00E14D0E /* DividerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerAppearance.swift; sourceTree = "<group>"; };
 		693FEF2F2DE4643900E14D0E /* SDDSDividerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDividerPreview.swift; sourceTree = "<group>"; };
 		693FEF382DE4779D00E14D0E /* DividerSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerSizeConfiguration.swift; sourceTree = "<group>"; };
-		693FEF3C2DE4980F00E14D0E /* SDDSDivider.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSDivider.md; sourceTree = "<group>"; };
 		694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxGroupAppearance.swift; sourceTree = "<group>"; };
 		694C288B2D8AFE2700D7F341 /* SelectionControlStateImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlStateImages.swift; sourceTree = "<group>"; };
 		694C288C2D8AFE2700D7F341 /* SelectionControlToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlToggle.swift; sourceTree = "<group>"; };
@@ -443,22 +422,16 @@
 		810F7B512E27F25E00218FE7 /* AccordionAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionAppearance.swift; sourceTree = "<group>"; };
 		810F7B522E27F25E00218FE7 /* AccordionSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionSizeConfiguration.swift; sourceTree = "<group>"; };
 		810F7B542E27F25E00218FE7 /* AccordionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionData.swift; sourceTree = "<group>"; };
-		810F7B552E27F25E00218FE7 /* SDDSAccordion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSAccordion.md; sourceTree = "<group>"; };
 		810F7B562E27F25E00218FE7 /* SDDSAccordion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAccordion.swift; sourceTree = "<group>"; };
 		810F925F2E1395AB008CA4CA /* ListAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppearance.swift; sourceTree = "<group>"; };
 		810F92602E1395AB008CA4CA /* ListSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSizeConfiguration.swift; sourceTree = "<group>"; };
-		810F92622E1395AB008CA4CA /* SDDSList.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSList.md; sourceTree = "<group>"; };
 		810F92632E1395AB008CA4CA /* SDDSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSList.swift; sourceTree = "<group>"; };
 		810F92652E1395AB008CA4CA /* ListItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemAppearance.swift; sourceTree = "<group>"; };
 		810F92662E1395AB008CA4CA /* ListItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSizeConfiguration.swift; sourceTree = "<group>"; };
-		810F92682E1395AB008CA4CA /* SDDSListItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSListItem.md; sourceTree = "<group>"; };
 		810F92692E1395AB008CA4CA /* SDDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSListItem.swift; sourceTree = "<group>"; };
 		810FB5562E16DDED008CA4CA /* ScrollbarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarAppearance.swift; sourceTree = "<group>"; };
 		810FB5572E16DDED008CA4CA /* ScrollbarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarSizeConfiguration.swift; sourceTree = "<group>"; };
-		810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSScrollbar.md; sourceTree = "<group>"; };
 		810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSScrollbar.swift; sourceTree = "<group>"; };
-		8115FEAC2E607C2F00EEDC26 /* SDDSTabBarIsland.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTabBarIsland.md; sourceTree = "<group>"; };
-		8115FEAD2E607C2F00EEDC26 /* SDDSTabBarItem.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTabBarItem.md; sourceTree = "<group>"; };
 		8115FEAE2E607C2F00EEDC26 /* TabBarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContent.swift; sourceTree = "<group>"; };
 		8115FEAF2E607C2F00EEDC26 /* View+TabBarIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBarIsland.swift"; sourceTree = "<group>"; };
 		8119DF572DF6FB8800D1CA9F /* NotificationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAppearance.swift; sourceTree = "<group>"; };
@@ -474,11 +447,8 @@
 		811DE1552C50179F000DD354 /* ChipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipAppearance.swift; sourceTree = "<group>"; };
 		811DE1572C5017C3000DD354 /* ProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAppearance.swift; sourceTree = "<group>"; };
 		811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroup.swift; sourceTree = "<group>"; };
-		811DE15C2C51167A000DD354 /* SDDSChip.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSChip.md; sourceTree = "<group>"; };
-		811DE15E2C511701000DD354 /* SDDSChipGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSChipGroup.md; sourceTree = "<group>"; };
 		811DE1702C5783B6000DD354 /* HierarchicalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalList.swift; sourceTree = "<group>"; };
 		811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckboxGroup.swift; sourceTree = "<group>"; };
-		811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckboxGroup.md; sourceTree = "<group>"; };
 		81205C172E29055300AA29ED /* SpinnerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerAppearance.swift; sourceTree = "<group>"; };
 		81205C182E29055300AA29ED /* SpinnerSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSizeConfiguration.swift; sourceTree = "<group>"; };
 		81205C1C2E29055300AA29ED /* SDDSSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSpinner.swift; sourceTree = "<group>"; };
@@ -486,10 +456,8 @@
 		81225C412E6715D200AA1EFB /* CodeInputAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputAppearance.swift; sourceTree = "<group>"; };
 		81225C422E6715D200AA1EFB /* CodeInputSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputSizeConfiguration.swift; sourceTree = "<group>"; };
 		81228ED22E6725DE00AA1EFB /* CodeInputGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputGroup.swift; sourceTree = "<group>"; };
-		81228ED32E6725DE00AA1EFB /* SDDSCodeInput.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCodeInput.md; sourceTree = "<group>"; };
 		81228ED42E6725DE00AA1EFB /* SDDSCodeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCodeInput.swift; sourceTree = "<group>"; };
 		81228ED82E6725ED00AA1EFB /* CoreInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInputView.swift; sourceTree = "<group>"; };
-		81228ED92E6725ED00AA1EFB /* SDDSCodeField.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCodeField.md; sourceTree = "<group>"; };
 		812418112DD341170013FDD2 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClear.swift; sourceTree = "<group>"; };
 		812DB7312D57B43900D3F4A3 /* TextAreaRequiredPlacement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaRequiredPlacement.swift; sourceTree = "<group>"; };
@@ -534,13 +502,6 @@
 		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
-		814D25602E0430840060C3F2 /* SDDSModal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSModal.md; sourceTree = "<group>"; };
-		814D25622E04308D0060C3F2 /* SDDSNotification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSNotification.md; sourceTree = "<group>"; };
-		814D25642E0430950060C3F2 /* SDDSToast.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSToast.md; sourceTree = "<group>"; };
-		814D25662E0430A90060C3F2 /* SDDSPopover.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSPopover.md; sourceTree = "<group>"; };
-		814D25682E0431360060C3F2 /* SDDSTooltip.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTooltip.md; sourceTree = "<group>"; };
-		814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSTextSkeleton.md; sourceTree = "<group>"; };
-		814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRectSkeleton.md; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
 		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
@@ -555,7 +516,6 @@
 		815D366F2DE5B5CC0005273B /* View+SDDSOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+SDDSOverlay.swift"; sourceTree = "<group>"; };
 		815D36712DE5B5CC0005273B /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
 		815D36722DE5B5CC0005273B /* OverlaySizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySizeConfiguration.swift; sourceTree = "<group>"; };
-		815D36742DE5B5CC0005273B /* SDDSOverlay.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSOverlay.md; sourceTree = "<group>"; };
 		815D36752DE5B5CC0005273B /* SDDSOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSOverlay.swift; sourceTree = "<group>"; };
 		815D368A2DE5BAA70005273B /* TooltipAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipAppearance.swift; sourceTree = "<group>"; };
 		815D368B2DE5BAA70005273B /* TooltipSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSizeConfiguration.swift; sourceTree = "<group>"; };
@@ -622,18 +582,14 @@
 		818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyConfiguration.swift; sourceTree = "<group>"; };
 		818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Extensions.swift"; sourceTree = "<group>"; };
 		818C03BE2C43C371002C6D0A /* DebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModifier.swift; sourceTree = "<group>"; };
-		818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSwitch.md; sourceTree = "<group>"; };
 		818C03C42C4512A6002C6D0A /* SelectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControl.swift; sourceTree = "<group>"; };
 		818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
 		818C03C82C451424002C6D0A /* RadioboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioboxAppearance.swift; sourceTree = "<group>"; };
 		818C03CA2C45158A002C6D0A /* SDDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCheckbox.swift; sourceTree = "<group>"; };
 		818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRadiobox.swift; sourceTree = "<group>"; };
 		818C03CF2C451651002C6D0A /* SelectionControlAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlAppearance.swift; sourceTree = "<group>"; };
-		818C03D32C455763002C6D0A /* SDDSCheckbox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSCheckbox.md; sourceTree = "<group>"; };
-		818C03D42C4557BF002C6D0A /* SDDSRadiobox.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRadiobox.md; sourceTree = "<group>"; };
 		818C03E22C479003002C6D0A /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSProgressBar.swift; sourceTree = "<group>"; };
-		818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSProgressBar.md; sourceTree = "<group>"; };
 		818E3B7E2DDDCCB900130AF9 /* PopoverAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAppearance.swift; sourceTree = "<group>"; };
 		818E3B802DDDCCC400130AF9 /* PopoverSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSizeConfiguration.swift; sourceTree = "<group>"; };
 		818E3B832DDE41C000130AF9 /* SDDSPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSPopover.swift; sourceTree = "<group>"; };
@@ -677,18 +633,14 @@
 		81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatar.swift; sourceTree = "<group>"; };
 		81CBC0932C82244000FBDAC8 /* BackportAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackportAsyncImage.swift; sourceTree = "<group>"; };
 		81CBC0972C82273100FBDAC8 /* Text+FillModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+FillModifier.swift"; sourceTree = "<group>"; };
-		81CBC0992C82325400FBDAC8 /* SDDSAvatar.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSAvatar.md; sourceTree = "<group>"; };
 		81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarData.swift; sourceTree = "<group>"; };
 		81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAvatarGroup.swift; sourceTree = "<group>"; };
-		81CBC0A42C8237E800FBDAC8 /* SDDSAvatarGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSAvatarGroup.md; sourceTree = "<group>"; };
 		81CF12182C6E686D0074174F /* SDDSRadioboxGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRadioboxGroup.swift; sourceTree = "<group>"; };
-		81CF121A2C6E6AB40074174F /* SDDSRadioboxGroup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSRadioboxGroup.md; sourceTree = "<group>"; };
 		81CF121F2C6E74180074174F /* RoundedCornersMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersMask.swift; sourceTree = "<group>"; };
 		81CF633E2C6E8E18008F3BB2 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = ../SDDSThemeCore.framework; sourceTree = "<group>"; };
 		81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSComponents.h; sourceTree = "<group>"; };
 		81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButton.swift; sourceTree = "<group>"; };
-		81D758C72E2E08EB0049CB92 /* SDDSSpinner.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSSpinner.md; sourceTree = "<group>"; };
 		81D80F8D2D677C560043F174 /* EmbeddedChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChip.swift; sourceTree = "<group>"; };
 		81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverShape.swift; sourceTree = "<group>"; };
 		81E934392DEDF70D00B76E38 /* ToastAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAppearance.swift; sourceTree = "<group>"; };
@@ -717,7 +669,6 @@
 		81F7E4E62DF0594600531844 /* View+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Toast.swift"; sourceTree = "<group>"; };
 		81F7FEB62E1FD4C300530B33 /* DividerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerAppearance.swift; sourceTree = "<group>"; };
 		81F7FEB72E1FD4C300530B33 /* DividerSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerSizeConfiguration.swift; sourceTree = "<group>"; };
-		81F7FEB92E1FD4C300530B33 /* SDDSDivider.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SDDSDivider.md; sourceTree = "<group>"; };
 		81F7FEBA2E1FD4C300530B33 /* SDDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDivider.swift; sourceTree = "<group>"; };
 		81F89DE72D808A8200A41C89 /* SDDSCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCard.swift; sourceTree = "<group>"; };
 		81F89DE92D808A8800A41C89 /* CardAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAppearance.swift; sourceTree = "<group>"; };
@@ -773,7 +724,6 @@
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4712DDC946B00E14D0E /* SDDSSegment.md */,
 				69B975252D5115FE00CAF208 /* SegmentWidthCalculatorImpl.swift */,
 				69B975232D5115D000CAF208 /* SegmentWidthCalculator.swift */,
 				69B975212D50BC3D00CAF208 /* SegmentLayoutMode.swift */,
@@ -813,7 +763,6 @@
 		6925101B2D7632CA00545542 /* SDDSBadge */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4652DDC7EBA00E14D0E /* SDDSBadge.md */,
 				692510172D7632CA00545542 /* BadgeAppearance */,
 				692510182D7632CA00545542 /* BasicBadge.swift */,
 				692510192D7632CA00545542 /* IconBadge.swift */,
@@ -822,17 +771,9 @@
 			path = SDDSBadge;
 			sourceTree = "<group>";
 		};
-		693FE2332DD772FD00E14D0E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		693FEF272DE097D000E14D0E /* SDDSDivider */ = {
 			isa = PBXGroup;
 			children = (
-				693FEF3C2DE4980F00E14D0E /* SDDSDivider.md */,
 				693FEF2A2DE0990000E14D0E /* DividerAppearance */,
 				693FEF282DE097E200E14D0E /* SDDSDivider.swift */,
 			);
@@ -859,7 +800,6 @@
 		6969429A2D6F0D8C00F43C38 /* SDDSCell */ = {
 			isa = PBXGroup;
 			children = (
-				693FE46F2DDC92BC00E14D0E /* SDDSCell.md */,
 				69ED5C0E2D7847E00019EE99 /* SDDSCell.swift */,
 				696942972D6F0D8C00F43C38 /* CellAppearance.swift */,
 				696942982D6F0D8C00F43C38 /* CellContentAlignment.swift */,
@@ -890,8 +830,6 @@
 		6987445E2D1C367700559ABA /* SDDSCounter */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4752DDC95E100E14D0E /* SDDSCounter.md */,
-				693FE2332DD772FD00E14D0E /* Resources */,
 				698744592D1C367700559ABA /* CounterAppearance */,
 				6987445D2D1C367700559ABA /* SDDSCounter.swift */,
 			);
@@ -901,7 +839,6 @@
 		698744662D1C368E00559ABA /* SDDSSegmentItem */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4732DDC951D00E14D0E /* SDDSSegmentItem.md */,
 				69B975272D511A0E00CAF208 /* CounterWidthCalculatorImpl.swift */,
 				6919BD992D4A6CF800A77774 /* SegmentItemAppearance */,
 				695F43892D41158F00FF936B /* SegmentItem+Equatable.swift */,
@@ -946,7 +883,6 @@
 		8102BA282CBE9B3300C589D3 /* SDDSTextArea */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4772DDC966400E14D0E /* SDDSTextArea.md */,
 				812DB7392D57B43900D3F4A3 /* TextArea.swift */,
 				812DB7302D57B43900D3F4A3 /* TextAreaAppearance */,
 				812DB72F2D57B43900D3F4A3 /* TextAreaClear.swift */,
@@ -987,7 +923,6 @@
 			children = (
 				810F7B532E27F25E00218FE7 /* AccordionAppearance */,
 				810F7B542E27F25E00218FE7 /* AccordionData.swift */,
-				810F7B552E27F25E00218FE7 /* SDDSAccordion.md */,
 				810F7B562E27F25E00218FE7 /* SDDSAccordion.swift */,
 			);
 			path = SDDSAccordion;
@@ -1006,7 +941,6 @@
 			isa = PBXGroup;
 			children = (
 				810F92612E1395AB008CA4CA /* ListAppearance */,
-				810F92622E1395AB008CA4CA /* SDDSList.md */,
 				810F92632E1395AB008CA4CA /* SDDSList.swift */,
 			);
 			path = SDDSList;
@@ -1025,7 +959,6 @@
 			isa = PBXGroup;
 			children = (
 				810F92672E1395AB008CA4CA /* ListItemAppearance */,
-				810F92682E1395AB008CA4CA /* SDDSListItem.md */,
 				810F92692E1395AB008CA4CA /* SDDSListItem.swift */,
 			);
 			path = SDDSListItem;
@@ -1035,7 +968,6 @@
 			isa = PBXGroup;
 			children = (
 				810FB5582E16DDED008CA4CA /* ScrollbarAppearance */,
-				810FB5592E16DDED008CA4CA /* SDDSScrollbar.md */,
 				810FB55A2E16DDED008CA4CA /* SDDSScrollbar.swift */,
 				81A079052DA3FB5400260DC9 /* ScrollBarData.swift */,
 				81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */,
@@ -1066,7 +998,6 @@
 		8119DF5D2DF6FB8800D1CA9F /* SDDSNotification */ = {
 			isa = PBXGroup;
 			children = (
-				814D25622E04308D0060C3F2 /* SDDSNotification.md */,
 				8119DF5A2DF6FB8800D1CA9F /* NotificationAppearance */,
 				8119DF5C2DF6FB8800D1CA9F /* View+Notification.swift */,
 			);
@@ -1112,7 +1043,6 @@
 				81D80F8D2D677C560043F174 /* EmbeddedChip.swift */,
 				811DE1532C50098D000DD354 /* SDDSChip.swift */,
 				817339E32D033E310092608A /* ChipData.swift */,
-				811DE15C2C51167A000DD354 /* SDDSChip.md */,
 				817339DC2D033D740092608A /* ChipAppearance */,
 			);
 			path = SDDSChip;
@@ -1123,7 +1053,6 @@
 			children = (
 				694B1F702DAE5D8400726B91 /* CheckboxGroupAppearance.swift */,
 				811DE1722C57868F000DD354 /* SDDSCheckboxGroup.swift */,
-				811DE1742C5787EF000DD354 /* SDDSCheckboxGroup.md */,
 			);
 			path = SDDSCheckboxGroup;
 			sourceTree = "<group>";
@@ -1133,7 +1062,6 @@
 			children = (
 				812DB7592D57B49F00D3F4A3 /* ChipGroupAppearance */,
 				811DE15A2C5017FE000DD354 /* SDDSChipGroup.swift */,
-				811DE15E2C511701000DD354 /* SDDSChipGroup.md */,
 			);
 			path = SDDSChipGroup;
 			sourceTree = "<group>";
@@ -1173,7 +1101,6 @@
 		81205C1D2E29055300AA29ED /* SDDSSpinner */ = {
 			isa = PBXGroup;
 			children = (
-				81D758C72E2E08EB0049CB92 /* SDDSSpinner.md */,
 				81205C222E2905C700AA29ED /* StrokeCap.swift */,
 				81205C192E29055300AA29ED /* SpinnerAppearance */,
 				81205C1C2E29055300AA29ED /* SDDSSpinner.swift */,
@@ -1195,7 +1122,6 @@
 			isa = PBXGroup;
 			children = (
 				81228ED22E6725DE00AA1EFB /* CodeInputGroup.swift */,
-				81228ED32E6725DE00AA1EFB /* SDDSCodeInput.md */,
 				81228ED42E6725DE00AA1EFB /* SDDSCodeInput.swift */,
 				81225C432E6715D200AA1EFB /* CodeInputAppearance */,
 			);
@@ -1276,8 +1202,6 @@
 		8131E84E2E4BAF8700FED868 /* SDDSTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				8115FEAC2E607C2F00EEDC26 /* SDDSTabBarIsland.md */,
-				8115FEAD2E607C2F00EEDC26 /* SDDSTabBarItem.md */,
 				8115FEAE2E607C2F00EEDC26 /* TabBarContent.swift */,
 				8115FEAF2E607C2F00EEDC26 /* View+TabBarIsland.swift */,
 				8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */,
@@ -1330,7 +1254,6 @@
 		813687682E0186A800A1702A /* SDDSRectSkeleton */ = {
 			isa = PBXGroup;
 			children = (
-				814D256C2E0434F30060C3F2 /* SDDSRectSkeleton.md */,
 				813687662E0186A800A1702A /* SkeletonAppearance */,
 				813687672E0186A800A1702A /* SDDSRectSkeleton.swift */,
 			);
@@ -1340,7 +1263,6 @@
 		8136876A2E0186A800A1702A /* SDDSTextSkeleton */ = {
 			isa = PBXGroup;
 			children = (
-				814D256A2E0434EC0060C3F2 /* SDDSTextSkeleton.md */,
 				81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */,
 				813687692E0186A800A1702A /* SDDSTextSkeleton.swift */,
 			);
@@ -1350,7 +1272,6 @@
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
-				693FE47B2DDDAE8C00E14D0E /* SDDSButton.md */,
 				81D2B1982C32B3E400CAA7FD /* SDDSButton.swift */,
 				81F752E12CECD40A000156D9 /* BasicButton.swift */,
 				81A901522CF6EAA800992B04 /* LinkButton.swift */,
@@ -1379,7 +1300,6 @@
 		81578DB52D89AD9100BC7038 /* SDDSBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4692DDC825400E14D0E /* SDDSBottomSheet.md */,
 				81FC47A92D928A2500A83F87 /* BottomSheetPresentation */,
 				81FC47AC2D928A2500A83F87 /* Handle */,
 				81FC47AF2D928A2500A83F87 /* Modifier */,
@@ -1421,7 +1341,6 @@
 			children = (
 				815D36702DE5B5CC0005273B /* Modifier */,
 				815D36732DE5B5CC0005273B /* OverlayAppearance */,
-				815D36742DE5B5CC0005273B /* SDDSOverlay.md */,
 				815D36752DE5B5CC0005273B /* SDDSOverlay.swift */,
 			);
 			path = SDDSOverlay;
@@ -1439,7 +1358,6 @@
 		815D368F2DE5BAA70005273B /* SDDSTooltip */ = {
 			isa = PBXGroup;
 			children = (
-				814D25682E0431360060C3F2 /* SDDSTooltip.md */,
 				815D368C2DE5BAA70005273B /* TooltipAppearance */,
 				815D368D2DE5BAA70005273B /* SDDSTooltip.swift */,
 				815D368E2DE5BAA70005273B /* View+Tooltip.swift */,
@@ -1485,7 +1403,6 @@
 		816F62D02DCBA8F000EC9121 /* SDDSCircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4672DDC814000E14D0E /* SDDSCircularProgressBar.md */,
 				816F62CE2DCBA8F000EC9121 /* CircularProgressBarAppearance */,
 				816F62CF2DCBA8F000EC9121 /* SDDSCircularProgressBar.swift */,
 				819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */,
@@ -1570,7 +1487,6 @@
 		8178A0842DF2F6B5003F5041 /* SDDSModal */ = {
 			isa = PBXGroup;
 			children = (
-				814D25602E0430840060C3F2 /* SDDSModal.md */,
 				8178A0812DF2F6B5003F5041 /* ModalAppearance */,
 				8178A0822DF2F6B5003F5041 /* SDDSModal.swift */,
 				8178A0832DF2F6B5003F5041 /* View+Modal.swift */,
@@ -1763,7 +1679,6 @@
 			children = (
 				81C3D7D82DAD6DE40090739E /* SDDSToggle.swift */,
 				818C03B12C418A90002C6D0A /* SDDSSwitch.swift */,
-				818C03C02C43CD4C002C6D0A /* SDDSSwitch.md */,
 				81685C212CFF87AD00278446 /* SwitchAppearance */,
 			);
 			path = SDDSSwitch;
@@ -1803,7 +1718,6 @@
 			children = (
 				817339DA2D033D3A0092608A /* CheckboxData.swift */,
 				818C03CA2C45158A002C6D0A /* SDDSCheckbox.swift */,
-				818C03D32C455763002C6D0A /* SDDSCheckbox.md */,
 				817339D92D033CF50092608A /* CheckboxAppearance */,
 			);
 			path = SDDSCheckbox;
@@ -1826,7 +1740,6 @@
 			children = (
 				818C03CD2C4515ED002C6D0A /* SDDSRadiobox.swift */,
 				817339E52D033E650092608A /* RadioboxData.swift */,
-				818C03D42C4557BF002C6D0A /* SDDSRadiobox.md */,
 				817339D82D033C870092608A /* RadioboxAppearance */,
 			);
 			path = SDDSRadiobox;
@@ -1836,7 +1749,6 @@
 			isa = PBXGroup;
 			children = (
 				818C03E52C47BCDC002C6D0A /* SDDSProgressBar.swift */,
-				818C03E72C47C3C4002C6D0A /* SDDSProgressBar.md */,
 				817339D32D033BD20092608A /* ProgressBarAppearance */,
 			);
 			path = SDDSProgressBar;
@@ -1845,7 +1757,6 @@
 		818E39642DDDCC4100130AF9 /* SDDSPopover */ = {
 			isa = PBXGroup;
 			children = (
-				814D25662E0430A90060C3F2 /* SDDSPopover.md */,
 				81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */,
 				815D1EF82DE04A5C0005273B /* View+Popover.swift */,
 				815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */,
@@ -1945,7 +1856,6 @@
 			isa = PBXGroup;
 			children = (
 				81228ED82E6725ED00AA1EFB /* CoreInputView.swift */,
-				81228ED92E6725ED00AA1EFB /* SDDSCodeField.md */,
 				81B5106E2E3C832600504B1D /* CodeFieldGroup.swift */,
 				81B581022E40A1C300504B1D /* CodeFieldAlignment.swift */,
 				81B58B3E2E40A8AF00504B1D /* Validation */,
@@ -2015,7 +1925,6 @@
 				6995FA922D6F5BF7003D5DBB /* SDDSAvatarModifiers.swift */,
 				81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */,
 				81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */,
-				81CBC0992C82325400FBDAC8 /* SDDSAvatar.md */,
 				817339E72D033E7E0092608A /* AvatarAppearance */,
 			);
 			path = SDDSAvatar;
@@ -2034,7 +1943,6 @@
 			children = (
 				69B15FA72DAEC6AD001E9115 /* AvatarGroupAppearance.swift */,
 				81CBC0A02C82350300FBDAC8 /* SDDSAvatarGroup.swift */,
-				81CBC0A42C8237E800FBDAC8 /* SDDSAvatarGroup.md */,
 			);
 			path = SDDSAvatarGroup;
 			sourceTree = "<group>";
@@ -2044,7 +1952,6 @@
 			children = (
 				69DBC1AB2DA52DC800B0CE58 /* Appearance */,
 				81CF12182C6E686D0074174F /* SDDSRadioboxGroup.swift */,
-				81CF121A2C6E6AB40074174F /* SDDSRadioboxGroup.md */,
 			);
 			path = SDDSRadioboxGroup;
 			sourceTree = "<group>";
@@ -2102,7 +2009,6 @@
 		81E9343C2DEDF70D00B76E38 /* SDDSToast */ = {
 			isa = PBXGroup;
 			children = (
-				814D25642E0430950060C3F2 /* SDDSToast.md */,
 				816D0EE52DF856ED0086C35C /* ToasContentEndPosition.swift */,
 				81F7E4E62DF0594600531844 /* View+Toast.swift */,
 				81E9343F2DEDF98F00B76E38 /* SDDSToast.swift */,
@@ -2125,7 +2031,6 @@
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
-				693FE4792DDDA28B00E14D0E /* SDDSTextField.md */,
 				812DB74D2D57B44100D3F4A3 /* TextField.swift */,
 				812DB7442D57B44100D3F4A3 /* TextFieldAppearance */,
 				812DB74E2D57B44100D3F4A3 /* TextFieldClear.swift */,
@@ -2174,7 +2079,6 @@
 			isa = PBXGroup;
 			children = (
 				81F7FEB82E1FD4C300530B33 /* DividerAppearance */,
-				81F7FEB92E1FD4C300530B33 /* SDDSDivider.md */,
 				81F7FEBA2E1FD4C300530B33 /* SDDSDivider.swift */,
 			);
 			path = SDDSDivider;
@@ -2183,7 +2087,6 @@
 		81F89DE62D808A7B00A41C89 /* SDDSCard */ = {
 			isa = PBXGroup;
 			children = (
-				693FE46B2DDC908E00E14D0E /* SDDSCard.md */,
 				81F89DED2D808AB300A41C89 /* CardAppearance */,
 				81F89DE72D808A8200A41C89 /* SDDSCard.swift */,
 				81F89DEE2D808C9300A41C89 /* SDDSCardContent.swift */,
@@ -2233,7 +2136,6 @@
 		81FD6D4A2D6E25D1002A6E51 /* SDDSIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				693FE46D2DDC925000E14D0E /* SDDSIndicator.md */,
 				81FD6D4F2D6E2629002A6E51 /* IndicatorAppearance */,
 				81FD6D4B2D6E25D8002A6E51 /* SDDSIndicator.swift */,
 			);
@@ -2413,15 +2315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				810F7B5C2E27F25E00218FE7 /* SDDSAccordion.md in Resources */,
 				81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */,
-				810F926B2E1395AB008CA4CA /* SDDSListItem.md in Resources */,
-				81228EDB2E6725ED00AA1EFB /* SDDSCodeField.md in Resources */,
-				810F926C2E1395AB008CA4CA /* SDDSList.md in Resources */,
-				81228ED52E6725DE00AA1EFB /* SDDSCodeInput.md in Resources */,
-				81F7FEBC2E1FD4C300530B33 /* SDDSDivider.md in Resources */,
-				810FB55B2E16DDED008CA4CA /* SDDSScrollbar.md in Resources */,
-				81D758C82E2E08EB0049CB92 /* SDDSSpinner.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
