@@ -1,0 +1,58 @@
+name: 'Test Deploy tokens docs'
+
+on:
+  workflow_dispatch:
+    inputs:
+      modules:
+        type: string
+        description: 'Список модулей в формате json'
+        required: true
+        default: '["sddsserv-theme"]'
+      tag:
+        type: string
+        description: "Тэг для релиза"
+        required: true
+        default: '1.0.0-test'
+      theme_name:
+        type: choice
+        description: 'Название темы для документации'
+        options:
+          - plasma-homeds
+          - plasma-b2c
+          - sddsserv
+          - styles-salute
+        default: 'sddsserv'
+        required: true
+
+jobs:
+  test:
+    name: Test documentation generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          # Устанавливаем Node.js и Yarn
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+          npm install -g yarn
+          
+          # Устанавливаем jq для работы с JSON
+          sudo apt-get install -y jq
+
+      - name: Test docusaurus generation
+        run: |
+          cd docusaurus
+          ./deploy.sh --local
+        env:
+          TARGET_TYPE: swiftui
+          DOCS_URL: https://plasma.sberdevices.ru
+
+      - name: Check generated files
+        run: |
+          echo "Checking generated documentation..."
+          ls -la docusaurus/build/generated/docusaurus/
+          echo "Generated files:"
+          find docusaurus/build/generated/docusaurus -name "*.html" | head -10
