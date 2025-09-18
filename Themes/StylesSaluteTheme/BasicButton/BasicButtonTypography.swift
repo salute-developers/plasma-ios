@@ -44,6 +44,6 @@ struct BasicButtonTypography: GeneralTypographyConfiguration {
         if size is BasicButtonSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

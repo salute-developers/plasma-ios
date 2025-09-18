@@ -6,6 +6,23 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.L> {
     
+    var l: GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.L> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundS.cornerRadius
+        size.endPadding = CGFloat(6.0)
+        size.height = CGFloat(28.0)
+        size.startContentSize = CGSize(width:16.0, height:16.0)
+        size.startPadding = CGFloat(6.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
         var size =  IconBadgeClearAnySize(size: appearance.size)
         size.cornerRadius = size.height / 2
@@ -82,6 +99,19 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.LPilled> {
     
+    var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -144,6 +174,23 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.M> {
+    
+    var m: GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.M> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXs.cornerRadius
+        size.endPadding = CGFloat(6.0)
+        size.height = CGFloat(24.0)
+        size.startContentSize = CGSize(width:12.0, height:12.0)
+        size.startPadding = CGFloat(6.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
         var size =  IconBadgeClearAnySize(size: appearance.size)
@@ -221,6 +268,19 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.MPilled> {
     
+    var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -297,6 +357,23 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
         )
     }
     
+    var s: GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.S> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXs.cornerRadius
+        size.endPadding = CGFloat(4.0)
+        size.height = CGFloat(20.0)
+        size.startContentSize = CGSize(width:12.0, height:12.0)
+        size.startPadding = CGFloat(4.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -359,6 +436,19 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.SPilled> {
+    
+    var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
@@ -436,6 +526,23 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
         )
     }
     
+    var xs: GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.Xs> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = ShapeToken.roundXxs.cornerRadius
+        size.endPadding = CGFloat(3.0)
+        size.height = CGFloat(16.0)
+        size.startContentSize = CGSize(width:10.0, height:10.0)
+        size.startPadding = CGFloat(3.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(
             name: "`default`",
@@ -498,6 +605,19 @@ public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, Ico
 }
 
 public extension GeneralAppearanceVariation<IconBadgeClear, BadgeAppearance, IconBadgeClearVariation.XsPilled> {
+    
+    var pilled: ComponentAppearanceVariation<IconBadgeClear, BadgeAppearance> {
+        var size =  IconBadgeClearAnySize(size: appearance.size)
+        size.cornerRadius = size.height / 2
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<BadgeAppearance> {
         return .init(

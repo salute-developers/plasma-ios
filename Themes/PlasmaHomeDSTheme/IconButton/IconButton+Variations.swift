@@ -6,6 +6,22 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.L> {
     
+    var l: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        var size =  IconButtonAnySize(size: appearance.size)
+        size.height = CGFloat(56.0)
+        size.iconSize = CGSize(width:24.0, height:24.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+        size.spinnerSize = CGSize(width:22.0, height:22.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "`default`",
@@ -55,6 +71,22 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.M> {
     
+    var m: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        var size =  IconButtonAnySize(size: appearance.size)
+        size.height = CGFloat(48.0)
+        size.iconSize = CGSize(width:24.0, height:24.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+        size.spinnerSize = CGSize(width:22.0, height:22.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "`default`",
@@ -103,6 +135,22 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
 }
 
 public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.S> {
+    
+    var s: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        var size =  IconButtonAnySize(size: appearance.size)
+        size.height = CGFloat(40.0)
+        size.iconSize = CGSize(width:24.0, height:24.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0)
+        size.spinnerSize = CGSize(width:22.0, height:22.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ButtonAppearance> {
         return .init(

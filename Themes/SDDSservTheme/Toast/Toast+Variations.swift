@@ -6,6 +6,19 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<Toast, ToastAppearance, ToastVariation.Pilled> {
     
+    var pilled: ComponentAppearanceVariation<Toast, ToastAppearance> {
+        var size =  ToastAnySize(size: appearance.size)
+        size.shape = CircleDrawer() as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ToastAppearance> {
         return .init(
             name: "`default`",
@@ -40,6 +53,19 @@ public extension GeneralAppearanceVariation<Toast, ToastAppearance, ToastVariati
 }
 
 public extension GeneralAppearanceVariation<Toast, ToastAppearance, ToastVariation.Rounded> {
+    
+    var rounded: ComponentAppearanceVariation<Toast, ToastAppearance> {
+        var size =  ToastAnySize(size: appearance.size)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "rounded",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ToastAppearance> {
         return .init(

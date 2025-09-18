@@ -30,6 +30,6 @@ struct BasicButtonTypography: GeneralTypographyConfiguration {
         if size is BasicButtonSizeS {
             return s
         }
-        return nil
+        return m
     }
 }
