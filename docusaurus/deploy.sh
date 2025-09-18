@@ -56,10 +56,6 @@ DOCS_URL="${ARGS[6]:-$DEFAULT_DOCS_URL}"
 
 # Проверяем ограничения для S3 деплоя
 if [[ "$DEPLOY_MODE" == "s3" ]]; then
-    if [[ "$BRANCH_NAME" == "main" ]]; then
-        echo "❌ Деплой на S3 запрещен для ветки main"
-        exit 1
-    fi
     echo "🚀 Режим деплоя: S3"
 else
     echo "🧪 Режим деплоя: Локальный тест"
@@ -241,11 +237,11 @@ else
     
     # Определяем путь для деплоя
     if [[ "$BRANCH_NAME" == "main" ]]; then
-        DEPLOY_PATH="$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+        DEPLOY_PATH="current/ios/$ARTIFACT_ID/$VERSION/CHANGELOG/"
     elif [[ "$BRANCH_NAME" == "develop" ]]; then
-        DEPLOY_PATH="dev/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+        DEPLOY_PATH="dev/ios/$ARTIFACT_ID/$VERSION/"
     else
-        DEPLOY_PATH="pr/$BRANCH_NAME/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+        DEPLOY_PATH="pr/$BRANCH_NAME/ios/$ARTIFACT_ID/$VERSION/"
     fi
     
     echo "  Deploy Path: $DEPLOY_PATH"
