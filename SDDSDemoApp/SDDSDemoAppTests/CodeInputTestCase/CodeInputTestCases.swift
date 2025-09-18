@@ -159,7 +159,7 @@ struct CodeInputLInputLetterError : View {
 }
 
 /**
- PLASMA-T2116
+ PLASMA-T2115
  */
 struct CodeInputLInputWrongCode : View {
    var appearance: CodeInputAppearance

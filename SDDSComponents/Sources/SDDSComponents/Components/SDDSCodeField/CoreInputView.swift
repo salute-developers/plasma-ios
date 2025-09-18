@@ -279,25 +279,21 @@ internal struct CoreInputView: View {
     private func inputItem(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
         ZStack {
             if !value.isEmpty {
-                if isError {
+                if isError && !isFullError {
                     if let strokeColor = strokeColor(isError: isError) {
-                        Circle()
-                            .fill(strokeColor.color(for: colorScheme))
-                            .frame(width: dotSize, height: dotSize)
+                        dot(color: strokeColor)
                             .scaleEffect(isScaled && (globalIndex == errorPosition) ? 1.5 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: isScaled)
                     }
                 } else {
-                    if isHidden {
+                    if isHidden && !isFullError {
                         if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                             Text(value)
                                 .typography(valueTypography)
                                 .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme))
                         } else {
                             if let fillColor = fillColor(isError: isError) {
-                                Circle()
-                                    .fill(fillColor.color(for: colorScheme))
-                                    .frame(width: dotSize, height: dotSize)
+                                dot(color: fillColor)
                             }
                         }
                     } else {
@@ -321,6 +317,13 @@ internal struct CoreInputView: View {
             shakes: CoreInputAnimation.shakeCount,
             isShaking: isShaking && (globalIndex == errorPosition)
         )
+    }
+    
+    @ViewBuilder
+    private func dot(color: ColorToken) -> some View {
+        Circle()
+            .fill(color.color(for: colorScheme))
+            .frame(width: dotSize, height: dotSize)
     }
     
     @ViewBuilder
