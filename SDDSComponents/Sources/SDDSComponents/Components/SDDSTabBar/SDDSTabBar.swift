@@ -83,7 +83,7 @@ public struct SDDSTabBar: View {
             )
             
             Rectangle()
-                .fill(appearance.backgroundColor.color(for: colorScheme))
+                .fill(.clear)
                 .frame(maxWidth: .infinity)
                 .frame(height: safeAreaInsets.bottom)
         }

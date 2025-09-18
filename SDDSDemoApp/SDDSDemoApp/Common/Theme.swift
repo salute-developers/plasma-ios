@@ -951,6 +951,19 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var tabBarVariations: [Variation<TabBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            []
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TabBar.all
+        }
+    }
+    
     var tabBarClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:

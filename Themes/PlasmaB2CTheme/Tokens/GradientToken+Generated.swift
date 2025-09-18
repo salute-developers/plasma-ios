@@ -435,7 +435,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#3E79F0FF")), 
                             Color(UIColor(hex: "#27C6E5FF"))
                         ],
-                        angle: 4.57
+                        angle: 94.0
                     )
                 )
             ],
@@ -1749,7 +1749,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#3E79F0FF")), 
                             Color(UIColor(hex: "#27C6E5FF"))
                         ],
-                        angle: 4.57
+                        angle: 94.0
                     )
                 )
             ],
@@ -1764,7 +1764,7 @@ public extension GradientToken {
                             Color(UIColor(hex: "#5E94FFFF")), 
                             Color(UIColor(hex: "#43DBFAFF"))
                         ],
-                        angle: 0.0
+                        angle: 90.0
                     )
                 )
             ]
