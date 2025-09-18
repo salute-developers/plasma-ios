@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,6 +109,50 @@
 		816169F62E33B812003C1071 /* DropdownMenuTight+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8161698C2E33B812003C1071 /* DropdownMenuTight+BaseVariations.swift */; };
 		816169F72E33B812003C1071 /* AccordionItemSolidActionEndTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8161695D2E33B812003C1071 /* AccordionItemSolidActionEndTypography.swift */; };
 		816169F92E33B812003C1071 /* DropdownMenuItemTightSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8161697A2E33B812003C1071 /* DropdownMenuItemTightSize.swift */; };
+		81A3CF892E7D5AA6008ED8D2 /* TabBarHasLabelTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF642E7D5AA6008ED8D2 /* TabBarHasLabelTypography.swift */; };
+		81A3CF8A2E7D5AA6008ED8D2 /* TabBarIslandClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF702E7D5AA6008ED8D2 /* TabBarIslandClear+BaseVariations.swift */; };
+		81A3CF8B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF7C2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearSize.swift */; };
+		81A3CF8C2E7D5AA6008ED8D2 /* TabBarHasLabel+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF612E7D5AA6008ED8D2 /* TabBarHasLabel+BaseVariations.swift */; };
+		81A3CF8D2E7D5AA6008ED8D2 /* TabBarIslandHasLabel+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF762E7D5AA6008ED8D2 /* TabBarIslandHasLabel+Variations.swift */; };
+		81A3CF8E2E7D5AA6008ED8D2 /* TabBarIslandSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF6D2E7D5AA6008ED8D2 /* TabBarIslandSize.swift */; };
+		81A3CF8F2E7D5AA6008ED8D2 /* TabBar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF572E7D5AA6008ED8D2 /* TabBar+BaseVariations.swift */; };
+		81A3CF902E7D5AA6008ED8D2 /* TabBarIsland+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF6B2E7D5AA6008ED8D2 /* TabBarIsland+BaseVariations.swift */; };
+		81A3CF912E7D5AA6008ED8D2 /* TabBarItemClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF842E7D5AA6008ED8D2 /* TabBarItemClear+BaseVariations.swift */; };
+		81A3CF922E7D5AA6008ED8D2 /* TabBarHasLabel+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF622E7D5AA6008ED8D2 /* TabBarHasLabel+Variations.swift */; };
+		81A3CF932E7D5AA6008ED8D2 /* TabBarItemTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF822E7D5AA6008ED8D2 /* TabBarItemTypography.swift */; };
+		81A3CF942E7D5AA6008ED8D2 /* TabBarHasLabelClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF662E7D5AA6008ED8D2 /* TabBarHasLabelClear+BaseVariations.swift */; };
+		81A3CF952E7D5AA6008ED8D2 /* CodeInputSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF542E7D5AA6008ED8D2 /* CodeInputSize.swift */; };
+		81A3CF962E7D5AA6008ED8D2 /* TabBarItemClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF872E7D5AA6008ED8D2 /* TabBarItemClearTypography.swift */; };
+		81A3CF972E7D5AA6008ED8D2 /* TabBarIsland+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF6C2E7D5AA6008ED8D2 /* TabBarIsland+Variations.swift */; };
+		81A3CF982E7D5AA6008ED8D2 /* TabBarClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF5C2E7D5AA6008ED8D2 /* TabBarClear+BaseVariations.swift */; };
+		81A3CF992E7D5AA6008ED8D2 /* TabBarIslandClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF712E7D5AA6008ED8D2 /* TabBarIslandClear+Variations.swift */; };
+		81A3CF9A2E7D5AA6008ED8D2 /* TabBarHasLabelClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF692E7D5AA6008ED8D2 /* TabBarHasLabelClearTypography.swift */; };
+		81A3CF9B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF7A2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+BaseVariations.swift */; };
+		81A3CF9C2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF7B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+Variations.swift */; };
+		81A3CF9D2E7D5AA6008ED8D2 /* TabBarHasLabelClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF682E7D5AA6008ED8D2 /* TabBarHasLabelClearSize.swift */; };
+		81A3CF9E2E7D5AA6008ED8D2 /* TabBarItem+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF802E7D5AA6008ED8D2 /* TabBarItem+Variations.swift */; };
+		81A3CF9F2E7D5AA6008ED8D2 /* TabBarIslandHasLabelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF772E7D5AA6008ED8D2 /* TabBarIslandHasLabelSize.swift */; };
+		81A3CFA02E7D5AA6008ED8D2 /* TabBarItemClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF862E7D5AA6008ED8D2 /* TabBarItemClearSize.swift */; };
+		81A3CFA12E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF7D2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearTypography.swift */; };
+		81A3CFA22E7D5AA6008ED8D2 /* TabBarIslandHasLabel+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF752E7D5AA6008ED8D2 /* TabBarIslandHasLabel+BaseVariations.swift */; };
+		81A3CFA32E7D5AA6008ED8D2 /* TabBarItem+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF7F2E7D5AA6008ED8D2 /* TabBarItem+BaseVariations.swift */; };
+		81A3CFA42E7D5AA6008ED8D2 /* TabBarIslandClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF732E7D5AA6008ED8D2 /* TabBarIslandClearTypography.swift */; };
+		81A3CFA52E7D5AA6008ED8D2 /* TabBarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF5A2E7D5AA6008ED8D2 /* TabBarTypography.swift */; };
+		81A3CFA62E7D5AA6008ED8D2 /* TabBarHasLabelClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF672E7D5AA6008ED8D2 /* TabBarHasLabelClear+Variations.swift */; };
+		81A3CFA72E7D5AA6008ED8D2 /* CodeInput+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF522E7D5AA6008ED8D2 /* CodeInput+BaseVariations.swift */; };
+		81A3CFA82E7D5AA6008ED8D2 /* TabBarClearTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF5F2E7D5AA6008ED8D2 /* TabBarClearTypography.swift */; };
+		81A3CFA92E7D5AA6008ED8D2 /* TabBarItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF812E7D5AA6008ED8D2 /* TabBarItemSize.swift */; };
+		81A3CFAA2E7D5AA6008ED8D2 /* CodeInput+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF532E7D5AA6008ED8D2 /* CodeInput+Variations.swift */; };
+		81A3CFAB2E7D5AA6008ED8D2 /* TabBarIslandHasLabelTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF782E7D5AA6008ED8D2 /* TabBarIslandHasLabelTypography.swift */; };
+		81A3CFAC2E7D5AA6008ED8D2 /* TabBar+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF582E7D5AA6008ED8D2 /* TabBar+Variations.swift */; };
+		81A3CFAD2E7D5AA6008ED8D2 /* TabBarClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF5E2E7D5AA6008ED8D2 /* TabBarClearSize.swift */; };
+		81A3CFAE2E7D5AA6008ED8D2 /* TabBarIslandTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF6E2E7D5AA6008ED8D2 /* TabBarIslandTypography.swift */; };
+		81A3CFAF2E7D5AA6008ED8D2 /* TabBarClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF5D2E7D5AA6008ED8D2 /* TabBarClear+Variations.swift */; };
+		81A3CFB02E7D5AA6008ED8D2 /* TabBarItemClear+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF852E7D5AA6008ED8D2 /* TabBarItemClear+Variations.swift */; };
+		81A3CFB12E7D5AA6008ED8D2 /* CodeInputTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF552E7D5AA6008ED8D2 /* CodeInputTypography.swift */; };
+		81A3CFB22E7D5AA6008ED8D2 /* TabBarIslandClearSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF722E7D5AA6008ED8D2 /* TabBarIslandClearSize.swift */; };
+		81A3CFB32E7D5AA6008ED8D2 /* TabBarHasLabelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF632E7D5AA6008ED8D2 /* TabBarHasLabelSize.swift */; };
+		81A3CFB42E7D5AA6008ED8D2 /* TabBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF592E7D5AA6008ED8D2 /* TabBarSize.swift */; };
 		81BA174A2D80684C008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
 		81DE0BAE2E20E61900DE2018 /* ListNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9F2E20E61900DE2018 /* ListNormal+BaseVariations.swift */; };
@@ -501,6 +545,50 @@
 		816169A62E33B812003C1071 /* Spinner+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spinner+Variations.swift"; sourceTree = "<group>"; };
 		816169A72E33B812003C1071 /* SpinnerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerSize.swift; sourceTree = "<group>"; };
 		816169A82E33B812003C1071 /* SpinnerTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerTypography.swift; sourceTree = "<group>"; };
+		81A3CF522E7D5AA6008ED8D2 /* CodeInput+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeInput+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF532E7D5AA6008ED8D2 /* CodeInput+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodeInput+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF542E7D5AA6008ED8D2 /* CodeInputSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputSize.swift; sourceTree = "<group>"; };
+		81A3CF552E7D5AA6008ED8D2 /* CodeInputTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputTypography.swift; sourceTree = "<group>"; };
+		81A3CF572E7D5AA6008ED8D2 /* TabBar+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF582E7D5AA6008ED8D2 /* TabBar+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF592E7D5AA6008ED8D2 /* TabBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSize.swift; sourceTree = "<group>"; };
+		81A3CF5A2E7D5AA6008ED8D2 /* TabBarTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTypography.swift; sourceTree = "<group>"; };
+		81A3CF5C2E7D5AA6008ED8D2 /* TabBarClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF5D2E7D5AA6008ED8D2 /* TabBarClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarClear+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF5E2E7D5AA6008ED8D2 /* TabBarClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarClearSize.swift; sourceTree = "<group>"; };
+		81A3CF5F2E7D5AA6008ED8D2 /* TabBarClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarClearTypography.swift; sourceTree = "<group>"; };
+		81A3CF612E7D5AA6008ED8D2 /* TabBarHasLabel+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarHasLabel+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF622E7D5AA6008ED8D2 /* TabBarHasLabel+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarHasLabel+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF632E7D5AA6008ED8D2 /* TabBarHasLabelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHasLabelSize.swift; sourceTree = "<group>"; };
+		81A3CF642E7D5AA6008ED8D2 /* TabBarHasLabelTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHasLabelTypography.swift; sourceTree = "<group>"; };
+		81A3CF662E7D5AA6008ED8D2 /* TabBarHasLabelClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarHasLabelClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF672E7D5AA6008ED8D2 /* TabBarHasLabelClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarHasLabelClear+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF682E7D5AA6008ED8D2 /* TabBarHasLabelClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHasLabelClearSize.swift; sourceTree = "<group>"; };
+		81A3CF692E7D5AA6008ED8D2 /* TabBarHasLabelClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHasLabelClearTypography.swift; sourceTree = "<group>"; };
+		81A3CF6B2E7D5AA6008ED8D2 /* TabBarIsland+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIsland+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF6C2E7D5AA6008ED8D2 /* TabBarIsland+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIsland+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF6D2E7D5AA6008ED8D2 /* TabBarIslandSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandSize.swift; sourceTree = "<group>"; };
+		81A3CF6E2E7D5AA6008ED8D2 /* TabBarIslandTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandTypography.swift; sourceTree = "<group>"; };
+		81A3CF702E7D5AA6008ED8D2 /* TabBarIslandClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF712E7D5AA6008ED8D2 /* TabBarIslandClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandClear+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF722E7D5AA6008ED8D2 /* TabBarIslandClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandClearSize.swift; sourceTree = "<group>"; };
+		81A3CF732E7D5AA6008ED8D2 /* TabBarIslandClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandClearTypography.swift; sourceTree = "<group>"; };
+		81A3CF752E7D5AA6008ED8D2 /* TabBarIslandHasLabel+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandHasLabel+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF762E7D5AA6008ED8D2 /* TabBarIslandHasLabel+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandHasLabel+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF772E7D5AA6008ED8D2 /* TabBarIslandHasLabelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandHasLabelSize.swift; sourceTree = "<group>"; };
+		81A3CF782E7D5AA6008ED8D2 /* TabBarIslandHasLabelTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandHasLabelTypography.swift; sourceTree = "<group>"; };
+		81A3CF7A2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandHasLabelClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF7B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarIslandHasLabelClear+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF7C2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandHasLabelClearSize.swift; sourceTree = "<group>"; };
+		81A3CF7D2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandHasLabelClearTypography.swift; sourceTree = "<group>"; };
+		81A3CF7F2E7D5AA6008ED8D2 /* TabBarItem+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItem+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF802E7D5AA6008ED8D2 /* TabBarItem+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItem+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF812E7D5AA6008ED8D2 /* TabBarItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSize.swift; sourceTree = "<group>"; };
+		81A3CF822E7D5AA6008ED8D2 /* TabBarItemTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemTypography.swift; sourceTree = "<group>"; };
+		81A3CF842E7D5AA6008ED8D2 /* TabBarItemClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItemClear+BaseVariations.swift"; sourceTree = "<group>"; };
+		81A3CF852E7D5AA6008ED8D2 /* TabBarItemClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItemClear+Variations.swift"; sourceTree = "<group>"; };
+		81A3CF862E7D5AA6008ED8D2 /* TabBarItemClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemClearSize.swift; sourceTree = "<group>"; };
+		81A3CF872E7D5AA6008ED8D2 /* TabBarItemClearTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemClearTypography.swift; sourceTree = "<group>"; };
 		81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81BBE2172D75A14500612681 /* ChipGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroup+BaseVariations.swift"; sourceTree = "<group>"; };
 		81BBE2182D75A14500612681 /* SDDSChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroupSize.swift; sourceTree = "<group>"; };
@@ -738,19 +826,6 @@
 		F9A13760FC2D3CE34F04B44F /* SBSansText-LightItalic.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansText-LightItalic.otf"; sourceTree = "<group>"; };
 		FDD3C50EA80FDFD03B02B3D7 /* SBSansDisplay-Medium.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		810EBF692E6AF39800FBAC26 /* TabBar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBar; sourceTree = "<group>"; };
-		810EBF6E2E6AF39800FBAC26 /* TabBarClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarClear; sourceTree = "<group>"; };
-		810EBF732E6AF39800FBAC26 /* TabBarHasLabel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarHasLabel; sourceTree = "<group>"; };
-		810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarHasLabelClear; sourceTree = "<group>"; };
-		810EBF7D2E6AF39800FBAC26 /* TabBarIsland */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIsland; sourceTree = "<group>"; };
-		810EBF822E6AF39800FBAC26 /* TabBarIslandClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandClear; sourceTree = "<group>"; };
-		810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandHasLabel; sourceTree = "<group>"; };
-		810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarIslandHasLabelClear; sourceTree = "<group>"; };
-		810EBF912E6AF39800FBAC26 /* TabBarItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarItem; sourceTree = "<group>"; };
-		810EBF962E6AF39800FBAC26 /* TabBarItemClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarItemClear; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E357E349AF36DC1FE02797AC /* Frameworks */ = {
@@ -1019,6 +1094,127 @@
 				816169A82E33B812003C1071 /* SpinnerTypography.swift */,
 			);
 			path = Spinner;
+			sourceTree = "<group>";
+		};
+		81A3CF562E7D5AA6008ED8D2 /* CodeInput */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF522E7D5AA6008ED8D2 /* CodeInput+BaseVariations.swift */,
+				81A3CF532E7D5AA6008ED8D2 /* CodeInput+Variations.swift */,
+				81A3CF542E7D5AA6008ED8D2 /* CodeInputSize.swift */,
+				81A3CF552E7D5AA6008ED8D2 /* CodeInputTypography.swift */,
+			);
+			path = CodeInput;
+			sourceTree = "<group>";
+		};
+		81A3CF5B2E7D5AA6008ED8D2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF572E7D5AA6008ED8D2 /* TabBar+BaseVariations.swift */,
+				81A3CF582E7D5AA6008ED8D2 /* TabBar+Variations.swift */,
+				81A3CF592E7D5AA6008ED8D2 /* TabBarSize.swift */,
+				81A3CF5A2E7D5AA6008ED8D2 /* TabBarTypography.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		81A3CF602E7D5AA6008ED8D2 /* TabBarClear */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF5C2E7D5AA6008ED8D2 /* TabBarClear+BaseVariations.swift */,
+				81A3CF5D2E7D5AA6008ED8D2 /* TabBarClear+Variations.swift */,
+				81A3CF5E2E7D5AA6008ED8D2 /* TabBarClearSize.swift */,
+				81A3CF5F2E7D5AA6008ED8D2 /* TabBarClearTypography.swift */,
+			);
+			path = TabBarClear;
+			sourceTree = "<group>";
+		};
+		81A3CF652E7D5AA6008ED8D2 /* TabBarHasLabel */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF612E7D5AA6008ED8D2 /* TabBarHasLabel+BaseVariations.swift */,
+				81A3CF622E7D5AA6008ED8D2 /* TabBarHasLabel+Variations.swift */,
+				81A3CF632E7D5AA6008ED8D2 /* TabBarHasLabelSize.swift */,
+				81A3CF642E7D5AA6008ED8D2 /* TabBarHasLabelTypography.swift */,
+			);
+			path = TabBarHasLabel;
+			sourceTree = "<group>";
+		};
+		81A3CF6A2E7D5AA6008ED8D2 /* TabBarHasLabelClear */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF662E7D5AA6008ED8D2 /* TabBarHasLabelClear+BaseVariations.swift */,
+				81A3CF672E7D5AA6008ED8D2 /* TabBarHasLabelClear+Variations.swift */,
+				81A3CF682E7D5AA6008ED8D2 /* TabBarHasLabelClearSize.swift */,
+				81A3CF692E7D5AA6008ED8D2 /* TabBarHasLabelClearTypography.swift */,
+			);
+			path = TabBarHasLabelClear;
+			sourceTree = "<group>";
+		};
+		81A3CF6F2E7D5AA6008ED8D2 /* TabBarIsland */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF6B2E7D5AA6008ED8D2 /* TabBarIsland+BaseVariations.swift */,
+				81A3CF6C2E7D5AA6008ED8D2 /* TabBarIsland+Variations.swift */,
+				81A3CF6D2E7D5AA6008ED8D2 /* TabBarIslandSize.swift */,
+				81A3CF6E2E7D5AA6008ED8D2 /* TabBarIslandTypography.swift */,
+			);
+			path = TabBarIsland;
+			sourceTree = "<group>";
+		};
+		81A3CF742E7D5AA6008ED8D2 /* TabBarIslandClear */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF702E7D5AA6008ED8D2 /* TabBarIslandClear+BaseVariations.swift */,
+				81A3CF712E7D5AA6008ED8D2 /* TabBarIslandClear+Variations.swift */,
+				81A3CF722E7D5AA6008ED8D2 /* TabBarIslandClearSize.swift */,
+				81A3CF732E7D5AA6008ED8D2 /* TabBarIslandClearTypography.swift */,
+			);
+			path = TabBarIslandClear;
+			sourceTree = "<group>";
+		};
+		81A3CF792E7D5AA6008ED8D2 /* TabBarIslandHasLabel */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF752E7D5AA6008ED8D2 /* TabBarIslandHasLabel+BaseVariations.swift */,
+				81A3CF762E7D5AA6008ED8D2 /* TabBarIslandHasLabel+Variations.swift */,
+				81A3CF772E7D5AA6008ED8D2 /* TabBarIslandHasLabelSize.swift */,
+				81A3CF782E7D5AA6008ED8D2 /* TabBarIslandHasLabelTypography.swift */,
+			);
+			path = TabBarIslandHasLabel;
+			sourceTree = "<group>";
+		};
+		81A3CF7E2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF7A2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+BaseVariations.swift */,
+				81A3CF7B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+Variations.swift */,
+				81A3CF7C2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearSize.swift */,
+				81A3CF7D2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearTypography.swift */,
+			);
+			path = TabBarIslandHasLabelClear;
+			sourceTree = "<group>";
+		};
+		81A3CF832E7D5AA6008ED8D2 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF7F2E7D5AA6008ED8D2 /* TabBarItem+BaseVariations.swift */,
+				81A3CF802E7D5AA6008ED8D2 /* TabBarItem+Variations.swift */,
+				81A3CF812E7D5AA6008ED8D2 /* TabBarItemSize.swift */,
+				81A3CF822E7D5AA6008ED8D2 /* TabBarItemTypography.swift */,
+			);
+			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		81A3CF882E7D5AA6008ED8D2 /* TabBarItemClear */ = {
+			isa = PBXGroup;
+			children = (
+				81A3CF842E7D5AA6008ED8D2 /* TabBarItemClear+BaseVariations.swift */,
+				81A3CF852E7D5AA6008ED8D2 /* TabBarItemClear+Variations.swift */,
+				81A3CF862E7D5AA6008ED8D2 /* TabBarItemClearSize.swift */,
+				81A3CF872E7D5AA6008ED8D2 /* TabBarItemClearTypography.swift */,
+			);
+			path = TabBarItemClear;
 			sourceTree = "<group>";
 		};
 		81BA16522D80652D008F0A59 /* Recovered References */ = {
@@ -1694,16 +1890,17 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
-				810EBF692E6AF39800FBAC26 /* TabBar */,
-				810EBF6E2E6AF39800FBAC26 /* TabBarClear */,
-				810EBF732E6AF39800FBAC26 /* TabBarHasLabel */,
-				810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */,
-				810EBF7D2E6AF39800FBAC26 /* TabBarIsland */,
-				810EBF822E6AF39800FBAC26 /* TabBarIslandClear */,
-				810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */,
-				810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */,
-				810EBF912E6AF39800FBAC26 /* TabBarItem */,
-				810EBF962E6AF39800FBAC26 /* TabBarItemClear */,
+				81A3CF562E7D5AA6008ED8D2 /* CodeInput */,
+				81A3CF5B2E7D5AA6008ED8D2 /* TabBar */,
+				81A3CF602E7D5AA6008ED8D2 /* TabBarClear */,
+				81A3CF652E7D5AA6008ED8D2 /* TabBarHasLabel */,
+				81A3CF6A2E7D5AA6008ED8D2 /* TabBarHasLabelClear */,
+				81A3CF6F2E7D5AA6008ED8D2 /* TabBarIsland */,
+				81A3CF742E7D5AA6008ED8D2 /* TabBarIslandClear */,
+				81A3CF792E7D5AA6008ED8D2 /* TabBarIslandHasLabel */,
+				81A3CF7E2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear */,
+				81A3CF832E7D5AA6008ED8D2 /* TabBarItem */,
+				81A3CF882E7D5AA6008ED8D2 /* TabBarItemClear */,
 				81EE9ED72E5CA22E006F9E5D /* Loader */,
 				8131BF152E44788400FED868 /* Tokens */,
 				8161694A2E33B812003C1071 /* AccordionClearActionEnd */,
@@ -1814,18 +2011,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				810EBF692E6AF39800FBAC26 /* TabBar */,
-				810EBF6E2E6AF39800FBAC26 /* TabBarClear */,
-				810EBF732E6AF39800FBAC26 /* TabBarHasLabel */,
-				810EBF782E6AF39800FBAC26 /* TabBarHasLabelClear */,
-				810EBF7D2E6AF39800FBAC26 /* TabBarIsland */,
-				810EBF822E6AF39800FBAC26 /* TabBarIslandClear */,
-				810EBF872E6AF39800FBAC26 /* TabBarIslandHasLabel */,
-				810EBF8C2E6AF39800FBAC26 /* TabBarIslandHasLabelClear */,
-				810EBF912E6AF39800FBAC26 /* TabBarItem */,
-				810EBF962E6AF39800FBAC26 /* TabBarItemClear */,
 			);
 			name = PlasmaB2CTheme;
 			productName = PlasmaB2CTheme;
@@ -1969,6 +2154,50 @@
 				81F2E8CD2DF9FF0500708B40 /* CardClearSize.swift in Sources */,
 				81F2E8CE2DF9FF0500708B40 /* Popover+BaseVariations.swift in Sources */,
 				81F2E8CF2DF9FF0500708B40 /* TextAreaSize.swift in Sources */,
+				81A3CF892E7D5AA6008ED8D2 /* TabBarHasLabelTypography.swift in Sources */,
+				81A3CF8A2E7D5AA6008ED8D2 /* TabBarIslandClear+BaseVariations.swift in Sources */,
+				81A3CF8B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearSize.swift in Sources */,
+				81A3CF8C2E7D5AA6008ED8D2 /* TabBarHasLabel+BaseVariations.swift in Sources */,
+				81A3CF8D2E7D5AA6008ED8D2 /* TabBarIslandHasLabel+Variations.swift in Sources */,
+				81A3CF8E2E7D5AA6008ED8D2 /* TabBarIslandSize.swift in Sources */,
+				81A3CF8F2E7D5AA6008ED8D2 /* TabBar+BaseVariations.swift in Sources */,
+				81A3CF902E7D5AA6008ED8D2 /* TabBarIsland+BaseVariations.swift in Sources */,
+				81A3CF912E7D5AA6008ED8D2 /* TabBarItemClear+BaseVariations.swift in Sources */,
+				81A3CF922E7D5AA6008ED8D2 /* TabBarHasLabel+Variations.swift in Sources */,
+				81A3CF932E7D5AA6008ED8D2 /* TabBarItemTypography.swift in Sources */,
+				81A3CF942E7D5AA6008ED8D2 /* TabBarHasLabelClear+BaseVariations.swift in Sources */,
+				81A3CF952E7D5AA6008ED8D2 /* CodeInputSize.swift in Sources */,
+				81A3CF962E7D5AA6008ED8D2 /* TabBarItemClearTypography.swift in Sources */,
+				81A3CF972E7D5AA6008ED8D2 /* TabBarIsland+Variations.swift in Sources */,
+				81A3CF982E7D5AA6008ED8D2 /* TabBarClear+BaseVariations.swift in Sources */,
+				81A3CF992E7D5AA6008ED8D2 /* TabBarIslandClear+Variations.swift in Sources */,
+				81A3CF9A2E7D5AA6008ED8D2 /* TabBarHasLabelClearTypography.swift in Sources */,
+				81A3CF9B2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+BaseVariations.swift in Sources */,
+				81A3CF9C2E7D5AA6008ED8D2 /* TabBarIslandHasLabelClear+Variations.swift in Sources */,
+				81A3CF9D2E7D5AA6008ED8D2 /* TabBarHasLabelClearSize.swift in Sources */,
+				81A3CF9E2E7D5AA6008ED8D2 /* TabBarItem+Variations.swift in Sources */,
+				81A3CF9F2E7D5AA6008ED8D2 /* TabBarIslandHasLabelSize.swift in Sources */,
+				81A3CFA02E7D5AA6008ED8D2 /* TabBarItemClearSize.swift in Sources */,
+				81A3CFA12E7D5AA6008ED8D2 /* TabBarIslandHasLabelClearTypography.swift in Sources */,
+				81A3CFA22E7D5AA6008ED8D2 /* TabBarIslandHasLabel+BaseVariations.swift in Sources */,
+				81A3CFA32E7D5AA6008ED8D2 /* TabBarItem+BaseVariations.swift in Sources */,
+				81A3CFA42E7D5AA6008ED8D2 /* TabBarIslandClearTypography.swift in Sources */,
+				81A3CFA52E7D5AA6008ED8D2 /* TabBarTypography.swift in Sources */,
+				81A3CFA62E7D5AA6008ED8D2 /* TabBarHasLabelClear+Variations.swift in Sources */,
+				81A3CFA72E7D5AA6008ED8D2 /* CodeInput+BaseVariations.swift in Sources */,
+				81A3CFA82E7D5AA6008ED8D2 /* TabBarClearTypography.swift in Sources */,
+				81A3CFA92E7D5AA6008ED8D2 /* TabBarItemSize.swift in Sources */,
+				81A3CFAA2E7D5AA6008ED8D2 /* CodeInput+Variations.swift in Sources */,
+				81A3CFAB2E7D5AA6008ED8D2 /* TabBarIslandHasLabelTypography.swift in Sources */,
+				81A3CFAC2E7D5AA6008ED8D2 /* TabBar+Variations.swift in Sources */,
+				81A3CFAD2E7D5AA6008ED8D2 /* TabBarClearSize.swift in Sources */,
+				81A3CFAE2E7D5AA6008ED8D2 /* TabBarIslandTypography.swift in Sources */,
+				81A3CFAF2E7D5AA6008ED8D2 /* TabBarClear+Variations.swift in Sources */,
+				81A3CFB02E7D5AA6008ED8D2 /* TabBarItemClear+Variations.swift in Sources */,
+				81A3CFB12E7D5AA6008ED8D2 /* CodeInputTypography.swift in Sources */,
+				81A3CFB22E7D5AA6008ED8D2 /* TabBarIslandClearSize.swift in Sources */,
+				81A3CFB32E7D5AA6008ED8D2 /* TabBarHasLabelSize.swift in Sources */,
+				81A3CFB42E7D5AA6008ED8D2 /* TabBarSize.swift in Sources */,
 				81F2E8D02DF9FF0500708B40 /* NotificationLoose+Variations.swift in Sources */,
 				81F2E8D22DF9FF0500708B40 /* TooltipSize.swift in Sources */,
 				81F2E8D32DF9FF0500708B40 /* SegmentItem+Variations.swift in Sources */,
