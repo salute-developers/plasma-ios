@@ -3,6 +3,7 @@ import SDDSComponents
 import SDDSServTheme
 
 enum TabBarIslandType: String, CaseIterable {
+    case tabbar = "TabBar"
     case solid = "TabBar Island Solid"
     case clear = "TabBar Island Clear"
     case hasLabelClear = "TabBar Island Has Label Clear"
@@ -22,6 +23,8 @@ final class TabBarIslandVariationProvider: VariationProvider {
     
     var variations: [Variation<TabBarIslandAppearance>] {
         switch tabBarIslandType {
+        case .tabbar:
+            theme.tabBarVariations
         case .solid:
             theme.tabBarIslandSolidVariations
         case .clear:

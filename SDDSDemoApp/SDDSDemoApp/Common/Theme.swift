@@ -951,7 +951,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarVariations: [Variation<TabBarAppearance>] {
+    var tabBarVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             []

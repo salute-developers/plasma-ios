@@ -45,6 +45,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
                     text: "",
                     contentWidth: assistantContentWidth,
                     allowSelection: false,
+                    disableText: true,
                     appearance: tabBarItemAppearance,
                     extra: AnyView(EmptyView()),
                     onTap: {}

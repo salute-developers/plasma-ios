@@ -8,6 +8,7 @@ public struct TabBarItemData: Identifiable {
     public let text: String
     public let contentWidth: CGFloat?
     public let allowSelection: Bool
+    public let disableText: Bool
     public let appearance: TabBarItemAppearance?
     public let extra: AnyView?
     public let onTap: (() -> Void)?
@@ -18,6 +19,7 @@ public struct TabBarItemData: Identifiable {
         text: String = "",
         contentWidth: CGFloat? = nil,
         allowSelection: Bool = true,
+        disableText: Bool = false,
         appearance: TabBarItemAppearance? = nil,
         extra: AnyView? = nil,
         onTap: (() -> Void)? = nil
@@ -27,6 +29,7 @@ public struct TabBarItemData: Identifiable {
         self.text = text
         self.contentWidth = contentWidth
         self.allowSelection = allowSelection
+        self.disableText = disableText
         self.appearance = appearance
         self.extra = extra
         self.onTap = onTap

@@ -13,6 +13,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     let isSelected: Bool
     let extra: Extra
     let contentWidth: CGFloat?
+    let disableText: Bool
     
     @State private var extraSize = CGSize.zero
     @State private var itemSize = CGSize.zero
@@ -23,6 +24,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         text: String,
         isSelected: Bool = false,
         contentWidth: CGFloat? = nil,
+        disableText: Bool = false,
         appearance: TabBarItemAppearance? = nil,
         @ViewBuilder extra: () -> Extra = { EmptyView() }
     ) {
@@ -31,6 +33,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         self.text = text
         self.isSelected = isSelected
         self.contentWidth = contentWidth
+        self.disableText = disableText
         self._appearance = appearance
         self.extra = extra()
     }
@@ -92,10 +95,14 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     
     @ViewBuilder
     private var label: some View {
-        Text(text)
-            .typography(labelTypography)
-            .foregroundColor(labelColor.color(for: colorScheme))
-            .multilineTextAlignment(.center)
+        if disableText {
+            EmptyView()
+        } else {
+            Text(text)
+                .typography(labelTypography)
+                .foregroundColor(labelColor.color(for: colorScheme))
+                .multilineTextAlignment(.center)
+        }
     }
     
     // MARK: - Computed Properties
@@ -170,6 +177,7 @@ extension SDDSTabBarItem where Content == AnyView, Extra == AnyView {
             text: data.text,
             isSelected: data.allowSelection ? isSelected : false,
             contentWidth: data.contentWidth,
+            disableText: data.disableText,
             appearance: data.appearance,
             extra: { data.extra ?? AnyView(EmptyView()) }
         )

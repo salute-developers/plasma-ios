@@ -85,87 +85,87 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
-        // .textField,
-        // .textFieldClear,
-        // .textArea,
-        // .textAreaClear,
-            .overlay,
-            .badge,
-            .badgeClear,
-            .badgeTransparent,
-            .iconBadge,
-            .iconBadgeClear,
-            .iconBadgeTransparent,
-            .indicator,
-            .cell,     
-            .counter,
-            .card,
-            .cardClear,
-            .segmentItem,
-            .segment,
-            .bottomSheet,
-            .switch,
-            .embeddedChip,
-            .chip,
-            .embeddedChipGroupDense,
-            .embeddedChipGroupWide,
-            .chipGroupDense,
-            .chipGroupWide,
-            .radiobox,
-            .radioboxGroup,
-            .checkbox,
-            .checkboxGroup,
-            .avatar,
-            .avatarGroup,
-            .circularProgressBar,
-            .progressBar,
-            .divider,
-            .popover,
-            .tooltip,
-            .toast,
-            .modal,
-            .notificationLoose,
-            .notificationCompact,
-            .rectSkeleton,
-            .textSkeleton,
-            .listItemNormal,
-            .listItemTight,
-            .dropdownMenuItemNormal,
-            .dropdownMenuItemTight,
-            .dropdownMenuListNormal,
-            .dropdownMenuListTight,
-            .dropdownMenuNormal,
-            .dropdownMenuTight,
-            .listNormal,
-            .listTight,
-            .scrollbar,
-            .accordionItemSolidActionStart,
-            .accordionItemSolidActionEnd,
-            .accordionItemClearActionStart,
-            .accordionItemClearActionEnd,
-            .accordionSolidActionStart,
-            .accordionSolidActionEnd,
-            .accordionClearActionStart,
-            .accordionClearActionEnd,
-            .spinner,
-            .loader,
-            .codeField,
-            .tabBarItemSolid,
-            .tabBarItem,
-            .tabBarItemClear,
-            .tabBarIslandSolid,
-            .tabBarIslandClear,
-            .tabBarIslandHasLabelSolid,
-            .tabBarIslandHasLabelClear,
-            .tabBarSolid,
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
+//        // .textField,
+//        // .textFieldClear,
+//        // .textArea,
+//        // .textAreaClear,
+//            .overlay,
+//            .badge,
+//            .badgeClear,
+//            .badgeTransparent,
+//            .iconBadge,
+//            .iconBadgeClear,
+//            .iconBadgeTransparent,
+//            .indicator,
+//            .cell,     
+//            .counter,
+//            .card,
+//            .cardClear,
+//            .segmentItem,
+//            .segment,
+//            .bottomSheet,
+//            .switch,
+//            .embeddedChip,
+//            .chip,
+//            .embeddedChipGroupDense,
+//            .embeddedChipGroupWide,
+//            .chipGroupDense,
+//            .chipGroupWide,
+//            .radiobox,
+//            .radioboxGroup,
+//            .checkbox,
+//            .checkboxGroup,
+//            .avatar,
+//            .avatarGroup,
+//            .circularProgressBar,
+//            .progressBar,
+//            .divider,
+//            .popover,
+//            .tooltip,
+//            .toast,
+//            .modal,
+//            .notificationLoose,
+//            .notificationCompact,
+//            .rectSkeleton,
+//            .textSkeleton,
+//            .listItemNormal,
+//            .listItemTight,
+//            .dropdownMenuItemNormal,
+//            .dropdownMenuItemTight,
+//            .dropdownMenuListNormal,
+//            .dropdownMenuListTight,
+//            .dropdownMenuNormal,
+//            .dropdownMenuTight,
+//            .listNormal,
+//            .listTight,
+//            .scrollbar,
+//            .accordionItemSolidActionStart,
+//            .accordionItemSolidActionEnd,
+//            .accordionItemClearActionStart,
+//            .accordionItemClearActionEnd,
+//            .accordionSolidActionStart,
+//            .accordionSolidActionEnd,
+//            .accordionClearActionStart,
+//            .accordionClearActionEnd,
+//            .spinner,
+//            .loader,
+//            .codeField,
+//            .tabBarItemSolid,
+//            .tabBarItem,
+//            .tabBarItemClear,
+//            .tabBarIslandSolid,
+//            .tabBarIslandClear,
+//            .tabBarIslandHasLabelSolid,
+//            .tabBarIslandHasLabelClear,
+//            .tabBarSolid,
             .tabBar,
-            .tabBarClear,
-            .tabBarHasLabelSolid,
-            .tabBarHasLabelClear,
-            .codeInput
+//            .tabBarClear,
+//            .tabBarHasLabelSolid,
+//            .tabBarHasLabelClear,
+//            .codeInput
         ]
     }
     
@@ -260,9 +260,9 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemClear:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
             GenerateComponentCommand<TabBarIslandProps, TabBarIslandAppearance, TabBarIslandSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeInput:
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -351,9 +351,9 @@ extension CodeGenerationComponent {
             "CodeFieldAppearance"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemAppearance"
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
             "TabBarIslandAppearance"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             "TabBarAppearance"
         case .codeInput:
             "CodeInputAppearance"
@@ -443,9 +443,9 @@ extension CodeGenerationComponent {
             "CodeFieldSizeConfiguration"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemSizeConfiguration"
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
             "TabBarIslandSizeConfiguration"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             "TabBarSizeConfiguration"
         case .codeInput:
             "CodeInputSizeConfiguration"

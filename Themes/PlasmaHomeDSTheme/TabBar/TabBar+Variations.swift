@@ -5,7 +5,7 @@ import SDDSThemeCore
 
 
 
-public extension ComponentAppearanceVariation<TabBar, TabBarAppearance> {
+public extension ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -17,6 +17,6 @@ public extension ComponentAppearanceVariation<TabBar, TabBarAppearance> {
     }
 }
 
-private extension TabBarAppearance {
+private extension TabBarIslandAppearance {
     
 }

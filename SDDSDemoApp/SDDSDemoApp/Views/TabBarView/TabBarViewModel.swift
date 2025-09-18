@@ -53,6 +53,7 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
                     text: "",
                     contentWidth: assistantContentWidth,
                     allowSelection: false,
+                    disableText: true,
                     appearance: tabBarItemAppearance,
                     extra: AnyView(EmptyView()),
                     onTap: {}
