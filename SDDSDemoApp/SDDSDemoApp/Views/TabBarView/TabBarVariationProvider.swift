@@ -3,6 +3,7 @@ import SDDSComponents
 import SDDSServTheme
 
 enum TabBarType: String, CaseIterable {
+    case tabbar = "TabBar"
     case solid = "TabBar Solid"
     case clear = "TabBar Clear"
     case hasLabelClear = "TabBar Has Label Clear"
@@ -22,6 +23,8 @@ final class TabBarVariationProvider: VariationProvider {
     
     var variations: [Variation<TabBarAppearance>] {
         switch tabBarType {
+        case .tabbar:
+            theme.tabBarVariations
         case .solid:
             theme.tabBarSolidVariations
         case .clear:

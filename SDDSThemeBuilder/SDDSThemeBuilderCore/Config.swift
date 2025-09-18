@@ -51,7 +51,7 @@ public extension ThemeBuilderConfiguration.Theme {
         case .sddsServTheme:
             .init(name: self.rawValue, url: themeURL(name: "sdds_serv"))
         case .plasmaB2C:
-            .init(name: self.rawValue, url: themeURL(name: "plasma_b2c"))
+            .init(name: self.rawValue, url: themeURL(name: "plasma_b2c_ACTUAL_TYPOGRAPHY"))
         case .plasmaGiga:
             .init(name: self.rawValue, url: themeURL(name: "plasma_giga"))
         case .plasmaWeb:

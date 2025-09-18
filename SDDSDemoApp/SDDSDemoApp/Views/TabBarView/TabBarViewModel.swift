@@ -15,11 +15,7 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
     static let defaultCount: Int = 2
     private let assistantContentWidth: CGFloat = 44
     
-    @Published var selectedIndex: Int = 0 {
-        didSet {
-            print("index: \(selectedIndex)")
-        }
-    }
+    @Published var selectedIndex: Int = 0
     @Published var tabBarType: TabBarType = .solid {
         didSet {
             self.variationProvider.tabBarType = tabBarType

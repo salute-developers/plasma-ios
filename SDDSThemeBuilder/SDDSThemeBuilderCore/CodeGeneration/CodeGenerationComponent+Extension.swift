@@ -69,13 +69,15 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case spinner = "Spinner"
     case loader = "Loader"
     case codeField = "CodeField"
-    case tabBarItemSolid = "TabBarItem"
+    case tabBarItemSolid = "TabBarItemSolid"
+    case tabBarItem = "TabBarItem"
     case tabBarItemClear = "TabBarItemClear"
     case tabBarIslandSolid = "TabBarIsland"
     case tabBarIslandClear = "TabBarIslandClear"
     case tabBarIslandHasLabelSolid = "TabBarIslandHasLabel"
     case tabBarIslandHasLabelClear = "TabBarIslandHasLabelClear"
-    case tabBarSolid = "TabBar"
+    case tabBarSolid = "TabBarSolid"
+    case tabBar = "TabBar"
     case tabBarClear = "TabBarClear"
     case tabBarHasLabelSolid = "TabBarHasLabel"
     case tabBarHasLabelClear = "TabBarHasLabelClear"
@@ -152,12 +154,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .loader,
             .codeField,
             .tabBarItemSolid,
+            .tabBarItem,
             .tabBarItemClear,
             .tabBarIslandSolid,
             .tabBarIslandClear,
             .tabBarIslandHasLabelSolid,
             .tabBarIslandHasLabelClear,
             .tabBarSolid,
+            .tabBar,
             .tabBarClear,
             .tabBarHasLabelSolid,
             .tabBarHasLabelClear,
@@ -252,13 +256,13 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<LoaderProps, LoaderAppearance, LoaderSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeField:
             GenerateComponentCommand<CodeFieldProps, CodeFieldAppearance, CodeFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarItemSolid:
+        case .tabBarItemSolid, .tabBarItem:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemClear:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
             GenerateComponentCommand<TabBarIslandProps, TabBarIslandAppearance, TabBarIslandSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeInput:
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -345,11 +349,11 @@ extension CodeGenerationComponent {
             "LoaderAppearance"
         case .codeField:
             "CodeFieldAppearance"
-        case .tabBarItemSolid, .tabBarItemClear:
+        case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemAppearance"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
             "TabBarIslandAppearance"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
             "TabBarAppearance"
         case .codeInput:
             "CodeInputAppearance"
@@ -437,11 +441,11 @@ extension CodeGenerationComponent {
             "LoaderSizeConfiguration"
         case .codeField:
             "CodeFieldSizeConfiguration"
-        case .tabBarItemSolid, .tabBarItemClear:
+        case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemSizeConfiguration"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear:
             "TabBarIslandSizeConfiguration"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear, .tabBar:
             "TabBarSizeConfiguration"
         case .codeInput:
             "CodeInputSizeConfiguration"
@@ -588,6 +592,8 @@ extension CodeGenerationComponent {
             "code_field_config.json"
         case .tabBarItemSolid:
             "tab_bar_item_solid_config.json"
+        case .tabBarItem:
+            "tab_bar_item_config.json"
         case .tabBarItemClear:
             "tab_bar_item_clear_config.json"
         case .tabBarIslandSolid:
@@ -600,6 +606,8 @@ extension CodeGenerationComponent {
             "tab_bar_island_has_label_clear_config.json"
         case .tabBarSolid:
             "tab_bar_solid_config.json"
+        case .tabBar:
+            "tab_bar_config.json"
         case .tabBarClear:
             "tab_bar_clear_config.json"
         case .tabBarHasLabelSolid:
