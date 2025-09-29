@@ -2,43 +2,11 @@
   "categories": [
     {
       "title": "## 🚀 Features",
-      "labels": ["feature", "enhancement"]
+      "labels": ["enhancement"]
     },
     {
       "title": "## 🐛 Bug Fixes",
-      "labels": ["bug", "fix"]
-    },
-    {
-      "title": "## 🔧 Improvements",
-      "labels": ["improvement", "refactor", "optimization"]
-    },
-    {
-      "title": "## 📚 Documentation",
-      "labels": ["documentation", "docs"]
-    },
-    {
-      "title": "## 🧪 Testing",
-      "labels": ["test", "testing"]
-    },
-    {
-      "title": "## 🔨 Build",
-      "labels": ["build", "ci", "cd"]
-    },
-    {
-      "title": "## ⚡ Performance",
-      "labels": ["performance", "perf"]
-    },
-    {
-      "title": "## 🔒 Security",
-      "labels": ["security"]
-    },
-    {
-      "title": "## 🎨 UI/UX",
-      "labels": ["ui", "ux", "design"]
-    },
-    {
-      "title": "## ♻️ Breaking Changes",
-      "labels": ["breaking", "breaking-change"]
+      "labels": ["bug"]
     }
   ],
   "groupBy": {
@@ -63,8 +31,7 @@
     ]
   },
   "ignore_labels": [
-    "ignore-for-release",
-    "no-changelog"
+    "changelog-skip"
   ],
   "sort": "ASC",
   "template": "${{CHANGELOG}}",
@@ -73,47 +40,11 @@
   "label_extractor": [
     {
       "pattern": "^(feat|feature)(\\(.+\\))?:",
-      "target": "feature"
+      "target": "enhancement"
     },
     {
       "pattern": "^(fix|bug)(\\(.+\\))?:",
       "target": "bug"
-    },
-    {
-      "pattern": "^(docs|doc)(\\(.+\\))?:",
-      "target": "documentation"
-    },
-    {
-      "pattern": "^(style)(\\(.+\\))?:",
-      "target": "improvement"
-    },
-    {
-      "pattern": "^(refactor)(\\(.+\\))?:",
-      "target": "improvement"
-    },
-    {
-      "pattern": "^(perf)(\\(.+\\))?:",
-      "target": "performance"
-    },
-    {
-      "pattern": "^(test)(\\(.+\\))?:",
-      "target": "testing"
-    },
-    {
-      "pattern": "^(build)(\\(.+\\))?:",
-      "target": "build"
-    },
-    {
-      "pattern": "^(ci)(\\(.+\\))?:",
-      "target": "build"
-    },
-    {
-      "pattern": "^(chore)(\\(.+\\))?:",
-      "target": "improvement"
-    },
-    {
-      "pattern": "^(revert)(\\(.+\\))?:",
-      "target": "improvement"
     }
   ]
 }
