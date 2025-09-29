@@ -1,12 +1,12 @@
 name: 'Generate commit-based changelog'
-description: 'Generate changelog from commits instead of PRs'
+description: 'Generates changelog from commits, extracting PR descriptions'
 inputs:
   fromTag:
-    description: 'From tag or commit'
-    required: false
+    description: 'Тэг, название ветки или хэш коммита'
+    required: true
   toTag:
-    description: 'To tag or commit'
-    required: false
+    description: 'Тэг, название ветки или хэш коммита'
+    required: true
 outputs:
   changelog:
     description: "Generated changelog"
@@ -17,17 +17,8 @@ runs:
     - name: Compute envs
       shell: bash
       run: |
-        if [ -z "${{ inputs.fromTag }}" ]; then
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
-        else
-          FROM_TAG="${{ inputs.fromTag }}"
-        fi
-
-        if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG="HEAD"
-        else
-          TO_TAG="${{ inputs.toTag }}"
-        fi
+        FROM_TAG="${{ inputs.fromTag }}"
+        TO_TAG="${{ inputs.toTag }}"
 
         echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
         echo "TO_TAG=$TO_TAG" >> $GITHUB_ENV
@@ -40,7 +31,6 @@ runs:
         echo "🔍 Generating changelog from PR descriptions between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
         
         # Получаем коммиты между тегами
-        echo "🔍 Getting commits between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
         COMMITS=$(git log --pretty=format:"%h|%s" ${{ env.FROM_TAG }}..${{ env.TO_TAG }})
         
         if [ -z "$COMMITS" ]; then
@@ -54,84 +44,43 @@ runs:
         # Формируем changelog
         CHANGELOG=""
         
-        # Простой подход - показываем только коммиты с PLASMA-номером
-        while IFS='|' read -r hash message; do
-          if [ -z "$hash" ]; then
-            continue
-          fi
+        # Простой подход - находим все PR с PLASMA в названии и собираем их описания
+        echo "🔍 Searching for PRs with PLASMA in title..."
+        PLASMA_PRS=$(gh pr list --state merged --search "PLASMA" --json number,title,body --jq '.[] | select(.title | contains("PLASMA")) | {number, title, body}' 2>/dev/null || echo "[]")
+        
+        if [ "$PLASMA_PRS" != "[]" ] && [ -n "$PLASMA_PRS" ]; then
+          echo "🔍 Found PRs with PLASMA:"
+          echo "$PLASMA_PRS" | jq -r '.number + ": " + .title' 2>/dev/null || echo "Found PRs but couldn't parse"
           
-          echo "🔍 Processing commit: $hash - $message"
-          
-          # Пропускаем служебные коммиты
-          if echo "$message" | grep -qiE "^(chore|bump|version|release|fix:.*changelog|simplify|feat:.*changelog)"; then
-            echo "🔍 Skipping service commit: $message"
-            continue
-          fi
-          
-          # Обрабатываем ошибки
-          set +e
-          
-          # Сначала ищем PR по хешу коммита в описании
-          echo "🔍 Searching for PR by commit hash: $hash"
-          PR_NUMBER=$(gh pr list --state merged --json number,body --jq '.[] | select(.body | contains("'$hash'")) | .number' 2>/dev/null | head -1 || echo "")
-          echo "🔍 Found PR number by hash: $PR_NUMBER"
-          
-          # Если не нашли по хешу, пробуем найти по PLASMA-номеру в сообщении коммита
-          if [ -z "$PR_NUMBER" ]; then
-            PLASMA_NUMBER=$(echo "$message" | grep -o "PLASMA-[0-9]+" | head -1)
-            if [ -n "$PLASMA_NUMBER" ]; then
-              echo "🔍 Found PLASMA number in commit: $PLASMA_NUMBER"
-              PR_NUMBER=$(gh pr list --state merged --search "$PLASMA_NUMBER" --json number,title --jq '.[0].number // empty' 2>/dev/null || echo "")
-              echo "🔍 Found PR number by PLASMA: $PR_NUMBER"
-            fi
-          fi
-          
-          # Если все еще не нашли, пробуем найти по ключевым словам из сообщения коммита
-          if [ -z "$PR_NUMBER" ]; then
-            echo "🔍 Searching by commit message keywords"
-            # Извлекаем ключевые слова из сообщения коммита
-            KEYWORDS=$(echo "$message" | grep -oE "(feat|fix|add|implement|update|change|ButtonGroup|NotificationContent)" | head -1)
-            if [ -n "$KEYWORDS" ]; then
-              echo "🔍 Searching for PR with keywords: $KEYWORDS"
-              PR_NUMBER=$(gh pr list --state merged --search "$KEYWORDS" --json number,title --jq '.[] | select(.title | contains("'$KEYWORDS'")) | .number' 2>/dev/null | head -1 || echo "")
-              echo "🔍 Found PR number by keywords: $PR_NUMBER"
-            fi
-          fi
-          
-          if [ -n "$PR_NUMBER" ]; then
-            echo "🔍 Found PR: $PR_NUMBER"
-            
-            # Получаем описание PR
-            PR_BODY=$(gh pr view $PR_NUMBER --json body --jq '.body // ""' 2>/dev/null || echo "")
-            
-            if [ -n "$PR_BODY" ] && [ "$PR_BODY" != "null" ]; then
-              echo "🔍 Extracting component descriptions from PR $PR_NUMBER"
-              # Извлекаем только описания компонентов (H2 и H3 заголовки)
-              COMPONENT_DESCRIPTIONS=$(echo "$PR_BODY" | grep -E "^###|^##" | head -20)
+          # Обрабатываем каждый PR
+          echo "$PLASMA_PRS" | jq -r '.number' 2>/dev/null | while read -r PR_NUMBER; do
+            if [ -n "$PR_NUMBER" ]; then
+              echo "🔍 Processing PR: $PR_NUMBER"
               
-              if [ -n "$COMPONENT_DESCRIPTIONS" ]; then
-                echo "🔍 Found component descriptions: $(echo "$COMPONENT_DESCRIPTIONS" | wc -l) lines"
-                CHANGELOG="$CHANGELOG$COMPONENT_DESCRIPTIONS\n\n"
+              # Получаем описание PR
+              PR_BODY=$(echo "$PLASMA_PRS" | jq -r 'select(.number == '$PR_NUMBER') | .body // ""' 2>/dev/null || echo "")
+              
+              if [ -n "$PR_BODY" ] && [ "$PR_BODY" != "null" ]; then
+                echo "🔍 Extracting component descriptions from PR $PR_NUMBER"
+                # Извлекаем только описания компонентов (H2 и H3 заголовки)
+                COMPONENT_DESCRIPTIONS=$(echo "$PR_BODY" | grep -E "^###|^##" | head -20)
+                
+                if [ -n "$COMPONENT_DESCRIPTIONS" ]; then
+                  echo "🔍 Found component descriptions: $(echo "$COMPONENT_DESCRIPTIONS" | wc -l) lines"
+                  CHANGELOG="$CHANGELOG$COMPONENT_DESCRIPTIONS\n\n"
+                else
+                  # Если нет описаний компонентов, используем название PR
+                  PR_TITLE=$(echo "$PLASMA_PRS" | jq -r 'select(.number == '$PR_NUMBER') | .title // ""' 2>/dev/null || echo "")
+                  CHANGELOG="$CHANGELOG- $PR_TITLE (#$PR_NUMBER)\n"
+                fi
               else
-                # Если нет описаний компонентов, используем название PR
-                PR_TITLE=$(gh pr view $PR_NUMBER --json title --jq '.title // ""' 2>/dev/null || echo "")
-                CHANGELOG="$CHANGELOG- $PR_TITLE (#$PR_NUMBER)\n"
+                echo "🔍 No PR body found for PR $PR_NUMBER"
               fi
-            else
-              echo "🔍 No PR body found, using commit message"
-              SAFE_MESSAGE=$(echo "$message" | sed 's/\\/\\\\/g' | sed 's/\n/\\n/g')
-              CHANGELOG="$CHANGELOG- $SAFE_MESSAGE ($hash)\n"
             fi
-          else
-            echo "🔍 No PR found, using commit message"
-            SAFE_MESSAGE=$(echo "$message" | sed 's/\\/\\\\/g' | sed 's/\n/\\n/g')
-            CHANGELOG="$CHANGELOG- $SAFE_MESSAGE ($hash)\n"
-          fi
-          
-          # Включаем обработку ошибок обратно
-          set -e
-          
-        done <<< "$COMMITS"
+          done
+        else
+          echo "🔍 No PRs with PLASMA found"
+        fi
         
         if [ -z "$CHANGELOG" ]; then
           CHANGELOG="No changes found in this release."
