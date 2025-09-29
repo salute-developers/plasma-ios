@@ -61,8 +61,19 @@ runs:
             continue
           fi
           
-          # Ищем PR по коммиту
-          PR_NUMBER=$(gh pr list --state merged --search "$hash" --json number --jq '.[0].number // empty')
+          # Ищем PR по содержимому коммита
+          PR_NUMBER=""
+          
+          # Пробуем найти PR по PLASMA-номеру
+          PLASMA_NUMBER=$(echo "$message" | grep -o "PLASMA-[0-9]+" | head -1)
+          if [ -n "$PLASMA_NUMBER" ]; then
+            PR_NUMBER=$(gh pr list --state merged --search "$PLASMA_NUMBER" --json number,title --jq '.[0].number // empty')
+          fi
+          
+          # Если не нашли, пробуем найти по хешу в описании PR'ов
+          if [ -z "$PR_NUMBER" ]; then
+            PR_NUMBER=$(gh pr list --state merged --json number,body --jq '.[] | select(.body | contains("'$hash'")) | .number' | head -1)
+          fi
           
           if [ -n "$PR_NUMBER" ]; then
             # Получаем описание PR
