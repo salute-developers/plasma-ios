@@ -99,29 +99,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v4.1.0
+        id: changelog
+        uses: ./.github/actions/release-changelog
         with:
           fromTag: ${{ env.FROM_TAG }}
           toTag: HEAD
 
       - name: List pull request
-        run: echo "pull_requests --> ${{ steps.github_release.outputs.pull_requests }}"
-
-      - name: Create "changelog_artifacts.md"
-        # Пока отключаем генерацию changelog
-        if: false
-        run: |
-          cat > ${{ env.FILE }} <<'EOF'
-          ${{ steps.github_release.outputs.changelog }}
-
-      - name: Upload "changelog_artifacts.md"
-        uses: actions/upload-artifact@master
-        # Пока отключаем генерацию changelog
-        if: false
-        with:
-          name: release-changelog-artifacts
-          path: ${{ env.FILE }}
+        run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
 
       - name: Create release branch
         id: release_branch
@@ -134,12 +119,23 @@ jobs:
       - name: Create release PR
         run: |
           changelog='${{ steps.changelog.outputs.changelog }}'
-          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "The name of tag to publish release: ${{ env.NEW_TAG }}"
+          PR_BODY="## Release ${{ env.DATE }}
+
+          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+
+          ## Changelog
+
+          $changelog
+
+          ---
+          *This PR was created automatically by GitHub Actions*"
+          
+          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "$PR_BODY"
 
       - name: Extract JIRA IDs from PRs
         id: jira_tasks
         run: |
-          scripts/extract-jira-ids.sh "${{ steps.github_release.outputs.pull_requests }}"
+          scripts/extract-jira-ids.sh "${{ steps.changelog.outputs.pull_requests }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

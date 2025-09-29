@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "title": "## 🚀 Features",
+      "labels": ["feature", "enhancement"]
+    },
+    {
+      "title": "## 🐛 Bug Fixes",
+      "labels": ["bug", "fix"]
+    },
+    {
+      "title": "## 🔧 Improvements",
+      "labels": ["improvement", "refactor", "optimization"]
+    },
+    {
+      "title": "## 📚 Documentation",
+      "labels": ["documentation", "docs"]
+    },
+    {
+      "title": "## 🧪 Testing",
+      "labels": ["test", "testing"]
+    },
+    {
+      "title": "## 🔨 Build",
+      "labels": ["build", "ci", "cd"]
+    },
+    {
+      "title": "## ⚡ Performance",
+      "labels": ["performance", "perf"]
+    },
+    {
+      "title": "## 🔒 Security",
+      "labels": ["security"]
+    },
+    {
+      "title": "## 🎨 UI/UX",
+      "labels": ["ui", "ux", "design"]
+    },
+    {
+      "title": "## ♻️ Breaking Changes",
+      "labels": ["breaking", "breaking-change"]
+    }
+  ],
+  "ignore_labels": [
+    "ignore-for-release",
+    "no-changelog"
+  ],
+  "sort": "ASC",
+  "template": "${{CHANGELOG}}",
+  "pr_template": "- ${{TITLE}} (#${{NUMBER}})",
+  "empty_template": "- No changes",
+  "label_extractor": [
+    {
+      "pattern": "^(feat|feature)(\\(.+\\))?:",
+      "target": "feature"
+    },
+    {
+      "pattern": "^(fix|bug)(\\(.+\\))?:",
+      "target": "bug"
+    },
+    {
+      "pattern": "^(docs|doc)(\\(.+\\))?:",
+      "target": "documentation"
+    },
+    {
+      "pattern": "^(style)(\\(.+\\))?:",
+      "target": "improvement"
+    },
+    {
+      "pattern": "^(refactor)(\\(.+\\))?:",
+      "target": "improvement"
+    },
+    {
+      "pattern": "^(perf)(\\(.+\\))?:",
+      "target": "performance"
+    },
+    {
+      "pattern": "^(test)(\\(.+\\))?:",
+      "target": "testing"
+    },
+    {
+      "pattern": "^(build)(\\(.+\\))?:",
+      "target": "build"
+    },
+    {
+      "pattern": "^(ci)(\\(.+\\))?:",
+      "target": "build"
+    },
+    {
+      "pattern": "^(chore)(\\(.+\\))?:",
+      "target": "improvement"
+    },
+    {
+      "pattern": "^(revert)(\\(.+\\))?:",
+      "target": "improvement"
+    }
+  ]
+}
