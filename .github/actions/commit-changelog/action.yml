@@ -35,6 +35,13 @@ runs:
         
         # Находим все PR с PLASMA в названии
         echo "🔍 Searching for PRs with PLASMA in title..."
+        
+        # Проверяем наличие jq
+        if ! command -v jq &> /dev/null; then
+          echo "❌ jq not found, installing..."
+          apt-get update && apt-get install -y jq
+        fi
+        
         PLASMA_PRS=$(gh pr list --state merged --search "PLASMA" --json number,title,body --jq '.[] | select(.title | contains("PLASMA")) | {number, title, body}' 2>/dev/null || echo "[]")
         
         if [ "$PLASMA_PRS" != "[]" ] && [ -n "$PLASMA_PRS" ]; then
