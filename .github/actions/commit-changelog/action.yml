@@ -1,5 +1,5 @@
-name: 'Generate commit-based changelog'
-description: 'Generates changelog from commits, extracting PR descriptions'
+name: 'Generate PR-based changelog'
+description: 'Generates changelog from PRs with PLASMA in title'
 inputs:
   fromTag:
     description: 'Тэг, название ветки или хэш коммита'
@@ -28,23 +28,12 @@ runs:
       id: changelog
       shell: bash
       run: |
-        echo "🔍 Generating changelog from PR descriptions between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
-        
-        # Получаем коммиты между тегами
-        COMMITS=$(git log --pretty=format:"%h|%s" ${{ env.FROM_TAG }}..${{ env.TO_TAG }})
-        
-        if [ -z "$COMMITS" ]; then
-          echo "No commits found between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
-          echo "changelog=No changes found in this release." >> $GITHUB_OUTPUT
-          exit 0
-        fi
-        
-        echo "🔍 Found commits: $(echo "$COMMITS" | wc -l)"
+        echo "🔍 Generating changelog from PRs with PLASMA in title..."
         
         # Формируем changelog
         CHANGELOG=""
         
-        # Простой подход - находим все PR с PLASMA в названии и собираем их описания
+        # Находим все PR с PLASMA в названии
         echo "🔍 Searching for PRs with PLASMA in title..."
         PLASMA_PRS=$(gh pr list --state merged --search "PLASMA" --json number,title,body --jq '.[] | select(.title | contains("PLASMA")) | {number, title, body}' 2>/dev/null || echo "[]")
         
