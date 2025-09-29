@@ -4,15 +4,13 @@ import remarkStringify from 'remark-stringify';
 
 import * as core from '@actions/core';
 
-import { groupByHeadingsLevel } from './groupByHeadingsLevel.js';
-
 async function run() {
     try {
         const data = core.getInput('data', { required: true });
 
+        // Просто возвращаем данные как есть - группировка уже сделана в PR'ах
         const changelog = await unified()
             .use(remarkParse)
-            .use(() => groupByHeadingsLevel)
             .use(remarkStringify)
             .process(data);
 
