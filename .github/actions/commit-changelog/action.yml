@@ -72,8 +72,37 @@ runs:
           PLASMA_NUMBER=$(echo "$message" | grep -o "PLASMA-[0-9]+" | head -1)
           if [ -n "$PLASMA_NUMBER" ]; then
             echo "🔍 Found PLASMA number: $PLASMA_NUMBER"
-            # Пока просто добавляем коммит
-            CHANGELOG="$CHANGELOG- $message ($hash)\n"
+            
+            # Ищем PR по PLASMA-номеру
+            PR_NUMBER=$(gh pr list --state merged --search "$PLASMA_NUMBER" --json number,title --jq '.[0].number // empty' 2>/dev/null || echo "")
+            
+            if [ -n "$PR_NUMBER" ]; then
+              echo "🔍 Found PR: $PR_NUMBER"
+              
+              # Получаем описание PR
+              PR_BODY=$(gh pr view $PR_NUMBER --json body --jq '.body // ""' 2>/dev/null || echo "")
+              
+              if [ -n "$PR_BODY" ] && [ "$PR_BODY" != "null" ]; then
+                echo "🔍 Extracting component descriptions from PR $PR_NUMBER"
+                # Извлекаем только описания компонентов (H2 и H3 заголовки)
+                COMPONENT_DESCRIPTIONS=$(echo "$PR_BODY" | grep -E "^###|^##" | head -20)
+                
+                if [ -n "$COMPONENT_DESCRIPTIONS" ]; then
+                  echo "🔍 Found component descriptions: $(echo "$COMPONENT_DESCRIPTIONS" | wc -l) lines"
+                  CHANGELOG="$CHANGELOG$COMPONENT_DESCRIPTIONS\n\n"
+                else
+                  # Если нет описаний компонентов, используем название PR
+                  PR_TITLE=$(gh pr view $PR_NUMBER --json title --jq '.title // ""' 2>/dev/null || echo "")
+                  CHANGELOG="$CHANGELOG- $PR_TITLE (#$PR_NUMBER)\n"
+                fi
+              else
+                echo "🔍 No PR body found, using commit message"
+                CHANGELOG="$CHANGELOG- $message ($hash)\n"
+              fi
+            else
+              echo "🔍 PR not found, using commit message"
+              CHANGELOG="$CHANGELOG- $message ($hash)\n"
+            fi
           else
             echo "🔍 No PLASMA number found, adding commit"
             CHANGELOG="$CHANGELOG- $message ($hash)\n"
