@@ -41,16 +41,25 @@ jobs:
         run: |
           DATE=$(date +'%d.%m.%Y')
           echo "DATE=$DATE" >> $GITHUB_ENV
-          echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
+          
+          # Получаем последний тег релиза или коммит на main
+          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | head -1 || git rev-parse origin/main)
+          echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
+          
           echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
           SAFE_DATE=$(echo "$DATE" | tr '.' '-')
           echo "SAFE_DATE=$SAFE_DATE" >> $GITHUB_ENV
           echo "NEW_TAG=release-$SAFE_DATE" >> $GITHUB_ENV
           echo "New date is $SAFE_DATE"
+          echo "FROM_TAG is $FROM_TAG"
 
       - name: Determine changed modules
         id: changed_modules
         run: |
+          echo "🔍 Checking changes between ${{ env.FROM_TAG }} and HEAD"
+          echo "Git diff output:"
+          git diff --name-only "${{ env.FROM_TAG }}" HEAD || echo "No differences found"
+          echo "Running changed-modules script..."
           scripts/changed-modules.sh "${{ env.FROM_TAG }}"
 
       - name: Create version bump branch
@@ -105,6 +114,15 @@ jobs:
           fromTag: ${{ env.FROM_TAG }}
           toTag: HEAD
 
+      - name: Debug Changelog
+        run: |
+          echo "🔍 Changelog debug info:"
+          echo "FROM_TAG: ${{ env.FROM_TAG }}"
+          echo "TO_TAG: HEAD"
+          echo "Changelog output:"
+          echo "${{ steps.changelog.outputs.changelog }}"
+          echo "Changelog length: $(echo "${{ steps.changelog.outputs.changelog }}" | wc -c)"
+
       - name: List pull request
         run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
 
@@ -119,16 +137,33 @@ jobs:
       - name: Create release PR
         run: |
           changelog='${{ steps.changelog.outputs.changelog }}'
-          PR_BODY="## Release ${{ env.DATE }}
+          
+          # Проверяем, есть ли changelog
+          if [[ -n "$changelog" && "$changelog" != "" ]]; then
+            echo "✅ Changelog found, length: $(echo "$changelog" | wc -c)"
+            PR_BODY="## Release ${{ env.DATE }}
 
-          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+**Tag to publish release:** \`${{ env.NEW_TAG }}\`
 
-          ## Changelog
+## Changelog
 
-          $changelog
+$changelog
 
-          ---
-          *This PR was created automatically by GitHub Actions*"
+---
+*This PR was created automatically by GitHub Actions*"
+          else
+            echo "⚠️ No changelog found"
+            PR_BODY="## Release ${{ env.DATE }}
+
+**Tag to publish release:** \`${{ env.NEW_TAG }}\`
+
+## Changelog
+
+No changes found in this release.
+
+---
+*This PR was created automatically by GitHub Actions*"
+          fi
           
           gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "$PR_BODY"
 
