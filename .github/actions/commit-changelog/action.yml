@@ -68,6 +68,9 @@ runs:
             continue
           fi
           
+          # Обрабатываем ошибки
+          set +e
+          
           # Ищем PR по PLASMA-номеру
           PLASMA_NUMBER=$(echo "$message" | grep -o "PLASMA-[0-9]+" | head -1)
           if [ -n "$PLASMA_NUMBER" ]; then
@@ -97,16 +100,23 @@ runs:
                 fi
               else
                 echo "🔍 No PR body found, using commit message"
-                CHANGELOG="$CHANGELOG- $message ($hash)\n"
+                SAFE_MESSAGE=$(echo "$message" | sed 's/\\/\\\\/g' | sed 's/\n/\\n/g')
+                CHANGELOG="$CHANGELOG- $SAFE_MESSAGE ($hash)\n"
               fi
             else
               echo "🔍 PR not found, using commit message"
-              CHANGELOG="$CHANGELOG- $message ($hash)\n"
+              SAFE_MESSAGE=$(echo "$message" | sed 's/\\/\\\\/g' | sed 's/\n/\\n/g')
+              CHANGELOG="$CHANGELOG- $SAFE_MESSAGE ($hash)\n"
             fi
           else
             echo "🔍 No PLASMA number found, adding commit"
-            CHANGELOG="$CHANGELOG- $message ($hash)\n"
+            # Экранируем специальные символы в сообщении
+            SAFE_MESSAGE=$(echo "$message" | sed 's/\\/\\\\/g' | sed 's/\n/\\n/g')
+            CHANGELOG="$CHANGELOG- $SAFE_MESSAGE ($hash)\n"
           fi
+          
+          # Включаем обработку ошибок обратно
+          set -e
           
         done <<< "$COMMITS"
         
