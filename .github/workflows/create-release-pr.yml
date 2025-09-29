@@ -141,31 +141,35 @@ jobs:
           # Проверяем, есть ли changelog
           if [[ -n "$changelog" && "$changelog" != "" ]]; then
             echo "✅ Changelog found, length: $(echo "$changelog" | wc -c)"
-            PR_BODY="## Release ${{ env.DATE }}
-
-**Tag to publish release:** \`${{ env.NEW_TAG }}\`
-
-## Changelog
-
-$changelog
-
----
-*This PR was created automatically by GitHub Actions*"
+            cat > pr_body.md << EOF
+          ## Release ${{ env.DATE }}
+          
+          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+          
+          ## Changelog
+          
+          $changelog
+          
+          ---
+          *This PR was created automatically by GitHub Actions*
+          EOF
           else
             echo "⚠️ No changelog found"
-            PR_BODY="## Release ${{ env.DATE }}
-
-**Tag to publish release:** \`${{ env.NEW_TAG }}\`
-
-## Changelog
-
-No changes found in this release.
-
----
-*This PR was created automatically by GitHub Actions*"
+            cat > pr_body.md << EOF
+          ## Release ${{ env.DATE }}
+          
+          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+          
+          ## Changelog
+          
+          No changes found in this release.
+          
+          ---
+          *This PR was created automatically by GitHub Actions*
+          EOF
           fi
           
-          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "$PR_BODY"
+          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body-file pr_body.md
 
       - name: Extract JIRA IDs from PRs
         id: jira_tasks
