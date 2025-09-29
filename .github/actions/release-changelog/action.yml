@@ -47,26 +47,12 @@ runs:
         echo "DATE=$DATE" >> $GITHUB_ENV
         echo "FILE=${{ github.workspace }}/release-changelog.md" >> $GITHUB_ENV
 
-    - name: Build Changelog
-      id: github_release
-      uses: mikepenz/release-changelog-builder-action@v4.1.0
+    - name: Generate commit-based changelog
+      id: changelog
+      uses: ./.github/actions/commit-changelog
       with:
         fromTag: ${{ env.FROM_TAG }}
-        toTag:  ${{ env.TO_TAG }}
-        configuration: "./.github/changelog-builder-config.json"
-
-    - name: Install dependencies
-      shell: bash
-      run: |
-        cd .github/actions/preprocessing-release-changelog
-        npm ci
-
-    - name: Processing changelog data
-      id: changelog
-      uses: ./.github/actions/preprocessing-release-changelog
-      with:
-        data: |
-          ${{ steps.github_release.outputs.changelog }}
+        toTag: ${{ env.TO_TAG }}
 
     - name: Create "release-changelog.md"
       shell: bash

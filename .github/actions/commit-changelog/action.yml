@@ -18,24 +18,15 @@ runs:
       shell: bash
       run: |
         if [ -z "${{ inputs.fromTag }}" ]; then
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '2p')
+          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
         else
           FROM_TAG="${{ inputs.fromTag }}"
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          TO_TAG="HEAD"
         else
           TO_TAG="${{ inputs.toTag }}"
-        fi
-
-        # Если нет тегов, используем коммиты
-        if [ -z "$FROM_TAG" ]; then
-          FROM_TAG=$(git rev-parse HEAD~10)
-        fi
-        
-        if [ -z "$TO_TAG" ]; then
-          TO_TAG="HEAD"
         fi
 
         echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
@@ -49,65 +40,31 @@ runs:
         echo "🔍 Generating changelog from commits between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
         
         # Получаем коммиты между тегами
-        COMMITS=$(git log --pretty=format:"%h %s" ${{ env.FROM_TAG }}..${{ env.TO_TAG }})
+        COMMITS=$(git log --pretty=format:"%h|%s|%an|%ad" --date=short ${{ env.FROM_TAG }}..${{ env.TO_TAG }})
         
         if [ -z "$COMMITS" ]; then
           echo "No commits found between ${{ env.FROM_TAG }} and ${{ env.TO_TAG }}"
-          echo "changelog=" >> $GITHUB_OUTPUT
+          echo "changelog=No changes found in this release." >> $GITHUB_OUTPUT
           exit 0
         fi
-        
-        # Группируем коммиты по типам
-        FEATURES=""
-        FIXES=""
-        IMPROVEMENTS=""
-        DOCS=""
-        OTHER=""
-        
-        while IFS= read -r line; do
-          if [ -z "$line" ]; then
-            continue
-          fi
-          
-          HASH=$(echo "$line" | cut -d' ' -f1)
-          MESSAGE=$(echo "$line" | cut -d' ' -f2-)
-          
-          # Определяем тип коммита
-          if echo "$MESSAGE" | grep -qiE "^(feat|feature)"; then
-            FEATURES="$FEATURES- $MESSAGE ($HASH)\n"
-          elif echo "$MESSAGE" | grep -qiE "^(fix|bug)"; then
-            FIXES="$FIXES- $MESSAGE ($HASH)\n"
-          elif echo "$MESSAGE" | grep -qiE "^(chore|improvement|refactor)"; then
-            IMPROVEMENTS="$IMPROVEMENTS- $MESSAGE ($HASH)\n"
-          elif echo "$MESSAGE" | grep -qiE "^(docs|doc)"; then
-            DOCS="$DOCS- $MESSAGE ($HASH)\n"
-          else
-            OTHER="$OTHER- $MESSAGE ($HASH)\n"
-          fi
-        done <<< "$COMMITS"
         
         # Формируем changelog
         CHANGELOG=""
         
-        if [ -n "$FEATURES" ]; then
-          CHANGELOG="$CHANGELOG## 🚀 Features\n\n$FEATURES\n"
-        fi
-        
-        if [ -n "$FIXES" ]; then
-          CHANGELOG="$CHANGELOG## 🐛 Bug Fixes\n\n$FIXES\n"
-        fi
-        
-        if [ -n "$IMPROVEMENTS" ]; then
-          CHANGELOG="$CHANGELOG## 🔧 Improvements\n\n$IMPROVEMENTS\n"
-        fi
-        
-        if [ -n "$DOCS" ]; then
-          CHANGELOG="$CHANGELOG## 📚 Documentation\n\n$DOCS\n"
-        fi
-        
-        if [ -n "$OTHER" ]; then
-          CHANGELOG="$CHANGELOG## 🔨 Other Changes\n\n$OTHER\n"
-        fi
+        while IFS='|' read -r hash message author date; do
+          if [ -z "$hash" ]; then
+            continue
+          fi
+          
+          # Пропускаем служебные коммиты
+          if echo "$message" | grep -qiE "^(chore|bump|version|release)"; then
+            continue
+          fi
+          
+          # Добавляем коммит в changelog
+          CHANGELOG="$CHANGELOG- $message ($hash)\n"
+          
+        done <<< "$COMMITS"
         
         if [ -z "$CHANGELOG" ]; then
           CHANGELOG="No changes found in this release."
