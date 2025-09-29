@@ -41,6 +41,27 @@
       "labels": ["breaking", "breaking-change"]
     }
   ],
+  "groupBy": {
+    "type": "labels",
+    "groups": [
+      {
+        "title": "### SDDSComponents",
+        "labels": ["SDDSComponents"]
+      },
+      {
+        "title": "### SDDSIcons", 
+        "labels": ["SDDSIcons"]
+      },
+      {
+        "title": "### SDDSTheme",
+        "labels": ["SDDSTheme"]
+      },
+      {
+        "title": "### Core",
+        "labels": ["Core"]
+      }
+    ]
+  },
   "ignore_labels": [
     "ignore-for-release",
     "no-changelog"
