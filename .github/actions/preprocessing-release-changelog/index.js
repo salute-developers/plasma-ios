@@ -4,7 +4,7 @@ import remarkStringify from 'remark-stringify';
 
 import * as core from '@actions/core';
 
-import { groupByModules } from './groupByModules.js';
+import { groupByHeadingsLevel } from './groupByHeadingsLevel.js';
 
 async function run() {
     try {
@@ -12,7 +12,7 @@ async function run() {
 
         const changelog = await unified()
             .use(remarkParse)
-            .use(() => groupByModules)
+            .use(() => groupByHeadingsLevel)
             .use(remarkStringify)
             .process(data);
 

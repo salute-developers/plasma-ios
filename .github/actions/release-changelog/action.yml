@@ -27,43 +27,21 @@ runs:
     - name: Compute envs
       shell: bash
       run: |
-        echo "🔍 Debug: Available tags:"
-        git tag --sort=-creatordate | head -10
-        
         if [ -z "${{ inputs.fromTag }}" ]; then
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
-          echo "🔍 Auto-detected FROM_TAG (last release): $FROM_TAG"
+          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '2p')
         else
           FROM_TAG="${{ inputs.fromTag }}"
-          echo "🔍 Using provided FROM_TAG: $FROM_TAG"
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG="HEAD"
-          echo "🔍 Auto-detected TO_TAG: $TO_TAG"
+          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
         else
           TO_TAG="${{ inputs.toTag }}"
-          echo "🔍 Using provided TO_TAG: $TO_TAG"
-        fi
-
-        # Если нет тегов, используем коммиты
-        if [ -z "$FROM_TAG" ]; then
-          FROM_TAG=$(git rev-parse HEAD~10)
-          echo "⚠️ No release tags found, using HEAD~10: $FROM_TAG"
-        fi
-        
-        if [ -z "$TO_TAG" ]; then
-          TO_TAG="HEAD"
-          echo "⚠️ No release tags found, using HEAD: $TO_TAG"
         fi
 
         echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
         echo "TO_TAG=$TO_TAG" >> $GITHUB_ENV
         echo "FROM_TAG = $FROM_TAG and TO_TAG = $TO_TAG"
-        
-        # Проверим, есть ли коммиты между тегами
-        echo "🔍 Checking commits between tags:"
-        git log --oneline $FROM_TAG..$TO_TAG | head -10
         
         DATE=$(date +'%d.%m.%Y')
         echo "DATE=$DATE" >> $GITHUB_ENV
@@ -76,8 +54,6 @@ runs:
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
         configuration: "./.github/changelog-builder-config.json"
-        ignorePreReleases: false
-        failOnError: false
 
     - name: Install dependencies
       shell: bash
@@ -100,13 +76,7 @@ runs:
     - name: Debug print release-changelog.md
       shell: bash
       run: |
-        echo "🔍 Changelog generation debug:"
-        echo "FROM_TAG: ${{ env.FROM_TAG }}"
-        echo "TO_TAG: ${{ env.TO_TAG }}"
-        echo "Raw changelog from mikepenz action:"
-        echo "${{ steps.github_release.outputs.changelog }}"
-        echo "Processed changelog length: $(echo "${{ steps.changelog.outputs.changelog }}" | wc -c)"
-        echo "Contents of release-changelog.md:"
+        echo "🔍 Contents of release-changelog.md:"
         cat "${{ env.FILE }}"
 
     - name: Upload "release-changelog.md"
