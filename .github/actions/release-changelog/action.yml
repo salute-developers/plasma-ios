@@ -9,6 +9,9 @@ inputs:
   toTag:
     description: 'Тэг, название ветки или хэш коммита'
     required: false
+  githubToken:
+    description: 'GitHub token для доступа к API'
+    required: false
 
 
 outputs:
@@ -57,7 +60,7 @@ runs:
         base: develop
         configuration: "./.github/changelog-builder-config.json"
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.githubToken }}
 
     - name: Install dependencies
       shell: bash

@@ -113,6 +113,7 @@ jobs:
         with:
           fromTag: ${{ env.FROM_TAG }}
           toTag: origin/develop
+          githubToken: ${{ secrets.GH_TOKEN }}
 
       - name: Debug Changelog
         run: |
