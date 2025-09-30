@@ -51,6 +51,7 @@ runs:
       id: github_release
       uses: mikepenz/release-changelog-builder-action@v4.1.0
       with:
+        commitMode: true
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
         configuration: "./.github/changelog-builder-config.json"
