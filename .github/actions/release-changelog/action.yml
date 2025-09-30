@@ -51,10 +51,13 @@ runs:
       id: github_release
       uses: mikepenz/release-changelog-builder-action@v4.1.0
       with:
+        mode: "HYBRID"
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
         base: develop
         configuration: "./.github/changelog-builder-config.json"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     - name: Install dependencies
       shell: bash
