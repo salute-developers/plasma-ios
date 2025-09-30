@@ -10,6 +10,7 @@ inputs:
     description: 'Тэг, название ветки или хэш коммита'
     required: false
 
+
 outputs:
   changelog:
     description: "Processed changelog"
@@ -34,7 +35,7 @@ runs:
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          TO_TAG="HEAD"
         else
           TO_TAG="${{ inputs.toTag }}"
         fi
@@ -50,6 +51,7 @@ runs:
       id: github_release
       uses: mikepenz/release-changelog-builder-action@v4.1.0
       with:
+        commitMode: true
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
         configuration: "./.github/changelog-builder-config.json"
