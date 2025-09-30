@@ -6,16 +6,5 @@
     }
   ],
   "ignore_labels": ["changelog-skip"],
-  "pr_template": "#{{DESC}}\n[PR](#{{URL}})\n",
-  "custom_placeholders": [
-    {
-      "name": "DESC",
-      "source": "BODY",
-      "transformer": {
-        "pattern": "(?:\n### What/why changed)(.*)",
-        "flags": "s",
-        "target": " "
-      }
-    }
-  ]
+  "pr_template": "#{{TITLE}}\n[PR](#{{URL}})\n"
 }

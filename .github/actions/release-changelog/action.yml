@@ -91,6 +91,11 @@ runs:
         echo ""
         echo "🔍 Pull requests from mikepenz action:"
         echo "${{ steps.github_release.outputs.pull_requests }}"
+        echo ""
+        echo "🔍 FROM_TAG: ${{ env.FROM_TAG }}"
+        echo "🔍 TO_TAG: ${{ env.TO_TAG }}"
+        echo "🔍 Git log between tags:"
+        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}" | head -10
 
     - name: Upload "changelog_artifacts.md"
       if: false
