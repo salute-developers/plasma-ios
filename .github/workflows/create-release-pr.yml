@@ -107,6 +107,7 @@ jobs:
         id: changelog
         uses: ./.github/actions/release-changelog
         with:
+          fetchViaCommits: true
           fromTag: ${{ env.FROM_TAG }}
           toTag: HEAD
 
