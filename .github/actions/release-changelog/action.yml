@@ -10,6 +10,7 @@ inputs:
     description: 'Тэг, название ветки или хэш коммита'
     required: false
 
+
 outputs:
   changelog:
     description: "Processed changelog"
@@ -34,7 +35,7 @@ runs:
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          TO_TAG="HEAD"
         else
           TO_TAG="${{ inputs.toTag }}"
         fi
@@ -79,6 +80,33 @@ runs:
       run: |
         echo "🔍 Contents of changelog_artifacts.md:"
         cat "${{ env.FILE }}"
+        echo ""
+        echo "🔍 Raw changelog from mikepenz action:"
+        echo "${{ steps.github_release.outputs.changelog }}"
+        echo ""
+        echo "🔍 Pull requests from mikepenz action:"
+        echo "${{ steps.github_release.outputs.pull_requests }}"
+        echo ""
+        echo "🔍 FROM_TAG: ${{ env.FROM_TAG }}"
+        echo "🔍 TO_TAG: ${{ env.TO_TAG }}"
+        echo "🔍 Git log between tags:"
+        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}"
+        echo ""
+        echo "🔍 Current branch:"
+        git branch --show-current
+        echo "🔍 Available branches:"
+        git branch -a
+        echo ""
+        echo "🔍 Commits with PR numbers:"
+        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}" | grep -E "#[0-9]" || echo "No PR numbers found"
+        echo ""
+        echo "🔍 All commits in range:"
+        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}"
+        echo ""
+        echo "🔍 GitHub repository context:"
+        echo "Repository: ${{ github.repository }}"
+        echo "Ref: ${{ github.ref }}"
+        echo "Event name: ${{ github.event_name }}"
 
     - name: Upload "changelog_artifacts.md"
       if: false

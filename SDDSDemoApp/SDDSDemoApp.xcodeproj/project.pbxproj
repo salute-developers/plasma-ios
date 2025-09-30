@@ -381,6 +381,7 @@
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
+		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
 		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
@@ -476,6 +477,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D36588AF2E72B73800036483 /* CodeInputTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
 				D35F47C72E5701F800B3EC9E /* LoaderTestCase */,
@@ -1147,6 +1149,7 @@
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
+				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,

@@ -42,8 +42,8 @@ jobs:
           DATE=$(date +'%d.%m.%Y')
           echo "DATE=$DATE" >> $GITHUB_ENV
           
-          # Получаем последний тег релиза или коммит на main
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | head -1 || git rev-parse origin/main)
+          # Получаем последний общий коммит с origin/main
+          FROM_TAG=$(git merge-base origin/main HEAD)
           echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
           
           echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
