@@ -35,7 +35,7 @@ runs:
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          TO_TAG="HEAD"
         else
           TO_TAG="${{ inputs.toTag }}"
         fi
