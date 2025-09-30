@@ -90,12 +90,12 @@ runs:
         echo "🔍 FROM_TAG: ${{ env.FROM_TAG }}"
         echo "🔍 TO_TAG: ${{ env.TO_TAG }}"
         echo "🔍 Git log between tags:"
-        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}" | head -10
+        git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}"
         echo ""
         echo "🔍 Current branch:"
         git branch --show-current
         echo "🔍 Available branches:"
-        git branch -a | head -10
+        git branch -a
         echo ""
         echo "🔍 Commits with PR numbers:"
         git log --oneline "${{ env.FROM_TAG }}".."${{ env.TO_TAG }}" | grep -E "#[0-9]" || echo "No PR numbers found"
