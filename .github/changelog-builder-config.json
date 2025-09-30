@@ -7,7 +7,6 @@
   ],
   "ignore_labels": ["changelog-skip"],
   "pr_template": "#{{DESC}}\n[PR](#{{URL}})\n",
-  "base_branches": ["develop"],
   "custom_placeholders": [
     {
       "name": "DESC",

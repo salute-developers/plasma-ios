@@ -52,11 +52,10 @@ runs:
 
     - name: Build Changelog
       id: github_release
-      uses: mikepenz/release-changelog-builder-action@v5
+      uses: mikepenz/release-changelog-builder-action@v4.1.0
       with:
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
-        base: develop
         configuration: "./.github/changelog-builder-config.json"
       env:
         GITHUB_TOKEN: ${{ inputs.githubToken }}
@@ -86,6 +85,12 @@ runs:
       run: |
         echo "🔍 Contents of changelog_artifacts.md:"
         cat "${{ env.FILE }}"
+        echo ""
+        echo "🔍 Raw changelog from mikepenz action:"
+        echo "${{ steps.github_release.outputs.changelog }}"
+        echo ""
+        echo "🔍 Pull requests from mikepenz action:"
+        echo "${{ steps.github_release.outputs.pull_requests }}"
 
     - name: Upload "changelog_artifacts.md"
       if: false
