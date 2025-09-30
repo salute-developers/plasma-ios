@@ -28,13 +28,13 @@ runs:
       shell: bash
       run: |
         if [ -z "${{ inputs.fromTag }}" ]; then
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '2p')
         else
           FROM_TAG="${{ inputs.fromTag }}"
         fi
 
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG="HEAD"
+          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
         else
           TO_TAG="${{ inputs.toTag }}"
         fi
@@ -42,30 +42,45 @@ runs:
         echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV
         echo "TO_TAG=$TO_TAG" >> $GITHUB_ENV
         echo "FROM_TAG = $FROM_TAG and TO_TAG = $TO_TAG"
-        
         DATE=$(date +'%d.%m.%Y')
         echo "DATE=$DATE" >> $GITHUB_ENV
-        echo "FILE=${{ github.workspace }}/release-changelog.md" >> $GITHUB_ENV
+        echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
 
-    - name: Generate commit-based changelog
-      id: changelog
-      uses: ./.github/actions/commit-changelog
+    - name: Build Changelog
+      id: github_release
+      uses: mikepenz/release-changelog-builder-action@v4.1.0
       with:
         fromTag: ${{ env.FROM_TAG }}
-        toTag: ${{ env.TO_TAG }}
+        toTag:  ${{ env.TO_TAG }}
+        configuration: "./.github/changelog-builder-config.json"
 
-    - name: Create "release-changelog.md"
+    - name: Install dependencies
       shell: bash
       run: |
-        echo "${{ steps.changelog.outputs.changelog }}" > "${{ env.FILE }}"   
+        cd .github/actions/preprocessing-release-changelog
+        npm ci
 
-    - name: Debug print release-changelog.md
+    - name: Processing changelog data
+      id: changelog
+      uses: ./.github/actions/preprocessing-release-changelog
+      with:
+        data: |
+          ${{ steps.github_release.outputs.changelog }}
+
+    - name: Create "changelog_artifacts.md"
       shell: bash
       run: |
-        echo "🔍 Contents of release-changelog.md:"
+        cat > "${{ env.FILE }}" <<EOF
+        ${{ steps.changelog.outputs.changelog }}
+        EOF   
+
+    - name: Debug print changelog_artifacts.md
+      shell: bash
+      run: |
+        echo "🔍 Contents of changelog_artifacts.md:"
         cat "${{ env.FILE }}"
 
-    - name: Upload "release-changelog.md"
+    - name: Upload "changelog_artifacts.md"
       if: false
       uses: actions/upload-artifact@master
       with:
