@@ -107,21 +107,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Create release tag
-        run: |
-          # Создаем тег для текущего релиза
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a "${{ env.NEW_TAG }}" -m "Release ${{ env.DATE }}"
-          git push origin "${{ env.NEW_TAG }}"
-          echo "✅ Created and pushed tag: ${{ env.NEW_TAG }}"
-
       - name: Build Changelog
         id: changelog
         uses: ./.github/actions/release-changelog
         with:
           fromTag: ${{ env.FROM_TAG }}
-          toTag: ${{ env.NEW_TAG }}
+          toTag: HEAD
 
       - name: Debug Changelog
         run: |
