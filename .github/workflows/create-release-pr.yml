@@ -41,16 +41,21 @@ jobs:
         run: |
           DATE=$(date +'%d.%m.%Y')
           echo "DATE=$DATE" >> $GITHUB_ENV
-          echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
+          echo "FROM_TAG=$(git merge-base origin/main HEAD)" >> $GITHUB_ENV
           echo "FILE=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
           SAFE_DATE=$(echo "$DATE" | tr '.' '-')
+          NEW_TAG="release-$SAFE_DATE"
           echo "SAFE_DATE=$SAFE_DATE" >> $GITHUB_ENV
-          echo "NEW_TAG=release-$SAFE_DATE" >> $GITHUB_ENV
-          echo "New date is $SAFE_DATE"
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+          echo "New tag is $NEW_TAG"
 
       - name: Determine changed modules
         id: changed_modules
         run: |
+          echo "🔍 Checking changes between ${{ env.FROM_TAG }} and HEAD"
+          echo "Git diff output:"
+          git diff --name-only "${{ env.FROM_TAG }}" HEAD || echo "No differences found"
+          echo "Running changed-modules script..."
           scripts/changed-modules.sh "${{ env.FROM_TAG }}"
 
       - name: Create version bump branch
@@ -99,29 +104,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v4.1.0
+        id: changelog
+        uses: ./.github/actions/release-changelog
         with:
           fromTag: ${{ env.FROM_TAG }}
           toTag: HEAD
 
-      - name: List pull request
-        run: echo "pull_requests --> ${{ steps.github_release.outputs.pull_requests }}"
-
-      - name: Create "changelog_artifacts.md"
-        # Пока отключаем генерацию changelog
-        if: false
+      - name: Debug Changelog
         run: |
-          cat > ${{ env.FILE }} <<'EOF'
-          ${{ steps.github_release.outputs.changelog }}
+          echo "🔍 Changelog debug info:"
+          echo "FROM_TAG: ${{ env.FROM_TAG }}"
+          echo "TO_TAG: HEAD"
+          echo "Changelog output:"
+          echo "${{ steps.changelog.outputs.changelog }}"
+          echo "Changelog length: $(echo "${{ steps.changelog.outputs.changelog }}" | wc -c)"
 
-      - name: Upload "changelog_artifacts.md"
-        uses: actions/upload-artifact@master
-        # Пока отключаем генерацию changelog
-        if: false
-        with:
-          name: release-changelog-artifacts
-          path: ${{ env.FILE }}
+      - name: List pull request
+        run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
 
       - name: Create release branch
         id: release_branch
@@ -134,12 +133,44 @@ jobs:
       - name: Create release PR
         run: |
           changelog='${{ steps.changelog.outputs.changelog }}'
-          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body "The name of tag to publish release: ${{ env.NEW_TAG }}"
+          
+          # Проверяем, есть ли changelog
+          if [[ -n "$changelog" && "$changelog" != "" ]]; then
+            echo "✅ Changelog found, length: $(echo "$changelog" | wc -c)"
+            cat > pr_body.md << EOF
+          ## Release ${{ env.DATE }}
+          
+          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+          
+          ## Changelog
+          
+          $changelog
+          
+          ---
+          *This PR was created automatically by GitHub Actions*
+          EOF
+          else
+            echo "⚠️ No changelog found"
+            cat > pr_body.md << EOF
+          ## Release ${{ env.DATE }}
+          
+          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
+          
+          ## Changelog
+          
+          No changes found in this release.
+          
+          ---
+          *This PR was created automatically by GitHub Actions*
+          EOF
+          fi
+          
+          gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body-file pr_body.md
 
       - name: Extract JIRA IDs from PRs
         id: jira_tasks
         run: |
-          scripts/extract-jira-ids.sh "${{ steps.github_release.outputs.pull_requests }}"
+          scripts/extract-jira-ids.sh "${{ steps.changelog.outputs.pull_requests }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

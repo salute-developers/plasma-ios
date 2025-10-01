@@ -1,0 +1,95 @@
+name: "Generate Changelog for Documentation"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Название тэга (например release-16-04-2025)'
+        required: true
+      artifact_id:
+        description: 'ID артефакта для генерации changelog'
+        required: true
+        default: 'SDDSComponents'
+      version:
+        description: 'Версия артефакта'
+        required: true
+        default: '1.0.0'
+      target_type:
+        description: 'Тип цели (swiftui)'
+        required: true
+        default: 'swiftui'
+      theme_name:
+        description: 'Название темы'
+        required: true
+        default: 'SDDS iOS Components'
+      code_reference:
+        description: 'Ссылка на код'
+        required: true
+        default: 'SDDSComponents'
+
+jobs:
+  generate-changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    environment: sdds
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Changelog
+        id: changelog
+        uses: ./.github/actions/release-changelog
+        with:
+          fromTag: ${{ github.event.inputs.tag_name }}
+
+      - name: Create release-changelog.md
+        run: |
+          cat > release-changelog.md <<EOF
+          ${{ steps.changelog.outputs.changelog }}
+          EOF
+
+      - name: Generate Documentation with Changelog
+        run: |
+          cd docusaurus
+          ./deploy.sh --local --with-changelog \
+            "${{ github.event.inputs.artifact_id }}" \
+            "${{ github.event.inputs.version }}" \
+            "main" \
+            "${{ github.event.inputs.target_type }}" \
+            "${{ github.event.inputs.theme_name }}" \
+            "${{ github.event.inputs.code_reference }}"
+
+      - name: Upload Generated Documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-with-changelog
+          path: docusaurus/build/generated/docusaurus/
+          retention-days: 30
+
+      - name: Show Changelog Content
+        run: |
+          echo "📝 Generated Changelog:"
+          echo "========================"
+          if [[ -f "release-changelog.md" ]]; then
+            cat release-changelog.md
+          else
+            echo "No changelog file found"
+          fi
+          echo ""
+          echo "📁 Generated Documentation Structure:"
+          echo "===================================="
+          if [[ -d "docusaurus/build/generated/docusaurus" ]]; then
+            find docusaurus/build/generated/docusaurus -name "*.md" | head -20
+            echo "..."
+          else
+            echo "No documentation generated"
+          fi

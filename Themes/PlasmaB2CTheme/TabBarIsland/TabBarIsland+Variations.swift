@@ -6,6 +6,18 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.L> {
     
+    var l: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.L> {
+        var size =  TabBarIslandAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var shadow: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.LShadow> {
         var size =  TabBarIslandAnySize(size: appearance.size)
 
@@ -63,6 +75,19 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
 
 public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.LShadow> {
     
+    var shadow: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.LShadow> {
+        var size =  TabBarIslandAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.shadow = ShadowToken.downSoftM
+    
+        return .init(
+            name: "l.shadow",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
@@ -106,6 +131,18 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
 }
 
 public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.M> {
+    
+    var m: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.M> {
+        var size =  TabBarIslandAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var shadow: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.MShadow> {
         var size =  TabBarIslandAnySize(size: appearance.size)
@@ -163,6 +200,19 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
 }
 
 public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.MShadow> {
+    
+    var shadow: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.MShadow> {
+        var size =  TabBarIslandAnySize(size: appearance.size)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.shadow = ShadowToken.downSoftM
+    
+        return .init(
+            name: "m.shadow",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance

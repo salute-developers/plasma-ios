@@ -3,19 +3,19 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 
-struct {{ component }}Size {
+struct {{ component | camelCase }}Size {
     {%- for key, variation in variations %}
-    static let {{ key }} = {{ component }}Size{{ key | capitalized }}()
+    static let {{ key | camelCase }} = {{ component }}Size{{ key | camelCase | capitalized }}()
     {%- endfor %}
 
     static let all: [{{ sizeConfiguration }}] = [
         {%- for key, variation in variations %}
-        {{ component }}Size.{{ key }},
+        {{ component }}Size.{{ key | camelCase }},
         {%- endfor %}
     ] 
 }
 {%- for key, variation in variations %}
-struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
+struct {{ component | camelCase }}Size{{ key | camelCase | capitalized }}: {{ sizeConfiguration }} {
     {%- for property, value in variation %}
     {%- if property | generate_function %}
     func {{ property | remove_func_keyword }}{{ value }}
@@ -29,7 +29,7 @@ struct {{ component }}Size{{ key | capitalized }}: {{ sizeConfiguration }} {
 }
 {%- endfor %}
 
-struct {{ component }}AnySize: {{ sizeConfiguration }} {
+struct {{ component | camelCase }}AnySize: {{ sizeConfiguration }} {
     {%- for property, value in zeroSize %}
     {%- if property | generate_function %}
     func {{ property | remove_func_keyword }}{{ value }}

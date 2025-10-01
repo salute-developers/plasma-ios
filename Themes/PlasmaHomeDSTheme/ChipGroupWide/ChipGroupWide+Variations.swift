@@ -6,6 +6,21 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.L> {
     
+    var l: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.L> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
@@ -55,6 +70,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
     
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = Chip.l.pilled.default.appearance
@@ -88,6 +118,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 }
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.M> {
+    
+    var m: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.M> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
@@ -138,6 +183,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
     
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m.pilled",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = Chip.m.pilled.default.appearance
@@ -187,6 +247,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
         )
     }
     
+    var s: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.S> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = Chip.s.default.appearance
@@ -220,6 +295,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 }
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
@@ -270,6 +360,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
         )
     }
     
+    var xs: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xs> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = Chip.xs.default.appearance
@@ -303,6 +408,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 }
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
@@ -353,6 +473,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
         )
     }
     
+    var xxs: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xxs> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xxs",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = Chip.xxs.default.appearance
@@ -386,6 +521,21 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
 }
 
 public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
+    
+    var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
+        var size =  ChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xxs.pilled",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
