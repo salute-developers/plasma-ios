@@ -6,6 +6,21 @@ import SDDSThemeCore
 
 public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.L> {
     
+    var l: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.L> {
+        var size =  EmbeddedChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "l",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = EmbeddedChip.l.default.appearance
@@ -49,6 +64,21 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppe
 }
 
 public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.M> {
+    
+    var m: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.M> {
+        var size =  EmbeddedChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
@@ -94,6 +124,21 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppe
 
 public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.S> {
     
+    var s: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.S> {
+        var size =  EmbeddedChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "s",
+            appearance: appearance
+        )
+    }
+    
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
         appearance.chipAppearance = EmbeddedChip.s.default.appearance
@@ -137,6 +182,21 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppe
 }
 
 public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xs> {
+    
+    var xs: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xs> {
+        var size =  EmbeddedChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
     
     var `default`: AppearanceVariation<ChipGroupAppearance> {
         var appearance = appearance
