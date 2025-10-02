@@ -21,12 +21,6 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     var height: CGFloat { get }
     
     /**
-     Радиус скругления углов кнопки.
-     */
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
-    var cornerRadius: CGFloat { get }
-    
-    /**
      Shape token скругления углов кнопки.
      */
     var pathDrawer: PathDrawer { get }
@@ -60,11 +54,9 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
 
 public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var height: CGFloat = 0
-    public var cornerRadius: CGFloat = 0
     public var pathDrawer: any PathDrawer = DefaultPathDrawer()
     public var paddings: EdgeInsets = .init()
     public var iconSize: CGSize = .zero
-    public var counterSize: CounterSizeConfiguration = DefaultCounterSize()
     public var spinnerSize: CGSize = .zero
     public var iconHorizontalGap: CGFloat = 0
     public var titleHorizontalGap: CGFloat = 0
@@ -73,4 +65,14 @@ public struct DefaultButtonSize: ButtonSizeConfiguration {
     }
     
     public init() {}
+    
+    public init(size: ButtonSizeConfiguration) {
+        self.height = size.height
+        self.iconSize = size.iconSize
+        self.iconHorizontalGap = size.iconHorizontalGap
+        self.titleHorizontalGap = size.titleHorizontalGap
+        self.spinnerSize = size.spinnerSize
+        self.paddings = size.paddings
+        self.pathDrawer = size.pathDrawer
+    }
 }

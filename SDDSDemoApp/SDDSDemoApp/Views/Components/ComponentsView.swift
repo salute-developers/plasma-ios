@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSServTheme
+import SDDSComponents
 
 struct ComponentsView: View {
     private let components: [(name: String, view: AnyView)] = [
@@ -8,6 +9,7 @@ struct ComponentsView: View {
         ("Avatar", AnyView(AvatarView())),
         ("AvatarGroup", AnyView(AvatarGroupView())),
         ("Button", AnyView(ButtonView())),
+        ("ButtonGroup", AnyView(ButtonGroupView())),
         ("Chip", AnyView(ChipView())),
         ("ChipGroup", AnyView(ChipGroupView())),
         ("Checkbox", AnyView(CheckboxView())),

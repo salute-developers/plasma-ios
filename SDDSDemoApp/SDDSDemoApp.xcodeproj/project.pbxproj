@@ -154,6 +154,9 @@
 		81B51AB42E3C892600504B1D /* CodeFieldVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AAF2E3C892600504B1D /* CodeFieldVariationProvider.swift */; };
 		81B51AB52E3C892600504B1D /* CodeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */; };
 		81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */; };
+		81C6F6802E8A7847004B8E7E /* ButtonGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6F67D2E8A7846004B8E7E /* ButtonGroupView.swift */; };
+		81C6F6812E8A7847004B8E7E /* ButtonGroupVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6F67C2E8A7846004B8E7E /* ButtonGroupVariationProvider.swift */; };
+		81C6F6822E8A7847004B8E7E /* ButtonGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6F67E2E8A7846004B8E7E /* ButtonGroupViewModel.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81DECC842DE5F0EB0035E6A9 /* TooltipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */; };
 		81DECC852DE5F0EB0035E6A9 /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */; };
@@ -335,8 +338,14 @@
 		81B51AB02E3C892600504B1D /* CodeFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldView.swift; sourceTree = "<group>"; };
 		81B51AB12E3C892600504B1D /* CodeFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldViewModel.swift; sourceTree = "<group>"; };
 		81B51AB62E3C8AE800504B1D /* CodeFieldGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldGroupType.swift; sourceTree = "<group>"; };
+		81C6F67C2E8A7846004B8E7E /* ButtonGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupVariationProvider.swift; sourceTree = "<group>"; };
+		81C6F67D2E8A7846004B8E7E /* ButtonGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupView.swift; sourceTree = "<group>"; };
+		81C6F67E2E8A7846004B8E7E /* ButtonGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupViewModel.swift; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		81DE9CEA2E7BDEC0005D24FE /* ButtonGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupVariationProvider.swift; sourceTree = "<group>"; };
+		81DE9CEB2E7BDEC0005D24FE /* ButtonGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupView.swift; sourceTree = "<group>"; };
+		81DE9CEC2E7BDEC0005D24FE /* ButtonGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupViewModel.swift; sourceTree = "<group>"; };
 		81DECC802DE5F0EB0035E6A9 /* TooltipVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipVariationProvider.swift; sourceTree = "<group>"; };
 		81DECC812DE5F0EB0035E6A9 /* TooltipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipView.swift; sourceTree = "<group>"; };
 		81DECC822DE5F0EB0035E6A9 /* TooltipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipViewModel.swift; sourceTree = "<group>"; };
@@ -372,6 +381,7 @@
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
+		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
 		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
@@ -467,6 +477,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D36588AF2E72B73800036483 /* CodeInputTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
 				D35F47C72E5701F800B3EC9E /* LoaderTestCase */,
@@ -651,6 +662,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81C6F67F2E8A7846004B8E7E /* ButtonGroupView */,
 				81117E722E7BD6180063A7EB /* CodeInputView */,
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
 				819AF9822E4E506E006A11F8 /* TabBarIslandView */,
@@ -999,12 +1011,25 @@
 			path = CodeFieldView;
 			sourceTree = "<group>";
 		};
+		81C6F67F2E8A7846004B8E7E /* ButtonGroupView */ = {
+			isa = PBXGroup;
+			children = (
+				81C6F67C2E8A7846004B8E7E /* ButtonGroupVariationProvider.swift */,
+				81C6F67D2E8A7846004B8E7E /* ButtonGroupView.swift */,
+				81C6F67E2E8A7846004B8E7E /* ButtonGroupViewModel.swift */,
+			);
+			path = ButtonGroupView;
+			sourceTree = "<group>";
+		};
 		81DEC9CA2DE5EF740035E6A9 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				81EDCE472DDE489100FDBA5C /* PopoverView.swift */,
 				81EDCE4A2DDE48E000FDBA5C /* PopoverViewModel.swift */,
 				81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */,
+				81DE9CEC2E7BDEC0005D24FE /* ButtonGroupViewModel.swift */,
+				81DE9CEB2E7BDEC0005D24FE /* ButtonGroupView.swift */,
+				81DE9CEA2E7BDEC0005D24FE /* ButtonGroupVariationProvider.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1124,6 +1149,7 @@
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
+				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
@@ -1349,6 +1375,9 @@
 				819A03C02E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift in Sources */,
 				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
+				81C6F6802E8A7847004B8E7E /* ButtonGroupView.swift in Sources */,
+				81C6F6812E8A7847004B8E7E /* ButtonGroupVariationProvider.swift in Sources */,
+				81C6F6822E8A7847004B8E7E /* ButtonGroupViewModel.swift in Sources */,
 				69509FDA2DBBAAA3008B6585 /* AvatarGroupVariationProvider.swift in Sources */,
 				81A613312D5BB14400ADE1CD /* TextFieldVariationProvider.swift in Sources */,
 				817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */,
@@ -1546,7 +1575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1589,7 +1618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1616,7 +1645,7 @@
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1636,7 +1665,7 @@
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;

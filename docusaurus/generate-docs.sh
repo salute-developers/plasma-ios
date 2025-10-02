@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Универсальный скрипт для генерации документации Docusaurus
-# Использование: ./docusaurus/generate-docs.sh [ARTIFACT_ID] [VERSION] [BRANCH] [TARGET_TYPE] [THEME_NAME] [CODE_REFERENCE]
+# Использование: ./docusaurus/generate-docs.sh [ARTIFACT_ID] [VERSION] [BRANCH] [TARGET_TYPE] [THEME_NAME] [CODE_REFERENCE] [DOCS_URL] [--with-changelog]
 
 set -e
 
@@ -14,14 +14,30 @@ DEFAULT_THEME_NAME="SDDS Serv Theme"
 DEFAULT_CODE_REFERENCE="SDDSServTheme"
 DEFAULT_DOCS_URL="https://plasma.sberdevices.ru"
 
+# Флаги
+WITH_CHANGELOG=false
+ARGS=()
+
+# Парсим аргументы
+for arg in "$@"; do
+    case $arg in
+        --with-changelog)
+            WITH_CHANGELOG=true
+            ;;
+        *)
+            ARGS+=("$arg")
+            ;;
+    esac
+done
+
 # Получаем параметры из аргументов или используем значения по умолчанию
-ARTIFACT_ID="${1:-$DEFAULT_ARTIFACT_ID}"
-VERSION="${2:-$DEFAULT_VERSION}"
-BRANCH_NAME="${3:-$DEFAULT_BRANCH}"
-TARGET_TYPE="${4:-$DEFAULT_TARGET_TYPE}"
-THEME_NAME="${5:-$DEFAULT_THEME_NAME}"
-CODE_REFERENCE="${6:-$DEFAULT_CODE_REFERENCE}"
-DOCS_URL="${7:-$DEFAULT_DOCS_URL}"
+ARTIFACT_ID="${ARGS[0]:-$DEFAULT_ARTIFACT_ID}"
+VERSION="${ARGS[1]:-$DEFAULT_VERSION}"
+BRANCH_NAME="${ARGS[2]:-$DEFAULT_BRANCH}"
+TARGET_TYPE="${ARGS[3]:-$DEFAULT_TARGET_TYPE}"
+THEME_NAME="${ARGS[4]:-$DEFAULT_THEME_NAME}"
+CODE_REFERENCE="${ARGS[5]:-$DEFAULT_CODE_REFERENCE}"
+DOCS_URL="${ARGS[6]:-$DEFAULT_DOCS_URL}"
 
 echo "🔄 Генерация документации Docusaurus..."
 echo ""
@@ -33,6 +49,7 @@ echo "  Target Type: $TARGET_TYPE"
 echo "  Theme Name: $THEME_NAME"
 echo "  Code Reference: $CODE_REFERENCE"
 echo "  Docs URL: $DOCS_URL"
+echo "  With Changelog: $WITH_CHANGELOG"
 echo ""
 
 # Проверяем зависимости
@@ -102,6 +119,29 @@ if [[ -d "$override_docs" ]]; then
     cp -r "$override_docs"/* "$destination_dir/"
 fi
 
+# Генерируем changelog если требуется
+if [[ "$WITH_CHANGELOG" == true ]]; then
+    echo ""
+    echo "📝 Генерация changelog..."
+    
+    # Проверяем наличие файла release-changelog.md
+    if [[ -f "release-changelog.md" ]]; then
+        echo "  Найден файл release-changelog.md"
+        
+        # Генерируем changelog для данной библиотеки
+        echo "  Парсинг changelog для $ARTIFACT_ID..."
+        ../scripts/parse-changelog.sh "$ARTIFACT_ID" "release-changelog.md" "$destination_dir/docs/CHANGELOG.md"
+        
+        if [[ -f "$destination_dir/docs/CHANGELOG.md" ]]; then
+            echo "✅ Changelog сгенерирован: $destination_dir/docs/CHANGELOG.md"
+        else
+            echo "⚠️  Changelog не был сгенерирован"
+        fi
+    else
+        echo "⚠️  Файл release-changelog.md не найден, пропускаем генерацию changelog"
+    fi
+fi
+
 echo "✅ Документация для $THEME_NAME сгенерирована в $destination_dir"
 echo ""
 echo "🚀 Для запуска локального сервера выполните:"
@@ -116,6 +156,9 @@ echo "  ./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftu
 echo ""
 echo "  # Для SDDSComponents:"
 echo "  ./docusaurus/generate-docs.sh SDDSComponents 1.0.0-test test swiftui \"SDDS iOS Components\" SDDSComponents"
+echo ""
+echo "  # С генерацией changelog:"
+echo "  ./docusaurus/generate-docs.sh SDDSComponents 1.0.0-test test swiftui \"SDDS iOS Components\" SDDSComponents --with-changelog"
 echo ""
 echo "  # Для другой темы:"
 echo "  ./docusaurus/generate-docs.sh my-theme 2.0.0 main swiftui \"My Theme\" MyTheme"

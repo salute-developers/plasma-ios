@@ -374,6 +374,14 @@
 		81F2E9572DF9FF0500708B40 /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81F2E80A2DF9FF0500708B40 /* SBSansText-Thin.otf */; };
 		81F2E9582DF9FF0500708B40 /* SBSansText-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81F2E8032DF9FF0500708B40 /* SBSansText-Italic.otf */; };
 		81F2E9592DF9FF0500708B40 /* SBSansText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81F2E8042DF9FF0500708B40 /* SBSansText-Light.otf */; };
+		81F6A3EF2E8EFEAE00AC695F /* BasicButtonGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3E52E8EFEAE00AC695F /* BasicButtonGroup+BaseVariations.swift */; };
+		81F6A3F02E8EFEAE00AC695F /* BasicButtonGroupTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3E82E8EFEAE00AC695F /* BasicButtonGroupTypography.swift */; };
+		81F6A3F12E8EFEAE00AC695F /* BasicButtonGroup+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3E62E8EFEAE00AC695F /* BasicButtonGroup+Variations.swift */; };
+		81F6A3F22E8EFEAE00AC695F /* IconButtonGroup+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3EA2E8EFEAE00AC695F /* IconButtonGroup+BaseVariations.swift */; };
+		81F6A3F32E8EFEAE00AC695F /* BasicButtonGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3E72E8EFEAE00AC695F /* BasicButtonGroupSize.swift */; };
+		81F6A3F42E8EFEAE00AC695F /* IconButtonGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3EC2E8EFEAE00AC695F /* IconButtonGroupSize.swift */; };
+		81F6A3F52E8EFEAE00AC695F /* IconButtonGroup+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3EB2E8EFEAE00AC695F /* IconButtonGroup+Variations.swift */; };
+		81F6A3F62E8EFEAE00AC695F /* IconButtonGroupTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F6A3ED2E8EFEAE00AC695F /* IconButtonGroupTypography.swift */; };
 		820F7A98E10920F19277CB49 /* SBSansText-LightItalic.otf in Sources */ = {isa = PBXBuildFile; fileRef = F9A13760FC2D3CE34F04B44F /* SBSansText-LightItalic.otf */; };
 		8D31E1FF75E2E2345BB02C93 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4865EAF86C63B2466DF565F2 /* SDDSThemeCore.xcframework */; };
 		8D4707CBC080C6B2B07B42D4 /* SBSansText-Italic.otf in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D06D3E395EB331A76A9BD /* SBSansText-Italic.otf */; };
@@ -814,6 +822,14 @@
 		81F2E8882DF9FF0500708B40 /* Tooltip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tooltip+Variations.swift"; sourceTree = "<group>"; };
 		81F2E8892DF9FF0500708B40 /* TooltipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSize.swift; sourceTree = "<group>"; };
 		81F2E88A2DF9FF0500708B40 /* TooltipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipTypography.swift; sourceTree = "<group>"; };
+		81F6A3E52E8EFEAE00AC695F /* BasicButtonGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButtonGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6A3E62E8EFEAE00AC695F /* BasicButtonGroup+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicButtonGroup+Variations.swift"; sourceTree = "<group>"; };
+		81F6A3E72E8EFEAE00AC695F /* BasicButtonGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonGroupSize.swift; sourceTree = "<group>"; };
+		81F6A3E82E8EFEAE00AC695F /* BasicButtonGroupTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonGroupTypography.swift; sourceTree = "<group>"; };
+		81F6A3EA2E8EFEAE00AC695F /* IconButtonGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButtonGroup+BaseVariations.swift"; sourceTree = "<group>"; };
+		81F6A3EB2E8EFEAE00AC695F /* IconButtonGroup+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconButtonGroup+Variations.swift"; sourceTree = "<group>"; };
+		81F6A3EC2E8EFEAE00AC695F /* IconButtonGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonGroupSize.swift; sourceTree = "<group>"; };
+		81F6A3ED2E8EFEAE00AC695F /* IconButtonGroupTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonGroupTypography.swift; sourceTree = "<group>"; };
 		8201E0E7836F9D965836D743 /* SBSansDisplay-Regular.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Regular.otf"; sourceTree = "<group>"; };
 		8DD40C795EA7425C475814E6 /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		97EC9AF87C452DF5B93B825E /* SBSansDisplay-Thin.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = "SBSansDisplay-Thin.otf"; sourceTree = "<group>"; };
@@ -1856,6 +1872,28 @@
 			path = Tooltip;
 			sourceTree = "<group>";
 		};
+		81F6A3E92E8EFEAE00AC695F /* BasicButtonGroup */ = {
+			isa = PBXGroup;
+			children = (
+				81F6A3E52E8EFEAE00AC695F /* BasicButtonGroup+BaseVariations.swift */,
+				81F6A3E62E8EFEAE00AC695F /* BasicButtonGroup+Variations.swift */,
+				81F6A3E72E8EFEAE00AC695F /* BasicButtonGroupSize.swift */,
+				81F6A3E82E8EFEAE00AC695F /* BasicButtonGroupTypography.swift */,
+			);
+			path = BasicButtonGroup;
+			sourceTree = "<group>";
+		};
+		81F6A3EE2E8EFEAE00AC695F /* IconButtonGroup */ = {
+			isa = PBXGroup;
+			children = (
+				81F6A3EA2E8EFEAE00AC695F /* IconButtonGroup+BaseVariations.swift */,
+				81F6A3EB2E8EFEAE00AC695F /* IconButtonGroup+Variations.swift */,
+				81F6A3EC2E8EFEAE00AC695F /* IconButtonGroupSize.swift */,
+				81F6A3ED2E8EFEAE00AC695F /* IconButtonGroupTypography.swift */,
+			);
+			path = IconButtonGroup;
+			sourceTree = "<group>";
+		};
 		9348E83A24E2D917E9313984 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1890,6 +1928,8 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81F6A3E92E8EFEAE00AC695F /* BasicButtonGroup */,
+				81F6A3EE2E8EFEAE00AC695F /* IconButtonGroup */,
 				81A3CF562E7D5AA6008ED8D2 /* CodeInput */,
 				81A3CF5B2E7D5AA6008ED8D2 /* TabBar */,
 				81A3CF602E7D5AA6008ED8D2 /* TabBarClear */,
@@ -2142,6 +2182,14 @@
 				81F2E8C12DF9FF0500708B40 /* NotificationCompactTypography.swift in Sources */,
 				81F2E8C22DF9FF0500708B40 /* ToastSize.swift in Sources */,
 				81F2E8C32DF9FF0500708B40 /* CircularProgressBar+BaseVariations.swift in Sources */,
+				81F6A3EF2E8EFEAE00AC695F /* BasicButtonGroup+BaseVariations.swift in Sources */,
+				81F6A3F02E8EFEAE00AC695F /* BasicButtonGroupTypography.swift in Sources */,
+				81F6A3F12E8EFEAE00AC695F /* BasicButtonGroup+Variations.swift in Sources */,
+				81F6A3F22E8EFEAE00AC695F /* IconButtonGroup+BaseVariations.swift in Sources */,
+				81F6A3F32E8EFEAE00AC695F /* BasicButtonGroupSize.swift in Sources */,
+				81F6A3F42E8EFEAE00AC695F /* IconButtonGroupSize.swift in Sources */,
+				81F6A3F52E8EFEAE00AC695F /* IconButtonGroup+Variations.swift in Sources */,
+				81F6A3F62E8EFEAE00AC695F /* IconButtonGroupTypography.swift in Sources */,
 				81F2E8C42DF9FF0500708B40 /* RadioboxGroupTypography.swift in Sources */,
 				81F2E8C52DF9FF0500708B40 /* IconBadgeSize.swift in Sources */,
 				81F2E8C62DF9FF0500708B40 /* Badge+BaseVariations.swift in Sources */,
@@ -2472,7 +2520,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.17.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;
@@ -2573,7 +2621,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.16.0;
+				MARKETING_VERSION = 0.17.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.PlasmaB2CTheme;

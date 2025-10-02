@@ -2,7 +2,7 @@
 
 # Универсальный скрипт для тестирования и деплоя документации Docusaurus
 # Использование: 
-#   ./deploy.sh [--local] [--s3] [ARTIFACT_ID] [VERSION] [BRANCH] [TARGET_TYPE] [THEME_NAME] [CODE_REFERENCE] [--with-server]
+#   ./deploy.sh [--local] [--s3] [ARTIFACT_ID] [VERSION] [BRANCH] [TARGET_TYPE] [THEME_NAME] [CODE_REFERENCE] [--with-server] [--with-changelog]
 
 set -e
 
@@ -25,6 +25,7 @@ S3_REGION="$AWS_REGION"
 # Флаги
 DEPLOY_MODE="local"  # local или s3
 WITH_SERVER=false
+WITH_CHANGELOG=false
 ARGS=()
 
 # Парсим аргументы
@@ -38,6 +39,9 @@ for arg in "$@"; do
             ;;
         --with-server)
             WITH_SERVER=true
+            ;;
+        --with-changelog)
+            WITH_CHANGELOG=true
             ;;
         *)
             ARGS+=("$arg")
@@ -71,6 +75,7 @@ echo "  Theme Name: $THEME_NAME"
 echo "  Code Reference: $CODE_REFERENCE"
 echo "  Docs URL: $DOCS_URL"
 echo "  With Server: $WITH_SERVER"
+echo "  With Changelog: $WITH_CHANGELOG"
 echo ""
 
 # Проверяем зависимости
@@ -109,7 +114,11 @@ echo ""
 
 # Генерируем документацию
 echo "🔧 Генерация документации..."
-./generate-docs.sh "$ARTIFACT_ID" "$VERSION" "$BRANCH_NAME" "$TARGET_TYPE" "$THEME_NAME" "$CODE_REFERENCE" "$DOCS_URL"
+if [[ "$WITH_CHANGELOG" == true ]]; then
+    ./generate-docs.sh "$ARTIFACT_ID" "$VERSION" "$BRANCH_NAME" "$TARGET_TYPE" "$THEME_NAME" "$CODE_REFERENCE" "$DOCS_URL" --with-changelog
+else
+    ./generate-docs.sh "$ARTIFACT_ID" "$VERSION" "$BRANCH_NAME" "$TARGET_TYPE" "$THEME_NAME" "$CODE_REFERENCE" "$DOCS_URL"
+fi
 
 if [[ -d "build/generated/docusaurus" ]]; then
     echo "✅ Генерация прошла успешно"
@@ -287,12 +296,21 @@ echo ""
 echo "  # Локальное тестирование с сервером:"
 echo "  ./deploy.sh --local --with-server"
 echo ""
+echo "  # Локальное тестирование с changelog:"
+echo "  ./deploy.sh --local --with-changelog"
+echo ""
 echo "  # Деплой на S3:"
 echo "  ./deploy.sh --s3"
 echo "  ./deploy.sh --s3 SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents"
+echo ""
+echo "  # Деплой на S3 с changelog:"
+echo "  ./deploy.sh --s3 --with-changelog SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents"
 echo ""
 echo "  # Деплой на S3 с кастомными параметрами:"
 echo "  ./deploy.sh --s3 styles-salute-theme 1.0.0-dev develop swiftui \"Styles Salute Theme\" StylesSaluteTheme"
 echo ""
 echo "  # Локальное тестирование с кастомными параметрами:"
 echo "  ./deploy.sh --local SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents --with-server"
+echo ""
+echo "  # Локальное тестирование с changelog и сервером:"
+echo "  ./deploy.sh --local --with-changelog --with-server SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents"
