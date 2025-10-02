@@ -30,7 +30,7 @@ docusaurus_bump() {
         mv "$temp_file" "$versions_file"
     else
         log "Создаю новый файл versionsArchived.json..."
-        # Создаем новый JSON файл
+        # Создаем новый JSON файл с версией
         cat > "$versions_file" << EOF
 {
   "$VERSION": "$DOCS_URL$BASE_URL"

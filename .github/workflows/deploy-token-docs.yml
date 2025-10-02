@@ -7,20 +7,10 @@ on:
     inputs:
       modules:
         type: string
-        description: 'Список модулей в формате json (например, [":tokens:styles-salute-theme", ":tokens:sddsserv-theme", ":tokens:plasma-b2c-theme", ":tokens:plasma-home-ds-theme"])'
-        required: true
+        description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
+        required: false
       tag:
         description: "Тэг для релиза"
-        required: true
-      theme_name:
-        type: choice
-        description: 'Название темы для документации'
-        options:
-          - plasma-homeds
-          - plasma-b2c
-          - sddsserv
-          - styles-salute
-        default: 'sddsserv'
         required: true
 
 concurrency:
@@ -35,7 +25,6 @@ jobs:
     outputs:
       ref: ${{ steps.prepare.outputs.ref }}
       modules: ${{ steps.prepare.outputs.modules }}
-      theme_name: ${{ steps.prepare.outputs.theme_name }}
 
     steps:
       - name: Prepare modules and tag
@@ -45,13 +34,11 @@ jobs:
             echo "Using modules and tag from repository_dispatch event"
             echo "modules=${{ github.event.client_payload.modules }}" >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.client_payload.tag }}" >> $GITHUB_OUTPUT
-            echo "theme_name=plasma-homeds" >> $GITHUB_OUTPUT
           else
             echo "Using modules and tag from workflow_dispatch input"
             echo "Input modules ${{ github.event.inputs.modules }}"
             echo "modules=${{ github.event.inputs.modules }}" >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
-            echo "theme_name=${{ github.event.inputs.theme_name }}" >> $GITHUB_OUTPUT
           fi
 
   deploy:
@@ -62,4 +49,4 @@ jobs:
     with:
       modules: ${{ needs.state.outputs.modules }}
       ref: ${{ needs.state.outputs.ref }}
-      theme_name: ${{ needs.state.outputs.theme_name }}
+      branch: ${{ github.head_ref || github.ref_name }}

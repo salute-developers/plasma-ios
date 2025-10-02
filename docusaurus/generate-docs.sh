@@ -72,7 +72,28 @@ template_root_dir="./"
 destination_dir="build/generated/docusaurus"
 common_template="$template_root_dir/common-template"
 swiftui_template="$template_root_dir/swiftui-template"
-override_docs="override-docs"
+
+# Определяем путь к override-docs конкретной темы
+case "$THEME_NAME" in
+    "sddsserv")
+        override_docs="../Themes/SDDSservTheme/override-docs"
+        ;;
+    "styles-salute")
+        override_docs="../Themes/StylesSaluteTheme/override-docs"
+        ;;
+    "plasma-b2c")
+        override_docs="../Themes/PlasmaB2CTheme/override-docs"
+        ;;
+    "plasma-homeds")
+        override_docs="../Themes/PlasmaHomeDSTheme/override-docs"
+        ;;
+    *)
+        echo "❌ Неизвестная тема: $THEME_NAME, используем локальный override-docs"
+        override_docs="override-docs"
+        ;;
+esac
+
+echo "🎯 Override-docs для темы $THEME_NAME: $override_docs"
 
 # Создаем директорию назначения
 mkdir -p "$destination_dir"
@@ -85,27 +106,31 @@ cp -r "$common_template"/* "$destination_dir/"
 echo "📁 Копирование swiftui-template..."
 cp -r "$swiftui_template"/* "$destination_dir/"
 
+# Убираем :tokens: префикс из ARTIFACT_ID для URL
+CLEAN_ARTIFACT_ID="${ARTIFACT_ID#:tokens:}"
+
 # Определяем ветку для деплоя
 if [[ "$BRANCH_NAME" == "main" ]]; then
     DEPLOY_BRANCH=""
-    BASE_URL="/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+    BASE_URL="/ios/$CLEAN_ARTIFACT_ID/$VERSION/"
 elif [[ "$BRANCH_NAME" == "develop" ]]; then
     DEPLOY_BRANCH="dev"
-    BASE_URL="/$DEPLOY_BRANCH/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+    BASE_URL="/$DEPLOY_BRANCH/ios/$CLEAN_ARTIFACT_ID/$VERSION/"
 else
     DEPLOY_BRANCH="pr/$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]')"
-    BASE_URL="/$DEPLOY_BRANCH/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/"
+    BASE_URL="/$DEPLOY_BRANCH/ios/$CLEAN_ARTIFACT_ID/$VERSION/"
 fi
 
 # Преобразуем шаблоны
 echo "🔧 Преобразование шаблонов..."
+echo "🔍 DEBUG: DOCS_URL='$DOCS_URL', BASE_URL='$BASE_URL'"
 find "$destination_dir" -type f \( -name "*.md" -o -name "docusaurus.config.ts" \) -exec sed -i.bak \
     -e "s|{{ docs-url }}|$DOCS_URL|g" \
     -e "s|{{ docs-baseUrl }}|$BASE_URL|g" \
     -e "s|{{ docs-artifactId }}|$ARTIFACT_ID|g" \
     -e "s|{{ docs-artifactVersion }}|$VERSION|g" \
     -e "s|{{ docs-target }}|$TARGET_TYPE|g" \
-    -e "s|{{ docs-api-href }}|$DOCS_URL/$DEPLOY_BRANCH/$TARGET_TYPE/$ARTIFACT_ID/$VERSION/|g" \
+    -e "s|{{ docs-api-href }}|$DOCS_URL/$DEPLOY_BRANCH/$TARGET_TYPE/$CLEAN_ARTIFACT_ID/$VERSION/|g" \
     -e "s|{{ docs-theme-name }}|$THEME_NAME|g" \
     -e "s|{{ docs-theme-codeReference }}|$CODE_REFERENCE|g" \
     {} \; 2>/dev/null || true
@@ -125,12 +150,12 @@ if [[ "$WITH_CHANGELOG" == true ]]; then
     echo "📝 Генерация changelog..."
     
     # Проверяем наличие файла release-changelog.md
-    if [[ -f "release-changelog.md" ]]; then
+    if [[ -f "../release-changelog.md" ]]; then
         echo "  Найден файл release-changelog.md"
         
         # Генерируем changelog для данной библиотеки
-        echo "  Парсинг changelog для $ARTIFACT_ID..."
-        ../scripts/parse-changelog.sh "$ARTIFACT_ID" "release-changelog.md" "$destination_dir/docs/CHANGELOG.md"
+        echo "  Парсинг changelog для $CLEAN_ARTIFACT_ID..."
+        ../scripts/parse-changelog.sh "$CLEAN_ARTIFACT_ID" "../release-changelog.md" "$destination_dir/docs/CHANGELOG.md"
         
         if [[ -f "$destination_dir/docs/CHANGELOG.md" ]]; then
             echo "✅ Changelog сгенерирован: $destination_dir/docs/CHANGELOG.md"

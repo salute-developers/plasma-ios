@@ -33,17 +33,39 @@ is_library_relevant() {
         return 0
     fi
     
-    # Проверяем core библиотеки
-    if [[ "$h3_title" == *"Core"* ]] || [[ "$h3_title" == *"SDDS"* ]]; then
-        return 0
+    # Маппинг названий тем
+    case "$LIBRARY_NAME" in
+        "styles-salute-theme")
+            if [[ "$h3_title" == *"plasma-styles-salute"* ]]; then
+                return 0
+            fi
+            ;;
+        "sddsserv-theme")
+            if [[ "$h3_title" == *"sdds-serv"* ]] || [[ "$h3_title" == *"SDDSComponents"* ]]; then
+                return 0
+            fi
+            ;;
+        "plasma-b2c-theme")
+            if [[ "$h3_title" == *"plasma-b2c"* ]]; then
+                return 0
+            fi
+            ;;
+        "plasma-homeds-theme")
+            if [[ "$h3_title" == *"plasma-homeds"* ]]; then
+                return 0
+            fi
+            ;;
+    esac
+    
+    # Проверяем core библиотеки только для соответствующих библиотек
+    if [[ "$LIBRARY_NAME" == *"SDDSComponents"* ]] || [[ "$LIBRARY_NAME" == *"Core"* ]]; then
+        if [[ "$h3_title" == *"Core"* ]] || [[ "$h3_title" == *"SDDSComponents"* ]]; then
+            return 0
+        fi
     fi
     
     # Проверяем содержимое строки
     if [[ -n "$line_content" ]] && [[ "$line_content" == *"$LIBRARY_NAME"* ]]; then
-        return 0
-    fi
-    
-    if [[ -n "$line_content" ]] && [[ "$line_content" == *"SDDS"* ]]; then
         return 0
     fi
     
@@ -69,46 +91,29 @@ extract_library_sections() {
     
     # Читаем файл построчно
     while IFS= read -r line; do
-        # H2 заголовки (основные категории)
+        # H2 заголовки (названия тем/библиотек)
         if [[ "$line" =~ ^##[[:space:]]+(.+)$ ]]; then
             # Сохраняем предыдущую секцию если она была релевантной
             if [[ "$in_library_section" == true ]] && [[ ${#current_section_lines[@]} -gt 0 ]]; then
-                if [[ "$found_any_changes" == false ]]; then
-                    echo "## $current_h2" >> "$output_file"
-                    echo "" >> "$output_file"
-                    found_any_changes=true
-                fi
                 printf '%s\n' "${current_section_lines[@]}" >> "$output_file"
                 echo "" >> "$output_file"
+                found_any_changes=true
             fi
             
             current_h2="${BASH_REMATCH[1]}"
-            in_library_section=false
-            current_h3=""
-            current_section_lines=()
-            
-        # H3 заголовки (компоненты/библиотеки)
-        elif [[ "$line" =~ ^###[[:space:]]+(.+)$ ]]; then
-            # Сохраняем предыдущую секцию если она была релевантной
-            if [[ "$in_library_section" == true ]] && [[ ${#current_section_lines[@]} -gt 0 ]]; then
-                if [[ "$found_any_changes" == false ]]; then
-                    echo "## $current_h2" >> "$output_file"
-                    echo "" >> "$output_file"
-                    found_any_changes=true
-                fi
-                printf '%s\n' "${current_section_lines[@]}" >> "$output_file"
-                echo "" >> "$output_file"
-            fi
-            
-            current_h3="${BASH_REMATCH[1]}"
             current_section_lines=("$line")
             
             # Проверяем релевантность
-            if is_library_relevant "$current_h3" ""; then
+            if is_library_relevant "$current_h2" ""; then
                 in_library_section=true
             else
                 in_library_section=false
             fi
+            
+        # H3 заголовки (компоненты)
+        elif [[ "$line" =~ ^###[[:space:]]+(.+)$ ]]; then
+            # Добавляем к текущей секции
+            current_section_lines+=("$line")
             
         # Обычные строки
         elif [[ "$in_library_section" == true ]]; then

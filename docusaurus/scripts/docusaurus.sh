@@ -54,9 +54,11 @@ check_dependencies() {
 get_project_info() {
     # Читаем параметры из переменных окружения или используем значения по умолчанию
     ARTIFACT_ID=${ARTIFACT_ID:-"SDDSComponents"}
-    VERSION=${VERSION:-"1.0.0"}
     BRANCH_NAME=${BRANCH_NAME:-"main"}
     TARGET_TYPE=${TARGET_TYPE:-"swiftui"}
+    
+    # Отладочный вывод для проверки версии
+    log "DEBUG: VERSION from environment: '$VERSION'"
     
     # Определяем ветку для деплоя
     if [[ "$BRANCH_NAME" == "main" ]]; then
@@ -69,7 +71,22 @@ get_project_info() {
     
     # Базовые URL
     DOCS_URL=${DOCS_URL:-"https://plasma.sberdevices.ru"}
-    BASE_URL="/${DEPLOY_BRANCH}/${TARGET_TYPE}/${ARTIFACT_ID}/${VERSION}/"
+    
+    # Определяем правильный путь для тем
+    if [[ "$ARTIFACT_ID" == *":tokens:"* ]]; then
+        # Для тем используем формат /deploy-branch/ios/theme-name/version/
+        # Извлекаем имя темы из ARTIFACT_ID (убираем :tokens: префикс)
+        THEME_NAME_FROM_ARTIFACT="${ARTIFACT_ID#:tokens:}"
+        if [[ "$DEPLOY_BRANCH" == "current" ]]; then
+            BASE_URL="/ios/${THEME_NAME_FROM_ARTIFACT}/${VERSION}/"
+        else
+            BASE_URL="/${DEPLOY_BRANCH}/ios/${THEME_NAME_FROM_ARTIFACT}/${VERSION}/"
+        fi
+    else
+        # Для компонентов используем стандартный формат
+        BASE_URL="/${DEPLOY_BRANCH}/${TARGET_TYPE}/${ARTIFACT_ID}/${VERSION}/"
+    fi
+    
     DEPLOY_URL="${DEPLOY_BRANCH}/${TARGET_TYPE}/${ARTIFACT_ID}/${VERSION}/"
     
     log "Параметры проекта:"
@@ -102,6 +119,41 @@ transform_template() {
     find "$template_dir" -name "*.bak" -delete
     
     success "Шаблоны преобразованы"
+}
+
+# Функция для обновления versionsArchived.json
+docusaurus_bump() {
+    log "Обновляю список версий..."
+    
+    # Инициализация
+    get_project_info
+    
+    local override_docs="$PWD/override-docs"
+    local versions_file="$override_docs/versionsArchived.json"
+    
+    # Создаем директорию override-docs если не существует
+    mkdir -p "$override_docs"
+    
+    # Создаем или обновляем versionsArchived.json
+    if [[ -f "$versions_file" ]]; then
+        log "Обновляю существующий файл versionsArchived.json..."
+        # Читаем существующий JSON и добавляем новую версию
+        local temp_file=$(mktemp)
+        jq --arg version "$VERSION" --arg url "$DOCS_URL$BASE_URL" \
+           '. + {($version): $url}' "$versions_file" > "$temp_file"
+        mv "$temp_file" "$versions_file"
+    else
+        log "Создаю новый файл versionsArchived.json..."
+        # Создаем новый JSON файл с версией
+        cat > "$versions_file" << EOF
+{
+  "$VERSION": "$DOCS_URL$BASE_URL"
+}
+EOF
+    fi
+    
+    success "Версия $VERSION добавлена в versionsArchived.json"
+    log "Файл сохранен: $versions_file"
 }
 
 # Основная функция

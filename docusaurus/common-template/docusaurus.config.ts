@@ -24,7 +24,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'salute-developers', // Usually your GitHub org/user name.
-  projectName: 'Plasma Android', // Usually your repo name.
+  projectName: 'Plasma iOS', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -64,8 +64,13 @@ const config: Config = {
       title: '{{ docs-theme-name }}',
       items: [
         {
-          href: 'https://github.com/salute-developers/plasma-android',
+          href: 'https://github.com/salute-developers/plasma-ios',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: '{{ docs-api-href }}',
+          label: 'API Docs',
           position: 'right',
         },
         {
@@ -92,7 +97,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/salute-developers/plasma-android',
+              href: 'https://github.com/salute-developers/plasma-ios',
             },
           ],
         },

@@ -5,17 +5,21 @@ on:
     inputs:
       modules:
         type: string
-        description: 'Список модулей в формате json (например, [":tokens:styles-salute-theme", ":tokens:sddsserv-theme", ":tokens:plasma-b2c-theme", ":tokens:plasma-home-ds-theme"])'
-        required: true
+        description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
+        required: false
+        default: '["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
       ref:
         type: string
         description: 'Название ветки, тэга или хэш коммита'
         required: true
-      theme_name:
+      branch:
         type: string
-        description: 'Название темы для документации'
+        description: 'Название ветки для деплоя'
         required: false
-        default: 'plasma-homeds'
+      custom_deploy_path:
+        type: string
+        description: 'Кастомный путь для деплоя (например: test/custom/path/ или experimental/ios/components/)'
+        required: false
 
 jobs:
   changelog:
@@ -38,36 +42,77 @@ jobs:
   deploy:
     name: Deploy docs
     needs: changelog
-    runs-on: ubuntu-latest
-    if: inputs.modules != '' && inputs.modules != '[]' && inputs.ref != ''
+    runs-on: macos-latest
+    environment: sdds
+    if: inputs.ref != ''
     strategy:
       fail-fast: false
       matrix:
-        module: ${{ fromJson(inputs.modules) }}
+        module: 
+          - sddsserv-theme
+          - styles-salute-theme
+          - plasma-b2c-theme
+          - plasma-home-ds-theme
+        include:
+          - module: sddsserv-theme
+            theme_name: sddsserv
+          - module: styles-salute-theme
+            theme_name: styles-salute
+          - module: plasma-b2c-theme
+            theme_name: plasma-b2c
+          - module: plasma-home-ds-theme
+            theme_name: plasma-homeds
     steps:
+      - name: Check if module should be deployed
+        id: check_module
+        run: |
+          # Проверяем, есть ли модуль в списке для деплоя
+          modules='${{ inputs.modules }}'
+          module='${{ matrix.module }}'
+          
+          # Если modules пустое, используем значение по умолчанию
+          if [[ -z "$modules" || "$modules" == "" ]]; then
+            modules='["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
+            echo "🔍 Using default modules list: $modules"
+          fi
+          
+          echo "🔍 Debug info:"
+          echo "  modules='$modules'"
+          echo "  module='$module'"
+          echo "  modules length: ${#modules}"
+          echo "  module length: ${#module}"
+          
+          # Проверяем разные варианты формата
+          if echo "$modules" | grep -q "\"$module\"" || echo "$modules" | grep -q "'$module'" || echo "$modules" | grep -q "$module"; then
+            echo "should_deploy=true" >> $GITHUB_OUTPUT
+            echo "✅ Module '$module' found in modules list"
+          else
+            echo "should_deploy=false" >> $GITHUB_OUTPUT
+            echo "❌ Module '$module' not found in modules list"
+          fi
+      
       - name: Checkout the code
+        if: steps.check_module.outputs.should_deploy == 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ inputs.branch || inputs.ref }}
 
       - name: Create release-changelog.md
+        if: steps.check_module.outputs.should_deploy == 'true'
         shell: bash
         run: |
-          cat > "${{ github.workspace }}/tokens/release-changelog.md" <<EOF
+          cat > "${{ github.workspace }}/release-changelog.md" <<EOF
           ${{ needs.changelog.outputs.content }}
           EOF
 
-      - name: Install s3cmd
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y s3cmd
-
       - name: Set up Xcode
+        if: steps.check_module.outputs.should_deploy == 'true'
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: '16.1'
           
       - name: Install the Apple certificate and provisioning profile
+        if: steps.check_module.outputs.should_deploy == 'true'
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
@@ -78,24 +123,24 @@ jobs:
           ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
 
       - name: Extract branch name
+        if: steps.check_module.outputs.should_deploy == 'true'
         id: extract_branch
         shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        run: |
+          if [[ -n "${{ inputs.branch }}" ]]; then
+            echo "branch=${{ inputs.branch }}" >> $GITHUB_OUTPUT
+          else
+            echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+          fi
 
       - name: Install dependencies
+        if: steps.check_module.outputs.should_deploy == 'true'
         run: |
-          # Устанавливаем Node.js и Yarn
-          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          npm install -g yarn
-          
-          # Устанавливаем jq для работы с JSON
-          sudo apt-get install -y jq
-          
-          # Устанавливаем s3cmd
-          sudo apt-get install -y s3cmd
+          # Устанавливаем Node.js и Yarn через Homebrew
+          brew install node yarn jq s3cmd
 
       - name: Run deploy and collect result
+        if: steps.check_module.outputs.should_deploy == 'true'
         id: deploy
         env:
           S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
@@ -103,41 +148,33 @@ jobs:
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
           S3_REGION: ${{ secrets.S3_REGION }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          ARTIFACT_ID: ${{ matrix.module }}
-          VERSION: ${{ inputs.ref }}
+          ARTIFACT_ID: ":tokens:${{ matrix.module }}"
+          VERSION_INPUT: ${{ inputs.ref }}
           BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
           TARGET_TYPE: swiftui
-          THEME_NAME: ${{ inputs.theme_name }}
+          THEME_NAME: ${{ matrix.theme_name }}
           DOCS_URL: https://plasma.sberdevices.ru
         run: |
-          # Генерируем документацию
-          ./docusaurus/scripts/docusaurus-generate.sh
+          cd docusaurus
           
-          # Собираем документацию
-          ./docusaurus/scripts/docusaurus-build.sh
+          # Отладочная информация о переменных окружения
+          echo "🔍 Отладочная информация о переменных окружения:"
+          echo "  S3_ACCESS_KEY_ID: '${S3_ACCESS_KEY_ID:0:3}***' (длина: ${#S3_ACCESS_KEY_ID})"
+          echo "  S3_SECRET_ACCESS_KEY: '${S3_SECRET_ACCESS_KEY:0:3}***' (длина: ${#S3_SECRET_ACCESS_KEY})"
+          echo "  S3_ENDPOINT: '$S3_ENDPOINT' (длина: ${#S3_ENDPOINT})"
+          echo "  S3_REGION: '$S3_REGION' (длина: ${#S3_REGION})"
+          echo "  S3_BUCKET: '$S3_BUCKET' (длина: ${#S3_BUCKET})"
           
-          # Обновляем список версий
-          ./docusaurus/scripts/docusaurus-bump.sh
+          # Формируем команду деплоя с S3 параметрами как аргументами
+          DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\""
           
-          # Деплоим документацию
-          ./docusaurus/scripts/docusaurus-deploy.sh
-
-      - name: Prepare deploy artifacts
-        if: success()
-        shell: bash
-        run: |
-          module="${{ matrix.module }}"
-          module="${module#:}"
-          safe_path="${module//:/\/}"
-          artifact_name="docusaurus-${module//:/_}-result"
-          mkdir -p artifacts/$safe_path
-          cp build/generated/docusaurus/deploy.json artifacts/$safe_path/deploy.json
-          echo "Uploading $artifact_name from artifacts/$safe_path"
-          echo "ARTIFACT_NAME=$artifact_name" >> $GITHUB_ENV
-
-      - name: Upload deploy result
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: artifacts/
+          # Добавляем кастомный путь деплоя если указан
+          if [[ -n "${{ inputs.custom_deploy_path }}" ]]; then
+            DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\" --deploy-path=\"${{ inputs.custom_deploy_path }}\""
+          fi
+          
+          # Выполняем деплой
+          echo "🚀 Выполняем команду: $DEPLOY_CMD"
+          echo "🔍 S3 параметры переданы как аргументы команды"
+          eval $DEPLOY_CMD
+          
