@@ -51,6 +51,6 @@ struct ListTightTypography: GeneralTypographyConfiguration {
         if size is ListTightSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

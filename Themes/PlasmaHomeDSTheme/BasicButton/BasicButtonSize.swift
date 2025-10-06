@@ -6,10 +6,12 @@ import SDDSThemeCore
 struct BasicButtonSize {
     static let m = BasicButtonSizeM()
     static let s = BasicButtonSizeS()
+    static let xs = BasicButtonSizeXs()
 
     static let all: [ButtonSizeConfiguration] = [
         BasicButtonSize.m,
         BasicButtonSize.s,
+        BasicButtonSize.xs,
     ] 
 }
 struct BasicButtonSizeM: ButtonSizeConfiguration {
@@ -32,6 +34,18 @@ struct BasicButtonSizeS: ButtonSizeConfiguration {
     var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
     var spinnerSize = CGSize(width:22.0, height:22.0)
     var titleHorizontalGap = CGFloat(4.0)
+    public var debugDescription: String {
+        return "BasicButtonSize"
+    }
+}
+struct BasicButtonSizeXs: ButtonSizeConfiguration {
+    var height = CGFloat(32.0)
+    var iconHorizontalGap = CGFloat(4.0)
+    var iconSize = CGSize(width:16.0, height:16.0)
+    var paddings = EdgeInsets(top: 0.0, leading: 12.0, bottom: 0.0, trailing: 12.0)
+    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundS.cornerRadius) as PathDrawer
+    var spinnerSize = CGSize(width:16.0, height:16.0)
+    var titleHorizontalGap = CGFloat(2.0)
     public var debugDescription: String {
         return "BasicButtonSize"
     }

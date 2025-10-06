@@ -51,6 +51,6 @@ struct SegmentItemTypography: GeneralTypographyConfiguration {
         if size is SegmentItemSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

@@ -44,6 +44,6 @@ struct ChipTypography: GeneralTypographyConfiguration {
         if size is ChipSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

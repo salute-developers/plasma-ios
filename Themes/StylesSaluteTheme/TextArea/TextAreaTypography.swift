@@ -44,6 +44,6 @@ struct TextAreaTypography: GeneralTypographyConfiguration {
         if size is TextAreaSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

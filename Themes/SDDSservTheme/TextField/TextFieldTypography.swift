@@ -51,6 +51,6 @@ struct TextFieldTypography: GeneralTypographyConfiguration {
         if size is TextFieldSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

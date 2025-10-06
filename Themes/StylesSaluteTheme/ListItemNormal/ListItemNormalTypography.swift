@@ -51,6 +51,6 @@ struct ListItemNormalTypography: GeneralTypographyConfiguration {
         if size is ListItemNormalSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

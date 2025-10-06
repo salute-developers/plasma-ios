@@ -81,7 +81,7 @@ struct TextAreaSizeS: TextAreaSizeConfiguration {
     var captionTopPadding = CGFloat(12.0)
     var chipContainerHorizontalPadding = CGFloat(6.0)
     var chipsPadding = CGFloat(6.0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
     var endContentPadding = CGFloat(6.0)
     var fieldHeight = CGFloat(40.0)
     var iconActionPadding = CGFloat(6.0)
