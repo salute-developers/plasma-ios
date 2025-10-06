@@ -37,6 +37,6 @@ struct CodeInputTypography: GeneralTypographyConfiguration {
         if size is CodeInputSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

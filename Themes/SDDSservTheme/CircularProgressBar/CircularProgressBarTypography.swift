@@ -65,6 +65,6 @@ struct CircularProgressBarTypography: GeneralTypographyConfiguration {
         if size is CircularProgressBarSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

@@ -30,6 +30,6 @@ struct ToastTypography: GeneralTypographyConfiguration {
         if size is ToastSizeRounded {
             return rounded
         }
-        return nil
+        return pilled
     }
 }

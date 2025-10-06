@@ -44,6 +44,6 @@ struct TextFieldClearTypography: GeneralTypographyConfiguration {
         if size is TextFieldClearSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

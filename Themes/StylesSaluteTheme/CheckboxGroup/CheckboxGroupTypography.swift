@@ -30,6 +30,6 @@ struct CheckboxGroupTypography: GeneralTypographyConfiguration {
         if size is CheckboxGroupSizeS {
             return s
         }
-        return nil
+        return m
     }
 }

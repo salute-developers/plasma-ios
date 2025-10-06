@@ -23,6 +23,6 @@ struct TabBarItemTypography: GeneralTypographyConfiguration {
         if size is TabBarItemSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

@@ -51,6 +51,6 @@ struct ChipGroupWideTypography: GeneralTypographyConfiguration {
         if size is ChipGroupWideSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

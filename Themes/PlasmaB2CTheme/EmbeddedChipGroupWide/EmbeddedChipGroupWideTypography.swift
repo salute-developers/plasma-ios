@@ -44,6 +44,6 @@ struct EmbeddedChipGroupWideTypography: GeneralTypographyConfiguration {
         if size is EmbeddedChipGroupWideSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

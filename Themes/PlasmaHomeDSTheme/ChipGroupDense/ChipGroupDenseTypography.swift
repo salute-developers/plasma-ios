@@ -51,6 +51,6 @@ struct ChipGroupDenseTypography: GeneralTypographyConfiguration {
         if size is ChipGroupDenseSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

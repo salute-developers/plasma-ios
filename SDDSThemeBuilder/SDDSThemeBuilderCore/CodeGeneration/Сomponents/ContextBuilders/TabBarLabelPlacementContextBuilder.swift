@@ -16,7 +16,7 @@ final class TabBarLabelPlacementContextBuilder: CodeGenerationContextBuilder {
     }
     
     var context: String? {
-        let type = "\(component.rawValue)LabelPlacement"
+        let type = "TabBarItemLabelPlacement"
         guard let id = id?.lastKey, let variationId = VariationId(rawValue: id) else {
             return nil
         }

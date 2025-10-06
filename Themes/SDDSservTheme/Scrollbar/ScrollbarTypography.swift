@@ -30,6 +30,6 @@ struct ScrollBarTypography: GeneralTypographyConfiguration {
         if size is ScrollBarSizeS {
             return s
         }
-        return nil
+        return m
     }
 }

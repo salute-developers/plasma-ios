@@ -23,6 +23,6 @@ struct CardClearTypography: GeneralTypographyConfiguration {
         if size is CardClearSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

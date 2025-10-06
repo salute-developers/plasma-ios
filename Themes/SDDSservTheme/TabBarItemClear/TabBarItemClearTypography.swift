@@ -30,6 +30,6 @@ struct TabBarItemClearTypography: GeneralTypographyConfiguration {
         if size is TabBarItemClearSizeM {
             return m
         }
-        return nil
+        return l
     }
 }

@@ -37,6 +37,6 @@ struct IndicatorTypography: GeneralTypographyConfiguration {
         if size is IndicatorSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

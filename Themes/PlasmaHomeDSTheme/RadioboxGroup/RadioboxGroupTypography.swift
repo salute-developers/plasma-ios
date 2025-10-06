@@ -30,6 +30,6 @@ struct RadioboxGroupTypography: GeneralTypographyConfiguration {
         if size is RadioboxGroupSizeS {
             return s
         }
-        return nil
+        return m
     }
 }

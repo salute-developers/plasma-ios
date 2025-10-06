@@ -37,6 +37,6 @@ struct CardClearTypography: GeneralTypographyConfiguration {
         if size is CardClearSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

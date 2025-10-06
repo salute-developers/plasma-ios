@@ -23,6 +23,6 @@ struct TextSkeletonTypography: GeneralTypographyConfiguration {
         if size is TextSkeletonSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }
