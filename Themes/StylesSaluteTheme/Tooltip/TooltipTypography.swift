@@ -30,6 +30,6 @@ struct TooltipTypography: GeneralTypographyConfiguration {
         if size is TooltipSizeS {
             return s
         }
-        return nil
+        return m
     }
 }

@@ -30,6 +30,6 @@ struct TabBarHasLabelClearTypography: GeneralTypographyConfiguration {
         if size is TabBarHasLabelClearSizeM {
             return m
         }
-        return nil
+        return l
     }
 }

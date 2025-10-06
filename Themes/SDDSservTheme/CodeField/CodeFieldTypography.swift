@@ -30,6 +30,6 @@ struct CodeFieldTypography: GeneralTypographyConfiguration {
         if size is CodeFieldSizeM {
             return m
         }
-        return nil
+        return l
     }
 }

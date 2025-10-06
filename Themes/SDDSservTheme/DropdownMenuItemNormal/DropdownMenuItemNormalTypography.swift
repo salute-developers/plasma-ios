@@ -51,6 +51,6 @@ struct DropdownMenuItemNormalTypography: GeneralTypographyConfiguration {
         if size is DropdownMenuItemNormalSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

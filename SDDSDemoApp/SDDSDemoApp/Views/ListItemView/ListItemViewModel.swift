@@ -6,7 +6,7 @@ final class ListItemViewModel: ComponentViewModel<ListItemVariationProvider> {
     @Published var rightContentEnabled: Bool = true
     @Published var disabled: Bool = false
     
-    @Published var layout: ListItemLayout = .normal {
+    @Published var layout: ListItemLayout = .listItemNormal {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)

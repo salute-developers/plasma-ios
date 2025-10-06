@@ -5,7 +5,7 @@ final class ListViewModel: ComponentViewModel<ListVariationProvider> {
     @Published var items: [ListItemData] = []
     @Published var nextItemId: Int = 1
     
-    @Published var layout: ListItemLayout = .normal {
+    @Published var layout: ListItemLayout = .listItemNormal {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)

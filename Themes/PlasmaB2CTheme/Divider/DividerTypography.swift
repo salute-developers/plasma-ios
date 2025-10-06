@@ -23,6 +23,6 @@ struct DividerTypography: GeneralTypographyConfiguration {
         if size is DividerSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

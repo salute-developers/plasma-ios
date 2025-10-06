@@ -23,6 +23,6 @@ struct AvatarGroupTypography: GeneralTypographyConfiguration {
         if size is AvatarGroupSizeS {
             return s
         }
-        return nil
+        return s
     }
 }

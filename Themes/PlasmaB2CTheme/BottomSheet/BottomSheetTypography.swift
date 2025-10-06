@@ -23,6 +23,6 @@ struct BottomSheetTypography: GeneralTypographyConfiguration {
         if size is BottomSheetSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

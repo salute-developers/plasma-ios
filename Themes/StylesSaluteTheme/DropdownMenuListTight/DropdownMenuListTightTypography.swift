@@ -44,6 +44,6 @@ struct DropdownMenuListTightTypography: GeneralTypographyConfiguration {
         if size is DropdownMenuListTightSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

@@ -44,6 +44,6 @@ struct EmbeddedChipGroupDenseTypography: GeneralTypographyConfiguration {
         if size is EmbeddedChipGroupDenseSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

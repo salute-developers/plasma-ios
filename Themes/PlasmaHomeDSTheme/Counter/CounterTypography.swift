@@ -51,6 +51,6 @@ struct CounterTypography: GeneralTypographyConfiguration {
         if size is CounterSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

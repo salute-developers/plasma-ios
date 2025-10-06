@@ -24,6 +24,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case cell = "Cell"
     case counter = "Counter"
     case card = "Card"
+    case cardSolid = "CardSolid"
     case cardClear = "CardClear"
     case segmentItem = "SegmentItem"
     case segment = "Segment"
@@ -47,6 +48,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationCompact = "NotificationCompact"
     case rectSkeleton = "RectSkeleton"
     case textSkeleton = "TextSkeleton"
+    case listItem = "ListItem"
     case listItemNormal = "ListItemNormal"
     case listItemTight = "ListItemTight"
     case dropdownMenuItemNormal = "DropdownMenuItemNormal"
@@ -55,6 +57,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case dropdownMenuListTight = "DropdownMenuListTight"
     case dropdownMenuNormal = "DropdownMenuNormal"
     case dropdownMenuTight = "DropdownMenuTight"
+    case list = "List"
     case listNormal = "ListNormal"
     case listTight = "ListTight"
     case scrollbar = "ScrollBar"
@@ -88,87 +91,92 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-//            .basicButton,
-//            .linkButton,
-//            .iconButton,
-//        // .textField,
-//        // .textFieldClear,
-//        // .textArea,
-//        // .textAreaClear,
-//            .overlay,
-//            .badge,
-//            .badgeClear,
-//            .badgeTransparent,
-//            .iconBadge,
-//            .iconBadgeClear,
-//            .iconBadgeTransparent,
-//            .indicator,
-//            .cell,     
-//            .counter,
-//            .card,
-//            .cardClear,
-//            .segmentItem,
-//            .segment,
-//            .bottomSheet,
-//            .switch,
-//            .embeddedChip,
-//            .chip,
-//            .embeddedChipGroupDense,
-//            .embeddedChipGroupWide,
-//            .chipGroupDense,
-//            .chipGroupWide,
-//            .radiobox,
-//            .radioboxGroup,
-//            .checkbox,
-//            .checkboxGroup,
-//            .avatar,
-//            .avatarGroup,
-//            .circularProgressBar,
-//            .progressBar,
-//            .divider,
-//            .popover,
-//            .tooltip,
-//            .toast,
-//            .modal,
-//            .notificationLoose,
-//            .notificationCompact,
-//            .rectSkeleton,
-//            .textSkeleton,
-//            .listItemNormal,
-//            .listItemTight,
-//            .dropdownMenuItemNormal,
-//            .dropdownMenuItemTight,
-//            .dropdownMenuListNormal,
-//            .dropdownMenuListTight,
-//            .dropdownMenuNormal,
-//            .dropdownMenuTight,
-//            .listNormal,
-//            .listTight,
-//            .scrollbar,
-//            .accordionItemSolidActionStart,
-//            .accordionItemSolidActionEnd,
-//            .accordionItemClearActionStart,
-//            .accordionItemClearActionEnd,
-//            .accordionSolidActionStart,
-//            .accordionSolidActionEnd,
-//            .accordionClearActionStart,
-//            .accordionClearActionEnd,
-//            .spinner,
-//            .loader,
-//            .codeField,
-//            .tabBarItemSolid,
-//            .tabBarItem,
-//            .tabBarItemClear,
-//            .tabBarIslandSolid,
-//            .tabBarIslandClear,
-//            .tabBarIslandHasLabelSolid,
-//            .tabBarIslandHasLabelClear,
-//            .tabBarSolid,
+            .basicButton,
+            .linkButton,
+            .iconButton,
+            .basicButtonGroup,
+            .iconButtonGroup,
+            .textField,
+            .textFieldClear,
+            .textArea,
+            .textAreaClear,
+            .overlay,
+            .badge,
+            .badgeClear,
+            .badgeTransparent,
+            .iconBadge,
+            .iconBadgeClear,
+            .iconBadgeTransparent,
+            .indicator,
+            .cell,     
+            .counter,
+            .card,
+            .cardSolid,
+            .cardClear,
+            .segmentItem,
+            .segment,
+            .bottomSheet,
+            .switch,
+            .embeddedChip,
+            .chip,
+            .embeddedChipGroupDense,
+            .embeddedChipGroupWide,
+            .chipGroupDense,
+            .chipGroupWide,
+            .radiobox,
+            .radioboxGroup,
+            .checkbox,
+            .checkboxGroup,
+            .avatar,
+            .avatarGroup,
+            .circularProgressBar,
+            .progressBar,
+            .divider,
+            .popover,
+            .tooltip,
+            .toast,
+            .modal,
+            .notificationLoose,
+            .notificationCompact,
+            .rectSkeleton,
+            .textSkeleton,
+            .listItem,
+            .listItemNormal,
+            .listItemTight,
+            .dropdownMenuItemNormal,
+            .dropdownMenuItemTight,
+            .dropdownMenuListNormal,
+            .dropdownMenuListTight,
+            .dropdownMenuNormal,
+            .dropdownMenuTight,
+            .list,
+            .listNormal,
+            .listTight,
+            .scrollbar,
+            .accordionItemSolidActionStart,
+            .accordionItemSolidActionEnd,
+            .accordionItemClearActionStart,
+            .accordionItemClearActionEnd,
+            .accordionSolidActionStart,
+            .accordionSolidActionEnd,
+            .accordionClearActionStart,
+            .accordionClearActionEnd,
+            .spinner,
+            .loader,
+            .codeField,
+            .tabBarItemSolid,
+            .tabBarItem,
+            .tabBarItemClear,
+            .tabBarIslandSolid,
+            .tabBarIslandClear,
+            .tabBarIslandHasLabelSolid,
+            .tabBarIslandHasLabelClear,
+            .tabBarSolid,
             .tabBar,
-//            .tabBarClear,
-//            .tabBarHasLabelSolid,
-//            .tabBarHasLabelClear,
-//            .codeInput
+            .tabBarClear,
+            .tabBarHasLabelSolid,
+            .tabBarHasLabelClear,
+            .codeInput
         ]
     }
     
@@ -195,7 +203,7 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .counter:
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .card, .cardClear:
+        case .cardSolid, .cardClear, .card:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .segmentItem:
             GenerateComponentCommand<SegmentItemProps, SegmentItemAppearance, SegmentItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -241,11 +249,11 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .rectSkeleton, .textSkeleton:
             GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
             GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .dropdownMenuNormal, .dropdownMenuTight:
             GenerateComponentCommand<DropdownMenuProps, DropdownMenuAppearance, DropdownMenuSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             GenerateComponentCommand<AccordionItemProps, AccordionItemAppearance, AccordionItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -310,7 +318,7 @@ extension CodeGenerationComponent {
             "CellAppearance"
         case .counter:
             "CounterAppearance"
-        case .card, .cardClear:
+        case .cardSolid, .cardClear, .card:
             "CardAppearance"
         case .segmentItem:
             "SegmentItemAppearance"
@@ -352,11 +360,11 @@ extension CodeGenerationComponent {
             "NotificationAppearance"
         case .rectSkeleton, .textSkeleton:
             "SkeletonAppearance"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
             "ListItemAppearance"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuAppearance"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
             "ListAppearance"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemAppearance"
@@ -408,7 +416,7 @@ extension CodeGenerationComponent {
             "CellSizeConfiguration"
         case .counter:
             "CounterSizeConfiguration"
-        case .card, .cardClear:
+        case .cardSolid, .cardClear, .card:
             "CardSizeConfiguration"
         case .segmentItem:
             "SegmentItemSizeConfiguration"
@@ -450,11 +458,11 @@ extension CodeGenerationComponent {
             "NotificationSizeConfiguration"
         case .rectSkeleton, .textSkeleton:
             "SkeletonSizeConfiguration"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
             "ListItemSizeConfiguration"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuSizeConfiguration"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
             "ListSizeConfiguration"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemSizeConfiguration"
@@ -532,6 +540,8 @@ extension CodeGenerationComponent {
         case .counter:
             "counter_config.json"
         case .card:
+            "card_config.json"
+        case .cardSolid:
             "card_solid_config.json"
         case .cardClear:
             "card_clear_config.json"
@@ -581,6 +591,8 @@ extension CodeGenerationComponent {
             "text_skeleton_config.json"
         case .listItemNormal:
             "list_item_normal_config.json"
+        case .listItem:
+            "list_item_config.json"
         case .listItemTight:
             "list_item_tight_config.json"
         case .dropdownMenuItemNormal:
@@ -595,6 +607,8 @@ extension CodeGenerationComponent {
             "dropdown_menu_normal_config.json"
         case .dropdownMenuTight:
             "dropdown_menu_tight_config.json"
+        case .list:
+            "list_config.json"
         case .listNormal:
             "list_normal_config.json"
         case .listTight:

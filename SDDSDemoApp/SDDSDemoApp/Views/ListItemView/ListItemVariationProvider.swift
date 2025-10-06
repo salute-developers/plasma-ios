@@ -3,8 +3,9 @@ import SDDSComponents
 import SDDSServTheme
 
 public enum ListItemLayout: String, CaseIterable {
-    case normal
-    case tight
+    case listItemNormal
+    case listItemTight
+    case listItem
 }
 
 final class ListItemVariationProvider: VariationProvider {
@@ -13,17 +14,19 @@ final class ListItemVariationProvider: VariationProvider {
     var theme: Theme
     var layout: ListItemLayout
     
-    init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .normal) {
+    init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .listItemNormal) {
         self.theme = theme
         self.layout = layout
     }
 
     var variations: [Variation<ListItemAppearance>] {
         switch layout {
-        case .normal:
+        case .listItemNormal:
             theme.listItemNormalVariations
-        case .tight:
+        case .listItemTight:
             theme.listItemTightVariations
+        case .listItem:
+            theme.listItemVariations
         }
     }
     
