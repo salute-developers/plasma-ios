@@ -63,7 +63,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.TextField.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.TextField.all
         }
     }
     
