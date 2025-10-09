@@ -1077,7 +1077,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconButtonGroup.all
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.IconButtonGroup.all
         }
     }
 }
