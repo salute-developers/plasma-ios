@@ -44,6 +44,6 @@ struct CellTypography: GeneralTypographyConfiguration {
         if size is CellSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

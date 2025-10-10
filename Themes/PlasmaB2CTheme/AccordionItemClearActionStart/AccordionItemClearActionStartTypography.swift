@@ -72,6 +72,6 @@ struct AccordionItemClearActionStartTypography: GeneralTypographyConfiguration {
         if size is AccordionItemClearActionStartSizeXs {
             return xs
         }
-        return nil
+        return h2
     }
 }

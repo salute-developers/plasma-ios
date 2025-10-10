@@ -27,7 +27,11 @@ struct TabBarItemSize: CodeGenerationSize {
             self.iconSize = nullify ? nil : CGFloat.defaultContext
         }
         self.labelPadding = CGFloatContextBuilder(props.labelPadding?.value, nullify: nullify).context
-        self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: true).context
+        if let shape = props.shape {
+            self.shape = PathDrawerContextBuilder(shape: shape, nullify: true).context
+        } else {
+            self.shape = PathDrawerContextBuilder.defaultContext
+        }
         self.labelPlacement = TabBarLabelPlacementContextBuilder(id: props.labelPlacement?.value, component: .tabBarItemSolid).context
     }
     

@@ -27,16 +27,29 @@ public struct BasicButton {
             appearance: appearance
         )
     }
+    public static var xs: ComponentAppearanceVariation<BasicButton, ButtonAppearance> {
+        var appearance = ButtonAppearance.base
+        appearance.size = BasicButtonSize.xs
+        appearance.subtitleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
+        appearance.titleTypography = BasicButtonTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
+
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
     
     public static let all: [Variation<ButtonAppearance>] = [
         BasicButton.m.variation,
         BasicButton.s.variation,
+        BasicButton.xs.variation,
     ]
 }
 
 public struct BasicButtonVariation {
     public struct M {}
     public struct S {}
+    public struct Xs {}
 }
 
 private extension ButtonAppearance {

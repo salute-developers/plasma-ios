@@ -30,6 +30,6 @@ struct PopoverTypography: GeneralTypographyConfiguration {
         if size is PopoverSizeS {
             return s
         }
-        return nil
+        return m
     }
 }

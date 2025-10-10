@@ -8,17 +8,19 @@ final class ListVariationProvider: VariationProvider {
     var theme: Theme
     var layout: ListItemLayout
     
-    init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .normal) {
+    init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .listItemNormal) {
         self.theme = theme
         self.layout = layout
     }
 
     var variations: [Variation<ListAppearance>] {
         switch layout {
-        case .normal:
+        case .listItemNormal:
             theme.listNormalVariations
-        case .tight:
+        case .listItemTight:
             theme.listTightVariations
+        case .listItem:
+            theme.listVariations
         }
     }
     

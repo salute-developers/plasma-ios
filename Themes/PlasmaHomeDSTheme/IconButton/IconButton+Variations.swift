@@ -28,10 +28,22 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.`default`
         )
     }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
     var clear: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "clear",
             appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
         )
     }
     var negative: AppearanceVariation<ButtonAppearance> {
@@ -57,7 +69,9 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             originalVariation: self,
             styles: [
                 self.`default`,
+                self.accent,
                 self.clear,
+                self.dark,
                 self.negative,
                 self.secondary,
                 self.warning,
@@ -93,10 +107,22 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.`default`
         )
     }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
     var clear: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "clear",
             appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
         )
     }
     var negative: AppearanceVariation<ButtonAppearance> {
@@ -122,7 +148,9 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             originalVariation: self,
             styles: [
                 self.`default`,
+                self.accent,
                 self.clear,
+                self.dark,
                 self.negative,
                 self.secondary,
                 self.warning,
@@ -158,10 +186,22 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             appearance: appearance.`default`
         )
     }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
     var clear: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "clear",
             appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
         )
     }
     var negative: AppearanceVariation<ButtonAppearance> {
@@ -187,7 +227,88 @@ public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconBu
             originalVariation: self,
             styles: [
                 self.`default`,
+                self.accent,
                 self.clear,
+                self.dark,
+                self.negative,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<IconButton, ButtonAppearance, IconButtonVariation.Xs> {
+    
+    var xs: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        var size =  IconButtonAnySize(size: appearance.size)
+        size.height = CGFloat(32.0)
+        size.iconSize = CGSize(width:16.0, height:16.0)
+        size.paddings = EdgeInsets(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0)
+        size.spinnerSize = CGSize(width:16.0, height:16.0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var clear: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "clear",
+            appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
+        )
+    }
+    var negative: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var secondary: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.clear,
+                self.dark,
                 self.negative,
                 self.secondary,
                 self.warning,
@@ -207,10 +328,22 @@ public extension ComponentAppearanceVariation<IconButton, ButtonAppearance> {
             appearance: appearance.`default`
         )
     }
+    var accent: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
     var clear: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "clear",
             appearance: appearance.clear
+        )
+    }
+    var dark: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "dark",
+            appearance: appearance.dark
         )
     }
     var negative: AppearanceVariation<ButtonAppearance> {
@@ -236,7 +369,9 @@ public extension ComponentAppearanceVariation<IconButton, ButtonAppearance> {
             originalVariation: self,
             styles: [
                 self.`default`,
+                self.accent,
                 self.clear,
+                self.dark,
                 self.negative,
                 self.secondary,
                 self.warning,
@@ -257,9 +392,25 @@ private extension ButtonAppearance {
         return appearance
     }
     
+    var accent: ButtonAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccentActive, hoveredColor: ColorToken.surfaceDefaultAccentHover, selectedColor: .clearColor)
+        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.surfaceOnDarkSolidDefault, highlightedColor: ColorToken.surfaceOnDarkSolidDefaultActive, hoveredColor: ColorToken.surfaceOnDarkSolidDefaultHover, selectedColor: .clearColor)
+        return appearance
+    }
+    
     var clear: ButtonAppearance {
         var appearance = self
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: .clearColor)
+        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidDefault, highlightedColor: ColorToken.surfaceDefaultSolidDefaultActive, hoveredColor: ColorToken.surfaceDefaultSolidDefaultHover, selectedColor: .clearColor)
+        return appearance
+    }
+    
+    var dark: ButtonAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidSecondary, highlightedColor: ColorToken.surfaceDefaultSolidSecondaryActive, hoveredColor: ColorToken.surfaceDefaultSolidSecondaryHover, selectedColor: .clearColor)
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidDefault, highlightedColor: ColorToken.surfaceDefaultSolidDefaultActive, hoveredColor: ColorToken.surfaceDefaultSolidDefaultHover, selectedColor: .clearColor)
         return appearance

@@ -44,6 +44,6 @@ struct BadgeClearTypography: GeneralTypographyConfiguration {
         if size is BadgeClearSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

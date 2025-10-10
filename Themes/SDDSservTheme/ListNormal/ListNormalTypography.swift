@@ -51,6 +51,6 @@ struct ListNormalTypography: GeneralTypographyConfiguration {
         if size is ListNormalSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

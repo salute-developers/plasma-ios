@@ -23,6 +23,6 @@ struct OverlayTypography: GeneralTypographyConfiguration {
         if size is OverlaySizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

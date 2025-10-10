@@ -37,6 +37,6 @@ struct NotificationLooseTypography: GeneralTypographyConfiguration {
         if size is NotificationLooseSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

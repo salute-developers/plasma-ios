@@ -42,7 +42,7 @@ jobs:
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16' \
           -resultBundlePath ../TestResults.xcresult
 
       - name: Upload xcresult as artifact if failed

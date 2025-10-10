@@ -24,7 +24,7 @@ extension EnvironmentValueProvider {
         self.set(value: Switch.m.appearance, forKey: SwitchAppearance.self)
         self.set(value: TextArea.m.default.appearance, forKey: TextAreaAppearance.self)
         self.set(value: TextField.m.default.appearance, forKey: TextFieldAppearance.self)
-        self.set(value: Card.m.appearance, forKey: CardAppearance.self)
+        self.set(value: CardSolid.m.appearance, forKey: CardAppearance.self)
         self.set(value: BottomSheet.default.appearance, forKey: BottomSheetAppearance.self)
         self.set(value: Divider.default.appearance, forKey: DividerAppearance.self)
         self.set(value: Overlay.default.appearance, forKey: OverlayAppearance.self)

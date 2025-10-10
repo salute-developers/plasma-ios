@@ -63,7 +63,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.TextField.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.TextField.all
         }
     }
     
@@ -444,16 +444,29 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var cardVariations: [Variation<CardAppearance>] {
+    var cardSolidVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
-            SDDSServTheme.Card.all
+            SDDSServTheme.CardSolid.all
         case .stylesSalute:
             []
         case .plasmaB2CTheme:
-            PlasmaB2CTheme.Card.all
+            PlasmaB2CTheme.CardSolid.all
         case .plasmaHomeDSTheme:
             []
+        }
+    }
+    
+    var cardVariations: [Variation<CardAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            []
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Card.all
         }
     }
     
@@ -492,7 +505,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.CircularProgressBar.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.CircularProgressBar.all
         }
     }
     
@@ -544,7 +557,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.Tooltip.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.Tooltip.all
         }
     }
     
@@ -626,6 +639,19 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var listItemVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            []
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.ListItem.all
+        }
+    }
+    
     var listItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -649,6 +675,19 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.ListItemTight.all
         case .plasmaHomeDSTheme:
             []
+        }
+    }
+    
+    var listVariations: [Variation<ListAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            []
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.List.all
         }
     }
     
@@ -856,7 +895,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.Spinner.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.Spinner.all
         }
     }
     
@@ -869,7 +908,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.Loader.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.Loader.all
         }
     }
     
@@ -1025,7 +1064,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.BasicButtonGroup.all
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.BasicButtonGroup.all
         }
     }
     
@@ -1038,7 +1077,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return PlasmaB2CTheme.IconButtonGroup.all
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.IconButtonGroup.all
         }
     }
 }

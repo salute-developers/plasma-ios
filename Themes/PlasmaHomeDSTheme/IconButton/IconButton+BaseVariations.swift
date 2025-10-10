@@ -32,11 +32,21 @@ public struct IconButton {
             appearance: appearance
         )
     }
+    public static var xs: ComponentAppearanceVariation<IconButton, ButtonAppearance> {
+        var appearance = ButtonAppearance.base
+        appearance.size = IconButtonSize.xs
+
+        return .init(
+            name: "xs",
+            appearance: appearance
+        )
+    }
     
     public static let all: [Variation<ButtonAppearance>] = [
         IconButton.l.variation,
         IconButton.m.variation,
         IconButton.s.variation,
+        IconButton.xs.variation,
     ]
 }
 
@@ -44,6 +54,7 @@ public struct IconButtonVariation {
     public struct L {}
     public struct M {}
     public struct S {}
+    public struct Xs {}
 }
 
 private extension ButtonAppearance {

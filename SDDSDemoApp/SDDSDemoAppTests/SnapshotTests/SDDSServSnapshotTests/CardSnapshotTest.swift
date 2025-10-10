@@ -18,19 +18,19 @@ final class CardSnapshotTest: XCTestCase {
     
     @MainActor
     func testCardLHorizontal() async throws {
-        let appearance = Card.l.appearance
+        let appearance = CardSolid.l.appearance
         try await runSnapshotTest(view: CardLHorizontal(apperance: appearance))
     }
     
     @MainActor
     func testCardMVertical() async throws {
-        let appearance = Card.m.appearance
+        let appearance = CardSolid.m.appearance
         try await runSnapshotTest(view: CardMVertical(appearance: appearance))
     }
     
     @MainActor
     func testCardSHorizontal() async throws {
-        let appearance = Card.s.appearance
+        let appearance = CardSolid.s.appearance
         try await runSnapshotTest(view: CardSHorizontal(appearance: appearance))
     }
     

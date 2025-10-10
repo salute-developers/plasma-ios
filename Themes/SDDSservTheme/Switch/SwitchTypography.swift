@@ -37,6 +37,6 @@ struct SwitchTypography: GeneralTypographyConfiguration {
         if size is SwitchSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

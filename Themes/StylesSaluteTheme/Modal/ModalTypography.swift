@@ -23,6 +23,6 @@ struct ModalTypography: GeneralTypographyConfiguration {
         if size is ModalSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

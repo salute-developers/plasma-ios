@@ -23,6 +23,6 @@ struct RectSkeletonTypography: GeneralTypographyConfiguration {
         if size is RectSkeletonSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

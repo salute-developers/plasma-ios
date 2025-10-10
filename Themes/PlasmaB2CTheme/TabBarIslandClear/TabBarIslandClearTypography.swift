@@ -30,6 +30,6 @@ struct TabBarIslandClearTypography: GeneralTypographyConfiguration {
         if size is TabBarIslandClearSizeM {
             return m
         }
-        return nil
+        return l
     }
 }

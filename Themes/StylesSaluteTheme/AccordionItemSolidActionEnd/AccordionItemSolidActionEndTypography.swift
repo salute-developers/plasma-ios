@@ -72,6 +72,6 @@ struct AccordionItemSolidActionEndTypography: GeneralTypographyConfiguration {
         if size is AccordionItemSolidActionEndSizeXs {
             return xs
         }
-        return nil
+        return h2
     }
 }
