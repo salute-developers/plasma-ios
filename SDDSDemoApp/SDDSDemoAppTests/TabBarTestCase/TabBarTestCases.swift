@@ -573,6 +573,91 @@ struct TabBarSolidLShadowRoundedDefault: View {
     }
 }
 
+/**
+ TabBarIsland с indicator
+ */
+struct TabBarIslandIndicator: View {
+    var appearance: TabBarIslandAppearance
+    @State var selectedIndex: Int = 1
+    
+    var body: some View {
+        SDDSTabBarIsland(
+            items: (0..<3).map { index in
+                TabBarItemData(
+                    content: AnyView(iconForTest),
+                    selectedContent: AnyView(selectedIcon),
+                    text: "Label",
+                    appearance: appearance.tabBarItemAppearance,
+                    extra: AnyView(indicatorForTest)
+                )
+            },
+            selectedIndex: $selectedIndex,
+            appearance: appearance
+        )
+    }
+}
+
+/**
+ TabBarIsland с customWeight
+ */
+struct TabBarIslandCustomWeight: View {
+    var appearance: TabBarIslandAppearance
+    var customWidthEnabled: Bool = true
+    @State var selectedIndex: Int = 1
+    
+    var body: some View {
+        SDDSTabBarIsland(
+            items: tabBarItems,
+            selectedIndex: $selectedIndex,
+            appearance: appearance
+        )
+    }
+    
+    private var tabBarItems: [TabBarItemData] {
+        var result = (0..<2).map { index in
+            TabBarItemData(
+                content: AnyView(iconForTest),
+                selectedContent: AnyView(selectedIcon),
+                text: "Label",
+                appearance: appearance.tabBarItemAppearance,
+                extra: nil
+            )
+        }
+        if customWidthEnabled {
+            let middleIndex = result.count / 2
+            result.insert(
+                TabBarItemData(
+                    content: AnyView(assistant),
+                    selectedContent: AnyView(assistant),
+                    text: "",
+                    contentWidth: assistantContentWidth,
+                    allowSelection: false,
+                    disableText: true,
+                    appearance: appearance.tabBarItemAppearance,
+                    extra: nil,
+                    onTap: {}
+                ),
+                at: middleIndex
+            )
+        }
+        return result
+    }
+}
+
+private let assistantContentWidth: CGFloat = 44
+
+@ViewBuilder
+private var assistant: some View {
+    VStack(spacing: 0) {
+        Spacer()
+        Image(systemName: "house.circle.fill")
+            .resizable()
+            .renderingMode(.template)
+            .frame(width: assistantContentWidth, height: 44)
+        Spacer()
+    }
+}
+
 @ViewBuilder
 private var iconForTest: some View {
     Asset.starOutline36.image
