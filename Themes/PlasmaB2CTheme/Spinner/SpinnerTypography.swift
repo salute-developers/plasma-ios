@@ -72,6 +72,6 @@ struct SpinnerTypography: GeneralTypographyConfiguration {
         if size is SpinnerSizeXxs {
             return xxs
         }
-        return nil
+        return l
     }
 }

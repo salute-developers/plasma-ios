@@ -23,6 +23,6 @@ struct ProgressBarTypography: GeneralTypographyConfiguration {
         if size is ProgressBarSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

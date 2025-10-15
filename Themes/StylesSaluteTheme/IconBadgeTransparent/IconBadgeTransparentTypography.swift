@@ -44,6 +44,6 @@ struct IconBadgeTransparentTypography: GeneralTypographyConfiguration {
         if size is IconBadgeTransparentSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

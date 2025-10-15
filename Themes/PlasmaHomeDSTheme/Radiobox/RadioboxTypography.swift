@@ -37,6 +37,6 @@ struct RadioboxTypography: GeneralTypographyConfiguration {
         if size is RadioboxSizeS {
             return s
         }
-        return nil
+        return l
     }
 }

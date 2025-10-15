@@ -51,6 +51,6 @@ struct TextAreaClearTypography: GeneralTypographyConfiguration {
         if size is TextAreaClearSizeXs {
             return xs
         }
-        return nil
+        return l
     }
 }

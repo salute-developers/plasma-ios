@@ -23,6 +23,6 @@ struct LoaderTypography: GeneralTypographyConfiguration {
         if size is LoaderSizeDefault {
             return `default`
         }
-        return nil
+        return `default`
     }
 }

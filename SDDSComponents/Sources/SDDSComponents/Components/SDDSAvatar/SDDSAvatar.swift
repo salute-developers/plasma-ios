@@ -179,10 +179,10 @@ public struct SDDSAvatar<Content: View>: View {
                 case .gradient(let gradientToken):
                     ZStack {
                         Rectangle()
-                            .fill(.white)
+                            .fill(gradientBackgroundColor)
                             .shape(pathDrawer: appearance.size.pathDrawer)
                         Rectangle()
-                            .fill(.white)
+                            .fill(gradientBackgroundColor)
                             .gradient(gradientToken, colorScheme: colorScheme)
                             .opacity(appearance.backgroundOpacity)
                             .shape(pathDrawer: appearance.size.pathDrawer)
@@ -209,6 +209,10 @@ public struct SDDSAvatar<Content: View>: View {
                 .resizable()
                 .scaledToFill()
         }
+    }
+    
+    private var gradientBackgroundColor: Color {
+        colorScheme == .dark ? .black : .white
     }
     
     private var statusView: some View {

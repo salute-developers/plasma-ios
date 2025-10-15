@@ -44,6 +44,6 @@ struct AvatarTypography: GeneralTypographyConfiguration {
         if size is AvatarSizeXxl {
             return xxl
         }
-        return nil
+        return l
     }
 }
