@@ -136,6 +136,9 @@
 		817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */; };
 		817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D472E1F866C00B9286C /* ScrollbarView.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
+		8198F86E2E9F692600CEB3D5 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198F86C2E9F692600CEB3D5 /* WheelViewModel.swift */; };
+		8198F86F2E9F692600CEB3D5 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198F86B2E9F692600CEB3D5 /* WheelView.swift */; };
+		8198F8702E9F692600CEB3D5 /* WheelVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198F86A2E9F692600CEB3D5 /* WheelVariationProvider.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
 		819A03C02E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A03BF2E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift */; };
@@ -322,6 +325,9 @@
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
+		8198F86A2E9F692600CEB3D5 /* WheelVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelVariationProvider.swift; sourceTree = "<group>"; };
+		8198F86B2E9F692600CEB3D5 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		8198F86C2E9F692600CEB3D5 /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		819A03BF2E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandVariationProvider.swift; sourceTree = "<group>"; };
@@ -662,6 +668,7 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8198F86D2E9F692600CEB3D5 /* WheelView */,
 				81C6F67F2E8A7846004B8E7E /* ButtonGroupView */,
 				81117E722E7BD6180063A7EB /* CodeInputView */,
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
@@ -947,6 +954,16 @@
 				81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */,
 			);
 			path = ButtonView;
+			sourceTree = "<group>";
+		};
+		8198F86D2E9F692600CEB3D5 /* WheelView */ = {
+			isa = PBXGroup;
+			children = (
+				8198F86A2E9F692600CEB3D5 /* WheelVariationProvider.swift */,
+				8198F86B2E9F692600CEB3D5 /* WheelView.swift */,
+				8198F86C2E9F692600CEB3D5 /* WheelViewModel.swift */,
+			);
+			path = WheelView;
 			sourceTree = "<group>";
 		};
 		8199A1702C3BF94500AD650A /* Constants */ = {
@@ -1287,6 +1304,9 @@
 				816243612CB9430200506E1C /* CheckboxGroupView.swift in Sources */,
 				8174BA502D5DFB6300EA3E68 /* CheckboxVariationProvider.swift in Sources */,
 				8166B46F2D5C9F3A0044A680 /* AvatarVariationProvider.swift in Sources */,
+				8198F86E2E9F692600CEB3D5 /* WheelViewModel.swift in Sources */,
+				8198F86F2E9F692600CEB3D5 /* WheelView.swift in Sources */,
+				8198F8702E9F692600CEB3D5 /* WheelVariationProvider.swift in Sources */,
 				693FF15B2DE49A6700E14D0E /* DividerVariationProvider.swift in Sources */,
 				8161ED772E09507A00141F4F /* TextLineCounter.swift in Sources */,
 				819A382F2CC6928700A1377F /* ChipGroupView.swift in Sources */,
@@ -1556,7 +1576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 88;
+				CURRENT_PROJECT_VERSION = 89;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = KDMYYG676V;
 				ENABLE_PREVIEWS = YES;
@@ -1596,12 +1616,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 88;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 89;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1619,10 +1637,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkaltyrin.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "SDDS Demo Distribution";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
