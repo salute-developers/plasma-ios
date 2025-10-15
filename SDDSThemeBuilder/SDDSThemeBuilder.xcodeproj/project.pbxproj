@@ -451,6 +451,10 @@
 		81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934322DEDF5CB00B76E38 /* ToastAppearance.swift */; };
 		81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934332DEDF5CB00B76E38 /* ToastSize.swift */; };
 		81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934372DEDF5D600B76E38 /* ToastProps.swift */; };
+		81F147242E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F147232E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift */; };
+		81F147282E9EDBED00A9A1D4 /* WheelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F147262E9EDBED00A9A1D4 /* WheelSize.swift */; };
+		81F147292E9EDBED00A9A1D4 /* WheelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F147252E9EDBED00A9A1D4 /* WheelAppearance.swift */; };
+		81F1472B2E9EDC0E00A9A1D4 /* WheelProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */; };
 		81F635D32DBB8EDA003C8C26 /* AvatarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */; };
 		81F635D72DBB9106003C8C26 /* AvatarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D62DBB9106003C8C26 /* AvatarSize.swift */; };
 		81F635D82DBB9106003C8C26 /* AvatarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */; };
@@ -975,6 +979,10 @@
 		81E934322DEDF5CB00B76E38 /* ToastAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAppearance.swift; sourceTree = "<group>"; };
 		81E934332DEDF5CB00B76E38 /* ToastSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSize.swift; sourceTree = "<group>"; };
 		81E934372DEDF5D600B76E38 /* ToastProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastProps.swift; sourceTree = "<group>"; };
+		81F147232E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemAlignmentContextBuilder.swift; sourceTree = "<group>"; };
+		81F147252E9EDBED00A9A1D4 /* WheelAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelAppearance.swift; sourceTree = "<group>"; };
+		81F147262E9EDBED00A9A1D4 /* WheelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelSize.swift; sourceTree = "<group>"; };
+		81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelProps.swift; sourceTree = "<group>"; };
 		81F635D22DBB8ED7003C8C26 /* AvatarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarProps.swift; sourceTree = "<group>"; };
 		81F635D52DBB9106003C8C26 /* AvatarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAppearance.swift; sourceTree = "<group>"; };
 		81F635D62DBB9106003C8C26 /* AvatarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSize.swift; sourceTree = "<group>"; };
@@ -1382,6 +1390,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				81F147232E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift */,
 				81E91BD52E71CC7300CACED3 /* NotificationContentButtonLayoutContextBuilder.swift */,
 				81E91BD62E71CC7300CACED3 /* NotificationContentIconPlacementContextBuilder.swift */,
 				8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */,
@@ -1435,6 +1444,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */,
 				81DE8FA42E7BDB32005D24FE /* ButtonGroupProps.swift */,
 				81E91BC52E71CABF00CACED3 /* NotificationContentProps.swift */,
 				81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */,
@@ -1486,6 +1496,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81F147272E9EDBED00A9A1D4 /* Wheel */,
 				81DE8FA82E7BDC05005D24FE /* ButtonGroup */,
 				81E91BC22E71CA9300CACED3 /* NotificationContent */,
 				81225C3E2E6712D100AA1EFB /* CodeInput */,
@@ -2334,6 +2345,15 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		81F147272E9EDBED00A9A1D4 /* Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				81F147252E9EDBED00A9A1D4 /* WheelAppearance.swift */,
+				81F147262E9EDBED00A9A1D4 /* WheelSize.swift */,
+			);
+			path = Wheel;
+			sourceTree = "<group>";
+		};
 		81F635D12DBB8D53003C8C26 /* Avatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2824,6 +2844,7 @@
 				81C3D7E22DAE430B0090739E /* BottomSheetProps.swift in Sources */,
 				81DE8FA92E7BDC05005D24FE /* ButtonGroupSize.swift in Sources */,
 				81DE8FAA2E7BDC05005D24FE /* ButtonGroupAppearance.swift in Sources */,
+				81F1472B2E9EDC0E00A9A1D4 /* WheelProps.swift in Sources */,
 				693FEF352DE4663F00E14D0E /* DividerSize.swift in Sources */,
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
@@ -2943,6 +2964,7 @@
 				812DB6E92D55E3FB00D3F4A3 /* ColorTokenContextBuilder.swift in Sources */,
 				815F42D02D48BD8600F97E63 /* CodeGenerationInput.swift in Sources */,
 				81A7534E2D47DE03006E1BE7 /* TextFieldAppearance.swift in Sources */,
+				81F147242E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift in Sources */,
 				81CB10022C258823003B1064 /* TemplateRendererError.swift in Sources */,
 				8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */,
 				812DB7162D56597700D3F4A3 /* DefaultValueContextBuilder.swift in Sources */,
@@ -2986,6 +3008,8 @@
 				81E1EE5D2BE3B14600F86AE1 /* InstallFontsCommand.swift in Sources */,
 				81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */,
 				81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */,
+				81F147282E9EDBED00A9A1D4 /* WheelSize.swift in Sources */,
+				81F147292E9EDBED00A9A1D4 /* WheelAppearance.swift in Sources */,
 				812DB6E32D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift in Sources */,
 				812DB6E52D55E3DE00D3F4A3 /* ComponentStyleContextBuilder.swift in Sources */,
 				817539802BD0088400138866 /* Logger.swift in Sources */,
