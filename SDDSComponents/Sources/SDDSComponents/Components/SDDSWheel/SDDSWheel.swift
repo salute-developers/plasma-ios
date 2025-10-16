@@ -10,7 +10,7 @@ import SwiftUI
  - Несколько колес для выбора различных значений
  - Настраиваемое количество видимых элементов
  - Различные варианты выравнивания элементов
- - Дополнительный текст и описания
+ - Дополнительный текст и описания для каждого колеса
  - Иконки управления (вверх/вниз)
  - Разделители между колесами
  - Эффекты масштабирования и прозрачности при прокрутке
@@ -19,12 +19,13 @@ import SwiftUI
  ```swift
  SDDSWheel(
      wheels: [
-         WheelData(items: ["01", "02", "03", ...]),
-         WheelData(items: ["Январь", "Февраль", "Март", ...]),
-         WheelData(items: ["2020", "2021", "2022", ...])
+         WheelData(items: ["01", "02", "03", ...], description: "День"),
+         WheelData(items: ["Январь", "Февраль", "Март", ...], description: "Месяц"),
+         WheelData(items: ["2020", "2021", "2022", ...], description: "Год")
      ],
      selection: $selectedValues,
-     description: "Выберите дату"
+     wheelCount: 3,
+     visibleItemsCount: 5
  )
  .wheelAppearance(appearance)
  ```
@@ -42,9 +43,6 @@ public struct SDDSWheel: View {
     // Привязка к выбранным значениям
     @Binding private var selection: [Int]
     
-    // Опциональное описание
-    private let description: String?
-    
     // Количество столбцов-колес
     private let wheelCount: Int
     
@@ -54,67 +52,22 @@ public struct SDDSWheel: View {
     public init(
         wheels: [WheelData],
         selection: Binding<[Int]>,
-        description: String? = nil,
         wheelCount: Int,
         visibleItemsCount: Int
     ) {
         self.wheels = wheels
         self._selection = selection
-        self.description = description
         self.wheelCount = wheelCount
         self.visibleItemsCount = visibleItemsCount
     }
     
     public var body: some View {
-        VStack(spacing: 0) {
-            // Описание (если есть)
-            if let description = description, !description.isEmpty {
-                Text(description)
-                    .foregroundColor(currentColor(for: appearance.descriptionColor))
-                    .typography(descriptionTypography)
-                    .padding(.bottom, appearance.size.descriptionPadding)
-            }
-            
-            // Область колес с иконками управления
-            HStack(spacing: appearance.size.separatorSpacing) {
-                ForEach(wheels.indices, id: \.self) { index in
-                    VStack(spacing: appearance.size.itemMinSpacing) {
-                        // Иконка вверх
-                        if let controlIconUp = appearance.controlIconUp {
-                            Button(action: {
-                                scrollUp(wheelIndex: index)
-                            }) {
-                                controlIconUp
-                                    .resizable()
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(currentColor(for: appearance.controlIconUpColor))
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                        
-                        // Колесо
-                        wheelColumn(for: index)
-                        
-                        // Иконка вниз
-                        if let controlIconDown = appearance.controlIconDown {
-                            Button(action: {
-                                scrollDown(wheelIndex: index)
-                            }) {
-                                controlIconDown
-                                    .resizable()
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(currentColor(for: appearance.controlIconDownColor))
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    
-                    // Разделитель между колесами (кроме последнего)
-                    if index < wheels.count - 1 {
-                        Rectangle()
-                            .fill(currentColor(for: appearance.separatorColor))
-                            .frame(width: 1)
-                    }
+        HStack(spacing: 0) {
+            ForEach(Array(wheels.indices), id: \.self) { index in
+                wheelWithControls(at: index)
+                
+                if index < wheels.count - 1 {
+                    wheelSeparator()
                 }
             }
         }
@@ -127,6 +80,64 @@ public struct SDDSWheel: View {
     }
     
     // MARK: - Private Views
+    
+    @ViewBuilder
+    private func wheelWithControls(at index: Int) -> some View {
+        VStack(spacing: appearance.size.itemMinSpacing) {
+            controlIconUp(for: index)
+            wheelWithDescription(at: index)
+            controlIconDown(for: index)
+        }
+    }
+    
+    @ViewBuilder
+    private func controlIconUp(for index: Int) -> some View {
+        if let controlIconUp = appearance.controlIconUp {
+            Button(action: {
+                scrollUp(wheelIndex: index)
+            }) {
+                controlIconUp
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(currentColor(for: appearance.controlIconUpColor))
+            }
+            .buttonStyle(PlainButtonStyle())
+        }
+    }
+    
+    @ViewBuilder
+    private func controlIconDown(for index: Int) -> some View {
+        if let controlIconDown = appearance.controlIconDown {
+            Button(action: {
+                scrollDown(wheelIndex: index)
+            }) {
+                controlIconDown
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(currentColor(for: appearance.controlIconDownColor))
+            }
+            .buttonStyle(PlainButtonStyle())
+        }
+    }
+    
+    @ViewBuilder
+    private func wheelWithDescription(at index: Int) -> some View {
+        wheelColumn(for: index)
+    }
+    
+    @ViewBuilder
+    private func wheelSeparator() -> some View {
+        ZStack {
+            Color.clear
+                .frame(width: appearance.size.separatorSpacing)
+            
+            if let dividerAppearance = appearance.dividerAppearance {
+                SDDSDivider(appearance: dividerAppearance)
+                    .rotationEffect(.degrees(90))
+                    .frame(maxHeight: .infinity)
+            }
+        }
+    }
     
     @ViewBuilder
     private func wheelColumn(for wheelIndex: Int) -> some View {
@@ -151,44 +162,92 @@ public struct SDDSWheel: View {
     }
     
     @ViewBuilder
+    private func descriptionOverlayForWheel(description: String, wheelIndex: Int, geometry: GeometryProxy) -> some View {
+        VStack(spacing: 0) {
+            Spacer()
+            
+            // Невидимый выбранный элемент для точного позиционирования
+            if wheelIndex < wheels.count && selection[wheelIndex] < wheels[wheelIndex].items.count {
+                let selectedItem = wheels[wheelIndex].items[selection[wheelIndex]]
+                let alignment = getAlignment(for: wheelIndex)
+                
+                HStack(spacing: appearance.size.itemTextAfterPadding) {
+                    if alignment == .trailing || alignment == .center {
+                        Spacer()
+                    }
+                    
+                    Text(selectedItem.text)
+                        .typography(itemTextTypography)
+                    
+                    if let textAfter = selectedItem.textAfter, !textAfter.isEmpty {
+                        Text(textAfter)
+                            .typography(itemTextAfterTypography)
+                    }
+                    
+                    if alignment == .leading || alignment == .center {
+                        Spacer()
+                    }
+                }
+                .opacity(0)
+            }
+            
+            // Description с отступом
+            Text(description)
+                .foregroundColor(currentColor(for: appearance.descriptionColor))
+                .typography(descriptionTypography)
+                .frame(maxWidth: .infinity, alignment: getTextAlignment(for: wheelIndex))
+                .padding(.top, appearance.size.descriptionPadding)
+            
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
     private func wheelScrollView(
         wheelIndex: Int,
         wheel: WheelData,
         geometry: GeometryProxy,
         proxy: ScrollViewProxy
     ) -> some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(spacing: appearance.size.itemMinSpacing) {
-                ForEach(0..<wheel.items.count, id: \.self) { itemIndex in
-                    wheelItemWithTracking(
-                        wheelIndex: wheelIndex,
-                        itemIndex: itemIndex,
-                        item: wheel.items[itemIndex],
-                        geometry: geometry
-                    )
-                }
-            }
-            .padding(.vertical, geometry.size.height / 2)
-            .background(
-                GeometryReader { contentGeometry in
-                    Color.clear
-                        .preference(
-                            key: ScrollOffsetPreferenceKey.self,
-                            value: contentGeometry.frame(in: .named("scroll\(wheelIndex)")).minY
+        ZStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: appearance.size.itemMinSpacing) {
+                    ForEach(0..<wheel.items.count, id: \.self) { itemIndex in
+                        wheelItemWithTracking(
+                            wheelIndex: wheelIndex,
+                            itemIndex: itemIndex,
+                            item: wheel.items[itemIndex],
+                            geometry: geometry
                         )
+                    }
                 }
-            )
-        }
-        .coordinateSpace(name: "scroll\(wheelIndex)")
-        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
-            updateSelectionFromScroll(wheelIndex: wheelIndex, offset: offset, geometry: geometry)
-        }
-        .simultaneousGesture(wheelDragGesture(for: wheelIndex))
-        .onAppear {
-            scrollToSelected(wheelIndex: wheelIndex, proxy: proxy)
-        }
-        .onChange(of: selection[wheelIndex]) { _ in
-            handleSelectionChange(wheelIndex: wheelIndex, proxy: proxy)
+                .padding(.vertical, geometry.size.height / 2)
+                .background(
+                    GeometryReader { contentGeometry in
+                        Color.clear
+                            .preference(
+                                key: ScrollOffsetPreferenceKey.self,
+                                value: contentGeometry.frame(in: .named("scroll\(wheelIndex)")).minY
+                            )
+                    }
+                )
+            }
+            .coordinateSpace(name: "scroll\(wheelIndex)")
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
+                updateSelectionFromScroll(wheelIndex: wheelIndex, offset: offset, geometry: geometry)
+            }
+            .simultaneousGesture(wheelDragGesture(for: wheelIndex))
+            .onAppear {
+                scrollToSelected(wheelIndex: wheelIndex, proxy: proxy)
+            }
+            .onChange(of: selection[wheelIndex]) { _ in
+                handleSelectionChange(wheelIndex: wheelIndex, proxy: proxy)
+            }
+            
+            // Description поверх скролла
+            if let description = wheel.description, !description.isEmpty {
+                descriptionOverlayForWheel(description: description, wheelIndex: wheelIndex, geometry: geometry)
+            }
         }
     }
     
@@ -462,6 +521,20 @@ public struct SDDSWheel: View {
             }
         }
     }
+    
+    private func getTextAlignment(for wheelIndex: Int) -> Alignment {
+        let horizontalAlignment = getAlignment(for: wheelIndex)
+        switch horizontalAlignment {
+        case .leading:
+            return .leading
+        case .trailing:
+            return .trailing
+        case .center:
+            return .center
+        default:
+            return .center
+        }
+    }
 }
 
 // MARK: - Private Extension
@@ -569,13 +642,16 @@ struct WheelItemModifier: ViewModifier {
 public struct WheelData: Identifiable {
     public let id = UUID()
     public let items: [WheelItem]
+    public let description: String?
     
-    public init(items: [WheelItem]) {
+    public init(items: [WheelItem], description: String? = nil) {
         self.items = items
+        self.description = description
     }
     
-    public init(items: [String]) {
+    public init(items: [String], description: String? = nil) {
         self.items = items.map { WheelItem(text: $0) }
+        self.description = description
     }
 }
 

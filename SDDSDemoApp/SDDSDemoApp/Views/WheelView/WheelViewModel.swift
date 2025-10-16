@@ -4,8 +4,6 @@ import SwiftUI
 import SDDSComponents
 
 final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
-    @Published var description: String = "Выберите значение"
-    @Published var descriptionVisible: Bool = true
     @Published var wheelsCount: Int = 2 {
         didSet {
             updateWheels()
@@ -14,8 +12,9 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     @Published var visibleItemsCount: Int = 5
     @Published var selection: [Int] = [0, 0, 0]
     @Published var wheels: [WheelData] = []
+    @Published var wheelDescriptions: [String] = ["День", "Месяц", "Год", "Час", "Минута"]
     
-    private let sampleData = [
+    private let sampleData: [[String]] = [
         (1...31).map { String(format: "%02d", $0) },
         ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
         (2020...2030).map { "\($0)" },
@@ -36,9 +35,18 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     private func updateWheels() {
         let count = min(wheelsCount, sampleData.count)
         wheels = (0..<count).map { index in
-            WheelData(items: sampleData[index].map { WheelItem(text: $0) })
+            WheelData(
+                items: sampleData[index].map { WheelItem(text: $0) },
+                description: index < wheelDescriptions.count ? wheelDescriptions[index] : nil
+            )
         }
         selection = Array(repeating: 0, count: count)
+    }
+    
+    func updateWheelDescription(at index: Int, description: String) {
+        guard index < wheelDescriptions.count else { return }
+        wheelDescriptions[index] = description
+        updateWheels()
     }
 }
 

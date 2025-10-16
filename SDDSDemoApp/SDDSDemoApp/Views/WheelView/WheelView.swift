@@ -19,7 +19,6 @@ struct WheelView: View {
                     SDDSWheel(
                         wheels: viewModel.wheels,
                         selection: $viewModel.selection,
-                        description: viewModel.descriptionVisible ? viewModel.description : nil,
                         wheelCount: viewModel.wheelsCount,
                         visibleItemsCount: viewModel.visibleItemsCount
                     )
@@ -30,16 +29,6 @@ struct WheelView: View {
             
             Section {
                 VariationsView(viewModel: viewModel)
-                HStack {
-                    Text("Description")
-                    Spacer()
-                        .frame(maxWidth: .infinity)
-                    TextField("Enter description", text: $viewModel.description)
-                        .multilineTextAlignment(.trailing)
-                }
-                HStack {
-                    Toggle("Show Description", isOn: $viewModel.descriptionVisible)
-                }
                 HStack {
                     Text("Wheels Count")
                     Spacer()
@@ -66,6 +55,21 @@ struct WheelView: View {
                         }
                     } label: {
                         Text("\(viewModel.visibleItemsCount)")
+                    }
+                }
+            }
+            
+            Section(header: Text("Descriptions")) {
+                ForEach(0..<min(viewModel.wheelsCount, viewModel.wheelDescriptions.count), id: \.self) { index in
+                    HStack {
+                        Text("Wheel \(index + 1)")
+                        Spacer()
+                            .frame(maxWidth: .infinity)
+                        TextField("Description", text: Binding(
+                            get: { viewModel.wheelDescriptions[index] },
+                            set: { viewModel.updateWheelDescription(at: index, description: $0) }
+                        ))
+                        .multilineTextAlignment(.trailing)
                     }
                 }
             }
