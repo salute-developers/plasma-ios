@@ -1080,4 +1080,17 @@ enum Theme: String, CaseIterable {
             return PlasmaHomeDSTheme.IconButtonGroup.all
         }
     }
+    
+    var wheelVariations: [Variation<WheelAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return []
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Wheel.all
+        }
+    }
 }
