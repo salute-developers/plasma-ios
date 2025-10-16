@@ -71,6 +71,7 @@ public struct SDDSWheel: View {
                 }
             }
         }
+        .fixedSize(horizontal: true, vertical: false)
         .onAppear {
             initializeScrollState()
         }
@@ -127,16 +128,19 @@ public struct SDDSWheel: View {
     
     @ViewBuilder
     private func wheelSeparator() -> some View {
-        ZStack {
-            Color.clear
-                .frame(width: appearance.size.separatorSpacing)
-            
-            if let dividerAppearance = appearance.dividerAppearance {
-                SDDSDivider(appearance: dividerAppearance)
-                    .rotationEffect(.degrees(90))
-                    .frame(maxHeight: .infinity)
+        GeometryReader { geometry in
+            ZStack {
+                Color.clear
+                    .frame(width: appearance.size.separatorSpacing)
+                
+                if let dividerAppearance = appearance.dividerAppearance {
+                    SDDSDivider(appearance: dividerAppearance)
+                        .frame(width: geometry.size.height)
+                        .rotationEffect(.degrees(90))
+                }
             }
         }
+        .frame(width: appearance.size.separatorSpacing)
     }
     
     @ViewBuilder
@@ -144,7 +148,7 @@ public struct SDDSWheel: View {
         let wheel = wheels[wheelIndex]
         let maxTextWidth = calculateMaxTextWidth(for: wheel)
         let itemHeight = getItemHeight()
-        let columnWidth = maxTextWidth + 16
+        let columnWidth = maxTextWidth + 32
         let columnHeight = CGFloat(visibleItemsCount) * itemHeight
         
         GeometryReader { geometry in
@@ -165,41 +169,46 @@ public struct SDDSWheel: View {
     private func descriptionOverlayForWheel(description: String, wheelIndex: Int, geometry: GeometryProxy) -> some View {
         VStack(spacing: 0) {
             Spacer()
-            
-            // Невидимый выбранный элемент для точного позиционирования
-            if wheelIndex < wheels.count && selection[wheelIndex] < wheels[wheelIndex].items.count {
-                let selectedItem = wheels[wheelIndex].items[selection[wheelIndex]]
-                let alignment = getAlignment(for: wheelIndex)
-                
-                HStack(spacing: appearance.size.itemTextAfterPadding) {
-                    if alignment == .trailing || alignment == .center {
-                        Spacer()
-                    }
-                    
-                    Text(selectedItem.text)
-                        .typography(itemTextTypography)
-                    
-                    if let textAfter = selectedItem.textAfter, !textAfter.isEmpty {
-                        Text(textAfter)
-                            .typography(itemTextAfterTypography)
-                    }
-                    
-                    if alignment == .leading || alignment == .center {
-                        Spacer()
-                    }
-                }
-                .opacity(0)
-            }
-            
-            // Description с отступом
-            Text(description)
-                .foregroundColor(currentColor(for: appearance.descriptionColor))
-                .typography(descriptionTypography)
-                .frame(maxWidth: .infinity, alignment: getTextAlignment(for: wheelIndex))
-                .padding(.top, appearance.size.descriptionPadding)
-            
+            invisibleSelectedItem(for: wheelIndex)
+            descriptionLabel(description, for: wheelIndex)
             Spacer()
         }
+    }
+    
+    @ViewBuilder
+    private func invisibleSelectedItem(for wheelIndex: Int) -> some View {
+        if wheelIndex < wheels.count && selection[wheelIndex] < wheels[wheelIndex].items.count {
+            let selectedItem = wheels[wheelIndex].items[selection[wheelIndex]]
+            let alignment = getAlignment(for: wheelIndex)
+            
+            HStack(spacing: appearance.size.itemTextAfterPadding) {
+                if alignment == .trailing || alignment == .center {
+                    Spacer()
+                }
+                
+                Text(selectedItem.text)
+                    .typography(itemTextTypography)
+                
+                if let textAfter = selectedItem.textAfter, !textAfter.isEmpty {
+                    Text(textAfter)
+                        .typography(itemTextAfterTypography)
+                }
+                
+                if alignment == .leading || alignment == .center {
+                    Spacer()
+                }
+            }
+            .opacity(0)
+        }
+    }
+    
+    @ViewBuilder
+    private func descriptionLabel(_ description: String, for wheelIndex: Int) -> some View {
+        Text(description)
+            .foregroundColor(currentColor(for: appearance.descriptionColor))
+            .typography(descriptionTypography)
+            .frame(maxWidth: .infinity, alignment: getTextAlignment(for: wheelIndex))
+            .padding(.top, appearance.size.descriptionPadding)
     }
     
     @ViewBuilder
@@ -316,12 +325,10 @@ public struct SDDSWheel: View {
                 Spacer()
             }
             
-            // Основной текст
             Text(item.text)
                 .foregroundColor(currentColor(for: appearance.itemTextColor))
                 .typography(itemTextTypography)
             
-            // Дополнительный текст (если есть)
             if let textAfter = item.textAfter, !textAfter.isEmpty {
                 Text(textAfter)
                     .foregroundColor(currentColor(for: appearance.itemTextAfterColor))
@@ -359,8 +366,6 @@ public struct SDDSWheel: View {
                 }
             }
             .onEnded { _ in
-                // Даем небольшую задержку перед сбросом флага,
-                // чтобы финальные обновления offset успели обработаться
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     if wheelIndex < isScrolling.count {
                         isScrolling[wheelIndex] = false

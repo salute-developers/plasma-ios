@@ -4,7 +4,7 @@ import SwiftUI
 import SDDSComponents
 
 final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
-    @Published var wheelsCount: Int = 2 {
+    @Published var wheelsCount: Int = 3 {
         didSet {
             updateWheels()
         }
