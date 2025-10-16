@@ -155,6 +155,18 @@
 		81A3CFB42E7D5AA6008ED8D2 /* TabBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3CF592E7D5AA6008ED8D2 /* TabBarSize.swift */; };
 		81BA174A2D80684C008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
+		81CCB1D32EA035400070E930 /* TabBarSolidTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1D12EA035400070E930 /* TabBarSolidTypography.swift */; };
+		81CCB1D42EA035400070E930 /* TabBarSolid+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1CE2EA035400070E930 /* TabBarSolid+BaseVariations.swift */; };
+		81CCB1D52EA035400070E930 /* CardSolid+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1C52EA035400070E930 /* CardSolid+Variations.swift */; };
+		81CCB1D62EA035400070E930 /* CardSolidTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1C72EA035400070E930 /* CardSolidTypography.swift */; };
+		81CCB1D72EA035400070E930 /* TabBarItemSolid+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1C92EA035400070E930 /* TabBarItemSolid+BaseVariations.swift */; };
+		81CCB1D82EA035400070E930 /* TabBarSolid+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1CF2EA035400070E930 /* TabBarSolid+Variations.swift */; };
+		81CCB1D92EA035400070E930 /* CardSolid+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1C42EA035400070E930 /* CardSolid+BaseVariations.swift */; };
+		81CCB1DA2EA035400070E930 /* TabBarItemSolid+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1CA2EA035400070E930 /* TabBarItemSolid+Variations.swift */; };
+		81CCB1DB2EA035400070E930 /* CardSolidSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1C62EA035400070E930 /* CardSolidSize.swift */; };
+		81CCB1DC2EA035400070E930 /* TabBarItemSolidSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1CB2EA035400070E930 /* TabBarItemSolidSize.swift */; };
+		81CCB1DD2EA035400070E930 /* TabBarItemSolidTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1CC2EA035400070E930 /* TabBarItemSolidTypography.swift */; };
+		81CCB1DE2EA035400070E930 /* TabBarSolidSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB1D02EA035400070E930 /* TabBarSolidSize.swift */; };
 		81DE0BAE2E20E61900DE2018 /* ListNormal+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9F2E20E61900DE2018 /* ListNormal+BaseVariations.swift */; };
 		81DE0BAF2E20E61900DE2018 /* ListItemTightTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0B9D2E20E61900DE2018 /* ListItemTightTypography.swift */; };
 		81DE0BB02E20E61900DE2018 /* ScrollbarTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE0BAC2E20E61900DE2018 /* ScrollbarTypography.swift */; };
@@ -257,7 +269,6 @@
 		81F2E8DD2DF9FF0500708B40 /* NotificationCompact+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E83C2DF9FF0500708B40 /* NotificationCompact+BaseVariations.swift */; };
 		81F2E8DE2DF9FF0500708B40 /* BottomSheet+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7AE2DF9FF0500708B40 /* BottomSheet+Variations.swift */; };
 		81F2E8DF2DF9FF0500708B40 /* TextArea+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E86E2DF9FF0500708B40 /* TextArea+BaseVariations.swift */; };
-		81F2E8E02DF9FF0500708B40 /* Card+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7B22DF9FF0500708B40 /* Card+BaseVariations.swift */; };
 		81F2E8E22DF9FF0500708B40 /* Cell+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7BD2DF9FF0500708B40 /* Cell+Variations.swift */; };
 		81F2E8E32DF9FF0500708B40 /* IconBadge+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E81A2DF9FF0500708B40 /* IconBadge+Variations.swift */; };
 		81F2E8E42DF9FF0500708B40 /* Popover+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E84C2DF9FF0500708B40 /* Popover+Variations.swift */; };
@@ -319,12 +330,10 @@
 		81F2E91F2DF9FF0500708B40 /* Toast+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8822DF9FF0500708B40 /* Toast+BaseVariations.swift */; };
 		81F2E9202DF9FF0500708B40 /* SwitchTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E86C2DF9FF0500708B40 /* SwitchTypography.swift */; };
 		81F2E9212DF9FF0500708B40 /* NotificationLooseSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8432DF9FF0500708B40 /* NotificationLooseSize.swift */; };
-		81F2E9222DF9FF0500708B40 /* CardTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7B52DF9FF0500708B40 /* CardTypography.swift */; };
 		81F2E9232DF9FF0500708B40 /* BottomSheet+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7AD2DF9FF0500708B40 /* BottomSheet+BaseVariations.swift */; };
 		81F2E9242DF9FF0500708B40 /* LinkButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8332DF9FF0500708B40 /* LinkButton+Variations.swift */; };
 		81F2E9262DF9FF0500708B40 /* CircularProgressBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7DF2DF9FF0500708B40 /* CircularProgressBarSize.swift */; };
 		81F2E9272DF9FF0500708B40 /* Overlay+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8462DF9FF0500708B40 /* Overlay+BaseVariations.swift */; };
-		81F2E9282DF9FF0500708B40 /* CardSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7B42DF9FF0500708B40 /* CardSize.swift */; };
 		81F2E9292DF9FF0500708B40 /* Radiobox+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8552DF9FF0500708B40 /* Radiobox+BaseVariations.swift */; };
 		81F2E92A2DF9FF0500708B40 /* ProgressBar+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E8502DF9FF0500708B40 /* ProgressBar+BaseVariations.swift */; };
 		81F2E92B2DF9FF0500708B40 /* TextFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E87A2DF9FF0500708B40 /* TextFieldSize.swift */; };
@@ -346,7 +355,6 @@
 		81F2E93B2DF9FF0500708B40 /* BadgeTransparentTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7A62DF9FF0500708B40 /* BadgeTransparentTypography.swift */; };
 		81F2E93C2DF9FF0500708B40 /* EmbeddedChipGroupWide+BaseVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7F62DF9FF0500708B40 /* EmbeddedChipGroupWide+BaseVariations.swift */; };
 		81F2E93D2DF9FF0500708B40 /* AvatarGroupSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7962DF9FF0500708B40 /* AvatarGroupSize.swift */; };
-		81F2E93E2DF9FF0500708B40 /* Card+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7B32DF9FF0500708B40 /* Card+Variations.swift */; };
 		81F2E93F2DF9FF0500708B40 /* CheckboxGroupTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7C92DF9FF0500708B40 /* CheckboxGroupTypography.swift */; };
 		81F2E9402DF9FF0500708B40 /* IconButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E82A2DF9FF0500708B40 /* IconButtonSize.swift */; };
 		81F2E9412DF9FF0500708B40 /* CheckboxSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E7C32DF9FF0500708B40 /* CheckboxSize.swift */; };
@@ -604,6 +612,18 @@
 		81BBE21B2D75A14500612681 /* EmbeddedChip+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmbeddedChip+Variations.swift"; sourceTree = "<group>"; };
 		81BBE21C2D75A14500612681 /* EmbeddedChipSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipSize.swift; sourceTree = "<group>"; };
 		81BBE21D2D75A14500612681 /* EmbeddedChipTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedChipTypography.swift; sourceTree = "<group>"; };
+		81CCB1C42EA035400070E930 /* CardSolid+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSolid+BaseVariations.swift"; sourceTree = "<group>"; };
+		81CCB1C52EA035400070E930 /* CardSolid+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardSolid+Variations.swift"; sourceTree = "<group>"; };
+		81CCB1C62EA035400070E930 /* CardSolidSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSolidSize.swift; sourceTree = "<group>"; };
+		81CCB1C72EA035400070E930 /* CardSolidTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSolidTypography.swift; sourceTree = "<group>"; };
+		81CCB1C92EA035400070E930 /* TabBarItemSolid+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItemSolid+BaseVariations.swift"; sourceTree = "<group>"; };
+		81CCB1CA2EA035400070E930 /* TabBarItemSolid+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarItemSolid+Variations.swift"; sourceTree = "<group>"; };
+		81CCB1CB2EA035400070E930 /* TabBarItemSolidSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSolidSize.swift; sourceTree = "<group>"; };
+		81CCB1CC2EA035400070E930 /* TabBarItemSolidTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSolidTypography.swift; sourceTree = "<group>"; };
+		81CCB1CE2EA035400070E930 /* TabBarSolid+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarSolid+BaseVariations.swift"; sourceTree = "<group>"; };
+		81CCB1CF2EA035400070E930 /* TabBarSolid+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarSolid+Variations.swift"; sourceTree = "<group>"; };
+		81CCB1D02EA035400070E930 /* TabBarSolidSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSolidSize.swift; sourceTree = "<group>"; };
+		81CCB1D12EA035400070E930 /* TabBarSolidTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSolidTypography.swift; sourceTree = "<group>"; };
 		81DE0B952E20E61900DE2018 /* ListItemNormal+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+BaseVariations.swift"; sourceTree = "<group>"; };
 		81DE0B962E20E61900DE2018 /* ListItemNormal+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemNormal+Variations.swift"; sourceTree = "<group>"; };
 		81DE0B972E20E61900DE2018 /* ListItemNormalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemNormalSize.swift; sourceTree = "<group>"; };
@@ -656,10 +676,6 @@
 		81F2E7AE2DF9FF0500708B40 /* BottomSheet+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomSheet+Variations.swift"; sourceTree = "<group>"; };
 		81F2E7AF2DF9FF0500708B40 /* BottomSheetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSize.swift; sourceTree = "<group>"; };
 		81F2E7B02DF9FF0500708B40 /* BottomSheetTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetTypography.swift; sourceTree = "<group>"; };
-		81F2E7B22DF9FF0500708B40 /* Card+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+BaseVariations.swift"; sourceTree = "<group>"; };
-		81F2E7B32DF9FF0500708B40 /* Card+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Variations.swift"; sourceTree = "<group>"; };
-		81F2E7B42DF9FF0500708B40 /* CardSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSize.swift; sourceTree = "<group>"; };
-		81F2E7B52DF9FF0500708B40 /* CardTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypography.swift; sourceTree = "<group>"; };
 		81F2E7B72DF9FF0500708B40 /* CardClear+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardClear+BaseVariations.swift"; sourceTree = "<group>"; };
 		81F2E7B82DF9FF0500708B40 /* CardClear+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardClear+Variations.swift"; sourceTree = "<group>"; };
 		81F2E7B92DF9FF0500708B40 /* CardClearSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardClearSize.swift; sourceTree = "<group>"; };
@@ -1290,6 +1306,39 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		81CCB1C82EA035400070E930 /* CardSolid */ = {
+			isa = PBXGroup;
+			children = (
+				81CCB1C42EA035400070E930 /* CardSolid+BaseVariations.swift */,
+				81CCB1C52EA035400070E930 /* CardSolid+Variations.swift */,
+				81CCB1C62EA035400070E930 /* CardSolidSize.swift */,
+				81CCB1C72EA035400070E930 /* CardSolidTypography.swift */,
+			);
+			path = CardSolid;
+			sourceTree = "<group>";
+		};
+		81CCB1CD2EA035400070E930 /* TabBarItemSolid */ = {
+			isa = PBXGroup;
+			children = (
+				81CCB1C92EA035400070E930 /* TabBarItemSolid+BaseVariations.swift */,
+				81CCB1CA2EA035400070E930 /* TabBarItemSolid+Variations.swift */,
+				81CCB1CB2EA035400070E930 /* TabBarItemSolidSize.swift */,
+				81CCB1CC2EA035400070E930 /* TabBarItemSolidTypography.swift */,
+			);
+			path = TabBarItemSolid;
+			sourceTree = "<group>";
+		};
+		81CCB1D22EA035400070E930 /* TabBarSolid */ = {
+			isa = PBXGroup;
+			children = (
+				81CCB1CE2EA035400070E930 /* TabBarSolid+BaseVariations.swift */,
+				81CCB1CF2EA035400070E930 /* TabBarSolid+Variations.swift */,
+				81CCB1D02EA035400070E930 /* TabBarSolidSize.swift */,
+				81CCB1D12EA035400070E930 /* TabBarSolidTypography.swift */,
+			);
+			path = TabBarSolid;
+			sourceTree = "<group>";
+		};
 		81DE0B992E20E61900DE2018 /* ListItemNormal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1431,17 +1480,6 @@
 				81F2E7B02DF9FF0500708B40 /* BottomSheetTypography.swift */,
 			);
 			path = BottomSheet;
-			sourceTree = "<group>";
-		};
-		81F2E7B62DF9FF0500708B40 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				81F2E7B22DF9FF0500708B40 /* Card+BaseVariations.swift */,
-				81F2E7B32DF9FF0500708B40 /* Card+Variations.swift */,
-				81F2E7B42DF9FF0500708B40 /* CardSize.swift */,
-				81F2E7B52DF9FF0500708B40 /* CardTypography.swift */,
-			);
-			path = Card;
 			sourceTree = "<group>";
 		};
 		81F2E7BB2DF9FF0500708B40 /* CardClear */ = {
@@ -1928,6 +1966,9 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81CCB1C82EA035400070E930 /* CardSolid */,
+				81CCB1CD2EA035400070E930 /* TabBarItemSolid */,
+				81CCB1D22EA035400070E930 /* TabBarSolid */,
 				81F6A3E92E8EFEAE00AC695F /* BasicButtonGroup */,
 				81F6A3EE2E8EFEAE00AC695F /* IconButtonGroup */,
 				81A3CF562E7D5AA6008ED8D2 /* CodeInput */,
@@ -1974,7 +2015,6 @@
 				81F2E7A72DF9FF0500708B40 /* BadgeTransparent */,
 				81F2E7AC2DF9FF0500708B40 /* BasicButton */,
 				81F2E7B12DF9FF0500708B40 /* BottomSheet */,
-				81F2E7B62DF9FF0500708B40 /* Card */,
 				81F2E7BB2DF9FF0500708B40 /* CardClear */,
 				81F2E7C02DF9FF0500708B40 /* Cell */,
 				81F2E7C52DF9FF0500708B40 /* Checkbox */,
@@ -2326,6 +2366,18 @@
 				816169F32E33B812003C1071 /* DropdownMenuItemTightTypography.swift in Sources */,
 				816169F42E33B812003C1071 /* AccordionSolidActionStartSize.swift in Sources */,
 				816169F52E33B812003C1071 /* DropdownMenuTightTypography.swift in Sources */,
+				81CCB1D32EA035400070E930 /* TabBarSolidTypography.swift in Sources */,
+				81CCB1D42EA035400070E930 /* TabBarSolid+BaseVariations.swift in Sources */,
+				81CCB1D52EA035400070E930 /* CardSolid+Variations.swift in Sources */,
+				81CCB1D62EA035400070E930 /* CardSolidTypography.swift in Sources */,
+				81CCB1D72EA035400070E930 /* TabBarItemSolid+BaseVariations.swift in Sources */,
+				81CCB1D82EA035400070E930 /* TabBarSolid+Variations.swift in Sources */,
+				81CCB1D92EA035400070E930 /* CardSolid+BaseVariations.swift in Sources */,
+				81CCB1DA2EA035400070E930 /* TabBarItemSolid+Variations.swift in Sources */,
+				81CCB1DB2EA035400070E930 /* CardSolidSize.swift in Sources */,
+				81CCB1DC2EA035400070E930 /* TabBarItemSolidSize.swift in Sources */,
+				81CCB1DD2EA035400070E930 /* TabBarItemSolidTypography.swift in Sources */,
+				81CCB1DE2EA035400070E930 /* TabBarSolidSize.swift in Sources */,
 				816169F62E33B812003C1071 /* DropdownMenuTight+BaseVariations.swift in Sources */,
 				816169F72E33B812003C1071 /* AccordionItemSolidActionEndTypography.swift in Sources */,
 				816169F92E33B812003C1071 /* DropdownMenuItemTightSize.swift in Sources */,
@@ -2340,7 +2392,6 @@
 				81F2E8DD2DF9FF0500708B40 /* NotificationCompact+BaseVariations.swift in Sources */,
 				81F2E8DE2DF9FF0500708B40 /* BottomSheet+Variations.swift in Sources */,
 				81F2E8DF2DF9FF0500708B40 /* TextArea+BaseVariations.swift in Sources */,
-				81F2E8E02DF9FF0500708B40 /* Card+BaseVariations.swift in Sources */,
 				81F2E8E22DF9FF0500708B40 /* Cell+Variations.swift in Sources */,
 				81F2E8E32DF9FF0500708B40 /* IconBadge+Variations.swift in Sources */,
 				81F2E8E42DF9FF0500708B40 /* Popover+Variations.swift in Sources */,
@@ -2414,12 +2465,10 @@
 				81F2E91F2DF9FF0500708B40 /* Toast+BaseVariations.swift in Sources */,
 				81F2E9202DF9FF0500708B40 /* SwitchTypography.swift in Sources */,
 				81F2E9212DF9FF0500708B40 /* NotificationLooseSize.swift in Sources */,
-				81F2E9222DF9FF0500708B40 /* CardTypography.swift in Sources */,
 				81F2E9232DF9FF0500708B40 /* BottomSheet+BaseVariations.swift in Sources */,
 				81F2E9242DF9FF0500708B40 /* LinkButton+Variations.swift in Sources */,
 				81F2E9262DF9FF0500708B40 /* CircularProgressBarSize.swift in Sources */,
 				81F2E9272DF9FF0500708B40 /* Overlay+BaseVariations.swift in Sources */,
-				81F2E9282DF9FF0500708B40 /* CardSize.swift in Sources */,
 				81F2E9292DF9FF0500708B40 /* Radiobox+BaseVariations.swift in Sources */,
 				81F2E92A2DF9FF0500708B40 /* ProgressBar+BaseVariations.swift in Sources */,
 				81F2E92B2DF9FF0500708B40 /* TextFieldSize.swift in Sources */,
@@ -2441,7 +2490,6 @@
 				81F2E93B2DF9FF0500708B40 /* BadgeTransparentTypography.swift in Sources */,
 				81F2E93C2DF9FF0500708B40 /* EmbeddedChipGroupWide+BaseVariations.swift in Sources */,
 				81F2E93D2DF9FF0500708B40 /* AvatarGroupSize.swift in Sources */,
-				81F2E93E2DF9FF0500708B40 /* Card+Variations.swift in Sources */,
 				81F2E93F2DF9FF0500708B40 /* CheckboxGroupTypography.swift in Sources */,
 				81F2E9402DF9FF0500708B40 /* IconButtonSize.swift in Sources */,
 				81F2E9412DF9FF0500708B40 /* CheckboxSize.swift in Sources */,
