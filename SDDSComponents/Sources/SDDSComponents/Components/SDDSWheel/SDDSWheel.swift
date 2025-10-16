@@ -34,6 +34,7 @@ public struct SDDSWheel: View {
     @Environment(\.wheelAppearance) private var appearance
     @State private var scrollOffsets: [CGFloat] = []
     @State private var isScrolling: [Bool] = []
+    @State private var isUpdatingFromButtons: [Bool] = []
     
     // Данные для колес
     private let wheels: [WheelData]
@@ -130,46 +131,115 @@ public struct SDDSWheel: View {
     @ViewBuilder
     private func wheelColumn(for wheelIndex: Int) -> some View {
         let wheel = wheels[wheelIndex]
-        let itemCount = wheel.items.count
-        
-        // Вычисляем максимальную ширину текста
         let maxTextWidth = calculateMaxTextWidth(for: wheel)
         let itemHeight = getItemHeight()
-        let columnWidth = maxTextWidth + appearance.size.itemTextAfterPadding * 2
+        let columnWidth = maxTextWidth + 16
         let columnHeight = CGFloat(visibleItemsCount) * itemHeight
         
         GeometryReader { geometry in
             ScrollViewReader { proxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(spacing: appearance.size.itemMinSpacing) {
-                        ForEach(0..<itemCount, id: \.self) { itemIndex in
-                            wheelItem(
-                                item: wheel.items[itemIndex],
-                                wheelIndex: wheelIndex,
-                                itemIndex: itemIndex,
-                                geometry: geometry
-                            )
-                            .id("\(wheelIndex)-\(itemIndex)")
-                        }
-                    }
-                    .padding(.vertical, geometry.size.height / 2)
-                }
-                .onAppear {
-                    let selectedIndex = selection[wheelIndex]
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
-                    }
-                }
-                .onChange(of: selection[wheelIndex]) { _ in
-                    let selectedIndex = selection[wheelIndex]
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
-                    }
-                }
+                wheelScrollView(
+                    wheelIndex: wheelIndex,
+                    wheel: wheel,
+                    geometry: geometry,
+                    proxy: proxy
+                )
             }
         }
         .frame(width: columnWidth, height: columnHeight)
         .clipped()
+    }
+    
+    @ViewBuilder
+    private func wheelScrollView(
+        wheelIndex: Int,
+        wheel: WheelData,
+        geometry: GeometryProxy,
+        proxy: ScrollViewProxy
+    ) -> some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: appearance.size.itemMinSpacing) {
+                ForEach(0..<wheel.items.count, id: \.self) { itemIndex in
+                    wheelItemWithTracking(
+                        wheelIndex: wheelIndex,
+                        itemIndex: itemIndex,
+                        item: wheel.items[itemIndex],
+                        geometry: geometry
+                    )
+                }
+            }
+            .padding(.vertical, geometry.size.height / 2)
+            .background(
+                GeometryReader { contentGeometry in
+                    Color.clear
+                        .preference(
+                            key: ScrollOffsetPreferenceKey.self,
+                            value: contentGeometry.frame(in: .named("scroll\(wheelIndex)")).minY
+                        )
+                }
+            )
+        }
+        .coordinateSpace(name: "scroll\(wheelIndex)")
+        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
+            updateSelectionFromScroll(wheelIndex: wheelIndex, offset: offset, geometry: geometry)
+        }
+        .simultaneousGesture(wheelDragGesture(for: wheelIndex))
+        .onAppear {
+            scrollToSelected(wheelIndex: wheelIndex, proxy: proxy)
+        }
+        .onChange(of: selection[wheelIndex]) { _ in
+            handleSelectionChange(wheelIndex: wheelIndex, proxy: proxy)
+        }
+    }
+    
+    @ViewBuilder
+    private func wheelItemWithTracking(
+        wheelIndex: Int,
+        itemIndex: Int,
+        item: WheelItem,
+        geometry: GeometryProxy
+    ) -> some View {
+        wheelItem(
+            item: item,
+            wheelIndex: wheelIndex,
+            itemIndex: itemIndex,
+            geometry: geometry
+        )
+        .id("\(wheelIndex)-\(itemIndex)")
+        .background(
+            itemPositionTracker(
+                wheelIndex: wheelIndex,
+                itemIndex: itemIndex,
+                geometry: geometry
+            )
+        )
+    }
+    
+    @ViewBuilder
+    private func itemPositionTracker(
+        wheelIndex: Int,
+        itemIndex: Int,
+        geometry: GeometryProxy
+    ) -> some View {
+        GeometryReader { itemGeometry in
+            Color.clear
+                .onAppear {
+                    checkVisibleItem(
+                        wheelIndex: wheelIndex,
+                        itemIndex: itemIndex,
+                        itemGeometry: itemGeometry,
+                        scrollGeometry: geometry
+                    )
+                }
+                .onChange(of: itemGeometry.frame(in: .named("scroll\(wheelIndex)")).midY) { _ in
+                    checkVisibleItem(
+                        wheelIndex: wheelIndex,
+                        itemIndex: itemIndex,
+                        itemGeometry: itemGeometry,
+                        scrollGeometry: geometry
+                    )
+                }
+        }
     }
     
     @ViewBuilder
@@ -216,36 +286,158 @@ public struct SDDSWheel: View {
     private func initializeScrollState() {
         scrollOffsets = Array(repeating: 0, count: wheels.count)
         isScrolling = Array(repeating: false, count: wheels.count)
+        isUpdatingFromButtons = Array(repeating: false, count: wheels.count)
+    }
+    
+    private func wheelDragGesture(for wheelIndex: Int) -> some Gesture {
+        DragGesture(minimumDistance: 0)
+            .onChanged { _ in
+                if wheelIndex < isScrolling.count {
+                    isScrolling[wheelIndex] = true
+                }
+                if wheelIndex < isUpdatingFromButtons.count {
+                    isUpdatingFromButtons[wheelIndex] = false
+                }
+            }
+            .onEnded { _ in
+                // Даем небольшую задержку перед сбросом флага,
+                // чтобы финальные обновления offset успели обработаться
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    if wheelIndex < isScrolling.count {
+                        isScrolling[wheelIndex] = false
+                    }
+                }
+            }
+    }
+    
+    private func scrollToSelected(wheelIndex: Int, proxy: ScrollViewProxy) {
+        let selectedIndex = selection[wheelIndex]
+        withAnimation(.easeInOut(duration: 0.3)) {
+            proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+        }
+    }
+    
+    private func handleSelectionChange(wheelIndex: Int, proxy: ScrollViewProxy) {
+        // Не скроллим программно, если идет ручной скролл
+        guard wheelIndex < isScrolling.count && !isScrolling[wheelIndex] else {
+            return
+        }
+        
+        // Скроллим программно только если изменение пришло от кнопок
+        if wheelIndex < isUpdatingFromButtons.count && isUpdatingFromButtons[wheelIndex] {
+            let selectedIndex = selection[wheelIndex]
+            withAnimation(.easeInOut(duration: 0.3)) {
+                proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+            }
+            // Сбрасываем флаг после небольшой задержки
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                if wheelIndex < isUpdatingFromButtons.count {
+                    isUpdatingFromButtons[wheelIndex] = false
+                }
+            }
+        }
+    }
+    
+    private func updateSelectionFromScroll(wheelIndex: Int, offset: CGFloat, geometry: GeometryProxy) {
+        // Обновляем только во время ручного скролла
+        guard wheelIndex < isScrolling.count && isScrolling[wheelIndex] else {
+            return
+        }
+        
+        let wheel = wheels[wheelIndex]
+        let itemHeight = getItemHeight()
+        let spacing = appearance.size.itemMinSpacing
+        let centerY = geometry.size.height / 2
+        
+        // offset - это minY контента относительно coordinateSpace
+        // Когда скроллим вниз, minY становится отрицательным
+        let contentOffset = -offset
+        
+        // Вычисляем позицию центра видимой области относительно контента
+        let centerPosition = contentOffset + centerY
+        
+        // Вычисляем индекс элемента с учетом высоты элемента и отступов
+        let itemWithSpacing = itemHeight + spacing
+        let newSelectedIndex = Int(round(centerPosition / itemWithSpacing))
+        
+        // Обновляем selection если элемент изменился и валиден
+        if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
+            selection[wheelIndex] = newSelectedIndex
+        }
+    }
+    
+    private func checkVisibleItem(
+        wheelIndex: Int,
+        itemIndex: Int,
+        itemGeometry: GeometryProxy,
+        scrollGeometry: GeometryProxy
+    ) {
+        // Отслеживаем только во время ручного скролла
+        guard wheelIndex < isScrolling.count && isScrolling[wheelIndex] else {
+            return
+        }
+        
+        // Получаем центр видимой области
+        let scrollCenter = scrollGeometry.size.height / 2
+        
+        // Получаем позицию элемента относительно скролла
+        let itemFrame = itemGeometry.frame(in: .named("scroll\(wheelIndex)"))
+        let itemCenter = itemFrame.midY
+        
+        // Вычисляем расстояние от центра элемента до центра видимой области
+        let distanceFromCenter = abs(itemCenter - scrollCenter)
+        
+        // Определяем порог - половина высоты элемента
+        let itemHeight = getItemHeight()
+        let threshold = itemHeight / 2
+        
+        // Если элемент находится в центральной зоне
+        if distanceFromCenter < threshold {
+            let wheel = wheels[wheelIndex]
+            if itemIndex >= 0 && itemIndex < wheel.items.count && itemIndex != selection[wheelIndex] {
+                selection[wheelIndex] = itemIndex
+            }
+        }
     }
     
     private func scrollUp(wheelIndex: Int) {
         if selection[wheelIndex] > 0 {
+            if wheelIndex < isUpdatingFromButtons.count {
+                isUpdatingFromButtons[wheelIndex] = true
+            }
             selection[wheelIndex] -= 1
         }
     }
     
     private func scrollDown(wheelIndex: Int) {
         if selection[wheelIndex] < wheels[wheelIndex].items.count - 1 {
+            if wheelIndex < isUpdatingFromButtons.count {
+                isUpdatingFromButtons[wheelIndex] = true
+            }
             selection[wheelIndex] += 1
         }
     }
     
     private func calculateMaxTextWidth(for wheel: WheelData) -> CGFloat {
         let maxWidth = wheel.items.reduce(0.0) { maxWidth, item in
-            let textWidth = calculateTextWidth(item.text)
-            let afterTextWidth = item.textAfter.map(calculateTextWidth) ?? 0
-            let totalWidth = textWidth + afterTextWidth + appearance.size.itemTextAfterPadding
+            let textWidth = calculateTextWidth(item.text, typography: itemTextTypography)
+            var totalWidth = textWidth
+            
+            if let textAfter = item.textAfter, !textAfter.isEmpty {
+                let afterTextWidth = calculateTextWidth(textAfter, typography: itemTextAfterTypography)
+                totalWidth += appearance.size.itemTextAfterPadding + afterTextWidth
+            }
+            
             return max(maxWidth, totalWidth)
         }
         return maxWidth
     }
     
-    private func calculateTextWidth(_ text: String) -> CGFloat {
-        let attributes = [NSAttributedString.Key.font: itemTextTypography.uiFont]
+    private func calculateTextWidth(_ text: String, typography: TypographyToken) -> CGFloat {
+        let attributes = [NSAttributedString.Key.font: typography.uiFont]
         let size = text.size(withAttributes: attributes)
         return size.width
     }
-    
     
     private func getAlignment(for wheelIndex: Int) -> HorizontalAlignment {
         let totalWheels = wheels.count
@@ -262,11 +454,11 @@ public struct SDDSWheel: View {
             if totalWheels == 1 {
                 return .center
             } else if wheelIndex == 0 {
-                return .trailing // Самый левый - по правому краю
+                return .trailing
             } else if wheelIndex == totalWheels - 1 {
-                return .leading // Самый правый - по левому краю
+                return .leading
             } else {
-                return .center // Остальные - по центру
+                return .center
             }
         }
     }
@@ -341,14 +533,10 @@ struct WheelItemModifier: ViewModifier {
         selectedIndex: Int,
         geometry: GeometryProxy
     ) -> CGFloat {
-        let itemHeight: CGFloat = 50 // Константа для высоты элемента
+        let itemHeight: CGFloat = 50
         let centerY = geometry.size.height / 2
-        
-        // Вычисляем реальную позицию элемента относительно центра
-        // Центральный элемент - это selectedIndex
         let relativeIndex = itemIndex - selectedIndex
         let itemY = centerY + CGFloat(relativeIndex) * itemHeight
-        
         return abs(itemY - centerY)
     }
     
@@ -401,6 +589,16 @@ public struct WheelItem {
     public init(text: String, textAfter: String? = nil) {
         self.text = text
         self.textAfter = textAfter
+    }
+}
+
+// MARK: - ScrollOffsetPreferenceKey
+
+private struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }
 
