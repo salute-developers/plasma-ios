@@ -4,7 +4,7 @@ import SwiftUI
 import SDDSComponents
 
 final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
-    @Published var wheelsCount: Int = 3 {
+    @Published var wheelsCount: Int = 2 {
         didSet {
             updateWheels()
         }
@@ -13,6 +13,11 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     @Published var selection: [Int] = [0, 0, 0]
     @Published var wheels: [WheelData] = []
     @Published var wheelDescriptions: [String] = ["День", "Месяц", "Год", "Час", "Минута"]
+    @Published var textAfter: String = "" {
+        didSet {
+            updateWheels()
+        }
+    }
     
     private let sampleData: [[String]] = [
         (1...31).map { String(format: "%02d", $0) },
@@ -34,9 +39,10 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     
     private func updateWheels() {
         let count = min(wheelsCount, sampleData.count)
+        let afterText = textAfter.isEmpty ? nil : textAfter
         wheels = (0..<count).map { index in
             WheelData(
-                items: sampleData[index].map { WheelItem(text: $0) },
+                items: sampleData[index].map { WheelItem(text: $0, textAfter: afterText) },
                 description: index < wheelDescriptions.count ? wheelDescriptions[index] : nil
             )
         }

@@ -59,6 +59,16 @@ struct WheelView: View {
                 }
             }
             
+            Section(header: Text("Text Settings")) {
+                HStack {
+                    Text("Text After")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    TextField("Text After (for all)", text: $viewModel.textAfter)
+                        .multilineTextAlignment(.trailing)
+                }
+            }
+            
             Section(header: Text("Descriptions")) {
                 ForEach(0..<min(viewModel.wheelsCount, viewModel.wheelDescriptions.count), id: \.self) { index in
                     HStack {
