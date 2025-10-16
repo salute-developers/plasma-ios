@@ -40,13 +40,23 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     private func updateWheels() {
         let count = min(wheelsCount, sampleData.count)
         let afterText = textAfter.isEmpty ? nil : textAfter
+        
+        // Сохраняем текущий selection
+        let previousSelection = selection
+        
         wheels = (0..<count).map { index in
             WheelData(
                 items: sampleData[index].map { WheelItem(text: $0, textAfter: afterText) },
                 description: index < wheelDescriptions.count ? wheelDescriptions[index] : nil
             )
         }
-        selection = Array(repeating: 0, count: count)
+        
+        // Восстанавливаем selection или инициализируем новый
+        if count == previousSelection.count {
+            selection = previousSelection
+        } else {
+            selection = Array(repeating: 0, count: count)
+        }
     }
     
     func updateWheelDescription(at index: Int, description: String) {
