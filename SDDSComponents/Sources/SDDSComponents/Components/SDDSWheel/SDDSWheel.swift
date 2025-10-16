@@ -36,6 +36,7 @@ public struct SDDSWheel: View {
     @State private var scrollOffsets: [CGFloat] = []
     @State private var isScrolling: [Bool] = []
     @State private var isUpdatingFromButtons: [Bool] = []
+    @State private var lastScrollUpdate: [Date] = []
     
     // Данные для колес
     private let wheels: [WheelData]
@@ -238,8 +239,8 @@ public struct SDDSWheel: View {
                 )
             }
             .coordinateSpace(name: "scroll\(wheelIndex)")
-            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
-                updateSelectionFromScroll(wheelIndex: wheelIndex, offset: offset, geometry: geometry)
+            .onPreferenceChange(ItemPositionPreferenceKey.self) { positions in
+                updateSelectionFromItemPositions(wheelIndex: wheelIndex, positions: positions, geometry: geometry)
             }
             .simultaneousGesture(wheelDragGesture(for: wheelIndex))
             .onAppear {
@@ -271,39 +272,18 @@ public struct SDDSWheel: View {
         )
         .id("\(wheelIndex)-\(itemIndex)")
         .background(
-            itemPositionTracker(
-                wheelIndex: wheelIndex,
-                itemIndex: itemIndex,
-                geometry: geometry
-            )
+            GeometryReader { itemGeometry in
+                Color.clear
+                    .preference(
+                        key: ItemPositionPreferenceKey.self,
+                        value: [ItemPosition(
+                            wheelIndex: wheelIndex,
+                            itemIndex: itemIndex,
+                            midY: itemGeometry.frame(in: .named("scroll\(wheelIndex)")).midY
+                        )]
+                    )
+            }
         )
-    }
-    
-    @ViewBuilder
-    private func itemPositionTracker(
-        wheelIndex: Int,
-        itemIndex: Int,
-        geometry: GeometryProxy
-    ) -> some View {
-        GeometryReader { itemGeometry in
-            Color.clear
-                .onAppear {
-                    checkVisibleItem(
-                        wheelIndex: wheelIndex,
-                        itemIndex: itemIndex,
-                        itemGeometry: itemGeometry,
-                        scrollGeometry: geometry
-                    )
-                }
-                .onChange(of: itemGeometry.frame(in: .named("scroll\(wheelIndex)")).midY) { _ in
-                    checkVisibleItem(
-                        wheelIndex: wheelIndex,
-                        itemIndex: itemIndex,
-                        itemGeometry: itemGeometry,
-                        scrollGeometry: geometry
-                    )
-                }
-        }
     }
     
     @ViewBuilder
@@ -351,24 +331,38 @@ public struct SDDSWheel: View {
         scrollOffsets = Array(repeating: 0, count: wheels.count)
         isScrolling = Array(repeating: false, count: wheels.count)
         isUpdatingFromButtons = Array(repeating: false, count: wheels.count)
+        lastScrollUpdate = Array(repeating: Date(), count: wheels.count)
     }
     
     private func wheelDragGesture(for wheelIndex: Int) -> some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { _ in
+                print("🎯 DragGesture.onChanged for wheel[\(wheelIndex)], isUpdatingFromButtons=\(wheelIndex < isUpdatingFromButtons.count ? isUpdatingFromButtons[wheelIndex] : false)")
                 if wheelIndex < isScrolling.count {
                     isScrolling[wheelIndex] = true
                 }
+                // Сбрасываем флаг сразу при начале ручного скролла
                 if wheelIndex < isUpdatingFromButtons.count {
                     isUpdatingFromButtons[wheelIndex] = false
+                    print("  ✅ Reset isUpdatingFromButtons to false")
                 }
             }
             .onEnded { _ in
-                // Даем небольшую задержку перед сбросом флага,
-                // чтобы финальные обновления offset успели обработаться
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                print("🏁 DragGesture.onEnded for wheel[\(wheelIndex)]")
+                // Финализируем скролл после задержки
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                     if wheelIndex < isScrolling.count {
                         isScrolling[wheelIndex] = false
+                    }
+                    // Проверяем, что selection обновился недавно
+                    // Если нет - принудительно обновляем на основе последнего offset
+                    if wheelIndex < lastScrollUpdate.count {
+                        let timeSinceUpdate = Date().timeIntervalSince(lastScrollUpdate[wheelIndex])
+                        print("⏱️ Time since last update: \(timeSinceUpdate)")
+                        if timeSinceUpdate > 0.2 && wheelIndex < scrollOffsets.count {
+                            print("🔄 Finalizing selection for wheel[\(wheelIndex)]")
+                            finalizeScrollSelection(wheelIndex: wheelIndex)
+                        }
                     }
                 }
             }
@@ -402,65 +396,61 @@ public struct SDDSWheel: View {
         }
     }
     
-    private func updateSelectionFromScroll(wheelIndex: Int, offset: CGFloat, geometry: GeometryProxy) {
-        // Обновляем только во время ручного скролла
-        guard wheelIndex < isScrolling.count && isScrolling[wheelIndex] else {
+    private func updateSelectionFromItemPositions(wheelIndex: Int, positions: [ItemPosition], geometry: GeometryProxy) {
+        // Не обновляем если скролл инициирован кнопками
+        guard wheelIndex < isUpdatingFromButtons.count && !isUpdatingFromButtons[wheelIndex] else {
             return
         }
         
         let wheel = wheels[wheelIndex]
-        let itemHeight = getItemHeight()
-        let spacing = appearance.size.itemMinSpacing
         let centerY = geometry.size.height / 2
         
-        // offset - это minY контента относительно coordinateSpace
-        // Когда скроллим вниз, minY становится отрицательным
-        let contentOffset = -offset
+        // Находим элемент этого колеса, который ближе всего к центру
+        let itemsForWheel = positions.filter { $0.wheelIndex == wheelIndex }
         
-        // Вычисляем позицию центра видимой области относительно контента
-        let centerPosition = contentOffset + centerY
+        guard !itemsForWheel.isEmpty else { return }
         
-        // Вычисляем индекс элемента с учетом высоты элемента и отступов
-        let itemWithSpacing = itemHeight + spacing
-        let newSelectedIndex = Int(round(centerPosition / itemWithSpacing))
+        // Находим ближайший к центру элемент
+        let closest = itemsForWheel.min(by: { 
+            abs($0.midY - centerY) < abs($1.midY - centerY)
+        })
+        
+        guard let closestItem = closest else { return }
+        
+        let newSelectedIndex = closestItem.itemIndex
+        
+        print("📊 Wheel[\(wheelIndex)] closest item: \(newSelectedIndex), midY=\(closestItem.midY), centerY=\(centerY), distance=\(abs(closestItem.midY - centerY))")
+        
+        // Сохраняем для финального обновления
+        if wheelIndex < scrollOffsets.count {
+            scrollOffsets[wheelIndex] = CGFloat(newSelectedIndex)
+        }
         
         // Обновляем selection если элемент изменился и валиден
         if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
+            print("✅ Updating selection[\(wheelIndex)] = \(newSelectedIndex)")
             selection[wheelIndex] = newSelectedIndex
+            // Записываем время последнего обновления
+            if wheelIndex < lastScrollUpdate.count {
+                lastScrollUpdate[wheelIndex] = Date()
+            }
         }
     }
     
-    private func checkVisibleItem(
-        wheelIndex: Int,
-        itemIndex: Int,
-        itemGeometry: GeometryProxy,
-        scrollGeometry: GeometryProxy
-    ) {
-        // Отслеживаем только во время ручного скролла
-        guard wheelIndex < isScrolling.count && isScrolling[wheelIndex] else {
-            return
+    private func finalizeScrollSelection(wheelIndex: Int) {
+        guard wheelIndex < scrollOffsets.count else { 
+            print("❌ finalizeScrollSelection: no scrollOffsets")
+            return 
         }
         
-        // Получаем центр видимой области
-        let scrollCenter = scrollGeometry.size.height / 2
+        let wheel = wheels[wheelIndex]
+        let finalIndex = Int(round(scrollOffsets[wheelIndex]))
         
-        // Получаем позицию элемента относительно скролла
-        let itemFrame = itemGeometry.frame(in: .named("scroll\(wheelIndex)"))
-        let itemCenter = itemFrame.midY
+        print("🔍 finalizeScrollSelection: scrollOffset=\(scrollOffsets[wheelIndex]), finalIndex=\(finalIndex), current=\(selection[wheelIndex])")
         
-        // Вычисляем расстояние от центра элемента до центра видимой области
-        let distanceFromCenter = abs(itemCenter - scrollCenter)
-        
-        // Определяем порог - половина высоты элемента
-        let itemHeight = getItemHeight()
-        let threshold = itemHeight / 2
-        
-        // Если элемент находится в центральной зоне
-        if distanceFromCenter < threshold {
-            let wheel = wheels[wheelIndex]
-            if itemIndex >= 0 && itemIndex < wheel.items.count && itemIndex != selection[wheelIndex] {
-                selection[wheelIndex] = itemIndex
-            }
+        if finalIndex >= 0 && finalIndex < wheel.items.count && finalIndex != selection[wheelIndex] {
+            print("✅ Finalizing selection[\(wheelIndex)] = \(finalIndex)")
+            selection[wheelIndex] = finalIndex
         }
     }
     
@@ -673,7 +663,21 @@ public struct WheelItem {
     }
 }
 
-// MARK: - ScrollOffsetPreferenceKey
+// MARK: - Preference Keys
+
+private struct ItemPosition: Equatable {
+    let wheelIndex: Int
+    let itemIndex: Int
+    let midY: CGFloat
+}
+
+private struct ItemPositionPreferenceKey: PreferenceKey {
+    static var defaultValue: [ItemPosition] = []
+    
+    static func reduce(value: inout [ItemPosition], nextValue: () -> [ItemPosition]) {
+        value.append(contentsOf: nextValue())
+    }
+}
 
 private struct ScrollOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
