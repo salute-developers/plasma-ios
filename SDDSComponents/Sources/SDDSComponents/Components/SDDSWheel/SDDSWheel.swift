@@ -37,6 +37,7 @@ public struct SDDSWheel: View {
     @State private var isScrolling: [Bool] = []
     @State private var isUpdatingFromButtons: [Bool] = []
     @State private var lastScrollUpdate: [Date] = []
+    @State private var lastButtonPress: [Date] = []
     
     // Данные для колес
     private let wheels: [WheelData]
@@ -242,7 +243,7 @@ public struct SDDSWheel: View {
             .onPreferenceChange(ItemPositionPreferenceKey.self) { positions in
                 updateSelectionFromItemPositions(wheelIndex: wheelIndex, positions: positions, geometry: geometry)
             }
-            .simultaneousGesture(wheelDragGesture(for: wheelIndex))
+            .simultaneousGesture(wheelDragGesture(for: wheelIndex, proxy: proxy))
             .onAppear {
                 scrollToSelected(wheelIndex: wheelIndex, proxy: proxy)
             }
@@ -332,38 +333,32 @@ public struct SDDSWheel: View {
         isScrolling = Array(repeating: false, count: wheels.count)
         isUpdatingFromButtons = Array(repeating: false, count: wheels.count)
         lastScrollUpdate = Array(repeating: Date(), count: wheels.count)
+        lastButtonPress = Array(repeating: Date.distantPast, count: wheels.count)
     }
     
-    private func wheelDragGesture(for wheelIndex: Int) -> some Gesture {
+    private func wheelDragGesture(for wheelIndex: Int, proxy: ScrollViewProxy) -> some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { _ in
-                print("🎯 DragGesture.onChanged for wheel[\(wheelIndex)], isUpdatingFromButtons=\(wheelIndex < isUpdatingFromButtons.count ? isUpdatingFromButtons[wheelIndex] : false)")
                 if wheelIndex < isScrolling.count {
                     isScrolling[wheelIndex] = true
                 }
-                // Сбрасываем флаг сразу при начале ручного скролла
                 if wheelIndex < isUpdatingFromButtons.count {
                     isUpdatingFromButtons[wheelIndex] = false
-                    print("  ✅ Reset isUpdatingFromButtons to false")
                 }
             }
             .onEnded { _ in
-                print("🏁 DragGesture.onEnded for wheel[\(wheelIndex)]")
-                // Финализируем скролл после задержки
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                     if wheelIndex < isScrolling.count {
                         isScrolling[wheelIndex] = false
                     }
-                    // Проверяем, что selection обновился недавно
-                    // Если нет - принудительно обновляем на основе последнего offset
                     if wheelIndex < lastScrollUpdate.count {
                         let timeSinceUpdate = Date().timeIntervalSince(lastScrollUpdate[wheelIndex])
-                        print("⏱️ Time since last update: \(timeSinceUpdate)")
                         if timeSinceUpdate > 0.2 && wheelIndex < scrollOffsets.count {
-                            print("🔄 Finalizing selection for wheel[\(wheelIndex)]")
                             finalizeScrollSelection(wheelIndex: wheelIndex)
                         }
                     }
+                    // Центрируем выбранный элемент после окончания скролла
+                    snapToCenter(wheelIndex: wheelIndex, proxy: proxy)
                 }
             }
     }
@@ -371,6 +366,13 @@ public struct SDDSWheel: View {
     private func scrollToSelected(wheelIndex: Int, proxy: ScrollViewProxy) {
         let selectedIndex = selection[wheelIndex]
         withAnimation(.easeInOut(duration: 0.3)) {
+            proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+        }
+    }
+    
+    private func snapToCenter(wheelIndex: Int, proxy: ScrollViewProxy) {
+        let selectedIndex = selection[wheelIndex]
+        withAnimation(.easeInOut(duration: 0.2)) {
             proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
         }
     }
@@ -417,9 +419,24 @@ public struct SDDSWheel: View {
         
         guard let closestItem = closest else { return }
         
-        let newSelectedIndex = closestItem.itemIndex
+        var newSelectedIndex = closestItem.itemIndex
         
-        print("📊 Wheel[\(wheelIndex)] closest item: \(newSelectedIndex), midY=\(closestItem.midY), centerY=\(centerY), distance=\(abs(closestItem.midY - centerY))")
+        // Проверяем границы - если скроллим к краям
+        let distanceFromCenter = abs(closestItem.midY - centerY)
+        let itemHeight = getItemHeight()
+        
+        // Если элемент далеко от центра, возможно мы на краю списка
+        if distanceFromCenter > itemHeight {
+            // Проверяем, не первый/последний ли это элемент в массиве позиций
+            let sortedItems = itemsForWheel.sorted { $0.itemIndex < $1.itemIndex }
+            if let first = sortedItems.first, closestItem.itemIndex == first.itemIndex {
+                // Это первый видимый элемент - значит мы в начале списка
+                newSelectedIndex = 0
+            } else if let last = sortedItems.last, closestItem.itemIndex == last.itemIndex {
+                // Это последний видимый элемент - значит мы в конце списка
+                newSelectedIndex = wheel.items.count - 1
+            }
+        }
         
         // Сохраняем для финального обновления
         if wheelIndex < scrollOffsets.count {
@@ -428,7 +445,6 @@ public struct SDDSWheel: View {
         
         // Обновляем selection если элемент изменился и валиден
         if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
-            print("✅ Updating selection[\(wheelIndex)] = \(newSelectedIndex)")
             selection[wheelIndex] = newSelectedIndex
             // Записываем время последнего обновления
             if wheelIndex < lastScrollUpdate.count {
@@ -438,23 +454,23 @@ public struct SDDSWheel: View {
     }
     
     private func finalizeScrollSelection(wheelIndex: Int) {
-        guard wheelIndex < scrollOffsets.count else { 
-            print("❌ finalizeScrollSelection: no scrollOffsets")
-            return 
-        }
+        guard wheelIndex < scrollOffsets.count else { return }
         
         let wheel = wheels[wheelIndex]
         let finalIndex = Int(round(scrollOffsets[wheelIndex]))
         
-        print("🔍 finalizeScrollSelection: scrollOffset=\(scrollOffsets[wheelIndex]), finalIndex=\(finalIndex), current=\(selection[wheelIndex])")
-        
         if finalIndex >= 0 && finalIndex < wheel.items.count && finalIndex != selection[wheelIndex] {
-            print("✅ Finalizing selection[\(wheelIndex)] = \(finalIndex)")
             selection[wheelIndex] = finalIndex
         }
     }
     
     private func scrollUp(wheelIndex: Int) {
+        if wheelIndex < lastButtonPress.count {
+            let timeSinceLastPress = Date().timeIntervalSince(lastButtonPress[wheelIndex])
+            guard timeSinceLastPress > 0.5 else { return }
+            lastButtonPress[wheelIndex] = Date()
+        }
+        
         if selection[wheelIndex] > 0 {
             if wheelIndex < isUpdatingFromButtons.count {
                 isUpdatingFromButtons[wheelIndex] = true
@@ -464,6 +480,12 @@ public struct SDDSWheel: View {
     }
     
     private func scrollDown(wheelIndex: Int) {
+        if wheelIndex < lastButtonPress.count {
+            let timeSinceLastPress = Date().timeIntervalSince(lastButtonPress[wheelIndex])
+            guard timeSinceLastPress > 0.5 else { return }
+            lastButtonPress[wheelIndex] = Date()
+        }
+        
         if selection[wheelIndex] < wheels[wheelIndex].items.count - 1 {
             if wheelIndex < isUpdatingFromButtons.count {
                 isUpdatingFromButtons[wheelIndex] = true
@@ -592,8 +614,7 @@ struct WheelItemModifier: ViewModifier {
         content
             .scaleEffect(scale)
             .opacity(isCentralItem ? 1.0 : alpha)
-            .animation(.easeInOut(duration: 0.2), value: scale)
-            .animation(.easeInOut(duration: 0.2), value: alpha)
+            .animation(.easeInOut(duration: 0.2), value: selectedIndex)
     }
     
     private func calculateDistance(
