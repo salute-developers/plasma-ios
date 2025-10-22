@@ -9,6 +9,7 @@ struct NavigationBarMainPageAppearance: CodeGenerationAppearance {
     var textColor: String?
     var backgroundColor: String?
     var shadow: String?
+    var textTypography: String?
     
     init(variation: NavigationBarMainPageConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -27,6 +28,9 @@ struct NavigationBarMainPageAppearance: CodeGenerationAppearance {
         
         // Тень
         self.shadow = ShadowTokenContextBuilder(shadow: props.shadow).context
+        
+        // Шрифты
+        self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
     }
 }
 

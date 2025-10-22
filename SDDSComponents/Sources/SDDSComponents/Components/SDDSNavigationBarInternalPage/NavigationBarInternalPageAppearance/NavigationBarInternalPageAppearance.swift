@@ -16,6 +16,9 @@ public struct NavigationBarInternalPageAppearance {
     // Иконка
     public var backIcon: Image?
     
+    // Типографика
+    public var textTypography: TypographyConfiguration
+    
     // Тень
     public var shadow: ShadowToken
     
@@ -29,6 +32,7 @@ public struct NavigationBarInternalPageAppearance {
         textColor: ColorToken = .clearColor,
         backgroundColor: ColorToken = .clearColor,
         backIcon: Image? = nil,
+        textTypography: TypographyConfiguration = .default,
         shadow: ShadowToken = ShadowToken(),
         size: NavigationBarInternalPageSizeConfiguration = NavigationBarInternalPageSize()
     ) {
@@ -38,6 +42,7 @@ public struct NavigationBarInternalPageAppearance {
         self.textColor = textColor
         self.backgroundColor = backgroundColor
         self.backIcon = backIcon
+        self.textTypography = textTypography
         self.shadow = shadow
         self.size = size
     }
@@ -57,4 +62,3 @@ public extension EnvironmentValues {
         set { self[NavigationBarInternalPageAppearance.self] = newValue }
     }
 }
-

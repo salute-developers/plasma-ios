@@ -12,6 +12,9 @@ public struct NavigationBarMainPageAppearance {
     public var textColor: ColorToken
     public var backgroundColor: ColorToken
     
+    // Типографика
+    public var textTypography: TypographyConfiguration
+    
     // Тень
     public var shadow: ShadowToken
     
@@ -23,6 +26,7 @@ public struct NavigationBarMainPageAppearance {
         actionEndColor: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
         backgroundColor: ColorToken = .clearColor,
+        textTypography: TypographyConfiguration = .default,
         shadow: ShadowToken = ShadowToken(),
         size: NavigationBarMainPageSizeConfiguration = NavigationBarMainPageSize()
     ) {
@@ -30,6 +34,7 @@ public struct NavigationBarMainPageAppearance {
         self.actionEndColor = actionEndColor
         self.textColor = textColor
         self.backgroundColor = backgroundColor
+        self.textTypography = textTypography
         self.shadow = shadow
         self.size = size
     }
@@ -49,4 +54,3 @@ public extension EnvironmentValues {
         set { self[NavigationBarMainPageAppearance.self] = newValue }
     }
 }
-

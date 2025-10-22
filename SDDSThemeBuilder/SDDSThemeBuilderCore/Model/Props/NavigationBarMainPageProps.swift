@@ -9,6 +9,9 @@ struct NavigationBarMainPageProps: MergeableConfiguration, Codable {
     var textColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?
     
+    // Шрифты
+    var textStyle: KeyValue<String>?
+    
     // Размеры и отступы
     var paddingStart: KeyValue<Double>?
     var paddingEnd: KeyValue<Double>?

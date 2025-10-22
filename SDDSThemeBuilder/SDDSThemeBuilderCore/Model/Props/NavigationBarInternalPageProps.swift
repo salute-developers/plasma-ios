@@ -10,6 +10,9 @@ struct NavigationBarInternalPageProps: MergeableConfiguration, Codable {
     var textColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?
     
+    // Шрифты
+    var textStyle: KeyValue<String>?
+    
     // Иконка
     var backIcon: KeyValue<String>?
     

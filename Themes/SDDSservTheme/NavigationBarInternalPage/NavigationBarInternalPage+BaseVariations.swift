@@ -53,6 +53,7 @@ private extension NavigationBarInternalPageAppearance {
         appearance.backIcon = Asset.disclosureLeftOutline24.image
         appearance.backIconColor = ColorToken.textDefaultPrimary
         appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textTypography = NavigationBarInternalPageTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
         return appearance
     }
 }

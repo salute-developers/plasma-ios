@@ -51,6 +51,7 @@ private extension NavigationBarMainPageAppearance {
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textTypography = NavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
         return appearance
     }
 }
