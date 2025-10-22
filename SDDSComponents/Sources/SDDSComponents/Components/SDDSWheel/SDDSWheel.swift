@@ -70,7 +70,7 @@ public struct SDDSWheel: View {
                 
                 if index < wheels.count - 1 {
                     let columnHeight = calculateColumnHeight(for: wheels[index])
-                    wheelSeparator(height: columnHeight)
+                    wheelSeparator(height: columnHeight, wheel: wheels[index])
                 }
             }
         }
@@ -158,15 +158,37 @@ public struct SDDSWheel: View {
     }
     
     @ViewBuilder
-    private func wheelSeparator(height: CGFloat) -> some View {
+    private func wheelSeparator(height: CGFloat, wheel: WheelData) -> some View {
         ZStack {
             Color.clear
                 .frame(width: appearance.size.separatorSpacing, height: height)
             
-            if let dividerAppearance = appearance.dividerAppearance {
-                SDDSDivider(appearance: dividerAppearance)
-                    .frame(width: height)
-                    .rotationEffect(.degrees(90))
+            switch appearance.dividerStyle {
+            case .empty:
+                // Не показываем разделитель, только spacer
+                EmptyView()
+                
+            case .dots:
+                // Показываем двоеточие, выровненное по центру выбранного элемента
+                GeometryReader { geometry in
+                    let centerY = getCenterY(for: wheel, geometry: geometry)
+                    VStack(spacing: 0) {
+                        Color.clear.frame(height: centerY - getItemHeight() / 2)
+                        Text(":")
+                            .foregroundColor(currentColor(for: appearance.itemTextColor))
+                            .typography(itemTextTypography)
+                            .frame(height: getItemHeight())
+                        Spacer(minLength: 0)
+                    }
+                }
+                
+            case .divider:
+                // Показываем стандартный разделитель
+                if let dividerAppearance = appearance.dividerAppearance {
+                    SDDSDivider(appearance: dividerAppearance)
+                        .frame(width: height)
+                        .rotationEffect(.degrees(90))
+                }
             }
         }
         .frame(width: appearance.size.separatorSpacing, height: height)

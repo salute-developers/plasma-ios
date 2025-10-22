@@ -30,6 +30,9 @@ public struct WheelAppearance {
     // Вложенный компонент
     public var dividerAppearance: DividerAppearance?
     
+    // Стиль разделителя
+    public var dividerStyle: WheelDividerStyle
+    
     // Размеры
     public var size: WheelSizeConfiguration
     
@@ -46,6 +49,7 @@ public struct WheelAppearance {
         controlIconUp: Image? = nil,
         controlIconDown: Image? = nil,
         dividerAppearance: DividerAppearance? = nil,
+        dividerStyle: WheelDividerStyle = .divider,
         size: WheelSizeConfiguration = WheelSize()
     ) {
         self.itemTextColor = itemTextColor
@@ -60,6 +64,7 @@ public struct WheelAppearance {
         self.controlIconUp = controlIconUp
         self.controlIconDown = controlIconDown
         self.dividerAppearance = dividerAppearance
+        self.dividerStyle = dividerStyle
         self.size = size
     }
 }

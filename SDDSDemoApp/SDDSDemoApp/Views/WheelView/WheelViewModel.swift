@@ -23,6 +23,14 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
             updateWheels()
         }
     }
+    @Published var dividerStyle: WheelDividerStyle = .divider {
+        didSet {
+            if var wheelAppearance = appearance as? WheelAppearance {
+                wheelAppearance.dividerStyle = dividerStyle
+                appearance = wheelAppearance
+            }
+        }
+    }
     
     private let sampleData: [[String]] = [
         (1...31).map { String(format: "%02d", $0) },

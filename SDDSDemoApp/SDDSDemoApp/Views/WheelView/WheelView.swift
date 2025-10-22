@@ -58,6 +58,24 @@ struct WheelView: View {
                         Text("\(viewModel.visibleItemsCount)")
                     }
                 }
+                HStack {
+                    Text("Divider Style")
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    Menu {
+                        Button("Empty") {
+                            viewModel.dividerStyle = .empty
+                        }
+                        Button("Dots") {
+                            viewModel.dividerStyle = .dots
+                        }
+                        Button("Divider") {
+                            viewModel.dividerStyle = .divider
+                        }
+                    } label: {
+                        Text(dividerStyleText(viewModel.dividerStyle))
+                    }
+                }
             }
             
             Section(header: Text("Custom Labels")) {
@@ -106,6 +124,17 @@ struct WheelView: View {
             }
         }
         .navigationTitle("Wheel")
+    }
+    
+    private func dividerStyleText(_ style: WheelDividerStyle) -> String {
+        switch style {
+        case .empty:
+            return "Empty"
+        case .dots:
+            return "Dots"
+        case .divider:
+            return "Divider"
+        }
     }
 }
 
