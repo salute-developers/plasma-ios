@@ -1093,4 +1093,30 @@ enum Theme: String, CaseIterable {
             return PlasmaHomeDSTheme.Wheel.all
         }
     }
+    
+    var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NavigationBarMainPage.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
+    
+    var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NavigationBarInternalPage.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
 }
