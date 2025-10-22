@@ -88,6 +88,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationContent = "NotificationContent"
     case basicButtonGroup = "BasicButtonGroup"
     case iconButtonGroup = "IconButtonGroup"
+    case wheel = "Wheel"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -176,7 +177,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .tabBarClear,
             .tabBarHasLabelSolid,
             .tabBarHasLabelClear,
-            .codeInput
+            .codeInput,
+            .wheel
         ]
     }
     
@@ -295,6 +297,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL, 
                 themeConfig: themeConfig
             )
+        case .wheel:
+            GenerateComponentCommand<WheelProps, WheelAppearance, WheelSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -392,6 +400,8 @@ extension CodeGenerationComponent {
             "ButtonGroupAppearance"
         case .iconButtonGroup:
             "ButtonGroupAppearance"
+        case .wheel:
+            "WheelAppearance"
         }
     }
     
@@ -490,6 +500,8 @@ extension CodeGenerationComponent {
             "ButtonGroupSizeConfiguration"
         case .iconButtonGroup:
             "ButtonGroupSizeConfiguration"
+        case .wheel:
+            "WheelSizeConfiguration"
         }
     }
     
@@ -669,6 +681,8 @@ extension CodeGenerationComponent {
             "basic_button_group_config.json"
         case .iconButtonGroup:
             "icon_button_group_config.json"
+        case .wheel:
+            "wheel_config.json"
         }
     }
     
