@@ -48,7 +48,8 @@ struct ComponentsView: View {
         ("CodeField", AnyView(CodeFieldView())),
         ("CodeInput", AnyView(CodeInputView())),
         ("Loader", AnyView(LoaderView())),
-        ("Wheel", AnyView(WheelView()))
+        ("Wheel", AnyView(WheelView())),
+        ("NavigationBar", AnyView(NavigationBarView()))
     ]
 
     var body: some View {

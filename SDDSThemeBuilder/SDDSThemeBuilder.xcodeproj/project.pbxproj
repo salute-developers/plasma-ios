@@ -185,6 +185,12 @@
 		8140A4B02D5A07A0002CF32B /* BasicButton+Variations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8140A4A42D5A07A0002CF32B /* BasicButton+Variations.swift */; };
 		8149BF402D6351120011C402 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8149BF3F2D6351120011C402 /* SDDSThemeCore */; };
 		814BF7442EA804BB009B091C /* ImageSizeContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */; };
+		814B78262EA8D7D3009B091C /* NavigationBarInternalPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78212EA8D7D3009B091C /* NavigationBarInternalPageSize.swift */; };
+		814B78272EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78232EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift */; };
+		814B78282EA8D7D3009B091C /* NavigationBarMainPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78242EA8D7D3009B091C /* NavigationBarMainPageSize.swift */; };
+		814B78292EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78202EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift */; };
+		814B782C2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B782A2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift */; };
+		814B782D2EA8D7EB009B091C /* NavigationBarMainPageProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B782B2EA8D7EB009B091C /* NavigationBarMainPageProps.swift */; };
 		815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367D2DE5B7120005273B /* OverlayAppearance.swift */; };
 		815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367C2DE5B7120005273B /* OvarlaySize.swift */; };
 		815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36812DE5B71F0005273B /* OverlayProps.swift */; };
@@ -725,6 +731,12 @@
 		8140A4A32D5A07A0002CF32B /* BasicButtonTypography.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicButtonTypography.swift; sourceTree = "<group>"; };
 		8140A4A42D5A07A0002CF32B /* BasicButton+Variations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasicButton+Variations.swift"; sourceTree = "<group>"; };
 		814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeContextBuilder.swift; sourceTree = "<group>"; };
+		814B78202EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageAppearance.swift; sourceTree = "<group>"; };
+		814B78212EA8D7D3009B091C /* NavigationBarInternalPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSize.swift; sourceTree = "<group>"; };
+		814B78232EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
+		814B78242EA8D7D3009B091C /* NavigationBarMainPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageSize.swift; sourceTree = "<group>"; };
+		814B782A2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageProps.swift; sourceTree = "<group>"; };
+		814B782B2EA8D7EB009B091C /* NavigationBarMainPageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageProps.swift; sourceTree = "<group>"; };
 		814F71E92C58D4A0006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		815D367C2DE5B7120005273B /* OvarlaySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvarlaySize.swift; sourceTree = "<group>"; };
 		815D367D2DE5B7120005273B /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
@@ -1448,6 +1460,8 @@
 			isa = PBXGroup;
 			children = (
 				81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */,
+				814B782A2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift */,
+				814B782B2EA8D7EB009B091C /* NavigationBarMainPageProps.swift */,
 				81DE8FA42E7BDB32005D24FE /* ButtonGroupProps.swift */,
 				81E91BC52E71CABF00CACED3 /* NotificationContentProps.swift */,
 				81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */,
@@ -1500,6 +1514,8 @@
 			isa = PBXGroup;
 			children = (
 				81F147272E9EDBED00A9A1D4 /* Wheel */,
+				814B78222EA8D7D3009B091C /* NavigationBarInternalPage */,
+				814B78252EA8D7D3009B091C /* NavigationBarMainPage */,
 				81DE8FA82E7BDC05005D24FE /* ButtonGroup */,
 				81E91BC22E71CA9300CACED3 /* NotificationContent */,
 				81225C3E2E6712D100AA1EFB /* CodeInput */,
@@ -1691,6 +1707,24 @@
 				8140A4A42D5A07A0002CF32B /* BasicButton+Variations.swift */,
 			);
 			path = BasicButton;
+			sourceTree = "<group>";
+		};
+		814B78222EA8D7D3009B091C /* NavigationBarInternalPage */ = {
+			isa = PBXGroup;
+			children = (
+				814B78202EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift */,
+				814B78212EA8D7D3009B091C /* NavigationBarInternalPageSize.swift */,
+			);
+			path = NavigationBarInternalPage;
+			sourceTree = "<group>";
+		};
+		814B78252EA8D7D3009B091C /* NavigationBarMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				814B78232EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift */,
+				814B78242EA8D7D3009B091C /* NavigationBarMainPageSize.swift */,
+			);
+			path = NavigationBarMainPage;
 			sourceTree = "<group>";
 		};
 		814F71EB2C58D4AA006385E4 /* Sources */ = {
@@ -2905,6 +2939,8 @@
 				8131DE102E4BA33A00FED868 /* TabBarIslandProps.swift in Sources */,
 				8131DE112E4BA33A00FED868 /* TabBarProps.swift in Sources */,
 				81E1EE442BE3A5E700F86AE1 /* FontFamilyKind.swift in Sources */,
+				814B782C2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift in Sources */,
+				814B782D2EA8D7EB009B091C /* NavigationBarMainPageProps.swift in Sources */,
 				812DB6EF2D55E43600D3F4A3 /* CGFloatContextBuilder.swift in Sources */,
 				81A753452D47DDF1006E1BE7 /* GenerateComponentCommand.swift in Sources */,
 				8174BA442D5DDF5900EA3E68 /* ChipSize.swift in Sources */,
@@ -2972,6 +3008,10 @@
 				8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */,
 				812DB7162D56597700D3F4A3 /* DefaultValueContextBuilder.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
+				814B78262EA8D7D3009B091C /* NavigationBarInternalPageSize.swift in Sources */,
+				814B78272EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift in Sources */,
+				814B78282EA8D7D3009B091C /* NavigationBarMainPageSize.swift in Sources */,
+				814B78292EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift in Sources */,
 				810F92522E12E713008CA4CA /* ListItemProps.swift in Sources */,
 				81E1EE5B2BE3A6D600F86AE1 /* FontFamilyContainer.swift in Sources */,
 				81CB0FEC2C245052003B1064 /* EnsureDoubleInRangeNode.swift in Sources */,

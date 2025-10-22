@@ -89,6 +89,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case basicButtonGroup = "BasicButtonGroup"
     case iconButtonGroup = "IconButtonGroup"
     case wheel = "Wheel"
+    case navigationBarMainPage = "NavigationBarMainPage"
+    case navigationBarInternalPage = "NavigationBarInternalPage"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -178,7 +180,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .tabBarHasLabelSolid,
             .tabBarHasLabelClear,
             .codeInput,
-            .wheel
+            .wheel,
+            .navigationBarMainPage,
+            .navigationBarInternalPage
         ]
     }
     
@@ -303,6 +307,18 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .navigationBarMainPage:
+            GenerateComponentCommand<NavigationBarMainPageProps, NavigationBarMainPageAppearance, NavigationBarMainPageSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
+        case .navigationBarInternalPage:
+            GenerateComponentCommand<NavigationBarInternalPageProps, NavigationBarInternalPageAppearance, NavigationBarInternalPageSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -402,6 +418,10 @@ extension CodeGenerationComponent {
             "ButtonGroupAppearance"
         case .wheel:
             "WheelAppearance"
+        case .navigationBarMainPage:
+            "NavigationBarMainPageAppearance"
+        case .navigationBarInternalPage:
+            "NavigationBarInternalPageAppearance"
         }
     }
     
@@ -502,6 +522,10 @@ extension CodeGenerationComponent {
             "ButtonGroupSizeConfiguration"
         case .wheel:
             "WheelSizeConfiguration"
+        case .navigationBarMainPage:
+            "NavigationBarMainPageSizeConfiguration"
+        case .navigationBarInternalPage:
+            "NavigationBarInternalPageSizeConfiguration"
         }
     }
     
@@ -683,6 +707,10 @@ extension CodeGenerationComponent {
             "icon_button_group_config.json"
         case .wheel:
             "wheel_config.json"
+        case .navigationBarMainPage:
+            "navigation_bar_main_page_config.json"
+        case .navigationBarInternalPage:
+            "navigation_bar_internal_page_config.json"
         }
     }
     

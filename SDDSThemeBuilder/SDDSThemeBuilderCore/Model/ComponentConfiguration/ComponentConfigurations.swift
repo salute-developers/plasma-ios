@@ -45,3 +45,5 @@ typealias TabBarConfiguration = ComponentConfiguration<TabBarProps>
 typealias CodeInputConfiguration = ComponentConfiguration<CodeInputProps>
 typealias NotificationContentConfiguration = ComponentConfiguration<NotificationContentProps>
 typealias WheelConfiguration = ComponentConfiguration<WheelProps>
+typealias NavigationBarMainPageConfiguration = ComponentConfiguration<NavigationBarMainPageProps>
+typealias NavigationBarInternalPageConfiguration = ComponentConfiguration<NavigationBarInternalPageProps>

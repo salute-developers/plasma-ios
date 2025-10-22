@@ -81,6 +81,11 @@
 		81368A712E01879900A1702A /* TextSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6B2E01879900A1702A /* TextSkeletonView.swift */; };
 		81368A722E01879900A1702A /* TextSkeletonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */; };
 		81368A732E01879900A1702A /* RectSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368A672E01879900A1702A /* RectSkeletonView.swift */; };
+		814B87472EA8DF39009B091C /* NavigationBarMainPageVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B87422EA8DF39009B091C /* NavigationBarMainPageVariationProvider.swift */; };
+		814B87482EA8DF39009B091C /* NavigationBarInternalPageVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B87412EA8DF39009B091C /* NavigationBarInternalPageVariationProvider.swift */; };
+		814B87492EA8DF39009B091C /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B87442EA8DF39009B091C /* NavigationBarView.swift */; };
+		814B874A2EA8DF39009B091C /* NavigationBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B87452EA8DF39009B091C /* NavigationBarViewModel.swift */; };
+		814B874B2EA8DF39009B091C /* NavigationBarPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B87432EA8DF39009B091C /* NavigationBarPageType.swift */; };
 		81578DD52D89FAFB00BC7038 /* BottomSheetViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */; };
 		81578DD72D89FB5A00BC7038 /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */; };
 		81578DD92D89FBAB00BC7038 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DD82D89FBA900BC7038 /* BottomSheetView.swift */; };
@@ -273,6 +278,11 @@
 		81368A6A2E01879900A1702A /* TextSkeletonVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonVariationProvider.swift; sourceTree = "<group>"; };
 		81368A6B2E01879900A1702A /* TextSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonView.swift; sourceTree = "<group>"; };
 		81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSkeletonViewModel.swift; sourceTree = "<group>"; };
+		814B87412EA8DF39009B091C /* NavigationBarInternalPageVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageVariationProvider.swift; sourceTree = "<group>"; };
+		814B87422EA8DF39009B091C /* NavigationBarMainPageVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageVariationProvider.swift; sourceTree = "<group>"; };
+		814B87432EA8DF39009B091C /* NavigationBarPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarPageType.swift; sourceTree = "<group>"; };
+		814B87442EA8DF39009B091C /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		814B87452EA8DF39009B091C /* NavigationBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarViewModel.swift; sourceTree = "<group>"; };
 		81578DD42D89FAF700BC7038 /* BottomSheetViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewProvider.swift; sourceTree = "<group>"; };
 		81578DD62D89FB5700BC7038 /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
 		81578DD82D89FBA900BC7038 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
@@ -669,6 +679,7 @@
 			isa = PBXGroup;
 			children = (
 				8198F86D2E9F692600CEB3D5 /* WheelView */,
+				814B87462EA8DF39009B091C /* NavigationBarView */,
 				81C6F67F2E8A7846004B8E7E /* ButtonGroupView */,
 				81117E722E7BD6180063A7EB /* CodeInputView */,
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
@@ -798,6 +809,18 @@
 				81368A6C2E01879900A1702A /* TextSkeletonViewModel.swift */,
 			);
 			path = TextSkeletonView;
+			sourceTree = "<group>";
+		};
+		814B87462EA8DF39009B091C /* NavigationBarView */ = {
+			isa = PBXGroup;
+			children = (
+				814B87412EA8DF39009B091C /* NavigationBarInternalPageVariationProvider.swift */,
+				814B87422EA8DF39009B091C /* NavigationBarMainPageVariationProvider.swift */,
+				814B87432EA8DF39009B091C /* NavigationBarPageType.swift */,
+				814B87442EA8DF39009B091C /* NavigationBarView.swift */,
+				814B87452EA8DF39009B091C /* NavigationBarViewModel.swift */,
+			);
+			path = NavigationBarView;
 			sourceTree = "<group>";
 		};
 		81578DD32D89FACF00BC7038 /* BottomSheetView */ = {
@@ -1393,6 +1416,11 @@
 				8174BA4C2D5DEFAA00EA3E68 /* ChipVariationProvider.swift in Sources */,
 				8162434D2CB93E2000506E1C /* PhotoPicker.swift in Sources */,
 				819A03C02E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift in Sources */,
+				814B87472EA8DF39009B091C /* NavigationBarMainPageVariationProvider.swift in Sources */,
+				814B87482EA8DF39009B091C /* NavigationBarInternalPageVariationProvider.swift in Sources */,
+				814B87492EA8DF39009B091C /* NavigationBarView.swift in Sources */,
+				814B874A2EA8DF39009B091C /* NavigationBarViewModel.swift in Sources */,
+				814B874B2EA8DF39009B091C /* NavigationBarPageType.swift in Sources */,
 				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
 				81C6F6802E8A7847004B8E7E /* ButtonGroupView.swift in Sources */,
@@ -1576,9 +1604,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 89;
+				CURRENT_PROJECT_VERSION = 90;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = KDMYYG676V;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1596,7 +1624,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vkaltyrin.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1617,7 +1645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 89;
+				CURRENT_PROJECT_VERSION = 90;
 				DEVELOPMENT_ASSET_PATHS = "\"SDDSDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				ENABLE_PREVIEWS = YES;
