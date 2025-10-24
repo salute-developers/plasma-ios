@@ -88,7 +88,6 @@ struct NavigationBarView: View {
                 textAlignRow
                 contentPlacementRow
                 
-                Toggle("Show Icon", isOn: $viewModel.showIcon)
                 Toggle("Has Action Left", isOn: $viewModel.hasActionLeft)
                 Toggle("Has Action Right", isOn: $viewModel.hasActionRight)
                 
