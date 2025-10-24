@@ -88,6 +88,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationContent = "NotificationContent"
     case basicButtonGroup = "BasicButtonGroup"
     case iconButtonGroup = "IconButtonGroup"
+    case navigationBarMainPage = "NavigationBarMainPage"
+    case navigationBarInternalPage = "NavigationBarInternalPage"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -176,7 +178,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
             .tabBarClear,
             .tabBarHasLabelSolid,
             .tabBarHasLabelClear,
-            .codeInput
+            .codeInput,
+            .navigationBarMainPage,
+            .navigationBarInternalPage
         ]
     }
     
@@ -295,6 +299,18 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL, 
                 themeConfig: themeConfig
             )
+        case .navigationBarMainPage:
+            GenerateComponentCommand<NavigationBarMainPageProps, NavigationBarMainPageAppearance, NavigationBarMainPageSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
+        case .navigationBarInternalPage:
+            GenerateComponentCommand<NavigationBarInternalPageProps, NavigationBarInternalPageAppearance, NavigationBarInternalPageSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -392,6 +408,10 @@ extension CodeGenerationComponent {
             "ButtonGroupAppearance"
         case .iconButtonGroup:
             "ButtonGroupAppearance"
+        case .navigationBarMainPage:
+            "NavigationBarMainPageAppearance"
+        case .navigationBarInternalPage:
+            "NavigationBarInternalPageAppearance"
         }
     }
     
@@ -490,6 +510,10 @@ extension CodeGenerationComponent {
             "ButtonGroupSizeConfiguration"
         case .iconButtonGroup:
             "ButtonGroupSizeConfiguration"
+        case .navigationBarMainPage:
+            "NavigationBarMainPageSizeConfiguration"
+        case .navigationBarInternalPage:
+            "NavigationBarInternalPageSizeConfiguration"
         }
     }
     
@@ -669,6 +693,10 @@ extension CodeGenerationComponent {
             "basic_button_group_config.json"
         case .iconButtonGroup:
             "icon_button_group_config.json"
+        case .navigationBarMainPage:
+            "navigation_bar_main_page_config.json"
+        case .navigationBarInternalPage:
+            "navigation_bar_internal_page_config.json"
         }
     }
     
