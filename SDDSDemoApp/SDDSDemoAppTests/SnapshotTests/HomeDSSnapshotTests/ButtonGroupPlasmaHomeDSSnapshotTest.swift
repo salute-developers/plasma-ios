@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class ButtonGroupPlasmaHomeDSSnapshotTest: XCTestCase {
+final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testButtonGroupMDefaultNoGapHomeDS() async throws {

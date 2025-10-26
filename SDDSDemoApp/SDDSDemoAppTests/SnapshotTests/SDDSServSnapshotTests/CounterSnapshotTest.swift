@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CounterSnapshotTest: XCTestCase {
+final class CounterSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCounterSizeLDefault() async throws {

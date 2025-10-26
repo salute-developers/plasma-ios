@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CircularProgressPlasmaB2CSnapshotTest: XCTestCase {
+final class CircularProgressPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCircularProgressXxlDefaultPlasmaB2C() async throws {

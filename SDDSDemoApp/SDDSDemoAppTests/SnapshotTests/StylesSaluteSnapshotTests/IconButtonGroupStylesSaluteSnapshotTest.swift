@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class IconButtonGroupStylesSaluteSnapshotTest: XCTestCase {
+final class IconButtonGroupStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testIconButtonGroupLGapNoneDefaultHorizontalStylesSalute() async throws {

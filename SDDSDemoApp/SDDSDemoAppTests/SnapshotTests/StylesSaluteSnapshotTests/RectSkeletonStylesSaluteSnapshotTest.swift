@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class RectSkeletonStylesSaluteSnapshotTest: XCTestCase {
+final class RectSkeletonStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testRectSkeletonTestCaseStylesSalute() async throws {

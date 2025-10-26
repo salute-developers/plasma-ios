@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ChipSnapshotTest: XCTestCase {
+final class ChipSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testChipSizeLDefaultHasClear() async throws {

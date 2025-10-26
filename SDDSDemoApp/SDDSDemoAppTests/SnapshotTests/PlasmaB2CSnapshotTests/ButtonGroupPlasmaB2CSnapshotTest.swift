@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class ButtonGroupPlasmaB2CSnapshotTest: XCTestCase {
+final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testButtonGroupLDefaultNoGapPlasmaB2C() async throws {

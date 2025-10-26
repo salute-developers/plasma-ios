@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class TextSkeletonPlasmaB2CSnapshotTest: XCTestCase {
+final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testTextSkeletonTestNoTextRandomPlasmaB2C() async throws {

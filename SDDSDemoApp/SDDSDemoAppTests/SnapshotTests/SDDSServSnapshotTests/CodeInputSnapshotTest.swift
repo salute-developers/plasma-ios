@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CodeInputSnapshotTest: XCTestCase {
+final class CodeInputSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCodeInputLCodeLengthFourCaptionLeft() async throws {

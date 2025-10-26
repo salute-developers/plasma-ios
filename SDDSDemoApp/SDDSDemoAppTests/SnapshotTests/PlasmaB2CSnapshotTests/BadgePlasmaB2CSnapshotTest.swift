@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class BadgePlasmaB2CSnapshotTest: XCTestCase {
+final class BadgePlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testBadgeSizeLDefaultContentLeftPlasmaB2C() async throws {

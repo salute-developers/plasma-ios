@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class CheckBoxPlasmaHomeDsSnapshotTest: XCTestCase {
+final class CheckBoxPlasmaHomeDsSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testCheckBoxSizeLNegativePlasmaHomeDS() async throws {

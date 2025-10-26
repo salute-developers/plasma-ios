@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class ChipGroupPlasmaHomeDSSnapshotTest: XCTestCase {
+final class ChipGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testChipGroupLDensePlasmaHomeDS() async throws {

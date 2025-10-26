@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class SpinnerSnapshotTest: XCTestCase {
+final class SpinnerSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testSpinnerXxlDefaultSddsServ() async throws {

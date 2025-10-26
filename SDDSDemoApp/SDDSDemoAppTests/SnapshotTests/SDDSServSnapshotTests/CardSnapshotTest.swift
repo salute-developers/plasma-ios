@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CardSnapshotTest: XCTestCase {
+final class CardSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCardLHorizontal() async throws {

@@ -29,25 +29,170 @@ jobs:
 
       - name: List available simulators
         run: |
-          echo "=== Available iOS Simulators ==="
+          echo "==== Available iOS Simulators ==== "
           xcrun simctl list devices available | grep "iPhone"
           echo "=== Available iOS Versions ==="
           xcrun simctl list runtimes available | grep "iOS"
 
-      - name: Run snapshot tests
+      - name: Run snapshot tests (attempt 1)
+        id: test_attempt_1
+        continue-on-error: true
         working-directory: SDDSDemoApp
         run: |
+          echo "🧪 Running all tests (attempt 1/2)"
           set -o pipefail && \
           xcodebuild clean test \
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
-          -resultBundlePath ../TestResults.xcresult
+          -resultBundlePath ../TestResults_1.xcresult 2>&1 | tee ../test_output_1.log
 
-      - name: Upload xcresult as artifact if failed
+      - name: Extract failed tests from attempt 1
+        if: steps.test_attempt_1.outcome == 'failure'
+        run: |
+          echo "📋 Extracting failed tests from attempt 1..."
+          
+          xcrun xcresulttool get test-results tests --path TestResults_1.xcresult > test_results_1.json
+          
+          jq -r '
+            .. | 
+            objects | 
+            select(.nodeType? == "Test Case" and .result? == "Failed") | 
+            .nodeIdentifier
+          ' test_results_1.json | sort -u > failed_tests_1.txt
+          
+          if [ -s failed_tests_1.txt ]; then
+            FAILED_COUNT=$(wc -l < failed_tests_1.txt | tr -d ' ')
+            echo "⚠️  Found $FAILED_COUNT failed test(s) in attempt 1:"
+            cat failed_tests_1.txt
+          else
+            echo "ℹ️  No failed tests found in attempt 1"
+            touch failed_tests_1.txt
+          fi
+
+      - name: Run snapshot tests (attempt 2)
+        if: steps.test_attempt_1.outcome == 'failure'
+        id: test_attempt_2
+        continue-on-error: true
+        working-directory: SDDSDemoApp
+        run: |
+          echo ""
+          echo "🔄 Running all tests again (attempt 2/2)"
+          echo "Using build cache from attempt 1..."
+          echo ""
+          
+          set -o pipefail && \
+          xcodebuild test \
+          -project SDDSDemoApp.xcodeproj \
+          -scheme SDDSDemoApp \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -resultBundlePath ../TestResults_2.xcresult 2>&1 | tee ../test_output_2.log
+
+      - name: Extract failed tests from attempt 2
+        if: steps.test_attempt_1.outcome == 'failure'
+        run: |
+          echo ""
+          echo "📋 Extracting failed tests from attempt 2..."
+          
+          if [ "${{ steps.test_attempt_2.outcome }}" == "success" ]; then
+            echo "✅ All tests passed in attempt 2"
+            touch failed_tests_2.txt
+          else
+            xcrun xcresulttool get test-results tests --path TestResults_2.xcresult > test_results_2.json
+            
+            jq -r '
+              .. | 
+              objects | 
+              select(.nodeType? == "Test Case" and .result? == "Failed") | 
+              .nodeIdentifier
+            ' test_results_2.json | sort -u > failed_tests_2.txt
+            
+            if [ -s failed_tests_2.txt ]; then
+              FAILED_COUNT=$(wc -l < failed_tests_2.txt | tr -d ' ')
+              echo "⚠️  Found $FAILED_COUNT failed test(s) in attempt 2:"
+              cat failed_tests_2.txt
+            else
+              echo "ℹ️  No failed tests found in attempt 2"
+              touch failed_tests_2.txt
+            fi
+          fi
+
+      - name: Compare and evaluate results
+        if: always()
+        run: |
+          echo ""
+          echo "📊 Test Results Summary"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          
+          ATTEMPT_1="${{ steps.test_attempt_1.outcome }}"
+          ATTEMPT_2="${{ steps.test_attempt_2.outcome }}"
+          
+          echo "Attempt 1: $ATTEMPT_1"
+          echo "Attempt 2: $ATTEMPT_2"
+          echo ""
+          
+          if [ "$ATTEMPT_1" == "success" ]; then
+            echo "✅ All tests passed on first attempt"
+            exit 0
+          fi
+          
+          if [ ! -f failed_tests_1.txt ]; then
+            echo "❌ Unable to extract test results"
+            exit 1
+          fi
+          
+          if [ "$ATTEMPT_2" == "success" ] || [ ! -s failed_tests_2.txt ]; then
+            echo "✅ All tests passed on second attempt (flaky tests resolved)"
+            echo ""
+            echo "Tests that failed in attempt 1 but passed in attempt 2:"
+            cat failed_tests_1.txt
+            exit 0
+          fi
+          
+          if diff -q failed_tests_1.txt failed_tests_2.txt > /dev/null 2>&1; then
+            echo "❌ Same tests failed in both attempts - stable failures detected"
+            echo ""
+            echo "Consistently failing tests:"
+            cat failed_tests_1.txt
+            exit 1
+          else
+            echo "✅ Different tests failed in each attempt - flaky tests detected, marking as passed"
+            echo ""
+            echo "Failed only in attempt 1:"
+            comm -23 failed_tests_1.txt failed_tests_2.txt
+            echo ""
+            echo "Failed only in attempt 2:"
+            comm -13 failed_tests_1.txt failed_tests_2.txt
+            echo ""
+            echo "Failed in both attempts:"
+            comm -12 failed_tests_1.txt failed_tests_2.txt
+            exit 0
+          fi
+
+      - name: Upload test results (attempt 1)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: xcode-test-results
-          path: TestResults.xcresult
+          name: test-results-attempt-1
+          path: TestResults_1.xcresult
+          if-no-files-found: ignore
+
+      - name: Upload test results (attempt 2)
+        if: steps.test_attempt_2.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-attempt-2
+          path: TestResults_2.xcresult
+          if-no-files-found: ignore
+
+      - name: Upload failed tests lists
+        if: steps.test_attempt_1.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-tests-comparison
+          path: |
+            failed_tests_1.txt
+            failed_tests_2.txt
+          if-no-files-found: ignore

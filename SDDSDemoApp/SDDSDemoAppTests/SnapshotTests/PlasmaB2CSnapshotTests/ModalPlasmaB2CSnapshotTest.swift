@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class ModalPlasmaB2CSnapshotTest: XCTestCase {
+final class ModalPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testModalUseNativeBlackOutHasClosePlasmaB2C() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CodeFieldSnapshotTest: XCTestCase {
+final class CodeFieldSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCodeFieldLCaptionLeftLengthFour() async throws {

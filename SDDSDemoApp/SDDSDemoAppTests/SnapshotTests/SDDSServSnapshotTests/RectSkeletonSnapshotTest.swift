@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class RectSkeletonSnapshotTest: XCTestCase {
+final class RectSkeletonSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testRectSkeletonTestCase() async throws {

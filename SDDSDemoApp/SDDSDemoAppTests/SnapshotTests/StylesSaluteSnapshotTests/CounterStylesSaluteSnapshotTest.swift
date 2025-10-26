@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class CounterStylesSaluteSnapshotTest: XCTestCase {
+final class CounterStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testCounterSizeLDefaultStylesSalute() async throws {

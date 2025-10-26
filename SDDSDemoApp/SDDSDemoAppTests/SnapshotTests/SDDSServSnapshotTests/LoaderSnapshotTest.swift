@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class LoaderSnapshotTest: XCTestCase {
+final class LoaderSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testLoaderCaseSpinner() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class IconBadgeSnapshotTest: XCTestCase {
+final class IconBadgeSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testIconBadgeSizeLDefault() async throws {

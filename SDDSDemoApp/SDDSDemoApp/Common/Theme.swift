@@ -1106,11 +1106,37 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+
+    var noteVariations: [Variation<NoteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Note.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
     
     var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NavigationBarInternalPage.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
+
+    var noteCompactVariations: [Variation<NoteCompactAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NoteCompact.all
         case .stylesSalute:
             return []
         case .plasmaB2CTheme:

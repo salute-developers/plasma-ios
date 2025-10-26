@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ButtonGroupStylesSaluteSnapshotTest: XCTestCase {
+final class ButtonGroupStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testButtonGroupLDefaultNoGapStylesSalute() async throws {

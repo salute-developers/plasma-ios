@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class TextSkeletonStylesSaluteSnapshotTest: XCTestCase {
+final class TextSkeletonStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testTextSkeletonTestNoTextRandomStylesSalute() async throws {

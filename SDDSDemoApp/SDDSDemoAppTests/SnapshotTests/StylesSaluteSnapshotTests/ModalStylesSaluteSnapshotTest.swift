@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ModalStylesSaluteSnapshotTest: XCTestCase {
+final class ModalStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testModalUseNativeBlackOutHasCloseStylesSalute() async throws {

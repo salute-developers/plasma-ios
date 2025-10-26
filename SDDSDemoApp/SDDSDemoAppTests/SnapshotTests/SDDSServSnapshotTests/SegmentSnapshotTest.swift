@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class SegmentSnapshotTest: XCTestCase {
+final class SegmentSnapshotTest: SDDSServThemeTestCase {
 
     @MainActor
     func testSegmentSizeLPrimary() async throws {

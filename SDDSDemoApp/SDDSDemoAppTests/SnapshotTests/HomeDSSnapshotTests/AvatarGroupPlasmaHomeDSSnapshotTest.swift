@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class AvatarGroupPlasmaHomeDSSnapshotTest: XCTestCase {
+final class AvatarGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testAvatarGroupSizeSPlasmaHomeDS() async throws {

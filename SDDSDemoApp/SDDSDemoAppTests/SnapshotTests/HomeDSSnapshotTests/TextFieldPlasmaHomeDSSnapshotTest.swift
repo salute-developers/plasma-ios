@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class TextFieldPlasmaHomeDSSnapshotTest: XCTestCase {
+final class TextFieldPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testTextFieldSizeLDefaultRequiredStartInnerLabelHomeDS() async throws {

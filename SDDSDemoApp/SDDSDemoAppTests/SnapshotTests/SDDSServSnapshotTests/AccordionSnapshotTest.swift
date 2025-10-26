@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class AccordionSnapshotTest: XCTestCase {
+final class AccordionSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testAccordionSolidActionEndSizeLSddsServ() async throws {

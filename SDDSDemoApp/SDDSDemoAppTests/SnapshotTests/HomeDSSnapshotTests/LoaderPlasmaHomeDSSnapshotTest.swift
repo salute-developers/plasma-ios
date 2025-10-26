@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class LoaderPlasmaHomeDSSnapshotTest: XCTestCase {
+final class LoaderPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testLoaderCaseSpinnerHomeDS() async throws {

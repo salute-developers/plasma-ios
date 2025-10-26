@@ -47,3 +47,5 @@ typealias NotificationContentConfiguration = ComponentConfiguration<Notification
 typealias WheelConfiguration = ComponentConfiguration<WheelProps>
 typealias NavigationBarMainPageConfiguration = ComponentConfiguration<NavigationBarMainPageProps>
 typealias NavigationBarInternalPageConfiguration = ComponentConfiguration<NavigationBarInternalPageProps>
+typealias NoteConfiguration = ComponentConfiguration<NoteProps>
+typealias NoteCompactConfiguration = ComponentConfiguration<NoteCompactProps>

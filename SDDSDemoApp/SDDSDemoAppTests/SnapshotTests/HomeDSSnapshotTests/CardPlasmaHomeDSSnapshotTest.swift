@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class CardPlasmaHomeDSSnapshotTest: XCTestCase {
+final class CardPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testCardLHorizontalHomeDS() async throws {

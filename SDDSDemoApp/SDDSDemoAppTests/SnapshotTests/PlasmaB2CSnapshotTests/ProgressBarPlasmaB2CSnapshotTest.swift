@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class ProgressBarPlasmaB2CSnapshotTest: XCTestCase {
+final class ProgressBarPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testProgressBarDefaultPlasmaB2C() async throws {

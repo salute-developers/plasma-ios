@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class IconBadgePlasmaHomeDSSnapshotTest: XCTestCase {
+final class IconBadgePlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testIconBadgeSizeLDefaultPlasmaHomeDS() async throws {
