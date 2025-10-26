@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class SwitchStylesSaluteSnapshotTest: XCTestCase {
+final class SwitchStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testSwitchSizeLStylesSalute() async throws {

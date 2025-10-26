@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class BasicButtonStylesSalutenapshotTest: XCTestCase {
+final class BasicButtonStylesSalutenapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testButtonLDefaultStylesSalute() async throws {

@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ListStylesSaluteSnapshotTest: XCTestCase {
+final class ListStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testListNormalSizeXlHasDisclosureStylesSalute() async throws {

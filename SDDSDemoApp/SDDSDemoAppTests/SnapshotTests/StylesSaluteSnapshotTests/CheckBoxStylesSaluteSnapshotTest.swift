@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class CheckBoxStylesSalutenapshotTest: XCTestCase {
+final class CheckBoxStylesSalutenapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testCheckBoxSizeMStylesSalute() async throws {

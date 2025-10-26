@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CounterPlasmaB2CSnapshotTest: XCTestCase {
+final class CounterPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCounterSizeLDefaultPlasmaB2C() async throws {

@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CodeInputPlasmaB2CSnapshotTest: XCTestCase {
+final class CodeInputPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCodeInputLCodeLengthFourCaptionLeftPlasmaB2C() async throws {

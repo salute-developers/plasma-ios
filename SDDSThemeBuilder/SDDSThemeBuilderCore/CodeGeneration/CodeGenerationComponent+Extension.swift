@@ -91,98 +91,102 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case wheel = "Wheel"
     case navigationBarMainPage = "NavigationBarMainPage"
     case navigationBarInternalPage = "NavigationBarInternalPage"
+    case note = "Note"
+    case noteCompact = "NoteCompact"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-            .basicButton,
-            .linkButton,
-            .iconButton,
-            .basicButtonGroup,
-            .iconButtonGroup,
-            .textField,
-            .textFieldClear,
-            .textArea,
-            .textAreaClear,
-            .overlay,
-            .badge,
-            .badgeClear,
-            .badgeTransparent,
-            .iconBadge,
-            .iconBadgeClear,
-            .iconBadgeTransparent,
-            .indicator,
-            .cell,     
-            .counter,
-            .card,
-            .cardSolid,
-            .cardClear,
-            .segmentItem,
-            .segment,
-            .bottomSheet,
-            .switch,
-            .embeddedChip,
-            .chip,
-            .embeddedChipGroupDense,
-            .embeddedChipGroupWide,
-            .chipGroupDense,
-            .chipGroupWide,
-            .radiobox,
-            .radioboxGroup,
-            .checkbox,
-            .checkboxGroup,
-            .avatar,
-            .avatarGroup,
-            .circularProgressBar,
-            .progressBar,
-            .divider,
-            .popover,
-            .tooltip,
-            .toast,
-            .modal,
-            .notificationLoose,
-            .notificationCompact,
-            .rectSkeleton,
-            .textSkeleton,
-            .listItem,
-            .listItemNormal,
-            .listItemTight,
-            .dropdownMenuItemNormal,
-            .dropdownMenuItemTight,
-            .dropdownMenuListNormal,
-            .dropdownMenuListTight,
-            .dropdownMenuNormal,
-            .dropdownMenuTight,
-            .list,
-            .listNormal,
-            .listTight,
-            .scrollbar,
-            .accordionItemSolidActionStart,
-            .accordionItemSolidActionEnd,
-            .accordionItemClearActionStart,
-            .accordionItemClearActionEnd,
-            .accordionSolidActionStart,
-            .accordionSolidActionEnd,
-            .accordionClearActionStart,
-            .accordionClearActionEnd,
-            .spinner,
-            .loader,
-            .codeField,
-            .tabBarItemSolid,
-            .tabBarItem,
-            .tabBarItemClear,
-            .tabBarIslandSolid,
-            .tabBarIslandClear,
-            .tabBarIslandHasLabelSolid,
-            .tabBarIslandHasLabelClear,
-            .tabBarSolid,
-            .tabBar,
-            .tabBarClear,
-            .tabBarHasLabelSolid,
-            .tabBarHasLabelClear,
-            .codeInput,
-            .wheel,
-            .navigationBarMainPage,
-            .navigationBarInternalPage
+//            .basicButton,
+//            .linkButton,
+//            .iconButton,
+//            .basicButtonGroup,
+//            .iconButtonGroup,
+//            .textField,
+//            .textFieldClear,
+//            .textArea,
+//            .textAreaClear,
+//            .overlay,
+//            .badge,
+//            .badgeClear,
+//            .badgeTransparent,
+//            .iconBadge,
+//            .iconBadgeClear,
+//            .iconBadgeTransparent,
+//            .indicator,
+//            .cell,     
+//            .counter,
+//            .card,
+//            .cardSolid,
+//            .cardClear,
+//            .segmentItem,
+//            .segment,
+//            .bottomSheet,
+//            .switch,
+//            .embeddedChip,
+//            .chip,
+//            .embeddedChipGroupDense,
+//            .embeddedChipGroupWide,
+//            .chipGroupDense,
+//            .chipGroupWide,
+//            .radiobox,
+//            .radioboxGroup,
+//            .checkbox,
+//            .checkboxGroup,
+//            .avatar,
+//            .avatarGroup,
+//            .circularProgressBar,
+//            .progressBar,
+//            .divider,
+//            .popover,
+//            .tooltip,
+//            .toast,
+//            .modal,
+//            .notificationLoose,
+//            .notificationCompact,
+//            .rectSkeleton,
+//            .textSkeleton,
+//            .listItem,
+//            .listItemNormal,
+//            .listItemTight,
+//            .dropdownMenuItemNormal,
+//            .dropdownMenuItemTight,
+//            .dropdownMenuListNormal,
+//            .dropdownMenuListTight,
+//            .dropdownMenuNormal,
+//            .dropdownMenuTight,
+//            .list,
+//            .listNormal,
+//            .listTight,
+//            .scrollbar,
+//            .accordionItemSolidActionStart,
+//            .accordionItemSolidActionEnd,
+//            .accordionItemClearActionStart,
+//            .accordionItemClearActionEnd,
+//            .accordionSolidActionStart,
+//            .accordionSolidActionEnd,
+//            .accordionClearActionStart,
+//            .accordionClearActionEnd,
+//            .spinner,
+//            .loader,
+//            .codeField,
+//            .tabBarItemSolid,
+//            .tabBarItem,
+//            .tabBarItemClear,
+//            .tabBarIslandSolid,
+//            .tabBarIslandClear,
+//            .tabBarIslandHasLabelSolid,
+//            .tabBarIslandHasLabelClear,
+//            .tabBarSolid,
+//            .tabBar,
+//            .tabBarClear,
+//            .tabBarHasLabelSolid,
+//            .tabBarHasLabelClear,
+//            .codeInput,
+//            .wheel,
+//            .navigationBarMainPage,
+//            .navigationBarInternalPage,
+            .note,
+            .noteCompact
         ]
     }
     
@@ -319,6 +323,10 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL, 
                 themeConfig: themeConfig
             )
+        case .note:
+            GenerateComponentCommand<NoteProps, NoteAppearance, NoteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .noteCompact:
+            GenerateComponentCommand<NoteCompactProps, NoteCompactAppearance, NoteCompactSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -422,6 +430,10 @@ extension CodeGenerationComponent {
             "NavigationBarMainPageAppearance"
         case .navigationBarInternalPage:
             "NavigationBarInternalPageAppearance"
+        case .note:
+            "NoteAppearance"
+        case .noteCompact:
+            "NoteCompactAppearance"
         }
     }
     
@@ -526,6 +538,10 @@ extension CodeGenerationComponent {
             "NavigationBarMainPageSizeConfiguration"
         case .navigationBarInternalPage:
             "NavigationBarInternalPageSizeConfiguration"
+        case .note:
+            "NoteSizeConfiguration"
+        case .noteCompact:
+            "NoteCompactSizeConfiguration"
         }
     }
     
@@ -711,6 +727,10 @@ extension CodeGenerationComponent {
             "navigation_bar_main_page_config.json"
         case .navigationBarInternalPage:
             "navigation_bar_internal_page_config.json"
+        case .note:
+            "note_config.json"
+        case .noteCompact:
+            "note_compact_config.json"
         }
     }
     

@@ -50,7 +50,7 @@ struct NotificationView: View {
             isPresented: $isPresented,
             appearance: viewModel.appearance,
             position: viewModel.position,
-            hasClose: viewModel.hasClose,
+            closeImage: viewModel.hasClose ? Asset.close24.image : nil,
             content: {
                 Text(viewModel.text)
                     .padding([.leading, .trailing], 8)

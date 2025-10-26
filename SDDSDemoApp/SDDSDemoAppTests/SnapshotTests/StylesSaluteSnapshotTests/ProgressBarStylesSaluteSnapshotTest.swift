@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ProgressBarStylesSaluteSnapshotTest: XCTestCase {
+final class ProgressBarStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testProgressBarDefaultStylesSalute() async throws {

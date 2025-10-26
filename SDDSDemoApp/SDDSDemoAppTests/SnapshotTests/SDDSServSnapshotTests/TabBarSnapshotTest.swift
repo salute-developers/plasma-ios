@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class TabBarSnapshotTest: XCTestCase {
+final class TabBarSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testTabBarClearLDefaultExtraTypeNone() async throws {

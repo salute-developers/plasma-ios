@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CheckBoxPlasmaB2CSnapshotTest: XCTestCase {
+final class CheckBoxPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCheckBoxSizeLNegativePlasmaB2C() async throws {

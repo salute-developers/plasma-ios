@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class ListPlasmaHomeDSSnapshotTest: XCTestCase {
+final class ListPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testListNormalSizeSHasDisclosureHomeDS() async throws {

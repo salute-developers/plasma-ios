@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CodeFieldPlasmaB2CSnapshotTest: XCTestCase {
+final class CodeFieldPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCodeFieldLCaptionLeftLengthFourPlasmaB2C() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class TextSkeletonSnapshotTest: XCTestCase {
+final class TextSkeletonSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testTextSkeletonTestNoTextRandom() async throws {

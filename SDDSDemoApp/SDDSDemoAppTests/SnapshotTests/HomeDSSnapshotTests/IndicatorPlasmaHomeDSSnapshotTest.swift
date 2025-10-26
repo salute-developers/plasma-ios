@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class IndicatorPlasmaHomeDSSnapshotTest: XCTestCase {
+final class IndicatorPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testIndicatorLDefaultPlasmaHomeDS() async throws {

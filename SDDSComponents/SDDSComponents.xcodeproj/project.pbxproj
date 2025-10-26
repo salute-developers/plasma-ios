@@ -252,6 +252,14 @@
 		818FE9312C3C1CDC00F64958 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE9302C3C1CDC00F64958 /* Components.swift */; };
 		818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */; };
 		818FE9402C3C403F00F64958 /* SDDSComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */; platformFilter = ios; };
+		8191DF082EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DF032EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift */; };
+		8191DF092EAF97E9006E36F5 /* SDDSNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DF002EAF97E9006E36F5 /* SDDSNote.swift */; };
+		8191DF0A2EAF97E9006E36F5 /* NoteAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DEFC2EAF97E9006E36F5 /* NoteAppearance.swift */; };
+		8191DF0B2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DEFD2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift */; };
+		8191DF0C2EAF97E9006E36F5 /* SDDSNoteCompact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DF062EAF97E9006E36F5 /* SDDSNoteCompact.swift */; };
+		8191DF0D2EAF97E9006E36F5 /* NoteCompactSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DF042EAF97E9006E36F5 /* NoteCompactSizeConfiguration.swift */; };
+		8191DF0E2EAF97E9006E36F5 /* NoteCompactAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DF022EAF97E9006E36F5 /* NoteCompactAppearance.swift */; };
+		8191DF0F2EAF97E9006E36F5 /* NoteSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191DEFE2EAF97E9006E36F5 /* NoteSizeConfiguration.swift */; };
 		81998FF42C354C7F009074B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81998FF32C354C7F009074B7 /* Assets.xcassets */; };
 		81998FF92C35503D009074B7 /* View+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FF82C35503D009074B7 /* View+Modifiers.swift */; };
 		819A3A682E4E6573006A11F8 /* LoaderAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A642E4E6573006A11F8 /* LoaderAppearance.swift */; };
@@ -631,6 +639,14 @@
 		818FE9302C3C1CDC00F64958 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		818FE93C2C3C403F00F64958 /* SDDSComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSComponentsTests.swift; sourceTree = "<group>"; };
+		8191DEFC2EAF97E9006E36F5 /* NoteAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppearance.swift; sourceTree = "<group>"; };
+		8191DEFD2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteContentBeforeArrangement.swift; sourceTree = "<group>"; };
+		8191DEFE2EAF97E9006E36F5 /* NoteSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSizeConfiguration.swift; sourceTree = "<group>"; };
+		8191DF002EAF97E9006E36F5 /* SDDSNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSNote.swift; sourceTree = "<group>"; };
+		8191DF022EAF97E9006E36F5 /* NoteCompactAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactAppearance.swift; sourceTree = "<group>"; };
+		8191DF032EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactContentBeforeArrangement.swift; sourceTree = "<group>"; };
+		8191DF042EAF97E9006E36F5 /* NoteCompactSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactSizeConfiguration.swift; sourceTree = "<group>"; };
+		8191DF062EAF97E9006E36F5 /* SDDSNoteCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSNoteCompact.swift; sourceTree = "<group>"; };
 		81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = "/Users/vladimirkaltyrin/plasma-ios/SDDSDemoApp/../build/SDDSIcons.xcframework"; sourceTree = "<absolute>"; };
 		81998FD82C343F4A009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../SDDSIcons/build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
@@ -1741,6 +1757,8 @@
 				8183DDA92EB2AB3100610A9A /* SDDSNavigationBarInternalPage */,
 				8183DDAD2EB2AB3100610A9A /* SDDSNavigationBarMainPage */,
 				8183DDB42EB2AB3100610A9A /* SDDSWheel */,
+				8191DF012EAF97E9006E36F5 /* SDDSNote */,
+				8191DF072EAF97E9006E36F5 /* SDDSNoteCompact */,
 				81DE8FAF2E7BDD53005D24FE /* SDDSButtonGroup */,
 				81ED2DF22E71CF0B004DB74B /* SDDSNotificationContent */,
 				81225C442E6715D200AA1EFB /* SDDSCodeInput */,
@@ -1899,6 +1917,44 @@
 				818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */,
 			);
 			path = SDDSComponentsTests;
+			sourceTree = "<group>";
+		};
+		8191DEFF2EAF97E9006E36F5 /* NoteAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8191DEFC2EAF97E9006E36F5 /* NoteAppearance.swift */,
+				8191DEFD2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift */,
+				8191DEFE2EAF97E9006E36F5 /* NoteSizeConfiguration.swift */,
+			);
+			path = NoteAppearance;
+			sourceTree = "<group>";
+		};
+		8191DF012EAF97E9006E36F5 /* SDDSNote */ = {
+			isa = PBXGroup;
+			children = (
+				8191DEFF2EAF97E9006E36F5 /* NoteAppearance */,
+				8191DF002EAF97E9006E36F5 /* SDDSNote.swift */,
+			);
+			path = SDDSNote;
+			sourceTree = "<group>";
+		};
+		8191DF052EAF97E9006E36F5 /* NoteCompactAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8191DF022EAF97E9006E36F5 /* NoteCompactAppearance.swift */,
+				8191DF032EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift */,
+				8191DF042EAF97E9006E36F5 /* NoteCompactSizeConfiguration.swift */,
+			);
+			path = NoteCompactAppearance;
+			sourceTree = "<group>";
+		};
+		8191DF072EAF97E9006E36F5 /* SDDSNoteCompact */ = {
+			isa = PBXGroup;
+			children = (
+				8191DF052EAF97E9006E36F5 /* NoteCompactAppearance */,
+				8191DF062EAF97E9006E36F5 /* SDDSNoteCompact.swift */,
+			);
+			path = SDDSNoteCompact;
 			sourceTree = "<group>";
 		};
 		81998FD32C3436E1009074B7 /* Frameworks */ = {
@@ -2691,6 +2747,14 @@
 				8178A0852DF2F6B5003F5041 /* ModalSizeConfiguration.swift in Sources */,
 				8178A0862DF2F6B5003F5041 /* ModalAppearance.swift in Sources */,
 				81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */,
+				8191DF082EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift in Sources */,
+				8191DF092EAF97E9006E36F5 /* SDDSNote.swift in Sources */,
+				8191DF0A2EAF97E9006E36F5 /* NoteAppearance.swift in Sources */,
+				8191DF0B2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift in Sources */,
+				8191DF0C2EAF97E9006E36F5 /* SDDSNoteCompact.swift in Sources */,
+				8191DF0D2EAF97E9006E36F5 /* NoteCompactSizeConfiguration.swift in Sources */,
+				8191DF0E2EAF97E9006E36F5 /* NoteCompactAppearance.swift in Sources */,
+				8191DF0F2EAF97E9006E36F5 /* NoteSizeConfiguration.swift in Sources */,
 				8178A0872DF2F6B5003F5041 /* View+Modal.swift in Sources */,
 				8178A0882DF2F6B5003F5041 /* SDDSModal.swift in Sources */,
 				696942A02D6F0D8C00F43C38 /* CellContentAlignment.swift in Sources */,

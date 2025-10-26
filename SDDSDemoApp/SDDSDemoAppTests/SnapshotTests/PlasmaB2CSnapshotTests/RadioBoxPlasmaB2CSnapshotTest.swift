@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class RadioBoxPlasmaB2CSnapshotTest: XCTestCase {
+final class RadioBoxPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testRadioBoxSizeMPlasmaB2C() async throws {

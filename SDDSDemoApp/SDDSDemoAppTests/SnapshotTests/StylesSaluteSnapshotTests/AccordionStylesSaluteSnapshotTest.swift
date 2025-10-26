@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class AccordionStylesSaluteSnapshotTest: XCTestCase {
+final class AccordionStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testAccordionSolidActionEndSizeLStylesSalute() async throws {

@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class TextFieldStylesSaluteSnapshotTest: XCTestCase {
+final class TextFieldStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testTextFieldSizeLDefaultRequiredStartInnerLabelStylesSalute() async throws {

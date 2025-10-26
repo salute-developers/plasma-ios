@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class IconButtonPlasmaHomeDSSnapshotTest: XCTestCase {
+final class IconButtonPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testIсonButtonMDefaultPlasmaHomeDS() async throws {

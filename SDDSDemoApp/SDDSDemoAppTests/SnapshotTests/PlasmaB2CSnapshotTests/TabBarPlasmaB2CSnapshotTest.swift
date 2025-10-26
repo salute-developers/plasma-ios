@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class TabBarPlasmaB2CSnapshotTest: XCTestCase {
+final class TabBarPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testTabBarClearLDefaultExtraTypeNonePlasmaB2C() async throws {

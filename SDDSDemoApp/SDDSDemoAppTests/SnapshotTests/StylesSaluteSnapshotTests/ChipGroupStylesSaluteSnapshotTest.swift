@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ChipGroupStylesSaluteSnapshotTest: XCTestCase {
+final class ChipGroupStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testChipGroupLDenseStylesSalute() async throws {

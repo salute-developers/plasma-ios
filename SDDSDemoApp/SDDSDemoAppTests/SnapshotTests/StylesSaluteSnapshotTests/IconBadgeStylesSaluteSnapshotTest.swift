@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class IconBadgeStylesSaluteSnapshotTest: XCTestCase {
+final class IconBadgeStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testIconBadgeSizeLDefaultStylesSalute() async throws {

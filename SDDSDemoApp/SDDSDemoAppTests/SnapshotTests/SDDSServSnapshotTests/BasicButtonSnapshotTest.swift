@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 
-final class BasicButtonSnapshotTest: XCTestCase {
+final class BasicButtonSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testButtonLDefault() async throws {

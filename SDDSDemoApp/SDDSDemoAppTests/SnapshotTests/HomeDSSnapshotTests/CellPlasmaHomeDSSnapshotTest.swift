@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class CellPlasmaHomeDSSnapshotTest: XCTestCase {
+final class CellPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testCellSizeLAvatarHasDisclosurePlasmaHomeDS() async throws {

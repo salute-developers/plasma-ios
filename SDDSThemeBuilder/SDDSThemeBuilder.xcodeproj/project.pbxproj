@@ -319,6 +319,13 @@
 		818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */; };
 		818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */; };
 		818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */; };
+		819183182EAE80F1006E36F5 /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819183162EAE80F1006E36F5 /* NoteSize.swift */; };
+		819183192EAE80F1006E36F5 /* NoteAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819183152EAE80F1006E36F5 /* NoteAppearance.swift */; };
+		8191831B2EAE80FF006E36F5 /* NoteProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191831A2EAE80FF006E36F5 /* NoteProps.swift */; };
+		8191831D2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */; };
+		8191CFE32EAF95B6006E36F5 /* NoteCompactProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191CFE22EAF95B6006E36F5 /* NoteCompactProps.swift */; };
+		8191CFE72EAF95BD006E36F5 /* NoteCompactAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191CFE42EAF95BD006E36F5 /* NoteCompactAppearance.swift */; };
+		8191CFE82EAF95BD006E36F5 /* NoteCompactSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191CFE52EAF95BD006E36F5 /* NoteCompactSize.swift */; };
 		819A2E672E4E6364006A11F8 /* LoaderProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E662E4E6364006A11F8 /* LoaderProps.swift */; };
 		819A2E6B2E4E636C006A11F8 /* LoaderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E692E4E636C006A11F8 /* LoaderSize.swift */; };
 		819A2E6C2E4E636C006A11F8 /* LoaderAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */; };
@@ -851,6 +858,13 @@
 		818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTokenContextBuilder.swift; sourceTree = "<group>"; };
 		818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
 		818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		819183152EAE80F1006E36F5 /* NoteAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppearance.swift; sourceTree = "<group>"; };
+		819183162EAE80F1006E36F5 /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
+		8191831A2EAE80FF006E36F5 /* NoteProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProps.swift; sourceTree = "<group>"; };
+		8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteContentBeforeArrangementContextBuilder.swift; sourceTree = "<group>"; };
+		8191CFE22EAF95B6006E36F5 /* NoteCompactProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactProps.swift; sourceTree = "<group>"; };
+		8191CFE42EAF95BD006E36F5 /* NoteCompactAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactAppearance.swift; sourceTree = "<group>"; };
+		8191CFE52EAF95BD006E36F5 /* NoteCompactSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactSize.swift; sourceTree = "<group>"; };
 		819A2E662E4E6364006A11F8 /* LoaderProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProps.swift; sourceTree = "<group>"; };
 		819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAppearance.swift; sourceTree = "<group>"; };
 		819A2E692E4E636C006A11F8 /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
@@ -1406,6 +1420,7 @@
 			children = (
 				814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */,
 				81F147232E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift */,
+				8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */,
 				81E91BD52E71CC7300CACED3 /* NotificationContentButtonLayoutContextBuilder.swift */,
 				81E91BD62E71CC7300CACED3 /* NotificationContentIconPlacementContextBuilder.swift */,
 				8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */,
@@ -1462,6 +1477,8 @@
 				81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */,
 				814B782A2EA8D7EB009B091C /* NavigationBarInternalPageProps.swift */,
 				814B782B2EA8D7EB009B091C /* NavigationBarMainPageProps.swift */,
+				8191CFE22EAF95B6006E36F5 /* NoteCompactProps.swift */,
+				8191831A2EAE80FF006E36F5 /* NoteProps.swift */,
 				81DE8FA42E7BDB32005D24FE /* ButtonGroupProps.swift */,
 				81E91BC52E71CABF00CACED3 /* NotificationContentProps.swift */,
 				81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */,
@@ -1516,6 +1533,8 @@
 				81F147272E9EDBED00A9A1D4 /* Wheel */,
 				814B78222EA8D7D3009B091C /* NavigationBarInternalPage */,
 				814B78252EA8D7D3009B091C /* NavigationBarMainPage */,
+				8191CFE62EAF95BD006E36F5 /* NoteCompact */,
+				819183172EAE80F1006E36F5 /* Note */,
 				81DE8FA82E7BDC05005D24FE /* ButtonGroup */,
 				81E91BC22E71CA9300CACED3 /* NotificationContent */,
 				81225C3E2E6712D100AA1EFB /* CodeInput */,
@@ -2082,6 +2101,24 @@
 				816FBD1A2D63530D0009AC1C /* Spacings.stencil */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		819183172EAE80F1006E36F5 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				819183152EAE80F1006E36F5 /* NoteAppearance.swift */,
+				819183162EAE80F1006E36F5 /* NoteSize.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		8191CFE62EAF95BD006E36F5 /* NoteCompact */ = {
+			isa = PBXGroup;
+			children = (
+				8191CFE42EAF95BD006E36F5 /* NoteCompactAppearance.swift */,
+				8191CFE52EAF95BD006E36F5 /* NoteCompactSize.swift */,
+			);
+			path = NoteCompact;
 			sourceTree = "<group>";
 		};
 		819A2E6A2E4E636C006A11F8 /* Loader */ = {
@@ -2882,10 +2919,12 @@
 				81DE8FA92E7BDC05005D24FE /* ButtonGroupSize.swift in Sources */,
 				81DE8FAA2E7BDC05005D24FE /* ButtonGroupAppearance.swift in Sources */,
 				81F1472B2E9EDC0E00A9A1D4 /* WheelProps.swift in Sources */,
+				8191831B2EAE80FF006E36F5 /* NoteProps.swift in Sources */,
 				693FEF352DE4663F00E14D0E /* DividerSize.swift in Sources */,
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
+				8191831D2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */,
 				81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */,
@@ -3006,6 +3045,8 @@
 				81F147242E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift in Sources */,
 				81CB10022C258823003B1064 /* TemplateRendererError.swift in Sources */,
 				8166B4422D5BD7E30044A680 /* LabelPlacementContextBuilder.swift in Sources */,
+				8191CFE72EAF95BD006E36F5 /* NoteCompactAppearance.swift in Sources */,
+				8191CFE82EAF95BD006E36F5 /* NoteCompactSize.swift in Sources */,
 				812DB7162D56597700D3F4A3 /* DefaultValueContextBuilder.swift in Sources */,
 				8175395C2BD0077300138866 /* SDDSThemeBuilderCore.docc in Sources */,
 				814B78262EA8D7D3009B091C /* NavigationBarInternalPageSize.swift in Sources */,
@@ -3032,6 +3073,7 @@
 				810F92572E12E720008CA4CA /* ListItemAppearance.swift in Sources */,
 				8136875E2E0181DF00A1702A /* SkeletonAppearance.swift in Sources */,
 				814BF7442EA804BB009B091C /* ImageSizeContextBuilder.swift in Sources */,
+				8191CFE32EAF95B6006E36F5 /* NoteCompactProps.swift in Sources */,
 				813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */,
 				81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */,
 				81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */,
@@ -3079,6 +3121,8 @@
 				8131DE082E4BA32F00FED868 /* TabBarIslandAppearance.swift in Sources */,
 				8131DE092E4BA32F00FED868 /* TabBarItemSize.swift in Sources */,
 				8131DE0A2E4BA32F00FED868 /* TabBarIslandSize.swift in Sources */,
+				819183182EAE80F1006E36F5 /* NoteSize.swift in Sources */,
+				819183192EAE80F1006E36F5 /* NoteAppearance.swift in Sources */,
 				8131DE0B2E4BA32F00FED868 /* TabBarAppearance.swift in Sources */,
 				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
 				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,

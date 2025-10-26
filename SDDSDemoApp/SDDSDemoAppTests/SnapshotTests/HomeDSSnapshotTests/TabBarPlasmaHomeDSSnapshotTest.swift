@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class TabBarPlasmaHomeDSSnapshotTest: XCTestCase {
+final class TabBarPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testTabBarDefaultNoneHomeDS() async throws {

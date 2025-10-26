@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class SpinnerPlasmaB2CSnapshotTest: XCTestCase {
+final class SpinnerPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testSpinnerXxlDefaultPlasmaB2C() async throws {

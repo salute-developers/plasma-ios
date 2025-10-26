@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class BasicButtonPlasmaB2CSnapshotTest: XCTestCase {
+final class BasicButtonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testButtonLDefaultPlasmaB2C() async throws {

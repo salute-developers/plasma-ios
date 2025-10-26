@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class SegmentItemPlasmaB2CSnapshotTest: XCTestCase {
+final class SegmentItemPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testSegmentItemSizeLPrimaryPlasmaB2C() async throws {

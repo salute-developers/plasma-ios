@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CellSnapshotTest: XCTestCase {
+final class CellSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCellSizeLAvatarHasDisclosure() async throws {

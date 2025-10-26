@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class IndicatorStylesSaluteSnapshotTest: XCTestCase {
+final class IndicatorStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testIndicatorLDefaultStylesSalute() async throws {

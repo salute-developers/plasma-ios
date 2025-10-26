@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class CellStylesSalutenapshotTest: XCTestCase {
+final class CellStylesSalutenapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testCellSizeLAvatarHasDisclosureStylesSalute() async throws {
