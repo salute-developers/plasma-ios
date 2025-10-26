@@ -1080,4 +1080,17 @@ enum Theme: String, CaseIterable {
             return PlasmaHomeDSTheme.IconButtonGroup.all
         }
     }
+    
+    var noteVariations: [Variation<NoteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Note.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
 }

@@ -312,6 +312,10 @@
 		818E33182DDDC39100130AF9 /* ShadowTokenContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */; };
 		818E38EC2D4A4C1C00B3A02D /* TextAreaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */; };
 		818E38EE2D4A4C3300B3A02D /* TextAreaSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */; };
+		819183182EAE80F1006E36F5 /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819183162EAE80F1006E36F5 /* NoteSize.swift */; };
+		819183192EAE80F1006E36F5 /* NoteAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819183152EAE80F1006E36F5 /* NoteAppearance.swift */; };
+		8191831B2EAE80FF006E36F5 /* NoteProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191831A2EAE80FF006E36F5 /* NoteProps.swift */; };
+		8191831D2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */; };
 		819A2E672E4E6364006A11F8 /* LoaderProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E662E4E6364006A11F8 /* LoaderProps.swift */; };
 		819A2E6B2E4E636C006A11F8 /* LoaderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E692E4E636C006A11F8 /* LoaderSize.swift */; };
 		819A2E6C2E4E636C006A11F8 /* LoaderAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */; };
@@ -833,6 +837,10 @@
 		818E33172DDDC38C00130AF9 /* ShadowTokenContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTokenContextBuilder.swift; sourceTree = "<group>"; };
 		818E38EB2D4A4C1C00B3A02D /* TextAreaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaAppearance.swift; sourceTree = "<group>"; };
 		818E38ED2D4A4C3300B3A02D /* TextAreaSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaSize.swift; sourceTree = "<group>"; };
+		819183152EAE80F1006E36F5 /* NoteAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppearance.swift; sourceTree = "<group>"; };
+		819183162EAE80F1006E36F5 /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
+		8191831A2EAE80FF006E36F5 /* NoteProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProps.swift; sourceTree = "<group>"; };
+		8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteContentBeforeArrangementContextBuilder.swift; sourceTree = "<group>"; };
 		819A2E662E4E6364006A11F8 /* LoaderProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProps.swift; sourceTree = "<group>"; };
 		819A2E682E4E636C006A11F8 /* LoaderAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAppearance.swift; sourceTree = "<group>"; };
 		819A2E692E4E636C006A11F8 /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
@@ -1382,6 +1390,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				8191831C2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift */,
 				81E91BD52E71CC7300CACED3 /* NotificationContentButtonLayoutContextBuilder.swift */,
 				81E91BD62E71CC7300CACED3 /* NotificationContentIconPlacementContextBuilder.swift */,
 				8131DDF92E4BA31500FED868 /* CodeFieldColorContextBuilder.swift */,
@@ -1435,6 +1444,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				8191831A2EAE80FF006E36F5 /* NoteProps.swift */,
 				81DE8FA42E7BDB32005D24FE /* ButtonGroupProps.swift */,
 				81E91BC52E71CABF00CACED3 /* NotificationContentProps.swift */,
 				81225C3A2E6712BA00AA1EFB /* CodeInputProps.swift */,
@@ -1486,6 +1496,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				819183172EAE80F1006E36F5 /* Note */,
 				81DE8FA82E7BDC05005D24FE /* ButtonGroup */,
 				81E91BC22E71CA9300CACED3 /* NotificationContent */,
 				81225C3E2E6712D100AA1EFB /* CodeInput */,
@@ -2034,6 +2045,15 @@
 				816FBD1A2D63530D0009AC1C /* Spacings.stencil */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		819183172EAE80F1006E36F5 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				819183152EAE80F1006E36F5 /* NoteAppearance.swift */,
+				819183162EAE80F1006E36F5 /* NoteSize.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		819A2E6A2E4E636C006A11F8 /* Loader */ = {
@@ -2824,10 +2844,12 @@
 				81C3D7E22DAE430B0090739E /* BottomSheetProps.swift in Sources */,
 				81DE8FA92E7BDC05005D24FE /* ButtonGroupSize.swift in Sources */,
 				81DE8FAA2E7BDC05005D24FE /* ButtonGroupAppearance.swift in Sources */,
+				8191831B2EAE80FF006E36F5 /* NoteProps.swift in Sources */,
 				693FEF352DE4663F00E14D0E /* DividerSize.swift in Sources */,
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
+				8191831D2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */,
 				81E934362DEDF5CB00B76E38 /* ToastSize.swift in Sources */,
@@ -3011,6 +3033,8 @@
 				8131DE082E4BA32F00FED868 /* TabBarIslandAppearance.swift in Sources */,
 				8131DE092E4BA32F00FED868 /* TabBarItemSize.swift in Sources */,
 				8131DE0A2E4BA32F00FED868 /* TabBarIslandSize.swift in Sources */,
+				819183182EAE80F1006E36F5 /* NoteSize.swift in Sources */,
+				819183192EAE80F1006E36F5 /* NoteAppearance.swift in Sources */,
 				8131DE0B2E4BA32F00FED868 /* TabBarAppearance.swift in Sources */,
 				69A8758F2DAF9E290074C1BD /* RadioboxAppearance.swift in Sources */,
 				69A875902DAF9E290074C1BD /* RadioboxGroupAppearance.swift in Sources */,
