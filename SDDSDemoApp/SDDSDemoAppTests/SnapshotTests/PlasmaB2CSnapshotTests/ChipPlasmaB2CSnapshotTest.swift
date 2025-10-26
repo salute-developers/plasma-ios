@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class ChipPlasmaB2CSnapshotTest: XCTestCase {
+final class ChipPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testChipSizeLDefaultHasClearPlasmaB2C() async throws {

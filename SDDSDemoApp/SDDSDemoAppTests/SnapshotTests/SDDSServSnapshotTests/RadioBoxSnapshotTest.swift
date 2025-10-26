@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class RadioBoxSnapshotTest: XCTestCase {
+final class RadioBoxSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testRadioBoxSizeM() async throws {

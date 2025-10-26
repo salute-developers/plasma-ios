@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CircularProgressSnapshotTest: XCTestCase {
+final class CircularProgressSnapshotTest: SDDSServThemeTestCase {
 
     @MainActor
     func testCircularProgressXxlDefault() async throws {

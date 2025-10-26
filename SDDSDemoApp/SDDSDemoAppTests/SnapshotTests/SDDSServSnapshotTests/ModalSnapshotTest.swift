@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ModalSnapshotTest: XCTestCase {
+final class ModalSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testModalUseNativeBlackOutHasClose() async throws {

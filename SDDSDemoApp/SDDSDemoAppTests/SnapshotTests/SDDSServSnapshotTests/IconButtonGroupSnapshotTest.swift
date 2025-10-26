@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class IconButtonGroupSnapshotTest: XCTestCase {
+final class IconButtonGroupSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testIconButtonGroupLGapNoneDefaultHorizontal() async throws {

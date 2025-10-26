@@ -375,18 +375,16 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     HStack {
                         actionStart()
                         Spacer()
-                        actionEnd()
-                    }
-                    .overlay(
                         titleContent(
                             textColor: textColor,
                             textTypography: textTypography,
                             size: size,
                             actionStartColor: actionStartColor,
                             actionEndColor: actionEndColor
-                        ),
-                        alignment: .center
-                    )
+                        )
+                        Spacer()
+                        actionEnd()
+                    }
                 }
                 
             case .left:
@@ -480,18 +478,16 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                             actionStart()
                         }
                         Spacer()
-                        actionEnd()
-                    }
-                    .overlay(
                         titleContent(
                             textColor: textColor,
                             textTypography: textTypography,
                             size: size,
                             actionStartColor: actionStartColor,
                             actionEndColor: actionEndColor
-                        ),
-                        alignment: .center
-                    )
+                        )
+                        Spacer()
+                        actionEnd()
+                    }
                 }
                 
             case .left:

@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ScrollbarStylesSaluteSnapshotTest: XCTestCase {
+final class ScrollbarStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testScrollbarSizeMHasTrackHoverExpandStylesSalute() async throws {

@@ -12,7 +12,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class IconButtonSnapshotTest: XCTestCase {
+final class IconButtonSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testIсonButtonLDefault() async throws {

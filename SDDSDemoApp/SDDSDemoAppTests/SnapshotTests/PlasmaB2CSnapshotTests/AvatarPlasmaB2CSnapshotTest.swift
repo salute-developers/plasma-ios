@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class AvatarPlasmaB2CSnapshotTest: XCTestCase {
+final class AvatarPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testAvatarSizeMPlasmaB2C() async throws {

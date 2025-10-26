@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class IconButtonGroupPlasmaB2CSnapshotTest: XCTestCase {
+final class IconButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testIconButtonGroupLGapNoneDefaultHorizontalPlasmaB2C() async throws {

@@ -12,7 +12,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class LinkButtonSnapshotTest: XCTestCase {
+final class LinkButtonSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testLinkButtonLDefault() async throws {

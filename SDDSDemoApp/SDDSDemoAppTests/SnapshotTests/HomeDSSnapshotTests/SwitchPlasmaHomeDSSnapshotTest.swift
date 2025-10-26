@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class SwitchPlasmaHomeDSSnapshotTest: XCTestCase {
+final class SwitchPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testSwitchSizeLPlasmaHomeDS() async throws {

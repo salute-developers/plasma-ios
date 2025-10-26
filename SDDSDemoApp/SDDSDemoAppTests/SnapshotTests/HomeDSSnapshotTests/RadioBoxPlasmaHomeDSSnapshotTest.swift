@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class RadioBoxPlasmaHomeDSSnapshotTest: XCTestCase {
+final class RadioBoxPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testRadioBoxSizeMPlasmaHomeDS() async throws {

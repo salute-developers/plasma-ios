@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class TextFieldSnapshotTest: XCTestCase {
+final class TextFieldSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testTextFieldSizeLDefaultRequiredStartInnerLabel() async throws {

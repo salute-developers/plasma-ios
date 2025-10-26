@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class CircularProgressPlasmaHomeDSSnapshotTest: XCTestCase {
+final class CircularProgressPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testCircularProgressXxlDefaultHomeDS() async throws {

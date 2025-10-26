@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class SwitchPlasmaB2CSnapshotTest: XCTestCase {
+final class SwitchPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testSwitchSizeLPlasmaB2C() async throws {

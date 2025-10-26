@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class ChipStylesSaluteSnapshotTest: XCTestCase {
+final class ChipStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testChipSizeLDefaultHasClearStylesSalute() async throws {

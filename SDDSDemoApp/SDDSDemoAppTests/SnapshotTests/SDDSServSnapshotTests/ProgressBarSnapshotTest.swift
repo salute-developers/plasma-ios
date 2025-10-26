@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ProgressBarSnapshotTest: XCTestCase {
+final class ProgressBarSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testProgressBarDefault() async throws {

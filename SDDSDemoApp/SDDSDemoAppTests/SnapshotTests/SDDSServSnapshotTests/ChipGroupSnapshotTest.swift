@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ChipGroupSnapshotTest: XCTestCase {
+final class ChipGroupSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testChipGroupLDense() async throws {

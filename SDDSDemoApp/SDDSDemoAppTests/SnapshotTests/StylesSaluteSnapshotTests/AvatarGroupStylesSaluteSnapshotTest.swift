@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class AvatarGroupStylesSaluteSnapshotTest: XCTestCase {
+final class AvatarGroupStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testAvatarGroupSizeSStylesSalute() async throws {

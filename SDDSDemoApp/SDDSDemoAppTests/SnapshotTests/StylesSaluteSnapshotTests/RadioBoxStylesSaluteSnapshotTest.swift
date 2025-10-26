@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class RadioBoxStylesSaluteSnapshotTest: XCTestCase {
+final class RadioBoxStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testRadioBoxSizeMStylesSalute() async throws {

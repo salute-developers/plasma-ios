@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class AccordionPlasmaB2CSnapshotTest: XCTestCase {
+final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testAccordionSolidActionEndSizeLPlasmaB2C() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class SwitchSnapshotTest: XCTestCase {
+final class SwitchSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testSwitchSizeL() async throws {

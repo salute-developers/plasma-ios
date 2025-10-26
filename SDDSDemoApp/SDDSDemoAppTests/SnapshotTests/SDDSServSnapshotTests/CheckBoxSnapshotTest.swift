@@ -13,7 +13,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class CheckBoxSnapshotTest: XCTestCase {
+final class CheckBoxSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testCheckBoxSizeLNegative() async throws {

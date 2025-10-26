@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class BadgeStylesSaluteSnapshotTest: XCTestCase {
+final class BadgeStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testBadgeSizeLDefaultContentLeftStylesSalute() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ListSnapshotTest: XCTestCase {
+final class ListSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testListNormalSizeXlHasDisclosure() async throws {

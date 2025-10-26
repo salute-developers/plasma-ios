@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class ListPlasmaB2CSnapshotTest: XCTestCase {
+final class ListPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testListNormalSizeXlHasDisclosurePlasmaB2C() async throws {

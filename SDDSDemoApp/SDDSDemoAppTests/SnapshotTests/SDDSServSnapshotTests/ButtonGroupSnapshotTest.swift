@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ButtonGroupSnapshotTest: XCTestCase {
+final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testButtonGroupLDefaultNoGap() async throws {

@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class AvatarSnapshotTest: XCTestCase {
+final class AvatarSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testAvatarSizeM() async throws {

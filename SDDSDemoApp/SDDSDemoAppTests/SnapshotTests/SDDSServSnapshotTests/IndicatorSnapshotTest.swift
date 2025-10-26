@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class IndicatorSnapshotTest: XCTestCase {
+final class IndicatorSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testIndicatorLDefault() async throws {

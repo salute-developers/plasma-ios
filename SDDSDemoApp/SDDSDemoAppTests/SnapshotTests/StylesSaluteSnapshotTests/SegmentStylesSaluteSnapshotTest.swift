@@ -14,7 +14,7 @@ import StylesSaluteTheme
 import UIKit
 import SwiftUI
 
-final class SegmentStylesSaluteSnapshotTest: XCTestCase {
+final class SegmentStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     
     @MainActor
     func testSegmentSizeLPrimaryStylesSalute() async throws {

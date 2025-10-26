@@ -37,13 +37,13 @@ enum SnapshotTestConfig {
 Настройка запуска тестов
 Для записи снэпшотов нужно проставить mode .record
 Для проверки снэпшотов нужно проставить mode .verify
+Режим можно контролировать через environment variable SNAPSHOT_MODE
  */
 func runSnapshotTest(
     view: @autoclosure @escaping () -> some View,
     function: StaticString = #function,
     landscape: Bool = false
 ) async throws {
-    
     let baseName = extractTestName(from: function)
     
     let deviceGroup: SnapshotDeviceGroup
@@ -53,11 +53,19 @@ func runSnapshotTest(
         deviceGroup = SnapshotTestConfig.iPhone13Mini
     }
     
+    // Определяем режим на основе environment variable
+    let snapshotMode: SnapshotMode = {
+        if let modeString = ProcessInfo.processInfo.environment["SNAPSHOT_MODE"] {
+            return modeString.lowercased() == "record" ? .record : .verify
+        }
+        // По умолчанию используем .verify
+        return .verify
+    }()
     
     for (themeName, scheme) in SnapshotTestConfig.testTheme {
         await Xct.snapshotAsync(
             testName: "\(baseName)_\(themeName)",
-            mode: .verify,
+            mode: snapshotMode,
             deviceGroup: deviceGroup,
             prepareSut: { _ in
                 view()

@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class CardPlasmaB2CSnapshotTest: XCTestCase {
+final class CardPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testCardLHorizontalPlasmaB2C() async throws {

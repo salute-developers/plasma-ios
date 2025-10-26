@@ -14,7 +14,7 @@ import PlasmaB2CTheme
 import UIKit
 import SwiftUI
 
-final class IndicatorPlasmaB2CSnapshotTest: XCTestCase {
+final class IndicatorPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     
     @MainActor
     func testIndicatorLDefaultPlasmaB2C() async throws {

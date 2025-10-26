@@ -14,7 +14,7 @@ import PlasmaHomeDSTheme
 import UIKit
 import SwiftUI
 
-final class CounterPlasmaHomeDSSnapshotTest: XCTestCase {
+final class CounterPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
     
     @MainActor
     func testCounterSizeLDefaultPlasmaHomeDS() async throws {

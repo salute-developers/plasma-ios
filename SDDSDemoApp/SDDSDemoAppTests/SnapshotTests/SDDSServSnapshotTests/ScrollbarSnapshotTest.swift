@@ -14,7 +14,7 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ScrollbarSnapshotTest: XCTestCase {
+final class ScrollbarSnapshotTest: SDDSServThemeTestCase {
     
     @MainActor
     func testScrollbarSizeMHasTrackHover() async throws {
