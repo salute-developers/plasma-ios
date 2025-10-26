@@ -136,6 +136,12 @@
 		817C5D4B2E1F866C00B9286C /* ScrollbarVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D462E1F866C00B9286C /* ScrollbarVariationProvider.swift */; };
 		817C5D4C2E1F866C00B9286C /* ScrollbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C5D472E1F866C00B9286C /* ScrollbarView.swift */; };
 		817D9F142C3704CF006C4814 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D9F132C3704CF006C4814 /* ButtonView.swift */; };
+		8191A1482EAE8989006E36F5 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191A1462EAE8989006E36F5 /* NoteViewModel.swift */; };
+		8191A1492EAE8989006E36F5 /* NoteVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191A1442EAE8989006E36F5 /* NoteVariationProvider.swift */; };
+		8191A14A2EAE8989006E36F5 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191A1452EAE8989006E36F5 /* NoteView.swift */; };
+		8191EE272EAF9806006E36F5 /* NoteCompactVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191EE232EAF9806006E36F5 /* NoteCompactVariationProvider.swift */; };
+		8191EE282EAF9806006E36F5 /* NoteCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191EE242EAF9806006E36F5 /* NoteCompactView.swift */; };
+		8191EE292EAF9806006E36F5 /* NoteCompactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8191EE252EAF9806006E36F5 /* NoteCompactViewModel.swift */; };
 		8199A1722C3BF94E00AD650A /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A1712C3BF94E00AD650A /* Spacing.swift */; };
 		8199E5A32CBD088C00AF3D22 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */; };
 		819A03C02E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A03BF2E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift */; };
@@ -322,6 +328,12 @@
 		817D9F132C3704CF006C4814 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		817D9F152C370676006C4814 /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
+		8191A1442EAE8989006E36F5 /* NoteVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVariationProvider.swift; sourceTree = "<group>"; };
+		8191A1452EAE8989006E36F5 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		8191A1462EAE8989006E36F5 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		8191EE232EAF9806006E36F5 /* NoteCompactVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactVariationProvider.swift; sourceTree = "<group>"; };
+		8191EE242EAF9806006E36F5 /* NoteCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactView.swift; sourceTree = "<group>"; };
+		8191EE252EAF9806006E36F5 /* NoteCompactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactViewModel.swift; sourceTree = "<group>"; };
 		8199A1712C3BF94E00AD650A /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		8199E5A22CBD088C00AF3D22 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		819A03BF2E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandVariationProvider.swift; sourceTree = "<group>"; };
@@ -662,6 +674,8 @@
 		811DE1362C4D0EB2000DD354 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8191EE262EAF9806006E36F5 /* NoteCompactView */,
+				8191A1472EAE8989006E36F5 /* NoteView */,
 				81C6F67F2E8A7846004B8E7E /* ButtonGroupView */,
 				81117E722E7BD6180063A7EB /* CodeInputView */,
 				8115FEA82E5F54B600EEDC26 /* LoaderView */,
@@ -947,6 +961,26 @@
 				81A6132C2D5BAB8100ADE1CD /* ButtonVariationProvider.swift */,
 			);
 			path = ButtonView;
+			sourceTree = "<group>";
+		};
+		8191A1472EAE8989006E36F5 /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				8191A1442EAE8989006E36F5 /* NoteVariationProvider.swift */,
+				8191A1452EAE8989006E36F5 /* NoteView.swift */,
+				8191A1462EAE8989006E36F5 /* NoteViewModel.swift */,
+			);
+			path = NoteView;
+			sourceTree = "<group>";
+		};
+		8191EE262EAF9806006E36F5 /* NoteCompactView */ = {
+			isa = PBXGroup;
+			children = (
+				8191EE232EAF9806006E36F5 /* NoteCompactVariationProvider.swift */,
+				8191EE242EAF9806006E36F5 /* NoteCompactView.swift */,
+				8191EE252EAF9806006E36F5 /* NoteCompactViewModel.swift */,
+			);
+			path = NoteCompactView;
 			sourceTree = "<group>";
 		};
 		8199A1702C3BF94500AD650A /* Constants */ = {
@@ -1271,6 +1305,9 @@
 				81B51AB72E3C8AEA00504B1D /* CodeFieldGroupType.swift in Sources */,
 				810F95942E13A1FE008CA4CA /* ListView.swift in Sources */,
 				810F84C12E27F5D100218FE7 /* AccordionView.swift in Sources */,
+				8191EE272EAF9806006E36F5 /* NoteCompactVariationProvider.swift in Sources */,
+				8191EE282EAF9806006E36F5 /* NoteCompactView.swift in Sources */,
+				8191EE292EAF9806006E36F5 /* NoteCompactViewModel.swift in Sources */,
 				810F95952E13A1FE008CA4CA /* ListVariationProvider.swift in Sources */,
 				810F95962E13A1FE008CA4CA /* ListItemViewModel.swift in Sources */,
 				810F84BC2E27F5B500218FE7 /* AccordionLayout.swift in Sources */,
@@ -1375,6 +1412,9 @@
 				819A03C02E4E50BD006A11F8 /* TabBarIslandVariationProvider.swift in Sources */,
 				81A613332D5BB58900ADE1CD /* TextAreaVariationProvider.swift in Sources */,
 				81E968162CBD20C300256968 /* TextFieldViewModel.swift in Sources */,
+				8191A1482EAE8989006E36F5 /* NoteViewModel.swift in Sources */,
+				8191A1492EAE8989006E36F5 /* NoteVariationProvider.swift in Sources */,
+				8191A14A2EAE8989006E36F5 /* NoteView.swift in Sources */,
 				81C6F6802E8A7847004B8E7E /* ButtonGroupView.swift in Sources */,
 				81C6F6812E8A7847004B8E7E /* ButtonGroupVariationProvider.swift in Sources */,
 				81C6F6822E8A7847004B8E7E /* ButtonGroupViewModel.swift in Sources */,

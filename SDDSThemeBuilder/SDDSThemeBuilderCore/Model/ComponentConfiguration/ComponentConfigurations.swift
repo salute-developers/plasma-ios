@@ -44,3 +44,5 @@ typealias TabBarIslandConfiguration = ComponentConfiguration<TabBarIslandProps>
 typealias TabBarConfiguration = ComponentConfiguration<TabBarProps>
 typealias CodeInputConfiguration = ComponentConfiguration<CodeInputProps>
 typealias NotificationContentConfiguration = ComponentConfiguration<NotificationContentProps>
+typealias NoteConfiguration = ComponentConfiguration<NoteProps>
+typealias NoteCompactConfiguration = ComponentConfiguration<NoteCompactProps>
