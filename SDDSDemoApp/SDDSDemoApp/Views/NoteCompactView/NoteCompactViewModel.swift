@@ -3,7 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 
-final class NoteViewModel: ComponentViewModel<NoteVariationProvider> {
+final class NoteCompactViewModel: ComponentViewModel<NoteCompactVariationProvider> {
     @Published var title: String = "Title"
     @Published var text: String = "Text"
     @Published var linkButtonTitle: String = "Label"
@@ -25,10 +25,11 @@ final class NoteViewModel: ComponentViewModel<NoteVariationProvider> {
     }
     
     init() {
-        super.init(variationProvider: NoteVariationProvider())
+        super.init(variationProvider: NoteCompactVariationProvider())
         
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
     }
 }
+

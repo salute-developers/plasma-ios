@@ -4,18 +4,18 @@ import Combine
 import SDDSComponents
 import SDDSServTheme
 
-struct NoteView: View {
-    @ObservedObject private var viewModel: NoteViewModel
+struct NoteCompactView: View {
+    @ObservedObject private var viewModel: NoteCompactViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init(viewModel: NoteViewModel = NoteViewModel()) {
+    init(viewModel: NoteCompactViewModel = NoteCompactViewModel()) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         List {
             Section {
-                notePreview
+                noteCompactPreview
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
             }
@@ -31,19 +31,19 @@ struct NoteView: View {
                 closeButtonToggle
             }
         }
-        .navigationTitle("Note")
+        .navigationTitle("Note Compact")
     }
     
     @ViewBuilder
-    private var notePreview: some View {
-        noteContent
-            .environment(\.noteAppearance, viewModel.appearance)
+    private var noteCompactPreview: some View {
+        noteCompactContent
+            .environment(\.noteCompactAppearance, viewModel.appearance)
     }
     
     @ViewBuilder
-    private var noteContent: some View {
+    private var noteCompactContent: some View {
         if viewModel.hasContentBefore {
-            SDDSNote(
+            SDDSNoteCompact(
                 title: viewModel.title,
                 text: viewModel.text,
                 linkButtonTitle: viewModel.linkButtonTitle,
@@ -62,7 +62,7 @@ struct NoteView: View {
                 }
             )
         } else {
-            SDDSNote(
+            SDDSNoteCompact(
                 title: viewModel.title,
                 text: viewModel.text,
                 linkButtonTitle: viewModel.linkButtonTitle,
@@ -129,5 +129,5 @@ struct NoteView: View {
 }
 
 #Preview {
-    NoteView()
+    NoteCompactView()
 }

@@ -89,6 +89,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case basicButtonGroup = "BasicButtonGroup"
     case iconButtonGroup = "IconButtonGroup"
     case note = "Note"
+    case noteCompact = "NoteCompact"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -178,7 +179,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .tabBarHasLabelSolid,
 //            .tabBarHasLabelClear,
 //            .codeInput,
-            .note
+            .note,
+            .noteCompact
         ]
     }
     
@@ -299,6 +301,8 @@ extension CodeGenerationComponent {
             )
         case .note:
             GenerateComponentCommand<NoteProps, NoteAppearance, NoteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .noteCompact:
+            GenerateComponentCommand<NoteCompactProps, NoteCompactAppearance, NoteCompactSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -398,6 +402,8 @@ extension CodeGenerationComponent {
             "ButtonGroupAppearance"
         case .note:
             "NoteAppearance"
+        case .noteCompact:
+            "NoteCompactAppearance"
         }
     }
     
@@ -498,6 +504,8 @@ extension CodeGenerationComponent {
             "ButtonGroupSizeConfiguration"
         case .note:
             "NoteSizeConfiguration"
+        case .noteCompact:
+            "NoteCompactSizeConfiguration"
         }
     }
     
@@ -679,6 +687,8 @@ extension CodeGenerationComponent {
             "icon_button_group_config.json"
         case .note:
             "note_config.json"
+        case .noteCompact:
+            "note_compact_config.json"
         }
     }
     

@@ -1093,4 +1093,17 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+    
+    var noteCompactVariations: [Variation<NoteCompactAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.NoteCompact.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
 }

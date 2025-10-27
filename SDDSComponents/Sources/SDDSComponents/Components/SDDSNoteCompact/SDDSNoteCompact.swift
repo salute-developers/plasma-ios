@@ -1,18 +1,30 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// MARK: - Custom Alignment
+
+extension VerticalAlignment {
+    private struct TitleAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.center]
+        }
+    }
+    
+    static let titleAlignment = VerticalAlignment(TitleAlignment.self)
+}
+
 /**
- `Note` - компонент для отображения информационных сообщений с возможностью кастомизации контента.
+ `SDDSNoteCompact` - компактная версия компонента Note с горизонтальным layout'ом.
  
- Компонент представляет собой VStack с:
- - Опциональным ContentBefore (иконка или другой контент слева или сверху)
+ Компонент представляет собой HStack со всеми элементами в одну линию:
+ - ContentBefore (иконка)
  - Title и Text
- - LinkButton для действий
- - Опциональная кнопка закрытия
+ - LinkButton справа
+ - Close Button справа от LinkButton
  
  # Example
  ```swift
- Note(
+ SDDSNoteCompact(
      title: "Заголовок",
      text: "Описание",
      linkButtonTitle: "Действие",
@@ -22,8 +34,8 @@ import SwiftUI
  }
  ```
  */
-public struct Note<ContentBefore: View>: View {
-    @Environment(\.noteAppearance) private var appearance
+public struct SDDSNoteCompact<ContentBefore: View>: View {
+    @Environment(\.noteCompactAppearance) private var appearance
     @Environment(\.colorScheme) private var colorScheme
     
     private let title: String
@@ -34,7 +46,7 @@ public struct Note<ContentBefore: View>: View {
     private let onLinkButtonTap: (() -> Void)?
     private let onClose: (() -> Void)?
     
-    private var size: NoteSizeConfiguration {
+    private var size: NoteCompactSizeConfiguration {
         appearance.size
     }
     
@@ -81,41 +93,52 @@ public struct Note<ContentBefore: View>: View {
     }
     
     public var body: some View {
-        ZStack(alignment: .topTrailing) {
-            mainContent
-                .padding(.leading, size.paddingStart)
-                .padding(.top, size.paddingTop)
-                .padding(.trailing, size.paddingEnd)
-                .padding(.bottom, size.paddingBottom)
+        HStack(alignment: verticalAlignment, spacing: 0) {
+            if shouldShowContentBefore {
+                contentBeforeView
+                
+                Spacer()
+                    .frame(width: size.contentBeforeEndMargin)
+            }
+            
+            textContent
+            
+            Spacer()
+            
+            if linkButtonTitle != nil {
+                Spacer()
+                    .frame(width: size.actionStartMargin)
+                
+                linkButtonView
+                
+                if size.actionEndMargin > 0 {
+                    Spacer()
+                        .frame(width: size.actionEndMargin)
+                }
+            }
             
             if shouldShowCloseButton {
+                if size.closeStartMargin > 0 {
+                    Spacer()
+                        .frame(width: size.closeStartMargin)
+                }
+                
                 closeButton
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, size.paddingStart)
+        .padding(.top, size.paddingTop)
+        .padding(.trailing, size.paddingEnd)
+        .padding(.bottom, size.paddingBottom)
         .background(
             appearance.backgroundColor.color(for: colorScheme)
                 .shape(pathDrawer: size.shape)
         )
     }
     
-    @ViewBuilder
-    private var mainContent: some View {
-        if shouldShowContentBefore {
-            switch size.contentBeforeArrangement {
-            case .center:
-                HStack(alignment: .center, spacing: size.contentBeforeEndMargin) {
-                    contentBeforeView
-                    textContent
-                }
-            case .top:
-                HStack(alignment: .top, spacing: size.contentBeforeEndMargin) {
-                    contentBeforeView
-                    textContent
-                }
-            }
-        } else {
-            textContent
-        }
+    private var verticalAlignment: VerticalAlignment {
+        size.contentBeforeArrangement == .top ? .titleAlignment : .center
     }
     
     @ViewBuilder
@@ -130,11 +153,17 @@ public struct Note<ContentBefore: View>: View {
                     .foregroundColor(appearance.iconColor.color(for: colorScheme))
             }
         }
+        .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
     }
     
     private var textContent: some View {
         VStack(alignment: .leading, spacing: 0) {
-            titleView
+            Text(title)
+                .lineLimit(1)
+                .truncationMode(.tail)
+                .foregroundColor(appearance.titleColor.color(for: colorScheme))
+                .typography(titleTypography)
+                .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
             
             if let text = text {
                 Text(text)
@@ -144,21 +173,7 @@ public struct Note<ContentBefore: View>: View {
                     .typography(textTypography)
                     .padding(.top, size.textTopMargin)
             }
-            
-            if linkButtonTitle != nil {
-                linkButtonView
-                    .padding(.top, size.actionTopMargin)
-            }
         }
-    }
-    
-    private var titleView: some View {
-        Text(title)
-            .lineLimit(1)
-            .truncationMode(.tail)
-            .foregroundColor(appearance.titleColor.color(for: colorScheme))
-            .typography(titleTypography)
-            .padding(.trailing, shouldShowCloseButton ? size.titlePaddingEnd : 0)
     }
     
     @ViewBuilder
@@ -172,6 +187,7 @@ public struct Note<ContentBefore: View>: View {
                     onLinkButtonTap?()
                 }
             )
+            .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
         }
     }
     
@@ -189,8 +205,7 @@ public struct Note<ContentBefore: View>: View {
                         .foregroundColor(appearance.closeColor.color(for: colorScheme))
                 }
             )
-            .padding(.top, size.closeTopMargin)
-            .padding(.trailing, size.closeEndMargin)
+            .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
         }
     }
     
@@ -213,7 +228,7 @@ public struct Note<ContentBefore: View>: View {
 
 // MARK: - Convenience Init without ContentBefore
 
-extension Note where ContentBefore == EmptyView {
+extension SDDSNoteCompact where ContentBefore == EmptyView {
     /**
      Инициализатор без ContentBefore
      
