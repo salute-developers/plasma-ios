@@ -1,0 +1,843 @@
+{
+    "view": {
+        "default": {
+            "props": {
+                "backgroundColor": {
+                    "type": "color",
+                    "default": "surface.default.transparent-secondary"
+                },
+                "iconColor": {
+                    "type": "color",
+                    "default": "text.default.primary"
+                }
+            }
+        },
+        "positive": {
+            "props": {
+                "backgroundColor": {
+                    "type": "color",
+                    "default": "surface.default.transparent-positive"
+                },
+                "iconColor": {
+                    "type": "color",
+                    "default": "text.default.positive"
+                }
+            }
+        },
+        "negative": {
+            "props": {
+                "backgroundColor": {
+                    "type": "color",
+                    "default": "surface.default.transparent-negative"
+                },
+                "iconColor": {
+                    "type": "color",
+                    "default": "text.default.negative"
+                }
+            }
+        },
+        "warning": {
+            "props": {
+                "backgroundColor": {
+                    "type": "color",
+                    "default": "surface.default.transparent-warning"
+                },
+                "iconColor": {
+                    "type": "color",
+                    "default": "text.default.warning"
+                }
+            }
+        },
+        "info": {
+            "props": {
+                "backgroundColor": {
+                    "type": "color",
+                    "default": "surface.default.transparent-info"
+                },
+                "iconColor": {
+                    "type": "color",
+                    "default": "text.default.info"
+                }
+            }
+        }
+    },
+    "props": {
+        "closeColor": {
+            "type": "color",
+            "default": "text.default.secondary"
+        },
+        "titleColor": {
+            "type": "color",
+            "default": "text.default.primary"
+        },
+        "textColor": {
+            "type": "color",
+            "default": "text.default.primary"
+        }
+    },
+    "variations": [
+        {
+            "id": "l",
+            "parent": null,
+            "view": {
+                "default": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.l.positive"
+                        }
+                    }
+                },
+                "positive": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.l.positive"
+                        }
+                    }
+                },
+                "negative": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.l.negative"
+                        }
+                    }
+                },
+                "warning": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.l.warning"
+                        }
+                    }
+                },
+                "info": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.l.info"
+                        }
+                    }
+                }
+            },
+            "props": {
+                "shape": {
+                    "type": "shape",
+                    "value": "round.l",
+                    "adjustment": -2
+                },
+                "titleStyle": {
+                    "type": "typography",
+                    "value": "text.l.bold"
+                },
+                "textStyle": {
+                    "type": "typography",
+                    "value": "text.l.normal"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "iconSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "paddingStart": {
+                    "type": "dimension",
+                    "value": 28
+                },
+                "paddingTop": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "paddingEnd": {
+                    "type": "dimension",
+                    "value": 28
+                },
+                "paddingBottom": {
+                    "type": "dimension",
+                    "value": 7
+                },
+                "textTopMargin": {
+                    "type": "dimension",
+                    "value": 4
+                },
+                "actionTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "top"
+                }
+            }
+        },
+        {
+            "id": "l.has-close",
+            "parent": "l",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 30
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 16
+                }
+            }
+        },
+        {
+            "id": "l.content-scalable",
+            "parent": "l",
+            "props": {
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                 "iconSize": {
+                    "type": "dimension",
+                    "value": 0
+                }
+            }
+        },
+        {
+            "id": "l.has-close-content-scalable",
+            "parent": "l",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 30
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "m",
+            "parent": null,
+            "view": {
+                "default": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.m.positive"
+                        }
+                    }
+                },
+                "positive": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.m.positive"
+                        }
+                    }
+                },
+                "negative": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.m.negative"
+                        }
+                    }
+                },
+                "warning": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.m.warning"
+                        }
+                    }
+                },
+                "info": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.m.info"
+                        }
+                    }
+                }
+            },
+            "props": {
+                "shape": {
+                    "type": "shape",
+                    "value": "round.m"
+                },
+                "titleStyle": {
+                    "type": "typography",
+                    "value": "text.m.bold"
+                },
+                "textStyle": {
+                    "type": "typography",
+                    "value": "text.m.normal"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "iconSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "paddingStart": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "paddingTop": {
+                    "type": "dimension",
+                    "value": 20
+                },
+                "paddingEnd": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "paddingBottom": {
+                    "type": "dimension",
+                    "value": 8
+                },
+                "textTopMargin": {
+                    "type": "dimension",
+                    "value": 2
+                },
+                "actionTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "top"
+                }
+            }
+        },
+        {
+            "id": "m.has-close",
+            "parent": "m",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 28
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                }
+            }
+        },
+        {
+            "id": "m.content-scalable",
+            "parent": "m",
+            "props": {
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "m.has-close-content-scalable",
+            "parent": "m",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 28
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "s",
+            "parent": null,
+            "view": {
+                "default": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.s.positive"
+                        }
+                    }
+                },
+                "positive": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.s.positive"
+                        }
+                    }
+                },
+                "negative": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.s.negative"
+                        }
+                    }
+                },
+                "warning": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.s.warning"
+                        }
+                    }
+                },
+                "info": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.s.info"
+                        }
+                    }
+                }
+            },
+            "props": {
+                "shape": {
+                    "type": "shape",
+                    "value": "round.m",
+                    "adjustment": -2
+                },
+                "titleStyle": {
+                    "type": "typography",
+                    "value": "text.m.bold"
+                },
+                "textStyle": {
+                    "type": "typography",
+                    "value": "text.m.normal"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "iconSize": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 8
+                },
+                "paddingStart": {
+                    "type": "dimension",
+                    "value": 20
+                },
+                "paddingTop": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "paddingEnd": {
+                    "type": "dimension",
+                    "value": 20
+                },
+                "paddingBottom": {
+                    "type": "dimension",
+                    "value": 5
+                },
+                "textTopMargin": {
+                    "type": "dimension",
+                    "value": 2
+                },
+                "actionTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "top"
+                }
+            }
+        },
+        {
+            "id": "s.has-close",
+            "parent": "s",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 26
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 10
+                }
+            }
+        },
+        {
+            "id": "s.content-scalable",
+            "parent": "s",
+            "props": {
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "s.has-close-content-scalable",
+            "parent": "s",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.24"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 26
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "xs",
+            "parent": null,
+            "view": {
+                "default": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.xs.positive"
+                        }
+                    }
+                },
+                "positive": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.xs.positive"
+                        }
+                    }
+                },
+                "negative": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.xs.negative"
+                        }
+                    }
+                },
+                "warning": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.xs.warning"
+                        }
+                    }
+                },
+                "info": {
+                    "props": {
+                        "linkButtonStyle": {
+                            "type": "component_style",
+                            "value": "link-button.xs.info"
+                        }
+                    }
+                }
+            },
+            "props": {
+                "shape": {
+                    "type": "shape",
+                    "value": "round.s"
+                },
+                "titleStyle": {
+                    "type": "typography",
+                    "value": "text.m.bold"
+                },
+                "textStyle": {
+                    "type": "typography",
+                    "value": "text.m.normal"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "iconSize": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 6
+                },
+                "paddingStart": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "paddingTop": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "paddingEnd": {
+                    "type": "dimension",
+                    "value": 12
+                },
+                "paddingBottom": {
+                    "type": "dimension",
+                    "value": 3
+                },
+                "textTopMargin": {
+                    "type": "dimension",
+                    "value": 2
+                },
+                "actionTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 0
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "top"
+                }
+            }
+        },
+        {
+            "id": "xs.has-close",
+            "parent": "xs",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.16"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 10
+                }
+            }
+        },
+        {
+            "id": "xs.content-scalable",
+            "parent": "xs",
+            "props": {
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 8
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        },
+        {
+            "id": "xs.has-close-content-scalable",
+            "parent": "xs",
+            "props": {
+                "closeIcon": {
+                    "type": "icon",
+                    "value": "close.16"
+                },
+                "titlePaddingEnd": {
+                    "type": "dimension",
+                    "value": 24
+                },
+                "closeSize": {
+                    "type": "dimension",
+                    "value": 16
+                },
+                "closeTopMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "closeEndMargin": {
+                    "type": "dimension",
+                    "value": 10
+                },
+                "contentBeforeEndMargin": {
+                    "type": "dimension",
+                    "value": 8
+                },
+                "contentBeforeArrangement": {
+                    "type": "value",
+                    "value": "center"
+                },
+                "iconSize": {
+                   "type": "dimension",
+                   "value": 0
+               }
+            }
+        }
+    ]
+}
+
