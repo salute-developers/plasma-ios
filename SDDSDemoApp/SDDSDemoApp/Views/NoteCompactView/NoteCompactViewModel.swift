@@ -14,7 +14,6 @@ final class NoteCompactViewModel: ComponentViewModel<NoteCompactVariationProvide
     }
     @Published var linkButtonIcon: Image?
     @Published var hasContentBefore: Bool = true
-    @Published var hasCloseButton: Bool = false
     
     private func updateLinkButtonIcon() {
         if linkButtonIconVisible {

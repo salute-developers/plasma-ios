@@ -4,13 +4,21 @@ import SwiftUI
 // MARK: - Custom Alignment
 
 extension VerticalAlignment {
-    private struct TitleAlignment: AlignmentID {
+    struct NoteCompactTitleAlignment: AlignmentID {
         static func defaultValue(in context: ViewDimensions) -> CGFloat {
             context[VerticalAlignment.center]
         }
     }
     
-    static let titleAlignment = VerticalAlignment(TitleAlignment.self)
+    static let compactTitleAlignment = VerticalAlignment(NoteCompactTitleAlignment.self)
+    
+    struct NoteCompactContentCenterAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.center]
+        }
+    }
+    
+    static let compactContentCenterGuide = VerticalAlignment(NoteCompactContentCenterAlignment.self)
 }
 
 /**
@@ -138,7 +146,7 @@ public struct SDDSNoteCompact<ContentBefore: View>: View {
     }
     
     private var verticalAlignment: VerticalAlignment {
-        size.contentBeforeArrangement == .top ? .titleAlignment : .center
+        size.contentBeforeArrangement == .top ? .compactTitleAlignment : .compactContentCenterGuide
     }
     
     @ViewBuilder
@@ -147,23 +155,25 @@ public struct SDDSNoteCompact<ContentBefore: View>: View {
             if size.iconSize > 0 {
                 contentBefore
                     .frame(width: size.iconSize, height: size.iconSize)
-                    .foregroundColor(appearance.iconColor.color(for: colorScheme))
             } else {
                 contentBefore
-                    .foregroundColor(appearance.iconColor.color(for: colorScheme))
             }
         }
-        .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
+        .tint(appearance.iconColor.color(for: colorScheme))
     }
     
     private var textContent: some View {
+        titleAndText
+    }
+    
+    private var titleAndText: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(title)
                 .lineLimit(1)
                 .truncationMode(.tail)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme))
                 .typography(titleTypography)
-                .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
+                .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
             
             if let text = text {
                 Text(text)
@@ -187,7 +197,7 @@ public struct SDDSNoteCompact<ContentBefore: View>: View {
                     onLinkButtonTap?()
                 }
             )
-            .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
+            .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
         }
     }
     
@@ -200,12 +210,13 @@ public struct SDDSNoteCompact<ContentBefore: View>: View {
                 },
                 label: {
                     closeIcon
+                        .renderingMode(.template)
                         .resizable()
                         .frame(width: size.closeSize, height: size.closeSize)
                         .foregroundColor(appearance.closeColor.color(for: colorScheme))
                 }
             )
-            .alignmentGuide(.titleAlignment) { d in d[VerticalAlignment.center] }
+            .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
         }
     }
     

@@ -28,7 +28,6 @@ struct NoteCompactView: View {
                 linkButtonTitleField
                 linkButtonIconToggle
                 contentBeforeToggle
-                closeButtonToggle
             }
         }
         .navigationTitle("Note Compact")
@@ -51,14 +50,17 @@ struct NoteCompactView: View {
                 onLinkButtonTap: {
                     print("Link button tapped")
                 },
-                onClose: viewModel.hasCloseButton ? {
+                onClose: {
                     print("Close button tapped")
-                } : nil,
+                },
                 contentBefore: {
                     Image("plasma")
+                        .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 36, height: 36)
+                        .applyIf(viewModel.appearance.size.iconSize == 0) {
+                            $0.frame(width: 64, height: 64)
+                        }
                 }
             )
         } else {
@@ -70,9 +72,9 @@ struct NoteCompactView: View {
                 onLinkButtonTap: {
                     print("Link button tapped")
                 },
-                onClose: viewModel.hasCloseButton ? {
+                onClose: {
                     print("Close button tapped")
-                } : nil
+                }
             )
         }
     }
@@ -118,12 +120,6 @@ struct NoteCompactView: View {
     private var contentBeforeToggle: some View {
         HStack {
             Toggle("Content Before", isOn: $viewModel.hasContentBefore)
-        }
-    }
-    
-    private var closeButtonToggle: some View {
-        HStack {
-            Toggle("Close Button", isOn: $viewModel.hasCloseButton)
         }
     }
 }

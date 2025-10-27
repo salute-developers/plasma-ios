@@ -1,6 +1,26 @@
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// MARK: - Custom Alignment
+
+extension VerticalAlignment {
+    struct NoteTitleCenterAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.center]
+        }
+    }
+    
+    static let titleCenter = VerticalAlignment(NoteTitleCenterAlignment.self)
+    
+    struct NoteContentCenterAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.center]
+        }
+    }
+    
+    static let contentCenterGuide = VerticalAlignment(NoteContentCenterAlignment.self)
+}
+
 /**
  `SDDSNote` - компонент для отображения информационных сообщений с возможностью кастомизации контента.
  
@@ -103,15 +123,17 @@ public struct SDDSNote<ContentBefore: View>: View {
         if shouldShowContentBefore {
             switch size.contentBeforeArrangement {
             case .center:
-                HStack(alignment: .center, spacing: size.contentBeforeEndMargin) {
+                HStack(alignment: .contentCenterGuide, spacing: size.contentBeforeEndMargin) {
                     contentBeforeView
+                        .alignmentGuide(.contentCenterGuide) { d in d[VerticalAlignment.center] }
                     textContent
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             case .top:
-                HStack(alignment: .top, spacing: size.contentBeforeEndMargin) {
+                HStack(alignment: .titleCenter, spacing: size.contentBeforeEndMargin) {
                     contentBeforeView
+                        .alignmentGuide(.titleCenter) { d in d[VerticalAlignment.center] }
                     textContent
                     Spacer()
                 }
@@ -129,15 +151,25 @@ public struct SDDSNote<ContentBefore: View>: View {
             if size.iconSize > 0 {
                 contentBefore
                     .frame(width: size.iconSize, height: size.iconSize)
-                    .foregroundColor(appearance.iconColor.color(for: colorScheme))
             } else {
                 contentBefore
-                    .foregroundColor(appearance.iconColor.color(for: colorScheme))
+            }
+        }
+        .tint(appearance.iconColor.color(for: colorScheme))
+    }
+    
+    private var textContent: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            titleAndText
+            
+            if linkButtonTitle != nil {
+                linkButtonView
+                    .padding(.top, size.actionTopMargin)
             }
         }
     }
     
-    private var textContent: some View {
+    private var titleAndText: some View {
         VStack(alignment: .leading, spacing: 0) {
             titleView
             
@@ -149,12 +181,8 @@ public struct SDDSNote<ContentBefore: View>: View {
                     .typography(textTypography)
                     .padding(.top, size.textTopMargin)
             }
-            
-            if linkButtonTitle != nil {
-                linkButtonView
-                    .padding(.top, size.actionTopMargin)
-            }
         }
+        .alignmentGuide(.contentCenterGuide) { d in d[VerticalAlignment.center] }
     }
     
     private var titleView: some View {
@@ -164,6 +192,7 @@ public struct SDDSNote<ContentBefore: View>: View {
             .foregroundColor(appearance.titleColor.color(for: colorScheme))
             .typography(titleTypography)
             .padding(.trailing, shouldShowCloseButton ? size.titlePaddingEnd : 0)
+            .alignmentGuide(.titleCenter) { d in d[VerticalAlignment.center] }
     }
     
     @ViewBuilder
@@ -189,6 +218,7 @@ public struct SDDSNote<ContentBefore: View>: View {
                 },
                 label: {
                     closeIcon
+                        .renderingMode(.template)
                         .resizable()
                         .frame(width: size.closeSize, height: size.closeSize)
                         .foregroundColor(appearance.closeColor.color(for: colorScheme))
