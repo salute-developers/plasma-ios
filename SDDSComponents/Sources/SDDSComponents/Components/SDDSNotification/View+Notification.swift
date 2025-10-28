@@ -1,5 +1,4 @@
 import SwiftUI
-import SDDSIcons
 
 /**
  Модификатор для отображения уведомлений с возможностью настройки внешнего вида и позиционирования.
@@ -28,12 +27,14 @@ import SDDSIcons
  ```
  */
 public extension View {
+    @available(*, deprecated, message: "Don't use it, public method will be removed")
     func notification<Content: View>(
         isPresented: Binding<Bool>,
         appearance: NotificationAppearance,
         position: ToastPosition = .topCenter,
         duration: TimeInterval = 3.0,
         hasClose: Bool = true,
+        closeImage: Image? = nil,
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -49,8 +50,41 @@ public extension View {
             contentStart: { EmptyView() },
             content: content,
             contentEnd: {
-                if hasClose {
-                    Asset.close36.image
+                if let closeImage = closeImage, hasClose {
+                    closeImage
+                        .renderingMode(.template)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    EmptyView()
+                }
+            }
+        )
+    }
+    
+    func notification<Content: View>(
+        isPresented: Binding<Bool>,
+        appearance: NotificationAppearance,
+        position: ToastPosition = .topCenter,
+        duration: TimeInterval = 3.0,
+        closeImage: Image? = nil,
+        onShow: ((ToastID) -> Void)? = nil,
+        onClose: ((ToastID) -> Void)? = nil,
+        @ViewBuilder content: @escaping () -> Content
+    ) -> some View {
+        self.toast(
+            isPresented: isPresented,
+            appearance: toastAppearance(from: appearance),
+            position: position,
+            duration: duration,
+            contentEndPosition: .topRight,
+            onShow: onShow,
+            onClose: onClose,
+            contentStart: { EmptyView() },
+            content: content,
+            contentEnd: {
+                if let closeImage = closeImage {
+                    closeImage
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 {% for key, props in variations %}
 public extension GeneralAppearanceVariation<{{ component }}, {{ appearance }}, {{ component }}Variation.{{ key }}> {

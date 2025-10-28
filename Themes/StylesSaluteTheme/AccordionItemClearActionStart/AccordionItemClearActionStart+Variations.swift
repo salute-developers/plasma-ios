@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<AccordionItemClearActionStart, AccordionItemAppearance, AccordionItemClearActionStartVariation.H2> {

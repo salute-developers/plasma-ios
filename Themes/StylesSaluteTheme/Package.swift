@@ -21,10 +21,7 @@ let package = Package(
             name: "StylesSaluteTheme",
             dependencies: ["SDDSThemeCore", "SDDSComponents", "SDDSIcons"],
             path: ".",
-            exclude: ["StylesSaluteTheme.xcodeproj", "SDDSTheme.h"],
-            resources: [
-                .process("Fonts")
-            ]
+            exclude: ["StylesSaluteTheme.xcodeproj", "SDDSTheme.h"]
         )
     ]
 )

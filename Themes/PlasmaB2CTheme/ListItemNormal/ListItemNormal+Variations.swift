@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-
+import SDDSIcons
 
 public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, ListItemNormalVariation.L> {
     

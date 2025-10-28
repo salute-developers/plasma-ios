@@ -3,6 +3,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSServTheme
+import SDDSThemeCore
 
 struct TabBarView: View {
     @ObservedObject private var viewModel: TabBarViewModel
