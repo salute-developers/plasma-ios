@@ -17,6 +17,6 @@ final class RectSkeletonVariationProvider: VariationProvider {
     }
     
     var defaultValue: SkeletonAppearance {
-        RectSkeleton.default.appearance
+        SDDSServTheme.RectSkeleton.default.appearance
     }
 } 

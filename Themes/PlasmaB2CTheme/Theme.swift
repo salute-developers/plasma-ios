@@ -4,18 +4,14 @@ import Foundation
 public class Theme {
     static let name = "PlasmaB2CTheme"
     
-    public class func initialize() {
-        guard let themeBundleURL = Bundle.main.url(forResource: "\(bundleName)", withExtension: "bundle"),
-              let themeBundle = Bundle(url: themeBundleURL) else {
-            fatalError("\(bundleName).bundle not found")
-        }
-        
-        guard let fontsDirectoryURL = themeBundle.resourceURL else {
-            fatalError("Fonts directory not found in bundle")
-        }
-        
-        FontsService.shared.initialize(fontsDirectoryURL: themeBundleURL)
+    public class func initialize(onComplete: @escaping () -> Void = {}) {
         EnvironmentValueProvider.shared.setDefaultValues()
+        let fonts = FontsManifest.fonts.map { fontInfo in
+            SDDSThemeCore.FontInfo(url: fontInfo.url, weight: fontInfo.weight, style: fontInfo.style, filename: fontInfo.filename)
+        }
+        FontsService.shared.initialize(fonts: fonts) { _ in
+            onComplete()
+        }
     }
     
     private static var bundleName: String {

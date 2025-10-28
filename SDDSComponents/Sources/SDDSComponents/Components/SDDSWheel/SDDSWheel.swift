@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
-@_exported import SDDSIcons
 
 /**
  `SDDSWheel` - компонент для выбора значений с помощью вращающихся колес.

@@ -28,6 +28,6 @@ final class NotificationVariationProvider: VariationProvider {
     }
     
     var defaultValue: NotificationAppearance {
-        NotificationCompact.m.appearance
+        SDDSServTheme.NotificationCompact.m.appearance
     }
 }

@@ -21,10 +21,7 @@ let package = Package(
             name: "PlasmaB2CTheme",
             dependencies: ["SDDSThemeCore", "SDDSComponents", "SDDSIcons"],
             path: ".",
-            exclude: ["PlasmaB2CTheme.xcodeproj", "SDDSTheme.h"],
-            resources: [
-                .process("Fonts")
-            ]
+            exclude: ["PlasmaB2CTheme.xcodeproj", "SDDSTheme.h"]
         )
     ]
 )

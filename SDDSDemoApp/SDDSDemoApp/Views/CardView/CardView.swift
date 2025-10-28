@@ -4,6 +4,7 @@ import Combine
 import SDDSComponents
 import SDDSServTheme
 import SDDSIcons
+import SDDSThemeCore
 
 struct CardView: View {
     @ObservedObject private var viewModel: CardViewModel = CardViewModel()
@@ -58,17 +59,22 @@ struct CardView: View {
     
     private var content: some View {
         SDDSCardContent(shapeContent: cardContentShape, backgroundColor: .gray) {
-            Group {
-                Image(systemName: "apple.logo")
-                    .resizable()
-                    .foregroundStyle(.white)
-                    .frame(width: imageSize.width, height: imageSize.height)
-                Text("Content")
-                    .foregroundStyle(.darkGray)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            .frame(width: cardSize.width, height: cardSize.height)
+            cardContent
         }
+    }
+    
+    @ViewBuilder
+    private var cardContent: some View {
+        ZStack {
+            Image(systemName: "apple.logo")
+                .resizable()
+                .foregroundStyle(Color.white)
+                .frame(width: imageSize.width, height: imageSize.height)
+            Text("Content")
+                .foregroundStyle(Color.black)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(width: cardSize.width, height: cardSize.height)
     }
     
     @ViewBuilder

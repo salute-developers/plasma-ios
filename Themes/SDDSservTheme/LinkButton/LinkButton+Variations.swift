@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkButtonVariation.L> {
@@ -36,6 +37,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -66,6 +73,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -110,6 +118,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -140,6 +154,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -184,6 +199,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -214,6 +235,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -258,6 +280,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -288,6 +316,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -332,6 +361,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -362,6 +397,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -406,6 +442,12 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -436,6 +478,7 @@ public extension GeneralAppearanceVariation<LinkButton, ButtonAppearance, LinkBu
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -462,6 +505,12 @@ public extension ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
             appearance: appearance.accent
         )
     }
+    var info: AppearanceVariation<ButtonAppearance> {
+        return .init(
+            name: "info",
+            appearance: appearance.info
+        )
+    }
     var negative: AppearanceVariation<ButtonAppearance> {
         return .init(
             name: "negative",
@@ -492,6 +541,7 @@ public extension ComponentAppearanceVariation<LinkButton, ButtonAppearance> {
             styles: [
                 self.`default`,
                 self.accent,
+                self.info,
                 self.negative,
                 self.positive,
                 self.secondary,
@@ -518,6 +568,14 @@ private extension ButtonAppearance {
         appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover, selectedColor: .clearColor)
         appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover, selectedColor: .clearColor)
         appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultAccent, highlightedColor: ColorToken.textDefaultAccentActive, hoveredColor: ColorToken.textDefaultAccentHover, selectedColor: .clearColor)
+        return appearance
+    }
+    
+    var info: ButtonAppearance {
+        var appearance = self
+        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultInfo, highlightedColor: ColorToken.textDefaultInfoActive, hoveredColor: ColorToken.textDefaultInfoHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultInfo, highlightedColor: ColorToken.textDefaultInfoActive, hoveredColor: ColorToken.textDefaultInfoHover, selectedColor: .clearColor)
+        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultInfo, highlightedColor: ColorToken.textDefaultInfoActive, hoveredColor: ColorToken.textDefaultInfoHover, selectedColor: .clearColor)
         return appearance
     }
     

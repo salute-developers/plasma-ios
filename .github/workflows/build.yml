@@ -32,6 +32,11 @@ jobs:
           chmod +x ./scripts/install_certificate_and_profile.sh
           ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
           
+      - name: Build SDDSThemeCore XCFramework
+        run: |
+          cd SDDSThemeBuilder
+          ruby ../scripts/build_xcframeworks.rb -d . -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore
+          
       - name: Run build script
         run: |
           ./scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
