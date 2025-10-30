@@ -1,5 +1,4 @@
 import SwiftUI
-@_exported import SDDSIcons
 @_exported import SDDSThemeCore
 
 /**
@@ -34,7 +33,7 @@ public struct SDDSModal<Content: View>: View {
     
     public init(
         @ViewBuilder content: @escaping () -> Content,
-        closeImage: Image? = Asset.close36.image,
+        closeImage: Image? = nil,
         appearance: ModalAppearance,
         onClose: @escaping () -> Void
     ) {

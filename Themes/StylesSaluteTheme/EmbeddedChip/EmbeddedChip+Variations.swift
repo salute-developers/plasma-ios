@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<EmbeddedChip, ChipAppearance, EmbeddedChipVariation.L> {

@@ -1,5 +1,4 @@
 import SwiftUI
-import SDDSIcons
 
 public extension View {
     func modal<Content: View>(

@@ -1,13 +1,12 @@
 import Foundation
 
-final class InstallFontsCommand: Command {
+final class InstallFontsCommand: Command, FileWriter {
     private let fontFamiliesContainer: FontFamiliesContainer
     private let fontsURL: URL
     private let copyFontsScriptURL: URL
     private let registerFontsScriptURL: URL
     private let sddsThemeBuilderXcodeProjectURL: URL
     private let themePlistURL: URL
-    private let queue = DispatchQueue(label: "com.sdds.DownloadFontsCommand", qos: .userInitiated, attributes: .concurrent)
     
     init(fontFamiliesContainer: FontFamiliesContainer, fontsURL: URL, copyFontsScriptURL: URL, registerFontsScriptURL: URL, sddsThemeBuilderXcodeProjectURL: URL, themePlistURL: URL) {
         self.fontFamiliesContainer = fontFamiliesContainer
@@ -17,14 +16,14 @@ final class InstallFontsCommand: Command {
         self.sddsThemeBuilderXcodeProjectURL = sddsThemeBuilderXcodeProjectURL
         self.themePlistURL = themePlistURL
         
-        super.init(name: "Download Fonts")
+        super.init(name: "Create Fonts Manifest")
     }
     
     @discardableResult override func run() -> CommandResult {
         super.run()
         
         var result: CommandResult = .empty
-        for command in [{self.validatateFonts()}, {self.download()}] {
+        for command in [ {self.validatateFonts()}, {self.createFontsManifest()} ] {
             result = command()
             guard !result.isError else {
                 return result
@@ -53,10 +52,10 @@ final class InstallFontsCommand: Command {
         return .success
     }
     
-    // MARK: - Download
-    private func download() -> CommandResult {
-        let group = DispatchGroup()
-        var isFailed = false
+    // MARK: - Create Manifest
+    private func createFontsManifest() -> CommandResult {
+        var fontEntries: [String] = []
+        
         for key in FontFamily.Key.allCases {
             guard let fontFamily = fontFamiliesContainer.items[key] else {
                 continue
@@ -64,28 +63,48 @@ final class InstallFontsCommand: Command {
             
             let fonts = fontFamily.fonts
             for font in fonts {
-                group.enter()
-                queue.async {
-                    let result = DownloadCommand(fileURL: font.link, outputURL: self.outputURL(for: font)).run()
-                    if result.isError {
-                        Logger.printText("Error occured during downloading of \(font.link)")
-                        isFailed = true
-                    }
-                    group.leave()
-                }
+                let escapedURL = font.link.absoluteString.replacingOccurrences(of: "\"", with: "\\\"")
+                let entry = """
+                    FontInfo(url: "\(escapedURL)", weight: "\(font.weight.rawValue)", style: "\(font.style.rawValue)", filename: "\(font.link.lastPathComponent)")
+                """
+                fontEntries.append(entry)
             }
         }
-        group.wait()
         
-        if isFailed {
-            return .error(GeneralError.unableToDownloadFonts)
-        } else {
-            return .success
+        let swiftContent = """
+import Foundation
+
+public struct FontInfo {
+    public let url: String
+    public let weight: String
+    public let style: String
+    public let filename: String
+}
+
+public struct FontsManifest {
+    public static let fonts: [FontInfo] = [
+\(fontEntries.map { "        \($0)" }.joined(separator: ",\n"))
+    ]
+}
+
+"""
+        
+        let fileManager = FileManager.default
+        do {
+            if !fileManager.fileExists(atPath: fontsURL.path()) {
+                try fileManager.createDirectory(at: fontsURL, withIntermediateDirectories: true)
+            }
+            
+            let swiftURL = fontsURL.appending(component: "FontsManifest.swift")
+            try swiftContent.write(to: swiftURL, atomically: true, encoding: .utf8)
+            
+            Logger.printText("Fonts manifest created at: \(swiftURL.path())")
+        } catch {
+            Logger.printText("Failed to write fonts manifest: \(error)")
+            return .error(.nsError(error))
         }
-    }
-    
-    private func outputURL(for font: Font) -> URL {
-        return fontsURL.appending(component: font.link.lastPathComponent)
+        
+        return .success
     }
     
 }
