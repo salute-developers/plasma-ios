@@ -267,6 +267,11 @@
 		819A3A6A2E4E6573006A11F8 /* LoaderSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */; };
 		819A3A6D2E4E666A006A11F8 /* SDDSCircularProgressBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */; };
 		819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */; };
+		819C47332EBCF39A0081066C /* TabsOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472F2EBCF39A0081066C /* TabsOrientation.swift */; };
+		819C47342EBCF39A0081066C /* TabsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472E2EBCF39A0081066C /* TabsAppearance.swift */; };
+		819C47352EBCF39A0081066C /* TabItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */; };
+		819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */; };
+		819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472B2EBCF39A0081066C /* TabItemAppearance.swift */; };
 		81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */; };
 		81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */; };
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
@@ -658,6 +663,11 @@
 		819A3A662E4E6573006A11F8 /* SDDSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSLoader.swift; sourceTree = "<group>"; };
 		819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCircularProgressBarData.swift; sourceTree = "<group>"; };
 		819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSpinnerData.swift; sourceTree = "<group>"; };
+		819C472B2EBCF39A0081066C /* TabItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemAppearance.swift; sourceTree = "<group>"; };
+		819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		819C472E2EBCF39A0081066C /* TabsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsAppearance.swift; sourceTree = "<group>"; };
+		819C472F2EBCF39A0081066C /* TabsOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsOrientation.swift; sourceTree = "<group>"; };
+		819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsSizeConfiguration.swift; sourceTree = "<group>"; };
 		81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+ScrollbarModifier.swift"; sourceTree = "<group>"; };
 		81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarModifier.swift; sourceTree = "<group>"; };
 		81A079052DA3FB5400260DC9 /* ScrollBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarData.swift; sourceTree = "<group>"; };
@@ -1753,6 +1763,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				819C47322EBCF39A0081066C /* SDDSTabs */,
 				8183DDA52EB2AB3100610A9A /* SDDSNavigationBar */,
 				8183DDA92EB2AB3100610A9A /* SDDSNavigationBarInternalPage */,
 				8183DDAD2EB2AB3100610A9A /* SDDSNavigationBarMainPage */,
@@ -2005,6 +2016,34 @@
 				819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */,
 			);
 			path = LoaderAppearance;
+			sourceTree = "<group>";
+		};
+		819C472D2EBCF39A0081066C /* TabItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				819C472B2EBCF39A0081066C /* TabItemAppearance.swift */,
+				819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */,
+			);
+			path = TabItemAppearance;
+			sourceTree = "<group>";
+		};
+		819C47312EBCF39A0081066C /* TabsAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				819C472E2EBCF39A0081066C /* TabsAppearance.swift */,
+				819C472F2EBCF39A0081066C /* TabsOrientation.swift */,
+				819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */,
+			);
+			path = TabsAppearance;
+			sourceTree = "<group>";
+		};
+		819C47322EBCF39A0081066C /* SDDSTabs */ = {
+			isa = PBXGroup;
+			children = (
+				819C472D2EBCF39A0081066C /* TabItemAppearance */,
+				819C47312EBCF39A0081066C /* TabsAppearance */,
+			);
+			path = SDDSTabs;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -2711,6 +2750,11 @@
 				8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */,
 				8119DF622DF6FB8800D1CA9F /* View+Notification.swift in Sources */,
 				816D0EE62DF856F40086C35C /* ToasContentEndPosition.swift in Sources */,
+				819C47332EBCF39A0081066C /* TabsOrientation.swift in Sources */,
+				819C47342EBCF39A0081066C /* TabsAppearance.swift in Sources */,
+				819C47352EBCF39A0081066C /* TabItemSizeConfiguration.swift in Sources */,
+				819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */,
+				819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */,
 				81F753222CF467CC000156D9 /* ButtonLayoutMode.swift in Sources */,
 				81F753262CF467F6000156D9 /* ButtonIconAttributes.swift in Sources */,
 				817339EB2D033EB90092608A /* AvatarStatus.swift in Sources */,
