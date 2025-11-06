@@ -51,7 +51,9 @@ struct ComponentsView: View {
         ("Wheel", AnyView(WheelView())),
         ("NavigationBar", AnyView(NavigationBarView())),
         ("Note", AnyView(NoteView())),
-        ("NoteCompact", AnyView(NoteCompactView()))
+        ("NoteCompact", AnyView(NoteCompactView())),
+        ("Tabs", AnyView(TabsView())),
+        ("TabItem", AnyView(TabItemView()))
     ]
 
     var body: some View {
