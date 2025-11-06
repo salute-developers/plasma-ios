@@ -89,7 +89,7 @@ struct NoteCompactSizeXs: NoteCompactSizeConfiguration {
     }
 }
 
-struct NoteCompactAnySize: NoteCompactSizeConfiguration {    
+struct NoteCompactAnySize: NoteCompactSizeConfiguration {
     var actionEndMargin = CGFloat(0)
     var actionStartMargin = CGFloat(0)
     var closeSize = CGFloat(0)

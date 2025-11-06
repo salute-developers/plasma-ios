@@ -58,7 +58,7 @@ struct NoteSize: CodeGenerationSize {
         self.closeTopMargin = CGFloat.defaultContext
         self.closeEndMargin = CGFloat.defaultContext
         self.closeSize = CGFloat.defaultContext
-        self.contentBeforeArrangement = NoteContentBeforeArrangementContextBuilder.defaultContext
+        self.contentBeforeArrangement = NoteContentBeforeArrangementContextBuilder.defaultContext(component: .note)
     }
 }
 

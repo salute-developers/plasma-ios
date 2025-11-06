@@ -213,13 +213,6 @@ extension SDDSToast where ContentStart == EmptyView, Content == Text {
     }
 }
 
-private struct ContentHeightPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
 extension View {
     func measureSize(perform action: @escaping (CGSize) -> Void) -> some View {
         self.background(

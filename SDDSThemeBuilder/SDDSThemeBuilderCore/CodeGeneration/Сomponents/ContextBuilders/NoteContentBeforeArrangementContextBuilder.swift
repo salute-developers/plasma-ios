@@ -30,8 +30,9 @@ final class NoteContentBeforeArrangementContextBuilder: CodeGenerationContextBui
         }
     }
     
-    static var defaultContext: String {
-        return "NoteContentBeforeArrangement.top"
+    static func defaultContext(component: CodeGenerationComponent) -> String {
+        let type = "\(component.rawValue)ContentBeforeArrangement"
+        return "\(type).top"
     }
 }
 
