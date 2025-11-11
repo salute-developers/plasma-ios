@@ -70,6 +70,8 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8134562D2EC4BC3500D40423 /* Note */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Note; sourceTree = "<group>"; };
+		813456322EC4BC3500D40423 /* NoteCompact */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteCompact; sourceTree = "<group>"; };
 		813BC6C42EB29BD500E4E505 /* AccordionClearActionEnd */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionClearActionEnd; sourceTree = "<group>"; };
 		813BC6C92EB29BD500E4E505 /* AccordionClearActionStart */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionClearActionStart; sourceTree = "<group>"; };
 		813BC6CE2EB29BD500E4E505 /* AccordionItemClearActionEnd */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionItemClearActionEnd; sourceTree = "<group>"; };
@@ -179,6 +181,8 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				8134562D2EC4BC3500D40423 /* Note */,
+				813456322EC4BC3500D40423 /* NoteCompact */,
 				8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */,
 				8183C9302EB2A73300610A9A /* NavigationBarMainPage */,
 				813BC6C42EB29BD500E4E505 /* AccordionClearActionEnd */,
@@ -388,6 +392,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				8134562D2EC4BC3500D40423 /* Note */,
+				813456322EC4BC3500D40423 /* NoteCompact */,
 				813BC6C42EB29BD500E4E505 /* AccordionClearActionEnd */,
 				813BC6C92EB29BD500E4E505 /* AccordionClearActionStart */,
 				813BC6CE2EB29BD500E4E505 /* AccordionItemClearActionEnd */,
@@ -683,7 +689,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.18.0;
+				MARKETING_VERSION = 0.19.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;
@@ -719,7 +725,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.18.0;
+				MARKETING_VERSION = 0.19.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;
