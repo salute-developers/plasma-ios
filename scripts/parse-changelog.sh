@@ -33,15 +33,15 @@ is_library_relevant() {
         return 0
     fi
     
-    # Маппинг названий тем
+    # Маппинг названий тем (соответствует формату release notes)
     case "$LIBRARY_NAME" in
         "styles-salute-theme")
-            if [[ "$h3_title" == *"plasma-styles-salute"* ]]; then
+            if [[ "$h3_title" == *"styles-salute"* ]]; then
                 return 0
             fi
             ;;
         "sddsserv-theme")
-            if [[ "$h3_title" == *"sdds-serv"* ]] || [[ "$h3_title" == *"SDDSComponents"* ]]; then
+            if [[ "$h3_title" == *"sddsserv"* ]] || [[ "$h3_title" == *"SDDSComponents"* ]]; then
                 return 0
             fi
             ;;
@@ -51,7 +51,7 @@ is_library_relevant() {
             fi
             ;;
         "plasma-homeds-theme")
-            if [[ "$h3_title" == *"plasma-homeds"* ]]; then
+            if [[ "$h3_title" == *"plasma-home-ds"* ]]; then
                 return 0
             fi
             ;;
