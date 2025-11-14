@@ -1,70 +1,15 @@
 import SwiftUI
 import Foundation
 
-/**
- Режим отображения вкладок при нехватке места
- */
-public enum TabsClipMode {
-    /// Обычный режим со скроллом
-    case none
-    /// Добавляется кнопка "Show All" для открытия dropdown menu
-    case showMore(showAllText: String, items: [TabsItemData], maxHeight: CGFloat)
-    /// Отображаются кнопки навигации для переключения на предыдущий/следующий элемент
-    case scroll
-}
-
-/**
- Элемент вкладки для SDDSTabs
- */
-public struct TabsItemData: Identifiable {
-    public let id: String
-    public let label: String
-    public let value: String?
-    public let counterValue: Int?
-    public let icon: Image?
-    public let isDisabled: Bool
-    
-    public init(
-        id: String,
-        label: String,
-        value: String? = nil,
-        counterValue: Int? = nil,
-        icon: Image? = nil,
-        isDisabled: Bool = false
-    ) {
-        self.id = id
-        self.label = label
-        self.value = value
-        self.counterValue = counterValue
-        self.icon = icon
-        self.isDisabled = isDisabled
-    }
-}
-
-/**
- `SDDSTabs` - контейнер вкладок с поддержкой различных режимов отображения.
- 
- - Parameters:
-    - items: Массив элементов вкладок
-    - dropdownItems: Элементы для dropdown menu (используется в режиме showMore)
-    - selectedId: ID выбранного элемента
-    - clipMode: Режим отображения (none/showMore/scroll)
-    - tabItemType: Тип используемых TabItem (default/header/icon)
-    - appearance: Внешний вид контейнера
-    - onSelect: Callback при выборе элемента
- 
- ## Особенности
- - Поддерживает horizontal и vertical ориентации
- - Автоматический скролл при большом количестве элементов
- - Опциональный divider (внизу для horizontal, слева для vertical)
- - Анимированный индикатор под выбранным элементом
- - Режим showMore с dropdown menu
- - Режим scroll с кнопками навигации
- */
+/// Контейнер вкладок с поддержкой различных режимов отображения
+///
+/// Поддерживает horizontal и vertical ориентации, различные режимы clipMode,
+/// автоматический скролл и анимированный индикатор.
 public struct SDDSTabs: View {
     @Environment(\.tabsAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @State private var contentWidth: CGFloat = 0
+    @State private var contentHeight: CGFloat = 0
     @State private var isDropdownPresented: Bool = false
     @State private var dropdownContentHeight: CGFloat = 0
     @State private var itemWidths: [String: CGFloat] = [:]
@@ -77,22 +22,38 @@ public struct SDDSTabs: View {
     private let clipMode: TabsClipMode
     private let tabItemType: TabItemType
     private let stretch: Bool
+    private let hasDivider: Bool
     private let onSelect: (String) -> Void
     
     private static let tabsContainerName = "tabs_container"
     
+    /// Тип используемых TabItem
     public enum TabItemType {
+        /// TabItem с текстом и опциональными иконками
         case `default`
+        /// TabItem в стиле header
         case header
+        /// TabItem только с иконкой
         case icon
     }
     
+    /// Создает контейнер вкладок
+    /// - Parameters:
+    ///   - items: Массив элементов вкладок
+    ///   - selectedId: ID выбранного элемента
+    ///   - clipMode: Режим отображения (none/showMore/scroll)
+    ///   - tabItemType: Тип используемых TabItem
+    ///   - stretch: Растягивать элементы на всю ширину/высоту
+    ///   - hasDivider: Показывать divider
+    ///   - appearance: Внешний вид контейнера
+    ///   - onSelect: Callback при выборе элемента
     public init(
         items: [TabsItemData],
         selectedId: String?,
         clipMode: TabsClipMode = .none,
         tabItemType: TabItemType = .default,
         stretch: Bool = true,
+        hasDivider: Bool = true,
         appearance: TabsAppearance? = nil,
         onSelect: @escaping (String) -> Void
     ) {
@@ -101,6 +62,7 @@ public struct SDDSTabs: View {
         self.clipMode = clipMode
         self.tabItemType = tabItemType
         self.stretch = stretch
+        self.hasDivider = hasDivider
         self._appearance = appearance
         self.onSelect = onSelect
     }
@@ -114,39 +76,42 @@ public struct SDDSTabs: View {
         }
     }
     
-    // MARK: - Horizontal Layout
-    
     @ViewBuilder private var horizontalLayout: some View {
         VStack(spacing: 0) {
             switch clipMode {
-            case .none:
-                ScrollView(.horizontal, showsIndicators: false) {
+            case .none, .showMore:
+                VStack(spacing: 0) {
                     horizontalTabsStack
-                }
-            case .showMore(let showAllText, let dropdownItems, let maxHeight):
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 0) {
-                        horizontalTabsStack
-                        showMoreButton(text: showAllText, items: dropdownItems, maxHeight: maxHeight)
-                    }
+                        .frame(maxWidth: stretch ? .infinity : nil)
+                    horizontalDivider
+                        .id(visibleItems.map { $0.id }.joined(separator: "-"))
                 }
             case .scroll:
                 HStack(spacing: 0) {
                     overflowButton(isPrevious: true)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        horizontalTabsStack
+                        .opacity(hasPreviousItem ? 1 : 0)
+                        .animation(nil, value: hasPreviousItem)
+                    VStack(spacing: 0) {
+                        ScrollViewReader { proxy in
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                horizontalTabsStack
+                            }
+                            .onChange(of: selectedId) { newId in
+                                if let newId = newId {
+                                    withAnimation {
+                                        proxy.scrollTo(newId, anchor: .center)
+                                    }
+                                }
+                            }
+                        }
+                        horizontalDivider
+                            .id(visibleItems.map { $0.id }.joined(separator: "-"))
                     }
                     .frame(maxWidth: .infinity)
                     overflowButton(isPrevious: false)
+                        .opacity(hasNextItem ? 1 : 0)
+                        .animation(nil, value: hasNextItem)
                 }
-            }
-            
-            // Divider ограничен шириной контента
-            if appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
-                Divider()
-                    .frame(width: contentWidth, height: 1)
-                    .background(dividerAppearance.backgroundColor.color(for: colorScheme))
-                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
@@ -155,6 +120,7 @@ public struct SDDSTabs: View {
         HStack(spacing: 0) {
             ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
                 tabItemView(for: item)
+                    .id(item.id)
                     .fixedSize()
                     .background(
                         GeometryReader { geometry in
@@ -179,7 +145,6 @@ public struct SDDSTabs: View {
                 }
             }
         }
-        .frame(maxWidth: stretch ? .infinity : nil)
         .background(
             GeometryReader { geometry in
                 Color.clear.preference(key: ContentWidthPreferenceKey.self, value: geometry.size.width)
@@ -200,39 +165,41 @@ public struct SDDSTabs: View {
         }
     }
     
-    // MARK: - Vertical Layout
-    
     @ViewBuilder private var verticalLayout: some View {
-        HStack(spacing: 0) {
-            // Divider
-            if appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
-                Divider()
-                    .frame(width: 1)
-                    .background(dividerAppearance.backgroundColor.color(for: colorScheme))
+        switch clipMode {
+        case .none, .showMore:
+            HStack(spacing: 0) {
+                verticalDivider
+                    .id(visibleItems.map { $0.id }.joined(separator: "-"))
+                verticalTabsStack
+                    .frame(maxHeight: stretch ? .infinity : nil)
             }
-            
-            switch clipMode {
-            case .none:
-                ScrollView(.vertical, showsIndicators: false) {
-                    verticalTabsStack
-                }
-            case .showMore(let showAllText, let dropdownItems, let maxHeight):
+        case .scroll:
+            ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 0) {
-                        verticalTabsStack
-                        showMoreButton(text: showAllText, items: dropdownItems, maxHeight: maxHeight)
+                        overflowButton(isPrevious: true)
+                            .opacity(hasPreviousItem ? 1 : 0)
+                            .animation(nil, value: hasPreviousItem)
+                        HStack(spacing: 0) {
+                            verticalDivider
+                                .id(visibleItems.map { $0.id }.joined(separator: "-"))
+                            verticalTabsStack
+                        }
+                        overflowButton(isPrevious: false)
+                            .opacity(hasNextItem ? 1 : 0)
+                            .animation(nil, value: hasNextItem)
                     }
                 }
-            case .scroll:
-                VStack(spacing: 0) {
-                    overflowButton(isPrevious: true)
-                    ScrollView(.vertical, showsIndicators: false) {
-                        verticalTabsStack
+                .onChange(of: selectedId) { newId in
+                    if let newId = newId {
+                        withAnimation {
+                            proxy.scrollTo(newId, anchor: .center)
+                        }
                     }
-                    .frame(maxHeight: .infinity)
-                    overflowButton(isPrevious: false)
                 }
             }
+            .frame(maxHeight: .infinity)
         }
     }
     
@@ -240,7 +207,9 @@ public struct SDDSTabs: View {
         VStack(spacing: 0) {
             ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
                 tabItemView(for: item)
+                    .id(item.id)
                     .fixedSize()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .background(
                         GeometryReader { geometry in
                             Color.clear
@@ -264,7 +233,11 @@ public struct SDDSTabs: View {
                 }
             }
         }
-        .frame(maxHeight: stretch ? .infinity : nil)
+        .background(
+            GeometryReader { geometry in
+                Color.clear.preference(key: ContentHeightPreferenceKey.self, value: geometry.size.height)
+            }
+        )
         .coordinateSpace(name: Self.tabsContainerName)
         .onPreferenceChange(TabItemHeightPreferenceKey.self) { heights in
             itemHeights = heights
@@ -272,18 +245,22 @@ public struct SDDSTabs: View {
         .onPreferenceChange(TabItemPositionPreferenceKey.self) { positions in
             itemPositions = positions
         }
+        .onPreferenceChange(ContentHeightPreferenceKey.self) { height in
+            contentHeight = height
+        }
         .overlay(alignment: .topLeading) {
             verticalIndicator
         }
     }
     
-    // MARK: - Helper Views
-    
     @ViewBuilder private func tabItemView(for item: TabsItemData) -> some View {
-        let isSelected = item.id == selectedId
+        let isShowMoreItem = isShowMoreButton(item)
+        let isSelected = isShowMoreItem ? true : (item.id == selectedId)
         
         Button {
-            if !item.isDisabled {
+            if isShowMoreItem {
+                isDropdownPresented.toggle()
+            } else if !item.isDisabled {
                 onSelect(item.id)
             }
         } label: {
@@ -298,6 +275,8 @@ public struct SDDSTabs: View {
                         orientation: appearance.size.orientation,
                         appearance: appearance.tabItemAppearance
                     )
+                } else {
+                    EmptyView()
                 }
             default:
                 SDDSTabItem(
@@ -318,80 +297,40 @@ public struct SDDSTabs: View {
                         }
                     },
                     contentRight: { EmptyView() },
-                    actionContent: { EmptyView() }
+                    actionContent: {
+                        if isShowMoreItem {
+                            Color.clear.frame(width: 0, height: 0)
+                        } else {
+                            EmptyView()
+                        }
+                    }
                 )
             }
         }
         .buttonStyle(PlainButtonStyle())
+        .contentShape(Rectangle())
+        .modifier(ShowMoreDropdownModifier(
+            isShowMoreItem: isShowMoreItem,
+            isPresented: $isDropdownPresented,
+            clipMode: clipMode,
+            appearance: appearance,
+            colorScheme: colorScheme,
+            dropdownContentHeight: dropdownContentHeight
+        ))
     }
     
-    @ViewBuilder private func showMoreButton(text: String, items: [TabsItemData], maxHeight: CGFloat) -> some View {
-        Button {
-            isDropdownPresented.toggle()
-        } label: {
-            if text.isEmpty {
-                // Если текст пустой, показываем только иконку
-                if let disclosureIcon = appearance.disclosureIcon {
-                    disclosureIcon
-                        .renderingMode(.template)
-                        .foregroundStyle(disclosureColor)
-                        .frame(width: appearance.size.disclosureIconSize, height: appearance.size.disclosureIconSize)
-                }
-            } else {
-                // Если текст есть, показываем текст
-                Text(text)
-                    .typography(appearance.disclosureTextTypography.typography(with: appearance.size) ?? .undefined)
-                    .foregroundStyle(disclosureColor)
-                    .fixedSize()
-            }
+    private func isShowMoreButton(_ item: TabsItemData) -> Bool {
+        if case .showMore(let showMoreItem, _, _) = clipMode {
+            return item.id == showMoreItem.id
         }
-        .frame(height: appearance.size.orientation == .vertical ? tabItemHeight : nil)
-        .buttonStyle(PlainButtonStyle())
-        .applyIfLet(appearance.dropdownMenuAppearance) { view, menuAppearance in
-            view.dropdownMenu(
-                isPresented: $isDropdownPresented,
-                appearance: menuAppearance,
-                placement: .bottom,
-                alignment: .end,
-                contentHeight: dropdownListHeight(maxHeight: maxHeight),
-                content: {
-                    dropdownMenuContent(items: items, maxHeight: maxHeight)
-                }
-            )
-        }
+        return false
     }
     
-    @ViewBuilder private func dropdownMenuContent(items: [TabsItemData], maxHeight: CGFloat) -> some View {
-        if let listAppearance = appearance.dropdownMenuAppearance?.listAppearance {
-            SDDSList(
-                items: dropdownListItems(from: items),
-                contentHeight: $dropdownContentHeight,
-                showDividers: true,
-                maxHeight: maxHeight,
-                appearance: listAppearance
-            )
-            .frame(height: dropdownListHeight(maxHeight: maxHeight))
-            .padding([.top, .bottom], appearance.dropdownMenuAppearance?.size.offset ?? 0)
+    private func isShowMoreButtonId(_ id: String) -> Bool {
+        if case .showMore(let showMoreItem, _, _) = clipMode {
+            return id == showMoreItem.id
         }
-    }
-    
-    private func dropdownListItems(from items: [TabsItemData]) -> [SDDSListItem<EmptyView>] {
-        items.map { item in
-            SDDSListItem(
-                title: item.label,
-                rightContentEnabled: false,
-                disabled: item.isDisabled,
-                appearance: appearance.dropdownMenuAppearance?.listAppearance.listItemAppearance,
-                onTap: {
-                    onSelect(item.id)
-                    isDropdownPresented = false
-                }
-            )
-        }
-    }
-    
-    private func dropdownListHeight(maxHeight: CGFloat) -> CGFloat {
-        min(dropdownContentHeight, maxHeight)
+        return false
     }
     
     @ViewBuilder private func overflowButton(isPrevious: Bool) -> some View {
@@ -413,6 +352,76 @@ public struct SDDSTabs: View {
             }
         }
         .buttonStyle(PlainButtonStyle())
+    }
+    
+    @ViewBuilder private var horizontalDivider: some View {
+        if hasDivider, appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
+            HStack(spacing: 0) {
+                ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
+                    horizontalDividerSegment(for: item, at: index, appearance: dividerAppearance)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder private func horizontalDividerSegment(for item: TabsItemData, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
+        if let width = itemWidths[item.id], width > 0 {
+            Rectangle()
+                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                .frame(width: width, height: 1)
+        } else {
+            Rectangle()
+                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                .frame(height: 1)
+        }
+        
+        if index < visibleItems.count - 1 {
+            if stretch {
+                Rectangle()
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .frame(height: 1)
+                    .frame(maxWidth: .infinity)
+            } else {
+                Rectangle()
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .frame(width: self.appearance.size.minSpacing, height: 1)
+            }
+        }
+    }
+    
+    @ViewBuilder private var verticalDivider: some View {
+        if hasDivider, appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
+            VStack(spacing: 0) {
+                ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
+                    verticalDividerSegment(for: item, at: index, appearance: dividerAppearance)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder private func verticalDividerSegment(for item: TabsItemData, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
+        if let height = itemHeights[item.id], height > 0 {
+            Rectangle()
+                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                .frame(width: 1, height: height)
+        } else {
+            Rectangle()
+                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                .frame(width: 1)
+        }
+        
+        if index < visibleItems.count - 1 {
+            if stretch {
+                Rectangle()
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .frame(width: 1)
+                    .frame(maxHeight: .infinity)
+            } else {
+                Rectangle()
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .frame(width: 1, height: self.appearance.size.minSpacing)
+            }
+        }
     }
     
     private func selectPreviousItem() {
@@ -441,18 +450,17 @@ public struct SDDSTabs: View {
         }
     }
     
-    // MARK: - Computed Properties
-    
     private var appearance: TabsAppearance {
         _appearance ?? environmentAppearance
     }
     
-    private var disclosureColor: Color {
-        appearance.disclosureColor.defaultColor.color(for: colorScheme)
-    }
-    
     private var visibleItems: [TabsItemData] {
-        return items
+        switch clipMode {
+        case .showMore(let showMoreItem, _, _):
+            return items + [showMoreItem]
+        default:
+            return items
+        }
     }
     
     private var tabItemHeight: CGFloat {
@@ -479,11 +487,10 @@ public struct SDDSTabs: View {
         return currentIndex < items.count - 1
     }
     
-    // MARK: - Indicators
-    
     @ViewBuilder private var horizontalIndicator: some View {
         if appearance.size.indicatorEnabled, 
-           let selectedId = selectedId, 
+           let selectedId = selectedId,
+           !isShowMoreButtonId(selectedId),
            let selectedWidth = itemWidths[selectedId],
            let position = itemPositions[selectedId] {
             Rectangle()
@@ -500,7 +507,8 @@ public struct SDDSTabs: View {
     
     @ViewBuilder private var verticalIndicator: some View {
         if appearance.size.indicatorEnabled, 
-           let selectedId = selectedId, 
+           let selectedId = selectedId,
+           !isShowMoreButtonId(selectedId),
            let selectedHeight = itemHeights[selectedId],
            let position = itemPositions[selectedId] {
             Rectangle()
@@ -515,38 +523,4 @@ public struct SDDSTabs: View {
         }
     }
     
-}
-
-// MARK: - Preference Keys
-
-private struct TabItemWidthPreferenceKey: PreferenceKey {
-    static var defaultValue: [String: CGFloat] = [:]
-    
-    static func reduce(value: inout [String: CGFloat], nextValue: () -> [String: CGFloat]) {
-        value.merge(nextValue()) { $1 }
-    }
-}
-
-private struct TabItemHeightPreferenceKey: PreferenceKey {
-    static var defaultValue: [String: CGFloat] = [:]
-    
-    static func reduce(value: inout [String: CGFloat], nextValue: () -> [String: CGFloat]) {
-        value.merge(nextValue()) { $1 }
-    }
-}
-
-private struct ContentWidthPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
-    
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
-private struct TabItemPositionPreferenceKey: PreferenceKey {
-    static var defaultValue: [String: CGPoint] = [:]
-    
-    static func reduce(value: inout [String: CGPoint], nextValue: () -> [String: CGPoint]) {
-        value.merge(nextValue()) { $1 }
-    }
 }

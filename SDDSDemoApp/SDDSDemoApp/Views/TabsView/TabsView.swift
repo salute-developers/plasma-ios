@@ -10,17 +10,23 @@ struct TabsView: View {
     var body: some View {
         List {
             Section {
-                SDDSTabs(
-                    items: viewModel.tabsItems,
-                    selectedId: viewModel.selectedId,
-                    clipMode: viewModel.clipMode,
-                    tabItemType: viewModel.tabItemType,
-                    stretch: viewModel.stretch,
-                    appearance: viewModel.appearance,
-                    onSelect: { id in
-                        viewModel.selectedId = id
-                    }
-                )
+                HStack {
+                    SDDSTabs(
+                        items: viewModel.tabsItems,
+                        selectedId: viewModel.selectedId,
+                        clipMode: viewModel.clipMode,
+                        tabItemType: viewModel.tabItemType,
+                        stretch: viewModel.stretch,
+                        hasDivider: viewModel.hasDivider,
+                        appearance: viewModel.appearance,
+                        onSelect: { id in
+                            viewModel.selectedId = id
+                        }
+                    )
+                    .id(viewModel.viewId)
+                    .frame(maxWidth: viewModel.appearance.size.orientation == .vertical ? 80 : .infinity)
+                    Spacer()
+                }
             }
 
             Section {
@@ -63,8 +69,10 @@ struct TabsView: View {
                     Spacer()
                     Menu {
                         ForEach(TabsViewModel.ClipModeType.allCases, id: \.self) { mode in
-                            Button(mode.rawValue) {
-                                viewModel.clipModeType = mode
+                            if viewModel.tabsType != .iconTabs || mode != .showMore {
+                                Button(mode.rawValue) {
+                                    viewModel.clipModeType = mode
+                                }
                             }
                         }
                     } label: {
@@ -79,17 +87,6 @@ struct TabsView: View {
                         TextField("Show All", text: $viewModel.showAllText)
                             .multilineTextAlignment(.trailing)
                     }
-                    
-                    HStack {
-                        Text("Dropdown Max Height")
-                        Spacer()
-                        Stepper(
-                            "\(Int(viewModel.dropdownMaxHeight))",
-                            value: $viewModel.dropdownMaxHeight,
-                            in: 100...500,
-                            step: 50
-                        )
-                    }
                 }
                 
                 HStack {
@@ -98,11 +95,12 @@ struct TabsView: View {
                     Stepper(
                         "\(viewModel.numberOfTabs)",
                         value: $viewModel.numberOfTabs,
-                        in: 1...10
+                        in: 1...100
                     )
                 }
                 
                 Toggle("Stretch", isOn: $viewModel.stretch)
+                Toggle("Has Divider", isOn: $viewModel.hasDivider)
             }
         }
         .navigationTitle("Tabs")

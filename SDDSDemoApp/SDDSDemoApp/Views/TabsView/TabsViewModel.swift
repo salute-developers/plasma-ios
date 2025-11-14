@@ -11,20 +11,35 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             self.variationProvider.tabsType = tabsType
             self.selectVariation(variations.first)
             
-            // При выборе IconTabs автоматически переключаем на icon TabItemType
             if tabsType == .iconTabs {
                 tabItemType = .icon
+                if clipModeType == .showMore {
+                    clipModeType = .none
+                }
             }
+            viewId += 1
         }
     }
     
-    @Published var tabItemType: SDDSTabs.TabItemType = .default
+    @Published var tabItemType: SDDSTabs.TabItemType = .default {
+        didSet { viewId += 1 }
+    }
     @Published var selectedId: String = "tab1"
-    @Published var numberOfTabs: Int = 3
+    @Published var numberOfTabs: Int = 3 {
+        didSet { viewId += 1 }
+    }
     @Published var showAllText: String = "Show All"
-    @Published var dropdownMaxHeight: CGFloat = 300
-    @Published var clipModeType: ClipModeType = .none
-    @Published var stretch: Bool = true
+    @Published var dropdownMaxHeight: CGFloat = 186
+    @Published var clipModeType: ClipModeType = .none {
+        didSet { viewId += 1 }
+    }
+    @Published var stretch: Bool = true {
+        didSet { viewId += 1 }
+    }
+    @Published var hasDivider: Bool = true {
+        didSet { viewId += 1 }
+    }
+    @Published var viewId: Int = 0
     
     enum ClipModeType: String, CaseIterable {
         case none = "None"
@@ -37,7 +52,18 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
         case .none:
             return .none
         case .showMore:
-            return .showMore(showAllText: showAllText, items: dropdownItems, maxHeight: dropdownMaxHeight)
+            return .showMore(
+                showMoreItem: TabsItemData(
+                    id: "showMore",
+                    label: showAllText,
+                    value: nil,
+                    counterValue: nil,
+                    icon: nil,
+                    isDisabled: false
+                ),
+                dropdownItems: dropdownItems,
+                maxHeight: dropdownMaxHeight
+            )
         case .scroll:
             return .scroll
         }
@@ -75,6 +101,11 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+    }
+    
+    override func selectVariation(_ variation: Variation<TabsAppearance>?) {
+        super.selectVariation(variation)
+        viewId += 1
     }
 }
 

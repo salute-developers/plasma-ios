@@ -142,6 +142,13 @@
 		8131E8692E4C62AD00FED868 /* SDDSTabBarIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */; };
 		8131E86B2E4C6F8E00FED868 /* SDDSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */; };
 		8131E86D2E4C6F9800FED868 /* TabBarItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */; };
+		8134743F2EC70A5200D40423 /* TabsItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743D2EC70A5200D40423 /* TabsItemData.swift */; };
+		813474402EC70A5200D40423 /* SDDSTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743A2EC70A5200D40423 /* SDDSTabItem.swift */; };
+		813474412EC70A5200D40423 /* TabsPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */; };
+		813474422EC70A5200D40423 /* SDDSTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743B2EC70A5200D40423 /* SDDSTabs.swift */; };
+		813474432EC70A5200D40423 /* TabsClipMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743C2EC70A5200D40423 /* TabsClipMode.swift */; };
+		813474472EC70A6C00D40423 /* TabItemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813474462EC70A6C00D40423 /* TabItemEnvironment.swift */; };
+		813474492EC70A8200D40423 /* TabsEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813474482EC70A8200D40423 /* TabsEnvironment.swift */; };
 		8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687692E0186A800A1702A /* SDDSTextSkeleton.swift */; };
 		8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687672E0186A800A1702A /* SDDSRectSkeleton.swift */; };
 		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
@@ -528,6 +535,13 @@
 		8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBarIsland.swift; sourceTree = "<group>"; };
 		8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBar.swift; sourceTree = "<group>"; };
 		8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemData.swift; sourceTree = "<group>"; };
+		8134743A2EC70A5200D40423 /* SDDSTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabItem.swift; sourceTree = "<group>"; };
+		8134743B2EC70A5200D40423 /* SDDSTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabs.swift; sourceTree = "<group>"; };
+		8134743C2EC70A5200D40423 /* TabsClipMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsClipMode.swift; sourceTree = "<group>"; };
+		8134743D2EC70A5200D40423 /* TabsItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsItemData.swift; sourceTree = "<group>"; };
+		8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsPreferenceKeys.swift; sourceTree = "<group>"; };
+		813474462EC70A6C00D40423 /* TabItemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemEnvironment.swift; sourceTree = "<group>"; };
+		813474482EC70A8200D40423 /* TabsEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsEnvironment.swift; sourceTree = "<group>"; };
 		813687642E0186A800A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
 		813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSizeConfiguration.swift; sourceTree = "<group>"; };
 		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
@@ -2021,6 +2035,7 @@
 		819C472D2EBCF39A0081066C /* TabItemAppearance */ = {
 			isa = PBXGroup;
 			children = (
+				813474462EC70A6C00D40423 /* TabItemEnvironment.swift */,
 				819C472B2EBCF39A0081066C /* TabItemAppearance.swift */,
 				819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */,
 			);
@@ -2030,6 +2045,7 @@
 		819C47312EBCF39A0081066C /* TabsAppearance */ = {
 			isa = PBXGroup;
 			children = (
+				813474482EC70A8200D40423 /* TabsEnvironment.swift */,
 				819C472E2EBCF39A0081066C /* TabsAppearance.swift */,
 				819C472F2EBCF39A0081066C /* TabsOrientation.swift */,
 				819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */,
@@ -2040,6 +2056,11 @@
 		819C47322EBCF39A0081066C /* SDDSTabs */ = {
 			isa = PBXGroup;
 			children = (
+				8134743A2EC70A5200D40423 /* SDDSTabItem.swift */,
+				8134743B2EC70A5200D40423 /* SDDSTabs.swift */,
+				8134743C2EC70A5200D40423 /* TabsClipMode.swift */,
+				8134743D2EC70A5200D40423 /* TabsItemData.swift */,
+				8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */,
 				819C472D2EBCF39A0081066C /* TabItemAppearance */,
 				819C47312EBCF39A0081066C /* TabsAppearance */,
 			);
@@ -2613,6 +2634,11 @@
 				81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */,
 				81E9343E2DEDF70D00B76E38 /* ToastAppearance.swift in Sources */,
 				69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */,
+				8134743F2EC70A5200D40423 /* TabsItemData.swift in Sources */,
+				813474402EC70A5200D40423 /* SDDSTabItem.swift in Sources */,
+				813474412EC70A5200D40423 /* TabsPreferenceKeys.swift in Sources */,
+				813474422EC70A5200D40423 /* SDDSTabs.swift in Sources */,
+				813474432EC70A5200D40423 /* TabsClipMode.swift in Sources */,
 				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
@@ -2637,6 +2663,7 @@
 				698744642D1C367700559ABA /* CounterAppearance.swift in Sources */,
 				814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */,
 				817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */,
+				813474472EC70A6C00D40423 /* TabItemEnvironment.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				81F7FEBD2E1FD4C300530B33 /* DividerSizeConfiguration.swift in Sources */,
@@ -2817,6 +2844,7 @@
 				6925101E2D7632CA00545542 /* BadgeAppearance+Extensions.swift in Sources */,
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
+				813474492EC70A8200D40423 /* TabsEnvironment.swift in Sources */,
 				813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */,
 				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
 				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,
