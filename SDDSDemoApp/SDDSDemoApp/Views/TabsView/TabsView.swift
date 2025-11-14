@@ -23,8 +23,7 @@ struct TabsView: View {
                             viewModel.selectedId = id
                         }
                     )
-                    .id(viewModel.viewId)
-                    .frame(maxWidth: viewModel.appearance.size.orientation == .vertical ? 80 : .infinity)
+                    .id(viewModel.viewIdentifier)
                     Spacer()
                 }
             }
@@ -112,4 +111,3 @@ struct TabsView: View {
         TabsView()
     }
 }
-

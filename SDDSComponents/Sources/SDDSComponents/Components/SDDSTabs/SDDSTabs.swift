@@ -84,8 +84,9 @@ public struct SDDSTabs: View {
                     horizontalTabsStack
                         .frame(maxWidth: stretch ? .infinity : nil)
                     horizontalDivider
-                        .id(visibleItems.map { $0.id }.joined(separator: "-"))
                 }
+                .onChange(of: itemWidths.count) { _ in }
+                .id(visibleItems.count)
             case .scroll:
                 HStack(spacing: 0) {
                     overflowButton(isPrevious: true)
@@ -105,9 +106,9 @@ public struct SDDSTabs: View {
                             }
                         }
                         horizontalDivider
-                            .id(visibleItems.map { $0.id }.joined(separator: "-"))
                     }
                     .frame(maxWidth: .infinity)
+                    .onChange(of: itemWidths.count) { _ in }
                     overflowButton(isPrevious: false)
                         .opacity(hasNextItem ? 1 : 0)
                         .animation(nil, value: hasNextItem)
@@ -170,10 +171,11 @@ public struct SDDSTabs: View {
         case .none, .showMore:
             HStack(spacing: 0) {
                 verticalDivider
-                    .id(visibleItems.map { $0.id }.joined(separator: "-"))
                 verticalTabsStack
                     .frame(maxHeight: stretch ? .infinity : nil)
             }
+            .onChange(of: itemHeights.count) { _ in }
+            .id(visibleItems.count)
         case .scroll:
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
@@ -183,7 +185,6 @@ public struct SDDSTabs: View {
                             .animation(nil, value: hasPreviousItem)
                         HStack(spacing: 0) {
                             verticalDivider
-                                .id(visibleItems.map { $0.id }.joined(separator: "-"))
                             verticalTabsStack
                         }
                         overflowButton(isPrevious: false)
@@ -198,6 +199,7 @@ public struct SDDSTabs: View {
                         }
                     }
                 }
+                .onChange(of: itemHeights.count) { _ in }
             }
             .frame(maxHeight: .infinity)
         }
@@ -288,7 +290,9 @@ public struct SDDSTabs: View {
                     orientation: appearance.size.orientation,
                     appearance: appearance.tabItemAppearance,
                     startContent: {
-                        if let icon = item.icon {
+                        if let startContent = item.startContent {
+                            startContent
+                        } else if let icon = item.icon {
                             icon
                                 .resizable()
                                 .renderingMode(.template)
@@ -296,10 +300,16 @@ public struct SDDSTabs: View {
                             EmptyView()
                         }
                     },
-                    contentRight: { EmptyView() },
+                    contentRight: {
+                        if let contentRight = item.contentRight {
+                            contentRight
+                        } else {
+                            EmptyView()
+                        }
+                    },
                     actionContent: {
-                        if isShowMoreItem {
-                            Color.clear.frame(width: 0, height: 0)
+                        if let actionContent = item.actionContent {
+                            actionContent
                         } else {
                             EmptyView()
                         }
@@ -365,15 +375,10 @@ public struct SDDSTabs: View {
     }
     
     @ViewBuilder private func horizontalDividerSegment(for item: TabsItemData, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
-        if let width = itemWidths[item.id], width > 0 {
-            Rectangle()
-                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                .frame(width: width, height: 1)
-        } else {
-            Rectangle()
-                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                .frame(height: 1)
-        }
+        let width = itemWidths[item.id] ?? 100
+        Rectangle()
+            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+            .frame(width: width, height: 1)
         
         if index < visibleItems.count - 1 {
             if stretch {
@@ -400,15 +405,10 @@ public struct SDDSTabs: View {
     }
     
     @ViewBuilder private func verticalDividerSegment(for item: TabsItemData, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
-        if let height = itemHeights[item.id], height > 0 {
-            Rectangle()
-                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                .frame(width: 1, height: height)
-        } else {
-            Rectangle()
-                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                .frame(width: 1)
-        }
+        let height = itemHeights[item.id] ?? 44
+        Rectangle()
+            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+            .frame(width: 1, height: height)
         
         if index < visibleItems.count - 1 {
             if stretch {

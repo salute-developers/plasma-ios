@@ -17,29 +17,29 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                     clipModeType = .none
                 }
             }
-            viewId += 1
         }
     }
     
-    @Published var tabItemType: SDDSTabs.TabItemType = .default {
-        didSet { viewId += 1 }
-    }
+    @Published var tabItemType: SDDSTabs.TabItemType = .default
     @Published var selectedId: String = "tab1"
-    @Published var numberOfTabs: Int = 3 {
-        didSet { viewId += 1 }
-    }
+    @Published var numberOfTabs: Int = 3
     @Published var showAllText: String = "Show All"
     @Published var dropdownMaxHeight: CGFloat = 186
-    @Published var clipModeType: ClipModeType = .none {
-        didSet { viewId += 1 }
+    @Published var clipModeType: ClipModeType = .none
+    @Published var stretch: Bool = true
+    @Published var hasDivider: Bool = true
+    
+    var viewIdentifier: String {
+        [
+            tabsType.rawValue,
+            variation?.name ?? "",
+            "\(tabItemType)",
+            clipModeType.rawValue,
+            "\(stretch)",
+            "\(hasDivider)",
+            "\(numberOfTabs)"
+        ].joined(separator: "-")
     }
-    @Published var stretch: Bool = true {
-        didSet { viewId += 1 }
-    }
-    @Published var hasDivider: Bool = true {
-        didSet { viewId += 1 }
-    }
-    @Published var viewId: Int = 0
     
     enum ClipModeType: String, CaseIterable {
         case none = "None"
@@ -56,9 +56,6 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                 showMoreItem: TabsItemData(
                     id: "showMore",
                     label: showAllText,
-                    value: nil,
-                    counterValue: nil,
-                    icon: nil,
                     isDisabled: false
                 ),
                 dropdownItems: dropdownItems,
@@ -74,8 +71,6 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             TabsItemData(
                 id: "tab\(index)",
                 label: "Label",
-                value: nil,
-                counterValue: nil,
                 icon: tabsType == .iconTabs ? Asset.plasma24.image : nil,
                 isDisabled: false
             )
@@ -87,9 +82,6 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             TabsItemData(
                 id: "dropdown\(index)",
                 label: "Item \(index)",
-                value: nil,
-                counterValue: nil,
-                icon: nil,
                 isDisabled: false
             )
         }
@@ -102,10 +94,4 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             selectVariation(firstVariation)
         }
     }
-    
-    override func selectVariation(_ variation: Variation<TabsAppearance>?) {
-        super.selectVariation(variation)
-        viewId += 1
-    }
 }
-
