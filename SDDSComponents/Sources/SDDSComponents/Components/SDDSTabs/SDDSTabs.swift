@@ -82,16 +82,14 @@ public struct SDDSTabs: View {
             case .none, .showMore:
                 VStack(spacing: 0) {
                     horizontalTabsStack
-                        .frame(maxWidth: stretch ? .infinity : nil)
-                    horizontalDivider
+                    horizontalDividerView
+                        .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
                 }
                 .onChange(of: itemWidths.count) { _ in }
                 .id(visibleItems.count)
             case .scroll:
                 HStack(spacing: 0) {
-                    overflowButton(isPrevious: true)
-                        .opacity(hasPreviousItem ? 1 : 0)
-                        .animation(nil, value: hasPreviousItem)
+                    horizontalScrollArrow(isPrevious: true)
                     VStack(spacing: 0) {
                         ScrollViewReader { proxy in
                             ScrollView(.horizontal, showsIndicators: false) {
@@ -105,13 +103,11 @@ public struct SDDSTabs: View {
                                 }
                             }
                         }
-                        horizontalDivider
+                        horizontalDividerView
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .onChange(of: itemWidths.count) { _ in }
-                    overflowButton(isPrevious: false)
-                        .opacity(hasNextItem ? 1 : 0)
-                        .animation(nil, value: hasNextItem)
+                    horizontalScrollArrow(isPrevious: false)
                 }
             }
         }
@@ -141,11 +137,13 @@ public struct SDDSTabs: View {
                     if stretch {
                         Spacer()
                     } else {
-                        Spacer().frame(width: appearance.size.minSpacing)
+                        Spacer()
+                            .frame(width: appearance.size.minSpacing)
                     }
                 }
             }
         }
+        .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
         .background(
             GeometryReader { geometry in
                 Color.clear.preference(key: ContentWidthPreferenceKey.self, value: geometry.size.width)
@@ -169,39 +167,38 @@ public struct SDDSTabs: View {
     @ViewBuilder private var verticalLayout: some View {
         switch clipMode {
         case .none, .showMore:
-            HStack(spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
                 verticalDivider
                 verticalTabsStack
+                    .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
                     .frame(maxHeight: stretch ? .infinity : nil)
             }
             .onChange(of: itemHeights.count) { _ in }
             .id(visibleItems.count)
         case .scroll:
-            ScrollViewReader { proxy in
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        overflowButton(isPrevious: true)
-                            .opacity(hasPreviousItem ? 1 : 0)
-                            .animation(nil, value: hasPreviousItem)
-                        HStack(spacing: 0) {
-                            verticalDivider
+            VStack(spacing: 0) {
+                verticalScrollArrow(isPrevious: true)
+                HStack(alignment: .top, spacing: 0) {
+                    verticalDivider
+                    ScrollViewReader { proxy in
+                        ScrollView(.vertical, showsIndicators: false) {
                             verticalTabsStack
+                                .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
                         }
-                        overflowButton(isPrevious: false)
-                            .opacity(hasNextItem ? 1 : 0)
-                            .animation(nil, value: hasNextItem)
+                        .onChange(of: selectedId) { newId in
+                            if let newId = newId {
+                                withAnimation {
+                                    proxy.scrollTo(newId, anchor: .center)
+                                }
+                            }
+                        }
+                        .onChange(of: itemHeights.count) { _ in }
                     }
                 }
-                .onChange(of: selectedId) { newId in
-                    if let newId = newId {
-                        withAnimation {
-                            proxy.scrollTo(newId, anchor: .center)
-                        }
-                    }
-                }
-                .onChange(of: itemHeights.count) { _ in }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxHeight: .infinity, alignment: .top)
+                verticalScrollArrow(isPrevious: false)
             }
-            .frame(maxHeight: .infinity)
         }
     }
     
@@ -230,7 +227,8 @@ public struct SDDSTabs: View {
                     if stretch {
                         Spacer()
                     } else {
-                        Spacer().frame(height: appearance.size.minSpacing)
+                        Color.clear
+                            .frame(height: appearance.size.minSpacing)
                     }
                 }
             }
@@ -364,13 +362,40 @@ public struct SDDSTabs: View {
         .buttonStyle(PlainButtonStyle())
     }
     
-    @ViewBuilder private var horizontalDivider: some View {
+    @ViewBuilder private func horizontalScrollArrow(isPrevious: Bool) -> some View {
+        let size = appearance.size.overflowIconSize
+        if (isPrevious && hasPreviousItem) || (!isPrevious && hasNextItem) {
+            overflowButton(isPrevious: isPrevious)
+                .frame(width: size, height: size)
+
+        } else {
+            Color.clear
+                .frame(width: size, height: size)
+
+        }
+    }
+    
+    @ViewBuilder private func verticalScrollArrow(isPrevious: Bool) -> some View {
+        let size = appearance.size.overflowIconSize
+        if (isPrevious && hasPreviousItem) || (!isPrevious && hasNextItem) {
+            overflowButton(isPrevious: isPrevious)
+                .frame(width: size, height: size)
+        } else {
+            Color.clear
+                .frame(width: size, height: size)
+
+        }
+    }
+    
+    @ViewBuilder private var horizontalDividerView: some View {
         if hasDivider, appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
             HStack(spacing: 0) {
                 ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
                     horizontalDividerSegment(for: item, at: index, appearance: dividerAppearance)
                 }
             }
+            .frame(width: stretch ? nil : (contentWidth > 0 ? contentWidth : nil), alignment: .leading)
+            .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
         }
     }
     
@@ -405,23 +430,29 @@ public struct SDDSTabs: View {
     }
     
     @ViewBuilder private func verticalDividerSegment(for item: TabsItemData, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
-        let height = itemHeights[item.id] ?? 44
-        Rectangle()
-            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-            .frame(width: 1, height: height)
-        
-        if index < visibleItems.count - 1 {
-            if stretch {
-                Rectangle()
-                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                    .frame(width: 1)
-                    .frame(maxHeight: .infinity)
-            } else {
-                Rectangle()
-                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
-                    .frame(width: 1, height: self.appearance.size.minSpacing)
+        guard let height = itemHeights[item.id] else {
+            return EmptyView()
+        }
+
+        return Group {
+            Rectangle()
+                .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                .frame(width: 1, height: height)
+            
+            if index < visibleItems.count - 1 {
+                if stretch {
+                    Rectangle()
+                        .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                        .frame(width: 1)
+                        .frame(maxHeight: .infinity)
+                } else {
+                    Rectangle()
+                        .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                        .frame(width: 1, height: self.appearance.size.minSpacing)
+                }
             }
         }
+
     }
     
     private func selectPreviousItem() {
