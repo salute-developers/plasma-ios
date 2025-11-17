@@ -17,7 +17,7 @@ import SDDSIcons
 /**
  PLASMA-T2339
  */
-struct NavigationBarMainPageNoBackgroundInlineCenterInline: View {
+struct NavBarMainPageNoBackgroundInlineCenterInline: View {
     var appearance = NavigationBarMainPageAppearance()
     
     var body: some View {
@@ -46,7 +46,7 @@ struct NavigationBarMainPageNoBackgroundInlineCenterInline: View {
 /**
  PLASMA-T2340
  */
-struct NavigationBarInternalPageNoBackgroundRounded: View {
+struct NavBarInternalPageNoBackgroundRounded: View {
     var appearance = NavigationBarInternalPageAppearance()
     var body: some View {
         SDDSNavigationBar(
@@ -75,7 +75,7 @@ struct NavigationBarInternalPageNoBackgroundRounded: View {
 /**
  PLASMA-T2341
  */
-struct NavigationBarInternalPageHasBackgroundLongTextContent: View {
+struct NavBarInternalPageHasBackgroundLongTextContent: View {
     var appearance = NavigationBarInternalPageAppearance()
     var body: some View {
         SDDSNavigationBar(
@@ -100,7 +100,7 @@ struct NavigationBarInternalPageHasBackgroundLongTextContent: View {
 /**
  PLASMA-T2342
  */
-struct NavigationBarInternalPageHasBackgroundRoundedNoContent: View {
+struct NavBarInternalPageHasBackgroundRoundedNoContent: View {
     var appearance = NavigationBarInternalPageAppearance()
     var body: some View {
         SDDSNavigationBar(
@@ -123,7 +123,7 @@ struct NavigationBarInternalPageHasBackgroundRoundedNoContent: View {
 /**
  PLASMA-T2343
  */
-struct NavigationBarInternalPageHasBackgroundShadow: View {
+struct NavBarInternalPageHasBackgroundShadow: View {
     var appearance = NavigationBarInternalPageAppearance()
     var body: some View {
         SDDSNavigationBar(
@@ -153,7 +153,7 @@ struct NavigationBarInternalPageHasBackgroundShadow: View {
 /**
  PLASMA-T2344
  */
-struct NavigationBarInternalPageHasBackgroundShadowRounded: View {
+struct NavBarInternalPageHasBackgroundShadowRounded: View {
     var appearance = NavigationBarInternalPageAppearance()
     var body: some View {
         SDDSNavigationBar(

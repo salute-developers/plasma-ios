@@ -17,38 +17,38 @@ import SwiftUI
 final class NavigationBarSnapshotTest : SDDSServThemeTestCase {
     
     @MainActor
-    func testNavigationBarMainPageNoBackgroundInlineCenterInline() async throws {
+    func testNavBarMainPageNoBackgroundInlineCenterInline() async throws {
         let appearance = NavigationBarMainPage.noBackground.appearance
-        try await runSnapshotTest(view: NavigationBarMainPageNoBackgroundInlineCenterInline(appearance: appearance))
+        try await runSnapshotTest(view: NavBarMainPageNoBackgroundInlineCenterInline(appearance: appearance))
     }
     
     @MainActor
-    func testNavigationBarInternalPageNoBackgroundRounded() async throws {
+    func testNavBarInternalPageNoBackgroundRounded() async throws {
         let appearance = NavigationBarInternalPage.noBackground.rounded.appearance
-        try await runSnapshotTest(view: NavigationBarInternalPageNoBackgroundRounded(appearance: appearance))
+        try await runSnapshotTest(view: NavBarInternalPageNoBackgroundRounded(appearance: appearance))
     }
     
     @MainActor
-    func testNavigationBarInternalPageHasBackgroundLongTextContent() async throws {
+    func testNavBarInternalPageHasBackgroundLongTextContent() async throws {
         let appearance = NavigationBarInternalPage.hasBackground.appearance
-        try await runSnapshotTest(view: NavigationBarInternalPageHasBackgroundLongTextContent(appearance: appearance))
+        try await runSnapshotTest(view: NavBarInternalPageHasBackgroundLongTextContent(appearance: appearance))
     }
     
     @MainActor
-    func testNavigationBarInternalPageHasBackgroundRoundedNoContent() async throws {
+    func testNavBarInternalPageHasBackgroundRoundedNoContent() async throws {
         let appearance = NavigationBarInternalPage.hasBackground.rounded.appearance
-        try await runSnapshotTest(view: NavigationBarInternalPageHasBackgroundRoundedNoContent(appearance: appearance))
+        try await runSnapshotTest(view: NavBarInternalPageHasBackgroundRoundedNoContent(appearance: appearance))
     }
     
     @MainActor
-    func testNavigationBarInternalPageHasBackgroundShadow() async throws {
+    func testNavBarInternalPageHasBackgroundShadow() async throws {
         let appearance = NavigationBarInternalPage.hasBackground.shadow.appearance
-        try await runSnapshotTest(view: NavigationBarInternalPageHasBackgroundShadow(appearance: appearance))
+        try await runSnapshotTest(view: NavBarInternalPageHasBackgroundShadow(appearance: appearance))
     }
     
     @MainActor
-    func testNavigationBarInternalPageHasBackgroundShadowRounded() async throws {
+    func testNavBarInternalPageHasBackgroundShadowRounded() async throws {
         let appearance = NavigationBarInternalPage.hasBackground.shadow.rounded.appearance
-        try await runSnapshotTest(view: NavigationBarInternalPageHasBackgroundShadowRounded(appearance: appearance))
+        try await runSnapshotTest(view: NavBarInternalPageHasBackgroundShadowRounded(appearance: appearance))
     }
 }
