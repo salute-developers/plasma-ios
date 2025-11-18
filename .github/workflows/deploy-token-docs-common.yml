@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       content: ${{ steps.build-changelog.outputs.changelog }}
+      changelog_json: ${{ steps.build-changelog.outputs.changelog_json }}
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
@@ -95,7 +96,8 @@ jobs:
         if: steps.check_module.outputs.should_deploy == 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch || inputs.ref }}
+          # Приоритет у тега (ref), если он указан, иначе используем branch
+          ref: ${{ inputs.ref || inputs.branch }}
 
       - name: Create release-changelog.md
         if: steps.check_module.outputs.should_deploy == 'true'
@@ -104,6 +106,20 @@ jobs:
           cat > "${{ github.workspace }}/release-changelog.md" <<EOF
           ${{ needs.changelog.outputs.content }}
           EOF
+          echo "🔍 Debug: release-changelog.md создан, размер: $(wc -c < "${{ github.workspace }}/release-changelog.md") байт"
+          echo "🔍 Первые 100 строк release-changelog.md:"
+          head -100 "${{ github.workspace }}/release-changelog.md" || echo "Файл пуст или не найден"
+      
+      - name: Create release-changelog.json
+        if: steps.check_module.outputs.should_deploy == 'true'
+        shell: bash
+        run: |
+          cat > "${{ github.workspace }}/release-changelog.json" <<EOF
+          ${{ needs.changelog.outputs.changelog_json }}
+          EOF
+          echo "🔍 Debug: release-changelog.json создан, размер: $(wc -c < "${{ github.workspace }}/release-changelog.json") байт"
+          echo "🔍 Changelog JSON:"
+          cat "${{ github.workspace }}/release-changelog.json" | jq . || echo "JSON не найден или невалиден"
 
       - name: Set up Xcode
         if: steps.check_module.outputs.should_deploy == 'true'
@@ -166,11 +182,12 @@ jobs:
           echo "  S3_BUCKET: '$S3_BUCKET' (длина: ${#S3_BUCKET})"
           
           # Формируем команду деплоя с S3 параметрами как аргументами
-          DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\""
+          # Передаем VERSION_INPUT (тег) в deploy.sh, он сам извлечет версию из Xcode проекта
+          DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION_INPUT\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\""
           
           # Добавляем кастомный путь деплоя если указан
           if [[ -n "${{ inputs.custom_deploy_path }}" ]]; then
-            DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\" --deploy-path=\"${{ inputs.custom_deploy_path }}\""
+            DEPLOY_CMD="./deploy.sh --s3 \"$ARTIFACT_ID\" \"$VERSION_INPUT\" \"$BRANCH_NAME\" \"$TARGET_TYPE\" \"$THEME_NAME\" \"$CODE_REFERENCE\" \"$DOCS_URL\" \"$S3_ACCESS_KEY_ID\" \"$S3_SECRET_ACCESS_KEY\" \"$S3_ENDPOINT\" \"$S3_REGION\" \"$S3_BUCKET\" --deploy-path=\"${{ inputs.custom_deploy_path }}\""
           fi
           
           # Выполняем деплой

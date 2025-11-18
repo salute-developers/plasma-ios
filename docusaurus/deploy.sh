@@ -50,9 +50,16 @@ done
 # Функция для получения версии
 get_version() {
     local artifact_id="$1"
-    local version="$2"
+    local version_input="$2"
     
-    # Извлекаем версию из Xcode проекта темы
+    # Если version_input уже является версией (формат X.Y.Z), используем её
+    if [[ "$version_input" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        echo "$version_input"
+        return
+    fi
+    
+    # Если version_input является тегом (например, release-30-10-2025), 
+    # извлекаем версию из Xcode проекта темы на момент этого тега
     # Убираем :tokens: префикс из artifact_id
     local clean_artifact_id="${artifact_id#:tokens:}"
     
@@ -85,18 +92,30 @@ get_version() {
             if [[ -n "$xcodeproj_file" ]]; then
                 local project_file="$xcodeproj_file/project.pbxproj"
                 if [[ -f "$project_file" ]]; then
+                    echo "🔍 DEBUG: Ищу версию в файле: $project_file" >&2
                     local marketing_version=$(grep -o 'MARKETING_VERSION = [0-9]\+\.[0-9]\+\.[0-9]\+' "$project_file" | head -1 | sed 's/MARKETING_VERSION = //')
                     if [[ -n "$marketing_version" ]]; then
+                        echo "🔍 DEBUG: Найдена версия в Xcode проекте: $marketing_version" >&2
                         echo "$marketing_version"
                         return
+                    else
+                        echo "⚠️  DEBUG: Версия не найдена в файле $project_file" >&2
                     fi
+                else
+                    echo "⚠️  DEBUG: Файл проекта не найден: $project_file" >&2
                 fi
+            else
+                echo "⚠️  DEBUG: .xcodeproj файл не найден в $theme_dir" >&2
             fi
+        else
+            echo "⚠️  DEBUG: Директория темы не найдена: $theme_dir" >&2
         fi
+    else
+        echo "⚠️  DEBUG: theme_dir_name не определен для $clean_artifact_id" >&2
     fi
     
     # Fallback на переданную версию или значение по умолчанию
-    echo "${version:-1.0.0}"
+    echo "${version_input:-1.0.0}"
 }
 
 # Получаем параметры из аргументов или используем значения по умолчанию
@@ -111,6 +130,8 @@ DOCS_URL="${ARGS[6]:-$DEFAULT_DOCS_URL}"
 # Получаем актуальную версию
 VERSION=$(get_version "$ARTIFACT_ID" "$VERSION_INPUT")
 echo "🔍 DEBUG: VERSION_INPUT='$VERSION_INPUT', VERSION='$VERSION'"
+echo "🔍 DEBUG: Текущий git ref: $(git rev-parse --abbrev-ref HEAD 2>/dev/null || git describe --tags --exact-match HEAD 2>/dev/null || echo 'unknown')"
+echo "🔍 DEBUG: Текущий git commit: $(git rev-parse HEAD 2>/dev/null || echo 'unknown')"
 
 # Получаем S3 параметры из аргументов (если переданы)
 if [[ ${#ARGS[@]} -ge 12 ]]; then
@@ -201,9 +222,13 @@ echo ""
 # Генерируем документацию
 echo "🔧 Генерация документации..."
 
-# Проверяем наличие release-changelog.md для автоматической генерации changelog
-if [[ -f "../release-changelog.md" ]]; then
-    echo "✅ Найден release-changelog.md, генерирую документацию с changelog"
+# Проверяем наличие release-changelog.json для автоматической генерации changelog
+if [[ -f "../release-changelog.json" ]]; then
+    echo "✅ Найден release-changelog.json, генерирую документацию с changelog"
+    echo "🔍 Размер файла release-changelog.json: $(wc -c < ../release-changelog.json) байт"
+    echo "🔍 Первые 200 символов JSON:"
+    head -c 200 ../release-changelog.json || echo "Файл пуст или нечитаем"
+    echo ""
     ./generate-docs.sh "$ARTIFACT_ID" "$VERSION" "$BRANCH_NAME" "$TARGET_TYPE" "$THEME_NAME" "$CODE_REFERENCE" "$DOCS_URL" --with-changelog
     WITH_CHANGELOG=true
 elif [[ "$WITH_CHANGELOG" == true ]]; then

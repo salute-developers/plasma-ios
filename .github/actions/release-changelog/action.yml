@@ -17,7 +17,7 @@ outputs:
     value: ${{ steps.changelog.outputs.changelog }}
   changelog_json:
     description: "Processed changelog json"
-    value: ${{ steps.changelog.outputs.changelogJson }}
+    value: ${{ steps.changelog.outputs.changelog_json }}
   pull_requests:
     description: "Pull requests"
     value: ${{ steps.github_release.outputs.pull_requests }}
@@ -80,6 +80,12 @@ runs:
       run: |
         echo "🔍 Contents of changelog_artifacts.md:"
         cat "${{ env.FILE }}"
+    
+    - name: Debug print changelog JSON
+      shell: bash
+      run: |
+        echo "📋 Changelog JSON:"
+        echo "${{ steps.changelog.outputs.changelog_json }}" | jq . || echo "JSON не найден или невалиден"
 
     - name: Upload "changelog_artifacts.md"
       if: false

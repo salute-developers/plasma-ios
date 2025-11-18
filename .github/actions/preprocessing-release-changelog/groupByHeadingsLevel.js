@@ -1,4 +1,5 @@
 import { groupByH2Headings } from './groupByH2Headings.js';
+import { buildChangelogJson } from './buildChangelogJson.js';
 
 export function groupByHeadingsLevel(tree) {
     // Группировка по заголовкам h2
@@ -19,11 +20,13 @@ export function groupByHeadingsLevel(tree) {
         let sections = [];
         let currentSection = [];
         let currentH3 = null;
+        let hasH3Headings = false;
 
         for (let i = 0; i < h2Content.length; i++) {
             const item = h2Content[i];
 
             if (item.type === 'heading' && item.depth === 3) {
+                hasH3Headings = true;
                 // Если начинается новый H3 заголовок, сохраняем предыдущую секцию
                 if (currentSection.length > 0) {
                     sections.push(currentSection);
@@ -33,7 +36,10 @@ export function groupByHeadingsLevel(tree) {
                 currentH3 = item.children[0].value;
                 currentSection = [item];
             } else if (currentH3) {
-                // Добавляем элемент к текущей секции
+                // Добавляем элемент к текущей секции (если есть H3)
+                currentSection.push(item);
+            } else {
+                // Если нет H3 заголовка, добавляем элементы к секции без H3
                 currentSection.push(item);
             }
         }
@@ -41,6 +47,11 @@ export function groupByHeadingsLevel(tree) {
         // Добавляем последнюю секцию, если она не пуста
         if (currentSection.length > 0) {
             sections.push(currentSection);
+        }
+        
+        // Если нет H3 заголовков, сохраняем всю секцию как есть
+        if (!hasH3Headings && sections.length > 0) {
+            componentsMap.set('_no_h3', sections);
         }
 
         // Группируем секции по H3 заголовкам
@@ -87,7 +98,15 @@ export function groupByHeadingsLevel(tree) {
         });
 
         // Добавляем все компоненты для этого H2
-        for (const [_, sections] of componentsMap.entries()) {
+        for (const [h3Title, sections] of componentsMap.entries()) {
+            // Если это секция без H3 заголовков, добавляем содержимое напрямую
+            if (h3Title === '_no_h3') {
+                for (const section of sections) {
+                    for (const item of section) {
+                        finalChildren.push(item);
+                    }
+                }
+            } else {
             // Добавляем H3 заголовок только один раз
             for (const item of sections[0]) {
                 if (item.type === 'heading' && item.depth === 3) {
@@ -105,11 +124,15 @@ export function groupByHeadingsLevel(tree) {
                     }
 
                     finalChildren.push(item);
+                    }
                 }
             }
         }
     }
 
+    // Сохраняем componentsByH2 для генерации JSON
+    tree.componentsByH2 = componentsByH2;
+    
     return {
         ...tree,
         children: finalChildren,
