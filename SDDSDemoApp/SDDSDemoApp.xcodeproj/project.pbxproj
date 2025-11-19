@@ -145,6 +145,7 @@
 		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteTestCase; sourceTree = "<group>"; };
+		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
+				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				81340B492EC383C500D40423 /* BaseTestCases */,
 				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D36588AF2E72B73800036483 /* CodeInputTestCase */,
@@ -401,6 +403,7 @@
 				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
+				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
