@@ -37,6 +37,7 @@ public struct SDDSWheel: View {
     @State private var isUpdatingFromButtons: [Bool] = []
     @State private var lastScrollUpdate: [Date] = []
     @State private var lastButtonPress: [Date] = []
+    @State private var hasAppeared: [Bool] = []
     
     // Данные для колес
     private let wheels: [WheelData]
@@ -534,6 +535,9 @@ public struct SDDSWheel: View {
         isUpdatingFromButtons = Array(repeating: false, count: wheels.count)
         lastScrollUpdate = Array(repeating: Date(), count: wheels.count)
         lastButtonPress = Array(repeating: Date.distantPast, count: wheels.count)
+        if hasAppeared.count != wheels.count {
+            hasAppeared = Array(repeating: false, count: wheels.count)
+        }
     }
     
     private func wheelDragGesture(for wheelIndex: Int, proxy: ScrollViewProxy) -> some Gesture {
@@ -568,8 +572,23 @@ public struct SDDSWheel: View {
     
     private func scrollToSelected(wheelIndex: Int, proxy: ScrollViewProxy) {
         let selectedIndex = selection[wheelIndex]
-        withAnimation(.easeInOut(duration: 0.3)) {
-            proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+        let isFirstAppearance = wheelIndex < hasAppeared.count && !hasAppeared[wheelIndex]
+        
+        if isFirstAppearance {
+            // При первом появлении устанавливаем позицию без анимации после небольшой задержки
+            // чтобы ScrollView успел отрендериться
+            DispatchQueue.main.async {
+                proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+                // Отмечаем, что колесо уже появилось
+                if wheelIndex < self.hasAppeared.count {
+                    self.hasAppeared[wheelIndex] = true
+                }
+            }
+        } else {
+            // При последующих изменениях используем анимацию
+            withAnimation(.easeInOut(duration: 0.3)) {
+                proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+            }
         }
     }
     
@@ -650,7 +669,7 @@ public struct SDDSWheel: View {
         // Обновляем selection если элемент изменился и валиден
         if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
             selection[wheelIndex] = newSelectedIndex
-            // Записываем время последнего обновления
+
             if wheelIndex < lastScrollUpdate.count {
                 lastScrollUpdate[wheelIndex] = Date()
             }

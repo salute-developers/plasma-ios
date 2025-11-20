@@ -36,7 +36,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
     let content: Content
     let contentEnd: ContentEnd
     let duration: TimeInterval?
-    let contentEndPosition: ToasContentEndPosition
+    let contentEndPosition: ToastContentEndPosition
     let onClose: (() -> ())?
     private let _appearance: ToastAppearance?
     let accessibility: ToastAccessibility
@@ -52,7 +52,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
         @ViewBuilder contentEnd: () -> ContentEnd,
         duration: TimeInterval = 3.0,
         appearance: ToastAppearance? = nil,
-        contentEndPosition: ToasContentEndPosition,
+        contentEndPosition: ToastContentEndPosition,
         onClose: (() -> ())?,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
@@ -154,7 +154,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
 extension SDDSToast where ContentStart == EmptyView, ContentEnd == EmptyView, Content == Text {
     public init(
         text: String,
-        contentEndPosition: ToasContentEndPosition,
+        contentEndPosition: ToastContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
@@ -175,7 +175,7 @@ extension SDDSToast where ContentEnd == EmptyView, Content == Text {
     public init(
         text: String,
         @ViewBuilder contentStart: () -> ContentStart,
-        contentEndPosition: ToasContentEndPosition,
+        contentEndPosition: ToastContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
@@ -196,7 +196,7 @@ extension SDDSToast where ContentStart == EmptyView, Content == Text {
     public init(
         text: String,
         @ViewBuilder contentEnd: () -> ContentEnd,
-        contentEndPosition: ToasContentEndPosition,
+        contentEndPosition: ToastContentEndPosition,
         onClose: (() -> ())?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
