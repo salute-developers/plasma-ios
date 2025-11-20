@@ -49,3 +49,4 @@ typealias NavigationBarMainPageConfiguration = ComponentConfiguration<Navigation
 typealias NavigationBarInternalPageConfiguration = ComponentConfiguration<NavigationBarInternalPageProps>
 typealias NoteConfiguration = ComponentConfiguration<NoteProps>
 typealias NoteCompactConfiguration = ComponentConfiguration<NoteCompactProps>
+typealias DrawerConfiguration = ComponentConfiguration<DrawerProps>

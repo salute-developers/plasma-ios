@@ -93,6 +93,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case navigationBarInternalPage = "NavigationBarInternalPage"
     case note = "Note"
     case noteCompact = "NoteCompact"
+    case drawerCloseInner = "DrawerCloseInner"
+    case drawerCloseNone = "DrawerCloseNone"
+    case drawerCloseOuter = "DrawerCloseOuter"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -185,8 +188,11 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .wheel,
 //            .navigationBarMainPage,
 //            .navigationBarInternalPage,
-            .note,
-            .noteCompact
+//            .note,
+//            .noteCompact,
+            .drawerCloseInner,
+            .drawerCloseNone,
+            .drawerCloseOuter
         ]
     }
     
@@ -327,6 +333,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<NoteProps, NoteAppearance, NoteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .noteCompact:
             GenerateComponentCommand<NoteCompactProps, NoteCompactAppearance, NoteCompactSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            GenerateComponentCommand<DrawerProps, DrawerAppearance, DrawerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -434,6 +442,8 @@ extension CodeGenerationComponent {
             "NoteAppearance"
         case .noteCompact:
             "NoteCompactAppearance"
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            "DrawerAppearance"
         }
     }
     
@@ -542,6 +552,8 @@ extension CodeGenerationComponent {
             "NoteSizeConfiguration"
         case .noteCompact:
             "NoteCompactSizeConfiguration"
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            "DrawerSizeConfiguration"
         }
     }
     
@@ -731,6 +743,12 @@ extension CodeGenerationComponent {
             "note_config.json"
         case .noteCompact:
             "note_compact_config.json"
+        case .drawerCloseInner:
+            "drawer_close_inner_config.json"
+        case .drawerCloseNone:
+            "drawer_close_none_config.json"
+        case .drawerCloseOuter:
+            "drawer_close_outer_config.json"
         }
     }
     

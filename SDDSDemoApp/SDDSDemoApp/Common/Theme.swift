@@ -1145,4 +1145,43 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+    
+    var drawerCloseInnerVariations: [Variation<DrawerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DrawerCloseInner.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
+    
+    var drawerCloseNoneVariations: [Variation<DrawerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DrawerCloseNone.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
+    
+    var drawerCloseOuterVariations: [Variation<DrawerAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.DrawerCloseOuter.all
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return []
+        }
+    }
 }
