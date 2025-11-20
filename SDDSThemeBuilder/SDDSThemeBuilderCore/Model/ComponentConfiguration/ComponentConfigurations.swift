@@ -51,3 +51,4 @@ typealias NoteConfiguration = ComponentConfiguration<NoteProps>
 typealias NoteCompactConfiguration = ComponentConfiguration<NoteCompactProps>
 typealias TabsDefaultConfiguration = ComponentConfiguration<TabsDefaultProps>
 typealias TabItemDefaultConfiguration = ComponentConfiguration<TabItemDefaultProps>
+typealias DrawerConfiguration = ComponentConfiguration<DrawerProps>

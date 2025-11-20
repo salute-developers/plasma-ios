@@ -32,6 +32,7 @@ struct ComponentsView: View {
         ("BottomSheet", AnyView(BottomSheetView())),
         ("CircularProgressBar", AnyView(CircularProgressBarView())),
         ("Divider", AnyView(DividerView())),
+        ("Drawer", AnyView(DrawerView())),
         ("List", AnyView(ListView())),
         ("ListItem", AnyView(ListItemView())),
         ("Overlay", AnyView(OverlayView())),

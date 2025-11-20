@@ -157,6 +157,10 @@
 		813340242C063A71005AD84F /* ios_shape.json in Resources */ = {isa = PBXBuildFile; fileRef = 813340232C063A71005AD84F /* ios_shape.json */; };
 		8133402E2C073924005AD84F /* ios_gradient_invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 8133402D2C073924005AD84F /* ios_gradient_invalid.json */; };
 		813340302C073C42005AD84F /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133402F2C073C42005AD84F /* URL+Extensions.swift */; };
+		813472D82ECF734B00D40423 /* DrawerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813472D52ECF734B00D40423 /* DrawerAppearance.swift */; };
+		813472D92ECF734B00D40423 /* DrawerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813472D62ECF734B00D40423 /* DrawerSize.swift */; };
+		813472DB2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813472DA2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift */; };
+		813472DD2ECF739600D40423 /* DrawerProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813472DC2ECF739600D40423 /* DrawerProps.swift */; };
 		8136875E2E0181DF00A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136875B2E0181DF00A1702A /* SkeletonAppearance.swift */; };
 		813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8136875C2E0181DF00A1702A /* SkeletonSize.swift */; };
 		813687632E01820700A1702A /* SkeletonProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687622E01820700A1702A /* SkeletonProps.swift */; };
@@ -718,6 +722,10 @@
 		813340232C063A71005AD84F /* ios_shape.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ios_shape.json; sourceTree = "<group>"; };
 		8133402D2C073924005AD84F /* ios_gradient_invalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_gradient_invalid.json; sourceTree = "<group>"; };
 		8133402F2C073C42005AD84F /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		813472D52ECF734B00D40423 /* DrawerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAppearance.swift; sourceTree = "<group>"; };
+		813472D62ECF734B00D40423 /* DrawerSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerSize.swift; sourceTree = "<group>"; };
+		813472DA2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCloseIconPlacementContextBuilder.swift; sourceTree = "<group>"; };
+		813472DC2ECF739600D40423 /* DrawerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerProps.swift; sourceTree = "<group>"; };
 		8136875B2E0181DF00A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
 		8136875C2E0181DF00A1702A /* SkeletonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSize.swift; sourceTree = "<group>"; };
 		813687622E01820700A1702A /* SkeletonProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonProps.swift; sourceTree = "<group>"; };
@@ -1432,6 +1440,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				813472DA2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift */,
 				819C36062EBCE2E00081066C /* TabsDefaultOrientationContextBuilder.swift */,
 				814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */,
 				81F147232E9EDBDB00A9A1D4 /* WheelItemAlignmentContextBuilder.swift */,
@@ -1489,6 +1498,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				813472DC2ECF739600D40423 /* DrawerProps.swift */,
 				819C360D2EBCE7EA0081066C /* TabItemDefaultProps.swift */,
 				819C36042EBCE27E0081066C /* TabsDefaultProps.swift */,
 				81F1472A2E9EDC0E00A9A1D4 /* WheelProps.swift */,
@@ -1547,6 +1557,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				813472D72ECF734B00D40423 /* Drawer */,
 				819C360A2EBCE7D70081066C /* TabItemDefault */,
 				819C36012EBCE2670081066C /* TabsDefault */,
 				81F147272E9EDBED00A9A1D4 /* Wheel */,
@@ -1650,6 +1661,15 @@
 				8133401D2C063907005AD84F /* ContextBuilderTests.swift */,
 			);
 			path = ContextBuilders;
+			sourceTree = "<group>";
+		};
+		813472D72ECF734B00D40423 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				813472D52ECF734B00D40423 /* DrawerAppearance.swift */,
+				813472D62ECF734B00D40423 /* DrawerSize.swift */,
+			);
+			path = Drawer;
 			sourceTree = "<group>";
 		};
 		8136875D2E0181DF00A1702A /* RectSkeleton */ = {
@@ -2905,6 +2925,7 @@
 				697970E42D63A72E008306A8 /* CellSize.swift in Sources */,
 				81C3D7E02DAE43040090739E /* SwitchProps.swift in Sources */,
 				812DB7A72D59E1B000D3F4A3 /* ButtonSize.swift in Sources */,
+				813472DB2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift in Sources */,
 				81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */,
 				81F7ECA72DF2F0CA00531844 /* ModalSize.swift in Sources */,
 				81F7ECA82DF2F0CA00531844 /* ModalAppearance.swift in Sources */,
@@ -2987,6 +3008,7 @@
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
 				815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */,
 				815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */,
+				813472DD2ECF739600D40423 /* DrawerProps.swift in Sources */,
 				812DB7012D55E54400D3F4A3 /* ComponentConfiguration.swift in Sources */,
 				815D36882DE5BA390005273B /* TooltipSize.swift in Sources */,
 				815D36892DE5BA390005273B /* TooltipAppearance.swift in Sources */,
@@ -3119,6 +3141,8 @@
 				814BF7442EA804BB009B091C /* ImageSizeContextBuilder.swift in Sources */,
 				8191CFE32EAF95B6006E36F5 /* NoteCompactProps.swift in Sources */,
 				813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */,
+				813472D82ECF734B00D40423 /* DrawerAppearance.swift in Sources */,
+				813472D92ECF734B00D40423 /* DrawerSize.swift in Sources */,
 				81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */,
 				81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */,
 				812DB6FF2D55E4E800D3F4A3 /* TextFieldProps.swift in Sources */,

@@ -156,6 +156,16 @@
 		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
 		8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */; };
 		81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */; };
+		8139C9E82ED5E1C500188124 /* DrawerAboveContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */; };
+		8139C9E92ED5E1C500188124 /* View+Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E62ED5E1C500188124 /* View+Drawer.swift */; };
+		8139C9EA2ED5E1C500188124 /* DrawerClosePlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */; };
+		8139C9EB2ED5E1C500188124 /* DrawerCloseIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */; };
+		8139C9EC2ED5E1C500188124 /* SDDSDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */; };
+		8139C9ED2ED5E1C500188124 /* DrawerPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */; };
+		8139C9EE2ED5E1C500188124 /* DrawerMoveContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */; };
+		8139C9EF2ED5E1C500188124 /* DrawerSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */; };
+		8139C9F02ED5E1C500188124 /* DrawerAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */; };
+		8139C9F12ED5E1C500188124 /* DrawerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */; };
 		813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BB4022EB2999000E4E505 /* View+TabBar.swift */; };
 		8140A4672D59FA06002CF32B /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8140A4662D59FA06002CF32B /* SDDSServTheme */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
@@ -551,6 +561,16 @@
 		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
 		813687692E0186A800A1702A /* SDDSTextSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextSkeleton.swift; sourceTree = "<group>"; };
 		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
+		8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAlignment.swift; sourceTree = "<group>"; };
+		8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAppearance.swift; sourceTree = "<group>"; };
+		8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCloseIconPlacement.swift; sourceTree = "<group>"; };
+		8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerClosePlacement.swift; sourceTree = "<group>"; };
+		8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerSizeConfiguration.swift; sourceTree = "<group>"; };
+		8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAboveContentView.swift; sourceTree = "<group>"; };
+		8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMoveContentView.swift; sourceTree = "<group>"; };
+		8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerPreferenceKeys.swift; sourceTree = "<group>"; };
+		8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDrawer.swift; sourceTree = "<group>"; };
+		8139C9E62ED5E1C500188124 /* View+Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Drawer.swift"; sourceTree = "<group>"; };
 		813BB4022EB2999000E4E505 /* View+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBar.swift"; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
@@ -1356,6 +1376,31 @@
 			path = SDDSTextSkeleton;
 			sourceTree = "<group>";
 		};
+		8139C9E12ED5E1C500188124 /* DrawerAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */,
+				8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */,
+				8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */,
+				8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */,
+				8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */,
+			);
+			path = DrawerAppearance;
+			sourceTree = "<group>";
+		};
+		8139C9E72ED5E1C500188124 /* SDDSDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				8139C9E12ED5E1C500188124 /* DrawerAppearance */,
+				8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */,
+				8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */,
+				8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */,
+				8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */,
+				8139C9E62ED5E1C500188124 /* View+Drawer.swift */,
+			);
+			path = SDDSDrawer;
+			sourceTree = "<group>";
+		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -1781,6 +1826,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8139C9E72ED5E1C500188124 /* SDDSDrawer */,
 				819C47322EBCF39A0081066C /* SDDSTabs */,
 				8183DDA52EB2AB3100610A9A /* SDDSNavigationBar */,
 				8183DDA92EB2AB3100610A9A /* SDDSNavigationBarInternalPage */,
@@ -2939,6 +2985,16 @@
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
 				81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */,
 				81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */,
+				8139C9E82ED5E1C500188124 /* DrawerAboveContentView.swift in Sources */,
+				8139C9E92ED5E1C500188124 /* View+Drawer.swift in Sources */,
+				8139C9EA2ED5E1C500188124 /* DrawerClosePlacement.swift in Sources */,
+				8139C9EB2ED5E1C500188124 /* DrawerCloseIconPlacement.swift in Sources */,
+				8139C9EC2ED5E1C500188124 /* SDDSDrawer.swift in Sources */,
+				8139C9ED2ED5E1C500188124 /* DrawerPreferenceKeys.swift in Sources */,
+				8139C9EE2ED5E1C500188124 /* DrawerMoveContentView.swift in Sources */,
+				8139C9EF2ED5E1C500188124 /* DrawerSizeConfiguration.swift in Sources */,
+				8139C9F02ED5E1C500188124 /* DrawerAlignment.swift in Sources */,
+				8139C9F12ED5E1C500188124 /* DrawerAppearance.swift in Sources */,
 				694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */,
 				81228ED62E6725DE00AA1EFB /* SDDSCodeInput.swift in Sources */,
 				81228ED72E6725DE00AA1EFB /* CodeInputGroup.swift in Sources */,
