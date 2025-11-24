@@ -151,6 +151,7 @@
 		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
 		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
+		D3EC568D2ED06F8C00114B3D /* TabsTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
 		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
 		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
 				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				81340B492EC383C500D40423 /* BaseTestCases */,
@@ -409,6 +411,7 @@
 				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
+				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
