@@ -8,6 +8,7 @@ import Foundation
 public struct SDDSTabs: View {
     @Environment(\.tabsAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @State private var contentWidth: CGFloat = 0
     @State private var contentHeight: CGFloat = 0
     @State private var isDropdownPresented: Bool = false
@@ -309,7 +310,7 @@ public struct SDDSTabs: View {
             if let icon = icon {
                 icon
                     .renderingMode(.template)
-                    .foregroundStyle(color.color(for: colorScheme))
+                    .foregroundStyle(color.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: appearance.size.overflowIconSize, height: appearance.size.overflowIconSize)
             }
         }
@@ -356,18 +357,18 @@ public struct SDDSTabs: View {
     @ViewBuilder private func horizontalDividerSegment(for item: TabItem, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
         let width = itemWidths[item.id] ?? 100
         Rectangle()
-            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+            .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: width, height: 1)
         
         if index < visibleItems.count - 1 {
             if stretch {
                 Rectangle()
-                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(height: 1)
                     .frame(maxWidth: .infinity)
             } else {
                 Rectangle()
-                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: self.appearance.size.minSpacing, height: 1)
             }
         }
@@ -387,18 +388,18 @@ public struct SDDSTabs: View {
         if let height = itemHeights[item.id] {
             Group {
                 Rectangle()
-                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                    .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: 1, height: height)
                 
                 if index < visibleItems.count - 1 {
                     if stretch {
                         Rectangle()
-                            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                            .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                             .frame(width: 1)
                             .frame(maxHeight: .infinity)
                     } else {
                         Rectangle()
-                            .fill(dividerAppearance.backgroundColor.color(for: colorScheme))
+                            .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                             .frame(width: 1, height: self.appearance.size.minSpacing)
                     }
                 }
@@ -478,7 +479,7 @@ public struct SDDSTabs: View {
            let selectedWidth = itemWidths[selectedId],
            let position = itemPositions[selectedId] {
             Rectangle()
-                .fill(appearance.indicatorColor.color(for: colorScheme))
+                .fill(appearance.indicatorColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(
                     width: selectedWidth,
                     height: appearance.size.indicatorThickness
@@ -496,7 +497,7 @@ public struct SDDSTabs: View {
            let selectedHeight = itemHeights[selectedId],
            let position = itemPositions[selectedId] {
             Rectangle()
-                .fill(appearance.indicatorColor.color(for: colorScheme))
+                .fill(appearance.indicatorColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(
                     width: appearance.size.indicatorThickness,
                     height: selectedHeight

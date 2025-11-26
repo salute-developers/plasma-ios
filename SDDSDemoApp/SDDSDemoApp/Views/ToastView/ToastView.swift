@@ -1,10 +1,12 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct ToastView: View {
     @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     @State private var isToastPresented = false
     
     var body: some View {
@@ -23,6 +25,7 @@ struct ToastView: View {
                             appearance: viewModel.appearance,
                             position: viewModel.position,
                             duration: viewModel.duration,
+                            subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                             contentStart: { contentStart },
                             contentEnd: { contentEnd }
                         )
@@ -31,6 +34,7 @@ struct ToastView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -48,6 +52,8 @@ struct ToastView: View {
                 Toggle("Content End", isOn: $viewModel.contentEndEnabled)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Toast")
     }
     

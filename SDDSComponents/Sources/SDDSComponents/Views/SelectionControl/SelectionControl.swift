@@ -12,8 +12,8 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     let appearance: AppearanceType
     let accessibility: SelectionControlAccessibility
     
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     var body: some View {
         VStack(alignment: .leading, spacing: appearance.size.verticalGap) {
             HStack(spacing: appearance.size.horizontalGap) {
@@ -51,7 +51,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         Text(title)
             .typography(titleTypography)
             .frame(height: titleTypography.lineHeight)
-            .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
+            .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
     }
@@ -62,7 +62,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             Text(subtitle)
                 .typography(subtitleTypography)
                 .frame(height: subtitleTypography.lineHeight)
-                .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
+                .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
                 .accessibilityLabel(Text(accessibility.subtitleLabel))
                 .accessibilityValue(Text(subtitle))
         } else {
@@ -137,7 +137,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     private func icon(icon: PathDrawer, iconColor: ColorToken, width: CGFloat, height: CGFloat) -> some View {
         icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
-            .foregroundColor(iconColor.color(for: colorScheme))
+            .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: width, height: height)
     }
     
@@ -150,7 +150,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: toggleWidth,
                     height: toggleHeight)
             )
-            .stroke(appearance.borderColor.color(for: colorScheme), lineWidth: appearance.size.lineWidth)
+            .stroke(appearance.borderColor.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.lineWidth)
     }
     
     private var fillView: some View {
@@ -162,7 +162,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.width - paddings,
                     height: appearance.size.height - paddings)
             )
-            .fill(appearance.toggleColor.color(for: colorScheme))
+            .fill(appearance.toggleColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     // MARK: - Accessibility

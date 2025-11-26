@@ -4,7 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public enum Gradients {
+public enum Gradients: String {
     case backgroundDefaultMobileAssistantAthena
     case backgroundDefaultMobileAssistantB2E
     case backgroundDefaultMobileAssistantBrand
@@ -858,5 +858,15 @@ public enum Gradients {
         case .textOnLightPromoMinorGradientHover:
             return .textOnLightPromoMinorGradientHover
         }
+    }
+}
+
+public extension GradientToken {
+    func token(for subtheme: Subtheme) -> GradientToken {
+        let identifier = self.tokenIdentifier(for: subtheme)
+        guard let gradient = Gradients(rawValue: identifier) else {
+            return self
+        }
+        return gradient.token
     }
 }

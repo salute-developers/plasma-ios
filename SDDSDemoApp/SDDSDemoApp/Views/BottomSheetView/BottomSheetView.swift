@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
@@ -23,6 +24,7 @@ struct BottomSheetView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .background(Color(.systemGroupedBackground))
             .listRowInsets(.init())
             
@@ -35,8 +37,14 @@ struct BottomSheetView: View {
                 handlePositionPicker
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("BottomSheet")
-        .bottomSheet(isPresented: $viewModel.isBottomSheetPresented, detent: $viewModel.detent) {
+        .bottomSheet(
+            isPresented: $viewModel.isBottomSheetPresented,
+            detent: $viewModel.detent,
+            subtheme: viewModel.theme.subtheme(viewModel.subtheme)
+        ) {
             SDDSBottomSheet(
                 appearance: viewModel.appearance,
                 header: {

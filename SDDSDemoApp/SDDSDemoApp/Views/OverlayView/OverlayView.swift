@@ -1,9 +1,11 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct OverlayView: View {
     @ObservedObject private var viewModel: OverlayViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init() {
         self.viewModel = OverlayViewModel()
@@ -15,6 +17,7 @@ struct OverlayView: View {
                 segmentView
                     .overlay(isPresented: $viewModel.isPresent, appearance: viewModel.appearance)
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -31,6 +34,8 @@ struct OverlayView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
     }
     
     private var segmentView: some View {

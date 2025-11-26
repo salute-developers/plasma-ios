@@ -1,10 +1,12 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
 struct ListItemView: View {
     @ObservedObject private var viewModel: ListItemViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init() {
         self.viewModel = ListItemViewModel()
@@ -20,6 +22,7 @@ struct ListItemView: View {
                     appearance: viewModel.appearance
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(EdgeInsets())
             
             Section {
@@ -49,6 +52,8 @@ struct ListItemView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
     }
 }
 

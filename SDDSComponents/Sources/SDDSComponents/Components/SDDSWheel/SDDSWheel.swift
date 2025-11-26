@@ -30,7 +30,8 @@ import SwiftUI
  ```
  */
 public struct SDDSWheel: View {
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.wheelAppearance) private var appearance
     @State private var scrollOffsets: [CGFloat] = []
     @State private var isScrolling: [Bool] = []
@@ -788,11 +789,11 @@ public struct SDDSWheel: View {
 
 private extension SDDSWheel {
     func currentColor(for colorToken: ColorToken) -> Color {
-        return colorToken.color(for: colorScheme)
+        return colorToken.color(for: colorScheme, subtheme: subtheme)
     }
     
     func currentColor(for buttonColor: ButtonColor) -> Color {
-        return buttonColor.defaultColor.color(for: colorScheme)
+        return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     var descriptionTypography: TypographyToken {

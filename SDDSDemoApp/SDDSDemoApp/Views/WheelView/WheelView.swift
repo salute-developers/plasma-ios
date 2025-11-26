@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct WheelView: View {
     @ObservedObject private var viewModel: WheelViewModel
@@ -27,6 +28,7 @@ struct WheelView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -123,6 +125,8 @@ struct WheelView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Wheel")
     }
     

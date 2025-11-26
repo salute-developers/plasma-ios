@@ -35,6 +35,7 @@ import SwiftUI
 public struct SDDSTextSkeleton: View {
     
     @Environment(\.skeletonAppearance) private var environmentAppearance
+    @Environment(\.subtheme) private var subtheme
     private let lineCount: Int
     private let textTypography: TypographyToken
     private let lineWidthProvider: SkeletonLineWidthProvider
@@ -70,6 +71,7 @@ public struct SDDSTextSkeleton: View {
                         .frame(width: width, height: textTypography.lineHeight)
                         .clipped()
                         .id(UUID())
+                        .environment(\.subtheme, subtheme)
                 }
                 .frame(height: textTypography.lineHeight)
             }

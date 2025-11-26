@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct TabBarIslandView: View {
@@ -22,6 +23,8 @@ struct TabBarIslandView: View {
                 VariationsView(viewModel: viewModel)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .tabBarIsland(
             items: viewModel.tabBarItems,
             selectedIndex: $viewModel.selectedIndex,

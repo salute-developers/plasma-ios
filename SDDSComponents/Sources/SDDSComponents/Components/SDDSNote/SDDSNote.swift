@@ -48,7 +48,7 @@ extension VerticalAlignment {
 public struct SDDSNote<ContentBefore: View, Action: View>: View {
     @Environment(\.noteAppearance) private var appearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let title: String
     private let text: String?
     private let contentBefore: ContentBefore
@@ -112,7 +112,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
             }
         }
         .background(
-            appearance.backgroundColor.color(for: colorScheme)
+            appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
                 .shape(pathDrawer: size.shape)
         )
     }
@@ -154,7 +154,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                 contentBefore
             }
         }
-        .tint(appearance.iconColor.color(for: colorScheme))
+        .tint(appearance.iconColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     private var textContent: some View {
@@ -174,7 +174,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
             
             if let text = text {
                 Text(text)
-                    .foregroundColor(appearance.textColor.color(for: colorScheme))
+                    .foregroundColor(appearance.textColor.color(for: colorScheme, subtheme: subtheme))
                     .typography(textTypography)
                     .padding(.top, size.textTopMargin)
             }
@@ -185,7 +185,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
     
     private var titleView: some View {
         Text(title)
-            .foregroundColor(appearance.titleColor.color(for: colorScheme))
+            .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
             .typography(titleTypography)
             .padding(.trailing, shouldShowCloseButton ? size.titlePaddingEnd : 0)
             .alignmentGuide(.titleCenter) { d in d[VerticalAlignment.center] }
@@ -211,7 +211,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: size.closeSize, height: size.closeSize)
-                        .foregroundColor(appearance.closeColor.color(for: colorScheme))
+                        .foregroundColor(appearance.closeColor.color(for: colorScheme, subtheme: subtheme))
                 }
             )
             .padding(.top, size.closeTopMargin)

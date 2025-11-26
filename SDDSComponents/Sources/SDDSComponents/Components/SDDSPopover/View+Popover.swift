@@ -40,6 +40,7 @@ public extension View {
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
+        subtheme: SubthemeData = SubthemeData(),
         ignoreTrigger: Bool = false,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -71,6 +72,7 @@ public extension View {
                                         },
                                         content: content
                                     )
+                                    .environment(\.subtheme, subtheme)
                                 },
                                 at: triggerFrame,
                                 onClose: {

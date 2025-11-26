@@ -31,6 +31,7 @@ import SwiftUI
 public struct SDDSRectSkeleton: View {
     @Environment(\.skeletonAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.layoutDirection) private var layoutDirection
     @State private var phase: CGFloat = -1.0
     @State private var timer: Timer? = nil
@@ -84,7 +85,7 @@ public struct SDDSRectSkeleton: View {
     @ViewBuilder
     private var gradient: some View {
         Color.clear
-            .gradient(appearance.gradient, colorScheme: colorScheme)
+            .gradient(appearance.gradient, colorScheme: colorScheme, subtheme: subtheme)
             .frame(width: screenWidth)
     }
     

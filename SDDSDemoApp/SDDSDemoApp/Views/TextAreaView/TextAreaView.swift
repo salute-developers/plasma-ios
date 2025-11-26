@@ -1,11 +1,12 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-
+import SDDSThemeCore
 import SDDSServTheme
 
 struct TextAreaView: View {
     @ObservedObject private var viewModel: TextAreaViewModel
+    @Environment(\.colorScheme) private var colorScheme
 
     init(viewModel: TextAreaViewModel = TextAreaViewModel()) {
         self.viewModel = viewModel
@@ -38,6 +39,7 @@ struct TextAreaView: View {
                     }
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section {
                 Picker("Layout", selection: $viewModel.layout) {
@@ -101,6 +103,8 @@ struct TextAreaView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("TextArea")
     }
 }

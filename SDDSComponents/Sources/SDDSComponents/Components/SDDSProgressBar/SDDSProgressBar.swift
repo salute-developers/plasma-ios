@@ -34,7 +34,8 @@ public struct SDDSProgressView: View {
     private let _appearance: ProgressBarAppearance?
     let accessibility: ProgressBarAccessibility
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.progressBarAppearance) private var environmentAppearance
     
     public init(
@@ -55,7 +56,7 @@ public struct SDDSProgressView: View {
                 // Background track
                 appearance.size.pathDrawer
                     .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.indicatorHeight)))
-                    .fill(appearance.trackColor.color(for: colorScheme))
+                    .fill(appearance.trackColor.color(for: colorScheme, subtheme: subtheme))
                 
                 // Progress indicator
                 rectangle(CGFloat(normalizedProgress) * geometry.size.width)
@@ -76,11 +77,11 @@ public struct SDDSProgressView: View {
         case .color(let colorToken):
             appearance.size.indicatorPathDrawer
                 .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: progressWidth, height: appearance.size.indicatorHeight)))
-                .fill(colorToken.color(for: colorScheme))
+                .fill(colorToken.color(for: colorScheme, subtheme: subtheme))
         case .gradient(let gradientToken):
             let shape = ShapeContent(pathDrawer: appearance.size.indicatorPathDrawer)
             Rectangle()
-                .gradient(gradientToken)
+                .gradient(gradientToken, subtheme: subtheme)
                 .shape(shapeContent: shape)
                 .frame(width: progressWidth, height: appearance.size.indicatorHeight)
         }

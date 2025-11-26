@@ -23,6 +23,7 @@ import SDDSThemeCore
 public struct SDDSIndicator: View {
     @Environment(\.indicatorAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: IndicatorAppearance?
     
     public init(appearance: IndicatorAppearance? = nil) {
@@ -33,7 +34,7 @@ public struct SDDSIndicator: View {
         appearance.size
             .pathDrawer
             .path(in: CGRect(x: 0, y: 0, width: width, height: height))
-            .fill(appearance.backgroundColor.color(for: colorScheme))
+            .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: width, height: height)
     }
     

@@ -3,16 +3,16 @@ import SwiftUI
 
 struct TextFillModifier: ViewModifier {
     let style: FillStyle
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     func body(content: Content) -> some View {
         switch style {
         case .color(let colorToken):
             content
-                .foregroundColor(colorToken.color(for: colorScheme))
+                .foregroundColor(colorToken.color(for: colorScheme, subtheme: subtheme))
         case .gradient(let gradientToken):
             content
-                .gradient(gradientToken, colorScheme: colorScheme)
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
                 .mask(content)
         }
     }

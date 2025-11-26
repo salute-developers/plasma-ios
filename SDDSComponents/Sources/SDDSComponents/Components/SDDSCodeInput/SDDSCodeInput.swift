@@ -14,6 +14,7 @@ public struct SDDSCodeInput: View {
     private var _appearance: CodeInputAppearance?
     @Environment(\.codeInputAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Binding private var validationResult: CodeFieldValidationResult
     @Binding private var code: String
     @State private var isFocused: Bool

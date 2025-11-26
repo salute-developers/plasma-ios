@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSIcons
 
 struct CircularProgressBarView: View {
@@ -26,6 +27,7 @@ struct CircularProgressBarView: View {
                         Spacer()
                     }
                 }
+                .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
                 
                 Section {
                     settings
@@ -35,6 +37,8 @@ struct CircularProgressBarView: View {
                     VariationsView(viewModel: viewModel)
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
             .navigationTitle("CircularProgressBar")
         case .subScreen:
             settings

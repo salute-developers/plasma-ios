@@ -4,7 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public enum Gradients {    
+public enum Gradients: String {
     {%- for key, value in json %}
     case {{ key }}
     {%- endfor %}
@@ -16,5 +16,15 @@ public enum Gradients {
             return .{{ key }}
             {%- endfor %}
         }
+    }
+}
+
+public extension GradientToken {
+    func token(for subtheme: Subtheme) -> GradientToken {
+        let identifier = self.tokenIdentifier(for: subtheme)
+        guard let gradient = Gradients(rawValue: identifier) else {
+            return self
+        }
+        return gradient.token
     }
 }

@@ -1,9 +1,11 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct CheckboxGroupView: View {
     @ObservedObject private var viewModel: CheckboxGroupViewModel
+    @Environment(\.colorScheme) private var colorScheme
 
     init(viewModel: CheckboxGroupViewModel = CheckboxGroupViewModel()) {
         self.viewModel = viewModel
@@ -21,6 +23,7 @@ struct CheckboxGroupView: View {
                     .id(UUID())
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section(header: Text("Configuration")) {
                 VariationsView(viewModel: viewModel)
@@ -59,6 +62,8 @@ struct CheckboxGroupView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("CheckboxGroup")
     }
 }

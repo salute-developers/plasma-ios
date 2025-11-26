@@ -5,7 +5,7 @@ import SDDSThemeCore
 public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     @Environment(\.tabBarItemAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: TabBarItemAppearance?
     let content: Content
     let selectedContent: Content
@@ -58,7 +58,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                         content
                     }
                 }
-                .foregroundColor(iconColor.color(for: colorScheme))
+                .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(width: contentWidth ?? appearance.size.iconSize, height: appearance.size.iconSize)
                 
                 extra
@@ -85,7 +85,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         }
         .frame(minHeight: appearance.size.minHeight)
         .background(
-            backgroundColor.color(for: colorScheme)
+            backgroundColor.color(for: colorScheme, subtheme: subtheme)
                 .shape(pathDrawer: appearance.size.shape)
         )
         .readSize { size in
@@ -100,7 +100,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         } else {
             Text(text)
                 .typography(labelTypography)
-                .foregroundColor(labelColor.color(for: colorScheme))
+                .foregroundColor(labelColor.color(for: colorScheme, subtheme: subtheme))
                 .multilineTextAlignment(.center)
         }
     }

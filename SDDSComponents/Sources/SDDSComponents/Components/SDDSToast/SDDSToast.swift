@@ -43,7 +43,8 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
     @State private var isVisible: Bool = false
     @State private var contentHeight: CGFloat = 0
 
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.toastAppearance) private var environmentAppearance
     
     public init(
@@ -73,7 +74,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
             
             HStack(spacing: appearance.size.contentStartPadding) {
                 contentStart
-                    .foregroundColor(appearance.contentStartColor.color(for: colorScheme))
+                    .foregroundColor(appearance.contentStartColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: appearance.size.contentStartSize, height: appearance.size.contentStartSize)
                     .accessibilityHidden(true)
                 
@@ -81,7 +82,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
                     content
                         .typography(appearance.textTypography?.typography(with: appearance.size) ?? .undefined)
                         .applyIf(appearance.textColor != nil) {
-                            $0.foregroundColor(appearance.textColor?.color(for: colorScheme) ?? .clear)
+                            $0.foregroundColor(appearance.textColor?.color(for: colorScheme, subtheme: subtheme) ?? .clear)
                         }
                         .applyIf(textTypography != nil) {
                             $0
@@ -110,7 +111,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
                 .frame(width: appearance.size.paddingEnd)
         }
         .padding(.vertical, appearance.size.paddingTop)
-        .background(appearance.backgroundColor.color(for: colorScheme))
+        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .shape(pathDrawer: appearance.size.shape)
         .opacity(isVisible ? 1 : 0)
         .scaleEffect(isVisible ? 1 : 0.8)
@@ -139,7 +140,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
     @ViewBuilder
     private var contentEndView: some View {
         contentEnd
-            .foregroundColor(appearance.contentEndColor.color(for: colorScheme))
+            .foregroundColor(appearance.contentEndColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: appearance.size.contentEndSize, height: appearance.size.contentEndSize)
             .accessibilityHidden(true)
             .onTapGesture {

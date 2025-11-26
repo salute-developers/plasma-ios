@@ -7,6 +7,7 @@ import SwiftUI
  */
 public struct SDDSLoader: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.loaderAppearance) private var loaderAppearance
     @Environment(\.spinnerData) private var spinnerData
     @Environment(\.circularProgressBarData) private var circularProgressBarData

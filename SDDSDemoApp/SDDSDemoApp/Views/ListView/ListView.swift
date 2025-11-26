@@ -1,10 +1,12 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
 struct ListView: View {
     @ObservedObject private var viewModel: ListViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init() {
         self.viewModel = ListViewModel()
@@ -25,6 +27,8 @@ struct ListView: View {
                 },
                 appearance: viewModel.appearance
             )
+            .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
             Spacer()
             List {
                 Section {
@@ -45,6 +49,8 @@ struct ListView: View {
                     .frame(maxWidth: .infinity)
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
         }
     }
 }

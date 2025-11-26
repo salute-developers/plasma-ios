@@ -39,8 +39,8 @@ public struct SDDSSwitch: View {
     public let switchAccessibility: SwitchAccessibility
     private var _appearance: SwitchAppearance?
     @Environment(\.switchAppearance) private var environmentAppearance
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     /**
      Инициализатор для создания переключателя с заданными параметрами.
      
@@ -78,7 +78,7 @@ public struct SDDSSwitch: View {
                 if !title.isEmpty {
                     Text(title)
                         .typography(titleTypography)
-                        .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme))
+                        .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
                         .accessibilityLabel(Text(switchAccessibility.titleLabel))
                         .accessibilityValue(Text(title))
                     Spacer()
@@ -91,7 +91,7 @@ public struct SDDSSwitch: View {
                     thumbColor: appearance.toggleThumbColor
                 )
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
-                .border(appearance.toggleTrackBorderColor.color(for: colorScheme))
+                .border(appearance.toggleTrackBorderColor.color(for: colorScheme, subtheme: subtheme))
                 .accessibilityLabel(Text(switchAccessibility.toggleLabel))
                 .accessibilityValue(Text(isOn ? "On" : "Off"))
                 .accessibilityHint(Text(switchAccessibility.toggleHint))
@@ -130,7 +130,7 @@ public struct SDDSSwitch: View {
     private var subtitleText: some View {
         Text(subtitle)
             .typography(subtitleTypography)
-            .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme))
+            .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
             .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
             .accessibilityValue(Text(subtitle))
     }

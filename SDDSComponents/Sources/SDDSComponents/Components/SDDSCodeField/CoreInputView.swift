@@ -88,7 +88,7 @@ internal struct CoreInputView: View {
     @State private var isScaled: Bool = false
     @State private var visibleCharacters: Set<Int> = []
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     init(
         code: Binding<String>,
         groups: [CodeFieldGroup],
@@ -187,6 +187,7 @@ internal struct CoreInputView: View {
             captionText
                 .frame(maxWidth: coreInputSize.width, alignment: captionAlignment.suiAlignment)
         }
+        .background(Color.clear)
     }
     
     @ViewBuilder
@@ -195,7 +196,7 @@ internal struct CoreInputView: View {
             Text(caption)
                 .multilineTextAlignment(captionAlignment.textAlignment)
                 .typography(captionTypography)
-                .foregroundColor(captionColor(isCaptionErrorDisplayed: isCaptionErrorDisplayed).color(for: colorScheme))
+                .foregroundColor(captionColor(isCaptionErrorDisplayed: isCaptionErrorDisplayed).color(for: colorScheme, subtheme: subtheme))
                 .frame(minHeight: captionTypography.lineHeight)
                 .padding([.top], captionSpacing)
         } else {
@@ -256,7 +257,7 @@ internal struct CoreInputView: View {
     @ViewBuilder
     private func fieldItem(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
         Rectangle()
-            .fill(backgroundColor(isError: isError, isCurrentPosition: isCurrentPosition).color(for: colorScheme))
+            .fill(backgroundColor(isError: isError, isCurrentPosition: isCurrentPosition).color(for: colorScheme, subtheme: subtheme))
             .frame(width: itemWidth, height: itemHeight)
             .overlay(
                 Group {
@@ -290,7 +291,7 @@ internal struct CoreInputView: View {
                         if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                             Text(value)
                                 .typography(valueTypography)
-                                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme))
+                                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
                         } else {
                             if let fillColor = fillColor(isError: isError) {
                                 dot(color: fillColor)
@@ -299,14 +300,14 @@ internal struct CoreInputView: View {
                     } else {
                         Text(value)
                             .typography(valueTypography)
-                            .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme))
+                            .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
                     }
                 }
             } else {
                 if let strokeColor = strokeColor(isError: isError),
                    let strokeWidth = strokeWidth {
                     Circle()
-                        .stroke(strokeColor.color(for: colorScheme), lineWidth: strokeWidth)
+                        .stroke(strokeColor.color(for: colorScheme, subtheme: subtheme), lineWidth: strokeWidth)
                         .frame(width: dotSize, height: dotSize)
                 }
             }
@@ -322,14 +323,14 @@ internal struct CoreInputView: View {
     @ViewBuilder
     private func dot(color: ColorToken) -> some View {
         Circle()
-            .fill(color.color(for: colorScheme))
+            .fill(color.color(for: colorScheme, subtheme: subtheme))
             .frame(width: dotSize, height: dotSize)
     }
     
     @ViewBuilder
     private var caret: some View {
         Rectangle()
-            .fill(cursorColor.color(for: colorScheme))
+            .fill(cursorColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: 1, height: valueTypography.lineHeight)
             .opacity(isCursorVisible ? 1.0 : 0.0)
             .onAppear {
@@ -349,21 +350,21 @@ internal struct CoreInputView: View {
             if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                 Text(value)
                     .typography(valueTypography)
-                    .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme))
+                    .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
             } else {
                 dot(isError: isError)
             }
         } else {
             Text(value)
                 .typography(valueTypography)
-                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme))
+                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
         }
     }
     
     @ViewBuilder
     private func dot(isError: Bool) -> some View {
         Circle()
-            .fill((isError ? dotColorError : dotColor).color(for: colorScheme))
+            .fill((isError ? dotColorError : dotColor).color(for: colorScheme, subtheme: subtheme))
             .frame(width: dotSize, height: dotSize)
     }
     

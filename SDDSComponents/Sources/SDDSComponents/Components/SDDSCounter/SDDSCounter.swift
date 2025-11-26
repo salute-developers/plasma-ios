@@ -36,7 +36,8 @@ public struct SDDSCounter: View {
     public let text: String
     private let _appearance: CounterAppearance?
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.counterAppearance) private var environmentAppearance
     
     var isAnimating: Bool
@@ -116,13 +117,13 @@ private extension SDDSCounter {
     
     func currentColor(for counterColor: ButtonColor) -> Color {
         if isSelected {
-            return counterColor.selectedColor.color(for: colorScheme)
+            return counterColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
         } else if isHighlighted {
-            return counterColor.highlightedColor.color(for: colorScheme)
+            return counterColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
         } else if isHovered {
-            return counterColor.hoveredColor.color(for: colorScheme)
+            return counterColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return counterColor.defaultColor.color(for: colorScheme)
+            return counterColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
     

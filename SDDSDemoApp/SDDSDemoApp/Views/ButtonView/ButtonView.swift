@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-
+import SDDSThemeCore
 import SDDSServTheme
 
 enum SDDSButtonType: String, CaseIterable {
@@ -62,6 +62,7 @@ struct ButtonView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 HStack {
@@ -132,6 +133,8 @@ struct ButtonView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Button")
     }
 }

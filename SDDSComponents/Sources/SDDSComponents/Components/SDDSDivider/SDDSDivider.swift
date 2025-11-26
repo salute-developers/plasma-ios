@@ -21,13 +21,13 @@ public struct SDDSDivider: View {
     
     @Environment(\.dividerAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     public init(appearance: DividerAppearance? = nil) {
         self._appearance = appearance
     }
     
     public var body: some View {
-        appearance.backgroundColor.color(for: colorScheme)
+        appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
             .frame(height: appearance.thickness)
             .shape(pathDrawer: appearance.shape)
     }

@@ -44,6 +44,7 @@ public extension View {
         triggerCentered: Bool = false,
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
+        subtheme: SubthemeData = SubthemeData(),
         onClose: (() -> Void)? = nil,
         @ViewBuilder contentStart: @escaping () -> ContentStart
     ) -> some View {
@@ -58,6 +59,7 @@ public extension View {
             triggerCentered: triggerCentered,
             placementMode: placementMode,
             duration: duration,
+            subtheme: subtheme,
             onClose: onClose,
             contentStart: contentStart,
             trigger: { self }
@@ -81,6 +83,7 @@ private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View 
     let triggerCentered: Bool
     let placementMode: PopoverPlacementMode
     let duration: TimeInterval?
+    let subtheme: SubthemeData
     let onClose: (() -> Void)?
     let contentStart: () -> ContentStart
     let trigger: () -> Trigger
@@ -127,6 +130,7 @@ private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View 
                         triggerCentered: triggerCentered,
                         placementMode: placementMode,
                         duration: duration,
+                        subtheme: subtheme,
                         onClose: onClose
                     ) {
                         SDDSTooltip(
@@ -135,6 +139,7 @@ private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View 
                             text: text,
                             contentStart: contentStart
                         )
+                        .environment(\.subtheme, subtheme)
                         .frame(width: tooltipWidth)
                     }
             }

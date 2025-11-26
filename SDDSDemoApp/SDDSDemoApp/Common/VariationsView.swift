@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSThemeCore
 
 struct VariationsView<Provider: VariationProvider>: View {
     @ObservedObject var viewModel: ComponentViewModel<Provider>
@@ -56,6 +57,38 @@ struct VariationsView<Provider: VariationProvider>: View {
                     }
                 }
             }
+            HStack {
+                Text("Subtheme")
+                Menu {
+                    ForEach(allSubthemes, id: \.self) { subtheme in
+                        Button(subthemeName(subtheme)) {
+                            viewModel.selectSubtheme(subtheme)
+                        }
+                    }
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text(subthemeName(viewModel.subtheme))
+                            .multilineTextAlignment(.trailing)
+                            .padding(.trailing, 8)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func subthemeName(_ subtheme: Subtheme) -> String {
+        switch subtheme {
+        case .default:
+            return "Default"
+        case .onDark:
+            return "On Dark"
+        case .onLight:
+            return "On Light"
+        case .inverse:
+            return "Inverse"
+        case .none:
+            return "None"
         }
     }
     
@@ -68,6 +101,10 @@ struct VariationsView<Provider: VariationProvider>: View {
         }
         variationProvider.theme = selectedTheme
         return result
+    }
+    
+    private var allSubthemes: [Subtheme] {
+        [.default, .onDark, .onLight, .inverse, .none]
     }
 }
 

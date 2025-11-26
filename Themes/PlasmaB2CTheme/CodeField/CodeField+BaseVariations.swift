@@ -56,6 +56,19 @@ private extension CodeFieldAppearance {
         appearance.dotColorError = ColorToken.surfaceDefaultNegative
         appearance.valueColor = ColorToken.textDefaultPrimary
         appearance.valueColorError = ColorToken.textDefaultNegative
+        
+        /*
+         appearance.backgroundColor = ColorToken.surfaceDefaultSolidPrimary
+         appearance.backgroundColorActivated = ColorToken.surfaceDefaultTransparentSecondary
+         appearance.backgroundColorError = ColorToken.surfaceDefaultTransparentNegative
+         appearance.captionColor = ColorToken.textDefaultSecondary
+         appearance.captionColorError = ColorToken.textDefaultNegative
+         appearance.cursorColor = ColorToken.textDefaultAccent
+         appearance.dotColor = ColorToken.surfaceDefaultSolidDefault
+         appearance.dotColorError = ColorToken.surfaceDefaultNegative
+         appearance.valueColor = ColorToken.textDefaultPrimary
+         appearance.valueColorError = ColorToken.textDefaultNegative
+         */
         return appearance
     }
 }

@@ -68,7 +68,8 @@ public struct SDDSAvatar<Content: View>: View {
     private var _appearance: AvatarAppearance?
     private let extraContent: Content
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.avatarAppearance) private var environmentAppearance
     
     public init(
@@ -174,7 +175,7 @@ public struct SDDSAvatar<Content: View>: View {
                 switch appearance.backgroundFillStyle {
                 case .color(let colorToken):
                     Rectangle()
-                        .fill(colorToken.color(for: colorScheme))
+                        .fill(colorToken.color(for: colorScheme, subtheme: subtheme))
                         .shape(pathDrawer: appearance.size.pathDrawer)
                 case .gradient(let gradientToken):
                     ZStack {
@@ -183,7 +184,7 @@ public struct SDDSAvatar<Content: View>: View {
                             .shape(pathDrawer: appearance.size.pathDrawer)
                         Rectangle()
                             .fill(gradientBackgroundColor)
-                            .gradient(gradientToken, colorScheme: colorScheme)
+                            .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
                             .opacity(appearance.backgroundOpacity)
                             .shape(pathDrawer: appearance.size.pathDrawer)
                     }

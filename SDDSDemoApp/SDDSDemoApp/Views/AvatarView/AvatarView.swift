@@ -2,12 +2,14 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import PhotosUI
+import SDDSThemeCore
 import SDDSServTheme
 
 struct AvatarView: View {
     @ObservedObject private var viewModel: AvatarViewModel = AvatarViewModel()
     @State private var showImagePicker = false
     @State private var showGradientPicker = false
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -50,6 +52,7 @@ struct AvatarView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section {
                 VariationsView(viewModel: viewModel)
@@ -141,6 +144,8 @@ struct AvatarView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(viewModel: viewModel)
         }

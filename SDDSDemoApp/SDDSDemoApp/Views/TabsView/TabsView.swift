@@ -1,11 +1,13 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
 struct TabsView: View {
     @ObservedObject private var viewModel: TabsViewModel = TabsViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -26,6 +28,7 @@ struct TabsView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section {
                 HStack {
@@ -121,6 +124,8 @@ struct TabsView: View {
                 Toggle("Disabled", isOn: $viewModel.isDisabled)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .id(viewModel.tabsType)
         .navigationTitle("Tabs")
     }

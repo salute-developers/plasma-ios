@@ -1,6 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 enum SDDSButtonGroupType: String, CaseIterable {
@@ -10,6 +11,7 @@ enum SDDSButtonGroupType: String, CaseIterable {
 
 struct ButtonGroupView: View {
     @ObservedObject var viewModel = ButtonGroupViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -20,6 +22,8 @@ struct ButtonGroupView: View {
             addButtonSection
             buttonsListSection
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("ButtonGroup")
     }
     
@@ -38,6 +42,7 @@ struct ButtonGroupView: View {
                 Spacer()
             }
         }
+        .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
     }
     
     // MARK: - Variations Section

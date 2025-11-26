@@ -57,6 +57,7 @@ MyView()
 public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: BottomSheetAppearance?
     
     public let header: Header
@@ -95,7 +96,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
             $0.padding(.trailing, appearance.size.paddingEnd)
         }
         .frame(maxWidth: .infinity)
-        .background(appearance.backgroundColor.color(for: colorScheme))
+        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .shape(pathDrawer: appearance.size.pathDrawer)
         .frame(maxHeight: .infinity, alignment: .top)
     }

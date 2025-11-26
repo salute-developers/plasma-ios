@@ -47,7 +47,7 @@ import SDDSThemeCore
 public struct SDDSTabBarIsland: View {
     @Environment(\.tabBarIslandAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: TabBarIslandAppearance?
     private let items: [TabBarItemData]
     @Binding private var selectedIndex: Int
@@ -106,12 +106,12 @@ public struct SDDSTabBarIsland: View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
                 Rectangle()
-                    .fill(appearance.backgroundColor.color(for: colorScheme))
+                    .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .shape(pathDrawer: topPathDrawer)
                     .frame(height: geometry.size.height / 2)
                 
                 Rectangle()
-                    .fill(appearance.backgroundColor.color(for: colorScheme))
+                    .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .shape(pathDrawer: bottomPathDrawer)
                     .frame(height: geometry.size.height / 2)
                     .offset(y: geometry.size.height / 2)

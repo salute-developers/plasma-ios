@@ -1,4 +1,5 @@
 import SwiftUI
+@_exported import SDDSThemeCore
 
 // MARK: - Appearance
 public extension EnvironmentValues {
@@ -199,5 +200,19 @@ public extension EnvironmentValues {
 extension EdgeInsets: EnvironmentKey {
     public static var defaultValue: Self {
         .init()
+    }
+}
+
+// MARK: - Subtheme
+public extension EnvironmentValues {
+    public var subtheme: SubthemeData {
+        get { self[SubthemeData.self] }
+        set { self[SubthemeData.self] = newValue }
+    }
+}
+
+extension SubthemeData: EnvironmentKey {
+    public static var defaultValue: Self {
+        SubthemeData()
     }
 }

@@ -65,6 +65,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     let actionContent: Action<ActionContent>
     
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.textFieldAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
@@ -172,7 +173,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         Text(title)
             .typography(titleTypography)
             .frame(height: titleTypography.lineHeight)
-            .foregroundColor(appearance.titleColor.color(for: colorScheme))
+            .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
             .multilineTextAlignment(appearance.titleTextAlignment)
     }
 
@@ -184,7 +185,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
             Text(optionalTitle)
                 .typography(titleTypography)
                 .frame(height: titleTypography.lineHeight)
-                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme, subtheme: subtheme))
                 .multilineTextAlignment(appearance.titleTextAlignment)
                 .debug(condition: debugConfiguration.title)
                 .padding(.leading, appearance.size.optionalPadding)
@@ -198,7 +199,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         } else {
             Text(optionalTitle)
                 .typography(innerTitleTypography)
-                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme, subtheme: subtheme))
                 .multilineTextAlignment(appearance.titleTextAlignment)
                 .debug(condition: debugConfiguration.title)
                 .padding(.leading, appearance.size.optionalPadding)
@@ -282,7 +283,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                                     isFocused: $isFocused,
                                     textColor: textColor,
                                     textAlignment: appearance.inputTextAlignment,
-                                    cursorColor: appearance.cursorColor.color(for: colorScheme),
+                                    cursorColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                                     textTypography: textTypography,
                                     readOnly: readOnly,
                                     placeholderBeforeContent: {
@@ -330,7 +331,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 isFocused: $isFocused,
                 textColor: textColor,
                 textAlignment: appearance.inputTextAlignment,
-                cursorColor: appearance.cursorColor.color(for: colorScheme),
+                cursorColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                 textTypography: textTypography,
                 readOnly: readOnly,
                 placeholderBeforeContent: {},
@@ -419,7 +420,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         } else {
             Text(optionalTitle)
                 .typography(textTypography)
-                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme))
+                .foregroundColor(appearance.optionalTitleColor.color(for: colorScheme, subtheme: subtheme))
                 .padding(.leading, appearance.size.optionalPadding)
         }
     }
@@ -432,7 +433,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
             Text(textBefore)
                 .typography(textBeforeTypography)
                 .frame(height: textTypography.lineHeight)
-                .foregroundColor(appearance.textBeforeColor.color(for: colorScheme))
+                .foregroundColor(appearance.textBeforeColor.color(for: colorScheme, subtheme: subtheme))
                 .padding(.leading, appearance.size.textBeforeLeadingPadding)
                 .padding(.trailing, appearance.size.textBeforeTrailingPadding)
         }
@@ -446,7 +447,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
             Text(textAfter)
                 .typography(textAfterTypography)
                 .frame(height: textTypography.lineHeight)
-                .foregroundColor(appearance.textAfterColor.color(for: colorScheme))
+                .foregroundColor(appearance.textAfterColor.color(for: colorScheme, subtheme: subtheme))
                 .padding(.leading, appearance.size.textAfterLeadingPadding)
                 .padding(.trailing, appearance.size.textAfterTrailingPadding)
         }
@@ -503,7 +504,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         HStack(spacing: 0) {
             Text(title)
                 .typography(innerTitleTypography)
-                .foregroundColor(appearance.titleColor.color(for: colorScheme))
+                .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .multilineTextAlignment(appearance.innerTitleTextAlignment)
                 .debug(condition: debugConfiguration.innerTitle)
         
@@ -536,69 +537,69 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         
     private var endContentColor: Color {
         if readOnly {
-            return appearance.endContentColorReadOnly?.color(for: colorScheme) ?? appearance.endContentColor.color(for: colorScheme)
+            return appearance.endContentColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.endContentColor.color(for: colorScheme)
+        return appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var backgroundColor: Color {
         if readOnly {
-            return appearance.backgroundColorReadOnly?.color(for: colorScheme) ?? appearance.backgroundColor.color(for: colorScheme)
+            return appearance.backgroundColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.backgroundColorFocused.color(for: colorScheme)
+            return appearance.backgroundColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.backgroundColor.color(for: colorScheme)
+        return appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var captionColor: Color {
         if readOnly {
-            return appearance.captionColorReadOnly.color(for: colorScheme)
+            return appearance.captionColorReadOnly.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.captionColorFocused.color(for: colorScheme)
+            return appearance.captionColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.captionColor.color(for: colorScheme)
+        return appearance.captionColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var placeholderColor: Color {
         if readOnly {
-            return appearance.placeholderColorReadOnly?.color(for: colorScheme) ?? appearance.placeholderColor.color(for: colorScheme)
+            return appearance.placeholderColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.placeholderColorFocused.color(for: colorScheme)
+            return appearance.placeholderColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.placeholderColor.color(for: colorScheme)
+        return appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var textColor: Color {
         if readOnly {
-            return appearance.textColorReadOnly?.color(for: colorScheme) ?? appearance.textColor.color(for: colorScheme)
+            return appearance.textColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.textColor.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.textColorFocused.color(for: colorScheme)
+            return appearance.textColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.textColor.color(for: colorScheme)
+        return appearance.textColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var bottomLineColor: Color {
         if readOnly {
-            return appearance.lineColorReadOnly.color(for: colorScheme)
+            return appearance.lineColorReadOnly.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.lineColorFocused.color(for: colorScheme)
+            return appearance.lineColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.lineColor.color(for: colorScheme)
+        return appearance.lineColor.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var iconViewColor: Color {
         if readOnly {
-            return appearance.startContentColorReadOnly?.color(for: colorScheme) ?? appearance.startContentColor.color(for: colorScheme)
+            return appearance.startContentColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.startContentColor.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.startContentColorFocused.color(for: colorScheme)
+            return appearance.startContentColorFocused.color(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.startContentColor.color(for: colorScheme)
+        return appearance.startContentColor.color(for: colorScheme, subtheme: subtheme)
     }
 
     @ViewBuilder
@@ -630,7 +631,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     @ViewBuilder
     private var indicatorView: some View {
         Circle()
-            .fill(appearance.requiredIndicatorColor.color(for: colorScheme))
+            .fill(appearance.requiredIndicatorColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: indicatorSize.width, height: indicatorSize.height, debug: debugConfiguration.indicatorView)
     }
 

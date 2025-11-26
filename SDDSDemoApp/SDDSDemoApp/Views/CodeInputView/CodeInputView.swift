@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct CodeInputView: View {
@@ -24,6 +25,7 @@ struct CodeInputView: View {
                     isHidden: viewModel.isHidden,
                     appearance: viewModel.appearance
                 )
+                .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                 .popover(
                     isPresented: $viewModel.successToastDisplayed,
                     appearance: Popover.m.default.appearance,
@@ -36,6 +38,9 @@ struct CodeInputView: View {
                 )
                 Spacer()
             }
+            .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
             List {
                 Section {
                     VariationsView(viewModel: viewModel)

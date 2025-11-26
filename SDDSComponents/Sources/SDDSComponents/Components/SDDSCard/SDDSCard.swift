@@ -30,6 +30,7 @@ import SDDSThemeCore
 public struct SDDSCard<Content: View>: View {
     @Environment(\.cardAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: CardAppearance?
     private let backgroundColor: Color?
     
@@ -55,7 +56,7 @@ public struct SDDSCard<Content: View>: View {
             .applyIf(appearance.size.paddingEnd > 0) {
                 $0.padding(.trailing, appearance.size.paddingEnd)
             }
-            .background(backgroundColor ?? appearance.backgroundColor.color(for: colorScheme))
+            .background(backgroundColor ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .shape(pathDrawer: appearance.size.pathDrawer)
     }
     
