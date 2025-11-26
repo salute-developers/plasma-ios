@@ -41,6 +41,7 @@ import SwiftUI
 public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
     @Environment(\.drawerAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: DrawerAppearance?
     private let backgroundColor: Color?
     private let onClose: (() -> Void)?
@@ -153,7 +154,7 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
             .padding(.trailing, size.paddingEnd)
             .padding(.bottom, size.paddingBottom)
             .background(
-                (backgroundColor ?? appearance.backgroundColor.color(for: colorScheme))
+                (backgroundColor ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             )
     }
     
@@ -204,7 +205,7 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: size.closeIconSize, height: size.closeIconSize)
-                        .foregroundColor(appearance.closeColor.color(for: colorScheme))
+                        .foregroundColor(appearance.closeColor.color(for: colorScheme, subtheme: subtheme))
                 }
             )
             .padding(.top, size.closeIconOffsetY)

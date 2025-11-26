@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
@@ -17,6 +18,7 @@ struct AccordionView: View {
                 showDividers: viewModel.canChangeDividers ? viewModel.showDividers : false,
                 appearance: viewModel.appearance
             )
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
             List {
                 Section {
                     Picker("Layout", selection: $viewModel.layout) {
@@ -56,6 +58,8 @@ struct AccordionView: View {
                     }
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
         }
         .background(.tertiary)
     }

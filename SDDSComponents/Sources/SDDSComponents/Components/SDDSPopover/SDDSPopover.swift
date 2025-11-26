@@ -30,7 +30,7 @@ public enum PopoverPlacementMode: String, CaseIterable {
 struct SDDSPopover<Content: View>: View {
     
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let appearance: PopoverAppearance
     private let alignment: PopoverAlignment
     private let placement: PopoverPlacement
@@ -95,7 +95,7 @@ struct SDDSPopover<Content: View>: View {
                 .onPreferenceChange(PopoverSizeKey.self) { size in
                     self.contentSize = size
                 }
-                .background(appearance.backgroundColor.color(for: colorScheme))
+                .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                 .shape(pathDrawer: appearance.size.pathDrawer)
                 .shadow(appearance.shadow)
             
@@ -108,7 +108,7 @@ struct SDDSPopover<Content: View>: View {
                     tailHeight: appearance.size.tailHeight,
                     tailPadding: tailPadding
                 )
-                .fill(appearance.backgroundColor.color(for: colorScheme))
+                .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             }
         }
         .frame(width: contentSize.width, height: contentSize.height)

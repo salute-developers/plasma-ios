@@ -1,11 +1,12 @@
 import SwiftUI
-
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct ChipGroupView: View {
     @ObservedObject var viewModel = ChipGroupViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     @State var size: CGFloat = 0
 
     var body: some View {
@@ -20,6 +21,7 @@ struct ChipGroupView: View {
                     .frame(height: size)
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section(header: Text("ChipGroup")) {
                 VariationsView(viewModel: viewModel)
@@ -71,6 +73,8 @@ struct ChipGroupView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("ChipGroup")
     }
 }

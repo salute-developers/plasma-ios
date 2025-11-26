@@ -1,11 +1,13 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
 struct TabItemView: View {
     @ObservedObject private var viewModel: TabItemViewModel = TabItemViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -59,6 +61,7 @@ struct TabItemView: View {
                 }
                 .padding()
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section {
                 HStack {
@@ -138,6 +141,8 @@ struct TabItemView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Tab Item")
     }
 }

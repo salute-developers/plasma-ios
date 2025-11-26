@@ -6,6 +6,7 @@ import SDDSServTheme
 
 struct TextSkeletonView: View {
     @ObservedObject private var viewModel: TextSkeletonViewModel = TextSkeletonViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -27,6 +28,7 @@ struct TextSkeletonView: View {
                     }
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section {
                 HStack {
                     Text("Line Count")
@@ -50,6 +52,8 @@ struct TextSkeletonView: View {
             }
         }
         .listStyle(.plain)
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("TextSkeleton")
     }
     

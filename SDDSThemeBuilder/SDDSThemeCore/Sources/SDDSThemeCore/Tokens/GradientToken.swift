@@ -61,11 +61,13 @@ public enum GradientKind {
 }
 
 public struct GradientToken {
+    public let id: String
     public let description: String
     public let darkGradients: [GradientKind]
     public let lightGradients: [GradientKind]
     
-    public init(description: String, darkGradients: [GradientKind], lightGradients: [GradientKind]) {
+    public init(id: String = "", description: String = "", darkGradients: [GradientKind] = [], lightGradients: [GradientKind] = []) {
+        self.id = id
         self.description = description
         self.darkGradients = darkGradients
         self.lightGradients = lightGradients
@@ -86,6 +88,7 @@ extension GradientToken: CustomDebugStringConvertible {
 
 extension GradientToken: Hashable {
     public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
         hasher.combine(darkGradients)
         hasher.combine(lightGradients)
     }

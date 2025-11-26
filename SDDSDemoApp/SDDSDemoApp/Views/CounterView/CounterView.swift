@@ -2,11 +2,12 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-
+import SDDSThemeCore
 import SDDSServTheme
 
 public struct CounterView: View {
     @ObservedObject var viewModel: CounterViewModel = CounterViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     public var body: some View {
         switch viewModel.componentViewLayoutMode {
@@ -17,6 +18,8 @@ public struct CounterView: View {
                     settings
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
         case .subScreen:
             settings
         }
@@ -45,6 +48,7 @@ public struct CounterView: View {
                 Spacer()
             }
         }
+        .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
     }
     
     public var dataTextField: some View {

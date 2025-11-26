@@ -74,8 +74,8 @@ import SwiftUI
  ```
  */
 public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: View>: View {
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let type: NavigationBarType
     private let title: String
     private let icon: Image?
@@ -552,7 +552,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     // MARK: - Helpers
     
     private func currentColor(for colorToken: ColorToken) -> Color {
-        return colorToken.color(for: colorScheme)
+        return colorToken.color(for: colorScheme, subtheme: subtheme)
     }
     
     private var backgroundColor: Color {

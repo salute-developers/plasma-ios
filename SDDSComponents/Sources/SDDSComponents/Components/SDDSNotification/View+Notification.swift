@@ -35,6 +35,7 @@ public extension View {
         duration: TimeInterval = 3.0,
         hasClose: Bool = true,
         closeImage: Image? = nil,
+        subtheme: SubthemeData = SubthemeData(),
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -45,6 +46,7 @@ public extension View {
             position: position,
             duration: duration,
             contentEndPosition: .topRight,
+            subtheme: subtheme,
             onShow: onShow,
             onClose: onClose,
             contentStart: { EmptyView() },
@@ -68,6 +70,7 @@ public extension View {
         position: ToastPosition = .topCenter,
         duration: TimeInterval = 3.0,
         closeImage: Image? = nil,
+        subtheme: SubthemeData = SubthemeData(),
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -78,6 +81,7 @@ public extension View {
             position: position,
             duration: duration,
             contentEndPosition: .topRight,
+            subtheme: subtheme,
             onShow: onShow,
             onClose: onClose,
             contentStart: { EmptyView() },

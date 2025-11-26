@@ -6,6 +6,7 @@ public extension View {
         appearance: ModalAppearance,
         closeImage: Image?,
         useNativeBlackout: Bool = true,
+        subtheme: SubthemeData = SubthemeData(),
         onShow: (() -> Void)? = nil,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -15,6 +16,7 @@ public extension View {
             appearance: appearance,
             closeImage: closeImage,
             useNativeBlackout: useNativeBlackout,
+            subtheme: subtheme,
             onShow: onShow,
             onClose: onClose,
             content: content
@@ -58,6 +60,7 @@ public extension View {
                         params.onClose?()
                     }
                 )
+                .environment(\.subtheme, params.subtheme)
             },
             onClose: {
                 params.isPresented.wrappedValue = false
@@ -73,6 +76,7 @@ private struct ModalParams<Content: View> {
     let appearance: ModalAppearance
     let closeImage: Image?
     let useNativeBlackout: Bool
+    let subtheme: SubthemeData
     let onShow: (() -> Void)?
     let onClose: (() -> Void)?
     let content: () -> Content

@@ -43,6 +43,7 @@ public extension View {
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
+        subtheme: SubthemeData = SubthemeData(),
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
@@ -60,6 +61,7 @@ public extension View {
             placementMode: placementMode,
             duration: duration,
             contentHeight: contentHeight,
+            subtheme: subtheme,
             ignoreTrigger: true,
             onClose: onClose,
             content: content

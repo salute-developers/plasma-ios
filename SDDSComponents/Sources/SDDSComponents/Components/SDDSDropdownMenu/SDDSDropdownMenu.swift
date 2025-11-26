@@ -3,6 +3,7 @@ import SwiftUI
 public struct SDDSDropdownMenu<Content: View>: View {
     @Environment(\.dropDownMenuAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: DropdownMenuAppearance?
     private let content: Content
     
@@ -19,7 +20,7 @@ public struct SDDSDropdownMenu<Content: View>: View {
             .applyIfLet(appearance.dividerAppearance) { content, appearance in
                 content.environment(\.dividerAppearance, appearance)
             }
-            .background(appearance.backgroundColor.color(for: colorScheme))
+            .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .shadow(appearance.shadow)
     }
     

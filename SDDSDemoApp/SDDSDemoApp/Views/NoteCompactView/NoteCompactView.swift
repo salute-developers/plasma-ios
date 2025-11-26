@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct NoteCompactView: View {
@@ -19,6 +20,7 @@ struct NoteCompactView: View {
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -29,6 +31,7 @@ struct NoteCompactView: View {
                 contentBeforeToggle
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Note Compact")
     }
     

@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     
@@ -32,6 +33,7 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
             self.variation = variationProvider.variations.first
         }
     }
+    @Published var subtheme: Subtheme = .none
     
     weak var delegate: ViewModelDelegate?
     let variationProvider: Provider
@@ -63,6 +65,10 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     
     func selectStyle(_ style: AppearanceVariation<Provider.Appearance>) {
         self.style = style
+    }
+    
+    func selectSubtheme(_ subtheme: Subtheme) {
+        self.subtheme = subtheme
     }
     
     var variations: [Variation<Provider.Appearance>] {

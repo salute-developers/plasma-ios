@@ -3,7 +3,7 @@ import SDDSThemeCore
 
 struct SDDSToggle: View {
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     @Binding var isOn: Bool
     var size: SwitchSizeConfiguration
     var onColor: ColorToken
@@ -42,7 +42,7 @@ struct SDDSToggle: View {
                     width: size.toggleThumbWidth,
                     height: size.toggleThumbHeight
                 ))
-                .fill(thumbColor.color(for: colorScheme))
+                .fill(thumbColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(
                     width: size.toggleThumbWidth,
                     height: size.toggleThumbHeight
@@ -65,7 +65,7 @@ struct SDDSToggle: View {
     }
     
     private var trackColor: Color {
-        isOn ? onColor.color(for: colorScheme) : offColor.color(for: colorScheme)
+        isOn ? onColor.color(for: colorScheme, subtheme: subtheme) : offColor.color(for: colorScheme, subtheme: subtheme)
     }
 }
 

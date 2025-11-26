@@ -4,8 +4,12 @@ public struct GradientView: View {
     private let kinds: [GradientKind]
     private let offset: CGFloat = 0
     
-    public init(colorScheme: ColorScheme, token: GradientToken, offset: CGFloat = 0) {
-        self.kinds = token.kind(for: colorScheme)
+    public init(colorScheme: ColorScheme, token: GradientToken, offset: CGFloat = 0, subtheme: SubthemeData = SubthemeData()) {
+        var gradientToken = token
+        if !subtheme.isNone {
+            gradientToken = subtheme.gradientMapper(subtheme.subtheme, token)
+        }
+        self.kinds = gradientToken.kind(for: colorScheme)
     }
     
     public var body: some View {
@@ -30,5 +34,12 @@ public struct GradientView: View {
                 data.background
             }
         }
+    }
+    
+    private func gradient(token: GradientToken, for colorScheme: ColorScheme, subtheme: SubthemeData) -> GradientToken {
+        guard !subtheme.isNone else {
+            return token
+        }
+        return subtheme.gradientMapper(subtheme.subtheme, token)
     }
 }

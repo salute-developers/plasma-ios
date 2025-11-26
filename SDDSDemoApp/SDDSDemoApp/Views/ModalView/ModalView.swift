@@ -6,6 +6,7 @@ import SDDSServTheme
 
 struct ModalView: View {
     @StateObject private var viewModel = ModalViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     @State private var isPresented = false
     
     var body: some View {
@@ -23,6 +24,7 @@ struct ModalView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -30,12 +32,15 @@ struct ModalView: View {
                 Toggle("useNativeBlackout", isOn: $viewModel.useNativeBlackout)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Modal")
         .modal(
             isPresented: $isPresented,
             appearance: viewModel.appearance,
             closeImage: viewModel.hasClose ? Image(systemName: "xmark") : nil,
             useNativeBlackout: viewModel.useNativeBlackout,
+            subtheme: viewModel.theme.subtheme(viewModel.subtheme),
             onShow: nil,
             onClose: nil
         ) {

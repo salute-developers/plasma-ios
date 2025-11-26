@@ -1,5 +1,6 @@
 import Foundation
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import PlasmaB2CTheme
 import StylesSaluteTheme
@@ -13,6 +14,19 @@ enum Theme: String, CaseIterable {
     
     var name: String {
         rawValue.capitalized
+    }
+    
+    func subtheme(_ subtheme: Subtheme) -> SubthemeData {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Theme.subtheme(subtheme)
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Theme.subtheme(subtheme)
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Theme.subtheme(subtheme)
+        case .stylesSalute:
+            return StylesSaluteTheme.Theme.subtheme(subtheme)
+        }
     }
     
     var basicButtonVariations: [Variation<ButtonAppearance>] {

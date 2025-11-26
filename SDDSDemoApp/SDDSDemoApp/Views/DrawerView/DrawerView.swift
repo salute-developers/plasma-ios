@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct DrawerView: View {
@@ -40,6 +41,7 @@ struct DrawerView: View {
                 }
                 .frame(height: 300)
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
             
             Section {
@@ -56,6 +58,8 @@ struct DrawerView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .drawer(
             isPresented: $isDrawerPresented,
@@ -69,6 +73,7 @@ struct DrawerView: View {
             closePlacement: viewModel.closePlacement,
             hasHeader: viewModel.showHeader,
             hasFooter: viewModel.showFooter,
+            subtheme: viewModel.theme.subtheme(viewModel.subtheme),
             onClose: {
                 isDrawerPresented = false
             },

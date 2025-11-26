@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct BadgeView: View {
@@ -29,9 +30,12 @@ struct BadgeView: View {
                         Spacer()
                     }
                 }
+                .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
                 
                 settings
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
             .navigationTitle("Badge")
         case .subScreen:
             settings

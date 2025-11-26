@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct DropdownMenuView: View {
@@ -18,6 +19,7 @@ struct DropdownMenuView: View {
             }
             .frame(height: 300)
             .background(Color(.white))
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
             .onTapGesture {
                 isDropdownMenuPresented = false
@@ -43,6 +45,7 @@ struct DropdownMenuView: View {
                 placementModeSelectionView
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("DropdownMenu")
     }
     
@@ -89,8 +92,11 @@ struct DropdownMenuView: View {
             maxHeight: maxHeight,
             appearance: viewModel.appearance.listAppearance
         )
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .frame(height: listHeight)
         .padding([.top, .bottom], viewModel.appearance.size.offset)
+        .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
+        .clipped()
     }
     
     private var listHeight: CGFloat {
@@ -125,6 +131,7 @@ struct DropdownMenuView: View {
                         appearance: viewModel.appearance,
                         placement: viewModel.placement,
                         alignment: viewModel.alignment,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -145,6 +152,7 @@ struct DropdownMenuView: View {
                         alignment: viewModel.alignment,
                         placementMode: viewModel.placementMode,
                         contentHeight: listHeight,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -165,6 +173,7 @@ struct DropdownMenuView: View {
                         alignment: viewModel.alignment,
                         placementMode: viewModel.placementMode,
                         contentHeight: listHeight,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { dropdownMenuContent() }
                     )
                 }
@@ -233,6 +242,7 @@ struct DropdownMenuView: View {
                         alignment: viewModel.alignment,
                         placementMode: viewModel.placementMode,
                         contentHeight: listHeight,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { dropdownMenuContent() }
                     )
                     Spacer()
@@ -246,15 +256,16 @@ struct DropdownMenuView: View {
                     BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
                         isDropdownMenuPresented = true
                     }
-                    .dropdownMenu(
-                        isPresented: $isDropdownMenuPresented,
-                        appearance: viewModel.appearance,
-                        placement: viewModel.placement,
-                        alignment: viewModel.alignment,
-                        placementMode: viewModel.placementMode,
-                        contentHeight: contentHeight,
-                        content: { dropdownMenuContent() }
-                    )
+                .dropdownMenu(
+                    isPresented: $isDropdownMenuPresented,
+                    appearance: viewModel.appearance,
+                    placement: viewModel.placement,
+                    alignment: viewModel.alignment,
+                    placementMode: viewModel.placementMode,
+                    contentHeight: contentHeight,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme),
+                    content: { dropdownMenuContent() }
+                )
                     Spacer()
                 }
             }
@@ -266,15 +277,16 @@ struct DropdownMenuView: View {
                     BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
                         isDropdownMenuPresented = true
                     }
-                    .dropdownMenu(
-                        isPresented: $isDropdownMenuPresented,
-                        appearance: viewModel.appearance,
-                        placement: viewModel.placement,
-                        alignment: viewModel.alignment,
-                        placementMode: viewModel.placementMode,
-                        contentHeight: contentHeight,
-                        content: { dropdownMenuContent() }
-                    )
+                .dropdownMenu(
+                    isPresented: $isDropdownMenuPresented,
+                    appearance: viewModel.appearance,
+                    placement: viewModel.placement,
+                    alignment: viewModel.alignment,
+                    placementMode: viewModel.placementMode,
+                    contentHeight: contentHeight,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme),
+                    content: { dropdownMenuContent() }
+                )
                 }
             }
         }

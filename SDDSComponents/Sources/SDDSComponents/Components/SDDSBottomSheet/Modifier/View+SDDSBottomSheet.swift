@@ -5,6 +5,7 @@ public extension View {
         isPresented: Binding<Bool>,
         detent: Binding<BottomSheetDetent?> = .constant(nil),
         configuration: BottomSheetPresentationConfiguration = BottomSheetPresentationConfiguration(),
+        subtheme: SubthemeData = SubthemeData(),
         @ViewBuilder content: @escaping () -> SDDSBottomSheet<Header, Content, Footer>
     ) -> some View {
         return self.background(
@@ -14,6 +15,7 @@ public extension View {
                 content: content(),
                 configuration: configuration
             )
+            .environment(\.subtheme, subtheme)
         )
     }
 }

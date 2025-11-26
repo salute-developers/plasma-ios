@@ -2,10 +2,12 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct RadioboxView: View {
     @ObservedObject private var viewModel: RadioboxViewModel = RadioboxViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         List {
@@ -22,6 +24,7 @@ struct RadioboxView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -51,6 +54,8 @@ struct RadioboxView: View {
                 
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Radiobox")
     }
 }

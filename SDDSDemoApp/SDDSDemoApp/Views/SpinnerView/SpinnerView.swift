@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSIcons
 
 struct SpinnerView: View {
@@ -24,6 +25,7 @@ struct SpinnerView: View {
                         Spacer()
                     }
                 }
+                .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
                 
                 Section {
                     settings
@@ -33,6 +35,8 @@ struct SpinnerView: View {
                     VariationsView(viewModel: viewModel)
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
             .navigationTitle("Spinner")
         case .subScreen:
             settings

@@ -29,8 +29,8 @@ public struct SDDSModal<Content: View>: View {
     private let appearance: ModalAppearance
     private let onClose: () -> Void
     
-    @Environment(\.colorScheme) var colorScheme
-    
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     public init(
         @ViewBuilder content: @escaping () -> Content,
         closeImage: Image? = nil,
@@ -52,7 +52,7 @@ public struct SDDSModal<Content: View>: View {
                     closeImage
                         .renderingMode(.template)
                         .frame(width: appearance.size.closeSize, height: appearance.size.closeSize)
-                        .foregroundColor(appearance.closeColor.color(for: colorScheme))
+                        .foregroundColor(appearance.closeColor.color(for: colorScheme, subtheme: subtheme))
                 }
             }
         }
@@ -60,7 +60,7 @@ public struct SDDSModal<Content: View>: View {
         .padding(.bottom, appearance.size.paddingBottom)
         .padding(.leading, appearance.size.paddingStart)
         .padding(.trailing, appearance.size.paddingEnd)
-        .background(appearance.backgroundColor.color(for: colorScheme))
+        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .shape(pathDrawer: appearance.size.shape)
         .shadow(appearance.size.shadow)
     }

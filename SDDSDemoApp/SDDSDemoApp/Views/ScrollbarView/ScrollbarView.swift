@@ -1,10 +1,12 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct ScrollbarView: View {
     @ObservedObject private var viewModel: ScrollbarViewModel = ScrollbarViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     @State var isScrolling = false
     let totalHeight: CGFloat = 130
 
@@ -13,11 +15,14 @@ struct ScrollbarView: View {
             Section {
                 Text(viewModel.text)
                 .padding()
+                .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
                 .scrollbar(
                     scrollBarData: scrollbarData,
-                    isScrolling: $isScrolling
+                    isScrolling: $isScrolling,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme)
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .scrollDisabled(false)
             Section {
                 VariationsView(viewModel: viewModel)
@@ -33,6 +38,8 @@ struct ScrollbarView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .scrollDisabled(true)
         .navigationTitle("Scrollbar")
     }

@@ -33,6 +33,7 @@ struct SDDSTooltip<ContentStart: View>: View {
     let contentStart: () -> ContentStart
     
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @State private var textSize: CGSize = .zero
     @State private var tooltipSize: CGSize = .zero
     
@@ -56,21 +57,21 @@ struct SDDSTooltip<ContentStart: View>: View {
             
             HStack(spacing: appearance.size.contentStartPadding) {
                 contentStart()
-                    .tint(appearance.contentStartColor.color(for: colorScheme))
+                    .tint(appearance.contentStartColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: appearance.size.contentStartSize, height: appearance.size.contentStartSize)
                 
                 if !text.isEmpty {
                     Text(text)
                         .typography(textTypography)
                         .lineLimit(nil)
-                        .foregroundColor(appearance.textColor.color(for: colorScheme))
+                        .foregroundColor(appearance.textColor.color(for: colorScheme, subtheme: subtheme))
                 }
             }
             .padding(.leading, appearance.size.paddingStart)
             .padding(.trailing, appearance.size.paddingEnd)
             .padding(.top, appearance.size.paddingTop)
             .padding(.bottom, appearance.size.paddingBottom)
-            .background(appearance.backgroundColor.color(for: colorScheme))
+            .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: calculatedWidth, height: height + appearance.size.paddingTop + appearance.size.paddingBottom)
         }
         .frame(width: calculatedWidth, height: height + appearance.size.paddingTop + appearance.size.paddingBottom)

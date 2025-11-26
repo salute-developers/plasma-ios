@@ -41,7 +41,8 @@ public struct SDDSChip: View {
     let accessibility: ChipAccessibility
     let removeAction: () -> Void
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.chipAppearance) private var environmentAppearance
 
     /**
@@ -109,7 +110,7 @@ public struct SDDSChip: View {
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: appearance.size.iconImageSize.width, height: appearance.size.iconImageSize.height)
-                    .foregroundColor(appearance.imageTintColor.defaultColor.color(for: colorScheme))
+                    .foregroundColor(appearance.imageTintColor.defaultColor.color(for: colorScheme, subtheme: subtheme))
                     .accessibilityHidden(true)
                 Spacer()
                     .frame(width: appearance.size.contentStartPadding)
@@ -119,7 +120,7 @@ public struct SDDSChip: View {
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
                 .frame(width: textWidth)
-                .foregroundColor(appearance.titleColor.defaultColor.color(for: colorScheme))
+                .foregroundColor(appearance.titleColor.defaultColor.color(for: colorScheme, subtheme: subtheme))
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
             
@@ -132,7 +133,7 @@ public struct SDDSChip: View {
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: appearance.size.buttonImageSize.width, height: appearance.size.buttonImageSize.height)
-                        .foregroundColor(appearance.buttonTintColor.defaultColor.color(for: colorScheme))
+                        .foregroundColor(appearance.buttonTintColor.defaultColor.color(for: colorScheme, subtheme: subtheme))
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
                         .accessibilityAddTraits(.isButton)
@@ -145,7 +146,7 @@ public struct SDDSChip: View {
         .frame(height: appearance.size.height)
         .background(
             RoundedRectangle(cornerRadius: borderRadius)
-                .fill(appearance.backgroundColor.defaultColor.color(for: colorScheme))
+                .fill(appearance.backgroundColor.defaultColor.color(for: colorScheme, subtheme: subtheme))
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
         .accessibilityElement(children: .combine)

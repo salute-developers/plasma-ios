@@ -89,7 +89,8 @@ public struct SDDSButton<Counter: View>: View {
     public let isSelected: Bool
     private var _appearance: ButtonAppearance?
     @Environment(\.buttonAppearance) private var environmentAppearance
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
     @State private var isHovered: Bool = false
@@ -262,13 +263,13 @@ public struct SDDSButton<Counter: View>: View {
 private extension SDDSButton {
     func currentColor(for buttonColor: ButtonColor) -> Color {
         if isSelected {
-            return buttonColor.selectedColor.color(for: colorScheme)
+            return buttonColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
         } else if isHighlighted {
-            return buttonColor.highlightedColor.color(for: colorScheme)
+            return buttonColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
         } else if isHovered {
-            return buttonColor.hoveredColor.color(for: colorScheme)
+            return buttonColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
     

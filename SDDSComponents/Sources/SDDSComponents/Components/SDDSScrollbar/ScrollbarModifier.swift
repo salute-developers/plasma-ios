@@ -22,7 +22,8 @@ struct ScrollBarModifier: ViewModifier {
         self._isScrollingToBottom = isScrollingToBottom
     }
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Binding private var isScrollingToBottom: Bool
     @State private var contentHeight: CGFloat = 0
     @State private var scrollViewHeight: CGFloat = 0
