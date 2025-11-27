@@ -149,13 +149,13 @@ if [[ "$WITH_CHANGELOG" == true ]]; then
     echo ""
     echo "📝 Генерация changelog..."
     
-    # Проверяем наличие файла release-changelog.md
-    if [[ -f "../release-changelog.md" ]]; then
-        echo "  Найден файл release-changelog.md"
+    # Проверяем наличие файла release-changelog.json
+    if [[ -f "../release-changelog.json" ]]; then
+        echo "  Найден файл release-changelog.json"
         
         # Генерируем changelog для данной библиотеки
-        echo "  Парсинг changelog для $CLEAN_ARTIFACT_ID..."
-        ../scripts/parse-changelog.sh "$CLEAN_ARTIFACT_ID" "../release-changelog.md" "$destination_dir/docs/CHANGELOG.md"
+        echo "  Генерация changelog для $CLEAN_ARTIFACT_ID..."
+        ../scripts/parse-changelog.sh "$CLEAN_ARTIFACT_ID" "../release-changelog.json" "$destination_dir/docs/CHANGELOG.md"
         
         if [[ -f "$destination_dir/docs/CHANGELOG.md" ]]; then
             echo "✅ Changelog сгенерирован: $destination_dir/docs/CHANGELOG.md"
@@ -163,7 +163,7 @@ if [[ "$WITH_CHANGELOG" == true ]]; then
             echo "⚠️  Changelog не был сгенерирован"
         fi
     else
-        echo "⚠️  Файл release-changelog.md не найден, пропускаем генерацию changelog"
+        echo "⚠️  Файл release-changelog.json не найден, пропускаем генерацию changelog"
     fi
 fi
 
