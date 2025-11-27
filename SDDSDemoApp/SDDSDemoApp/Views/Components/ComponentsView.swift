@@ -32,6 +32,7 @@ struct ComponentsView: View {
         ("BottomSheet", AnyView(BottomSheetView())),
         ("CircularProgressBar", AnyView(CircularProgressBarView())),
         ("Divider", AnyView(DividerView())),
+        ("Drawer", AnyView(DrawerView())),
         ("List", AnyView(ListView())),
         ("ListItem", AnyView(ListItemView())),
         ("Overlay", AnyView(OverlayView())),
@@ -51,7 +52,9 @@ struct ComponentsView: View {
         ("Wheel", AnyView(WheelView())),
         ("NavigationBar", AnyView(NavigationBarView())),
         ("Note", AnyView(NoteView())),
-        ("NoteCompact", AnyView(NoteCompactView()))
+        ("NoteCompact", AnyView(NoteCompactView())),
+        ("Tabs", AnyView(TabsView())),
+        ("TabItem", AnyView(TabItemView()))
     ]
 
     var body: some View {

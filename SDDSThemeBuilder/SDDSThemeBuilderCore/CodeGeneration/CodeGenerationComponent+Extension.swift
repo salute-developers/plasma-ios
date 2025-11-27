@@ -93,100 +93,112 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case navigationBarInternalPage = "NavigationBarInternalPage"
     case note = "Note"
     case noteCompact = "NoteCompact"
+    case tabsDefault = "TabsDefault"
+    case tabsHeader = "TabsHeader"
+    case iconTabs = "IconTabs"
+    case tabItemDefault = "TabItemDefault"
+    case tabItemHeader = "TabItemHeader"
+    case iconTabItem = "IconTabItem"
+    case drawerCloseInner = "DrawerCloseInner"
+    case drawerCloseNone = "DrawerCloseNone"
+    case drawerCloseOuter = "DrawerCloseOuter"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
-//            .basicButton,
-//            .linkButton,
-//            .iconButton,
-//            .basicButtonGroup,
-//            .iconButtonGroup,
-//            .textField,
-//            .textFieldClear,
-//            .textArea,
-//            .textAreaClear,
-//            .overlay,
-//            .badge,
-//            .badgeClear,
-//            .badgeTransparent,
-//            .iconBadge,
-//            .iconBadgeClear,
-//            .iconBadgeTransparent,
-//            .indicator,
-//            .cell,     
-//            .counter,
-//            .card,
-//            .cardSolid,
-//            .cardClear,
-//            .segmentItem,
-//            .segment,
-//            .bottomSheet,
-//            .switch,
-//            .embeddedChip,
-//            .chip,
-//            .embeddedChipGroupDense,
-//            .embeddedChipGroupWide,
-//            .chipGroupDense,
-//            .chipGroupWide,
-//            .radiobox,
-//            .radioboxGroup,
-//            .checkbox,
-//            .checkboxGroup,
-//            .avatar,
-//            .avatarGroup,
-//            .circularProgressBar,
-//            .progressBar,
-//            .divider,
-//            .popover,
-//            .tooltip,
-//            .toast,
-//            .modal,
-//            .notificationLoose,
-//            .notificationCompact,
-//            .rectSkeleton,
-//            .textSkeleton,
-//            .listItem,
-//            .listItemNormal,
-//            .listItemTight,
-//            .dropdownMenuItemNormal,
-//            .dropdownMenuItemTight,
-//            .dropdownMenuListNormal,
-//            .dropdownMenuListTight,
-//            .dropdownMenuNormal,
-//            .dropdownMenuTight,
-//            .list,
-//            .listNormal,
-//            .listTight,
-//            .scrollbar,
-//            .accordionItemSolidActionStart,
-//            .accordionItemSolidActionEnd,
-//            .accordionItemClearActionStart,
-//            .accordionItemClearActionEnd,
-//            .accordionSolidActionStart,
-//            .accordionSolidActionEnd,
-//            .accordionClearActionStart,
-//            .accordionClearActionEnd,
-//            .spinner,
-//            .loader,
-//            .codeField,
-//            .tabBarItemSolid,
-//            .tabBarItem,
-//            .tabBarItemClear,
-//            .tabBarIslandSolid,
-//            .tabBarIslandClear,
-//            .tabBarIslandHasLabelSolid,
-//            .tabBarIslandHasLabelClear,
-//            .tabBarSolid,
-//            .tabBar,
-//            .tabBarClear,
-//            .tabBarHasLabelSolid,
-//            .tabBarHasLabelClear,
-//            .codeInput,
-//            .wheel,
-//            .navigationBarMainPage,
-//            .navigationBarInternalPage,
+            .basicButton,
+            .linkButton,
+            .iconButton,
+            .basicButtonGroup,
+            .iconButtonGroup,
+            .textField,
+            .textFieldClear,
+            .textArea,
+            .textAreaClear,
+            .overlay,
+            .badge,
+            .badgeClear,
+            .badgeTransparent,
+            .iconBadge,
+            .iconBadgeClear,
+            .iconBadgeTransparent,
+            .indicator,
+            .cell,     
+            .counter,
+            .card,
+            .cardSolid,
+            .cardClear,
+            .segmentItem,
+            .segment,
+            .bottomSheet,
+            .switch,
+            .embeddedChip,
+            .chip,
+            .embeddedChipGroupDense,
+            .embeddedChipGroupWide,
+            .chipGroupDense,
+            .chipGroupWide,
+            .radiobox,
+            .radioboxGroup,
+            .checkbox,
+            .checkboxGroup,
+            .avatar,
+            .avatarGroup,
+            .circularProgressBar,
+            .progressBar,
+            .divider,
+            .popover,
+            .tooltip,
+            .toast,
+            .modal,
+            .notificationLoose,
+            .notificationCompact,
+            .rectSkeleton,
+            .textSkeleton,
+            .listItem,
+            .listItemNormal,
+            .listItemTight,
+            .dropdownMenuItemNormal,
+            .dropdownMenuItemTight,
+            .dropdownMenuListNormal,
+            .dropdownMenuListTight,
+            .dropdownMenuNormal,
+            .dropdownMenuTight,
+            .list,
+            .listNormal,
+            .listTight,
+            .scrollbar,
+            .accordionItemSolidActionStart,
+            .accordionItemSolidActionEnd,
+            .accordionItemClearActionStart,
+            .accordionItemClearActionEnd,
+            .accordionSolidActionStart,
+            .accordionSolidActionEnd,
+            .accordionClearActionStart,
+            .accordionClearActionEnd,
+            .spinner,
+            .loader,
+            .codeField,
+            .tabBarItemSolid,
+            .tabBarItem,
+            .tabBarItemClear,
+            .tabBarIslandSolid,
+            .tabBarIslandClear,
+            .tabBarIslandHasLabelSolid,
+            .tabBarIslandHasLabelClear,
+            .tabBarSolid,
+            .tabBar,
+            .tabBarClear,
+            .tabBarHasLabelSolid,
+            .tabBarHasLabelClear,
+            .codeInput,
+            .wheel,
+            .navigationBarMainPage,
+            .navigationBarInternalPage,
             .note,
-            .noteCompact
+            .noteCompact,
+            .drawerCloseInner,
+            .drawerCloseNone,
+            .drawerCloseOuter
         ]
     }
     
@@ -327,6 +339,20 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<NoteProps, NoteAppearance, NoteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .noteCompact:
             GenerateComponentCommand<NoteCompactProps, NoteCompactAppearance, NoteCompactSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .tabsDefault, .tabsHeader, .iconTabs:
+            GenerateComponentCommand<TabsDefaultProps, TabsDefaultAppearance, TabsDefaultSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
+        case .tabItemDefault, .tabItemHeader, .iconTabItem:
+            GenerateComponentCommand<TabItemDefaultProps, TabItemDefaultAppearance, TabItemDefaultSize>(
+                component: self, 
+                outputDirectoryURL: outputURL, 
+                themeConfig: themeConfig
+            )
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            GenerateComponentCommand<DrawerProps, DrawerAppearance, DrawerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -434,6 +460,12 @@ extension CodeGenerationComponent {
             "NoteAppearance"
         case .noteCompact:
             "NoteCompactAppearance"
+        case .tabsDefault, .tabsHeader, .iconTabs:
+            "TabsAppearance"
+        case .tabItemDefault, .tabItemHeader, .iconTabItem:
+            "TabItemAppearance"
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            "DrawerAppearance"
         }
     }
     
@@ -542,6 +574,12 @@ extension CodeGenerationComponent {
             "NoteSizeConfiguration"
         case .noteCompact:
             "NoteCompactSizeConfiguration"
+        case .tabsDefault, .tabsHeader, .iconTabs:
+            "TabsSizeConfiguration"
+        case .tabItemDefault, .tabItemHeader, .iconTabItem:
+            "TabItemSizeConfiguration"
+        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
+            "DrawerSizeConfiguration"
         }
     }
     
@@ -731,6 +769,24 @@ extension CodeGenerationComponent {
             "note_config.json"
         case .noteCompact:
             "note_compact_config.json"
+        case .tabsDefault:
+            "tabs_default_config.json"
+        case .tabsHeader:
+            "tabs_header_config.json"
+        case .iconTabs:
+            "icon_tabs_config.json"
+        case .tabItemDefault:
+            "tab_item_default_config.json"
+        case .tabItemHeader:
+            "tab_item_header_config.json"
+        case .iconTabItem:
+            "icon_tab_item_config.json"
+        case .drawerCloseInner:
+            "drawer_close_inner_config.json"
+        case .drawerCloseNone:
+            "drawer_close_none_config.json"
+        case .drawerCloseOuter:
+            "drawer_close_outer_config.json"
         }
     }
     

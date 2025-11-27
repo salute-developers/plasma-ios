@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ToasContentEndPosition {
+public enum ToastContentEndPosition {
     case centerRight
     case topRight
 }

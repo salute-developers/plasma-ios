@@ -161,6 +161,15 @@
 		813BC8752EB29BD500E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
 		8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarInternalPage; sourceTree = "<group>"; };
 		8183C9302EB2A73300610A9A /* NavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarMainPage; sourceTree = "<group>"; };
+		81D59FB22ED8801A00156885 /* DrawerCloseInner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseInner; sourceTree = "<group>"; };
+		81D59FB72ED8801A00156885 /* DrawerCloseNone */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseNone; sourceTree = "<group>"; };
+		81D59FBC2ED8801A00156885 /* DrawerCloseOuter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseOuter; sourceTree = "<group>"; };
+		81D59FC12ED8801A00156885 /* IconTabItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconTabItem; sourceTree = "<group>"; };
+		81D59FC62ED8801A00156885 /* IconTabs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconTabs; sourceTree = "<group>"; };
+		81D59FCB2ED8801A00156885 /* TabItemDefault */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabItemDefault; sourceTree = "<group>"; };
+		81D59FD02ED8801A00156885 /* TabItemHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabItemHeader; sourceTree = "<group>"; };
+		81D59FD52ED8801A00156885 /* TabsDefault */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsDefault; sourceTree = "<group>"; };
+		81D59FDA2ED8801A00156885 /* TabsHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsHeader; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +190,15 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
+				81D59FB72ED8801A00156885 /* DrawerCloseNone */,
+				81D59FBC2ED8801A00156885 /* DrawerCloseOuter */,
+				81D59FC12ED8801A00156885 /* IconTabItem */,
+				81D59FC62ED8801A00156885 /* IconTabs */,
+				81D59FCB2ED8801A00156885 /* TabItemDefault */,
+				81D59FD02ED8801A00156885 /* TabItemHeader */,
+				81D59FD52ED8801A00156885 /* TabsDefault */,
+				81D59FDA2ED8801A00156885 /* TabsHeader */,
 				8134562D2EC4BC3500D40423 /* Note */,
 				813456322EC4BC3500D40423 /* NoteCompact */,
 				8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */,
@@ -483,6 +501,15 @@
 				813BC8752EB29BD500E4E505 /* Tooltip */,
 				8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */,
 				8183C9302EB2A73300610A9A /* NavigationBarMainPage */,
+				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
+				81D59FB72ED8801A00156885 /* DrawerCloseNone */,
+				81D59FBC2ED8801A00156885 /* DrawerCloseOuter */,
+				81D59FC12ED8801A00156885 /* IconTabItem */,
+				81D59FC62ED8801A00156885 /* IconTabs */,
+				81D59FCB2ED8801A00156885 /* TabItemDefault */,
+				81D59FD02ED8801A00156885 /* TabItemHeader */,
+				81D59FD52ED8801A00156885 /* TabsDefault */,
+				81D59FDA2ED8801A00156885 /* TabsHeader */,
 			);
 			name = SDDSServTheme;
 			productName = SDDSServTheme;

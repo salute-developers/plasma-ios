@@ -5,7 +5,7 @@ private struct ToastParams<ContentStart: View, Content: View, ContentEnd: View> 
     let appearance: ToastAppearance
     let position: ToastPosition
     let duration: TimeInterval
-    let contentEndPosition: ToasContentEndPosition
+    let contentEndPosition: ToastContentEndPosition
     let onShow: ((ToastID) -> Void)?
     let onClose: ((ToastID) -> Void)?
     let contentStart: () -> ContentStart
@@ -104,7 +104,7 @@ extension View {
         appearance: ToastAppearance,
         position: ToastPosition = .topCenter,
         duration: TimeInterval = 3.0,
-        contentEndPosition: ToasContentEndPosition,
+        contentEndPosition: ToastContentEndPosition,
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder contentStart: @escaping () -> ContentStart,

@@ -142,11 +142,30 @@
 		8131E8692E4C62AD00FED868 /* SDDSTabBarIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */; };
 		8131E86B2E4C6F8E00FED868 /* SDDSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */; };
 		8131E86D2E4C6F9800FED868 /* TabBarItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */; };
+		8134743F2EC70A5200D40423 /* TabsItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743D2EC70A5200D40423 /* TabsItemData.swift */; };
+		813474402EC70A5200D40423 /* SDDSTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743A2EC70A5200D40423 /* SDDSTabItem.swift */; };
+		813474412EC70A5200D40423 /* TabsPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */; };
+		813474422EC70A5200D40423 /* SDDSTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743B2EC70A5200D40423 /* SDDSTabs.swift */; };
+		813474432EC70A5200D40423 /* TabsClipMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134743C2EC70A5200D40423 /* TabsClipMode.swift */; };
+		813474472EC70A6C00D40423 /* TabItemEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813474462EC70A6C00D40423 /* TabItemEnvironment.swift */; };
+		813474492EC70A8200D40423 /* TabsEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813474482EC70A8200D40423 /* TabsEnvironment.swift */; };
+		81348AF62ED06B3800D40423 /* ShowMoreDropdownModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81348AF42ED06B3800D40423 /* ShowMoreDropdownModifier.swift */; };
+		81348AF72ED06B3800D40423 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81348AF52ED06B3800D40423 /* TabItem.swift */; };
 		8136876B2E0186A800A1702A /* SDDSTextSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687692E0186A800A1702A /* SDDSTextSkeleton.swift */; };
 		8136876C2E0186A800A1702A /* SDDSRectSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687672E0186A800A1702A /* SDDSRectSkeleton.swift */; };
 		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
 		8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */; };
 		81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */; };
+		8139C9E82ED5E1C500188124 /* DrawerAboveContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */; };
+		8139C9E92ED5E1C500188124 /* View+Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E62ED5E1C500188124 /* View+Drawer.swift */; };
+		8139C9EA2ED5E1C500188124 /* DrawerClosePlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */; };
+		8139C9EB2ED5E1C500188124 /* DrawerCloseIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */; };
+		8139C9EC2ED5E1C500188124 /* SDDSDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */; };
+		8139C9ED2ED5E1C500188124 /* DrawerPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */; };
+		8139C9EE2ED5E1C500188124 /* DrawerMoveContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */; };
+		8139C9EF2ED5E1C500188124 /* DrawerSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */; };
+		8139C9F02ED5E1C500188124 /* DrawerAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */; };
+		8139C9F12ED5E1C500188124 /* DrawerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */; };
 		813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BB4022EB2999000E4E505 /* View+TabBar.swift */; };
 		8140A4672D59FA06002CF32B /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8140A4662D59FA06002CF32B /* SDDSServTheme */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
@@ -267,6 +286,11 @@
 		819A3A6A2E4E6573006A11F8 /* LoaderSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */; };
 		819A3A6D2E4E666A006A11F8 /* SDDSCircularProgressBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */; };
 		819A3A6F2E4E678B006A11F8 /* SDDSSpinnerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */; };
+		819C47332EBCF39A0081066C /* TabsOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472F2EBCF39A0081066C /* TabsOrientation.swift */; };
+		819C47342EBCF39A0081066C /* TabsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472E2EBCF39A0081066C /* TabsAppearance.swift */; };
+		819C47352EBCF39A0081066C /* TabItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */; };
+		819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */; };
+		819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472B2EBCF39A0081066C /* TabItemAppearance.swift */; };
 		81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */; };
 		81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */; };
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
@@ -523,11 +547,30 @@
 		8131E8682E4C62AD00FED868 /* SDDSTabBarIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBarIsland.swift; sourceTree = "<group>"; };
 		8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBar.swift; sourceTree = "<group>"; };
 		8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemData.swift; sourceTree = "<group>"; };
+		8134743A2EC70A5200D40423 /* SDDSTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabItem.swift; sourceTree = "<group>"; };
+		8134743B2EC70A5200D40423 /* SDDSTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabs.swift; sourceTree = "<group>"; };
+		8134743C2EC70A5200D40423 /* TabsClipMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsClipMode.swift; sourceTree = "<group>"; };
+		8134743D2EC70A5200D40423 /* TabsItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsItemData.swift; sourceTree = "<group>"; };
+		8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsPreferenceKeys.swift; sourceTree = "<group>"; };
+		813474462EC70A6C00D40423 /* TabItemEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemEnvironment.swift; sourceTree = "<group>"; };
+		813474482EC70A8200D40423 /* TabsEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsEnvironment.swift; sourceTree = "<group>"; };
+		81348AF42ED06B3800D40423 /* ShowMoreDropdownModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDropdownModifier.swift; sourceTree = "<group>"; };
+		81348AF52ED06B3800D40423 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		813687642E0186A800A1702A /* SkeletonAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAppearance.swift; sourceTree = "<group>"; };
 		813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonSizeConfiguration.swift; sourceTree = "<group>"; };
 		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
 		813687692E0186A800A1702A /* SDDSTextSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextSkeleton.swift; sourceTree = "<group>"; };
 		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
+		8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAlignment.swift; sourceTree = "<group>"; };
+		8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAppearance.swift; sourceTree = "<group>"; };
+		8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCloseIconPlacement.swift; sourceTree = "<group>"; };
+		8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerClosePlacement.swift; sourceTree = "<group>"; };
+		8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerSizeConfiguration.swift; sourceTree = "<group>"; };
+		8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAboveContentView.swift; sourceTree = "<group>"; };
+		8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerMoveContentView.swift; sourceTree = "<group>"; };
+		8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerPreferenceKeys.swift; sourceTree = "<group>"; };
+		8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDrawer.swift; sourceTree = "<group>"; };
+		8139C9E62ED5E1C500188124 /* View+Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Drawer.swift"; sourceTree = "<group>"; };
 		813BB4022EB2999000E4E505 /* View+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBar.swift"; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
@@ -658,6 +701,11 @@
 		819A3A662E4E6573006A11F8 /* SDDSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSLoader.swift; sourceTree = "<group>"; };
 		819A3A6C2E4E665B006A11F8 /* SDDSCircularProgressBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCircularProgressBarData.swift; sourceTree = "<group>"; };
 		819A3A6E2E4E6788006A11F8 /* SDDSSpinnerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSpinnerData.swift; sourceTree = "<group>"; };
+		819C472B2EBCF39A0081066C /* TabItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemAppearance.swift; sourceTree = "<group>"; };
+		819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		819C472E2EBCF39A0081066C /* TabsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsAppearance.swift; sourceTree = "<group>"; };
+		819C472F2EBCF39A0081066C /* TabsOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsOrientation.swift; sourceTree = "<group>"; };
+		819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsSizeConfiguration.swift; sourceTree = "<group>"; };
 		81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+ScrollbarModifier.swift"; sourceTree = "<group>"; };
 		81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollbarModifier.swift; sourceTree = "<group>"; };
 		81A079052DA3FB5400260DC9 /* ScrollBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarData.swift; sourceTree = "<group>"; };
@@ -1328,6 +1376,31 @@
 			path = SDDSTextSkeleton;
 			sourceTree = "<group>";
 		};
+		8139C9E12ED5E1C500188124 /* DrawerAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */,
+				8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */,
+				8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */,
+				8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */,
+				8139C9E02ED5E1C500188124 /* DrawerSizeConfiguration.swift */,
+			);
+			path = DrawerAppearance;
+			sourceTree = "<group>";
+		};
+		8139C9E72ED5E1C500188124 /* SDDSDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				8139C9E12ED5E1C500188124 /* DrawerAppearance */,
+				8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */,
+				8139C9E32ED5E1C500188124 /* DrawerMoveContentView.swift */,
+				8139C9E42ED5E1C500188124 /* DrawerPreferenceKeys.swift */,
+				8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */,
+				8139C9E62ED5E1C500188124 /* View+Drawer.swift */,
+			);
+			path = SDDSDrawer;
+			sourceTree = "<group>";
+		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -1753,6 +1826,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8139C9E72ED5E1C500188124 /* SDDSDrawer */,
+				819C47322EBCF39A0081066C /* SDDSTabs */,
 				8183DDA52EB2AB3100610A9A /* SDDSNavigationBar */,
 				8183DDA92EB2AB3100610A9A /* SDDSNavigationBarInternalPage */,
 				8183DDAD2EB2AB3100610A9A /* SDDSNavigationBarMainPage */,
@@ -2005,6 +2080,43 @@
 				819A3A652E4E6573006A11F8 /* LoaderSizeConfiguration.swift */,
 			);
 			path = LoaderAppearance;
+			sourceTree = "<group>";
+		};
+		819C472D2EBCF39A0081066C /* TabItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				813474462EC70A6C00D40423 /* TabItemEnvironment.swift */,
+				819C472B2EBCF39A0081066C /* TabItemAppearance.swift */,
+				819C472C2EBCF39A0081066C /* TabItemSizeConfiguration.swift */,
+			);
+			path = TabItemAppearance;
+			sourceTree = "<group>";
+		};
+		819C47312EBCF39A0081066C /* TabsAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				813474482EC70A8200D40423 /* TabsEnvironment.swift */,
+				819C472E2EBCF39A0081066C /* TabsAppearance.swift */,
+				819C472F2EBCF39A0081066C /* TabsOrientation.swift */,
+				819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */,
+			);
+			path = TabsAppearance;
+			sourceTree = "<group>";
+		};
+		819C47322EBCF39A0081066C /* SDDSTabs */ = {
+			isa = PBXGroup;
+			children = (
+				81348AF52ED06B3800D40423 /* TabItem.swift */,
+				8134743A2EC70A5200D40423 /* SDDSTabItem.swift */,
+				8134743B2EC70A5200D40423 /* SDDSTabs.swift */,
+				8134743C2EC70A5200D40423 /* TabsClipMode.swift */,
+				8134743D2EC70A5200D40423 /* TabsItemData.swift */,
+				8134743E2EC70A5200D40423 /* TabsPreferenceKeys.swift */,
+				81348AF42ED06B3800D40423 /* ShowMoreDropdownModifier.swift */,
+				819C472D2EBCF39A0081066C /* TabItemAppearance */,
+				819C47312EBCF39A0081066C /* TabsAppearance */,
+			);
+			path = SDDSTabs;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -2574,6 +2686,11 @@
 				81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */,
 				81E9343E2DEDF70D00B76E38 /* ToastAppearance.swift in Sources */,
 				69B15FA92DAF0587001E9115 /* SDDSIndicator.swift in Sources */,
+				8134743F2EC70A5200D40423 /* TabsItemData.swift in Sources */,
+				813474402EC70A5200D40423 /* SDDSTabItem.swift in Sources */,
+				813474412EC70A5200D40423 /* TabsPreferenceKeys.swift in Sources */,
+				813474422EC70A5200D40423 /* SDDSTabs.swift in Sources */,
+				813474432EC70A5200D40423 /* TabsClipMode.swift in Sources */,
 				81F89DEA2D808A8F00A41C89 /* CardAppearance.swift in Sources */,
 				811D2E2D2D115FDD001C0F48 /* AppearanceVariation.swift in Sources */,
 				818C03E62C47BCDC002C6D0A /* SDDSProgressBar.swift in Sources */,
@@ -2598,7 +2715,10 @@
 				698744642D1C367700559ABA /* CounterAppearance.swift in Sources */,
 				814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */,
 				817339D52D033BF50092608A /* ProgressBarSizeConfiguration.swift in Sources */,
+				813474472EC70A6C00D40423 /* TabItemEnvironment.swift in Sources */,
 				818FE9312C3C1CDC00F64958 /* Components.swift in Sources */,
+				81348AF62ED06B3800D40423 /* ShowMoreDropdownModifier.swift in Sources */,
+				81348AF72ED06B3800D40423 /* TabItem.swift in Sources */,
 				817339E42D033E310092608A /* ChipData.swift in Sources */,
 				81F7FEBD2E1FD4C300530B33 /* DividerSizeConfiguration.swift in Sources */,
 				81F7FEBE2E1FD4C300530B33 /* SDDSDivider.swift in Sources */,
@@ -2711,6 +2831,11 @@
 				8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */,
 				8119DF622DF6FB8800D1CA9F /* View+Notification.swift in Sources */,
 				816D0EE62DF856F40086C35C /* ToasContentEndPosition.swift in Sources */,
+				819C47332EBCF39A0081066C /* TabsOrientation.swift in Sources */,
+				819C47342EBCF39A0081066C /* TabsAppearance.swift in Sources */,
+				819C47352EBCF39A0081066C /* TabItemSizeConfiguration.swift in Sources */,
+				819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */,
+				819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */,
 				81F753222CF467CC000156D9 /* ButtonLayoutMode.swift in Sources */,
 				81F753262CF467F6000156D9 /* ButtonIconAttributes.swift in Sources */,
 				817339EB2D033EB90092608A /* AvatarStatus.swift in Sources */,
@@ -2773,6 +2898,7 @@
 				6925101E2D7632CA00545542 /* BadgeAppearance+Extensions.swift in Sources */,
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
+				813474492EC70A8200D40423 /* TabsEnvironment.swift in Sources */,
 				813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */,
 				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
 				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,
@@ -2859,6 +2985,16 @@
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
 				81F753382CF4FFFD000156D9 /* String+Variations.swift in Sources */,
 				81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */,
+				8139C9E82ED5E1C500188124 /* DrawerAboveContentView.swift in Sources */,
+				8139C9E92ED5E1C500188124 /* View+Drawer.swift in Sources */,
+				8139C9EA2ED5E1C500188124 /* DrawerClosePlacement.swift in Sources */,
+				8139C9EB2ED5E1C500188124 /* DrawerCloseIconPlacement.swift in Sources */,
+				8139C9EC2ED5E1C500188124 /* SDDSDrawer.swift in Sources */,
+				8139C9ED2ED5E1C500188124 /* DrawerPreferenceKeys.swift in Sources */,
+				8139C9EE2ED5E1C500188124 /* DrawerMoveContentView.swift in Sources */,
+				8139C9EF2ED5E1C500188124 /* DrawerSizeConfiguration.swift in Sources */,
+				8139C9F02ED5E1C500188124 /* DrawerAlignment.swift in Sources */,
+				8139C9F12ED5E1C500188124 /* DrawerAppearance.swift in Sources */,
 				694C288D2D8AFE2700D7F341 /* SelectionControlToggle.swift in Sources */,
 				81228ED62E6725DE00AA1EFB /* SDDSCodeInput.swift in Sources */,
 				81228ED72E6725DE00AA1EFB /* CodeInputGroup.swift in Sources */,

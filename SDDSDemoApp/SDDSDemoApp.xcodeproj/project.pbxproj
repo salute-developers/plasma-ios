@@ -144,11 +144,14 @@
 		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextSkeletonTestCase; sourceTree = "<group>"; };
 		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
+		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteTestCase; sourceTree = "<group>"; };
+		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
 		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
 		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
 		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
 		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
+		D3EC568D2ED06F8C00114B3D /* TabsTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
 		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
 		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
@@ -257,6 +260,9 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
+				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
+				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				81340B492EC383C500D40423 /* BaseTestCases */,
 				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D36588AF2E72B73800036483 /* CodeInputTestCase */,
@@ -398,11 +404,14 @@
 				D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */,
 				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
+				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
+				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */,
 				D3C163362DD36F59008F37F5 /* ProgressBarTestCase */,
 				D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */,
+				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
@@ -745,7 +754,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -786,7 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vkaltyrin.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
