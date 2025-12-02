@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81A8AE6A2EE31FA4004C1EED /* Notation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE5E2EE31FA4004C1EED /* Notation.swift */; };
+		81A8AE6B2EE31FA4004C1EED /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE4D2EE31FA4004C1EED /* CharacterSet.swift */; };
+		81A8AE6C2EE31FA4004C1EED /* FixedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE562EE31FA4004C1EED /* FixedState.swift */; };
+		81A8AE6D2EE31FA4004C1EED /* CaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE4C2EE31FA4004C1EED /* CaretStringIterator.swift */; };
+		81A8AE6E2EE31FA4004C1EED /* TextViewListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE672EE31FA4004C1EED /* TextViewListener.swift */; };
+		81A8AE6F2EE31FA4004C1EED /* EOLState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE552EE31FA4004C1EED /* EOLState.swift */; };
+		81A8AE702EE31FA4004C1EED /* NumberInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE652EE31FA4004C1EED /* NumberInputListener.swift */; };
+		81A8AE712EE31FA4004C1EED /* AffinityCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE4B2EE31FA4004C1EED /* AffinityCalculationStrategy.swift */; };
+		81A8AE722EE31FA4004C1EED /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE4E2EE31FA4004C1EED /* Compiler.swift */; };
+		81A8AE732EE31FA4004C1EED /* FreeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE572EE31FA4004C1EED /* FreeState.swift */; };
+		81A8AE742EE31FA4004C1EED /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE682EE31FA4004C1EED /* UITextInput.swift */; };
+		81A8AE752EE31FA4004C1EED /* MaskedTextInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE642EE31FA4004C1EED /* MaskedTextInputListener.swift */; };
+		81A8AE762EE31FA4004C1EED /* ValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE592EE31FA4004C1EED /* ValueState.swift */; };
+		81A8AE772EE31FA4004C1EED /* PhoneInputListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE662EE31FA4004C1EED /* PhoneInputListener.swift */; };
+		81A8AE782EE31FA4004C1EED /* MaskedTextField+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE632EE31FA4004C1EED /* MaskedTextField+Modifiers.swift */; };
+		81A8AE792EE31FA4004C1EED /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE5D2EE31FA4004C1EED /* Next.swift */; };
+		81A8AE7A2EE31FA4004C1EED /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE5F2EE31FA4004C1EED /* State.swift */; };
+		81A8AE7B2EE31FA4004C1EED /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE5C2EE31FA4004C1EED /* Country.swift */; };
+		81A8AE7C2EE31FA4004C1EED /* CaretString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE5B2EE31FA4004C1EED /* CaretString.swift */; };
+		81A8AE7D2EE31FA4004C1EED /* MaskedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE622EE31FA4004C1EED /* MaskedTextField.swift */; };
+		81A8AE7E2EE31FA4004C1EED /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE542EE31FA4004C1EED /* Mask.swift */; };
+		81A8AE7F2EE31FA4004C1EED /* RTLMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE612EE31FA4004C1EED /* RTLMask.swift */; };
+		81A8AE802EE31FA4004C1EED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE512EE31FA4004C1EED /* String.swift */; };
+		81A8AE812EE31FA4004C1EED /* OptionalValueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE582EE31FA4004C1EED /* OptionalValueState.swift */; };
+		81A8AE822EE31FA4004C1EED /* RTLCaretStringIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE502EE31FA4004C1EED /* RTLCaretStringIterator.swift */; };
+		81A8AE832EE31FA4004C1EED /* FormatSanitizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8AE4F2EE31FA4004C1EED /* FormatSanitizer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8187DD922EE31F0100A8860B /* InputMask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputMask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A8AE4B2EE31FA4004C1EED /* AffinityCalculationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffinityCalculationStrategy.swift; sourceTree = "<group>"; };
+		81A8AE4C2EE31FA4004C1EED /* CaretStringIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretStringIterator.swift; sourceTree = "<group>"; };
+		81A8AE4D2EE31FA4004C1EED /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		81A8AE4E2EE31FA4004C1EED /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		81A8AE4F2EE31FA4004C1EED /* FormatSanitizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatSanitizer.swift; sourceTree = "<group>"; };
+		81A8AE502EE31FA4004C1EED /* RTLCaretStringIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTLCaretStringIterator.swift; sourceTree = "<group>"; };
+		81A8AE512EE31FA4004C1EED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		81A8AE532EE31FA4004C1EED /* InputMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InputMask.h; path = InputMask/Source/InputMask/InputMask/Classes/InputMask.h; sourceTree = "<group>"; };
+		81A8AE542EE31FA4004C1EED /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mask.swift; path = InputMask/Source/InputMask/InputMask/Classes/Mask.swift; sourceTree = "<group>"; };
+		81A8AE552EE31FA4004C1EED /* EOLState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOLState.swift; sourceTree = "<group>"; };
+		81A8AE562EE31FA4004C1EED /* FixedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedState.swift; sourceTree = "<group>"; };
+		81A8AE572EE31FA4004C1EED /* FreeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeState.swift; sourceTree = "<group>"; };
+		81A8AE582EE31FA4004C1EED /* OptionalValueState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalValueState.swift; sourceTree = "<group>"; };
+		81A8AE592EE31FA4004C1EED /* ValueState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueState.swift; sourceTree = "<group>"; };
+		81A8AE5B2EE31FA4004C1EED /* CaretString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretString.swift; sourceTree = "<group>"; };
+		81A8AE5C2EE31FA4004C1EED /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		81A8AE5D2EE31FA4004C1EED /* Next.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
+		81A8AE5E2EE31FA4004C1EED /* Notation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notation.swift; sourceTree = "<group>"; };
+		81A8AE5F2EE31FA4004C1EED /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		81A8AE612EE31FA4004C1EED /* RTLMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RTLMask.swift; path = InputMask/Source/InputMask/InputMask/Classes/RTLMask.swift; sourceTree = "<group>"; };
+		81A8AE622EE31FA4004C1EED /* MaskedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskedTextField.swift; sourceTree = "<group>"; };
+		81A8AE632EE31FA4004C1EED /* MaskedTextField+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MaskedTextField+Modifiers.swift"; sourceTree = "<group>"; };
+		81A8AE642EE31FA4004C1EED /* MaskedTextInputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskedTextInputListener.swift; sourceTree = "<group>"; };
+		81A8AE652EE31FA4004C1EED /* NumberInputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputListener.swift; sourceTree = "<group>"; };
+		81A8AE662EE31FA4004C1EED /* PhoneInputListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputListener.swift; sourceTree = "<group>"; };
+		81A8AE672EE31FA4004C1EED /* TextViewListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewListener.swift; sourceTree = "<group>"; };
+		81A8AE682EE31FA4004C1EED /* UITextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
+		81A8AE8A2EE32FFF004C1EED /* InputMask-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InputMask-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8187DD8F2EE31F0100A8860B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8187DD892EE31F0100A8860B = {
+			isa = PBXGroup;
+			children = (
+				81A8AE522EE31FA4004C1EED /* Helper */,
+				81A8AE532EE31FA4004C1EED /* InputMask.h */,
+				81A8AE8A2EE32FFF004C1EED /* InputMask-Info.plist */,
+				81A8AE542EE31FA4004C1EED /* Mask.swift */,
+				81A8AE602EE31FA4004C1EED /* Model */,
+				81A8AE612EE31FA4004C1EED /* RTLMask.swift */,
+				81A8AE692EE31FA4004C1EED /* View */,
+				8187DD932EE31F0100A8860B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8187DD932EE31F0100A8860B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8187DD922EE31F0100A8860B /* InputMask.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81A8AE522EE31FA4004C1EED /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				81A8AE4B2EE31FA4004C1EED /* AffinityCalculationStrategy.swift */,
+				81A8AE4C2EE31FA4004C1EED /* CaretStringIterator.swift */,
+				81A8AE4D2EE31FA4004C1EED /* CharacterSet.swift */,
+				81A8AE4E2EE31FA4004C1EED /* Compiler.swift */,
+				81A8AE4F2EE31FA4004C1EED /* FormatSanitizer.swift */,
+				81A8AE502EE31FA4004C1EED /* RTLCaretStringIterator.swift */,
+				81A8AE512EE31FA4004C1EED /* String.swift */,
+			);
+			name = Helper;
+			path = InputMask/Source/InputMask/InputMask/Classes/Helper;
+			sourceTree = "<group>";
+		};
+		81A8AE5A2EE31FA4004C1EED /* State */ = {
+			isa = PBXGroup;
+			children = (
+				81A8AE552EE31FA4004C1EED /* EOLState.swift */,
+				81A8AE562EE31FA4004C1EED /* FixedState.swift */,
+				81A8AE572EE31FA4004C1EED /* FreeState.swift */,
+				81A8AE582EE31FA4004C1EED /* OptionalValueState.swift */,
+				81A8AE592EE31FA4004C1EED /* ValueState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		81A8AE602EE31FA4004C1EED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81A8AE5A2EE31FA4004C1EED /* State */,
+				81A8AE5B2EE31FA4004C1EED /* CaretString.swift */,
+				81A8AE5C2EE31FA4004C1EED /* Country.swift */,
+				81A8AE5D2EE31FA4004C1EED /* Next.swift */,
+				81A8AE5E2EE31FA4004C1EED /* Notation.swift */,
+				81A8AE5F2EE31FA4004C1EED /* State.swift */,
+			);
+			name = Model;
+			path = InputMask/Source/InputMask/InputMask/Classes/Model;
+			sourceTree = "<group>";
+		};
+		81A8AE692EE31FA4004C1EED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81A8AE622EE31FA4004C1EED /* MaskedTextField.swift */,
+				81A8AE632EE31FA4004C1EED /* MaskedTextField+Modifiers.swift */,
+				81A8AE642EE31FA4004C1EED /* MaskedTextInputListener.swift */,
+				81A8AE652EE31FA4004C1EED /* NumberInputListener.swift */,
+				81A8AE662EE31FA4004C1EED /* PhoneInputListener.swift */,
+				81A8AE672EE31FA4004C1EED /* TextViewListener.swift */,
+				81A8AE682EE31FA4004C1EED /* UITextInput.swift */,
+			);
+			name = View;
+			path = InputMask/Source/InputMask/InputMask/Classes/View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8187DD912EE31F0100A8860B /* InputMask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8187DD992EE31F0100A8860B /* Build configuration list for PBXNativeTarget "InputMask" */;
+			buildPhases = (
+				8187DD8E2EE31F0100A8860B /* Sources */,
+				8187DD8F2EE31F0100A8860B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InputMask;
+			packageProductDependencies = (
+			);
+			productName = InputMask;
+			productReference = 8187DD922EE31F0100A8860B /* InputMask.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8187DD8A2EE31F0100A8860B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					8187DD912EE31F0100A8860B = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 8187DD8D2EE31F0100A8860B /* Build configuration list for PBXProject "InputMask" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8187DD892EE31F0100A8860B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8187DD932EE31F0100A8860B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8187DD912EE31F0100A8860B /* InputMask */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8187DD8E2EE31F0100A8860B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A8AE6A2EE31FA4004C1EED /* Notation.swift in Sources */,
+				81A8AE6B2EE31FA4004C1EED /* CharacterSet.swift in Sources */,
+				81A8AE6C2EE31FA4004C1EED /* FixedState.swift in Sources */,
+				81A8AE6D2EE31FA4004C1EED /* CaretStringIterator.swift in Sources */,
+				81A8AE6E2EE31FA4004C1EED /* TextViewListener.swift in Sources */,
+				81A8AE6F2EE31FA4004C1EED /* EOLState.swift in Sources */,
+				81A8AE702EE31FA4004C1EED /* NumberInputListener.swift in Sources */,
+				81A8AE712EE31FA4004C1EED /* AffinityCalculationStrategy.swift in Sources */,
+				81A8AE722EE31FA4004C1EED /* Compiler.swift in Sources */,
+				81A8AE732EE31FA4004C1EED /* FreeState.swift in Sources */,
+				81A8AE742EE31FA4004C1EED /* UITextInput.swift in Sources */,
+				81A8AE752EE31FA4004C1EED /* MaskedTextInputListener.swift in Sources */,
+				81A8AE762EE31FA4004C1EED /* ValueState.swift in Sources */,
+				81A8AE772EE31FA4004C1EED /* PhoneInputListener.swift in Sources */,
+				81A8AE782EE31FA4004C1EED /* MaskedTextField+Modifiers.swift in Sources */,
+				81A8AE792EE31FA4004C1EED /* Next.swift in Sources */,
+				81A8AE7A2EE31FA4004C1EED /* State.swift in Sources */,
+				81A8AE7B2EE31FA4004C1EED /* Country.swift in Sources */,
+				81A8AE7C2EE31FA4004C1EED /* CaretString.swift in Sources */,
+				81A8AE7D2EE31FA4004C1EED /* MaskedTextField.swift in Sources */,
+				81A8AE7E2EE31FA4004C1EED /* Mask.swift in Sources */,
+				81A8AE7F2EE31FA4004C1EED /* RTLMask.swift in Sources */,
+				81A8AE802EE31FA4004C1EED /* String.swift in Sources */,
+				81A8AE812EE31FA4004C1EED /* OptionalValueState.swift in Sources */,
+				81A8AE822EE31FA4004C1EED /* RTLCaretStringIterator.swift in Sources */,
+				81A8AE832EE31FA4004C1EED /* FormatSanitizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8187DD972EE31F0100A8860B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8187DD982EE31F0100A8860B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8187DD9A2EE31F0100A8860B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/InputMask-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.plasma.InputMask;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		8187DD9B2EE31F0100A8860B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/InputMask-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.plasma.InputMask;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8187DD8D2EE31F0100A8860B /* Build configuration list for PBXProject "InputMask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8187DD972EE31F0100A8860B /* Debug */,
+				8187DD982EE31F0100A8860B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8187DD992EE31F0100A8860B /* Build configuration list for PBXNativeTarget "InputMask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8187DD9A2EE31F0100A8860B /* Debug */,
+				8187DD9B2EE31F0100A8860B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8187DD8A2EE31F0100A8860B /* Project object */;
+}

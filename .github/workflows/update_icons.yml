@@ -30,6 +30,7 @@ jobs:
           show-progress: false
           fetch-depth: 0
           path: current
+          submodules: recursive
 
       # Checkout репозитория plasma
       - name: Checkout to Plasma Web
@@ -39,6 +40,7 @@ jobs:
           ref: ${{ github.event.client_payload.ref || github.event.inputs.plasma-ref }}
           show-progress: false
           path: plasma
+          submodules: recursive
 
       - name: Setup Node.js
         uses: actions/setup-node@v3

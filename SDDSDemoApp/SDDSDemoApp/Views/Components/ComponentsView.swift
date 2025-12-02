@@ -22,6 +22,7 @@ struct ComponentsView: View {
         ("Switch", AnyView(SwitchView())),
         ("TextArea", AnyView(TextAreaView())),
         ("TextField", AnyView(TextFieldView())),
+        ("TextField Masks", AnyView(MaskView())),
         ("Counter", AnyView(CounterView())),
         ("SegmentElement", AnyView(SegmentItemView())),
         ("Segment", AnyView(SegmentView())),
@@ -54,7 +55,8 @@ struct ComponentsView: View {
         ("Note", AnyView(NoteView())),
         ("NoteCompact", AnyView(NoteCompactView())),
         ("Tabs", AnyView(TabsView())),
-        ("TabItem", AnyView(TabItemView()))
+        ("TabItem", AnyView(TabItemView())),
+        ("Mask", AnyView(MaskView()))
     ]
 
     var body: some View {

@@ -49,6 +49,8 @@
 		8183D88F2EB2A95500610A9A /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D88E2EB2A95500610A9A /* SDDSThemeCore.xcframework */; };
 		81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81A0795E2DA6706500260DC9 /* SDDSComponents */; };
 		81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 81A079612DA6707100260DC9 /* SDDSThemeCore */; };
+		81A8E44F2EE32DC7004C1EED /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A8E44E2EE32DC7004C1EED /* InputMask.xcframework */; };
+		81A8E4502EE32DC7004C1EED /* InputMask.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81A8E44E2EE32DC7004C1EED /* InputMask.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */; };
 		D3B8C9ED2DAE587300E5FEE6 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = D3B8C9EC2DAE587300E5FEE6 /* SDSnapshots */; };
@@ -71,6 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				81A8E4502EE32DC7004C1EED /* InputMask.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +108,7 @@
 		8183D88B2EB2A93B00610A9A /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		8183D88E2EB2A95500610A9A /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
+		81A8E44E2EE32DC7004C1EED /* InputMask.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = InputMask.xcframework; path = ../build/InputMask.xcframework; sourceTree = "<group>"; };
 		81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDDSComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
 		81DE9CEA2E7BDEC0005D24FE /* ButtonGroupVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGroupVariationProvider.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */,
 				8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */,
 				81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */,
+				81A8E44F2EE32DC7004C1EED /* InputMask.xcframework in Frameworks */,
 				816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */,
 				81A0795F2DA6706500260DC9 /* SDDSComponents in Frameworks */,
 				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
@@ -301,6 +306,7 @@
 		24D212DF2BB45A4B005B717B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81A8E44E2EE32DC7004C1EED /* InputMask.xcframework */,
 				8183D88E2EB2A95500610A9A /* SDDSThemeCore.xcframework */,
 				8183D88B2EB2A93B00610A9A /* SDDSIcons.xcframework */,
 				8183D87B2EB2A92800610A9A /* PlasmaB2CTheme.xcframework */,
@@ -757,7 +763,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -798,7 +804,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vkaltyrin.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

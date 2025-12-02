@@ -57,18 +57,22 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
+    public let mask: TextFieldMask?
+    public let maskDisplayMode: MaskDisplayMode
     private let _appearance: TextFieldAppearance?
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
     
     let iconContent: Action<IconContent>
     let actionContent: Action<ActionContent>
+    let onMaskComplete: ((Bool) -> Void)?
     
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.textFieldAppearance) private var environmentAppearance
     @State private var isFocused: Bool = false
     @State private var chipGroupContentHeight: CGFloat = 0
+    @State private var isMaskComplete: Bool = false
     private let debugConfiguration: TextFieldDebugConfiguration
     
     public init(
@@ -83,11 +87,14 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         readOnly: Bool = false,
         required: Bool = false,
         divider: Bool = true,
+        mask: TextFieldMask? = nil,
+        maskDisplayMode: MaskDisplayMode = .onInput,
         appearance: TextFieldAppearance? = nil,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconContent: Action<IconContent> = Action { EmptyView() },
-        actionContent: Action<ActionContent> = Action { EmptyView() }
+        actionContent: Action<ActionContent> = Action { EmptyView() },
+        onMaskComplete: ((Bool) -> Void)? = nil
     ) {
         switch value.wrappedValue {
         case .single(let text):
@@ -103,15 +110,18 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         self.disabled = disabled
         self.readOnly = readOnly
         self.divider = divider
+        self.mask = mask
+        self.maskDisplayMode = maskDisplayMode
         self.title = title
         self.optionalTitle = optionalTitle
-        self.placeholder = placeholder
+        self.placeholder = placeholder.isEmpty && mask != nil ? mask!.placeholder : placeholder
         self._appearance = appearance
         self.layout = layout
         self.accessibility = accessibility
         self.debugConfiguration = TextFieldDebugConfiguration()
         self.iconContent = iconContent
         self.actionContent = actionContent
+        self.onMaskComplete = onMaskComplete
     }
 
     public var body: some View {
@@ -286,6 +296,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                                     cursorColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                                     textTypography: textTypography,
                                     readOnly: readOnly,
+                                    mask: mask,
+                                    maskDisplayMode: maskDisplayMode,
                                     placeholderBeforeContent: {
                                         EmptyView()
                                     },
@@ -297,6 +309,10 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                                     },
                                     onEditingChanged: { focused in
                                         isFocused = focused
+                                    },
+                                    onMaskComplete: { complete in
+                                        isMaskComplete = complete
+                                        onMaskComplete?(complete)
                                     },
                                     textFieldConfiguration: { textField in
                                         textFieldConfiguration(textField: textField)
@@ -334,11 +350,17 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 cursorColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                 textTypography: textTypography,
                 readOnly: readOnly,
+                mask: mask,
+                maskDisplayMode: maskDisplayMode,
                 placeholderBeforeContent: {},
                 placeholderContent: { placeholderView },
                 placeholderAfterContent: { EmptyView() },
                 onEditingChanged: { focused in
                     isFocused = focused
+                },
+                onMaskComplete: { complete in
+                    isMaskComplete = complete
+                    onMaskComplete?(complete)
                 },
                 textFieldConfiguration: { textField in
                     textFieldConfiguration(textField: textField)
@@ -367,6 +389,11 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 guard !readOnly else {
                     return
                 }
+                // Когда маска используется, текст управляется MaskedTextInputListener
+                // и не должен обновляться из value, чтобы избежать циклов
+                guard mask == nil else {
+                    return
+                }
                 DispatchQueue.main.async {
                     self.text = newValue.text
                 }
@@ -375,9 +402,11 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     
     @ViewBuilder
     private var placeholderView: some View {
+        let displayText = maskPlaceholderText
+        
         if appearance.labelPlacement == .inner && !displayChips {
             if isFocused {
-                Text(placeholder)
+                Text(displayText)
                     .typography(textTypography)
                     .foregroundColor(placeholderColor)
             } else {
@@ -387,7 +416,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                             .typography(textTypography)
                             .foregroundColor(placeholderColor)
                     } else {
-                        Text(placeholder)
+                        Text(displayText)
                             .typography(textTypography)
                             .foregroundColor(placeholderColor)
                     }
@@ -398,7 +427,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
             }
         } else {
             HStack(spacing: 0) {
-                Text(placeholder)
+                Text(displayText)
                     .typography(textTypography)
                     .foregroundColor(placeholderColor)
                 if !optionalTitle.isEmpty && appearance.labelPlacement == .none {
@@ -406,6 +435,31 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 }
             }
         }
+    }
+    
+    private var maskPlaceholderText: String {
+        // В режиме .always показываем комбинацию введенного текста и placeholder
+        if maskDisplayMode == .always, let mask = mask, !text.isEmpty {
+            let maskPlaceholder = mask.placeholder
+            
+            // Если введенный текст короче или равен placeholder
+            guard text.count < maskPlaceholder.count else {
+                return text
+            }
+            
+            // Комбинируем: берем символы из text, остальное из maskPlaceholder
+            var result = Array(maskPlaceholder)
+            let textArray = Array(text)
+            
+            // Заменяем первые N символов из текста
+            for (index, char) in textArray.enumerated() where index < result.count {
+                result[index] = char
+            }
+            
+            return String(result)
+        }
+        
+        return placeholder
     }
     
     @ViewBuilder
@@ -653,7 +707,17 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     // MARK: - Computed Properties for Conditions
     
     private var calculatedTextSize: CGFloat {
-        let textSize = (text as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
+        // Когда маска используется, вычисляем размер на основе placeholder маски
+        // для предотвращения проблем с асинхронным обновлением
+        let displayText = (mask != nil && !text.isEmpty) ? text : text
+        let placeholderText = mask?.placeholder ?? ""
+        
+        // Используем максимум между текущим текстом и placeholder маски
+        let textToMeasure = (mask != nil && displayText.count < placeholderText.count) 
+            ? placeholderText 
+            : displayText
+        
+        let textSize = (textToMeasure as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
         return max(ceil(textSize.width), 1.0)
     }
     
