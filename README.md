@@ -2,6 +2,13 @@
 
 Проект объединяет в себе набор решений по адаптации дизайн-системы SDDS для приложений iOS.
 
+## Third-Party Dependencies
+
+This project includes code from the following third-party libraries:
+- [InputMask](https://github.com/RedMadRobot/input-mask-ios) by RedMadRobot - MIT License
+
+See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for complete license texts.
+
 ## Cборка проекта
 
 Для сборки проекта необходимо запустить ruby script:

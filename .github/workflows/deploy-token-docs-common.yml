@@ -34,6 +34,7 @@ jobs:
         with:
           ref: ${{ inputs.ref }}
           fetch-depth: 0
+          submodules: recursive
 
       - name: Build Changelog
         id: build-changelog
@@ -98,6 +99,7 @@ jobs:
         with:
           # Приоритет у тега (ref), если он указан, иначе используем branch
           ref: ${{ inputs.ref || inputs.branch }}
+          submodules: recursive
 
       - name: Create release-changelog.md
         if: steps.check_module.outputs.should_deploy == 'true'

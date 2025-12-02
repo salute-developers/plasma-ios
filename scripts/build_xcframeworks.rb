@@ -7,6 +7,18 @@ require_relative 'common' # Подключаем общий файл
 def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, static_modules = [])
   print_info "Корневая директория проекта: #{project_root_dir}"
 
+  # Step 0: Build InputMask
+  print_info "Step 0: Building InputMask..."
+  inputmask_script = File.join(__dir__, 'build_inputmask.rb')
+  if File.exist?(inputmask_script)
+    system("ruby \"#{inputmask_script}\" -d \"#{project_root_dir}\"")
+    if $?.exitstatus != 0
+      print_warning "InputMask build failed, continuing with other modules..."
+    end
+  else
+    print_warning "InputMask build script not found, skipping..."
+  end
+
   if workspace_name
     workspace_path = File.join(project_root_dir, workspace_name)
     print_info "Путь к XCWorkspace: #{workspace_path}"

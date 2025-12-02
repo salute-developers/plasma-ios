@@ -36,6 +36,7 @@ jobs:
         with:
           show-progress: false
           fetch-depth: 0
+          submodules: recursive
 
       - name: Computed envs
         run: |

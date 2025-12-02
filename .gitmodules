@@ -1,0 +1,3 @@
+[submodule "Vendor/InputMask"]
+	path = Vendor/InputMask
+	url = https://github.com/RedMadRobot/input-mask-ios.git

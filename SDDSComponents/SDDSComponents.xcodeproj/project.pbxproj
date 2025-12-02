@@ -194,6 +194,13 @@
 		815D36912DE5BAA70005273B /* SDDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D368D2DE5BAA70005273B /* SDDSTooltip.swift */; };
 		815D36922DE5BAA70005273B /* View+Tooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D368E2DE5BAA70005273B /* View+Tooltip.swift */; };
 		815D36932DE5BAA70005273B /* TooltipAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D368A2DE5BAA70005273B /* TooltipAppearance.swift */; };
+		815E42BC2EE8640C001EA7C8 /* TimeMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42BA2EE8640C001EA7C8 /* TimeMask.swift */; };
+		815E42BD2EE8640C001EA7C8 /* TextFieldMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42B92EE8640C001EA7C8 /* TextFieldMask.swift */; };
+		815E42BE2EE8640C001EA7C8 /* PhoneMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42B82EE8640C001EA7C8 /* PhoneMask.swift */; };
+		815E42BF2EE8640C001EA7C8 /* MaskDisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42B62EE8640C001EA7C8 /* MaskDisplayMode.swift */; };
+		815E42C02EE8640C001EA7C8 /* DateMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42B52EE8640C001EA7C8 /* DateMask.swift */; };
+		815E42C12EE8640C001EA7C8 /* NumberMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E42B72EE8640C001EA7C8 /* NumberMask.swift */; };
+		815E42C32EE86424001EA7C8 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815E42C22EE86424001EA7C8 /* InputMask.xcframework */; };
 		816243412CB81A4300506E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816243402CB81A4300506E1C /* Assets.xcassets */; };
 		816328C52E1FAFF000110F27 /* View+DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816328C42E1FAFEC00110F27 /* View+DropdownMenu.swift */; };
 		81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81685C242CFF881300278446 /* SwitchAppearance.swift */; };
@@ -644,6 +651,13 @@
 		815D368B2DE5BAA70005273B /* TooltipSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSizeConfiguration.swift; sourceTree = "<group>"; };
 		815D368D2DE5BAA70005273B /* SDDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTooltip.swift; sourceTree = "<group>"; };
 		815D368E2DE5BAA70005273B /* View+Tooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Tooltip.swift"; sourceTree = "<group>"; };
+		815E42B52EE8640C001EA7C8 /* DateMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMask.swift; sourceTree = "<group>"; };
+		815E42B62EE8640C001EA7C8 /* MaskDisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskDisplayMode.swift; sourceTree = "<group>"; };
+		815E42B72EE8640C001EA7C8 /* NumberMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberMask.swift; sourceTree = "<group>"; };
+		815E42B82EE8640C001EA7C8 /* PhoneMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMask.swift; sourceTree = "<group>"; };
+		815E42B92EE8640C001EA7C8 /* TextFieldMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldMask.swift; sourceTree = "<group>"; };
+		815E42BA2EE8640C001EA7C8 /* TimeMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMask.swift; sourceTree = "<group>"; };
+		815E42C22EE86424001EA7C8 /* InputMask.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = InputMask.xcframework; path = ../build/InputMask.xcframework; sourceTree = "<group>"; };
 		816243402CB81A4300506E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		816328C42E1FAFEC00110F27 /* View+DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DropdownMenu.swift"; sourceTree = "<group>"; };
 		81685C222CFF87CA00278446 /* AppearanceVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceVariation.swift; sourceTree = "<group>"; };
@@ -1280,6 +1294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815E42C32EE86424001EA7C8 /* InputMask.xcframework in Frameworks */,
 				81E957B32ED7897F00229705 /* SDDSThemeCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1959,6 +1974,19 @@
 			path = SDDSTooltip;
 			sourceTree = "<group>";
 		};
+		815E42BB2EE8640C001EA7C8 /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				815E42B52EE8640C001EA7C8 /* DateMask.swift */,
+				815E42B62EE8640C001EA7C8 /* MaskDisplayMode.swift */,
+				815E42B72EE8640C001EA7C8 /* NumberMask.swift */,
+				815E42B82EE8640C001EA7C8 /* PhoneMask.swift */,
+				815E42B92EE8640C001EA7C8 /* TextFieldMask.swift */,
+				815E42BA2EE8640C001EA7C8 /* TimeMask.swift */,
+			);
+			path = Mask;
+			sourceTree = "<group>";
+		};
 		81685C212CFF87AD00278446 /* SwitchAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -2498,6 +2526,7 @@
 		81998FD32C3436E1009074B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				815E42C22EE86424001EA7C8 /* InputMask.xcframework */,
 				81E9579A2ED7897200229705 /* SDDSThemeBuilder */,
 				81E931DB2ED786B500229705 /* build */,
 				8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */,
@@ -4068,6 +4097,7 @@
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				815E42BB2EE8640C001EA7C8 /* Mask */,
 				812DB74D2D57B44100D3F4A3 /* TextField.swift */,
 				812DB7442D57B44100D3F4A3 /* TextFieldAppearance */,
 				812DB74E2D57B44100D3F4A3 /* TextFieldClear.swift */,
@@ -4692,6 +4722,12 @@
 				6925101F2D7632CA00545542 /* BadgeSizeConfiguration+Extensions.swift in Sources */,
 				692510202D7632CA00545542 /* BadgeStyle.swift in Sources */,
 				813474492EC70A8200D40423 /* TabsEnvironment.swift in Sources */,
+				815E42BC2EE8640C001EA7C8 /* TimeMask.swift in Sources */,
+				815E42BD2EE8640C001EA7C8 /* TextFieldMask.swift in Sources */,
+				815E42BE2EE8640C001EA7C8 /* PhoneMask.swift in Sources */,
+				815E42BF2EE8640C001EA7C8 /* MaskDisplayMode.swift in Sources */,
+				815E42C02EE8640C001EA7C8 /* DateMask.swift in Sources */,
+				815E42C12EE8640C001EA7C8 /* NumberMask.swift in Sources */,
 				813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */,
 				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
 				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,

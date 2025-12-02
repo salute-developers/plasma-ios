@@ -23,6 +23,7 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
+          submodules: recursive
 
       - name: Retrieve tag exists flag
         uses: mukunku/tag-exists-action@v1.0.0
