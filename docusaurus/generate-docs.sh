@@ -149,21 +149,30 @@ if [[ "$WITH_CHANGELOG" == true ]]; then
     echo ""
     echo "📝 Генерация changelog..."
     
-    # Проверяем наличие файла release-changelog.json
-    if [[ -f "../release-changelog.json" ]]; then
-        echo "  Найден файл release-changelog.json"
+    # Проверяем наличие файла release-changelog.md
+    if [[ -f "../release-changelog.md" ]]; then
+        echo "  ✅ Найден файл release-changelog.md"
+        echo "  🔍 Размер файла: $(wc -c < ../release-changelog.md) байт"
+        echo "  🔍 Содержимое release-changelog.md (первые 500 строк):"
+        head -500 "../release-changelog.md" || echo "Файл пуст или нечитаем"
+        echo ""
         
         # Генерируем changelog для данной библиотеки
-        echo "  Генерация changelog для $CLEAN_ARTIFACT_ID..."
-        ../scripts/parse-changelog.sh "$CLEAN_ARTIFACT_ID" "../release-changelog.json" "$destination_dir/docs/CHANGELOG.md"
+        echo "  🔄 Парсинг changelog для $CLEAN_ARTIFACT_ID..."
+        echo "  📄 Файл changelog: ../release-changelog.md"
+        
+        # Используем parse-changelog.js напрямую (ожидает markdown)
+        node ../scripts/parse-changelog.js "$CLEAN_ARTIFACT_ID" "../release-changelog.md" "$destination_dir/docs/CHANGELOG.md" "sdds-uikit"
         
         if [[ -f "$destination_dir/docs/CHANGELOG.md" ]]; then
-            echo "✅ Changelog сгенерирован: $destination_dir/docs/CHANGELOG.md"
+            echo "  ✅ Changelog сгенерирован: $destination_dir/docs/CHANGELOG.md"
+            echo "  🔍 Содержимое сгенерированного changelog:"
+            cat "$destination_dir/docs/CHANGELOG.md"
         else
-            echo "⚠️  Changelog не был сгенерирован"
+            echo "  ⚠️  Changelog не был сгенерирован"
         fi
     else
-        echo "⚠️  Файл release-changelog.json не найден, пропускаем генерацию changelog"
+        echo "  ⚠️  Файл release-changelog.md не найден, пропускаем генерацию changelog"
     fi
 fi
 

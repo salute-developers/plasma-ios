@@ -28,16 +28,44 @@ runs:
     - name: Compute envs
       shell: bash
       run: |
-        if [ -z "${{ inputs.fromTag }}" ]; then
-          FROM_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '2p')
-        else
-          FROM_TAG="${{ inputs.fromTag }}"
-        fi
-
+        # Сначала определяем TO_TAG
         if [ -z "${{ inputs.toTag }}" ]; then
-          TO_TAG=$(git tag --sort=-creatordate | grep '^release-' | sed -n '1p')
+          # Сортируем теги по дате коммита (к которому привязан тег), а не по дате создания тега
+          TO_TAG=$(git tag --sort=-committerdate | grep '^release-' | sed -n '1p')
         else
           TO_TAG="${{ inputs.toTag }}"
+        fi
+
+        # Затем определяем FROM_TAG
+        if [ -z "${{ inputs.fromTag }}" ]; then
+          # Если toTag задан, находим предыдущий тег относительно него
+          if [ -n "$TO_TAG" ]; then
+            # Получаем дату коммита для TO_TAG
+            TO_TAG_DATE=$(git log -1 --format=%ct "$TO_TAG" 2>/dev/null || echo "0")
+            echo "🔍 DEBUG: TO_TAG=$TO_TAG, TO_TAG_DATE=$TO_TAG_DATE"
+            
+            # Находим все теги release-* с датой коммита РАНЬШЕ, чем TO_TAG
+            # Сортируем по дате коммита (от новых к старым) и берем первый (самый близкий к TO_TAG)
+            FROM_TAG=$(git tag -l "release-*" | while read tag; do
+              TAG_DATE=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo "0")
+              if [ "$TAG_DATE" -lt "$TO_TAG_DATE" ] && [ "$TAG_DATE" -gt 0 ] && [ "$tag" != "$TO_TAG" ]; then
+                echo "$TAG_DATE $tag"
+              fi
+            done | sort -rn | head -1 | awk '{print $2}')
+            
+            echo "🔍 DEBUG: Найден FROM_TAG=$FROM_TAG"
+            
+            # Если не нашли предыдущий тег (TO_TAG первый в списке), используем первый коммит
+            if [ -z "$FROM_TAG" ] || [ "$FROM_TAG" = "$TO_TAG" ]; then
+              FROM_TAG=$(git rev-list --max-parents=0 HEAD | head -1)
+              echo "⚠️  Предыдущий тег не найден, используем первый коммит: $FROM_TAG"
+            fi
+          else
+            # Если toTag не задан, берем второй тег из списка
+            FROM_TAG=$(git tag --sort=-committerdate | grep '^release-' | sed -n '2p')
+          fi
+        else
+          FROM_TAG="${{ inputs.fromTag }}"
         fi
 
         echo "FROM_TAG=$FROM_TAG" >> $GITHUB_ENV

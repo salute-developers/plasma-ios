@@ -9,6 +9,9 @@
 
 set -e
 
+# Определяем директорию скрипта
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Параметры по умолчанию для S3
 S3_ACCESS_KEY_ID=""
 S3_SECRET_ACCESS_KEY=""
@@ -47,6 +50,19 @@ for arg in "$@"; do
     esac
 done
 
+# Функция для инкрементации minor версии (0.19.0 -> 0.20.0)
+increment_minor_version() {
+    local version="$1"
+    if [[ "$version" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+        local major="${BASH_REMATCH[1]}"
+        local minor="${BASH_REMATCH[2]}"
+        minor=$((minor + 1))
+        echo "${major}.${minor}.0"
+    else
+        echo "$version"
+    fi
+}
+
 # Функция для получения версии
 get_version() {
     local artifact_id="$1"
@@ -58,8 +74,6 @@ get_version() {
         return
     fi
     
-    # Если version_input является тегом (например, release-30-10-2025), 
-    # извлекаем версию из Xcode проекта темы на момент этого тега
     # Убираем :tokens: префикс из artifact_id
     local clean_artifact_id="${artifact_id#:tokens:}"
     
@@ -87,22 +101,57 @@ get_version() {
     if [[ -n "$theme_dir_name" ]]; then
         local theme_dir="../Themes/$theme_dir_name"
         if [[ -d "$theme_dir" ]]; then
+            # Сначала пытаемся получить последнюю версию из versionsArchived.json
+            local versions_file="$theme_dir/override-docs/versionsArchived.json"
+            if [[ -f "$versions_file" ]] && command -v jq &> /dev/null; then
+                # Получаем все версии и находим максимальную (правильная сортировка версий)
+                # Используем сортировку версий через sort -V (version sort)
+                local last_version=$(jq -r 'keys[]' "$versions_file" 2>/dev/null | sort -V | tail -1)
+                if [[ -n "$last_version" ]] && [[ "$last_version" != "null" ]] && [[ "$last_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                    # Инкрементируем minor версию (0.19.0 -> 0.20.0)
+                    local new_version=$(increment_minor_version "$last_version")
+                    echo "🔍 DEBUG: Найдена последняя версия в versionsArchived.json: $last_version, инкрементирую до: $new_version" >&2
+                    echo "$new_version"
+                    return
+                else
+                    echo "⚠️  DEBUG: Не удалось получить версию из versionsArchived.json или формат неверный" >&2
+                fi
+            else
+                echo "🔍 DEBUG: Файл versionsArchived.json не найден или jq не установлен, пробую Xcode проект" >&2
+            fi
+            
+            # Fallback: извлекаем версию из Xcode проекта темы на момент тега
             # Ищем .xcodeproj файл в найденной директории темы
             local xcodeproj_file=$(find "$theme_dir" -name "*.xcodeproj" -type d | head -1)
             if [[ -n "$xcodeproj_file" ]]; then
                 local project_file="$xcodeproj_file/project.pbxproj"
-                if [[ -f "$project_file" ]]; then
-                    echo "🔍 DEBUG: Ищу версию в файле: $project_file" >&2
-                    local marketing_version=$(grep -o 'MARKETING_VERSION = [0-9]\+\.[0-9]\+\.[0-9]\+' "$project_file" | head -1 | sed 's/MARKETING_VERSION = //')
+                
+                # Если version_input является тегом, пытаемся получить файл из тега через git show
+                local project_content=""
+                if [[ "$version_input" =~ ^release- ]] && git rev-parse --verify "$version_input" >/dev/null 2>&1; then
+                    # Получаем файл из тега через git show
+                    local relative_project_file="${project_file#../}"
+                    echo "🔍 DEBUG: Получаю версию из тега $version_input, файл: $relative_project_file" >&2
+                    project_content=$(git show "$version_input:$relative_project_file" 2>/dev/null || echo "")
+                fi
+                
+                # Если не получилось из тега или файл существует локально, читаем локальный файл
+                if [[ -z "$project_content" ]] && [[ -f "$project_file" ]]; then
+                    echo "🔍 DEBUG: Читаю версию из локального файла: $project_file" >&2
+                    project_content=$(cat "$project_file" 2>/dev/null || echo "")
+                fi
+                
+                if [[ -n "$project_content" ]]; then
+                    local marketing_version=$(echo "$project_content" | grep -o 'MARKETING_VERSION = [0-9]\+\.[0-9]\+\.[0-9]\+' | head -1 | sed 's/MARKETING_VERSION = //')
                     if [[ -n "$marketing_version" ]]; then
                         echo "🔍 DEBUG: Найдена версия в Xcode проекте: $marketing_version" >&2
                         echo "$marketing_version"
                         return
                     else
-                        echo "⚠️  DEBUG: Версия не найдена в файле $project_file" >&2
+                        echo "⚠️  DEBUG: Версия не найдена в содержимом проекта" >&2
                     fi
                 else
-                    echo "⚠️  DEBUG: Файл проекта не найден: $project_file" >&2
+                    echo "⚠️  DEBUG: Не удалось получить содержимое файла проекта" >&2
                 fi
             else
                 echo "⚠️  DEBUG: .xcodeproj файл не найден в $theme_dir" >&2
@@ -222,12 +271,12 @@ echo ""
 # Генерируем документацию
 echo "🔧 Генерация документации..."
 
-# Проверяем наличие release-changelog.json для автоматической генерации changelog
-if [[ -f "../release-changelog.json" ]]; then
-    echo "✅ Найден release-changelog.json, генерирую документацию с changelog"
-    echo "🔍 Размер файла release-changelog.json: $(wc -c < ../release-changelog.json) байт"
-    echo "🔍 Первые 200 символов JSON:"
-    head -c 200 ../release-changelog.json || echo "Файл пуст или нечитаем"
+# Проверяем наличие release-changelog.md для автоматической генерации changelog
+if [[ -f "../release-changelog.md" ]]; then
+    echo "✅ Найден release-changelog.md, генерирую документацию с changelog"
+    echo "🔍 Размер файла release-changelog.md: $(wc -c < ../release-changelog.md) байт"
+    echo "🔍 Первые 500 строк markdown:"
+    head -500 ../release-changelog.md || echo "Файл пуст или нечитаем"
     echo ""
     ./generate-docs.sh "$ARTIFACT_ID" "$VERSION" "$BRANCH_NAME" "$TARGET_TYPE" "$THEME_NAME" "$CODE_REFERENCE" "$DOCS_URL" --with-changelog
     WITH_CHANGELOG=true
@@ -276,6 +325,39 @@ cd "$THEME_DIR"
 echo "🔍 DEBUG: Передаю VERSION='$VERSION' в docusaurus-bump.sh"
 ARTIFACT_ID="$ARTIFACT_ID" VERSION="$VERSION" BRANCH_NAME="$BRANCH_NAME" TARGET_TYPE="$TARGET_TYPE" DOCS_URL="$DOCS_URL" ../../docusaurus/scripts/docusaurus-bump.sh bump
 cd - > /dev/null
+
+echo ""
+
+# Работа с changelog.json (аналог Android: changelogSync, generateChangelog, changelogDeploy)
+if [[ "$DEPLOY_MODE" == "s3" ]] && [[ -n "$S3_ACCESS_KEY_ID" ]] && [[ -n "$S3_SECRET_ACCESS_KEY" ]]; then
+    echo "📋 Работа с changelog.json..."
+    
+    # 1. Синхронизация: загружаем существующий changelog.json с S3
+    if [[ -f "../release-changelog.json" ]]; then
+        echo "🔄 Синхронизация changelog.json с S3..."
+        "$SCRIPT_DIR/scripts/docusaurus-changelog-sync.sh" \
+            "$ARTIFACT_ID" \
+            "$VERSION" \
+            "$BRANCH_NAME" \
+            "$TARGET_TYPE" \
+            "$S3_ACCESS_KEY_ID" \
+            "$S3_SECRET_ACCESS_KEY" \
+            "$S3_ENDPOINT" \
+            "$S3_REGION" \
+            "$S3_BUCKET" \
+            "build" || echo "⚠️  Ошибка при синхронизации changelog.json, продолжаю..."
+        
+        # 2. Обновление: добавляем новую версию в changelog.json
+        echo "📝 Обновление changelog.json с версией $VERSION..."
+        "$SCRIPT_DIR/scripts/docusaurus-changelog-update.sh" \
+            "$ARTIFACT_ID" \
+            "$VERSION" \
+            "../release-changelog.json" \
+            "build/changelog.json" || echo "⚠️  Ошибка при обновлении changelog.json, продолжаю..."
+    else
+        echo "ℹ️  release-changelog.json не найден, пропускаю обновление changelog.json"
+    fi
+fi
 
 echo ""
 
@@ -449,6 +531,7 @@ else
         --exclude="*.log"
     
     # deploy.json уже создан выше
+    # Примечание: Деплой changelog.json выполняется отдельным шагом в workflow (как на Android)
     
     cd ../..
     echo ""
