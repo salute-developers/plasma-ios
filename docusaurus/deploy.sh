@@ -9,6 +9,9 @@
 
 set -e
 
+# Определяем директорию скрипта
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Параметры по умолчанию для S3
 S3_ACCESS_KEY_ID=""
 S3_SECRET_ACCESS_KEY=""
@@ -279,6 +282,39 @@ cd - > /dev/null
 
 echo ""
 
+# Работа с changelog.json (аналог Android: changelogSync, generateChangelog, changelogDeploy)
+if [[ "$DEPLOY_MODE" == "s3" ]] && [[ -n "$S3_ACCESS_KEY_ID" ]] && [[ -n "$S3_SECRET_ACCESS_KEY" ]]; then
+    echo "📋 Работа с changelog.json..."
+    
+    # 1. Синхронизация: загружаем существующий changelog.json с S3
+    if [[ -f "../release-changelog.json" ]]; then
+        echo "🔄 Синхронизация changelog.json с S3..."
+        "$SCRIPT_DIR/scripts/docusaurus-changelog-sync.sh" \
+            "$ARTIFACT_ID" \
+            "$VERSION" \
+            "$BRANCH_NAME" \
+            "$TARGET_TYPE" \
+            "$S3_ACCESS_KEY_ID" \
+            "$S3_SECRET_ACCESS_KEY" \
+            "$S3_ENDPOINT" \
+            "$S3_REGION" \
+            "$S3_BUCKET" \
+            "build" || echo "⚠️  Ошибка при синхронизации changelog.json, продолжаю..."
+        
+        # 2. Обновление: добавляем новую версию в changelog.json
+        echo "📝 Обновление changelog.json с версией $VERSION..."
+        "$SCRIPT_DIR/scripts/docusaurus-changelog-update.sh" \
+            "$ARTIFACT_ID" \
+            "$VERSION" \
+            "../release-changelog.json" \
+            "build/changelog.json" || echo "⚠️  Ошибка при обновлении changelog.json, продолжаю..."
+    else
+        echo "ℹ️  release-changelog.json не найден, пропускаю обновление changelog.json"
+    fi
+fi
+
+echo ""
+
 # Тестируем сборку
 echo "🔨 Тестирование сборки документации..."
 cd build/generated/docusaurus
@@ -449,6 +485,24 @@ else
         --exclude="*.log"
     
     # deploy.json уже создан выше
+    
+    # 3. Деплой changelog.json на S3 (после деплоя документации)
+    if [[ -f "build/changelog.json" ]]; then
+        echo "📤 Загружаю changelog.json на S3..."
+        "$SCRIPT_DIR/scripts/docusaurus-changelog-deploy.sh" \
+            "$ARTIFACT_ID" \
+            "$VERSION" \
+            "$BRANCH_NAME" \
+            "$TARGET_TYPE" \
+            "$S3_ACCESS_KEY_ID" \
+            "$S3_SECRET_ACCESS_KEY" \
+            "$S3_ENDPOINT" \
+            "$S3_REGION" \
+            "$S3_BUCKET" \
+            "build/changelog.json" || echo "⚠️  Ошибка при деплое changelog.json, продолжаю..."
+    else
+        echo "ℹ️  changelog.json не найден, пропускаю деплой changelog.json"
+    fi
     
     cd ../..
     echo ""
