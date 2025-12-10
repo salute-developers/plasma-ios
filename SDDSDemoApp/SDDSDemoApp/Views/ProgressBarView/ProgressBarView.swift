@@ -2,9 +2,11 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct ProgressBarView: View {
     @ObservedObject private var viewModel: ProgressBarViewModel = ProgressBarViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         List {
@@ -19,6 +21,7 @@ struct ProgressBarView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -39,6 +42,8 @@ struct ProgressBarView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("ProgressView")
     }
 }

@@ -1,9 +1,11 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct RadioboxGroupView: View {
     @ObservedObject private var viewModel: RadioboxGroupViewModel
+    @Environment(\.colorScheme) private var colorScheme
 
     init(viewModel: RadioboxGroupViewModel = RadioboxGroupViewModel()) {
         self.viewModel = viewModel
@@ -18,6 +20,7 @@ struct RadioboxGroupView: View {
                     appearance: viewModel.appearance
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section(header: Text("Configuration")) {
                 VariationsView(viewModel: viewModel)
@@ -49,6 +52,8 @@ struct RadioboxGroupView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("RadioboxGroup")
     }
 }

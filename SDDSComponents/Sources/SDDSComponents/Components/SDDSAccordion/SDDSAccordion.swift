@@ -83,6 +83,7 @@ import SDDSThemeCore
 public struct SDDSAccordion: View {
     @Environment(\.accordionAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: AccordionAppearance?
     private let items: [AccordionData]
     private let showDividers: Bool

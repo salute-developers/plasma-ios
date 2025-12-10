@@ -56,7 +56,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
     @Environment(\.tabItemAppearance) private var environmentAppearance
     @Environment(\.tabsAppearance) private var tabsEnvironmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: TabItemAppearance?
     private let label: String
     private let value: String?
@@ -186,7 +186,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             
             if isSelected {
                 Rectangle()
-                    .fill(indicatorColor.color(for: colorScheme))
+                    .fill(indicatorColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(height: indicatorThickness)
             }
         }
@@ -197,7 +197,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             // Selection Indicator (Left)
             if isSelected {
                 Rectangle()
-                    .fill(indicatorColor.color(for: colorScheme))
+                    .fill(indicatorColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: indicatorThickness)
             }
             
@@ -295,20 +295,20 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
     
     private func contentColor(for buttonColor: ButtonColor) -> Color {
         if isDisabled {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         } else if isSelected {
-            return buttonColor.selectedColor.color(for: colorScheme)
+            return buttonColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
     
     private func actionContentColor(for buttonColor: ButtonColor) -> Color {
         // actionColor не меняется в selected состоянии
         if isDisabled {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
     

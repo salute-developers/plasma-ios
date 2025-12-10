@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct TooltipView: View {
@@ -15,6 +16,7 @@ struct TooltipView: View {
             }
             .frame(height: 300)
             .background(Color(.white))
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
             .onTapGesture {
                 isTooltipPresented = false
@@ -33,6 +35,8 @@ struct TooltipView: View {
                 placementModeSelectionView
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Tooltip")
     }
     
@@ -76,6 +80,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.top, containerPadding)
@@ -101,6 +106,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.top, containerPadding)
@@ -126,6 +132,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.top, containerPadding)
@@ -148,6 +155,7 @@ struct TooltipView: View {
                     triggerCentered: viewModel.triggerCentered,
                     placementMode: viewModel.placementMode,
                     duration: duration,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                     contentStart: { tooltipContent }
                 )
                 Spacer()
@@ -169,6 +177,7 @@ struct TooltipView: View {
                     triggerCentered: viewModel.triggerCentered,
                     placementMode: viewModel.placementMode,
                     duration: duration,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                     contentStart: { tooltipContent }
                 )
                 Spacer()
@@ -190,6 +199,7 @@ struct TooltipView: View {
                     triggerCentered: viewModel.triggerCentered,
                     placementMode: viewModel.placementMode,
                     duration: duration,
+                    subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                     contentStart: { tooltipContent }
                 )
             }
@@ -211,6 +221,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.bottom, containerPadding)
@@ -236,6 +247,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.bottom, containerPadding)
@@ -261,6 +273,7 @@ struct TooltipView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         contentStart: { tooltipContent }
                     )
                     .padding(.bottom, containerPadding)

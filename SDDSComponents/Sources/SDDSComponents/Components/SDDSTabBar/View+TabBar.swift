@@ -6,11 +6,13 @@ public extension View {
     ///   - items: Массив TabBarItemData для отображения
     ///   - selectedIndex: Binding к текущему выбранному индексу таба
     ///   - appearance: TabBarAppearance для стилизации
+    ///   - subtheme: SubthemeData для применения субтемы
     /// - Returns: View с TabBar, расположенным внизу
     func tabBar(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
-        appearance: TabBarAppearance
+        appearance: TabBarAppearance,
+        subtheme: SubthemeData = SubthemeData()
     ) -> some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
@@ -23,6 +25,7 @@ public extension View {
                         appearance: appearance
                     )
                     .environment(\.safeAreaInsets, geometry.safeAreaInsets)
+                    .environment(\.subtheme, subtheme)
                 }
             }
             .ignoresSafeArea(edges: .bottom)

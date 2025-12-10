@@ -3,9 +3,11 @@ import SDDSServTheme
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct CheckboxView: View {
     @ObservedObject private var viewModel: CheckboxViewModel = CheckboxViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         List {
@@ -22,6 +24,7 @@ struct CheckboxView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -58,6 +61,8 @@ struct CheckboxView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Checkbox")
     }
 }

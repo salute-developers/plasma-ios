@@ -26,6 +26,7 @@ struct CardView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .background(Color(.systemGroupedBackground))
             .listRowInsets(.init())
             
@@ -35,6 +36,8 @@ struct CardView: View {
                 orientation
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Card")
     }
     

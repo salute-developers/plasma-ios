@@ -2,10 +2,12 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct SwitchView: View {
     @ObservedObject private var viewModel: SwitchViewModel = SwitchViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         List {
@@ -24,6 +26,7 @@ struct SwitchView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)
@@ -50,6 +53,8 @@ struct SwitchView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Switch")
     }
 }

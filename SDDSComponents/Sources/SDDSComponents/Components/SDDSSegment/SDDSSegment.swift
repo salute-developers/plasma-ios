@@ -80,7 +80,8 @@ public struct SDDSSegment: View {
     public let stretch: Bool
     public let hasBackground: Bool
     
-    @Environment(\.colorScheme) private var colorScheme: ColorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.segmentAppearance) private var environmentAppearance
     
     @Binding public var selectedItemId: UUID?
@@ -189,11 +190,11 @@ public struct SDDSSegment: View {
     
     private func currentColor(for counterColor: ButtonColor) -> Color {
         if isHighlighted {
-            return counterColor.highlightedColor.color(for: colorScheme)
+            return counterColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
         } else if isHovered {
-            return counterColor.hoveredColor.color(for: colorScheme)
+            return counterColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return counterColor.defaultColor.color(for: colorScheme)
+            return counterColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
     

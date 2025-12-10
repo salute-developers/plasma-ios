@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSIcons
 
 struct LoaderView: View {
@@ -22,6 +23,7 @@ struct LoaderView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
                         
             Section {
                 HStack {
@@ -53,6 +55,8 @@ struct LoaderView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Loader")
     }
     

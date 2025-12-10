@@ -18,6 +18,7 @@ public struct TabBarContent: View {
     private let tabBarItemAppearance: TabBarItemAppearance
     @State private var selectedItemSize: CGSize = .zero
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @State private var itemSizes: [Int: CGSize] = [:]
     @State private var containerWidth: CGFloat = 0
     @State private var selectedItemOffset: CGFloat = 0
@@ -86,7 +87,7 @@ public struct TabBarContent: View {
     
     @ViewBuilder private var selectedContent: some View {
         if currentSelectedIndex < items.count, let appearance = items[currentSelectedIndex].appearance, items[currentSelectedIndex].allowSelection {
-            appearance.backgroundColor.selectedColor.color(for: colorScheme)
+            appearance.backgroundColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
                 .frame(width: itemSizes[currentSelectedIndex]?.width ?? 0, height: itemSizes[currentSelectedIndex]?.height ?? 0)
                 .shape(pathDrawer: appearance.size.shape)
                 .offset(x: selectedItemOffset)

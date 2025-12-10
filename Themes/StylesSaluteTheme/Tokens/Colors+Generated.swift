@@ -4,7 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public enum Colors {
+public enum Colors: String {
     case backgroundDarkPrimary
     case backgroundDarkSecondary
     case backgroundDarkTertiary
@@ -4269,5 +4269,15 @@ public enum Colors {
         case .textOnLightWarningMinorHover:
             return .textOnLightWarningMinorHover
         }
+    }
+}
+
+public extension ColorToken {
+    func token(for subtheme: Subtheme) -> ColorToken {
+        let identifier = self.tokenIdentifier(for: subtheme)
+        guard let color = Colors(rawValue: identifier) else {
+            return self
+        }
+        return color.token
     }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct PopoverView: View {
@@ -15,6 +16,7 @@ struct PopoverView: View {
             }
             .frame(height: 300)
             .background(Color(.white))
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
             .onTapGesture {
                 isPopoverPresented = false
@@ -31,6 +33,8 @@ struct PopoverView: View {
                 placementModeSelectionView
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Popover")
     }
     
@@ -49,7 +53,7 @@ struct PopoverView: View {
             }
             HStack {
                 Spacer()
-                BasicButton(title: "Close", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Close", subtitle: "", appearance: BasicButton.m.default.appearance) {
                     isPopoverPresented = false
                 }
                 Spacer()
@@ -76,6 +80,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.top, containerPadding)
@@ -99,6 +104,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.top, containerPadding)
@@ -122,6 +128,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.top, containerPadding)
@@ -199,6 +206,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.bottom, containerPadding)
@@ -222,6 +230,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.bottom, containerPadding)
@@ -245,6 +254,7 @@ struct PopoverView: View {
                         triggerCentered: viewModel.triggerCentered,
                         placementMode: viewModel.placementMode,
                         duration: duration,
+                        subtheme: viewModel.theme.subtheme(viewModel.subtheme),
                         content: { popoverContent }
                     )
                     .padding(.bottom, containerPadding)

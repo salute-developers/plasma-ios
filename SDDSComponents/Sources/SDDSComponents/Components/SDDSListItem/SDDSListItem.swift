@@ -71,6 +71,7 @@ import SDDSThemeCore
 public struct SDDSListItem<RightContent: View>: View {
     @Environment(\.listItemAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: ListItemAppearance?
     private let title: String
     private let rightContent: RightContent
@@ -100,12 +101,12 @@ public struct SDDSListItem<RightContent: View>: View {
         Group {
             HStack(spacing: 0) {
                 Text(title)
-                    .foregroundStyle(appearance.titleColor.color(for: colorScheme))
+                    .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                     .typography(titleTypography)
                 Spacer()
                 if rightContentEnabled {
                     disclosure
-                        .tint(appearance.disclosureIconColor.color(for: colorScheme))
+                        .tint(appearance.disclosureIconColor.color(for: colorScheme, subtheme: subtheme))
                         .padding(.leading, appearance.size.contentPaddingEnd)
                 }
             }
@@ -153,9 +154,9 @@ public struct SDDSListItem<RightContent: View>: View {
     
     private func currentColor(for buttonColor: ButtonColor) -> Color {
         if isHovered {
-            return buttonColor.hoveredColor.color(for: colorScheme)
+            return buttonColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
         } else {
-            return buttonColor.defaultColor.color(for: colorScheme)
+            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
         }
     }
 }

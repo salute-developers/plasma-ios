@@ -5,6 +5,7 @@ import SDDSServTheme
 
 struct ChipView: View {
     @ObservedObject private var viewModel: ChipViewModel = ChipViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -21,6 +22,7 @@ struct ChipView: View {
                 }
                 .scrollIndicators(.hidden)
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -34,6 +36,8 @@ struct ChipView: View {
                 Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Chip")
         .onChange(of: viewModel.iconImageEnabled) { iconImageEnabled in
             if iconImageEnabled {

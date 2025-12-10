@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init(viewModel: CellViewModel = CellViewModel()) {
         self.viewModel = viewModel
@@ -15,6 +17,7 @@ struct CellView: View {
             Section {
                 cell
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section(header: Text("Cell")) {
                 variations
                 contentLeft
@@ -25,11 +28,13 @@ struct CellView: View {
                 alignment
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
     }
     
     private var cell: some View {
         SDDSCell(
-            appearance: viewModel.appearance,
+            appearance: Cell.m.appearance,
             alignment: viewModel.alignment,
             label: viewModel.label,
             title: viewModel.title,

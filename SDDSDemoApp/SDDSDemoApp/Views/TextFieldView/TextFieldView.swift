@@ -1,11 +1,12 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-
+import SDDSThemeCore
 import SDDSServTheme
 
 struct TextFieldView: View {
     @ObservedObject private var viewModel: TextFieldViewModel = TextFieldViewModel()
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         List {
@@ -44,6 +45,7 @@ struct TextFieldView: View {
                     }
                 )
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
             Section {
                 Picker("Layout", selection: $viewModel.layout) {
@@ -104,6 +106,8 @@ struct TextFieldView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("TextField")
     }
 }

@@ -15,6 +15,7 @@ public extension View {
         closePlacement: DrawerClosePlacement = .right,
         hasHeader: Bool,
         hasFooter: Bool,
+        subtheme: SubthemeData = SubthemeData(),
         onClose: (() -> Void)? = nil,
         @ViewBuilder header: @escaping () -> Header,
         @ViewBuilder content: @escaping () -> Content,
@@ -32,6 +33,7 @@ public extension View {
             closePlacement: closePlacement,
             hasHeader: hasHeader,
             hasFooter: hasFooter,
+            subtheme: subtheme,
             onClose: onClose,
             header: header,
             content: content,
@@ -51,6 +53,7 @@ public extension View {
         moveContentEnabled: Bool = false,
         peekOffset: CGFloat? = nil,
         closePlacement: DrawerClosePlacement = .right,
+        subtheme: SubthemeData = SubthemeData(),
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
@@ -65,6 +68,7 @@ public extension View {
             closePlacement: closePlacement,
             hasHeader: false,
             hasFooter: false,
+            subtheme: subtheme,
             onClose: onClose,
             header: { EmptyView() },
             content: content,
@@ -87,6 +91,7 @@ private extension View {
         closePlacement: DrawerClosePlacement,
         hasHeader: Bool,
         hasFooter: Bool,
+        subtheme: SubthemeData,
         onClose: (() -> Void)?,
         @ViewBuilder header: @escaping () -> Header,
         @ViewBuilder content: @escaping () -> Content,
@@ -109,6 +114,7 @@ private extension View {
                 explicitDrawerWidth: drawerWidth,
                 explicitDrawerHeight: drawerHeight
             )
+            .environment(\.subtheme, subtheme)
         } else {
             ZStack {
                 self
@@ -128,6 +134,7 @@ private extension View {
                         content: content,
                         footer: footer
                     )
+                    .environment(\.subtheme, subtheme)
                 }
             }
         }

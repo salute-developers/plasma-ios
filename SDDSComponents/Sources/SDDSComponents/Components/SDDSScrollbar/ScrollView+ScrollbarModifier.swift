@@ -33,7 +33,8 @@ import SDDSThemeCore
  */
 
 public extension View {
-    func scrollbar(scrollBarData: ScrollBarData, direction: SDDSScrollDirection = .vertical, isScrolling: Binding<Bool> = .constant(false)) -> some View {
+    func scrollbar(scrollBarData: ScrollBarData, direction: SDDSScrollDirection = .vertical, isScrolling: Binding<Bool> = .constant(false), subtheme: SubthemeData = SubthemeData()) -> some View {
         self.modifier(ScrollBarModifier(scrollBarData: scrollBarData, direction: direction, isScrollingToBottom: isScrolling))
+            .environment(\.subtheme, subtheme)
     }
 }

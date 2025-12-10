@@ -71,7 +71,7 @@ public enum SDDSScrollDirection {
 public struct SDDSScrollbar: View {
     @Environment(\.scrollbarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: ScrollbarAppearance?
     private let hasTrack: Bool
     private let hoverExpand: Bool
@@ -124,7 +124,7 @@ public struct SDDSScrollbar: View {
                     height: direction == .vertical ? trackHeight : currentWidth
                 )
                 .shape(pathDrawer: appearance.size.shape)
-                .foregroundColor(appearance.trackColor.color(for: colorScheme))
+                .foregroundColor(appearance.trackColor.color(for: colorScheme, subtheme: subtheme))
                 .hiddenIf(!hasTrack)
             
             Rectangle()
@@ -133,7 +133,7 @@ public struct SDDSScrollbar: View {
                     height: direction == .vertical ? max(1.0, thumbHeight) : currentWidth
                 )
                 .shape(pathDrawer: appearance.size.shape)
-                .foregroundColor(appearance.thumbColor.color(for: colorScheme))
+                .foregroundColor(appearance.thumbColor.color(for: colorScheme, subtheme: subtheme))
                 .offset(x: direction == .horizontal ? thumbOffset : 0,
                         y: direction == .vertical ? thumbOffset : 0)
                 .onLongPressGesture(

@@ -11,6 +11,7 @@ public extension ColorToken {
     
     static var {{ key }}: Self {
         Self(
+            id: Colors.{{ key }}.rawValue,
             darkColor: Color(UIColor(hex: "{{ value.dark|ensure_valid_hex|default:'' }}")),
             lightColor: Color(UIColor(hex: "{{ value.light|ensure_valid_hex|default:'' }}"))
         )

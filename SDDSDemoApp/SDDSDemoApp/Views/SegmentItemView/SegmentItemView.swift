@@ -2,10 +2,12 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 public struct SegmentItemView: View {
     @ObservedObject private var viewModel: SegmentItemViewModel = SegmentItemViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     public var body: some View {
         List {
@@ -21,6 +23,8 @@ public struct SegmentItemView: View {
                 disabled
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
     }
     
     public var segmentView: some View {
@@ -40,6 +44,7 @@ public struct SegmentItemView: View {
             )
             Spacer()
         }
+        .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
     }
 
     public var title: some View {

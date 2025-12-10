@@ -24,8 +24,13 @@ echo "📦 Шаг 2: Сборка SDDSComponents и SDDSIcons..."
 cd "$PROJECT_ROOT"
 ruby "$PROJECT_ROOT/scripts/build_xcframeworks.rb" -w SDDS.xcworkspace
 
-# Шаг 3: Сборка всех тем
-echo "📦 Шаг 3: Сборка всех тем..."
+# Шаг 3: Сборка InputMask
+echo "📦 Шаг 3: Сборка InputMask..."
+cd "$PROJECT_ROOT"
+ruby "$PROJECT_ROOT/scripts/build_inputmask.rb"
+
+# Шаг 4: Сборка всех тем
+echo "📦 Шаг 4: Сборка всех тем..."
 cd "$PROJECT_ROOT"
 ruby "$PROJECT_ROOT/scripts/build_themes.rb" --no-zip
 

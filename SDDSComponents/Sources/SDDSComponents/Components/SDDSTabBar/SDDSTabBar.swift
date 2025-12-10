@@ -48,6 +48,7 @@ import SDDSThemeCore
 public struct SDDSTabBar: View {
     @Environment(\.tabBarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     
     @State private var contentSize: CGSize = .zero
@@ -88,14 +89,14 @@ public struct SDDSTabBar: View {
                 .frame(height: safeAreaInsets.bottom)
         }
         .frame(maxWidth: .infinity)
-        .background(backgroundColor.color(for: colorScheme))
+        .background(backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .shape(pathDrawer: topPathDrawer)
         .readSize { size in
             self.contentSize = size
         }
         .background {
             Rectangle()
-                .fill(appearance.dividerColor.color(for: colorScheme))
+                .fill(appearance.dividerColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(height: appearance.size.dividerThickness + contentSize.height)
                 .shape(pathDrawer: topPathDrawer)
         }

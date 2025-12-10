@@ -7,6 +7,7 @@ import UIKit
 public extension GradientToken {
     static var outlineDefaultAccentGradient: Self {
         GradientToken(
+            id: "outlineDefaultAccentGradient",
             description: "outlineDefaultAccentGradient",
             darkGradients: [
                 .linear(
@@ -42,6 +43,7 @@ public extension GradientToken {
     }
     static var outlineDefaultAccentGradientActive: Self {
         GradientToken(
+            id: "outlineDefaultAccentGradientActive",
             description: "outlineDefaultAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -77,6 +79,7 @@ public extension GradientToken {
     }
     static var outlineDefaultAccentGradientHover: Self {
         GradientToken(
+            id: "outlineDefaultAccentGradientHover",
             description: "outlineDefaultAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -112,6 +115,7 @@ public extension GradientToken {
     }
     static var outlineDefaultAccentMinorGradient: Self {
         GradientToken(
+            id: "outlineDefaultAccentMinorGradient",
             description: "outlineDefaultAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -147,6 +151,7 @@ public extension GradientToken {
     }
     static var outlineDefaultAccentMinorGradientActive: Self {
         GradientToken(
+            id: "outlineDefaultAccentMinorGradientActive",
             description: "outlineDefaultAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -182,6 +187,7 @@ public extension GradientToken {
     }
     static var outlineDefaultAccentMinorGradientHover: Self {
         GradientToken(
+            id: "outlineDefaultAccentMinorGradientHover",
             description: "outlineDefaultAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -217,6 +223,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoGradient: Self {
         GradientToken(
+            id: "outlineDefaultPromoGradient",
             description: "outlineDefaultPromoGradient",
             darkGradients: [
                 .linear(
@@ -252,6 +259,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoGradientActive: Self {
         GradientToken(
+            id: "outlineDefaultPromoGradientActive",
             description: "outlineDefaultPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -287,6 +295,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoGradientHover: Self {
         GradientToken(
+            id: "outlineDefaultPromoGradientHover",
             description: "outlineDefaultPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -322,6 +331,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoMinorGradient: Self {
         GradientToken(
+            id: "outlineDefaultPromoMinorGradient",
             description: "outlineDefaultPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -357,6 +367,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoMinorGradientActive: Self {
         GradientToken(
+            id: "outlineDefaultPromoMinorGradientActive",
             description: "outlineDefaultPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -392,6 +403,7 @@ public extension GradientToken {
     }
     static var outlineDefaultPromoMinorGradientHover: Self {
         GradientToken(
+            id: "outlineDefaultPromoMinorGradientHover",
             description: "outlineDefaultPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -427,6 +439,7 @@ public extension GradientToken {
     }
     static var outlineDefaultTransparentAccentGradient: Self {
         GradientToken(
+            id: "outlineDefaultTransparentAccentGradient",
             description: "outlineDefaultTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -462,6 +475,7 @@ public extension GradientToken {
     }
     static var outlineDefaultTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "outlineDefaultTransparentAccentGradientActive",
             description: "outlineDefaultTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -497,6 +511,7 @@ public extension GradientToken {
     }
     static var outlineDefaultTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "outlineDefaultTransparentAccentGradientHover",
             description: "outlineDefaultTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -532,6 +547,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentGradient: Self {
         GradientToken(
+            id: "outlineInverseAccentGradient",
             description: "outlineInverseAccentGradient",
             darkGradients: [
                 .linear(
@@ -567,6 +583,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentGradientActive: Self {
         GradientToken(
+            id: "outlineInverseAccentGradientActive",
             description: "outlineInverseAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -602,6 +619,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentGradientHover: Self {
         GradientToken(
+            id: "outlineInverseAccentGradientHover",
             description: "outlineInverseAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -637,6 +655,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentMinorGradient: Self {
         GradientToken(
+            id: "outlineInverseAccentMinorGradient",
             description: "outlineInverseAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -672,6 +691,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentMinorGradientActive: Self {
         GradientToken(
+            id: "outlineInverseAccentMinorGradientActive",
             description: "outlineInverseAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -707,6 +727,7 @@ public extension GradientToken {
     }
     static var outlineInverseAccentMinorGradientHover: Self {
         GradientToken(
+            id: "outlineInverseAccentMinorGradientHover",
             description: "outlineInverseAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -742,6 +763,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoGradient: Self {
         GradientToken(
+            id: "outlineInversePromoGradient",
             description: "outlineInversePromoGradient",
             darkGradients: [
                 .linear(
@@ -777,6 +799,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoGradientActive: Self {
         GradientToken(
+            id: "outlineInversePromoGradientActive",
             description: "outlineInversePromoGradientActive",
             darkGradients: [
                 .linear(
@@ -812,6 +835,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoGradientHover: Self {
         GradientToken(
+            id: "outlineInversePromoGradientHover",
             description: "outlineInversePromoGradientHover",
             darkGradients: [
                 .linear(
@@ -847,6 +871,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoMinorGradient: Self {
         GradientToken(
+            id: "outlineInversePromoMinorGradient",
             description: "outlineInversePromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -882,6 +907,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoMinorGradientActive: Self {
         GradientToken(
+            id: "outlineInversePromoMinorGradientActive",
             description: "outlineInversePromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -917,6 +943,7 @@ public extension GradientToken {
     }
     static var outlineInversePromoMinorGradientHover: Self {
         GradientToken(
+            id: "outlineInversePromoMinorGradientHover",
             description: "outlineInversePromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -952,6 +979,7 @@ public extension GradientToken {
     }
     static var outlineInverseTransparentAccentGradient: Self {
         GradientToken(
+            id: "outlineInverseTransparentAccentGradient",
             description: "outlineInverseTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -987,6 +1015,7 @@ public extension GradientToken {
     }
     static var outlineInverseTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "outlineInverseTransparentAccentGradientActive",
             description: "outlineInverseTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -1022,6 +1051,7 @@ public extension GradientToken {
     }
     static var outlineInverseTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "outlineInverseTransparentAccentGradientHover",
             description: "outlineInverseTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -1057,6 +1087,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentGradient: Self {
         GradientToken(
+            id: "outlineOnDarkAccentGradient",
             description: "outlineOnDarkAccentGradient",
             darkGradients: [
                 .linear(
@@ -1092,6 +1123,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentGradientActive: Self {
         GradientToken(
+            id: "outlineOnDarkAccentGradientActive",
             description: "outlineOnDarkAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -1127,6 +1159,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentGradientHover: Self {
         GradientToken(
+            id: "outlineOnDarkAccentGradientHover",
             description: "outlineOnDarkAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -1162,6 +1195,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentMinorGradient: Self {
         GradientToken(
+            id: "outlineOnDarkAccentMinorGradient",
             description: "outlineOnDarkAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -1197,6 +1231,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentMinorGradientActive: Self {
         GradientToken(
+            id: "outlineOnDarkAccentMinorGradientActive",
             description: "outlineOnDarkAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -1232,6 +1267,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkAccentMinorGradientHover: Self {
         GradientToken(
+            id: "outlineOnDarkAccentMinorGradientHover",
             description: "outlineOnDarkAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -1267,6 +1303,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoGradient: Self {
         GradientToken(
+            id: "outlineOnDarkPromoGradient",
             description: "outlineOnDarkPromoGradient",
             darkGradients: [
                 .linear(
@@ -1302,6 +1339,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoGradientActive: Self {
         GradientToken(
+            id: "outlineOnDarkPromoGradientActive",
             description: "outlineOnDarkPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -1337,6 +1375,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoGradientHover: Self {
         GradientToken(
+            id: "outlineOnDarkPromoGradientHover",
             description: "outlineOnDarkPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -1372,6 +1411,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoMinorGradient: Self {
         GradientToken(
+            id: "outlineOnDarkPromoMinorGradient",
             description: "outlineOnDarkPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -1407,6 +1447,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoMinorGradientActive: Self {
         GradientToken(
+            id: "outlineOnDarkPromoMinorGradientActive",
             description: "outlineOnDarkPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -1442,6 +1483,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkPromoMinorGradientHover: Self {
         GradientToken(
+            id: "outlineOnDarkPromoMinorGradientHover",
             description: "outlineOnDarkPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -1477,6 +1519,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkTransparentAccentGradient: Self {
         GradientToken(
+            id: "outlineOnDarkTransparentAccentGradient",
             description: "outlineOnDarkTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -1512,6 +1555,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "outlineOnDarkTransparentAccentGradientActive",
             description: "outlineOnDarkTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -1547,6 +1591,7 @@ public extension GradientToken {
     }
     static var outlineOnDarkTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "outlineOnDarkTransparentAccentGradientHover",
             description: "outlineOnDarkTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -1582,6 +1627,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentGradient: Self {
         GradientToken(
+            id: "outlineOnLightAccentGradient",
             description: "outlineOnLightAccentGradient",
             darkGradients: [
                 .linear(
@@ -1617,6 +1663,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentGradientActive: Self {
         GradientToken(
+            id: "outlineOnLightAccentGradientActive",
             description: "outlineOnLightAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -1652,6 +1699,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentGradientHover: Self {
         GradientToken(
+            id: "outlineOnLightAccentGradientHover",
             description: "outlineOnLightAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -1687,6 +1735,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentMinorGradient: Self {
         GradientToken(
+            id: "outlineOnLightAccentMinorGradient",
             description: "outlineOnLightAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -1722,6 +1771,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentMinorGradientActive: Self {
         GradientToken(
+            id: "outlineOnLightAccentMinorGradientActive",
             description: "outlineOnLightAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -1757,6 +1807,7 @@ public extension GradientToken {
     }
     static var outlineOnLightAccentMinorGradientHover: Self {
         GradientToken(
+            id: "outlineOnLightAccentMinorGradientHover",
             description: "outlineOnLightAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -1792,6 +1843,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoGradient: Self {
         GradientToken(
+            id: "outlineOnLightPromoGradient",
             description: "outlineOnLightPromoGradient",
             darkGradients: [
                 .linear(
@@ -1827,6 +1879,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoGradientActive: Self {
         GradientToken(
+            id: "outlineOnLightPromoGradientActive",
             description: "outlineOnLightPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -1862,6 +1915,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoGradientHover: Self {
         GradientToken(
+            id: "outlineOnLightPromoGradientHover",
             description: "outlineOnLightPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -1897,6 +1951,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoMinorGradient: Self {
         GradientToken(
+            id: "outlineOnLightPromoMinorGradient",
             description: "outlineOnLightPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -1932,6 +1987,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoMinorGradientActive: Self {
         GradientToken(
+            id: "outlineOnLightPromoMinorGradientActive",
             description: "outlineOnLightPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -1967,6 +2023,7 @@ public extension GradientToken {
     }
     static var outlineOnLightPromoMinorGradientHover: Self {
         GradientToken(
+            id: "outlineOnLightPromoMinorGradientHover",
             description: "outlineOnLightPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -2002,6 +2059,7 @@ public extension GradientToken {
     }
     static var outlineOnLightTransparentAccentGradient: Self {
         GradientToken(
+            id: "outlineOnLightTransparentAccentGradient",
             description: "outlineOnLightTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -2037,6 +2095,7 @@ public extension GradientToken {
     }
     static var outlineOnLightTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "outlineOnLightTransparentAccentGradientActive",
             description: "outlineOnLightTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -2072,6 +2131,7 @@ public extension GradientToken {
     }
     static var outlineOnLightTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "outlineOnLightTransparentAccentGradientHover",
             description: "outlineOnLightTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -2107,6 +2167,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentGradient: Self {
         GradientToken(
+            id: "surfaceDefaultAccentGradient",
             description: "surfaceDefaultAccentGradient",
             darkGradients: [
                 .linear(
@@ -2142,6 +2203,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultAccentGradientActive",
             description: "surfaceDefaultAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -2177,6 +2239,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultAccentGradientHover",
             description: "surfaceDefaultAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -2212,6 +2275,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentMinorGradient: Self {
         GradientToken(
+            id: "surfaceDefaultAccentMinorGradient",
             description: "surfaceDefaultAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -2247,6 +2311,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultAccentMinorGradientActive",
             description: "surfaceDefaultAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -2282,6 +2347,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultAccentMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultAccentMinorGradientHover",
             description: "surfaceDefaultAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -2317,6 +2383,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoGradient: Self {
         GradientToken(
+            id: "surfaceDefaultPromoGradient",
             description: "surfaceDefaultPromoGradient",
             darkGradients: [
                 .linear(
@@ -2352,6 +2419,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultPromoGradientActive",
             description: "surfaceDefaultPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -2387,6 +2455,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultPromoGradientHover",
             description: "surfaceDefaultPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -2422,6 +2491,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoMinorGradient: Self {
         GradientToken(
+            id: "surfaceDefaultPromoMinorGradient",
             description: "surfaceDefaultPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -2457,6 +2527,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultPromoMinorGradientActive",
             description: "surfaceDefaultPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -2492,6 +2563,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultPromoMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultPromoMinorGradientHover",
             description: "surfaceDefaultPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -2527,6 +2599,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonDeepGradient: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonDeepGradient",
             description: "surfaceDefaultSkeletonDeepGradient",
             darkGradients: [
                 .linear(
@@ -2606,6 +2679,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonDeepGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonDeepGradientActive",
             description: "surfaceDefaultSkeletonDeepGradientActive",
             darkGradients: [
                 .linear(
@@ -2641,6 +2715,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonDeepGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonDeepGradientHover",
             description: "surfaceDefaultSkeletonDeepGradientHover",
             darkGradients: [
                 .linear(
@@ -2676,6 +2751,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonGradient: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonGradient",
             description: "surfaceDefaultSkeletonGradient",
             darkGradients: [
                 .linear(
@@ -2755,6 +2831,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonGradientActive",
             description: "surfaceDefaultSkeletonGradientActive",
             darkGradients: [
                 .linear(
@@ -2790,6 +2867,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultSkeletonGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultSkeletonGradientHover",
             description: "surfaceDefaultSkeletonGradientHover",
             darkGradients: [
                 .linear(
@@ -2825,6 +2903,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentAccentGradient: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentAccentGradient",
             description: "surfaceDefaultTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -2860,6 +2939,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentAccentGradientActive",
             description: "surfaceDefaultTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -2895,6 +2975,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentAccentGradientHover",
             description: "surfaceDefaultTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -2930,6 +3011,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentPromoGradient: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentPromoGradient",
             description: "surfaceDefaultTransparentPromoGradient",
             darkGradients: [
                 .linear(
@@ -2965,6 +3047,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentPromoGradientActive",
             description: "surfaceDefaultTransparentPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -3000,6 +3083,7 @@ public extension GradientToken {
     }
     static var surfaceDefaultTransparentPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceDefaultTransparentPromoGradientHover",
             description: "surfaceDefaultTransparentPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -3035,6 +3119,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentGradient: Self {
         GradientToken(
+            id: "surfaceInverseAccentGradient",
             description: "surfaceInverseAccentGradient",
             darkGradients: [
                 .linear(
@@ -3070,6 +3155,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseAccentGradientActive",
             description: "surfaceInverseAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -3105,6 +3191,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseAccentGradientHover",
             description: "surfaceInverseAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -3140,6 +3227,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentMinorGradient: Self {
         GradientToken(
+            id: "surfaceInverseAccentMinorGradient",
             description: "surfaceInverseAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -3175,6 +3263,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseAccentMinorGradientActive",
             description: "surfaceInverseAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -3210,6 +3299,7 @@ public extension GradientToken {
     }
     static var surfaceInverseAccentMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseAccentMinorGradientHover",
             description: "surfaceInverseAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -3245,6 +3335,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoGradient: Self {
         GradientToken(
+            id: "surfaceInversePromoGradient",
             description: "surfaceInversePromoGradient",
             darkGradients: [
                 .linear(
@@ -3280,6 +3371,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoGradientActive: Self {
         GradientToken(
+            id: "surfaceInversePromoGradientActive",
             description: "surfaceInversePromoGradientActive",
             darkGradients: [
                 .linear(
@@ -3315,6 +3407,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoGradientHover: Self {
         GradientToken(
+            id: "surfaceInversePromoGradientHover",
             description: "surfaceInversePromoGradientHover",
             darkGradients: [
                 .linear(
@@ -3350,6 +3443,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoMinorGradient: Self {
         GradientToken(
+            id: "surfaceInversePromoMinorGradient",
             description: "surfaceInversePromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -3385,6 +3479,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceInversePromoMinorGradientActive",
             description: "surfaceInversePromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -3420,6 +3515,7 @@ public extension GradientToken {
     }
     static var surfaceInversePromoMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceInversePromoMinorGradientHover",
             description: "surfaceInversePromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -3455,6 +3551,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonDeepGradient: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonDeepGradient",
             description: "surfaceInverseSkeletonDeepGradient",
             darkGradients: [
                 .linear(
@@ -3534,6 +3631,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonDeepGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonDeepGradientActive",
             description: "surfaceInverseSkeletonDeepGradientActive",
             darkGradients: [
                 .linear(
@@ -3569,6 +3667,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonDeepGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonDeepGradientHover",
             description: "surfaceInverseSkeletonDeepGradientHover",
             darkGradients: [
                 .linear(
@@ -3604,6 +3703,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonGradient: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonGradient",
             description: "surfaceInverseSkeletonGradient",
             darkGradients: [
                 .linear(
@@ -3683,6 +3783,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonGradientActive",
             description: "surfaceInverseSkeletonGradientActive",
             darkGradients: [
                 .linear(
@@ -3718,6 +3819,7 @@ public extension GradientToken {
     }
     static var surfaceInverseSkeletonGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseSkeletonGradientHover",
             description: "surfaceInverseSkeletonGradientHover",
             darkGradients: [
                 .linear(
@@ -3753,6 +3855,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentAccentGradient: Self {
         GradientToken(
+            id: "surfaceInverseTransparentAccentGradient",
             description: "surfaceInverseTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -3788,6 +3891,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseTransparentAccentGradientActive",
             description: "surfaceInverseTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -3823,6 +3927,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseTransparentAccentGradientHover",
             description: "surfaceInverseTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -3858,6 +3963,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentPromoGradient: Self {
         GradientToken(
+            id: "surfaceInverseTransparentPromoGradient",
             description: "surfaceInverseTransparentPromoGradient",
             darkGradients: [
                 .linear(
@@ -3893,6 +3999,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceInverseTransparentPromoGradientActive",
             description: "surfaceInverseTransparentPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -3928,6 +4035,7 @@ public extension GradientToken {
     }
     static var surfaceInverseTransparentPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceInverseTransparentPromoGradientHover",
             description: "surfaceInverseTransparentPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -3963,6 +4071,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentGradient",
             description: "surfaceOnDarkAccentGradient",
             darkGradients: [
                 .linear(
@@ -3998,6 +4107,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentGradientActive",
             description: "surfaceOnDarkAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -4033,6 +4143,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentGradientHover",
             description: "surfaceOnDarkAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -4068,6 +4179,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentMinorGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentMinorGradient",
             description: "surfaceOnDarkAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -4103,6 +4215,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentMinorGradientActive",
             description: "surfaceOnDarkAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -4138,6 +4251,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkAccentMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkAccentMinorGradientHover",
             description: "surfaceOnDarkAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -4173,6 +4287,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoGradient",
             description: "surfaceOnDarkPromoGradient",
             darkGradients: [
                 .linear(
@@ -4208,6 +4323,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoGradientActive",
             description: "surfaceOnDarkPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -4243,6 +4359,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoGradientHover",
             description: "surfaceOnDarkPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -4278,6 +4395,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoMinorGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoMinorGradient",
             description: "surfaceOnDarkPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -4313,6 +4431,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoMinorGradientActive",
             description: "surfaceOnDarkPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -4348,6 +4467,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkPromoMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkPromoMinorGradientHover",
             description: "surfaceOnDarkPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -4383,6 +4503,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonDeepGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonDeepGradient",
             description: "surfaceOnDarkSkeletonDeepGradient",
             darkGradients: [
                 .linear(
@@ -4462,6 +4583,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonDeepGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonDeepGradientActive",
             description: "surfaceOnDarkSkeletonDeepGradientActive",
             darkGradients: [
                 .linear(
@@ -4497,6 +4619,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonDeepGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonDeepGradientHover",
             description: "surfaceOnDarkSkeletonDeepGradientHover",
             darkGradients: [
                 .linear(
@@ -4532,6 +4655,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonGradient",
             description: "surfaceOnDarkSkeletonGradient",
             darkGradients: [
                 .linear(
@@ -4611,6 +4735,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonGradientActive",
             description: "surfaceOnDarkSkeletonGradientActive",
             darkGradients: [
                 .linear(
@@ -4646,6 +4771,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkSkeletonGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkSkeletonGradientHover",
             description: "surfaceOnDarkSkeletonGradientHover",
             darkGradients: [
                 .linear(
@@ -4681,6 +4807,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentAccentGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentAccentGradient",
             description: "surfaceOnDarkTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -4716,6 +4843,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentAccentGradientActive",
             description: "surfaceOnDarkTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -4751,6 +4879,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentAccentGradientHover",
             description: "surfaceOnDarkTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -4786,6 +4915,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentPromoGradient: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentPromoGradient",
             description: "surfaceOnDarkTransparentPromoGradient",
             darkGradients: [
                 .linear(
@@ -4821,6 +4951,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentPromoGradientActive",
             description: "surfaceOnDarkTransparentPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -4856,6 +4987,7 @@ public extension GradientToken {
     }
     static var surfaceOnDarkTransparentPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceOnDarkTransparentPromoGradientHover",
             description: "surfaceOnDarkTransparentPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -4891,6 +5023,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentGradient: Self {
         GradientToken(
+            id: "surfaceOnLightAccentGradient",
             description: "surfaceOnLightAccentGradient",
             darkGradients: [
                 .linear(
@@ -4926,6 +5059,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightAccentGradientActive",
             description: "surfaceOnLightAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -4961,6 +5095,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightAccentGradientHover",
             description: "surfaceOnLightAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -4996,6 +5131,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentMinorGradient: Self {
         GradientToken(
+            id: "surfaceOnLightAccentMinorGradient",
             description: "surfaceOnLightAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -5031,6 +5167,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightAccentMinorGradientActive",
             description: "surfaceOnLightAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -5066,6 +5203,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightAccentMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightAccentMinorGradientHover",
             description: "surfaceOnLightAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -5101,6 +5239,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoGradient: Self {
         GradientToken(
+            id: "surfaceOnLightPromoGradient",
             description: "surfaceOnLightPromoGradient",
             darkGradients: [
                 .linear(
@@ -5136,6 +5275,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightPromoGradientActive",
             description: "surfaceOnLightPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -5171,6 +5311,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightPromoGradientHover",
             description: "surfaceOnLightPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -5206,6 +5347,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoMinorGradient: Self {
         GradientToken(
+            id: "surfaceOnLightPromoMinorGradient",
             description: "surfaceOnLightPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -5241,6 +5383,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoMinorGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightPromoMinorGradientActive",
             description: "surfaceOnLightPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -5276,6 +5419,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightPromoMinorGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightPromoMinorGradientHover",
             description: "surfaceOnLightPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -5311,6 +5455,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonDeepGradient: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonDeepGradient",
             description: "surfaceOnLightSkeletonDeepGradient",
             darkGradients: [
                 .linear(
@@ -5390,6 +5535,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonDeepGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonDeepGradientActive",
             description: "surfaceOnLightSkeletonDeepGradientActive",
             darkGradients: [
                 .linear(
@@ -5425,6 +5571,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonDeepGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonDeepGradientHover",
             description: "surfaceOnLightSkeletonDeepGradientHover",
             darkGradients: [
                 .linear(
@@ -5460,6 +5607,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonGradient: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonGradient",
             description: "surfaceOnLightSkeletonGradient",
             darkGradients: [
                 .linear(
@@ -5539,6 +5687,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonGradientActive",
             description: "surfaceOnLightSkeletonGradientActive",
             darkGradients: [
                 .linear(
@@ -5574,6 +5723,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightSkeletonGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightSkeletonGradientHover",
             description: "surfaceOnLightSkeletonGradientHover",
             darkGradients: [
                 .linear(
@@ -5609,6 +5759,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentAccentGradient: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentAccentGradient",
             description: "surfaceOnLightTransparentAccentGradient",
             darkGradients: [
                 .linear(
@@ -5644,6 +5795,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentAccentGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentAccentGradientActive",
             description: "surfaceOnLightTransparentAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -5679,6 +5831,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentAccentGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentAccentGradientHover",
             description: "surfaceOnLightTransparentAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -5714,6 +5867,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentPromoGradient: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentPromoGradient",
             description: "surfaceOnLightTransparentPromoGradient",
             darkGradients: [
                 .linear(
@@ -5749,6 +5903,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentPromoGradientActive: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentPromoGradientActive",
             description: "surfaceOnLightTransparentPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -5784,6 +5939,7 @@ public extension GradientToken {
     }
     static var surfaceOnLightTransparentPromoGradientHover: Self {
         GradientToken(
+            id: "surfaceOnLightTransparentPromoGradientHover",
             description: "surfaceOnLightTransparentPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -5819,6 +5975,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentGradient: Self {
         GradientToken(
+            id: "textDefaultAccentGradient",
             description: "textDefaultAccentGradient",
             darkGradients: [
                 .linear(
@@ -5854,6 +6011,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentGradientActive: Self {
         GradientToken(
+            id: "textDefaultAccentGradientActive",
             description: "textDefaultAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -5889,6 +6047,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentGradientHover: Self {
         GradientToken(
+            id: "textDefaultAccentGradientHover",
             description: "textDefaultAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -5924,6 +6083,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentMinorGradient: Self {
         GradientToken(
+            id: "textDefaultAccentMinorGradient",
             description: "textDefaultAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -5959,6 +6119,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentMinorGradientActive: Self {
         GradientToken(
+            id: "textDefaultAccentMinorGradientActive",
             description: "textDefaultAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -5994,6 +6155,7 @@ public extension GradientToken {
     }
     static var textDefaultAccentMinorGradientHover: Self {
         GradientToken(
+            id: "textDefaultAccentMinorGradientHover",
             description: "textDefaultAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -6029,6 +6191,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoGradient: Self {
         GradientToken(
+            id: "textDefaultPromoGradient",
             description: "textDefaultPromoGradient",
             darkGradients: [
                 .linear(
@@ -6064,6 +6227,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoGradientActive: Self {
         GradientToken(
+            id: "textDefaultPromoGradientActive",
             description: "textDefaultPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -6099,6 +6263,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoGradientHover: Self {
         GradientToken(
+            id: "textDefaultPromoGradientHover",
             description: "textDefaultPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -6134,6 +6299,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoMinorGradient: Self {
         GradientToken(
+            id: "textDefaultPromoMinorGradient",
             description: "textDefaultPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -6169,6 +6335,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoMinorGradientActive: Self {
         GradientToken(
+            id: "textDefaultPromoMinorGradientActive",
             description: "textDefaultPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -6204,6 +6371,7 @@ public extension GradientToken {
     }
     static var textDefaultPromoMinorGradientHover: Self {
         GradientToken(
+            id: "textDefaultPromoMinorGradientHover",
             description: "textDefaultPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -6239,6 +6407,7 @@ public extension GradientToken {
     }
     static var textInverseAccentGradient: Self {
         GradientToken(
+            id: "textInverseAccentGradient",
             description: "textInverseAccentGradient",
             darkGradients: [
                 .linear(
@@ -6274,6 +6443,7 @@ public extension GradientToken {
     }
     static var textInverseAccentGradientActive: Self {
         GradientToken(
+            id: "textInverseAccentGradientActive",
             description: "textInverseAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -6309,6 +6479,7 @@ public extension GradientToken {
     }
     static var textInverseAccentGradientHover: Self {
         GradientToken(
+            id: "textInverseAccentGradientHover",
             description: "textInverseAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -6344,6 +6515,7 @@ public extension GradientToken {
     }
     static var textInverseAccentMinorGradient: Self {
         GradientToken(
+            id: "textInverseAccentMinorGradient",
             description: "textInverseAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -6379,6 +6551,7 @@ public extension GradientToken {
     }
     static var textInverseAccentMinorGradientActive: Self {
         GradientToken(
+            id: "textInverseAccentMinorGradientActive",
             description: "textInverseAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -6414,6 +6587,7 @@ public extension GradientToken {
     }
     static var textInverseAccentMinorGradientHover: Self {
         GradientToken(
+            id: "textInverseAccentMinorGradientHover",
             description: "textInverseAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -6449,6 +6623,7 @@ public extension GradientToken {
     }
     static var textInversePromoGradient: Self {
         GradientToken(
+            id: "textInversePromoGradient",
             description: "textInversePromoGradient",
             darkGradients: [
                 .linear(
@@ -6484,6 +6659,7 @@ public extension GradientToken {
     }
     static var textInversePromoGradientActive: Self {
         GradientToken(
+            id: "textInversePromoGradientActive",
             description: "textInversePromoGradientActive",
             darkGradients: [
                 .linear(
@@ -6519,6 +6695,7 @@ public extension GradientToken {
     }
     static var textInversePromoGradientHover: Self {
         GradientToken(
+            id: "textInversePromoGradientHover",
             description: "textInversePromoGradientHover",
             darkGradients: [
                 .linear(
@@ -6554,6 +6731,7 @@ public extension GradientToken {
     }
     static var textInversePromoMinorGradient: Self {
         GradientToken(
+            id: "textInversePromoMinorGradient",
             description: "textInversePromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -6589,6 +6767,7 @@ public extension GradientToken {
     }
     static var textInversePromoMinorGradientActive: Self {
         GradientToken(
+            id: "textInversePromoMinorGradientActive",
             description: "textInversePromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -6624,6 +6803,7 @@ public extension GradientToken {
     }
     static var textInversePromoMinorGradientHover: Self {
         GradientToken(
+            id: "textInversePromoMinorGradientHover",
             description: "textInversePromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -6659,6 +6839,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentGradient: Self {
         GradientToken(
+            id: "textOnDarkAccentGradient",
             description: "textOnDarkAccentGradient",
             darkGradients: [
                 .linear(
@@ -6694,6 +6875,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentGradientActive: Self {
         GradientToken(
+            id: "textOnDarkAccentGradientActive",
             description: "textOnDarkAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -6729,6 +6911,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentGradientHover: Self {
         GradientToken(
+            id: "textOnDarkAccentGradientHover",
             description: "textOnDarkAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -6764,6 +6947,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentMinorGradient: Self {
         GradientToken(
+            id: "textOnDarkAccentMinorGradient",
             description: "textOnDarkAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -6799,6 +6983,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentMinorGradientActive: Self {
         GradientToken(
+            id: "textOnDarkAccentMinorGradientActive",
             description: "textOnDarkAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -6834,6 +7019,7 @@ public extension GradientToken {
     }
     static var textOnDarkAccentMinorGradientHover: Self {
         GradientToken(
+            id: "textOnDarkAccentMinorGradientHover",
             description: "textOnDarkAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -6869,6 +7055,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoGradient: Self {
         GradientToken(
+            id: "textOnDarkPromoGradient",
             description: "textOnDarkPromoGradient",
             darkGradients: [
                 .linear(
@@ -6904,6 +7091,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoGradientActive: Self {
         GradientToken(
+            id: "textOnDarkPromoGradientActive",
             description: "textOnDarkPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -6939,6 +7127,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoGradientHover: Self {
         GradientToken(
+            id: "textOnDarkPromoGradientHover",
             description: "textOnDarkPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -6974,6 +7163,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoMinorGradient: Self {
         GradientToken(
+            id: "textOnDarkPromoMinorGradient",
             description: "textOnDarkPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -7009,6 +7199,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoMinorGradientActive: Self {
         GradientToken(
+            id: "textOnDarkPromoMinorGradientActive",
             description: "textOnDarkPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -7044,6 +7235,7 @@ public extension GradientToken {
     }
     static var textOnDarkPromoMinorGradientHover: Self {
         GradientToken(
+            id: "textOnDarkPromoMinorGradientHover",
             description: "textOnDarkPromoMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -7079,6 +7271,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentGradient: Self {
         GradientToken(
+            id: "textOnLightAccentGradient",
             description: "textOnLightAccentGradient",
             darkGradients: [
                 .linear(
@@ -7114,6 +7307,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentGradientActive: Self {
         GradientToken(
+            id: "textOnLightAccentGradientActive",
             description: "textOnLightAccentGradientActive",
             darkGradients: [
                 .linear(
@@ -7149,6 +7343,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentGradientHover: Self {
         GradientToken(
+            id: "textOnLightAccentGradientHover",
             description: "textOnLightAccentGradientHover",
             darkGradients: [
                 .linear(
@@ -7184,6 +7379,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentMinorGradient: Self {
         GradientToken(
+            id: "textOnLightAccentMinorGradient",
             description: "textOnLightAccentMinorGradient",
             darkGradients: [
                 .linear(
@@ -7219,6 +7415,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentMinorGradientActive: Self {
         GradientToken(
+            id: "textOnLightAccentMinorGradientActive",
             description: "textOnLightAccentMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -7254,6 +7451,7 @@ public extension GradientToken {
     }
     static var textOnLightAccentMinorGradientHover: Self {
         GradientToken(
+            id: "textOnLightAccentMinorGradientHover",
             description: "textOnLightAccentMinorGradientHover",
             darkGradients: [
                 .linear(
@@ -7289,6 +7487,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoGradient: Self {
         GradientToken(
+            id: "textOnLightPromoGradient",
             description: "textOnLightPromoGradient",
             darkGradients: [
                 .linear(
@@ -7324,6 +7523,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoGradientActive: Self {
         GradientToken(
+            id: "textOnLightPromoGradientActive",
             description: "textOnLightPromoGradientActive",
             darkGradients: [
                 .linear(
@@ -7359,6 +7559,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoGradientHover: Self {
         GradientToken(
+            id: "textOnLightPromoGradientHover",
             description: "textOnLightPromoGradientHover",
             darkGradients: [
                 .linear(
@@ -7394,6 +7595,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoMinorGradient: Self {
         GradientToken(
+            id: "textOnLightPromoMinorGradient",
             description: "textOnLightPromoMinorGradient",
             darkGradients: [
                 .linear(
@@ -7429,6 +7631,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoMinorGradientActive: Self {
         GradientToken(
+            id: "textOnLightPromoMinorGradientActive",
             description: "textOnLightPromoMinorGradientActive",
             darkGradients: [
                 .linear(
@@ -7464,6 +7667,7 @@ public extension GradientToken {
     }
     static var textOnLightPromoMinorGradientHover: Self {
         GradientToken(
+            id: "textOnLightPromoMinorGradientHover",
             description: "textOnLightPromoMinorGradientHover",
             darkGradients: [
                 .linear(

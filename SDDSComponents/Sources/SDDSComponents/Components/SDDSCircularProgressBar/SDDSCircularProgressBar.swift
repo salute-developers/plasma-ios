@@ -29,7 +29,7 @@ import SwiftUI
 public struct SDDSCircularProgressBar: View {
     @Environment(\.circularProgressBarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let progress: Double
     private let suffix: String
     private let hasTrack: Bool
@@ -64,7 +64,7 @@ public struct SDDSCircularProgressBar: View {
         ZStack {
             if hasTrack {
                 Circle()
-                    .stroke(appearance.trackColor.color(for: colorScheme), lineWidth: appearance.size.trackThickness)
+                    .stroke(appearance.trackColor.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.trackThickness)
             }
             
             indicator
@@ -75,7 +75,7 @@ public struct SDDSCircularProgressBar: View {
                 if let valueTypography = valueTypography, appearance.valueEnabled {
                     Text("\(Int(progress * 100))\(suffix)")
                         .typography(valueTypography)
-                        .foregroundColor(appearance.valueColor.color(for: colorScheme))
+                        .foregroundColor(appearance.valueColor.color(for: colorScheme, subtheme: subtheme))
                 }
             }
         }
@@ -87,9 +87,9 @@ public struct SDDSCircularProgressBar: View {
         switch appearance.indicatorColor {
         case .color(let colorToken):
             indicatorCircle
-                .stroke(colorToken.color(for: colorScheme), lineWidth: appearance.size.progressThickness)
+                .stroke(colorToken.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.progressThickness)
         case .gradient(let gradientToken):
-            if let gradient = gradientToken.kind(for: colorScheme).first {
+            if let gradient = gradient(token: gradientToken, for: colorScheme, subtheme: subtheme).kind(for: colorScheme).first {
                 switch gradient {
                 case .linear(let value):
                     indicatorCircle
@@ -107,6 +107,13 @@ public struct SDDSCircularProgressBar: View {
                 EmptyView()
             }
         }
+    }
+    
+    private func gradient(token: GradientToken, for colorScheme: ColorScheme, subtheme: SubthemeData) -> GradientToken {
+        guard !subtheme.isNone else {
+            return token
+        }
+        return subtheme.gradientMapper(subtheme.subtheme, token)
     }
     
     private var indicatorCircle: some Shape {

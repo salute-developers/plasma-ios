@@ -1,9 +1,11 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct AvatarGroupView: View {
     @ObservedObject private var viewModel: AvatarGroupViewModel
+    @Environment(\.colorScheme) private var colorScheme
 
     init(viewModel: AvatarGroupViewModel = AvatarGroupViewModel()) {
         self.viewModel = viewModel
@@ -23,6 +25,7 @@ struct AvatarGroupView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section(header: Text("Avatar appaerence")) {
                 VariationsView(viewModel: viewModel.avatarViewModel)
             }
@@ -37,6 +40,8 @@ struct AvatarGroupView: View {
                 }
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("AvatarGroup")
     }
 }

@@ -10,7 +10,11 @@ public struct EmbeddedChip: View {
     let accessibility: ChipAccessibility
     let removeAction: () -> Void
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
+
+    
+
 
     public init(
         title: String,

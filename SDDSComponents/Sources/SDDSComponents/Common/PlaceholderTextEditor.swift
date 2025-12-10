@@ -18,6 +18,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     let textColor: Color
     let numberOfLines: Int
     let colorScheme: ColorScheme
+    let subtheme: SubthemeData
     let onChange: (_ newText: String) -> ()
 
     var body: some View {
@@ -32,7 +33,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
                 isScrolling: $isScrolling,
                 readOnly: readOnly,
                 typographyToken: textTypography,
-                accentColor: appearance.cursorColor.color(for: colorScheme),
+                accentColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                 textColor: textColor,
                 textAlignment: appearance.inputTextAlignment,
                 paddingInsets: .init(top: 0, leading: 0, bottom: 0, trailing: trailingContentPadding),

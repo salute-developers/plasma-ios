@@ -59,6 +59,7 @@ import SDDSThemeCore
 public struct SDDSAccordionItem: View {
     @Environment(\.accordionItemAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     private let _appearance: AccordionItemAppearance?
     private let title: String
     private let content: String
@@ -111,7 +112,7 @@ public struct SDDSAccordionItem: View {
             }
             
             Text(title)
-                .foregroundStyle(appearance.titleColor.color(for: colorScheme))
+                .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .typography(titleTypography)
             
             Spacer()
@@ -125,19 +126,19 @@ public struct SDDSAccordionItem: View {
         .padding(.trailing, appearance.size.paddingEnd)
         .padding(.top, appearance.size.paddingTop)
         .padding(.bottom, appearance.size.paddingBottom)
-        .background(appearance.backgroundColor.color(for: colorScheme))
+        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .contentShape(Rectangle())
     }
     
     @ViewBuilder private var contentCell: some View {
         Text(content)
-            .foregroundStyle(appearance.contentTextColor.color(for: colorScheme))
+            .foregroundStyle(appearance.contentTextColor.color(for: colorScheme, subtheme: subtheme))
             .typography(contentTextTypography)
             .padding(.leading, appearance.size.contentPaddingStart)
             .padding(.trailing, appearance.size.contentPaddingEnd)
             .padding(.bottom, appearance.size.contentPaddingBottom)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(appearance.backgroundColor.color(for: colorScheme))
+            .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     @ViewBuilder private var disclosureIcon: some View {
@@ -145,7 +146,7 @@ public struct SDDSAccordionItem: View {
             icon
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(appearance.titleColor.color(for: colorScheme))
+                .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .rotationEffect(.degrees(isExpanded ? rotation : 0))
                 .animation(.easeInOut(duration: 0.2), value: isExpanded)
         }

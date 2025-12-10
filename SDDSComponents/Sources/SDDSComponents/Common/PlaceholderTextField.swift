@@ -10,16 +10,20 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
     let cursorColor: Color
     let textTypography: TypographyToken
     let readOnly: Bool
+    let mask: TextFieldMask?
+    let maskDisplayMode: MaskDisplayMode
     @ViewBuilder var placeholderBeforeContent: () -> PlaceholderBeforeContent
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     @ViewBuilder var placeholderAfterContent: () -> PlaceholderAfterContent
     
     let onEditingChanged: ((Bool) -> Void)
+    let onMaskComplete: ((Bool) -> Void)?
     var textFieldConfiguration: (FocusableTextField) -> TextFieldContent
     
     var body: some View {
         ZStack(alignment: .leading) {
-            if text.isEmpty {
+            // Показываем placeholder в зависимости от режима
+            if shouldShowPlaceholder {
                 HStack(spacing: 0) {
                     placeholderBeforeContent()
                     placeholderContent()
@@ -35,10 +39,19 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
                     cursorColor: cursorColor,
                     typography: textTypography,
                     readOnly: readOnly,
-                    onEditingChanged: onEditingChanged
+                    mask: mask,
+                    onEditingChanged: onEditingChanged,
+                    onMaskComplete: onMaskComplete
                 )
             )
-            .id(readOnly)
+            .id("\(readOnly)-\(mask?.format(input: "") ?? "none")-\(maskDisplayMode.rawValue)")
         }
+    }
+    
+    private var shouldShowPlaceholder: Bool {
+        if maskDisplayMode == .always && mask != nil {
+            return true
+        }
+        return text.isEmpty
     }
 }

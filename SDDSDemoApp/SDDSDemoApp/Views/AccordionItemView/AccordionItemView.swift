@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 import SDDSIcons
 
@@ -21,6 +22,7 @@ struct AccordionItemView: View {
                     print("AccordionItem \(isExpanded ? "развернут" : "свернут")")
                 }
             )
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
             
             Spacer()
             List {
@@ -53,6 +55,8 @@ struct AccordionItemView: View {
                     }
                 }
             }
+            .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+            
         }
         .background(.tertiary)
     }

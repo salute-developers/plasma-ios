@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 struct NavigationBarView: View {
     @ObservedObject private var viewModel: NavigationBarViewModel
@@ -44,6 +45,7 @@ struct NavigationBarView: View {
                 contentView
             }
         )
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
     }
     
     private var contentView: some View {
@@ -98,6 +100,8 @@ struct NavigationBarView: View {
                 contentTextRow
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
     }
     
     @ViewBuilder

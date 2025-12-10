@@ -1,9 +1,11 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct CodeFieldView: View {
     @ObservedObject private var viewModel: CodeFieldViewModel
+    @Environment(\.colorScheme) private var colorScheme
     
     init() {
         self.viewModel = CodeFieldViewModel()
@@ -27,6 +29,7 @@ struct CodeFieldView: View {
                             self.viewModel.code = code
                         }
                     )
+                    .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                     .popover(
                         isPresented: $viewModel.successToastDisplayed,
                         appearance: Popover.m.default.appearance,
@@ -40,6 +43,7 @@ struct CodeFieldView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             
             Section {
                 VariationsView(viewModel: viewModel)

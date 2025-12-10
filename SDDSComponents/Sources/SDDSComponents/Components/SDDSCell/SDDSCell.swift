@@ -57,7 +57,8 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     public let leftContent: LeftContent
     public let rightContent: RightContent
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Environment(\.cellAppearance) private var environmentAppearance
     
     public init(
@@ -129,7 +130,7 @@ extension SDDSCell {
     private func value(for value: String, typography: TypographyToken, textColor: ColorToken) -> some View {
         Text(value)
             .typography(typography)
-            .foregroundColor(textColor.color(for: colorScheme))
+            .foregroundColor(textColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     // MARK: - Disclosure
@@ -153,7 +154,7 @@ extension SDDSCell {
                 if let image = appearance.disclosureImage {
                     image
                         .renderingMode(.template)
-                        .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme))
+                        .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme, subtheme: subtheme))
                 }
             }
         }

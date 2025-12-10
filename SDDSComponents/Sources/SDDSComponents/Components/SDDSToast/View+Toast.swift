@@ -6,6 +6,7 @@ private struct ToastParams<ContentStart: View, Content: View, ContentEnd: View> 
     let position: ToastPosition
     let duration: TimeInterval
     let contentEndPosition: ToastContentEndPosition
+    let subtheme: SubthemeData
     let onShow: ((ToastID) -> Void)?
     let onClose: ((ToastID) -> Void)?
     let contentStart: () -> ContentStart
@@ -47,6 +48,7 @@ public extension View {
         appearance: ToastAppearance,
         position: ToastPosition = .topCenter,
         duration: TimeInterval = 3.0,
+        subtheme: SubthemeData = SubthemeData(),
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder contentStart: @escaping () -> ContentStart,
@@ -58,6 +60,7 @@ public extension View {
             position: position,
             duration: duration,
             contentEndPosition: .centerRight,
+            subtheme: subtheme,
             onShow: onShow,
             onClose: onClose,
             contentStart: contentStart,
@@ -105,6 +108,7 @@ extension View {
         position: ToastPosition = .topCenter,
         duration: TimeInterval = 3.0,
         contentEndPosition: ToastContentEndPosition,
+        subtheme: SubthemeData = SubthemeData(),
         onShow: ((ToastID) -> Void)? = nil,
         onClose: ((ToastID) -> Void)? = nil,
         @ViewBuilder contentStart: @escaping () -> ContentStart,
@@ -117,6 +121,7 @@ extension View {
             position: position,
             duration: duration,
             contentEndPosition: contentEndPosition,
+            subtheme: subtheme,
             onShow: onShow,
             onClose: onClose,
             contentStart: contentStart,
@@ -149,6 +154,7 @@ extension View {
                         params.onClose?(toastID)
                     }
                 )
+                .environment(\.subtheme, params.subtheme)
             },
             id: toastID,
             position: params.position,

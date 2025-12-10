@@ -23,10 +23,13 @@ struct TabBarView: View {
                 VariationsView(viewModel: viewModel)
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .tabBar(
             items: viewModel.tabBarItems,
             selectedIndex: $viewModel.selectedIndex,
-            appearance: viewModel.appearance
+            appearance: viewModel.appearance,
+            subtheme: viewModel.theme.subtheme(viewModel.subtheme)
         )
         .navigationTitle("TabBar")
     }

@@ -39,7 +39,7 @@ import SwiftUI
 public struct SDDSSpinner: View {
     @Environment(\.spinnerAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let isAnimating: Bool
     private let _appearance: SpinnerAppearance?
     
@@ -61,15 +61,15 @@ public struct SDDSSpinner: View {
         ZStack {
             if appearance.backgroundColor != .clearColor {
                 Circle()
-                    .stroke(appearance.backgroundColor.color(for: colorScheme), lineWidth: lineThickness)
+                    .stroke(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme), lineWidth: lineThickness)
             }
             
             spinnerArc
                 .stroke(
                     AngularGradient(
                         colors: [
-                            appearance.endColor.color(for: colorScheme),
-                            appearance.startColor.color(for: colorScheme)
+                            appearance.endColor.color(for: colorScheme, subtheme: subtheme),
+                            appearance.startColor.color(for: colorScheme, subtheme: subtheme)
                         ],
                         center: .center,
                         startAngle: .degrees(0),

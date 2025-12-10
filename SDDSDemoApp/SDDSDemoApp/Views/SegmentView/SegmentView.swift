@@ -2,16 +2,19 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 import SDDSServTheme
 
 struct SegmentView: View {
     @ObservedObject private var viewModel: SegmentViewModel = SegmentViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         List {
             Section {
                 segment
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section(header: Text("Segment")) {
                 VariationsView(viewModel: viewModel)
                 stackOrientation
@@ -33,6 +36,8 @@ struct SegmentView: View {
                 maxElementsAdditionalWindow
             }
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .onAppear {
             viewModel.updateAppearance()
         }

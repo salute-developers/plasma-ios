@@ -58,6 +58,7 @@ import Foundation
 public struct SDDSList: View {
     @Environment(\.listAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
     @Binding private var contentHeight: CGFloat
     private let _appearance: ListAppearance?
     private let items: [AnyView]
@@ -83,8 +84,10 @@ public struct SDDSList: View {
             ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                 item
                     .environment(\.listItemAppearance, appearance.listItemAppearance)
+                    .environment(\.subtheme, subtheme)
                 if index != items.count - 1 && showDividers {
                     SDDSDivider(appearance: appearance.dividerAppearance)
+                        .environment(\.subtheme, subtheme)
                 }
             }
         }

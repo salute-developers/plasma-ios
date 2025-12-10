@@ -48,7 +48,7 @@ extension VerticalAlignment {
 public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
     @Environment(\.noteCompactAppearance) private var appearance
     @Environment(\.colorScheme) private var colorScheme
-    
+    @Environment(\.subtheme) private var subtheme
     private let title: String
     private let text: String?
     private let contentBefore: ContentBefore
@@ -139,7 +139,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
         .padding(.trailing, size.paddingEnd)
         .padding(.bottom, size.paddingBottom)
         .background(
-            appearance.backgroundColor.color(for: colorScheme)
+            appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
                 .shape(pathDrawer: size.shape)
         )
     }
@@ -154,7 +154,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
                 contentBefore
             }
         }
-        .tint(appearance.iconColor.color(for: colorScheme))
+        .tint(appearance.iconColor.color(for: colorScheme, subtheme: subtheme))
         .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
     }
     
@@ -168,12 +168,12 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
     private var titleAndText: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(title)
-                .foregroundColor(appearance.titleColor.color(for: colorScheme))
+                .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .typography(titleTypography)
             
             if let text = text {
                 Text(text)
-                    .foregroundColor(appearance.textColor.color(for: colorScheme))
+                    .foregroundColor(appearance.textColor.color(for: colorScheme, subtheme: subtheme))
                     .typography(textTypography)
                     .padding(.top, size.textTopMargin)
             }
@@ -201,7 +201,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: size.closeSize, height: size.closeSize)
-                        .foregroundColor(appearance.closeColor.color(for: colorScheme))
+                        .foregroundColor(appearance.closeColor.color(for: colorScheme, subtheme: subtheme))
                 }
             )
             .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }

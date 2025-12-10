@@ -6,6 +6,7 @@ import SDDSServTheme
 
 struct NotificationView: View {
     @StateObject private var viewModel = NotificationViewModel()
+    @Environment(\.colorScheme) private var colorScheme
     @State private var isPresented = false
     
     var body: some View {
@@ -23,6 +24,7 @@ struct NotificationView: View {
                     Spacer()
                 }
             }
+            .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             Section {
                 Picker("Layout", selection: $viewModel.layout) {
                     ForEach(NotificationLayout.allCases, id: \.self) { layout in
@@ -45,12 +47,15 @@ struct NotificationView: View {
             }
         
         }
+        .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
+        
         .navigationTitle("Notification")
         .notification(
             isPresented: $isPresented,
             appearance: viewModel.appearance,
             position: viewModel.position,
             closeImage: viewModel.hasClose ? Asset.close24.image : nil,
+            subtheme: viewModel.theme.subtheme(viewModel.subtheme),
             content: {
                 Text(viewModel.text)
                     .padding([.leading, .trailing], 8)
