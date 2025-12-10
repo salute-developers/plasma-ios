@@ -10,6 +10,7 @@
 		2EA85D25D1F2C7C9324F8D35 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE272379BE300A873CAC1D /* Theme.swift */; };
 		57EB7AE3B4AFFAD7A2354225 /* project.pbxproj in Sources */ = {isa = PBXBuildFile; fileRef = 8DD40C795EA7425C475814E6 /* project.pbxproj */; };
 		810AFCDD2D9328F2000B2A7A /* EnvironmentValueProvider+DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFC312D9328F2000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */; };
+		815E6B962EE9CB17001EA7C8 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815E6B952EE9CB17001EA7C8 /* InputMask.xcframework */; };
 		81BA174A2D80684C008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */; };
 		81BBE2142D75A12C00612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */; };
 		8D31E1FF75E2E2345BB02C93 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4865EAF86C63B2466DF565F2 /* SDDSThemeCore.xcframework */; };
@@ -66,6 +67,7 @@
 		6DB6D6107D07059E3016F845 /* PlasmaB2CTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlasmaB2CTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		810AFC312D9328F2000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValueProvider+DefaultValues.swift"; sourceTree = "<group>"; };
 		81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSComponents.xcframework; path = ../../build/SDDSComponents.xcframework; sourceTree = "<group>"; };
+		815E6B952EE9CB17001EA7C8 /* InputMask.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = InputMask.xcframework; path = ../../build/InputMask.xcframework; sourceTree = "<group>"; };
 		81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
 		81BBE2172D75A14500612681 /* ChipGroup+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChipGroup+BaseVariations.swift"; sourceTree = "<group>"; };
 		81BBE2182D75A14500612681 /* SDDSChipGroupSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSChipGroupSize.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815E6B962EE9CB17001EA7C8 /* InputMask.xcframework in Frameworks */,
 				E3ACC110AEAAC45B30A581A9 /* Foundation.framework in Frameworks */,
 				8D31E1FF75E2E2345BB02C93 /* SDDSThemeCore.xcframework in Frameworks */,
 				81BA174A2D80684C008F0A59 /* SDDSIcons.xcframework in Frameworks */,
@@ -190,6 +193,7 @@
 		15483A9F707E00599E32E65A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				815E6B952EE9CB17001EA7C8 /* InputMask.xcframework */,
 				81BA17492D80684C008F0A59 /* SDDSIcons.xcframework */,
 				81157CED2D64F4CE00254FB6 /* SDDSComponents.xcframework */,
 				3A41B917A1305B3682461BE9 /* iOS */,
