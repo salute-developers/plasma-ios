@@ -17,8 +17,8 @@ async function run() {
             .use(remarkStringify)
             .process(data);
 
-        // Генерируем JSON структуру
-        const jsonData = buildChangelogJson(changelog.componentsByH2);
+        // Генерируем JSON структуру (Map сохраняем в file.data)
+        const jsonData = buildChangelogJson(changelog.data?.componentsByH2);
         const jsonString = JSON.stringify(jsonData, null, 2);
         
         // Выводим JSON в логи

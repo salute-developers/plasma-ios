@@ -1,7 +1,7 @@
 import { groupByH2Headings } from './groupByH2Headings.js';
 import { buildChangelogJson } from './buildChangelogJson.js';
 
-export function groupByHeadingsLevel(tree) {
+export function groupByHeadingsLevel(tree, file) {
     // Группировка по заголовкам h2
     const h2Groups = groupByH2Headings(tree.children);
 
@@ -130,9 +130,12 @@ export function groupByHeadingsLevel(tree) {
         }
     }
 
-    // Сохраняем componentsByH2 для генерации JSON
-    tree.componentsByH2 = componentsByH2;
-    
+    // Сохраняем componentsByH2 для генерации JSON (пишем в file.data, чтобы unified не потерял при stringify)
+    if (!file.data) {
+        file.data = {};
+    }
+    file.data.componentsByH2 = componentsByH2;
+
     return {
         ...tree,
         children: finalChildren,
