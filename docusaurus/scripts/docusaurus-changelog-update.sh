@@ -12,8 +12,9 @@ source "$SCRIPT_DIR/docusaurus.sh"
 # Параметры
 ARTIFACT_ID="${1:-}"
 VERSION="${2:-}"
-RELEASE_CHANGELOG_JSON_PATH="${3:-../release-changelog.json}"
+RELEASE_CHANGELOG_MD_PATH="${3:-../release-changelog.md}"
 LIBRARY_CHANGELOG_JSON_PATH="${4:-build/changelog.json}"
+CORE_LIB_NAME="${5:-sdds-uikit}"
 
 # Функция для обновления changelog.json с новой версией
 docusaurus_changelog_update() {
@@ -25,14 +26,14 @@ docusaurus_changelog_update() {
         exit 1
     fi
     
-    # Проверяем наличие release-changelog.json
-    if [[ ! -f "$RELEASE_CHANGELOG_JSON_PATH" ]]; then
-        warning "Файл release-changelog.json не найден: $RELEASE_CHANGELOG_JSON_PATH"
+    # Проверяем наличие release-changelog.md
+    if [[ ! -f "$RELEASE_CHANGELOG_MD_PATH" ]]; then
+        warning "Файл release-changelog.md не найден: $RELEASE_CHANGELOG_MD_PATH"
         warning "Пропускаю обновление changelog.json"
         return 0
     fi
     
-    log "Найден файл release-changelog.json: $RELEASE_CHANGELOG_JSON_PATH"
+    log "Найден файл release-changelog.md: $RELEASE_CHANGELOG_MD_PATH"
     
     # Создаем директорию для changelog.json если не существует
     local json_dir=$(dirname "$LIBRARY_CHANGELOG_JSON_PATH")
@@ -46,14 +47,26 @@ docusaurus_changelog_update() {
     
     log "Обновляю changelog.json с версией $VERSION..."
     
-    # Читаем release-changelog.json
-    local release_changelog=$(cat "$RELEASE_CHANGELOG_JSON_PATH")
+    # Используем parse-changelog-to-json.js для генерации DTO формата (как на Android)
+    # Формат: { "date": "...", "core": [...], "lib": [...] }
+    local script_dir="$(cd "$SCRIPT_DIR/../.." && pwd)"
+    log "Парсинг markdown и преобразование в DTO формат..."
+    local dto_json=$(node "$script_dir/scripts/parse-changelog-to-json.js" "$ARTIFACT_ID" "$RELEASE_CHANGELOG_MD_PATH" "$CORE_LIB_NAME" 2>/dev/null || echo "")
     
-    # Получаем текущую дату
-    local current_date=$(date "+%Y-%m-%d")
+    if [[ -z "$dto_json" ]]; then
+        error "Не удалось сгенерировать DTO из changelog"
+        exit 1
+    fi
     
-    # Обновляем changelog.json: добавляем новую версию как ключ
-    # Формат аналогичен Android: { "version": { "date": "...", "sections": [...], "themes": {...} } }
+    # Проверяем, что dto_json валидный JSON
+    if ! echo "$dto_json" | jq . > /dev/null 2>&1; then
+        error "Сгенерированный DTO не является валидным JSON"
+        log "DTO содержимое: $dto_json"
+        exit 1
+    fi
+    
+    log "DTO успешно сгенерирован"
+    
     local temp_file=$(mktemp)
     
     # Читаем существующий changelog.json
@@ -66,21 +79,9 @@ docusaurus_changelog_update() {
         existing_changelog=$(cat "$temp_file")
     fi
     
-    # Добавляем новую версию с данными из release-changelog.json
-    # Формируем объект версии: { "date": "...", "data": { ... } }
-    # Проверяем, что release_changelog валидный JSON
-    if ! echo "$release_changelog" | jq . > /dev/null 2>&1; then
-        error "release-changelog.json содержит невалидный JSON"
-        exit 1
-    fi
-    
-    local version_data=$(echo "$release_changelog" | jq --arg date "$current_date" '{
-        date: $date,
-        data: .
-    }')
-    
+    # Добавляем новую версию с данными из DTO (формат: { "date": "...", "core": [...], "lib": [...] })
     # Объединяем существующий changelog с новой версией
-    echo "$existing_changelog" | jq --arg version "$VERSION" --argjson version_data "$version_data" \
+    echo "$existing_changelog" | jq --arg version "$VERSION" --argjson version_data "$dto_json" \
         '. + {($version): $version_data}' > "$temp_file"
     
     # Сохраняем обновленный changelog.json

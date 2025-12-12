@@ -352,8 +352,9 @@ if [[ "$DEPLOY_MODE" == "s3" ]] && [[ -n "$S3_ACCESS_KEY_ID" ]] && [[ -n "$S3_SE
         "$SCRIPT_DIR/scripts/docusaurus-changelog-update.sh" \
             "$ARTIFACT_ID" \
             "$VERSION" \
-            "../release-changelog.json" \
-            "build/changelog.json" || echo "⚠️  Ошибка при обновлении changelog.json, продолжаю..."
+            "../release-changelog.md" \
+            "build/changelog.json" \
+            "sdds-uikit" || echo "⚠️  Ошибка при обновлении changelog.json, продолжаю..."
     else
         echo "ℹ️  release-changelog.json не найден, пропускаю обновление changelog.json"
     fi

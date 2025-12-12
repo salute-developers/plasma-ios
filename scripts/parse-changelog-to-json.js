@@ -79,8 +79,8 @@ function parseTokenLibChangelog(markdown, tokenLibName, coreLibName) {
             currentComponent = line.substring(4).trim();
             currentItems = [];
         }
-        // Элемент списка
-        else if (line.startsWith('- ') && currentSection && currentComponent) {
+        // Элемент списка (поддерживаем как `-`, так и `*`)
+        else if ((line.startsWith('- ') || line.startsWith('* ')) && currentSection && currentComponent) {
             const itemText = line.substring(2).trim();
             // Извлекаем ссылку на PR если есть
             const prMatch = itemText.match(/\[PR\]\((https?:\/\/[^\)]+)\)/);
@@ -137,16 +137,64 @@ function extractPrId(link) {
 }
 
 function isCoreSection(heading, coreName) {
-    return heading === coreName || heading.toLowerCase() === coreName.toLowerCase();
+    const normalizedHeading = heading.toLowerCase().replace(/\s+/g, '-');
+    const normalizedCoreName = coreName.toLowerCase().replace(/\s+/g, '-');
+    
+    // Проверяем точное совпадение
+    if (normalizedHeading === normalizedCoreName) {
+        return true;
+    }
+    
+    // Список известных Core секций (компоненты и общие изменения)
+    const coreSections = [
+        'sddscomponents',
+        'sdds-components',
+        'sddsthemecore',
+        'sdds-theme-core',
+        'sdds-uikit',
+        'sddsuikit'
+    ];
+    
+    // Проверяем, является ли заголовок одной из Core секций
+    return coreSections.some(core => normalizedHeading === core || normalizedHeading.includes(core));
 }
 
 function isLibSection(heading, libName) {
+    // Маппинг названий из markdown в имена библиотек
+    const nameMapping = {
+        'plasma-styles-salute': 'styles-salute-theme',
+        'plasma-stylesalute': 'styles-salute-theme',
+        'styles-salute': 'styles-salute-theme',
+        'plasma-b2c': 'plasma-b2c-theme',
+        'plasma-b2c-theme': 'plasma-b2c-theme',
+        'plasma-homeds': 'plasma-home-ds-theme',
+        'plasma-home-ds': 'plasma-home-ds-theme',
+        'plasma-home-ds-theme': 'plasma-home-ds-theme',
+        'sdds-serv': 'sddsserv-theme',
+        'sddsserv': 'sddsserv-theme',
+        'sddsserv-theme': 'sddsserv-theme'
+    };
+    
+    // Нормализуем названия
     const normalizedHeading = heading.toLowerCase().replace(/\s+/g, '-');
     const normalizedLibName = libName.toLowerCase().replace(/\s+/g, '-');
     
+    // Проверяем маппинг
+    const mappedName = nameMapping[normalizedHeading];
+    if (mappedName && mappedName === normalizedLibName) {
+        return true;
+    }
+    
+    // Проверяем различные варианты названий (убираем префиксы и суффиксы)
+    const headingWithoutPrefix = normalizedHeading.replace(/^(plasma-|sdds-)/, '').replace(/-theme$/, '');
+    const libNameWithoutSuffix = normalizedLibName.replace(/-theme$/, '');
+    
     return normalizedHeading === normalizedLibName || 
            normalizedHeading.includes(normalizedLibName) ||
-           normalizedLibName.includes(normalizedHeading);
+           normalizedLibName.includes(normalizedHeading) ||
+           headingWithoutPrefix === libNameWithoutSuffix ||
+           headingWithoutPrefix.includes(libNameWithoutSuffix) ||
+           libNameWithoutSuffix.includes(headingWithoutPrefix);
 }
 
 // Парсим changelog
