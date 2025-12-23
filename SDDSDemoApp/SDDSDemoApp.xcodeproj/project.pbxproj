@@ -137,6 +137,7 @@
 		8183D89A2EB2A98D00610A9A /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
 		8183D96A2EB2A98D00610A9A /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CardTestCase; sourceTree = "<group>"; };
+		D34C4A532EEAE4D300678E78 /* MasksTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MasksTestCase; sourceTree = "<group>"; };
 		D35F1ACF2E681A42005B8B59 /* TabBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarTestCase; sourceTree = "<group>"; };
 		D35F47C72E5701F800B3EC9E /* LoaderTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoaderTestCase; sourceTree = "<group>"; };
 		D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScrollbarTestCase; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D34C4A532EEAE4D300678E78 /* MasksTestCase */,
 				D3886B342ED866CE0001DF66 /* DrawerTestCase */,
 				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
@@ -401,6 +403,7 @@
 			fileSystemSynchronizedGroups = (
 				81340B492EC383C500D40423 /* BaseTestCases */,
 				D336A7EB2E0AE28700A996FC /* CardTestCase */,
+				D34C4A532EEAE4D300678E78 /* MasksTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
 				D35F47C72E5701F800B3EC9E /* LoaderTestCase */,
 				D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */,
@@ -901,7 +904,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemoAppStatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -931,7 +934,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemoAppStatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleLanguagesDidMigrate</key>
+	<string>20E247</string>
+	<key>AppleLanguagesSchemaVersion</key>
+	<integer>3000</integer>
+	<key>AKLastIDMSEnvironment</key>
+	<integer>0</integer>
+	<key>AKLastLocale</key>
+	<string>ru_RU</string>
+	<key>AppleLocale</key>
+	<string>ru_RU</string>
+	<key>AppleKeyboards</key>
+	<array>
+		<string>ru_RU@sw=Russian;hw=Automatic</string>
+		<string>en_US@sw=QWERTY;hw=Automatic</string>
+		<string>emoji@sw=Emoji</string>
+	</array>
+	<key>ApplePasscodeKeyboards</key>
+	<array>
+		<string>ru_RU@sw=Russian;hw=Automatic</string>
+		<string>en_US@sw=QWERTY;hw=Automatic</string>
+		<string>emoji@sw=Emoji</string>
+	</array>
+	<key>AppleLanguages</key>
+	<array>
+		<string>ru-RU</string>
+		<string>en-US</string>
+	</array>
+	<key>PKLogNotificationServiceResponsesKey</key>
+	<false/>
+	<key>AddingEmojiKeybordHandled</key>
+	<true/>
+	<key>AccessibilityEnabled</key>
+	<true/>
+	<key>ApplicationAccessibilityEnabled</key>
+	<true/>
+</dict>
+</plist>

@@ -3,7 +3,7 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
- `SDDSWheel` - компонент для выбора значений с помощью вращающихся колес.
+ `` - компонент для выбора значений с помощью вращающихся колес.
  
  Компонент поддерживает:
  - Несколько колес для выбора различных значений
@@ -16,7 +16,7 @@ import SwiftUI
  
  # Пример использования:
  ```swift
- SDDSWheel(
+ (
      wheels: [
          WheelData(items: ["01", "02", "03", ...], description: "День"),
          WheelData(items: ["Январь", "Февраль", "Март", ...], description: "Месяц"),
@@ -39,17 +39,12 @@ public struct SDDSWheel: View {
     @State private var lastScrollUpdate: [Date] = []
     @State private var lastButtonPress: [Date] = []
     @State private var hasAppeared: [Bool] = []
+    @State private var closestItemIndices: [Int] = []
+    @State private var isSnappingFromFake: [Bool] = []
     
-    // Данные для колес
     private let wheels: [WheelData]
-    
-    // Привязка к выбранным значениям
     @Binding private var selection: [Int]
-    
-    // Количество столбцов-колес
     private let wheelCount: Int
-    
-    // Количество видимых элементов в столбце
     private let visibleItemsCount: Int
     
     public init(
@@ -166,11 +161,9 @@ public struct SDDSWheel: View {
             
             switch appearance.dividerStyle {
             case .empty:
-                // Не показываем разделитель, только spacer
                 EmptyView()
                 
             case .dots:
-                // Показываем двоеточие, выровненное по центру выбранного элемента
                 GeometryReader { geometry in
                     let centerY = getCenterY(for: wheel, geometry: geometry)
                     VStack(spacing: 0) {
@@ -184,7 +177,6 @@ public struct SDDSWheel: View {
                 }
                 
             case .divider:
-                // Показываем стандартный разделитель
                 if let dividerAppearance = appearance.dividerAppearance {
                     SDDSDivider(appearance: dividerAppearance)
                         .frame(width: height)
@@ -227,9 +219,10 @@ public struct SDDSWheel: View {
         let verticalPadding = calculateVerticalPadding(for: wheel, geometry: geometry)
         
         ZStack {
-            // Нижний слой - прокручиваемые элементы С description (но description невидим)
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: appearance.size.itemMinSpacing) {
+                    invisibleSpacerItem(wheelIndex: wheelIndex, itemIndex: -1, geometry: geometry)
+                    
                     ForEach(0..<wheel.items.count, id: \.self) { itemIndex in
                         wheelItemWithTracking(
                             wheelIndex: wheelIndex,
@@ -240,6 +233,8 @@ public struct SDDSWheel: View {
                             descriptionOpacity: 0.0
                         )
                     }
+                    
+                    invisibleSpacerItem(wheelIndex: wheelIndex, itemIndex: wheel.items.count, geometry: geometry)
                 }
                 .padding(.vertical, verticalPadding)
                 .background(
@@ -264,7 +259,6 @@ public struct SDDSWheel: View {
                 handleSelectionChange(wheelIndex: wheelIndex, proxy: proxy)
             }
             
-            // Верхний слой - неподвижный description (только центральный элемент)
             if let description = wheel.description, 
                !description.isEmpty,
                selection[wheelIndex] < wheel.items.count {
@@ -289,6 +283,28 @@ public struct SDDSWheel: View {
                 .allowsHitTesting(false)
             }
         }
+    }
+    
+    @ViewBuilder
+    private func invisibleSpacerItem(wheelIndex: Int, itemIndex: Int, geometry: GeometryProxy) -> some View {
+        let itemHeight = getItemHeight()
+        
+        Color.clear
+            .frame(height: itemHeight)
+            .id("\(wheelIndex)-\(itemIndex)")
+            .background(
+                GeometryReader { itemGeometry in
+                    Color.clear
+                        .preference(
+                            key: ItemPositionPreferenceKey.self,
+                            value: [ItemPosition(
+                                wheelIndex: wheelIndex,
+                                itemIndex: itemIndex,
+                                midY: itemGeometry.frame(in: .named("scroll\(wheelIndex)")).midY
+                            )]
+                        )
+                }
+            )
     }
     
     @ViewBuilder
@@ -349,15 +365,12 @@ public struct SDDSWheel: View {
         let scaleAnchor = getScaleAnchor(for: wheelIndex)
         
         VStack(spacing: 0) {
-            // Сам элемент
             HStack(spacing: appearance.size.itemTextAfterPadding) {
-                // Основной текст
                 Text(item.text)
                     .fixedSize(horizontal: true, vertical: false)
                     .foregroundColor(currentColor(for: appearance.itemTextColor))
                     .typography(itemTextTypography)
                 
-                // Дополнительный текст (если есть)
                 if let textAfter = item.textAfter, !textAfter.isEmpty {
                     Text(textAfter)
                         .fixedSize(horizontal: true, vertical: false)
@@ -371,17 +384,14 @@ public struct SDDSWheel: View {
             .frame(maxWidth: .infinity, alignment: frameAlignment)
             .frame(height: itemHeight)
             
-            // Description для центрального элемента
             if isCentralItem, let description = wheel.description, !description.isEmpty {
                 if descriptionOpacity > 0 {
-                    // Реальный description (для верхнего слоя)
                     Text(description)
                         .foregroundColor(currentColor(for: appearance.descriptionColor))
                         .typography(descriptionTypography)
                         .frame(maxWidth: .infinity, alignment: frameAlignment)
                         .padding(.top, appearance.size.descriptionPadding)
                 } else {
-                    // Заглушка для layout (для нижнего слоя)
                     let descHeight = descriptionTypography.lineHeight
                     Color.clear
                         .frame(maxWidth: .infinity)
@@ -408,7 +418,6 @@ public struct SDDSWheel: View {
         let scaleAnchor = getScaleAnchor(for: wheelIndex)
         
         VStack(spacing: 0) {
-            // Полноценный элемент, но с управляемой прозрачностью
             HStack(spacing: appearance.size.itemTextAfterPadding) {
                 Text(item.text)
                     .fixedSize(horizontal: true, vertical: false)
@@ -427,7 +436,6 @@ public struct SDDSWheel: View {
             .frame(height: itemHeight)
             .opacity(itemOpacity)
             
-            // Description для центрального элемента
             if isCentralItem, let description = wheel.description, !description.isEmpty {
                 Text(description)
                     .foregroundColor(currentColor(for: appearance.descriptionColor))
@@ -458,7 +466,6 @@ public struct SDDSWheel: View {
         let baseHeight = CGFloat(visibleItemsCount) * itemHeight
         let spacingHeight = CGFloat(max(0, visibleItemsCount - 1)) * appearance.size.itemMinSpacing
         
-        // Добавляем высоту description для центрального элемента, если он есть
         var descriptionHeight: CGFloat = 0
         if let description = wheel.description, !description.isEmpty {
             descriptionHeight = appearance.size.descriptionPadding + descriptionTypography.lineHeight
@@ -468,21 +475,16 @@ public struct SDDSWheel: View {
     }
     
     private func calculateVerticalPadding(for wheel: WheelData, geometry: GeometryProxy) -> CGFloat {
-        // Центр должен быть на середине текста центрального элемента,
-        // а не на середине всей высоты (которая включает description)
         let itemHeight = getItemHeight()
         let baseHeight = CGFloat(visibleItemsCount) * itemHeight
         let spacingHeight = CGFloat(max(0, visibleItemsCount - 1)) * appearance.size.itemMinSpacing
         
-        // Центр текста центрального элемента
         let centerOfCentralItemText = (baseHeight + spacingHeight) / 2
         
-        // Геометрия включает description, но центр скролла должен быть на centerOfCentralItemText
         return centerOfCentralItemText
     }
     
     private func getCenterY(for wheel: WheelData, geometry: GeometryProxy) -> CGFloat {
-        // Центр Y находится на середине текста центрального элемента
         let itemHeight = getItemHeight()
         let baseHeight = CGFloat(visibleItemsCount) * itemHeight
         let spacingHeight = CGFloat(max(0, visibleItemsCount - 1)) * appearance.size.itemMinSpacing
@@ -491,11 +493,9 @@ public struct SDDSWheel: View {
     }
     
     private func calculateTopPaddingForStaticLayer(for wheel: WheelData, geometry: GeometryProxy) -> CGFloat {
-        // Верхний отступ должен разместить текст элемента так, чтобы его центр был на getCenterY
         let centerY = getCenterY(for: wheel, geometry: geometry)
         let itemHeight = getItemHeight()
         
-        // Верх элемента = центр - половина высоты элемента
         return centerY - (itemHeight / 2)
     }
     
@@ -536,6 +536,8 @@ public struct SDDSWheel: View {
         isUpdatingFromButtons = Array(repeating: false, count: wheels.count)
         lastScrollUpdate = Array(repeating: Date(), count: wheels.count)
         lastButtonPress = Array(repeating: Date.distantPast, count: wheels.count)
+        closestItemIndices = Array(repeating: 0, count: wheels.count)
+        isSnappingFromFake = Array(repeating: false, count: wheels.count)
         if hasAppeared.count != wheels.count {
             hasAppeared = Array(repeating: false, count: wheels.count)
         }
@@ -552,7 +554,6 @@ public struct SDDSWheel: View {
                 }
             }
             .onEnded { _ in
-                // Увеличиваем задержку для корректной финализации скролла
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     if wheelIndex < isScrolling.count {
                         isScrolling[wheelIndex] = false
@@ -564,7 +565,16 @@ public struct SDDSWheel: View {
                         }
                     }
                 }
-                // Центрируем выбранный элемент после окончания скролла с увеличенной задержкой
+                let currentClosestIndex = wheelIndex < closestItemIndices.count ? closestItemIndices[wheelIndex] : -999
+                let wheel = wheels[wheelIndex]
+                let isOnFakeElement = currentClosestIndex < 0 || currentClosestIndex >= wheel.items.count
+                
+                if isOnFakeElement {
+                    if wheelIndex < isSnappingFromFake.count {
+                        isSnappingFromFake[wheelIndex] = true
+                    }
+                }
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     snapToCenter(wheelIndex: wheelIndex, proxy: proxy)
                 }
@@ -576,17 +586,13 @@ public struct SDDSWheel: View {
         let isFirstAppearance = wheelIndex < hasAppeared.count && !hasAppeared[wheelIndex]
         
         if isFirstAppearance {
-            // При первом появлении устанавливаем позицию без анимации после небольшой задержки
-            // чтобы ScrollView успел отрендериться
             DispatchQueue.main.async {
                 proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
-                // Отмечаем, что колесо уже появилось
                 if wheelIndex < self.hasAppeared.count {
                     self.hasAppeared[wheelIndex] = true
                 }
             }
         } else {
-            // При последующих изменениях используем анимацию
             withAnimation(.easeInOut(duration: 0.3)) {
                 proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
             }
@@ -594,25 +600,69 @@ public struct SDDSWheel: View {
     }
     
     private func snapToCenter(wheelIndex: Int, proxy: ScrollViewProxy) {
+        let wheel = wheels[wheelIndex]
         let selectedIndex = selection[wheelIndex]
-        withAnimation(.easeInOut(duration: 0.2)) {
-            proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+        
+        let isOnFakeElement = wheelIndex < closestItemIndices.count && 
+                             (closestItemIndices[wheelIndex] < 0 || closestItemIndices[wheelIndex] >= wheel.items.count)
+        
+        if isOnFakeElement {
+            let targetIndex: Int
+            if selectedIndex == 0 {
+                targetIndex = 0
+            } else if selectedIndex == wheel.items.count - 1 {
+                targetIndex = wheel.items.count - 1
+            } else {
+                targetIndex = selectedIndex
+            }
+            
+            if wheelIndex < isSnappingFromFake.count && !isSnappingFromFake[wheelIndex] {
+                isSnappingFromFake[wheelIndex] = true
+            }
+            
+            withAnimation(.easeInOut(duration: 0.15)) {
+                proxy.scrollTo("\(wheelIndex)-\(targetIndex)", anchor: .center)
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                withAnimation(.easeInOut(duration: 0.15)) {
+                    proxy.scrollTo("\(wheelIndex)-\(targetIndex)", anchor: .center)
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    if wheelIndex < self.isSnappingFromFake.count {
+                        self.isSnappingFromFake[wheelIndex] = false
+                        
+                        let currentClosestIndex = wheelIndex < self.closestItemIndices.count ? self.closestItemIndices[wheelIndex] : -999
+                        let isStillOnFake = currentClosestIndex < 0 || currentClosestIndex >= wheel.items.count
+                        
+                        if isStillOnFake {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    proxy.scrollTo("\(wheelIndex)-\(targetIndex)", anchor: .center)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            withAnimation(.easeInOut(duration: 0.2)) {
+                proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
+            }
         }
     }
     
     private func handleSelectionChange(wheelIndex: Int, proxy: ScrollViewProxy) {
-        // Не скроллим программно, если идет ручной скролл
         guard wheelIndex < isScrolling.count && !isScrolling[wheelIndex] else {
             return
         }
         
-        // Скроллим программно для любого программного изменения (кнопки или внешнее изменение)
         let selectedIndex = selection[wheelIndex]
         withAnimation(.easeInOut(duration: 0.3)) {
             proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
         }
         
-        // Сбрасываем флаг после небольшой задержки
         if wheelIndex < isUpdatingFromButtons.count && isUpdatingFromButtons[wheelIndex] {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 if wheelIndex < isUpdatingFromButtons.count {
@@ -623,51 +673,58 @@ public struct SDDSWheel: View {
     }
     
     private func updateSelectionFromItemPositions(wheelIndex: Int, positions: [ItemPosition], geometry: GeometryProxy) {
-        // Не обновляем если скролл инициирован кнопками
         guard wheelIndex < isUpdatingFromButtons.count && !isUpdatingFromButtons[wheelIndex] else {
+            return
+        }
+        
+        if wheelIndex < isSnappingFromFake.count && isSnappingFromFake[wheelIndex] {
             return
         }
         
         let wheel = wheels[wheelIndex]
         let centerY = getCenterY(for: wheel, geometry: geometry)
         
-        // Находим элемент этого колеса, который ближе всего к центру
         let itemsForWheel = positions.filter { $0.wheelIndex == wheelIndex }
         
         guard !itemsForWheel.isEmpty else { return }
         
-        // Находим ближайший к центру элемент
         let closest = itemsForWheel.min(by: { 
             abs($0.midY - centerY) < abs($1.midY - centerY)
         })
         
         guard let closestItem = closest else { return }
         
-        var newSelectedIndex = closestItem.itemIndex
+        if wheelIndex < closestItemIndices.count {
+            closestItemIndices[wheelIndex] = closestItem.itemIndex
+        }
         
-        // Проверяем границы - если скроллим к краям
-        let distanceFromCenter = abs(closestItem.midY - centerY)
-        let itemHeight = getItemHeight()
+        var newSelectedIndex: Int
         
-        // Если элемент далеко от центра, возможно мы на краю списка
-        if distanceFromCenter > itemHeight {
-            // Проверяем, не первый/последний ли это элемент в массиве позиций
-            let sortedItems = itemsForWheel.sorted { $0.itemIndex < $1.itemIndex }
-            if let first = sortedItems.first, closestItem.itemIndex == first.itemIndex {
-                // Это первый видимый элемент - значит мы в начале списка
-                newSelectedIndex = 0
-            } else if let last = sortedItems.last, closestItem.itemIndex == last.itemIndex {
-                // Это последний видимый элемент - значит мы в конце списка
-                newSelectedIndex = wheel.items.count - 1
+        if closestItem.itemIndex < 0 {
+            newSelectedIndex = 0
+        } else if closestItem.itemIndex >= wheel.items.count {
+            newSelectedIndex = wheel.items.count - 1
+        } else {
+            newSelectedIndex = closestItem.itemIndex
+            
+            let distanceFromCenter = abs(closestItem.midY - centerY)
+            let itemHeight = getItemHeight()
+            
+            if distanceFromCenter > itemHeight {
+                let realItems = itemsForWheel.filter { $0.itemIndex >= 0 && $0.itemIndex < wheel.items.count }
+                let sortedItems = realItems.sorted { $0.itemIndex < $1.itemIndex }
+                if let first = sortedItems.first, closestItem.itemIndex == first.itemIndex {
+                    newSelectedIndex = 0
+                } else if let last = sortedItems.last, closestItem.itemIndex == last.itemIndex {
+                    newSelectedIndex = wheel.items.count - 1
+                }
             }
         }
         
-        // Сохраняем для финального обновления
         if wheelIndex < scrollOffsets.count {
             scrollOffsets[wheelIndex] = CGFloat(newSelectedIndex)
         }
         
-        // Обновляем selection если элемент изменился и валиден
         if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
             selection[wheelIndex] = newSelectedIndex
 
@@ -731,7 +788,6 @@ public struct SDDSWheel: View {
             return max(maxWidth, totalWidth)
         }
         
-        // Учитываем description если есть
         if let description = wheel.description, !description.isEmpty {
             let descWidth = calculateTextWidth(description, typography: descriptionTypography)
             return max(maxWidth, descWidth)
