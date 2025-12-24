@@ -1,9 +1,9 @@
 import UIKit
 import SwiftUI
 
-final class WindowOverlayService {
+final class WindowOverlayService: NSObject {
     static let shared = WindowOverlayService()
-    private var window: UIWindow?
+    private var overlayContainerView: UIView?
     private var scene: UIWindowScene? {
         UIApplication.shared.connectedScenes.first as? UIWindowScene
     }
@@ -14,24 +14,17 @@ final class WindowOverlayService {
     private var contentBuilder: (() -> AnyView)?
     private var rootViewController: UIViewController?
     private var hostingController: UIHostingController<AnyView>?
+    private var overlayHostingController: UIHostingController<AnyView>?
     private var stackedToasts: [StackedToast] = []
     private var toastContainerView: PassthroughView?
+    private var hideOnTap: Bool = true
     
-    private init() {}
+    private override init() {
+        super.init()
+    }
     
-    private func createWindow() -> UIWindow? {
-        guard let scene = scene else {
-            print("No active window scene found")
-            return nil
-        }
-        
-        let window = UIWindow(windowScene: scene)
-        window.windowLevel = .alert + 1
-        window.backgroundColor = .clear
-        window.isHidden = false
-        window.makeKeyAndVisible()
-        
-        return window
+    private func getExistingWindow() -> UIWindow? {
+        return scene?.windows.first
     }
     
     private func setupToastContainer() {
@@ -70,89 +63,242 @@ final class WindowOverlayService {
         hideOnTap: Bool = true,
         onClose: (() -> Void)? = nil
     ) {
-        guard let window = createWindow() else { return }
-        window.isUserInteractionEnabled = true
+        guard let existingWindow = getExistingWindow() else {
+            print("No existing window found")
+            return
+        }
         
         self.lastFrame = frame
         self.contentBuilder = { AnyView(
             content()
         ) }
         self.onClose = onClose
+        self.hideOnTap = hideOnTap
+        
+        if overlayHostingController != nil {
+            updateContent(in: existingWindow, frame: frame, content: content, onClose: onClose)
+            return
+        }
         
         setupOrientationObserver()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideGesture))
-        self.tapGesture = tapGesture
-        window.addGestureRecognizer(tapGesture)
+        setupOverlayContainer(in: existingWindow)
         
-        let hosting = createHostingController(for: frame, window: window)
+        let hosting = createHostingController(for: frame, window: existingWindow)
+        overlayHostingController = hosting
         
-        window.rootViewController = hosting
-        self.window = window
+        if let container = overlayContainerView {
+            hosting.view.frame = calculateViewFrame(for: frame, in: existingWindow)
+            hosting.view.backgroundColor = UIColor.clear
+            hosting.view.isUserInteractionEnabled = true
+            container.addSubview(hosting.view)
+            
+            if let containerView = container as? OverlayContainerView {
+                containerView.contentView = hosting.view
+            }
+            
+            setupTapGesture()
+        }
     }
+    
+    private func setupOverlayContainer(in window: UIWindow) {
+        if overlayContainerView == nil {
+            let containerView = OverlayContainerView(frame: window.bounds)
+            containerView.backgroundColor = .clear
+            containerView.isUserInteractionEnabled = true
+            window.addSubview(containerView)
+            overlayContainerView = containerView
+        }
+        overlayContainerView?.frame = window.bounds
+        if let containerView = overlayContainerView as? OverlayContainerView {
+            containerView.contentView = overlayHostingController?.view
+        }
+    }
+    
+    private func setupTapGesture() {
+        if let oldGesture = tapGesture, let container = overlayContainerView {
+            container.removeGestureRecognizer(oldGesture)
+        }
+        
+        if hideOnTap, let container = overlayContainerView {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideGesture))
+            tapGesture.cancelsTouchesInView = false
+            tapGesture.delegate = self
+            container.addGestureRecognizer(tapGesture)
+            self.tapGesture = tapGesture
+        } else {
+            self.tapGesture = nil
+        }
+    }
+    
+    private func calculateViewFrame(for frame: CGRect, in window: UIWindow) -> CGRect {
+        return frame
+    }
+    
+    private func updateContent<Content: View>(
+        in window: UIWindow,
+        frame: CGRect,
+        @ViewBuilder content: @escaping () -> Content,
+        onClose: (() -> Void)?
+    ) {
+        self.lastFrame = frame
+        self.contentBuilder = { AnyView(
+            content()
+        ) }
+        self.onClose = onClose
+        
+        if let existingController = overlayHostingController {
+            let baseContent = contentBuilder?() ?? AnyView(EmptyView())
+            let newContent = baseContent
+                .frame(width: frame.width, height: frame.height)
+                .ignoresSafeArea(.all)
+            
+            existingController.rootView = AnyView(newContent)
+            existingController.view.frame = calculateViewFrame(for: frame, in: window)
+            
+            if let containerView = overlayContainerView as? OverlayContainerView {
+                containerView.contentView = existingController.view
+            }
+            
+            setupTapGesture()
+        } else {
+            let hosting = createHostingController(for: frame, window: window)
+            overlayHostingController = hosting
+            
+            if let container = overlayContainerView {
+                hosting.view.frame = calculateViewFrame(for: frame, in: window)
+                hosting.view.backgroundColor = UIColor.clear
+                hosting.view.isUserInteractionEnabled = true
+                container.addSubview(hosting.view)
+                
+                if let containerView = container as? OverlayContainerView {
+                    containerView.contentView = hosting.view
+                }
+                
+                setupTapGesture()
+            }
+        }
+    }
+    
 
     @objc private func orientationDidChange() {
-        guard let window = self.window, let content = self.contentBuilder else { return }
-        let hosting = createHostingController(for: lastFrame, window: window)
-        window.rootViewController = hosting
+        guard let window = getExistingWindow(), let content = self.contentBuilder else { return }
+        overlayContainerView?.frame = window.bounds
+        
+        if let existingController = overlayHostingController {
+            let baseContent = contentBuilder?() ?? AnyView(EmptyView())
+            let newContent = baseContent
+                .frame(width: lastFrame.width, height: lastFrame.height)
+                .ignoresSafeArea(.all)
+            
+            existingController.rootView = AnyView(newContent)
+            existingController.view.frame = calculateViewFrame(for: lastFrame, in: window)
+        } else {
+            let hosting = createHostingController(for: lastFrame, window: window)
+            overlayHostingController = hosting
+            
+            if let container = overlayContainerView {
+                hosting.view.frame = calculateViewFrame(for: lastFrame, in: window)
+                hosting.view.backgroundColor = UIColor.clear
+                hosting.view.isUserInteractionEnabled = true
+                container.addSubview(hosting.view)
+                
+                if let containerView = container as? OverlayContainerView {
+                    containerView.contentView = hosting.view
+                }
+                
+                setupTapGesture()
+            }
+        }
     }
 
-    private func createHostingController(for frame: CGRect, window: UIWindow) -> UIHostingController<some View> {
-        let screenBounds = UIScreen.main.bounds
-        let offsetX = frame.origin.x - screenBounds.width / 2 + frame.width / 2
-        
-        let isLandscape = UIDevice.current.orientation.isLandscape
-        let offsetY: CGFloat
-        if isLandscape || UIDevice.current.orientation == .portraitUpsideDown {
-            offsetY = frame.origin.y + window.safeAreaInsets.bottom - (screenBounds.height - window.safeAreaInsets.bottom) / 2
-        } else {
-            offsetY = frame.origin.y - screenBounds.height / 2 + 3 * frame.height / 2 - window.safeAreaInsets.top
-        }
+    private func createHostingController(for frame: CGRect, window: UIWindow) -> UIHostingController<AnyView> {
+        let baseContent = contentBuilder?() ?? AnyView(EmptyView())
+        let content = baseContent
+            .frame(width: frame.width, height: frame.height)
+            .ignoresSafeArea(.all)
 
-        let hosting = UIHostingController(rootView:
-            contentBuilder?()
-                .frame(width: frame.width, height: frame.height)
-                .offset(x: offsetX, y: offsetY)
-                .ignoresSafeArea(.all)
-        )
-        hosting.view.backgroundColor = .clear
+        let hosting = UIHostingController(rootView: AnyView(content))
+        hosting.view.backgroundColor = UIColor.clear
         return hosting
     }
     
     @objc private func hideGesture(_ gesture: UITapGestureRecognizer) {
-        var location = gesture.location(in: window)
+        guard hideOnTap, gesture.state == .ended else { return }
         
-        let screenBounds = UIScreen.main.bounds
-        let offsetX = lastFrame.origin.x - screenBounds.width / 2 + lastFrame.width / 2
-        
-        let isLandscape = UIDevice.current.orientation.isLandscape
-        let offsetY: CGFloat
-        if isLandscape || UIDevice.current.orientation == .portraitUpsideDown {
-            location.y += 20
-            offsetY = lastFrame.origin.y + (window?.safeAreaInsets.bottom ?? 0) - (screenBounds.height - (window?.safeAreaInsets.bottom ?? 0)) / 2
-        } else {
-            location.y -= 40
-            offsetY = lastFrame.origin.y - screenBounds.height / 2 + 3 * lastFrame.height / 2 - (window?.safeAreaInsets.top ?? 0)
-        }
-        
-        let contentFrame = CGRect(
-            x: screenBounds.width / 2 - lastFrame.width / 2 + offsetX,
-            y: lastFrame.origin.y,
-            width: lastFrame.width,
-            height: lastFrame.height
-        )
-                
-        if contentFrame.contains(location) {
+        guard let container = overlayContainerView,
+              let hostingView = overlayHostingController?.view else {
+            hide()
             return
         }
+        
+        let location = gesture.location(in: container)
+        let hostingLocation = container.convert(location, to: hostingView)
+        
+        if hostingView.bounds.contains(hostingLocation) {
+            if let hitView = hostingView.hitTest(hostingLocation, with: nil) {
+                return
+            }
+        }
+        
         hide()
     }
     
     func hide() {
         removeOrientationObserver()
-        window?.isHidden = true
-        window = nil
+        overlayHostingController?.view.removeFromSuperview()
+        overlayHostingController = nil
+        if let gesture = tapGesture, let container = overlayContainerView {
+            container.removeGestureRecognizer(gesture)
+        }
+        tapGesture = nil
+        overlayContainerView?.removeFromSuperview()
+        overlayContainerView = nil
         onClose?()
+    }
+    
+    func updateContentIfVisible<Content: View>(
+        @ViewBuilder content: @escaping () -> Content,
+        at frame: CGRect? = nil,
+        onClose: (() -> Void)? = nil
+    ) {
+        if let window = getExistingWindow(), 
+           let existingController = overlayHostingController,
+           existingController.view.superview != nil {
+            self.contentBuilder = { AnyView(content()) }
+            
+            let targetFrame = frame ?? lastFrame
+            self.lastFrame = targetFrame
+            if let onClose = onClose {
+                self.onClose = onClose
+            }
+            
+            RunLoop.main.perform(inModes: [.common]) { [weak self, weak existingController] in
+                guard let self = self, let existingController = existingController,
+                      let window = self.getExistingWindow(),
+                      existingController.view.superview != nil else {
+                    return
+                }
+                
+                let baseContent = self.contentBuilder?() ?? AnyView(EmptyView())
+                let newContent = baseContent
+                    .frame(width: targetFrame.width, height: targetFrame.height)
+                    .ignoresSafeArea(.all)
+                
+                existingController.rootView = AnyView(newContent)
+                existingController.view.frame = self.calculateViewFrame(for: targetFrame, in: window)
+            }
+        } else {
+            let targetFrame = frame ?? lastFrame
+            guard targetFrame.width > 0 && targetFrame.height > 0 else {
+                return
+            }
+            self.contentBuilder = { AnyView(content()) }
+            if let onClose = onClose {
+                self.onClose = onClose
+            }
+            show(content: content, at: targetFrame, onClose: onClose)
+        }
     }
     
     private func updateStackedToasts() {
@@ -331,3 +477,24 @@ final class WindowOverlayService {
         )
     }
 }
+
+extension WindowOverlayService: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        guard let container = overlayContainerView,
+              let hostingView = overlayHostingController?.view else {
+            return true
+        }
+        
+        let location = touch.location(in: container)
+        let hostingLocation = container.convert(location, to: hostingView)
+        
+        if hostingView.bounds.contains(hostingLocation) {
+            if let hitView = hostingView.hitTest(hostingLocation, with: nil) {
+                return false
+            }
+        }
+        
+        return true
+    }
+}
+

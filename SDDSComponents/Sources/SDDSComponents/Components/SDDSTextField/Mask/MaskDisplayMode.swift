@@ -12,3 +12,4 @@ public enum MaskDisplayMode: String, CaseIterable {
     case always
 }
 
+
