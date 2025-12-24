@@ -41,13 +41,13 @@ get_summary_key() {
     local theme_dir_name="$1"
     case "$theme_dir_name" in
         "SDDSServTheme")
-            echo "plasmaSDService"
+            echo "SDDSService"
             ;;
         "StylesSaluteTheme")
             echo "plasmaStylesSalute"
             ;;
         "PlasmaB2CTheme")
-            echo "plasmaB2C"
+            echo "plasmaSDService"
             ;;
         "PlasmaHomeDSTheme")
             echo "plasmaHomeDS"
@@ -127,15 +127,27 @@ get_theme_urls() {
     local theme_name="$1"
     local version="$2"
     local deploy_branch="$3"
+    local summary_key="$4"
     
     local base_path
-    if [[ "$deploy_branch" == "current" ]]; then
-        base_path="/ios/${theme_name}/${version}"
+    local changelog_path
+    
+    # Для plasmaSDService (PlasmaB2CTheme) используем URL без версии
+    if [[ "$summary_key" == "plasmaSDService" ]]; then
+        if [[ "$deploy_branch" == "current" ]]; then
+            base_path="/ios/${theme_name}"
+        else
+            base_path="/${deploy_branch}/ios/${theme_name}"
+        fi
     else
-        base_path="/${deploy_branch}/ios/${theme_name}/${version}"
+        # Для остальных тем используем URL с версией
+        if [[ "$deploy_branch" == "current" ]]; then
+            base_path="/ios/${theme_name}/${version}"
+        else
+            base_path="/${deploy_branch}/ios/${theme_name}/${version}"
+        fi
     fi
     
-    local changelog_path
     if [[ "$deploy_branch" == "current" ]]; then
         changelog_path="/ios/${theme_name}/changelog.json"
     else
@@ -210,8 +222,8 @@ generate_summary_json() {
             continue
         fi
         
-        # Получаем URL
-        local urls=($(get_theme_urls "$theme_url_name" "$version" "$deploy_branch"))
+        # Получаем URL (передаем summary_key для специальной обработки plasmaSDService)
+        local urls=($(get_theme_urls "$theme_url_name" "$version" "$deploy_branch" "$summary_key"))
         local doc_url="${urls[0]}"
         local changelog_url="${urls[1]}"
         local changelog_data_url="${urls[2]}"

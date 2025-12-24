@@ -1,14 +1,14 @@
 {
-  "plasmaB2C": {
+  "plasmaSDService": {
     "swiftui": {
       "title": "SwiftUI",
       "version": "0.18.0",
       "links": {
         "documentation": {
-          "href": "https://plasma.sberdevices.ru/ios/plasma-b2c-theme/0.18.0/"
+          "href": "https://plasma.sberdevices.ru/ios/plasma-b2c-theme/"
         },
         "changelog": {
-          "href": "https://plasma.sberdevices.ru/ios/plasma-b2c-theme/0.18.0/CHANGELOG/"
+          "href": "https://plasma.sberdevices.ru/ios/plasma-b2c-theme/CHANGELOG/"
         },
         "changelogData": {
           "href": "https://plasma.sberdevices.ru/ios/plasma-b2c-theme/changelog.json"
@@ -33,7 +33,7 @@
       }
     }
   },
-  "plasmaSDService": {
+  "SDDSService": {
     "swiftui": {
       "title": "SwiftUI",
       "version": "0.19.0",
