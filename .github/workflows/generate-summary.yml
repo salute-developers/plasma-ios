@@ -1,0 +1,90 @@
+name: "Generate Summary JSON"
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Название ветки (по умолчанию берется из контекста)'
+        required: false
+        default: ''
+      docs_url:
+        description: 'URL документации'
+        required: false
+        default: 'https://plasma.sberdevices.ru'
+
+jobs:
+  generate-summary:
+    name: Generate Summary JSON
+    runs-on: ubuntu-latest
+    environment: sdds
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Determine branch name
+        id: branch
+        run: |
+          if [[ -n "${{ github.event.inputs.branch_name }}" ]]; then
+            BRANCH_NAME="${{ github.event.inputs.branch_name }}"
+          elif [[ "${{ github.ref }}" == "refs/heads/"* ]]; then
+            BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          else
+            BRANCH_NAME="main"
+          fi
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Using branch: $BRANCH_NAME"
+
+      - name: Generate Summary JSON
+        run: |
+          cd docusaurus
+          ./scripts/generate-summary.sh \
+            "${{ steps.branch.outputs.branch_name }}" \
+            "${{ github.event.inputs.docs_url }}" \
+            "summary.json"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet summary.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to summary.json"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in summary.json"
+            git diff summary.json
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git add summary.json
+          git commit -m "chore: update summary.json [skip ci]"
+          git push origin "${{ steps.branch.outputs.branch_name }}"
+
+      - name: Show Summary JSON
+        run: |
+          echo "📋 Generated Summary JSON:"
+          echo "=========================="
+          if [[ -f "summary.json" ]]; then
+            cat summary.json | jq '.'
+          else
+            echo "No summary.json file found"
+          fi
+
