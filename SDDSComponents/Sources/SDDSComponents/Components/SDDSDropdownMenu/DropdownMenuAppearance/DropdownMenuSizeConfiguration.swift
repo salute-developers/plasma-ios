@@ -24,9 +24,9 @@ public protocol DropdownMenuSizeConfiguration: SizeConfiguration, CustomDebugStr
  Предоставляет стандартные значения для всех параметров размеров dropdown menu.
  */
 public struct DefaultDropdownMenuSize: DropdownMenuSizeConfiguration {
-    public var offset: CGFloat { 8 }
-    public var shape: PathDrawer { CornerRadiusDrawer(cornerRadius: 12) }
-    public var width: CGFloat { 200 }
+    public var offset: CGFloat = 8
+    public var shape: PathDrawer = CornerRadiusDrawer(cornerRadius: 12)
+    public var width: CGFloat = 200
     
     public var debugDescription: String {
         "DefaultDropdownMenuSize"

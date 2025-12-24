@@ -102,6 +102,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case drawerCloseInner = "DrawerCloseInner"
     case drawerCloseNone = "DrawerCloseNone"
     case drawerCloseOuter = "DrawerCloseOuter"
+    case autocompleteNormal = "AutocompleteNormal"
+    case autocompleteTight = "AutocompleteTight"
     
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -199,6 +201,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .drawerCloseInner,
 //            .drawerCloseNone,
 //            .drawerCloseOuter
+            .autocompleteTight,
+            .autocompleteNormal
         ]
     }
     
@@ -353,6 +357,8 @@ extension CodeGenerationComponent {
             )
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             GenerateComponentCommand<DrawerProps, DrawerAppearance, DrawerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .autocompleteNormal, .autocompleteTight:
+            GenerateComponentCommand<AutocompleteProps, AutocompleteAppearance, AutocompleteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -466,6 +472,8 @@ extension CodeGenerationComponent {
             "TabItemAppearance"
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             "DrawerAppearance"
+        case .autocompleteNormal, .autocompleteTight:
+            "AutocompleteAppearance"
         }
     }
     
@@ -580,6 +588,8 @@ extension CodeGenerationComponent {
             "TabItemSizeConfiguration"
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             "DrawerSizeConfiguration"
+        case .autocompleteNormal, .autocompleteTight:
+            "AutocompleteSizeConfiguration"
         }
     }
     
@@ -787,6 +797,10 @@ extension CodeGenerationComponent {
             "drawer_close_none_config.json"
         case .drawerCloseOuter:
             "drawer_close_outer_config.json"
+        case .autocompleteNormal:
+            "autocomplete_normal_config.json"
+        case .autocompleteTight:
+            "autocomplete_tight_config.json"
         }
     }
     

@@ -209,6 +209,10 @@
 		816AA9A72C97280400C3347C /* PlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9A62C97280400C3347C /* PlaceholderTextField.swift */; };
 		816AA9AC2C97419A00C3347C /* TextFieldDebugConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */; };
 		816C62A22CB80EC400352891 /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998FFF2C3555D4009074B7 /* Opacity.swift */; };
+		816C82C72EFBB29700446DEE /* SDDSAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C82C52EFBB29700446DEE /* SDDSAutocomplete.swift */; };
+		816C82C82EFBB29700446DEE /* AutocompleteSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C82C32EFBB29700446DEE /* AutocompleteSizeConfiguration.swift */; };
+		816C82C92EFBB29700446DEE /* AutocompleteAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816C82C22EFBB29700446DEE /* AutocompleteAppearance.swift */; };
+		816CE0142EFEE4FC00446DEE /* OverlayContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CE0132EFEE4FC00446DEE /* OverlayContainerView.swift */; };
 		816D0EE62DF856F40086C35C /* ToasContentEndPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D0EE52DF856ED0086C35C /* ToasContentEndPosition.swift */; };
 		816D0F082DF6D399008EC8F9 /* AutoCloseModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D0F072DF6D399008EC8F9 /* AutoCloseModifier.swift */; };
 		816E7B502D5F7F02008A903E /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */; };
@@ -666,6 +670,10 @@
 		81685C282CFF884B00278446 /* SwitchAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchAccessibility.swift; sourceTree = "<group>"; };
 		816AA9A62C97280400C3347C /* PlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextField.swift; sourceTree = "<group>"; };
 		816AA9AB2C97419A00C3347C /* TextFieldDebugConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDebugConfiguration.swift; sourceTree = "<group>"; };
+		816C82C22EFBB29700446DEE /* AutocompleteAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteAppearance.swift; sourceTree = "<group>"; };
+		816C82C32EFBB29700446DEE /* AutocompleteSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteSizeConfiguration.swift; sourceTree = "<group>"; };
+		816C82C52EFBB29700446DEE /* SDDSAutocomplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSAutocomplete.swift; sourceTree = "<group>"; };
+		816CE0132EFEE4FC00446DEE /* OverlayContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayContainerView.swift; sourceTree = "<group>"; };
 		816D0EE52DF856ED0086C35C /* ToasContentEndPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToasContentEndPosition.swift; sourceTree = "<group>"; };
 		816D0F072DF6D399008EC8F9 /* AutoCloseModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCloseModifier.swift; sourceTree = "<group>"; };
 		816E7B4F2D5F7EF8008A903E /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
@@ -2005,6 +2013,24 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		816C82C42EFBB29700446DEE /* AutocompleteAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				816C82C22EFBB29700446DEE /* AutocompleteAppearance.swift */,
+				816C82C32EFBB29700446DEE /* AutocompleteSizeConfiguration.swift */,
+			);
+			path = AutocompleteAppearance;
+			sourceTree = "<group>";
+		};
+		816C82C62EFBB29700446DEE /* SDDSAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				816C82C42EFBB29700446DEE /* AutocompleteAppearance */,
+				816C82C52EFBB29700446DEE /* SDDSAutocomplete.swift */,
+			);
+			path = SDDSAutocomplete;
+			sourceTree = "<group>";
+		};
 		816E7B512D5F7F1A008A903E /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -2315,6 +2341,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				816C82C62EFBB29700446DEE /* SDDSAutocomplete */,
 				8139C9E72ED5E1C500188124 /* SDDSDrawer */,
 				819C47322EBCF39A0081066C /* SDDSTabs */,
 				8183DDA52EB2AB3100610A9A /* SDDSNavigationBar */,
@@ -2385,6 +2412,7 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				816CE0132EFEE4FC00446DEE /* OverlayContainerView.swift */,
 				81E9699D2ED78A2F00229705 /* View+Subthemes.swift */,
 				81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */,
 				81C6260B2E43498400A8E6DB /* ShakeModifier.swift */,
@@ -4582,6 +4610,7 @@
 				81F89DEF2D808C9700A41C89 /* SDDSCardContent.swift in Sources */,
 				69C0356C2D4F8AC4005D3B95 /* SegmentSizeConfiguration.swift in Sources */,
 				81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */,
+				816CE0142EFEE4FC00446DEE /* OverlayContainerView.swift in Sources */,
 				81DE8FB02E7BDD53005D24FE /* ButtonGroupSizeConfiguration.swift in Sources */,
 				81DE8FB12E7BDD53005D24FE /* ButtonGroupAppearance.swift in Sources */,
 				81DE8FB22E7BDD53005D24FE /* SDDSButtonGroup.swift in Sources */,
@@ -4730,6 +4759,9 @@
 				815E42C12EE8640C001EA7C8 /* NumberMask.swift in Sources */,
 				813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */,
 				81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */,
+				816C82C72EFBB29700446DEE /* SDDSAutocomplete.swift in Sources */,
+				816C82C82EFBB29700446DEE /* AutocompleteSizeConfiguration.swift in Sources */,
+				816C82C92EFBB29700446DEE /* AutocompleteAppearance.swift in Sources */,
 				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,
 				692510212D7632CA00545542 /* SDDSBadge.swift in Sources */,
 				81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */,

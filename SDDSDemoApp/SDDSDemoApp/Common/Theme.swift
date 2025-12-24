@@ -1276,4 +1276,30 @@ enum Theme: String, CaseIterable {
             return []
         }
     }
+    
+    var autocompleteNormalVariations: [Variation<AutocompleteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.AutocompleteNormal.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.AutocompleteNormal.all
+        case .stylesSalute:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var autocompleteTightVariations: [Variation<AutocompleteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.AutocompleteTight.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.AutocompleteTight.all
+        case .stylesSalute:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
 }

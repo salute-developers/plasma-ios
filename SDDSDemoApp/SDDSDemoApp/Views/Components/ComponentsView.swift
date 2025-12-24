@@ -6,6 +6,7 @@ struct ComponentsView: View {
     private let components: [(name: String, view: AnyView)] = [
         ("Accordion", AnyView(AccordionView())),
         ("AccordionItem", AnyView(AccordionItemView())),
+        ("Autocomplete", AnyView(AutocompleteView())),
         ("Avatar", AnyView(AvatarView())),
         ("AvatarGroup", AnyView(AvatarGroupView())),
         ("Button", AnyView(ButtonView())),
