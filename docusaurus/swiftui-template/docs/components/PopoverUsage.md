@@ -51,16 +51,7 @@ title: Popover
 
 ### Базовый popover
 ```swift
-Text("Показать popover")
-    .popover(
-        isPresented: $isPopoverPresented,
-        appearance: Popover.default.appearance,
-        placement: .bottom,
-        alignment: .start,
-        tailEnabled: true
-    ) {
-        Text("Контент popover")
-    }
+// @sample: SDDSComponentsFixtures/Samples/Popover/SDDSPopover_Simple.swift
 ```
 
 ### Popover с кастомным внешним видом

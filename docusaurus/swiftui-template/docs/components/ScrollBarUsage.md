@@ -29,23 +29,7 @@ title: ScrollBar
 
 ### Базовый скроллбар с треком и обработчиками
 ```swift
-SDDSScrollbar(
-    appearance: Scrollbar.m.appearance,
-    hasTrack: true,
-    thumbOffset: 50,
-    thumbHeight: 40,
-    totalHeight: 200,
-    scrollBarPaddingBottom: 10,
-    scrollBarPaddingTop: 10,
-    onThumbDrag: { percentage in
-        // Обработка перетаскивания ползунка
-        print("Scroll percentage: \(percentage)")
-    },
-    onLongPressChanged: { isLongPressed in
-        // Обработка long press
-        print("Long pressed: \(isLongPressed)")
-    }
-)
+// @sample: SDDSComponentsFixtures/Samples/ScrollBar/SDDSScrollBar_Simple.swift
 ```
 
 ### Скроллбар без трека (только ползунок)

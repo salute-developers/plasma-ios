@@ -78,6 +78,13 @@ TabsItemData(
 ### Базовые горизонтальные вкладки
 
 ```swift
+// @sample: SDDSComponentsFixtures/Samples/Tabs/SDDSTabs_Simple.swift
+```
+
+<details>
+<summary>Развернуть полный пример с TabsItemData</summary>
+
+```swift
 @State private var selectedId: String = "tab1"
 
 let items = [
@@ -98,6 +105,8 @@ SDDSTabs(
     }
 )
 ```
+
+</details>
 
 ### Вертикальные вкладки
 

@@ -26,15 +26,10 @@ title: SegmentItem
 
 ## Пример использования
 ```swift
-// Базовый элемент сегмента
-SDDSSegmentItem(
-    title: "Title",
-    subtitle: "Subtitle",
-    iconAttributes: nil,
-    isSelected: true,
-    appearance: SegmentItem.l.secondary.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/SegmentItem/SDDSSegmentItem_Simple.swift
+```
 
+```swift
 // Элемент с иконкой и счетчиком
 SDDSSegmentItem(
     title: "Title",

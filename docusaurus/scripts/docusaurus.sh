@@ -98,8 +98,10 @@ get_project_info() {
 }
 
 # Функция для замены плейсхолдеров в файлах
+# Если передан второй аргумент (snippets_dir), после подстановки вызывается replace_swift_snippets
 transform_template() {
     local template_dir="$1"
+    local snippets_dir="${2:-}"
     log "Преобразование шаблонов в $template_dir..."
     
     find "$template_dir" -type f \( -name "*.md" -o -name "docusaurus.config.ts" \) -exec sed -i.bak \
@@ -114,11 +116,70 @@ transform_template() {
         -e "s|{{ docs-iconsVersion }}|$VERSION|g" \
         {} \; 2>/dev/null || true
     
-    
     # Удаляем backup файлы
     find "$template_dir" -name "*.bak" -delete
     
+    if [[ -n "$snippets_dir" && -d "$snippets_dir" ]]; then
+        replace_swift_snippets "$snippets_dir" "$template_dir"
+    fi
+    
     success "Шаблоны преобразованы"
+}
+
+# Замена в .md и docusaurus.config.ts: строка "// @sample: path" -> содержимое файла snippets_dir/path
+replace_swift_snippets() {
+    local snippets_dir="$1"
+    local template_dir="$2"
+    log "Подстановка Swift-сниппетов из $snippets_dir..."
+    local count=0
+    while IFS= read -r -d '' f; do
+        if grep -qE '//[[:space:]]*@sample:[[:space:]]+' "$f" 2>/dev/null; then
+            local tmp
+            tmp=$(mktemp)
+            awk -v snippets_dir="$snippets_dir" '
+                /^[[:space:]]*\/\/[[:space:]]*@sample:[[:space:]]+.+$/ {
+                    path = $0
+                    sub(/^[[:space:]]*\/\/[[:space:]]*@sample:[[:space:]]+/, "", path)
+                    gsub(/^[[:space:]]|[[:space:]]$/, "", path)
+                    f = snippets_dir "/" path
+                    content = ""
+                    while ((getline line < f) > 0) content = content (content == "" ? "" : "\n") line
+                    close(f)
+                    if (content != "") { print content; next }
+                }
+                { print }
+            ' "$f" > "$tmp" && mv "$tmp" "$f"
+            count=$((count + 1))
+        fi
+    done < <(find "$template_dir" -type f \( -name "*.md" -o -name "docusaurus.config.ts" \) -print0 2>/dev/null)
+    log "Обработано файлов со сниппетами: $count"
+}
+
+# Мерж файлов +*.md в соответствующие *.md (как mergePlusPrefixedDocs на Android)
+merge_plus_prefixed_docs() {
+    local docs_dir="$1"
+    if [[ ! -d "$docs_dir" ]]; then
+        return
+    fi
+    log "Мерж +*.md в $docs_dir..."
+    while IFS= read -r -d '' plus_file; do
+        local dir base_name base_file
+        dir=$(dirname "$plus_file")
+        base_name=$(basename "$plus_file")
+        base_name="${base_name#+}"
+        base_file="$dir/$base_name"
+        if [[ ! -f "$base_file" ]]; then
+            mv "$plus_file" "$base_file"
+            log "  Переименован: $(basename "$plus_file") -> $base_name"
+        else
+            local merged
+            merged=$(printf '%s\n\n\n<!-- merged from %s -->\n\n%s' "$(cat "$base_file")" "$(basename "$plus_file")" "$(cat "$plus_file")")
+            echo "$merged" > "$base_file"
+            rm -f "$plus_file"
+            log "  Смержен: $(basename "$plus_file") -> $base_name"
+        fi
+    done < <(find "$docs_dir" -type f -name "+*.md" -print0 2>/dev/null || true)
+    success "Мерж +*.md выполнен"
 }
 
 # Функция для обновления versionsArchived.json

@@ -10,7 +10,7 @@ sidebar_label: RectSkeleton
 ### Базовое использование
 
 ```swift
-SDDSRectSkeleton()
+// @sample: SDDSComponentsFixtures/Samples/RectSkeleton/SDDSRectSkeleton_Simple.swift
 ```
 
 ### Скелетон с кастомными размерами

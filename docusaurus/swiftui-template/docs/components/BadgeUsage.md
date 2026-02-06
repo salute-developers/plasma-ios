@@ -38,13 +38,7 @@ title: Badge
 ### Базовый бейдж
 
 ```swift
-SDDSBadge(
-    label: "Label",
-    image: nil,
-    alignment: .leading,
-    style: .basic,
-    appearance: Badge.m.default.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/Badge/SDDSBadge_Simple.swift
 ```
 
 ### Бейдж с иконкой и акцентным стилем

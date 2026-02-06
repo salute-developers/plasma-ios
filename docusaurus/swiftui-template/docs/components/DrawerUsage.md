@@ -87,18 +87,7 @@ title: Drawer
 ### Базовый drawer снизу
 
 ```swift
-@State private var isDrawerPresented = false
-
-Text("Открыть drawer")
-    .drawer(
-        isPresented: $isDrawerPresented,
-        appearance: DrawerCloseInner.m.default.appearance,
-        hasHeader: false,
-        hasFooter: false,
-        content: {
-            Text("Содержимое drawer")
-        }
-    )
+// @sample: SDDSComponentsFixtures/Samples/Drawer/SDDSDrawer_Simple.swift
 ```
 
 ### Drawer с header и footer

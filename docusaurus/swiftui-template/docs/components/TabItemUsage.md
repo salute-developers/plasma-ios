@@ -51,16 +51,7 @@ title: TabItem
 ### Стандартный TabItem
 
 ```swift
-SDDSTabItem(
-    label: "Label",
-    value: "Value",
-    counterValue: nil,
-    isSelected: false,
-    isDisabled: false,
-    orientation: .horizontal,
-    appearance: TabItemDefault.l.appearance,
-    onTap: { print("Tab tapped") }
-)
+// @sample: SDDSComponentsFixtures/Samples/TabItem/SDDSTabItem_Simple.swift
 ```
 
 ### TabItem с иконкой слева

@@ -15,6 +15,21 @@ docusaurus_generate() {
     check_dependencies
     get_project_info
     
+    # Корень репозитория и каталог сниппетов (единый для extract и replace)
+    local repo_root
+    repo_root=$(cd "$SCRIPT_DIR/../.." && pwd)
+    export REPO_ROOT="$repo_root"
+    SNIPPETS_DIR="${SNIPPETS_DIR:-$repo_root/docusaurus/build/docs}"
+    mkdir -p "$SNIPPETS_DIR"
+    
+    # 1. Извлечь сниппеты из SDDSComponentsFixtures и (при THEME_NAME) из Themes/.../docs/Samples
+    if [[ -f "$SCRIPT_DIR/extract-snippets.sh" ]]; then
+        log "Извлечение Swift-сниппетов..."
+        THEME_NAME="${THEME_NAME:-}" SNIPPETS_DIR="$SNIPPETS_DIR" bash "$SCRIPT_DIR/extract-snippets.sh"
+    else
+        warning "extract-snippets.sh не найден, подстановка @sample пропущена"
+    fi
+    
     # Определяем пути
     local template_root_dir="$SCRIPT_DIR/../"
     local destination_dir="$PWD/build/generated/docusaurus"
@@ -33,17 +48,22 @@ docusaurus_generate() {
     log "Копирование swiftui-template..."
     cp -r "$swiftui_template"/* "$destination_dir/"
     
-    # Преобразуем шаблоны
-    transform_template "$destination_dir"
-    
-    # Копируем override-docs если существует
+    # Копируем override-docs если существует (до transform, чтобы подстановки применились ко всем)
     if [[ -d "$override_docs" ]]; then
         log "Копирование override-docs..."
         cp -r "$override_docs"/* "$destination_dir/"
     fi
     
-    # Копируем MD файлы из SDDSComponents
+    # Мерж +*.md в соответствующие *.md
+    if [[ -d "$destination_dir/docs" ]]; then
+        merge_plus_prefixed_docs "$destination_dir/docs"
+    fi
+    
+    # Копируем MD файлы из SDDSComponents (до transform, чтобы в них тоже подставились @sample)
     copy_component_docs "$destination_dir"
+    
+    # Преобразуем шаблоны (плейсхолдеры + подстановка // @sample: из SNIPPETS_DIR)
+    transform_template "$destination_dir" "$SNIPPETS_DIR"
     
     success "Экземпляр Docusaurus создан в $destination_dir"
 }

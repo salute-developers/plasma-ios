@@ -34,15 +34,7 @@ title: Note
 ### Базовое сообщение с иконкой
 
 ```swift
-SDDSNote(
-    title: "Информация",
-    text: "Это важное сообщение для пользователя"
-) {
-    Image(systemName: "info.circle")
-        .resizable()
-        .frame(width: 24, height: 24)
-}
-.environment(\.noteAppearance, Note.l.default.appearance)
+// @sample: SDDSComponentsFixtures/Samples/Note/SDDSNote_Simple.swift
 ```
 
 ### Сообщение с кнопкой-действием

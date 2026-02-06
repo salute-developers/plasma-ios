@@ -45,15 +45,9 @@ title: Avatar
 ## Примеры использования
 
 ### Аватар с статусом
+
 ```swift
-SDDSAvatar(
-    text: "JD",
-    image: nil,
-    placeholderImage: nil,
-    status: .online,
-    appearance: Avatar.xxl.appearance,
-    accessibility: AvatarAccessibility()
-)
+// @sample: SDDSComponentsFixtures/Samples/Avatar/SDDSAvatar_Simple.swift
 ```
 
 ### Аватар с изображением

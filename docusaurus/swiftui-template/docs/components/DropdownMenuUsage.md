@@ -27,9 +27,7 @@ title: DropdownMenu
 
 ### Базовое использование
 ```swift
-SDDSDropdownMenu {
-    Text("Выпадающий контент")
-}
+// @sample: SDDSComponentsFixtures/Samples/DropdownMenu/SDDSDropdownMenu_Simple.swift
 ```
 
 ### С кастомным внешним видом

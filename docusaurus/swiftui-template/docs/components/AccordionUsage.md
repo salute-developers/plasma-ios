@@ -29,18 +29,7 @@ title: Accordion
 ### Базовый аккордеон
 
 ```swift
-SDDSAccordion(
-    items: [
-        AccordionData(
-            title: "Первый элемент",
-            content: "Содержимое первого элемента"
-        ),
-        AccordionData(
-            title: "Второй элемент",
-            content: "Содержимое второго элемента"
-        )
-    ]
-)
+// @sample: SDDSComponentsFixtures/Samples/Accordion/SDDSAccordion_Simple.swift
 ```
 
 ### Аккордеон с разделителями

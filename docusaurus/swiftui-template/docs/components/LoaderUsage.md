@@ -22,13 +22,7 @@ title: Loader
 
 ### Базовое использование с Spinner
 ```swift
-SDDSLoader(appearance: LoaderAppearance(
-    spinnerAppearance: SpinnerAppearance.defaultValue
-))
-.environment(\.spinnerData, SDDSSpinnerData(
-    isAnimating: true,
-    appearance: SpinnerAppearance.defaultValue
-))
+// @sample: SDDSComponentsFixtures/Samples/Loader/SDDSLoader_Simple.swift
 ```
 
 ### С CircularProgressBar

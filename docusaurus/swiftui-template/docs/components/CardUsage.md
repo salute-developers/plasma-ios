@@ -18,11 +18,5 @@ title: Card
 ## Пример использования
 
 ```swift
-// Простая карточка с текстом
-SDDSCard(appearance: Card.m.default.appearance) {
-     VStack(alignment: .leading, spacing: 8) {
-         Text("Header")
-         Text("Description")
-     }
- }
+// @sample: SDDSComponentsFixtures/Samples/Card/SDDSCard_Simple.swift
 ``` 

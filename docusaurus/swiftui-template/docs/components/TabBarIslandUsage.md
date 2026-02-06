@@ -10,10 +10,7 @@ sidebar_label: TabBarIsland
 ### Базовое использование
 
 ```swift
-SDDSTabBarIsland(
-    items: tabBarItems,
-    selectedIndex: $selectedIndex
-)
+// @sample: SDDSComponentsFixtures/Samples/TabBarIsland/SDDSTabBarIsland_Simple.swift
 ```
 
 ### Островок с кастомным внешним видом

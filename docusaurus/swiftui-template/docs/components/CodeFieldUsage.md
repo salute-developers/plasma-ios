@@ -23,13 +23,7 @@ title: CodeField
 ### Базовое использование
 
 ```swift
-SDDSCodeField(
-    groups: CodeFieldGroup.four,
-    caption: "Введите код из СМС",
-    onCodeChanged: { code in
-        print("Введен код: \(code)")
-    }
-)
+// @sample: SDDSComponentsFixtures/Samples/CodeField/SDDSCodeField_Simple.swift
 ```
 
 ### С группировкой полей
