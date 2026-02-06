@@ -10,7 +10,7 @@ sidebar_label: TextSkeleton
 ### Базовое использование
 
 ```swift
-SDDSTextSkeleton()
+// @sample: SDDSComponentsFixtures/Samples/TextSkeleton/SDDSTextSkeleton_Simple.swift
 ```
 
 ### Скелетон с заданным количеством строк

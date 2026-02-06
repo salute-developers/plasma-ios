@@ -10,25 +10,7 @@ sidebar_label: NavigationBar
 ### Main Page - базовое использование
 
 ```swift
-SDDSNavigationBar(
-    type: .mainPage(appearance: mainPageAppearance),
-    title: "Главная",
-    textPlacement: .bottom,
-    textAlign: .center,
-    contentPlacement: .bottom,
-    actionStart: {
-        Button(action: {}) {
-            Image(systemName: "line.horizontal.3")
-        }
-    },
-    actionEnd: {
-        Button(action: {}) {
-            Image(systemName: "person.circle")
-        }
-    }
-) {
-    Text("Контент")
-}
+// @sample: SDDSComponentsFixtures/Samples/NavigationBar/SDDSNavigationBar_Simple.swift
 ```
 
 ### Internal Page с кнопкой "назад"

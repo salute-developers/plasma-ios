@@ -21,13 +21,5 @@ title: Counter
 ## Пример использования
 
 ```swift
-// Создание счетчика с предупреждающим стилем
-let warningCounter = SDDSCounter(
-    text: "1",
-    appearance: Counter.l.warning.appearance,
-    isAnimating: false,
-    isHighlighted: true,
-    isHovered: false,
-    isSelected: false
-)
+// @sample: SDDSComponentsFixtures/Samples/Counter/SDDSCounter_Simple.swift
 ``` 

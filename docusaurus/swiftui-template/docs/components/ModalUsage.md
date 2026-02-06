@@ -41,16 +41,7 @@ title: Modal
 
 ### Базовое модальное окно
 ```swift
-SDDSModal(
-    content: {
-        Text("Содержимое модального окна")
-    },
-    closeImage: Asset.close36.image,
-    appearance: Modal.default.appearance,
-    onClose: {
-        // Обработка закрытия
-    }
-)
+// @sample: SDDSComponentsFixtures/Samples/Modal/SDDSModal_Simple.swift
 ```
 
 ### Модальное окно с кастомным внешним видом

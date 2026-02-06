@@ -24,12 +24,5 @@ title: CheckBox
 ### Базовый чекбокс
 
 ```swift
- @State var selectionControl: SelectionControlState = .selected
- SDDSCheckbox(
-     state: $selectionControl,
-     title: "Value",
-     subtitle: "Description",
-     isEnabled: true,
-     appearance: Checkbox.l.default.appearance
- )
+// @sample: SDDSComponentsFixtures/Samples/CheckBox/SDDSCheckbox_Simple.swift
 ```

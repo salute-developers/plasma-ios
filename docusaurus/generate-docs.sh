@@ -73,19 +73,24 @@ destination_dir="build/generated/docusaurus"
 common_template="$template_root_dir/common-template"
 swiftui_template="$template_root_dir/swiftui-template"
 
-# Определяем путь к override-docs конкретной темы
+# Определяем путь к override-docs конкретной темы и имя темы для экстрактора сниппетов
+THEME_FOLDER_NAME=""
 case "$THEME_NAME" in
     "sddsserv")
         override_docs="../Themes/SDDSservTheme/override-docs"
+        THEME_FOLDER_NAME="SDDSservTheme"
         ;;
     "styles-salute")
         override_docs="../Themes/StylesSaluteTheme/override-docs"
+        THEME_FOLDER_NAME="StylesSaluteTheme"
         ;;
     "plasma-b2c")
         override_docs="../Themes/PlasmaB2CTheme/override-docs"
+        THEME_FOLDER_NAME="PlasmaB2CTheme"
         ;;
     "plasma-homeds")
         override_docs="../Themes/PlasmaHomeDSTheme/override-docs"
+        THEME_FOLDER_NAME="PlasmaHomeDSTheme"
         ;;
     *)
         echo "❌ Неизвестная тема: $THEME_NAME, используем локальный override-docs"
@@ -97,6 +102,17 @@ echo "🎯 Override-docs для темы $THEME_NAME: $override_docs"
 
 # Создаем директорию назначения
 mkdir -p "$destination_dir"
+
+# Извлечение Swift-сниппетов (core + theme) перед генерацией
+DOCUSAURUS_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$DOCUSAURUS_DIR/.." && pwd)"
+SNIPPETS_DIR="${SNIPPETS_DIR:-$DOCUSAURUS_DIR/build/docs}"
+mkdir -p "$SNIPPETS_DIR"
+export REPO_ROOT
+if [[ -f "$DOCUSAURUS_DIR/scripts/extract-snippets.sh" ]]; then
+    echo "📄 Извлечение Swift-сниппетов..."
+    THEME_NAME="$THEME_FOLDER_NAME" SNIPPETS_DIR="$SNIPPETS_DIR" bash "$DOCUSAURUS_DIR/scripts/extract-snippets.sh"
+fi
 
 # Копируем common-template
 echo "📁 Копирование common-template..."
@@ -143,6 +159,13 @@ if [[ -d "$override_docs" ]]; then
     echo "📁 Копирование override-docs..."
     cp -r "$override_docs"/* "$destination_dir/"
 fi
+
+# Мерж +*.md в соответствующие *.md и подстановка // @sample: сниппетов
+source "$DOCUSAURUS_DIR/scripts/docusaurus.sh"
+if [[ -d "$destination_dir/docs" ]]; then
+    merge_plus_prefixed_docs "$destination_dir/docs"
+fi
+replace_swift_snippets "$SNIPPETS_DIR" "$destination_dir"
 
 # Генерируем changelog если требуется
 if [[ "$WITH_CHANGELOG" == true ]]; then

@@ -18,19 +18,5 @@ title: RadioBoxGroup
 ## Пример использования
 
 ```swift
-// Создание группы из 5 радиобоксов
-let radioboxData = (0..<5).map { index in
-    RadioboxData(
-        title: "Option \(index + 1)",
-        subtitle: "Description \(index + 1)",
-        isSelected: .constant(index == 0),
-        appearance: Radiobox.m.appearance,
-        accessibility: SelectionControlAccessibility()
-    )
-}
-
-SDDSRadioboxGroup(
-    radioboxData: radioboxData,
-    appearance: RadioboxGroup.m.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/RadioBoxGroup/SDDSRadioboxGroup_Simple.swift
 ```

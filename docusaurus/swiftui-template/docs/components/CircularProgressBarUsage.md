@@ -22,8 +22,5 @@ title: CircularProgressBar
 ### Базовый прогресс-бар
 
 ```swift
-SDDSCircularProgressBar(
-    progress: 0.75,
-    appearance: CircularProgressBar.l.accent.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/CircularProgressBar/SDDSCircularProgressBar_Simple.swift
 ```

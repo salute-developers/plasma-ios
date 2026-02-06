@@ -21,15 +21,5 @@ title: ChipGroup
 ### Базовая группа чипов
 
 ```swift
-let chipData = (1...32).map { index in
-    ChipData(
-        title: "Label",
-        isEnabled: true,
-        iconImage: Image.image("chipIcon"),
-        buttonImage: Image.image("chipClose"),
-        appearance: Chip.m.default.appearance,
-        accessibility: chipAccessibility,
-        removeAction: {}
-    )
-}
+// @sample: SDDSComponentsFixtures/Samples/ChipGroup/SDDSChipGroup_Simple.swift
 ```

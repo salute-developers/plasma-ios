@@ -10,10 +10,7 @@ sidebar_label: TabBar
 ### Базовое использование
 
 ```swift
-SDDSTabBar(
-    items: tabBarItems,
-    selectedIndex: $selectedIndex
-)
+// @sample: SDDSComponentsFixtures/Samples/TabBar/SDDSTabBar_Simple.swift
 ```
 
 ### Таб-бар с кастомным внешним видом

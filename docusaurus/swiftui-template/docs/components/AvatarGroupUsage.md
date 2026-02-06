@@ -22,52 +22,5 @@ title: AvatarGroup
 ## Пример использования
 
 ```swift
-SDDSAvatarGroup(
-    data: exampleAvatars,
-    lastAvatar: lastAvatarData,
-    size: defaultSize,
-    appearance: AvatarGroup.s.appearance
-)
-
-// Массив данных аватаров для отображения
-static var exampleAvatars: [SDDSAvatarData] {
-    [
-        SDDSAvatarData(
-            text: "JD",
-            image: nil,
-            placeholderImage: nil,
-            status: .offline,
-            appearance: Avatar.l.appearance,
-            accessibility: defaultAccessibility
-        ),
-        SDDSAvatarData(
-            text: "ML",
-            image: .image(Image(systemName: "person.fill")),
-            placeholderImage: nil,
-            status: .offline,
-            appearance: Avatar.l.appearance,
-            accessibility: defaultAccessibility
-        ),
-        SDDSAvatarData(
-            text: "ML",
-            image: .image(Image(systemName: "person.fill")),
-            placeholderImage: nil,
-            status: .offline,
-            appearance: Avatar.l.appearance,
-            accessibility: defaultAccessibility
-        )
-    ]
-}
-
-// Данные для последнего аватара
-static var lastAvatarData: SDDSAvatarData {
-    SDDSAvatarData(
-        text: "+5",
-        image: nil,
-        placeholderImage: nil,
-        status: .hidden,
-        appearance: Avatar.l.appearance,
-        accessibility: defaultAccessibility
-    )
-}
+// @sample: SDDSComponentsFixtures/Samples/AvatarGroup/SDDSAvatarGroup_Simple.swift
 ```

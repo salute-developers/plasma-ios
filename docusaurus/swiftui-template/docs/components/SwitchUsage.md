@@ -21,13 +21,5 @@ title: Switch
 ## Пример использования
 
 ```swift
-@State isOn: Bool = true
-SDDSSwitch(
-    title: "Label",
-    subtitle: "Description",
-    isOn: $isOn,
-    isEnabled: true,
-    appearance: Switch.l.appearance,
-    switchAccessibility: SwitchAccessibility()
-)
+// @sample: SDDSComponentsFixtures/Samples/Switch/SDDSSwitch_Simple.swift
 ```

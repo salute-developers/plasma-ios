@@ -39,31 +39,10 @@ title: Segment
 ### Горизонтальный сегмент с фиксированным расположением
 
 ```swift
-// Горизонтальный сегмент
-SDDSSegment(
-    items: [
-        SDDSSegmentItemData(
-            title: "Title",
-            subtitle: "Subtitle",
-            iconAttributes: nil,
-            isSelected: true,
-            appearance: SegmentItem.l.accent.appearance,
-            action: {}
-        ),
-        SDDSSegmentItemData(
-            title: "Title",
-            subtitle: "Subtitle",
-            iconAttributes: nil,
-            isSelected: false,
-            appearance: SegmentItem.l.accent.appearance,
-            action: {}
-        )
-    ],
-    appearance: Segment.l.accent.appearance,
-    layoutOrientation: .horizontal,
-    selectedItemId: selectedId
-)
+// @sample: SDDSComponentsFixtures/Samples/Segment/SDDSSegment_Simple.swift
+```
 
+```swift
 // Вертикальный сегмент
 SDDSSegment(
     items: [

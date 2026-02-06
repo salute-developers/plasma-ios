@@ -66,16 +66,7 @@ title: Toast
 
 ### Базовый тост с текстом
 ```swift
-Text("Показать тост")
-    .toast(
-        isPresented: $isToastPresented,
-        text: "Текст тоста",
-        appearance: Toast.m.default.appearance,
-        position: .topCenter,
-        duration: 3.0,
-        contentStart: { EmptyView() },
-        contentEnd: { EmptyView() }
-    )
+// @sample: SDDSComponentsFixtures/Samples/Toast/SDDSToast_Simple.swift
 ```
 
 ### Тост с иконкой и кнопкой закрытия

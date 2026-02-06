@@ -28,10 +28,7 @@ title: Spinner
 ### Базовый спиннер
 
 ```swift
-SDDSSpinner(
-    isAnimating: true,
-    appearance: Spinner.m.default.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/Spinner/SDDSSpinner_Simple.swift
 ```
 
 ### Спинер с кастомными цветами
