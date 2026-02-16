@@ -65,6 +65,14 @@ public enum Gradients: String {
     case outlineOnLightTransparentAccentGradient
     case outlineOnLightTransparentAccentGradientActive
     case outlineOnLightTransparentAccentGradientHover
+    case overlayDefaultGradientDown
+    case overlayDefaultGradientUp
+    case overlayInverseGradientDown
+    case overlayInverseGradientUp
+    case overlayOnDarkGradientDown
+    case overlayOnDarkGradientUp
+    case overlayOnLightGradientDown
+    case overlayOnLightGradientUp
     case surfaceDefaultAccentGradient
     case surfaceDefaultAccentGradientActive
     case surfaceDefaultAccentGradientHover
@@ -332,6 +340,22 @@ public enum Gradients: String {
             return .outlineOnLightTransparentAccentGradientActive
         case .outlineOnLightTransparentAccentGradientHover:
             return .outlineOnLightTransparentAccentGradientHover
+        case .overlayDefaultGradientDown:
+            return .overlayDefaultGradientDown
+        case .overlayDefaultGradientUp:
+            return .overlayDefaultGradientUp
+        case .overlayInverseGradientDown:
+            return .overlayInverseGradientDown
+        case .overlayInverseGradientUp:
+            return .overlayInverseGradientUp
+        case .overlayOnDarkGradientDown:
+            return .overlayOnDarkGradientDown
+        case .overlayOnDarkGradientUp:
+            return .overlayOnDarkGradientUp
+        case .overlayOnLightGradientDown:
+            return .overlayOnLightGradientDown
+        case .overlayOnLightGradientUp:
+            return .overlayOnLightGradientUp
         case .surfaceDefaultAccentGradient:
             return .surfaceDefaultAccentGradient
         case .surfaceDefaultAccentGradientActive:

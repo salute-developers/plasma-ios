@@ -13,4 +13,5 @@ enum Size: String, Codable {
     case h3
     case h4
     case h5
+    case h6
 }

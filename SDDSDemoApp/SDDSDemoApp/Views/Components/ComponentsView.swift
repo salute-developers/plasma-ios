@@ -13,6 +13,7 @@ struct ComponentsView: View {
         ("ButtonGroup", AnyView(ButtonGroupView())),
         ("Chip", AnyView(ChipView())),
         ("ChipGroup", AnyView(ChipGroupView())),
+        ("CollapsingNavigationBar", AnyView(CollapsingNavigationView())),
         ("Checkbox", AnyView(CheckboxView())),
         ("CheckboxGroup", AnyView(CheckboxGroupView())),
         ("ProgressBar", AnyView(ProgressBarView())),
