@@ -43,6 +43,9 @@ public enum Typographies {
     case headerH5Bold
     case headerH5Medium
     case headerH5Normal
+    case headerH6Bold
+    case headerH6Medium
+    case headerH6Normal
     case textLBold
     case textLMedium
     case textLNormal
@@ -136,6 +139,12 @@ public enum Typographies {
             return .headerH5Medium
         case .headerH5Normal:
             return .headerH5Normal
+        case .headerH6Bold:
+            return .headerH6Bold
+        case .headerH6Medium:
+            return .headerH6Medium
+        case .headerH6Normal:
+            return .headerH6Normal
         case .textLBold:
             return .textLBold
         case .textLMedium:

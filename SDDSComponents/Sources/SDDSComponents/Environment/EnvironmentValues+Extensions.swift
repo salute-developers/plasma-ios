@@ -216,3 +216,15 @@ extension SubthemeData: EnvironmentKey {
         SubthemeData()
     }
 }
+
+// MARK: - Subtheme background color (for CollapsingNavigationBar when subtheme is set)
+private struct SubthemeBackgroundColorKey: EnvironmentKey {
+    static let defaultValue: Color? = nil
+}
+
+public extension EnvironmentValues {
+    var subthemeBackgroundColor: Color? {
+        get { self[SubthemeBackgroundColorKey.self] }
+        set { self[SubthemeBackgroundColorKey.self] = newValue }
+    }
+}

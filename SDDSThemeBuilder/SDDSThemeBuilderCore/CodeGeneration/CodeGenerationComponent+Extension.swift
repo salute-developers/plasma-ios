@@ -104,7 +104,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case drawerCloseOuter = "DrawerCloseOuter"
     case autocompleteNormal = "AutocompleteNormal"
     case autocompleteTight = "AutocompleteTight"
-    
+    case collapsingNavigationBarInternalPage = "CollapsingNavigationBarInternalPage"
+    case collapsingNavigationBarMainPage = "CollapsingNavigationBarMainPage"
+
     static var supportedComponents: [CodeGenerationComponent] {
         [
 //            .basicButton,
@@ -202,7 +204,9 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .drawerCloseNone,
 //            .drawerCloseOuter
             .autocompleteTight,
-            .autocompleteNormal
+            .autocompleteNormal,
+            .collapsingNavigationBarInternalPage,
+            .collapsingNavigationBarMainPage
         ]
     }
     
@@ -359,6 +363,18 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<DrawerProps, DrawerAppearance, DrawerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .autocompleteNormal, .autocompleteTight:
             GenerateComponentCommand<AutocompleteProps, AutocompleteAppearance, AutocompleteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .collapsingNavigationBarInternalPage:
+            GenerateComponentCommand<CollapsingNavigationBarInternalPageProps, CollapsingNavigationBarInternalPageAppearance, CollapsingNavigationBarInternalPageSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
+        case .collapsingNavigationBarMainPage:
+            GenerateComponentCommand<CollapsingNavigationBarMainPageProps, CollapsingNavigationBarMainPageAppearance, CollapsingNavigationBarMainPageSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -474,6 +490,10 @@ extension CodeGenerationComponent {
             "DrawerAppearance"
         case .autocompleteNormal, .autocompleteTight:
             "AutocompleteAppearance"
+        case .collapsingNavigationBarInternalPage:
+            "CollapsingNavigationBarInternalPageAppearance"
+        case .collapsingNavigationBarMainPage:
+            "CollapsingNavigationBarMainPageAppearance"
         }
     }
     
@@ -590,9 +610,13 @@ extension CodeGenerationComponent {
             "DrawerSizeConfiguration"
         case .autocompleteNormal, .autocompleteTight:
             "AutocompleteSizeConfiguration"
+        case .collapsingNavigationBarInternalPage:
+            "CollapsingNavigationBarInternalPageSizeConfiguration"
+        case .collapsingNavigationBarMainPage:
+            "CollapsingNavigationBarMainPageSizeConfiguration"
         }
     }
-    
+
     private var configurationFilename: String {
         switch self {
         case .basicButton:
@@ -801,9 +825,13 @@ extension CodeGenerationComponent {
             "autocomplete_normal_config.json"
         case .autocompleteTight:
             "autocomplete_tight_config.json"
+        case .collapsingNavigationBarInternalPage:
+            "collapsing_navigation_bar_internal_page_config.json"
+        case .collapsingNavigationBarMainPage:
+            "collapsing_navigation_bar_main_page_config.json"
         }
     }
-    
+
     func url(baseURL: URL) -> URL {
         let result = baseURL
             .appending(component: configurationFilename)

@@ -46,6 +46,7 @@ final class DownloadCommand: Command {
     private func downloadFromLocalSource() -> CommandResult {
         do {
             if let outputURL = outputURL {
+                try fileManager.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
                 if fileManager.fileExists(atPath: outputURL.path()) {
                     try fileManager.removeItem(at: outputURL)
                 }
@@ -85,11 +86,15 @@ final class DownloadCommand: Command {
             
             do {
                 if let outputURL = self.outputURL {
+                    try self.fileManager.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
                     let data = try Data(contentsOf: url)
                     if self.fileManager.fileExists(atPath: outputURL.path()) {
                         try self.fileManager.removeItem(at: outputURL)
                     }
-                    self.fileManager.createFile(atPath: outputURL.path(), contents: data)
+                    guard self.fileManager.createFile(atPath: outputURL.path(), contents: data) else {
+                        result = .failure(URLError(.cannotWriteToFile))
+                        return
+                    }
                 }
                 result = .success(.success)
             } catch {

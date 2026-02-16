@@ -455,24 +455,24 @@ public extension AdaptiveTypographyToken {
     static var displayLMedium: Self {
         Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 88.0,
                 lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 112.0,
                 lineHeight: 112.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 128.0,
                 lineHeight: 128.0,
@@ -515,7 +515,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 56.0,
-                lineHeight: 60.0,
+                lineHeight: 62.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -539,24 +539,24 @@ public extension AdaptiveTypographyToken {
     static var displayMMedium: Self {
         Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 56.0,
-                lineHeight: 60.0,
+                lineHeight: 62.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 72.0,
                 lineHeight: 76.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 88.0,
                 lineHeight: 92.0,
@@ -571,7 +571,7 @@ public extension AdaptiveTypographyToken {
                 weight: .light,
                 style: .normal,
                 size: 56.0,
-                lineHeight: 60.0,
+                lineHeight: 62.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -599,7 +599,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -607,7 +607,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             ),
             large: TypographyToken(
@@ -623,24 +623,24 @@ public extension AdaptiveTypographyToken {
     static var displaySMedium: Self {
         Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
-                weight: .regular,
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
                 style: .normal,
                 size: 64.0,
                 lineHeight: 68.0,
@@ -655,7 +655,7 @@ public extension AdaptiveTypographyToken {
                 weight: .light,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -663,7 +663,7 @@ public extension AdaptiveTypographyToken {
                 weight: .light,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             ),
             large: TypographyToken(
@@ -682,8 +682,8 @@ public extension AdaptiveTypographyToken {
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 28.0,
+                lineHeight: 34.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -691,7 +691,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             large: TypographyToken(
@@ -699,7 +699,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             )
         )
@@ -710,8 +710,8 @@ public extension AdaptiveTypographyToken {
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 28.0,
+                lineHeight: 34.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -719,7 +719,7 @@ public extension AdaptiveTypographyToken {
                 weight: .medium,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             large: TypographyToken(
@@ -727,7 +727,7 @@ public extension AdaptiveTypographyToken {
                 weight: .medium,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             )
         )
@@ -738,8 +738,8 @@ public extension AdaptiveTypographyToken {
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 28.0,
+                lineHeight: 34.0,
                 kerning: 0
             ),
             medium: TypographyToken(
@@ -747,7 +747,7 @@ public extension AdaptiveTypographyToken {
                 weight: .regular,
                 style: .normal,
                 size: 40.0,
-                lineHeight: 44.0,
+                lineHeight: 46.0,
                 kerning: 0
             ),
             large: TypographyToken(
@@ -755,7 +755,7 @@ public extension AdaptiveTypographyToken {
                 weight: .regular,
                 style: .normal,
                 size: 48.0,
-                lineHeight: 52.0,
+                lineHeight: 54.0,
                 kerning: 0
             )
         )
@@ -783,7 +783,7 @@ public extension AdaptiveTypographyToken {
                 weight: .semibold,
                 style: .normal,
                 size: 32.0,
-                lineHeight: 36.0,
+                lineHeight: 38.0,
                 kerning: 0
             )
         )
@@ -811,7 +811,7 @@ public extension AdaptiveTypographyToken {
                 weight: .medium,
                 style: .normal,
                 size: 32.0,
-                lineHeight: 36.0,
+                lineHeight: 38.0,
                 kerning: 0
             )
         )
@@ -839,7 +839,7 @@ public extension AdaptiveTypographyToken {
                 weight: .regular,
                 style: .normal,
                 size: 32.0,
-                lineHeight: 36.0,
+                lineHeight: 38.0,
                 kerning: 0
             )
         )
@@ -1092,6 +1092,90 @@ public extension AdaptiveTypographyToken {
                 style: .normal,
                 size: 18.0,
                 lineHeight: 24.0,
+                kerning: 0
+            )
+        )
+    }
+    static var headerH6Bold: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
+                kerning: 0
+            )
+        )
+    }
+    static var headerH6Medium: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
+                kerning: 0
+            )
+        )
+    }
+    static var headerH6Normal: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             )
         )
@@ -1472,6 +1556,9 @@ public extension AdaptiveTypographyToken {
         headerH5Bold, 
         headerH5Medium, 
         headerH5Normal, 
+        headerH6Bold, 
+        headerH6Medium, 
+        headerH6Normal, 
         textLBold, 
         textLMedium, 
         textLNormal, 

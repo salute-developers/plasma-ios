@@ -2165,6 +2165,742 @@ public extension GradientToken {
             ]
         )
     }
+    static var overlayDefaultGradientDown: Self {
+        GradientToken(
+            id: "overlayDefaultGradientDown",
+            description: "overlayDefaultGradientDown",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayDefaultGradientUp: Self {
+        GradientToken(
+            id: "overlayDefaultGradientUp",
+            description: "overlayDefaultGradientUp",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayInverseGradientDown: Self {
+        GradientToken(
+            id: "overlayInverseGradientDown",
+            description: "overlayInverseGradientDown",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayInverseGradientUp: Self {
+        GradientToken(
+            id: "overlayInverseGradientUp",
+            description: "overlayInverseGradientUp",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayOnDarkGradientDown: Self {
+        GradientToken(
+            id: "overlayOnDarkGradientDown",
+            description: "overlayOnDarkGradientDown",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayOnDarkGradientUp: Self {
+        GradientToken(
+            id: "overlayOnDarkGradientUp",
+            description: "overlayOnDarkGradientUp",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#00000000")), 
+                            Color(UIColor(hex: "#00000003")), 
+                            Color(UIColor(hex: "#0000000A")), 
+                            Color(UIColor(hex: "#00000014")), 
+                            Color(UIColor(hex: "#00000026")), 
+                            Color(UIColor(hex: "#0000003B")), 
+                            Color(UIColor(hex: "#00000054")), 
+                            Color(UIColor(hex: "#00000070")), 
+                            Color(UIColor(hex: "#0000008F")), 
+                            Color(UIColor(hex: "#000000AB")), 
+                            Color(UIColor(hex: "#000000C4")), 
+                            Color(UIColor(hex: "#000000D9")), 
+                            Color(UIColor(hex: "#000000EB")), 
+                            Color(UIColor(hex: "#000000F5")), 
+                            Color(UIColor(hex: "#000000FC")), 
+                            Color(UIColor(hex: "#000000FF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayOnLightGradientDown: Self {
+        GradientToken(
+            id: "overlayOnLightGradientDown",
+            description: "overlayOnLightGradientDown",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.1, 
+                            0.11, 
+                            0.12, 
+                            0.13, 
+                            0.14
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 180.0
+                    )
+                )
+            ]
+        )
+    }
+    static var overlayOnLightGradientUp: Self {
+        GradientToken(
+            id: "overlayOnLightGradientUp",
+            description: "overlayOnLightGradientUp",
+            darkGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ],
+            lightGradients: [
+                .linear(
+                    LinearGradient(
+                        locations: [
+                            0, 
+                            0.01, 
+                            0.02, 
+                            0.02, 
+                            0.03, 
+                            0.04, 
+                            0.05, 
+                            0.05, 
+                            0.06, 
+                            0.07000000000000001, 
+                            0.08, 
+                            0.08, 
+                            0.09, 
+                            0.1, 
+                            0.11, 
+                            0.12
+                        ],
+                        colors: [
+                            Color(UIColor(hex: "#FFFFFF00")), 
+                            Color(UIColor(hex: "#FFFFFF03")), 
+                            Color(UIColor(hex: "#FFFFFF0A")), 
+                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF26")), 
+                            Color(UIColor(hex: "#FFFFFF3B")), 
+                            Color(UIColor(hex: "#FFFFFF54")), 
+                            Color(UIColor(hex: "#FFFFFF70")), 
+                            Color(UIColor(hex: "#FFFFFF8F")), 
+                            Color(UIColor(hex: "#FFFFFFAB")), 
+                            Color(UIColor(hex: "#FFFFFFC4")), 
+                            Color(UIColor(hex: "#FFFFFFD9")), 
+                            Color(UIColor(hex: "#FFFFFFEB")), 
+                            Color(UIColor(hex: "#FFFFFFF5")), 
+                            Color(UIColor(hex: "#FFFFFFFC")), 
+                            Color(UIColor(hex: "#FFFFFFFF"))
+                        ],
+                        angle: 0.0
+                    )
+                )
+            ]
+        )
+    }
     static var surfaceDefaultAccentGradient: Self {
         GradientToken(
             id: "surfaceDefaultAccentGradient",
@@ -7762,6 +8498,14 @@ public extension GradientToken {
         outlineOnLightTransparentAccentGradient,
         outlineOnLightTransparentAccentGradientActive,
         outlineOnLightTransparentAccentGradientHover,
+        overlayDefaultGradientDown,
+        overlayDefaultGradientUp,
+        overlayInverseGradientDown,
+        overlayInverseGradientUp,
+        overlayOnDarkGradientDown,
+        overlayOnDarkGradientUp,
+        overlayOnLightGradientDown,
+        overlayOnLightGradientUp,
         surfaceDefaultAccentGradient,
         surfaceDefaultAccentGradientActive,
         surfaceDefaultAccentGradientHover,

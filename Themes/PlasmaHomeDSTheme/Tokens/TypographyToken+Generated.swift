@@ -1096,6 +1096,90 @@ public extension AdaptiveTypographyToken {
             )
         )
     }
+    static var headerH6Bold: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Semibold",
+                weight: .semibold,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
+                kerning: 0
+            )
+        )
+    }
+    static var headerH6Medium: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Medium",
+                weight: .medium,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
+                kerning: 0
+            )
+        )
+    }
+    static var headerH6Normal: Self {
+        Self(
+            small: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            medium: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 10.0,
+                lineHeight: 14.0,
+                kerning: 0
+            ),
+            large: TypographyToken(
+                fontName: "SBSansDisplay-Regular",
+                weight: .regular,
+                style: .normal,
+                size: 12.0,
+                lineHeight: 16.0,
+                kerning: 0
+            )
+        )
+    }
     static var textLBold: Self {
         Self(
             small: TypographyToken(
@@ -1472,6 +1556,9 @@ public extension AdaptiveTypographyToken {
         headerH5Bold, 
         headerH5Medium, 
         headerH5Normal, 
+        headerH6Bold, 
+        headerH6Medium, 
+        headerH6Normal, 
         textLBold, 
         textLMedium, 
         textLNormal, 

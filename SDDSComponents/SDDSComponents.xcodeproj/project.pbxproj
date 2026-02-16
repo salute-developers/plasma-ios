@@ -259,6 +259,11 @@
 		8183DDBC2EB2AB3100610A9A /* WheelDividerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */; };
 		8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA62EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift */; };
 		8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */; };
+		81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */; };
+		81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */; };
+		81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */; };
+		81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */; };
+		81E9C1CD2ED79000229705 /* SDDSCollapsingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */; };
 		8183DDBF2EB2AB3100610A9A /* WheelSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDB12EB2AB3100610A9A /* WheelSizeConfiguration.swift */; };
 		8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */; };
 		8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */; };
@@ -302,6 +307,7 @@
 		819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */; };
 		819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472B2EBCF39A0081066C /* TabItemAppearance.swift */; };
 		81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */; };
+		81CA2C4B2CC693E6002AF2DF /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */; };
 		81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */; };
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
@@ -732,6 +738,11 @@
 		8183DDA72EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
 		8183DDAB2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageSizeConfiguration.swift; sourceTree = "<group>"; };
+		81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarState.swift; sourceTree = "<group>"; };
+		81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarScrollBehavior.swift; sourceTree = "<group>"; };
+		81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCollapsingNavigationBar.swift; sourceTree = "<group>"; };
+		81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarAppearance.swift; sourceTree = "<group>"; };
+		81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelAppearance.swift; sourceTree = "<group>"; };
 		8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelDividerStyle.swift; sourceTree = "<group>"; };
 		8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemAlignment.swift; sourceTree = "<group>"; };
@@ -2318,6 +2329,18 @@
 			path = SDDSNavigationBarMainPage;
 			sourceTree = "<group>";
 		};
+		81E9C1C92ED79000229705 /* SDDSCollapsingNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */,
+				81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */,
+				81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */,
+				81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */,
+				81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */,
+			);
+			path = SDDSCollapsingNavigationBar;
+			sourceTree = "<group>";
+		};
 		8183DDB22EB2AB3100610A9A /* WheelAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -2347,6 +2370,7 @@
 				8183DDA52EB2AB3100610A9A /* SDDSNavigationBar */,
 				8183DDA92EB2AB3100610A9A /* SDDSNavigationBarInternalPage */,
 				8183DDAD2EB2AB3100610A9A /* SDDSNavigationBarMainPage */,
+				81E9C1C92ED79000229705 /* SDDSCollapsingNavigationBar */,
 				8183DDB42EB2AB3100610A9A /* SDDSWheel */,
 				8191DF012EAF97E9006E36F5 /* SDDSNote */,
 				8191DF072EAF97E9006E36F5 /* SDDSNoteCompact */,
@@ -4649,12 +4673,18 @@
 				8183DDBC2EB2AB3100610A9A /* WheelDividerStyle.swift in Sources */,
 				8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */,
 				8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */,
+				81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */,
+				81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */,
+				81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */,
+				81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */,
+				81E9C1CD2ED79000229705 /* SDDSCollapsingNavigationBar.swift in Sources */,
 				8183DDBF2EB2AB3100610A9A /* WheelSizeConfiguration.swift in Sources */,
 				8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */,
 				8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */,
 				8183DDC22EB2AB3100610A9A /* WheelItemAlignment.swift in Sources */,
 				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */,
+				81CA2C4B2CC693E6002AF2DF /* ScrollViewWrapper.swift in Sources */,
 				81228EDA2E6725ED00AA1EFB /* CoreInputView.swift in Sources */,
 				81D2B1992C32B3E400CAA7FD /* SDDSButton.swift in Sources */,
 				6919BD9A2D4A6CF800A77774 /* SegmentItemAppearance.swift in Sources */,
