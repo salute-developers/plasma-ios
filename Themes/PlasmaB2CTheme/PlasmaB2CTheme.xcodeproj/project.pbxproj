@@ -82,6 +82,8 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		81F0A1112F10001100AAA111 /* AutocompleteNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteNormal; sourceTree = "<group>"; };
+		81F0A1122F10001100AAA111 /* AutocompleteTight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteTight; sourceTree = "<group>"; };
 		813BCDA32EB29C8700E4E505 /* AccordionClearActionEnd */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionClearActionEnd; sourceTree = "<group>"; };
 		813BCDA82EB29C8700E4E505 /* AccordionClearActionStart */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionClearActionStart; sourceTree = "<group>"; };
 		813BCDAD2EB29C8700E4E505 /* AccordionItemClearActionEnd */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionItemClearActionEnd; sourceTree = "<group>"; };
@@ -285,6 +287,8 @@
 		BF002E57F2D97C37787F13D7 = {
 			isa = PBXGroup;
 			children = (
+				81F0A1112F10001100AAA111 /* AutocompleteNormal */,
+				81F0A1122F10001100AAA111 /* AutocompleteTight */,
 				81D5A3F32ED8806700156885 /* DrawerCloseInner */,
 				81D5A3F82ED8806700156885 /* DrawerCloseNone */,
 				81D5A3FD2ED8806700156885 /* DrawerCloseOuter */,
@@ -414,6 +418,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				81F0A1112F10001100AAA111 /* AutocompleteNormal */,
+				81F0A1122F10001100AAA111 /* AutocompleteTight */,
 				813BCDA32EB29C8700E4E505 /* AccordionClearActionEnd */,
 				813BCDA82EB29C8700E4E505 /* AccordionClearActionStart */,
 				813BCDAD2EB29C8700E4E505 /* AccordionItemClearActionEnd */,

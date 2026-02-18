@@ -14,7 +14,7 @@ require 'zip'
 
 class ArtifactBuilder
   def initialize
-    @project_root = File.expand_path('../..', __FILE__)
+    @project_root = File.expand_path('..', __dir__)
     @build_dir = File.join(@project_root, 'build')
     @artifacts_dir = File.join(@project_root, 'artifacts')
     @theme_builder_dir = File.join(@project_root, 'SDDSThemeBuilder')

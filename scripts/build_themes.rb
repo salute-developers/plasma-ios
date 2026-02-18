@@ -5,6 +5,26 @@ require 'xcodeproj'
 require_relative 'common'
 require 'optparse'
 
+def detect_scheme_name(project_path, fallback_name)
+  list_output = `xcodebuild -list -project "#{project_path}" 2>/dev/null`
+  return fallback_name if list_output.to_s.strip.empty?
+
+  lines = list_output.lines.map(&:chomp)
+  schemes_index = lines.index { |line| line.strip == "Schemes:" }
+  return fallback_name unless schemes_index
+
+  schemes = []
+  lines[(schemes_index + 1)..].each do |line|
+    break if line.strip.empty?
+    schemes << line.strip
+  end
+
+  return fallback_name if schemes.empty?
+
+  matched = schemes.find { |scheme| scheme.casecmp?(fallback_name) }
+  matched || schemes.first
+end
+
 def get_product_version(project_path)
   begin
     project = Xcodeproj::Project.open(project_path)
@@ -35,6 +55,7 @@ end
 # Функция для сборки XCFramework
 def build_xcframeworks(modules = nil, create_zip = true)
   project_root_dir = Dir.pwd
+  build_configuration = "Release"
   print_info "Корневая директория проекта: #{project_root_dir}"
 
   build_folder = "Themes/build"
@@ -68,7 +89,8 @@ def build_xcframeworks(modules = nil, create_zip = true)
   print_info "Найдено проектов для сборки: #{projects_to_build.length}"
 
   projects_to_build.each do |project_path|
-    scheme = File.basename(project_path, ".xcodeproj")
+    folder_name = File.basename(project_path, ".xcodeproj")
+    scheme = detect_scheme_name(project_path, folder_name)
     project_name = File.basename(project_path)
     project_dir = File.dirname(project_path)
     version = get_product_version(project_path)
@@ -90,7 +112,7 @@ def build_xcframeworks(modules = nil, create_zip = true)
     static_build_settings = "MACH_O_TYPE=staticlib"
 
     print_info "Создание архива для устройства iOS..."
-    archive_command_base = "xcodebuild archive -project #{project_path} -scheme #{scheme} SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES #{static_build_settings}"
+    archive_command_base = "xcodebuild archive -project #{project_path} -scheme #{scheme} -configuration #{build_configuration} SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\" #{static_build_settings}"
     execute_command("#{archive_command_base} -sdk iphoneos -archivePath #{ios_archive_path}")
 
     print_info "Создание архива для симулятора iOS..."
