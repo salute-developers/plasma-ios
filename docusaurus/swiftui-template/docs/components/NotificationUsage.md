@@ -55,16 +55,7 @@ title: Notification
 
 ### Базовое уведомление
 ```swift
-Text("Показать уведомление")
-    .notification(
-        isPresented: $isNotificationPresented,
-        appearance: Notification.default.appearance,
-        position: .topCenter,
-        duration: 3.0,
-        hasClose: true
-    ) {
-        Text("Текст уведомления")
-    }
+// @sample: SDDSComponentsFixtures/Samples/Notification/SDDSNotification_Simple.swift
 ```
 
 ### Уведомление с кастомным внешним видом

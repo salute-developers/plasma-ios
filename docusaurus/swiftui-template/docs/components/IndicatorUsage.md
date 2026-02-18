@@ -16,8 +16,5 @@ title: Indicator
 ## Пример использования
 
 ```swift
-// Базовый индикатор
-SDDSIndicator(
-    appearance: Indicator.m.accent.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/Indicator/SDDSIndicator_Simple.swift
 ```

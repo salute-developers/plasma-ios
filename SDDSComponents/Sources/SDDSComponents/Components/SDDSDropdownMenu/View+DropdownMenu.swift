@@ -44,6 +44,7 @@ public extension View {
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
         subtheme: SubthemeData = SubthemeData(),
+        contentId: AnyHashable? = nil,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
@@ -63,6 +64,7 @@ public extension View {
             contentHeight: contentHeight,
             subtheme: subtheme,
             ignoreTrigger: true,
+            contentId: contentId,
             onClose: onClose,
             content: content
         )

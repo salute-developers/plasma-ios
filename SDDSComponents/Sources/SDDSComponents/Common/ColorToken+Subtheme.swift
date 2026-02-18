@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
-extension ColorToken {
+public extension ColorToken {
     func color(for colorScheme: ColorScheme, subtheme: SubthemeData) -> Color {
         guard !subtheme.isNone else {
             return self.color(for: colorScheme)

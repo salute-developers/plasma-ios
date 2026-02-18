@@ -17,6 +17,7 @@ struct ValueState<T: Codable>: Codable {
         case checked
         case indeterminate
         case focused
+        case collapsed
     }
     
     let state: [State]?

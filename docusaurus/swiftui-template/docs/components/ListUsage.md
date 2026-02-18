@@ -28,14 +28,7 @@ title: List
 ### Базовый список с SDDSListItem'ами
 
 ```swift
-SDDSList(
-    items: [
-        SDDSListItem(title: "Первый элемент"),
-        SDDSListItem(title: "Второй элемент"),
-        SDDSListItem(title: "Третий элемент")
-    ],
-    appearance: ListNormal.m.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/List/SDDSList_Simple.swift
 ```
 
 ### Список через ViewBuilder

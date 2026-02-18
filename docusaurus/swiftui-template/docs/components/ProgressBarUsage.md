@@ -19,12 +19,5 @@ title: ProgressBar
 ## Пример использования
 
 ```swift
-// Базовый прогресс-бар с акцентным стилем
-@State private var progress = 0.5
-
-SDDSProgressView(
-    progress: $progress,
-    isEnabled: true,
-    appearance: ProgressBar.default.accent.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/ProgressBar/SDDSProgressView_Simple.swift
 ```

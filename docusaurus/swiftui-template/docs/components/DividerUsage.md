@@ -17,5 +17,5 @@ title: Divider
 ## Примеры использования
 
 ```swift
-    SDDSDivider(appearance: Divider.default.appearance)
+// @sample: SDDSComponentsFixtures/Samples/Divider/SDDSDivider_Simple.swift
 ```

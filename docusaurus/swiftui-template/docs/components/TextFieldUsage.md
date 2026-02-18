@@ -46,14 +46,5 @@ title: TextField
 ### Базовое текстовое поле
 
 ```swift
-@State private var value = TextFieldValue.single("")
-
-SDDSTextField(
-    value: $value,
-    title: "Title",
-    optionalTitle: "",
-    placeholder: "Enter the text",
-    caption: "Caption",
-    appearance: TextField.m.default.appearance
-)
+// @sample: SDDSComponentsFixtures/Samples/TextField/SDDSTextField_Simple.swift
 ``` 

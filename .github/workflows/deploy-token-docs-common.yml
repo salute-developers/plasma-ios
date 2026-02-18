@@ -168,6 +168,14 @@ jobs:
           # Устанавливаем Node.js и Yarn через Homebrew
           brew install node yarn jq s3cmd
 
+      - name: Build SDDSComponentsFixtures
+        if: steps.check_module.outputs.should_deploy == 'true'
+        run: |
+          echo "🔨 Сборка SDDSComponentsFixtures для iOS Simulator..."
+          cd SDDSComponentsFixtures
+          xcodebuild -scheme SDDSComponentsFixtures -destination 'generic/platform=iOS Simulator' build
+          echo "✅ SDDSComponentsFixtures собран успешно"
+
       - name: Run deploy and collect result
         if: steps.check_module.outputs.should_deploy == 'true'
         id: deploy

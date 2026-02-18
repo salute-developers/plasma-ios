@@ -35,20 +35,5 @@ title: Cell
 ### Базовая ячейка
 
 ```swift
-SDDSCell(
-    appearance: Cell.l.appearance,
-    alignment: .center,
-    label: "label",
-    title: "title",
-    subtitle: "subtitle",
-    disclosureEnabled: true,
-    disclosureImage: nil,
-    disclosureText: "disclosure",
-    leftContent: {
-        MyView()
-    },
-    rightContent: {
-        MyView()
-    }
-)
+// @sample: SDDSComponentsFixtures/Samples/Cell/SDDSCell_Simple.swift
 ```

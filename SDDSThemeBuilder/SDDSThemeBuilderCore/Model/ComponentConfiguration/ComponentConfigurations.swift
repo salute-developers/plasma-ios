@@ -52,3 +52,6 @@ typealias NoteCompactConfiguration = ComponentConfiguration<NoteCompactProps>
 typealias TabsDefaultConfiguration = ComponentConfiguration<TabsDefaultProps>
 typealias TabItemDefaultConfiguration = ComponentConfiguration<TabItemDefaultProps>
 typealias DrawerConfiguration = ComponentConfiguration<DrawerProps>
+typealias AutocompleteConfiguration = ComponentConfiguration<AutocompleteProps>
+typealias CollapsingNavigationBarInternalPageConfiguration = ComponentConfiguration<CollapsingNavigationBarInternalPageProps>
+typealias CollapsingNavigationBarMainPageConfiguration = ComponentConfiguration<CollapsingNavigationBarMainPageProps>

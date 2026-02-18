@@ -3,12 +3,13 @@ import Foundation
 public struct Scheme: Codable {
     let name: String
     let version: String
-    let color: Style
-    let gradient: Style
-    let shadow: ShadowStyle
-    let shape: ShapeStyle
-    let typography: TypographyStyle
-    let fontFamily: FontFamiliesContainerStyle
+    /// Optional: meta.json from theme-converter contains only name, version, tokens
+    let color: Style?
+    let gradient: Style?
+    let shadow: ShadowStyle?
+    let shape: ShapeStyle?
+    let typography: TypographyStyle?
+    let fontFamily: FontFamiliesContainerStyle?
     let tokens: [Token]
     
     enum CodingKeys: String, CodingKey {

@@ -12,12 +12,13 @@ let package = Package(
             targets: ["SDDSComponents"])
     ],
     dependencies: [
-        .package(name: "SDDSThemeCore", path: "../SDDSThemeBuilder/SDDSThemeCore")
+        .package(name: "SDDSThemeCore", path: "../SDDSThemeBuilder/SDDSThemeCore"),
+        .package(name: "InputMask", path: "../Vendor/InputMask")
     ],
     targets: [
         .target(
             name: "SDDSComponents",
-            dependencies: ["SDDSThemeCore"],
+            dependencies: ["SDDSThemeCore", "InputMask"],
             path: "Sources/SDDSComponents",
             exclude: ["SDDSComponents.h"],
             resources: [

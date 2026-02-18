@@ -35,15 +35,7 @@ title: NoteCompact
 ### Базовое компактное сообщение
 
 ```swift
-SDDSNoteCompact(
-    title: "Информация",
-    text: "Важное сообщение"
-) {
-    Image(systemName: "info.circle")
-        .resizable()
-        .frame(width: 24, height: 24)
-}
-.environment(\.noteCompactAppearance, NoteCompact.l.default.appearance)
+// @sample: SDDSComponentsFixtures/Samples/NoteCompact/SDDSNoteCompact_Simple.swift
 ```
 
 ### Компактное сообщение с кнопкой-действием

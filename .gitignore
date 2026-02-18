@@ -8,6 +8,7 @@
 ./SDDSThemeBuilder/SDDSTheme/Generated/
 ./SDDSThemeBuilder/SDDSTheme/Fonts/
 ./SDDSThemeBuilder/Output/
+Output/
 
 ## User settings
 xcuserdata/

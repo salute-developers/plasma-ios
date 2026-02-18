@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSServTheme
@@ -28,7 +29,57 @@ enum Theme: String, CaseIterable {
             return StylesSaluteTheme.Theme.subtheme(subtheme)
         }
     }
-    
+
+    /// Background color for the current subtheme and color scheme. Use when setting `subthemeBackgroundColor` environment for components (e.g. CollapsingNavigationBar).
+    func subthemeBackgroundColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
+        switch subtheme {
+        case .onDark:
+            return backgroundDarkPrimaryColor(for: colorScheme)
+        case .onLight:
+            return backgroundLightPrimaryColor(for: colorScheme)
+        case .inverse:
+            return backgroundInversePrimaryColor(for: colorScheme)
+        case .default, .none:
+            return backgroundDefaultPrimaryColor(for: colorScheme)
+        }
+    }
+
+    private func backgroundDefaultPrimaryColor(for colorScheme: ColorScheme) -> Color {
+        switch self {
+        case .sdddsServTheme: return SDDSServTheme.Colors.backgroundDefaultPrimary.token.color(for: colorScheme)
+        case .plasmaB2CTheme: return PlasmaB2CTheme.Colors.backgroundDefaultPrimary.token.color(for: colorScheme)
+        case .plasmaHomeDSTheme: return PlasmaHomeDSTheme.Colors.backgroundDefaultPrimary.token.color(for: colorScheme)
+        case .stylesSalute: return StylesSaluteTheme.Colors.backgroundDefaultPrimary.token.color(for: colorScheme)
+        }
+    }
+
+    private func backgroundDarkPrimaryColor(for colorScheme: ColorScheme) -> Color {
+        switch self {
+        case .sdddsServTheme: return SDDSServTheme.Colors.backgroundDarkPrimary.token.color(for: colorScheme)
+        case .plasmaB2CTheme: return PlasmaB2CTheme.Colors.backgroundDarkPrimary.token.color(for: colorScheme)
+        case .plasmaHomeDSTheme: return PlasmaHomeDSTheme.Colors.backgroundDarkPrimary.token.color(for: colorScheme)
+        case .stylesSalute: return StylesSaluteTheme.Colors.backgroundDarkPrimary.token.color(for: colorScheme)
+        }
+    }
+
+    private func backgroundLightPrimaryColor(for colorScheme: ColorScheme) -> Color {
+        switch self {
+        case .sdddsServTheme: return SDDSServTheme.Colors.backgroundLightPrimary.token.color(for: colorScheme)
+        case .plasmaB2CTheme: return PlasmaB2CTheme.Colors.backgroundLightPrimary.token.color(for: colorScheme)
+        case .plasmaHomeDSTheme: return PlasmaHomeDSTheme.Colors.backgroundLightPrimary.token.color(for: colorScheme)
+        case .stylesSalute: return StylesSaluteTheme.Colors.backgroundLightPrimary.token.color(for: colorScheme)
+        }
+    }
+
+    private func backgroundInversePrimaryColor(for colorScheme: ColorScheme) -> Color {
+        switch self {
+        case .sdddsServTheme: return SDDSServTheme.Colors.backgroundInversePrimary.token.color(for: colorScheme)
+        case .plasmaB2CTheme: return PlasmaB2CTheme.Colors.backgroundInversePrimary.token.color(for: colorScheme)
+        case .plasmaHomeDSTheme: return PlasmaHomeDSTheme.Colors.backgroundInversePrimary.token.color(for: colorScheme)
+        case .stylesSalute: return StylesSaluteTheme.Colors.backgroundInversePrimary.token.color(for: colorScheme)
+        }
+    }
+
     var basicButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1147,6 +1198,32 @@ enum Theme: String, CaseIterable {
         }
     }
 
+    var collapsingNavigationBarMainPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return []
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.CollapsingNavigationBarMainPage.all
+        }
+    }
+
+    var collapsingNavigationBarInternalPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            return []
+        case .stylesSalute:
+            return []
+        case .plasmaB2CTheme:
+            return []
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.CollapsingNavigationBarInternalPage.all
+        }
+    }
+
     var noteCompactVariations: [Variation<NoteCompactAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1274,6 +1351,32 @@ enum Theme: String, CaseIterable {
             return PlasmaB2CTheme.DrawerCloseOuter.all
         case .plasmaHomeDSTheme:
             return []
+        }
+    }
+    
+    var autocompleteNormalVariations: [Variation<AutocompleteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.AutocompleteNormal.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.AutocompleteNormal.all
+        case .stylesSalute:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var autocompleteTightVariations: [Variation<AutocompleteAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.AutocompleteTight.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.AutocompleteTight.all
+        case .stylesSalute:
+            []
+        case .plasmaHomeDSTheme:
+            []
         }
     }
 }

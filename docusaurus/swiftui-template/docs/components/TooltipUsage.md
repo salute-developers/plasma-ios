@@ -62,18 +62,7 @@ title: Tooltip
 
 ### Базовый tooltip
 ```swift
-Text("Показать tooltip")
-    .tooltip(
-        isPresented: $isTooltipPresented,
-        appearance: Tooltip.default.appearance,
-        width: nil,
-        text: "Текст подсказки",
-        placement: .top,
-        alignment: .start,
-        tailEnabled: true
-    ) {
-        Image(systemName: "info.circle")
-    }
+// @sample: SDDSComponentsFixtures/Samples/Tooltip/SDDSTooltip_Simple.swift
 ```
 
 ### Tooltip с кастомным внешним видом

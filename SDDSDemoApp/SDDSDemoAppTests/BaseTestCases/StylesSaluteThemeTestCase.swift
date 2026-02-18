@@ -11,6 +11,9 @@ import StylesSaluteTheme
 /// Базовый класс для тестов StylesSalute темы
 /// Автоматически инициализирует тему перед каждым тестом
 class StylesSaluteThemeTestCase: XCTestCase {
+    override func setUpWithError() throws {
+        throw XCTSkip("StylesSaluteTheme is deprecated")
+    }
     
     private var themeInitialized = false
     

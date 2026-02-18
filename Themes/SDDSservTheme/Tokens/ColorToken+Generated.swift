@@ -142,7 +142,7 @@ public extension ColorToken {
         Self(
             id: Colors.dataDefaultYellowMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#B87A00FF")),
-            lightColor: Color(UIColor(hex: "#FFDA8FFF"))
+            lightColor: Color(UIColor(hex: "#FFCF70FF"))
         )
     }
     static var dataDefaultYellowTransparent: Self {
@@ -156,14 +156,14 @@ public extension ColorToken {
         Self(
             id: Colors.dataDefaultYellowTransparentActive.rawValue,
             darkColor: Color(UIColor(hex: "#F3A81280")),
-            lightColor: Color(UIColor(hex: "#F3A81299"))
+            lightColor: Color(UIColor(hex: "#F3A812A3"))
         )
     }
     static var dataDefaultYellowTransparentHover: Self {
         Self(
             id: Colors.dataDefaultYellowTransparentHover.rawValue,
             darkColor: Color(UIColor(hex: "#F3A812AD")),
-            lightColor: Color(UIColor(hex: "#F3A8127A"))
+            lightColor: Color(UIColor(hex: "#F3A8129E"))
         )
     }
     static var dataInverseYellow: Self {
@@ -176,15 +176,15 @@ public extension ColorToken {
     static var dataInverseYellowActive: Self {
         Self(
             id: Colors.dataInverseYellowActive.rawValue,
-            darkColor: Color(UIColor(hex: "#EDA20CFF")),
-            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+            darkColor: Color(UIColor(hex: "#E49C0CFF")),
+            lightColor: Color(UIColor(hex: "#EDA20CFF"))
         )
     }
     static var dataInverseYellowHover: Self {
         Self(
             id: Colors.dataInverseYellowHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F4B22FFF")),
-            lightColor: Color(UIColor(hex: "#F5B638FF"))
+            darkColor: Color(UIColor(hex: "#F5B638FF")),
+            lightColor: Color(UIColor(hex: "#F4B22FFF"))
         )
     }
     static var dataInverseYellowMinor: Self {
@@ -197,14 +197,14 @@ public extension ColorToken {
     static var dataInverseYellowMinorActive: Self {
         Self(
             id: Colors.dataInverseYellowMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFCF70FF")),
-            lightColor: Color(UIColor(hex: "#8F5F00FF"))
+            darkColor: Color(UIColor(hex: "#FFCC66FF")),
+            lightColor: Color(UIColor(hex: "#996600FF"))
         )
     }
     static var dataInverseYellowMinorHover: Self {
         Self(
             id: Colors.dataInverseYellowMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFDA8FFF")),
+            darkColor: Color(UIColor(hex: "#FFCF70FF")),
             lightColor: Color(UIColor(hex: "#B87A00FF"))
         )
     }
@@ -218,15 +218,15 @@ public extension ColorToken {
     static var dataInverseYellowTransparentActive: Self {
         Self(
             id: Colors.dataInverseYellowTransparentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F3A81280")),
-            lightColor: Color(UIColor(hex: "#F3A81299"))
+            darkColor: Color(UIColor(hex: "#F3A812A3")),
+            lightColor: Color(UIColor(hex: "#F3A81280"))
         )
     }
     static var dataInverseYellowTransparentHover: Self {
         Self(
             id: Colors.dataInverseYellowTransparentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F3A812AD")),
-            lightColor: Color(UIColor(hex: "#F3A8127A"))
+            darkColor: Color(UIColor(hex: "#F3A8129E")),
+            lightColor: Color(UIColor(hex: "#F3A812AD"))
         )
     }
     static var dataOnDarkYellow: Self {
@@ -240,14 +240,14 @@ public extension ColorToken {
         Self(
             id: Colors.dataOnDarkYellowActive.rawValue,
             darkColor: Color(UIColor(hex: "#EDA20CFF")),
-            lightColor: Color(UIColor(hex: "#E49C0CFF"))
+            lightColor: Color(UIColor(hex: "#EDA20CFF"))
         )
     }
     static var dataOnDarkYellowHover: Self {
         Self(
             id: Colors.dataOnDarkYellowHover.rawValue,
             darkColor: Color(UIColor(hex: "#F4B22FFF")),
-            lightColor: Color(UIColor(hex: "#F5B638FF"))
+            lightColor: Color(UIColor(hex: "#F4B22FFF"))
         )
     }
     static var dataOnDarkYellowMinor: Self {
@@ -261,7 +261,7 @@ public extension ColorToken {
         Self(
             id: Colors.dataOnDarkYellowMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#996600FF")),
-            lightColor: Color(UIColor(hex: "#8F5F00FF"))
+            lightColor: Color(UIColor(hex: "#996600FF"))
         )
     }
     static var dataOnDarkYellowMinorHover: Self {
@@ -282,14 +282,14 @@ public extension ColorToken {
         Self(
             id: Colors.dataOnDarkYellowTransparentActive.rawValue,
             darkColor: Color(UIColor(hex: "#F3A81280")),
-            lightColor: Color(UIColor(hex: "#F3A81299"))
+            lightColor: Color(UIColor(hex: "#F3A81280"))
         )
     }
     static var dataOnDarkYellowTransparentHover: Self {
         Self(
             id: Colors.dataOnDarkYellowTransparentHover.rawValue,
             darkColor: Color(UIColor(hex: "#F3A812AD")),
-            lightColor: Color(UIColor(hex: "#F3A8127A"))
+            lightColor: Color(UIColor(hex: "#F3A812AD"))
         )
     }
     static var dataOnLightYellow: Self {
@@ -302,14 +302,14 @@ public extension ColorToken {
     static var dataOnLightYellowActive: Self {
         Self(
             id: Colors.dataOnLightYellowActive.rawValue,
-            darkColor: Color(UIColor(hex: "#EDA20CFF")),
+            darkColor: Color(UIColor(hex: "#E49C0CFF")),
             lightColor: Color(UIColor(hex: "#E49C0CFF"))
         )
     }
     static var dataOnLightYellowHover: Self {
         Self(
             id: Colors.dataOnLightYellowHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F4B22FFF")),
+            darkColor: Color(UIColor(hex: "#F5B638FF")),
             lightColor: Color(UIColor(hex: "#F5B638FF"))
         )
     }
@@ -323,15 +323,15 @@ public extension ColorToken {
     static var dataOnLightYellowMinorActive: Self {
         Self(
             id: Colors.dataOnLightYellowMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFCF70FF")),
+            darkColor: Color(UIColor(hex: "#FFCC66FF")),
             lightColor: Color(UIColor(hex: "#FFCC66FF"))
         )
     }
     static var dataOnLightYellowMinorHover: Self {
         Self(
             id: Colors.dataOnLightYellowMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFDA8FFF")),
-            lightColor: Color(UIColor(hex: "#FFDA8FFF"))
+            darkColor: Color(UIColor(hex: "#FFCF70FF")),
+            lightColor: Color(UIColor(hex: "#FFCF70FF"))
         )
     }
     static var dataOnLightYellowTransparent: Self {
@@ -344,15 +344,15 @@ public extension ColorToken {
     static var dataOnLightYellowTransparentActive: Self {
         Self(
             id: Colors.dataOnLightYellowTransparentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F3A81280")),
-            lightColor: Color(UIColor(hex: "#F3A81299"))
+            darkColor: Color(UIColor(hex: "#F3A812A3")),
+            lightColor: Color(UIColor(hex: "#F3A812A3"))
         )
     }
     static var dataOnLightYellowTransparentHover: Self {
         Self(
             id: Colors.dataOnLightYellowTransparentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F3A812AD")),
-            lightColor: Color(UIColor(hex: "#F3A8127A"))
+            darkColor: Color(UIColor(hex: "#F3A8129E")),
+            lightColor: Color(UIColor(hex: "#F3A8129E"))
         )
     }
     static var outlineDefaultAccent: Self {
@@ -372,8 +372,8 @@ public extension ColorToken {
     static var outlineDefaultAccentHover: Self {
         Self(
             id: Colors.outlineDefaultAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#2ACB47FF")),
-            lightColor: Color(UIColor(hex: "#14B32EFF"))
+            darkColor: Color(UIColor(hex: "#5EDE76FF")),
+            lightColor: Color(UIColor(hex: "#15BC31FF"))
         )
     }
     static var outlineDefaultAccentMinor: Self {
@@ -386,15 +386,15 @@ public extension ColorToken {
     static var outlineDefaultAccentMinorActive: Self {
         Self(
             id: Colors.outlineDefaultAccentMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0C7920FF")),
-            lightColor: Color(UIColor(hex: "#21B03CFF"))
+            darkColor: Color(UIColor(hex: "#074A14FF")),
+            lightColor: Color(UIColor(hex: "#23B83EFF"))
         )
     }
     static var outlineDefaultAccentMinorHover: Self {
         Self(
             id: Colors.outlineDefaultAccentMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0F9527FF")),
-            lightColor: Color(UIColor(hex: "#47DC62FF"))
+            lightColor: Color(UIColor(hex: "#7AE68EFF"))
         )
     }
     static var outlineDefaultClear: Self {
@@ -429,14 +429,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineDefaultInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#0E8ADDFF")),
-            lightColor: Color(UIColor(hex: "#0966A5FF"))
+            lightColor: Color(UIColor(hex: "#096CAEFF"))
         )
     }
     static var outlineDefaultInfoHover: Self {
         Self(
             id: Colors.outlineDefaultInfoHover.rawValue,
             darkColor: Color(UIColor(hex: "#66BCF5FF")),
-            lightColor: Color(UIColor(hex: "#0D96F2FF"))
+            lightColor: Color(UIColor(hex: "#47B0F5FF"))
         )
     }
     static var outlineDefaultInfoMinor: Self {
@@ -449,7 +449,7 @@ public extension ColorToken {
     static var outlineDefaultInfoMinorActive: Self {
         Self(
             id: Colors.outlineDefaultInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#10659EFF")),
+            darkColor: Color(UIColor(hex: "#0B476FFF")),
             lightColor: Color(UIColor(hex: "#29A9FFFF"))
         )
     }
@@ -457,7 +457,7 @@ public extension ColorToken {
         Self(
             id: Colors.outlineDefaultInfoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#1277BAFF")),
-            lightColor: Color(UIColor(hex: "#7ACAFFFF"))
+            lightColor: Color(UIColor(hex: "#A3DAFFFF"))
         )
     }
     static var outlineDefaultNegative: Self {
@@ -471,14 +471,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineDefaultNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF1F35FF")),
-            lightColor: Color(UIColor(hex: "#DA0B20FF"))
+            lightColor: Color(UIColor(hex: "#E40C22FF"))
         )
     }
     static var outlineDefaultNegativeHover: Self {
         Self(
             id: Colors.outlineDefaultNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF5C6CFF")),
-            lightColor: Color(UIColor(hex: "#F54254FF"))
+            darkColor: Color(UIColor(hex: "#FF8F9AFF")),
+            lightColor: Color(UIColor(hex: "#F87C89FF"))
         )
     }
     static var outlineDefaultNegativeMinor: Self {
@@ -491,14 +491,14 @@ public extension ColorToken {
     static var outlineDefaultNegativeMinorActive: Self {
         Self(
             id: Colors.outlineDefaultNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#83111CFF")),
+            darkColor: Color(UIColor(hex: "#8C121EFF")),
             lightColor: Color(UIColor(hex: "#FF6675FF"))
         )
     }
     static var outlineDefaultNegativeMinorHover: Self {
         Self(
             id: Colors.outlineDefaultNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B91828FF")),
+            darkColor: Color(UIColor(hex: "#D41C2EFF")),
             lightColor: Color(UIColor(hex: "#FFB8BFFF"))
         )
     }
@@ -519,8 +519,8 @@ public extension ColorToken {
     static var outlineDefaultPositiveHover: Self {
         Self(
             id: Colors.outlineDefaultPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#2ACB47FF")),
-            lightColor: Color(UIColor(hex: "#14B32EFF"))
+            darkColor: Color(UIColor(hex: "#5EDE76FF")),
+            lightColor: Color(UIColor(hex: "#15BC31FF"))
         )
     }
     static var outlineDefaultPositiveMinor: Self {
@@ -533,15 +533,15 @@ public extension ColorToken {
     static var outlineDefaultPositiveMinorActive: Self {
         Self(
             id: Colors.outlineDefaultPositiveMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0C7920FF")),
-            lightColor: Color(UIColor(hex: "#21B03CFF"))
+            darkColor: Color(UIColor(hex: "#074A14FF")),
+            lightColor: Color(UIColor(hex: "#23B83EFF"))
         )
     }
     static var outlineDefaultPositiveMinorHover: Self {
         Self(
             id: Colors.outlineDefaultPositiveMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0F9527FF")),
-            lightColor: Color(UIColor(hex: "#47DC62FF"))
+            lightColor: Color(UIColor(hex: "#7AE68EFF"))
         )
     }
     static var outlineDefaultPromo: Self {
@@ -554,15 +554,15 @@ public extension ColorToken {
     static var outlineDefaultPromoActive: Self {
         Self(
             id: Colors.outlineDefaultPromoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#666666FF")),
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineDefaultPromoHover: Self {
         Self(
             id: Colors.outlineDefaultPromoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#858585FF")),
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineDefaultPromoMinor: Self {
@@ -575,15 +575,15 @@ public extension ColorToken {
     static var outlineDefaultPromoMinorActive: Self {
         Self(
             id: Colors.outlineDefaultPromoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#666666FF")),
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineDefaultPromoMinorHover: Self {
         Self(
             id: Colors.outlineDefaultPromoMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#858585FF")),
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineDefaultSolidDefault: Self {
@@ -596,15 +596,15 @@ public extension ColorToken {
     static var outlineDefaultSolidDefaultActive: Self {
         Self(
             id: Colors.outlineDefaultSolidDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E0E0E0FF")),
-            lightColor: Color(UIColor(hex: "#303030FF"))
+            darkColor: Color(UIColor(hex: "#616161FF")),
+            lightColor: Color(UIColor(hex: "#080808FF"))
         )
     }
     static var outlineDefaultSolidDefaultHover: Self {
         Self(
             id: Colors.outlineDefaultSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#595959FF"))
+            darkColor: Color(UIColor(hex: "#808080FF")),
+            lightColor: Color(UIColor(hex: "#969696FF"))
         )
     }
     static var outlineDefaultSolidPrimary: Self {
@@ -617,15 +617,15 @@ public extension ColorToken {
     static var outlineDefaultSolidPrimaryActive: Self {
         Self(
             id: Colors.outlineDefaultSolidPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#ADADADFF")),
-            lightColor: Color(UIColor(hex: "#B3B3B3FF"))
+            darkColor: Color(UIColor(hex: "#171717FF")),
+            lightColor: Color(UIColor(hex: "#C4C4C4FF"))
         )
     }
     static var outlineDefaultSolidPrimaryHover: Self {
         Self(
             id: Colors.outlineDefaultSolidPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#545454FF")),
+            lightColor: Color(UIColor(hex: "#ABABABFF"))
         )
     }
     static var outlineDefaultSolidSecondary: Self {
@@ -638,15 +638,15 @@ public extension ColorToken {
     static var outlineDefaultSolidSecondaryActive: Self {
         Self(
             id: Colors.outlineDefaultSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#4A4A4AFF")),
-            lightColor: Color(UIColor(hex: "#A8A8A8FF"))
+            darkColor: Color(UIColor(hex: "#363636FF")),
+            lightColor: Color(UIColor(hex: "#8F8F8FFF"))
         )
     }
     static var outlineDefaultSolidSecondaryHover: Self {
         Self(
             id: Colors.outlineDefaultSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#595959FF")),
-            lightColor: Color(UIColor(hex: "#C2C2C2FF"))
+            darkColor: Color(UIColor(hex: "#ABABABFF")),
+            lightColor: Color(UIColor(hex: "#DBDBDBFF"))
         )
     }
     static var outlineDefaultSolidTertiary: Self {
@@ -659,15 +659,15 @@ public extension ColorToken {
     static var outlineDefaultSolidTertiaryActive: Self {
         Self(
             id: Colors.outlineDefaultSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#808080FF")),
-            lightColor: Color(UIColor(hex: "#595959FF"))
+            darkColor: Color(UIColor(hex: "#525252FF")),
+            lightColor: Color(UIColor(hex: "#5C5C5CFF"))
         )
     }
     static var outlineDefaultSolidTertiaryHover: Self {
         Self(
             id: Colors.outlineDefaultSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#8F8F8FFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
+            lightColor: Color(UIColor(hex: "#A3A3A3FF"))
         )
     }
     static var outlineDefaultTransparentAccent: Self {
@@ -680,15 +680,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentAccentActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23E56")),
-            lightColor: Color(UIColor(hex: "#108E253D"))
+            darkColor: Color(UIColor(hex: "#24B23E2B")),
+            lightColor: Color(UIColor(hex: "#108E2552"))
         )
     }
     static var outlineDefaultTransparentAccentHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23EFF")),
-            lightColor: Color(UIColor(hex: "#108E25FF"))
+            darkColor: Color(UIColor(hex: "#24B23EB3")),
+            lightColor: Color(UIColor(hex: "#108E251F"))
         )
     }
     static var outlineDefaultTransparentDefault: Self {
@@ -701,15 +701,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentDefaultActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E0E0E0FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#616161FF")),
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineDefaultTransparentDefaultHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#808080FF")),
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineDefaultTransparentInfo: Self {
@@ -722,15 +722,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentInfoActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#199AF056")),
-            lightColor: Color(UIColor(hex: "#0B7ECB3D"))
+            darkColor: Color(UIColor(hex: "#199AF02B")),
+            lightColor: Color(UIColor(hex: "#0B7ECB52"))
         )
     }
     static var outlineDefaultTransparentInfoHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#199AF0FF")),
-            lightColor: Color(UIColor(hex: "#0B7ECBFF"))
+            darkColor: Color(UIColor(hex: "#199AF0B3")),
+            lightColor: Color(UIColor(hex: "#0B7ECB1F"))
         )
     }
     static var outlineDefaultTransparentNegative: Self {
@@ -743,15 +743,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentNegativeActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF3D5156")),
-            lightColor: Color(UIColor(hex: "#F31B313D"))
+            darkColor: Color(UIColor(hex: "#FF3D512B")),
+            lightColor: Color(UIColor(hex: "#F31B3152"))
         )
     }
     static var outlineDefaultTransparentNegativeHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF3D51FF")),
-            lightColor: Color(UIColor(hex: "#F31B31FF"))
+            darkColor: Color(UIColor(hex: "#FF3D51B3")),
+            lightColor: Color(UIColor(hex: "#F31B311F"))
         )
     }
     static var outlineDefaultTransparentPositive: Self {
@@ -764,15 +764,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentPositiveActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23E56")),
-            lightColor: Color(UIColor(hex: "#108E253D"))
+            darkColor: Color(UIColor(hex: "#24B23E2B")),
+            lightColor: Color(UIColor(hex: "#108E2552"))
         )
     }
     static var outlineDefaultTransparentPositiveHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23EFF")),
-            lightColor: Color(UIColor(hex: "#108E25FF"))
+            darkColor: Color(UIColor(hex: "#24B23EB3")),
+            lightColor: Color(UIColor(hex: "#108E251F"))
         )
     }
     static var outlineDefaultTransparentPrimary: Self {
@@ -785,15 +785,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentPrimaryActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF0F")),
-            lightColor: Color(UIColor(hex: "#08080829"))
+            darkColor: Color(UIColor(hex: "#FFFFFF12")),
+            lightColor: Color(UIColor(hex: "#08080838"))
         )
     }
     static var outlineDefaultTransparentPrimaryHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF3D")),
-            lightColor: Color(UIColor(hex: "#0808080A"))
+            darkColor: Color(UIColor(hex: "#FFFFFF4D")),
+            lightColor: Color(UIColor(hex: "#08080852"))
         )
     }
     static var outlineDefaultTransparentSecondary: Self {
@@ -806,15 +806,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentSecondaryActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF38")),
-            lightColor: Color(UIColor(hex: "#08080852"))
+            darkColor: Color(UIColor(hex: "#FFFFFF2B")),
+            lightColor: Color(UIColor(hex: "#08080872"))
         )
     }
     static var outlineDefaultTransparentSecondaryHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF66")),
-            lightColor: Color(UIColor(hex: "#08080833"))
+            darkColor: Color(UIColor(hex: "#FFFFFFB3")),
+            lightColor: Color(UIColor(hex: "#0808082B"))
         )
     }
     static var outlineDefaultTransparentTertiary: Self {
@@ -827,15 +827,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentTertiaryActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF80")),
-            lightColor: Color(UIColor(hex: "#08080899"))
+            darkColor: Color(UIColor(hex: "#FFFFFF47")),
+            lightColor: Color(UIColor(hex: "#080808FF"))
         )
     }
     static var outlineDefaultTransparentTertiaryHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFAD")),
-            lightColor: Color(UIColor(hex: "#0808087A"))
+            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
+            lightColor: Color(UIColor(hex: "#08080847"))
         )
     }
     static var outlineDefaultTransparentWarning: Self {
@@ -848,15 +848,15 @@ public extension ColorToken {
     static var outlineDefaultTransparentWarningActive: Self {
         Self(
             id: Colors.outlineDefaultTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF702456")),
-            lightColor: Color(UIColor(hex: "#E857023D"))
+            darkColor: Color(UIColor(hex: "#FF70242B")),
+            lightColor: Color(UIColor(hex: "#E8570252"))
         )
     }
     static var outlineDefaultTransparentWarningHover: Self {
         Self(
             id: Colors.outlineDefaultTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF7024FF")),
-            lightColor: Color(UIColor(hex: "#E85702FF"))
+            darkColor: Color(UIColor(hex: "#FF7024B3")),
+            lightColor: Color(UIColor(hex: "#E857021F"))
         )
     }
     static var outlineDefaultWarning: Self {
@@ -870,14 +870,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineDefaultWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF5D05FF")),
-            lightColor: Color(UIColor(hex: "#C04802FF"))
+            lightColor: Color(UIColor(hex: "#CA4B02FF"))
         )
     }
     static var outlineDefaultWarningHover: Self {
         Self(
             id: Colors.outlineDefaultWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF8442FF")),
-            lightColor: Color(UIColor(hex: "#FD6B17FF"))
+            darkColor: Color(UIColor(hex: "#FFA575FF")),
+            lightColor: Color(UIColor(hex: "#FD9253FF"))
         )
     }
     static var outlineDefaultWarningMinor: Self {
@@ -890,7 +890,7 @@ public extension ColorToken {
     static var outlineDefaultWarningMinorActive: Self {
         Self(
             id: Colors.outlineDefaultWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#9F440FFF")),
+            darkColor: Color(UIColor(hex: "#70300AFF")),
             lightColor: Color(UIColor(hex: "#FC8240FF"))
         )
     }
@@ -911,15 +911,15 @@ public extension ColorToken {
     static var outlineInverseAccentActive: Self {
         Self(
             id: Colors.outlineInverseAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0D731EFF")),
-            lightColor: Color(UIColor(hex: "#1D9032FF"))
+            darkColor: Color(UIColor(hex: "#0C6A1BFF")),
+            lightColor: Color(UIColor(hex: "#1F9835FF"))
         )
     }
     static var outlineInverseAccentHover: Self {
         Self(
             id: Colors.outlineInverseAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#13AA2CFF")),
-            lightColor: Color(UIColor(hex: "#2BD44AFF"))
+            darkColor: Color(UIColor(hex: "#15BC31FF")),
+            lightColor: Color(UIColor(hex: "#5EDE76FF"))
         )
     }
     static var outlineInverseAccentMinor: Self {
@@ -933,14 +933,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseAccentMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#23B83EFF")),
-            lightColor: Color(UIColor(hex: "#0D8222FF"))
+            lightColor: Color(UIColor(hex: "#074A14FF"))
         )
     }
     static var outlineInverseAccentMinorHover: Self {
         Self(
             id: Colors.outlineInverseAccentMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#3EDA5BFF")),
-            lightColor: Color(UIColor(hex: "#11A72CFF"))
+            darkColor: Color(UIColor(hex: "#7AE68EFF")),
+            lightColor: Color(UIColor(hex: "#0F9527FF"))
         )
     }
     static var outlineInverseClear: Self {
@@ -975,14 +975,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#096CAEFF")),
-            lightColor: Color(UIColor(hex: "#0D84D3FF"))
+            lightColor: Color(UIColor(hex: "#0E8ADDFF"))
         )
     }
     static var outlineInverseInfoHover: Self {
         Self(
             id: Colors.outlineInverseInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#34A7F4FF")),
-            lightColor: Color(UIColor(hex: "#3FABF3FF"))
+            darkColor: Color(UIColor(hex: "#47B0F5FF")),
+            lightColor: Color(UIColor(hex: "#66BCF5FF"))
         )
     }
     static var outlineInverseInfoMinor: Self {
@@ -995,15 +995,15 @@ public extension ColorToken {
     static var outlineInverseInfoMinorActive: Self {
         Self(
             id: Colors.outlineInverseInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#33ADFFFF")),
-            lightColor: Color(UIColor(hex: "#116BA7FF"))
+            darkColor: Color(UIColor(hex: "#29A9FFFF")),
+            lightColor: Color(UIColor(hex: "#0B476FFF"))
         )
     }
     static var outlineInverseInfoMinorHover: Self {
         Self(
             id: Colors.outlineInverseInfoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#A3DAFFFF")),
-            lightColor: Color(UIColor(hex: "#1483CCFF"))
+            lightColor: Color(UIColor(hex: "#1277BAFF"))
         )
     }
     static var outlineInverseNegative: Self {
@@ -1017,14 +1017,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#E40C22FF")),
-            lightColor: Color(UIColor(hex: "#FF142CFF"))
+            lightColor: Color(UIColor(hex: "#FF1F35FF"))
         )
     }
     static var outlineInverseNegativeHover: Self {
         Self(
             id: Colors.outlineInverseNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F5384BFF")),
-            lightColor: Color(UIColor(hex: "#FF6675FF"))
+            darkColor: Color(UIColor(hex: "#F87C89FF")),
+            lightColor: Color(UIColor(hex: "#FF8F9AFF"))
         )
     }
     static var outlineInverseNegativeMinor: Self {
@@ -1037,15 +1037,15 @@ public extension ColorToken {
     static var outlineInverseNegativeMinorActive: Self {
         Self(
             id: Colors.outlineInverseNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF707EFF")),
-            lightColor: Color(UIColor(hex: "#7A101AFF"))
+            darkColor: Color(UIColor(hex: "#FF6675FF")),
+            lightColor: Color(UIColor(hex: "#8C121EFF"))
         )
     }
     static var outlineInverseNegativeMinorHover: Self {
         Self(
             id: Colors.outlineInverseNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFADB6FF")),
-            lightColor: Color(UIColor(hex: "#C2192AFF"))
+            darkColor: Color(UIColor(hex: "#FFB8BFFF")),
+            lightColor: Color(UIColor(hex: "#D41C2EFF"))
         )
     }
     static var outlineInversePositive: Self {
@@ -1058,15 +1058,15 @@ public extension ColorToken {
     static var outlineInversePositiveActive: Self {
         Self(
             id: Colors.outlineInversePositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0D731EFF")),
-            lightColor: Color(UIColor(hex: "#1D9032FF"))
+            darkColor: Color(UIColor(hex: "#0C6A1BFF")),
+            lightColor: Color(UIColor(hex: "#1F9835FF"))
         )
     }
     static var outlineInversePositiveHover: Self {
         Self(
             id: Colors.outlineInversePositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#13AA2CFF")),
-            lightColor: Color(UIColor(hex: "#2BD44AFF"))
+            darkColor: Color(UIColor(hex: "#15BC31FF")),
+            lightColor: Color(UIColor(hex: "#5EDE76FF"))
         )
     }
     static var outlineInversePositiveMinor: Self {
@@ -1080,14 +1080,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInversePositiveMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#23B83EFF")),
-            lightColor: Color(UIColor(hex: "#0D8222FF"))
+            lightColor: Color(UIColor(hex: "#074A14FF"))
         )
     }
     static var outlineInversePositiveMinorHover: Self {
         Self(
             id: Colors.outlineInversePositiveMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#3EDA5BFF")),
-            lightColor: Color(UIColor(hex: "#11A72CFF"))
+            darkColor: Color(UIColor(hex: "#7AE68EFF")),
+            lightColor: Color(UIColor(hex: "#0F9527FF"))
         )
     }
     static var outlineInversePromo: Self {
@@ -1101,14 +1101,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInversePromoActive.rawValue,
             darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineInversePromoHover: Self {
         Self(
             id: Colors.outlineInversePromoHover.rawValue,
             darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineInversePromoMinor: Self {
@@ -1122,14 +1122,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInversePromoMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineInversePromoMinorHover: Self {
         Self(
             id: Colors.outlineInversePromoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineInverseSolidDefault: Self {
@@ -1142,15 +1142,15 @@ public extension ColorToken {
     static var outlineInverseSolidDefaultActive: Self {
         Self(
             id: Colors.outlineInverseSolidDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#C7C7C7FF"))
+            darkColor: Color(UIColor(hex: "#080808FF")),
+            lightColor: Color(UIColor(hex: "#616161FF"))
         )
     }
     static var outlineInverseSolidDefaultHover: Self {
         Self(
             id: Colors.outlineInverseSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            darkColor: Color(UIColor(hex: "#969696FF")),
+            lightColor: Color(UIColor(hex: "#808080FF"))
         )
     }
     static var outlineInverseSolidPrimary: Self {
@@ -1164,14 +1164,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseSolidPrimaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#C4C4C4FF")),
-            lightColor: Color(UIColor(hex: "#4F4F4FFF"))
+            lightColor: Color(UIColor(hex: "#171717FF"))
         )
     }
     static var outlineInverseSolidPrimaryHover: Self {
         Self(
             id: Colors.outlineInverseSolidPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#ABABABFF")),
-            lightColor: Color(UIColor(hex: "#787878FF"))
+            lightColor: Color(UIColor(hex: "#545454FF"))
         )
     }
     static var outlineInverseSolidSecondary: Self {
@@ -1184,15 +1184,15 @@ public extension ColorToken {
     static var outlineInverseSolidSecondaryActive: Self {
         Self(
             id: Colors.outlineInverseSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#ADADADFF")),
-            lightColor: Color(UIColor(hex: "#454545FF"))
+            darkColor: Color(UIColor(hex: "#8F8F8FFF")),
+            lightColor: Color(UIColor(hex: "#363636FF"))
         )
     }
     static var outlineInverseSolidSecondaryHover: Self {
         Self(
             id: Colors.outlineInverseSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#BDBDBDFF")),
-            lightColor: Color(UIColor(hex: "#636363FF"))
+            darkColor: Color(UIColor(hex: "#DBDBDBFF")),
+            lightColor: Color(UIColor(hex: "#ABABABFF"))
         )
     }
     static var outlineInverseSolidTertiary: Self {
@@ -1205,15 +1205,15 @@ public extension ColorToken {
     static var outlineInverseSolidTertiaryActive: Self {
         Self(
             id: Colors.outlineInverseSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#737373FF")),
-            lightColor: Color(UIColor(hex: "#7A7A7AFF"))
+            darkColor: Color(UIColor(hex: "#5C5C5CFF")),
+            lightColor: Color(UIColor(hex: "#525252FF"))
         )
     }
     static var outlineInverseSolidTertiaryHover: Self {
         Self(
             id: Colors.outlineInverseSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#949494FF"))
+            darkColor: Color(UIColor(hex: "#A3A3A3FF")),
+            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
     static var outlineInverseTransparentAccent: Self {
@@ -1226,15 +1226,15 @@ public extension ColorToken {
     static var outlineInverseTransparentAccentActive: Self {
         Self(
             id: Colors.outlineInverseTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#108E253D")),
-            lightColor: Color(UIColor(hex: "#24B23E56"))
+            darkColor: Color(UIColor(hex: "#108E2552")),
+            lightColor: Color(UIColor(hex: "#24B23E2B"))
         )
     }
     static var outlineInverseTransparentAccentHover: Self {
         Self(
             id: Colors.outlineInverseTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#108E25FF")),
-            lightColor: Color(UIColor(hex: "#24B23EFF"))
+            darkColor: Color(UIColor(hex: "#108E251F")),
+            lightColor: Color(UIColor(hex: "#24B23EB3"))
         )
     }
     static var outlineInverseTransparentDefault: Self {
@@ -1248,14 +1248,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseTransparentDefaultActive.rawValue,
             darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineInverseTransparentDefaultHover: Self {
         Self(
             id: Colors.outlineInverseTransparentDefaultHover.rawValue,
             darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineInverseTransparentInfo: Self {
@@ -1268,15 +1268,15 @@ public extension ColorToken {
     static var outlineInverseTransparentInfoActive: Self {
         Self(
             id: Colors.outlineInverseTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0B7ECB3D")),
-            lightColor: Color(UIColor(hex: "#199AF056"))
+            darkColor: Color(UIColor(hex: "#0B7ECB52")),
+            lightColor: Color(UIColor(hex: "#199AF02B"))
         )
     }
     static var outlineInverseTransparentInfoHover: Self {
         Self(
             id: Colors.outlineInverseTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0B7ECBFF")),
-            lightColor: Color(UIColor(hex: "#199AF0FF"))
+            darkColor: Color(UIColor(hex: "#0B7ECB1F")),
+            lightColor: Color(UIColor(hex: "#199AF0B3"))
         )
     }
     static var outlineInverseTransparentNegative: Self {
@@ -1289,15 +1289,15 @@ public extension ColorToken {
     static var outlineInverseTransparentNegativeActive: Self {
         Self(
             id: Colors.outlineInverseTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F31B313D")),
-            lightColor: Color(UIColor(hex: "#FF3D5156"))
+            darkColor: Color(UIColor(hex: "#F31B3152")),
+            lightColor: Color(UIColor(hex: "#FF3D512B"))
         )
     }
     static var outlineInverseTransparentNegativeHover: Self {
         Self(
             id: Colors.outlineInverseTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F31B31FF")),
-            lightColor: Color(UIColor(hex: "#FF3D51FF"))
+            darkColor: Color(UIColor(hex: "#F31B311F")),
+            lightColor: Color(UIColor(hex: "#FF3D51B3"))
         )
     }
     static var outlineInverseTransparentPositive: Self {
@@ -1310,15 +1310,15 @@ public extension ColorToken {
     static var outlineInverseTransparentPositiveActive: Self {
         Self(
             id: Colors.outlineInverseTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#108E253D")),
-            lightColor: Color(UIColor(hex: "#24B23E56"))
+            darkColor: Color(UIColor(hex: "#108E2552")),
+            lightColor: Color(UIColor(hex: "#24B23E2B"))
         )
     }
     static var outlineInverseTransparentPositiveHover: Self {
         Self(
             id: Colors.outlineInverseTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#108E25FF")),
-            lightColor: Color(UIColor(hex: "#24B23EFF"))
+            darkColor: Color(UIColor(hex: "#108E251F")),
+            lightColor: Color(UIColor(hex: "#24B23EB3"))
         )
     }
     static var outlineInverseTransparentPrimary: Self {
@@ -1331,15 +1331,15 @@ public extension ColorToken {
     static var outlineInverseTransparentPrimaryActive: Self {
         Self(
             id: Colors.outlineInverseTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF29"))
+            darkColor: Color(UIColor(hex: "#08080838")),
+            lightColor: Color(UIColor(hex: "#FFFFFF12"))
         )
     }
     static var outlineInverseTransparentPrimaryHover: Self {
         Self(
             id: Colors.outlineInverseTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808083D")),
-            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
+            darkColor: Color(UIColor(hex: "#08080852")),
+            lightColor: Color(UIColor(hex: "#FFFFFF4D"))
         )
     }
     static var outlineInverseTransparentSecondary: Self {
@@ -1352,15 +1352,15 @@ public extension ColorToken {
     static var outlineInverseTransparentSecondaryActive: Self {
         Self(
             id: Colors.outlineInverseTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080838")),
-            lightColor: Color(UIColor(hex: "#FFFFFF52"))
+            darkColor: Color(UIColor(hex: "#08080872")),
+            lightColor: Color(UIColor(hex: "#FFFFFF2B"))
         )
     }
     static var outlineInverseTransparentSecondaryHover: Self {
         Self(
             id: Colors.outlineInverseTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#08080866")),
-            lightColor: Color(UIColor(hex: "#FFFFFF33"))
+            darkColor: Color(UIColor(hex: "#0808082B")),
+            lightColor: Color(UIColor(hex: "#FFFFFFB3"))
         )
     }
     static var outlineInverseTransparentTertiary: Self {
@@ -1373,15 +1373,15 @@ public extension ColorToken {
     static var outlineInverseTransparentTertiaryActive: Self {
         Self(
             id: Colors.outlineInverseTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080880")),
-            lightColor: Color(UIColor(hex: "#FFFFFF99"))
+            darkColor: Color(UIColor(hex: "#080808FF")),
+            lightColor: Color(UIColor(hex: "#FFFFFF47"))
         )
     }
     static var outlineInverseTransparentTertiaryHover: Self {
         Self(
             id: Colors.outlineInverseTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#080808AD")),
-            lightColor: Color(UIColor(hex: "#FFFFFF7A"))
+            darkColor: Color(UIColor(hex: "#08080847")),
+            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
     static var outlineInverseTransparentWarning: Self {
@@ -1394,15 +1394,15 @@ public extension ColorToken {
     static var outlineInverseTransparentWarningActive: Self {
         Self(
             id: Colors.outlineInverseTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E857023D")),
-            lightColor: Color(UIColor(hex: "#FF702456"))
+            darkColor: Color(UIColor(hex: "#E8570252")),
+            lightColor: Color(UIColor(hex: "#FF70242B"))
         )
     }
     static var outlineInverseTransparentWarningHover: Self {
         Self(
             id: Colors.outlineInverseTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#E85702FF")),
-            lightColor: Color(UIColor(hex: "#FF7024FF"))
+            darkColor: Color(UIColor(hex: "#E857021F")),
+            lightColor: Color(UIColor(hex: "#FF7024B3"))
         )
     }
     static var outlineInverseWarning: Self {
@@ -1416,14 +1416,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineInverseWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#CA4B02FF")),
-            lightColor: Color(UIColor(hex: "#FA5700FF"))
+            lightColor: Color(UIColor(hex: "#FF5D05FF"))
         )
     }
     static var outlineInverseWarningHover: Self {
         Self(
             id: Colors.outlineInverseWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FD650DFF")),
-            lightColor: Color(UIColor(hex: "#FF8B4DFF"))
+            darkColor: Color(UIColor(hex: "#FD9253FF")),
+            lightColor: Color(UIColor(hex: "#FFA575FF"))
         )
     }
     static var outlineInverseWarningMinor: Self {
@@ -1436,15 +1436,15 @@ public extension ColorToken {
     static var outlineInverseWarningMinorActive: Self {
         Self(
             id: Colors.outlineInverseWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FC884AFF")),
-            lightColor: Color(UIColor(hex: "#A84710FF"))
+            darkColor: Color(UIColor(hex: "#FC8240FF")),
+            lightColor: Color(UIColor(hex: "#70300AFF"))
         )
     }
     static var outlineInverseWarningMinorHover: Self {
         Self(
             id: Colors.outlineInverseWarningMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FDB086FF")),
-            lightColor: Color(UIColor(hex: "#CD5713FF"))
+            darkColor: Color(UIColor(hex: "#FDB790FF")),
+            lightColor: Color(UIColor(hex: "#BB4F11FF"))
         )
     }
     static var outlineOnDarkAccent: Self {
@@ -1458,14 +1458,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnDarkAccentActive.rawValue,
             darkColor: Color(UIColor(hex: "#1F9835FF")),
-            lightColor: Color(UIColor(hex: "#1D9032FF"))
+            lightColor: Color(UIColor(hex: "#1F9835FF"))
         )
     }
     static var outlineOnDarkAccentHover: Self {
         Self(
             id: Colors.outlineOnDarkAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#2ACB47FF")),
-            lightColor: Color(UIColor(hex: "#2BD44AFF"))
+            darkColor: Color(UIColor(hex: "#5EDE76FF")),
+            lightColor: Color(UIColor(hex: "#5EDE76FF"))
         )
     }
     static var outlineOnDarkAccentMinor: Self {
@@ -1478,15 +1478,15 @@ public extension ColorToken {
     static var outlineOnDarkAccentMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkAccentMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0C7920FF")),
-            lightColor: Color(UIColor(hex: "#0D8222FF"))
+            darkColor: Color(UIColor(hex: "#074A14FF")),
+            lightColor: Color(UIColor(hex: "#074A14FF"))
         )
     }
     static var outlineOnDarkAccentMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkAccentMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0F9527FF")),
-            lightColor: Color(UIColor(hex: "#11A72CFF"))
+            lightColor: Color(UIColor(hex: "#0F9527FF"))
         )
     }
     static var outlineOnDarkClear: Self {
@@ -1521,14 +1521,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnDarkInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#0E8ADDFF")),
-            lightColor: Color(UIColor(hex: "#0D84D3FF"))
+            lightColor: Color(UIColor(hex: "#0E8ADDFF"))
         )
     }
     static var outlineOnDarkInfoHover: Self {
         Self(
             id: Colors.outlineOnDarkInfoHover.rawValue,
             darkColor: Color(UIColor(hex: "#66BCF5FF")),
-            lightColor: Color(UIColor(hex: "#3FABF3FF"))
+            lightColor: Color(UIColor(hex: "#66BCF5FF"))
         )
     }
     static var outlineOnDarkInfoMinor: Self {
@@ -1541,15 +1541,15 @@ public extension ColorToken {
     static var outlineOnDarkInfoMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#10659EFF")),
-            lightColor: Color(UIColor(hex: "#0D84D3FF"))
+            darkColor: Color(UIColor(hex: "#0B476FFF")),
+            lightColor: Color(UIColor(hex: "#0E8ADDFF"))
         )
     }
     static var outlineOnDarkInfoMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkInfoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#1277BAFF")),
-            lightColor: Color(UIColor(hex: "#3FABF3FF"))
+            lightColor: Color(UIColor(hex: "#66BCF5FF"))
         )
     }
     static var outlineOnDarkNegative: Self {
@@ -1563,14 +1563,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnDarkNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF1F35FF")),
-            lightColor: Color(UIColor(hex: "#FF142CFF"))
+            lightColor: Color(UIColor(hex: "#FF1F35FF"))
         )
     }
     static var outlineOnDarkNegativeHover: Self {
         Self(
             id: Colors.outlineOnDarkNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF5C6CFF")),
-            lightColor: Color(UIColor(hex: "#FF6675FF"))
+            darkColor: Color(UIColor(hex: "#FF8F9AFF")),
+            lightColor: Color(UIColor(hex: "#FF8F9AFF"))
         )
     }
     static var outlineOnDarkNegativeMinor: Self {
@@ -1583,15 +1583,15 @@ public extension ColorToken {
     static var outlineOnDarkNegativeMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#83111CFF")),
-            lightColor: Color(UIColor(hex: "#FF142CFF"))
+            darkColor: Color(UIColor(hex: "#8C121EFF")),
+            lightColor: Color(UIColor(hex: "#FF1F35FF"))
         )
     }
     static var outlineOnDarkNegativeMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B91828FF")),
-            lightColor: Color(UIColor(hex: "#FF6675FF"))
+            darkColor: Color(UIColor(hex: "#D41C2EFF")),
+            lightColor: Color(UIColor(hex: "#FF8F9AFF"))
         )
     }
     static var outlineOnDarkPositive: Self {
@@ -1605,14 +1605,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnDarkPositiveActive.rawValue,
             darkColor: Color(UIColor(hex: "#1F9835FF")),
-            lightColor: Color(UIColor(hex: "#1D9032FF"))
+            lightColor: Color(UIColor(hex: "#1F9835FF"))
         )
     }
     static var outlineOnDarkPositiveHover: Self {
         Self(
             id: Colors.outlineOnDarkPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#2ACB47FF")),
-            lightColor: Color(UIColor(hex: "#2BD44AFF"))
+            darkColor: Color(UIColor(hex: "#5EDE76FF")),
+            lightColor: Color(UIColor(hex: "#5EDE76FF"))
         )
     }
     static var outlineOnDarkPositiveMinor: Self {
@@ -1625,15 +1625,15 @@ public extension ColorToken {
     static var outlineOnDarkPositiveMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkPositiveMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0C7920FF")),
-            lightColor: Color(UIColor(hex: "#0D8222FF"))
+            darkColor: Color(UIColor(hex: "#074A14FF")),
+            lightColor: Color(UIColor(hex: "#074A14FF"))
         )
     }
     static var outlineOnDarkPositiveMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkPositiveMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0F9527FF")),
-            lightColor: Color(UIColor(hex: "#11A72CFF"))
+            lightColor: Color(UIColor(hex: "#0F9527FF"))
         )
     }
     static var outlineOnDarkPromo: Self {
@@ -1646,15 +1646,15 @@ public extension ColorToken {
     static var outlineOnDarkPromoActive: Self {
         Self(
             id: Colors.outlineOnDarkPromoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#666666FF")),
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineOnDarkPromoHover: Self {
         Self(
             id: Colors.outlineOnDarkPromoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#858585FF")),
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineOnDarkPromoMinor: Self {
@@ -1667,15 +1667,15 @@ public extension ColorToken {
     static var outlineOnDarkPromoMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkPromoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#666666FF")),
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineOnDarkPromoMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkPromoMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#858585FF")),
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineOnDarkSolidDefault: Self {
@@ -1688,15 +1688,15 @@ public extension ColorToken {
     static var outlineOnDarkSolidDefaultActive: Self {
         Self(
             id: Colors.outlineOnDarkSolidDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E0E0E0FF")),
-            lightColor: Color(UIColor(hex: "#C7C7C7FF"))
+            darkColor: Color(UIColor(hex: "#616161FF")),
+            lightColor: Color(UIColor(hex: "#616161FF"))
         )
     }
     static var outlineOnDarkSolidDefaultHover: Self {
         Self(
             id: Colors.outlineOnDarkSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
+            darkColor: Color(UIColor(hex: "#808080FF")),
+            lightColor: Color(UIColor(hex: "#808080FF"))
         )
     }
     static var outlineOnDarkSolidPrimary: Self {
@@ -1709,15 +1709,15 @@ public extension ColorToken {
     static var outlineOnDarkSolidPrimaryActive: Self {
         Self(
             id: Colors.outlineOnDarkSolidPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#ADADADFF")),
-            lightColor: Color(UIColor(hex: "#4F4F4FFF"))
+            darkColor: Color(UIColor(hex: "#171717FF")),
+            lightColor: Color(UIColor(hex: "#171717FF"))
         )
     }
     static var outlineOnDarkSolidPrimaryHover: Self {
         Self(
             id: Colors.outlineOnDarkSolidPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#787878FF"))
+            darkColor: Color(UIColor(hex: "#545454FF")),
+            lightColor: Color(UIColor(hex: "#545454FF"))
         )
     }
     static var outlineOnDarkSolidSecondary: Self {
@@ -1730,15 +1730,15 @@ public extension ColorToken {
     static var outlineOnDarkSolidSecondaryActive: Self {
         Self(
             id: Colors.outlineOnDarkSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#4A4A4AFF")),
-            lightColor: Color(UIColor(hex: "#454545FF"))
+            darkColor: Color(UIColor(hex: "#363636FF")),
+            lightColor: Color(UIColor(hex: "#363636FF"))
         )
     }
     static var outlineOnDarkSolidSecondaryHover: Self {
         Self(
             id: Colors.outlineOnDarkSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#595959FF")),
-            lightColor: Color(UIColor(hex: "#636363FF"))
+            darkColor: Color(UIColor(hex: "#ABABABFF")),
+            lightColor: Color(UIColor(hex: "#ABABABFF"))
         )
     }
     static var outlineOnDarkSolidTertiary: Self {
@@ -1751,15 +1751,15 @@ public extension ColorToken {
     static var outlineOnDarkSolidTertiaryActive: Self {
         Self(
             id: Colors.outlineOnDarkSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#808080FF")),
-            lightColor: Color(UIColor(hex: "#7A7A7AFF"))
+            darkColor: Color(UIColor(hex: "#525252FF")),
+            lightColor: Color(UIColor(hex: "#525252FF"))
         )
     }
     static var outlineOnDarkSolidTertiaryHover: Self {
         Self(
             id: Colors.outlineOnDarkSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#8F8F8FFF")),
-            lightColor: Color(UIColor(hex: "#949494FF"))
+            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
+            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
     static var outlineOnDarkTransparentAccent: Self {
@@ -1772,15 +1772,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentAccentActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23E56")),
-            lightColor: Color(UIColor(hex: "#24B23E56"))
+            darkColor: Color(UIColor(hex: "#24B23E2B")),
+            lightColor: Color(UIColor(hex: "#24B23E2B"))
         )
     }
     static var outlineOnDarkTransparentAccentHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23EFF")),
-            lightColor: Color(UIColor(hex: "#24B23EFF"))
+            darkColor: Color(UIColor(hex: "#24B23EB3")),
+            lightColor: Color(UIColor(hex: "#24B23EB3"))
         )
     }
     static var outlineOnDarkTransparentDefault: Self {
@@ -1793,15 +1793,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentDefaultActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E0E0E0FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#616161FF")),
+            lightColor: Color(UIColor(hex: "#666666FF"))
         )
     }
     static var outlineOnDarkTransparentDefaultHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#808080FF")),
+            lightColor: Color(UIColor(hex: "#858585FF"))
         )
     }
     static var outlineOnDarkTransparentInfo: Self {
@@ -1814,15 +1814,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentInfoActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#199AF056")),
-            lightColor: Color(UIColor(hex: "#199AF056"))
+            darkColor: Color(UIColor(hex: "#199AF02B")),
+            lightColor: Color(UIColor(hex: "#199AF02B"))
         )
     }
     static var outlineOnDarkTransparentInfoHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#199AF0FF")),
-            lightColor: Color(UIColor(hex: "#199AF0FF"))
+            darkColor: Color(UIColor(hex: "#199AF0B3")),
+            lightColor: Color(UIColor(hex: "#199AF0B3"))
         )
     }
     static var outlineOnDarkTransparentNegative: Self {
@@ -1835,15 +1835,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentNegativeActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF3D5156")),
-            lightColor: Color(UIColor(hex: "#FF3D5156"))
+            darkColor: Color(UIColor(hex: "#FF3D512B")),
+            lightColor: Color(UIColor(hex: "#FF3D512B"))
         )
     }
     static var outlineOnDarkTransparentNegativeHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF3D51FF")),
-            lightColor: Color(UIColor(hex: "#FF3D51FF"))
+            darkColor: Color(UIColor(hex: "#FF3D51B3")),
+            lightColor: Color(UIColor(hex: "#FF3D51B3"))
         )
     }
     static var outlineOnDarkTransparentPositive: Self {
@@ -1856,15 +1856,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentPositiveActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23E56")),
-            lightColor: Color(UIColor(hex: "#24B23E56"))
+            darkColor: Color(UIColor(hex: "#24B23E2B")),
+            lightColor: Color(UIColor(hex: "#24B23E2B"))
         )
     }
     static var outlineOnDarkTransparentPositiveHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#24B23EFF")),
-            lightColor: Color(UIColor(hex: "#24B23EFF"))
+            darkColor: Color(UIColor(hex: "#24B23EB3")),
+            lightColor: Color(UIColor(hex: "#24B23EB3"))
         )
     }
     static var outlineOnDarkTransparentPrimary: Self {
@@ -1877,15 +1877,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentPrimaryActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF0F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF29"))
+            darkColor: Color(UIColor(hex: "#FFFFFF12")),
+            lightColor: Color(UIColor(hex: "#FFFFFF12"))
         )
     }
     static var outlineOnDarkTransparentPrimaryHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF3D")),
-            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
+            darkColor: Color(UIColor(hex: "#FFFFFF4D")),
+            lightColor: Color(UIColor(hex: "#FFFFFF4D"))
         )
     }
     static var outlineOnDarkTransparentSecondary: Self {
@@ -1898,15 +1898,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentSecondaryActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF38")),
-            lightColor: Color(UIColor(hex: "#FFFFFF52"))
+            darkColor: Color(UIColor(hex: "#FFFFFF2B")),
+            lightColor: Color(UIColor(hex: "#FFFFFF2B"))
         )
     }
     static var outlineOnDarkTransparentSecondaryHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF66")),
-            lightColor: Color(UIColor(hex: "#FFFFFF33"))
+            darkColor: Color(UIColor(hex: "#FFFFFFB3")),
+            lightColor: Color(UIColor(hex: "#FFFFFFB3"))
         )
     }
     static var outlineOnDarkTransparentTertiary: Self {
@@ -1919,15 +1919,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentTertiaryActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFF80")),
-            lightColor: Color(UIColor(hex: "#FFFFFF99"))
+            darkColor: Color(UIColor(hex: "#FFFFFF47")),
+            lightColor: Color(UIColor(hex: "#FFFFFF47"))
         )
     }
     static var outlineOnDarkTransparentTertiaryHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFAD")),
-            lightColor: Color(UIColor(hex: "#FFFFFF7A"))
+            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
+            lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
     static var outlineOnDarkTransparentWarning: Self {
@@ -1940,15 +1940,15 @@ public extension ColorToken {
     static var outlineOnDarkTransparentWarningActive: Self {
         Self(
             id: Colors.outlineOnDarkTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF702456")),
-            lightColor: Color(UIColor(hex: "#FF702456"))
+            darkColor: Color(UIColor(hex: "#FF70242B")),
+            lightColor: Color(UIColor(hex: "#FF70242B"))
         )
     }
     static var outlineOnDarkTransparentWarningHover: Self {
         Self(
             id: Colors.outlineOnDarkTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF7024FF")),
-            lightColor: Color(UIColor(hex: "#FF7024FF"))
+            darkColor: Color(UIColor(hex: "#FF7024B3")),
+            lightColor: Color(UIColor(hex: "#FF7024B3"))
         )
     }
     static var outlineOnDarkWarning: Self {
@@ -1962,14 +1962,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnDarkWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF5D05FF")),
-            lightColor: Color(UIColor(hex: "#FA5700FF"))
+            lightColor: Color(UIColor(hex: "#FF5D05FF"))
         )
     }
     static var outlineOnDarkWarningHover: Self {
         Self(
             id: Colors.outlineOnDarkWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF8442FF")),
-            lightColor: Color(UIColor(hex: "#FF8B4DFF"))
+            darkColor: Color(UIColor(hex: "#FFA575FF")),
+            lightColor: Color(UIColor(hex: "#FFA575FF"))
         )
     }
     static var outlineOnDarkWarningMinor: Self {
@@ -1982,15 +1982,15 @@ public extension ColorToken {
     static var outlineOnDarkWarningMinorActive: Self {
         Self(
             id: Colors.outlineOnDarkWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#9F440FFF")),
-            lightColor: Color(UIColor(hex: "#FA5700FF"))
+            darkColor: Color(UIColor(hex: "#70300AFF")),
+            lightColor: Color(UIColor(hex: "#FF5D05FF"))
         )
     }
     static var outlineOnDarkWarningMinorHover: Self {
         Self(
             id: Colors.outlineOnDarkWarningMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#BB4F11FF")),
-            lightColor: Color(UIColor(hex: "#FF8B4DFF"))
+            lightColor: Color(UIColor(hex: "#FFA575FF"))
         )
     }
     static var outlineOnLightAccent: Self {
@@ -2003,15 +2003,15 @@ public extension ColorToken {
     static var outlineOnLightAccentActive: Self {
         Self(
             id: Colors.outlineOnLightAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0D731EFF")),
+            darkColor: Color(UIColor(hex: "#0C6A1BFF")),
             lightColor: Color(UIColor(hex: "#0C6A1BFF"))
         )
     }
     static var outlineOnLightAccentHover: Self {
         Self(
             id: Colors.outlineOnLightAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#13AA2CFF")),
-            lightColor: Color(UIColor(hex: "#14B32EFF"))
+            darkColor: Color(UIColor(hex: "#15BC31FF")),
+            lightColor: Color(UIColor(hex: "#15BC31FF"))
         )
     }
     static var outlineOnLightAccentMinor: Self {
@@ -2025,14 +2025,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightAccentMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#23B83EFF")),
-            lightColor: Color(UIColor(hex: "#21B03CFF"))
+            lightColor: Color(UIColor(hex: "#23B83EFF"))
         )
     }
     static var outlineOnLightAccentMinorHover: Self {
         Self(
             id: Colors.outlineOnLightAccentMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#3EDA5BFF")),
-            lightColor: Color(UIColor(hex: "#47DC62FF"))
+            darkColor: Color(UIColor(hex: "#7AE68EFF")),
+            lightColor: Color(UIColor(hex: "#7AE68EFF"))
         )
     }
     static var outlineOnLightClear: Self {
@@ -2067,14 +2067,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#096CAEFF")),
-            lightColor: Color(UIColor(hex: "#0966A5FF"))
+            lightColor: Color(UIColor(hex: "#096CAEFF"))
         )
     }
     static var outlineOnLightInfoHover: Self {
         Self(
             id: Colors.outlineOnLightInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#34A7F4FF")),
-            lightColor: Color(UIColor(hex: "#0D96F2FF"))
+            darkColor: Color(UIColor(hex: "#47B0F5FF")),
+            lightColor: Color(UIColor(hex: "#47B0F5FF"))
         )
     }
     static var outlineOnLightInfoMinor: Self {
@@ -2087,7 +2087,7 @@ public extension ColorToken {
     static var outlineOnLightInfoMinorActive: Self {
         Self(
             id: Colors.outlineOnLightInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#33ADFFFF")),
+            darkColor: Color(UIColor(hex: "#29A9FFFF")),
             lightColor: Color(UIColor(hex: "#29A9FFFF"))
         )
     }
@@ -2095,7 +2095,7 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightInfoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#A3DAFFFF")),
-            lightColor: Color(UIColor(hex: "#7ACAFFFF"))
+            lightColor: Color(UIColor(hex: "#A3DAFFFF"))
         )
     }
     static var outlineOnLightNegative: Self {
@@ -2109,14 +2109,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#E40C22FF")),
-            lightColor: Color(UIColor(hex: "#DA0B20FF"))
+            lightColor: Color(UIColor(hex: "#E40C22FF"))
         )
     }
     static var outlineOnLightNegativeHover: Self {
         Self(
             id: Colors.outlineOnLightNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F5384BFF")),
-            lightColor: Color(UIColor(hex: "#F54254FF"))
+            darkColor: Color(UIColor(hex: "#F87C89FF")),
+            lightColor: Color(UIColor(hex: "#F87C89FF"))
         )
     }
     static var outlineOnLightNegativeMinor: Self {
@@ -2129,14 +2129,14 @@ public extension ColorToken {
     static var outlineOnLightNegativeMinorActive: Self {
         Self(
             id: Colors.outlineOnLightNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF707EFF")),
+            darkColor: Color(UIColor(hex: "#FF6675FF")),
             lightColor: Color(UIColor(hex: "#FF6675FF"))
         )
     }
     static var outlineOnLightNegativeMinorHover: Self {
         Self(
             id: Colors.outlineOnLightNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFADB6FF")),
+            darkColor: Color(UIColor(hex: "#FFB8BFFF")),
             lightColor: Color(UIColor(hex: "#FFB8BFFF"))
         )
     }
@@ -2150,15 +2150,15 @@ public extension ColorToken {
     static var outlineOnLightPositiveActive: Self {
         Self(
             id: Colors.outlineOnLightPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0D731EFF")),
+            darkColor: Color(UIColor(hex: "#0C6A1BFF")),
             lightColor: Color(UIColor(hex: "#0C6A1BFF"))
         )
     }
     static var outlineOnLightPositiveHover: Self {
         Self(
             id: Colors.outlineOnLightPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#13AA2CFF")),
-            lightColor: Color(UIColor(hex: "#14B32EFF"))
+            darkColor: Color(UIColor(hex: "#15BC31FF")),
+            lightColor: Color(UIColor(hex: "#15BC31FF"))
         )
     }
     static var outlineOnLightPositiveMinor: Self {
@@ -2172,14 +2172,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightPositiveMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#23B83EFF")),
-            lightColor: Color(UIColor(hex: "#21B03CFF"))
+            lightColor: Color(UIColor(hex: "#23B83EFF"))
         )
     }
     static var outlineOnLightPositiveMinorHover: Self {
         Self(
             id: Colors.outlineOnLightPositiveMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#3EDA5BFF")),
-            lightColor: Color(UIColor(hex: "#47DC62FF"))
+            darkColor: Color(UIColor(hex: "#7AE68EFF")),
+            lightColor: Color(UIColor(hex: "#7AE68EFF"))
         )
     }
     static var outlineOnLightPromo: Self {
@@ -2193,14 +2193,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightPromoActive.rawValue,
             darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineOnLightPromoHover: Self {
         Self(
             id: Colors.outlineOnLightPromoHover.rawValue,
             darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineOnLightPromoMinor: Self {
@@ -2214,14 +2214,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightPromoMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#E6E6E6FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineOnLightPromoMinorHover: Self {
         Self(
             id: Colors.outlineOnLightPromoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#CCCCCCFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineOnLightSolidDefault: Self {
@@ -2234,15 +2234,15 @@ public extension ColorToken {
     static var outlineOnLightSolidDefaultActive: Self {
         Self(
             id: Colors.outlineOnLightSolidDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#303030FF"))
+            darkColor: Color(UIColor(hex: "#080808FF")),
+            lightColor: Color(UIColor(hex: "#080808FF"))
         )
     }
     static var outlineOnLightSolidDefaultHover: Self {
         Self(
             id: Colors.outlineOnLightSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#595959FF"))
+            darkColor: Color(UIColor(hex: "#969696FF")),
+            lightColor: Color(UIColor(hex: "#969696FF"))
         )
     }
     static var outlineOnLightSolidPrimary: Self {
@@ -2256,14 +2256,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightSolidPrimaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#C4C4C4FF")),
-            lightColor: Color(UIColor(hex: "#B3B3B3FF"))
+            lightColor: Color(UIColor(hex: "#C4C4C4FF"))
         )
     }
     static var outlineOnLightSolidPrimaryHover: Self {
         Self(
             id: Colors.outlineOnLightSolidPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#ABABABFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            lightColor: Color(UIColor(hex: "#ABABABFF"))
         )
     }
     static var outlineOnLightSolidSecondary: Self {
@@ -2276,15 +2276,15 @@ public extension ColorToken {
     static var outlineOnLightSolidSecondaryActive: Self {
         Self(
             id: Colors.outlineOnLightSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#ADADADFF")),
-            lightColor: Color(UIColor(hex: "#A8A8A8FF"))
+            darkColor: Color(UIColor(hex: "#8F8F8FFF")),
+            lightColor: Color(UIColor(hex: "#8F8F8FFF"))
         )
     }
     static var outlineOnLightSolidSecondaryHover: Self {
         Self(
             id: Colors.outlineOnLightSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#BDBDBDFF")),
-            lightColor: Color(UIColor(hex: "#C2C2C2FF"))
+            darkColor: Color(UIColor(hex: "#DBDBDBFF")),
+            lightColor: Color(UIColor(hex: "#DBDBDBFF"))
         )
     }
     static var outlineOnLightSolidTertiary: Self {
@@ -2297,15 +2297,15 @@ public extension ColorToken {
     static var outlineOnLightSolidTertiaryActive: Self {
         Self(
             id: Colors.outlineOnLightSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#737373FF")),
-            lightColor: Color(UIColor(hex: "#595959FF"))
+            darkColor: Color(UIColor(hex: "#5C5C5CFF")),
+            lightColor: Color(UIColor(hex: "#5C5C5CFF"))
         )
     }
     static var outlineOnLightSolidTertiaryHover: Self {
         Self(
             id: Colors.outlineOnLightSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#A3A3A3FF")),
+            lightColor: Color(UIColor(hex: "#A3A3A3FF"))
         )
     }
     static var outlineOnLightTransparentAccent: Self {
@@ -2318,15 +2318,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentAccentActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#108E253D")),
-            lightColor: Color(UIColor(hex: "#108E253D"))
+            darkColor: Color(UIColor(hex: "#108E2552")),
+            lightColor: Color(UIColor(hex: "#108E2552"))
         )
     }
     static var outlineOnLightTransparentAccentHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#108E25FF")),
-            lightColor: Color(UIColor(hex: "#108E25FF"))
+            darkColor: Color(UIColor(hex: "#108E251F")),
+            lightColor: Color(UIColor(hex: "#108E251F"))
         )
     }
     static var outlineOnLightTransparentDefault: Self {
@@ -2339,15 +2339,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentDefaultActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentDefaultActive.rawValue,
-            darkColor: Color(UIColor(hex: "#C7C7C7FF")),
-            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
+            darkColor: Color(UIColor(hex: "#080808FF")),
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var outlineOnLightTransparentDefaultHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#000000FF"))
+            darkColor: Color(UIColor(hex: "#969696FF")),
+            lightColor: Color(UIColor(hex: "#CCCCCCFF"))
         )
     }
     static var outlineOnLightTransparentInfo: Self {
@@ -2360,15 +2360,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentInfoActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0B7ECB3D")),
-            lightColor: Color(UIColor(hex: "#0B7ECB3D"))
+            darkColor: Color(UIColor(hex: "#0B7ECB52")),
+            lightColor: Color(UIColor(hex: "#0B7ECB52"))
         )
     }
     static var outlineOnLightTransparentInfoHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0B7ECBFF")),
-            lightColor: Color(UIColor(hex: "#0B7ECBFF"))
+            darkColor: Color(UIColor(hex: "#0B7ECB1F")),
+            lightColor: Color(UIColor(hex: "#0B7ECB1F"))
         )
     }
     static var outlineOnLightTransparentNegative: Self {
@@ -2381,15 +2381,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentNegativeActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F31B313D")),
-            lightColor: Color(UIColor(hex: "#F31B313D"))
+            darkColor: Color(UIColor(hex: "#F31B3152")),
+            lightColor: Color(UIColor(hex: "#F31B3152"))
         )
     }
     static var outlineOnLightTransparentNegativeHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F31B31FF")),
-            lightColor: Color(UIColor(hex: "#F31B31FF"))
+            darkColor: Color(UIColor(hex: "#F31B311F")),
+            lightColor: Color(UIColor(hex: "#F31B311F"))
         )
     }
     static var outlineOnLightTransparentPositive: Self {
@@ -2402,15 +2402,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentPositiveActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#108E253D")),
-            lightColor: Color(UIColor(hex: "#108E253D"))
+            darkColor: Color(UIColor(hex: "#108E2552")),
+            lightColor: Color(UIColor(hex: "#108E2552"))
         )
     }
     static var outlineOnLightTransparentPositiveHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#108E25FF")),
-            lightColor: Color(UIColor(hex: "#108E25FF"))
+            darkColor: Color(UIColor(hex: "#108E251F")),
+            lightColor: Color(UIColor(hex: "#108E251F"))
         )
     }
     static var outlineOnLightTransparentPrimary: Self {
@@ -2423,15 +2423,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentPrimaryActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080F")),
-            lightColor: Color(UIColor(hex: "#08080829"))
+            darkColor: Color(UIColor(hex: "#08080838")),
+            lightColor: Color(UIColor(hex: "#08080838"))
         )
     }
     static var outlineOnLightTransparentPrimaryHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808083D")),
-            lightColor: Color(UIColor(hex: "#0808080A"))
+            darkColor: Color(UIColor(hex: "#08080852")),
+            lightColor: Color(UIColor(hex: "#08080852"))
         )
     }
     static var outlineOnLightTransparentSecondary: Self {
@@ -2444,15 +2444,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentSecondaryActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080838")),
-            lightColor: Color(UIColor(hex: "#08080852"))
+            darkColor: Color(UIColor(hex: "#08080872")),
+            lightColor: Color(UIColor(hex: "#08080872"))
         )
     }
     static var outlineOnLightTransparentSecondaryHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#08080866")),
-            lightColor: Color(UIColor(hex: "#08080833"))
+            darkColor: Color(UIColor(hex: "#0808082B")),
+            lightColor: Color(UIColor(hex: "#0808082B"))
         )
     }
     static var outlineOnLightTransparentTertiary: Self {
@@ -2465,15 +2465,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentTertiaryActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080880")),
-            lightColor: Color(UIColor(hex: "#08080899"))
+            darkColor: Color(UIColor(hex: "#080808FF")),
+            lightColor: Color(UIColor(hex: "#080808FF"))
         )
     }
     static var outlineOnLightTransparentTertiaryHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#080808AD")),
-            lightColor: Color(UIColor(hex: "#0808087A"))
+            darkColor: Color(UIColor(hex: "#08080847")),
+            lightColor: Color(UIColor(hex: "#08080847"))
         )
     }
     static var outlineOnLightTransparentWarning: Self {
@@ -2486,15 +2486,15 @@ public extension ColorToken {
     static var outlineOnLightTransparentWarningActive: Self {
         Self(
             id: Colors.outlineOnLightTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E857023D")),
-            lightColor: Color(UIColor(hex: "#E857023D"))
+            darkColor: Color(UIColor(hex: "#E8570252")),
+            lightColor: Color(UIColor(hex: "#E8570252"))
         )
     }
     static var outlineOnLightTransparentWarningHover: Self {
         Self(
             id: Colors.outlineOnLightTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#E85702FF")),
-            lightColor: Color(UIColor(hex: "#E85702FF"))
+            darkColor: Color(UIColor(hex: "#E857021F")),
+            lightColor: Color(UIColor(hex: "#E857021F"))
         )
     }
     static var outlineOnLightWarning: Self {
@@ -2508,14 +2508,14 @@ public extension ColorToken {
         Self(
             id: Colors.outlineOnLightWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#CA4B02FF")),
-            lightColor: Color(UIColor(hex: "#C04802FF"))
+            lightColor: Color(UIColor(hex: "#CA4B02FF"))
         )
     }
     static var outlineOnLightWarningHover: Self {
         Self(
             id: Colors.outlineOnLightWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FD650DFF")),
-            lightColor: Color(UIColor(hex: "#FD6B17FF"))
+            darkColor: Color(UIColor(hex: "#FD9253FF")),
+            lightColor: Color(UIColor(hex: "#FD9253FF"))
         )
     }
     static var outlineOnLightWarningMinor: Self {
@@ -2528,14 +2528,14 @@ public extension ColorToken {
     static var outlineOnLightWarningMinorActive: Self {
         Self(
             id: Colors.outlineOnLightWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FC884AFF")),
+            darkColor: Color(UIColor(hex: "#FC8240FF")),
             lightColor: Color(UIColor(hex: "#FC8240FF"))
         )
     }
     static var outlineOnLightWarningMinorHover: Self {
         Self(
             id: Colors.outlineOnLightWarningMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FDB086FF")),
+            darkColor: Color(UIColor(hex: "#FDB790FF")),
             lightColor: Color(UIColor(hex: "#FDB790FF"))
         )
     }
@@ -2662,7 +2662,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultAccentMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0E3A16FF")),
-            lightColor: Color(UIColor(hex: "#B1FBBFFF"))
+            lightColor: Color(UIColor(hex: "#94F9A7FF"))
         )
     }
     static var surfaceDefaultClear: Self {
@@ -2704,7 +2704,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultInfoHover.rawValue,
             darkColor: Color(UIColor(hex: "#1798EEFF")),
-            lightColor: Color(UIColor(hex: "#1798EEFF"))
+            lightColor: Color(UIColor(hex: "#209CEEFF"))
         )
     }
     static var surfaceDefaultInfoMinor: Self {
@@ -2718,14 +2718,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultInfoMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#0A2333FF")),
-            lightColor: Color(UIColor(hex: "#C7E9FFFF"))
+            lightColor: Color(UIColor(hex: "#C2E7FFFF"))
         )
     }
     static var surfaceDefaultInfoMinorHover: Self {
         Self(
             id: Colors.surfaceDefaultInfoMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#10344CFF")),
-            lightColor: Color(UIColor(hex: "#E5F5FFFF"))
+            lightColor: Color(UIColor(hex: "#C7E9FFFF"))
         )
     }
     static var surfaceDefaultNegative: Self {
@@ -2760,14 +2760,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultNegativeMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#410B11FF")),
-            lightColor: Color(UIColor(hex: "#FFD6DAFF"))
+            lightColor: Color(UIColor(hex: "#FFD1D6FF"))
         )
     }
     static var surfaceDefaultNegativeMinorHover: Self {
         Self(
             id: Colors.surfaceDefaultNegativeMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#5B1018FF")),
-            lightColor: Color(UIColor(hex: "#FFF5F6FF"))
+            lightColor: Color(UIColor(hex: "#FFD6DAFF"))
         )
     }
     static var surfaceDefaultPositive: Self {
@@ -2809,7 +2809,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultPositiveMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0E3A16FF")),
-            lightColor: Color(UIColor(hex: "#B1FBBFFF"))
+            lightColor: Color(UIColor(hex: "#94F9A7FF"))
         )
     }
     static var surfaceDefaultPromo: Self {
@@ -2928,7 +2928,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultSolidPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#1C1C1CFF")),
-            lightColor: Color(UIColor(hex: "#FAFAFAFF"))
+            lightColor: Color(UIColor(hex: "#F2F2F2FF"))
         )
     }
     static var surfaceDefaultSolidSecondary: Self {
@@ -2942,14 +2942,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultSolidSecondaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#212121FF")),
-            lightColor: Color(UIColor(hex: "#E8E8E8FF"))
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var surfaceDefaultSolidSecondaryHover: Self {
         Self(
             id: Colors.surfaceDefaultSolidSecondaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#303030FF")),
-            lightColor: Color(UIColor(hex: "#F7F7F7FF"))
+            lightColor: Color(UIColor(hex: "#E8E8E8FF"))
         )
     }
     static var surfaceDefaultSolidTertiary: Self {
@@ -2970,7 +2970,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultSolidTertiaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#404040FF")),
-            lightColor: Color(UIColor(hex: "#EDEDEDFF"))
+            lightColor: Color(UIColor(hex: "#D9D9D9FF"))
         )
     }
     static var surfaceDefaultTransparentAccent: Self {
@@ -2984,14 +2984,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentAccentActive.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3224")),
-            lightColor: Color(UIColor(hex: "#108E2529"))
+            lightColor: Color(UIColor(hex: "#108E2533"))
         )
     }
     static var surfaceDefaultTransparentAccentHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentAccentHover.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3252")),
-            lightColor: Color(UIColor(hex: "#108E250A"))
+            lightColor: Color(UIColor(hex: "#108E252E"))
         )
     }
     static var surfaceDefaultTransparentCard: Self {
@@ -3033,14 +3033,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentDeepActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF94")),
-            lightColor: Color(UIColor(hex: "#080808AD"))
+            lightColor: Color(UIColor(hex: "#080808B8"))
         )
     }
     static var surfaceDefaultTransparentDeepHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentDeepHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFC2")),
-            lightColor: Color(UIColor(hex: "#0808088F"))
+            lightColor: Color(UIColor(hex: "#080808B3"))
         )
     }
     static var surfaceDefaultTransparentInfo: Self {
@@ -3054,14 +3054,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#118CDF24")),
-            lightColor: Color(UIColor(hex: "#118CDF29"))
+            lightColor: Color(UIColor(hex: "#118CDF33"))
         )
     }
     static var surfaceDefaultTransparentInfoHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentInfoHover.rawValue,
             darkColor: Color(UIColor(hex: "#118CDF52")),
-            lightColor: Color(UIColor(hex: "#118CDF0A"))
+            lightColor: Color(UIColor(hex: "#118CDF2E"))
         )
     }
     static var surfaceDefaultTransparentNegative: Self {
@@ -3075,14 +3075,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF293E24")),
-            lightColor: Color(UIColor(hex: "#FF293E29"))
+            lightColor: Color(UIColor(hex: "#FF293E33"))
         )
     }
     static var surfaceDefaultTransparentNegativeHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentNegativeHover.rawValue,
             darkColor: Color(UIColor(hex: "#FF293E52")),
-            lightColor: Color(UIColor(hex: "#FF293E0A"))
+            lightColor: Color(UIColor(hex: "#FF293E2E"))
         )
     }
     static var surfaceDefaultTransparentPositive: Self {
@@ -3096,14 +3096,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentPositiveActive.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3224")),
-            lightColor: Color(UIColor(hex: "#1A9E3229"))
+            lightColor: Color(UIColor(hex: "#1A9E3233"))
         )
     }
     static var surfaceDefaultTransparentPositiveHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentPositiveHover.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3252")),
-            lightColor: Color(UIColor(hex: "#1A9E320A"))
+            lightColor: Color(UIColor(hex: "#1A9E322E"))
         )
     }
     static var surfaceDefaultTransparentPrimary: Self {
@@ -3124,7 +3124,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF1F")),
-            lightColor: Color(UIColor(hex: "#08080803"))
+            lightColor: Color(UIColor(hex: "#0808080A"))
         )
     }
     static var surfaceDefaultTransparentPromo: Self {
@@ -3166,7 +3166,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentSecondaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF3D")),
-            lightColor: Color(UIColor(hex: "#08080805"))
+            lightColor: Color(UIColor(hex: "#08080814"))
         )
     }
     static var surfaceDefaultTransparentTertiary: Self {
@@ -3180,14 +3180,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentTertiaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF24")),
-            lightColor: Color(UIColor(hex: "#08080829"))
+            lightColor: Color(UIColor(hex: "#08080833"))
         )
     }
     static var surfaceDefaultTransparentTertiaryHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentTertiaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF52")),
-            lightColor: Color(UIColor(hex: "#0808080A"))
+            lightColor: Color(UIColor(hex: "#0808082E"))
         )
     }
     static var surfaceDefaultTransparentWarning: Self {
@@ -3201,14 +3201,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultTransparentWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#FA5F0524")),
-            lightColor: Color(UIColor(hex: "#FA5F0529"))
+            lightColor: Color(UIColor(hex: "#FA5F0533"))
         )
     }
     static var surfaceDefaultTransparentWarningHover: Self {
         Self(
             id: Colors.surfaceDefaultTransparentWarningHover.rawValue,
             darkColor: Color(UIColor(hex: "#FA5F0552")),
-            lightColor: Color(UIColor(hex: "#FA5F050A"))
+            lightColor: Color(UIColor(hex: "#FA5F052E"))
         )
     }
     static var surfaceDefaultWarning: Self {
@@ -3243,14 +3243,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceDefaultWarningMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#351909FF")),
-            lightColor: Color(UIColor(hex: "#FEDCC8FF"))
+            lightColor: Color(UIColor(hex: "#FED9C3FF"))
         )
     }
     static var surfaceDefaultWarningMinorHover: Self {
         Self(
             id: Colors.surfaceDefaultWarningMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#4F250DFF")),
-            lightColor: Color(UIColor(hex: "#FEEFE6FF"))
+            lightColor: Color(UIColor(hex: "#FEDCC8FF"))
         )
     }
     static var surfaceInverseAccent: Self {
@@ -3263,15 +3263,15 @@ public extension ColorToken {
     static var surfaceInverseAccentActive: Self {
         Self(
             id: Colors.surfaceInverseAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#18952FFF")),
-            lightColor: Color(UIColor(hex: "#178C2CFF"))
+            darkColor: Color(UIColor(hex: "#178C2CFF")),
+            lightColor: Color(UIColor(hex: "#18952FFF"))
         )
     }
     static var surfaceInverseAccentHover: Self {
         Self(
             id: Colors.surfaceInverseAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1DAF37FF")),
-            lightColor: Color(UIColor(hex: "#1EB83AFF"))
+            darkColor: Color(UIColor(hex: "#1EB83AFF")),
+            lightColor: Color(UIColor(hex: "#1DAF37FF"))
         )
     }
     static var surfaceInverseAccentMinor: Self {
@@ -3284,14 +3284,14 @@ public extension ColorToken {
     static var surfaceInverseAccentMinorActive: Self {
         Self(
             id: Colors.surfaceInverseAccentMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#94F9A7FF")),
-            lightColor: Color(UIColor(hex: "#061909FF"))
+            darkColor: Color(UIColor(hex: "#8BF99FFF")),
+            lightColor: Color(UIColor(hex: "#08210CFF"))
         )
     }
     static var surfaceInverseAccentMinorHover: Self {
         Self(
             id: Colors.surfaceInverseAccentMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B1FBBFFF")),
+            darkColor: Color(UIColor(hex: "#94F9A7FF")),
             lightColor: Color(UIColor(hex: "#0E3A16FF"))
         )
     }
@@ -3326,14 +3326,14 @@ public extension ColorToken {
     static var surfaceInverseInfoActive: Self {
         Self(
             id: Colors.surfaceInverseInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1086D5FF")),
-            lightColor: Color(UIColor(hex: "#0F81CCFF"))
+            darkColor: Color(UIColor(hex: "#0F81CCFF")),
+            lightColor: Color(UIColor(hex: "#1086D5FF"))
         )
     }
     static var surfaceInverseInfoHover: Self {
         Self(
             id: Colors.surfaceInverseInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1798EEFF")),
+            darkColor: Color(UIColor(hex: "#209CEEFF")),
             lightColor: Color(UIColor(hex: "#1798EEFF"))
         )
     }
@@ -3347,14 +3347,14 @@ public extension ColorToken {
     static var surfaceInverseInfoMinorActive: Self {
         Self(
             id: Colors.surfaceInverseInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#C7E9FFFF")),
-            lightColor: Color(UIColor(hex: "#091D2AFF"))
+            darkColor: Color(UIColor(hex: "#C2E7FFFF")),
+            lightColor: Color(UIColor(hex: "#0A2333FF"))
         )
     }
     static var surfaceInverseInfoMinorHover: Self {
         Self(
             id: Colors.surfaceInverseInfoMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#DBF1FFFF")),
+            darkColor: Color(UIColor(hex: "#C7E9FFFF")),
             lightColor: Color(UIColor(hex: "#10344CFF"))
         )
     }
@@ -3368,15 +3368,15 @@ public extension ColorToken {
     static var surfaceInverseNegativeActive: Self {
         Self(
             id: Colors.surfaceInverseNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF1F35FF")),
-            lightColor: Color(UIColor(hex: "#FF142CFF"))
+            darkColor: Color(UIColor(hex: "#FF142CFF")),
+            lightColor: Color(UIColor(hex: "#FF1F35FF"))
         )
     }
     static var surfaceInverseNegativeHover: Self {
         Self(
             id: Colors.surfaceInverseNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF475AFF")),
-            lightColor: Color(UIColor(hex: "#FF5263FF"))
+            darkColor: Color(UIColor(hex: "#FF5263FF")),
+            lightColor: Color(UIColor(hex: "#FF475AFF"))
         )
     }
     static var surfaceInverseNegativeMinor: Self {
@@ -3389,15 +3389,15 @@ public extension ColorToken {
     static var surfaceInverseNegativeMinorActive: Self {
         Self(
             id: Colors.surfaceInverseNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFD6DAFF")),
-            lightColor: Color(UIColor(hex: "#380A0FFF"))
+            darkColor: Color(UIColor(hex: "#FFD1D6FF")),
+            lightColor: Color(UIColor(hex: "#410B11FF"))
         )
     }
     static var surfaceInverseNegativeMinorHover: Self {
         Self(
             id: Colors.surfaceInverseNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFEBEDFF")),
-            lightColor: Color(UIColor(hex: "#64121AFF"))
+            darkColor: Color(UIColor(hex: "#FFD6DAFF")),
+            lightColor: Color(UIColor(hex: "#5B1018FF"))
         )
     }
     static var surfaceInversePositive: Self {
@@ -3410,15 +3410,15 @@ public extension ColorToken {
     static var surfaceInversePositiveActive: Self {
         Self(
             id: Colors.surfaceInversePositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#18952FFF")),
-            lightColor: Color(UIColor(hex: "#178C2CFF"))
+            darkColor: Color(UIColor(hex: "#178C2CFF")),
+            lightColor: Color(UIColor(hex: "#18952FFF"))
         )
     }
     static var surfaceInversePositiveHover: Self {
         Self(
             id: Colors.surfaceInversePositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1DAF37FF")),
-            lightColor: Color(UIColor(hex: "#1EB83AFF"))
+            darkColor: Color(UIColor(hex: "#1EB83AFF")),
+            lightColor: Color(UIColor(hex: "#1DAF37FF"))
         )
     }
     static var surfaceInversePositiveMinor: Self {
@@ -3431,14 +3431,14 @@ public extension ColorToken {
     static var surfaceInversePositiveMinorActive: Self {
         Self(
             id: Colors.surfaceInversePositiveMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#94F9A7FF")),
-            lightColor: Color(UIColor(hex: "#061909FF"))
+            darkColor: Color(UIColor(hex: "#8BF99FFF")),
+            lightColor: Color(UIColor(hex: "#08210CFF"))
         )
     }
     static var surfaceInversePositiveMinorHover: Self {
         Self(
             id: Colors.surfaceInversePositiveMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B1FBBFFF")),
+            darkColor: Color(UIColor(hex: "#94F9A7FF")),
             lightColor: Color(UIColor(hex: "#0E3A16FF"))
         )
     }
@@ -3495,7 +3495,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceInverseSolidCardActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#0D0D0DFF"))
+            lightColor: Color(UIColor(hex: "#121212FF"))
         )
     }
     static var surfaceInverseSolidCardBrightness: Self {
@@ -3509,7 +3509,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceInverseSolidCardHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#363636FF"))
+            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
         )
     }
     static var surfaceInverseSolidDefault: Self {
@@ -3529,7 +3529,7 @@ public extension ColorToken {
     static var surfaceInverseSolidDefaultHover: Self {
         Self(
             id: Colors.surfaceInverseSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0D0D0DFF")),
+            darkColor: Color(UIColor(hex: "#262626FF")),
             lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
@@ -3544,7 +3544,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceInverseSolidPrimaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#F0F0F0FF")),
-            lightColor: Color(UIColor(hex: "#0D0D0DFF"))
+            lightColor: Color(UIColor(hex: "#121212FF"))
         )
     }
     static var surfaceInverseSolidPrimaryBrightness: Self {
@@ -3557,8 +3557,8 @@ public extension ColorToken {
     static var surfaceInverseSolidPrimaryHover: Self {
         Self(
             id: Colors.surfaceInverseSolidPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FAFAFAFF")),
-            lightColor: Color(UIColor(hex: "#363636FF"))
+            darkColor: Color(UIColor(hex: "#F2F2F2FF")),
+            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
         )
     }
     static var surfaceInverseSolidSecondary: Self {
@@ -3571,15 +3571,15 @@ public extension ColorToken {
     static var surfaceInverseSolidSecondaryActive: Self {
         Self(
             id: Colors.surfaceInverseSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
-            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
+            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
+            lightColor: Color(UIColor(hex: "#212121FF"))
         )
     }
     static var surfaceInverseSolidSecondaryHover: Self {
         Self(
             id: Colors.surfaceInverseSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F7F7F7FF")),
-            lightColor: Color(UIColor(hex: "#3B3B3BFF"))
+            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
+            lightColor: Color(UIColor(hex: "#303030FF"))
         )
     }
     static var surfaceInverseSolidTertiary: Self {
@@ -3592,15 +3592,15 @@ public extension ColorToken {
     static var surfaceInverseSolidTertiaryActive: Self {
         Self(
             id: Colors.surfaceInverseSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#D9D9D9FF")),
-            lightColor: Color(UIColor(hex: "#2B2B2BFF"))
+            darkColor: Color(UIColor(hex: "#D4D4D4FF")),
+            lightColor: Color(UIColor(hex: "#303030FF"))
         )
     }
     static var surfaceInverseSolidTertiaryHover: Self {
         Self(
             id: Colors.surfaceInverseSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
-            lightColor: Color(UIColor(hex: "#4A4A4AFF"))
+            darkColor: Color(UIColor(hex: "#D9D9D9FF")),
+            lightColor: Color(UIColor(hex: "#404040FF"))
         )
     }
     static var surfaceInverseTransparentAccent: Self {
@@ -3613,15 +3613,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentAccentActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E320F")),
-            lightColor: Color(UIColor(hex: "#1A9E323D"))
+            darkColor: Color(UIColor(hex: "#1A9E3233")),
+            lightColor: Color(UIColor(hex: "#1A9E3224"))
         )
     }
     static var surfaceInverseTransparentAccentHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E323D")),
-            lightColor: Color(UIColor(hex: "#1A9E321F"))
+            darkColor: Color(UIColor(hex: "#1A9E322E")),
+            lightColor: Color(UIColor(hex: "#1A9E3252"))
         )
     }
     static var surfaceInverseTransparentCard: Self {
@@ -3635,7 +3635,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceInverseTransparentCardActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1A"))
+            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
         )
     }
     static var surfaceInverseTransparentCardBrightness: Self {
@@ -3649,7 +3649,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceInverseTransparentCardHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFFF")),
-            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
         )
     }
     static var surfaceInverseTransparentDeep: Self {
@@ -3662,15 +3662,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentDeepActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentDeepActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080894")),
-            lightColor: Color(UIColor(hex: "#FFFFFFAD"))
+            darkColor: Color(UIColor(hex: "#080808B8")),
+            lightColor: Color(UIColor(hex: "#FFFFFF94"))
         )
     }
     static var surfaceInverseTransparentDeepHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentDeepHover.rawValue,
-            darkColor: Color(UIColor(hex: "#080808C2")),
-            lightColor: Color(UIColor(hex: "#FFFFFF8F"))
+            darkColor: Color(UIColor(hex: "#080808B3")),
+            lightColor: Color(UIColor(hex: "#FFFFFFC2"))
         )
     }
     static var surfaceInverseTransparentInfo: Self {
@@ -3683,15 +3683,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentInfoActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#118CDF0F")),
-            lightColor: Color(UIColor(hex: "#118CDF3D"))
+            darkColor: Color(UIColor(hex: "#118CDF33")),
+            lightColor: Color(UIColor(hex: "#118CDF24"))
         )
     }
     static var surfaceInverseTransparentInfoHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#118CDF3D")),
-            lightColor: Color(UIColor(hex: "#118CDF1F"))
+            darkColor: Color(UIColor(hex: "#118CDF2E")),
+            lightColor: Color(UIColor(hex: "#118CDF52"))
         )
     }
     static var surfaceInverseTransparentNegative: Self {
@@ -3704,15 +3704,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentNegativeActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF293E0F")),
-            lightColor: Color(UIColor(hex: "#FF293E3D"))
+            darkColor: Color(UIColor(hex: "#FF293E33")),
+            lightColor: Color(UIColor(hex: "#FF293E24"))
         )
     }
     static var surfaceInverseTransparentNegativeHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF293E3D")),
-            lightColor: Color(UIColor(hex: "#FF293E1F"))
+            darkColor: Color(UIColor(hex: "#FF293E2E")),
+            lightColor: Color(UIColor(hex: "#FF293E52"))
         )
     }
     static var surfaceInverseTransparentPositive: Self {
@@ -3725,15 +3725,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentPositiveActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E320F")),
-            lightColor: Color(UIColor(hex: "#1A9E323D"))
+            darkColor: Color(UIColor(hex: "#1A9E3233")),
+            lightColor: Color(UIColor(hex: "#1A9E3224"))
         )
     }
     static var surfaceInverseTransparentPositiveHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E323D")),
-            lightColor: Color(UIColor(hex: "#1A9E321F"))
+            darkColor: Color(UIColor(hex: "#1A9E322E")),
+            lightColor: Color(UIColor(hex: "#1A9E3252"))
         )
     }
     static var surfaceInverseTransparentPrimary: Self {
@@ -3746,15 +3746,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentPrimaryActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080803")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1A"))
+            darkColor: Color(UIColor(hex: "#0808080D")),
+            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
         )
     }
     static var surfaceInverseTransparentPrimaryHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#08080812")),
-            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+            darkColor: Color(UIColor(hex: "#0808080A")),
+            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
         )
     }
     static var surfaceInverseTransparentPromo: Self {
@@ -3788,15 +3788,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentSecondaryActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080A")),
-            lightColor: Color(UIColor(hex: "#FFFFFF29"))
+            darkColor: Color(UIColor(hex: "#0808081A")),
+            lightColor: Color(UIColor(hex: "#FFFFFF0F"))
         )
     }
     static var surfaceInverseTransparentSecondaryHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808081F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
+            darkColor: Color(UIColor(hex: "#08080814")),
+            lightColor: Color(UIColor(hex: "#FFFFFF3D"))
         )
     }
     static var surfaceInverseTransparentTertiary: Self {
@@ -3809,15 +3809,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentTertiaryActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF3D"))
+            darkColor: Color(UIColor(hex: "#08080833")),
+            lightColor: Color(UIColor(hex: "#FFFFFF24"))
         )
     }
     static var surfaceInverseTransparentTertiaryHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808083D")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
+            darkColor: Color(UIColor(hex: "#0808082E")),
+            lightColor: Color(UIColor(hex: "#FFFFFF52"))
         )
     }
     static var surfaceInverseTransparentWarning: Self {
@@ -3830,15 +3830,15 @@ public extension ColorToken {
     static var surfaceInverseTransparentWarningActive: Self {
         Self(
             id: Colors.surfaceInverseTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FA5F050F")),
-            lightColor: Color(UIColor(hex: "#FA5F053D"))
+            darkColor: Color(UIColor(hex: "#FA5F0533")),
+            lightColor: Color(UIColor(hex: "#FA5F0524"))
         )
     }
     static var surfaceInverseTransparentWarningHover: Self {
         Self(
             id: Colors.surfaceInverseTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FA5F053D")),
-            lightColor: Color(UIColor(hex: "#FA5F051F"))
+            darkColor: Color(UIColor(hex: "#FA5F052E")),
+            lightColor: Color(UIColor(hex: "#FA5F0552"))
         )
     }
     static var surfaceInverseWarning: Self {
@@ -3851,15 +3851,15 @@ public extension ColorToken {
     static var surfaceInverseWarningActive: Self {
         Self(
             id: Colors.surfaceInverseWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F05B05FF")),
-            lightColor: Color(UIColor(hex: "#E65705FF"))
+            darkColor: Color(UIColor(hex: "#E65705FF")),
+            lightColor: Color(UIColor(hex: "#F05B05FF"))
         )
     }
     static var surfaceInverseWarningHover: Self {
         Self(
             id: Colors.surfaceInverseWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FB7223FF")),
-            lightColor: Color(UIColor(hex: "#FB782DFF"))
+            darkColor: Color(UIColor(hex: "#FB782DFF")),
+            lightColor: Color(UIColor(hex: "#FB7223FF"))
         )
     }
     static var surfaceInverseWarningMinor: Self {
@@ -3872,15 +3872,15 @@ public extension ColorToken {
     static var surfaceInverseWarningMinorActive: Self {
         Self(
             id: Colors.surfaceInverseWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FEDCC8FF")),
-            lightColor: Color(UIColor(hex: "#2C1507FF"))
+            darkColor: Color(UIColor(hex: "#FED9C3FF")),
+            lightColor: Color(UIColor(hex: "#351909FF"))
         )
     }
     static var surfaceInverseWarningMinorHover: Self {
         Self(
             id: Colors.surfaceInverseWarningMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FEE9DCFF")),
-            lightColor: Color(UIColor(hex: "#58290EFF"))
+            darkColor: Color(UIColor(hex: "#FEDCC8FF")),
+            lightColor: Color(UIColor(hex: "#4F250DFF"))
         )
     }
     static var surfaceOnDarkAccent: Self {
@@ -3894,14 +3894,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkAccentActive.rawValue,
             darkColor: Color(UIColor(hex: "#18952FFF")),
-            lightColor: Color(UIColor(hex: "#178C2CFF"))
+            lightColor: Color(UIColor(hex: "#18952FFF"))
         )
     }
     static var surfaceOnDarkAccentHover: Self {
         Self(
             id: Colors.surfaceOnDarkAccentHover.rawValue,
             darkColor: Color(UIColor(hex: "#1DAF37FF")),
-            lightColor: Color(UIColor(hex: "#1EB83AFF"))
+            lightColor: Color(UIColor(hex: "#1DAF37FF"))
         )
     }
     static var surfaceOnDarkAccentMinor: Self {
@@ -3915,7 +3915,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkAccentMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#08210CFF")),
-            lightColor: Color(UIColor(hex: "#061909FF"))
+            lightColor: Color(UIColor(hex: "#08210CFF"))
         )
     }
     static var surfaceOnDarkAccentMinorHover: Self {
@@ -3957,7 +3957,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#1086D5FF")),
-            lightColor: Color(UIColor(hex: "#0F81CCFF"))
+            lightColor: Color(UIColor(hex: "#1086D5FF"))
         )
     }
     static var surfaceOnDarkInfoHover: Self {
@@ -3978,7 +3978,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkInfoMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#0A2333FF")),
-            lightColor: Color(UIColor(hex: "#091D2AFF"))
+            lightColor: Color(UIColor(hex: "#0A2333FF"))
         )
     }
     static var surfaceOnDarkInfoMinorHover: Self {
@@ -3999,14 +3999,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF1F35FF")),
-            lightColor: Color(UIColor(hex: "#FF142CFF"))
+            lightColor: Color(UIColor(hex: "#FF1F35FF"))
         )
     }
     static var surfaceOnDarkNegativeHover: Self {
         Self(
             id: Colors.surfaceOnDarkNegativeHover.rawValue,
             darkColor: Color(UIColor(hex: "#FF475AFF")),
-            lightColor: Color(UIColor(hex: "#FF5263FF"))
+            lightColor: Color(UIColor(hex: "#FF475AFF"))
         )
     }
     static var surfaceOnDarkNegativeMinor: Self {
@@ -4020,14 +4020,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkNegativeMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#410B11FF")),
-            lightColor: Color(UIColor(hex: "#380A0FFF"))
+            lightColor: Color(UIColor(hex: "#410B11FF"))
         )
     }
     static var surfaceOnDarkNegativeMinorHover: Self {
         Self(
             id: Colors.surfaceOnDarkNegativeMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#5B1018FF")),
-            lightColor: Color(UIColor(hex: "#64121AFF"))
+            lightColor: Color(UIColor(hex: "#5B1018FF"))
         )
     }
     static var surfaceOnDarkPositive: Self {
@@ -4041,14 +4041,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkPositiveActive.rawValue,
             darkColor: Color(UIColor(hex: "#18952FFF")),
-            lightColor: Color(UIColor(hex: "#178C2CFF"))
+            lightColor: Color(UIColor(hex: "#18952FFF"))
         )
     }
     static var surfaceOnDarkPositiveHover: Self {
         Self(
             id: Colors.surfaceOnDarkPositiveHover.rawValue,
             darkColor: Color(UIColor(hex: "#1DAF37FF")),
-            lightColor: Color(UIColor(hex: "#1EB83AFF"))
+            lightColor: Color(UIColor(hex: "#1DAF37FF"))
         )
     }
     static var surfaceOnDarkPositiveMinor: Self {
@@ -4062,7 +4062,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkPositiveMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#08210CFF")),
-            lightColor: Color(UIColor(hex: "#061909FF"))
+            lightColor: Color(UIColor(hex: "#08210CFF"))
         )
     }
     static var surfaceOnDarkPositiveMinorHover: Self {
@@ -4125,7 +4125,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidCardActive.rawValue,
             darkColor: Color(UIColor(hex: "#121212FF")),
-            lightColor: Color(UIColor(hex: "#0D0D0DFF"))
+            lightColor: Color(UIColor(hex: "#121212FF"))
         )
     }
     static var surfaceOnDarkSolidCardBrightness: Self {
@@ -4139,7 +4139,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidCardHover.rawValue,
             darkColor: Color(UIColor(hex: "#1C1C1CFF")),
-            lightColor: Color(UIColor(hex: "#363636FF"))
+            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
         )
     }
     static var surfaceOnDarkSolidDefault: Self {
@@ -4174,7 +4174,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidPrimaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#121212FF")),
-            lightColor: Color(UIColor(hex: "#0D0D0DFF"))
+            lightColor: Color(UIColor(hex: "#121212FF"))
         )
     }
     static var surfaceOnDarkSolidPrimaryBrightness: Self {
@@ -4188,7 +4188,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#1C1C1CFF")),
-            lightColor: Color(UIColor(hex: "#363636FF"))
+            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
         )
     }
     static var surfaceOnDarkSolidSecondary: Self {
@@ -4202,14 +4202,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidSecondaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#212121FF")),
-            lightColor: Color(UIColor(hex: "#1C1C1CFF"))
+            lightColor: Color(UIColor(hex: "#212121FF"))
         )
     }
     static var surfaceOnDarkSolidSecondaryHover: Self {
         Self(
             id: Colors.surfaceOnDarkSolidSecondaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#303030FF")),
-            lightColor: Color(UIColor(hex: "#3B3B3BFF"))
+            lightColor: Color(UIColor(hex: "#303030FF"))
         )
     }
     static var surfaceOnDarkSolidTertiary: Self {
@@ -4223,14 +4223,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkSolidTertiaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#303030FF")),
-            lightColor: Color(UIColor(hex: "#2B2B2BFF"))
+            lightColor: Color(UIColor(hex: "#303030FF"))
         )
     }
     static var surfaceOnDarkSolidTertiaryHover: Self {
         Self(
             id: Colors.surfaceOnDarkSolidTertiaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#404040FF")),
-            lightColor: Color(UIColor(hex: "#4A4A4AFF"))
+            lightColor: Color(UIColor(hex: "#404040FF"))
         )
     }
     static var surfaceOnDarkTransparentAccent: Self {
@@ -4244,14 +4244,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentAccentActive.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3224")),
-            lightColor: Color(UIColor(hex: "#1A9E323D"))
+            lightColor: Color(UIColor(hex: "#1A9E3224"))
         )
     }
     static var surfaceOnDarkTransparentAccentHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentAccentHover.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3252")),
-            lightColor: Color(UIColor(hex: "#1A9E321F"))
+            lightColor: Color(UIColor(hex: "#1A9E3252"))
         )
     }
     static var surfaceOnDarkTransparentCard: Self {
@@ -4265,7 +4265,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentCardActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF0A")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1A"))
+            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
         )
     }
     static var surfaceOnDarkTransparentCardBrightness: Self {
@@ -4279,7 +4279,7 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentCardHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF1F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
         )
     }
     static var surfaceOnDarkTransparentDeep: Self {
@@ -4293,14 +4293,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentDeepActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF94")),
-            lightColor: Color(UIColor(hex: "#FFFFFFAD"))
+            lightColor: Color(UIColor(hex: "#FFFFFF94"))
         )
     }
     static var surfaceOnDarkTransparentDeepHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentDeepHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFFC2")),
-            lightColor: Color(UIColor(hex: "#FFFFFF8F"))
+            lightColor: Color(UIColor(hex: "#FFFFFFC2"))
         )
     }
     static var surfaceOnDarkTransparentInfo: Self {
@@ -4314,14 +4314,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentInfoActive.rawValue,
             darkColor: Color(UIColor(hex: "#118CDF24")),
-            lightColor: Color(UIColor(hex: "#118CDF3D"))
+            lightColor: Color(UIColor(hex: "#118CDF24"))
         )
     }
     static var surfaceOnDarkTransparentInfoHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentInfoHover.rawValue,
             darkColor: Color(UIColor(hex: "#118CDF52")),
-            lightColor: Color(UIColor(hex: "#118CDF1F"))
+            lightColor: Color(UIColor(hex: "#118CDF52"))
         )
     }
     static var surfaceOnDarkTransparentNegative: Self {
@@ -4335,14 +4335,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentNegativeActive.rawValue,
             darkColor: Color(UIColor(hex: "#FF293E24")),
-            lightColor: Color(UIColor(hex: "#FF293E3D"))
+            lightColor: Color(UIColor(hex: "#FF293E24"))
         )
     }
     static var surfaceOnDarkTransparentNegativeHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentNegativeHover.rawValue,
             darkColor: Color(UIColor(hex: "#FF293E52")),
-            lightColor: Color(UIColor(hex: "#FF293E1F"))
+            lightColor: Color(UIColor(hex: "#FF293E52"))
         )
     }
     static var surfaceOnDarkTransparentPositive: Self {
@@ -4356,14 +4356,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentPositiveActive.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3224")),
-            lightColor: Color(UIColor(hex: "#1A9E323D"))
+            lightColor: Color(UIColor(hex: "#1A9E3224"))
         )
     }
     static var surfaceOnDarkTransparentPositiveHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentPositiveHover.rawValue,
             darkColor: Color(UIColor(hex: "#1A9E3252")),
-            lightColor: Color(UIColor(hex: "#1A9E321F"))
+            lightColor: Color(UIColor(hex: "#1A9E3252"))
         )
     }
     static var surfaceOnDarkTransparentPrimary: Self {
@@ -4377,14 +4377,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentPrimaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF0A")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1A"))
+            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
         )
     }
     static var surfaceOnDarkTransparentPrimaryHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentPrimaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF1F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
         )
     }
     static var surfaceOnDarkTransparentPromo: Self {
@@ -4419,14 +4419,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentSecondaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF0F")),
-            lightColor: Color(UIColor(hex: "#FFFFFF29"))
+            lightColor: Color(UIColor(hex: "#FFFFFF0F"))
         )
     }
     static var surfaceOnDarkTransparentSecondaryHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentSecondaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF3D")),
-            lightColor: Color(UIColor(hex: "#FFFFFF0A"))
+            lightColor: Color(UIColor(hex: "#FFFFFF3D"))
         )
     }
     static var surfaceOnDarkTransparentTertiary: Self {
@@ -4440,14 +4440,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentTertiaryActive.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF24")),
-            lightColor: Color(UIColor(hex: "#FFFFFF3D"))
+            lightColor: Color(UIColor(hex: "#FFFFFF24"))
         )
     }
     static var surfaceOnDarkTransparentTertiaryHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentTertiaryHover.rawValue,
             darkColor: Color(UIColor(hex: "#FFFFFF52")),
-            lightColor: Color(UIColor(hex: "#FFFFFF1F"))
+            lightColor: Color(UIColor(hex: "#FFFFFF52"))
         )
     }
     static var surfaceOnDarkTransparentWarning: Self {
@@ -4461,14 +4461,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkTransparentWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#FA5F0524")),
-            lightColor: Color(UIColor(hex: "#FA5F053D"))
+            lightColor: Color(UIColor(hex: "#FA5F0524"))
         )
     }
     static var surfaceOnDarkTransparentWarningHover: Self {
         Self(
             id: Colors.surfaceOnDarkTransparentWarningHover.rawValue,
             darkColor: Color(UIColor(hex: "#FA5F0552")),
-            lightColor: Color(UIColor(hex: "#FA5F051F"))
+            lightColor: Color(UIColor(hex: "#FA5F0552"))
         )
     }
     static var surfaceOnDarkWarning: Self {
@@ -4482,14 +4482,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkWarningActive.rawValue,
             darkColor: Color(UIColor(hex: "#F05B05FF")),
-            lightColor: Color(UIColor(hex: "#E65705FF"))
+            lightColor: Color(UIColor(hex: "#F05B05FF"))
         )
     }
     static var surfaceOnDarkWarningHover: Self {
         Self(
             id: Colors.surfaceOnDarkWarningHover.rawValue,
             darkColor: Color(UIColor(hex: "#FB7223FF")),
-            lightColor: Color(UIColor(hex: "#FB782DFF"))
+            lightColor: Color(UIColor(hex: "#FB7223FF"))
         )
     }
     static var surfaceOnDarkWarningMinor: Self {
@@ -4503,14 +4503,14 @@ public extension ColorToken {
         Self(
             id: Colors.surfaceOnDarkWarningMinorActive.rawValue,
             darkColor: Color(UIColor(hex: "#351909FF")),
-            lightColor: Color(UIColor(hex: "#2C1507FF"))
+            lightColor: Color(UIColor(hex: "#351909FF"))
         )
     }
     static var surfaceOnDarkWarningMinorHover: Self {
         Self(
             id: Colors.surfaceOnDarkWarningMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#4F250DFF")),
-            lightColor: Color(UIColor(hex: "#58290EFF"))
+            lightColor: Color(UIColor(hex: "#4F250DFF"))
         )
     }
     static var surfaceOnLightAccent: Self {
@@ -4523,14 +4523,14 @@ public extension ColorToken {
     static var surfaceOnLightAccentActive: Self {
         Self(
             id: Colors.surfaceOnLightAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#18952FFF")),
+            darkColor: Color(UIColor(hex: "#178C2CFF")),
             lightColor: Color(UIColor(hex: "#178C2CFF"))
         )
     }
     static var surfaceOnLightAccentHover: Self {
         Self(
             id: Colors.surfaceOnLightAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1DAF37FF")),
+            darkColor: Color(UIColor(hex: "#1EB83AFF")),
             lightColor: Color(UIColor(hex: "#1EB83AFF"))
         )
     }
@@ -4544,15 +4544,15 @@ public extension ColorToken {
     static var surfaceOnLightAccentMinorActive: Self {
         Self(
             id: Colors.surfaceOnLightAccentMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#94F9A7FF")),
+            darkColor: Color(UIColor(hex: "#8BF99FFF")),
             lightColor: Color(UIColor(hex: "#8BF99FFF"))
         )
     }
     static var surfaceOnLightAccentMinorHover: Self {
         Self(
             id: Colors.surfaceOnLightAccentMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B1FBBFFF")),
-            lightColor: Color(UIColor(hex: "#B1FBBFFF"))
+            darkColor: Color(UIColor(hex: "#94F9A7FF")),
+            lightColor: Color(UIColor(hex: "#94F9A7FF"))
         )
     }
     static var surfaceOnLightClear: Self {
@@ -4586,15 +4586,15 @@ public extension ColorToken {
     static var surfaceOnLightInfoActive: Self {
         Self(
             id: Colors.surfaceOnLightInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1086D5FF")),
+            darkColor: Color(UIColor(hex: "#0F81CCFF")),
             lightColor: Color(UIColor(hex: "#0F81CCFF"))
         )
     }
     static var surfaceOnLightInfoHover: Self {
         Self(
             id: Colors.surfaceOnLightInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1798EEFF")),
-            lightColor: Color(UIColor(hex: "#1798EEFF"))
+            darkColor: Color(UIColor(hex: "#209CEEFF")),
+            lightColor: Color(UIColor(hex: "#209CEEFF"))
         )
     }
     static var surfaceOnLightInfoMinor: Self {
@@ -4607,15 +4607,15 @@ public extension ColorToken {
     static var surfaceOnLightInfoMinorActive: Self {
         Self(
             id: Colors.surfaceOnLightInfoMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#C7E9FFFF")),
-            lightColor: Color(UIColor(hex: "#C7E9FFFF"))
+            darkColor: Color(UIColor(hex: "#C2E7FFFF")),
+            lightColor: Color(UIColor(hex: "#C2E7FFFF"))
         )
     }
     static var surfaceOnLightInfoMinorHover: Self {
         Self(
             id: Colors.surfaceOnLightInfoMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#DBF1FFFF")),
-            lightColor: Color(UIColor(hex: "#E5F5FFFF"))
+            darkColor: Color(UIColor(hex: "#C7E9FFFF")),
+            lightColor: Color(UIColor(hex: "#C7E9FFFF"))
         )
     }
     static var surfaceOnLightNegative: Self {
@@ -4628,14 +4628,14 @@ public extension ColorToken {
     static var surfaceOnLightNegativeActive: Self {
         Self(
             id: Colors.surfaceOnLightNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF1F35FF")),
+            darkColor: Color(UIColor(hex: "#FF142CFF")),
             lightColor: Color(UIColor(hex: "#FF142CFF"))
         )
     }
     static var surfaceOnLightNegativeHover: Self {
         Self(
             id: Colors.surfaceOnLightNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF475AFF")),
+            darkColor: Color(UIColor(hex: "#FF5263FF")),
             lightColor: Color(UIColor(hex: "#FF5263FF"))
         )
     }
@@ -4649,15 +4649,15 @@ public extension ColorToken {
     static var surfaceOnLightNegativeMinorActive: Self {
         Self(
             id: Colors.surfaceOnLightNegativeMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FFD6DAFF")),
-            lightColor: Color(UIColor(hex: "#FFD6DAFF"))
+            darkColor: Color(UIColor(hex: "#FFD1D6FF")),
+            lightColor: Color(UIColor(hex: "#FFD1D6FF"))
         )
     }
     static var surfaceOnLightNegativeMinorHover: Self {
         Self(
             id: Colors.surfaceOnLightNegativeMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FFEBEDFF")),
-            lightColor: Color(UIColor(hex: "#FFF5F6FF"))
+            darkColor: Color(UIColor(hex: "#FFD6DAFF")),
+            lightColor: Color(UIColor(hex: "#FFD6DAFF"))
         )
     }
     static var surfaceOnLightPositive: Self {
@@ -4670,14 +4670,14 @@ public extension ColorToken {
     static var surfaceOnLightPositiveActive: Self {
         Self(
             id: Colors.surfaceOnLightPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#18952FFF")),
+            darkColor: Color(UIColor(hex: "#178C2CFF")),
             lightColor: Color(UIColor(hex: "#178C2CFF"))
         )
     }
     static var surfaceOnLightPositiveHover: Self {
         Self(
             id: Colors.surfaceOnLightPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1DAF37FF")),
+            darkColor: Color(UIColor(hex: "#1EB83AFF")),
             lightColor: Color(UIColor(hex: "#1EB83AFF"))
         )
     }
@@ -4691,15 +4691,15 @@ public extension ColorToken {
     static var surfaceOnLightPositiveMinorActive: Self {
         Self(
             id: Colors.surfaceOnLightPositiveMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#94F9A7FF")),
+            darkColor: Color(UIColor(hex: "#8BF99FFF")),
             lightColor: Color(UIColor(hex: "#8BF99FFF"))
         )
     }
     static var surfaceOnLightPositiveMinorHover: Self {
         Self(
             id: Colors.surfaceOnLightPositiveMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#B1FBBFFF")),
-            lightColor: Color(UIColor(hex: "#B1FBBFFF"))
+            darkColor: Color(UIColor(hex: "#94F9A7FF")),
+            lightColor: Color(UIColor(hex: "#94F9A7FF"))
         )
     }
     static var surfaceOnLightPromo: Self {
@@ -4789,7 +4789,7 @@ public extension ColorToken {
     static var surfaceOnLightSolidDefaultHover: Self {
         Self(
             id: Colors.surfaceOnLightSolidDefaultHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0D0D0DFF")),
+            darkColor: Color(UIColor(hex: "#262626FF")),
             lightColor: Color(UIColor(hex: "#262626FF"))
         )
     }
@@ -4817,8 +4817,8 @@ public extension ColorToken {
     static var surfaceOnLightSolidPrimaryHover: Self {
         Self(
             id: Colors.surfaceOnLightSolidPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FAFAFAFF")),
-            lightColor: Color(UIColor(hex: "#FAFAFAFF"))
+            darkColor: Color(UIColor(hex: "#F2F2F2FF")),
+            lightColor: Color(UIColor(hex: "#F2F2F2FF"))
         )
     }
     static var surfaceOnLightSolidSecondary: Self {
@@ -4831,15 +4831,15 @@ public extension ColorToken {
     static var surfaceOnLightSolidSecondaryActive: Self {
         Self(
             id: Colors.surfaceOnLightSolidSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
-            lightColor: Color(UIColor(hex: "#E8E8E8FF"))
+            darkColor: Color(UIColor(hex: "#E6E6E6FF")),
+            lightColor: Color(UIColor(hex: "#E6E6E6FF"))
         )
     }
     static var surfaceOnLightSolidSecondaryHover: Self {
         Self(
             id: Colors.surfaceOnLightSolidSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#F7F7F7FF")),
-            lightColor: Color(UIColor(hex: "#F7F7F7FF"))
+            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
+            lightColor: Color(UIColor(hex: "#E8E8E8FF"))
         )
     }
     static var surfaceOnLightSolidTertiary: Self {
@@ -4852,15 +4852,15 @@ public extension ColorToken {
     static var surfaceOnLightSolidTertiaryActive: Self {
         Self(
             id: Colors.surfaceOnLightSolidTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#D9D9D9FF")),
+            darkColor: Color(UIColor(hex: "#D4D4D4FF")),
             lightColor: Color(UIColor(hex: "#D4D4D4FF"))
         )
     }
     static var surfaceOnLightSolidTertiaryHover: Self {
         Self(
             id: Colors.surfaceOnLightSolidTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#E8E8E8FF")),
-            lightColor: Color(UIColor(hex: "#EDEDEDFF"))
+            darkColor: Color(UIColor(hex: "#D9D9D9FF")),
+            lightColor: Color(UIColor(hex: "#D9D9D9FF"))
         )
     }
     static var surfaceOnLightTransparentAccent: Self {
@@ -4873,15 +4873,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentAccentActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentAccentActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E320F")),
-            lightColor: Color(UIColor(hex: "#1A9E3229"))
+            darkColor: Color(UIColor(hex: "#1A9E3233")),
+            lightColor: Color(UIColor(hex: "#1A9E3233"))
         )
     }
     static var surfaceOnLightTransparentAccentHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentAccentHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E323D")),
-            lightColor: Color(UIColor(hex: "#1A9E320A"))
+            darkColor: Color(UIColor(hex: "#1A9E322E")),
+            lightColor: Color(UIColor(hex: "#1A9E322E"))
         )
     }
     static var surfaceOnLightTransparentCard: Self {
@@ -4894,7 +4894,7 @@ public extension ColorToken {
     static var surfaceOnLightTransparentCardActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentCardActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080A")),
+            darkColor: Color(UIColor(hex: "#0808081A")),
             lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
@@ -4908,7 +4908,7 @@ public extension ColorToken {
     static var surfaceOnLightTransparentCardHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentCardHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808081F")),
+            darkColor: Color(UIColor(hex: "#08080814")),
             lightColor: Color(UIColor(hex: "#FFFFFFFF"))
         )
     }
@@ -4922,15 +4922,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentDeepActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentDeepActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080894")),
-            lightColor: Color(UIColor(hex: "#080808AD"))
+            darkColor: Color(UIColor(hex: "#080808B8")),
+            lightColor: Color(UIColor(hex: "#080808B8"))
         )
     }
     static var surfaceOnLightTransparentDeepHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentDeepHover.rawValue,
-            darkColor: Color(UIColor(hex: "#080808C2")),
-            lightColor: Color(UIColor(hex: "#0808088F"))
+            darkColor: Color(UIColor(hex: "#080808B3")),
+            lightColor: Color(UIColor(hex: "#080808B3"))
         )
     }
     static var surfaceOnLightTransparentInfo: Self {
@@ -4943,15 +4943,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentInfoActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentInfoActive.rawValue,
-            darkColor: Color(UIColor(hex: "#118CDF0F")),
-            lightColor: Color(UIColor(hex: "#118CDF29"))
+            darkColor: Color(UIColor(hex: "#118CDF33")),
+            lightColor: Color(UIColor(hex: "#118CDF33"))
         )
     }
     static var surfaceOnLightTransparentInfoHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentInfoHover.rawValue,
-            darkColor: Color(UIColor(hex: "#118CDF3D")),
-            lightColor: Color(UIColor(hex: "#118CDF0A"))
+            darkColor: Color(UIColor(hex: "#118CDF2E")),
+            lightColor: Color(UIColor(hex: "#118CDF2E"))
         )
     }
     static var surfaceOnLightTransparentNegative: Self {
@@ -4964,15 +4964,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentNegativeActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentNegativeActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FF293E0F")),
-            lightColor: Color(UIColor(hex: "#FF293E29"))
+            darkColor: Color(UIColor(hex: "#FF293E33")),
+            lightColor: Color(UIColor(hex: "#FF293E33"))
         )
     }
     static var surfaceOnLightTransparentNegativeHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentNegativeHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FF293E3D")),
-            lightColor: Color(UIColor(hex: "#FF293E0A"))
+            darkColor: Color(UIColor(hex: "#FF293E2E")),
+            lightColor: Color(UIColor(hex: "#FF293E2E"))
         )
     }
     static var surfaceOnLightTransparentPositive: Self {
@@ -4985,15 +4985,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentPositiveActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentPositiveActive.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E320F")),
-            lightColor: Color(UIColor(hex: "#1A9E3229"))
+            darkColor: Color(UIColor(hex: "#1A9E3233")),
+            lightColor: Color(UIColor(hex: "#1A9E3233"))
         )
     }
     static var surfaceOnLightTransparentPositiveHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentPositiveHover.rawValue,
-            darkColor: Color(UIColor(hex: "#1A9E323D")),
-            lightColor: Color(UIColor(hex: "#1A9E320A"))
+            darkColor: Color(UIColor(hex: "#1A9E322E")),
+            lightColor: Color(UIColor(hex: "#1A9E322E"))
         )
     }
     static var surfaceOnLightTransparentPrimary: Self {
@@ -5006,15 +5006,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentPrimaryActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentPrimaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#08080803")),
+            darkColor: Color(UIColor(hex: "#0808080D")),
             lightColor: Color(UIColor(hex: "#0808080D"))
         )
     }
     static var surfaceOnLightTransparentPrimaryHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentPrimaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#08080812")),
-            lightColor: Color(UIColor(hex: "#08080803"))
+            darkColor: Color(UIColor(hex: "#0808080A")),
+            lightColor: Color(UIColor(hex: "#0808080A"))
         )
     }
     static var surfaceOnLightTransparentPromo: Self {
@@ -5048,15 +5048,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentSecondaryActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentSecondaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080A")),
+            darkColor: Color(UIColor(hex: "#0808081A")),
             lightColor: Color(UIColor(hex: "#0808081A"))
         )
     }
     static var surfaceOnLightTransparentSecondaryHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentSecondaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808081F")),
-            lightColor: Color(UIColor(hex: "#08080805"))
+            darkColor: Color(UIColor(hex: "#08080814")),
+            lightColor: Color(UIColor(hex: "#08080814"))
         )
     }
     static var surfaceOnLightTransparentTertiary: Self {
@@ -5069,15 +5069,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentTertiaryActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentTertiaryActive.rawValue,
-            darkColor: Color(UIColor(hex: "#0808080F")),
-            lightColor: Color(UIColor(hex: "#08080829"))
+            darkColor: Color(UIColor(hex: "#08080833")),
+            lightColor: Color(UIColor(hex: "#08080833"))
         )
     }
     static var surfaceOnLightTransparentTertiaryHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentTertiaryHover.rawValue,
-            darkColor: Color(UIColor(hex: "#0808083D")),
-            lightColor: Color(UIColor(hex: "#0808080A"))
+            darkColor: Color(UIColor(hex: "#0808082E")),
+            lightColor: Color(UIColor(hex: "#0808082E"))
         )
     }
     static var surfaceOnLightTransparentWarning: Self {
@@ -5090,15 +5090,15 @@ public extension ColorToken {
     static var surfaceOnLightTransparentWarningActive: Self {
         Self(
             id: Colors.surfaceOnLightTransparentWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FA5F050F")),
-            lightColor: Color(UIColor(hex: "#FA5F0529"))
+            darkColor: Color(UIColor(hex: "#FA5F0533")),
+            lightColor: Color(UIColor(hex: "#FA5F0533"))
         )
     }
     static var surfaceOnLightTransparentWarningHover: Self {
         Self(
             id: Colors.surfaceOnLightTransparentWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FA5F053D")),
-            lightColor: Color(UIColor(hex: "#FA5F050A"))
+            darkColor: Color(UIColor(hex: "#FA5F052E")),
+            lightColor: Color(UIColor(hex: "#FA5F052E"))
         )
     }
     static var surfaceOnLightWarning: Self {
@@ -5111,14 +5111,14 @@ public extension ColorToken {
     static var surfaceOnLightWarningActive: Self {
         Self(
             id: Colors.surfaceOnLightWarningActive.rawValue,
-            darkColor: Color(UIColor(hex: "#F05B05FF")),
+            darkColor: Color(UIColor(hex: "#E65705FF")),
             lightColor: Color(UIColor(hex: "#E65705FF"))
         )
     }
     static var surfaceOnLightWarningHover: Self {
         Self(
             id: Colors.surfaceOnLightWarningHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FB7223FF")),
+            darkColor: Color(UIColor(hex: "#FB782DFF")),
             lightColor: Color(UIColor(hex: "#FB782DFF"))
         )
     }
@@ -5132,15 +5132,15 @@ public extension ColorToken {
     static var surfaceOnLightWarningMinorActive: Self {
         Self(
             id: Colors.surfaceOnLightWarningMinorActive.rawValue,
-            darkColor: Color(UIColor(hex: "#FEDCC8FF")),
-            lightColor: Color(UIColor(hex: "#FEDCC8FF"))
+            darkColor: Color(UIColor(hex: "#FED9C3FF")),
+            lightColor: Color(UIColor(hex: "#FED9C3FF"))
         )
     }
     static var surfaceOnLightWarningMinorHover: Self {
         Self(
             id: Colors.surfaceOnLightWarningMinorHover.rawValue,
-            darkColor: Color(UIColor(hex: "#FEE9DCFF")),
-            lightColor: Color(UIColor(hex: "#FEEFE6FF"))
+            darkColor: Color(UIColor(hex: "#FEDCC8FF")),
+            lightColor: Color(UIColor(hex: "#FEDCC8FF"))
         )
     }
     static var textDefaultAccent: Self {

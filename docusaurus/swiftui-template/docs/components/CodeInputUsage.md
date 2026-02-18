@@ -39,13 +39,7 @@ title: CodeInput
 ### Базовое использование
 
 ```swift
-SDDSCodeInput(
-    groups: CodeFieldGroup.four,
-    caption: "Введите код из СМС",
-    onCodeChanged: { code in
-        print("Введен код: \(code)")
-    }
-)
+// @sample: SDDSComponentsFixtures/Samples/CodeInput/SDDSCodeInput_Simple.swift
 ```
 
 ### С группировкой полей

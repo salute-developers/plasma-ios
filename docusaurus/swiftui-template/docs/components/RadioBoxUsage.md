@@ -24,12 +24,5 @@ title: RadioBox
 ### Базовая радиокнопка
 
 ```swift
- @State isSelected: Bool = true
- SDDSRadiobox(
-     isSelected: $isSelected,
-     title: "Value",
-     subtitle: "Description",
-     isEnabled: true,
-     appearance: Radiobox.m.appearance
- )
+// @sample: SDDSComponentsFixtures/Samples/RadioBox/SDDSRadiobox_Simple.swift
 ```

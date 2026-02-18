@@ -21,11 +21,5 @@ title: Overlay
 
 ## Пример использования
 ```swift
-@State var isPresent: Bool = true
- 
-MyView()
-    .overlay(
-      isPresent: $isPresent,
-      appearance: Overlay.defaul.appearance
-    )
+// @sample: SDDSComponentsFixtures/Samples/Overlay/SDDSOverlay_Simple.swift
 ```

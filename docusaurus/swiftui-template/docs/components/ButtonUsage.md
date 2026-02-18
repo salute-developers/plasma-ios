@@ -43,20 +43,10 @@ title: Button
 
 ## Примеры использования
 
-### Базовая кнопка с иконкой
+### Базовая кнопка
 
 ```swift
-BasicButton(
-    title: "Label",
-    subtitle: "Value",
-    iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-    isDisabled: false,
-    isLoading: false,
-    spinnerImage: Image.image("spinner"),
-    appearance: BasicButton.l.accent.appearance,
-    layoutMode: .wrapContent,
-    action: { print("Button did tap") }
-)
+// @sample: SDDSComponentsFixtures/Samples/Button/BasicButton_Simple.swift
 ```
 
 ### Кнопка-ссылка с акцентным стилем

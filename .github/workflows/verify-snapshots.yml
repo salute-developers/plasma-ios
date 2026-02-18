@@ -36,6 +36,15 @@ jobs:
           echo "=== Available iOS Versions ==="
           xcrun simctl list runtimes available | grep "iOS"
 
+      - name: Prepare InputMask XCFramework
+        run: |
+          ruby ./scripts/build_inputmask.rb -d .
+          if [ ! -d "./build/InputMask.xcframework" ]; then
+            echo "❌ InputMask.xcframework was not created"
+            exit 1
+          fi
+          echo "✅ InputMask.xcframework is ready"
+
       - name: Run snapshot tests (attempt 1)
         id: test_attempt_1
         continue-on-error: true
@@ -43,11 +52,12 @@ jobs:
         run: |
           echo "🧪 Running all tests (attempt 1/2)"
           set -o pipefail && \
-          xcodebuild clean test \
+          xcodebuild test \
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_1.xcresult 2>&1 | tee ../test_output_1.log
 
       - name: Extract failed tests from attempt 1
@@ -90,6 +100,7 @@ jobs:
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_2.xcresult 2>&1 | tee ../test_output_2.log
 
       - name: Extract failed tests from attempt 2
