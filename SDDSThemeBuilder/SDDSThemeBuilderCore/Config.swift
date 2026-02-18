@@ -37,7 +37,6 @@ public struct ThemeBuilderConfiguration: Codable {
     public var paletteURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json")!
     public var themes: [ThemeConfiguration] = [
         Theme.sddsServTheme,
-        Theme.stylesSalute,
         Theme.plasmaB2C,
         Theme.plasmaHomeDS
     ].map { $0.themeConfiguration }
