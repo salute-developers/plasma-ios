@@ -12,6 +12,39 @@ set -e
 # Определяем директорию скрипта
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Параметры по умолчанию
+DEFAULT_ARTIFACT_ID="${DEFAULT_ARTIFACT_ID:-sddsserv-theme}"
+DEFAULT_VERSION="${DEFAULT_VERSION:-1.0.0-test}"
+DEFAULT_BRANCH="${DEFAULT_BRANCH:-test}"
+DEFAULT_TARGET_TYPE="${DEFAULT_TARGET_TYPE:-swiftui}"
+DEFAULT_THEME_NAME="${DEFAULT_THEME_NAME:-sddsserv}"
+DEFAULT_CODE_REFERENCE="${DEFAULT_CODE_REFERENCE:-}"
+DEFAULT_DOCS_URL="${DEFAULT_DOCS_URL:-https://plasma.sberdevices.ru}"
+
+resolve_theme_metadata() {
+    local theme_name="$1"
+    local artifact_id="$2"
+    local theme_key="$theme_name"
+    local clean_artifact_id="${artifact_id#:tokens:}"
+
+    if [[ -z "$theme_key" ]]; then
+        case "$clean_artifact_id" in
+            "sddsserv-theme") theme_key="sddsserv" ;;
+            "styles-salute-theme") theme_key="styles-salute" ;;
+            "plasma-b2c-theme") theme_key="plasma-b2c" ;;
+            "plasma-home-ds-theme") theme_key="plasma-homeds" ;;
+        esac
+    fi
+
+    case "$theme_key" in
+        "sddsserv") echo "sddsserv|SDDSServTheme" ;;
+        "styles-salute") echo "styles-salute|StylesSaluteTheme" ;;
+        "plasma-b2c") echo "plasma-b2c|PlasmaB2CTheme" ;;
+        "plasma-homeds") echo "plasma-homeds|PlasmaHomeDSTheme" ;;
+        *) echo "$theme_key|" ;;
+    esac
+}
+
 # Параметры по умолчанию для S3
 S3_ACCESS_KEY_ID=""
 S3_SECRET_ACCESS_KEY=""
@@ -90,7 +123,7 @@ get_version() {
             theme_dir_name="PlasmaB2CTheme"
             ;;
         "plasma-home-ds-theme")
-            theme_dir_name="PlasmaHomeDsTheme"
+            theme_dir_name="PlasmaHomeDSTheme"
             ;;
         *)
             # Если тема не найдена в маппинге, пробуем найти по имени
@@ -175,6 +208,23 @@ TARGET_TYPE="${ARGS[3]:-$DEFAULT_TARGET_TYPE}"
 THEME_NAME="${ARGS[4]:-$DEFAULT_THEME_NAME}"
 CODE_REFERENCE="${ARGS[5]:-$DEFAULT_CODE_REFERENCE}"
 DOCS_URL="${ARGS[6]:-$DEFAULT_DOCS_URL}"
+
+THEME_METADATA="$(resolve_theme_metadata "$THEME_NAME" "$ARTIFACT_ID")"
+RESOLVED_THEME_NAME="$(echo "$THEME_METADATA" | cut -d'|' -f1)"
+RESOLVED_CODE_REFERENCE="$(echo "$THEME_METADATA" | cut -d'|' -f2)"
+
+if [[ -n "$RESOLVED_THEME_NAME" ]]; then
+    THEME_NAME="$RESOLVED_THEME_NAME"
+fi
+
+if [[ -z "$CODE_REFERENCE" ]] && [[ -n "$RESOLVED_CODE_REFERENCE" ]]; then
+    CODE_REFERENCE="$RESOLVED_CODE_REFERENCE"
+fi
+
+if [[ -z "$CODE_REFERENCE" ]]; then
+    echo "❌ CODE_REFERENCE не определен. Передайте параметр [CODE_REFERENCE] или используйте известную тему."
+    exit 1
+fi
 
 # Получаем актуальную версию
 VERSION=$(get_version "$ARTIFACT_ID" "$VERSION_INPUT")

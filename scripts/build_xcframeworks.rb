@@ -6,17 +6,32 @@ require_relative 'common' # Подключаем общий файл
 
 def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, static_modules = [])
   print_info "Корневая директория проекта: #{project_root_dir}"
+  build_configuration = "Release"
 
-  # Step 0: Build InputMask
-  print_info "Step 0: Building InputMask..."
-  inputmask_script = File.join(__dir__, 'build_inputmask.rb')
-  if File.exist?(inputmask_script)
-    system("ruby \"#{inputmask_script}\" -d \"#{project_root_dir}\"")
-    if $?.exitstatus != 0
-      print_warning "InputMask build failed, continuing with other modules..."
+  # Step 0: Build InputMask only for modules that depend on it.
+  needs_inputmask = modules.any? { |scheme| scheme != 'SDDSThemeCore' }
+  if needs_inputmask
+    print_info "Step 0: Building InputMask..."
+    inputmask_script = File.join(__dir__, 'build_inputmask.rb')
+    if File.exist?(inputmask_script)
+      repo_root_dir = File.expand_path('..', __dir__)
+      inputmask_root = [project_root_dir, repo_root_dir].uniq.find do |candidate_root|
+        File.exist?(File.join(candidate_root, 'Vendor', 'InputMask.xcodeproj'))
+      end
+
+      if inputmask_root
+        system("ruby \"#{inputmask_script}\" -d \"#{inputmask_root}\"")
+        if $?.exitstatus != 0
+          print_warning "InputMask build failed, continuing with other modules..."
+        end
+      else
+        print_warning "InputMask.xcodeproj not found, skipping InputMask build..."
+      end
+    else
+      print_warning "InputMask build script not found, skipping..."
     end
   else
-    print_warning "InputMask build script not found, skipping..."
+    print_info "Step 0: Skipping InputMask build for SDDSThemeCore-only build."
   end
 
   if workspace_name
@@ -64,11 +79,11 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, 
     
     print_info "Создание архива для устройства iOS..."
     ios_archive_path = File.join(build_path, "#{scheme}-iphoneos.xcarchive")
-    archive_command_base = "xcodebuild archive #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
+    archive_command_base = "xcodebuild archive -configuration #{build_configuration} #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
     if workspace_name
-      execute_command("#{archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos")
+      execute_command("#{archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos -destination 'generic/platform=iOS'")
     elsif scheme_project_path
-      execute_command("#{archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos")
+      execute_command("#{archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos -destination 'generic/platform=iOS'")
     else
       print_error "Не удалось определить проект для схемы #{scheme}"
       next
@@ -76,11 +91,11 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, 
 
     print_info "Создание архива для симулятора iOS..."
     ios_simulator_archive_path = File.join(build_path, "#{scheme}-iossimulator.xcarchive")
-    simulator_archive_command_base = "xcodebuild archive #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
+    simulator_archive_command_base = "xcodebuild archive -configuration #{build_configuration} #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
     if workspace_name
-      execute_command("#{simulator_archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator")
+      execute_command("#{simulator_archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'")
     elsif scheme_project_path
-      execute_command("#{simulator_archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator")
+      execute_command("#{simulator_archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'")
     else
       print_error "Не удалось определить проект для схемы #{scheme}"
       next

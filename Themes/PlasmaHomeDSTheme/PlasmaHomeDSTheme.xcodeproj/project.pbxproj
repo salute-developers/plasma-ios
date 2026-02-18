@@ -77,6 +77,8 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarInternalPage; sourceTree = "<group>"; };
+		81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarMainPage; sourceTree = "<group>"; };
 		813BCC552EB29C4300E4E505 /* Avatar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Avatar; sourceTree = "<group>"; };
 		813BCC5A2EB29C4300E4E505 /* AvatarGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AvatarGroup; sourceTree = "<group>"; };
 		813BCC5F2EB29C4300E4E505 /* Badge */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Badge; sourceTree = "<group>"; };
@@ -205,6 +207,8 @@
 		B30D10EF1B9A708790D4AADE = {
 			isa = PBXGroup;
 			children = (
+				81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */,
+				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
 				8183C42E2EB2A71400610A9A /* Wheel */,
 				813BCC552EB29C4300E4E505 /* Avatar */,
 				813BCC5A2EB29C4300E4E505 /* AvatarGroup */,
@@ -291,6 +295,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */,
+				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
 				813BCC552EB29C4300E4E505 /* Avatar */,
 				813BCC5A2EB29C4300E4E505 /* AvatarGroup */,
 				813BCC5F2EB29C4300E4E505 /* Badge */,

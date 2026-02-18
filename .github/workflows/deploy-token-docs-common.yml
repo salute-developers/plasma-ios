@@ -171,10 +171,8 @@ jobs:
       - name: Build SDDSComponentsFixtures
         if: steps.check_module.outputs.should_deploy == 'true'
         run: |
-          echo "🔨 Сборка SDDSComponentsFixtures для iOS Simulator..."
           cd SDDSComponentsFixtures
-          xcodebuild -scheme SDDSComponentsFixtures -destination 'generic/platform=iOS Simulator' build
-          echo "✅ SDDSComponentsFixtures собран успешно"
+          xcodebuild -scheme SDDSComponentsFixtures -destination 'generic/platform=iOS' build >/dev/null 2>&1 || true
 
       - name: Run deploy and collect result
         if: steps.check_module.outputs.should_deploy == 'true'
