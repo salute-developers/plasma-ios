@@ -55,3 +55,4 @@ typealias DrawerConfiguration = ComponentConfiguration<DrawerProps>
 typealias AutocompleteConfiguration = ComponentConfiguration<AutocompleteProps>
 typealias CollapsingNavigationBarInternalPageConfiguration = ComponentConfiguration<CollapsingNavigationBarInternalPageProps>
 typealias CollapsingNavigationBarMainPageConfiguration = ComponentConfiguration<CollapsingNavigationBarMainPageProps>
+typealias ToolbarConfiguration = ComponentConfiguration<ToolbarProps>

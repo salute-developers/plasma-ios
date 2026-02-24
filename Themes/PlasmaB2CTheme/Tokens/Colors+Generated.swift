@@ -398,6 +398,9 @@ public enum Colors: String {
     case surfaceDefaultPositiveMinor
     case surfaceDefaultPositiveMinorActive
     case surfaceDefaultPositiveMinorHover
+    case surfaceDefaultReadOnly
+    case surfaceDefaultReadOnlyActive
+    case surfaceDefaultReadOnlyHover
     case surfaceDefaultSolidCard
     case surfaceDefaultSolidCardActive
     case surfaceDefaultSolidCardBrightness
@@ -482,6 +485,9 @@ public enum Colors: String {
     case surfaceInversePositiveMinor
     case surfaceInversePositiveMinorActive
     case surfaceInversePositiveMinorHover
+    case surfaceInverseReadOnly
+    case surfaceInverseReadOnlyActive
+    case surfaceInverseReadOnlyHover
     case surfaceInverseSolidCard
     case surfaceInverseSolidCardActive
     case surfaceInverseSolidCardBrightness
@@ -563,6 +569,9 @@ public enum Colors: String {
     case surfaceOnDarkPositiveMinor
     case surfaceOnDarkPositiveMinorActive
     case surfaceOnDarkPositiveMinorHover
+    case surfaceOnDarkReadOnly
+    case surfaceOnDarkReadOnlyActive
+    case surfaceOnDarkReadOnlyHover
     case surfaceOnDarkSolidCard
     case surfaceOnDarkSolidCardActive
     case surfaceOnDarkSolidCardBrightness
@@ -650,6 +659,9 @@ public enum Colors: String {
     case surfaceOnLightPositiveMinor
     case surfaceOnLightPositiveMinorActive
     case surfaceOnLightPositiveMinorHover
+    case surfaceOnLightReadOnly
+    case surfaceOnLightReadOnlyActive
+    case surfaceOnLightReadOnlyHover
     case surfaceOnLightSolidCard
     case surfaceOnLightSolidCardActive
     case surfaceOnLightSolidCardBrightness
@@ -1668,6 +1680,12 @@ public enum Colors: String {
             return .surfaceDefaultPositiveMinorActive
         case .surfaceDefaultPositiveMinorHover:
             return .surfaceDefaultPositiveMinorHover
+        case .surfaceDefaultReadOnly:
+            return .surfaceDefaultReadOnly
+        case .surfaceDefaultReadOnlyActive:
+            return .surfaceDefaultReadOnlyActive
+        case .surfaceDefaultReadOnlyHover:
+            return .surfaceDefaultReadOnlyHover
         case .surfaceDefaultSolidCard:
             return .surfaceDefaultSolidCard
         case .surfaceDefaultSolidCardActive:
@@ -1836,6 +1854,12 @@ public enum Colors: String {
             return .surfaceInversePositiveMinorActive
         case .surfaceInversePositiveMinorHover:
             return .surfaceInversePositiveMinorHover
+        case .surfaceInverseReadOnly:
+            return .surfaceInverseReadOnly
+        case .surfaceInverseReadOnlyActive:
+            return .surfaceInverseReadOnlyActive
+        case .surfaceInverseReadOnlyHover:
+            return .surfaceInverseReadOnlyHover
         case .surfaceInverseSolidCard:
             return .surfaceInverseSolidCard
         case .surfaceInverseSolidCardActive:
@@ -1998,6 +2022,12 @@ public enum Colors: String {
             return .surfaceOnDarkPositiveMinorActive
         case .surfaceOnDarkPositiveMinorHover:
             return .surfaceOnDarkPositiveMinorHover
+        case .surfaceOnDarkReadOnly:
+            return .surfaceOnDarkReadOnly
+        case .surfaceOnDarkReadOnlyActive:
+            return .surfaceOnDarkReadOnlyActive
+        case .surfaceOnDarkReadOnlyHover:
+            return .surfaceOnDarkReadOnlyHover
         case .surfaceOnDarkSolidCard:
             return .surfaceOnDarkSolidCard
         case .surfaceOnDarkSolidCardActive:
@@ -2172,6 +2202,12 @@ public enum Colors: String {
             return .surfaceOnLightPositiveMinorActive
         case .surfaceOnLightPositiveMinorHover:
             return .surfaceOnLightPositiveMinorHover
+        case .surfaceOnLightReadOnly:
+            return .surfaceOnLightReadOnly
+        case .surfaceOnLightReadOnlyActive:
+            return .surfaceOnLightReadOnlyActive
+        case .surfaceOnLightReadOnlyHover:
+            return .surfaceOnLightReadOnlyHover
         case .surfaceOnLightSolidCard:
             return .surfaceOnLightSolidCard
         case .surfaceOnLightSolidCardActive:

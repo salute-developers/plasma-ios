@@ -106,6 +106,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case autocompleteTight = "AutocompleteTight"
     case collapsingNavigationBarInternalPage = "CollapsingNavigationBarInternalPage"
     case collapsingNavigationBarMainPage = "CollapsingNavigationBarMainPage"
+    case toolbarHorizontal = "ToolbarHorizontal"
+    case toolbarVertical = "ToolbarVertical"
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -203,10 +205,12 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .drawerCloseInner,
 //            .drawerCloseNone,
 //            .drawerCloseOuter
-            .autocompleteTight,
-            .autocompleteNormal,
-            .collapsingNavigationBarInternalPage,
-            .collapsingNavigationBarMainPage
+            .toolbarHorizontal,
+            .toolbarVertical
+//            .autocompleteTight,
+//            .autocompleteNormal,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage
         ]
     }
     
@@ -375,6 +379,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .toolbarHorizontal, .toolbarVertical:
+            GenerateComponentCommand<ToolbarProps, ToolbarAppearance, ToolbarSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -494,6 +504,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarInternalPageAppearance"
         case .collapsingNavigationBarMainPage:
             "CollapsingNavigationBarMainPageAppearance"
+        case .toolbarHorizontal, .toolbarVertical:
+            "ToolbarAppearance"
         }
     }
     
@@ -614,6 +626,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarInternalPageSizeConfiguration"
         case .collapsingNavigationBarMainPage:
             "CollapsingNavigationBarMainPageSizeConfiguration"
+        case .toolbarHorizontal, .toolbarVertical:
+            "ToolbarSizeConfiguration"
         }
     }
 
@@ -829,6 +843,10 @@ extension CodeGenerationComponent {
             "collapsing_navigation_bar_internal_page_config.json"
         case .collapsingNavigationBarMainPage:
             "collapsing_navigation_bar_main_page_config.json"
+        case .toolbarHorizontal:
+            "toolbar_horizontal_config.json"
+        case .toolbarVertical:
+            "toolbar_vertical_config.json"
         }
     }
 
