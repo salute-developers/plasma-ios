@@ -339,6 +339,10 @@
 		81A753502D47DE03006E1BE7 /* ComponentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753492D47DE03006E1BE7 /* ComponentContext.swift */; };
 		81A753522D47DE03006E1BE7 /* ComponentContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7534B2D47DE03006E1BE7 /* ComponentContextBuilder.swift */; };
 		81A753552D47DE24006E1BE7 /* SizeVariationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */; };
+		81AE97972F4DC008001FDE3F /* ToolbarProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE97962F4DC008001FDE3F /* ToolbarProps.swift */; };
+		81AE979B2F4DC015001FDE3F /* ToolbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE97992F4DC015001FDE3F /* ToolbarSize.swift */; };
+		81AE979C2F4DC015001FDE3F /* ToolbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE97982F4DC015001FDE3F /* ToolbarAppearance.swift */; };
+		81AE97A02F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */; };
 		81B23FA92D4BEBA00042A657 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23FA82D4BEBA00042A657 /* Component.swift */; };
 		81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510652E3C7CA100504B1D /* CodeFieldSize.swift */; };
 		81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */; };
@@ -837,6 +841,11 @@
 		81A753492D47DE03006E1BE7 /* ComponentContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentContext.swift; sourceTree = "<group>"; };
 		81A7534B2D47DE03006E1BE7 /* ComponentContextBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentContextBuilder.swift; sourceTree = "<group>"; };
 		81A753542D47DE24006E1BE7 /* SizeVariationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeVariationKey.swift; sourceTree = "<group>"; };
+		81AE97962F4DC008001FDE3F /* ToolbarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarProps.swift; sourceTree = "<group>"; };
+		81AE97982F4DC015001FDE3F /* ToolbarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarAppearance.swift; sourceTree = "<group>"; };
+		81AE97992F4DC015001FDE3F /* ToolbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarSize.swift; sourceTree = "<group>"; };
+		81AE979D2F4DC028001FDE3F /* ComponentContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentContextBuilder.swift; sourceTree = "<group>"; };
+		81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarOrientationContextBuilder.swift; sourceTree = "<group>"; };
 		81B23FA82D4BEBA00042A657 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldAppearance.swift; sourceTree = "<group>"; };
 		81B510652E3C7CA100504B1D /* CodeFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldSize.swift; sourceTree = "<group>"; };
@@ -1323,6 +1332,8 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */,
+				81AE979D2F4DC028001FDE3F /* ComponentContextBuilder.swift */,
 				813472DA2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift */,
 				819C36062EBCE2E00081066C /* TabsDefaultOrientationContextBuilder.swift */,
 				814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */,
@@ -1381,6 +1392,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81AE97962F4DC008001FDE3F /* ToolbarProps.swift */,
 				816C82B22EFBB04E00446DEE /* AutocompleteProps.swift */,
 				813472DC2ECF739600D40423 /* DrawerProps.swift */,
 				819C360D2EBCE7EA0081066C /* TabItemDefaultProps.swift */,
@@ -1443,6 +1455,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81AE979A2F4DC015001FDE3F /* Toolbar */,
 				816C82B62EFBB05B00446DEE /* Autocomplete */,
 				813472D72ECF734B00D40423 /* Drawer */,
 				819C360A2EBCE7D70081066C /* TabItemDefault */,
@@ -2030,6 +2043,15 @@
 				81A753482D47DE03006E1BE7 /* TextFieldSize.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		81AE979A2F4DC015001FDE3F /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				81AE97982F4DC015001FDE3F /* ToolbarAppearance.swift */,
+				81AE97992F4DC015001FDE3F /* ToolbarSize.swift */,
+			);
+			path = Toolbar;
 			sourceTree = "<group>";
 		};
 		81B510662E3C7CA100504B1D /* CodeField */ = {
@@ -2705,6 +2727,8 @@
 				81DE5FE52D634E4E0041B639 /* SpacingToken.stencil in Sources */,
 				81E1EE462BE3A5F800F86AE1 /* Size.swift in Sources */,
 				81D85D152D6F63DE007E758F /* PathDrawerContextBuilder.swift in Sources */,
+				81AE979B2F4DC015001FDE3F /* ToolbarSize.swift in Sources */,
+				81AE979C2F4DC015001FDE3F /* ToolbarAppearance.swift in Sources */,
 				8191831D2EAE811D006E36F5 /* NoteContentBeforeArrangementContextBuilder.swift in Sources */,
 				8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */,
 				81E934352DEDF5CB00B76E38 /* ToastAppearance.swift in Sources */,
@@ -2729,6 +2753,7 @@
 				812DB6E72D55E3ED00D3F4A3 /* TypographyTokenContextBuilder.swift in Sources */,
 				815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */,
 				815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */,
+				81AE97972F4DC008001FDE3F /* ToolbarProps.swift in Sources */,
 				813472DD2ECF739600D40423 /* DrawerProps.swift in Sources */,
 				812DB7012D55E54400D3F4A3 /* ComponentConfiguration.swift in Sources */,
 				815D36882DE5BA390005273B /* TooltipSize.swift in Sources */,
@@ -2860,6 +2885,7 @@
 				81E934382DEDF5D600B76E38 /* ToastProps.swift in Sources */,
 				810F4C5C2E266FDC00218FE7 /* AccordionItemProps.swift in Sources */,
 				692CEBEC2DC266A6003DFEFA /* ProgressBarProps.swift in Sources */,
+				81AE97A02F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift in Sources */,
 				813687632E01820700A1702A /* SkeletonProps.swift in Sources */,
 				810F92562E12E720008CA4CA /* ListItemSize.swift in Sources */,
 				810F92572E12E720008CA4CA /* ListItemAppearance.swift in Sources */,

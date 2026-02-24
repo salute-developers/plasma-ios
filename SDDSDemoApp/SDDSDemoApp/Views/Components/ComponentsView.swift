@@ -58,6 +58,7 @@ struct ComponentsView: View {
         ("NoteCompact", AnyView(NoteCompactView())),
         ("Tabs", AnyView(TabsView())),
         ("TabItem", AnyView(TabItemView())),
+        ("Toolbar", AnyView(ToolbarView())),
         ("Mask", AnyView(MaskView()))
     ]
 

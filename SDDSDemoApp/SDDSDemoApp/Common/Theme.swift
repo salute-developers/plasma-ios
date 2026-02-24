@@ -1379,4 +1379,30 @@ enum Theme: String, CaseIterable {
             []
         }
     }
+    
+    var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.ToolbarHorizontal.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.ToolbarVertical.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
 }
