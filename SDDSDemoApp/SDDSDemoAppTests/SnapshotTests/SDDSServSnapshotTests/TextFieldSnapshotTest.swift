@@ -101,6 +101,12 @@ final class TextFieldSnapshotTest: SDDSServThemeTestCase {
         let appearance = TextField.l.innerLabel.warning.appearance
         try await runSnapshotTest(view: TextFieldInputText(appearance: appearance))
     }
+
+    @MainActor
+    func testTextFieldSecureEntryInputText() async throws {
+        let appearance = TextField.l.innerLabel.warning.appearance
+        try await runSnapshotTest(view: TextFieldSecureEntryInputText(appearance: appearance))
+    }
     
     @MainActor
     func testTextFieldSizeXlDefaultOptionalInnerLabel() async throws {

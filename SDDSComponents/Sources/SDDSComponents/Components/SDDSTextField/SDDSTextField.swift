@@ -59,6 +59,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     public let divider: Bool
     public let mask: TextFieldMask?
     public let maskDisplayMode: MaskDisplayMode
+    public let secureEntry: Bool
+    public let keyboardType: UIKeyboardType
     private let _appearance: TextFieldAppearance?
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
@@ -89,6 +91,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         divider: Bool = true,
         mask: TextFieldMask? = nil,
         maskDisplayMode: MaskDisplayMode = .onInput,
+        secureEntry: Bool = false,
+        keyboardType: UIKeyboardType = .default,
         appearance: TextFieldAppearance? = nil,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
@@ -112,6 +116,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         self.divider = divider
         self.mask = mask
         self.maskDisplayMode = maskDisplayMode
+        self.secureEntry = secureEntry
+        self.keyboardType = keyboardType
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder.isEmpty && mask != nil ? mask!.placeholder : placeholder
@@ -298,6 +304,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                                     readOnly: readOnly,
                                     mask: mask,
                                     maskDisplayMode: maskDisplayMode,
+                                    secureEntry: secureEntry,
+                                    keyboardType: keyboardType,
                                     placeholderBeforeContent: {
                                         EmptyView()
                                     },
@@ -318,7 +326,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                                         textFieldConfiguration(textField: textField)
                                             .id(textFieldIdentifier)
                                             .frame(
-                                                width: calculatedTextSize,
+                                                width: isStableSecureWidth ? max(proxy.size.width, 1.0) : calculatedTextSize,
                                                 height: textTypography.lineHeight
                                             )
                                     }
@@ -330,9 +338,15 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                             }
                         }
                         .onChange(of: text) { _ in
+                            guard !isStableSecureWidth else {
+                                return
+                            }
                             scroll(with: scrollViewProxy)
                         }
                         .onChange(of: textAfter) { _ in
+                            guard !isStableSecureWidth else {
+                                return
+                            }
                             scroll(with: scrollViewProxy)
                         }
                         if shouldCenterText {
@@ -352,6 +366,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 readOnly: readOnly,
                 mask: mask,
                 maskDisplayMode: maskDisplayMode,
+                secureEntry: secureEntry,
+                keyboardType: keyboardType,
                 placeholderBeforeContent: {},
                 placeholderContent: { placeholderView },
                 placeholderAfterContent: { EmptyView() },
@@ -707,20 +723,28 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     // MARK: - Computed Properties for Conditions
     
     private var calculatedTextSize: CGFloat {
-        // Когда маска используется, вычисляем размер на основе placeholder маски
-        // для предотвращения проблем с асинхронным обновлением
-        let displayText = (mask != nil && !text.isEmpty) ? text : text
-        let placeholderText = mask?.placeholder ?? ""
-        
-        // Используем максимум между текущим текстом и placeholder маски
-        let textToMeasure = (mask != nil && displayText.count < placeholderText.count) 
-            ? placeholderText 
-            : displayText
-        
-        let textSize = (textToMeasure as NSString).size(withAttributes: [NSAttributedString.Key.font: textTypography.uiFont])
-        return max(ceil(textSize.width), 1.0)
+        let font = textTypography.uiFont
+        let baseWidth = (measuredText as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width
+
+        // Keep secure text width stable by measuring only bullet glyphs.
+        if secureEntry && mask == nil && !text.isEmpty {
+            let secureText = String(repeating: "•", count: text.count)
+            let secureWidth = (secureText as NSString).size(withAttributes: [NSAttributedString.Key.font: font]).width
+            return max(ceil(secureWidth), 1.0)
+        }
+
+        return max(ceil(baseWidth), 1.0)
     }
-    
+
+    private var measuredText: String {
+        // When mask is used, width should not shrink below mask placeholder.
+        if let mask, text.count < mask.placeholder.count {
+            return mask.placeholder
+        }
+
+        return text
+    }
+
     private var iconActionViewWidth: CGFloat {
         min(appearance.size.iconActionSize.width, appearance.size.fieldHeight)
     }
@@ -806,6 +830,10 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     
     private var calculatedChipGroupHeight: CGFloat {
         return min(appearance.chipAppearance.size.height, chipGroupContentHeight)
+    }
+
+    private var isStableSecureWidth: Bool {
+        secureEntry && mask == nil
     }
     
     private var textFieldIdentifier: String {
