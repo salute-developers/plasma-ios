@@ -20,6 +20,8 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
         var appearance = appearance
         appearance.size = size
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(l: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(l: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
@@ -55,6 +57,8 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
         var appearance = appearance
         appearance.size = size
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
         return .init(
@@ -90,6 +94,8 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
         var appearance = appearance
         appearance.size = size
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.labelTypography = ListItemNormalTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
@@ -125,6 +131,8 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
         var appearance = appearance
         appearance.size = size
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(xl: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(xl: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
@@ -160,6 +168,8 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
         var appearance = appearance
         appearance.size = size
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.labelTypography = ListItemNormalTypography(xs: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(xs: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(xs: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(

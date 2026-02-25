@@ -73,6 +73,10 @@ struct FocusableTextField: UIViewRepresentable {
                 listener.primaryMaskFormat = newFormat
             }
         }
+        
+        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+            !parent.readOnly
+        }
 
         func textFieldDidChangeSelection(_ textField: UITextField) {
             guard parent.enableSelection else {
@@ -87,9 +91,13 @@ struct FocusableTextField: UIViewRepresentable {
         }
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard !parent.readOnly else {
+                return false
+            }
+            
             // Если маска используется, всегда возвращаем true
             // MaskedTextInputListener сам контролирует логику изменений
-            if let listener = maskListener, !parent.readOnly {
+            if let listener = maskListener {
                 if let mask = parent.mask, mask.isDynamic {
                     let currentText = textField.text ?? ""
                     let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
@@ -241,7 +249,7 @@ struct FocusableTextField: UIViewRepresentable {
         }
         
         textField.textAlignment = nsTextAlignment
-        textField.tintColor = UIColor(cursorColor)
+        textField.tintColor = readOnly ? .clear : UIColor(cursorColor)
         textField.font = typography.uiFont
         textField.adjustsFontSizeToFitWidth = false
 

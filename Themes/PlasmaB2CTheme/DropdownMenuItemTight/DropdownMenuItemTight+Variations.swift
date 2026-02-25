@@ -4,6 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
 
+
 public extension GeneralAppearanceVariation<DropdownMenuItemTight, ListItemAppearance, DropdownMenuItemTightVariation.L> {
     
     var l: ComponentAppearanceVariation<DropdownMenuItemTight, ListItemAppearance> {

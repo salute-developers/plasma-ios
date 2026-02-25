@@ -36,7 +36,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         size.boxPaddingBottom = CGFloat(16.0)
         size.boxPaddingTop = CGFloat(16.0)
         size.boxTrailingPadding = CGFloat(16.0)
-        size.cornerRadius = ShapeToken.roundM.cornerRadius+2.0
+        size.cornerRadius = ShapeToken.roundXl.cornerRadius-2.0
         size.dividerHeight = CGFloat(1.0)
         size.fieldHeight = CGFloat(56.0)
         size.iconActionPadding = CGFloat(10.0)
@@ -414,7 +414,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         size.boxPaddingBottom = CGFloat(12.0)
         size.boxPaddingTop = CGFloat(12.0)
         size.boxTrailingPadding = CGFloat(14.0)
-        size.cornerRadius = ShapeToken.roundM.cornerRadius
+        size.cornerRadius = ShapeToken.roundL.cornerRadius
         size.dividerHeight = CGFloat(1.0)
         size.fieldHeight = CGFloat(48.0)
         size.iconActionPadding = CGFloat(8.0)
@@ -826,7 +826,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
         size.boxPaddingBottom = CGFloat(8.0)
         size.boxPaddingTop = CGFloat(8.0)
         size.boxTrailingPadding = CGFloat(12.0)
-        size.cornerRadius = ShapeToken.roundM.cornerRadius-2.0
+        size.cornerRadius = ShapeToken.roundM.cornerRadius
         size.dividerHeight = CGFloat(1.0)
         size.fieldHeight = CGFloat(40.0)
         size.iconActionPadding = CGFloat(6.0)

@@ -20,6 +20,7 @@ struct DropdownMenuItemTightSize {
 }
 struct DropdownMenuItemTightSizeL: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(48.0)
     var paddingBottom = CGFloat(12.0)
     var paddingEnd = CGFloat(16.0)
@@ -32,6 +33,7 @@ struct DropdownMenuItemTightSizeL: ListItemSizeConfiguration {
 }
 struct DropdownMenuItemTightSizeM: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(40.0)
     var paddingBottom = CGFloat(8.0)
     var paddingEnd = CGFloat(14.0)
@@ -44,6 +46,7 @@ struct DropdownMenuItemTightSizeM: ListItemSizeConfiguration {
 }
 struct DropdownMenuItemTightSizeS: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(32.0)
     var paddingBottom = CGFloat(7.0)
     var paddingEnd = CGFloat(12.0)
@@ -56,6 +59,7 @@ struct DropdownMenuItemTightSizeS: ListItemSizeConfiguration {
 }
 struct DropdownMenuItemTightSizeXl: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(56.0)
     var paddingBottom = CGFloat(16.0)
     var paddingEnd = CGFloat(18.0)
@@ -68,6 +72,7 @@ struct DropdownMenuItemTightSizeXl: ListItemSizeConfiguration {
 }
 struct DropdownMenuItemTightSizeXs: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(24.0)
     var paddingBottom = CGFloat(4.0)
     var paddingEnd = CGFloat(8.0)
@@ -81,6 +86,7 @@ struct DropdownMenuItemTightSizeXs: ListItemSizeConfiguration {
 
 struct DropdownMenuItemTightAnySize: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(0)
     var paddingBottom = CGFloat(0)
     var paddingEnd = CGFloat(0)
@@ -90,6 +96,7 @@ struct DropdownMenuItemTightAnySize: ListItemSizeConfiguration {
 
     init(size: ListItemSizeConfiguration) {
         self.contentPaddingEnd = size.contentPaddingEnd
+        self.contentPaddingStart = size.contentPaddingStart
         self.height = size.height
         self.paddingBottom = size.paddingBottom
         self.paddingEnd = size.paddingEnd

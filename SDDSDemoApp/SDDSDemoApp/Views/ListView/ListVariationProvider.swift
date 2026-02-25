@@ -21,6 +21,10 @@ final class ListVariationProvider: VariationProvider {
             theme.listTightVariations
         case .listItem:
             theme.listVariations
+        case .listNumbered:
+            theme.listNumberedVariations
+        case .listNumberedItem:
+            theme.listVariations
         }
     }
     

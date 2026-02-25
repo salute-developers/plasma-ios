@@ -9,6 +9,8 @@ struct TabBarProps: MergeableConfiguration, Codable {
     var contentPaddingBottom: KeyValue<Double>?
     var itemSpacing: KeyValue<Double>?
     var backgroundColor: ColorKeyValue?
+    var backgroundBlurColor: ColorKeyValue?
+    var backgroundBlurRadius: KeyValue<Double>?
     var topShape: ShapeKeyValue?
     var shadow: ShadowKeyValue?
     var dividerThickness: KeyValue<Double>?

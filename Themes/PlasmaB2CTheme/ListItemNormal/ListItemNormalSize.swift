@@ -20,6 +20,7 @@ struct ListItemNormalSize {
 }
 struct ListItemNormalSizeL: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(56.0)
     var paddingBottom = CGFloat(16.0)
     var paddingEnd = CGFloat(16.0)
@@ -32,6 +33,7 @@ struct ListItemNormalSizeL: ListItemSizeConfiguration {
 }
 struct ListItemNormalSizeM: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(48.0)
     var paddingBottom = CGFloat(12.0)
     var paddingEnd = CGFloat(14.0)
@@ -44,6 +46,7 @@ struct ListItemNormalSizeM: ListItemSizeConfiguration {
 }
 struct ListItemNormalSizeS: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(40.0)
     var paddingBottom = CGFloat(11.0)
     var paddingEnd = CGFloat(12.0)
@@ -56,6 +59,7 @@ struct ListItemNormalSizeS: ListItemSizeConfiguration {
 }
 struct ListItemNormalSizeXl: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(64.0)
     var paddingBottom = CGFloat(20.0)
     var paddingEnd = CGFloat(18.0)
@@ -68,6 +72,7 @@ struct ListItemNormalSizeXl: ListItemSizeConfiguration {
 }
 struct ListItemNormalSizeXs: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(32.0)
     var paddingBottom = CGFloat(8.0)
     var paddingEnd = CGFloat(8.0)
@@ -81,6 +86,7 @@ struct ListItemNormalSizeXs: ListItemSizeConfiguration {
 
 struct ListItemNormalAnySize: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(0)
+    var contentPaddingStart = CGFloat(0)
     var height = CGFloat(0)
     var paddingBottom = CGFloat(0)
     var paddingEnd = CGFloat(0)
@@ -90,6 +96,7 @@ struct ListItemNormalAnySize: ListItemSizeConfiguration {
 
     init(size: ListItemSizeConfiguration) {
         self.contentPaddingEnd = size.contentPaddingEnd
+        self.contentPaddingStart = size.contentPaddingStart
         self.height = size.height
         self.paddingBottom = size.paddingBottom
         self.paddingEnd = size.paddingEnd

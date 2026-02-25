@@ -20,7 +20,7 @@ final class TextSkeletonStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     func testTextSkeletonTestNoTextRandomStylesSalute() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
@@ -30,7 +30,7 @@ final class TextSkeletonStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     func testTextSkeletonTestFullWidthStylesSalute() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
@@ -40,7 +40,7 @@ final class TextSkeletonStylesSaluteSnapshotTest: StylesSaluteThemeTestCase {
     func testTextSkeletonLigtherStylesSalute() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonDeepGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonDeepGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))

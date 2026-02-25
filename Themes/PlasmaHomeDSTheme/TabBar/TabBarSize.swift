@@ -17,8 +17,8 @@ struct TabBarSizeDefault: TabBarIslandSizeConfiguration {
     var contentPaddingStart = CGFloat(8.0)
     var contentPaddingTop = CGFloat(2.0)
     var itemSpacing = CGFloat(8.0)
-    var paddingEnd = CGFloat(48.0)
-    var paddingStart = CGFloat(48.0)
+    var paddingEnd = CGFloat(8.0)
+    var paddingStart = CGFloat(8.0)
     var topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxl.cornerRadius) as PathDrawer
     public var debugDescription: String {
         return "TabBarSize"

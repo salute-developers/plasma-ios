@@ -98,6 +98,7 @@ private extension TextFieldAppearance {
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
+        appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
         appearance.requiredIndicatorColor = ColorToken.surfaceDefaultNegative
         appearance.startContentColor = ColorToken.textDefaultSecondary
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary

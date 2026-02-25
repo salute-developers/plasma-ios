@@ -9,6 +9,8 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.l
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,6 +22,8 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.m
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -31,6 +35,8 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.s
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.labelTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -42,6 +48,8 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.xl
         appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -53,6 +61,8 @@ public struct ListItemNormal {
         var appearance = ListItemAppearance.base
         appearance.size = ListItemNormalSize.xs
         appearance.disclosureIcon = Asset.disclosureRightOutline16.image
+        appearance.labelTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListItemNormalTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
@@ -82,7 +92,10 @@ private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultTransparentSecondary, selectedColor: .clearColor)
+        appearance.disabledAlpha = CGFloat(0.4)
         appearance.disclosureIconColor = ColorToken.textDefaultSecondary
+        appearance.labelColor = ColorToken.textDefaultSecondary
+        appearance.subtitleColor = ColorToken.textDefaultSecondary
         appearance.titleColor = ColorToken.textDefaultPrimary
         return appearance
     }
