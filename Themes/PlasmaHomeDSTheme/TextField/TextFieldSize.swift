@@ -22,7 +22,7 @@ struct TextFieldSizeL: TextFieldSizeConfiguration {
     var captionTopPadding = CGFloat(4.0)
     var chipContainerHorizontalPadding = CGFloat(0)
     var chipsPadding = CGFloat(0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius+2.0
+    var cornerRadius = ShapeToken.roundXl.cornerRadius-2.0
     var dividerHeight = CGFloat(1.0)
     var fieldHeight = CGFloat(56.0)
     var iconActionPadding = CGFloat(10.0)
@@ -50,7 +50,7 @@ struct TextFieldSizeM: TextFieldSizeConfiguration {
     var captionTopPadding = CGFloat(4.0)
     var chipContainerHorizontalPadding = CGFloat(0)
     var chipsPadding = CGFloat(0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius
+    var cornerRadius = ShapeToken.roundL.cornerRadius
     var dividerHeight = CGFloat(1.0)
     var fieldHeight = CGFloat(48.0)
     var iconActionPadding = CGFloat(8.0)
@@ -78,7 +78,7 @@ struct TextFieldSizeS: TextFieldSizeConfiguration {
     var captionTopPadding = CGFloat(4.0)
     var chipContainerHorizontalPadding = CGFloat(0)
     var chipsPadding = CGFloat(0)
-    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
+    var cornerRadius = ShapeToken.roundM.cornerRadius
     var dividerHeight = CGFloat(1.0)
     var fieldHeight = CGFloat(40.0)
     var iconActionPadding = CGFloat(6.0)

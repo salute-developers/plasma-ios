@@ -158,11 +158,16 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         .opacity(disabled ? appearance.disabledAlpha : 1)
         .disabled(disabled)
         .onTapGesture {
-            guard !displayChips && !disabled else {
+            guard !displayChips && !disabled && !readOnly else {
                 return
             }
             withAnimation {
                 isFocused = true
+            }
+        }
+        .onChange(of: readOnly) { newValue in
+            if newValue {
+                isFocused = false
             }
         }
     }
@@ -269,6 +274,9 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                     .padding(.leading, appearance.size.chipContainerHorizontalPadding, debug: debugConfiguration.textField)
                     .id(textFieldIdentifier)
                     .onTapGesture {
+                        guard !readOnly && !disabled else {
+                            return
+                        }
                         isFocused = true
                     }
             }

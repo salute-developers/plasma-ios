@@ -4,6 +4,7 @@ import SwiftUI
 
 public protocol ListItemSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var contentPaddingEnd: CGFloat { get }
+    var contentPaddingStart: CGFloat { get }
     var height: CGFloat { get }
     var paddingBottom: CGFloat { get }
     var paddingEnd: CGFloat { get }
@@ -14,6 +15,7 @@ public protocol ListItemSizeConfiguration: SizeConfiguration, CustomDebugStringC
 
 public struct DefaultListItemSize: ListItemSizeConfiguration {
     public var contentPaddingEnd: CGFloat = 8.0
+    public var contentPaddingStart: CGFloat = 8.0
     public var height: CGFloat = 48.0
     public var paddingBottom: CGFloat = 12.0
     public var paddingEnd: CGFloat = 14.0
@@ -28,6 +30,10 @@ public struct DefaultListItemSize: ListItemSizeConfiguration {
 
 public struct ZeroListItemSize: ListItemSizeConfiguration {
     public var contentPaddingEnd: CGFloat {
+        0
+    }
+    
+    public var contentPaddingStart: CGFloat {
         0
     }
     

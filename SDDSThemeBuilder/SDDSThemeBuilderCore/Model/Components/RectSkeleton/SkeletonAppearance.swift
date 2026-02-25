@@ -7,6 +7,7 @@ struct SkeletonAppearance: CodeGenerationAppearance {
     var shape: String?
     var gradient: String?
     var duration: String?
+    var textTypography: String?
     
     init(variation: SkeletonConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -20,11 +21,10 @@ struct SkeletonAppearance: CodeGenerationAppearance {
         if let shape = props.shape {
             self.shape = PathDrawerContextBuilder(shape: shape).context
         }
-        if let gradient = props.gradient {
-            self.gradient = ColorTokenContextBuilder(gradient, isGradient: true).context
-        }
+        self.gradient = FillStyleContextBuilder(props.gradient).context
         if let duration = props.duration?.value {
             self.duration = CGFloatContextBuilder(duration).context
         }
+        self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
     }
 } 

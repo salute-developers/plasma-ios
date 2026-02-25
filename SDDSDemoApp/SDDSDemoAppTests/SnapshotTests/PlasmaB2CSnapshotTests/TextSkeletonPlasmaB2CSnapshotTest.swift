@@ -20,7 +20,7 @@ final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     func testTextSkeletonTestNoTextRandomPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
@@ -30,7 +30,7 @@ final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     func testTextSkeletonTestFullWidthPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
@@ -40,7 +40,7 @@ final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     func testTextSkeletonLigtherPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 4),
-            gradient: .surfaceDefaultSkeletonDeepGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonDeepGradient),
             duration: 2000
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))

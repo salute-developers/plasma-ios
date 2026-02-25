@@ -105,18 +105,22 @@ public struct SDDSTabBarIsland: View {
     private var backgroundLayers: some View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
-                Rectangle()
-                    .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+                backgroundHalf
                     .shape(pathDrawer: topPathDrawer)
                     .frame(height: geometry.size.height / 2)
                 
-                Rectangle()
-                    .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+                backgroundHalf
                     .shape(pathDrawer: bottomPathDrawer)
                     .frame(height: geometry.size.height / 2)
                     .offset(y: geometry.size.height / 2)
             }
         }
+    }
+    
+    @ViewBuilder
+    private var backgroundHalf: some View {
+        Rectangle()
+            .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     // MARK: - Computed Properties

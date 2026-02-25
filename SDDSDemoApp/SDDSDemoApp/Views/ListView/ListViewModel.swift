@@ -4,6 +4,7 @@ import SDDSComponents
 final class ListViewModel: ComponentViewModel<ListVariationProvider> {
     @Published var items: [ListItemData] = []
     @Published var nextItemId: Int = 1
+    @Published var hasDivider: Bool = false
     
     @Published var layout: ListItemLayout = .listItemNormal {
         didSet {

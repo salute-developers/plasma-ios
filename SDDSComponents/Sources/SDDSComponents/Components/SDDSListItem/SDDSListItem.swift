@@ -73,7 +73,10 @@ public struct SDDSListItem<RightContent: View>: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     private let _appearance: ListItemAppearance?
+    private let label: String?
     private let title: String
+    private let subtitle: String?
+    private let counterText: String?
     private let rightContent: RightContent
     private let rightContentEnabled: Bool
     private let disabled: Bool
@@ -82,14 +85,20 @@ public struct SDDSListItem<RightContent: View>: View {
     @State private var isHovered: Bool = false
     
     public init(
+        label: String? = nil,
         title: String = "",
+        subtitle: String? = nil,
+        counterText: String? = nil,
         @ViewBuilder rightContent: () -> RightContent = { EmptyView() },
         rightContentEnabled: Bool = true,
         disabled: Bool = false,
         appearance: ListItemAppearance? = nil,
         onTap: (() -> ())? = nil
     ) {
+        self.label = label
         self.title = title
+        self.subtitle = subtitle
+        self.counterText = counterText
         self.rightContent = rightContent()
         self.rightContentEnabled = rightContentEnabled
         self.disabled = disabled
@@ -100,14 +109,24 @@ public struct SDDSListItem<RightContent: View>: View {
     public var body: some View {
         Group {
             HStack(spacing: 0) {
-                Text(title)
-                    .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
-                    .typography(titleTypography)
+                if let counterText, let counterAppearance = appearance.counterAppearance {
+                    SDDSCounter(
+                        text: counterText,
+                        appearance: counterAppearance,
+                        isAnimating: false,
+                        isHighlighted: isHighlighted,
+                        isHovered: isHovered,
+                        isSelected: false
+                    )
+                    .padding(.trailing, appearance.size.contentPaddingStart)
+                }
+                textContent
                 Spacer()
                 if rightContentEnabled {
                     disclosure
                         .tint(appearance.disclosureIconColor.color(for: colorScheme, subtheme: subtheme))
-                        .padding(.leading, appearance.size.contentPaddingEnd)
+                        .padding(.leading, appearance.size.contentPaddingStart)
+                        .padding(.trailing, appearance.size.contentPaddingEnd)
                 }
             }
             .padding(.leading, appearance.size.paddingStart)
@@ -115,10 +134,10 @@ public struct SDDSListItem<RightContent: View>: View {
             .padding(.top, appearance.size.paddingTop)
             .padding(.bottom, appearance.size.paddingBottom)
         }
-        .frame(height: appearance.size.height)
-        .shape(pathDrawer: appearance.size.shape)
+        .frame(height: resolvedHeight)
         .background(currentColor(for: appearance.backgroundColor))
         .opacity(contentOpacity)
+        .shape(pathDrawer: appearance.size.shape)
         .onTapGesture {
             onTap?()
         }
@@ -145,11 +164,42 @@ public struct SDDSListItem<RightContent: View>: View {
     }
     
     private var contentOpacity: CGFloat {
-        disabled ? 0.4 : 1.0
+        disabled ? appearance.disabledAlpha : 1.0
+    }
+    
+    private var resolvedHeight: CGFloat? {
+        appearance.size.height > 0 ? appearance.size.height : nil
+    }
+    
+    @ViewBuilder
+    private var textContent: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if let label, !label.isEmpty {
+                Text(label)
+                    .foregroundStyle(appearance.labelColor.color(for: colorScheme, subtheme: subtheme))
+                    .typography(labelTypography)
+            }
+            Text(title)
+                .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
+                .typography(titleTypography)
+            if let subtitle, !subtitle.isEmpty, let subtitleTypography = resolvedSubtitleTypography {
+                Text(subtitle)
+                    .foregroundStyle(appearance.subtitleColor.color(for: colorScheme, subtheme: subtheme))
+                    .typography(subtitleTypography)
+            }
+        }
     }
     
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: appearance.size) ?? .undefined
+    }
+    
+    private var labelTypography: TypographyToken {
+        appearance.labelTypography.typography(with: appearance.size) ?? .undefined
+    }
+    
+    private var resolvedSubtitleTypography: TypographyToken? {
+        appearance.subtitleTypography?.typography(with: appearance.size)
     }
     
     private func currentColor(for buttonColor: ButtonColor) -> Color {

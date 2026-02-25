@@ -52,4 +52,5 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
             return .error(GeneralError.decoding)
         }
     }
+
 }

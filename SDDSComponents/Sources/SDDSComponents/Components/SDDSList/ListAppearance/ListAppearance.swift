@@ -7,17 +7,20 @@ public struct ListAppearance: Hashable {
     public var listItemAppearance: ListItemAppearance
     public var dividerAppearance: DividerAppearance
     public var scrollBarAppearance: ScrollbarAppearance
+    public var backgroundColor: ColorToken
     public var size: ListSizeConfiguration
     
     public init(
         listItemAppearance: ListItemAppearance = .defaultValue,
         dividerAppearance: DividerAppearance = .defaultValue,
         scrollBarAppearance: ScrollbarAppearance = .defaultValue,
+        backgroundColor: ColorToken = .clearColor,
         size: ListSizeConfiguration = ZeroListSize()
     ) {
         self.listItemAppearance = listItemAppearance
         self.dividerAppearance = dividerAppearance
         self.scrollBarAppearance = scrollBarAppearance
+        self.backgroundColor = backgroundColor
         self.size = size
     }
     
@@ -25,7 +28,8 @@ public struct ListAppearance: Hashable {
         lhs.id == rhs.id &&
         lhs.scrollBarAppearance == rhs.scrollBarAppearance &&
         lhs.dividerAppearance == rhs.dividerAppearance &&
-        lhs.listItemAppearance == rhs.listItemAppearance
+        lhs.listItemAppearance == rhs.listItemAppearance &&
+        lhs.backgroundColor == rhs.backgroundColor
     }
     
     public func hash(into hasher: inout Hasher) {

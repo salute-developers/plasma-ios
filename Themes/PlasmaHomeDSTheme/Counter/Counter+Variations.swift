@@ -53,6 +53,12 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -74,6 +80,7 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -132,6 +139,12 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -153,6 +166,7 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -211,6 +225,12 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -232,6 +252,7 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -290,6 +311,12 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -311,6 +338,7 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -369,6 +397,12 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -390,6 +424,7 @@ public extension GeneralAppearanceVariation<Counter, CounterAppearance, CounterV
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -432,6 +467,12 @@ public extension ComponentAppearanceVariation<Counter, CounterAppearance> {
             appearance: appearance.positive
         )
     }
+    var secondary: AppearanceVariation<CounterAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
     var warning: AppearanceVariation<CounterAppearance> {
         return .init(
             name: "warning",
@@ -453,6 +494,7 @@ public extension ComponentAppearanceVariation<Counter, CounterAppearance> {
                 self.black,
                 self.negative,
                 self.positive,
+                self.secondary,
                 self.warning,
                 self.white,
             ],
@@ -496,6 +538,13 @@ private extension CounterAppearance {
         var appearance = self
         appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultPositive, highlightedColor: ColorToken.surfaceDefaultPositiveActive, hoveredColor: ColorToken.surfaceDefaultPositiveHover, selectedColor: ColorToken.surfaceDefaultPositive)
         appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        return appearance
+    }
+    
+    var secondary: CounterAppearance {
+        var appearance = self
+        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
+        appearance.textColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: ColorToken.textDefaultPrimary)
         return appearance
     }
     

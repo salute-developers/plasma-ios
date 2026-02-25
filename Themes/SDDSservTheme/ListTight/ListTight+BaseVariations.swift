@@ -76,6 +76,7 @@ public struct ListTightVariation {
 private extension ListAppearance {
     static var base: ListAppearance {
         var appearance = ListAppearance()
+        appearance.dividerAppearance = Divider.default.appearance
         return appearance
     }
 }

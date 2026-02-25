@@ -32,7 +32,7 @@ struct CheckboxSizeL: SelectionControlSizeConfiguration {
 }
 struct CheckboxSizeM: SelectionControlSizeConfiguration {
     var height = CGFloat(24.0)
-    var horizontalGap = CGFloat(12.0)
+    var horizontalGap = CGFloat(8.0)
     var lineWidth = CGFloat(2.0)
     var toggleCheckedIconHeight = CGFloat(6.0)
     var toggleCheckedIconWidth = CGFloat(9.0)

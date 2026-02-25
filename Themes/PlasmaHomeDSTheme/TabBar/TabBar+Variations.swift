@@ -15,13 +15,15 @@ public extension GeneralAppearanceVariation<TabBar, TabBarIslandAppearance, TabB
         size.contentPaddingStart = CGFloat(8.0)
         size.contentPaddingTop = CGFloat(2.0)
         size.itemSpacing = CGFloat(8.0)
-        size.paddingEnd = CGFloat(48.0)
-        size.paddingStart = CGFloat(48.0)
+        size.paddingEnd = CGFloat(8.0)
+        size.paddingStart = CGFloat(8.0)
         size.topShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxl.cornerRadius) as PathDrawer
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurRadius = CGFloat(50.0)
+        appearance.backgroundColor = ColorToken.surfaceDefaultSolidTertiary
         appearance.tabBarItemAppearance = TabBarItem.default.appearance
     
         return .init(

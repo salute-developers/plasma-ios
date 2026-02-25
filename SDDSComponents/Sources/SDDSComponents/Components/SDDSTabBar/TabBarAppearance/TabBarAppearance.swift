@@ -15,6 +15,8 @@ import SDDSThemeCore
 public struct TabBarAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken
+    public var backgroundBlurColor: ColorToken
+    public var backgroundBlurRadius: CGFloat
     public var shadow: ShadowToken
     public var dividerColor: ColorToken
     public var tabBarItemAppearance: TabBarItemAppearance
@@ -22,12 +24,16 @@ public struct TabBarAppearance: Hashable {
     
     public init(
         backgroundColor: ColorToken = .clearColor,
+        backgroundBlurColor: ColorToken = .clearColor,
+        backgroundBlurRadius: CGFloat = 0,
         shadow: ShadowToken = ShadowToken(),
         dividerColor: ColorToken = .clearColor,
         tabBarItemAppearance: TabBarItemAppearance = .defaultValue,
         size: TabBarSizeConfiguration = ZeroTabBarSize()
     ) {
         self.backgroundColor = backgroundColor
+        self.backgroundBlurColor = backgroundBlurColor
+        self.backgroundBlurRadius = backgroundBlurRadius
         self.shadow = shadow
         self.dividerColor = dividerColor
         self.tabBarItemAppearance = tabBarItemAppearance
@@ -37,6 +43,8 @@ public struct TabBarAppearance: Hashable {
     public static func == (lhs: TabBarAppearance, rhs: TabBarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
+        lhs.backgroundBlurColor == rhs.backgroundBlurColor &&
+        lhs.backgroundBlurRadius == rhs.backgroundBlurRadius &&
         lhs.dividerColor == rhs.dividerColor &&
         lhs.tabBarItemAppearance == rhs.tabBarItemAppearance
     }
