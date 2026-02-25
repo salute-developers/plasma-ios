@@ -13,6 +13,8 @@ struct TabBarIslandProps: MergeableConfiguration, Codable {
     var contentPaddingBottom: KeyValue<Double>?
     var itemSpacing: KeyValue<Double>?
     var backgroundColor: ColorKeyValue?
+    var backgroundBlurColor: ColorKeyValue?
+    var backgroundBlurRadius: KeyValue<Double>?
     var shadow: ShadowKeyValue?
     var tabBarItemStyle: ComponentStyleKeyValue<TabBarItemProps>?
 }

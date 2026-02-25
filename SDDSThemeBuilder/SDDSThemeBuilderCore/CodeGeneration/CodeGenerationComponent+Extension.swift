@@ -48,6 +48,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationCompact = "NotificationCompact"
     case rectSkeleton = "RectSkeleton"
     case textSkeleton = "TextSkeleton"
+    case textSkeletonBody = "TextSkeletonBody"
+    case textSkeletonDisplay = "TextSkeletonDisplay"
+    case textSkeletonHeader = "TextSkeletonHeader"
+    case textSkeletonText = "TextSkeletonText"
     case listItem = "ListItem"
     case listItemNormal = "ListItemNormal"
     case listItemTight = "ListItemTight"
@@ -60,6 +64,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case list = "List"
     case listNormal = "ListNormal"
     case listTight = "ListTight"
+    case listNumbered = "ListNumbered"
+    case listNumberedItem = "ListNumberedItem"
     case scrollbar = "ScrollBar"
     case accordionItemSolidActionStart = "AccordionItemSolidActionStart"
     case accordionItemSolidActionEnd = "AccordionItemSolidActionEnd"
@@ -159,8 +165,12 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .modal,
 //            .notificationLoose,
 //            .notificationCompact,
-//            .rectSkeleton,
-//            .textSkeleton,
+            .rectSkeleton,
+            .textSkeleton,
+            .textSkeletonBody,
+            .textSkeletonText,
+            .textSkeletonHeader,
+            .textSkeletonDisplay,
 //            .listItem,
 //            .listItemNormal,
 //            .listItemTight,
@@ -173,6 +183,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .list,
 //            .listNormal,
 //            .listTight,
+//            .listNumbered,
+//            .listNumberedItem,
 //            .scrollbar,
 //            .accordionItemSolidActionStart,
 //            .accordionItemSolidActionEnd,
@@ -287,13 +299,13 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ModalProps, ModalAppearance, ModalSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .notificationLoose, .notificationCompact:
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .dropdownMenuNormal, .dropdownMenuTight:
             GenerateComponentCommand<DropdownMenuProps, DropdownMenuAppearance, DropdownMenuSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             GenerateComponentCommand<AccordionItemProps, AccordionItemAppearance, AccordionItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -456,13 +468,13 @@ extension CodeGenerationComponent {
             "ModalAppearance"
         case .notificationLoose, .notificationCompact:
             "NotificationAppearance"
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             "SkeletonAppearance"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             "ListItemAppearance"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuAppearance"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             "ListAppearance"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemAppearance"
@@ -580,13 +592,13 @@ extension CodeGenerationComponent {
             "ModalSizeConfiguration"
         case .notificationLoose, .notificationCompact:
             "NotificationSizeConfiguration"
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             "SkeletonSizeConfiguration"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             "ListItemSizeConfiguration"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuSizeConfiguration"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             "ListSizeConfiguration"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemSizeConfiguration"
@@ -739,6 +751,14 @@ extension CodeGenerationComponent {
             "rect_skeleton_config.json"
         case .textSkeleton:
             "text_skeleton_config.json"
+        case .textSkeletonBody:
+            "text_skeleton_body_config.json"
+        case .textSkeletonDisplay:
+            "text_skeleton_display_config.json"
+        case .textSkeletonHeader:
+            "text_skeleton_header_config.json"
+        case .textSkeletonText:
+            "text_skeleton_text_config.json"
         case .listItemNormal:
             "list_item_normal_config.json"
         case .listItem:
@@ -763,6 +783,10 @@ extension CodeGenerationComponent {
             "list_normal_config.json"
         case .listTight:
             "list_tight_config.json"
+        case .listNumbered:
+            "list_numbered_config.json"
+        case .listNumberedItem:
+            "list_numbered_item_config.json"
         case .accordionItemSolidActionStart:
             "accordion_item_solid_action_start_config.json"
         case .accordionItemSolidActionEnd:

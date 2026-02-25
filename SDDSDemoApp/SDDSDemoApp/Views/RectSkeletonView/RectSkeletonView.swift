@@ -12,6 +12,7 @@ struct RectSkeletonView: View {
         List {
             Section {
                 SDDSRectSkeleton(appearance: viewModel.appearance)
+                    .id(skeletonThemeID)
                     .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     .frame(height: 64)
@@ -26,6 +27,10 @@ struct RectSkeletonView: View {
         
         .listStyle(.plain)
         .navigationTitle("RectSkeleton")
+    }
+    
+    private var skeletonThemeID: String {
+        "\(viewModel.theme.rawValue)-\(String(describing: viewModel.subtheme))"
     }
 }
 

@@ -5,7 +5,7 @@ import SDDSIcons
 import SDDSServTheme
 
 struct TextSkeletonView: View {
-    @ObservedObject private var viewModel: TextSkeletonViewModel = TextSkeletonViewModel()
+    @StateObject private var viewModel: TextSkeletonViewModel = TextSkeletonViewModel()
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -18,6 +18,7 @@ struct TextSkeletonView: View {
                     lineWidthProvider: viewModel.lineWidthProviderType.provider,
                     lineSpacing: viewModel.lineSpacing
                 )
+                .id(skeletonThemeID)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .background(
                     GeometryReader { geo in
@@ -47,6 +48,7 @@ struct TextSkeletonView: View {
                         Text("Text Hidden")
                     }
                 }
+                kindSelectionView
                 providerSelectionView
                 VariationsView(viewModel: viewModel)
             }
@@ -54,7 +56,24 @@ struct TextSkeletonView: View {
         .listStyle(.plain)
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         
-        .navigationTitle("TextSkeleton")
+        .navigationTitle(viewModel.title)
+    }
+    
+    @ViewBuilder
+    private var kindSelectionView: some View {
+        HStack {
+            Text("Kind")
+            Spacer()
+            Menu {
+                ForEach(TextSkeletonKind.allCases, id: \.self) { kind in
+                    Button(kind.title) {
+                        viewModel.selectedKind = kind
+                    }
+                }
+            } label: {
+                Text(viewModel.selectedKind.title)
+            }
+        }
     }
     
     @ViewBuilder
@@ -72,6 +91,10 @@ struct TextSkeletonView: View {
                 Text(viewModel.lineWidthProviderType.rawValue.capitalized)
             }
         }
+    }
+    
+    private var skeletonThemeID: String {
+        "\(viewModel.theme.rawValue)-\(String(describing: viewModel.subtheme))"
     }
 }
 

@@ -161,7 +161,12 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
     private var textContent: some View {
         titleAndText
             .alignmentGuide(.compactTitleAlignment) { d in
-                d[VerticalAlignment.top] + titleLineHeight / 2
+                switch size.contentBeforeArrangement {
+                case .top:
+                    d[VerticalAlignment.top] + titleLineHeight / 2
+                case .center:
+                    d[VerticalAlignment.center]
+                }
             }
     }
     

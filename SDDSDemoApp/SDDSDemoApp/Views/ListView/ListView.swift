@@ -15,9 +15,11 @@ struct ListView: View {
     var body: some View {
         VStack(spacing: 0) {
             SDDSList(
-                items: viewModel.items.map { item in
+                items: viewModel.items.enumerated().map { index, item in
                     SDDSListItem(
                         title: item.title,
+                        subtitle: viewModel.layout == .listNumbered ? "Subtitle \(index + 1)" : nil,
+                        counterText: viewModel.layout == .listNumbered ? "\(index + 1)" : nil,
                         rightContent: { EmptyView() },
                         appearance: viewModel.appearance.listItemAppearance,
                         onTap: {
@@ -25,6 +27,7 @@ struct ListView: View {
                         }
                     )
                 },
+                showDividers: viewModel.hasDivider,
                 appearance: viewModel.appearance
             )
             .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
@@ -33,9 +36,14 @@ struct ListView: View {
             List {
                 Section {
                     Picker("Layout", selection: $viewModel.layout) {
-                        ForEach(ListItemLayout.allCases, id: \.self) { layout in
+                        ForEach(ListItemLayout.listLayouts, id: \.self) { layout in
                             Text(layout.rawValue.capitalized).tag(layout)
                         }
+                    }
+                    HStack {
+                        Text("Has Divider")
+                        Spacer()
+                        Toggle("", isOn: $viewModel.hasDivider)
                     }
                     VariationsView(viewModel: viewModel)
                     BasicButton(

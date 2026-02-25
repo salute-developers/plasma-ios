@@ -16,6 +16,6 @@ struct OverlayAppearance: CodeGenerationAppearance {
             return
         }
         self.blurRadius = CGFloatContextBuilder(props.blurRadius?.value, nullify: true).context
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor, hasDefault: true).context
+        self.backgroundColor = FillStyleContextBuilder(props.backgroundColor, hasDefault: true).context
     }
 }
