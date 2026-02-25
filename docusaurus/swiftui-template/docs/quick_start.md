@@ -10,7 +10,6 @@ slug: /
 1. Добавить зависимости в Package.swift или через Xcode:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/salute-developers/plasma-ios", from: "{{ docs-artifactVersion }}"),
     .package(url: "https://github.com/salute-developers/plasma-ios", from: "{{ docs-artifactVersion }}")
 ]
 ```

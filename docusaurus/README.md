@@ -16,25 +16,25 @@
 
 #### Параметры
 
-- `ARTIFACT_ID` - ID артефакта (по умолчанию: `SDDSServTheme`)
+- `ARTIFACT_ID` - ID артефакта (по умолчанию: `sddsserv-theme`)
 - `VERSION` - Версия (по умолчанию: `1.0.0-test`)
 - `BRANCH` - Ветка (по умолчанию: `test`)
 - `TARGET_TYPE` - Тип цели (по умолчанию: `swiftui`)
-- `THEME_NAME` - Название темы (по умолчанию: `SDDS Serv Theme`)
-- `CODE_REFERENCE` - Ссылка на код (по умолчанию: `SDDSServTheme`)
+- `THEME_NAME` - Ключ темы (по умолчанию: `sddsserv`)
+- `CODE_REFERENCE` - Ссылка на код (по умолчанию: автоматически определяется для известных тем)
 - `DOCS_URL` - URL документации (по умолчанию: `https://plasma.sberdevices.ru`)
 
 #### Примеры
 
 ```bash
-# Для SDDSServTheme (по умолчанию)
+# Для sddsserv-theme (по умолчанию)
 ./docusaurus/generate-docs.sh
 
 # Для Styles Salute Theme
-./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftui "Styles Salute Theme" StylesSaluteTheme
+./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftui styles-salute
 
 # Для другой темы
-./docusaurus/generate-docs.sh my-theme 2.0.0 main swiftui "My Theme" MyTheme
+./docusaurus/generate-docs.sh my-theme 2.0.0 main swiftui custom-theme MyTheme
 ```
 
 ### 2. `test-docs.sh` - Тестирование документации
