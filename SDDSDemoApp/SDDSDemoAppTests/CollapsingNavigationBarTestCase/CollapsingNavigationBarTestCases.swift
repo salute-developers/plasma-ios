@@ -20,63 +20,38 @@ import SDDSIcons
 struct CollapsingNavBarTitleDescStartAbsoulte: View {
     let appearance: CollapsingNavigationBarAppearance
     
-    @ObservedObject var state: CollapsingNavigationBarState
-    
-    init(appearance: CollapsingNavigationBarAppearance) {
-        self.appearance = appearance
-        
-        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        collapsedState.heightOffset = collapsedState.heightOffsetLimit
-        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
-        self.state = collapsedState
-    }
-    
     var body: some View {
-        HStack {
-            SDDSCollapsingNavigationBar(
-                appearance: appearance,
-                expandedTitle: {
+        SDDSCollapsingNavigationBar(
+            appearance: appearance,
+            expandedTitle: {
+                HStack {
                     Text("Title")
-                        .opacity(1)
-                        .padding(.top, 56)
-                },
-                expandedDescription: {
-                    Text("Description").opacity(1)
-                },
-                collapsedTitle: {
-                    Text("Title").opacity(0)
-                },
-                collapsedDescription: {
-                    Text("Description").opacity(0)
-                },
-                expandedTextAlign: NavigationBarTextAlign.left,
-                collapsedTextAlign: NavigationBarTextAlign.left,
-                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
-                actionStart: {
-                    HStack(spacing: 12) {
-                        Button(action: {}) {
-                            Asset.search24.image
-                                .renderingMode(.template)
-                        }
-                        .buttonStyle(.plain)
-                        Button(action: {}) {
-                            Asset.plus24.image
-                                .renderingMode(.template)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                },
-                actionEnd: {
-                    Asset.dotsVerticalOutline24.image
-                        .renderingMode(.template)
-                },
-                state: state,
-                scrollBehavior: .enterAlways,
-                content: {
-                    Text("Content")
-                }
-            )
-        }
+                }.padding(.top, 120)
+            },
+            expandedDescription: {
+                Text("Description")
+            },
+            collapsedTitle: {
+                Text("Title").opacity(0)
+            },
+            collapsedDescription: {
+                Text("Description").opacity(0)
+            },
+            expandedTextAlign: NavigationBarTextAlign.left,
+            collapsedTextAlign: NavigationBarTextAlign.left,
+            centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+            actionStart: {
+                actionStartView
+            },
+            actionEnd: {
+                actionEndView
+            },
+            state: CollapsingNavigationBarState(),
+            scrollBehavior: .enterAlways,
+            content: {
+                Text("Content")
+            }
+        )
     }
 }
 
@@ -86,29 +61,18 @@ struct CollapsingNavBarTitleDescStartAbsoulte: View {
 struct CollapsingNavBarLongExpandedTitleDesc: View {
     let appearance: CollapsingNavigationBarAppearance
     
-    @ObservedObject var state: CollapsingNavigationBarState
-    
-    init(appearance: CollapsingNavigationBarAppearance) {
-        self.appearance = appearance
-        
-        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        collapsedState.heightOffset = collapsedState.heightOffsetLimit
-        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
-        self.state = collapsedState
-    }
-    
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
                 appearance: appearance,
                 expandedTitle: {
-                    Text(longTitle)
-                        .opacity(1)
-                        .padding(.top, 56)
-                    
+                    HStack {
+                        Text(longTitle)
+                    }
+                    .padding(.top, 120)
                 },
                 expandedDescription: {
-                    Text(longText).opacity(1)
+                    Text(longText)
                 },
                 collapsedTitle: {
                     Text("Title").opacity(0)
@@ -120,22 +84,25 @@ struct CollapsingNavBarLongExpandedTitleDesc: View {
                 collapsedTextAlign: NavigationBarTextAlign.center,
                 centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
                 actionStart: {
-                    EmptyView()
+                    HStack {
+                        actionStartView
+                            .frame(width: 160, alignment: .leading)
+                    }
+                    .padding(.bottom, 180)
                 },
                 actionEnd: {
-                    EmptyView()
+                    HStack {
+                        actionEndView
+                            .frame(width: 160, alignment: .trailing)
+                    }
+                    .padding(.bottom, 180)
                 },
-                state: state,
+                state: CollapsingNavigationBarState(),
                 scrollBehavior: .enterAlways,
                 content: {
                     Text("Content")
                 }
             )
-            HStack {
-                actionStartView
-                Spacer()
-                actionEndView
-            }
         }
     }
 }
@@ -146,36 +113,245 @@ struct CollapsingNavBarLongExpandedTitleDesc: View {
 struct CollapsingNavBarLongContent: View {
     let appearance: CollapsingNavigationBarAppearance
     
+    var body: some View {
+        
+        SDDSCollapsingNavigationBar(
+            appearance: appearance,
+            expandedTitle: {
+                HStack {
+                    Text("Title")
+                }.padding(.top, 120)
+            },
+            expandedDescription: {
+                
+                Text("Description")
+            },
+            collapsedTitle: {
+                Text("Title").opacity(0)
+            },
+            collapsedDescription: {
+                Text("Description").opacity(0)
+            },
+            expandedTextAlign: NavigationBarTextAlign.center,
+            collapsedTextAlign: NavigationBarTextAlign.right,
+            centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.relative,
+            actionStart: {
+                actionStartView
+            },
+            actionEnd: {
+                EmptyView()
+            },
+            state: CollapsingNavigationBarState(),
+            scrollBehavior: .enterAlways,
+            content: {
+                HStack {
+                    Text(longText)
+                }
+            }
+        )
+        
+    }
+}
+
+/**
+ PLASMA-T2493
+ */
+struct CollapsingNavBarNoActionStartRelative: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    var body: some View {
+        SDDSCollapsingNavigationBar(
+            appearance: appearance,
+            expandedTitle: {
+                Text("Title")
+                    .padding(.top, 120)
+            },
+            expandedDescription: {
+                Text("Description")
+            },
+            collapsedTitle: {
+                EmptyView()
+            },
+            collapsedDescription: {
+                EmptyView()
+            },
+            expandedTextAlign: NavigationBarTextAlign.left,
+            collapsedTextAlign: NavigationBarTextAlign.center,
+            centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.relative,
+            actionStart: {
+                actionStartView
+            },
+            actionEnd: {
+                actionEndView
+            },
+            state: CollapsingNavigationBarState(),
+            scrollBehavior: .exitUntilCollapsed,
+            onBackPressed: {},
+            content: {
+                Text("Content")
+            }
+        )
+    }
+}
+
+/**
+ PLASMA-T2496
+ */
+struct CollapsingNavigationBarLongDescriptionCollapsed: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
     @ObservedObject var state: CollapsingNavigationBarState
     
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
         
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
     
     var body: some View {
-        HStack {
+        ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
                 appearance: appearance,
                 expandedTitle: {
-                    Text("Title")
-                        .opacity(1)
-                        .padding(.top, 56)
-                },
-                expandedDescription: {
-                    Text("Description").opacity(1)
-                },
-                collapsedTitle: {
                     Text("Title").opacity(0)
                 },
-                collapsedDescription: {
+                expandedDescription: {
                     Text("Description").opacity(0)
                 },
-                expandedTextAlign: NavigationBarTextAlign.center,
+                collapsedTitle: {
+                    HStack {
+                        Text("")
+                            .opacity(1)
+                            .fixedSize()
+                    }
+                },
+                collapsedDescription: {
+                    VStack {
+                        Text("""
+There is no one who loves 
+pain itself, who seeks 
+after it, and wants to have it, 
+simply because it is pain...
+""")
+                        .opacity(1)
+                        .fixedSize()
+                    }
+                },
+                expandedTextAlign: NavigationBarTextAlign.left,
+                collapsedTextAlign: NavigationBarTextAlign.center,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    actionStartView
+                        .frame(width: 160, alignment: .leading)
+                },
+                actionEnd: {
+                    actionEndView
+                        .frame(width: 160, alignment: .trailing)
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
+        }
+    }
+}
+
+/**
+ PLASMA-T2515
+ */
+struct CollapsingNavigationBarNoActionStartAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    Text("Title").opacity(1)
+                },
+                collapsedDescription: {
+                    Text("Description").opacity(1)
+                },
+                expandedTextAlign: NavigationBarTextAlign.left,
+                collapsedTextAlign: NavigationBarTextAlign.left,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    EmptyView()
+                },
+                actionEnd: {
+                    actionEndView
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
+        }
+    }
+}
+
+/**
+ PLASMA-T2516
+ */
+struct CollapsingNavigationBarCollapsedTextEndAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    Text("Title").opacity(1)
+                },
+                collapsedDescription: {
+                    Text("Description").opacity(1)
+                },
+                expandedTextAlign: NavigationBarTextAlign.left,
                 collapsedTextAlign: NavigationBarTextAlign.right,
                 centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
                 actionStart: {
@@ -186,14 +362,237 @@ struct CollapsingNavBarLongContent: View {
                 },
                 state: state,
                 scrollBehavior: .enterAlways,
+                onBackPressed: {},
                 content: {
-                    Text(longText)
+                    Text("Content")
                 }
             )
-            HStack {
-                actionStartView
-                Spacer()
-            }
+        }
+    }
+}
+
+/**
+ PLASMA-T2517
+ */
+struct CollapsingNavigationBarEndAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    Text("Title").opacity(1)
+                },
+                collapsedDescription: {
+                    Text("Description").opacity(1)
+                },
+                expandedTextAlign: NavigationBarTextAlign.right,
+                collapsedTextAlign: NavigationBarTextAlign.right,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    EmptyView()
+                },
+                actionEnd: {
+                    actionEndView
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
+        }
+    }
+}
+
+/**
+ PLASMA-T2518
+ */
+struct CollapsingNavigationBarStartAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    Text("Title").opacity(1)
+                },
+                collapsedDescription: {
+                    Text("Description").opacity(1)
+                },
+                expandedTextAlign: NavigationBarTextAlign.left,
+                collapsedTextAlign: NavigationBarTextAlign.left,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    actionStartView
+                },
+                actionEnd: {
+                    actionEndView
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
+        }
+    }
+}
+
+/**
+ PLASMA-T2519
+ */
+struct CollapsingNavigationBarCollapsedCenterAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    HStack {
+                        Text("Title")
+                            .opacity(1)
+                            .fixedSize()
+                    }
+                },
+                collapsedDescription: {
+                    HStack {
+                        Text("Description")
+                            .opacity(1)
+                            .fixedSize()
+                    }
+                },
+                expandedTextAlign: NavigationBarTextAlign.center,
+                collapsedTextAlign: NavigationBarTextAlign.center,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    actionStartView
+                        .frame(minWidth: 160, alignment: .leading)
+                },
+                actionEnd: {
+                    actionEndView
+                        .frame(minWidth: 160, alignment: .trailing)
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
+        }
+    }
+}
+
+/**
+ PLASMA-T2520
+ */
+struct CollapsingNavigationBarCollapsedEndAbsolute: View {
+    let appearance: CollapsingNavigationBarAppearance
+    
+    @ObservedObject var state: CollapsingNavigationBarState
+    
+    init(appearance: CollapsingNavigationBarAppearance) {
+        self.appearance = appearance
+        
+        let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
+        
+        collapsedState.heightOffset = collapsedState.heightOffsetLimit
+        collapsedState.contentOffset = -collapsedState.heightOffsetLimit
+        self.state = collapsedState
+    }
+    
+    var body: some View {
+        ZStack(alignment: .top) {
+            SDDSCollapsingNavigationBar(
+                appearance: appearance,
+                expandedTitle: {
+                    Text("Title").opacity(0)
+                },
+                expandedDescription: {
+                    Text("Description").opacity(0)
+                },
+                collapsedTitle: {
+                    Text("Title").opacity(1)
+                },
+                collapsedDescription: {
+                    Text("Description").opacity(1)
+                },
+                expandedTextAlign: NavigationBarTextAlign.left,
+                collapsedTextAlign: NavigationBarTextAlign.right,
+                centerAlignmentStrategy: CollapsingNavigationBarCenterAlignmentStrategy.absolute,
+                actionStart: {
+                    actionStartView
+                },
+                actionEnd: {
+                    actionEndView
+                },
+                state: state,
+                scrollBehavior: .enterAlways,
+                onBackPressed: {},
+                content: {
+                    Text("Content")
+                }
+            )
         }
     }
 }
@@ -211,7 +610,6 @@ private var actionStartView: some View {
         }
         .buttonStyle(.plain)
     }
-    .frame(height: 56, alignment: .top)
     .padding(.leading)
 }
 
@@ -221,7 +619,6 @@ private var actionEndView: some View {
             .renderingMode(.template)
     }
     .buttonStyle(.plain)
-    .frame(height: 56, alignment: .top)
     .padding(.trailing)
 }
 
@@ -294,4 +691,3 @@ struct CollapsingNavBarCollapsed: View {
         )
     }
 }
-
