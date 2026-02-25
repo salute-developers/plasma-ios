@@ -18,11 +18,15 @@ title: TextField
 | `disabled` | `Bool` | Флаг, указывающий, отключено ли поле |
 | `readOnly` | `Bool` | Флаг, указывающий, включено ли поле только на режим чтения |
 | `divider` | `Bool` | Флаг, указывающий, показывать ли линию разделителя |
+| `secureEntry` | `Bool` | Включает маскировку введенного текста (режим пароля) |
+| `keyboardType` | `UIKeyboardType` | Тип системной клавиатуры для ввода (например, `.default`, `.emailAddress`, `.numberPad`) |
 | `layout` | `TextFieldLayout` | Макет текстового поля |
 | `accessibility` | `TextFieldAccessibility` | Параметры доступности |
 | `iconViewProvider` | `ViewProvider?` | Поставщик левой иконки |
 | `iconActionViewProvider` | `ViewProvider?` | Поставщик правой иконки действия |
 | `appearance` | `TextFieldAppearance?` | Параметры внешнего вида текстового поля |
+
+> Примечание: если используется `mask`, тип клавиатуры принудительно остается `.numberPad`, а `secureEntry` игнорируется.
 
 ## Окружение
 - `textFieldAppearance`: Стандартные настройки внешнего вида текстового поля
@@ -48,3 +52,9 @@ title: TextField
 ```swift
 // @sample: SDDSComponentsFixtures/Samples/TextField/SDDSTextField_Simple.swift
 ``` 
+
+### Поле пароля с email-клавиатурой
+
+```swift
+// @sample: SDDSComponentsFixtures/Samples/TextField/SDDSTextField_SecureEntryKeyboardType.swift
+```

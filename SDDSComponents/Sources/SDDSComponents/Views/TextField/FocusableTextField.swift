@@ -12,6 +12,7 @@ struct FocusableTextField: UIViewRepresentable {
     let mask: TextFieldMask?
     let onShouldChange: ((String) -> (Bool))?
     let keyboardType: UIKeyboardType
+    let secureEntry: Bool
     let enableSelection: Bool
     let onEditingChanged: ((Bool) -> Void)?
     let onMaskComplete: ((Bool) -> Void)?
@@ -25,6 +26,7 @@ struct FocusableTextField: UIViewRepresentable {
          readOnly: Bool,
          mask: TextFieldMask? = nil,
          keyboardType: UIKeyboardType = .default,
+         secureEntry: Bool = false,
          enableSelection: Bool = true,
          onShouldChange: ((String) -> (Bool))? = nil,
          onEditingChanged: ( (Bool) -> Void)? = nil,
@@ -39,6 +41,7 @@ struct FocusableTextField: UIViewRepresentable {
         self.readOnly = readOnly
         self.mask = mask
         self.keyboardType = keyboardType
+        self.secureEntry = secureEntry
         self.enableSelection = enableSelection
         self.onShouldChange = onShouldChange
         self.onEditingChanged = onEditingChanged
@@ -140,7 +143,6 @@ struct FocusableTextField: UIViewRepresentable {
         
         let textField = uiTextField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = mask != nil ? .numberPad : keyboardType
         
         // Настройка маски, если она указана
         if let mask = mask {
@@ -216,6 +218,17 @@ struct FocusableTextField: UIViewRepresentable {
 
     private func configure(_ textField: UITextField) {
         textField.textColor = UIColor(textColor)
+        let resolvedKeyboardType: UIKeyboardType = mask != nil ? .numberPad : keyboardType
+        let resolvedSecureEntry: Bool = mask == nil ? secureEntry : false
+        if textField.keyboardType != resolvedKeyboardType {
+            textField.keyboardType = resolvedKeyboardType
+            if textField.isFirstResponder {
+                textField.reloadInputViews()
+            }
+        }
+        if textField.isSecureTextEntry != resolvedSecureEntry {
+            textField.isSecureTextEntry = resolvedSecureEntry
+        }
         
         let nsTextAlignment: NSTextAlignment
         switch textAlignment {
@@ -230,6 +243,15 @@ struct FocusableTextField: UIViewRepresentable {
         textField.textAlignment = nsTextAlignment
         textField.tintColor = UIColor(cursorColor)
         textField.font = typography.uiFont
+        textField.adjustsFontSizeToFitWidth = false
+
+        if resolvedSecureEntry {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineBreakMode = .byClipping
+            var attributes = textField.defaultTextAttributes
+            attributes[.paragraphStyle] = paragraphStyle
+            textField.defaultTextAttributes = attributes
+        }
     }
 
 }

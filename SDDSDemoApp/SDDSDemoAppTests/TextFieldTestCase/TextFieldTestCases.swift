@@ -697,6 +697,37 @@ struct TextFieldInputText: View {
 }
 
 /**
+ Secure entry width regression case
+ */
+struct TextFieldSecureEntryInputText: View {
+    var appearance: TextFieldAppearance
+
+    @State private var value = TextFieldValue.single("veryLongSecureValue1234567890")
+    var body: some View {
+        SDDSTextField(
+            value: $value,
+            title: "Label",
+            optionalTitle: "Optional",
+            placeholder: "Placeholder",
+            caption: "",
+            textBefore: "",
+            textAfter: "",
+            disabled: false,
+            readOnly: false,
+            required: false,
+            divider: false,
+            secureEntry: true,
+            appearance: appearance,
+            layout: .default,
+            iconContent: .init {
+                Image.image("textFieldIconTest")
+            },
+            actionContent: .init {}
+        )
+    }
+}
+
+/**
  PLASMA-T1942
  */
 struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
