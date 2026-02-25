@@ -59,7 +59,7 @@ func runSnapshotTest(
             return modeString.lowercased() == "record" ? .record : .verify
         }
         // По умолчанию используем .verify
-        return .record
+        return .verify
     }()
     
     for (themeName, scheme) in SnapshotTestConfig.testTheme {
