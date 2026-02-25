@@ -12,6 +12,8 @@ public struct TextFieldClear<IconContent: View, ActionContent: View>: View {
     public let disabled: Bool
     public let readOnly: Bool
     public let divider: Bool
+    public let secureEntry: Bool
+    public let keyboardType: UIKeyboardType
     private let _appearance: TextFieldAppearance?
     public let accessibility: TextFieldAccessibility
     public let actionContent: Action<ActionContent>
@@ -29,6 +31,8 @@ public struct TextFieldClear<IconContent: View, ActionContent: View>: View {
         readOnly: Bool = false,
         required: Bool = false,
         divider: Bool = true,
+        secureEntry: Bool = false,
+        keyboardType: UIKeyboardType = .default,
         appearance: TextFieldAppearance? = nil,
         layout: TextFieldLayout = .default,
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
@@ -42,6 +46,8 @@ public struct TextFieldClear<IconContent: View, ActionContent: View>: View {
         self.disabled = disabled
         self.readOnly = readOnly
         self.divider = divider
+        self.secureEntry = secureEntry
+        self.keyboardType = keyboardType
         self.title = title
         self.optionalTitle = optionalTitle
         self.placeholder = placeholder
@@ -63,6 +69,8 @@ public struct TextFieldClear<IconContent: View, ActionContent: View>: View {
             disabled: disabled,
             readOnly: readOnly,
             divider: divider,
+            secureEntry: secureEntry,
+            keyboardType: keyboardType,
             appearance: _appearance,
             layout: .clear,
             accessibility: accessibility,

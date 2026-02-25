@@ -12,6 +12,8 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
     let readOnly: Bool
     let mask: TextFieldMask?
     let maskDisplayMode: MaskDisplayMode
+    let secureEntry: Bool
+    let keyboardType: UIKeyboardType
     @ViewBuilder var placeholderBeforeContent: () -> PlaceholderBeforeContent
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     @ViewBuilder var placeholderAfterContent: () -> PlaceholderAfterContent
@@ -40,6 +42,8 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
                     typography: textTypography,
                     readOnly: readOnly,
                     mask: mask,
+                    keyboardType: keyboardType,
+                    secureEntry: secureEntry,
                     onEditingChanged: onEditingChanged,
                     onMaskComplete: onMaskComplete
                 )
