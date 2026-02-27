@@ -72,6 +72,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case spinner = "Spinner"
     case loader = "Loader"
     case codeField = "CodeField"
+    case editable = "Editable"
     case tabBarItemSolid = "TabBarItemSolid"
     case tabBarItem = "TabBarItem"
     case tabBarItemClear = "TabBarItemClear"
@@ -206,11 +207,16 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .drawerCloseNone,
 //            .drawerCloseOuter
             .toolbarHorizontal,
-            .toolbarVertical
+            .toolbarVertical,
 //            .autocompleteTight,
 //            .autocompleteNormal,
 //            .collapsingNavigationBarInternalPage,
-//            .collapsingNavigationBarMainPage
+//            .collapsingNavigationBarMainPage,
+//            .autocompleteTight,
+//            .autocompleteNormal,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage,
+            .editable
         ]
     }
     
@@ -301,6 +307,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<LoaderProps, LoaderAppearance, LoaderSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeField:
             GenerateComponentCommand<CodeFieldProps, CodeFieldAppearance, CodeFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .editable:
+            GenerateComponentCommand<EditableProps, EditableAppearance, EditableSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemSolid, .tabBarItem:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemClear:
@@ -468,6 +476,8 @@ extension CodeGenerationComponent {
             "LoaderAppearance"
         case .codeField:
             "CodeFieldAppearance"
+        case .editable:
+            "EditableAppearance"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemAppearance"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
@@ -590,6 +600,8 @@ extension CodeGenerationComponent {
             "LoaderSizeConfiguration"
         case .codeField:
             "CodeFieldSizeConfiguration"
+        case .editable:
+            "EditableSizeConfiguration"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemSizeConfiguration"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
@@ -775,6 +787,8 @@ extension CodeGenerationComponent {
             "loader_config.json"
         case .codeField:
             "code_field_config.json"
+        case .editable:
+            "editable_config.json"
         case .tabBarItemSolid:
             "tab_bar_item_solid_config.json"
         case .tabBarItem:

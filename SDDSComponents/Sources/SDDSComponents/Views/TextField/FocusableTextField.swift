@@ -206,7 +206,7 @@ struct FocusableTextField: UIViewRepresentable {
         configure(textField)
 
         DispatchQueue.main.async {
-            if isFocused  {
+            if isFocused, !readOnly {
                 if !textField.isFirstResponder {
                     textField.becomeFirstResponder()
                 }
@@ -252,6 +252,7 @@ struct FocusableTextField: UIViewRepresentable {
             attributes[.paragraphStyle] = paragraphStyle
             textField.defaultTextAttributes = attributes
         }
+        textField.isUserInteractionEnabled = !readOnly
     }
 
 }

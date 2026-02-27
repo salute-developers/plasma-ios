@@ -171,6 +171,19 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var editableVariations: [Variation<EditableAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Editable.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Editable.all
+        }
+    }
+    
     var avatarVariations: [Variation<AvatarAppearance>] {
         switch self {
         case .sdddsServTheme:
