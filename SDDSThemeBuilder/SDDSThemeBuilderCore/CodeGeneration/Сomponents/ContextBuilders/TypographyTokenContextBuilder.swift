@@ -16,9 +16,12 @@ final class TypographyTokenContextBuilder: CodeGenerationContextBuilder {
             return nil
         }
         let oneSizeString = "oneSize"
-        let sizeString: String
+        var sizeString: String
         if id == id?.baseKey {
             sizeString = id ?? oneSizeString
+            if sizeString.contains("-") {
+                sizeString = sizeString.camelCase
+            }
         } else {
             sizeString = oneSizeString
         }
