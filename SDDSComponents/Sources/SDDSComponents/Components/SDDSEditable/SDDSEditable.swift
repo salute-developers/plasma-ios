@@ -128,6 +128,7 @@ public struct SDDSEditable<IconContent: View>: View {
                 TextEditor(text: $text)
                     .focused($isMultilineTextEditorFocused)
                     .font(Font(typography.uiFont))
+                    .multilineTextAlignment(textAlign)
                     .foregroundColor(textColor.color(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
                     .hideTextEditorScrollBackgroundIfAvailable()
                     .background(Color.clear)
