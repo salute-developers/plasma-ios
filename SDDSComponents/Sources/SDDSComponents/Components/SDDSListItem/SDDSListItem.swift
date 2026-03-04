@@ -125,8 +125,7 @@ public struct SDDSListItem<RightContent: View>: View {
                 if rightContentEnabled {
                     disclosure
                         .tint(appearance.disclosureIconColor.color(for: colorScheme, subtheme: subtheme))
-                        .padding(.leading, appearance.size.contentPaddingStart)
-                        .padding(.trailing, appearance.size.contentPaddingEnd)
+                        .padding(.leading, appearance.size.contentPaddingEnd)
                 }
             }
             .padding(.leading, appearance.size.paddingStart)
