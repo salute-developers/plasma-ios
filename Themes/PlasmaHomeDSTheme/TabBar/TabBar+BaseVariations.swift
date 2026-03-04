@@ -8,7 +8,9 @@ public struct TabBar {
     public static var `default`: ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
         var appearance = TabBarIslandAppearance.base
         appearance.size = TabBarSize.`default`
-        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurRadius = CGFloat(50.0)
+        appearance.backgroundColor = ColorToken.surfaceDefaultSolidTertiary
         appearance.tabBarItemAppearance = TabBarItem.default.appearance
 
         return .init(
@@ -29,7 +31,9 @@ public struct TabBarVariation {
 private extension TabBarIslandAppearance {
     static var base: TabBarIslandAppearance {
         var appearance = TabBarIslandAppearance()
-        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurColor = ColorToken.surfaceDefaultTransparentSecondary
+        appearance.backgroundBlurRadius = CGFloat(50.0)
+        appearance.backgroundColor = ColorToken.surfaceDefaultSolidTertiary
         appearance.tabBarItemAppearance = TabBarItem.default.appearance
         return appearance
     }

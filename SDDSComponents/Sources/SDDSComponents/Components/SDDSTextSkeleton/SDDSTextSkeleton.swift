@@ -23,7 +23,7 @@ import SwiftUI
  SDDSTextSkeleton(
      appearance: SkeletonAppearance(
          shape: CornerRadiusDrawer(cornerRadius: 4),
-         gradient: .skeletonGradient,
+         gradient: .gradient(.skeletonGradient),
          duration: 2000
      ),
      lineCount: 3,
@@ -68,20 +68,27 @@ public struct SDDSTextSkeleton: View {
                     let width = geometryWidth * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
                     
                     SDDSRectSkeleton(appearance: appearance)
-                        .frame(width: width, height: textTypography.lineHeight)
+                        .frame(width: width, height: resolvedLineHeight)
                         .clipped()
-                        .id(UUID())
                         .environment(\.subtheme, subtheme)
                 }
-                .frame(height: textTypography.lineHeight)
+                .frame(height: resolvedLineHeight)
             }
         }
     }
     
     private var totalLineSpacing: CGFloat {
-        let font = textTypography.uiFont
+        let font = effectiveTypography.uiFont
         let result = font.leading + lineSpacing
 
         return result
+    }
+    
+    private var effectiveTypography: TypographyToken {
+        appearance.textTypography.typography(with: appearance.size) ?? textTypography
+    }
+    
+    private var resolvedLineHeight: CGFloat {
+        max(effectiveTypography.lineHeight, effectiveTypography.uiFont.lineHeight)
     }
 }

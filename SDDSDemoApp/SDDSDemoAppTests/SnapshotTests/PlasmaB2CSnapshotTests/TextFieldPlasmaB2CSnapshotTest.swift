@@ -105,6 +105,12 @@ final class TextFieldPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
         let appearance = TextField.l.innerLabel.warning.appearance
         try await runSnapshotTest(view: TextFieldInputText(appearance: appearance))
     }
+
+    @MainActor
+    func testTextFieldSecureEntryInputTextPlasmaB2C() async throws {
+        let appearance = TextField.l.innerLabel.warning.appearance
+        try await runSnapshotTest(view: TextFieldSecureEntryInputText(appearance: appearance))
+    }
     
     @MainActor
     func testTextFieldSizeXlDefaultOptionalInnerLabelPlasmaB2C() async throws {

@@ -89,7 +89,7 @@ public struct SDDSTabBar: View {
                 .frame(height: safeAreaInsets.bottom)
         }
         .frame(maxWidth: .infinity)
-        .background(backgroundColor.color(for: colorScheme, subtheme: subtheme))
+        .background(backgroundLayers)
         .shape(pathDrawer: topPathDrawer)
         .readSize { size in
             self.contentSize = size
@@ -101,6 +101,14 @@ public struct SDDSTabBar: View {
                 .shape(pathDrawer: topPathDrawer)
         }
         .shadow(appearance.shadow)
+    }
+    
+    // MARK: - Background Layers
+    
+    @ViewBuilder
+    private var backgroundLayers: some View {
+        Rectangle()
+            .fill(backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
     
     // MARK: - Computed Properties

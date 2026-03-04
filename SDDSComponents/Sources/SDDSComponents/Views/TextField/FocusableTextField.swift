@@ -12,6 +12,7 @@ struct FocusableTextField: UIViewRepresentable {
     let mask: TextFieldMask?
     let onShouldChange: ((String) -> (Bool))?
     let keyboardType: UIKeyboardType
+    let secureEntry: Bool
     let enableSelection: Bool
     let onEditingChanged: ((Bool) -> Void)?
     let onMaskComplete: ((Bool) -> Void)?
@@ -25,6 +26,7 @@ struct FocusableTextField: UIViewRepresentable {
          readOnly: Bool,
          mask: TextFieldMask? = nil,
          keyboardType: UIKeyboardType = .default,
+         secureEntry: Bool = false,
          enableSelection: Bool = true,
          onShouldChange: ((String) -> (Bool))? = nil,
          onEditingChanged: ( (Bool) -> Void)? = nil,
@@ -39,6 +41,7 @@ struct FocusableTextField: UIViewRepresentable {
         self.readOnly = readOnly
         self.mask = mask
         self.keyboardType = keyboardType
+        self.secureEntry = secureEntry
         self.enableSelection = enableSelection
         self.onShouldChange = onShouldChange
         self.onEditingChanged = onEditingChanged
@@ -70,6 +73,10 @@ struct FocusableTextField: UIViewRepresentable {
                 listener.primaryMaskFormat = newFormat
             }
         }
+        
+        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+            !parent.readOnly
+        }
 
         func textFieldDidChangeSelection(_ textField: UITextField) {
             guard parent.enableSelection else {
@@ -84,9 +91,13 @@ struct FocusableTextField: UIViewRepresentable {
         }
         
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard !parent.readOnly else {
+                return false
+            }
+            
             // Если маска используется, всегда возвращаем true
             // MaskedTextInputListener сам контролирует логику изменений
-            if let listener = maskListener, !parent.readOnly {
+            if let listener = maskListener {
                 if let mask = parent.mask, mask.isDynamic {
                     let currentText = textField.text ?? ""
                     let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
@@ -140,7 +151,6 @@ struct FocusableTextField: UIViewRepresentable {
         
         let textField = uiTextField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = mask != nil ? .numberPad : keyboardType
         
         // Настройка маски, если она указана
         if let mask = mask {
@@ -204,7 +214,7 @@ struct FocusableTextField: UIViewRepresentable {
         configure(textField)
 
         DispatchQueue.main.async {
-            if isFocused  {
+            if isFocused, !readOnly {
                 if !textField.isFirstResponder {
                     textField.becomeFirstResponder()
                 }
@@ -216,6 +226,17 @@ struct FocusableTextField: UIViewRepresentable {
 
     private func configure(_ textField: UITextField) {
         textField.textColor = UIColor(textColor)
+        let resolvedKeyboardType: UIKeyboardType = mask != nil ? .numberPad : keyboardType
+        let resolvedSecureEntry: Bool = mask == nil ? secureEntry : false
+        if textField.keyboardType != resolvedKeyboardType {
+            textField.keyboardType = resolvedKeyboardType
+            if textField.isFirstResponder {
+                textField.reloadInputViews()
+            }
+        }
+        if textField.isSecureTextEntry != resolvedSecureEntry {
+            textField.isSecureTextEntry = resolvedSecureEntry
+        }
         
         let nsTextAlignment: NSTextAlignment
         switch textAlignment {
@@ -228,8 +249,19 @@ struct FocusableTextField: UIViewRepresentable {
         }
         
         textField.textAlignment = nsTextAlignment
-        textField.tintColor = UIColor(cursorColor)
+        textField.tintColor = readOnly ? .clear : UIColor(cursorColor)
         textField.font = typography.uiFont
+        textField.adjustsFontSizeToFitWidth = false
+
+        if resolvedSecureEntry {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineBreakMode = .byClipping
+            var attributes = textField.defaultTextAttributes
+            attributes[.paragraphStyle] = paragraphStyle
+            textField.defaultTextAttributes = attributes
+        }
+
+        textField.isUserInteractionEnabled = !readOnly
     }
 
 }

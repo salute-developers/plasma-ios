@@ -6,6 +6,16 @@ public enum ListItemLayout: String, CaseIterable {
     case listItemNormal
     case listItemTight
     case listItem
+    case listNumbered
+    case listNumberedItem
+    
+    static var listLayouts: [ListItemLayout] {
+        [.listItemNormal, .listItemTight, .listItem, .listNumbered]
+    }
+    
+    static var itemLayouts: [ListItemLayout] {
+        [.listItemNormal, .listItemTight, .listItem, .listNumberedItem]
+    }
 }
 
 final class ListItemVariationProvider: VariationProvider {
@@ -27,6 +37,10 @@ final class ListItemVariationProvider: VariationProvider {
             theme.listItemTightVariations
         case .listItem:
             theme.listItemVariations
+        case .listNumbered:
+            theme.listItemVariations
+        case .listNumberedItem:
+            theme.listNumberedItemVariations
         }
     }
     

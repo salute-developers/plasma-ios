@@ -34,7 +34,7 @@ struct CellView: View {
     
     private var cell: some View {
         SDDSCell(
-            appearance: Cell.m.appearance,
+            appearance: viewModel.appearance,
             alignment: viewModel.alignment,
             label: viewModel.label,
             title: viewModel.title,
@@ -44,6 +44,7 @@ struct CellView: View {
             leftContent: { leftContent },
             rightContent: { rightContent }
         )
+        .id(cellRecreationID)
     }
     
     private var variations: some View {
@@ -136,6 +137,26 @@ struct CellView: View {
     
     private var rightContent: some View {
         addContent(type: viewModel.rightContentType)
+    }
+    
+    private var cellRecreationID: String {
+        [
+            viewModel.theme.rawValue,
+            String(describing: viewModel.subtheme),
+            viewModel.variation?.name ?? "",
+            viewModel.style?.name ?? "",
+            viewModel.alignment.rawValue,
+            viewModel.label,
+            viewModel.title,
+            viewModel.subtitle,
+            viewModel.leftContentType.rawValue,
+            viewModel.rightContentType.rawValue,
+            viewModel.disclosureEnabled ? "1" : "0",
+            viewModel.disclosureText,
+            viewModel.isOn ? "1" : "0",
+            viewModel.isSelected ? "1" : "0",
+            String(describing: viewModel.state)
+        ].joined(separator: "|")
     }
     
     @ViewBuilder

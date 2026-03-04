@@ -63,7 +63,7 @@ public extension GeneralAppearanceVariation<Checkbox, CheckboxAppearance, Checkb
     var m: ComponentAppearanceVariation<Checkbox, CheckboxAppearance> {
         var size =  CheckboxAnySize(size: appearance.size)
         size.height = CGFloat(24.0)
-        size.horizontalGap = CGFloat(12.0)
+        size.horizontalGap = CGFloat(8.0)
         size.lineWidth = CGFloat(2.0)
         size.toggleCheckedIconHeight = CGFloat(6.0)
         size.toggleCheckedIconWidth = CGFloat(9.0)

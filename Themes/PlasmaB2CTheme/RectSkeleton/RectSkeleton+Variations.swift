@@ -2,13 +2,14 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, RectSkeletonVariation.Default> {
     
     var `default`: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
+        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonGradient)
         
         return .init(
             name: "`default`",
@@ -17,7 +18,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
     }
     var lighter: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonDeepGradient
+        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient)
         
         return .init(
             name: "lighter",
@@ -69,13 +70,13 @@ private extension SkeletonAppearance {
     
     var `default`: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonGradient
+        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonGradient)
         return appearance
     }
     
     var lighter: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = GradientToken.surfaceDefaultSkeletonDeepGradient
+        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient)
         return appearance
     }
     

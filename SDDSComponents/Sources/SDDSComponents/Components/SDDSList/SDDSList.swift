@@ -111,7 +111,7 @@ public struct SDDSList: View {
     }
     
     public var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: appearance.size.gap) {
             ForEach(items.indices, id: \.self) { index in
                 items[index]
                     .id("list-item-\(index)-\(items.count)")
@@ -127,8 +127,13 @@ public struct SDDSList: View {
                 lastItem
             }
         }
+        .padding(.leading, appearance.size.paddingStart)
+        .padding(.trailing, appearance.size.paddingEnd)
+        .padding(.top, appearance.size.paddingTop)
+        .padding(.bottom, appearance.size.paddingBottom)
         .id("SDDSList-\(items.count)")
-        .background(Color.clear)
+        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+        .shape(pathDrawer: appearance.size.shape)
         .background(
             GeometryReader { contentGeometry in
                 Color.clear
@@ -163,8 +168,10 @@ public struct SDDSList: View {
                     let adjustedY = tapLocation.y + scrollOffset
                     let itemHeight = appearance.listItemAppearance.size.height
                     let dividerHeight: CGFloat = showDividers ? appearance.dividerAppearance.thickness : 0
+                    let topPadding = appearance.size.paddingTop
+                    let bottomPadding = appearance.size.paddingBottom
                     
-                    var currentY: CGFloat = 0
+                    var currentY: CGFloat = topPadding
                     for index in 0..<items.count {
                         let itemTop = currentY
                         let itemBottom = currentY + itemHeight
@@ -177,6 +184,13 @@ public struct SDDSList: View {
                         if index < items.count - 1 && showDividers {
                             currentY += dividerHeight
                         }
+                        if index < items.count - 1 {
+                            currentY += appearance.size.gap
+                        }
+                    }
+                    
+                    if adjustedY > currentY + bottomPadding {
+                        return
                     }
                 }
         )

@@ -17,9 +17,9 @@ final class OverlayViewModel: ComponentViewModel<OverlayVariationProvider> {
         didSet {
             switch hasBackgroundColor {
             case true:
-                appearance.backgroundColor = .overlayDefaultSoft
+                appearance.backgroundColor = .color(.overlayDefaultSoft)
             case false:
-                appearance.backgroundColor = .clearColor
+                appearance.backgroundColor = .color(.clearColor)
             }
         }
     }

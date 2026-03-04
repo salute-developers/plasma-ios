@@ -20,7 +20,7 @@ final class RectSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     func testRectSkeletonTestCasePlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 8),
-            gradient: .surfaceDefaultSkeletonGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonGradient),
             duration: 2000)
         try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
     }
@@ -29,7 +29,7 @@ final class RectSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
     func testRectSkeletonLighterPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
             shape: CornerRadiusDrawer(cornerRadius: 8),
-            gradient: .surfaceDefaultSkeletonDeepGradient,
+            gradient: .gradient(.surfaceDefaultSkeletonDeepGradient),
             duration: 2000)
         try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
     }

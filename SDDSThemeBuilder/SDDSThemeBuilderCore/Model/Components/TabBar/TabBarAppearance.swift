@@ -5,6 +5,8 @@ struct TabBarAppearance: CodeGenerationAppearance {
     typealias Props = TabBarProps
     
     var backgroundColor: String?
+    var backgroundBlurColor: String?
+    var backgroundBlurRadius: String?
     var shadow: String?
     var dividerColor: String?
     var tabBarItemAppearance: String?
@@ -19,6 +21,8 @@ struct TabBarAppearance: CodeGenerationAppearance {
         }
         
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backgroundBlurColor = ColorTokenContextBuilder(props.backgroundBlurColor).context
+        self.backgroundBlurRadius = CGFloatContextBuilder(props.backgroundBlurRadius?.value, nullify: true).context
         self.shadow = ShadowTokenContextBuilder(shadow: props.shadow).context
         self.dividerColor = ColorTokenContextBuilder(props.dividerColor).context
         

@@ -2756,6 +2756,27 @@ public extension ColorToken {
             lightColor: Color(UIColor(hex: "#B1FBBFFF"))
         )
     }
+    static var surfaceDefaultReadOnly: Self {
+        Self(
+            id: Colors.surfaceDefaultReadOnly.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF05")),
+            lightColor: Color(UIColor(hex: "#08080803"))
+        )
+    }
+    static var surfaceDefaultReadOnlyActive: Self {
+        Self(
+            id: Colors.surfaceDefaultReadOnlyActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF00")),
+            lightColor: Color(UIColor(hex: "#08080808"))
+        )
+    }
+    static var surfaceDefaultReadOnlyHover: Self {
+        Self(
+            id: Colors.surfaceDefaultReadOnlyHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF0F")),
+            lightColor: Color(UIColor(hex: "#08080805"))
+        )
+    }
     static var surfaceDefaultSolidCard: Self {
         Self(
             id: Colors.surfaceDefaultSolidCard.rawValue,
@@ -3344,6 +3365,27 @@ public extension ColorToken {
             lightColor: Color(UIColor(hex: "#B1FBBFFF"))
         )
     }
+    static var surfaceInverseReadOnly: Self {
+        Self(
+            id: Colors.surfaceInverseReadOnly.rawValue,
+            darkColor: Color(UIColor(hex: "#08080803")),
+            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+        )
+    }
+    static var surfaceInverseReadOnlyActive: Self {
+        Self(
+            id: Colors.surfaceInverseReadOnlyActive.rawValue,
+            darkColor: Color(UIColor(hex: "#08080808")),
+            lightColor: Color(UIColor(hex: "#FFFFFF00"))
+        )
+    }
+    static var surfaceInverseReadOnlyHover: Self {
+        Self(
+            id: Colors.surfaceInverseReadOnlyHover.rawValue,
+            darkColor: Color(UIColor(hex: "#08080805")),
+            lightColor: Color(UIColor(hex: "#FFFFFF0F"))
+        )
+    }
     static var surfaceInverseSolidCard: Self {
         Self(
             id: Colors.surfaceInverseSolidCard.rawValue,
@@ -3909,6 +3951,27 @@ public extension ColorToken {
             id: Colors.surfaceOnDarkPositiveMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#0E3A16FF")),
             lightColor: Color(UIColor(hex: "#0E3A16FF"))
+        )
+    }
+    static var surfaceOnDarkReadOnly: Self {
+        Self(
+            id: Colors.surfaceOnDarkReadOnly.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF05")),
+            lightColor: Color(UIColor(hex: "#FFFFFF05"))
+        )
+    }
+    static var surfaceOnDarkReadOnlyActive: Self {
+        Self(
+            id: Colors.surfaceOnDarkReadOnlyActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF00")),
+            lightColor: Color(UIColor(hex: "#FFFFFF00"))
+        )
+    }
+    static var surfaceOnDarkReadOnlyHover: Self {
+        Self(
+            id: Colors.surfaceOnDarkReadOnlyHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFFFFF0F")),
+            lightColor: Color(UIColor(hex: "#FFFFFF0F"))
         )
     }
     static var surfaceOnDarkSolidCard: Self {
@@ -4518,6 +4581,27 @@ public extension ColorToken {
             id: Colors.surfaceOnLightPositiveMinorHover.rawValue,
             darkColor: Color(UIColor(hex: "#B1FBBFFF")),
             lightColor: Color(UIColor(hex: "#B1FBBFFF"))
+        )
+    }
+    static var surfaceOnLightReadOnly: Self {
+        Self(
+            id: Colors.surfaceOnLightReadOnly.rawValue,
+            darkColor: Color(UIColor(hex: "#08080803")),
+            lightColor: Color(UIColor(hex: "#08080803"))
+        )
+    }
+    static var surfaceOnLightReadOnlyActive: Self {
+        Self(
+            id: Colors.surfaceOnLightReadOnlyActive.rawValue,
+            darkColor: Color(UIColor(hex: "#08080808")),
+            lightColor: Color(UIColor(hex: "#08080808"))
+        )
+    }
+    static var surfaceOnLightReadOnlyHover: Self {
+        Self(
+            id: Colors.surfaceOnLightReadOnlyHover.rawValue,
+            darkColor: Color(UIColor(hex: "#08080805")),
+            lightColor: Color(UIColor(hex: "#08080805"))
         )
     }
     static var surfaceOnLightSolidCard: Self {

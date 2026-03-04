@@ -48,6 +48,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case notificationCompact = "NotificationCompact"
     case rectSkeleton = "RectSkeleton"
     case textSkeleton = "TextSkeleton"
+    case textSkeletonBody = "TextSkeletonBody"
+    case textSkeletonDisplay = "TextSkeletonDisplay"
+    case textSkeletonHeader = "TextSkeletonHeader"
+    case textSkeletonText = "TextSkeletonText"
     case listItem = "ListItem"
     case listItemNormal = "ListItemNormal"
     case listItemTight = "ListItemTight"
@@ -60,6 +64,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case list = "List"
     case listNormal = "ListNormal"
     case listTight = "ListTight"
+    case listNumbered = "ListNumbered"
+    case listNumberedItem = "ListNumberedItem"
     case scrollbar = "ScrollBar"
     case accordionItemSolidActionStart = "AccordionItemSolidActionStart"
     case accordionItemSolidActionEnd = "AccordionItemSolidActionEnd"
@@ -72,6 +78,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case spinner = "Spinner"
     case loader = "Loader"
     case codeField = "CodeField"
+    case editable = "Editable"
     case tabBarItemSolid = "TabBarItemSolid"
     case tabBarItem = "TabBarItem"
     case tabBarItemClear = "TabBarItemClear"
@@ -106,6 +113,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case autocompleteTight = "AutocompleteTight"
     case collapsingNavigationBarInternalPage = "CollapsingNavigationBarInternalPage"
     case collapsingNavigationBarMainPage = "CollapsingNavigationBarMainPage"
+    case toolbarHorizontal = "ToolbarHorizontal"
+    case toolbarVertical = "ToolbarVertical"
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -156,8 +165,12 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .modal,
 //            .notificationLoose,
 //            .notificationCompact,
-//            .rectSkeleton,
-//            .textSkeleton,
+            .rectSkeleton,
+            .textSkeleton,
+            .textSkeletonBody,
+            .textSkeletonText,
+            .textSkeletonHeader,
+            .textSkeletonDisplay,
 //            .listItem,
 //            .listItemNormal,
 //            .listItemTight,
@@ -170,6 +183,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .list,
 //            .listNormal,
 //            .listTight,
+//            .listNumbered,
+//            .listNumberedItem,
 //            .scrollbar,
 //            .accordionItemSolidActionStart,
 //            .accordionItemSolidActionEnd,
@@ -203,10 +218,17 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .drawerCloseInner,
 //            .drawerCloseNone,
 //            .drawerCloseOuter
-            .autocompleteTight,
-            .autocompleteNormal,
-            .collapsingNavigationBarInternalPage,
-            .collapsingNavigationBarMainPage
+            .toolbarHorizontal,
+            .toolbarVertical,
+//            .autocompleteTight,
+//            .autocompleteNormal,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage,
+//            .autocompleteTight,
+//            .autocompleteNormal,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage,
+            .editable
         ]
     }
     
@@ -277,13 +299,13 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ModalProps, ModalAppearance, ModalSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .notificationLoose, .notificationCompact:
             GenerateComponentCommand<NotificationProps, NotificationAppearance, NotificationSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             GenerateComponentCommand<SkeletonProps, SkeletonAppearance, SkeletonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             GenerateComponentCommand<ListItemProps, ListItemAppearance, ListItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .dropdownMenuNormal, .dropdownMenuTight:
             GenerateComponentCommand<DropdownMenuProps, DropdownMenuAppearance, DropdownMenuSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             GenerateComponentCommand<ListProps, ListAppearance, ListSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             GenerateComponentCommand<AccordionItemProps, AccordionItemAppearance, AccordionItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -297,6 +319,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<LoaderProps, LoaderAppearance, LoaderSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeField:
             GenerateComponentCommand<CodeFieldProps, CodeFieldAppearance, CodeFieldSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .editable:
+            GenerateComponentCommand<EditableProps, EditableAppearance, EditableSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemSolid, .tabBarItem:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemClear:
@@ -375,6 +399,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .toolbarHorizontal, .toolbarVertical:
+            GenerateComponentCommand<ToolbarProps, ToolbarAppearance, ToolbarSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -438,13 +468,13 @@ extension CodeGenerationComponent {
             "ModalAppearance"
         case .notificationLoose, .notificationCompact:
             "NotificationAppearance"
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             "SkeletonAppearance"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             "ListItemAppearance"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuAppearance"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             "ListAppearance"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemAppearance"
@@ -458,6 +488,8 @@ extension CodeGenerationComponent {
             "LoaderAppearance"
         case .codeField:
             "CodeFieldAppearance"
+        case .editable:
+            "EditableAppearance"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemAppearance"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
@@ -494,6 +526,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarInternalPageAppearance"
         case .collapsingNavigationBarMainPage:
             "CollapsingNavigationBarMainPageAppearance"
+        case .toolbarHorizontal, .toolbarVertical:
+            "ToolbarAppearance"
         }
     }
     
@@ -558,13 +592,13 @@ extension CodeGenerationComponent {
             "ModalSizeConfiguration"
         case .notificationLoose, .notificationCompact:
             "NotificationSizeConfiguration"
-        case .rectSkeleton, .textSkeleton:
+        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
             "SkeletonSizeConfiguration"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem:
+        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
             "ListItemSizeConfiguration"
         case .dropdownMenuNormal, .dropdownMenuTight:
             "DropdownMenuSizeConfiguration"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list:
+        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
             "ListSizeConfiguration"
         case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
             "AccordionItemSizeConfiguration"
@@ -578,6 +612,8 @@ extension CodeGenerationComponent {
             "LoaderSizeConfiguration"
         case .codeField:
             "CodeFieldSizeConfiguration"
+        case .editable:
+            "EditableSizeConfiguration"
         case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
             "TabBarItemSizeConfiguration"
         case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
@@ -614,6 +650,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarInternalPageSizeConfiguration"
         case .collapsingNavigationBarMainPage:
             "CollapsingNavigationBarMainPageSizeConfiguration"
+        case .toolbarHorizontal, .toolbarVertical:
+            "ToolbarSizeConfiguration"
         }
     }
 
@@ -713,6 +751,14 @@ extension CodeGenerationComponent {
             "rect_skeleton_config.json"
         case .textSkeleton:
             "text_skeleton_config.json"
+        case .textSkeletonBody:
+            "text_skeleton_body_config.json"
+        case .textSkeletonDisplay:
+            "text_skeleton_display_config.json"
+        case .textSkeletonHeader:
+            "text_skeleton_header_config.json"
+        case .textSkeletonText:
+            "text_skeleton_text_config.json"
         case .listItemNormal:
             "list_item_normal_config.json"
         case .listItem:
@@ -737,6 +783,10 @@ extension CodeGenerationComponent {
             "list_normal_config.json"
         case .listTight:
             "list_tight_config.json"
+        case .listNumbered:
+            "list_numbered_config.json"
+        case .listNumberedItem:
+            "list_numbered_item_config.json"
         case .accordionItemSolidActionStart:
             "accordion_item_solid_action_start_config.json"
         case .accordionItemSolidActionEnd:
@@ -761,6 +811,8 @@ extension CodeGenerationComponent {
             "loader_config.json"
         case .codeField:
             "code_field_config.json"
+        case .editable:
+            "editable_config.json"
         case .tabBarItemSolid:
             "tab_bar_item_solid_config.json"
         case .tabBarItem:
@@ -829,6 +881,10 @@ extension CodeGenerationComponent {
             "collapsing_navigation_bar_internal_page_config.json"
         case .collapsingNavigationBarMainPage:
             "collapsing_navigation_bar_main_page_config.json"
+        case .toolbarHorizontal:
+            "toolbar_horizontal_config.json"
+        case .toolbarVertical:
+            "toolbar_vertical_config.json"
         }
     }
 

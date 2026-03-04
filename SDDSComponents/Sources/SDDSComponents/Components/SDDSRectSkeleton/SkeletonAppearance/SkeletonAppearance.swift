@@ -15,7 +15,7 @@ import SwiftUI
  ```swift
  SkeletonAppearance(
      shape: CornerRadiusDrawer(cornerRadius: 8),
-     gradient: .skeletonGradient,
+     gradient: .gradient(.skeletonGradient),
      size: ZeroSkeletonSizeConfiguration(),
      duration: 2000
  )
@@ -23,20 +23,23 @@ import SwiftUI
  */
 public struct SkeletonAppearance {
     public var shape: PathDrawer
-    public var gradient: GradientToken
+    public var gradient: FillStyle
     public var size: SkeletonSizeConfiguration
     public var duration: Double
+    public var textTypography: TypographyConfiguration
     
     public init(
         shape: PathDrawer = DefaultPathDrawer(),
-        gradient: GradientToken = .clearColor,
+        gradient: FillStyle = .color(.clearColor),
         size: SkeletonSizeConfiguration = ZeroSkeletonSizeConfiguration(),
-        duration: Double = 5.0
+        duration: Double = 5.0,
+        textTypography: TypographyConfiguration = .default
     ) {
         self.shape = shape
         self.gradient = gradient
         self.size = size
         self.duration = duration
+        self.textTypography = textTypography
     }
 }
 

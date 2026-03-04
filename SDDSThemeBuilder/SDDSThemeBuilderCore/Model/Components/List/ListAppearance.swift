@@ -7,6 +7,7 @@ struct ListAppearance: CodeGenerationAppearance {
     var listItemAppearance: String?
     var dividerAppearance: String?
     var scrollBarAppearance: String?
+    var backgroundColor: String?
     
     init(variation: ListConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
@@ -28,5 +29,7 @@ struct ListAppearance: CodeGenerationAppearance {
         if let scrollBarStyle = props.scrollBarStyle?.value {
             self.scrollBarAppearance = ComponentStyleContextBuilder(scrollBarStyle).context
         }
+        
+        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
     }
 } 

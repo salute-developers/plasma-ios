@@ -6,6 +6,7 @@ struct ListItemSize: CodeGenerationSize {
     var shape: String?
     var height: String?
     var contentPaddingEnd: String?
+    var contentPaddingStart: String?
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -19,6 +20,7 @@ struct ListItemSize: CodeGenerationSize {
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.contentPaddingEnd = CGFloatContextBuilder(props.contentPaddingEnd?.value, nullify: nullify).context
+        self.contentPaddingStart = CGFloatContextBuilder(props.contentPaddingStart?.value, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
         self.paddingTop = CGFloatContextBuilder(props.paddingTop?.value, nullify: nullify).context
@@ -29,6 +31,7 @@ struct ListItemSize: CodeGenerationSize {
         self.shape = PathDrawerContextBuilder.defaultContext
         self.height = CGFloat.defaultContext
         self.contentPaddingEnd = CGFloat.defaultContext
+        self.contentPaddingStart = CGFloat.defaultContext
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext
         self.paddingTop = CGFloat.defaultContext

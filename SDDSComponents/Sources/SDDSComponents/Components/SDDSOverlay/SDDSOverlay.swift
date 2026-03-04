@@ -45,7 +45,9 @@ public struct SDDSOverlay<Content: View>: View {
                 .overlay {
                     Color.clear
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+                        .background {
+                            backgroundView
+                        }
                 }
                 .allowsHitTesting(appearance.blurRadius == 0 ? true : false)
         } else {
@@ -55,5 +57,16 @@ public struct SDDSOverlay<Content: View>: View {
     
     private var appearance: OverlayAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    @ViewBuilder
+    private var backgroundView: some View {
+        switch appearance.backgroundColor {
+        case .color(let colorToken):
+            colorToken.color(for: colorScheme, subtheme: subtheme)
+        case .gradient(let gradientToken):
+            Color.clear
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+        }
     }
 }

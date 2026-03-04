@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<Overlay, OverlayAppearance, OverlayVariation.Default> {
@@ -11,7 +12,7 @@ public extension GeneralAppearanceVariation<Overlay, OverlayAppearance, OverlayV
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ColorToken.overlayDefaultSoft
+        appearance.backgroundColor = .color(.overlayDefaultSoft)
         appearance.blurRadius = CGFloat(16.0)
     
         return .init(

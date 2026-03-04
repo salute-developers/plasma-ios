@@ -115,7 +115,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.LinkButton.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.LinkButton.all
         }
     }
     
@@ -168,6 +168,19 @@ enum Theme: String, CaseIterable {
             PlasmaB2CTheme.TextAreaClear.all
         case .plasmaHomeDSTheme:
             []
+        }
+    }
+    
+    var editableVariations: [Variation<EditableAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Editable.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Editable.all
         }
     }
     
@@ -557,7 +570,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.BottomSheet.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.BottomSheet.all
         }
     }
     
@@ -596,7 +609,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.Overlay.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.Overlay.all
         }
     }
     
@@ -635,7 +648,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.Toast.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.Toast.all
         }
     }
     
@@ -687,7 +700,7 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             StylesSaluteTheme.RectSkeleton.all
         case .plasmaHomeDSTheme:
-            []
+            PlasmaHomeDSTheme.RectSkeleton.all
         }
     }
     
@@ -700,6 +713,42 @@ enum Theme: String, CaseIterable {
         case .stylesSalute:
             StylesSaluteTheme.TextSkeleton.all
         case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TextSkeleton.all
+        }
+    }
+    
+    var textSkeletonBodyVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TextSkeletonBody.all
+        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+            []
+        }
+    }
+    
+    var textSkeletonDisplayVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TextSkeletonDisplay.all
+        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+            []
+        }
+    }
+    
+    var textSkeletonHeaderVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TextSkeletonHeader.all
+        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+            []
+        }
+    }
+    
+    var textSkeletonTextVariations: [Variation<SkeletonAppearance>] {
+        switch self {
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.TextSkeletonText.all
+        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
             []
         }
     }
@@ -714,6 +763,15 @@ enum Theme: String, CaseIterable {
             []
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.ListItem.all
+        }
+    }
+    
+    var listNumberedItemVariations: [Variation<ListItemAppearance>] {
+        switch self {
+        case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.ListNumberedItem.all
         }
     }
     
@@ -753,6 +811,15 @@ enum Theme: String, CaseIterable {
             []
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.List.all
+        }
+    }
+    
+    var listNumberedVariations: [Variation<ListAppearance>] {
+        switch self {
+        case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.ListNumbered.all
         }
     }
     
@@ -1168,7 +1235,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return []
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.NavigationBarMainPage.all
         }
     }
 
@@ -1181,7 +1248,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return []
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.Note.all
         }
     }
     
@@ -1194,7 +1261,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return []
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.NavigationBarInternalPage.all
         }
     }
 
@@ -1233,7 +1300,7 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             return []
         case .plasmaHomeDSTheme:
-            return []
+            return PlasmaHomeDSTheme.NoteCompact.all
         }
     }
     
@@ -1374,6 +1441,32 @@ enum Theme: String, CaseIterable {
         case .plasmaB2CTheme:
             PlasmaB2CTheme.AutocompleteTight.all
         case .stylesSalute:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.ToolbarHorizontal.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
+            []
+        case .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.ToolbarVertical.all
+        case .stylesSalute:
+            []
+        case .plasmaB2CTheme:
             []
         case .plasmaHomeDSTheme:
             []

@@ -14,6 +14,8 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     @Published var textAfter: String = ""
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
+    @Published var secureEntry: Bool = false
+    @Published var keyboardType: UIKeyboardType = .default
     @Published var iconViewEnabled: Bool = true
     @Published var iconActionViewEnabled: Bool = true
     @Published var layout: TextFieldLayout = .default {

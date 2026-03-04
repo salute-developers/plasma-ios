@@ -5,6 +5,8 @@ struct TabBarIslandAppearance: CodeGenerationAppearance {
     typealias Props = TabBarIslandProps
     
     var backgroundColor: String?
+    var backgroundBlurColor: String?
+    var backgroundBlurRadius: String?
     var shadow: String?
     var tabBarItemAppearance: String?
     
@@ -18,6 +20,8 @@ struct TabBarIslandAppearance: CodeGenerationAppearance {
         }
         
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backgroundBlurColor = ColorTokenContextBuilder(props.backgroundBlurColor).context
+        self.backgroundBlurRadius = CGFloatContextBuilder(props.backgroundBlurRadius?.value, nullify: true).context
         self.shadow = ShadowTokenContextBuilder(shadow: props.shadow).context
         
         if let tabBarItemStyle = props.tabBarItemStyle?.value {

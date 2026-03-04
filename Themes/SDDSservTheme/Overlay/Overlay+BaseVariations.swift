@@ -8,7 +8,7 @@ public struct Overlay {
     public static var `default`: ComponentAppearanceVariation<Overlay, OverlayAppearance> {
         var appearance = OverlayAppearance.base
         appearance.size = OverlaySize.`default`
-        appearance.backgroundColor = ColorToken.overlayDefaultSoft
+        appearance.backgroundColor = .color(.overlayDefaultSoft)
         appearance.blurRadius = CGFloat(16.0)
 
         return .init(
@@ -29,7 +29,7 @@ public struct OverlayVariation {
 private extension OverlayAppearance {
     static var base: OverlayAppearance {
         var appearance = OverlayAppearance()
-        appearance.backgroundColor = ColorToken.overlayDefaultSoft
+        appearance.backgroundColor = .color(.overlayDefaultSoft)
         appearance.blurRadius = CGFloat(16.0)
         return appearance
     }

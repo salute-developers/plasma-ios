@@ -38,7 +38,8 @@ public struct ThemeBuilderConfiguration: Codable {
     public var themes: [ThemeConfiguration] = [
         Theme.sddsServTheme,
         Theme.plasmaB2C,
-        Theme.plasmaHomeDS
+        Theme.plasmaHomeDS,
+        Theme.stylesSalute
     ].map { $0.themeConfiguration }
     
     public init() {}

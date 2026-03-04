@@ -21,6 +21,8 @@ struct TextFieldView: View {
                     textAfter: viewModel.textAfter,
                     disabled: viewModel.disabled,
                     readOnly: viewModel.readOnly,
+                    secureEntry: viewModel.secureEntry,
+                    keyboardType: viewModel.keyboardType,
                     appearance: viewModel.appearance,
                     layout: viewModel.layout,
                     iconContent: Action {
@@ -74,6 +76,18 @@ struct TextFieldView: View {
 
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read Only", isOn: $viewModel.readOnly)
+                Toggle("Secure Entry", isOn: $viewModel.secureEntry)
+                Picker(
+                    "Keyboard Type",
+                    selection: Binding(
+                        get: { DemoKeyboardType.from(viewModel.keyboardType) },
+                        set: { viewModel.keyboardType = $0.uiKeyboardType }
+                    )
+                ) {
+                    ForEach(DemoKeyboardType.allCases) { keyboardType in
+                        Text(keyboardType.rawValue).tag(keyboardType)
+                    }
+                }
                 Toggle("Icon", isOn: $viewModel.iconViewEnabled)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
                 

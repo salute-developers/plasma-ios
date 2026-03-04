@@ -2,11 +2,11 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public struct OverlayAppearance {
-    public var backgroundColor: ColorToken
+    public var backgroundColor: FillStyle
     public var blurRadius: CGFloat
     public var size: OverlaySizeConfiguration
     
-    public init(backgroundColor: ColorToken = .clearColor, blurRadius: CGFloat = 0) {
+    public init(backgroundColor: FillStyle = .color(.clearColor), blurRadius: CGFloat = 0) {
         self.backgroundColor = backgroundColor
         self.blurRadius = blurRadius
         self.size = ZeroOverlaySize()
