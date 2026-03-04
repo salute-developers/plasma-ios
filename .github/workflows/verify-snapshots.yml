@@ -156,12 +156,18 @@ jobs:
             exit 1
           fi
           
-          if [ "$ATTEMPT_2" == "success" ] || [ ! -s failed_tests_2.txt ]; then
+          if [ "$ATTEMPT_2" == "success" ]; then
             echo "✅ All tests passed on second attempt (flaky tests resolved)"
             echo ""
             echo "Tests that failed in attempt 1 but passed in attempt 2:"
             cat failed_tests_1.txt
             exit 0
+          fi
+
+          if [ ! -s failed_tests_1.txt ] || [ ! -s failed_tests_2.txt ]; then
+            echo "❌ Build/test execution failed before test comparison (for example, compile failure)"
+            echo "Cannot classify as flaky because one of the attempts has no failed test list."
+            exit 1
           fi
           
           if diff -q failed_tests_1.txt failed_tests_2.txt > /dev/null 2>&1; then
