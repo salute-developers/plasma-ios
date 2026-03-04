@@ -36,6 +36,7 @@ struct ComponentsView: View {
         ("CircularProgressBar", AnyView(CircularProgressBarView())),
         ("Divider", AnyView(DividerView())),
         ("Drawer", AnyView(DrawerView())),
+        ("Editable", AnyView(EditableView())),
         ("List", AnyView(ListView())),
         ("ListItem", AnyView(ListItemView())),
         ("Overlay", AnyView(OverlayView())),

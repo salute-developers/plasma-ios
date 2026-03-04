@@ -183,6 +183,9 @@
 		814B78382EA8D8A1009B091C /* CollapsingNavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78362EA8D8A1009B091C /* CollapsingNavigationBarMainPageAppearance.swift */; };
 		814B78392EA8D8A1009B091C /* CollapsingNavigationBarMainPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78372EA8D8A1009B091C /* CollapsingNavigationBarMainPageSize.swift */; };
 		814BF7442EA804BB009B091C /* ImageSizeContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */; };
+		81538AE82F516708007E9643 /* EditableProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538AE72F516708007E9643 /* EditableProps.swift */; };
+		81538AED2F516725007E9643 /* EditableAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538AE92F516725007E9643 /* EditableAppearance.swift */; };
+		81538AEF2F516725007E9643 /* EditableSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81538AEB2F516725007E9643 /* EditableSize.swift */; };
 		815D367F2DE5B7120005273B /* OverlayAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367D2DE5B7120005273B /* OverlayAppearance.swift */; };
 		815D36802DE5B7120005273B /* OvarlaySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D367C2DE5B7120005273B /* OvarlaySize.swift */; };
 		815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D36812DE5B71F0005273B /* OverlayProps.swift */; };
@@ -699,6 +702,9 @@
 		814B78372EA8D8A1009B091C /* CollapsingNavigationBarMainPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarMainPageSize.swift; sourceTree = "<group>"; };
 		814BF7432EA804BB009B091C /* ImageSizeContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeContextBuilder.swift; sourceTree = "<group>"; };
 		814F71E92C58D4A0006385E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		81538AE72F516708007E9643 /* EditableProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableProps.swift; sourceTree = "<group>"; };
+		81538AE92F516725007E9643 /* EditableAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableAppearance.swift; sourceTree = "<group>"; };
+		81538AEB2F516725007E9643 /* EditableSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableSize.swift; sourceTree = "<group>"; };
 		815D367C2DE5B7120005273B /* OvarlaySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvarlaySize.swift; sourceTree = "<group>"; };
 		815D367D2DE5B7120005273B /* OverlayAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayAppearance.swift; sourceTree = "<group>"; };
 		815D36812DE5B71F0005273B /* OverlayProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayProps.swift; sourceTree = "<group>"; };
@@ -1393,6 +1399,7 @@
 			isa = PBXGroup;
 			children = (
 				81AE97962F4DC008001FDE3F /* ToolbarProps.swift */,
+				81538AE72F516708007E9643 /* EditableProps.swift */,
 				816C82B22EFBB04E00446DEE /* AutocompleteProps.swift */,
 				813472DC2ECF739600D40423 /* DrawerProps.swift */,
 				819C360D2EBCE7EA0081066C /* TabItemDefaultProps.swift */,
@@ -1456,6 +1463,7 @@
 			isa = PBXGroup;
 			children = (
 				81AE979A2F4DC015001FDE3F /* Toolbar */,
+				81538AEC2F516725007E9643 /* Editable */,
 				816C82B62EFBB05B00446DEE /* Autocomplete */,
 				813472D72ECF734B00D40423 /* Drawer */,
 				819C360A2EBCE7D70081066C /* TabItemDefault */,
@@ -1649,6 +1657,15 @@
 				8180A4B52C0F71A500009AF5 /* Views */,
 			);
 			path = SDDSThemeCore;
+			sourceTree = "<group>";
+		};
+		81538AEC2F516725007E9643 /* Editable */ = {
+			isa = PBXGroup;
+			children = (
+				81538AE92F516725007E9643 /* EditableAppearance.swift */,
+				81538AEB2F516725007E9643 /* EditableSize.swift */,
+			);
+			path = Editable;
 			sourceTree = "<group>";
 		};
 		815D367E2DE5B7120005273B /* Overlay */ = {
@@ -2842,6 +2859,8 @@
 				815D36822DE5B71F0005273B /* OverlayProps.swift in Sources */,
 				81CB0FE82C245052003B1064 /* EnsureFloatNonNegativeNode.swift in Sources */,
 				693FEF372DE4697900E14D0E /* DividerProps.swift in Sources */,
+				81538AED2F516725007E9643 /* EditableAppearance.swift in Sources */,
+				81538AEF2F516725007E9643 /* EditableSize.swift in Sources */,
 				81E1EE552BE3A68000F86AE1 /* TypographyStyle.swift in Sources */,
 				81E1EE4C2BE3A62C00F86AE1 /* TokenKind.swift in Sources */,
 				819A2E672E4E6364006A11F8 /* LoaderProps.swift in Sources */,
@@ -2927,6 +2946,7 @@
 				81E1EE512BE3A65D00F86AE1 /* ShadowStyle.swift in Sources */,
 				817539872BD008A500138866 /* FileWriter.swift in Sources */,
 				8119DF562DF6F86700D1CA9F /* NotificationProps.swift in Sources */,
+				81538AE82F516708007E9643 /* EditableProps.swift in Sources */,
 				81B5106A2E3C7CBD00504B1D /* CodeFieldProps.swift in Sources */,
 				81225C3F2E6712D100AA1EFB /* CodeInputSize.swift in Sources */,
 				81225C402E6712D100AA1EFB /* CodeInputAppearance.swift in Sources */,
