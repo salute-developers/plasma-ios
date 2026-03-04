@@ -98,6 +98,8 @@ public struct SDDSEditable<IconContent: View>: View {
                                 readOnly: readOnly,
                                 mask: nil,
                                 maskDisplayMode: .onInput,
+                                secureEntry: false,
+                                keyboardType: .default,
                                 placeholderBeforeContent: { EmptyView() },
                                 placeholderContent: { EmptyView() },
                                 placeholderAfterContent: { EmptyView() },
