@@ -68,11 +68,11 @@ public struct SDDSTextSkeleton: View {
                     let width = geometryWidth * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
                     
                     SDDSRectSkeleton(appearance: appearance)
-                        .frame(width: width, height: effectiveTypography.lineHeight)
+                        .frame(width: width, height: resolvedLineHeight)
                         .clipped()
                         .environment(\.subtheme, subtheme)
                 }
-                .frame(height: effectiveTypography.lineHeight)
+                .frame(height: resolvedLineHeight)
             }
         }
     }
@@ -86,5 +86,9 @@ public struct SDDSTextSkeleton: View {
     
     private var effectiveTypography: TypographyToken {
         appearance.textTypography.typography(with: appearance.size) ?? textTypography
+    }
+    
+    private var resolvedLineHeight: CGFloat {
+        max(effectiveTypography.lineHeight, effectiveTypography.uiFont.lineHeight)
     }
 }

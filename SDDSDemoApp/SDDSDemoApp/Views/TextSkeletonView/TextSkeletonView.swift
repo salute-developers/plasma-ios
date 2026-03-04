@@ -22,7 +22,13 @@ struct TextSkeletonView: View {
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .background(
                     GeometryReader { geo in
-                        TextLineCounter(text: viewModel.text, font: viewModel.typography.uiFont, width: geo.size.width) { count in
+                        TextLineCounter(
+                            text: viewModel.text,
+                            font: viewModel.typography.uiFont,
+                            width: geo.size.width,
+                            lineHeight: viewModel.typographyLineHeight,
+                            lineSpacing: viewModel.lineSpacing
+                        ) { count in
                             viewModel.lineCountText = String(max(count, 1))
                         }
                         .hiddenIf(viewModel.textHidden)

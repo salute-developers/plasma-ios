@@ -5,13 +5,22 @@ struct TextLineCounter: UIViewRepresentable {
     let text: String
     let font: UIFont
     let width: CGFloat
+    let lineHeight: CGFloat?
     let lineSpacing: CGFloat
     let onUpdate: (Int) -> Void
 
-    init(text: String, font: UIFont, width: CGFloat, lineSpacing: CGFloat = 0, onUpdate: @escaping (Int) -> Void) {
+    init(
+        text: String,
+        font: UIFont,
+        width: CGFloat,
+        lineHeight: CGFloat? = nil,
+        lineSpacing: CGFloat = 0,
+        onUpdate: @escaping (Int) -> Void
+    ) {
         self.text = text
         self.font = font
         self.width = width
+        self.lineHeight = lineHeight
         self.lineSpacing = lineSpacing
         self.onUpdate = onUpdate
     }
@@ -22,17 +31,7 @@ struct TextLineCounter: UIViewRepresentable {
         label.font = font
         label.lineBreakMode = .byWordWrapping
         label.preferredMaxLayoutWidth = width
-        
-        if lineSpacing > 0 {
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = lineSpacing
-            label.attributedText = NSAttributedString(
-                string: text,
-                attributes: [.paragraphStyle: paragraphStyle]
-            )
-        } else {
-            label.text = text
-        }
+        label.attributedText = attributedText()
 
         DispatchQueue.main.async {
             updateLineCount(label: label)
@@ -44,17 +43,7 @@ struct TextLineCounter: UIViewRepresentable {
     func updateUIView(_ uiView: UILabel, context: Context) {
         uiView.font = font
         uiView.preferredMaxLayoutWidth = width
-        
-        if lineSpacing > 0 {
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = lineSpacing
-            uiView.attributedText = NSAttributedString(
-                string: text,
-                attributes: [.paragraphStyle: paragraphStyle]
-            )
-        } else {
-            uiView.text = text
-        }
+        uiView.attributedText = attributedText()
         
         DispatchQueue.main.async {
             updateLineCount(label: uiView)
@@ -63,8 +52,27 @@ struct TextLineCounter: UIViewRepresentable {
     
     private func updateLineCount(label: UILabel) {
         let size = label.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
-        let effectiveLineHeight = font.lineHeight + lineSpacing
+        let baseLineHeight = lineHeight ?? font.lineHeight
+        let effectiveLineHeight = baseLineHeight + lineSpacing
         let lines = Int(round(size.height / effectiveLineHeight))
         onUpdate(lines)
+    }
+    
+    private func attributedText() -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        if let lineHeight {
+            paragraphStyle.minimumLineHeight = lineHeight
+            paragraphStyle.maximumLineHeight = lineHeight
+        }
+        
+        return NSAttributedString(
+            string: text,
+            attributes: [
+                .font: font,
+                .paragraphStyle: paragraphStyle
+            ]
+        )
     }
 }

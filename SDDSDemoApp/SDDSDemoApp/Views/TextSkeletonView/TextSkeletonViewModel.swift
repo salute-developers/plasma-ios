@@ -61,7 +61,12 @@ final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvi
     }
     @Published private(set) var lineCount: Int = 1
     @Published var lineWidthProviderType: TextSkeletonLineProviderType = .varied
-    let typography: TypographyToken = AdaptiveTypographyToken.bodyMNormal.typography
+    var typography: TypographyToken {
+        appearance.textTypography.typography(with: appearance.size) ?? AdaptiveTypographyToken.bodyMNormal.typography
+    }
+    var typographyLineHeight: CGFloat {
+        max(typography.lineHeight, typography.uiFont.lineHeight)
+    }
     @Published var text: String = "" {
         didSet {
             if text.isEmpty {
