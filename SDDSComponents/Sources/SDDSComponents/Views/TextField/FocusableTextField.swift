@@ -252,6 +252,7 @@ struct FocusableTextField: UIViewRepresentable {
             attributes[.paragraphStyle] = paragraphStyle
             textField.defaultTextAttributes = attributes
         }
+
         textField.isUserInteractionEnabled = !readOnly
     }
 
