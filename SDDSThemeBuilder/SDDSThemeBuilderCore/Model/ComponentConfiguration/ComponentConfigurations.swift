@@ -56,3 +56,4 @@ typealias AutocompleteConfiguration = ComponentConfiguration<AutocompleteProps>
 typealias CollapsingNavigationBarInternalPageConfiguration = ComponentConfiguration<CollapsingNavigationBarInternalPageProps>
 typealias CollapsingNavigationBarMainPageConfiguration = ComponentConfiguration<CollapsingNavigationBarMainPageProps>
 typealias ToolbarConfiguration = ComponentConfiguration<ToolbarProps>
+typealias EditableConfiguration = ComponentConfiguration<EditableProps>
