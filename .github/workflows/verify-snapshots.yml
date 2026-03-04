@@ -170,25 +170,35 @@ jobs:
             exit 1
           fi
           
-          if diff -q failed_tests_1.txt failed_tests_2.txt > /dev/null 2>&1; then
-            echo "❌ Same tests failed in both attempts - stable failures detected"
+          FAILED_1_COUNT=$(wc -l < failed_tests_1.txt | tr -d ' ')
+          FAILED_2_COUNT=$(wc -l < failed_tests_2.txt | tr -d ' ')
+          INTERSECTION_COUNT=$(comm -12 failed_tests_1.txt failed_tests_2.txt | wc -l | tr -d ' ')
+          ONLY_1_COUNT=$(comm -23 failed_tests_1.txt failed_tests_2.txt | wc -l | tr -d ' ')
+          ONLY_2_COUNT=$(comm -13 failed_tests_1.txt failed_tests_2.txt | wc -l | tr -d ' ')
+
+          echo "Attempt 1 failed tests count: $FAILED_1_COUNT"
+          echo "Attempt 2 failed tests count: $FAILED_2_COUNT"
+          echo "Failed in both attempts: $INTERSECTION_COUNT"
+          echo "Failed only in attempt 1: $ONLY_1_COUNT"
+          echo "Failed only in attempt 2: $ONLY_2_COUNT"
+          echo ""
+
+          if [ "$INTERSECTION_COUNT" -gt 0 ]; then
+            echo "❌ Stable failures detected: some tests failed in both attempts"
             echo ""
             echo "Consistently failing tests:"
-            cat failed_tests_1.txt
-            exit 1
-          else
-            echo "✅ Different tests failed in each attempt - flaky tests detected, marking as passed"
-            echo ""
-            echo "Failed only in attempt 1:"
-            comm -23 failed_tests_1.txt failed_tests_2.txt
-            echo ""
-            echo "Failed only in attempt 2:"
-            comm -13 failed_tests_1.txt failed_tests_2.txt
-            echo ""
-            echo "Failed in both attempts:"
             comm -12 failed_tests_1.txt failed_tests_2.txt
-            exit 0
+            exit 1
           fi
+
+          echo "✅ No overlap between failed tests in attempts 1 and 2 - flaky failures only"
+          echo ""
+          echo "Failed only in attempt 1:"
+          comm -23 failed_tests_1.txt failed_tests_2.txt
+          echo ""
+          echo "Failed only in attempt 2:"
+          comm -13 failed_tests_1.txt failed_tests_2.txt
+          exit 0
 
       - name: Upload test results (attempt 1)
         if: always()
