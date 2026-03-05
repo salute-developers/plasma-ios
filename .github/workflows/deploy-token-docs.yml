@@ -84,3 +84,33 @@ jobs:
     with:
       branch_name: main
       docs_url: https://plasma.sberdevices.ru
+
+  release-announcement:
+    name: Prepare release announcement
+    needs: [state, deploy]
+    if: needs.deploy.result == 'success' && github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build announcement text
+        env:
+          TAG_INPUT: ${{ needs.state.outputs.ref }}
+          INPUT_VERSIONS: ${{ needs.state.outputs.versions }}
+          MODULES_INPUT: ${{ needs.state.outputs.modules }}
+        run: |
+          set -euo pipefail
+          MESSAGE="$(TAG_INPUT="$TAG_INPUT" MODULES_INPUT="$MODULES_INPUT" VERSIONS_INPUT="$INPUT_VERSIONS" bash ./scripts/build-release-announcement.sh)"
+
+          echo "RELEASE_ANNOUNCEMENT<<EOF" >> "$GITHUB_ENV"
+          echo "$MESSAGE" >> "$GITHUB_ENV"
+          echo "EOF" >> "$GITHUB_ENV"
+
+          echo "$MESSAGE"
+
+      - name: Publish announcement to summary
+        run: |
+          echo "$RELEASE_ANNOUNCEMENT" >> "$GITHUB_STEP_SUMMARY"
