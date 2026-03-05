@@ -9,6 +9,10 @@ on:
         type: string
         description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
         required: false
+      versions:
+        type: string
+        description: 'Опциональный JSON map модуль->версия (например, {"sddsserv-theme":"0.19.0"}). Если версия задана, она имеет приоритет над tag/ref для этого модуля.'
+        required: false
       tag:
         description: "Тэг для релиза"
         required: true
@@ -25,6 +29,7 @@ jobs:
     outputs:
       ref: ${{ steps.prepare.outputs.ref }}
       modules: ${{ steps.prepare.outputs.modules }}
+      versions: ${{ steps.prepare.outputs.versions }}
 
     steps:
       - name: Prepare modules and tag
@@ -33,11 +38,13 @@ jobs:
           if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
             echo "Using modules and tag from repository_dispatch event"
             echo "modules=${{ github.event.client_payload.modules }}" >> $GITHUB_OUTPUT
+            echo "versions=${{ github.event.client_payload.versions }}" >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.client_payload.tag }}" >> $GITHUB_OUTPUT
           else
             echo "Using modules and tag from workflow_dispatch input"
             echo "Input modules ${{ github.event.inputs.modules }}"
             echo "modules=${{ github.event.inputs.modules }}" >> $GITHUB_OUTPUT
+            echo "versions=${{ github.event.inputs.versions }}" >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
           fi
 
@@ -48,5 +55,6 @@ jobs:
     secrets: inherit
     with:
       modules: ${{ needs.state.outputs.modules }}
+      versions: ${{ needs.state.outputs.versions }}
       ref: ${{ needs.state.outputs.ref }}
       branch: ${{ github.head_ref || github.ref_name }}

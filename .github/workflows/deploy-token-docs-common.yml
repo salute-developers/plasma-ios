@@ -8,6 +8,11 @@ on:
         description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
         required: false
         default: '["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
+      versions:
+        type: string
+        description: 'Опциональный JSON map модуль->версия (например, {"sddsserv-theme":"0.19.0"}). Если версия задана, она имеет приоритет над ref для конкретного модуля.'
+        required: false
+        default: ''
       ref:
         type: string
         description: 'Название ветки, тэга или хэш коммита'
@@ -168,6 +173,29 @@ jobs:
           # Устанавливаем Node.js и Yarn через Homebrew
           brew install node yarn jq s3cmd
 
+      - name: Resolve version input for module
+        if: steps.check_module.outputs.should_deploy == 'true'
+        id: resolve_version
+        shell: bash
+        run: |
+          versions='${{ inputs.versions }}'
+          module='${{ matrix.module }}'
+          version_input='${{ inputs.ref }}'
+
+          if [[ -n "$versions" ]] && echo "$versions" | jq -e . >/dev/null 2>&1; then
+            module_version=$(echo "$versions" | jq -r --arg module "$module" '.[$module] // empty')
+            if [[ -n "$module_version" ]]; then
+              version_input="$module_version"
+              echo "✅ Using explicit version for $module: $version_input"
+            else
+              echo "ℹ️ No explicit version for $module, fallback to ref: $version_input"
+            fi
+          else
+            echo "ℹ️ versions input is empty or invalid JSON, fallback to ref: $version_input"
+          fi
+
+          echo "version_input=$version_input" >> $GITHUB_OUTPUT
+
       - name: Build SDDSComponentsFixtures
         if: steps.check_module.outputs.should_deploy == 'true'
         run: |
@@ -184,7 +212,7 @@ jobs:
           S3_REGION: ${{ secrets.S3_REGION }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           ARTIFACT_ID: ":tokens:${{ matrix.module }}"
-          VERSION_INPUT: ${{ inputs.ref }}
+          VERSION_INPUT: ${{ steps.resolve_version.outputs.version_input }}
           BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
           TARGET_TYPE: swiftui
           THEME_NAME: ${{ matrix.theme_name }}
@@ -226,7 +254,7 @@ jobs:
           cd docusaurus
           ./scripts/deploy-changelog.sh \
             ":tokens:${{ matrix.module }}" \
-            "${{ inputs.ref }}" \
+            "${{ steps.resolve_version.outputs.version_input }}" \
             "${{ steps.extract_branch.outputs.branch }}" \
             "${{ secrets.S3_ACCESS_KEY_ID }}" \
             "${{ secrets.S3_SECRET_ACCESS_KEY }}" \
