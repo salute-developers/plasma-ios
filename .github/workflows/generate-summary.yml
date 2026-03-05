@@ -1,6 +1,18 @@
 name: "Generate Summary JSON"
 
 on:
+  workflow_call:
+    inputs:
+      branch_name:
+        description: 'Название ветки (по умолчанию берется из контекста)'
+        required: false
+        type: string
+        default: ''
+      docs_url:
+        description: 'URL документации'
+        required: false
+        type: string
+        default: 'https://plasma.sberdevices.ru'
   workflow_dispatch:
     inputs:
       branch_name:
@@ -41,8 +53,8 @@ jobs:
       - name: Determine branch name
         id: branch
         run: |
-          if [[ -n "${{ github.event.inputs.branch_name }}" ]]; then
-            BRANCH_NAME="${{ github.event.inputs.branch_name }}"
+          if [[ -n "${{ inputs.branch_name }}" ]]; then
+            BRANCH_NAME="${{ inputs.branch_name }}"
           elif [[ "${{ github.ref }}" == "refs/heads/"* ]]; then
             BRANCH_NAME="${GITHUB_REF#refs/heads/}"
           else
@@ -56,7 +68,7 @@ jobs:
           cd docusaurus
           ./scripts/generate-summary.sh \
             "${{ steps.branch.outputs.branch_name }}" \
-            "${{ github.event.inputs.docs_url }}" \
+            "${{ inputs.docs_url }}" \
             "summary.json"
 
       - name: Check for changes

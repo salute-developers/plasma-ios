@@ -13,6 +13,9 @@ echo "Bumping versions with type: $BUMP_TYPE"
 echo "Changed modules: $CHANGED_MODULES"
 echo "OS Type: $OSTYPE"
 
+# Базовый URL документации для versionsArchived.json
+DOCS_BASE_URL="https://plasma.sberdevices.ru/ios"
+
 # Функция для повышения версии
 bump_version() {
     local current_version=$1
@@ -116,6 +119,51 @@ should_update_module() {
     return 1
 }
 
+# Функция маппинга названия темы в artifact id для URL документации
+get_theme_artifact_id() {
+    local theme_name=$1
+    case "$theme_name" in
+        "SDDSservTheme")
+            echo "sddsserv-theme"
+            ;;
+        "PlasmaB2CTheme")
+            echo "plasma-b2c-theme"
+            ;;
+        "PlasmaHomeDSTheme")
+            echo "plasma-home-ds-theme"
+            ;;
+        "StylesSaluteTheme")
+            echo "styles-salute-theme"
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
+# Функция обновления versionsArchived.json для темы
+update_versions_archived_for_theme() {
+    local theme_module=$1
+    local new_version=$2
+    local theme_name
+    theme_name=$(basename "$theme_module")
+
+    local artifact_id
+    if ! artifact_id=$(get_theme_artifact_id "$theme_name"); then
+        echo "⚠️  Skip versionsArchived update for unknown theme: $theme_name"
+        return 0
+    fi
+
+    local versions_file="${theme_module}/override-docs/versionsArchived.json"
+    local version_url="${DOCS_BASE_URL}/${artifact_id}/${new_version}/"
+
+    mkdir -p "$(dirname "$versions_file")"
+
+    ruby scripts/update_versions_archived.rb "$versions_file" "$new_version" "$version_url"
+
+    echo "✅ Updated ${versions_file}: ${new_version} -> ${version_url}"
+}
+
 # Функция для получения всех тем из папки Themes
 get_all_themes() {
     local themes=()
@@ -186,6 +234,11 @@ for i in "${!MODULES[@]}"; do
         if ! update_version_in_project "$project_file" "$current_version" "$new_version"; then
             echo "❌ Failed to update version for $module"
             exit 1
+        fi
+
+        # Для тем дополнительно обновляем versionsArchived.json в override-docs
+        if [[ "$module" == Themes/* ]]; then
+            update_versions_archived_for_theme "$module" "$new_version"
         fi
     else
         echo "⏭️ Skipping $module (no changes detected)"

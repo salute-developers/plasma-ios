@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/salute-developers/plasma-ios/scripts/schemas/third_party_upload_list.schema.json",
+  "title": "Third Party Upload List Schema",
+  "description": "Schema for normalized upload_list format in third-party mode.",
+  "type": "object",
+  "required": [
+    "dependencies"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "version"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)*([A-Za-z0-9._+-]+)?$"
+          }
+        }
+      }
+    }
+  }
+}
