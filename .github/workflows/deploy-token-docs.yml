@@ -74,3 +74,13 @@ jobs:
       versions: ${{ needs.state.outputs.versions }}
       ref: ${{ needs.state.outputs.ref }}
       branch: ${{ github.head_ref || github.ref_name }}
+
+  update-summary:
+    name: Update summary.json
+    needs: deploy
+    if: needs.deploy.result == 'success' && github.ref_name == 'main'
+    uses: ./.github/workflows/generate-summary.yml
+    secrets: inherit
+    with:
+      branch_name: main
+      docs_url: https://plasma.sberdevices.ru
