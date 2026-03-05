@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/salute-developers/plasma-ios/scripts/schemas/mono_dependencies.schema.json",
+  "title": "Mono Dependencies YAML Schema",
+  "description": "Schema for dependency entries in mono mode YAML file.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "version"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "version": {
+        "type": "string",
+        "minLength": 1
+      },
+      "descriptor": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  }
+}

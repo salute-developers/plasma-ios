@@ -82,6 +82,7 @@ runs:
         fromTag: ${{ env.FROM_TAG }}
         toTag:  ${{ env.TO_TAG }}
         configuration: "./.github/changelog-builder-config.json"
+        fetchViaCommits: true
 
     - name: Install dependencies
       shell: bash
