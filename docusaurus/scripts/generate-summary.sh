@@ -40,7 +40,7 @@ get_theme_mapping() {
 get_summary_key() {
     local theme_dir_name="$1"
     case "$theme_dir_name" in
-        "SDDSServTheme")
+        "SDDSServTheme"|"SDDSservTheme")
             echo "SDDSService"
             ;;
         "StylesSaluteTheme")
@@ -62,7 +62,7 @@ get_summary_key() {
 get_theme_url_name() {
     local theme_dir_name="$1"
     case "$theme_dir_name" in
-        "SDDSServTheme")
+        "SDDSServTheme"|"SDDSservTheme")
             echo "sddsserv-theme"
             ;;
         "StylesSaluteTheme")
