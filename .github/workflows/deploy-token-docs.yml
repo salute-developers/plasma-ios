@@ -37,14 +37,30 @@ jobs:
         run: |
           if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
             echo "Using modules and tag from repository_dispatch event"
-            echo "modules=${{ github.event.client_payload.modules }}" >> $GITHUB_OUTPUT
-            echo "versions=${{ github.event.client_payload.versions }}" >> $GITHUB_OUTPUT
+            {
+              echo "modules<<EOF"
+              echo '${{ github.event.client_payload.modules }}'
+              echo "EOF"
+            } >> $GITHUB_OUTPUT
+            {
+              echo "versions<<EOF"
+              echo '${{ github.event.client_payload.versions }}'
+              echo "EOF"
+            } >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.client_payload.tag }}" >> $GITHUB_OUTPUT
           else
             echo "Using modules and tag from workflow_dispatch input"
             echo "Input modules ${{ github.event.inputs.modules }}"
-            echo "modules=${{ github.event.inputs.modules }}" >> $GITHUB_OUTPUT
-            echo "versions=${{ github.event.inputs.versions }}" >> $GITHUB_OUTPUT
+            {
+              echo "modules<<EOF"
+              echo '${{ github.event.inputs.modules }}'
+              echo "EOF"
+            } >> $GITHUB_OUTPUT
+            {
+              echo "versions<<EOF"
+              echo '${{ github.event.inputs.versions }}'
+              echo "EOF"
+            } >> $GITHUB_OUTPUT
             echo "ref=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
           fi
 
