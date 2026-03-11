@@ -150,6 +150,7 @@
 		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3886B342ED866CE0001DF66 /* DrawerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerTestCase; sourceTree = "<group>"; };
+		D38EC3382F619395000872FE /* ToolbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ToolbarTestCase; sourceTree = "<group>"; };
 		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteTestCase; sourceTree = "<group>"; };
 		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F77CA32F602D700071787C /* EditableTestCase */,
+				D38EC3382F619395000872FE /* ToolbarTestCase */,
 				D3C55E4C2F485A5300E3EBE7 /* CollapsingNavigationBarTestCase */,
 				D34C4A532EEAE4D300678E78 /* MasksTestCase */,
 				D3886B342ED866CE0001DF66 /* DrawerTestCase */,
@@ -420,6 +422,7 @@
 				D383C67C2E292B1700B6E830 /* AccordionTestCase */,
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3886B342ED866CE0001DF66 /* DrawerTestCase */,
+				D38EC3382F619395000872FE /* ToolbarTestCase */,
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
 				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
