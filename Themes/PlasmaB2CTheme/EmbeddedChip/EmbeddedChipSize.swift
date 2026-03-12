@@ -7,12 +7,14 @@ struct EmbeddedChipSize {
     static let l = EmbeddedChipSizeL()
     static let m = EmbeddedChipSizeM()
     static let s = EmbeddedChipSizeS()
+    static let xl = EmbeddedChipSizeXl()
     static let xs = EmbeddedChipSizeXs()
 
     static let all: [ChipSizeConfiguration] = [
         EmbeddedChipSize.l,
         EmbeddedChipSize.m,
         EmbeddedChipSize.s,
+        EmbeddedChipSize.xl,
         EmbeddedChipSize.xs,
     ] 
 }
@@ -51,6 +53,19 @@ struct EmbeddedChipSizeS: ChipSizeConfiguration {
     var iconImageSize = CGSize(width:16.0, height:16.0)
     var leadingInset = CGFloat(10.0)
     var trailingInset = CGFloat(8.0)
+    public var debugDescription: String {
+        return "EmbeddedChipSize"
+    }
+}
+struct EmbeddedChipSizeXl: ChipSizeConfiguration {
+    var buttonImageSize = CGSize(width:24.0, height:24.0)
+    var contentEndPadding = CGFloat(6.0)
+    var contentStartPadding = CGFloat(6.0)
+    var cornerRadius = ShapeToken.roundM.cornerRadius-2.0
+    var height = CGFloat(52.0)
+    var iconImageSize = CGSize(width:24.0, height:24.0)
+    var leadingInset = CGFloat(16.0)
+    var trailingInset = CGFloat(12.0)
     public var debugDescription: String {
         return "EmbeddedChipSize"
     }

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<EmbeddedChip, ChipAppearance, EmbeddedChipVariation.L> {
@@ -177,6 +178,83 @@ public extension GeneralAppearanceVariation<EmbeddedChip, ChipAppearance, Embedd
     
         return .init(
             name: "s",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "`default`",
+            appearance: appearance.`default`
+        )
+    }
+    var accent: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "accent",
+            appearance: appearance.accent
+        )
+    }
+    var negative: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "negative",
+            appearance: appearance.negative
+        )
+    }
+    var positive: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "positive",
+            appearance: appearance.positive
+        )
+    }
+    var secondary: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "secondary",
+            appearance: appearance.secondary
+        )
+    }
+    var warning: AppearanceVariation<ChipAppearance> {
+        return .init(
+            name: "warning",
+            appearance: appearance.warning
+        )
+    }
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<EmbeddedChip, ChipAppearance, EmbeddedChipVariation.Xl> {
+    
+    var xl: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
+        var size =  EmbeddedChipAnySize(size: appearance.size)
+        size.buttonImageSize = CGSize(width:24.0, height:24.0)
+        size.contentEndPadding = CGFloat(6.0)
+        size.contentStartPadding = CGFloat(6.0)
+        size.cornerRadius = ShapeToken.roundM.cornerRadius-2.0
+        size.height = CGFloat(52.0)
+        size.iconImageSize = CGSize(width:24.0, height:24.0)
+        size.leadingInset = CGFloat(16.0)
+        size.trailingInset = CGFloat(12.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.titleTypography = EmbeddedChipTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+    
+        return .init(
+            name: "xl",
             appearance: appearance
         )
     }

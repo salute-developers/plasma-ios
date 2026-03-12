@@ -187,6 +187,16 @@ public extension EnvironmentValues {
         get { self[TabBarAppearance.self] }
         set { self[TabBarAppearance.self] = newValue }
     }
+    
+    var selectItemAppearance: SelectItemAppearance {
+        get { self[SelectItemAppearance.self] }
+        set { self[SelectItemAppearance.self] = newValue }
+    }
+    
+    var selectAppearance: SelectAppearance {
+        get { self[SelectAppearance.self] }
+        set { self[SelectAppearance.self] = newValue }
+    }
 }
 
 // MARK: - Utility
