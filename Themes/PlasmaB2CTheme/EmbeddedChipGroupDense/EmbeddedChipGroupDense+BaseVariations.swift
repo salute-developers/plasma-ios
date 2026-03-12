@@ -32,6 +32,15 @@ public struct EmbeddedChipGroupDense {
             appearance: appearance
         )
     }
+    public static var xl: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.Xl> {
+        var appearance = ChipGroupAppearance.base
+        appearance.size = EmbeddedChipGroupDenseSize.xl
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
     public static var xs: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.Xs> {
         var appearance = ChipGroupAppearance.base
         appearance.size = EmbeddedChipGroupDenseSize.xs
@@ -46,6 +55,7 @@ public struct EmbeddedChipGroupDense {
         EmbeddedChipGroupDense.l.variation,
         EmbeddedChipGroupDense.m.variation,
         EmbeddedChipGroupDense.s.variation,
+        EmbeddedChipGroupDense.xl.variation,
         EmbeddedChipGroupDense.xs.variation,
     ]
 }
@@ -54,6 +64,7 @@ public struct EmbeddedChipGroupDenseVariation {
     public struct L {}
     public struct M {}
     public struct S {}
+    public struct Xl {}
     public struct Xs {}
 }
 

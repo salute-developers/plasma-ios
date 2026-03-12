@@ -35,6 +35,16 @@ public struct EmbeddedChip {
             appearance: appearance
         )
     }
+    public static var xl: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
+        var appearance = ChipAppearance.base
+        appearance.size = EmbeddedChipSize.xl
+        appearance.titleTypography = EmbeddedChipTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
     public static var xs: ComponentAppearanceVariation<EmbeddedChip, ChipAppearance> {
         var appearance = ChipAppearance.base
         appearance.size = EmbeddedChipSize.xs
@@ -50,6 +60,7 @@ public struct EmbeddedChip {
         EmbeddedChip.l.variation,
         EmbeddedChip.m.variation,
         EmbeddedChip.s.variation,
+        EmbeddedChip.xl.variation,
         EmbeddedChip.xs.variation,
     ]
 }
@@ -58,6 +69,7 @@ public struct EmbeddedChipVariation {
     public struct L {}
     public struct M {}
     public struct S {}
+    public struct Xl {}
     public struct Xs {}
 }
 

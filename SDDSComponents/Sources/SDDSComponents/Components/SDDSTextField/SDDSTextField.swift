@@ -2,6 +2,13 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSComponents
 
+private struct TextFieldInputFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect = .zero
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+        value = nextValue()
+    }
+}
+
 // MARK: - SDDSTextField
 
 /**
@@ -68,6 +75,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     let iconContent: Action<IconContent>
     let actionContent: Action<ActionContent>
     let onMaskComplete: ((Bool) -> Void)?
+    let onInputFrameChange: ((CGRect) -> Void)?
     
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
@@ -98,7 +106,8 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         accessibility: TextFieldAccessibility = TextFieldAccessibility(),
         iconContent: Action<IconContent> = Action { EmptyView() },
         actionContent: Action<ActionContent> = Action { EmptyView() },
-        onMaskComplete: ((Bool) -> Void)? = nil
+        onMaskComplete: ((Bool) -> Void)? = nil,
+        onInputFrameChange: ((CGRect) -> Void)? = nil
     ) {
         switch value.wrappedValue {
         case .single(let text):
@@ -128,6 +137,7 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         self.iconContent = iconContent
         self.actionContent = actionContent
         self.onMaskComplete = onMaskComplete
+        self.onInputFrameChange = onInputFrameChange
     }
 
     public var body: some View {
@@ -157,6 +167,10 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
         }
         .opacity(disabled ? appearance.disabledAlpha : 1)
         .disabled(disabled)
+        .coordinateSpace(name: "sddsTextFieldRoot")
+        .onPreferenceChange(TextFieldInputFramePreferenceKey.self) { frame in
+            onInputFrameChange?(frame)
+        }
         .onTapGesture {
             guard !displayChips && !disabled && !readOnly else {
                 return
@@ -564,6 +578,14 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
                 indicatorOverlayView
             }
         }
+        .background(
+            GeometryReader { geo in
+                Color.clear.preference(
+                    key: TextFieldInputFramePreferenceKey.self,
+                    value: geo.frame(in: .named("sddsTextFieldRoot"))
+                )
+            }
+        )
     }
 
     @ViewBuilder
@@ -912,5 +934,43 @@ public struct SDDSTextField<IconContent: View, ActionContent: View>: View {
     
     var appearance: TextFieldAppearance {
         _appearance ?? environmentAppearance
+    }
+}
+
+public extension SDDSTextField where IconContent == AnyView, ActionContent == AnyView {
+    init(
+        value: Binding<TextFieldValue>,
+        data: TextFieldData,
+        disabled: Bool = false,
+        readOnly: Bool = false
+    ) {
+        self.init(
+            value: value,
+            title: data.title,
+            optionalTitle: data.optionalTitle,
+            placeholder: data.placeholder,
+            caption: data.caption,
+            textBefore: data.textBefore,
+            textAfter: data.textAfter,
+            disabled: disabled,
+            readOnly: readOnly,
+            required: data.required,
+            divider: data.divider,
+            mask: data.mask,
+            maskDisplayMode: data.maskDisplayMode,
+            secureEntry: data.secureEntry,
+            keyboardType: data.keyboardType,
+            appearance: data.appearance,
+            layout: data.layout,
+            accessibility: data.accessibility,
+            iconContent: Action {
+                data.iconContent?() ?? AnyView(EmptyView())
+            },
+            actionContent: Action {
+                data.actionContent?() ?? AnyView(EmptyView())
+            },
+            onMaskComplete: data.onMaskComplete,
+            onInputFrameChange: data.onInputFrameChange
+        )
     }
 }

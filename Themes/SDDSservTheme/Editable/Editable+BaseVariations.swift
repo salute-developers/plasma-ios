@@ -139,9 +139,9 @@ private extension EditableAppearance {
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
         appearance.iconColorDefault = ColorToken.textDefaultTertiary
-        appearance.iconColorReadonly = ColorToken.textDefaultSecondary
+        appearance.iconColorReadonly = ColorToken.textDefaultTertiary
         appearance.textColorDefault = ColorToken.textDefaultPrimary
-        appearance.textColorReadonly = ColorToken.textDefaultSecondary
+        appearance.textColorReadonly = ColorToken.textDefaultPrimary
         return appearance
     }
 }
