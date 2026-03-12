@@ -109,6 +109,14 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case drawerCloseInner = "DrawerCloseInner"
     case drawerCloseNone = "DrawerCloseNone"
     case drawerCloseOuter = "DrawerCloseOuter"
+    case selectItemMultipleNormal = "SelectItemMultipleNormal"
+    case selectItemMultipleTight = "SelectItemMultipleTight"
+    case selectItemSingleNormal = "SelectItemSingleNormal"
+    case selectItemSingleTight = "SelectItemSingleTight"
+    case selectMultipleNormal = "SelectMultipleNormal"
+    case selectMultipleTight = "SelectMultipleTight"
+    case selectSingleNormal = "SelectSingleNormal"
+    case selectSingleTight = "SelectSingleTight"
     case autocompleteNormal = "AutocompleteNormal"
     case autocompleteTight = "AutocompleteTight"
     case collapsingNavigationBarInternalPage = "CollapsingNavigationBarInternalPage"
@@ -228,7 +236,15 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .autocompleteNormal,
 //            .collapsingNavigationBarInternalPage,
 //            .collapsingNavigationBarMainPage,
-            .editable
+            .editable,
+            .selectSingleTight,
+            .selectSingleNormal,
+            .selectMultipleTight,
+            .selectMultipleNormal,
+            .selectItemSingleTight,
+            .selectItemSingleNormal,
+            .selectItemMultipleTight,
+            .selectItemMultipleNormal
         ]
     }
     
@@ -385,6 +401,18 @@ extension CodeGenerationComponent {
             )
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             GenerateComponentCommand<DrawerProps, DrawerAppearance, DrawerSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
+        case .selectItemMultipleNormal, .selectItemMultipleTight, .selectItemSingleNormal, .selectItemSingleTight:
+            GenerateComponentCommand<SelectItemProps, SelectItemAppearance, SelectItemSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
+        case .selectMultipleNormal, .selectMultipleTight, .selectSingleNormal, .selectSingleTight:
+            GenerateComponentCommand<SelectProps, SelectAppearance, SelectSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         case .autocompleteNormal, .autocompleteTight:
             GenerateComponentCommand<AutocompleteProps, AutocompleteAppearance, AutocompleteSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .collapsingNavigationBarInternalPage:
@@ -520,6 +548,10 @@ extension CodeGenerationComponent {
             "TabItemAppearance"
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             "DrawerAppearance"
+        case .selectItemMultipleNormal, .selectItemMultipleTight, .selectItemSingleNormal, .selectItemSingleTight:
+            "SelectItemAppearance"
+        case .selectMultipleNormal, .selectMultipleTight, .selectSingleNormal, .selectSingleTight:
+            "SelectAppearance"
         case .autocompleteNormal, .autocompleteTight:
             "AutocompleteAppearance"
         case .collapsingNavigationBarInternalPage:
@@ -644,6 +676,10 @@ extension CodeGenerationComponent {
             "TabItemSizeConfiguration"
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
             "DrawerSizeConfiguration"
+        case .selectItemMultipleNormal, .selectItemMultipleTight, .selectItemSingleNormal, .selectItemSingleTight:
+            "SelectItemSizeConfiguration"
+        case .selectMultipleNormal, .selectMultipleTight, .selectSingleNormal, .selectSingleTight:
+            "SelectSizeConfiguration"
         case .autocompleteNormal, .autocompleteTight:
             "AutocompleteSizeConfiguration"
         case .collapsingNavigationBarInternalPage:
@@ -873,6 +909,22 @@ extension CodeGenerationComponent {
             "drawer_close_none_config.json"
         case .drawerCloseOuter:
             "drawer_close_outer_config.json"
+        case .selectItemMultipleNormal:
+            "select_item_multiple_normal_config.json"
+        case .selectItemMultipleTight:
+            "select_item_multiple_tight_config.json"
+        case .selectItemSingleNormal:
+            "select_item_single_normal_config.json"
+        case .selectItemSingleTight:
+            "select_item_single_tight_config.json"
+        case .selectMultipleNormal:
+            "select_multiple_normal_config.json"
+        case .selectMultipleTight:
+            "select_multiple_tight_config.json"
+        case .selectSingleNormal:
+            "select_single_normal_config.json"
+        case .selectSingleTight:
+            "select_single_tight_config.json"
         case .autocompleteNormal:
             "autocomplete_normal_config.json"
         case .autocompleteTight:

@@ -18,6 +18,7 @@ final class WindowOverlayService: NSObject {
     private var stackedToasts: [StackedToast] = []
     private var toastContainerView: PassthroughView?
     private var hideOnTap: Bool = true
+    private var protectedTapFrame: CGRect?
     
     private override init() {
         super.init()
@@ -61,6 +62,7 @@ final class WindowOverlayService: NSObject {
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect,
         hideOnTap: Bool = true,
+        protectedTapFrame: CGRect? = nil,
         onClose: (() -> Void)? = nil
     ) {
         guard let existingWindow = getExistingWindow() else {
@@ -74,9 +76,16 @@ final class WindowOverlayService: NSObject {
         ) }
         self.onClose = onClose
         self.hideOnTap = hideOnTap
+        self.protectedTapFrame = protectedTapFrame
         
         if overlayHostingController != nil {
-            updateContent(in: existingWindow, frame: frame, content: content, onClose: onClose)
+            updateContent(
+                in: existingWindow,
+                frame: frame,
+                protectedTapFrame: protectedTapFrame,
+                content: content,
+                onClose: onClose
+            )
             return
         }
         
@@ -138,6 +147,7 @@ final class WindowOverlayService: NSObject {
     private func updateContent<Content: View>(
         in window: UIWindow,
         frame: CGRect,
+        protectedTapFrame: CGRect? = nil,
         @ViewBuilder content: @escaping () -> Content,
         onClose: (() -> Void)?
     ) {
@@ -146,6 +156,7 @@ final class WindowOverlayService: NSObject {
             content()
         ) }
         self.onClose = onClose
+        self.protectedTapFrame = protectedTapFrame
         
         if let existingController = overlayHostingController {
             let baseContent = contentBuilder?() ?? AnyView(EmptyView())
@@ -233,6 +244,9 @@ final class WindowOverlayService: NSObject {
         }
         
         let location = gesture.location(in: container)
+        if let protectedTapFrame, protectedTapFrame.contains(location) {
+            return
+        }
         let hostingLocation = container.convert(location, to: hostingView)
         
         if hostingView.bounds.contains(hostingLocation) {
@@ -254,12 +268,14 @@ final class WindowOverlayService: NSObject {
         tapGesture = nil
         overlayContainerView?.removeFromSuperview()
         overlayContainerView = nil
+        protectedTapFrame = nil
         onClose?()
     }
     
     func updateContentIfVisible<Content: View>(
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect? = nil,
+        protectedTapFrame: CGRect? = nil,
         onClose: (() -> Void)? = nil
     ) {
         if let window = getExistingWindow(), 
@@ -269,6 +285,7 @@ final class WindowOverlayService: NSObject {
             
             let targetFrame = frame ?? lastFrame
             self.lastFrame = targetFrame
+            self.protectedTapFrame = protectedTapFrame
             if let onClose = onClose {
                 self.onClose = onClose
             }
@@ -297,7 +314,12 @@ final class WindowOverlayService: NSObject {
             if let onClose = onClose {
                 self.onClose = onClose
             }
-            show(content: content, at: targetFrame, onClose: onClose)
+            show(
+                content: content,
+                at: targetFrame,
+                protectedTapFrame: protectedTapFrame,
+                onClose: onClose
+            )
         }
     }
     
@@ -486,6 +508,9 @@ extension WindowOverlayService: UIGestureRecognizerDelegate {
         }
         
         let location = touch.location(in: container)
+        if let protectedTapFrame, protectedTapFrame.contains(location) {
+            return false
+        }
         let hostingLocation = container.convert(location, to: hostingView)
         
         if hostingView.bounds.contains(hostingLocation) {

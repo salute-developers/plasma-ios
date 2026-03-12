@@ -40,6 +40,7 @@ public extension View {
         placementMode: PopoverPlacementMode = .loose,
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
+        protectContentTaps: Bool = false,
         subtheme: SubthemeData = SubthemeData(),
         ignoreTrigger: Bool = false,
         contentId: AnyHashable? = nil,
@@ -53,6 +54,14 @@ public extension View {
                         // Используем асинхронное обновление, чтобы не вызывать перерисовку родительского view
                         Task { @MainActor in
                             let triggerFrame = geometry.frame(in: .global)
+                            let protectedFrame = protectedTapFrame(
+                                triggerFrame: triggerFrame,
+                                placement: placement,
+                                alignment: alignment,
+                                appearance: appearance,
+                                contentHeight: contentHeight,
+                                isEnabled: protectContentTaps
+                            )
                             if newValue {
                                 WindowOverlayService.shared.show(
                                     content: {
@@ -78,6 +87,7 @@ public extension View {
                                         .environment(\.subtheme, subtheme)
                                     },
                                     at: triggerFrame,
+                                    protectedTapFrame: protectedFrame,
                                     onClose: {
                                         isPresented.wrappedValue = false
                                         onClose?()
@@ -93,6 +103,14 @@ public extension View {
                         // Это предотвратит перерисовку при первом изменении isPresented
                         if isPresented.wrappedValue {
                             let triggerFrame = geometry.frame(in: .global)
+                            let protectedFrame = protectedTapFrame(
+                                triggerFrame: triggerFrame,
+                                placement: placement,
+                                alignment: alignment,
+                                appearance: appearance,
+                                contentHeight: contentHeight,
+                                isEnabled: protectContentTaps
+                            )
                             WindowOverlayService.shared.show(
                                 content: {
                                     SDDSPopover(
@@ -117,6 +135,7 @@ public extension View {
                                     .environment(\.subtheme, subtheme)
                                 },
                                 at: triggerFrame,
+                                protectedTapFrame: protectedFrame,
                                 onClose: {
                                     isPresented.wrappedValue = false
                                     onClose?()
@@ -132,30 +151,96 @@ public extension View {
                         // Используем небольшой delay, чтобы дать время для обновления контента
                         try? await Task.sleep(nanoseconds: 50_000_000) // 50ms
                         let triggerFrame = geometry.frame(in: .global)
-                        WindowOverlayService.shared.updateContentIfVisible {
-                            SDDSPopover(
-                                isPresented: isPresented,
-                                appearance: appearance,
-                                placement: placement,
-                                alignment: alignment,
-                                tailEnabled: tailEnabled,
-                                triggerCentered: triggerCentered,
-                                placementMode: placementMode,
-                                duration: duration,
-                                popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
-                                contentHeight: contentHeight,
-                                ignoreTrigger: ignoreTrigger,
-                                onClose: {
-                                    isPresented.wrappedValue = false
-                                    WindowOverlayService.shared.hide()
-                                    onClose?()
-                                },
-                                content: content
-                            )
-                            .environment(\.subtheme, subtheme)
-                        }
+                        let protectedFrame = protectedTapFrame(
+                            triggerFrame: triggerFrame,
+                            placement: placement,
+                            alignment: alignment,
+                            appearance: appearance,
+                            contentHeight: contentHeight,
+                            isEnabled: protectContentTaps
+                        )
+                        WindowOverlayService.shared.updateContentIfVisible(
+                            content: {
+                                SDDSPopover(
+                                    isPresented: isPresented,
+                                    appearance: appearance,
+                                    placement: placement,
+                                    alignment: alignment,
+                                    tailEnabled: tailEnabled,
+                                    triggerCentered: triggerCentered,
+                                    placementMode: placementMode,
+                                    duration: duration,
+                                    popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
+                                    contentHeight: contentHeight,
+                                    ignoreTrigger: ignoreTrigger,
+                                    onClose: {
+                                        isPresented.wrappedValue = false
+                                        WindowOverlayService.shared.hide()
+                                        onClose?()
+                                    },
+                                    content: content
+                                )
+                                .environment(\.subtheme, subtheme)
+                            },
+                            at: triggerFrame,
+                            protectedTapFrame: protectedFrame
+                        )
                     }
             }
         )
+    }
+    
+    private func protectedTapFrame(
+        triggerFrame: CGRect,
+        placement: PopoverPlacement,
+        alignment: PopoverAlignment,
+        appearance: PopoverAppearance,
+        contentHeight: CGFloat?,
+        isEnabled: Bool
+    ) -> CGRect? {
+        guard isEnabled, let contentHeight, contentHeight > 0 else { return nil }
+        let extraInset = max(abs(appearance.size.offset), appearance.size.tailHeight)
+        
+        let width = max(triggerFrame.width, appearance.size.width)
+        let x: CGFloat
+        switch alignment {
+        case .start:
+            x = triggerFrame.minX
+        case .center:
+            x = triggerFrame.midX - width / 2
+        case .end:
+            x = triggerFrame.maxX - width
+        }
+        
+        switch placement {
+        case .bottom:
+            return CGRect(
+                x: x,
+                y: triggerFrame.minY,
+                width: width,
+                height: triggerFrame.height + contentHeight + extraInset
+            )
+        case .top:
+            return CGRect(
+                x: x,
+                y: triggerFrame.minY - contentHeight - extraInset,
+                width: width,
+                height: triggerFrame.height + contentHeight + extraInset
+            )
+        case .start:
+            return CGRect(
+                x: triggerFrame.minX - width,
+                y: triggerFrame.minY,
+                width: width + triggerFrame.width,
+                height: max(triggerFrame.height, contentHeight)
+            )
+        case .end:
+            return CGRect(
+                x: triggerFrame.minX,
+                y: triggerFrame.minY,
+                width: width + triggerFrame.width,
+                height: max(triggerFrame.height, contentHeight)
+            )
+        }
     }
 }
