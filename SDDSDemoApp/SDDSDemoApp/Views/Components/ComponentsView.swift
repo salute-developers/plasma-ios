@@ -20,6 +20,7 @@ struct ComponentsView: View {
         ("Radiobox", AnyView(RadioboxView())),
         ("RadioboxGroup", AnyView(RadioboxGroupView())),
         ("Scrollbar", AnyView(ScrollbarView())),
+        ("Select", AnyView(SelectView())),
         ("Spinner", AnyView(SpinnerView())),
         ("Switch", AnyView(SwitchView())),
         ("TextArea", AnyView(TextAreaView())),

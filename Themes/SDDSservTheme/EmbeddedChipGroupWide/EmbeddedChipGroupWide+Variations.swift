@@ -272,6 +272,95 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppe
     
 }
 
+public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xl> {
+    
+    var xl: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xl> {
+        var size =  EmbeddedChipGroupWideAnySize(size: appearance.size)
+        size.alignment = ChipGroupAlignment.left
+        size.insets(for: .dense)
+        size.maxColumns = Int(0)
+
+        var appearance = appearance
+        appearance.size = size
+    
+        return .init(
+            name: "xl",
+            appearance: appearance
+        )
+    }
+    
+    var `default`: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.default.appearance
+        
+        return .init(
+            name: "`default`",
+            appearance: appearance
+        )
+    }
+    var accent: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.accent.appearance
+        
+        return .init(
+            name: "accent",
+            appearance: appearance
+        )
+    }
+    var negative: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.negative.appearance
+        
+        return .init(
+            name: "negative",
+            appearance: appearance
+        )
+    }
+    var positive: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.positive.appearance
+        
+        return .init(
+            name: "positive",
+            appearance: appearance
+        )
+    }
+    var secondary: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.secondary.appearance
+        
+        return .init(
+            name: "secondary",
+            appearance: appearance
+        )
+    }
+    var warning: AppearanceVariation<ChipGroupAppearance> {
+        var appearance = appearance
+        appearance.chipAppearance = EmbeddedChip.xl.warning.appearance
+        
+        return .init(
+            name: "warning",
+            appearance: appearance
+        )
+    }
+    var variation: Variation<ChipGroupAppearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+                self.`default`,
+                self.accent,
+                self.negative,
+                self.positive,
+                self.secondary,
+                self.warning,
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xs> {
     
     var xs: GeneralAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAppearance, EmbeddedChipGroupWideVariation.Xs> {

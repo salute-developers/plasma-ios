@@ -47,7 +47,7 @@ public struct TextField {
     public static var xl: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.Xl> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.xl
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -175,6 +175,7 @@ private extension TextFieldAppearance {
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
+        appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
         appearance.requiredIndicatorColor = ColorToken.surfaceDefaultNegative
         appearance.startContentColor = ColorToken.textDefaultSecondary
         appearance.startContentColorFocused = ColorToken.textDefaultSecondary

@@ -260,6 +260,25 @@ public struct SDDSButton<Counter: View>: View {
     }
 }
 
+public extension SDDSButton where Counter == EmptyView {
+    init(data: ButtonData) {
+        self.init(
+            title: data.title,
+            subtitle: data.subtitle,
+            iconAttributes: data.iconAttributes,
+            isDisabled: data.isDisabled,
+            isLoading: data.isLoading,
+            spinnerImage: data.spinnerImage,
+            buttonStyle: data.buttonStyle,
+            appearance: data.appearance,
+            layoutMode: data.layoutMode,
+            accessibility: data.accessibility,
+            isSelected: data.isSelected,
+            action: data.action
+        )
+    }
+}
+
 private extension SDDSButton {
     func currentColor(for buttonColor: ButtonColor) -> Color {
         if isSelected {

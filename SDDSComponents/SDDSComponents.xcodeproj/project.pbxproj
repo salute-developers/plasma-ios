@@ -156,6 +156,7 @@
 		8136876D2E0186A800A1702A /* SkeletonAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687642E0186A800A1702A /* SkeletonAppearance.swift */; };
 		8136876E2E0186A800A1702A /* SkeletonSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813687652E0186A800A1702A /* SkeletonSizeConfiguration.swift */; };
 		81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */; };
+		81399DEC2F643E7900253047 /* TextFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81399DEB2F643E7900253047 /* TextFieldData.swift */; };
 		8139C9E82ED5E1C500188124 /* DrawerAboveContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E22ED5E1C500188124 /* DrawerAboveContentView.swift */; };
 		8139C9E92ED5E1C500188124 /* View+Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9E62ED5E1C500188124 /* View+Drawer.swift */; };
 		8139C9EA2ED5E1C500188124 /* DrawerClosePlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DF2ED5E1C500188124 /* DrawerClosePlacement.swift */; };
@@ -168,6 +169,13 @@
 		8139C9F12ED5E1C500188124 /* DrawerAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */; };
 		813BB4032EB2999000E4E505 /* View+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813BB4022EB2999000E4E505 /* View+TabBar.swift */; };
 		8140A4672D59FA06002CF32B /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8140A4662D59FA06002CF32B /* SDDSServTheme */; };
+		81410FA52F6324CC00B85EEB /* SelectAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FA12F6324CC00B85EEB /* SelectAppearance.swift */; };
+		81410FA62F6324CC00B85EEB /* SelectSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FA22F6324CC00B85EEB /* SelectSizeConfiguration.swift */; };
+		81410FA72F6324CC00B85EEB /* SelectItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FA32F6324CC00B85EEB /* SelectItemAppearance.swift */; };
+		81410FA82F6324CC00B85EEB /* SelectItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FA42F6324CC00B85EEB /* SelectItemSizeConfiguration.swift */; };
+		81410FAD2F63A8E000B85EEB /* SDDSSelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FAE2F63A8E000B85EEB /* SDDSSelectItem.swift */; };
+		81410FAF2F63ACE500B85EEB /* SDDSSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FB02F63ACE500B85EEB /* SDDSSelect.swift */; };
+		81410FB32F63D1FE00B85EEB /* SDDSSelectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410FB42F63D1FE00B85EEB /* SDDSSelectState.swift */; };
 		814185CA2C34260300D8E524 /* ButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814185C92C34260300D8E524 /* ButtonSize.swift */; };
 		814E30362C99AFAB004601F7 /* SDDSAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC08E2C821A5600FBDAC8 /* SDDSAvatar.swift */; };
 		814E30372C99AFAE004601F7 /* SDDSAvatarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CBC09E2C82334100FBDAC8 /* SDDSAvatarData.swift */; };
@@ -259,11 +267,6 @@
 		8183DDBC2EB2AB3100610A9A /* WheelDividerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */; };
 		8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA62EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift */; };
 		8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */; };
-		81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */; };
-		81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */; };
-		81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */; };
-		81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */; };
-		81E9C1CD2ED79000229705 /* SDDSCollapsingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */; };
 		8183DDBF2EB2AB3100610A9A /* WheelSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDB12EB2AB3100610A9A /* WheelSizeConfiguration.swift */; };
 		8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */; };
 		8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */; };
@@ -307,7 +310,6 @@
 		819C47362EBCF39A0081066C /* TabsSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C47302EBCF39A0081066C /* TabsSizeConfiguration.swift */; };
 		819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819C472B2EBCF39A0081066C /* TabItemAppearance.swift */; };
 		81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079002DA3FB0700260DC9 /* ScrollView+ScrollbarModifier.swift */; };
-		81CA2C4B2CC693E6002AF2DF /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */; };
 		81A079032DA3FB2600260DC9 /* ScrollbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079022DA3FB2200260DC9 /* ScrollbarModifier.swift */; };
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
@@ -329,6 +331,7 @@
 		81C61BD02E432FEC00A8E6DB /* ReadSizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C61BCF2E432FE800A8E6DB /* ReadSizeModifier.swift */; };
 		81C61F012E8A9299004B8E7E /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C61F002E8A9299004B8E7E /* ButtonData.swift */; };
 		81C6260C2E43498400A8E6DB /* ShakeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6260B2E43498400A8E6DB /* ShakeModifier.swift */; };
+		81CA2C4B2CC693E6002AF2DF /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA2C4A2CC693E6002AF2DF /* ScrollViewWrapper.swift */; };
 		81CF12192C6E686D0074174F /* SDDSRadioboxGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF12182C6E686D0074174F /* SDDSRadioboxGroup.swift */; };
 		81CF12202C6E74180074174F /* RoundedCornersMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF121F2C6E74180074174F /* RoundedCornersMask.swift */; };
 		81D2B1912C32B39B00CAA7FD /* SDDSComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2B1902C32B39B00CAA7FD /* SDDSComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -346,6 +349,11 @@
 		81E957B32ED7897F00229705 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E9559E2ED7897200229705 /* SDDSThemeCore.xcframework */; };
 		81E968142CBD194F00256968 /* FocusableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E968132CBD194F00256968 /* FocusableTextField.swift */; };
 		81E9699E2ED78A3200229705 /* View+Subthemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9699D2ED78A2F00229705 /* View+Subthemes.swift */; };
+		81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */; };
+		81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */; };
+		81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */; };
+		81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */; };
+		81E9C1CD2ED79000229705 /* SDDSCollapsingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
 		81ED2DF32E71CF0B004DB74B /* NotificationContentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */; };
 		81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */; };
@@ -629,6 +637,7 @@
 		813687672E0186A800A1702A /* SDDSRectSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSRectSkeleton.swift; sourceTree = "<group>"; };
 		813687692E0186A800A1702A /* SDDSTextSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextSkeleton.swift; sourceTree = "<group>"; };
 		81368D6D2E018DBE00A1702A /* SkeletonLineWidthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLineWidthProvider.swift; sourceTree = "<group>"; };
+		81399DEB2F643E7900253047 /* TextFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldData.swift; sourceTree = "<group>"; };
 		8139C9DC2ED5E1C500188124 /* DrawerAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAlignment.swift; sourceTree = "<group>"; };
 		8139C9DD2ED5E1C500188124 /* DrawerAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerAppearance.swift; sourceTree = "<group>"; };
 		8139C9DE2ED5E1C500188124 /* DrawerCloseIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCloseIconPlacement.swift; sourceTree = "<group>"; };
@@ -640,6 +649,13 @@
 		8139C9E52ED5E1C500188124 /* SDDSDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSDrawer.swift; sourceTree = "<group>"; };
 		8139C9E62ED5E1C500188124 /* View+Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Drawer.swift"; sourceTree = "<group>"; };
 		813BB4022EB2999000E4E505 /* View+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabBar.swift"; sourceTree = "<group>"; };
+		81410FA12F6324CC00B85EEB /* SelectAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppearance.swift; sourceTree = "<group>"; };
+		81410FA22F6324CC00B85EEB /* SelectSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSizeConfiguration.swift; sourceTree = "<group>"; };
+		81410FA32F6324CC00B85EEB /* SelectItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemAppearance.swift; sourceTree = "<group>"; };
+		81410FA42F6324CC00B85EEB /* SelectItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		81410FAE2F63A8E000B85EEB /* SDDSSelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSelectItem.swift; sourceTree = "<group>"; };
+		81410FB02F63ACE500B85EEB /* SDDSSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSelect.swift; sourceTree = "<group>"; };
+		81410FB42F63D1FE00B85EEB /* SDDSSelectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSelectState.swift; sourceTree = "<group>"; };
 		814185C62C33080400D8E524 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
@@ -738,11 +754,6 @@
 		8183DDA72EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
 		8183DDAB2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageSizeConfiguration.swift; sourceTree = "<group>"; };
-		81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarState.swift; sourceTree = "<group>"; };
-		81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarScrollBehavior.swift; sourceTree = "<group>"; };
-		81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCollapsingNavigationBar.swift; sourceTree = "<group>"; };
-		81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarAppearance.swift; sourceTree = "<group>"; };
-		81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelAppearance.swift; sourceTree = "<group>"; };
 		8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelDividerStyle.swift; sourceTree = "<group>"; };
 		8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemAlignment.swift; sourceTree = "<group>"; };
@@ -1246,6 +1257,11 @@
 		81E957992ED7897200229705 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
 		81E9699D2ED78A2F00229705 /* View+Subthemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Subthemes.swift"; sourceTree = "<group>"; };
+		81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarState.swift; sourceTree = "<group>"; };
+		81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarScrollBehavior.swift; sourceTree = "<group>"; };
+		81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCollapsingNavigationBar.swift; sourceTree = "<group>"; };
+		81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarAppearance.swift; sourceTree = "<group>"; };
+		81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
 		81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentAppearance.swift; sourceTree = "<group>"; };
 		81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentButtonLayout.swift; sourceTree = "<group>"; };
@@ -1896,6 +1912,43 @@
 			path = SDDSDrawer;
 			sourceTree = "<group>";
 		};
+		81410FA92F6324CC00B85EEB /* SelectAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81410FA12F6324CC00B85EEB /* SelectAppearance.swift */,
+				81410FA22F6324CC00B85EEB /* SelectSizeConfiguration.swift */,
+			);
+			path = SelectAppearance;
+			sourceTree = "<group>";
+		};
+		81410FAA2F6324CC00B85EEB /* SDDSSelect */ = {
+			isa = PBXGroup;
+			children = (
+				81410FA92F6324CC00B85EEB /* SelectAppearance */,
+				81410FB02F63ACE500B85EEB /* SDDSSelect.swift */,
+				81410FB42F63D1FE00B85EEB /* SDDSSelectState.swift */,
+			);
+			path = SDDSSelect;
+			sourceTree = "<group>";
+		};
+		81410FAB2F6324CC00B85EEB /* SelectItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81410FA32F6324CC00B85EEB /* SelectItemAppearance.swift */,
+				81410FA42F6324CC00B85EEB /* SelectItemSizeConfiguration.swift */,
+			);
+			path = SelectItemAppearance;
+			sourceTree = "<group>";
+		};
+		81410FAC2F6324CC00B85EEB /* SDDSSelectItem */ = {
+			isa = PBXGroup;
+			children = (
+				81410FAB2F6324CC00B85EEB /* SelectItemAppearance */,
+				81410FAE2F63A8E000B85EEB /* SDDSSelectItem.swift */,
+			);
+			path = SDDSSelectItem;
+			sourceTree = "<group>";
+		};
 		814185C82C3424EA00D8E524 /* SDDSButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -2329,18 +2382,6 @@
 			path = SDDSNavigationBarMainPage;
 			sourceTree = "<group>";
 		};
-		81E9C1C92ED79000229705 /* SDDSCollapsingNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */,
-				81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */,
-				81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */,
-				81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */,
-				81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */,
-			);
-			path = SDDSCollapsingNavigationBar;
-			sourceTree = "<group>";
-		};
 		8183DDB22EB2AB3100610A9A /* WheelAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -2364,6 +2405,8 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81410FAA2F6324CC00B85EEB /* SDDSSelect */,
+				81410FAC2F6324CC00B85EEB /* SDDSSelectItem */,
 				816C82C62EFBB29700446DEE /* SDDSAutocomplete */,
 				8139C9E72ED5E1C500188124 /* SDDSDrawer */,
 				819C47322EBCF39A0081066C /* SDDSTabs */,
@@ -4146,9 +4189,22 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		81E9C1C92ED79000229705 /* SDDSCollapsingNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */,
+				81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */,
+				81E9C1C12ED79000229705 /* CollapsingNavigationBarState.swift */,
+				81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */,
+				81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */,
+			);
+			path = SDDSCollapsingNavigationBar;
+			sourceTree = "<group>";
+		};
 		81E9FA8D2C92B12C0041B5FF /* SDDSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				81399DEB2F643E7900253047 /* TextFieldData.swift */,
 				815E42BB2EE8640C001EA7C8 /* Mask */,
 				812DB74D2D57B44100D3F4A3 /* TextField.swift */,
 				812DB7442D57B44100D3F4A3 /* TextFieldAppearance */,
@@ -4732,6 +4788,7 @@
 				8131E8672E4C556A00FED868 /* SDDSTabBarItem.swift in Sources */,
 				810F926D2E1395AB008CA4CA /* SDDSListItem.swift in Sources */,
 				810F926E2E1395AB008CA4CA /* ListSizeConfiguration.swift in Sources */,
+				81399DEC2F643E7900253047 /* TextFieldData.swift in Sources */,
 				810F4C772E268E1D00218FE7 /* AccordionItemAppearance.swift in Sources */,
 				810F7B582E27F25E00218FE7 /* AccordionAppearance.swift in Sources */,
 				810F7B592E27F25E00218FE7 /* AccordionData.swift in Sources */,
@@ -4792,6 +4849,13 @@
 				816C82C72EFBB29700446DEE /* SDDSAutocomplete.swift in Sources */,
 				816C82C82EFBB29700446DEE /* AutocompleteSizeConfiguration.swift in Sources */,
 				816C82C92EFBB29700446DEE /* AutocompleteAppearance.swift in Sources */,
+				81410FA52F6324CC00B85EEB /* SelectAppearance.swift in Sources */,
+				81410FA62F6324CC00B85EEB /* SelectSizeConfiguration.swift in Sources */,
+				81410FA72F6324CC00B85EEB /* SelectItemAppearance.swift in Sources */,
+				81410FA82F6324CC00B85EEB /* SelectItemSizeConfiguration.swift in Sources */,
+				81410FAD2F63A8E000B85EEB /* SDDSSelectItem.swift in Sources */,
+				81410FAF2F63ACE500B85EEB /* SDDSSelect.swift in Sources */,
+				81410FB32F63D1FE00B85EEB /* SDDSSelectState.swift in Sources */,
 				81B562512E3D11E400504B1D /* CodeFieldValidation.swift in Sources */,
 				692510212D7632CA00545542 /* SDDSBadge.swift in Sources */,
 				81F89DEC2D808AA000A41C89 /* CardSizeConfiguration.swift in Sources */,
