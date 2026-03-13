@@ -1447,6 +1447,78 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var selectSingleNormalVariations: [Variation<SelectAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectSingleNormal.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectSingleTightVariations: [Variation<SelectAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectSingleTight.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectMultipleNormalVariations: [Variation<SelectAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectMultipleNormal.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectMultipleTightVariations: [Variation<SelectAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectMultipleTight.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectItemSingleNormalVariations: [Variation<SelectItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectItemSingleNormal.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectItemSingleTightVariations: [Variation<SelectItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectItemSingleTight.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectItemMultipleNormalVariations: [Variation<SelectItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectItemMultipleNormal.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var selectItemMultipleTightVariations: [Variation<SelectItemAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.SelectItemMultipleTight.all
+        case .plasmaB2CTheme, .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
     var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
         switch self {
         case .sdddsServTheme:

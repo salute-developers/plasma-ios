@@ -57,3 +57,5 @@ typealias CollapsingNavigationBarInternalPageConfiguration = ComponentConfigurat
 typealias CollapsingNavigationBarMainPageConfiguration = ComponentConfiguration<CollapsingNavigationBarMainPageProps>
 typealias ToolbarConfiguration = ComponentConfiguration<ToolbarProps>
 typealias EditableConfiguration = ComponentConfiguration<EditableProps>
+typealias SelectItemConfiguration = ComponentConfiguration<SelectItemProps>
+typealias SelectConfiguration = ComponentConfiguration<SelectProps>

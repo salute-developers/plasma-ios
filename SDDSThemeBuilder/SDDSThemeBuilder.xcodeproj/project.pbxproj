@@ -169,6 +169,12 @@
 		8139EB462C1B4F3600D6A049 /* ThemeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB452C1B4F3600D6A049 /* ThemeContext.swift */; };
 		8139EB482C20403C00D6A049 /* String+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB472C20403C00D6A049 /* String+Hex.swift */; };
 		8139EB4A2C2040E300D6A049 /* ColorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139EB492C2040E300D6A049 /* ColorContext.swift */; };
+		81410F652F63113700B85EEB /* SelectItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F632F63113700B85EEB /* SelectItemSize.swift */; };
+		81410F662F63113700B85EEB /* SelectSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F602F63113700B85EEB /* SelectSize.swift */; };
+		81410F672F63113700B85EEB /* SelectAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F5F2F63113700B85EEB /* SelectAppearance.swift */; };
+		81410F682F63113700B85EEB /* SelectItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F622F63113700B85EEB /* SelectItemAppearance.swift */; };
+		81410F6B2F631E9D00B85EEB /* SelectProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F692F631E9D00B85EEB /* SelectProps.swift */; };
+		81410F6C2F631E9D00B85EEB /* SelectItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81410F6A2F631E9D00B85EEB /* SelectItemProps.swift */; };
 		8149BF402D6351120011C402 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8149BF3F2D6351120011C402 /* SDDSThemeCore */; };
 		814B78262EA8D7D3009B091C /* NavigationBarInternalPageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78212EA8D7D3009B091C /* NavigationBarInternalPageSize.swift */; };
 		814B78272EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B78232EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift */; };
@@ -688,6 +694,12 @@
 		8139EB452C1B4F3600D6A049 /* ThemeContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeContext.swift; sourceTree = "<group>"; };
 		8139EB472C20403C00D6A049 /* String+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hex.swift"; sourceTree = "<group>"; };
 		8139EB492C2040E300D6A049 /* ColorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContext.swift; sourceTree = "<group>"; };
+		81410F5F2F63113700B85EEB /* SelectAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppearance.swift; sourceTree = "<group>"; };
+		81410F602F63113700B85EEB /* SelectSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSize.swift; sourceTree = "<group>"; };
+		81410F622F63113700B85EEB /* SelectItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemAppearance.swift; sourceTree = "<group>"; };
+		81410F632F63113700B85EEB /* SelectItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemSize.swift; sourceTree = "<group>"; };
+		81410F692F631E9D00B85EEB /* SelectProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProps.swift; sourceTree = "<group>"; };
+		81410F6A2F631E9D00B85EEB /* SelectItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemProps.swift; sourceTree = "<group>"; };
 		814B78202EA8D7D3009B091C /* NavigationBarInternalPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageAppearance.swift; sourceTree = "<group>"; };
 		814B78212EA8D7D3009B091C /* NavigationBarInternalPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSize.swift; sourceTree = "<group>"; };
 		814B78232EA8D7D3009B091C /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
@@ -1401,6 +1413,8 @@
 				81AE97962F4DC008001FDE3F /* ToolbarProps.swift */,
 				81538AE72F516708007E9643 /* EditableProps.swift */,
 				816C82B22EFBB04E00446DEE /* AutocompleteProps.swift */,
+				81410F692F631E9D00B85EEB /* SelectProps.swift */,
+				81410F6A2F631E9D00B85EEB /* SelectItemProps.swift */,
 				813472DC2ECF739600D40423 /* DrawerProps.swift */,
 				819C360D2EBCE7EA0081066C /* TabItemDefaultProps.swift */,
 				819C36042EBCE27E0081066C /* TabsDefaultProps.swift */,
@@ -1462,6 +1476,8 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81410F612F63113700B85EEB /* Select */,
+				81410F642F63113700B85EEB /* SelectItem */,
 				81AE979A2F4DC015001FDE3F /* Toolbar */,
 				81538AEC2F516725007E9643 /* Editable */,
 				816C82B62EFBB05B00446DEE /* Autocomplete */,
@@ -1598,6 +1614,24 @@
 				8139923D2D9ED9B80015AF83 /* SegmentSize.swift */,
 			);
 			path = Segment;
+			sourceTree = "<group>";
+		};
+		81410F612F63113700B85EEB /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				81410F5F2F63113700B85EEB /* SelectAppearance.swift */,
+				81410F602F63113700B85EEB /* SelectSize.swift */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		81410F642F63113700B85EEB /* SelectItem */ = {
+			isa = PBXGroup;
+			children = (
+				81410F622F63113700B85EEB /* SelectItemAppearance.swift */,
+				81410F632F63113700B85EEB /* SelectItemSize.swift */,
+			);
+			path = SelectItem;
 			sourceTree = "<group>";
 		};
 		814B78222EA8D7D3009B091C /* NavigationBarInternalPage */ = {
@@ -2921,6 +2955,12 @@
 				812DB79A2D59D85400D3F4A3 /* ButtonProps.swift in Sources */,
 				81CB0FEB2C245052003B1064 /* EnsureValueNode.swift in Sources */,
 				818E33122DDDC0B100130AF9 /* PopoverSize.swift in Sources */,
+				81410F652F63113700B85EEB /* SelectItemSize.swift in Sources */,
+				81410F662F63113700B85EEB /* SelectSize.swift in Sources */,
+				81410F672F63113700B85EEB /* SelectAppearance.swift in Sources */,
+				81410F682F63113700B85EEB /* SelectItemAppearance.swift in Sources */,
+				81410F6B2F631E9D00B85EEB /* SelectProps.swift in Sources */,
+				81410F6C2F631E9D00B85EEB /* SelectItemProps.swift in Sources */,
 				81E1EE402BE3A5BF00F86AE1 /* ShapeKind.swift in Sources */,
 				81E1EDF42BDA7AE700F86AE1 /* TypographyContextBuilder.swift in Sources */,
 				693FEF332DE4661300E14D0E /* DividerAppearance.swift in Sources */,
