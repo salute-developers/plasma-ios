@@ -43,6 +43,7 @@ public extension View {
         protectContentTaps: Bool = false,
         subtheme: SubthemeData = SubthemeData(),
         ignoreTrigger: Bool = false,
+        onTriggerTap: (() -> Void)? = nil,
         contentId: AnyHashable? = nil,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
@@ -88,6 +89,8 @@ public extension View {
                                     },
                                     at: triggerFrame,
                                     protectedTapFrame: protectedFrame,
+                                    triggerTapFrame: triggerFrame,
+                                    onTriggerTap: onTriggerTap,
                                     onClose: {
                                         isPresented.wrappedValue = false
                                         onClose?()
@@ -136,6 +139,8 @@ public extension View {
                                 },
                                 at: triggerFrame,
                                 protectedTapFrame: protectedFrame,
+                                triggerTapFrame: triggerFrame,
+                                onTriggerTap: onTriggerTap,
                                 onClose: {
                                     isPresented.wrappedValue = false
                                     onClose?()
@@ -182,8 +187,9 @@ public extension View {
                                 )
                                 .environment(\.subtheme, subtheme)
                             },
-                            at: triggerFrame,
-                            protectedTapFrame: protectedFrame
+                            protectedTapFrame: protectedFrame,
+                            triggerTapFrame: triggerFrame,
+                            onTriggerTap: onTriggerTap
                         )
                     }
             }

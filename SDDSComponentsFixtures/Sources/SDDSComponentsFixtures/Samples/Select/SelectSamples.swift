@@ -18,10 +18,12 @@ struct SDDSSelect_SingleTextField: View {
 
     var body: some View {
         SDDSSelect(
-            triggerStyle: .textField,
+            triggerStyle: .textField(TextFieldData(
+                title: "City",
+                placeholder: "Select city",
+                appearance: SelectSingleNormal.l.appearance.textFieldAppearance
+            )),
             text: selectedTitle,
-            title: "City",
-            placeholder: "Select city",
             appearance: SelectSingleNormal.l.appearance,
             isDropdownPresented: $isDropdownPresented,
             options: options,
@@ -82,9 +84,15 @@ struct SDDSSelect_MultipleButton: View {
 
     var body: some View {
         SDDSSelect(
-            triggerStyle: .button,
+            triggerStyle: .button(
+                ButtonData(
+                    title: "Select cities",
+                    appearance: SelectMultipleNormal.l.appearance.buttonAppearance,
+                    layoutMode: .fixedWidth(.packed),
+                    action: {}
+                )
+            ),
             chips: chips,
-            placeholder: "Select cities",
             appearance: SelectMultipleNormal.l.appearance,
             isDropdownPresented: $isDropdownPresented,
             options: options,

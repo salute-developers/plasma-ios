@@ -19,6 +19,8 @@ final class WindowOverlayService: NSObject {
     private var toastContainerView: PassthroughView?
     private var hideOnTap: Bool = true
     private var protectedTapFrame: CGRect?
+    private var triggerTapFrame: CGRect?
+    private var onTriggerTap: (() -> Void)?
     
     private override init() {
         super.init()
@@ -63,6 +65,8 @@ final class WindowOverlayService: NSObject {
         at frame: CGRect,
         hideOnTap: Bool = true,
         protectedTapFrame: CGRect? = nil,
+        triggerTapFrame: CGRect? = nil,
+        onTriggerTap: (() -> Void)? = nil,
         onClose: (() -> Void)? = nil
     ) {
         guard let existingWindow = getExistingWindow() else {
@@ -77,12 +81,16 @@ final class WindowOverlayService: NSObject {
         self.onClose = onClose
         self.hideOnTap = hideOnTap
         self.protectedTapFrame = protectedTapFrame
+        self.triggerTapFrame = triggerTapFrame
+        self.onTriggerTap = onTriggerTap
         
         if overlayHostingController != nil {
             updateContent(
                 in: existingWindow,
                 frame: frame,
                 protectedTapFrame: protectedTapFrame,
+                triggerTapFrame: triggerTapFrame,
+                onTriggerTap: onTriggerTap,
                 content: content,
                 onClose: onClose
             )
@@ -148,6 +156,8 @@ final class WindowOverlayService: NSObject {
         in window: UIWindow,
         frame: CGRect,
         protectedTapFrame: CGRect? = nil,
+        triggerTapFrame: CGRect? = nil,
+        onTriggerTap: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content,
         onClose: (() -> Void)?
     ) {
@@ -157,6 +167,8 @@ final class WindowOverlayService: NSObject {
         ) }
         self.onClose = onClose
         self.protectedTapFrame = protectedTapFrame
+        self.triggerTapFrame = triggerTapFrame
+        self.onTriggerTap = onTriggerTap
         
         if let existingController = overlayHostingController {
             let baseContent = contentBuilder?() ?? AnyView(EmptyView())
@@ -244,6 +256,10 @@ final class WindowOverlayService: NSObject {
         }
         
         let location = gesture.location(in: container)
+        if let triggerTapFrame, triggerTapFrame.contains(location) {
+            onTriggerTap?()
+            return
+        }
         if let protectedTapFrame, protectedTapFrame.contains(location) {
             return
         }
@@ -269,6 +285,8 @@ final class WindowOverlayService: NSObject {
         overlayContainerView?.removeFromSuperview()
         overlayContainerView = nil
         protectedTapFrame = nil
+        triggerTapFrame = nil
+        onTriggerTap = nil
         onClose?()
     }
     
@@ -276,6 +294,8 @@ final class WindowOverlayService: NSObject {
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect? = nil,
         protectedTapFrame: CGRect? = nil,
+        triggerTapFrame: CGRect? = nil,
+        onTriggerTap: (() -> Void)? = nil,
         onClose: (() -> Void)? = nil
     ) {
         if let window = getExistingWindow(), 
@@ -286,6 +306,8 @@ final class WindowOverlayService: NSObject {
             let targetFrame = frame ?? lastFrame
             self.lastFrame = targetFrame
             self.protectedTapFrame = protectedTapFrame
+            self.triggerTapFrame = triggerTapFrame
+            self.onTriggerTap = onTriggerTap
             if let onClose = onClose {
                 self.onClose = onClose
             }
@@ -318,6 +340,8 @@ final class WindowOverlayService: NSObject {
                 content: content,
                 at: targetFrame,
                 protectedTapFrame: protectedTapFrame,
+                triggerTapFrame: triggerTapFrame,
+                onTriggerTap: onTriggerTap,
                 onClose: onClose
             )
         }
@@ -508,6 +532,9 @@ extension WindowOverlayService: UIGestureRecognizerDelegate {
         }
         
         let location = touch.location(in: container)
+        if let triggerTapFrame, triggerTapFrame.contains(location) {
+            return true
+        }
         if let protectedTapFrame, protectedTapFrame.contains(location) {
             return false
         }

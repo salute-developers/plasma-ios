@@ -44,6 +44,7 @@ public extension View {
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
         protectContentTaps: Bool = false,
+        onTriggerTap: (() -> Void)? = nil,
         subtheme: SubthemeData = SubthemeData(),
         contentId: AnyHashable? = nil,
         onClose: (() -> Void)? = nil,
@@ -66,6 +67,7 @@ public extension View {
             protectContentTaps: protectContentTaps,
             subtheme: subtheme,
             ignoreTrigger: true,
+            onTriggerTap: onTriggerTap,
             contentId: contentId,
             onClose: onClose,
             content: content

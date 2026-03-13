@@ -1,8 +1,29 @@
 import Foundation
 import SDDSComponents
 
+enum SelectTriggerPosition: String, CaseIterable {
+    case topStart = "TopStart"
+    case topCenter = "TopCenter"
+    case topEnd = "TopEnd"
+    case centerStart = "CenterStart"
+    case center = "Center"
+    case centerEnd = "CenterEnd"
+    case bottomStart = "BottomStart"
+    case bottomCenter = "BottomCenter"
+    case bottomEnd = "BottomEnd"
+}
+
+enum SelectTriggerKind: String, CaseIterable {
+    case textField
+    case button
+}
+
 final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
-    @Published var triggerStyle: SelectTriggerStyle = .textField
+    @Published var triggerKind: SelectTriggerKind = .textField
+    @Published var triggerPosition: SelectTriggerPosition = .center
+    @Published var placement: PopoverPlacement = .bottom
+    @Published var alignment: PopoverAlignment = .start
+    @Published var placementMode: PopoverPlacementMode = .strict
     @Published var layout: SelectDemoLayout = .normal {
         didSet {
             variationProvider.layout = layout
@@ -22,7 +43,6 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
     @Published var isDropdownPresented: Bool = false
-    @Published var closeOnSingleSelection: Bool = false
     @Published var isLoading: Bool = false
     @Published var showEmptyState: Bool = false
     @Published var showHeader: Bool = true
@@ -50,15 +70,16 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
         let selectedItems = options.filter { selectedIDs.contains($0.id) }
         switch mode {
         case .single:
-            return selectedItems.first?.title ?? "Выберите значение"
+            return selectedItems.first?.title ?? "Город"
         case .multiple:
             let value = selectedItems.map(\.title).joined(separator: ", ")
-            return value.isEmpty ? "Выберите значение" : value
+            return value.isEmpty ? "Город" : value
         }
     }
     
     var displayChips: [ChipData] {
         guard mode == .multiple else { return [] }
+        let chipAppearance = appearance.textFieldAppearance.chipAppearance
         return options
             .filter { selectedIDs.contains($0.id) }
             .map { option in
@@ -67,6 +88,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
                     isEnabled: true,
                     iconImage: nil,
                     buttonImage: nil,
+                    appearance: chipAppearance,
                     accessibility: ChipAccessibility(),
                     removeAction: {}
                 )
@@ -87,11 +109,6 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
             isReadOnly: readOnly || disabled
         )
         selectedIDs = result.selectedIDs
-        
-        if result.shouldCloseDropdown && closeOnSingleSelection {
-            isDropdownPresented = false
-        }
-        
         updateOptions()
     }
     
