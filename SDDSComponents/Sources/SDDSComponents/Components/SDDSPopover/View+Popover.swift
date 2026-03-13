@@ -41,6 +41,9 @@ public extension View {
         duration: TimeInterval? = nil,
         contentHeight: CGFloat? = nil,
         protectContentTaps: Bool = false,
+        triggerFrameInsets: EdgeInsets = .init(),
+        placementCheckSize: CGSize? = nil,
+        fitCalculationMode: PopoverFitCalculationMode = .default,
         subtheme: SubthemeData = SubthemeData(),
         ignoreTrigger: Bool = false,
         onTriggerTap: (() -> Void)? = nil,
@@ -53,10 +56,14 @@ public extension View {
                 Color.clear
                     .onChange(of: isPresented.wrappedValue) { newValue in
                         // Используем асинхронное обновление, чтобы не вызывать перерисовку родительского view
+                        let requestedState = newValue
                         Task { @MainActor in
+                            // Ignore stale async updates when state changed again before task execution.
+                            guard isPresented.wrappedValue == requestedState else { return }
                             let triggerFrame = geometry.frame(in: .global)
+                            let anchorFrame = applyInsets(to: triggerFrame, insets: triggerFrameInsets)
                             let protectedFrame = protectedTapFrame(
-                                triggerFrame: triggerFrame,
+                                triggerFrame: anchorFrame,
                                 placement: placement,
                                 alignment: alignment,
                                 appearance: appearance,
@@ -75,9 +82,11 @@ public extension View {
                                             triggerCentered: triggerCentered,
                                             placementMode: placementMode,
                                             duration: duration,
-                                            popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
+                                            popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: anchorFrame),
                                             contentHeight: contentHeight,
                                             ignoreTrigger: ignoreTrigger,
+                                            placementCheckSize: placementCheckSize,
+                                            fitCalculationMode: fitCalculationMode,
                                             onClose: {
                                                 isPresented.wrappedValue = false
                                                 WindowOverlayService.shared.hide()
@@ -87,7 +96,7 @@ public extension View {
                                         )
                                         .environment(\.subtheme, subtheme)
                                     },
-                                    at: triggerFrame,
+                                    at: anchorFrame,
                                     protectedTapFrame: protectedFrame,
                                     triggerTapFrame: triggerFrame,
                                     onTriggerTap: onTriggerTap,
@@ -106,8 +115,9 @@ public extension View {
                         // Это предотвратит перерисовку при первом изменении isPresented
                         if isPresented.wrappedValue {
                             let triggerFrame = geometry.frame(in: .global)
+                            let anchorFrame = applyInsets(to: triggerFrame, insets: triggerFrameInsets)
                             let protectedFrame = protectedTapFrame(
-                                triggerFrame: triggerFrame,
+                                triggerFrame: anchorFrame,
                                 placement: placement,
                                 alignment: alignment,
                                 appearance: appearance,
@@ -125,9 +135,11 @@ public extension View {
                                         triggerCentered: triggerCentered,
                                         placementMode: placementMode,
                                         duration: duration,
-                                        popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
+                                            popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: anchorFrame),
                                         contentHeight: contentHeight,
                                         ignoreTrigger: ignoreTrigger,
+                                        placementCheckSize: placementCheckSize,
+                                        fitCalculationMode: fitCalculationMode,
                                         onClose: {
                                             isPresented.wrappedValue = false
                                             WindowOverlayService.shared.hide()
@@ -137,7 +149,7 @@ public extension View {
                                     )
                                     .environment(\.subtheme, subtheme)
                                 },
-                                at: triggerFrame,
+                                at: anchorFrame,
                                 protectedTapFrame: protectedFrame,
                                 triggerTapFrame: triggerFrame,
                                 onTriggerTap: onTriggerTap,
@@ -156,8 +168,9 @@ public extension View {
                         // Используем небольшой delay, чтобы дать время для обновления контента
                         try? await Task.sleep(nanoseconds: 50_000_000) // 50ms
                         let triggerFrame = geometry.frame(in: .global)
+                        let anchorFrame = applyInsets(to: triggerFrame, insets: triggerFrameInsets)
                         let protectedFrame = protectedTapFrame(
-                            triggerFrame: triggerFrame,
+                            triggerFrame: anchorFrame,
                             placement: placement,
                             alignment: alignment,
                             appearance: appearance,
@@ -175,9 +188,11 @@ public extension View {
                                     triggerCentered: triggerCentered,
                                     placementMode: placementMode,
                                     duration: duration,
-                                    popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: triggerFrame),
+                                    popoverSizeCalculator: PopoverSizeCalculatorImpl(frame: anchorFrame),
                                     contentHeight: contentHeight,
                                     ignoreTrigger: ignoreTrigger,
+                                    placementCheckSize: placementCheckSize,
+                                    fitCalculationMode: fitCalculationMode,
                                     onClose: {
                                         isPresented.wrappedValue = false
                                         WindowOverlayService.shared.hide()
@@ -193,6 +208,17 @@ public extension View {
                         )
                     }
             }
+        )
+    }
+    
+    private func applyInsets(to frame: CGRect, insets: EdgeInsets) -> CGRect {
+        let adjustedWidth = max(frame.width - insets.leading - insets.trailing, 1)
+        let adjustedHeight = max(frame.height - insets.top - insets.bottom, 1)
+        return CGRect(
+            x: frame.minX + insets.leading,
+            y: frame.minY + insets.top,
+            width: adjustedWidth,
+            height: adjustedHeight
         )
     }
     

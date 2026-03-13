@@ -130,6 +130,9 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 placementMode: placementMode,
                 contentHeight: calculatedContentHeight,
                 protectContentTaps: true,
+                triggerFrameInsets: triggerFrameInsets,
+                placementCheckSize: placementCheckSize,
+                fitCalculationMode: .overlayCentered,
                 onTriggerTap: {
                     handleTriggerTap()
                 },
@@ -195,6 +198,16 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
     private var resolvedDropdownWidth: CGFloat? {
         let width = triggerWidth > 0 ? triggerWidth : appearance.dropdownAppearance.size.width
         return width > 0 ? width : nil
+    }
+
+    /// Optional explicit size for loose-placement fit checks.
+    /// Needed for Select because runtime clipping can under-report measured overlay size near screen edges.
+    private var placementCheckSize: CGSize? {
+        guard placementMode == .loose else { return nil }
+        guard let width = resolvedDropdownWidth else { return nil }
+        let height = calculatedContentHeight ?? resolvedListHeight
+        guard let height, height > 0 else { return nil }
+        return CGSize(width: width, height: height)
     }
     
     private var selectionContentId: String {
@@ -392,9 +405,18 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         var appearance = selectAppearance.dropdownAppearance
         var size = DefaultDropdownMenuSize()
         if case .textField(_) = triggerStyle {
-            let captionTypography = selectAppearance.textFieldAppearance.captionTypography
-                .typography(with: selectAppearance.textFieldAppearance.size)
-            size.offset = -(selectAppearance.textFieldAppearance.size.captionTopPadding + (captionTypography?.lineHeight ?? 0))
+            let textFieldAppearance = resolvedTextFieldData.appearance ?? selectAppearance.textFieldAppearance
+            let captionTypography = textFieldAppearance.captionTypography
+                .typography(with: textFieldAppearance.size)
+            let baseOffset = textFieldAppearance.size.captionTopPadding + (captionTypography?.lineHeight ?? 0)
+            switch placement {
+            case .bottom:
+                // Bottom trigger needs negative offset to remove the caption gap.
+                size.offset = -baseOffset
+            case .top, .start, .end:
+                // Keep other placements attached to trigger without extra gap.
+                size.offset = 0
+            }
         } else {
             size.offset = 0
         }
@@ -403,6 +425,23 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         appearance.size = size
         
         return appearance
+    }
+    
+    private var triggerFrameInsets: EdgeInsets {
+        guard case .textField(_) = triggerStyle else {
+            return .init()
+        }
+        guard placement == .start || placement == .end else {
+            return .init()
+        }
+        
+        let textFieldAppearance = resolvedTextFieldData.appearance ?? appearance.textFieldAppearance
+        let captionTypography = textFieldAppearance.captionTypography
+            .typography(with: textFieldAppearance.size)
+        let captionHeight = textFieldAppearance.size.captionTopPadding + (captionTypography?.lineHeight ?? 0)
+        
+        // Side placements should align against the text box, not caption area.
+        return EdgeInsets(top: 0, leading: 0, bottom: captionHeight, trailing: 0)
     }
     
     @ViewBuilder

@@ -26,6 +26,11 @@ public enum PopoverPlacementMode: String, CaseIterable {
     case loose
 }
 
+public enum PopoverFitCalculationMode {
+    case `default`
+    case overlayCentered
+}
+
 // MARK: - Environment Keys
 struct SDDSPopover<Content: View>: View {
     
@@ -43,6 +48,8 @@ struct SDDSPopover<Content: View>: View {
     private let popoverSizeCalculator: PopoverSizeCalculator
     private let contentHeight: CGFloat?
     private let ignoreTrigger: Bool
+    private let placementCheckSize: CGSize?
+    private let fitCalculationMode: PopoverFitCalculationMode
     @Binding private var isPresented: Bool
     
     @State private var popoverSize: CGSize = .zero
@@ -62,6 +69,8 @@ struct SDDSPopover<Content: View>: View {
         popoverSizeCalculator: PopoverSizeCalculator,
         contentHeight: CGFloat? = nil,
         ignoreTrigger: Bool = false,
+        placementCheckSize: CGSize? = nil,
+        fitCalculationMode: PopoverFitCalculationMode = .default,
         onClose: (() -> Void)? = nil,
         @ViewBuilder content: @escaping () -> Content
     ) {
@@ -78,6 +87,8 @@ struct SDDSPopover<Content: View>: View {
         self.popoverSizeCalculator = popoverSizeCalculator
         self.contentHeight = contentHeight
         self.ignoreTrigger = ignoreTrigger
+        self.placementCheckSize = placementCheckSize
+        self.fitCalculationMode = fitCalculationMode
         _placementState = State(initialValue: placement)
     }
     
@@ -254,22 +265,21 @@ struct SDDSPopover<Content: View>: View {
     }
 
     private func updateIntersection() {
-        print(currentPopoverSize)
+        let checkSize = placementCheckSize ?? currentPopoverSize
         let isFullyInside = fits(
             placement: placementState,
-            popoverSize: currentPopoverSize
+            popoverSize: checkSize
         )
         if !isFullyInside && placementMode == .loose {
             let newPlacement = bestPlacement(
                 initial: placementState,
-                popoverSize: currentPopoverSize
+                popoverSize: checkSize
             )
             placementState = newPlacement
         }
     }
 
     private func bestPlacement(initial: PopoverPlacement, popoverSize: CGSize) -> PopoverPlacement {
-        let placements: [PopoverPlacement] = [.top, .end, .bottom, .start]
         let clockwise: [PopoverPlacement] = {
             switch initial {
             case .top: return [.top, .end, .bottom, .start]
@@ -308,15 +318,26 @@ struct SDDSPopover<Content: View>: View {
             popoverSize: popoverSize,
             triggerSize: popoverSizeCalculator.frame.size
         )
-        let popoverOrigin = CGPoint(
-            x: triggerFrame.origin.x + offset.width - triggerFrame.width / 2,
-            y: triggerFrame.origin.y + offset.height - triggerFrame.height / 2 - popoverSize.height / 2
-        )
+        let popoverOrigin: CGPoint = {
+            switch fitCalculationMode {
+            case .default:
+                return CGPoint(
+                    x: triggerFrame.origin.x + offset.width - triggerFrame.width / 2,
+                    y: triggerFrame.origin.y + offset.height - triggerFrame.height / 2 - popoverSize.height / 2
+                )
+            case .overlayCentered:
+                // Overlay positions content at triggerFrame; popover is centered in that frame, then offset is applied.
+                let baseX = triggerFrame.origin.x + (triggerFrame.width - popoverSize.width) / 2
+                let baseY = triggerFrame.origin.y + (triggerFrame.height - popoverSize.height) / 2
+                return CGPoint(
+                    x: baseX + offset.width,
+                    y: baseY + offset.height
+                )
+            }
+        }()
         let popoverFrame = CGRect(origin: popoverOrigin, size: popoverSize)
 
-        let result = screenBounds.contains(popoverFrame)
-        
-        return result
+        return screenBounds.contains(popoverFrame)
     }
     
     private var currentPopoverSize: CGSize {
