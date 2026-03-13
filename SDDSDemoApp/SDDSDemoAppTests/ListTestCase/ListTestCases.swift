@@ -54,6 +54,27 @@ struct ListNormalSizeL: View {
 }
 
 /**
+ List with counter
+ */
+struct ListCounter: View {
+    var appearance: ListAppearance
+    
+    var body: some View {
+        SDDSList(
+            items: (1...3).map { index in
+                SDDSListItem(
+                    title: "Title \(index)",
+                    counterText: "\(index)",
+                    rightContent: {},
+                    rightContentEnabled: false
+                )
+            },
+            appearance: appearance
+        )
+    }
+}
+
+/**
  PLASMA-T2063
  */
 struct ListNormalSizeM: View {

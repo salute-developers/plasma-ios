@@ -33,4 +33,21 @@ final class ListPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
         let appearance = List.s.appearance
         try await runSnapshotTest(view: ListNormalSizeXsAmountTwenty(appearance: appearance))
     }
+    @MainActor
+    func testListSNoBackgroundHasItemBackgroundHomeDS() async throws {
+        let appearance = List.s.noBackground.hasItemBackground.appearance
+        try await runSnapshotTest(view: ListNormalSizeXlHasDisclosure(appearance: appearance))
+    }
+    
+    @MainActor
+    func testListSHasBackgroundHomeDS() async throws {
+        let appearance = List.s.hasBackground.appearance
+        try await runSnapshotTest(view: ListNormalSizeXlHasDisclosure(appearance: appearance))
+    }
+    
+    @MainActor
+    func testListNumberedHomeDS() async throws {
+        let appearance = ListNumbered.s.appearance
+        try await runSnapshotTest(view: ListCounter(appearance: appearance))
+    }
 }
