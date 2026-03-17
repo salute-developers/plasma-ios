@@ -14,7 +14,10 @@ struct RectSkeletonTestCase: View {
     var appearance: SkeletonAppearance
     
     var body: some View {
-        SDDSRectSkeleton(appearance: appearance)
+        SDDSRectSkeleton(
+            appearance: appearance,
+            isAnimationEnabled: false
+        )
         .frame(width: 200, height: 200)
     }
 }
