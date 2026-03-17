@@ -7,12 +7,14 @@ struct EmbeddedChipGroupDenseSize {
     static let l = EmbeddedChipGroupDenseSizeL()
     static let m = EmbeddedChipGroupDenseSizeM()
     static let s = EmbeddedChipGroupDenseSizeS()
+    static let xl = EmbeddedChipGroupDenseSizeXl()
     static let xs = EmbeddedChipGroupDenseSizeXs()
 
     static let all: [ChipGroupSizeConfiguration] = [
         EmbeddedChipGroupDenseSize.l,
         EmbeddedChipGroupDenseSize.m,
         EmbeddedChipGroupDenseSize.s,
+        EmbeddedChipGroupDenseSize.xl,
         EmbeddedChipGroupDenseSize.xs,
     ] 
 }
@@ -37,6 +39,16 @@ struct EmbeddedChipGroupDenseSizeM: ChipGroupSizeConfiguration {
     }
 }
 struct EmbeddedChipGroupDenseSizeS: ChipGroupSizeConfiguration {
+    var alignment = ChipGroupAlignment.left
+    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
+    var gap = CGFloat(2.0)
+    var lineSpacing = CGFloat(2.0)
+    var maxColumns = Int(0)
+    public var debugDescription: String {
+        return "EmbeddedChipGroupDenseSize"
+    }
+}
+struct EmbeddedChipGroupDenseSizeXl: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
     func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)

@@ -11,6 +11,7 @@ import UIKit
 
  - Parameters:
     - appearance: Параметры внешнего вида скелетона (опционально).
+   - isAnimationEnabled: Включает/выключает анимацию скелетона (по умолчанию true).
 
  ## Окружение
  
@@ -35,10 +36,15 @@ public struct SDDSRectSkeleton: View {
     @Environment(\.subtheme) private var subtheme
     @Environment(\.layoutDirection) private var layoutDirection
     @State private var phase: CGFloat = -1.0
+    private let isAnimationEnabled: Bool
     private var _appearance: SkeletonAppearance?
     
-    public init(appearance: SkeletonAppearance? = nil) {
+    public init(
+        appearance: SkeletonAppearance? = nil,
+        isAnimationEnabled: Bool = true
+    ) {
         self._appearance = appearance
+        self.isAnimationEnabled = isAnimationEnabled
     }
     
     private var appearance: SkeletonAppearance {
@@ -85,8 +91,13 @@ public struct SDDSRectSkeleton: View {
     private var gradient: some View {
         switch appearance.gradient {
         case .color(let colorToken):
-            TimelineView(.animation) { context in
-                blinkingColor(colorToken, at: context.date)
+            if isAnimationEnabled {
+                TimelineView(.animation) { context in
+                    blinkingColor(colorToken, at: context.date)
+                        .frame(width: screenWidth)
+                }
+            } else {
+                colorToken.color(for: colorScheme, subtheme: subtheme)
                     .frame(width: screenWidth)
             }
         case .gradient(let gradientToken):
@@ -113,6 +124,10 @@ public struct SDDSRectSkeleton: View {
      - Для RTL (справа налево): градиент движется справа налево
      */
     private func animate() {
+        guard isAnimationEnabled else {
+            phase = -1.0
+            return
+        }
         switch appearance.gradient {
         case .gradient:
             animateGradient()
