@@ -12,6 +12,7 @@ import SwiftUI
     - lineCount: Количество строк текста (по умолчанию 3).
     - textTypography: Типографика для определения высоты строк (по умолчанию .semibold14).
     - lineWidthProvider: Провайдер ширины строк (по умолчанию FullWidthLineProvider()).
+   - isAnimationEnabled: Включает/выключает анимацию скелетона (по умолчанию true).
 
  ## Окружение
  
@@ -40,6 +41,7 @@ public struct SDDSTextSkeleton: View {
     private let textTypography: TypographyToken
     private let lineWidthProvider: SkeletonLineWidthProvider
     private let lineSpacing: CGFloat
+    private let isAnimationEnabled: Bool
     private var _appearance: SkeletonAppearance?
     
     public init(
@@ -47,13 +49,15 @@ public struct SDDSTextSkeleton: View {
         lineCount: Int = 3,
         textTypography: TypographyToken = .semibold14,
         lineWidthProvider: SkeletonLineWidthProvider = FullWidthLineProvider(),
-        lineSpacing: CGFloat = 0
+        lineSpacing: CGFloat = 0,
+        isAnimationEnabled: Bool = true
     ) {
         self._appearance = appearance
         self.lineCount = lineCount
         self.textTypography = textTypography
         self.lineWidthProvider = lineWidthProvider
         self.lineSpacing = lineSpacing
+        self.isAnimationEnabled = isAnimationEnabled
     }
     
     private var appearance: SkeletonAppearance {
@@ -67,7 +71,10 @@ public struct SDDSTextSkeleton: View {
                     let geometryWidth = geometry.size.width
                     let width = geometryWidth * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
                     
-                    SDDSRectSkeleton(appearance: appearance)
+                    SDDSRectSkeleton(
+                        appearance: appearance,
+                        isAnimationEnabled: isAnimationEnabled
+                    )
                         .frame(width: width, height: resolvedLineHeight)
                         .clipped()
                         .environment(\.subtheme, subtheme)

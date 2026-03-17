@@ -19,7 +19,8 @@ struct TextSkeletonTestNoTextRandom: View {
             lineCount: 3,
             textTypography: .semibold14,
             lineWidthProvider: FixedWidthTextSkeleton(),
-            lineSpacing: 2
+            lineSpacing: 2,
+            isAnimationEnabled: false
         )
     }
 }
@@ -33,7 +34,8 @@ struct TextSkeletonTestFullWidth: View {
             lineCount: 10,
             textTypography: .semibold14,
             lineWidthProvider: FullWidthLineProvider(),
-            lineSpacing: 2
+            lineSpacing: 2,
+            isAnimationEnabled: false
         )
     }
 }
