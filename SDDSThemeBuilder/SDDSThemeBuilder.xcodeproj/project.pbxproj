@@ -352,6 +352,10 @@
 		81AE979B2F4DC015001FDE3F /* ToolbarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE97992F4DC015001FDE3F /* ToolbarSize.swift */; };
 		81AE979C2F4DC015001FDE3F /* ToolbarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE97982F4DC015001FDE3F /* ToolbarAppearance.swift */; };
 		81AE97A02F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */; };
+		81B07C672F6C108D005AD40F /* PaginationDotsProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C662F6C108D005AD40F /* PaginationDotsProps.swift */; };
+		81B07C6B2F6C109B005AD40F /* PaginationDotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C682F6C109B005AD40F /* PaginationDotsAppearance.swift */; };
+		81B07C6C2F6C109B005AD40F /* PaginationDotsSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C692F6C109B005AD40F /* PaginationDotsSize.swift */; };
+		81B07C6E2F6C10A9005AD40F /* PaginationDotsOrientationContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C6D2F6C10A9005AD40F /* PaginationDotsOrientationContextBuilder.swift */; };
 		81B23FA92D4BEBA00042A657 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23FA82D4BEBA00042A657 /* Component.swift */; };
 		81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510652E3C7CA100504B1D /* CodeFieldSize.swift */; };
 		81B510682E3C7CA100504B1D /* CodeFieldAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */; };
@@ -864,6 +868,10 @@
 		81AE97992F4DC015001FDE3F /* ToolbarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarSize.swift; sourceTree = "<group>"; };
 		81AE979D2F4DC028001FDE3F /* ComponentContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentContextBuilder.swift; sourceTree = "<group>"; };
 		81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarOrientationContextBuilder.swift; sourceTree = "<group>"; };
+		81B07C662F6C108D005AD40F /* PaginationDotsProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsProps.swift; sourceTree = "<group>"; };
+		81B07C682F6C109B005AD40F /* PaginationDotsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsAppearance.swift; sourceTree = "<group>"; };
+		81B07C692F6C109B005AD40F /* PaginationDotsSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsSize.swift; sourceTree = "<group>"; };
+		81B07C6D2F6C10A9005AD40F /* PaginationDotsOrientationContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsOrientationContextBuilder.swift; sourceTree = "<group>"; };
 		81B23FA82D4BEBA00042A657 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		81B510642E3C7CA100504B1D /* CodeFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldAppearance.swift; sourceTree = "<group>"; };
 		81B510652E3C7CA100504B1D /* CodeFieldSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldSize.swift; sourceTree = "<group>"; };
@@ -1350,6 +1358,7 @@
 		812DB6E12D55E3C100D3F4A3 /* ContextBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				81B07C6D2F6C10A9005AD40F /* PaginationDotsOrientationContextBuilder.swift */,
 				81AE979F2F4DC034001FDE3F /* ToolbarOrientationContextBuilder.swift */,
 				81AE979D2F4DC028001FDE3F /* ComponentContextBuilder.swift */,
 				813472DA2ECF735600D40423 /* DrawerCloseIconPlacementContextBuilder.swift */,
@@ -1410,6 +1419,7 @@
 		812DB7982D59D83B00D3F4A3 /* Props */ = {
 			isa = PBXGroup;
 			children = (
+				81B07C662F6C108D005AD40F /* PaginationDotsProps.swift */,
 				81AE97962F4DC008001FDE3F /* ToolbarProps.swift */,
 				81538AE72F516708007E9643 /* EditableProps.swift */,
 				816C82B22EFBB04E00446DEE /* AutocompleteProps.swift */,
@@ -1476,6 +1486,7 @@
 		812DB79B2D59D9CB00D3F4A3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81B07C6A2F6C109B005AD40F /* PaginationDots */,
 				81410F612F63113700B85EEB /* Select */,
 				81410F642F63113700B85EEB /* SelectItem */,
 				81AE979A2F4DC015001FDE3F /* Toolbar */,
@@ -2105,6 +2116,15 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
+		81B07C6A2F6C109B005AD40F /* PaginationDots */ = {
+			isa = PBXGroup;
+			children = (
+				81B07C682F6C109B005AD40F /* PaginationDotsAppearance.swift */,
+				81B07C692F6C109B005AD40F /* PaginationDotsSize.swift */,
+			);
+			path = PaginationDots;
+			sourceTree = "<group>";
+		};
 		81B510662E3C7CA100504B1D /* CodeField */ = {
 			isa = PBXGroup;
 			children = (
@@ -2725,6 +2745,8 @@
 				813992422D9EDA0A0015AF83 /* SegmentProps.swift in Sources */,
 				817CF57E2E1C0F3700B9286C /* DropdownMenuAppearance.swift in Sources */,
 				817CF57F2E1C0F3700B9286C /* DropdownMenuSize.swift in Sources */,
+				81B07C6B2F6C109B005AD40F /* PaginationDotsAppearance.swift in Sources */,
+				81B07C6C2F6C109B005AD40F /* PaginationDotsSize.swift in Sources */,
 				819B2AE02BF2842300688624 /* ScreenSize+Extensions.swift in Sources */,
 				818E33142DDDC13800130AF9 /* PopoverProps.swift in Sources */,
 				249C3D4E2BD92595007533DE /* GenerateTokensCommand.swift in Sources */,
@@ -2947,6 +2969,7 @@
 				814BF7442EA804BB009B091C /* ImageSizeContextBuilder.swift in Sources */,
 				8191CFE32EAF95B6006E36F5 /* NoteCompactProps.swift in Sources */,
 				813687602E0181DF00A1702A /* SkeletonSize.swift in Sources */,
+				81B07C672F6C108D005AD40F /* PaginationDotsProps.swift in Sources */,
 				813472D82ECF734B00D40423 /* DrawerAppearance.swift in Sources */,
 				813472D92ECF734B00D40423 /* DrawerSize.swift in Sources */,
 				81B510672E3C7CA100504B1D /* CodeFieldSize.swift in Sources */,
@@ -2975,6 +2998,7 @@
 				81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */,
 				81090AC82E4393310086BB29 /* SpinnerAppearance.swift in Sources */,
 				81F147282E9EDBED00A9A1D4 /* WheelSize.swift in Sources */,
+				81B07C6E2F6C10A9005AD40F /* PaginationDotsOrientationContextBuilder.swift in Sources */,
 				81F147292E9EDBED00A9A1D4 /* WheelAppearance.swift in Sources */,
 				812DB6E32D55E3CE00D3F4A3 /* CodeGenerationContextBuilder.swift in Sources */,
 				812DB6E52D55E3DE00D3F4A3 /* ComponentStyleContextBuilder.swift in Sources */,

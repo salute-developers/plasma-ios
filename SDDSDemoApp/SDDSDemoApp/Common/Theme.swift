@@ -509,6 +509,28 @@ enum Theme: String, CaseIterable {
         }
     }
     
+    var paginationDotsHorizontalVariations: [Variation<PaginationDotsAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.PaginationDotsHorizontal.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.PaginationDotsHorizontal.all
+        case .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    var paginationDotsVerticalVariations: [Variation<PaginationDotsAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.PaginationDotsVertical.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.PaginationDotsVertical.all
+        case .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
     var cellVariations: [Variation<CellAppearance>] {
         switch self {
         case .sdddsServTheme:

@@ -44,6 +44,7 @@ struct ComponentsView: View {
         ("TabBar", AnyView(TabBarView())),
         ("TabBarIsland", AnyView(TabBarIslandView())),
         ("Popover", AnyView(PopoverView())),
+        ("PaginationDots", AnyView(PaginationDotsView())),
         ("Tooltip", AnyView(TooltipView())),
         ("Toast", AnyView(ToastView())),
         ("Modal", AnyView(ModalView())),

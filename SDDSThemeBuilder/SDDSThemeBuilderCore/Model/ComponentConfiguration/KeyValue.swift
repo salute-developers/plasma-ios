@@ -14,6 +14,7 @@ struct KeyValue<T: Codable>: Codable {
 
 struct ValueState<T: Codable>: Codable {
     enum State: String, Codable {
+        case activated
         case checked
         case indeterminate
         case focused
