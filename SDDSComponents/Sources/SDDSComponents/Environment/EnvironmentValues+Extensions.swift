@@ -197,6 +197,11 @@ public extension EnvironmentValues {
         get { self[SelectAppearance.self] }
         set { self[SelectAppearance.self] = newValue }
     }
+    
+    var paginationDotsAppearance: PaginationDotsAppearance {
+        get { self[PaginationDotsAppearance.self] }
+        set { self[PaginationDotsAppearance.self] = newValue }
+    }
 }
 
 // MARK: - Utility
