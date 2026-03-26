@@ -1,20 +1,22 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct OverlayView: View {
     @ObservedObject private var viewModel: OverlayViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init() {
-        self.viewModel = OverlayViewModel()
+    init(viewModel: OverlayViewModel = OverlayViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         List {
             Section {
                 segmentView
+                    .frame(maxWidth: .infinity, minHeight: 180, alignment: .center)
                     .overlay(isPresented: $viewModel.isPresent, appearance: viewModel.appearance)
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
@@ -39,13 +41,30 @@ struct OverlayView: View {
     }
     
     private var segmentView: some View {
+        guard !viewModel.theme.segmentVariations.isEmpty, !viewModel.theme.segmentItemVariations.isEmpty else {
+            return AnyView(
+                HStack {
+                    Spacer()
+                    BasicButton(
+                        title: "Overlay Target",
+                        subtitle: "",
+                        iconAttributes: .init(image: Asset.plasma24.image, alignment: .leading),
+                        action: {}
+                    )
+                    Spacer()
+                }
+            )
+        }
+
         let items = (0..<4).map { index in
             SDDSSegmentItemData(
                 id: viewModel.ids[index],
                 title: "Item \(index)",
                 subtitle: "Subtitle",
-                iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
-                appearance: SegmentItem.l.primary.appearance,
+                iconAttributes: .init(image: Asset.starFill36.image, alignment: .leading),
+                appearance: viewModel.theme.segmentItemVariations.first?.styles.first?.appearance
+                    ?? viewModel.theme.segmentItemVariations.first?.appearance
+                    ?? SegmentItemAppearance(),
                 counter: { AnyView(EmptyView()) },
                 action: {
                     viewModel.selectedItemId = viewModel.ids[index]
@@ -56,13 +75,22 @@ struct OverlayView: View {
             Spacer()
             SDDSSegment(
                 items: items,
-                appearance: Segment.l.primary.appearance,
+                appearance: viewModel.theme.segmentVariations.first?.styles.first?.appearance
+                    ?? viewModel.theme.segmentVariations.first?.appearance
+                    ?? SegmentAppearance(),
                 layoutOrientation: .vertical,
                 selectedItemId: $viewModel.selectedItemId,
                 isDisabled: false
             )
             Spacer()
         }
+        .eraseToAnyView()
+    }
+}
+
+private extension View {
+    func eraseToAnyView() -> AnyView {
+        AnyView(self)
     }
 }
 

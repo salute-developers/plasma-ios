@@ -3,7 +3,8 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct BadgeView: View {
     @ObservedObject private var viewModel: BadgeViewModel
@@ -55,7 +56,7 @@ struct BadgeView: View {
     }
     
     private var image: Image? {
-        viewModel.iconVisible ? Image("buttonIcon") : nil
+        viewModel.iconVisible ? Asset.plasma24.image : nil
     }
     
     @ViewBuilder

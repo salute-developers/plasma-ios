@@ -1,10 +1,15 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct DividerView: View {
-    @ObservedObject private var viewModel: DividerViewModel = DividerViewModel()
+    @ObservedObject private var viewModel: DividerViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: DividerViewModel = DividerViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {

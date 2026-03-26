@@ -1,6 +1,7 @@
 import Foundation
 import SDDSComponents
 import SwiftUI
+import SDDSThemeCore
 
 final class EditableViewModel: ComponentViewModel<EditableVariationProvider> {
     @Published var text: String = "Value"
@@ -11,7 +12,19 @@ final class EditableViewModel: ComponentViewModel<EditableVariationProvider> {
     @Published var hasIcon: Bool = true
     @Published var iconPlacement: EditableIconPlacement = .relative
     
-    init() {
-        super.init(variationProvider: EditableVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: EditableUiState = .init()) {
+        super.init(variationProvider: EditableVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: EditableUiState) {
+        text = uiState.text
+        enabled = uiState.enabled
+        readOnly = uiState.readOnly
+        singleLine = uiState.singleLine
+        textAlign = uiState.textAlign
+        hasIcon = uiState.hasIcon
+        iconPlacement = uiState.iconPlacement
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

@@ -1,14 +1,19 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSIcons
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct ToastView: View {
-    @ObservedObject private var viewModel: ToastViewModel = ToastViewModel()
+    @ObservedObject private var viewModel: ToastViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isToastPresented = false
-    
+
+    init(viewModel: ToastViewModel = ToastViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -16,7 +21,7 @@ struct ToastView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                        BasicButton(title: "Show", subtitle: "") {
                             present()
                         }
                         .toast(
@@ -60,14 +65,16 @@ struct ToastView: View {
     @ViewBuilder
     var contentStart: some View {
         if viewModel.contentStartEnabled {
-            Image(systemName: "info.circle")
+            Asset.infoCircleFill24.image
+                .renderingMode(.template)
         }
     }
     
     @ViewBuilder
     var contentEnd: some View {
         if viewModel.contentEndEnabled {
-            Image(systemName: "xmark")
+            Asset.close24.image
+                .renderingMode(.template)
         }
     }
     

@@ -1,14 +1,21 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class ScrollbarViewModel: ComponentViewModel<ScrollbarVariationProvider> {
     @Published var hasTrack: Bool = true
     @Published var hoverExpand: Bool = true
-    
-    init() {
-        super.init(variationProvider: ScrollbarVariationProvider())
+
+    init(theme: Theme = .sdddsServTheme, uiState: ScrollbarUiState = .init()) {
+        super.init(variationProvider: ScrollbarVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ScrollbarUiState) {
+        hasTrack = uiState.hasTrack
+        hoverExpand = uiState.hoverExpand
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     var text: String {

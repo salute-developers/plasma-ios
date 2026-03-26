@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct TabBarView: View {
     @ObservedObject private var viewModel: TabBarViewModel
@@ -16,7 +16,9 @@ struct TabBarView: View {
     var body: some View {
         List {
             Section {
-                tabBarTypeSelectionView
+                if !viewModel.usesIslandTabBar {
+                    tabBarTypeSelectionView
+                }
                 extraSelectionView
                 countView
                 customWidth
@@ -24,13 +26,7 @@ struct TabBarView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
-        .tabBar(
-            items: viewModel.tabBarItems,
-            selectedIndex: $viewModel.selectedIndex,
-            appearance: viewModel.appearance,
-            subtheme: viewModel.theme.subtheme(viewModel.subtheme)
-        )
+        .modifier(TabBarContainerModifier(viewModel: viewModel))
         .navigationTitle("TabBar")
     }
     
@@ -86,6 +82,27 @@ struct TabBarView: View {
             Text("Custom Width")
             Spacer()
             Toggle("", isOn: $viewModel.customWidthEnabled)
+        }
+    }
+}
+
+private struct TabBarContainerModifier: ViewModifier {
+    @ObservedObject var viewModel: TabBarViewModel
+
+    func body(content: Content) -> some View {
+        if viewModel.usesIslandTabBar {
+            content.tabBarIsland(
+                items: viewModel.tabBarItems,
+                selectedIndex: $viewModel.selectedIndex,
+                appearance: viewModel.tabBarIslandAppearance
+            )
+        } else {
+            content.tabBar(
+                items: viewModel.tabBarItems,
+                selectedIndex: $viewModel.selectedIndex,
+                appearance: viewModel.appearance,
+                subtheme: viewModel.theme.subtheme(viewModel.subtheme)
+            )
         }
     }
 }

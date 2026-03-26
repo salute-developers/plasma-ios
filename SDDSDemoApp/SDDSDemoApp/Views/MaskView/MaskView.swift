@@ -1,10 +1,15 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct MaskView: View {
-    @ObservedObject private var viewModel: MaskViewModel = MaskViewModel()
+    @ObservedObject private var viewModel: MaskViewModel
+
+    init(viewModel: MaskViewModel = MaskViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {
@@ -25,7 +30,7 @@ struct MaskView: View {
                     layout: viewModel.layout,
                     iconContent: Action {
                         if viewModel.iconViewEnabled {
-                            Image.image("textFieldIcon")
+                            Asset.search24.image
                                 .renderingMode(.template)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -35,7 +40,7 @@ struct MaskView: View {
                     },
                     actionContent: Action {
                         if viewModel.iconActionViewEnabled {
-                            Image.image("textFieldIconAction")
+                            Asset.close24.image
                                 .renderingMode(.template)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

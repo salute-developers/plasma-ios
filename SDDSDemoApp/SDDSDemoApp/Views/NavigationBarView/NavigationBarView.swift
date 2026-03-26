@@ -3,6 +3,8 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
+import SandboxSwiftUI
 
 struct NavigationBarView: View {
     @ObservedObject private var viewModel: NavigationBarViewModel
@@ -28,7 +30,7 @@ struct NavigationBarView: View {
         SDDSNavigationBar(
             type: viewModel.navigationBarType,
             title: viewModel.titleText,
-            icon: viewModel.showIcon ? Image(systemName: "star.fill") : nil,
+            icon: viewModel.showIcon ? Asset.starFill36.image : nil,
             textPlacement: viewModel.textPlacement,
             textAlign: viewModel.textAlign,
             contentPlacement: viewModel.contentPlacement,

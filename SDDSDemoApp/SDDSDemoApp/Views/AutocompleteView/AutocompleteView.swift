@@ -1,13 +1,17 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct AutocompleteView: View {
-    @ObservedObject private var viewModel: AutocompleteViewModel = AutocompleteViewModel()
+    @ObservedObject private var viewModel: AutocompleteViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: AutocompleteViewModel = AutocompleteViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -130,19 +134,27 @@ struct AutocompleteView: View {
             },
             loaderContent: {
                 // Loader content - показывается только когда есть элементы (как lastItem в списке)
-                HStack {
-                    Spacer()
-                    SDDSSpinner(isAnimating: true, appearance: Spinner.xs.default.appearance)
+                HStack(spacing: 8) {
+                    SDDSSpinner(
+                        isAnimating: true,
+                        appearance: loaderSpinnerAppearance
+                    )
                     Text("Загрузка")
-                    Spacer()
+                        .typography(loaderTitleTypography)
+                        .foregroundStyle(loaderTitleColor)
+                    Spacer(minLength: 0)
                 }
-                .frame(height: 48) // Фиксированная высота, как у SDDSListItem
-                .padding(.horizontal)
+                .padding(.leading, loaderListItemAppearance.size.paddingStart)
+                .padding(.trailing, loaderListItemAppearance.size.paddingEnd)
+                .padding(.top, loaderListItemAppearance.size.paddingTop)
+                .padding(.bottom, loaderListItemAppearance.size.paddingBottom)
+                .frame(height: loaderListItemAppearance.size.height)
+                .frame(maxWidth: .infinity, alignment: .leading)
             },
             emptyStateContent: {
                 // Empty state content
                 VStack(spacing: 4) {
-                    Image("plasma")
+                    Asset.plasma24.image
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -170,6 +182,68 @@ struct AutocompleteView: View {
         }
     }
     
+    private var loaderSpinnerAppearance: SpinnerAppearance {
+        if let appearance = loaderSmallSpinnerAppearance {
+            return appearance
+        }
+
+        return SpinnerAppearance(
+            startColor: ColorToken(
+                id: "autocompleteLoaderStartFallback",
+                darkColor: .white,
+                lightColor: .black
+            ),
+            endColor: ColorToken(
+                id: "autocompleteLoaderEndFallback",
+                darkColor: .gray,
+                lightColor: .gray
+            ),
+            size: DefaultSpinnerSize(size: 16)
+        )
+    }
+
+    private var loaderSmallSpinnerAppearance: SpinnerAppearance? {
+        let appearances: [SpinnerAppearance] = viewModel.theme.spinnerVariations.flatMap { variation in
+            if variation.styles.isEmpty {
+                return [variation.appearance]
+            }
+            return variation.styles.map(\.appearance)
+        }
+        guard !appearances.isEmpty else {
+            return nil
+        }
+
+        // Prefer visible smallest spinner available in theme.
+        guard var smallest = (
+            appearances
+                .filter { $0.startColor != .clearColor || $0.endColor != .clearColor }
+                .min(by: { $0.size.size < $1.size.size })
+        )
+        else {
+            return nil
+        }
+
+        let resolvedSize = min(smallest.size.size, 16)
+        smallest.size = DefaultSpinnerSize(
+            size: resolvedSize,
+            padding: smallest.size.padding,
+            angle: smallest.size.angle
+        )
+        return smallest
+    }
+
+    private var loaderListItemAppearance: ListItemAppearance {
+        viewModel.appearance.dropdownAppearance.listAppearance.listItemAppearance
+    }
+
+    private var loaderTitleTypography: TypographyToken {
+        loaderListItemAppearance.titleTypography.typography(with: loaderListItemAppearance.size) ?? .undefined
+    }
+
+    private var loaderTitleColor: Color {
+        loaderListItemAppearance.titleColor.color(for: colorScheme, subtheme: viewModel.theme.subtheme(viewModel.subtheme))
+    }
+
     private var layoutPicker: some View {
         Picker("Layout", selection: $viewModel.layout) {
             ForEach(AutocompleteLayout.allCases, id: \.self) { layout in

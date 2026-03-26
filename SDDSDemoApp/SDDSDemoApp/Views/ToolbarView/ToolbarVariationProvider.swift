@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum ToolbarType: String, CaseIterable {
     case horizontal = "Toolbar Horizontal"

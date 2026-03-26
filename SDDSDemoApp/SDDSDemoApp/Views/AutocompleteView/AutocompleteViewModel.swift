@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 enum AutocompleteFieldAlignment: String, CaseIterable {
     case topLeft
@@ -112,9 +113,12 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
         isDropdownPresented = !currentSearchText.isEmpty
     }
     
-    init() {
-        super.init(variationProvider: AutocompleteVariationProvider())
-        
+    init(theme: Theme = .sdddsServTheme, uiState: AutocompleteUiState = .init()) {
+        super.init(
+            variationProvider: AutocompleteVariationProvider(theme: theme, layout: uiState.layout),
+            theme: theme
+        )
+
         if !searchText.isEmpty {
             updateListItems()
         } else {
@@ -122,19 +126,32 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             shouldShowEmptyState = false
             isDropdownPresented = false
         }
-        
-        
+
         $withEmptyState
             .sink { [weak self] _ in
                 self?.updateListItems()
             }
             .store(in: &cancellables)
-        
+
         $showLoading
             .sink { [weak self] _ in
                 self?.updateListItems()
             }
             .store(in: &cancellables)
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: AutocompleteUiState) {
+        value = uiState.value
+        withEmptyState = uiState.withEmptyState
+        showLoading = uiState.showLoading
+        fieldAlignment = uiState.fieldAlignment
+        listItems = uiState.listItems
+        shouldShowEmptyState = uiState.shouldShowEmptyState
+        isDropdownPresented = uiState.isDropdownPresented
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
 

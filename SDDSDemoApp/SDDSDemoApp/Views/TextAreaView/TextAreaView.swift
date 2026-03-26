@@ -2,7 +2,8 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct TextAreaView: View {
     @ObservedObject private var viewModel: TextAreaViewModel

@@ -2,7 +2,8 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
@@ -172,10 +173,10 @@ struct CellView: View {
             )
         case .iconButton:
             IconButton(
-                iconAttributes: .init(image: Image.image("buttonIcon"), alignment: .leading),
+                iconAttributes: .init(image: Asset.plasma24.image, alignment: .leading),
                 isDisabled: false,
                 isLoading: false,
-                spinnerImage: Image.image("spinner"),
+                spinnerImage: Image("spinner"),
                 layoutMode: .fixedWidth(.packed),
                 action: {}
             )

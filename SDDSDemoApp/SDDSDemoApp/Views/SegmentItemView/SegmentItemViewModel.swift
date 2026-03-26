@@ -2,7 +2,8 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
+import SDDSIcons
 
 final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvider> {
     @Published var title: String = "Title"
@@ -23,7 +24,7 @@ final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvide
     @Published var iconVisible: Bool = false {
         didSet {
             if iconVisible {
-                iconAttributes = .init(image: Image.image("buttonIcon"), alignment: alignment)
+                iconAttributes = .init(image: Asset.plasma24.image, alignment: alignment)
             } else {
                 iconAttributes = nil
             }
@@ -32,8 +33,22 @@ final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvide
     
     @Published var counterViewModel = CounterViewModel()
     
-    init() {
-        super.init(variationProvider: SegmentItemVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: SegmentElementUiState = .init()) {
+        super.init(variationProvider: SegmentItemVariationProvider(theme: theme), theme: theme)
+        counterViewModel = CounterViewModel(theme: theme, componentViewLayoutMode: .subScreen)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: SegmentElementUiState) {
+        title = uiState.title
+        subtitle = uiState.subtitle
+        iconAttributes = uiState.iconAttributes
+        isDisabled = uiState.isDisabled
+        alignment = uiState.alignment
+        isCounterVisible = uiState.isCounterVisible
+        isSelected = uiState.isSelected
+        iconVisible = uiState.iconVisible
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     private func setIconAttributes(alignment: SDDSComponents.ButtonAlignment) {
@@ -41,7 +56,7 @@ final class SegmentItemViewModel: ComponentViewModel<SegmentItemVariationProvide
     }
     
     private func iconAttributes(with alignment: SDDSComponents.ButtonAlignment) -> ButtonIconAttributes {
-        .init(image: Image("buttonIcon"), alignment: alignment)
+        .init(image: Asset.plasma24.image, alignment: alignment)
     }
 }
 

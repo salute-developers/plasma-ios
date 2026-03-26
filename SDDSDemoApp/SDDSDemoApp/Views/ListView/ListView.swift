@@ -1,15 +1,15 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct ListView: View {
     @ObservedObject private var viewModel: ListViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init() {
-        self.viewModel = ListViewModel()
+    init(viewModel: ListViewModel = ListViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ListView: View {
                         subtitle: viewModel.layout == .listNumbered ? "Subtitle \(index + 1)" : nil,
                         counterText: viewModel.layout == .listNumbered ? "\(index + 1)" : nil,
                         rightContent: { EmptyView() },
-                        appearance: viewModel.appearance.listItemAppearance,
+                        appearance: resolvedListItemAppearance,
                         onTap: {
                             self.viewModel.removeItem(item)
                         }
@@ -49,7 +49,6 @@ struct ListView: View {
                     BasicButton(
                         title: "Add Item",
                         subtitle: "",
-                        appearance: SDDSServTheme.BasicButton.m.accent.appearance,
                         action: {
                             viewModel.addItem()
                         }
@@ -60,6 +59,15 @@ struct ListView: View {
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
             
         }
+    }
+
+    private var resolvedListItemAppearance: ListItemAppearance {
+        var appearance = viewModel.appearance.listItemAppearance
+        if viewModel.theme == .plasmaHomeDSTheme {
+            appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+            appearance.disclosureIconColor = .textDefaultSecondary
+        }
+        return appearance
     }
 }
 

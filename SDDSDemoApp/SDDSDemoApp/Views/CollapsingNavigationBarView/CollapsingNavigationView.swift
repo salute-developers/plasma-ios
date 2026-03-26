@@ -4,7 +4,7 @@ import Combine
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct CollapsingNavigationView: View {
     @ObservedObject private var viewModel: CollapsingNavigationBarViewModel
@@ -100,11 +100,11 @@ struct CollapsingNavigationView: View {
     private var contentBlock: some View {
         Text(viewModel.contentText)
             .frame(maxWidth: .infinity, alignment: .center)
-            .foregroundStyle(Colors.textDefaultPrimary.token.color(for: colorScheme))
+            .foregroundStyle(Color.primary)
             .multilineTextAlignment(.center)
             .padding(.horizontal, 32)
             .padding(.vertical, 16)
-            .background(Colors.backgroundLightPrimary.token.color(for: colorScheme))
+            .background(Color(.systemBackground))
     }
 
     /// Только скролл-список (под баром и под Content).
@@ -120,7 +120,7 @@ struct CollapsingNavigationView: View {
     }
     
     private var labelTextColor: Color {
-        Colors.textDefaultPrimary.token.color(for: colorScheme, subtheme: viewModel.theme.subtheme(viewModel.subtheme))
+        Color.primary
     }
 
     @ViewBuilder

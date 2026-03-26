@@ -1,7 +1,7 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct CheckboxGroupView: View {
     @ObservedObject private var viewModel: CheckboxGroupViewModel

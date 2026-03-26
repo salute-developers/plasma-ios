@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
+import SandboxSwiftUI
 
 struct SpinnerView: View {
     @ObservedObject private var viewModel: SpinnerViewModel

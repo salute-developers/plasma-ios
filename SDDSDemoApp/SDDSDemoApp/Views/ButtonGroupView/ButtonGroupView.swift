@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 enum SDDSButtonGroupType: String, CaseIterable {
     case basic = "Basic Button Group"

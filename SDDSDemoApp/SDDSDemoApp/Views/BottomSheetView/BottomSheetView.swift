@@ -3,13 +3,17 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct BottomSheetView: View {
-    @ObservedObject private var viewModel: BottomSheetViewModel = BottomSheetViewModel()
+    @ObservedObject private var viewModel: BottomSheetViewModel
     @Environment(\.colorScheme) private var colorScheme
-        
+
+    init(viewModel: BottomSheetViewModel = BottomSheetViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -17,8 +21,7 @@ struct BottomSheetView: View {
                     Spacer()
                     BasicButton(
                         title: "Open",
-                        subtitle: "",
-                        appearance: BasicButton.l.accent.appearance) {
+                        subtitle: "") {
                             viewModel.isBottomSheetPresented.toggle()
                         }
                     Spacer()

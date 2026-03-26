@@ -2,12 +2,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct TabsView: View {
-    @ObservedObject private var viewModel: TabsViewModel = TabsViewModel()
+    @ObservedObject private var viewModel: TabsViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: TabsViewModel = TabsViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {

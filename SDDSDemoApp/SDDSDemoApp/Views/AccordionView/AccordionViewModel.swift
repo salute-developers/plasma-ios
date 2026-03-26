@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class AccordionViewModel: ComponentViewModel<AccordionVariationProvider> {
     @Published var title: String = "Title"
@@ -20,8 +21,21 @@ final class AccordionViewModel: ComponentViewModel<AccordionVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: AccordionVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: AccordionUiState = .init()) {
+        super.init(
+            variationProvider: AccordionVariationProvider(theme: theme, layout: uiState.layout),
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: AccordionUiState) {
+        title = uiState.title
+        content = uiState.content
+        itemsCount = uiState.itemsCount
+        showDividers = uiState.showDividers
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     var accordionItems: [AccordionData] {

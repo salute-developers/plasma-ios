@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 enum CardOrientation: String, CaseIterable {
     case horizontal = "Horizontal"
@@ -17,7 +18,14 @@ final class CardViewModel: ComponentViewModel<CardVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: CardVariationProvider(cardType: .card))
+    init(theme: Theme = .sdddsServTheme, uiState: CardUiState = .init()) {
+        super.init(variationProvider: CardVariationProvider(theme: theme, cardType: uiState.cardType), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: CardUiState) {
+        orientation = uiState.orientation
+        cardType = uiState.cardType
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

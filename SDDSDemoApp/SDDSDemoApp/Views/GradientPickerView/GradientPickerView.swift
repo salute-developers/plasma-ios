@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
-import SDDSServTheme
 
 struct GradientPickerView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -15,7 +14,7 @@ struct GradientPickerView: View {
 
     var body: some View {
         NavigationView {
-            List(GradientToken.tokens, id: \.self) { token in
+            List(availableTokens, id: \.self) { token in
                 Button(action: {
                     selectedGradient = token
                     presentationMode.wrappedValue.dismiss()
@@ -33,6 +32,14 @@ struct GradientPickerView: View {
             }
             .navigationTitle("Select a Gradient")
         }
+    }
+
+    private var availableTokens: [GradientToken] {
+        #if SANDBOX_DS_SERV || SANDBOX_DS_PLASMA_B2C || SANDBOX_DS_PLASMA_HOME_DS
+        []
+        #else
+        GradientToken.tokens
+        #endif
     }
 }
 

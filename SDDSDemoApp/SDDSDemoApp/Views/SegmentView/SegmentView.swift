@@ -3,12 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct SegmentView: View {
-    @ObservedObject private var viewModel: SegmentViewModel = SegmentViewModel()
+    @ObservedObject private var viewModel: SegmentViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: SegmentViewModel = SegmentViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

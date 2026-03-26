@@ -1,6 +1,7 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
+import SDDSIcons
 
 enum ChipGroupGapStyle: String, CaseIterable {
     case dense
@@ -43,16 +44,36 @@ final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
     }
     @Published var value: String = "Value"
     
-    init() {
-        super.init(variationProvider: ChipGroupVariationProvider(gapStyle: .dense, chipGroupStyle: .default))
+    init(theme: Theme = .sdddsServTheme, uiState: ChipGroupUiState = .init()) {
+        super.init(
+            variationProvider: ChipGroupVariationProvider(
+                theme: theme,
+                gapStyle: uiState.gapStyle,
+                chipGroupStyle: uiState.chipGroupStyle
+            ),
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ChipGroupUiState) {
+        if !uiState.chips.isEmpty {
+            chips = uiState.chips
+        }
+        iconImageEnabled = uiState.iconImageEnabled
+        buttomImageEnabled = uiState.buttomImageEnabled
+        gapStyle = uiState.gapStyle
+        chipGroupStyle = uiState.chipGroupStyle
+        value = uiState.value
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func addChip() {
         let newChip = ChipData(
             title: value,
             isEnabled: true,
-            iconImage: iconImageEnabled ? Image.image("chipIcon") : nil,
-            buttonImage: buttomImageEnabled ? Image.image("chipClose") : nil,
+            iconImage: iconImageEnabled ? Asset.plasma24.image : nil,
+            buttonImage: buttomImageEnabled ? Asset.close24.image : nil,
             appearance: appearance.chipAppearance,
             accessibility: ChipAccessibility(),
             removeAction: {}

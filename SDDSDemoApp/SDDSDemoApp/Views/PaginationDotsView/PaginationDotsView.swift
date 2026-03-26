@@ -1,10 +1,15 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct PaginationDotsView: View {
-    @ObservedObject private var viewModel: PaginationDotsViewModel = PaginationDotsViewModel()
+    @ObservedObject private var viewModel: PaginationDotsViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: PaginationDotsViewModel = PaginationDotsViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List {

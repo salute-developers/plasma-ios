@@ -10,6 +10,16 @@ on:
         description: 'Choose the Fastlane lane to run'
         required: true
         default: 'build_and_upload'
+      demo_target:
+        description: 'Demo app target/theme to build'
+        required: true
+        default: 'default'
+        type: choice
+        options:
+          - default
+          - sddsserv
+          - plasmab2c
+          - plasmahomeds
       skip_checks:
         description: 'Skip checking other workflows status'
         required: false
@@ -64,6 +74,11 @@ jobs:
             echo "Invalid lane specified. Please choose either 'build_and_upload' or 'update_build_version_before_release'."
             exit 1
           fi
+          DEMO_TARGET="${{ github.event.inputs.demo_target || 'default' }}"
+          if [[ "$DEMO_TARGET" != "default" && "$DEMO_TARGET" != "sddsserv" && "$DEMO_TARGET" != "plasmab2c" && "$DEMO_TARGET" != "plasmahomeds" ]]; then
+            echo "Invalid demo_target specified. Please choose one of: default, sddsserv, plasmab2c, plasmahomeds."
+            exit 1
+          fi
 
       - name: Run Fastlane
         env:
@@ -73,11 +88,12 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          DEMO_TARGET: ${{ github.event.inputs.demo_target || 'default' }}
         run: |
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} 2>&1 | tee fastlane_output.log
+            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} demo_target:${{ github.event.inputs.demo_target || 'default' }} 2>&1 | tee fastlane_output.log
           else
-            fastlane build_and_upload 2>&1 | tee fastlane_output.log
+            fastlane build_and_upload demo_target:default 2>&1 | tee fastlane_output.log
           fi
           
   build-and-deploy-pr:
@@ -158,6 +174,11 @@ jobs:
             echo "Invalid lane specified. Please choose either 'build_and_upload' or 'update_build_version_before_release'."
             exit 1
           fi
+          DEMO_TARGET="${{ github.event.inputs.demo_target || 'default' }}"
+          if [[ "$DEMO_TARGET" != "default" && "$DEMO_TARGET" != "sddsserv" && "$DEMO_TARGET" != "plasmab2c" && "$DEMO_TARGET" != "plasmahomeds" ]]; then
+            echo "Invalid demo_target specified. Please choose one of: default, sddsserv, plasmab2c, plasmahomeds."
+            exit 1
+          fi
 
       - name: Run Fastlane
         env:
@@ -167,11 +188,12 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          DEMO_TARGET: ${{ github.event.inputs.demo_target || 'default' }}
         run: |
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} 2>&1 | tee fastlane_output.log
+            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} demo_target:${{ github.event.inputs.demo_target || 'default' }} 2>&1 | tee fastlane_output.log
           else
-            fastlane build_and_upload 2>&1 | tee fastlane_output.log
+            fastlane build_and_upload demo_target:default 2>&1 | tee fastlane_output.log
           fi
           
       - name: Extract build info

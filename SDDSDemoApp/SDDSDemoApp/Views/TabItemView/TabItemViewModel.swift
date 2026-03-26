@@ -1,6 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
+import SDDSThemeCore
 
 final class TabItemViewModel: ComponentViewModel<TabItemVariationProvider> {
     typealias Appearance = TabItemAppearance
@@ -30,12 +31,31 @@ final class TabItemViewModel: ComponentViewModel<TabItemVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: TabItemVariationProvider(tabItemType: .tabItemDefault))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: TabItemUiState = .init()) {
+        super.init(
+            variationProvider: TabItemVariationProvider(tabItemType: uiState.tabItemType, theme: theme),
+            theme: theme
+        )
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TabItemUiState) {
+        label = uiState.label
+        value = uiState.value
+        hasValue = uiState.hasValue
+        counterValue = uiState.counterValue
+        hasCounter = uiState.hasCounter
+        isSelected = uiState.isSelected
+        isDisabled = uiState.isDisabled
+        orientation = uiState.orientation
+        hasStartContent = uiState.hasStartContent
+        hasEndContent = uiState.hasEndContent
+        tabItemType = uiState.tabItemType
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
 

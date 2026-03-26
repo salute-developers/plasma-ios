@@ -2,11 +2,15 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct TextSkeletonView: View {
-    @StateObject private var viewModel: TextSkeletonViewModel = TextSkeletonViewModel()
+    @ObservedObject private var viewModel: TextSkeletonViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: TextSkeletonViewModel = TextSkeletonViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {

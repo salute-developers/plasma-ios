@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class ProgressBarViewModel: ComponentViewModel<ProgressBarVariationProvider> {
     // MARK: - Progress Bar Properties
@@ -33,7 +34,15 @@ final class ProgressBarViewModel: ComponentViewModel<ProgressBarVariationProvide
     private var isUpdatingProgress = false
     private var isUpdatingProgressString = false
     
-    init() {
-        super.init(variationProvider: ProgressBarVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: ProgressBarUiState = .init()) {
+        super.init(variationProvider: ProgressBarVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ProgressBarUiState) {
+        progress = uiState.progress
+        progressString = uiState.progressString
+        isEnabled = uiState.isEnabled
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

@@ -2,11 +2,15 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct RectSkeletonView: View {
-    @ObservedObject private var viewModel: RectSkeletonViewModel = RectSkeletonViewModel()
+    @ObservedObject private var viewModel: RectSkeletonViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: RectSkeletonViewModel = RectSkeletonViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {
