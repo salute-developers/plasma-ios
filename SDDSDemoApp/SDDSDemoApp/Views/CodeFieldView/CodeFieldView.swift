@@ -1,14 +1,14 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct CodeFieldView: View {
     @ObservedObject private var viewModel: CodeFieldViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init() {
-        self.viewModel = CodeFieldViewModel()
+    init(viewModel: CodeFieldViewModel = CodeFieldViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct CodeFieldView: View {
                     .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                     .popover(
                         isPresented: $viewModel.successToastDisplayed,
-                        appearance: Popover.m.default.appearance,
+                        appearance: viewModel.theme.popoverVariations.first?.appearance ?? PopoverAppearance(),
                         placement: .bottom,
                         alignment: .center,
                         tailEnabled: false,
@@ -118,7 +118,7 @@ struct CodeFieldView: View {
             }
             HStack {
                 Spacer()
-                BasicButton(title: "Close", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Close", subtitle: "") {
                     viewModel.successToastDisplayed = false
                 }
                 Spacer()

@@ -1,16 +1,20 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct DropdownMenuView: View {
-    @ObservedObject private var viewModel: DropdownMenuViewModel = DropdownMenuViewModel()
+    @ObservedObject private var viewModel: DropdownMenuViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isDropdownMenuPresented = false
     @State private var contentHeight: CGFloat = 0
     @State private var forceUpdate: Bool = false
     private let maxHeight: CGFloat = 220
-    
+
+    init(viewModel: DropdownMenuViewModel = DropdownMenuViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -123,7 +127,7 @@ struct DropdownMenuView: View {
         case .topLeft:
             VStack {
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                     .dropdownMenu(
@@ -142,7 +146,7 @@ struct DropdownMenuView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                     .dropdownMenu(
@@ -163,7 +167,7 @@ struct DropdownMenuView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                     .dropdownMenu(
@@ -181,7 +185,7 @@ struct DropdownMenuView: View {
             }
         case .centerLeft:
             HStack {
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isDropdownMenuPresented = true
                 }
                 .dropdownMenu(
@@ -198,7 +202,7 @@ struct DropdownMenuView: View {
         case .center:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isDropdownMenuPresented = true
                 }
                 .dropdownMenu(
@@ -215,7 +219,7 @@ struct DropdownMenuView: View {
         case .centerRight:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isDropdownMenuPresented = true
                 }
                 .dropdownMenu(
@@ -232,7 +236,7 @@ struct DropdownMenuView: View {
             VStack {
                 Spacer()
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                     .dropdownMenu(
@@ -253,7 +257,7 @@ struct DropdownMenuView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                 .dropdownMenu(
@@ -274,7 +278,7 @@ struct DropdownMenuView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isDropdownMenuPresented = true
                     }
                 .dropdownMenu(

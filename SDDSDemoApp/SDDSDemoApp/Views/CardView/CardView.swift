@@ -2,14 +2,18 @@ import Foundation
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
 import SDDSIcons
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct CardView: View {
-    @ObservedObject private var viewModel: CardViewModel = CardViewModel()
+    @ObservedObject private var viewModel: CardViewModel
     @Environment(\.colorScheme) private var colorScheme
-        
+
+    init(viewModel: CardViewModel = CardViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -69,7 +73,7 @@ struct CardView: View {
     @ViewBuilder
     private var cardContent: some View {
         ZStack {
-            Image(systemName: "apple.logo")
+            Asset.appleFill36.image
                 .resizable()
                 .foregroundStyle(Color.white)
                 .frame(width: imageSize.width, height: imageSize.height)

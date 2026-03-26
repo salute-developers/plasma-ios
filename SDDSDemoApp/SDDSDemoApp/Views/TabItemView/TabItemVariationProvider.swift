@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum SDDSTabItemType: String, CaseIterable {
     case tabItemDefault = "Tab Item Default"

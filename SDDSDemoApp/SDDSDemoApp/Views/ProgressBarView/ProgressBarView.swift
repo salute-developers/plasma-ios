@@ -3,11 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct ProgressBarView: View {
-    @ObservedObject private var viewModel: ProgressBarViewModel = ProgressBarViewModel()
+    @ObservedObject private var viewModel: ProgressBarViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: ProgressBarViewModel = ProgressBarViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

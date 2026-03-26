@@ -13,11 +13,23 @@ final class NotificationViewModel: ComponentViewModel<NotificationVariationProvi
         }
     }
     
-    init() {
-        super.init(variationProvider: NotificationVariationProvider(layout: .compact))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: NotificationUiState = .init()) {
+        super.init(
+            variationProvider: NotificationVariationProvider(theme: theme, layout: uiState.layout),
+            theme: theme
+        )
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: NotificationUiState) {
+        text = uiState.text
+        position = uiState.position
+        hasClose = uiState.hasClose
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

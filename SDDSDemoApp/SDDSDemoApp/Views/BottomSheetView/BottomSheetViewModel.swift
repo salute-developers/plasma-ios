@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class BottomSheetViewModel: ComponentViewModel<BottomSheetVariationProvider> {
     @Published var isBottomSheetPresented = false
@@ -12,8 +13,20 @@ final class BottomSheetViewModel: ComponentViewModel<BottomSheetVariationProvide
     @Published var contentHeight: CGFloat = 0
     @Published var detent: BottomSheetDetent?
     
-    init() {
-        super.init(variationProvider: BottomSheetVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: BottomSheetUiState = .init()) {
+        super.init(variationProvider: BottomSheetVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: BottomSheetUiState) {
+        isBottomSheetPresented = uiState.isBottomSheetPresented
+        isFooterEnabled = uiState.isFooterEnabled
+        isHeaderEnabled = uiState.isHeaderEnabled
+        isHeaderFixed = uiState.isHeaderFixed
+        isFooterFixed = uiState.isFooterFixed
+        contentHeight = uiState.contentHeight
+        detent = uiState.detent
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func updateHandlePlacement(_ placement: BottomSheetHandlePlacement) {

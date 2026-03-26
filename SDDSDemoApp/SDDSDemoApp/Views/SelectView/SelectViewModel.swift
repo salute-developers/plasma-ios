@@ -1,5 +1,6 @@
 import Foundation
 import SDDSComponents
+import SDDSThemeCore
 
 enum SelectTriggerPosition: String, CaseIterable {
     case topStart = "TopStart"
@@ -95,10 +96,31 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
             }
     }
     
-    init() {
-        super.init(variationProvider: SelectVariationProvider())
-        dataStateManager.updateMode(.single)
-        updateOptions()
+    init(theme: Theme = .sdddsServTheme, uiState: SelectUiState = .init()) {
+        super.init(
+            variationProvider: SelectVariationProvider(theme: theme, layout: uiState.layout, mode: uiState.mode),
+            theme: theme
+        )
+        dataStateManager.updateMode(uiState.mode == .single ? .single : .multiple)
+        selectedIDs = uiState.selectedIDs
+        triggerKind = uiState.triggerKind
+        triggerPosition = uiState.triggerPosition
+        placement = uiState.placement
+        alignment = uiState.alignment
+        placementMode = uiState.placementMode
+        disabled = uiState.disabled
+        readOnly = uiState.readOnly
+        isDropdownPresented = uiState.isDropdownPresented
+        isLoading = uiState.isLoading
+        showEmptyState = uiState.showEmptyState
+        showHeader = uiState.showHeader
+        showFooter = uiState.showFooter
+        if !uiState.options.isEmpty {
+            options = uiState.options
+        } else {
+            updateOptions()
+        }
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func handleTap(at index: Int) {

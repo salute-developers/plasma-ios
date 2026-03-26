@@ -2,13 +2,17 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct NotificationView: View {
-    @StateObject private var viewModel = NotificationViewModel()
+    @ObservedObject private var viewModel: NotificationViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isPresented = false
-    
+
+    init(viewModel: NotificationViewModel = NotificationViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -16,7 +20,7 @@ struct NotificationView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                        BasicButton(title: "Show", subtitle: "") {
                             present()
                         }
                         Spacer()

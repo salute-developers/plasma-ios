@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 enum DropdownMenuButtonPosition: String, CaseIterable {
     case topLeft
@@ -63,18 +64,42 @@ final class DropdownMenuViewModel: ComponentViewModel<DropdownMenuVariationProvi
         return result
     }
     
-    init() {
-        let provider = DropdownMenuVariationProvider()
+    init(theme: Theme = .sdddsServTheme, uiState: DropDownMenuUiState = .init()) {
+        let provider = DropdownMenuVariationProvider(theme: theme, layout: uiState.layout)
         let itemVariation = provider.itemVariations[0]
         self.itemVariation = itemVariation
         self.itemStyle = itemVariation.styles.first
         self.itemAppearance = itemVariation.appearance
-        
-        super.init(variationProvider: provider)
-        
+
+        super.init(variationProvider: provider, theme: theme)
+
         $textInput
             .map { Int($0) ?? 0 }
             .assign(to: \.itemsCount, on: self)
             .store(in: &cancellables)
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: DropDownMenuUiState) {
+        placement = uiState.placement
+        alignment = uiState.alignment
+        autoHide = uiState.autoHide
+        buttonPosition = uiState.buttonPosition
+        duration = uiState.duration
+        textInput = uiState.textInput
+        itemsCount = uiState.itemsCount
+        hasDisclosure = uiState.hasDisclosure
+        dividerEnabled = uiState.dividerEnabled
+        itemAppearance = uiState.itemAppearance
+        itemStyle = uiState.itemStyle
+        if let itemVariation = uiState.itemVariation {
+            self.itemVariation = itemVariation
+            itemStyle = itemVariation.styles.first
+            itemAppearance = itemVariation.appearance
+        }
+        placementMode = uiState.placementMode
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

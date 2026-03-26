@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum DrawerVariationType: String, CaseIterable {
     case inner

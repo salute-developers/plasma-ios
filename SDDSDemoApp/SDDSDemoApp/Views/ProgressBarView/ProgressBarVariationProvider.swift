@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 final class ProgressBarVariationProvider: VariationProvider {
     typealias Appearance = ProgressBarAppearance

@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 final class TextAreaVariationProvider: VariationProvider {
     typealias Appearance = TextAreaAppearance

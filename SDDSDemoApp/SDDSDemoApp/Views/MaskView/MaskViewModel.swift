@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 enum MaskType: String, CaseIterable {
     case none = "None"
@@ -162,15 +162,39 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: TextFieldVariationProvider(layout: .default))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: MaskUiState = .init()) {
+        super.init(variationProvider: TextFieldVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
-        
+
+        apply(uiState: uiState)
         updateCurrentMask()
         updatePlaceholder()
+    }
+
+    private func apply(uiState: MaskUiState) {
+        value = uiState.value
+        textValue = uiState.textValue
+        title = uiState.title
+        optionalTitle = uiState.optionalTitle
+        placeholder = uiState.placeholder
+        caption = uiState.caption
+        textBefore = uiState.textBefore
+        textAfter = uiState.textAfter
+        disabled = uiState.disabled
+        readOnly = uiState.readOnly
+        iconViewEnabled = uiState.iconViewEnabled
+        iconActionViewEnabled = uiState.iconActionViewEnabled
+        layout = uiState.layout
+        selectedMaskType = uiState.selectedMaskType
+        customFormat = uiState.customFormat
+        numberFractionDigits = uiState.numberFractionDigits
+        numberDecimalSeparator = uiState.numberDecimalSeparator
+        currentMask = uiState.currentMask
+        maskDisplayMode = uiState.maskDisplayMode
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func updateMaskFormat() {

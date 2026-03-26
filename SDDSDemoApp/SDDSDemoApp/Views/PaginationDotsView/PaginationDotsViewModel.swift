@@ -32,9 +32,12 @@ final class PaginationDotsViewModel: ComponentViewModel<PaginationDotsVariationP
         }
     }
     
-    init() {
-        super.init(variationProvider: PaginationDotsVariationProvider())
-        normalizeState()
+    init(theme: Theme = .sdddsServTheme, uiState: PaginationDotsUiState = .init()) {
+        super.init(
+            variationProvider: PaginationDotsVariationProvider(theme: theme),
+            theme: theme
+        )
+        apply(uiState: uiState)
     }
     
     private func normalizeState() {
@@ -54,5 +57,15 @@ final class PaginationDotsViewModel: ComponentViewModel<PaginationDotsVariationP
     
     func next() {
         selectedIndex = min(selectedIndex + step, totalCount - 1)
+    }
+
+    private func apply(uiState: PaginationDotsUiState) {
+        totalCount = uiState.totalCount
+        visibleCount = uiState.visibleCount
+        selectedIndex = uiState.selectedIndex
+        step = uiState.step
+        normalizeState()
+
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

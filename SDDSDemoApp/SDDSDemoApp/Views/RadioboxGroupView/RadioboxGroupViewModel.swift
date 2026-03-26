@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationProvider> {
     @Published var radioboxViewModels: [RadioboxItemViewModel]
@@ -10,16 +10,19 @@ final class RadioboxGroupViewModel: ComponentViewModel<RadioboxGroupVariationPro
         radioboxViewModels.map { $0.toRadioboxData(with: appearance.radioboxAppearance) }
     }
 
-    init() {
-        self.radioboxViewModels = (0..<3).map { index in
-            RadioboxItemViewModel(
-                title: "Label \(index + 1)",
-                subtitle: "Description \(index + 1)",
-                isSelected: false,
-                isEnabled: true
-            )
-        }
-        super.init(variationProvider: RadioboxGroupVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: RadioboxGroupUiState = .init()) {
+        self.radioboxViewModels = uiState.radioboxViewModels.isEmpty
+            ? (0..<3).map { index in
+                RadioboxItemViewModel(
+                    title: "Label \(index + 1)",
+                    subtitle: "Description \(index + 1)",
+                    isSelected: false,
+                    isEnabled: true
+                )
+            }
+            : uiState.radioboxViewModels
+        super.init(variationProvider: RadioboxGroupVariationProvider(theme: theme), theme: theme)
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
 

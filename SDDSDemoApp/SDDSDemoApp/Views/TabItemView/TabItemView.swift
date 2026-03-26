@@ -2,12 +2,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct TabItemView: View {
-    @ObservedObject private var viewModel: TabItemViewModel = TabItemViewModel()
+    @ObservedObject private var viewModel: TabItemViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: TabItemViewModel = TabItemViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {
@@ -30,6 +34,8 @@ struct TabItemView: View {
                             counterValue: viewModel.counterValue,
                             isSelected: viewModel.isSelected,
                             isDisabled: viewModel.isDisabled,
+                            hasStartContent: viewModel.hasStartContent,
+                            hasContentRight: viewModel.hasEndContent || viewModel.hasCounter,
                             orientation: viewModel.orientation,
                             appearance: viewModel.appearance,
                             startContent: {

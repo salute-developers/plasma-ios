@@ -1,14 +1,18 @@
 import Foundation
-import SDDSServTheme
 import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct CheckboxView: View {
-    @ObservedObject private var viewModel: CheckboxViewModel = CheckboxViewModel()
+    @ObservedObject private var viewModel: CheckboxViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: CheckboxViewModel = CheckboxViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

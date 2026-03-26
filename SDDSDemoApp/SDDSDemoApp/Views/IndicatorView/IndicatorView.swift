@@ -3,12 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct IndicatorView: View {
-    @ObservedObject private var viewModel: IndicatorViewModel = IndicatorViewModel()
+    @ObservedObject private var viewModel: IndicatorViewModel
     @Environment(\.colorScheme) private var colorScheme
-        
+
+    init(viewModel: IndicatorViewModel = IndicatorViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -35,5 +39,5 @@ struct IndicatorView: View {
 }
 
 #Preview {
-    ButtonView()
+    IndicatorView()
 }

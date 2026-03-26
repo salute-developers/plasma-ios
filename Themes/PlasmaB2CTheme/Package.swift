@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "PlasmaB2CTheme",
     platforms: [
-        .iOS("15.0")
+        .iOS("15.0"),
+        .macOS("10.15"),
     ],
     products: [
         .library(
@@ -14,12 +15,13 @@ let package = Package(
     dependencies: [
         .package(name: "SDDSThemeCore", path: "../../SDDSThemeBuilder/SDDSThemeCore"),
         .package(name: "SDDSComponents", path: "../../SDDSComponents"),
-        .package(name: "SDDSIcons", path: "../../SDDSIcons")
+        .package(name: "SDDSIcons", path: "../../SDDSIcons"),
+        .package(name: "SandboxCore", path: "../../IntegrationCore/SandboxCore")
     ],
     targets: [
         .target(
             name: "PlasmaB2CTheme",
-            dependencies: ["SDDSThemeCore", "SDDSComponents", "SDDSIcons"],
+            dependencies: ["SDDSThemeCore", "SDDSComponents", "SDDSIcons", "SandboxCore"],
             path: ".",
             exclude: ["PlasmaB2CTheme.xcodeproj", "SDDSTheme.h"]
         )

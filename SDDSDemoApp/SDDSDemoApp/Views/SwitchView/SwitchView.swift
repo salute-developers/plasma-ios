@@ -3,12 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct SwitchView: View {
-    @ObservedObject private var viewModel: SwitchViewModel = SwitchViewModel()
+    @ObservedObject private var viewModel: SwitchViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: SwitchViewModel = SwitchViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSThemeCore
 
 enum TextSkeletonKind: String, CaseIterable {
@@ -62,7 +61,7 @@ final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvi
     @Published private(set) var lineCount: Int = 1
     @Published var lineWidthProviderType: TextSkeletonLineProviderType = .varied
     var typography: TypographyToken {
-        appearance.textTypography.typography(with: appearance.size) ?? AdaptiveTypographyToken.bodyMNormal.typography
+        appearance.textTypography.typography(with: appearance.size) ?? fallbackTypography
     }
     var typographyLineHeight: CGFloat {
         max(typography.lineHeight, typography.uiFont.lineHeight)
@@ -76,7 +75,31 @@ final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvi
     }
     @Published var textHidden = true
     
-    init() {
-        super.init(variationProvider: TextSkeletonVariationProvider(kind: .default))
+    init(theme: Theme = .sdddsServTheme, uiState: TextSkeletonUiState = .init()) {
+        super.init(
+            variationProvider: TextSkeletonVariationProvider(theme: theme, kind: uiState.selectedKind),
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TextSkeletonUiState) {
+        selectedKind = uiState.selectedKind
+        lineCountText = uiState.lineCountText
+        lineWidthProviderType = uiState.lineWidthProviderType
+        text = uiState.text
+        textHidden = uiState.textHidden
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
+    }
+
+    private var fallbackTypography: TypographyToken {
+        TypographyToken(
+            fontName: ".SFUI-Regular",
+            weight: .regular,
+            style: .normal,
+            size: 14,
+            lineHeight: 20,
+            kerning: 0
+        )
     }
 }

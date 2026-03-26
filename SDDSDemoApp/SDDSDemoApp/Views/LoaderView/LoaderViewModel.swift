@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 enum LoaderType: String, CaseIterable {
     case spinner = "Spinner"
@@ -13,14 +14,22 @@ final class LoaderViewModel: ComponentViewModel<LoaderVariationProvider> {
     @Published var circularProgressViewModel: CircularProgressBarViewModel = .init(componentViewLayoutMode: .subScreen)
     @Published var loaderType: LoaderType = .spinner
     
-    init() {
-        super.init(variationProvider: LoaderVariationProvider())
-        
+    init(theme: Theme = .sdddsServTheme, uiState: LoaderUiState = .init()) {
+        super.init(variationProvider: LoaderVariationProvider(theme: theme), theme: theme)
+        spinnerViewModel = SpinnerViewModel(theme: theme, componentViewLayoutMode: .subScreen)
+        circularProgressViewModel = CircularProgressBarViewModel(theme: theme, componentViewLayoutMode: .subScreen)
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
-        
+
         setupBindings()
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: LoaderUiState) {
+        loaderType = uiState.loaderType
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     private func setupBindings() {

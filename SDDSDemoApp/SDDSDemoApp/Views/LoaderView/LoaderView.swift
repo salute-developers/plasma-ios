@@ -2,11 +2,16 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
+import SandboxSwiftUI
 
 struct LoaderView: View {
-    @ObservedObject private var viewModel: LoaderViewModel = LoaderViewModel()
+    @ObservedObject private var viewModel: LoaderViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: LoaderViewModel = LoaderViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

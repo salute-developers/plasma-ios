@@ -23,7 +23,24 @@ final class BadgeViewModel: ComponentViewModel<BadgeVariationProvider> {
         }
     }
     
-    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
-        super.init(variationProvider: BadgeVariationProvider(badgeType: .badge), componentViewLayoutMode: componentViewLayoutMode)
+    init(
+        theme: Theme = .sdddsServTheme,
+        uiState: BadgeUiState = .init(),
+        componentViewLayoutMode: ComponentViewLayoutMode = .screen
+    ) {
+        super.init(
+            variationProvider: BadgeVariationProvider(theme: theme, badgeType: uiState.badgeType),
+            componentViewLayoutMode: componentViewLayoutMode,
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: BadgeUiState) {
+        iconVisible = uiState.iconVisible
+        alignment = uiState.alignment
+        label = uiState.label
+        badgeType = uiState.badgeType
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

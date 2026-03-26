@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum AutocompleteLayout: String, CaseIterable {
     case normal

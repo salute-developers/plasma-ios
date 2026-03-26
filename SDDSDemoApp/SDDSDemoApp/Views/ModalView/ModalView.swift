@@ -2,13 +2,17 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct ModalView: View {
-    @StateObject private var viewModel = ModalViewModel()
+    @ObservedObject private var viewModel: ModalViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isPresented = false
-    
+
+    init(viewModel: ModalViewModel = ModalViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -16,7 +20,7 @@ struct ModalView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                        BasicButton(title: "Show", subtitle: "") {
                             isPresented = true
                         }
                         Spacer()
@@ -38,7 +42,7 @@ struct ModalView: View {
         .modal(
             isPresented: $isPresented,
             appearance: viewModel.appearance,
-            closeImage: viewModel.hasClose ? Image(systemName: "xmark") : nil,
+            closeImage: viewModel.hasClose ? Asset.close24.image : nil,
             useNativeBlackout: viewModel.useNativeBlackout,
             subtheme: viewModel.theme.subtheme(viewModel.subtheme),
             onShow: nil,

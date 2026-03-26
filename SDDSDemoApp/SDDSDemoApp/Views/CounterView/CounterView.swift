@@ -3,12 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 public struct CounterView: View {
-    @ObservedObject var viewModel: CounterViewModel = CounterViewModel()
+    @ObservedObject var viewModel: CounterViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: CounterViewModel = CounterViewModel()) {
+        self.viewModel = viewModel
+    }
+
     public var body: some View {
         switch viewModel.componentViewLayoutMode {
         case .screen:

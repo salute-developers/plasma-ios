@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 enum CellContent: String, CaseIterable {
     case avatar
@@ -29,7 +29,23 @@ final class CellViewModel: ComponentViewModel<CellVariationProvider> {
     @Published var isSelected: Bool = false
     @Published var state: SelectionControlState = .deselected
     
-    init() {
-        super.init(variationProvider: CellVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: CellUiState = .init()) {
+        super.init(variationProvider: CellVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: CellUiState) {
+        alignment = uiState.alignment
+        label = uiState.label
+        title = uiState.title
+        subtitle = uiState.subtitle
+        leftContentType = uiState.leftContentType
+        rightContentType = uiState.rightContentType
+        disclosureEnabled = uiState.disclosureEnabled
+        disclosureText = uiState.disclosureText
+        isOn = uiState.isOn
+        isSelected = uiState.isSelected
+        state = uiState.state
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

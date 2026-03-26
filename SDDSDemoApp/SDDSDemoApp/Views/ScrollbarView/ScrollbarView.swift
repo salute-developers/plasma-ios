@@ -2,13 +2,17 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct ScrollbarView: View {
-    @ObservedObject private var viewModel: ScrollbarViewModel = ScrollbarViewModel()
+    @ObservedObject private var viewModel: ScrollbarViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State var isScrolling = false
     let totalHeight: CGFloat = 130
+
+    init(viewModel: ScrollbarViewModel = ScrollbarViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {

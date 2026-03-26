@@ -2,12 +2,13 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+import SDDSIcons
 
 final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
     @Published var iconVisible: Bool = false {
         didSet {
             if iconVisible {
-                iconAttributes = .init(image: Image.image("buttonIcon"), alignment: alignment)
+                iconAttributes = .init(image: Asset.plasma24.image, alignment: alignment)
             } else {
                 iconAttributes = nil
             }
@@ -26,7 +27,7 @@ final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
     @Published var iconAttributes: ButtonIconAttributes? = nil
     @Published var isDisabled: Bool = false
     @Published var isLoading: Bool = false
-    @Published var spinnerImage: Image = Image("spinner", bundle: Bundle(for: ButtonViewModel.self))
+    @Published var spinnerImage: Image = Image("spinner")
     @Published var buttonStyle: SDDSComponents.ButtonStyle = .basic
     @Published var layoutMode: ButtonLayoutMode = .wrapContent
     @Published var buttonType: SDDSButtonType = .basic {
@@ -41,14 +42,28 @@ final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
     }
     
     private func iconAttributes(with alignment: SDDSComponents.ButtonAlignment) -> ButtonIconAttributes {
-        .init(image: Image("buttonIcon"), alignment: alignment)
+        .init(image: Asset.plasma24.image, alignment: alignment)
     }
     
-    init() {
-        super.init(variationProvider: ButtonVariationProvider(buttonType: .basic))
-        
-        if let firstVariation = variations.first {
-            selectVariation(firstVariation)
-        }
+    init(theme: Theme = .sdddsServTheme, uiState: ButtonUiState = .init()) {
+        super.init(
+            variationProvider: ButtonVariationProvider(buttonType: uiState.buttonType, theme: theme),
+            theme: theme
+        )
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ButtonUiState) {
+        buttonType = uiState.buttonType
+        label = uiState.label
+        value = uiState.value
+        alignment = uiState.alignment
+        layoutMode = uiState.layoutMode
+        isDisabled = uiState.isDisabled
+        isLoading = uiState.isLoading
+        iconVisible = uiState.iconVisible
+
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

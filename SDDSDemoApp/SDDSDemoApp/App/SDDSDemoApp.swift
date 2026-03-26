@@ -1,18 +1,21 @@
 import SwiftUI
-import SDDSServTheme
-import StylesSaluteTheme
-import PlasmaB2CTheme
-import PlasmaHomeDSTheme
 
 @main
 struct SDDSDemoApp: App {
-    @StateObject private var viewModel = SDDSDemoAppViewModel()
+    private let profile: SandboxDesignSystemProfile
+    @StateObject private var viewModel: SDDSDemoAppViewModel
+
+    init() {
+        let resolvedProfile = SandboxDesignSystemProfile.current
+        self.profile = resolvedProfile
+        _viewModel = StateObject(wrappedValue: SDDSDemoAppViewModel(profile: resolvedProfile))
+    }
     
     var body: some Scene {
         WindowGroup {
             Group {
                 if viewModel.isInitialized {
-                    ComponentsView()
+                    ComponentsView(profile: profile)
                 } else {
                     LoadingView()
                 }

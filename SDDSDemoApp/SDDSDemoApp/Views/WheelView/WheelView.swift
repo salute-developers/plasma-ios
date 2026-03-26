@@ -3,6 +3,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct WheelView: View {
     @ObservedObject private var viewModel: WheelViewModel
@@ -15,17 +16,22 @@ struct WheelView: View {
     var body: some View {
         List {
             Section {
-                HStack {
-                    Spacer()
-                    SDDSWheel(
-                        wheels: viewModel.wheels,
-                        selection: $viewModel.selection,
-                        wheelCount: viewModel.wheelsCount,
-                        visibleItemsCount: viewModel.visibleItemsCount
-                    )
-                    .wheelAppearance(viewModel.appearance)
-                    .id("wheel-\(viewModel.wheelsCount)-\(viewModel.visibleItemsCount)")
-                    Spacer()
+                if viewModel.variations.isEmpty {
+                    Text("No wheel variations for current theme")
+                        .foregroundColor(.secondary)
+                } else {
+                    HStack {
+                        Spacer()
+                        SDDSWheel(
+                            wheels: viewModel.wheels,
+                            selection: $viewModel.selection,
+                            wheelCount: viewModel.wheelsCount,
+                            visibleItemsCount: viewModel.visibleItemsCount
+                        )
+                        .wheelAppearance(viewModel.appearance)
+                        .id("wheel-\(viewModel.wheelsCount)-\(viewModel.visibleItemsCount)")
+                        Spacer()
+                    }
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)

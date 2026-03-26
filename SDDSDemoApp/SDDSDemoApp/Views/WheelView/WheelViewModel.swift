@@ -40,14 +40,12 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
         (0...59).map { String(format: "%02d", $0) }
     ]
     
-    init() {
-        super.init(variationProvider: WheelVariationProvider())
-        
-        updateWheels()
-        
-        if let firstVariation = variations.first {
-            selectVariation(firstVariation)
-        }
+    init(theme: Theme = .plasmaHomeDSTheme, uiState: WheelUiState = .init()) {
+        super.init(
+            variationProvider: WheelVariationProvider(theme: theme),
+            theme: theme
+        )
+        apply(uiState: uiState)
     }
     
     private func updateWheels() {
@@ -92,5 +90,23 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
     func updateWheelTextAfter(at index: Int, textAfter: String) {
         guard index < wheelTextAfter.count else { return }
         wheelTextAfter[index] = textAfter
+    }
+
+    private func apply(uiState: WheelUiState) {
+        wheelsCount = uiState.wheelsCount
+        visibleItemsCount = uiState.visibleItemsCount
+        wheelDescriptions = uiState.wheelDescriptions
+        wheelLabels = uiState.wheelLabels
+        wheelTextAfter = uiState.wheelTextAfter
+        dividerStyle = uiState.dividerStyle
+        updateWheels()
+
+        if uiState.selection.count == wheels.count {
+            selection = uiState.selection
+        } else {
+            selection = Array(repeating: 0, count: wheels.count)
+        }
+
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

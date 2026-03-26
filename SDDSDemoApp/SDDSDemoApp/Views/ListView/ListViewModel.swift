@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class ListViewModel: ComponentViewModel<ListVariationProvider> {
     @Published var items: [ListItemData] = []
@@ -13,12 +14,19 @@ final class ListViewModel: ComponentViewModel<ListVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: ListVariationProvider())
-
-        addItem()
-        addItem()
-        addItem()
+    init(theme: Theme = .sdddsServTheme, uiState: ListUiState = .init()) {
+        super.init(variationProvider: ListVariationProvider(theme: theme, layout: uiState.layout), theme: theme)
+        if uiState.items.isEmpty {
+            addItem()
+            addItem()
+            addItem()
+        } else {
+            items = uiState.items
+            nextItemId = uiState.nextItemId
+        }
+        hasDivider = uiState.hasDivider
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func addItem() {

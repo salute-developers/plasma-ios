@@ -1,14 +1,18 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct DrawerView: View {
-    @ObservedObject private var viewModel: DrawerViewModel = DrawerViewModel()
+    @ObservedObject private var viewModel: DrawerViewModel
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentationMode) var presentationMode
     @State private var isDrawerPresented = false
-    
+
+    init(viewModel: DrawerViewModel = DrawerViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -18,8 +22,7 @@ struct DrawerView: View {
                         Spacer()
                         BasicButton(
                             title: "Показать Drawer",
-                            subtitle: "",
-                            appearance: BasicButton.m.accent.appearance
+                            subtitle: ""
                         ) {
                             isDrawerPresented = true
                         }
@@ -30,8 +33,7 @@ struct DrawerView: View {
                         Spacer()
                         BasicButton(
                             title: "Назад",
-                            subtitle: "",
-                            appearance: BasicButton.m.dark.appearance
+                            subtitle: ""
                         ) {
                             presentationMode.wrappedValue.dismiss()
                         }
@@ -65,7 +67,7 @@ struct DrawerView: View {
             isPresented: $isDrawerPresented,
             appearance: viewModel.appearance,
             alignment: viewModel.alignment,
-            overlayAppearance: viewModel.showOverlay ? Overlay.default.appearance : nil,
+            overlayAppearance: viewModel.showOverlay ? viewModel.theme.overlayVariations.first?.appearance : nil,
             drawerWidth: 160,
             drawerHeight: (viewModel.alignment == .top || viewModel.alignment == .bottom) ? 520 : nil,
             moveContentEnabled: viewModel.moveContentEnabled,
@@ -123,10 +125,10 @@ struct DrawerView: View {
                 SDDSListItem(
                     title: "Item \(index)",
                     rightContent: { EmptyView() },
-                    appearance: ListItemNormal.m.appearance
+                    appearance: viewModel.theme.listItemNormalVariations.first?.appearance ?? ListItemAppearance()
                 )
             },
-            appearance: ListNormal.m.appearance
+            appearance: viewModel.theme.listNormalVariations.first?.appearance ?? ListAppearance()
         )
     }
     

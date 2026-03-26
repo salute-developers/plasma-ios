@@ -460,6 +460,7 @@ extension SDDSTabItem where StartContent == AnyView, ContentRight == EmptyView, 
             counterValue: counterValue,
             isSelected: isSelected,
             isDisabled: isDisabled,
+            hasStartContent: true,
             orientation: orientation,
             appearance: appearance,
             startContent: {

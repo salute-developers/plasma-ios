@@ -2,7 +2,9 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
+#if canImport(PlasmaHomeDSTheme)
 import PlasmaHomeDSTheme
+#endif
 
 final class CollapsingNavigationBarViewModel: ComponentViewModel<CollapsingNavigationBarMainPageVariationProvider> {
     @Published var collapsedTitle: String = "Title"
@@ -36,11 +38,13 @@ final class CollapsingNavigationBarViewModel: ComponentViewModel<CollapsingNavig
         }
     }
 
-    init() {
-        let provider = CollapsingNavigationBarMainPageVariationProvider(theme: .plasmaHomeDSTheme)
-        super.init(variationProvider: provider)
+    init(theme: Theme = .plasmaHomeDSTheme, uiState: CollapsingNavigationBarUiState = .init()) {
+        let provider = CollapsingNavigationBarMainPageVariationProvider(theme: theme)
+        super.init(variationProvider: provider, theme: theme)
 
-        internalPageViewModel = ComponentViewModel(variationProvider: CollapsingNavigationBarInternalPageVariationProvider(theme: theme))
+        internalPageViewModel = ComponentViewModel(
+            variationProvider: CollapsingNavigationBarInternalPageVariationProvider(theme: theme)
+        )
 
         if let internalPageViewModel = internalPageViewModel,
            let firstVariation = internalPageViewModel.variations.first {
@@ -48,8 +52,28 @@ final class CollapsingNavigationBarViewModel: ComponentViewModel<CollapsingNavig
         }
 
         subscribeToInternalPageViewModel()
-        
-        theme = .plasmaHomeDSTheme
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: CollapsingNavigationBarUiState) {
+        collapsedTitle = uiState.collapsedTitle
+        expandedTitle = uiState.expandedTitle
+        collapsedDescription = uiState.collapsedDescription
+        expandedDescription = uiState.expandedDescription
+        contentText = uiState.contentText
+        hasActionStart = uiState.hasActionStart
+        hasActionEnd = uiState.hasActionEnd
+        collapsedTextAlign = uiState.collapsedTextAlign
+        expandedTextAlign = uiState.expandedTextAlign
+        centerAlignmentStrategy = uiState.centerAlignmentStrategy
+        pageType = uiState.pageType
+
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
+        internalPageViewModel?.applySandboxVariationAppearance(
+            variant: uiState.variant,
+            appearance: uiState.appearance
+        )
     }
 
     private func subscribeToInternalPageViewModel() {

@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 
 final class ModalVariationProvider: VariationProvider {
     typealias Appearance = ModalAppearance
@@ -17,6 +16,6 @@ final class ModalVariationProvider: VariationProvider {
     }
     
     var defaultValue: ModalAppearance {
-        Modal.default.appearance
+        variations.first?.appearance ?? ModalAppearance()
     }
 }

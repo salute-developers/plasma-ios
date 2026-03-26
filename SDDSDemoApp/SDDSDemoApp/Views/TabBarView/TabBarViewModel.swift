@@ -3,7 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSIcons
-import SDDSServTheme
+import SDDSThemeCore
 
 enum TabBarExtra: String, CaseIterable {
     case counter
@@ -31,8 +31,20 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
     @Published private(set) var itemCount: Int = TabBarViewModel.defaultCount
     @Published var customWidthEnabled = false
     
+    var usesIslandTabBar: Bool {
+        !theme.tabBarVariations.isEmpty && variations.isEmpty
+    }
+
+    var tabBarIslandAppearance: TabBarIslandAppearance {
+        theme.tabBarVariations.first?.styles.first?.appearance
+            ?? theme.tabBarVariations.first?.appearance
+            ?? TabBarIslandAppearance.defaultValue
+    }
+
     var tabBarItems: [TabBarItemData] {
-        let tabBarItemAppearance = self.appearance.tabBarItemAppearance
+        let tabBarItemAppearance = usesIslandTabBar
+            ? tabBarIslandAppearance.tabBarItemAppearance
+            : self.appearance.tabBarItemAppearance
         var result = (0..<itemCount).map { index in
             TabBarItemData(
                 content: AnyView(icon),
@@ -68,7 +80,7 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
     private var assistant: some View {
         VStack(spacing: 0) {
             Spacer()
-            Image(systemName: "house.circle.fill")
+            Asset.houseFill36.image
                 .resizable()
                 .renderingMode(.template)
                 .frame(width: assistantContentWidth, height: 44)
@@ -115,7 +127,25 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
         .init()
     }
         
-    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
-        super.init(variationProvider: TabBarVariationProvider(tabBarType: .solid), componentViewLayoutMode: componentViewLayoutMode)
+    init(
+        theme: Theme = .sdddsServTheme,
+        uiState: TabBarUiState = .init(),
+        componentViewLayoutMode: ComponentViewLayoutMode = .screen
+    ) {
+        super.init(
+            variationProvider: TabBarVariationProvider(theme: theme, tabBarType: uiState.tabBarType),
+            componentViewLayoutMode: componentViewLayoutMode,
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TabBarUiState) {
+        selectedIndex = uiState.selectedIndex
+        tabBarType = uiState.tabBarType
+        extra = uiState.extra
+        countText = uiState.countText
+        customWidthEnabled = uiState.customWidthEnabled
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

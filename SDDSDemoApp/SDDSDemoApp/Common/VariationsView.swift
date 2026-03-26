@@ -4,22 +4,25 @@ import SDDSThemeCore
 
 struct VariationsView<Provider: VariationProvider>: View {
     @ObservedObject var viewModel: ComponentViewModel<Provider>
+    private let profile = SandboxDesignSystemProfile.current
 
     var body: some View {
         Section {
-            HStack {
-                Text("Theme")
-                
-                Menu {
-                    ForEach(themes, id: \.self) { theme in
-                        Button(theme.name) {
-                            viewModel.selectTheme(theme)
+            if themes.count > 1 {
+                HStack {
+                    Text("Theme")
+
+                    Menu {
+                        ForEach(themes, id: \.self) { theme in
+                            Button(theme.name) {
+                                viewModel.selectTheme(theme)
+                            }
                         }
-                    }
-                } label: {
-                    HStack {
-                        Spacer().frame(maxWidth: .infinity)
-                        Text(viewModel.theme.name)
+                    } label: {
+                        HStack {
+                            Spacer().frame(maxWidth: .infinity)
+                            Text(viewModel.theme.name)
+                        }
                     }
                 }
             }
@@ -95,7 +98,11 @@ struct VariationsView<Provider: VariationProvider>: View {
     private var themes: [Theme] {
         let variationProvider = viewModel.variationProvider
         let selectedTheme = variationProvider.theme
+        let allowedThemes = profile.supportedThemes
         let result = Theme.allCases.filter { theme in
+            guard allowedThemes.contains(theme) else {
+                return false
+            }
             viewModel.variationProvider.theme = theme
             return variationProvider.variations.first != nil
         }

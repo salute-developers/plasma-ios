@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
+import SandboxSwiftUI
 
 struct CircularProgressBarView: View {
     @ObservedObject private var viewModel: CircularProgressBarViewModel

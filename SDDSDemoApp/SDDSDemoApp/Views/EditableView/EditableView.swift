@@ -2,11 +2,16 @@ import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
+import SandboxSwiftUI
 
 struct EditableView: View {
-    @ObservedObject private var viewModel: EditableViewModel = EditableViewModel()
+    @ObservedObject private var viewModel: EditableViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: EditableViewModel = EditableViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         VStack {
             HStack {

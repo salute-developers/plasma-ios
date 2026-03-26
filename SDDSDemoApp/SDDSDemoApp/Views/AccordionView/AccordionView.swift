@@ -1,14 +1,14 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct AccordionView: View {
     @ObservedObject private var viewModel: AccordionViewModel
     
-    init() {
-        self.viewModel = AccordionViewModel()
+    init(viewModel: AccordionViewModel = AccordionViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {

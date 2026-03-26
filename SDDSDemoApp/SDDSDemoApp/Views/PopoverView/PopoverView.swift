@@ -1,12 +1,16 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct PopoverView: View {
-    @ObservedObject private var viewModel: PopoverViewModel = PopoverViewModel()
+    @ObservedObject private var viewModel: PopoverViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isPopoverPresented = false
+
+    init(viewModel: PopoverViewModel = PopoverViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List {
@@ -53,7 +57,7 @@ struct PopoverView: View {
             }
             HStack {
                 Spacer()
-                BasicButton(title: "Close", subtitle: "", appearance: BasicButton.m.default.appearance) {
+                BasicButton(title: "Close", subtitle: "") {
                     isPopoverPresented = false
                 }
                 Spacer()
@@ -68,7 +72,7 @@ struct PopoverView: View {
         case .topLeft:
             VStack {
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
@@ -92,7 +96,7 @@ struct PopoverView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
@@ -116,7 +120,7 @@ struct PopoverView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
@@ -137,7 +141,7 @@ struct PopoverView: View {
             }
         case .centerLeft:
             HStack {
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isPopoverPresented = true
                 }
                 .popover(
@@ -156,7 +160,7 @@ struct PopoverView: View {
         case .center:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isPopoverPresented = true
                 }
                 .popover(
@@ -175,7 +179,7 @@ struct PopoverView: View {
         case .centerRight:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Show", subtitle: "") {
                     isPopoverPresented = true
                 }
                 .popover(
@@ -194,7 +198,7 @@ struct PopoverView: View {
             VStack {
                 Spacer()
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
@@ -218,7 +222,7 @@ struct PopoverView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
@@ -242,7 +246,7 @@ struct PopoverView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                    BasicButton(title: "Show", subtitle: "") {
                         isPopoverPresented = true
                     }
                     .popover(
