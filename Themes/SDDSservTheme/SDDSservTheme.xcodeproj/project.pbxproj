@@ -14,7 +14,6 @@
 		81FC48CC2D931AF500A83F87 /* EnvironmentValueProvider+DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC48312D931AF500A83F87 /* EnvironmentValueProvider+DefaultValues.swift */; };
 		81FC49202D931B5C00A83F87 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E4CD3E2D49FB9200E7F395 /* SDDSComponents.xcframework */; };
 		81FC49232D931BC500A83F87 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */; };
-		A6E9073EC0514AF9A317FB09 /* project.pbxproj in Sources */ = {isa = PBXBuildFile; fileRef = 8E63361D6FA1A21DB3E6F39B /* project.pbxproj */; };
 		CC49187B78BF874CF67DD50C /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC2132AB612D3F4010CEC1C /* SDDSTheme.h */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +71,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		81F0A1012F10000100AAA111 /* AutocompleteNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteNormal; sourceTree = "<group>"; };
-		81F0A1022F10000100AAA111 /* AutocompleteTight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteTight; sourceTree = "<group>"; };
 		8134562D2EC4BC3500D40423 /* Note */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Note; sourceTree = "<group>"; };
 		813456322EC4BC3500D40423 /* NoteCompact */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteCompact; sourceTree = "<group>"; };
 		813BC6C42EB29BD500E4E505 /* AccordionClearActionEnd */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionClearActionEnd; sourceTree = "<group>"; };
@@ -165,6 +162,8 @@
 		813BC8752EB29BD500E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
 		8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarInternalPage; sourceTree = "<group>"; };
 		8183C9302EB2A73300610A9A /* NavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarMainPage; sourceTree = "<group>"; };
+		81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsHorizontal; sourceTree = "<group>"; };
+		81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsVertical; sourceTree = "<group>"; };
 		81D59FB22ED8801A00156885 /* DrawerCloseInner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseInner; sourceTree = "<group>"; };
 		81D59FB72ED8801A00156885 /* DrawerCloseNone */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseNone; sourceTree = "<group>"; };
 		81D59FBC2ED8801A00156885 /* DrawerCloseOuter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseOuter; sourceTree = "<group>"; };
@@ -174,6 +173,8 @@
 		81D59FD02ED8801A00156885 /* TabItemHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabItemHeader; sourceTree = "<group>"; };
 		81D59FD52ED8801A00156885 /* TabsDefault */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsDefault; sourceTree = "<group>"; };
 		81D59FDA2ED8801A00156885 /* TabsHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsHeader; sourceTree = "<group>"; };
+		81F0A1012F10000100AAA111 /* AutocompleteNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteNormal; sourceTree = "<group>"; };
+		81F0A1022F10000100AAA111 /* AutocompleteTight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteTight; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +196,8 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
+				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
 				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
 				81F0A1022F10000100AAA111 /* AutocompleteTight */,
 				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
@@ -418,8 +421,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
-				81F0A1022F10000100AAA111 /* AutocompleteTight */,
 				8134562D2EC4BC3500D40423 /* Note */,
 				813456322EC4BC3500D40423 /* NoteCompact */,
 				813BC6C42EB29BD500E4E505 /* AccordionClearActionEnd */,
@@ -511,6 +512,8 @@
 				813BC8752EB29BD500E4E505 /* Tooltip */,
 				8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */,
 				8183C9302EB2A73300610A9A /* NavigationBarMainPage */,
+				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
+				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
 				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
 				81D59FB72ED8801A00156885 /* DrawerCloseNone */,
 				81D59FBC2ED8801A00156885 /* DrawerCloseOuter */,
@@ -520,6 +523,8 @@
 				81D59FD02ED8801A00156885 /* TabItemHeader */,
 				81D59FD52ED8801A00156885 /* TabsDefault */,
 				81D59FDA2ED8801A00156885 /* TabsHeader */,
+				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
+				81F0A1022F10000100AAA111 /* AutocompleteTight */,
 			);
 			name = SDDSServTheme;
 			productName = SDDSServTheme;
@@ -541,7 +546,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSServTheme" */;
+			buildConfigurationList = 929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSservTheme" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -576,7 +581,6 @@
 			files = (
 				2DBFE61627DA72C5A6C65BDE /* Theme.swift in Sources */,
 				81FC48CC2D931AF500A83F87 /* EnvironmentValueProvider+DefaultValues.swift in Sources */,
-				A6E9073EC0514AF9A317FB09 /* project.pbxproj in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +798,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSServTheme" */ = {
+		929C18935B449020A560F05D /* Build configuration list for PBXProject "SDDSservTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36BF51FE6BDAC77D856604F6 /* Debug */,
