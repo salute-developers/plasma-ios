@@ -3,12 +3,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct RadioboxView: View {
-    @ObservedObject private var viewModel: RadioboxViewModel = RadioboxViewModel()
+    @ObservedObject private var viewModel: RadioboxViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: RadioboxViewModel = RadioboxViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {

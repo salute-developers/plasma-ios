@@ -2,11 +2,16 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct TextFieldView: View {
-    @ObservedObject private var viewModel: TextFieldViewModel = TextFieldViewModel()
+    @ObservedObject private var viewModel: TextFieldViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: TextFieldViewModel = TextFieldViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {

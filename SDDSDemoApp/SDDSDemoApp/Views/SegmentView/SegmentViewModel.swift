@@ -1,7 +1,8 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
+import SDDSIcons
 
 final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     @Published var data: [SDDSSegmentItemData<AnyView>] = []
@@ -40,8 +41,29 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     // MARK: - Other state
     @Published var selectedItemId: UUID?
     
-    init() {
-        super.init(variationProvider: SegmentVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: SegmentUiState = .init()) {
+        super.init(variationProvider: SegmentVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: SegmentUiState) {
+        if !uiState.data.isEmpty {
+            data = uiState.data
+        }
+        value = uiState.value
+        helperText = uiState.helperText
+        iconAttributes = uiState.iconAttributes
+        isIconVisible = uiState.isIconVisible
+        alignment = uiState.alignment
+        isCounterVisible = uiState.isCounterVisible
+        counterText = uiState.counterText
+        isDisabled = uiState.isDisabled
+        layoutOrientation = uiState.layoutOrientation
+        stretch = uiState.stretch
+        hasBackground = uiState.hasBackground
+        selectedItemId = uiState.selectedItemId
+        updateItems()
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     // MARK: - Private
@@ -52,7 +74,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     // MARK: - Updates
     
     private func updateIcon() {
-        self.iconAttributes = isIconVisible ? .init(image: Image("buttonIcon"), alignment: self.alignment) : nil
+        self.iconAttributes = isIconVisible ? .init(image: Asset.plasma24.image, alignment: self.alignment) : nil
     }
     
     var segmentHeight: CGFloat {

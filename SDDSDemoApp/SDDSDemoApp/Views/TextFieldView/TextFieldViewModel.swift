@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     @Published var value: TextFieldValue = .single("")
@@ -25,12 +25,32 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: TextFieldVariationProvider(layout: .default))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: TextFieldUiState = .init()) {
+        super.init(variationProvider: TextFieldVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TextFieldUiState) {
+        value = uiState.value
+        textValue = uiState.textValue
+        title = uiState.title
+        optionalTitle = uiState.optionalTitle
+        placeholder = uiState.placeholder
+        caption = uiState.caption
+        textBefore = uiState.textBefore
+        textAfter = uiState.textAfter
+        disabled = uiState.disabled
+        readOnly = uiState.readOnly
+        secureEntry = uiState.secureEntry
+        keyboardType = uiState.keyboardType
+        iconViewEnabled = uiState.iconViewEnabled
+        iconActionViewEnabled = uiState.iconActionViewEnabled
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     var chips: [ChipData] {

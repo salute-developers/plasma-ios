@@ -3,7 +3,8 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct NoteView: View {
     @ObservedObject private var viewModel: NoteViewModel
@@ -52,7 +53,7 @@ struct NoteView: View {
                     print("Close button tapped")
                 },
                 contentBefore: {
-                    Image("plasma")
+                    Asset.plasma24.image
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -73,7 +74,7 @@ struct NoteView: View {
                     print("Close button tapped")
                 },
                 contentBefore: {
-                    Image("plasma")
+                    Asset.plasma24.image
                         .renderingMode(.template)
                         .resizable()
                         .aspectRatio(contentMode: .fit)

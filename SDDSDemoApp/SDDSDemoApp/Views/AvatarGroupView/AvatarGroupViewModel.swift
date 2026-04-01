@@ -1,7 +1,8 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
+import SDDSIcons
 
 final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvider>, ViewModelDelegate {
     @Published var avatarData: [SDDSAvatarData] = []
@@ -11,11 +12,21 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
     @Published var spacing: CGFloat = 15
     var avatarViewModel = AvatarViewModel()
     
-    init() {
-        super.init(variationProvider: AvatarGroupVariationProvider())
-        self.avatarData = defaultAvatars
-        self.lastAvatar = defaultLastAvatar
+    init(theme: Theme = .sdddsServTheme, uiState: AvatarGroupUiState = .init()) {
+        super.init(variationProvider: AvatarGroupVariationProvider(theme: theme), theme: theme)
+        avatarViewModel = AvatarViewModel(theme: theme)
         avatarViewModel.delegate = self
+        if uiState.avatarData.isEmpty {
+            avatarData = defaultAvatars
+            lastAvatar = defaultLastAvatar
+        } else {
+            avatarData = uiState.avatarData
+            lastAvatar = uiState.lastAvatar
+        }
+        maxDisplayingAvatarCount = uiState.maxDisplayingAvatarCount
+        borderWidth = uiState.borderWidth
+        spacing = uiState.spacing
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     var sizeConfiguration: AvatarGroupSizeConfiguration {
@@ -30,21 +41,21 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
         [
             SDDSAvatarData(
                 text: "JD",
-                image: .image(Image.image("checker")),
+                image: nil,
                 placeholderImage: nil,
                 appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
                 text: "ML",
-                image: .image(Image.image("checker")),
+                image: nil,
                 placeholderImage: nil,
                 appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
             ),
             SDDSAvatarData(
                 text: "SP",
-                image: .image(Image.image("checker")),
+                image: nil,
                 placeholderImage: nil,
                 appearance: avatarViewModel.appearance,
                 accessibility: defaultAccessibility
@@ -55,7 +66,7 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
     var defaultLastAvatar: SDDSAvatarData {
         SDDSAvatarData(
             text: "+5",
-            image: .image(Image.image("checker")),
+            image: nil,
             placeholderImage: nil,
             status: .hidden,
             appearance: avatarViewModel.appearance,

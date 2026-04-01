@@ -1,13 +1,18 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct TooltipView: View {
-    @ObservedObject private var viewModel: TooltipViewModel = TooltipViewModel()
+    @ObservedObject private var viewModel: TooltipViewModel
     @Environment(\.colorScheme) private var colorScheme
     @State private var isTooltipPresented = false
-    
+
+    init(viewModel: TooltipViewModel = TooltipViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -51,7 +56,7 @@ struct TooltipView: View {
     @ViewBuilder
     private var tooltipContent: some View {
         if viewModel.contentStartEnabled {
-            Image("plasma")
+            Asset.plasma24.image
                 .renderingMode(.template)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -66,9 +71,7 @@ struct TooltipView: View {
         case .topLeft:
             VStack {
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -92,9 +95,7 @@ struct TooltipView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -118,9 +119,7 @@ struct TooltipView: View {
             VStack {
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -141,9 +140,7 @@ struct TooltipView: View {
             }
         case .centerLeft:
             HStack {
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                    presentTooltip()
-                }
+                triggerButton()
                 .tooltip(
                     isPresented: $isTooltipPresented,
                     appearance: viewModel.appearance,
@@ -163,9 +160,7 @@ struct TooltipView: View {
         case .center:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                    presentTooltip()
-                }
+                triggerButton()
                 .tooltip(
                     isPresented: $isTooltipPresented,
                     appearance: viewModel.appearance,
@@ -185,9 +180,7 @@ struct TooltipView: View {
         case .centerRight:
             HStack {
                 Spacer()
-                BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                    presentTooltip()
-                }
+                triggerButton()
                 .tooltip(
                     isPresented: $isTooltipPresented,
                     appearance: viewModel.appearance,
@@ -207,9 +200,7 @@ struct TooltipView: View {
             VStack {
                 Spacer()
                 HStack {
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -233,9 +224,7 @@ struct TooltipView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -259,9 +248,7 @@ struct TooltipView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    BasicButton(title: "Show", subtitle: "", appearance: BasicButton.m.accent.appearance) {
-                        presentTooltip()
-                    }
+                    triggerButton()
                     .tooltip(
                         isPresented: $isTooltipPresented,
                         appearance: viewModel.appearance,
@@ -372,6 +359,12 @@ struct TooltipView: View {
     
     private var containerPadding: CGFloat {
         24.0
+    }
+
+    private func triggerButton() -> some View {
+        BasicButton(title: "Show", subtitle: "") {
+            presentTooltip()
+        }
     }
     
     private func presentTooltip() {

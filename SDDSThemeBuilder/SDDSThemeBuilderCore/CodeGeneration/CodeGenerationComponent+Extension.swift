@@ -123,6 +123,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case collapsingNavigationBarMainPage = "CollapsingNavigationBarMainPage"
     case toolbarHorizontal = "ToolbarHorizontal"
     case toolbarVertical = "ToolbarVertical"
+    case paginationDotsHorizontal = "PaginationDotsHorizontal"
+    case paginationDotsVertical = "PaginationDotsVertical"
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -131,7 +133,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .iconButton,
 //            .basicButtonGroup,
 //            .iconButtonGroup,
-            .textField,
+ //           .textField,
 //            .textFieldClear,
 //            .textArea,
 //            .textAreaClear,
@@ -152,10 +154,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .segment,
 //            .bottomSheet,
 //            .switch,
-            .embeddedChip,
-            .chip,
-            .embeddedChipGroupDense,
-            .embeddedChipGroupWide,
+//            .embeddedChip,
+//            .chip,
+//            .embeddedChipGroupDense,
+//            .embeddedChipGroupWide,
 //            .chipGroupDense,
 //            .chipGroupWide,
 //            .radiobox,
@@ -237,14 +239,16 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .collapsingNavigationBarInternalPage,
 //            .collapsingNavigationBarMainPage,
 //            .editable,
-            .selectSingleTight,
-            .selectSingleNormal,
-            .selectMultipleTight,
-            .selectMultipleNormal,
-            .selectItemSingleTight,
-            .selectItemSingleNormal,
-            .selectItemMultipleTight,
-            .selectItemMultipleNormal
+//            .selectSingleTight,
+//            .selectSingleNormal,
+//            .selectMultipleTight,
+//            .selectMultipleNormal,
+//            .selectItemSingleTight,
+//            .selectItemSingleNormal,
+//            .selectItemMultipleTight,
+//            .selectItemMultipleNormal
+            .paginationDotsVertical,
+            .paginationDotsHorizontal
         ]
     }
     
@@ -433,6 +437,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .paginationDotsHorizontal, .paginationDotsVertical:
+            GenerateComponentCommand<PaginationDotsProps, PaginationDotsAppearance, PaginationDotsSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -560,6 +570,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarMainPageAppearance"
         case .toolbarHorizontal, .toolbarVertical:
             "ToolbarAppearance"
+        case .paginationDotsHorizontal, .paginationDotsVertical:
+            "PaginationDotsAppearance"
         }
     }
     
@@ -688,6 +700,8 @@ extension CodeGenerationComponent {
             "CollapsingNavigationBarMainPageSizeConfiguration"
         case .toolbarHorizontal, .toolbarVertical:
             "ToolbarSizeConfiguration"
+        case .paginationDotsHorizontal, .paginationDotsVertical:
+            "PaginationDotsSizeConfiguration"
         }
     }
 
@@ -937,6 +951,10 @@ extension CodeGenerationComponent {
             "toolbar_horizontal_config.json"
         case .toolbarVertical:
             "toolbar_vertical_config.json"
+        case .paginationDotsHorizontal:
+            "pagination_dots_horizontal_config.json"
+        case .paginationDotsVertical:
+            "pagination_dots_vertical_config.json"
         }
     }
 

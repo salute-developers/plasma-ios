@@ -1,6 +1,6 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationProvider>, ViewModelDelegate {
     @Published var checkboxViewModels: [CheckboxItemViewModel] = [] {
@@ -22,10 +22,18 @@ final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationPro
        }
     }
     
-    init() {
-        super.init(variationProvider: CheckboxGroupVariationProvider())
-        self.update()
+    init(theme: Theme = .sdddsServTheme, uiState: CheckboxGroupUiState = .init()) {
+        super.init(variationProvider: CheckboxGroupVariationProvider(theme: theme), theme: theme)
         delegate = self
+        if uiState.checkboxViewModels.isEmpty {
+            update()
+        } else {
+            checkboxViewModels = uiState.checkboxViewModels
+            states = uiState.states
+            groupBehaviour = uiState.groupBehaviour
+            updateGroupBehaviour()
+        }
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func update() {

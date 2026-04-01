@@ -1,15 +1,15 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct ListItemView: View {
     @ObservedObject private var viewModel: ListItemViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init() {
-        self.viewModel = ListItemViewModel()
+    init(viewModel: ListItemViewModel = ListItemViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {

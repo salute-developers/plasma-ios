@@ -314,6 +314,9 @@
 		81A079062DA3FB5700260DC9 /* ScrollBarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A079052DA3FB5400260DC9 /* ScrollBarData.swift */; };
 		81A901532CF6EAA800992B04 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A901522CF6EAA800992B04 /* LinkButton.swift */; };
 		81A9015B2CF6EBD300992B04 /* SDDSButtonPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */; };
+		81B091062F6C1904005AD40F /* PaginationDotsSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B091022F6C1904005AD40F /* PaginationDotsSizeConfiguration.swift */; };
+		81B091072F6C1904005AD40F /* SDDSPaginationDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B091042F6C1904005AD40F /* SDDSPaginationDots.swift */; };
+		81B091082F6C1904005AD40F /* PaginationDotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B091012F6C1904005AD40F /* PaginationDotsAppearance.swift */; };
 		81B23F582D4BA1100042A657 /* SDDSSegmentItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */; };
 		81B510712E3C832600504B1D /* CodeFieldGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106E2E3C832600504B1D /* CodeFieldGroup.swift */; };
 		81B510722E3C832600504B1D /* CodeFieldSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5106C2E3C832600504B1D /* CodeFieldSizeConfiguration.swift */; };
@@ -806,6 +809,9 @@
 		81A079052DA3FB5400260DC9 /* ScrollBarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBarData.swift; sourceTree = "<group>"; };
 		81A901522CF6EAA800992B04 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		81A9015A2CF6EBD300992B04 /* SDDSButtonPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonPreview.swift; sourceTree = "<group>"; };
+		81B091012F6C1904005AD40F /* PaginationDotsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsAppearance.swift; sourceTree = "<group>"; };
+		81B091022F6C1904005AD40F /* PaginationDotsSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsSizeConfiguration.swift; sourceTree = "<group>"; };
+		81B091042F6C1904005AD40F /* SDDSPaginationDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSPaginationDots.swift; sourceTree = "<group>"; };
 		81B23F572D4BA1100042A657 /* SDDSSegmentItemPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemPreview.swift; sourceTree = "<group>"; };
 		81B5106B2E3C832600504B1D /* CodeFieldAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldAppearance.swift; sourceTree = "<group>"; };
 		81B5106C2E3C832600504B1D /* CodeFieldSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFieldSizeConfiguration.swift; sourceTree = "<group>"; };
@@ -2405,6 +2411,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81B091052F6C1904005AD40F /* SDDSPaginationDots */,
 				81410FAA2F6324CC00B85EEB /* SDDSSelect */,
 				81410FAC2F6324CC00B85EEB /* SDDSSelectItem */,
 				816C82C62EFBB29700446DEE /* SDDSAutocomplete */,
@@ -2706,6 +2713,24 @@
 				819C47312EBCF39A0081066C /* TabsAppearance */,
 			);
 			path = SDDSTabs;
+			sourceTree = "<group>";
+		};
+		81B091032F6C1904005AD40F /* PaginationDotsAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81B091012F6C1904005AD40F /* PaginationDotsAppearance.swift */,
+				81B091022F6C1904005AD40F /* PaginationDotsSizeConfiguration.swift */,
+			);
+			path = PaginationDotsAppearance;
+			sourceTree = "<group>";
+		};
+		81B091052F6C1904005AD40F /* SDDSPaginationDots */ = {
+			isa = PBXGroup;
+			children = (
+				81B091032F6C1904005AD40F /* PaginationDotsAppearance */,
+				81B091042F6C1904005AD40F /* SDDSPaginationDots.swift */,
+			);
+			path = SDDSPaginationDots;
 			sourceTree = "<group>";
 		};
 		81B23F562D4BA0E80042A657 /* SDDSSegmentItem */ = {
@@ -4906,6 +4931,9 @@
 				81F7532A2CF4684F000156D9 /* ButtonAppearance.swift in Sources */,
 				818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */,
 				817339E02D033D940092608A /* ChipSizeConfiguration.swift in Sources */,
+				81B091062F6C1904005AD40F /* PaginationDotsSizeConfiguration.swift in Sources */,
+				81B091072F6C1904005AD40F /* SDDSPaginationDots.swift in Sources */,
+				81B091082F6C1904005AD40F /* PaginationDotsAppearance.swift in Sources */,
 				695F438A2D41159C00FF936B /* SegmentItem+Equatable.swift in Sources */,
 				817339EF2D033EE40092608A /* AvatarAccessibility.swift in Sources */,
 				811DE15B2C5017FE000DD354 /* SDDSChipGroup.swift in Sources */,
@@ -5227,7 +5255,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.35.0;
+				MARKETING_VERSION = 0.36.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
@@ -5260,7 +5288,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.35.0;
+				MARKETING_VERSION = 0.36.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;

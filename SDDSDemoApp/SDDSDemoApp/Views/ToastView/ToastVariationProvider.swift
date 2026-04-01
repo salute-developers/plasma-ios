@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 final class ToastVariationProvider: VariationProvider {
     typealias Appearance = ToastAppearance
@@ -16,6 +15,6 @@ final class ToastVariationProvider: VariationProvider {
     }
     
     var defaultValue: ToastAppearance {
-        Toast.pilled.default.appearance
+        variations.first?.appearance ?? ToastAppearance()
     }
 } 

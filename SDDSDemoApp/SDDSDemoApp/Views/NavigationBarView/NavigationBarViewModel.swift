@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVariationProvider> {
     @Published var textPlacement: NavigationBarTextPlacement = .bottom
@@ -32,18 +32,37 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
         }
     }
     
-    init() {
-        let provider = NavigationBarMainPageVariationProvider(theme: .sdddsServTheme)
-        super.init(variationProvider: provider)
-        
+    init(theme: Theme = .sdddsServTheme, uiState: NavigationBarUiState = .init()) {
+        let provider = NavigationBarMainPageVariationProvider(theme: theme)
+        super.init(variationProvider: provider, theme: theme)
+
         internalPageViewModel = ComponentViewModel(variationProvider: NavigationBarInternalPageVariationProvider(theme: theme))
-        
+
         if let internalPageViewModel = internalPageViewModel,
            let firstVariation = internalPageViewModel.variations.first {
             internalPageViewModel.selectVariation(firstVariation)
         }
-        
+
         subscribeToInternalPageViewModel()
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: NavigationBarUiState) {
+        textPlacement = uiState.textPlacement
+        textAlign = uiState.textAlign
+        contentPlacement = uiState.contentPlacement
+        showIcon = uiState.showIcon
+        hasActionLeft = uiState.hasActionLeft
+        hasActionRight = uiState.hasActionRight
+        titleText = uiState.titleText
+        contentText = uiState.contentText
+        pageType = uiState.pageType
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
+        internalPageViewModel?.applySandboxVariationAppearance(
+            variant: uiState.variant,
+            appearance: uiState.appearance
+        )
     }
     
     private func subscribeToInternalPageViewModel() {

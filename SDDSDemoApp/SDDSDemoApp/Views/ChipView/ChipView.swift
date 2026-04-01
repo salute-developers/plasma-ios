@@ -1,11 +1,15 @@
 import SwiftUI
 import Combine
+import SandboxSwiftUI
 import SDDSComponents
-import SDDSServTheme
 
 struct ChipView: View {
-    @ObservedObject private var viewModel: ChipViewModel = ChipViewModel()
+    @ObservedObject private var viewModel: ChipViewModel
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: ChipViewModel = ChipViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {
@@ -35,6 +39,7 @@ struct ChipView: View {
                 Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
                 Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
             }
+
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         

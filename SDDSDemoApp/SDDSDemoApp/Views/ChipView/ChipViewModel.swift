@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSIcons
 
 final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     @Published var value: String = "Value"
@@ -11,11 +11,27 @@ final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     @Published var iconImage: Image? = nil
     @Published var buttonImage: Image? = nil
     
-    init() {
-        super.init(variationProvider: ChipVariationProvider())
-        
-        self.setIconImage()
-        self.setButtonImage()
+    init(theme: Theme = .sdddsServTheme, uiState: ChipUiState = .init()) {
+        super.init(variationProvider: ChipVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ChipUiState) {
+        value = uiState.value
+        isEnabled = uiState.isEnabled
+        iconImageEnabled = uiState.iconImageEnabled
+        buttomImageEnabled = uiState.buttomImageEnabled
+        if iconImageEnabled {
+            setIconImage()
+        } else {
+            iconImage = nil
+        }
+        if buttomImageEnabled {
+            setButtonImage()
+        } else {
+            buttonImage = nil
+        }
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 
     var removeAction: () -> Void {
@@ -23,10 +39,10 @@ final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     }
     
     func setIconImage() {
-        iconImage = Image.image("chipIcon")
+        iconImage = Asset.plasma24.image
     }
     
     func setButtonImage() {
-        buttonImage = Image.image("chipClose")
+        buttonImage = Asset.close24.image
     }
 }

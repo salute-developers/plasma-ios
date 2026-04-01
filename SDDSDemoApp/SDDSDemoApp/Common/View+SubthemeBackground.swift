@@ -1,6 +1,5 @@
 import SwiftUI
 import SDDSThemeCore
-import SDDSServTheme
 
 extension View {
     func backgroundColorForSubtheme(_ subtheme: Subtheme, colorScheme: ColorScheme) -> some View {
@@ -15,13 +14,13 @@ extension View {
 private func backgroundColorForSubthemeColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
     switch subtheme {
     case .onDark:
-        return Colors.backgroundDarkPrimary.token.color(for: colorScheme)
+        return colorScheme == .dark ? Color.black : Color(white: 0.15)
     case .onLight:
-        return Colors.backgroundLightPrimary.token.color(for: colorScheme)
+        return colorScheme == .dark ? Color(white: 0.2) : Color.white
     case .inverse:
-        return Colors.backgroundInversePrimary.token.color(for: colorScheme)
+        return colorScheme == .dark ? Color.white : Color.black
     case .default, .none:
-        return Colors.backgroundDefaultPrimary.token.color(for: colorScheme)
+        return Color(.systemBackground)
     }
 }
 

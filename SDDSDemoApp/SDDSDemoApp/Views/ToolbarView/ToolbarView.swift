@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct ToolbarView: View {
     @ObservedObject private var viewModel: ToolbarViewModel

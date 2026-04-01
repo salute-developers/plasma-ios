@@ -1,12 +1,16 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
 import SDDSIcons
+import SandboxSwiftUI
 
 struct SelectView: View {
-    @StateObject private var viewModel = SelectViewModel()
+    @ObservedObject private var viewModel: SelectViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
+    init(viewModel: SelectViewModel = SelectViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         List {
             Section {
@@ -172,7 +176,7 @@ struct SelectView: View {
                     if viewModel.isLoading {
                         HStack {
                             Spacer()
-                            SDDSSpinner(isAnimating: true, appearance: Spinner.xs.default.appearance)
+                            SDDSSpinner(isAnimating: true, appearance: viewModel.theme.spinnerVariations.first?.appearance)
                             Text("Загрузка")
                                 .typography(headerFooterTypography)
                                 .foregroundStyle(.secondary)
@@ -237,12 +241,7 @@ struct SelectView: View {
                                     height: viewModel.appearance.textFieldAppearance.size.iconActionSize.height
                                 )
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundColor(
-                                    ColorToken.textDefaultPrimary.color(
-                                        for: colorScheme,
-                                        subtheme: viewModel.theme.subtheme(viewModel.subtheme)
-                                    )
-                                )
+                                .foregroundColor(.primary)
                                 .opacity(viewModel.readOnly ? 0.4 : 1.0)
                         )
                     }

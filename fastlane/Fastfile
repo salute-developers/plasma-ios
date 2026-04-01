@@ -1,13 +1,58 @@
 default_platform(:ios)
 
 platform :ios do
-  lane :update_build_version_before_release do
+  def demo_target_config(demo_target)
+    normalized = (demo_target || "default").to_s.downcase
+    case normalized
+    when "default", "all"
+      {
+        key: "default",
+        scheme: "SDDSDemoApp",
+        target: "SDDSDemoApp",
+        app_identifier: "com.sd.SDDSDemo",
+        display_suffix: "",
+        provisioning_profile: "SDDS Demo Distribution"
+      }
+    when "sddsserv", "serv"
+      {
+        key: "sddsserv",
+        scheme: "SDDSDemoAppSDDSServ",
+        target: "SDDSDemoAppSDDSServ",
+        app_identifier: "com.sd.SDDSDemo.sddsserv",
+        display_suffix: " [sddsserv]",
+        provisioning_profile: "SDDS Demo Distribution"
+      }
+    when "plasmab2c", "b2c"
+      {
+        key: "plasmab2c",
+        scheme: "SDDSDemoAppPlasmaB2C",
+        target: "SDDSDemoAppPlasmaB2C",
+        app_identifier: "com.sd.SDDSDemo.plasmab2c",
+        display_suffix: " [plasmab2c]",
+        provisioning_profile: "SDDS Demo Distribution"
+      }
+    when "plasmahomeds", "homeds"
+      {
+        key: "plasmahomeds",
+        scheme: "SDDSDemoAppPlasmaHomeDS",
+        target: "SDDSDemoAppPlasmaHomeDS",
+        app_identifier: "com.sd.SDDSDemo.plasmahomeds",
+        display_suffix: " [plasmahomeds]",
+        provisioning_profile: "SDDS Demo Distribution"
+      }
+    else
+      UI.user_error!("Unsupported demo_target '#{demo_target}'. Use one of: default, sddsserv, plasmab2c, plasmahomeds")
+    end
+  end
+
+  lane :update_build_version_before_release do |options|
     ENV['BUILD_NUMBER_RESET_FLAG'] = '0'
+    selected_config = demo_target_config(options[:demo_target] || ENV["DEMO_TARGET"])
     branch_name = git_branch
     if branch_name == "develop"
       project_version = get_version_number(
         xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-        target: "SDDSDemoApp"
+        target: selected_config[:target]
       )
       UI.message("Current project version: #{project_version}")
 
@@ -32,12 +77,14 @@ platform :ios do
 
       ENV['BUILD_NUMBER_RESET_FLAG'] = '1'
 
-      Fastlane::Actions.sh("fastlane", "ios", "build_and_upload")
+      Fastlane::Actions.sh("fastlane", "ios", "build_and_upload", "demo_target:#{selected_config[:key]}")
     end
   end
 
-  lane :build_and_upload do
+  lane :build_and_upload do |options|
     UI.header("Starting build_and_upload lane")
+    selected_config = demo_target_config(options[:demo_target] || ENV["DEMO_TARGET"])
+    UI.message("Demo target: #{selected_config[:key]} (scheme: #{selected_config[:scheme]})")
 
     branch_name = git_branch
     UI.message("Building from branch: #{branch_name}")
@@ -55,7 +102,7 @@ platform :ios do
 
     project_version = get_version_number(
       xcodeproj: "SDDSDemoApp/SDDSDemoApp.xcodeproj",
-      target: "SDDSDemoApp"
+      target: selected_config[:target]
     )
     UI.message("Current project version: #{project_version}")
 
@@ -65,7 +112,7 @@ platform :ios do
       latest_tf_build = 0
     else
       latest_tf_build = latest_testflight_build_number(
-      app_identifier: "com.sd.SDDSDemo",
+      app_identifier: selected_config[:app_identifier],
       api_key: {
         key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
         issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
@@ -85,11 +132,11 @@ platform :ios do
 
     build_name = case branch_name
                  when "main"
-                   "SDDSDemo #{project_version} #{build_number}"
+                   "SDDSDemo#{selected_config[:display_suffix]} #{project_version} #{build_number}"
                  when "develop"
-                   "SDDSDemo #{project_version} #{build_number} [Dev]"
+                   "SDDSDemo#{selected_config[:display_suffix]} #{project_version} #{build_number} [Dev]"
                  else
-                   "SDDSDemo #{project_version} #{build_number}"
+                   "SDDSDemo#{selected_config[:display_suffix]} #{project_version} #{build_number}"
                  end
     UI.message("Build name: #{build_name}")
     # Prepare build description with PR link
@@ -119,13 +166,13 @@ platform :ios do
 
     UI.message("Starting build process...")
     build_app(
-      scheme: "SDDSDemoApp",
+      scheme: selected_config[:scheme],
       export_method: "app-store",
       export_options: {
         signingStyle: "manual",
         teamID: "KDMYYG676V",
         provisioningProfiles: {
-          "com.sd.SDDSDemo" => "SDDS Demo Distribution"
+          selected_config[:app_identifier] => selected_config[:provisioning_profile]
         }
       },
       output_name: build_name

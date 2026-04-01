@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSIcons
-import SDDSServTheme
+import SDDSThemeCore
 
 final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
     @Published var toolbarType: ToolbarType = .horizontal {
@@ -33,15 +33,15 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
                     views: [
                         AnyView(
                             IconButton(
-                                iconAttributes: ButtonIconAttributes(image: Asset.starFill36.image, alignment: .leading),
-                                appearance: BasicButton.m.default.appearance,
+                                iconAttributes: ButtonIconAttributes(image: Asset.plasma24.image, alignment: .leading),
+                                appearance: theme.iconButtonVariations.first?.styles.first?.appearance ?? theme.iconButtonVariations.first?.appearance,
                                 action: {}
                             )
                         ),
                         AnyView(
                             IconButton(
-                                iconAttributes: ButtonIconAttributes(image: Asset.starFill36.image, alignment: .leading),
-                                appearance: BasicButton.m.default.appearance,
+                                iconAttributes: ButtonIconAttributes(image: Asset.plasma24.image, alignment: .leading),
+                                appearance: theme.iconButtonVariations.first?.styles.first?.appearance ?? theme.iconButtonVariations.first?.appearance,
                                 action: {}
                             )
                         )
@@ -54,7 +54,6 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
                             BasicButton(
                                 title: "Label",
                                 subtitle: "",
-                                appearance: BasicButton.m.default.appearance,
                                 action: {}
                             )
                         )
@@ -64,11 +63,22 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: ToolbarVariationProvider())
-        
+    init(theme: Theme = .sdddsServTheme, uiState: ToolbarUiState = .init()) {
+        super.init(
+            variationProvider: ToolbarVariationProvider(theme: theme, toolbarType: uiState.toolbarType),
+            theme: theme
+        )
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ToolbarUiState) {
+        toolbarType = uiState.toolbarType
+        hasDivider = uiState.hasDivider
+        slotsAmount = uiState.slotsAmount
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

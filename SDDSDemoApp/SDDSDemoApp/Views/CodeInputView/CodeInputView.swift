@@ -1,14 +1,14 @@
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
+import SandboxSwiftUI
 
 struct CodeInputView: View {
     @ObservedObject private var viewModel: CodeInputViewModel
     @Environment(\.colorScheme) private var colorScheme
     
-    init() {
-        self.viewModel = CodeInputViewModel()
+    init(viewModel: CodeInputViewModel = CodeInputViewModel()) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -28,7 +28,7 @@ struct CodeInputView: View {
                 .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                 .popover(
                     isPresented: $viewModel.successToastDisplayed,
-                    appearance: Popover.m.default.appearance,
+                    appearance: viewModel.theme.popoverVariations.first?.appearance ?? PopoverAppearance(),
                     placement: .bottom,
                     alignment: .center,
                     tailEnabled: false,
@@ -117,7 +117,7 @@ struct CodeInputView: View {
             }
             HStack {
                 Spacer()
-                BasicButton(title: "Close", subtitle: "", appearance: BasicButton.m.accent.appearance) {
+                BasicButton(title: "Close", subtitle: "") {
                     viewModel.successToastDisplayed = false
                 }
                 Spacer()

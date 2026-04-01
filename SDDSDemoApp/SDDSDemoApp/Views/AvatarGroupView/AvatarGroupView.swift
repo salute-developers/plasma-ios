@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSThemeCore
+import SandboxSwiftUI
 
 struct AvatarGroupView: View {
     @ObservedObject private var viewModel: AvatarGroupViewModel

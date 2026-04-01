@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum TabBarIslandType: String, CaseIterable {
     case tabbar = "TabBar"

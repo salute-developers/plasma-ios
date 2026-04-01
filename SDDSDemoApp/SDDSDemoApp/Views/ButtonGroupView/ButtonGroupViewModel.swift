@@ -1,6 +1,7 @@
 import SwiftUI
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
+import SDDSIcons
 
 final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvider> {
     @Published var buttons: [ButtonData] = [] {
@@ -28,8 +29,25 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
         appearance
     }
     
-    init() {
-        super.init(variationProvider: ButtonGroupVariationProvider(buttonGroupType: .basic))
+    init(theme: Theme = .sdddsServTheme, uiState: ButtonGroupUiState = .init()) {
+        super.init(
+            variationProvider: ButtonGroupVariationProvider(buttonGroupType: uiState.buttonGroupType, theme: theme),
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: ButtonGroupUiState) {
+        if !uiState.buttons.isEmpty {
+            buttons = uiState.buttons
+        }
+        buttonGroupType = uiState.buttonGroupType
+        layout = uiState.layout
+        iconEnabled = uiState.iconEnabled
+        subtitleEnabled = uiState.subtitleEnabled
+        value = uiState.value
+        subtitleValue = uiState.subtitleValue
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     func addButton() {
@@ -40,10 +58,10 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
             newButton = ButtonData(
                 title: value,
                 subtitle: subtitleEnabled ? subtitleValue : "",
-                iconAttributes: iconEnabled ? ButtonIconAttributes(image: Image("buttonIcon"), alignment: .leading) : nil,
+                iconAttributes: iconEnabled ? ButtonIconAttributes(image: Asset.plasma24.image, alignment: .leading) : nil,
                 isDisabled: false,
                 isLoading: false,
-                spinnerImage: Image("spinner", bundle: Bundle(for: Components.self)),
+                spinnerImage: Image("spinner"),
                 buttonStyle: .basic,
                 appearance: appearance.buttonAppearance ?? ButtonAppearance(),
                 layoutMode: .wrapContent,
@@ -55,10 +73,10 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
             newButton = ButtonData(
                 title: "",
                 subtitle: "",
-                iconAttributes: ButtonIconAttributes(image: Image("buttonIcon"), alignment: .leading),
+                iconAttributes: ButtonIconAttributes(image: Asset.plasma24.image, alignment: .leading),
                 isDisabled: false,
                 isLoading: false,
-                spinnerImage: Image("spinner", bundle: Bundle(for: Components.self)),
+                spinnerImage: Image("spinner"),
                 buttonStyle: .icon,
                 appearance: appearance.buttonAppearance ?? ButtonAppearance(),
                 layoutMode: .wrapContent,

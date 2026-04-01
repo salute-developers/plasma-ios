@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class CodeInputViewModel: ComponentViewModel<CodeInputVariationProvider> {
     private let captionFailureText = "Invalid code"
@@ -59,15 +60,29 @@ final class CodeInputViewModel: ComponentViewModel<CodeInputVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: CodeInputVariationProvider())
-        
+    init(theme: Theme = .sdddsServTheme, uiState: CodeInputUiState = .init()) {
+        super.init(variationProvider: CodeInputVariationProvider(theme: theme), theme: theme)
+
         validation = CodeFieldOnlyDigitsValidation(code: validCode, groups: selectedGroups)
-        
+
         $validationResult
             .sink { [weak self] value in
                 self?.updateCaption(validationResult: value)
             }
             .store(in: &cancellables)
+
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: CodeInputUiState) {
+        code = uiState.code
+        caption = uiState.caption
+        captionAlignment = uiState.captionAlignment
+        selectedGroupType = uiState.selectedGroupType
+        successToastDisplayed = uiState.successToastDisplayed
+        validationResult = uiState.validationResult
+        isHidden = uiState.isHidden
+        validation = CodeFieldOnlyDigitsValidation(code: validCode, groups: selectedGroups)
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

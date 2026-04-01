@@ -3,7 +3,7 @@ import Combine
 import SwiftUI
 import SDDSComponents
 import SDDSIcons
-import SDDSServTheme
+import SDDSThemeCore
 
 final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvider> {
     private let assistantContentWidth: CGFloat = 44
@@ -60,7 +60,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
     private var assistant: some View {
         VStack(spacing: 0) {
             Spacer()
-            Image(systemName: "house.circle.fill")
+            Asset.houseFill36.image
                 .resizable()
                 .renderingMode(.template)
                 .frame(width: assistantContentWidth, height: 44)
@@ -107,7 +107,28 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
         .init()
     }
     
-    init(componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
-        super.init(variationProvider: TabBarIslandVariationProvider(tabBarIslandType: .solid), componentViewLayoutMode: componentViewLayoutMode)
+    init(
+        theme: Theme = .sdddsServTheme,
+        uiState: TabBarIslandUiState = .init(),
+        componentViewLayoutMode: ComponentViewLayoutMode = .screen
+    ) {
+        super.init(
+            variationProvider: TabBarIslandVariationProvider(
+                theme: theme,
+                tabBarIslandType: uiState.tabBarIslandType
+            ),
+            componentViewLayoutMode: componentViewLayoutMode,
+            theme: theme
+        )
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TabBarIslandUiState) {
+        selectedIndex = uiState.selectedIndex
+        tabBarIslandType = uiState.tabBarIslandType
+        extra = uiState.extra
+        countText = uiState.countText
+        customWidthEnabled = uiState.customWidthEnabled
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

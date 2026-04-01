@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum CardType: String, CaseIterable {
     case card = "Card"
@@ -31,6 +30,6 @@ final class CardVariationProvider: VariationProvider {
     }
     
     var defaultValue: CardAppearance {
-        variations.first?.appearance ?? CardSolid.m.appearance
+        variations.first?.appearance ?? CardAppearance()
     }
 }

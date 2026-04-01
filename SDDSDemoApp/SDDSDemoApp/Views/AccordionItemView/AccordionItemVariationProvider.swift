@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 final class AccordionItemVariationProvider: VariationProvider {
     typealias Appearance = AccordionItemAppearance

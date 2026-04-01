@@ -25,7 +25,24 @@ final class PopoverViewModel: ComponentViewModel<PopoverVariationProvider> {
     @Published var buttonPosition: PopoverButtonPosition = .center
     @Published var duration: Int? = nil
     
-    init() {
-        super.init(variationProvider: PopoverVariationProvider())
+    init(theme: Theme = .sdddsServTheme, uiState: PopoverUiState = .init()) {
+        super.init(
+            variationProvider: PopoverVariationProvider(theme: theme),
+            theme: theme
+        )
+        apply(uiState: uiState)
     }
-} 
+
+    private func apply(uiState: PopoverUiState) {
+        placement = uiState.placement
+        alignment = uiState.alignment
+        tailEnabled = uiState.tailEnabled
+        autoHide = uiState.autoHide
+        triggerCentered = uiState.triggerCentered
+        placementMode = uiState.placementMode
+        buttonPosition = uiState.buttonPosition
+        duration = uiState.duration
+
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
+    }
+}

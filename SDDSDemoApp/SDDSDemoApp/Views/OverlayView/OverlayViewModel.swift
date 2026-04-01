@@ -1,5 +1,6 @@
 import SwiftUI
 import SDDSComponents
+import SDDSThemeCore
 
 final class OverlayViewModel: ComponentViewModel<OverlayVariationProvider> {
     @Published var isPresent: Bool = false
@@ -17,7 +18,7 @@ final class OverlayViewModel: ComponentViewModel<OverlayVariationProvider> {
         didSet {
             switch hasBackgroundColor {
             case true:
-                appearance.backgroundColor = .color(.overlayDefaultSoft)
+                appearance.backgroundColor = .color(theme.overlayDefaultSoftColorToken)
             case false:
                 appearance.backgroundColor = .color(.clearColor)
             }
@@ -26,8 +27,20 @@ final class OverlayViewModel: ComponentViewModel<OverlayVariationProvider> {
     
     let ids =  [UUID(), UUID(), UUID(), UUID()]
     
-    init() {
-        super.init(variationProvider: OverlayVariationProvider())
-        self.selectedItemId = ids[0]
+    init(theme: Theme = .sdddsServTheme, uiState: OverlayUiState = .init()) {
+        super.init(variationProvider: OverlayVariationProvider(theme: theme), theme: theme)
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: OverlayUiState) {
+        isPresent = uiState.isPresent
+        if let selectedItemId = uiState.selectedItemId {
+            self.selectedItemId = selectedItemId
+        } else {
+            selectedItemId = ids[0]
+        }
+        hasBlur = uiState.hasBlur
+        hasBackgroundColor = uiState.hasBackgroundColor
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

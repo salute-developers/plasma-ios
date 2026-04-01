@@ -7,17 +7,17 @@ import PlasmaB2CTheme
 import StylesSaluteTheme
 import PlasmaHomeDSTheme
 
-enum Theme: String, CaseIterable {
+public enum SandboxDemoAppTheme: String, CaseIterable {
     case sdddsServTheme
     case plasmaB2CTheme
     case plasmaHomeDSTheme
     case stylesSalute
     
-    var name: String {
+    public var name: String {
         rawValue.capitalized
     }
     
-    func subtheme(_ subtheme: Subtheme) -> SubthemeData {
+    public func subtheme(_ subtheme: Subtheme) -> SubthemeData {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Theme.subtheme(subtheme)
@@ -31,7 +31,7 @@ enum Theme: String, CaseIterable {
     }
 
     /// Background color for the current subtheme and color scheme. Use when setting `subthemeBackgroundColor` environment for components (e.g. CollapsingNavigationBar).
-    func subthemeBackgroundColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
+    public func subthemeBackgroundColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
         switch subtheme {
         case .onDark:
             return backgroundDarkPrimaryColor(for: colorScheme)
@@ -80,7 +80,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var basicButtonVariations: [Variation<ButtonAppearance>] {
+    public var basicButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.BasicButton.all
@@ -93,7 +93,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconButtonVariations: [Variation<ButtonAppearance>] {
+    public var iconButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.IconButton.all
@@ -106,7 +106,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var linkButtonVariations: [Variation<ButtonAppearance>] {
+    public var linkButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.LinkButton.all
@@ -119,7 +119,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textFieldVariations: [Variation<TextFieldAppearance>] {
+    public var textFieldVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TextField.all
@@ -132,7 +132,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textFieldClearVariations: [Variation<TextFieldAppearance>] {
+    public var textFieldClearVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TextFieldClear.all
@@ -145,7 +145,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textAreaVariations: [Variation<TextAreaAppearance>] {
+    public var textAreaVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TextArea.all
@@ -158,7 +158,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textAreaClearVariations: [Variation<TextAreaAppearance>] {
+    public var textAreaClearVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TextAreaClear.all
@@ -171,7 +171,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var editableVariations: [Variation<EditableAppearance>] {
+    public var editableVariations: [Variation<EditableAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Editable.all
@@ -184,7 +184,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var avatarVariations: [Variation<AvatarAppearance>] {
+    public var avatarVariations: [Variation<AvatarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Avatar.all
@@ -197,7 +197,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
+    public var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AvatarGroup.all
@@ -210,7 +210,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var counterVariations: [Variation<CounterAppearance>] {
+    public var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Counter.all
@@ -223,7 +223,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var chipGroupVariations: [Variation<ChipGroupAppearance>] {
+    public var chipGroupVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ChipGroup.all
@@ -236,7 +236,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var chipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
+    public var chipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ChipGroupDense.all
@@ -249,7 +249,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var chipGroupWideVariations: [Variation<ChipGroupAppearance>] {
+    public var chipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ChipGroupWide.all
@@ -262,7 +262,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var embeddedChipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
+    public var embeddedChipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.EmbeddedChipGroupDense.all
@@ -275,7 +275,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var embeddedChipGroupWideVariations: [Variation<ChipGroupAppearance>] {
+    public var embeddedChipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.EmbeddedChipGroupWide.all
@@ -288,7 +288,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var checkboxVariations: [Variation<CheckboxAppearance>] {
+    public var checkboxVariations: [Variation<CheckboxAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Checkbox.all
@@ -301,7 +301,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var checkboxGroupVariations: [Variation<CheckboxGroupAppearance>] {
+    public var checkboxGroupVariations: [Variation<CheckboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.CheckboxGroup.all
@@ -314,7 +314,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var radioboxVariations: [Variation<RadioboxAppearance>] {
+    public var radioboxVariations: [Variation<RadioboxAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Radiobox.all
@@ -327,7 +327,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
+    public var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.RadioboxGroup.all
@@ -340,7 +340,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var chipVariations: [Variation<ChipAppearance>] {
+    public var chipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Chip.all
@@ -353,7 +353,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var embeddedChipVariations: [Variation<ChipAppearance>] {
+    public var embeddedChipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.EmbeddedChip.all
@@ -366,7 +366,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var progressBarVariations: [Variation<ProgressBarAppearance>] {
+    public var progressBarVariations: [Variation<ProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ProgressBar.all
@@ -379,7 +379,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var segmentItemVariations: [Variation<SegmentItemAppearance>] {
+    public var segmentItemVariations: [Variation<SegmentItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SegmentItem.all
@@ -392,7 +392,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var segmentVariations: [Variation<SegmentAppearance>] {
+    public var segmentVariations: [Variation<SegmentAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Segment.all
@@ -405,7 +405,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var switchVariations: [Variation<SwitchAppearance>] {
+    public var switchVariations: [Variation<SwitchAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Switch.all
@@ -418,7 +418,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var badgeVariations: [Variation<BadgeAppearance>] {
+    public var badgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Badge.all
@@ -431,7 +431,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var badgeClearVariations: [Variation<BadgeAppearance>] {
+    public var badgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.BadgeClear.all
@@ -444,7 +444,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var badgeTransparentVariations: [Variation<BadgeAppearance>] {
+    public var badgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.BadgeTransparent.all
@@ -457,7 +457,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconBadgeVariations: [Variation<BadgeAppearance>] {
+    public var iconBadgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.IconBadge.all
@@ -470,7 +470,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconBadgeClearVariations: [Variation<BadgeAppearance>] {
+    public var iconBadgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.IconBadgeClear.all
@@ -483,7 +483,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconBadgeTransparentVariations: [Variation<BadgeAppearance>] {
+    public var iconBadgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.IconBadgeTransparent.all
@@ -496,7 +496,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var indicatorVariations: [Variation<IndicatorAppearance>] {
+    public var indicatorVariations: [Variation<IndicatorAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Indicator.all
@@ -509,7 +509,29 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var cellVariations: [Variation<CellAppearance>] {
+    public var paginationDotsHorizontalVariations: [Variation<PaginationDotsAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.PaginationDotsHorizontal.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.PaginationDotsHorizontal.all
+        case .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    public var paginationDotsVerticalVariations: [Variation<PaginationDotsAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.PaginationDotsVertical.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.PaginationDotsVertical.all
+        case .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+    
+    public var cellVariations: [Variation<CellAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Cell.all
@@ -522,7 +544,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var cardSolidVariations: [Variation<CardAppearance>] {
+    public var cardSolidVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.CardSolid.all
@@ -535,7 +557,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var cardVariations: [Variation<CardAppearance>] {
+    public var cardVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
             []
@@ -548,7 +570,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var cardClearVariations: [Variation<CardAppearance>] {
+    public var cardClearVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.CardClear.all
@@ -561,7 +583,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var bottomSheetVariations: [Variation<BottomSheetAppearance>] {
+    public var bottomSheetVariations: [Variation<BottomSheetAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.BottomSheet.all
@@ -574,7 +596,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
+    public var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.CircularProgressBar.all
@@ -587,7 +609,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var dividerVariations: [Variation<DividerAppearance>] {
+    public var dividerVariations: [Variation<DividerAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Divider.all
@@ -600,7 +622,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var overlayVariations: [Variation<OverlayAppearance>] {
+    public var overlayVariations: [Variation<OverlayAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Overlay.all
@@ -613,7 +635,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var popoverVariations: [Variation<PopoverAppearance>] {
+    public var popoverVariations: [Variation<PopoverAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Popover.all
@@ -626,7 +648,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tooltipVariations: [Variation<TooltipAppearance>] {
+    public var tooltipVariations: [Variation<TooltipAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Tooltip.all
@@ -639,7 +661,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var toastVariations: [Variation<ToastAppearance>] {
+    public var toastVariations: [Variation<ToastAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Toast.all
@@ -652,7 +674,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var modalVariations: [Variation<ModalAppearance>] {
+    public var modalVariations: [Variation<ModalAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Modal.all
@@ -665,7 +687,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var notificationCompactVariations: [Variation<NotificationAppearance>] {
+    public var notificationCompactVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.NotificationCompact.all
@@ -678,7 +700,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var notificationLooseVariations: [Variation<NotificationAppearance>] {
+    public var notificationLooseVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.NotificationLoose.all
@@ -691,7 +713,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var rectSkeletonVariations: [Variation<SkeletonAppearance>] {
+    public var rectSkeletonVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.RectSkeleton.all
@@ -704,7 +726,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textSkeletonVariations: [Variation<SkeletonAppearance>] {
+    public var textSkeletonVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TextSkeleton.all
@@ -717,7 +739,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textSkeletonBodyVariations: [Variation<SkeletonAppearance>] {
+    public var textSkeletonBodyVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.TextSkeletonBody.all
@@ -726,7 +748,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textSkeletonDisplayVariations: [Variation<SkeletonAppearance>] {
+    public var textSkeletonDisplayVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.TextSkeletonDisplay.all
@@ -735,7 +757,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textSkeletonHeaderVariations: [Variation<SkeletonAppearance>] {
+    public var textSkeletonHeaderVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.TextSkeletonHeader.all
@@ -744,7 +766,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var textSkeletonTextVariations: [Variation<SkeletonAppearance>] {
+    public var textSkeletonTextVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
             PlasmaHomeDSTheme.TextSkeletonText.all
@@ -753,7 +775,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listItemVariations: [Variation<ListItemAppearance>] {
+    public var listItemVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             []
@@ -766,7 +788,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listNumberedItemVariations: [Variation<ListItemAppearance>] {
+    public var listNumberedItemVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
             []
@@ -775,7 +797,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listItemNormalVariations: [Variation<ListItemAppearance>] {
+    public var listItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ListItemNormal.all
@@ -788,7 +810,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listItemTightVariations: [Variation<ListItemAppearance>] {
+    public var listItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ListItemTight.all
@@ -801,7 +823,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listVariations: [Variation<ListAppearance>] {
+    public var listVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
             []
@@ -814,7 +836,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listNumberedVariations: [Variation<ListAppearance>] {
+    public var listNumberedVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
             []
@@ -823,7 +845,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listNormalVariations: [Variation<ListAppearance>] {
+    public var listNormalVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ListNormal.all
@@ -836,7 +858,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var listTightVariations: [Variation<ListAppearance>] {
+    public var listTightVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ListTight.all
@@ -849,7 +871,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var scrollbarVariations: [Variation<ScrollbarAppearance>] {
+    public var scrollbarVariations: [Variation<ScrollbarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ScrollBar.all
@@ -862,7 +884,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var dropdownMenuNormalVariations: [Variation<DropdownMenuAppearance>] {
+    public var dropdownMenuNormalVariations: [Variation<DropdownMenuAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuNormal.all
@@ -875,7 +897,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var dropdownMenuTightVariations: [Variation<DropdownMenuAppearance>] {
+    public var dropdownMenuTightVariations: [Variation<DropdownMenuAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuTight.all
@@ -888,7 +910,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
+    public var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuItemNormal.all
@@ -901,7 +923,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
+    public var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.DropdownMenuItemTight.all
@@ -914,7 +936,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
+    public var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionItemClearActionStart.all
@@ -927,7 +949,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
+    public var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionItemClearActionEnd.all
@@ -940,7 +962,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
+    public var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionItemSolidActionStart.all
@@ -953,7 +975,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
+    public var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionItemSolidActionEnd.all
@@ -966,7 +988,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
+    public var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionClearActionStart.all
@@ -979,7 +1001,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
+    public var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionClearActionEnd.all
@@ -992,7 +1014,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
+    public var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionSolidActionStart.all
@@ -1005,7 +1027,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
+    public var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AccordionSolidActionEnd.all
@@ -1018,7 +1040,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var spinnerVariations: [Variation<SpinnerAppearance>] {
+    public var spinnerVariations: [Variation<SpinnerAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Spinner.all
@@ -1031,7 +1053,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var loaderVariations: [Variation<LoaderAppearance>] {
+    public var loaderVariations: [Variation<LoaderAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Loader.all
@@ -1044,7 +1066,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var codeFieldVariations: [Variation<CodeFieldAppearance>] {
+    public var codeFieldVariations: [Variation<CodeFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.CodeField.all
@@ -1057,7 +1079,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIsland.all
@@ -1070,7 +1092,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandClear.all
@@ -1083,7 +1105,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandHasLabelClear.all
@@ -1096,7 +1118,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandHasLabel.all
@@ -1109,7 +1131,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarSolidVariations: [Variation<TabBarAppearance>] {
+    public var tabBarSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBar.all
@@ -1122,7 +1144,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
             []
@@ -1135,7 +1157,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarClearVariations: [Variation<TabBarAppearance>] {
+    public var tabBarClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarClear.all
@@ -1148,7 +1170,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarHasLabelClearVariations: [Variation<TabBarAppearance>] {
+    public var tabBarHasLabelClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarHasLabelClear.all
@@ -1161,7 +1183,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabBarHasLabelSolidVariations: [Variation<TabBarAppearance>] {
+    public var tabBarHasLabelSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarHasLabel.all
@@ -1174,7 +1196,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var codeInputVariations: [Variation<CodeInputAppearance>] {
+    public var codeInputVariations: [Variation<CodeInputAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.CodeInput.all
@@ -1187,7 +1209,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var basicButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
+    public var basicButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.BasicButtonGroup.all
@@ -1200,7 +1222,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
+    public var iconButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.IconButtonGroup.all
@@ -1213,7 +1235,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var wheelVariations: [Variation<WheelAppearance>] {
+    public var wheelVariations: [Variation<WheelAppearance>] {
         switch self {
         case .sdddsServTheme:
             return []
@@ -1226,7 +1248,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
+    public var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NavigationBarMainPage.all
@@ -1239,7 +1261,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var noteVariations: [Variation<NoteAppearance>] {
+    public var noteVariations: [Variation<NoteAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Note.all
@@ -1252,7 +1274,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
+    public var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NavigationBarInternalPage.all
@@ -1265,7 +1287,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var collapsingNavigationBarMainPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
+    public var collapsingNavigationBarMainPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             return []
@@ -1278,7 +1300,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var collapsingNavigationBarInternalPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
+    public var collapsingNavigationBarInternalPageVariations: [Variation<CollapsingNavigationBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             return []
@@ -1291,7 +1313,7 @@ enum Theme: String, CaseIterable {
         }
     }
 
-    var noteCompactVariations: [Variation<NoteCompactAppearance>] {
+    public var noteCompactVariations: [Variation<NoteCompactAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NoteCompact.all
@@ -1304,7 +1326,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabsDefaultVariations: [Variation<TabsAppearance>] {
+    public var tabsDefaultVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.TabsDefault.all
@@ -1317,7 +1339,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var drawerCloseInnerVariations: [Variation<DrawerAppearance>] {
+    public var drawerCloseInnerVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.DrawerCloseInner.all
@@ -1330,7 +1352,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabsHeaderVariations: [Variation<TabsAppearance>] {
+    public var tabsHeaderVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.TabsHeader.all
@@ -1343,7 +1365,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var drawerCloseNoneVariations: [Variation<DrawerAppearance>] {
+    public var drawerCloseNoneVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.DrawerCloseNone.all
@@ -1356,7 +1378,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconTabsVariations: [Variation<TabsAppearance>] {
+    public var iconTabsVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.IconTabs.all
@@ -1369,7 +1391,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabItemDefaultVariations: [Variation<TabItemAppearance>] {
+    public var tabItemDefaultVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.TabItemDefault.all
@@ -1382,7 +1404,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var tabItemHeaderVariations: [Variation<TabItemAppearance>] {
+    public var tabItemHeaderVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.TabItemHeader.all
@@ -1395,7 +1417,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var iconTabItemVariations: [Variation<TabItemAppearance>] {
+    public var iconTabItemVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.IconTabItem.all
@@ -1408,7 +1430,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var drawerCloseOuterVariations: [Variation<DrawerAppearance>] {
+    public var drawerCloseOuterVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.DrawerCloseOuter.all
@@ -1421,7 +1443,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var autocompleteNormalVariations: [Variation<AutocompleteAppearance>] {
+    public var autocompleteNormalVariations: [Variation<AutocompleteAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AutocompleteNormal.all
@@ -1434,7 +1456,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var autocompleteTightVariations: [Variation<AutocompleteAppearance>] {
+    public var autocompleteTightVariations: [Variation<AutocompleteAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.AutocompleteTight.all
@@ -1447,7 +1469,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectSingleNormalVariations: [Variation<SelectAppearance>] {
+    public var selectSingleNormalVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectSingleNormal.all
@@ -1456,7 +1478,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectSingleTightVariations: [Variation<SelectAppearance>] {
+    public var selectSingleTightVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectSingleTight.all
@@ -1465,7 +1487,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectMultipleNormalVariations: [Variation<SelectAppearance>] {
+    public var selectMultipleNormalVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectMultipleNormal.all
@@ -1474,7 +1496,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectMultipleTightVariations: [Variation<SelectAppearance>] {
+    public var selectMultipleTightVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectMultipleTight.all
@@ -1483,7 +1505,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectItemSingleNormalVariations: [Variation<SelectItemAppearance>] {
+    public var selectItemSingleNormalVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectItemSingleNormal.all
@@ -1492,7 +1514,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectItemSingleTightVariations: [Variation<SelectItemAppearance>] {
+    public var selectItemSingleTightVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectItemSingleTight.all
@@ -1501,7 +1523,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectItemMultipleNormalVariations: [Variation<SelectItemAppearance>] {
+    public var selectItemMultipleNormalVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectItemMultipleNormal.all
@@ -1510,7 +1532,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var selectItemMultipleTightVariations: [Variation<SelectItemAppearance>] {
+    public var selectItemMultipleTightVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.SelectItemMultipleTight.all
@@ -1519,7 +1541,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
+    public var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ToolbarHorizontal.all
@@ -1532,7 +1554,7 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
+    public var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.ToolbarVertical.all

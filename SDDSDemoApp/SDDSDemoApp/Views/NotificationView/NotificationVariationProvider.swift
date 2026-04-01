@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 enum NotificationLayout: String, CaseIterable {
     case compact
@@ -28,6 +27,6 @@ final class NotificationVariationProvider: VariationProvider {
     }
     
     var defaultValue: NotificationAppearance {
-        SDDSServTheme.NotificationCompact.m.appearance
+        theme.notificationCompactVariations.first?.appearance ?? NotificationAppearance()
     }
 }

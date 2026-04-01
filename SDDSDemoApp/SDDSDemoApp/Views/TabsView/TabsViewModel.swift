@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 import SDDSComponents
 import SDDSIcons
+import SDDSThemeCore
 
 final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
     typealias Appearance = TabsAppearance
@@ -185,7 +186,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                     appearance: appearance.tabItemAppearance,
                     startContent: {
                         AnyView(
-                            Asset.plasma24.image
+                            Asset.starFill36.image
                                 .resizable()
                                 .renderingMode(.template)
                         )
@@ -206,7 +207,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                     appearance: appearance.tabItemAppearance,
                     startContent: {
                         AnyView(
-                            Asset.plasma24.image
+                            Asset.starFill36.image
                                 .resizable()
                                 .renderingMode(.template)
                         )
@@ -225,7 +226,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
         if hasCounter {
             EmptyView()
         } else {
-            Asset.plasma24.image
+            Asset.starFill36.image
                 .resizable()
                 .renderingMode(.template)
         }
@@ -252,11 +253,37 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: TabsVariationProvider(tabsType: .tabsDefault))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: TabsUiState = .init()) {
+        super.init(
+            variationProvider: TabsVariationProvider(tabsType: uiState.tabsType, theme: theme),
+            theme: theme
+        )
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TabsUiState) {
+        tabsType = uiState.tabsType
+        tabItemType = uiState.tabItemType
+        selectedId = uiState.selectedId
+        numberOfTabs = uiState.numberOfTabs
+        showAllText = uiState.showAllText
+        dropdownMaxHeight = uiState.dropdownMaxHeight
+        clipModeType = uiState.clipModeType
+        stretch = uiState.stretch
+        hasDivider = uiState.hasDivider
+        label = uiState.label
+        value = uiState.value
+        hasValue = uiState.hasValue
+        counterValue = uiState.counterValue
+        hasCounter = uiState.hasCounter
+        hasStartContentIcon = uiState.hasStartContentIcon
+        hasEndContentIcon = uiState.hasEndContentIcon
+        hasAction = uiState.hasAction
+        isDisabled = uiState.isDisabled
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }

@@ -1,6 +1,8 @@
 import Foundation
 import SDDSComponents
+#if canImport(PlasmaHomeDSTheme)
 import PlasmaHomeDSTheme
+#endif
 
 final class WheelVariationProvider: VariationProvider {
     typealias Appearance = WheelAppearance

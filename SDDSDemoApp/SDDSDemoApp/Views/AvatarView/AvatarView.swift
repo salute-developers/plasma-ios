@@ -3,13 +3,18 @@ import Combine
 import SDDSComponents
 import PhotosUI
 import SDDSThemeCore
-import SDDSServTheme
+import SDDSIcons
+import SandboxSwiftUI
 
 struct AvatarView: View {
-    @ObservedObject private var viewModel: AvatarViewModel = AvatarViewModel()
+    @ObservedObject private var viewModel: AvatarViewModel
     @State private var showImagePicker = false
     @State private var showGradientPicker = false
     @Environment(\.colorScheme) private var colorScheme
+
+    init(viewModel: AvatarViewModel = AvatarViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         List {
@@ -153,7 +158,7 @@ struct AvatarView: View {
     }
     
     private var image: Image? {
-        viewModel.badgeViewModel.iconVisible ? Image("buttonIcon") : nil
+        viewModel.badgeViewModel.iconVisible ? Asset.plasma24.image : nil
     }
 }
 

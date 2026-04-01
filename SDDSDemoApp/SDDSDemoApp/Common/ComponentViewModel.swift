@@ -40,7 +40,11 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     let componentViewLayoutMode: ComponentViewLayoutMode
     var cancellables: Set<AnyCancellable> = []
 
-    init(variationProvider: Provider, componentViewLayoutMode: ComponentViewLayoutMode = .screen) {
+    init(
+        variationProvider: Provider,
+        componentViewLayoutMode: ComponentViewLayoutMode = .screen,
+        theme: Theme = .sdddsServTheme
+    ) {
         let variations = variationProvider.variations
         let variation = variations.first
         
@@ -48,6 +52,7 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
         self.variation = variation
         self.style = variation?.styles.first
         self.appearance = variationProvider.defaultValue
+        self.theme = theme
         self.variationProvider = variationProvider
         
         if let firstVariation = variations.first {
@@ -81,6 +86,21 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     
     func onUpdateAppearance() {
         delegate?.updateAppearance()
+    }
+
+    func applySandboxVariationAppearance(variant: String, appearance: String) {
+        if let variation = variations.first(where: { $0.name == variant }) {
+            selectVariation(variation)
+        } else if let firstVariation = variations.first {
+            selectVariation(firstVariation)
+        }
+
+        if
+            let variation,
+            let style = variation.styles.first(where: { $0.name == appearance })
+        {
+            selectStyle(style)
+        }
     }
 }
 

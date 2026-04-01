@@ -1,6 +1,5 @@
 import Foundation
 import SDDSComponents
-import SDDSServTheme
 
 final class ListVariationProvider: VariationProvider {
     typealias Appearance = ListAppearance
@@ -14,18 +13,31 @@ final class ListVariationProvider: VariationProvider {
     }
 
     var variations: [Variation<ListAppearance>] {
+        let selected: [Variation<ListAppearance>]
         switch layout {
         case .listItemNormal:
-            theme.listNormalVariations
+            selected = theme.listNormalVariations
         case .listItemTight:
-            theme.listTightVariations
+            selected = theme.listTightVariations
         case .listItem:
-            theme.listVariations
+            selected = theme.listVariations
         case .listNumbered:
-            theme.listNumberedVariations
+            selected = theme.listNumberedVariations
         case .listNumberedItem:
-            theme.listVariations
+            selected = theme.listVariations
         }
+
+        if !selected.isEmpty {
+            return selected
+        }
+
+        // Some DSs (e.g. HomeDS) don't support all list layouts.
+        return [
+            theme.listVariations,
+            theme.listNumberedVariations,
+            theme.listNormalVariations,
+            theme.listTightVariations,
+        ].first(where: { !$0.isEmpty }) ?? []
     }
     
     var defaultValue: ListAppearance {

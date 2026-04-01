@@ -1,7 +1,6 @@
 import Foundation
 import SDDSComponents
 import SDDSThemeCore
-import SDDSServTheme
 
 final class TextSkeletonVariationProvider: VariationProvider {
     typealias Appearance = SkeletonAppearance
@@ -30,6 +29,6 @@ final class TextSkeletonVariationProvider: VariationProvider {
     }
     
     var defaultValue: SkeletonAppearance {
-        TextSkeleton.default.appearance
+        variations.first?.appearance ?? SkeletonAppearance()
     }
 } 

@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 import SDDSComponents
-import SDDSServTheme
+import SDDSThemeCore
 
 final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
     @Published var value: TextAreaValue = .single("")
@@ -22,12 +22,29 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
         }
     }
     
-    init() {
-        super.init(variationProvider: TextAreaVariationProvider(layout: .default))
-        
+    init(theme: Theme = .sdddsServTheme, uiState: TextAreaUiState = .init()) {
+        super.init(variationProvider: TextAreaVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
+        apply(uiState: uiState)
+    }
+
+    private func apply(uiState: TextAreaUiState) {
+        value = uiState.value
+        textValue = uiState.textValue
+        title = uiState.title
+        optionalTitle = uiState.optionalTitle
+        placeholder = uiState.placeholder
+        caption = uiState.caption
+        counter = uiState.counter
+        disabled = uiState.disabled
+        readOnly = uiState.readOnly
+        iconActionViewEnabled = uiState.iconActionViewEnabled
+        heightMode = uiState.heightMode
+        layout = uiState.layout
+        applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
     
     var isDynamicHeight: Bool {
