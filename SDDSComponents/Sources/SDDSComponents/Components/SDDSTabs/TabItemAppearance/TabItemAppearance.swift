@@ -21,10 +21,15 @@ import SDDSThemeCore
 public struct TabItemAppearance: Hashable {
     let id = UUID()
     public var size: TabItemSizeConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var labelColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var valueColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var startContentColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var endContentColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var actionColor: ButtonColor
     public var labelTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration
@@ -57,6 +62,8 @@ public struct TabItemAppearance: Hashable {
         self.actionIcon = actionIcon
         self.indicatorColor = indicatorColor
     }
+
+    
     
     public static func == (lhs: TabItemAppearance, rhs: TabItemAppearance) -> Bool {
         return lhs.id == rhs.id

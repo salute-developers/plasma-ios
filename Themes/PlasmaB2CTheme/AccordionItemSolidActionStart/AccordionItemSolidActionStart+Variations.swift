@@ -4,6 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
 
+
 public extension GeneralAppearanceVariation<AccordionItemSolidActionStart, AccordionItemAppearance, AccordionItemSolidActionStartVariation.H2> {
     
     var h2: ComponentAppearanceVariation<AccordionItemSolidActionStart, AccordionItemAppearance> {

@@ -28,12 +28,7 @@ struct TabsDefaultAppearance: CodeGenerationAppearance {
         }
         
         // Цвета с состояниями
-        self.disclosureColor = ButtonColorContextBuilder(
-            defaultColor: props.disclosureColor,
-            highlightedColor: props.disclosureColor?.value(for: [.pressed]),
-            hoveredColor: props.disclosureColor?.value(for: [.hovered]),
-            selectedColor: nil
-        ).context
+        self.disclosureColor = ButtonColorContextBuilder(statefulColor: props.disclosureColor).context
         
         // Простые цвета
         self.indicatorColor = ColorTokenContextBuilder(props.indicatorColor).context

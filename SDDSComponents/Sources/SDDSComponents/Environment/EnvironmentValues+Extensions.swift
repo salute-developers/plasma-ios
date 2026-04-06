@@ -202,6 +202,11 @@ public extension EnvironmentValues {
         get { self[PaginationDotsAppearance.self] }
         set { self[PaginationDotsAppearance.self] = newValue }
     }
+
+    var imageAppearance: ImageAppearance {
+        get { self[ImageAppearance.self] }
+        set { self[ImageAppearance.self] = newValue }
+    }
 }
 
 // MARK: - Utility

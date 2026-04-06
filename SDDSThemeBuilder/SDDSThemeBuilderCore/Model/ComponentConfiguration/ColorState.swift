@@ -1,18 +1,6 @@
 import Foundation
 
 struct ColorState: Codable {
-    enum State: String, Codable {
-        case activated
-        case pressed
-        case hovered
-        case checked
-        case selected
-        case focused
-        case indeterminate
-        case error
-        case readonly
-    }
-    
-    let state: [State]?
+    let state: [ComponentState]?
     let value: String?
 }

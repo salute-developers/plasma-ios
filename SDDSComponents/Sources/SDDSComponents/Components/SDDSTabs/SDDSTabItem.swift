@@ -294,22 +294,13 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
     }
     
     private func contentColor(for buttonColor: ButtonColor) -> Color {
-        if isDisabled {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isSelected {
-            return buttonColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        var activeStates = Set<InteractiveState>()
+        if isSelected { activeStates.insert(.selected) }
+        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
     
     private func actionContentColor(for buttonColor: ButtonColor) -> Color {
-        // actionColor не меняется в selected состоянии
-        if isDisabled {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        buttonColor.color(for: [], colorScheme: colorScheme, subtheme: subtheme)
     }
     
     private var labelTypography: TypographyToken {

@@ -87,6 +87,15 @@ public struct SwitchAppearance: Hashable {
 }
 
 public extension SwitchAppearance {
+    var toggleTrackStatefulColor: StatefulColor {
+        StatefulColor(
+            defaultValue: toggleTrackColor,
+            values: [
+                .init(states: [InteractiveState.checked], value: toggleTrackColorChecked)
+            ]
+        )
+    }
+
     /**
      Возвращает цвет переключателя в зависимости от его состояния (включен/выключен).
      

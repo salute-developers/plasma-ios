@@ -281,15 +281,11 @@ public extension SDDSButton where Counter == EmptyView {
 
 private extension SDDSButton {
     func currentColor(for buttonColor: ButtonColor) -> Color {
-        if isSelected {
-            return buttonColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isHighlighted {
-            return buttonColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isHovered {
-            return buttonColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        var activeStates = Set<InteractiveState>()
+        if isSelected { activeStates.insert(.selected) }
+        if isHighlighted { activeStates.insert(.pressed) }
+        if isHovered { activeStates.insert(.hovered) }
+        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
     
     func hasIconAttributes() -> Bool {

@@ -21,26 +21,10 @@ struct ChipAppearance: CodeGenerationAppearance {
         }
         
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.backgroundColor,
-            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
-            hoveredColor: props.backgroundColor?.value(for: [.hovered])
-        ).context
-        self.imageTintColor = ButtonColorContextBuilder(
-            defaultColor: props.contentStartColor,
-            highlightedColor: props.contentStartColor?.value(for: [.pressed]),
-            hoveredColor: props.contentStartColor?.value(for: [.hovered])
-        ).context
-        self.buttonTintColor = ButtonColorContextBuilder(
-            defaultColor: props.contentEndColor,
-            highlightedColor: props.contentEndColor?.value(for: [.pressed]),
-            hoveredColor: props.contentEndColor?.value(for: [.hovered])
-        ).context
-        self.titleColor = ButtonColorContextBuilder(
-            defaultColor: props.labelColor,
-            highlightedColor: props.labelColor?.value(for: [.pressed]),
-            hoveredColor: props.labelColor?.value(for: [.hovered])
-        ).context
+        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.imageTintColor = ButtonColorContextBuilder(statefulColor: props.contentStartColor).context
+        self.buttonTintColor = ButtonColorContextBuilder(statefulColor: props.contentEndColor).context
+        self.titleColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
     }
 }

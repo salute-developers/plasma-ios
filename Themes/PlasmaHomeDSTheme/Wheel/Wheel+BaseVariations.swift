@@ -39,9 +39,13 @@ private extension WheelAppearance {
     static var base: WheelAppearance {
         var appearance = WheelAppearance()
         appearance.controlIconDown = Asset.disclosureDownOutline36.image
-        appearance.controlIconDownColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.controlIconDownColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.focused], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.controlIconUp = Asset.disclosureUpOutline36.image
-        appearance.controlIconUpColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.controlIconUpColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.focused], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.descriptionColor = ColorToken.textDefaultPrimary
         appearance.dividerAppearance = Divider.default.appearance
         appearance.itemTextAfterColor = ColorToken.textDefaultSecondary

@@ -849,7 +849,7 @@ private extension SDDSWheel {
     }
     
     func currentColor(for buttonColor: ButtonColor) -> Color {
-        return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
+        buttonColor.color(for: [], colorScheme: colorScheme, subtheme: subtheme)
     }
     
     var descriptionTypography: TypographyToken {

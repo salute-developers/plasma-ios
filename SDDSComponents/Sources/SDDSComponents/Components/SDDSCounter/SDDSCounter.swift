@@ -116,15 +116,11 @@ private extension SDDSCounter {
     }
     
     func currentColor(for counterColor: ButtonColor) -> Color {
-        if isSelected {
-            return counterColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isHighlighted {
-            return counterColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isHovered {
-            return counterColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return counterColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        var activeStates = Set<InteractiveState>()
+        if isSelected { activeStates.insert(.selected) }
+        if isHighlighted { activeStates.insert(.pressed) }
+        if isHovered { activeStates.insert(.hovered) }
+        return counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
     
     var isAuto: Bool {

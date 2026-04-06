@@ -120,12 +120,7 @@ public extension ColorToken {
     }
     
     var buttonColor: ButtonColor {
-        ButtonColor(
-            defaultColor: self,
-            highlightedColor: self,
-            hoveredColor: self,
-            selectedColor: self
-        )
+        ButtonColor(defaultColor: self)
     }
 }
 

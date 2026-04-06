@@ -87,7 +87,8 @@ public struct TabBarContent: View {
     
     @ViewBuilder private var selectedContent: some View {
         if currentSelectedIndex < items.count, let appearance = items[currentSelectedIndex].appearance, items[currentSelectedIndex].allowSelection {
-            appearance.backgroundColor.selectedColor.color(for: colorScheme, subtheme: subtheme)
+            appearance.backgroundColor
+                .color(for: Set([InteractiveState.selected]), colorScheme: colorScheme, subtheme: subtheme)
                 .frame(width: itemSizes[currentSelectedIndex]?.width ?? 0, height: itemSizes[currentSelectedIndex]?.height ?? 0)
                 .shape(pathDrawer: appearance.size.shape)
                 .offset(x: selectedItemOffset)

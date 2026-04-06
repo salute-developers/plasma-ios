@@ -11,7 +11,7 @@ extension View {
     }
 }
 
-private func backgroundColorForSubthemeColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
+func backgroundColorForSubthemeColor(_ subtheme: Subtheme, colorScheme: ColorScheme) -> Color {
     switch subtheme {
     case .onDark:
         return colorScheme == .dark ? Color.black : Color(white: 0.15)

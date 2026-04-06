@@ -27,15 +27,15 @@ struct CodeFieldAppearance: CodeGenerationAppearance {
         }
         
         self.valueColor = ColorTokenContextBuilder(props.valueColor).context
-        self.valueColorError = ColorTokenContextBuilder(props.valueColor?.value(for: [.error])).context
+        self.valueColorError = ColorTokenContextBuilder(props.valueColor?.value(for: .error)).context
         self.cursorColor = ColorTokenContextBuilder(props.cursorColor).context
         self.captionColor = ColorTokenContextBuilder(props.captionColor).context
-        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: [.error])).context
+        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: .error)).context
         self.dotColor = ColorTokenContextBuilder(props.dotColor).context
-        self.dotColorError = ColorTokenContextBuilder(props.dotColor?.value(for: [.error])).context
+        self.dotColorError = ColorTokenContextBuilder(props.dotColor?.value(for: .error)).context
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
-        self.backgroundColorActivated = ColorTokenContextBuilder(props.backgroundColor?.value(for: [.activated])).context
-        self.backgroundColorError = ColorTokenContextBuilder(props.backgroundColor?.value(for: [.error])).context
+        self.backgroundColorActivated = ColorTokenContextBuilder(props.backgroundColor?.value(for: .activated)).context
+        self.backgroundColorError = ColorTokenContextBuilder(props.backgroundColor?.value(for: .error)).context
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
         self.valueTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
     }

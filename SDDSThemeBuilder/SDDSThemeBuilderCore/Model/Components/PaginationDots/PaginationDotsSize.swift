@@ -21,9 +21,9 @@ struct PaginationDotsSize: CodeGenerationSize {
         self.gap = CGFloatContextBuilder(props.gap?.value, nullify: nullify).context
         self.edgeShrinkFactor = CGFloatContextBuilder(props.edgeShrinkFactor?.value, nullify: nullify).context
         self.dotWidth = CGFloatContextBuilder(props.dotWidth?.value, nullify: nullify).context
-        self.dotWidthActivated = CGFloatContextBuilder(props.dotWidth?.value(for: [.activated]), nullify: nullify).context
+        self.dotWidthActivated = CGFloatContextBuilder(props.dotWidth?.value(for: .activated), nullify: nullify).context
         self.dotHeight = CGFloatContextBuilder(props.dotHeight?.value, nullify: nullify).context
-        self.dotHeightActivated = CGFloatContextBuilder(props.dotHeight?.value(for: [.activated]), nullify: nullify).context
+        self.dotHeightActivated = CGFloatContextBuilder(props.dotHeight?.value(for: .activated), nullify: nullify).context
         self.edgeCount = PaginationDotsEdgeCountContextBuilder(value: props.edgeCount?.value, nullify: nullify).context
     }
     

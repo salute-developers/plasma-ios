@@ -18,18 +18,8 @@ struct CounterAppearance: CodeGenerationAppearance {
         }
         
         self.textTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
-        self.textColor = ButtonColorContextBuilder(
-            defaultColor: props.textColor,
-            highlightedColor: props.textColor?.value(for: [.pressed]),
-            hoveredColor: props.textColor?.value(for: [.hovered]),
-            selectedColor: props.textColor?.value(for: [.selected])
-        ).context
-        self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.backgroundColor,
-            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
-            hoveredColor: props.backgroundColor?.value(for: [.hovered]),
-            selectedColor: props.backgroundColor?.value(for: [.selected])
-        ).context
+        self.textColor = ButtonColorContextBuilder(statefulColor: props.textColor).context
+        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
     }
     
     func context(with defaultStyle: String) -> String {

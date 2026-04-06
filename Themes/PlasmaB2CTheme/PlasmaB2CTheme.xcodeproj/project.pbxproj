@@ -170,6 +170,7 @@
 		813BCF542EB29C8700E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
 		81B037622F7D466B005AD40F /* PaginationDotsHorizontal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsHorizontal; sourceTree = "<group>"; };
 		81B037672F7D466B005AD40F /* PaginationDotsVertical */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsVertical; sourceTree = "<group>"; };
+		A1B2C3D42F901001005A0001 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		81D5A3F32ED8806700156885 /* DrawerCloseInner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseInner; sourceTree = "<group>"; };
 		81D5A3F82ED8806700156885 /* DrawerCloseNone */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseNone; sourceTree = "<group>"; };
 		81D5A3FD2ED8806700156885 /* DrawerCloseOuter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseOuter; sourceTree = "<group>"; };
@@ -290,6 +291,7 @@
 			children = (
 				81B037622F7D466B005AD40F /* PaginationDotsHorizontal */,
 				81B037672F7D466B005AD40F /* PaginationDotsVertical */,
+				A1B2C3D42F901001005A0001 /* Image */,
 				81F0A1112F10001100AAA111 /* AutocompleteNormal */,
 				81F0A1122F10001100AAA111 /* AutocompleteTight */,
 				81D5A3F32ED8806700156885 /* DrawerCloseInner */,
@@ -510,6 +512,7 @@
 				813BCF542EB29C8700E4E505 /* Tooltip */,
 				81B037622F7D466B005AD40F /* PaginationDotsHorizontal */,
 				81B037672F7D466B005AD40F /* PaginationDotsVertical */,
+				A1B2C3D42F901001005A0001 /* Image */,
 				81D5A3F32ED8806700156885 /* DrawerCloseInner */,
 				81D5A3F82ED8806700156885 /* DrawerCloseNone */,
 				81D5A3FD2ED8806700156885 /* DrawerCloseOuter */,

@@ -7,7 +7,9 @@ public struct CounterAppearance: Modifiable {
     
     public var size: CounterSizeConfiguration
     public var textTypography: TypographyConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var textColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
 
     public init(
@@ -21,6 +23,8 @@ public struct CounterAppearance: Modifiable {
         self.textColor = textColor
         self.backgroundColor = backgroundColor
     }
+
+    
     
     public func modify(_ value: CounterAppearance) -> CounterAppearance {
         var result = self

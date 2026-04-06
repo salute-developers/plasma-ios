@@ -29,7 +29,7 @@ struct SwitchAppearance: CodeGenerationAppearance {
         self.titleColor = ColorTokenContextBuilder(props.labelColor).context
         self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
         self.toggleTrackColor = ColorTokenContextBuilder(props.toggleTrackColor).context
-        self.toggleTrackColorChecked = ColorTokenContextBuilder(props.toggleTrackColor?.value(for: [.checked])).context
+        self.toggleTrackColorChecked = ColorTokenContextBuilder(props.toggleTrackColor?.value(for: .checked)).context
         self.toggleTrackBorderColor = ColorTokenContextBuilder(props.toggleTrackBorderColor).context
         self.toggleThumbColor = ColorTokenContextBuilder(props.toggleThumbColor).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context

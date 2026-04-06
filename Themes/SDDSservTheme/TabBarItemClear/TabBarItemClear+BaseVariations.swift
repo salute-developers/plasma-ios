@@ -46,7 +46,7 @@ public struct TabBarItemClearVariation {
 private extension TabBarItemAppearance {
     static var base: TabBarItemAppearance {
         var appearance = TabBarItemAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultClear)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: []))
         appearance.labelTypography = TabBarItemClearTypography(oneSize: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
         return appearance
     }

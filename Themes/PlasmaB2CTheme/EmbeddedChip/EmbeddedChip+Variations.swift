@@ -449,55 +449,127 @@ private extension ChipAppearance {
     
     var `default`: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidDefault, highlightedColor: ColorToken.surfaceDefaultSolidDefaultActive, hoveredColor: ColorToken.surfaceDefaultSolidDefaultHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textInverseSecondary, highlightedColor: ColorToken.textInverseSecondaryActive, hoveredColor: ColorToken.textInverseSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInverseSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
         return appearance
     }
     
     var accent: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccentActive, hoveredColor: ColorToken.surfaceDefaultAccentHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultAccent, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var negative: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultNegative, highlightedColor: ColorToken.surfaceDefaultNegativeActive, hoveredColor: ColorToken.surfaceDefaultNegativeHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultNegative, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultNegativeActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultNegativeHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var positive: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultPositive, highlightedColor: ColorToken.surfaceDefaultPositiveActive, hoveredColor: ColorToken.surfaceDefaultPositiveHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultPositive, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultPositiveActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultPositiveHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var secondary: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentSecondaryHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         return appearance
     }
     
     var warning: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultWarning, highlightedColor: ColorToken.surfaceDefaultWarningActive, hoveredColor: ColorToken.surfaceDefaultWarningHover, selectedColor: .clearColor)
-        appearance.buttonTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.imageTintColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultWarning, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultWarningActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultWarningHover)
+        ]))
+        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     

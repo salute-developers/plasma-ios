@@ -102,6 +102,7 @@
 		813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadgeTransparent; sourceTree = "<group>"; };
 		813BCCBB2EB29C4300E4E505 /* IconButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButton; sourceTree = "<group>"; };
 		813BCCC02EB29C4300E4E505 /* IconButtonGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButtonGroup; sourceTree = "<group>"; };
+		A12BE0022EB29C4300E4E507 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		813BCCC52EB29C4300E4E505 /* Indicator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Indicator; sourceTree = "<group>"; };
 		813BCCCA2EB29C4300E4E505 /* List */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = List; sourceTree = "<group>"; };
 		813BCCCF2EB29C4300E4E505 /* ListItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListItem; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 				813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */,
 				813BCCBB2EB29C4300E4E505 /* IconButton */,
 				813BCCC02EB29C4300E4E505 /* IconButtonGroup */,
+				A12BE0022EB29C4300E4E507 /* Image */,
 				813BCCC52EB29C4300E4E505 /* Indicator */,
 				813BCCCA2EB29C4300E4E505 /* List */,
 				813BCCCF2EB29C4300E4E505 /* ListItem */,
@@ -320,6 +322,7 @@
 				813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */,
 				813BCCBB2EB29C4300E4E505 /* IconButton */,
 				813BCCC02EB29C4300E4E505 /* IconButtonGroup */,
+				A12BE0022EB29C4300E4E507 /* Image */,
 				813BCCC52EB29C4300E4E505 /* Indicator */,
 				813BCCCA2EB29C4300E4E505 /* List */,
 				813BCCCF2EB29C4300E4E505 /* ListItem */,

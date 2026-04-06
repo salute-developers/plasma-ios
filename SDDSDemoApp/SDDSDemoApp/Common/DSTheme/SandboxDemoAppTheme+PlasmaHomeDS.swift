@@ -279,6 +279,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
+
+    public var imageVariations: [Variation<ImageAppearance>] {
+        PlasmaHomeDSTheme.Image.all
+    }
     
     public var cellVariations: [Variation<CellAppearance>] {
         

@@ -17,7 +17,7 @@ public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListIt
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentPrimary, highlightedColor: ColorToken.surfaceDefaultTransparentPrimary, hoveredColor: ColorToken.surfaceDefaultTransparentPrimary, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentPrimary, values: []))
     
         return .init(
             name: "s.hasBackground",
@@ -72,7 +72,7 @@ public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListIt
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentPrimary, highlightedColor: ColorToken.surfaceDefaultTransparentPrimary, hoveredColor: ColorToken.surfaceDefaultTransparentPrimary, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentPrimary, values: []))
     
         return .init(
             name: "s.hasBackground",

@@ -26,8 +26,10 @@ public struct CollapsingNavigationBarAppearance {
     public var textTypography: TypographyConfiguration
     public var titleTypography: TypographyConfiguration
     public var titleTypographyCollapsed: TypographyConfiguration
+    public var titleStatefulTypography: StatefulValue<TypographyConfiguration>
     public var descriptionTypography: TypographyConfiguration
     public var descriptionTypographyCollapsed: TypographyConfiguration
+    public var descriptionStatefulTypography: StatefulValue<TypographyConfiguration>
 
     // Тень
     public var shadow: ShadowToken
@@ -48,8 +50,10 @@ public struct CollapsingNavigationBarAppearance {
         textTypography: TypographyConfiguration = .default,
         titleTypography: TypographyConfiguration = .default,
         titleTypographyCollapsed: TypographyConfiguration = .default,
+        titleStatefulTypography: StatefulValue<TypographyConfiguration>? = nil,
         descriptionTypography: TypographyConfiguration = .default,
         descriptionTypographyCollapsed: TypographyConfiguration = .default,
+        descriptionStatefulTypography: StatefulValue<TypographyConfiguration>? = nil,
         shadow: ShadowToken = ShadowToken(),
         size: CollapsingNavigationBarSizeConfiguration = CollapsingNavigationBarSize()
     ) {
@@ -65,8 +69,20 @@ public struct CollapsingNavigationBarAppearance {
         self.textTypography = textTypography
         self.titleTypography = titleTypography
         self.titleTypographyCollapsed = titleTypographyCollapsed
+        self.titleStatefulTypography = titleStatefulTypography ?? StatefulValue(
+            defaultValue: titleTypography,
+            values: [
+                .init(states: [InteractiveState.collapsed], value: titleTypographyCollapsed)
+            ]
+        )
         self.descriptionTypography = descriptionTypography
         self.descriptionTypographyCollapsed = descriptionTypographyCollapsed
+        self.descriptionStatefulTypography = descriptionStatefulTypography ?? StatefulValue(
+            defaultValue: descriptionTypography,
+            values: [
+                .init(states: [InteractiveState.collapsed], value: descriptionTypographyCollapsed)
+            ]
+        )
         self.shadow = shadow
         self.size = size
     }
