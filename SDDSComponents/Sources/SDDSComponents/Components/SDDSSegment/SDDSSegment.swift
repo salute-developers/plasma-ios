@@ -189,13 +189,10 @@ public struct SDDSSegment: View {
     }
     
     private func currentColor(for counterColor: ButtonColor) -> Color {
-        if isHighlighted {
-            return counterColor.highlightedColor.color(for: colorScheme, subtheme: subtheme)
-        } else if isHovered {
-            return counterColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return counterColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        var activeStates = Set<InteractiveState>()
+        if isHighlighted { activeStates.insert(.pressed) }
+        if isHovered { activeStates.insert(.hovered) }
+        return counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
     
     private var backgroundColor: Color {

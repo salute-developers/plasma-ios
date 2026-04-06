@@ -64,7 +64,7 @@ public struct LinkButtonVariation {
 private extension ButtonAppearance {
     static var base: ButtonAppearance {
         var appearance = ButtonAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClear, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: []))
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.loadingAlpha = CGFloat(0.06)
         return appearance

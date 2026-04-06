@@ -10,6 +10,7 @@ public enum SelectItemType: String, CaseIterable {
 public struct SelectItemAppearance {
     public var itemType: SelectItemType
     public var iconColor: ColorToken
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat
     public var cellAppearance: CellAppearance
@@ -36,6 +37,8 @@ public struct SelectItemAppearance {
         self.icon = icon
         self.size = size
     }
+
+    
 }
 
 extension SelectItemAppearance: EnvironmentKey {

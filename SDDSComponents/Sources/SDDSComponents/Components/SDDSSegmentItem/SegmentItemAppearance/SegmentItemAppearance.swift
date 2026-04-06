@@ -6,13 +6,18 @@ public struct SegmentItemAppearance {
     public var size: SegmentItemSizeConfiguration
     public var shapeStyle: ComponentShapeStyle
     public var titleTypography: TypographyConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var titleColor: ButtonColor
     public var subtitleTypography: TypographyConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var subtitleColor: ButtonColor
-    @available(*, deprecated, message: "Don't use it, public method will be removed")
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var iconColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var startContentColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var endContentColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance
@@ -72,6 +77,8 @@ public struct SegmentItemAppearance {
         self.counterAppearance = counterAppearance
         self.iconColor = ButtonColor()
     }
+
+    
 }
 
 extension SegmentItemAppearance: EnvironmentKey {

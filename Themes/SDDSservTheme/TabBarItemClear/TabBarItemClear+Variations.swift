@@ -291,22 +291,30 @@ private extension TabBarItemAppearance {
     
     var `default`: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
+        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         return appearance
     }
     
     var accent: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultAccent)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultAccent)
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultAccent)
+        ]))
+        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultAccent)
+        ]))
         return appearance
     }
     
     var secondary: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultSecondary)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultSecondary)
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: []))
+        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: []))
         return appearance
     }
     

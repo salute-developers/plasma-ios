@@ -285,6 +285,7 @@
 		8180A5A72C11C35500009AF5 /* FontFamilyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A49E2C0F71A500009AF5 /* FontFamilyToken.swift */; };
 		8180A5A82C11C35500009AF5 /* ShapeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4A02C0F71A500009AF5 /* ShapeToken.swift */; };
 		8180A5A92C11C35700009AF5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4B62C0F71A500009AF5 /* GradientView.swift */; };
+		81F2AA8A2F20000100ABCD01 /* StatefulValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2AA892F20000100ABCD01 /* StatefulValue.swift */; };
 		8180A5AB2C11C37F00009AF5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A4B42C0F71A500009AF5 /* Device.swift */; };
 		8180A5B62C131CC100009AF5 /* Gradients+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A5AC2C131CC000009AF5 /* Gradients+Generated.swift */; };
 		8180A5B72C131CC100009AF5 /* Shadows+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180A5AD2C131CC000009AF5 /* Shadows+Generated.swift */; };
@@ -781,6 +782,7 @@
 		8180A49D2C0F71A500009AF5 /* GradientToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientToken.swift; sourceTree = "<group>"; };
 		8180A49E2C0F71A500009AF5 /* FontFamilyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontFamilyToken.swift; sourceTree = "<group>"; };
 		8180A49F2C0F71A500009AF5 /* ColorToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorToken.swift; sourceTree = "<group>"; };
+		81F2AA892F20000100ABCD01 /* StatefulValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common/StatefulValue.swift; sourceTree = "<group>"; };
 		8180A4A02C0F71A500009AF5 /* ShapeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeToken.swift; sourceTree = "<group>"; };
 		8180A4A22C0F71A500009AF5 /* LineHeightModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineHeightModifier.swift; sourceTree = "<group>"; };
 		8180A4A32C0F71A500009AF5 /* TypographyModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyModifier.swift; sourceTree = "<group>"; };
@@ -1701,6 +1703,7 @@
 			isa = PBXGroup;
 			children = (
 				81E9D8782ED772BA00229705 /* Subtheme.swift */,
+				81F2AA892F20000100ABCD01 /* StatefulValue.swift */,
 				8180A5832C11C01D00009AF5 /* SDDSThemeCore.h */,
 				8180A4A72C0F71A500009AF5 /* Extensions */,
 				8180A4A12C0F71A500009AF5 /* Modifiers */,
@@ -3123,6 +3126,7 @@
 				8180A59B2C11C34400009AF5 /* TypographyToken+AdaptiveStyle.swift in Sources */,
 				81DE5FE32D634E1B0041B639 /* SpacingToken.swift in Sources */,
 				81E9D8792ED772BE00229705 /* Subtheme.swift in Sources */,
+				81F2AA8A2F20000100ABCD01 /* StatefulValue.swift in Sources */,
 				8180A5972C11C34000009AF5 /* LineHeightModifier.swift in Sources */,
 				8180A5A92C11C35700009AF5 /* GradientView.swift in Sources */,
 				8180A5A72C11C35500009AF5 /* FontFamilyToken.swift in Sources */,

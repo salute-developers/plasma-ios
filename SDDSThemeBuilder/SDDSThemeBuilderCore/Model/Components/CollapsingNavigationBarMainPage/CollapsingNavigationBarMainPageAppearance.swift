@@ -43,13 +43,13 @@ struct CollapsingNavigationBarMainPageAppearance: CodeGenerationAppearance {
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
         self.titleTypographyCollapsed = TypographyTokenContextBuilder(
-            string: props.titleStyle?.value(for: [.collapsed])?.value,
+            string: props.titleStyle?.value(for: .collapsed)?.value,
             id: id,
             component: component
         ).context
         self.descriptionTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
         self.descriptionTypographyCollapsed = TypographyTokenContextBuilder(
-            string: props.descriptionStyle?.value(for: [.collapsed])?.value,
+            string: props.descriptionStyle?.value(for: .collapsed)?.value,
             id: id,
             component: component
         ).context

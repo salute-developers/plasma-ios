@@ -86,8 +86,8 @@ public struct SDDSSwitch: View {
                 SDDSToggle(
                     isOn: $isOn,
                     size: appearance.size,
-                    onColor: appearance.toggleTrackColorChecked,
-                    offColor: appearance.toggleTrackColor,
+                    onColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set([InteractiveState.checked])),
+                    offColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set<InteractiveState>()),
                     thumbColor: appearance.toggleThumbColor
                 )
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)

@@ -22,6 +22,7 @@ public protocol SelectionControlAppearance {
     
     func titleColor(for isEnabled: Bool) -> ColorToken
     func subtitleColor(for isEnabled: Bool) -> ColorToken
+    var toggleStatefulColor: StatefulColor { get }
 }
 
 public extension SelectionControlAppearance {
@@ -31,5 +32,16 @@ public extension SelectionControlAppearance {
 
     func subtitleColor(for isEnabled: Bool) -> ColorToken {
         return isEnabled ? subtitleColor : subtitleColor.withOpacity(disabledAlpha)
+    }
+
+    var toggleStatefulColor: StatefulColor {
+        StatefulColor(
+            defaultValue: toggleColor,
+            values: [
+                // Keep legacy behavior: selected/indeterminate use the same toggle background color.
+                .init(states: [InteractiveState.checked], value: toggleColor),
+                .init(states: [InteractiveState.indeterminate], value: toggleColor)
+            ]
+        )
     }
 }

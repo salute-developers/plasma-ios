@@ -508,57 +508,105 @@ private extension CounterAppearance {
     
     var `default`: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidDefault, highlightedColor: ColorToken.surfaceDefaultSolidDefaultActive, hoveredColor: ColorToken.surfaceDefaultSolidDefaultHover, selectedColor: ColorToken.surfaceDefaultSolidDefault)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: ColorToken.textInversePrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
         return appearance
     }
     
     var accent: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccentActive, hoveredColor: ColorToken.surfaceDefaultAccentHover, selectedColor: ColorToken.surfaceDefaultAccent)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultAccent, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var black: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceOnLightSolidDefault, highlightedColor: ColorToken.surfaceOnLightSolidDefaultActive, hoveredColor: ColorToken.surfaceOnLightSolidDefaultHover, selectedColor: ColorToken.surfaceOnLightSolidDefault)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceOnLightSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceOnLightSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceOnLightSolidDefaultHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var negative: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultNegative, highlightedColor: ColorToken.surfaceDefaultNegativeActive, hoveredColor: ColorToken.surfaceDefaultNegativeHover, selectedColor: ColorToken.surfaceDefaultNegative)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultNegative, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultNegativeActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultNegativeHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var positive: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultPositive, highlightedColor: ColorToken.surfaceDefaultPositiveActive, hoveredColor: ColorToken.surfaceDefaultPositiveHover, selectedColor: ColorToken.surfaceDefaultPositive)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultPositive, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultPositiveActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultPositiveHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var secondary: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentSecondaryHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         return appearance
     }
     
     var warning: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultWarning, highlightedColor: ColorToken.surfaceDefaultWarningActive, hoveredColor: ColorToken.surfaceDefaultWarningHover, selectedColor: ColorToken.surfaceDefaultWarning)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: ColorToken.textOnDarkPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultWarning, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultWarningActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultWarningHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var white: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceOnDarkSolidDefault, highlightedColor: ColorToken.surfaceOnDarkSolidDefaultActive, hoveredColor: ColorToken.surfaceOnDarkSolidDefaultHover, selectedColor: ColorToken.surfaceOnDarkSolidDefault)
-        appearance.textColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover, selectedColor: ColorToken.textOnLightPrimary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceOnDarkSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceOnDarkSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceOnDarkSolidDefaultHover)
+        ]))
+        appearance.textColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnLightPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnLightPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnLightPrimaryHover)
+        ]))
         return appearance
     }
     

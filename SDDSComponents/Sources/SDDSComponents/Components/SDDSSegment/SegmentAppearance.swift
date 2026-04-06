@@ -7,7 +7,7 @@ import SwiftUI
 
  - Properties:
     - size: Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
-    - backgroundColor: Цвет фона сегмента для различных состояний, определяемый `ButtonColor`.
+    - backgroundColor: Цвет фона сегмента для различных состояний, определяемый `StatefulColor`.
     - segmentItemAppearance: Внешний вид элементов сегмента, определяемый `SegmentItemAppearance`.
 
  - Methods:
@@ -15,6 +15,7 @@ import SwiftUI
  */
 public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor?
     public var segmentItemAppearance: SegmentItemAppearance
     @available(*, deprecated, message: "Don't use it, public method will be removed")
@@ -51,6 +52,8 @@ public struct SegmentAppearance {
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = 0
     }
+
+    
 }
 
 extension SegmentAppearance: EnvironmentKey {

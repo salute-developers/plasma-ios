@@ -46,7 +46,7 @@ struct OverlayView: View {
                 HStack {
                     Spacer()
                     BasicButton(
-                        title: "Overlay Target",
+                        title: "Overlay",
                         subtitle: "",
                         iconAttributes: .init(image: Asset.plasma24.image, alignment: .leading),
                         action: {}

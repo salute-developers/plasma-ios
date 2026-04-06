@@ -20,24 +20,9 @@ struct TabBarItemAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.labelColor = ButtonColorContextBuilder(
-            defaultColor: props.labelColor,
-            highlightedColor: nil,
-            hoveredColor: nil,
-            selectedColor: props.labelColor?.value(for: [.selected])
-        ).context
-        self.iconColor = ButtonColorContextBuilder(
-            defaultColor: props.iconColor,
-            highlightedColor: nil,
-            hoveredColor: nil,
-            selectedColor: props.iconColor?.value(for: [.selected])
-        ).context
-        self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.backgroundColor,
-            highlightedColor: nil,
-            hoveredColor: nil,
-            selectedColor: props.backgroundColor?.value(for: [.selected])
-        ).context
+        self.labelColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
+        self.iconColor = ButtonColorContextBuilder(statefulColor: props.iconColor).context
+        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         
         if let counterStyle = props.counterStyle?.value {

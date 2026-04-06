@@ -9,12 +9,12 @@ import SwiftUI
     - size: Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
     - shapeStyle: Стиль формы кнопки (например, закругленная или овальная), определяемый `ButtonShapeStyle`.
     - titleTypography: Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
-    - titleColor: Цвет текста заголовка кнопки для различных состояний, определяемый `ButtonColor`.
+    - titleColor: Цвет текста заголовка кнопки для различных состояний, определяемый `StatefulColor`.
     - subtitleTypography: Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
-    - subtitleColor: Цвет текста подзаголовка кнопки для различных состояний, определяемый `ButtonColor`.
-    - iconColor: Цвет иконки кнопки для различных состояний, определяемый `ButtonColor`.
-    - spinnerColor: Цвет спиннера загрузки для различных состояний, определяемый `ButtonColor`.
-    - backgroundColor: Цвет фона кнопки для различных состояний, определяемый `ButtonColor`.
+    - subtitleColor: Цвет текста подзаголовка кнопки для различных состояний, определяемый `StatefulColor`.
+    - iconColor: Цвет иконки кнопки для различных состояний, определяемый `StatefulColor`.
+    - spinnerColor: Цвет спиннера загрузки для различных состояний, определяемый `StatefulColor`.
+    - backgroundColor: Цвет фона кнопки для различных состояний, определяемый `StatefulColor`.
     - disabledAlpha: Прозрачность кнопки, когда она отключена.
     - loadingAlpha: Прозрачность кнопки, когда она находится в состоянии загрузки.
  
@@ -38,8 +38,9 @@ public struct ButtonAppearance {
     public var titleTypography: TypographyConfiguration
     
     /**
-     Цвет текста заголовка кнопки для различных состояний, определяемый `ButtonColor`.
+     Цвет текста заголовка кнопки для различных состояний, определяемый `StatefulColor`.
      */
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var titleColor: ButtonColor
     
     /**
@@ -48,23 +49,27 @@ public struct ButtonAppearance {
     public var subtitleTypography: TypographyConfiguration
     
     /**
-     Цвет текста подзаголовка кнопки для различных состояний, определяемый `ButtonColor`.
+     Цвет текста подзаголовка кнопки для различных состояний, определяемый `StatefulColor`.
      */
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var subtitleColor: ButtonColor
     
     /**
-     Цвет иконки кнопки для различных состояний, определяемый `ButtonColor`.
+     Цвет иконки кнопки для различных состояний, определяемый `StatefulColor`.
      */
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var iconColor: ButtonColor
     
     /**
-     Цвет спиннера загрузки для различных состояний, определяемый `ButtonColor`.
+     Цвет спиннера загрузки для различных состояний, определяемый `StatefulColor`.
      */
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var spinnerColor: ButtonColor
     
     /**
-     Цвет фона кнопки для различных состояний, определяемый `ButtonColor`.
+     Цвет фона кнопки для различных состояний, определяемый `StatefulColor`.
      */
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     
     /**
@@ -118,6 +123,8 @@ public struct ButtonAppearance {
         self.disabledAlpha = disabledAlpha
         self.loadingAlpha = loadingAlpha
     }
+
+    
 }
 
 extension ButtonAppearance: EnvironmentKey {

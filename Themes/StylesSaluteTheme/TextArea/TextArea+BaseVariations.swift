@@ -138,6 +138,7 @@ private extension TextAreaAppearance {
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
+        appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
         appearance.requiredIndicatorColor = ColorToken.surfaceDefaultNegative
         appearance.scrollBarThumbColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.scrollBarTrackColor = ColorToken.surfaceDefaultTransparentPrimary

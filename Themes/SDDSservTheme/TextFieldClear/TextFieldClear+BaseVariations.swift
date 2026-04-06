@@ -47,7 +47,7 @@ public struct TextFieldClear {
     public static var xl: GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance, TextFieldClearVariation.Xl> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xl
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer

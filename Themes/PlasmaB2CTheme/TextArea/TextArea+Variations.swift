@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.L> {
@@ -1852,7 +1853,7 @@ public extension GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAr
 
         var appearance = appearance
         appearance.size = size
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textTypography = TextAreaTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(

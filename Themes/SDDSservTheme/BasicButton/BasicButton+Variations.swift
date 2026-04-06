@@ -722,111 +722,261 @@ private extension ButtonAppearance {
     
     var `default`: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultSolidDefault, highlightedColor: ColorToken.surfaceDefaultSolidDefaultActive, hoveredColor: ColorToken.surfaceDefaultSolidDefaultHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textInverseSecondary, highlightedColor: ColorToken.textInverseSecondaryActive, hoveredColor: ColorToken.textInverseSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textInversePrimary, highlightedColor: ColorToken.textInversePrimaryActive, hoveredColor: ColorToken.textInversePrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInverseSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
+        ]))
         return appearance
     }
     
     var accent: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultAccent, highlightedColor: ColorToken.surfaceDefaultAccentActive, hoveredColor: ColorToken.surfaceDefaultAccentHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultAccent, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var black: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceOnLightSolidDefault, highlightedColor: ColorToken.surfaceOnLightSolidDefaultActive, hoveredColor: ColorToken.surfaceOnLightSolidDefaultHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceOnLightSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceOnLightSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceOnLightSolidDefaultHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var clear: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentSecondaryHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.06)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         return appearance
     }
     
     var dark: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceOnLightTransparentDeep, highlightedColor: ColorToken.surfaceOnLightTransparentDeepActive, hoveredColor: ColorToken.surfaceOnLightTransparentDeepHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceOnLightTransparentDeep, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceOnLightTransparentDeepActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceOnLightTransparentDeepHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var negative: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultNegative, highlightedColor: ColorToken.surfaceDefaultNegativeActive, hoveredColor: ColorToken.surfaceDefaultNegativeHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultNegative, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultNegativeActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultNegativeHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var positive: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultPositive, highlightedColor: ColorToken.surfaceDefaultPositiveActive, hoveredColor: ColorToken.surfaceDefaultPositiveHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultPositive, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultPositiveActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultPositiveHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var secondary: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondaryActive, hoveredColor: ColorToken.surfaceDefaultTransparentSecondaryHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentSecondaryHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
+        ]))
         return appearance
     }
     
     var warning: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultWarning, highlightedColor: ColorToken.surfaceDefaultWarningActive, hoveredColor: ColorToken.surfaceDefaultWarningHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultWarning, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultWarningActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultWarningHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnDarkSecondary, highlightedColor: ColorToken.textOnDarkSecondaryActive, hoveredColor: ColorToken.textOnDarkSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnDarkPrimary, highlightedColor: ColorToken.textOnDarkPrimaryActive, hoveredColor: ColorToken.textOnDarkPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
+        ]))
         return appearance
     }
     
     var white: ButtonAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceOnDarkSolidDefault, highlightedColor: ColorToken.surfaceOnDarkSolidDefaultActive, hoveredColor: ColorToken.surfaceOnDarkSolidDefaultHover, selectedColor: .clearColor)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceOnDarkSolidDefault, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceOnDarkSolidDefaultActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceOnDarkSolidDefaultHover)
+        ]))
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnLightPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnLightPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnLightPrimaryHover)
+        ]))
         appearance.loadingAlpha = CGFloat(0.0)
-        appearance.spinnerColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover, selectedColor: .clearColor)
-        appearance.subtitleColor = ButtonColor(defaultColor: ColorToken.textOnLightSecondary, highlightedColor: ColorToken.textOnLightSecondaryActive, hoveredColor: ColorToken.textOnLightSecondaryHover, selectedColor: .clearColor)
-        appearance.titleColor = ButtonColor(defaultColor: ColorToken.textOnLightPrimary, highlightedColor: ColorToken.textOnLightPrimaryActive, hoveredColor: ColorToken.textOnLightPrimaryHover, selectedColor: .clearColor)
+        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnLightPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnLightPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnLightPrimaryHover)
+        ]))
+        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnLightSecondary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnLightSecondaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnLightSecondaryHover)
+        ]))
+        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnLightPrimary, values: [
+            .init(states: [InteractiveState.pressed], value: ColorToken.textOnLightPrimaryActive),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textOnLightPrimaryHover)
+        ]))
         return appearance
     }
     

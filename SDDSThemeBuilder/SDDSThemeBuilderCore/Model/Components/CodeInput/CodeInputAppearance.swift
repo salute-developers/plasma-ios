@@ -26,12 +26,12 @@ struct CodeInputAppearance: CodeGenerationAppearance {
         }
         
         self.codeColor = ColorTokenContextBuilder(props.codeColor).context
-        self.codeColorError = ColorTokenContextBuilder(props.codeColor?.value(for: [.error])).context
+        self.codeColorError = ColorTokenContextBuilder(props.codeColor?.value(for: .error)).context
         self.captionColor = ColorTokenContextBuilder(props.captionColor).context
-        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: [.error])).context
+        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: .error)).context
         self.strokeColor = ColorTokenContextBuilder(props.strokeColor).context
-        self.strokeColorError = ColorTokenContextBuilder(props.strokeColor?.value(for: [.error])).context
-        self.strokeColorFocused = ColorTokenContextBuilder(props.strokeColor?.value(for: [.focused])).context
+        self.strokeColorError = ColorTokenContextBuilder(props.strokeColor?.value(for: .error)).context
+        self.strokeColorFocused = ColorTokenContextBuilder(props.strokeColor?.value(for: .focused)).context
         self.fillColor = ColorTokenContextBuilder(props.fillColor).context
         self.fillColorError = ColorTokenContextBuilder(props.fillColorError).context
         self.codeTypography = TypographyTokenContextBuilder(string: props.codeStyle?.value, id: id, component: component).context

@@ -41,7 +41,7 @@ public struct TextAreaClear {
     public static var xl: GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, TextAreaClearVariation.Xl> {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.xl
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(

@@ -42,20 +42,9 @@ struct WheelAppearance: CodeGenerationAppearance {
         self.itemTextAfterColor = ColorTokenContextBuilder(props.itemTextAfterColor).context
         self.descriptionColor = ColorTokenContextBuilder(props.descriptionColor).context
         
-        // Цвета иконок управления (с состоянием focused)
-        self.controlIconUpColor = ButtonColorContextBuilder(
-            defaultColor: props.controlIconUpColor,
-            highlightedColor: nil,
-            hoveredColor: nil,
-            selectedColor: props.controlIconUpColor?.value(for: [.focused])
-        ).context
-        
-        self.controlIconDownColor = ButtonColorContextBuilder(
-            defaultColor: props.controlIconDownColor,
-            highlightedColor: nil,
-            hoveredColor: nil,
-            selectedColor: props.controlIconDownColor?.value(for: [.focused])
-        ).context
+        // Цвета иконок управления
+        self.controlIconUpColor = ButtonColorContextBuilder(statefulColor: props.controlIconUpColor).context
+        self.controlIconDownColor = ButtonColorContextBuilder(statefulColor: props.controlIconDownColor).context
         
         // Цвет разделителя
         self.separatorColor = ColorTokenContextBuilder(props.separatorColor).context
