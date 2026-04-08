@@ -269,6 +269,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaB2CTheme.PaginationDotsVertical.all
         
     }
+
+    public var imageVariations: [Variation<ImageAppearance>] {
+        PlasmaB2CTheme.Image.all
+    }
     
     public var cellVariations: [Variation<CellAppearance>] {
         

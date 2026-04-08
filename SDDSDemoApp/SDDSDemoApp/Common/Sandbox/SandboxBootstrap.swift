@@ -145,6 +145,12 @@ enum SandboxBootstrap {
             return
                 !theme.paginationDotsHorizontalVariations.isEmpty ||
                 !theme.paginationDotsVerticalVariations.isEmpty
+        case "text.story":
+            return true
+        case "icon.story":
+            return true
+        case "image.story":
+            return !theme.imageVariations.isEmpty
         case "scrollbar.story":
             return !theme.scrollbarVariations.isEmpty
         case "segment.story":

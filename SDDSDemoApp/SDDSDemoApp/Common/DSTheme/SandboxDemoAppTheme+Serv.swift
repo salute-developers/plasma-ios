@@ -269,6 +269,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             SDDSServTheme.PaginationDotsVertical.all
         
     }
+
+    public var imageVariations: [Variation<ImageAppearance>] {
+        SDDSServTheme.Image.all
+    }
     
     public var cellVariations: [Variation<CellAppearance>] {
         

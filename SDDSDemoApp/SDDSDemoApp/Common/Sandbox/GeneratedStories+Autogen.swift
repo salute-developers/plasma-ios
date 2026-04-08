@@ -102,6 +102,14 @@ enum GeneratedStoriesAutogen {
         SandboxStoryRenderRegistry.shared.register(id: EditableStory.id) { theme in
             AnyView(EditableStory.content(state: EditableStory.defaultState, theme: theme))
         }
+        StoryRegistry.shared.register(IconStory.self)
+        SandboxStoryRenderRegistry.shared.register(id: IconStory.id) { theme in
+            AnyView(IconStory.content(state: IconStory.defaultState, theme: theme))
+        }
+        StoryRegistry.shared.register(ImageStory.self)
+        SandboxStoryRenderRegistry.shared.register(id: ImageStory.id) { theme in
+            AnyView(ImageStory.content(state: ImageStory.defaultState, theme: theme))
+        }
         StoryRegistry.shared.register(IndicatorStory.self)
         SandboxStoryRenderRegistry.shared.register(id: IndicatorStory.id) { theme in
             AnyView(IndicatorStory.content(state: IndicatorStory.defaultState, theme: theme))
@@ -225,6 +233,10 @@ enum GeneratedStoriesAutogen {
         StoryRegistry.shared.register(TextSkeletonStory.self)
         SandboxStoryRenderRegistry.shared.register(id: TextSkeletonStory.id) { theme in
             AnyView(TextSkeletonStory.content(state: TextSkeletonStory.defaultState, theme: theme))
+        }
+        StoryRegistry.shared.register(TextStory.self)
+        SandboxStoryRenderRegistry.shared.register(id: TextStory.id) { theme in
+            AnyView(TextStory.content(state: TextStory.defaultState, theme: theme))
         }
         StoryRegistry.shared.register(ToastStory.self)
         SandboxStoryRenderRegistry.shared.register(id: ToastStory.id) { theme in

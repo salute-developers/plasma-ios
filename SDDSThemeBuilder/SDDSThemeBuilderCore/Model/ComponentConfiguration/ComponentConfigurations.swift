@@ -60,3 +60,4 @@ typealias EditableConfiguration = ComponentConfiguration<EditableProps>
 typealias SelectItemConfiguration = ComponentConfiguration<SelectItemProps>
 typealias SelectConfiguration = ComponentConfiguration<SelectProps>
 typealias PaginationDotsConfiguration = ComponentConfiguration<PaginationDotsProps>
+typealias ImageConfiguration = ComponentConfiguration<ImageProps>

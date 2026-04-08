@@ -121,6 +121,7 @@
 		813BCA9C2EB29C0C00E4E505 /* IconBadgeTransparent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadgeTransparent; sourceTree = "<group>"; };
 		813BCAA12EB29C0C00E4E505 /* IconButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButton; sourceTree = "<group>"; };
 		813BCAA62EB29C0C00E4E505 /* IconButtonGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButtonGroup; sourceTree = "<group>"; };
+		A12BE0012EB29C0C00E4E506 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		813BCAAB2EB29C0C00E4E505 /* Indicator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Indicator; sourceTree = "<group>"; };
 		813BCAB02EB29C0C00E4E505 /* LinkButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LinkButton; sourceTree = "<group>"; };
 		813BCAB52EB29C0C00E4E505 /* ListItemNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListItemNormal; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 				813BCA9C2EB29C0C00E4E505 /* IconBadgeTransparent */,
 				813BCAA12EB29C0C00E4E505 /* IconButton */,
 				813BCAA62EB29C0C00E4E505 /* IconButtonGroup */,
+				A12BE0012EB29C0C00E4E506 /* Image */,
 				813BCAAB2EB29C0C00E4E505 /* Indicator */,
 				813BCAB02EB29C0C00E4E505 /* LinkButton */,
 				813BCAB52EB29C0C00E4E505 /* ListItemNormal */,
@@ -402,6 +404,7 @@
 				813BCA9C2EB29C0C00E4E505 /* IconBadgeTransparent */,
 				813BCAA12EB29C0C00E4E505 /* IconButton */,
 				813BCAA62EB29C0C00E4E505 /* IconButtonGroup */,
+				A12BE0012EB29C0C00E4E506 /* Image */,
 				813BCAAB2EB29C0C00E4E505 /* Indicator */,
 				813BCAB02EB29C0C00E4E505 /* LinkButton */,
 				813BCAB52EB29C0C00E4E505 /* ListItemNormal */,
