@@ -125,6 +125,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case toolbarVertical = "ToolbarVertical"
     case paginationDotsHorizontal = "PaginationDotsHorizontal"
     case paginationDotsVertical = "PaginationDotsVertical"
+    case image = "Image"
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -248,7 +249,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .selectItemMultipleTight,
 //            .selectItemMultipleNormal
             .paginationDotsVertical,
-            .paginationDotsHorizontal
+            .paginationDotsHorizontal,
+            .image
         ]
     }
     
@@ -443,6 +445,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .image:
+            GenerateComponentCommand<ImageProps, ImageAppearance, ImageSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         }
     }
     /// Название структуры Appearance в `SDDSComponents`
@@ -572,6 +580,8 @@ extension CodeGenerationComponent {
             "ToolbarAppearance"
         case .paginationDotsHorizontal, .paginationDotsVertical:
             "PaginationDotsAppearance"
+        case .image:
+            "ImageAppearance"
         }
     }
     
@@ -702,6 +712,8 @@ extension CodeGenerationComponent {
             "ToolbarSizeConfiguration"
         case .paginationDotsHorizontal, .paginationDotsVertical:
             "PaginationDotsSizeConfiguration"
+        case .image:
+            "ImageSizeConfiguration"
         }
     }
 
@@ -955,6 +967,8 @@ extension CodeGenerationComponent {
             "pagination_dots_horizontal_config.json"
         case .paginationDotsVertical:
             "pagination_dots_vertical_config.json"
+        case .image:
+            "image_config.json"
         }
     }
 

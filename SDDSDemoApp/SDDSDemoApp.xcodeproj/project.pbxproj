@@ -26,9 +26,6 @@
 		217970CFC84354EBC4AF7940 /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
 		24C1540A2BB3020B00963FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
 		24C1540D2BB3020B00963FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */; };
-		A4E1B7C32F8D100100A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
-		A4E1B7C32F8D100200A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
-		A4E1B7C32F8D100300A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		40FC9D201C866D6C018E09F2 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		57B7B31F85ACB9D2AA93659E /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
@@ -67,6 +64,9 @@
 		99A346C47902102C4876D568 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		A1B2C3D42F70000100AAA001 /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
 		A1B2C3D42F70000200AAA001 /* SandboxSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000600AAA001 /* SandboxSwiftUI */; };
+		A4E1B7C32F8D100100A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
+		A4E1B7C32F8D100200A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
+		A4E1B7C32F8D100300A1B2C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C154092BB3020B00963FAA /* Assets.xcassets */; };
 		B2C3D4E52F70000900AAA001 /* SandboxDemoTheme in Frameworks */ = {isa = PBXBuildFile; productRef = B2C3D4E52F70000800AAA001 /* SandboxDemoTheme */; };
 		C6834B4D0A85A0848157D422 /* PlasmaHomeDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */; };
 		CB87CD667625CE11D573CA4A /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
@@ -195,6 +195,8 @@
 		D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RadioBoxTestCase; sourceTree = "<group>"; };
 		D3FEDD122DB92C8D009A2867 /* SwitchTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwitchTestCase; sourceTree = "<group>"; };
 		D3FEDD312DB9338E009A2867 /* CellTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CellTestCase; sourceTree = "<group>"; };
+		E4A1B2C32F90000100DEMO01 /* ImageTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ImageTestCase; sourceTree = "<group>"; };
+		E4A1B2C32F90000200DEMO01 /* TextIconTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextIconTestCase; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,8 @@
 				D3FEDCE12DB923F3009A2867 /* AvatarTestCase */,
 				D3FEDC042DB91F3C009A2867 /* CounterTestCase */,
 				D3FEDC002DB91F10009A2867 /* ChipTestCase */,
+				E4A1B2C32F90000100DEMO01 /* ImageTestCase */,
+				E4A1B2C32F90000200DEMO01 /* TextIconTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
@@ -562,6 +566,8 @@
 				D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */,
 				D3FEDD122DB92C8D009A2867 /* SwitchTestCase */,
 				D3FEDD312DB9338E009A2867 /* CellTestCase */,
+				E4A1B2C32F90000100DEMO01 /* ImageTestCase */,
+				E4A1B2C32F90000200DEMO01 /* TextIconTestCase */,
 			);
 			name = SDDSDemoAppTests;
 			productName = PlasmaDemoAppTests;
