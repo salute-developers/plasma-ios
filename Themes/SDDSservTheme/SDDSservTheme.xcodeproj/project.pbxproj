@@ -164,6 +164,7 @@
 		8183C9302EB2A73300610A9A /* NavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarMainPage; sourceTree = "<group>"; };
 		81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsHorizontal; sourceTree = "<group>"; };
 		81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsVertical; sourceTree = "<group>"; };
+		A1B2C3D52F901002005A0001 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		81D59FB22ED8801A00156885 /* DrawerCloseInner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseInner; sourceTree = "<group>"; };
 		81D59FB72ED8801A00156885 /* DrawerCloseNone */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseNone; sourceTree = "<group>"; };
 		81D59FBC2ED8801A00156885 /* DrawerCloseOuter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseOuter; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 			children = (
 				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
 				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
+				A1B2C3D52F901002005A0001 /* Image */,
 				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
 				81F0A1022F10000100AAA111 /* AutocompleteTight */,
 				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
@@ -514,6 +516,7 @@
 				8183C9302EB2A73300610A9A /* NavigationBarMainPage */,
 				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
 				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
+				A1B2C3D52F901002005A0001 /* Image */,
 				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
 				81D59FB72ED8801A00156885 /* DrawerCloseNone */,
 				81D59FBC2ED8801A00156885 /* DrawerCloseOuter */,
@@ -730,7 +733,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.25.0;
+				MARKETING_VERSION = 0.26.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;
@@ -766,7 +769,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.25.0;
+				MARKETING_VERSION = 0.26.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;

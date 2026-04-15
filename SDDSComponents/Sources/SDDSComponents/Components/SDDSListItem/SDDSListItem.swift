@@ -202,10 +202,8 @@ public struct SDDSListItem<RightContent: View>: View {
     }
     
     private func currentColor(for buttonColor: ButtonColor) -> Color {
-        if isHovered {
-            return buttonColor.hoveredColor.color(for: colorScheme, subtheme: subtheme)
-        } else {
-            return buttonColor.defaultColor.color(for: colorScheme, subtheme: subtheme)
-        }
+        var activeStates = Set<InteractiveState>()
+        if isHovered { activeStates.insert(.hovered) }
+        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
 }

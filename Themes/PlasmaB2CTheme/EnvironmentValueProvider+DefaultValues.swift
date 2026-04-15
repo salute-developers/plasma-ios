@@ -27,6 +27,7 @@ extension EnvironmentValueProvider {
         self.set(value: CardSolid.m.appearance, forKey: CardAppearance.self)
         self.set(value: BottomSheet.default.appearance, forKey: BottomSheetAppearance.self)
         self.set(value: Divider.default.appearance, forKey: DividerAppearance.self)
+        self.set(value: Image.ratio_1_1.appearance, forKey: ImageAppearance.self)
         self.set(value: Overlay.default.appearance, forKey: OverlayAppearance.self)
     }
 }

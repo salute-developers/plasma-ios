@@ -175,8 +175,16 @@ public struct SDDSPaginationDots: View {
             PaginationDotView(
                 width: isSelected ? appearance.size.dotWidthActivated : appearance.size.dotWidth,
                 height: isSelected ? appearance.size.dotHeightActivated : appearance.size.dotHeight,
-                unselectedColor: appearance.dotBackgroundColor.color(for: colorScheme, subtheme: subtheme),
-                selectedColor: appearance.dotBackgroundColorActivated.color(for: colorScheme, subtheme: subtheme),
+                unselectedColor: appearance.dotBackgroundStatefulColor.color(
+                    for: [],
+                    colorScheme: colorScheme,
+                    subtheme: subtheme
+                ),
+                selectedColor: appearance.dotBackgroundStatefulColor.color(
+                    for: [.activated],
+                    colorScheme: colorScheme,
+                    subtheme: subtheme
+                ),
                 isSelected: isSelected,
                 scale: scale
             )

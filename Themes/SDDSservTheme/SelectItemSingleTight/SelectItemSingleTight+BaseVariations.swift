@@ -81,7 +81,9 @@ public struct SelectItemSingleTightVariation {
 private extension SelectItemAppearance {
     static var base: SelectItemAppearance {
         var appearance = SelectItemAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClear, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
+            .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
+        ]))
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.iconColor = ColorToken.textDefaultAccent
         appearance.itemType = .single

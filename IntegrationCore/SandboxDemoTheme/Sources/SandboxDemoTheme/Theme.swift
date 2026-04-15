@@ -530,6 +530,19 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
+
+    public var imageVariations: [Variation<ImageAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Image.all
+        case .stylesSalute:
+            StylesSaluteTheme.Image.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.Image.all
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Image.all
+        }
+    }
     
     public var cellVariations: [Variation<CellAppearance>] {
         switch self {

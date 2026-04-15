@@ -22,6 +22,7 @@ import SDDSThemeCore
 public struct TabsAppearance: Hashable {
     let id = UUID()
     public var size: TabsSizeConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var disclosureColor: ButtonColor
     public var indicatorColor: ColorToken
     public var overflowNextIcon: Image?
@@ -61,6 +62,8 @@ public struct TabsAppearance: Hashable {
         self.disclosureTextTypography = disclosureTextTypography
         self.disclosureIcon = disclosureIcon
     }
+
+    
     
     public static func == (lhs: TabsAppearance, rhs: TabsAppearance) -> Bool {
         return lhs.id == rhs.id

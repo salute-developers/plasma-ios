@@ -2226,7 +2226,7 @@ public extension GeneralAppearanceVariation<TextFieldClear, TextFieldAppearance,
 
         var appearance = appearance
         appearance.size = size
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textAfterTypography = TextFieldClearTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer

@@ -4,10 +4,39 @@ import SDDSThemeCore
 
 public struct PaginationDotsAppearance {
     public var size: PaginationDotsSizeConfiguration = DefaultPaginationDotsSize()
-    public var dotBackgroundColor: ColorToken = .clearColor
-    public var dotBackgroundColorActivated: ColorToken = .clearColor
-    
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    public var dotBackgroundStatefulColor: ButtonColor = ButtonColor(defaultColor: .clearColor)
+
+    @available(*, deprecated, message: "Use dotBackgroundStatefulColor.defaultColor.")
+    public var dotBackgroundColor: ColorToken {
+        get { dotBackgroundStatefulColor.defaultColor }
+        set { dotBackgroundStatefulColor.defaultColor = newValue }
+    }
+
+    @available(*, deprecated, message: "Use dotBackgroundStatefulColor.selectedColor.")
+    public var dotBackgroundColorActivated: ColorToken {
+        get { dotBackgroundStatefulColor.selectedColor }
+        set { dotBackgroundStatefulColor.selectedColor = newValue }
+    }
+
     public init() {}
+
+    public init(
+        size: PaginationDotsSizeConfiguration,
+        dotBackgroundColor: ColorToken = .clearColor,
+        dotBackgroundColorActivated: ColorToken = .clearColor,
+        dotBackgroundStatefulColor: ButtonColor? = nil
+    ) {
+        self.size = size
+        self.dotBackgroundColor = dotBackgroundColor
+        self.dotBackgroundColorActivated = dotBackgroundColorActivated
+        self.dotBackgroundStatefulColor = dotBackgroundStatefulColor ?? ButtonColor(
+            defaultColor: dotBackgroundColor,
+            selectedColor: dotBackgroundColorActivated
+        )
+    }
+
+    
 }
 
 extension PaginationDotsAppearance: EnvironmentKey {

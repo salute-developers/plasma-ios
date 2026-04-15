@@ -16,7 +16,7 @@ struct PaginationDotsAppearance: CodeGenerationAppearance {
         
         self.dotBackgroundColor = ColorTokenContextBuilder(props.dotBackgroundColor).context
         self.dotBackgroundColorActivated = ColorTokenContextBuilder(
-            props.dotBackgroundColor?.value(for: [.activated])
+            props.dotBackgroundColor?.value(for: .activated)
         ).context
     }
 }

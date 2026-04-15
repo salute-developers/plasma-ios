@@ -29,10 +29,10 @@ struct CheckboxSize: CodeGenerationSize {
         self.togglePathDrawer = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.lineWidth = CGFloatContextBuilder(props.toggleBorderWidth?.value, nullify: nullify).context
         self.togglePaddings = CGFloatContextBuilder(props.togglePadding?.value, nullify: nullify).context
-        self.toggleCheckedIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: [.checked]), nullify: nullify).context
-        self.toggleCheckedIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: [.checked]), nullify: nullify).context
-        self.toggleIndeterminateIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: [.indeterminate]), nullify: nullify).context
-        self.toggleIndeterminateIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: [.indeterminate]), nullify: nullify).context
+        self.toggleCheckedIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: .checked), nullify: nullify).context
+        self.toggleCheckedIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: .checked), nullify: nullify).context
+        self.toggleIndeterminateIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: .indeterminate), nullify: nullify).context
+        self.toggleIndeterminateIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: .indeterminate), nullify: nullify).context
     }
     
     init() {

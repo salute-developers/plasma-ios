@@ -81,7 +81,9 @@ public struct SelectItemMultipleNormalVariation {
 private extension SelectItemAppearance {
     static var base: SelectItemAppearance {
         var appearance = SelectItemAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClear, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
+            .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
+        ]))
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.itemType = .multiple
         return appearance

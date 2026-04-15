@@ -112,15 +112,21 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     }
     
     private var backgroundColor: ColorToken {
-        isSelected ? ColorToken.clearColor : appearance.backgroundColor.defaultColor
+        isSelected
+            ? ColorToken.clearColor
+            : appearance.backgroundColor.resolvedValue(for: Set<InteractiveState>())
     }
     
     private var iconColor: ColorToken {
-        isSelected ? appearance.iconColor.selectedColor : appearance.iconColor.defaultColor
+        appearance.iconColor.resolvedValue(
+            for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
+        )
     }
     
     private var labelColor: ColorToken {
-        isSelected ? appearance.labelColor.selectedColor : appearance.labelColor.defaultColor
+        appearance.labelColor.resolvedValue(
+            for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
+        )
     }
     
     var appearance: TabBarItemAppearance {

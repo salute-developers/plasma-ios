@@ -12,7 +12,9 @@ public struct WheelAppearance {
     public var descriptionColor: ColorToken
     
     // Цвета иконок управления
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var controlIconUpColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var controlIconDownColor: ButtonColor
     
     // Цвет разделителя
@@ -40,8 +42,8 @@ public struct WheelAppearance {
         itemTextColor: ColorToken = .clearColor,
         itemTextAfterColor: ColorToken = .clearColor,
         descriptionColor: ColorToken = .clearColor,
-        controlIconUpColor: ButtonColor = .init(defaultColor: .clearColor, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: .clearColor),
-        controlIconDownColor: ButtonColor = .init(defaultColor: .clearColor, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: .clearColor),
+        controlIconUpColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
+        controlIconDownColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
         separatorColor: ColorToken = .clearColor,
         itemTextTypography: TypographyConfiguration = .default,
         itemTextAfterTypography: TypographyConfiguration = .default,
@@ -67,6 +69,8 @@ public struct WheelAppearance {
         self.dividerStyle = dividerStyle
         self.size = size
     }
+
+    
 }
 
 // MARK: - Environment Key

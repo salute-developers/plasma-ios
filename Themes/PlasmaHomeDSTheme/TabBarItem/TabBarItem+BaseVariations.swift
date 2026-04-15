@@ -8,11 +8,15 @@ public struct TabBarItem {
     public static var `default`: ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> {
         var appearance = TabBarItemAppearance.base
         appearance.size = TabBarItemSize.`default`
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultClear)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: []))
         appearance.counterAppearance = Counter.xs.negative.appearance
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.labelTypography = TabBarItemTypography(oneSize: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
 
         return .init(
@@ -33,11 +37,15 @@ public struct TabBarItemVariation {
 private extension TabBarItemAppearance {
     static var base: TabBarItemAppearance {
         var appearance = TabBarItemAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultClear)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: []))
         appearance.counterAppearance = Counter.xs.negative.appearance
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         appearance.labelTypography = TabBarItemTypography(oneSize: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
         return appearance
     }

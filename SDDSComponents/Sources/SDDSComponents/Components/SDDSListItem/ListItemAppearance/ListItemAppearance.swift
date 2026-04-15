@@ -12,6 +12,7 @@ public struct ListItemAppearance: Hashable {
     public var subtitleColor: ColorToken
     public var disclosureIconColor: ColorToken
     public var disclosureIcon: Image?
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance?
@@ -44,6 +45,8 @@ public struct ListItemAppearance: Hashable {
         self.counterAppearance = counterAppearance
         self.size = size
     }
+
+    
     
     public static func == (lhs: ListItemAppearance, rhs: ListItemAppearance) -> Bool {
         lhs.id == rhs.id &&

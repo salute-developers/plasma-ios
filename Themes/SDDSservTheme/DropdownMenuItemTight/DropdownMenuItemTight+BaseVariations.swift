@@ -81,7 +81,9 @@ public struct DropdownMenuItemTightVariation {
 private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: ColorToken.surfaceDefaultClear, hoveredColor: ColorToken.surfaceDefaultClear, selectedColor: .clearColor)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
+            .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
+        ]))
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.disclosureIconColor = ColorToken.textDefaultSecondary
         return appearance

@@ -41,7 +41,7 @@ public struct TextArea {
     public static var xl: GeneralAppearanceVariation<TextArea, TextAreaAppearance, TextAreaVariation.Xl> {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xl
-        appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -167,6 +167,7 @@ private extension TextAreaAppearance {
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
         appearance.placeholderColor = ColorToken.textDefaultSecondary
         appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
+        appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
         appearance.requiredIndicatorColor = ColorToken.surfaceDefaultNegative
         appearance.scrollBarThumbColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.scrollBarTrackColor = ColorToken.surfaceDefaultTransparentPrimary

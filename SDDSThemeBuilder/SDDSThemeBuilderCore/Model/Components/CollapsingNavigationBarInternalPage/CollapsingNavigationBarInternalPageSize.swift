@@ -22,7 +22,7 @@ struct CollapsingNavigationBarInternalPageSize: CodeGenerationSize {
     init(props: CollapsingNavigationBarInternalPageProps, id: String? = nil, nullify: Bool = false) {
         self.backIconMargin = CGFloatContextBuilder(props.backIconMargin?.value, nullify: nullify).context
         self.descriptionPadding = CGFloatContextBuilder(props.descriptionPadding?.value, nullify: nullify).context
-        self.descriptionPaddingCollapsed = CGFloatContextBuilder(props.descriptionPadding?.value(for: [.collapsed])?.value, nullify: nullify).context
+        self.descriptionPaddingCollapsed = CGFloatContextBuilder(props.descriptionPadding?.value(for: .collapsed)?.value, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
         self.paddingTop = CGFloatContextBuilder(props.paddingTop?.value, nullify: nullify).context

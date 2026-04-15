@@ -185,6 +185,15 @@
 		814E307E2C99CEE1004601F7 /* View+DebugModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */; };
 		8151428B2C99944200E6A00D /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8151428A2C99944200E6A00D /* SDDSThemeCore */; };
 		8154644B2C96FDE600DAD8EA /* ViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154644A2C96FDE600DAD8EA /* ViewProvider.swift */; };
+		81555CA22F882BD700355797 /* SDDSTextSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555CA02F882BD700355797 /* SDDSTextSource.swift */; };
+		81555CA32F882BD700355797 /* SDDSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C9C2F882BD700355797 /* SDDSImage.swift */; };
+		81555CA42F882BD700355797 /* SDDSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C9E2F882BD700355797 /* SDDSText.swift */; };
+		81555CA52F882BD700355797 /* SDDSIconEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C962F882BD700355797 /* SDDSIconEnvironment.swift */; };
+		81555CA62F882BD700355797 /* ImageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C992F882BD700355797 /* ImageAppearance.swift */; };
+		81555CA72F882BD700355797 /* SDDSImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C972F882BD700355797 /* SDDSImageSource.swift */; };
+		81555CA82F882BD700355797 /* SDDSTextEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C9F2F882BD700355797 /* SDDSTextEnvironment.swift */; };
+		81555CA92F882BD700355797 /* SDDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C952F882BD700355797 /* SDDSIcon.swift */; };
+		81555CAA2F882BD700355797 /* ImageSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81555C9A2F882BD700355797 /* ImageSizeConfiguration.swift */; };
 		81578DB82D89ADBA00BC7038 /* BottomSheetAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */; };
 		81578DBA2D89ADD200BC7038 /* BottomSheetSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DB92D89ADBC00BC7038 /* BottomSheetSizeConfiguration.swift */; };
 		81578DBC2D89ADD900BC7038 /* SDDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */; };
@@ -274,6 +283,7 @@
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
 		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
 		818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */; };
+		81F2AA9A2F20010100ABCD01 /* StatefulColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2AA992F20010100ABCD01 /* StatefulColor.swift */; };
 		818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03BE2C43C371002C6D0A /* DebugModifier.swift */; };
 		818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C42C4512A6002C6D0A /* SelectionControl.swift */; };
 		818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */; };
@@ -663,6 +673,15 @@
 		814185C92C34260300D8E524 /* ButtonSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSize.swift; sourceTree = "<group>"; };
 		814E307D2C99CEE1004601F7 /* View+DebugModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+DebugModifiers.swift"; sourceTree = "<group>"; };
 		8154644A2C96FDE600DAD8EA /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
+		81555C952F882BD700355797 /* SDDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIcon.swift; sourceTree = "<group>"; };
+		81555C962F882BD700355797 /* SDDSIconEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIconEnvironment.swift; sourceTree = "<group>"; };
+		81555C972F882BD700355797 /* SDDSImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSImageSource.swift; sourceTree = "<group>"; };
+		81555C992F882BD700355797 /* ImageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAppearance.swift; sourceTree = "<group>"; };
+		81555C9A2F882BD700355797 /* ImageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeConfiguration.swift; sourceTree = "<group>"; };
+		81555C9C2F882BD700355797 /* SDDSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSImage.swift; sourceTree = "<group>"; };
+		81555C9E2F882BD700355797 /* SDDSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSText.swift; sourceTree = "<group>"; };
+		81555C9F2F882BD700355797 /* SDDSTextEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextEnvironment.swift; sourceTree = "<group>"; };
+		81555CA02F882BD700355797 /* SDDSTextSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextSource.swift; sourceTree = "<group>"; };
 		81578DB72D89ADB900BC7038 /* BottomSheetAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetAppearance.swift; sourceTree = "<group>"; };
 		81578DB92D89ADBC00BC7038 /* BottomSheetSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSizeConfiguration.swift; sourceTree = "<group>"; };
 		81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBottomSheet.swift; sourceTree = "<group>"; };
@@ -765,6 +784,7 @@
 		818C03B12C418A90002C6D0A /* SDDSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitch.swift; sourceTree = "<group>"; };
 		818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyConfiguration.swift; sourceTree = "<group>"; };
 		818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Extensions.swift"; sourceTree = "<group>"; };
+		81F2AA992F20010100ABCD01 /* StatefulColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulColor.swift; sourceTree = "<group>"; };
 		818C03BE2C43C371002C6D0A /* DebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModifier.swift; sourceTree = "<group>"; };
 		818C03C42C4512A6002C6D0A /* SelectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControl.swift; sourceTree = "<group>"; };
 		818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
@@ -1984,6 +2004,44 @@
 			path = SDDSAvatarGroup;
 			sourceTree = "<group>";
 		};
+		81555C982F882BD700355797 /* SDDSIcon */ = {
+			isa = PBXGroup;
+			children = (
+				81555C952F882BD700355797 /* SDDSIcon.swift */,
+				81555C962F882BD700355797 /* SDDSIconEnvironment.swift */,
+				81555C972F882BD700355797 /* SDDSImageSource.swift */,
+			);
+			path = SDDSIcon;
+			sourceTree = "<group>";
+		};
+		81555C9B2F882BD700355797 /* ImageAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81555C992F882BD700355797 /* ImageAppearance.swift */,
+				81555C9A2F882BD700355797 /* ImageSizeConfiguration.swift */,
+			);
+			path = ImageAppearance;
+			sourceTree = "<group>";
+		};
+		81555C9D2F882BD700355797 /* SDDSImage */ = {
+			isa = PBXGroup;
+			children = (
+				81555C9B2F882BD700355797 /* ImageAppearance */,
+				81555C9C2F882BD700355797 /* SDDSImage.swift */,
+			);
+			path = SDDSImage;
+			sourceTree = "<group>";
+		};
+		81555CA12F882BD700355797 /* SDDSText */ = {
+			isa = PBXGroup;
+			children = (
+				81555C9E2F882BD700355797 /* SDDSText.swift */,
+				81555C9F2F882BD700355797 /* SDDSTextEnvironment.swift */,
+				81555CA02F882BD700355797 /* SDDSTextSource.swift */,
+			);
+			path = SDDSText;
+			sourceTree = "<group>";
+		};
 		81578DB52D89AD9100BC7038 /* SDDSBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -2411,6 +2469,9 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81555C982F882BD700355797 /* SDDSIcon */,
+				81555C9D2F882BD700355797 /* SDDSImage */,
+				81555CA12F882BD700355797 /* SDDSText */,
 				81B091052F6C1904005AD40F /* SDDSPaginationDots */,
 				81410FAA2F6324CC00B85EEB /* SDDSSelect */,
 				81410FAC2F6324CC00B85EEB /* SDDSSelectItem */,
@@ -2500,6 +2561,7 @@
 				81CBC0922C82241100FBDAC8 /* BackportAsyncImage */,
 				818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */,
 				818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */,
+				81F2AA992F20010100ABCD01 /* StatefulColor.swift */,
 				818C03BE2C43C371002C6D0A /* DebugModifier.swift */,
 				818C03E22C479003002C6D0A /* Image+Extensions.swift */,
 				8159F72F2C5D1CFE00622836 /* FillStyle.swift */,
@@ -4800,6 +4862,15 @@
 				819C47372EBCF39A0081066C /* TabItemAppearance.swift in Sources */,
 				81F753222CF467CC000156D9 /* ButtonLayoutMode.swift in Sources */,
 				81F753262CF467F6000156D9 /* ButtonIconAttributes.swift in Sources */,
+				81555CA22F882BD700355797 /* SDDSTextSource.swift in Sources */,
+				81555CA32F882BD700355797 /* SDDSImage.swift in Sources */,
+				81555CA42F882BD700355797 /* SDDSText.swift in Sources */,
+				81555CA52F882BD700355797 /* SDDSIconEnvironment.swift in Sources */,
+				81555CA62F882BD700355797 /* ImageAppearance.swift in Sources */,
+				81555CA72F882BD700355797 /* SDDSImageSource.swift in Sources */,
+				81555CA82F882BD700355797 /* SDDSTextEnvironment.swift in Sources */,
+				81555CA92F882BD700355797 /* SDDSIcon.swift in Sources */,
+				81555CAA2F882BD700355797 /* ImageSizeConfiguration.swift in Sources */,
 				817339EB2D033EB90092608A /* AvatarStatus.swift in Sources */,
 				81F7532C2CF46885000156D9 /* ButtonShapeStyle.swift in Sources */,
 				690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */,
@@ -4913,6 +4984,7 @@
 				812DB7562D57B44100D3F4A3 /* TextFieldAccessibility.swift in Sources */,
 				81F7532E2CF4689C000156D9 /* ButtonAccessibility.swift in Sources */,
 				818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */,
+				81F2AA9A2F20010100ABCD01 /* StatefulColor.swift in Sources */,
 				817339E92D033E8E0092608A /* AvatarAppearance.swift in Sources */,
 				811DE1712C5783B6000DD354 /* HierarchicalList.swift in Sources */,
 				818C03D02C451651002C6D0A /* SelectionControlAppearance.swift in Sources */,
@@ -5255,7 +5327,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.36.0;
+				MARKETING_VERSION = 0.37.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
@@ -5288,7 +5360,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.36.0;
+				MARKETING_VERSION = 0.37.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;

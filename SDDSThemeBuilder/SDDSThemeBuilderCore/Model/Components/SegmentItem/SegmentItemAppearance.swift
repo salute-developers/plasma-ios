@@ -24,36 +24,11 @@ struct SegmentItemAppearance: CodeGenerationAppearance {
         }
         
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.backgroundColor,
-            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
-            hoveredColor: props.backgroundColor?.value(for: [.hovered]),
-            selectedColor: props.backgroundColor?.value(for: [.selected])
-        ).context
-        self.startContentColor = ButtonColorContextBuilder(
-            defaultColor: props.startContentColor,
-            highlightedColor: props.startContentColor?.value(for: [.pressed]),
-            hoveredColor: props.startContentColor?.value(for: [.hovered]),
-            selectedColor: props.startContentColor?.value(for: [.selected])
-        ).context
-        self.endContentColor = ButtonColorContextBuilder(
-            defaultColor: props.endContentColor,
-            highlightedColor: props.endContentColor?.value(for: [.pressed]),
-            hoveredColor: props.endContentColor?.value(for: [.hovered]),
-            selectedColor: props.endContentColor?.value(for: [.selected])
-        ).context
-        self.titleColor = ButtonColorContextBuilder(
-            defaultColor: props.labelColor,
-            highlightedColor: props.labelColor?.value(for: [.pressed]),
-            hoveredColor: props.labelColor?.value(for: [.hovered]),
-            selectedColor: props.labelColor?.value(for: [.selected])
-        ).context
-        self.subtitleColor = ButtonColorContextBuilder(
-            defaultColor: props.valueColor,
-            highlightedColor: props.valueColor?.value(for: [.pressed]),
-            hoveredColor: props.valueColor?.value(for: [.hovered]),
-            selectedColor: props.valueColor?.value(for: [.selected])
-        ).context
+        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.startContentColor = ButtonColorContextBuilder(statefulColor: props.startContentColor).context
+        self.endContentColor = ButtonColorContextBuilder(statefulColor: props.endContentColor).context
+        self.titleColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
+        self.subtitleColor = ButtonColorContextBuilder(statefulColor: props.valueColor).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         

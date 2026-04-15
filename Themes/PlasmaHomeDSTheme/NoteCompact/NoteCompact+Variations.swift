@@ -174,7 +174,6 @@ public extension GeneralAppearanceVariation<NoteCompact, NoteCompactAppearance, 
     var hasClose: ComponentAppearanceVariation<NoteCompact, NoteCompactAppearance> {
         var size =  NoteCompactAnySize(size: appearance.size)
         size.actionEndMargin = CGFloat(14.0)
-        size.contentBeforeArrangement = NoteCompactContentBeforeArrangement.center
         size.closeSize = CGFloat(24.0)
         size.closeStartMargin = CGFloat(2.0)
         size.paddingEnd = CGFloat(10.0)
@@ -241,7 +240,6 @@ public extension GeneralAppearanceVariation<NoteCompact, NoteCompactAppearance, 
     var hasClose: ComponentAppearanceVariation<NoteCompact, NoteCompactAppearance> {
         var size =  NoteCompactAnySize(size: appearance.size)
         size.actionEndMargin = CGFloat(14.0)
-        size.contentBeforeArrangement = NoteCompactContentBeforeArrangement.center
         size.closeSize = CGFloat(24.0)
         size.closeStartMargin = CGFloat(2.0)
         size.paddingEnd = CGFloat(10.0)

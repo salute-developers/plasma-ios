@@ -4,6 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
 
+
 public extension GeneralAppearanceVariation<Cell, CellAppearance, CellVariation.L> {
     
     var l: ComponentAppearanceVariation<Cell, CellAppearance> {

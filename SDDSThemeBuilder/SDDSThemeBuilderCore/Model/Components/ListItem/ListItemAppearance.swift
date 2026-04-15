@@ -34,11 +34,7 @@ struct ListItemAppearance: CodeGenerationAppearance {
         self.disclosureIconColor = ColorTokenContextBuilder(props.disclosureIconColor).context
         self.disclosureIcon = ImageContextBuilder(props.disclosureIcon?.value).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(
-            defaultColor: props.backgroundColor,
-            highlightedColor: props.backgroundColor?.value(for: [.pressed]),
-            hoveredColor: props.backgroundColor?.value(for: [.hovered])
-        ).context
+        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
         
         if let counterStyle = props.counterStyle?.value {
             self.counterAppearance = ComponentStyleContextBuilder(counterStyle).context

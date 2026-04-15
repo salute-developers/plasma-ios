@@ -154,7 +154,17 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     }
     
     private var fillView: some View {
-        appearance.size.togglePathDrawer
+        let activeStates: Set<InteractiveState>
+        switch state {
+        case .selected:
+            activeStates = [.checked]
+        case .indeterminate:
+            activeStates = [.indeterminate]
+        case .deselected:
+            activeStates = []
+        }
+
+        return appearance.size.togglePathDrawer
             .path(
                 in: CGRect(
                     x: 0,
@@ -162,7 +172,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.width - paddings,
                     height: appearance.size.height - paddings)
             )
-            .fill(appearance.toggleColor.color(for: colorScheme, subtheme: subtheme))
+            .fill(appearance.toggleStatefulColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
     }
     
     // MARK: - Accessibility

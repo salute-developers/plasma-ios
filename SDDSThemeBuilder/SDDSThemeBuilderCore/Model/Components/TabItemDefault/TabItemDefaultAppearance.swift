@@ -25,41 +25,12 @@ struct TabItemDefaultAppearance: CodeGenerationAppearance {
             return
         }
         
-        // Цвета с состояниями (selected, hovered, pressed)
-        self.labelColor = ButtonColorContextBuilder(
-            defaultColor: props.labelColor,
-            highlightedColor: props.labelColor?.value(for: [.pressed]),
-            hoveredColor: props.labelColor?.value(for: [.hovered]),
-            selectedColor: props.labelColor?.value(for: [.selected])
-        ).context
-        
-        self.valueColor = ButtonColorContextBuilder(
-            defaultColor: props.valueColor,
-            highlightedColor: props.valueColor?.value(for: [.pressed]),
-            hoveredColor: props.valueColor?.value(for: [.hovered]),
-            selectedColor: props.valueColor?.value(for: [.selected])
-        ).context
-        
-        self.startContentColor = ButtonColorContextBuilder(
-            defaultColor: props.startContentColor,
-            highlightedColor: props.startContentColor?.value(for: [.pressed]),
-            hoveredColor: props.startContentColor?.value(for: [.hovered]),
-            selectedColor: props.startContentColor?.value(for: [.selected])
-        ).context
-        
-        self.endContentColor = ButtonColorContextBuilder(
-            defaultColor: props.endContentColor,
-            highlightedColor: props.endContentColor?.value(for: [.pressed]),
-            hoveredColor: props.endContentColor?.value(for: [.hovered]),
-            selectedColor: props.endContentColor?.value(for: [.selected])
-        ).context
-        
-        self.actionColor = ButtonColorContextBuilder(
-            defaultColor: props.actionColor,
-            highlightedColor: props.actionColor?.value(for: [.pressed]),
-            hoveredColor: props.actionColor?.value(for: [.hovered]),
-            selectedColor: nil
-        ).context
+        // Цвета с состояниями
+        self.labelColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
+        self.valueColor = ButtonColorContextBuilder(statefulColor: props.valueColor).context
+        self.startContentColor = ButtonColorContextBuilder(statefulColor: props.startContentColor).context
+        self.endContentColor = ButtonColorContextBuilder(statefulColor: props.endContentColor).context
+        self.actionColor = ButtonColorContextBuilder(statefulColor: props.actionColor).context
         
         // Типографика
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context

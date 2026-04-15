@@ -226,13 +226,10 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
         } else if items.isEmpty {
             EmptyView()
         } else {
-            let handleItemTap: ((Int) -> Void)? = {
-                guard let onItemSelected = onItemSelected else { return nil }
-                return { index in
-                    onItemSelected(index)
-                    isDropdownPresented = false
-                }
-            }()
+            let handleItemTap: (Int) -> Void = { index in
+                onItemSelected?(index)
+                isDropdownPresented = false
+            }
             
             Group {
                 if isLoading {

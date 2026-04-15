@@ -17,10 +17,14 @@ import SwiftUI
 public struct ChipAppearance: Hashable {
     let id = UUID()
     public var size: ChipSizeConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var titleColor: ButtonColor
     public var titleTypography: TypographyConfiguration
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var imageTintColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var buttonTintColor: ButtonColor
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat
 
@@ -41,6 +45,8 @@ public struct ChipAppearance: Hashable {
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
     }
+
+    
     
     public static func == (lhs: ChipAppearance, rhs: ChipAppearance) -> Bool {
         lhs.id == rhs.id &&
