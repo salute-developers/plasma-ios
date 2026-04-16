@@ -8,6 +8,7 @@ on:
       - feature/*
       - release/*
       - hotfix/*
+      - test/*
   
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
@@ -15,7 +16,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
     environment: sdds
 
     steps:
@@ -27,7 +28,7 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.1'
+          xcode-version: '26.3'
 
       - name: List available simulators
         run: |
@@ -56,7 +57,7 @@ jobs:
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17 Pro' \
           -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_1.xcresult 2>&1 | tee ../test_output_1.log
 
@@ -99,7 +100,7 @@ jobs:
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,OS=18.1,name=iPhone 16 Pro' \
+          -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17 Pro' \
           -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_2.xcresult 2>&1 | tee ../test_output_2.log
 
