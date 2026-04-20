@@ -134,7 +134,6 @@ struct AutocompleteView: View {
                 }
             },
             loaderContent: {
-                // Loader content - показывается только когда есть элементы (как lastItem в списке)
                 HStack(spacing: 8) {
                     SDDSSpinner(
                         isAnimating: true,
@@ -153,7 +152,6 @@ struct AutocompleteView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             },
             emptyStateContent: {
-                // Empty state content
                 VStack(spacing: 4) {
                     Asset.plasma24.image
                         .renderingMode(.template)
@@ -174,7 +172,7 @@ struct AutocompleteView: View {
                 .frame(maxWidth: .infinity)
             }
         )
-        .frame(width: UIScreen.main.bounds.width / 1.5) // Делаем в 1.5 раза уже
+        .frame(width: UIScreen.main.bounds.width / 1.5)
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .onChange(of: viewModel.value) { _ in
             viewModel.handleValueChangedForDropdown()
@@ -212,7 +210,6 @@ struct AutocompleteView: View {
             return nil
         }
 
-        // Prefer visible smallest spinner available in theme.
         guard var smallest = (
             appearances
                 .filter { $0.startColor != .clearColor || $0.endColor != .clearColor }

@@ -9,7 +9,6 @@ enum TextFieldMasksStory: Story {
     static let title = "TextField Mask"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TextFieldMasksUiState, theme: Theme) -> some View {
         MaskView(viewModel: MaskViewModel(theme: theme, uiState: state))

@@ -289,7 +289,6 @@ internal struct CoreInputView: View {
                 } else {
                     if isHidden {
                         if isFullError {
-                            // fillColorError is often .clearColor in themes; fall back so dots stay visible like develop
                             if let fill = fillColor(isError: isError), fill != .clearColor {
                                 dot(color: fill)
                             } else {

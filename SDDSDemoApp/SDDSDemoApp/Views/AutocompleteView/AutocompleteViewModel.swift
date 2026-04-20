@@ -25,7 +25,6 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
     @Published var shouldShowEmptyState: Bool = false
     @Published var isDropdownPresented: Bool = false
     
-    /// When user picks an item, `value` updates and `.onChange` runs; without this we would reopen the dropdown because text stays non-empty.
     private var suppressNextDropdownAutoOpen = false
     
     @Published var layout: AutocompleteLayout = .normal {
@@ -77,7 +76,6 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             currentSearchText = ""
         }
         
-        // Если текст пустой, не показываем элементы и не открываем dropdown
         guard !currentSearchText.isEmpty else {
             listItems = []
             shouldShowEmptyState = false
@@ -85,7 +83,6 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             return
         }
         
-        // Фильтруем только если есть текст
         let filtered = allNames.filter { name in
             name.localizedCaseInsensitiveContains(currentSearchText)
         }
@@ -114,12 +111,10 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
         }
     }
     
-    /// Call before applying `value` from a dropdown row so `.onChange` does not force the menu open again.
     func markDropdownItemSelectionPending() {
         suppressNextDropdownAutoOpen = true
     }
     
-    /// Run after `value` changes from the text field: refresh list and open dropdown when typing (not after list selection).
     func handleValueChangedForDropdown() {
         updateListItems(with: value)
         if suppressNextDropdownAutoOpen {
