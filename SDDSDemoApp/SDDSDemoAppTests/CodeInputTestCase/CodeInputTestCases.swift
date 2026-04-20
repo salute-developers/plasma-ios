@@ -121,7 +121,7 @@ struct CodeInputMCodeLengthSixHidden : View {
        SDDSCodeInput(
            code: $code,
            groups: CodeFieldGroup.six,
-           validation: CodeFieldOnlyDigitsValidation(code: "1234", groups: CodeFieldGroup.four),
+           validation: CodeFieldOnlyDigitsValidation(code: "123456", groups: CodeFieldGroup.six),
            validationResult: $validationResult,
            caption: "Caption",
            captionAlignment: .center,

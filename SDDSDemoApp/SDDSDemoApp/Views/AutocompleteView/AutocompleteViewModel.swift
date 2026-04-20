@@ -25,6 +25,9 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
     @Published var shouldShowEmptyState: Bool = false
     @Published var isDropdownPresented: Bool = false
     
+    /// When user picks an item, `value` updates and `.onChange` runs; without this we would reopen the dropdown because text stays non-empty.
+    private var suppressNextDropdownAutoOpen = false
+    
     @Published var layout: AutocompleteLayout = .normal {
         didSet {
             variationProvider.layout = layout
@@ -109,8 +112,24 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
                 )
             }
         }
-        
-        isDropdownPresented = !currentSearchText.isEmpty
+    }
+    
+    /// Call before applying `value` from a dropdown row so `.onChange` does not force the menu open again.
+    func markDropdownItemSelectionPending() {
+        suppressNextDropdownAutoOpen = true
+    }
+    
+    /// Run after `value` changes from the text field: refresh list and open dropdown when typing (not after list selection).
+    func handleValueChangedForDropdown() {
+        updateListItems(with: value)
+        if suppressNextDropdownAutoOpen {
+            suppressNextDropdownAutoOpen = false
+            isDropdownPresented = false
+            return
+        }
+        if case .single(let text) = value, !text.isEmpty {
+            isDropdownPresented = true
+        }
     }
     
     init(theme: Theme = .sdddsServTheme, uiState: AutocompleteUiState = .init()) {

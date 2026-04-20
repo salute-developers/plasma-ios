@@ -5,11 +5,6 @@ public enum NumberMask: Equatable, Hashable {
     case decimal(fractionDigits: Int = 2, decimalSeparator: String = ",")
     
     public func format(input: String) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.groupingSeparator = " "
-        numberFormatter.usesGroupingSeparator = true
-        
         let decimalSeparator: String
         switch self {
         case .integer:
@@ -17,8 +12,6 @@ public enum NumberMask: Equatable, Hashable {
         case .decimal(_, let separator):
             decimalSeparator = separator
         }
-        
-        numberFormatter.decimalSeparator = decimalSeparator
         
         let hasDecimalSeparator = input.contains(",") || input.contains(".")
         var integerDigits = ""
@@ -50,30 +43,32 @@ public enum NumberMask: Equatable, Hashable {
                     return convertToMaskFormat("0" + decimalSeparator + finalFractionDigits)
                 }
                 
-                if let integerNumber = Int(integerDigits) {
-                    numberFormatter.maximumFractionDigits = 0
-                    if let formattedInteger = numberFormatter.string(from: NSNumber(value: integerNumber)) {
-                        return convertToMaskFormat(formattedInteger + decimalSeparator + finalFractionDigits)
-                    }
-                }
+                let formattedInteger = Self.groupIntegerDigitsWithSpaces(integerDigits)
+                return convertToMaskFormat(formattedInteger + decimalSeparator + finalFractionDigits)
             } else {
-                if let number = Int(integerDigits) {
-                    numberFormatter.maximumFractionDigits = 0
-                    if let formatted = numberFormatter.string(from: NSNumber(value: number)) {
-                        return convertToMaskFormat(formatted)
-                    }
-                }
+                let formattedInteger = Self.groupIntegerDigitsWithSpaces(integerDigits)
+                return convertToMaskFormat(formattedInteger)
             }
         } else {
-            if let number = Int(integerDigits) {
-                numberFormatter.maximumFractionDigits = 0
-                if let formatted = numberFormatter.string(from: NSNumber(value: number)) {
-                    return convertToMaskFormat(formatted)
-                }
-            }
+            let formattedInteger = Self.groupIntegerDigitsWithSpaces(integerDigits)
+            return convertToMaskFormat(formattedInteger)
         }
-        
-        return ""
+    }
+    
+    /// Thousands grouping with spaces; works for arbitrarily long digit strings (no `Int` overflow).
+    private static func groupIntegerDigitsWithSpaces(_ digits: String) -> String {
+        let onlyDigits = digits.filter { $0.isNumber }
+        guard !onlyDigits.isEmpty else { return "" }
+        var chars: [Character] = []
+        var count = 0
+        for ch in onlyDigits.reversed() {
+            if count > 0 && count % 3 == 0 {
+                chars.append(" ")
+            }
+            chars.append(ch)
+            count += 1
+        }
+        return String(chars.reversed())
     }
     
     private func convertToMaskFormat(_ formattedString: String) -> String {

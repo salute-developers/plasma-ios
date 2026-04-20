@@ -99,8 +99,6 @@ struct MaskView: View {
                         viewModel.updateValueText(newValue)
                     }
                     .onChange(of: viewModel.value) { newValue in
-                        // Обновляем textValue только если он реально отличается
-                        // чтобы избежать циклов
                         if newValue.text != viewModel.textValue {
                             viewModel.textValue = newValue.text
                         }
@@ -112,7 +110,7 @@ struct MaskView: View {
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
             }
         }
-        .navigationTitle("TextField")
+        .navigationTitle("TextField Mask")
     }
 }
 

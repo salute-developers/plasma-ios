@@ -127,6 +127,7 @@ struct AutocompleteView: View {
             onItemSelected: { index in
                 if index < viewModel.filteredNames.count {
                     let selectedName = viewModel.filteredNames[index]
+                    viewModel.markDropdownItemSelectionPending()
                     viewModel.value = .single(selectedName)
                     viewModel.isDropdownPresented = false
                     viewModel.updateListItems(with: .single(selectedName))
@@ -176,9 +177,7 @@ struct AutocompleteView: View {
         .frame(width: UIScreen.main.bounds.width / 1.5) // Делаем в 1.5 раза уже
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .onChange(of: viewModel.value) { _ in
-            // Читаем актуальное значение напрямую из viewModel.value в момент выполнения
-            let currentValue = viewModel.value
-            viewModel.updateListItems(with: currentValue)
+            viewModel.handleValueChangedForDropdown()
         }
     }
     
