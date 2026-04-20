@@ -29,6 +29,7 @@ struct CodeFieldView: View {
                             self.viewModel.code = code
                         }
                     )
+                    .id(viewModel.selectedGroupType)
                     .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                     .popover(
                         isPresented: $viewModel.successToastDisplayed,

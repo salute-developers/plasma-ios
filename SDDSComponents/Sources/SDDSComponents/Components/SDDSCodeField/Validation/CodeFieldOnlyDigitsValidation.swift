@@ -14,15 +14,10 @@ public final class CodeFieldOnlyDigitsValidation: CodeFieldValidation {
             return .failure(.inputFailed)
         }
         
-        let count = groups.map { $0.count }.reduce(0, +)
-        guard count == value.count else {
+        let slotCount = groups.map(\.count).reduce(UInt(0), +)
+        guard UInt(value.count) == slotCount else {
             return .success(.next)
         }
-        
-        if value == code {
-            return .success(.validated)
-        } else {
-            return .failure(.invalidCode)
-        }
+        return value == code ? .success(.validated) : .failure(.invalidCode)
     }
 }
