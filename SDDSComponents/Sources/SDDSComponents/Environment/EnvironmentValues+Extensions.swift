@@ -207,6 +207,11 @@ public extension EnvironmentValues {
         get { self[ImageAppearance.self] }
         set { self[ImageAppearance.self] = newValue }
     }
+    
+    var carouselAppearance: CarouselAppearance {
+        get { self[CarouselAppearance.self] }
+        set { self[CarouselAppearance.self] = newValue }
+    }
 }
 
 // MARK: - Utility

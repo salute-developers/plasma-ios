@@ -280,10 +280,15 @@
 		8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */; };
 		8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */; };
 		8183DDC22EB2AB3100610A9A /* WheelItemAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */; };
+		81881ADA2F99112B004AA1A0 /* CarouselCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81881AD92F99112B004AA1A0 /* CarouselCollectionView.swift */; };
+		81881AE42F991132004AA1A0 /* HostingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81881AE32F991132004AA1A0 /* HostingCarouselCell.swift */; };
+		8188FFAE2F9905A4004AA1A0 /* CarouselButtonsPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188FFA92F9905A4004AA1A0 /* CarouselButtonsPlacement.swift */; };
+		8188FFAF2F9905A4004AA1A0 /* SDDSCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188FFAC2F9905A4004AA1A0 /* SDDSCarousel.swift */; };
+		8188FFB02F9905A4004AA1A0 /* CarouselAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188FFA82F9905A4004AA1A0 /* CarouselAppearance.swift */; };
+		8188FFB12F9905A4004AA1A0 /* CarouselSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188FFAA2F9905A4004AA1A0 /* CarouselSizeConfiguration.swift */; };
 		818C03B22C418A90002C6D0A /* SDDSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B12C418A90002C6D0A /* SDDSSwitch.swift */; };
 		818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */; };
 		818C03B92C43B99B002C6D0A /* ColorToken+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */; };
-		81F2AA9A2F20010100ABCD01 /* StatefulColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2AA992F20010100ABCD01 /* StatefulColor.swift */; };
 		818C03BF2C43C371002C6D0A /* DebugModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03BE2C43C371002C6D0A /* DebugModifier.swift */; };
 		818C03C52C4512A6002C6D0A /* SelectionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C42C4512A6002C6D0A /* SelectionControl.swift */; };
 		818C03C72C45140B002C6D0A /* CheckboxAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */; };
@@ -372,6 +377,7 @@
 		81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */; };
 		81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */; };
 		81ED2DF82E71CF0B004DB74B /* NotificationContentIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */; };
+		81F2AA9A2F20010100ABCD01 /* StatefulColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2AA992F20010100ABCD01 /* StatefulColor.swift */; };
 		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
 		81F752E42CECD4B1000156D9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E32CECD4B1000156D9 /* IconButton.swift */; };
@@ -781,10 +787,15 @@
 		8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemAlignment.swift; sourceTree = "<group>"; };
 		8183DDB12EB2AB3100610A9A /* WheelSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDB32EB2AB3100610A9A /* SDDSWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSWheel.swift; sourceTree = "<group>"; };
+		81881AD92F99112B004AA1A0 /* CarouselCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionView.swift; sourceTree = "<group>"; };
+		81881AE32F991132004AA1A0 /* HostingCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingCarouselCell.swift; sourceTree = "<group>"; };
+		8188FFA82F9905A4004AA1A0 /* CarouselAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAppearance.swift; sourceTree = "<group>"; };
+		8188FFA92F9905A4004AA1A0 /* CarouselButtonsPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselButtonsPlacement.swift; sourceTree = "<group>"; };
+		8188FFAA2F9905A4004AA1A0 /* CarouselSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSizeConfiguration.swift; sourceTree = "<group>"; };
+		8188FFAC2F9905A4004AA1A0 /* SDDSCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSCarousel.swift; sourceTree = "<group>"; };
 		818C03B12C418A90002C6D0A /* SDDSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSwitch.swift; sourceTree = "<group>"; };
 		818C03B42C418C50002C6D0A /* TypographyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyConfiguration.swift; sourceTree = "<group>"; };
 		818C03B82C43B99B002C6D0A /* ColorToken+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Extensions.swift"; sourceTree = "<group>"; };
-		81F2AA992F20010100ABCD01 /* StatefulColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulColor.swift; sourceTree = "<group>"; };
 		818C03BE2C43C371002C6D0A /* DebugModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModifier.swift; sourceTree = "<group>"; };
 		818C03C42C4512A6002C6D0A /* SelectionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControl.swift; sourceTree = "<group>"; };
 		818C03C62C45140B002C6D0A /* CheckboxAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxAppearance.swift; sourceTree = "<group>"; };
@@ -1293,6 +1304,7 @@
 		81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentButtonLayout.swift; sourceTree = "<group>"; };
 		81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentIconPlacement.swift; sourceTree = "<group>"; };
 		81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentSizeConfiguration.swift; sourceTree = "<group>"; };
+		81F2AA992F20010100ABCD01 /* StatefulColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulColor.swift; sourceTree = "<group>"; };
 		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
 		81F752E12CECD40A000156D9 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
 		81F752E32CECD4B1000156D9 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
@@ -2466,9 +2478,31 @@
 			path = SDDSWheel;
 			sourceTree = "<group>";
 		};
+		8188FFAB2F9905A4004AA1A0 /* CarouselAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				8188FFA82F9905A4004AA1A0 /* CarouselAppearance.swift */,
+				8188FFA92F9905A4004AA1A0 /* CarouselButtonsPlacement.swift */,
+				8188FFAA2F9905A4004AA1A0 /* CarouselSizeConfiguration.swift */,
+			);
+			path = CarouselAppearance;
+			sourceTree = "<group>";
+		};
+		8188FFAD2F9905A4004AA1A0 /* SDDSCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				81881AE32F991132004AA1A0 /* HostingCarouselCell.swift */,
+				81881AD92F99112B004AA1A0 /* CarouselCollectionView.swift */,
+				8188FFAB2F9905A4004AA1A0 /* CarouselAppearance */,
+				8188FFAC2F9905A4004AA1A0 /* SDDSCarousel.swift */,
+			);
+			path = SDDSCarousel;
+			sourceTree = "<group>";
+		};
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8188FFAD2F9905A4004AA1A0 /* SDDSCarousel */,
 				81555C982F882BD700355797 /* SDDSIcon */,
 				81555C9D2F882BD700355797 /* SDDSImage */,
 				81555CA12F882BD700355797 /* SDDSText */,
@@ -4804,6 +4838,7 @@
 				816C62A22CB80EC400352891 /* Opacity.swift in Sources */,
 				697736FF2D26C23F0077D1A4 /* CounterAppearance+Variation.swift in Sources */,
 				812DB7572D57B44100D3F4A3 /* TextField.swift in Sources */,
+				81881ADA2F99112B004AA1A0 /* CarouselCollectionView.swift in Sources */,
 				81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */,
 				812DB74F2D57B44100D3F4A3 /* TextFieldAppearance.swift in Sources */,
 				8183DDB52EB2AB3100610A9A /* SDDSNavigationBar.swift in Sources */,
@@ -5016,6 +5051,11 @@
 				81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */,
 				81ED2DF82E71CF0B004DB74B /* NotificationContentIconPlacement.swift in Sources */,
 				69DBC1AD2DA52DE000B0CE58 /* RadioboxGroupAppearance.swift in Sources */,
+				8188FFAE2F9905A4004AA1A0 /* CarouselButtonsPlacement.swift in Sources */,
+				8188FFAF2F9905A4004AA1A0 /* SDDSCarousel.swift in Sources */,
+				8188FFB02F9905A4004AA1A0 /* CarouselAppearance.swift in Sources */,
+				8188FFB12F9905A4004AA1A0 /* CarouselSizeConfiguration.swift in Sources */,
+				81881AE42F991132004AA1A0 /* HostingCarouselCell.swift in Sources */,
 				816D0F082DF6D399008EC8F9 /* AutoCloseModifier.swift in Sources */,
 				8102BA3A2CBEAFB800C589D3 /* PlaceholderTextEditor.swift in Sources */,
 				81F89DE82D808A8500A41C89 /* SDDSCard.swift in Sources */,

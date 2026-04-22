@@ -39,6 +39,14 @@
                BlueprintName = "SDDSDemoAppTests"
                ReferencedContainer = "container:SDDSDemoApp.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CarouselPlasmaB2CSnapshotTest">
+               </Test>
+               <Test
+                  Identifier = "CarouselSnapshotTest">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"

@@ -356,6 +356,9 @@
 		A12B00112F90ABCD005A0001 /* ImageProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00102F90ABCD005A0001 /* ImageProps.swift */; };
 		A12B00132F90ABCD005A0001 /* ImageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00122F90ABCD005A0001 /* ImageAppearance.swift */; };
 		A12B00152F90ABCD005A0001 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00142F90ABCD005A0001 /* ImageSize.swift */; };
+		B12B00C72F90ABCD005A0001 /* CarouselProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C62F90ABCD005A0001 /* CarouselProps.swift */; };
+		B12B00C92F90ABCD005A0001 /* CarouselAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */; };
+		B12B00CB2F90ABCD005A0001 /* CarouselSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */; };
 		81B07C672F6C108D005AD40F /* PaginationDotsProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C662F6C108D005AD40F /* PaginationDotsProps.swift */; };
 		81B07C6B2F6C109B005AD40F /* PaginationDotsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C682F6C109B005AD40F /* PaginationDotsAppearance.swift */; };
 		81B07C6C2F6C109B005AD40F /* PaginationDotsSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B07C692F6C109B005AD40F /* PaginationDotsSize.swift */; };
@@ -876,6 +879,9 @@
 		A12B00102F90ABCD005A0001 /* ImageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProps.swift; sourceTree = "<group>"; };
 		A12B00122F90ABCD005A0001 /* ImageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAppearance.swift; sourceTree = "<group>"; };
 		A12B00142F90ABCD005A0001 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
+		B12B00C62F90ABCD005A0001 /* CarouselProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselProps.swift; sourceTree = "<group>"; };
+		B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAppearance.swift; sourceTree = "<group>"; };
+		B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSize.swift; sourceTree = "<group>"; };
 		81B07C662F6C108D005AD40F /* PaginationDotsProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsProps.swift; sourceTree = "<group>"; };
 		81B07C682F6C109B005AD40F /* PaginationDotsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsAppearance.swift; sourceTree = "<group>"; };
 		81B07C692F6C109B005AD40F /* PaginationDotsSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsSize.swift; sourceTree = "<group>"; };
@@ -1488,6 +1494,7 @@
 				697970E52D63A7FB008306A8 /* CellProps.swift */,
 				812DB6FE2D55E4E800D3F4A3 /* TextFieldProps.swift */,
 				812DB7992D59D85400D3F4A3 /* ButtonProps.swift */,
+				B12B00C62F90ABCD005A0001 /* CarouselProps.swift */,
 			);
 			path = Props;
 			sourceTree = "<group>";
@@ -1496,6 +1503,7 @@
 			isa = PBXGroup;
 			children = (
 				A12B00162F90ABCD005A0001 /* Image */,
+				B12B00CC2F90ABCD005A0001 /* Carousel */,
 				81B07C6A2F6C109B005AD40F /* PaginationDots */,
 				81410F612F63113700B85EEB /* Select */,
 				81410F642F63113700B85EEB /* SelectItem */,
@@ -2143,6 +2151,15 @@
 				A12B00142F90ABCD005A0001 /* ImageSize.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		B12B00CC2F90ABCD005A0001 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */,
+				B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		81B510662E3C7CA100504B1D /* CodeField */ = {
@@ -2992,6 +3009,9 @@
 				A12B00112F90ABCD005A0001 /* ImageProps.swift in Sources */,
 				A12B00132F90ABCD005A0001 /* ImageAppearance.swift in Sources */,
 				A12B00152F90ABCD005A0001 /* ImageSize.swift in Sources */,
+				B12B00C72F90ABCD005A0001 /* CarouselProps.swift in Sources */,
+				B12B00C92F90ABCD005A0001 /* CarouselAppearance.swift in Sources */,
+				B12B00CB2F90ABCD005A0001 /* CarouselSize.swift in Sources */,
 				81B07C672F6C108D005AD40F /* PaginationDotsProps.swift in Sources */,
 				813472D82ECF734B00D40423 /* DrawerAppearance.swift in Sources */,
 				813472D92ECF734B00D40423 /* DrawerSize.swift in Sources */,

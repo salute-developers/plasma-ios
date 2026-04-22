@@ -46,6 +46,10 @@ enum GeneratedStoriesAutogen {
         SandboxStoryRenderRegistry.shared.register(id: CardStory.id) { theme in
             AnyView(CardStory.content(state: CardStory.defaultState, theme: theme))
         }
+        StoryRegistry.shared.register(CarouselStory.self)
+        SandboxStoryRenderRegistry.shared.register(id: CarouselStory.id) { theme in
+            AnyView(CarouselStory.content(state: CarouselStory.defaultState, theme: theme))
+        }
         StoryRegistry.shared.register(CellStory.self)
         SandboxStoryRenderRegistry.shared.register(id: CellStory.id) { theme in
             AnyView(CellStory.content(state: CellStory.defaultState, theme: theme))

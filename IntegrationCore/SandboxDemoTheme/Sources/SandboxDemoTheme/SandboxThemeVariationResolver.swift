@@ -134,6 +134,8 @@ public enum SandboxThemeVariationResolver {
         case "paginationDots.story":
             let all = theme.paginationDotsHorizontalVariations + theme.paginationDotsVerticalVariations
             return entries(all)
+        case "carousel.story":
+            return entries(theme.carouselVariations)
         case "popover.story":
             return entries(theme.popoverVariations)
         case "tooltip.story":
