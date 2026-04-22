@@ -270,6 +270,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
 
+    public var carouselVariations: [Variation<CarouselAppearance>] {
+        SDDSServTheme.Carousel.all
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         SDDSServTheme.Image.all
     }

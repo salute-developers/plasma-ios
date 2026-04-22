@@ -270,6 +270,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
 
+    public var carouselVariations: [Variation<CarouselAppearance>] {
+        PlasmaB2CTheme.Carousel.all
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         PlasmaB2CTheme.Image.all
     }

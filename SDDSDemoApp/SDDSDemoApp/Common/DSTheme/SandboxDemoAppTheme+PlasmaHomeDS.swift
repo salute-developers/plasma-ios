@@ -280,6 +280,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
 
+    public var carouselVariations: [Variation<CarouselAppearance>] {
+        []
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         PlasmaHomeDSTheme.Image.all
     }

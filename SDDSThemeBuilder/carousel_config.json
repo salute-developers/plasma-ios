@@ -1,0 +1,79 @@
+{
+    "view": {},
+    "props": {
+        "indicatorStyle": {
+            "type": "component_style",
+            "value": "pagination-dots-horizontal.s"
+        },
+        "indicatorPadding": {
+            "type": "dimension",
+            "value": 12.0
+        },
+        "gap": {
+            "type": "dimension",
+            "value": 8.0
+        },
+        "nextButtonStyle": {
+            "type": "component_style",
+            "value": "icon-button.s.pilled.secondary"
+        },
+        "nextButtonIcon": {
+            "type": "icon",
+            "value": "chevron.right.24"
+        },
+        "prevButtonStyle": {
+            "type": "component_style",
+            "value": "icon-button.s.pilled.secondary"
+        },
+        "prevButtonIcon": {
+            "type": "icon",
+            "value": "chevron.left.24"
+        },
+        "nextButtonPadding": {
+            "type": "dimension",
+            "value": 12.0
+        },
+        "prevButtonPadding": {
+            "type": "dimension",
+            "value": 12.0
+        }
+    },
+    "variations": [
+        {
+            "id": "buttons-placement-inner",
+            "parent": null,
+            "props": {
+                "buttonsPlacement": {
+                    "type": "value",
+                    "value": "inner"
+                },
+                "nextButtonStyle": {
+                    "type": "component_style",
+                    "value": "icon-button.s.pilled.secondary"
+                },
+                "prevButtonStyle": {
+                    "type": "component_style",
+                    "value": "icon-button.s.pilled.secondary"
+                }
+            }
+        },
+        {
+            "id": "buttons-placement-outer",
+            "parent": null,
+            "props": {
+                "buttonsPlacement": {
+                    "type": "value",
+                    "value": "outer"
+                },
+                "nextButtonStyle": {
+                    "type": "component_style",
+                    "value": "icon-button.s.pilled.clear"
+                },
+                "prevButtonStyle": {
+                    "type": "component_style",
+                    "value": "icon-button.s.pilled.clear"
+                }
+            }
+        }
+    ]
+}

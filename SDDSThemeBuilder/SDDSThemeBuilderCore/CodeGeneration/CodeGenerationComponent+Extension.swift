@@ -125,6 +125,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case toolbarVertical = "ToolbarVertical"
     case paginationDotsHorizontal = "PaginationDotsHorizontal"
     case paginationDotsVertical = "PaginationDotsVertical"
+    case carousel = "Carousel"
     case image = "Image"
 
     static var supportedComponents: [CodeGenerationComponent] {
@@ -233,8 +234,8 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .toolbarVertical,
 //            .autocompleteTight,
 //            .autocompleteNormal,
-            .collapsingNavigationBarInternalPage,
-            .collapsingNavigationBarMainPage,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage,
 //            .autocompleteTight,
 //            .autocompleteNormal,
 ////            .collapsingNavigationBarInternalPage,
@@ -248,9 +249,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .selectItemSingleNormal,
 //            .selectItemMultipleTight,
 //            .selectItemMultipleNormal
-            .paginationDotsVertical,
-            .paginationDotsHorizontal,
-            .image
+//            .paginationDotsVertical,
+//            .paginationDotsHorizontal,
+            .carousel,
+//            .image
         ]
     }
     
@@ -445,6 +447,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .carousel:
+            GenerateComponentCommand<CarouselProps, CarouselAppearance, CarouselSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         case .image:
             GenerateComponentCommand<ImageProps, ImageAppearance, ImageSize>(
                 component: self,
@@ -580,6 +588,8 @@ extension CodeGenerationComponent {
             "ToolbarAppearance"
         case .paginationDotsHorizontal, .paginationDotsVertical:
             "PaginationDotsAppearance"
+        case .carousel:
+            "CarouselAppearance"
         case .image:
             "ImageAppearance"
         }
@@ -712,6 +722,8 @@ extension CodeGenerationComponent {
             "ToolbarSizeConfiguration"
         case .paginationDotsHorizontal, .paginationDotsVertical:
             "PaginationDotsSizeConfiguration"
+        case .carousel:
+            "CarouselSizeConfiguration"
         case .image:
             "ImageSizeConfiguration"
         }
@@ -967,6 +979,8 @@ extension CodeGenerationComponent {
             "pagination_dots_horizontal_config.json"
         case .paginationDotsVertical:
             "pagination_dots_vertical_config.json"
+        case .carousel:
+            "carousel_config.json"
         case .image:
             "image_config.json"
         }

@@ -531,6 +531,17 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
 
+    public var carouselVariations: [Variation<CarouselAppearance>] {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Carousel.all
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.Carousel.all
+        case .stylesSalute, .plasmaHomeDSTheme:
+            []
+        }
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         switch self {
         case .sdddsServTheme:
