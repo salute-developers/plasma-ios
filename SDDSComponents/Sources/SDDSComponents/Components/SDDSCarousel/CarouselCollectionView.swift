@@ -64,6 +64,15 @@ private final class CarouselPagingFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
+private final class CarouselContainerCollectionView: UICollectionView {
+    var didLayoutSubviewsHandler: ((UICollectionView) -> Void)?
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        didLayoutSubviewsHandler?(self)
+    }
+}
+
 struct CarouselCollectionView<Content: View>: UIViewRepresentable {
     @Binding var selection: Int
     let pageCount: Int
@@ -85,7 +94,7 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
         layout.fixedPageWidth = fixedPageWidth
         layout.snapAlignment = pageAlignment
 
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = CarouselContainerCollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.decelerationRate = .fast
@@ -94,6 +103,9 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
         collectionView.delegate = context.coordinator
         collectionView.isScrollEnabled = isScrollEnabled
         collectionView.register(HostingCarouselCell.self, forCellWithReuseIdentifier: HostingCarouselCell.reuseIdentifier)
+        collectionView.didLayoutSubviewsHandler = { [weak coordinator = context.coordinator] view in
+            coordinator?.collectionViewDidLayoutSubviews(view)
+        }
         return collectionView
     }
 
@@ -116,6 +128,7 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
         } else {
             context.coordinator.refreshVisibleCells(in: uiView)
         }
+        uiView.layoutIfNeeded()
         context.coordinator.scrollToSelectionIfNeeded(
             collectionView: uiView,
             animated: true
@@ -202,7 +215,6 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
         }
 
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            // If user starts dragging, treat further updates as user-driven.
             isProgrammaticScroll = false
         }
 
@@ -217,6 +229,10 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
             isProgrammaticScroll = false
         }
 
+        func collectionViewDidLayoutSubviews(_ collectionView: UICollectionView) {
+            scrollToSelectionIfNeeded(collectionView: collectionView, animated: false)
+        }
+
         func scrollToSelectionIfNeeded(collectionView: UICollectionView, animated: Bool) {
             guard parent.pageCount > 0 else {
                 hasPerformedInitialPositioning = false
@@ -224,8 +240,8 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
                 return
             }
             guard collectionView.bounds.width > 1, collectionView.bounds.height > 1 else {
-                // Keep selection "dirty" until we have final layout size.
                 lastKnownSelection = -1
+                scheduleDeferredPositioning(for: collectionView)
                 return
             }
             let boundsChanged = collectionView.bounds.size != lastKnownBoundsSize
@@ -234,7 +250,6 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
 
             collectionView.layoutIfNeeded()
             guard collectionView.numberOfItems(inSection: 0) > clampedSelection else {
-                // Data/layout is not ready yet; retry on next update pass.
                 lastKnownSelection = -1
                 scheduleDeferredPositioning(for: collectionView)
                 return
@@ -242,9 +257,6 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
 
             let isInitialSelectionSync = !hasPerformedInitialPositioning
                 && lastKnownSelection == -1
-                && clampedSelection == 0
-            // Disable animation only for the very first sync to the initial page.
-            // Any first user-driven transition (including after variation changes) must be animated.
             var shouldAnimate = animated && !isInitialSelectionSync
             var didApplyPosition = false
 
@@ -256,7 +268,6 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
                 )
                 if shouldAnimate {
                     let deltaX = abs(collectionView.contentOffset.x - targetOffsetX)
-                    // No-op animated scroll may not trigger completion delegate.
                     if deltaX < 0.5 {
                         shouldAnimate = false
                     }
@@ -297,10 +308,9 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
             DispatchQueue.main.async { [weak self, weak collectionView] in
                 guard let self, let collectionView else { return }
                 self.hasScheduledDeferredPositioning = false
-                let shouldAnimateDeferred = self.hasPerformedInitialPositioning || self.parent.selection != 0
                 self.scrollToSelectionIfNeeded(
                     collectionView: collectionView,
-                    animated: shouldAnimateDeferred
+                    animated: self.hasPerformedInitialPositioning
                 )
             }
         }
@@ -329,10 +339,12 @@ struct CarouselCollectionView<Content: View>: UIViewRepresentable {
                 shouldReloadData = true
                 lastKnownGap = parent.gap
                 hasPerformedInitialPositioning = false
+                lastKnownSelection = -1
             }
             if parent.pageAlignment != lastKnownAlignment {
                 lastKnownAlignment = parent.pageAlignment
                 hasPerformedInitialPositioning = false
+                lastKnownSelection = -1
             }
         }
 
