@@ -1029,7 +1029,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.plasmahomeds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1193,7 +1193,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1234,7 +1234,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1396,7 +1396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.plasmahomeds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1438,7 +1438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.sddsserv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1481,7 +1481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.plasmab2c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1524,7 +1524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.sddsserv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1566,7 +1566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.15.0;
+				MARKETING_VERSION = 1.16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sd.SDDSDemo.plasmab2c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
