@@ -10,6 +10,7 @@ struct CarouselSnapshotCase: View {
     let hasIndicator: Bool
     let hasControls: Bool
     let indicatorVisibleCount: Int
+    let pageAlignment: CarouselSlideAlignment
 
     init(
         appearance: CarouselAppearance,
@@ -17,7 +18,8 @@ struct CarouselSnapshotCase: View {
         pageCount: Int,
         hasIndicator: Bool = true,
         hasControls: Bool = true,
-        indicatorVisibleCount: Int = 5
+        indicatorVisibleCount: Int = 5,
+        pageAlignment: CarouselSlideAlignment = .center
     ) {
         self._selection = State(initialValue: selection)
         self.appearance = appearance
@@ -25,6 +27,7 @@ struct CarouselSnapshotCase: View {
         self.hasIndicator = hasIndicator
         self.hasControls = hasControls
         self.indicatorVisibleCount = indicatorVisibleCount
+        self.pageAlignment = pageAlignment
     }
 
     var body: some View {
@@ -36,6 +39,7 @@ struct CarouselSnapshotCase: View {
                 hasIndicator: hasIndicator,
                 hasControls: hasControls,
                 indicatorVisibleCount: indicatorVisibleCount,
+                pageAlignment: pageAlignment,
                 appearance: appearance
             ) { index in
                 ZStack {
