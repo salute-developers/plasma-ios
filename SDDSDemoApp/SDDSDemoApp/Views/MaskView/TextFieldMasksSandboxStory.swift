@@ -6,7 +6,7 @@ enum TextFieldMasksStory: Story {
     static let defaultState = TextFieldMasksUiState()
 
     static let id = "textFieldMasks.story"
-    static let title = "TextField Masks"
+    static let title = "TextField Mask"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
 

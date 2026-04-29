@@ -17,6 +17,7 @@ extension EnvironmentValueProvider {
         self.set(value: ChipGroup.dense.appearance, forKey: ChipGroupAppearance.self)
         self.set(value: Indicator.m.default.appearance, forKey: IndicatorAppearance.self)
         self.set(value: PaginationDotsHorizontal.m.appearance, forKey: PaginationDotsAppearance.self)
+        self.set(value: Carousel.buttonsPlacementInner.appearance, forKey: CarouselAppearance.self)
         self.set(value: ProgressBar.default.appearance, forKey: ProgressBarAppearance.self)
         self.set(value: Radiobox.m.appearance, forKey: RadioboxAppearance.self)
         self.set(value: RadioboxGroup.m.appearance, forKey: RadioboxGroupAppearance.self)

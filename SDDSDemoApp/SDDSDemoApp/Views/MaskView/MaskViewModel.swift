@@ -48,8 +48,6 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
     @Published var optionalTitle: String = "Optional"
     @Published var placeholder: String = "Placeholder" {
         didSet {
-            // Обновляем маску с кастомным плейсхолдером, если выбрана маска даты
-            // и это изменение не из updatePlaceholder
             if !isUpdatingPlaceholder && selectedMaskType == .date && !placeholder.isEmpty && !customFormat.isEmpty {
                 updateCurrentMask()
             }
@@ -70,7 +68,6 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
         }
     }
     
-    // Mask specific
     @Published var selectedMaskType: MaskType = .none {
         didSet {
             updateMaskFormat()
@@ -118,7 +115,6 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             if customFormat.isEmpty {
                 currentMask = .date(.short)
             } else {
-                // Используем кастомный плейсхолдер, если он отличается от стандартного
                 let defaultPlaceholder = DateMask.custom(format: format).placeholder
                 let customPlaceholder = (placeholder != defaultPlaceholder && !placeholder.isEmpty) ? placeholder : nil
                 currentMask = .date(.custom(format: format, placeholder: customPlaceholder))
@@ -151,8 +147,6 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             if customFormat.isEmpty {
                 placeholder = selectedMaskType.placeholder
             } else {
-                // Всегда обновляем placeholder из маски при изменении формата
-                // Если пользователь хочет кастомный placeholder, он может задать его после изменения формата
                 placeholder = DateMask.custom(format: customFormat).placeholder
             }
         case .time:

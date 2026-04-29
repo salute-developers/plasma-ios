@@ -287,8 +287,15 @@ internal struct CoreInputView: View {
                             .animation(.easeInOut(duration: 0.2), value: isScaled)
                     }
                 } else {
-                    if isHidden && !isFullError {
-                        if visibleCharacters.contains(globalIndex) && showBeforeSecure {
+                    if isHidden {
+                        if isFullError {
+                            // fillColorError is often .clearColor in themes; fall back so dots stay visible like develop
+                            if let fill = fillColor(isError: isError), fill != .clearColor {
+                                dot(color: fill)
+                            } else {
+                                dot(color: valueColorError)
+                            }
+                        } else if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                             Text(value)
                                 .typography(valueTypography)
                                 .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))

@@ -405,15 +405,18 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 accessibility: buttonData.accessibility,
                 isSelected: buttonData.isSelected
             ) {
-                // Taps are handled by highPriorityGesture below to cover full width.
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .overlay {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        toggleDropdownIfAllowed()
+                    }
+                    .allowsHitTesting(!(buttonData.isDisabled || disabled || readOnly))
+            }
             .contentShape(Rectangle())
-            .highPriorityGesture(
-                TapGesture().onEnded {
-                    toggleDropdownIfAllowed()
-                }
-            )
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
     

@@ -130,6 +130,9 @@ enum CoreSandboxStoriesRegistration {
         register(PaginationDotsStory.self) { theme in
             AnyView(PaginationDotsStory.content(state: PaginationDotsStory.defaultState, theme: theme))
         }
+        register(CarouselStory.self) { theme in
+            AnyView(CarouselStory.content(state: CarouselStory.defaultState, theme: theme))
+        }
         register(TooltipStory.self) { theme in
             AnyView(TooltipStory.content(state: TooltipStory.defaultState, theme: theme))
         }

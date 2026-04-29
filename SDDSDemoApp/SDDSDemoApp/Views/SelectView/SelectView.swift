@@ -155,7 +155,7 @@ struct SelectView: View {
             isDropdownPresented: $viewModel.isDropdownPresented,
             options: viewModel.displayedOptions,
             selectionMode: viewModel.mode == .single ? .single : .multiple,
-            isLoading: false,
+            isLoading: viewModel.isLoading,
             shouldShowEmptyState: viewModel.showEmptyState,
             placement: viewModel.placement,
             triggerAlignment: viewModel.alignment,
@@ -176,7 +176,7 @@ struct SelectView: View {
                     if viewModel.isLoading {
                         HStack {
                             Spacer()
-                            SDDSSpinner(isAnimating: true, appearance: viewModel.theme.spinnerVariations.first?.appearance)
+                            SDDSSpinner(isAnimating: true, appearance: loaderSpinnerAppearance)
                             Text("Загрузка")
                                 .typography(headerFooterTypography)
                                 .foregroundStyle(.secondary)
@@ -193,7 +193,16 @@ struct SelectView: View {
                 }
             },
             loaderContent: {
-                EmptyView()
+                HStack {
+                    Spacer()
+                    SDDSSpinner(isAnimating: true, appearance: loaderSpinnerAppearance)
+                    Text("Загрузка")
+                        .typography(headerFooterTypography)
+                        .foregroundStyle(.secondary)
+                        .padding(.leading, 8)
+                    Spacer()
+                }
+                .frame(height: 48)
             },
             emptyStateContent: {
                 VStack(spacing: 4) {
@@ -345,6 +354,49 @@ struct SelectView: View {
     private var headerFooterTypography: TypographyToken {
         let cellAppearance = viewModel.appearance.selectItemAppearance.cellAppearance
         return cellAppearance.titleTypography.typography(with: cellAppearance.size) ?? .undefined
+    }
+    
+    private var loaderSpinnerAppearance: SpinnerAppearance {
+        if let appearance = loaderVisibleSpinnerAppearance {
+            return appearance
+        }
+        
+        return SpinnerAppearance(
+            startColor: ColorToken(
+                id: "selectLoaderStartFallback",
+                darkColor: .white,
+                lightColor: .black
+            ),
+            endColor: ColorToken(
+                id: "selectLoaderEndFallback",
+                darkColor: .gray,
+                lightColor: .gray
+            ),
+            size: DefaultSpinnerSize(size: 16)
+        )
+    }
+    
+    private var loaderVisibleSpinnerAppearance: SpinnerAppearance? {
+        let appearances: [SpinnerAppearance] = viewModel.theme.spinnerVariations.flatMap { variation in
+            if variation.styles.isEmpty {
+                return [variation.appearance]
+            }
+            return variation.styles.map(\.appearance)
+        }
+        
+        guard var visible = appearances.first(
+            where: { $0.startColor != .clearColor || $0.endColor != .clearColor }
+        ) else {
+            return nil
+        }
+        
+        let resolvedSize = min(visible.size.size, 16)
+        visible.size = DefaultSpinnerSize(
+            size: resolvedSize,
+            padding: visible.size.padding,
+            angle: visible.size.angle
+        )
+        return visible
     }
 }
 

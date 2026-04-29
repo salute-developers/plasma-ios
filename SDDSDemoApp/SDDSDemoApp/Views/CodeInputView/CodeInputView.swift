@@ -25,6 +25,7 @@ struct CodeInputView: View {
                     isHidden: viewModel.isHidden,
                     appearance: viewModel.appearance
                 )
+                .id(viewModel.selectedGroupType)
                 .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
                 .popover(
                     isPresented: $viewModel.successToastDisplayed,

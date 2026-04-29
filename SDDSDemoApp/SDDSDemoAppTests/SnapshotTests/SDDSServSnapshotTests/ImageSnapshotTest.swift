@@ -24,4 +24,28 @@ final class ImageSnapshotTest: SDDSServThemeTestCase {
         let appearance = Image.ratio_1_2.appearance
         try await runSnapshotTest(view: ImageRatio1x2Photo(appearance: appearance))
     }
+    
+    @MainActor
+    func testImageRatio3x4() async throws {
+        let appearance = Image.ratio_3_4.appearance
+        try await runSnapshotTest(view: ImageRatio3x4Photo(appearance: appearance))
+    }
+    
+    @MainActor
+    func testImageRatio4x3() async throws {
+        let appearance = Image.ratio_4_3.appearance
+        try await runSnapshotTest(view: ImageRatio4x3Photo(appearance: appearance))
+    }
+    
+    @MainActor
+    func testImageRatio9x16() async throws {
+        let appearance = Image.ratio_9_16.appearance
+        try await runSnapshotTest(view: ImageRatio9x16Photo(appearance: appearance))
+    }
+    
+    @MainActor
+    func testImageRatio2x1() async throws {
+        let appearance = Image.ratio_2_1.appearance
+        try await runSnapshotTest(view: ImageRatio2x1Photo(appearance: appearance))
+    }
 }
