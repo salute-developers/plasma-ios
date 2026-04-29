@@ -71,7 +71,6 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
     @State private var contentHeight: CGFloat = 0
     @State private var loaderHeight: CGFloat = 0
     @State private var dropdownScrollOffset: CGFloat = 0
-    @State private var isTriggerTapLocked: Bool = false
     
     private let maxDropdownHeight: CGFloat = 400
     
@@ -406,21 +405,24 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 accessibility: buttonData.accessibility,
                 isSelected: buttonData.isSelected
             ) {
-                toggleDropdownIfAllowed()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .overlay {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        toggleDropdownIfAllowed()
+                    }
+                    .allowsHitTesting(!(buttonData.isDisabled || disabled || readOnly))
+            }
             .contentShape(Rectangle())
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
     
     private func toggleDropdownIfAllowed() {
         guard !disabled, !readOnly else { return }
-        guard !isTriggerTapLocked else { return }
-        isTriggerTapLocked = true
         isDropdownPresented.toggle()
-        DispatchQueue.main.async {
-            isTriggerTapLocked = false
-        }
     }
     
     private func handleTextFieldTriggerTap() {
