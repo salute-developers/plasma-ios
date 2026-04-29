@@ -37,7 +37,7 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
                 uiViewController.present(containerViewController, animated: true)
             }
         } else {
-            if uiViewController.presentedViewController != nil {
+            if uiViewController.presentedViewController is BottomSheetContainerViewController {
                 uiViewController.dismiss(animated: true)
             }
         }

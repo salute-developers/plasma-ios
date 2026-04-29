@@ -154,12 +154,18 @@ struct BottomSheetView: View {
     }
     
     private var handlePositionPicker: some View {
-        Picker("Handle Placement", selection: Binding(
-            get: { viewModel.appearance.handlePlacement },
-            set: { viewModel.updateHandlePlacement($0) }
-        )) {
-            ForEach(BottomSheetHandlePlacement.allCases, id: \.self) { placement in
-                Text(placement.rawValue.capitalized).tag(placement)
+        HStack {
+            Text("Handle Placement")
+            Spacer()
+                .frame(maxWidth: .infinity)
+            Menu {
+                ForEach(BottomSheetHandlePlacement.allCases, id: \.self) { placement in
+                    Button(placement.rawValue.capitalized) {
+                        viewModel.updateHandlePlacement(placement)
+                    }
+                }
+            } label: {
+                Text(viewModel.appearance.handlePlacement.rawValue.capitalized)
             }
         }
     }
