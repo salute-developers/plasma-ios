@@ -9,15 +9,15 @@ import SwiftUI
     - size: Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
     - shapeStyle: Стиль формы кнопки (например, закругленная или овальная), определяемый `ButtonShapeStyle`.
     - titleTypography: Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
-    - titleColor: Цвет текста заголовка кнопки для различных состояний, определяемый `StatefulColor`.
+    - titleColor: Стиль заливки текста заголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
     - subtitleTypography: Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
-    - subtitleColor: Цвет текста подзаголовка кнопки для различных состояний, определяемый `StatefulColor`.
-    - iconColor: Цвет иконки кнопки для различных состояний, определяемый `StatefulColor`.
-    - spinnerColor: Цвет спиннера загрузки для различных состояний, определяемый `StatefulColor`.
-    - backgroundColor: Цвет фона кнопки для различных состояний, определяемый `StatefulColor`.
+    - subtitleColor: Стиль заливки текста подзаголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
+    - iconColor: Стиль заливки иконки кнопки для различных состояний, определяемый `StatefulFillStyle`.
+    - spinnerColor: Стиль заливки спиннера загрузки для различных состояний, определяемый `StatefulFillStyle`.
+    - backgroundColor: Стиль заливки фона кнопки для различных состояний, определяемый `StatefulFillStyle`.
     - disabledAlpha: Прозрачность кнопки, когда она отключена.
     - loadingAlpha: Прозрачность кнопки, когда она находится в состоянии загрузки.
- 
+
  - Methods:
     - init: Инициализирует стили кнопки с заданными параметрами.
  */
@@ -26,65 +26,60 @@ public struct ButtonAppearance {
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
      */
     public var size: ButtonSizeConfiguration
-    
+
     /**
      Стиль формы кнопки (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
      */
     public var shapeStyle: ComponentShapeStyle
-    
+
     /**
      Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
      */
     public var titleTypography: TypographyConfiguration
-    
+
     /**
-     Цвет текста заголовка кнопки для различных состояний, определяемый `StatefulColor`.
+     Стиль заливки текста заголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var titleColor: ButtonColor
-    
+    public var titleColor: StatefulFillStyle
+
     /**
      Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
      */
     public var subtitleTypography: TypographyConfiguration
-    
+
     /**
-     Цвет текста подзаголовка кнопки для различных состояний, определяемый `StatefulColor`.
+     Стиль заливки текста подзаголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var subtitleColor: ButtonColor
-    
+    public var subtitleColor: StatefulFillStyle
+
     /**
-     Цвет иконки кнопки для различных состояний, определяемый `StatefulColor`.
+     Стиль заливки иконки кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var iconColor: ButtonColor
-    
+    public var iconColor: StatefulFillStyle
+
     /**
-     Цвет спиннера загрузки для различных состояний, определяемый `StatefulColor`.
+     Стиль заливки спиннера загрузки для различных состояний, определяемый `StatefulFillStyle`.
      */
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var spinnerColor: ButtonColor
-    
+    public var spinnerColor: StatefulFillStyle
+
     /**
-     Цвет фона кнопки для различных состояний, определяемый `StatefulColor`.
+     Стиль заливки фона кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor
-    
+    public var backgroundColor: StatefulFillStyle
+
     /**
      Прозрачность кнопки, когда она отключена.
      */
     public var disabledAlpha: CGFloat
-    
+
     /**
      Прозрачность кнопки, когда она находится в состоянии загрузки.
      */
     public var loadingAlpha: CGFloat
-    
+
     /**
      Инициализатор для создания стилистической конфигурации кнопки.
-     
+
      - Parameters:
         - size: Конфигурация размеров кнопки.
         - shapeStyle: Стиль формы кнопки.
@@ -102,12 +97,12 @@ public struct ButtonAppearance {
         size: ButtonSizeConfiguration = DefaultButtonSize(),
         shapeStyle: ComponentShapeStyle = .cornered,
         titleTypography: TypographyConfiguration = .default,
-        titleColor: ButtonColor = ButtonColor(),
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         subtitleTypography: TypographyConfiguration = .default,
-        subtitleColor: ButtonColor = ButtonColor(),
-        iconColor: ButtonColor = ButtonColor(),
-        spinnerColor: ButtonColor = ButtonColor(),
-        backgroundColor: ButtonColor = ButtonColor(),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        iconColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        spinnerColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disabledAlpha: CGFloat = 0,
         loadingAlpha: CGFloat = 0
     ) {
@@ -124,7 +119,63 @@ public struct ButtonAppearance {
         self.loadingAlpha = loadingAlpha
     }
 
-    
+    @available(*, deprecated, message: "Use init with StatefulFillStyle parameters.")
+    public init(
+        size: ButtonSizeConfiguration = DefaultButtonSize(),
+        shapeStyle: ComponentShapeStyle = .cornered,
+        titleTypography: TypographyConfiguration = .default,
+        titleColor: ButtonColor,
+        subtitleTypography: TypographyConfiguration = .default,
+        subtitleColor: ButtonColor,
+        iconColor: ButtonColor,
+        spinnerColor: ButtonColor,
+        backgroundColor: ButtonColor,
+        disabledAlpha: CGFloat = 0,
+        loadingAlpha: CGFloat = 0
+    ) {
+        self.init(
+            size: size,
+            shapeStyle: shapeStyle,
+            titleTypography: titleTypography,
+            titleColor: titleColor.statefulColor.statefulFillStyle,
+            subtitleTypography: subtitleTypography,
+            subtitleColor: subtitleColor.statefulColor.statefulFillStyle,
+            iconColor: iconColor.statefulColor.statefulFillStyle,
+            spinnerColor: spinnerColor.statefulColor.statefulFillStyle,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle,
+            disabledAlpha: disabledAlpha,
+            loadingAlpha: loadingAlpha
+        )
+    }
+
+    @available(*, deprecated, message: "Use init with StatefulFillStyle parameters.")
+    public init(
+        size: ButtonSizeConfiguration = DefaultButtonSize(),
+        shapeStyle: ComponentShapeStyle = .cornered,
+        titleTypography: TypographyConfiguration = .default,
+        titleColor: StatefulColor,
+        subtitleTypography: TypographyConfiguration = .default,
+        subtitleColor: StatefulColor,
+        iconColor: StatefulColor,
+        spinnerColor: StatefulColor,
+        backgroundColor: StatefulColor,
+        disabledAlpha: CGFloat = 0,
+        loadingAlpha: CGFloat = 0
+    ) {
+        self.init(
+            size: size,
+            shapeStyle: shapeStyle,
+            titleTypography: titleTypography,
+            titleColor: titleColor.statefulFillStyle,
+            subtitleTypography: subtitleTypography,
+            subtitleColor: subtitleColor.statefulFillStyle,
+            iconColor: iconColor.statefulFillStyle,
+            spinnerColor: spinnerColor.statefulFillStyle,
+            backgroundColor: backgroundColor.statefulFillStyle,
+            disabledAlpha: disabledAlpha,
+            loadingAlpha: loadingAlpha
+        )
+    }
 }
 
 extension ButtonAppearance: EnvironmentKey {

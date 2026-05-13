@@ -763,57 +763,57 @@ private extension BadgeAppearance {
     
     var `default`: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textDefaultPrimary
-        appearance.labelColor = ColorToken.textDefaultPrimary
-        appearance.startContentColor = ColorToken.textDefaultPrimary
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
     
     var accent: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textDefaultAccent
-        appearance.labelColor = ColorToken.textDefaultAccent
-        appearance.startContentColor = ColorToken.textDefaultAccent
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [])
         return appearance
     }
     
     var dark: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textOnDarkPrimary
-        appearance.labelColor = ColorToken.textOnDarkPrimary
-        appearance.startContentColor = ColorToken.textOnDarkPrimary
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var light: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textOnDarkPrimary
-        appearance.labelColor = ColorToken.textOnDarkPrimary
-        appearance.startContentColor = ColorToken.textOnDarkPrimary
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var negative: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textDefaultNegative
-        appearance.labelColor = ColorToken.textDefaultNegative
-        appearance.startContentColor = ColorToken.textDefaultNegative
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textDefaultPositive
-        appearance.labelColor = ColorToken.textDefaultPositive
-        appearance.startContentColor = ColorToken.textDefaultPositive
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
         return appearance
     }
     
     var warning: BadgeAppearance {
         var appearance = self
-        appearance.endContentColor = ColorToken.textDefaultWarning
-        appearance.labelColor = ColorToken.textDefaultWarning
-        appearance.startContentColor = ColorToken.textDefaultWarning
+        appearance.endContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [])
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [])
         return appearance
     }
     
