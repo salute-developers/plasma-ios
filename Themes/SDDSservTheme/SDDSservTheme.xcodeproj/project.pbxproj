@@ -162,9 +162,9 @@
 		813BC8752EB29BD500E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
 		8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarInternalPage; sourceTree = "<group>"; };
 		8183C9302EB2A73300610A9A /* NavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarMainPage; sourceTree = "<group>"; };
+		818873732FA251B0004AA1A0 /* Carousel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Carousel; sourceTree = "<group>"; };
 		81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsHorizontal; sourceTree = "<group>"; };
 		81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PaginationDotsVertical; sourceTree = "<group>"; };
-		A1B2C3D52F901002005A0001 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		81D59FB22ED8801A00156885 /* DrawerCloseInner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseInner; sourceTree = "<group>"; };
 		81D59FB72ED8801A00156885 /* DrawerCloseNone */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseNone; sourceTree = "<group>"; };
 		81D59FBC2ED8801A00156885 /* DrawerCloseOuter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerCloseOuter; sourceTree = "<group>"; };
@@ -176,6 +176,7 @@
 		81D59FDA2ED8801A00156885 /* TabsHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsHeader; sourceTree = "<group>"; };
 		81F0A1012F10000100AAA111 /* AutocompleteNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteNormal; sourceTree = "<group>"; };
 		81F0A1022F10000100AAA111 /* AutocompleteTight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteTight; sourceTree = "<group>"; };
+		A1B2C3D52F901002005A0001 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +198,7 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				818873732FA251B0004AA1A0 /* Carousel */,
 				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
 				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
 				A1B2C3D52F901002005A0001 /* Image */,
@@ -514,9 +516,9 @@
 				813BC8752EB29BD500E4E505 /* Tooltip */,
 				8183C92B2EB2A73300610A9A /* NavigationBarInternalPage */,
 				8183C9302EB2A73300610A9A /* NavigationBarMainPage */,
+				818873732FA251B0004AA1A0 /* Carousel */,
 				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
 				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
-				A1B2C3D52F901002005A0001 /* Image */,
 				81D59FB22ED8801A00156885 /* DrawerCloseInner */,
 				81D59FB72ED8801A00156885 /* DrawerCloseNone */,
 				81D59FBC2ED8801A00156885 /* DrawerCloseOuter */,
@@ -528,6 +530,7 @@
 				81D59FDA2ED8801A00156885 /* TabsHeader */,
 				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
 				81F0A1022F10000100AAA111 /* AutocompleteTight */,
+				A1B2C3D52F901002005A0001 /* Image */,
 			);
 			name = SDDSServTheme;
 			productName = SDDSServTheme;
