@@ -747,43 +747,43 @@ private extension BadgeAppearance {
     
     var `default`: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textDefaultPrimary
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
     
     var accent: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textDefaultAccentMain
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccentMain), values: [])
         return appearance
     }
     
     var dark: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textOnDarkPrimary
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var light: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textOnDarkPrimary
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var negative: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textDefaultNegative
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textDefaultPositive
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
         return appearance
     }
     
     var warning: BadgeAppearance {
         var appearance = self
-        appearance.startContentColor = ColorToken.textDefaultWarning
+        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [])
         return appearance
     }
     

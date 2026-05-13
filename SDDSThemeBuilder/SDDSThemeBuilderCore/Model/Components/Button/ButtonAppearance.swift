@@ -25,11 +25,11 @@ struct ButtonAppearance: CodeGenerationAppearance {
         
         self.loadingAlpha = CGFloatContextBuilder(props.loadingAlpha?.value, nullify: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
-        self.spinnerColor = ButtonColorContextBuilder(statefulColor: props.spinnerColor).context
-        self.iconColor = ButtonColorContextBuilder(statefulColor: props.iconColor).context
-        self.titleColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
-        self.subtitleColor = ButtonColorContextBuilder(statefulColor: props.valueColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor, hasDefault: true).context
+        self.spinnerColor = StatefulFillStyleContextBuilder(props.spinnerColor, hasDefault: true).context
+        self.iconColor = StatefulFillStyleContextBuilder(props.iconColor, hasDefault: true).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor, hasDefault: true).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.valueColor, hasDefault: true).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
     }
