@@ -274,6 +274,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         PlasmaB2CTheme.Carousel.all
     }
 
+    public var formItemVariations: [Variation<FormItemAppearance>] {
+        []
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         PlasmaB2CTheme.Image.all
     }

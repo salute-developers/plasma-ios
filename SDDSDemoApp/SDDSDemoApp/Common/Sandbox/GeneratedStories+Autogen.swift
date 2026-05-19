@@ -106,6 +106,10 @@ enum GeneratedStoriesAutogen {
         SandboxStoryRenderRegistry.shared.register(id: EditableStory.id) { theme in
             AnyView(EditableStory.content(state: EditableStory.defaultState, theme: theme))
         }
+        StoryRegistry.shared.register(FormItemStory.self)
+        SandboxStoryRenderRegistry.shared.register(id: FormItemStory.id) { theme in
+            AnyView(FormItemStory.content(state: FormItemStory.defaultState, theme: theme))
+        }
         StoryRegistry.shared.register(IconStory.self)
         SandboxStoryRenderRegistry.shared.register(id: IconStory.id) { theme in
             AnyView(IconStory.content(state: IconStory.defaultState, theme: theme))
