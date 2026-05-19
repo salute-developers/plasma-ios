@@ -136,6 +136,8 @@ public enum SandboxThemeVariationResolver {
             return entries(all)
         case "carousel.story":
             return entries(theme.carouselVariations)
+        case "formItem.story":
+            return entries(theme.formItemVariations)
         case "popover.story":
             return entries(theme.popoverVariations)
         case "tooltip.story":

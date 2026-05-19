@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38FF89262BDE6B1FA64E01AA /* SDDSFormVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986868E5782497509EFF0E71 /* SDDSFormVertical.swift */; };
+		3A9EE2108AC5F841204D8B17 /* FormItemEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E9BAF72CC5307D9EAD0CB0 /* FormItemEnums.swift */; };
 		690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F72D3EB92C00CED628 /* SDDSSegment.swift */; };
 		690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */; };
 		690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690D464F2DA6B94F00693950 /* SelectionControlType.swift */; };
@@ -416,6 +418,13 @@
 		81FD6D4E2D6E2609002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */; };
 		81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */; };
 		81FD6D5B2D6E285C002A6E51 /* SDDSIndicatorPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */; };
+		89CD46F74562E90973846970 /* FormItemIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C829BED24195D55E9DD47A /* FormItemIndicatorOverlay.swift */; };
+		90A25F68206BFC9238891ADB /* FormItemCaptionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492F148C244030D9C43E1F2 /* FormItemCaptionText.swift */; };
+		ABF764348682EAD8168446BD /* FormItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FD248908A0F3DB702FE4E /* FormItemSizeConfiguration.swift */; };
+		AEA3D90C6F149A03C6C97C89 /* SDDSFormHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303585539149161168244776 /* SDDSFormHorizontal.swift */; };
+		C7D2E0229F2B263683441E82 /* FormItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC92EFC129B0F1F6E8529 /* FormItemLayout.swift */; };
+		C84A94024F25559E3235BEE9 /* SDDSFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A6C40CF5C0F871F546F344 /* SDDSFormItem.swift */; };
+		F6D3F2CBD0A3AB9AC4E87CE9 /* FormItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3F69252B01E376F143F55 /* FormItemAppearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -491,6 +500,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05A6C40CF5C0F871F546F344 /* SDDSFormItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDDSFormItem.swift; path = SDDSFormItem/SDDSFormItem.swift; sourceTree = "<group>"; };
+		303585539149161168244776 /* SDDSFormHorizontal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDDSFormHorizontal.swift; path = SDDSFormItem/SDDSFormHorizontal.swift; sourceTree = "<group>"; };
+		59C829BED24195D55E9DD47A /* FormItemIndicatorOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemIndicatorOverlay.swift; path = SDDSFormItem/FormItemIndicatorOverlay.swift; sourceTree = "<group>"; };
 		690780F72D3EB92C00CED628 /* SDDSSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegment.swift; sourceTree = "<group>"; };
 		690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemData.swift; sourceTree = "<group>"; };
 		690D464F2DA6B94F00693950 /* SelectionControlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlType.swift; sourceTree = "<group>"; };
@@ -1345,6 +1357,12 @@
 		81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
 		81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSizeConfiguration.swift; sourceTree = "<group>"; };
 		81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIndicatorPreview.swift; sourceTree = "<group>"; };
+		8492F148C244030D9C43E1F2 /* FormItemCaptionText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormItemCaptionText.swift; sourceTree = "<group>"; };
+		986868E5782497509EFF0E71 /* SDDSFormVertical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDDSFormVertical.swift; path = SDDSFormItem/SDDSFormVertical.swift; sourceTree = "<group>"; };
+		B5E9BAF72CC5307D9EAD0CB0 /* FormItemEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemEnums.swift; path = SDDSFormItem/FormItemAppearance/FormItemEnums.swift; sourceTree = "<group>"; };
+		D9E3F69252B01E376F143F55 /* FormItemAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemAppearance.swift; path = SDDSFormItem/FormItemAppearance/FormItemAppearance.swift; sourceTree = "<group>"; };
+		DA4DC92EFC129B0F1F6E8529 /* FormItemLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemLayout.swift; path = SDDSFormItem/FormItemLayout.swift; sourceTree = "<group>"; };
+		E26FD248908A0F3DB702FE4E /* FormItemSizeConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemSizeConfiguration.swift; path = SDDSFormItem/FormItemAppearance/FormItemSizeConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1377,6 +1395,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9EAE3351E19C4E67488E63 /* FormItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3F69252B01E376F143F55 /* FormItemAppearance.swift */,
+				E26FD248908A0F3DB702FE4E /* FormItemSizeConfiguration.swift */,
+				B5E9BAF72CC5307D9EAD0CB0 /* FormItemEnums.swift */,
+			);
+			name = FormItemAppearance;
+			sourceTree = "<group>";
+		};
 		690780F62D3EB92300CED628 /* SDDSSegment */ = {
 			isa = PBXGroup;
 			children = (
@@ -2566,6 +2594,7 @@
 				818C03C22C45126B002C6D0A /* SDDSCheckbox */,
 				818C03B02C418725002C6D0A /* SDDSSwitch */,
 				814185C82C3424EA00D8E524 /* SDDSButton */,
+				AC509710BFF9C4821FD93F53 /* SDDSFormItem */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -4477,6 +4506,20 @@
 			path = SDDSIndicator;
 			sourceTree = "<group>";
 		};
+		AC509710BFF9C4821FD93F53 /* SDDSFormItem */ = {
+			isa = PBXGroup;
+			children = (
+				4D9EAE3351E19C4E67488E63 /* FormItemAppearance */,
+				05A6C40CF5C0F871F546F344 /* SDDSFormItem.swift */,
+				986868E5782497509EFF0E71 /* SDDSFormVertical.swift */,
+				303585539149161168244776 /* SDDSFormHorizontal.swift */,
+				DA4DC92EFC129B0F1F6E8529 /* FormItemLayout.swift */,
+				59C829BED24195D55E9DD47A /* FormItemIndicatorOverlay.swift */,
+				8492F148C244030D9C43E1F2 /* FormItemCaptionText.swift */,
+			);
+			name = SDDSFormItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -4554,8 +4597,6 @@
 			dependencies = (
 			);
 			name = SDDSComponents;
-			packageProductDependencies = (
-			);
 			productName = SDDSComponents;
 			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
 			productType = "com.apple.product-type.framework";
@@ -4591,8 +4632,6 @@
 				Base,
 			);
 			mainGroup = 81D2B1832C32B39B00CAA7FD;
-			packageReferences = (
-			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -5107,6 +5146,15 @@
 				81685C252CFF881300278446 /* SwitchAppearance.swift in Sources */,
 				812DB7612D57B49F00D3F4A3 /* ChipGroupSizeConfiguration.swift in Sources */,
 				818C03B52C418C50002C6D0A /* TypographyConfiguration.swift in Sources */,
+				C84A94024F25559E3235BEE9 /* SDDSFormItem.swift in Sources */,
+				38FF89262BDE6B1FA64E01AA /* SDDSFormVertical.swift in Sources */,
+				AEA3D90C6F149A03C6C97C89 /* SDDSFormHorizontal.swift in Sources */,
+				C7D2E0229F2B263683441E82 /* FormItemLayout.swift in Sources */,
+				89CD46F74562E90973846970 /* FormItemIndicatorOverlay.swift in Sources */,
+				F6D3F2CBD0A3AB9AC4E87CE9 /* FormItemAppearance.swift in Sources */,
+				ABF764348682EAD8168446BD /* FormItemSizeConfiguration.swift in Sources */,
+				3A9EE2108AC5F841204D8B17 /* FormItemEnums.swift in Sources */,
+				90A25F68206BFC9238891ADB /* FormItemCaptionText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

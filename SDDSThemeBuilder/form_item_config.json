@@ -1,0 +1,1664 @@
+{
+ "view": {
+ "default": {
+ "props": {
+ "captionColor": {
+ "type": "color",
+ "default": "text.default.secondary"
+ }
+ },
+ "binding": [
+ {
+ "name": "view",
+ "value": "default"
+ }
+ ]
+ },
+ "positive": {
+ "props": {
+ "captionColor": {
+ "type": "color",
+ "default": "text.default.positive"
+ }
+ },
+ "binding": [
+ {
+ "name": "view",
+ "value": "positive"
+ }
+ ]
+ },
+ "negative": {
+ "props": {
+ "captionColor": {
+ "type": "color",
+ "default": "text.default.negative"
+ }
+ },
+ "binding": [
+ {
+ "name": "view",
+ "value": "negative"
+ }
+ ]
+ },
+ "warning": {
+ "props": {
+ "captionColor": {
+ "type": "color",
+ "default": "text.default.warning"
+ }
+ },
+ "binding": [
+ {
+ "name": "view",
+ "value": "warning"
+ }
+ ]
+ }
+ },
+ "props": {
+ "disableAlpha": {
+ "type": "float",
+ "value": 0.4
+ },
+ "titleColor": {
+ "type": "color",
+ "default": "text.default.primary"
+ },
+ "optionalColor": {
+ "type": "color",
+ "default": "text.default.tertiary"
+ },
+ "titleCaptionColor": {
+ "type": "color",
+ "default": "text.default.secondary"
+ },
+ "counterColor": {
+ "type": "color",
+ "default": "text.default.secondary"
+ },
+ "hintColor": {
+ "type": "color",
+ "default": "text.default.secondary"
+ },
+ "titleCaptionStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "counterStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "captionStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "captionSpacing": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "captionPadding": {
+ "type": "dimension",
+ "value": 5.0
+ },
+ "counterPadding": {
+ "type": "dimension",
+ "value": 5.0
+ },
+ "titleBlockSpacing": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ },
+ "bindings": [
+ {
+ "name": "size",
+ "type": "enum",
+ "values": [
+ "xs",
+ "s",
+ "m",
+ "l"
+ ],
+ "defaultValue": "xs"
+ },
+ {
+ "name": "required-placement",
+ "type": "enum",
+ "values": [
+ "none",
+ "start",
+ "end"
+ ],
+ "defaultValue": "none"
+ },
+ {
+ "name": "title-placement",
+ "type": "enum",
+ "values": [
+ "none",
+ "top",
+ "start"
+ ],
+ "defaultValue": "none"
+ },
+ {
+ "name": "view",
+ "type": "view",
+ "values": [
+ "default",
+ "positive",
+ "negative",
+ "warning"
+ ],
+ "defaultValue": "default"
+ }
+ ],
+ "variations": [
+ {
+ "id": "xs",
+ "parent": null,
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ }
+ ],
+ "props": {
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 8.0
+ },
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-none"
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ }
+ }
+ },
+ {
+ "id": "xs.required-start",
+ "parent": "xs",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-start"
+ }
+ }
+ },
+ {
+ "id": "xs.required-end",
+ "parent": "xs",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ }
+ }
+ },
+ {
+ "id": "xs.title-top",
+ "parent": "xs",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-top"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 6.0
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 6.0
+ }
+ }
+ },
+ {
+ "id": "xs.title-top.required-start",
+ "parent": "xs.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "xs.title-top.required-end",
+ "parent": "xs.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 2.0
+ }
+ }
+ },
+ {
+ "id": "xs.title-start",
+ "parent": "xs",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-start"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 6.0
+ },
+ "titleBlockWidth": {
+ "type": "dimension",
+ "value": 102.0
+ }
+ }
+ },
+ {
+ "id": "xs.title-start.required-start",
+ "parent": "xs.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "xs.title-start.required-end",
+ "parent": "xs.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "xs"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 2.0
+ }
+ }
+ },
+ {
+ "id": "s",
+ "parent": null,
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ }
+ ],
+ "props": {
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 12.0
+ },
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-none"
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.24"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 24.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 24.0
+ }
+ }
+ },
+ {
+ "id": "s.required-start",
+ "parent": "s",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-start"
+ }
+ }
+ },
+ {
+ "id": "s.required-end",
+ "parent": "s",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ }
+ }
+ },
+ {
+ "id": "s.title-top",
+ "parent": "s",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-top"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.s.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 8.0
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 9.0
+ }
+ }
+ },
+ {
+ "id": "s.title-top.required-start",
+ "parent": "s.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "s.title-top.required-end",
+ "parent": "s.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "s.title-start",
+ "parent": "s",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-start"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.s.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 12.0
+ },
+ "titleBlockWidth": {
+ "type": "dimension",
+ "value": 116.0
+ }
+ }
+ },
+ {
+ "id": "s.title-start.required-start",
+ "parent": "s.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "s.title-start.required-end",
+ "parent": "s.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "s"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "m",
+ "parent": null,
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ }
+ ],
+ "props": {
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-none"
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.24"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 24.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 24.0
+ }
+ }
+ },
+ {
+ "id": "m.required-start",
+ "parent": "m",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-start"
+ }
+ }
+ },
+ {
+ "id": "m.required-end",
+ "parent": "m",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ }
+ }
+ },
+ {
+ "id": "m.title-top",
+ "parent": "m",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-top"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.m.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 10.0
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 11.0
+ }
+ }
+ },
+ {
+ "id": "m.title-top.required-start",
+ "parent": "m.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "m.title-top.required-end",
+ "parent": "m.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "m.title-start",
+ "parent": "m",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-start"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.m.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 14.0
+ },
+ "titleBlockWidth": {
+ "type": "dimension",
+ "value": 132.0
+ }
+ }
+ },
+ {
+ "id": "m.title-start.required-start",
+ "parent": "m.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "m.title-start.required-end",
+ "parent": "m.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "m"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "l",
+ "parent": null,
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ }
+ ],
+ "props": {
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-none"
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.24"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 24.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 24.0
+ }
+ }
+ },
+ {
+ "id": "l.required-start",
+ "parent": "l",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-start"
+ }
+ }
+ },
+ {
+ "id": "l.required-end",
+ "parent": "l",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.m.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "inner"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ }
+ }
+ },
+ {
+ "id": "l.title-top",
+ "parent": "l",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-top"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.l.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 12.0
+ },
+ "titleCaptionPadding": {
+ "type": "dimension",
+ "value": 14.0
+ }
+ }
+ },
+ {
+ "id": "l.title-top.required-start",
+ "parent": "l.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "l.title-top.required-end",
+ "parent": "l.title-top",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "top"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "l.title-start",
+ "parent": "l",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "none"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "titlePlacement": {
+ "type": "value",
+ "value": "title-start"
+ },
+ "titleStyle": {
+ "type": "typography",
+ "value": "body.l.normal"
+ },
+ "optionalStyle": {
+ "type": "typography",
+ "value": "body.xs.normal"
+ },
+ "hintIcon": {
+ "type": "icon",
+ "value": "info.circle.outline.16"
+ },
+ "hintHeight": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "hintWidth": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockPadding": {
+ "type": "dimension",
+ "value": 16.0
+ },
+ "titleBlockWidth": {
+ "type": "dimension",
+ "value": 142.0
+ }
+ }
+ },
+ {
+ "id": "l.title-start.required-start",
+ "parent": "l.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "start"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "center-start"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ },
+ {
+ "id": "l.title-start.required-end",
+ "parent": "l.title-start",
+ "binding": [
+ {
+ "name": "size",
+ "value": "l"
+ },
+ {
+ "name": "required-placement",
+ "value": "end"
+ },
+ {
+ "name": "title-placement",
+ "value": "start"
+ }
+ ],
+ "props": {
+ "formItemType": {
+ "type": "value",
+ "value": "required"
+ },
+ "indicatorStyle": {
+ "type": "component_style",
+ "value": "indicator.s.negative"
+ },
+ "indicatorAlignmentMode": {
+ "type": "value",
+ "value": "outer"
+ },
+ "indicatorAlignment": {
+ "type": "value",
+ "value": "top-end"
+ },
+ "indicatorOffsetX": {
+ "type": "dimension",
+ "value": 4.0
+ },
+ "indicatorOffsetY": {
+ "type": "dimension",
+ "value": 4.0
+ }
+ }
+ }
+ ]
+}
