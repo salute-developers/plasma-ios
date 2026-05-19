@@ -212,6 +212,11 @@ public extension EnvironmentValues {
         get { self[CarouselAppearance.self] }
         set { self[CarouselAppearance.self] = newValue }
     }
+
+    var formItemAppearance: FormItemAppearance {
+        get { self[FormItemAppearance.self] }
+        set { self[FormItemAppearance.self] = newValue }
+    }
 }
 
 // MARK: - Utility

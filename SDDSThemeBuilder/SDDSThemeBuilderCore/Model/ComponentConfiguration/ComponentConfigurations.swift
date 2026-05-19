@@ -62,3 +62,4 @@ typealias SelectConfiguration = ComponentConfiguration<SelectProps>
 typealias PaginationDotsConfiguration = ComponentConfiguration<PaginationDotsProps>
 typealias CarouselConfiguration = ComponentConfiguration<CarouselProps>
 typealias ImageConfiguration = ComponentConfiguration<ImageProps>
+typealias FormItemConfiguration = ComponentConfiguration<FormItemProps>

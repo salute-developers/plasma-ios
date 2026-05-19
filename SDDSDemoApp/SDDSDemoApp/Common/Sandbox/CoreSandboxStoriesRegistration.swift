@@ -133,6 +133,9 @@ enum CoreSandboxStoriesRegistration {
         register(CarouselStory.self) { theme in
             AnyView(CarouselStory.content(state: CarouselStory.defaultState, theme: theme))
         }
+        register(FormItemStory.self) { theme in
+            AnyView(FormItemStory.content(state: FormItemStory.defaultState, theme: theme))
+        }
         register(TooltipStory.self) { theme in
             AnyView(TooltipStory.content(state: TooltipStory.defaultState, theme: theme))
         }

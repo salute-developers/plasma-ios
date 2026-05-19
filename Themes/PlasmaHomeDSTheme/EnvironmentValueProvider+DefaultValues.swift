@@ -14,6 +14,7 @@ extension EnvironmentValueProvider {
         self.set(value: CheckboxGroup.m.appearance, forKey: CheckboxGroupAppearance.self)
         self.set(value: Chip.m.default.appearance, forKey: ChipAppearance.self)
         self.set(value: Indicator.m.default.appearance, forKey: IndicatorAppearance.self)
+        self.set(value: FormItem.default.appearance, forKey: FormItemAppearance.self)
         self.set(value: Radiobox.m.appearance, forKey: RadioboxAppearance.self)
         self.set(value: RadioboxGroup.m.appearance, forKey: RadioboxGroupAppearance.self)
         self.set(value: Image.ratio_1_1.appearance, forKey: ImageAppearance.self)

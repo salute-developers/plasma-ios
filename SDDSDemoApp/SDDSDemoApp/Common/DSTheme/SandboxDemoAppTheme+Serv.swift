@@ -274,6 +274,10 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         SDDSServTheme.Carousel.all
     }
 
+    public var formItemVariations: [Variation<FormItemAppearance>] {
+        SDDSServTheme.FormItem.all
+    }
+
     public var imageVariations: [Variation<ImageAppearance>] {
         SDDSServTheme.Image.all
     }

@@ -360,6 +360,14 @@
 		81DE8FB12E7BDD53005D24FE /* ButtonGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE8FAB2E7BDD53005D24FE /* ButtonGroupAppearance.swift */; };
 		81DE8FB22E7BDD53005D24FE /* SDDSButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */; };
 		81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */; };
+		81E32B162FBF37DD000AEA10 /* FormItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */; };
+		81E32B172FBF37DD000AEA10 /* SDDSFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */; };
+		81E32B182FBF37DD000AEA10 /* SDDSFormHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */; };
+		81E32B192FBF37DD000AEA10 /* FormItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */; };
+		81E32B1A2FBF37DD000AEA10 /* SDDSFormVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */; };
+		81E32B1B2FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */; };
+		81E32B1C2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */; };
+		81E32B1D2FBF37DD000AEA10 /* FormItemEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */; };
 		81E91FF82ED77FE500229705 /* ColorToken+Subtheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */; };
 		81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9343A2DEDF70D00B76E38 /* ToastSizeConfiguration.swift */; };
 		81E9343E2DEDF70D00B76E38 /* ToastAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934392DEDF70D00B76E38 /* ToastAppearance.swift */; };
@@ -881,6 +889,14 @@
 		81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonGroup.swift; sourceTree = "<group>"; };
 		81DE8FB32E7BDD83005D24FE /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
 		81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverShape.swift; sourceTree = "<group>"; };
+		81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemAppearance.swift; sourceTree = "<group>"; };
+		81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemEnums.swift; sourceTree = "<group>"; };
+		81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemIndicatorOverlay.swift; sourceTree = "<group>"; };
+		81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemLayout.swift; sourceTree = "<group>"; };
+		81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormHorizontal.swift; sourceTree = "<group>"; };
+		81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormItem.swift; sourceTree = "<group>"; };
+		81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormVertical.swift; sourceTree = "<group>"; };
 		81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Subtheme.swift"; sourceTree = "<group>"; };
 		81E931DA2ED786B500229705 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		81E934392DEDF70D00B76E38 /* ToastAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAppearance.swift; sourceTree = "<group>"; };
@@ -2504,6 +2520,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81E32B152FBF37DD000AEA10 /* SDDSFormItem */,
 				8188FFAD2F9905A4004AA1A0 /* SDDSCarousel */,
 				81555C982F882BD700355797 /* SDDSIcon */,
 				81555C9D2F882BD700355797 /* SDDSImage */,
@@ -3010,6 +3027,29 @@
 				81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */,
 			);
 			path = SDDSButtonGroup;
+			sourceTree = "<group>";
+		};
+		81E32B0F2FBF37DD000AEA10 /* FormItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */,
+				81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */,
+				81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */,
+			);
+			path = FormItemAppearance;
+			sourceTree = "<group>";
+		};
+		81E32B152FBF37DD000AEA10 /* SDDSFormItem */ = {
+			isa = PBXGroup;
+			children = (
+				81E32B0F2FBF37DD000AEA10 /* FormItemAppearance */,
+				81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */,
+				81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */,
+				81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */,
+				81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */,
+				81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */,
+			);
+			path = SDDSFormItem;
 			sourceTree = "<group>";
 		};
 		81E931DB2ED786B500229705 /* build */ = {
@@ -4554,8 +4594,6 @@
 			dependencies = (
 			);
 			name = SDDSComponents;
-			packageProductDependencies = (
-			);
 			productName = SDDSComponents;
 			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
 			productType = "com.apple.product-type.framework";
@@ -4591,8 +4629,6 @@
 				Base,
 			);
 			mainGroup = 81D2B1832C32B39B00CAA7FD;
-			packageReferences = (
-			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -4855,6 +4891,14 @@
 				8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */,
 				8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */,
 				81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */,
+				81E32B162FBF37DD000AEA10 /* FormItemLayout.swift in Sources */,
+				81E32B172FBF37DD000AEA10 /* SDDSFormItem.swift in Sources */,
+				81E32B182FBF37DD000AEA10 /* SDDSFormHorizontal.swift in Sources */,
+				81E32B192FBF37DD000AEA10 /* FormItemAppearance.swift in Sources */,
+				81E32B1A2FBF37DD000AEA10 /* SDDSFormVertical.swift in Sources */,
+				81E32B1B2FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift in Sources */,
+				81E32B1C2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift in Sources */,
+				81E32B1D2FBF37DD000AEA10 /* FormItemEnums.swift in Sources */,
 				81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */,
 				81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */,
 				81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */,

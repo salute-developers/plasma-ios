@@ -127,6 +127,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case paginationDotsVertical = "PaginationDotsVertical"
     case carousel = "Carousel"
     case image = "Image"
+    case formItem = "FormItem"
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
@@ -252,6 +253,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .paginationDotsVertical,
 //            .paginationDotsHorizontal,
             .carousel,
+            .formItem,
 //            .image
         ]
     }
@@ -453,6 +455,12 @@ extension CodeGenerationComponent {
                 outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
+        case .formItem:
+            GenerateComponentCommand<FormItemProps, FormItemAppearance, FormItemSize>(
+                component: self,
+                outputDirectoryURL: outputURL,
+                themeConfig: themeConfig
+            )
         case .image:
             GenerateComponentCommand<ImageProps, ImageAppearance, ImageSize>(
                 component: self,
@@ -590,6 +598,8 @@ extension CodeGenerationComponent {
             "PaginationDotsAppearance"
         case .carousel:
             "CarouselAppearance"
+        case .formItem:
+            "FormItemAppearance"
         case .image:
             "ImageAppearance"
         }
@@ -724,6 +734,8 @@ extension CodeGenerationComponent {
             "PaginationDotsSizeConfiguration"
         case .carousel:
             "CarouselSizeConfiguration"
+        case .formItem:
+            "FormItemSizeConfiguration"
         case .image:
             "ImageSizeConfiguration"
         }
@@ -981,6 +993,8 @@ extension CodeGenerationComponent {
             "pagination_dots_vertical_config.json"
         case .carousel:
             "carousel_config.json"
+        case .formItem:
+            "form_item_config.json"
         case .image:
             "image_config.json"
         }

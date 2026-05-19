@@ -162,6 +162,7 @@
 		8183D89A2EB2A98D00610A9A /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
 		8183D96A2EB2A98D00610A9A /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 		8188360C2F9A9548004AA1A0 /* CarouselTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CarouselTestCase; sourceTree = "<group>"; };
+		81E3F3F12FBF170F000AEA10 /* FormItemTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItemTestCase; sourceTree = "<group>"; };
 		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CardTestCase; sourceTree = "<group>"; };
 		D34C4A532EEAE4D300678E78 /* MasksTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MasksTestCase; sourceTree = "<group>"; };
 		D35F1ACF2E681A42005B8B59 /* TabBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarTestCase; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				81E3F3F12FBF170F000AEA10 /* FormItemTestCase */,
 				8188360C2F9A9548004AA1A0 /* CarouselTestCase */,
 				81ADF4CC2F6C18CE00F9D236 /* PaginationDotsTestCase */,
 				D3F77CA32F602D700071787C /* EditableTestCase */,
@@ -535,6 +537,7 @@
 			fileSystemSynchronizedGroups = (
 				81340B492EC383C500D40423 /* BaseTestCases */,
 				8188360C2F9A9548004AA1A0 /* CarouselTestCase */,
+				81E3F3F12FBF170F000AEA10 /* FormItemTestCase */,
 				D336A7EB2E0AE28700A996FC /* CardTestCase */,
 				D34C4A532EEAE4D300678E78 /* MasksTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
