@@ -76,9 +76,10 @@ public struct SDDSSwitch: View {
         VStack(alignment: .leading, spacing: appearance.size.descriptionPadding) {
             HStack(spacing: appearance.size.textPadding) {
                 if !title.isEmpty {
+                    let titleStyle = appearance.titleColor(for: isEnabled)
                     Text(title)
                         .typography(titleTypography)
-                        .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
+                        .fillForeground(style: titleStyle)
                         .accessibilityLabel(Text(switchAccessibility.titleLabel))
                         .accessibilityValue(Text(title))
                     Spacer()
@@ -88,10 +89,10 @@ public struct SDDSSwitch: View {
                     size: appearance.size,
                     onColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set([InteractiveState.checked])),
                     offColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set<InteractiveState>()),
-                    thumbColor: appearance.toggleThumbColor
+                    thumbColor: appearance.toggleThumbColor.resolvedDefaultValue()
                 )
                 .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
-                .border(appearance.toggleTrackBorderColor.color(for: colorScheme, subtheme: subtheme))
+                .overlay(switchBorder)
                 .accessibilityLabel(Text(switchAccessibility.toggleLabel))
                 .accessibilityValue(Text(isOn ? "On" : "Off"))
                 .accessibilityHint(Text(switchAccessibility.toggleHint))
@@ -128,11 +129,28 @@ public struct SDDSSwitch: View {
     
     @ViewBuilder
     private var subtitleText: some View {
+        let subtitleStyle = appearance.subtitleColor(for: isEnabled)
         Text(subtitle)
             .typography(subtitleTypography)
-            .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
+            .fillForeground(style: subtitleStyle)
             .accessibilityLabel(Text(switchAccessibility.subtitleLabel))
             .accessibilityValue(Text(subtitle))
+    }
+
+    @ViewBuilder
+    private var switchBorder: some View {
+        let path = appearance.size.toggleTrackPathDrawer.path(
+            in: CGRect(x: 0, y: 0, width: appearance.size.toggleTrackWidth, height: appearance.size.toggleTrackHeight)
+        )
+        let style = appearance.toggleTrackBorderColor.resolvedDefaultValue()
+        switch style {
+        case .color(let colorToken):
+            path.stroke(colorToken.color(for: colorScheme, subtheme: subtheme), lineWidth: 1)
+        case .gradient(let gradientToken):
+            Rectangle()
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .mask(path.stroke(style: StrokeStyle(lineWidth: 1)))
+        }
     }
     
     var appearance: SwitchAppearance {

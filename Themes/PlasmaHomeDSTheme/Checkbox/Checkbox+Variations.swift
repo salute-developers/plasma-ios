@@ -195,19 +195,19 @@ private extension CheckboxAppearance {
     
     var `default`: CheckboxAppearance {
         var appearance = self
-        appearance.borderColor = ColorToken.outlineDefaultTransparentTertiary
-        appearance.toggleColor = ColorToken.surfaceDefaultAccent
-        appearance.toggleColorChecked = ColorToken.textOnDarkPrimary
-        appearance.toggleColorIndeterminate = ColorToken.textOnDarkPrimary
+        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultTransparentTertiary), values: [])
+        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
+        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.toggleColorIndeterminate = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var negative: CheckboxAppearance {
         var appearance = self
-        appearance.borderColor = ColorToken.outlineDefaultNegative
-        appearance.toggleColor = ColorToken.surfaceDefaultNegative
-        appearance.toggleColorChecked = ColorToken.textOnDarkPrimary
-        appearance.toggleColorIndeterminate = ColorToken.textOnDarkPrimary
+        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultNegative), values: [])
+        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
+        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.toggleColorIndeterminate = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     
