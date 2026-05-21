@@ -14,7 +14,7 @@ struct CarouselSize {
 }
 struct CarouselSizeButtonsplacementinner: CarouselSizeConfiguration {
     var buttonsPlacement = CarouselButtonsPlacement.inner
-    var gap = CGFloat(0)
+    var gap = CGFloat(8.0)
     var indicatorPadding = CGFloat(12.0)
     var nextButtonPadding = CGFloat(12.0)
     var prevButtonPadding = CGFloat(12.0)
@@ -24,7 +24,7 @@ struct CarouselSizeButtonsplacementinner: CarouselSizeConfiguration {
 }
 struct CarouselSizeButtonsplacementouter: CarouselSizeConfiguration {
     var buttonsPlacement = CarouselButtonsPlacement.outer
-    var gap = CGFloat(0)
+    var gap = CGFloat(8.0)
     var indicatorPadding = CGFloat(12.0)
     var nextButtonPadding = CGFloat(12.0)
     var prevButtonPadding = CGFloat(12.0)
