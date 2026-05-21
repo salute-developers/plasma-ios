@@ -17,3 +17,9 @@ public extension SDDSThemeCore.StatefulValue where Value == ColorToken {
         )
     }
 }
+
+public extension ColorToken {
+    var statefulColor: StatefulColor {
+        StatefulColor(defaultValue: self, values: [])
+    }
+}

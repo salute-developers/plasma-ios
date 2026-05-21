@@ -43,8 +43,8 @@ private extension CheckboxAppearance {
     static var base: CheckboxAppearance {
         var appearance = CheckboxAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.subtitleColor = ColorToken.textDefaultSecondary
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
 }

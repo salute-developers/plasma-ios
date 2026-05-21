@@ -25,3 +25,14 @@ public enum FillStyle: Hashable {
         }
     }
 }
+
+public extension FillStyle {
+    func withOpacity(_ opacity: CGFloat) -> FillStyle {
+        switch self {
+        case .color(let colorToken):
+            return .color(colorToken.withOpacity(opacity))
+        case .gradient(let gradientToken):
+            return .gradient(gradientToken)
+        }
+    }
+}

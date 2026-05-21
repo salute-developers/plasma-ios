@@ -6,42 +6,39 @@ public protocol SelectionControlAppearance {
     var size: SelectionControlSizeConfiguration { get }
     var titleTypography: TypographyConfiguration { get }
     var subtitleTypography: TypographyConfiguration { get }
-    var titleColor: ColorToken { get }
-    var subtitleColor: ColorToken { get }
+    var titleColor: StatefulFillStyle { get }
+    var subtitleColor: StatefulFillStyle { get }
     var disabledAlpha: CGFloat { get }
     @available(*, deprecated, message: "use toggleColor instead")
-    var color: ColorToken { get }
-    var toggleColor: ColorToken { get }
-    var borderColor: ColorToken { get }
+    var color: StatefulFillStyle { get }
+    var toggleColor: StatefulFillStyle { get }
+    var borderColor: StatefulFillStyle { get }
     var checkedIcon: PathDrawer? { get }
-    var checkedIconColor: ColorToken { get }
-    var toggleColorChecked: ColorToken { get }
-    var toggleColorIndeterminate: ColorToken { get }
+    var checkedIconColor: StatefulFillStyle { get }
+    var toggleColorChecked: StatefulFillStyle { get }
+    var toggleColorIndeterminate: StatefulFillStyle { get }
     var toggleIndeterminateIcon: PathDrawer? { get }
-    var toggleIndeterminateIconColor: ColorToken { get }
+    var toggleIndeterminateIconColor: StatefulFillStyle { get }
     
-    func titleColor(for isEnabled: Bool) -> ColorToken
-    func subtitleColor(for isEnabled: Bool) -> ColorToken
-    var toggleStatefulColor: StatefulColor { get }
+    func titleColor(for isEnabled: Bool) -> FillStyle
+    func subtitleColor(for isEnabled: Bool) -> FillStyle
+    var toggleStatefulColor: StatefulFillStyle { get }
 }
 
 public extension SelectionControlAppearance {
-    func titleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? titleColor : titleColor.withOpacity(disabledAlpha)
+    func titleColor(for isEnabled: Bool) -> FillStyle {
+        let fillStyle = titleColor.resolvedDefaultValue()
+        guard !isEnabled else { return fillStyle }
+        return fillStyle.withOpacity(disabledAlpha)
     }
 
-    func subtitleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? subtitleColor : subtitleColor.withOpacity(disabledAlpha)
+    func subtitleColor(for isEnabled: Bool) -> FillStyle {
+        let fillStyle = subtitleColor.resolvedDefaultValue()
+        guard !isEnabled else { return fillStyle }
+        return fillStyle.withOpacity(disabledAlpha)
     }
 
-    var toggleStatefulColor: StatefulColor {
-        StatefulColor(
-            defaultValue: toggleColor,
-            values: [
-                // Keep legacy behavior: selected/indeterminate use the same toggle background color.
-                .init(states: [InteractiveState.checked], value: toggleColor),
-                .init(states: [InteractiveState.indeterminate], value: toggleColor)
-            ]
-        )
+    var toggleStatefulColor: StatefulFillStyle {
+        toggleColor
     }
 }

@@ -121,10 +121,10 @@ private extension CheckboxAppearance {
     
     var `default`: CheckboxAppearance {
         var appearance = self
-        appearance.borderColor = ColorToken.outlineDefaultTransparentTertiary
-        appearance.toggleColor = ColorToken.surfaceDefaultAccentMain
-        appearance.toggleColorChecked = ColorToken.textOnDarkPrimary
-        appearance.toggleColorIndeterminate = ColorToken.textOnDarkPrimary
+        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultTransparentTertiary), values: [])
+        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccentMain), values: [])
+        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.toggleColorIndeterminate = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
         return appearance
     }
     

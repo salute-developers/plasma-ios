@@ -21,7 +21,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
         var appearance = appearance
         appearance.size = size
         appearance.subtitleTypography = SwitchTypography(l: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
@@ -41,7 +41,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "l.toggleS",
@@ -74,7 +74,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "l.toggleS",
@@ -110,7 +110,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
         var appearance = appearance
         appearance.size = size
         appearance.subtitleTypography = SwitchTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
         return .init(
@@ -130,7 +130,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "m.toggleS",
@@ -163,7 +163,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "m.toggleS",
@@ -199,7 +199,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
         var appearance = appearance
         appearance.size = size
         appearance.subtitleTypography = SwitchTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
@@ -219,7 +219,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "s.toggleS",
@@ -252,7 +252,7 @@ public extension GeneralAppearanceVariation<Switch, SwitchAppearance, SwitchVari
 
         var appearance = appearance
         appearance.size = size
-        appearance.tintColor = .clearColor
+        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
     
         return .init(
             name: "s.toggleS",

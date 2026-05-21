@@ -48,10 +48,11 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     @ViewBuilder
     private var titleText: some View {
+        let titleStyle = appearance.titleColor(for: isEnabled)
         Text(title)
             .typography(titleTypography)
             .frame(height: titleTypography.lineHeight)
-            .foregroundColor(appearance.titleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
+            .fillForeground(style: titleStyle)
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
     }
@@ -59,10 +60,11 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     @ViewBuilder
     private var subtitleText: some View {
         if let subtitle = subtitle {
+            let subtitleStyle = appearance.subtitleColor(for: isEnabled)
             Text(subtitle)
                 .typography(subtitleTypography)
                 .frame(height: subtitleTypography.lineHeight)
-                .foregroundColor(appearance.subtitleColor(for: isEnabled).color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: subtitleStyle)
                 .accessibilityLabel(Text(accessibility.subtitleLabel))
                 .accessibilityValue(Text(subtitle))
         } else {
@@ -113,12 +115,13 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     
     @ViewBuilder
     private var pathDrawerView: some View {
+        let iconColor = resolvedFillStyle(for: state == .indeterminate ? appearance.toggleColorIndeterminate : appearance.toggleColorChecked)
         switch state {
         case .selected:
             fillView
             icon(
                 icon: selectionControlType == .checkbox ? CheckmarkDrawer(lineWidth: appearance.size.lineWidth) : CircleDrawer(),
-                iconColor: appearance.toggleColorChecked,
+                iconColor: iconColor,
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
             )
@@ -128,21 +131,24 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             fillView
             icon(
                 icon: IndeterminateDrawer(lineWidth: appearance.size.lineWidth),
-                iconColor: appearance.toggleColorIndeterminate,
+                iconColor: iconColor,
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
             )
         }
     }
     
-    private func icon(icon: PathDrawer, iconColor: ColorToken, width: CGFloat, height: CGFloat) -> some View {
+    @ViewBuilder
+    private func icon(icon: PathDrawer, iconColor: FillStyle, width: CGFloat, height: CGFloat) -> some View {
         icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
-            .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme))
+            .fillForeground(style: iconColor)
             .frame(width: width, height: height)
     }
     
+    @ViewBuilder
     private var borderView: some View {
-        appearance.size.togglePathDrawer
+        let borderStyle = resolvedFillStyle(for: appearance.borderColor)
+        let shape = appearance.size.togglePathDrawer
             .path(
                 in: CGRect(
                     x: rectLocation,
@@ -150,21 +156,13 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: toggleWidth,
                     height: toggleHeight)
             )
-            .stroke(appearance.borderColor.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.lineWidth)
+        shapeStroke(shape, style: borderStyle, lineWidth: appearance.size.lineWidth)
     }
     
+    @ViewBuilder
     private var fillView: some View {
-        let activeStates: Set<InteractiveState>
-        switch state {
-        case .selected:
-            activeStates = [.checked]
-        case .indeterminate:
-            activeStates = [.indeterminate]
-        case .deselected:
-            activeStates = []
-        }
-
-        return appearance.size.togglePathDrawer
+        let fillStyle = appearance.toggleStatefulColor.resolvedValue(for: selectionStateActiveStates)
+        let shape = appearance.size.togglePathDrawer
             .path(
                 in: CGRect(
                     x: 0,
@@ -172,7 +170,46 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     width: appearance.size.width - paddings,
                     height: appearance.size.height - paddings)
             )
-            .fill(appearance.toggleStatefulColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+        shapeFill(shape, style: fillStyle)
+    }
+
+    private func resolvedFillStyle(for style: StatefulFillStyle) -> FillStyle {
+        style.resolvedDefaultValue()
+    }
+
+    private var selectionStateActiveStates: Set<InteractiveState> {
+        switch state {
+        case .selected:
+            return [.checked]
+        case .indeterminate:
+            return [.indeterminate]
+        case .deselected:
+            return []
+        }
+    }
+
+    @ViewBuilder
+    private func shapeFill(_ path: Path, style: FillStyle) -> some View {
+        switch style {
+        case .color(let colorToken):
+            path.fill(colorToken.color(for: colorScheme, subtheme: subtheme))
+        case .gradient(let gradientToken):
+            Rectangle()
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .mask(path)
+        }
+    }
+
+    @ViewBuilder
+    private func shapeStroke(_ path: Path, style: FillStyle, lineWidth: CGFloat) -> some View {
+        switch style {
+        case .color(let colorToken):
+            path.stroke(colorToken.color(for: colorScheme, subtheme: subtheme), lineWidth: lineWidth)
+        case .gradient(let gradientToken):
+            Rectangle()
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .mask(path.stroke(style: StrokeStyle(lineWidth: lineWidth)))
+        }
     }
     
     // MARK: - Accessibility

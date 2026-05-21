@@ -25,13 +25,13 @@ struct CheckboxAppearance: CodeGenerationAppearance {
         }
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
-        self.toggleColor = ColorTokenContextBuilder(props.toggleColor?.value(for: .checked)).context
-        self.borderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
-        self.titleColor = ColorTokenContextBuilder(props.labelColor).context
-        self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
-        self.toggleColorChecked = ColorTokenContextBuilder(props.toggleIconColor).context
-        self.toggleColorIndeterminate = ColorTokenContextBuilder(props.toggleIconColor).context
-        self.toggleIndeterminateColor = ColorTokenContextBuilder(props.toggleIndeterminateIconColor?.value(for: .indeterminate)).context
+        self.toggleColor = StatefulFillStyleContextBuilder(props.toggleColor, hasDefault: true).context
+        self.borderColor = StatefulFillStyleContextBuilder(props.toggleBorderColor, hasDefault: true).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor, hasDefault: true).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.descriptionColor, hasDefault: true).context
+        self.toggleColorChecked = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
+        self.toggleColorIndeterminate = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
+        self.toggleIndeterminateColor = StatefulFillStyleContextBuilder(props.toggleIndeterminateIconColor, hasDefault: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
     }
 }

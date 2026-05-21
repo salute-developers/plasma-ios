@@ -18,27 +18,27 @@ public struct SwitchAppearance: Hashable {
     public var size: SwitchSizeConfiguration
     public var titleTypography: TypographyConfiguration
     public var subtitleTypography: TypographyConfiguration
-    public var titleColor: ColorToken
-    public var subtitleColor: ColorToken
-    public var toggleTrackColor: ColorToken
-    public var toggleTrackColorChecked: ColorToken
-    public var toggleTrackBorderColor: ColorToken
-    public var toggleThumbColor: ColorToken
+    public var titleColor: StatefulFillStyle
+    public var subtitleColor: StatefulFillStyle
+    public var toggleTrackColor: StatefulFillStyle
+    public var toggleTrackColorChecked: StatefulFillStyle
+    public var toggleTrackBorderColor: StatefulFillStyle
+    public var toggleThumbColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     
     @available(*, deprecated, message: "Don't use it, public method will be removed")
-    public var tintColor: ColorToken
+    public var tintColor: StatefulFillStyle
     
     public init(
         size: SwitchSizeConfiguration = DefaultSwitchSize(),
         titleTypography: TypographyConfiguration = .default,
         subtitleTypography: TypographyConfiguration = .default,
-        titleColor: ColorToken = .clearColor,
-        subtitleColor: ColorToken = .clearColor,
-        toggleTrackColor: ColorToken = .clearColor,
-        toggleTrackColorChecked: ColorToken = .clearColor,
-        toggleTrackBorderColor: ColorToken = .clearColor,
-        toggleThumbColor: ColorToken = .clearColor,
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        toggleTrackColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        toggleTrackColorChecked: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        toggleTrackBorderColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        toggleThumbColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
@@ -51,7 +51,7 @@ public struct SwitchAppearance: Hashable {
         self.toggleTrackBorderColor = toggleTrackBorderColor
         self.toggleThumbColor = toggleThumbColor
         self.disabledAlpha = disabledAlpha
-        self.tintColor = .clearColor
+        self.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
     }
     
     @available(*, deprecated, message: "Don't use it, public method will be removed")
@@ -59,9 +59,9 @@ public struct SwitchAppearance: Hashable {
         size: SwitchSizeConfiguration = DefaultSwitchSize(),
         titleTypography: TypographyConfiguration = .default,
         subtitleTypography: TypographyConfiguration = .default,
-        titleColor: ColorToken = .clearColor,
-        subtitleColor: ColorToken = .clearColor,
-        tintColor: ColorToken = .clearColor,
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        tintColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disabledAlpha: CGFloat = 0
     ) {
         self.size = size
@@ -69,12 +69,40 @@ public struct SwitchAppearance: Hashable {
         self.subtitleTypography = subtitleTypography
         self.titleColor = titleColor
         self.subtitleColor = subtitleColor
-        self.toggleTrackColor = .clearColor
-        self.toggleTrackColorChecked = .clearColor
-        self.toggleTrackBorderColor = .clearColor
-        self.toggleThumbColor = .clearColor
+        self.toggleTrackColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
+        self.toggleTrackColorChecked = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
+        self.toggleTrackBorderColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
+        self.toggleThumbColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
         self.disabledAlpha = disabledAlpha
         self.tintColor = tintColor
+    }
+
+    @_disfavoredOverload
+    @available(*, deprecated, message: "Use StatefulFillStyle init to support gradients and states.")
+    public init(
+        size: SwitchSizeConfiguration = DefaultSwitchSize(),
+        titleTypography: TypographyConfiguration = .default,
+        subtitleTypography: TypographyConfiguration = .default,
+        titleColor: ColorToken = .clearColor,
+        subtitleColor: ColorToken = .clearColor,
+        toggleTrackColor: ColorToken = .clearColor,
+        toggleTrackColorChecked: ColorToken = .clearColor,
+        toggleTrackBorderColor: ColorToken = .clearColor,
+        toggleThumbColor: ColorToken = .clearColor,
+        disabledAlpha: CGFloat = 0
+    ) {
+        self.init(
+            size: size,
+            titleTypography: titleTypography,
+            subtitleTypography: subtitleTypography,
+            titleColor: titleColor.statefulColor.statefulFillStyle,
+            subtitleColor: subtitleColor.statefulColor.statefulFillStyle,
+            toggleTrackColor: toggleTrackColor.statefulColor.statefulFillStyle,
+            toggleTrackColorChecked: toggleTrackColorChecked.statefulColor.statefulFillStyle,
+            toggleTrackBorderColor: toggleTrackBorderColor.statefulColor.statefulFillStyle,
+            toggleThumbColor: toggleThumbColor.statefulColor.statefulFillStyle,
+            disabledAlpha: disabledAlpha
+        )
     }
     
     public static func == (lhs: SwitchAppearance, rhs: SwitchAppearance) -> Bool {
@@ -87,12 +115,18 @@ public struct SwitchAppearance: Hashable {
 }
 
 public extension SwitchAppearance {
-    var toggleTrackStatefulColor: StatefulColor {
-        StatefulColor(
-            defaultValue: toggleTrackColor,
-            values: [
-                .init(states: [InteractiveState.checked], value: toggleTrackColorChecked)
-            ]
+    var toggleTrackStatefulColor: StatefulFillStyle {
+        let defaultValue = toggleTrackColor.defaultValue
+        let stateItems = toggleTrackColor.values
+        let checkedItems = toggleTrackColorChecked.values.map {
+            StatefulFillStyle.Item(states: $0.states.union([InteractiveState.checked.stateKey]), value: $0.value)
+        }
+        let checkedDefault = toggleTrackColorChecked.defaultValue.map {
+            StatefulFillStyle.Item(states: [InteractiveState.checked.stateKey], value: $0)
+        }
+        return StatefulFillStyle(
+            defaultValue: defaultValue,
+            values: stateItems + checkedItems + (checkedDefault.map { [$0] } ?? [])
         )
     }
 
@@ -102,8 +136,9 @@ public extension SwitchAppearance {
      - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
      - Returns: Цвет переключателя.
      */
-    func tintColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? tintColor : tintColor.withOpacity(disabledAlpha)
+    func tintColor(for isEnabled: Bool) -> FillStyle {
+        let style = tintColor.resolvedDefaultValue()
+        return isEnabled ? style : style.withOpacity(disabledAlpha)
     }
 
     /**
@@ -112,8 +147,9 @@ public extension SwitchAppearance {
      - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
      - Returns: Цвет заголовка.
      */
-    func titleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? titleColor : titleColor.withOpacity(disabledAlpha)
+    func titleColor(for isEnabled: Bool) -> FillStyle {
+        let style = titleColor.resolvedDefaultValue()
+        return isEnabled ? style : style.withOpacity(disabledAlpha)
     }
 
     /**
@@ -122,8 +158,9 @@ public extension SwitchAppearance {
      - Parameter isEnabled: Флаг, указывающий, включен ли переключатель.
      - Returns: Цвет подзаголовка.
      */
-    func subtitleColor(for isEnabled: Bool) -> ColorToken {
-        return isEnabled ? subtitleColor : subtitleColor.withOpacity(disabledAlpha)
+    func subtitleColor(for isEnabled: Bool) -> FillStyle {
+        let style = subtitleColor.resolvedDefaultValue()
+        return isEnabled ? style : style.withOpacity(disabledAlpha)
     }
 }
 

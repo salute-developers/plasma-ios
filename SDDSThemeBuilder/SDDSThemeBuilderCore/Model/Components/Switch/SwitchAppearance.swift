@@ -26,13 +26,13 @@ struct SwitchAppearance: CodeGenerationAppearance {
         
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
-        self.titleColor = ColorTokenContextBuilder(props.labelColor).context
-        self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
-        self.toggleTrackColor = ColorTokenContextBuilder(props.toggleTrackColor).context
-        self.toggleTrackColorChecked = ColorTokenContextBuilder(props.toggleTrackColor?.value(for: .checked)).context
-        self.toggleTrackBorderColor = ColorTokenContextBuilder(props.toggleTrackBorderColor).context
-        self.toggleThumbColor = ColorTokenContextBuilder(props.toggleThumbColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor, hasDefault: true).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.descriptionColor, hasDefault: true).context
+        self.toggleTrackColor = StatefulFillStyleContextBuilder(props.toggleTrackColor, hasDefault: true).context
+        self.toggleTrackColorChecked = StatefulFillStyleContextBuilder(props.toggleTrackColor, hasDefault: true).context
+        self.toggleTrackBorderColor = StatefulFillStyleContextBuilder(props.toggleTrackBorderColor, hasDefault: true).context
+        self.toggleThumbColor = StatefulFillStyleContextBuilder(props.toggleThumbColor, hasDefault: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.tintColor = ColorTokenContextBuilder(nil, nil, hasDefault: true).context
+        self.tintColor = StatefulFillStyleContextBuilder(nil, hasDefault: true).context
     }
 }

@@ -138,22 +138,20 @@ private struct SelectItemCheckboxControl: View {
     var body: some View {
         ZStack {
             if isSelected {
-                togglePath
-                    .fill(appearance.toggleColor.color(for: colorScheme, subtheme: subtheme))
+                shapeFill(togglePath, style: appearance.toggleColor.resolvedDefaultValue())
                 
                 if let checkedIcon = appearance.checkedIcon {
                     checkedIcon.path(in: CGRect(x: 0, y: 0, width: iconWidth, height: iconHeight))
                         .frame(width: iconWidth, height: iconHeight)
-                        .foregroundColor(appearance.toggleColorChecked.color(for: colorScheme, subtheme: subtheme))
+                        .fillForeground(style: appearance.toggleColorChecked.resolvedDefaultValue())
                 } else {
                     CheckmarkDrawer(lineWidth: appearance.size.lineWidth * sizeScale)
                         .path(in: CGRect(x: 0, y: 0, width: iconWidth, height: iconHeight))
                         .frame(width: iconWidth, height: iconHeight)
-                        .foregroundColor(appearance.toggleColorChecked.color(for: colorScheme, subtheme: subtheme))
+                        .fillForeground(style: appearance.toggleColorChecked.resolvedDefaultValue())
                 }
             } else {
-                togglePath
-                    .stroke(appearance.borderColor.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.lineWidth)
+                shapeStroke(togglePath, style: appearance.borderColor.resolvedDefaultValue(), lineWidth: appearance.size.lineWidth)
             }
         }
         .frame(width: innerControlWidth, height: innerControlHeight)
@@ -209,6 +207,30 @@ private struct SelectItemCheckboxControl: View {
     
     private var rectLocation: CGFloat {
         appearance.size.lineWidth / 2
+    }
+
+    @ViewBuilder
+    private func shapeFill(_ path: Path, style: FillStyle) -> some View {
+        switch style {
+        case .color(let colorToken):
+            path.fill(colorToken.color(for: colorScheme, subtheme: subtheme))
+        case .gradient(let gradientToken):
+            Rectangle()
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .mask(path)
+        }
+    }
+
+    @ViewBuilder
+    private func shapeStroke(_ path: Path, style: FillStyle, lineWidth: CGFloat) -> some View {
+        switch style {
+        case .color(let colorToken):
+            path.stroke(colorToken.color(for: colorScheme, subtheme: subtheme), lineWidth: lineWidth)
+        case .gradient(let gradientToken):
+            Rectangle()
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .mask(path.stroke(style: StrokeStyle(lineWidth: lineWidth)))
+        }
     }
 }
 

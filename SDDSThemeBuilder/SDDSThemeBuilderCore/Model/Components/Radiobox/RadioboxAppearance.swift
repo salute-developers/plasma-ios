@@ -23,15 +23,15 @@ struct RadioboxAppearance: CodeGenerationAppearance {
         guard let props = props else {
             return
         }
-        self.toggleColorChecked = ColorTokenContextBuilder(props.toggleIconColor).context
+        self.toggleColorChecked = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.descriptionStyle?.value, id: id, component: component).context
-        self.toggleColor = ColorTokenContextBuilder(props.toggleColor?.value(for: .checked)).context
-        self.borderColor = ColorTokenContextBuilder(props.toggleBorderColor).context
-        self.titleColor = ColorTokenContextBuilder(props.labelColor).context
-        self.subtitleColor = ColorTokenContextBuilder(props.descriptionColor).context
-        self.checkedIconColor = ColorTokenContextBuilder(props.toggleIconColor).context
-        self.toggleIndeterminateIconColor = ColorTokenContextBuilder(props.toggleIndeterminateIconColor).context
+        self.toggleColor = StatefulFillStyleContextBuilder(props.toggleColor, hasDefault: true).context
+        self.borderColor = StatefulFillStyleContextBuilder(props.toggleBorderColor, hasDefault: true).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor, hasDefault: true).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.descriptionColor, hasDefault: true).context
+        self.checkedIconColor = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
+        self.toggleIndeterminateIconColor = StatefulFillStyleContextBuilder(props.toggleIndeterminateIconColor, hasDefault: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
     }
 }
