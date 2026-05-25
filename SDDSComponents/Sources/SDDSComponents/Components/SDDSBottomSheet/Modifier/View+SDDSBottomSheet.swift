@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSThemeCore
 
 public extension View {
     func bottomSheet<Header: View, Content: View, Footer: View>(
@@ -13,7 +14,8 @@ public extension View {
                 isPresented: isPresented,
                 detent: detent,
                 content: content(),
-                configuration: configuration
+                configuration: configuration,
+                subtheme: subtheme
             )
             .environment(\.subtheme, subtheme)
         )

@@ -58,6 +58,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
+    @Environment(\.bottomSheetExternalFooter) private var externalFooter
     private let _appearance: BottomSheetAppearance?
     
     public let header: Header
@@ -81,7 +82,15 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
             header
             content
             Spacer()
+            // В режиме externalFooter footer всё равно остаётся в layout-дереве
+            // (чтобы systemLayoutSizeFitting в fit-content режиме давал
+            // правильную высоту вместе с footer'ом), но визуально прячется —
+            // его рисует overlay в BottomSheetContainerViewController.
+            // Это лечит «задвоение» footer'а во время snap-анимации, когда
+            // SwiftUI-layout pass снэпает позицию внутреннего footer'а в финальное
+            // положение раньше, чем CA-анимация контейнера успевает доехать.
             footer
+                .opacity(externalFooter ? 0 : 1)
         }
         .applyIf(appearance.size.paddingTop > 0) {
             $0.padding(.top, appearance.size.paddingTop)
@@ -124,6 +133,22 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     
     private var contentOffset: CGFloat {
         shouldShowHandle && handlePlacement == .outer ? appearance.size.handleOffset + appearance.size.handleHeight : 0
+    }
+}
+
+private struct BottomSheetExternalFooterKey: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+extension EnvironmentValues {
+    /// Внутренний флаг: если `true`, SDDSBottomSheet прячет свой SwiftUI-footer
+    /// (оставляет в layout, но с opacity = 0). Используется
+    /// BottomSheetContainerViewController, который рисует footer через overlay-хост,
+    /// прибитый к нижней кромке контейнера через Auto Layout, — это даёт
+    /// плавный CA-transition footer'а при snap-анимациях.
+    var bottomSheetExternalFooter: Bool {
+        get { self[BottomSheetExternalFooterKey.self] }
+        set { self[BottomSheetExternalFooterKey.self] = newValue }
     }
 }
 

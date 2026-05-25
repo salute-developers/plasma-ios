@@ -90,7 +90,9 @@ final class BottomSheetPresentationController: UIPresentationController {
         
         let progress: CGFloat
         if supportsFullScreen {
-            progress = (currentHeight - initialHeight) / (containerView.bounds.height - initialHeight)
+            let maxHeight = containerView.bounds.height - containerView.safeAreaInsets.top
+            let denominator = max(maxHeight - initialHeight, 1)
+            progress = (currentHeight - initialHeight) / denominator
         } else {
             progress = 0
         }
@@ -153,6 +155,10 @@ final class BottomSheetPresentationController: UIPresentationController {
             // Обновляем прогресс скролла
             updateScrollProgress()
             
+            // Принудительный layout в том же run loop tick, чтобы Auto Layout
+            // подтянул footer-overlay и handle-constraint синхронно с frame.
+            presentedViewController.view.layoutIfNeeded()
+            
         case .ended:
             isDragging = false
             let velocityThreshold: CGFloat = 600
@@ -187,21 +193,31 @@ final class BottomSheetPresentationController: UIPresentationController {
     }
     
     private func animateToInitialState() {
-        guard let containerView = containerView else { return }
+        guard containerView != nil else { return }
         isAnimating = true
         onChangeDetent?(.fitContent)
-        UIView.animate(withDuration: 0.3) {
-            self.presentedViewController.view.frame.origin.y = self.frameOfPresentedViewInContainerView.origin.y
+        
+        let targetFrame = frameOfPresentedViewInContainerView
+        let containerVC = presentedViewController as? BottomSheetContainerViewController
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
+            self.presentedViewController.view.frame.origin.y = targetFrame.origin.y
+            self.presentedViewController.view.frame.size.height = targetFrame.height
+            // Возвращаем handle в outer-позицию синхронно со снэпом,
+            // чтобы анимация ручки шла внутри того же CA-transaction.
+            containerVC?.updateHandlePosition(progress: 0.0)
+            // Прогоняем Auto Layout (в т.ч. footer-overlay bottomAnchor) внутри
+            // той же CA-транзакции — overlay едет плавно вместе с нижней кромкой.
+            self.presentedViewController.view.layoutIfNeeded()
             if self.isDimmingEnabled {
                 self.dimmingView?.alpha = self.dimmingAlphaWhenInitial
             }
-        } completion: { _ in
-            self.presentedViewController.view.frame.size.height = self.frameOfPresentedViewInContainerView.height
+        }, completion: { _ in
             self.isAnimating = false
             self.isFullScreen = false
             self.currentHeight = self.initialHeight
             self.updateScrollProgress()
-        }
+        })
     }
     
     private func animateToFullState() {
@@ -210,19 +226,23 @@ final class BottomSheetPresentationController: UIPresentationController {
         onChangeDetent?(.fullScreen)
         
         let safeAreaInsets = containerView.safeAreaInsets
+        let targetHeight = containerView.bounds.height - safeAreaInsets.top
+        let containerVC = presentedViewController as? BottomSheetContainerViewController
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
             self.presentedViewController.view.frame.origin.y = safeAreaInsets.top
-            self.presentedViewController.view.frame.size.height = containerView.bounds.height - safeAreaInsets.top
+            self.presentedViewController.view.frame.size.height = targetHeight
+            containerVC?.updateHandlePosition(progress: 1.0)
+            self.presentedViewController.view.layoutIfNeeded()
             if self.isDimmingEnabled {
                 self.dimmingView?.alpha = self.dimmingAlphaWhenFull
             }
-        } completion: { _ in
+        }, completion: { _ in
             self.isAnimating = false
             self.isFullScreen = true
-            self.currentHeight = containerView.bounds.height - safeAreaInsets.top
+            self.currentHeight = targetHeight
             self.updateScrollProgress()
-        }
+        })
     }
     
     private func dismissIfEnabled() {
