@@ -58,6 +58,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.bottomSheetAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
+    @Environment(\.bottomSheetExternalFooter) private var externalFooter
     private let _appearance: BottomSheetAppearance?
     
     public let header: Header
@@ -81,7 +82,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
             header
             content
             Spacer()
-            footer
+            footer.applyIf(externalFooter) { $0.hidden() }
         }
         .applyIf(appearance.size.paddingTop > 0) {
             $0.padding(.top, appearance.size.paddingTop)
@@ -124,6 +125,24 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     
     private var contentOffset: CGFloat {
         shouldShowHandle && handlePlacement == .outer ? appearance.size.handleOffset + appearance.size.handleHeight : 0
+    }
+}
+
+/// Внутренний env-флаг: когда `true`, footer внутри `SDDSBottomSheet.body`
+/// прячется через `.hidden()` (рендеринг отключён, но место в layout
+/// сохранено — `systemLayoutSizeFitting` продолжает учитывать footer height
+/// при fit-content sizing). Используется `BottomSheetContainerViewController`
+/// для предотвращения двойного рендера footer'а во время snap-анимаций —
+/// видимая версия рендерится в отдельном overlay-hosting controller'е,
+/// который двигается синхронно с CA-анимацией нижней кромки контейнера.
+private struct BottomSheetExternalFooterKey: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+extension EnvironmentValues {
+    var bottomSheetExternalFooter: Bool {
+        get { self[BottomSheetExternalFooterKey.self] }
+        set { self[BottomSheetExternalFooterKey.self] = newValue }
     }
 }
 
