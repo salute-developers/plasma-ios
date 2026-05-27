@@ -127,3 +127,15 @@ private extension FormItemAppearance {
     }
     
 }
+
+public extension FormItem {
+    static var negative: AppearanceVariation<FormItemAppearance> {
+        return FormItem.`default`.negative
+    }
+    static var positive: AppearanceVariation<FormItemAppearance> {
+        return FormItem.`default`.positive
+    }
+    static var warning: AppearanceVariation<FormItemAppearance> {
+        return FormItem.`default`.warning
+    }
+}

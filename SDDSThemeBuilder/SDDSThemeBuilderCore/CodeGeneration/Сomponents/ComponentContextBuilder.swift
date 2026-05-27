@@ -265,13 +265,36 @@ final class ComponentContextBuilderImpl<Props: MergeableConfiguration, Appearanc
             }
         }
         
+        let flatShortcuts = flatShortcutContext(views: views)
+        
         return .init(
             component: component.rawValue,
             appearance: component.appearance,
             variations: variations,
             variationViews: variationViews,
-            views: views
+            views: views,
+            hasFlatShortcuts: flatShortcuts.enabled,
+            flatShortcutBaseKey: flatShortcuts.baseKey,
+            flatShortcutViewKeys: flatShortcuts.viewKeys
         )
+    }
+    
+    /// Плоские акцессоры `Component.<view>`, делегирующие в существующую
+    /// вложенную цепочку (например, `FormItem.positive` → `FormItem.\`default\`.positive`).
+    /// Генерируются только для конфигов с пустыми `variations` и непустым `view`,
+    /// в которых синтезируется единственная база `default`. Сам ключ `default`
+    /// пропускается, чтобы не конфликтовать с существующим статиком `FormItem.\`default\``.
+    private func flatShortcutContext(
+        views: [String: VariationsContext.View]
+    ) -> (enabled: Bool, baseKey: String, viewKeys: [String]) {
+        guard configuration.variations.isEmpty, !configuration.view.isEmpty else {
+            return (false, "", [])
+        }
+        let defaultKey = "default".codeGenString
+        let viewKeys = views.keys
+            .filter { $0 != defaultKey }
+            .sorted()
+        return (true, defaultKey, viewKeys)
     }
     
     private func typography(from configuration: Configuration) -> TypographyContext {
