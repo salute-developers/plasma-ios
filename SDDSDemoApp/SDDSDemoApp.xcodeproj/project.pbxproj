@@ -162,7 +162,6 @@
 		8183D89A2EB2A98D00610A9A /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
 		8183D96A2EB2A98D00610A9A /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 		8188360C2F9A9548004AA1A0 /* CarouselTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CarouselTestCase; sourceTree = "<group>"; };
-		81E3F3F12FBF170F000AEA10 /* FormItemTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItemTestCase; sourceTree = "<group>"; };
 		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CardTestCase; sourceTree = "<group>"; };
 		D34C4A532EEAE4D300678E78 /* MasksTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MasksTestCase; sourceTree = "<group>"; };
 		D35F1ACF2E681A42005B8B59 /* TabBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarTestCase; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
 		D3886B342ED866CE0001DF66 /* DrawerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerTestCase; sourceTree = "<group>"; };
 		D38EC3382F619395000872FE /* ToolbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ToolbarTestCase; sourceTree = "<group>"; };
+		D3A415162FC47602003FE4EF /* FormItemTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItemTestCase; sourceTree = "<group>"; };
 		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteTestCase; sourceTree = "<group>"; };
 		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarTestCase; sourceTree = "<group>"; };
 		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
@@ -341,7 +341,7 @@
 		24C154152BB3020B00963FAA /* SDDSDemoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				81E3F3F12FBF170F000AEA10 /* FormItemTestCase */,
+				D3A415162FC47602003FE4EF /* FormItemTestCase */,
 				8188360C2F9A9548004AA1A0 /* CarouselTestCase */,
 				81ADF4CC2F6C18CE00F9D236 /* PaginationDotsTestCase */,
 				D3F77CA32F602D700071787C /* EditableTestCase */,
@@ -537,7 +537,6 @@
 			fileSystemSynchronizedGroups = (
 				81340B492EC383C500D40423 /* BaseTestCases */,
 				8188360C2F9A9548004AA1A0 /* CarouselTestCase */,
-				81E3F3F12FBF170F000AEA10 /* FormItemTestCase */,
 				D336A7EB2E0AE28700A996FC /* CardTestCase */,
 				D34C4A532EEAE4D300678E78 /* MasksTestCase */,
 				D35F1ACF2E681A42005B8B59 /* TabBarTestCase */,
@@ -553,6 +552,7 @@
 				D383E6E22E17D02F00B6E830 /* ListTestCase */,
 				D3886B342ED866CE0001DF66 /* DrawerTestCase */,
 				D38EC3382F619395000872FE /* ToolbarTestCase */,
+				D3A415162FC47602003FE4EF /* FormItemTestCase */,
 				D3AC26AB2EC609900099FE36 /* NoteTestCase */,
 				D3AC382A2EC721730099FE36 /* NavigationBarTestCase */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
