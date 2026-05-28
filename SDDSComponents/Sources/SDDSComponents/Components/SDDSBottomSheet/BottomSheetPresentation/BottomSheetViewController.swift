@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import SDDSThemeCore
 
 struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
@@ -7,6 +8,7 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
     
     let content: SDDSBottomSheet<Header, Content, Footer>
     let configuration: BottomSheetPresentationConfiguration
+    let subtheme: SubthemeData
     
     func makeUIViewController(context: Context) -> UIViewController {
         UIViewController()
@@ -16,7 +18,12 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
         if isPresented {
             let pathDrawer = content.appearance.size.pathDrawer as? CornerRadiusDrawer
             let cornerRadius = pathDrawer?.cornerRadius ?? 0
-            let containerViewController = BottomSheetContainerViewController(content: content, cornerRadius: cornerRadius, appearance: content.appearance)
+            let containerViewController = BottomSheetContainerViewController(
+                content: content,
+                cornerRadius: cornerRadius,
+                appearance: content.appearance,
+                subtheme: subtheme
+            )
             containerViewController.modalPresentationStyle = .custom
             
             let transitioningDelegate = context.coordinator.transitioningDelegate

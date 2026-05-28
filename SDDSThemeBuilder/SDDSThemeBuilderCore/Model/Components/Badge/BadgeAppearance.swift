@@ -19,10 +19,10 @@ struct BadgeAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
-        self.startContentColor = ColorTokenContextBuilder(props.startContentColor).context
-        self.endContentColor = ColorTokenContextBuilder(props.endContentColor).context
-        self.labelColor = ColorTokenContextBuilder(props.labelColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor, hasDefault: true).context
+        self.startContentColor = StatefulFillStyleContextBuilder(props.startContentColor, hasDefault: true).context
+        self.endContentColor = StatefulFillStyleContextBuilder(props.endContentColor, hasDefault: true).context
+        self.labelColor = StatefulFillStyleContextBuilder(props.labelColor, hasDefault: true).context
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
     }
 }

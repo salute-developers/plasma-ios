@@ -55,13 +55,13 @@ public struct RadioboxVariation {
 private extension RadioboxAppearance {
     static var base: RadioboxAppearance {
         var appearance = RadioboxAppearance()
-        appearance.borderColor = ColorToken.outlineDefaultTransparentTertiary
-        appearance.checkedIconColor = ColorToken.surfaceOnDarkSolidDefault
+        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultTransparentTertiary), values: [])
+        appearance.checkedIconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [])
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.subtitleColor = ColorToken.textDefaultSecondary
-        appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.toggleColor = ColorToken.surfaceDefaultAccent
-        appearance.toggleColorChecked = ColorToken.surfaceOnDarkSolidDefault
+        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
+        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [])
         return appearance
     }
 }

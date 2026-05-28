@@ -111,3 +111,12 @@ private extension {{ appearance }} {
     }
     {% endfor %}
 }
+{% if hasFlatShortcuts %}
+public extension {{ component }} {
+    {%- for viewKey in flatShortcutViewKeys %}
+    static var {{ viewKey }}: AppearanceVariation<{{ appearance }}> {
+        return {{ component }}.{{ flatShortcutBaseKey }}.{{ viewKey }}
+    }
+    {%- endfor %}
+}
+{% endif %}

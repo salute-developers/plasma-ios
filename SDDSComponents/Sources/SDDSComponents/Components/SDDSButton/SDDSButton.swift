@@ -130,6 +130,7 @@ public struct SDDSButton<Counter: View>: View {
     public var body: some View {
         ZStack {
             Button {
+                guard !isDisabled else { return }
                 action()
             } label: {
                 switch buttonStyle {
@@ -141,7 +142,7 @@ public struct SDDSButton<Counter: View>: View {
             }
             .buttonStyle(NoHighlightButtonStyle())
             .opacity(contentOpacity)
-            .background(currentColor(for: appearance.backgroundColor).opacity(backgroundOpacity))
+            .background(buttonBackground)
             .shape(pathDrawer: appearance.size.pathDrawer)
             .frame(height: appearance.size.height)
             .disabled(isDisabled)
@@ -150,11 +151,16 @@ public struct SDDSButton<Counter: View>: View {
             .accessibility(value: Text(accessibility.value))
             .simultaneousGesture(
                 DragGesture(minimumDistance: 0)
-                    .onChanged { _ in isHighlighted = true }
-                    .onEnded { _ in isHighlighted = false }
+                    .onChanged { _ in
+                        guard !isDisabled else { return }
+                        isHighlighted = true
+                    }
+                    .onEnded { _ in
+                        isHighlighted = false
+                    }
             )
             .onHover { hovering in
-                isHovered = hovering
+                isHovered = isDisabled ? false : hovering
             }
             if isLoading {
                 spinner
@@ -225,7 +231,7 @@ public struct SDDSButton<Counter: View>: View {
     @ViewBuilder
     private var icon: some View {
         if let iconAttributes = iconAttributes {
-            iconAttributes.image
+            let iconView = iconAttributes.image
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
@@ -233,7 +239,14 @@ public struct SDDSButton<Counter: View>: View {
                     width: appearance.size.iconSize.width,
                     height: appearance.size.iconSize.height
                 )
-                .foregroundColor(currentColor(for: appearance.iconColor))
+            let fillStyle = currentFillStyle(for: appearance.iconColor)
+
+            switch fillStyle {
+            case .color(let colorToken):
+                iconView.foregroundColor(colorToken.color(for: colorScheme))
+            case .gradient:
+                iconView.fillForeground(style: fillStyle)
+            }
         } else {
             EmptyView()
         }
@@ -242,21 +255,26 @@ public struct SDDSButton<Counter: View>: View {
     @ViewBuilder
     private var spinner: some View {
         if let spinnerImage = spinnerImage, isLoading {
-            SpinnerView(
-                image: spinnerImage,
-                foregroundColor: currentColor(for: appearance.spinnerColor)
-            )
+            SpinnerView(image: spinnerImage, fillStyle: currentFillStyle(for: appearance.spinnerColor))
         } else {
             EmptyView()
         }
     }
     
     @ViewBuilder
-    private func value(for text: String, typographyToken: TypographyToken, textColor: ButtonColor) -> some View {
-        Text(text)
+    private func value(for text: String, typographyToken: TypographyToken, textColor: StatefulFillStyle) -> some View {
+        let textView = Text(text)
             .lineLimit(1)
             .typography(typographyToken)
-            .foregroundColor(currentColor(for: textColor))
+        let fillStyle = currentFillStyle(for: textColor)
+
+        switch fillStyle {
+        case .color(let colorToken):
+            // Preserve legacy StatefulColor behavior (without subtheme remap) for solid colors.
+            textView.foregroundColor(colorToken.color(for: colorScheme))
+        case .gradient:
+            textView.fillForeground(style: fillStyle)
+        }
     }
 }
 
@@ -280,12 +298,25 @@ public extension SDDSButton where Counter == EmptyView {
 }
 
 private extension SDDSButton {
-    func currentColor(for buttonColor: ButtonColor) -> Color {
+    func currentFillStyle(for statefulFillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
         if isHighlighted { activeStates.insert(.pressed) }
         if isHovered { activeStates.insert(.hovered) }
-        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return statefulFillStyle.resolvedValue(for: activeStates)
+    }
+
+    @ViewBuilder
+    var buttonBackground: some View {
+        switch currentFillStyle(for: appearance.backgroundColor) {
+        case .color(let colorToken):
+            colorToken.color(for: colorScheme, subtheme: subtheme).opacity(backgroundOpacity)
+        case .gradient(let gradientToken):
+            Rectangle()
+                .fill(colorScheme == .dark ? Color.black : Color.white)
+                .gradient(gradientToken, colorScheme: colorScheme, subtheme: subtheme)
+                .opacity(backgroundOpacity)
+        }
     }
     
     func hasIconAttributes() -> Bool {

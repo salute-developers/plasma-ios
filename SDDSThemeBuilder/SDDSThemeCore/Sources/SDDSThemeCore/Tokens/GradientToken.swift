@@ -53,6 +53,46 @@ public struct PlainColor {
     }
 }
 
+public extension LinearGradient {
+    public func withOpacity(_ opacity: CGFloat) -> LinearGradient {
+        LinearGradient(
+            locations: locations,
+            colors: colors.map { $0.opacity(opacity) },
+            angle: angle
+        )
+    }
+}
+
+public extension RadialGradient {
+    public func withOpacity(_ opacity: CGFloat) -> RadialGradient {
+        RadialGradient(
+            locations: locations,
+            colors: colors.map { $0.opacity(opacity) },
+            center: center,
+            startRadius: startRadius,
+            endRadius: endRadius
+        )
+    }
+}
+
+public extension AngularGradient {
+    public func withOpacity(_ opacity: CGFloat) -> AngularGradient {
+        AngularGradient(
+            locations: locations,
+            colors: colors.map { $0.opacity(opacity) },
+            startAngle: startAngle,
+            endAngle: endAngle,
+            center: center
+        )
+    }
+}
+
+public extension PlainColor {
+    public func withOpacity(_ opacity: CGFloat) -> PlainColor {
+        PlainColor(background: background.opacity(opacity))
+    }
+}
+
 public enum GradientKind {
     case linear(LinearGradient)
     case angular(AngularGradient)
@@ -74,9 +114,33 @@ public struct GradientToken {
     }
 }
 
+public extension GradientKind {
+    public func withOpacity(_ opacity: CGFloat) -> GradientKind {
+        switch self {
+        case .linear(let gradient):
+            return .linear(gradient.withOpacity(opacity))
+        case .radial(let gradient):
+            return .radial(gradient.withOpacity(opacity))
+        case .angular(let gradient):
+            return .angular(gradient.withOpacity(opacity))
+        case .color(let color):
+            return .color(color.withOpacity(opacity))
+        }
+    }
+}
+
 public extension GradientToken {
     public static var clearColor: GradientToken {
         .init(description: "", darkGradients: [], lightGradients: [])
+    }
+
+    public func withOpacity(_ opacity: CGFloat) -> GradientToken {
+        GradientToken(
+            id: id,
+            description: description,
+            darkGradients: darkGradients.map { $0.withOpacity(opacity) },
+            lightGradients: lightGradients.map { $0.withOpacity(opacity) }
+        )
     }
 }
 

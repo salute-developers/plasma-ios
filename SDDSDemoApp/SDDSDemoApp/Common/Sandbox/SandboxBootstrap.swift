@@ -147,6 +147,8 @@ enum SandboxBootstrap {
                 !theme.paginationDotsVerticalVariations.isEmpty
         case "carousel.story":
             return !theme.carouselVariations.isEmpty
+        case "formItem.story":
+            return !theme.formItemVariations.isEmpty
         case "text.story":
             return true
         case "icon.story":

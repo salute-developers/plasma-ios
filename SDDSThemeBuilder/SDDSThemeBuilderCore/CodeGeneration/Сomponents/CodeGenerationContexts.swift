@@ -43,6 +43,13 @@ struct ComponentVariationsContext<Appearance: Codable, Size: Codable>: Codable {
     var variations: [String: [String: Variation]]
     var variationViews: [String: [String: View]]
     var views: [String: View]
+    // Плоские шорткаты для view (например, `FormItem.positive`), которые
+    // генерируются только для конфигов с пустыми `variations` и непустым `view`.
+    // Для остальных компонентов остаются пустыми/false — существующие
+    // сгенерированные файлы не меняются.
+    var hasFlatShortcuts: Bool = false
+    var flatShortcutBaseKey: String = ""
+    var flatShortcutViewKeys: [String] = []
 }
 
 struct ComponentSizeContext<Size: Codable>: Codable {

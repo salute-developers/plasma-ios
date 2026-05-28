@@ -199,6 +199,7 @@
 		81578DBC2D89ADD900BC7038 /* SDDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */; };
 		81578DBE2D89AEED00BC7038 /* BottomSheetHandlePlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81578DBD2D89AEE900BC7038 /* BottomSheetHandlePlacement.swift */; };
 		8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F72F2C5D1CFE00622836 /* FillStyle.swift */; };
+		8159F7312C5D1CFE00622836 /* StatefulFillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159F7322C5D1CFE00622836 /* StatefulFillStyle.swift */; };
 		815D1EF52DE04A360005273B /* PopoverSizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D1EF42DE04A350005273B /* PopoverSizeKey.swift */; };
 		815D1EF72DE04A480005273B /* PopoverSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */; };
 		815D1EF92DE04A5F0005273B /* View+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815D1EF82DE04A5C0005273B /* View+Popover.swift */; };
@@ -359,6 +360,14 @@
 		81DE8FB12E7BDD53005D24FE /* ButtonGroupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE8FAB2E7BDD53005D24FE /* ButtonGroupAppearance.swift */; };
 		81DE8FB22E7BDD53005D24FE /* SDDSButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */; };
 		81DEDCC72DE73A810035E6A9 /* PopoverShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */; };
+		81E32B162FBF37DD000AEA10 /* FormItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */; };
+		81E32B172FBF37DD000AEA10 /* SDDSFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */; };
+		81E32B182FBF37DD000AEA10 /* SDDSFormHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */; };
+		81E32B192FBF37DD000AEA10 /* FormItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */; };
+		81E32B1A2FBF37DD000AEA10 /* SDDSFormVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */; };
+		81E32B1B2FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */; };
+		81E32B1C2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */; };
+		81E32B1D2FBF37DD000AEA10 /* FormItemEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */; };
 		81E91FF82ED77FE500229705 /* ColorToken+Subtheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */; };
 		81E9343D2DEDF70D00B76E38 /* ToastSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9343A2DEDF70D00B76E38 /* ToastSizeConfiguration.swift */; };
 		81E9343E2DEDF70D00B76E38 /* ToastAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E934392DEDF70D00B76E38 /* ToastAppearance.swift */; };
@@ -693,6 +702,7 @@
 		81578DBB2D89ADD600BC7038 /* SDDSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSBottomSheet.swift; sourceTree = "<group>"; };
 		81578DBD2D89AEE900BC7038 /* BottomSheetHandlePlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHandlePlacement.swift; sourceTree = "<group>"; };
 		8159F72F2C5D1CFE00622836 /* FillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillStyle.swift; sourceTree = "<group>"; };
+		8159F7322C5D1CFE00622836 /* StatefulFillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulFillStyle.swift; sourceTree = "<group>"; };
 		815D1EF42DE04A350005273B /* PopoverSizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSizeKey.swift; sourceTree = "<group>"; };
 		815D1EF62DE04A470005273B /* PopoverSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSizeCalculator.swift; sourceTree = "<group>"; };
 		815D1EF82DE04A5C0005273B /* View+Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popover.swift"; sourceTree = "<group>"; };
@@ -879,6 +889,14 @@
 		81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSButtonGroup.swift; sourceTree = "<group>"; };
 		81DE8FB32E7BDD83005D24FE /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
 		81DEDCC62DE73A810035E6A9 /* PopoverShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverShape.swift; sourceTree = "<group>"; };
+		81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemAppearance.swift; sourceTree = "<group>"; };
+		81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemEnums.swift; sourceTree = "<group>"; };
+		81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemSizeConfiguration.swift; sourceTree = "<group>"; };
+		81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemIndicatorOverlay.swift; sourceTree = "<group>"; };
+		81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemLayout.swift; sourceTree = "<group>"; };
+		81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormHorizontal.swift; sourceTree = "<group>"; };
+		81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormItem.swift; sourceTree = "<group>"; };
+		81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSFormVertical.swift; sourceTree = "<group>"; };
 		81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorToken+Subtheme.swift"; sourceTree = "<group>"; };
 		81E931DA2ED786B500229705 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		81E934392DEDF70D00B76E38 /* ToastAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAppearance.swift; sourceTree = "<group>"; };
@@ -2502,6 +2520,7 @@
 		818C03AF2C418705002C6D0A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				81E32B152FBF37DD000AEA10 /* SDDSFormItem */,
 				8188FFAD2F9905A4004AA1A0 /* SDDSCarousel */,
 				81555C982F882BD700355797 /* SDDSIcon */,
 				81555C9D2F882BD700355797 /* SDDSImage */,
@@ -2599,6 +2618,7 @@
 				818C03BE2C43C371002C6D0A /* DebugModifier.swift */,
 				818C03E22C479003002C6D0A /* Image+Extensions.swift */,
 				8159F72F2C5D1CFE00622836 /* FillStyle.swift */,
+				8159F7322C5D1CFE00622836 /* StatefulFillStyle.swift */,
 				81CBC0972C82273100FBDAC8 /* Text+FillModifier.swift */,
 				8154644A2C96FDE600DAD8EA /* ViewProvider.swift */,
 				816AA9A62C97280400C3347C /* PlaceholderTextField.swift */,
@@ -3007,6 +3027,29 @@
 				81DE8FAE2E7BDD53005D24FE /* SDDSButtonGroup.swift */,
 			);
 			path = SDDSButtonGroup;
+			sourceTree = "<group>";
+		};
+		81E32B0F2FBF37DD000AEA10 /* FormItemAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				81E32B0C2FBF37DD000AEA10 /* FormItemAppearance.swift */,
+				81E32B0D2FBF37DD000AEA10 /* FormItemEnums.swift */,
+				81E32B0E2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift */,
+			);
+			path = FormItemAppearance;
+			sourceTree = "<group>";
+		};
+		81E32B152FBF37DD000AEA10 /* SDDSFormItem */ = {
+			isa = PBXGroup;
+			children = (
+				81E32B0F2FBF37DD000AEA10 /* FormItemAppearance */,
+				81E32B102FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift */,
+				81E32B112FBF37DD000AEA10 /* FormItemLayout.swift */,
+				81E32B122FBF37DD000AEA10 /* SDDSFormHorizontal.swift */,
+				81E32B132FBF37DD000AEA10 /* SDDSFormItem.swift */,
+				81E32B142FBF37DD000AEA10 /* SDDSFormVertical.swift */,
+			);
+			path = SDDSFormItem;
 			sourceTree = "<group>";
 		};
 		81E931DB2ED786B500229705 /* build */ = {
@@ -4551,8 +4594,6 @@
 			dependencies = (
 			);
 			name = SDDSComponents;
-			packageProductDependencies = (
-			);
 			productName = SDDSComponents;
 			productReference = 81D2B18D2C32B39B00CAA7FD /* SDDSComponents.framework */;
 			productType = "com.apple.product-type.framework";
@@ -4588,8 +4629,6 @@
 				Base,
 			);
 			mainGroup = 81D2B1832C32B39B00CAA7FD;
-			packageReferences = (
-			);
 			productRefGroup = 81D2B18E2C32B39B00CAA7FD /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -4852,6 +4891,14 @@
 				8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */,
 				8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */,
 				81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */,
+				81E32B162FBF37DD000AEA10 /* FormItemLayout.swift in Sources */,
+				81E32B172FBF37DD000AEA10 /* SDDSFormItem.swift in Sources */,
+				81E32B182FBF37DD000AEA10 /* SDDSFormHorizontal.swift in Sources */,
+				81E32B192FBF37DD000AEA10 /* FormItemAppearance.swift in Sources */,
+				81E32B1A2FBF37DD000AEA10 /* SDDSFormVertical.swift in Sources */,
+				81E32B1B2FBF37DD000AEA10 /* FormItemIndicatorOverlay.swift in Sources */,
+				81E32B1C2FBF37DD000AEA10 /* FormItemSizeConfiguration.swift in Sources */,
+				81E32B1D2FBF37DD000AEA10 /* FormItemEnums.swift in Sources */,
 				81E9C1B62ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift in Sources */,
 				81E9C1CB2ED79000229705 /* CollapsingNavigationBarState.swift in Sources */,
 				81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */,
@@ -4999,6 +5046,7 @@
 				815D1EF92DE04A5F0005273B /* View+Popover.swift in Sources */,
 				81B58B422E40A8D500504B1D /* CodeFieldDisabledValidation.swift in Sources */,
 				8159F7302C5D1CFE00622836 /* FillStyle.swift in Sources */,
+				8159F7312C5D1CFE00622836 /* StatefulFillStyle.swift in Sources */,
 				81F753242CF467E5000156D9 /* ButtonContentAlignment.swift in Sources */,
 				6995FA932D6F5C11003D5DBB /* SDDSAvatarModifiers.swift in Sources */,
 				69B975222D50BC4C00CAF208 /* SegmentLayoutMode.swift in Sources */,
@@ -5367,7 +5415,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.38.0;
+				MARKETING_VERSION = 0.39.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
@@ -5400,7 +5448,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.38.0;
+				MARKETING_VERSION = 0.39.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;

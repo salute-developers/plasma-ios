@@ -557,120 +557,120 @@ private extension ButtonAppearance {
     
     var `default`: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPrimaryHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPrimaryHover))
+        ])
         return appearance
     }
     
     var accent: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultAccent, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultAccentActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultAccentHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultAccent, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultAccentActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultAccentHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultAccent, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultAccentActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultAccentHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultAccentActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultAccentHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultAccentActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultAccentHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultAccent), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultAccentActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultAccentHover))
+        ])
         return appearance
     }
     
     var info: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultInfo, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultInfoActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultInfoHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultInfo, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultInfoActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultInfoHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultInfo, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultInfoActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultInfoHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultInfo), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultInfoActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultInfoHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultInfo), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultInfoActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultInfoHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultInfo), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultInfoActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultInfoHover))
+        ])
         return appearance
     }
     
     var negative: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultNegativeActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultNegativeHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultNegativeActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultNegativeHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultNegativeActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultNegativeHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultNegativeActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultNegativeHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultNegativeActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultNegativeHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultNegativeActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultNegativeHover))
+        ])
         return appearance
     }
     
     var positive: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPositiveActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPositiveHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPositiveActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPositiveHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPositiveActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPositiveHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPositiveActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPositiveHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPositiveActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPositiveHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPositiveActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPositiveHover))
+        ])
         return appearance
     }
     
     var secondary: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultSecondaryHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultSecondaryHover))
+        ])
         return appearance
     }
     
     var warning: ButtonAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultWarningActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultWarningHover)
-        ]))
-        appearance.spinnerColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultWarningActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultWarningHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultWarningActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultWarningHover)
-        ]))
+        appearance.iconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultWarningActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultWarningHover))
+        ])
+        appearance.spinnerColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultWarningActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultWarningHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultWarning), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultWarningActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultWarningHover))
+        ])
         return appearance
     }
     

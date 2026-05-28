@@ -1,8 +1,10 @@
 import UIKit
 import SwiftUI
+import SDDSThemeCore
 
 final class BottomSheetContainerViewController: UIViewController {
     private let hostingController: UIHostingController<AnyView>
+    private let footerOverlayHostingController: UIHostingController<AnyView>
     private let handleView: BottomSheetHandleUIView
     private let cornerRadius: CGFloat
     private let appearance: BottomSheetAppearance
@@ -10,11 +12,38 @@ final class BottomSheetContainerViewController: UIViewController {
     private var handleBottomConstraint: NSLayoutConstraint?
     private var handleTopConstraint: NSLayoutConstraint?
     
-    init(content: some View, cornerRadius: CGFloat, appearance: BottomSheetAppearance) {
-        self.hostingController = UIHostingController(rootView: AnyView(content))
+    init<H: View, C: View, F: View>(
+        content: SDDSBottomSheet<H, C, F>,
+        cornerRadius: CGFloat,
+        appearance: BottomSheetAppearance,
+        subtheme: SubthemeData
+    ) {
+        // Основной hosting: внутри SwiftUI `VStack` footer прячется через
+        // `.hidden()` (env-флаг `bottomSheetExternalFooter`). Это снимает
+        // двойной рендер во время snap-анимаций: SwiftUI-footer не появляется
+        // в кадре, пока overlay-копия едет к новой позиции через CA.
+        // Layout-место footer'а в `VStack` сохраняется, поэтому
+        // `systemLayoutSizeFitting` продолжает корректно считать
+        // fit-content высоту листа.
+        let mainView = content.environment(\.bottomSheetExternalFooter, true)
+        self.hostingController = UIHostingController(rootView: AnyView(mainView))
         self.cornerRadius = cornerRadius
         self.handleView = BottomSheetHandleUIView(appearance: appearance)
         self.appearance = appearance
+        
+        // Overlay-копия footer'а: рендерится во втором UIHostingController,
+        // прибитом к нижней кромке контейнера через Auto Layout. Её Y берётся
+        // из CA-интерполяции bottomAnchor, а не из SwiftUI layout pass'а,
+        // поэтому при `UIView.animate { ... layoutIfNeeded() }` footer едет
+        // плавно от текущей позиции к новой нижней кромке.
+        let overlayView = BottomSheetFooterOverlayView(
+            footer: content.footer,
+            appearance: appearance,
+            cornerRadius: cornerRadius
+        )
+        .environment(\.subtheme, subtheme)
+        self.footerOverlayHostingController = UIHostingController(rootView: AnyView(overlayView))
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,6 +56,7 @@ final class BottomSheetContainerViewController: UIViewController {
         
         view.backgroundColor = .clear
         setupHostingController()
+        setupFooterOverlay()
     }
     
     private func setupHostingController() {
@@ -71,6 +101,26 @@ final class BottomSheetContainerViewController: UIViewController {
         ])
     }
     
+    private func setupFooterOverlay() {
+        let overlay = footerOverlayHostingController.view!
+        overlay.translatesAutoresizingMaskIntoConstraints = false
+        overlay.backgroundColor = .clear
+        overlay.isUserInteractionEnabled = true
+        
+        addChild(footerOverlayHostingController)
+        view.addSubview(overlay)
+        footerOverlayHostingController.didMove(toParent: self)
+        // Поднимаем поверх hostingController.view, чтобы SwiftUI-footer
+        // под ним не был виден во время snap-анимации.
+        view.bringSubviewToFront(overlay)
+        
+        NSLayoutConstraint.activate([
+            overlay.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            overlay.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            overlay.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
+    
     func updateHandlePosition(progress: CGFloat) {
         guard appearance.handlePlacement == .auto else { return }
         
@@ -84,5 +134,41 @@ final class BottomSheetContainerViewController: UIViewController {
         let currentPosition = outerPosition + (innerPosition - outerPosition) * progress
         
         handleBottomConstraint?.constant = currentPosition
+    }
+}
+
+/// Overlay-обёртка для footer'а: рендерится во втором UIHostingController,
+/// который прибит к нижней кромке контейнера и едет плавно вместе с frame.size.height
+/// благодаря CA-анимации Auto Layout (а не SwiftUI-layout pass'у внутри VStack).
+///
+/// Bottom-corners клипаются тем же `cornerRadius`, что и основной лист, чтобы
+/// overlay не «срезал» скруглённые нижние углы исходного `SDDSBottomSheet`
+/// квадратным прямоугольником.
+private struct BottomSheetFooterOverlayView<Footer: View>: View {
+    let footer: Footer
+    let appearance: BottomSheetAppearance
+    let cornerRadius: CGFloat
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.subtheme) private var subtheme
+    
+    var body: some View {
+        footer
+            .applyIf(appearance.size.paddingStart > 0) {
+                $0.padding(.leading, appearance.size.paddingStart)
+            }
+            .applyIf(appearance.size.paddingEnd > 0) {
+                $0.padding(.trailing, appearance.size.paddingEnd)
+            }
+            .applyIf(appearance.size.paddingBottom > 0) {
+                $0.padding(.bottom, appearance.size.paddingBottom)
+            }
+            .frame(maxWidth: .infinity)
+            .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+            .applyIf(cornerRadius > 0) {
+                $0.shape(pathDrawer: CornerRadiusDrawer(
+                    cornerRadius: cornerRadius,
+                    cornerType: .specific([.bottomLeft, .bottomRight])
+                ))
+            }
     }
 }

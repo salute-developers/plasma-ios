@@ -88,7 +88,7 @@ public struct SDDSBadge: View {
     }
     
     private var buttonAppearance: ButtonAppearance {
-        let iconColor: ColorToken
+        let iconColor: StatefulFillStyle
         let iconSize: CGSize
         let iconPadding: CGFloat
         switch alignment {
