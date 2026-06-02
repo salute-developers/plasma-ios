@@ -17,9 +17,11 @@ public struct RectSkeleton {
         )
     }
     
-    public static let all: [Variation<SkeletonAppearance>] = [
-        RectSkeleton.default.variation,
-    ]
+    public static var all: [Variation<SkeletonAppearance>] {
+        [
+            RectSkeleton.default.variation,
+        ]
+    }
 }
 
 public struct RectSkeletonVariation {

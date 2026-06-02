@@ -28,12 +28,14 @@ public struct CodeField {
         )
     }
     
-    public static let all: [Variation<CodeFieldAppearance>] = [
-        CodeField.l.variation,
-        CodeField.l.segmented.variation,
-        CodeField.m.variation,
-        CodeField.m.segmented.variation,
-    ]
+    public static var all: [Variation<CodeFieldAppearance>] {
+        [
+            CodeField.l.variation,
+            CodeField.l.segmented.variation,
+            CodeField.m.variation,
+            CodeField.m.segmented.variation,
+        ]
+    }
 }
 
 public struct CodeFieldVariation {

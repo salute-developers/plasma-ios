@@ -24,10 +24,12 @@ public struct Toast {
         )
     }
     
-    public static let all: [Variation<ToastAppearance>] = [
-        Toast.pilled.variation,
-        Toast.rounded.variation,
-    ]
+    public static var all: [Variation<ToastAppearance>] {
+        [
+            Toast.pilled.variation,
+            Toast.rounded.variation,
+        ]
+    }
 }
 
 public struct ToastVariation {

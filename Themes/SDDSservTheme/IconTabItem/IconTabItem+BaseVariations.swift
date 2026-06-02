@@ -50,12 +50,14 @@ public struct IconTabItem {
         )
     }
     
-    public static let all: [Variation<TabItemAppearance>] = [
-        IconTabItem.l.variation,
-        IconTabItem.m.variation,
-        IconTabItem.s.variation,
-        IconTabItem.xs.variation,
-    ]
+    public static var all: [Variation<TabItemAppearance>] {
+        [
+            IconTabItem.l.variation,
+            IconTabItem.m.variation,
+            IconTabItem.s.variation,
+            IconTabItem.xs.variation,
+        ]
+    }
 }
 
 public struct IconTabItemVariation {

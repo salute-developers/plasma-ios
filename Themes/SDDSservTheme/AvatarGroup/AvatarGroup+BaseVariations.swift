@@ -16,9 +16,11 @@ public struct AvatarGroup {
         )
     }
     
-    public static let all: [Variation<AvatarGroupAppearance>] = [
-        AvatarGroup.s.variation,
-    ]
+    public static var all: [Variation<AvatarGroupAppearance>] {
+        [
+            AvatarGroup.s.variation,
+        ]
+    }
 }
 
 public struct AvatarGroupVariation {

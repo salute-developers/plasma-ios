@@ -6,7 +6,8 @@ import UIKit
 
 public extension ShadowToken {
     {%- for key, value in json %}
-    static var {{ key }}: Self {
+    static var {{ key }}{{ tenant }}: Self {
+        {%- if tenant %}
         Self(
             layers: [
                 {%- for value in json[key] %}
@@ -20,6 +21,22 @@ public extension ShadowToken {
                 {%- endfor %}
             ]
         )
+        {%- else %}
+        let base = Self(
+            layers: [
+                {%- for value in json[key] %}
+                Self.Layer(
+                    color: Color(UIColor(hex: "{{ value.color|palette_color|ensure_valid_hex|default:'' }}")),
+                    offsetX: {{ value.offsetX|ensure|ensure_double_exists|default: 0 }},
+                    offsetY: {{ value.offsetY|ensure|ensure_double_exists|default: 0 }},
+                    blurRadius: {{ value.blurRadius|ensure|ensure_double_exists|default: 0 }},
+                    spreadRadius: {{ value.spreadRadius|ensure|ensure_double_exists|default: 0 }}
+                ){% if not forloop.last %},{% endif %}
+                {%- endfor %}
+            ]
+        )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "{{ themeName }}", id: "{{ key }}", base: base)
+        {%- endif %}
     }
     {%- endfor %}
 }

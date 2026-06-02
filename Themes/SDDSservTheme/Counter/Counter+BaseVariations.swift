@@ -56,13 +56,15 @@ public struct Counter {
         )
     }
     
-    public static let all: [Variation<CounterAppearance>] = [
-        Counter.l.variation,
-        Counter.m.variation,
-        Counter.s.variation,
-        Counter.xs.variation,
-        Counter.xxs.variation,
-    ]
+    public static var all: [Variation<CounterAppearance>] {
+        [
+            Counter.l.variation,
+            Counter.m.variation,
+            Counter.s.variation,
+            Counter.xs.variation,
+            Counter.xxs.variation,
+        ]
+    }
 }
 
 public struct CounterVariation {

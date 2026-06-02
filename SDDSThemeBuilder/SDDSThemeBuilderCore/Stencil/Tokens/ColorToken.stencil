@@ -6,15 +6,24 @@ import UIKit
 
 public extension ColorToken {
     {%- for key, value in json %}
-    
+
     {% ensure_any_value_exists value.dark value.light %}
-    
-    static var {{ key }}: Self {
+
+    static var {{ key }}{{ tenant }}: Self {
+        {%- if tenant %}
         Self(
+            id: "{{ key }}",
+            darkColor: Color(UIColor(hex: "{{ value.dark|ensure_valid_hex|default:'' }}")),
+            lightColor: Color(UIColor(hex: "{{ value.light|ensure_valid_hex|default:'' }}"))
+        )
+        {%- else %}
+        let base = Self(
             id: Colors.{{ key }}.rawValue,
             darkColor: Color(UIColor(hex: "{{ value.dark|ensure_valid_hex|default:'' }}")),
             lightColor: Color(UIColor(hex: "{{ value.light|ensure_valid_hex|default:'' }}"))
         )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "{{ themeName }}", id: base.id, base: base)
+        {%- endif %}
     }
     {%- endfor %}
 }

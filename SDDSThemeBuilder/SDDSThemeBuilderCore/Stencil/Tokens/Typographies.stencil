@@ -3,6 +3,20 @@
 import Foundation
 @_exported import SDDSThemeCore
 
+{% if tenant %}
+public extension Typographies {
+    static func register{{ tenant }}() {
+        ThemeTenantRegistry.shared.registerTypographies(theme: "{{ themeName }}", tenant: Tenant(name: "{{ tenant }}")) { id in
+            switch id {
+            {%- for key, value in json %}
+            case "{{ key }}": return .{{ key }}{{ tenant }}
+            {%- endfor %}
+            default: return nil
+            }
+        }
+    }
+}
+{% else %}
 public enum Typographies {
     {%- for key, value in json %}
     case {{ key }}
@@ -12,8 +26,9 @@ public enum Typographies {
         switch self {
             {%- for key, value in json %}
         case .{{ key }}:
-            return .{{ key }}
+            return ThemeTenantRegistry.shared.resolveTypography(theme: "{{ themeName }}", id: "{{ key }}", base: .{{ key }})
             {%- endfor %}
         }
     }
 }
+{% endif %}

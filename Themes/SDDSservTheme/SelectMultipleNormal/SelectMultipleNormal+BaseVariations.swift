@@ -71,13 +71,15 @@ public struct SelectMultipleNormal {
         )
     }
     
-    public static let all: [Variation<SelectAppearance>] = [
-        SelectMultipleNormal.l.variation,
-        SelectMultipleNormal.m.variation,
-        SelectMultipleNormal.s.variation,
-        SelectMultipleNormal.xl.variation,
-        SelectMultipleNormal.xs.variation,
-    ]
+    public static var all: [Variation<SelectAppearance>] {
+        [
+            SelectMultipleNormal.l.variation,
+            SelectMultipleNormal.m.variation,
+            SelectMultipleNormal.s.variation,
+            SelectMultipleNormal.xl.variation,
+            SelectMultipleNormal.xs.variation,
+        ]
+    }
 }
 
 public struct SelectMultipleNormalVariation {

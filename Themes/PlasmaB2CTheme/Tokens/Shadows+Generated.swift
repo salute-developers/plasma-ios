@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Shadows {
     case downHardL
     case downHardM
@@ -21,29 +22,30 @@ public enum Shadows {
     public var token: ShadowToken {
         switch self {
         case .downHardL:
-            return .downHardL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardL", base: .downHardL)
         case .downHardM:
-            return .downHardM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardM", base: .downHardM)
         case .downHardS:
-            return .downHardS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardS", base: .downHardS)
         case .downSoftL:
-            return .downSoftL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftL", base: .downSoftL)
         case .downSoftM:
-            return .downSoftM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftM", base: .downSoftM)
         case .downSoftS:
-            return .downSoftS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftS", base: .downSoftS)
         case .upHardL:
-            return .upHardL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardL", base: .upHardL)
         case .upHardM:
-            return .upHardM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardM", base: .upHardM)
         case .upHardS:
-            return .upHardS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardS", base: .upHardS)
         case .upSoftL:
-            return .upSoftL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftL", base: .upSoftL)
         case .upSoftM:
-            return .upSoftM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftM", base: .upSoftM)
         case .upSoftS:
-            return .upSoftS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftS", base: .upSoftS)
         }
     }
 }
+

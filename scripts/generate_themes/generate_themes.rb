@@ -45,6 +45,11 @@ themes.each do |theme|
   scheme_url = theme['scheme']
   palette_url = theme['palette']
   project_name = theme['name']
+  tenants = theme['tenants'] || []
+  unless tenants.empty?
+    tenant_names = tenants.map { |t| t['name'] }.join(', ')
+    puts "Тенанты для #{project_name}: #{tenant_names}"
+  end
 
   # Команда для запуска исполняемого файла с параметрами
   executable_command = [

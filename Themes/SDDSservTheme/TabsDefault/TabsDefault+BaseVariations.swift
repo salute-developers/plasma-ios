@@ -54,20 +54,22 @@ public struct TabsDefault {
         )
     }
     
-    public static let all: [Variation<TabsAppearance>] = [
-        TabsDefault.l.variation,
-        TabsDefault.l.horizontal.variation,
-        TabsDefault.l.vertical.variation,
-        TabsDefault.m.variation,
-        TabsDefault.m.horizontal.variation,
-        TabsDefault.m.vertical.variation,
-        TabsDefault.s.variation,
-        TabsDefault.s.horizontal.variation,
-        TabsDefault.s.vertical.variation,
-        TabsDefault.xs.variation,
-        TabsDefault.xs.horizontal.variation,
-        TabsDefault.xs.vertical.variation,
-    ]
+    public static var all: [Variation<TabsAppearance>] {
+        [
+            TabsDefault.l.variation,
+            TabsDefault.l.horizontal.variation,
+            TabsDefault.l.vertical.variation,
+            TabsDefault.m.variation,
+            TabsDefault.m.horizontal.variation,
+            TabsDefault.m.vertical.variation,
+            TabsDefault.s.variation,
+            TabsDefault.s.horizontal.variation,
+            TabsDefault.s.vertical.variation,
+            TabsDefault.xs.variation,
+            TabsDefault.xs.horizontal.variation,
+            TabsDefault.xs.vertical.variation,
+        ]
+    }
 }
 
 public struct TabsDefaultVariation {

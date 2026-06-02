@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Gradients: String {
     case surfaceDefaultAccentGradient
     case surfaceDefaultAccentGradientActive
@@ -57,101 +58,101 @@ public enum Gradients: String {
     public var token: GradientToken {
         switch self {
         case .surfaceDefaultAccentGradient:
-            return .surfaceDefaultAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultAccentGradient)
         case .surfaceDefaultAccentGradientActive:
-            return .surfaceDefaultAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultAccentGradientActive)
         case .surfaceDefaultAccentGradientHover:
-            return .surfaceDefaultAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultAccentGradientHover)
         case .surfaceDefaultSkeletonDeepGradient:
-            return .surfaceDefaultSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonDeepGradient)
         case .surfaceDefaultSkeletonDeepGradientActive:
-            return .surfaceDefaultSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonDeepGradientActive)
         case .surfaceDefaultSkeletonDeepGradientHover:
-            return .surfaceDefaultSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonDeepGradientHover)
         case .surfaceDefaultSkeletonGradient:
-            return .surfaceDefaultSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonGradient)
         case .surfaceDefaultSkeletonGradientActive:
-            return .surfaceDefaultSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonGradientActive)
         case .surfaceDefaultSkeletonGradientHover:
-            return .surfaceDefaultSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceDefaultSkeletonGradientHover)
         case .surfaceInverseAccentGradient:
-            return .surfaceInverseAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseAccentGradient)
         case .surfaceInverseAccentGradientActive:
-            return .surfaceInverseAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseAccentGradientActive)
         case .surfaceInverseAccentGradientHover:
-            return .surfaceInverseAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseAccentGradientHover)
         case .surfaceInverseSkeletonDeepGradient:
-            return .surfaceInverseSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonDeepGradient)
         case .surfaceInverseSkeletonDeepGradientActive:
-            return .surfaceInverseSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonDeepGradientActive)
         case .surfaceInverseSkeletonDeepGradientHover:
-            return .surfaceInverseSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonDeepGradientHover)
         case .surfaceInverseSkeletonGradient:
-            return .surfaceInverseSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonGradient)
         case .surfaceInverseSkeletonGradientActive:
-            return .surfaceInverseSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonGradientActive)
         case .surfaceInverseSkeletonGradientHover:
-            return .surfaceInverseSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceInverseSkeletonGradientHover)
         case .surfaceOnDarkAccentGradient:
-            return .surfaceOnDarkAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkAccentGradient)
         case .surfaceOnDarkAccentGradientActive:
-            return .surfaceOnDarkAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkAccentGradientActive)
         case .surfaceOnDarkAccentGradientHover:
-            return .surfaceOnDarkAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkAccentGradientHover)
         case .surfaceOnDarkSkeletonDeepGradient:
-            return .surfaceOnDarkSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradient)
         case .surfaceOnDarkSkeletonDeepGradientActive:
-            return .surfaceOnDarkSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradientActive)
         case .surfaceOnDarkSkeletonDeepGradientHover:
-            return .surfaceOnDarkSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradientHover)
         case .surfaceOnDarkSkeletonGradient:
-            return .surfaceOnDarkSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonGradient)
         case .surfaceOnDarkSkeletonGradientActive:
-            return .surfaceOnDarkSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonGradientActive)
         case .surfaceOnDarkSkeletonGradientHover:
-            return .surfaceOnDarkSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnDarkSkeletonGradientHover)
         case .surfaceOnLightAccentGradient:
-            return .surfaceOnLightAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightAccentGradient)
         case .surfaceOnLightAccentGradientActive:
-            return .surfaceOnLightAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightAccentGradientActive)
         case .surfaceOnLightAccentGradientHover:
-            return .surfaceOnLightAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightAccentGradientHover)
         case .surfaceOnLightSkeletonDeepGradient:
-            return .surfaceOnLightSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonDeepGradient)
         case .surfaceOnLightSkeletonDeepGradientActive:
-            return .surfaceOnLightSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonDeepGradientActive)
         case .surfaceOnLightSkeletonDeepGradientHover:
-            return .surfaceOnLightSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonDeepGradientHover)
         case .surfaceOnLightSkeletonGradient:
-            return .surfaceOnLightSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonGradient)
         case .surfaceOnLightSkeletonGradientActive:
-            return .surfaceOnLightSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonGradientActive)
         case .surfaceOnLightSkeletonGradientHover:
-            return .surfaceOnLightSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .surfaceOnLightSkeletonGradientHover)
         case .textDefaultAccentGradient:
-            return .textDefaultAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textDefaultAccentGradient)
         case .textDefaultAccentGradientActive:
-            return .textDefaultAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textDefaultAccentGradientActive)
         case .textDefaultAccentGradientHover:
-            return .textDefaultAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textDefaultAccentGradientHover)
         case .textInverseAccentGradient:
-            return .textInverseAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textInverseAccentGradient)
         case .textInverseAccentGradientActive:
-            return .textInverseAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textInverseAccentGradientActive)
         case .textInverseAccentGradientHover:
-            return .textInverseAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textInverseAccentGradientHover)
         case .textOnDarkAccentGradient:
-            return .textOnDarkAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnDarkAccentGradient)
         case .textOnDarkAccentGradientActive:
-            return .textOnDarkAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnDarkAccentGradientActive)
         case .textOnDarkAccentGradientHover:
-            return .textOnDarkAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnDarkAccentGradientHover)
         case .textOnLightAccentGradient:
-            return .textOnLightAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnLightAccentGradient)
         case .textOnLightAccentGradientActive:
-            return .textOnLightAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnLightAccentGradientActive)
         case .textOnLightAccentGradientHover:
-            return .textOnLightAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: rawValue, base: .textOnLightAccentGradientHover)
         }
     }
 }
@@ -165,3 +166,4 @@ public extension GradientToken {
         return gradient.token
     }
 }
+

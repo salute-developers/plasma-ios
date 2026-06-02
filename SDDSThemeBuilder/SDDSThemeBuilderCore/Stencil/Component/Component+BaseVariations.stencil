@@ -20,11 +20,13 @@ public struct {{ component }} {
     }
     {%- endfor %}
     
-    public static let all: [Variation<{{ appearance }}>] = [
-        {%- for chain in chains %}
-        {{ component }}.{{ chain }}.variation,
-        {%- endfor %}
-    ]
+    public static var all: [Variation<{{ appearance }}>] {
+        [
+            {%- for chain in chains %}
+            {{ component }}.{{ chain }}.variation,
+            {%- endfor %}
+        ]
+    }
 }
 
 public struct {{ component }}Variation {

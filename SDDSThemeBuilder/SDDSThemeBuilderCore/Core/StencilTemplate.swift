@@ -30,7 +30,12 @@ extension StencilTemplate {
     var filename: String {
         return "\(rawValue)+Generated.swift"
     }
-    
+
+    /// Имя файла для тенантного рендера, например `Colors+Gold+Generated.swift`.
+    func filename(tenantSuffix: String) -> String {
+        return "\(rawValue)+\(tenantSuffix)+Generated.swift"
+    }
+
     func generatedFileName(component: CodeGenerationComponent) -> String {
         let templateName = self.rawValue.replacingOccurrences(of: "Component", with: "")
         return "\(component.rawValue)\(templateName).swift"

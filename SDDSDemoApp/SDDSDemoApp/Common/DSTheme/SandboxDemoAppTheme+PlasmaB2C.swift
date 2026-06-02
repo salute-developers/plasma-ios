@@ -823,9 +823,27 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     }
     
     public var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
-        
+
             []
-        
+
+    }
+
+    public var availableTenants: [Tenant] {
+        switch self {
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Theme.availableTenants
+        case .sdddsServTheme, .plasmaHomeDSTheme, .stylesSalute:
+            return []
+        }
+    }
+
+    public func initialize(tenant: Tenant, onComplete: @escaping () -> Void = {}) {
+        switch self {
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        case .sdddsServTheme, .plasmaHomeDSTheme, .stylesSalute:
+            onComplete()
+        }
     }
 }
 #endif

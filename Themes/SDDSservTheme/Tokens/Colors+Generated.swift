@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Colors: String {
     case backgroundDarkPrimary
     case backgroundDarkSecondary
@@ -939,1865 +940,1865 @@ public enum Colors: String {
     public var token: ColorToken {
         switch self {
         case .backgroundDarkPrimary:
-            return .backgroundDarkPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDarkPrimary)
         case .backgroundDarkSecondary:
-            return .backgroundDarkSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDarkSecondary)
         case .backgroundDarkTertiary:
-            return .backgroundDarkTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDarkTertiary)
         case .backgroundDefaultPrimary:
-            return .backgroundDefaultPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDefaultPrimary)
         case .backgroundDefaultPrimaryBrightness:
-            return .backgroundDefaultPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDefaultPrimaryBrightness)
         case .backgroundDefaultSecondary:
-            return .backgroundDefaultSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDefaultSecondary)
         case .backgroundDefaultTertiary:
-            return .backgroundDefaultTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundDefaultTertiary)
         case .backgroundInversePrimary:
-            return .backgroundInversePrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundInversePrimary)
         case .backgroundInversePrimaryBrightness:
-            return .backgroundInversePrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundInversePrimaryBrightness)
         case .backgroundInverseSecondary:
-            return .backgroundInverseSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundInverseSecondary)
         case .backgroundInverseTertiary:
-            return .backgroundInverseTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundInverseTertiary)
         case .backgroundLightPrimary:
-            return .backgroundLightPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundLightPrimary)
         case .backgroundLightSecondary:
-            return .backgroundLightSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundLightSecondary)
         case .backgroundLightTertiary:
-            return .backgroundLightTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .backgroundLightTertiary)
         case .dataDefaultYellow:
-            return .dataDefaultYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellow)
         case .dataDefaultYellowActive:
-            return .dataDefaultYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowActive)
         case .dataDefaultYellowHover:
-            return .dataDefaultYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowHover)
         case .dataDefaultYellowMinor:
-            return .dataDefaultYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowMinor)
         case .dataDefaultYellowMinorActive:
-            return .dataDefaultYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowMinorActive)
         case .dataDefaultYellowMinorHover:
-            return .dataDefaultYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowMinorHover)
         case .dataDefaultYellowTransparent:
-            return .dataDefaultYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowTransparent)
         case .dataDefaultYellowTransparentActive:
-            return .dataDefaultYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowTransparentActive)
         case .dataDefaultYellowTransparentHover:
-            return .dataDefaultYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataDefaultYellowTransparentHover)
         case .dataInverseYellow:
-            return .dataInverseYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellow)
         case .dataInverseYellowActive:
-            return .dataInverseYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowActive)
         case .dataInverseYellowHover:
-            return .dataInverseYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowHover)
         case .dataInverseYellowMinor:
-            return .dataInverseYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowMinor)
         case .dataInverseYellowMinorActive:
-            return .dataInverseYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowMinorActive)
         case .dataInverseYellowMinorHover:
-            return .dataInverseYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowMinorHover)
         case .dataInverseYellowTransparent:
-            return .dataInverseYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowTransparent)
         case .dataInverseYellowTransparentActive:
-            return .dataInverseYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowTransparentActive)
         case .dataInverseYellowTransparentHover:
-            return .dataInverseYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataInverseYellowTransparentHover)
         case .dataOnDarkYellow:
-            return .dataOnDarkYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellow)
         case .dataOnDarkYellowActive:
-            return .dataOnDarkYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowActive)
         case .dataOnDarkYellowHover:
-            return .dataOnDarkYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowHover)
         case .dataOnDarkYellowMinor:
-            return .dataOnDarkYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowMinor)
         case .dataOnDarkYellowMinorActive:
-            return .dataOnDarkYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowMinorActive)
         case .dataOnDarkYellowMinorHover:
-            return .dataOnDarkYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowMinorHover)
         case .dataOnDarkYellowTransparent:
-            return .dataOnDarkYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowTransparent)
         case .dataOnDarkYellowTransparentActive:
-            return .dataOnDarkYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowTransparentActive)
         case .dataOnDarkYellowTransparentHover:
-            return .dataOnDarkYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnDarkYellowTransparentHover)
         case .dataOnLightYellow:
-            return .dataOnLightYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellow)
         case .dataOnLightYellowActive:
-            return .dataOnLightYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowActive)
         case .dataOnLightYellowHover:
-            return .dataOnLightYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowHover)
         case .dataOnLightYellowMinor:
-            return .dataOnLightYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowMinor)
         case .dataOnLightYellowMinorActive:
-            return .dataOnLightYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowMinorActive)
         case .dataOnLightYellowMinorHover:
-            return .dataOnLightYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowMinorHover)
         case .dataOnLightYellowTransparent:
-            return .dataOnLightYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowTransparent)
         case .dataOnLightYellowTransparentActive:
-            return .dataOnLightYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowTransparentActive)
         case .dataOnLightYellowTransparentHover:
-            return .dataOnLightYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .dataOnLightYellowTransparentHover)
         case .outlineDefaultAccent:
-            return .outlineDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccent)
         case .outlineDefaultAccentActive:
-            return .outlineDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccentActive)
         case .outlineDefaultAccentHover:
-            return .outlineDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccentHover)
         case .outlineDefaultAccentMinor:
-            return .outlineDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccentMinor)
         case .outlineDefaultAccentMinorActive:
-            return .outlineDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccentMinorActive)
         case .outlineDefaultAccentMinorHover:
-            return .outlineDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultAccentMinorHover)
         case .outlineDefaultClear:
-            return .outlineDefaultClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultClear)
         case .outlineDefaultClearActive:
-            return .outlineDefaultClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultClearActive)
         case .outlineDefaultClearHover:
-            return .outlineDefaultClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultClearHover)
         case .outlineDefaultInfo:
-            return .outlineDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfo)
         case .outlineDefaultInfoActive:
-            return .outlineDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfoActive)
         case .outlineDefaultInfoHover:
-            return .outlineDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfoHover)
         case .outlineDefaultInfoMinor:
-            return .outlineDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfoMinor)
         case .outlineDefaultInfoMinorActive:
-            return .outlineDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfoMinorActive)
         case .outlineDefaultInfoMinorHover:
-            return .outlineDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultInfoMinorHover)
         case .outlineDefaultNegative:
-            return .outlineDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegative)
         case .outlineDefaultNegativeActive:
-            return .outlineDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegativeActive)
         case .outlineDefaultNegativeHover:
-            return .outlineDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegativeHover)
         case .outlineDefaultNegativeMinor:
-            return .outlineDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegativeMinor)
         case .outlineDefaultNegativeMinorActive:
-            return .outlineDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegativeMinorActive)
         case .outlineDefaultNegativeMinorHover:
-            return .outlineDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultNegativeMinorHover)
         case .outlineDefaultPositive:
-            return .outlineDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositive)
         case .outlineDefaultPositiveActive:
-            return .outlineDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositiveActive)
         case .outlineDefaultPositiveHover:
-            return .outlineDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositiveHover)
         case .outlineDefaultPositiveMinor:
-            return .outlineDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositiveMinor)
         case .outlineDefaultPositiveMinorActive:
-            return .outlineDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositiveMinorActive)
         case .outlineDefaultPositiveMinorHover:
-            return .outlineDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPositiveMinorHover)
         case .outlineDefaultPromo:
-            return .outlineDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromo)
         case .outlineDefaultPromoActive:
-            return .outlineDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromoActive)
         case .outlineDefaultPromoHover:
-            return .outlineDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromoHover)
         case .outlineDefaultPromoMinor:
-            return .outlineDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromoMinor)
         case .outlineDefaultPromoMinorActive:
-            return .outlineDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromoMinorActive)
         case .outlineDefaultPromoMinorHover:
-            return .outlineDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultPromoMinorHover)
         case .outlineDefaultSolidDefault:
-            return .outlineDefaultSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidDefault)
         case .outlineDefaultSolidDefaultActive:
-            return .outlineDefaultSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidDefaultActive)
         case .outlineDefaultSolidDefaultHover:
-            return .outlineDefaultSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidDefaultHover)
         case .outlineDefaultSolidPrimary:
-            return .outlineDefaultSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidPrimary)
         case .outlineDefaultSolidPrimaryActive:
-            return .outlineDefaultSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidPrimaryActive)
         case .outlineDefaultSolidPrimaryHover:
-            return .outlineDefaultSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidPrimaryHover)
         case .outlineDefaultSolidSecondary:
-            return .outlineDefaultSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidSecondary)
         case .outlineDefaultSolidSecondaryActive:
-            return .outlineDefaultSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidSecondaryActive)
         case .outlineDefaultSolidSecondaryHover:
-            return .outlineDefaultSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidSecondaryHover)
         case .outlineDefaultSolidTertiary:
-            return .outlineDefaultSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidTertiary)
         case .outlineDefaultSolidTertiaryActive:
-            return .outlineDefaultSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidTertiaryActive)
         case .outlineDefaultSolidTertiaryHover:
-            return .outlineDefaultSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultSolidTertiaryHover)
         case .outlineDefaultTransparentAccent:
-            return .outlineDefaultTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentAccent)
         case .outlineDefaultTransparentAccentActive:
-            return .outlineDefaultTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentAccentActive)
         case .outlineDefaultTransparentAccentHover:
-            return .outlineDefaultTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentAccentHover)
         case .outlineDefaultTransparentDefault:
-            return .outlineDefaultTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentDefault)
         case .outlineDefaultTransparentDefaultActive:
-            return .outlineDefaultTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentDefaultActive)
         case .outlineDefaultTransparentDefaultHover:
-            return .outlineDefaultTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentDefaultHover)
         case .outlineDefaultTransparentInfo:
-            return .outlineDefaultTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentInfo)
         case .outlineDefaultTransparentInfoActive:
-            return .outlineDefaultTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentInfoActive)
         case .outlineDefaultTransparentInfoHover:
-            return .outlineDefaultTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentInfoHover)
         case .outlineDefaultTransparentNegative:
-            return .outlineDefaultTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentNegative)
         case .outlineDefaultTransparentNegativeActive:
-            return .outlineDefaultTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentNegativeActive)
         case .outlineDefaultTransparentNegativeHover:
-            return .outlineDefaultTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentNegativeHover)
         case .outlineDefaultTransparentPositive:
-            return .outlineDefaultTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPositive)
         case .outlineDefaultTransparentPositiveActive:
-            return .outlineDefaultTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPositiveActive)
         case .outlineDefaultTransparentPositiveHover:
-            return .outlineDefaultTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPositiveHover)
         case .outlineDefaultTransparentPrimary:
-            return .outlineDefaultTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPrimary)
         case .outlineDefaultTransparentPrimaryActive:
-            return .outlineDefaultTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPrimaryActive)
         case .outlineDefaultTransparentPrimaryHover:
-            return .outlineDefaultTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentPrimaryHover)
         case .outlineDefaultTransparentSecondary:
-            return .outlineDefaultTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentSecondary)
         case .outlineDefaultTransparentSecondaryActive:
-            return .outlineDefaultTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentSecondaryActive)
         case .outlineDefaultTransparentSecondaryHover:
-            return .outlineDefaultTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentSecondaryHover)
         case .outlineDefaultTransparentTertiary:
-            return .outlineDefaultTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentTertiary)
         case .outlineDefaultTransparentTertiaryActive:
-            return .outlineDefaultTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentTertiaryActive)
         case .outlineDefaultTransparentTertiaryHover:
-            return .outlineDefaultTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentTertiaryHover)
         case .outlineDefaultTransparentWarning:
-            return .outlineDefaultTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentWarning)
         case .outlineDefaultTransparentWarningActive:
-            return .outlineDefaultTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentWarningActive)
         case .outlineDefaultTransparentWarningHover:
-            return .outlineDefaultTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultTransparentWarningHover)
         case .outlineDefaultWarning:
-            return .outlineDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarning)
         case .outlineDefaultWarningActive:
-            return .outlineDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarningActive)
         case .outlineDefaultWarningHover:
-            return .outlineDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarningHover)
         case .outlineDefaultWarningMinor:
-            return .outlineDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarningMinor)
         case .outlineDefaultWarningMinorActive:
-            return .outlineDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarningMinorActive)
         case .outlineDefaultWarningMinorHover:
-            return .outlineDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineDefaultWarningMinorHover)
         case .outlineInverseAccent:
-            return .outlineInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccent)
         case .outlineInverseAccentActive:
-            return .outlineInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccentActive)
         case .outlineInverseAccentHover:
-            return .outlineInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccentHover)
         case .outlineInverseAccentMinor:
-            return .outlineInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccentMinor)
         case .outlineInverseAccentMinorActive:
-            return .outlineInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccentMinorActive)
         case .outlineInverseAccentMinorHover:
-            return .outlineInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseAccentMinorHover)
         case .outlineInverseClear:
-            return .outlineInverseClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseClear)
         case .outlineInverseClearActive:
-            return .outlineInverseClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseClearActive)
         case .outlineInverseClearHover:
-            return .outlineInverseClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseClearHover)
         case .outlineInverseInfo:
-            return .outlineInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfo)
         case .outlineInverseInfoActive:
-            return .outlineInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfoActive)
         case .outlineInverseInfoHover:
-            return .outlineInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfoHover)
         case .outlineInverseInfoMinor:
-            return .outlineInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfoMinor)
         case .outlineInverseInfoMinorActive:
-            return .outlineInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfoMinorActive)
         case .outlineInverseInfoMinorHover:
-            return .outlineInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseInfoMinorHover)
         case .outlineInverseNegative:
-            return .outlineInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegative)
         case .outlineInverseNegativeActive:
-            return .outlineInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegativeActive)
         case .outlineInverseNegativeHover:
-            return .outlineInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegativeHover)
         case .outlineInverseNegativeMinor:
-            return .outlineInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegativeMinor)
         case .outlineInverseNegativeMinorActive:
-            return .outlineInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegativeMinorActive)
         case .outlineInverseNegativeMinorHover:
-            return .outlineInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseNegativeMinorHover)
         case .outlineInversePositive:
-            return .outlineInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositive)
         case .outlineInversePositiveActive:
-            return .outlineInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositiveActive)
         case .outlineInversePositiveHover:
-            return .outlineInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositiveHover)
         case .outlineInversePositiveMinor:
-            return .outlineInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositiveMinor)
         case .outlineInversePositiveMinorActive:
-            return .outlineInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositiveMinorActive)
         case .outlineInversePositiveMinorHover:
-            return .outlineInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePositiveMinorHover)
         case .outlineInversePromo:
-            return .outlineInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromo)
         case .outlineInversePromoActive:
-            return .outlineInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromoActive)
         case .outlineInversePromoHover:
-            return .outlineInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromoHover)
         case .outlineInversePromoMinor:
-            return .outlineInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromoMinor)
         case .outlineInversePromoMinorActive:
-            return .outlineInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromoMinorActive)
         case .outlineInversePromoMinorHover:
-            return .outlineInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInversePromoMinorHover)
         case .outlineInverseSolidDefault:
-            return .outlineInverseSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidDefault)
         case .outlineInverseSolidDefaultActive:
-            return .outlineInverseSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidDefaultActive)
         case .outlineInverseSolidDefaultHover:
-            return .outlineInverseSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidDefaultHover)
         case .outlineInverseSolidPrimary:
-            return .outlineInverseSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidPrimary)
         case .outlineInverseSolidPrimaryActive:
-            return .outlineInverseSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidPrimaryActive)
         case .outlineInverseSolidPrimaryHover:
-            return .outlineInverseSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidPrimaryHover)
         case .outlineInverseSolidSecondary:
-            return .outlineInverseSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidSecondary)
         case .outlineInverseSolidSecondaryActive:
-            return .outlineInverseSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidSecondaryActive)
         case .outlineInverseSolidSecondaryHover:
-            return .outlineInverseSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidSecondaryHover)
         case .outlineInverseSolidTertiary:
-            return .outlineInverseSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidTertiary)
         case .outlineInverseSolidTertiaryActive:
-            return .outlineInverseSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidTertiaryActive)
         case .outlineInverseSolidTertiaryHover:
-            return .outlineInverseSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseSolidTertiaryHover)
         case .outlineInverseTransparentAccent:
-            return .outlineInverseTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentAccent)
         case .outlineInverseTransparentAccentActive:
-            return .outlineInverseTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentAccentActive)
         case .outlineInverseTransparentAccentHover:
-            return .outlineInverseTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentAccentHover)
         case .outlineInverseTransparentDefault:
-            return .outlineInverseTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentDefault)
         case .outlineInverseTransparentDefaultActive:
-            return .outlineInverseTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentDefaultActive)
         case .outlineInverseTransparentDefaultHover:
-            return .outlineInverseTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentDefaultHover)
         case .outlineInverseTransparentInfo:
-            return .outlineInverseTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentInfo)
         case .outlineInverseTransparentInfoActive:
-            return .outlineInverseTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentInfoActive)
         case .outlineInverseTransparentInfoHover:
-            return .outlineInverseTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentInfoHover)
         case .outlineInverseTransparentNegative:
-            return .outlineInverseTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentNegative)
         case .outlineInverseTransparentNegativeActive:
-            return .outlineInverseTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentNegativeActive)
         case .outlineInverseTransparentNegativeHover:
-            return .outlineInverseTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentNegativeHover)
         case .outlineInverseTransparentPositive:
-            return .outlineInverseTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPositive)
         case .outlineInverseTransparentPositiveActive:
-            return .outlineInverseTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPositiveActive)
         case .outlineInverseTransparentPositiveHover:
-            return .outlineInverseTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPositiveHover)
         case .outlineInverseTransparentPrimary:
-            return .outlineInverseTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPrimary)
         case .outlineInverseTransparentPrimaryActive:
-            return .outlineInverseTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPrimaryActive)
         case .outlineInverseTransparentPrimaryHover:
-            return .outlineInverseTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentPrimaryHover)
         case .outlineInverseTransparentSecondary:
-            return .outlineInverseTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentSecondary)
         case .outlineInverseTransparentSecondaryActive:
-            return .outlineInverseTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentSecondaryActive)
         case .outlineInverseTransparentSecondaryHover:
-            return .outlineInverseTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentSecondaryHover)
         case .outlineInverseTransparentTertiary:
-            return .outlineInverseTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentTertiary)
         case .outlineInverseTransparentTertiaryActive:
-            return .outlineInverseTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentTertiaryActive)
         case .outlineInverseTransparentTertiaryHover:
-            return .outlineInverseTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentTertiaryHover)
         case .outlineInverseTransparentWarning:
-            return .outlineInverseTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentWarning)
         case .outlineInverseTransparentWarningActive:
-            return .outlineInverseTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentWarningActive)
         case .outlineInverseTransparentWarningHover:
-            return .outlineInverseTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseTransparentWarningHover)
         case .outlineInverseWarning:
-            return .outlineInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarning)
         case .outlineInverseWarningActive:
-            return .outlineInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarningActive)
         case .outlineInverseWarningHover:
-            return .outlineInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarningHover)
         case .outlineInverseWarningMinor:
-            return .outlineInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarningMinor)
         case .outlineInverseWarningMinorActive:
-            return .outlineInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarningMinorActive)
         case .outlineInverseWarningMinorHover:
-            return .outlineInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineInverseWarningMinorHover)
         case .outlineOnDarkAccent:
-            return .outlineOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccent)
         case .outlineOnDarkAccentActive:
-            return .outlineOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccentActive)
         case .outlineOnDarkAccentHover:
-            return .outlineOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccentHover)
         case .outlineOnDarkAccentMinor:
-            return .outlineOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccentMinor)
         case .outlineOnDarkAccentMinorActive:
-            return .outlineOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccentMinorActive)
         case .outlineOnDarkAccentMinorHover:
-            return .outlineOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkAccentMinorHover)
         case .outlineOnDarkClear:
-            return .outlineOnDarkClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkClear)
         case .outlineOnDarkClearActive:
-            return .outlineOnDarkClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkClearActive)
         case .outlineOnDarkClearHover:
-            return .outlineOnDarkClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkClearHover)
         case .outlineOnDarkInfo:
-            return .outlineOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfo)
         case .outlineOnDarkInfoActive:
-            return .outlineOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfoActive)
         case .outlineOnDarkInfoHover:
-            return .outlineOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfoHover)
         case .outlineOnDarkInfoMinor:
-            return .outlineOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfoMinor)
         case .outlineOnDarkInfoMinorActive:
-            return .outlineOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfoMinorActive)
         case .outlineOnDarkInfoMinorHover:
-            return .outlineOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkInfoMinorHover)
         case .outlineOnDarkNegative:
-            return .outlineOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegative)
         case .outlineOnDarkNegativeActive:
-            return .outlineOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegativeActive)
         case .outlineOnDarkNegativeHover:
-            return .outlineOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegativeHover)
         case .outlineOnDarkNegativeMinor:
-            return .outlineOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegativeMinor)
         case .outlineOnDarkNegativeMinorActive:
-            return .outlineOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegativeMinorActive)
         case .outlineOnDarkNegativeMinorHover:
-            return .outlineOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkNegativeMinorHover)
         case .outlineOnDarkPositive:
-            return .outlineOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositive)
         case .outlineOnDarkPositiveActive:
-            return .outlineOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositiveActive)
         case .outlineOnDarkPositiveHover:
-            return .outlineOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositiveHover)
         case .outlineOnDarkPositiveMinor:
-            return .outlineOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositiveMinor)
         case .outlineOnDarkPositiveMinorActive:
-            return .outlineOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositiveMinorActive)
         case .outlineOnDarkPositiveMinorHover:
-            return .outlineOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPositiveMinorHover)
         case .outlineOnDarkPromo:
-            return .outlineOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromo)
         case .outlineOnDarkPromoActive:
-            return .outlineOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromoActive)
         case .outlineOnDarkPromoHover:
-            return .outlineOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromoHover)
         case .outlineOnDarkPromoMinor:
-            return .outlineOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromoMinor)
         case .outlineOnDarkPromoMinorActive:
-            return .outlineOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromoMinorActive)
         case .outlineOnDarkPromoMinorHover:
-            return .outlineOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkPromoMinorHover)
         case .outlineOnDarkSolidDefault:
-            return .outlineOnDarkSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidDefault)
         case .outlineOnDarkSolidDefaultActive:
-            return .outlineOnDarkSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidDefaultActive)
         case .outlineOnDarkSolidDefaultHover:
-            return .outlineOnDarkSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidDefaultHover)
         case .outlineOnDarkSolidPrimary:
-            return .outlineOnDarkSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidPrimary)
         case .outlineOnDarkSolidPrimaryActive:
-            return .outlineOnDarkSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidPrimaryActive)
         case .outlineOnDarkSolidPrimaryHover:
-            return .outlineOnDarkSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidPrimaryHover)
         case .outlineOnDarkSolidSecondary:
-            return .outlineOnDarkSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidSecondary)
         case .outlineOnDarkSolidSecondaryActive:
-            return .outlineOnDarkSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidSecondaryActive)
         case .outlineOnDarkSolidSecondaryHover:
-            return .outlineOnDarkSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidSecondaryHover)
         case .outlineOnDarkSolidTertiary:
-            return .outlineOnDarkSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidTertiary)
         case .outlineOnDarkSolidTertiaryActive:
-            return .outlineOnDarkSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidTertiaryActive)
         case .outlineOnDarkSolidTertiaryHover:
-            return .outlineOnDarkSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkSolidTertiaryHover)
         case .outlineOnDarkTransparentAccent:
-            return .outlineOnDarkTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentAccent)
         case .outlineOnDarkTransparentAccentActive:
-            return .outlineOnDarkTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentAccentActive)
         case .outlineOnDarkTransparentAccentHover:
-            return .outlineOnDarkTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentAccentHover)
         case .outlineOnDarkTransparentDefault:
-            return .outlineOnDarkTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentDefault)
         case .outlineOnDarkTransparentDefaultActive:
-            return .outlineOnDarkTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentDefaultActive)
         case .outlineOnDarkTransparentDefaultHover:
-            return .outlineOnDarkTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentDefaultHover)
         case .outlineOnDarkTransparentInfo:
-            return .outlineOnDarkTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentInfo)
         case .outlineOnDarkTransparentInfoActive:
-            return .outlineOnDarkTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentInfoActive)
         case .outlineOnDarkTransparentInfoHover:
-            return .outlineOnDarkTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentInfoHover)
         case .outlineOnDarkTransparentNegative:
-            return .outlineOnDarkTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentNegative)
         case .outlineOnDarkTransparentNegativeActive:
-            return .outlineOnDarkTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentNegativeActive)
         case .outlineOnDarkTransparentNegativeHover:
-            return .outlineOnDarkTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentNegativeHover)
         case .outlineOnDarkTransparentPositive:
-            return .outlineOnDarkTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPositive)
         case .outlineOnDarkTransparentPositiveActive:
-            return .outlineOnDarkTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPositiveActive)
         case .outlineOnDarkTransparentPositiveHover:
-            return .outlineOnDarkTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPositiveHover)
         case .outlineOnDarkTransparentPrimary:
-            return .outlineOnDarkTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPrimary)
         case .outlineOnDarkTransparentPrimaryActive:
-            return .outlineOnDarkTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPrimaryActive)
         case .outlineOnDarkTransparentPrimaryHover:
-            return .outlineOnDarkTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentPrimaryHover)
         case .outlineOnDarkTransparentSecondary:
-            return .outlineOnDarkTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentSecondary)
         case .outlineOnDarkTransparentSecondaryActive:
-            return .outlineOnDarkTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentSecondaryActive)
         case .outlineOnDarkTransparentSecondaryHover:
-            return .outlineOnDarkTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentSecondaryHover)
         case .outlineOnDarkTransparentTertiary:
-            return .outlineOnDarkTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentTertiary)
         case .outlineOnDarkTransparentTertiaryActive:
-            return .outlineOnDarkTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentTertiaryActive)
         case .outlineOnDarkTransparentTertiaryHover:
-            return .outlineOnDarkTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentTertiaryHover)
         case .outlineOnDarkTransparentWarning:
-            return .outlineOnDarkTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentWarning)
         case .outlineOnDarkTransparentWarningActive:
-            return .outlineOnDarkTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentWarningActive)
         case .outlineOnDarkTransparentWarningHover:
-            return .outlineOnDarkTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkTransparentWarningHover)
         case .outlineOnDarkWarning:
-            return .outlineOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarning)
         case .outlineOnDarkWarningActive:
-            return .outlineOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarningActive)
         case .outlineOnDarkWarningHover:
-            return .outlineOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarningHover)
         case .outlineOnDarkWarningMinor:
-            return .outlineOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarningMinor)
         case .outlineOnDarkWarningMinorActive:
-            return .outlineOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarningMinorActive)
         case .outlineOnDarkWarningMinorHover:
-            return .outlineOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnDarkWarningMinorHover)
         case .outlineOnLightAccent:
-            return .outlineOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccent)
         case .outlineOnLightAccentActive:
-            return .outlineOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccentActive)
         case .outlineOnLightAccentHover:
-            return .outlineOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccentHover)
         case .outlineOnLightAccentMinor:
-            return .outlineOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccentMinor)
         case .outlineOnLightAccentMinorActive:
-            return .outlineOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccentMinorActive)
         case .outlineOnLightAccentMinorHover:
-            return .outlineOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightAccentMinorHover)
         case .outlineOnLightClear:
-            return .outlineOnLightClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightClear)
         case .outlineOnLightClearActive:
-            return .outlineOnLightClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightClearActive)
         case .outlineOnLightClearHover:
-            return .outlineOnLightClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightClearHover)
         case .outlineOnLightInfo:
-            return .outlineOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfo)
         case .outlineOnLightInfoActive:
-            return .outlineOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfoActive)
         case .outlineOnLightInfoHover:
-            return .outlineOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfoHover)
         case .outlineOnLightInfoMinor:
-            return .outlineOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfoMinor)
         case .outlineOnLightInfoMinorActive:
-            return .outlineOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfoMinorActive)
         case .outlineOnLightInfoMinorHover:
-            return .outlineOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightInfoMinorHover)
         case .outlineOnLightNegative:
-            return .outlineOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegative)
         case .outlineOnLightNegativeActive:
-            return .outlineOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegativeActive)
         case .outlineOnLightNegativeHover:
-            return .outlineOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegativeHover)
         case .outlineOnLightNegativeMinor:
-            return .outlineOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegativeMinor)
         case .outlineOnLightNegativeMinorActive:
-            return .outlineOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegativeMinorActive)
         case .outlineOnLightNegativeMinorHover:
-            return .outlineOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightNegativeMinorHover)
         case .outlineOnLightPositive:
-            return .outlineOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositive)
         case .outlineOnLightPositiveActive:
-            return .outlineOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositiveActive)
         case .outlineOnLightPositiveHover:
-            return .outlineOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositiveHover)
         case .outlineOnLightPositiveMinor:
-            return .outlineOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositiveMinor)
         case .outlineOnLightPositiveMinorActive:
-            return .outlineOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositiveMinorActive)
         case .outlineOnLightPositiveMinorHover:
-            return .outlineOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPositiveMinorHover)
         case .outlineOnLightPromo:
-            return .outlineOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromo)
         case .outlineOnLightPromoActive:
-            return .outlineOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromoActive)
         case .outlineOnLightPromoHover:
-            return .outlineOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromoHover)
         case .outlineOnLightPromoMinor:
-            return .outlineOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromoMinor)
         case .outlineOnLightPromoMinorActive:
-            return .outlineOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromoMinorActive)
         case .outlineOnLightPromoMinorHover:
-            return .outlineOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightPromoMinorHover)
         case .outlineOnLightSolidDefault:
-            return .outlineOnLightSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidDefault)
         case .outlineOnLightSolidDefaultActive:
-            return .outlineOnLightSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidDefaultActive)
         case .outlineOnLightSolidDefaultHover:
-            return .outlineOnLightSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidDefaultHover)
         case .outlineOnLightSolidPrimary:
-            return .outlineOnLightSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidPrimary)
         case .outlineOnLightSolidPrimaryActive:
-            return .outlineOnLightSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidPrimaryActive)
         case .outlineOnLightSolidPrimaryHover:
-            return .outlineOnLightSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidPrimaryHover)
         case .outlineOnLightSolidSecondary:
-            return .outlineOnLightSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidSecondary)
         case .outlineOnLightSolidSecondaryActive:
-            return .outlineOnLightSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidSecondaryActive)
         case .outlineOnLightSolidSecondaryHover:
-            return .outlineOnLightSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidSecondaryHover)
         case .outlineOnLightSolidTertiary:
-            return .outlineOnLightSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidTertiary)
         case .outlineOnLightSolidTertiaryActive:
-            return .outlineOnLightSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidTertiaryActive)
         case .outlineOnLightSolidTertiaryHover:
-            return .outlineOnLightSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightSolidTertiaryHover)
         case .outlineOnLightTransparentAccent:
-            return .outlineOnLightTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentAccent)
         case .outlineOnLightTransparentAccentActive:
-            return .outlineOnLightTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentAccentActive)
         case .outlineOnLightTransparentAccentHover:
-            return .outlineOnLightTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentAccentHover)
         case .outlineOnLightTransparentDefault:
-            return .outlineOnLightTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentDefault)
         case .outlineOnLightTransparentDefaultActive:
-            return .outlineOnLightTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentDefaultActive)
         case .outlineOnLightTransparentDefaultHover:
-            return .outlineOnLightTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentDefaultHover)
         case .outlineOnLightTransparentInfo:
-            return .outlineOnLightTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentInfo)
         case .outlineOnLightTransparentInfoActive:
-            return .outlineOnLightTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentInfoActive)
         case .outlineOnLightTransparentInfoHover:
-            return .outlineOnLightTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentInfoHover)
         case .outlineOnLightTransparentNegative:
-            return .outlineOnLightTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentNegative)
         case .outlineOnLightTransparentNegativeActive:
-            return .outlineOnLightTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentNegativeActive)
         case .outlineOnLightTransparentNegativeHover:
-            return .outlineOnLightTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentNegativeHover)
         case .outlineOnLightTransparentPositive:
-            return .outlineOnLightTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPositive)
         case .outlineOnLightTransparentPositiveActive:
-            return .outlineOnLightTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPositiveActive)
         case .outlineOnLightTransparentPositiveHover:
-            return .outlineOnLightTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPositiveHover)
         case .outlineOnLightTransparentPrimary:
-            return .outlineOnLightTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPrimary)
         case .outlineOnLightTransparentPrimaryActive:
-            return .outlineOnLightTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPrimaryActive)
         case .outlineOnLightTransparentPrimaryHover:
-            return .outlineOnLightTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentPrimaryHover)
         case .outlineOnLightTransparentSecondary:
-            return .outlineOnLightTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentSecondary)
         case .outlineOnLightTransparentSecondaryActive:
-            return .outlineOnLightTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentSecondaryActive)
         case .outlineOnLightTransparentSecondaryHover:
-            return .outlineOnLightTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentSecondaryHover)
         case .outlineOnLightTransparentTertiary:
-            return .outlineOnLightTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentTertiary)
         case .outlineOnLightTransparentTertiaryActive:
-            return .outlineOnLightTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentTertiaryActive)
         case .outlineOnLightTransparentTertiaryHover:
-            return .outlineOnLightTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentTertiaryHover)
         case .outlineOnLightTransparentWarning:
-            return .outlineOnLightTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentWarning)
         case .outlineOnLightTransparentWarningActive:
-            return .outlineOnLightTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentWarningActive)
         case .outlineOnLightTransparentWarningHover:
-            return .outlineOnLightTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightTransparentWarningHover)
         case .outlineOnLightWarning:
-            return .outlineOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarning)
         case .outlineOnLightWarningActive:
-            return .outlineOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarningActive)
         case .outlineOnLightWarningHover:
-            return .outlineOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarningHover)
         case .outlineOnLightWarningMinor:
-            return .outlineOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarningMinor)
         case .outlineOnLightWarningMinorActive:
-            return .outlineOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarningMinorActive)
         case .outlineOnLightWarningMinorHover:
-            return .outlineOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .outlineOnLightWarningMinorHover)
         case .overlayDefaultBlur:
-            return .overlayDefaultBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayDefaultBlur)
         case .overlayDefaultHard:
-            return .overlayDefaultHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayDefaultHard)
         case .overlayDefaultSoft:
-            return .overlayDefaultSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayDefaultSoft)
         case .overlayInverseBlur:
-            return .overlayInverseBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayInverseBlur)
         case .overlayInverseHard:
-            return .overlayInverseHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayInverseHard)
         case .overlayInverseSoft:
-            return .overlayInverseSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayInverseSoft)
         case .overlayOnDarkBlur:
-            return .overlayOnDarkBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnDarkBlur)
         case .overlayOnDarkHard:
-            return .overlayOnDarkHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnDarkHard)
         case .overlayOnDarkSoft:
-            return .overlayOnDarkSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnDarkSoft)
         case .overlayOnLightBlur:
-            return .overlayOnLightBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnLightBlur)
         case .overlayOnLightHard:
-            return .overlayOnLightHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnLightHard)
         case .overlayOnLightSoft:
-            return .overlayOnLightSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .overlayOnLightSoft)
         case .surfaceDefaultAccent:
-            return .surfaceDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccent)
         case .surfaceDefaultAccentActive:
-            return .surfaceDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccentActive)
         case .surfaceDefaultAccentHover:
-            return .surfaceDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccentHover)
         case .surfaceDefaultAccentMinor:
-            return .surfaceDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccentMinor)
         case .surfaceDefaultAccentMinorActive:
-            return .surfaceDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccentMinorActive)
         case .surfaceDefaultAccentMinorHover:
-            return .surfaceDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultAccentMinorHover)
         case .surfaceDefaultClear:
-            return .surfaceDefaultClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultClear)
         case .surfaceDefaultClearActive:
-            return .surfaceDefaultClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultClearActive)
         case .surfaceDefaultClearHover:
-            return .surfaceDefaultClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultClearHover)
         case .surfaceDefaultInfo:
-            return .surfaceDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfo)
         case .surfaceDefaultInfoActive:
-            return .surfaceDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfoActive)
         case .surfaceDefaultInfoHover:
-            return .surfaceDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfoHover)
         case .surfaceDefaultInfoMinor:
-            return .surfaceDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfoMinor)
         case .surfaceDefaultInfoMinorActive:
-            return .surfaceDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfoMinorActive)
         case .surfaceDefaultInfoMinorHover:
-            return .surfaceDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultInfoMinorHover)
         case .surfaceDefaultNegative:
-            return .surfaceDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegative)
         case .surfaceDefaultNegativeActive:
-            return .surfaceDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegativeActive)
         case .surfaceDefaultNegativeHover:
-            return .surfaceDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegativeHover)
         case .surfaceDefaultNegativeMinor:
-            return .surfaceDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegativeMinor)
         case .surfaceDefaultNegativeMinorActive:
-            return .surfaceDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegativeMinorActive)
         case .surfaceDefaultNegativeMinorHover:
-            return .surfaceDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultNegativeMinorHover)
         case .surfaceDefaultPositive:
-            return .surfaceDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositive)
         case .surfaceDefaultPositiveActive:
-            return .surfaceDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositiveActive)
         case .surfaceDefaultPositiveHover:
-            return .surfaceDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositiveHover)
         case .surfaceDefaultPositiveMinor:
-            return .surfaceDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositiveMinor)
         case .surfaceDefaultPositiveMinorActive:
-            return .surfaceDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositiveMinorActive)
         case .surfaceDefaultPositiveMinorHover:
-            return .surfaceDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPositiveMinorHover)
         case .surfaceDefaultPromo:
-            return .surfaceDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromo)
         case .surfaceDefaultPromoActive:
-            return .surfaceDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromoActive)
         case .surfaceDefaultPromoHover:
-            return .surfaceDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromoHover)
         case .surfaceDefaultPromoMinor:
-            return .surfaceDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromoMinor)
         case .surfaceDefaultPromoMinorActive:
-            return .surfaceDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromoMinorActive)
         case .surfaceDefaultPromoMinorHover:
-            return .surfaceDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultPromoMinorHover)
         case .surfaceDefaultSolidCard:
-            return .surfaceDefaultSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidCard)
         case .surfaceDefaultSolidCardActive:
-            return .surfaceDefaultSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidCardActive)
         case .surfaceDefaultSolidCardBrightness:
-            return .surfaceDefaultSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidCardBrightness)
         case .surfaceDefaultSolidCardHover:
-            return .surfaceDefaultSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidCardHover)
         case .surfaceDefaultSolidDefault:
-            return .surfaceDefaultSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidDefault)
         case .surfaceDefaultSolidDefaultActive:
-            return .surfaceDefaultSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidDefaultActive)
         case .surfaceDefaultSolidDefaultHover:
-            return .surfaceDefaultSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidDefaultHover)
         case .surfaceDefaultSolidPrimary:
-            return .surfaceDefaultSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidPrimary)
         case .surfaceDefaultSolidPrimaryActive:
-            return .surfaceDefaultSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidPrimaryActive)
         case .surfaceDefaultSolidPrimaryBrightness:
-            return .surfaceDefaultSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidPrimaryBrightness)
         case .surfaceDefaultSolidPrimaryHover:
-            return .surfaceDefaultSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidPrimaryHover)
         case .surfaceDefaultSolidSecondary:
-            return .surfaceDefaultSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidSecondary)
         case .surfaceDefaultSolidSecondaryActive:
-            return .surfaceDefaultSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidSecondaryActive)
         case .surfaceDefaultSolidSecondaryHover:
-            return .surfaceDefaultSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidSecondaryHover)
         case .surfaceDefaultSolidTertiary:
-            return .surfaceDefaultSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidTertiary)
         case .surfaceDefaultSolidTertiaryActive:
-            return .surfaceDefaultSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidTertiaryActive)
         case .surfaceDefaultSolidTertiaryHover:
-            return .surfaceDefaultSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultSolidTertiaryHover)
         case .surfaceDefaultTransparentAccent:
-            return .surfaceDefaultTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentAccent)
         case .surfaceDefaultTransparentAccentActive:
-            return .surfaceDefaultTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentAccentActive)
         case .surfaceDefaultTransparentAccentHover:
-            return .surfaceDefaultTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentAccentHover)
         case .surfaceDefaultTransparentCard:
-            return .surfaceDefaultTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentCard)
         case .surfaceDefaultTransparentCardActive:
-            return .surfaceDefaultTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentCardActive)
         case .surfaceDefaultTransparentCardBrightness:
-            return .surfaceDefaultTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentCardBrightness)
         case .surfaceDefaultTransparentCardHover:
-            return .surfaceDefaultTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentCardHover)
         case .surfaceDefaultTransparentDeep:
-            return .surfaceDefaultTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentDeep)
         case .surfaceDefaultTransparentDeepActive:
-            return .surfaceDefaultTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentDeepActive)
         case .surfaceDefaultTransparentDeepHover:
-            return .surfaceDefaultTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentDeepHover)
         case .surfaceDefaultTransparentInfo:
-            return .surfaceDefaultTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentInfo)
         case .surfaceDefaultTransparentInfoActive:
-            return .surfaceDefaultTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentInfoActive)
         case .surfaceDefaultTransparentInfoHover:
-            return .surfaceDefaultTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentInfoHover)
         case .surfaceDefaultTransparentNegative:
-            return .surfaceDefaultTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentNegative)
         case .surfaceDefaultTransparentNegativeActive:
-            return .surfaceDefaultTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentNegativeActive)
         case .surfaceDefaultTransparentNegativeHover:
-            return .surfaceDefaultTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentNegativeHover)
         case .surfaceDefaultTransparentPositive:
-            return .surfaceDefaultTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPositive)
         case .surfaceDefaultTransparentPositiveActive:
-            return .surfaceDefaultTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPositiveActive)
         case .surfaceDefaultTransparentPositiveHover:
-            return .surfaceDefaultTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPositiveHover)
         case .surfaceDefaultTransparentPrimary:
-            return .surfaceDefaultTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPrimary)
         case .surfaceDefaultTransparentPrimaryActive:
-            return .surfaceDefaultTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPrimaryActive)
         case .surfaceDefaultTransparentPrimaryHover:
-            return .surfaceDefaultTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPrimaryHover)
         case .surfaceDefaultTransparentPromo:
-            return .surfaceDefaultTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPromo)
         case .surfaceDefaultTransparentPromoActive:
-            return .surfaceDefaultTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPromoActive)
         case .surfaceDefaultTransparentPromoHover:
-            return .surfaceDefaultTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentPromoHover)
         case .surfaceDefaultTransparentSecondary:
-            return .surfaceDefaultTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentSecondary)
         case .surfaceDefaultTransparentSecondaryActive:
-            return .surfaceDefaultTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentSecondaryActive)
         case .surfaceDefaultTransparentSecondaryHover:
-            return .surfaceDefaultTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentSecondaryHover)
         case .surfaceDefaultTransparentTertiary:
-            return .surfaceDefaultTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentTertiary)
         case .surfaceDefaultTransparentTertiaryActive:
-            return .surfaceDefaultTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentTertiaryActive)
         case .surfaceDefaultTransparentTertiaryHover:
-            return .surfaceDefaultTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentTertiaryHover)
         case .surfaceDefaultTransparentWarning:
-            return .surfaceDefaultTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentWarning)
         case .surfaceDefaultTransparentWarningActive:
-            return .surfaceDefaultTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentWarningActive)
         case .surfaceDefaultTransparentWarningHover:
-            return .surfaceDefaultTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultTransparentWarningHover)
         case .surfaceDefaultWarning:
-            return .surfaceDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarning)
         case .surfaceDefaultWarningActive:
-            return .surfaceDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarningActive)
         case .surfaceDefaultWarningHover:
-            return .surfaceDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarningHover)
         case .surfaceDefaultWarningMinor:
-            return .surfaceDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarningMinor)
         case .surfaceDefaultWarningMinorActive:
-            return .surfaceDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarningMinorActive)
         case .surfaceDefaultWarningMinorHover:
-            return .surfaceDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceDefaultWarningMinorHover)
         case .surfaceInverseAccent:
-            return .surfaceInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccent)
         case .surfaceInverseAccentActive:
-            return .surfaceInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccentActive)
         case .surfaceInverseAccentHover:
-            return .surfaceInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccentHover)
         case .surfaceInverseAccentMinor:
-            return .surfaceInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccentMinor)
         case .surfaceInverseAccentMinorActive:
-            return .surfaceInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccentMinorActive)
         case .surfaceInverseAccentMinorHover:
-            return .surfaceInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseAccentMinorHover)
         case .surfaceInverseClear:
-            return .surfaceInverseClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseClear)
         case .surfaceInverseClearActive:
-            return .surfaceInverseClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseClearActive)
         case .surfaceInverseClearHover:
-            return .surfaceInverseClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseClearHover)
         case .surfaceInverseInfo:
-            return .surfaceInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfo)
         case .surfaceInverseInfoActive:
-            return .surfaceInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfoActive)
         case .surfaceInverseInfoHover:
-            return .surfaceInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfoHover)
         case .surfaceInverseInfoMinor:
-            return .surfaceInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfoMinor)
         case .surfaceInverseInfoMinorActive:
-            return .surfaceInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfoMinorActive)
         case .surfaceInverseInfoMinorHover:
-            return .surfaceInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseInfoMinorHover)
         case .surfaceInverseNegative:
-            return .surfaceInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegative)
         case .surfaceInverseNegativeActive:
-            return .surfaceInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegativeActive)
         case .surfaceInverseNegativeHover:
-            return .surfaceInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegativeHover)
         case .surfaceInverseNegativeMinor:
-            return .surfaceInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegativeMinor)
         case .surfaceInverseNegativeMinorActive:
-            return .surfaceInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegativeMinorActive)
         case .surfaceInverseNegativeMinorHover:
-            return .surfaceInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseNegativeMinorHover)
         case .surfaceInversePositive:
-            return .surfaceInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositive)
         case .surfaceInversePositiveActive:
-            return .surfaceInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositiveActive)
         case .surfaceInversePositiveHover:
-            return .surfaceInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositiveHover)
         case .surfaceInversePositiveMinor:
-            return .surfaceInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositiveMinor)
         case .surfaceInversePositiveMinorActive:
-            return .surfaceInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositiveMinorActive)
         case .surfaceInversePositiveMinorHover:
-            return .surfaceInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePositiveMinorHover)
         case .surfaceInversePromo:
-            return .surfaceInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromo)
         case .surfaceInversePromoActive:
-            return .surfaceInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromoActive)
         case .surfaceInversePromoHover:
-            return .surfaceInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromoHover)
         case .surfaceInversePromoMinor:
-            return .surfaceInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromoMinor)
         case .surfaceInversePromoMinorActive:
-            return .surfaceInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromoMinorActive)
         case .surfaceInversePromoMinorHover:
-            return .surfaceInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInversePromoMinorHover)
         case .surfaceInverseSolidCard:
-            return .surfaceInverseSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidCard)
         case .surfaceInverseSolidCardActive:
-            return .surfaceInverseSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidCardActive)
         case .surfaceInverseSolidCardBrightness:
-            return .surfaceInverseSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidCardBrightness)
         case .surfaceInverseSolidCardHover:
-            return .surfaceInverseSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidCardHover)
         case .surfaceInverseSolidDefault:
-            return .surfaceInverseSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidDefault)
         case .surfaceInverseSolidDefaultActive:
-            return .surfaceInverseSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidDefaultActive)
         case .surfaceInverseSolidDefaultHover:
-            return .surfaceInverseSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidDefaultHover)
         case .surfaceInverseSolidPrimary:
-            return .surfaceInverseSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidPrimary)
         case .surfaceInverseSolidPrimaryActive:
-            return .surfaceInverseSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidPrimaryActive)
         case .surfaceInverseSolidPrimaryBrightness:
-            return .surfaceInverseSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidPrimaryBrightness)
         case .surfaceInverseSolidPrimaryHover:
-            return .surfaceInverseSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidPrimaryHover)
         case .surfaceInverseSolidSecondary:
-            return .surfaceInverseSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidSecondary)
         case .surfaceInverseSolidSecondaryActive:
-            return .surfaceInverseSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidSecondaryActive)
         case .surfaceInverseSolidSecondaryHover:
-            return .surfaceInverseSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidSecondaryHover)
         case .surfaceInverseSolidTertiary:
-            return .surfaceInverseSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidTertiary)
         case .surfaceInverseSolidTertiaryActive:
-            return .surfaceInverseSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidTertiaryActive)
         case .surfaceInverseSolidTertiaryHover:
-            return .surfaceInverseSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseSolidTertiaryHover)
         case .surfaceInverseTransparentAccent:
-            return .surfaceInverseTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentAccent)
         case .surfaceInverseTransparentAccentActive:
-            return .surfaceInverseTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentAccentActive)
         case .surfaceInverseTransparentAccentHover:
-            return .surfaceInverseTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentAccentHover)
         case .surfaceInverseTransparentCard:
-            return .surfaceInverseTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentCard)
         case .surfaceInverseTransparentCardActive:
-            return .surfaceInverseTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentCardActive)
         case .surfaceInverseTransparentCardBrightness:
-            return .surfaceInverseTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentCardBrightness)
         case .surfaceInverseTransparentCardHover:
-            return .surfaceInverseTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentCardHover)
         case .surfaceInverseTransparentDeep:
-            return .surfaceInverseTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentDeep)
         case .surfaceInverseTransparentDeepActive:
-            return .surfaceInverseTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentDeepActive)
         case .surfaceInverseTransparentDeepHover:
-            return .surfaceInverseTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentDeepHover)
         case .surfaceInverseTransparentInfo:
-            return .surfaceInverseTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentInfo)
         case .surfaceInverseTransparentInfoActive:
-            return .surfaceInverseTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentInfoActive)
         case .surfaceInverseTransparentInfoHover:
-            return .surfaceInverseTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentInfoHover)
         case .surfaceInverseTransparentNegative:
-            return .surfaceInverseTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentNegative)
         case .surfaceInverseTransparentNegativeActive:
-            return .surfaceInverseTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentNegativeActive)
         case .surfaceInverseTransparentNegativeHover:
-            return .surfaceInverseTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentNegativeHover)
         case .surfaceInverseTransparentPositive:
-            return .surfaceInverseTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPositive)
         case .surfaceInverseTransparentPositiveActive:
-            return .surfaceInverseTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPositiveActive)
         case .surfaceInverseTransparentPositiveHover:
-            return .surfaceInverseTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPositiveHover)
         case .surfaceInverseTransparentPrimary:
-            return .surfaceInverseTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPrimary)
         case .surfaceInverseTransparentPrimaryActive:
-            return .surfaceInverseTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPrimaryActive)
         case .surfaceInverseTransparentPrimaryHover:
-            return .surfaceInverseTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPrimaryHover)
         case .surfaceInverseTransparentPromo:
-            return .surfaceInverseTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPromo)
         case .surfaceInverseTransparentPromoActive:
-            return .surfaceInverseTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPromoActive)
         case .surfaceInverseTransparentPromoHover:
-            return .surfaceInverseTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentPromoHover)
         case .surfaceInverseTransparentSecondary:
-            return .surfaceInverseTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentSecondary)
         case .surfaceInverseTransparentSecondaryActive:
-            return .surfaceInverseTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentSecondaryActive)
         case .surfaceInverseTransparentSecondaryHover:
-            return .surfaceInverseTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentSecondaryHover)
         case .surfaceInverseTransparentTertiary:
-            return .surfaceInverseTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentTertiary)
         case .surfaceInverseTransparentTertiaryActive:
-            return .surfaceInverseTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentTertiaryActive)
         case .surfaceInverseTransparentTertiaryHover:
-            return .surfaceInverseTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentTertiaryHover)
         case .surfaceInverseTransparentWarning:
-            return .surfaceInverseTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentWarning)
         case .surfaceInverseTransparentWarningActive:
-            return .surfaceInverseTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentWarningActive)
         case .surfaceInverseTransparentWarningHover:
-            return .surfaceInverseTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseTransparentWarningHover)
         case .surfaceInverseWarning:
-            return .surfaceInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarning)
         case .surfaceInverseWarningActive:
-            return .surfaceInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarningActive)
         case .surfaceInverseWarningHover:
-            return .surfaceInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarningHover)
         case .surfaceInverseWarningMinor:
-            return .surfaceInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarningMinor)
         case .surfaceInverseWarningMinorActive:
-            return .surfaceInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarningMinorActive)
         case .surfaceInverseWarningMinorHover:
-            return .surfaceInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceInverseWarningMinorHover)
         case .surfaceOnDarkAccent:
-            return .surfaceOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccent)
         case .surfaceOnDarkAccentActive:
-            return .surfaceOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccentActive)
         case .surfaceOnDarkAccentHover:
-            return .surfaceOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccentHover)
         case .surfaceOnDarkAccentMinor:
-            return .surfaceOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccentMinor)
         case .surfaceOnDarkAccentMinorActive:
-            return .surfaceOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccentMinorActive)
         case .surfaceOnDarkAccentMinorHover:
-            return .surfaceOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkAccentMinorHover)
         case .surfaceOnDarkClear:
-            return .surfaceOnDarkClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkClear)
         case .surfaceOnDarkClearActive:
-            return .surfaceOnDarkClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkClearActive)
         case .surfaceOnDarkClearHover:
-            return .surfaceOnDarkClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkClearHover)
         case .surfaceOnDarkInfo:
-            return .surfaceOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfo)
         case .surfaceOnDarkInfoActive:
-            return .surfaceOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfoActive)
         case .surfaceOnDarkInfoHover:
-            return .surfaceOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfoHover)
         case .surfaceOnDarkInfoMinor:
-            return .surfaceOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfoMinor)
         case .surfaceOnDarkInfoMinorActive:
-            return .surfaceOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfoMinorActive)
         case .surfaceOnDarkInfoMinorHover:
-            return .surfaceOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkInfoMinorHover)
         case .surfaceOnDarkNegative:
-            return .surfaceOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegative)
         case .surfaceOnDarkNegativeActive:
-            return .surfaceOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegativeActive)
         case .surfaceOnDarkNegativeHover:
-            return .surfaceOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegativeHover)
         case .surfaceOnDarkNegativeMinor:
-            return .surfaceOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegativeMinor)
         case .surfaceOnDarkNegativeMinorActive:
-            return .surfaceOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegativeMinorActive)
         case .surfaceOnDarkNegativeMinorHover:
-            return .surfaceOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkNegativeMinorHover)
         case .surfaceOnDarkPositive:
-            return .surfaceOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositive)
         case .surfaceOnDarkPositiveActive:
-            return .surfaceOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositiveActive)
         case .surfaceOnDarkPositiveHover:
-            return .surfaceOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositiveHover)
         case .surfaceOnDarkPositiveMinor:
-            return .surfaceOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositiveMinor)
         case .surfaceOnDarkPositiveMinorActive:
-            return .surfaceOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositiveMinorActive)
         case .surfaceOnDarkPositiveMinorHover:
-            return .surfaceOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPositiveMinorHover)
         case .surfaceOnDarkPromo:
-            return .surfaceOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromo)
         case .surfaceOnDarkPromoActive:
-            return .surfaceOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromoActive)
         case .surfaceOnDarkPromoHover:
-            return .surfaceOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromoHover)
         case .surfaceOnDarkPromoMinor:
-            return .surfaceOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromoMinor)
         case .surfaceOnDarkPromoMinorActive:
-            return .surfaceOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromoMinorActive)
         case .surfaceOnDarkPromoMinorHover:
-            return .surfaceOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkPromoMinorHover)
         case .surfaceOnDarkSolidCard:
-            return .surfaceOnDarkSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidCard)
         case .surfaceOnDarkSolidCardActive:
-            return .surfaceOnDarkSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidCardActive)
         case .surfaceOnDarkSolidCardBrightness:
-            return .surfaceOnDarkSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidCardBrightness)
         case .surfaceOnDarkSolidCardHover:
-            return .surfaceOnDarkSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidCardHover)
         case .surfaceOnDarkSolidDefault:
-            return .surfaceOnDarkSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidDefault)
         case .surfaceOnDarkSolidDefaultActive:
-            return .surfaceOnDarkSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidDefaultActive)
         case .surfaceOnDarkSolidDefaultHover:
-            return .surfaceOnDarkSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidDefaultHover)
         case .surfaceOnDarkSolidPrimary:
-            return .surfaceOnDarkSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidPrimary)
         case .surfaceOnDarkSolidPrimaryActive:
-            return .surfaceOnDarkSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidPrimaryActive)
         case .surfaceOnDarkSolidPrimaryBrightness:
-            return .surfaceOnDarkSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidPrimaryBrightness)
         case .surfaceOnDarkSolidPrimaryHover:
-            return .surfaceOnDarkSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidPrimaryHover)
         case .surfaceOnDarkSolidSecondary:
-            return .surfaceOnDarkSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidSecondary)
         case .surfaceOnDarkSolidSecondaryActive:
-            return .surfaceOnDarkSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidSecondaryActive)
         case .surfaceOnDarkSolidSecondaryHover:
-            return .surfaceOnDarkSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidSecondaryHover)
         case .surfaceOnDarkSolidTertiary:
-            return .surfaceOnDarkSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidTertiary)
         case .surfaceOnDarkSolidTertiaryActive:
-            return .surfaceOnDarkSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidTertiaryActive)
         case .surfaceOnDarkSolidTertiaryHover:
-            return .surfaceOnDarkSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkSolidTertiaryHover)
         case .surfaceOnDarkTransparentAccent:
-            return .surfaceOnDarkTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentAccent)
         case .surfaceOnDarkTransparentAccentActive:
-            return .surfaceOnDarkTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentAccentActive)
         case .surfaceOnDarkTransparentAccentHover:
-            return .surfaceOnDarkTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentAccentHover)
         case .surfaceOnDarkTransparentCard:
-            return .surfaceOnDarkTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentCard)
         case .surfaceOnDarkTransparentCardActive:
-            return .surfaceOnDarkTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentCardActive)
         case .surfaceOnDarkTransparentCardBrightness:
-            return .surfaceOnDarkTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentCardBrightness)
         case .surfaceOnDarkTransparentCardHover:
-            return .surfaceOnDarkTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentCardHover)
         case .surfaceOnDarkTransparentDeep:
-            return .surfaceOnDarkTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentDeep)
         case .surfaceOnDarkTransparentDeepActive:
-            return .surfaceOnDarkTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentDeepActive)
         case .surfaceOnDarkTransparentDeepHover:
-            return .surfaceOnDarkTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentDeepHover)
         case .surfaceOnDarkTransparentInfo:
-            return .surfaceOnDarkTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentInfo)
         case .surfaceOnDarkTransparentInfoActive:
-            return .surfaceOnDarkTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentInfoActive)
         case .surfaceOnDarkTransparentInfoHover:
-            return .surfaceOnDarkTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentInfoHover)
         case .surfaceOnDarkTransparentNegative:
-            return .surfaceOnDarkTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentNegative)
         case .surfaceOnDarkTransparentNegativeActive:
-            return .surfaceOnDarkTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentNegativeActive)
         case .surfaceOnDarkTransparentNegativeHover:
-            return .surfaceOnDarkTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentNegativeHover)
         case .surfaceOnDarkTransparentPositive:
-            return .surfaceOnDarkTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPositive)
         case .surfaceOnDarkTransparentPositiveActive:
-            return .surfaceOnDarkTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPositiveActive)
         case .surfaceOnDarkTransparentPositiveHover:
-            return .surfaceOnDarkTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPositiveHover)
         case .surfaceOnDarkTransparentPrimary:
-            return .surfaceOnDarkTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPrimary)
         case .surfaceOnDarkTransparentPrimaryActive:
-            return .surfaceOnDarkTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPrimaryActive)
         case .surfaceOnDarkTransparentPrimaryHover:
-            return .surfaceOnDarkTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPrimaryHover)
         case .surfaceOnDarkTransparentPromo:
-            return .surfaceOnDarkTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPromo)
         case .surfaceOnDarkTransparentPromoActive:
-            return .surfaceOnDarkTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPromoActive)
         case .surfaceOnDarkTransparentPromoHover:
-            return .surfaceOnDarkTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentPromoHover)
         case .surfaceOnDarkTransparentSecondary:
-            return .surfaceOnDarkTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentSecondary)
         case .surfaceOnDarkTransparentSecondaryActive:
-            return .surfaceOnDarkTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentSecondaryActive)
         case .surfaceOnDarkTransparentSecondaryHover:
-            return .surfaceOnDarkTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentSecondaryHover)
         case .surfaceOnDarkTransparentTertiary:
-            return .surfaceOnDarkTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentTertiary)
         case .surfaceOnDarkTransparentTertiaryActive:
-            return .surfaceOnDarkTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentTertiaryActive)
         case .surfaceOnDarkTransparentTertiaryHover:
-            return .surfaceOnDarkTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentTertiaryHover)
         case .surfaceOnDarkTransparentWarning:
-            return .surfaceOnDarkTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentWarning)
         case .surfaceOnDarkTransparentWarningActive:
-            return .surfaceOnDarkTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentWarningActive)
         case .surfaceOnDarkTransparentWarningHover:
-            return .surfaceOnDarkTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkTransparentWarningHover)
         case .surfaceOnDarkWarning:
-            return .surfaceOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarning)
         case .surfaceOnDarkWarningActive:
-            return .surfaceOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarningActive)
         case .surfaceOnDarkWarningHover:
-            return .surfaceOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarningHover)
         case .surfaceOnDarkWarningMinor:
-            return .surfaceOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarningMinor)
         case .surfaceOnDarkWarningMinorActive:
-            return .surfaceOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarningMinorActive)
         case .surfaceOnDarkWarningMinorHover:
-            return .surfaceOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnDarkWarningMinorHover)
         case .surfaceOnLightAccent:
-            return .surfaceOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccent)
         case .surfaceOnLightAccentActive:
-            return .surfaceOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccentActive)
         case .surfaceOnLightAccentHover:
-            return .surfaceOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccentHover)
         case .surfaceOnLightAccentMinor:
-            return .surfaceOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccentMinor)
         case .surfaceOnLightAccentMinorActive:
-            return .surfaceOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccentMinorActive)
         case .surfaceOnLightAccentMinorHover:
-            return .surfaceOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightAccentMinorHover)
         case .surfaceOnLightClear:
-            return .surfaceOnLightClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightClear)
         case .surfaceOnLightClearActive:
-            return .surfaceOnLightClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightClearActive)
         case .surfaceOnLightClearHover:
-            return .surfaceOnLightClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightClearHover)
         case .surfaceOnLightInfo:
-            return .surfaceOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfo)
         case .surfaceOnLightInfoActive:
-            return .surfaceOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfoActive)
         case .surfaceOnLightInfoHover:
-            return .surfaceOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfoHover)
         case .surfaceOnLightInfoMinor:
-            return .surfaceOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfoMinor)
         case .surfaceOnLightInfoMinorActive:
-            return .surfaceOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfoMinorActive)
         case .surfaceOnLightInfoMinorHover:
-            return .surfaceOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightInfoMinorHover)
         case .surfaceOnLightNegative:
-            return .surfaceOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegative)
         case .surfaceOnLightNegativeActive:
-            return .surfaceOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegativeActive)
         case .surfaceOnLightNegativeHover:
-            return .surfaceOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegativeHover)
         case .surfaceOnLightNegativeMinor:
-            return .surfaceOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegativeMinor)
         case .surfaceOnLightNegativeMinorActive:
-            return .surfaceOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegativeMinorActive)
         case .surfaceOnLightNegativeMinorHover:
-            return .surfaceOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightNegativeMinorHover)
         case .surfaceOnLightPositive:
-            return .surfaceOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositive)
         case .surfaceOnLightPositiveActive:
-            return .surfaceOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositiveActive)
         case .surfaceOnLightPositiveHover:
-            return .surfaceOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositiveHover)
         case .surfaceOnLightPositiveMinor:
-            return .surfaceOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositiveMinor)
         case .surfaceOnLightPositiveMinorActive:
-            return .surfaceOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositiveMinorActive)
         case .surfaceOnLightPositiveMinorHover:
-            return .surfaceOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPositiveMinorHover)
         case .surfaceOnLightPromo:
-            return .surfaceOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromo)
         case .surfaceOnLightPromoActive:
-            return .surfaceOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromoActive)
         case .surfaceOnLightPromoHover:
-            return .surfaceOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromoHover)
         case .surfaceOnLightPromoMinor:
-            return .surfaceOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromoMinor)
         case .surfaceOnLightPromoMinorActive:
-            return .surfaceOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromoMinorActive)
         case .surfaceOnLightPromoMinorHover:
-            return .surfaceOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightPromoMinorHover)
         case .surfaceOnLightSolidCard:
-            return .surfaceOnLightSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidCard)
         case .surfaceOnLightSolidCardActive:
-            return .surfaceOnLightSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidCardActive)
         case .surfaceOnLightSolidCardBrightness:
-            return .surfaceOnLightSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidCardBrightness)
         case .surfaceOnLightSolidCardHover:
-            return .surfaceOnLightSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidCardHover)
         case .surfaceOnLightSolidDefault:
-            return .surfaceOnLightSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidDefault)
         case .surfaceOnLightSolidDefaultActive:
-            return .surfaceOnLightSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidDefaultActive)
         case .surfaceOnLightSolidDefaultHover:
-            return .surfaceOnLightSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidDefaultHover)
         case .surfaceOnLightSolidPrimary:
-            return .surfaceOnLightSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidPrimary)
         case .surfaceOnLightSolidPrimaryActive:
-            return .surfaceOnLightSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidPrimaryActive)
         case .surfaceOnLightSolidPrimaryBrightness:
-            return .surfaceOnLightSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidPrimaryBrightness)
         case .surfaceOnLightSolidPrimaryHover:
-            return .surfaceOnLightSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidPrimaryHover)
         case .surfaceOnLightSolidSecondary:
-            return .surfaceOnLightSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidSecondary)
         case .surfaceOnLightSolidSecondaryActive:
-            return .surfaceOnLightSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidSecondaryActive)
         case .surfaceOnLightSolidSecondaryHover:
-            return .surfaceOnLightSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidSecondaryHover)
         case .surfaceOnLightSolidTertiary:
-            return .surfaceOnLightSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidTertiary)
         case .surfaceOnLightSolidTertiaryActive:
-            return .surfaceOnLightSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidTertiaryActive)
         case .surfaceOnLightSolidTertiaryHover:
-            return .surfaceOnLightSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightSolidTertiaryHover)
         case .surfaceOnLightTransparentAccent:
-            return .surfaceOnLightTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentAccent)
         case .surfaceOnLightTransparentAccentActive:
-            return .surfaceOnLightTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentAccentActive)
         case .surfaceOnLightTransparentAccentHover:
-            return .surfaceOnLightTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentAccentHover)
         case .surfaceOnLightTransparentCard:
-            return .surfaceOnLightTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentCard)
         case .surfaceOnLightTransparentCardActive:
-            return .surfaceOnLightTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentCardActive)
         case .surfaceOnLightTransparentCardBrightness:
-            return .surfaceOnLightTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentCardBrightness)
         case .surfaceOnLightTransparentCardHover:
-            return .surfaceOnLightTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentCardHover)
         case .surfaceOnLightTransparentDeep:
-            return .surfaceOnLightTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentDeep)
         case .surfaceOnLightTransparentDeepActive:
-            return .surfaceOnLightTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentDeepActive)
         case .surfaceOnLightTransparentDeepHover:
-            return .surfaceOnLightTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentDeepHover)
         case .surfaceOnLightTransparentInfo:
-            return .surfaceOnLightTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentInfo)
         case .surfaceOnLightTransparentInfoActive:
-            return .surfaceOnLightTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentInfoActive)
         case .surfaceOnLightTransparentInfoHover:
-            return .surfaceOnLightTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentInfoHover)
         case .surfaceOnLightTransparentNegative:
-            return .surfaceOnLightTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentNegative)
         case .surfaceOnLightTransparentNegativeActive:
-            return .surfaceOnLightTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentNegativeActive)
         case .surfaceOnLightTransparentNegativeHover:
-            return .surfaceOnLightTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentNegativeHover)
         case .surfaceOnLightTransparentPositive:
-            return .surfaceOnLightTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPositive)
         case .surfaceOnLightTransparentPositiveActive:
-            return .surfaceOnLightTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPositiveActive)
         case .surfaceOnLightTransparentPositiveHover:
-            return .surfaceOnLightTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPositiveHover)
         case .surfaceOnLightTransparentPrimary:
-            return .surfaceOnLightTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPrimary)
         case .surfaceOnLightTransparentPrimaryActive:
-            return .surfaceOnLightTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPrimaryActive)
         case .surfaceOnLightTransparentPrimaryHover:
-            return .surfaceOnLightTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPrimaryHover)
         case .surfaceOnLightTransparentPromo:
-            return .surfaceOnLightTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPromo)
         case .surfaceOnLightTransparentPromoActive:
-            return .surfaceOnLightTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPromoActive)
         case .surfaceOnLightTransparentPromoHover:
-            return .surfaceOnLightTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentPromoHover)
         case .surfaceOnLightTransparentSecondary:
-            return .surfaceOnLightTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentSecondary)
         case .surfaceOnLightTransparentSecondaryActive:
-            return .surfaceOnLightTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentSecondaryActive)
         case .surfaceOnLightTransparentSecondaryHover:
-            return .surfaceOnLightTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentSecondaryHover)
         case .surfaceOnLightTransparentTertiary:
-            return .surfaceOnLightTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentTertiary)
         case .surfaceOnLightTransparentTertiaryActive:
-            return .surfaceOnLightTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentTertiaryActive)
         case .surfaceOnLightTransparentTertiaryHover:
-            return .surfaceOnLightTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentTertiaryHover)
         case .surfaceOnLightTransparentWarning:
-            return .surfaceOnLightTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentWarning)
         case .surfaceOnLightTransparentWarningActive:
-            return .surfaceOnLightTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentWarningActive)
         case .surfaceOnLightTransparentWarningHover:
-            return .surfaceOnLightTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightTransparentWarningHover)
         case .surfaceOnLightWarning:
-            return .surfaceOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarning)
         case .surfaceOnLightWarningActive:
-            return .surfaceOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningActive)
         case .surfaceOnLightWarningHover:
-            return .surfaceOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningHover)
         case .surfaceOnLightWarningMinor:
-            return .surfaceOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningMinor)
         case .surfaceOnLightWarningMinorActive:
-            return .surfaceOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningMinorActive)
         case .surfaceOnLightWarningMinorHover:
-            return .surfaceOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningMinorHover)
         case .textDefaultAccent:
-            return .textDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccent)
         case .textDefaultAccentActive:
-            return .textDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccentActive)
         case .textDefaultAccentHover:
-            return .textDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccentHover)
         case .textDefaultAccentMinor:
-            return .textDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccentMinor)
         case .textDefaultAccentMinorActive:
-            return .textDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccentMinorActive)
         case .textDefaultAccentMinorHover:
-            return .textDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccentMinorHover)
         case .textDefaultInfo:
-            return .textDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfo)
         case .textDefaultInfoActive:
-            return .textDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfoActive)
         case .textDefaultInfoHover:
-            return .textDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfoHover)
         case .textDefaultInfoMinor:
-            return .textDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfoMinor)
         case .textDefaultInfoMinorActive:
-            return .textDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfoMinorActive)
         case .textDefaultInfoMinorHover:
-            return .textDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultInfoMinorHover)
         case .textDefaultNegative:
-            return .textDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegative)
         case .textDefaultNegativeActive:
-            return .textDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegativeActive)
         case .textDefaultNegativeHover:
-            return .textDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegativeHover)
         case .textDefaultNegativeMinor:
-            return .textDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegativeMinor)
         case .textDefaultNegativeMinorActive:
-            return .textDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegativeMinorActive)
         case .textDefaultNegativeMinorHover:
-            return .textDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultNegativeMinorHover)
         case .textDefaultParagraph:
-            return .textDefaultParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultParagraph)
         case .textDefaultParagraphActive:
-            return .textDefaultParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultParagraphActive)
         case .textDefaultParagraphHover:
-            return .textDefaultParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultParagraphHover)
         case .textDefaultPositive:
-            return .textDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositive)
         case .textDefaultPositiveActive:
-            return .textDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositiveActive)
         case .textDefaultPositiveHover:
-            return .textDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositiveHover)
         case .textDefaultPositiveMinor:
-            return .textDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositiveMinor)
         case .textDefaultPositiveMinorActive:
-            return .textDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositiveMinorActive)
         case .textDefaultPositiveMinorHover:
-            return .textDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPositiveMinorHover)
         case .textDefaultPrimary:
-            return .textDefaultPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPrimary)
         case .textDefaultPrimaryActive:
-            return .textDefaultPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPrimaryActive)
         case .textDefaultPrimaryBrightness:
-            return .textDefaultPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPrimaryBrightness)
         case .textDefaultPrimaryHover:
-            return .textDefaultPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPrimaryHover)
         case .textDefaultPromo:
-            return .textDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromo)
         case .textDefaultPromoActive:
-            return .textDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromoActive)
         case .textDefaultPromoHover:
-            return .textDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromoHover)
         case .textDefaultPromoMinor:
-            return .textDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromoMinor)
         case .textDefaultPromoMinorActive:
-            return .textDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromoMinorActive)
         case .textDefaultPromoMinorHover:
-            return .textDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultPromoMinorHover)
         case .textDefaultSecondary:
-            return .textDefaultSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultSecondary)
         case .textDefaultSecondaryActive:
-            return .textDefaultSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultSecondaryActive)
         case .textDefaultSecondaryHover:
-            return .textDefaultSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultSecondaryHover)
         case .textDefaultTertiary:
-            return .textDefaultTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultTertiary)
         case .textDefaultTertiaryActive:
-            return .textDefaultTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultTertiaryActive)
         case .textDefaultTertiaryHover:
-            return .textDefaultTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultTertiaryHover)
         case .textDefaultWarning:
-            return .textDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarning)
         case .textDefaultWarningActive:
-            return .textDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarningActive)
         case .textDefaultWarningHover:
-            return .textDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarningHover)
         case .textDefaultWarningMinor:
-            return .textDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarningMinor)
         case .textDefaultWarningMinorActive:
-            return .textDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarningMinorActive)
         case .textDefaultWarningMinorHover:
-            return .textDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultWarningMinorHover)
         case .textInverseAccent:
-            return .textInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccent)
         case .textInverseAccentActive:
-            return .textInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccentActive)
         case .textInverseAccentHover:
-            return .textInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccentHover)
         case .textInverseAccentMinor:
-            return .textInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccentMinor)
         case .textInverseAccentMinorActive:
-            return .textInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccentMinorActive)
         case .textInverseAccentMinorHover:
-            return .textInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseAccentMinorHover)
         case .textInverseInfo:
-            return .textInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfo)
         case .textInverseInfoActive:
-            return .textInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfoActive)
         case .textInverseInfoHover:
-            return .textInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfoHover)
         case .textInverseInfoMinor:
-            return .textInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfoMinor)
         case .textInverseInfoMinorActive:
-            return .textInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfoMinorActive)
         case .textInverseInfoMinorHover:
-            return .textInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseInfoMinorHover)
         case .textInverseNegative:
-            return .textInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegative)
         case .textInverseNegativeActive:
-            return .textInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegativeActive)
         case .textInverseNegativeHover:
-            return .textInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegativeHover)
         case .textInverseNegativeMinor:
-            return .textInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegativeMinor)
         case .textInverseNegativeMinorActive:
-            return .textInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegativeMinorActive)
         case .textInverseNegativeMinorHover:
-            return .textInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseNegativeMinorHover)
         case .textInverseParagraph:
-            return .textInverseParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseParagraph)
         case .textInverseParagraphActive:
-            return .textInverseParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseParagraphActive)
         case .textInverseParagraphHover:
-            return .textInverseParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseParagraphHover)
         case .textInversePositive:
-            return .textInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositive)
         case .textInversePositiveActive:
-            return .textInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositiveActive)
         case .textInversePositiveHover:
-            return .textInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositiveHover)
         case .textInversePositiveMinor:
-            return .textInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositiveMinor)
         case .textInversePositiveMinorActive:
-            return .textInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositiveMinorActive)
         case .textInversePositiveMinorHover:
-            return .textInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePositiveMinorHover)
         case .textInversePrimary:
-            return .textInversePrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePrimary)
         case .textInversePrimaryActive:
-            return .textInversePrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePrimaryActive)
         case .textInversePrimaryBrightness:
-            return .textInversePrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePrimaryBrightness)
         case .textInversePrimaryHover:
-            return .textInversePrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePrimaryHover)
         case .textInversePromo:
-            return .textInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromo)
         case .textInversePromoActive:
-            return .textInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromoActive)
         case .textInversePromoHover:
-            return .textInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromoHover)
         case .textInversePromoMinor:
-            return .textInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromoMinor)
         case .textInversePromoMinorActive:
-            return .textInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromoMinorActive)
         case .textInversePromoMinorHover:
-            return .textInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInversePromoMinorHover)
         case .textInverseSecondary:
-            return .textInverseSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseSecondary)
         case .textInverseSecondaryActive:
-            return .textInverseSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseSecondaryActive)
         case .textInverseSecondaryHover:
-            return .textInverseSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseSecondaryHover)
         case .textInverseTertiary:
-            return .textInverseTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseTertiary)
         case .textInverseTertiaryActive:
-            return .textInverseTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseTertiaryActive)
         case .textInverseTertiaryHover:
-            return .textInverseTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseTertiaryHover)
         case .textInverseWarning:
-            return .textInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarning)
         case .textInverseWarningActive:
-            return .textInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarningActive)
         case .textInverseWarningHover:
-            return .textInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarningHover)
         case .textInverseWarningMinor:
-            return .textInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarningMinor)
         case .textInverseWarningMinorActive:
-            return .textInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarningMinorActive)
         case .textInverseWarningMinorHover:
-            return .textInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textInverseWarningMinorHover)
         case .textOnDarkAccent:
-            return .textOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccent)
         case .textOnDarkAccentActive:
-            return .textOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccentActive)
         case .textOnDarkAccentHover:
-            return .textOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccentHover)
         case .textOnDarkAccentMinor:
-            return .textOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccentMinor)
         case .textOnDarkAccentMinorActive:
-            return .textOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccentMinorActive)
         case .textOnDarkAccentMinorHover:
-            return .textOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkAccentMinorHover)
         case .textOnDarkInfo:
-            return .textOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfo)
         case .textOnDarkInfoActive:
-            return .textOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfoActive)
         case .textOnDarkInfoHover:
-            return .textOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfoHover)
         case .textOnDarkInfoMinor:
-            return .textOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfoMinor)
         case .textOnDarkInfoMinorActive:
-            return .textOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfoMinorActive)
         case .textOnDarkInfoMinorHover:
-            return .textOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkInfoMinorHover)
         case .textOnDarkNegative:
-            return .textOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegative)
         case .textOnDarkNegativeActive:
-            return .textOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegativeActive)
         case .textOnDarkNegativeHover:
-            return .textOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegativeHover)
         case .textOnDarkNegativeMinor:
-            return .textOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegativeMinor)
         case .textOnDarkNegativeMinorActive:
-            return .textOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegativeMinorActive)
         case .textOnDarkNegativeMinorHover:
-            return .textOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkNegativeMinorHover)
         case .textOnDarkParagraph:
-            return .textOnDarkParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkParagraph)
         case .textOnDarkParagraphActive:
-            return .textOnDarkParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkParagraphActive)
         case .textOnDarkParagraphHover:
-            return .textOnDarkParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkParagraphHover)
         case .textOnDarkPositive:
-            return .textOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositive)
         case .textOnDarkPositiveActive:
-            return .textOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositiveActive)
         case .textOnDarkPositiveHover:
-            return .textOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositiveHover)
         case .textOnDarkPositiveMinor:
-            return .textOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositiveMinor)
         case .textOnDarkPositiveMinorActive:
-            return .textOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositiveMinorActive)
         case .textOnDarkPositiveMinorHover:
-            return .textOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPositiveMinorHover)
         case .textOnDarkPrimary:
-            return .textOnDarkPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPrimary)
         case .textOnDarkPrimaryActive:
-            return .textOnDarkPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPrimaryActive)
         case .textOnDarkPrimaryBrightness:
-            return .textOnDarkPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPrimaryBrightness)
         case .textOnDarkPrimaryHover:
-            return .textOnDarkPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPrimaryHover)
         case .textOnDarkPromo:
-            return .textOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromo)
         case .textOnDarkPromoActive:
-            return .textOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromoActive)
         case .textOnDarkPromoHover:
-            return .textOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromoHover)
         case .textOnDarkPromoMinor:
-            return .textOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromoMinor)
         case .textOnDarkPromoMinorActive:
-            return .textOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromoMinorActive)
         case .textOnDarkPromoMinorHover:
-            return .textOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkPromoMinorHover)
         case .textOnDarkSecondary:
-            return .textOnDarkSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkSecondary)
         case .textOnDarkSecondaryActive:
-            return .textOnDarkSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkSecondaryActive)
         case .textOnDarkSecondaryHover:
-            return .textOnDarkSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkSecondaryHover)
         case .textOnDarkTertiary:
-            return .textOnDarkTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkTertiary)
         case .textOnDarkTertiaryActive:
-            return .textOnDarkTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkTertiaryActive)
         case .textOnDarkTertiaryHover:
-            return .textOnDarkTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkTertiaryHover)
         case .textOnDarkWarning:
-            return .textOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarning)
         case .textOnDarkWarningActive:
-            return .textOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarningActive)
         case .textOnDarkWarningHover:
-            return .textOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarningHover)
         case .textOnDarkWarningMinor:
-            return .textOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarningMinor)
         case .textOnDarkWarningMinorActive:
-            return .textOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarningMinorActive)
         case .textOnDarkWarningMinorHover:
-            return .textOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnDarkWarningMinorHover)
         case .textOnLightAccent:
-            return .textOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccent)
         case .textOnLightAccentActive:
-            return .textOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccentActive)
         case .textOnLightAccentHover:
-            return .textOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccentHover)
         case .textOnLightAccentMinor:
-            return .textOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccentMinor)
         case .textOnLightAccentMinorActive:
-            return .textOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccentMinorActive)
         case .textOnLightAccentMinorHover:
-            return .textOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightAccentMinorHover)
         case .textOnLightInfo:
-            return .textOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfo)
         case .textOnLightInfoActive:
-            return .textOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfoActive)
         case .textOnLightInfoHover:
-            return .textOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfoHover)
         case .textOnLightInfoMinor:
-            return .textOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfoMinor)
         case .textOnLightInfoMinorActive:
-            return .textOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfoMinorActive)
         case .textOnLightInfoMinorHover:
-            return .textOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightInfoMinorHover)
         case .textOnLightNegative:
-            return .textOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegative)
         case .textOnLightNegativeActive:
-            return .textOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegativeActive)
         case .textOnLightNegativeHover:
-            return .textOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegativeHover)
         case .textOnLightNegativeMinor:
-            return .textOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegativeMinor)
         case .textOnLightNegativeMinorActive:
-            return .textOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegativeMinorActive)
         case .textOnLightNegativeMinorHover:
-            return .textOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightNegativeMinorHover)
         case .textOnLightParagraph:
-            return .textOnLightParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightParagraph)
         case .textOnLightParagraphActive:
-            return .textOnLightParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightParagraphActive)
         case .textOnLightParagraphHover:
-            return .textOnLightParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightParagraphHover)
         case .textOnLightPositive:
-            return .textOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositive)
         case .textOnLightPositiveActive:
-            return .textOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositiveActive)
         case .textOnLightPositiveHover:
-            return .textOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositiveHover)
         case .textOnLightPositiveMinor:
-            return .textOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositiveMinor)
         case .textOnLightPositiveMinorActive:
-            return .textOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositiveMinorActive)
         case .textOnLightPositiveMinorHover:
-            return .textOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPositiveMinorHover)
         case .textOnLightPrimary:
-            return .textOnLightPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPrimary)
         case .textOnLightPrimaryActive:
-            return .textOnLightPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPrimaryActive)
         case .textOnLightPrimaryBrightness:
-            return .textOnLightPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPrimaryBrightness)
         case .textOnLightPrimaryHover:
-            return .textOnLightPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPrimaryHover)
         case .textOnLightPromo:
-            return .textOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromo)
         case .textOnLightPromoActive:
-            return .textOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromoActive)
         case .textOnLightPromoHover:
-            return .textOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromoHover)
         case .textOnLightPromoMinor:
-            return .textOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromoMinor)
         case .textOnLightPromoMinorActive:
-            return .textOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromoMinorActive)
         case .textOnLightPromoMinorHover:
-            return .textOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightPromoMinorHover)
         case .textOnLightSecondary:
-            return .textOnLightSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightSecondary)
         case .textOnLightSecondaryActive:
-            return .textOnLightSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightSecondaryActive)
         case .textOnLightSecondaryHover:
-            return .textOnLightSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightSecondaryHover)
         case .textOnLightTertiary:
-            return .textOnLightTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightTertiary)
         case .textOnLightTertiaryActive:
-            return .textOnLightTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightTertiaryActive)
         case .textOnLightTertiaryHover:
-            return .textOnLightTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightTertiaryHover)
         case .textOnLightWarning:
-            return .textOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarning)
         case .textOnLightWarningActive:
-            return .textOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarningActive)
         case .textOnLightWarningHover:
-            return .textOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarningHover)
         case .textOnLightWarningMinor:
-            return .textOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarningMinor)
         case .textOnLightWarningMinorActive:
-            return .textOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarningMinorActive)
         case .textOnLightWarningMinorHover:
-            return .textOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textOnLightWarningMinorHover)
         }
     }
 }
@@ -2811,3 +2812,4 @@ public extension ColorToken {
         return color.token
     }
 }
+

@@ -6,78 +6,93 @@ import UIKit
 
 public extension SpacingToken {
     static var spacing0x: Self {
-        Self(
+        let base = Self(
             value: 0.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing0x", base: base)
     }
     static var spacing10x: Self {
-        Self(
+        let base = Self(
             value: 20.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing10x", base: base)
     }
     static var spacing12x: Self {
-        Self(
+        let base = Self(
             value: 24.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing12x", base: base)
     }
     static var spacing16x: Self {
-        Self(
+        let base = Self(
             value: 32.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing16x", base: base)
     }
     static var spacing1x: Self {
-        Self(
+        let base = Self(
             value: 2.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing1x", base: base)
     }
     static var spacing20x: Self {
-        Self(
+        let base = Self(
             value: 40.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing20x", base: base)
     }
     static var spacing24x: Self {
-        Self(
+        let base = Self(
             value: 48.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing24x", base: base)
     }
     static var spacing2x: Self {
-        Self(
+        let base = Self(
             value: 4.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing2x", base: base)
     }
     static var spacing32x: Self {
-        Self(
+        let base = Self(
             value: 64.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing32x", base: base)
     }
     static var spacing3x: Self {
-        Self(
+        let base = Self(
             value: 6.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing3x", base: base)
     }
     static var spacing40x: Self {
-        Self(
+        let base = Self(
             value: 80.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing40x", base: base)
     }
     static var spacing4x: Self {
-        Self(
+        let base = Self(
             value: 8.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing4x", base: base)
     }
     static var spacing60x: Self {
-        Self(
+        let base = Self(
             value: 120.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing60x", base: base)
     }
     static var spacing6x: Self {
-        Self(
+        let base = Self(
             value: 12.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing6x", base: base)
     }
     static var spacing8x: Self {
-        Self(
+        let base = Self(
             value: 16.0
         )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "SDDSServ", id: "spacing8x", base: base)
     }
 }

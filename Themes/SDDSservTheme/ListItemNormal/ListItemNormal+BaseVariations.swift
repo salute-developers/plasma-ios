@@ -71,13 +71,15 @@ public struct ListItemNormal {
         )
     }
     
-    public static let all: [Variation<ListItemAppearance>] = [
-        ListItemNormal.l.variation,
-        ListItemNormal.m.variation,
-        ListItemNormal.s.variation,
-        ListItemNormal.xl.variation,
-        ListItemNormal.xs.variation,
-    ]
+    public static var all: [Variation<ListItemAppearance>] {
+        [
+            ListItemNormal.l.variation,
+            ListItemNormal.m.variation,
+            ListItemNormal.s.variation,
+            ListItemNormal.xl.variation,
+            ListItemNormal.xs.variation,
+        ]
+    }
 }
 
 public struct ListItemNormalVariation {

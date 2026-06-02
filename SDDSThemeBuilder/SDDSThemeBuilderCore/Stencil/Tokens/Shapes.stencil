@@ -4,6 +4,20 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+{% if tenant %}
+public extension Shapes {
+    static func register{{ tenant }}() {
+        ThemeTenantRegistry.shared.registerShapes(theme: "{{ themeName }}", tenant: Tenant(name: "{{ tenant }}")) { id in
+            switch id {
+            {%- for key, value in json %}
+            case "{{ key }}": return .{{ key }}{{ tenant }}
+            {%- endfor %}
+            default: return nil
+            }
+        }
+    }
+}
+{% else %}
 public enum Shapes {
     {%- for key, value in json %}
     case {{ key }}
@@ -13,8 +27,9 @@ public enum Shapes {
         switch self {
             {%- for key, value in json %}
         case .{{ key }}:
-            return .{{ key }}
+            return ThemeTenantRegistry.shared.resolveShape(theme: "{{ themeName }}", id: "{{ key }}", base: .{{ key }})
             {%- endfor %}
         }
     }
 }
+{% endif %}

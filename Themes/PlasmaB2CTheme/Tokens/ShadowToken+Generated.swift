@@ -6,7 +6,7 @@ import UIKit
 
 public extension ShadowToken {
     static var downHardL: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000066")),
@@ -17,9 +17,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardL", base: base)
     }
     static var downHardM: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#0000003D")),
@@ -30,9 +31,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardM", base: base)
     }
     static var downHardS: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#08080829")),
@@ -50,9 +52,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downHardS", base: base)
     }
     static var downSoftL: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000014")),
@@ -63,9 +66,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftL", base: base)
     }
     static var downSoftM: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000014")),
@@ -76,9 +80,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftM", base: base)
     }
     static var downSoftS: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#08080814")),
@@ -96,9 +101,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "downSoftS", base: base)
     }
     static var upHardL: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000066")),
@@ -109,9 +115,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardL", base: base)
     }
     static var upHardM: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#0000003D")),
@@ -122,9 +129,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardM", base: base)
     }
     static var upHardS: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#08080833")),
@@ -142,9 +150,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upHardS", base: base)
     }
     static var upSoftL: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000014")),
@@ -155,9 +164,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftL", base: base)
     }
     static var upSoftM: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#00000014")),
@@ -168,9 +178,10 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftM", base: base)
     }
     static var upSoftS: Self {
-        Self(
+        let base = Self(
             layers: [
                 Self.Layer(
                     color: Color(UIColor(hex: "#08080814")),
@@ -188,5 +199,6 @@ public extension ShadowToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveShadow(theme: "PlasmaB2C", id: "upSoftS", base: base)
     }
 }

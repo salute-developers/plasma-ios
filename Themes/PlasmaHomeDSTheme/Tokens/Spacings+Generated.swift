@@ -24,35 +24,35 @@ public enum Spacings {
     public var token: SpacingToken {
         switch self {
         case .spacing0x:
-            return .spacing0x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing0x", base: .spacing0x)
         case .spacing10x:
-            return .spacing10x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing10x", base: .spacing10x)
         case .spacing12x:
-            return .spacing12x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing12x", base: .spacing12x)
         case .spacing16x:
-            return .spacing16x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing16x", base: .spacing16x)
         case .spacing1x:
-            return .spacing1x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing1x", base: .spacing1x)
         case .spacing20x:
-            return .spacing20x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing20x", base: .spacing20x)
         case .spacing24x:
-            return .spacing24x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing24x", base: .spacing24x)
         case .spacing2x:
-            return .spacing2x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing2x", base: .spacing2x)
         case .spacing32x:
-            return .spacing32x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing32x", base: .spacing32x)
         case .spacing3x:
-            return .spacing3x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing3x", base: .spacing3x)
         case .spacing40x:
-            return .spacing40x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing40x", base: .spacing40x)
         case .spacing4x:
-            return .spacing4x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing4x", base: .spacing4x)
         case .spacing60x:
-            return .spacing60x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing60x", base: .spacing60x)
         case .spacing6x:
-            return .spacing6x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing6x", base: .spacing6x)
         case .spacing8x:
-            return .spacing8x
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "PlasmaHomeDS", id: "spacing8x", base: .spacing8x)
         }
     }
 }
