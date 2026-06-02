@@ -50,24 +50,26 @@ public struct Note {
         )
     }
     
-    public static let all: [Variation<NoteAppearance>] = [
-        Note.l.variation,
-        Note.l.contentScalable.variation,
-        Note.l.hasClose.variation,
-        Note.l.hasCloseContentScalable.variation,
-        Note.m.variation,
-        Note.m.contentScalable.variation,
-        Note.m.hasClose.variation,
-        Note.m.hasCloseContentScalable.variation,
-        Note.s.variation,
-        Note.s.contentScalable.variation,
-        Note.s.hasClose.variation,
-        Note.s.hasCloseContentScalable.variation,
-        Note.xs.variation,
-        Note.xs.contentScalable.variation,
-        Note.xs.hasClose.variation,
-        Note.xs.hasCloseContentScalable.variation,
-    ]
+    public static var all: [Variation<NoteAppearance>] {
+        [
+            Note.l.variation,
+            Note.l.contentScalable.variation,
+            Note.l.hasClose.variation,
+            Note.l.hasCloseContentScalable.variation,
+            Note.m.variation,
+            Note.m.contentScalable.variation,
+            Note.m.hasClose.variation,
+            Note.m.hasCloseContentScalable.variation,
+            Note.s.variation,
+            Note.s.contentScalable.variation,
+            Note.s.hasClose.variation,
+            Note.s.hasCloseContentScalable.variation,
+            Note.xs.variation,
+            Note.xs.contentScalable.variation,
+            Note.xs.hasClose.variation,
+            Note.xs.hasCloseContentScalable.variation,
+        ]
+    }
 }
 
 public struct NoteVariation {

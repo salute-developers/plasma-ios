@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Colors: String {
     case backgroundDarkPrimary
     case backgroundDarkSecondary
@@ -1429,2845 +1430,2845 @@ public enum Colors: String {
     public var token: ColorToken {
         switch self {
         case .backgroundDarkPrimary:
-            return .backgroundDarkPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDarkPrimary)
         case .backgroundDarkSecondary:
-            return .backgroundDarkSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDarkSecondary)
         case .backgroundDarkTertiary:
-            return .backgroundDarkTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDarkTertiary)
         case .backgroundDefaultPrimary:
-            return .backgroundDefaultPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultPrimary)
         case .backgroundDefaultPrimaryBrightness:
-            return .backgroundDefaultPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultPrimaryBrightness)
         case .backgroundDefaultSecondary:
-            return .backgroundDefaultSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultSecondary)
         case .backgroundDefaultTertiary:
-            return .backgroundDefaultTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultTertiary)
         case .backgroundInversePrimary:
-            return .backgroundInversePrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundInversePrimary)
         case .backgroundInversePrimaryBrightness:
-            return .backgroundInversePrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundInversePrimaryBrightness)
         case .backgroundInverseSecondary:
-            return .backgroundInverseSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundInverseSecondary)
         case .backgroundInverseTertiary:
-            return .backgroundInverseTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundInverseTertiary)
         case .backgroundLightPrimary:
-            return .backgroundLightPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundLightPrimary)
         case .backgroundLightSecondary:
-            return .backgroundLightSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundLightSecondary)
         case .backgroundLightTertiary:
-            return .backgroundLightTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .backgroundLightTertiary)
         case .dataDefaultYellow:
-            return .dataDefaultYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellow)
         case .dataDefaultYellowActive:
-            return .dataDefaultYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowActive)
         case .dataDefaultYellowHover:
-            return .dataDefaultYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowHover)
         case .dataDefaultYellowMinor:
-            return .dataDefaultYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowMinor)
         case .dataDefaultYellowMinorActive:
-            return .dataDefaultYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowMinorActive)
         case .dataDefaultYellowMinorHover:
-            return .dataDefaultYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowMinorHover)
         case .dataDefaultYellowTransparent:
-            return .dataDefaultYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowTransparent)
         case .dataDefaultYellowTransparentActive:
-            return .dataDefaultYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowTransparentActive)
         case .dataDefaultYellowTransparentHover:
-            return .dataDefaultYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataDefaultYellowTransparentHover)
         case .dataInverseYellow:
-            return .dataInverseYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellow)
         case .dataInverseYellowActive:
-            return .dataInverseYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowActive)
         case .dataInverseYellowHover:
-            return .dataInverseYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowHover)
         case .dataInverseYellowMinor:
-            return .dataInverseYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowMinor)
         case .dataInverseYellowMinorActive:
-            return .dataInverseYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowMinorActive)
         case .dataInverseYellowMinorHover:
-            return .dataInverseYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowMinorHover)
         case .dataInverseYellowTransparent:
-            return .dataInverseYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowTransparent)
         case .dataInverseYellowTransparentActive:
-            return .dataInverseYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowTransparentActive)
         case .dataInverseYellowTransparentHover:
-            return .dataInverseYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataInverseYellowTransparentHover)
         case .dataOnDarkYellow:
-            return .dataOnDarkYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellow)
         case .dataOnDarkYellowActive:
-            return .dataOnDarkYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowActive)
         case .dataOnDarkYellowHover:
-            return .dataOnDarkYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowHover)
         case .dataOnDarkYellowMinor:
-            return .dataOnDarkYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowMinor)
         case .dataOnDarkYellowMinorActive:
-            return .dataOnDarkYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowMinorActive)
         case .dataOnDarkYellowMinorHover:
-            return .dataOnDarkYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowMinorHover)
         case .dataOnDarkYellowTransparent:
-            return .dataOnDarkYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowTransparent)
         case .dataOnDarkYellowTransparentActive:
-            return .dataOnDarkYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowTransparentActive)
         case .dataOnDarkYellowTransparentHover:
-            return .dataOnDarkYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnDarkYellowTransparentHover)
         case .dataOnLightYellow:
-            return .dataOnLightYellow
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellow)
         case .dataOnLightYellowActive:
-            return .dataOnLightYellowActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowActive)
         case .dataOnLightYellowHover:
-            return .dataOnLightYellowHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowHover)
         case .dataOnLightYellowMinor:
-            return .dataOnLightYellowMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowMinor)
         case .dataOnLightYellowMinorActive:
-            return .dataOnLightYellowMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowMinorActive)
         case .dataOnLightYellowMinorHover:
-            return .dataOnLightYellowMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowMinorHover)
         case .dataOnLightYellowTransparent:
-            return .dataOnLightYellowTransparent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowTransparent)
         case .dataOnLightYellowTransparentActive:
-            return .dataOnLightYellowTransparentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowTransparentActive)
         case .dataOnLightYellowTransparentHover:
-            return .dataOnLightYellowTransparentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .dataOnLightYellowTransparentHover)
         case .outlineDefaultAccent:
-            return .outlineDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccent)
         case .outlineDefaultAccentActive:
-            return .outlineDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentActive)
         case .outlineDefaultAccentAthena:
-            return .outlineDefaultAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthena)
         case .outlineDefaultAccentAthenaActive:
-            return .outlineDefaultAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthenaActive)
         case .outlineDefaultAccentAthenaHover:
-            return .outlineDefaultAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthenaHover)
         case .outlineDefaultAccentAthenaMinor:
-            return .outlineDefaultAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthenaMinor)
         case .outlineDefaultAccentAthenaMinorActive:
-            return .outlineDefaultAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthenaMinorActive)
         case .outlineDefaultAccentAthenaMinorHover:
-            return .outlineDefaultAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentAthenaMinorHover)
         case .outlineDefaultAccentB2E:
-            return .outlineDefaultAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2E)
         case .outlineDefaultAccentB2EActive:
-            return .outlineDefaultAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2EActive)
         case .outlineDefaultAccentB2EHover:
-            return .outlineDefaultAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2EHover)
         case .outlineDefaultAccentB2EMinor:
-            return .outlineDefaultAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2EMinor)
         case .outlineDefaultAccentB2EMinorActive:
-            return .outlineDefaultAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2EMinorActive)
         case .outlineDefaultAccentB2EMinorHover:
-            return .outlineDefaultAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentB2EMinorHover)
         case .outlineDefaultAccentBrand:
-            return .outlineDefaultAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrand)
         case .outlineDefaultAccentBrandActive:
-            return .outlineDefaultAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrandActive)
         case .outlineDefaultAccentBrandHover:
-            return .outlineDefaultAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrandHover)
         case .outlineDefaultAccentBrandMinor:
-            return .outlineDefaultAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrandMinor)
         case .outlineDefaultAccentBrandMinorActive:
-            return .outlineDefaultAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrandMinorActive)
         case .outlineDefaultAccentBrandMinorHover:
-            return .outlineDefaultAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentBrandMinorHover)
         case .outlineDefaultAccentHover:
-            return .outlineDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentHover)
         case .outlineDefaultAccentJoy:
-            return .outlineDefaultAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoy)
         case .outlineDefaultAccentJoyActive:
-            return .outlineDefaultAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoyActive)
         case .outlineDefaultAccentJoyHover:
-            return .outlineDefaultAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoyHover)
         case .outlineDefaultAccentJoyMinor:
-            return .outlineDefaultAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoyMinor)
         case .outlineDefaultAccentJoyMinorActive:
-            return .outlineDefaultAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoyMinorActive)
         case .outlineDefaultAccentJoyMinorHover:
-            return .outlineDefaultAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentJoyMinorHover)
         case .outlineDefaultAccentMain:
-            return .outlineDefaultAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMain)
         case .outlineDefaultAccentMainActive:
-            return .outlineDefaultAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMainActive)
         case .outlineDefaultAccentMainHover:
-            return .outlineDefaultAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMainHover)
         case .outlineDefaultAccentMainMinor:
-            return .outlineDefaultAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMainMinor)
         case .outlineDefaultAccentMainMinorActive:
-            return .outlineDefaultAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMainMinorActive)
         case .outlineDefaultAccentMainMinorHover:
-            return .outlineDefaultAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMainMinorHover)
         case .outlineDefaultAccentMinor:
-            return .outlineDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinor)
         case .outlineDefaultAccentMinorActive:
-            return .outlineDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinorActive)
         case .outlineDefaultAccentMinorHover:
-            return .outlineDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinorHover)
         case .outlineDefaultClear:
-            return .outlineDefaultClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultClear)
         case .outlineDefaultClearActive:
-            return .outlineDefaultClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultClearActive)
         case .outlineDefaultClearHover:
-            return .outlineDefaultClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultClearHover)
         case .outlineDefaultInfo:
-            return .outlineDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfo)
         case .outlineDefaultInfoActive:
-            return .outlineDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfoActive)
         case .outlineDefaultInfoHover:
-            return .outlineDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfoHover)
         case .outlineDefaultInfoMinor:
-            return .outlineDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfoMinor)
         case .outlineDefaultInfoMinorActive:
-            return .outlineDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfoMinorActive)
         case .outlineDefaultInfoMinorHover:
-            return .outlineDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultInfoMinorHover)
         case .outlineDefaultNegative:
-            return .outlineDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegative)
         case .outlineDefaultNegativeActive:
-            return .outlineDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegativeActive)
         case .outlineDefaultNegativeHover:
-            return .outlineDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegativeHover)
         case .outlineDefaultNegativeMinor:
-            return .outlineDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegativeMinor)
         case .outlineDefaultNegativeMinorActive:
-            return .outlineDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegativeMinorActive)
         case .outlineDefaultNegativeMinorHover:
-            return .outlineDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultNegativeMinorHover)
         case .outlineDefaultPositive:
-            return .outlineDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositive)
         case .outlineDefaultPositiveActive:
-            return .outlineDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositiveActive)
         case .outlineDefaultPositiveHover:
-            return .outlineDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositiveHover)
         case .outlineDefaultPositiveMinor:
-            return .outlineDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositiveMinor)
         case .outlineDefaultPositiveMinorActive:
-            return .outlineDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositiveMinorActive)
         case .outlineDefaultPositiveMinorHover:
-            return .outlineDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPositiveMinorHover)
         case .outlineDefaultPromo:
-            return .outlineDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromo)
         case .outlineDefaultPromoActive:
-            return .outlineDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoActive)
         case .outlineDefaultPromoHover:
-            return .outlineDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoHover)
         case .outlineDefaultPromoMinor:
-            return .outlineDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinor)
         case .outlineDefaultPromoMinorActive:
-            return .outlineDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinorActive)
         case .outlineDefaultPromoMinorHover:
-            return .outlineDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinorHover)
         case .outlineDefaultSolidDefault:
-            return .outlineDefaultSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidDefault)
         case .outlineDefaultSolidDefaultActive:
-            return .outlineDefaultSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidDefaultActive)
         case .outlineDefaultSolidDefaultHover:
-            return .outlineDefaultSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidDefaultHover)
         case .outlineDefaultSolidPrimary:
-            return .outlineDefaultSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidPrimary)
         case .outlineDefaultSolidPrimaryActive:
-            return .outlineDefaultSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidPrimaryActive)
         case .outlineDefaultSolidPrimaryHover:
-            return .outlineDefaultSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidPrimaryHover)
         case .outlineDefaultSolidSecondary:
-            return .outlineDefaultSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidSecondary)
         case .outlineDefaultSolidSecondaryActive:
-            return .outlineDefaultSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidSecondaryActive)
         case .outlineDefaultSolidSecondaryHover:
-            return .outlineDefaultSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidSecondaryHover)
         case .outlineDefaultSolidTertiary:
-            return .outlineDefaultSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidTertiary)
         case .outlineDefaultSolidTertiaryActive:
-            return .outlineDefaultSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidTertiaryActive)
         case .outlineDefaultSolidTertiaryHover:
-            return .outlineDefaultSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultSolidTertiaryHover)
         case .outlineDefaultTransparentAccent:
-            return .outlineDefaultTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccent)
         case .outlineDefaultTransparentAccentActive:
-            return .outlineDefaultTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentActive)
         case .outlineDefaultTransparentAccentAthena:
-            return .outlineDefaultTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentAthena)
         case .outlineDefaultTransparentAccentAthenaActive:
-            return .outlineDefaultTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentAthenaActive)
         case .outlineDefaultTransparentAccentAthenaHover:
-            return .outlineDefaultTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentAthenaHover)
         case .outlineDefaultTransparentAccentB2E:
-            return .outlineDefaultTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentB2E)
         case .outlineDefaultTransparentAccentB2EActive:
-            return .outlineDefaultTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentB2EActive)
         case .outlineDefaultTransparentAccentB2EHover:
-            return .outlineDefaultTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentB2EHover)
         case .outlineDefaultTransparentAccentBrand:
-            return .outlineDefaultTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentBrand)
         case .outlineDefaultTransparentAccentBrandActive:
-            return .outlineDefaultTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentBrandActive)
         case .outlineDefaultTransparentAccentBrandHover:
-            return .outlineDefaultTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentBrandHover)
         case .outlineDefaultTransparentAccentHover:
-            return .outlineDefaultTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentHover)
         case .outlineDefaultTransparentAccentJoy:
-            return .outlineDefaultTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentJoy)
         case .outlineDefaultTransparentAccentJoyActive:
-            return .outlineDefaultTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentJoyActive)
         case .outlineDefaultTransparentAccentJoyHover:
-            return .outlineDefaultTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentJoyHover)
         case .outlineDefaultTransparentAccentMain:
-            return .outlineDefaultTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentMain)
         case .outlineDefaultTransparentAccentMainActive:
-            return .outlineDefaultTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentMainActive)
         case .outlineDefaultTransparentAccentMainHover:
-            return .outlineDefaultTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentMainHover)
         case .outlineDefaultTransparentDefault:
-            return .outlineDefaultTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentDefault)
         case .outlineDefaultTransparentDefaultActive:
-            return .outlineDefaultTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentDefaultActive)
         case .outlineDefaultTransparentDefaultHover:
-            return .outlineDefaultTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentDefaultHover)
         case .outlineDefaultTransparentInfo:
-            return .outlineDefaultTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentInfo)
         case .outlineDefaultTransparentInfoActive:
-            return .outlineDefaultTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentInfoActive)
         case .outlineDefaultTransparentInfoHover:
-            return .outlineDefaultTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentInfoHover)
         case .outlineDefaultTransparentNegative:
-            return .outlineDefaultTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentNegative)
         case .outlineDefaultTransparentNegativeActive:
-            return .outlineDefaultTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentNegativeActive)
         case .outlineDefaultTransparentNegativeHover:
-            return .outlineDefaultTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentNegativeHover)
         case .outlineDefaultTransparentPositive:
-            return .outlineDefaultTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPositive)
         case .outlineDefaultTransparentPositiveActive:
-            return .outlineDefaultTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPositiveActive)
         case .outlineDefaultTransparentPositiveHover:
-            return .outlineDefaultTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPositiveHover)
         case .outlineDefaultTransparentPrimary:
-            return .outlineDefaultTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPrimary)
         case .outlineDefaultTransparentPrimaryActive:
-            return .outlineDefaultTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPrimaryActive)
         case .outlineDefaultTransparentPrimaryHover:
-            return .outlineDefaultTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentPrimaryHover)
         case .outlineDefaultTransparentSecondary:
-            return .outlineDefaultTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentSecondary)
         case .outlineDefaultTransparentSecondaryActive:
-            return .outlineDefaultTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentSecondaryActive)
         case .outlineDefaultTransparentSecondaryHover:
-            return .outlineDefaultTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentSecondaryHover)
         case .outlineDefaultTransparentTertiary:
-            return .outlineDefaultTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentTertiary)
         case .outlineDefaultTransparentTertiaryActive:
-            return .outlineDefaultTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentTertiaryActive)
         case .outlineDefaultTransparentTertiaryHover:
-            return .outlineDefaultTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentTertiaryHover)
         case .outlineDefaultTransparentWarning:
-            return .outlineDefaultTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentWarning)
         case .outlineDefaultTransparentWarningActive:
-            return .outlineDefaultTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentWarningActive)
         case .outlineDefaultTransparentWarningHover:
-            return .outlineDefaultTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentWarningHover)
         case .outlineDefaultWarning:
-            return .outlineDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarning)
         case .outlineDefaultWarningActive:
-            return .outlineDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarningActive)
         case .outlineDefaultWarningHover:
-            return .outlineDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarningHover)
         case .outlineDefaultWarningMinor:
-            return .outlineDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarningMinor)
         case .outlineDefaultWarningMinorActive:
-            return .outlineDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarningMinorActive)
         case .outlineDefaultWarningMinorHover:
-            return .outlineDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineDefaultWarningMinorHover)
         case .outlineInverseAccent:
-            return .outlineInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccent)
         case .outlineInverseAccentActive:
-            return .outlineInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentActive)
         case .outlineInverseAccentAthena:
-            return .outlineInverseAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthena)
         case .outlineInverseAccentAthenaActive:
-            return .outlineInverseAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthenaActive)
         case .outlineInverseAccentAthenaHover:
-            return .outlineInverseAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthenaHover)
         case .outlineInverseAccentAthenaMinor:
-            return .outlineInverseAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthenaMinor)
         case .outlineInverseAccentAthenaMinorActive:
-            return .outlineInverseAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthenaMinorActive)
         case .outlineInverseAccentAthenaMinorHover:
-            return .outlineInverseAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentAthenaMinorHover)
         case .outlineInverseAccentB2E:
-            return .outlineInverseAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2E)
         case .outlineInverseAccentB2EActive:
-            return .outlineInverseAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2EActive)
         case .outlineInverseAccentB2EHover:
-            return .outlineInverseAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2EHover)
         case .outlineInverseAccentB2EMinor:
-            return .outlineInverseAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2EMinor)
         case .outlineInverseAccentB2EMinorActive:
-            return .outlineInverseAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2EMinorActive)
         case .outlineInverseAccentB2EMinorHover:
-            return .outlineInverseAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentB2EMinorHover)
         case .outlineInverseAccentBrand:
-            return .outlineInverseAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrand)
         case .outlineInverseAccentBrandActive:
-            return .outlineInverseAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrandActive)
         case .outlineInverseAccentBrandHover:
-            return .outlineInverseAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrandHover)
         case .outlineInverseAccentBrandMinor:
-            return .outlineInverseAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrandMinor)
         case .outlineInverseAccentBrandMinorActive:
-            return .outlineInverseAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrandMinorActive)
         case .outlineInverseAccentBrandMinorHover:
-            return .outlineInverseAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentBrandMinorHover)
         case .outlineInverseAccentHover:
-            return .outlineInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentHover)
         case .outlineInverseAccentJoy:
-            return .outlineInverseAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoy)
         case .outlineInverseAccentJoyActive:
-            return .outlineInverseAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoyActive)
         case .outlineInverseAccentJoyHover:
-            return .outlineInverseAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoyHover)
         case .outlineInverseAccentJoyMinor:
-            return .outlineInverseAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoyMinor)
         case .outlineInverseAccentJoyMinorActive:
-            return .outlineInverseAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoyMinorActive)
         case .outlineInverseAccentJoyMinorHover:
-            return .outlineInverseAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentJoyMinorHover)
         case .outlineInverseAccentMain:
-            return .outlineInverseAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMain)
         case .outlineInverseAccentMainActive:
-            return .outlineInverseAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMainActive)
         case .outlineInverseAccentMainHover:
-            return .outlineInverseAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMainHover)
         case .outlineInverseAccentMainMinor:
-            return .outlineInverseAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMainMinor)
         case .outlineInverseAccentMainMinorActive:
-            return .outlineInverseAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMainMinorActive)
         case .outlineInverseAccentMainMinorHover:
-            return .outlineInverseAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMainMinorHover)
         case .outlineInverseAccentMinor:
-            return .outlineInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinor)
         case .outlineInverseAccentMinorActive:
-            return .outlineInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinorActive)
         case .outlineInverseAccentMinorHover:
-            return .outlineInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinorHover)
         case .outlineInverseClear:
-            return .outlineInverseClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseClear)
         case .outlineInverseClearActive:
-            return .outlineInverseClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseClearActive)
         case .outlineInverseClearHover:
-            return .outlineInverseClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseClearHover)
         case .outlineInverseInfo:
-            return .outlineInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfo)
         case .outlineInverseInfoActive:
-            return .outlineInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfoActive)
         case .outlineInverseInfoHover:
-            return .outlineInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfoHover)
         case .outlineInverseInfoMinor:
-            return .outlineInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfoMinor)
         case .outlineInverseInfoMinorActive:
-            return .outlineInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfoMinorActive)
         case .outlineInverseInfoMinorHover:
-            return .outlineInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseInfoMinorHover)
         case .outlineInverseNegative:
-            return .outlineInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegative)
         case .outlineInverseNegativeActive:
-            return .outlineInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegativeActive)
         case .outlineInverseNegativeHover:
-            return .outlineInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegativeHover)
         case .outlineInverseNegativeMinor:
-            return .outlineInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegativeMinor)
         case .outlineInverseNegativeMinorActive:
-            return .outlineInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegativeMinorActive)
         case .outlineInverseNegativeMinorHover:
-            return .outlineInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseNegativeMinorHover)
         case .outlineInversePositive:
-            return .outlineInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositive)
         case .outlineInversePositiveActive:
-            return .outlineInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositiveActive)
         case .outlineInversePositiveHover:
-            return .outlineInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositiveHover)
         case .outlineInversePositiveMinor:
-            return .outlineInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositiveMinor)
         case .outlineInversePositiveMinorActive:
-            return .outlineInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositiveMinorActive)
         case .outlineInversePositiveMinorHover:
-            return .outlineInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePositiveMinorHover)
         case .outlineInversePromo:
-            return .outlineInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromo)
         case .outlineInversePromoActive:
-            return .outlineInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoActive)
         case .outlineInversePromoHover:
-            return .outlineInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoHover)
         case .outlineInversePromoMinor:
-            return .outlineInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinor)
         case .outlineInversePromoMinorActive:
-            return .outlineInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinorActive)
         case .outlineInversePromoMinorHover:
-            return .outlineInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinorHover)
         case .outlineInverseSolidPrimary:
-            return .outlineInverseSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidPrimary)
         case .outlineInverseSolidPrimaryActive:
-            return .outlineInverseSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidPrimaryActive)
         case .outlineInverseSolidPrimaryHover:
-            return .outlineInverseSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidPrimaryHover)
         case .outlineInverseSolidSecondary:
-            return .outlineInverseSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidSecondary)
         case .outlineInverseSolidSecondaryActive:
-            return .outlineInverseSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidSecondaryActive)
         case .outlineInverseSolidSecondaryHover:
-            return .outlineInverseSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidSecondaryHover)
         case .outlineInverseSolidTertiary:
-            return .outlineInverseSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidTertiary)
         case .outlineInverseSolidTertiaryActive:
-            return .outlineInverseSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidTertiaryActive)
         case .outlineInverseSolidTertiaryHover:
-            return .outlineInverseSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseSolidTertiaryHover)
         case .outlineInverseTransparentAccent:
-            return .outlineInverseTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccent)
         case .outlineInverseTransparentAccentActive:
-            return .outlineInverseTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentActive)
         case .outlineInverseTransparentAccentAthena:
-            return .outlineInverseTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentAthena)
         case .outlineInverseTransparentAccentAthenaActive:
-            return .outlineInverseTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentAthenaActive)
         case .outlineInverseTransparentAccentAthenaHover:
-            return .outlineInverseTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentAthenaHover)
         case .outlineInverseTransparentAccentB2E:
-            return .outlineInverseTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentB2E)
         case .outlineInverseTransparentAccentB2EActive:
-            return .outlineInverseTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentB2EActive)
         case .outlineInverseTransparentAccentB2EHover:
-            return .outlineInverseTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentB2EHover)
         case .outlineInverseTransparentAccentBrand:
-            return .outlineInverseTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentBrand)
         case .outlineInverseTransparentAccentBrandActive:
-            return .outlineInverseTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentBrandActive)
         case .outlineInverseTransparentAccentBrandHover:
-            return .outlineInverseTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentBrandHover)
         case .outlineInverseTransparentAccentHover:
-            return .outlineInverseTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentHover)
         case .outlineInverseTransparentAccentJoy:
-            return .outlineInverseTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentJoy)
         case .outlineInverseTransparentAccentJoyActive:
-            return .outlineInverseTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentJoyActive)
         case .outlineInverseTransparentAccentJoyHover:
-            return .outlineInverseTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentJoyHover)
         case .outlineInverseTransparentAccentMain:
-            return .outlineInverseTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentMain)
         case .outlineInverseTransparentAccentMainActive:
-            return .outlineInverseTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentMainActive)
         case .outlineInverseTransparentAccentMainHover:
-            return .outlineInverseTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentMainHover)
         case .outlineInverseTransparentDefault:
-            return .outlineInverseTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentDefault)
         case .outlineInverseTransparentDefaultActive:
-            return .outlineInverseTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentDefaultActive)
         case .outlineInverseTransparentDefaultHover:
-            return .outlineInverseTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentDefaultHover)
         case .outlineInverseTransparentInfo:
-            return .outlineInverseTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentInfo)
         case .outlineInverseTransparentInfoActive:
-            return .outlineInverseTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentInfoActive)
         case .outlineInverseTransparentInfoHover:
-            return .outlineInverseTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentInfoHover)
         case .outlineInverseTransparentNegative:
-            return .outlineInverseTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentNegative)
         case .outlineInverseTransparentNegativeActive:
-            return .outlineInverseTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentNegativeActive)
         case .outlineInverseTransparentNegativeHover:
-            return .outlineInverseTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentNegativeHover)
         case .outlineInverseTransparentPositive:
-            return .outlineInverseTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPositive)
         case .outlineInverseTransparentPositiveActive:
-            return .outlineInverseTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPositiveActive)
         case .outlineInverseTransparentPositiveHover:
-            return .outlineInverseTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPositiveHover)
         case .outlineInverseTransparentPrimary:
-            return .outlineInverseTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPrimary)
         case .outlineInverseTransparentPrimaryActive:
-            return .outlineInverseTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPrimaryActive)
         case .outlineInverseTransparentPrimaryHover:
-            return .outlineInverseTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentPrimaryHover)
         case .outlineInverseTransparentSecondary:
-            return .outlineInverseTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentSecondary)
         case .outlineInverseTransparentSecondaryActive:
-            return .outlineInverseTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentSecondaryActive)
         case .outlineInverseTransparentSecondaryHover:
-            return .outlineInverseTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentSecondaryHover)
         case .outlineInverseTransparentTertiary:
-            return .outlineInverseTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentTertiary)
         case .outlineInverseTransparentTertiaryActive:
-            return .outlineInverseTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentTertiaryActive)
         case .outlineInverseTransparentTertiaryHover:
-            return .outlineInverseTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentTertiaryHover)
         case .outlineInverseTransparentWarning:
-            return .outlineInverseTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentWarning)
         case .outlineInverseTransparentWarningActive:
-            return .outlineInverseTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentWarningActive)
         case .outlineInverseTransparentWarningHover:
-            return .outlineInverseTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentWarningHover)
         case .outlineInverseWarning:
-            return .outlineInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarning)
         case .outlineInverseWarningActive:
-            return .outlineInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarningActive)
         case .outlineInverseWarningHover:
-            return .outlineInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarningHover)
         case .outlineInverseWarningMinor:
-            return .outlineInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarningMinor)
         case .outlineInverseWarningMinorActive:
-            return .outlineInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarningMinorActive)
         case .outlineInverseWarningMinorHover:
-            return .outlineInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineInverseWarningMinorHover)
         case .outlineOnDarkAccent:
-            return .outlineOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccent)
         case .outlineOnDarkAccentActive:
-            return .outlineOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentActive)
         case .outlineOnDarkAccentAthena:
-            return .outlineOnDarkAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthena)
         case .outlineOnDarkAccentAthenaActive:
-            return .outlineOnDarkAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthenaActive)
         case .outlineOnDarkAccentAthenaHover:
-            return .outlineOnDarkAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthenaHover)
         case .outlineOnDarkAccentAthenaMinor:
-            return .outlineOnDarkAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthenaMinor)
         case .outlineOnDarkAccentAthenaMinorActive:
-            return .outlineOnDarkAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthenaMinorActive)
         case .outlineOnDarkAccentAthenaMinorHover:
-            return .outlineOnDarkAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentAthenaMinorHover)
         case .outlineOnDarkAccentB2E:
-            return .outlineOnDarkAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2E)
         case .outlineOnDarkAccentB2EActive:
-            return .outlineOnDarkAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2EActive)
         case .outlineOnDarkAccentB2EHover:
-            return .outlineOnDarkAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2EHover)
         case .outlineOnDarkAccentB2EMinor:
-            return .outlineOnDarkAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2EMinor)
         case .outlineOnDarkAccentB2EMinorActive:
-            return .outlineOnDarkAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2EMinorActive)
         case .outlineOnDarkAccentB2EMinorHover:
-            return .outlineOnDarkAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentB2EMinorHover)
         case .outlineOnDarkAccentBrand:
-            return .outlineOnDarkAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrand)
         case .outlineOnDarkAccentBrandActive:
-            return .outlineOnDarkAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrandActive)
         case .outlineOnDarkAccentBrandHover:
-            return .outlineOnDarkAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrandHover)
         case .outlineOnDarkAccentBrandMinor:
-            return .outlineOnDarkAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrandMinor)
         case .outlineOnDarkAccentBrandMinorActive:
-            return .outlineOnDarkAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrandMinorActive)
         case .outlineOnDarkAccentBrandMinorHover:
-            return .outlineOnDarkAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentBrandMinorHover)
         case .outlineOnDarkAccentHover:
-            return .outlineOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentHover)
         case .outlineOnDarkAccentJoy:
-            return .outlineOnDarkAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoy)
         case .outlineOnDarkAccentJoyActive:
-            return .outlineOnDarkAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoyActive)
         case .outlineOnDarkAccentJoyHover:
-            return .outlineOnDarkAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoyHover)
         case .outlineOnDarkAccentJoyMinor:
-            return .outlineOnDarkAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoyMinor)
         case .outlineOnDarkAccentJoyMinorActive:
-            return .outlineOnDarkAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoyMinorActive)
         case .outlineOnDarkAccentJoyMinorHover:
-            return .outlineOnDarkAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentJoyMinorHover)
         case .outlineOnDarkAccentMain:
-            return .outlineOnDarkAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMain)
         case .outlineOnDarkAccentMainActive:
-            return .outlineOnDarkAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMainActive)
         case .outlineOnDarkAccentMainHover:
-            return .outlineOnDarkAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMainHover)
         case .outlineOnDarkAccentMainMinor:
-            return .outlineOnDarkAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMainMinor)
         case .outlineOnDarkAccentMainMinorActive:
-            return .outlineOnDarkAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMainMinorActive)
         case .outlineOnDarkAccentMainMinorHover:
-            return .outlineOnDarkAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMainMinorHover)
         case .outlineOnDarkAccentMinor:
-            return .outlineOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinor)
         case .outlineOnDarkAccentMinorActive:
-            return .outlineOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinorActive)
         case .outlineOnDarkAccentMinorHover:
-            return .outlineOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinorHover)
         case .outlineOnDarkClear:
-            return .outlineOnDarkClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkClear)
         case .outlineOnDarkClearActive:
-            return .outlineOnDarkClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkClearActive)
         case .outlineOnDarkClearHover:
-            return .outlineOnDarkClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkClearHover)
         case .outlineOnDarkInfo:
-            return .outlineOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfo)
         case .outlineOnDarkInfoActive:
-            return .outlineOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfoActive)
         case .outlineOnDarkInfoHover:
-            return .outlineOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfoHover)
         case .outlineOnDarkInfoMinor:
-            return .outlineOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfoMinor)
         case .outlineOnDarkInfoMinorActive:
-            return .outlineOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfoMinorActive)
         case .outlineOnDarkInfoMinorHover:
-            return .outlineOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkInfoMinorHover)
         case .outlineOnDarkNegative:
-            return .outlineOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegative)
         case .outlineOnDarkNegativeActive:
-            return .outlineOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegativeActive)
         case .outlineOnDarkNegativeHover:
-            return .outlineOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegativeHover)
         case .outlineOnDarkNegativeMinor:
-            return .outlineOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegativeMinor)
         case .outlineOnDarkNegativeMinorActive:
-            return .outlineOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegativeMinorActive)
         case .outlineOnDarkNegativeMinorHover:
-            return .outlineOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkNegativeMinorHover)
         case .outlineOnDarkPositive:
-            return .outlineOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositive)
         case .outlineOnDarkPositiveActive:
-            return .outlineOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositiveActive)
         case .outlineOnDarkPositiveHover:
-            return .outlineOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositiveHover)
         case .outlineOnDarkPositiveMinor:
-            return .outlineOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositiveMinor)
         case .outlineOnDarkPositiveMinorActive:
-            return .outlineOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositiveMinorActive)
         case .outlineOnDarkPositiveMinorHover:
-            return .outlineOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPositiveMinorHover)
         case .outlineOnDarkPromo:
-            return .outlineOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromo)
         case .outlineOnDarkPromoActive:
-            return .outlineOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoActive)
         case .outlineOnDarkPromoHover:
-            return .outlineOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoHover)
         case .outlineOnDarkPromoMinor:
-            return .outlineOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinor)
         case .outlineOnDarkPromoMinorActive:
-            return .outlineOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinorActive)
         case .outlineOnDarkPromoMinorHover:
-            return .outlineOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinorHover)
         case .outlineOnDarkSolidDefault:
-            return .outlineOnDarkSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidDefault)
         case .outlineOnDarkSolidDefaultActive:
-            return .outlineOnDarkSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidDefaultActive)
         case .outlineOnDarkSolidDefaultHover:
-            return .outlineOnDarkSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidDefaultHover)
         case .outlineOnDarkSolidPrimary:
-            return .outlineOnDarkSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidPrimary)
         case .outlineOnDarkSolidPrimaryActive:
-            return .outlineOnDarkSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidPrimaryActive)
         case .outlineOnDarkSolidPrimaryHover:
-            return .outlineOnDarkSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidPrimaryHover)
         case .outlineOnDarkSolidSecondary:
-            return .outlineOnDarkSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidSecondary)
         case .outlineOnDarkSolidSecondaryActive:
-            return .outlineOnDarkSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidSecondaryActive)
         case .outlineOnDarkSolidSecondaryHover:
-            return .outlineOnDarkSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidSecondaryHover)
         case .outlineOnDarkSolidTertiary:
-            return .outlineOnDarkSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidTertiary)
         case .outlineOnDarkSolidTertiaryActive:
-            return .outlineOnDarkSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidTertiaryActive)
         case .outlineOnDarkSolidTertiaryHover:
-            return .outlineOnDarkSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkSolidTertiaryHover)
         case .outlineOnDarkTransparentAccent:
-            return .outlineOnDarkTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccent)
         case .outlineOnDarkTransparentAccentActive:
-            return .outlineOnDarkTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentActive)
         case .outlineOnDarkTransparentAccentAthena:
-            return .outlineOnDarkTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentAthena)
         case .outlineOnDarkTransparentAccentAthenaActive:
-            return .outlineOnDarkTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentAthenaActive)
         case .outlineOnDarkTransparentAccentAthenaHover:
-            return .outlineOnDarkTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentAthenaHover)
         case .outlineOnDarkTransparentAccentB2E:
-            return .outlineOnDarkTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentB2E)
         case .outlineOnDarkTransparentAccentB2EActive:
-            return .outlineOnDarkTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentB2EActive)
         case .outlineOnDarkTransparentAccentB2EHover:
-            return .outlineOnDarkTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentB2EHover)
         case .outlineOnDarkTransparentAccentBrand:
-            return .outlineOnDarkTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentBrand)
         case .outlineOnDarkTransparentAccentBrandActive:
-            return .outlineOnDarkTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentBrandActive)
         case .outlineOnDarkTransparentAccentBrandHover:
-            return .outlineOnDarkTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentBrandHover)
         case .outlineOnDarkTransparentAccentHover:
-            return .outlineOnDarkTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentHover)
         case .outlineOnDarkTransparentAccentJoy:
-            return .outlineOnDarkTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentJoy)
         case .outlineOnDarkTransparentAccentJoyActive:
-            return .outlineOnDarkTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentJoyActive)
         case .outlineOnDarkTransparentAccentJoyHover:
-            return .outlineOnDarkTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentJoyHover)
         case .outlineOnDarkTransparentAccentMain:
-            return .outlineOnDarkTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentMain)
         case .outlineOnDarkTransparentAccentMainActive:
-            return .outlineOnDarkTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentMainActive)
         case .outlineOnDarkTransparentAccentMainHover:
-            return .outlineOnDarkTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentMainHover)
         case .outlineOnDarkTransparentDefault:
-            return .outlineOnDarkTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentDefault)
         case .outlineOnDarkTransparentDefaultActive:
-            return .outlineOnDarkTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentDefaultActive)
         case .outlineOnDarkTransparentDefaultHover:
-            return .outlineOnDarkTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentDefaultHover)
         case .outlineOnDarkTransparentInfo:
-            return .outlineOnDarkTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentInfo)
         case .outlineOnDarkTransparentInfoActive:
-            return .outlineOnDarkTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentInfoActive)
         case .outlineOnDarkTransparentInfoHover:
-            return .outlineOnDarkTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentInfoHover)
         case .outlineOnDarkTransparentNegative:
-            return .outlineOnDarkTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentNegative)
         case .outlineOnDarkTransparentNegativeActive:
-            return .outlineOnDarkTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentNegativeActive)
         case .outlineOnDarkTransparentNegativeHover:
-            return .outlineOnDarkTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentNegativeHover)
         case .outlineOnDarkTransparentPositive:
-            return .outlineOnDarkTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPositive)
         case .outlineOnDarkTransparentPositiveActive:
-            return .outlineOnDarkTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPositiveActive)
         case .outlineOnDarkTransparentPositiveHover:
-            return .outlineOnDarkTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPositiveHover)
         case .outlineOnDarkTransparentPrimary:
-            return .outlineOnDarkTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPrimary)
         case .outlineOnDarkTransparentPrimaryActive:
-            return .outlineOnDarkTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPrimaryActive)
         case .outlineOnDarkTransparentPrimaryHover:
-            return .outlineOnDarkTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentPrimaryHover)
         case .outlineOnDarkTransparentSecondary:
-            return .outlineOnDarkTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentSecondary)
         case .outlineOnDarkTransparentSecondaryActive:
-            return .outlineOnDarkTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentSecondaryActive)
         case .outlineOnDarkTransparentSecondaryHover:
-            return .outlineOnDarkTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentSecondaryHover)
         case .outlineOnDarkTransparentTertiary:
-            return .outlineOnDarkTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentTertiary)
         case .outlineOnDarkTransparentTertiaryActive:
-            return .outlineOnDarkTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentTertiaryActive)
         case .outlineOnDarkTransparentTertiaryHover:
-            return .outlineOnDarkTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentTertiaryHover)
         case .outlineOnDarkTransparentWarning:
-            return .outlineOnDarkTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentWarning)
         case .outlineOnDarkTransparentWarningActive:
-            return .outlineOnDarkTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentWarningActive)
         case .outlineOnDarkTransparentWarningHover:
-            return .outlineOnDarkTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentWarningHover)
         case .outlineOnDarkWarning:
-            return .outlineOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarning)
         case .outlineOnDarkWarningActive:
-            return .outlineOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarningActive)
         case .outlineOnDarkWarningHover:
-            return .outlineOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarningHover)
         case .outlineOnDarkWarningMinor:
-            return .outlineOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarningMinor)
         case .outlineOnDarkWarningMinorActive:
-            return .outlineOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarningMinorActive)
         case .outlineOnDarkWarningMinorHover:
-            return .outlineOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkWarningMinorHover)
         case .outlineOnLightAccent:
-            return .outlineOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccent)
         case .outlineOnLightAccentActive:
-            return .outlineOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentActive)
         case .outlineOnLightAccentAthena:
-            return .outlineOnLightAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthena)
         case .outlineOnLightAccentAthenaActive:
-            return .outlineOnLightAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthenaActive)
         case .outlineOnLightAccentAthenaHover:
-            return .outlineOnLightAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthenaHover)
         case .outlineOnLightAccentAthenaMinor:
-            return .outlineOnLightAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthenaMinor)
         case .outlineOnLightAccentAthenaMinorActive:
-            return .outlineOnLightAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthenaMinorActive)
         case .outlineOnLightAccentAthenaMinorHover:
-            return .outlineOnLightAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentAthenaMinorHover)
         case .outlineOnLightAccentB2E:
-            return .outlineOnLightAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2E)
         case .outlineOnLightAccentB2EActive:
-            return .outlineOnLightAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2EActive)
         case .outlineOnLightAccentB2EHover:
-            return .outlineOnLightAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2EHover)
         case .outlineOnLightAccentB2EMinor:
-            return .outlineOnLightAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2EMinor)
         case .outlineOnLightAccentB2EMinorActive:
-            return .outlineOnLightAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2EMinorActive)
         case .outlineOnLightAccentB2EMinorHover:
-            return .outlineOnLightAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentB2EMinorHover)
         case .outlineOnLightAccentBrand:
-            return .outlineOnLightAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrand)
         case .outlineOnLightAccentBrandActive:
-            return .outlineOnLightAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrandActive)
         case .outlineOnLightAccentBrandHover:
-            return .outlineOnLightAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrandHover)
         case .outlineOnLightAccentBrandMinor:
-            return .outlineOnLightAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrandMinor)
         case .outlineOnLightAccentBrandMinorActive:
-            return .outlineOnLightAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrandMinorActive)
         case .outlineOnLightAccentBrandMinorHover:
-            return .outlineOnLightAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentBrandMinorHover)
         case .outlineOnLightAccentHover:
-            return .outlineOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentHover)
         case .outlineOnLightAccentJoy:
-            return .outlineOnLightAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoy)
         case .outlineOnLightAccentJoyActive:
-            return .outlineOnLightAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoyActive)
         case .outlineOnLightAccentJoyHover:
-            return .outlineOnLightAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoyHover)
         case .outlineOnLightAccentJoyMinor:
-            return .outlineOnLightAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoyMinor)
         case .outlineOnLightAccentJoyMinorActive:
-            return .outlineOnLightAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoyMinorActive)
         case .outlineOnLightAccentJoyMinorHover:
-            return .outlineOnLightAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentJoyMinorHover)
         case .outlineOnLightAccentMain:
-            return .outlineOnLightAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMain)
         case .outlineOnLightAccentMainActive:
-            return .outlineOnLightAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMainActive)
         case .outlineOnLightAccentMainHover:
-            return .outlineOnLightAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMainHover)
         case .outlineOnLightAccentMainMinor:
-            return .outlineOnLightAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMainMinor)
         case .outlineOnLightAccentMainMinorActive:
-            return .outlineOnLightAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMainMinorActive)
         case .outlineOnLightAccentMainMinorHover:
-            return .outlineOnLightAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMainMinorHover)
         case .outlineOnLightAccentMinor:
-            return .outlineOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinor)
         case .outlineOnLightAccentMinorActive:
-            return .outlineOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinorActive)
         case .outlineOnLightAccentMinorHover:
-            return .outlineOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinorHover)
         case .outlineOnLightClear:
-            return .outlineOnLightClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightClear)
         case .outlineOnLightClearActive:
-            return .outlineOnLightClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightClearActive)
         case .outlineOnLightClearHover:
-            return .outlineOnLightClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightClearHover)
         case .outlineOnLightInfo:
-            return .outlineOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfo)
         case .outlineOnLightInfoActive:
-            return .outlineOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfoActive)
         case .outlineOnLightInfoHover:
-            return .outlineOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfoHover)
         case .outlineOnLightInfoMinor:
-            return .outlineOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfoMinor)
         case .outlineOnLightInfoMinorActive:
-            return .outlineOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfoMinorActive)
         case .outlineOnLightInfoMinorHover:
-            return .outlineOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightInfoMinorHover)
         case .outlineOnLightNegative:
-            return .outlineOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegative)
         case .outlineOnLightNegativeActive:
-            return .outlineOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegativeActive)
         case .outlineOnLightNegativeHover:
-            return .outlineOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegativeHover)
         case .outlineOnLightNegativeMinor:
-            return .outlineOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegativeMinor)
         case .outlineOnLightNegativeMinorActive:
-            return .outlineOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegativeMinorActive)
         case .outlineOnLightNegativeMinorHover:
-            return .outlineOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightNegativeMinorHover)
         case .outlineOnLightPositive:
-            return .outlineOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositive)
         case .outlineOnLightPositiveActive:
-            return .outlineOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositiveActive)
         case .outlineOnLightPositiveHover:
-            return .outlineOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositiveHover)
         case .outlineOnLightPositiveMinor:
-            return .outlineOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositiveMinor)
         case .outlineOnLightPositiveMinorActive:
-            return .outlineOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositiveMinorActive)
         case .outlineOnLightPositiveMinorHover:
-            return .outlineOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPositiveMinorHover)
         case .outlineOnLightPromo:
-            return .outlineOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromo)
         case .outlineOnLightPromoActive:
-            return .outlineOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoActive)
         case .outlineOnLightPromoHover:
-            return .outlineOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoHover)
         case .outlineOnLightPromoMinor:
-            return .outlineOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinor)
         case .outlineOnLightPromoMinorActive:
-            return .outlineOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinorActive)
         case .outlineOnLightPromoMinorHover:
-            return .outlineOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinorHover)
         case .outlineOnLightSolidDefault:
-            return .outlineOnLightSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidDefault)
         case .outlineOnLightSolidDefaultActive:
-            return .outlineOnLightSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidDefaultActive)
         case .outlineOnLightSolidDefaultHover:
-            return .outlineOnLightSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidDefaultHover)
         case .outlineOnLightSolidPrimary:
-            return .outlineOnLightSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidPrimary)
         case .outlineOnLightSolidPrimaryActive:
-            return .outlineOnLightSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidPrimaryActive)
         case .outlineOnLightSolidPrimaryHover:
-            return .outlineOnLightSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidPrimaryHover)
         case .outlineOnLightSolidSecondary:
-            return .outlineOnLightSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidSecondary)
         case .outlineOnLightSolidSecondaryActive:
-            return .outlineOnLightSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidSecondaryActive)
         case .outlineOnLightSolidSecondaryHover:
-            return .outlineOnLightSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidSecondaryHover)
         case .outlineOnLightSolidTertiary:
-            return .outlineOnLightSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidTertiary)
         case .outlineOnLightSolidTertiaryActive:
-            return .outlineOnLightSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidTertiaryActive)
         case .outlineOnLightSolidTertiaryHover:
-            return .outlineOnLightSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightSolidTertiaryHover)
         case .outlineOnLightTransparentAccent:
-            return .outlineOnLightTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccent)
         case .outlineOnLightTransparentAccentActive:
-            return .outlineOnLightTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentActive)
         case .outlineOnLightTransparentAccentAthena:
-            return .outlineOnLightTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentAthena)
         case .outlineOnLightTransparentAccentAthenaActive:
-            return .outlineOnLightTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentAthenaActive)
         case .outlineOnLightTransparentAccentAthenaHover:
-            return .outlineOnLightTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentAthenaHover)
         case .outlineOnLightTransparentAccentB2E:
-            return .outlineOnLightTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentB2E)
         case .outlineOnLightTransparentAccentB2EActive:
-            return .outlineOnLightTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentB2EActive)
         case .outlineOnLightTransparentAccentB2EHover:
-            return .outlineOnLightTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentB2EHover)
         case .outlineOnLightTransparentAccentBrand:
-            return .outlineOnLightTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentBrand)
         case .outlineOnLightTransparentAccentBrandActive:
-            return .outlineOnLightTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentBrandActive)
         case .outlineOnLightTransparentAccentBrandHover:
-            return .outlineOnLightTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentBrandHover)
         case .outlineOnLightTransparentAccentHover:
-            return .outlineOnLightTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentHover)
         case .outlineOnLightTransparentAccentJoy:
-            return .outlineOnLightTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentJoy)
         case .outlineOnLightTransparentAccentJoyActive:
-            return .outlineOnLightTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentJoyActive)
         case .outlineOnLightTransparentAccentJoyHover:
-            return .outlineOnLightTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentJoyHover)
         case .outlineOnLightTransparentAccentMain:
-            return .outlineOnLightTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentMain)
         case .outlineOnLightTransparentAccentMainActive:
-            return .outlineOnLightTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentMainActive)
         case .outlineOnLightTransparentAccentMainHover:
-            return .outlineOnLightTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentMainHover)
         case .outlineOnLightTransparentDefault:
-            return .outlineOnLightTransparentDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentDefault)
         case .outlineOnLightTransparentDefaultActive:
-            return .outlineOnLightTransparentDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentDefaultActive)
         case .outlineOnLightTransparentDefaultHover:
-            return .outlineOnLightTransparentDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentDefaultHover)
         case .outlineOnLightTransparentInfo:
-            return .outlineOnLightTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentInfo)
         case .outlineOnLightTransparentInfoActive:
-            return .outlineOnLightTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentInfoActive)
         case .outlineOnLightTransparentInfoHover:
-            return .outlineOnLightTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentInfoHover)
         case .outlineOnLightTransparentNegative:
-            return .outlineOnLightTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentNegative)
         case .outlineOnLightTransparentNegativeActive:
-            return .outlineOnLightTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentNegativeActive)
         case .outlineOnLightTransparentNegativeHover:
-            return .outlineOnLightTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentNegativeHover)
         case .outlineOnLightTransparentPositive:
-            return .outlineOnLightTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPositive)
         case .outlineOnLightTransparentPositiveActive:
-            return .outlineOnLightTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPositiveActive)
         case .outlineOnLightTransparentPositiveHover:
-            return .outlineOnLightTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPositiveHover)
         case .outlineOnLightTransparentPrimary:
-            return .outlineOnLightTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPrimary)
         case .outlineOnLightTransparentPrimaryActive:
-            return .outlineOnLightTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPrimaryActive)
         case .outlineOnLightTransparentPrimaryHover:
-            return .outlineOnLightTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentPrimaryHover)
         case .outlineOnLightTransparentSecondary:
-            return .outlineOnLightTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentSecondary)
         case .outlineOnLightTransparentSecondaryActive:
-            return .outlineOnLightTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentSecondaryActive)
         case .outlineOnLightTransparentSecondaryHover:
-            return .outlineOnLightTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentSecondaryHover)
         case .outlineOnLightTransparentTertiary:
-            return .outlineOnLightTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentTertiary)
         case .outlineOnLightTransparentTertiaryActive:
-            return .outlineOnLightTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentTertiaryActive)
         case .outlineOnLightTransparentTertiaryHover:
-            return .outlineOnLightTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentTertiaryHover)
         case .outlineOnLightTransparentWarning:
-            return .outlineOnLightTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentWarning)
         case .outlineOnLightTransparentWarningActive:
-            return .outlineOnLightTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentWarningActive)
         case .outlineOnLightTransparentWarningHover:
-            return .outlineOnLightTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentWarningHover)
         case .outlineOnLightWarning:
-            return .outlineOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarning)
         case .outlineOnLightWarningActive:
-            return .outlineOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarningActive)
         case .outlineOnLightWarningHover:
-            return .outlineOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarningHover)
         case .outlineOnLightWarningMinor:
-            return .outlineOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarningMinor)
         case .outlineOnLightWarningMinorActive:
-            return .outlineOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarningMinorActive)
         case .outlineOnLightWarningMinorHover:
-            return .outlineOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .outlineOnLightWarningMinorHover)
         case .overlayDefaultBlur:
-            return .overlayDefaultBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayDefaultBlur)
         case .overlayDefaultHard:
-            return .overlayDefaultHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayDefaultHard)
         case .overlayDefaultSoft:
-            return .overlayDefaultSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayDefaultSoft)
         case .overlayInverseBlur:
-            return .overlayInverseBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayInverseBlur)
         case .overlayInverseHard:
-            return .overlayInverseHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayInverseHard)
         case .overlayInverseSoft:
-            return .overlayInverseSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayInverseSoft)
         case .overlayOnDarkBlur:
-            return .overlayOnDarkBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnDarkBlur)
         case .overlayOnDarkHard:
-            return .overlayOnDarkHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnDarkHard)
         case .overlayOnDarkSoft:
-            return .overlayOnDarkSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnDarkSoft)
         case .overlayOnLightBlur:
-            return .overlayOnLightBlur
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnLightBlur)
         case .overlayOnLightHard:
-            return .overlayOnLightHard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnLightHard)
         case .overlayOnLightSoft:
-            return .overlayOnLightSoft
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .overlayOnLightSoft)
         case .surfaceDefaultAccent:
-            return .surfaceDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccent)
         case .surfaceDefaultAccentActive:
-            return .surfaceDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentActive)
         case .surfaceDefaultAccentAthena:
-            return .surfaceDefaultAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthena)
         case .surfaceDefaultAccentAthenaActive:
-            return .surfaceDefaultAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthenaActive)
         case .surfaceDefaultAccentAthenaHover:
-            return .surfaceDefaultAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthenaHover)
         case .surfaceDefaultAccentAthenaMinor:
-            return .surfaceDefaultAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthenaMinor)
         case .surfaceDefaultAccentAthenaMinorActive:
-            return .surfaceDefaultAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthenaMinorActive)
         case .surfaceDefaultAccentAthenaMinorHover:
-            return .surfaceDefaultAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentAthenaMinorHover)
         case .surfaceDefaultAccentB2E:
-            return .surfaceDefaultAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2E)
         case .surfaceDefaultAccentB2EActive:
-            return .surfaceDefaultAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2EActive)
         case .surfaceDefaultAccentB2EHover:
-            return .surfaceDefaultAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2EHover)
         case .surfaceDefaultAccentB2EMinor:
-            return .surfaceDefaultAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2EMinor)
         case .surfaceDefaultAccentB2EMinorActive:
-            return .surfaceDefaultAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2EMinorActive)
         case .surfaceDefaultAccentB2EMinorHover:
-            return .surfaceDefaultAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentB2EMinorHover)
         case .surfaceDefaultAccentBrand:
-            return .surfaceDefaultAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrand)
         case .surfaceDefaultAccentBrandActive:
-            return .surfaceDefaultAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrandActive)
         case .surfaceDefaultAccentBrandHover:
-            return .surfaceDefaultAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrandHover)
         case .surfaceDefaultAccentBrandMinor:
-            return .surfaceDefaultAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrandMinor)
         case .surfaceDefaultAccentBrandMinorActive:
-            return .surfaceDefaultAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrandMinorActive)
         case .surfaceDefaultAccentBrandMinorHover:
-            return .surfaceDefaultAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentBrandMinorHover)
         case .surfaceDefaultAccentHover:
-            return .surfaceDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentHover)
         case .surfaceDefaultAccentJoy:
-            return .surfaceDefaultAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoy)
         case .surfaceDefaultAccentJoyActive:
-            return .surfaceDefaultAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoyActive)
         case .surfaceDefaultAccentJoyHover:
-            return .surfaceDefaultAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoyHover)
         case .surfaceDefaultAccentJoyMinor:
-            return .surfaceDefaultAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoyMinor)
         case .surfaceDefaultAccentJoyMinorActive:
-            return .surfaceDefaultAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoyMinorActive)
         case .surfaceDefaultAccentJoyMinorHover:
-            return .surfaceDefaultAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentJoyMinorHover)
         case .surfaceDefaultAccentMain:
-            return .surfaceDefaultAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMain)
         case .surfaceDefaultAccentMainActive:
-            return .surfaceDefaultAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMainActive)
         case .surfaceDefaultAccentMainHover:
-            return .surfaceDefaultAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMainHover)
         case .surfaceDefaultAccentMainMinor:
-            return .surfaceDefaultAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMainMinor)
         case .surfaceDefaultAccentMainMinorActive:
-            return .surfaceDefaultAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMainMinorActive)
         case .surfaceDefaultAccentMainMinorHover:
-            return .surfaceDefaultAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMainMinorHover)
         case .surfaceDefaultAccentMinor:
-            return .surfaceDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinor)
         case .surfaceDefaultAccentMinorActive:
-            return .surfaceDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinorActive)
         case .surfaceDefaultAccentMinorHover:
-            return .surfaceDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinorHover)
         case .surfaceDefaultClear:
-            return .surfaceDefaultClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultClear)
         case .surfaceDefaultClearActive:
-            return .surfaceDefaultClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultClearActive)
         case .surfaceDefaultClearHover:
-            return .surfaceDefaultClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultClearHover)
         case .surfaceDefaultInfo:
-            return .surfaceDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfo)
         case .surfaceDefaultInfoActive:
-            return .surfaceDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfoActive)
         case .surfaceDefaultInfoHover:
-            return .surfaceDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfoHover)
         case .surfaceDefaultInfoMinor:
-            return .surfaceDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfoMinor)
         case .surfaceDefaultInfoMinorActive:
-            return .surfaceDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfoMinorActive)
         case .surfaceDefaultInfoMinorHover:
-            return .surfaceDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultInfoMinorHover)
         case .surfaceDefaultNegative:
-            return .surfaceDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegative)
         case .surfaceDefaultNegativeActive:
-            return .surfaceDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegativeActive)
         case .surfaceDefaultNegativeHover:
-            return .surfaceDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegativeHover)
         case .surfaceDefaultNegativeMinor:
-            return .surfaceDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegativeMinor)
         case .surfaceDefaultNegativeMinorActive:
-            return .surfaceDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegativeMinorActive)
         case .surfaceDefaultNegativeMinorHover:
-            return .surfaceDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultNegativeMinorHover)
         case .surfaceDefaultPositive:
-            return .surfaceDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositive)
         case .surfaceDefaultPositiveActive:
-            return .surfaceDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositiveActive)
         case .surfaceDefaultPositiveHover:
-            return .surfaceDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositiveHover)
         case .surfaceDefaultPositiveMinor:
-            return .surfaceDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositiveMinor)
         case .surfaceDefaultPositiveMinorActive:
-            return .surfaceDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositiveMinorActive)
         case .surfaceDefaultPositiveMinorHover:
-            return .surfaceDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPositiveMinorHover)
         case .surfaceDefaultPromo:
-            return .surfaceDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromo)
         case .surfaceDefaultPromoActive:
-            return .surfaceDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoActive)
         case .surfaceDefaultPromoHover:
-            return .surfaceDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoHover)
         case .surfaceDefaultPromoMinor:
-            return .surfaceDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinor)
         case .surfaceDefaultPromoMinorActive:
-            return .surfaceDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinorActive)
         case .surfaceDefaultPromoMinorHover:
-            return .surfaceDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinorHover)
         case .surfaceDefaultSkeletonActive:
-            return .surfaceDefaultSkeletonActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonActive)
         case .surfaceDefaultSkeletonHover:
-            return .surfaceDefaultSkeletonHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonHover)
         case .surfaceDefaultSolidCard:
-            return .surfaceDefaultSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidCard)
         case .surfaceDefaultSolidCardActive:
-            return .surfaceDefaultSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidCardActive)
         case .surfaceDefaultSolidCardBrightness:
-            return .surfaceDefaultSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidCardBrightness)
         case .surfaceDefaultSolidCardHover:
-            return .surfaceDefaultSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidCardHover)
         case .surfaceDefaultSolidDefault:
-            return .surfaceDefaultSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidDefault)
         case .surfaceDefaultSolidDefaultActive:
-            return .surfaceDefaultSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidDefaultActive)
         case .surfaceDefaultSolidDefaultHover:
-            return .surfaceDefaultSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidDefaultHover)
         case .surfaceDefaultSolidPrimary:
-            return .surfaceDefaultSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidPrimary)
         case .surfaceDefaultSolidPrimaryActive:
-            return .surfaceDefaultSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidPrimaryActive)
         case .surfaceDefaultSolidPrimaryBrightness:
-            return .surfaceDefaultSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidPrimaryBrightness)
         case .surfaceDefaultSolidPrimaryHover:
-            return .surfaceDefaultSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidPrimaryHover)
         case .surfaceDefaultSolidSecondary:
-            return .surfaceDefaultSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidSecondary)
         case .surfaceDefaultSolidSecondaryActive:
-            return .surfaceDefaultSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidSecondaryActive)
         case .surfaceDefaultSolidSecondaryHover:
-            return .surfaceDefaultSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidSecondaryHover)
         case .surfaceDefaultSolidTertiary:
-            return .surfaceDefaultSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidTertiary)
         case .surfaceDefaultSolidTertiaryActive:
-            return .surfaceDefaultSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidTertiaryActive)
         case .surfaceDefaultSolidTertiaryHover:
-            return .surfaceDefaultSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSolidTertiaryHover)
         case .surfaceDefaultSpeechBubbleReceived:
-            return .surfaceDefaultSpeechBubbleReceived
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleReceived)
         case .surfaceDefaultSpeechBubbleReceivedActive:
-            return .surfaceDefaultSpeechBubbleReceivedActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleReceivedActive)
         case .surfaceDefaultSpeechBubbleReceivedHover:
-            return .surfaceDefaultSpeechBubbleReceivedHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleReceivedHover)
         case .surfaceDefaultSpeechBubbleSent:
-            return .surfaceDefaultSpeechBubbleSent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleSent)
         case .surfaceDefaultSpeechBubbleSentActive:
-            return .surfaceDefaultSpeechBubbleSentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleSentActive)
         case .surfaceDefaultSpeechBubbleSentHover:
-            return .surfaceDefaultSpeechBubbleSentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSpeechBubbleSentHover)
         case .surfaceDefaultSurfaceTransparentAccentMainActive:
-            return .surfaceDefaultSurfaceTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSurfaceTransparentAccentMainActive)
         case .surfaceDefaultSurfaceTransparentAccentMainHover:
-            return .surfaceDefaultSurfaceTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSurfaceTransparentAccentMainHover)
         case .surfaceDefaultTransparentAccent:
-            return .surfaceDefaultTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccent)
         case .surfaceDefaultTransparentAccentActive:
-            return .surfaceDefaultTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentActive)
         case .surfaceDefaultTransparentAccentAthena:
-            return .surfaceDefaultTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentAthena)
         case .surfaceDefaultTransparentAccentAthenaActive:
-            return .surfaceDefaultTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentAthenaActive)
         case .surfaceDefaultTransparentAccentAthenaHover:
-            return .surfaceDefaultTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentAthenaHover)
         case .surfaceDefaultTransparentAccentB2E:
-            return .surfaceDefaultTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentB2E)
         case .surfaceDefaultTransparentAccentB2EActive:
-            return .surfaceDefaultTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentB2EActive)
         case .surfaceDefaultTransparentAccentB2EHover:
-            return .surfaceDefaultTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentB2EHover)
         case .surfaceDefaultTransparentAccentBrand:
-            return .surfaceDefaultTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentBrand)
         case .surfaceDefaultTransparentAccentBrandActive:
-            return .surfaceDefaultTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentBrandActive)
         case .surfaceDefaultTransparentAccentBrandHover:
-            return .surfaceDefaultTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentBrandHover)
         case .surfaceDefaultTransparentAccentHover:
-            return .surfaceDefaultTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentHover)
         case .surfaceDefaultTransparentAccentJoy:
-            return .surfaceDefaultTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentJoy)
         case .surfaceDefaultTransparentAccentJoyActive:
-            return .surfaceDefaultTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentJoyActive)
         case .surfaceDefaultTransparentAccentJoyHover:
-            return .surfaceDefaultTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentJoyHover)
         case .surfaceDefaultTransparentAccentMain:
-            return .surfaceDefaultTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentMain)
         case .surfaceDefaultTransparentAccentMainActive:
-            return .surfaceDefaultTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentMainActive)
         case .surfaceDefaultTransparentAccentMainHover:
-            return .surfaceDefaultTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentMainHover)
         case .surfaceDefaultTransparentCard:
-            return .surfaceDefaultTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentCard)
         case .surfaceDefaultTransparentCardActive:
-            return .surfaceDefaultTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentCardActive)
         case .surfaceDefaultTransparentCardBrightness:
-            return .surfaceDefaultTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentCardBrightness)
         case .surfaceDefaultTransparentCardHover:
-            return .surfaceDefaultTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentCardHover)
         case .surfaceDefaultTransparentDeep:
-            return .surfaceDefaultTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentDeep)
         case .surfaceDefaultTransparentDeepActive:
-            return .surfaceDefaultTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentDeepActive)
         case .surfaceDefaultTransparentDeepHover:
-            return .surfaceDefaultTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentDeepHover)
         case .surfaceDefaultTransparentInfo:
-            return .surfaceDefaultTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentInfo)
         case .surfaceDefaultTransparentInfoActive:
-            return .surfaceDefaultTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentInfoActive)
         case .surfaceDefaultTransparentInfoHover:
-            return .surfaceDefaultTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentInfoHover)
         case .surfaceDefaultTransparentNegative:
-            return .surfaceDefaultTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentNegative)
         case .surfaceDefaultTransparentNegativeActive:
-            return .surfaceDefaultTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentNegativeActive)
         case .surfaceDefaultTransparentNegativeHover:
-            return .surfaceDefaultTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentNegativeHover)
         case .surfaceDefaultTransparentPositive:
-            return .surfaceDefaultTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPositive)
         case .surfaceDefaultTransparentPositiveActive:
-            return .surfaceDefaultTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPositiveActive)
         case .surfaceDefaultTransparentPositiveHover:
-            return .surfaceDefaultTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPositiveHover)
         case .surfaceDefaultTransparentPrimary:
-            return .surfaceDefaultTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPrimary)
         case .surfaceDefaultTransparentPrimaryActive:
-            return .surfaceDefaultTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPrimaryActive)
         case .surfaceDefaultTransparentPrimaryHover:
-            return .surfaceDefaultTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPrimaryHover)
         case .surfaceDefaultTransparentPromo:
-            return .surfaceDefaultTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromo)
         case .surfaceDefaultTransparentPromoActive:
-            return .surfaceDefaultTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromoActive)
         case .surfaceDefaultTransparentPromoHover:
-            return .surfaceDefaultTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromoHover)
         case .surfaceDefaultTransparentSecondary:
-            return .surfaceDefaultTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentSecondary)
         case .surfaceDefaultTransparentSecondaryActive:
-            return .surfaceDefaultTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentSecondaryActive)
         case .surfaceDefaultTransparentSecondaryHover:
-            return .surfaceDefaultTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentSecondaryHover)
         case .surfaceDefaultTransparentTertiary:
-            return .surfaceDefaultTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentTertiary)
         case .surfaceDefaultTransparentTertiaryActive:
-            return .surfaceDefaultTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentTertiaryActive)
         case .surfaceDefaultTransparentTertiaryHover:
-            return .surfaceDefaultTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentTertiaryHover)
         case .surfaceDefaultTransparentWarning:
-            return .surfaceDefaultTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentWarning)
         case .surfaceDefaultTransparentWarningActive:
-            return .surfaceDefaultTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentWarningActive)
         case .surfaceDefaultTransparentWarningHover:
-            return .surfaceDefaultTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentWarningHover)
         case .surfaceDefaultWarning:
-            return .surfaceDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarning)
         case .surfaceDefaultWarningActive:
-            return .surfaceDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarningActive)
         case .surfaceDefaultWarningHover:
-            return .surfaceDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarningHover)
         case .surfaceDefaultWarningMinor:
-            return .surfaceDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarningMinor)
         case .surfaceDefaultWarningMinorActive:
-            return .surfaceDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarningMinorActive)
         case .surfaceDefaultWarningMinorHover:
-            return .surfaceDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultWarningMinorHover)
         case .surfaceInverseAccent:
-            return .surfaceInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccent)
         case .surfaceInverseAccentActive:
-            return .surfaceInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentActive)
         case .surfaceInverseAccentAthena:
-            return .surfaceInverseAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthena)
         case .surfaceInverseAccentAthenaActive:
-            return .surfaceInverseAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthenaActive)
         case .surfaceInverseAccentAthenaHover:
-            return .surfaceInverseAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthenaHover)
         case .surfaceInverseAccentAthenaMinor:
-            return .surfaceInverseAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthenaMinor)
         case .surfaceInverseAccentAthenaMinorActive:
-            return .surfaceInverseAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthenaMinorActive)
         case .surfaceInverseAccentAthenaMinorHover:
-            return .surfaceInverseAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentAthenaMinorHover)
         case .surfaceInverseAccentB2E:
-            return .surfaceInverseAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2E)
         case .surfaceInverseAccentB2EActive:
-            return .surfaceInverseAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2EActive)
         case .surfaceInverseAccentB2EHover:
-            return .surfaceInverseAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2EHover)
         case .surfaceInverseAccentB2EMinor:
-            return .surfaceInverseAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2EMinor)
         case .surfaceInverseAccentB2EMinorActive:
-            return .surfaceInverseAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2EMinorActive)
         case .surfaceInverseAccentB2EMinorHover:
-            return .surfaceInverseAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentB2EMinorHover)
         case .surfaceInverseAccentBrand:
-            return .surfaceInverseAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrand)
         case .surfaceInverseAccentBrandActive:
-            return .surfaceInverseAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrandActive)
         case .surfaceInverseAccentBrandHover:
-            return .surfaceInverseAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrandHover)
         case .surfaceInverseAccentBrandMinor:
-            return .surfaceInverseAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrandMinor)
         case .surfaceInverseAccentBrandMinorActive:
-            return .surfaceInverseAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrandMinorActive)
         case .surfaceInverseAccentBrandMinorHover:
-            return .surfaceInverseAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentBrandMinorHover)
         case .surfaceInverseAccentHover:
-            return .surfaceInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentHover)
         case .surfaceInverseAccentJoy:
-            return .surfaceInverseAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoy)
         case .surfaceInverseAccentJoyActive:
-            return .surfaceInverseAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoyActive)
         case .surfaceInverseAccentJoyHover:
-            return .surfaceInverseAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoyHover)
         case .surfaceInverseAccentJoyMinor:
-            return .surfaceInverseAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoyMinor)
         case .surfaceInverseAccentJoyMinorActive:
-            return .surfaceInverseAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoyMinorActive)
         case .surfaceInverseAccentJoyMinorHover:
-            return .surfaceInverseAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentJoyMinorHover)
         case .surfaceInverseAccentMain:
-            return .surfaceInverseAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMain)
         case .surfaceInverseAccentMainActive:
-            return .surfaceInverseAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMainActive)
         case .surfaceInverseAccentMainHover:
-            return .surfaceInverseAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMainHover)
         case .surfaceInverseAccentMainMinor:
-            return .surfaceInverseAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMainMinor)
         case .surfaceInverseAccentMainMinorActive:
-            return .surfaceInverseAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMainMinorActive)
         case .surfaceInverseAccentMainMinorHover:
-            return .surfaceInverseAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMainMinorHover)
         case .surfaceInverseAccentMinor:
-            return .surfaceInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinor)
         case .surfaceInverseAccentMinorActive:
-            return .surfaceInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinorActive)
         case .surfaceInverseAccentMinorHover:
-            return .surfaceInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinorHover)
         case .surfaceInverseClear:
-            return .surfaceInverseClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseClear)
         case .surfaceInverseClearActive:
-            return .surfaceInverseClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseClearActive)
         case .surfaceInverseClearHover:
-            return .surfaceInverseClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseClearHover)
         case .surfaceInverseInfo:
-            return .surfaceInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfo)
         case .surfaceInverseInfoActive:
-            return .surfaceInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfoActive)
         case .surfaceInverseInfoHover:
-            return .surfaceInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfoHover)
         case .surfaceInverseInfoMinor:
-            return .surfaceInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfoMinor)
         case .surfaceInverseInfoMinorActive:
-            return .surfaceInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfoMinorActive)
         case .surfaceInverseInfoMinorHover:
-            return .surfaceInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseInfoMinorHover)
         case .surfaceInverseNegative:
-            return .surfaceInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegative)
         case .surfaceInverseNegativeActive:
-            return .surfaceInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegativeActive)
         case .surfaceInverseNegativeHover:
-            return .surfaceInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegativeHover)
         case .surfaceInverseNegativeMinor:
-            return .surfaceInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegativeMinor)
         case .surfaceInverseNegativeMinorActive:
-            return .surfaceInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegativeMinorActive)
         case .surfaceInverseNegativeMinorHover:
-            return .surfaceInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseNegativeMinorHover)
         case .surfaceInversePositive:
-            return .surfaceInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositive)
         case .surfaceInversePositiveActive:
-            return .surfaceInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositiveActive)
         case .surfaceInversePositiveHover:
-            return .surfaceInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositiveHover)
         case .surfaceInversePositiveMinor:
-            return .surfaceInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositiveMinor)
         case .surfaceInversePositiveMinorActive:
-            return .surfaceInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositiveMinorActive)
         case .surfaceInversePositiveMinorHover:
-            return .surfaceInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePositiveMinorHover)
         case .surfaceInversePromo:
-            return .surfaceInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromo)
         case .surfaceInversePromoActive:
-            return .surfaceInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoActive)
         case .surfaceInversePromoHover:
-            return .surfaceInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoHover)
         case .surfaceInversePromoMinor:
-            return .surfaceInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinor)
         case .surfaceInversePromoMinorActive:
-            return .surfaceInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinorActive)
         case .surfaceInversePromoMinorHover:
-            return .surfaceInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinorHover)
         case .surfaceInverseSolidCard:
-            return .surfaceInverseSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidCard)
         case .surfaceInverseSolidCardActive:
-            return .surfaceInverseSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidCardActive)
         case .surfaceInverseSolidCardBrightness:
-            return .surfaceInverseSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidCardBrightness)
         case .surfaceInverseSolidCardHover:
-            return .surfaceInverseSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidCardHover)
         case .surfaceInverseSolidDefault:
-            return .surfaceInverseSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidDefault)
         case .surfaceInverseSolidDefaultActive:
-            return .surfaceInverseSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidDefaultActive)
         case .surfaceInverseSolidDefaultHover:
-            return .surfaceInverseSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidDefaultHover)
         case .surfaceInverseSolidPrimary:
-            return .surfaceInverseSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidPrimary)
         case .surfaceInverseSolidPrimaryActive:
-            return .surfaceInverseSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidPrimaryActive)
         case .surfaceInverseSolidPrimaryBrightness:
-            return .surfaceInverseSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidPrimaryBrightness)
         case .surfaceInverseSolidPrimaryHover:
-            return .surfaceInverseSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidPrimaryHover)
         case .surfaceInverseSolidSecondary:
-            return .surfaceInverseSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidSecondary)
         case .surfaceInverseSolidSecondaryActive:
-            return .surfaceInverseSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidSecondaryActive)
         case .surfaceInverseSolidSecondaryHover:
-            return .surfaceInverseSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidSecondaryHover)
         case .surfaceInverseSolidTertiary:
-            return .surfaceInverseSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidTertiary)
         case .surfaceInverseSolidTertiaryActive:
-            return .surfaceInverseSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidTertiaryActive)
         case .surfaceInverseSolidTertiaryHover:
-            return .surfaceInverseSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSolidTertiaryHover)
         case .surfaceInverseSurfaceAccentJoy:
-            return .surfaceInverseSurfaceAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSurfaceAccentJoy)
         case .surfaceInverseSurfaceAccentJoyActive:
-            return .surfaceInverseSurfaceAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSurfaceAccentJoyActive)
         case .surfaceInverseSurfaceAccentJoyHover:
-            return .surfaceInverseSurfaceAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSurfaceAccentJoyHover)
         case .surfaceInverseTransparentAccent:
-            return .surfaceInverseTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccent)
         case .surfaceInverseTransparentAccentActive:
-            return .surfaceInverseTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentActive)
         case .surfaceInverseTransparentAccentAthena:
-            return .surfaceInverseTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentAthena)
         case .surfaceInverseTransparentAccentAthenaActive:
-            return .surfaceInverseTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentAthenaActive)
         case .surfaceInverseTransparentAccentAthenaHover:
-            return .surfaceInverseTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentAthenaHover)
         case .surfaceInverseTransparentAccentB2E:
-            return .surfaceInverseTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentB2E)
         case .surfaceInverseTransparentAccentB2EActive:
-            return .surfaceInverseTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentB2EActive)
         case .surfaceInverseTransparentAccentB2EHover:
-            return .surfaceInverseTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentB2EHover)
         case .surfaceInverseTransparentAccentBrand:
-            return .surfaceInverseTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentBrand)
         case .surfaceInverseTransparentAccentBrandActive:
-            return .surfaceInverseTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentBrandActive)
         case .surfaceInverseTransparentAccentBrandHover:
-            return .surfaceInverseTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentBrandHover)
         case .surfaceInverseTransparentAccentHover:
-            return .surfaceInverseTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentHover)
         case .surfaceInverseTransparentAccentJoy:
-            return .surfaceInverseTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentJoy)
         case .surfaceInverseTransparentAccentJoyActive:
-            return .surfaceInverseTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentJoyActive)
         case .surfaceInverseTransparentAccentJoyHover:
-            return .surfaceInverseTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentJoyHover)
         case .surfaceInverseTransparentAccentMain:
-            return .surfaceInverseTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentMain)
         case .surfaceInverseTransparentAccentMainActive:
-            return .surfaceInverseTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentMainActive)
         case .surfaceInverseTransparentAccentMainHover:
-            return .surfaceInverseTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentMainHover)
         case .surfaceInverseTransparentCard:
-            return .surfaceInverseTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentCard)
         case .surfaceInverseTransparentCardActive:
-            return .surfaceInverseTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentCardActive)
         case .surfaceInverseTransparentCardBrightness:
-            return .surfaceInverseTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentCardBrightness)
         case .surfaceInverseTransparentCardHover:
-            return .surfaceInverseTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentCardHover)
         case .surfaceInverseTransparentDeep:
-            return .surfaceInverseTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentDeep)
         case .surfaceInverseTransparentDeepActive:
-            return .surfaceInverseTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentDeepActive)
         case .surfaceInverseTransparentDeepHover:
-            return .surfaceInverseTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentDeepHover)
         case .surfaceInverseTransparentInfo:
-            return .surfaceInverseTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentInfo)
         case .surfaceInverseTransparentInfoActive:
-            return .surfaceInverseTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentInfoActive)
         case .surfaceInverseTransparentInfoHover:
-            return .surfaceInverseTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentInfoHover)
         case .surfaceInverseTransparentNegative:
-            return .surfaceInverseTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentNegative)
         case .surfaceInverseTransparentNegativeActive:
-            return .surfaceInverseTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentNegativeActive)
         case .surfaceInverseTransparentNegativeHover:
-            return .surfaceInverseTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentNegativeHover)
         case .surfaceInverseTransparentPositive:
-            return .surfaceInverseTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPositive)
         case .surfaceInverseTransparentPositiveActive:
-            return .surfaceInverseTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPositiveActive)
         case .surfaceInverseTransparentPositiveHover:
-            return .surfaceInverseTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPositiveHover)
         case .surfaceInverseTransparentPrimary:
-            return .surfaceInverseTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPrimary)
         case .surfaceInverseTransparentPrimaryActive:
-            return .surfaceInverseTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPrimaryActive)
         case .surfaceInverseTransparentPrimaryHover:
-            return .surfaceInverseTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPrimaryHover)
         case .surfaceInverseTransparentPromo:
-            return .surfaceInverseTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromo)
         case .surfaceInverseTransparentPromoActive:
-            return .surfaceInverseTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromoActive)
         case .surfaceInverseTransparentPromoHover:
-            return .surfaceInverseTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromoHover)
         case .surfaceInverseTransparentSecondary:
-            return .surfaceInverseTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentSecondary)
         case .surfaceInverseTransparentSecondaryActive:
-            return .surfaceInverseTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentSecondaryActive)
         case .surfaceInverseTransparentSecondaryHover:
-            return .surfaceInverseTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentSecondaryHover)
         case .surfaceInverseTransparentTertiary:
-            return .surfaceInverseTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentTertiary)
         case .surfaceInverseTransparentTertiaryActive:
-            return .surfaceInverseTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentTertiaryActive)
         case .surfaceInverseTransparentTertiaryHover:
-            return .surfaceInverseTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentTertiaryHover)
         case .surfaceInverseTransparentWarning:
-            return .surfaceInverseTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentWarning)
         case .surfaceInverseTransparentWarningActive:
-            return .surfaceInverseTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentWarningActive)
         case .surfaceInverseTransparentWarningHover:
-            return .surfaceInverseTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentWarningHover)
         case .surfaceInverseWarning:
-            return .surfaceInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarning)
         case .surfaceInverseWarningActive:
-            return .surfaceInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarningActive)
         case .surfaceInverseWarningHover:
-            return .surfaceInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarningHover)
         case .surfaceInverseWarningMinor:
-            return .surfaceInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarningMinor)
         case .surfaceInverseWarningMinorActive:
-            return .surfaceInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarningMinorActive)
         case .surfaceInverseWarningMinorHover:
-            return .surfaceInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceInverseWarningMinorHover)
         case .surfaceOnDarkAccent:
-            return .surfaceOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccent)
         case .surfaceOnDarkAccentActive:
-            return .surfaceOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentActive)
         case .surfaceOnDarkAccentAthena:
-            return .surfaceOnDarkAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthena)
         case .surfaceOnDarkAccentAthenaActive:
-            return .surfaceOnDarkAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthenaActive)
         case .surfaceOnDarkAccentAthenaHover:
-            return .surfaceOnDarkAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthenaHover)
         case .surfaceOnDarkAccentAthenaMinor:
-            return .surfaceOnDarkAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthenaMinor)
         case .surfaceOnDarkAccentAthenaMinorActive:
-            return .surfaceOnDarkAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthenaMinorActive)
         case .surfaceOnDarkAccentAthenaMinorHover:
-            return .surfaceOnDarkAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentAthenaMinorHover)
         case .surfaceOnDarkAccentB2E:
-            return .surfaceOnDarkAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2E)
         case .surfaceOnDarkAccentB2EActive:
-            return .surfaceOnDarkAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2EActive)
         case .surfaceOnDarkAccentB2EHover:
-            return .surfaceOnDarkAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2EHover)
         case .surfaceOnDarkAccentB2EMinor:
-            return .surfaceOnDarkAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2EMinor)
         case .surfaceOnDarkAccentB2EMinorActive:
-            return .surfaceOnDarkAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2EMinorActive)
         case .surfaceOnDarkAccentB2EMinorHover:
-            return .surfaceOnDarkAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentB2EMinorHover)
         case .surfaceOnDarkAccentBrand:
-            return .surfaceOnDarkAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrand)
         case .surfaceOnDarkAccentBrandActive:
-            return .surfaceOnDarkAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrandActive)
         case .surfaceOnDarkAccentBrandHover:
-            return .surfaceOnDarkAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrandHover)
         case .surfaceOnDarkAccentBrandMinor:
-            return .surfaceOnDarkAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrandMinor)
         case .surfaceOnDarkAccentBrandMinorActive:
-            return .surfaceOnDarkAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrandMinorActive)
         case .surfaceOnDarkAccentBrandMinorHover:
-            return .surfaceOnDarkAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentBrandMinorHover)
         case .surfaceOnDarkAccentHover:
-            return .surfaceOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentHover)
         case .surfaceOnDarkAccentJoy:
-            return .surfaceOnDarkAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoy)
         case .surfaceOnDarkAccentJoyActive:
-            return .surfaceOnDarkAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoyActive)
         case .surfaceOnDarkAccentJoyHover:
-            return .surfaceOnDarkAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoyHover)
         case .surfaceOnDarkAccentJoyMinor:
-            return .surfaceOnDarkAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoyMinor)
         case .surfaceOnDarkAccentJoyMinorActive:
-            return .surfaceOnDarkAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoyMinorActive)
         case .surfaceOnDarkAccentJoyMinorHover:
-            return .surfaceOnDarkAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentJoyMinorHover)
         case .surfaceOnDarkAccentMain:
-            return .surfaceOnDarkAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMain)
         case .surfaceOnDarkAccentMainActive:
-            return .surfaceOnDarkAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMainActive)
         case .surfaceOnDarkAccentMainHover:
-            return .surfaceOnDarkAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMainHover)
         case .surfaceOnDarkAccentMainMinor:
-            return .surfaceOnDarkAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMainMinor)
         case .surfaceOnDarkAccentMainMinorActive:
-            return .surfaceOnDarkAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMainMinorActive)
         case .surfaceOnDarkAccentMainMinorHover:
-            return .surfaceOnDarkAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMainMinorHover)
         case .surfaceOnDarkAccentMinor:
-            return .surfaceOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinor)
         case .surfaceOnDarkAccentMinorActive:
-            return .surfaceOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinorActive)
         case .surfaceOnDarkAccentMinorHover:
-            return .surfaceOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinorHover)
         case .surfaceOnDarkClear:
-            return .surfaceOnDarkClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkClear)
         case .surfaceOnDarkClearActive:
-            return .surfaceOnDarkClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkClearActive)
         case .surfaceOnDarkClearHover:
-            return .surfaceOnDarkClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkClearHover)
         case .surfaceOnDarkInfo:
-            return .surfaceOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfo)
         case .surfaceOnDarkInfoActive:
-            return .surfaceOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfoActive)
         case .surfaceOnDarkInfoHover:
-            return .surfaceOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfoHover)
         case .surfaceOnDarkInfoMinor:
-            return .surfaceOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfoMinor)
         case .surfaceOnDarkInfoMinorActive:
-            return .surfaceOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfoMinorActive)
         case .surfaceOnDarkInfoMinorHover:
-            return .surfaceOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkInfoMinorHover)
         case .surfaceOnDarkNegative:
-            return .surfaceOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegative)
         case .surfaceOnDarkNegativeActive:
-            return .surfaceOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegativeActive)
         case .surfaceOnDarkNegativeHover:
-            return .surfaceOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegativeHover)
         case .surfaceOnDarkNegativeMinor:
-            return .surfaceOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegativeMinor)
         case .surfaceOnDarkNegativeMinorActive:
-            return .surfaceOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegativeMinorActive)
         case .surfaceOnDarkNegativeMinorHover:
-            return .surfaceOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkNegativeMinorHover)
         case .surfaceOnDarkPositive:
-            return .surfaceOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositive)
         case .surfaceOnDarkPositiveActive:
-            return .surfaceOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositiveActive)
         case .surfaceOnDarkPositiveHover:
-            return .surfaceOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositiveHover)
         case .surfaceOnDarkPositiveMinor:
-            return .surfaceOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositiveMinor)
         case .surfaceOnDarkPositiveMinorActive:
-            return .surfaceOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositiveMinorActive)
         case .surfaceOnDarkPositiveMinorHover:
-            return .surfaceOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPositiveMinorHover)
         case .surfaceOnDarkPromo:
-            return .surfaceOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromo)
         case .surfaceOnDarkPromoActive:
-            return .surfaceOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoActive)
         case .surfaceOnDarkPromoHover:
-            return .surfaceOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoHover)
         case .surfaceOnDarkPromoMinor:
-            return .surfaceOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinor)
         case .surfaceOnDarkPromoMinorActive:
-            return .surfaceOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinorActive)
         case .surfaceOnDarkPromoMinorHover:
-            return .surfaceOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinorHover)
         case .surfaceOnDarkSolidCard:
-            return .surfaceOnDarkSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidCard)
         case .surfaceOnDarkSolidCardActive:
-            return .surfaceOnDarkSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidCardActive)
         case .surfaceOnDarkSolidCardBrightness:
-            return .surfaceOnDarkSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidCardBrightness)
         case .surfaceOnDarkSolidCardHover:
-            return .surfaceOnDarkSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidCardHover)
         case .surfaceOnDarkSolidDefault:
-            return .surfaceOnDarkSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidDefault)
         case .surfaceOnDarkSolidDefaultActive:
-            return .surfaceOnDarkSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidDefaultActive)
         case .surfaceOnDarkSolidDefaultHover:
-            return .surfaceOnDarkSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidDefaultHover)
         case .surfaceOnDarkSolidPrimary:
-            return .surfaceOnDarkSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidPrimary)
         case .surfaceOnDarkSolidPrimaryActive:
-            return .surfaceOnDarkSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidPrimaryActive)
         case .surfaceOnDarkSolidPrimaryBrightness:
-            return .surfaceOnDarkSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidPrimaryBrightness)
         case .surfaceOnDarkSolidPrimaryHover:
-            return .surfaceOnDarkSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidPrimaryHover)
         case .surfaceOnDarkSolidSecondary:
-            return .surfaceOnDarkSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidSecondary)
         case .surfaceOnDarkSolidSecondaryActive:
-            return .surfaceOnDarkSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidSecondaryActive)
         case .surfaceOnDarkSolidSecondaryHover:
-            return .surfaceOnDarkSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidSecondaryHover)
         case .surfaceOnDarkSolidTertiary:
-            return .surfaceOnDarkSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidTertiary)
         case .surfaceOnDarkSolidTertiaryActive:
-            return .surfaceOnDarkSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidTertiaryActive)
         case .surfaceOnDarkSolidTertiaryHover:
-            return .surfaceOnDarkSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSolidTertiaryHover)
         case .surfaceOnDarkTransparentAccent:
-            return .surfaceOnDarkTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccent)
         case .surfaceOnDarkTransparentAccentActive:
-            return .surfaceOnDarkTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentActive)
         case .surfaceOnDarkTransparentAccentAthena:
-            return .surfaceOnDarkTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentAthena)
         case .surfaceOnDarkTransparentAccentAthenaActive:
-            return .surfaceOnDarkTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentAthenaActive)
         case .surfaceOnDarkTransparentAccentAthenaHover:
-            return .surfaceOnDarkTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentAthenaHover)
         case .surfaceOnDarkTransparentAccentB2E:
-            return .surfaceOnDarkTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentB2E)
         case .surfaceOnDarkTransparentAccentB2EActive:
-            return .surfaceOnDarkTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentB2EActive)
         case .surfaceOnDarkTransparentAccentB2EHover:
-            return .surfaceOnDarkTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentB2EHover)
         case .surfaceOnDarkTransparentAccentBrand:
-            return .surfaceOnDarkTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentBrand)
         case .surfaceOnDarkTransparentAccentBrandActive:
-            return .surfaceOnDarkTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentBrandActive)
         case .surfaceOnDarkTransparentAccentBrandHover:
-            return .surfaceOnDarkTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentBrandHover)
         case .surfaceOnDarkTransparentAccentHover:
-            return .surfaceOnDarkTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentHover)
         case .surfaceOnDarkTransparentAccentJoy:
-            return .surfaceOnDarkTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentJoy)
         case .surfaceOnDarkTransparentAccentJoyActive:
-            return .surfaceOnDarkTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentJoyActive)
         case .surfaceOnDarkTransparentAccentJoyHover:
-            return .surfaceOnDarkTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentJoyHover)
         case .surfaceOnDarkTransparentAccentMain:
-            return .surfaceOnDarkTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentMain)
         case .surfaceOnDarkTransparentAccentMainActive:
-            return .surfaceOnDarkTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentMainActive)
         case .surfaceOnDarkTransparentAccentMainHover:
-            return .surfaceOnDarkTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentMainHover)
         case .surfaceOnDarkTransparentCard:
-            return .surfaceOnDarkTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentCard)
         case .surfaceOnDarkTransparentCardActive:
-            return .surfaceOnDarkTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentCardActive)
         case .surfaceOnDarkTransparentCardBrightness:
-            return .surfaceOnDarkTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentCardBrightness)
         case .surfaceOnDarkTransparentCardHover:
-            return .surfaceOnDarkTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentCardHover)
         case .surfaceOnDarkTransparentDeep:
-            return .surfaceOnDarkTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentDeep)
         case .surfaceOnDarkTransparentDeepActive:
-            return .surfaceOnDarkTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentDeepActive)
         case .surfaceOnDarkTransparentDeepHover:
-            return .surfaceOnDarkTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentDeepHover)
         case .surfaceOnDarkTransparentInfo:
-            return .surfaceOnDarkTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentInfo)
         case .surfaceOnDarkTransparentInfoActive:
-            return .surfaceOnDarkTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentInfoActive)
         case .surfaceOnDarkTransparentInfoHover:
-            return .surfaceOnDarkTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentInfoHover)
         case .surfaceOnDarkTransparentNegative:
-            return .surfaceOnDarkTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentNegative)
         case .surfaceOnDarkTransparentNegativeActive:
-            return .surfaceOnDarkTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentNegativeActive)
         case .surfaceOnDarkTransparentNegativeHover:
-            return .surfaceOnDarkTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentNegativeHover)
         case .surfaceOnDarkTransparentPositive:
-            return .surfaceOnDarkTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPositive)
         case .surfaceOnDarkTransparentPositiveActive:
-            return .surfaceOnDarkTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPositiveActive)
         case .surfaceOnDarkTransparentPositiveHover:
-            return .surfaceOnDarkTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPositiveHover)
         case .surfaceOnDarkTransparentPrimary:
-            return .surfaceOnDarkTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPrimary)
         case .surfaceOnDarkTransparentPrimaryActive:
-            return .surfaceOnDarkTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPrimaryActive)
         case .surfaceOnDarkTransparentPrimaryHover:
-            return .surfaceOnDarkTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPrimaryHover)
         case .surfaceOnDarkTransparentPromo:
-            return .surfaceOnDarkTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromo)
         case .surfaceOnDarkTransparentPromoActive:
-            return .surfaceOnDarkTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromoActive)
         case .surfaceOnDarkTransparentPromoHover:
-            return .surfaceOnDarkTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromoHover)
         case .surfaceOnDarkTransparentSecondary:
-            return .surfaceOnDarkTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentSecondary)
         case .surfaceOnDarkTransparentSecondaryActive:
-            return .surfaceOnDarkTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentSecondaryActive)
         case .surfaceOnDarkTransparentSecondaryHover:
-            return .surfaceOnDarkTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentSecondaryHover)
         case .surfaceOnDarkTransparentTertiary:
-            return .surfaceOnDarkTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentTertiary)
         case .surfaceOnDarkTransparentTertiaryActive:
-            return .surfaceOnDarkTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentTertiaryActive)
         case .surfaceOnDarkTransparentTertiaryHover:
-            return .surfaceOnDarkTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentTertiaryHover)
         case .surfaceOnDarkTransparentWarning:
-            return .surfaceOnDarkTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentWarning)
         case .surfaceOnDarkTransparentWarningActive:
-            return .surfaceOnDarkTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentWarningActive)
         case .surfaceOnDarkTransparentWarningHover:
-            return .surfaceOnDarkTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentWarningHover)
         case .surfaceOnDarkWarning:
-            return .surfaceOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarning)
         case .surfaceOnDarkWarningActive:
-            return .surfaceOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarningActive)
         case .surfaceOnDarkWarningHover:
-            return .surfaceOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarningHover)
         case .surfaceOnDarkWarningMinor:
-            return .surfaceOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarningMinor)
         case .surfaceOnDarkWarningMinorActive:
-            return .surfaceOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarningMinorActive)
         case .surfaceOnDarkWarningMinorHover:
-            return .surfaceOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkWarningMinorHover)
         case .surfaceOnLightAccent:
-            return .surfaceOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccent)
         case .surfaceOnLightAccentActive:
-            return .surfaceOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentActive)
         case .surfaceOnLightAccentAthena:
-            return .surfaceOnLightAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthena)
         case .surfaceOnLightAccentAthenaActive:
-            return .surfaceOnLightAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthenaActive)
         case .surfaceOnLightAccentAthenaHover:
-            return .surfaceOnLightAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthenaHover)
         case .surfaceOnLightAccentAthenaMinor:
-            return .surfaceOnLightAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthenaMinor)
         case .surfaceOnLightAccentAthenaMinorActive:
-            return .surfaceOnLightAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthenaMinorActive)
         case .surfaceOnLightAccentAthenaMinorHover:
-            return .surfaceOnLightAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentAthenaMinorHover)
         case .surfaceOnLightAccentB2E:
-            return .surfaceOnLightAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2E)
         case .surfaceOnLightAccentB2EActive:
-            return .surfaceOnLightAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2EActive)
         case .surfaceOnLightAccentB2EHover:
-            return .surfaceOnLightAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2EHover)
         case .surfaceOnLightAccentB2EMinor:
-            return .surfaceOnLightAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2EMinor)
         case .surfaceOnLightAccentB2EMinorActive:
-            return .surfaceOnLightAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2EMinorActive)
         case .surfaceOnLightAccentB2EMinorHover:
-            return .surfaceOnLightAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentB2EMinorHover)
         case .surfaceOnLightAccentBrand:
-            return .surfaceOnLightAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrand)
         case .surfaceOnLightAccentBrandActive:
-            return .surfaceOnLightAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrandActive)
         case .surfaceOnLightAccentBrandHover:
-            return .surfaceOnLightAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrandHover)
         case .surfaceOnLightAccentBrandMinor:
-            return .surfaceOnLightAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrandMinor)
         case .surfaceOnLightAccentBrandMinorActive:
-            return .surfaceOnLightAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrandMinorActive)
         case .surfaceOnLightAccentBrandMinorHover:
-            return .surfaceOnLightAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentBrandMinorHover)
         case .surfaceOnLightAccentHover:
-            return .surfaceOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentHover)
         case .surfaceOnLightAccentJoy:
-            return .surfaceOnLightAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoy)
         case .surfaceOnLightAccentJoyActive:
-            return .surfaceOnLightAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoyActive)
         case .surfaceOnLightAccentJoyHover:
-            return .surfaceOnLightAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoyHover)
         case .surfaceOnLightAccentJoyMinor:
-            return .surfaceOnLightAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoyMinor)
         case .surfaceOnLightAccentJoyMinorActive:
-            return .surfaceOnLightAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoyMinorActive)
         case .surfaceOnLightAccentJoyMinorHover:
-            return .surfaceOnLightAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentJoyMinorHover)
         case .surfaceOnLightAccentMain:
-            return .surfaceOnLightAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMain)
         case .surfaceOnLightAccentMainActive:
-            return .surfaceOnLightAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMainActive)
         case .surfaceOnLightAccentMainHover:
-            return .surfaceOnLightAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMainHover)
         case .surfaceOnLightAccentMainMinor:
-            return .surfaceOnLightAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMainMinor)
         case .surfaceOnLightAccentMainMinorActive:
-            return .surfaceOnLightAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMainMinorActive)
         case .surfaceOnLightAccentMainMinorHover:
-            return .surfaceOnLightAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMainMinorHover)
         case .surfaceOnLightAccentMinor:
-            return .surfaceOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinor)
         case .surfaceOnLightAccentMinorActive:
-            return .surfaceOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinorActive)
         case .surfaceOnLightAccentMinorHover:
-            return .surfaceOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinorHover)
         case .surfaceOnLightClear:
-            return .surfaceOnLightClear
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightClear)
         case .surfaceOnLightClearActive:
-            return .surfaceOnLightClearActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightClearActive)
         case .surfaceOnLightClearHover:
-            return .surfaceOnLightClearHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightClearHover)
         case .surfaceOnLightInfo:
-            return .surfaceOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfo)
         case .surfaceOnLightInfoActive:
-            return .surfaceOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfoActive)
         case .surfaceOnLightInfoHover:
-            return .surfaceOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfoHover)
         case .surfaceOnLightInfoMinor:
-            return .surfaceOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfoMinor)
         case .surfaceOnLightInfoMinorActive:
-            return .surfaceOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfoMinorActive)
         case .surfaceOnLightInfoMinorHover:
-            return .surfaceOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightInfoMinorHover)
         case .surfaceOnLightNegative:
-            return .surfaceOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegative)
         case .surfaceOnLightNegativeActive:
-            return .surfaceOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegativeActive)
         case .surfaceOnLightNegativeHover:
-            return .surfaceOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegativeHover)
         case .surfaceOnLightNegativeMinor:
-            return .surfaceOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegativeMinor)
         case .surfaceOnLightNegativeMinorActive:
-            return .surfaceOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegativeMinorActive)
         case .surfaceOnLightNegativeMinorHover:
-            return .surfaceOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightNegativeMinorHover)
         case .surfaceOnLightPositive:
-            return .surfaceOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositive)
         case .surfaceOnLightPositiveActive:
-            return .surfaceOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositiveActive)
         case .surfaceOnLightPositiveHover:
-            return .surfaceOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositiveHover)
         case .surfaceOnLightPositiveMinor:
-            return .surfaceOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositiveMinor)
         case .surfaceOnLightPositiveMinorActive:
-            return .surfaceOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositiveMinorActive)
         case .surfaceOnLightPositiveMinorHover:
-            return .surfaceOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPositiveMinorHover)
         case .surfaceOnLightPromo:
-            return .surfaceOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromo)
         case .surfaceOnLightPromoActive:
-            return .surfaceOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoActive)
         case .surfaceOnLightPromoHover:
-            return .surfaceOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoHover)
         case .surfaceOnLightPromoMinor:
-            return .surfaceOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinor)
         case .surfaceOnLightPromoMinorActive:
-            return .surfaceOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinorActive)
         case .surfaceOnLightPromoMinorHover:
-            return .surfaceOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinorHover)
         case .surfaceOnLightSolidCard:
-            return .surfaceOnLightSolidCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidCard)
         case .surfaceOnLightSolidCardActive:
-            return .surfaceOnLightSolidCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidCardActive)
         case .surfaceOnLightSolidCardBrightness:
-            return .surfaceOnLightSolidCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidCardBrightness)
         case .surfaceOnLightSolidCardHover:
-            return .surfaceOnLightSolidCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidCardHover)
         case .surfaceOnLightSolidDefault:
-            return .surfaceOnLightSolidDefault
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidDefault)
         case .surfaceOnLightSolidDefaultActive:
-            return .surfaceOnLightSolidDefaultActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidDefaultActive)
         case .surfaceOnLightSolidDefaultHover:
-            return .surfaceOnLightSolidDefaultHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidDefaultHover)
         case .surfaceOnLightSolidPrimary:
-            return .surfaceOnLightSolidPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidPrimary)
         case .surfaceOnLightSolidPrimaryActive:
-            return .surfaceOnLightSolidPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidPrimaryActive)
         case .surfaceOnLightSolidPrimaryBrightness:
-            return .surfaceOnLightSolidPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidPrimaryBrightness)
         case .surfaceOnLightSolidPrimaryHover:
-            return .surfaceOnLightSolidPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidPrimaryHover)
         case .surfaceOnLightSolidSecondary:
-            return .surfaceOnLightSolidSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidSecondary)
         case .surfaceOnLightSolidSecondaryActive:
-            return .surfaceOnLightSolidSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidSecondaryActive)
         case .surfaceOnLightSolidSecondaryHover:
-            return .surfaceOnLightSolidSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidSecondaryHover)
         case .surfaceOnLightSolidTertiary:
-            return .surfaceOnLightSolidTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidTertiary)
         case .surfaceOnLightSolidTertiaryActive:
-            return .surfaceOnLightSolidTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidTertiaryActive)
         case .surfaceOnLightSolidTertiaryHover:
-            return .surfaceOnLightSolidTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSolidTertiaryHover)
         case .surfaceOnLightTransparentAccent:
-            return .surfaceOnLightTransparentAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccent)
         case .surfaceOnLightTransparentAccentActive:
-            return .surfaceOnLightTransparentAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentActive)
         case .surfaceOnLightTransparentAccentAthena:
-            return .surfaceOnLightTransparentAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentAthena)
         case .surfaceOnLightTransparentAccentAthenaActive:
-            return .surfaceOnLightTransparentAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentAthenaActive)
         case .surfaceOnLightTransparentAccentAthenaHover:
-            return .surfaceOnLightTransparentAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentAthenaHover)
         case .surfaceOnLightTransparentAccentB2E:
-            return .surfaceOnLightTransparentAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentB2E)
         case .surfaceOnLightTransparentAccentB2EActive:
-            return .surfaceOnLightTransparentAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentB2EActive)
         case .surfaceOnLightTransparentAccentB2EHover:
-            return .surfaceOnLightTransparentAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentB2EHover)
         case .surfaceOnLightTransparentAccentBrand:
-            return .surfaceOnLightTransparentAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentBrand)
         case .surfaceOnLightTransparentAccentBrandActive:
-            return .surfaceOnLightTransparentAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentBrandActive)
         case .surfaceOnLightTransparentAccentBrandHover:
-            return .surfaceOnLightTransparentAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentBrandHover)
         case .surfaceOnLightTransparentAccentHover:
-            return .surfaceOnLightTransparentAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentHover)
         case .surfaceOnLightTransparentAccentJoy:
-            return .surfaceOnLightTransparentAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentJoy)
         case .surfaceOnLightTransparentAccentJoyActive:
-            return .surfaceOnLightTransparentAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentJoyActive)
         case .surfaceOnLightTransparentAccentJoyHover:
-            return .surfaceOnLightTransparentAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentJoyHover)
         case .surfaceOnLightTransparentAccentMain:
-            return .surfaceOnLightTransparentAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentMain)
         case .surfaceOnLightTransparentAccentMainActive:
-            return .surfaceOnLightTransparentAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentMainActive)
         case .surfaceOnLightTransparentAccentMainHover:
-            return .surfaceOnLightTransparentAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentMainHover)
         case .surfaceOnLightTransparentCard:
-            return .surfaceOnLightTransparentCard
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentCard)
         case .surfaceOnLightTransparentCardActive:
-            return .surfaceOnLightTransparentCardActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentCardActive)
         case .surfaceOnLightTransparentCardBrightness:
-            return .surfaceOnLightTransparentCardBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentCardBrightness)
         case .surfaceOnLightTransparentCardHover:
-            return .surfaceOnLightTransparentCardHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentCardHover)
         case .surfaceOnLightTransparentDeep:
-            return .surfaceOnLightTransparentDeep
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentDeep)
         case .surfaceOnLightTransparentDeepActive:
-            return .surfaceOnLightTransparentDeepActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentDeepActive)
         case .surfaceOnLightTransparentDeepHover:
-            return .surfaceOnLightTransparentDeepHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentDeepHover)
         case .surfaceOnLightTransparentInfo:
-            return .surfaceOnLightTransparentInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentInfo)
         case .surfaceOnLightTransparentInfoActive:
-            return .surfaceOnLightTransparentInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentInfoActive)
         case .surfaceOnLightTransparentInfoHover:
-            return .surfaceOnLightTransparentInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentInfoHover)
         case .surfaceOnLightTransparentNegative:
-            return .surfaceOnLightTransparentNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentNegative)
         case .surfaceOnLightTransparentNegativeActive:
-            return .surfaceOnLightTransparentNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentNegativeActive)
         case .surfaceOnLightTransparentNegativeHover:
-            return .surfaceOnLightTransparentNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentNegativeHover)
         case .surfaceOnLightTransparentPositive:
-            return .surfaceOnLightTransparentPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPositive)
         case .surfaceOnLightTransparentPositiveActive:
-            return .surfaceOnLightTransparentPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPositiveActive)
         case .surfaceOnLightTransparentPositiveHover:
-            return .surfaceOnLightTransparentPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPositiveHover)
         case .surfaceOnLightTransparentPrimary:
-            return .surfaceOnLightTransparentPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPrimary)
         case .surfaceOnLightTransparentPrimaryActive:
-            return .surfaceOnLightTransparentPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPrimaryActive)
         case .surfaceOnLightTransparentPrimaryHover:
-            return .surfaceOnLightTransparentPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPrimaryHover)
         case .surfaceOnLightTransparentPromo:
-            return .surfaceOnLightTransparentPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromo)
         case .surfaceOnLightTransparentPromoActive:
-            return .surfaceOnLightTransparentPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromoActive)
         case .surfaceOnLightTransparentPromoHover:
-            return .surfaceOnLightTransparentPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromoHover)
         case .surfaceOnLightTransparentSecondary:
-            return .surfaceOnLightTransparentSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentSecondary)
         case .surfaceOnLightTransparentSecondaryActive:
-            return .surfaceOnLightTransparentSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentSecondaryActive)
         case .surfaceOnLightTransparentSecondaryHover:
-            return .surfaceOnLightTransparentSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentSecondaryHover)
         case .surfaceOnLightTransparentTertiary:
-            return .surfaceOnLightTransparentTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentTertiary)
         case .surfaceOnLightTransparentTertiaryActive:
-            return .surfaceOnLightTransparentTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentTertiaryActive)
         case .surfaceOnLightTransparentTertiaryHover:
-            return .surfaceOnLightTransparentTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentTertiaryHover)
         case .surfaceOnLightTransparentWarning:
-            return .surfaceOnLightTransparentWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentWarning)
         case .surfaceOnLightTransparentWarningActive:
-            return .surfaceOnLightTransparentWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentWarningActive)
         case .surfaceOnLightTransparentWarningHover:
-            return .surfaceOnLightTransparentWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentWarningHover)
         case .surfaceOnLightWarning:
-            return .surfaceOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarning)
         case .surfaceOnLightWarningActive:
-            return .surfaceOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarningActive)
         case .surfaceOnLightWarningHover:
-            return .surfaceOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarningHover)
         case .surfaceOnLightWarningMinor:
-            return .surfaceOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarningMinor)
         case .surfaceOnLightWarningMinorActive:
-            return .surfaceOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarningMinorActive)
         case .surfaceOnLightWarningMinorHover:
-            return .surfaceOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightWarningMinorHover)
         case .textDefaultAccent:
-            return .textDefaultAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccent)
         case .textDefaultAccentActive:
-            return .textDefaultAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentActive)
         case .textDefaultAccentAthena:
-            return .textDefaultAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthena)
         case .textDefaultAccentAthenaActive:
-            return .textDefaultAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthenaActive)
         case .textDefaultAccentAthenaHover:
-            return .textDefaultAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthenaHover)
         case .textDefaultAccentAthenaMinor:
-            return .textDefaultAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthenaMinor)
         case .textDefaultAccentAthenaMinorActive:
-            return .textDefaultAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthenaMinorActive)
         case .textDefaultAccentAthenaMinorHover:
-            return .textDefaultAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentAthenaMinorHover)
         case .textDefaultAccentB2E:
-            return .textDefaultAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2E)
         case .textDefaultAccentB2EActive:
-            return .textDefaultAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2EActive)
         case .textDefaultAccentB2EHover:
-            return .textDefaultAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2EHover)
         case .textDefaultAccentB2EMinor:
-            return .textDefaultAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2EMinor)
         case .textDefaultAccentB2EMinorActive:
-            return .textDefaultAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2EMinorActive)
         case .textDefaultAccentB2EMinorHover:
-            return .textDefaultAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentB2EMinorHover)
         case .textDefaultAccentBrand:
-            return .textDefaultAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrand)
         case .textDefaultAccentBrandActive:
-            return .textDefaultAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrandActive)
         case .textDefaultAccentBrandHover:
-            return .textDefaultAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrandHover)
         case .textDefaultAccentBrandMinor:
-            return .textDefaultAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrandMinor)
         case .textDefaultAccentBrandMinorActive:
-            return .textDefaultAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrandMinorActive)
         case .textDefaultAccentBrandMinorHover:
-            return .textDefaultAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentBrandMinorHover)
         case .textDefaultAccentHover:
-            return .textDefaultAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentHover)
         case .textDefaultAccentJoy:
-            return .textDefaultAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoy)
         case .textDefaultAccentJoyActive:
-            return .textDefaultAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoyActive)
         case .textDefaultAccentJoyHover:
-            return .textDefaultAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoyHover)
         case .textDefaultAccentJoyMinor:
-            return .textDefaultAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoyMinor)
         case .textDefaultAccentJoyMinorActive:
-            return .textDefaultAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoyMinorActive)
         case .textDefaultAccentJoyMinorHover:
-            return .textDefaultAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentJoyMinorHover)
         case .textDefaultAccentMain:
-            return .textDefaultAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMain)
         case .textDefaultAccentMainActive:
-            return .textDefaultAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMainActive)
         case .textDefaultAccentMainHover:
-            return .textDefaultAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMainHover)
         case .textDefaultAccentMainMinor:
-            return .textDefaultAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMainMinor)
         case .textDefaultAccentMainMinorActive:
-            return .textDefaultAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMainMinorActive)
         case .textDefaultAccentMainMinorHover:
-            return .textDefaultAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMainMinorHover)
         case .textDefaultAccentMinor:
-            return .textDefaultAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinor)
         case .textDefaultAccentMinorActive:
-            return .textDefaultAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinorActive)
         case .textDefaultAccentMinorHover:
-            return .textDefaultAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinorHover)
         case .textDefaultInfo:
-            return .textDefaultInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfo)
         case .textDefaultInfoActive:
-            return .textDefaultInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfoActive)
         case .textDefaultInfoHover:
-            return .textDefaultInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfoHover)
         case .textDefaultInfoMinor:
-            return .textDefaultInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfoMinor)
         case .textDefaultInfoMinorActive:
-            return .textDefaultInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfoMinorActive)
         case .textDefaultInfoMinorHover:
-            return .textDefaultInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultInfoMinorHover)
         case .textDefaultNegative:
-            return .textDefaultNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegative)
         case .textDefaultNegativeActive:
-            return .textDefaultNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegativeActive)
         case .textDefaultNegativeHover:
-            return .textDefaultNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegativeHover)
         case .textDefaultNegativeMinor:
-            return .textDefaultNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegativeMinor)
         case .textDefaultNegativeMinorActive:
-            return .textDefaultNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegativeMinorActive)
         case .textDefaultNegativeMinorHover:
-            return .textDefaultNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultNegativeMinorHover)
         case .textDefaultParagraph:
-            return .textDefaultParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultParagraph)
         case .textDefaultParagraphActive:
-            return .textDefaultParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultParagraphActive)
         case .textDefaultParagraphHover:
-            return .textDefaultParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultParagraphHover)
         case .textDefaultPositive:
-            return .textDefaultPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositive)
         case .textDefaultPositiveActive:
-            return .textDefaultPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositiveActive)
         case .textDefaultPositiveHover:
-            return .textDefaultPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositiveHover)
         case .textDefaultPositiveMinor:
-            return .textDefaultPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositiveMinor)
         case .textDefaultPositiveMinorActive:
-            return .textDefaultPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositiveMinorActive)
         case .textDefaultPositiveMinorHover:
-            return .textDefaultPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPositiveMinorHover)
         case .textDefaultPrimary:
-            return .textDefaultPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPrimary)
         case .textDefaultPrimaryActive:
-            return .textDefaultPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPrimaryActive)
         case .textDefaultPrimaryBrightness:
-            return .textDefaultPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPrimaryBrightness)
         case .textDefaultPrimaryHover:
-            return .textDefaultPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPrimaryHover)
         case .textDefaultPromo:
-            return .textDefaultPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromo)
         case .textDefaultPromoActive:
-            return .textDefaultPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoActive)
         case .textDefaultPromoHover:
-            return .textDefaultPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoHover)
         case .textDefaultPromoMinor:
-            return .textDefaultPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinor)
         case .textDefaultPromoMinorActive:
-            return .textDefaultPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinorActive)
         case .textDefaultPromoMinorHover:
-            return .textDefaultPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinorHover)
         case .textDefaultSecondary:
-            return .textDefaultSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultSecondary)
         case .textDefaultSecondaryActive:
-            return .textDefaultSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultSecondaryActive)
         case .textDefaultSecondaryHover:
-            return .textDefaultSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultSecondaryHover)
         case .textDefaultTertiary:
-            return .textDefaultTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultTertiary)
         case .textDefaultTertiaryActive:
-            return .textDefaultTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultTertiaryActive)
         case .textDefaultTertiaryHover:
-            return .textDefaultTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultTertiaryHover)
         case .textDefaultWarning:
-            return .textDefaultWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarning)
         case .textDefaultWarningActive:
-            return .textDefaultWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarningActive)
         case .textDefaultWarningHover:
-            return .textDefaultWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarningHover)
         case .textDefaultWarningMinor:
-            return .textDefaultWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarningMinor)
         case .textDefaultWarningMinorActive:
-            return .textDefaultWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarningMinorActive)
         case .textDefaultWarningMinorHover:
-            return .textDefaultWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textDefaultWarningMinorHover)
         case .textInverseAccent:
-            return .textInverseAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccent)
         case .textInverseAccentActive:
-            return .textInverseAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentActive)
         case .textInverseAccentAthena:
-            return .textInverseAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthena)
         case .textInverseAccentAthenaActive:
-            return .textInverseAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthenaActive)
         case .textInverseAccentAthenaHover:
-            return .textInverseAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthenaHover)
         case .textInverseAccentAthenaMinor:
-            return .textInverseAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthenaMinor)
         case .textInverseAccentAthenaMinorActive:
-            return .textInverseAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthenaMinorActive)
         case .textInverseAccentAthenaMinorHover:
-            return .textInverseAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentAthenaMinorHover)
         case .textInverseAccentB2E:
-            return .textInverseAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2E)
         case .textInverseAccentB2EActive:
-            return .textInverseAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2EActive)
         case .textInverseAccentB2EHover:
-            return .textInverseAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2EHover)
         case .textInverseAccentB2EMinor:
-            return .textInverseAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2EMinor)
         case .textInverseAccentB2EMinorActive:
-            return .textInverseAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2EMinorActive)
         case .textInverseAccentB2EMinorHover:
-            return .textInverseAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentB2EMinorHover)
         case .textInverseAccentBrand:
-            return .textInverseAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrand)
         case .textInverseAccentBrandActive:
-            return .textInverseAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrandActive)
         case .textInverseAccentBrandHover:
-            return .textInverseAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrandHover)
         case .textInverseAccentBrandMinor:
-            return .textInverseAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrandMinor)
         case .textInverseAccentBrandMinorActive:
-            return .textInverseAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrandMinorActive)
         case .textInverseAccentBrandMinorHover:
-            return .textInverseAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentBrandMinorHover)
         case .textInverseAccentHover:
-            return .textInverseAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentHover)
         case .textInverseAccentJoy:
-            return .textInverseAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoy)
         case .textInverseAccentJoyActive:
-            return .textInverseAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoyActive)
         case .textInverseAccentJoyHover:
-            return .textInverseAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoyHover)
         case .textInverseAccentJoyMinor:
-            return .textInverseAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoyMinor)
         case .textInverseAccentJoyMinorActive:
-            return .textInverseAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoyMinorActive)
         case .textInverseAccentJoyMinorHover:
-            return .textInverseAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentJoyMinorHover)
         case .textInverseAccentMain:
-            return .textInverseAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMain)
         case .textInverseAccentMainActive:
-            return .textInverseAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMainActive)
         case .textInverseAccentMainHover:
-            return .textInverseAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMainHover)
         case .textInverseAccentMainMinor:
-            return .textInverseAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMainMinor)
         case .textInverseAccentMainMinorActive:
-            return .textInverseAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMainMinorActive)
         case .textInverseAccentMainMinorHover:
-            return .textInverseAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMainMinorHover)
         case .textInverseAccentMinor:
-            return .textInverseAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinor)
         case .textInverseAccentMinorActive:
-            return .textInverseAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinorActive)
         case .textInverseAccentMinorHover:
-            return .textInverseAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinorHover)
         case .textInverseInfo:
-            return .textInverseInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfo)
         case .textInverseInfoActive:
-            return .textInverseInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfoActive)
         case .textInverseInfoHover:
-            return .textInverseInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfoHover)
         case .textInverseInfoMinor:
-            return .textInverseInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfoMinor)
         case .textInverseInfoMinorActive:
-            return .textInverseInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfoMinorActive)
         case .textInverseInfoMinorHover:
-            return .textInverseInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseInfoMinorHover)
         case .textInverseNegative:
-            return .textInverseNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegative)
         case .textInverseNegativeActive:
-            return .textInverseNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegativeActive)
         case .textInverseNegativeHover:
-            return .textInverseNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegativeHover)
         case .textInverseNegativeMinor:
-            return .textInverseNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegativeMinor)
         case .textInverseNegativeMinorActive:
-            return .textInverseNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegativeMinorActive)
         case .textInverseNegativeMinorHover:
-            return .textInverseNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseNegativeMinorHover)
         case .textInverseParagraph:
-            return .textInverseParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseParagraph)
         case .textInverseParagraphActive:
-            return .textInverseParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseParagraphActive)
         case .textInverseParagraphHover:
-            return .textInverseParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseParagraphHover)
         case .textInversePositive:
-            return .textInversePositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositive)
         case .textInversePositiveActive:
-            return .textInversePositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositiveActive)
         case .textInversePositiveHover:
-            return .textInversePositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositiveHover)
         case .textInversePositiveMinor:
-            return .textInversePositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositiveMinor)
         case .textInversePositiveMinorActive:
-            return .textInversePositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositiveMinorActive)
         case .textInversePositiveMinorHover:
-            return .textInversePositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePositiveMinorHover)
         case .textInversePrimary:
-            return .textInversePrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePrimary)
         case .textInversePrimaryActive:
-            return .textInversePrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePrimaryActive)
         case .textInversePrimaryBrightness:
-            return .textInversePrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePrimaryBrightness)
         case .textInversePrimaryHover:
-            return .textInversePrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePrimaryHover)
         case .textInversePromo:
-            return .textInversePromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromo)
         case .textInversePromoActive:
-            return .textInversePromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromoActive)
         case .textInversePromoHover:
-            return .textInversePromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromoHover)
         case .textInversePromoMinor:
-            return .textInversePromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinor)
         case .textInversePromoMinorActive:
-            return .textInversePromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinorActive)
         case .textInversePromoMinorHover:
-            return .textInversePromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinorHover)
         case .textInverseSecondary:
-            return .textInverseSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseSecondary)
         case .textInverseSecondaryActive:
-            return .textInverseSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseSecondaryActive)
         case .textInverseSecondaryHover:
-            return .textInverseSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseSecondaryHover)
         case .textInverseTertiary:
-            return .textInverseTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseTertiary)
         case .textInverseTertiaryActive:
-            return .textInverseTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseTertiaryActive)
         case .textInverseTertiaryHover:
-            return .textInverseTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseTertiaryHover)
         case .textInverseWarning:
-            return .textInverseWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarning)
         case .textInverseWarningActive:
-            return .textInverseWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarningActive)
         case .textInverseWarningHover:
-            return .textInverseWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarningHover)
         case .textInverseWarningMinor:
-            return .textInverseWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarningMinor)
         case .textInverseWarningMinorActive:
-            return .textInverseWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarningMinorActive)
         case .textInverseWarningMinorHover:
-            return .textInverseWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textInverseWarningMinorHover)
         case .textOnDarkAccent:
-            return .textOnDarkAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccent)
         case .textOnDarkAccentActive:
-            return .textOnDarkAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentActive)
         case .textOnDarkAccentAthena:
-            return .textOnDarkAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthena)
         case .textOnDarkAccentAthenaActive:
-            return .textOnDarkAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthenaActive)
         case .textOnDarkAccentAthenaHover:
-            return .textOnDarkAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthenaHover)
         case .textOnDarkAccentAthenaMinor:
-            return .textOnDarkAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthenaMinor)
         case .textOnDarkAccentAthenaMinorActive:
-            return .textOnDarkAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthenaMinorActive)
         case .textOnDarkAccentAthenaMinorHover:
-            return .textOnDarkAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentAthenaMinorHover)
         case .textOnDarkAccentB2E:
-            return .textOnDarkAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2E)
         case .textOnDarkAccentB2EActive:
-            return .textOnDarkAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2EActive)
         case .textOnDarkAccentB2EHover:
-            return .textOnDarkAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2EHover)
         case .textOnDarkAccentB2EMinor:
-            return .textOnDarkAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2EMinor)
         case .textOnDarkAccentB2EMinorActive:
-            return .textOnDarkAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2EMinorActive)
         case .textOnDarkAccentB2EMinorHover:
-            return .textOnDarkAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentB2EMinorHover)
         case .textOnDarkAccentBrand:
-            return .textOnDarkAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrand)
         case .textOnDarkAccentBrandActive:
-            return .textOnDarkAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrandActive)
         case .textOnDarkAccentBrandHover:
-            return .textOnDarkAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrandHover)
         case .textOnDarkAccentBrandMinor:
-            return .textOnDarkAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrandMinor)
         case .textOnDarkAccentBrandMinorActive:
-            return .textOnDarkAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrandMinorActive)
         case .textOnDarkAccentBrandMinorHover:
-            return .textOnDarkAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentBrandMinorHover)
         case .textOnDarkAccentHover:
-            return .textOnDarkAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentHover)
         case .textOnDarkAccentJoy:
-            return .textOnDarkAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoy)
         case .textOnDarkAccentJoyActive:
-            return .textOnDarkAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoyActive)
         case .textOnDarkAccentJoyHover:
-            return .textOnDarkAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoyHover)
         case .textOnDarkAccentJoyMinor:
-            return .textOnDarkAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoyMinor)
         case .textOnDarkAccentJoyMinorActive:
-            return .textOnDarkAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoyMinorActive)
         case .textOnDarkAccentJoyMinorHover:
-            return .textOnDarkAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentJoyMinorHover)
         case .textOnDarkAccentMain:
-            return .textOnDarkAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMain)
         case .textOnDarkAccentMainActive:
-            return .textOnDarkAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMainActive)
         case .textOnDarkAccentMainHover:
-            return .textOnDarkAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMainHover)
         case .textOnDarkAccentMainMinor:
-            return .textOnDarkAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMainMinor)
         case .textOnDarkAccentMainMinorActive:
-            return .textOnDarkAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMainMinorActive)
         case .textOnDarkAccentMainMinorHover:
-            return .textOnDarkAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMainMinorHover)
         case .textOnDarkAccentMinor:
-            return .textOnDarkAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinor)
         case .textOnDarkAccentMinorActive:
-            return .textOnDarkAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinorActive)
         case .textOnDarkAccentMinorHover:
-            return .textOnDarkAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinorHover)
         case .textOnDarkInfo:
-            return .textOnDarkInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfo)
         case .textOnDarkInfoActive:
-            return .textOnDarkInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfoActive)
         case .textOnDarkInfoHover:
-            return .textOnDarkInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfoHover)
         case .textOnDarkInfoMinor:
-            return .textOnDarkInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfoMinor)
         case .textOnDarkInfoMinorActive:
-            return .textOnDarkInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfoMinorActive)
         case .textOnDarkInfoMinorHover:
-            return .textOnDarkInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkInfoMinorHover)
         case .textOnDarkNegative:
-            return .textOnDarkNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegative)
         case .textOnDarkNegativeActive:
-            return .textOnDarkNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegativeActive)
         case .textOnDarkNegativeHover:
-            return .textOnDarkNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegativeHover)
         case .textOnDarkNegativeMinor:
-            return .textOnDarkNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegativeMinor)
         case .textOnDarkNegativeMinorActive:
-            return .textOnDarkNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegativeMinorActive)
         case .textOnDarkNegativeMinorHover:
-            return .textOnDarkNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkNegativeMinorHover)
         case .textOnDarkParagraph:
-            return .textOnDarkParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkParagraph)
         case .textOnDarkParagraphActive:
-            return .textOnDarkParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkParagraphActive)
         case .textOnDarkParagraphHover:
-            return .textOnDarkParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkParagraphHover)
         case .textOnDarkPositive:
-            return .textOnDarkPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositive)
         case .textOnDarkPositiveActive:
-            return .textOnDarkPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositiveActive)
         case .textOnDarkPositiveHover:
-            return .textOnDarkPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositiveHover)
         case .textOnDarkPositiveMinor:
-            return .textOnDarkPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositiveMinor)
         case .textOnDarkPositiveMinorActive:
-            return .textOnDarkPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositiveMinorActive)
         case .textOnDarkPositiveMinorHover:
-            return .textOnDarkPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPositiveMinorHover)
         case .textOnDarkPrimary:
-            return .textOnDarkPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPrimary)
         case .textOnDarkPrimaryActive:
-            return .textOnDarkPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPrimaryActive)
         case .textOnDarkPrimaryBrightness:
-            return .textOnDarkPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPrimaryBrightness)
         case .textOnDarkPrimaryHover:
-            return .textOnDarkPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPrimaryHover)
         case .textOnDarkPromo:
-            return .textOnDarkPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromo)
         case .textOnDarkPromoActive:
-            return .textOnDarkPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoActive)
         case .textOnDarkPromoHover:
-            return .textOnDarkPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoHover)
         case .textOnDarkPromoMinor:
-            return .textOnDarkPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinor)
         case .textOnDarkPromoMinorActive:
-            return .textOnDarkPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinorActive)
         case .textOnDarkPromoMinorHover:
-            return .textOnDarkPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinorHover)
         case .textOnDarkSecondary:
-            return .textOnDarkSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkSecondary)
         case .textOnDarkSecondaryActive:
-            return .textOnDarkSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkSecondaryActive)
         case .textOnDarkSecondaryHover:
-            return .textOnDarkSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkSecondaryHover)
         case .textOnDarkTertiary:
-            return .textOnDarkTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkTertiary)
         case .textOnDarkTertiaryActive:
-            return .textOnDarkTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkTertiaryActive)
         case .textOnDarkTertiaryHover:
-            return .textOnDarkTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkTertiaryHover)
         case .textOnDarkWarning:
-            return .textOnDarkWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarning)
         case .textOnDarkWarningActive:
-            return .textOnDarkWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarningActive)
         case .textOnDarkWarningHover:
-            return .textOnDarkWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarningHover)
         case .textOnDarkWarningMinor:
-            return .textOnDarkWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarningMinor)
         case .textOnDarkWarningMinorActive:
-            return .textOnDarkWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarningMinorActive)
         case .textOnDarkWarningMinorHover:
-            return .textOnDarkWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnDarkWarningMinorHover)
         case .textOnLightAccent:
-            return .textOnLightAccent
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccent)
         case .textOnLightAccentActive:
-            return .textOnLightAccentActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentActive)
         case .textOnLightAccentAthena:
-            return .textOnLightAccentAthena
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthena)
         case .textOnLightAccentAthenaActive:
-            return .textOnLightAccentAthenaActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthenaActive)
         case .textOnLightAccentAthenaHover:
-            return .textOnLightAccentAthenaHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthenaHover)
         case .textOnLightAccentAthenaMinor:
-            return .textOnLightAccentAthenaMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthenaMinor)
         case .textOnLightAccentAthenaMinorActive:
-            return .textOnLightAccentAthenaMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthenaMinorActive)
         case .textOnLightAccentAthenaMinorHover:
-            return .textOnLightAccentAthenaMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentAthenaMinorHover)
         case .textOnLightAccentB2E:
-            return .textOnLightAccentB2E
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2E)
         case .textOnLightAccentB2EActive:
-            return .textOnLightAccentB2EActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2EActive)
         case .textOnLightAccentB2EHover:
-            return .textOnLightAccentB2EHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2EHover)
         case .textOnLightAccentB2EMinor:
-            return .textOnLightAccentB2EMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2EMinor)
         case .textOnLightAccentB2EMinorActive:
-            return .textOnLightAccentB2EMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2EMinorActive)
         case .textOnLightAccentB2EMinorHover:
-            return .textOnLightAccentB2EMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentB2EMinorHover)
         case .textOnLightAccentBrand:
-            return .textOnLightAccentBrand
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrand)
         case .textOnLightAccentBrandActive:
-            return .textOnLightAccentBrandActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrandActive)
         case .textOnLightAccentBrandHover:
-            return .textOnLightAccentBrandHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrandHover)
         case .textOnLightAccentBrandMinor:
-            return .textOnLightAccentBrandMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrandMinor)
         case .textOnLightAccentBrandMinorActive:
-            return .textOnLightAccentBrandMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrandMinorActive)
         case .textOnLightAccentBrandMinorHover:
-            return .textOnLightAccentBrandMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentBrandMinorHover)
         case .textOnLightAccentHover:
-            return .textOnLightAccentHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentHover)
         case .textOnLightAccentJoy:
-            return .textOnLightAccentJoy
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoy)
         case .textOnLightAccentJoyActive:
-            return .textOnLightAccentJoyActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoyActive)
         case .textOnLightAccentJoyHover:
-            return .textOnLightAccentJoyHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoyHover)
         case .textOnLightAccentJoyMinor:
-            return .textOnLightAccentJoyMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoyMinor)
         case .textOnLightAccentJoyMinorActive:
-            return .textOnLightAccentJoyMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoyMinorActive)
         case .textOnLightAccentJoyMinorHover:
-            return .textOnLightAccentJoyMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentJoyMinorHover)
         case .textOnLightAccentMain:
-            return .textOnLightAccentMain
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMain)
         case .textOnLightAccentMainActive:
-            return .textOnLightAccentMainActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMainActive)
         case .textOnLightAccentMainHover:
-            return .textOnLightAccentMainHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMainHover)
         case .textOnLightAccentMainMinor:
-            return .textOnLightAccentMainMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMainMinor)
         case .textOnLightAccentMainMinorActive:
-            return .textOnLightAccentMainMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMainMinorActive)
         case .textOnLightAccentMainMinorHover:
-            return .textOnLightAccentMainMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMainMinorHover)
         case .textOnLightAccentMinor:
-            return .textOnLightAccentMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinor)
         case .textOnLightAccentMinorActive:
-            return .textOnLightAccentMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinorActive)
         case .textOnLightAccentMinorHover:
-            return .textOnLightAccentMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinorHover)
         case .textOnLightInfo:
-            return .textOnLightInfo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfo)
         case .textOnLightInfoActive:
-            return .textOnLightInfoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfoActive)
         case .textOnLightInfoHover:
-            return .textOnLightInfoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfoHover)
         case .textOnLightInfoMinor:
-            return .textOnLightInfoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfoMinor)
         case .textOnLightInfoMinorActive:
-            return .textOnLightInfoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfoMinorActive)
         case .textOnLightInfoMinorHover:
-            return .textOnLightInfoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightInfoMinorHover)
         case .textOnLightNegative:
-            return .textOnLightNegative
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegative)
         case .textOnLightNegativeActive:
-            return .textOnLightNegativeActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegativeActive)
         case .textOnLightNegativeHover:
-            return .textOnLightNegativeHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegativeHover)
         case .textOnLightNegativeMinor:
-            return .textOnLightNegativeMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegativeMinor)
         case .textOnLightNegativeMinorActive:
-            return .textOnLightNegativeMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegativeMinorActive)
         case .textOnLightNegativeMinorHover:
-            return .textOnLightNegativeMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightNegativeMinorHover)
         case .textOnLightParagraph:
-            return .textOnLightParagraph
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightParagraph)
         case .textOnLightParagraphActive:
-            return .textOnLightParagraphActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightParagraphActive)
         case .textOnLightParagraphHover:
-            return .textOnLightParagraphHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightParagraphHover)
         case .textOnLightPositive:
-            return .textOnLightPositive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositive)
         case .textOnLightPositiveActive:
-            return .textOnLightPositiveActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositiveActive)
         case .textOnLightPositiveHover:
-            return .textOnLightPositiveHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositiveHover)
         case .textOnLightPositiveMinor:
-            return .textOnLightPositiveMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositiveMinor)
         case .textOnLightPositiveMinorActive:
-            return .textOnLightPositiveMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositiveMinorActive)
         case .textOnLightPositiveMinorHover:
-            return .textOnLightPositiveMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPositiveMinorHover)
         case .textOnLightPrimary:
-            return .textOnLightPrimary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPrimary)
         case .textOnLightPrimaryActive:
-            return .textOnLightPrimaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPrimaryActive)
         case .textOnLightPrimaryBrightness:
-            return .textOnLightPrimaryBrightness
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPrimaryBrightness)
         case .textOnLightPrimaryHover:
-            return .textOnLightPrimaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPrimaryHover)
         case .textOnLightPromo:
-            return .textOnLightPromo
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromo)
         case .textOnLightPromoActive:
-            return .textOnLightPromoActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoActive)
         case .textOnLightPromoHover:
-            return .textOnLightPromoHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoHover)
         case .textOnLightPromoMinor:
-            return .textOnLightPromoMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinor)
         case .textOnLightPromoMinorActive:
-            return .textOnLightPromoMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinorActive)
         case .textOnLightPromoMinorHover:
-            return .textOnLightPromoMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinorHover)
         case .textOnLightSecondary:
-            return .textOnLightSecondary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightSecondary)
         case .textOnLightSecondaryActive:
-            return .textOnLightSecondaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightSecondaryActive)
         case .textOnLightSecondaryHover:
-            return .textOnLightSecondaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightSecondaryHover)
         case .textOnLightTertiary:
-            return .textOnLightTertiary
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightTertiary)
         case .textOnLightTertiaryActive:
-            return .textOnLightTertiaryActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightTertiaryActive)
         case .textOnLightTertiaryHover:
-            return .textOnLightTertiaryHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightTertiaryHover)
         case .textOnLightWarning:
-            return .textOnLightWarning
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarning)
         case .textOnLightWarningActive:
-            return .textOnLightWarningActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarningActive)
         case .textOnLightWarningHover:
-            return .textOnLightWarningHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarningHover)
         case .textOnLightWarningMinor:
-            return .textOnLightWarningMinor
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarningMinor)
         case .textOnLightWarningMinorActive:
-            return .textOnLightWarningMinorActive
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarningMinorActive)
         case .textOnLightWarningMinorHover:
-            return .textOnLightWarningMinorHover
+            return ThemeTenantRegistry.shared.resolveColor(theme: "StylesSalute", id: rawValue, base: .textOnLightWarningMinorHover)
         }
     }
 }
@@ -4281,3 +4282,4 @@ public extension ColorToken {
         return color.token
     }
 }
+

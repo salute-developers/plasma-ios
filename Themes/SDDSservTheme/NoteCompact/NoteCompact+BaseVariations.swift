@@ -50,24 +50,26 @@ public struct NoteCompact {
         )
     }
     
-    public static let all: [Variation<NoteCompactAppearance>] = [
-        NoteCompact.l.variation,
-        NoteCompact.l.contentScalable.variation,
-        NoteCompact.l.hasClose.variation,
-        NoteCompact.l.hasCloseContentScalable.variation,
-        NoteCompact.m.variation,
-        NoteCompact.m.contentScalable.variation,
-        NoteCompact.m.hasClose.variation,
-        NoteCompact.m.hasCloseContentScalable.variation,
-        NoteCompact.s.variation,
-        NoteCompact.s.contentScalable.variation,
-        NoteCompact.s.hasClose.variation,
-        NoteCompact.s.hasCloseContentScalable.variation,
-        NoteCompact.xs.variation,
-        NoteCompact.xs.contentScalable.variation,
-        NoteCompact.xs.hasClose.variation,
-        NoteCompact.xs.hasCloseContentScalable.variation,
-    ]
+    public static var all: [Variation<NoteCompactAppearance>] {
+        [
+            NoteCompact.l.variation,
+            NoteCompact.l.contentScalable.variation,
+            NoteCompact.l.hasClose.variation,
+            NoteCompact.l.hasCloseContentScalable.variation,
+            NoteCompact.m.variation,
+            NoteCompact.m.contentScalable.variation,
+            NoteCompact.m.hasClose.variation,
+            NoteCompact.m.hasCloseContentScalable.variation,
+            NoteCompact.s.variation,
+            NoteCompact.s.contentScalable.variation,
+            NoteCompact.s.hasClose.variation,
+            NoteCompact.s.hasCloseContentScalable.variation,
+            NoteCompact.xs.variation,
+            NoteCompact.xs.contentScalable.variation,
+            NoteCompact.xs.hasClose.variation,
+            NoteCompact.xs.hasCloseContentScalable.variation,
+        ]
+    }
 }
 
 public struct NoteCompactVariation {

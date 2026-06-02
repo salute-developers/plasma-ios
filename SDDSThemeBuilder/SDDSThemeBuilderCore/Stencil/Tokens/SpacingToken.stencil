@@ -7,10 +7,17 @@ import UIKit
 public extension SpacingToken {
     {%- for key, token in json %}
     
-    static var {{ key }}: Self {
+    static var {{ key }}{{ tenant }}: Self {
+        {%- if tenant %}
         Self(
             value: {{ token.value|ensure|ensure_double_non_negative }}
         )
+        {%- else %}
+        let base = Self(
+            value: {{ token.value|ensure|ensure_double_non_negative }}
+        )
+        return ThemeTenantRegistry.shared.resolveSpacing(theme: "{{ themeName }}", id: "{{ key }}", base: base)
+        {%- endif %}
     }
     {%- endfor %}
 }

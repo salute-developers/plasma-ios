@@ -4,6 +4,20 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+{% if tenant %}
+public extension Shadows {
+    static func register{{ tenant }}() {
+        ThemeTenantRegistry.shared.registerShadows(theme: "{{ themeName }}", tenant: Tenant(name: "{{ tenant }}")) { id in
+            switch id {
+            {%- for key, value in json %}
+            case "{{ key }}": return .{{ key }}{{ tenant }}
+            {%- endfor %}
+            default: return nil
+            }
+        }
+    }
+}
+{% else %}
 public enum Shadows {
     {%- for key, value in json %}
     case {{ key }}
@@ -13,8 +27,9 @@ public enum Shadows {
         switch self {
             {%- for key, value in json %}
         case .{{ key }}:
-            return .{{ key }}
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "{{ themeName }}", id: "{{ key }}", base: .{{ key }})
             {%- endfor %}
         }
     }
 }
+{% endif %}

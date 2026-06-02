@@ -6,31 +6,213 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import SDDSThemeCore
 
 final class SDDSThemeCoreTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        // Placeholder smoke test.
+    }
+}
+
+// MARK: - Tenant
+
+final class TenantTests: XCTestCase {
+
+    func test_none_isEmpty() {
+        XCTAssertTrue(Tenant.none.isNone)
+        XCTAssertEqual(Tenant.none.name, "")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_named_isNotNone() {
+        let gold = Tenant(name: "Gold")
+        XCTAssertFalse(gold.isNone)
+        XCTAssertEqual(gold.name, "Gold")
+    }
+
+    func test_equalityAndHashing() {
+        let a = Tenant(name: "Gold")
+        let b = Tenant(name: "Gold")
+        let c = Tenant(name: "Silver")
+        XCTAssertEqual(a, b)
+        XCTAssertNotEqual(a, c)
+        XCTAssertEqual(a.hashValue, b.hashValue)
+    }
+}
+
+// MARK: - ThemeTenantRegistry
+
+final class ThemeTenantRegistryTests: XCTestCase {
+
+    private let gold = Tenant(name: "Gold")
+    private let silver = Tenant(name: "Silver")
+    private let base = ColorToken(id: "backgroundDefaultPrimary", darkColor: .black, lightColor: .white)
+    private let baseGradient = GradientToken(id: "backgroundDefaultGradient", description: "base", darkGradients: [], lightGradients: [])
+    private let baseShape = ShapeToken(cornerRadius: 4)
+    private let baseShadow = ShadowToken(layers: [])
+    private let baseSpacing = SpacingToken(value: 8)
+    private let baseTypography = AdaptiveTypographyToken(
+        small: TypographyToken(fontName: "Sf", weight: .regular, style: .normal, size: 12, lineHeight: 14, kerning: 0),
+        medium: TypographyToken(fontName: "Sf", weight: .regular, style: .normal, size: 14, lineHeight: 16, kerning: 0),
+        large: TypographyToken(fontName: "Sf", weight: .regular, style: .normal, size: 16, lineHeight: 18, kerning: 0)
+    )
+
+    override func setUp() {
+        super.setUp()
+        ThemeTenantRegistry.shared.reset()
+    }
+
+    override func tearDown() {
+        ThemeTenantRegistry.shared.reset()
+        super.tearDown()
+    }
+
+    // MARK: Activation
+
+    func test_defaultActiveTenant_isNone() {
+        XCTAssertEqual(ThemeTenantRegistry.shared.activeTenant, .none)
+    }
+
+    func test_setActive_updatesActiveTenant() {
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.activeTenant, gold)
+    }
+
+    func test_reset_returnsToNoneAndClearsResolvers() {
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { _ in self.overlayColor }
+        ThemeTenantRegistry.shared.setActive(gold)
+
+        ThemeTenantRegistry.shared.reset()
+
+        XCTAssertEqual(ThemeTenantRegistry.shared.activeTenant, .none)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), base)
+    }
+
+    // MARK: Colors
+
+    func test_resolveColor_returnsBaseWhenNoTenantActive() {
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { _ in self.overlayColor }
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), base)
+    }
+
+    func test_resolveColor_returnsOverlayForActiveTenant() {
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { id in
+            id == self.base.id ? self.overlayColor : nil
         }
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), overlayColor)
     }
 
+    func test_resolveColor_returnsBaseWhenActiveTenantHasNoOverlayForId() {
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { id in
+            id == "unrelated" ? self.overlayColor : nil
+        }
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), base)
+    }
+
+    func test_resolveColor_returnsBaseWhenActiveTenantHasNoResolver() {
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { _ in self.overlayColor }
+        ThemeTenantRegistry.shared.setActive(silver)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), base)
+    }
+
+    func test_resolveColor_pickerCorrectResolverPerActiveTenant() {
+        let goldOverlay = ColorToken(id: base.id, darkColor: .yellow, lightColor: .yellow)
+        let silverOverlay = ColorToken(id: base.id, darkColor: .gray, lightColor: .gray)
+        ThemeTenantRegistry.shared.registerColors(tenant: gold) { _ in goldOverlay }
+        ThemeTenantRegistry.shared.registerColors(tenant: silver) { _ in silverOverlay }
+
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), goldOverlay)
+
+        ThemeTenantRegistry.shared.setActive(silver)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), silverOverlay)
+
+        ThemeTenantRegistry.shared.setActive(.none)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveColor(id: base.id, base: base), base)
+    }
+
+    // MARK: Gradients
+
+    func test_resolveGradient_fallsBackAndOverlays() {
+        let overlay = GradientToken(id: baseGradient.id, description: "gold")
+        ThemeTenantRegistry.shared.registerGradients(tenant: gold) { id in
+            id == self.baseGradient.id ? overlay : nil
+        }
+
+        // Inactive → base
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveGradient(id: baseGradient.id, base: baseGradient), baseGradient)
+
+        // Active → overlay
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveGradient(id: baseGradient.id, base: baseGradient), overlay)
+
+        // Unknown id → base
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveGradient(id: "missing", base: baseGradient), baseGradient)
+    }
+
+    // MARK: Shape / Shadow / Spacing / Typography
+
+    func test_resolveShape_fallsBackAndOverlays() {
+        let overlay = ShapeToken(cornerRadius: 16)
+        ThemeTenantRegistry.shared.registerShapes(tenant: gold) { id in
+            id == "roundL" ? overlay : nil
+        }
+
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShape(id: "roundL", base: baseShape).cornerRadius, baseShape.cornerRadius)
+
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShape(id: "roundL", base: baseShape).cornerRadius, overlay.cornerRadius)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShape(id: "unknown", base: baseShape).cornerRadius, baseShape.cornerRadius)
+    }
+
+    func test_resolveShadow_fallsBackAndOverlays() {
+        let overlay = ShadowToken(layers: [
+            ShadowToken.Layer(color: .black, offsetX: 0, offsetY: 1, blurRadius: 2, spreadRadius: 0)
+        ])
+        ThemeTenantRegistry.shared.registerShadows(tenant: gold) { id in
+            id == "downHardL" ? overlay : nil
+        }
+
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShadow(id: "downHardL", base: baseShadow).layers.count, 0)
+
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShadow(id: "downHardL", base: baseShadow).layers.count, 1)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveShadow(id: "unknown", base: baseShadow).layers.count, 0)
+    }
+
+    func test_resolveSpacing_fallsBackAndOverlays() {
+        let overlay = SpacingToken(value: 24)
+        ThemeTenantRegistry.shared.registerSpacings(tenant: gold) { id in
+            id == "spacingM" ? overlay : nil
+        }
+
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveSpacing(id: "spacingM", base: baseSpacing).value, baseSpacing.value)
+
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveSpacing(id: "spacingM", base: baseSpacing).value, overlay.value)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveSpacing(id: "missing", base: baseSpacing).value, baseSpacing.value)
+    }
+
+    func test_resolveTypography_fallsBackAndOverlays() {
+        let big = TypographyToken(fontName: "Sf", weight: .bold, style: .normal, size: 32, lineHeight: 36, kerning: 0)
+        let overlay = AdaptiveTypographyToken(small: big, medium: big, large: big)
+        ThemeTenantRegistry.shared.registerTypographies(tenant: gold) { id in
+            id == "headerL" ? overlay : nil
+        }
+
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveTypography(id: "headerL", base: baseTypography), baseTypography)
+
+        ThemeTenantRegistry.shared.setActive(gold)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveTypography(id: "headerL", base: baseTypography), overlay)
+        XCTAssertEqual(ThemeTenantRegistry.shared.resolveTypography(id: "missing", base: baseTypography), baseTypography)
+    }
+
+    // MARK: - Helpers
+
+    private var overlayColor: ColorToken {
+        ColorToken(id: base.id, darkColor: .yellow, lightColor: .yellow)
+    }
 }

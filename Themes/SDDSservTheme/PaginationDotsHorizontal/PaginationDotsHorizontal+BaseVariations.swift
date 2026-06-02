@@ -24,12 +24,14 @@ public struct PaginationDotsHorizontal {
         )
     }
     
-    public static let all: [Variation<PaginationDotsAppearance>] = [
-        PaginationDotsHorizontal.m.variation,
-        PaginationDotsHorizontal.m.activeTypeLine.variation,
-        PaginationDotsHorizontal.s.variation,
-        PaginationDotsHorizontal.s.activeTypeLine.variation,
-    ]
+    public static var all: [Variation<PaginationDotsAppearance>] {
+        [
+            PaginationDotsHorizontal.m.variation,
+            PaginationDotsHorizontal.m.activeTypeLine.variation,
+            PaginationDotsHorizontal.s.variation,
+            PaginationDotsHorizontal.s.activeTypeLine.variation,
+        ]
+    }
 }
 
 public struct PaginationDotsHorizontalVariation {

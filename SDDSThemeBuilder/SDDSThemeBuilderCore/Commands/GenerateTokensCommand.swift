@@ -9,14 +9,18 @@ final class GenerateTokensCommand: Command, FileWriter {
     private let generatedOutputURL: URL
     private let templateRender: Renderable
     private let contextBuilder: ContexBuilder
-    
+    private let tenantSuffix: String?
+    private let themeName: String
+
     init(name: String,
          schemeURL: URL,
          themeURL: URL,
          templates: [StencilTemplate],
          generatedOutputURL: URL,
          templateRender: Renderable,
-         contextBuilder: ContexBuilder
+         contextBuilder: ContexBuilder,
+         themeName: String,
+         tenantSuffix: String? = nil
     ) {
         self.schemeURL = schemeURL
         self.themeURL = themeURL
@@ -24,7 +28,9 @@ final class GenerateTokensCommand: Command, FileWriter {
         self.generatedOutputURL = generatedOutputURL
         self.templateRender = templateRender
         self.contextBuilder = contextBuilder
-        
+        self.tenantSuffix = tenantSuffix
+        self.themeName = themeName
+
         super.init(name: name)
     }
     
@@ -54,23 +60,41 @@ final class GenerateTokensCommand: Command, FileWriter {
         }
         
         result = contextBuilder.buildContext(from: jsonData)
-        guard let context = result.asDictionary else {
+        guard var context = result.asDictionary else {
             return result
         }
-        
+
+        context["tenant"] = tenantSuffix ?? ""
+        context["tenantLower"] = tenantSuffix?.firstLowercased ?? ""
+        context["themeName"] = themeName
+
         for template in templates {
             result = templateRender.render(context: context, template: template, removeLines: true)
             guard let generatedContent = result.asGenerated else {
                 return result
             }
-            
+
+            let filename: String
+            if let tenantSuffix = tenantSuffix {
+                filename = template.filename(tenantSuffix: tenantSuffix)
+            } else {
+                filename = template.filename
+            }
+
             result = saveFile(
                 content: generatedContent,
                 outputURL: generatedOutputURL,
-                filename: template.filename
+                filename: filename
             )
         }
-        
+
         return result
+    }
+}
+
+private extension String {
+    var firstLowercased: String {
+        guard let first = first else { return self }
+        return first.lowercased() + dropFirst()
     }
 }

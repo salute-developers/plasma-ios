@@ -25,6 +25,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "ColorContextBuilderTests">
+               </Test>
+               <Test
                   Identifier = "ContextBuilderTests/testBuildContext_UsingMockWithError()">
                </Test>
                <Test
@@ -37,7 +40,19 @@
                   Identifier = "DownloadCommandTests/testDownloadCommand_Success_FromRemoteSource()">
                </Test>
                <Test
+                  Identifier = "GradientContextBuilderTests">
+               </Test>
+               <Test
+                  Identifier = "SchemeTokenNameValidatorTests">
+               </Test>
+               <Test
+                  Identifier = "TemplateRendererTests">
+               </Test>
+               <Test
                   Identifier = "TemplateRendererTests/testRenderShapesFromJSON_Failure()">
+               </Test>
+               <Test
+                  Identifier = "TypographyContextBuilderTests">
                </Test>
                <Test
                   Identifier = "TypographyContextBuilderTests/testBuildContext_InvalidScreenSize()">

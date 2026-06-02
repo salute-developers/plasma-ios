@@ -33,11 +33,13 @@ public struct CardSolid {
         )
     }
     
-    public static let all: [Variation<CardAppearance>] = [
-        CardSolid.l.variation,
-        CardSolid.m.variation,
-        CardSolid.s.variation,
-    ]
+    public static var all: [Variation<CardAppearance>] {
+        [
+            CardSolid.l.variation,
+            CardSolid.m.variation,
+            CardSolid.s.variation,
+        ]
+    }
 }
 
 public struct CardSolidVariation {

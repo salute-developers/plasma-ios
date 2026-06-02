@@ -56,18 +56,20 @@ public struct Segment {
         )
     }
     
-    public static let all: [Variation<SegmentAppearance>] = [
-        Segment.l.variation,
-        Segment.l.pilled.variation,
-        Segment.m.variation,
-        Segment.m.pilled.variation,
-        Segment.s.variation,
-        Segment.s.pilled.variation,
-        Segment.xl.variation,
-        Segment.xl.pilled.variation,
-        Segment.xs.variation,
-        Segment.xs.pilled.variation,
-    ]
+    public static var all: [Variation<SegmentAppearance>] {
+        [
+            Segment.l.variation,
+            Segment.l.pilled.variation,
+            Segment.m.variation,
+            Segment.m.pilled.variation,
+            Segment.s.variation,
+            Segment.s.pilled.variation,
+            Segment.xl.variation,
+            Segment.xl.pilled.variation,
+            Segment.xs.variation,
+            Segment.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct SegmentVariation {

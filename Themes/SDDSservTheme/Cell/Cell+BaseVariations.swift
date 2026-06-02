@@ -82,12 +82,14 @@ public struct Cell {
         )
     }
     
-    public static let all: [Variation<CellAppearance>] = [
-        Cell.l.variation,
-        Cell.m.variation,
-        Cell.s.variation,
-        Cell.xs.variation,
-    ]
+    public static var all: [Variation<CellAppearance>] {
+        [
+            Cell.l.variation,
+            Cell.m.variation,
+            Cell.s.variation,
+            Cell.xs.variation,
+        ]
+    }
 }
 
 public struct CellVariation {

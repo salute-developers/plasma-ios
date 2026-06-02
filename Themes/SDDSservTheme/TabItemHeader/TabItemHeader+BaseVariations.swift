@@ -61,13 +61,15 @@ public struct TabItemHeader {
         )
     }
     
-    public static let all: [Variation<TabItemAppearance>] = [
-        TabItemHeader.h1.variation,
-        TabItemHeader.h2.variation,
-        TabItemHeader.h3.variation,
-        TabItemHeader.h4.variation,
-        TabItemHeader.h5.variation,
-    ]
+    public static var all: [Variation<TabItemAppearance>] {
+        [
+            TabItemHeader.h1.variation,
+            TabItemHeader.h2.variation,
+            TabItemHeader.h3.variation,
+            TabItemHeader.h4.variation,
+            TabItemHeader.h5.variation,
+        ]
+    }
 }
 
 public struct TabItemHeaderVariation {

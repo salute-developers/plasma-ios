@@ -75,8 +75,8 @@ public extension GradientToken {
     {% endif %}
     {% endfor %}
     
-    static var {{ key }}: Self {
-        GradientToken(
+    static var {{ key }}{{ tenant }}: Self {
+        let base = GradientToken(
             id: "{{ key }}",
             description: "{{ key }}",
             darkGradients: [
@@ -206,12 +206,18 @@ public extension GradientToken {
                 {%- endfor %}
             ]
         )
+        {%- if tenant %}
+        return base
+        {%- else %}
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "{{ themeName }}", id: base.id, base: base)
+        {%- endif %}
     }
     {%- endfor %}
-    
+    {% if not tenant %}
     static var tokens: [Self] = [
         {%- for key in json %}
         {{ key }},
         {%- endfor %}
     ]
+    {% endif %}
 }

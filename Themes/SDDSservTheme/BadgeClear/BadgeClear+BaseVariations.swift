@@ -46,16 +46,18 @@ public struct BadgeClear {
         )
     }
     
-    public static let all: [Variation<BadgeAppearance>] = [
-        BadgeClear.l.variation,
-        BadgeClear.l.pilled.variation,
-        BadgeClear.m.variation,
-        BadgeClear.m.pilled.variation,
-        BadgeClear.s.variation,
-        BadgeClear.s.pilled.variation,
-        BadgeClear.xs.variation,
-        BadgeClear.xs.pilled.variation,
-    ]
+    public static var all: [Variation<BadgeAppearance>] {
+        [
+            BadgeClear.l.variation,
+            BadgeClear.l.pilled.variation,
+            BadgeClear.m.variation,
+            BadgeClear.m.pilled.variation,
+            BadgeClear.s.variation,
+            BadgeClear.s.pilled.variation,
+            BadgeClear.xs.variation,
+            BadgeClear.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct BadgeClearVariation {

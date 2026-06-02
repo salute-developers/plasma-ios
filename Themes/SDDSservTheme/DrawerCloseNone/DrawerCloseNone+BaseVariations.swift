@@ -15,10 +15,12 @@ public struct DrawerCloseNone {
         )
     }
     
-    public static let all: [Variation<DrawerAppearance>] = [
-        DrawerCloseNone.m.variation,
-        DrawerCloseNone.m.hasShadow.variation,
-    ]
+    public static var all: [Variation<DrawerAppearance>] {
+        [
+            DrawerCloseNone.m.variation,
+            DrawerCloseNone.m.hasShadow.variation,
+        ]
+    }
 }
 
 public struct DrawerCloseNoneVariation {

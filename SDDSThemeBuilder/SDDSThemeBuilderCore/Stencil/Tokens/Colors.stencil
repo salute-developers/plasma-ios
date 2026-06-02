@@ -4,6 +4,20 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+{% if tenant %}
+public extension Colors {
+    static func register{{ tenant }}() {
+        ThemeTenantRegistry.shared.registerColors(theme: "{{ themeName }}", tenant: Tenant(name: "{{ tenant }}")) { id in
+            switch id {
+            {%- for key, value in json %}
+            case "{{ key }}": return .{{ key }}{{ tenant }}
+            {%- endfor %}
+            default: return nil
+            }
+        }
+    }
+}
+{% else %}
 public enum Colors: String {
     {%- for key, value in json %}
     case {{ key }}
@@ -13,7 +27,7 @@ public enum Colors: String {
         switch self {
             {%- for key, value in json %}
         case .{{ key }}:
-            return .{{ key }}
+            return ThemeTenantRegistry.shared.resolveColor(theme: "{{ themeName }}", id: rawValue, base: .{{ key }})
             {%- endfor %}
         }
     }
@@ -28,3 +42,4 @@ public extension ColorToken {
         return color.token
     }
 }
+{% endif %}

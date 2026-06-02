@@ -18,9 +18,11 @@ public struct ProgressBar {
         )
     }
     
-    public static let all: [Variation<ProgressBarAppearance>] = [
-        ProgressBar.default.variation,
-    ]
+    public static var all: [Variation<ProgressBarAppearance>] {
+        [
+            ProgressBar.default.variation,
+        ]
+    }
 }
 
 public struct ProgressBarVariation {

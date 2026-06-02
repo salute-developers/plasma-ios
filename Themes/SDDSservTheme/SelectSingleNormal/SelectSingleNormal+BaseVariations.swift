@@ -71,13 +71,15 @@ public struct SelectSingleNormal {
         )
     }
     
-    public static let all: [Variation<SelectAppearance>] = [
-        SelectSingleNormal.l.variation,
-        SelectSingleNormal.m.variation,
-        SelectSingleNormal.s.variation,
-        SelectSingleNormal.xl.variation,
-        SelectSingleNormal.xs.variation,
-    ]
+    public static var all: [Variation<SelectAppearance>] {
+        [
+            SelectSingleNormal.l.variation,
+            SelectSingleNormal.m.variation,
+            SelectSingleNormal.s.variation,
+            SelectSingleNormal.xl.variation,
+            SelectSingleNormal.xs.variation,
+        ]
+    }
 }
 
 public struct SelectSingleNormalVariation {

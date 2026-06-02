@@ -27,7 +27,35 @@ public struct ThemeBuilderConfiguration: Codable {
     public struct ThemeConfiguration: Codable {
         public let name: String
         public let url: URL
-        
+        public let tenants: [Tenant]
+
+        private enum CodingKeys: String, CodingKey {
+            case name
+            case url
+            case tenants
+        }
+
+        public init(name: String, url: String, tenants: [Tenant] = []) {
+            self.name = name
+            self.url = URL(string: url)!
+            self.tenants = tenants
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.name = try container.decode(String.self, forKey: .name)
+            self.url = try container.decode(URL.self, forKey: .url)
+            self.tenants = try container.decodeIfPresent([Tenant].self, forKey: .tenants) ?? []
+        }
+    }
+
+    /// Описание тенанта на стороне ThemeBuilder: имя + URL дополнительной zip-схемы.
+    /// В рантайме переключение тенанта идёт через `Tenant` из `SDDSThemeCore`,
+    /// который опирается на это `name`.
+    public struct Tenant: Codable {
+        public let name: String
+        public let url: URL
+
         public init(name: String, url: String) {
             self.name = name
             self.url = URL(string: url)!
@@ -49,7 +77,13 @@ public extension ThemeBuilderConfiguration.Theme {
     var themeConfiguration: ThemeBuilderConfiguration.ThemeConfiguration {
         switch self {
         case .sddsServTheme:
-            .init(name: self.rawValue, url: themeURL(name: "sdds_serv"))
+            .init(
+                name: self.rawValue,
+                url: themeURL(name: "sdds_serv"),
+                tenants: [
+                    .init(name: "Gold", url: themeURL(name: "sbermarket_business"))
+                ]
+            )
         case .plasmaB2C:
             //.init(name: self.rawValue, url: themeURL(name: "plasma_b2c_ACTUAL_TYPOGRAPHY"))
             .init(name: self.rawValue, url: themeURL(name: "plasma_b2c"))
@@ -95,7 +129,7 @@ public extension ThemeBuilderConfiguration.Theme {
     static var baseURL: String {
         "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes"
     }
-    private func themeURL(name: String) -> String {
-        "\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/latest.zip"
+    private func themeURL(name: String, file: String = "latest.zip") -> String {
+        "\(ThemeBuilderConfiguration.Theme.baseURL)/\(name)/\(file)"
     }
 }

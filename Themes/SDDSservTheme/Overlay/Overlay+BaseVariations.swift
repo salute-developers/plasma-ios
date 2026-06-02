@@ -17,9 +17,11 @@ public struct Overlay {
         )
     }
     
-    public static let all: [Variation<OverlayAppearance>] = [
-        Overlay.default.variation,
-    ]
+    public static var all: [Variation<OverlayAppearance>] {
+        [
+            Overlay.default.variation,
+        ]
+    }
 }
 
 public struct OverlayVariation {

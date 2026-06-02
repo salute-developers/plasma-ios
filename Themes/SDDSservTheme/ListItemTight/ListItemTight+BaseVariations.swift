@@ -71,13 +71,15 @@ public struct ListItemTight {
         )
     }
     
-    public static let all: [Variation<ListItemAppearance>] = [
-        ListItemTight.l.variation,
-        ListItemTight.m.variation,
-        ListItemTight.s.variation,
-        ListItemTight.xl.variation,
-        ListItemTight.xs.variation,
-    ]
+    public static var all: [Variation<ListItemAppearance>] {
+        [
+            ListItemTight.l.variation,
+            ListItemTight.m.variation,
+            ListItemTight.s.variation,
+            ListItemTight.xl.variation,
+            ListItemTight.xs.variation,
+        ]
+    }
 }
 
 public struct ListItemTightVariation {

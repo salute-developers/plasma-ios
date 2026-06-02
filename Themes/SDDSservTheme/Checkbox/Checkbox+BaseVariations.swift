@@ -39,11 +39,13 @@ public struct Checkbox {
         )
     }
     
-    public static let all: [Variation<CheckboxAppearance>] = [
-        Checkbox.l.variation,
-        Checkbox.m.variation,
-        Checkbox.s.variation,
-    ]
+    public static var all: [Variation<CheckboxAppearance>] {
+        [
+            Checkbox.l.variation,
+            Checkbox.m.variation,
+            Checkbox.s.variation,
+        ]
+    }
 }
 
 public struct CheckboxVariation {

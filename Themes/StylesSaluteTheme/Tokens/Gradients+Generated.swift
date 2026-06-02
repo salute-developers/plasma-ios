@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Gradients: String {
     case backgroundDefaultMobileAssistantAthena
     case backgroundDefaultMobileAssistantB2E
@@ -292,571 +293,571 @@ public enum Gradients: String {
     public var token: GradientToken {
         switch self {
         case .backgroundDefaultMobileAssistantAthena:
-            return .backgroundDefaultMobileAssistantAthena
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultMobileAssistantAthena)
         case .backgroundDefaultMobileAssistantB2E:
-            return .backgroundDefaultMobileAssistantB2E
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultMobileAssistantB2E)
         case .backgroundDefaultMobileAssistantBrand:
-            return .backgroundDefaultMobileAssistantBrand
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultMobileAssistantBrand)
         case .backgroundDefaultMobileAssistantJoy:
-            return .backgroundDefaultMobileAssistantJoy
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultMobileAssistantJoy)
         case .backgroundDefaultMobileAssistantMain:
-            return .backgroundDefaultMobileAssistantMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultMobileAssistantMain)
         case .backgroundDefaultModalSheet:
-            return .backgroundDefaultModalSheet
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .backgroundDefaultModalSheet)
         case .outlineDefaultAccentGradient:
-            return .outlineDefaultAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentGradient)
         case .outlineDefaultAccentGradientActive:
-            return .outlineDefaultAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentGradientActive)
         case .outlineDefaultAccentGradientHover:
-            return .outlineDefaultAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentGradientHover)
         case .outlineDefaultAccentMinorGradient:
-            return .outlineDefaultAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinorGradient)
         case .outlineDefaultAccentMinorGradientActive:
-            return .outlineDefaultAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinorGradientActive)
         case .outlineDefaultAccentMinorGradientHover:
-            return .outlineDefaultAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultAccentMinorGradientHover)
         case .outlineDefaultPromoGradient:
-            return .outlineDefaultPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoGradient)
         case .outlineDefaultPromoGradientActive:
-            return .outlineDefaultPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoGradientActive)
         case .outlineDefaultPromoGradientHover:
-            return .outlineDefaultPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoGradientHover)
         case .outlineDefaultPromoMinorGradient:
-            return .outlineDefaultPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinorGradient)
         case .outlineDefaultPromoMinorGradientActive:
-            return .outlineDefaultPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinorGradientActive)
         case .outlineDefaultPromoMinorGradientHover:
-            return .outlineDefaultPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultPromoMinorGradientHover)
         case .outlineDefaultTransparentAccentGradient:
-            return .outlineDefaultTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentGradient)
         case .outlineDefaultTransparentAccentGradientActive:
-            return .outlineDefaultTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentGradientActive)
         case .outlineDefaultTransparentAccentGradientHover:
-            return .outlineDefaultTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineDefaultTransparentAccentGradientHover)
         case .outlineInverseAccentGradient:
-            return .outlineInverseAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentGradient)
         case .outlineInverseAccentGradientActive:
-            return .outlineInverseAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentGradientActive)
         case .outlineInverseAccentGradientHover:
-            return .outlineInverseAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentGradientHover)
         case .outlineInverseAccentMinorGradient:
-            return .outlineInverseAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinorGradient)
         case .outlineInverseAccentMinorGradientActive:
-            return .outlineInverseAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinorGradientActive)
         case .outlineInverseAccentMinorGradientHover:
-            return .outlineInverseAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseAccentMinorGradientHover)
         case .outlineInversePromoGradient:
-            return .outlineInversePromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoGradient)
         case .outlineInversePromoGradientActive:
-            return .outlineInversePromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoGradientActive)
         case .outlineInversePromoGradientHover:
-            return .outlineInversePromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoGradientHover)
         case .outlineInversePromoMinorGradient:
-            return .outlineInversePromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinorGradient)
         case .outlineInversePromoMinorGradientActive:
-            return .outlineInversePromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinorGradientActive)
         case .outlineInversePromoMinorGradientHover:
-            return .outlineInversePromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInversePromoMinorGradientHover)
         case .outlineInverseTransparentAccentGradient:
-            return .outlineInverseTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentGradient)
         case .outlineInverseTransparentAccentGradientActive:
-            return .outlineInverseTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentGradientActive)
         case .outlineInverseTransparentAccentGradientHover:
-            return .outlineInverseTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineInverseTransparentAccentGradientHover)
         case .outlineOnDarkAccentGradient:
-            return .outlineOnDarkAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentGradient)
         case .outlineOnDarkAccentGradientActive:
-            return .outlineOnDarkAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentGradientActive)
         case .outlineOnDarkAccentGradientHover:
-            return .outlineOnDarkAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentGradientHover)
         case .outlineOnDarkAccentMinorGradient:
-            return .outlineOnDarkAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinorGradient)
         case .outlineOnDarkAccentMinorGradientActive:
-            return .outlineOnDarkAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinorGradientActive)
         case .outlineOnDarkAccentMinorGradientHover:
-            return .outlineOnDarkAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkAccentMinorGradientHover)
         case .outlineOnDarkPromoGradient:
-            return .outlineOnDarkPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoGradient)
         case .outlineOnDarkPromoGradientActive:
-            return .outlineOnDarkPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoGradientActive)
         case .outlineOnDarkPromoGradientHover:
-            return .outlineOnDarkPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoGradientHover)
         case .outlineOnDarkPromoMinorGradient:
-            return .outlineOnDarkPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinorGradient)
         case .outlineOnDarkPromoMinorGradientActive:
-            return .outlineOnDarkPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinorGradientActive)
         case .outlineOnDarkPromoMinorGradientHover:
-            return .outlineOnDarkPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkPromoMinorGradientHover)
         case .outlineOnDarkTransparentAccentGradient:
-            return .outlineOnDarkTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentGradient)
         case .outlineOnDarkTransparentAccentGradientActive:
-            return .outlineOnDarkTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentGradientActive)
         case .outlineOnDarkTransparentAccentGradientHover:
-            return .outlineOnDarkTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnDarkTransparentAccentGradientHover)
         case .outlineOnLightAccentGradient:
-            return .outlineOnLightAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentGradient)
         case .outlineOnLightAccentGradientActive:
-            return .outlineOnLightAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentGradientActive)
         case .outlineOnLightAccentGradientHover:
-            return .outlineOnLightAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentGradientHover)
         case .outlineOnLightAccentMinorGradient:
-            return .outlineOnLightAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinorGradient)
         case .outlineOnLightAccentMinorGradientActive:
-            return .outlineOnLightAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinorGradientActive)
         case .outlineOnLightAccentMinorGradientHover:
-            return .outlineOnLightAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightAccentMinorGradientHover)
         case .outlineOnLightPromoGradient:
-            return .outlineOnLightPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoGradient)
         case .outlineOnLightPromoGradientActive:
-            return .outlineOnLightPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoGradientActive)
         case .outlineOnLightPromoGradientHover:
-            return .outlineOnLightPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoGradientHover)
         case .outlineOnLightPromoMinorGradient:
-            return .outlineOnLightPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinorGradient)
         case .outlineOnLightPromoMinorGradientActive:
-            return .outlineOnLightPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinorGradientActive)
         case .outlineOnLightPromoMinorGradientHover:
-            return .outlineOnLightPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightPromoMinorGradientHover)
         case .outlineOnLightTransparentAccentGradient:
-            return .outlineOnLightTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentGradient)
         case .outlineOnLightTransparentAccentGradientActive:
-            return .outlineOnLightTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentGradientActive)
         case .outlineOnLightTransparentAccentGradientHover:
-            return .outlineOnLightTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .outlineOnLightTransparentAccentGradientHover)
         case .surfaceDefaultAccentGradient:
-            return .surfaceDefaultAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentGradient)
         case .surfaceDefaultAccentGradientActive:
-            return .surfaceDefaultAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentGradientActive)
         case .surfaceDefaultAccentGradientHover:
-            return .surfaceDefaultAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentGradientHover)
         case .surfaceDefaultAccentMinorGradient:
-            return .surfaceDefaultAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinorGradient)
         case .surfaceDefaultAccentMinorGradientActive:
-            return .surfaceDefaultAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinorGradientActive)
         case .surfaceDefaultAccentMinorGradientHover:
-            return .surfaceDefaultAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultAccentMinorGradientHover)
         case .surfaceDefaultGradientMain:
-            return .surfaceDefaultGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultGradientMain)
         case .surfaceDefaultGradientMainActive:
-            return .surfaceDefaultGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultGradientMainActive)
         case .surfaceDefaultGradientMainHover:
-            return .surfaceDefaultGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultGradientMainHover)
         case .surfaceDefaultPromoGradient:
-            return .surfaceDefaultPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoGradient)
         case .surfaceDefaultPromoGradientActive:
-            return .surfaceDefaultPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoGradientActive)
         case .surfaceDefaultPromoGradientHover:
-            return .surfaceDefaultPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoGradientHover)
         case .surfaceDefaultPromoMinorGradient:
-            return .surfaceDefaultPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinorGradient)
         case .surfaceDefaultPromoMinorGradientActive:
-            return .surfaceDefaultPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinorGradientActive)
         case .surfaceDefaultPromoMinorGradientHover:
-            return .surfaceDefaultPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultPromoMinorGradientHover)
         case .surfaceDefaultSkeleton:
-            return .surfaceDefaultSkeleton
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeleton)
         case .surfaceDefaultSkeletonDeepGradient:
-            return .surfaceDefaultSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonDeepGradient)
         case .surfaceDefaultSkeletonDeepGradientActive:
-            return .surfaceDefaultSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonDeepGradientActive)
         case .surfaceDefaultSkeletonDeepGradientHover:
-            return .surfaceDefaultSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonDeepGradientHover)
         case .surfaceDefaultSkeletonGradient:
-            return .surfaceDefaultSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonGradient)
         case .surfaceDefaultSkeletonGradientActive:
-            return .surfaceDefaultSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonGradientActive)
         case .surfaceDefaultSkeletonGradientHover:
-            return .surfaceDefaultSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultSkeletonGradientHover)
         case .surfaceDefaultTransparentAccentGradient:
-            return .surfaceDefaultTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentGradient)
         case .surfaceDefaultTransparentAccentGradientActive:
-            return .surfaceDefaultTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentGradientActive)
         case .surfaceDefaultTransparentAccentGradientHover:
-            return .surfaceDefaultTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentAccentGradientHover)
         case .surfaceDefaultTransparentPromoGradient:
-            return .surfaceDefaultTransparentPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromoGradient)
         case .surfaceDefaultTransparentPromoGradientActive:
-            return .surfaceDefaultTransparentPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromoGradientActive)
         case .surfaceDefaultTransparentPromoGradientHover:
-            return .surfaceDefaultTransparentPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceDefaultTransparentPromoGradientHover)
         case .surfaceInverseAccentGradient:
-            return .surfaceInverseAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentGradient)
         case .surfaceInverseAccentGradientActive:
-            return .surfaceInverseAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentGradientActive)
         case .surfaceInverseAccentGradientHover:
-            return .surfaceInverseAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentGradientHover)
         case .surfaceInverseAccentMinorGradient:
-            return .surfaceInverseAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinorGradient)
         case .surfaceInverseAccentMinorGradientActive:
-            return .surfaceInverseAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinorGradientActive)
         case .surfaceInverseAccentMinorGradientHover:
-            return .surfaceInverseAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseAccentMinorGradientHover)
         case .surfaceInverseGradientMain:
-            return .surfaceInverseGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseGradientMain)
         case .surfaceInverseGradientMainActive:
-            return .surfaceInverseGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseGradientMainActive)
         case .surfaceInverseGradientMainHover:
-            return .surfaceInverseGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseGradientMainHover)
         case .surfaceInversePromoGradient:
-            return .surfaceInversePromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoGradient)
         case .surfaceInversePromoGradientActive:
-            return .surfaceInversePromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoGradientActive)
         case .surfaceInversePromoGradientHover:
-            return .surfaceInversePromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoGradientHover)
         case .surfaceInversePromoMinorGradient:
-            return .surfaceInversePromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinorGradient)
         case .surfaceInversePromoMinorGradientActive:
-            return .surfaceInversePromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinorGradientActive)
         case .surfaceInversePromoMinorGradientHover:
-            return .surfaceInversePromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInversePromoMinorGradientHover)
         case .surfaceInverseSkeletonDeepGradient:
-            return .surfaceInverseSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonDeepGradient)
         case .surfaceInverseSkeletonDeepGradientActive:
-            return .surfaceInverseSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonDeepGradientActive)
         case .surfaceInverseSkeletonDeepGradientHover:
-            return .surfaceInverseSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonDeepGradientHover)
         case .surfaceInverseSkeletonGradient:
-            return .surfaceInverseSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonGradient)
         case .surfaceInverseSkeletonGradientActive:
-            return .surfaceInverseSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonGradientActive)
         case .surfaceInverseSkeletonGradientHover:
-            return .surfaceInverseSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseSkeletonGradientHover)
         case .surfaceInverseTransparentAccentGradient:
-            return .surfaceInverseTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentGradient)
         case .surfaceInverseTransparentAccentGradientActive:
-            return .surfaceInverseTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentGradientActive)
         case .surfaceInverseTransparentAccentGradientHover:
-            return .surfaceInverseTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentAccentGradientHover)
         case .surfaceInverseTransparentPromoGradient:
-            return .surfaceInverseTransparentPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromoGradient)
         case .surfaceInverseTransparentPromoGradientActive:
-            return .surfaceInverseTransparentPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromoGradientActive)
         case .surfaceInverseTransparentPromoGradientHover:
-            return .surfaceInverseTransparentPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceInverseTransparentPromoGradientHover)
         case .surfaceOnDarkAccentGradient:
-            return .surfaceOnDarkAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentGradient)
         case .surfaceOnDarkAccentGradientActive:
-            return .surfaceOnDarkAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentGradientActive)
         case .surfaceOnDarkAccentGradientHover:
-            return .surfaceOnDarkAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentGradientHover)
         case .surfaceOnDarkAccentMinorGradient:
-            return .surfaceOnDarkAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinorGradient)
         case .surfaceOnDarkAccentMinorGradientActive:
-            return .surfaceOnDarkAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinorGradientActive)
         case .surfaceOnDarkAccentMinorGradientHover:
-            return .surfaceOnDarkAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkAccentMinorGradientHover)
         case .surfaceOnDarkGradientMain:
-            return .surfaceOnDarkGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkGradientMain)
         case .surfaceOnDarkGradientMainActive:
-            return .surfaceOnDarkGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkGradientMainActive)
         case .surfaceOnDarkGradientMainHover:
-            return .surfaceOnDarkGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkGradientMainHover)
         case .surfaceOnDarkPromoGradient:
-            return .surfaceOnDarkPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoGradient)
         case .surfaceOnDarkPromoGradientActive:
-            return .surfaceOnDarkPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoGradientActive)
         case .surfaceOnDarkPromoGradientHover:
-            return .surfaceOnDarkPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoGradientHover)
         case .surfaceOnDarkPromoMinorGradient:
-            return .surfaceOnDarkPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinorGradient)
         case .surfaceOnDarkPromoMinorGradientActive:
-            return .surfaceOnDarkPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinorGradientActive)
         case .surfaceOnDarkPromoMinorGradientHover:
-            return .surfaceOnDarkPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkPromoMinorGradientHover)
         case .surfaceOnDarkSkeletonDeepGradient:
-            return .surfaceOnDarkSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradient)
         case .surfaceOnDarkSkeletonDeepGradientActive:
-            return .surfaceOnDarkSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradientActive)
         case .surfaceOnDarkSkeletonDeepGradientHover:
-            return .surfaceOnDarkSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonDeepGradientHover)
         case .surfaceOnDarkSkeletonGradient:
-            return .surfaceOnDarkSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonGradient)
         case .surfaceOnDarkSkeletonGradientActive:
-            return .surfaceOnDarkSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonGradientActive)
         case .surfaceOnDarkSkeletonGradientHover:
-            return .surfaceOnDarkSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkSkeletonGradientHover)
         case .surfaceOnDarkTransparentAccentGradient:
-            return .surfaceOnDarkTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentGradient)
         case .surfaceOnDarkTransparentAccentGradientActive:
-            return .surfaceOnDarkTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentGradientActive)
         case .surfaceOnDarkTransparentAccentGradientHover:
-            return .surfaceOnDarkTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentAccentGradientHover)
         case .surfaceOnDarkTransparentPromoGradient:
-            return .surfaceOnDarkTransparentPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromoGradient)
         case .surfaceOnDarkTransparentPromoGradientActive:
-            return .surfaceOnDarkTransparentPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromoGradientActive)
         case .surfaceOnDarkTransparentPromoGradientHover:
-            return .surfaceOnDarkTransparentPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnDarkTransparentPromoGradientHover)
         case .surfaceOnLightAccentGradient:
-            return .surfaceOnLightAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentGradient)
         case .surfaceOnLightAccentGradientActive:
-            return .surfaceOnLightAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentGradientActive)
         case .surfaceOnLightAccentGradientHover:
-            return .surfaceOnLightAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentGradientHover)
         case .surfaceOnLightAccentMinorGradient:
-            return .surfaceOnLightAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinorGradient)
         case .surfaceOnLightAccentMinorGradientActive:
-            return .surfaceOnLightAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinorGradientActive)
         case .surfaceOnLightAccentMinorGradientHover:
-            return .surfaceOnLightAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightAccentMinorGradientHover)
         case .surfaceOnLightGradientMain:
-            return .surfaceOnLightGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightGradientMain)
         case .surfaceOnLightGradientMainActive:
-            return .surfaceOnLightGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightGradientMainActive)
         case .surfaceOnLightGradientMainHover:
-            return .surfaceOnLightGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightGradientMainHover)
         case .surfaceOnLightPromoGradient:
-            return .surfaceOnLightPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoGradient)
         case .surfaceOnLightPromoGradientActive:
-            return .surfaceOnLightPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoGradientActive)
         case .surfaceOnLightPromoGradientHover:
-            return .surfaceOnLightPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoGradientHover)
         case .surfaceOnLightPromoMinorGradient:
-            return .surfaceOnLightPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinorGradient)
         case .surfaceOnLightPromoMinorGradientActive:
-            return .surfaceOnLightPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinorGradientActive)
         case .surfaceOnLightPromoMinorGradientHover:
-            return .surfaceOnLightPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightPromoMinorGradientHover)
         case .surfaceOnLightSkeletonDeepGradient:
-            return .surfaceOnLightSkeletonDeepGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonDeepGradient)
         case .surfaceOnLightSkeletonDeepGradientActive:
-            return .surfaceOnLightSkeletonDeepGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonDeepGradientActive)
         case .surfaceOnLightSkeletonDeepGradientHover:
-            return .surfaceOnLightSkeletonDeepGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonDeepGradientHover)
         case .surfaceOnLightSkeletonGradient:
-            return .surfaceOnLightSkeletonGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonGradient)
         case .surfaceOnLightSkeletonGradientActive:
-            return .surfaceOnLightSkeletonGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonGradientActive)
         case .surfaceOnLightSkeletonGradientHover:
-            return .surfaceOnLightSkeletonGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightSkeletonGradientHover)
         case .surfaceOnLightTransparentAccentGradient:
-            return .surfaceOnLightTransparentAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentGradient)
         case .surfaceOnLightTransparentAccentGradientActive:
-            return .surfaceOnLightTransparentAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentGradientActive)
         case .surfaceOnLightTransparentAccentGradientHover:
-            return .surfaceOnLightTransparentAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentAccentGradientHover)
         case .surfaceOnLightTransparentPromoGradient:
-            return .surfaceOnLightTransparentPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromoGradient)
         case .surfaceOnLightTransparentPromoGradientActive:
-            return .surfaceOnLightTransparentPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromoGradientActive)
         case .surfaceOnLightTransparentPromoGradientHover:
-            return .surfaceOnLightTransparentPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .surfaceOnLightTransparentPromoGradientHover)
         case .textDefaultAccentGradient:
-            return .textDefaultAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentGradient)
         case .textDefaultAccentGradientActive:
-            return .textDefaultAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentGradientActive)
         case .textDefaultAccentGradientHover:
-            return .textDefaultAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentGradientHover)
         case .textDefaultAccentMinorGradient:
-            return .textDefaultAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinorGradient)
         case .textDefaultAccentMinorGradientActive:
-            return .textDefaultAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinorGradientActive)
         case .textDefaultAccentMinorGradientHover:
-            return .textDefaultAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultAccentMinorGradientHover)
         case .textDefaultGradientAthena:
-            return .textDefaultGradientAthena
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientAthena)
         case .textDefaultGradientAthenaActive:
-            return .textDefaultGradientAthenaActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientAthenaActive)
         case .textDefaultGradientAthenaHover:
-            return .textDefaultGradientAthenaHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientAthenaHover)
         case .textDefaultGradientB2E:
-            return .textDefaultGradientB2E
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientB2E)
         case .textDefaultGradientB2EActive:
-            return .textDefaultGradientB2EActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientB2EActive)
         case .textDefaultGradientB2EHover:
-            return .textDefaultGradientB2EHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientB2EHover)
         case .textDefaultGradientBrand:
-            return .textDefaultGradientBrand
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientBrand)
         case .textDefaultGradientBrandActive:
-            return .textDefaultGradientBrandActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientBrandActive)
         case .textDefaultGradientBrandHover:
-            return .textDefaultGradientBrandHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientBrandHover)
         case .textDefaultGradientJoy:
-            return .textDefaultGradientJoy
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientJoy)
         case .textDefaultGradientJoyActive:
-            return .textDefaultGradientJoyActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientJoyActive)
         case .textDefaultGradientJoyHover:
-            return .textDefaultGradientJoyHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientJoyHover)
         case .textDefaultGradientMain:
-            return .textDefaultGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientMain)
         case .textDefaultGradientMainActive:
-            return .textDefaultGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientMainActive)
         case .textDefaultGradientMainHover:
-            return .textDefaultGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultGradientMainHover)
         case .textDefaultPromoGradient:
-            return .textDefaultPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoGradient)
         case .textDefaultPromoGradientActive:
-            return .textDefaultPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoGradientActive)
         case .textDefaultPromoGradientHover:
-            return .textDefaultPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoGradientHover)
         case .textDefaultPromoMinorGradient:
-            return .textDefaultPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinorGradient)
         case .textDefaultPromoMinorGradientActive:
-            return .textDefaultPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinorGradientActive)
         case .textDefaultPromoMinorGradientHover:
-            return .textDefaultPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textDefaultPromoMinorGradientHover)
         case .textInverseAccentGradient:
-            return .textInverseAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentGradient)
         case .textInverseAccentGradientActive:
-            return .textInverseAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentGradientActive)
         case .textInverseAccentGradientHover:
-            return .textInverseAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentGradientHover)
         case .textInverseAccentMinorGradient:
-            return .textInverseAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinorGradient)
         case .textInverseAccentMinorGradientActive:
-            return .textInverseAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinorGradientActive)
         case .textInverseAccentMinorGradientHover:
-            return .textInverseAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseAccentMinorGradientHover)
         case .textInverseGradientAthena:
-            return .textInverseGradientAthena
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientAthena)
         case .textInverseGradientAthenaActive:
-            return .textInverseGradientAthenaActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientAthenaActive)
         case .textInverseGradientAthenaHover:
-            return .textInverseGradientAthenaHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientAthenaHover)
         case .textInverseGradientB2E:
-            return .textInverseGradientB2E
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientB2E)
         case .textInverseGradientB2EActive:
-            return .textInverseGradientB2EActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientB2EActive)
         case .textInverseGradientB2EHover:
-            return .textInverseGradientB2EHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientB2EHover)
         case .textInverseGradientBrand:
-            return .textInverseGradientBrand
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientBrand)
         case .textInverseGradientBrandActive:
-            return .textInverseGradientBrandActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientBrandActive)
         case .textInverseGradientBrandHover:
-            return .textInverseGradientBrandHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientBrandHover)
         case .textInverseGradientJoy:
-            return .textInverseGradientJoy
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientJoy)
         case .textInverseGradientJoyActive:
-            return .textInverseGradientJoyActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientJoyActive)
         case .textInverseGradientJoyHover:
-            return .textInverseGradientJoyHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientJoyHover)
         case .textInverseGradientMain:
-            return .textInverseGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientMain)
         case .textInverseGradientMainActive:
-            return .textInverseGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientMainActive)
         case .textInverseGradientMainHover:
-            return .textInverseGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInverseGradientMainHover)
         case .textInversePromoGradient:
-            return .textInversePromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoGradient)
         case .textInversePromoGradientActive:
-            return .textInversePromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoGradientActive)
         case .textInversePromoGradientHover:
-            return .textInversePromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoGradientHover)
         case .textInversePromoMinorGradient:
-            return .textInversePromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinorGradient)
         case .textInversePromoMinorGradientActive:
-            return .textInversePromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinorGradientActive)
         case .textInversePromoMinorGradientHover:
-            return .textInversePromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textInversePromoMinorGradientHover)
         case .textOnDarkAccentGradient:
-            return .textOnDarkAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentGradient)
         case .textOnDarkAccentGradientActive:
-            return .textOnDarkAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentGradientActive)
         case .textOnDarkAccentGradientHover:
-            return .textOnDarkAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentGradientHover)
         case .textOnDarkAccentMinorGradient:
-            return .textOnDarkAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinorGradient)
         case .textOnDarkAccentMinorGradientActive:
-            return .textOnDarkAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinorGradientActive)
         case .textOnDarkAccentMinorGradientHover:
-            return .textOnDarkAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkAccentMinorGradientHover)
         case .textOnDarkGradientAthena:
-            return .textOnDarkGradientAthena
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientAthena)
         case .textOnDarkGradientAthenaActive:
-            return .textOnDarkGradientAthenaActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientAthenaActive)
         case .textOnDarkGradientAthenaHover:
-            return .textOnDarkGradientAthenaHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientAthenaHover)
         case .textOnDarkGradientB2E:
-            return .textOnDarkGradientB2E
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientB2E)
         case .textOnDarkGradientB2EActive:
-            return .textOnDarkGradientB2EActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientB2EActive)
         case .textOnDarkGradientB2EHover:
-            return .textOnDarkGradientB2EHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientB2EHover)
         case .textOnDarkGradientBrand:
-            return .textOnDarkGradientBrand
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientBrand)
         case .textOnDarkGradientBrandActive:
-            return .textOnDarkGradientBrandActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientBrandActive)
         case .textOnDarkGradientBrandHover:
-            return .textOnDarkGradientBrandHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientBrandHover)
         case .textOnDarkGradientJoy:
-            return .textOnDarkGradientJoy
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientJoy)
         case .textOnDarkGradientJoyActive:
-            return .textOnDarkGradientJoyActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientJoyActive)
         case .textOnDarkGradientJoyHover:
-            return .textOnDarkGradientJoyHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientJoyHover)
         case .textOnDarkGradientMain:
-            return .textOnDarkGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientMain)
         case .textOnDarkGradientMainActive:
-            return .textOnDarkGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientMainActive)
         case .textOnDarkGradientMainHover:
-            return .textOnDarkGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkGradientMainHover)
         case .textOnDarkPromoGradient:
-            return .textOnDarkPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoGradient)
         case .textOnDarkPromoGradientActive:
-            return .textOnDarkPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoGradientActive)
         case .textOnDarkPromoGradientHover:
-            return .textOnDarkPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoGradientHover)
         case .textOnDarkPromoMinorGradient:
-            return .textOnDarkPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinorGradient)
         case .textOnDarkPromoMinorGradientActive:
-            return .textOnDarkPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinorGradientActive)
         case .textOnDarkPromoMinorGradientHover:
-            return .textOnDarkPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnDarkPromoMinorGradientHover)
         case .textOnLightAccentGradient:
-            return .textOnLightAccentGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentGradient)
         case .textOnLightAccentGradientActive:
-            return .textOnLightAccentGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentGradientActive)
         case .textOnLightAccentGradientHover:
-            return .textOnLightAccentGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentGradientHover)
         case .textOnLightAccentMinorGradient:
-            return .textOnLightAccentMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinorGradient)
         case .textOnLightAccentMinorGradientActive:
-            return .textOnLightAccentMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinorGradientActive)
         case .textOnLightAccentMinorGradientHover:
-            return .textOnLightAccentMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightAccentMinorGradientHover)
         case .textOnLightGradientAthena:
-            return .textOnLightGradientAthena
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientAthena)
         case .textOnLightGradientAthenaActive:
-            return .textOnLightGradientAthenaActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientAthenaActive)
         case .textOnLightGradientAthenaHover:
-            return .textOnLightGradientAthenaHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientAthenaHover)
         case .textOnLightGradientB2E:
-            return .textOnLightGradientB2E
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientB2E)
         case .textOnLightGradientB2EActive:
-            return .textOnLightGradientB2EActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientB2EActive)
         case .textOnLightGradientB2EHover:
-            return .textOnLightGradientB2EHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientB2EHover)
         case .textOnLightGradientBrand:
-            return .textOnLightGradientBrand
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientBrand)
         case .textOnLightGradientBrandActive:
-            return .textOnLightGradientBrandActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientBrandActive)
         case .textOnLightGradientBrandHover:
-            return .textOnLightGradientBrandHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientBrandHover)
         case .textOnLightGradientJoy:
-            return .textOnLightGradientJoy
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientJoy)
         case .textOnLightGradientJoyActive:
-            return .textOnLightGradientJoyActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientJoyActive)
         case .textOnLightGradientJoyHover:
-            return .textOnLightGradientJoyHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientJoyHover)
         case .textOnLightGradientMain:
-            return .textOnLightGradientMain
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientMain)
         case .textOnLightGradientMainActive:
-            return .textOnLightGradientMainActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientMainActive)
         case .textOnLightGradientMainHover:
-            return .textOnLightGradientMainHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightGradientMainHover)
         case .textOnLightPromoGradient:
-            return .textOnLightPromoGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoGradient)
         case .textOnLightPromoGradientActive:
-            return .textOnLightPromoGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoGradientActive)
         case .textOnLightPromoGradientHover:
-            return .textOnLightPromoGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoGradientHover)
         case .textOnLightPromoMinorGradient:
-            return .textOnLightPromoMinorGradient
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinorGradient)
         case .textOnLightPromoMinorGradientActive:
-            return .textOnLightPromoMinorGradientActive
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinorGradientActive)
         case .textOnLightPromoMinorGradientHover:
-            return .textOnLightPromoMinorGradientHover
+            return ThemeTenantRegistry.shared.resolveGradient(theme: "StylesSalute", id: rawValue, base: .textOnLightPromoMinorGradientHover)
         }
     }
 }
@@ -870,3 +871,4 @@ public extension GradientToken {
         return gradient.token
     }
 }
+

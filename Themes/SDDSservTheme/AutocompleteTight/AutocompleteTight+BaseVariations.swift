@@ -61,13 +61,15 @@ public struct AutocompleteTight {
         )
     }
     
-    public static let all: [Variation<AutocompleteAppearance>] = [
-        AutocompleteTight.l.variation,
-        AutocompleteTight.m.variation,
-        AutocompleteTight.s.variation,
-        AutocompleteTight.xl.variation,
-        AutocompleteTight.xs.variation,
-    ]
+    public static var all: [Variation<AutocompleteAppearance>] {
+        [
+            AutocompleteTight.l.variation,
+            AutocompleteTight.m.variation,
+            AutocompleteTight.s.variation,
+            AutocompleteTight.xl.variation,
+            AutocompleteTight.xs.variation,
+        ]
+    }
 }
 
 public struct AutocompleteTightVariation {

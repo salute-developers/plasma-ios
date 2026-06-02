@@ -42,16 +42,18 @@ public struct ToolbarHorizontal {
         )
     }
     
-    public static let all: [Variation<ToolbarAppearance>] = [
-        ToolbarHorizontal.l.variation,
-        ToolbarHorizontal.l.hasShadow.variation,
-        ToolbarHorizontal.m.variation,
-        ToolbarHorizontal.m.hasShadow.variation,
-        ToolbarHorizontal.s.variation,
-        ToolbarHorizontal.s.hasShadow.variation,
-        ToolbarHorizontal.xs.variation,
-        ToolbarHorizontal.xs.hasShadow.variation,
-    ]
+    public static var all: [Variation<ToolbarAppearance>] {
+        [
+            ToolbarHorizontal.l.variation,
+            ToolbarHorizontal.l.hasShadow.variation,
+            ToolbarHorizontal.m.variation,
+            ToolbarHorizontal.m.hasShadow.variation,
+            ToolbarHorizontal.s.variation,
+            ToolbarHorizontal.s.hasShadow.variation,
+            ToolbarHorizontal.xs.variation,
+            ToolbarHorizontal.xs.hasShadow.variation,
+        ]
+    }
 }
 
 public struct ToolbarHorizontalVariation {

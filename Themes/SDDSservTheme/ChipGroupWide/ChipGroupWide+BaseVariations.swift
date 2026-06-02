@@ -42,16 +42,18 @@ public struct ChipGroupWide {
         )
     }
     
-    public static let all: [Variation<ChipGroupAppearance>] = [
-        ChipGroupWide.l.variation,
-        ChipGroupWide.l.pilled.variation,
-        ChipGroupWide.m.variation,
-        ChipGroupWide.m.pilled.variation,
-        ChipGroupWide.s.variation,
-        ChipGroupWide.s.pilled.variation,
-        ChipGroupWide.xs.variation,
-        ChipGroupWide.xs.pilled.variation,
-    ]
+    public static var all: [Variation<ChipGroupAppearance>] {
+        [
+            ChipGroupWide.l.variation,
+            ChipGroupWide.l.pilled.variation,
+            ChipGroupWide.m.variation,
+            ChipGroupWide.m.pilled.variation,
+            ChipGroupWide.s.variation,
+            ChipGroupWide.s.pilled.variation,
+            ChipGroupWide.xs.variation,
+            ChipGroupWide.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct ChipGroupWideVariation {
