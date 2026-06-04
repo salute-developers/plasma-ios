@@ -71,7 +71,7 @@ public struct SDDSCounter: View {
             }
         }
         .frame(height: appearance.size.height)
-        .background(currentColor(for: appearance.backgroundColor))
+        .fillBackground(currentFillStyle(for: appearance.backgroundColor), colorScheme: colorScheme, subtheme: subtheme)
         .cornerRadius(cornerRadius)
     }
     
@@ -86,8 +86,7 @@ public struct SDDSCounter: View {
     
     @ViewBuilder
     public var counterMinimumSize: some View {
-        Circle()
-            .fill(currentColor(for: appearance.backgroundColor))
+        FillStyleShape(Circle(), style: currentFillStyle(for: appearance.backgroundColor))
         textView(
             text: text,
             typographyToken: textTypography,
@@ -95,10 +94,10 @@ public struct SDDSCounter: View {
         )
     }
     
-    public func textView(text: String, typographyToken: TypographyToken, counterColor: ButtonColor) -> some View {
+    public func textView(text: String, typographyToken: TypographyToken, counterColor: StatefulFillStyle) -> some View {
         Text(text)
             .typography(typographyToken)
-            .foregroundColor(currentColor(for: counterColor))
+            .fillForeground(style: currentFillStyle(for: counterColor))
     }
 }
 
@@ -115,12 +114,12 @@ private extension SDDSCounter {
         }
     }
     
-    func currentColor(for counterColor: ButtonColor) -> Color {
+    func currentFillStyle(for counterColor: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
         if isHighlighted { activeStates.insert(.pressed) }
         if isHovered { activeStates.insert(.hovered) }
-        return counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return counterColor.resolvedValue(for: activeStates)
     }
     
     var isAuto: Bool {

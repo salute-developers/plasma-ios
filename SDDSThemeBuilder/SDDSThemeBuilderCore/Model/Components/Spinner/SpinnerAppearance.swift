@@ -18,9 +18,9 @@ struct SpinnerAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         self.strokeCap = StrokeCapContextBuilder(props.strokeCap?.value).context
-        self.startColor = ColorTokenContextBuilder(props.startColor).context
-        self.endColor = ColorTokenContextBuilder(props.endColor).context
+        self.startColor = StatefulFillStyleContextBuilder(props.startColor).context
+        self.endColor = StatefulFillStyleContextBuilder(props.endColor).context
     }
 } 

@@ -110,10 +110,8 @@ public struct SDDSChip: View {
                     .renderingMode(.template)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: appearance.size.iconImageSize.width, height: appearance.size.iconImageSize.height)
-                    .foregroundColor(
-                        appearance.imageTintColor
-                            .resolvedValue(for: Set<InteractiveState>())
-                            .color(for: colorScheme, subtheme: subtheme)
+                    .fillForeground(
+                        style: appearance.imageTintColor.resolvedValue(for: Set<InteractiveState>())
                     )
                     .accessibilityHidden(true)
                 Spacer()
@@ -124,10 +122,8 @@ public struct SDDSChip: View {
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
                 .frame(width: textWidth)
-                .foregroundColor(
-                    appearance.titleColor
-                        .resolvedValue(for: Set<InteractiveState>())
-                        .color(for: colorScheme, subtheme: subtheme)
+                .fillForeground(
+                    style: appearance.titleColor.resolvedValue(for: Set<InteractiveState>())
                 )
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
@@ -141,10 +137,8 @@ public struct SDDSChip: View {
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: appearance.size.buttonImageSize.width, height: appearance.size.buttonImageSize.height)
-                        .foregroundColor(
-                            appearance.buttonTintColor
-                                .resolvedValue(for: Set<InteractiveState>())
-                                .color(for: colorScheme, subtheme: subtheme)
+                        .fillForeground(
+                            style: appearance.buttonTintColor.resolvedValue(for: Set<InteractiveState>())
                         )
                         .accessibilityLabel(Text(accessibility.removeButtonLabel))
                         .accessibilityHint(Text(accessibility.removeButtonHint))
@@ -157,13 +151,11 @@ public struct SDDSChip: View {
         .onTapGesture(perform: handleRemove)
         .frame(height: appearance.size.height)
         .background(
-            RoundedRectangle(cornerRadius: borderRadius)
-                .fill(
-                    appearance.backgroundColor
-                        .resolvedValue(for: Set<InteractiveState>())
-                        .color(for: colorScheme, subtheme: subtheme)
-                )
-                .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
+            FillStyleShape(
+                RoundedRectangle(cornerRadius: borderRadius),
+                style: appearance.backgroundColor.resolvedValue(for: Set<InteractiveState>())
+            )
+            .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         )
         .accessibilityElement(children: .combine)
     }

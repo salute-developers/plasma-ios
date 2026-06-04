@@ -71,7 +71,7 @@ public struct SpinnerVariation {
 private extension SpinnerAppearance {
     static var base: SpinnerAppearance {
         var appearance = SpinnerAppearance()
-        appearance.backgroundColor = ColorToken.surfaceDefaultClear
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
         appearance.strokeCap = StrokeCap.round
         return appearance
     }

@@ -18,8 +18,8 @@ struct CounterAppearance: CodeGenerationAppearance {
         }
         
         self.textTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
-        self.textColor = ButtonColorContextBuilder(statefulColor: props.textColor).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.textColor = StatefulFillStyleContextBuilder(props.textColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
     }
     
     func context(with defaultStyle: String) -> String {

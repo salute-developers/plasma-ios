@@ -30,7 +30,7 @@ private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
 }

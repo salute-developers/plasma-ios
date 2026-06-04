@@ -59,17 +59,17 @@ public struct SDDSSpinner: View {
     
     public var body: some View {
         ZStack {
-            if appearance.backgroundColor != .clearColor {
+            if !backgroundIsClear {
                 Circle()
-                    .stroke(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme), lineWidth: lineThickness)
+                    .stroke(appearance.backgroundColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme), lineWidth: lineThickness)
             }
             
             spinnerArc
                 .stroke(
                     AngularGradient(
                         colors: [
-                            appearance.endColor.color(for: colorScheme, subtheme: subtheme),
-                            appearance.startColor.color(for: colorScheme, subtheme: subtheme)
+                            appearance.endColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme),
+                            appearance.startColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
                         ],
                         center: .center,
                         startAngle: .degrees(0),
@@ -137,6 +137,10 @@ public struct SDDSSpinner: View {
     
     private var appearance: SpinnerAppearance {
         _appearance ?? environmentAppearance
+    }
+    
+    private var backgroundIsClear: Bool {
+        appearance.backgroundColor.resolvedDefaultValue() == .color(.clearColor)
     }
     
     private var lineThickness: CGFloat {

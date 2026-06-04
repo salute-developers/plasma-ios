@@ -89,7 +89,7 @@ private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = .color(.surfaceDefaultTransparentSecondary)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         return appearance
     }

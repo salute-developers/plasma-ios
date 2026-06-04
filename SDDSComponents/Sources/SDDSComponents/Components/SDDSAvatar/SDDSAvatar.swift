@@ -222,7 +222,7 @@ public struct SDDSAvatar<Content: View>: View {
     
     private var indicatorAppearance: IndicatorAppearance {
         var appearance = appearance.indicatorAppearance
-        appearance.backgroundColor = statusColor
+        appearance.backgroundColor = statusColor.statefulColor.statefulFillStyle
         return appearance
     }
     

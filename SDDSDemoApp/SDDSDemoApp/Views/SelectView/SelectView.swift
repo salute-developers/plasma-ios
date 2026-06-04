@@ -385,7 +385,7 @@ struct SelectView: View {
         }
         
         guard var visible = appearances.first(
-            where: { $0.startColor != .clearColor || $0.endColor != .clearColor }
+            where: { $0.startColor.resolvedDefaultValue() != .color(.clearColor) || $0.endColor.resolvedDefaultValue() != .color(.clearColor) }
         ) else {
             return nil
         }
