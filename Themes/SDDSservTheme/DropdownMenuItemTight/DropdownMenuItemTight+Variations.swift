@@ -323,19 +323,19 @@ private extension ListItemAppearance {
     
     var `default`: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
     
     var negative: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = ColorToken.textDefaultNegative
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = ColorToken.textDefaultPositive
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
         return appearance
     }
     

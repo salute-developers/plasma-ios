@@ -7,21 +7,35 @@ public struct CounterAppearance: Modifiable {
     
     public var size: CounterSizeConfiguration
     public var textTypography: TypographyConfiguration
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var textColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor
+    public var textColor: StatefulFillStyle
+    public var backgroundColor: StatefulFillStyle
 
+    public init(
+        size: CounterSizeConfiguration = DefaultCounterSize(),
+        textTypography: TypographyConfiguration = .default,
+        textColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
+    ) {
+        self.size = size
+        self.textTypography = textTypography
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+    }
+
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
     public init(
         size: CounterSizeConfiguration = DefaultCounterSize(),
         textTypography: TypographyConfiguration = .default,
         textColor: ButtonColor = ButtonColor(),
         backgroundColor: ButtonColor = ButtonColor()
     ) {
-        self.size = size
-        self.textTypography = textTypography
-        self.textColor = textColor
-        self.backgroundColor = backgroundColor
+        self.init(
+            size: size,
+            textTypography: textTypography,
+            textColor: textColor.statefulColor.statefulFillStyle,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle
+        )
     }
 
     

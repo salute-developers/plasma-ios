@@ -215,7 +215,7 @@ struct AutocompleteView: View {
         // Prefer visible smallest spinner available in theme.
         guard var smallest = (
             appearances
-                .filter { $0.startColor != .clearColor || $0.endColor != .clearColor }
+                .filter { $0.startColor.resolvedDefaultValue() != .color(.clearColor) || $0.endColor.resolvedDefaultValue() != .color(.clearColor) }
                 .min(by: { $0.size.size < $1.size.size })
         )
         else {

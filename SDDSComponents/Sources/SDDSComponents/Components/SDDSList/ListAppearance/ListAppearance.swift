@@ -7,14 +7,14 @@ public struct ListAppearance: Hashable {
     public var listItemAppearance: ListItemAppearance
     public var dividerAppearance: DividerAppearance
     public var scrollBarAppearance: ScrollbarAppearance
-    public var backgroundColor: ColorToken
+    public var backgroundColor: StatefulFillStyle
     public var size: ListSizeConfiguration
     
     public init(
         listItemAppearance: ListItemAppearance = .defaultValue,
         dividerAppearance: DividerAppearance = .defaultValue,
         scrollBarAppearance: ScrollbarAppearance = .defaultValue,
-        backgroundColor: ColorToken = .clearColor,
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         size: ListSizeConfiguration = ZeroListSize()
     ) {
         self.listItemAppearance = listItemAppearance
@@ -22,6 +22,24 @@ public struct ListAppearance: Hashable {
         self.scrollBarAppearance = scrollBarAppearance
         self.backgroundColor = backgroundColor
         self.size = size
+    }
+
+    @available(*, deprecated, message: "ColorToken is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        listItemAppearance: ListItemAppearance = .defaultValue,
+        dividerAppearance: DividerAppearance = .defaultValue,
+        scrollBarAppearance: ScrollbarAppearance = .defaultValue,
+        backgroundColor: ColorToken = .clearColor,
+        size: ListSizeConfiguration = ZeroListSize()
+    ) {
+        self.init(
+            listItemAppearance: listItemAppearance,
+            dividerAppearance: dividerAppearance,
+            scrollBarAppearance: scrollBarAppearance,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle,
+            size: size
+        )
     }
     
     public static func == (lhs: ListAppearance, rhs: ListAppearance) -> Bool {

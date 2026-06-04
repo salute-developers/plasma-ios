@@ -30,6 +30,6 @@ struct ListAppearance: CodeGenerationAppearance {
             self.scrollBarAppearance = ComponentStyleContextBuilder(scrollBarStyle).context
         }
         
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
     }
 } 

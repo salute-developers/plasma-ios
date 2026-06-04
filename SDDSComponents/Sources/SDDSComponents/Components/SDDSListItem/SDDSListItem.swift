@@ -124,7 +124,7 @@ public struct SDDSListItem<RightContent: View>: View {
                 Spacer()
                 if rightContentEnabled {
                     disclosure
-                        .tint(appearance.disclosureIconColor.color(for: colorScheme, subtheme: subtheme))
+                        .tint(appearance.disclosureIconColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme))
                         .padding(.leading, appearance.size.contentPaddingEnd)
                 }
             }
@@ -134,7 +134,7 @@ public struct SDDSListItem<RightContent: View>: View {
             .padding(.bottom, appearance.size.paddingBottom)
         }
         .frame(height: resolvedHeight)
-        .background(currentColor(for: appearance.backgroundColor))
+        .fillBackground(currentFillStyle(for: appearance.backgroundColor), colorScheme: colorScheme, subtheme: subtheme)
         .opacity(contentOpacity)
         .shape(pathDrawer: appearance.size.shape)
         .onTapGesture {
@@ -175,15 +175,15 @@ public struct SDDSListItem<RightContent: View>: View {
         VStack(alignment: .leading, spacing: 0) {
             if let label, !label.isEmpty {
                 Text(label)
-                    .foregroundStyle(appearance.labelColor.color(for: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: appearance.labelColor.resolvedDefaultValue())
                     .typography(labelTypography)
             }
             Text(title)
-                .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: appearance.titleColor.resolvedDefaultValue())
                 .typography(titleTypography)
             if let subtitle, !subtitle.isEmpty, let subtitleTypography = resolvedSubtitleTypography {
                 Text(subtitle)
-                    .foregroundStyle(appearance.subtitleColor.color(for: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: appearance.subtitleColor.resolvedDefaultValue())
                     .typography(subtitleTypography)
             }
         }
@@ -201,9 +201,9 @@ public struct SDDSListItem<RightContent: View>: View {
         appearance.subtitleTypography?.typography(with: appearance.size)
     }
     
-    private func currentColor(for buttonColor: ButtonColor) -> Color {
+    private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isHovered { activeStates.insert(.hovered) }
-        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return fillStyle.resolvedValue(for: activeStates)
     }
 }

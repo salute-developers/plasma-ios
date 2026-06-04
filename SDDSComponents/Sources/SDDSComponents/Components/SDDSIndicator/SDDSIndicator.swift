@@ -31,11 +31,11 @@ public struct SDDSIndicator: View {
     }
     
     public var body: some View {
-        appearance.size
-            .pathDrawer
-            .path(in: CGRect(x: 0, y: 0, width: width, height: height))
-            .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
-            .frame(width: width, height: height)
+        FillStyleShape(
+            appearance.size.pathDrawer.path(in: CGRect(x: 0, y: 0, width: width, height: height)),
+            style: appearance.backgroundColor.resolvedDefaultValue()
+        )
+        .frame(width: width, height: height)
     }
     
     private var width: CGFloat {

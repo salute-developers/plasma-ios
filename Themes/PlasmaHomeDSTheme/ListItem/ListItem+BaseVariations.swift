@@ -34,10 +34,10 @@ private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.disclosureIconColor = ColorToken.textDefaultSecondary
-        appearance.labelColor = ColorToken.textDefaultSecondary
-        appearance.subtitleColor = ColorToken.textDefaultSecondary
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.disclosureIconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
 }

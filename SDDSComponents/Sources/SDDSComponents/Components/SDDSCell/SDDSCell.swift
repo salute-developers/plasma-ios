@@ -127,10 +127,10 @@ extension SDDSCell {
     
     // MARK: - Other additional view
     @ViewBuilder
-    private func value(for value: String, typography: TypographyToken, textColor: ColorToken) -> some View {
+    private func value(for value: String, typography: TypographyToken, textColor: StatefulFillStyle) -> some View {
         Text(value)
             .typography(typography)
-            .foregroundColor(textColor.color(for: colorScheme, subtheme: subtheme))
+            .fillForeground(style: textColor.resolvedDefaultValue())
     }
     
     // MARK: - Disclosure
@@ -154,7 +154,7 @@ extension SDDSCell {
                 if let image = appearance.disclosureImage {
                     image
                         .renderingMode(.template)
-                        .foregroundColor(appearance.disclosureImageColor.color(for: colorScheme, subtheme: subtheme))
+                        .fillForeground(style: appearance.disclosureImageColor.resolvedDefaultValue())
                 }
             }
         }

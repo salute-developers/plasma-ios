@@ -449,127 +449,127 @@ private extension ChipAppearance {
     
     var `default`: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultSolidDefault, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInverseSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textInversePrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textInverseSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textInverseSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textInversePrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textInversePrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textInversePrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textInversePrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textInversePrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textInversePrimaryHover))
+        ])
         return appearance
     }
     
     var accent: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultAccent, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultAccentHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
         return appearance
     }
     
     var negative: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultNegative, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultNegativeActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultNegativeHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultNegativeActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultNegativeHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
         return appearance
     }
     
     var positive: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultPositive, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultPositiveActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultPositiveHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultPositiveActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultPositiveHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
         return appearance
     }
     
     var secondary: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentSecondaryHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultTransparentSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultTransparentSecondaryHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textDefaultPrimaryHover))
+        ])
         return appearance
     }
     
     var warning: ChipAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultWarning, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.surfaceDefaultWarningActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultWarningHover)
-        ]))
-        appearance.buttonTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkSecondary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.imageTintColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textOnDarkPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultWarningActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultWarningHover))
+        ])
+        appearance.buttonTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkSecondaryHover))
+        ])
+        appearance.imageTintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        ])
         return appearance
     }
     

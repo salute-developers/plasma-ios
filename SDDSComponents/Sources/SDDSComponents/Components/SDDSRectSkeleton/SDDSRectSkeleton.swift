@@ -51,6 +51,10 @@ public struct SDDSRectSkeleton: View {
         _appearance ?? environmentAppearance
     }
     
+    private var resolvedGradient: FillStyle {
+        appearance.gradient.resolvedDefaultValue()
+    }
+    
     /**
      Конвертирует миллисекунды в секунды для анимации.
      
@@ -89,7 +93,7 @@ public struct SDDSRectSkeleton: View {
      */
     @ViewBuilder
     private var gradient: some View {
-        switch appearance.gradient {
+        switch resolvedGradient {
         case .color(let colorToken):
             if isAnimationEnabled {
                 TimelineView(.animation) { context in
@@ -128,7 +132,7 @@ public struct SDDSRectSkeleton: View {
             phase = -1.0
             return
         }
-        switch appearance.gradient {
+        switch resolvedGradient {
         case .gradient:
             animateGradient()
         case .color:
@@ -163,7 +167,7 @@ public struct SDDSRectSkeleton: View {
     }
     
     private var fillStyleAnimationKey: String {
-        switch appearance.gradient {
+        switch resolvedGradient {
         case .color(let colorToken):
             "color-\(colorToken.id)"
         case .gradient(let gradientToken):

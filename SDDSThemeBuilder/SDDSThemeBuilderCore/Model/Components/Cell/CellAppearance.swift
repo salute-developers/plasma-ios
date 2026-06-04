@@ -30,14 +30,14 @@ struct CellAppearance: CodeGenerationAppearance {
         }
         
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
-        self.labelColor = ColorTokenContextBuilder(props.labelColor).context
+        self.labelColor = StatefulFillStyleContextBuilder(props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
-        self.titleColor = ColorTokenContextBuilder(props.titleColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.titleColor).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.subtitleStyle?.value, id: id, component: component).context
-        self.subtitleColor = ColorTokenContextBuilder(props.subtitleColor).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.subtitleColor).context
         self.disclosureTextTypography = TypographyTokenContextBuilder(string: props.disclosureTextStyle?.value, id: id, component: component).context
-        self.disclosureTextColor = ColorTokenContextBuilder(props.disclosureTextColor).context
-        self.disclosureImageColor = ColorTokenContextBuilder(props.disclosureIconColor).context
+        self.disclosureTextColor = StatefulFillStyleContextBuilder(props.disclosureTextColor).context
+        self.disclosureImageColor = StatefulFillStyleContextBuilder(props.disclosureIconColor).context
         self.disclosureImage = ImageContextBuilder(props.disclosureIcon?.value).context
         
         if let avatarStyle = props.avatarStyle?.value {

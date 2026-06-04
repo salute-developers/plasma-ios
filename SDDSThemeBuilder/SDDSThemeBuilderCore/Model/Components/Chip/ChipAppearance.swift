@@ -21,10 +21,10 @@ struct ChipAppearance: CodeGenerationAppearance {
         }
         
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
-        self.imageTintColor = ButtonColorContextBuilder(statefulColor: props.contentStartColor).context
-        self.buttonTintColor = ButtonColorContextBuilder(statefulColor: props.contentEndColor).context
-        self.titleColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
+        self.imageTintColor = StatefulFillStyleContextBuilder(props.contentStartColor).context
+        self.buttonTintColor = StatefulFillStyleContextBuilder(props.contentEndColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
     }
 }

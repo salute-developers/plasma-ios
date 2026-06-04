@@ -13,7 +13,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
         var appearance = appearance
         appearance.size = size
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = .color(.surfaceDefaultTransparentSecondary)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
     
         return .init(

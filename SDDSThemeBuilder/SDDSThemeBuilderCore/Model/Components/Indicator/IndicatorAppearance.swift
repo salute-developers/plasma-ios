@@ -15,6 +15,6 @@ struct IndicatorAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
     }
 }

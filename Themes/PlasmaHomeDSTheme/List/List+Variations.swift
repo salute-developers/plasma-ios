@@ -17,7 +17,7 @@ public extension GeneralAppearanceVariation<List, ListAppearance, ListVariation.
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPrimary
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
         appearance.listItemAppearance = ListItem.s.appearance
     
         return .init(
@@ -76,7 +76,7 @@ public extension GeneralAppearanceVariation<List, ListAppearance, ListVariation.
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ColorToken.surfaceDefaultTransparentPrimary
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
         appearance.listItemAppearance = ListItem.s.appearance
     
         return .init(
